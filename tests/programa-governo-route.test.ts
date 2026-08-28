@@ -14,7 +14,7 @@ require.cache[serverOnlyPath] = {
   exports: {},
 } as never
 
-const { getProgramaGovernoPublicResource } = require("../src/lib/programa-governo-server") as typeof import("../src/lib/programa-governo-server")
+const { getProgramaGovernoPublicChunk, getProgramaGovernoPublicResource } = require("../src/lib/programa-governo-server") as typeof import("../src/lib/programa-governo-server")
 const { createProgramaGovernoGetHandler } = require("../src/app/api/candidato-profile/[slug]/programa/route") as typeof import("../src/app/api/candidato-profile/[slug]/programa/route")
 const sourceRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
 
@@ -179,6 +179,19 @@ test("aceita documento oficial do PI", async () => {
   )
   assert.equal(response.status, 404)
   assert.equal(requestedDocument, "PI:180002549920:01")
+})
+
+test("rota server-only carrega governador aprovado e documento real", async () => {
+  const resource = await getProgramaGovernoPublicResource("acm-neto")
+  assert.equal(resource.known, true)
+  assert.equal(resource.data?.fonte.cargo, "GOVERNADOR")
+  assert.equal(resource.data?.fonte.uf, "BA")
+  const documentoId = resource.manifesto?.documentos?.[0]?.documentoId
+  assert.ok(documentoId)
+  const chunk = await getProgramaGovernoPublicChunk("acm-neto", documentoId, null)
+  assert.equal(chunk.known, true)
+  assert.equal(chunk.manifesto?.estado, "aprovado")
+  assert.ok(chunk.chunk?.secoes.length)
 })
 
 test("endpoint pai não importa nem serializa o programa integral", async () => {

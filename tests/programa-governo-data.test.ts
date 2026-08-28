@@ -22,10 +22,13 @@ before(async () => {
   programaModule = await import("../src/data/programas-governo-2026")
 })
 const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
+const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-28.json") as {
+  items: Array<{ outcome: string }>
+}
 
 async function loadPresidentialCohort(): Promise<ProgramaGovernoRegistro[]> {
   const records = await Promise.all(
-    programaModule.programasGoverno2026Identidades.map(({ slug }) => {
+    programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "PRESIDENTE").map(({ slug }) => {
       assert.ok(slug)
       return programaModule.programasGoverno2026Manifesto.loadBySlug(slug)
     }),
@@ -81,17 +84,28 @@ test("checkpoint pós-revisão confirma a aprovação humana da coorte", async (
   assert.equal(records.filter(({ estado }) => estado === "aguardando_revisao").length, 0)
 })
 
-test("server-only manifest retains 13 unique compound presidential identities", () => {
-  assert.equal(programaModule.programasGoverno2026Identidades.length, 13)
-  assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, 13)
-  assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(({ slug }) => slug)).size, 13)
+test("server-only manifest retains the unique national approved cohort", () => {
+  const approvedGovernors = governorPublication.items.filter(({ outcome }) => outcome === "approved").length
+  const expectedTotal = 13 + approvedGovernors
+  assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
+  assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, expectedTotal)
+  assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(({ slug }) => slug)).size, expectedTotal)
+  assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "PRESIDENTE").length, 13)
+  assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "GOVERNADOR").length, approvedGovernors)
   for (const identidade of programaModule.programasGoverno2026Identidades) {
     assert.equal(identidade.ano, 2026)
-    assert.equal(identidade.cargo, "PRESIDENTE")
-    assert.equal(identidade.uf, "BR")
     assert.ok(identidade.slug)
     assert.ok(programaModule.programasGoverno2026Manifesto.getBySlug(identidade.slug))
   }
+})
+
+test("manifest publishes only governor records accepted by the canonical approval gate", async () => {
+  const approved = await programaModule.programasGoverno2026Manifesto.loadBySlug("acm-neto")
+  assert.equal(approved?.estado, "aprovado")
+  assert.equal(approved?.fonte.cargo, "GOVERNADOR")
+  assert.equal(approved?.fonte.uf, "BA")
+  assert.ok(approved?.documentos?.length)
+  assert.equal(programaModule.programasGoverno2026Manifesto.getBySlug("robson-raymundo"), null)
 })
 
 test("manifest lookup is lazy and validates the full identity only when loading", async () => {

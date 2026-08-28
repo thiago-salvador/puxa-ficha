@@ -1,0 +1,1618 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002539834",
+    "slug": "fabio-trad",
+    "nomeUrna": "FÁBIO TRAD",
+    "partido": "PT",
+    "arquivoNome": "2026MS120002539834_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002539834_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002539834:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002539834_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002539834_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a3a9a30941a9274645b87cbdb9160e44469d6f6666c466f14e8606b8972972f4",
+        "extractedTextSha256": "a05663d882e1c82dea6eb90c10c620f3c0035db005e1f72cf105d050287630cf",
+        "paginas": 67,
+        "secoes": [
+          {
+            "id": "programa-de-governo-2026",
+            "titulo": "PROGRAMA DE GOVERNO 2026",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO 2026\nPARTIDO DOS TRABALHADORES - PT\nFEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL\nCANDIDATOS:\nFÁBIO TRAD GOVERNADOR\nDONA GILDA VICE-GOVERNADORA\n13 EIXOS ESTRATÉGICOS PARA\nO ESTADO CRESCER JUNTO COM AS PESSOAS\nVERSÃO 3 (6 DE AGOSTO DE 2026)\n\n1"
+          },
+          {
+            "id": "aviso",
+            "titulo": "AVISO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "AVISO\nEste documento é um retrato do momento (6 de julho de 2026) e está sendo usado\npara ﬁns de registro das candidaturas de Fábio Trad e Gilda Maria dos Santos na\nJustiça Eleitoral. Por isso, é importante destacar que passará por acréscimos e\najustes ao longo do período de campanha. Trata-se de um documento vivo, que\nseguirá recebendo contribuições e críticas, a ﬁm de construirmos um plano que\npossa efetivamente nortear a futura gestão que está sendo proposta.\n\n2"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nAviso ................................................................................................................... 2\nSíntese geral........................................................................................................ 5\nDiagnóstico geral................................................................................................. 5\n1 - GESTÃO PÚBLICA MODERNA COM TRANSPARÊNCIA E PARTICIPAÇÃO SOCIAL8\n1.1 - Diagnóstico .............................................................................................. 8\n1.2 - Propostas ................................................................................................. 9\n2 - DESENVOLVIMENTO ECÔNOMICO SUSTENTÁVEL......................................... 11\n2.1- Diagnóstico ............................................................................................. 11\n2.2 - Propostas ............................................................................................... 14\n3 - NOVA POLÍTICA ESTADUAL DE INCENTIVOS FISCAIS..................................... 17\n3.1 - Diagnóstico ............................................................................................ 17\n3.2 - Propostas ............................................................................................... 18\n4 - SAÚDE PÚBLICA EFICIENTE E ACESSÍVEL ..................................................... 20\n4.1 - Diagnóstico ............................................................................................ 20\n4.2 - Propostas ............................................................................................... 22\n5 - SEGURANÇA PÚBLICA CIDADÃ E TECNOLÓGICA .......................................... 24\n5.1 - Diagnóstico ............................................................................................ 24\n5.1 - Propostas ............................................................................................... 25\n6 - TRABALHO DIGNO E GERAÇÃO DE RENDA.................................................... 28\n6.1 - Diagnóstico ............................................................................................ 28\n6.2 - Propostas ............................................................................................... 29\n7 - EDUCAÇÃO PARA O FUTURO ........................................................................ 32\n7.1 - Diagnóstico ............................................................................................ 32\n7.2 - Propostas ............................................................................................... 34\n8 - INFRAESTRUTURA PLANEJADA E INDUTORA DE DESENVOLVIMENTO ............ 37\n8.1 - Diagnóstico ............................................................................................ 37\n8.2 - Propostas ............................................................................................... 39\n9 - CULTURA, ESPORTE E LAZER VALORIZADOS E COM AMPLO ACESSO POPULAR\n......................................................................................................................... 42\n3"
+          },
+          {
+            "id": "9-1-diagnostico-42",
+            "titulo": "9.1 - Diagnóstico ............................................................................................ 42",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "9.1 - Diagnóstico ............................................................................................ 42\n9.2 - Propostas ............................................................................................... 44\n10 - ESTADO CUIDADOR E INOVADOR NA ASSISTÊNCIA SOCIAL E NOS DIREITOS\nHUMANOS ........................................................................................................ 47\n10.1 - Diagnóstico .......................................................................................... 47\n10.2 - Propostas ............................................................................................. 50\n11 - DESENVOLVIMENTO AGRÁRIO COM AGRICULTURA FAMILIAR FORTE E\nREPLETA DE OPORTUNIDADES .......................................................................... 53\n11.1 - Diagnóstico .......................................................................................... 53\n11.2 - Propostas ............................................................................................. 55\n12 - MEIO AMBIENTE COM PANTANAL, SERRA DA BODOQUENA E MUDANÇAS\nCLIMÁTICAS NO FOCO ...................................................................................... 58\n12.1 - Diagnóstico .......................................................................................... 58\n12.1 - Propostas ............................................................................................. 60\n13 - TURISMO SUSTENTÁVEL E AGREGADOR DE VALOR ..................................... 63\n13.1 - Diagnóstico .......................................................................................... 63\n13.1 - Propostas ............................................................................................. 65\n\n4"
+          },
+          {
+            "id": "sintese-geral",
+            "titulo": "SÍNTESE GERAL",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE GERAL\nO trabalho desenvolvido pelos setoriais do PT-MS produziu análises e proposições\nque convergem para um conjunto consistente de prioridades:\n•\n\nFortalecimento do Estado: defesa da gestão pública, concursos,\nvalorização do serviço público e fortalecimento das instituições;\n\n•\n\nDesenvolvimento regional: redução das desigualdades entre capital e\ninterior, com políticas territorializadas;\n\n•\n\nInclusão social: atenção a agricultores familiares, juventude, população\nnegra, povos indígenas, quilombolas, mulheres e trabalhadores da cultura;\n\n•\n\nDesenvolvimento sustentável: proteção ambiental articulada à geração de\nrenda e à agroecologia;\n\n•\n\nParticipação\n\nsocial:\n\nampliação\n\ndos\n\nconselhos,\n\nconferências\n\ne\n\nmecanismos de controle social;\n•\n\nValorização dos direitos sociais: fortalecimento do SUS, da educação\npública, da cultura e das políticas de proteção social;\n\n•\n\nPlanejamento de longo prazo: elaboração de planos estaduais\nestruturantes, deﬁnição de metas e integração entre políticas públicas.\n\nEm conjunto, as análises e proposições delineiam um programa de governo\nbaseado na combinação de desenvolvimento econômico, fortalecimento\ninstitucional, sustentabilidade ambiental e redução das desigualdades sociais e\nterritoriais.\n\nDIAGNÓSTICO GERAL\nÀs vésperas de completar 49 anos em 2026, Mato Grosso do Sul possui,\natualmente, 2.924.631 habitantes, conforme o último censo promovido pelo IBGE.\nO órgão divide o Estado em 3 (três) regiões Geográﬁcas Intermediárias (Campo\nGrande, Dourados e Corumbá) e 12 regiões Geográﬁcas Imediatas (Campo Grande,\nTrês Lagoas, Paranaíba/Chapadão do Sul/Cassilândia, Coxim, Dourados,\n5"
+          },
+          {
+            "id": "navirai-mundo-novo-nova-andradina-ponta-pora-amambai-corumba-jardim-e",
+            "titulo": "Naviraí/Mundo Novo, Nova Andradina, Ponta Porã, Amambai, Corumbá, Jardim e",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Naviraí/Mundo Novo, Nova Andradina, Ponta Porã, Amambai, Corumbá, Jardim e\nAquidauana/Anastácio).\nMais comumente, Mato Grosso do Sul é conhecida por suas 8 divisões regionais:\nCampo Grande, Bolsão, Norte, Vale do Ivinhema, Cone Sul, Fronteira, Sudoeste e\nPantanal.\nA última atualização da Justiça Eleitoral aponta que o Estado possui 2.002.752\neleitores, sendo 1.057.781 mulheres (52,82%) e 944.971 homens (47,18%).\nHá 28 anos, coube ao governador José Orcírio Miranda dos Santos, o Zeca do PT,\ndar início a um grande processo de desenvolvimento socioeconômico, no qual\nhouve grandes avanços na economia acompanhado de políticas de assistência\nsocial.\nCoube ao Partido dos Trabalhadores instituir políticas sólidas de acolhimento\nsocial, como a Bolsa-Escola e o Segurança Alimentar e a valorização dos povos\noriginários e da agricultura familiar. Nunca é demais repetir que o Assentamento\nNova Itamaraty, em Ponta Porã, foi instituído durante o primeiro governo de Zeca do\nPT em articulação com o Governo Federal.\nTambém foi ação do Partido dos Trabalhadores na gestão do Estado o\nimpulsionamento da economia, que à época era restrita ao binômio soja/boi.\nO Mato Grosso do Sul de hoje possui um setor primário forte, com novas matrizes\neconômicas como a cana-de-açúcar e a produção de eucaliptos para a celulose.\nA indústria de turismo cresce, cujas águas cristalinas de Bonito e da Serra da\nBodoquena e o Pantanal se constituem nos maiores atrativos no país e no mundo.\nApós 20 anos que o PT deixou o Governo de Mato Grosso do Sul, os avanços\nalcançados durante a gestão do partido foram, gradativamente, transformados em\nretrocesso.\n6"
+          },
+          {
+            "id": "a",
+            "titulo": "A",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A\n\npopulação\n\nsul-mato-grossense\n\nfoi\n\nobrigada\n\na\n\nacompanhar\n\ncarretas\n\ntransportarem a Saúde e parte da Justiça.\nA ligação asfáltica entre os municípios, notadamente nas estradas vicinais, que\nabrangeram todos os rincões do Estado – Amambai/Caarapó; Amambai/Coronel\nSapucaia; Tacuru/Paranhos; Chapadão do Sul/Costa Rica – cessaram. Não há\nnovos investimentos em asfalto, relegados à tapa-buracos, quase sempre\nmalfeitos.\nA estrutura de Saúde também é muito insuﬁciente. Na contramão de novos\ninvestimentos, as recentes gestões estaduais buscam terceirizar as unidades\nhospitalares, desperdiçando dinheiro público, afastando-se da responsabilidade\ngerencial do governante e o pior: deixando a população na mão.\nAs políticas de assistência social são, sobretudo, oriundas do Governo Federal, o\nqual são responsáveis hoje pelo atendimento de 179.200 famílias, por meio do\nprograma Bolsa Família, o que representa a destinação média anual de R$ 1,5\nbilhão, dinheiro que supre necessidades básicas das famílias e que movimenta a\neconomia dos municípios. Nessa área, também merecem ser citados o Benefício\nde Prestação Continuada (BPC), com 113.500 beneﬁciados, e o Gás do Povo (antigo\nAuxílio Gás), com 40 mil famílias beneﬁciadas.\nFirme nessas premissas, o Partido dos Trabalhadores, mediante sua chapa de\ncandidatos a governador, vice-governadora, senadores, deputados federais e\nestaduais apresentam à sociedade sul-mato-grossense o eixo de seu programa de\ngoverno para os próximos 4 (quatro) anos de gestão (2027-2030).\n\n7"
+          },
+          {
+            "id": "1-gestao-publica-moderna-com-transparencia-e",
+            "titulo": "1 - GESTÃO PÚBLICA MODERNA COM TRANSPARÊNCIA E",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "1 - GESTÃO PÚBLICA MODERNA COM TRANSPARÊNCIA E\nPARTICIPAÇÃO SOCIAL\n1.1 - Diagnóstico\nMato\n\nGrosso\n\ndo\n\nSul\n\napresenta avanços importantes em\n\nindicadores\n\nsocioeconômicos, porém ainda convive com limitações estruturais na gestão\npública, especialmente no que diz respeito ao planejamento estratégico de longo\nprazo, regionalização das políticas públicas, participação social e transparência\ngovernamental.\nUm dos principais problemas é a excessiva centralização administrativa e decisória\nem Campo Grande, o que diﬁculta a interiorização das políticas públicas e reduz a\ncapacidade de resposta do Estado às diferentes realidades regionais. Muitos\nmunicípios, especialmente os de pequeno porte e das regiões de fronteira,\nenfrentam diﬁculdades para acessar programas estaduais, assistência técnica e\ninvestimentos estruturantes.\nOutro desaﬁo importante é a fragmentação da gestão pública. As políticas\ngovernamentais frequentemente operam de forma pouco integrada entre\nsecretarias, diﬁcultando ações intersetoriais em áreas como saúde, assistência\nsocial, educação, segurança e desenvolvimento regional. Isso reduz eﬁciência,\naumenta desperdícios e compromete resultados.\nTambém há baixa capacidade de planejamento estratégico de longo prazo. Muitas\nações governamentais ainda são marcadas por improvisação, descontinuidade\nadministrativa e ausência de metas claras, indicadores públicos e monitoramento\npermanente de resultados.\nNa área da transparência, apesar da existência de instrumentos formais de controle\ne portais institucionais, a população ainda encontra diﬁculdades para acessar\ninformações públicas de maneira simples, acessível e compreensível. Há pouca\n8"
+          },
+          {
+            "id": "cultura-de-dados-abertos-e-baixa-transparencia-ativa-sobre-contratos-exe",
+            "titulo": "cultura de dados abertos e baixa transparência ativa sobre contratos, execução de",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "cultura de dados abertos e baixa transparência ativa sobre contratos, execução de\nobras, ﬁlas de serviços públicos, indicadores de desempenho governamental e,\nessencialmente, o quanto se paga e para quem se paga.\nOutro problema relevante é o enfraquecimento dos espaços de participação social.\nConselhos estaduais, conferências e fóruns participativos perderam capacidade\nefetiva de inﬂuência sobre as decisões públicas nos últimos anos. Muitas vezes\nfuncionam de forma burocrática, sem diálogo permanente com a sociedade civil\norganizada, universidades, movimentos sociais, setor produtivo e municípios.\n\n1.2 - Propostas\nConstrução de um novo modelo de gestão pública - Estado mais moderno,\neﬁciente, transparente e próximo das pessoas\nProposta de campanha:\n•\n\nRetomar e fortalecer a participação social com reativação dos\nconselhos estaduais; realização periódica de conferências públicas;\naudiências públicas digitais e presenciais; e diálogo permanente com\nuniversidades, organizações da sociedade civil, movimentos sociais e\nsetor produtivo.\n\nOutras propostas:\n•\n\nImplantar um novo modelo de gestão pública orientado por resultados, com\ndeﬁnição de metas estratégicas de governo; monitoramento permanente de\nindicadores; avaliação periódica de políticas públicas; e integração entre\nplanejamento, orçamento e execução;\n\n•\n\nFortalecer o planejamento regionalizado com criação de planos regionais de\ndesenvolvimento; fortalecimento das cidades-polo; descentralização\nadministrativa; e ampliação da presença do Estado no interior;\n9"
+          },
+          {
+            "id": "pagina-10",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nModernizar e digitalizar os serviços públicos com integração de sistemas\nestaduais; simpliﬁcação burocrática; digitalização de processos; e\nexpansão de serviços online ao cidadão;\n\n•\n\nCriar um Portal Estadual de Transparência Avançada, com informações em\nlinguagem simples; dados abertos; acompanhamento em tempo real de\nobras e contratos; divulgação transparente das ﬁlas da saúde; e painéis\npúblicos de execução orçamentária;\n\n•\n\nReforçar os mecanismos de controle e integridade com fortalecimento da\nControladoria-Geral do Estado; programas de compliance e integridade;\nauditorias preventivas; proteção ao denunciante; combate à corrupção e\ndesperdícios;\n\n•\n\nValorizar os servidores públicos com política permanente de formação e\ncapacitação; modernização da gestão de pessoas; valorização das\ncarreiras; melhoria das condições de trabalho; reajustes com ganho real; e\nincentivo à inovação no serviço público;\n\n•\n\nCriar um sistema estadual de avaliação de políticas públicas com\nmonitoramento de programas governamentais; indicadores de eﬁciência e\nimpacto social; publicação anual de resultados; e transparência na\navaliação do desempenho governamental;\n\n•\n\nFazer o Estado e os municípios trabalharem juntos para reduzir ﬁlas,\nacelerar obras e levar serviços para perto das pessoas, por meio de maior\ncooperação; consórcios regionais; assistência técnica aos pequenos\nmunicípios; e integração regional das políticas públicas;\n\n•\n\nImplantar uma política de inovação e inteligência pública com uso de\ntecnologia e inteligência de dados; centros de inovação governamental;\nparcerias com universidades; e modernização tecnológica da administração\nestadual.\n\n10"
+          },
+          {
+            "id": "2-desenvolvimento-economico-sustentavel",
+            "titulo": "2 - DESENVOLVIMENTO ECÔNOMICO SUSTENTÁVEL",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "2 - DESENVOLVIMENTO ECÔNOMICO SUSTENTÁVEL\n2.1- Diagnóstico\nMato Grosso do Sul apresentou forte crescimento econômico nos últimos anos,\nimpulsionado principalmente pelo agronegócio, pela expansão da celulose, pela\nproteína animal e pela posição estratégica do estado no centro da América do Sul.\nEntretanto, esse crescimento ainda ocorre de forma concentrada, pouco\ndiversiﬁcada e com baixa agregação de valor à produção local.\nO principal problema estrutural da economia sul-mato-grossense continua sendo\na elevada dependência de commodities agropecuárias e minerais. Grande parte da\nriqueza produzida no estado sai na forma de produtos primários ou\nsemielaborados, limitando a geração de empregos qualiﬁcados, inovação\ntecnológica e dinamização das economias regionais.\nOutro desaﬁo importante é a concentração territorial do desenvolvimento. Regiões\ncomo Campo Grande, Três Lagoas e parte do eixo da celulose concentram\ninvestimentos e infraestrutura (Leste/Bolsão), enquanto diversas regiões do interior\nainda convivem com baixa industrialização, escassez de oportunidades\neconômicas e limitada capacidade de atração de investimentos.\nO cenário é ainda mais desaﬁador quando o município é afastado da Capital e/ou\npossui baixo número de habitantes: não há comércio forte; os empregos são\noriundos, sobretudo, das estruturas do poder público; e muitos deles não possuem\num setor primário forte, que proporcione maior arrecadação.\nPersistem também fragilidades relacionadas à baixa densidade industrial; à\ninsuﬁciente integração entre universidades, pesquisa e setor produtivo; à pouca\ninserção da inovação tecnológica na economia; à baixa competitividade das micro\ne pequenas empresas; e à reduzida diversiﬁcação da matriz econômica estadual.\n\n11"
+          },
+          {
+            "id": "o-estado-ainda-carece-de-uma-politica-mais-estruturada-de-agregacao-de-v",
+            "titulo": "O Estado ainda carece de uma política mais estruturada de agregação de valor à",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "O Estado ainda carece de uma política mais estruturada de agregação de valor à\nprodução agropecuária, especialmente nas cadeias da carne, leite, grãos,\nbioenergia, ﬂorestas plantadas e agricultura familiar.\nNa área de infraestrutura econômica, embora haja avanços logísticos importantes,\nainda existem gargalos relacionados: à malha rodoviária; à integração ferroviária; à\nlogística de exportação; à conectividade digital; e à infraestrutura energética em\nalgumas regiões.\nOutro problema é a ausência de uma política mais ousada de desenvolvimento\nsustentável e economia verde. Mato Grosso do Sul possui enorme potencial em\nbioeconomia, energia renovável, hidrogênio verde, biocombustíveis, mercado de\ncarbono e indústria de baixo carbono, mas o Governo do Estado ainda atua de\nforma dispersa e sem uma estratégia integrada de longo prazo.\nTambém há baixa articulação regional para aproveitar plenamente oportunidades\nestratégicas como a Rota Bioceânica; a integração sul-americana; a transição\nenergética global; e o crescimento da economia digital.\nÉ notório o gargalo rodoviário entre Campo Grande Porto Murtinho: na primeira fase\ndo trajeto, entre a Capital e Sidrolândia, o tráfego atual já é intenso, tornando\ninequívoca a necessidade de duplicação da BR-060.\nO trajeto da rodovia federal atravessa municípios com baixa densidade\ndemográﬁca, como Nioaque, Guia Lopes da Laguna e o distrito de Alto Caracol\n(Caracol) – o município polo da região é Jardim, de maior porte.\nEm todos esses municípios não há ações que permitam aos seus moradores\ndesfrutarem das vantagens econômicas e competitivas da Rota Biocêanica. Algo\nque também acontece em Porto Murtinho.\n\n12"
+          },
+          {
+            "id": "basta-cruzar-o-rio-paraguai-para-observar-que-a-comunidade-de-isla-marga",
+            "titulo": "Basta cruzar o Rio Paraguai para observar que a comunidade de Isla Margarita, na",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Basta cruzar o Rio Paraguai para observar que a comunidade de Isla Margarita, na\nIntendência de Carmelo Peralta, trata de forma estratégica, político e\neconomicamente, a Rota Bioceânica.\nNa questão aérea, Mato Grosso do Sul precisa reivindicar mais integração à malha\naérea nacional. Apesar do aumento no número de passageiros no Aeroporto de\nCampo Grande (11,7% entre 2022 e 2023 e, mais recentemente, 3,15% entre 2024\ne 2025 - números divulgados pela Aena do Brasil e Ministério de Portos e\nAeroportos), a Capital, assim como os aeroportos de Corumbá, Dourados e Ponta\nPorã seguem com pouca oferta de voos.\nA propósito, nesse quesito, mais uma vez, o governo do presidente Lula tem se\ndestacado em Mato Grosso do Sul. Graças aos investimentos liberados pelo BNDES\nà concessionária Aena, foram inaugurados - com a presença de Lula, durante\nevento em Ponta Porã no dia 25 de junho de 2026 - as reformas e ampliações de três\naeroportos do estado: Campo Grande (investimento de R$ 213 milhões), Corumbá\n(investimento de R$ 157 milhões) e Ponta Porã (investimento de R$ 213 milhões).\nNa ocasião, o Governo Federal também anunciou uma nova rodada de\ninvestimentos no valor de R$ 150 milhões para atender os aeroportos de Dourados\ne Bonito.\nApesar dos esforços do Governo Lula 3 em melhorar e ampliar os aeroportos das\nprincipais cidades, não se percebe um mesmo empenho por parte da atual gestão\nestadual em relação aos aeródromos de porte médio, que carecem de terminais de\nembarque, revitalização e modernização.\nPor ﬁm, na questão do desenvolvimento sustentável, persistem desigualdades\nregionais signiﬁcativas no acesso ao crédito, à inovação, à infraestrutura e às\noportunidades econômicas, especialmente em municípios pequenos, regiões de\nfronteira e territórios historicamente menos desenvolvidos.\n\n13"
+          },
+          {
+            "id": "2-2-propostas",
+            "titulo": "2.2 - Propostas",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "2.2 - Propostas\nUm novo ciclo de desenvolvimento - Maior soﬁsticação, sustentabilidade,\ninovação e distribuição regional de oportunidades\nProposta de campanha:\n•\n\nImplantar uma política estadual de desenvolvimento regional com\nincentivos\n\ndiferenciados\n\npara\n\nregiões\n\nmenos\n\ndesenvolvidas,\n\nfortalecimento das cidades-polo, desconcentração econômica e\ninteriorização de investimentos.\nOutras propostas:\n•\n\nImplantar uma Política Estadual de Neoindustrialização Verde, incentivando\na agroindustrialização; ampliando o processamento e verticalização local\nda produção; fortalecendo cadeias produtivas regionais; estimulando\nindústrias de baixo carbono; e apoiando parques industriais sustentáveis;\n\n•\n\nCriar o Plano Estadual de Agregação de Valor com o objetivo de gerar\nempregos qualiﬁcados e ampliar a renda regional, tendo como prioridade:\nproteína animal, leite, grãos, ﬂorestas plantadas, bioenergia, biotecnologia,\nalimentos industrializados e química verde;\n\n•\n\nTransformar Mato Grosso do Sul em referência nacional de economia verde:\nmercado de carbono, hidrogênio verde, biocombustíveis avançados, energia\nsolar, biomassa, economia circular, recuperação de áreas degradadas e\ninovação ambiental;\n\n•\n\nCriar polos regionais de desenvolvimento econômico, fortalecer as\nvocações regionais nas áreas de bioindústria, tecnologia, logística, proteína\nanimal, celulose, bioenergia, economia criativa e inovação agroambiental;\n\n•\n\nImplantar um Programa Estadual de Inovação e Tecnologia com integração\nentre universidades e empresas, apoio a startups, parques tecnológicos,\n\n14"
+          },
+          {
+            "id": "incubadoras-inteligencia-arti-cial-aplicada-ao-agro-e-a-industria-e-ince",
+            "titulo": "incubadoras, inteligência artiﬁcial aplicada ao agro e à indústria e incentivo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "incubadoras, inteligência artiﬁcial aplicada ao agro e à indústria e incentivo\nà pesquisa aplicada;\n•\n\nUniversalizar a infraestrutura digital em parceria com o Governo Federal, por\nmeio do Novo PAC (eixo \"Inclusão Digital e Conectividade\"), viabilizando\ninternet de alta velocidade em todos os municípios, conectividade na área\nrural\n\n(assentamentos\n\nrurais,\n\naldeias\n\nindígenas\n\ne\n\ncomunidades\n\nquilombolas), digitalização de pequenas empresas e inclusão tecnológica;\n•\n\nRetomar o papel do Banco do Povo, criado no Governo Popular de Zeca do\nPT, como um banco de desenvolvimento regional com crédito para\npequenas e médias empresas; apoio à industrialização, ﬁnanciamento à\ninovação, microcrédito produtivo e estímulo à economia regional;\n\n•\n\nAproveitar estrategicamente a Rota Bioceânica com integração logística\ncontinental, atração de investimentos, corredores industriais, centros de\ndistribuição e exportação de produtos com maior valor agregado;\n\n•\n\nFortalecer micro e pequenas empresas por meio de simpliﬁcação\nburocrática, compras públicas regionais, crédito facilitado, capacitação,\ntransformação digital e apoio ao cooperativismo e economia solidária;\n\n•\n\nImplantar uma política estadual de qualiﬁcação proﬁssional para a nova\neconomia, com foco em: indústria 4.0, tecnologia, energias renováveis,\nlogística, bioeconomia, inteligência artiﬁcial, automação e serviços\nespecializados;\n\n•\n\nCriar um Plano Estadual de Desenvolvimento de Fronteira, com integração\neconômica regional, zonas de desenvolvimento, infraestrutura, comércio\nexterior, inovação logística e segurança econômica;\n\n•\n\nFormalizar parceria com o Ministério de Portos e Aeroportos para buscar\ninvestimentos em aeródromos de médio porte, de forma a estimular a\naviação regional;\n\n•\n\nIntensiﬁcar o diálogo institucional com as companhias aéreas e utilizar\nmecanismos estatais e políticas públicas que permitam ampliar o número\nde voos que hoje atendem os principais aeroportos de MS: Campo Grande,\nDourados, Corumbá e Ponta Porã;\n\n15"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a economia da ciência e do conhecimento por meio da\nvalorização da UEMS, integração com UFMS, UFGD e IFMS, bolsas de\npesquisa aplicada, atração de centros tecnológicos e retenção de talentos\njovens.\n\n16"
+          },
+          {
+            "id": "3-nova-politica-estadual-de-incentivos-fiscais",
+            "titulo": "3 - NOVA POLÍTICA ESTADUAL DE INCENTIVOS FISCAIS",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "3 - NOVA POLÍTICA ESTADUAL DE INCENTIVOS FISCAIS\n3.1 - Diagnóstico\nA atual política de incentivos ﬁscais de Mato Grosso do Sul teve papel importante\nna atração de investimentos e na expansão de alguns setores econômicos\nestratégicos, especialmente agronegócio, celulose, proteína animal e logística.\nEntretanto, o modelo adotado pelas recentes gestões apresenta limitações\nestruturais que reduziram sua capacidade de promover um desenvolvimento mais\nequilibrado, sustentável e inovador.\nUm dos principais problemas é a excessiva concentração dos incentivos em\ngrandes grupos econômicos e em setores já consolidados, sem uma estratégia\nmais ampla de diversiﬁcação da matriz econômica estadual. Isso contribuiu para o\nfortalecimento de uma economia ainda muito dependente de commodities e\natividades de baixo valor agregado.\nOutro problema relevante é a baixa exigência de contrapartidas estruturantes. O\nemprego é importante, todavia, não deve ser a única contraprestação de empresas\nque recebem altos valores mediante renúncia ﬁscal em Mato Grosso do Sul.\nTambém há forte concentração territorial dos investimentos incentivados. Regiões\nque já possuem maior infraestrutura e dinamismo econômico continuam\nrecebendo a maior parte dos empreendimentos, enquanto municípios menores e\nregiões de fronteira permanecem com baixa capacidade de atração de\ninvestimentos produtivos.\nA política atual ainda apresenta fragilidades na transparência e na avaliação de\nresultados. Falta maior clareza pública sobre: volume total das renúncias ﬁscais;\nimpacto econômico efetivo dos incentivos; número real de empregos gerados;\nretorno social dos investimentos incentivados; e cumprimento das contrapartidas\nassumidas pelas empresas beneﬁciadas.\n17"
+          },
+          {
+            "id": "alem-disso-o-modelo-atual-prioriza-fortemente-atracao-de-investimentos-e",
+            "titulo": "Além disso, o modelo atual prioriza fortemente atração de investimentos externos,",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Além disso, o modelo atual prioriza fortemente atração de investimentos externos,\nmas dedica atenção insuﬁciente ao fortalecimento do empresariado local, das\npequenas indústrias, cooperativas, startups e cadeias produtivas regionais.\nOutro problema estrutural é a ausência de mecanismos permanentes de\nmonitoramento, revisão e avaliação técnica da política de incentivos. Muitas vezes\nos benefícios são renovados sem uma análise aprofundada de sua efetividade\neconômica, social e ambiental.\n\n3.2 - Propostas\nIncentivos alinhados a uma estratégia moderna de desenvolvimento\neconômico sustentável\nProposta de campanha:\n•\n\nRevisar e modernizar a política de incentivos ﬁscais por meio da\nsuperação do antigo modelo de incentivos baseado apenas na atração\nde grandes empreendimentos e na renúncia ﬁscal sem contrapartidas\nestruturantes, de maneira a transformar os incentivos ﬁscais em\ninstrumentos de desenvolvimento inteligente, vinculando-os à geração\nde empregos de qualidade, priorizando empresas que: gerem empregos\nformais; valorizem mão de obra local; promovam qualiﬁcação\nproﬁssional; ampliem salários médios; e incentivem inclusão de jovens,\nmulheres e pessoas com deﬁciência.\n\nOutras propostas:\n•\n\nPriorizar agregação de valor à produção estadual, favorecendo atividades\nque: industrializem matérias-primas locais; ampliem processamento\ninterno da produção; fortaleçam cadeias produtivas regionais; aumentem\n18"
+          },
+          {
+            "id": "exportacoes-de-produtos-industrializados-e-elevem-o-conteudo-tecnologico",
+            "titulo": "exportações de produtos industrializados; e elevem o conteúdo tecnológico",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "exportações de produtos industrializados; e elevem o conteúdo tecnológico\nda economia estadual;\n•\n\nCriar incentivos diferenciados para regiões menos desenvolvidas,\nestimulando a desconcentração econômica por meio de: incentivos\nregionais; estímulo à interiorização industrial; fortalecimento das cidadespolo; e atração de investimentos para regiões de fronteira e municípios de\nmenor dinamismo econômico;\n\n•\n\nImplantar critérios ambientais e de sustentabilidade, com os benefícios\nﬁscais devendo considerar: redução de emissões; eﬁciência energética; uso\nde energias renováveis; economia circular; recuperação ambiental; práticas\nESG; e descarbonização industrial;\n\n•\n\nEstimular inovação, tecnologia e pesquisa aplicada, incentivando empresas\nque investirem em: pesquisa e desenvolvimento; inteligência artiﬁcial;\nautomação; bioeconomia; biotecnologia; digitalização industrial; e\nuniversidades e centros tecnológicos;\n\n•\n\nCriar mecanismos de avaliação permanente dos incentivos, por meio de\nmetas claras; indicadores públicos de desempenho; avaliação periódica de\nresultados; transparência sobre renúncias ﬁscais; e monitoramento da\ngeração de empregos e investimentos;\n\n•\n\nFortalecer micro e pequenas empresas, por meio de programas especíﬁcos\nde incentivo para: pequenas indústrias; cooperativas; startups; economia\nsolidária; empreendedores regionais; e empresas inovadoras;\n\n•\n\nIntegrar incentivos ﬁscais à política de desenvolvimento regional,\narticulando os incentivos com: infraestrutura; logística; qualiﬁcação\nproﬁssional; inovação; conectividade digital; e planejamento regional;\n\n•\n\nImplantar segurança jurídica e previsibilidade, por meio da garantia de:\nestabilidade regulatória; transparência nos critérios; simpliﬁcação\nadministrativa; redução da burocracia; e ambiente favorável ao investimento\nprodutivo;\n\n•\n\nCriar um Conselho Estadual de Desenvolvimento Econômico Sustentável,\ncom a participação de representantes do setor produtivo, universidades,\ntrabalhadores, cooperativas, municípios e sociedade civil organizada.\n19"
+          },
+          {
+            "id": "4-saude-publica-eficiente-e-acessivel",
+            "titulo": "4 - SAÚDE PÚBLICA EFICIENTE E ACESSÍVEL",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "4 - SAÚDE PÚBLICA EFICIENTE E ACESSÍVEL\n4.1 - Diagnóstico\nA saúde pública de Mato Grosso do Sul enfrenta problemas estruturais históricos\nque se agravaram nos últimos anos, especialmente na média e alta complexidade.\nEmbora o estado apresente indicadores econômicos positivos e crescimento\nacima da média nacional, a população ainda convive com diﬁculdades concretas\nde acesso aos serviços de saúde, sobretudo no interior.\nO principal problema é a excessiva concentração da rede hospitalar e\nespecializada em Campo Grande. A Capital absorve pacientes de praticamente\ntodas as regiões do estado, gerando superlotação nos hospitais, longas ﬁlas para\nconsultas, exames e cirurgias eletivas e pressão permanente sobre o sistema de\nurgência e emergência. A própria estrutura hospitalar da capital sofre com elevada\ndemanda regional, vide as constantes crises envolvendo a Santa Casa de Campo\nGrande.\nOutro gargalo importante é a fragilidade da regionalização da saúde. Municípiospolos como Dourados, Corumbá, Três Lagoas, Ponta Porã, Coxim e Naviraí ainda\nnão possuem estrutura suﬁciente para atender plenamente a população de suas\nregiões em especialidades médicas, exames de alta complexidade e\nprocedimentos cirúrgicos. Isso obriga milhares de pessoas a percorrer longas\ndistâncias, quase sempre nas madrugadas e em meios de transporte\ndesconfortáveis, em busca de atendimento.\nTambém persistem problemas relacionados à demora na realização de exames,\nconsultas e cirurgias, aumentando a judicialização da saúde e a sensação de\nabandono entre os usuários do SUS. Filas prolongadas para ortopedia, oncologia,\nneurologia, hemodiálise e atendimento especializado tornaram-se uma das\nprincipais reclamações da população.\n\n20"
+          },
+          {
+            "id": "ha-ainda-de-ciencia-na-politica-estadual-de-valorizacao-dos-pro-ssionais",
+            "titulo": "Há ainda deﬁciência na política estadual de valorização dos proﬁssionais da saúde.",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Há ainda deﬁciência na política estadual de valorização dos proﬁssionais da saúde.\nHospitais e unidades convivem com falta de especialistas, sobrecarga de equipes,\nrotatividade de proﬁssionais e diﬁculdade de ﬁxação de médicos e trabalhadores\nda saúde no interior do estado.\nNa atenção básica, embora a responsabilidade principal seja dos Municípios, o\nGoverno do Estado falhou em construir uma política mais forte de cooperação\nregional, apoio técnico e integração efetiva das redes de atendimento. O resultado\né um sistema fragmentado, com baixa integração entre atenção básica,\nespecialidades e hospitais.\nPor ﬁm, como bem destaca a análise do Setorial de Saúde do PT-MS, não\npodemos deixar de mencionar a política de privatização da saúde pública que\nlamentavelmente se instalou dentro do Governo do Estado deste 2007 e se\nfortaleceu a partir de 2015. Tanto o Hospital Regional de Campo Grande quanto os\nhospitais regionais do interior hoje estão na mão da iniciativa privada, evidenciando\na incompetência dos atuais gestores do Estado em gerir os serviços públicos e sem\nque a população veja resultados positivos efetivos desse modelo.\nContratações de OSCIPS e de Parcerias Públicas Privadas (PPPs) na Saúde não\npodem ser vistas como economias gerenciais, mas como a assunção de que o\npoder público – e seus governantes – não cumprem com suas obrigações à\npopulação, notadamente a mais humilde, que tem nas estruturas públicas de\nsaúde a única opção de atendimento médico-hospitalar.\n\n21"
+          },
+          {
+            "id": "4-2-propostas",
+            "titulo": "4.2 - Propostas",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "4.2 - Propostas\nSaúde pública regionalizada - Defesa do SUS e construção de uma rede\nestadual mais forte\nProposta de campanha:\n•\n\nReorganizar a rede de assistência à saúde em todos os níveis, de\nunidades básicas de saúde (UBS) aos hospitais de grande porte e\nretomar para o Estado a gestão própria dos hospitais regionais que hoje\nestão na mão de entidades privadas – cuja única preocupação é o lucro,\ncom a consequente despreocupação do atendimento à população.\n\nOutras propostas:\n•\n\nFortalecer os hospitais regionais - especialmente os de Dourados, Três\nLagoas, Ponta Porã, Nova Andradina e Coxim - e ampliar o atendimento de\nMédia e Alta Complexidade;\n\n•\n\nConstruir hospitais regionais em Corumbá, em Naviraí e em Jardim,\naumentando o número de leitos e serviços, de forma que possa atender às\ndemandas de Média e Alta Complexidade nas regiões do Pantanal, do Cone\nSul e da Serra da Bodoquena (Jardim/Bonito/Guia Lopes da Laguna, no\ncaminho da Rota Bioceânica);\n\n•\n\nCriar centros regionais de exames e especialidades e integrá-los ao\nprograma \"Agora tem Especialistas\", do Governo Federal, a ﬁm de atender a\nalta demanda da população por exames e consultas com especialistas;\n\n•\n\nAmpliar o serviço público de hemodiálise em cidades-polo para reduzir a\nterceirização e o envio de pacientes para a Capital;\n\n•\n\nOrganizar - e, se necessário, implantar - em cidades-polo e na Capital\ncentros de referência em ﬁsioterapia, terapia ocupacional, atendimento a\npessoas com autismo e assistência integral à saúde da mulher;\n\n22"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAmpliar o atendimento com unidades móveis para comunidades rurais,\nindígenas, ribeirinhas e fronteiriças;\n\n•\n\nCriar a Carreira Estadual do SUS-MS para valorizar os proﬁssionais do SUS\nem MS, inspirada em modelos adotados parcialmente por estados como\nCeará e Bahia, com o objetivo de: garantir estabilidade e previsibilidade\nproﬁssional; reduzir rotatividade; fortalecer atendimento regionalizado; e\ninteriorizar proﬁssionais especializados;\n\n•\n\nImplantar Gratiﬁcação de Interiorização da Saúde, inspirada em\nexperiências do Amazonas, Pará e Minas Gerais, com o objetivo de ﬁxar\nproﬁssionais em regiões de difícil provimento e região de fronteira.\n\n23"
+          },
+          {
+            "id": "5-seguranca-publica-cidada-e-tecnologica",
+            "titulo": "5 - SEGURANÇA PÚBLICA CIDADÃ E TECNOLÓGICA",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "5 - SEGURANÇA PÚBLICA CIDADÃ E TECNOLÓGICA\n5.1 - Diagnóstico\nMato Grosso do Sul possui características territoriais e geográﬁcas que tornam a\nsegurança pública um dos maiores desaﬁos estratégicos do estado. A extensa faixa\nde fronteira com Paraguai e Bolívia transformou MS em rota relevante para tráﬁco\ninternacional de drogas, armas, contrabando, descaminho e atuação de\norganizações criminosas interestaduais e transnacionais.\nEmbora o Governo do Estado apresente indicadores positivos em algumas áreas da\nsegurança, persistem problemas estruturais importantes que limitam a capacidade\ndo sistema de enfrentar os novos padrões da criminalidade contemporânea.\nO principal desaﬁo é a crescente complexidade do crime organizado na fronteira. O\nmodelo atual ainda é excessivamente reativo e insuﬁcientemente integrado em\ninteligência, tecnologia e cooperação interestadual e internacional.\nTambém persistem problemas relacionados à insuﬁciência de efetivo em diversas\nregiões, à sobrecarga operacional das forças de segurança, à defasagem\ntecnológica, à precarização de estruturas físicas, à baixa integração entre\ninteligência policial, investigação e policiamento ostensivo e à diﬁculdade de\npresença permanente do Estado em áreas vulneráveis e regiões de fronteira.\nOutro problema importante é a concentração operacional em ações emergenciais\ne repressivas, sem uma política suﬁcientemente robusta de prevenção à violência,\nespecialmente voltada à juventude, às periferias urbanas, à violência doméstica,\nao feminicídio, à violência nas escolas e à reincidência criminal.\nNa Polícia Civil, persistem diﬁculdades ligadas à carência de investigadores e\nescrivães, ao acúmulo de inquéritos, à baixa modernização investigativa, à\n\n24"
+          },
+          {
+            "id": "necessidade-de-fortalecimento-da-pericia-tecnica-e-a-ampliacao-da-polici",
+            "titulo": "necessidade de fortalecimento da perícia técnica e à ampliação da polícia",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "necessidade de fortalecimento da perícia técnica e à ampliação da polícia\ncientíﬁca.\nNa Polícia Militar e Corpo de Bombeiros também há demandas históricas\nrelacionadas à valorização proﬁssional, à saúde mental dos servidores, à\nmodernização tecnológica, ao reaparelhamento e à recomposição de efetivos.\nO sistema prisional continua sendo um dos maiores gargalos da segurança pública\nestadual. Persistem superlotação, fortalecimento de facções criminosas dentro\ndas unidades, baixa ressocialização, déﬁcit de políticas de reinserção social e\ninsuﬁciência de programas educacionais e proﬁssionalizantes.\nOutro desaﬁo crescente é o avanço dos crimes digitais, golpes eletrônicos, lavagem\nde dinheiro e crimes ﬁnanceiros, áreas em que o Estado ainda possui baixa\ncapacidade operacional e tecnológica.\nTambém há fragilidades na política de proteção às mulheres. Apesar de avanços\ninstitucionais, Mato Grosso do Sul continua convivendo com índices preocupantes\nde violência doméstica e feminicídio, exigindo respostas mais integradas,\npreventivas e territorializadas.\n\n5.1 - Propostas\nSegurança pública com estratégia baseada em inteligência, integração,\nprevenção social e presença efetiva nos territórios mais vulneráveis\nProposta de campanha:\n•\n\nFortalecer o combate à violência contra as mulheres com a ampliação\ndas Delegacias da Mulher, atendimento regionalizado 24h, casas de\nacolhimento, monitoramento eletrônico de agressores e integração\nentre segurança, assistência social e justiça.\n25"
+          },
+          {
+            "id": "outras-propostas",
+            "titulo": "Outras propostas:",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Outras propostas:\n•\n\nReforçar a presença do Estado nas regiões de fronteira, com bases\nintegradas permanentes, fortalecimento operacional em Ponta Porã,\nCorumbá, Porto Murtinho e região sul-fronteira, ampliação da infraestrutura\npolicial e fortalecimento do policiamento especializado de fronteira (DOF);\n\n•\n\nValorizar os proﬁssionais da segurança pública com recomposição salarial,\nconcursos públicos, formação continuada, cuidado com a saúde mental,\nvalorização das carreiras, melhoria das condições de trabalho e\nmodernização de equipamentos;\n\n•\n\nCriar o Programa Estadual de Saúde Mental das Forças de Segurança, com\nfoco em apoio psicológico, prevenção ao suicídio e/ou à violência,\nacolhimento institucional, combate ao adoecimento ocupacional e\nassistência permanente aos proﬁssionais;\n\n•\n\nModernizar a Polícia Civil e fortalecer a investigação com ampliação da\nperícia técnica, fortalecimento da polícia cientíﬁca, combate à lavagem de\ndinheiro, delegacias digitais e modernização tecnológica investigativa;\n\n•\n\nImplantar uma Política Estadual de Prevenção à Violência, com foco em:\njuventude, periferias, esporte, cultura, educação integral, inclusão produtiva\ne prevenção às drogas;\n\n•\n\nCriar o Programa Estadual de Segurança nas Escolas, englobando ações\nvoltadas para mediação de conﬂitos, patrulha escolar, apoio psicossocial,\nprevenção ao bullying e violência e integração entre educação e segurança\npública;\n\n•\n\nReestruturar o sistema prisional e modernizar a AGEPEN, com o objetivo de\ncombater o domínio de facções, implementar inteligência penitenciária,\npromover políticas de educação e proﬁssionalização e de ressocialização,\nalém de reinserção produtiva de egressos;\n\n•\n\nImplantar policiamento orientado por dados e territórios, tendo gestão\nbaseada em indicadores, análise territorial da criminalidade, metas\nregionais e prevenção focalizada;\n\n26"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar um Plano Estadual de Segurança Rural, com foco na mediação de\nconﬂitos fundiários; no combate ao furto de defensivos, máquinas e gado;\nno monitoramento rural; no patrulhamento integrado; e na tecnologia no\ncampo;\n\n•\n\nFortalecer a participação comunitária na segurança por meio de conselhos\ncomunitários, integração com municípios (e suas guardas municipais,\nquando existirem), policiamento comunitário e canais digitais de\nparticipação;\n\n•\n\nCriar um Centro Estadual de Combate a Crimes Cibernéticos, com\nenvolvimento da Delegacia Especializada de Repressão aos Crimes\nCibernéticos (DERCC) e do Ministério Público de Mato Grosso do Sul\n(MPMS), para fortalecer a investigação de fraudes digitais, a proteção de\ndados, o combate a golpes eletrônicos e a cooperação tecnológica nacional.\n\n27"
+          },
+          {
+            "id": "6-trabalho-digno-e-geracao-de-renda",
+            "titulo": "6 - TRABALHO DIGNO E GERAÇÃO DE RENDA",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "6 - TRABALHO DIGNO E GERAÇÃO DE RENDA\n6.1 - Diagnóstico\nMato Grosso do Sul apresentou crescimento econômico relevante nos últimos\nanos, impulsionado especialmente pelo agronegócio, pela celulose, pela proteína\nanimal e pela expansão logística. Entretanto, esse crescimento ainda não se\nconverteu de forma proporcional em empregos de qualidade, aumento consistente\nda renda média e redução das desigualdades sociais e regionais.\nO principal problema estrutural é que a economia estadual continua\nexcessivamente concentrada em setores intensivos em capital e pouco intensivos\nem mão de obra qualiﬁcada. Isso limita a geração de empregos formais, reduz o\ndinamismo do mercado interno e amplia a dependência de atividades econômicas\ncom baixa agregação de valor.\nOutro desaﬁo importante é a persistência da desigualdade regional na geração de\noportunidades. Enquanto algumas regiões concentram investimentos e empregos\nmais qualiﬁcados, muitos municípios do interior convivem com: baixa\ndiversiﬁcação econômica, informalidade, êxodo de jovens, diﬁculdade de acesso à\nqualiﬁcação proﬁssional e escassez de oportunidades de renda.\nTambém há fragilidades na política estadual de qualiﬁcação proﬁssional. O Estado\nainda não estruturou uma política integrada e moderna de formação voltada às\nnovas demandas da economia contemporânea, como: indústria 4.0, tecnologia,\nbioeconomia, energias renováveis, logística, inteligência artiﬁcial, automação e\nserviços especializados.\nA juventude é um dos grupos mais afetados. Muitos jovens enfrentam diﬁculdade\nde inserção no mercado de trabalho, ausência de experiência proﬁssional e baixa\nconexão entre formação educacional e demanda econômica.\n\n28"
+          },
+          {
+            "id": "outro-problema-crescente-e-a-precarizacao-das-relacoes-de-trabalho",
+            "titulo": "Outro problema crescente é a precarização das relações de trabalho,",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Outro problema crescente é a precarização das relações de trabalho,\nespecialmente em atividades informais, terceirizadas e plataformas digitais. Mato\nGrosso do Sul ainda carece de políticas estaduais voltadas à proteção, qualiﬁcação\ne inclusão produtiva desses trabalhadores.\nAs mulheres também enfrentam desigualdades persistentes no mercado de\ntrabalho: menor renda média, diﬁculdades de inserção, dupla jornada, baixa\npresença em setores tecnológicos e insuﬁciência de políticas de apoio ao\nempreendedorismo feminino.\nMicro e pequenas empresas, responsáveis por grande parte dos empregos no\nestado, ainda enfrentam: burocracia, diﬁculdade de acesso ao crédito, baixa\ndigitalização, baixa produtividade e reduzido apoio técnico.\nAlém disso, há pouca integração entre política industrial, educação proﬁssional,\ninovação tecnológica, economia regional e geração de emprego e renda.\nO atual modelo econômico do estado gera crescimento, mas ainda distribui pouco\nseus benefícios sociais e territoriais.\n\n6.2 - Propostas\nTransformar crescimento econômico em prosperidade compartilhada,\nempregos de qualidade e oportunidades reais para as pessoas\nProposta de campanha:\n•\n\nCriar o Programa Estadual de Empreendedorismo Popular, com foco em:\nmulheres, juventude, periferias, economia solidária, agricultura familiar\ne pequenos empreendedores urbanos, por meio de microcrédito,\ncapacitação, formalização, apoio técnico e acesso a mercados.\n\n29"
+          },
+          {
+            "id": "outras-propostas-2",
+            "titulo": "Outras propostas:",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Outras propostas:\n•\n\nCriar o Programa Estadual de Emprego e Nova Economia, para integrar\nqualiﬁcação proﬁssional, intermediação de mão de obra, inovação,\nempreendedorismo, inclusão produtiva e desenvolvimento regional;\n\n•\n\nImplantar o Programa Primeiro Emprego MS, com foco em juventude,\nestágio, aprendizagem, qualiﬁcação técnica, incentivo à contratação de\njovens e integração entre escolas, universidades e empresas, com\nprioridade para jovens do interior, periferias, mulheres, população negra,\nindígenas e Pessoas com Deﬁciência (PcD);\n\n•\n\nCriar a Rede Estadual de Qualiﬁcação para a Nova Economia, promovendo\nparcerias com IFMS, UFMS, UEMS, Sistema S e setor produtivo, com foco\nem: tecnologia, indústria 4.0, inteligência artiﬁcial, logística, bioeconomia,\nenergias renováveis, serviços digitais e agroindústria;\n\n•\n\nFortalecer micro e pequenas empresas por meio de simpliﬁcação\nburocrática, crédito facilitado, compras públicas regionais, apoio à\ndigitalização,\n\nincubadoras,\n\nassistência\n\ntécnica\n\ne\n\nincentivo\n\nao\n\ncooperativismo e economia solidária;\n•\n\nImplantar a Política Estadual de Trabalho Digno, com o objetivo de combater\na precarização, valorizar o trabalho formal, proteger os trabalhadores de\naplicativos, combater o trabalho infantil, combater o trabalho análogo à\nescravidão e promover a igualdade salarial;\n\n•\n\nCriar\n\no\n\nPrograma\n\nMulheres\n\nna\n\nEconomia,\n\ncom\n\ncrédito\n\npara\n\nempreendedoras, capacitação, inovação, apoio à formalização, incentivo à\nliderança feminina e formação tecnológica para mulheres;\n•\n\nInteriorizar o desenvolvimento econômico por meio de polos regionais de\nemprego, incentivos para interiorização industrial, apoio às economias\nregionais, fortalecimento das cidades-polo e desenvolvimento de cadeias\nprodutivas locais;\n\n•\n\nIntegrar educação, inovação e mercado de trabalho por meio de ensino\ntécnico articulado ao setor produtivo, residência técnica, laboratórios de\n\n30"
+          },
+          {
+            "id": "inovacao-e-formacao-pro-ssional-conectada-as-demandas-reais-da",
+            "titulo": "inovação e formação proﬁssional conectada às demandas reais da",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "inovação e formação proﬁssional conectada às demandas reais da\neconomia;\n•\n\nCriar o Banco de Oportunidades de Mato Grosso do Sul na FUNTRAB\n(Fundação de Trabalho de Mato Grosso do Sul) para fortalecer uma\nplataforma estadual integrada para vagas de emprego, qualiﬁcação,\nempreendedorismo, crédito, estágio, primeiro emprego e oportunidades\nregionais;\n\n•\n\nImplantar um Plano Estadual de Economia Criativa e Serviços Inovadores\npara apoiar: audiovisual, design, software, comunicação, economia digital,\nprodução cultural e tecnologia criativa;\n\n•\n\nFortalecer políticas de renda e inclusão produtiva, com a inclusão\neconômica de famílias vulneráveis, capacitação proﬁssional, geração de\nrenda comunitária e apoio a cooperativas populares.\n\n31"
+          },
+          {
+            "id": "7-educacao-para-o-futuro",
+            "titulo": "7 - EDUCAÇÃO PARA O FUTURO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "7 - EDUCAÇÃO PARA O FUTURO\n7.1 - Diagnóstico\nMato Grosso do Sul avançou em alguns indicadores educacionais nos últimos\nanos, mas ainda enfrenta problemas estruturais importantes que limitam a\nqualidade da educação pública, ampliam desigualdades regionais e diﬁcultam a\nconstrução de oportunidades para crianças, jovens e professores.\nO principal desaﬁo é a persistência das desigualdades educacionais entre regiões,\nmunicípios e grupos sociais. Enquanto algumas escolas apresentam melhores\nestruturas e desempenho, muitas unidades do interior, periferias urbanas,\ncomunidades indígenas e regiões de fronteira convivem com déﬁcit de\ninfraestrutura, diﬁculdades de acesso, baixa conectividade, carência de\nproﬁssionais e condições inadequadas de aprendizagem.\nOutro problema importante é a ausência de uma política mais integrada entre\neducação, inovação, tecnologia e desenvolvimento econômico. A rede estadual\nainda possui limitações na formação para as novas demandas do século XXI,\nespecialmente em tecnologia, ciência, inovação, economia digital, inteligência\nartiﬁcial, empreendedorismo e ensino técnico proﬁssionalizante.\nE, apesar do Programa Pé-de-Meia do Governo Federal, a falta de iniciativas do\ngoverno estadual faz com que o ensino médio ainda sofre com baixa atratividade\npara parte signiﬁcativa da juventude, especialmente entre estudantes de baixa\nrenda que enfrentam diﬁculdades econômicas e necessidade precoce de inserção\nno mercado de trabalho.\nOutro problema estrutural - muito bem destacado e apontado pelo Setorial de\nEducação do PT-MS - é a insuﬁciente valorização dos proﬁssionais da educação.\nProfessores e trabalhadores da rede estadual convivem com sobrecarga, desgaste\nemocional, necessidade de formação continuada, problemas de infraestrutura\n32"
+          },
+          {
+            "id": "escolar-e-limitacoes-na-politica-de-valorizacao-pro-ssional-em-relacao-a",
+            "titulo": "escolar e limitações na política de valorização proﬁssional. Em relação a esse",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "escolar e limitações na política de valorização proﬁssional. Em relação a esse\núltimo item, os números são preocupantes. Nos últimos anos, a rede estadual\npassou a operar com algo próximo - e em alguns períodos acima - de 50% do quadro\ndocente composto por proﬁssionais convocados/temporários.\nE quando se aborda professores convocados/temporários, o problema não é\nrestrito à falta de estabilidade. O atual grupo político que governa o Estado na\núltima década aprovou lei na Assembleia Legislativa, a qual dissociou os\nrecebimentos salariais com os professores concursados.\nNão adianta informar em propagandas na mídia que possui o melhor salário do\npaís, se este pagamento é restrito ao atual baixo percentual de professores\nconcursados.\nA infraestrutura das escolas ainda apresenta desigualdades importantes: unidades\nsem climatização adequada, problemas de conectividade, déﬁcit de laboratórios,\nprecariedade em quadras e espaços pedagógicos e necessidade de modernização\ntecnológica.\nA educação indígena e do campo também enfrenta desaﬁos históricos\nrelacionados à valorização cultural, à formação especíﬁca de professores, à\ninfraestrutura, à permanência escolar e ao material didático adequado às\nrealidades locais.\nOutro ponto sensível é a baixa integração entre educação básica, ensino técnico,\nuniversidades, inovação e mercado de trabalho.\nO Estado ainda carece de uma estratégia educacional mais moderna, inclusiva e\nconectada ao futuro do desenvolvimento econômico e social de Mato Grosso do\nSul.\n\n33"
+          },
+          {
+            "id": "7-2-propostas",
+            "titulo": "7.2 - Propostas",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "7.2 - Propostas\nConstruir uma educação pública moderna, inclusiva, tecnológica e capaz de\ngerar oportunidades reais para a juventude\nProposta de campanha:\n•\n\nExcluir a diferença salarial entre professores concursados e contratados\n- eliminando a pior desigualdade do poder público de Mato Grosso do Sul\n- além de ampliar gradativamente o percentual de professores\nconcursados na Rede Estadual de Ensino.\n\n•\n\nRealizar o Censo da Educação da Rede Estadual de Ensino (REE-MS) para\napurar a necessidade de construção de novas escolas, bem como\nserviços de reparo, reforma, ampliação e melhoria das estruturas físicas\ne/ou pedagógicas.\n\nOutras propostas:\n•\n\nImplantar uma estratégia integrada para qualidade da aprendizagem,\ninovação, inclusão, permanência escolar e preparação para o mundo da\nciência e do trabalho;\n\n•\n\nUniversalizar escolas conectadas e tecnologicamente equipadas com\ninternet\n\nde\n\nalta\n\nvelocidade,\n\nlaboratórios\n\ndigitais,\n\nequipamentos\n\ntecnológicos, plataformas educacionais e inclusão digital para estudantes e\nprofessores;\n•\n\nFortalecer o ensino técnico e proﬁssionalizante por meio de parcerias com\no IFMS, o Sistema S e o setor produtivo, com foco em tecnologia, logística,\nenergias renováveis, agroindústria, bioeconomia, indústria 4.0 e serviços\ndigitais;\n\n•\n\nCriar o Programa Estadual de Permanência Escolar, integrado ao Programa\nPé-de-Meia do Governo Federal, para combater a evasão, o abandono\nescolar e a exclusão educacional por meio de bolsas, apoio psicossocial,\n34"
+          },
+          {
+            "id": "transporte-alimentacao-acompanhamento-pedagogico-e-busca-ativa-de",
+            "titulo": "transporte, alimentação, acompanhamento pedagógico e busca ativa de",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "transporte, alimentação, acompanhamento pedagógico e busca ativa de\nestudantes;\n•\n\nValorizar os proﬁssionais da educação por meio de formação continuada,\nvalorização salarial, cuidado com a saúde mental, melhoria das condições\nde trabalho (inclusive de segurança no ambiente escolar), modernização da\ncarreira e apoio pedagógico permanente;\n\n•\n\nExpandir a educação em tempo integral com qualidade, priorizando regiões\nvulneráveis, periferias e municípios com maior evasão, tendo como\nferramentas o esporte, a cultura, a ciência e atividades complementares;\n\n•\n\nCriar o Programa Juventude, Ciência e Inovação, com foco em robótica,\nprogramação, inteligência artiﬁcial, feiras cientíﬁcas e iniciação cientíﬁca;\n\n•\n\nFomentar\n\na\n\ninclusão\n\ndos\n\nTemas\n\nContemporâneos\n\nTransversais,\n\nnotadamente aqueles já presentes na Base Nacional Comum Curricular –\nmeio ambiente, economia, saúde, cidadania e civismo, multiculturalismo e\nciência e tecnologia – nas escolas estaduais de Mato Grosso do Sul, bem\ncomo de outros temas relevantes, como igualdade racial, direitos das\nmulheres e direitos indígenas;\n•\n\nFortalecer a educação indígena, do campo e de fronteira com formação\nespecíﬁca de professores, valorização cultural, infraestrutura adequada,\nmaterial didático contextualizado e políticas de permanência escolar - em\nespecial, no caso do campo, com a formalização de parcerias para apoiar e\nincentivar as escolas família agrícola (EFAs);\n\n•\n\nModernizar\n\na\n\ninfraestrutura\n\nescolar\n\npor\n\nmeio\n\nde\n\nclimatização,\n\nacessibilidade, quadras esportivas cobertas, bibliotecas, laboratórios,\nenergia solar nas escolas e manutenção permanente;\n•\n\nIntegrar educação, universidade e desenvolvimento regional por meio da\nampliação e fortalecimento da UEMS, com novos cursos de graduação,\nampliação de vagas, pesquisa aplicada, integração com economia regional\ne retenção de jovens talentos;\n\n•\n\nImplantar uma política estadual de gestão democrática da educação com o\nfortalecimento dos conselhos escolares e das Associações de Pais e\n\n35"
+          },
+          {
+            "id": "mestres-apms-participacao-das-comunidades-transparencia-e-dialogo",
+            "titulo": "Mestres (APMs), participação das comunidades, transparência e diálogo",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Mestres (APMs), participação das comunidades, transparência e diálogo\npermanente com proﬁssionais da educação;\n•\n\nCriar o Programa Primeiro Caminho Universitário, inspirado em ações do\nGoverno Popular de Zeca do PT, para a oferta de cursinhos populares,\npreparação para o ENEM, bolsas permanência, apoio a estudantes de baixa\nrenda e incentivo ao ingresso no ensino superior;\n\n•\n\nIntegrar educação e geração de oportunidades, conectando ensino médio,\nensino técnico, inovação, empreendedorismo, mercado de trabalho e\neconomia do futuro.\n\n36"
+          },
+          {
+            "id": "8-infraestrutura",
+            "titulo": "8 - INFRAESTRUTURA",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "8 - INFRAESTRUTURA\n\nPLANEJADA\n\nE\n\nINDUTORA\n\nDE\n\nDESENVOLVIMENTO\n8.1 - Diagnóstico\nMato Grosso do Sul possui posição estratégica no centro da América do Sul e\ndesempenha papel fundamental na logística nacional, especialmente no\nescoamento da produção agropecuária, ﬂorestal e industrial. Apesar dos avanços\nrecentes em investimentos rodoviários e logísticos, o estado ainda enfrenta\ngargalos estruturais importantes na área de infraestrutura, que limitam o\ndesenvolvimento regional equilibrado, aumentam custos econômicos e reduzem a\ncompetitividade estadual.\nO principal problema é a persistência de uma infraestrutura concentrada e desigual\nentre as regiões do estado. Enquanto alguns corredores econômicos receberam\ninvestimentos mais robustos, muitos municípios ainda convivem com estradas\nprecárias, baixa pavimentação, deﬁciência em drenagem urbana, pontes\ndeterioradas, estradas rurais com baixa trafegabilidade e insuﬁciência de\ninfraestrutura logística integrada.\nNa malha rodoviária estadual, embora o Governo tenha ampliado investimentos,\npersistem problemas históricos relacionados à conservação, à manutenção\npreventiva, à qualidade de pavimentação e à baixa resiliência climática das\nrodovias.\nEm períodos de chuvas intensas, diversos municípios sofrem com interrupções de\nestradas rurais, danos em pontes e problemas de drenagem urbana, evidenciando\nfragilidade do planejamento de infraestrutura diante das mudanças climáticas.\nOutro gargalo importante é a dependência excessiva do modal rodoviário. Mato\nGrosso do Sul ainda aproveita pouco seu potencial ferroviário e hidroviário para\nreduzir custos logísticos e ampliar competitividade econômica.\n37"
+          },
+          {
+            "id": "as-ferrovias-permanecem-subutilizadas-e-com-baixa-integracao-regional-en",
+            "titulo": "As ferrovias permanecem subutilizadas e com baixa integração regional, enquanto",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "As ferrovias permanecem subutilizadas e com baixa integração regional, enquanto\na hidrovia do Rio Paraguai enfrenta limitações operacionais, ambientais e\nestruturais que impedem maior utilização logística.\nTambém há forte desigualdade territorial nos investimentos em infraestrutura\nurbana. Muitos municípios apresentam déﬁcit de pavimentação, drenagem\ninsuﬁciente, erosões urbanas, baixa mobilidade e ausência de planejamento\nurbano integrado.\nOutro problema relevante é a baixa integração entre infraestrutura e\ndesenvolvimento regional. Em muitos casos, obras são executadas sem\narticulação mais ampla com industrialização, logística regional, desenvolvimento\neconômico, inovação e geração de empregos.\nHá ainda desaﬁos relacionados à burocracia, à lentidão de execução, à\nmanutenção inadequada de obras públicas e à baixa transparência no\nacompanhamento físico e ﬁnanceiro dos investimentos.\nAlém disso, a atual política de infraestrutura do Governo do Estado passou a\ndepender fortemente de operações de crédito e ﬁnanciamentos externos. O\ngoverno atual contratou grandes empréstimos junto ao BNDES e ao BIRD para\nﬁnanciar programas rodoviários e logísticos bilionários. Somente o ﬁnanciamento\njunto ao BNDES alcançou aproximadamente R$ 2,3 bilhões para pavimentação e\nrecuperação de cerca de 800 km de rodovias estaduais.\nEmbora os investimentos sejam relevantes, cresce o debate sobre aumento do\nendividamento estadual, dependência excessiva de crédito, sustentabilidade ﬁscal\nfutura e capacidade do Estado de ﬁnanciar infraestrutura com maior uso de\nrecursos próprios e planejamento de longo prazo.\n\n38"
+          },
+          {
+            "id": "a-critica-central-e-que-o-estado-ampliou-signi-cativamente-investimentos",
+            "titulo": "A crítica central é que o Estado ampliou signiﬁcativamente investimentos via",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "A crítica central é que o Estado ampliou signiﬁcativamente investimentos via\nendividamento, sem consolidar ainda uma política estrutural permanente de\nmanutenção, planejamento regionalizado e modernização logística integrada.\n\n8.2 - Propostas\nConstruir infraestrutura moderna, sustentável, regionalmente equilibrada e\nﬁnanceiramente responsável\nProposta de campanha:\n•\n\nCriar o Sistema Estadual de Monitoramento de Obras Públicas, com\ndados abertos, acompanhamento cidadão, georreferenciamento,\ntransparência física e ﬁnanceira e controle social dos investimentos.\n\nOutras propostas:\n•\n\nCriar o Plano Estadual Integrado de Infraestrutura e Logística, integrado aos\nprojetos do Novo PAC do Governo Federal e com planejamento estratégico\nde longo prazo articulando: rodovias, ferrovias, hidrovias, aeroportos,\ninfraestrutura\n\nurbana,\n\ndesenvolvimento\n\nregional,\n\nsustentabilidade\n\nambiental;\n•\n\nCriar o Plano Estadual de Pavimentação Rodoviário, com a duplicação das\nprincipais rodovias estaduais de Mato Grosso do Sul, essenciais para o\nescoamento da produção, o impulsionamento do turismo e a segurança dos\nusuários;\n\n•\n\nPromover parcerias com o Governo Federal para a duplicação e/ou\nconstrução das denominadas “terceira faixa” nas rodovias federais que\natravessam o Estado, notadamente pontos mais sensíveis, como a BR-060\n(Rota Bioceânica); BR-262 (Campo Grande – Três Lagoas e Campo Grande –\nCorumbá);\n\n39"
+          },
+          {
+            "id": "pagina-40",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAcompanhar ativamente a concessão e os serviços prestados pela empresa\nvencedora do processo licitatório para modernização da BR-163,\nnotadamente em razão da ampla cobrança de pedágio, com valores\ndemasiadamente caros;\n\n•\n\nImplantar o Programa Rodovias para o Futuro, com foco em manutenção\npreventiva permanente, recuperação estrutural, pavimentação regional,\nsegurança viária, sinalização inteligente e infraestrutura resiliente às\nmudanças climáticas;\n\n•\n\nPriorizar infraestrutura para redução das desigualdades regionais, com\ncritérios de investimento considerando: regiões historicamente menos\natendidas, municípios pequenos, fronteira, estradas rurais e integração\nregional;\n\n•\n\nCriar o Programa Estadual de Estradas Rurais e Pontes, com o objetivo de\nfocar na recuperação permanente, na pavimentação estratégica, na\nsubstituição de pontes precárias, no apoio à agricultura familiar, na melhoria\ndo transporte escolar e na integração da produção regional;\n\n•\n\nFortalecer a infraestrutura ferroviária por meio de articulação séria e efetiva\ncom o Governo Federal, integração logística, ampliação de terminais\nintermodais, atuação política intensa e efetiva em favor da recuperação da\nMalha Oeste e conexão produtiva regional;\n\n•\n\nModernizar e ampliar o uso das hidrovias por meio de articulação com o\nGoverno Federal para fortalecimento da hidrovia do Rio Paraguai,\ninfraestrutura portuária, logística sustentável e integração regional sulamericana;\n\n•\n\nCriar o Programa Cidades Resilientes MS, em sintonia e parceria com o Novo\nPAC do Governo Federal (eixo \"Cidades Sustentáveis e Resilientes\"), com o\nobjetivo de viabilizar novas obras para drenagem urbana, combate a\nerosões, prevenção de enchentes, infraestrutura climática e mobilidade\nurbana sustentável;\n\n•\n\nImplantar política permanente de manutenção da infraestrutura para\nsuperar o modelo baseado apenas em grandes obras emergenciais,\n\n40"
+          },
+          {
+            "id": "priorizando-manutencao-preventiva-gestao-de-ativos-monitoramento",
+            "titulo": "priorizando: manutenção preventiva, gestão de ativos, monitoramento",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "priorizando: manutenção preventiva, gestão de ativos, monitoramento\ntecnológico e eﬁciência operacional;\n•\n\nModernizar a gestão das obras públicas, por meio de transparência em\ntempo real, controle digital de execução, ﬁscalização tecnológica, redução\nde atrasos e combate ao desperdício;\n\n•\n\nReduzir dependência excessiva de endividamento, por meio da construção\nde uma política equilibrada de ﬁnanciamento para maior utilização de\nrecursos próprios, planejamento plurianual, fundos de infraestrutura,\ncaptação sustentável e parcerias estratégicas com controle público;\n\n•\n\nIntegrar infraestrutura e desenvolvimento econômico, priorizando obras\nligadas à agroindustrialização, à bioeconomia, à logística de exportação, à\nindustrialização regional e à economia verde;\n\n•\n\nFortalecer a infraestrutura de fronteira, em parceria com o Governo Federal,\npara atender demandas de logística, integração econômica, segurança\nviária, desenvolvimento regional e corredores internacionais.\n\n41"
+          },
+          {
+            "id": "9-cultura-esporte-e-lazer-valorizados-e-com-amplo",
+            "titulo": "9 - CULTURA, ESPORTE E LAZER VALORIZADOS E COM AMPLO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "9 - CULTURA, ESPORTE E LAZER VALORIZADOS E COM AMPLO\nACESSO POPULAR\n9.1 - Diagnóstico\nMato Grosso do Sul possui enorme diversidade cultural, forte identidade regional e\ngrande potencial esportivo e comunitário. A cultura sul-mato-grossense é marcada\npela presença indígena, pantaneira, fronteiriça, paraguaia, boliviana, sertaneja,\npreta e urbana, formando uma das identidades culturais mais ricas do país. Apesar\ndisso, as políticas públicas estaduais para cultura, esporte e lazer ainda\npermanecem fragmentadas, insuﬁcientemente estruturadas e com baixa\ncapacidade de democratização territorial.\nComo bem aponta o Setorial da Cultura do PT-MS, Mato Grosso do Sul sofre com\na ausência histórica de planejamento estadual para a cultura. Um dos principais\nproblemas é a descontinuidade das políticas públicas e a fragilidade do\nﬁnanciamento cultural. Muitos artistas, produtores culturais, coletivos e espaços\nindependentes enfrentam: diﬁculdade de acesso a editais, baixa previsibilidade de\nﬁnanciamento, concentração de recursos, burocracia excessiva e ausência de\npolíticas permanentes de formação e circulação cultural.\nPersistem também fortes desigualdades regionais no acesso à cultura. Grande\nparte das atividades e investimentos permanece concentrada em Campo Grande,\nenquanto municípios do interior, periferias urbanas, comunidades indígenas e\nregiões de fronteira enfrentam baixa oferta cultural e escassa infraestrutura\npública.\nOutro desaﬁo é a baixa integração entre cultura, educação, economia criativa e\ndesenvolvimento regional. O Estado ainda aproveita pouco o potencial econômico\nda cultura como vetor de geração de renda, inovação e fortalecimento das\nidentidades locais.\n\n42"
+          },
+          {
+            "id": "ainda-na-area-cultural-praticamente-todas-as-iniciativas-de-politicas-pu",
+            "titulo": "Ainda na área cultural, praticamente todas as iniciativas de políticas públicas em",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Ainda na área cultural, praticamente todas as iniciativas de políticas públicas em\nvigor são herança do Governo Popular de Zeca do PT (1999-2006) - mais\nnotadamente o Fundo de Investimentos Culturais (FIC). Isso vale também para os\ngrandes eventos culturais do estado, como o Festival de Inverno de Bonito e o\nFestival América do Sul em Corumbá - iniciativas que fazem girar as cadeias\nprodutivas da cultura e do turismo. Ou seja, nada de novo surgiu ou foi\nimplementado desde então.\nNa área do esporte, Mato Grosso do Sul ainda carece de uma política estadual mais\nestruturada e contínua. Persistem problemas relacionados à precariedade de\nequipamentos esportivos, à falta de manutenção de espaços públicos, à ausência\nde políticas permanentes para esporte comunitário, à baixa integração entre\nesporte e educação e à insuﬁciência de apoio ao esporte de base e ao alto\nrendimento.\nMuitos municípios possuem ginásios deteriorados, ausência de quadras\nadequadas, deﬁciência de iluminação esportiva e poucos espaços públicos de\nlazer acessíveis à população.\nTambém há baixa valorização dos atletas, paratletas, treinadores e projetos sociais\nesportivos, especialmente no interior.\nNa área do lazer, o principal problema é a desigualdade de acesso aos espaços\npúblicos de convivência, esporte e cultura. Muitas cidades apresentam carência de\nparques urbanos, ausência de áreas de lazer, baixa oferta de atividades culturais e\nesportivas gratuitas e insuﬁciência de políticas voltadas à juventude, idosos e\nfamílias.\nOutro ponto importante é a fragilidade da articulação entre Estado, municípios e\nGoverno Federal para aproveitamento mais amplo de programas nacionais de\ncultura, esporte e inclusão social.\n\n43"
+          },
+          {
+            "id": "apesar-da-retomada-das-politicas-culturais-e-esportivas-no-governo-feder",
+            "titulo": "Apesar da retomada das políticas culturais e esportivas no Governo Federal do",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Apesar da retomada das políticas culturais e esportivas no Governo Federal do\npresidente Luiz Inácio Lula da Silva, Mato Grosso do Sul ainda pode avançar muito\nna captação de recursos, integração institucional e fortalecimento de políticas\npúblicas estruturantes nessas áreas.\n\n9.2 - Propostas\nCultura, esporte e lazer como instrumentos permanentes de cidadania,\ninclusão social, identidade regional e desenvolvimento humano\nProposta de campanha:\n•\n\nFortalecer o Fundo de Investimentos Culturais (FIC), com ampliação dos\nrecursos de forma gradativa - com a meta de chegar a 1% do orçamento\nestadual - para cultura, editais permanentes, regionalização dos\nrecursos, simpliﬁcação burocrática, transparência, apoio a pequenos\nprodutores culturais e incentivo à economia criativa.\n\nOutras propostas:\n•\n\nElaborar um novo Plano de Estadual de Cultura, que contenha, entre outras\niniciativas, a criação do Programa MS Cultura Viva, articulado com a Política\nNacional Aldir Blanc, a Lei Paulo Gustavo, o Ministério da Cultura, Pontos de\nCultura e o Sistema Nacional de Cultura, com o objetivo de viabilizar\nﬁnanciamento permanente, descentralização cultural, fortalecimento da\ncultura comunitária e democratização do acesso;\n\n•\n\nFortalecer o Conselho Estadual de Cultura e implantar uma política estadual\nde descentralização cultural, com prioridade para o interior, periferias,\ncomunidades indígenas, quilombolas, regiões de fronteira e cultura popular\ne tradicional;\n\n•\n\nCriar e organizar a Rede Estadual de Centros Culturais e Comunitários, com\nespaços para formação artística, bibliotecas, música, audiovisual, dança,\nteatro, cultura digital e atividades comunitárias;\n44"
+          },
+          {
+            "id": "pagina-45",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nIntegrar cultura e educação por meio de arte nas escolas; formação cultural;\nbandas, fanfarras e orquestras escolares; valorização da cultura regional;\nincentivo à leitura; bibliotecas; e cultura digital;\n\n•\n\nPromover um inventário da cultura quilombola no estado e promover ações\npara sua valorização;\n\n•\n\nCriar o Programa Estadual de Economia Criativa, com apoio a atividades e\nproduções de audiovisual, design, música, artesanato, games, produção\ndigital, cultura urbana e empreendedorismo cultural;\n\n•\n\nAmpliar os Centros de Cultura Indígena e fortalecer políticas para povos\nindígenas e culturas tradicionais, com a ﬁnalidade de preservação cultural,\napoio a artistas indígenas, produção cultural comunitária e valorização das\nlínguas e identidades tradicionais;\n\n•\n\nImplantar o Programa Esporte para Todos, articulado com o Ministério do\nEsporte, com objetivo de democratizar acesso ao esporte, ampliar\natividades comunitárias, fortalecer inclusão social e combater violência e\nevasão escolar;\n\n•\n\nRecuperar e modernizar equipamentos esportivos: ginásios, quadras,\ncampos, centros esportivos, iluminação, acessibilidade e manutenção\npermanente;\n\n•\n\nCriar o Programa Estadual de Esporte Escolar e Universitário, com jogos\nestudantis, bolsas-atleta, incentivo ao esporte feminino, integração entre\neducação e esporte e formação esportiva de base;\n\n•\n\nFortalecer o paradesporto, em parceria com o Governo Federal, para apoio\na paratletas, infraestrutura acessível, inclusão esportiva e centros regionais\nde treinamento;\n\n•\n\nRecriar as Temporadas Populares, como política permanente com foco em\njuventude, cultura e lazer, com atividades culturais gratuitas, esportes\ncomunitários, ocupação positiva de espaços públicos, lazer nas periferias e\nprevenção à violência;\n\n•\n\nImplantar uma política estadual de lazer e convivência urbana, com foco no\ncuidado, preservação e uso popular de parques, praças, ciclovias, áreas de\n\n45"
+          },
+          {
+            "id": "convivencia-equipamentos-publicos-acessiveis-e-espacos-de-lazer-para",
+            "titulo": "convivência, equipamentos públicos acessíveis e espaços de lazer para",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "convivência, equipamentos públicos acessíveis e espaços de lazer para\nfamílias e idosos;\n•\n\nCriar um calendário estadual integrado de cultura e esporte, junto com os\nmunicípios, para valorização regional, circulação cultural, fortalecimento\ndas economias locais e integração entre municípios;\n\n•\n\nFortalecer a cooperação com o Governo Federal para ampliar a captação de\nrecursos e a integração com o Ministério da Cultura, o Ministério do Esporte,\no Novo PAC da Cultura, a Lei Aldir Blanc, os programas federais de inclusão\nesportiva e equipamentos culturais e esportivos.\n\n46"
+          },
+          {
+            "id": "10-estado-cuidador-e-inovador-na-assistencia",
+            "titulo": "10 - ESTADO CUIDADOR E INOVADOR NA ASSISTÊNCIA",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "10 - ESTADO CUIDADOR E INOVADOR NA ASSISTÊNCIA\nSOCIAL E NOS DIREITOS HUMANOS\n10.1 - Diagnóstico\nMato Grosso do Sul enfrenta profundas desigualdades sociais, territoriais e étnicas\nque exigem uma política estadual mais robusta, integrada e humanizada de\nassistência social e promoção dos direitos humanos. Apesar de avanços pontuais,\npersistem fragilidades estruturais que limitam a capacidade do Estado de proteger\npopulações vulneráveis e enfrentar diferentes formas de violência, discriminação e\nexclusão social.\nNa assistência social, um dos principais problemas é a insuﬁciência da rede de\nproteção social diante do aumento da pobreza, da insegurança alimentar e das\nnovas vulnerabilidades sociais agravadas nos últimos anos. Muitos municípios\nenfrentam sobrecarga dos CRAS e CREAS, baixa capacidade técnica, insuﬁciência\nde equipes multiproﬁssionais e diﬁculdades de ﬁnanciamento continuado.\nPersistem desigualdades regionais importantes no acesso às políticas sociais,\nespecialmente em municípios pequenos, periferias urbanas, comunidades\nindígenas, regiões de fronteira, assentamentos e áreas rurais.\nOutro problema relevante é a fragmentação das políticas públicas. Assistência\nsocial, saúde, educação, habitação, segurança alimentar, geração de renda e\ndireitos humanos ainda funcionam de forma pouco integrada, reduzindo a\nefetividade do atendimento às famílias em situação de vulnerabilidade.\nO Estado também apresenta desaﬁos graves na área dos direitos humanos. Mato\nGrosso do Sul possui um dos contextos fundiários e indígenas mais conﬂituosos do\npaís, especialmente envolvendo os povos Guarani-Kaiowá e outras comunidades\nindígenas.\n\n47"
+          },
+          {
+            "id": "persistem-episodios-recorrentes-de-violencia-contra-indigenas-con-itos-f",
+            "titulo": "Persistem episódios recorrentes de violência contra indígenas, conﬂitos fundiários,",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Persistem episódios recorrentes de violência contra indígenas, conﬂitos fundiários,\nameaças, ataques armados, despejos traumáticos e denúncias de abusos e\nviolência envolvendo grupos privados de segurança e ações policiais em algumas\noperações de reintegração de posse.\nEsses conﬂitos revelam ausência de políticas permanentes de mediação\ninstitucional, diálogo territorial e promoção dos direitos humanos.\nOutro problema grave - devidamente pontuado pelo Setorial de Combate ao\nRacismo do PT-MS - é a persistência do racismo estrutural e das desigualdades\nraciais. A população negra continua mais exposta à pobreza, à violência, ao\ndesemprego, à exclusão educacional e à baixa representação institucional.\nAs mulheres também seguem enfrentando índices alarmantes de violência\ndoméstica, feminicídio, desigualdade salarial e vulnerabilidade econômica. Mato\nGrosso do Sul possui histórico preocupante de violência contra mulheres, exigindo\npolíticas mais territorializadas, preventivas e integradas.\nMato Grosso do Sul ocupa a 4ª posição no ranking nacional de feminicídios,\nconforme dados do Anuário Brasileiro de Segurança Pública, divulgado em 23 de\njulho de 2026. O levantamento considera os registros de 2025 e mostra que o\nEstado teve aumento de 10,5% nos casos em comparação com o ano anterior.\nAs iniciativas da atual gestão atual não passam de perfumaria, se resumindo a\ncorridas de rua temáticas, camisetas e bandeiras, sem uma ação efetiva e\nintegrada entre as pastas que têm relação com a causa da mulher (Segurança\nPública, Saúde, Educação e Cidadania, por exemplo). A respeito disso, é bom que\nﬁque claro: o plano de gestão do atual governador Eduardo Riedel (PP), candidato\nà reeleição, silencia sobre feminicídio. Algo a se questionar, tendo em vista que, em\n2022, o plano do então candidato Riedel foi explícito: intensiﬁcar o combate ao\nfeminicídio, às práticas de assédio, ao racismo e a todas as formas de violência.\n\n48"
+          },
+          {
+            "id": "por-outro-lado-a-questao-do-feminicidio-estara-na-pauta-da-gestao-de-fab",
+            "titulo": "Por outro lado, a questão do feminicídio estará na pauta da gestão de Fábio Trad,",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "Por outro lado, a questão do feminicídio estará na pauta da gestão de Fábio Trad,\nque trata do tema com autoridade, já que foi um dos coautores - como deputado\nfederal - da mudança legislativa do Código Penal que tornou o feminicídio crime\nautônomo (Lei 13104/2015), com o endurecimento das penas e maior proteção às\nmulheres - não só de Mato Grosso do Sul, mas de todo o Brasil.\nA população LGBTQIAP+ ainda enfrenta discriminação, violência, exclusão social,\ndiﬁculdade de acesso ao mercado de trabalho, invisibilidade institucional e\ninsuﬁciência de políticas públicas especíﬁcas.\nA juventude também enfrenta desaﬁos enormes em Mato Grosso do Sul, como\npontua o Setorial da Juventude do PT-MS. A conﬁguração territorial do estado é\nmarcada por forte desigualdade na distribuição de serviços, infraestrutura e\noportunidades, fazendo com que Campo Grande, enquanto capital, concentre a\nmaior parte dos investimentos públicos e privados. Essa centralização torna a\nCapital o principal destino da juventude do interior, que busca maior acesso à\neducação e melhores condições de inserção no mercado de trabalho. Contudo,\nesse deslocamento não garante, necessariamente, melhoria nas condições de\nvida, uma vez que muitos jovens passam a enfrentar diﬁculdades relacionadas ao\ncusto de vida elevado, à precarização do trabalho e à adaptação social.\nOutro desaﬁo crescente é o aumento da população em situação de rua, sem que\nexista ainda uma política estadual suﬁcientemente integrada de acolhimento,\nsaúde mental, moradia e reinserção social.\nTambém persistem fragilidades na política de segurança alimentar, na proteção à\ninfância, no atendimento à população idosa, na inclusão de pessoas com\ndeﬁciência e na garantia de direitos para juventudes vulneráveis.\nAlém disso, houve enfraquecimento de espaços de participação social e conselhos\nde direitos, reduzindo o diálogo permanente entre governo e sociedade civil.\n\n49"
+          },
+          {
+            "id": "10-2-propostas",
+            "titulo": "10.2 - Propostas",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "10.2 - Propostas\nEstado que proteja a dignidade humana, enfrente desigualdades e garanta\ndireitos para todas as pessoas, sem discriminação e sem violência\nProposta de campanha:\n•\n\nFortalecer políticas para a juventude por meio de esporte, cultura,\nqualiﬁcação proﬁssional, prevenção à violência, inclusão digital e\noportunidades econômicas;\n\n•\n\nFortalecer políticas de prevenção e enfrentamento à violência contra a\nmulher e ao feminicídio, com foco na integração de ações entre as\nsecretarias de Segurança Pública, Saúde, Educação e Cidadania.\n\nOutras propostas:\n•\n\nCriar o Programa Estadual de Combate à Pobreza e à Fome, em parceria com\no Governo Federal e programas do presidente Luiz Inácio Lula da Silva,\npromovendo a integração com Bolsa Família, SUAS, Cozinha Solidária,\nsegurança alimentar, inclusão produtiva e agricultura familiar;\n\n•\n\nFortalecer a rede de assistência social com ampliação de CRAS e CREAS,\nequipes multiproﬁssionais, regionalização do atendimento, apoio técnico\naos municípios e fortalecimento do SUAS;\n\n•\n\nImplantar o Programa Estado que Cuida das Pessoas, resgatando os\nRestaurantes Populares da época do Governo Popular de Zeca do PT e\nimplantando lavanderias comunitárias, centros-dia para idosos e política\nestadual de cuidados e de apoio às famílias vulneráveis;\n\n•\n\nCriar a Política Estadual de Direitos Humanos e Mediação de Conﬂitos,\nintegrando as pastas de Governo, Casa Civil, Assistência Social e Segurança\nPública - além do TJMS, MPMS, MPF, DPU e DPGE-MS - para prevenção da\nviolência, mediação territorial, proteção de comunidades vulneráveis,\ncultura de paz e diálogo institucional permanente;\n50"
+          },
+          {
+            "id": "pagina-51",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer políticas para povos indígenas por meio de ações e projetos de\nproteção dos direitos humanos, mediação de conﬂitos fundiários, acesso à\nsaúde e educação, segurança alimentar, apoio à produção indígena,\nvalorização cultural e combate à violência contra comunidades indígenas;\n\n•\n\nCriar um protocolo estadual de prevenção à violência institucional, com\nfoco em formação em direitos humanos, protocolos de atuação policial,\nprevenção de abusos, monitoramento independente e transparência em\noperações sensíveis;\n\n•\n\nImplantar uma política estadual de promoção da igualdade racial para\nfortalecer o combate ao racismo estrutural e institucional, a inclusão\nprodutiva (inclusive com apoio ao empreendedorismo negro), as políticas\neducacionais e a valorização da cultura afro-brasileira;\n\n•\n\nFortalecer políticas para mulheres, com foco no combate ao feminicídio,\nautonomia econômica, acolhimento, Casas da Mulher Brasileira (parceria\ncom o Governo Federal), apoio psicossocial, geração de renda e combate ao\nmachismo e misoginia;\n\n•\n\nCriar a Política Estadual de Direitos LGBTQIAP+, voltada para ações e\nprojetos de combate à discriminação, acolhimento institucional, inclusão\nprodutiva, qualiﬁcação proﬁssional, combate à violência, promoção da\ncidadania e acesso à saúde integral;\n\n•\n\nIntegrar as pautas da juventude ao planejamento de ações e políticas\npúblicas em todas as áreas - especialmente educação, cultura, esporte e\nlazer e desenvolvimento sustentável - para superar os desaﬁos da parcela\njovem da população. É fundamental investir na qualiﬁcação das escolas de\ntempo integral, na valorização dos cursos ofertados pela rede estadual e no\nfortalecimento dos campi da UEMS no interior. Além disso, promover a\ninclusão produtiva da juventude e ampliar o acesso à tecnologia são\nmedidas essenciais para reduzir desigualdades e garantir oportunidades. O\nreconhecimento da juventude como protagonista do desenvolvimento\nconstitui elemento central para a construção de um estado mais justo,\ninclusivo e sustentável;\n\n51"
+          },
+          {
+            "id": "pagina-52",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar um programa estadual para população em situação de rua, com\nacolhimento humanizado, cuidado com a saúde mental, moradia assistida,\nreinserção social, qualiﬁcação proﬁssional e políticas intersetoriais;\n\n•\n\nRecriar o Programa Estadual de Segurança Alimentar por meio de cozinhas\nsolidárias, bancos de alimentos, apoio à agricultura familiar, combate à\nfome e incentivo à alimentação saudável;\n\n•\n\nResgatar a importância e fortalecer os conselhos de direitos e participação\nsocial, por meio da retomada de conferências, participação da sociedade\ncivil, diálogo permanente, transparência e fortalecimento institucional;\n\n•\n\nImplantar política estadual de inclusão da pessoa com deﬁciência, focando\nem ações e projetos de acessibilidade, inclusão produtiva, educação\ninclusiva, atendimento especializado e autonomia e cidadania;\n\n•\n\nCriar o Observatório Estadual de Direitos Humanos com o objetivo de\npromover o monitoramento da violência, dados públicos, transparência,\nprevenção e produção de indicadores sociais;\n\n•\n\nIntegrar assistência social, educação, saúde e geração de renda para\nsuperar políticas fragmentadas e construir proteção integral, inclusão\nprodutiva, autonomia das famílias e desenvolvimento humano.\n\n52"
+          },
+          {
+            "id": "11-desenvolvimento-agrario-com-agricultura",
+            "titulo": "11 - DESENVOLVIMENTO AGRÁRIO COM AGRICULTURA",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "11 - DESENVOLVIMENTO AGRÁRIO COM AGRICULTURA\nFAMILIAR FORTE E REPLETA DE OPORTUNIDADES\n11.1 - Diagnóstico\nMato Grosso do Sul possui uma das economias agropecuárias mais fortes do país,\nporém o desenvolvimento rural do estado permanece profundamente desigual.\nEnquanto o agronegócio empresarial expandiu produtividade, exportações e\ncapacidade tecnológica, a agricultura familiar, os assentamentos rurais e as\npequenas comunidades produtivas ainda enfrentam diﬁculdades estruturais\nhistóricas relacionadas ao acesso à terra, crédito, assistência técnica,\ninfraestrutura e comercialização.\nDados do Instituto Nacional de Colonização e Reforma Agrária (Incra) apontam que\natualmente existem 204 assentamentos da reforma agrária em Mato Grosso do Sul.\nJuntos, esses projetos ocupam uma área de aproximadamente 716 mil hectares e\nabrigam mais de 27 mil famílias de trabalhadores e trabalhadoras rurais. Porém, o\nprincipal problema deste setor é a ausência de uma política estadual robusta e\nintegrada de fortalecimento da agricultura familiar e do desenvolvimento agrário.\nGrande parte das políticas públicas estaduais continua concentrada nos grandes\nsetores exportadores, enquanto pequenos produtores, assentados da reforma\nagrária, comunidades indígenas e agricultores familiares enfrentam limitações para\nproduzir, verticalizar a produção, agregar valor e acessar mercados. Trata-se de um\nequívoco que precisa ser corrigido, como bem apontou o Setorial Agrário do PTMS, aﬁnal, a agricultura familiar é estratégica para produção de alimentos, geração\nde renda e desenvolvimento regional.\nMato Grosso do Sul possui uma das maiores populações assentadas do país,\nresultado da histórica luta pela reforma agrária e da atuação do INCRA. Entretanto,\nmuitos assentamentos ainda convivem com precariedade de infraestrutura, falta\nde estradas adequadas, deﬁciência de assistência técnica, diﬁculdade de acesso\n53"
+          },
+          {
+            "id": "a-agua-baixa-capacidade-de-armazenagem-pouca-mecanizacao-e-di-culdades-d",
+            "titulo": "à água, baixa capacidade de armazenagem, pouca mecanização e diﬁculdades de",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "à água, baixa capacidade de armazenagem, pouca mecanização e diﬁculdades de\ncomercialização.\nOutro problema importante é a fragilidade da assistência técnica e extensão rural.\nAo longo dos últimos anos, o serviço público de ATER passou por um grande\ndesmonte, perdendo investimentos e sem reposição adequada do seu quadro de\nservidores e técnicos. Por conta disso, apesar dos esforços dos servidores de ATER\nde MS, muitos pequenos produtores não recebem acompanhamento técnico\ncontínuo voltado à diversiﬁcação produtiva, agroindustrialização, agroecologia,\ncomercialização, irrigação, inovação tecnológica e sustentabilidade ambiental.\nPersistem também diﬁculdades de acesso ao crédito rural, especialmente para\npequenos produtores, mulheres rurais, juventude do campo, indígenas e\nassentados.\nOutro desaﬁo estrutural é o baixo nível de agregação de valor à produção da\nagricultura familiar. Grande parte da produção continua sendo comercializada sem\nprocessamento local, reduzindo renda e capacidade de geração de empregos nas\ncomunidades rurais.\nHá ainda forte desigualdade regional e fundiária no campo sul-mato-grossense. Em\ndiversas regiões persistem conﬂitos fundiários, insegurança territorial e tensão\nsocial envolvendo assentamentos, comunidades indígenas, trabalhadores rurais e\ndisputa por terras.\nO Estado também carece de uma política mais forte de apoio à sucessão rural e\npermanência da juventude no campo. Muitos jovens deixam comunidades rurais\npor falta de oportunidades econômicas, acesso à educação, conectividade, crédito\ne perspectivas de renda. Nesse sentido, cabe destacar a falta de envolvimento do\nGoverno do Estado com as Escolas Família Agrícola (EFAs), que cumprem um papel\nfundamental para a formação dos ﬁlhos dos pequenos agricultores, bem como\npara a permanência desses jovens no campo.\n54"
+          },
+          {
+            "id": "outro-problema-e-a-baixa-integracao-entre-as-politicas-estaduais-e-os-pr",
+            "titulo": "Outro problema é a baixa integração entre as políticas estaduais e os programas",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "Outro problema é a baixa integração entre as políticas estaduais e os programas\nfederais retomados pelo Governo do presidente Luiz Inácio Lula da Silva,\nespecialmente Ministério do Desenvolvimento Agrário (MDA), INCRA, PRONAF,\nPAA, PNAE, assistência técnica e programas de agroindustrialização e inclusão\nprodutiva.\nAlém disso, Mato Grosso do Sul ainda aproveita pouco o enorme potencial da\nagricultura\n\nfamiliar\n\ndesenvolvimento\n\npara\n\nsegurança\n\nregional,\n\nalimentar,\n\ngeração\n\nde\n\nempregos,\n\nagroindustrialização,\n\nprodução\n\nsustentável\n\ne\n\nfortalecimento das economias locais.\n\n11.2 - Propostas\nDesenvolvimento rural mais equilibrado e sustentável, capaz de fortalecer a\nagricultura familiar, reduzir desigualdades no campo e gerar oportunidades\npara famílias rurais\nProposta de campanha:\n•\n\nApoiar a política nacional de reforma agrária, com o Estado atuando em\nparceria com o Governo Federal para identiﬁcar áreas prioritárias,\napoiar infraestrutura de novos assentamentos, garantir serviços\npúblicos, mediar conﬂitos fundiários e promover desenvolvimento\nsustentável no campo.\n\nOutras propostas:\n•\n\nCriar o Programa Estadual de Desenvolvimento da Agricultura Familiar, em\nparceria com MDA, INCRA, CONAB, Banco do Brasil, cooperativas,\nuniversidades e movimentos sociais, com o objetivo de promover inclusão\nprodutiva, geração de renda, fortalecimento da produção familiar e\ndesenvolvimento regional;\n55"
+          },
+          {
+            "id": "pagina-56",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer os assentamentos da reforma agrária por meio de infraestrutura\nrural, habitação, eletriﬁcação de qualidade, abastecimento de água,\ninternet rural, mecanização, assistência técnica permanente e apoio à\ncomercialização;\n\n•\n\nReestruturar a assistência técnica e extensão rural (ATER) com concurso\npúblico para fortalecer as equipes regionalizadas, o atendimento contínuo,\na agroecologia, a irrigação, a agroindustrialização, a gestão produtiva, a\ninovação tecnológica e a produção sustentável;\n\n•\n\nTomar para si e fortalecer o \"Programa de Agroindustrialização da Agricultura\nFamiliar de Mato Grosso do Sul\", iniciativa do deputado estadual e exgovernador Zeca do PT, dos deputados federais Vander Loubet (précandidato a senador) e Camila Jara e da senadora Soraya Thronicke, cujo\nobjetivo é apoiar e ﬁnanciar pequenas agroindústrias, cooperativas,\nprodução artesanal, processamento de alimentos, agregação de valor,\ncertiﬁcação sanitária e comercialização regional;\n\n•\n\nAmpliar compras públicas da agricultura familiar, promovendo a integração\nde políticas estaduais com o PNAE, o PAA, hospitais, restaurantes populares\ne a rede estadual de ensino, com prioridade para assentamentos da reforma\nagrária, comunidades indígenas, cooperativas e produção regional;\n\n•\n\nCriar uma política estadual de crédito e microﬁnanças rurais, por meio do\nresgate do Banco do Povo e em parceria com o Governo Federal, para apoio\nao PRONAF, crédito para mulheres rurais, juventude rural, pequenos\nprodutores e agroindústrias familiares;\n\n•\n\nImplantar um programa estadual de irrigação e segurança hídrica rural, com\nfoco em pequenas barragens, cisternas, irrigação sustentável, proteção de\nnascentes e abastecimento comunitário por meio de poços artesianos\ncoletivos movidos a energia fotovoltaica;\n\n•\n\nFortalecer cooperativas e economia solidária rural na questão da gestão,\ncomercialização, agroindustrialização, logística, acesso a mercados e\ninclusão produtiva;\n\n•\n\nCriar o Programa Juventude Rural e Sucessão no Campo, em parceria com\nas Escolas Família Agrícola (EFAs), com foco na questão do crédito, da\n56"
+          },
+          {
+            "id": "conectividade-da-formacao-tecnica-da-inovacao-do-empreendedorismo",
+            "titulo": "conectividade, da formação técnica, da inovação, do empreendedorismo",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "conectividade, da formação técnica, da inovação, do empreendedorismo\nrural, da inclusão digital e da permanência da juventude no campo;\n•\n\nImplantar uma política estadual de agroecologia e produção sustentável,\nvoltada para transição agroecológica, bioinsumos, produção orgânica,\nrecuperação ambiental e sustentabilidade produtiva;\n\n•\n\nFortalecer políticas para mulheres rurais por meio de crédito, assistência\ntécnica, titularidade, empreendedorismo, autonomia econômica e combate\nà violência no campo;\n\n•\n\nCriar o Programa Estradas da Produção Familiar, com foco em obras e ações\npara estradas vicinais, pontes, logística rural, transporte escolar e\nescoamento da produção;\n\n•\n\nImplantar política estadual de regularização fundiária e mediação de\nconﬂitos, com o objetivo de promover segurança jurídica, mediação\ninstitucional, prevenção da violência e fortalecimento do diálogo no campo;\n\n•\n\nIntegrar agricultura familiar, segurança alimentar e combate à fome, tendo a\nagricultura familiar como eixo estratégico da alimentação escolar, da\nsegurança alimentar, dos restaurantes populares, das cozinhas solidárias e\nda produção regional saudável;\n\n•\n\nCriar o Plano Estadual de Desenvolvimento Rural Sustentável, resgatando a\nimportância do Conselho Estadual de Desenvolvimento Rural e Sustentável\n(CEDRS) para buscar a integração entre produção, meio ambiente,\ninfraestrutura, assistência técnica, crédito, inovação e desenvolvimento\nhumano.\n\n57"
+          },
+          {
+            "id": "12-meio-ambiente-com-pantanal-serra-da",
+            "titulo": "12 - MEIO AMBIENTE COM PANTANAL, SERRA DA",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "12 - MEIO AMBIENTE COM PANTANAL, SERRA DA\nBODOQUENA E MUDANÇAS CLIMÁTICAS NO FOCO\n12.1 - Diagnóstico\nMato Grosso do Sul possui um dos patrimônios ambientais mais importantes do\nplaneta, reunindo biomas estratégicos como o Pantanal, o Cerrado e a Mata\nAtlântica, além de áreas de enorme relevância ecológica, hídrica e turística, como\na Serra da Bodoquena e os rios de águas cristalinas da região sudoeste do estado.\nApesar disso, o estado ainda enfrenta graves desaﬁos ambientais relacionados à\ndegradação dos biomas, mudanças climáticas, expansão desordenada de\natividades econômicas e fragilidade das políticas de ﬁscalização e prevenção\nambiental.\nComo bem aponta a Secretaria Estadual de Meio Ambiente e Desenvolvimento\ndo PT-MS, o principal problema é a crescente vulnerabilidade ambiental do\nPantanal diante das mudanças climáticas, das queimadas extremas e da\ndegradação dos recursos hídricos. Os incêndios de grandes proporções registrados\nnos últimos anos revelaram insuﬁciência estrutural do Estado em prevenção\npermanente, monitoramento ambiental, resposta rápida, estrutura de combate ao\nfogo e planejamento climático integrado.\nOutro desaﬁo importante é o avanço da degradação ambiental em áreas sensíveis\ndo Cerrado e da Serra da Bodoquena, com impactos sobre nascentes, rios,\nbiodiversidade, qualidade da água e equilíbrio ecológico.\nNa região de Bonito e Serra da Bodoquena, cresceram preocupações relacionadas\nao turvamento de rios turísticos e alterações na transparência das águas,\nfenômeno associado ao desmatamento, erosão do solo, uso inadequado da terra e\nfragilidade no controle ambiental em algumas bacias hidrográﬁcas.\n\n58"
+          },
+          {
+            "id": "outro-tema-critico-e-o-elevado-numero-de-atropelamentos-de-animais-silve",
+            "titulo": "Outro tema crítico é o elevado número de atropelamentos de animais silvestres nas",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "Outro tema crítico é o elevado número de atropelamentos de animais silvestres nas\nrodovias estaduais e federais que cortam áreas ambientais sensíveis. Mato Grosso\ndo Sul possui uma das maiores incidências de atropelamento de fauna do país,\nespecialmente envolvendo onças-pintadas, tamanduás, antas, lobos-guará,\njacarés e diversas espécies ameaçadas.\nA ausência de uma política estadual robusta de proteção da fauna e mitigação de\nimpactos rodoviários contribui para perda de biodiversidade e desequilíbrio\necológico.\nOutro problema crescente é o uso intensivo de agrotóxicos e seus impactos sobre\na saúde humana, contaminação da água, polinizadores, abelhas, fauna silvestre e\nbiodiversidade.\nO Estado ainda possui baixa estrutura de monitoramento sistemático dos impactos\nambientais e sanitários associados ao uso de defensivos agrícolas. Também há\nfragilidades na ﬁscalização ambiental, especialmente diante da expansão da\nfronteira agrícola e da pressão econômica sobre áreas ambientalmente sensíveis.\nOutro desaﬁo importante é a baixa integração entre política ambiental e\ndesenvolvimento econômico sustentável. Mato Grosso do Sul ainda não\nconsolidou plenamente uma estratégia de liderança nacional em economia verde,\nbioeconomia, mercado de carbono, restauração ecológica, transição energética e\ndesenvolvimento de baixo carbono.\nNa região do Bolsão, o acelerado crescimento da indústria de papel e celulose e da\nexpansão das plantações de eucalipto em municípios como Três Lagoas, Ribas do\nRio Pardo e Inocência trouxe dinamismo econômico, mas também gerou\npreocupações crescentes relacionadas à pressão sobre recursos hídricos, à\nmonocultura extensiva, à concentração fundiária, aos impactos sobre\nbiodiversidade, à substituição de paisagens naturais e à necessidade de maior\nequilíbrio ambiental e territorial.\n59"
+          },
+          {
+            "id": "persistem-ainda-problemas-relacionados-a-baixa-educacao-ambiental-a",
+            "titulo": "Persistem ainda problemas relacionados à baixa educação ambiental, à",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "Persistem ainda problemas relacionados à baixa educação ambiental, à\ninsuﬁciência de gestão de resíduos sólidos, ao saneamento ambiental e à\nfragilidade da governança climática estadual.\nApesar do enorme potencial ambiental estratégico do estado, falta uma política\nintegrada e de longo prazo que combine proteção ambiental, desenvolvimento\nsustentável, ciência, inovação e adaptação às mudanças climáticas.\n\n12.1 - Propostas\nProteger o patrimônio ambiental, enfrentar as mudanças climáticas e\ntransformar sustentabilidade em eixo central de desenvolvimento\nProposta de campanha:\n•\n\nFortalecer\ntecnológica,\n\no\n\nIMASUL\n\ncom\n\nmonitoramento\n\nconcursos\n\npúblicos,\n\nremoto,\n\ninteligência\n\nmodernização\nambiental\n\ne\n\nﬁscalização territorial, a ﬁm de melhorar o planejamento de políticas\npúblicas e ações de proteção e preservação ao meio ambiente, além de\nformalizar parcerias e ações conjuntas com os órgãos federais (IBAMA e\nICMBio).\nOutras propostas:\n•\n\nCriar o Plano Estadual de Proteção e Recuperação do Pantanal, com\nprevenção permanente de incêndios, monitoramento climático, brigadas\nregionais, recuperação de áreas degradadas, proteção hídrica e gestão\nintegrada da bacia pantaneira;\n\n•\n\nImplantar o Sistema Estadual de Prevenção Climática e Gestão de\nDesastres, com monitoramento meteorológico, inteligência ambiental,\nprevenção de queimadas, resposta rápida, integração entre municípios e\ndefesa civil climática;\n60"
+          },
+          {
+            "id": "pagina-61",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar o Programa Serra da Bodoquena Viva com foco em proteção de\nnascentes, controle de erosões, recuperação de matas ciliares,\nmonitoramento da qualidade da água, preservação dos rios cristalinos e\ncombate ao turvamento dos rios;\n\n•\n\nImplantar uma política estadual de proteção da fauna silvestre, em parceria\ncom o Ministério dos Transportes, DNIT e Ministério do Meio Ambiente, para\nviabilização\n\nde\n\npassagens\n\nde\n\nfauna,\n\ncercamentos\n\ninteligentes,\n\nmonitoramento rodoviário, redução de atropelamentos, centros de\nreabilitação animal e proteção de espécies ameaçadas;\n•\n\nCriar o Programa Rodovias Verdes, para promoção da integração entre\ninfraestrutura, proteção ambiental, segurança viária e preservação da\nbiodiversidade;\n\n•\n\nFortalecer a ﬁscalização ambiental e o monitoramento territorial por meio\nde inteligência ambiental, tecnologia por satélite, drones, integração\ninstitucional, combate ao desmatamento ilegal e transparência ambiental;\n\n•\n\nImplantar uma política estadual de redução de agrotóxicos nocivos, com\nmonitoramento da água e solo, incentivo a bioinsumos, apoio à\nagroecologia, pesquisa cientíﬁca, proteção de polinizadores e educação\nambiental;\n\n•\n\nCriar o Programa Estadual de Proteção das Abelhas e Polinizadores, com\nfoco em monitoramento ambiental, preservação de habitats, controle de\ncontaminação química e incentivo à produção sustentável;\n\n•\n\nTransformar Mato Grosso do Sul em referência nacional de economia verde,\npor meio de apoio e incentivo ao mercado de carbono, restauração\necológica, bioeconomia, energias renováveis e desenvolvimento de baixo\ncarbono;\n\n•\n\nCriar o Fundo Estadual de Emergência Climática e Proteção Ambiental, com\nfoco em ações de prevenção, recuperação ambiental, apoio a municípios e\nresposta a desastres climáticos;\n\n•\n\nImplantar uma política estadual de recuperação hídrica, para proteção de\nnascentes,\n\nrecuperação\n\nde\n\nbacias\n\nhidrográﬁcas,\n\nassoreamento, segurança hídrica e saneamento ambiental;\n61\n\ncombate\n\nao"
+          },
+          {
+            "id": "pagina-62",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar o Plano de Desenvolvimento Sustentável do Bolsão, articulando\ndesenvolvimento econômico, preservação ambiental, proteção hídrica,\nmonitoramento da monocultura, diversiﬁcação produtiva e compensações\nsocioambientais;\n\n•\n\nFortalecer educação ambiental nas escolas e comunidades, abordando\nprincipalmente as mudanças climáticas, a preservação do Pantanal, a\nproteção da biodiversidade, a cidadania ambiental e a ciência climática;\n\n•\n\nCriar o Observatório Estadual das Mudanças Climáticas, com dados\npúblicos, monitoramento cientíﬁco, planejamento climático e produção de\nindicadores ambientais;\n\n•\n\nImplantar política estadual de resíduos sólidos e economia circular com\nfoco em reciclagem, cooperativas de catadores, logística reversa, redução\nde resíduos e sustentabilidade urbana;\n\n•\n\nIntegrar meio ambiente e desenvolvimento regional, com políticas\nambientais que devem gerar empregos verdes, inovação, bioeconomia,\ninclusão produtiva e desenvolvimento sustentável;\n\n•\n\nConstruir uma governança climática moderna e participativa com\nenvolvimento das universidades, dos povos indígenas, do setor produtivo,\ndas comunidades locais e de organizações ambientais.\n\n62"
+          },
+          {
+            "id": "13-turismo-sustentavel-e-agregador-de-valor",
+            "titulo": "13 - TURISMO SUSTENTÁVEL E AGREGADOR DE VALOR",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "13 - TURISMO SUSTENTÁVEL E AGREGADOR DE VALOR\n13.1 - Diagnóstico\nMato Grosso do Sul possui alguns dos destinos turísticos mais reconhecidos do\nBrasil e do mundo, como o Pantanal, Bonito, Serra da Bodoquena e importantes\natrativos culturais, ambientais e de fronteira. O estado reúne enorme potencial para\nconsolidar o turismo como eixo estratégico de desenvolvimento sustentável,\ngeração de empregos qualiﬁcados e dinamização econômica regional. Entretanto,\nesse potencial ainda é subaproveitado por limitações estruturais, desigualdades\nterritoriais e ausência de uma política estadual mais integrada e ousada para o\nsetor.\nO principal problema é a forte concentração da atividade turística em poucos polos\njá consolidados, especialmente Bonito e parte do Pantanal, enquanto diversas\nregiões com potencial turístico permanecem com baixa infraestrutura, pouca\npromoção e reduzida integração econômica.\nO Estado é riquíssimo turisticamente em diversas regiões, como o turismo de\naventura no Parque Salto do Sucuriú (Costa Rica), os sítios arqueológicos e a arte\nrupestre (Alcinópolis), o turismo histórico da Retirada da Laguna (Sudoeste), a Rota\ndas Monções (Coxim), o turismo de compra na fronteira (Corumbá/Ladário, Mundo\nNovo e Ponta Porã) e, também, o turismo de eventos, sobretudo em Campo Grande\ne Dourados.\nA diversidade turístico-cultural do Estado se acentua com seus inúmeros festivais\ngastronômicos, como a Linguiça de Maracaju (Maracaju), Porco no Rolete (São\nGabriel do Oeste), Festa do Peixe (Coxim), Peixada da Seleta (Naviraí), Festa da\nFogueira (Jateí), dentre tantos outros.\nOutro desaﬁo importante é a insuﬁciência de infraestrutura turística regional.\nPersistem problemas relacionados à qualidade de rodovias de acesso, sinalização\n63"
+          },
+          {
+            "id": "turistica-conectividade-digital-sinal-de-telefonia-movel-e-sua-qualidade",
+            "titulo": "turística, conectividade digital (sinal de telefonia móvel e sua qualidade),",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "turística, conectividade digital (sinal de telefonia móvel e sua qualidade),\nmobilidade, saneamento, aeroportos regionais e infraestrutura urbana em\nmunicípios turísticos.\nO Pantanal, principal patrimônio ambiental do estado, enfrenta crescente\nvulnerabilidade ambiental decorrente das queimadas extremas, das mudanças\nclimáticas, da degradação hídrica, da perda de biodiversidade e da pressão sobre\nos ecossistemas.\nEsses problemas afetam diretamente o turismo ecológico e de natureza, exigindo\npolíticas permanentes de preservação ambiental e adaptação climática.\nNa região de Bonito e Serra da Bodoquena, crescem preocupações relacionadas ao\nturvamento de rios, ao assoreamento, à pressão imobiliária, ao uso inadequado do\nsolo e aos riscos ambientais sobre atrativos naturais altamente sensíveis.\nOutro problema é a baixa integração entre turismo, cultura, economia criativa e\ndesenvolvimento regional. O estado ainda aproveita pouco o potencial do turismo\npara geração de renda local, fortalecimento de pequenas empresas, valorização\ncultural, economia criativa, agricultura familiar e inclusão produtiva.\nPersistem também limitações na qualiﬁcação proﬁssional do setor. Muitos\nmunicípios turísticos enfrentam carência de mão de obra qualiﬁcada; baixa\nformação técnica; insuﬁciência de capacitação em idiomas, hospitalidade e\ngestão; e diﬁculdades de proﬁssionalização do setor.\nO turismo internacional ainda é pouco explorado, apesar da posição estratégica de\nMato Grosso do Sul na integração sul-americana e na Rota Bioceânica.\nOutro desaﬁo é a baixa diversiﬁcação da matriz turística estadual. O turismo ainda\ndepende fortemente de segmentos especíﬁcos, enquanto outras potencialidades\npermanecem subdesenvolvidas: turismo cultural, turismo indígena, turismo de\neventos, turismo cientíﬁco, turismo rural e turismo gastronômico.\n64"
+          },
+          {
+            "id": "tambem-ha-fragilidades-na-governanca-do-setor-baixa-integracao-regional",
+            "titulo": "Também há fragilidades na governança do setor: baixa integração regional, pouca",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "Também há fragilidades na governança do setor: baixa integração regional, pouca\ncoordenação entre Estado e municípios, escassez de planejamento de longo prazo\ne insuﬁciência de promoção nacional e internacional.\n\n13.1 - Propostas\nTurismo como plataforma de desenvolvimento sustentável, geração de renda,\npreservação ambiental e valorização da identidade regional\nProposta de campanha:\n•\n\nCriar o Plano Estadual de Turismo Sustentável e Desenvolvimento\nRegional, integrando turismo, meio ambiente, cultura, infraestrutura,\neconomia criativa, desenvolvimento regional e geração de empregos;\n\nOutras propostas:\n•\n\nFortalecer o Pantanal como destino internacional sustentável por meio da\npreservação ambiental, do turismo de natureza, da observação da fauna, do\nturismo cientíﬁco, de infraestrutura sustentável, de brigadas ambientais\npermanentes e de promoção internacional;\n\n•\n\nCriar polos regionais de turismo integrado para desenvolver: rota pantaneira,\nrota da fronteira, rota cultural, rota indígena, turismo rural, turismo\ngastronômico, turismo histórico e turismo de natureza;\n\n•\n\nModernizar a infraestrutura turística por meio de parcerias com o Governo\nFederal e investimentos em acessos rodoviários, aeroportos regionais,\nsinalização, conectividade digital, saneamento, mobilidade turística e\ncentros de atendimento ao visitante;\n\n•\n\nImplantar o Programa Estadual de Qualiﬁcação Proﬁssional do Turismo por\nmeio de parcerias com UFMS, UFGD, IFMS, UEMS, Sistema S e Ministério do\n\n65"
+          },
+          {
+            "id": "turismo-com-foco-em-idiomas-hospitalidade-gestao-gastronomia",
+            "titulo": "Turismo, com foco em idiomas, hospitalidade, gestão, gastronomia,",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "Turismo, com foco em idiomas, hospitalidade, gestão, gastronomia,\necoturismo, tecnologia e turismo internacional;\n•\n\nFortalecer o turismo de base comunitária com comunidades indígenas,\nagricultura familiar, cooperativas, economia solidária, turismo cultural\ncomunitário e geração de renda local;\n\n•\n\nCriar um programa de turismo e economia criativa para integrar: cultura,\ngastronomia, audiovisual, artesanato, música, eventos e identidade\nregional;\n\n•\n\nExpandir o turismo internacional e sul-americano, aproveitando a Rota\nBioceânica, a integração continental, o turismo de fronteira e os mercados\ndo Paraguai, Bolívia, Argentina e Chile;\n\n•\n\nImplantar uma política estadual de turismo sustentável, com certiﬁcação\nambiental, gestão sustentável, redução de impactos ambientais, proteção\nda biodiversidade e turismo de baixo carbono;\n\n•\n\nCriar um calendário estadual integrado de eventos turísticos e culturais,\ncom foco em regionalização, fortalecimento econômico local, circulação\nturística e valorização cultural;\n\n•\n\nFortalecer pequenos empreendedores do turismo por meio de viabilização\nde crédito, capacitação, digitalização, apoio técnico, formalização e\ninclusão produtiva;\n\n•\n\nCriar o Observatório Estadual do Turismo, com inteligência turística, dados\neconômicos, monitoramento ambiental, planejamento regional e promoção\nestratégica;\n\n•\n\nImplantar uma política estadual de turismo acessível e inclusivo, com foco\nem questões como acessibilidade, inclusão, infraestrutura adaptada e\ndemocratização do turismo;\n\n•\n\nIntegrar turismo, preservação ambiental e geração de empregos verdes,\ntransformando o turismo em eixo estratégico da economia verde, da\nsustentabilidade, da valorização cultural e da geração de empregos\nqualiﬁcados;\n\n66"
+          },
+          {
+            "id": "pagina-67",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a governança regional do turismo por meio de consórcios\nregionais, participação municipal, planejamento integrado, cooperação\npúblico-privada e participação comunitária.\n\n__________________________________________\nFÁBIO TRAD\nCandidato a Governador\n\n__________________________________________\nGILDA MARIA DOS SANTOS\nCandidata a vice-governadora\n\n67"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "8cb00ebf51502985bdba4d8545634dd322981c198fe996273b0d7ec69f6bfa1d"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "818a64b3dd897ffa82236e02190ac2d9685307b0acb30d2e6de38733b77a3164"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "5279e6a6874cef53885470bc7fe78e18af9ebba26ad07075bc86aa0bcbb2de40"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "89b4b7c2cc89a0171b3e4c2a59500da6baa0b40a1baad890510dfefbe4ac6912"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "edaeb2fc79e3e83654daae295fe60504d6b13bb6b6bf4a224374e57071c654f2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "f84be11adfb14def107b368127334109510edecd2ae935736ac47f5bbf9da849"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "a2973c9e815115a33601d3b9b60cd1470f542aec14a5416f7f259d4772cd1880"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f32651eea2ad509b95af8550c462aed2f0e26bec48db799bcc7286f419e8e78b"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "6f157f86f948bf9faf5ed2e0233db86bc402594a0da038394db7fc82c7261ce2"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "79c049429bc3506743a6ad36cd5c9f323d9666b1a8f6f742c43075c8ae01edd1"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "99146cc227d963de32e22cb90dbb4acb6f30a18acf0ae65036fffff3bc2bc94d"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "2e691121e71f33c04a9fed30893abd146f1cf103b3a5ea76be633e4a4a599967"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "fa0e76e27287f304e075d385e9c0b3b3690edfcd76929908ec4fe6eff688e97a"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "672cefa0367eb5170f2aeca6479349d35af49d9ac3aaaf055f8fe9afc5b72f9d"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "804997add59e8ae1abd59981de32aafffb1016e0f57f6656c2a6004e5e6abf19"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "5d7e2b2c98bef17b9a760e848f98af3b6ccc4308a645fa081c5effd1c0cdc55d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "355cb19597c0a149b59dfbe8170ed1e161e1e9159bc50570a917fe7e7357ebab"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "ca0c9a20207738f4d92ca59c546b37f054dba0688dd8e00afb2ff34daee5c89a"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "df5d103336f3cc5051d5e2fe34d6644e6ab7491c1ef78f124cc3435ca3eae13b"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "cb836b2c8aa19ca9153948cc68f56ec468caab56aef90ddca8d08847eb0b248d"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "048a65df86c0ccdc5da1bcfdcc65ee8425bcffdbfa489f6c39cb1f7d62aa0550"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "885a739ca244bb742c9e0b10d3072248ed02db6de8c3d3b43d2fa49296dc6173"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "a53fb1c22f164783728b5d3eb50eafa4c1c3a167f2dffb3596bf4eb0de324766"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "7f922db00f7c59e9dc03ab369e712915c2cb11f17cd8a3b3bf8e74de71dde9fe"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "7a8fb068ea2cf80cf86b95194d994d731dee9c18014b15585a2e5fe60d00d94a"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "4b367da97da551aee8263dcfc6a2235dfcfb6ead68010629178047617987797f"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "c2f34d335f2130fec4e4e74da80e591ff9f3342cd8e8f8d0a36c0ee27be191b4"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "6841c616b428db6850818904a66fc917d536dcee631131037daf0ae8b62842b2"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "4815094611c7df0abee627dbaa4a3965a25ce285c9a2492e2141bfcf02ad59e6"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "6f29c9ff70b4cf0106dc852db45de3aa0fae22c92b56f1e1325f3fdf4052c226"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "690a149a599e87c0b88e6f409232e62d80e660859f77b66341b5bea8683de29c"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "3f624189cd073028fb072125c07362266ec1973e0fa5ca8ab2743225e414231a"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "bb2cd3182320a56792281abe88caa564c092a5f85d3809bf51ebcbe3937c194b"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "911a5108e27b86a10cf591bada043db78c9ca6a84aa78c44c708c5bdeabd6461"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "86094d79981b8861f339e32612f6ee64e4fdb3ab024fe12d384f34009e815e59"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "49cb4f0f4f75b17c3ee8ba85f667aee33f630982f28a05c178e554bba9380134"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "3947de633a4fbc845a0d6486f49d5207b8c7657dd9864c1f1194618ffb92da92"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "d571b63920599e917bf5bc2aab577b1a13b83e78e8f05d76dfc3f8f815312475"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "a50665418f4c1b792a9f40b369fa2f2bc6df5bbbb98d2a846733d4ad0e762391"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "840e070501e40ad115f46b3a9fcfcb8cffc814916f3cc6baf720e17236ce4e61"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "8e67a0e7273af29f09a0c154cbbf434c7e255d344b40712abf9c9d1f03a15273"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "d178b617700f133251ece4addf78c3657ed0633f7802bbd5c9ac0b79d2c15e90"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "bbec01ef2571bfbd90077ecfca9981ad2961a9a774897a3a60e375e01b2ffe5b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "3863169273d8ab4687d0cd713de1c7b22d867b20c8e5c79f28f6d8c65a2dbc60"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "0930565eb472398dc914b8dfbf45852d0e180ad47b705bf0a359f5efb6990a37"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "5604bfbd01205946bff287702dc1a7fc742e6f4c1d5283528d4d3f9ce6320776"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "6b06cf4750db9dbcefd54a3fdcef0f84831c24b34169ad39600dc42f0c3d5d81"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "f14da787de6072d28e3122944b38c5d67eca6cc5c268f1690b8b864efb69e071"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "708b104a08af0d43e9e6fa4de6f34f34022a109dde0c621801a4b4f6e6a85839"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "d7bfebad852f3524ecb0a6d95077296f1bc56a031242639a9045405fc31123ac"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "f06b830bbce30beff76e8745aa47debc46bd84c982239f40f4b69381f35d0472"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "73730997c67d5dcdc0edba7ddfbbfea1f1a9d472db77d47e6bda2fb277bf18d7"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "7d2355af36f9dd2e79939c5da43547135535b84aba98418f455bf5e89469e7e3"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "1a8dcd9ff87fa4fde6a894b3fe617a4b3770a5c60bedfbbf9466bac762ce4338"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "432f3b191cb3bedf55dec0b0bda08ec33b5f8cfff3b51f084ff89b5045456b35"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "8f303d1215ea77c9a9344a969231ad2ae6840a92bd73fe7fbc7802a4fb3aac3f"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "ac183b05937bc483f09bda10f666859a7029ff9fadb7cec62978c9140d111194"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "231ee65e87837bde6c9e504ea8570a493f8c1547997bc9a543d6df95fd1c6410"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "fe17014ec843fecde0b4fdf7fd46c24db30e798857186e3740b9282bf0b3e973"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "e427b55a9d34e41c2d5221dfb2744c054f58661028240da927eba1cc35f04789"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "1c607a1b91a0b79ea653178ba3de72e082617600ffe0522b8911c41149b697db"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "b9e98636b0124683db8a37485b0f5088827635bc42049373557fbd094ced05a2"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "900538f48ff5bc00057375aea064ce42ee4df639bfba78b03a64fd0691851b68"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "dcca91d645e4b754431e005aff18c8447bdd9a1472a5d30ba7bfa7c9775e6483"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "fd69077e41508fb8a94d04e4f4e723bdce536faf59c309322c68465bde22fda4"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "15ba10ed6bf720e1fb9ac78845c68f71930492a067a33acc469c341e9c20d8c0"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "efd87d378b612f009cb3de9be2bcc5a32558c1d1c65e6de85ce0038684844eb1"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê reativar conselhos estaduais para ampliar a participação social nas decisões públicas. Também propõe modernizar e digitalizar os serviços públicos mediante integração de sistemas, simplificação burocrática, digitalização de processos, expansão de serviços online ao cidadão. Na saúde, propõe fortalecer hospitais regionais para ampliar o atendimento de média e alta complexidade. Na educação, prevê universalizar escolas conectadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais, inclusão digital para estudantes, professores. Para a agricultura familiar, propõe reestruturar a assistência técnica e extensão rural mediante concurso público, equipes regionalizadas, atendimento contínuo, agroecologia, irrigação, agroindustrialização, gestão produtiva, inovação tecnológica, produção sustentável. Na área ambiental, propõe criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares, monitoramento da qualidade da água, preservação dos rios cristalinos, combate ao turvamento dos rios. No turismo, propõe criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura, economia criativa, desenvolvimento regional, geração de empregos.",
+    "frases": [
+      {
+        "texto": "O programa prevê reativar conselhos estaduais para ampliar a participação social nas decisões públicas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 9,
+            "trecho": "Retomar e fortalecer a participação social com reativação dos conselhos estaduais; realização periódica de conferências públicas; audiências públicas digitais e presenciais;"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe modernizar e digitalizar os serviços públicos mediante integração de sistemas, simplificação burocrática, digitalização de processos, expansão de serviços online ao cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 10,
+            "trecho": "Modernizar e digitalizar os serviços públicos com integração de sistemas estaduais; simpliﬁcação burocrática; digitalização de processos; e expansão de serviços online ao cidadão;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe fortalecer hospitais regionais para ampliar o atendimento de média e alta complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 22,
+            "trecho": "Fortalecer os hospitais regionais - especialmente os de Dourados, Três Lagoas, Ponta Porã, Nova Andradina e Coxim - e ampliar o atendimento de Média e Alta Complexidade;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê universalizar escolas conectadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais, inclusão digital para estudantes, professores.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 34,
+            "trecho": "Universalizar escolas conectadas e tecnologicamente equipadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais e inclusão digital para estudantes e professores;"
+          }
+        ]
+      },
+      {
+        "texto": "Para a agricultura familiar, propõe reestruturar a assistência técnica e extensão rural mediante concurso público, equipes regionalizadas, atendimento contínuo, agroecologia, irrigação, agroindustrialização, gestão produtiva, inovação tecnológica, produção sustentável.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 56,
+            "trecho": "Reestruturar a assistência técnica e extensão rural (ATER) com concurso público para fortalecer as equipes regionalizadas, o atendimento contínuo, a agroecologia, a irrigação, a agroindustrialização, a gestão produtiva, a inovação tecnológica e a produção sustentável;"
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, propõe criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares, monitoramento da qualidade da água, preservação dos rios cristalinos, combate ao turvamento dos rios.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 61,
+            "trecho": "Criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares, monitoramento da qualidade da água, preservação dos rios cristalinos e combate ao turvamento dos rios;"
+          }
+        ]
+      },
+      {
+        "texto": "No turismo, propõe criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura, economia criativa, desenvolvimento regional, geração de empregos.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 65,
+            "trecho": "Criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura, economia criativa, desenvolvimento regional e geração de empregos;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "participacao-social",
+        "titulo": "Participação social",
+        "descricao": "O programa propõe reativar conselhos estaduais para ampliar a participação social.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 9,
+            "trecho": "Retomar e fortalecer a participação social com reativação dos conselhos estaduais; realização periódica de conferências públicas;"
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "O programa propõe fortalecer hospitais regionais para ampliar o atendimento de média e alta complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 22,
+            "trecho": "Fortalecer os hospitais regionais - especialmente os de Dourados, Três Lagoas, Ponta Porã, Nova Andradina e Coxim - e ampliar o atendimento de Média e Alta Complexidade;"
+          }
+        ]
+      },
+      {
+        "id": "educacao-conectada",
+        "titulo": "Educação conectada",
+        "descricao": "O programa prevê universalizar escolas conectadas com recursos tecnológicos.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 34,
+            "trecho": "Universalizar escolas conectadas e tecnologicamente equipadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais"
+          }
+        ]
+      },
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "O programa propõe reestruturar a assistência técnica e extensão rural.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 56,
+            "trecho": "Reestruturar a assistência técnica e extensão rural (ATER) com concurso público para fortalecer as equipes regionalizadas"
+          }
+        ]
+      },
+      {
+        "id": "protecao-ambiental",
+        "titulo": "Proteção ambiental",
+        "descricao": "O programa propõe criar o Programa Serra da Bodoquena Viva para proteger nascentes, rios cristalinos, matas ciliares.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 61,
+            "trecho": "Criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares"
+          }
+        ]
+      },
+      {
+        "id": "turismo-sustentavel",
+        "titulo": "Turismo sustentável",
+        "descricao": "O programa propõe criar um plano estadual para integrar turismo, meio ambiente, cultura, infraestrutura.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002539834:01",
+            "pagina": 65,
+            "trecho": "Criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:41:47.528Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:44:22.702Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência confirma diretamente a reativação de conselhos estaduais para ampliar participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem contradição numérica na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:1:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente: modernização e digitalização de serviços."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:2:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:3:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: educação conectada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:4:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal completa com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: ATER na agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:5:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:6:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: turismo sustentável."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:frase:7:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:participacao-social:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente da cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:saude-regional:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: educação conectada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:educacao-conectada:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:agricultura-familiar:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:protecao-ambiental:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: turismo sustentável."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002539834:tema:turismo-sustentavel:documentos:MS:120002539834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002539834",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002539834:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 45459,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2084,
+          "reasoning_output_tokens": 516
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29389,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 25509,
+          "output_tokens_details": {
+            "thinking_tokens": 488
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29389,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 25509,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29389,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29389
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3951784
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a3a9a30941a9274645b87cbdb9160e44469d6f6666c466f14e8606b8972972f4",
+    "extractedTextSha256": "a05663d882e1c82dea6eb90c10c620f3c0035db005e1f72cf105d050287630cf",
+    "documentCount": 1,
+    "documentSetSha256": "63a7d60f5d50e807ae2d35406531e5babef37b6db6d07b41256ae9231056a766",
+    "contentSha256": "b62a334291217f955df6ef032c11fea24a315005673e4a8d174cce8389c9415f"
+  }
+}

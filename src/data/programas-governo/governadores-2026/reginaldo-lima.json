@@ -1,0 +1,1184 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MA",
+    "sqCandidato": "100002544073",
+    "slug": "reginaldo-lima",
+    "nomeUrna": "REGINALDO LIMA",
+    "partido": "PCB",
+    "arquivoNome": "2026MA100002544073_01.pdf",
+    "arquivoNoPacote": "MA/2026MA100002544073_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MA:100002544073:01",
+      "fonte": {
+        "arquivoNome": "2026MA100002544073_01.pdf",
+        "arquivoNoPacote": "MA/2026MA100002544073_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "f2188ce764afaff7db3a9194c175d44b7f77efbee71b8c3208bc220cec5cb509",
+        "extractedTextSha256": "f71602c966e78da4c42ef4d99ac9dd4b23dad0f7f1eaf4618ed3efe5778a85a3",
+        "paginas": 36,
+        "secoes": [
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\nPROGRAMA DE GOVERNO DO PCB\nPARA O MARANHÃO\nEleições 2026\n\nPrograma aprovado no Encontro Estadual do PCB Maranhão\nrealizado em 28 e 29 de março de 2026 em Imperatriz-MA\n\nPARTIDO COMUNISTA BRASILEIRO — PCB\nMaranhão\n\n1"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-2",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\nINTRODUÇÃO\n(1) O Maranhão é um estado de profundas contradições. Dotado de vastos recursos\nnaturais — com regiões agrícolas altamente produtivas, relevante potencial energético,\ninserção em cadeias minerais estratégicas e uma extensa faixa litorânea voltada à exportação\n— convive, paradoxalmente, com alguns dos piores indicadores sociais do país.\n(2) Enquanto grandes corporações nacionais e internacionais extraem bilhões em\nriqueza de nosso território, a maioria do povo maranhense permanece submetida a baixos\nrendimentos, insegurança alimentar, moradia precária e acesso limitado a direitos básicos.\n(3) Essa realidade não é fruto do acaso, nem resultado de qualquer 'fatalidade\nhistórica'. Trata-se do resultado de uma estrutura econômica e social historicamente\nconstruída para concentrar riqueza e poder, subordinando o desenvolvimento do estado aos\ninteresses de uma minoria privilegiada.\n(4) O Maranhão foi integrado de forma dependente à economia nacional e\ninternacional, desempenhando o papel de fornecedor de commodities, como minério de\nferro, alumínio, soja e energia, sem que essa riqueza se converta, de forma proporcional, em\nmelhoria das condições de vida da população. O estado funciona, em grande medida, como\nplataforma de exportação, com baixa agregação de valor, limitada industrialização e forte\ndependência externa.\n(5) O caso de Alcântara é emblemático desse processo. Há décadas, as comunidades\nquilombolas resistem bravamente à expropriação de seus territórios tradicionais, ameaçadas\npela implantação e expansão do Centro de Lançamento de Alcântara (CLA). Sob o pretexto do\ndesenvolvimento tecnológico, acordos internacionais de salvaguardas — como o firmado\ncom os Estados Unidos — acabam por subordinar o território e a soberania nacional aos\ninteresses do capital estrangeiro. A luta dessas comunidades fundamenta-se na defesa da\nposse histórica da terra, essencial para a preservação de seus modos de vida, de sua\nidentidade cultural e de sua subsistência baseada na agricultura familiar e na pesca artesanal.\nMais do que uma disputa imobiliária ou tecnológica, o embate em Alcântara representa o\nconfronto entre a imposição de um modelo de desenvolvimento excludente e o direito\noriginário de povos tradicionais à sua ancestralidade. A resistência quilombola se ergue,\nportanto, como uma barreira legítima contra o racismo ambiental, a desterritorialização e a\nlógica que historicamente prioriza interesses externos em detrimento da dignidade humana\ne da justiça social. Para o PCB, a solução para esse conflito passa pela revisão soberana dos\n2"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-3",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nacordos que submetem a base ao controle de potências estrangeiras, pela reorientação do\nprograma espacial sob controle público e popular, pela demarcação imediata do território\nquilombola e pela reparação histórica das famílias impactadas, integrando o\ndesenvolvimento científico a um projeto socialista voltado às reais necessidades do povo\nbrasileiro.\n(6) Diante desse quadro, o Partido Comunista Brasileiro (PCB) apresenta este\nPrograma de Governo como uma proposta concreta, fundamentada e orientada para a\ntransformação estrutural do Maranhão. Não se trata de um conjunto de promessas eleitorais,\nmas de um projeto político que parte da realidade concreta e afirma o protagonismo da classe\ntrabalhadora como sujeito da mudança.\n(7) Nossa proposta articula medidas imediatas — voltadas à geração de emprego,\ngarantia de renda, acesso à terra, saúde, educação, moradia e transporte — com uma\nperspectiva estratégica de reorganização da economia estadual. Defendemos a superação do\nmodelo baseado na exportação de baixo valor agregado e a construção de um projeto de\ndesenvolvimento orientado pelas necessidades da maioria da população.\n(8) Ao mesmo tempo, afirmamos a centralidade da organização popular como\ncondição para qualquer transformação duradoura. A ampliação de direitos e a mudança\nestrutural do estado dependem da participação ativa dos trabalhadores e trabalhadoras, do\ncampo e da cidade, das periferias urbanas e dos territórios tradicionais.\n(9) Esta versão consolidada do programa incorpora os principais eixos construídos ao\nlongo do processo coletivo de elaboração, incluindo moradia digna, infraestrutura rural,\ntransporte público, desenvolvimento produtivo e a situação específica de Alcântara. Cada\neixo apresenta diagnóstico, propostas imediatas e diretrizes estratégicas para a\ntransformação do Maranhão.\n(10) Convidamos todos os trabalhadores e todas as trabalhadoras do Maranhão — do\ncampo e da cidade, dos portos, das escolas, dos hospitais, das periferias e dos territórios\ntradicionais — a construírem coletivamente este caminho de mudança.\n(11) A revolução brasileira só pode ser socialista.\n(12) Partido Comunista Brasileiro — PCB Maranhão 2026\n\n3"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-4",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\nA REALIDADE DOS TRABALHADORES NO MARANHÃO\n\n1. REFORMA AGRÁRIA E COMBATE AO LATIFÚNDIO\n1.1 A ESTRUTURA DA DESIGUALDADE\n(13) O Maranhão consolida-se em 2026 como o cenário de uma das mais violentas e\ndesiguais estruturas fundiárias do mundo. O modelo de desenvolvimento imposto pelo\nagronegócio exportador não é apenas uma escolha econômica, mas um projeto de extermínio\ndo campesinato e das comunidades tradicionais em favor do capital transnacional.\n(14) A concentração de terras no Maranhão atingiu níveis críticos. Segundo dados do\nIncra (2025) e projeções da Malha Fundiária do IBGE, o abismo entre o latifúndio e a\nagricultura familiar nunca foi tão profundo:\nTabela 1 — Estrutura Fundiária do Maranhão (Consolidado 2025/2026)\nCategoria\n\nFaixa de Área\n\n%\n\n% Área Total\n\nEstabelecimentos\nMinifúndios\n\nAté 10 ha\n\n52,1%\n\n6,4%\n\nPequenos\n\n10 a 100 ha\n\n29,4%\n\n14,2%\n\nMédios\n\n100 a 1.000 ha\n\n10,2%\n\n18,5%\n\nMais de 1.000\n\n8,3%\n\n60,9%\n\nLatifúndios\nha\n\n(15) Análise: O latifúndio expandiu seu domínio: apenas 8,3% dos proprietários\ncontrolam agora 60,9% de todo o território produtivo do estado. Enquanto isso, a maioria\nesmagadora (52,1%) sobrevive em 'poeiras de terra' que não somam sequer 7% da área total.\nIsso incorre em aprofundamento da desigualdade e do desmatamento do Cerrado e da\nAmazônia maranhense, gerando sobre as terras indígenas pressão por arrendamento e\nretirada ilegal de madeira, levando a essas populações miséria e degradação da vida social.\n\n4"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-5",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(16) O Índice de Gini da Terra no Maranhão subiu para 0,892 (Referência\n2025/2026), permanecendo como o mais elevado do Nordeste e um dos maiores do Brasil, o\nque indica uma distribuição de terras próxima da concentração absoluta.\n\n1.2 A INVASÃO DA SOJA E O ECOCÍDIO NO CERRADO E\nAMAZÔNIA\n(17) A chamada 'fronteira agrícola' é, na verdade, uma fronteira de guerra. A expansão\ndo agronegócio, centrada na monocultura para exportação, atingiu marcas históricas:\n(18) A Explosão da Soja: Em janeiro de 2026, a área plantada com soja no Maranhão\nultrapassou a marca de 1,45 milhão de hectares. O que era uma mancha de 15 mil hectares\nem 1990 tornou-se um deserto verde que hoje ocupa o equivalente a quase 100 vezes aquela\nárea original.\n(19)\n\nA 'Rota da Pilhagem': Essa expansão ocorre através da grilagem\n\ninstitucionalizada de terras públicas e da expulsão violenta de comunidades indígenas,\nquilombolas e quebradeiras de coco. O capital avança sobre o Cerrado e a Amazônia\nmaranhense, destruindo a biodiversidade para garantir o lucro de empresas como SLC\nAgrícola, Cargill e Bunge.\n\n1.3 PROPOSTAS PARA A SOBERANIA TERRITORIAL\n(20) O PCB defende que a terra deve pertencer a quem nela trabalha e vive. Propomos:\n(21) Confisco imediato dos latifúndios: desapropriação sem indenização de todas as\nterras obtidas via grilagem ou que não cumpram a função social.\n(22) Demarcação total e imediata: garantia jurídica e física dos territórios indígenas,\nquilombolas e de uso comum das comunidades tradicionais.\n(23) Fim dos incentivos ao agronegócio: redirecionar os subsídios que hoje financiam\na soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo\nmaranhense.\n(24) A situação fundiária do Maranhão agravou-se com a aprovação da chamada 'Lei\nda Grilagem' (Lei nº 12.169/2023), sancionada pelo governador Carlos Brandão. A legislação\nampliou de 200 para 2.500 hectares o limite para regularização de ocupações em terras\n\n5"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-6",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\npúblicas estaduais, favorecendo a legalização de grandes áreas sob posse privada e\nfortalecendo a concentração fundiária em um dos estados mais desiguais do país.\n(25) Embora apresentada como instrumento de regularização fundiária, a medida\nbeneficia grandes ocupantes de terras e amplia os riscos de legitimação de áreas obtidas por\nmeio da grilagem, ao mesmo tempo em que dificulta o reconhecimento e a titulação dos\nterritórios quilombolas e de outras comunidades tradicionais. Ao priorizar a regularização\nde grandes propriedades sem resolver os passivos históricos relacionados aos povos\ntradicionais, o Estado contribui para ampliar os conflitos fundiários e criar novos obstáculos\njurídicos e políticos à efetivação dos direitos garantidos pela Constituição Federal.\n(26) O caso de Alcântara expressa de forma emblemática essa contradição. Enquanto\ncomunidades quilombolas aguardam há décadas o reconhecimento de seus territórios,\nsucessivos governos adotam medidas que favorecem interesses econômicos privados e\naprofundam a insegurança fundiária das populações tradicionais. Para o PCB, a prioridade\ndeve ser exatamente a inversa: titulação imediata dos territórios quilombolas, proteção das\nterras tradicionalmente ocupadas e revisão das medidas que favorecem a concentração da\npropriedade da terra e a legalização da grilagem.\nNotas Técnicas e Fontes:\n¹ Estrutura Fundiária: Dados extraídos do Sistema Nacional de Cadastro Rural (Incra/SNCR 2025) e\nEstimativas de Malha Fundiária IBGE 2026.\n² Índice de Gini: Cálculo baseado no Relatório de Desigualdade de Posse de Terra (IMESC/IBGE 2025).\n³ Área Plantada: Levantamento Sistemático da Produção Agrícola (IBGE — LSPA, Janeiro/2026).\n\n6"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-7",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n2. OS INDICADORES SOCIAIS DO ESTADO: A FACE NUMÉRICA DA\nEXCLUSÃO\n(27) Os indicadores sociais do Maranhão revelam, de forma objetiva e contundente,\nos limites estruturais do modelo de desenvolvimento implementado no estado nas últimas\ndécadas. Longe de representar mera 'falta de gestão' ou 'atraso cultural', esses números\nexpressam as contradições de um projeto econômico que prioriza a exportação de\ncommodities, a concentração de renda e o lucro do grande capital — nacional e internacional\n— em detrimento das necessidades da maioria trabalhadora. Trata-se de uma política de\nEstado, não de um acidente histórico.\n\n2.1 A PRECARIEDADE DO TRABALHO: INFORMALIDADE E\nMISÉRIA SALARIAL\n(28) O Maranhão lidera, com folga, o ranking nacional de trabalho informal. Em 2025,\n57,3% dos trabalhadores atuavam sem carteira assinada, quase 20 pontos percentuais acima\nda média nacional (38,8%) e superando até mesmo a média do Nordeste (52,8%). Essa não é\numa particularidade cultural ou uma 'característica' do povo maranhense: é o resultado de\numa estrutura produtiva que não gera empregos formais em quantidade suficiente, forçando\nmilhões a sobreviverem na informalidade como única alternativa.\n(29) A informalidade não é 'escolha' do trabalhador. É a negação sistemática de\ndireitos conquistados historicamente: férias, 13º salário, seguro-desemprego, aposentadoria,\nlicença-médica, proteção contra acidentes de trabalho. É a precarização total da vida laboral,\nna qual o trabalhador vende sua força de trabalho sem qualquer garantia, sujeito às\nflutuações do mercado e à vontade arbitrária do empregador.\n(30) Complementando esse quadro, o Maranhão registra o menor rendimento médio\nmensal do Brasil: R$ 1.981, contra R$ 3.057 da média nacional, uma diferença de 35%.\nTrabalhadores maranhenses produzem riqueza, mas recebem em troca baixos salários. A\nbaixa remuneração não reflete menor produtividade, mas sim a estrutura de exploração que\npermeia todas as relações de trabalho no estado, desde o campo até as cidades.\n\n7"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-8",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n2.2 O 'MILAGRE' DO DESEMPREGO: NÚMEROS QUE ENGANAM\n(31) A taxa de desemprego no Maranhão (5,6% no 4º trimestre de 2025) situa-se\nabaixo da média nacional (6,2%) e bem distante da média nordestina (8,1%). No entanto,\nesse dado não representa melhoria estrutural nas condições de vida da população\ntrabalhadora. Ao contrário: expressa a substituição do desemprego pela informalidade\nmassiva. Onde deveria haver empregos formais, com direitos e salários dignos, há trabalho\nprecário, autônomo de sobrevivência, bicos, 'empreendedorismo de necessidade'. A queda\ndo desemprego, celebrada pelos governos como 'sucesso', esconde a realidade de milhões de\nmaranhenses que trabalham mais e ganham menos, sem qualquer proteção social. Não há\ndesenvolvimento real onde o trabalhador é obrigado a escolher entre o desemprego absoluto\ne a informalidade degradante.\n\n2.3 A NEGAÇÃO DO DIREITO FUNDAMENTAL À EDUCAÇÃO\n(32) O analfabetismo no Maranhão atinge 12,2% da população, mais que o dobro da\nmédia nacional (5,6%). O estado ocupa o segundo pior lugar no país. Essa realidade não é\nherança do passado: é produzida diariamente por um sistema educacional que, apesar dos\navanços quantitativos, continua excludente e de baixa qualidade.\n(33) A concentração de terras no campo, que expulsa famílias de suas comunidades e\naprofunda o êxodo rural, soma-se à precariedade das escolas, à falta de infraestrutura\nadequada e à incapacidade dos sucessivos governos de garantir condições efetivas para a\nformação continuada e valorização dos profissionais da educação. Esse conjunto de fatores\nlimita o acesso da classe trabalhadora a uma educação pública de qualidade e contribui para\na reprodução das desigualdades sociais. Como consequência, os filhos e filhas dos\ntrabalhadores e trabalhadoras encontram poucas oportunidades de romper o ciclo de\npobreza e exploração que marcou a trajetória de suas famílias, sendo frequentemente\nempurrados para ocupações precárias com baixa remuneração.\n\n2.4 A NEGAÇÃO DO DIREITO À SAÚDE\n(34) Segundo a Demografia Médica 2024, o Maranhão possui apenas 1,27 médico por\nmil habitantes (média nacional 3,08 médicos; nordeste 2,21 médicos por mil habitantes), o\nmenor índice entre todas as unidades da federação, evidenciando a profunda desigualdade\nno acesso à saúde e a insuficiência de investimentos públicos no setor. Essa realidade não é\n8"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-9",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nfruto do acaso, trata-se da consequência de décadas de subfinanciamento do Sistema Único\nde Saúde (SUS), da precarização dos serviços públicos e da adoção de políticas econômicas\nque subordinam as necessidades da população aos interesses do mercado financeiro.\n(35) A falta de médicos é particularmente grave no interior do estado, onde\ncomunidades ribeirinhas, quilombolas, indígenas e assentamentos rurais ficam sem qualquer\natendimento. A medicalização da política de saúde, que prioriza curativos em detrimento da\nprevenção e da atenção básica, agrava o quadro, concentrando recursos nas grandes cidades\nenquanto o campo é abandonado.\n\n2.5 A NEGAÇÃO DO DIREITO AO SANEAMENTO E À MORADIA\nDIGNA\n(36) Segundo dados de 2024 do Painel Saneamento Brasil, elaborados a partir de\ninformações do SINISA, IBGE e DATASUS, o Maranhão enfrenta uma grave crise de\nsaneamento básico. Cerca de 2,9 milhões de pessoas não possuem acesso à água tratada, o\nequivalente a 46,3% da população, enquanto 5,4 milhões de maranhenses vivem sem coleta\nde esgoto, representando 86,9% da população estadual (dados 2024). Além disso, apenas\n12,2% da água consumida retorna ao sistema como esgoto tratado, revelando a enorme\nprecariedade da infraestrutura sanitária do estado.\n(37) Essa realidade produz consequências dramáticas para a saúde pública. Somente\nem 2024, foram registradas 34.091 internações e 97 mortes por doenças relacionadas à falta\nde saneamento, segundo dados do DATASUS consolidados pelo Painel Saneamento Brasil.\n(38) A situação é ainda mais alarmante quando observamos as condições de moradia.\nDe acordo com o Censo Demográfico 2022 do IBGE, aproximadamente 73,7 mil domicílios\nmaranhenses não possuem banheiro (3,8% da população do Maranhão) ou sanitário, o maior\nnúmero absoluto entre os estados brasileiros. Uma realidade que precisa ser transformada\ncom fortes investimentos do governo do estado para resolver este problema. (Fontes: Censo\nDemográfico 2022 (IBGE); Painel Saneamento Brasil 2025, com dados do SINISA 2024, IBGE\n2024 e DATASUS 2024.)\n(39) Para o PCB, saneamento básico não pode ser tratado como mercadoria ou\nprivilégio. Defendemos um amplo programa público de investimentos em abastecimento de\nágua, coleta e tratamento de esgoto, drenagem urbana, manejo de resíduos sólidos e melhoria\nhabitacional, priorizando bairros periféricos, comunidades rurais, quilombolas, indígenas e\n9"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-10",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nassentamentos. Garantir saneamento é proteger a saúde, combater as desigualdades sociais\ne assegurar condições dignas de vida para toda a classe trabalhadora maranhense.\n\n2.6 A NEGAÇÃO DO DIREITO À ALIMENTAÇÃO: A FOME COMO\nPOLÍTICA DE ESTADO\n(40) Os dados mais recentes da PNAD Contínua/IBGE (2024) revelam a estrutura de\ndesigualdade que condena parcela significativa da população à fome. Em 2024, 35,2% dos\ndomicílios maranhenses viviam em situação de insegurança alimentar, 11 pontos\npercentuais acima da média nacional (24,2%).\n(41) Este indicador coloca o Maranhão entre as unidades da federação com os mais\nelevados níveis de insegurança alimentar do país, ao lado do Pará (44,6%), Roraima (43,6%),\nAmazonas (38,9%) e Bahia (37,8%). A realidade torna-se ainda mais grave quando se\nobserva que 5,2% dos domicílios maranhenses encontravam-se, em 2024, em situação de\ninsegurança alimentar grave, condição que caracteriza a convivência cotidiana com a fome.\nEstima-se que cerca de 355 mil pessoas estivessem submetidas à privação alimentar severa\nno estado. Em um território que produz e exporta riquezas, milhares de famílias seguem\nprivadas do acesso regular a alimentos em quantidade e qualidade suficientes, evidenciando\numa das expressões mais brutais das desigualdades sociais, da concentração da renda e da\nconcentração fundiária que marcam a realidade maranhense.\n(42) Observamos que a situação seria pior não fosse a manutenção de programas\nsociais e da melhoria conjuntural no mercado de trabalho, fatores frágeis diante da\nvolatilidade econômica e dependente do humor de quem está no Palácio do Planalto ou nos\nPalácios dos Leões.\n(43) Essa contradição, a abundância na produção de alimentos coexistindo com a\nfome de parcela significativa da população, não é acidental. Ela resulta de um modelo agrário\nque prioriza a exportação de commodities e a obtenção de lucros pelo grande capital, em\ndetrimento da produção de alimentos voltada às necessidades do povo. A concentração\nfundiária, a expulsão de agricultores familiares, camponeses e comunidades tradicionais de\nseus territórios e a insuficiência de políticas públicas de crédito, assistência técnica,\ninfraestrutura e comercialização limitam o desenvolvimento da produção de alimentos para\no mercado interno. Como consequência, o Maranhão permanece como um território em que\n\n10"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-11",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\na riqueza produzida por seus trabalhadores e trabalhadoras não se converte em bem-estar\nsocial, mas em desigualdade, insegurança alimentar e exclusão.\n\n2.7 SÍNTESE: CRESCIMENTO SEM DESENVOLVIMENTO\n(44) Os indicadores sociais do Maranhão demonstram, de forma inequívoca, que o\ncrescimento econômico verificado nas últimas décadas, expresso na expansão do\nagronegócio, das atividades minerárias, da infraestrutura logística voltada à exportação e no\naumento do Produto Interno Bruto (PIB), não se traduziu em melhoria significativa das\ncondições de vida da população trabalhadora. Ao contrário, esse modelo de desenvolvimento\naprofundou as desigualdades sociais, concentrou riqueza e renda e manteve amplos setores\nda população submetidos à pobreza, à informalidade e à precarização das condições de vida\ne trabalho.\n(45) A estrutura produtiva do estado, baseada na extração de commodities de baixo\nvalor agregado, na dependência tecnológica e na subordinação aos interesses do capital\nfinanceiro\n\ninternacional,\n\ngera\n\nriqueza\n\nconcentrada\n\ne\n\npobreza\n\ndisseminada.\n\nO\n\n'desenvolvimento' celebrado pelos governos e pela grande mídia é, na realidade, um projeto\nde acumulação por espoliação: espoliação da terra, da água, dos bens naturais e, sobretudo,\nda força de trabalho da maioria maranhense.\n(46) Superar essa realidade exige romper com o modelo atualmente vigente. Não\nbasta administrar a exclusão social por meio de programas sociais pontuais que, embora\nimportantes para garantir condições mínimas de sobrevivência, são insuficientes para\npromover mudanças duradouras nas condições de vida da classe trabalhadora. É necessária\numa transformação estrutural que coloque os interesses dos trabalhadores e trabalhadoras\ndo campo e da cidade no centro do projeto de desenvolvimento do Maranhão. Um projeto\nque priorize a reforma agrária, a industrialização orientada às necessidades nacionais e\npopulares, a atuação do Estado como planejador e investidor estratégico nas atividades\neconômicas de interesse social, a geração de empregos formais e dignos, a valorização do\ntrabalho, o investimento massivo em saúde, educação, saneamento e habitação, bem como a\ndistribuição da riqueza socialmente produzida. Em suma, um projeto de desenvolvimento\nnacional e popular, anti-imperialista e socialista, comprometido com a soberania nacional, os\ninteresses da classe trabalhadora, a construção do poder popular e o socialismo.\n11"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-12",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n3. A EXPLORAÇÃO DOS RECURSOS NATURAIS\n(47) O Maranhão possui recursos naturais e infraestrutura econômica de enorme\nrelevância estratégica para o Brasil. Segundo dados da Agência Nacional de Transportes\nAquaviários (ANTAQ) e da Empresa Maranhense de Administração Portuária (EMAP), o\nComplexo Portuário de São Luís — formado pelo Porto do Itaqui, pelo Terminal Marítimo de\nPonta da Madeira e pelo Terminal Portuário da Alumar — movimentou aproximadamente\n226 milhões de toneladas de cargas em 2025, consolidando-se como um dos maiores\ncomplexos portuários da América Latina e um dos principais corredores de exportação do\npaís. Desse total, o Porto do Itaqui movimentou 36,8 milhões de toneladas, enquanto o\nTerminal Marítimo de Ponta da Madeira, operado pela Vale, movimentou cerca de 172,4\nmilhões de toneladas, mantendo-se como o maior terminal portuário do Brasil em volume de\ncargas. Essa infraestrutura articula-se à Estrada de Ferro Carajás, responsável pelo\ntransporte do minério de ferro da Serra dos Carajás (PA) até os portos maranhenses, e a\nFerrovia Norte-Sul, que integra o estado às regiões produtoras do Centro-Oeste e do\nMatopiba, contribuindo para o escoamento de soja, milho, celulose e outras commodities\nagrícolas. Em São Luís, o complexo industrial da Alumar processa alumina e produz alumínio\ndestinado aos mercados nacional e internacional. Em Imperatriz, a fábrica da Suzano figura\nentre as maiores unidades produtoras de celulose do mundo, com produção voltada\nmajoritariamente à exportação. No setor energético, a Bacia do Parnaíba abriga algumas das\nmaiores reservas terrestres de gás natural do país, exploradas por empresas privadas,\nconferindo ao Maranhão papel relevante na produção nacional de energia.\n(48) No entanto, essa riqueza é explorada de forma predatória. O minério de ferro é\nexportado bruto, sem qualquer beneficiamento local. O gás natural é extraído por meio do\nmodelo 'reservatório-à-rede' (reservoir-to-wire), sendo queimado em termelétricas, como o\nComplexo Termelétrico Parnaíba, o maior do país, para gerar eletricidade que é\nmajoritariamente enviada via Sistema Interligado Nacional para atender outros estados, sem\ngerar cadeias produtivas locais robustas. A soja em estado natural é escoada principalmente\nvia terminais privados, que utilizam a estrutura do complexo, para abastecer o mercado\ninternacional.\n(49) A esse cenário soma-se a devastação do cerrado e da Amazônia maranhense\nimpulsionada pelo avanço do agronegócio. O desmatamento avança sobre áreas de vegetação\nnativa e territórios tradicionais, enquanto o uso indiscriminado de agrotóxicos contamina\n12"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-13",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nsolos, rios e comunidades, prejudicando principalmente camponeses pobres, comunidades\nquilombolas e povos indígenas, que veem suas condições de vida e produção ameaçadas.\n(50) Agrega-se ainda a expansão da monocultura de eucalipto voltada à produção de\ncelulose, que ocupa vastas extensões de terras, contribui para o esgotamento hídrico e reduz\na biodiversidade, além de concentrar a posse da terra e expulsar populações camponesas de\nseus territórios. Essa infraestrutura logística é complementada pela Ferrovia Norte-Sul,\noperada pela VLI, que integra o estado aos fluxos nacionais de commodities, especialmente\ngrãos e celulose, consolidando o papel do Maranhão como corredor de exportação.\n(51) O resultado é que a maioria do povo maranhense fica literalmente a 'ver navios':\nassiste à saída de suas riquezas sem que essa riqueza se transforme em desenvolvimento\npara a maioria da população. O modelo de desenvolvimento imposto pelo capital dependente\nmantém o estado na condição de colônia interna, fornecedora de matérias-primas baratas\npara os centros do capitalismo mundial.\n\n4. A CONDIÇÃO DA MULHER TRABALHADORA\n(52) As mulheres no Maranhão enfrentam historicamente múltiplas formas de\nexploração e desigualdade estrutural, que se expressam tanto no mercado de trabalho quanto\nnas condições sociais e na violência de gênero, com forte incidência sobre mulheres negras\nrevelando o cenário persistente de injustiça.\n(53) Segundo o IBGE, 48,9% dos domicílios no Maranhão tinham mulheres como\nresponsáveis em 2022, conforme o Censo Demográfico (IBGE, 2022). Entre essas mulheres,\nhá predominância de mulheres negras, refletindo a estrutura racial da população do estado,\nonde mais de 75% se autodeclaram pretas ou pardas (IBGE, Censo 2022). Essa feminização\nda responsabilidade domiciliar, combinada com a racialização da pobreza, coloca sobre as\nmulheres maranhenses o peso duplo da reprodução da vida e da sobrevivência em condições\nde extrema precariedade. Essa dupla jornada é uma barreira econômica pois impede\noportunidades e desenvolvimento.\n(54) No mercado de trabalho, as desigualdades persistem. As mulheres apresentam\nmenor inserção em empregos formais e maior concentração em ocupações precárias. A taxa\nde informalidade feminina acompanha o padrão elevado do estado, que alcançou 57,3% da\npopulação ocupada no 4º trimestre de 2025 (IBGE, PNAD Contínua, SIDRA tabela 4092), com\nmaior incidência entre mulheres negras. A informalidade não é apenas ausência de carteira\n13"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-14",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nassinada: é insegurança, jornadas exaustivas, ausência de direitos previdenciários e\nexposição a condições degradantes de trabalho, especialmente no serviço doméstico, no\ncomércio informal e na agricultura de subsistência.\n(55) Além disso, a desigualdade de rendimentos permanece significativa. No Brasil,\nas mulheres recebem, em média, cerca de 78% do rendimento dos homens, diferença que\ntende a ser ainda maior nas regiões Norte e Nordeste (IBGE, PNAD Contínua 2024). Essa\ndesigualdade reflete tanto a segregação ocupacional, mulheres concentradas em setores\nmenos remunerados, quanto a desvalorização histórica do trabalho feminino, considerado\n'natural' ou de menor complexidade.\n(56) No campo da violência, o cenário também é grave. Dados do Fórum Brasileiro de\nSegurança Pública indicam que o Maranhão permanece entre os estados com níveis elevados\nde violência contra a mulher. Segundo o Anuário Brasileiro de Segurança Pública (2024), o\nestado registrou aumento nos casos de feminicídio em relação aos anos anteriores,\nmantendo-se entre os mais críticos do país em termos de violência letal contra mulheres. A\nviolência de gênero, aqui, não é abstração: é o assassinato de mulheres negras, pobres, jovens,\nmuitas vezes em suas próprias casas, por parceiros ou ex-parceiros. É a naturalização da\nsubmissão feminina em uma sociedade patriarcal que ainda criminaliza as mulheres que\nousam romper com a violência doméstica.\n(57) Esse conjunto de dados evidencia que as desigualdades de gênero no Maranhão\nnão são apenas sociais, mas estruturais, combinando precarização do trabalho, desigualdade\nde renda e altos níveis de violência, especialmente entre mulheres negras. São desigualdades\nque se alimentam do capitalismo dependente, do racismo histórico e do patriarcado, uma\ntríade que oprime as mulheres maranhenses em suas especificidades.\n\n4.1 PROPOSTAS PARA A LUTA PELA EMANCIPAÇÃO DAS\nMULHERES\n(58) Diante desse cenário, o PCB defende um programa de emancipação feminina que\narticule a luta de classes com a luta antirracista e antipatriarcal, reconhecendo que a\nlibertação das mulheres passa necessariamente pela transformação socialista da sociedade.\n\n14"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-15",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n4.2 TRABALHO DIGNO E IGUALDADE SALARIAL\n(59) Combate à informalidade através da criação de empregos formais em setores\nestratégicos (indústria, energia, agroindústria familiar), com prioridade para mulheres\nchefes de família.\n(60) Aplicação rigorosa do princípio 'igual salário para trabalho igual', com auditorias\nsindicais e sanções exemplares às empresas que descumpram.\n(61) Valorização e socialização do trabalho doméstico e de cuidados através de\npolíticas públicas: criação e ampliação de creches e lares de idosos; ampliação e melhorias\ndos restaurantes populares, liberando as mulheres para o mercado de trabalho e para a vida\npolítica sem a dupla jornada.\n\n4.3 REFORMA AGRÁRIA FEMINISTA E ANTIRRACISTA\n(62) Destinação prioritária de terras da reforma agrária a mulheres negras e\ncamponesas, com acesso a crédito, assistência técnica e comercialização institucional.\n(63) Fomento à agroecologia e à agricultura familiar como alternativa ao agronegócio\npatriarcal, valorizando o saber tradicional das mulheres do campo.\n(64) Democratização das estruturas sindicais e cooperativas rurais, garantindo\nrepresentação feminina nos espaços de decisão.\n\n4.4 SOBERANIA SOBRE O CORPO E SAÚDE INTEGRAL\n(65) Legalização e descriminalização do aborto, garantindo às mulheres o direito de\ndecidir sobre suas vidas e seus corpos.\n(66) Expansão da rede de serviços de saúde sexual e reprodutiva, com atendimento\nhumanizado e gratuita distribuição de métodos contraceptivos.\n\n4.5 COMBATE À VIOLÊNCIA DE GÊNERO\n(67) A violência contra as mulheres não pode ser tratada apenas como um problema\nde segurança pública. Ela está profundamente relacionada às desigualdades econômicas, à\ndependência financeira, à divisão sexual do trabalho e às diversas formas de opressão\nreproduzidas pela sociedade capitalista. Por isso, o enfrentamento dessa realidade exige\n\n15"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-16",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\npolíticas integradas de proteção, prevenção, educação, saúde, assistência social e garantia de\ndireitos.\n(68) Implantar uma política estadual de enfrentamento à violência contra as\nmulheres, articulando estado e municípios para ampliar progressivamente a rede de\natendimento especializado. Isso inclui a expansão das Delegacias Especializadas de\nAtendimento à Mulher, a criação de núcleos regionais com equipes multidisciplinares\n(policiais, psicólogas, assistentes sociais e assessoria jurídica) e a garantia de recursos\norçamentários permanentes para seu funcionamento.\n(69) Estruturar uma rede pública estadual de proteção às mulheres em situação de\nviolência, com casas de acolhimento regionalizadas, atendimento psicossocial, assistência\njurídica, acesso prioritário a programas habitacionais e políticas de qualificação profissional\ne geração de renda, assegurando condições materiais para a reconstrução da autonomia e da\nindependência econômica das vítimas.\n(70) Desenvolver uma política permanente de educação para a igualdade de gênero,\nos direitos humanos e o respeito à diversidade nas escolas públicas, integrada à formação\ncontinuada dos profissionais da educação e à produção de materiais pedagógicos adequados\nà realidade maranhense, contribuindo para o enfrentamento do machismo, da violência de\ngênero e de todas as formas de discriminação.\n(71) Garantir que as políticas voltadas às mulheres sejam articuladas a um projeto\nmais amplo de combate às desigualdades sociais, assegurando acesso ao trabalho digno, à\nmoradia, à educação, à saúde, à cultura e à participação política. A emancipação das mulheres\nexige não apenas medidas de proteção imediata, mas também a transformação das condições\neconômicas e sociais que sustentam a violência, a exploração e a opressão.\n(72) Institucionalização de casas-abrigo e programas de autonomia econômica para\nmulheres em situação de violência, garantindo renda e reinserção social.\n(73) Educação escolar permanente sobre relações de gênero, combate ao machismo\ne valorização da diversidade, desconstruindo a cultura do estupro desde a infância.\n\n4.6 REPRESENTAÇÃO POLÍTICA E PODER POPULAR\n(74) Lei de cotas femininas e raciais em todos os espaços de poder, incluindo partidos,\nsindicatos, conselhos e instâncias governamentais.\n16"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-17",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(75) Democratização da comunicação, com incentivo às rádios comunitárias, mídias\nindependentes e produção de conteúdo contra-hegemônico protagonizado por mulheres\nnegras e populares.\n\n4.7 EDUCAÇÃO E FORMAÇÃO POLÍTICA\n(76) Programas de alfabetização e formação profissional voltados especificamente\npara mulheres adultas, com metodologias que articulem saberes tradicionais e técnicos.\n(77) Promover a inclusão, nos currículos da rede pública estadual de ensino, de\nconteúdos relacionados à história das mulheres, às lutas dos movimentos feministas, às\nrelações de gênero, aos direitos humanos, à educação para a igualdade e ao respeito à\ndiversidade, articulando essa política com os demais níveis de ensino. O objetivo é contribuir\npara a formação cidadã, o enfrentamento da violência contra as mulheres, a prevenção da\ndiscriminação e a construção de relações sociais baseadas na igualdade, no respeito e na\nemancipação humana.\n(78) A emancipação das mulheres no Maranhão não se dará por concessões do capital\nou do Estado burguês, mas pela organização autônoma das trabalhadoras, pela unidade na\nluta de classes e pela construção de um projeto popular e socialista para o estado. O PCB\nreafirma que o socialismo é a condição necessária para a liberdade plena das mulheres e que\na luta feminista, antirracista e anticapitalista é indissociável na construção desse horizonte.\n\n5. JUVENTUDE, TRABALHO E O COMBATE À PRECARIZAÇÃO\n(79) A juventude maranhense vive sob o regime do racismo, da exclusão territorial e\nda exploração de classe. Filhos e filhas da classe trabalhadora, majoritariamente negra,\nenfrentam barreiras estruturais que lhes negam o futuro antes mesmo que possam sonhar\ncom ele. O primeiro emprego não chega; a escola não segura; a dificuldade financeira ronda\nno dia a dia.\n(80) E quando completa 18 anos, o único caminho parece ser um só: a rodoviária da\ncidade, a van lotada, a aventura de um emprego mal pago em São Paulo, no Pará, em Goiás,\nem Santa Catarina, no Mato Grosso, longe da família, longe da terra, longe de tudo que é seu.\nA precarização do trabalho e da vida no Maranhão obriga a juventude a buscar sobrevivência\nfora, como quem foge: não é escolha, é expulsão, colonialismo interno que exporta soja, gás e\nagora a própria juventude, são rostos, nomes e sonhos interrompidos. Com o PCB, essa lógica\n17"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-18",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nse quebra. A juventude maranhense terá a opção de construir seu futuro digno aqui, no seu\nestado, com direitos, perspectiva e raízes.\n\n5.1 O CICLO DA INFORMALIDADE: QUANDO O TRABALHO NÃO\nGARANTE DIREITOS\n(81) A transição para a vida adulta no Maranhão ocorre em cenário de profunda\nprecarização. A taxa de informalidade que atinge 57,3% da população ocupada empurra a\njuventude para um mercado de trabalho sem proteção social, sem estabilidade e sem\nperspectiva de mobilidade. São jovens que 'se viram' de bico em bico, subempregados, sem\ncarteira assinada, sem acesso a previdência, sem direito a férias ou décimo terceiro.\n(82) A barreira do primeiro emprego: A ausência de políticas públicas de absorção da\nmão de obra jovem converte a juventude maranhense em massa de manobra do capital\ninformal. Sem oportunidades de entrada no mercado formal, milhares de jovens são\ncondenados à precariedade permanente, ou ao êxodo forçado para estados onde a exploração\ntambém existe, mas é disfarçada de 'oportunidade'.\n(83) A escola versus a sobrevivência: segundo o Censo Demográfico de 2022, do IBGE,\napenas 9,3% da população maranhense com 25 anos ou mais possui ensino superior\ncompleto, um dos menores índices do país. Essa realidade não decorre da falta de interesse\nem estudar, mas das condições materiais de existência da maioria da população. Em milhares\nde famílias trabalhadoras, a necessidade de contribuir com a renda doméstica empurra\njovens para o mercado de trabalho antes da conclusão dos estudos, interrompendo\ntrajetórias educacionais e reproduzindo o ciclo da pobreza. Aqueles que conseguem ingressar\nno ensino superior enfrentam dificuldades de permanência e, após a formação, encontram\num mercado de trabalho incapaz de absorver adequadamente sua qualificação. Muitos são\nobrigados a migrar para outros estados em busca de oportunidades. Para romper esse ciclo, é\nnecessário ampliar o acesso e a permanência na educação pública, fortalecer a assistência\nestudantil e construir um modelo de desenvolvimento capaz de gerar empregos qualificados\npara a juventude maranhense.\n\n18"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-19",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n5.2 A JUVENTUDE NO MAPA DA FOME: TRABALHO PRECÁRIO,\nBARRIGA VAZIA\n(84) A precarização do trabalho juvenil traduz-se em números criminosos de\ninsegurança alimentar. Segundo a Tabela 9552 do IBGE (2024/2025), a juventude\nmaranhense vive sob a ameaça constante da fome: Insegurança Alimentar Grave (Fome): 118\nmil domicílios (5,2%) convivem com a privação crônica de alimentos, uma taxa 62,5%\nsuperior à média nacional de 3,2%. O Maranhão tem mais fome que o Brasil, apesar de gerar\nriquezas voltadas para exportação como soja, milho, gás, celulose.\n(85) Insegurança Alimentar Total: 35,2% dos domicílios (803 mil lares), mais de um\nterço das famílias maranhenses, vivem com a incerteza da próxima refeição, contra 24,2% no\nBrasil. São jovens que estudam, trabalham e dormem submetidos a insegurança alimentar\nmoderada ou grave.\n(86) A fome no Maranhão é uma política de Estado. É o resultado de décadas de\nabandono, de priorização do agronegócio exportador sobre a agricultura familiar, de\nescoamento de energia e commodities sem retorno social. É o que empurra o filho e a filha\ndo trabalhador maranhense para a estrada, aos 18 anos, com uma mochila nas costas e a\nesperança de que, longe de casa, talvez consiga comer todos os dias.\n\n5.3 ROMPENDO O CICLO: FRENTE ESTADUAL DE TRABALHO E\nJUVENTUDE\n(87) Para quebrar essa espiral de precarização e fazer com que a juventude possa ficar\nem seu território, o PCB propõe a criação de uma Frente Estadual de Trabalho e Juventude,\nprograma de emprego público massivo e planejado, com contratação direta de jovens para\ntransformar o estado e garantir seus direitos fundamentais aqui, no Maranhão.\n(88) Obras de saneamento e habitação: Empregar milhares de jovens na construção\nda infraestrutura que a população maranhense merece e não tem. Repetimos que segundo\ndados de 2024 do Painel Saneamento Brasil, elaborados a partir de informações do SINISA,\nIBGE e DATASUS, 5,4 milhões de maranhenses vivem sem coleta de esgoto e no censo 2022\nfoi revelado que 3,8% dos moradores em domicílios particulares permanentes não tinham\nbanheiro e nem sanitário, representando na época quase 257 mil moradores nesta condição\n(de um total de 6.760.732 moradores). A juventude será protagonista na universalização do\n19"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-20",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nsaneamento básico e na erradicação do déficit habitacional, recebendo salário digno, carteira\nassinada e qualificação profissional, sem precisar ir para a rodoviária.\n(89) Soberania energética e industrialização: O Maranhão produz cerca de 4% do gás\nnatural do país, segundo dados da Agência Nacional do Petróleo (ANP), mas esse recurso\nalimenta termelétricas de exportação que não geram emprego local nem desenvolvimento. A\nFrente Estadual de Trabalho articulará a industrialização do gás maranhense, petroquímicas,\nfertilizantes, cerâmicas, energia para a população, buscando criar postos de trabalho\nqualificados e quebrando a lógica de enclave que hoje beneficia apenas grandes grupos\nprivados. Serão milhares de vagas para engenheiros, técnicos, operários, administrativos,\npara quem quer ficar e construir.\n(90) Formação profissional integrada: Programas de qualificação vinculados às obras\ne às novas indústrias, com prioridade para jovens de baixa renda, mulheres e residentes de\náreas rurais e periféricas, garantindo que o emprego de hoje seja a carreira de amanhã. A\nmeta é o futuro profissional começar e se desenvolver no Maranhão.\n(91) Universidade pública e vínculo com o território: Expansão das universidades\nestaduais e federais no interior do estado, com bolsas de permanência estudantil, moradia e\ntransporte, para que a juventude possa estudar sem abandonar sua terra, e, ao se formar,\nencontre emprego qualificado aqui, não precise buscar 'oportunidades' em outros estados.\n\n5.4 A JUVENTUDE QUE FICA: CONSTRUIR O FUTURO DIGNO NO\nMARANHÃO\n(92) O programa de governo do PCB reconhece que a juventude maranhense não é\n'população em risco', é classe trabalhadora em potência, força produtiva bloqueada por um\nsistema que prioriza lucro sobre a vida. A luta pela emancipação juvenil passa\nnecessariamente pela:\n(93) Trabalho digno para toda a juventude maranhense, assegurando o primeiro\nemprego formal por meio da industrialização, do investimento público e da expansão dos\nserviços essenciais, rompendo com êxodo forçado.\n(94) Universalização do saneamento, habitação e energia como base da dignidade\nhumana e condição para que a juventude fique.\n\n20"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-21",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(95) Industrialização do estado a partir de seus recursos naturais, rompendo com a\nlógica de colônia de extração que expulsa os filhos da terra.\n(96) Educação como direito social, não privilégio de classe, com jornada integral,\nalimentação escolar, transporte gratuito e universidade pública de qualidade no próprio\nestado.\n(97) Combate ao racismo estrutural que condena a juventude negra às piores\ncondições de vida e trabalho, e à 'escolha' entre fome aqui ou exploração além-fronteiras.\n(98) Não queremos que a juventude maranhense se vá. Queremos que ela possa ficar,\ncom dignidade, trabalho, estudo, perspectiva de vida plena no território que a viu nascer.\nQueremos que, aos 18 anos, o jovem de Imperatriz, de Codó, de Santa Inês, de Barreirinhas,\nde São Luís, dos 217 municípios maranhenses tenha mais de uma opção: não apenas a\nrodoviária, mas também a carteira de trabalho assinada, a matrícula na universidade, o posto\nno programa de habitação, a vaga na indústria que está nascendo.\n(99) Com o PCB, o Maranhão deixa de ser terra de passagem para tornar-se terra de\nfuturo.\n\n6. RACISMO ESTRUTURAL NO MARANHÃO: VIOLÊNCIA,\nTERRITÓRIO E EXCLUSÃO\n(100) O Maranhão é estado majoritariamente negro. Segundo o IBGE, cerca de 75%\nda população do estado se autodeclara preta ou parda, conforme o Censo Demográfico de\n2022. Mas ser maioria não significa ter poder. A cor que define a identidade maranhense é a\nmesma que a condena à violência, à expulsão do território e à negação de direitos. O racismo\nestrutural não é herança do passado: é máquina de produção de desigualdade que opera no\npresente.\n\n6.1 VIOLÊNCIA LETAL: O GENOCÍDIO DA JUVENTUDE NEGRA\n(101) A violência atinge de forma desproporcional a juventude negra. Dados\nnacionais indicam que a maioria das vítimas de homicídio no Brasil é composta por jovens\nnegros, padrão que se reproduz no Maranhão (Fórum Brasileiro de Segurança Pública,\nAnuário Brasileiro de Segurança Pública 2024).\n\n21"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-22",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(102) Esse cenário não é acidente. É política de Estado que criminaliza a pobreza e a\nnegritude. São jovens das periferias urbanas de São Luís, Imperatriz, São José de Ribamar,\nterritórios socialmente vulnerabilizados onde o Estado aparece com polícia, mas não com\nescola, emprego ou saneamento. A violência letal contra jovens negros é a forma mais\nextrema de um racismo que os condena à invisibilidade ou à morte.\n\n6.2 VIOLÊNCIA NO CAMPO: O LATIFÚNDIO QUE MATA\n(103) No campo, a violência assume contornos igualmente graves. Segundo a\nComissão Pastoral da Terra, o Maranhão figura entre os estados com maior número de\nconflitos agrários do país. Relatórios recentes indicam a recorrência de ameaças, expulsões e\nassassinatos envolvendo comunidades tradicionais, incluindo quilombolas, evidenciando a\npermanência de disputas fundiárias intensas e a fragilidade da proteção desses territórios.\n(104) O latifúndio não cede terra: mata quem a ocupa. A expansão do agronegócio no\nMATOPIBA avança sobre territórios quilombolas, de comunidades tradicionais e de\nassentamentos, com apoio de grileiros, milícias privadas e omissão do Estado. A violência\nrural é racismo que disfarça seu rosto de 'desenvolvimento' e 'modernização'.\n\n6.3 TERRITÓRIO NEGADO: A TITULAÇÃO QUE NÃO CHEGA\n(105) Em relação à regularização fundiária, o estado possui centenas de comunidades\nquilombolas reconhecidas, mas uma parcela reduzida de territórios titulados. De acordo com\ndados do INCRA e de órgãos estaduais, o avanço na titulação ainda é limitado frente à\ndemanda histórica dessas comunidades, o que mantém milhares de famílias em situação de\ninsegurança territorial.\n(106) Sem título, sem terra. Sem terra, sem sustento. Sem sustento, sem futuro. A\ndemora na titulação não é burocracia: é estratégia de expulsão. Enquanto o Estado protela, o\nagronegócio avança.\n\nEnquanto comunidades\n\nquilombolas esperam décadas\n\npor\n\nreconhecimento, suas terras são griladas, desmatadas, convertidas em commodities para\nexportação. O racismo aqui tem método: é lento, institucional, letal.\n\n22"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-23",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n6.4 RACISMO PENAL: O SISTEMA QUE PRENDE QUEM DEVERIA\nPROTEGER\n(107) O racismo estrutural também se expressa no sistema de justiça e segurança\npública. No Brasil, a população negra é maioria entre as vítimas de intervenções policiais e\nentre a população carcerária, que ultrapassa 67% de pessoas negras, segundo o DEPEN\n(Levantamento Nacional de Informações Penitenciárias, INFOPEN, 2023). Essa tendência se\nreproduz nos estados do Nordeste, incluindo o Maranhão, evidenciando a seletividade racial\ndo sistema penal.\n(108) Ser jovem, negro e pobre no Maranhão é perfil de suspeito. É alvo de abordagem\npolicial violenta, de encarceramento em massa, de prisão provisória que se eterniza. O\nsistema de justiça criminaliza a sobrevivência, enquanto o verdadeiro crime, o latifúndio, o\ndesmatamento, a grilagem, opera impune. A prisão atinge sobretudo negros, pobres e\ntrabalhadores excluídos, enquanto os grandes crimes econômicos, ambientais e contra o\npatrimônio público frequentemente permanecem impunes.\n(108.1) A impunidade da violência policial é construída nos gabinetes dos governos\nque comandam as forças de segurança e toleram abusos sem investigação e punição.\nEnquanto as periferias são tratadas como territórios de guerra, latifundiários, grileiros e\nresponsáveis por grandes crimes ambientais e econômicos seguem, muitas vezes, protegidos\npelo poder político. Combater o racismo penal exige romper com essa lógica, enfrentar o\nencarceramento em massa e responsabilizar não apenas os executores dos abusos, mas\ntambém quem os determina, autoriza ou acoberta.\n\n6.5 O RACISMO COMO ESTRUTURA: ALÉM DA HERANÇA, A\nPOLÍTICA\n(109) Esse conjunto de dados demonstra que, no Maranhão, a desigualdade racial não\né apenas uma herança histórica, mas uma realidade estrutural que se manifesta na violência,\nna exclusão territorial e na limitação de acesso a direitos fundamentais.\n(110) Mas 'estrutural' não significa 'natural'. O racismo é construído, mantido e\nreproduzido por decisões políticas: pela omissão na titulação de terras quilombolas, pela\n\n23"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-24",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nviolência policial nas periferias, pela impunidade de conflitos agrários, pela ausência de\npolíticas de emprego para juventude negra, pela negação de reparação histórica.\n(111) Combater o racismo no Maranhão exige reconhecê-lo como eixo central do\nprojeto de desenvolvimento, ou melhor, de subdesenvolvimento, que oprimiu o povo desde\na escravidão. Exige políticas públicas que invertam a lógica: titulação imediata e massiva de\nterras quilombolas, fim das intervenções policiais violentas, desencarceramento,\ninvestimento em educação e emprego para juventude negra, e reparação histórica como\ndireito, não como favor.\n(112) Ser 75% da população e 67% da população carcerária não é coincidência: é\nprojeto. O PCB luta para que a maioria negra do Maranhão seja, finalmente, tratada como\nsujeito de direitos, não como alvo de violência.\n\n7. POVOS INDÍGENAS E COMUNIDADES TRADICIONAIS\n(113) O Maranhão abriga diversos povos indígenas (Guajajara, Awa-Guajá, Kanela,\nentre outros) e centenas de comunidades quilombolas, além de quebradeiras de coco,\npescadores artesanais e ribeirinhos. Todos enfrentam ameaças constantes a seus territórios\ne modos de vida.\n(114) Os povos indígenas do Maranhão sofrem com a invasão de suas terras por\nmadeireiros, grileiros e mineradores. O povo Awa-Guajá, em situação de isolamento\nvoluntário, está entre os mais ameaçados do planeta. As quebradeiras de coco babaçu\nenfrentam a violência dos fazendeiros que as impedem de acessar os babaçuais.\n\n8. TRABALHO, RENDA E PRECARIZAÇÃO NO MARANHÃO\n(115) A classe trabalhadora urbana no Maranhão enfrenta um dos quadros mais\ncríticos do país, marcado por alta informalidade, baixos rendimentos e forte concentração do\nemprego em atividades de baixa produtividade. Essa realidade não é fruto do acaso, mas\nresultado de uma estrutura econômica dependente e de políticas que fragilizaram os direitos\ntrabalhistas nas últimas décadas, especialmente as reformas trabalhista (2017) e\nprevidenciária (2019), que aprofundaram a precarização em todo o país e atingiram com\nparticular violência os estados de menor desenvolvimento relativo.\n\n24"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-25",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n8.1 A INFORMALIDADE COMO REGRA: MAIS DA METADE DA\nCLASSE TRABALHADORA SEM DIREITOS\n(116) A informalidade constitui o elemento central dessa dinâmica. No 4º trimestre\nde 2025, 57,3% da população ocupada encontrava-se em situação informal, o equivalente a\naproximadamente 1,56 milhão de trabalhadores, segundo o IBGE, por meio da PNAD\nContínua (SIDRA, tabelas 4092 e 4095). No mesmo período, a média nacional situava-se em\ntorno de 38%, evidenciando que o Maranhão apresenta um nível de precarização\nsignificativamente superior ao do país, quase 20 pontos percentuais de diferença que se\ntraduzem em milhões de trabalhadores sem proteção social.\n(117) Isso significa que mais da metade da classe trabalhadora maranhense está\nprivada de direitos básicos: férias remuneradas, 13º salário, FGTS e previdência social. São\ntrabalhadores invisibilizados pelo Estado, explorados pelo capital e condenados à submissão\npermanente ao trabalho precário.\n\n8.2 BAIXOS RENDIMENTOS: O TRABALHO QUE NÃO GARANTE\nVIDA DIGNA\n(118) O rendimento do trabalho acompanha esse padrão de desigualdade estrutural.\nNo Maranhão, o rendimento médio mensal habitual foi de R$ 1.981 em 2024, segundo o IBGE\n(PNAD Contínua). No mesmo período, o rendimento médio do trabalho no Brasil foi de R$\n3.225, indicando que o trabalhador maranhense recebe, em média, cerca de 61% do\nrendimento médio do trabalho a nível nacional, uma diferença de aproximadamente 39%,\nque se traduz em muitas dificuldades nas condições de vida do trabalhador.\n(119) Mesmo no mercado formal, os salários permanecem cronicamente reduzidos.\nO salário médio das admissões no Maranhão foi de aproximadamente R$ 2.303,78, conforme\no Ministério do Trabalho e Emprego (Novo CAGED, 2025–2026).\n(120) No mesmo período, o salário médio de admissões no Brasil situava-se, de forma\nconsistente, na faixa de R$ 2.800 a R$ 3.000, segundo o mesmo órgão. Esse quadro evidencia\nque o trabalhador formal maranhense recebe, em média, cerca de 20% a 25% menos que a\nmédia nacional, demonstrando que a formalização, por si só, não garante melhoria\nsubstancial das condições de vida, é preciso mudar a estrutura que produz salários de fome,\ncom ou sem carteira assinada.\n25"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-26",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n\n8.3 DESEMPREGO DISFARÇADO: A ESTATÍSTICA QUE ENGANA\n(121) A taxa de desocupação foi de 5,6% no 4º trimestre de 2025, segundo o IBGE\n(PNAD Contínua, tabela 4099), próxima à média nacional. No entanto, essa aparente melhora\nnão representa uma transformação estrutural do mercado de trabalho.\n(122) Ao contrário, a redução do desemprego ocorre em paralelo à expansão da\ninformalidade, que atinge mais da metade da população ocupada. Isso indica que o\ndesemprego aberto vem sendo progressivamente substituído por formas precárias de\ninserção produtiva, trabalho informal, intermitente, de baixa remuneração, sem vínculo, sem\ndireitos, sem futuro. Em outras palavras: mais pessoas trabalham, porém em condições mais\ninstáveis, com menor renda e sem proteção social. A mesma precariedade, agora com nome\nde 'ocupação'.\n\n8.4 ESTRUTURA DO EMPREGO: ONDE A CLASSE\nTRABALHADORA ESTÁ\n(123) Estrutura\n\ncompleta do emprego no maranhão (com percentuais\n\ndetalhados)\n(Base: IBGE – PNAD Contínua, 4º trimestre de 2025)\n(123.1) Total de ocupados: 2.722.000 trabalhadores\nSetor\n\nTotal\n\n% do\ntotal\n\nFormais\n\n% no\nsetor\n\nInformais\n\n% no\nsetor\n\nServiços\nprivados\n\n1.034.000\n\n38%\n\n414.000\n\n40%\n\n620.000\n\n60%\n\nAdministração\n245.000\npública\n\n9%\n\n221.000\n\n90%\n\n24.000\n\n10%\n\nComércio\n\n626.000\n\n23%\n\n250.000\n\n40%\n\n376.000\n\n60%\n\nAgropecuária\n\n435.000\n\n16%\n\n87.000\n\n20%\n\n348.000\n\n80%\n\nIndústria +\nConstrução\n\n382.000\n\n14%\n\n190.000\n\n50%\n\n192.000\n\n50%\n\nTOTAL\nGERAL\n\n2.722.000\n\n100%\n\n1.162.000\n\n42,7%\n\n1.560.000\n\n57,3%\n\nRenda\nformal\n~\n\nRenda\ninformal\n~\n\n2.400\n\n1.600\n\n4.000\n\n1.800\n\n2.100\n\n1.400\n\n1.800\n\n1.000\n\n2.700\n\n1.500\n\n2.500\n\n1.400\n\n26"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-27",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(123.2) A distribuição do emprego evidencia as bases materiais dessa precarização.\nSegundo o IBGE (PNAD Contínua 2024--2025), a população ocupada no Maranhão distribuise aproximadamente da seguinte forma:\n(123.3) - Serviços privados: cerca de 38% dos ocupados\n(123.4) - Comércio: cerca de 23%\n(123.5) - Agropecuária: cerca de 16%\n(123.6) - Indústria e construção: cerca de 14%\n(123.7) - Administração pública: cerca de 9%\n\n(124) Esses dados consideram o total da população ocupada, incluindo trabalhadores\nformais e informais, e evidenciam a forte concentração da força de trabalho em setores de\nmenor produtividade e maior instabilidade, não na indústria que gera valor, mas nos serviços\nque reproduzem precariedade; não na produção de bens, mas no comércio de importação;\nnão na construção de soberania, mas na subsistência do dia a dia.\n(125) Em termos absolutos, o estado possuía cerca de 2,72 milhões de trabalhadores\nocupados em 2025, dos quais aproximadamente 1,56 milhão estavam na informalidade\n(57,3%) e 1,16 milhão no trabalho formal (42,7%), segundo o IBGE (PNAD Contínua).\n(126) A precarização não se distribui de forma homogênea. Setores como a\nagropecuária apresentam níveis de informalidade próximos de 80%, enquanto comércio e\nserviços privados giram em torno de 60%. Em contraste, a administração pública apresenta\ncerca de 90% de formalização, além de rendimentos médios significativamente superiores,\nevidenciando que, no Maranhão, ter acesso ao Estado (ainda que de forma precária) é a única\nforma de garantir alguma estabilidade, enquanto o setor privado produtivo oferece apenas\nexploração.\n\n8.5 EMPREGO FORMAL E CONCENTRAÇÃO POR PORTE: A\nDESIGUALDADE DENTRO DA FORMALIDADE\n(127) No mercado formal, a distribuição apresenta características distintas, pois\nconsidera apenas trabalhadores com vínculo empregatício. Segundo o Ministério do\n27"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-28",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nTrabalho e Emprego (Novo CAGED/RAIS, dezembro de 2025), a composição do emprego\nformal no Maranhão é a seguinte: Grandes empresas: 32,5% dos vínculos formais; Micro e\npequenas empresas: 52,1%; Setor público: 15,4%.\n(128) A diferença em relação à PNAD ocorre porque esta última considera todos os\ntrabalhadores, enquanto o CAGED/RAIS analisa apenas o emprego formal. Como o setor\npúblico apresenta baixa informalidade, sua participação relativa aumenta quando se observa\napenas os vínculos formais.\n(129) Mesmo assim, a maior parte dos trabalhadores formais encontra-se nas micro\ne pequenas empresas, onde predominam salários mais baixos e maior vulnerabilidade\neconômica. O 'formal' no Maranhão, na maioria dos casos, significa pequeno comércio de\nsobrevivência, serviço precário, autônomo forçado a ser 'empreendedor' de si mesmo, sem\nacesso a crédito, tecnologia ou mercados institucionais.\n(130) O setor público responde por 24,2% do PIB estadual (IBGE/IMESC, Contas\nRegionais, 2024), mas essa participação se deve mais à folha de pagamento do que a\ninvestimentos em desenvolvimento. O Estado gera emprego, mas não gera riqueza\nmultiplicada: falta investir em obras, saneamento, industrialização e políticas que\ntransformem a estrutura produtiva.\n\n8.6 ANÁLISE ESTRUTURAL: DESIGUALDADE E DEPENDÊNCIA\n(131) O contraste entre Maranhão e Brasil evidencia uma estrutura econômica\nmarcada por: maior informalidade (57,3% Maranhão, 38% Brasil); menor renda média (R$\n1.981,00 Maranhão, R$ 3.225,00 Brasil); concentração do emprego em setores de baixa\nprodutividade.\n(132) Essa configuração revela uma economia que gera riqueza em setores\nespecíficos (gás natural, soja, minério, energia), mas distribui o trabalho em condições\nprecárias para a maioria da população. O Maranhão é território de extração de riquezas e de\nexpulsão de trabalhadores: quem produz não apropria; quem trabalha não vive com\ndignidade.\n(133) A separação entre trabalho formal e informal não expressa interesses distintos,\nmas diferentes formas de inserção na mesma estrutura econômica de exploração. A\ninformalidade, longe de ser uma escolha, resulta da incapacidade estrutural do modelo de\ndesenvolvimento de gerar empregos de qualidade e é funcional ao capital, que se beneficia\n28"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-29",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nda massa de reserva desorganizada e barata.\n\n8.7 JUVENTUDE E REPRODUÇÃO DA PRECARIZAÇÃO: A\nGERAÇÃO SEM FUTURO\n(134) A juventude maranhense é particularmente afetada por essa dinâmica. Segundo\no IBGE (PNAD Contínua 2023-2024), jovens enfrentam maiores dificuldades de inserção no\nmercado de trabalho e maior exposição à informalidade.\n(135) Essa realidade compromete as perspectivas de vida de uma geração inteira,\nmarcada por instabilidade, baixos salários e limitada proteção social e que, aos 18 anos, vê\ncomo única saída a rodoviária, a van lotada, a aventura de emprego mal pago em outros\nestados. O Maranhão exporta seus jovens da mesma forma que exporta soja, minério e gás\nnatural: transfere para outras regiões a força de trabalho, a inteligência e o talento que\ndeveriam impulsionar o desenvolvimento do próprio estado.\n\n8.8 PROPOSTAS DO PCB PARA O TRABALHO E A RENDA:\nVALORIZAÇÃO E EMANCIPAÇÃO\n(136) Diante desse cenário de exploração estrutural, o PCB propõe a construção de\num novo modelo de desenvolvimento baseado na valorização do trabalho e na superação da\nprecarização: Revogação integral das reformas trabalhista (2017) e previdenciária (2019),\nrestabelecendo direitos conquistados com décadas de luta.\n(137) Contra a escala 6x1. Redução da jornada de trabalho para 30 horas semanais,\nsem redução salarial.\n(138) Valorização do salário mínimo, garantindo poder de compra compatível com o\ncusto real da cesta básica e dos direitos sociais, com política de recuperação da perda sempre\nbuscando chegar ao valor calculado pelo DIEESE.\n(139) Combate à pejotização e ao trabalho intermitente, com responsabilização\nsolidária das empresas contratantes.\n(140) Reconhecimento de vínculos de trabalho em plataformas digitais e economia\nde aplicativos.\n(141) Política industrial voltada à geração de empregos de qualidade, aproveitando o\ngás natural e a infraestrutura logística para industrialização soberana.\n29"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-30",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(142) Incentivo à agroindústria e à produção de alimentos, rompendo com a lógica\nexportadora do agronegócio e garantindo soberania alimentar.\n(143) Ampliação do investimento público como indutor do desenvolvimento\neconômico e gerador de emprego, via Frente Estadual de Trabalho e programas de\ninfraestrutura habitacional, saneamento e financiamento das atividades das cooperativas dos\ntrabalhadores.\n(144) Defendemos uma Lei de Responsabilidade Social que coloque a vida, os direitos\ne o bem-estar da maioria trabalhadora acima dos interesses do mercado financeiro,\ntransformando o combate à pobreza, à desigualdade e à exclusão em obrigação permanente\ndo poder público.\n\n8.9 SÍNTESE: POR UMA TRANSFORMAÇÃO ESTRUTURAL\n(145) Os dados do IBGE (PNAD Contínua), do Ministério do Trabalho (Novo CAGED)\ne do IMESC demonstram que o Maranhão apresenta níveis de precarização superiores à\nmédia nacional, expressos em: informalidade elevada (57,3% Maranhão e 38% no Brasil);\nrenda significativamente menor (R$ 1.981,00 Maranhão e R$ 3.225,00 Brasil); concentração\ndo emprego em setores de baixa produtividade.\n(146) Essa realidade exige uma transformação estrutural baseada na valorização do\ntrabalho, na industrialização, na reforma agrária e na redução das desigualdades regionais. A\nluta do PCB é para que o trabalhador maranhense — formal ou informal, urbano ou rural,\njovem ou adulto — seja tratado como sujeito de direitos, não como massa de manobra do\ncapital; para que a juventude possa ficar e construir seu futuro digno aqui, no próprio estado;\ne para que o Maranhão deixe de ser colônia de extração para tornar-se polo de\ndesenvolvimento popular.\n\n9. DIVERSIDADE SEXUAL E DE GÊNERO: DIREITOS, DIGNIDADE E\nCOMBATE À VIOLÊNCIA\n(147) O Maranhão não será verdadeiramente democrático enquanto parte de sua\npopulação continuar sendo privada de direitos fundamentais em razão de sua orientação\nsexual, identidade de gênero ou expressão de gênero. Travestis, mulheres transexuais,\nhomens trans, lésbicas, gays, bissexuais e demais pessoas LGBTQIA+ ainda enfrentam\n\n30"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-31",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\ndiscriminação, violência, exclusão social e enormes barreiras de acesso à educação, à saúde,\nao trabalho, à cultura e à cidadania.\n(148) A população LGBT, especialmente a população trans, encontra-se entre os\nsegmentos mais vulnerabilizados da classe trabalhadora. Muitas vezes, a discriminação\ncomeça dentro da própria família, prossegue na escola, dificulta o acesso à qualificação\nprofissional e ao emprego formal, empurrando milhares de pessoas para situações de\nextrema precariedade econômica e social. A violência institucional também é uma realidade:\nescolas, serviços de saúde e equipamentos públicos frequentemente reproduzem a\nLGBTfobia, negando o direito à identidade de gênero e orientação sexual. A ausência de\npolíticas públicas específicas aprofunda a vulnerabilidade social e econômica desta parcela\nda classe trabalhadora.\n(149) O PCB compreende que a LGBTfobia não é apenas um problema individual ou\ncomportamental. Ela está relacionada às desigualdades estruturais da sociedade e é\nfrequentemente utilizada para reforçar mecanismos de exclusão, exploração e\nmarginalização. Por isso, combater a violência contra a população LGBT significa também\ncombater a pobreza, o desemprego, a exclusão educacional e todas as formas de opressão\nque atingem a classe trabalhadora.\n(150) Nosso governo implementará uma política estadual permanente de promoção\ndos direitos da população LGBTQIA+, articulando ações nas áreas da saúde, educação,\nassistência social, cultura, trabalho, segurança pública e direitos humanos.\n(151) Defendemos a ampliação do acesso da população trans aos serviços de saúde,\nincluindo atendimento especializado, acompanhamento multiprofissional e garantia do\nrespeito à identidade de gênero em toda a rede pública. Trabalharemos para eliminar\npráticas discriminatórias nos serviços públicos e assegurar atendimento humanizado em\ntodas as instituições estaduais.\n(152) Na educação, desenvolveremos programas permanentes de combate ao\npreconceito, à violência e ao bullying, garantindo que as escolas sejam espaços seguros,\ninclusivos e respeitosos para todos os estudantes. A evasão escolar causada pela\ndiscriminação deve ser enfrentada como uma prioridade das políticas educacionais.\n(153) Também criaremos programas específicos de qualificação profissional, acesso\nao emprego e geração de renda para a população LGBT, especialmente para travestis e\n31"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-32",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\npessoas trans, que historicamente enfrentam maiores obstáculos para ingressar e\npermanecer no mercado de trabalho formal.\n(154) Na área da segurança pública, combateremos os crimes motivados por\nLGBTfobia, garantindo acolhimento adequado às vítimas e aperfeiçoando os mecanismos de\nregistro, investigação e acompanhamento desses casos. Defendemos uma política de\nsegurança que proteja a vida e os direitos da população, e não que reproduza discriminações\ne violências.\n(155) Nosso governo apoiará a produção cultural, artística e intelectual da população\nLGBTQIA+, reconhecendo sua contribuição para a construção da diversidade cultural\nmaranhense e para o fortalecimento da democracia.\n(156) Defendemos ainda a produção e sistematização de dados sobre a população\nLGBT no Maranhão. Não é possível formular políticas públicas eficazes sem conhecer a\nrealidade concreta dessa população, suas condições de vida, suas demandas e os obstáculos\nque enfrenta diariamente.\n(157) Para o PCB, a luta contra a LGBTfobia faz parte da luta mais ampla contra todas\nas formas de exploração e opressão. Defendemos uma sociedade em que ninguém seja\ndiscriminado por sua identidade, sua orientação sexual ou sua forma de viver. Uma sociedade\nem que a liberdade, a igualdade e a dignidade humana sejam direitos efetivamente garantidos\na todas as pessoas.\n(158) Somente com organização popular, ampliação dos direitos sociais e\nenfrentamento das desigualdades será possível construir um Maranhão livre da violência, do\npreconceito e da exclusão.\n\n10. ALCÂNTARA: SOBERANIA NACIONAL, DIREITOS\nQUILOMBOLAS E DESENVOLVIMENTO A SERVIÇO DO POVO\n(159) Alcântara simboliza uma das maiores contradições do Maranhão e do Brasil.\nEnquanto abriga uma das áreas mais estratégicas do planeta para o desenvolvimento de\natividades aeroespaciais, milhares de famílias quilombolas continuam enfrentando\ninsegurança territorial, dificuldades de acesso a direitos básicos e ameaças permanentes aos\nseus modos de vida.\n\n32"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-33",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(160) O PCB reconhece que as comunidades quilombolas de Alcântara possuem\ndireitos históricos sobre seus territórios, construídos ao longo de gerações por meio do\ntrabalho, da resistência e da preservação de sua identidade cultural. Nenhum projeto de\ndesenvolvimento pode ser considerado legítimo quando ignora ou viola os direitos daqueles\nque historicamente ocupam e protegem essas terras.\n(161) Defendemos a demarcação e a titulação definitiva dos territórios quilombolas\nde Alcântara, garantindo segurança jurídica às comunidades e assegurando o pleno exercício\nde suas atividades produtivas, culturais e sociais. O Estado deve assumir a responsabilidade\npela reparação histórica das famílias removidas ou prejudicadas pelos processos de\nimplantação e expansão do Centro de Lançamento de Alcântara.\n(162) Ao mesmo tempo, o PCB rejeita a falsa escolha entre desenvolvimento científico\ne direitos dos povos tradicionais. O Maranhão e o Brasil podem e devem desenvolver um\nprograma espacial próprio, comprometido com a soberania nacional, a produção de\nconhecimento científico e tecnológico e o interesse público. O que não aceitamos é que esse\ndesenvolvimento ocorra à custa da expulsão de comunidades tradicionais ou da submissão\nde áreas estratégicas do território nacional a interesses econômicos e geopolíticos\nestrangeiros.\n(163) Defendemos a revisão dos acordos e políticas que limitem a soberania nacional\nsobre Alcântara e a construção de um programa espacial sob controle público, transparente\ne orientado pelas necessidades do desenvolvimento nacional. A ciência e a tecnologia devem\nservir ao povo brasileiro, contribuindo para avanços nas áreas de comunicação,\nmonitoramento ambiental, defesa civil, educação, pesquisa e desenvolvimento econômico.\n(164) Nosso governo atuará para garantir infraestrutura, saneamento básico,\neducação, saúde, assistência técnica, crédito e políticas de fortalecimento da agricultura\nfamiliar, da pesca artesanal e das atividades econômicas desenvolvidas pelas comunidades\nquilombolas da região.\n(165) Para o PCB, Alcântara não pode ser tratada como uma simples área de\nexploração econômica ou estratégica. Alcântara é um território de memória, cultura,\nresistência e direitos. Defendemos uma solução que una soberania nacional, interesses da\nclasse trabalhadora, reparação histórica e desenvolvimento científico, colocando a riqueza\nproduzida pelo conhecimento e pela tecnologia a serviço do povo brasileiro e não dos\ninteresses do capital internacional.\n33"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-34",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\n(166) Somente com a garantia dos direitos quilombolas, com a valorização das\ncomunidades tradicionais e com o fortalecimento da soberania nacional será possível\nconstruir um futuro verdadeiramente democrático e popular para Alcântara e para o\nMaranhão.\n\nSÍNTESE\nPROGRAMA DE GOVERNO DO PCB\nPARA O MARANHÃO\nUM NOVO PROJETO PARA O MARANHÃO\n(167) O Maranhão produz riquezas suficientes para garantir uma vida digna ao seu\npovo. Exporta minérios, soja, celulose, energia e outras commodities, movimenta um dos\nmaiores complexos portuários da América Latina e possui enorme potencial agrícola,\nmineral, energético e industrial. Entretanto, essa riqueza permanece concentrada nas mãos\nde poucos, enquanto a maioria da população convive com baixos salários, informalidade,\ndesemprego, fome, precariedade da saúde, da educação, da moradia e do saneamento. O\ncrescimento econômico celebrado pelos sucessivos governos não significou\ndesenvolvimento social para quem vive do próprio trabalho.\n(168) Essa realidade não é resultado da falta de recursos nem de incapacidade do povo\nmaranhense. É consequência de um modelo econômico baseado na exportação de matériasprimas, na dependência tecnológica, na concentração da terra e da renda e na subordinação\naos interesses do grande capital. Um modelo que transforma o Maranhão em fornecedor de\nriquezas e mantém seu povo privado dos benefícios produzidos por seu próprio trabalho.\n(169) O Maranhão não é pobre. Quem empobrece o Maranhão é o modelo que\nconcentra sua riqueza nas mãos de poucos.\n(170) O PCB apresenta uma alternativa baseada em uma transformação estrutural do\nestado. Defendemos um projeto de desenvolvimento voltado às necessidades da maioria da\n\n34"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-35",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\npopulação, com reforma agrária, industrialização, agregação de valor às riquezas produzidas,\nfortalecimento da agricultura familiar, planejamento econômico, investimento público,\ngeração de empregos formais, valorização do trabalho, ampliação dos serviços públicos e\ndistribuição social da riqueza.\n(171) Nossa proposta parte do princípio de que a terra deve cumprir sua função social.\nDefendemos ampla reforma agrária, titulação coletiva dos territórios quilombolas,\ndemarcação das terras indígenas, proteção das comunidades tradicionais, combate à\ngrilagem, preservação dos bens naturais e fortalecimento da soberania alimentar, garantindo\ncrédito, assistência técnica, infraestrutura, comercialização e condições para que quem vive\ne trabalha no campo possa produzir com dignidade.\n(172) Também defendemos um Maranhão onde toda a população tenha acesso à\nsaúde, educação, cultura, esporte, moradia, saneamento básico, transporte público de\nqualidade e trabalho com direitos. A juventude não pode continuar sendo obrigada a deixar\nsua terra por falta de oportunidades. É necessário criar empregos qualificados, fortalecer a\nuniversidade pública, investir em ciência, tecnologia e inovação e construir um processo de\nindustrialização capaz de gerar desenvolvimento regional.\n(173) Nosso programa reafirma o compromisso com a igualdade entre homens e\nmulheres, o combate ao racismo, à LGBTfobia e a todas as formas de discriminação,\nassegurando que nenhum maranhense tenha seus direitos negados por sua origem, cor da\npele, identidade, orientação sexual ou condição social.\n(174) Defendemos uma segurança pública baseada na proteção da vida, no respeito\naos direitos humanos, na prevenção da violência e no enfrentamento das causas sociais da\ncriminalidade.\n(175) Sabemos que essas transformações não serão conquistadas apenas pela ação de\num governo. Elas dependem da participação consciente e organizada dos trabalhadores e\ntrabalhadoras do campo e da cidade, da juventude, das mulheres, da população negra, dos\npovos indígenas, das comunidades quilombolas, dos movimentos populares e de todos os\nsetores comprometidos com os interesses da classe trabalhadora.\n(176) Este programa não representa apenas um conjunto de propostas\nadministrativas. Representa um projeto político comprometido com a soberania nacional, a\ndemocracia popular, a valorização do trabalho, a distribuição da riqueza, a defesa dos bens\npúblicos e dos recursos naturais e a construção de um Maranhão onde a economia esteja a\nserviço da maioria da população.\n(177) É por isso que o PCB afirma: o Maranhão tem meios de produzir riqueza\nsuficiente para garantir uma vida digna ao seu povo e não para concentrá-la nas mãos de uma\nminoria. Construir esse novo caminho significa fortalecer a organização popular,\n35"
+          },
+          {
+            "id": "programa-de-governo-do-pcb-para-o-maranhao-36",
+            "titulo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PCB PARA O MARANHÃO\nampliar os direitos da classe trabalhadora e avançar na construção de um projeto de\ndesenvolvimento anticapitalista e anti-imperialista, orientado pelo poder popular e pela\nemancipação humana, na perspectiva do socialismo.\n\nPARTIDO COMUNISTA BRASILEIRO — PCB\nMaranhão\nPrograma aprovado no Encontro Estadual do PCB Maranhão realizado em\n28 e 29 de março de 2026 em Imperatriz-MA\n\n36"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "449e218cf38b22d3815a0a03d30889396aa6419e4187bca86c68ace0cdf59932"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7bcdf84653418290ceef351580b95357fafa368329bce4c0ee561de5f443dd60"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "fcf721c296188c3a8986e1cef4bdcd38ab43c2357db0cdc3b0bd26906519f6f2"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "8748bbdbfaed4967e1d96574639615bdbd25c3a998099ad1882350a26603699a"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "5368be16541e62f035edf764fb419d0f80b6c6d11b3005db62474570bfbf0a3c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cfcecb552c0afce0c593a2f414249b0b41f91abffafdd985bf86e4f8a23aee20"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "7f563050af32fbb280ba88e24a6c4919b31f0eaef569cb9047325167c47e20e1"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "03610d047f87800eba589014c10bb8641417ba9441a4590cb1e9cfdacb63870f"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "7eb4c1f2eae9db9f4bf4589872dd8769fd4b5a7b18ee72e813dc8870003aa20f"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e0f486199d36542ea97f635407aeefded514dc1833a8a66fb99117703c215573"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "42622d4fd2129a604c0793a3ab76299ae404c8ed01474d9e935771ab345eb405"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "3e500138c191d3d5383ef1da0d50ed238aace0dcbee59e1cf40114b15fbaa42a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "5b3984e67f243fbe303a2085e77c3237a77ed666efc92116ddbb8b11e74f3f58"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "be89cb2373bd36049ba1480c7a22baeebd8a99d9bd1dc4c32e62080c7e35ace4"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "32244a232a3a3ff4c9afb79a731dbe20954ec2f7f82230f1e1bdf5e1f306993a"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "c54ff7233281dcfd48f8f8477bd4cba4aa3aefd5b716746d30e9dc9c5cc3c1c4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "81c4f48d9f3d95a2b31241c6e4cede4c3c03119513adb22152a6c8eb10a8e0e3"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "d25690b3d19fc8a04265fedf6ce2f9e3cdf1ec02bba8dfa877b5516abebcefa6"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "0bb0d57d5474bfa7b3dfe6bcd08219fb284f607cd58efd2083bf43dedfaa3f0e"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "e3c4687801485004db364dbcd4237501e4b2e5ab7800f1f5d96d1707a682e105"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9e69305fec75ed0687c322e883c7d945359cddb0664cbb0b02ae1b09d0192a68"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7a0165f7042fa38ed29b3844bf9efac031e494ffbcf82e9da0b0c08b6ef6f363"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "f4f421d16c12b97832f2e0c3df902664e3f5a5dd99da4f9dd7e651a89694f347"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "17cc305ac6927486623b984c7f21609d4a5a02fcab8d7f2b2925d4f1fd07f859"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "fb8dcdf953b9a52017b7415b786a960eaeddb1eb1653d282df6cc66925cc020a"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "bbfa31975d9c45643ed8481a765202128e1b24419e77b851c7a12575444c469b"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "43f46eb21f3fd682e2f64dc853706b5dae4e00c1b334d37c520ac8f99927993c"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "a181eadf8dde1e37d2c5a32c76b56b7581c5b63cc4019897ef2b58cc1f09025c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "3885ead5a969719b0189cb231762bafa2ab77f55bf9ff30b386a6b83c3a67662"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "a76b9ee906cdb05bef568a90af0dfd9b8b4a9d5f8c876ff0acb5c19845f3b741"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "40df15e3446c61623491a83b133e13871badbf9825a0451bca82733b418e5a40"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "de6e8d9e9adc2dfdcd043d35047cfed5230dcd345d02c68ed9482e0cee01b921"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "01c40b8cea6ff78aa8f76c07563296078634512d3a5c6a82d87c2138ae56cd9d"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "5cf673c992dc51f3308ddc3c18a8c70e567f8f1a414ce5cc7c8ce9f26c8f3871"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "443a456e37ef48c5fee9b77d1fcad65e06101a5b432800f04481f7dcf4e4c038"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "709175e445540cf37fde93991c9ff8a7ebbc77293bb01912aa7a2b943c690fd2"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "No eixo de soberania territorial, o programa propõe a demarcação total e imediata dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais. Na política agrária, o programa propõe redirecionar os subsídios destinados à soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense. No eixo dedicado às mulheres, o programa prevê a criação e ampliação de creches e lares de idosos como política de valorização e socialização do trabalho doméstico e de cuidados. Para o enfrentamento da violência de gênero, o programa prevê uma política estadual articulada entre estado e municípios para ampliar a rede de atendimento especializado. Para a juventude, o programa propõe a criação de uma Frente Estadual de Trabalho e Juventude, descrita como programa de emprego público planejado. Em Alcântara, o programa defende a titulação definitiva dos territórios quilombolas para garantir segurança jurídica às comunidades. No campo científico, o programa defende um programa espacial próprio sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional.",
+    "frases": [
+      {
+        "texto": "No eixo de soberania territorial, o programa propõe a demarcação total e imediata dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 5,
+            "trecho": "Demarcação total e imediata: garantia jurídica e física dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais."
+          }
+        ]
+      },
+      {
+        "texto": "Na política agrária, o programa propõe redirecionar os subsídios destinados à soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 5,
+            "trecho": "Fim dos incentivos ao agronegócio: redirecionar os subsídios que hoje financiam a soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense."
+          }
+        ]
+      },
+      {
+        "texto": "No eixo dedicado às mulheres, o programa prevê a criação e ampliação de creches e lares de idosos como política de valorização e socialização do trabalho doméstico e de cuidados.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 15,
+            "trecho": "Valorização e socialização do trabalho doméstico e de cuidados através de políticas públicas: criação e ampliação de creches e lares de idosos; ampliação e melhorias dos restaurantes populares, liberando as mulheres para o mercado de trabalho e para a vida política sem a dupla jornada."
+          }
+        ]
+      },
+      {
+        "texto": "Para o enfrentamento da violência de gênero, o programa prevê uma política estadual articulada entre estado e municípios para ampliar a rede de atendimento especializado.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 16,
+            "trecho": "Implantar uma política estadual de enfrentamento à violência contra as mulheres, articulando estado e municípios para ampliar progressivamente a rede de atendimento especializado."
+          }
+        ]
+      },
+      {
+        "texto": "Para a juventude, o programa propõe a criação de uma Frente Estadual de Trabalho e Juventude, descrita como programa de emprego público planejado.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 19,
+            "trecho": "o PCB propõe a criação de uma Frente Estadual de Trabalho e Juventude, programa de emprego público massivo e planejado"
+          }
+        ]
+      },
+      {
+        "texto": "Em Alcântara, o programa defende a titulação definitiva dos territórios quilombolas para garantir segurança jurídica às comunidades.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 33,
+            "trecho": "Defendemos a demarcação e a titulação definitiva dos territórios quilombolas de Alcântara, garantindo segurança jurídica às comunidades"
+          }
+        ]
+      },
+      {
+        "texto": "No campo científico, o programa defende um programa espacial próprio sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 33,
+            "trecho": "a construção de um programa espacial sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "demarcacao-territorial",
+        "titulo": "Demarcação territorial",
+        "descricao": "O programa prevê a demarcação de territórios indígenas, quilombolas e de uso comum.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 5,
+            "trecho": "Demarcação total e imediata: garantia jurídica e física dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais."
+          }
+        ]
+      },
+      {
+        "id": "agroecologia-alimentar",
+        "titulo": "Agroecologia alimentar",
+        "descricao": "O programa propõe redirecionar subsídios da soja exportadora para a agroecologia.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 5,
+            "trecho": "redirecionar os subsídios que hoje financiam a soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense."
+          }
+        ]
+      },
+      {
+        "id": "trabalho-de-cuidados",
+        "titulo": "Trabalho de cuidados",
+        "descricao": "O programa prevê creches e lares de idosos como políticas públicas de cuidados.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 15,
+            "trecho": "criação e ampliação de creches e lares de idosos"
+          }
+        ]
+      },
+      {
+        "id": "violencia-de-genero",
+        "titulo": "Violência de gênero",
+        "descricao": "O programa prevê uma política estadual de enfrentamento à violência contra as mulheres.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 16,
+            "trecho": "Implantar uma política estadual de enfrentamento à violência contra as mulheres"
+          }
+        ]
+      },
+      {
+        "id": "trabalho-juventude",
+        "titulo": "Trabalho para juventude",
+        "descricao": "O programa propõe uma Frente Estadual de Trabalho e Juventude.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 19,
+            "trecho": "o PCB propõe a criação de uma Frente Estadual de Trabalho e Juventude"
+          }
+        ]
+      },
+      {
+        "id": "programa-espacial-publico",
+        "titulo": "Programa espacial público",
+        "descricao": "O programa defende um programa espacial sob controle público.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544073:01",
+            "pagina": 33,
+            "trecho": "a construção de um programa espacial sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:06:33.208Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:08:57.097Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde integralmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente sobre demarcação territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:1:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta agrária coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:2:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco em área coerente de cuidados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:3:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre as cláusulas citadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre violência de gênero."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:4:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação, mesmo omitindo o termo 'massivo'."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única de emprego para juventude."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:5:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:6:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:frase:7:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:demarcacao-territorial:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:agroecologia-alimentar:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-de-cuidados:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:violencia-de-genero:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:trabalho-juventude:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544073:tema:programa-espacial-publico:documentos:MA:100002544073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MA:100002544073",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MA:100002544073:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 40386,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4252,
+          "reasoning_output_tokens": 2850
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26618,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23507,
+          "output_tokens_details": {
+            "thinking_tokens": 620
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26618,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23507,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26618,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26618
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36219840000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "f2188ce764afaff7db3a9194c175d44b7f77efbee71b8c3208bc220cec5cb509",
+    "extractedTextSha256": "f71602c966e78da4c42ef4d99ac9dd4b23dad0f7f1eaf4618ed3efe5778a85a3",
+    "documentCount": 1,
+    "documentSetSha256": "cb9564d073cb32162d7d1cba67f47880f81cc377a170a27e6a86180ed8ce7783",
+    "contentSha256": "52b453f321e4a21bf00289d54d5f5484d48bacf10de53326ecfa7b80bde23cd7"
+  }
+}

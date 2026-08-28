@@ -1,0 +1,1592 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002532987",
+    "slug": "rafael-fonteles",
+    "nomeUrna": "RAFAEL FONTELES",
+    "partido": "PT",
+    "arquivoNome": "2026PI180002532987_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002532987_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002532987:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002532987_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002532987_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "004c55a5f06c3461163efab19b1e2aa274274b360ec95bc8a9c820e62fd87328",
+        "extractedTextSha256": "6c397588819eaede72742be11779ad787d16ec88f175a9d2bc522c95e7b8b131",
+        "paginas": 68,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "Plano de Governo\n2027—2030\nO Povo do Piauí em Primeiro Lugar"
+          },
+          {
+            "id": "o-documento-que-ora-se-apresenta-a-justica-eleitoral-e-ao-povo-do-piaui",
+            "titulo": "O documento que ora se apresenta à Justiça Eleitoral e ao povo do Piauí, não nasce",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O documento que ora se apresenta à Justiça Eleitoral e ao povo do Piauí, não nasce\nde uma folha em branco. Nasce de um governo que cumpriu o que prometeu — e\nque, ao cumprir, transformou a relação do piauiense com o seu próprio Estado. O\nPlano de Governo apresentado em 2022 foi executado com método, monitoramento\npúblico e resultados verificáveis: a renda cresceu e a pobreza recuou; a espera na\nsaúde diminuiu de meses para dias; a escola pública se modernizou e passou a ser\nmotivo de orgulho; a segurança avançou com inteligência e presença; a infraestrutura\nconectou territórios historicamente isolados; e o Piauí passou a atrair investimentos,\ntecnologia e reconhecimento nacional em escala inédita. Mais do que um conjunto\nde entregas, consolidou-se um modo de governar — moderno e dinâmico na gestão,\nrigoroso no uso de cada recurso público, e, sobretudo, sensível na escuta. Porque\ngovernar, para nós, nunca foi apenas administrar: é olhar o todo sem perder de vista\ncada pessoa; é ter a firmeza dos números e a delicadeza de saber que atrás de cada\nnúmero há uma família, um sonho, uma história que merece respeito.\nFoi essa combinação — competência técnica e sensibilidade humana — que\ndevolveu ao piauiense a estima por sua terra e a confiança em seu futuro. E é ela que\norienta cada página deste novo Plano, estruturado com o rigor que a seriedade do\ncompromisso exige. São 8 eixos, um eixo global – o Pacto pela Economia –, que\nfunciona como elemento integrador e norteador da estratégia, e sete eixos\nestratégicos, responsáveis por organizar as políticas, programas e ações voltadas ao\ndesenvolvimento econômico do Piauí, desdobrados em 53 programas, cada qual\ncom sua meta central claramente enunciada, seus indicadores de acompanhamento\n(KPIs) definidos desde já — para que a população possa medir, cobrar e fiscalizar — e"
+          },
+          {
+            "id": "um-total-de-200-metas-especificas-todas-alinhadas-aos-objetivos-de",
+            "titulo": "um total de 200 metas específicas, todas alinhadas aos Objetivos de",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "um total de 200 metas específicas, todas alinhadas aos Objetivos de\nDesenvolvimento Sustentável da Agenda 2030. Não se trata de uma carta de\nintenções: trata-se de um contrato de gestão com o povo do Piauí, no qual cada\npromessa vem acompanhada do instrumento que permitirá verificá-la. Quem\ncumpriu o primeiro plano não teme apresentar o segundo com metas ainda mais\nambiciosas — e com a régua à vista de todas as pessoas.\nEste Plano é, também, filho da democracia. Foi construído da maneira como\nacreditamos que se deve construir o futuro de um Estado: território por território, voz\npor voz. Resulta das centenas de agendas e viagens realizadas pelos doze territórios\nde desenvolvimento; do diálogo permanente com prefeitas e prefeitos, vereadoras e\nvereadores, deputadas e deputados estaduais e federais, senadoras e senadores; das\n10 reuniões temáticas realizadas com representantes e militantes dos partidos\npolíticos que compõem esta ampla aliança, para que a pluralidade partidária se\ntraduzisse em conteúdo de governo, e não apenas em apoio de ocasião; da escuta\natenta à sociedade civil organizada — trabalhadores, empreendedores, agricultores\nfamiliares, comunidades tradicionais, professores, profissionais de saúde e de\nsegurança, lideranças comunitárias, religiosas e culturais, movimentos de mulheres,\nde juventude e de pessoas com deficiência; e da contribuição direta da população\npor meio da plataforma colaborativa, que recebeu 1.031 propostas de 64 municípios,\nnos doze territórios de desenvolvimento do Estado. Ao todo, direta ou indiretamente,\ncerca de 10 mil piauienses tomaram parte na construção deste documento.\nÉ esse conjunto — o rigor de quem mede cada meta, a disposição de quem entrega\ne a humildade de quem escuta antes de decidir — que faz deste Plano um\ninstrumento concreto de democracia: não uma peça de retórica participativa, mas um\ndocumento no qual cada cidadã e cada cidadão do Piauí pode reconhecer, de fato, a\nprópria voz. Por isso mesmo, ele permanece vivo: será aperfeiçoado ao longo do\ndebate eleitoral, incorporando as contribuições que continuarem a chegar — porque\né do povo, e para o povo, que este projeto existe.\n\nNinguém Fica Para Trás: a sensibilidade que também governa\nHá uma convicção que atravessa todos os eixos deste Plano e que constitui, mais do\nque uma diretriz, um compromisso moral: o desenvolvimento só é verdadeiro quando\nalcança a todas as pessoas. Não por acaso, o eixo de Direitos e Proteção Social é o\nmais denso de todo o documento — são 9 programas e 39 metas específicas\ndedicadas a garantir que o crescimento do Piauí chegue primeiro a quem mais\nprecisa. Ali estão o Pacto pelas Crianças, que articula saúde, educação e assistência"
+          },
+          {
+            "id": "social-nos-doze-territorios-para-assegurar-a-cada-crianca-piauiense-o-di",
+            "titulo": "social nos doze territórios para assegurar a cada criança piauiense o direito de",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "social nos doze territórios para assegurar a cada criança piauiense o direito de\ncomeçar a vida em igualdade de condições, com cobertura vacinal em todos os 224\nmunicípios e alfabetização na idade certa; o Pacto pela Pessoa Idosa, que cuida de\nquem construiu o Piauí que hoje colhemos, com capacitação de cuidadores, inclusão\ndigital e ampliação do Passe Livre; o Piauí Por Elas, que fortalece a autonomia\neconômica e a proteção das mulheres, com a universalização do Ônibus Lilás e a\nexpansão dos Centros de Referência; o Piauí Mais Inclusivo, que garante às pessoas\ncom deficiência e neurodivergentes acesso regular a serviços integrados em todos\nos territórios; o Oportunidade Jovem, que abre as portas do primeiro emprego, do\nestágio e do empreendedorismo; e as políticas de igualdade racial e de valorização\ndos povos e comunidades tradicionais, que reconhecem, na diversidade do nosso\npovo, uma das maiores riquezas do Piauí. Proteger não é assistencialismo: é justiça. E\né também estratégia — porque nenhum Estado se torna grande deixando parte de\nsua gente pelo caminho.\n\nManter e ampliar as conquistas: saúde, segurança e educação\nAs grandes transformações do primeiro ciclo não serão apenas mantidas — serão\naprofundadas. Na saúde, o Piauí Saúde Digital, que já realizou mais de 2 milhões de\nteleconsultas e telediagnósticos, torna-se política permanente, com a meta de\ngarantir 10 dias de tempo médio de espera por consultas especializadas e reduzir\npara 20 dias a espera por cirurgias eletivas, além da consolidação das Centrais de\nExames nas 28 microrregiões, do fortalecimento da saúde mental com equipes\nmultiprofissionais em todas as microrregiões e da modernização dos hospitais\nestratégicos. Na segurança, o compromisso é levar a taxa de homicídios a patamar\nigual ou inferior a 10 por 100 mil habitantes e reduzir em mais da metade os roubos e\nos crimes vinculados a facções em relação ao ano de 2025, por meio do policiamento\norientado por inteligência, de novos Centros Integrados de Comando e Controle e do\nPacto contra o Feminicídio — porque a vida vem em primeiro lugar. Na educação,\nnossa prioridade das prioridades, o horizonte é claro: elevar em 20% o IDEB do Ensino\nMédio, garantir 95% das crianças alfabetizadas até os 7 anos, reduzir pela metade o\nanalfabetismo entre jovens e adultos, valorizar os profissionais da educação com\nconcurso público, e trazer para o Piauí instituições de excelência como o IMPA Tech\n— porque o filho do agricultor de Guaribas e a filha da professora de Parnaíba têm o\nmesmo direito de sonhar alto que qualquer jovem deste país."
+          },
+          {
+            "id": "o-grande-motor-o-pacto-pela-economia",
+            "titulo": "O grande motor: o Pacto pela Economia",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "O grande motor: o Pacto pela Economia\nSe o primeiro mandato reconstruiu as bases — infraestrutura, contas equilibradas,\nserviços modernizados, confiança —, o segundo terá como grande motor a renda do\npiauiense. A meta está declarada sem rodeios: aumentar em 50% o rendimento\ndomiciliar per capita, por meio de um choque integrado de desenvolvimento que\narticula agroindústria e bioeconomia, infraestrutura, economia digital, indústria\nmineral e verde, saúde e biotecnologia, turismo e economia criativa. São R$ 10 bilhões\nem investimentos públicos e a consolidação de R$ 100 bilhões em investimentos\nprivados; 100 mil novas oportunidades de trabalho, emprego e renda; a ampliação de\n50% no crédito produtivo, com atenção especial aos jovens empreendedores; o\nfortalecimento do cooperativismo, com 12 cooperativas produtivas estruturadas e\nmais de mil cooperados em cada uma, gerando renda sustentável nos territórios; a\nregularização fundiária de 200 mil imóveis, dando segurança jurídica a quem trabalha\na terra e habita a cidade; e a formação massiva da nossa juventude — técnica,\nprofissional, superior — porque nenhum Estado prospera sem preparar quem vai\nconstruí-lo. Empreender, cooperar, produzir e formar: esses são os verbos do Piauí\nque queremos.\nE há, aqui, um chamado que vai além das metas. O Piauí que se nacionaliza —\nvanguarda da transição energética, referência em inovação pública, protagonista na\natração de investimentos — e que se internacionaliza — levando seus grãos, seu mel,\nseus minérios, sua ciência e seus talentos ao mundo — não é obra de um governo: é\nobra de um povo que decidiu não aceitar mais o lugar que a história lhe colocou. Este\né o desafio que propomos a cada piauiense: sermos, juntos, cada vez maiores e cada\nvez melhor vistos — não por vaidade, mas porque a autoestima de um povo é\ntambém um ativo de desenvolvimento. Quando o Brasil e o mundo olham para o Piauí\ncom respeito, abrem-se portas para o nosso agricultor, para a nossa empreendedora,\npara o nosso estudante. A grandeza que buscamos não é abstrata: ela se mede em\nrenda, em oportunidade, em orgulho de dizer de onde se vem.\nÉ essa a síntese deste projeto: um Estado que olha para cada um sem perder o\nhorizonte de todas as pessoas; que protege sem tutelar; que participa e faz participar;\nque cresce como se cresce nas melhores equipes — junto, organizado, com cada um\nno seu papel e todos no mesmo propósito. Um Estado grande porque é de todos e\ntodas. O Piauí como time. O Time do Povo."
+          },
+          {
+            "id": "eixo-1",
+            "titulo": "Eixo 1",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 1\nPacto pela Economia:\nPiauí com Mais\nEmpreendedorismo,\nMais Trabalho\ne Mais Renda"
+          },
+          {
+            "id": "o-piaui-vive-um-novo-ciclo-de-desenvolvimento-economico-o-estado-registr",
+            "titulo": "O Piauí vive um novo ciclo de desenvolvimento econômico. O estado registrou",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "O Piauí vive um novo ciclo de desenvolvimento econômico. O estado registrou\ncrescimento de 11,1% do Produto Interno Bruto (PIB) em 2023, acima da média do\nNordeste. Também bateu recordes na abertura de empresas, além da criação de\n96.668 oportunidades de emprego e renda entre 2023 e 2026, alcançando 376.741\nvínculos formais de trabalho até maio de 2026. Ao mesmo tempo, consolidou uma\neconomia cada vez mais diversificada, impulsionada pelo agronegócio, pelas\nenergias renováveis, pela indústria, pelo turismo e pelos serviços, além de ampliar os\ninvestimentos em infraestrutura, inovação, qualificação profissional e apoio ao\nempreendedorismo.\nEsses avanços demonstram que o Piauí está no caminho certo. Mas o\ndesenvolvimento só faz sentido quando melhora a vida das pessoas. Apesar dos\nresultados alcançados, o estado ainda enfrenta desafios importantes. O próximo\npasso é fazer com que o crescimento econômico se traduza em mais oportunidades,\nmais produtividade e mais renda para quem vive e trabalha no Piauí.\nPara isso, este eixo reúne um conjunto integrado de políticas voltadas ao\nfortalecimento das cadeias produtivas estratégicas, à ampliação da qualificação\nprofissional, do acesso ao crédito e da assistência técnica, ao incentivo ao\nempreendedorismo e ao cooperativismo, à atração de investimentos, à expansão da\ninfraestrutura logística e energética, à regularização fundiária e à internacionalização\nda economia piauiense. São ações articuladas para aumentar a competitividade dos\nterritórios e criar um ambiente favorável à geração de emprego, renda e inovação.\nNosso compromisso é construir um Piauí mais próspero, competitivo e inclusivo,\nonde o crescimento econômico seja acompanhado pela redução das desigualdades,\npela valorização do trabalho, pelo fortalecimento dos pequenos negócios e pela\nampliação das oportunidades em todas as regiões do estado. Porque uma economia\nforte só cumpre seu papel quando gera desenvolvimento e melhora a vida das\npessoas."
+          },
+          {
+            "id": "programa-1-fortalecimento-da-cultura-empreendedora",
+            "titulo": "Programa 1 – Fortalecimento da cultura empreendedora",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Programa 1 – Fortalecimento da cultura empreendedora\nMeta Central:\nAumentar o rendimento domiciliar per capita do Piauí em 50% por meio do choque\nintegrado de desenvolvimento econômico nas áreas de Agroindústria e\nBioeconomia, Economia Digital, Governo Digital e Infraestrutura, Indústria Mineral,\nSaúde e Biotecnologia, Indústria Verde, e Turismo e Economia Criativa, para\naumentar a competitividade e a prosperidade dos territórios.\nKPIs:\n• Rendimento Domiciliar per capita do Piauí.\n• Taxa de pobreza: ~37,3% da população (IBGE, 2024).\n• IDHM-Renda: evoluiu de 0,649 em 2021 para 0,695 em 2024 (PNUD Brasil).\n• Municípios com Censo Econômico Domiciliar concluído: primeiro Censo da história\ndo Piauí.\nMetas Específicas:\nMeta 1. Bora Produzir: Fortalecer a produção rural e urbana por meio da ampliação\ndo acesso a insumos, genética, sementes certificadas, assistência técnica e\ntecnologias produtivas.\nMeta 2. Bora Vender: Ampliar o acesso da produção urbana e rural aos mercados\npúblico e privado, fortalecendo a comercialização, a certificação, as feiras e a\nagregação de valor aos produtos piauienses.\nMeta 3. Bora Inovar: Promover a inovação no setor produtivo mediante a adoção de\ntecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que\naumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí.\nMeta 4. Qualificação: Qualificar produtores, empreendedores e cooperativas para\nampliar a capacidade produtiva, fortalecer a gestão dos negócios e difundir boas\npráticas de produção, comercialização e inovação.\nMeta 5. Infraestrutura: Expandir a infraestrutura econômica e produtiva, com\ninvestimentos em logística, abastecimento hídrico, energia e agroindustrialização,\nreduzindo custos de produção e ampliando a competitividade dos territórios.\nMeta 6. Ambiente de Negócios: Fortalecer o ambiente de negócios por meio da\nsimplificação e digitalização dos processos de abertura, alteração e regularização de"
+          },
+          {
+            "id": "empresas-promovendo-maior-agilidade-seguranca-juridica-e-estimulo-ao",
+            "titulo": "empresas, promovendo maior agilidade, segurança jurídica e estímulo ao",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "empresas, promovendo maior agilidade, segurança jurídica e estímulo ao\nempreendedorismo.\nMeta 7. Crédito: Ampliar o acesso ao crédito produtivo para agricultores e\nempreendedores.\nTotal de metas específicas: 7\nODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 1 – Erradicação da Pobreza\n• ODS 9 – Indústria, Inovação e Infraestrutura\n\nPrograma 2 – Mais Formação, Mais Renda\nMeta Central:\nExpandir e diversificar os cursos técnicos, de formação profissional, de graduação e\nde pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade\nEstadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais\ninstituições públicas e privadas de ensino.\nKPIs:\n•⁠ ⁠Quantidade de pessoas qualificadas pelo programa.\n•⁠ ⁠Valores investidos em infraestrutura da UESPI e do PIT.\n•⁠ ⁠Qualidade dos cursos da UESPI e do PIT (ENADE/MEC).\nMetas Específicas:\nMeta 8. Implantar o Instituto de Matemática Pura e Aplicada (IMPA Tech) no Piauí.\nMeta 9. Garantir a consolidação das atividades do Piauí Instituto de Tecnologia (PIT),\nespecialmente nos cursos tecnólogos de ensino superior.\nMeta 10. Garantir apoio institucional para que os cursos de graduação da UESPI e do\nPIT elevem continuamente seus resultados no ENADE, com premiação para\nprofessores e estudantes dos cursos que alcançarem conceito 5 em cada ciclo\navaliativo.\nMeta 11. Apoiar estratégias que ampliem a oferta e elevem os conceitos dos\nprogramas de pós-graduação stricto sensu da UESPI na avaliação da CAPES."
+          },
+          {
+            "id": "meta-12-manter-investimentos-continuos-em-modernizacao-da-infraestrutura",
+            "titulo": "Meta 12. Manter investimentos contínuos em modernização da infraestrutura em",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Meta 12. Manter investimentos contínuos em modernização da infraestrutura em\ntodos os campi da UESPI.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 9 – Indústria, Inovação e Infraestrutura\n\nPrograma 3 – Trabalhar, Empreender e Prosperar\nMeta Central:\nCriar 100.000 novas oportunidades de trabalho, emprego e renda.\nKPIs:\n• Número de novas oportunidades de trabalho, emprego e renda geradas.\n• Número de nomeações em concursos públicos estaduais.\n• Saldo total de Microempreendedores Individuais (MEIs).\nMetas Específicas:\nMeta 13. Atender famílias em situação de vulnerabilidade com programas de inclusão\nprodutiva e geração de renda.\nMeta 14. Apoiar pequenos e médios empreendedores com assistência técnica e\nacesso a mercados.\nMeta 15. Capacitar jovens e mulheres rurais e apoiar a implementação de iniciativas\nprodutivas lideradas por esse público nos territórios de desenvolvimento do estado,\nfortalecendo a sucessão rural e a inclusão produtiva no campo.\nMeta 16. Manter o Piauí entre os 3 estados mais ágeis do Brasil no tempo de abertura\nde empresas e aperfeiçoar ainda mais o ambiente de negócios no Estado do Piauí.\nMeta 17. Ampliar a atração de investimentos privados para o Piauí, por meio da\natuação da Investe Piauí, priorizando setores estratégicos da economia estadual.\nTotal de metas específicas: 5"
+          },
+          {
+            "id": "ods-relacionados",
+            "titulo": "ODS relacionados:",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "ODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 1 – Erradicação da Pobreza\n• ODS 10 – Redução das Desigualdades\n\nPrograma 4 – Crédito produtivo\nMeta Central:\nAmpliar em 50% o volume de crédito destinado ao setor produtivo do Piauí.\nKPIs:\n• Volume de crédito produtivo liberado.\n• Número de pessoas contempladas com crédito produtivo.\n• Quantidade de municípios beneficiados com crédito produtivo.\nMetas Específicas:\nMeta 18. Expandir a oferta de crédito produtivo da Agência de Fomento e\nDesenvolvimento do Estado do Piauí (BADESPI) para todos os Territórios de\nDesenvolvimento.\nMeta 19. Ampliar o volume de crédito disponível para empresas piauienses, por meio\nda articulação com instituições financeiras nacionais, como BNDES, Banco do\nNordeste (BNB), FINEP e outras instituições financeiras.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 1 – Erradicação da Pobreza"
+          },
+          {
+            "id": "programa-5-pro-piaui-10",
+            "titulo": "Programa 5 – Pro Piauí 10",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Programa 5 – Pro Piauí 10\nMeta Central:\nInvestir R$ 10 bilhões, por meio de recursos estaduais e parcerias público-privadas,\nna ampliação e modernização da infraestrutura estratégica do Piauí.\nKPIs:\n• Valor do investimento público em Infraestrutura, Transformação Social e\nDesenvolvimento Econômico.\nMetas Específicas:\nMeta 20. Implementar a metodologia de Gestão de Investimento Público (GIP).\nMeta 21. Desenvolver metodologia do PIB Trimestral do Piauí.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n\nPrograma 6 – Pro Piauí 100\nMeta Central:\nConsolidar R$ 100 bilhões de investimentos privados atraídos e ampliar a\ncompetitividade do Piauí, gerando trabalho, renda e desenvolvimento regional\nsustentável.\nKPIs:\n• Valor de investimentos privados atraídos: R$ 44,7 bilhões atraídos entre 2023 e\njun/2026 (linha de base).\n• Volume de exportações piauienses: US$ 1,2 bilhão (jan–nov/2025, MDIC).\n• Oportunidades de trabalho e renda geradas pelos empreendimentos apoiados.\nMetas Específicas:\nMeta 22. Consolidar novos parques empresariais descentralizados,\ninfraestrutura completa e incentivos para instalação de empresas.\n\ncom"
+          },
+          {
+            "id": "meta-23-atrair-novos-empreendimentos-ancora-estrategicos-por-meio-da-inv",
+            "titulo": "Meta 23. Atrair novos empreendimentos âncora estratégicos, por meio da Investe",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Meta 23. Atrair novos empreendimentos âncora estratégicos, por meio da Investe\nPiauí.\nMeta 24. Aumentar a participação do Piauí nas exportações brasileiras.\nMeta 25. Estruturar Programa de Desenvolvimento de Fornecedores Locais (PDFL)\npara grandes empreendimentos.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 17 – Parcerias e Meios de Implementação\n\nPrograma 7 – Mais Rentabilidade no Campo\nMeta Central:\nDuplicar os investimentos em assistência técnica e equipamentos, além de implantar\n12 cooperativas produtivas, com pelo menos 1.000 cooperados cada, promovendo a\ngeração sustentável de trabalho, renda e inclusão produtiva.\nKPIs:\n• Cooperativas e associações com operação econômica ativa.\n• Volume anual de vendas das cooperativas apoiadas.\n• Cooperativas com certificação de produto ativa (mel, caju, artesanato, orgânicos).\nMetas Específicas:\nMeta 26. Atrair investimentos produtivos para cada território de desenvolvimento,\ngerando oportunidades de renda.\nMeta 27. Formalizar e apoiar cooperativas com assistência técnica e acesso a\nmercados.\nMeta 28. Ampliar a cobertura da Assistência Técnica e Extensão Rural (ATER) pública\ne implantar plataforma digital integrada a aplicativos móveis.\nTotal de metas específicas: 3"
+          },
+          {
+            "id": "ods-relacionados-2",
+            "titulo": "ODS relacionados:",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "ODS relacionados:\n• ODS 2 – Fome Zero e Agricultura Sustentável\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 1 – Erradicação da Pobreza\n\nPrograma 8 – Casa Legal e Terra Legal\nMeta Central:\nGarantir a regularização fundiária urbana e rural de 200.000 imóveis, garantindo\nsegurança jurídica sobre a propriedade, ampliando o acesso às políticas públicas e\npromovendo o desenvolvimento sustentável em todos os territórios do estado.\nKPIs:\n• Quantidade de títulos rurais emitidos.\n• Número de títulos de regularização urbana emitidos.\n• Número de municípios beneficiados com regularização urbana e rural.\nMetas Específicas:\nMeta 29. Ampliar a regularização de terras públicas estaduais.\nMeta 30. Concluir a regularização fundiária de comunidades quilombolas e territórios\ntradicionais prioritários.\nMeta 31. Ampliar o modelo de regularização fundiária urbana (Casa Legal) para todos\nos municípios.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 11 – Cidades e Comunidades Sustentáveis\n• ODS 1 – Erradicação da Pobreza\n• ODS 16 – Paz, Justiça e Instituições Eficazes"
+          },
+          {
+            "id": "programa-9-piaui-conectado-ao-mundo",
+            "titulo": "Programa 9 – Piauí Conectado ao Mundo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Programa 9 – Piauí Conectado ao Mundo\nMeta Central:\nConsolidar o Piauí como referência nacional em internacionalização do\ndesenvolvimento, ampliando a atração de investimentos, as exportações, as\nparcerias internacionais e os programas de intercâmbio e cooperação em educação,\nciência, tecnologia e inovação.\nKPIs:\n• Número de estudantes, professores e pesquisadores em intercâmbio.\n• Quantidade de acordos e projetos de cooperação internacional firmados.\n• Número de missões comerciais e eventos internacionais realizados ou apoiados\npelo Estado.\nMetas Específicas:\nMeta 32. Ampliar o volume de investimentos privados internacionais atraídos pelo\nEstado, priorizando setores estratégicos como energias renováveis, mineração e\nturismo.\nMeta 33. Implantar uma agenda permanente de promoção comercial internacional,\nrealizando missões empresariais e apoiando a participação de empresas piauienses\nem feiras e rodadas de negócios nacionais e internacionais.\nMeta 34. Ampliar os programas de intercâmbio e cooperação internacional,\ngarantindo oportunidades de formação e inovação para estudantes, professores e\npesquisadores.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 17 – Parcerias e Meios de Implementação\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 4 – Educação de Qualidade"
+          },
+          {
+            "id": "programa-10-piaui-de-turismo-e-economia-criativa",
+            "titulo": "Programa 10 – Piauí de Turismo e Economia Criativa",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Programa 10 – Piauí de Turismo e Economia Criativa\nMeta Central:\nImpulsionar o turismo e a economia criativa como vetores do desenvolvimento\neconômico, ampliando o número de visitantes, o faturamento do setor e a geração\nde trabalho, emprego e renda nos territórios piauienses.\nKPIs:\n• Fluxo anual de visitantes\n• Faturamento da cadeia do turismo\n• Oportunidades de trabalho, emprego e renda geradas no turismo e na economia\ncriativa\nMetas Específicas:\nMeta 35. Atrair investimentos para ampliar, modernizar e qualificar a infraestrutura\ndos polos turísticos do Piauí.\nMeta 36. Expandir a oferta de oportunidades para a produção, comercialização e\ndifusão de bens e serviços da economia criativa.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 11 – Cidades e Comunidades Sustentáveis\n• ODS 12 – Consumo e Produção Responsáveis"
+          },
+          {
+            "id": "eixo-2",
+            "titulo": "Eixo 2",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 2\nSaúde, Segurança e Trânsito:\nA Vida em Primeiro Lugar"
+          },
+          {
+            "id": "a-vida-e-o-bem-mais-precioso-que-o-estado-deve-proteger-nos-ultimos-anos",
+            "titulo": "A vida é o bem mais precioso que o Estado deve proteger. Nos últimos anos, o Piauí",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "A vida é o bem mais precioso que o Estado deve proteger. Nos últimos anos, o Piauí\ndeu passos importantes para fortalecer a saúde pública, ampliar a segurança e tornar\nos serviços mais acessíveis à população. O tempo médio de espera por consultas\nespecializadas caiu para 10 dias, um dos menores do país, enquanto a espera por\ncirurgias eletivas foi reduzida de 464 dias em 2022 para 32 dias em 2026. Ao mesmo\ntempo, o Piauí Saúde Digital ultrapassou 2 milhões de teleconsultas e\ntelediagnósticos, levando atendimento especializado a todos os municípios e\nreduzindo as distâncias entre a população e os serviços de saúde.\nNa segurança pública, o estado também alcançou resultados históricos. Em 2025, o\nPiauí registrou o menor número de Mortes Violentas Intencionais (MVIs) dos últimos\ndez anos, com 573 ocorrências, representando uma redução de 31% em relação a\n2022. A taxa de homicídios caiu de 23,11 para 15,54 por 100 mil habitantes, redução de\n33%, consolidando o estado entre aqueles que mais reduziram a violência letal no\npaís.\nEsses resultados mostram que investir em gestão, tecnologia e integração produz\nresultados concretos. Mas proteger a vida exige um esforço permanente. Vamos\nampliar a regionalização da assistência, modernizar os hospitais estaduais, fortalecer\na vigilância em saúde, expandir o cuidado em saúde mental, intensificar o combate\nao crime organizado, reduzir a violência letal e contra as mulheres, ampliar as\noportunidades de ressocialização e consolidar um trânsito mais seguro para\nmotoristas, motociclistas, ciclistas e pedestres."
+          },
+          {
+            "id": "nosso-compromisso-e-colocar-a-vida-em-primeiro-lugar-queremos-um-piaui-o",
+            "titulo": "Nosso compromisso é colocar a vida em primeiro lugar. Queremos um Piauí onde as",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Nosso compromisso é colocar a vida em primeiro lugar. Queremos um Piauí onde as\npessoas sejam atendidas no tempo certo, vivam com mais segurança, encontrem um\nsistema de saúde cada vez mais eficiente e possam circular pelas cidades e estradas\ncom mais tranquilidade. Proteger a vida significa garantir dignidade, cuidado e\noportunidades para que todos possam viver mais e melhor.\n\nPrograma 11 – Saúde Digital e Acesso Universal\nMeta Central:\nGarantir o tempo médio de espera por consultas especializadas e exames\ncomplementares em 10 dias, em todas as unidades hospitalares de gestão estadual,\nalém de consolidar as Centrais de Exames nas 28 microrregiões.\nKPIs:\n• Tempo médio de espera para consultas especializadas.\n• Teleconsultas e telediagnósticos realizados.\nMetas Específicas:\nMeta 37. Consolidar o programa Piauí Saúde Digital como política permanente e\ngarantir o tempo médio de espera para consultas especializadas para 10 dias.\nMeta 38. Expandir a capacidade de serviços de diagnóstico e imagem.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 10 – Redução das Desigualdades\n\nPrograma 12 – Hospitais mais Eficientes e Humanizados\nMeta Central:\nGarantir hospitais mais modernos e eficientes, reduzindo para 20 dias o tempo médio\nde espera por cirurgias eletivas em todas as unidades hospitalares de gestão\nestadual, além de ampliar o acesso da população aos atendimentos, reduzindo faltas\nem consultas e exames agendados (perda primária e absenteísmo)."
+          },
+          {
+            "id": "kpis",
+            "titulo": "KPIs:",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "KPIs:\n• Tempo médio de espera para cirurgias eletivas.\n• Percentual de hospitais com infraestrutura adequada.\n• Taxa de absenteísmo em consultas e exames.\n• Tempo médio de espera na regulação.\nMetas Específicas:\nMeta 39. Modernizar, ampliar ou equipar os hospitais estaduais estratégicos.\nMeta 40. Reduzir o tempo médio de espera para internações, exames e\nprocedimentos regulados.\nMeta 41. Reduzir o índice de faltas em consultas, exames e procedimentos\nagendados por meio de confirmação automática, lembretes digitais e busca ativa dos\npacientes.\nMeta 42. Consolidar a Macrorregião de Saúde do Extremo Sul, ampliando a oferta\nregional de serviços especializados, leitos hospitalares e exames diagnósticos para a\npopulação no extremo sul do Estado.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 9 – Indústria, Inovação e Infraestrutura\n\nPrograma 13 – Saúde Mental: Cuidado que Transforma Vidas\nMeta Central:\nConsolidar equipes multiprofissionais de saúde mental nos territórios, por meio da\ntelemedicina e integração à atenção básica, fortalecendo ainda a política de saúde\nmental no serviço público.\nKPIs:\n• Quantidade de municípios com equipes multiprofissionais de saúde mental.\n• Número de atendimentos em psicologia via Piauí Saúde Digital.\n• Profissionais das forças de segurança atendidos pelo programa Cuidar para\nProteger."
+          },
+          {
+            "id": "metas-especificas",
+            "titulo": "Metas Específicas:",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Metas Específicas:\nMeta 43. Reduzir as internações psiquiátricas por meio do fortalecimento da Rede de\nAtenção Psicossocial (RAPS) e da integração com a Atenção Primária à Saúde (APS).\nMeta 44. Implementar a política estadual de saúde mental e atenção psicossocial em\ntodo o território.\nMeta 45. Democratizar o acesso a sessões de terapia psicológica online e de curto\nprazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS).\nMeta 46. Implantar política de saúde mental com equipes multidisciplinares nas 21\nGerências Regionais de Educação (GREs).\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 10 – Redução das Desigualdades\n\nPrograma 14 – Vigilância e Resposta em Saúde\nMeta Central:\nFortalecer a vigilância em saúde para prevenir doenças, ampliar a capacidade de\ndiagnóstico e resposta a emergências sanitárias e proteger a população em todos os\nterritórios do Piauí.\nKPIs:\n• Tempo médio de liberação de exames pelo Laboratório Central de Saúde Pública\n(LACEN).\n• Percentual de municípios cobertos pelas ações do Centro de Referência em Saúde\ndo Trabalhador (CEREST).\n• Municípios apoiados pela Vigilância em Saúde.\nMetas Específicas:\nMeta 47. Consolidar a Política Estadual de Vigilância em Saúde, integrando ações de\nprevenção, monitoramento e resposta a riscos sanitários em todos os territórios de\ndesenvolvimento.\nMeta 48. Ampliar e regionalizar o Serviço Estadual de Verificação de Óbitos (SVO),\nampliando a identificação das causas de morte."
+          },
+          {
+            "id": "meta-49-ampliar-e-regionalizar-a-atuacao-do-cerest-fortalecendo-a-preven",
+            "titulo": "Meta 49. Ampliar e regionalizar a atuação do CEREST, fortalecendo a prevenção de",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Meta 49. Ampliar e regionalizar a atuação do CEREST, fortalecendo a prevenção de\nacidentes e doenças relacionadas ao trabalho.\nMeta 50. Modernizar o LACEN e ampliar sua capacidade diagnóstica, reduzindo o\ntempo de resposta para exames prioritários.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n\nPrograma 15 – Pacto pela Ordem\nMeta Central:\nReduzir a taxa de homicídios para valor igual ou inferior a 10 por 100 mil habitantes,\nalém de reduzir em mais de 50% os crimes de roubos e os crimes vinculados a\nfacções criminosas, em relação ao ano de 2025.\nKPIs:\n• Quantidade de Áreas Integradas de Segurança Pública (AISPs) com policiamento\npor Sistema de Policiamento por Inteligência Artificial (SPIA).\n• Número de operações de desarticulação de organizações criminosas.\nMetas Específicas:\nMeta 51. Assegurar a ampliação do efetivo das forças de segurança pública do Estado\ndo Piauí.\nMeta 52. Consolidar a Política Estadual de Prevenção à Violência.\nMeta 53. Assegurar que as Áreas Integradas de Segurança Pública (AISPs) contem\ncom policiamento planejado com base em inteligência, utilizando informações do\nSPIA e análise georreferenciada da criminalidade.\nMeta 54. Estruturar o Núcleo de Inteligência Financeira da Delegacia de Repressão\nàs Ações Criminosas Organizadas (DRACO), com equipe dedicada, protocolo de\nanálise patrimonial e integração com Secretaria de Estado da Fazenda (SEFAZ/PI),\nMinistério Público do Estado do Piauí (MPPI), Tribunal de Justiça do Piauí (TJ/PI),\nReceita Federal, Conselho de Controle de Atividades Financeiras (COAF), Polícia\nFederal, Polícia Rodoviária Federal (PRF), Secretaria Nacional de Políticas sobre\nDrogas e Gestão de Ativos (SENAD), Instituto de Metrologia do Estado do Piauí (IMEPI)\ne Departamento Estadual de Trânsito (DETRAN)."
+          },
+          {
+            "id": "meta-55-reduzir-os-crimes-violentos-letais-intencionais-nas-areas-com-an",
+            "titulo": "Meta 55. Reduzir os crimes violentos letais intencionais nas áreas com análise",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Meta 55. Reduzir os crimes violentos letais intencionais nas áreas com análise\npreditiva.\nMeta 56. Implantar novos Centros Integrados de Comando e Controle (CICC).\nMeta 57. Fortalecer o policiamento no interior do estado.\nMeta 58. Modernizar os núcleos regionais de perícia criminal e medicina legal em\ntodas as macrorregiões.\nMeta 59. Ampliar as ações de treinamento e modernização de equipamentos do\nCorpo de Bombeiros (CBMEPI).\nMeta 60. Apoiar tecnicamente a criação/estruturação de Guardas Municipais nos\nmunicípios que optarem por esse modelo.\nMeta 61. Integrar as guardas municipais do Piauí ao sistema de informações da\nSSP-PI.\nMeta 62. Expandir o programa de saúde ocupacional Cuidar para Proteger.\nMeta 63. Implementar ciclos periódicos de análise e apresentação de dados das\npolíticas de segurança pública, em formato de dados abertos, nas reuniões dos\nConselhos Territoriais de Segurança Pública (CONSETS).\nTotal de metas específicas: 13\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n\nPrograma 16 – Caminhos para a Ressocialização\nMeta Central:\nZerar o déficit de vagas no sistema prisional e assegurar que todas as unidades\ntenham atividades educacionais ou laborais.\nKPIs:\n• Percentual da população prisional em educação/trabalho.\n• Novas vagas no sistema prisional.\n• Cobertura de monitoramento eletrônico (tornozeleira)."
+          },
+          {
+            "id": "metas-especificas-2",
+            "titulo": "Metas Específicas:",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Metas Específicas:\nMeta 64. Consolidar classificação de presos por risco, liderança, função criminal e\ncapacidade de comunicação externa.\nMeta 65. Ampliar bloqueadores de sinal, scanners corporais, Raio-X de bagagem e\ncâmeras com reconhecimento facial para controle tecnológico de visitas nas\nunidades prisionais estaduais.\nMeta 66. Fortalecer o Programa de Monitoramento Eletrônico de Pessoas\n(tornozeleira).\nMeta 67. Ampliar a população prisional envolvida em atividades de educação,\ntrabalho e remição pela leitura livre, ENEM e ENCCEJA.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 4 – Educação de Qualidade\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n\nPrograma 17 – Pacto contra o Feminicídio\nMeta Central:\nFortalecer as políticas de enfrentamento à violência contra a mulher, reduzindo ainda\nmais a taxa de feminicídio em relação a 2025.\nKPIs:\n• Mulheres com medida protetiva com acesso ao botão do pânico.\n• Quantidade de Delegacias Especializadas de Atendimento à Mulher (DEAMs) em\nfuncionamento.\nMetas Específicas:\nMeta 68. Dobrar a adesão de estabelecimentos ao protocolo Ei Mermã, Não se Cale.\nMeta 69. Ampliar o Programa Acolhe para garantir atendimento emergencial a\nmulheres com medidas protetivas de urgência no estado do Piauí.\nMeta 70. Consolidar a solução de acionamento emergencial (botão do pânico) para\nmulheres com medida protetiva."
+          },
+          {
+            "id": "total-de-metas-especificas-3",
+            "titulo": "Total de metas específicas: 3",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Total de metas específicas: 3\nODS relacionados:\n• ODS 5 – Igualdade de Gênero\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n\nPrograma 18 – Pacto pela Vida no Trânsito\nMeta Central:\nReduzir em 25% a taxa de mortalidade no trânsito (óbitos por 100 mil habitantes),\ntendo como linha de base o ano de 2025.\nKPIs:\n• Taxa de mortalidade de motociclistas.\n• Testes de alcoolemia por ano.\n• Operações integradas de trânsito.\nMetas Específicas:\nMeta 71. Reduzir a mortalidade de motociclistas em acidentes de trânsito, por meio\nda ampliação do Programa CNH Social, da distribuição de capacetes certificados e\nda fiscalização intensiva.\nMeta 72. Apoiar tecnicamente a municipalização do trânsito nos municípios que\nmanifestarem interesse, por meio dos Pactos pelo Piauí.\nMeta 73. Consolidar o programa estadual de controle de animais em rodovias, em\nparceria com municípios, para recolhimento e destinação.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 11 – Cidades e Comunidades Sustentáveis"
+          },
+          {
+            "id": "eixo-3",
+            "titulo": "Eixo 3",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 3\nEducação, Cultura e Esporte:\nDesenvolvendo talentos,\nconstruindo futuros"
+          },
+          {
+            "id": "o-maior-patrimonio-do-piaui-e-o-talento-do-seu-povo-nos-ultimos-anos-o-e",
+            "titulo": "O maior patrimônio do Piauí é o talento do seu povo. Nos últimos anos, o estado",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "O maior patrimônio do Piauí é o talento do seu povo. Nos últimos anos, o estado\nrealizou uma das maiores transformações da educação pública de sua história,\nampliando a oferta de escolas de tempo integral, fortalecendo a Educação\nProfissional e Tecnológica (EPT) e criando novas oportunidades para crianças, jovens\ne adultos. Hoje, a rede estadual conta com cerca de 60% das matrículas do ensino\nmédio integradas à Educação Profissional e Tecnológica, enquanto programas como\no Oportunidade Jovem já beneficiaram mais de 19 mil estudantes com bolsas,\nmonitorias e estágios. Ao mesmo tempo, o governo investiu na modernização da\ninfraestrutura escolar, na ampliação do ensino integral e na valorização dos\nprofissionais da educação, criando melhores condições para a aprendizagem e para\na formação dos estudantes.\nOs avanços também alcançaram a cultura e o esporte. O fortalecimento dos\nmecanismos de fomento, como o Sistema Estadual de Incentivo à Cultura (SIEC) e a\nexecução da Política Nacional Aldir Blanc, ampliaram o apoio a artistas, produtores e\niniciativas culturais em todas as regiões do estado. No esporte, programas como o\nBolsa Atleta, os Jogos Escolares Piauienses (JEPIs) e a modernização dos\nequipamentos esportivos ampliaram as oportunidades para jovens talentos e\nfortaleceram o esporte como instrumento de inclusão social, promoção da saúde e\ndesenvolvimento humano.\nApesar dos resultados alcançados, ainda há desafios importantes. É preciso elevar a\nqualidade da aprendizagem, reduzir o analfabetismo, apoiar os municípios na\nalfabetização das crianças na idade certa, ampliar o acesso à educação profissional\ne garantir que cultura e esporte estejam presentes em todos os territórios como\ninstrumentos permanentes de formação, cidadania e geração de oportunidades. Mais"
+          },
+          {
+            "id": "do-que-ampliar-vagas-nosso-compromisso-e-assegurar-que-cada-estudante",
+            "titulo": "do que ampliar vagas, nosso compromisso é assegurar que cada estudante",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "do que ampliar vagas, nosso compromisso é assegurar que cada estudante\ndesenvolva plenamente seu potencial e encontre condições para construir seu\nprojeto de vida.\nNeste novo ciclo, vamos consolidar uma educação pública de excelência, fortalecer\nas políticas culturais e ampliar o acesso ao esporte como parte de uma estratégia\nintegrada de desenvolvimento humano. Queremos um Piauí em que cada criança\ntenha oportunidade de aprender, cada jovem possa transformar talento em futuro e\ncada cidadão encontre na educação, na cultura e no esporte os caminhos para\nampliar sua liberdade, sua cidadania e suas oportunidades.\n\nPrograma 19 – Escola que Educa, Transforma e Inclui\nMeta Central:\nAumentar em 20% o IDEB da Rede Estadual Pública de Ensino Médio e assegurar que\ntodas as escolas de ensino médio disponham de climatização, laboratórios e quadras\nesportivas.\nKPIs:\n• Taxa de abandono no Ensino Médio.\n• Percentual de matrículas integradas à EPT.\n• IDHM-Educação.\n• Vagas ofertadas na Educação de Jovens e Adultos (EJA).\nMetas Específicas:\nMeta 74. Garantir que as escolas da rede estadual mantenham uma infraestrutura\nadequada, com acessibilidade, conectividade e ambientes pedagógicos\nestruturados.\nMeta 75. Garantir que as escolas da rede do campo (quilombola, EFAs) possuam\ninfraestrutura adequada.\nMeta 76. Assegurar a oferta regular de alimentação escolar de qualidade e transporte\nescolar para todas as escolas da rede estadual.\nMeta 77. Apoiar os municípios na melhoria da aprendizagem do 3º ao 9º ano.\nMeta 78. Expandir a oferta de Atendimento Educacional Especializado (AEE) e\ngarantir presença de recursos inclusivos em todas as Gerências Regionais de\nEducação."
+          },
+          {
+            "id": "meta-79-ampliar-as-vagas-e-a-oferta-da-educacao-de-jovens-e-adultos-eja",
+            "titulo": "Meta 79. Ampliar as vagas e a oferta da Educação de Jovens e Adultos (EJA) em todos",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Meta 79. Ampliar as vagas e a oferta da Educação de Jovens e Adultos (EJA) em todos\nos 12 territórios de desenvolvimento.\nMeta 80. Reduzir as taxas de abandono escolar no ensino médio.\nMeta 81. Consolidar o programa de cultura democrática e cidadã nas escolas\nestaduais.\nMeta 82. Consolidar a política estadual permanente de prevenção ao uso de álcool e\noutras drogas nas escolas estaduais públicas, com ações educativas, esportivas e\nculturais integradas.\nTotal de metas específicas: 9\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n• ODS 3 – Saúde e Bem-Estar\n\nPrograma 20 – Alfabetização das Crianças na Idade Certa\nMeta Central:\nApoiar os municípios para garantir que todos alcancem 95% das crianças da rede\npública alfabetizadas até os 7 anos de idade, além de apoiá-los na melhoria do IDEB\nAnos Iniciais e Anos Finais.\nKPIs:\n• Taxa de distorção idade-série 2º ano.\n• Professores e gestores formados pelo Programa Piauiense de Alfabetização na\nIdade Certa (PPAIC).\nMetas Específicas:\nMeta 83. Expandir as ações do Pacto pela Educação para todos os municípios, com\nfoco na melhoria da proficiência em Língua Portuguesa e Matemática do 3º ao 9º ano\ndo Ensino Fundamental, alcançando ao menos 200 municípios com planos\nindividualizados de aprendizagem.\nMeta 84. Garantir que os profissionais da educação participem de formação\ncontinuada anual obrigatória, inclusive de metodologias inclusivas e uso de\ntecnologias."
+          },
+          {
+            "id": "meta-85-obter-selo-ouro-no-indicador-crianca-alfabetizada-do-mec-com-evo",
+            "titulo": "Meta 85. Obter Selo Ouro no Indicador Criança Alfabetizada do MEC, com evolução",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Meta 85. Obter Selo Ouro no Indicador Criança Alfabetizada do MEC, com evolução\ncontínua da pontuação.\nMeta 86. Reduzir a distorção idade-série no 2º ano do Ensino Fundamental.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n\nPrograma 21 – Piauí Alfabetiza e Avança\nMeta Central:\nReduzir em 50% a taxa de analfabetismo da população com 15 anos ou mais,\nassegurando ainda a ampliação de vagas da educação de jovens e adultos.\nKPIs:\n• Número de vagas ofertadas no Programa Alfabetiza Piauí.\n• Taxa de conclusão do Programa Alfabetiza Piauí.\nMetas Específicas:\nMeta 87. Expandir o alcance do Programa Alfabetiza Piauí para acelerar a redução do\nanalfabetismo, com foco prioritário na população com mais de 40 anos.\nTotal de metas específicas: 1\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n\nPrograma 22 – Piauí de Cultura Viva\nMeta Central:\nAprimorar a gestão dos equipamentos culturais em todos os Territórios de\nDesenvolvimento do Piauí, a partir dos programas de incentivo à cultura (SIEC, Aldir\nBlanc e outros editais).\nKPIs:\n• Número de municípios do interior com projetos no SIEC."
+          },
+          {
+            "id": "equipamentos-culturais-publicos-com-programacao-regular",
+            "titulo": "• Equipamentos culturais públicos com programação regular.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "• Equipamentos culturais públicos com programação regular.\n• Municípios com ao menos uma atividade cultural apoiada pelos instrumentos de\nfomento à cultura.\nMetas Específicas:\nMeta 88. Estruturar e implementar metodologia de gestão dos equipamentos\nculturais estaduais, assegurando padrões de funcionamento, governança,\nmanutenção, programação e avaliação de desempenho\nMeta 89. Ampliar o número de municípios atendidos pelos programas de incentivo à\ncultura (SIEC).\nMeta 90. Ampliar o acesso de estudantes a teatros, museus, bibliotecas e espaços\nculturais do Piauí.\nMeta 91. Consolidar o Programa A Praça é do Povo em espaços públicos, com\nprogramação cultural e esportiva regular.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 11 – Cidades e Comunidades Sustentáveis\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n\nPrograma 23 – Esporte que Transforma\nMeta Central:\nAprimorar a gestão dos equipamentos esportivos em todos os territórios, a partir de\niniciativas e programas de incentivo ao Esporte (Sistema de Incentivo Estadual ao\nEsporte do Piauí - SIESPI, Bolsa Atleta, Jogos Escolares e outras ações).\nKPIs:\n• Número de atletas beneficiados pelo Bolsa Atleta Estadual.\n• Número de municípios do interior nos Jogos Escolares Piauienses - JEPIs.\n• Número de Territórios com calendário de competições de base.\nMetas Específicas:\nMeta 92. Ampliar infraestrutura esportiva/cultural nos municípios do estado, em\ncooperação com as prefeituras."
+          },
+          {
+            "id": "meta-93-garantir-anualmente-a-ampliacao-do-numero-de-beneficiarios-do-pr",
+            "titulo": "Meta 93. Garantir anualmente a ampliação do número de beneficiários do programa",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Meta 93. Garantir anualmente a ampliação do número de beneficiários do programa\nestadual Bolsa Atleta.\nMeta 94. Expandir os recursos do SIESPI.\nMeta 95. Garantir a transmissão das competições estaduais oficiais por meio da TV\nEstatal.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 11 – Cidades e Comunidades Sustentáveis"
+          },
+          {
+            "id": "eixo-4",
+            "titulo": "Eixo 4",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 4\nCiência, Tecnologia e Inovação:\nO Estado a um Clique"
+          },
+          {
+            "id": "o-piaui-vive-uma-profunda-transformacao-digital-nos-ultimos-anos-o-estad",
+            "titulo": "O Piauí vive uma profunda transformação digital. Nos últimos anos, o estado",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "O Piauí vive uma profunda transformação digital. Nos últimos anos, o estado\nconsolidou-se como uma das principais referências do país em governo digital,\nfigurando como o líder nacional no Índice ABEP-TIC de Oferta de Serviços Públicos\nDigitais. A modernização da gestão pública, a integração de sistemas e a ampliação\ndos serviços digitais aproximaram o Estado da população, tornando o acesso aos\nserviços públicos mais simples, rápido e eficiente. Hoje, a tecnologia deixou de ser\napenas uma ferramenta administrativa para se tornar um instrumento de cidadania e\ninclusão.\nEssa transformação também impulsionou uma nova agenda de desenvolvimento\nbaseada na ciência, na inovação e na economia do conhecimento. O Estado\nfortaleceu o financiamento à pesquisa aplicada, ampliou a articulação entre\nuniversidades, centros de pesquisa, empresas e governo e criou ambientes\nfavoráveis ao empreendedorismo inovador. Ao mesmo tempo, iniciativas como o\nMade in Piauí passaram a utilizar plataformas digitais para ampliar a visibilidade dos\nprodutos piauienses, conectar pequenos produtores e empreendedores a novos\nmercados e agregar valor à produção local, demonstrando que a inovação também\nfortalece a economia regional.\nApesar dos avanços, o desafio agora é garantir que essa transformação alcance todos\nos territórios e beneficie toda a população. Ainda precisamos ampliar a inclusão\ndigital, aproximar a pesquisa científica das demandas da sociedade e do setor\nprodutivo, fortalecer a cultura da inovação e preparar cidadãos e empresas para uma\neconomia cada vez mais digital, conectada e baseada no conhecimento. Mais do que"
+          },
+          {
+            "id": "desenvolver-novas-tecnologias-queremos-que-elas-gerem-solucoes-para-os",
+            "titulo": "desenvolver novas tecnologias, queremos que elas gerem soluções para os",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "desenvolver novas tecnologias, queremos que elas gerem soluções para os\nproblemas reais das pessoas e contribuam para o desenvolvimento sustentável do\nestado.\nNeste novo ciclo, vamos consolidar uma política integrada de ciência, tecnologia e\ninovação. Estruturaremos sete Hubs de Inovação voltados às vocações estratégicas\ndo Piauí, dobraremos os investimentos da Fundação de Amparo à Pesquisa do Estado\ndo Piauí (FAPEPI) em pesquisa aplicada, fortaleceremos o Gov.PI Cidadão como a\nprincipal porta de entrada para os serviços públicos estaduais e formaremos 25 mil\nagentes comunitários digitais, promovendo autonomia digital e inclusão tecnológica\nem todos os territórios. Nosso compromisso é construir um Estado cada vez mais\ninteligente, inovador e conectado, onde a tecnologia gere oportunidades, impulsione\no desenvolvimento e facilite a vida das pessoas.\n\nPrograma 24 – Piauí Inovador\nMeta Central:\nEstruturar 7 Hubs de Inovação nas áreas de Agroindústria e Bioeconomia, Economia\nDigital, Governo Digital e Infraestrutura, Indústria Mineral, Saúde e Biotecnologia,\nIndústria Verde, e Turismo e Economia Criativa, promovendo pesquisa aplicada,\nempreendedorismo e inovação.\nKPIs:\n• Cobertura dos Hubs de Inovação por macrorregião.\nMetas Específicas:\nMeta 96. Implantar hubs de inovação para assegurar a cobertura das 4 macrorregiões\ndo estado.\nMeta 97. Garantir o funcionamento de Centros Vocacionais Tecnológicos (CVTs) nas\nmacrorregiões do estado.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 9 – Indústria, Inovação e Infraestrutura"
+          },
+          {
+            "id": "programa-25-zap-do-cidadao",
+            "titulo": "Programa 25 – Zap do Cidadão",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Programa 25 – Zap do Cidadão\nMeta Central:\nConsolidar o Gov.PI Cidadão, com apoio de ferramentas de mensagens, como a\nprincipal porta de acesso aos serviços públicos, de forma simples, imediata e sem\nburocracia, com atenção prioritária a quem mais precisa.\nKPIs:\n• Número de serviços acessíveis via Gov.PI Cidadão.\n• Número de usuários ativos na plataforma.\n• Percentual de serviços com atendimento via ferramentas de mensagens.\nMetas Específicas:\nMeta 98. Ampliar o Gov.PI Cidadão para integrar os serviços estaduais com protocolo\ndigital.\nMeta 99. Implantar atendimento automatizado via ferramentas de mensagens para\nos serviços mais demandados pelos cidadãos.\nMeta 100. Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas\ncom deficiência, idosos e usuários de baixa escolaridade.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 9 – Indústria, Inovação e Infraestrutura\n\nPrograma 26 – CapacitIA - Autonomia Digital\nMeta Central:\nFormar 25 mil agentes comunitários digitais para atuarem como multiplicadores de\nhabilidades em autonomia digital.\nKPIs:\n• Número de pessoas certificadas em autonomia digital.\n• Número de territórios com turmas presenciais realizadas."
+          },
+          {
+            "id": "metas-especificas-3",
+            "titulo": "Metas Específicas:",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Metas Específicas:\nMeta 101. Ampliar o programa CapacitIA para atender 100% dos territórios, com a\nrealização de turmas presenciais em cada uma das 28 microrregiões.\nTotal de metas específicas: 1\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n• ODS 10 – Redução das Desigualdades\n• ODS 9 – Indústria, Inovação e Infraestrutura\n\nPrograma 27 – Ciência que Gera Resultados\nMeta Central:\nDobrar os recursos da FAPEPI destinados ao financiamento da pesquisa aplicada e\ngarantir que, no mínimo, 70% dos projetos apoiados gerem soluções inovadoras com\nimpacto na melhoria da qualidade de vida da população, no fortalecimento dos\nnegócios locais e no desenvolvimento dos territórios piauienses.\nKPIs:\n• Número de Projetos FAPEPI com produtos ou soluções aplicáveis.\n• Soluções criadas pelos Núcleos de Referência em P&D.\nMetas Específicas:\nMeta 102. Ampliar a atuação descentralizada da FAPEPI, apoiando projetos que\ntransformem conhecimento científico e tecnológico em produto para o setor\nprodutivo, a gestão pública e o desenvolvimento territorial.\nMeta 103. Ampliar a produção científica qualificada vinculada às bolsas da FAPEPI,\nmedida por critérios vigentes da CAPES.\nMeta 104. Implantar uma Rede Estadual de Núcleos de Inteligência Territorial (NIT),\narticulando instituições de pesquisa, governos locais e setor produtivo para produzir\nevidências e estratégias de desenvolvimento para os 12 Territórios de\nDesenvolvimento do Piauí.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 9 – Indústria, Inovação e Infraestrutura"
+          },
+          {
+            "id": "eixo-5",
+            "titulo": "Eixo 5",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 5\nDireitos e Proteção Social:\nNinguém Fica Para Trás"
+          },
+          {
+            "id": "o-desenvolvimento-so-e-completo-quando-alcanca-todas-as-pessoas-nos-ulti",
+            "titulo": "O desenvolvimento só é completo quando alcança todas as pessoas. Nos últimos",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "O desenvolvimento só é completo quando alcança todas as pessoas. Nos últimos\nanos, o Piauí avançou de forma significativa na redução da pobreza e na ampliação\ndas políticas de proteção social. Entre 2022 e 2024, a taxa de pobreza foi reduzida de\n48,3% para 37,3%, enquanto a proporção da população em situação de extrema\npobreza caiu de 11,7% para 4,0%, uma redução de 66%, menor percentual entre os\nestados do Nordeste. No mesmo período, o estado também reduziu a desigualdade\nde renda, melhorando seu Índice de Gini e consolidando uma rede de políticas\nvoltadas à segurança alimentar, à assistência social e à inclusão produtiva.\nOs avanços também chegaram às políticas de direitos humanos e inclusão. O Piauí\nampliou os serviços destinados às pessoas com deficiência, com mais de 97 mil\natendimentos realizados pelo Centro Integrado de Reabilitação (CEIR), entregou mais\nde 16 mil órteses, próteses e equipamentos de locomoção, implantou 241 salas de\nrecursos multifuncionais e capacitou 7.446 profissionais para o Atendimento\nEducacional Especializado (AEE). Ao mesmo tempo, fortaleceu as políticas para as\nmulheres, expandindo a atuação da Patrulha Maria da Penha, da Casa da Mulher\nBrasileira e dos programas de autonomia econômica feminina, além de ampliar ações\nvoltadas às comunidades quilombolas, povos tradicionais, juventude, idosos e\npessoas em situação de vulnerabilidade.\nEsses resultados demonstram que combater as desigualdades exige políticas\npúblicas integradas. Mas ainda há desafios importantes. Precisamos continuar\nreduzindo a pobreza, ampliar as oportunidades para jovens, fortalecer a proteção da\nprimeira infância, garantir autonomia às mulheres, assegurar atendimento\ndescentralizado às pessoas com deficiência, neurodivergentes e à população"
+          },
+          {
+            "id": "lgbtqiapn-alem-de-promover-a-inclusao-produtiva-como-caminho-para-romper",
+            "titulo": "LGBTQIAPN+, além de promover a inclusão produtiva como caminho para romper os",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "LGBTQIAPN+, além de promover a inclusão produtiva como caminho para romper os\nciclos de vulnerabilidade social.\nNeste novo ciclo, vamos integrar assistência social, educação, saúde, cultura,\nesporte, qualificação profissional e geração de renda para construir uma rede de\nproteção que acompanhe as pessoas ao longo de toda a vida. Nosso compromisso é\ngarantir que cada criança tenha um começo seguro, cada jovem encontre\noportunidades para construir seu futuro, cada mulher viva com autonomia e\nproteção, cada pessoa tenha seus direitos respeitados e que nenhum piauiense fique\npara trás.\n\nPrograma 28 – Pacto pela Assistência Social\nMeta Central:\nReduzir a pobreza e a extrema pobreza nos territórios de desenvolvimento, por meio\nda integração das políticas de assistência social, inclusão produtiva e proteção social.\nKPIs:\n• Número de pessoas em situação de pobreza e extrema pobreza inseridas em\nocupação produtiva ou atividade geradora de renda.\n• Taxa da população em situação de pobreza e extrema pobreza.\nMetas Específicas:\nMeta 105. Fortalecer ações integradas entre Estado e Municípios na Área da\nAssistência Social, promovendo serviços, programas e projetos para as famílias em\nsituação de vulnerabilidade social.\nMeta 106. Fortalecer a capacidade institucional dos municípios para execução das\npolíticas de assistência social, mediante apoio técnico, cofinanciamento estadual e\nsuporte à gestão do Sistema Único de Assistência Social (SUAS).\nMeta 107. Ampliar a busca ativa e o encaminhamento de pessoas em situação de\npobreza e extrema pobreza para ações de qualificação profissional, inclusão\nprodutiva e geração de renda.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 1 – Erradicação da Pobreza\n• ODS 10 – Redução das Desigualdades"
+          },
+          {
+            "id": "programa-29-pacto-pelas-criancas",
+            "titulo": "Programa 29 – Pacto pelas Crianças",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Programa 29 – Pacto pelas Crianças\nMeta Central:\nFortalecer as ações integradas de saúde, educação, assistência social e proteção à\ninfância nos 12 territórios piauienses, ampliando o desenvolvimento integral das\ncrianças na primeira infância.\nKPIs:\n• Cobertura municipal do Pacto pelas Crianças.\n• Crianças alfabetizadas na idade certa.\n• Cobertura vacinal infantil.\nMetas Específicas:\nMeta 108. Fortalecer o Programa Piauiense de Alfabetização na Idade Certa (PPAIC).\nMeta 109. Realizar atendimentos especializados a crianças por meio das ações\nitinerantes de saúde infantil.\nMeta 110. Manter cobertura vacinal infantil superior a 90% para as vacinas prioritárias\nem todos os 224 municípios.\nMeta 111. Apoiar a elaboração, atualização ou monitoramento dos Planos Municipais\nda Primeira Infância em 100% dos municípios piauienses.\nMeta 112. Capacitar profissionais das áreas de saúde, educação e assistência social\npara atuação na primeira infância.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 4 – Educação de Qualidade\n• ODS 3 – Saúde e Bem-Estar\n• ODS 10 – Redução das Desigualdades"
+          },
+          {
+            "id": "programa-30-piaui-da-igualdade-racial",
+            "titulo": "Programa 30 – Piauí da Igualdade Racial",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Programa 30 – Piauí da Igualdade Racial\nMeta Central:\nPromover inclusão, reconhecimento de direitos e valorização cultural da população\nnegra, povos indígenas, comunidades quilombolas e demais povos e comunidades\ntradicionais do Piauí.\nKPIs:\n• Percentual de comunidades quilombolas, indígenas e demais povos e comunidades\ntradicionais atendidas por políticas públicas estaduais.\n• Número de comunidades quilombolas e povos tradicionais com processos de\nreconhecimento, regularização ou proteção apoiados pelo Estado.\nMetas Específicas:\nMeta 113. Fortalecer o Programa Estadual de Fortalecimento dos Povos e\nComunidades Tradicionais.\nMeta 114. Aderir ao Sistema Nacional de Promoção da Igualdade Racial (SINAPIR).\nMeta 115. Fortalecer os Programas Estaduais de Enfrentamento ao Racismo\nEstrutural e de Educação Antirracista.\nMeta 116. Ampliar cursos de qualificação profissional e fomento ao\nempreendedorismo para mulheres negras, juventude quilombola e povos originários,\ncom itinerância na zona rural.\nMeta 117. Garantir que recursos estaduais de crédito e fomento ao\nempreendedorismo sejam destinados a empreendedores negros (pretos e pardos) e\nindígenas.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 18 - Igualdade Étnico-Racial¹\n• ODS 10 – Redução das Desigualdades\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n\n¹ ODS 18 – Igualdade Étnico-Racial: Objetivo proposto pelo Brasil como complemento à Agenda\n2030 da ONU, voltado à promoção da igualdade étnico-racial e ao enfrentamento do racismo."
+          },
+          {
+            "id": "programa-31-piaui-por-elas",
+            "titulo": "Programa 31 – Piauí Por Elas",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Programa 31 – Piauí Por Elas\nMeta Central:\nFortalecer as políticas integradas de acolhimento, autonomia econômica, proteção\nsocial, qualificação profissional e garantia de direitos às mulheres, reduzindo a\nvulnerabilidade social e fortalecendo sua participação na vida econômica.\nKPIs:\n• Número de mulheres atendidas pelas políticas integradas de acolhimento, proteção\nsocial e garantia de direitos.\n• Número de mulheres inseridas no mercado de trabalho, empreendedorismo ou\noutras atividades geradoras de renda.\n• Percentual de mulheres qualificadas que acessaram oportunidades de trabalho ou\ngeração de renda.\nMetas Específicas:\nMeta 118. Consolidar o Programa Maria da Penha nas Escolas em 100% das Gerências\nRegionais de Educação.\nMeta 119. Apoiar, em articulação com a União e os municípios, a implantação de\nnovos Centros de Referência de atendimento às mulheres.\nMeta 120. Universalizar o atendimento do Ônibus Lilás nos 12 territórios de\ndesenvolvimento.\nMeta 121. Garantir que contratos estaduais sujeitos à legislação pertinente adotem a\nreserva de vagas para mulheres em situação de violência doméstica.\nMeta 122. Promover a qualificação profissional de mulheres, priorizando chefes de\nfamília, negras, indígenas, quilombolas e rurais.\nMeta 123. Ampliar o número de mulheres beneficiadas pelo programa Fomento\nMulher.\nTotal de metas específicas: 6\nODS relacionados:\n• ODS 5 – Igualdade de Gênero\n• ODS 16 – Paz, Justiça e Instituições Eficazes"
+          },
+          {
+            "id": "programa-32-piaui-mais-inclusivo",
+            "titulo": "Programa 32 – Piauí Mais Inclusivo",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Programa 32 – Piauí Mais Inclusivo\nMeta Central:\nGarantir acesso regular a serviços integrados para pessoas com deficiência e\nneurodivergentes nos territórios de desenvolvimento do Piauí.\nKPIs:\n• Número de pessoas com deficiência e neurodivergentes atendidas pelos serviços\nestaduais integrados.\n• Percentual dos territórios de desenvolvimento com oferta regular de serviços\nintegrados.\n• Estudantes com deficiência atendidos com AEE.\nMetas Específicas:\nMeta 124. Consolidar o Cadastro Estadual Integrado da Pessoa com Deficiência no\nGov.PI Cidadão.\nMeta 125. Ampliar a rede de Centros Especializados em Reabilitação (CER) e\nimplantar Centros Especializados para o Atendimento às Pessoas com Transtorno do\nEspectro Autista (CETEAs) nas macrorregiões de saúde do Estado.\nMeta 126. Elevar o número de pessoas com deficiência inseridas ou reinseridas no\nmercado de trabalho.\nMeta 127. Ampliar o acesso a educação especial com atendimento em AEE e sala\ncomum, com profissionais capacitados em AEE, Libras, Braille, comunicação\nalternativa e adaptação curricular.\nMeta 128. Implantar o Selo Piauí Acessível garantindo que obras e reformas atendam\na critérios de acessibilidade.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 10 – Redução das Desigualdades\n• ODS 4 – Educação de Qualidade\n• ODS 8 – Trabalho Decente e Crescimento Econômico"
+          },
+          {
+            "id": "programa-33-oportunidade-jovem",
+            "titulo": "Programa 33 – Oportunidade Jovem",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Programa 33 – Oportunidade Jovem\nMeta Central:\nGarantir oportunidades de qualificação, estágio, aprendizagem e inserção produtiva\npara jovens piauienses, ampliando o acesso ao primeiro emprego, ao\nempreendedorismo e à formação profissional.\nKPIs:\n• Jovens vinculados a programas de renda, estágio ou qualificação.\n• Número de Jovens beneficiados pelo programa Oportunidade Jovem.\nMetas Específicas:\nMeta 129. Ampliar o Qualifica Piauí para atender jovens em todos os Territórios de\nDesenvolvimento.\nMeta 130. Apoiar startups lideradas por jovens, por meio de programas de\naceleração, crédito e mentorias.\nMeta 131. Promover a qualificação profissional e a inserção produtiva de jovens nas\ncadeias do turismo, cultura, hospitalidade e economia criativa.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 4 – Educação de Qualidade\n\nPrograma 34 – Pacto pela Pessoa Idosa\nMeta Central:\nApoiar os municípios no fortalecimento de ações integradas de acolhimento,\ncuidado, cultura, educação, esporte, inclusão digital e lazer para os idosos.\nKPIs:\n• Percentual de municípios apoiados técnica e/ou financeiramente para\nimplementação de políticas voltadas à pessoa idosa.\nMetas Específicas:\nMeta 132. Fortalecer o Programa Saúde 60+."
+          },
+          {
+            "id": "meta-133-capacitar-cuidadores-familiares-e-comunitarios",
+            "titulo": "Meta 133. Capacitar cuidadores familiares e comunitários.",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Meta 133. Capacitar cuidadores familiares e comunitários.\nMeta 134. Capacitar idosos em autonomia digital.\nMeta 135. Ampliar o Passe Livre Intermunicipal para rotas rurais.\nMeta 136. Implantar o Programa Família Protetora como ação específica para casos\nde abandono e vulnerabilidade extrema.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 3 – Saúde e Bem-Estar\n• ODS 10 – Redução das Desigualdades\n\nPrograma 35 – Caminhos para Recomeçar – Socioeducação com\nFuturo\nMeta Central:\nQualificar e descentralizar o sistema socioeducativo estadual, ampliando o acesso à\nformação profissional e às oportunidades de reinserção social e produtiva dos\nadolescentes e jovens atendidos.\nKPIs:\n• Percentual de adolescentes e jovens do sistema socioeducativo que concluíram\nações de qualificação profissional.\n• Taxa de reincidência no sistema socioeducativo.\nMetas Específicas:\nMeta 137. Qualificar a execução das medidas socioeducativas, assegurando a\nelaboração, acompanhamento e avaliação dos Planos Individuais de Atendimento\n(PIA), em articulação com as políticas de educação, saúde, assistência social, cultura\ne esporte.\nMeta 138. Fortalecer o acompanhamento familiar e comunitário dos adolescentes e\njovens atendidos pelo sistema socioeducativo, promovendo vínculos familiares e a\nconstrução de projetos de vida.\nMeta 139. Construir o novo Centro de Internação Masculina (CEM).\nTotal de metas específicas: 3"
+          },
+          {
+            "id": "ods-relacionados-3",
+            "titulo": "ODS relacionados:",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "ODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 4 – Educação de Qualidade\n\nPrograma 36 – Piauí de Todas as Cores\nMeta Central:\nDescentralizar e qualificar o acesso da população LGBTQIAPN+ do Piauí a serviços de\nacolhimento, proteção social e promoção de direitos.\nKPIs:\n• Percentual dos territórios de desenvolvimento com oferta regionalizada de serviços\nespecializados para a população LGBTQIAPN+.\n• Número de municípios apoiados pelo Estado na implementação ou fortalecimento\nde políticas de promoção dos direitos da população LGBTQIAPN+.\nMetas Específicas:\nMeta 140. Ampliar o número de municípios aderentes ao Pacto Estadual de\nEnfrentamento à Violência LGBTQIAPNfóbica.\nMeta 141. Capacitar profissionais das áreas de saúde, educação, assistência social e\nsegurança pública no atendimento à população LGBTQIAPN+.\nMeta 142. Promover ações de valorização dos direitos humanos, combate à\ndiscriminação e valorização da diversidade.\nMeta 143. Estruturar centros de referência para acolhimento e orientação da\npopulação LGBTQIAPN+ em cada macrorregião do estado.\nTotal de metas específicas: 4\nODS relacionados:\n• ODS 10 – Redução das Desigualdades\n• ODS 16 – Paz, Justiça e Instituições Eficazes"
+          },
+          {
+            "id": "eixo-6",
+            "titulo": "Eixo 6",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 6\nInfraestrutura: Logística,\nMobilidade, Habitação,\nSaneamento e Energia\n– Conectar o Piauí ao Mundo"
+          },
+          {
+            "id": "a-infraestrutura-e-o-caminho-por-onde-circulam-as-pessoas-a-producao-os",
+            "titulo": "A infraestrutura é o caminho por onde circulam as pessoas, a produção, os serviços",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "A infraestrutura é o caminho por onde circulam as pessoas, a produção, os serviços\ne as oportunidades. Nos últimos anos, o Piauí realizou um dos maiores ciclos de\ninvestimentos em infraestrutura de sua história. Entre 2023 e 2025, foram recuperados\nmais de 8 mil quilômetros de rodovias estaduais, implantados mais de 1.200\nquilômetros de novas rodovias pavimentadas e executados mais de 8 milhões de\nmetros quadrados de pavimentação urbana, ampliando a mobilidade, fortalecendo a\nintegração regional e melhorando a qualidade de vida da população. Ao mesmo\ntempo, 88,2% da malha rodoviária estadual passou a ser classificada em condições\nótimas, boas ou regulares, consolidando o Piauí como o estado com a melhor\nqualidade de rodovias das regiões Norte e Nordeste.\nOs investimentos também avançaram na construção da infraestrutura que sustentará\no desenvolvimento das próximas décadas. A primeira etapa do Porto de Luís Correia\nfoi concluída, com dragagem, pátios e infraestrutura operacional, enquanto\navançaram os projetos da hidrovia do rio Parnaíba e dos corredores logísticos do Anel\nda Soja, fundamentais para reduzir custos de transporte e ampliar a competitividade\nda produção piauiense. Na área de recursos hídricos, o estado ampliou o acesso à\nágua por meio da implantação de sistemas de dessalinização, da construção de\ncisternas e da execução de obras estruturantes de barragens e adutoras.\nParalelamente, consolidou-se como uma potência nacional em energias renováveis,\ncom 99,75% da matriz elétrica proveniente de fontes limpas, além de atrair grandes\ninvestimentos em mineração sustentável."
+          },
+          {
+            "id": "apesar-desses-avancos-ainda-existem-desafios-importantes-para-garantir-q",
+            "titulo": "Apesar desses avanços, ainda existem desafios importantes para garantir que o",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Apesar desses avanços, ainda existem desafios importantes para garantir que o\ndesenvolvimento alcance todos os territórios. É preciso ampliar a cobertura de\nsaneamento básico, fortalecer a segurança hídrica das comunidades rurais,\nconsolidar os corredores logísticos estratégicos, expandir a pavimentação urbana e\nrural e transformar o potencial energético e mineral do estado em emprego, renda e\noportunidades para a população. A infraestrutura deve ser planejada para reduzir\ndesigualdades, aumentar a competitividade da economia e melhorar a qualidade de\nvida das pessoas.\nNeste novo ciclo, vamos consolidar uma infraestrutura integrada, moderna e\nsustentável. Investiremos na ampliação e manutenção da malha rodoviária, na\nconclusão dos grandes corredores logísticos, na operação do Porto de Luís Correia,\nna implantação da hidrovia do rio Parnaíba, na expansão do abastecimento de água\ne do esgotamento sanitário, na segurança hídrica das comunidades rurais e na\nconsolidação do Piauí como referência nacional em transição energética e mineração\nsustentável. Nosso compromisso é conectar pessoas, territórios e mercados,\nconstruindo um estado mais competitivo, resiliente e preparado para o futuro.\n\nPrograma 37 – Estradas que Conectam o Piauí\nMeta Central:\nConsolidar 95% da malha rodoviária estadual em condições regular, boa ou ótima.\nKPIs:\n• Percentual da malha rodoviária estadual em regulares/boas/ótimas condições.\n• Km de novas rodovias pavimentadas.\nMetas Específicas:\nMeta 144. Implantar sinalização viária adequada e acostamentos nos trechos críticos\ncom maior incidência de óbitos em rodovias estaduais.\nMeta 145. Construir novas rodovias, incluindo novas ligações entre centros urbanos e\npovoados rurais.\nMeta 146. Consolidar os corredores rodoviários estruturantes (Rota do Norte, Rota do\nParaíso, Rota da Fé, Corredor Leste) com 100% da extensão em boas condições.\nMeta 147. Consolidar o monitoramento e a modernização da gestão rodoviária,\nmantendo 100% da malha estadual monitorada por sistemas digitais SIG/SGP com\ninteligência artificial."
+          },
+          {
+            "id": "total-de-metas-especificas-4",
+            "titulo": "Total de metas específicas: 4",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "Total de metas específicas: 4\nODS relacionados:\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 11 – Cidades e Comunidades Sustentáveis\n\nPrograma 38 – Minha Rua, Minha Vida\nMeta Central:\nElevar a média estadual de pavimentação a pelo menos 80% das ruas das zonas\nurbanas dos municípios, com prioridade para localidades em situação crítica, além de\nampliar a pavimentação na Zona Rural.\nKPIs:\n• Percentual médio de pavimentação urbana.\n• Área pavimentada executada.\nMetas Específicas:\nMeta 148. Ampliar o percentual de ruas pavimentadas nos municípios piauienses com\nsinalização adequada.\nTotal de metas específicas: 1\nODS relacionados:\n• ODS 11 – Cidades e Comunidades Sustentáveis\n\nPrograma 39 – Porto e Hidrovia: O Corredor Azul do Desenvolvimento\nMeta Central:\nConsolidar a operação do Porto de Luís Correia e avançar a implantação da hidrovia\ndo rio Parnaíba como eixo estratégico para o escoamento da produção estadual.\nKPIs:\n• Volume de carga movimentada pelo Porto Piauí\nMetas Específicas:\nMeta 149. Consolidar as condições operacionais da Hidrovia do Rio Parnaíba."
+          },
+          {
+            "id": "meta-150-consolidar-os-terminais-de-minerio-de-ferro-graos-conteineres-e",
+            "titulo": "Meta 150. Consolidar os terminais de minério de ferro, grãos, contêineres e pescados",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Meta 150. Consolidar os terminais de minério de ferro, grãos, contêineres e pescados\ndo Porto Piauí.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n\nPrograma 40 – Água e Saneamento para Todos\nMeta Central:\nInvestir R$ 2 bilhões, por meio de recursos estaduais, federais e da concessionária,\nem obras de infraestrutura hídrica e esgotamento sanitário.\nKPIs:\n• Cobertura dos serviços de abastecimento de água.\n• Cobertura dos serviços de esgotamento sanitário.\n• Quantidade de obras hídricas estruturantes e emergenciais concluídas.\nMetas Específicas:\nMeta 151. Monitorar e publicar, por meio de painel estadual atualizado, o\ncumprimento das metas contratuais de água e esgoto.\nMeta 152. Fortalecer a gestão e a manutenção das soluções coletivas de\nabastecimento de água em áreas rurais.\nMeta 153. Implantar sistemas coletivos permanentes de abastecimento de água em\ncomunidades rurais, priorizando localidades passíveis de integração à infraestrutura\nhídrica estadual.\nMeta 154. Concluir as adutoras prioritárias incluídas no Novo PAC.\nMeta 155. Concluir as barragens incluídas no Novo PAC.\nMeta 156. Consolidar Planos de Segurança de Barragens (PSB) e Planos de Ação de\nEmergência (PAE) para barragens classificadas como de alto dano potencial.\nMeta 157. Recuperar nascentes e matas ciliares em áreas prioritárias e revitalizar rios\ne lagoas prioritárias do estado.\nTotal de metas específicas: 7"
+          },
+          {
+            "id": "ods-relacionados-4",
+            "titulo": "ODS relacionados:",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "ODS relacionados:\n• ODS 6 – Água Potável e Saneamento\n\nPrograma 41 – Água e vida\nMeta Central:\nGarantir segurança hídrica para populações rurais, com 25 mil cisternas de consumo\nhumano implantadas e pelo menos 100 sistemas de dessalinização, com apoio do\ngoverno federal.\nKPIs:\n• Famílias rurais com acesso à água potável.\n• Sistemas de dessalinização em funcionamento.\nMetas Específicas:\nMeta 158. Ampliar o acesso à água para consumo humano em comunidades rurais\ndispersas por meio da implantação de cisternas, sistemas de dessalinização e outras\ntecnologias sociais de convivência com o semiárido\nMeta 159. Ampliar os pontos de monitoramento da qualidade da água.\nMeta 160. Implantar o Sistema Estadual de Informações sobre Recursos Hídricos\n(SEIRH), integrado ao SNIRH, garantindo a disponibilização anual, em dados abertos,\ndo Relatório de Situação dos Recursos Hídricos.\nMeta 161. Implantar sistemas produtivos resilientes ao clima, com distribuição de kits\nde irrigação eficiente e adoção de tecnologias de convivência com o semiárido.\nMeta 162. Instalar mais estações agrometeorológicas.\nTotal de metas específicas: 5\nODS relacionados:\n• ODS 6 – Água Potável e Saneamento\n• ODS 13 – Ação Contra a Mudança Global do Clima\n• ODS 2 – Fome Zero e Agricultura Sustentável"
+          },
+          {
+            "id": "programa-42-energia-do-futuro-riqueza-do-presente",
+            "titulo": "Programa 42 – Energia do Futuro, Riqueza do Presente",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "Programa 42 – Energia do Futuro, Riqueza do Presente\nMeta Central:\nConsolidar o Piauí como referência nacional em transição energética, na mineração\nsustentável e no aproveitamento econômico de minerais críticos e estratégicos.\nKPIs:\n• Número de empreendimentos estratégicos de transição energética e mineração em\nimplantação ou operação.\nMetas Específicas:\nMeta 163. Atrair investimentos e fortalecer cadeias produtivas associadas à transição\nenergética, estimulando a inovação, a geração de trabalho, emprego e renda\nqualificados e o desenvolvimento tecnológico.\nMeta 164. Estruturar e implementar a Política Estadual de Minerais Críticos e\nEstratégicos, ampliando o conhecimento geológico do território por meio de\nlevantamentos geológicos e aerogeofísicos.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 7 – Energia Limpa e Acessível\n• ODS 9 – Indústria, Inovação e Infraestrutura\n• ODS 12 – Consumo e Produção Responsáveis"
+          },
+          {
+            "id": "eixo-7",
+            "titulo": "Eixo 7",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 7\nMeio Ambiente, Clima,\nRecursos Hídricos, Defesa Civil\ne Proteção Animal - Um Piauí\nmais verde, seguro e resiliente"
+          },
+          {
+            "id": "o-piaui-tem-transformado-a-agenda-ambiental-em-uma-politica-de-desenvolv",
+            "titulo": "O Piauí tem transformado a agenda ambiental em uma política de desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "O Piauí tem transformado a agenda ambiental em uma política de desenvolvimento\nsustentável. Nos últimos anos, o estado fortaleceu a fiscalização ambiental, ampliou\no monitoramento do território e avançou na prevenção aos incêndios florestais. Entre\n2023 e 2025, foram distribuídas 3 milhões de mudas de espécies nativas, capacitadas\n102 brigadas municipais e 1.333 brigadistas florestais, enquanto a área atingida por\nqueimadas foi reduzida em 38% e os focos de incêndio apresentaram queda de quase\n9%. Ao mesmo tempo, o número de licenças ambientais emitidas cresceu 85,8%, com\nredução superior a 50% no tempo médio de emissão, demonstrando que é possível\nconciliar preservação ambiental, segurança jurídica e desenvolvimento econômico.\nOs avanços também chegaram à gestão dos recursos naturais e da segurança hídrica.\nO estado ampliou o monitoramento da qualidade da água, fortaleceu a recuperação\nde áreas degradadas, expandiu os sistemas de dessalinização e avançou em obras\nestruturantes para garantir água de qualidade às populações do semiárido. Ao\nmesmo tempo, consolidou instrumentos de incentivo à preservação, como o ICMS\nEcológico, que ampliou o número de municípios participantes, e fortaleceu ações\nvoltadas à adaptação às mudanças climáticas e à prevenção de desastres naturais.\nEssas iniciativas demonstram que proteger o meio ambiente também significa\nproteger a produção, a segurança hídrica e a qualidade de vida da população.\nApesar dos avanços, os desafios impostos pelas mudanças climáticas exigem uma\natuação cada vez mais integrada. Ainda precisamos reduzir o desmatamento ilegal e\nos focos de queimadas, recuperar nascentes e matas ciliares, fortalecer a gestão\nregionalizada dos resíduos sólidos, ampliar as ações de proteção e bem-estar animal\ne preparar os municípios para responder aos eventos climáticos extremos, tornandoos mais resilientes e seguros.\nNeste novo ciclo, vamos consolidar uma política ambiental integrada, articulando\npreservação, adaptação climática e desenvolvimento sustentável. Vamos recuperar\náreas estratégicas da Bacia do Rio Parnaíba, fortalecer a gestão dos resíduos sólidos,\nampliar a proteção da biodiversidade, estruturar uma rede permanente de bem-estar"
+          },
+          {
+            "id": "animal-e-apoiar-os-municipios-na-elaboracao-de-planos-de-contingencia-e",
+            "titulo": "animal e apoiar os municípios na elaboração de planos de contingência e em obras",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "animal e apoiar os municípios na elaboração de planos de contingência e em obras\nde drenagem urbana. Nosso compromisso é construir um Piauí mais verde, resiliente\ne preparado para enfrentar os desafios climáticos, garantindo que desenvolvimento\ne preservação caminhem lado a lado.\n\nPrograma 43 – Piauí que Preserva, Piauí que Cresce\nMeta Central:\nPromover a proteção e recuperação do meio ambiente nos territórios, com a redução\nde 50% dos focos de queimadas e de 50% do desmatamento ilegal.\nKPIs:\n• Número de focos de queimadas.\n• Número de mudas distribuídas.\n• Brigadas municipais equipadas.\nMetas Específicas:\nMeta 165. Fortalecer a estrutura institucional da Secretaria do Meio Ambiente e\nRecursos Hídricos do Estado do Piauí (SEMARH), por meio da implantação de\nunidades descentralizadas e da regulamentação do Fundo Clima Piauí Verde\n(FunClima), incluindo mecanismos de geração de receita com a venda de créditos de\ncarbono.\nMeta 166. Estruturar unidades de conservação de responsabilidade do Estado do\nPiauí.\nMeta 167. Realizar o Zoneamento Ecológico-Econômico (ZEE) do Litoral e do\nSemiárido do Piauí\nMeta 168. Fortalecer instrumentos de incentivo à conservação ambiental nos\nmunicípios, como o Selo do ICMS Ecológico e o Pagamento por Serviços Ambientais\n(PSA).\nMeta 169. Ampliar o efetivo do Batalhão de Polícia Ambiental (BPA) e equipar as\nbases com drones e sistemas de monitoramento.\nMeta 170. Realizar ações de fiscalização, principalmente em relação ao uso e o\ncomércio de agrotóxicos, com cobertura dos territórios de desenvolvimento."
+          },
+          {
+            "id": "meta-171-treinar-e-equipar-brigadas-municipais-de-combate-a-incendios-fl",
+            "titulo": "Meta 171. Treinar e equipar brigadas municipais de combate a incêndios florestais,",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "Meta 171. Treinar e equipar brigadas municipais de combate a incêndios florestais,\nincluindo o fornecimento de kits de EPIs, veículos e equipamentos, para todos os\nmunicípios.\nMeta 172. Apoiar a implantação de viveiros nos territórios de desenvolvimento,\ngarantindo a distribuição de mudas de espécies nativas e frutíferas.\nMeta 173. Oferecer assistência técnica para práticas ambientais a pequenos\nprodutores.\nMeta 174. Instituir o Programa Agente Jovem Ambiental, com seleção anual de\njovens.\nTotal de metas específicas: 10\nODS relacionados:\n• ODS 15 – Vida Terrestre\n• ODS 13 – Ação Contra a Mudança Global do Clima\n\nPrograma 44 – Pacto pela Revitalização da Bacia do Parnaíba\nMeta Central:\nPromover a revitalização da Bacia Hidrográfica do Rio Parnaíba, por meio da proteção\ne recuperação de nascentes, matas ciliares, áreas de recarga hídrica e mananciais\nestratégicos.\nKPIs:\n• Área de matas ciliares e entorno de nascentes em processo de recuperação na\nBacia (ha).\n• Nº de nascentes cadastradas/monitoradas na Bacia do Parnaíba.\n• Nº de municípios da Bacia com ações de recuperação ambiental em execução.\nMetas Específicas:\nMeta 175. Elaborar e executar planos integrados de revitalização para sub-bacias e\nmananciais estratégicos da Bacia do Rio Parnaíba.\nMeta 176. Promover a recuperação de áreas degradadas por meio de\nreflorestamento com espécies nativas e de sistemas produtivos sustentáveis.\nTotal de metas específicas: 2"
+          },
+          {
+            "id": "ods-relacionados-5",
+            "titulo": "ODS relacionados:",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "ODS relacionados:\n• ODS 6 – Água Potável e Saneamento\n• ODS 15 – Vida Terrestre\n\nPrograma 45 – Zero Lixões\nMeta Central:\nFortalecer a gestão integrada de resíduos sólidos no Piauí, ampliando o apoio aos\nmunicípios e promovendo soluções regionalizadas para a destinação\nambientalmente adequada dos resíduos urbanos.\nKPIs:\n• Municípios com destinação ambientalmente adequada dos resíduos.\n• Cooperativas e associações de catadores apoiadas.\nMetas Específicas:\nMeta 177. Disponibilizar assistência técnica, capacitação e acesso a linhas de\nfinanciamento para cooperativas e associações de catadores.\nMeta 178. Fomentar a implantação de centros de tratamento e beneficiamento de\nresíduos em cidades do estado.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 11 – Cidades e Comunidades Sustentáveis\n• ODS 12 – Consumo e Produção Responsáveis\n\nPrograma 46 – Pacto pelos Animais\nMeta Central:\nConsolidar uma rede estadual permanente de proteção e bem-estar animal,\npromovendo o controle populacional ético, o combate aos maus-tratos e a educação\npara a guarda responsável."
+          },
+          {
+            "id": "kpis-2",
+            "titulo": "KPIs:",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "KPIs:\n• Número de municípios integrados à rede estadual de proteção animal.\n• Quantidade de animais atendidos pelo programa Castramóvel.\nMetas Específicas:\nMeta 179. Realizar atendimentos veterinários gratuitos a cães e gatos, incluindo\nconsultas, castrações, cirurgias e microchipagem.\nTotal de metas específicas: 1\nODS relacionados:\n• ODS 15 – Vida Terrestre\n\nPrograma 47 – Piauí Preventivo: Gestão de Riscos e Desastres\nMeta Central:\nGarantir que 100% dos municípios prioritários (aqueles com maior recorrência de\ndesastres nos últimos 10 anos) possuam plano de contingência atualizado, além de\napoiá-los em projetos de drenagem urbana.\nKPIs:\n• Percentual de municípios prioritários com Plano de Contingência atualizado.\n• Percentual de municípios prioritários com Coordenadoria Municipal de Proteção e\nDefesa Civil (COMPDEC) estruturada e em funcionamento.\nMetas Específicas:\nMeta 180. Garantir apoio aos municípios para a formalização e o fortalecimento de\nsuas COMPDECs.\nMeta 181. Ampliar e modernizar a cobertura de monitoramento hidrológico, climático\ne meteorológico, fortalecendo o Centro de Gerenciamento de Riscos e Desastres\n(CEGRID) e desenvolvendo plataforma de gestão de riscos com mecanismos\npreditivos baseados em Inteligência Artificial, voltados à antecipação e mitigação de\nriscos climáticos.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 13 – Ação Contra a Mudança Global do Clima\n• ODS 11 – Cidades e Comunidades Sustentáveis"
+          },
+          {
+            "id": "eixo-8",
+            "titulo": "Eixo 8",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 8\nGoverno Eficiente,\nParticipativo e Colaborativo:\nUm Estado que Respeita Você"
+          },
+          {
+            "id": "um-governo-eficiente-e-aquele-que-faz-os-recursos-publicos-chegarem-onde",
+            "titulo": "Um governo eficiente é aquele que faz os recursos públicos chegarem onde as",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "Um governo eficiente é aquele que faz os recursos públicos chegarem onde as\npessoas mais precisam. Nos últimos anos, o Piauí consolidou uma gestão\nreconhecida nacionalmente pelo planejamento, pelo equilíbrio fiscal e pela\ncapacidade de investimento. O estado manteve elevado nível de investimentos\npúblicos, fortaleceu a gestão orientada por resultados e ampliou a participação da\npopulação na definição das prioridades governamentais por meio do Orçamento\nParticipativo Digital (OPA), que mobilizou centenas de milhares de cidadãos em várias\nregiões do estado. Ao mesmo tempo, os Diálogos pelo Piauí aproximaram o governo\ndos territórios, fortalecendo o planejamento participativo e a construção coletiva das\npolíticas públicas.\nA modernização da gestão também alcançou a administração pública. O governo\nampliou a transformação digital, fortaleceu os mecanismos de transparência e\ncontrole, investiu na qualificação dos servidores e consolidou um ambiente\ninstitucional capaz de atrair investimentos, executar grandes projetos e ampliar a\ncapacidade de resposta do Estado às demandas da população. O equilíbrio das\ncontas públicas e a boa capacidade de pagamento permitiram manter investimentos\nestratégicos em infraestrutura, saúde, educação e segurança, garantindo\nestabilidade fiscal e responsabilidade na gestão dos recursos públicos.\nApesar desses avanços, os desafios do desenvolvimento exigem um Estado cada vez\nmais inovador, transparente e próximo das pessoas. Precisamos fortalecer a\ncapacidade institucional dos municípios, ampliar a participação social nas decisões\npúblicas, consolidar uma cultura permanente de monitoramento de resultados,"
+          },
+          {
+            "id": "valorizar-os-servidores-publicos-e-garantir-que-cada-politica-publica-se",
+            "titulo": "valorizar os servidores públicos e garantir que cada política pública seja executada",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "valorizar os servidores públicos e garantir que cada política pública seja executada\ncom eficiência, transparência e foco na melhoria da qualidade de vida da população.\nNeste novo ciclo, vamos fortalecer as instituições públicas para que elas respondam\ncom mais rapidez, eficiência e qualidade às necessidades dos piauienses.\nAmpliaremos a valorização dos servidores, consolidaremos a participação cidadã no\nplanejamento e no orçamento, fortaleceremos os mecanismos de transparência e\ngovernança, implantaremos um escritório permanente dos Pactos para apoiar os\nmunicípios e promoveremos o desenvolvimento integrado das regiões\nmetropolitanas de Teresina e Parnaíba. Nosso compromisso é construir um Estado\nmoderno, colaborativo e orientado por resultados, que respeita as pessoas, utiliza\nbem os recursos públicos e entrega políticas capazes de transformar a vida da\npopulação.\n\nPrograma 48 – Valorizar Para Servir Melhor\nMeta Central:\nFortalecer a capacidade institucional do Estado com a admissão de 5.000 novos\nservidores concursados em áreas estratégicas e ações permanentes de valorização\nprofissional.\nKPIs:\n• Novos servidores concursados nomeados\nMetas Específicas:\nMeta 182. Instituir a Política Estadual de Saúde e Qualidade de Vida do Servidor.\nMeta 183. Capacitar servidores e gestores públicos em tecnologias digitais, governo\ndigital, inteligência artificial, atendimento ao cidadão, LGPD, gestão por resultados e\nuso de evidências.\nMeta 184. Fortalecer a política de valorização dos servidores públicos estaduais.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 8 – Trabalho Decente e Crescimento Econômico"
+          },
+          {
+            "id": "programa-49-piaui-participativo-decisoes-compartilhadas",
+            "titulo": "Programa 49 – Piauí Participativo, Decisões Compartilhadas",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "Programa 49 – Piauí Participativo, Decisões Compartilhadas\nMeta Central:\nFortalecer a participação social e a efetividade dos investimentos públicos,\nassegurando a execução de 100% das obras aprovadas no OPA Digital e a realização\ndos Diálogos pelo Piauí nos 12 territórios para a elaboração participativa do novo\nPlano Plurianual (PPA).\nKPIs:\n• Percentual de propostas (ou obras) aprovadas no OPA com execução concluída.\n• Número de participantes do OPA Digital e dos Diálogos pelo Piauí.\nMetas Específicas:\nMeta 185. Disponibilizar painéis públicos de monitoramento dos investimentos\npriorizados pela população, assegurando transparência e controle social sobre a\nexecução das ações governamentais.\nMeta 186. Institucionalizar os Diálogos pelo Piauí para aperfeiçoamento do PPA,\nassegurando a realização nos territórios de desenvolvimento.\nMeta 187. Fortalecer a capacidade institucional dos órgãos estaduais e dos\nmunicípios para condução de processos participativos e gestão orientada pelas\nprioridades definidas pela sociedade.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n\nPrograma 50 – Equilíbrio para Investir\nMeta Central:\nGarantir que o Piauí mantenha suas contas organizadas e com boa capacidade de\npagamento (nota da Capacidade de Pagamento - CAPAG mínima B), assegurando\ninvestimentos e serviços públicos de qualidade para a população.\nKPIs:\n• Relação despesas/receitas correntes.\n• Monitoramento da Nota CAPAG."
+          },
+          {
+            "id": "metas-especificas-4",
+            "titulo": "Metas Específicas:",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "Metas Específicas:\nMeta 188. Implementar na Lei Orçamentária Anual (LOA) marcadores orçamentários\npara as despesas relacionadas às ações prioritárias do Estado.\nMeta 189. Aprimorar a gestão das despesas públicas, promovendo a racionalização\ndos gastos, a revisão periódica de despesas e a ampliação da eficiência do gasto\npúblico.\nMeta 190. Ampliar a capacidade de investimento do Estado por meio da melhoria da\ngestão fiscal, da captação de recursos e da utilização sustentável de operações de\ncrédito.\nTotal de metas específicas: 3\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 17 – Parcerias e Meios de Implementação\n\nPrograma 51 – Piauí Transparente\nMeta Central:\nPosicionar o Piauí entre os dez estados mais bem avaliados do Brasil nos indicadores\nde transparência, governança e controle externo monitorados pela Associação dos\nMembros dos Tribunais de Contas do Brasil (Atricon).\nKPIs:\n• Posição do Piauí no ranking nacional da Atricon (Programa Nacional de\nTransparência Pública - PNTP/Radar da Transparência).\nMetas Específicas:\nMeta 191. Facilitar o acesso da população piauiense a informações sobre gastos,\ncontratos e serviços públicos por meio de canais digitais simples e centralizados.\nTotal de metas específicas: 1\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes"
+          },
+          {
+            "id": "programa-52-pactos-pelo-piaui",
+            "titulo": "Programa 52 – Pactos pelo Piauí",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "Programa 52 – Pactos pelo Piauí\nMeta Central:\nImplantar um escritório permanente dos Pactos em cada Macrorregião, garantindo\napoio técnico, monitoramento de indicadores e atendimento integrado aos\nmunicípios aderentes aos Pactos.\nKPIs:\n• Número de municípios atendidos pelo Escritório dos Pactos.\nMetas Específicas:\nMeta 192. Implantar e estruturar o Escritório Permanente dos Pactos com equipe\ntécnica, processos e instrumentos de governança.\nMeta 193. Implantar sistema de monitoramento dos Pactos baseado em indicadores,\npainéis gerenciais e acompanhamento periódico dos resultados.\nTotal de metas específicas: 2\nODS relacionados:\n• ODS 16 – Paz, Justiça e Instituições Eficazes\n• ODS 17 – Parcerias e Meios de Implementação\n\nPrograma 53 – Desenvolvimento das Regiões Metropolitanas de\nTeresina e Parnaíba\nMeta Central:\nImpulsionar o desenvolvimento econômico sustentável e integrado das Regiões\nMetropolitanas de Teresina e Parnaíba, fortalecendo a competitividade, a\ninfraestrutura urbana, a segurança, o turismo, a cultura e a qualidade de vida da\npopulação.\nKPIs:\n• Investimentos públicos e privados atraídos para as Regiões Metropolitanas.\n• Oportunidades de trabalho, emprego e renda geradas nas Regiões Metropolitanas.\n• Equipamentos urbanos, turísticos e culturais revitalizados ou implantados."
+          },
+          {
+            "id": "cobertura-de-infraestrutura-de-cidades-inteligentes-videomonitoramento-e",
+            "titulo": "• Cobertura de infraestrutura de cidades inteligentes (videomonitoramento e",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "• Cobertura de infraestrutura de cidades inteligentes (videomonitoramento e\nconectividade).\n• Número de visitantes nos principais atrativos turísticos e eventos das Regiões\nMetropolitanas.\nMetas Específicas:\nMeta 194. Implantar e ampliar soluções de cidades inteligentes nas Regiões\nMetropolitanas, com expansão da infraestrutura de videomonitoramento,\nconectividade pública e tecnologias de apoio à segurança e à gestão urbana.\nMeta 195. Fortalecer as vocações econômicas das Regiões Metropolitanas por meio\nda atração de investimentos, do apoio ao empreendedorismo, da inovação e da\nconsolidação de polos econômicos estratégicos.\nMeta 196. Estruturar projetos de Parcerias Público-Privadas (PPPs), concessões e\noutras formas de cooperação para implantação, revitalização e gestão sustentável de\nequipamentos públicos e ativos urbanos estratégicos.\nMeta 197. Apoiar a implantação de projetos estruturantes de mobilidade, drenagem\nurbana, infraestrutura logística, acessibilidade e qualificação dos espaços públicos\nnas Regiões Metropolitanas.\nMeta 198. Apoiar a ampliação da infraestrutura verde e a resiliência urbana,\npromovendo arborização, corredores verdes, soluções baseadas na natureza e\nadaptação às mudanças climáticas.\nMeta 199. Revitalizar e qualificar equipamentos turísticos, culturais e espaços\npúblicos estratégicos, fortalecendo o turismo, a economia criativa e a identidade\nregional.\nMeta 200. Fortalecer a governança e a integração regional do turismo, apoiando os\nmunicípios na estruturação de roteiros integrados, qualificação da oferta turística e\ninserção nos programas nacionais de desenvolvimento do turismo.\nTotal de metas específicas: 7\nODS relacionados:\n• ODS 11 – Cidades e Comunidades Sustentáveis\n• ODS 8 – Trabalho Decente e Crescimento Econômico\n• ODS 9 – Indústria, Inovação e Infraestrutura"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "ocr",
+            "conteudo": "Plano de Governo\n2027-2030\nO Povo do Piauí em Primeiro Lugar\npsd\nPOT\nPartido Verde\nRepublicanos r"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "faad82f7e4d045bbda64d980fa499f0d0997c9bdfd18befc1edc4e61fc5969d5"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "07a6ad9d0ab0193e4f82cc8dbc5cfb6bf47cba4c4fdddcb43babfd571d119872"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "ec4cb144a6b69d4ae2ae629b295f77cf470e466c8d4e8c0767b5b7f99057b7a1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "1771056dc70ba371e98fe6215632a76002ae6a4724f8459c3ee5cc1b44b18a30"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "afbfe235f603c42923c9ec8cddfb98668c5e5309ef5c57c366dc3807d701f8a5"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "3db007627461e1cdf5ae471652ec8a594567368b0df521e6cd272c20283d9ad0"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "4e18566dc0f359cca83400b0500aa71524d2925c967ab8ecff953ee1a9d347a9"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0a0c7a843b8004afbe832b1d4cb9495f5edc7398cf66d71f46b5486ac5be3889"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "8c2959d89e84394b0aa1086a3e293b00fce36ba0fff74d7418f1dfa3f1510d52"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "95e1e37c5416969e02fae17ed24763cb839ba6a6d13b31b8b0a65b9be6de3c16"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "5055ea749d825f57627d68e66ea1c15ef5241b684f3421f20c5ced1c44c54ca0"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "9192f8291976de21b32b0fe799756f6915da3d5e9a7f68bd31184ba270bb712c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "5cc992304a02b87513747fc3e093c186f190c628256f31c199847d6e6a7cf5fd"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1b96b84abfa6e04f1a291c46c35902cd8bd46d6c80a6295a1b381920675fc07c"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "2b056635addd42115ea3cbb1d447cc0761ac8b1d2fb4d59a376b4d6c6aa72b68"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "88ebb29f39beb9da59a89a85dbd3601a3b362b0199c9c8941f1218f30c23d100"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "57fedb7ccd5c64b386e9d3891ceec5de8c768541866e565e219142919c0d4831"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "0afa2edda2280fb268f831c156af7ea84d1f75d0eb55587e480eb3270bdecbe3"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "84a3471c9f98e18e5a5e75d5aefc38ebaf8935ee047e1c4ca9056f2518f62886"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "25affee7cf4eb0c1ecb60d0146dbaad18342eaa0ef86bce80618dcce6fc46c55"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "11a07fb030b315d6440fe735632a3e85cb928d2df2652282c79bf07e629fe18c"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7317dd85a37be546e8a348ee3431bbdc7ab2f1a683091dc04ca1cf4277373681"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "bdd41f03d7176b10100327a2312715bfc1e4a87032ca6965b740eb2859561c1d"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "f69b9f63730e949af0878ac64ba199b929066ac5f9fac69816ee7bd5facd7212"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "606602b0013ccc73a1c7d19ed1276b850f4e7badad1b168515040d26cac14ce1"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "5292e52cfe2ecd007e0cd921f43ebd92f13997314a9810ed1da2b3d1393c1b49"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "1c354f7b306cf43c5581c526104ae3385c4bf0c93d633ee1ede9129831a627fd"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "78a92c52904ad5d2f785b9d995177a7f77a10891dc51c07eb0fcae6cddef585b"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "6a01e52d7b0859b05a678131d22c87e57a1999fecd097ed09135324d62dbc2ea"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f465b9dc47485e24d12af5cac840a454bd0bfc7441adbf94484597158ee0432e"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "9d557adc89f9d61de811af586f63a87f003e5affcc2a7ce35e895f30d6431f4a"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "6a5cb1d8a6912bdfa3edd5f9325adbd6b45587418cd1ead204930b8e8f31bf76"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "a4364d572df6ee56028775898038efb5359839fd1a181e4c092bc351c6461ab1"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "49d504c08a34818e0e46f6112be584b71eaad40444eb8a39e75375bde8e4c01b"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "3d20588e4b04cae8a4701fd0c35d90c04c6aa235288e675fb27449b6ecb7a82d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "e829ad6ffadc46ab6947b263de87c2c16b846e85b13ab98d3d9b4ed95c6fb21e"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "9d9261f1962b16c615a9caabca13bab14359f8482e3431f779ca5cf5502350ff"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "46c43651fbe57294645d884efbe97e73d1202143a083150bd14a5a7376c4f671"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "a03f04221df22bbf68cdf7f4cdf21854a6766e53b0cf3ead4bceaa468b61a821"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "8fafda054f80d51533bab6e5768eb31558d81e6953cd5a14ea1b59b67dbb2f93"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "5db0240d5ab5a7fc62c5a72ee79ea99e4f7796159203c8e875567d0ea24acd6a"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "e047e673a7e816948f53da009f4696e521efda11056a7d840d02d12f9ff55756"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "4e3dcf1ffb2d7ca77e62427437716b53668e9d3238189d70259b1a6140b83062"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "37b09c9bd7b66826678d23f3fcbcdb6bb0776c1bbc950e7ece6f2bd16097a27e"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "b452dd01a2cdb8ccb4172fdf7f1d157643b93cff625df38c57f29aeb8d5f61a2"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "c004e112f20e251015ebbda6049792c2703d156491ca09585185402413e18c65"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "e4e2dc7d88bad5f245ae4bcf4fc2177bdfd0154201be9a894a15d8ea4533e0a6"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "caa79ab901f579b244b23062e09c6e4348a9a7f1c40ccb7df3fc6aff3db3737b"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "ff9cdf04fca827ad24fc3e5cee0ee9e3c4b939dee288a1b7d8065b400795475c"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "638a3ab025251e09e2bcf3953006f7c9ddae34a5e930b4256f74f3ae584b234f"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "6ddc1cc843c33694f1f3317f1bbd06e21952a39d19187495f5005f0fb07ecb86"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "c3df3bd98f193d82a14a62924304cbc0f981e08ae1d8724e5f63f3a87988db63"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "6fde0e54cf5beaea22629f106a69267f06511e7665496c5f06def8ed459728a9"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "8ad29b5b102637873da79302b0ae447b604b67661aed22ef61954bf32c6ce9f0"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "f4515c09b994b0f931fabc1e999859e1eebadb4be48bf2115f95dcdb12f79e53"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "f490fce46c8f6c698b8a4fe858e6e208d8baaddb9b2c3d60293afce7ce8c53f9"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "ff139282aa7994a85a64a75711d09e3784aee34ab0e3c371378aebd6fd50116a"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "d0762f82f702dacde4a4b622b5ce648eabf953898716ec3bd777c4e31d087c4d"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "c208bd3c6f257bae87911090d70106ba6f75d427080b61a771e92727e1fd2af7"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "8101a1fea6bd884ae52d477e02d1746fb4029edd9521c079604c1dd1eaf43159"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "a78611d86d791c72889c5694753468660909faaec744c5ce03bcb0600d56256b"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "26848b9b812e8ce9d4e5990c5c6c25fe11c5239d8acd1faec669a35d08379b3d"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "a29a77022cba621105ed8a3af12ccd68e7d6f209d8bbfe759b617c6cc9854a79"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "cf76492400607fbf20269cb5cc94c06c3bd4d1fdd9405cca5a891cb16f604a04"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "fa472a13558c2c88663393fa31fdb42a5ef6c033516f32914db7e917db4476ac"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "438206b62e15d400443759574b4f4c859f69a30d07b5dd139188ff3bce060f71"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "0dc15e3b3f3454d504dcfbb79716d96130d4efabbadc6aa07ba377ca4d35b527"
+          },
+          {
+            "pagina": 68,
+            "origem": "ocr",
+            "textSha256": "bdc011c09ec1f7c2d5f8c150286bf300ac011caf861a882c07ce6815bfd26e53"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí. Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino. Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias. Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS). Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade. Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal.",
+    "frases": [
+      {
+        "texto": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 8,
+            "trecho": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí."
+          }
+        ]
+      },
+      {
+        "texto": "Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 9,
+            "trecho": "Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino."
+          }
+        ]
+      },
+      {
+        "texto": "Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 19,
+            "trecho": "Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias."
+          }
+        ]
+      },
+      {
+        "texto": "Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS).",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 21,
+            "trecho": "Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS)."
+          }
+        ]
+      },
+      {
+        "texto": "Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 36,
+            "trecho": "Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade."
+          }
+        ]
+      },
+      {
+        "texto": "Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 57,
+            "trecho": "Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "inovacao-produtiva",
+        "titulo": "Inovação produtiva",
+        "descricao": "A proposta trata da adoção de tecnologias no setor produtivo.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 8,
+            "trecho": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí."
+          }
+        ]
+      },
+      {
+        "id": "formacao-superior",
+        "titulo": "Formação superior",
+        "descricao": "A proposta trata da expansão de cursos nas microrregiões.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 9,
+            "trecho": "Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino."
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "A proposta trata da consolidação do programa Piauí Saúde Digital.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 19,
+            "trecho": "Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias."
+          }
+        ]
+      },
+      {
+        "id": "terapia-online",
+        "titulo": "Terapia online",
+        "descricao": "A proposta trata do acesso a sessões de terapia psicológica online.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 21,
+            "trecho": "Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS)."
+          }
+        ]
+      },
+      {
+        "id": "acessibilidade-digital",
+        "titulo": "Acessibilidade digital",
+        "descricao": "A proposta trata da acessibilidade dos canais do Gov.PI Cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 36,
+            "trecho": "Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade."
+          }
+        ]
+      },
+      {
+        "id": "conservacao-ambiental",
+        "titulo": "Conservação ambiental",
+        "descricao": "A proposta trata da proteção e recuperação ambiental nos territórios.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002532987:01",
+            "pagina": 57,
+            "trecho": "Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:39:42.390Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:42:04.563Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal da Meta 3 do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de inovação produtiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:1:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da Meta Central do Programa 2."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Número '28 microrregiões' sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de formação/educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:2:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da Meta 37."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Prazo de 10 dias sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:3:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da Meta 45."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta de saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:4:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da Meta 100."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta de acessibilidade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:5:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da Meta Central do Programa 43."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentuais de 50% sustentados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta de conservação ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:frase:6:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho sobre adoção de tecnologias no setor produtivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:inovacao-produtiva:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:formacao-superior:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:saude-digital:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:terapia-online:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de acessibilidade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:acessibilidade-digital:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002532987:tema:conservacao-ambiental:documentos:PI:180002532987:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula temática."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002532987",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002532987:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 44091,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3406,
+          "reasoning_output_tokens": 1898
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26346,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23361,
+          "output_tokens_details": {
+            "thinking_tokens": 559
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26346,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23361,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26346,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26346
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.35990740000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "004c55a5f06c3461163efab19b1e2aa274274b360ec95bc8a9c820e62fd87328",
+    "extractedTextSha256": "6c397588819eaede72742be11779ad787d16ec88f175a9d2bc522c95e7b8b131",
+    "documentCount": 1,
+    "documentSetSha256": "b97581dbac4139a5021b5eddeb2f5e9c22f0af1c6cc3d2db55a907f882524cac",
+    "contentSha256": "0d78861186bba8d4d17d48211ffc6a71448f4ced1546ce744424b97eaeb65412"
+  }
+}

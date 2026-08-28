@@ -1,0 +1,1294 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002536582",
+    "slug": "eduardo-riedel",
+    "nomeUrna": "EDUARDO RIEDEL",
+    "partido": "PP",
+    "arquivoNome": "2026MS120002536582_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002536582_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002536582:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002536582_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002536582_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "9a250a365378cece30dbdd049086c1328bf91788d9d58b1732798347683f62d4",
+        "extractedTextSha256": "5e41ef5963940661a0b3340cc34712e28efbd813d384ba0691301efcfa6e6576",
+        "paginas": 44,
+        "secoes": [
+          {
+            "id": "coligacao-fazendo-o-futuro-acontecer",
+            "titulo": "COLIGAÇÃO: FAZENDO O FUTURO ACONTECER.",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO: FAZENDO O FUTURO ACONTECER."
+          },
+          {
+            "id": "o",
+            "titulo": "O",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O\n\nplano de governo é uma verdadeira bússola que\norienta o caminho para o futuro acalentado por diferentes\ngerações de sul-mato-grossenses, que agora toma forma\ne presença na vida das pessoas. É também uma legítima\n“Carta Compromisso”, onde se reescreve e se renova o\npacto de governança com a nossa sociedade organizada.\nNa última eleição, defendemos um Mato Grosso do\nSul Próspero – e ao fim do mandato entregamos um\ncrescimento quatro vezes superior ao nacional; Inclusivo\n– e a pobreza extrema reduziu-se a apenas 1,6% da\npopulação. O Estado Verde floresce da conciliação entre\ncrescimento e preservação ambiental, simbolizado pelo\nagro que mais cresce e que mais reduziu as emissões da\nagropecuária nos últimos 20 anos, e a aproximação da\ndesafiadora e definitiva fronteira para uma economia\ncarbono zero até 2030 (uma antecipação de 20 anos,\nem relação às metas da ONU); O Estado Digital – com\nmais de 700 serviços públicos disponíveis em sites ou\nsmartphones, na palma da mão -, também se incorporou\ndefinitivamente como parte das estruturas de diferentes\npolíticas públicas. O MS já é assim nas escolas, com\nlousas digitais, laboratórios de robótica e sinergia com\nplataformas internacionais provedoras de conhecimento;\nna telemedicina que conecta especialistas às demandas\ndos usuários do SUS e em sistema avançado e integrado\nde monitoramento e combate ao crime e aos impactos do\nclima, para ficar apenas em alguns poucos exemplos.\nSão esforços continuados e transformadores da nossa\nrealidade, que se adensam agora em cada uma das áreas\ndo nosso Governo, sintetizados na equação principal:\nCrescer, Incluir e Transformar. O conceito traduz o DNA\nde um governo que sabe que infelizmente não pôde fazer\ntudo que foi proposto; mas que não se conforma com o\nque não deu certo e precisa ser corrigido; e principalmente\nnão se acomoda no berço dos excepcionais resultados\nalcançados. Nos alimenta o ânimo, a ideia força que é\npreciso fazer muito mais, para que os nossos ativos vivos\ne potenciais ainda latentes floresçam em cada município.\nA verdadeira transformação só será plena quando\npudermos avançar, todos juntos, de mãos dadas, em\ndireção de um novo futuro.\n\nEduardo Riedel"
+          },
+          {
+            "id": "introducao",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\nMato Grosso do Sul vive um dos momentos mais promissores de sua história. Nos últimos anos, o Estado consolidou importantes avanços em equilíbrio fiscal, atração de investimentos, desenvolvimento econômico, inclusão\nsocial, infraestrutura, educação, saúde, segurança pública e sustentabilidade, construindo bases sólidas para um\nnovo ciclo de crescimento. Mais do que alcançar indicadores de destaque, Mato Grosso do Sul passou a ser reconhecido nacionalmente pela capacidade de planejar, executar e entregar políticas públicas com responsabilidade,\ninovação e visão de futuro.\nEsta postura incluiu clareza e coragem para reconhecer e enfrentar problemas estruturais que pontuam em\npraticamente todo o território nacional e também aqui, como resultado de um país ainda muito injusto e desigual.\nA vida real dá dimensão ao gigantesco desafio de vencer distorções expressas em grandes áreas de serviços públicos, como o pleno acesso à saúde, a garantia da integridade da segurança territorial e a superação de atrasos\nhistóricos, renitentes e acumulados, por exemplo, na educação pública e na qualidade da empregabilidade, elementos fundamentais à uma nova lógica de redistribuição de riquezas geradas pela dinâmica do alto crescimento\ncontinuado na década. Ao se abordar cada um deles, constata-se a grande obra da transformação da paisagem\nsócio econômica não está concluída, mas tem o seu curso visível, concreto e avança na direção certa.\nPor tudo isso, o desafio que se apresenta agora é diferente. Não se trata apenas de manter os avanços conquistados, mas de dar a eles uma inédita dimensão e capilaridade, para, em seguida, consolidá-los, transformando-os em um legado permanente para as próximas gerações. Se temos o dever de concluir estas grandes tarefas,\no próximo ciclo de governo exigirá, simultaneamente, uma agenda capaz de responder às profundas transformações econômicas, tecnológicas, ambientais e sociais que já remodelam o Brasil e o mundo, preparando o Estado\npara continuar crescendo de forma competitiva, sustentável e inclusiva.\nEste Plano de Governo parte da convicção central de que desenvolvimento somente faz sentido quando melhora a vida das pessoas. Crescimento econômico, responsabilidade ambiental, infraestrutura moderna e gestão\npública eficiente não são objetivos isolados, mas instrumentos para ampliar oportunidades, reduzir desigualdades\ne garantir que todos os sul-mato-grossenses possam construir uma trajetória de prosperidade, segurança e qualidade de vida.\nAo mesmo tempo, reconhece que os desafios contemporâneos exigem um Estado cada vez mais estratégico.\nUm Estado que não atua apenas como prestador de serviços, mas como articulador, indutor do desenvolvimento\ne parceiro da sociedade. Um Estado capaz de integrar pessoas, território, economia e inovação em uma mesma\nvisão de futuro, promovendo segurança jurídica, fortalecendo a competitividade, valorizando seus ativos ambientais e preparando suas instituições para responder com agilidade às demandas da população.\nEssa visão está organizada em quatro grandes dimensões estratégicas. A primeira coloca as pessoas no centro das políticas públicas, fortalecendo a proteção social, a educação, a saúde, a segurança e a construção de\noportunidades capazes de romper ciclos intergeracionais de vulnerabilidade. A segunda consolida uma agenda\nde desenvolvimento econômico baseada em competitividade, inovação, empreendedorismo e preparação para\nos desafios da nova economia. A terceira estrutura explora o território como base do desenvolvimento, integrando\ninfraestrutura, cidades, sustentabilidade e valorização dos ativos ambientais. A quarta fortalece a capacidade de\nentrega do Estado, promovendo governança, eficiência, transformação digital e gestão orientada a resultados.\nMais do que um conjunto de propostas, este Plano representa um compromisso com a construção de um Mato\nGrosso do Sul preparado para o futuro. Um Estado que cresce sem deixar ninguém para trás, que transforma suas\nvocações em oportunidades, que preserva seu patrimônio natural como diferencial competitivo e que mantém as\npessoas como razão maior de todas as políticas públicas. É com essa visão que propomos consolidar, entre 2027 e\n2030, um novo ciclo de desenvolvimento, prosperidade e qualidade de vida para todos os sul-mato-grossenses.\n\n3"
+          },
+          {
+            "id": "o-que-foi-feito",
+            "titulo": "O QUE FOI FEITO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "O QUE FOI FEITO\nBalanço da Gestão 2023–2026\nMato Grosso do Sul mudou de patamar. Este não é o relatório de uma administração que apenas evitou erros\n— é o registro de um Estado que cresceu com intencionalidade, que atraiu investimentos sem abandonar quem\nprecisava de proteção, e que vem modernizando a máquina pública para melhor entregar serviço na ponta. Os\nquatro anos de mandato produziram resultados que alteraram a trajetória estrutural do Estado. O que segue é um\nbalanço honesto: o que foi feito, por que importa e o que ainda precisa ser feito.\n\nEconomia e Competitividade\nAo longo da última década, Mato Grosso do Sul consolidou uma transformação de sua estrutura econômica.\nO Produto Interno Bruto (PIB) praticamente dobrou, passando de R$ 91,9 bilhões em 2016 para R$ 184,4 bilhões em\n2023, ano em que o Estado registrou a segunda maior taxa de crescimento do país (13,4%), mais de quatro vezes\na média nacional (3,2%), além de alcançar o 60 maior PIB per capita do Brasil. A diversificação econômica tornou-se uma realidade, com destaque para a indústria de transformação, impulsionada pelos investimentos em\ncelulose, bioenergia e agroindustrialização, que ampliou sua participação na economia estadual e consolidou uma\nnova base industrial. Paralelamente, o Estado atingiu recordes nas exportações em 2025, com uma pauta cada\nvez mais diversificada, liderada por produtos florestais (US$ 9,2 bilhões), soja (US$ 2,8 bilhões), carnes (US$ 2,7 bilhões) e produtos do complexo sucroalcooleiro (US$ 731 milhões). A inserção internacional também se fortaleceu,\ntendo a China como principal destino (44,6%), seguida pela União Europeia (12%), Estados Unidos (5%) e Uruguai\n(3%), evidenciando a ampliação dos mercados compradores e a consolidação de Mato Grosso do Sul como um\npolo exportador de alimentos, fibras, bioenergia e produtos industriais. Esse desempenho reflete uma estratégia\nde desenvolvimento que fortalece as vocações do Estado, amplia a industrialização vinculada ao agronegócio,\ndiversifica a base produtiva e consolida Mato Grosso do Sul como um dos principais polos nacionais de produção\nagroindustrial e de exportação.\nAssim, Mato Grosso do Sul saiu da condição de estado exportador de matéria-prima para se tornar referência\nnacional em industrialização do agro e atração de investimentos. Segundo projeção do Banco do Brasil, em 2025,\no estado cresceu 5,3% — mais que o dobro da média nacional projetada de 2,5% —, conquistando o 30 lugar no\nranking de crescimento do PIB entre os estados brasileiros. Desde 2023, foram atraídos mais de R$ 81 bilhões em\ninvestimentos privados, impulsionados por setores como celulose, bioetanol, proteína animal e logística.\nA política de desburocratização e simplificação tributária posicionou MS com o menor ICMS do país em setores estratégicos, criando um ambiente competitivo que atrai empresas nacionais e internacionais. O Estado lidera\no ranking nacional de crescimento da indústria de transformação — o indicador que mede a transição de uma\neconomia primária para uma base industrial diversificada. Somente no ano passado foram gerados mais de 19 mil\nnovos empregos formais, impulsionados pelos setores de construção, serviços, indústria, comércio e agropecuária.\nA renda média no Estado cresceu 64% (de 2021 comparado a 2025), sendo que o 80% do ganho advém do rendimento do trabalho.\nMais de 500 mil qualificações foram realizadas em três anos por meio de programas de formação profissional\nalinhados às cadeias produtivas estratégicas. A FUNTRAB foi modernizada e expandiu sua presença nos 79 municípios, passando a operar como central de inteligência do trabalho.\n\n4"
+          },
+          {
+            "id": "reducao-da-pobreza-e-inclusao-social",
+            "titulo": "Redução da Pobreza e Inclusão Social",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Redução da Pobreza e Inclusão Social\nO crescimento econômico de MS foi acompanhado por uma agenda propositiva de inclusão. Em 4 anos, a\nextrema pobreza caiu 60% — mais de 40 mil pessoas saíram das condições mais precárias de vida e mais de 34 mil\nfamílias passaram a ter acesso regular à alimentação adequada. O Estado conquistou o 10 lugar no ranking nacional de mobilidade social — o indicador que mede a chance de um filho viver melhor do que seus pais.\nA política de assistência social também passou por uma transformação estrutural. Os programas estaduais\ndeixaram de ser exclusivamente mecanismos de transferência de renda e passaram a atuar como instrumentos de superação da vulnerabilidade, combinando apoio financeiro com ações de segurança alimentar, acesso\nà saúde, permanência escolar e acompanhamento familiar, tendo como foco a busca pela emancipação das\npessoas. A adoção da busca ativa permitiu identificar famílias que sequer estavam inscritas no Cadastro Único e,\nportanto, não acessavam benefícios sociais estaduais ou federais. Como resultado, cerca de 44 mil famílias saíram\nda insegurança alimentar nos últimos dois anos (2024 a 2026), a taxa de extrema pobreza foi reduzida de 4% para\n1,6% e Mato Grosso do Sul avançou da 17a em 2022 para a 2a posição nacional no pilar Capital Humano do último\nRanking de Competitividade dos Estados (2025), refletindo a evolução das oportunidades e da qualidade de vida\nda população.\nAlém de reestruturar programas consolidados, como o Mais Social e o Energia Zero, o Estado implantou novas\niniciativas voltadas a públicos específicos, entre elas o ‘Cuidar de Quem Cuida’, o ‘Recomeços’ e o ‘Programa de\nApoio à Mulher Trabalhadora e Chefe de Família: Criança na Creche’. A implantação do Compliance Social, em\nparceria com a Controladoria-Geral do Estado, fortaleceu a transparência, a integridade e o monitoramento das\npolíticas públicas, consolidando um modelo de assistência social orientado por resultados, focalização e promoção\nda autonomia das famílias.\n\nSaúde Pública\nA saúde em Mato Grosso do Sul passou por uma reorganização estrutural. A Nova Arquitetura da Saúde reorganiza o sistema em camadas integradas: o ecossistema de atendimento pretende funcionar a partir de uma\natenção primária, porta de entrada do sistema, mais eficiente e homogênea nos 79 municípios, com cinturões de\nmédia complexidade e oferta de especialidades regionalizadas, complementados por hospitais de alta complexidade modernizados e plataforma digital de regulação. O Hospital Regional de MS avança via PPP, ampliando de\n362 para 577 leitos. A Telessaúde levou consultas especializadas ao interior sem exigir deslocamento do paciente.\nNa vacinação, MS conquistou nota 100 pelo Programa Nacional de Imunizações, liderando o ranking nacional.\n\nEducação\nUma nova escola estadual foi reformada ou construída a cada seis dias ao longo do mandato. A educação\nprofissional chegou aos 79 municípios com trilhas alinhadas às vocações econômicas de cada região. Os resultados de aprendizagem melhoraram nos indicadores nacionais de alfabetização e matemática. A educação em\ntempo integral foi expandida, especialmente em territórios de maior vulnerabilidade social. Ao contrário de um\ngrande número de estados, o Mato Grosso do Sul decidiu não aderir à aprovação automática nos anos de pandemia e pós pandemia e por isso teve o seu IDEB impactado, neste período atípico, ficando abaixo da média nacional.\nUm esforço de recuperação da proficiência foi realizado, com resultados emblemáticos: redução pela metade da\nrepetência e taxas mínimas de abandono escolar.\n\n5"
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "Segurança Pública",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Segurança Pública\nCom 1.365 km de fronteira internacional, MS respondeu ao desafio com uma política integrada de inteligência\nde dados, policiamento territorial e combate ao crime organizado. O LabSEJUSP foi criado para desenvolver soluções tecnológicas e agora será integralmente implementado. O Plano de Fronteira foi implantado com presença\nqualificada e integração com forças federais e internacionais. As taxas de crimes violentos letais apresentaram\nqueda consistente ao longo do mandato. O Estado adensa a sua eficiência nesta área com a vice-liderança nacional na apreensão de drogas e solução de homicídios\n\nGovernança e Modernização do Estado\nMS obteve Nota A do Tesouro Nacional pelo quarto ano consecutivo na avaliação da qualidade fiscal. O Estado\nconquistou o Selo Diamante de transparência da ATRICON pelo terceiro ano seguido — único estado do Brasil a\natingir o nível máximo nas três edições. MS está entre os dez estados mais digitais do Brasil, com mais de 700 serviços\ndigitais e fibra ótica em todos os municípios. Um modelo de gestão por resultados foi implantado com indicadores\nacompanhados em tempo real.\n\nInfraestrutura e Logística\nNos últimos quatro anos, Mato Grosso do Sul consolidou um dos maiores ciclos de investimentos em infraestrutura de sua história, fortalecendo a logística, ampliando a competitividade e promovendo desenvolvimento\nem todas as regiões do Estado. Entre 2023 e 2025, foram investidos mais de R$ 2 bilhões em rodovias, incluindo a\npavimentação de 1.153 quilômetros e a restauração de outros 517 quilômetros, além da substituição de mais de\n69 pontes de madeira por estruturas de concreto e da implantação de mais de 500 quilômetros de revestimento\nprimário no Pantanal, garantindo mobilidade, segurança e apoio à produção. Para 2026 e 2027, estão previstos\nmais R$ 3,1 bilhões em investimentos rodoviários, reforçando a meta de ampliar a malha pavimentada estadual de\n5.131 quilômetros, em 2023, para 5.988 quilômetros ao final da atual gestão e alcançar 6.660 quilômetros até 2030,\ninvertendo, pela primeira vez, a proporção entre rodovias pavimentadas e não pavimentadas no Estado.\nNo modal aéreo, Mato Grosso do Sul estruturou pela primeira vez um Plano Aeroviário estadual com uma carteira integrada de investimentos voltada à ampliação da conectividade regional e ao fortalecimento da logística,\ndo turismo e da atração de investimentos. Entre 2023 e 2026, foram concluídas 27 obras em aeródromos distribuídos por diversas regiões do Estado. Ao todo, o ‘Plano Aeroviário’ reúne 64 obras e serviços, somando mais de R$ 366\nmilhões em investimentos, dos quais 39 estão concluídos ou em execução, além de mais 25 previstos — incluindo a\nimplantação e projetos de novos aeródromos estratégicos, sistemas de balizamento noturno, terminais de passageiros e melhorias operacionais que ampliam a capacidade logística e a integração territorial de Mato Grosso do Sul.\n\nMeio Ambiente\nNo campo ambiental, o Estado implantou um novo marco de governança baseado na Lei do Pantanal, regulamentando critérios modernos para produção sustentável no bioma, ao mesmo tempo em que estruturou os\nprimeiros Programas de Pagamento por Serviços Ambientais (PSA) voltados à conservação da vegetação nativa\n\n6"
+          },
+          {
+            "id": "e-ao-apoio-as-brigadas-comunitarias-de-prevencao-e-combate-aos-incendios",
+            "titulo": "e ao apoio às brigadas comunitárias de prevenção e combate aos incêndios florestais. A criação da MS Ativos",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "e ao apoio às brigadas comunitárias de prevenção e combate aos incêndios florestais. A criação da MS Ativos\nAmbientais inaugurou uma nova etapa na gestão dos ativos ambientais estaduais, preparando Mato Grosso do\nSul para acessar mercados de carbono, desenvolver projetos de restauração ecológica, ampliar a bioeconomia e\ntransformar a conservação da biodiversidade em fonte de renda, investimentos e desenvolvimento regional.\nOutro avanço estrutural ocorreu no saneamento básico. Nos anos mais recentes, a cobertura de coleta e tratamento de esgoto passou de 56% em 2021 para 77% da população em maio de 2026, aproximando o Estado da\nuniversalização do serviço antes do prazo estabelecido pelo Marco Legal do Saneamento. Ao lado da expansão do\nabastecimento de água, dos investimentos em resíduos sólidos e das soluções para comunidades isoladas, esses\nresultados consolidam o saneamento como política pública essencial para a saúde, a preservação ambiental, a\nvalorização dos recursos hídricos e a melhoria da qualidade de vida dos sul-mato-grossenses.\n\nEm síntese: crescimento econômico, inclusão social e Estado moderno. Não\ncomo discurso — como resultado documentado.\n\nMS Ativo Municipalismo\nOutro marco desse período foi a consolidação do programa MS Ativo, que fortaleceu o municipalismo como\nestratégia de desenvolvimento regional. O MS Ativo 1 soma R$ 1,5 bilhão em obras finalizadas, em execução e\ncom projetos em análise na AGESUL; o MS Ativo 2 projeta R$ 995 milhões, contemplando as 79 cidades com pavimentação, recapeamento, drenagem e obras estruturantes. Somados, os investimentos do MS Ativo chegam\na R$ 3 bilhões, consolidando um novo modelo de cooperação entre Estado e municípios e garantindo que o desenvolvimento chegue de forma equilibrada a todas as regiões de Mato Grosso do Sul. Além das obras viárias,\na Agesul acompanha aproximadamente R$ 763 milhões em obras civis nas áreas de saúde, segurança pública,\nesporte, cultura, lazer e cidadania, ampliando a capacidade de prestação de serviços públicos à população.\nO programa venceu o Prêmio Excelência em Competitividade 2025 do Centro de Liderança Pública (CLP). A lógica\né invertida: cada obra é definida em parceria com o prefeito e vereadores, não imposta pelo Estado.\n\nSaneamento e Sustentabilidade\nMato Grosso do Sul avança em direção à universalização do saneamento básico. A cobertura da SANESUL já\nalcança 76% da população — a mais próxima da universalização entre todos os estados brasileiros, com meta de\n100% até 2028. Entre 2023 e 2025, foram coletados e tratados mais de 121 milhões de m3 de esgoto (equivalente a\n48,5 mil piscinas olímpicas retiradas dos rios). No campo ambiental, o Estado lidera o ranking nacional de reciclagem\nde embalagens por habitante (13,4 kg/pessoa) e aprovou a Lei do Pantanal (Lei Estadual no 6.160/2023), que combina preservação e desenvolvimento sustentável com remuneração a produtores rurais que conservam o bioma.\n\n7"
+          },
+          {
+            "id": "ensino-superior-e-programas-sociais",
+            "titulo": "Ensino Superior e Programas Sociais",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Ensino Superior e Programas Sociais\nDe acordo com o IBGE (junho 2026), o MS possui o 7° maior percentual de pessoas com nível superior do país\n(23%).\nNa proteção social, o Conta de Energia Zero e o Mais Social atendem mais de 70 mil famílias (chegaram a mais\nde 100 mil durante a pandemia) e a redução reflete o desenquadramento pelo crescimento da renda e do emprego. O número de famílias no Bolsa Família caiu 8,63% em dois anos (61.610 pessoas a menos) e o percentual de\ndomicílios com o benefício caiu de 13% para 9,5% — 50 menor do país.\nJá na segurança nutricional, são 47 mil famílias recebendo o cartão do Mais Social e 20 mil famílias indígenas em\náreas rurais recebendo as cestas alimentares, totalizando 67 mil famílias com alimentação garantida pelo governo\ndo Estado.\n\nNúmeros que Resumem o Mandato\nPROGRESSO\n\nEconomia que cresce e gera\noportunidade\n\n30 lugar no Brasil\n\nCrescimento do PIB em 2025\n(5,3%) — mais que o dobro da\nmédia nacional\n\n+R$ 80 bilhões\n\nInvestimento privado atraído\nem 2 anos\n\n+500 mil qualificações\nProfissionais formados em\nprogramas de qualificação\n\n1 em crescimento\n0\n\nIndústria de transformação —\nliderança nacional\n\nMenor ICMS do país\n\nCarga tributária competitiva\nque fortalece o setor produtivo\n\nSEM DEIXAR NINGUÉM\nPRA TRÁS\n\nCrescimento que chega na vida\nde cada um\n\n10 do Brasil\n\nMobilidade social — filho tem\nmais chance de viver melhor\nque os pais\n\n-60% em 4 anos\n\nExtrema pobreza — de 4% para\n1,6% da população (30 menor\níndice nacional)\n\nISSO É GESTÃO\n\nEstado que arrumou a casa\ne recuperou capacidade de\ninvestir\n\nNota A — 40 ano\nseguido\n\nQualidade fiscal (Tesouro\nNacional) — único estado a\nmanter por esse período\n\nSelo Diamante\n\nTransparência (Atricon) — único\nestado com nível máximo nas 3\nedições\n\n+67 mil lares\n\nTop 10 digital\n\nNota 100\n\nQuase 3x\n\nFamílias com alimentação\nregular garantida pelo\n\nVacinação — referência\nnacional em imunização infantil\n\nMS entre os estados mais digitais\ndo Brasil (100 lugar)\n\nTaxa de investimento público vs.\ngoverno central\n\nMas a obra não está concluída. Os benefícios do crescimento ainda precisam\nchegar mais rápido na vida de cada sul-mato-grossense. É para isso que existe\neste plano.\n\n8"
+          },
+          {
+            "id": "4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nDIMENSÕES\n\nESTRATÉGICAS\n\nO próximo mandato organiza a\nagenda de governo em quatro\ndimensões estratégicas\ncomplementares. Cada dimensão\nresponde a um conjunto de desafios\ne oportunidades do Estado — e todas\nconvergem para um único propósito:\ntransformar o crescimento\neconômico em qualidade de vida\npara todos os sul-mato-grossenses.\n\n1 2\n3 4\nPessoas,\nProteção Social e\nDesenvolvimento\nHumano\n\nDesenvolvimento,\nCompetitividade\ne Futuro\n\nInfraestrutura,\nCidades e\nSustentabilidade\n\nGovernança,\nEficiência e\nTransformação Digital\n\n9"
+          },
+          {
+            "id": "dimensoes-estrategicas-do-plano-de-governo",
+            "titulo": "DIMENSÕES ESTRATÉGICAS DO PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "DIMENSÕES ESTRATÉGICAS DO PLANO DE GOVERNO\n\n1. Pessoas, Proteção Social e Desenvolvimento Humano\nSegurança Pública,\nJustiça e Prevenção\nda Violência\nEducação Básica,\nTécnica e\nProfissional\n\nProteção Social,\nCidadania, Equidade e\nInclusão Produtiva\n\nSaúde Pública,\nRegionalização, Saúde\nDigital e Vigilância em Saúde\n\nCultura, Patrimônio, Economia\nCriativa e Desenvolvimento\nComunitário\n\nEsporte, Juventude e\nDesenvolvimento\nHumano\n\n2. Desenvolvimento, Competitividade e Futuro\nCiência, Tecnologia\ne Ecossistemas de\nInovação\nIndústria,\nComércio e\nServiços\n\nEmprego, Renda e\nQualificação\nProfissional\n\nTurismo de Natureza,\nCultural e de\nNegócios\n\nAgropecuária,\nAgroindústria e\nAgro 5.0\n\nBioeconomia,\nEconomia Verde e\nEconomia Circular\n\nAmbiente de Negócios,\nCompetitividade e\nTransformação Econômica\n\n3. Infraestrutura, Cidades e Sustentabilidade\nLogística e\nIntegração\nTerritorial\nConectividade Digital\ne Infraestrutura\nTecnológica\n\nCidades, Habitação\ne Desenvolvimento\nUrbano\n\nProteção e Valorização dos\nAtivos Ambientais,\nConservação e Biodiversidade\n\nSaneamento\nBásico e\nResíduos Sólidos\nRecursos Hídricos\ne Segurança\nHídrica\n\nClima, Energia e\nTransição\nEnergética\nLicenciamento Ambiental,\nGestão Territorial e\nSegurança Jurídica\n\n4. Governança, Eficiência e Transformação Digital\nGovernança e Gestão\nPública Orientada a\nResultados\nGestão Fiscal e\nEficiência do\nGasto Público\n\nTransformação Digital\ne Experiência do\nCidadão\n\nTransparência,\nIntegridade e\nControle\n\nDados,\nInteligência e\nMonitoramento\n\nGestão de\nPessoas e\nLiderança Pública\n\nCompras Públicas\ne Gestão\nContratual\n\n10"
+          },
+          {
+            "id": "4-2",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nDIMENSÕES\n\nESTRATÉGICAS\n\nDimensão\n\n1\n\nE\n\nsta dimensão reúne o conjunto de políticas\npúblicas voltadas à promoção da dignidade humana,\nda inclusão social e da melhoria da qualidade de vida da\npopulação. Parte da compreensão de que o verdadeiro\ndesenvolvimento de um Estado se mede pela capacidade\nde oferecer oportunidades, reduzir desigualdades e\ngarantir que as pessoas que precisam tenham acesso\na serviços públicos de qualidade ao longo de diferentes\netapas da vida.\n\n1\n\nMais do que ampliar a oferta de serviços, esta dimensão\npropõe uma nova lógica de atuação do poder público,\nbaseada na prevenção, na integração entre políticas\npúblicas e na construção de trajetórias de emancipação\nsocial. O objetivo é enfrentar as causas estruturais\ndas vulnerabilidades e não somente administrá-las,\nfortalecendo a autonomia das pessoas e das famílias,\ncriand condições para que as oportunidades criadas pelo\ncrescimento, a educação, a saúde, a assistência social, a\ncultura, a habitação, o esporte e a segurança atuem de\nforma articulada, produzindo resultados permanentes\npara a sociedade.\n\nPESSOAS,\nPROTEÇÃO\nSOCIAL E\nDESENVOLVIMENTO\nHUMANO"
+          },
+          {
+            "id": "dimensao",
+            "titulo": "Dimensão",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Dimensão\n\n1\n\nPESSOAS, PROTEÇÃO SOCIAL E DESENVOLVIMENTO HUMANO\n\nNa prática, os desafios contemporâneos exigem novas formas de organização das políticas públicas. Na saúde, isso significa consolidar uma rede regionalizada, integrada e apoiada por soluções digitais, capaz de ampliar\no acesso e qualificar o atendimento em todas as regiões do Estado, articulando, com método, disciplina e assertividade as diferentes esferas de prestação de serviços. Na educação, representa avançar para um novo ciclo de\ntransformação, fortalecendo a aprendizagem desde os primeiros anos escolares, ampliando a cooperação com\nos municípios e preparando crianças e jovens para os desafios de uma sociedade cada vez mais tecnológica e\ninovadora.\nA dimensão também reconhece que os investimentos realizados na primeira infância e nos primeiros anos da\nvida produzem impactos duradouros sobre aprendizagem, saúde, segurança pública, produtividade e mobilidade\nsocial, devendo orientar transversalmente as políticas públicas voltadas ao desenvolvimento humano. Essa dimensão reconhece que a construção de uma sociedade mais justa depende também de uma política de segurança\npública moderna, integrada e orientada pela inteligência, pela prevenção e pela proteção das pessoas. Em um\nestado de fronteira, o enfrentamento ao crime organizado deve caminhar ao lado do fortalecimento das políticas\npreventivas, da redução da violência nas comunidades e da proteção aos grupos mais vulneráveis, com atenção\nespecial ao enfrentamento da violência contra a mulher e à consolidação de uma rede de atendimento mais humanizada, acessível e presente em todo o território estadual.\nDa mesma forma, a proteção social, cada vez mais deixa de ser compreendida apenas como oferta de benefícios e passa a atuar como instrumento de superação da vulnerabilidade, promovendo inclusão produtiva, qualificação profissional e acompanhamento das famílias até a conquista de sua autonomia e a plenitude de sua\ndignidade. Ao integrar prevenção da violência, fortalecimento das comunidades, valorização da cultura, esporte\ne cidadania, esta dimensão busca construir ambientes mais seguros, inclusivos e acolhedores, ampliando oportunidades e promovendo mobilidade social em todas as regiões de Mato Grosso do Sul. Por isso, esta nova agenda\ntrabalha com o desafio de oferecer uma “cesta” de serviços às famílias em situação de pobreza. De forma prática\ne transversal articular oferta de habitação, saneamento básico, prioridade no acesso à saúde, através de prontuários diferenciados; escola em tempo integral, creche para os filhos mais novos e qualificação para o emprego. É\nevidente que, entre elas, outras políticas públicas atuam complementarmente, como o esporte, o lazer e a cultura.\n\nAlinhamento ODS — Agenda 2030: ODS 1 — Erradicação da Pobreza · ODS 2 — Fome Zero e Agricultura Sustentável ·\nODS 3 — Saúde e Bem-Estar · ODS 4 — Educação de Qualidade · ODS 5 — Igualdade de Gênero · ODS 8 — Trabalho Decente e Crescimento Econômico • ODS 10 — Redução das Desigualdades · ODS 11 — Cidades e Comunidades Sustentáveis\n· ODS 16 — Paz, Justiça e Instituições Eficazes\n\n12"
+          },
+          {
+            "id": "1-1-seguranca-publica-justica-e-prevencao-da-violencia",
+            "titulo": "1.1 SEGURANÇA PÚBLICA, JUSTIÇA E PREVENÇÃO DA VIOLÊNCIA",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "1.1 SEGURANÇA PÚBLICA, JUSTIÇA E PREVENÇÃO DA VIOLÊNCIA\nNos últimos anos, Mato Grosso do Sul consolidou importantes avanços na área de segurança pública, fortalecendo a integração entre as forças policiais, ampliando investimentos em tecnologia, inteligência e infraestrutura, além de aperfeiçoar políticas de enfrentamento ao crime organizado em um Estado marcado por extensas\nfronteiras internacionais. Paralelamente, ganhou força uma abordagem que compreende a segurança pública\nde forma mais ampla, incorporando ações preventivas, proteção às vítimas, fortalecimento da polícia científica e\niniciativas voltadas à redução da violência contra grupos vulneráveis, especialmente mulheres, crianças e adolescentes e famílias residentes em bolsões de pobreza.\nO próximo ciclo buscará consolidar uma política de segurança cada vez mais preventiva, integrada e orientada\npor inteligência. A prioridade será ampliar a capacidade de prevenção da violência, fortalecer a atuação articulada entre segurança e políticas sociais, aperfeiçoar os mecanismos de proteção às vítimas e desenvolver estratégias específicas para enfrentamento da violência contra a mulher, promovendo atendimento mais humanizado,\nfortalecimento da rede de proteção e maior presença do Estado nas comunidades mais vulneráveis.\n\nAÇÕES PROPOSTAS\n•Fortalecer a atuação integrada das forças de segurança no enfrentamento à criminalidade.\n•Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na\nprevenção e repressão ao crime.\n•Intensificar ações de combate aos crimes transfronteiriços e ao crime organizado.\n•Consolidar políticas permanentes de prevenção à violência nas comunidades.\n•Fortalecer a rede de proteção às mulheres em situação de violência, ampliando sua capilaridade no interior\ndo Estado.\n•Avançar na repressão de agressores com ampliação do uso de instrumentos como tornozeleira eletrônica e\nsistema de alerta de aproximação via celular.\n•Expandir e capilarizar o programa “Recomeços”, com aluguel social e casa montada para mulheres vítimas\nde violência.\n•Humanizar os protocolos de atendimento às mulheres vítimas de violência.\n•Agregar o tema da violência contra a mulher à grade escolar, para produzir, em médio prazo, uma nova\nconsciência coletiva nas próximas gerações de sul-mato-grossenses.\n•Implantar o Disque violência LGBTQIA+\n•Integrar e fortalecer as políticas de prevenção e de segurança com atividades de educação, esporte, cultura\ne assistência social.\n•Fortalecer ações de ressocialização e redução da reincidência criminal.\n•Fortalecer a segurança viária, e combater os roubos e furtos patrimoniais públicos e privados.\n\n13"
+          },
+          {
+            "id": "1-2-protecao-social-cidadania-equidade-e-inclusao-produtiva",
+            "titulo": "1.2 PROTEÇÃO SOCIAL, CIDADANIA, EQUIDADE E INCLUSÃO PRODUTIVA",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "1.2 PROTEÇÃO SOCIAL, CIDADANIA, EQUIDADE E INCLUSÃO PRODUTIVA\nMato Grosso do Sul ampliou significativamente sua rede de proteção social nos últimos anos, fortalecendo\nprogramas de transferência de renda, segurança alimentar, promoção dos direitos humanos e inclusão social. Ao\nmesmo tempo, consolidou uma atuação cada vez mais integrada entre diferentes áreas governamentais, incorporando uma visão mais ampla de desenvolvimento social, na qual assistência, qualificação profissional, cidadania\ne geração de oportunidades atuam de forma articulada para reduzir vulnerabilidades e ampliar a autonomia das\nfamílias. Essa estratégia, combinada ao crescimento econômico, ao cenário de praticamente pleno emprego e à\nexpansão da renda média, contribuiu para reduzir a extrema pobreza a 1,6%, uma das menores taxas do país, além\nde diminuir a concentração de renda e fortalecer a mobilidade social.\nNos próximos anos, essa agenda evoluirá para um modelo cada vez mais orientado à superação definitiva\ndas vulnerabilidades e à promoção da autonomia. O foco será fortalecer políticas de inclusão produtiva, ampliar o\nacesso à qualificação profissional, aperfeiçoar os instrumentos de identificação, monitoramento e acompanhamento das famílias em situação de vulnerabilidade, expandir o acesso aos serviços públicos e consolidar uma política de segurança alimentar baseada na dignidade, na equidade e na emancipação das pessoas. Além disso, o\nEstado pretende avançar na atenção à públicos específicos, mais vulneráveis e que precisam de políticas públicas\nespecíficas e orientadas, como idosos, pessoas com deficiência, jovens e mulheres. A integração entre proteção\nsocial, cidadania e desenvolvimento humano continuará orientando ações capazes de romper ciclos intergeracionais de vulnerabilidade e ampliar oportunidades para todos os sul-mato-grossenses.\n\nAÇÕES PROPOSTAS\n•Abrir pelo menos 600 novas vagas, exclusivas para mulheres, do programa MS SUPERA MULHER para vítimas\nde violência.\n•Abrir mais uma Casa Abrigo em Campo Grande, para mulheres vítimas de violência.\n•Criar novas 500 vagas para a expansão do programa Cuidar de Quem Cuida.\n•Implantar o cadastro estadual integrado das pessoas com deficiência.\n•Criar o Programa de Residências apoiadas nos 4 maiores municípios do Estado.\n•Implantar o programa Recomeços Jovem para 100% dos adolescentes em unidades de acolhimento e até os\n20 anos de idade despois de desacolhidos.\n•Criar Programa de Emprego Apoiado para pessoas com deficiência, com no mínimo 1000 vagas.\n•Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades\nde encaminhamento para o emprego aos beneficiários de programas sociais.\n•Implantar mecanismos permanentes de acompanhamento da superação da vulnerabilidade social.\n•Modernizar a política estadual de segurança alimentar, priorizando qualidade nutricional e dignidade no\nacesso aos alimentos.\n•Atender com políticas específicas a população em situação de rua, incluindo atendimento psicossocial,\nsoluções de acolhimento e reinserção social.\n•Estruturar políticas permanentes de promoção da autonomia econômica das mulheres.\n•Fortalecer a Rede Estadual de Atenção Integral à Pessoa com Deficiência e Autismo, ampliando a atuação\ndas organizações da sociedade civil, como polos regionais de atendimento.\n\n14"
+          },
+          {
+            "id": "desenvolver-acoes-integradas-para-povos-indigenas-priorizando-inclusao-p",
+            "titulo": "•Desenvolver ações integradas para povos indígenas, priorizando inclusão produtiva, geração de renda,",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "•Desenvolver ações integradas para povos indígenas, priorizando inclusão produtiva, geração de renda,\nfortalecimento das famílias e da infraestrutura dos territórios, com foco em água.\n•Ampliar as ações de abastecimento de água e saneamento para as aldeias indígenas de MS.\n•Consolidar políticas voltadas ao bem-estar das pessoas idosas e às pessoas com deficiência, com foco em\nacessibilidade e inclusão produtiva.\n•Ampliar a adesão dos municípios ao Centro Dia Para Pessoa Idosa.\n•Fortalecer a acessibilidade às políticas de proteção social estaduais, para os públicos de maior vulnerabilidade.\n•Integrar ações voltadas às populações tradicionais e demais grupos historicamente vulneráveis.\n\n1.3 SAÚDE PÚBLICA, REGIONALIZAÇÃO, SAÚDE DIGITAL E VIGILÂNCIA EM SAÚDE\nNos últimos anos, Mato Grosso do Sul iniciou uma profunda transformação na organização da saúde pública, remodelando uma verdadeira rede estadual de atenção à saúde baseada na regionalização dos serviços, no\nfortalecimento da média e alta complexidade e na melhoria dos mecanismos de regulação, promovendo assim o\ninício da implementação de uma nova arquitetura para a saúde, modelo que pretende mitigar, regionalmente, o\ndramático sub financiamento de 50% do Sistema Único de Saúde no País.\nParalelamente, a expansão da saúde digital, da telemedicina, da regulação integrada e dos sistemas de vigilância em saúde ampliaram o acesso da população aos serviços e fortaleceram a capacidade do Estado de\nresponder tanto às demandas assistenciais quanto aos desafios sanitários contemporâneos.\nO próximo ciclo buscará consolidar essa nova arquitetura da saúde, ampliando a integração entre os níveis de\natenção, fortalecendo a regionalização da assistência, aperfeiçoando os mecanismos de regulação e expandindo\no uso da saúde digital como instrumento de acesso, eficiência e qualidade. Ao mesmo tempo, a vigilância em saúde deverá assumir papel cada vez mais estratégico, fortalecendo a prevenção, o monitoramento epidemiológico,\na preparação para emergências sanitárias e a capacidade de resposta do sistema estadual de saúde.\n\nAÇÕES PROPOSTAS\n•Consolidar a regionalização e integração da rede estadual de saúde.\n•Implantar e operacionalizar o Hospital Regional do Pantanal.\n•Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional.\n•Implantar modelo integrado de regulação estadual em articulação com os municípios.\n•Expandir a saúde digital, com suas diferentes modalidades, em todas as regiões do Estado.\n•Ampliar o acesso às consultas, exames e procedimentos especializados.\n•Fortalecer as ações de vigilância epidemiológica, sanitária e ambiental.\n•Aprimorar a capacidade estadual de resposta a emergências em saúde pública.\n•Integrar dados e inteligência em saúde para qualificar a gestão e o planejamento.\n\n15"
+          },
+          {
+            "id": "1-4-educacao-basica-tecnica-e-profissional",
+            "titulo": "1.4 EDUCAÇÃO BÁSICA, TÉCNICA E PROFISSIONAL",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "1.4 EDUCAÇÃO BÁSICA, TÉCNICA E PROFISSIONAL\nA educação sul-mato-grossense viveu um importante ciclo de transformação nos últimos anos, marcado pela\nexpansão da educação em tempo integral, universalização da educação profissional em todos os municípios, fortalecimento da infraestrutura escolar, com uma escola reformada a cada 6 dias e, principalmente, melhoria dos\nindicadores educacionais.\nÉ uma autêntica virada de chave no setor, que viveu momento decisivo quando o Estado, nos anos de pandemia e pós pandemia, recusou-se a fazer a chamada “aprovação automática”, como fizeram grande parte dos\nestados brasileiros, mascarando o evidente impacto do isolamento, da dramática desigualdade tecnológica e dos\nlimites do acesso à aprendizagem continuada. Isso justifica porque o IDEB do MS ficou abaixo da média nacional,\nna medida em que a aprovação é pilar fundamental daquele indicador.\nAlém de executar programas de retomada da aprendizagem que reduziram pela metade a repetência e geraram taxas mínimas de abandono escolar, outras iniciativas estruturantes aconteceram nos campos da alfabetização e inovação pedagógica, com incorporação de tecnologias educacionais que consolidaram uma nova\nagenda voltada à qualidade da aprendizagem e à preparação dos estudantes para os desafios do futuro. Elas\nsão sustentadas pelo melhor salário de professor concursado do Brasil e por uma aproximação progressiva entre\ndocentes concursados e contratados no Estado. Hoje, o professor convocado tem ganho superior aos concursados\nde 22 estados brasileiros.\nO próximo ciclo buscará aprofundar a transformação em curso, concentrando esforços nos primeiros anos da\neducação básica por meio do fortalecimento da cooperação com os municípios, da ampliação das políticas de\nalfabetização e aprendizagem em matemática, da expansão da educação em tempo integral no ensino fundamental e da consolidação da formação profissional integrada às demandas do mercado de trabalho. A inovação,\na tecnologia e a melhoria contínua da infraestrutura escolar deverão permanecer como pilares da construção de\numa educação pública de referência nacional.\n\nAÇÕES PROPOSTAS\n•Fortalecer a cooperação técnica com os municípios na educação infantil e nos anos iniciais do ensino\nfundamental.\n•Consolidar políticas estaduais de alfabetização e aprendizagem em matemática.\n•Expandir a educação em tempo integral no ensino fundamental.\n•Ampliar programas de formação continuada para professores e gestores escolares.\n•Fortalecer a educação profissional integrada às vocações econômicas regionais.\n•Expandir o uso de tecnologia, robótica e inovação no ambiente escolar.\n•Consolidar programa permanente de modernização da infraestrutura das escolas estaduais.\n•Estimular projetos voltados a permanência e redução da evasão escolar.\n•Fortalecer a educação inclusiva, qualificando continuamente os profissionais de apoio, ampliando o\nAtendimento Educacional Especializado (AEE).\n\n16"
+          },
+          {
+            "id": "1-5-cultura-patrimonio-economia-criativa-e-desenvolvimento-comunitario",
+            "titulo": "1.5 CULTURA, PATRIMÔNIO, ECONOMIA CRIATIVA E DESENVOLVIMENTO COMUNITÁRIO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "1.5 CULTURA, PATRIMÔNIO, ECONOMIA CRIATIVA E DESENVOLVIMENTO COMUNITÁRIO\nNos últimos anos, Mato Grosso do Sul fortaleceu sua política cultural ao ampliar mecanismos de fomento, valorizar o patrimônio histórico e cultural e estimular a economia criativa como instrumento de desenvolvimento regional. Paralelamente, consolidou uma visão mais integrada da cultura, reconhecendo seu papel na promoção da\ncidadania, no fortalecimento das identidades locais e na construção de soluções para comunidades em situação\nde maior vulnerabilidade social.\nNos próximos anos, essa agenda deverá avançar para um modelo ainda mais articulado de desenvolvimento\ncomunitário, fortalecendo a cultura como instrumento de inclusão, geração de renda e valorização da diversidade\ncultural. O objetivo será ampliar oportunidades para comunidades indígenas, povos tradicionais, artistas, produtores culturais e empreendedores criativos, promovendo iniciativas que integrem cultura, turismo, cooperativismo,\nartesanato e desenvolvimento territorial.\n\nAÇÕES PROPOSTAS\n•Restauração e Modernização do MARCO – Museu de Arte Contemporânea de Mato Grosso do Sul.\n•Fortalecer a cultura como instrumento de inclusão social e desenvolvimento comunitário.\n•Valorizar e preservar o patrimônio histórico, cultural e imaterial do Estado.\n•Expandir políticas de incentivo à economia criativa.\n•Fomentar um novo mercado e públicos consumidores de cultura e conhecimento.\n•Integrar cultura, turismo e desenvolvimento regional.\n•Incentivar o cooperativismo, o artesanato e os empreendimentos culturais comunitários.\n•Desenvolver programas voltados à valorização das culturas indígenas e das comunidades tradicionais.\n•Ampliar o acesso às atividades culturais em todas as regiões do Estado.\n•Fortalecer a atuação intersetorial da cultura junto às demais políticas públicas.\n\n17"
+          },
+          {
+            "id": "1-6-esporte-juventude-e-desenvolvimento-humano",
+            "titulo": "1.6 ESPORTE, JUVENTUDE E DESENVOLVIMENTO HUMANO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "1.6 ESPORTE, JUVENTUDE E DESENVOLVIMENTO HUMANO\nO esporte consolidou-se como uma importante política pública de desenvolvimento humano, promovendo\ninclusão social, qualidade de vida, formação cidadã e fortalecimento dos vínculos comunitários. Nos últimos anos,\nMato Grosso do Sul ampliou investimentos em infraestrutura esportiva, fortaleceu programas de incentivo ao esporte educacional e de alto rendimento, expandiu ações voltadas à juventude e consolidou eventos que projetam\no Estado nacionalmente. O fortalecimento do Programa Bolsa Atleta e Bolsa Técnico, com a criação de novas categorias voltadas ao esporte universitário, master, técnico e aos ciclos olímpico, paralímpico e surdolímpico, ampliou\no apoio à formação e à permanência de talentos no Estado. Os resultados dessa política já podem ser observados\nno desempenho dos atletas sul-mato-grossenses em competições internacionais, com destaque para as três medalhas de ouro e uma de bronze conquistadas nos Jogos Paralímpicos, além da formação de atletas com potencial\nde representar Mato Grosso do Sul e o Brasil nos próximos Jogos Olímpicos, Paralímpicos e Surdolímpicos.\nO próximo ciclo buscará consolidar uma política esportiva estruturada para todas as fases da vida, conectando esporte educacional, comunitário, universitário, de participação e de alto rendimento em uma estratégia\nintegrada de desenvolvimento humano. A prioridade será ampliar o acesso à prática esportiva, fortalecer a identificação e formação de talentos, interiorizar programas e eventos, aperfeiçoar os mecanismos de incentivo aos\natletas e técnicos e integrar o esporte às políticas de educação, saúde e assistência social. Ao mesmo tempo, o\nEstado continuará utilizando o esporte como instrumento permanente de prevenção da violência, promoção da\ncidadania, inclusão social, desenvolvimento econômico e fortalecimento da identidade das comunidades, consolidando Mato Grosso do Sul como referência na formação de atletas e na promoção do esporte como política\npública transformadora.\n\nAÇÕES PROPOSTAS\n•Viabilizar, por gestão própria ou através de parceria, o pleno funcionamento do Estádio Universitário Pedro\nPedrossian (Morenão).\n•Manter os programas Bolsa Atleta e Bolsa Técnico, ampliando alguns programas implementados na última\ngestão como, por exemplo, as bolsas pré-paraolímpica e pré-surdolimpica.\n•Garantir o apoio a participação de atletas olímpicos, paralímpicos e surdolímpicos nas Olimpíadas.\n•Estruturar uma política estadual de desenvolvimento de talentos esportivos, para além do Programa Bolsa\nAtleta/Bolsa-técnico\n•Ampliar o acesso ao esporte educacional, comunitário e de participação em todas as regiões do Estado.\n•Fortalecer políticas públicas voltadas à juventude por meio do esporte, da cultura e da cidadania.\n•Implantar e fortalecer núcleos esportivos comunitários, priorizando territórios de maior vulnerabilidade social.\n•Desenvolver um programa permanente de identificação, formação e acompanhamento de talentos\nesportivos.\n•Fortalecer a transição entre esporte escolar, universitário e de alto rendimento.\n•Ampliar a inclusão de pessoas com deficiência, idosos, povos indígenas e demais grupos vulneráveis nas\npolíticas esportivas.\n•Expandir a realização de eventos esportivos como instrumento de desenvolvimento regional, turismo e\neconomia do esporte.\n•Promover capacitação permanente de gestores, profissionais e organizações esportivas.\n\n18"
+          },
+          {
+            "id": "4-3",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nDIMENSÕES\n\nESTRATÉGICAS\n\nDimensão\n\n2\n\nM\n\nato Grosso do Sul vive um novo ciclo de\ndesenvolvimento econômico, marcado pela expansão\nde investimentos, diversificação da base produtiva,\nfortalecimento da agroindustrialização, crescimento da\nindústria, consolidação de novos setores econômicos e\nconstrução de um ambiente cada vez mais favorável aos\nnegócios. Nos últimos anos, o Estado conquistou posição de\ndestaque nacional em competitividade, responsabilidade\nfiscal, atração de investimentos e sustentabilidade,\ncriando bases sólidas para um novo estágio de crescimento\neconômico, geração de oportunidades e melhoria da\nqualidade de vida da população. Esta dimensão dialoga\ndiretamente com as estratégias de mobilidade social e\ndesenvolvimento humano, infraestrutura e modernização\ndo Estado, reconhecendo que a competitividade depende\nda integração entre pessoas, território e capacidade\ninstitucional.\n\n2\n\nDESENVOLVIMENTO,\nCOMPETITIVIDADE\nE FUTURO"
+          },
+          {
+            "id": "dimensao-2",
+            "titulo": "Dimensão",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Dimensão\n\n2\n\nDESENVOLVIMENTO, COMPETITIVIDADE E FUTURO\n\nEsta dimensão concentra as estratégias voltadas à consolidação desse novo posicionamento, ampliando a\ncompetitividade da economia sul-mato-grossense e preparando o Estado para as transformações produtivas,\ntecnológicas e institucionais das próximas décadas. Seu objetivo é fortalecer um ambiente favorável ao investimento, ao empreendedorismo, à inovação e à geração de emprego e renda, promovendo maior agregação de\nvalor à produção, diversificação econômica e inserção competitiva de Mato Grosso do Sul nos mercados nacionais\ne internacionais.\nO próximo ciclo de governo também será marcado pela implementação da Reforma Tributária, que promoverá a maior transformação no ambiente econômico brasileiro das últimas décadas. Não por mero acaso, o Estado\nvem executando uma das mais agressivas políticas de incentivo fiscal do país. O objetivo estratégico é claro: a\npartir de 2029, os incentivos passarão a ser reduzidos progressivamente até serem extintos em 2032. Ou seja, estes\nsão os últimos anos possíveis de utilização desse instrumento para atrair investimento e promover a tão ansiada\nindustrialização da economia sul-mato-grossense.\nMais do que um desafio de adaptação, esse novo cenário representa uma oportunidade para consolidar o\nMato Grosso do Sul como um dos estados mais competitivos do País. Um ambiente de negócios moderno, seguro\ne eficiente, aliada a uma estratégia estruturada de transição tributária, será fundamental para preservar a atratividade do Estado, apoiar o setor produtivo e ampliar sua capacidade de captar investimentos ao longo de todo o\nperíodo de implementação do novo sistema tributário.\nAo mesmo tempo, a dimensão reconhece que o desenvolvimento contemporâneo depende cada vez menos\nda disponibilidade isolada de recursos naturais e cada vez mais da capacidade de transformar conhecimento,\ntecnologia e inovação em ganhos de produtividade e competitividade. Por essa razão, ciência, tecnologia e inovação deixam de representar uma política setorial e passam a constituir um eixo transversal de desenvolvimento,\nimpulsionando a modernização do agro, da indústria, dos serviços e das novas economias emergentes.\nA diretriz proposta busca integrar temas estratégicos e áreas interdependentes em uma agenda única de\ndesenvolvimento, conectando agropecuária, agroindústria, indústria, comércio, serviços, turismo, bioeconomia e\ntransformação digital da economia. Da mesma forma, reconhece que o crescimento econômico somente se traduz em desenvolvimento quando amplia oportunidades para as pessoas. Por isso, esta dimensão articula suas\nações às políticas de educação, qualificação profissional e inclusão produtiva, garantindo que a competitividade\ndo Estado seja acompanhada pela geração de emprego, aumento da renda e melhoria da qualidade de vida da\npopulação.\nMais do que responder aos desafios do presente, esta dimensão projeta Mato Grosso do Sul para o futuro. Seu\npropósito é consolidar o Estado como uma das economias mais competitivas, inovadoras e sustentáveis do Brasil,\ncapaz de transformar suas vocações naturais, sua capacidade empreendedora e seu ambiente institucional em\ndesenvolvimento econômico, prosperidade compartilhada e oportunidades para as próximas gerações.\n\nAlinhamento ODS — Agenda 2030: ODS 2 — Fome Zero e Agricultura Sustentável · ODS 7 — Energia Limpa e Acessível •\nODS 8 — Trabalho Decente e Crescimento Econômico · ODS 9 — Indústria, Inovação e Infraestrutura · ODS 12 — Consumo\ne Produção Responsáveis · ODS 13 — Ação contra a Mudança Global do Clima · ODS 15 — Vida Terrestre · ODS 17 — Parcerias e Meios de Implementação\n\n20"
+          },
+          {
+            "id": "2-1-ciencia-tecnologia-e-ecossistemas-de-inovacao",
+            "titulo": "2.1 CIÊNCIA, TECNOLOGIA E ECOSSISTEMAS DE INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "2.1 CIÊNCIA, TECNOLOGIA E ECOSSISTEMAS DE INOVAÇÃO\nNos últimos anos, Mato Grosso do Sul consolidou importantes avanços na construção de um ambiente favorável à inovação, fortalecendo sua política estadual de ciência e tecnologia, ampliando os investimentos em pesquisa aplicada e aproximando universidades, centros de pesquisa, empresas e governo. A atualização da Política\nEstadual de Ciência e Tecnologia, o fortalecimento da Fundect, que atingiu seu maior nível de recursos aplicados\nem sua história, o apoio a ambientes de inovação e iniciativas como a cooperação firmada com empresas globais, como o Google, para desenvolvimento de soluções em inteligência artificial, demonstram a evolução de uma\nagenda que passa a ocupar papel estratégico no desenvolvimento do Estado.\nO próximo ciclo deverá consolidar um ecossistema de inovação cada vez mais integrado, estimulando a geração de conhecimento, o empreendedorismo inovador, a transferência de tecnologia e a criação de soluções\ncapazes de aumentar a competitividade da economia sul-mato-grossense. A ciência, a tecnologia e a inovação\ndeverão atuar como vetores transversais do desenvolvimento, acelerando a transformação produtiva e preparando o Estado para as oportunidades da economia do futuro.\n\nAÇÕES PROPOSTAS\n•Implementar a nova Política Estadual de Ciência, Tecnologia e Inovação, criada recentemente.\n•Investir recursos e profissionalizar os ecossistemas regionais de inovação e empreendedorismo.\n•Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado,\nbuscando a aproximação entre universidades, centros de pesquisa e setor produtivo.\n•Ampliar programas de apoio à pesquisa aplicada e à inovação empresarial, ampliando os níveis atuais de\nbolsas, tanto para graduação, como para pós graduação.\n•Estimular a adoção de inteligência artificial e tecnologias emergentes nos setores produtivos.\n•Atrair centros de pesquisa, desenvolvimento e inovação para o Estado, atuando na implantação de pelo\nmenos dois novos centros até 2030.\n\n2.2 EMPREGO, RENDA E QUALIFICAÇÃO PROFISSIONAL\nO dinamismo econômico vivido por Mato Grosso do Sul nos últimos anos ampliou a geração de empregos formais e evidenciou a necessidade de aproximar cada vez mais a formação profissional das demandas do mercado\nde trabalho, para que o Estado continue avançando na direção do aumento substantivo da renda média, como\nocorreu nesses anos (37,6%, em relação a 2019), impactando a realidade nacional e regional de empregos de baixos salários.\nO fortalecimento das políticas de intermediação de mão de obra, das ações de qualificação profissional e da\narticulação entre governo, setor produtivo e instituições de ensino contribuiu para reduzir gargalos de empregabilidade e apoiar a expansão dos principais setores econômicos, fazendo com que MS atingisse o menor nível de\ndesocupação no longo prazo do País.\nEm 2025, a taxa anual de desocupação do Estado foi de 3,0%, uma das menores do país e a menor da série histórica local. No quarto trimestre de 2025, a desocupação caiu para 2,4%, ficando entre os menores índices nacionais. Já no primeiro trimestre de 2026, mesmo com alta sazonal em vários estados, Mato Grosso do Sul permaneceu\n\n21"
+          },
+          {
+            "id": "em-patamar-inferior-a-media-brasileira-as-pessoas-estao-trabalhando-ou-e",
+            "titulo": "em patamar inferior à média brasileira. As pessoas estão trabalhando ou empreendendo.",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "em patamar inferior à média brasileira. As pessoas estão trabalhando ou empreendendo.\nO desafio para o próximo ciclo será transformar ainda mais o crescimento econômico em oportunidades para\na população, ampliando a qualificação profissional, fortalecendo políticas de retenção de talentos e conectando\neducação, assistência social e desenvolvimento econômico. O objetivo é garantir que a expansão da economia\nseja acompanhada pela formação de mão de obra qualificada, aumento da renda e maior inclusão produtiva em\ntodas as regiões do Estado.\n\nAÇÕES PROPOSTAS\n•Dobrar os recursos aplicados no voucher transportador, ampliando o número de habilitados nas categorias\n“D” e “E”, passando para, pelo menos, 5 mil habilitados até 2030.\n•Ampliar os recursos do voucher desenvolvedor para formar pelo menos 400 novos desenvolvedores até 2030.\n•Implantar um eixo de atuação, junto a assistência social, para formalização e operacionalização de\ncooperativas de catadores, com formação e remuneração dos trabalhadores.\n•Integrar formação profissional às estratégias de atração de investimentos.\n•Fortalecer políticas de empregabilidade para jovens e grupos em situação de vulnerabilidade.\n•Incentivar programas de requalificação profissional para novas tecnologias.\n•Estimular a formação de mão de obra para setores estratégicos da economia.\n•Fortalecer mecanismos de intermediação entre trabalhadores e empresas.\n•Promover ações voltadas à retenção e atração de talentos.\n•Expandir programas de inclusão produtiva e empreendedorismo.\n\n2.3 AGROPECUÁRIA, AGROINDÚSTRIA E AGRO 5.0\nA agropecuária permanece como um dos principais motores do desenvolvimento de Mato Grosso do Sul e, nos\núltimos anos, avançou significativamente em produtividade, agregação de valor e sustentabilidade. Entre 2010 e\n2024, MS reduziu em 52% a área de pastagens degradadas, que caiu de 6,2 milhões para 2,9 milhões de hectares.\nForam 3,3 milhões de hectares recuperados (4x o território de Campo Grande), suportando a economia, a renda\ndas pessoas e gerando benefícios ambientais, como a redução do desmatamento de e das emissões carbono pelo\nsetor agropecuário. A expansão da agroindustrialização, programas como o MS Irriga, a consolidação de cadeias\nprodutivas estratégicas e o fortalecimento de políticas voltadas à inovação no campo vêm posicionando o Estado\ncomo referência nacional em produção agropecuária de alta eficiência e baixo impacto ambiental.\nNos próximos anos, a prioridade será consolidar uma nova etapa de desenvolvimento do agro, ampliando a\nincorporação de tecnologias digitais, agricultura de precisão, irrigação, automação e inteligência de dados, a conversão de áreas degradadas, uso de bioinsumos, sistemas integrados e princípios de economia circular. Ao mesmo\ntempo, será fundamental fortalecer a agregação de valor, diversificar cadeias produtivas, ampliar mercados e\nconsolidar o Estado como referência em produção sustentável e competitiva.\n\n22"
+          },
+          {
+            "id": "acoes-propostas",
+            "titulo": "AÇÕES PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PROPOSTAS\n•Implementar o primeiro Fundo de Investimento nas Cadeias Produtivas Agroindustriais – FIAGRO do MS, ou\nmodelo semelhante de financiamento para a atividade agropecuária.\n•Ampliar a conversão de áreas degradadas em áreas produtivas, com programas específicos para regiões de\nsolos arenosos.\n•Expandir a agregação de valor às cadeias produtivas agroindustriais consolidadas, estimulando a inovação\nem novos produtos e transformação de coprodutos e resíduos.\n•Incentivar e atrair novos investimentos em agroindustrialização com foco em cadeias emergentes no estado.\n•Reestruturar o serviço de assistência técnica rural público, priorizando o desenvolvimento dos agricultores\nfamiliares e a ampliação da captação de financiamento por esse segmento.\n•Ampliar os programas de investimento em agroindustrialização para associações e cooperativas ligadas a\nagricultura familiar.\n•Incentivar a modernização tecnológica das propriedades rurais e ampliar a conectividade e a adoção de\nsoluções de Agricultura 5.0.\n•Estimular sistemas produtivos mais eficientes e sustentáveis, com foco no uso eficiente dos insumos, integração\nde atividades, bioinsumos e princípios de economia circular.\n•Fortalecer programas de irrigação e intensificação sustentável, atuando inclusive na modernização e\nmecanismos de licenciamento associados a atividade de irrigação.\n•Expandir ações de abertura e diversificação de mercados.\n•Implantar um sistema de rastreabilidade da bovinocultura, com objetivo de ampliar a competitividade das\ncadeias produtivas.\n•Estimular pesquisa aplicada voltada ao aumento da produtividade.\n\n2.4 INDÚSTRIA, COMÉRCIO E SERVIÇOS\nMato Grosso do Sul vive um dos mais importantes ciclos de industrialização de sua história, impulsionado pela\natração de novos investimentos, expansão das cadeias produtivas e fortalecimento do ambiente empresarial, figurando nos últimos anos entre as primeiras posições de crescimento da indústria de transformação no Brasil. A\nconsolidação dos polos de celulose, proteína animal, bioenergia e mineração, aliada ao crescimento do comércio\ne dos serviços, tem contribuído para diversificar a economia estadual e ampliar a geração de emprego e renda,\nfazendo com que o Estado crescesse mais de 4 vezes a média nacional nos últimos anos.\nO próximo ciclo buscará aprofundar essa transformação, estimulando maior agregação de valor, aumento\nda produtividade e fortalecimento das cadeias produtivas locais. A estratégia será ampliar a competitividade dos\nsetores econômicos, incentivar novos segmentos industriais e consolidar um ambiente favorável à inovação, ao\nempreendedorismo e ao crescimento sustentável dos serviços.\n\n23"
+          },
+          {
+            "id": "acoes-propostas-2",
+            "titulo": "AÇÕES PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PROPOSTAS\n•Atrair novos investimentos industriais e de serviços.\n•Incentivar a diversificação da base produtiva estadual.\n•Fortalecer cadeias produtivas estratégicas locais, promovendo seu adensamento e garantindo a participação\nde fornecedores locais.\n•Estimular o aumento da produtividade das empresas.\n•Promover a internacionalização das empresas sul-mato-grossenses.\n•Fortalecer programas de inovação industrial.\n•Estimular a agregação de valor à produção estadual.\n•Incentivar o desenvolvimento de novos setores econômicos.\n\n2.5 TURISMO DE NATUREZA, CULTURAL E DE NEGÓCIOS\nO turismo consolidou-se como uma atividade estratégica para a diversificação econômica de Mato Grosso\ndo Sul, apoiado na valorização de seus ativos naturais, culturais e na crescente capacidade de atrair eventos e investimentos, além de ser uma importante atividade para atrair recursos de outros estados e países para dentro de\nMS. Destinos consolidados, como Bonito e Pantanal, aliados ao fortalecimento das políticas estaduais de promoção\nturística e à ampliação da infraestrutura para o setor, posicionaram o Estado como referência nacional em turismo\nde natureza e sustentabilidade.\nA próxima etapa deverá ampliar essa agenda, diversificando produtos turísticos, fortalecendo o turismo cultural, étnico, de eventos e de negócios e promovendo maior integração entre municípios e regiões turísticas. O objetivo é transformar o turismo em um vetor permanente de desenvolvimento regional, geração de emprego, valorização da cultura local e atração de investimentos, fortalecendo as cadeias produtivas associadas à ele, como\ngastronomia, artesanato, economia criativa e serviços.\n\nAÇÕES PROPOSTAS\n•Consolidar Mato Grosso do Sul como destino global de turismo sustentável.\n•Diversificar a oferta de produtos turísticos, desenvolvendo também destinos em municípios fora do eixo\nBonito-Pantanal.\n•Fortalecer o turismo cultural, étnico, gastronômico, de experiência e de base comunitária.\n•Expandir o turismo de negócios e eventos.\n•Integrar e estruturar rotas turísticas estaduais.\n•Incentivar investimentos privados no setor.\n•Ampliar ações de promoção nacional e internacional do destino Mato Grosso do Sul.\n•Fortalecer a qualificação dos serviços turísticos.\n•Estimular a inovação e a transformação digital no turismo.\n\n24"
+          },
+          {
+            "id": "2-6-bioeconomia-economia-verde-e-economia-circular",
+            "titulo": "2.6 BIOECONOMIA, ECONOMIA VERDE E ECONOMIA CIRCULAR",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "2.6 BIOECONOMIA, ECONOMIA VERDE E ECONOMIA CIRCULAR\nNos últimos anos, Mato Grosso do Sul assumiu posição de protagonismo nacional na construção de uma economia de baixo carbono, transformando sustentabilidade em estratégia de desenvolvimento. A implementação\nde políticas pioneiras, como os Programas de Pagamento por Serviços Ambientais, a Lei do Pantanal, a criação da\nMS Ativos Ambientais e os avanços na agenda de carbono e ativos ambientais demonstram que preservação e\ndesenvolvimento econômico podem caminhar de forma integrada.\nO próximo ciclo buscará ampliar esse posicionamento, consolidando novas cadeias ligadas à bioeconomia,\nfortalecendo a economia circular e estimulando modelos produtivos capazes de gerar valor a partir da biodiversidade, dos serviços ecossistêmicos e da inovação. A sustentabilidade deverá consolidar-se como diferencial\ncompetitivo do Estado, ampliando oportunidades de investimento, geração de renda e inserção em mercados\nnacionais e internacionais.\n\nAÇÕES PROPOSTAS\n•Implantar integralmente a operação da MS Ativos Ambientais, outorgando a ela os programas de gestão,\nvaloração e exploração dos ativos ambientais.\n•Consolidar a bioeconomia como vetor estratégico de desenvolvimento econômico.\n•Incentivar cadeias produtivas baseadas no uso sustentável da biodiversidade.\n•Estimular novos negócios vinculados aos ativos ambientais.\n•Expandir iniciativas de economia circular nos setores produtivos.\n•Incentivar tecnologias de baixo carbono.\n•Atrair investimentos para negócios sustentáveis.\n•Fortalecer mercados relacionados aos serviços ambientais.\n•Incentivar inovação voltada à economia verde.\n•Promover novos modelos de produção sustentáveis e competitivos.\n\n2.7 AMBIENTE DE NEGÓCIOS, COMPETITIVIDADE E TRANSFORMAÇÃO ECONÔMICA\nNos últimos anos, Mato Grosso do Sul consolidou um dos ambientes de negócios mais competitivos do Brasil,\nresultado de uma agenda consistente de modernização regulatória, simplificação de processos, transformação\ndigital e atração de investimentos. A evolução dos serviços empresariais digitais, a modernização dos processos de\nabertura e licenciamento de empresas, a atuação estruturada na atração de novos empreendimentos e o fortalecimento da inserção logística e comercial do Estado contribuíram para ampliar sua competitividade e posicioná-lo\ncomo referência nacional na criação de um ambiente favorável ao desenvolvimento econômico.\nO próximo ciclo de governo será marcado por uma nova etapa dessa agenda, impulsionada pela implementação da Reforma Tributária. A prioridade será conduzir uma transição segura, planejada e estratégica para o\nnovo modelo tributário nacional, preservando a competitividade dos setores produtivos, fortalecendo a segurança\njurídica e desenvolvendo novos instrumentos de promoção do investimento compatíveis com esse novo ambiente\n\n25"
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "Página 26",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "econômico. Paralelamente, a continuidade da transformação digital, da simplificação regulatória e da melhoria do ambiente de negócios permitirá consolidar Mato Grosso do Sul entre os estados mais competitivos do país,\nampliando sua capacidade de atrair investimentos, gerar empregos e impulsionar o desenvolvimento sustentável.\n\nAÇÕES PROPOSTAS\n•Conduzir a implementação da estratégia estadual de adaptação à Reforma Tributária.\n•Ampliar o Programa de Parcerias do Estado de Mato Grosso do Sul – PROP/MS.\n•Reestruturar todos os programas de incentivo das cadeias agropecuárias de MS, convertendo-os do atual\nmodelo de incentivo fiscal, para modelos possíveis pós reforma tributária.\n•Monitorar continuamente os impactos econômicos e fiscais da transição tributária sobre os setores produtivos.\n•Desenvolver novos instrumentos de competitividade compatíveis com o novo sistema tributário nacional.\n•Simplificar e modernizar o ambiente regulatório para atração e expansão de investimentos.\n•Digitalizar e integrar os principais serviços públicos destinados ao setor produtivo.\n•Reduzir o tempo de abertura, licenciamento e regularização de empresas.\n•Fortalecer a política estadual de atração de investimentos, aperfeiçoando mecanismos de acompanhamento\ndos investimentos estratégicos e de monitoramento de seus impactos econômicos, sociais e territoriais.\n•Fortalecer a inteligência de mercado para prospecção de investimentos, ampliação das exportações e\nidentificação de novos mercados.\n•Estimular a transformação digital e o aumento da produtividade das empresas sul-mato-grossenses.\n•Fortalecer a competitividade das micro, pequenas e médias empresas.\n•Desenvolver mecanismos permanentes de melhoria do ambiente de negócios e avaliação da competitividade\nestadual.\n\n26"
+          },
+          {
+            "id": "4-4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nDIMENSÕES\n\nESTRATÉGICAS\n\nDimensão\n\n3\n\nE\n\nsta dimensão reúne as políticas responsáveis pela\norganização do território, pela ampliação da infraestrutura\nestratégica e pela promoção de um modelo de\ndesenvolvimento urbano e ambientalmente sustentável.\nParte do princípio de que infraestrutura, logística, energia,\ncidades e meio ambiente não podem mais ser tratados\nde forma isolada, mas como elementos integrados que\ncondicionam diretamente a competitividade econômica,\na qualidade de vida da população e a capacidade do\nEstado de se desenvolver de forma equilibrada e resiliente\nao longo das próximas décadas. Esta dimensão conectase às estratégias de desenvolvimento econômico e\nsocial, estruturando o território como base para a\ncompetitividade, a redução das desigualdades regionais\ne a melhoria da qualidade de vida.\n\n3\n\nINFRAESTRUTURA,\nCIDADES E\nSUSTENTABILIDADE"
+          },
+          {
+            "id": "dimensao-3",
+            "titulo": "Dimensão",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Dimensão\n\n3\n\nINFRAESTRUTURA, CIDADES E SUSTENTABILIDADE\n\nEm um contexto de profundas transformações econômicas, tecnológicas e climáticas, a infraestrutura deixa\nde ser apenas uma agenda de obras públicas e passa a representar um elemento central da estratégia de desenvolvimento. A capacidade de integrar modais logísticos, ampliar a conectividade territorial, modernizar cidades,\ngarantir segurança hídrica e energética e preparar o território para os impactos das mudanças climáticas será\ndeterminante para a atração de investimentos, geração de oportunidades e melhoria da qualidade de vida da\npopulação.\nA dimensão propõe uma visão integrada de território, conectando desenvolvimento urbano, logística, sustentabilidade e infraestrutura econômica em uma mesma lógica estratégica. Isso significa estruturar cidades mais\ninteligentes, inclusivas e resilientes, fortalecer corredores logísticos e eixos de integração regional, ampliar o acesso\nà infraestrutura básica e consolidar um ambiente territorial capaz de sustentar o crescimento econômico sem abrir\nmão da preservação ambiental e do uso sustentável dos recursos naturais.\nAo mesmo tempo, reconhece o meio ambiente como um ativo estratégico para o desenvolvimento do Estado. A conservação da biodiversidade, a valorização dos recursos hídricos, a transição energética e a adaptação\nàs mudanças climáticas deixam de representar apenas agendas ambientais e passam a integrar a estratégia de\ncompetitividade territorial, proporcionando inclusive geração de receita por meio da valorização sustentável dos\nativos ambientais do Estado. Da mesma forma, a modernização da gestão ambiental e o fortalecimento da segurança jurídica constituem instrumentos fundamentais para conciliar desenvolvimento econômico, proteção dos\nrecursos naturais e previsibilidade para os investimentos, posicionando Mato Grosso do Sul como referência nacional em desenvolvimento sustentável.\n\nAlinhamento ODS — Agenda 2030: ODS 6 — Água Potável e Saneamento · ODS 7 — Energia Limpa e Acessível · ODS 9 —\nIndústria, Inovação e Infraestrutura · ODS 11 — Cidades e Comunidades Sustentáveis · ODS 13 — Ação contra a Mudança\nGlobal do Clima · ODS 14 — Vida na Água · ODS 15 — Vida Terrestre\n\n28"
+          },
+          {
+            "id": "3-1-logistica-e-integracao-territorial",
+            "titulo": "3.1 LOGÍSTICA E INTEGRAÇÃO TERRITORIAL",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "3.1 LOGÍSTICA E INTEGRAÇÃO TERRITORIAL\nNos últimos anos, Mato Grosso do Sul iniciou um dos maiores ciclos de investimentos em infraestrutura logística\nde sua história, ampliando significativamente a pavimentação e restauração de rodovias, estruturando novos corredores logísticos, fortalecendo a integração regional e implantando novos modelos de gestão da infraestrutura.\nO estado avançou na parceria com municípios, assumindo investimentos robustos em drenagem e pavimentação urbana. A concessão da Rota da Celulose, os programas permanentes de manutenção rodoviária e a consolidação da Rota Bioceânica reforçam o posicionamento do Estado como plataforma logística estratégica para o\nBrasil e para a integração sul-americana.\nO próximo ciclo buscará consolidar uma infraestrutura logística moderna, integrada e resiliente, ampliando a\nconectividade entre regiões produtoras, centros urbanos e mercados consumidores. A prioridade será fortalecer a\nintegração multimodal, expandir modelos inovadores de gestão da infraestrutura e garantir que a logística continue atuando como um dos principais fatores de competitividade e desenvolvimento econômico do Estado.\n\nAÇÕES PROPOSTAS\n•Elaborar e implementar o PELT – Programa Estadual de Logística e Transportes.\n•Inverter a proporção entre rodovias pavimentadas e não pavimentadas no Estado, passando a ter mais de\n50% de rodovias pavimentadas.\n•Consolidar corredores logísticos estratégicos para integração regional e internacional.\n•Garantir a expansão no MS da infraestrutura rodoviária, ferroviária, hidroviária e aeroportuária.\n•Fortalecer a integração multimodal da matriz logística estadual.\n•Implantar modelos modernos de gestão e conservação da infraestrutura de transportes.\n•Expandir parcerias para investimentos em infraestrutura logística, com destaque para os incentivos a aviação\nregional.\n•Melhorar a conectividade entre polos produtivos e mercados consumidores.\n•Ampliar a resiliência da infraestrutura logística frente às mudanças climáticas.\n•Integrar o planejamento logístico ao desenvolvimento regional e à atração de investimentos.\n\n3.2 CIDADES, HABITAÇÃO E DESENVOLVIMENTO URBANO\nO acelerado crescimento econômico de Mato Grosso do Sul inaugurou uma nova agenda para o desenvolvimento urbano. A expansão da atividade industrial, a atração de grandes investimentos privados e o aumento da\nmobilidade populacional ampliaram a necessidade de planejamento das cidades, especialmente nas áreas de\nhabitação, infraestrutura urbana, regularização fundiária e oferta de serviços públicos. Nos últimos anos, o Estado\nfortaleceu sua política habitacional por meio de programas executados em parceria com os municípios e o Governo Federal, ampliando o acesso à moradia e promovendo a regularização fundiária.\n\n29"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "Página 30",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "No próximo ciclo, a política habitacional será orientada por metas objetivas, programas permanentes e entregas mensuráveis. A prioridade será ampliar o acesso à casa própria para diferentes perfis de renda, atender\nfamílias de baixa renda e em situação de vulnerabilidade, fortalecer as parcerias federativas e garantir segurança\njurídica às famílias que ainda não possuem a titularidade de seus imóveis.\nA estratégia passa pelo fortalecimento de programas já existentes como o Bônus Moradia, pela criação e novos\nprogramas como o MS Moradia e pelo fortalecimento das parcerias com união e municípios para viabilizar novos\nprojetos.\n\nAÇÕES PROPOSTAS\n•Ampliar o investimento em habitação até 2030 para:\na.Expandir a entrega de novas moradias no Programa Bônus Moradia.\nb.Através do novo Programa Estadual MS Moradia, entregar unidades habitacionais exclusivamente para\na população de baixa renda.\nc.Viabilizar unidades habitacionais, através da atuação junto a entes federais.\nd.Realizar diversas frentes de regularização fundiária urbana até 2030.\n•Direcionar programas habitacionais às regiões impactadas pela implantação de grandes investimentos\nprodutivos.\n•Integrar a política habitacional ao planejamento urbano e à expansão da infraestrutura dos municípios.\n•Apoiar os municípios na elaboração e atualização de instrumentos de planejamento urbano.\n•Promover cidades mais acessíveis, sustentáveis, inteligentes e resilientes.\n\n3.3 SANEAMENTO BÁSICO E RESÍDUOS SÓLIDOS\nMato Grosso do Sul consolidou importantes avanços na expansão dos serviços de saneamento básico, fortalecendo investimentos em abastecimento de água, esgotamento sanitário e gestão dos resíduos sólidos. A expansão\nde 56% (2021) para 77% (2026) de cobertura do saneamento básico indica, por exemplo, a proximidade, em dois\nanos, da meta final de universalização do serviço. A evolução dos indicadores demonstra o compromisso do Estado com a universalização dos serviços e com a melhoria das condições de saúde pública e qualidade ambiental.\nO próximo ciclo deverá aprofundar essa agenda, ampliando a cobertura dos serviços, fortalecendo soluções\nregionalizadas para resíduos sólidos e incorporando novas tecnologias voltadas à eficiência operacional e à sustentabilidade. O saneamento continuará sendo tratado como infraestrutura essencial para o desenvolvimento\neconômico, a preservação ambiental e a qualidade de vida da população.\n\nAÇÕES PROPOSTAS\n•Universalizar o saneamento básico;\n•Desenvolver e implementar soluções de abastecimento de água e esgotamento sanitário descentralizado\nem comunidades isoladas no Pantanal, nos moldes do Ilumina Pantanal.\n\n30"
+          },
+          {
+            "id": "universalizar-o-ilumina-pantanal-em-todas-as-comunidades-ribeirinhas-do",
+            "titulo": "•Universalizar o Ilumina Pantanal em todas as comunidades ribeirinhas do Pantanal.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "•Universalizar o Ilumina Pantanal em todas as comunidades ribeirinhas do Pantanal.\n•Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB.\n•Fortalecer a infraestrutura de drenagem urbana.\n•Implantar um programa estadual para formalização e operacionalização de cooperativas de catadores,\ncom formação e remuneração dos trabalhadores.\n•Estimular tecnologias inovadoras para saneamento.\n•Promover maior eficiência operacional dos serviços.\n•Integrar saneamento às estratégias de saúde, meio ambiente e desenvolvimento urbano.\n\n3.4 CLIMA, ENERGIA E TRANSIÇÃO ENERGÉTICA\nMato Grosso do Sul consolidou-se como referência nacional na agenda de desenvolvimento sustentável e\ntransição energética, combinando crescimento econômico, expansão das energias renováveis e políticas públicas\nvoltadas à neutralidade de carbono. A implementação de programas estruturantes, o fortalecimento das cadeias\nde bioenergia, biometano e combustíveis renováveis, bem como a construção de um ambiente favorável aos novos investimentos energéticos, posicionaram o Estado entre os protagonistas da economia de baixo carbono.\nNos próximos anos, essa agenda deverá avançar para uma nova etapa, fortalecendo a segurança energética, ampliando a diversificação da matriz, estimulando soluções para armazenamento de energia, promovendo\na adaptação às mudanças climáticas e consolidando Mato Grosso do Sul como referência nacional em transição\nenergética, resiliência climática e desenvolvimento sustentável.\n\nAÇÕES PROPOSTAS\n•Atingir e demonstrar o status de Estado Carbono Neutro.\n•Ampliar a malha de gasodutos da MS Gás, fortalecendo a descarbonização das frotas presentes no estado e\npreparando a estrutura para a injeção de biometano.\n•Ampliar as redes trifásicas nos assentamentos rurais para atender agroindústrias e pequenos propriedades.\n•Expandir a produção e o uso de energias renováveis.\n•Incentivar novas cadeias ligadas ao biometano, hidrogênio de baixo carbono e combustíveis sustentáveis.\n•Incentivar projetos e parcerias para armazenamento e segurança energética, com foco no armazenamento\nde energia fotovoltaica (BESS).\n•Fortalecer políticas estaduais de adaptação às mudanças climáticas.\n•Estimular projetos de eficiência energética.\n•Integrar políticas climáticas ao planejamento do desenvolvimento estadual.\n•Atrair investimentos para a economia de baixo carbono.\n\n31"
+          },
+          {
+            "id": "3-5-conectividade-digital-e-infraestrutura-tecnologica",
+            "titulo": "3.5 CONECTIVIDADE DIGITAL E INFRAESTRUTURA TECNOLÓGICA",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "3.5 CONECTIVIDADE DIGITAL E INFRAESTRUTURA TECNOLÓGICA\nA transformação digital do Estado exige uma infraestrutura tecnológica cada vez mais robusta e distribuída.\nNos últimos anos, Mato Grosso do Sul ampliou investimentos em conectividade, expansão das redes de comunicação e modernização da infraestrutura digital, fazendo a fibra ótica chegar em todos os prédios públicos dos 79\nmunicípios, criando condições para fortalecer a inovação, a prestação de serviços públicos e o desenvolvimento\neconômico em todas as regiões.\nO próximo ciclo buscará ampliar a cobertura da conectividade, reduzir desigualdades digitais e consolidar uma\ninfraestrutura tecnológica preparada para suportar a transformação digital da economia, das cidades e dos serviços públicos. O acesso à conectividade deverá ser tratado como elemento essencial da competitividade, da\ninclusão e do desenvolvimento regional, e como elemento básico para atração de investimentos em datacenters,\nem consonância com as vantagens competitivas da matriz energética sustentável do Estado.\n\nAÇÕES PROPOSTAS\n•Expandir a cobertura da infraestrutura de conectividade em todo o território estadual.\n•Fortalecer redes digitais de alta capacidade.\n•Reduzir desigualdades de acesso à conectividade.\n•Apoiar a implantação de infraestrutura tecnológica para cidades inteligentes.\n•Estimular a expansão das telecomunicações em áreas estratégicas.\n•Promover infraestrutura digital como vetor de desenvolvimento econômico.\n•Integrar conectividade às políticas de educação, saúde, segurança e inovação.\n\n3.6 PROTEÇÃO E VALORIZAÇÃO DOS ATIVOS AMBIENTAIS, CONSERVAÇÃO E BIODIVERSIDADE\nMato Grosso do Sul consolidou uma agenda inovadora ao posicionar seus ativos ambientais como elemento\nestratégico do desenvolvimento. A implementação da Lei do Pantanal, dos Programas de Pagamento por Serviços\nAmbientais, da política estadual de carbono e da estruturação de novos instrumentos econômicos voltados à conservação demonstram que preservação ambiental e geração de riqueza podem caminhar de forma integrada.\nO próximo ciclo buscará consolidar esse posicionamento, fortalecendo a conservação da biodiversidade, ampliando mecanismos de valorização econômica dos ativos ambientais e estimulando novos mercados relacionados aos serviços ecossistêmicos. A preservação ambiental deverá continuar sendo tratada não apenas como um\ncompromisso com as futuras gerações, mas também como diferencial competitivo e fonte de desenvolvimento\nsustentável para o Estado.\n\nAÇÕES PROPOSTAS\n•Realizar a restauração do Parque Estadual das Nascentes do Rio Taquari e do Parque das Várzeas do Rio\nIvinhema, explorando os créditos de carbono oriundos da restauração (ARR).\n\n32"
+          },
+          {
+            "id": "fortalecer-politicas-de-conservacao-da-biodiversidade",
+            "titulo": "•Fortalecer políticas de conservação da biodiversidade.",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "•Fortalecer políticas de conservação da biodiversidade.\n•Expandir mecanismos de valorização econômica dos ativos ambientais.\n•Consolidar e ampliar programas de pagamento por serviços ambientais, ampliando-os para todos os biomas\npresentes no estado.\n•Estimular mercados relacionados aos ativos ambientais.\n•Modernizar a gestão das unidades de conservação.\n\n3.7 RECURSOS HÍDRICOS E SEGURANÇA HÍDRICA\nA abundância de recursos hídricos representa um dos principais ativos estratégicos de Mato Grosso do Sul. Nos\núltimos anos, o Estado fortaleceu políticas de gestão das águas, ampliou investimentos em infraestrutura hídrica e\nconsolidou iniciativas voltadas à proteção de bacias hidrográficas, como o PROSOLO, reconhecendo a água como\nelemento essencial para o abastecimento, a produção agropecuária, a indústria, a geração de energia e a conservação ambiental.\nNos próximos anos, a segurança hídrica deverá assumir papel ainda mais estratégico diante das mudanças\nclimáticas e da expansão das atividades econômicas. A prioridade será fortalecer a gestão integrada das águas,\nampliar a resiliência hídrica dos territórios e garantir disponibilidade e qualidade dos recursos hídricos para sustentar\no desenvolvimento econômico e a qualidade de vida da população.\n\nAÇÕES PROPOSTAS\n•Revisar o Plano Estadual de Recursos Hídricos.\n•Estabelecer a Agência Estadual de Águas para a gestão das bacias hidrográficas do Estado.\n•Ampliar a atuação do PROSOLO, tanto em número de municípios atendidos, como em área sistematizada\nsob projetos do programa.\n•Fortalecer a gestão integrada dos recursos hídricos.\n•Expandir ações voltadas à segurança hídrica.\n•Incentivar o uso racional e eficiente da água.\n•Fortalecer a proteção e recuperação de bacias hidrográficas.\n•Ampliar a infraestrutura hídrica para abastecimento e produção.\n•Estimular soluções de adaptação às mudanças climáticas relacionadas à água.\n•Integrar políticas de recursos hídricos ao planejamento territorial.\n\n33"
+          },
+          {
+            "id": "3-8-licenciamento-ambiental-gestao-territorial-e-seguranca-juridica",
+            "titulo": "3.8 LICENCIAMENTO AMBIENTAL, GESTÃO TERRITORIAL E SEGURANÇA JURÍDICA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "3.8 LICENCIAMENTO AMBIENTAL, GESTÃO TERRITORIAL E SEGURANÇA JURÍDICA\nNos últimos anos, Mato Grosso do Sul promoveu uma profunda modernização da gestão ambiental, tornando o\nlicenciamento mais eficiente, transparente e previsível, sem renunciar à proteção dos recursos naturais. Um dos primeiros estados da Federação a regulamentar a nova lei de licenciamento federal e Estado destaque na validação\ndo CAR, avançou na digitalização de processos, na regulamentação de instrumentos inovadores e na construção\nde um ambiente de maior segurança jurídica, consolidando um modelo reconhecido nacionalmente pela capacidade de conciliar desenvolvimento econômico e conservação ambiental.\nO próximo ciclo buscará consolidar essa evolução, fortalecendo a gestão territorial baseada em inteligência\nde dados, aperfeiçoando continuamente os instrumentos de licenciamento ambiental e ampliando a segurança\njurídica para cidadãos, produtores e investidores. O objetivo será garantir um modelo de governança ambiental\nmoderno, capaz de proteger o patrimônio natural do Estado e, ao mesmo tempo, estimular investimentos responsáveis e o desenvolvimento sustentável.\n\nAÇÕES PROPOSTAS\n•Implantar a plataforma de transparência ambiental para atender aos requisitos dos mercados internacionais\nem relação a produção livre de desmatamento.\n•Modernizar continuamente o licenciamento ambiental.\n•Ampliar a digitalização e integração dos processos ambientais.\n•Fortalecer a segurança jurídica para cidadãos e investidores.\n•Consolidar instrumentos de planejamento e gestão territorial.\n•Aperfeiçoar a utilização de inteligência de dados na gestão ambiental.\n•Integrar os instrumentos de ordenamento territorial e conservação ambiental.\n•Reduzir prazos e ampliar a previsibilidade dos processos administrativos.\n•Fortalecer mecanismos de monitoramento e fiscalização inteligente.\n•Consolidar Mato Grosso do Sul como referência nacional em governança ambiental.\n\n34"
+          },
+          {
+            "id": "4-5",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nDIMENSÕES\n\nESTRATÉGICAS\n\nDimensão\n\n4\n\nE\n\nsta dimensão é voltada ao fortalecimento\nda capacidade de entrega do Estado, promovendo\numa administração pública mais moderna, eficiente,\ntransparente e orientada a resultados. Parte da\ncompreensão de que políticas públicas de qualidade\ndependem não apenas de boas propostas, mas também\nde estruturas estatais capazes de planejar, executar,\nmonitorar e avaliar ações com eficiência, inovação e\nresponsabilidade fiscal. Esta dimensão atua de forma\ntransversal, sustentando todas as demais por meio\ndo fortalecimento da capacidade estatal de planejar,\nexecutar, integrar e entregar políticas públicas.\n\n4\n\nGOVERNANÇA,\nEFICIÊNCIA E\nTRANSFORMAÇÃO\nDIGITAL"
+          },
+          {
+            "id": "dimensao-4",
+            "titulo": "Dimensão",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Dimensão\n\n4\n\nGOVERNANÇA, EFICIÊNCIA E TRANSFORMAÇÃO DIGITAL\n\nA dimensão busca consolidar um modelo de governança e gestão pública centrado no cidadão, apoiado por\num planejamento robusto, por transformação digital, uso inteligente de dados, simplificação de processos e melhoria contínua dos serviços públicos, estes últimos, nos moldes de um Centro de Serviços Compartilhados - CSC.\nAo integrar governança, tecnologia, gestão de pessoas, integridade e eficiência do gasto público, a proposta é\nconstruir um Estado mais ágil, acessível e preparado para responder efetivamente às demandas da sociedade\ncontemporânea.\n\nPrincipais temas e áreas abordadas\n•Governança e Gestão pública orientada a resultados.\n•Transformação digital e experiência do cidadão.\n•Dados, inteligência e monitoramento.\n•Gestão fiscal e eficiência do gasto público.\n•Transparência, integridade e controle.\n•Gestão de pessoas e liderança pública.\n•Compras públicas e gestão contratual.\n\nAlinhamento ODS — Agenda 2030: ODS 9 — Indústria, Inovação e Infraestrutura · ODS 12 — Consumo e Produção Responsáveis · ODS 16 — Paz, Justiça e Instituições Eficazes · ODS 17 — Parcerias e Meios de Implementação\n\n36"
+          },
+          {
+            "id": "4-1-governanca-e-gestao-publica-orientada-a-resultados",
+            "titulo": "4.1 GOVERNANÇA E GESTÃO PÚBLICA ORIENTADA A RESULTADOS",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "4.1 GOVERNANÇA E GESTÃO PÚBLICA ORIENTADA A RESULTADOS\nNos últimos anos, Mato Grosso do Sul consolidou uma importante agenda de modernização da governança e gestão pública, fortalecendo o Conselho de Governança, o planejamento estratégico, o plano plurianual e\no monitoramento sistemático de programas governamentais e os processos de integração entre planejamento,\norçamento e execução. A adoção e amadurecimento de Contratos de Gestão, a Inteligência GOVMS e a consolidação de uma cultura orientada por indicadores contribuíram para ampliar a capacidade do Estado de alinhar,\narticular e acompanhar resultados estratégicos e apoiar a tomada de decisão mais assertiva, baseada em dados\ne evidências.\nO próximo ciclo de governo buscará aprofundar esse modelo de governança, de gestão estratégica e de coordenação de políticas públicas, criando e fortalecendo um Centro de Governo, transversal, coeso, articulador e de\nalinhamento estratégico como o propulsor da boa governança, consolidando uma administração cada vez mais\norientada por planejamento robusto, proativo e integrado, de alto desempenho, e geração e entrega de alto valor\npúblico. A gestão por resultados deverá evoluir para uma cultura institucional permanente, fortalecendo a priorização e a avaliação de políticas públicas em função da sua real efetividade, pela sua resolutividade aos problemas\nda sociedade e, pela capacidade de resposta institucional de forma articulada, convergente e integrada entre\nórgãos e pela capacidade de transformar planejamento em ações e entregas, de curto, médio e longo prazos,\nconcretas para a sociedade.\n\nAÇÕES PROPOSTAS\n•Fortalecer a governança, enquanto centro de governo e a gestão por resultados como modelo permanente\nde planejamento e gestão pública.\n•Convergir, coordenar e integrar o planejamento estratégico, o orçamento e execução em todos os órgãos\nestaduais.\n•Implantar metodologia única para gestão de portfólios de projetos estratégicos e de investimentos do\ngoverno.\n•Estruturar sistema de informações e acompanhamento de metas e indicadores em tempo real.\n•Desenvolver metodologia padronizada e institucionalizar sistemas de concepção, avaliação (efetividade) e\nmonitoramento (eficiência) de políticas públicas.\n•Fortalecer a gestão baseada em dados e evidências na tomada de decisão, fortalecendo mecanismos de\ncoordenação entre órgãos para implementação de políticas públicas transversais e projetos estratégicos.\n\n4.2 TRANSFORMAÇÃO DIGITAL E EXPERIÊNCIA DO CIDADÃO\nA transformação digital tornou-se uma das principais agendas de modernização do Estado, para tornar o\nserviço público mais acessível, ágil, assertivo e transparente. Nos últimos anos, a ampliação da oferta de serviços digitais, a evolução das plataformas eletrônicas de atendimento, o fortalecimento da acessibilidade digital e a\nsimplificação de diversos processos administrativos aproximaram o governo da população e reduziram barreiras\nde acesso aos serviços públicos. Dois dos grandes exemplos desse avanço são o DETRAN e a IAGRO, órgãos de\náreas completamente diferentes, mas que avançaram muito na qualidade dos serviços prestados por conta da\n\n37"
+          },
+          {
+            "id": "pagina-38",
+            "titulo": "Página 38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "aplicação de tecnologia em larga escala em seus processos e no atendimento ao cidadão. Esses avanços colocaram Mato Grosso do Sul entre os estados brasileiros mais bem avaliados nas dimensões de transformação digital e\nplataformas de atendimento ao cidadão, de acordo com os principais rankings nacionais.\nA próxima etapa consistirá em transformar serviços públicos, e não apenas digitalizá-los. O objetivo será consolidar uma experiência integrada para o cidadão, com serviços simples, intuitivos e personalizados, apoiados por\ninteroperabilidade entre órgãos, inteligência artificial, automação de processos e atendimento multicanal, garantindo maior agilidade, acessibilidade e resolutividade.\n\nAÇÕES PROPOSTAS\n•Implantar o novo Plano de Transformação Digital.\n•Digitalizar integralmente os principais serviços públicos estaduais.\n•Revisar e simplificar processos administrativos antes da digitalização.\n•Integrar plataformas e serviços em ambiente digital único para o cidadão.\n•Ampliar o uso de inteligência artificial na prestação de serviços públicos.\n•Expandir mecanismos de atendimento multicanal e autoatendimento.\n•Garantir acessibilidade digital em todos os serviços públicos.\n•Implantar gestão sistemática da experiência e satisfação do cidadão.\n•Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais.\n•Estabelecer padrão visual e de usabilidade único para os canais digitais do Estado.\n•Modernizar e fortalecer a infraestrutura tecnológica e a segurança da informação que sustentam os serviços\ndigitais.\n•Promover a melhoria continua da maturidade digital dos órgãos para orientar a evolução dos serviços.\n•Capacitar continuamente os servidores nas competências exigidas pela transformação digital.\n\n4.3 DADOS, INTELIGÊNCIA E MONITORAMENTO\nO Governo do Estado avançou significativamente na utilização de dados como instrumento de gestão, ampliando a integração de informações estratégicas, o monitoramento de indicadores e a capacidade analítica para\nsubsidiar decisões governamentais. Iniciativas como o fortalecimento do Centro de Inteligência GOVMS representam um novo modelo de gestão baseado em informações qualificadas e monitoramento contínuo da execução\ngovernamental.\nO desafio do próximo ciclo será consolidar uma governança integrada de dados, promovendo maior interoperabilidade entre sistemas, inteligência analítica e monitoramento permanente dos resultados das políticas públicas.\nA evolução dessa agenda permitirá que dados sejam utilizados não apenas para acompanhar a gestão, mas também para antecipar demandas, apoiar decisões estratégicas e orientar a formulação de políticas públicas mais\neficientes e responsivas.\n\n38"
+          },
+          {
+            "id": "acoes-propostas-3",
+            "titulo": "AÇÕES PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PROPOSTAS\n•Implantar política estadual de governança de base de dados.\n•Identificar, integrar, minerar, harmonizar as bases de dados estratégicas do Governo.\n•Desenvolver painéis gerenciais de informação para monitorar desempenhos de indicadores, fortalecendo a\ncultura de avaliação de resultados e de impacto das políticas públicas.\n•Ampliar o uso de inteligência analítica na concepção e formulação de políticas públicas (ex ante).\n•Fortalecer a interoperabilidade entre sistemas governamentais.\n•Utilizar dados para antecipação de demandas e gestão preditiva.\n•Consolidar ambiente seguro para compartilhamento e tratamento de informações.\n\n4.4 GESTÃO FISCAL E EFICIÊNCIA DO GASTO PÚBLICO\nA solidez fiscal tornou-se uma das principais marcas da gestão estadual nos últimos anos. Mato Grosso do Sul\nconsolidou uma trajetória consistente de equilíbrio das contas públicas, mantendo elevados padrões de responsabilidade fiscal e conquistando sucessivos reconhecimentos nacionais pela qualidade de sua gestão financeira\ne transparência, condição que ampliou a capacidade de investimento do Estado e fortaleceu sua credibilidade\ninstitucional.\nPara dar efetividade ao compromisso com a redução da carga, o Estado trabalha com a menor alíquota modal de ICMS em vigor no país – 17%. E uma extensa pauta tributária dá dimensão ao esforço para melhorar competitividade, de um lado; mas também acrescentar diversas outras metas, como a redução da pressão sobre preços;\nestímulo à produção local; preservação e geração de empregos e alívio no custo de vida da população. Em um\ncenário em que alimentação, gás de cozinha, medicamentos, energia, transporte e serviços essenciais pesam diretamente no orçamento das famílias, a decisão do Governo do Estado de manter alíquotas reduzidas sobre produtos básicos e desonerar etapas importantes da cadeia produtiva cria condições para que bens e mercadorias\ncheguem ao consumidor com menor carga tributária embutida no preço final.\nA lógica é simples, mas não automática. Menos imposto significa menor custo na formação do preço. No entanto, entre a redução tributária e o valor pago no caixa do supermercado há uma cadeia inteira de fatores: concorrência entre estabelecimentos, safra, frete, câmbio, energia, estoque, margem do varejo, custo de reposição e\ncomportamento dos fornecedores.\nSob a gestão Eduardo Riedel, esta política tem sido apresentada como uma escolha de desenvolvimento econômico com reflexo direto na vida das pessoas. O objetivo não é apenas tornar Mato Grosso do Sul mais competitivo para atrair investimentos, mas também construir um ambiente em que empresas produzam com menor custo,\nsetores estratégicos continuem operando, empregos sejam preservados e consumidores tenham maior capacidade de compra.\nA alíquota modal baixa, de 17%, permite criar outros comparativos. Quando produtos essenciais recebem tratamento ainda menor, como a carne bovina com carga de 4% ou itens da cesta básica com carga de 7%, a diferença fica mais evidente. Na prática, esses percentuais reduzidos evitam que alimentos e mercadorias de consumo\nrecorrente sejam tratados como produtos comuns, sujeitos à carga cheia. Isso também é resultado dos incentivos.\nO caso mais concreto está na cesta básica. Mato Grosso do Sul mantém carga tributária reduzida de 7% sobre diversos produtos indispensáveis ao consumo da população, como arroz, feijão, óleo de soja, sal, café, peixes,\nbanha de porco e mel de produção sul-mato-grossense. Outros itens, como erva-mate, farinha de mandioca,\nfarinha de milho, fubá, sabonete em barra, vinagre e chá-mate, também contam com redução de base de cálculo\n\n39"
+          },
+          {
+            "id": "para-que-o-imposto-resulte-no-percentual-liquido-de-7",
+            "titulo": "para que o imposto resulte no percentual líquido de 7%.",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "para que o imposto resulte no percentual líquido de 7%.\nNa saúde, foram renovados benefícios como isenção de ICMS para medicamentos, vacinas, kits diagnósticos,\nprodutos imunobiológicos, medicamentos destinados ao tratamento de HIV, gripe A, câncer, doenças raras, doenças infecciosas e medicamentos de uso hospitalar destinados a órgãos públicos. Também há crédito outorgado\npara estabelecimentos atacadistas ou distribuidores de produtos farmacêuticos localizados no Estado. São medidas que, direta ou indiretamente, ajudam a reduzir custos em uma área sensível para as famílias e para o poder\npúblico.\nNo comércio, o segmento de bares e restaurantes aparece com destaque. O benefício prevê redução da base\nde cálculo do ICMS de forma que a carga tributária possa equivaler a 2% no fornecimento de refeições promovido\npor bares, restaurantes, estabelecimentos similares, hotéis, pousadas e empresas preparadoras de refeições coletivas. Também há previsão de crédito presumido para que a carga tributária resulte em 7% no fornecimento de\nrefeições, além de isenção da parcela correspondente ao ICMS para bares e restaurantes optantes pelo Simples\nNacional.\nNo caso do gás de cozinha, a política também dialoga diretamente com o orçamento doméstico. A base de\ncálculo do ICMS foi reduzida para que o imposto resulte no percentual de 12% nas saídas internas de gás liquefeito\nde petróleo. Como o botijão é uma despesa recorrente e sensível, especialmente nos lares de menor renda, a redução do peso tributário nesse item contribui para diminuir a pressão sobre uma conta essencial da casa.\nEsses, são exemplos de como a política fiscal atua na base da cadeia alimentar, reduzindo custos de produção\ne circulação de produtos que chegam à mesa das famílias. Os incentivos fiscais ajudam a reduzir o piso de custo\nde produtos essenciais, mas o preço final continua sendo formado por uma cadeia de fatores. Quando a política\ntributária atua junto com produção local forte, concorrência no varejo e estabilidade econômica, a chance de\nalívio ao consumidor aumenta.\nMenos imposto, mais emprego e maior capacidade de compra. Esse tem sido o modelo até aqui.\nMas o custo de vida não se mede apenas pelo preço da cesta. Mede-se também pela capacidade da família\nde pagar por ela. E, nesse ponto, Mato Grosso do Sul apresenta indicadores favoráveis.\nEm 2025, a taxa anual de desocupação do Estado foi de 3,0%, uma das menores do país e a menor da série histórica local. No quarto trimestre de 2025, a desocupação caiu para 2,4%, ficando entre os menores índices nacionais. Já no primeiro trimestre de 2026, mesmo com alta sazonal em vários estados, Mato Grosso do Sul permaneceu\nem patamar inferior à média brasileira. As pessoas estão trabalhando ou empreendendo.\nPara atrair investimentos privados, alavanca fundamental ao alto ciclo de crescimento atual, o Estado modernizou a política de incentivos, tornando-a mais ampla, democrática e robusta. E o resultado aí está: o MS se\nconsolidou como um dos principais destinos de investimentos privados do Brasil, graças a um ambiente favorável\naos negócios, aliado a investimentos em infraestrutura, logística e qualificação profissional. Entre 2015 e 2025, Mato\nGrosso do Sul reúne mais de R$ 115 bilhões em investimentos privados captados, sendo que R$ 81 bilhões foram só\nna atual gestão.\nFoi exatamente esta robustez que permitiu ao governo ultrapassar uma inesperada e importante queda da arrecadação do gás e quebras nas safras decorrentes dos problemas climáticos nos anos recentes. A administração\ncortou gastos na própria carne para manter intocada a sua responsabilidade fiscal.\nNo próximo ciclo, a agenda deverá evoluir da responsabilidade fiscal equilibrada para uma excelência na gestão fiscal e do gasto público, salto essencial para a otimização na tomada de decisão e as escolhas alocativas dos\nrecursos públicos. Será uma estrutura de gestão do gasto público cada vez mais moderna, que exigirá, decisões\ncoesas com base na relevância, impacto, custos e esforços, olhando cada vez mais para a elevação da qualidade do gasto e solvência, e na alocação mais eficiente dos recursos públicos capazes de assegurar que cada real\ninvestido produza o maior retorno possível para a sociedade, ou seja, fazer mais, com menos recursos e da melhor\nforma possível.\n\n40"
+          },
+          {
+            "id": "acoes-propostas-4",
+            "titulo": "AÇÕES PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PROPOSTAS\n•Aprimorar os modelos de previsão orçamentária, com aperfeiçoamento da arrecadação baseada em\nmatrizes de risco fiscal.\n•Aperfeiçoar mecanismos de avaliação e monitoramento da eficiência e conformidade do gasto público.\n•Aprimorar o sistema de controle de custos da administração e ampliar o modelo de gestão orçamentária\nfocado na qualidade do gasto público.\n•Ampliar a utilização de análises de custo-benefício nas priorizações e decisões de investimento em programas,\nprojetos e ações.\n•Fortalecer a aderência entre o planejamento e o orçamento, nas previsões de arrecadação e nas alocações\nde suas dotações, de médio e longo prazos.\n•Aprimorar os mecanismos de revisão e controle periódico de despesas públicas.\n•Estimular a inovação para aumento da produtividade da administração pública.\n•Aperfeiçoar instrumentos de monitoramento da execução orçamentária e de metas de produtos.\n•Consolidar políticas permanentes de responsabilidade fiscal e sustentabilidade financeira das contas públicas.\n\n4.5 TRANSPARÊNCIA, INTEGRIDADE E CONTROLE\nAo longo dos últimos anos, Mato Grosso do Sul fortaleceu sua agenda de governança, transparência e controle,\nampliando instrumentos de integridade, aperfeiçoando mecanismos de controle interno e investindo na transformação digital como ferramenta de transparência e relacionamento com a sociedade. A Controladoria Geral\ndo Estado e o Conselho de Governança, liderado pela SEGOV, tiveram papel fundamental nesse processo. Esses\navanços têm sido reconhecidos por avaliações nacionais, que destacam especialmente a evolução do Estado nas\náreas de plataformas digitais, acessibilidade e inovação aplicada à transparência pública.\nO próximo passo será consolidar uma cultura institucional cada vez mais preventiva, baseada em gestão de\nriscos, integridade pública, transparência ativa e fortalecimento do controle social. A intenção é ampliar a confiança da sociedade nas instituições públicas, promovendo uma administração cada vez mais ética, aberta e responsável.\n\nAÇÕES PROPOSTAS\n•Fortalecer programas de integridade em toda a administração pública.\n•Implantar modelo integrado de gestão de riscos governamentais.\n•Ampliar a transparência ativa das informações públicas.\n•Modernizar instrumentos de controle interno e auditoria preventiva.\n•Estimular mecanismos de participação e controle social.\n•Fortalecer ações de prevenção à fraude e à corrupção.\n\n41"
+          },
+          {
+            "id": "consolidar-cultura-institucional-baseada-em-etica-integridade-e-prestaca",
+            "titulo": "•Consolidar cultura institucional baseada em ética, integridade e prestação de contas (accountability).",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "•Consolidar cultura institucional baseada em ética, integridade e prestação de contas (accountability).\n•Garantir nos canais de atendimento ao cidadão, respostas ágeis, claras e eficientes às suas demandas.\n•Fortalecer e ampliar os canais de denúncia, apuração e acolhimento em ações de correição na resolução de\nproblemas de desvios de conduta, aplicando a política de tolerância zero.\n\n4.6 GESTÃO DE PESSOAS E LIDERANÇA PÚBLICA\nA modernização da administração pública passa necessariamente pela valorização das pessoas, servidores\nque fazem o Estado acontecer. Nos últimos anos, o Governo de Mato Grosso do Sul ampliou investimentos em\nqualificação profissional, desenvolvimento de competências e fortalecimento das estruturas de gestão, criando\ncondições para uma atuação cada vez mais técnica e orientada à entrega de resultados. A maioria das carreiras\ndo estado tiveram demandas históricas atendidas, avançando muito em questões estruturais.\nA próxima etapa buscará consolidar uma política moderna de gestão de pessoas, baseada no desenvolvimento de lideranças, formação continuada, inovação, valorização do desempenho e fortalecimento da cultura organizacional. O objetivo é preparar continuamente os servidores para responder aos desafios de um Estado cada vez\nmais digital, integrado e orientado ao cidadão.\n\nAÇÕES PROPOSTAS\n•Implantar política permanente de desenvolvimento de lideranças.\n•Fortalecer programas continuados de capacitação, aperfeiçoamento e desenvolvimento profissional.\n•Modernizar os modelos de gestão por competências.\n•Estabelecer mecanismos de avaliação e monitoramento de desempenho.\n•Estimular ambientes organizacionais que favoreçam a inovação, a sucessão e a colaboração.\n•Promover ações de valorização, segurança, saúde e bem-estar dos servidores.\n•Incentivar a disseminação de boas práticas de gestão de pessoas entre os órgãos estaduais.\n\n4.7 COMPRAS PÚBLICAS E GESTÃO CONTRATUAL\nA entrada em vigor da nova Lei de Licitações representou uma oportunidade para modernizar a gestão das\ncontratações públicas em Mato Grosso do Sul. O Estado antecipou a implementação de diversos instrumentos\nprevistos na nova legislação, como o Plano de Contratações Anual (PCA), liderado pela SAD, ampliando o planejamento das aquisições, a previsibilidade para fornecedores e a eficiência dos processos de compras públicas.\nNos próximos anos, essa agenda deverá avançar para um modelo de contratações cada vez mais estratégico,\norientado por planejamento, inovação, sustentabilidade e desempenho. A gestão contratual deverá incorporar\nmaior uso de inteligência de dados, monitoramento de resultados e novas tecnologias, transformando as compras\npúblicas em instrumento de geração de eficiência, desenvolvimento econômico e melhoria da qualidade dos serviços prestados à população.\n\n42"
+          },
+          {
+            "id": "acoes-propostas-5",
+            "titulo": "AÇÕES PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PROPOSTAS\n•Consolidar o planejamento anual das contratações públicas.\n•Ampliar a utilização de soluções digitais em todo o ciclo das contratações.\n•Fortalecer a gestão contratual baseada em desempenho e resultados.\n•Estimular inovação e sustentabilidade nas compras públicas.\n•Expandir mecanismos de compras compartilhadas e ganho de escala.\n•Aprimorar o monitoramento da execução contratual por indicadores, dados e evidências.\n•Desenvolver inteligência de mercado para apoiar o planejamento das contratações.\n\nO Compromisso\nque Organiza Tudo\nMato Grosso do Sul vive um dos momentos mais promissores de sua história. Isso não quer dizer que não tenhamos ainda muitos desafios, pelo contrário. Nos últimos anos, o Estado consolidou um ambiente de responsabilidade fiscal, atraiu investimentos em escala inédita, fortaleceu sua competitividade, ampliou a proteção social\ne tornou-se referência nacional na conciliação entre desenvolvimento econômico e cuidado com os recursos\nnaturais. O que antes era um conjunto de potencialidades transformou-se em um projeto consistente de desenvolvimento, capaz de gerar resultados concretos para a população.\nO desafio dos próximos anos é dar um novo passo. Não basta crescer. É preciso fazer com que esse crescimento alcance cada cidadão, fortaleça todas as regiões e prepare Mato Grosso do Sul para responder às transformações econômicas, sociais, tecnológicas e ambientais que marcarão as próximas décadas.\nÉ dessa convicção que nasce o compromisso que orienta este Plano de Governo:\nCrescer. Incluir. Transformar.\nCrescer para gerar empregos, atrair investimentos, ampliar a competitividade e criar oportunidades para as\nfuturas gerações.\nIncluir para garantir que os benefícios desse desenvolvimento cheguem a todos, reduzindo desigualdades,\nfortalecendo a cidadania e ampliando o acesso à educação, à saúde, à segurança, à cultura e às políticas de\nproteção social.\nTransformar para converter desenvolvimento em qualidade de vida, por meio de um Estado cada vez mais\ninovador, sustentável, eficiente e preparado para os desafios do futuro.\nSão esses compromissos que organizam as quatro dimensões estratégicas deste Plano de Governo. Cada\nação proposta parte da mesma premissa: o desenvolvimento só estará completo quando gerar oportunidades,\nreduzir desigualdades, preservar os recursos naturais e melhorar a vida dos sul-mato-grossenses em todas as\nregiões do Estado.\n\nEduardo Riedel\n\nO melhor está por vir.\n\n43"
+          },
+          {
+            "id": "coligacao-fazendo-o-futuro-acontecer-2",
+            "titulo": "COLIGAÇÃO: FAZENDO O FUTURO ACONTECER.",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO: FAZENDO O FUTURO ACONTECER."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "8f2a1d729176fdfe81a18b7c47d466ca6d16ad7a5a194126cada09e121dff93e"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "cdd060f97547406d74ba64fbf011378842d5ca131b6af24112d884fc3607349c"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "ba0f4cb7d9a48c86f6e121aa9b1ef1ca29a89da2d8b299d0631e3b9c854bb650"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "8f13ea85381b18d6987d1076391566a5f2e86d002e47c85544d32c116d11fa3c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "3b2b25ef9e56c3d02baa00d9c7532bf40a6761ed545dba7e23cda691d21e28b4"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "1dba806e02ffa77f2b3d616ee7c6b29f9771f9b4ed18e8b24993ff340ed57d47"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "0f187a220595971262f9f2c8c5ed8b1d3e5ba979d9bf96b9707725128467c52c"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "cb0a56aa789323faeba61c10ea02c857e29c7df43dc48a5d8a5a14ec43fe4541"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "5cabe4e35797f16d8f583eadfd50da5e520c80fd70d3b4d51fa7df7559954d71"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "de4e70afe97237c689e11044406069213197d3fceaf31764c513e83e60019c99"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "91c130439b0a1e7ad2c72f20febe7c8c7d2247606e171da313507e844eb9ad75"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "f159ca55e6eead3373700b47d1b76802a4add53d745147cc34c30b28fbcad50a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "4d778964c462666e3d728546edc5d6437d819660c40fb3fd7d648a47d55faff5"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "8f581b06373d55e7265838ceedef96866bcddabd10e0e5dcdaf7301ff710ac2f"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f1fdfc1f7d3422c9d737fec97161e90b02ceb32aa04a6c288778541953da4a1c"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "787475674f38b92c16af188c937088dfc4dc3341a8872eb88b4ddeb2dc88d4fa"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "dbd642ea0c650abac5f9035cc35e8acb7ca3ad3f185e3102a2238021365b59fa"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "7760bd137704f255df82826f011530013e8d73be23a80379e1052c577a9ce855"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "4d5b7074a6dad081a0e435454dd7cfdf3545970056b3a59ae2abbc7c87b3563e"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "e1f086cdc48287f14f37861409a1e3343ea939baa1c598f7cdf29ef0b1357d87"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "d68d1e66c81f350ead911120a9aba4568c3ee1e62a650ab27bd119adb9dc5990"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "ea3fbe39f6d16924ed206cd59555230faae6e85cec32c949147fb7599860a488"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "68bd0916c2634ac47119cff90a247cc2c9bc0a1072e8545d22f3153d27b09912"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "3acb96ba62e162d9a3d3d9a9f4b313317c59c0932207bea695b9aa4c3ba68516"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "76cc87e6e081267af5adb0ac6d754a5a85cd3416467b27a6f436e295734cf0fa"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "3651a906348e4b1a5b740da496af22815aed584113b6c30d680a74a52ea05056"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "0698bbc0c8f93e1bb3e27b1a6451d862c14fe9a7a92de5386bf5ef4e60a7ec7a"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "283ea1e665c398b400b6df48b34c91126265988c76eb788cf3b47e4747836f20"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "bbc0af3ca307d7a617385f28306ce96f1033c63feabe16eaee516efe6bfdc0df"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "6673fec4ada1e399f3ac1875e63b0bfc7a5564001a7c7d1409bdac2e1a127f24"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "fec6591782ec2e98996644ce5d41ebe666080a0c9fd90389817e5f2814d8cccd"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "5f09fd7cb63002abea69bc2b9a44a4de72171ddd6f4df9372071baef2769cc22"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "a902bd74e3306123f69740f433996ebb4a2421a3b49534f64d4a42b820ff54bb"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "1c1ca54670002ae6e2dc88401a353b76f2ebe2d3bf46cdd08a468ec22f5ccbc3"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "88d30e49c6aec892b9a047fd3a43f02b6191db03cdf380048eaa2155b3294fb1"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "f09fd120f8be6995e2b188df37438c400037bb4950877376b7276d702c551421"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "13d0fbc66a08165afbcf98c528e4c97f85d03298bba86f8e8b0076bc3d2d7045"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "61c46105734b0be7edd90c364995a2275d694609288e3c85cc8aff87dce02862"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "513ad2a052992e81fdbffe8a7520b34e1982d6487cd988a7f2c9254103680ed1"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "f5345ca8c22ef83fda1e1a8a358a16c45f77322848a3e1c7978b0c36f422e4a9"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "613a00bc23509a32e374c1fafb5c4fa21dd0a49f457ebcf8f43a6d308822850b"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "15e1c56bae8f197b6e15e7a693a93f4e2d067857ef3cde6345c2097647d000f1"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "7c445bf043016570f0d130570aa9a89d3596b88594f015790c51999b7232ded5"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "8f2a1d729176fdfe81a18b7c47d466ca6d16ad7a5a194126cada09e121dff93e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O próximo mandato organiza a agenda de governo em quatro dimensões estratégicas complementares. Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime. Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais. Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional. Consolidar programa permanente de modernização da infraestrutura das escolas estaduais. Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado, buscando a aproximação entre universidades, centros de pesquisa e setor produtivo. Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB. Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais.",
+    "frases": [
+      {
+        "texto": "O próximo mandato organiza a agenda de governo em quatro dimensões estratégicas complementares.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 9,
+            "trecho": "O próximo mandato organiza a agenda de governo em quatro dimensões estratégicas complementares."
+          }
+        ]
+      },
+      {
+        "texto": "Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 13,
+            "trecho": "Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime."
+          }
+        ]
+      },
+      {
+        "texto": "Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 14,
+            "trecho": "Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais."
+          }
+        ]
+      },
+      {
+        "texto": "Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 15,
+            "trecho": "Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional."
+          }
+        ]
+      },
+      {
+        "texto": "Consolidar programa permanente de modernização da infraestrutura das escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 16,
+            "trecho": "Consolidar programa permanente de modernização da infraestrutura das escolas estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado, buscando a aproximação entre universidades, centros de pesquisa e setor produtivo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 21,
+            "trecho": "Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado, buscando a aproximação entre universidades, centros de pesquisa e setor produtivo."
+          }
+        ]
+      },
+      {
+        "texto": "Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 31,
+            "trecho": "Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB."
+          }
+        ]
+      },
+      {
+        "texto": "Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 38,
+            "trecho": "Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O plano prevê a implantação do LABSEJUSP para uso de inteligência na prevenção do crime.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 13,
+            "trecho": "Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime."
+          }
+        ]
+      },
+      {
+        "id": "protecao-social",
+        "titulo": "Proteção social",
+        "descricao": "O plano prevê a integração de políticas de assistência social voltadas à inclusão produtiva.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 14,
+            "trecho": "Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais."
+          }
+        ]
+      },
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Saúde regionalizada",
+        "descricao": "O plano prevê o fortalecimento dos hospitais de média complexidade na assistência regional.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 15,
+            "trecho": "Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional."
+          }
+        ]
+      },
+      {
+        "id": "educacao-basica",
+        "titulo": "Educação básica",
+        "descricao": "O plano prevê a modernização permanente da infraestrutura das escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 16,
+            "trecho": "Consolidar programa permanente de modernização da infraestrutura das escolas estaduais."
+          }
+        ]
+      },
+      {
+        "id": "transformacao-digital",
+        "titulo": "Transformação digital",
+        "descricao": "O plano prevê uma identidade digital única para acesso aos serviços estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002536582:01",
+            "pagina": 38,
+            "trecho": "Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:59:37.202Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:01:54.835Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'quatro' confere com a evidência que lista as quatro dimensões."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: a estrutura geral do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:1:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a afirmação, que é citação direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da ação proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:2:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de proteção social."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:3:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:4:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:5:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de ciência e tecnologia."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:6:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:7:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de transformação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:frase:8:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Citação direta cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:seguranca-publica:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:protecao-social:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:saude-regionalizada:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:educacao-basica:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002536582:tema:transformacao-digital:documentos:MS:120002536582:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002536582",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002536582:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 44314,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3916,
+          "reasoning_output_tokens": 2716
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29496,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22578,
+          "output_tokens_details": {
+            "thinking_tokens": 589
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29496,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22578,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29496,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29496
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36625640000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "9a250a365378cece30dbdd049086c1328bf91788d9d58b1732798347683f62d4",
+    "extractedTextSha256": "5e41ef5963940661a0b3340cc34712e28efbd813d384ba0691301efcfa6e6576",
+    "documentCount": 1,
+    "documentSetSha256": "6dd00b1f316b41a834264cecb5184b9e5e39e8d6ea8e225f028ba069ab026c4f",
+    "contentSha256": "9d46d49a199aa61fa7ef53ea920b3a0085504940b80852e8cbc3dc0862f5453e"
+  }
+}

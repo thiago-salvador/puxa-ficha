@@ -1,0 +1,1716 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002548628",
+    "slug": "gelson-merisio",
+    "nomeUrna": "GELSON MERÍSIO",
+    "partido": "PSB",
+    "arquivoNome": "2026SC240002548628_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002548628_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002548628:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002548628_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002548628_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "4317be5f0e60ff92aa0a1fce6eaabb8ddfb75efe29b4269181add7f274837013",
+        "extractedTextSha256": "35738857fa170952964df3afe4008cdf4c268063212e9b4eace7a97b5b039e24",
+        "paginas": 74,
+        "secoes": [
+          {
+            "id": "coragem-para-mudar",
+            "titulo": "CORAGEM PARA MUDAR",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "CORAGEM PARA MUDAR\nGOVERNADOR\n40 MERISIO\nVICE ANGELA ALBINO\nPLANO DE GOVERNO - 2027/2030\nDesenvolvimento, Justiça\nTerritorial e Qualidade de Vida"
+          },
+          {
+            "id": "governador",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nSANTA CATARINA PRECISA VOLTAR A PLANEJAR SEU FUTURO\nSanta Catarina possui uma das economias mais dinâmicas do Brasil. O Estado apresenta elevada\narrecadação e capacidade de investimento. O problema catarinense não é a escassez de recursos\npúblicos. O problema é a ausência de um projeto estratégico capaz de transformar essa\ncapacidade financeira em desenvolvimento para todas as regiões.\nEnquanto a economia cresce, aumentam também problemas que afetam diretamente a vida da\npopulação: congestionamentos, déficit habitacional, eventos climáticos cada vez mais frequentes,\npressão sobre os serviços públicos, desigualdades regionais e dificuldade de acesso da juventude\na oportunidades de formação e trabalho qualificado.\nNos últimos anos, o Estado abriu mão do planejamento de longo prazo. A consequência é um\ngoverno que reage aos problemas, em vez de antecipá-los, Obras deixam de dialogar entre si,\npolíticas públicas permanecem fragmentadas e regiões inteiras continuam à margem do\ndesenvolvimento.\nSanta Catarina precisa recuperar a capacidade de planejar, coordenar investimentos e induzir o\ndesenvolvimento. O Estado deve atuar como para construir soluções permanentes.\nNosso compromisso é construir um novo ciclo de desenvolvimento baseado em cinco pilares:\n• crescimento econômico com inovação;\n• redução das desigualdades sociais e territoriais;\n• fortalecimento dos serviços públicos;\n• adaptação às mudanças climáticas;\n• planejamento regional de longo prazo.\nO objetivo é aumentar a capacidade do Estado de organizar o desenvolvimento, melhorar a\nqualidade de vida da população e preparar Santa Catarina para os desafios das próximas\ndécadas:\nPlanejar o território para transformar crescimento econômico em\ndesenvolvimento, justiça social e territorial e qualidade de vida."
+          },
+          {
+            "id": "governador-2",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n1. Santa Catarina diante de um novo ciclo de desenvolvimento\n1.1 Um estado que deu certo, mas enfrenta novos desafios\nSanta Catarina construiu, ao longo das últimas décadas, uma das experiências de\ndesenvolvimento mais bem-sucedidas do Brasil. A diversidade de sua economia, a força do\nempreendedorismo, a presença de pequenas e médias empresas, o cooperativismo, a agricultura\nfamiliar, a capacidade industrial, os serviços, o turismo e uma ampla rede de instituições públicas\ne privadas de ensino, pesquisa e inovação fizeram do Estado uma referência nacional em geração\nde riqueza, emprego e qualidade de vida.\nEssa trajetória permitiu consolidar um Estado com elevada capacidade de arrecadação, equilíbrio\nfiscal e importantes ativos institucionais. Diferentemente de muitos estados brasileiros, Santa\nCatarina possui condições objetivas para ampliar seus investimentos públicos e enfrentar\ndesafios estruturais sem comprometer sua sustentabilidade financeira.\nEntretanto, o sucesso do passado não garante as respostas para o futuro.\nAs transformações econômicas, sociais, ambientais e tecnológicas das últimas décadas\ninauguraram uma nova realidade. Problemas que antes eram pontuais passaram a assumir\ncaráter estrutural, exigindo um novo papel do Estado e uma nova estratégia de desenvolvimento.\nO desafio de Santa Catarina deixou de ser apenas crescer economicamente. O desafio agora\nconsiste em transformar crescimento em qualidade de vida, sustentabilidade, inovação e\noportunidades distribuídas de forma equilibrada por todo o território catarinense.\n1.2 A transição demográfica\nSanta Catarina passa por profundas transformações demográficas.\nA redução da taxa de fecundidade, o aumento da expectativa de vida e o envelhecimento\nacelerado da população modificam a demanda por políticas públicas, alteram o mercado de\ntrabalho e impõem novos desafios ao sistema de saúde, à previdência, à mobilidade, à habitação\ne aos serviços urbanos.\nAo mesmo tempo, o Estado continua recebendo intenso fluxo migratório proveniente de outras\nregiões do país e do exterior. Esse crescimento populacional concentra-se principalmente nas\nregiões litorâneas e metropolitanas, aumentando a pressão sobre a infraestrutura urbana, o\nsistema habitacional, os equipamentos públicos e o mercado imobiliário."
+          },
+          {
+            "id": "40-merisio",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\nEssa dupla dinâmica, envelhecimento populacional e crescimento concentrado em determinadas\nregiões, exige políticas públicas diferenciadas para cada território, reconhecendo que as\nnecessidades do Oeste, da Serra, do Planalto Norte, do Meio-Oeste e do Litoral são distintas.\nPlanejar o futuro significa antecipar essas mudanças.\n1.3 A crise climática deixou de ser um problema do futuro\nDurante muito tempo as mudanças climáticas foram tratadas como um risco distante. Hoje elas\nfazem parte da realidade catarinense.\nEnchentes, enxurradas, deslizamentos, estiagens prolongadas, ressacas, ciclones e eventos\nextremos tornaram-se mais frequentes e intensos, produzindo perdas humanas, econômicas e\nambientais.\nEsses fenômenos afetam a agricultura, comprometem a infraestrutura, aumentam os custos da\nprodução, ampliam a vulnerabilidade das populações de baixa renda e pressionam\ncontinuamente as finanças públicas. Não basta fortalecer a capacidade de resposta da Defesa\nCivil. É necessário incorporar a adaptação climática como princípio permanente do planejamento\nterritorial.\nIsso significa orientar a expansão urbana para áreas seguras, proteger rios, encostas e nascentes,\nampliar áreas verdes, recuperar bacias hidrográficas, implantar infraestrutura de drenagem\nbaseada na natureza e preparar os municípios para reduzir riscos antes que os desastres ocorram.\nA política climática deixa de ser uma política ambiental e passa a ser uma política de\ndesenvolvimento.\n1.4 Uma economia em transformação\nA economia mundial atravessa uma profunda transformação impulsionada pela digitalização, pela\ninteligência artificial, pela automação, pela transição energética e pelas novas formas de\norganização do trabalho e da produção.\nSanta Catarina reúne excelentes condições para participar desse novo ciclo. Possui universidades\nreconhecidas, institutos federais distribuídos pelo território catarinense, centros de inovação,"
+          },
+          {
+            "id": "governador-3",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA\nDAR\nVICE ANGELA ALBINO\nparques tecnológicos, empresas inovadoras e forte capacidade empreendedora.\nEntretanto, a competitividade futura dependerá cada vez mais da capacidade de produzir\nconhecimento, incorporar tecnologia, formar pessoas qualificadas e transformar ciência em\ninovação.\nMais do que competir por incentivos fiscais, Santa Catarina deverá competir pela qualidade de\nsua infraestrutura, pela qualificação de sua mão de obra, pela capacidade de inovação de suas\nempresas e pela eficiência de suas instituições públicas.\n1.5 Um estado cada vez mais urbano\nSanta Catarina tornou-se predominantemente urbana. As cidades concentram a maior parte da\npopulação, da produção econômica e dos serviços públicos.\nAo mesmo tempo, enfrentam problemas crescentes de mobilidade, habitação, saneamento,\nocupação de áreas de risco, expansão desordenada, congestionamentos e degradação ambiental.\nApesar disso, o Estado ainda carece de uma política estadual consistente de desenvolvimento\nurbano. Os municípios enfrentam isoladamente desafios que extrapolam seus limites\nadministrativos, especialmente nas regiões metropolitanas e nos grandes eixos urbanos.\nAs políticas estaduais precisam reconhecer que o desenvolvimento social e econômico\ndependem, cada vez mais, da qualidade das cidades. Cidades bem planejadas tornam-se mais\nprodutivas, mais sustentáveis e mais inclusivas.\n1.6 As desigualdades territoriais\nSanta Catarina apresenta indicadores sociais superiores à média brasileira. Entretanto, o\ndesenvolvimento permanece distribuído de forma desigual entre suas regiões. Enquanto\ndeterminadas áreas concentram investimentos, infraestrutura e empregos qualificados, outras\nconvivem com perda populacional, dificuldades logísticas, menor dinamismo econômico e acesso\nlimitado a serviços especializados.\nEssas desigualdades não podem ser enfrentadas apenas por políticas compensatórias. Elas\nexigem planejamento territorial, fortalecimento das cidades médias, integração regional,\nvalorização dos arranjos produtivos locais e descentralização dos investimentos públicos.\nO território deve deixar de ser apenas o espaço onde as políticas são executadas. Deve tornar-se"
+          },
+          {
+            "id": "governador-4",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\no principal critério para sua formulação.\n1.7 Um novo ciclo de desenvolvimento\nOs desafios apresentados não representam uma crise de Santa Catarina. Representam a\ntransição entre dois momentos históricos. O modelo que permitiu ao Estado alcançar elevados\nníveis de desenvolvimento precisa agora ser atualizado para responder às transformações do\nséculo XXI.\nEsse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir\nconhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma\nintegrada.\nO futuro de Santa Catarina dependerá menos da quantidade de recursos disponíveis e mais da\ncapacidade de utilizá-los de maneira inteligente, articulada e territorial e socialmente equilibrada.\nÉ a partir desse diagnóstico que este Plano de Governo apresenta suas propostas. Cada\ncompromisso aqui assumido responde a um desafio estrutural aqui identificado. Assim, o\nconjunto das politicas públicas deixa de ser uma coleção de iniciativas isoladas para constituir um\nprojeto integrado de desenvolvimento, orientado por uma visão de longo prazo e pelo\ncompromisso de transformar crescimento econômico em prosperidade compartilhada, justiça\nsocial e territorial e qualidade de vida para todas as pessoas que aqui vivem."
+          },
+          {
+            "id": "governador-5",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA MUDAR\nVICE ANGELA ALBINO\n2. O Estado Coordenador do Desenvolvimento: Planejar para\ntransformar\nO desenvolvimento de Santa Catarina não será resultado apenas da ação do mercado nem\nexclusivamente da atuação do poder público. Ele dependerá da capacidade de construir um\nprojeto coletivo, capaz de integrar investimentos, conhecimento, inovação e participação social\nem torno de objetivos comuns. O papel do Estado, nesse contexto, é coordenar esse esforço.\nNas últimas décadas, o debate público frequentemente apresentou duas visões opostas sobre a\nadministração pública. De um lado, a ideia de um Estado mínimo, limitado à prestação de serviços\nessenciais e à regulação da economia. De outro, a concepção de um Estado excessivamente\ncentralizador, responsável por executar diretamente todas as políticas e atividades econômicas.\nOs desafios do século XXI exigem outro caminho. Santa Catarina precisa de um Estado capaz de\nplanejar, coordenar, induzir investimentos e construir parcerias permanentes com municípios,\nuniversidades, institutos de pesquisa, cooperativas, setor produtivo e sociedade civil. Um Estado\nque não substitui a iniciativa da sociedade, mas que organiza, integra e potencializa as\ncapacidades existentes no território.\nEssa é a concepção de Estado Coordenador do Desenvolvimento.\n2.1 Um Estado que articula capacidades\nSanta Catarina possui um patrimônio institucional raro no Brasil. Universidades públicas e\nprivadas de excelência; Institutos federais presentes em todas as regiões; Centros de pesquisa;\nCooperativas reconhecidas internacionalmente; Empresas inovadoras; Agricultura familiar\norganizada; organização das Micro e Pequenas empresas; Parques tecnológicos; Instituições\nfinanceiras públicas; Municípios com tradição administrativa; Associações inter-Municipais.\nEsses ativos, entretanto, atuam de forma pouco articulada.\nMuitas políticas públicas deixam de alcançar melhores resultados porque falta coordenação,\nplanejamento e integração entre instituições que compartilham objetivos semelhantes e o\ngoverno estadual deve assumir o papel de articulador dessa inteligência coletiva.\nO desenvolvimento precisa deixar de ser responsabilidade de uma única secretaria ou instituição\ne passar a ser resultado da cooperação entre todo o sistema público e a sociedade."
+          },
+          {
+            "id": "governador-6",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nRA\nMUDA\nVICE ANGELA ALBINO\n2.2 Planejamento como instrumento de governo\nPlanejar não significa controlar rigidamente a sociedade nem impor soluções centralizadas.\nPlanejar significa construir uma visão compartilhada de futuro. Significa estabelecer prioridades,\norganizar investimentos, definir metas, avaliar resultados e adaptar continuamente as politicas\npúblicas às transformações da realidade.\nDurante os últimos anos, o planejamento foi substituído por decisões fragmentadas,\ndeterminadas por demandas imediatas ou por interesses setoriais. Essa lógica reduz a eficiência\ndos investimentos públicos, dificulta a integração das políticas e amplia as desigualdades entre os\nterritórios.\nNosso governo retomara o planejamento como função permanente do Estado. O Plano Santa\nCatarina do Campo Democrático será o principal instrumento dessa estratégia, articulando\ninfraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente,\nhabitação, mobilidade e adaptação climática em uma única visão de longo prazo.\n2.3 0 território como referência das políticas públicas\nEste plano parte de um princípio fundamental: as políticas públicas devem responder às\ncaracterísticas dos territórios. Santa Catarina é um estado diverso: as necessidades do Oeste\ndiferem das do Litoral; os desafios da Serra não são os mesmos do Vale do Itajaí, nem do Sul do\nEstado; as oportunidades do Extremo Oeste não são iguais às da Grande Florianópolis.\nPor isso, as políticas estaduais não podem ser formuladas exclusivamente a partir da estrutura\nadministrativa do governo. Devem considerar as dinâmicas econômicas, sociais, ambientais e\nculturais de cada região.\nO território deixa de ser apenas o espaço onde as políticas são executadas e passa a orientar sua\nformulação, implementação e avaliação. Essa perspectiva permitirá fortalecer as cidades médias,\nintegrar áreas metropolitanas, apoiar os pequenos municípios e reduzir desigualdades regionais.\n2.4 Conhecimento para governar melhor\nNenhum governo consegue enfrentar os desafios contemporâneos sem produzir conhecimento\nsobre sua própria realidade. A transformação digital, a inteligência artificial, as mudanças\nclimáticas e a velocidade das transformações econômicas exigem decisões baseadas em\nevidências. Santa Catarina dispõe de uma das mais importantes redes públicas de produção de\nconhecimento do país. Universidades, institutos federais, centros tecnológicos e fundações"
+          },
+          {
+            "id": "governador-7",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nproduzem diariamente pesquisas que podem qualificar a formulação de políticas públicas.\nNosso governo transformará esse patrimônio científico em instrumento permanente de gestão.\nSerá criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados,\nobservatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas\npúblicas.\nPlanejar deixará de ser um exercício esporádico para tornar-se uma atividade permanente do\nEstado.\n2.5 Cooperação como método de governo\nOs grandes desafios contemporâneos ultrapassam as competências de um único órgão\ngovernamental: mobilidade depende de habitação; habitação depende de infraestrutura;\ninfraestrutura depende de planejamento territorial; planejamento depende de informações\nconfiáveis; desenvolvimento econômico depende de educação, ciência e inovação; combate aos\nefeitos das mudanças climáticas exige integração entre meio ambiente, defesa civil, agricultura,\ncidades e infraestrutura.\nPor essa razão, nosso governo adotará a cooperação institucional como princípio permanente de\ngestão. Secretarias deixarão de atuar de forma isolada e passarão a desenvolver programas\nintegrados, organizados em torno das missões estratégicas deste Plano. Da mesma forma, o\nEstado fortalecerá mecanismos permanentes de cooperação com a União e com os\nmunicípios, respeitando sua autonomia, oferecendo apoio técnico, compartilhando informações\ne ampliando a capacidade de implementação das políticas públicas.\n2.6 Desenvolvimento com responsabilidade fiscal\nO fortalecimento do planejamento não significa ampliação indiscriminada da máquina pública. Ao\ncontrário, a boa gestão exige responsabilidade fiscal, eficiência administrativa, transparência e\navaliação permanente dos resultados. Santa Catarina dispõe de uma situação fiscal que permite\nampliar investimentos estratégicos sem comprometer o equilíbrio das contas públicas.\nNosso compromisso é utilizar essa capacidade de forma inteligente, priorizando\ninvestimentos que gerem efeitos duradouros sobre o desenvolvimento econômico, a\ninclusão social e a qualidade de vida. Cada real investido deverá produzir benefícios\npermanentes para a sociedade."
+          },
+          {
+            "id": "governador-8",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA\nMUDAR\nVICE ANGELA ALBINO\n2.7 Um governo orientado por missões\nEste Plano organiza a atuação do Estado em torno de grandes missões estratégicas. Essa\nabordagem substitui a lógica fragmentada da administração pública por uma visão integrada, na\nqual diferentes órgãos e instituições atuam conjuntamente para enfrentar desafios complexos.\nEssa organização permitirá maior coordenação entre políticas públicas, melhor utilização dos\nrecursos disponíveis e maior transparência na avaliação dos resultados. Mais do que administrar\nestruturas administrativas, nosso governo pretende mobilizar capacidades, construir consensos e\nliderar um novo ciclo de desenvolvimento para Santa Catarina.\nO Estado Coordenador do Desenvolvimento é, portanto, a expressão de um compromisso com a\neficiência, a transparência, a inovação e a democracia. Um Estado que planeja, articula e induz,\nsem sufocar a iniciativa da sociedade; que atua em conjunto com a União e fortalece municípios\nsem substituir sua autonomia; que transforma conhecimento em políticas públicas; e que faz do\nplanejamento territorial o eixo de um projeto de desenvolvimento capaz de gerar prosperidade,\nreduzir desigualdades e ampliar a qualidade de vida em todas as regiões de Santa Catarina."
+          },
+          {
+            "id": "governador-9",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n3. As Missões Estratégicas para um Novo Ciclo de Desenvolvimento\nOs desafios identificados demonstram que Santa Catarina precisa de um governo capaz de\nintegrar políticas públicas, superar a fragmentação administrativa e orientar suas ações por\nobjetivos estratégicos de longo prazo.\nTradicionalmente, os planos de governo são organizados segundo a estrutura das secretarias de\nEstado. Embora esse modelo facilite a organização administrativa, ele dificulta a articulação entre\npolíticas que dependem umas das outras. Por essa razão, este Plano de Governo adota uma\nabordagem orientada por missões estratégicas.\nCada missão representa um grande compromisso do Estado com a sociedade catarinense e\nreúne políticas públicas de diferentes áreas em torno de um mesmo objetivo. Essa forma de\norganização permite integrar instituições, otimizar recursos, estabelecer prioridades e avaliar\nresultados de forma mais transparente.\nAs missões apresentadas a seguir traduzem a visão de desenvolvimento que orienta este plano e\nestruturam todas as ações do governo."
+          },
+          {
+            "id": "governador-10",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n1ª MISSÃO: UM ESTADO QUE PLANEJA E COORDENA O\nDESENVOLVIMENTO\nO planejamento voltará a ocupar posição central na administração pública. O governo fortalecerá\nsua capacidade de formular estratégias de longo prazo, coordenar investimentos, integrar\npolíticas públicas e avaliar resultados. O território será a principal referência para a organização\ndas ações governamentais.\nEssa missão compreende a modernização da gestão pública, a transformação digital, a\ntransparência, o planejamento regional, a inteligência territorial, a avaliação permanente de\npolíticas públicas e o fortalecimento da cooperação do Estado com a União, os municípios, com\nas instituições e com Sociedade Civil.\nProgramas Estruturantes\n1. Programa Estado Coordenador do Desenvolvimento\nFortalecer a capacidade do Estado de formular estratégias, coordenar investimentos e integrar\npolíticas públicas orientadas ao desenvolvimento sustentável.\nO programa promoverá:\n• planejamento estrategico de longo prazo;\n• coordenação intersetorial das políticas públicas;\n• integração entre desenvolvimento econômico, social, territorial e ambiental;\n• fortalecimento da capacidade institucional do Estado;\n• acompanhamento das prioridades estratégicas do governo."
+          },
+          {
+            "id": "governador-11",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n2. Programa Planejamento Territorial e Regional\nInstituir o território como referência para o planejamento governamental.\nO programa compreenderá:\n• fortalecimento das regiões de planejamento;\n• elaboração de estratégias regionais de desenvolvimento;\n• integração das políticas estaduais nos territórios;\n• apoio aos consórcios públicos e associações de municípios;\n3. Programa Governo Digital\nExpandir a transformação digital do Estado para ampliar a eficiência administrativa e facilitar o\nacesso da população aos serviços públicos.\nO programa promoverá:\n• digitalização dos serviços públicos;\n• integração de plataformas governamentais;\n• automação de processos administrativos;\n• segurança da informação.\nMetas Estratégicas\n• Instituir um sistema estadual permanente de planejamento de longo prazo\n• Criar o Instituto Catarinense de Indicadores.\n• Fortalecer observatórios estaduais para subsidiar decisões estratégicas.\n• Ampliar a transparência e a disponibilização de dados públicos.\n• Integrar planejamento, orçamento e gestão por resultados.\n• Consolidar o território como referência para a formulação das políticas públicas.\n• Fortalecer o planejamento regional e reduzir as desigualdades sociais e territoriais.\n• Ampliar a cooperação do Estado com a União, municípios e consórcios públicos.\n• Apoiar estratégias regionais de desenvolvimento baseadas nas potencialidades locais.\n• Simplificar processos administrativos e ampliar a eficiência da gestão pública.\n• Expandir a digitalização dos serviços estaduais.\n• Melhorar a qualidade do atendimento ao cidadão.\n• Consolidar redes permanentes de cooperação entre governo, universidades, setor produtivo e\nsociedade civil.\n• Fortalecer os mecanismos de participação social na formulação e avaliação das políticas\npúblicas.\n• Ampliar a transparência ativa e o acesso às informações públicas."
+          },
+          {
+            "id": "governador-12",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA\nMUDAR\nVICE ANGELA ALBINO\n2ª MISSÃO: ERRADICAR A POBREZA EXTREMA E REDUZIR AS\nDESIGUALDADES\nSanta Catarina apresenta indicadores sociais médios que mascaram desigualdades sociais\nimportantes. Milhares de famílias vivem em situação de pobreza extrema, enfrentando\ninsegurança alimentar, moradia precária, dificuldade de acesso ao trabalho, à educação, à saúde\ne aos serviços públicos essenciais.\nA pobreza não resulta apenas da insuficiência de renda. Ela expressa a combinação de diferentes\nformas de exclusão que limitam as oportunidades de desenvolvimento das pessoas e reproduzem\ndesigualdades entre gerações e entre territórios.\nErradicar a pobreza extrema constitui um compromisso ético e uma condição para o\ndesenvolvimento sustentável de Santa Catarina. Nenhuma sociedade pode considerar-se\nplenamente desenvolvida enquanto parte de sua população permanecer privada das condições\nmínimas para viver com dignidade.\nNosso governo assumirá como prioridade a superação da pobreza extrema por meio da\nintegração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de\ndesenvolvimento humano.\nProgramas Estruturantes\n1. Programa Santa Catarina sem Pobreza Extrema\nInstituir uma estratégia estadual integrada para erradicar a pobreza extrema, articulando políticas\nde transferência de renda, inclusão produtiva e acesso aos serviços públicos."
+          },
+          {
+            "id": "40-merisio-2",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA\nUDAR\nVICE ANGELA ALBINO\nO programa promoverá:\n• integração entre políticas sociais;\n• fortalecimento do Cadastro Único;\n• busca ativa das famílias em situação de extrema pobreza;\n• articulação entre Estado e municípios;\n• monitoramento permanente dos indicadores sociais.\n2. Programa Segurança Alimentar e Nutricional\nGarantir o direito humano à alimentação adequada e combater a insegurança alimentar.\nO programa compreenderá:\n• Fortalecimento da agricultura familiar para abastecimento local, priorizando a produção\norgânica;\n• ampliação das cozinhas comunitárias e bancos de alimentos;\n• apoio aos restaurantes populares;\n- combate ao desperdício de alimentos;\n• educação alimentar e nutricional;\n• fortalecimento do Sistema Estadual de Segurança Alimentar;\n• Um sistema onde os agricultores familiares sejam fornecedores da merenda escolar.\n3. Programa Inclusão Produtiva e Geração de Renda\nPromover autonomia econômica por meio da qualificação profissional, do empreendedorismo e\nda inserção produtiva.\nO programa apoiará:\n• qualificação profissional;\n• intermediação de mão de obra;\n• empreendedorismo popular;\n• economia solidária;\n• microcrédito produtivo;\n• apoio aos pequenos empreendimentos familiares;\n• inclusão produtiva de mulheres, jovens e pessoas em situação de vulnerabilidade.\n4. Programa Primeira Infância e Desenvolvimento Humano\nAmpliar a proteção integral às crianças na primeira infância e suas famílias."
+          },
+          {
+            "id": "governador-13",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa promovera:\n• fortalecimento da atenção integral à primeira infância;\n• integração entre saúde, educação e assistência social;\n• apoio às famílias em situação de vulnerabilidade;\n• prevenção da violência infantil;\n• acompanhamento do desenvolvimento infantil.\n5. Programa Assistência Social Forte\nFortalecer o Sistema Único de Assistência Social (SUAS) como política pública estruturante.\nO programa compreenderá:\n• fortalecimento dos CRAS e CREAS;\n• apoio aos municípios;\n• qualificação dos serviços socioassistenciais;\n• valorização dos trabalhadores do SUAS;\n• inovação na gestão da assistência social.\n6. Programa Habitar com Dignidade\nIntegrar habitação, regularização fundiária e melhoria das condições de vida das famílias em\nsituação de vulnerabilidade.\nO programa apoiará:\n• melhoria habitacional;\n• urbanização de assentamentos precários;\n• regularização fundiária;\n• assistência técnica para habitação de interesse social (ATHIS);\n• prevenção da ocupação de áreas de risco.\n7. Programa Territórios Prioritários\nConcentrar investimentos públicos nos territórios com maiores vulnerabilidades sociais.\nO programa promovera:\n• planejamento territorial integrado a partir de indicadores;\n• ações intersetoriais;"
+          },
+          {
+            "id": "governador-14",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• melhoria da infraestrutura urbana;\n• qualificação dos equipamentos públicos;\n• fortalecimento da presença do Estado nas áreas mais vulneráveis.\n8. Programa Igualdade de Oportunidades\nReduzir desigualdades no acesso à educação, saúde, cultura, esporte e inclusão digital.\nO programa apoiará:\n• permanência escolar;\n• inclusão digital;\n- acesso aos serviços públicos;\n• mobilidade para populações vulneráveis;\n• fortalecimento das políticas voltadas à juventude;\n• implantação das políticas de cuidado, em especial de pessoas idosas e pessoas com\ndeficiência.\nMetas Estratégicas\n• Reduzir progressivamente a população em situação de pobreza extrema, inclusive a\npopulação em situação de rua, por meio da integração das políticas públicas.\n• Fortalecer mecanismos de busca ativa e acompanhamento das famílias mais vulneráveis.\n• Integrar as ações estaduais aos programas federais e municipais de proteção social.\n• Fortalecer a produção e distribuição de alimentos provenientes da agricultura familiar.\n• Expandir a rede de equipamentos públicos de segurança alimentar.\n• Ampliar oportunidades de qualificação profissional e geração de renda.\n• Expandir políticas de microcrédito, associativismo e empreendedorismo popular e economia\nsolidária.\n• Integrar políticas de trabalho, assistência social e desenvolvimento econômico.\n• Fortalecer o SUAS em todos os municípios catarinenses.\n• Qualificar os serviços prestados pelos CRAS e CREAS.\n• Valorizar os trabalhadores da assistência social.\n• Priorizar investimentos públicos nos territórios com maiores indicadores de vulnerabilidade\nsocial.\n• Integrar políticas de habitação, educação, saúde, mobilidade e infraestrutura nos territórios\nprioritários,\n• Reduzir desigualdades entre regiões e municípios.\n• Ampliar o acesso da população vulnerável aos serviços públicos essenciais.\n• Fortalecer políticas voltadas à primeira infância, juventude, mulheres, pessoas idosas e"
+          },
+          {
+            "id": "governador-15",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\npessoas com deficiência.\n• Expandir políticas de inclusão digital e permanência escolar.\n• Implantar um sistema estadual de monitoramento da pobreza multidimensional.\n• Produzir indicadores territoriais para orientar o planejamento das políticas sociais.\n• Avaliar continuamente os resultados das políticas de combate à pobreza.\n3ª MISSÃO: DESENVOLVIMENTO ECONÔMICO, TRABALHO E\nINOVAÇÃO\nDanta Catarina iniciará um novo ciclo de desenvolvimento baseado na inovação, na diversificação\nprodutiva, na agregação de valor, na sustentabilidade e na geração de empregos qualificados.\nO Estado atuará como indutor do desenvolvimento econômico, fortalecendo a indústria, a\neconomia do conhecimento, os arranjos produtivos locais (APLs), a economia criativa, as micro e\npequenas empresas, as cooperativas, a agricultura familiar, a economia solidária e os novos\nsetores tecnológicos.\nO desenvolvimento econômico será tratado como instrumento para ampliar oportunidades e\nreduzir desigualdades entre as regiões.\nProgramas Estruturantes\n1. Programa Santa Catarina 2040\nInstituir uma estratégia estadual de desenvolvimento econômico de longo prazo, articulando\nplanejamento, inovação, infraestrutura e sustentabilidade."
+          },
+          {
+            "id": "40-merisio-3",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa promovera:\n• planejamento estratégico da economia catarinense;\n• identificação das vocações regionais;\n• fortalecimento das cadeias produtivas estratégicas;\n• articulação entre investimentos públicos e privados;\n• monitoramento permanente dos indicadores econômicos.\n2. Programa Arranjos Produtivos Locais (APLs)\nFortalecer os Arranjos Produtivos Locais como instrumento de desenvolvimento regional.\nO programa apoiará:\n• governança dos APLs;\n• inovação tecnológica;\n• qualificação profissional;\n• cooperação empresarial;\n• acesso ao crédito;\n• inserção em novos mercados;\n• internacionalização.\nCada região do Estado contará com políticas específicas voltadas às suas vocações econômicas.\n3. Programa Economia do Conhecimento\nTransformar conhecimento, ciência e inovação em motores do desenvolvimento econômico.\nO programa apoiará:\n• startups;\n• empresas de base tecnológica;\n• parques tecnológicos;\n• incubadoras;\n• inteligência artificial;\n• biotecnologia;\n• economia digital;\n• tecnologias para a transição energética.\nUniversidades, Institutos Federais, centros de pesquisa e setor produtivo atuarão de forma\nintegrada na geração de inovação."
+          },
+          {
+            "id": "governador-16",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n4. Programa Micro e Pequenas Empresas Fortes\nFortalecer os pequenos negócios como principais geradores de emprego e renda.\nO programa promoverá:\n• simplificação do ambiente de negócios;\n• acesso ao crédito;\n• inovação;\n• qualificação empresarial;\n• digitalização;\n• internacionalização;\n• compras públicas voltadas às micro e pequenas empresas.\n5. Programa Cooperativismo e Economia Solidária\nFortalecer cooperativas, associações e empreendimentos da economia solidária como\ninstrumentos de desenvolvimento regional.\nO programa apoiará:\n• inovação na gestão;\n• agregação de valor;\nacesso ao crédito;\ncomercialização;\n• redes cooperativas;\n• assistência técnica;\n• qualificação profissional.\n6. Programa Economia Verde e Bioeconomia\nPromover novos modelos de desenvolvimento baseados no uso sustentável dos recursos\nnaturais.\nO programa compreenderá:\n. bioeconomia;\n• economia circular;\n• tecnologias limpas;\n• energias renováveis;\n• economia do mar;\n• valorização da biodiversidade;"
+          },
+          {
+            "id": "40-merisio-4",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• agregação de valor aos recursos naturais.\n7. Programa Desenvolvimento Regional Competitivo\nReduzir desigualdades territoriais por meio da diversificação econômica e da valorização das\npotencialidades regionais.\nO programa apoiará:\n• planejamento regional;\n• infraestrutura econômica;\n• inovação regional;\n• fortalecimento dos municípios de pequeno e médio porte;\n• apoio às economias locais;\n• integração entre desenvolvimento econômico e planejamento territorial.\n8. Programa Turismo Local\nSanta Catarina tem a atividade turística como vocação em todas as regiões. No entanto, os\ninvestimentos em planejamento, divulgação e suporte para o turismo local são bastante desiguais.\nO turismo precisa trazer melhorias para as regioes e não causar mais impactos ambientais e\nsociais.\nO programa compreenderá:\n• plano de investimento e incentivos ao turismo, pactuado com os municípios;\n- articulação de parcerias público privadas (PPP) com manutenção e ampliação dos espaços\npúblicos;\n• fortalecimento do turismo sustentável, de base comunitária.\nO programa terá como objetivos:\n• valorização do trabalhador rural;\n• geração de emprego e renda;\n• agregação de valor aos produtos agrícolas;\n• divulgação e reconhecimento da cultura das populações quilombolas, indígenas e tradicionais.\n9. Programa Complexo Econômico da Saúde\nNosso Estado tem diversas indústrias da cadeia de produção de equipamentos e insumos para a\nárea da saúde, que deve ser estimulado e fortalecido para garantir a autonomia de atendimento"
+          },
+          {
+            "id": "governador-17",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\ndas necessidades internas e externas destes materiais.\nO programa terá como objetivos:\n• implantação, em âmbito estadual, da Estratégia Nacional do Complexo Econômico-Social da\nIndústria da Saúde;\n• estímulo e apoio à produção, inovação e desenvolvimento de materiais da cadeia de\nsuprimentos da saúde em território catarinense;\n• priorização de compras públicas das micro e pequenas empresas catarinenses para\natendimento das demandas da saúde.\nMetas Estratégicas\n• Elaborar de forma participativa e implementar a Estratégia Santa Catarina 2040 para orientar\no desenvolvimento econômico de longo prazo.\n• Integrar planejamento econômico, inovação, infraestrutura e desenvolvimento regional.\n• Fortalecer a capacidade do Estado de coordenar investimentos estratégicos.\n• Modernizar a base industrial catarinense por meio da transformação digital e da inovação.\n• Ampliar investimentos em pesquisa, desenvolvimento e inovação em parceria com\nuniversidades e setor produtivo.\n• Incentivar a adoção de tecnologias associadas à Indústria 4.0 e à transição para uma economia\nde baixo carbono.\n• Fortalecer os Arranjos Produtivos Locais em todas as regiões do Estado.\n• Apoiar estratégias econômicas construídas a partir das vocações regionais.\n• Reduzir as desigualdades territoriais por meio da diversificação produtiva.\n• Expandir o acesso ao crédito, à inovação e aos mercados para micro e pequenas empresas.\n• Fortalecer políticas de simplificação administrativa e digitalização dos pequenos negócios.\n• Ampliar a participação das micro e pequenas empresas nas compras públicas estaduais.\n• Fortalecer cooperativas e empreendimentos da economia solidária como instrumentos de\ngeração de renda e desenvolvimento local.\n• Expandir programas de assistência técnica, inovação e comercialização.\n• Ampliar programas de qualificação profissional alinhados às demandas das economias\nregionais.\n• Fortalecer politicas de inclusão produtiva para jovens, mulheres e trabalhadores em processo\nde reconversão profissional.\n• Integrar educação profissional, inovação e desenvolvimento econômico.\n• Expandir a participação das empresas catarinenses em mercados internacionais.\n- Atrair investimentos estratégicos para setores intensivos em conhecimento e inovação.\n• Fortalecer redes internacionais de cooperação econômica e tecnológica."
+          },
+          {
+            "id": "governador-18",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• Incentivar investimentos em bioeconomia, economia circular e energias renováveis.\n• Fortalecer cadeias produtivas ligadas à economia do mar e aos produtos de maior valor\nagregado.\n• Integrar competitividade econômica, sustentabilidade ambiental e inovação tecnológica.\n• Descentralizar investimentos, fortalecendo a produção cultural regional.\n• Apoiar empreendimentos e redes da economia criativa em todas as regiões.\n• Ampliar mecanismos de financiamento e capacitação para trabalhadores da cultura.\n• Descentralizar os recursos do Fundo Estadual de Turismo para todas as regiões do Estado,\nespecialmente para aquelas mais vulneráveis, para ampliação da geração de emprego e renda\nlocal;\n- Implantar Plano Turístico Estadual, priorizando o turismo de base comunitária e em\nconformidade com as potencialidades locais, para o desenvolvimento de atividades turísticas\nbaseadas no tripé ambiental, social e econômico.\n• Criar uma agenda turística que reconheça a diversidade cultural, de destinos e de produtos\ncatarinenses, como forma de enfrentar a sazonalidade do setor.\n• Elaborar políticas públicas para apoiar as iniciativas da área do turismo rural que reconheçam\ne promovam a diversidade geográfica, climática e cultural de Santa Catarina.\n• Estimular parcerias para o desenvolvimento produtivo da cadeia de insumos de materiais da\nsaúde, vacinas e medicamentos, incluindo transferência de tecnologia;\n• Promover linhas de crédito para pesquisa e inovação para medicamentos e materiais que\nsejam de alta relevância para SUS;\n• Reduzir a vulnerabilidade do SUS quanto à falta de medicamentos, vacinas e materiais\nnecessários para o atendimento das unidades de saúde do Estado."
+          },
+          {
+            "id": "governador-19",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\nMISSÃO: CIDADES PARA VIVER MELHOR\nAs cidades concentram a maior parte da população catarinense e representam o principal espaço\nde realização da vida econômica e social.\nEsta missão estabelece uma Política Estadual de Desenvolvimento Urbano capaz de integrar\nhabitação, mobilidade, saneamento, drenagem, infraestrutura, regularização fundiária,\nplanejamento territorial, desenvolvimento metropolitano e adaptação climática.\no objetivo é construir cidades mais inclusivas, resilientes, acessíveis, sustentáveis e preparadas\npara enfrentar os desafios do século XXI.\nProgramas Estruturantes\n1. Programa Desenvolvimento da Política Estadual de Desenvolvimento Urbano\nInstituir uma política permanente de planejamento urbano integrada às estratégias de\ndesenvolvimento regional e adaptação climática.\nO programa promoverá:\n• elaboração do Plano Estadual de Desenvolvimento Urbano;\n• apoio técnico aos municípios na revisão dos Planos Diretores;\n• fortalecimento do planejamento territorial;\n• integração entre políticas urbanas, ambientais, habitacionais e econômicas;\n• produção de informações territoriais para subsidiar o planejamento.\n2. Programa Habitação Digna"
+          },
+          {
+            "id": "governador-20",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nAmpliar o acesso à moradia adequada, reduzindo o déficit habitacional e promovendo cidades\nmais inclusivas.\nO programa compreenderá:\n• criação de órgão estadual responsável pela política habitacional;\n• produção de habitação de interesse social;\n• urbanização de assentamentos precários;\n• regularização fundiária;\n• melhoria habitacional;\n• prevenção da ocupação de áreas de risco;\n• fortalecimento da Assistência Técnica para Habitação de Interesse Social (ATHIS);\n• apoio aos municípios na elaboração de planos locais de habitação.\n3. Programa Mobilidade Sustentável\nPromover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável.\nO programa apoiará:\n• implantação da tarifa zero nos municípios;\n• transporte coletivo regional e metropolitano;\n• corredores estruturantes de transporte;\n• infraestrutura para pedestres;\n• rede cicloviária;\n• acessibilidade universal;\n• sistemas inteligentes de mobilidade;\n• estudos para implantação de sistemas de média e alta capacidade, conforme as\ncaracterísticas de cada região;\n• implantação de modo aquaviário.\n4. Programa Saneamento e Segurança Hídrica\nUniversalizar o acesso ao saneamento básico e fortalecer a gestão integrada das águas.\nO programa compreenderá:\n• fortalecimento do Sistema Casan;\n• abastecimento de água;\n• coleta e tratamento de esgoto;\n• drenagem urbana;"
+          },
+          {
+            "id": "governador-21",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• manejo das águas pluviais;\n• gestão de resíduos sólidos;\n• revisão do plano estadual de Recursos Hídricos;\n• recuperação de bacias hidrográficas;\n• apoio técnico aos municípios para elaboração de planos e projetos.\n5. Programa Centros Urbanos Vivos\nPromover a requalificação dos centros urbanos, valorizando patrimônio, comércio, habitação e\nespaços públicos.\nO programa apoiará:\n• revitalização de áreas centrais;\n• reutilização de imóveis ociosos;\n• incentivo à moradia nos centros urbanos;\n• recuperação do patrimônio histórico;\n• qualificação dos espaços públicos.\n6. Programa Desenvolvimento Metropolitano\nFortalecer a governança das regiões metropolitanas e aglomerações urbanas.\nO programa promoverá:\n• elaboração e implementação dos Planos de Desenvolvimento Urbano Integrado (PDUIS);\n• fortalecimento das instâncias metropolitanas de governança;\n• integração do transporte, habitação, saneamento e uso do solo;\n• apoio técnico aos municípios para gestão compartilhada de funções públicas de interesse\ncomum.\n7. Programa Infraestrutura Verde e Adaptação Climática\nIncorporar soluções baseadas na natureza e infraestrutura verde ao planejamento das cidades.\nO programa compreenderá:\n• parques urbanos;\n• corredores ecológicos;\n• recuperação de rios urbanos;\n• jardins de chuva e jardins de inundação;"
+          },
+          {
+            "id": "governador-22",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nUDAR\nVICE ANGELA ALBINO\n• arborização urbana;\n• ampliação das áreas permeáveis;\n• adaptação das cidades aos eventos climáticos extremos.\n• fortalecimento do sistema estadual de unidades de conservação.\n8. Programa Apoio ao Desenvolvimento Municipal\nFortalecer os municípios de menor capacidade técnica para planejar e executar políticas urbanas.\nO programa promoverá:\n• assistência técnica permanente;\n• elaboração de projetos executivos;\n• capacitação de equipes municipais;\n• apoio à captação de recursos;\n• fortalecimento dos consórcios públicos e associações de municípios.\n9. Programa Espaços Públicos para a Vida\nValorizar os espaços públicos como locais de convivência, cultura, esporte e cidadania.\nO programa apoiará:\n• Implantação de parques;\n• Implantação de praças;\n• Implantação de áreas de lazer;\n• Implantação de equipamentos comunitários;\n• acessibilidade universal;\n• ocupação cultural dos espaços públicos;\n• qualificação da paisagem urbana.\nMetas Estratégicas\n• Instituir a Política Estadual de Desenvolvimento Urbano.\n• Elaborar o Plano Estadual de Desenvolvimento Urbano.\n• Apoiar os municípios na atualização dos Planos Diretores e dos instrumentos de planejamento\nterritorial.\n- Reduzir progressivamente o déficit habitacional qualitativo e quantitativo.\n• Expandir programas de produção habitacional, urbanização de assentamentos precários e\nregularização fundiária."
+          },
+          {
+            "id": "governador-23",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• Ampliar a Assistência Técnica para Habitação de Interesse Social (ATHIS) em parceria com\nmunicípios, universidades e entidades profissionais.\n• Fortalecer sistemas integrados de transporte coletivo nas regiões metropolitanas e principais\ncentros urbanos.\n• Expandir a infraestrutura para pedestres e ciclistas.\n• Avançar na universalização do abastecimento de água, coleta e tratamento de esgoto.\n• Apoiar os municípios na elaboração de projetos para ampliação da infraestrutura de\nsaneamento.\n• Implantar mecanismos permanentes de governança metropolitana.\n• Apoiar a elaboração e implementação dos Planos de Desenvolvimento Urbano Integrado.\n• Integrar politicas de mobilidade, habitação, saneamento e desenvolvimento econômico nas\nregiões metropolitanas.\n• Incorporar soluções baseadas na natureza aos investimentos urbanos.\n• Ampliar parques urbanos, áreas verdes e infraestrutura verde.\n• Reduzir a ocupação de áreas de risco por meio do planejamento urbano e da política\nhabitacional.\n• Fortalecer a capacidade técnica dos municípios para elaborar projetos e captar recursos.\n• Implantar programas permanentes de formação em planejamento urbano.\n• Ampliar a cooperação técnica entre Estado, municípios, universidades e consórcios públicos.\n• Requalificar centros urbanos e áreas públicas estratégicas.\n• Ampliar a oferta de parques, praças e equipamentos públicos de convivência.\n• Promover cidades mais acessíveis, inclusivas e voltadas às pessoas.\n• Revisar e atualizar o Plano Estadual de Recursos Hídricos.\n• Incentivar a execução e atualização dos Planos de Bacias Hidrográficas."
+          },
+          {
+            "id": "governador-24",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n5ª MISSÃO: EDUCAÇÃO, CIÊNCIA E CONHECIMENTO PARA\nTRANSFORMAR SANTA CATARINA\nO conhecimento constitui o principal ativo estratégico do desenvolvimento contemporâneo.\nO governo fortalecerá a educação pública em todos os níveis, valorizando professores, ampliando\na permanência estudantil, qualificando a educação profissional e consolidando uma ampla rede\nde cooperação entre escolas, universidades, institutos federais, centros de pesquisa e setor\nprodutivo.\nCiência, tecnologia e inovação serão tratadas como políticas de desenvolvimento e não apenas\ncomo políticas educacionais.\nProgramas Estruturantes\n1. Programa Educação para o futuro\nPromover a melhoria da qualidade da educação básica, assegurando aprendizagem, inclusão,\ninovação pedagógica e redução das desigualdades educacionais.\nO programa apoiará:\n• fortalecimento da alfabetização na idade certa;\n• melhoria da aprendizagem em todas as etapas da educação básica;\n• inovação pedagógica;\n• educação integral;\n• combate à evasão escolar;\n• redução das desigualdades regionais de desempenho."
+          },
+          {
+            "id": "governador-25",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n2. Programa Valorização dos Profissionais da Educação\nFortalecer a carreira docente e valorizar os profissionais da educação como condição para a\nmelhoria da qualidade do ensino.\nO programa compreenderá:\n• realização regular de concurso para professores efetivos, com garantia de cotas para pessoas\nnegras, indígenas, egressas da rede pública de ensino e pessoas com deficiência;\n• valorização salarial e profissional, com fortalecimento do plano de carreira;\n• formação inicial e continuada;\n• atualização pedagógica;\n• melhoria das condições de trabalho;\n• inovação na gestão escolar;\n• fortalecimento das equipes pedagógicas.\n3. Programa Escola Digital e Inovadora\nModernizar a infraestrutura das escolas estaduais e ampliar o uso de tecnologias educacionais.\nO programa apoiará:\n• conectividade de alta velocidade;\n• equipamentos tecnológicos;\n• recursos digitais de aprendizagem;\n• plataformas educacionais;\n• laboratórios de inovação;\n• formação digital de professores e estudantes.\n4. Programa Educação Profissional e Tecnológica\nExpandir a educação profissional integrada às estratégias de desenvolvimento regional.\nO programa promoverá:\n• ampliação da oferta de cursos técnicos;\n• integração entre ensino médio e educação profissional;\n• formação voltada aos arranjos produtivos locais;\n• qualificação profissional ao longo da vida;\n• parceria com Institutos Federais, Sistema S, universidades e setor produtivo."
+          },
+          {
+            "id": "governador-26",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n5. Programa Universidade para o Desenvolvimento Catarinense\nFortalecer o papel das universidades públicas e comunitárias como instituições estratégicas para\no desenvolvimento do Estado.\nO programa apoiará:\n• ampliação do acesso ao ensino superior;\n• apoio à UDESC, com autonomia total, inclusive orçamentária;\n• cooperação com as universidades e institutos federais;\n• democratização do acesso às vagas, com adoção de cotas para pessoas negras, indígenas,\negressas da rede pública e pessoas com deficiênci\n• interiorização das oportunidades de formação superior.\nAs universidades serão reconhecidas como parceiras permanentes do planejamento, da inovação\ne do desenvolvimento regional.\n6. Programa Permanência e Inclusão Educacional\nAmpliar as oportunidades de acesso, permanência e conclusão da educação em todos os níveis.\nO programa compreenderá:\n• transporte escolar;\n- alimentação escolar;\n• apoio à permanência estudantil;\n• acessibilidade;\n• educação inclusiva;\n• políticas voltadas aos estudantes em situação de vulnerabilidade.\n7. Programa Ciência, Tecnologia e Inovação\nFortalecer o sistema estadual de ciência, tecnologia e inovação como vetor do desenvolvimento\neconômico e social.\nO programa compreenderá:\n• fortalecimento da FAPESC;\n• apoio aos grupos de pesquisa;\n• redes de inovação;\n• parques tecnológicos;\n• incubadoras:"
+          },
+          {
+            "id": "governador-27",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• internacionalização da pesquisa;\n• transferência de conhecimento para a sociedade.\n8. Programa Internacionalização do Conhecimento\nAmpliar a inserção internacional das instituições catarinenses de ensino, pesquisa e inovação.\nO programa promovera:\n• cooperação científica internacional;\n• mobilidade acadêmica;\n- redes de pesquisa;\n• atração de pesquisadores;\n• participação em projetos internacionais;\n• intercâmbio de estudantes e docentes.\nMetas Estratégicas\n• Melhorar os indicadores de aprendizagem em todas as etapas da educação básica.\n• Reduzir as desigualdades educacionais entre regiões e redes de ensino.\n• Ampliar progressivamente a oferta de educação em tempo integral.\n• Expandir programas permanentes de formação continuada.\n• Valorizar a carreira docente e fortalecer as equipes pedagógicas.\n• Modernizar a gestão escolar com foco na aprendizagem.\n• Garantir conectividade de qualidade em todas as escolas estaduais.\n• Modernizar laboratórios e ambientes de aprendizagem.\n• Ampliar o uso pedagógico das tecnologias digitais.\n• Expandir a oferta de educação técnica articulada às demandas regionais.\n• Fortalecer a integração entre ensino médio, educação profissional e mercado de trabalho.\n• Ampliar parcerias com Institutos Federais, Sistema S e setor produtivo.\n- Ampliar oportunidades de acesso e permanência no ensino superior.\n• Fortalecer a UDESC e a cooperação com as universidades e institutos federais e o com\nSistema ACAFE.\n• Expandir programas de bolsas e apoio à permanência estudantil, especialmente para\nestudantes de baixa renda.\n• Ampliar os investimentos estaduais em ciência, tecnologia e inovação.\n• Fortalecer a FAPESC como principal agência estadual de fomento à pesquisa.\n• Expandir redes de inovação, incubadoras e parques tecnológicos em todas as regiões.\n• Integrar universidades e centros de pesquisa às estratégias de desenvolvimento regional."
+          },
+          {
+            "id": "40-merisio-5",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• Apoiar projetos de pesquisa aplicada voltados aos desafios econômicos, sociais e ambientais\nde Santa Catarina.\n• Fortalecer laboratórios de inovação pública e observatórios territoriais.\n• Expandir acordos de cooperação científica internacional.\n• Incentivar a mobilidade de pesquisadores, professores e estudantes.\n• Inserir Santa Catarina em redes globais de produção de conhecimento e inovação.\n6ª MISSÃO: SAÚDE INTEGRAL E QUALIDADE DE VIDA\nGarantir acesso universal, regionalizado e humanizado aos serviços públicos de saúde será\nprioridade permanente.\nDefesa de um sistema de saúde que proteja a população catarinense dos riscos e danos à saúde,\ncom oferta de serviços especializados o mais próximo de sua moradia e no momento oportuno,\ncom profissionais qualificados e valorizados, e uma gestão própria dos serviços eficiente e eficaz.\no fortalecimento da atenção básica, da regionalização do SUS, da saúde mental, da média e alta\ncomplexidade, da inovação tecnológica, da valorização dos profissionais e da prevenção das\ndoenças permitirá ampliar a eficiência do sistema e reduzir desigualdades no acesso aos serviços\npúblicos.\n1. Programa Fortalecimento do SUS Catarinense\nFortalecer o Sistema Único de Saúde como política pública universal, ampliando sua capacidade\nde atendimento, coordenação e resposta às necessidades da população. Excelência na oferta de\nserviços próprios, nos mecanismos de gestão da saúde e apoio aos municípios."
+          },
+          {
+            "id": "governador-28",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA MUDAR\nVICE ANGELA ALBINO\nO programa promovera:\n• Fortalecimento da governança regional do SUS\n• Reforma das unidades hospitalares de gestão estadual.\n• Apoio operacional e financeiro aos gestores municipais, retorno do aporte aos municípios para\nque possam ofertar de equipes multiprofissionais.\n• Qualificação da atuação da Secretaria de Estado da Saúde com transparência dos dados\n• Recomposição do quadro de funcionários com vínculo permanente e assegurar a qualidade\nde atuação da SES.\n• Parâmetros e mecanismos transparentes de investimentos dos hospitais baseado no\npotencial e na produção prioridade aos públicos e filantrópicos em Santa Catarina.\n- Processo de habilitação de serviços por linhas de cuidado.\n• Acesso oportuno aos de forma integrada em todas as regiões: obtenção de todos os\nmedicamentos em um mesmo local, com serviço farmacêutico de orientação para o uso\nseguro e eficaz, e o acompanhamento farmacoterapêutico, quando necessário.\n• Mecanismos de divulgação de informação e comunicação qualificada, de amplo alcance,\nsobre medidas de promoção e prevenção para todas as regiões de SC.\n2. Programa Rede Estadual de Especialidades:\nPromover a ampliação do acesso e redução do tempo de espera por cirurgias, exames e consultas\ncom especialistas.\nO programa promoverá:\n• Centros Regionais de Especialidades para consultas, procedimentos ambulatoriais e exames\nde média complexidade nas 16 regionais de saúde.\n• Mecanismos ágeis e eficazes de regulação das filas de espera, especialmente as cirurgias.\n• Soluções de telessaúde para agilizar o acesso a exames, consultas, cirurgias, qualificar os\nencaminhamentos, reduzir filas de espera e evitar deslocamentos desnecessários:\n• Comunicação ágil e qualificada do agendamento de consultas e exames via aplicativo em\ncelular.\n• Garantia das cirurgias eletivas de maior complexidade, destaque para a cirurgia bariátrica, com\noferta de medicamentos e acompanhamento multiprofissional.\n3. Programa Saúde Mental e Bem-Estar\nAmpliar e qualificar a Rede de Atenção em Saúde Mental com fortalecimento de políticas de\npromoção da saúde mental."
+          },
+          {
+            "id": "governador-29",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa promoverá:\n• Cofinanciamento estadual para implantar e qualificar a Rede de Atenção Psicossocial - RAPS\nem todas as 16 regionais de saúde, em parceria com os municípios.\n• Centros de Atenção Psicossocial (CAPS) do tipo II em todos os municípios acima de 200.000\nmil habitantes: atenção 24 horas/dia em todas as Macrorregiões do estado\n• Leitos para internação em hospitais gerais e pediátricos em todos os municípios com pelo\nmenos100 mil habitantes:\n• Integração dos serviços de saúde mental à Rede de Atenção Psicossocial, incluindo os leitos\nlocalizados nos municípios de menor porte.\n• Estratégias de prevenção ao suicídio, em escolas e comunidades em todo o Estado de SC.\n- Atenção qualificada às pessoas com transtornos mentais, dependência química e\ndependentes de jogos de aposta.\n• Integração entre saúde, assistência social e educação\n4. Programa Atenção a Transtornos de Neurodesenvolvimento e TEA\nQualificar o atendimento a crianças e adolescentes com transtorno de neurodesenvolvimento e\nTEA.\nO programa promoverá:\n• Centros Especializados de Reabilitação do TIPO IV (deficiência física, auditiva, visual,\nintelectual e autismo) em cada macrorregião, integrando a saúde e a educação.\n• Ampliação do acesso aos testes para identificação dos problemas e disfunções em tempo\noportuno;\n• Apoio especializado à distância para as famílias, profissionais das escolas e da atenção básica;\n- Incentivo financeiro para o desenvolvimento de pesquisas em tratamento e prevenção\n5. Programa Saúde da Mulher, da Criança e do Idoso:\nQualificar a atenção integral aos diferentes ciclos da vida.\nO programa compreenderá:\n• Redução da mortalidade materna em Santa Catarina:\n• Investigação de 100% dos óbitos de mulheres em idade fértil em tempo ágil.\n• Ambulatórios Especializados em Pré-Natal de Alto Risco em todas as 16 regiões de saúde em\nSC e sistema de alerta e monitoramento da gestação de alto risco.\n• Rede Catarinense de Medicina Fetal e Genética Médica.\n• Acesso regional às UTIs neonatais:"
+          },
+          {
+            "id": "governador-30",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM\nPARA MUDAR\nVICE ANGELA ALBINO\n• Busca ativa vacinal e nutricional em SC: com sistema de monitoramento estadual das crianças\nde 0 a 1 ano em áreas de extrema vulnerabilidade periférica e rural.\n• Programa Estadual de Cuidado Integrado à Saúde do Idoso: incentivo a Promoção do\nEnvelhecimento Ativo e Estratégias de Prevenção de Quedas.\n• Universidade Aberta da Terceira Idade: formação e certificação de cuidadores de idosos e\ncursos de apoio e orientação às famílias no cuidado domiciliar de idosos.\n• Incentivo financeiro para adesão dos municípios ao Programa Melhor em Casa.\n• Oferta de tratamento medicamentoso na abordagem à obesidade, diabetes, síndromes\nmetabólicas e transtornos decorrentes.\n6. Programa Controle das Doenças Transmissíveis\nFortalecer ações de redução das infecções sexualmente transmissíveis, hepatites virais e\ntuberculose.\nO programa apoiará:\n• Programa Santa Catarina Livre da Sífilis: ampliação da testagem rápida; tratamento oportuno\ndo paciente e parceiros; fortalecimento do pré-natal; campanhas permanentes de educação\nsexual; apoio financeiro e técnico aos municípios para aquisição de insumos e qualificação das\nequipes.\n• Fortalecimento da resposta ao HIV: diagnóstico, acompanhamento clínico e renovação de\nreceitas próximos do domicílio; suporte especializado à distância; ampliação da distribuição\nde autotestes e estratégias extramuros de diagnóstico; expansão da oferta de PrEP e acesso\noportuno à PEP; implantação de TelePrEP e TelePEP para triagem, seguimento e renovação de\nexames; início do tratamento antirretroviral no menor tempo possível após diagnóstico;\nfortalecimento das metas internacionais da UNAIDS de diagnóstico precoce, tratamento e\nsupressão viral.\n• Ampliação do diagnóstico precoce e vinculação rápida ao tratamento de DT;\n• Apoio estadual ao controle da tuberculose\n7. Programa Atenção às Mulheres Vítimas de Violência.\nIntensificar e ampliar serviços e ações intersetoriais de prevenção e identificação precoce de\nmulheres vítimas de violência.\nO programa apoiará:\n• Identificação precoce dos sinais pelos profissionais das Unidades Básicas de Saúde\n• Encaminhamento oportuno dos casos para o cuidado de equipes de especialistas como"
+          },
+          {
+            "id": "governador-31",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\npsicólogos, assistentes sociais e suporte jurídico.\n• Mecanismos ágeis de denúncia e atendimento jurídico e de saúde ágeis: serviços de denúncia\ne atendimento jurídico e de saúde (psicólogos e médicos) para mulheres vítimas de violência\n(presencial e a distância) operando nos finais de semana em todas as regiões.\n• Educação nas escolas: integração entre saúde, educação e segurança.\n8. Programa Atenção à Saúde do Trabalhador\nValorizar o trabalhador do SUS e qualificar a saúde dos trabalhadores.\nO programa compreenderá:\n• Reestruturação da Rede de Centros de Referência em Saúde do Trabalhador com o apoio da\ngestão federal.\n• Atendimento especializado e integrado ao trabalhador lesionado.\n• Ações de capacitação permanente aos servidores de saúde do SUS, para diagnóstico precoce,\nmanejo e encaminhamento dos casos e lesões relacionados ao trabalho\n• Comitê estadual de combate aos acidentes graves e tatais;\n• Implantação de uma política de saúde mental no trabalho e combate ao assédio moral no\ntrabalho.\n• Política de Valorização dos trabalhadores do SUS: capacitação continuada dos trabalhadores\nvinculados ao SUS; apoio para uma carreira interprofissional no SUS.\n9. Programa Segurança Alimentar e Nutricional\nDefender uma política estadual para redução e combate ao uso de agrotóxicos e demais\ndefensivos agrícolas em Santa Catarina.\nO programa articulará ações:\n• Fortalecimento do Sistema de Segurança Alimentar e Nutricional Estadual, SISAN.\n• Política estadual de acesso à alimentação e de combate à fome e a insegurança alimentar e\nnutricional, em parceria com o governo federal.\n• Criação da Rede Estadual de Equipamentos de Segurança Alimentar e Nutricional, EqSAN.\ngarantia de acesso a alimentação adequada para toda a população catarinense,\nprincipalmente a população vulnerabilizada.\n• Implantação do Programa Estadual de Redução de Agrotóxicos (PROERA); assegurado pela\nLei Estadual n° 18.391, em 07/06/2022, ainda não implementada"
+          },
+          {
+            "id": "governador-32",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n10. Programa Práticas Integrativas e Complementares de Saúde (PICS) e Cannabis\nMedicinal\nAssegurar acesso oportuno às PICS e cannabis medicinal.\nO programa apoiará:\n• Capacitação de profissionais para o desenvolvimento das PICS e uso correto de canabinoides.\n• Adesão dos municípios à implementação de PICS e uso correto de da cannabis medicinal.\n• Mecanismos ágeis e eficazes de avaliação de pedidos de acesso aos medicamentos\nprescritos.\n11. Programa Inovação Tecnológica na Saúde\nFortalecimento do complexo econômico-industrial da saúde (CEIS) e da inovação em saúde,\npromovendo soluções capazes de reduzir desigualdades regionais, aumentar a eficiência da\ngestão e estimular o desenvolvimento econômico do Estado.\nO programa incentivará:\n• Ações articuladas com instituições de pesquisa e setor produtivo para desenvolver e\nincorporar tecnologias voltadas às necessidades do SUS catarinense.\n• Fomento ao desenvolvimento e ampliação da Saúde Digital e Inteligência Artificial.\n• Desenvolvimento de tecnologias para diagnóstico laboratorial descentralizado, assistência\nfarmacêutica, tecnologias assistivas, acompanhamento de pessoas com doenças crônicas,\ngestantes de alto risco, pacientes em reabilitação e saúde mental, priorizando soluções que\nreduzam as desigualdades regionais e fortaleçam a Atenção Primária e a Atenção\nEspecializada.\nMetas Estratégicas\n• Consolidar a regionalização da saúde como instrumento de organização da rede de serviços.\n• Fortalecer a cooperação entre Estado e municípios na gestão do SUS.\n- Integrar planejamento, financiamento e avaliação das politicas estaduais de saúde.\n• Expandir e qualificar a cobertura da Estratégia Saúde da Família.\n• Ampliar as equipes multiprofissionais de atenção primária.\n- Fortalecer ações de promoção da saúde e prevenção de doenças em todos os municípios.\n• Reduzir o tempo de espera para consultas, exames e cirurgias eletivas.\n• Fortalecer a rede regional de especialidades e alta complexidade.\n• Modernizar hospitais estaduais e apoiar a qualificação dos hospitais regionais e filantrópicos.\n• Expandir a Rede de Atenção Psicossocial em todas as regiões do Estado.\n• Fortalecer políticas de prevenção ao suicídio e atenção à saúde mental de crianças,"
+          },
+          {
+            "id": "governador-33",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nadolescentes e idosos.\n• Integrar saúde mental, assistência social e educação nos territórios mais vulneráveis.\n• Implantar o prontuário eletrônico integrado na rede estadual.\n• Fortalecer a pesquisa e a inovação tecnológica em parceria com universidades e centros de\nexcelência.\n• Fortalecer a capacidade de resposta a epidemias, pandemias e eventos climáticos com\nimpacto na saúde pública.\n• Ampliar a cobertura vacinal e os sistemas de monitoramento epidemiológico.\n• Integrar vigilância sanitária, epidemiológica, ambiental e saúde do trabalhador.\n• Expandir programas de formação continuada e educação permanente.\n• Implantar politicas de atração e fixação de profissionais nas regiões com maior escassez.\n• Melhorar as condições de trabalho e infraestrutura das unidades estaduais de saúde.\n• Ampliar programas de alimentação saudável, atividade física e saúde nas escolas.\n• Implementar a Política Estadual de Saúde Integral da População Negra (PESIPN).\n• Fortalecer a Política Estadual de Atenção Integral à Saúde da Mulher.\n• Implantar a Política Nacional de Saúde Integral de Lésbicas, Gays, Bissexuais, Travestis e\nTransexuais (LGBT) em âmbito estadual.\n7ª MISSÃO: SEGURANÇA PÚBLICA E CULTURA DA PAZ\nPOLÍCIA\nMILITAR\nO segurança pública será tratada de forma integrada, articulando inteligência, prevenção,\nvalorização profissional, tecnologia e participação comunitária.\nO enfrentamento da violência exige políticas públicas capazes de reduzir desigualdades, ampliar\noportunidades para a juventude e fortalecer a presença do Estado nos territórios mais vulneráveis.\nConstruir uma cultura de paz constitui parte essencial de uma sociedade democrática."
+          },
+          {
+            "id": "governador-34",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nVICE ANGELA ALBINO\nProgramas Estruturantes\n1. Programa Santa Catarina Segura\nFortalecer o Sistema Estadual de Segurança Pública por meio da integração entre prevenção,\ninteligência, investigação, policiamento e participação social.\nO programa promoverá:\n• Aumento do efetivo policial;\n• integração das forças policiais Estadual e Federal e das Receitas Federal e Estadual no\ncombate o crime organizado;\n• integração operacional entre Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros\nMilitar e Polícia Penal;\n• fortalecimento da inteligência policial;\n• modernização tecnológica;\n• comparti hamento de informações;\n• atuação integrada com o sistema de justiça e os municípios;\n• planejamento territorial da segurança publica\n• reorganização da estrutura de cargos da segurança pública por meio de concurso público.\n2. Programa Prevenção da Violência e Cultura da Paz\nImplementar uma política estadual de prevenção da violência, articulando educação, cultura,\nesporte, assistência social, saúde e segurança pública.\nO programa apoiará:\n• programas voltados à infância e juventude;\n• prevenção da violência escolar;\n• mediação comunitária de conflitos;\n• fortalecimento das redes de proteção social;\n• projetos culturais e esportivos em territórios vulneráveis;\n• campanhas permanentes de promoção da cultura de paz.\n• A prevenção será incorporada como eixo estruturante da política estadual de segurança.\n3. Programa Polícia Cidadã\nFortalecer o policiamento orientado para a proteção da população e a aproximação com as\ncomunidades."
+          },
+          {
+            "id": "governador-35",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa compreenderá:\n• ampliação do policiamento comunitário;\n• formação continuada em direitos humanos;\n• prevenção à violência doméstica;\n• mediação de conflitos;\n• policiamento escolar;\n• fortalecimento dos Conselhos Comunitários de Segurança (CONSEGs).\n4. Programa Inteligência e Investigação\nAmpliar a capacidade de investigação qualificada e enfrentamento ao crime organizado.\nO programa apoiará:\n• inteligência policial;\n• integração de bancos de dados;\n• combate às organizações criminosas;\n• enfrentamento aos crimes cibernéticos;\n• combate à lavagem de dinheiro;\n• fortalecimento da perícia criminal;\n• modernização da investigação científica.\n5. Programa Valorização dos Profissionais da Segurança Pública\nValorizar os servidores da segurança pública por meio de políticas permanentes de formação,\nsaude e desenvolvimento profissional.\nO programa compreenderá:\n• formação continuada;\n• qualificação tecnológica;\n• atenção à saúde física e mental;\n• melhoria das condições de trabalho;\n• modernização de equipamentos;\n• fortalecimento das carreiras.\n6. Programa Defesa Civil e Proteção Comunitária\nFortalecer a integração entre segurança pública, defesa civil e gestão de riscos.\nO programa promovera:"
+          },
+          {
+            "id": "governador-36",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• ampliação da capacidade de resposta a emergências;\n• integração entre Corpo de Bombeiros Militar, Defesa Civil e municípios;\n• prevenção de acidentes;\n• educação comunitária para redução de riscos;\n• fortalecimento da atuação preventiva.\n7. Programa Segurança nas Cidades\nIntegrar políticas urbanas à prevenção da violência.\nO programa apoiará:\n• qualificação dos espaços públicos;\n• iluminação pública eficiente;\n• requalificação de áreas degradadas;\n• ocupação dos espaços públicos por atividades culturais e esportivas;\n• mobilidade segura;\n• desenho urbano orientado à prevenção da violência.\n• As políticas de segurança serão articuladas ao planejamento urbano e ao desenvolvimento\nterritorial.\n8. Programa Tecnologia para Segurança Pública\nModernizar a infraestrutura tecnológica das instituições de segurança.\nO programa desenvolverá:\n• centros integrados de monitoramento;\n• videomonitoramento de área públicas;\n• retorno do uso de câmeras corporais nas operações policiais;\n• inteligência artificial aplicada à segurança;\n- comunicação integrada;\n• sistemas georreferenciados;\n• análise de dados para prevenção criminal.\n9. Programa Sistema Prisional, Reinserção Social e Alternativas Penais\nModernizar o sistema prisional catarinense, ampliando sua capacidade, qualificando a gestão das\nunidades e fortalecendo políticas de educação, trabalho e reinserção social, de forma articulada\ncom estratégias de redução da reincidência criminal."
+          },
+          {
+            "id": "governador-37",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa compreenderá:\n• ampliação e modernização da infraestrutura prisional, priorizando regiões com maior déficit de\nvagas;\n• melhoria das condições de segurança, gestão e humanização das unidades prisionais;\n• fortalecimento da Polícia Penal;\n• ampliação da oferta de educação formal, qualificação profissional e trabalho para pessoas\nprivadas de liberdade;\n• expansão de programas de reinserção social para egressos do sistema prisional;\n• fortalecimento das políticas de alternativas penais e monitoração eletrônica para crimes de\nmenor potencial ofensivo, nos termos da legislação;\n• ampliação das parcerias com empresas, cooperativas, Sistema S e instituições de ensino para\ngeração de oportunidades de trabalho e formação profissional;\n• implantação de um sistema permanente de acompanhamento dos indicadores de\nreincidência e ressocialização.\nMetas Estratégicas\n• Consolidar o Sistema Estadual Integrado de Segurança Pública.\n• Ampliar a integração operacional entre as instituições policiais, Defesa Civil e Corpo de\nBombeiros Militar.\n• Implantar programas permanentes de prevenção da violência em parceria com municípios.\n• Expandir ações voltadas à proteção de crianças, adolescentes e jovens em territórios mais\nvulneráveis.\n• Fortalecer políticas de mediação de conflitos e promoção da cultura de paz.\n• Expandir o policiamento comunitário em todas as regiões do Estado.\n• Fortalecer os Conselhos Comunitários de Segurança.\n• Ampliar a formação em direitos humanos, mediação de conflitos e atendimento às populações\nvulneráveis.\n• Modernizar os sistemas estaduais de inteligência policial.\n• Fortalecer a capacidade de investigação dos crimes organizados, ambientais, patrimoniais e\ncibernéticos.\n• Expandir a utilização de tecnologias de análise de dados e perícia científica.\n• Ampliar programas de formação continuada para os profissionais da segurança pública.\n• Fortalecer políticas de saúde física e mental dos servidores.\n• Modernizar equipamentos e infraestrutura das instituições de segurança,\n• Integrar planejamento urbano e políticas de prevenção da violência nas cidades.\n• Apoiar municípios na qualificação de espaços públicos e na melhoria da iluminação urbana.\n• Promover ações integradas de segurança, cultura, esporte e assistência social em áreas de"
+          },
+          {
+            "id": "governador-38",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nmaior vulnerabilidade.\n• Expandir programas de educação, qualificação profissional e reinserção social de pessoas\nprivadas de liberdade e egressas.\n• Fortalecer práticas de justiça restaurativa e alternativas penais.\n• Reduzir a reincidência criminal por meio de políticas integradas de inclusão social.\n• Implantar um sistema estadual de indicadores e monitoramento da segurança pública.\n• Reduzir progressivamente o déficit de vagas no sistema prisional por meio da ampliação,\nmodernização e melhor distribuição territorial das unidades.\n• Universalizar o acesso à educação e ampliar a oferta de qualificação profissional e trabalho\npara a população privada de liberdade.\ngª MISSÃO: DESENVOLVIMENTO RURAL, AGRICULTURA,\nPESCA E SEGURANÇA ALIMENTAR\nO campo continuará desempenhando papel estratégico para a economia catarinense.\nO governo fortalecerá a agricultura familiar, a agroecologia, o cooperativismo, a pesca artesanal, a\nmaricultura, a agroindústria, a assistência técnica, a pesquisa agropecuária e os sistemas\nalimentares sustentáveis.\nDesenvolvimento rural significa produzir riqueza preservando o meio ambiente e garantindo\nqualidade de vida às populações do campo.\nProgramas Estruturantes"
+          },
+          {
+            "id": "governador-39",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n1. Programa Desenvolvimento Rural Sustentável\nImplementar uma política estadual de desenvolvimento rural baseada na diversificação produtiva,\ninovação, sustentabilidade e fortalecimento das economias locais.\nO programa integrará agricultura, pecuária, pesca, maricultura, piscicultura, cooperativismo,\nagroindústria, infraestrutura rural, assistência técnica e desenvolvimento territorial.\nAs ações serão planejadas considerando as diferentes características produtivas e ambientais das\nregiões catarinenses.\n2. Programa Agricultura Familiar Forte\nFortalecer a agricultura familiar como eixo estratégico do desenvolvimento econômico, da\nsegurança alimentar e da permanência das famílias no campo.\nO programa apoiará:\n• ampliação da assistência técnica e extensão rural;\n• acesso ao crédito e ao seguro rural;\n• sucessão rural e permanência da juventude no campo;\n• diversificação produtiva;\n• mecanização apropriada;\n• inovação tecnológica;\n• agroindustrialização;\n• organização cooperativa.\nA agricultura familiar será tratada como política de desenvolvimento, geração de renda e\nabastecimento alimentar.\n3. Programa Cooperativismo e Agroindústria Regional\nFortalecer cooperativas, associações e agroindústrias familiares como instrumentos de\nagregação de valor à produção rural.\nO programa promoverá:\n• apoio à industrialização da produção;\n• certificação de produtos;\n• adequação sanitária;\n• inovação tecnológica;"
+          },
+          {
+            "id": "governador-40",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA M\nR\nVICE ANGELA ALBINO\n• comercialização;\n• exportação;\n• fortalecimento das cadeias produtivas regionais.\n4. Programa Pesca, Piscicultura e Maricultura Sustentáveis\nConsolidar Santa Catarina como referência nacional em pesca, piscicultura e maricultura\nsustentáveis.\nO programa compreenderá:\nfortalecimento da pesca artesanal;\nmodernização da infraestrutura pesqueira;\napoio à maricultura;\napoio à piscicultura;\nqualificação técnica dos produtores;\nmonitoramento da qualidade ambiental das áreas de cultivo;\nagregação de valor aos produtos;\npesquisa e inovação;\nrastreabilidade da produção;\nampliação do acesso aos mercados.\nSerá estimulada a integração entre universidades, EPAGRI, instituições de pesquisa e setor\nprodutivo para ampliar a competitividade da economia do setor.\n5. Programa Segurança Alimentar e Abastecimento\nFortalecer sistemas alimentares sustentáveis, garantindo produção, distribuição e acesso a\nalimentos saudáveis.\nO programa apoiará:\n• compras públicas da agricultura familiar;\n• circuitos curtos de comercialização;\n- feiras da agricultura familiar;\n• bancos de alimentos;\n• combate ao desperdício;\n• alimentação escolar;\n• cozinhas comunitárias e restaurantes populares;\n• produção de alimentos saudáveis."
+          },
+          {
+            "id": "governador-41",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n6. Programa Agroecologia e Produção Sustentável\nEstimular sistemas produtivos ambientalmente sustentaveis.\nO programa promoverá:\n• agroecologia;\n• produção orgânica;\n• conservação dos solos;\n• recuperação de áreas degradadas;\n• manejo sustentável da água;\n• redução do uso de insumos de alto impacto ambiental;\n• pesquisa aplicada.\n7. Programa Infraestrutura para o Campo\nMelhorar as condições de produção e qualidade de vida nas áreas rurais.\nO programa apoiará:\n• implantação e melhoria de estradas rurais;\n• energia elétrica;\n• conectividade digital;\n• abastecimento de água;\n• saneamento rural;\n• armazenagem;\n• logística da produção.\n8. Programa Inovação e Pesquisa Agropecuária\nFortalecer a pesquisa e a inovação como instrumentos de aumento da produtividade e adaptação\nàs mudanças climáticas.\nO programa desenvolverá ações em parceria com EPAGRI, CIDASC, universidades, institutos\nfederais e cooperativas para:\n• pesquisa agropecuária;\n• agricultura de precisão;\n• digitalização do campo;\n• biotecnologia;\n• adaptação climática;\n• melhoramento genético;"
+          },
+          {
+            "id": "governador-42",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n• difusão tecnológica.\nMetas Estratégicas\n• Implementar a Política Estadual de Desenvolvimento Rural Sustentável.\n• Fortalecer o planejamento territorial das cadeias produtivas rurais.\n• Reduzir desigualdades entre as regiões rurais do Estado.\n• Ampliar a cobertura da assistência técnica e extensão rural.\n• Expandir o acesso da agricultura familiar ao crédito, ao seguro rural e as compras públicas,\n• Incentivar a permanência da juventude no campo por meio de políticas integradas de renda,\ninovação e educação.\n• Fortalecer cooperativas e associações rurais em todas as regiões do Estado.\n• Ampliar a agregação de valor à produção agropecuária por meio da agroindustrialização.\n• Expandir programas de certificação, inovação e acesso a mercados.\n• Modernizar a infraestrutura de apoio à pesca artesanal, à piscicultura e à maricultura.\n• Fortalecer a pesquisa, a assistência técnica e o monitoramento ambiental das áreas de cultivo.\n• Ampliar a competitividade da cadeia produtiva da maricultura catarinense, incorporando\ninovação e agregação de valor.\n• Ampliar a participação da agricultura familiar nas compras governamentais.\n• Fortalecer sistemas locais de abastecimento alimentar.\n• Reduzir perdas e desperdícios ao longo das cadeias de produção e distribuição.\n• Expandir práticas de agroecologia, conservação do solo e uso eficiente da água.\n• Incentivar sistemas produtivos adaptados às mudanças climáticas.\n• Recuperar áreas ambientalmente degradadas em parceria com os produtores rurais.\n• Ampliar investimentos em infraestrutura logística, conectividade e abastecimento no meio\nrural.\n• Melhorar as condições de transporte da produção e acesso aos serviços públicos.\n• Fortalecer a integração entre pesquisa, assistência técnica e produção.\n• Expandir a adoção de tecnologias digitais e agricultura de precisão.\n- Consolidar redes estaduais de inovação voltadas ao desenvolvimento rural.\n• Implementar uma estratégia estadual para o desenvolvimento da economia do mar.\n• Fortalecer a cadeia da maricultura, da piscicultura, da pesca artesanal e das novas atividades\nligadas à bioeconomia marinha.\n• Integrar conservação ambiental, inovação e desenvolvimento econômico da zona costeira."
+          },
+          {
+            "id": "governador-43",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n9ª MISSÃO: JUSTIÇA CLIMÁTICA E PROTEÇÃO DO\nTERRITÓRIO CATARINENSE\nA emergência climática representa um dos maiores desafios para Santa Catarina.\nEsta missão integra adaptação climática, prevenção de desastres, recuperação ambiental,\ninfraestrutura resiliente, transição energética, gestão das águas, proteção da biodiversidade e\nplanejamento territorial.\nO Estado deixará de atuar apenas após os desastres e passará a investir permanentemente na\nredução de riscos e na construção de territórios mais resilientes.\nProgramas Estruturantes\n1. Programa Santa Catarina Resiliente\nInstituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do\nplanejamento e dos investimentos públicos.\nO programa integrará adaptação climática, planejamento territorial, defesa civil, infraestrutura,\nhabitação, agricultura, recursos hídricos e desenvolvimento regional.\nAs prioridades serão definidas com base em mapas de risco, vulnerabilidade climática e\ncapacidade de adaptação dos territórios.\n2. Programa Municípios Resilientes\nApoiar tecnicamente os municípios na incorporação da adaptação climática aos instrumentos de\nplanejamento territorial."
+          },
+          {
+            "id": "governador-44",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa apoiará:\n• revisão dos Planos Diretores;\n• elaboração de Planos Municipais de Redução de Riscos;\n• mapeamento de áreas suscetíveis a inundações, deslizamentos e erosão;\n• capacitação das equipes municipais;\n• elaboração de projetos executivos para captação de recursos.\nAs ações serão desenvolvidas em parceria com a União, universidades, institutos federais,\nconsórcios públicos e órgãos estaduais.\n3. Programa Infraestrutura Verde e Soluções Baseadas na Natureza\nPromover investimentos em infraestrutura natural como estratégia permanente de adaptação\nclimática.\nO programa compreenderá:\n• parques lineares;\n• recuperação de rios urbanos;\n• proteção e recuperação de nascentes;\n• restauração de matas ciliares;\n• jardins de chuva;\n- reservatórios de amortecimento;\n• corredores ecológicos;\n• arborização urbana;\n• ampliação das áreas verdes.\nAs soluções baseadas na natureza serão priorizadas sempre que apresentarem maior eficiência\nambiental, econômica e social.\n4. Programa Defesa Civil Preventiva\nTransformar a prevenção em eixo central da política estadual de proteção e defesa civil.\nO programa compreenderá:\n• monitoramento permanente dos riscos;\n• sistemas de alerta precoce;\n• ampliação da capacidade de resposta dos municípios;\n• integração entre Defesa Civil, planejamento urbano e gestão ambiental;"
+          },
+          {
+            "id": "governador-45",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• formação continuada das equipes locais;\n• fortalecimento dos núcleos comunitários de proteção e defesa civil.\n5. Programa Transição Energética e Economia de Baixo Carbono\nApoiar a modernização da economia catarinense por meio da redução das emissões de gases de\nefeito estufa.\nO programa estimulará:\n• adaptação arquitetônica dos edifícios públicos para melhor eficiência energética;\n• energias renováveis;\n• hidrogênio verde;\n• eletrificação da mobilidade;\n• eficiência energética;\n• economia circular;\n• bioeconomia;\n• produção limpa;\n• inovação tecnológica aplicada à transição energética.\n6. Programa Agricultura Resiliente\nFortalecer a adaptação da agricultura catarinense às mudanças climáticas.\nO programa apoiará:\n• manejo sustentável do solo;\n• recuperação de áreas degradadas;\n• irrigação eficiente;\n• diversificação produtiva;\n• agroecologia;\n• pesquisa agropecuária;\n• assistência técnica voltada à adaptação climática.\nAs ações serão desenvolvidas em parceria com a EPAGRI, cooperativas e organizações de\nprodutores.\n7. Programa Litoral Vivo\nImplementar uma política integrada de adaptação climática para a zona costeira catarinense."
+          },
+          {
+            "id": "governador-46",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA M\nDAR\nVICE ANGELA ALBINO\nO programa promoverá:\n• fortalecimento e reestruturação do Gerenciamento Costeiro;\n• proteção das praias, dunas, restingas e manguezais;\n• gestão integrada da orla;\n• monitoramento da erosão costeira;\n• adaptação das cidades litorâneas à elevação do nível do mar;\n• fortalecimento da economia do mar;\n• proteção da biodiversidade marinha.\nEssa política será integrada às estratégias estaduais de turismo, pesca, maricultura e\ndesenvolvimento regional.\n8. Programa Biodiversidade e Serviços Ecossistêmicos\nAmpliar a conservação da biodiversidade como elemento essencial da qualidade de vida e da\nresiliência climática.\nO programa apoiará:\n• criação e fortalecimento de unidades de conservação;\n• recuperação de ecossistemas;\n• proteção da fauna e da flora;\n• pagamento por serviços ambientais;\n• restauração fiorestal;\n• corredores ecológicos;\n• conservação da Mata Atlântica.\nMetas Estratégicas\n• Instituir a Política Estadual de Adaptação às Mudanças Climáticas.\n- Incorporar critérios de adaptação climática ao planejamento e aos investimentos estaduais.\n• Apoiar os municípios na revisão de seus instrumentos de planejamento territorial com foco na\nredução de riscos.\n• Ampliar a cobertura dos sistemas de monitoramento e alerta precoce.\n• Fortalecer a capacidade técnica dos municípios para prevenção e resposta a desastres.\n• Reduzir progressivamente a população exposta a áreas de alto risco por meio de ações\nintegradas de planejamento urbano, habitação e intraestrutura.\n• Fortalecer os Comitês de Bacia Hidrográfica e a gestão participativa das águas.\n• Recuperar áreas estratégicas de proteção de mananciais e nascentes."
+          },
+          {
+            "id": "governador-47",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• Ampliar a segurança hídrica para abastecimento humano e atividades produtivas.\n• Implantar projetos de infraestrutura verde e soluções baseadas na natureza em parceria com\nos municípios.\n• Ampliar áreas verdes urbanas e corredores ecológicos.\n• Recuperar rios urbanos e áreas ambientalmente degradadas.\nIncentivar investimentos em energias renováveis e eficiência energética.\n• Apoiar a eletrificação do transporte público e das frotas governamentais.\nConsolidar cadeias produtivas associadas à economia de baixo carbono.\n• Ampliar programas de adaptação climática para a agricultura familiar e empresarial.\n• Expandir práticas de conservação do solo, recuperação de áreas degradadas e uso eficiente\nda água.\n• Fortalecer a pesquisa e a assistência técnica voltadas à resiliência climática.\n• Implementar uma estratégia estadual de adaptação para a zona costeira.\n• Fortalecer a proteção dos ecossistemas costeiros e da Mata Atlantica.\n• Ampliar programas de conservação da biodiversidade e de pagamento por serviços\nambientais.\n• Integrar informações produzidas por universidades, centros de pesquisa e órgãos estaduais."
+          },
+          {
+            "id": "governador-48",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n10ª MISSÃO: DIREITOS, IGUALDADE E INCLUSÃO\nO desenvolvimento somente será completo quando todas as pessoas tiverem assegurado o pleno\nexercício de seus direitos e igualdade de oportunidades para participar da vida econômica, social,\npolítica e comunitária.\nSanta Catarina é marcada por grande diversidade cultural, étnica e social. O Estado deve atuar\npara eliminar todas as formas de discriminação, ampliar o acesso às políticas públicas e garantir\nproteção às populações historicamente vulnerabilizadas.\nEsta missão reúne as políticas estaduais de direitos humanos, igualdade racial, equidade de\ngênero, diversidade, juventude, envelhecimento ativo, acessibilidade, povos indígenas,\ncomunidades quilombolas, comunidades tradicionais, proteção animal e inclusão social.\nO fortalecimento dos direitos constitui condição essencial para a construção de uma sociedade\ndemocrática, solidária e comprometida com a justiça social\nProgramas Estruturantes\n1. Programa Santa Catarina dos Direitos\nConsolidar uma política estadual de promoção e proteção dos direitos humanos como eixo\ntransversal da ação governamental.\nO programa promoverá:\n• fortalecimento do Sistema Estadual de Direitos Humanos;\n• implementação dos planos estaduais de promoção de direitos;\n• apoio aos Conselhos Estaduais de Direitos;"
+          },
+          {
+            "id": "governador-49",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• fortalecimento dos mecanismos de prevenção e enfrentamento às violações de direitos;\n• produção de informações e indicadores sobre direitos humanos;\n• formação permanente de servidores públicos.\nAs políticas de direitos humanos orientarão a atuação integrada das diferentes áreas do governo.\n2. Programa Igualdade e Diversidade\nPromover políticas públicas voltadas à superação das desigualdades e da discriminação.\nO programa apoiará ações de promoção da igualdade racial, equidade de gênero, respeito à\ndiversidade sexual e de identidade de gênero, inclusão das pessoas com deficiência, valorização\nda população idosa, proteção das crianças e adolescentes e fortalecimento das políticas para a\njuventude.\nAs ações serão desenvolvidas de forma integrada com educação, saúde, assistência social,\nsegurança pública e cultura.\n3. Programa Povos Indígenas, Quilombolas e Comunidades Tradicionais\nReconhecer e fortalecer os direitos dos povos indígenas, das comunidades quilombolas e das\ndemais comunidades tradicionais catarinenses.\nO programa apoiara:\n• implementação do Política Nacional de atenção à Saúde dos povos Indígenas, com garantia\nde infraestrutura nos territórios;\n• acesso às políticas públicas;\n• proteção dos territórios tradicionais;\n• valorização das culturas tradicionais;\n- educação intercultural;\n• segurança alimentar;\n• fortalecimento das atividades produtivas sustentáveis;\n• apoio técnico às comunidades.\n4. Programa Juventude e Novas Oportunidades\nFortalecer políticas voltadas à juventude, ampliando oportunidades de educação, trabalho,\ncultura, esporte, inovação e participação política."
+          },
+          {
+            "id": "governador-50",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nAs ações priorizarão:\n• permanência estudantil;\n• qualificação profissional;\n• primeiro emprego;\n• empreendedorismo jovem;\n• inclusão digital;\n• participação cidadã.\n5. Programa Envelhecimento Ativo\nPreparar Santa Catarina para a transição demográfica, promovendo autonomia, participação\nsocial e qualidade de vida da população idosa.\nO programa compreenderá:\n• políticas de cuidado;\n• acessibilidade;\n• envelhecimento saudável;\n• combate à violência contra a pessoa idosa;\n• incentivo à participação comunitária;\n• apoio aos municípios na implantação de serviços especializados.\n6. Programa Acessibilidade Universal\nPromover a inclusão plena das pessoas com deficiência em todas as políticas públicas estaduais.\nAs ações incluirão:\n• adesão ao plano nacional das pessoas com deficiência;\n• acessibilidade física;\n• acessibilidade comunicacional;\n- tecnologia assistiva;\n• educação inclusiva;\n• inclusão no mercado de trabalho;\n• qualificação dos serviços públicos;\n• desenho universal nos investimentos estaduais.\n7. Programa Territórios da Cidadania\nPromover ações integradas de inclusão social nos territórios mais vulneráveis."
+          },
+          {
+            "id": "40-merisio-6",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa articulará investimentos em:\n• equipamentos públicos;\n• cultura;\n• esporte;\n• assistência social;\n• qualificação profissional;\n• economia solidária e criativa;\n• segurança cidada;\n• revitalização de espaços públicos.\nA prioridade será dada aos bairros periféricos urbanos, comunidades rurais vulneráveis e\nterritórios com menores indicadores de desenvolvimento humano.\n8_ Programa Bem-Estar Animal e Guarda Responsável\nImplementar uma Política Estadual de Proteção e Bem-Estar Animal, promovendo ações\nintegradas de saúde pública, educação, proteção da fauna doméstica e silvestre e apoio aos\nmunicípios.\nO programa compreenderá:\n• criação da Secretaria de Estado de Bem-estar Animal\n• apoio aos municípios na elaboração e implementação de políticas de proteção e bem-estar\nanimal;\n• ampliação dos programas permanentes de castração, identificação eletrônica\n(microchipagem) e registro de cães e gatos;\n• fortalecimento das campanhas de adoção responsável e guarda responsável;\n• apoio às organizações da sociedade civil e protetores independentes que atuam no resgate e\ncuidado de animais abandonados;\n• implantação de programas estaduais de atendimento veterinário básico para populações em\nsituação de vulnerabilidade social, em parceria com municípios e universidades;\n• fortalecimento da fiscalização e das ações de prevenção e combate aos maus-tratos contra\nanimais, em articulação com os órgãos de segurança pública e ambientais;\n• promoção da educação para o respeito aos animais nas escolas e em campanhas públicas de\nconscientização:\n• proteção da fauna silvestre em parceria com os órgãos ambientais, centros de reabilitação e\ninstituições de pesquisa;\n• incentivo à pesquisa, inovação e desenvolvimento de políticas públicas voltadas ao bem-estar\nanimal."
+          },
+          {
+            "id": "governador-51",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nMetas Estratégicas\n• Fortalecer o Sistema Estadual de Direitos Humanos e apoiar a implementação dos planos\nestaduais de promoção de direitos.\n• Criar o Conselho Estadual das Pessoas LGBTQIA+ e aderir à Política Nacional das Pessoas\nLGBTQIA+.\n• Erradicar os crimes de racismo e ódio no Estado.\n• Ampliar os mecanismos de prevenção e enfrentamento às violações de direitos humanos.\n• Implantar um sistema estadual de indicadores de direitos humanos para subsidiar a\nformulação e avaliação das políticas públicas.\n• Reduzir desigualdades de acesso às políticas públicas entre diferentes grupos sociais.\n• Fortalecer políticas de promoção da igualdade racial, de gênero e de respeito à diversidade.\n• Ampliar a participação de grupos historicamente excluídos nos espaços de decisão e controle\nsocial.\n• Ampliar o acesso das comunidades tradicionais aos serviços públicos estaduais.\n• Criar um órgão estadual de promoção de politicas públicas para a população LGBTQIA+, aos\nmoldes da Secretaria Nacional dos Direitos das Pessoas LGBTQIA+.\n• Apoiar ações de proteção dos direitos territoriais e culturais em articulação com os órgãos\ncompetentes.\n• Expandir programas de formação, primeiro emprego e empreendedorismo para jovens.\n• Ampliar espaços de participação da juventude na formulação das políticas públicas.\n• Integrar políticas de educação, cultura, esporte e inovação voltadas às juventudes.\n• Apoiar os municípios na ampliação da rede de atendimento à população idosa.\n• Promover ações de prevenção da violência e de estímulo à autonomia e à convivência\ncomunitária.\n• Incorporar o envelhecimento populacional ao planejamento das políticas estaduais.\n• Garantir critérios de acessibilidade universal nos investimentos públicos estaduais.\n• Ampliar a oferta de tecnologias assistivas e serviços de apoio às pessoas com deficiência.\n• Fortalecer políticas de inclusão educacional e laboral.\n• Aderir ao plano nacional das pessoas com deficiência\n• Instituir a Política Estadual de Proteção e Bem-Estar Animal, apoiando os municípios na\nestruturação de programas permanentes de castração, microchipagem, atendimento\nveterinário, adoção responsável e combate aos maus-tratos, fortalecendo a integração entre\nsaúde pública, meio ambiente, educação e direitos dos animais."
+          },
+          {
+            "id": "governador-52",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n11ª MISSÃO: CULTURA, ESPORTE E ECONOMIA CRIATIVA\nA cultura constitui patrimônio coletivo, expressão da diversidade catarinense e elemento\ntundamental para o desenvolvimento humano, a identidade regional e a democracia.\nAo lado do esporte e do lazer, representa um direito de cidadania e um importante vetor de\ndesenvolvimento econômico, geração de emprego, inovação e fortalecimento dos territórios.\nNosso governo fortalecerá o Sistema Estadual de Cultura, ampliará o acesso da população às\natividades culturais e esportivas e consolidará a economia criativa como uma das estratégias de\ndesenvolvimento sustentável de Santa Catarina.\nProgramas Estruturantes\n1. Programa Cultura Viva Catarinense\nFortalecer a cultura como direito de cidadania, patrimônio coletivo e vetor de desenvolvimento\nsocial e econômico.\nO programa compreenderá:\n• fortalecimento do Sistema Estadual de Cultura;\n• criação de carreira específica, com formação adequada para a área de gestão de cultura do\nEstado e realização de concurso público regular para atender as demandas do setor;\n• valorização da produção artística catarinense;\n• fortalecimento do Sistema Estadual de Cultura;\n• preservação do patrimônio histórico, cultural e arqueológico;\n• modernização de bibliotecas, museus, arquivos e centros culturais;\n• incentivo à circulação artística;"
+          },
+          {
+            "id": "governador-53",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n• descentralização dos investimentos culturais;\n• adequação do financiamento público da cultura à reforma tributária;\n• atualização dos valores financeiros dos editais de fomento;\n• aplicação de políticas afirmativas nos editais de fomento;\n• garantia de orçamento público do Estado para a Cultura;\n• fortalecimento dos Pontos de Cultura e das iniciativas comunitárias.\nA cultura será reconhecida como elemento de identidade, inclusão social, geração de emprego,\nrenda e desenvolvimento regional. Vamos iniciar um novo tempo para a cultura catarinense,\npautado no diálogo, respeito e diversidade.\nSerão fortalecidos mecanismos de financiamento, formação profissional e apoio ao\nempreendedorismo cultural.\n2. Programa Economia Criativa Catarinense\nFortalecer os setores criativos como estratégia de desenvolvimento econômico, inovação e\ngeração de emprego.\nO programa apoiará:\n• audiovisual;\n- música;\n• artes cênicas;\n• literatura;\n• design;\n• arquitetura;\n• moda;\n• gastronomia;\n• artesanato;\n• jogos digitais;\n• patrimônio cultural;\n• economia do patrimônio;\n• empreendedorismo cultural.\n3. Programa Patrimônio Cultural Catarinense\nFortalecer a preservação, valorização e utilização social do patrimônio histórico, arquitetônico,\narqueológico, paisagístico e imaterial."
+          },
+          {
+            "id": "governador-54",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa apoiará:\n• restauração do patrimônio;\n• inventários culturais;\n• educação patrimonial;\n• preservação da memória catarinense;\n• digitalização de acervos;\n• fortalecimento dos museus.\n4. Programa Esporte para Todos\nAmpliar o acesso ao esporte e ao lazer como direitos fundamentais e instrumentos de promoção\nda saúde, da inclusão social e da qualidade de vida.\n• O programa apoiará:\n• esporte educacional;\n• esporte comunitário;\n• esporte de rendimento;\n• infraestrutura esportiva;\n• incentivo ao paradesporto;\n• programas voltados à infância, juventude, mulheres, população LGBTQIA+ e população idosa;\n• ocupação qualificada dos espaços públicos.\n5. Programa Lazer e Espaços de Convivência\nPromover políticas públicas de lazer, recreação e ocupação qualificada dos espaços públicos.\nO programa apoiará:\n• implantação de parques;\n• implantação de praças;\n• implantação de equipamentos esportivos;\n• atividades comunitárias;\n- esportes ao ar livre;\n• integração com a politica urbana.\n6. Programa Formação Cultural\nFortalecer a formação artística, técnica e de gestão dos trabalhadores da cultura, promovendo a\nqualificação profissional, a inovação e a sustentabilidade do setor cultural catarinense."
+          },
+          {
+            "id": "governador-55",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nO programa compreenderá:\n• ampliação da formação artística nas diferentes linguagens culturais, incluindo música, teatro,\ndança, artes visuais, audiovisual, literatura, patrimônio cultural, culturas populares e culturas\ntradicionais;\n• formação continuada de gestores públicos de cultura para fortalecer a gestão do Sistema\nEstadual de Cultura e das políticas municipais;\n• capacitação de produtores culturais, técnicos, agentes culturais e trabalhadores da economia\ncriativa em elaboração de projetos, captação de recursos, gestão cultural, produção executiva,\ncomunicação, acessibilidade e prestação de contas;\n• incentivo à pesquisa, documentação e transmissão dos saberes das culturas populares,\nindígenas, quilombolas e das demais comunidades tradicionais;\n• desenvolvimento de programas de educação patrimonial e formação de profissionais voltados\nà preservação do patrimônio histórico, artístico, arqueológico e imaterial;\n• promoção da inclusão digital e da qualificação tecnológica dos trabalhadores da cultura,\nampliando sua capacidade de atuação nos ambientes digitais e nas novas cadeias da\neconomia criativa;\nMetas Estrategicas\n• Consolidar o Sistema Estadual de Cultura.\n• Descentralizar investimentos culturais.\n• Ampliar o acesso aos equipamentos culturais.\n• Valorizar o patrimônio cultural catarinense.\n• Expandir a participação da economia criativa no desenvolvimento estadual.\n• Apoiar empreendimentos criativos em todas as regiões.\n• Integrar cultura, turismo e inovação.\n• Ampliar a prática esportiva em todas as regiões.\n• Modernizar equipamentos esportivos.\n• Fortalecer o esporte educacional, comunitário e de rendimento.\n• Ampliar a oferta de espaços públicos de convivência.\n• Integrar esporte, cultura e lazer nas políticas urbanas."
+          },
+          {
+            "id": "governador-56",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n12ª MISSÃO: DEMOCRACIA, PARTICIPAÇÃO E GOVERNANÇA\nTERRITORIAL\nO desenvolvimento sustentável exige instituições públicas democráticas, transparentes e abertas\nà participação da sociedade.\nO governo fortalecerá os mecanismos de controle social, os conselhos de políticas públicas, as\nconferências estaduais, os processos participativos de planejamento e os instrumentos de\ncooperação entre Estado, municípios e regiões.\nA gestão pública será orientada pela transparência, pelo diálogo e pela corresponsabilidade entre\ngoverno e sociedade.\nProgramas Estruturantes\n1. Programa Governança Territorial e Regional\nInstituir uma política permanente de governança territorial, fortalecendo a cooperação entre\nEstado, municípios e regiões.\nAs ações incluirão:\n• fortalecimento das associações de municípios e consórcios públicos;\n• apoio ao planejamento regional;\n• elaboração de agendas regionais de desenvolvimento;\n• fortalecimento das regiões metropolitanas e aglomerações urbanas;\n• integração entre planejamento regional, urbano, ambiental e econômico."
+          },
+          {
+            "id": "governador-57",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nAs diferentes regiões do Estado passarão a constituir espaços permanentes de planejamento e\ncoordenação de políticas públicas. Essa diretriz incorpora a necessidade de fortalecer as\nestruturas metropolitanas, os instrumentos previstos no Estatuto da Metrópole e a integração\nentre planejamento territorial e políticas setoriais.\n2. Programa Fortalecimento da Democracia Participativa\nAmpliar os mecanismos permanentes de participação da sociedade na formulação,\nimplementação e avaliação das politicas públicas.\nO programa apoiará:\n• conselhos estaduais de políticas públicas;\n• conferências estaduais;\n• audiências públicas;\n• fóruns regionais;\n• consultas públicas;\n• processos participativos de planejamento;\n• orçamento participativo em programas específicos.\nA participação social será incorporada como elemento permanente da gestão pública.\n3. Programa Governo Digital e Dados Abertos\nModernizar a administração pública por meio da transformação digital.\nO programa promoverá:\n• integração das bases de dados estaduais;\n• ampliação dos serviços digitais;\n• transparência ativa;\n• interoperabilidade entre órgãos públicos;\n• dados abertos;\n• simplificação administrativa.\n4. Programa Cooperação para o Desenvolvimento\nFortalecer a cooperação do governo estadual com a União, municípios, universidades, institutos\nfederais, cooperativas, setor produtivo e organizações da sociedade civil."
+          },
+          {
+            "id": "governador-58",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nSerão estimulados:\n• redes de inovação;\n• laboratórios de políticas públicas;\n• projetos interinstitucionais;\n• cooperação técnica;\n• compartilhamento de informações;\n• desenvolvimento de soluções para desafios territoriais.\n5. Programa Transparência e Integridade Pública\nFortalecer a ética, a transparência e a integridade na administração estadual.\nAs ações compreenderão:\n• ampliação dos mecanismos de controle interno e combate à corrupção;\n• fortalecimento das ouvidorias;\n• transparência das informações orçamentárias;\n• proteção ao denunciante;\n• capacitação permanente dos servidores públicos.\n6. Programa Gestão Pública\nValorizar os servidores públicos e fortalecer a capacidade institucional do Estado.\nO programa garantira:\n• fim da taxação de 14% para os aposentados;\n• formação continuada;\n• capacitação em planejamento e gestão;\n• inovação pública;\n• transformação digital;\n• gestão por resultados;\n• políticas de valorização das carreiras técnicas.\nEspecial atenção será dada à recomposição e qualificação das equipes permanentes de\nplanejamento, reconhecendo que a continuidade das políticas públicas depende de estruturas\ntécnicas estáveis.\n7. Programa Avaliação e Monitoramento das Políticas Públicas"
+          },
+          {
+            "id": "governador-59",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nInstituir uma cultura permanente de avaliação das políticas públicas.\nO governo implantará:\n• indicadores de desempenho para cada missão estratégica;\n• monitoramento periódico das metas;\n• avaliação de impacto dos programas estruturantes;\n• relatórios anuais de resultados;\n• revisão sistemática das políticas públicas com base em evidências.\nMetas Estratégicas\n• Implantar o Sistema Estadual de Planejamento e Desenvolvimento.\n• Integrar planejamento, orçamento e avaliação em todas as áreas do governo.\n• Fortalecer as carreiras técnicas e ampliar a capacidade institucional da administração pública.\n• Fortalecer os consórcios públicos e as associações de municípios.\n• Promover a integração entre planejamento regional, urbano, ambiental e econômico.\n• Fortalecer o funcionamento dos conselhos estaduais de políticas públicas.\n• Realizar conferências estaduais periódicas nas principais áreas de governo.\n• Ampliar os instrumentos de participação cidada.\n• Instituir processos permanentes de diálogo com movimentos sociais, universidades,\nentidades empresariais, cooperativas e organizações da sociedade civil.\n• Digitalizar progressivamente os principais serviços públicos estaduais.\n• Integrar bases de dados entre os órgãos estaduais.\n• Expandir a política de dados abertos.\n• Simplificar procedimentos administrativos para cidadãos e empresas.\n• Implantar o Sistema Estadual de Inteligência Territorial.\n• Estabelecer parcerias permanentes com universidades e centros de pesquisa para produção\ne avaliação de informações estratégicas.\n• Ampliar os mecanismos de transparência ativa e prestação de contas.\n• Fortalecer os sistemas de controle interno e ouvidoria.\n• Implantar programas permanentes de integridade pública em todos os órgãos estaduais.\n• Apoiar projetos interinstitucionais voltados ao desenvolvimento regional.\n• Consolidar mecanismos de governança interfederativa para políticas públicas de interesse\ncomum, especialmente nas regiões metropolitanas."
+          },
+          {
+            "id": "governador-60",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA\nMUDAR\nVICE ANGELA ALBINO\n13ª MISSÃO: COMBATER A VIOLÊNCIA CONTRA A MULHER E\nPROMOVER A IGUALDADE DE GÊNERO\nA violência contra a mulher representa uma das mais graves violações dos direitos humanos e\nconstitui um desafio permanente para a democracia e para a construção de uma sociedade justa.\nEm Santa Catarina, milhares de mulheres convivem diariamente com diferentes formas de\nviolência física, psicológica, sexual, moral, patrimonial e institucional, muitas vezes dentro do\npróprio ambiente familiar.\nEnfrentar essa realidade exige muito mais do que ampliar a repressão aos agressores. É\nnecessário construir uma política pública integrada, capaz de prevenir a violência, proteger as\nvítimas, responsabilizar os autores e promover a autonomia econômica e social das mulheres.\nNosso governo adotará uma política estadual permanente de enfrentamento à violência de\ngênero, baseada na prevenção, na proteção, na garantia de direitos e na articulação entre os\ndiferentes órgãos públicos e a sociedade civil.\nNenhuma mulher deve deixar de denunciar a violência por falta de acolhimento, proteção ou\nperspectivas de reconstrução de sua vida.\nProgramas Estruturantes\n1. Rede Catarina de Proteção às Mulheres\nConsolidação de uma rede integrada envolvendo Delegacias Especializadas, Ministério Público,\nDefensoria Pública, Poder Judiciário, assistência social, saúde, educação, Guarda Municipal e\norganizações da sociedade civil."
+          },
+          {
+            "id": "governador-61",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nA atuação integrada permitirá respostas rápidas, acompanhamento contínuo das vítimas e\ncompartilhamento de informações entre os órgãos responsáveis.\n2. Casas da Mulher Catarinense\nImplantação e fortalecimento de centros regionais de atendimento às mulheres, oferecendo em\num mesmo espaço acolhimento, orientação jurídica, atendimento psicológico, assistência social,\nqualificação profissional e encaminhamento para políticas de proteção.\nNas regiões onde não houver estrutura permanente, serão implantadas unidades itinerantes para\natendimento aos pequenos municípios.\n3. Proteção Integral às Mulheres em Situação de Risco\nAmpliação da oferta de casas de acolhimento temporário.\nAcompanhamento das mulheres sob medidas protetivas.\nMonitoramento eletrônico dos agressores nos casos previstos em lei.\nIntegração com os programas habitacionais, de transferência de renda e de inclusão produtiva\npara assegurar condições reais de reconstrução da autonomia.\n4. Autonomia Econômica das Mulheres\nA dependência financeira é um dos principais fatores que dificultam o rompimento do ciclo da\nviolência.\nO governo desenvolverá programas de qualificação profissional, incentivo ao empreendedorismo\nfeminino, acesso ao microcrédito, apoio às cooperativas e prioridade em programas estaduais de\nemprego e renda para mulheres em situação de violência.\n5. Educação para a Igualdade e Cultura de Paz\nPromoção de campanhas permanentes de prevenção à violência contra a mulher.\nDesenvolvimento de ações educativas nas escolas voltadas ao respeito, à igualdade entre homens"
+          },
+          {
+            "id": "governador-62",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\ne mulheres, à resolução pacífica de conflitos e ao enfrentamento de todas as formas de\ndiscriminação.\nCapacitação continuada de profissionais da educação para identificação precoce de situações de\nviolência.\n6. Saúde Integral da Mulher\nFortalecimento da atenção às mulheres vítimas de violência na rede pública de saúde.\nGarantia de atendimento psicológico, assistência especializada, acolhimento numanizado e\nacompanhamento continuado.\nIntegração entre os serviços de saúde, assistência social e segurança pública para evitar a\nrevitimização das mulheres durante o atendimento.\n7. Cidades Seguras para as Mulheres\nCriação de um programa estadual de cooperação com os municípios para fortalecer politicas\nlocais de enfrentamento à violência de gênero.\nApoio técnico para elaboração de planos municipais.\nCapacitação de equipes.\nFortalecimento dos Organismos de Políticas para as Mulheres.\nIncentivo à criação e ao fortalecimento dos Conselhos Municipais dos Direitos da Mulher.\nMetas Estratégicas\n• Cumprir a determinação legal de Delegacias de Proteção às Mulheres abertas 24h\n• Instituir a Casa da Mulher Brasileira em convênio com o Governo Federal\n• Expandir a cobertura da rede de atendimento especializado em todas as regiões do Estado.\n• Reduzir os índices de feminicídio e de violência doméstica.\n• Universalizar o atendimento especializado às mulheres vítimas de violência.\n• Ampliar significativamente a oferta de acolhimento temporário e proteção às mulheres sob\nrisco."
+          },
+          {
+            "id": "40-merisio-7",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• Garantir programas de qualificação profissional e inclusão produtiva para mulheres em\nsituação de violência.\n• Capacitar continuamente os profissionais das áreas de segurança, saúde, educação,\nassistência social e justiça para atendimento humanizado e integrado.\n14ª MISSÃO: INFRAESTRUTURA, LOGÍSTICA E INTEGRAÇÃO\nTERRITORIAL\nA infraestrutura constitui um dos principais fatores de competitividade econômica, integração\nterritorial e qualidade de vida. Santa Catarina possui uma economia dinâmica, fortemente\nintegrada ao comércio nacional e internacional, mas enfrenta limitações estruturais em sua malha\nlogística, resultado de décadas de investimentos insuficientes, ausência de planejamento\nintegrado e baixa articulação entre os diferentes modais de transporte.\nA concentração da movimentação de cargas nas rodovias, os congestionamentos nos principais\ncorredores logísticos, a limitada participação do transporte ferroviário, a necessidade de ampliar a\ncapacidade portuária e aeroportuária, as desigualdades de infraestrutura entre as regiões e os\nimpactos crescentes das mudanças climáticas exigem um novo modelo de planejamento.\nNosso governo implementará uma Política Estadual de Infraestrutura e Logística orientada pela\nintegração entre rodovias, ferrovias, portos, aeroportos, infraestrutura energética, conectividade\ndigital e planejamento territorial.\nO objetivo é construir uma infraestrutura moderna, resiliente e sustentável, capaz de aumentar a"
+          },
+          {
+            "id": "governador-63",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\ncompetitividade da economia catarinense, reduzir desigualdades regionais e melhorar a\nqualidade de vida da população.\nProgramas Estruturantes\nA infraestrutura de Santa Catarina precisa atender as necessidades da população catarinense, da\nlogística de destinação da produção agrícola e industrial e estimular a conexão entre as regiões.\n1. Programa Plano Estadual de Infraestrutura e Logística\nElaborar e implementar um planejamento integrado da infraestrutura estadual, articulando\ninvestimentos públicos e privados.\nO programa compreenderá:\n• Plano Estadual de Infraestrutura e Logística;\n• carteira estratégica de investimentos;\n• priorização técnica de obras;\n• integração entre infraestrutura, desenvolvimento regional e adaptação climática;\n• monitoramento permanente dos projetos estruturantes.\n2. Programa Rodovias para o Desenvolvimento\nModernizar a infraestrutura rodoviária estadual, aumentando a segurança, a capacidade e a\neficiência da circulação de pessoas e mercadorias.\nO programa apoiará:\n• duplicações e ampliações de capacidade;\n• pavimentação e recuperação de rodovias estaduais;\n• eliminação de pontos críticos;\n• manutenção permanente da malha rodoviária;\n- obras de segurança viária;\n• infraestrutura resiliente aos eventos climáticos.\n3. Programa Logística Integrada\nPromover a integração entre os diferentes modais de transporte.\nO programa compreenderá:\n• articulação entre rodovias, ferrovias, portos e aeroportos;"
+          },
+          {
+            "id": "40-merisio-8",
+            "titulo": "40 MERISIO",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "ocr",
+            "conteudo": "40 MERISIO\nGOVERNADOR\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n• plataformas logísticas regionais;\n• centros intermodais de cargas;\n• planejamento logístico integrado;\n• corredores estratégicos de exportação.\n4. Programa Ferrovias para Santa Catarina\nFortalecer a participação do transporte ferroviário na logística estadual.\nO programa apoiará:\n• articulação com o Governo Federal;\n• estudos e projetos ferroviários;\n• integração das ferrovias aos portos e polos industriais;\n• ampliação da competitividade do transporte de cargas;\n• redução dos custos logísticos.\n5. Programa Portos Competitivos\nFortalecer o sistema portuário catarinense como ativo estratégico do desenvolvimento.\nO programa promoverá:\n• integração entre os portos públicos e privados;\n• modernização da infraestrutura portuária;\n• melhoria dos acessos terrestres;\n• digitalização das operações;\n• sustentabilidade ambiental;\n• ampliação da capacidade logística.\n6. Programa Energia para o Desenvolvimento\nAmpliar a segurança energética e apoiar a transição para uma matriz mais sustentável.\nO programa compreenderá:\n• modernização das redes de distribuição;\n• expansão da infraestrutura energética;\n• apoio à geração distribuída;\n- energias renováveis;\n• armazenamento de energia."
+          },
+          {
+            "id": "governador-64",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\n7. Programa Santa Catarina Conectada\nUniversalizar a infraestrutura digital como condição para o desenvolvimento.\nO programa apoiará:\n• expansão da internet de alta velocidade;\n• conectividade rural;\n• redes de fibra óptica;\n• infraestrutura para tecnologia 5G e futuras gerações;\n• inclusão digital dos pequenos municípios.\nMetas Estratégicas\n• Modernizar a infraestrutura de acesso aos portos catarinenses.\n• Apoiar a expansão da infraestrutura ferroviária em articulação com o Governo Federal.\n• Aumentar a participação do transporte ferroviário e intermodal na movimentação de cargas.\n• Expandir a infraestrutura energética para acompanhar o crescimento econômico.\n- Universalizar o acesso à internet de alta velocidade em todos os municípios.\n• Fortalecer a conectividade das áreas rurais.\n• Melhorar a capacidade técnica do Estado na elaboração e gestão de projetos.\n• Ampliar a carteira de projetos executivos aptos à captação de recursos.\n• Reduzir o tempo entre planejamento e execução das obras estratégicas.\n• Viabilizar a implantação da tarifa zero o transporte."
+          },
+          {
+            "id": "governador-65",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "ocr",
+            "conteudo": "GOVERNADOR\n40 MERISIO\nCORAGEM PARA MUDAR\nVICE ANGELA ALBINO\nCONCLUSÃO: UMA VISÃO INTEGRADA PARA O FUTURO\nAs missões apresentadas neste Plano constituem uma estratégia única de desenvolvimento para\nSanta Catarina. Elas não representam áreas isoladas de governo, mas dimensões\ncomplementares de um mesmo projeto, no qual crescimento econômico, justiça territorial,\ninovação, sustentabilidade e qualidade de vida se reforçam mutuamente.\nCada missão será detalhada de forma participativa com a sociedade catarinense, por meio de\ndiagnóstico específico, objetivos estratégicos, programas estruturantes, metas, indicadores e\nmecanismos de governança. Dessa forma, o Plano deixa de ser uma simples relação de\ncompromissos eleitorais para tornar-se um instrumento de planejamento, execução e avaliação\ndas politicas públicas, orientado por resultados e por uma visão compartilhada de futuro para\nSanta Catarina."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "a09f80bea35040cc1c254c0d56eb6559ce1d7e9c29e26f3d6411b9f2335093ca"
+          },
+          {
+            "pagina": 2,
+            "origem": "ocr",
+            "textSha256": "aebdc1b5411ff0e5d39aae2551ea9486b45f41c4b382b770924846f9214f5c89"
+          },
+          {
+            "pagina": 3,
+            "origem": "ocr",
+            "textSha256": "24b70307b121f4791c8b7a8193ae40557aed13aca3c2f045cc159f1f1e455418"
+          },
+          {
+            "pagina": 4,
+            "origem": "ocr",
+            "textSha256": "868c4314f53a0100b35e04e0ecfdf2bf912fdcf24540577a09f2dee8dad6f377"
+          },
+          {
+            "pagina": 5,
+            "origem": "ocr",
+            "textSha256": "cf36cb04b53c1ef7ea0c7707906fa63522a60958ba98042d853287b0dc9e4e77"
+          },
+          {
+            "pagina": 6,
+            "origem": "ocr",
+            "textSha256": "168059f5927db930437941c2fb39e44179de8b4d4a3fae571d000a424fe61e50"
+          },
+          {
+            "pagina": 7,
+            "origem": "ocr",
+            "textSha256": "94df0ee487b81335555e2f8e8af4cbf4aae9e12e73976ee09b4b9caca49639ff"
+          },
+          {
+            "pagina": 8,
+            "origem": "ocr",
+            "textSha256": "8a1cac95a4179df64e90a7f1801ce3ab0d981a88a357868aec166c5ff9233b6e"
+          },
+          {
+            "pagina": 9,
+            "origem": "ocr",
+            "textSha256": "faf5189010eaa353a98a1d56b2f4603893acc5917bab0e08ab86cd03ef4659a7"
+          },
+          {
+            "pagina": 10,
+            "origem": "ocr",
+            "textSha256": "bd4a2de158f176d6b478bc5e9fc503db7f7fc98bd36744dc3295f7b2729b3e78"
+          },
+          {
+            "pagina": 11,
+            "origem": "ocr",
+            "textSha256": "0d8335fdca0582ab2b1fffed5dd70977c2d7f4536ec24016e032c353e3cffe89"
+          },
+          {
+            "pagina": 12,
+            "origem": "ocr",
+            "textSha256": "0c5524cd3e9e165ff09ca2a282f1e760ec47cbf5d89f923aeef70ff8e60b20a5"
+          },
+          {
+            "pagina": 13,
+            "origem": "ocr",
+            "textSha256": "d72045a23fac91d73275fec8b4a05db8ce297a4495e4464430b3624912a4c069"
+          },
+          {
+            "pagina": 14,
+            "origem": "ocr",
+            "textSha256": "b0d9b5fe71641b04e82f57ad4e86cd128eefa65a2e84fe0ebeb32e9fba87e23e"
+          },
+          {
+            "pagina": 15,
+            "origem": "ocr",
+            "textSha256": "ab4483e96c26622b06f97f58520496a4ce51f89a78bc126b181ca4ec23989476"
+          },
+          {
+            "pagina": 16,
+            "origem": "ocr",
+            "textSha256": "e36face0c68fd0c7a00ca533319e291dc916058c9426fd2c42324f759ff88d0e"
+          },
+          {
+            "pagina": 17,
+            "origem": "ocr",
+            "textSha256": "2817fb8927766c3705ecd214ea00776f57e628b70f359b8bc3dec40a1c6dab56"
+          },
+          {
+            "pagina": 18,
+            "origem": "ocr",
+            "textSha256": "544fe462c5e7169739ec6a44c1f63f0b6af1377b597954de4ee6235eacdc8647"
+          },
+          {
+            "pagina": 19,
+            "origem": "ocr",
+            "textSha256": "e25aa0391390c14c0083ca7e3481ea43ecf1d7f26a2e5d750d64ca9449e202bb"
+          },
+          {
+            "pagina": 20,
+            "origem": "ocr",
+            "textSha256": "4d76c7f43c329c37c50f8cf92f15443ddd55c8c658aa0000f55ff509d58c1ef4"
+          },
+          {
+            "pagina": 21,
+            "origem": "ocr",
+            "textSha256": "8320fb72f28caa009cfff2e7f5527a80bcca3273476e84abe78e56ba6ccd10fd"
+          },
+          {
+            "pagina": 22,
+            "origem": "ocr",
+            "textSha256": "8ccfd0454328be9bc7d684f98bfd650ed018ae6c4f208d374b3635337336a15b"
+          },
+          {
+            "pagina": 23,
+            "origem": "ocr",
+            "textSha256": "657c94d6ddfe00c5085ac5ba8e2d0251a9e3cb41743008a808ed5963ef42c1ad"
+          },
+          {
+            "pagina": 24,
+            "origem": "ocr",
+            "textSha256": "19048718f66469256f1e4ee45f3b40126305a9c21b668666fdbe3f430f3201b3"
+          },
+          {
+            "pagina": 25,
+            "origem": "ocr",
+            "textSha256": "7b3138f59a0aa2d64784897a8baf5ebfc97d19631421ac161a138ee8def56a69"
+          },
+          {
+            "pagina": 26,
+            "origem": "ocr",
+            "textSha256": "186f72a50b69d490763bbe1904ec041506b674d844ebaef38de61a23e2bdf92f"
+          },
+          {
+            "pagina": 27,
+            "origem": "ocr",
+            "textSha256": "91102aa8123913ee4beb3dc9262732cae1dc79ee355187ef5026451411fc89df"
+          },
+          {
+            "pagina": 28,
+            "origem": "ocr",
+            "textSha256": "f6a38877d74c7eff9e094cf6dfca3728ed4b6930b45df0267db0155846c76044"
+          },
+          {
+            "pagina": 29,
+            "origem": "ocr",
+            "textSha256": "5116c65c87b592b7a182f2324d1a050c072653bb361bda3d615628acbb5545d6"
+          },
+          {
+            "pagina": 30,
+            "origem": "ocr",
+            "textSha256": "32b78fb82223a533991593cf630c4e72f4750d17a57261e28438cb926faf1102"
+          },
+          {
+            "pagina": 31,
+            "origem": "ocr",
+            "textSha256": "98c7a9511f08554c43c11d9e757aaef1c46185d97240a9b288b72d400082fa83"
+          },
+          {
+            "pagina": 32,
+            "origem": "ocr",
+            "textSha256": "c23738f8064e42ed8b6a014095f8055ad1b207e3c5f7c2e8f4f3a920e186ea89"
+          },
+          {
+            "pagina": 33,
+            "origem": "ocr",
+            "textSha256": "49c1ac8fd706f674272deab54e4ba7197efb4afc194ead44ccf2fd184a5e6745"
+          },
+          {
+            "pagina": 34,
+            "origem": "ocr",
+            "textSha256": "99be04ec89f9c8b1ce4e63c8585aa7b67e7f7412cd879e0150f8a9bb5c81dcaa"
+          },
+          {
+            "pagina": 35,
+            "origem": "ocr",
+            "textSha256": "36cdcb6548de895bc33810b0bd04330559f59ce99278d59266052dfa0aec57b1"
+          },
+          {
+            "pagina": 36,
+            "origem": "ocr",
+            "textSha256": "d8ef20aab34c3514521d7c731fa8b90bfc658b417d092a45a9d825b7681f8a59"
+          },
+          {
+            "pagina": 37,
+            "origem": "ocr",
+            "textSha256": "f400e8cbd069acc96cad7dee93bcad374275274c1d256c983a0c102d47d5bd5e"
+          },
+          {
+            "pagina": 38,
+            "origem": "ocr",
+            "textSha256": "2d1314e2dd455ad15885950459339067d2511f474ac78157935f21feaeedf17f"
+          },
+          {
+            "pagina": 39,
+            "origem": "ocr",
+            "textSha256": "e3d0bd5d0df724015593ae05c6ffc8f4a9609c61eaa356ed9a813f1d5a4144c0"
+          },
+          {
+            "pagina": 40,
+            "origem": "ocr",
+            "textSha256": "fcb51df2882ba5a31b9c240be5b4defe4d9541f0903ba3579337247aff1783b8"
+          },
+          {
+            "pagina": 41,
+            "origem": "ocr",
+            "textSha256": "04d7f9fa48fb4d33743c392728d577fe737fc5796999caee40d10bf4d2269b65"
+          },
+          {
+            "pagina": 42,
+            "origem": "ocr",
+            "textSha256": "505f6e47c515672792f9b452ba9e57bc0363dc98ff3f61a4f5ba99a51ea42b26"
+          },
+          {
+            "pagina": 43,
+            "origem": "ocr",
+            "textSha256": "1306079fb9322be907c12d5bd7d56231d7957aca3ea7bc00a42fd8232e0f2980"
+          },
+          {
+            "pagina": 44,
+            "origem": "ocr",
+            "textSha256": "2db49579a8aeda96fe2c496a7b5805c5d7baaa39c3f7ace1206be4121175e51f"
+          },
+          {
+            "pagina": 45,
+            "origem": "ocr",
+            "textSha256": "bae152fd18b1ae5d7a5736bcb67300bd41ebb8896093563e0011be9142f53dde"
+          },
+          {
+            "pagina": 46,
+            "origem": "ocr",
+            "textSha256": "8bbe1be77d2e17193ae62abe654c997577a186af179d852e2e6d6561b435e2cc"
+          },
+          {
+            "pagina": 47,
+            "origem": "ocr",
+            "textSha256": "0d8d1c0cc545f8ccd473e1212a82e4c9b421f40fabfc952ef0ccca6a6db83d05"
+          },
+          {
+            "pagina": 48,
+            "origem": "ocr",
+            "textSha256": "f8604217f6d516cbf2e1e0e0904bbe8586e465f2c082624f7f266636a5f10f32"
+          },
+          {
+            "pagina": 49,
+            "origem": "ocr",
+            "textSha256": "22095591337019f86358afb3f693259319e47f02647ba814abb9dc756caf7fb7"
+          },
+          {
+            "pagina": 50,
+            "origem": "ocr",
+            "textSha256": "6536883febad64d35c5ab03db57d73ab2307cd5104c4e8c90047e0555f9b1de6"
+          },
+          {
+            "pagina": 51,
+            "origem": "ocr",
+            "textSha256": "8d2bdd8cb8ba13967a2bdfc5845967af983c774bbe410ab94ac1400224618c87"
+          },
+          {
+            "pagina": 52,
+            "origem": "ocr",
+            "textSha256": "8dbf9de47f1696da1f76f63eccae16c0685aae617775031033862cf05e7bb320"
+          },
+          {
+            "pagina": 53,
+            "origem": "ocr",
+            "textSha256": "be9147b67cac20f35a924f68b7d3b58ef36fab0b31b6c13dbf82ce00620912ed"
+          },
+          {
+            "pagina": 54,
+            "origem": "ocr",
+            "textSha256": "9b7437a87d3047794483922df6527ae56553a00231df5ce5a7ae52a23a83805b"
+          },
+          {
+            "pagina": 55,
+            "origem": "ocr",
+            "textSha256": "7c5b716245900e97ab633ac8b9058cb3596438a05c0df199cbe2bfbd1fc0861e"
+          },
+          {
+            "pagina": 56,
+            "origem": "ocr",
+            "textSha256": "a982c09fadfbd9cac5ad5eaaf09bb5723c9e2288307beea89f6c91ec2c624d3d"
+          },
+          {
+            "pagina": 57,
+            "origem": "ocr",
+            "textSha256": "83453bcf1e4b7863e546a160453acd663ad09a922b3a29a20878d9e615e3981c"
+          },
+          {
+            "pagina": 58,
+            "origem": "ocr",
+            "textSha256": "dae75f130daf3d40eeb6ec2db49c22f85eee660bc291bb9862efc60d54fda2b8"
+          },
+          {
+            "pagina": 59,
+            "origem": "ocr",
+            "textSha256": "d0418b33665ea4d0806fdf2c2b0c49b61dd01ebc5ab77b6f6c0b99a2e22a59e7"
+          },
+          {
+            "pagina": 60,
+            "origem": "ocr",
+            "textSha256": "ea35e63369095d05642e7f2c7b0d10ede19cb577bdc4648ddd671a11ce305c79"
+          },
+          {
+            "pagina": 61,
+            "origem": "ocr",
+            "textSha256": "1fea15668148bbc47c7b96435f70a5666deff62a7c671126b51c283eb33f658a"
+          },
+          {
+            "pagina": 62,
+            "origem": "ocr",
+            "textSha256": "42a4c55a09872bfac637aec81275bfd2dfc510876c01d6eac2d33282d51066ed"
+          },
+          {
+            "pagina": 63,
+            "origem": "ocr",
+            "textSha256": "0640fd8f606147fc52672f095b4d73c29466c8645e232c18d9a184ca6abf3ce8"
+          },
+          {
+            "pagina": 64,
+            "origem": "ocr",
+            "textSha256": "435697f97dd73767e1bd56566fa737ec2a16792a8d8249a3178e291774eeb4e4"
+          },
+          {
+            "pagina": 65,
+            "origem": "ocr",
+            "textSha256": "140f4fd5c322276324e2bd4952ce121fa526ee02232aea7763b41427248456f6"
+          },
+          {
+            "pagina": 66,
+            "origem": "ocr",
+            "textSha256": "829ed1c1dbf1e25b623f1ad17ebc92b0f9c1633a331392807ba0c598195fbaba"
+          },
+          {
+            "pagina": 67,
+            "origem": "ocr",
+            "textSha256": "028dfa4dec57d544cb00c6429f42b667132b4ab87f884e01b7b1c0ee239e4e19"
+          },
+          {
+            "pagina": 68,
+            "origem": "ocr",
+            "textSha256": "4a947b9980c8bf7c7387f769e5cc92c84e10fa65638c33bf592a23615885c738"
+          },
+          {
+            "pagina": 69,
+            "origem": "ocr",
+            "textSha256": "a6920b524edee08b8bf67cbc058009b41a976ce367ec55763347f5fce64d3df1"
+          },
+          {
+            "pagina": 70,
+            "origem": "ocr",
+            "textSha256": "9179d8b5211b8ea3c99b2a5364ce07ec3b8c98ee468cbd97ba82332fff069d52"
+          },
+          {
+            "pagina": 71,
+            "origem": "ocr",
+            "textSha256": "affb769801517bc9a79d9ef3a89be4bb2bf9d08be69f353333467146090b2543"
+          },
+          {
+            "pagina": 72,
+            "origem": "ocr",
+            "textSha256": "66c6f7b54a76b39683d47061ba88a86abe3ee1f129bcdbade2074b429084f10e"
+          },
+          {
+            "pagina": 73,
+            "origem": "ocr",
+            "textSha256": "efed6e725f0e7ef76f13f7560b5b9ddc5ef5e577fb855641902c00c741b9f8dc"
+          },
+          {
+            "pagina": 74,
+            "origem": "ocr",
+            "textSha256": "d1605969a2d496fae14d131c697c10be5de38d6a46c1a2b17784debeb89fa14f"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada. O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo. Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas. Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano. Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável. Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos. Ampliar os mecanismos permanentes de participação da sociedade na formulação, implementação e avaliação das politicas públicas.",
+    "frases": [
+      {
+        "texto": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 6,
+            "trecho": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada."
+          }
+        ]
+      },
+      {
+        "texto": "O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 8,
+            "trecho": "O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo."
+          }
+        ]
+      },
+      {
+        "texto": "Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 9,
+            "trecho": "Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 14,
+            "trecho": "Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano."
+          }
+        ]
+      },
+      {
+        "texto": "Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 25,
+            "trecho": "Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável."
+          }
+        ]
+      },
+      {
+        "texto": "Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 49,
+            "trecho": "Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos."
+          }
+        ]
+      },
+      {
+        "texto": "Ampliar os mecanismos permanentes de participação da sociedade na formulação, implementação e avaliação das politicas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 64,
+            "trecho": "Ampliar os mecanismos permanentes de participação da sociedade na formulação, implementação e avaliação das politicas públicas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "coordenacao-estatal",
+        "titulo": "Coordenação estatal",
+        "descricao": "O plano descreve a coordenação estatal do desenvolvimento.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 6,
+            "trecho": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada."
+          }
+        ]
+      },
+      {
+        "id": "planejamento-integrado",
+        "titulo": "Planejamento integrado",
+        "descricao": "O plano apresenta planejamento integrado como instrumento de governo.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 8,
+            "trecho": "O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo."
+          }
+        ]
+      },
+      {
+        "id": "inteligencia-territorial",
+        "titulo": "Inteligência territorial",
+        "descricao": "O plano prevê um sistema estadual de inteligência territorial.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 9,
+            "trecho": "Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas."
+          }
+        ]
+      },
+      {
+        "id": "superacao-da-pobreza",
+        "titulo": "Superação da pobreza",
+        "descricao": "O plano propõe a superação da pobreza extrema.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 14,
+            "trecho": "Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano."
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-sustentavel",
+        "titulo": "Mobilidade sustentável",
+        "descricao": "O plano propõe mobilidade sustentável.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 25,
+            "trecho": "Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável."
+          }
+        ]
+      },
+      {
+        "id": "adaptacao-climatica",
+        "titulo": "Adaptação climática",
+        "descricao": "O plano prevê adaptação climática no planejamento público.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002548628:01",
+            "pagina": 49,
+            "trecho": "Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:36:02.794Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:38:32.197Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre papel do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:1:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata do plano como instrumento único de planejamento, área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:2:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre inteligência territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:3:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: combate à pobreza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:4:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:5:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:6:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:frase:7:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição de coordenação estatal do desenvolvimento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: coordenação estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:coordenacao-estatal:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o planejamento integrado como instrumento de governo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: planejamento integrado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:planejamento-integrado:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a criação do sistema."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: inteligência territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:inteligencia-territorial:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a proposta de superação da pobreza extrema."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: superação da pobreza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:superacao-da-pobreza:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a proposta de mobilidade sustentável."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: mobilidade sustentável."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:mobilidade-sustentavel:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a previsão de adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002548628:tema:adaptacao-climatica:documentos:SC:240002548628:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática única apresentada."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002548628",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002548628:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 47914,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2905,
+          "reasoning_output_tokens": 1526
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28042,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24739,
+          "output_tokens_details": {
+            "thinking_tokens": 240
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28042,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24739,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28042,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28042
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.38072839999999997
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "4317be5f0e60ff92aa0a1fce6eaabb8ddfb75efe29b4269181add7f274837013",
+    "extractedTextSha256": "35738857fa170952964df3afe4008cdf4c268063212e9b4eace7a97b5b039e24",
+    "documentCount": 1,
+    "documentSetSha256": "f36c53bc5cde7632044a08b28fba106824f192528b2072ebbd70063a39e32673",
+    "contentSha256": "abc5376f8739654ddfacb8445951a63b4328555751ce265f6a4ea6e19b10b9e2"
+  }
+}

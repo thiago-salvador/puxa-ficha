@@ -1,0 +1,1000 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PR",
+    "sqCandidato": "160002547594",
+    "slug": "alexandre-salomao",
+    "nomeUrna": "DOUTOR ALEXANDRE SALOMÃO",
+    "partido": "MOBILIZA",
+    "arquivoNome": "2026PR160002547594_01.pdf",
+    "arquivoNoPacote": "PR/2026PR160002547594_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PR:160002547594:01",
+      "fonte": {
+        "arquivoNome": "2026PR160002547594_01.pdf",
+        "arquivoNoPacote": "PR/2026PR160002547594_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e289c37e785c8530c9c6a6917e173ac90f4c34222bbeb66e6c29be215e619356",
+        "extractedTextSha256": "3279b7eacd0de0a3378042966a92a3d70cf49b0b2aba7db6675196155068da34",
+        "paginas": 20,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\n▲\n\nPARANÁ EM MOVIMENTO\nPROSPERIDADE, FUTURO E OPORTUNIDADE\nLibertas Quæ Sera Tamen\n\nAlexandre Salomão — Governador\nDaiana Criminacio — Vice-Governadora\nMobiliza Paraná · Eleições 2026\n\nPágina 1 de 20"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n1. Manifesto — Mobiliza Paraná\n2. Nossos Candidatos\n3. Apresentação\n4. Eixo 1 — Educação: formar pessoas, não apenas alunos\n5. Eixo 2 — Neurodiversidade: enxergar talentos onde outros enxergam limitações\n6. Eixo 3 — Cultura: tirar crianças das telas e colocá-las diante da vida\n7. Eixo 4 — Paraná dos Talentos: descobrir no que cada criança é boa\n8. Eixo 5 — Prosperidade: desenvolvimento que chega às pessoas\n9. Eixo 6 — Saúde e Segurança: o básico precisa funcionar\n10. Governança do Plano: como vamos executar e prestar contas\n11. Compromissos Mensuráveis\n12. Fechamento\n▲\n\nPágina 2 de 20"
+          },
+          {
+            "id": "manifesto-mobiliza-parana",
+            "titulo": "MANIFESTO — MOBILIZA PARANÁ",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "MANIFESTO — MOBILIZA PARANÁ\nSomos o Mobiliza Paraná, diretório estadual do PMN, um partido que nasceu da\nredemocratização brasileira com a missão de fortalecer a cidadania, a justiça social e a\nsoberania nacional por meio da participação popular. Honramos essa história e a\ntrajetória de mobilização que fez do PMN um instrumento de expressão democrática em\ntodo o país.\nHoje, damos um novo passo: queremos furar a bolha do extremismo político que\nsequestrou o debate público e trazer a razão de volta à política paranaense. Defendemos\numa visão de centro-direita, ancorada em valores liberais, que acredita na liberdade\neconômica com responsabilidade social, no empreendedorismo, na eficiência do Estado e\nno respeito inegociável à democracia e às instituições.\nNosso compromisso é construir pontes onde outros erguem muros. Recusamos a lógica\ndo “nós contra eles” e trabalhamos para aproximar cidadãos que pensam diferente, mas\ncompartilham algo essencial: o desejo de um Paraná mais próspero, seguro, inovador e\nhumano. Entendemos que não há desenvolvimento sustentável sem segurança jurídica,\nliberdade de expressão e um ambiente favorável a quem produz, investe e trabalha.\nQueremos uma política baseada em fatos, evidências e resultados, não em gritos, rótulos\nou narrativas de ódio. Buscamos soluções pragmáticas para os problemas reais do\nestado: geração de emprego e renda, melhoria da educação, saúde de qualidade,\ninfraestrutura moderna, cidades mais organizadas e seguras, oportunidades para os\njovens e acolhimento responsável às populações mais vulneráveis.\nMobiliza Paraná é a casa de quem está cansado dos extremos, mas não desistiu da\npolítica. Aqui, convidamos cidadãos comuns, lideranças comunitárias, empreendedores,\nprofissionais liberais, jovens e agentes públicos a se engajarem em um projeto que\nrespeita as raízes do PMN e, ao mesmo tempo, projeta um futuro mais equilibrado,\nmoderno e produtivo para o Paraná. Mobilizar é sair da indignação e agir. Nosso\npropósito é claro: reunir pessoas de boa-fé, com valores democráticos, para mudar a\npolítica de dentro, pelo voto, pelo diálogo e pela participação responsável.\nO verde que identifica este plano não é escolha de design: é a cor da nossa origem e do\nnosso horizonte — a mesma que carregamos no símbolo do partido.\n▲\n\nPágina 3 de 20"
+          },
+          {
+            "id": "nossos-candidatos",
+            "titulo": "NOSSOS CANDIDATOS",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "NOSSOS CANDIDATOS\nAlexandre Salomão — Candidato ao Governo do Paraná\nAdvogado com mais de 20 anos de atuação nas áreas de Direito Penal, Processo Penal e\nDireitos Humanos. Graduado em Direito pela Universidade Tuiuti do Paraná, com pósgraduação em Direitos Humanos pela Universidade de Olavide (Espanha) e em Direito\nPenal e Criminologia pelo ICPC, além de mestrado em Direito em curso no\nUNICURITIBA.\nAo longo de sua trajetória, ocupou cargos de destaque na OAB Paraná, foi presidente da\nAssociação Paranaense dos Advogados Criminalistas (APACRIMI), é membro do Conselho\nPermanente de Direitos Humanos do Estado do Paraná (COPED) e integrante de grupos\nde trabalho do Tribunal de Justiça do Paraná. Recebeu homenagens da Assembleia\nLegislativa do Paraná, da Câmara Municipal de Curitiba e da Ordem dos Advogados do\nBrasil por sua atuação institucional e em defesa dos direitos humanos.\nSua trajetória de duas décadas no Direito Penal e nos Direitos Humanos molda uma visão\nde segurança pública que não separa eficácia de legalidade: para Alexandre Salomão, um\nEstado só é forte quando é, ao mesmo tempo, firme contra o crime e rigoroso na defesa\ndos direitos de cada cidadão — princípio e prática já testados em milhares de casos ao\nlongo de sua carreira.\n\nDaiana Criminacio — Candidata a Vice-Governadora do Paraná\nEducadora, empresária e líder comunitária. Formação em Educação Especial em\nandamento e estudos em Relações Internacionais. Construiu sua trajetória profissional na\ngestão empresarial, comunicação institucional e desenvolvimento de projetos sociais,\ncom atuação em empresas dos setores alimentício, industrial e comercial, além de\nparticipação em programa de formação institucional na Câmara dos Deputados.\nÉ integrante da Mesa Diretiva do Movimento Mulheres e Política de São José dos Pinhais\n(2025-2026), idealizadora dos projetos sociais “Conheça-me” — voltado à inclusão e à\nneurodiversidade — e “Homens de Valor” — direcionado à formação cidadã de\nadolescentes. Destaca-se também como palestrante em temas relacionados à educação\ninclusiva, ao fortalecimento das famílias, ao desenvolvimento humano e à participação\nfeminina na política.\nA experiência de Daiana Criminacio à frente de projetos sociais próprios — nascidos da\nprática, não do gabinete — traz ao governo um olhar raro: o de quem já organizou,\nsozinha, iniciativas de inclusão e formação cidadã antes de ter uma estrutura de Estado à\ndisposição. É esse olhar prático que orienta sua atuação nos eixos de Educação,\nNeurodiversidade e Cultura deste plano.\n\nPágina 4 de 20"
+          },
+          {
+            "id": "nossos-candidatos-juntos",
+            "titulo": "Nossos candidatos, juntos",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Nossos candidatos, juntos\nAlexandre Salomão e Daiana Criminacio reúnem, numa só chapa, experiência jurídica e\ninstitucional, liderança comunitária e compromisso com o desenvolvimento social e\neconômico do Paraná — uma combinação que une segurança pública e direitos humanos\nà educação inclusiva e ao desenvolvimento social, dois pilares essenciais de um governo\npara o Paraná inteiro. Não é uma chapa de complementos protocolares: é a junção\ndeliberada de duas trajetórias que, juntas, cobrem o que um governo de verdade precisa\nenxergar — a lei e a vida, a instituição e a comunidade, a régua técnica e o cuidado\nhumano.\n▲\n\nPágina 5 de 20"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Paraná tem hoje uma economia forte, uma educação reconhecida nacionalmente e uma\nsituação fiscal invejável entre os estados brasileiros. É a quarta maior economia do país,\ncom um Produto Interno Bruto que saltou de R$ 440 bilhões em 2018 para R$ 718,9\nbilhões em 2024. É o estado com a menor proporção de cargos comissionados no Poder\nExecutivo do Brasil. É o estado com a melhor situação previdenciária do país, pelo\nterceiro ano consecutivo. E é, desde 2023, o líder nacional do IDEB, tanto no ensino\nmédio quanto nos anos iniciais do ensino fundamental.\nSão conquistas reais, construídas ao longo de anos, e que este plano de governo\nreconhece e pretende continuar aprimorando. A responsabilidade fiscal, em particular,\nnão é um detalhe técnico: é o que garante que um governo tenha, de fato, dinheiro em\ncaixa para investir onde a população mais precisa, em vez de gastar o orçamento inteiro\npagando dívida e juros — como enfrentam hoje quatro estados brasileiros em Regime de\nRecuperação Fiscal, com uma dívida somada de mais de R$ 468 bilhões.\nMas um Estado não se mede apenas pelo tamanho do seu PIB ou pela nota da sua dívida\n— mede-se pela vida concreta de cada família, de cada criança na escola, de cada\npaciente na fila do SUS, de cada policial na rua, de cada produtor tentando escoar sua\nsafra. É nesse ponto que o Paraná ainda tem uma dívida a pagar consigo mesmo: um\ndéficit histórico de efetivo policial que convive, lado a lado, com uma das menores taxas\nde homicídio do país; hospitais filantrópicos pedindo socorro financeiro ao Estado; um\nmodelo de gestão escolar que precisa de mais debate público; e uma transição tributária\nnacional que pode custar caro a um estado com o perfil produtor e exportador do Paraná,\nse não for enfrentada com antecedência.\nEste plano de governo nasce dessa dupla constatação: reconhecer o que funciona, sem\nvaidade, e enfrentar o que ainda falta, sem medo. Ele é organizado em seis eixos, que\nrespondem a uma pergunta simples: o que significa, na prática, um governo que trabalha\npara o Paraná inteiro — e não apenas para os números que aparecem bem nas\nestatísticas?\nCada eixo deste plano começa por um diagnóstico honesto, construído a partir de dados\noficiais e de fontes públicas verificáveis, e termina em propostas concretas — não\npromessas genéricas. É assim que pretendemos governar: com transparência sobre o\nponto de partida e clareza sobre o destino.\n\nO Paraná em perspectiva\nVale situar o Paraná diante do resto do Brasil, porque nenhum diagnóstico estadual faz\nsentido isolado do contexto nacional. Em segurança pública, o Brasil como país segue\nacima do patamar que a Organização Mundial da Saúde considera epidêmico — 15,97\nhomicídios por 100 mil habitantes em 2025 —, mas o Paraná, isoladamente, já rompeu\nessa barreira, com 9,9 por 100 mil habitantes. Em educação, o Paraná lidera o ranking\n\nPágina 6 de 20"
+          },
+          {
+            "id": "nacional-do-ideb-mas-o-brasil-como-um-todo-ocupa-a-60-posicao-entre-81-p",
+            "titulo": "nacional do IDEB, mas o Brasil como um todo ocupa a 60ª posição entre 81 países no",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "nacional do IDEB, mas o Brasil como um todo ocupa a 60ª posição entre 81 países no\nPISA — o que mostra que a régua nacional, mesmo quando o Paraná está no topo dela,\nainda está distante da régua internacional. Em finanças públicas, o Paraná tem nota\nmáxima de capacidade de pagamento junto ao Tesouro Nacional, enquanto quatro\nestados brasileiros — Rio de Janeiro, Minas Gerais, Rio Grande do Sul e Goiás — vivem\nhoje sob Regime de Recuperação Fiscal, incapazes de honrar sozinhos suas dívidas com a\nUnião.\nEsses três contrastes contam uma história consistente: o Paraná parte na frente do Brasil\nem quase tudo que se mede oficialmente, mas o Brasil, como referência, não é um padrão\nsuficientemente exigente. Este plano de governo assume, deliberadamente, um padrão\nmais alto — comparar o Paraná não apenas com os outros 26 estados, mas com as\nmelhores práticas do próprio Brasil ao longo da última década e com referências\ninternacionais, sempre que a informação existir e for confiável.\n\nComo este plano foi construído\nAs propostas reunidas neste documento partem de três fontes complementares: o\nhistórico de políticas públicas já testadas no Paraná, reconhecendo o que funcionou e o\nque ainda precisa de ajuste; experiências de outros estados brasileiros que hoje são\nreferência nacional em suas respectivas áreas — como o Ceará em alfabetização e o\nEspírito Santo em segurança pública territorializada; e políticas internacionais e de\noutros estados brasileiros que já demonstraram resultado mensurável e têm potencial\nreal de adaptação à realidade paranaense. Nenhuma proposta deste plano nasce de\nintuição ou de discurso — todas partem de um caso concreto, testado, com resultado que\npode ser verificado.\n▲\n\nPágina 7 de 20"
+          },
+          {
+            "id": "eixo-1-educacao-formar-pessoas-nao-apenas",
+            "titulo": "EIXO 1 — EDUCAÇÃO: FORMAR PESSOAS, NÃO APENAS",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1 — EDUCAÇÃO: FORMAR PESSOAS, NÃO APENAS\nALUNOS\n“Nenhum Estado se torna grande apenas pelas obras que constrói. Um Estado se\ntorna grande pelas pessoas que forma.”\n\nDiagnóstico\nO Paraná assumiu, em 2023, a liderança nacional do IDEB — primeiro lugar no ensino\nmédio, com nota 4,9, à frente de Goiás e Espírito Santo, e também nos anos iniciais do\nensino fundamental, com nota 6,7, à frente de Ceará e São Paulo. O estado saiu da 7ª\npara a 1ª posição nacional em poucos anos. É uma conquista real, construída com\nmudança curricular, tecnologia em sala de aula — 500 mil alunos já têm aulas de\nprogramação e robótica — e apoio técnico do Estado aos municípios via o programa\n“Educa Juntos”.\nMas há um limite importante nessa conquista: o IDEB mede o Brasil apenas contra o\npróprio Brasil. Na comparação internacional do PISA — o exame da OCDE aplicado em\n81 países —, o Brasil como um todo ocupa a 60ª posição geral, abaixo da média da OCDE\nnas três disciplinas avaliadas, com cerca de 70% dos estudantes brasileiros sem atingir o\nnível básico em matemática. Ou seja: ser primeiro do Brasil é uma conquista real, mas\nainda distante da fronteira internacional de qualidade educacional.\nTambém há um debate pedagógico em aberto: setores da sociedade civil apontam que o\nmodelo de parcerias privadas na gestão escolar do Paraná, como o programa “Parceiro da\nEscola”, precisa de mais transparência sobre seus resultados — inclusive porque parte\nrelevante dos recursos federais de complementação por resultado (VAAR) tem sido\ndirecionada a esses contratos, em vez de para infraestrutura direta das escolas.\n\nPropostas\nPrimeira infância. Ampliação do investimento em creches e educação infantil, com\nprioridade para os municípios com maior vulnerabilidade social, e continuidade da\ndistribuição universal de kits escolares e uniformes — política que já atende cerca de 1\nmilhão de estudantes por ano.\nAlfabetização\n\ne\n\naprendizagem. Aprofundamento do programa “Educa Juntos”,\n\nincorporando o modelo de governança municipalizada consolidado pelo Programa de\nAlfabetização na Idade Certa do Ceará — quase 20 anos de existência e referência\nnacional, com meta explícita de 100% das crianças alfabetizadas até o fim do 2º ano do\nfundamental — com metas por município e apoio técnico direto do Estado às redes\nmunicipais.\n\nPágina 8 de 20"
+          },
+          {
+            "id": "professores-valorizados-e-preparados-conclusao-da-eliminacao-de-salas-de",
+            "titulo": "Professores valorizados e preparados. Conclusão da eliminação de salas de madeira",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Professores valorizados e preparados. Conclusão da eliminação de salas de madeira\n(hoje em 60% de redução, com meta de 100%) e da instalação de climatização nas salas\nde aula (25 mil salas previstas, 15 mil já entregues). Calendário regular e previsível de\nconcursos e progressão docente — sem descontinuidade entre gestões. Revisão\ntransparente e participativa do modelo de parcerias privadas na gestão escolar, com\nprestação de contas pública sobre seus resultados pedagógicos e financeiros antes de\nqualquer decisão de manutenção, ajuste ou substituição.\nEducação conectada ao futuro, tecnologia e trabalho. Continuidade e ampliação das\naulas de programação e robótica na rede estadual, com integração direta ao eixo “Paraná\ndos Talentos”. Fortalecimento do ensino técnico e profissionalizante como trilha formal\nde formação no contraturno escolar, aproximando a escola pública das demandas reais do\nmercado de trabalho paranaense — do agro à indústria, da tecnologia aos serviços.\nUma meta além do Brasil. Ser primeiro no IDEB é uma conquista nacional; nossa\nambição é maior. Vamos assumir a participação e o desempenho no PISA como meta de\nlongo prazo, medindo a educação paranaense não apenas contra o resto do país, mas\ncontra os melhores sistemas educacionais do mundo — como Singapura, hoje líder do\nranking nas três disciplinas avaliadas.\n▲\n\nPágina 9 de 20"
+          },
+          {
+            "id": "eixo-2-neurodiversidade-enxergar-talentos-onde",
+            "titulo": "EIXO 2 — NEURODIVERSIDADE: ENXERGAR TALENTOS ONDE",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2 — NEURODIVERSIDADE: ENXERGAR TALENTOS ONDE\nOUTROS ENXERGAM LIMITAÇÕES\n“Dentro da neurodiversidade existem estrelas que ainda não aprendemos a\nenxergar.” — Daiana Criminacio\n\nDiagnóstico e identificação precoce. Escola preparada para diferentes formas de\naprender.\n\nApoio\n\nàs\n\nfamílias.\n\nAltas\n\nhabilidades\n\ntambém\n\nprecisam\n\nser\n\nreconhecidas.\n\nDiagnóstico de apoio (dados oficiais)\nO Paraná já conta com uma rede de cerca de 3 mil Salas de Recursos Multifuncionais, 1,4\nmil Professores de Apoio (PAEs) e 4,1 mil Professores de Apoio Educacional Especializado\n(PAEEs), distribuídos em centenas de municípios. É uma das poucas redes estaduais do\npaís com professor de apoio especializado ao lado do aluno autista. O número de\nestudantes com diagnóstico de Transtorno do Espectro Autista matriculados na rede vem\ncrescendo continuamente a cada levantamento da Secretaria — o que reflete tanto a\nampliação real da rede de diagnóstico quanto o aumento da identificação. No campo das\naltas habilidades e superdotação, a rede atende cerca de 12 mil estudantes em 315 salas\nde Atendimento Educacional Especializado, distribuídas em 167 escolas, com expansão\nprevista.\nÉ uma base real a partir da qual este governo pretende avançar. Mas há lacunas que\nprecisam ser conhecidas e enfrentadas: não há, hoje, dado público sobre o tempo médio\nde espera por diagnóstico na rede pública de saúde, sobre a cobertura por região —\nquantos municípios ainda não têm nenhuma Sala de Recursos Multifuncionais — ou sobre\nprogramas específicos de apoio a famílias fora do ambiente escolar. Esse será um dos\nprimeiros levantamentos a serem feitos nos primeiros meses de governo, como base para\nmetas concretas e territorializadas.\n▲\n\nPágina 10 de 20"
+          },
+          {
+            "id": "eixo-3-cultura-tirar-criancas-das-telas-e-colocalas-diante-da-vida",
+            "titulo": "EIXO 3 — CULTURA: TIRAR CRIANÇAS DAS TELAS E COLOCÁLAS DIANTE DA VIDA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3 — CULTURA: TIRAR CRIANÇAS DAS TELAS E COLOCÁLAS DIANTE DA VIDA\n“Uma criança que conhece arte aprende também a imaginar futuros.”\n\nDiagnóstico\nO Paraná foi um dos três únicos estados do Brasil — ao lado de Espírito Santo e Goiás —\na executar 100% dos recursos da Lei Paulo Gustavo, com R$ 209,75 milhões investidos e\npresença em 395 dos 399 municípios paranaenses, o maior investimento entre os estados\ndo Sul. Foram publicados 11 editais estaduais de fomento à cultura no âmbito da lei. É\numa base real de capilaridade cultural pelo interior do estado.\nMas há uma fragilidade estrutural por trás desse número: trata-se, majoritariamente, de\nrecurso federal extraordinário, não de orçamento próprio e recorrente do Estado para a\ncultura. Não há, nas fontes públicas disponíveis, um mapeamento consolidado da rede de\nequipamentos culturais do Paraná — teatros, museus, bibliotecas, espaços de patrimônio\n— nem da sua distribuição por região. E os programas de cultura dentro da escola, hoje,\ndependem majoritariamente de editais pontuais, não de uma política permanente\nintegrada à grade escolar.\n\nPropostas\nTeatro, música, arte, leitura, esporte, museus e patrimônio. Vamos propor\norçamento próprio e recorrente do Estado para a cultura, para que o acesso à arte não\ndependa apenas de recursos federais extraordinários como a Lei Paulo Gustavo —\ngarantindo continuidade da política independentemente do calendário de repasses da\nUnião.\nCultura como formação humana, não apenas entretenimento. Mapeamento\ncompleto da rede de equipamentos culturais do Paraná e plano de expansão\nregionalizada, priorizando municípios hoje sem nenhum acesso a esses espaços — um\ndiagnóstico que ainda não existe de forma pública e que será um dos primeiros passos da\ngestão.\nEscola como espaço vivo de cultura. Programas permanentes de cultura dentro da\ncarga horária escolar, integrados ao eixo Paraná dos Talentos, para que teatro, música e\nleitura façam parte da rotina formativa de cada estudante da rede pública — e não\napenas de editais pontuais e descontínuos.\n▲\n\nPágina 11 de 20"
+          },
+          {
+            "id": "eixo-4-parana-dos-talentos-descobrir-no-que-cada",
+            "titulo": "EIXO 4 — PARANÁ DOS TALENTOS: DESCOBRIR NO QUE CADA",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4 — PARANÁ DOS TALENTOS: DESCOBRIR NO QUE CADA\nCRIANÇA É BOA\nCiência. Esporte. Arte. Tecnologia. Empreendedorismo. Formação profissional.\n\nDo que trata\nNenhuma criança deveria terminar a escola sem ter descoberto pelo menos um talento\nque possa desenvolver. Hoje, a rede estadual já oferece aulas de programação e robótica\na centenas de milhares de alunos — uma base tecnológica real, mas ainda restrita a uma\núnica dimensão do talento humano. Ciência, esporte, arte e empreendedorismo seguem,\nmajoritariamente, fora da trilha formal de formação de cada estudante.\n\nPropostas\nVamos transformar em trilhas formais, dentro da rede estadual, o que hoje já existe de\nforma inicial — ampliando a experiência de programação e robótica para esporte, arte e\nempreendedorismo como parte reconhecida e avaliada da formação de cada estudante,\nem articulação direta com os eixos de Educação e Cultura. Cada escola estadual deverá\noferecer, no contraturno, ao menos uma trilha de descoberta de talento fora do currículo\ntradicional, com acompanhamento e certificação, para que o estudante que sai da escola\npública saiba não apenas o que aprendeu, mas também no que é bom.\n▲\n\nPágina 12 de 20"
+          },
+          {
+            "id": "eixo-5-prosperidade-desenvolvimento-que-chega",
+            "titulo": "EIXO 5 — PROSPERIDADE: DESENVOLVIMENTO QUE CHEGA",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5 — PROSPERIDADE: DESENVOLVIMENTO QUE CHEGA\nÀS PESSOAS\n“Queremos um Paraná que continue produzindo riqueza, mas que também\nproduza oportunidades.”\n\nAgro forte e logística à altura da nossa vocação\nDiagnóstico. O Paraná é a 4ª maior economia do Brasil e um dos maiores polos\nagroexportadores do país — o Porto de Paranaguá é o maior porto exportador de grãos do\nBrasil e líder nacional em exportação de óleo vegetal e carne de frango congelada. Mas\nhoje apenas cerca de 20% da carga de exportação chega ao porto por ferrovia, e apenas\n10% desse total tem origem no Oeste do estado, o principal polo produtor paranaense —\no restante é escoado por rodovia, com frete mais caro e maior desgaste da malha viária.\nNo Índice de Desempenho Logístico do Banco Mundial, o Brasil ocupa apenas a 51ª\nposição entre 139 países, atrás de Índia, China e África do Sul, com o maior gargalo\nrelativo em burocracia aduaneira, não apenas em infraestrutura física.\nPropostas.\n• Priorizar a conclusão da Nova Ferroeste (mais de 1.500 km de nova malha ferroviária\nligando o Paraná ao Mato Grosso do Sul, com ramais para Foz do Iguaçu e Santa\nCatarina) e do Moegão do Porto de Paranaguá (que deve elevar a movimentação de\n550 para 900 vagões por dia), com metas públicas de aumento da participação\nferroviária no escoamento de grãos do Oeste paranaense.\n• Avaliar tecnicamente a viabilidade da Hidrovia Paraná-Paraguai como terceiro\nmodal de escoamento para o Oeste do estado, hoje já utilizada pelo Paraguai, mas\npouco explorada pelo lado paranaense.\n• Estender a agenda de desburocratização — em que o Paraná já é líder nacional em\ndispensa de alvarás e licenças — aos processos aduaneiros e portuários, reduzindo o\ngargalo documental que hoje pesa mais sobre o Brasil do que a própria infraestrutura\nfísica.\n• Acompanhar de perto a concorrência dos portos do “Arco Norte” pelo escoamento de\ngrãos do Centro-Oeste, mantendo Paranaguá competitivo em prazo e previsibilidade —\no Estado já anunciou R$ 6,8 bilhões em investimentos para enfrentar esse desafio, e\nvamos garantir que esse cronograma seja cumprido e monitorado publicamente.\n\nIndústria, empreendedorismo e inovação\nContinuidade e ampliação da agenda de desburocratização e de atração de investimentos\nprivados — o Paraná já atraiu mais de R$ 300 bilhões em investimentos privados desde\n2019, segundo dados do próprio governo, e lidera o ranking nacional de dispensa de\n\nPágina 13 de 20"
+          },
+          {
+            "id": "alvaras-e-licencas-vamos-manter-essa-agenda-com-transparencia-fiscal-sob",
+            "titulo": "alvarás e licenças. Vamos manter essa agenda, com transparência fiscal sobre dívida e",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "alvarás e licenças. Vamos manter essa agenda, com transparência fiscal sobre dívida e\nexecução orçamentária como contrapartida — para que o discurso de resultado\neconômico venha sempre acompanhado do compromisso de solidez fiscal de longo prazo,\ne não apenas de anúncios.\n\nTurismo e qualificação profissional\nO Paraná reúne, num mesmo território, ativos turísticos de escala internacional — as\nCataratas do Iguaçu, o litoral, a Serra do Mar, rotas de turismo rural e enoturismo no\ninterior — e uma capacidade industrial que já atrai investimento estrangeiro. São dois\npotenciais que ainda crescem de forma desconectada. Vamos tratar o turismo como\npolítica de desenvolvimento regional, e não apenas como pasta setorial isolada: cada\ninvestimento em logística (Eixo 5, agro e logística) e em segurança pública (Eixo 6)\ntambém abre ou fecha portas para o turismo do interior do estado, e o planejamento\ndessas áreas passará a considerar esse impacto de forma explícita.\nDo lado da qualificação profissional, a conexão com a Educação (Eixo 1) é direta: o\nfortalecimento do ensino técnico e profissionalizante no contraturno escolar é também\npolítica de desenvolvimento econômico, formando mão de obra qualificada para os\nsetores que já são a vocação do Paraná — agroindústria, logística, manufatura e, cada vez\nmais, tecnologia. Um governo que trata educação e economia como agendas separadas\nperde a oportunidade de formar, hoje, a força de trabalho de que o Paraná vai precisar\namanhã.\n\nGestão fiscal responsável\nDiagnóstico. O Paraná tem hoje nota máxima (Capag A+) na Capacidade de Pagamento\navaliada pelo Tesouro Nacional — métrica federal independente, não autoavaliação do\ngoverno estadual —, dívida líquida negativa em relação à receita corrente (-10,75% no 2º\nquadrimestre de 2025) e a melhor situação previdenciária do país pelo terceiro ano\nconsecutivo. É um dos maiores ativos de qualquer governo paranaense, especialmente\nem contraste com Rio de Janeiro, Minas Gerais, Rio Grande do Sul e Goiás, hoje em\nRegime de Recuperação Fiscal, com dívida somada de R$ 468,3 bilhões — 56,6% de tudo\nque os 27 entes da federação devem à União.\nMas essa vantagem enfrenta um risco estrutural real: a Reforma Tributária em curso\nsubstitui o ICMS pelo IBS, mudando a cobrança de “origem da produção” para “destino\ndo consumo”. Como o próprio governo já reconhece, a arrecadação paranaense está\nfortemente ligada à produção — perfil industrial e exportador —, o que torna essa\ntransição, com prazo até 2033, o maior fator de incerteza fiscal do Paraná nos próximos\nanos.\nPropostas.\n• Manter os limites da Lei de Responsabilidade Fiscal com folga, como hoje ocorre com\ndespesa de pessoal (43% da RCL, abaixo do teto de 49%), saúde e educação (ambos\nacima dos mínimos constitucionais).\n\nPágina 14 de 20"
+          },
+          {
+            "id": "tratar-a-transicao-da-reforma-tributaria-como-prioridade-tecnica-de-prim",
+            "titulo": "• Tratar a transição da Reforma Tributária como prioridade técnica de primeiro escalão,",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "• Tratar a transição da Reforma Tributária como prioridade técnica de primeiro escalão,\ncom equipe dedicada a quantificar e mitigar seu impacto sobre a arrecadação\nparanaense — e defender, junto ao Comitê Gestor nacional do IBS, mecanismos de\ncompensação robustos para estados com o perfil produtor do Paraná.\n• Dar continuidade ao fortalecimento do Fundo de Previdência do Paraná — que mais\nque dobrou em seis anos, de R$ 5,7 bilhões para R$ 12 bilhões — hoje responsável por\ncerca de 27% do custeio previdenciário mensal, com meta de chegar a 50% na\npróxima década.\n\nFuncionalismo público a serviço do Estado, não do governo de plantão\nDiagnóstico. O Paraná já é o estado com menor proporção de cargos comissionados no\nPoder Executivo do Brasil — apenas 1,35% dos servidores, segundo o último\nlevantamento do IBGE com esse recorte. Mas essa é, hoje, uma prática de gestão, não\numa política de Estado: já houve, em gestões anteriores, crescimento expressivo do\nnúmero de comissionados em um único ano, e não há, hoje, nenhuma lei que impeça que\nisso se repita no futuro. Fora do Executivo, o desequilíbrio já é real: o Ministério Público\ndo Paraná tem 1.626 cargos comissionados para apenas 875 servidores efetivos.\nPropostas.\n• Lei estadual estabelecendo percentual mínimo de cargos técnicos preenchidos por\nservidores de carreira, aplicável ao Executivo e a autarquias e fundações estaduais —\ntransformando uma prática reversível em política de Estado permanente.\n• Calendário regular e previsível de concursos públicos, reduzindo a necessidade\nestrutural de contratações por indicação — o Estado já abriu mais de 3 mil vagas nos\núltimos três anos, incluindo Magistério, Receita Estadual e Adapar, e vamos dar\nprevisibilidade a esse processo.\n• Transparência ativa sobre a proporção entre servidores efetivos e comissionados em\ntodas as estruturas do Estado — incluindo órgãos autônomos, hoje com desequilíbrios\nque precisam ser conhecidos e corrigidos pela sociedade.\n• Critérios técnicos mínimos até para os cargos de livre nomeação remanescentes,\nreduzindo a dimensão puramente política da distribuição desses cargos, sem eliminar\na prerrogativa constitucional do governador de nomear sua equipe de confiança\ndireta.\n▲\n\nPágina 15 de 20"
+          },
+          {
+            "id": "eixo-6-saude-e-seguranca-o-basico-precisa",
+            "titulo": "EIXO 6 — SAÚDE E SEGURANÇA: O BÁSICO PRECISA",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6 — SAÚDE E SEGURANÇA: O BÁSICO PRECISA\nFUNCIONAR\nSaúde: reduzir espera e melhorar o acesso\nDiagnóstico. O programa Opera Paraná teve crescimento de 107% no número de\ncirurgias eletivas entre 2021 e 2024, e o Estado anunciou o maior pacote histórico de\ninvestimento em saúde para 2025, R$ 1,19 bilhão distribuído aos 399 municípios. São\navanços reais. Mas hospitais filantrópicos e Santas Casas em cidades como Ponta Grossa\njá pediram formalmente ao governo estadual um mecanismo de socorro financeiro nos\nmoldes do que existe em São Paulo — sinal de que o investimento em cirurgias eletivas\nnão resolveu, sozinho, a sustentabilidade financeira da rede complementar que atende\nboa parte do interior do estado.\nPropostas.\n• Criar uma Tabela SUS Paranaense, mecanismo estadual de complementação aos\nvalores pagos pela tabela federal do SUS, com prioridade para Santas Casas e\nhospitais filantrópicos em risco financeiro. Essa política já existe e funciona em São\nPaulo, onde mais de R$ 9,7 bilhões foram repassados a cerca de 800 hospitais\nfilantrópicos, remunerando procedimentos em até 5 vezes o valor da tabela federal.\n• Dar continuidade ao programa de cirurgias eletivas e à expansão da rede regional de\nambulatórios de especialidades e hospitais regionais, reduzindo a necessidade de\ndeslocamento de pacientes do interior para a capital.\n• Implementar um plano permanente de fiscalização e resposta rápida a crises\nhospitalares, para que nenhuma unidade da rede fique sem resposta do Estado diante\nde dificuldades graves — aprendendo com casos recentes de descaso já apurados por\ninquérito civil.\n\nSegurança: baseada em dados e na presença do Estado\nDiagnóstico. O Paraná chegou, em 2025, à menor taxa de homicídios da sua história —\n9,9 por 100 mil habitantes segundo a Secretaria de Segurança Pública, pela primeira vez\nabaixo do limite de 10 por 100 mil habitantes que a Organização Mundial da Saúde\nconsidera patamar epidêmico. É um resultado real e verificável por fonte federal, 33%\nabaixo da média nacional. É um dado do qual partimos, com orgulho.\nMas um governo para o Paraná inteiro não esconde o que ainda falta: o efetivo policial\noperacional do Paraná gira historicamente entre 16 mil e 21 mil policiais militares, frente\na um efetivo previsto de 27 mil — um déficit crônico que já gerou relatos de batalhões\ncobrindo milhares de quilômetros com poucas viaturas. A categoria policial já fez\noperação padrão e protestos por reajuste salarial e jornada digna. E a corporação\nenfrenta hoje uma taxa recorde de suicídio entre seus membros — 44 casos na atual\n\nPágina 16 de 20"
+          },
+          {
+            "id": "gestao-mais-que-o-dobro-do-bienio-anterior-um-dado-que-exige-resposta-in",
+            "titulo": "gestão, mais que o dobro do biênio anterior — um dado que exige resposta institucional",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "gestão, mais que o dobro do biênio anterior — um dado que exige resposta institucional\nurgente, de saúde mental e valorização, não apenas reconhecimento público.\nPropostas.\n• Fechar o déficit histórico de efetivo policial, com calendário regular e cumprido —\nnão apenas anunciado — de concursos para a Polícia Militar e a Polícia Civil, até que o\nefetivo operacional real se aproxime do efetivo previsto em lei.\n• Cuidar de quem cuida da nossa segurança: plano permanente de saúde mental e\nvalorização da tropa, com acompanhamento psicológico estruturado e prevenção ao\nsuicídio como prioridade de gestão de pessoal — não como pauta secundária diante do\nrecorde de casos já registrado.\n• Monitoramento público e territorializado dos indicadores de segurança,\ninspirado em experiências como o Programa Estado Presente do Espírito Santo — que\nlevou o estado do 2º mais violento do Brasil, em 2011, ao menor patamar histórico de\nhomicídios em 2025 —, com metas por região e prestação de contas regular à\nsociedade, incluindo indicadores hoje frequentemente esquecidos, como violência\ndoméstica e contra idosos.\n• Comando técnico das polícias como política de Estado, não de governo. Vamos\npropor uma Emenda à Constituição Estadual instituindo mandato fixo de dois anos,\ncom uma recondução, para os comandos técnicos da Polícia Militar, da Polícia Civil e\ndo Corpo de Bombeiros — escolhidos a partir de lista tríplice eleita pelos respectivos\nquadros de carreira, com destituição apenas por ato motivado do governador. É o\nmesmo modelo que já funciona, com sucesso, para a escolha do Procurador-Geral de\nJustiça do Ministério Público, com base constitucional própria. Combinado a um Plano\nEstadual de Segurança Pública plurianual, no âmbito do Sistema Único de Segurança\nPública, com metas que sobrevivam à alternância de governo, esse é o caminho para\nque a segurança pública deixe de mudar de rumo a cada quatro anos.\n• Investimento prioritário e responsável. Toda decisão de investimento em\nsegurança será avaliada por custo-benefício e prioridade orçamentária — o Estado\ndeve investir onde o retorno em segurança para o cidadão comum for maior,\ncomeçando por resolver o déficit de efetivo e de equipamento da própria tropa que já\ntemos, antes de comprometer recursos vultosos com soluções de exceção que\natendem a um número reduzido de casos.\n• Direitos humanos como parte da segurança, não como obstáculo a ela.\nQualquer política de enfrentamento ao crime organizado incluirá, desde o desenho,\nsalvaguardas de direitos humanos e mecanismos públicos de monitoramento de\nletalidade policial — para que os resultados sejam sustentáveis e para que o Paraná\nnão repita, em maior escala, os pontos de controvérsia já observados em experiências\nde outros estados, como o aumento de letalidade policial associado a algumas\nestratégias de enfrentamento ao crime organizado.\n▲\n\nPágina 17 de 20"
+          },
+          {
+            "id": "governanca-do-plano-como-vamos-executar-e",
+            "titulo": "GOVERNANÇA DO PLANO: COMO VAMOS EXECUTAR E",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNANÇA DO PLANO: COMO VAMOS EXECUTAR E\nPRESTAR CONTAS\nUm plano de governo só vale pelo que é efetivamente cumprido. Por isso, este plano\nassume três compromissos de método, válidos para todos os seis eixos:\nMetas públicas e territorializadas. Cada proposta deste plano será desdobrada, já nos\nprimeiros cem dias de governo, em metas mensuráveis e por região do estado — não\napenas em médias estaduais que escondem desigualdades entre capital, região\nmetropolitana e interior.\nPrestação de contas regular. Assim como o Espírito Santo publica anuário público do\nPrograma\n\nEstado\n\nPresente,\n\no\n\nParaná\n\npassará\n\na\n\npublicar\n\nrelatório\n\nanual\n\nde\n\nacompanhamento de cada eixo deste plano, com dados abertos e auditáveis por qualquer\ncidadão, entidade de classe ou órgão de imprensa.\nContinuidade além do calendário eleitoral. As propostas de institucionalização já\nprevistas neste plano — comando técnico das polícias, percentual mínimo de cargos de\ncarreira, Tabela SUS Paranaense — serão encaminhadas como projetos de lei ou emenda\nconstitucional, e não apenas como decretos ou portarias, exatamente para que\nsobrevivam a esta e às próximas gestões, sejam elas do Mobiliza ou de qualquer outro\npartido.\nDiálogo com quem executa a política pública. Nenhuma das propostas deste plano\nnasce pronta e definitiva. Professores, policiais, profissionais de saúde, servidores da\ncultura e das áreas de assistência social, cooperativas do agronegócio e entidades de\nclasse serão ouvidos formalmente antes da redação final de cada projeto de lei — não\ncomo formalidade protocolar, mas porque quem está na ponta do serviço público enxerga\ndetalhes que nenhum gabinete enxerga sozinho.\nTransparência sobre os limites do próprio plano. Este documento foi construído a\npartir de dados públicos e oficiais disponíveis até o momento de sua redação. Onde a\ninformação pública era insuficiente — como no mapeamento de equipamentos culturais\nou no tempo de espera por diagnóstico de neurodivergência — este plano diz isso com\ntodas as letras, em vez de inventar números. Governar com honestidade começa por\nadmitir o que ainda não se sabe.\n▲\n\nPágina 18 de 20"
+          },
+          {
+            "id": "compromissos-mensuraveis",
+            "titulo": "COMPROMISSOS MENSURÁVEIS",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSOS MENSURÁVEIS\nEixo\n\nCompromisso central\n\nPrazo de referência\n\nIniciar participação\nEducação\n\nparanaense no PISA como\n\nCiclo de governo\n\nmeta de longo prazo\nMapear tempo de espera por\nNeurodiversidade\n\ndiagnóstico e cobertura por\n\nPrimeiros 100 dias\n\nregião\nCriar orçamento estadual\nCultura\n\npróprio e recorrente para a\n\n1º ano de governo\n\ncultura\nTrilha formal de talento no\nParaná dos Talentos\n\ncontraturno em toda escola\n\nCiclo de governo\n\nestadual\nProsperidade — Agro/\nLogística\n\nMetas públicas de aumento\ndo escoamento ferroviário no Ciclo de governo\nOeste\nPlano de mitigação do\n\nProsperidade — Fiscal\n\nimpacto da Reforma\n\nPrimeiro ano de governo\n\nTributária\nProsperidade —\n\nLei de percentual mínimo de\n\nFuncionalismo\n\ncargos de carreira\n\nSaúde\n\nCriação da Tabela SUS\nParanaense\n\nPrimeiro ano de governo\nPrimeiro ano de governo\n\nCalendário regular de\nSegurança\n\nconcursos PM/PC até fechar Ciclo de governo\ndéficit de efetivo\nEmenda Constitucional de\n\nSegurança\n\nmandato fixo para comandos Primeiros dois anos\ntécnicos\n▲\n\nPágina 19 de 20"
+          },
+          {
+            "id": "fechamento",
+            "titulo": "FECHAMENTO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "FECHAMENTO\nUm governo para o Paraná inteiro não escolhe entre segurança e direitos humanos, entre\neficiência fiscal e investimento social, entre reconhecer o que funciona e corrigir o que\nainda falta. Escolhe fazer as duas coisas, com dados, com responsabilidade e com as\npessoas — cada criança, cada família, cada trabalhador, cada produtor — no centro de\ntoda decisão.\nEste plano parte do que o Paraná já construiu — uma economia forte, uma educação\nreconhecida, uma situação fiscal sólida — e assume, com a mesma clareza, o que ainda\nprecisa ser enfrentado: os déficits que os números médios escondem, as desigualdades\nentre capital e interior, os direitos que não podem esperar mais quatro anos para virar\npolítica de Estado.\nGovernar é, antes de tudo, uma escolha de prioridades. Escolhemos a criança que ainda\nnão teve seu talento descoberto, o policial que trabalha sem efetivo suficiente, a família\nque espera meses por um diagnóstico, o produtor que paga caro pelo frete porque a\nferrovia não chegou até ele, o servidor técnico que constrói política pública sem\ndepender de indicação política. Escolhemos, sobretudo, um Paraná onde o debate público\nseja pautado por fatos e propostas — e não por medo ou extremismo.\nUm governo para o Paraná inteiro.\n▲\n\nPlano de Governo — Alexandre Salomão e Daiana Criminacio — Mobiliza Paraná.\n\nPágina 20 de 20"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "2d5d5ea3e6d1a3fcf834ab4d8dae031837e9e60677a7eaba1c207f0853863400"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ae6087b18d65eb5f460734b4b8275be27b4fc29d834c00f2ea376cf368c9c7e7"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "cd96647db27a629499c1783d99df59991a1a5ac727823d1efa5ca4914f2c02f7"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "f06c73111f97a42d0cecab6ad1b071440b5da3e0de7e3415661e8bfb2542928e"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e7bda18f8cc49db734fa86d408345f97997fe5c539472baa5eb55566647665cf"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cfcbb6cb68f4d61f48f7522db81f44dfa4b39151968a288b36ee23f681b0f096"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "bb4f8db91cdb8a2afc7932cd48102f24b93d624b759bb1786c6b20aa555f4ece"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f3b5aed2e143f88922f4059a409fb70b88b4c52dcbf970fc940607563cffd0ed"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "c95cdf9b815f6dd83ee21a318d55af3ea40759fa032ef896544baa7229f8dcf4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c01d0f0f9f9ddaca3cdbfce9f037f265d66bef75297c43fa1ba716f27ce8ce2f"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "423c012b080d0d77baf828542f62af37a2729ea763c9f0372dc2e5d11fcdd4a4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "abff207ad0df26c073bbc67fde56194f0cfc888e8058b16c744da59674a7fd1d"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "0df678528b5a46ff2274b6e4e24171d893b94268092496996168943ad7f9d2d8"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "8f6792bb67421d42c00257357c9dfa78d241e161c5c36132eae5b525e7e18fe5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d3eaf135e573f792383720889c2aaa01a52da1f44c22d9f991bf89a634094f7f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "5e0e5515954f639b7e81fc8332b735ace48e76bc5f7f06f5537d5e7de77f1af9"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "6ac25318a452fd619c74ca67218e86684f4b7c82e9629c364fa891d0475d8730"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "95f5591dc0f37a54938c809a1edf80466f25dedd3c70900a148f343a6669c7dd"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "743aca1b5623a59d4f7fc9b9ca8bd63f128b86371fdd9e1a39b6ed9bf8b52202"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "be1045da7e82b442125b61a172c12ef4cb9df493bd13f7f5e768ed6c2358cbdf"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê ampliar o investimento em creches e educação infantil, priorizando municípios com maior vulnerabilidade social. Também propõe revisar o modelo de parcerias privadas na gestão escolar, com prestação de contas pública sobre resultados pedagógicos e financeiros. Na cultura, prevê programas permanentes dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos. Para a formação estudantil, prevê continuidade e ampliação das aulas de programação e robótica na rede estadual. Também propõe uma trilha formal de descoberta de talento no contraturno de cada escola estadual. Na saúde, propõe criar uma Tabela SUS Paranaense para complementar valores pagos pela tabela federal, priorizando Santas Casas e hospitais filantrópicos em risco financeiro. Na segurança, prevê monitoramento público e territorializado dos indicadores, com metas por região e prestação de contas regular. Na área fiscal, propõe uma equipe dedicada a quantificar e mitigar o impacto da Reforma Tributária sobre a arrecadação paranaense.",
+    "frases": [
+      {
+        "texto": "O programa prevê ampliar o investimento em creches e educação infantil, priorizando municípios com maior vulnerabilidade social.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 8,
+            "trecho": "Primeira infância. Ampliação do investimento em creches e educação infantil, com prioridade para os municípios com maior vulnerabilidade social"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe revisar o modelo de parcerias privadas na gestão escolar, com prestação de contas pública sobre resultados pedagógicos e financeiros.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 9,
+            "trecho": "Revisão transparente e participativa do modelo de parcerias privadas na gestão escolar, com prestação de contas pública sobre seus resultados pedagógicos e financeiros"
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, prevê programas permanentes dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 11,
+            "trecho": "Programas permanentes de cultura dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos"
+          }
+        ]
+      },
+      {
+        "texto": "Para a formação estudantil, prevê continuidade e ampliação das aulas de programação e robótica na rede estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 9,
+            "trecho": "Continuidade e ampliação das aulas de programação e robótica na rede estadual"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe uma trilha formal de descoberta de talento no contraturno de cada escola estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 12,
+            "trecho": "Cada escola estadual deverá oferecer, no contraturno, ao menos uma trilha de descoberta de talento fora do currículo tradicional"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe criar uma Tabela SUS Paranaense para complementar valores pagos pela tabela federal, priorizando Santas Casas e hospitais filantrópicos em risco financeiro.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 16,
+            "trecho": "Criar uma Tabela SUS Paranaense, mecanismo estadual de complementação aos valores pagos pela tabela federal do SUS, com prioridade para Santas Casas e hospitais filantrópicos em risco financeiro"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, prevê monitoramento público e territorializado dos indicadores, com metas por região e prestação de contas regular.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 17,
+            "trecho": "Monitoramento público e territorializado dos indicadores de segurança, inspirado em experiências como o Programa Estado Presente do Espírito Santo"
+          }
+        ]
+      },
+      {
+        "texto": "Na área fiscal, propõe uma equipe dedicada a quantificar e mitigar o impacto da Reforma Tributária sobre a arrecadação paranaense.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 15,
+            "trecho": "Tratar a transição da Reforma Tributária como prioridade técnica de primeiro escalão, com equipe dedicada a quantificar e mitigar seu impacto sobre a arrecadação paranaense"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-infantil",
+        "titulo": "Educação infantil",
+        "descricao": "Ampliação do investimento em creches e educação infantil.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 8,
+            "trecho": "Ampliação do investimento em creches e educação infantil, com prioridade para os municípios com maior vulnerabilidade social"
+          }
+        ]
+      },
+      {
+        "id": "gestao-escolar",
+        "titulo": "Gestão escolar",
+        "descricao": "Revisão do modelo de parcerias privadas na gestão escolar.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 9,
+            "trecho": "Revisão transparente e participativa do modelo de parcerias privadas na gestão escolar"
+          }
+        ]
+      },
+      {
+        "id": "cultura-formativa",
+        "titulo": "Cultura formativa",
+        "descricao": "Programas permanentes de cultura na carga horária escolar.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 11,
+            "trecho": "Programas permanentes de cultura dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos"
+          }
+        ]
+      },
+      {
+        "id": "talentos-estudantis",
+        "titulo": "Talentos estudantis",
+        "descricao": "Trilhas formais de descoberta de talento no contraturno escolar.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 12,
+            "trecho": "Cada escola estadual deverá oferecer, no contraturno, ao menos uma trilha de descoberta de talento fora do currículo tradicional"
+          }
+        ]
+      },
+      {
+        "id": "saude-hospitalar",
+        "titulo": "Saúde hospitalar",
+        "descricao": "Criação de uma Tabela SUS Paranaense.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 16,
+            "trecho": "Criar uma Tabela SUS Paranaense, mecanismo estadual de complementação aos valores pagos pela tabela federal do SUS"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Monitoramento territorializado dos indicadores de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547594:01",
+            "pagina": 17,
+            "trecho": "Monitoramento público e territorializado dos indicadores de segurança"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:25:17.304Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:27:51.160Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente sobre educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:1:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correspondente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:2:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:3:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:4:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho e página 12 (trilhas formais) sustentam a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:5:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:6:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 17 completa confirma 'com metas por região e prestação de contas regular à sociedade'."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:7:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página 17 confirma todas as cláusulas citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:frase:8:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:educacao-infantil:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:gestao-escolar:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:cultura-formativa:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 12 confirma trilhas formais no contraturno."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:talentos-estudantis:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:saude-hospitalar:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547594:tema:seguranca-publica:documentos:PR:160002547594:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PR:160002547594",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PR:160002547594:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 30412,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3444,
+          "reasoning_output_tokens": 2123
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28766,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24615,
+          "output_tokens_details": {
+            "thinking_tokens": 1237
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28766,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24615,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28766,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28766
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.38331840000000006
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "e289c37e785c8530c9c6a6917e173ac90f4c34222bbeb66e6c29be215e619356",
+    "extractedTextSha256": "3279b7eacd0de0a3378042966a92a3d70cf49b0b2aba7db6675196155068da34",
+    "documentCount": 1,
+    "documentSetSha256": "3000bc65a5e0ccddb7fe0d752d48472ac32901c2a87f5bfef36362e3d1f064a9",
+    "contentSha256": "77f62cec395c35385c05932966bf2e5fcca4792d39b8d45b545a4348edd18991"
+  }
+}

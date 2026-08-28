@@ -1,0 +1,1452 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "ES",
+    "sqCandidato": "80002541012",
+    "slug": "breno-barcelar",
+    "nomeUrna": "BRENO BARCELOS",
+    "partido": "MISSÃO",
+    "arquivoNome": "2026ES80002541012_01.pdf",
+    "arquivoNoPacote": "ES/2026ES80002541012_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "ES:80002541012:01",
+      "fonte": {
+        "arquivoNome": "2026ES80002541012_01.pdf",
+        "arquivoNoPacote": "ES/2026ES80002541012_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "aa288d9a332f2e7aeec90ceab6b82b80c07cf288011ae59b3f1607aa2cbff972",
+        "extractedTextSha256": "9de50eb7a013fdcd2d820caa46c595e02789b427d8f31dab819e95106f827411",
+        "paginas": 61,
+        "secoes": [
+          {
+            "id": "por-um-futuro",
+            "titulo": "POR UM FUTURO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "POR UM FUTURO\nGLORIOSO\n\nPLANO DE GOVERNO\n\nBRENO BARCELOS\nCANDIDATO A GOVERNADOR DO\nESPÍRITO SANTO"
+          },
+          {
+            "id": "por-um-futuro-2",
+            "titulo": "POR UM FUTURO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "POR UM FUTURO\nGLORIOSO\nBRENO BARCELOS\nPLANO DE GOVERNO\n\nCOORDENAÇÃO:\nVítor Loureiro\nDIAGRAMAÇÃO:\nDavi Tavares da Cunha\nCOLABORAÇÃO:\nFelipe Oliveira\nCharles Pereira\nKaryna Dara\nLuís Barros\nLucas Abu Dioan\nPedro Francez\nRogério Perestelo"
+          },
+          {
+            "id": "carta-de-apresentacao",
+            "titulo": "Carta de Apresentação",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Carta de Apresentação\n\nO Espírito Santo está às portas de uma nova era. Antes\nsubestimado, sempre esquecido, o estado vem se\ndestacando cada vez mais por suas potencialidades — das\nquais os capixabas nunca duvidaram, mas que só agora,\ngraças ao trabalho duro da nossa gente, revelam-se ao\nmundo.\nA complacência, contudo, é inimiga do progresso. A situação\ncalamitosa do restante do país trouxe ao povo do Espírito\nSanto a falsa sensação de normalidade e de pujança,\nreforçada pelas incessantes propagandas do governo. Mas a\nnossa situação não é confortável. A violência ainda é\nendêmica, e o crime organizado avança sem resistência. As\nnossas cidades são favelizadas, e pouco se faz para mudar\nesse cenário. A nossa educação, não obstante as boas\nposições nos indicadores nacionais, ainda falha em preparar\nnossos estudantes para o mercado de trabalho e para a\ncidadania. As obras de infraestrutura, essenciais para\nconcretizar o potencial econômico do estado, custam sempre\no dobro, demoram o triplo e são, em geral, mal executadas."
+          },
+          {
+            "id": "a-lista-de-gargalos-e-longa-para-cada-area-ha-uma",
+            "titulo": "A lista de gargalos é longa: para cada área, há uma",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "A lista de gargalos é longa: para cada área, há uma\nabundância de problemas que teimam em permanecer\ngestão após gestão.\nNós, capixabas, nos encontramos diante de um momento de\ninflexão: se ajustarmos os rumos e fizermos tudo\ncorretamente, o nosso futuro será glorioso. Caso nos\nacomodemos, contudo, desperdiçaremos as múltiplas\noportunidades que se apresentam — como parece ser a\ntradição brasileira. A Missão surge para reformar o Brasil e\nlevá-lo ao desenvolvimento e ao status de potência mundial;\nnós, do braço capixaba do partido, faremos isso em âmbito\nestadual. E começaremos agora mesmo, em 2026.\nO meu nome é Breno Barcelos, e eu quero ser o seu\ngovernador. Tenho 41 anos; nasci em Vitória, mas morei\nmuitos anos na Serra e em Vila Velha, de modo que conheço\nbem a dinâmica dessas três cidades. Sou engenheiro civil,\ngraduado na UFES, e possuo MBA em Engenharia\nDiagnóstica (Inbec), pós-graduação em Gerenciamento de\nProjetos (UVV), especialização em Planejamento, Construção\ne Gerenciamento de Portos (UFES) e especialização em\nPainel Monolítico (Cassaforma — Argentina). A minha carreira\nse fez em grandes empresas privadas, e é esse histórico que\nmolda o tipo de gestão que pretendo adotar no Espírito Santo\n— baseada em métricas de resultado. De fato, considero-me\num batedor de metas na essência e tenho como inspiração\nos modelos de governo de Michael Bloomberg — prefeito de\nNova York entre 2002 e 2013 — e de Lee Kuan Yew — que\ntransformou Singapura na potência que é hoje.\nMas, acima de tudo isso, sou marido e pai de dois filhos — e\né por eles que eu decidi entrar na política. Para que cresçam\nnum Brasil e num Espírito Santo que lhes deem orgulho; para\nque não precisem buscar a felicidade em outro país, como\nfazem muitos jovens hoje."
+          },
+          {
+            "id": "foi-em-nome-do-futuro-deles-que-tomei-a-decisao-de",
+            "titulo": "Foi em nome do futuro deles que tomei a decisão de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Foi em nome do futuro deles que tomei a decisão de\nabandonar um emprego bem pago na iniciativa privada para\nencarar a difícil missão de liderar, como voluntário, um\nprojeto político no qual acredito piamente ser a última\nesperança do Brasil.\nSe você acredita nos valores da Missão; se você é um\ninconformista como eu, incapaz de se contentar com o atual\nestado de coisas; se você possui a ambição de transformar\no seu país e o seu estado nas potências que merecem ser,\nvenha conosco nessa jornada. A sua vida e a vida daqueles\nque ama podem ser muito melhores — só depende da sua\nvontade de arriscar e de fazer diferente.\n\nVamos\njuntos\nnessa\nMissão?\n\n4"
+          },
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nPOR UM FUTURO GLORIOSO\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n\nSegurança Pública\nDesfavelização\nInfraestrutura Logística\nIndústria\nMobilidade Urbana na Grande Vitória\nEducação\nSaúde\n\n6\n17\n23\n27\n31\n36\n49\n\n5"
+          },
+          {
+            "id": "seguranca",
+            "titulo": "SEGURANÇA",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA\nPÚBLICA\nÉ diagnóstico indiscutível na Missão a existência de uma\nguerra efetiva no Brasil. Facções criminosas não só já\ndeclararam suas intenções de exercer domínio sobre regiões\ninteiras do território nacional, como atuam há anos para\nconsolidar esse poder. Hoje, aproximadamente 68 milhões de\nbrasileiros convivem diariamente com o crime organizado;\ndestes, estima-se que entre 50 e 61 milhões sejam vítimas do\nseu controle direto — a chamada “governança criminal”. Tal\navanço se dá sobre as prerrogativas constitucionais do Poder\nPúblico, de modo que impedi-lo é garantir a própria\nmanutenção do Estado Democrático de Direito.\nA despeito da propaganda do governo estadual, o Espírito\nSanto não está alheio aos problemas de criminalidade que se\nalastram pelo restante do país. Os homicídios estão, de fato,\ncaindo, mas permanecem em uma taxa de 21 a 22 mortes por\n100 mil habitantes (SESP-ES, 2024-2025), ainda maior do que\na taxa nacional, que foi de 19,5 a 20,5 homicídios por 100 mil\nhabitantes (Ministério da Justiça, 2024-2025). Ou seja, se o\nEspírito Santo fosse um país independente, ocuparia entre a\n20ª e a 23ª posição no ranking das nações mais violentas do\nmundo — uma realidade, portanto, muito distante de um ideal\ncivilizatório. O mesmo ocorre com outros crimes, como furtos\ne roubos: embora registrem reduções recentes, os números\npermanecem alarmantes.\n\n6"
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nHá dois motivos que ajudam a explicar a queda dos números\nde crimes violentos no estado. O primeiro é demográfico e\nafeta não só o Espírito Santo, mas o Brasil como um todo: a\npopulação brasileira está envelhecendo. Como a maioria dos\ncrimes violentos é cometida por jovens, esse envelhecimento\ntende a gerar, por consequência, uma redução natural nos\ndelitos majoritariamente atribuídos a essa faixa etária,\nincluindo os homicídios.\nO segundo motivo, contudo, é mais grave: o avanço do crime\norganizado, cada vez mais consolidado no território\ncapixaba. Há, hoje, três facções principais atuando no\nEspírito Santo: o Primeiro Comando de Vitória (PCV), nascido\nno Complexo da Penha, na capital; o Terceiro Comando Puro;\ne o Comando Vermelho (estes dois últimos de origem\ncarioca). Quando os territórios das facções criminosas se\nconsolidam, guerras faccionais se tornam menos comuns, o\nque reduz artificialmente o número de mortes violentas. Isso,\nporém, não significa uma melhora na segurança pública,\nmas, sim, que cada vez mais capixabas têm suas vidas\ninfluenciadas pelas decisões e pelas ações do crime\norganizado. Notícias frequentes de chacinas orquestradas\npelo poder paralelo e de tentativas deste de tomar o controle\nde serviços básicos em bairros e comunidades inteiras\npintam um cenário de caos, em que o governo manda cada\nvez menos, e o crime, cada vez mais.\nNão podemos mais tolerar essa situação. As facções\ncriminosas se encontram em permanente descumprimento\nda ordem constitucional vigente, não reconhecem a\nautoridade do Estado e agem tal qual uma força de\nocupação estrangeira. São, pois, inimigos do Espírito Santo e\ndo Brasil, e derrotá-los é obrigação constitucional do\ngovernador.\n\n7"
+          },
+          {
+            "id": "seguranca-publica-2",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nA vida, a propriedade e o direito de ir e vir são apenas alguns\ndos direitos fundamentais violados pela inação do governo, a\nqual condena milhares de capixabas a viverem sob o jugo do\nmais bárbaro dos regimes: o do crime organizado.\n\nReocupação territorial\nO ponto-chave do nosso plano é a reocupação, por parte do\nEstado do Espírito Santo, de todo o território capixaba hoje\nsob o controle de facções criminosas. O Bairro da Penha, o\nFlexal II, o São Torquato, a Grande Santa Rita e a Grande São\nPedro são apenas alguns exemplos de bairros e favelas\ntomados pelo crime organizado, onde a lei brasileira não\nimpera totalmente. Essa realidade, ademais, já ultrapassa os\nlimites da Região Metropolitana, visto que, em escala\ncrescente, municípios do interior passam a sofrer também\ncom a atuação dessas facções.\nO monopólio da violência deve ser devidamente recuperado\npelo Estado, a quem pertence de direito, e isso só se fará por\nmeio da força policial, com ou sem apoio da União. A\nreocupação territorial terá caráter emergencial e começará\nimediatamente após a posse. Nossa prioridade será\nrecuperar, já no primeiro ano de governo, os principais\nterritórios atualmente dominados pelas facções criminosas,\nrestabelecendo a presença permanente do Estado e\nreduzindo drasticamente a capacidade de atuação dessas\norganizações.\nNosso compromisso é que nenhum bairro, comunidade ou\nmunicípio capixaba permaneça abandonado à própria sorte.\n\n8"
+          },
+          {
+            "id": "seguranca-publica-3",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nAo longo do mandato, empregaremos todos os recursos\nlegais, operacionais e institucionais disponíveis para\nenfraquecer progressivamente as organizações criminosas,\ndesarticular suas estruturas financeiras e logísticas,\nrecuperar territórios sob sua influência e garantir que a\npopulação volte a viver sob a proteção exclusiva das\ninstituições legítimas do Estado.\n\nAsfixia financeira do crime organizado\nA experiência internacional demonstra que organizações\ncriminosas não sobrevivem apenas pela força das armas,\nmas, principalmente, pela força do dinheiro. O tráfico de\ndrogas, a lavagem de capitais, a extorsão, o comércio ilegal e\na infiltração em atividades econômicas permitem que\nfacções criminosas financiem suas operações, recrutem\nnovos integrantes, adquiram armamentos e ampliem sua\ninfluência sobre comunidades inteiras.\nNas últimas décadas, países que obtiveram resultados\nrelevantes no combate ao crime organizado compreenderam\numa verdade simples: prender criminosos é necessário, mas\nretirar seus recursos financeiros é indispensável. Enquanto\nhouver dinheiro, haverá capacidade de reorganização.\nQuando o patrimônio criminoso é identificado, bloqueado e\nconfiscado, toda a estrutura da organização começa a\nenfraquecer.\n\n4\n9"
+          },
+          {
+            "id": "seguranca-publica-4",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nO Espírito Santo já possui órgãos especializados em\ninteligência financeira e em investigação patrimonial. No\nentanto, essas iniciativas ainda não ocupam a posição\nestratégica que deveriam dentro da política estadual de\nsegurança pública. Nosso compromisso não será criar novas\nestruturas burocráticas, mas transformar a descapitalização\ndas facções criminosas em uma prioridade permanente de\ngoverno.\nEssa política se baseará em quatro pilares fundamentais: (I) a\nrecuperação de ativos como indicador estratégico, com\nmetas permanentes de identificação, bloqueio e recuperação\nde patrimônio vinculado ao crime organizado; (II) o\nfortalecimento da inteligência patrimonial, criando-se maior\nintegração entre Polícia Civil, Polícia Militar, Receita Estadual,\nMinistério Público e demais órgãos competentes; (III) o\ncombate à infiltração econômica, política e institucional das\nfacções no Estado e na economia formal; e (IV) o\nreinvestimento dos recursos recuperados, prioritariamente,\nna segurança pública.\nA reocupação territorial e a neutralização de todo e qualquer\nenvolvido com facções criminosas continuarão a ser\nprioridades, mas a destruição da capacidade financeira\ndessas organizações não será negligenciada de forma\nalguma. Pelo contrário: transformaremos o Espírito Santo em\nreferência nacional na asfixia financeira do crime organizado.\n\nAssistência jurídica gratuita aos policiais\ncivis e militares\nO trabalho de um policial é repleto de riscos, e um deles é o\nde enfrentar processos judiciais e administrativos em\ndecorrência do exercício de suas funções.\n\n4\n10"
+          },
+          {
+            "id": "seguranca-publica-5",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nPor isso, garantiremos às forças policiais do Espírito Santo\nassistência jurídica gratuita para esses casos, seja por meio\nde uma defensorias especializadas ou núcleos jurídicos\nespecíficos dentro das próprias corporações.\nAlém disso, durante as reocupações territoriais, o governador\nchamará para si a responsabilidade pelos atos legítimos\npraticados pelas polícias durante as operações. A tropa não\nserá, em hipótese alguma, abandonada nessa missão\ncivilizatória.\n\nConstrução de um presídio para membros\nde facções criminosas\nHá, atualmente, um déficit no sistema prisional capixaba de\ncerca de dez mil vagas — conforme apontado pelo próprio\nPoder Judiciário —, situação que tende a se agravar no\nmomento em que começarmos as operações de reocupação\nterritorial. Propomos, pois, a construção de um novo presídio\nde segurança máxima, inspirado no modelo do CECOT (El\nSalvador), destinado a membros de facções criminosas.\nDessa forma, não só garantiremos o isolamento desses\nindivíduos de alta periculosidade, evitando que continuem\npraticando crimes a partir do interior do sistema prisional,\ncomo os afastaremos por completo do convívio com\ndetentos comuns.\n\nTrazer o modelo do Smart Sampa e\nexpandir a rede de totens de segurança\npara todo o estado\nO Smart Sampa é o maior programa de videomonitoramento\nde segurança pública da América Latina e já apresentou\nresultados excepcionais no combate à criminalidade.\n\n4\n11"
+          },
+          {
+            "id": "seguranca-publica-6",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nTrata-se de um sistema que conecta milhares de câmeras\npúblicas e privadas a uma central de controle unificada, que\nutiliza inteligência artificial para identificar crimes, capturar\nforagidos e localizar pessoas desaparecidas em tempo real.\nNossa proposta é trazer esse sistema para o Espírito Santo,\npois servirá de importante instrumento em nossa política de\nerradicação do crime em solo capixaba.\nO estado já utiliza totens inteligentes, com câmeras de\nreconhecimento facial e de placas de veículos, que já se\nprovaram eficazes. Seu uso, contudo, ainda está aquém do\nideal, em especial no interior do estado. Propomos, pois, não\nsó integrar os totens ao sistema inspirado no Smart Sampa\nque adotaremos, como acelerar a expansão dessa\ntecnologia de modo a estendê-la a todo o território capixaba.\n\nAtuação junto à bancada capixaba no\nCongresso Nacional para reformar as leis\npenais e de execução penal do país\nBoa parte dos problemas de segurança pública enfrentados\nno Brasil encontra origem nas leis penais e de execução\npenal, excessivamente lenientes para com os criminosos. À\nfrente do governo do Espírito Santo, empregaremos toda a\nautoridade política do governador junto à bancada capixaba\nno Congresso Nacional para que haja, enfim, uma\nreformulação estrutural da legislação penal. Isso incluirá,\nentre outras medidas: a volta da prisão em segunda\ninstância; o fim do auxílio-reclusão, da progressão de regime,\ndas audiências de custódia e do juiz de garantias; e a\nimplantação do direito penal do inimigo contra faccionados.\n\n12"
+          },
+          {
+            "id": "seguranca-publica-7",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\n\nValorização da carreira militar\nNenhuma política de segurança pública é capaz de produzir\nresultados duradouros sem profissionais motivados,\nvalorizados e conscientes da importância da missão que\ndesempenham. A Polícia Militar e o Corpo de Bombeiros\nMilitar constituem algumas das instituições mais respeitadas\ndo Espírito Santo e são responsáveis por garantir,\ndiariamente, a preservação da vida, da ordem pública e do\npatrimônio dos capixabas.\nApesar disso, a estrutura remuneratória dessas carreiras tem\nse tornado cada vez mais complexa ao longo dos anos,\ndificultando a compreensão da progressão funcional e\ncriando distorções que comprometem a previsibilidade da\ncarreira.\nDefendemos a criação de uma política permanente de\nvalorização das forças militares estaduais, baseada na\ntransparência, na previsibilidade e na proporcionalidade\nremuneratória entre postos e graduações. O objetivo é\nestabelecer uma referência salarial clara para toda a carreira,\nde modo que cada posto ou graduação conte com uma\nproporção previamente definida em relação ao valor-base da\nestrutura remuneratória.\nTal medida permitirá que os militares compreendam com\nclareza a sua trajetória profissional, fortalecendo o\nplanejamento financeiro das famílias e assegurando maior\nracionalidade na formulação de futuras políticas de\nvalorização salarial. Além disso, contribuirá para evitar\ndistorções históricas decorrentes da criação sucessiva de\ngratificações e vantagens específicas, promovendo maior\nequilíbrio entre os diversos níveis hierárquicos da\ncorporação.\n\n13"
+          },
+          {
+            "id": "seguranca-publica-8",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nBuscaremos, em conjunto com a Assembleia Legislativa,\nrealizar estudos técnicos, atuariais e financeiros para\nviabilizar a implantação gradual desse modelo, sempre\nobservando a responsabilidade fiscal e a sustentabilidade\ndas contas públicas. Nosso compromisso é garantir que a\nvalorização da carreira militar deixe de depender\nexclusivamente de negociações pontuais e passe a integrar\numa política permanente de Estado.\n\n4\n14"
+          },
+          {
+            "id": "seguranca-publica-9",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\n\nFortalecimento do efetivo operacional\nA principal função da Polícia Militar é o policiamento\nostensivo e a preservação da ordem pública. Por sua vez, a\nfunção do Corpo de Bombeiros Militar é a proteção da vida,\ndo patrimônio e do meio ambiente por meio de atividades\noperacionais especializadas. Contudo, uma parcela\nsignificativa\ndos\nmilitares\nestaduais\nencontra-se\ndesempenhando, atualmente, funções administrativas que\npoderiam ser exercidas por servidores civis, sem qualquer\nprejuízo à atividade-fim das corporações.\nTrata-se de uma distorção que reduz a presença do Estado\nnas ruas, aumenta a pressão sobre o efetivo operacional e\ngera desperdício de recursos humanos altamente\nqualificados para atividades que não exigem formação\nmilitar.\nRealizaremos um amplo levantamento de todos os cargos e\nfunções existentes na Polícia Militar e no Corpo de\nBombeiros Militar, identificando aqueles que não exigem\ntreinamento, doutrina ou qualificação específica de natureza\nmilitar. Funções administrativas, de apoio logístico, gestão de\npatrimônio, almoxarifado, protocolo, recursos humanos e\natividades semelhantes serão analisadas individualmente\npara verificar a possibilidade de substituição gradual por\nservidores civis concursados.\nA medida permitirá que centenas de militares retornem às\natividades operacionais para as quais foram treinados,\nampliando a capacidade de resposta das corporações sem a\nnecessidade imediata de grandes expansões de efetivo.\n\n4\n15"
+          },
+          {
+            "id": "seguranca-publica-10",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nEm outras palavras, antes de aumentar o número de policiais\ne bombeiros, devemos garantir que aqueles com os quais já\ncontamos estejam empregados da forma mais eficiente\npossível. Nosso objetivo é simples: colocar mais policiais nas\nruas, mais bombeiros em atividades operacionais e mais\nEstado onde ele é verdadeiramente necessário.\n\nCooperação com outros estados em\nmatéria de segurança pública\nAtuaremos em conjunto com o máximo de estados possíveis\nno compartilhamento de inteligência relativo às organizações\ncriminosas. Essa articulação ocorrerá, preferencialmente, por\nmeio de consórcios interestaduais que institucionalizem e\ndeem celeridade ao fluxo de informações operacionais. É\nimportante destacar que se criou, no âmbito do partido\nMissão, o Projeto Arco — desenhado, inicialmente, entre o\nEspírito Santo, o Rio de Janeiro e o Ceará —, cuja\nmodelagem servirá de base para os eventuais consórcios\nque intentemos firmar.\n\n4\n16"
+          },
+          {
+            "id": "desfavelizacao",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\nUm problema ainda muito ignorado pela maioria dos\ncapixabas é o das favelas. Muito associadas à paisagem\nurbana carioca, tais arranjos sociais improvisados e\ndisfuncionais invadiram o imaginário do brasileiro para nele se\nnaturalizarem. Mas as favelas não são nem um problema\nexclusivamente carioca, nem algo que deva ser normalizado,\ne o objetivo da Missão é garantir que, o mais rápido possível,\ntodos esses locais tenham sido reurbanizados e\ntransformados em bairros dignos.\nTodos os indicadores das favelas tendem a ser piores do que\nos dos bairros vizinhos: qualidade da educação, gravidez na\nadolescência, presença de doenças infecciosas, ausência de\nacessibilidade, relações familiares disfuncionais, saneamento\nbásico, violência doméstica etc. Ademais, são terrenos férteis\npara o crime organizado, que se aproveita da infraestrutura\nurbana precária e da falta de perspectiva para expandir seus\nquadros e atividades, bem como para se blindar da repressão\ndo Estado. Tornar cidadãos plenos os habitantes desses\nlocais e destruir o crime organizado requerem, pois, a\ndestruição da própria ideia de favela.\nTambém não se trata de um problema distante da realidade\ncapixaba — muito pelo contrário. Em números absolutos de\nmoradores de favelas, o estado se posiciona na nona\ncolocação do ranking nacional, com 600.000 pessoas\nvivendo nessa situação; em termos proporcionais, a situação\né ainda pior: ocupa o quarto lugar, com 15,6% dos capixabas\nhabitando favelas (proporção maior do que a do Rio de\nJaneiro).\n\n17"
+          },
+          {
+            "id": "desfavelizacao-2",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\nDessas, 85% estão concentradas na Grande Vitória, sendo\nque o município de Vitória é a quarta capital mais favelizada\ndo Brasil, com 33,1% da sua população vivendo em tais\narranjos urbanos.\nO plano de governo nacional da Missão prevê o fim de todas\nas favelas do país em até dez anos. Apesar disso, o governo\ndo Espírito Santo precisa estar pronto para encarar esse\nproblema com ou sem ajuda da União, e é por isso que\npropomos um projeto estadual de desfavelização abrangente\ne acelerado, seguindo não só modelos internacionais de\nsucesso, como é o caso de Singapura, como também locais, a\nexemplo do bairro serrano de Colinas de Laranjeiras.\n\nMapeamento e planejamento\n\nTodas as favelas do Espírito Santo serão mapeadas e\nsubdivididas de acordo com suas características, para que,\ncom base nelas, se possa planejar, em conjunto com os\nmunicípios, o fim desse modelo falido de urbanização.\nAquelas favelas que se encontram em áreas de encosta, de\nmanancial ou em qualquer outra que apresente riscos ou que\nseja de difícil acesso devem passar por uma realocação de\nseus moradores para outros locais, de preferência para\nbairros planejados construídos próximos. Já aquelas que\napresentem condições de tornarem-se, elas próprias, bairros\nfuncionais, deverão passar por um processo de\nreurbanização.\n\n18"
+          },
+          {
+            "id": "desfavelizacao-3",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\n\nUm novo modo de vida\nAs novas habitações — ou as habitações antigas reformadas\n— cumprirão todas as normas técnicas de engenharia, e os\nseus moradores deverão ter acesso aos títulos de\npropriedade, por meio de uma ampla regularização fundiária.\nMas só isso não basta: os novos bairros serão dotados de\ninfraestrutura urbana completa, incluindo vias organizadas,\nrotatórias, praças, saneamento básico, calçadas de qualidade,\nciclovias e projetos de arborização. Ademais, o Estado deverá\ninvestir em equipamentos públicos locais, como escolas,\ncreches e postos de saúde, garantindo aos moradores acesso\nfacilitado a tais serviços.\nOutro objetivo é garantir o desenvolvimento econômico\ndessas regiões. Graças à verticalização urbana que se\npretende promover, novos espaços serão liberados para a\nconstrução de empreendimentos empresariais, o que,\nsomado à transformação dessas áreas em zonas econômicas\nespeciais, estimulará a instalação de empresas nesses locais.\nIsso gerará empregos formais localmente, permitindo aos\nmoradores trabalharem perto de suas casas e,\nconsequentemente, desperdiçarem menos tempo com\ndeslocamentos. Para o restante da cidade, significará menor\ntrânsito e um sistema público de transporte menos\nsobrecarregado.\nA nossa visão é clara: todo capixaba deve morar em uma boa\ncasa, em um bom bairro, em uma boa comunidade. Nada\ndisso é luxo, mas direito, e resolver o problema das favelas é\npré-requisito para o desenvolvimento.\n\n19"
+          },
+          {
+            "id": "desfavelizacao-4",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\n\nComo fazer?\nO plano de governo nacional da Missão propõe a criação de\numa Política Nacional de Desfavelização, em que a própria\nUnião aportaria recursos nos projetos de reurbanização. Caso\no partido seja bem-sucedido na eleição do presidente da\nRepública, estaremos prontos, aqui no Espírito Santo, para\nconduzir esse processo do modo mais eficiente possível.\nDe qualquer modo, estaremos prontos para promover a\ndesfavelização do estado mesmo sem a ajuda da União — o\nque, presumimos, será o caso na hipótese de qualquer outro\ncandidato, além de Renan Santo, vencer a eleição para\npresidente. Faremos isso por meio de aportes diretos do\nGoverno do Estado, de parcerias público-privadas, de\nfinanciamento do BNDES ou de qualquer outro meio legítimo\nque encontremos para financiar esse ambicioso projeto de\nreestruturação urbana. Também destinaremos prédios\npúblicos abandonados ou subutilizados para que sejam\nreaproveitados como moradias populares.\nCabe destacar, contudo, que uma política de desfavelização,\npara que seja bem-sucedida, deve ser, necessariamente,\nprecedida por uma reocupação total dos territórios hoje\ncontrolados pelo crime organizado. Afinal, o Estado não é\ncapaz de promover política pública alguma num local onde os\nseus agentes não são capazes de entrar ou de agir sem\nmedo.\n\n20"
+          },
+          {
+            "id": "desfavelizacao-5",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\n\nPrevenção de novas favelizações\nDesfavelizar o Espírito Santo é uma meta necessária, mas\nimpedir o surgimento de novas áreas de ocupação irregular é\nigualmente importante. Não basta resolver os problemas\nherdados do passado se continuarmos permitindo que eles se\nreproduzam continuamente. Uma política séria de\nurbanização exige não apenas corrigir erros históricos, mas\nimpedir que novas distorções dessa natureza voltem a ocorrer\nno futuro.\nGrande parte das ocupações irregulares surge em áreas\ninadequadas para habitação, como encostas sujeitas a\ndeslizamentos, margens de rios, áreas de preservação\nambiental, regiões alagáveis e terrenos com elevada\ninstabilidade geológica. Quando essas ocupações são\nidentificadas somente depois de consolidadas, o custo\nhumano, social e financeiro para solucioná-las torna-se\nextremamente elevado.\nPropomos a criação de um Sistema Estadual de\nMonitoramento Territorial Permanente, integrado aos\nmunicípios e apoiado em ferramentas modernas de\ngeorreferenciamento, inteligência artificial, sensoriamento\nremoto por satélite e monitoramento por drones. O objetivo\nserá mapear continuamente áreas vulneráveis à ocupação\nirregular e identificar, ainda em estágio inicial, qualquer\ntentativa de implantação de novos núcleos habitacionais em\nlocais inadequados.\nUma vez detectadas ocupações em fase inicial, o Estado\natuará de forma rápida e coordenada para impedir a sua\nconsolidação.\n\n21"
+          },
+          {
+            "id": "desfavelizacao-6",
+            "titulo": "DESFAVELIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "DESFAVELIZAÇÃO\nO custo de evitar o surgimento de uma ocupação irregular é\ninfinitamente menor do que o custo de remover milhares de\nfamílias anos depois, quando o problema já se tornou\nsocialmente complexo.\nAlém disso, o sistema facilitará a identificação das áreas de\nrisco já ocupadas, auxiliando no planejamento das ações de\nregularização fundiária, reassentamento e reurbanização.\nNosso objetivo é garantir que o crescimento das cidades\ncapixabas ocorra de forma ordenada, segura e compatível\ncom a dignidade humana.\n\n22"
+          },
+          {
+            "id": "infraestrutura",
+            "titulo": "INFRAESTRUTURA",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA\nLOGÍSTICA\nO Espírito Santo vem se consolidando, nos últimos anos,\ncomo um hub logístico de importância nacional, com portos já\nnão mais exclusivamente voltados à exportação de minério de\nferro e celulose, mas a um conjunto cada vez mais\ndiversificado de produtos. Exemplos abundam: vão desde a\nexpansão e a modernização de portos como o Portocel, o\nPorto de Vitória e o Complexo de Tubarão até a construção do\nImetame Logística Porto, em Aracruz, do Porto Central, em\nPresidente Kennedy, e do Private Log, na Serra — que,\nquando inaugurado, será o maior condomínio logístico do\npaís.\nA localização privilegiada do Espírito Santo e a saturação de\nportos tradicionais como o de Santos explicam, em parte, o\ninteresse em transformar o estado em um hub logístico\nnacional; contudo, ainda há inúmeros gargalos de\ninfraestrutura que precisam ser superados para que se realize\ntal potencial. Particularmente, a malha interna capixaba não\nacompanhou o crescimento dos seus portos, o que prejudica\no escoamento da produção não só do próprio estado, mas de\nMinas Gerais, do Rio de Janeiro e da Bahia.\n\n23"
+          },
+          {
+            "id": "infraestrutura-logistica",
+            "titulo": "INFRAESTRUTURA LOGÍSTICA",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA LOGÍSTICA\nComo exemplos de gargalos, pode-se citar: a obsolescência\nda BR-262 — ligando o Espírito Santo a Minas Gerais —,\nainda\npouco\nduplicada,\nsujeita\na\nconstantes\ndesmoronamentos e considerada uma das rodovias mais\nletais do Brasil; o congestionamento da BR-101 Sul, rota\nquase exclusiva de escoamento entre o Rio de Janeiro e o\nEspírito Santo; e a baixa capacidade de fluxo na BR-101 Norte\n— que conecta o estado à Bahia —, ainda pouco duplicada e\ncruzando perímetros urbanos de alta densidade\npopulacional, como Linhares e São Mateus. A resolução de\ntais gargalos passa não só por melhorar a malha existente,\ncomo também por oferecer rotas e modalidades alternativas\npara o escoamento de produtos.\nUm problema presente em todos os trechos viários com\nelevado tráfego de carros e caminhões está nas\ndeformações constantes no asfalto. A substituição desse\npavimento pelo concreto — que, embora apresente maior\ncusto de implantação, oferece maior durabilidade e menor\ncusto de manutenção — mostra-se essencial para um\nestado que almeja consolidar-se como um hub logístico\nnacional, ainda que estradas de concreto sejam raras no\nBrasil como um todo. Trechos alternativos também\nprecisariam ser construídos para desviar o tráfego de\nveículos pesados de áreas de alta densidade urbana, como\nocorre na BR-101 Norte.\nAlém das rodovias, o modal ferroviário também é merecedor\nde maior foco. Apesar do relevo acidentado do Espírito Santo\n— o que dificulta a instalação desse tipo de infraestrutura —,\né aqui que se encontra uma das ferrovias mais eficientes do\nBrasil: a Estrada de Ferro Vitória a Minas (EFVM), operada\npela Vale.\n\n24"
+          },
+          {
+            "id": "infraestrutura-logistica-2",
+            "titulo": "INFRAESTRUTURA LOGÍSTICA",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA LOGÍSTICA\nDeve esta servir de modelo para uma expansão da malha\nferroviária capixaba, necessária para que seja concretizado\ntodo o potencial logístico do Espírito Santo, em especial no\nque tange ao escoamento de commodities. Projetos nesse\nsentido já existem, mas sofrem com constantes atrasos de\nexecução, como é o caso da EF-118 ligando o estado ao Rio\nde Janeiro, que seria essencial para desafogar a já saturada\nBR-101 Sul.\n\nA busca por investimentos\nSerá um dos principais focos da nossa gestão eliminar os\ngargalos logísticos existentes no estado, o que barateará os\ncustos de transporte e tornará a economia capixaba mais\ncompetitiva. Como os projetos de infraestrutura já existem —\nainda que sempre haja margem para melhorias —, o foco\ndeverá ser garantir fontes de financiamento para que estes\nou saiam do papel, ou — para aqueles que já estejam em\nfase de execução — sejam finalizados dentro do prazo.\nPor se tratar de investimentos que gerarão ganhos\neconômicos e tributários, dívidas contraídas com o intuito de\nconcretizá-los se pagarão no longo prazo. Por isso,\nbuscaremos não só firmar parcerias público-privadas e\nconsórcios com outros entes federativos, como, também,\nfinanciamento com instituições como o BNDES, o Banco\nMundial e o Novo Banco de Desenvolvimento (NBD).\nTambém adotaremos uma intensa política de paradiplomacia\ncom o intuito de buscar parceiros mundo afora que tenham\ninteresse em investir na infraestrutura do estado.\n\n25"
+          },
+          {
+            "id": "infraestrutura-logistica-3",
+            "titulo": "INFRAESTRUTURA LOGÍSTICA",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA LOGÍSTICA\n\nInspeção das obras já finalizadas e em\nexecução\nUma visita realizada por nós no Contorno do Mestre Álvaro\nrevelou algo preocupante: o pavimento de concreto que\ndeveria durar vinte anos já apresentava sinais de desgaste\nmeros dois anos após a entrega da obra. Pior, os buracos\nque foram surgindo na rodovia estavam sendo tapados com\nasfalto, em vez do concreto original — dois elementos com\ncaracterísticas distintas sendo misturados de modo\nabsolutamente improvisado.\nTal fato fez nascer a dúvida sincera sobre a integridade das\ndemais obras entregues nos últimos anos, além daquelas\nque ainda estão em execução. Faremos, portanto, uma\ninspeção extensiva em todas essas obras em busca de\nirregularidades — e, se for o caso, de responsabilizações. A\ndepender do que encontremos, tempo e recursos que\npoderiam ser empregados em novas obras terão,\ninfelizmente, de ser gastos na reforma das antigas. Isso,\ncontudo, terá de ser feito, pois o nosso compromisso não é\napenas com a expansão da infraestrutura logística do Espírito\nSanto, mas com a garantia de que aquilo que já existe esteja\nem boas condições.\n\n26"
+          },
+          {
+            "id": "industria",
+            "titulo": "INDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "INDÚSTRIA\nA economia do Espírito Santo tem se provado vocacionada\npara a logística e para a indústria. Entre 26% e 30% do PIB\ncapixaba correspondem ao setor industrial — com destaque\npara os setores de petróleo, gás, mineração e siderurgia —, ao\npasso que, no Brasil como um todo, a indústria representa\nalgo entre 21% e 23%. Soma-se a isso o fato de o estado ser,\nde acordo com uma pesquisa da FGV IBRE de 2025, líder em\nProdutividade Industrial e Exportadora, o que significa que\nnão só produz muito, como produz melhor — com mais\neficiência.\nAlém disso, o Espírito Santo cada vez mais se consolida como\num hub logístico de importância nacional, graças à sua\ncapacidade portuária, que, se espera, aumentará ainda mais\ncom a construção do Porto Central, em Presidente Kennedy.\nIsso se reflete no fato de o estado ser um dos mais abertos ao\ncomércio internacional no país — de acordo com o Instituto\nJones dos Santos Neves, o comércio exterior representou\ncerca de 54,64% do PIB capixaba em 2025, enquanto a\nmédia brasileira foi, nesse mesmo período, de 27,53%.\nO potencial industrial do Espírito Santo é, portanto,\ngigantesco, mas entendemos que muito ainda deve ser feito\npara maximizar e dinamizar esse setor. Essa será uma das\nprioridades da nossa gestão, pois partimos do pressuposto de\nque a economia capixaba só se desenvolverá de modo\nsatisfatório por meio da industrialização.\n\n27"
+          },
+          {
+            "id": "industria-2",
+            "titulo": "INDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "INDÚSTRIA\n\nHubs industriais\nPropomos a criação de hubs industriais — fomentados pelo\nGoverno do Estado — próximos aos portos capixabas, com o\nobjetivo de atender ao comércio internacional e interestadual.\nInicialmente, o foco será no Porto Central, mas a ideia é, no\nfuturo, expandir o modelo para outros pontos do litoral.\nO plano envolveria a reserva, pelo governo, de uma\ndeterminada área próxima ao porto para destiná-la à\ninstalação de uma zona industrial. Uma infraestrutura básica\nseria, então, construída nesse local: pavimentação, linhas de\ntransmissão, saneamento básico, iluminação, fornecimento\nde gás, rede de distribuição de energia etc. Tais obras seriam\nfinanciadas ou pelo estado ou por meio de parceria públicoprivada, ao passo que os terrenos seriam disponibilizados às\nempresas que desejem neles se instalar.\nUm dos principais entraves para o desenvolvimento da\nindústria no Brasil é o licenciamento ambiental, que, em\ngeral, demora um tempo irrazoável para ser concluído. Além\nda excessiva burocracia, um dos motivos para os atrasos —\nao menos no Espírito Santo — é a má qualidade de muitos\ndos estudos ambientais realizados, resultando na\nnecessidade de corrigi-los ou refazê-los — um retrabalho\nque custa tempo. Para evitar atrasos dessa natureza no hub\nindustrial, criaremos um cadastro de conformidade técnica\ncontendo os profissionais habilitados que, já tendo sido\nresponsáveis por estudos de impacto ambiental no Espírito\nSanto, obtiveram sucesso na emissão das licenças; serão\nestes os únicos que poderão atuar com licenciamento\nambiental dentro do hub, por já terem experiência\ncomprovada na área.\n\n28"
+          },
+          {
+            "id": "industria-3",
+            "titulo": "INDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "INDÚSTRIA\nAdemais, a definição prévia de quais indústrias se instalarão\nno hub nos permitirá antecipar, ainda na fase de construção\nda infraestrutura básica da zona industrial, quais medidas de\nmitigação poderão ser adotadas já nessa fase, de modo a\nsimplificar o processo de licenciamento ambiental posterior.\nTambém é necessário garantir que haja investimentos em\nlinhas de transmissão e redes de distribuição associadas a\nusinas termelétricas despacháveis próximas à área de\nconsumo — reduzindo, pois, as perdas de transmissão. De\nmodo a reduzir o consumo de energia no hub, será exigido\ndas empresas que lá se instalassem a apresentação de seus\nplanejamentos energéticos, com metas claras de redução do\nconsumo de energia. Como contrapartida, o governo\nestudará a viabilidade de se construir no hub uma planta de\nágua quente que forneça esse recurso, de modo\ncentralizado, às empresas do local, considerando ser o\naquecimento de água bastante intensivo em energia.\nOutras medidas também serão estudadas e mapeadas no\nmomento de se elaborar o modelo de hubs industriais a ser\nadotado no Espírito Santo. A meta é garantir uma\nminimização de custos e um incremento da produção\nindustrial no médio e no longo prazo, de modo a consolidar o\nestado como um centro econômico totalmente integrado às\ncadeias globais de produção.\n\n29"
+          },
+          {
+            "id": "industria-4",
+            "titulo": "INDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "INDÚSTRIA\n\nPriorização dos recursos do Fundo\nNacional de Desenvolvimento Regional\n(FNDR) para o setor industrial\nPor muito tempo, o desenvolvimento da indústria no Espírito\nSanto esteve condicionado à concessão de incentivos\nfiscais. Com a nova reforma tributária, contudo, essa\nferramenta deixará de existir em pouquíssimos anos,\ninviabilizando qualquer plano de longo prazo para o setor\nque se baseie nessa estratégia. Por sorte, o estado tem se\nconsolidado como um hub logístico importante, graças à\nexpansão da sua capacidade portuária, o que, por si só, é um\nincentivo para a atividade industrial. Ainda assim, não\nconsideramos isso o suficiente.\nComo compensação ao fim dos incentivos fiscais, a reforma\ntributária criou a figura do Fundo Nacional de\nDesenvolvimento Regional (FNDR), que contará com\nrepasses da União a partir de 2029. O Espírito Santo terá\ndireito a uma parcela desses recursos, e o nosso\ncompromisso é que sejam estes investidos, prioritariamente,\nnaquilo que beneficie o desenvolvimento industrial do\nestado. Com esse propósito, os representantes da indústria\nserão consultados, para que se saibam as suas principais\ndemandas e de que modo esses recursos podem ser\nconvertidos em geração de renda e emprego e no aumento\nda produtividade capixaba.\n\n30"
+          },
+          {
+            "id": "mobilidade",
+            "titulo": "MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "MOBILIDADE\nURBANA NA\nGRANDE VITÓRIA\nA mobilidade urbana da Grande Vitória enfrenta um problema\nestrutural que se agrava há décadas: a infraestrutura se\nexpande em ritmo inferior ao crescimento da população e da\natividade econômica.\nA Região Metropolitana concentra a maior parte da população\ne da produção econômica do Espírito Santo, mas continua\ndependente principalmente do transporte rodoviário. A\nmaioria dos investimentos realizados nas últimas décadas foi\ndestinada à ampliação de pistas, construção de viadutos e\nabertura de novas vias. Embora essas obras sejam\nimportantes, elas acabam incentivando ainda mais o uso do\nautomóvel, fenômeno conhecido mundialmente como\ndemanda induzida. O resultado é que, após alguns anos, os\ncongestionamentos retornam aos mesmos corredores que\nreceberam investimentos, exigindo novas ampliações e\ngerando um ciclo contínuo de aumento da dependência do\ncarro.\nA situação tende a se agravar nas próximas décadas. A Serra,\npor exemplo, possui projeções que apontam para uma\npopulação próxima a 1 milhão de habitantes entre 2040 e\n2050. Enquanto isso, os deslocamentos diários entre Serra,\nVitória, Vila Velha e Cariacica continuam aumentando.\nAlém dos congestionamentos, a dependência excessiva do\ntransporte rodoviário gera perdas econômicas, aumenta os\ncustos logísticos, reduz a produtividade dos trabalhadores,\ndificulta o acesso ao emprego e compromete a qualidade de\nvida da população.\n\n31"
+          },
+          {
+            "id": "mobilidade-urbana-na-grande-vitoria",
+            "titulo": "MOBILIDADE URBANA NA GRANDE VITÓRIA",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "MOBILIDADE URBANA NA GRANDE VITÓRIA\nMilhares de capixabas passam horas, diariamente, em\ndeslocamentos entre casa, trabalho e estudo. Esse\nfenômeno, conhecido como movimento pendular, reduz o\ntempo disponível para a família, o lazer, a qualificação\nprofissional e o descanso.\nAo mesmo tempo, a concentração de serviços em poucos\npolos urbanos obriga a população a realizar deslocamentos\ncada vez maior para acessar escolas, serviços públicos,\natendimento de saúde, comércio e oportunidades de\nemprego. Isso faz com que a Grande Vitória fique\nprogressivamente mais congestionada, gerando perda de\nprodutividade, aumento da poluição e queda na qualidade de\nvida.\nAinda que mobilidade urbana seja de competência municipal,\npor se tratar de uma Região Metropolitana — composta, pois,\nde vários municípios —, o Governo do Estado pode e deve\nauxiliar na concepção de um projeto de mobilidade urbana\nintermunicipal que dê conta de gerir o movimento pendular\nque congestiona a Grande Vitória como um todo. Por isso,\npropomos uma política de mobilidade urbana baseada em\ntrês ações: (I) a implantação de uma rede integrada de VLT e\nBRT; (II) a realização de estudos e de atos preparatórios para\na implantação de um metrô metropolitano; e (III) a adoção\ndos princípios da Cidade de 15 Minutos.\nO objetivo é criar um sistema de transporte moderno,\nintegrado e preparado para acompanhar o crescimento\npopulacional das próximas décadas, reduzindo a\ndependência do automóvel e oferecendo alternativas\neficientes para os deslocamentos diários.\n\n32"
+          },
+          {
+            "id": "mobilidade-urbana-na-grande-vitoria-2",
+            "titulo": "MOBILIDADE URBANA NA GRANDE VITÓRIA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "MOBILIDADE URBANA NA GRANDE VITÓRIA\n\nImplantação integrada de VLT e BRT\nSerá criada uma rede integrada de transporte coletivo de alta\ncapacidade baseada na implantação conjunta de VLT e BRT\nnos principais corredores urbanos da Grande Vitória. O VLT\nserá o principal modal estruturante da rede, oferecendo\nmaior capacidade de transporte, mais conforto para os\npassageiros e menor impacto ambiental. O BRT atuará de\nforma complementar, aproveitando corredores exclusivos e\nampliando a cobertura do sistema para outras regiões.\nA ideia — embora essa possa ser modificada, a depender de\nestudos técnicos — é que os investimentos iniciais sejam\nconcentrados em eixos estratégicos da Região\nMetropolitana, de modo a formar uma rede integrada entre\nSerra, Vitória, Vila Velha e Cariacica.\nAlém da infraestrutura, a proposta prevê a modernização\ngradual da frota do Transcol e a integração operacional entre\nônibus convencionais, BRT e VLT, otimizando a eficiência do\nsistema e reduzindo o tempo de deslocamento da\npopulação.\n\nEstudos para implantação do metrô\nmetropolitano\nAlém dos investimentos em VLT e BRT, será iniciado um\namplo estudo de viabilidade para a implantação de um\nsistema de metrô na Grande Vitória.\nO primeiro passo será identificar a demanda potencial de\npassageiros, os principais fluxos de deslocamento da Região\nMetropolitana e os corredores nos quais um sistema de alta\ncapacidade pode gerar maior impacto econômico e social. O\nestudo também avaliará os custos de implantação, operação\ne manutenção do sistema.\n\n33"
+          },
+          {
+            "id": "mobilidade-urbana-na-grande-vitoria-3",
+            "titulo": "MOBILIDADE URBANA NA GRANDE VITÓRIA",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "MOBILIDADE URBANA NA GRANDE VITÓRIA\nEntre as alternativas a serem analisadas está uma ligação\nentre o Terminal de Carapina e o Terminal de Vila Velha,\nconectando importantes polos urbanos, comerciais,\neducacionais e de transporte da Região Metropolitana. O\ntraçado poderá incluir regiões como Fernando Ferrari,\nGoiabeiras, UFES, Reta da Penha e a ligação entre Vitória e\nVila Velha, sempre com base em critérios técnicos e estudos\nde engenharia.\nTambém serão avaliadas as melhores soluções construtivas\npara cada trecho, incluindo alternativas subterrâneas,\nsemissubterrâneas ou em superfície, buscando equilibrar\neficiência operacional, impacto urbano e viabilidade\nfinanceira.\nCaso os estudos indiquem viabilidade técnica e econômica,\no Estado buscará parcerias com o Governo Federal, o\nBNDES, organismos internacionais e investidores privados\npara tirar o projeto do papel.\nMais do que uma obra de infraestrutura, o metrô representa\num investimento estratégico na produtividade, na qualidade\nde vida e no desenvolvimento econômico da Grande Vitória,\nreduzindo significativamente os tempos de deslocamento e\naproximando trabalhadores, estudantes e empresas.\n\n34"
+          },
+          {
+            "id": "mobilidade-urbana-na-grande-vitoria-4",
+            "titulo": "MOBILIDADE URBANA NA GRANDE VITÓRIA",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "MOBILIDADE URBANA NA GRANDE VITÓRIA\n\nCidade de 15 Minutos e Mobilidade Ativa\nO Governo do Estado atuará em parceria com as prefeituras\npara incentivar a descentralização dos serviços públicos de\nmenor complexidade, aproximando escolas, unidades de\nsaúde, áreas de lazer, equipamentos esportivos e postos de\natendimento da população.\nA proposta também prevê a ampliação da infraestrutura\ncicloviária, a integração entre as bicicletas e o transporte\npúblico, a construção de bicicletários e o apoio técnico aos\nmunicípios para a adoção dos princípios da Cidade de 15\nMinutos. O objetivo é reduzir a necessidade de\ndeslocamentos longos, diminuindo a dependência do\nautomóvel e melhorando a qualidade de vida da população.\nParis se tornou uma das principais referências mundiais\nnesse modelo. A cidade implantou mais de 1.000 quilômetros\nde infraestrutura cicloviária e investiu aproximadamente 250\nmilhões de euros em mobilidade ativa. Como resultado, as\nviagens diárias por bicicleta cresceram de cerca de 400 mil\npara mais de 1,1 milhão por dia. Ao mesmo tempo, o tráfego\nde automóveis em regiões centrais caiu mais de 60% e os\nníveis de poluição atmosférica foram reduzidos em\naproximadamente 40%. Além disso, a cidade registrou\ncrescimento da utilização do transporte público,\ndemonstrando que cidades planejadas para pessoas não\neliminam o transporte coletivo; pelo contrário, fortalecem sua\nutilização.\nA proposta busca adaptar essas experiências à realidade\ncapixaba, criando cidades mais próximas, acessíveis e\neficientes, onde uma parcela cada vez maior das atividades\ndo dia a dia possa ser realizada a pé, de bicicleta ou por\ntransporte coletivo.\n\n35"
+          },
+          {
+            "id": "educacao",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nA divulgação falaciosa dos dados de educação do Espírito\nSanto induz muitos à percepção equivocada de um panorama\npromissor acerca da qualidade educacional capixaba.\nEncontramo-nos, afinal, numa boa posição no cenário\nnacional; não seria isso comprovação de excelência? O\nproblema é que o Brasil, como um todo, vai muito mal, como\ndemonstra o Ranking Pisa — internacional —, que ano a ano\ncoloca o país dentre as últimas posições em educação.\nDestacar-se nacionalmente significa, portanto, distinguir-se\nentre os piores, e, de fato, quando comparado ao restante do\nmundo, o sistema educacional capixaba é um desastre.\nOs professores perderam a autoridade em sala de aula e a sua\nautonomia avaliadora, tornando-se vítimas da tirania das\naprovações automáticas; aqueles que se insurgem, sofrem\nperseguições. A gestão das escolas se submete cada vez\nmais aos interesses políticos de ocasião, mais interessados\nem maquiar dados do que em entregar um serviço público de\nqualidade. Milhares de alunos são aprovados todo ano sem\nsaber ler, escrever ou realizar operações matemáticas simples\ncom competência, inviabilizando-os de exercer a cidadania\nplena ou de se inserir na economia do século XXI como mão\nde obra qualificada. Tudo isso se soma à enorme disparidade\nde desempenho entre alunos da rede pública e da rede\nprivada — embora esta também não esteja boa —, o que\nacaba por aprofundar ainda mais as desigualdades sociais da\nsociedade brasileira.\n\n36"
+          },
+          {
+            "id": "educacao-2",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nNão podemos permitir que os rankings nacionais nos iludam\nacerca da educação capixaba: esta não vai bem. Nossa\ngestão pautar-se-á por critérios internacionais para avaliar a\nqualidade do nosso ensino, e só nos satisfaremos quando as\nnossas crianças e adolescentes estiverem concorrendo de\nigual a igual contra os jovens de outros países —\ndesenvolvidos e emergentes. Para isso, focaremos no\nbásico: garantir que os estudantes concluam o Ensino\nFundamental com domínio perfeito de português e de\nmatemática e que o Ensino Médio cumpra a função de\nprepará-los para o mercado de trabalho do século XXI.\n\nForça-tarefa pelo fim da defasagem\neducacional\nEm colaboração com os Municípios, identificaremos todos os\nalunos da rede pública que apresentam déficits de ensino em\nportuguês e matemática. A alfabetização deve ser plena até\no 3° ano do Ensino Fundamental, e todos aqueles que não\napresentarem domínio de leitura e escrita até esse momento\nprecisam receber um acompanhamento especial para que\nsupram esse atraso. Uma força-tarefa educacional será\ninstituída para realizar esse trabalho do modo mais rápido e\neficaz possível, e medidas de avaliação e de reforço mais\nintensas serão tomadas para prevenir novas defasagens no\nfuturo.\nA intenção é que, dessa força-tarefa, surja um programa\npermanente de reforço e de cursos profissionalizantes,\nministrados nas unidades escolares nos horários em que\nestas ficariam ociosas.\n\n37"
+          },
+          {
+            "id": "educacao-3",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nA oferta será extensiva a jovens adultos fora da faixa etária\nescolar que busquem preparação para vestibulares e\nconcursos públicos; ademais, as comunidades serão\nconvidadas a participar ou a organizar atividades\neducacionais, esportivas e culturais dentro das escolas. Já\nem relação aos cursos profissionalizantes, estes se alinharão\nàs vocações econômicas de cada região, seja na indústria,\nna agropecuária ou nos serviços.\n\nEnsino Técnico integrado\nIntegraremos, ao máximo, o Ensino Médio ao Ensino Técnico,\npor meio de parcerias com universidades, com o setor\nprodutivo e com o Sistema S. O objetivo é garantir que os\nalunos da rede pública concluam o ciclo escolar com\ncompetências técnicas que os qualifiquem para postos de\ntrabalho nos setores mais dinâmicos de suas regiões. Além\ndisso, o governo atuará ativamente na facilitação da\nempregabilidade, instituindo programas de intermediação\nentre o setor produtivo e os jovens em busca de emprego.\n\nEscolas cívico-militares\nExpandiremos o modelo de escolas cívico-militares para\ntodos os locais de alta vulnerabilidade social. Somado à\nerradicação do crime organizado e ao processo de\ndesfavelização, garantiremos, assim, a inserção dos jovens\ndas comunidades à sociedade brasileira de fato, por meio da\ndisciplina rígida. Tal modelo já se provou eficaz, e\nacreditamos tratar-se de um excelente instrumento de\ntransformação, capaz de converter aqueles hoje\nmarginalizados em cidadãos, detentores de direitos e\ndeveres.\n\n38"
+          },
+          {
+            "id": "educacao-4",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nAuxílio financeiro a alunos com base em\ndesempenho\nPara as famílias em vulnerabilidade social, as horas\ndedicadas ao estudo e à qualificação por crianças e\nadolescentes impõem um custo de oportunidade elevado a\nelas, visto que a força de trabalho desses jovens poderia\nauxiliar no sustento doméstico. Para combater o trabalho\ninfantil e a evasão escolar, e assegurar a dedicação plena ao\naprendizado, o estudo deve ser encarado como um ofício\nque demanda contrapartida financeira. Isso garantirá que as\nfamílias que não reconheçam o valor intrínseco da educação\n— realidade, infelizmente, bastante comum — passem a\nvalorizá-la, ao menos, em termos econômicos.\nCriaremos, portanto, um auxílio financeiro para estudantes da\nrede pública, cujo valor estará atrelado ao seu desempenho\nem exames semestrais aplicados pelo Governo do Estado.\nOs professores dos alunos com melhor desempenho\nreceberão, ademais, premiações pecuniárias, extensíveis aos\ndiretores das escolas que atingirem as metas estabelecidas.\nPor outro lado, as instituições cujos estudantes não atinjam\nos\npatamares\nmínimos\nde\ndesempenho\nterão,\nobrigatoriamente, suas gestões substituídas.\nPor fim, identificaremos os alunos superdotados ou de maior\ntalento da rede pública para conceder-lhes bolsas de estudo\nnas melhores escolas do estado, inclusive em instituições\nprivadas. O objetivo é assegurar que esses estudantes\nmaterializem suas potencialidades, equiparando-lhes as\noportunidades às daqueles de maior renda, o que lhes\npermitirá concorrer de igual para igual tanto nos processos\nseletivos e vestibulares quanto no mercado de trabalho.\n\n39"
+          },
+          {
+            "id": "educacao-5",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nMétodo fônico para alfabetização\nIncentivaremos, ao máximo, a aplicação do método fônico\nnas escolas da rede pública estadual. Estudos globais e\npesquisas em neurociência comprovam que ensinar a\nrelação direta entre letras e sons acelera a leitura e melhora a\ncompreensão textual. A neurobiologia da leitura mostra que o\ncérebro humano não aprende a ler naturalmente como\naprende a falar. O método fônico conecta o sistema visual\ndiretamente às áreas auditivas da fala de forma lógica.\nRelatórios científicos internacionais, como o National Reading\nPanel e estudos de universidades de Harvard, validam a\ninstrução fônica sistemática como o pilar mais seguro para\nevitar o analfabetismo funcional.\n\nAbordagem CPA (Concreto, Pictórico,\nAbstrato)\nIncentivaremos o uso da abordagem CPA no Ensino\nFundamental da rede pública estadual. Com esse método, os\nalunos começam manipulando objetos físicos (blocos,\nfichas), seguem para as representações visuais (desenhos,\ndiagramas) e só depois avançam para os símbolos e\nnúmeros tradicionais (2 + 3 = 5).\n\nConcreto → Pictórico → Abstrato\n\n40"
+          },
+          {
+            "id": "educacao-6",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n1. Concreto (Enativo)\nO que é: o aprendizado começa com a manipulação de\nobjetos reais e físicos.\nExemplo: o aluno conta 5 maçãs físicas, blocos de\nmontar, palitos ou fichas coloridas.\nObjetivo: trazer o conceito matemático para o mundo real\npor meio do toque e da ação direta.\n2. Pictórico (Icônico)\nO que é: o estudante avança para a representação visual\nou gráfica daqueles objetos.\nExemplo: em vez de pegar maçãs reais, o aluno agora\nolha ou desenha 5 círculos, quadradinhos ou gráficos de\nbarras no papel.\nObjetivo: criar uma imagem mental estável do conceito.\n3. Abstrato (Simbólico)\nO que é: a introdução formal dos símbolos, algarismos e\noperadores matemáticos.\nExemplo: o aluno finalmente escreve e resolve a\nexpressão matemática pura utilizando os números: 3 + 2\n= 5.\nObjetivo: operar com conceitos puramente matemáticos\ne lógicos após dominar o significado por trás deles.\n\n41"
+          },
+          {
+            "id": "educacao-7",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nSoroban e o ábaco mental\nIncentivaremos a introdução do soroban e do ábaco mental\n(ou Anzan) no Ensino Fundamental da rede pública estadual,\ninclusive por meio de torneios. Ao passo que o primeiro é o\nábaco japonês tradicional, o segundo é a técnica avançada\nde projetar essa ferramenta na mente para realizar cálculos\nmatemáticos complexos em segundos. A prática sistemática\ndo instrumento físico permite que o cérebro crie uma\n\"calculadora invisível\", ativando o raciocínio lógico e a\nmemória visual. O Soroban é visualizado inteiramente na\nmente, dando espaço ao que chamamos de ábaco mental.\nOs dedos realizam micro movimentos automáticos rápidos\nenquanto o cérebro altera a posição das contas imaginárias\nem alta velocidade.\n\nAdoção do RTI\nAdotaremos, na rede pública estadual, o RTI (Response to\nIntervention — Resposta à Intervenção): um modelo\npedagógico e preventivo, composto por 3 camadas,\nestruturado para identificar e apoiar precocemente alunos\ncom dificuldades de aprendizagem. Em vez de esperar que o\nestudante falhe para oferecer ajuda ou para reprová-lo, a\nescola monitora o progresso de todos e intensifica o suporte\nem níveis (camadas) conforme a necessidade de cada um.\nAs três camadas funcionam como um funil de suporte e\nestão divididas da seguinte forma:\n\n42"
+          },
+          {
+            "id": "educacao-8",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nCamada 1: Instrução Universal (Prevenção Primária)\nPúblico-alvo: 100% dos alunos da sala de aula regular.\nFoco: Oferecer ensino de alta qualidade na própria sala,\nutilizando práticas pedagógicas baseadas em evidências\ncientíficas.\nAção: Realização de triagens universais e avaliações\ndiagnósticas trimestrais para acompanhar o ritmo da\nescola inteira.\nEficácia: Espera-se que entre 80% e 90% dos\nestudantes respondam bem a essa camada e consigam\naprender sem apoio extra.\nCamada 2: Intervenção em Pequenos Grupos (Prevenção\nSecundária)\nPúblico-alvo: Cerca de 10% a 15% dos alunos que não\nprogrediram na Camada 1.\nFoco: Fornecer suporte suplementar e direcionado para\nsanar dificuldades específicas (geralmente em leitura,\nescrita ou matemática).\nAção: Sessões de instrução focada realizadas de 2 vezes\npor semana, em pequenos grupos (de 3 a 5 alunos) no\ncontraturno, com duração de um turno completo de\nreforço (5 horas) por dia.\nMonitoramento: O progresso é avaliado com maior\nfrequência para checar se a intervenção está\nfuncionando.\nCamada 3: Intervenção Intensiva e Individualizada\n(Prevenção Terciária)\nPúblico-alvo: Aproximadamente 5% dos estudantes que\ncontinuam com lacunas graves após as duas primeiras\netapas.\nFoco: Atendimento altamente individualizado e intensivo.\nAção: O planejamento pedagógico se torna\npersonalizado e o suporte ocorre em sessões individuais\nou em duplas por 3 vezes na semana, com duração de\num turno completo de reforço (5 horas) por dia.\n\n43"
+          },
+          {
+            "id": "educacao-9",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nAbordagem: Utiliza múltiplas fontes de dados e costuma\nenvolver uma ponte entre o ambiente educacional e o\nambiente clínico. Se o aluno não responder a esta\ncamada, ele é encaminhado para avaliações formais de\ntranstornos de aprendizagem, como a dislexia.\n\nFim da aprovação automática\nCaso fique comprovado por avaliações internas e externas\nque o aluno não está desenvolvendo adequadamente as\ncompetências esperadas para sua série — incluindo domínio\nde conteúdo —, que não atinge os requisitos mínimos para\nprogredir para próxima série, que mesmo após ter passado\nno mínimo pela camada 2 do RTI e não possuir problemas\nclínicos que justifiquem seu baixo desenvolvimento, não\nconseguindo atingir os limites mínimos de 60% de\naproveitamento por área de conhecimento, ele será retido na\nmesma série com o imperativo de garantir a aprendizagem\nefetiva das competências e conteúdos esperados para\naquela série.\n\n44"
+          },
+          {
+            "id": "educacao-10",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nMetade do tempo para planejamento\nA valorização do magistério e a melhoria da qualidade do\nensino passam pela reestruturação da jornada de trabalho.\nAtualmente, a legislação garante um terço da carga horária\npara atividades extraclasse; nossa gestão elevará esse\npatamar, estabelecendo como meta que pelo menos metade\n(50%) do tempo de trabalho do professor seja dedicado ao\nplanejamento, aperfeiçoamento contínuo, correção de\navaliações e desenvolvimento de materiais pedagógicos.\nEsta medida visa desonerar o professor da sobrecarga de\nhoras em sala de aula, permitindo que o período de contato\ndireto com os estudantes seja marcado por maior qualidade,\nfoco e planejamento estratégico. Entendemos que um\ndocente com tempo adequado para a preparação é a base\nindispensável para a eficácia das novas metodologias que\nimplementaremos na rede estadual.\n\nTelas e inteligência artificial\nImplementaremos políticas de desestímulo ao uso de telas,\nincluindo a proibição completa do uso de aparelhos celulares\nem sala de aula por parte dos alunos, com punições claras\npara quem descumprir as regras. Da mesma forma,\nvedaremos o uso indiscriminado da IA para a execução de\ntrabalhos e tarefas escolares.\nPara isso, o governo incentivará a adoção de metodologias\nmais analógicas, como o Soroban e o método CPA. Em\ncontrapartida, entendemos também que é papel da escola\npromover a robótica, a programação e a informática. O uso\ninteligente da tecnologia é um catalisador no aprendizado do\nestudante.\n\n45"
+          },
+          {
+            "id": "educacao-11",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nSistema Escalonado de Prevenção e\nResposta Disciplinar\nEstruturaremos um sistema multicamada projetado para lidar\ncom os problemas de indisciplina nas escolas. Para organizar\ntal sistema, criaremos a figura do Coordenador de Disciplina\ne Convivência Escolar como profissional específico e\nformalmente responsável pela coordenação do sistema\nescalonado de prevenção e resposta disciplinar em cada\nescola. Esse profissional prestará suporte direto aos\ndocentes em situações de indisciplina, sendo de sua\natribuição a organização dos registros disciplinares, a\nconvocação e o acompanhamento das intervenções, a\narticulação com as famílias e a padronização institucional das\nrespostas.\nEsse sistema deverá ser organizado em três níveis:\nNível 1: Prevenção universal, ensino explícito de regras,\npadronização\nmínima\ndas\nrespostas,\nrotinas\ne\nmonitoramento de dados para toda a escola.\nNível 2: Intervenção focalizada para estudantes reincidentes,\ncom metas comportamentais, acompanhamento individual\nou em pequeno grupo, mentoria e contato com a família.\nNível 3: Intervenção intensiva individualizada para condutas\npersistentes, graves ou de alto impacto sobre o ambiente\npedagógico.\n\n46"
+          },
+          {
+            "id": "educacao-12",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nTodas as medidas disciplinares devem ter consequências\nclaras, a fim de garantir a estabilidade do ambiente de\naprendizagem em sala de aula e o respeito ao direito de\nestudar dos demais estudantes. A não resolução dos\nproblemas de indisciplina no ambiente escolar implicará no\nacionamento de uma Rede de Proteção Externa, como o\nConselho Tutelar, o Ministério Público e os órgãos de\nassistência social do município, para a aplicação das\nmedidas protetivas e de responsabilização cabíveis fora o\nambiente escolar. Caso a integridade física ou a saúde\nmental do corpo docente e discente esteja em risco, a\ndireção da unidade poderá determinar o afastamento\npreventivo do estudante de forma temporária, garantindo-se\no regime de estudos domiciliares até que os órgãos\ncompetentes definam as medidas aplicáveis ou a realocação\nassistida do aluno.\n\nReativação do projeto Escola Aberta\nO projeto Escola Aberta fora concebido para abrir as\nunidades escolares aos finais de semana para a prática de\natividades esportivas, de modo a fortalecer o vínculo entre\nescola,\nestudantes,\nfamílias\ne\ncomunidade.\nA\ndescontinuidade dessa iniciativa privou o sistema\neducacional de uma ferramenta essencial de integração,\nmotivo pelo qual a sua reedição será uma meta prioritária da\nnossa gestão.\nA proposta prevê o uso das quadras e espaços escolares\npara modalidades como futebol, futsal, vôlei, basquete,\nhandebol, atletismo, xadrez e outras práticas, sob a\ncoordenação de professores, monitores ou profissionais\nparceiros. O programa visa incentivar hábitos saudáveis,\nocupar o tempo livre dos jovens de forma produtiva, prevenir\na evasão, a violência e o uso de drogas, além de transformar\na escola em um espaço seguro de convivência, disciplina,\ncooperação e pertencimento comunitário.\n\n47"
+          },
+          {
+            "id": "educacao-13",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\nUniversidade Estadual do Espírito Santo\nA criação de uma Universidade Estadual do Espírito Santo é\numa demanda histórica do estado, e concretizá-la será uma\ndas metas centrais da nossa gestão. Contudo, essa nova\ninstituição não seguirá o modelo acadêmico tradicional; em\nvez disso, pautar-se-á por uma integração orgânica e\nimediata com o setor produtivo capixaba. A universidade terá\nseu escopo estritamente limitado às ciências exatas e\nbiológicas, com foco em tecnologia e capacitação técnica de\nalto nível. Além disso, será territorialmente descentralizada,\nde modo a levar o ensino superior especializado aos polos\nestratégicos de desenvolvimento do estado.\nA implementação da Universidade Estadual do Espírito Santo\nocorrerá de forma gradual e planejada, em estrita\nconsonância com a capacidade de investimento do governo.\nSimultaneamente, o setor produtivo será um parceiro\nestratégico, convidado a participar ativamente e a investir na\ninstituição por meio de parcerias público-privadas (PPPs).\nEsse modelo permitirá, inclusive, o mapeamento contínuo\ndas demandas mais urgentes por mão de obra especializada\ne por projetos de inovação. Trata-se de um investimento que\ntrará importantes retornos econômicos no longo prazo para o\nestado, dos quais uma parte deverá ser reinvestida na\nprópria universidade, conferindo-lhe, progressivamente,\nmaior autonomia financeira.\n\n48"
+          },
+          {
+            "id": "saude",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nA saúde pública no Espírito Santo enfrenta desafios\nestruturais crônicos que comprometem o atendimento à\npopulação. Entre os principais estão a dificuldade de acesso\naos serviços especializados e a descontinuidade do cuidado\ndurante o encaminhamento entre a Atenção Primária e os\nserviços de média e alta complexidade. Mesmo com os\ninvestimentos realizados pelo estado, persistem falhas\nestruturais e de gestão que resultam em longas filas para\nconsultas, exames e cirurgias, especialmente nas áreas de\nortopedia, neurologia, oftalmologia e cirurgia vascular.\n\nProntuário único\nMuitos municípios utilizam sistemas diferentes que não se\ncomunicam adequadamente. Por causa disso, prontuários\nficam separados, exames se perdem e os hospitais e centros\nespecializados nem sempre conseguem acessar o histórico\nda Atenção Primária. Essa falta de integração prejudica a\ncontinuidade do cuidado, favorece a repetição desnecessária\nde exames e dificulta o acompanhamento longitudinal do\npaciente. Por causa disso, o fortalecimento de um prontuário\núnico estadual e interoperável vem sendo cada vez mais\ndebatido.\nPara resolver esse problema, implementaremos o Prontuário\nÚnico de Saúde do Espírito Santo (PUS-ES): uma base de\ndados central que integra as informações clínicas de toda a\nrede estadual e, progressivamente, municipal.\n\n49"
+          },
+          {
+            "id": "saude-2",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nA meta, com forte carga simbólica e política, é consolidar o\nEspírito Santo como o primeiro estado brasileiro a ter toda a\nsua rede pública de saúde plenamente conectada,\nassegurando a interoperabilidade total dos dados em um\núnico sistema.\nA implementação se dará em duas fases. Na primeira (anos 1\ne 2), promoveremos a integração de toda a rede estadual e\ndas redes municipais ao PUS-ES, com prioridade absoluta\npara a rede pública. Já na segunda fase (a partir do ano 2),\ndaremos início à execução de um plano de integração\ngradual das redes privadas — hospitais, consultórios, clínicas\ne laboratórios de exames —, sem caráter compulsório\nimediato.\nO estado arcará integralmente com o custo de\nimplementação do PUS-ES na rede pública, incluindo a\ninfraestrutura tecnológica e a capacitação das equipes\nmunicipais. Nenhum município será onerado pela adesão ao\nprograma: a gestão da ferramenta será transferida à rede\nmunicipal somente após a plena operação do sistema na\nregião, sem custos adicionais de implementação ou\ntreinamento.\nAs informações anonimizadas do PUS-ES serão\ndisponibilizadas a instituições de ensino e pesquisa para\nestudos de correlação entre doenças, perfis epidemiológicos\ne regiões geográficas. Com foco no Espírito Santo, a medida\nfortalecerá a vigilância epidemiológica e permitirá a\nantecipação de surtos e a otimização das políticas de saúde\npública.\nOs resultados esperados com essa política são: (I) a redução\nda duplicidade de exames e do desperdício de insumos e\nmateriais; (II) o aprimoramento do controle de materiais,\nrecursos humanos e desempenho clínico-assistencial em\ntoda a rede;\n\n50"
+          },
+          {
+            "id": "saude-3",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n(III) a integração dos dados do PUS-ES ao sistema de\nvalorização profissional previsto neste plano; e (IV) a redução\nda subnotificação, com o consequente fortalecimento da\ncapacidade de previsão de surtos e de prevenção ao\ndesabastecimento de medicamentos.\nÉ fundamental destacar que o modelo de prontuário\neletrônico unificado já está em construção no Brasil por meio\nda Rede Nacional de Dados em Saúde (RNDS), plataforma\ndo Ministério da Saúde que promove interoperabilidade entre\nsistemas públicos e privados. No âmbito municipal, a\nexperiência de São Paulo, que iniciou em outubro de 2024\nsua Rede Municipal de Dados do SUS, serve como referência\nestratégica.\nDados\noperacionais\ndesse\nprojeto\ndemonstraram uma redução de até 18% no tempo médio de\natendimento clínico e de espera por exames nas unidades\nonde a interoperabilidade já foi implantada, com uma\neconomia estimada de R$ 12 milhões anuais decorrente da\neliminação da duplicidade de procedimentos.\n\nValorização profissional por meritocracia\nOs profissionais de enfermagem, fisioterapia e odontologia\nsustentam o cotidiano da Atenção Primária e estão entre as\ncategorias mais desvalorizadas da rede de saúde. O mesmo\ndesafio atinge os Agentes Comunitários de Saúde e os\nAgentes de Combate às Endemias — que atuam na ponta,\nno contato direto e contínuo com a população —, bem como\nos médicos que compõem essas equipes. Atualmente,\nnenhuma dessas categorias conta com um instrumento\nobjetivo que reconheça e remunere, de forma diferenciada,\nquem entrega maior qualidade e melhores resultados ao\npaciente.\n\n51"
+          },
+          {
+            "id": "saude-4",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nAtuaremos para que parte dos ganhos de eficiência,\noriundos da implementação do prontuário único, seja\ndirecionada a um programa de bonificação por desempenho.\nNão se trata de um reajuste linear, mas de um sistema de\nmeritocracia focado no reconhecimento da produtividade e\nda qualidade do atendimento. Inicialmente, o programa\npriorizará a Atenção Primária, por constituir o nível de\ncuidado de maior continuidade e impacto na saúde da\npopulação.\nA avaliação de desempenho combinará dois critérios, para\nevitar que o resultado de toda uma equipe seja distorcido por\num único profissional de baixo desempenho ou,\ninversamente, que o esforço individual se perca dentro da\nmédia da equipe:\n•\nAvaliação individual: considerará a quantidade de\natendimentos, a qualidade da evolução clínica dos casos\nacompanhados, a resolutividade e os indicadores de\nsatisfação do paciente.\n• Avaliação de equipe: considerará o desempenho coletivo\nda unidade ou do território, de modo a reconhecer e\nincentivar o trabalho colaborativo.\nUm ponto central de justiça do programa é que a avaliação\nnão será aplicada de forma indiscriminada entre regiões com\nrealidades distintas. O estado condicionará a cobrança por\nresultados à prévia garantia de oferta de recursos adequados\npara alcançá-los. Nesse sentido, os parâmetros de avaliação\nserão calibrados regionalmente, baseados em estudos\nprévios sobre a evolução de cada território após a\nimplementação do PUS-ES e das políticas de Atenção\nPrimária, sendo periodicamente ajustados à medida que mais\ndados forem sendo consolidados.\nObjetiva-se, com essa medida: (I) reter profissionais\nqualificados na rede pública, especialmente na Atenção\nPrimária;\n\n52"
+          },
+          {
+            "id": "saude-5",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n(II) elevar, consideravelmente, a qualidade assistencial, com\nbase em indicadores clínicos e de satisfação; e (III) instituir\numa cultura de reconhecimento por mérito, pautada em\ncritérios transparentes e regionalmente justos.\nÉ importante destacar que a literatura sobre esgotamento\nprofissional no setor público brasileiro associa, de forma\nconsistente, a falta de reconhecimento e a sobrecarga de\ntrabalho ao maior absenteísmo e à queda da produtividade.\nEsse cenário reforça a premissa de que a valorização\nobjetiva do desempenho tende a produzir o efeito contrário:\nmaior engajamento, satisfação e retenção dos profissionais.\n\nSaúde no interior: exames e especialistas\npresenciais\nO modelo de assistência atual impõe aos residentes do\ninterior do Espírito Santo o constante deslocamento para\ngrandes polos como Vitória, Serra, Vila Velha, Colatina e\nCachoeiro de Itapemirim, seja para consultas com\nespecialistas, seja para exames de rotina. Essa centralização\nsobrecarrega o transporte sanitário, aumenta o absenteísmo\ne retarda diagnósticos e tratamentos precoces, agravando\nquadros clínicos evitáveis. Diante desse cenário,\nimplementaremos um programa voltado a essas populações,\norganizado em duas frentes:\n• Interiorização de exames laboratoriais: instalação de salas\nde coleta de exames (sangue, urina, entre outros) em todas\nas Unidades Básicas de Saúde do interior, com rede de\nlogística diária para transporte das amostras até o centro\nespecialista de referência da região.\n\n53"
+          },
+          {
+            "id": "saude-6",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n• Especialistas presenciais em hospitais já existentes:\nreserva de duas a três salas de atendimento ambulatorial\ndentro de hospitais já existentes em regiões afastadas — não\nvinculadas à rotina hospitalar, mas dedicadas exclusivamente\na consultas de especialistas como cardiologia, ortopedia e\nneurologia —, reduzindo a necessidade de deslocamentos\ndos pacientes para a Grande Vitória ou outros centros de\nreferência.\nO programa será fundamentado nos seguintes pilares:\n• Logística integrada: implementação de fluxos diários para\ncoleta e transporte de amostras aos centros de referência\nregionais, assegurando prazos de entrega compatíveis com a\ncontinuidade dos tratamentos.\n• Diagnóstico de viabilidade: realização de estudos técnicos\npara identificar os entraves — legais, operacionais ou de\nmercado — que impedem a ampla adoção de salas\nambulatoriais de especialistas em hospitais regionais.\n• Política de atratividade: desenvolvimento de mecanismos\nde incentivo financeiros ou de progressão de carreira para\nespecialistas, visando mitigar a defasagem da tabela SUS e\nassegurar a fixação ou o rodízio desses profissionais nas\nunidades do interior.\nEspera-se com esse programa: (I) reduzir o deslocamento de\npacientes do interior para os grandes centros; (II) otimizar o\nuso da infraestrutura hospitalar já existente; (III) conferir\nmaior celeridade aos diagnósticos; e (IV) mitigar a\ndescontinuidade dos tratamentos, evitando que pacientes\nabandonem o acompanhamento clínico devido a barreiras de\nmobilidade ou ao tempo de espera.\n\n54"
+          },
+          {
+            "id": "saude-7",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n\nRacionalização e controle social das\nemendas parlamentarem em saúde\nAs emendas parlamentares deixaram de ser uma fonte\nmarginal de financiamento do SUS e passaram a ocupar um\nespaço cada vez maior no orçamento público da saúde. Em\nnível federal, a participação das emendas nas despesas com\nações e serviços públicos de saúde saltou de 3,1% em 2014\npara 11,4% em 2024, depois de chegar a 12,6% em 2023, um\nsalto de R$ 5,1 bilhões para R$ 24,8 bilhões no período —\nhoje equivalente a 45,4% das despesas discricionárias do\nMinistério da Saúde. Esse crescimento não representa\ndinheiro novo entrando no sistema: é uma realocação de um\norçamento já limitado, que desloca o poder de decisão do\nplanejamento técnico do SUS para o critério individual de\ncada parlamentar.\nLevantamentos do Ipea mostram ainda que parte relevante\ndesses recursos é direcionada a municípios que já têm\ncobertura quase completa de atenção básica, sem gerar\nmelhoria proporcional de qualidade, e que municípios\nbeneficiados por emendas frequentemente reduzem seu\npróprio investimento em saúde, deslocando recursos para\náreas menos prioritárias. O mesmo fenômeno se repete, em\nmenor escala, no orçamento estadual: o Espírito Santo\naprovou para 2026 um orçamento recorde em emendas\nparlamentares, o que reforça a urgência de qualificar o\ncritério de aplicação desses recursos em saúde.\nTendo isso em vista, atuaremos para reverter o crescimento\ndesproporcional\ndas\nemendas\nparlamentares\nno\nfinanciamento do SUS, fortalecendo os mecanismos\nregulares e institucionais de financiamento sob a gestão do\nExecutivo estadual.\n\n55"
+          },
+          {
+            "id": "saude-8",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nComo parte central dessa reversão, condicionaremos a\nhabilitação dos repasses e a aprovação dos planos de\ntrabalho de emendas parlamentares estaduais em saúde à\napresentação de manifestação prévia de conformidade\nemitida pelo respectivo Conselho Municipal de Saúde do\nente beneficiário, garantindo transparência, participação\nsocial e o estrito alinhamento dos recursos com as\nnecessidades prioritárias identificadas nos instrumentos de\nplanejamento do SUS.\nUm ponto de atenção jurídica orienta o desenho deste eixo:\nparte das emendas parlamentares, as chamadas emendas\nindividuais e de bancada impositivas, tem execução\nobrigatória garantida por norma da Constituição Estadual,\nseguindo o mesmo modelo adotado em nível federal. Isso\nsignifica que o Poder Executivo não pode, por conta própria,\nvetar ou condicionar a execução dessas emendas a uma\naprovação\nprévia\nde\nterceiros,\nsob\npena\nde\ninconstitucionalidade. A proposta é desenhada para produzir\ncontrole social real dentro desse limite, e não contra ele:\n• Fortalecimento do financiamento regular: como isso é\ncompetência plena do Poder Executivo, o Estado assume o\ncompromisso de estruturar e ampliar os mecanismos\nordinários de repasse e cofinanciamento estadual, reduzindo\na dependência de municípios e unidades de saúde de\nrecursos discricionários e imprevisíveis vindos de emendas.\n• Participação no processo de conformidade: toda emenda\nparlamentar impositiva já passa, antes de virar lei\norçamentária, por um procedimento de verificação de\nconformidade técnica e legal, que a vincula a uma ação\norçamentária específica. A proposta insere os Conselhos\nMunicipais de Saúde formalmente nesse procedimento, com\ndireito a manifestação sobre a destinação, o beneficiário e o\nplano de trabalho de emendas em saúde, sem impedir a\nexecução do valor, que continua\nconstitucionalmente garantida.\n\n56"
+          },
+          {
+            "id": "saude-9",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n• Condicionamento pleno nas emendas não impositivas: e\nmendas de comissão, de relator e outras modalidades sem\ngarantia constitucional de execução poderão, essas sim, ser\nefetivamente condicionadas à aprovação prévia do Conselho\nMunicipal de Saúde e ao alinhamento com o Plano Municipal\ne o Plano Estadual de Saúde.\n• Agenda legislativa complementar: qualquer ampliação do\ngrau de condicionamento sobre as emendas impositivas —\npor exemplo, novas exigências de plano de trabalho,\nprestação de contas ou vinculação a metas sanitárias —\ndepende de negociação e aprovação de lei ou emenda\nconstitucional pela Assembleia Legislativa (Ales), não\npodendo ser imposta unilateralmente pelo Executivo. O\nGoverno se compromete a liderar essa pauta junto ao\nLegislativo, em articulação com a Sesa, o Conselho Estadual\nde Saúde e o Colegiado de Secretarias Municipais de Saúde\n(Cosems-ES).\n\nTelemedicina e digitalização do\natendimento\nA escassez de especialistas no interior do Espírito Santo\nimpõe um dilema logístico: o deslocamento de pacientes\npara grandes centros eleva os custos e sobrecarrega o\ntransporte sanitário, enquanto a fixação de especialistas nos\nmunicípios remotos esbarra em desafios de infraestrutura e\nna necessidade de suporte profissional nas unidades locais.\nAmbas as estratégias, quando isoladas, revelam-se\ninsuficientes para equacionar integralmente a demanda.\nNesse contexto, a telemedicina apresenta-se como um vetor\nresolutivo fundamental, ao superar barreiras geográficas e\npermitir que os usuários acessem especialistas de qualquer\nparte do país, complementando o atendimento presencial\nonde este se mostra inviável ou oneroso.\n\n57"
+          },
+          {
+            "id": "saude-10",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nInstituiremos, portanto, um programa de digitalização da\nsaúde que combine os dois modelos, aplicados de forma\ndiferenciada conforme o porte da localidade, e não como\nalternativas excludentes:\n• Em Unidades Básicas de Saúde localizadas em municípios\nou distritos com população acima de um patamar mínimo,\nserá instalada uma sala de telessaúde, com um profissional\ntécnico mediador presencial (técnico de enfermagem ou\nagente de saúde) apoiando o paciente durante a consulta\nremota com o especialista.\n• Em localidades menores do interior, onde uma sala fixa\nnão teria demanda suficiente para justificar a disponibilização\npermanente de estrutura, o mediador técnico de\nenfermagem ou agente de saúde, irá com o transporte\nsanitário até o domicílio do paciente, onde mediará a\nconsulta online via tablet. Nos casos de localidades onde há\nproblema de conexão à internet, o paciente será\nencaminhado por transporte sanitário até a unidade de saúde\nmais próxima, que possua a sala de telessaúde.\nPara implementar o programa, primeiro haverá a definição\ntécnica do patamar populacional que justifica cada modelo\n(sala fixa x atendimento itinerante), com base em estudo de\ncusto comparado entre infraestrutura fixa e transporte\nsanitário. Em segundo lugar, capacitaremos os profissionais\nmediadores presenciais para que estejam qualificados não\nsó para apoiar o atendimento remoto, como também para\nrealizar a triagem inicial de casos simples, de modo que\nencaminhe ao presencial apenas quando necessário. Por\núltimo, firmaremos parcerias com os municípios para\nviabilizar espaço físico e equipe complementar, sem que\nsejam transferidos a eles os custos de implantação inicial.\n\n58"
+          },
+          {
+            "id": "saude-11",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nÉ importante ressaltar que a telemedicina no Brasil já conta\ncom marco regulatório do Conselho Federal de Medicina,\nque estabelece diretrizes de segurança e interoperabilidade\npara o atendimento remoto e a guarda de prontuários\neletrônicos, condição que reforça a importância de também\nintegrar esse programa ao Prontuário Único.\n\n59"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nBRENO BARCELOS\nCANDIDATO A GOVERNADOR DO\nESPÍRITO SANTO"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "f9eea24911c683b674dbaddfa3a23a65fd43ffcbc42a5e9f0c18507d2cadeee9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "75393a894c8ef3f33e1ea72eee682e9f52d4906a6d3c088cc1026e0a0e5fadc6"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f8b5bb59f46e93e4c8f92925d4ec7c9b33b0eee977d9909a194eb33bd34f7045"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "4e9529a31263302592361cdecf50814c5fac92c4e4e41c2201d51f30841898a7"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "a14f07e30c3aaacbcf6c1cf224ba7b23c28598efe7fae111af275bb724f3e006"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "4c7df5298490485b016b0d38b80719359a24821acff2f80269743224107e9409"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "5151b9e08f0f9b80622b9f718bcac275a617232bcf8203238bb2a1fe3baae0c6"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "9dbfceddbb6566871eb9f6e2f8fb08616955c84211655d1ed0e9442be4108002"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "f5e5f23364eefcb53eb8d11d597db43f2132c1cac80c69d5042da3a4e95d898c"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f135726969d241d8ad6f9118780cdb7eb9c15d07bf5f47538f17d06a35f3f922"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "007ea491be88c586708c895d0ac55d4a160850188678bb666a5b99dd787a4dcc"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "eade5d497f54f20147e52a72baed5d3a7f4a9726bc93740b11894a726c91ac3e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "c3481cd4940cb69bc6ebe95d5033c9e3caf50c71413f99b1776071bc7949a4e1"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "2169ca25a2b79d141f0511bd3108e8b0ee90b63ff676c07b151deee711d46280"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d5b5a627bbb2e33b84a79c714a4563e03029c962fce77548bfdef63fa76df9cb"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "10323eaaeadb935b3691008b3bb2425de70fdf62f335f3ee990cfc7ec5c76c44"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "f127896c51fe809cb6e8f039c4ccea353077810907025f8a94fdbc74f4fecd96"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "06ac7d92399d43384611e611f1b8635a5c63f91f557d2bab70badc2bba666043"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "372b2a985166c64ad2b46f62fc05a028c292cb9ae82e5bce5320567b211eb604"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "a68b5a5fcc0869211b3489730daf150870f7ad5c06a351752f89277a2dcb8994"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "ab3e10a45d834f006a762ef1b5849d655997cf15aa5700dd1c38d2d5429392eb"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "ee569c60fc46f335edfb96bfe60cadab0546767d869520ba9af9a360d029cb11"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "70586c68f25b52e6746132e75dd0bbd2137bf8db42a6c1fd6d917f0f214325c8"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "ab47817b00e3053fb0b17ee8ee38ff0e599b50931e83be58a163f2d17ca4d2cb"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "ede2e8a669ed1d6cd315a5811d1f5bf4c6f5cdb86c3e884c4032254ea9afa0ab"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "c42a6c43d5c6e38acde000ff09da80d348807edb0be26a2c0a416666608fceb6"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "4afcfc41b7bbc2809e93183186fe78e9ea05e57b406b33eee4ba520bee0f7d32"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "95e1b2cc6542f9f48628844eecfe2cc454e696423cfe6830d2c800964967a008"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "217ab5f752b4a76c4ce488064b9ba59b11b993927ea1feafe3b322a8437f0a63"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "d21b482713d5e2cef651b8d782933c097660a5cc2fa816120fbe759166647e5f"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "012a194a0d0b6ee3bee6fc94932fc0c5f18a1f651f78b3137a6b6289550b6ebb"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "37c903adbe975290bf491970ff6b1d7ead947775243d255c6763679d11d896c9"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "76b71858865ced73458d54614dc9d79f2465f3dd4df42800b2dfdfe332d32170"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "e8d5d918a0502ce9b5262144bb3c992691de5ad21733fc174784c4261fdc4a01"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "8a0d2bd1af5cbead0404b8f986d21fb6b044842998515f3f7194be0b4e4e86e6"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "8436b5535a3feb313f1e6424e313b18450138f340b31a9de5cc906175df2f936"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "47b6a79c53c1f7905baa9e8070d344d5b55db7b0760264d6ba5f1379de8424c7"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "f3ec85504228fffdd391af514d7ffedcf47d287344f15ace5f4e3d5ef8a4d10d"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "f9236e7e2a2d0e3fcb2980fd68e288ddba93ba96d0bf8caa2fe46f49f733f029"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "2a5fa3193a78bdffacb6c7383bbd8798cd2fc0cfc1f02d7ac24557dcc42497ce"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "900954183139b2edec43cde9d22107fc79f6b4560dcc85659835c15372fafc70"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "266bc70b257913c966a260cede6ffddc6c7b94ad6fffddb092889c53cfb1319a"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "8b8bbf9a9f7b229b2f917b669d640d129007fca2600be7f836b329150ced2067"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "be4abb875f23787164130797a938f3eb1bf4cc8aade152c95a962fe43164a7bd"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "06fc24d006861ddb1662189ccbf57d0372e2fd4c07001aa6e16419643ac02bd8"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "5cbee73b1f849e339f1e565aac56cbfc25437d148d2570bc9081fa6a67a7e892"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "5fbbc9a912f2faa7e314e99cd0df6b321bd621476fcb64066581a607dacd86c7"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "56cefa2bf09559b076cad55232e1cd4dbda0b1c6301061175b5ea3121485fc37"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "3ec9cd7a15b7980b50c1ea6ef97d5cd7015c991bc93637d9a63394ebc4c31c62"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "57cae4beced7906fe75724ebdcf78bf352a892400f24cdab0da8bce77c45dc66"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "87aabac99b39692959351ddee5afd2230c4314f9c56e1b4221d3e9dafa4814e6"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "860bebdc504e2b8597739f13e2be068e6280def30190ed968a466ee51c4a6bde"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "2521bd9679032e42f54c22bcdc6e3f8f4a4dda02d0ce71faecf5e33a5aed5f30"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "a4427f81bede567d490fd61fe27914f73c73a5dea758a320732c187a26b04484"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "93cabebbb8c584b0e88d790ffad8da6d8df3e9adaf234dcb29c3e2ad9480b0ba"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "a1f6778e74d14cf302daa16e593cdd86b637bc14f86ce7fbe90c520b13068110"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "6e7f8f191bb3183974ce13eccb2d9e1b8cfbc03054c957a8513cfcc81ad22dd2"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "8ed638b978ab4998b3da3b21333064ec08762e5b2a238adf79b8b5398ae59ede"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "1853883db5f1fccd06fcce66033680c4fb500f2d0f32646795e02419b09cee47"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "636a60c6f9ecd68fc7c4be500cac17861f8af0d8aeb2191d8ea56bbb8f1d7c6e"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "e5b407eabe9e8be4930fa9dbe2b1a90987787771323b47d3744ac075427b095a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas. O plano propõe a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones. Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória. Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social. Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal. Em localidades menores do interior, onde uma sala fixa não teria demanda suficiente para justificar a disponibilização permanente de estrutura, o mediador técnico de enfermagem ou agente de saúde, irá com o transporte sanitário até o domicílio do paciente, onde mediará a consulta online via tablet.",
+    "frases": [
+      {
+        "texto": "O programa propõe a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 9,
+            "trecho": "O ponto-chave do nosso plano é a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 22,
+            "trecho": "Propomos a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones."
+          }
+        ]
+      },
+      {
+        "texto": "Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 34,
+            "trecho": "Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória."
+          }
+        ]
+      },
+      {
+        "texto": "Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 39,
+            "trecho": "Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social."
+          }
+        ]
+      },
+      {
+        "texto": "Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 50,
+            "trecho": "Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal."
+          }
+        ]
+      },
+      {
+        "texto": "Em localidades menores do interior, onde uma sala fixa não teria demanda suficiente para justificar a disponibilização permanente de estrutura, o mediador técnico de enfermagem ou agente de saúde, irá com o transporte sanitário até o domicílio do paciente, onde mediará a consulta online via tablet.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 59,
+            "trecho": "Em localidades menores do interior, onde uma sala fixa não teria demanda suficiente para justificar a disponibilização permanente de estrutura, o mediador técnico de enfermagem ou agente de saúde, irá com o transporte sanitário até o domicílio do paciente, onde mediará a consulta online via tablet."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "reocupacao-territorial",
+        "titulo": "Reocupação territorial",
+        "descricao": "A proposta prevê a retomada estatal de territórios sob controle de facções criminosas.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 9,
+            "trecho": "O ponto-chave do nosso plano é a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas."
+          }
+        ]
+      },
+      {
+        "id": "monitoramento-territorial",
+        "titulo": "Monitoramento territorial",
+        "descricao": "A proposta prevê um sistema estadual para acompanhar áreas vulneráveis à ocupação irregular.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 22,
+            "trecho": "Propomos a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones."
+          }
+        ]
+      },
+      {
+        "id": "transporte-coletivo",
+        "titulo": "Transporte coletivo",
+        "descricao": "A proposta prevê uma rede integrada de VLT e BRT na Grande Vitória.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 34,
+            "trecho": "Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória."
+          }
+        ]
+      },
+      {
+        "id": "educacao-civico-militar",
+        "titulo": "Educação cívico-militar",
+        "descricao": "A proposta prevê a expansão de escolas cívico-militares em áreas de alta vulnerabilidade social.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 39,
+            "trecho": "Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social."
+          }
+        ]
+      },
+      {
+        "id": "prontuario-unico",
+        "titulo": "Prontuário único",
+        "descricao": "A proposta prevê uma base central para integrar informações clínicas da rede de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002541012:01",
+            "pagina": 50,
+            "trecho": "Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:25:33.368Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:27:54.673Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:1:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de monitoramento territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:2:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de mobilidade urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:3:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:4:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:5:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de telessaúde itinerante."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:frase:6:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:reocupacao-territorial:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao conteúdo da evidência (mapear áreas vulneráveis)."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:monitoramento-territorial:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:transporte-coletivo:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:educacao-civico-militar:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002541012:tema:prontuario-unico:documentos:ES:80002541012:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:ES:80002541012",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "ES:80002541012:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 40086,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1762,
+          "reasoning_output_tokens": 361
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24644,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22510,
+          "output_tokens_details": {
+            "thinking_tokens": 644
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24644,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22510,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24644,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24644
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.34275039999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "aa288d9a332f2e7aeec90ceab6b82b80c07cf288011ae59b3f1607aa2cbff972",
+    "extractedTextSha256": "9de50eb7a013fdcd2d820caa46c595e02789b427d8f31dab819e95106f827411",
+    "documentCount": 1,
+    "documentSetSha256": "333a9896d305517e977527c37524fae9ea84713e0a3e7b4c30a128bb63a3e531",
+    "contentSha256": "66d107974d65064a21feb6658256f202d87808fc33e61f6b02e8699defc0b858"
+  }
+}

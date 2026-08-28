@@ -1,0 +1,1700 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "BA",
+    "sqCandidato": "50002536579",
+    "slug": "jose-estevao",
+    "nomeUrna": "ESTÊVÃO",
+    "partido": "DC",
+    "arquivoNome": "2026BA50002536579_01.pdf",
+    "arquivoNoPacote": "BA/2026BA50002536579_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "BA:50002536579:01",
+      "fonte": {
+        "arquivoNome": "2026BA50002536579_01.pdf",
+        "arquivoNoPacote": "BA/2026BA50002536579_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "fff695c88b6c8b2161859bca267daa159b5518c7d0e45f6abb534f5412e259a1",
+        "extractedTextSha256": "d993a6e95652676c4249a67fe05d3e6dc36e8cf0e0b3b89522c07cf2995e4be5",
+        "paginas": 73,
+        "secoes": [
+          {
+            "id": "proposta-de",
+            "titulo": "PROPOSTA DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PROPOSTA DE\nGOVERNO\nNEUZIMAR\nESTEVÃO\nCAMACAM\nGOVERNADOR\nVICE-GOVERNADORA\nUM NOVO OLHAR\nPARA A BAHIA\n2027 - 2030\nDEMOCRACIA CRISTA\nFé no Brasil!"
+          },
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPLANO OFICIAL DE GOVERNO\n2026\n\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\nUM NOVO OLHAR PARA A BAHIA\n\nTrabalho e Renda: O Caminho da\nReconstrução da Bahia\n\n1"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPLANO OFICIAL DE GOVERNO 2026\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\nUM NOVO OLHAR PARA A BAHIA\nTrabalho e Renda: O Caminho da Reconstrução da Bahia\n\nVOLUME 1\nSUMÁRIO — VOLUME 1\nCARTA AO POVO BAIANO\nAPRESENTAÇÃO\n\nPARTE I — DIAGNÓSTICO DA BAHIA\n1. A Bahia que temos\n2. A crise do modelo político\n3. Economia e concentração de riqueza\n4. Trabalho, desemprego e renda\n5. Segurança pública\n6. Educação\n7. Saúde\n8. Infraestrutura\n2"
+          },
+          {
+            "id": "plano-de-governo-3",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n9. Desigualdade territorial\n\nPARTE II — VISÃO DE GOVERNO\n10.\n\nO novo modelo de governança\n\n11.\n\nGovernar para o povo\n\n3"
+          },
+          {
+            "id": "plano-de-governo-4",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nCARTA AO POVO BAIANO\nMeus irmãos e minhas irmãs baianos,\nApresento este Plano de Governo movido por um profundo sentimento de\nresponsabilidade com a Bahia e com seu povo.\nMinha candidatura nasce da convicção de que a Bahia precisa romper definitivamente\ncom ciclos históricos de concentração de poder, promessas não cumpridas e ausência\nde transformação estrutural.\nNosso estado possui todas as condições para liderar o desenvolvimento do Nordeste e\nocupar posição de destaque no Brasil. Temos território estratégico, riquezas naturais,\ncultura poderosa, vocação produtiva diversificada e, acima de tudo, um povo\nextraordinariamente trabalhador.\nAinda assim, milhões de baianos convivem diariamente com a dura realidade do\ndesemprego, da violência, da precariedade da saúde, da baixa qualidade da educação\ne da falta de oportunidades.\nDurante décadas, diferentes grupos políticos se alternaram no comando do estado.\nMudaram discursos, mudaram alianças, mudaram narrativas. Porém, para grande parte\ndo povo, os problemas estruturais permaneceram.\nA pergunta que devemos fazer é simples:\nA BAHIA MELHOROU PROPORCIONALMENTE AO SEU POTENCIAL?\nInfelizmente, não.\nA verdade é que o povo baiano está cansado da velha política que prioriza grupos,\nacordos e interesses de poder em detrimento das necessidades reais da população.\nEu venho do povo.\nConheço as dificuldades de quem precisou lutar desde cedo para sobreviver. Sei o valor\ndo trabalho. Sei o que significa acordar sem garantias, mas com esperança.\nMinha história me ensinou algo fundamental:\nDIGNIDADE NASCE DA OPORTUNIDADE.\nPor isso, apresento esta proposta com uma convicção clara:\n4"
+          },
+          {
+            "id": "plano-de-governo-5",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nTodos os grandes problemas da Bahia têm uma raiz comum:\nA FALTA DE TRABALHO E RENDA.\nSem trabalho:\n\n\ncresce a pobreza;\n\n\n\naumenta a violência;\n\n\n\nfamílias se desestruturam;\n\n\n\njovens perdem perspectivas;\n\n\n\na esperança diminui.\n\nNosso governo terá uma prioridade absoluta:\nGERAR TRABALHO, RENDA E OPORTUNIDADE.\nMas não basta crescer economicamente.\nÉ preciso garantir que o desenvolvimento chegue:\n\n\nao interior;\n\n\n\nà periferia;\n\n\n\nao pequeno produtor;\n\n\n\nao pequeno empreendedor;\n\n\n\nao trabalhador informal;\n\n\n\nao jovem;\n\n\n\nàs mulheres;\n\n\n\nàs famílias mais vulneráveis.\n\nNosso compromisso é governar com:\n\n\nética;\n\n\n\ncompetência;\n\n\n\nplanejamento;\n\n\n\ncoragem;\n\n\n\nfoco em resultados.\n\nEste plano não é apenas um documento técnico.\nÉ um compromisso moral com cada baiano.\n5"
+          },
+          {
+            "id": "plano-de-governo-6",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nChegou a hora de um novo ciclo.\nChegou a hora de uma nova Bahia.\nChegou a hora de um novo olhar.\n\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\n6"
+          },
+          {
+            "id": "plano-de-governo-7",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nAPRESENTAÇÃO\nA Bahia chegou a um ponto decisivo de sua história.\nSomos um estado de dimensões continentais, com enorme riqueza natural, diversidade\ncultural incomparável, posição geográfica estratégica e um povo trabalhador, criativo e\nresiliente.\nApesar de todo esse potencial, a realidade vivida pela maioria dos baianos ainda é\nmarcada por sofrimento, insegurança, desemprego, pobreza e falta de oportunidades.\nNas últimas décadas, a Bahia esteve sob o comando de grupos políticos diferentes em\ndiscurso, mas semelhantes em resultado: concentração de poder, crescimento\neconômico limitado a poucos territórios, baixa distribuição de renda e incapacidade de\nenfrentar problemas estruturais.\nEnquanto grupos políticos disputam o poder, o povo disputa a sobrevivência.\nNosso projeto nasce da convicção de que a Bahia precisa de uma mudança profunda de\nmodelo de governança.\nNão se trata apenas de trocar governantes.\nTrata-se de mudar a forma de governar.\nEste plano apresenta uma proposta baseada em pilares estratégicos capazes de\ntransformar a Bahia em um estado mais justo, seguro, produtivo e desenvolvido.\nNosso compromisso é com resultados concretos.\nNosso governo será medido por uma única pergunta:\nMELHOROU A VIDA DO POVO OU NÃO MELHOROU?\n\n7"
+          },
+          {
+            "id": "plano-de-governo-8",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPARTE I — DIAGNÓSTICO DA BAHIA\n1. A BAHIA QUE TEMOS\nA Bahia é o maior estado do Nordeste em extensão territorial e um dos mais importantes\neconomicamente do Brasil.\nPossui:\n\n\n417 municípios\n\n\n\nmais de 14 milhões de habitantes\n\n\n\nposição geográfica estratégica\n\n\n\ngrande potencial logístico\n\n\n\ndiversidade econômica singular\n\nA Bahia tem vocação para:\n\n\nagronegócio\n\n\n\nagroindústria\n\n\n\nmineração\n\n\n\nturismo\n\n\n\nindústria\n\n\n\nenergia renovável\n\n\n\neconomia criativa\n\n\n\ntecnologia\n\nApesar disso, grande parte da população ainda vive em condições de vulnerabilidade.\nExiste uma contradição central:\nA BAHIA PRODUZ RIQUEZA, MAS NÃO DISTRIBUI PROSPERIDADE.\n\n2. A CRISE DO MODELO POLÍTICO\nNas últimas décadas, a Bahia foi governada por grupos políticos dominantes que\nestruturaram sua força com base em:\n8"
+          },
+          {
+            "id": "plano-de-governo-9",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nconcentração de poder;\n\n\n\ncontrole político regional;\n\n\n\nalianças de conveniência;\n\n\n\ndependência institucional.\n\nO resultado foi a manutenção de um sistema político com baixa capacidade de\ntransformação estrutural.\nMuitas decisões de governo passaram a ser influenciadas por interesses de manutenção\nde poder.\nIsso enfraqueceu:\n\n\nplanejamento de longo prazo;\n\n\n\nmeritocracia técnica;\n\n\n\neficiência administrativa.\n\nA população sente isso.\nPercebe quando o Estado:\n\n\narrecada muito;\n\n\n\npromete muito;\n\n\n\nentrega pouco.\n\n3. ECONOMIA E CONCENTRAÇÃO DE RIQUEZA\nA economia baiana é uma das maiores do país.\nPorém, seu crescimento histórico foi concentrado em poucos polos:\n\n\nRegião Metropolitana de Salvador\n\n\n\nPolo Petroquímico de Camaçari\n\n\n\nOeste agrícola\n\n\n\nExtremo Sul\n\n\n\nPolos industriais específicos\n\nGrande parte da riqueza permanece concentrada.\n9"
+          },
+          {
+            "id": "plano-de-governo-10",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEnquanto poucos territórios acumulam investimentos, muitos municípios vivem com:\n\n\nbaixa atividade econômica;\n\n\n\ndependência do setor público;\n\n\n\nbaixa industrialização;\n\n\n\npouca agregação de valor.\n\nNa prática, existem várias Bahias dentro da Bahia.\n\n4. TRABALHO, DESEMPREGO E RENDA\nEste é o maior problema do estado.\nA Bahia historicamente figura entre os estados com maiores índices de desemprego do\nBrasil.\nAlém disso:\n\n\ninformalidade elevada;\n\n\n\nbaixa renda média;\n\n\n\nsubemprego;\n\n\n\nfuga de talentos.\n\nJovens qualificados deixam a Bahia em busca de oportunidades.\nO pequeno empreendedor enfrenta:\n\n\ncrédito caro;\n\n\n\nburocracia;\n\n\n\nbaixa assistência técnica.\n\nO trabalhador informal sobrevive sem proteção econômica.\nO pequeno produtor rural enfrenta dificuldades de:\n\n\ncomercialização;\n\n\n\nlogística;\n\n\n\nacesso a tecnologia.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-11",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n5. SEGURANÇA PÚBLICA\nA segurança pública se tornou uma das maiores angústias da população.\nA Bahia convive com:\n\n\nfacções criminosas;\n\n\n\ntráfico;\n\n\n\nhomicídios;\n\n\n\nassaltos;\n\n\n\nsensação permanente de medo.\n\nO crime organizado expandiu influência em áreas urbanas e periféricas.\nEm muitos territórios, o Estado perdeu presença efetiva.\nSem segurança, não há investimento nem desenvolvimento.\n\n6. EDUCAÇÃO\nA educação é o principal instrumento de transformação social.\nEntretanto, a Bahia ainda enfrenta desafios severos:\n\n\nanalfabetismo acima da média nacional;\n\n\n\nevasão escolar;\n\n\n\nbaixo desempenho no ensino médio;\n\n\n\nbaixa conexão entre escola e mercado.\n\nMuitos jovens concluem a escola sem preparo técnico para o trabalho.\n\n7. SAÚDE\nA saúde pública ainda sofre com gargalos estruturais.\nPrincipais problemas:\n\n\nfilas de exames;\n\n\n\ndemora em cirurgias;\n11"
+          },
+          {
+            "id": "plano-de-governo-12",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ndéficit de especialistas;\n\n\n\nconcentração em Salvador.\n\nMuitos cidadãos viajam longas distâncias em busca de atendimento.\n\n8. INFRAESTRUTURA\nSem infraestrutura não há desenvolvimento.\nA Bahia ainda possui gargalos em:\n\n\nestradas;\n\n\n\nsaneamento;\n\n\n\nlogística;\n\n\n\nmobilidade;\n\n\n\nconectividade digital.\n\nEsses gargalos limitam:\n\n\nprodução;\n\n\n\ncompetitividade;\n\n\n\ngeração de emprego.\n\n9. DESIGUALDADE TERRITORIAL\nEste é um dos problemas estruturais mais profundos.\nA Bahia não é uma realidade única.\nHá enormes diferenças entre:\n\n\nRMS\n\n\n\nRecôncavo\n\n\n\nSul\n\n\n\nExtremo Sul\n\n\n\nOeste\n\n\n\nSemiárido\n12"
+          },
+          {
+            "id": "plano-de-governo-13",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nChapada\n\n\n\nSertão\n\nCada território exige políticas específicas.\nGovernar a Bahia como homogênea é um erro histórico.\n\n13"
+          },
+          {
+            "id": "plano-de-governo-14",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPARTE II — VISÃO DE GOVERNO\n10. O NOVO MODELO DE GOVERNANÇA\nA Bahia não precisa apenas de um novo governador.\nA Bahia precisa de uma nova forma de governar.\nNosso governo será baseado em cinco princípios:\n\n1. Governar com metas\nCada secretaria terá metas e indicadores claros.\n\n2. Governar com dados\nDecisões baseadas em inteligência e evidências.\n\n3. Governar por territórios\nCada região terá plano específico.\n\n4. Governar com transparência\nO cidadão acompanhará metas e obras.\n\n5. Governar com responsabilidade fiscal\nEstado eficiente, sem desperdícios.\n\n11. GOVERNAR PARA O POVO\nO Estado não existe para servir grupos políticos.\nExiste para servir pessoas.\nNosso governo terá prioridade absoluta para:\n\n\ntrabalhadores\n\n\n\npequenos empreendedores\n\n\n\nagricultores familiares\n\n\n\njuventude\n\n\n\nmulheres\n14"
+          },
+          {
+            "id": "plano-de-governo-15",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nidosos\n\n\n\npopulação vulnerável\n\nToda política pública será avaliada por uma pergunta:\n\nMelhorou a vida do povo?\nSe a resposta for não, a política precisa ser corrigida.\n\nENCERRAMENTO DO VOLUME 1\nEste primeiro volume apresentou:\n\n\na identidade política da candidatura;\n\n\n\no diagnóstico completo da Bahia;\n\n\n\na visão de governo de José Estêvão.\n\nNo Volume 2, entraremos no coração econômico do programa:\n\nEIXO 1 — REFORMA DO ESTADO\nEIXO 2 — TRABALHO, EMPREGO E RENDA\n\n15"
+          },
+          {
+            "id": "plano-de-governo-16",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPLANO OFICIAL DE GOVERNO 2026\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\nUM NOVO OLHAR PARA A BAHIA\nTrabalho e Renda: O Caminho da Reconstrução da Bahia\n\nVOLUME 2 — DESENVOLVIMENTO ECONÔMICO\nE REFORMA DO ESTADO\nSUMÁRIO — VOLUME 2\nPARTE III — EIXOS ESTRATÉGICOS\nEIXO 1 — REFORMA DO ESTADO E MODERNIZAÇÃO DA\nGESTÃO\nEIXO 2 — TRABALHO, EMPREGO E RENDA\n\n16"
+          },
+          {
+            "id": "plano-de-governo-17",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPARTE III — EIXOS ESTRATÉGICOS\nEIXO\n\n1\n\n—\n\nREFORMA\n\nDO\n\nESTADO\n\nE\n\nMODERNIZAÇÃO DA GESTÃO\nA máquina pública baiana precisa ser redesenhada.\nO desafio não é apenas financeiro.\nÉ estrutural.\nPrecisamos reduzir:\n\n\nineficiência;\n\n\n\nlentidão;\n\n\n\nsobreposição de funções;\n\n\n\ndesperdícios;\n\n\n\nburocracia excessiva.\n\nAo mesmo tempo, precisamos ampliar:\n\n\nprodutividade;\n\n\n\ncontrole;\n\n\n\nvelocidade;\n\n\n\ncapacidade de entrega;\n\n\n\neficiência institucional.\n\nA Bahia precisa de um Estado moderno.\nUm Estado que funcione.\nUm Estado que resolva.\n\nDIAGNÓSTICO ADMINISTRATIVO\nO modelo atual apresenta gargalos históricos.\nEntre eles:\n17"
+          },
+          {
+            "id": "plano-de-governo-18",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nBurocracia excessiva\nMuitos processos são lentos e custosos.\nIsso prejudica:\n\n\ncidadãos;\n\n\n\nempresários;\n\n\n\ninvestidores;\n\n\n\nservidores.\n\nBaixa integração institucional\nFrequentemente secretarias operam de forma isolada.\nConsequências:\n\n\nretrabalho;\n\n\n\ndesperdício;\n\n\n\nperda de eficiência.\n\nCentralização excessiva em Salvador\nGrande parte das decisões administrativas depende da capital.\nIsso dificulta respostas rápidas no interior.\n\nGestão pouco orientada por resultados\nMuitas estruturas medem esforço.\nPoucas medem impacto real.\nNosso governo mudará essa lógica.\n\nOBJETIVOS ESTRATÉGICOS DO EIXO 1\nObjetivo 1 — Modernizar a máquina pública\nRevisão administrativa completa de:\n\n\nsecretarias;\n\n\n\nsuperintendências;\n18"
+          },
+          {
+            "id": "plano-de-governo-19",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nautarquias;\n\n\n\ncontratos;\n\n\n\nfluxos de processos.\n\nMeta:\n\nReduzir custos administrativos sem reduzir serviços.\nObjetivo 2 — Digitalização do Estado\nTransformar a Bahia em referência nacional em governo digital.\nMeta:\n\nDigitalizar 90% dos serviços públicos em 4 anos\nExemplos:\n\n\nlicenças\n\n\n\ncertidões\n\n\n\nprotocolos\n\n\n\nsolicitações\n\n\n\nacompanhamento processual\n\n\n\nemissão documental\n\nMenos filas. Mais eficiência.\n\nObjetivo 3 — Gestão de pessoas\nServidor valorizado produz melhor.\nPolíticas:\n\n\ncapacitação continuada;\n\n\n\navaliação de desempenho;\n\n\n\nmeritocracia;\n\n\n\ngestão por metas.\n\nNosso compromisso é valorizar o servidor comprometido com resultados.\n19"
+          },
+          {
+            "id": "plano-de-governo-20",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nObjetivo 4 — Descentralização\nMais autonomia regional.\nCriaremos polos administrativos regionais.\nObjetivos:\n\n\nacelerar decisões;\n\n\n\nreduzir dependência da capital;\n\n\n\naproximar governo da população.\n\nPROGRAMAS DO EIXO 1\nPROGRAMA BAHIA DIGITAL\nTransformação digital da máquina pública.\nMetas:\n\n\nprocessos eletrônicos;\n\n\n\natendimento online;\n\n\n\nintegração de sistemas;\n\n\n\nserviços digitais.\n\nObjetivo:\n\nTornar o Estado mais rápido e menos burocrático.\n\nPROGRAMA GESTÃO POR RESULTADOS\nCada secretaria terá:\n\n\nmetas anuais;\n\n\n\nindicadores;\n\n\n\ncronogramas;\n20"
+          },
+          {
+            "id": "plano-de-governo-21",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nauditoria de performance.\n\nTodo gestor será avaliado por entrega.\n\nPROGRAMA CONTRATO EFICIENTE\nRevisão dos grandes contratos estaduais.\nObjetivos:\n\n\neliminar desperdícios;\n\n\n\nrenegociar custos;\n\n\n\nmelhorar performance contratual.\n\nPROGRAMA TERRITÓRIO FORTE\nDescentralização administrativa.\nCada território terá:\n\n\nnúcleo regional;\n\n\n\nplanejamento próprio;\n\n\n\nmonitoramento de metas.\n\nMETAS DE 4 ANOS — EIXO 1\n✓ Reduzir desperdícios administrativos em 15%\n✓ Digitalizar 90% dos serviços públicos\n✓ Implantar painéis de desempenho\n✓ Descentralizar gestão pública\n✓ Reduzir tempo médio de processos\n\n21"
+          },
+          {
+            "id": "plano-de-governo-22",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO 2 — TRABALHO, EMPREGO E RENDA\nEste é o coração do nosso governo.\nToda nossa estratégia parte de uma convicção:\n\nOs maiores problemas da Bahia nascem da falta de trabalho e\nrenda.\nSem trabalho:\n\n\ncresce a pobreza;\n\n\n\naumenta a violência;\n\n\n\ncresce a dependência assistencial;\n\n\n\ncai a autoestima social;\n\n\n\nfamílias entram em colapso.\n\nPor isso, o eixo central do governo será:\n\nGerar oportunidades\n\nDIAGNÓSTICO ECONÔMICO\nA Bahia possui economia forte.\nMas seu crescimento permanece concentrado.\nPrincipais problemas:\n\n\ndesemprego estrutural;\n\n\n\ninformalidade elevada;\n\n\n\nbaixa produtividade;\n\n\n\nbaixa industrialização regional;\n\n\n\nfuga de talentos;\n\n\n\nbaixa agregação de valor.\n\nMuitos municípios dependem quase exclusivamente de:\n\n\nprefeitura;\n22"
+          },
+          {
+            "id": "plano-de-governo-23",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\naposentadorias;\n\n\n\nprogramas sociais.\n\nIsso precisa mudar.\n\nNOSSA META CENTRAL\nGerar 1 milhão de oportunidades em 4 anos\nEssas oportunidades virão por meio de:\n\n\nempregos formais;\n\n\n\nmicroempreendedorismo;\n\n\n\nagroindustrialização;\n\n\n\nqualificação profissional;\n\n\n\ncrédito produtivo;\n\n\n\natração de investimentos.\n\nPROGRAMA 1 — BAHIA TRABALHA\nMaior programa de geração de oportunidades da história do estado.\nObjetivos:\n\n\nemprego;\n\n\n\nqualificação;\n\n\n\nempreendedorismo;\n\n\n\ninclusão produtiva.\n\nMeta:\n\n1 milhão de oportunidades\nPROGRAMA 2 — PRIMEIRO EMPREGO BAIANO\nFoco:\n23"
+          },
+          {
+            "id": "plano-de-governo-24",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nJovens de 16 a 29 anos\nParcerias com:\n\n\nempresas;\n\n\n\nindústria;\n\n\n\ncomércio;\n\n\n\nSistema S;\n\n\n\nsetor tecnológico.\n\nBenefícios:\n\n\nestágio;\n\n\n\nqualificação;\n\n\n\ncontratação assistida.\n\nObjetivo:\n\nReduzir o desemprego jovem.\nPROGRAMA 3 — CRÉDITO POPULAR PRODUTIVO\nDestinado a:\n\n\nambulantes;\n\n\n\ncamelôs;\n\n\n\ncostureiras;\n\n\n\nmototaxistas;\n\n\n\nbarbeiros;\n\n\n\nmanicures;\n\n\n\nagricultores familiares;\n\n\n\npequenos comerciantes.\n\nLinhas de microcrédito com:\n\n\njuros baixos;\n\n\n\ncarência;\n24"
+          },
+          {
+            "id": "plano-de-governo-25",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nassistência técnica.\n\nObjetivo:\n\nTransformar sobrevivência em prosperidade.\nPROGRAMA 4 — BAHIA EMPREENDEDORA\nApoio integral ao pequeno negócio.\nFoco em:\n\n\nformalização;\n\n\n\ncapacitação;\n\n\n\ncrédito;\n\n\n\ngestão;\n\n\n\nexpansão.\n\nO pequeno empreendedor será tratado como parceiro estratégico do desenvolvimento.\n\nPROGRAMA 5 — INDUSTRIALIZAÇÃO REGIONAL\nA Bahia precisa produzir mais.\nNão basta exportar matéria-prima.\nPrecisamos agregar valor.\nPolos prioritários:\n\nFeira de Santana\n\n\nlogística\n\n\n\nindústria\n\n\n\ndistribuição\n\nItabuna / Ilhéus\n\n\ntecnologia\n25"
+          },
+          {
+            "id": "plano-de-governo-26",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nturismo\n\n\n\nagroindústria\n\nVitória da Conquista\n\n\nsaúde\n\n\n\neducação\n\n\n\ncomércio\n\nJuazeiro\n\n\nfruticultura\n\n\n\nagroindústria\n\nBarreiras\n\n\nagroindústria\n\n\n\nlogística\n\nExtremo Sul\n\n\nmadeira\n\n\n\ncelulose\n\n\n\nindústria leve\n\nPROGRAMA 6 — AGROINDÚSTRIA BAIANA\nAgregar valor à produção rural.\nObjetivos:\n\n\nindustrializar localmente;\n\n\n\ngerar empregos;\n\n\n\nampliar renda do produtor.\n\nFoco em:\n\n\ncacau;\n\n\n\ncafé;\n26"
+          },
+          {
+            "id": "plano-de-governo-27",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nmandioca;\n\n\n\nleite;\n\n\n\nfrutas;\n\n\n\nmel;\n\n\n\npescado.\n\nA Bahia deixará de exportar apenas matéria-prima.\nPassará a exportar valor.\n\nPROGRAMA 7 — COMPRAS GOVERNAMENTAIS LOCAIS\nO Estado comprará mais de:\n\n\ncooperativas;\n\n\n\nagricultura familiar;\n\n\n\npequenos produtores;\n\n\n\nmicroempresas baianas.\n\nIsso movimentará economias locais.\nCada compra pública poderá gerar desenvolvimento.\n\nTURISMO COMO MOTOR ECONÔMICO\nA Bahia possui um dos maiores potenciais turísticos do Brasil.\nVamos fortalecer:\n\n\nturismo cultural;\n\n\n\nturismo religioso;\n\n\n\necoturismo;\n\n\n\nturismo de negócios;\n\n\n\nturismo histórico;\n\n\n\nturismo de eventos.\n\nRegiões prioritárias:\n27"
+          },
+          {
+            "id": "plano-de-governo-28",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nSalvador\n\n\n\nRecôncavo\n\n\n\nChapada Diamantina\n\n\n\nCosta do Cacau\n\n\n\nLitoral Norte\n\n\n\nVale do São Francisco\n\nECONOMIA DIGITAL E INOVAÇÃO\nO futuro da economia passa por tecnologia.\nNosso governo incentivará:\n\n\nstartups;\n\n\n\nhubs tecnológicos;\n\n\n\ncapacitação digital;\n\n\n\ninovação industrial;\n\n\n\nsoftware;\n\n\n\ninteligência artificial.\n\nObjetivo:\n\nPreparar a Bahia para a economia do século XXI.\n\nMETAS DE 4 ANOS — EIXO 2\n✓ 1 milhão de oportunidades\n✓ Redução do desemprego\n✓ Expansão do crédito produtivo\n✓ Fortalecimento da economia regional\n✓ Interiorização industrial\n✓ Ampliação da renda média\n28"
+          },
+          {
+            "id": "plano-de-governo-29",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nSÍNTESE POLÍTICA DO VOLUME 2\nNosso governo terá duas marcas:\n\nGestão eficiente\ne\n\nGeração de oportunidades\nSem gestão eficiente, não há entrega.\nSem trabalho, não há dignidade.\n\nENCERRAMENTO DO VOLUME 2\nEste volume apresentou:\n\n\na reforma estrutural do Estado;\n\n\n\no modelo de modernização administrativa;\n\n\n\na estratégia de desenvolvimento econômico;\n\n\n\no plano de geração de trabalho e renda.\n\nNo Volume 3, entraremos em três áreas centrais para a vida do povo baiano:\n\nEIXO 3 — SEGURANÇA PÚBLICA\nEIXO 4 — EDUCAÇÃO\nEIXO 5 — SAÚDE\n\n29"
+          },
+          {
+            "id": "plano-de-governo-30",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPLANO OFICIAL DE GOVERNO 2026\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\nUM NOVO OLHAR PARA A BAHIA\nTrabalho e Renda: O Caminho da Reconstrução da Bahia\n\nVOLUME 3 — SEGURANÇA, EDUCAÇÃO E\nSAÚDE\nSUMÁRIO — VOLUME 3\nEIXO 3 — SEGURANÇA PÚBLICA E PAZ SOCIAL\nEIXO 4 — REVOLUÇÃO EDUCACIONAL\nEIXO 5 — SAÚDE REGIONALIZADA E HUMANIZADA\n\n30"
+          },
+          {
+            "id": "plano-de-governo-31",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO 3 — SEGURANÇA PÚBLICA E PAZ SOCIAL\nA segurança pública é uma das maiores urgências da Bahia.\nNenhum povo prospera vivendo sob medo.\nNenhuma economia cresce em ambiente dominado pela violência.\nNenhuma família vive plenamente quando teme pela vida de seus filhos.\nHoje, milhões de baianos convivem diariamente com:\n\n\nfacções criminosas;\n\n\n\ntráfico de drogas;\n\n\n\nhomicídios;\n\n\n\nassaltos;\n\n\n\nextorsões;\n\n\n\nroubos de cargas;\n\n\n\nataques ao transporte;\n\n\n\ndomínio territorial do crime.\n\nEm muitas localidades, o crime organizado passou a disputar território com o próprio\nEstado.\nEssa realidade precisa mudar.\nNosso governo tratará segurança pública como prioridade absoluta.\n\nDIAGNÓSTICO DA SEGURANÇA NA BAHIA\nOs problemas estruturais da segurança pública incluem:\n\nExpansão das facções\nOrganizações criminosas ampliaram:\n\n\nrecrutamento;\n\n\n\nfinanciamento;\n\n\n\narmamento;\n31"
+          },
+          {
+            "id": "plano-de-governo-32",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ncontrole territorial.\n\nBaixa capacidade investigativa\nSem investigação eficiente:\n\n\ncresce a impunidade;\n\n\n\naumenta a reincidência;\n\n\n\nfortalece-se o crime.\n\nJovens vulneráveis ao crime\nMuitos jovens são capturados pelo crime por ausência de:\n\n\ntrabalho;\n\n\n\nesporte;\n\n\n\neducação;\n\n\n\nperspectivas.\n\nPerda de territórios urbanos\nEm diversas áreas periféricas, o Estado se tornou intermitente.\nO crime ocupou espaços onde faltaram:\n\n\npolíticas públicas;\n\n\n\nurbanização;\n\n\n\noportunidades.\n\nNOSSA VISÃO DE SEGURANÇA\nSegurança exige quatro pilares:\n\n\nRepressão qualificada\n\n\n\nInteligência estratégica\n\n\n\nPrevenção social\n\n\n\nRetomada territorial\n\n32"
+          },
+          {
+            "id": "plano-de-governo-33",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPACTO BAHIA SEGURA\nNosso governo implantará o maior programa de segurança integrada da história da\nBahia.\n\nPILAR 1 — COMBATE AO CRIME ORGANIZADO\nVamos atacar:\n\n\ncomando financeiro;\n\n\n\nlogística;\n\n\n\nlavagem de dinheiro;\n\n\n\ntráfico de armas;\n\n\n\nredes de financiamento.\n\nCriaremos o:\n\nCentro Integrado de Inteligência da Bahia\nIntegração entre:\n\n\nPolícia Militar\n\n\n\nPolícia Civil\n\n\n\nPolícia Técnica\n\n\n\nMinistério Público\n\n\n\nJudiciário\n\n\n\nórgãos federais\n\nObjetivo:\nDesmontar financeiramente organizações criminosas.\n\nPILAR 2 — POLÍCIA MAIS MODERNA\nFortaleceremos:\n\n\ninteligência policial;\n33"
+          },
+          {
+            "id": "plano-de-governo-34",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ntecnologia;\n\n\n\ninvestigação;\n\n\n\nmonitoramento.\n\nAções\n\n\nvideomonitoramento inteligente\n\n\n\nleitura de placas\n\n\n\ngeorreferenciamento criminal\n\n\n\nIA aplicada à segurança\n\nPILAR 3 — VALORIZAÇÃO DAS FORÇAS DE\nSEGURANÇA\nInvestiremos em:\n\n\ncapacitação;\n\n\n\ntecnologia;\n\n\n\nestrutura;\n\n\n\nvalorização profissional.\n\nPrioridades:\n\n\nmelhores condições operacionais;\n\n\n\nmodernização de equipamentos;\n\n\n\napoio psicológico;\n\n\n\nformação continuada.\n\nPILAR 4 — PREVENÇÃO SOCIAL\nO crime cresce onde o Estado chega tarde.\nCriaremos programas voltados à juventude vulnerável.\n\n34"
+          },
+          {
+            "id": "plano-de-governo-35",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPROGRAMA JUVENTUDE VIVA\nIntegra:\n\n\nesporte\n\n\n\ncultura\n\n\n\neducação\n\n\n\nqualificação\n\n\n\nprimeiro emprego\n\nObjetivo:\nRetirar jovens da rota do crime.\n\nPROGRAMA ESCOLA SEGURA\nIntegração entre:\n\n\neducação\n\n\n\nsegurança\n\n\n\ncomunidade\n\nMedidas:\n\n\nvideomonitoramento\n\n\n\nmediação de conflitos\n\n\n\nproteção escolar\n\nPROGRAMA BAIRRO SEGURO\nAtuação intensiva em áreas críticas com:\n\n\npoliciamento\n\n\n\nurbanização\n\n\n\niluminação\n\n\n\nserviços públicos\n35"
+          },
+          {
+            "id": "plano-de-governo-36",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nMETAS DE 4 ANOS — EIXO 3\n✓ Reduzir homicídios\n✓ Reduzir crimes violentos\n✓ Ampliar videomonitoramento\n✓ Reforçar investigação\n✓ Recuperar territórios críticos\n\n36"
+          },
+          {
+            "id": "plano-de-governo-37",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO 4 — REVOLUÇÃO EDUCACIONAL\nToda transformação profunda começa pela educação.\nSem educação de qualidade:\n\n\na pobreza se perpetua;\n\n\n\na violência cresce;\n\n\n\na desigualdade aumenta.\n\nA Bahia precisa de uma revolução educacional.\nNão uma reforma superficial.\nUma transformação estrutural.\nInspiramo-nos em:\n\n\nAnísio Teixeira\n\n\n\nDarcy Ribeiro\n\n\n\nLeonel Brizola\n\nEsses pensadores compreenderam algo fundamental:\n\nEscola não é depósito de alunos.\nEscola é fábrica de futuro.\n\nDIAGNÓSTICO DA EDUCAÇÃO\nPrincipais problemas:\n\n\nanalfabetismo acima da média nacional;\n\n\n\nevasão escolar;\n\n\n\nbaixo desempenho no ensino médio;\n\n\n\nbaixa conexão entre escola e mercado.\n\nMuitos jovens concluem a escola sem preparo técnico para o trabalho.\n\n37"
+          },
+          {
+            "id": "plano-de-governo-38",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nNOSSA VISÃO DE EDUCAÇÃO\nA educação precisa formar:\n\n\ncidadãos\n\n\n\nprofissionais\n\n\n\nempreendedores\n\n\n\nlíderes\n\nEscola deve preparar para:\n\n\nvida\n\n\n\ntrabalho\n\n\n\ntecnologia\n\n\n\ncidadania\n\nPILAR 1 — ESCOLA DE TEMPO INTEGRAL\nExpansão acelerada da escola integral.\nPrioridade:\n\n\nperiferias urbanas\n\n\n\náreas violentas\n\n\n\nregiões vulneráveis\n\nMais:\n\n\naprendizado\n\n\n\nesporte\n\n\n\ncultura\n\n\n\nproteção social\n\nMenos:\n\n\nevasão\n\n\n\ncriminalidade\n\n\n\nvulnerabilidade\n38"
+          },
+          {
+            "id": "plano-de-governo-39",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPILAR 2 — ALFABETIZAÇÃO PLENA\nMeta:\n\nToda criança alfabetizada na idade certa\nCriaremos:\n\nPacto Bahia Alfabetizada\nIntegração entre:\n\n\nestado\n\n\n\nmunicípios\n\n\n\nprofessores\n\n\n\nfamílias\n\nPILAR 3 — ENSINO MÉDIO PROFISSIONAL\nTodo território terá formação ligada à sua vocação econômica.\n\nRMS\n\n\ntecnologia\n\n\n\nindústria\n\n\n\nlogística\n\nOeste\n\n\nagro\n\n\n\nirrigação\n\n\n\nmáquinas\n\nSemiárido\n\n\nenergia solar\n\n\n\ngestão hídrica\n39"
+          },
+          {
+            "id": "plano-de-governo-40",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nSul\n\n\nturismo\n\n\n\ncacau\n\n\n\nagroindústria\n\nRecôncavo\n\n\neconomia criativa\n\n\n\ncultura\n\n\n\nserviços\n\nPROGRAMA ENSINO TÉCNICO REGIONALIZADO\nExpansão de cursos técnicos em:\n\n\ntecnologia\n\n\n\nturismo\n\n\n\nsaúde\n\n\n\nagro\n\n\n\nindústria\n\n\n\nenergia\n\nObjetivo:\nTransformar escola em ponte para emprego.\n\nPILAR 4 — PROFESSOR VALORIZADO\nPolíticas:\n\n\nformação continuada\n\n\n\ncapacitação digital\n\n\n\nvalorização profissional\n\n\n\napoio pedagógico\n\nProfessor valorizado melhora aprendizagem.\n40"
+          },
+          {
+            "id": "plano-de-governo-41",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPILAR 5 — ESCOLA DIGITAL\nToda escola estadual terá:\n\n\ninternet de qualidade\n\n\n\nlaboratório digital\n\n\n\nconectividade\n\nA Bahia precisa preparar jovens para a economia digital.\n\nPROGRAMA FUTURO BAIANO\nIntegra:\n\n\neducação\n\n\n\ntecnologia\n\n\n\ninovação\n\n\n\nempreendedorismo\n\nObjetivo:\nPreparar juventude para profissões do futuro.\n\nMETAS DE 4 ANOS — EIXO 4\n✓ Reduzir evasão escolar\n✓ Expandir tempo integral\n✓ Fortalecer alfabetização\n✓ Universalizar internet escolar\n✓ Expandir ensino técnico\n\n41"
+          },
+          {
+            "id": "plano-de-governo-42",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO\n\n5\n\n—\n\nSAÚDE\n\nREGIONALIZADA\n\nE\n\nHUMANIZADA\nA saúde é uma das maiores preocupações das famílias baianas.\nNosso compromisso é claro:\n\nFazer a saúde chegar perto das pessoas\nA Bahia precisa de profunda reorganização da rede pública de saúde.\n\nDIAGNÓSTICO DA SAÚDE\nPrincipais problemas:\n\n\nfilas longas para exames;\n\n\n\ndemora em cirurgias;\n\n\n\nescassez de especialistas;\n\n\n\nsobrecarga hospitalar;\n\n\n\nforte concentração em Salvador.\n\nMuitos cidadãos precisam viajar centenas de quilômetros em busca de atendimento.\n\nNOSSA VISÃO DE SAÚDE\nNosso modelo será baseado em cinco pilares:\n\n\nRegionalização\n\n\n\nDigitalização\n\n\n\nHumanização\n\n\n\nEficiência\n\n\n\nPrevenção\n\nA lógica será simples:\n42"
+          },
+          {
+            "id": "plano-de-governo-43",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nResolver o máximo possível perto da casa do cidadão.\n\nPILAR 1 — FILA ZERO DIGITAL\nCriaremos o:\n\nSistema Fila Zero Bahia\nO cidadão poderá acompanhar:\n\n\nexames\n\n\n\nconsultas\n\n\n\ncirurgias\n\n\n\nencaminhamentos\n\nEm tempo real.\n\nPILAR 2 — REGIONALIZAÇÃO DA SAÚDE\nAmpliação da rede regional de:\n\n\npoliclínicas\n\n\n\nhospitais\n\n\n\ncentros especializados\n\n\n\nlaboratórios regionais\n\nMeta:\nReduzir deslocamentos para Salvador.\n\nPOLOS PRIORITÁRIOS\n\n\nSalvador / RMS\n\n\n\nFeira de Santana\n\n\n\nVitória da Conquista\n\n\n\nItabuna / Ilhéus\n43"
+          },
+          {
+            "id": "plano-de-governo-44",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nBarreiras\n\n\n\nJuazeiro\n\n\n\nTeixeira de Freitas\n\nPILAR 3 — TELEMEDICINA BAHIA\nAplicações:\n\n\nconsultas especializadas\n\n\n\nlaudos\n\n\n\nsegunda opinião médica\n\n\n\nacompanhamento crônico\n\nBenefícios:\n\n\nagilidade\n\n\n\neconomia\n\n\n\ninteriorização\n\nPILAR 4 — SAÚDE PREVENTIVA\nFortalecer:\n\n\natenção básica\n\n\n\nvacinação\n\n\n\nprevenção\n\n\n\nacompanhamento crônico\n\nPROGRAMA MÃE BAHIA\nPrioridade:\n\n\ngestantes\n\n\n\nbebês\n44"
+          },
+          {
+            "id": "plano-de-governo-45",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nprimeira infância\n\nObjetivos:\n\n\nreduzir mortalidade infantil\n\n\n\nampliar pré-natal\n\n\n\nmelhorar acompanhamento neonatal\n\nPROGRAMA SAÚDE ITINERANTE\nEstrutura móvel com:\n\n\nconsultas\n\n\n\nexames\n\n\n\nrastreamento\n\n\n\nprevenção\n\nFoco:\n\n\ncomunidades rurais\n\n\n\nquilombolas\n\n\n\nribeirinhos\n\n\n\npopulações vulneráveis\n\nMETAS DE 4 ANOS — EIXO 5\n✓ Reduzir filas\n✓ Expandir especialidades regionais\n✓ Ampliar telemedicina\n✓ Reduzir deslocamentos\n✓ Fortalecer prevenção\n\n45"
+          },
+          {
+            "id": "plano-de-governo-46",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nSÍNTESE POLÍTICA DO VOLUME 3\nSegurança, educação e saúde formam o tripé da dignidade social.\nA segurança protege.\nA educação transforma.\nA saúde preserva a vida.\n\nENCERRAMENTO DO VOLUME 3\nEste volume apresentou:\n\n\no plano de segurança pública;\n\n\n\na revolução educacional;\n\n\n\na reorganização da saúde baiana.\n\n46"
+          },
+          {
+            "id": "plano-de-governo-47",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nPLANO OFICIAL DE GOVERNO 2026\nJOSÉ ESTÊVÃO – Governador\nNEUZIMAR CAMACAM – Vice-governadora\n\nUM NOVO OLHAR PARA A BAHIA\nTrabalho e Renda: O Caminho da Reconstrução da Bahia\n\nVOLUME 4\nSUMÁRIO — VOLUME 4\nEIXO 6 — INFRAESTRUTURA\nEIXO 7 — DESENVOLVIMENTO HUMANO\nPLANO REGIONAL\nEXECUÇÃO FINAL\n\n47"
+          },
+          {
+            "id": "plano-de-governo-48",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO\n\n6\n\n–\n\nINFRAESTRUTURA\n\nE\n\nDESENVOLVIMENTO TERRITORIAL\n1. DIRETRIZ CENTRAL\nA infraestrutura será tratada como instrumento de desenvolvimento econômico,\ngeração de trabalho, redução das desigualdades regionais e melhoria da\nqualidade de vida.\nO Governo José Estêvão organizará os investimentos públicos de acordo com as\nnecessidades dos Territórios de Identidade, priorizando as regiões que\nhistoricamente receberam menos estradas, saneamento, energia, conectividade,\ntransporte e equipamentos urbanos.\nA obra pública não será realizada apenas para construir estruturas físicas. Cada\ninvestimento deverá produzir resultados econômicos e sociais, facilitando a\ncirculação de pessoas e mercadorias, reduzindo custos de produção e criando\ncondições para que cada município desenvolva suas próprias atividades\nprodutivas.\n\n2. DIAGNÓSTICO\nA\n\ninfraestrutura da\n\nBahia\n\nfoi\n\nimplantada de maneira desigual. Grandes\n\ninvestimentos ficaram concentrados em Salvador, na Região Metropolitana, no\nlitoral e em áreas ligadas aos principais centros industriais e exportadores.\n\nEnquanto isso, muitos municípios do interior continuam enfrentando:\n• estradas precárias;\n\n48"
+          },
+          {
+            "id": "plano-de-governo-49",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n• dificuldades de transporte entre municípios;\n• deficiência de saneamento;\n• falta de água;\n• baixa cobertura de internet;\n• dificuldades de acesso à energia;\n• ausência de infraestrutura para escoar a produção;\n• crescimento urbano desordenado;\n• deficiência de drenagem;\n• insuficiência de moradias adequadas.\n\nA falta de infraestrutura impede que as potencialidades locais se transformem em\nprodução, emprego e renda.\n\n3. PROGRAMA BAHIA INTEGRADA – ESTRADAS E\nLOGÍSTICA\nSerá implantado o Programa Bahia Integrada, destinado à recuperação,\nmanutenção e ampliação da infraestrutura de transportes.\nAs prioridades serão definidas de acordo com a importância econômica e social\nde cada estrada, considerando:\n\n\n\nacesso às sedes municipais;\n\n\n\nligação entre municípios;\n\n\n\ntransporte escolar;\n\n\n\nacesso a hospitais e policlínicas;\n\n\n\nescoamento da agricultura familiar;\n\n\n\ncirculação da produção industrial;\n\n\n\nacesso a feiras livres e centros comerciais;\n\n\n\nintegração com portos, aeroportos e ferrovias;\n49"
+          },
+          {
+            "id": "plano-de-governo-50",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ndesenvolvimento do turismo regional.\n\nO Estado adotará um programa permanente de manutenção preventiva das\nrodovias, evitando que as estradas sejam recuperadas somente quando\nestiverem praticamente destruídas.\nSerão estruturados corredores logísticos territoriais, ligando as áreas produtoras\naos centros de beneficiamento, comercialização e distribuição.\n\n4. INTEGRAÇÃO DOS MODAIS DE TRANSPORTE\nA Bahia precisa superar a dependência excessiva do transporte rodoviário. O\ngoverno promoverá a integração dos diferentes modais:\n\n\n\nrodoviário;\n\n\n\nferroviário;\n\n\n\nhidroviário;\n\n\n\nportuário;\n\n\n\naeroviário.\n\nA integração terá como objetivo reduzir o custo do transporte de cargas,\ndiminuir o tempo de deslocamento, fortalecer a produção regional e ampliar a\n\ncompetitividade dos produtos baianos.\nPortos, aeroportos regionais, ferrovias, hidrovias, terminais rodoviários e centros de\ndistribuição deverão funcionar de maneira complementar, formando uma rede\nlogística estadual.\n\nO planejamento priorizará tanto o transporte de passageiros quanto o transporte de\nmercadorias.\n\n50"
+          },
+          {
+            "id": "plano-de-governo-51",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n5. MOBILIDADE URBANA E TRANSPORTE REGIONAL\nO Governo do Estado atuará em parceria com os municípios para melhorar a\nmobilidade urbana e o transporte intermunicipal.\nSerão apoiadas iniciativas voltadas para:\n\n\n\nmodernização dos terminais rodoviários;\n\n\n\nintegração do transporte metropolitano;\n\n\n\nmelhoria do transporte entre municípios vizinhos;\n\n\n\nrenovação e acessibilidade das frotas;\n\n\n\nimplantação de novos modais;\n\n\n\norganização dos pontos de embarque e desembarque;\n\n\n\nregulamentação\n\ne\n\nvalorização\n\nde\n\nvans,\n\nmototáxis\n\ne\n\ntransporte\n\ncomplementar;\n\n\nconstrução de ciclovias e rotas seguras;\n\n\n\nredução do tempo perdido diariamente nos deslocamentos.\n\nO transporte será tratado como serviço essencial para o acesso ao trabalho, à\neducação, à saúde e às oportunidades econômicas.\n\n6. SANEAMENTO, ÁGUA E DRENAGEM\nO saneamento básico será tratado como política de saúde pública, proteção\nambiental e desenvolvimento territorial.\nO Estado apoiará os municípios na ampliação dos serviços de:\n\n\n\nabastecimento de água potável;\n\n51"
+          },
+          {
+            "id": "plano-de-governo-52",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ncoleta e tratamento de esgoto;\n\n\n\nlimpeza urbana;\n\n\n\nmanejo e destinação adequada dos resíduos sólidos;\n\n\n\ndrenagem e manejo das águas das chuvas;\n\n\n\nrecuperação de rios, nascentes e mananciais;\n\n\n\nredução das perdas de água;\n\n\n\nmelhoria dos sistemas de tratamento;\n\n\n\nprevenção de enchentes, alagamentos e deslizamentos.\n\nSerão incentivados consórcios intermunicipais para que municípios menores\npossam compartilhar estruturas, equipamentos, equipes técnicas e sistemas de\ntratamento.\nA meta programática será alcançar a universalização do abastecimento de água\ne avançar progressivamente na coleta e no tratamento de esgoto, utilizando\ncomo referência os objetivos nacionais de atendimento de 99% da população\ncom água potável e 90% com coleta e tratamento de esgoto.\nAs ações de saneamento serão articuladas às políticas de habitação, saúde, meio\nambiente, combate à pobreza e desenvolvimento urbano.\n\n7.\n\nSEGURANÇA\n\nHÍDRICA\n\nE\n\nCONVIVÊNCIA\n\nCOM\n\nO\n\nSEMIÁRIDO\nSerá criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca.\nO programa compreenderá:\n\n52"
+          },
+          {
+            "id": "plano-de-governo-53",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nampliação de adutoras;\n\n\n\nrecuperação de sistemas de abastecimento;\n\n\n\nconstrução e recuperação de barragens;\n\n\n\ninstalação de cisternas;\n\n\n\nperfuração e recuperação de poços;\n\n\n\ndessalinização de água;\n\n\n\nimplantação de sistemas simplificados;\n\n\n\naproveitamento da água da chuva;\n\n\n\nproteção de nascentes;\n\n\n\nreuso de água;\n\n\n\napoio à irrigação eficiente;\n\n\n\nmanutenção preventiva dos equipamentos.\n\nAs obras deverão atender simultaneamente ao consumo humano, à produção\nagrícola e ao desenvolvimento das cadeias produtivas locais.\n\n8. ENERGIA LIMPA E DESENVOLVIMENTO REGIONAL\nA Bahia possui grande potencial de geração de energia solar, eólica e de\nbiomassa. Contudo, as regiões produtoras de energia nem sempre recebem os\nbenefícios econômicos e sociais correspondentes.\nO governo incentivará:\n\n\n\nmicro e minigeração de energia;\n\n\n\nenergia solar em prédios públicos;\n\n\n\nsistemas de energia em escolas e unidades de saúde;\n\n\n\ngeração de energia em cooperativas;\n\n\n\nenergia para empreendimentos da agricultura familiar;\n\n\n\naproveitamento de resíduos para produção de biomassa;\n\n53"
+          },
+          {
+            "id": "plano-de-governo-54",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\ninstalação de pequenas unidades geradoras próximas aos locais de\nconsumo;\n\n\n\nexpansão da rede de transmissão para regiões ainda desatendidas;\n\n\n\nqualificação profissional para o setor de energias renováveis.\n\nA energia limpa será utilizada para reduzir os custos de produção, estimular novos\nempreendimentos e levar desenvolvimento às regiões mais pobres.\nOs polos produtivos deverão incorporar soluções energéticas adequadas às\ncaracterísticas de cada território.\n\n9. BAHIA CONECTADA – INTERNET E INCLUSÃO DIGITAL\nA\n\nconectividade\n\nserá\n\nreconhecida\n\ncomo\n\ninfraestrutura\n\nbásica\n\npara\n\no\n\ndesenvolvimento.\nSerá implantado o Programa Bahia Conectada, com prioridade para:\n\n\n\nescolas públicas;\n\n\n\nunidades de saúde;\n\n\n\ncomunidades rurais;\n\n\n\ndistritos;\n\n\n\npovoados;\n\n\n\nassentamentos;\n\n\n\nquilombos;\n\n\n\ncomunidades indígenas;\n\n\n\nfeiras livres;\n\n\n\ncentros de formação profissional;\n\n\n\npequenos empreendimentos;\n\n\n\ncooperativas e associações.\n\n54"
+          },
+          {
+            "id": "plano-de-governo-55",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nO Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias.\n\nA internet será utilizada para facilitar:\n\n\neducação a distância;\n\n\n\ntelemedicina;\n\n\n\nserviços públicos digitais;\n\n\n\ncomercialização da produção;\n\n\n\nformação profissional;\n\n\n\nacesso a crédito;\n\n\n\nemissão de documentos;\n\n\n\ndivulgação de produtos e serviços;\n\n\n\nparticipação social.\n\n10. HABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA\nO Governo do Estado ampliará as políticas de habitação popular em parceria com\nos municípios, o Governo Federal, cooperativas, organizações sociais e a iniciativa\nprivada.\n\nAs principais ações serão:\n\n\nconstrução de moradias populares;\n\n\n\nurbanização de comunidades;\n\n\n\nregularização fundiária;\n\n\n\nentrega de títulos de propriedade;\n\n\n\noferta de lotes urbanizados;\n\n\n\napoio à melhoria habitacional;\n\n\n\nsubsídio para materiais de construção;\n\n55"
+          },
+          {
+            "id": "plano-de-governo-56",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nassistência técnica gratuita para famílias de baixa renda;\n\n\n\nincentivo a mutirões habitacionais;\n\n\n\nutilização de tecnologias construtivas de menor custo;\n\n\n\nrecuperação de imóveis abandonados;\n\n\n\nreassentamento digno de famílias em áreas de risco.\n\nA política habitacional será acompanhada de infraestrutura de água, esgoto,\ndrenagem, energia, transporte, escola, saúde, lazer e segurança.\n\n11. POLOS DE DESENVOLVIMENTO TERRITORIAL\nCada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização.\nO modelo será estruturado pela seguinte combinação:\n\nproduto local + beneficiamento + infraestrutura + logística + mercado.\nO Estado identificará os principais produtos de cada região e apoiará a implantação\nde:\n\n\nagroindústrias;\n\n\n\npequenas unidades de beneficiamento;\n\n\n\ncentros de armazenamento;\n\n\n\ncâmaras frigoríficas;\n\n\n\nentrepostos;\n\n\n\ncentrais de distribuição;\n\n\n\nlaboratórios;\n\n\n\ncentros tecnológicos;\n\n56"
+          },
+          {
+            "id": "plano-de-governo-57",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n\n\nespaços de comercialização;\n\n\n\nequipamentos de apoio às cooperativas.\n\nAs matérias-primas produzidas na Bahia deverão, sempre que possível, ser\ntransformadas em produtos acabados dentro do próprio Estado, agregando valor\ne gerando empregos.\nAs regiões menos desenvolvidas receberão prioridade na implantação de\ninfraestrutura produtiva.\n\n12. FUNDO DE DESENVOLVIMENTO TERRITORIAL\nSerá estruturado um mecanismo estadual de financiamento destinado às regiões\ncom menores indicadores econômicos e sociais.\nOs recursos apoiarão projetos de:\na. infraestrutura produtiva;\nb. saneamento;\nc. conectividade;\nd. logística;\ne. energia;\nf. industrialização local;\ng. inovação;\nh. cooperativismo;\ni. agricultura familiar;\nj. turismo sustentável;\nk. desenvolvimento urbano.\n\n57"
+          },
+          {
+            "id": "plano-de-governo-58",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nA distribuição dos investimentos será baseada em critérios técnicos, indicadores\nsociais e necessidades territoriais, reduzindo a concentração de recursos na\ncapital e na Região Metropolitana.\n\n13.\n\nINFRAESTRUTURA\n\nVERDE\n\nE\n\nRESILIÊNCIA\n\nCLIMÁTICA\nAs obras públicas deverão considerar os riscos decorrentes das\nmudanças climáticas. O governo implantará medidas para:\n\na.\n\nprevenção de enchentes;\n\nb.\n\ncontrole de erosões;\n\nc.\n\ncontenção de encostas;\n\nd.\n\nrecuperação de áreas degradadas;\n\ne.\n\nproteção de bacias hidrográficas;\n\nf.\n\narborização urbana;\n\ng.\n\ncriação de parques e áreas verdes;\n\nh.\n\npreservação de matas ciliares;\n\ni.\n\nproteção das comunidades costeiras;\n\nj.\n\nenfrentamento da desertificação;\n\nk.\n\nadaptação das cidades às ondas de calor;\n\nl.\n\nimplantação de sistemas de alerta para eventos extremos.\n\nAs intervenções deverão proteger vidas, moradias, atividades econômicas e o\npatrimônio público.\n\n14. COMPROMISSO DO EIXO\nA infraestrutura deixará de ser apenas um conjunto de obras isoladas e passará a\nintegrar uma estratégia de desenvolvimento territorial.\n58"
+          },
+          {
+            "id": "plano-de-governo-59",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nCada estrada, sistema de água, rede de internet, unidade de energia ou\nequipamento logístico deverá responder a uma pergunta:\nComo este investimento ajudará o município a produzir, vender, gerar trabalho e melhorar a\nvida das famílias?\n\nO compromisso será fazer a infraestrutura chegar primeiro às regiões que mais\nprecisam, criando condições para que o desenvolvimento econômico alcance\ntodo o território baiano.\nA Bahia não pode continuar dividida entre regiões que recebem investimentos e regiões que\napenas esperam. Infraestrutura é dignidade, integração e geração de oportunidades.\n\n59"
+          },
+          {
+            "id": "plano-de-governo-60",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nEIXO 7 — DESENVOLVIMENTO HUMANO E\nSOCIAL\n1. DIRETRIZ CENTRAL\nO desenvolvimento da Bahia será medido pela melhoria concreta da vida das pessoas,\nespecialmente daquelas que enfrentam fome, desemprego, violência, discriminação,\nabandono e falta de acesso aos serviços públicos.\nO Eixo 7 será estruturado em quatro compromissos centrais:\nBahia sem Fome; Juventude Viva; Inclusão Social; e Proteção às Vulnerabilidades.\nEsses compromissos já constam da versão resumida do Plano Oficial de Governo.\nA assistência social não será tratada apenas como distribuição de benefícios. O\nobjetivo será garantir proteção imediata às famílias e, simultaneamente, criar\ncondições para que elas conquistem autonomia por meio do trabalho, da qualificação\ne da inclusão produtiva.\n\n2. DIAGNÓSTICO SOCIAL\nA Bahia ainda convive com famílias submetidas à pobreza, insegurança alimentar,\ndesemprego, violência e falta de oportunidades.\nEsses problemas atingem de maneira mais intensa:\n•\n\ncrianças e adolescentes;\n\n•\n\njovens sem trabalho e formação;\n\n•\n\nmulheres chefes de família;\n\n•\n\npopulação negra;\n\n•\n\ncomunidades quilombolas;\n\n•\n\npovos indígenas e tradicionais;\n\n•\n\npessoas com deficiência;\n\n•\n\nidosos;\n60"
+          },
+          {
+            "id": "plano-de-governo-61",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\npopulação LGBTQIA+;\n\n•\n\npessoas em situação de rua;\n\n•\n\nfamílias vítimas da violência;\n\n•\n\ndependentes de álcool e outras drogas;\n\n•\n\nmoradores das regiões com menor presença do Estado.\n\nA vulnerabilidade não será enfrentada por uma única secretaria. Saúde, educação,\nassistência social, trabalho, segurança, cultura, esporte e habitação atuarão de\nmaneira integrada.\n\n3. PROGRAMA BAHIA SEM FOME\nSerá implantado o Programa Bahia sem Fome, destinado a garantir segurança\nalimentar e nutricional às famílias em situação de pobreza.\nO programa compreenderá:\n•\n\nidentificação territorial das famílias em insegurança alimentar;\n\n•\n\nampliação dos restaurantes populares;\n\n•\n\nimplantação de cozinhas comunitárias;\n\n•\n\nfortalecimento dos bancos de alimentos;\n\n•\n\ndistribuição emergencial de alimentos;\n\n•\n\naquisição de produtos da agricultura familiar;\n\n•\n\napoio às hortas comunitárias;\n\n•\n\nincentivo à produção de alimentos nos municípios;\n\n•\n\nacompanhamento nutricional de crianças, gestantes e idosos;\n\n•\n\ncombate ao desperdício de alimentos;\n\n•\n\napoio aos municípios na organização dos sistemas locais de segurança alimentar.\n\nA compra de alimentos produzidos pela agricultura familiar permitirá combater a fome\ne, ao mesmo tempo, fazer o dinheiro circular dentro dos municípios.\n\n61"
+          },
+          {
+            "id": "plano-de-governo-62",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nO compromisso social original do plano determina prioridade às crianças, aos\ntrabalhadores pobres e às famílias atingidas pela fome e pela marginalização.\n\n4. PRIMEIRA INFÂNCIA, CRIANÇAS E ADOLESCENTES\nA proteção à infância começará ainda durante a gestação. O governo promoverá:\n•\n\nacompanhamento das gestantes em situação de vulnerabilidade;\n\n•\n\natenção nutricional na primeira infância;\n\n•\n\nampliação do acesso às creches;\n\n•\n\nbusca ativa de crianças fora da escola;\n\n•\n\ncombate ao trabalho infantil;\n\n•\n\nenfrentamento da violência sexual;\n\n•\n\nproteção das crianças vítimas de violência doméstica;\n\n•\n\nfortalecimento dos Conselhos Tutelares;\n\n•\n\napoio às famílias acolhedoras;\n\n•\n\nampliação dos serviços de convivência;\n\n•\n\nacompanhamento de crianças com deficiência;\n\n•\n\nintegração entre escola, saúde e assistência social.\n\nToda criança identificada em situação grave deverá ter sua família acompanhada por\numa equipe intersetorial.\nO documento-base coloca como prioridade assistir, alimentar, acolher, escolarizar e\neducar crianças e jovens, garantindo igualdade de oportunidades.\n\n5. PROGRAMA JUVENTUDE VIVA\nSerá implantado o Programa Juventude Viva, voltado principalmente aos jovens que\nnão estudam, não trabalham ou vivem em territórios marcados pela violência.\nO programa oferecerá:\n•\n\nconclusão da educação básica;\n\n•\n\nqualificação profissional;\n62"
+          },
+          {
+            "id": "plano-de-governo-63",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\nprimeiro emprego;\n\n•\n\nestágio e aprendizagem;\n\n•\n\napoio ao empreendedorismo;\n\n•\n\ncrédito orientado;\n\n•\n\nformação digital;\n\n•\n\nesporte;\n\n•\n\ncultura;\n\n•\n\natendimento psicológico;\n\n•\n\nprevenção ao uso de drogas;\n\n•\n\norientação profissional;\n\n•\n\nacompanhamento dos jovens egressos do sistema socioeducativo;\n\n•\n\napoio às empresas que contratarem jovens vulneráveis.\n\nSerão criados Centros de Referência da Juventude, utilizando também escolas e\nequipamentos culturais como espaços de acolhimento, formação e participação. Essa\nproposta aparece entre as ações sociais previstas nos documentos-base.\nA prioridade será chegar antes do crime organizado, oferecendo ao jovem\noportunidade, pertencimento e perspectiva de futuro.\n\n6. INCLUSÃO PRODUTIVA DAS FAMÍLIAS\nToda família atendida pelos programas sociais será avaliada quanto às suas\ncapacidades, necessidades e possibilidades de geração de renda.\nSerá criado um percurso de autonomia composto por:\n1. proteção social imediata;\n2. regularização de documentos;\n3. qualificação profissional;\n4. acesso a equipamentos de trabalho;\n5. microcrédito;\n6. assistência técnica;\n63"
+          },
+          {
+            "id": "plano-de-governo-64",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n7. apoio à comercialização;\n8. acompanhamento até a consolidação da renda. Serão priorizados:\n• pequenos produtores;\n• trabalhadores informais;\n• artesãos;\n• costureiras;\n• cozinheiras;\n• profissionais da beleza;\n• cuidadores;\n• trabalhadores da construção civil;\n• recicladores;\n• vendedores ambulantes;\n• pescadores;\n• mulheres chefes de família;\n• jovens empreendedores.\n\nA diretriz será substituir a dependência permanente por uma política de proteção\nacompanhada de oportunidade produtiva.\n\n7.\n\nFORTALECIMENTO\n\nDO\n\nSISTEMA\n\nÚNICO\n\nDE\n\nASSISTÊNCIA SOCIAL\nO Governo do Estado fortalecerá o Sistema Único de Assistência Social — SUAS e\napoiará o funcionamento dos equipamentos municipais.\nAs ações incluirão:\n•\n\nfortalecimento dos CRAS e CREAS;\n\n•\n\ncofinanciamento dos serviços municipais;\n\n•\n\nformação continuada dos trabalhadores;\n\n•\n\nimplantação de equipes itinerantes;\n\n•\n\natendimento às comunidades rurais e tradicionais;\n64"
+          },
+          {
+            "id": "plano-de-governo-65",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\nprontuário integrado das famílias;\n\n•\n\nbusca ativa;\n\n•\n\nmelhoria dos serviços de acolhimento;\n\n•\n\napoio aos Conselhos Municipais;\n\n•\n\nacompanhamento de famílias vítimas de violência;\n\n•\n\nintegração entre assistência social, saúde, educação e trabalho.\n\nO plano-base prevê educação permanente e valorização dos trabalhadores do SUAS\nem suas dimensões técnicas, metodológicas e políticas.\n\n8. PROTEÇÃO E AUTONOMIA DAS MULHERES\nAs políticas para as mulheres terão três dimensões: proteção, autonomia econômica e\nparticipação social.\nO governo promoverá:\n•\n\nfortalecimento da rede de enfrentamento à violência;\n\n•\n\nampliação dos serviços de acolhimento;\n\n•\n\natendimento especializado onde não existirem delegacias da mulher;\n\n•\n\nproteção às mulheres ameaçadas;\n\n•\n\nqualificação e crédito para mulheres;\n\n•\n\napoio a empreendimentos femininos;\n\n•\n\ncreches para facilitar a inserção no trabalho;\n\n•\n\natendimento às mulheres rurais;\n\n•\n\nincentivo à presença feminina na ciência e na tecnologia;\n\n•\n\nigualdade de oportunidades e remuneração;\n\n•\n\nparticipação das mulheres nos espaços de decisão.\n\nSerá implantado o Programa Mulheres Produtivas, com equipamentos, assistência\ntécnica, capacitação e acesso ao mercado. A proposta original menciona apoio com\nequipamentos de produção, cozinhas industriais e recursos tecnológicos.\n\n65"
+          },
+          {
+            "id": "plano-de-governo-66",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nO governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas.\nIgualdade racial e desenvolvimento da população negra\nA promoção da igualdade racial será política transversal de governo. As prioridades\nserão:\n•\n\ncombate ao racismo institucional;\n\n•\n\nampliação das oportunidades de trabalho;\n\n•\n\napoio ao empreendedorismo negro;\n\n•\n\nvalorização da história africana e afro-brasileira;\n\n•\n\nfortalecimento das políticas de cotas;\n\n•\n\napoio às manifestações culturais negras;\n\n•\n\ncombate à intolerância religiosa;\n\n•\n\nfortalecimento das comunidades de terreiro;\n\n•\n\nproteção da juventude negra;\n\n•\n\napoio às mulheres negras empreendedoras;\n\n•\n\npresença da população negra nos espaços de decisão.\n\nNas comunidades quilombolas serão ampliados os serviços de água, saneamento,\nsaúde, educação, conectividade e apoio à produção.\nOs documentos-base defendem o ensino da história africana e afro-brasileira, a\nampliação de oportunidades e o desenvolvimento econômico das comunidades negras\ne quilombolas.\n\n9. POVOS INDÍGENAS E COMUNIDADES TRADICIONAIS\nO Estado respeitará a identidade, a cultura, a organização social e os direitos\nterritoriais dos povos indígenas e das comunidades tradicionais. Serão desenvolvidas\nações para:\n•\n\nmelhorar o atendimento de saúde;\n\n•\n\nfortalecer a educação intercultural;\n66"
+          },
+          {
+            "id": "plano-de-governo-67",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\napoiar a produção comunitária;\n\n•\n\nampliar o acesso à água e à energia;\n\n•\n\npreservar os conhecimentos tradicionais;\n\n•\n\nproteger os territórios;\n\n•\n\nincentivar o turismo de base comunitária;\n\n•\n\napoiar associações e cooperativas;\n\n•\n\ncombater a discriminação e a violência;\n\n•\n\ngarantir participação nas decisões governamentais.\n\nO compromisso programático original reconhece o direito dos povos indígenas à\nautodeterminação, à preservação cultural e ao acesso aos recursos necessários à sua\nsobrevivência.\n\n10. PESSOAS COM DEFICIÊNCIA\nO governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação.\nAs principais ações serão:\n•\n\nacessibilidade nos prédios públicos;\n\n•\n\ntransporte acessível;\n\n•\n\neducação inclusiva;\n\n•\n\nqualificação profissional;\n\n•\n\ninserção no mercado de trabalho;\n\n•\n\napoio às famílias cuidadoras;\n\n•\n\nampliação dos centros de reabilitação;\n\n•\n\nacesso a órteses, próteses e tecnologias assistivas;\n\n•\n\nesporte adaptado;\n\n•\n\nfortalecimento dos conselhos;\n\n•\n\ncombate à discriminação.\n\n67"
+          },
+          {
+            "id": "plano-de-governo-68",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nSerá realizada a Conferência Estadual da Pessoa com Deficiência, incentivando os\nmunicípios a criarem e fortalecerem seus conselhos.\n\n11. PROTEÇÃO E ENVELHECIMENTO ATIVO\nA política para a população idosa terá como objetivos garantir proteção, convivência,\nmobilidade e participação social.\nSerão promovidos:\n•\n\ncentros de convivência;\n\n•\n\natividades esportivas e culturais;\n\n•\n\ninclusão digital;\n\n•\n\nacompanhamento das pessoas que vivem sozinhas;\n\n•\n\ncombate à violência patrimonial e doméstica;\n\n•\n\napoio às famílias cuidadoras;\n\n•\n\natendimento domiciliar;\n\n•\n\nincentivo à participação produtiva voluntária;\n\n•\n\ntransporte acessível;\n\n•\n\nprogramas de envelhecimento saudável.\n\nO documento-base propõe estimular uma vida ativa para a população idosa, com\nparticipação comunitária e produtiva, além de medidas de mobilidade intermunicipal.\n\n12. DIREITOS DA POPULAÇÃO LGBTQIA+\nO Governo do Estado combaterá a violência e a discriminação motivadas por\norientação sexual ou identidade de gênero.\nAs ações compreenderão:\n•\n\natendimento humanizado nos serviços públicos;\n\n•\n\nqualificação dos servidores;\n68"
+          },
+          {
+            "id": "plano-de-governo-69",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\nacolhimento às vítimas de violência;\n\n•\n\napoio à inserção no trabalho;\n\n•\n\nincentivo ao empreendedorismo;\n\n•\n\ncampanhas educativas;\n\n•\n\nfortalecimento da participação social;\n\n•\n\nprodução de dados sobre violência e discriminação;\n\n•\n\nencaminhamento às redes de saúde e assistência.\n\nSerá criado um fórum permanente de diálogo com representantes das comunidades\nLGBTQIA+, como previsto no documento-base.\n\n13. ESPORTE COMO INCLUSÃO E OPORTUNIDADE\nO esporte será utilizado como ferramenta de saúde, educação, prevenção da violência,\nconvivência e profissionalização.\nO programa estadual promoverá:\n•\n\nabertura das escolas nos fins de semana;\n\n•\n\natividades esportivas comunitárias;\n\n•\n\nfortalecimento da capoeira;\n\n•\n\nescolinhas de diferentes modalidades;\n\n•\n\nformação de técnicos e lideranças;\n\n•\n\napoio a atletas e paratletas;\n\n•\n\nolimpíadas estudantis;\n\n•\n\nolimpíadas regionais;\n\n•\n\njogos do interior;\n\n•\n\nidentificação de talentos;\n\n•\n\nesporte adaptado;\n\n•\n\natividades em comunidades vulneráveis;\n\n•\n\napoio à profissionalização de atletas.\n\n69"
+          },
+          {
+            "id": "plano-de-governo-70",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nO documento-base prevê escolas abertas, modalidades definidas conforme as\nvocações territoriais, formação de gestores, olimpíadas regionais e apoio ao esporte\ncomunitário e\nde alto rendimento.\n\n14. CULTURA, IDENTIDADE E ECONOMIA CRIATIVA\nA cultura será reconhecida como direito e também como atividade econômica. Serão\napoiados:\n•\n\nartistas locais;\n\n•\n\ngrupos culturais;\n\n•\n\nartesãos;\n\n•\n\nmestres da cultura popular;\n\n•\n\nblocos afro;\n\n•\n\nsamba de roda;\n\n•\n\nfilarmônicas;\n\n•\n\nquadrilhas;\n\n•\n\ncapoeira;\n\n•\n\nmanifestações indígenas;\n\n•\n\ncultura sertaneja;\n\n•\n\ncultura quilombola;\n\n•\n\nliteratura;\n\n•\n\nteatro;\n\n•\n\ndança;\n\n•\n\nmúsica;\n\n•\n\naudiovisual;\n\n•\n\nhip-hop e grafite.\n\nO Estado organizará editais regionalizados e simplificados, garantindo que os recursos\nculturais cheguem ao interior.\n70"
+          },
+          {
+            "id": "plano-de-governo-71",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\nTambém serão criados circuitos territoriais de cultura e economia criativa, conectando\nprodução artística, turismo, educação e geração de renda.\n\n15. PREVENÇÃO E CUIDADO RELACIONADO ÀS DROGAS\nA política sobre álcool e outras drogas será integrada entre saúde, assistência social,\neducação, trabalho e segurança.\nSerão fortalecidos:\n•\n\nprevenção nas escolas;\n\n•\n\natendimento psicossocial;\n\n•\n\nredução de danos;\n\n•\n\nacolhimento das famílias;\n\n•\n\ntratamento humanizado;\n\n•\n\nreinserção social;\n\n•\n\nqualificação profissional;\n\n•\n\nacompanhamento após o tratamento;\n\n•\n\napoio às instituições devidamente fiscalizadas;\n\n•\n\ncombate ao tráfico e à exploração de pessoas vulneráveis.\n\nOs documentos-base preveem fortalecimento do acolhimento, atendimento e\nreinserção social das pessoas com problemas decorrentes do abuso de drogas.\n\n16. GESTÃO TERRITORIAL DAS VULNERABILIDADES\nSerá criado um Mapa Estadual das Vulnerabilidades, reunindo informações sobre:\n•\n\nfome;\n\n•\n\npobreza;\n\n•\n\nevasão escolar;\n\n•\n\ndesemprego;\n\n•\n\nviolência;\n71"
+          },
+          {
+            "id": "plano-de-governo-72",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nJOSÉ ESTÊVÃO (DC) – GOVERNADOR\nNEUZIMAR CAMACAM (DC) – VICE-GOVERNADORA\n\n•\n\nmortalidade juvenil;\n\n•\n\nviolência contra as mulheres;\n\n•\n\npessoas sem documentação;\n\n•\n\ndeficiência;\n\n•\n\nmoradia precária;\n\n•\n\ninsegurança alimentar;\n\n•\n\nfalta de acesso aos serviços públicos.\n\nCada território terá metas e equipes responsáveis.\nAs famílias em situação mais grave terão prioridade simultânea nos programas de\nassistência social, trabalho e renda, saúde, educação, esporte e cultura. Essa atuação\ntransversal já aparece no documento-base, que prevê identificação das famílias\nvulneráveis e inclusão prioritária nos programas governamentais.\n\nCOMPROMISSO FINAL DO EIXO\nO Estado não poderá procurar as famílias somente depois que a fome, a violência ou\no abandono produzirem uma tragédia.\nO Governo José Estêvão atuará para localizar, acolher, proteger e criar oportunidades.\nNenhuma família será tratada apenas como beneficiária. Cada pessoa será\nreconhecida como cidadã, portadora de direitos, capacidades e potencial para\nparticipar da reconstrução da Bahia.\nDesenvolvimento humano significa comida na mesa, proteção para quem precisa e\noportunidade para que cada família possa viver do próprio trabalho.\n\n72"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "d2e45c591c1dc1529d67e406f2180807a1027fcf97fc62a08a8237eb6f52015c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "b160a78ff59ee7bcd43f28f43a507e452e75f386e65f5759d071b55dc202cd13"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7d14e20fad7026837dd92c3a47cb56bb9be7b275110b45f843e472244e60c435"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "e34c29d3d9ba8e408d8ea8cdd3b06edb07285857ded4a2654f4db73675686208"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "95e8289589f91ac474386b620466475e5a4f70aa906bf7c4d55d949328f81d7b"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c92a70f12c35611f7e4f8a6f51c9d0eed2a188e621fc0158e3e560ade18102c4"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "3eef9969bb67716882b8d936fdf24c09de4e8638e8fb306318aa2a45b4da1967"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0f9fdcba3c9a732535b3a927825e72e1a3f9337c1bc2953426fa7ec0c298737a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "ec796e154bdc7869949d0e7140350a66c0f2709fcc858a35fba6f20fd862aafc"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "77c7ac4886fcd80f3b0505ee884ae547f52b704a851a6e285cbd81de6d839142"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "048adccc41be423ffa80b59880652933066aa5831d246dc4c8d4c71b7bd1d0e6"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "c7435ca6d04ba5423bdbbfba6d95f7a61b20595006b50a2ce7e4a3e3d3eb42b7"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "e943d52b64dcb4787af1f3b543c13eeeb18c565e3364bcf47473e4d58630f9a7"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "49654d0afcd000b45961c37735faaf514661f7d6b34aaf6404338a04993f8d88"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "3ff7a959770b9f1277a6ba7e68b1820ad65bbf2c95c5d2fbd3d611f39c7e3c9b"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "57b4c3a8c1a1275a5e8cb35709563e8713af265b657a8c427ac59f470ef77bee"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "92d67fa75669a3da112ead3a12b349899d8a96f28e08882217364c20ce1a729b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "680196e9d6cda19431602d5a87a9792ebcc99dce0dd5959784e7f4391a2a4776"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "2441169538052254dadcada11a7992ecaabffeafbadeb2e9515590d3b5c29fa0"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "4bc7a6a3e1d35185f6bb4a92010f096727e5778fd8c1965dcc47c14aa13746ca"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "958f0908e31a2821ac16feee9e1f0433120a589accf52c9302d58afd47a852c0"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "f1e600a2207ffe5669a9fa6ec2802ff0eb5c7b8491f8ed21b057139abaab7f60"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "fc3d19401fd3170154178c7e093280a31e6bbd9cc4f9951a7b7b35a937720559"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "1e1ee5512aa34129964d183e2fd2a8de9d293a4815a51c58f8c26f0dfe2a0ad9"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "1bc7ba65f4f14359f7b19422bba6dd7a1a3ddaca43c2c98b78caafe09c7c3faa"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "26055c4266567b2b4c334cf13d9021a5ba5e98f38136ac06c135a1aa76613b7a"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "a889b2d5c79295a1bca8a73fa926b5d7a68817f5f69773586553f05349f402f8"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "2a57f6de2c71b9c1eecfe0ef21aaf70ce6930d6946b7a680f50af52ab6339225"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "4a5ad28c380bb8a8e942e42e8abccb3f408bc9fde86108fa1b5153b5596be099"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "b13180277a2ed8c114108044695d2345789ccb8ede59c2f5f432b5a133d4d48f"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4f1d20f39664ad764127a5fcab824cb5ff4e282ef8bd07928355e2eea9157b92"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "b6c856f53d984a36a389782bf5c0a73f6643a45305a185ae36d96f66fbda0ad3"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "b7190d36e07309757bf6733adb4056c76a797f09945e5de12103cd42bf3ae334"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "1f4e8ee392258e729dd751f3e06e031d8831f2b78035104cb51595920f800e18"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "19b2bc9cb365d00dd642c168b3a1ee019850f31374b9948457ad8d05e7a32cff"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "5ef09f3be7c760796efc13cff9b9ea0d29823bc95d6ac6d6c244d5a1f0515c94"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "ab217e67abef7c3568daefaa5573cba57530143d9d2dce5db23f00ad2a848cde"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "d8a8dcc9bf9b68d294e208996ab8112b5ad86e587381dfcf64a5aa872deb6e9f"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "363a066c39de63e17c1c628837c331f63f770b4c4f5ad080f456c4c462c051b0"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "68a391a8dccf14bdf59345dee8b6c8d882a18cd31b7d028926c35305aae36ceb"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "04a3884b5b5d66e1a7ea2ec371a11a697b6db90bc2f2476be5e5e30442a900b1"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "513b3c3b3ce2c07a0ad511801e9ec5d014306fedaefa0f716f4af6a9ceefd11e"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "d1732b4300a195ae06c9111bc41b25e3d7ff3249d1bc69f4eefc2c42912265ff"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "36b7a2910fd8675d9148c1fdd00ad1ceea111c11b0e5d676d203d2360df6057b"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "978e19615d6534d2d13fc0d783865a7c48fd9c0c418bd4ab92bf24429ee4b863"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "0f144e0ee3bcd2a540bfe5d6190e602b6fa1fc146ad5099fb14425d6409a8bd9"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "c79b0da523bbf9a0fd4d2c6fe4ac63ef2713a75b587b450655a030c446e206ca"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "e4b9769f6d0e60a4e2cc704a5a584a7c11ee4dafcfe47a623a30c37509f21c33"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "29a5d750eb5c2700c7cff49cfeea2abe5c5ce539e657f8829dd2d38c0b5bdc67"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "7ce3d228d22b181751b17806a9fb4056949630b20d88970c7ba1daed375086ac"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "a2b5cb3ca147dde3f08d610777bd6deee52ab3905e919ed2ac05e8234db16ab4"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "4e5dd631eb4ffa63d7f2a6eff18b75bf3988757ca8a9a4e700138ba20635c5c5"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "0ef704214214afa729f63840ed4a6729d68533bab4a8124497f266205ad3317c"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "7dd343701880c2ac2af5be4a726bc0c93ddccae5285ce3e6ac62177f4777828f"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "78b34887512a769789da637e7922540c555a1f90c87d75015da09a814e1916cd"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "36b2d491ae607020c7b0f20198cedb8a6d41e72d1fe7aa8d952c05e5b1053310"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "96964ff49073c87a9e968d44f946ed7249ece460834871d61376cf218ff13504"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "faeb445b8729875fa58d7ff6a08b6a7519667416a5923bcd7cfef9e37d57cd15"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "e0d80c0fb5545e38ae75c3413e33f1123d06bffbae8556878c9a1af65e249fd5"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "493de44aaf55789026524a1344b8ef0bc4b5d3fb166354f980ab078a012d1e45"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "1ce66f9ef64f1a5c737b25e8e0b6a44a0ab38c61c15972604d07a65b341a76ca"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "cc94a5d173d893305568e042feecf83e65563cdc0d69124b582a07350b9d0bee"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "6e5844342d07c23b585106b6e13b77baa1d7e42569a3b50075348ee9857450b7"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "aabcc5b016ccbca7614923b3b3109eaf7086d7009225f5bb60cd34b26a888ad0"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "01162658b5791fafd57fe00de2c041b55468fcf2cfd1ff3967260342478df507"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "f6e545fca9b58b2b614da856ea452e80a4c851d0e344963761708228c425f858"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "6efcfd651aea4eeae9150acc1c5244e12c532f476cc51881c12d9a4047546d95"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "0d76e69aa0f93761382ceda7f8c917e7b9f4913471a736b77249b9d23988945a"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "4539dee76ecc78d1c0c24a2609a9f2bc755a2eb4a50b8bd879255bdd73c718a2"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "44b3481ca28c45675f65efb46d7b51f03cb4727c80b2e3e8b4bd7f0f0e230c8b"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "0628159a16e7ee61227a39b512c55c425ad6d0822bbbe0a348ac6f4b0b0ec650"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "683eb111ec3a0a76578d65a4dc002c68e664a826ae348e540f1efc2a8a02b43d"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "081f64ede34c7740c841eedcb6614af18e762b728f4e6049b5b5b5faed6590b9"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza. O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização. O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior. O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação. O governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas. Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização. Será criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca. O Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias.",
+    "frases": [
+      {
+        "texto": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 62,
+            "trecho": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza."
+          }
+        ]
+      },
+      {
+        "texto": "O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 70,
+            "trecho": "O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização."
+          }
+        ]
+      },
+      {
+        "texto": "O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 71,
+            "trecho": "O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior."
+          }
+        ]
+      },
+      {
+        "texto": "O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 68,
+            "trecho": "O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação."
+          }
+        ]
+      },
+      {
+        "texto": "O governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 67,
+            "trecho": "O governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas."
+          }
+        ]
+      },
+      {
+        "texto": "Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 57,
+            "trecho": "Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização."
+          }
+        ]
+      },
+      {
+        "texto": "Será criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 53,
+            "trecho": "Será criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca."
+          }
+        ]
+      },
+      {
+        "texto": "O Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 56,
+            "trecho": "O Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-alimentar",
+        "titulo": "Segurança alimentar",
+        "descricao": "O programa prevê ações de segurança alimentar para famílias em situação de pobreza.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 62,
+            "trecho": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza."
+          }
+        ]
+      },
+      {
+        "id": "esporte",
+        "titulo": "Esporte",
+        "descricao": "O programa atribui ao esporte funções de saúde, educação, prevenção da violência, convivência e profissionalização.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 70,
+            "trecho": "O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização."
+          }
+        ]
+      },
+      {
+        "id": "cultura",
+        "titulo": "Cultura",
+        "descricao": "O plano prevê editais culturais organizados por regiões.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 71,
+            "trecho": "O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior."
+          }
+        ]
+      },
+      {
+        "id": "inclusao",
+        "titulo": "Inclusão",
+        "descricao": "O governo prevê uma política estadual de inclusão baseada em acessibilidade, autonomia e participação.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 68,
+            "trecho": "O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-territorial",
+        "titulo": "Desenvolvimento territorial",
+        "descricao": "O plano prevê planos próprios de desenvolvimento para cada Território de Identidade.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536579:01",
+            "pagina": 57,
+            "trecho": "Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:41:52.873Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:44:07.442Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:1:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (esporte)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:2:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:3:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (inclusão)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:4:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos, apenas 'metas' genérico."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (violência contra mulher)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:5:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (desenvolvimento territorial)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:6:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (segurança hídrica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:7:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (conectividade)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:frase:8:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (segurança alimentar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:seguranca-alimentar:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente para claim resumido."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel à evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (esporte)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:esporte:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:cultura:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel à evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (inclusão de pessoas com deficiência)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:inclusao:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel à evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (desenvolvimento territorial)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536579:tema:desenvolvimento-territorial:documentos:BA:50002536579:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:BA:50002536579",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "BA:50002536579:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 42233,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4441,
+          "reasoning_output_tokens": 3161
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26366,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22208,
+          "output_tokens_details": {
+            "thinking_tokens": 228
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26366,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22208,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26366,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26366
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3479704
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "fff695c88b6c8b2161859bca267daa159b5518c7d0e45f6abb534f5412e259a1",
+    "extractedTextSha256": "d993a6e95652676c4249a67fe05d3e6dc36e8cf0e0b3b89522c07cf2995e4be5",
+    "documentCount": 1,
+    "documentSetSha256": "f40d7d65806fad00476beeae5914aa2404b1d1f8da4e16413ddda97e164eb2c8",
+    "contentSha256": "039415b9e77de1ebe699b2bed213242a46fa12e1551746c41bc31d51665c6c89"
+  }
+}

@@ -1,0 +1,916 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AL",
+    "sqCandidato": "20002539642",
+    "slug": "lenilda-luna",
+    "nomeUrna": "LENILDA LUNA",
+    "partido": "UP",
+    "arquivoNome": "2026AL20002539642_01.pdf",
+    "arquivoNoPacote": "AL/2026AL20002539642_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AL:20002539642:01",
+      "fonte": {
+        "arquivoNome": "2026AL20002539642_01.pdf",
+        "arquivoNoPacote": "AL/2026AL20002539642_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "bfe8500d3185468c1746b71f5de9edaba8b380c63b68cb834e6b2c435f2803f6",
+        "extractedTextSha256": "8000de13201cb4039b69e4387ea180e8e346009eeaf5418eb18d35ae78574e5f",
+        "paginas": 14,
+        "secoes": [
+          {
+            "id": "programa-de",
+            "titulo": "PROGRAMA DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PROGRAMA DE\nGOVERNO\nUNIDADE POPULAR\nPELO SOCIALISMO\nELEIÇÕES 2026 - ALAGOAS\nUNIDADE POPULAR\n80\n+ TERRA\nGUA\n- TRABALHO\nDIREITOS\nPONTOS\nQUE A UP\nDEFENDE PARA\nTRANSFORMAR\nALAGOAS\nUP%*\nVO DE PAULO\nGOVERNADORA\nVICE-GOVERNADOR\nLENILDA\n80\nJARDEL\nLUNA\nQUEIROZ"
+          },
+          {
+            "id": "programa-de-governo-da-unidade-popular-pelo-socialismo-para-o",
+            "titulo": "Programa de Governo da Unidade Popular - Pelo Socialismo para o",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo da Unidade Popular - Pelo Socialismo para o\nEstado de Alagoas\nA Unidade Popular (UP) defende o socialismo, a planificação econômica, a nacionalização dos\nsetores estratégicos e o atendimento às demandas sociais fundamentais da classe trabalhadora. Os\npontos do programa nacional detalham propostas estruturais para a transformação da sociedade\nbrasileira. O Programa Nacional da UP defende:\n● Controle social de todos os monopólios e consórcios capitalistas e dos meios de produção nos\nsetores estratégicos da economia; planificação da economia para atender às necessidades da\npopulação e acabar com as desigualdades regionais e sociais.\n● Nacionalização do sistema bancário e controle popular do sistema financeiro.\n● Fim da espoliação imperialista sobre a economia nacional; estancamento da sangria de nossos\nrecursos para o exterior, pondo fim às remessas de lucros, dividendos, pagamento de royalties\ne pagamentos da dívida externa; anulação dos acordos e dívidas do Estado com os capitalistas\nestrangeiros, que foram contraídos contra a soberania e os interesses dos trabalhadores;\ngarantia de total independência econômica do Brasil frente aos países imperialistas, em\nparticular ao imperialismo norte-americano; transferência do comércio exterior para os órgãos\ndo Estado.\n● Reestatização das estatais privatizadas; fim dos leilões do petróleo; revisão das concessões\ndos portos, aeroportos e estradas brasileiras entregues a empresas privadas.\n● Garantia de emprego e trabalho obrigatórios para todas as pessoas adultas capazes de\ntrabalhar; proibição da exploração do trabalho infantil.\n● Reforma agrária popular; nacionalização da terra e fim do monopólio privado da terra.\n● Anulação dos impostos extorsivos cobrados do povo; imposto sobre as grandes fortunas e\nprogressivo. Quem ganha mais, paga mais.\n● Estatização de todos os meios de transporte coletivo.\n● Educação pública e gratuita para todos e em todos os níveis; fim do lucro na educação;\ngarantia de livre acesso do povo à universidade e/ou cursos técnicos profissionalizantes; fim\ndo vestibular, vestibulinho ou qualquer processo seletivo.\n● Democratização dos meios de comunicação, com a socialização de todos os grandes canais de\ntelevisão, jornais e rádios; garantia a todos os cidadãos de acesso aos meios de comunicação.\n● Ampla liberdade de expressão e organização para os trabalhadores e o povo; fim das doações\nde capitalistas para campanhas eleitorais.\n● Justiça: juízes e tribunais eleitos pelo povo.\n● Fim da discriminação das mulheres; direitos iguais; fim do racismo e da discriminação dos\nnegros; firme combate à exploração sexual de mulheres e crianças; pela descriminalização e\nlegalização do aborto; lutar contra todas as manifestações lgbtfóbicas; firme punição aos\ninfratores.\n● Fim de qualquer discriminação religiosa, de raça ou sexo; plena garantia à liberdade religiosa.\n● Defesa e proteção do meio ambiente e da natureza; proibição da destruição de florestas;\nestabelecimento do controle popular sobre a Amazônia e expulsão de todos os monopólios\nestrangeiros da região.\n● Demarcação e posse imediata de todas as terras indígenas; garantia de escolas diferenciadas\npara os indígenas e incentivo e apoio às línguas indígenas; defesa da cultura e dos direitos dos\npovos originários.\n● Garantia de saúde pública e gratuita para todos; fim da exploração dos planos de saúde\nprivados.\nPágina 2"
+          },
+          {
+            "id": "pagina-3",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n●\n\n●\n●\n●\n●\n\nDefesa e incentivo à cultura nacional e popular; nacionalização de todas as companhias\ngravadoras de música e produtoras de filmes.\nJornada de trabalho: redução para seis horas para todos os trabalhadores e aumento geral dos\nsalários.\nEstabelecimento de lei garantindo o descanso em dias festivos, domingos e feriados para os\ntrabalhadores, excetuando os setores essenciais.\nGarantia de moradia digna, saneamento e coleta de lixo para todas as famílias brasileiras;\ndestinar os imóveis abandonados para resolver o déficit habitacional; realização de uma\nprofunda reforma urbana.\nJulgamento, prisão e confisco dos bens de todos os corruptos.\nApoio à luta de todos os povos e países pela libertação da dominação capitalista e da\nespoliação imperialista; defesa da soberania, independência e autodeterminação dos povos.\nPelo fim da polícia militar; fim de qualquer repressão aos movimentos sociais.\nPunição exemplar para os torturadores e assassinos da ditadura, revisão imediata da Lei da\nAnistia; todo apoio à luta pela Memória, Verdade e Justiça.\n\nApresentamos aqui as propostas do Programa de Governo, inspirados na linha política definida pelo\nCongresso da Unidade Popular:\n80 pontos do Programa de Governo da Unidade Popular para mudar Alagoas com o povo no\npoder\n\nEconomia e Trabalho\n1. Anulação das Concessões e Reestatização do Saneamento: Anular imediatamente o contrato de\nconcessão com a BRK Ambiental e reestruturar a CASAL como uma empresa 100% pública e sob\ncontrole dos trabalhadores e usuários. Garantir tarifa social justa e água limpa para as periferias e o\ninterior. Lutar pela Reestatização da Energia Elétrica: Auditoria pública e estatização dos serviços de\ndistribuição de energia operados pela Equatorial Energia, assegurando concurso público e fim dos\ncortes arbitrários em comunidades vulneráveis.\n2. A falência e liquidação do Banco do Estado de Alagoas (Produban), consumada nos anos 2000 após\nescândalos de corrupção, empréstimos fraudulentos para usineiros e desvios de elites políticas,\ndemonstra como o sistema financeiro tradicional drena a riqueza do povo para salvar oligarquias.\nNeste sentido, auditar a dívida pública do Estado de Alagoas, bem como rever as isenções fiscais\ndadas aos latifundiários e empresários. Criação do Banco de Desenvolvimento Popular de Alagoas\n(BDPA): Utilizar recursos públicos para financiar cooperativas de trabalhadores, agricultura familiar,\nassentamentos da reforma agrária e empreendimentos da economia solidária, eliminando a\ndependência dos bancos privados.\n3. Plano Estadual de Obras Públicas e Emprego Garantido: Criação de frentes de trabalho geridas pelo\nEstado para contratação direta de trabalhadores. As frentes atuarão na construção de moradias\npopulares, saneamento rural, escolas e hospitais estaduais. Criar indústrias estatais voltadas para a\ntransformação da matéria-prima local, reduzindo a dependência econômica do turismo de elite e da\nmonocultura de cana-de-açúcar.\n\nPágina 3"
+          },
+          {
+            "id": "4-reforma-agraria-popular-e-expropriacao-do-latifundio-terras-de-usinas",
+            "titulo": "4. Reforma Agrária Popular e Expropriação do Latifúndio. Terras de usinas endividadas com o Estado",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "4. Reforma Agrária Popular e Expropriação do Latifúndio. Terras de usinas endividadas com o Estado\nou flagradas com trabalho análogo à escravidão serem imediatamente expropriadas sem idenização.\nRealizar Reforma Agrária para ser ocupada por assentamentos agroecológicos focados na produção de\nalimentos para a cesta básica do povo alagoano.\n5. Proibição do Trabalho Infantil e Erradicação do Trabalho Análogo à Escravidão: Fortalecimento da\nfiscalização estadual sobre usinas de cana, carcinicultura, construção civil e setor hoteleiro, com\npunição rigorosa e confisco de propriedades infratoras.\n6. Redução da Jornada e Combate à Superexploração: Jornada Semanal de 30 horas no Serviço\nPúblico e Empresas Estatais. Implementar a redução da jornada sem redução de salários. Redução\nimediata para 40 horas semanais e o fim da escala 6x1 no setor privado. Aumento geral dos salários\ncom a adoção do piso estadual salarial.\n\nMoradia e Planejamento Urbano\n7. Colocar em funcionamentooConselho Estadual das Cidades e da Habitação, para acompanhar a\nexecução do Plano Estadual deHabitação e o uso dos recursos do Fundo Estadual de Habitação para\ncomplementar recursos federais,assim como o uso do FECOEP (Fundo Estadual de Combate e\nErradicação da Pobreza).\n8. Estruturar programas permanentes de moradia, definir critérios, coordenar ações regionais e\ncomplementar recursos federais, algo que municípios não têm escala nem orçamento para fazer. Criar\nfundos, linhas de crédito, subsídios e parcerias com bancos públicos para viabilizar moradias populares,\nlocação social e requalificação de imóveis, reduzindo o custo para famílias e municípios.\nCoordenar ações metropolitanas e regionais - O Estado tem autoridade para integrar políticas entre\nmunicípios, especialmente em regiões metropolitanas, garantindo planejamento conjunto, mobilidade,\nsaneamento e uso do solo alinhados à política habitacional. A capital e seu entorno concentram\nproblemas graves: expansão desordenada, risco geológico (como o crime da Braskem), mobilidade\nprecária e ocupação de áreas ambientalmente frágeis. O Plano de Desenvolvimento Urbano Integrado\nda Região Metropolitana de Maceió (PDUI RMM) foi elaborado por uma equipe local, encontra-se\npronto e aprovado pela Assembléia Metropolitana, mas ainda não foi colocado em prática,\nnecessitando de Governança Metropolitana,InstrumentosLegaiseFinanceiros , além de\nPriorizaçãoeExecuçãode Projetos:\n9. Implementar uma gestão metropolitana ativa, com decisões compartilhadas entre Estado e municípios\ne regras claras de cooperação para evitar ações isoladas. Incorporar o Plano de Desenvolvimento Urbano\nIntegrado da Região Metropolitana de Maceió (PDUI RMM) aos planos e orçamentos municipais,\napoiado pela criação e funcionamento de um fundo metropolitano e sustentado por mecanismos robustos\nde captação de recursos. Definir, de forma conjunta, projetos estruturantes, com cronogramas integrados\nentre os 13 municípios da RMM, acompanhado de monitoramento contínuo por indicadores\nmetropolitanos.\n\nPágina 4"
+          },
+          {
+            "id": "10-regularizar-grandes-areas-e-resolver-conflitos-fundiarios-complexos-e",
+            "titulo": "10. Regularizar grandes áreas e resolver conflitos fundiários complexos e investir em urbanização de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "10. Regularizar grandes áreas e resolver conflitos fundiários complexos e investir em urbanização de\nfavelas - Atuar em regularização fundiária de grande escala, mediar disputas, regularizar a titulação de\náreas públicas estaduais e apoiar municípios com estrutura técnica e jurídica, priorizando a\ninformalidade urbana, que atinge milhares de famílias em Alagoas. Regularizar propriedades,\nincentivando a propriedade coletiva, garantindo segurança jurídica. Urbanizar áreas vulneráveis com\nsaneamento (abastecimento d’água, esgotamento sanitário, drenagem e coleta de lixo), energia elétrica,\niluminação e equipamentos públicos. Integrar essas comunidades ao tecido urbano, evitando soluções\nisoladas.\n11. Investir em infraestrutura estruturante como política de Estado - Financiar e executar obras de\nsaneamento, drenagem, transporte e urbanização que tornam novas moradias viáveis e reduzem\nriscos, algo que pode ultrapassar a capacidade municipal. Saneamento, drenagem e mobilidade não\npodem depender de ciclos eleitorais. Universalizar o acesso à água e ampliar drasticamente a coleta e\ntratamento de esgoto.. Implantar sistemas de drenagem para reduzir enchentes e conservar os\nrecursos hídricos.\n12. Criar metas anuais obrigatórias de pavimentação e manutenção urbana combinando materiais e\nsoluções que permitam infiltrar parte da água no solo, direcionar o escoamento de forma controlada\ne reduzir o volume que chega aos pontos críticos da cidade. Mapear áreas de risco em todos os\nmunicípios e impedir novas ocupações irregulares e relocar famílias de forma planejada, com\nacompanhamento social e garantia de renda temporária.\n13. Estruturar apoio técnico, através de secretarias estaduais, institutos de planejamento, convênios\ncom universidades e institutos federais, que estejam a disposição dos 102 municípios alagoanos para\ncriar cadastros habitacionais, mapas de risco, diagnósticos regionais e sistemas de informação que\norientem políticas públicas e ajudem os municípios a agirem com precisão.\nTransporte\n14. Estatização e Gestão Pública do Transporte Intermunicipal e Urbano: Criação de uma empresa\npública de transporte de passageiros em Alagoas (EPTA). Valorização dos Trabalhadores Rodoviários:\nConcurso público para motorista e cobrador, assegurando estabilidade, piso salarial unificado, fim da\ndupla função de motorista-cobrador e melhoria das condições de saúde e segurança no trabalho.\n15. Direito Universal à Mobilidade: Implementação progressiva do Passe Livre para toda a população,\ngarantindo gratuidade imediata para estudantes, desempregados, idosos e beneficiários de programas\nsociais.\n16. Controle Social e Poder Popular no Transporte: Criação de um Conselho de Transporte composto\nde forma paritária entre representantes das usuárias e usuários (associações de moradores,\nmovimentos de estudantes, coletivos de periféricos), trabalhadoras e trabalhadores rodoviários e\npoder público. As linhas, frequências de ônibus e ampliação de rotas noturnas e de finais de semana\nnão serão decididas em gabinetes, mas aprovadas em plenárias públicas regionais diretamente nos\nbairros e periferias.\n17. Reestruturação e Mobilidade Multimodal Integrada: Reativação e Expansão da Malha Ferroviária.\nAmpliação da malha de VLT e Trens Urbanos na Região Metropolitana e interligação de polos\n\nPágina 5"
+          },
+          {
+            "id": "regionais-sertao-agreste-e-zona-da-mata-para-transporte-de-passageiros-e",
+            "titulo": "regionais (Sertão, Agreste e Zona da Mata) para transporte de passageiros e produção local totalmente",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "regionais (Sertão, Agreste e Zona da Mata) para transporte de passageiros e produção local totalmente\npúblicas (CBTU e EPTA), reduzindo a dependência do transporte rodoviário privado. Integração\nPlena Litoral-Sertão: Frota pública intermunicipal garantindo passagem acessível/gratuita entre os\nmunicípios do interior e os polos regionais de saúde e educação (Arapiraca, Delmiro Gouveia,\nSantana do Ipanema, Penedo).\n\nEducação\n\n18. Realizar concursos públicos para professoras/es e funcionárias/os de educação (carreiras\nadministrativas, merendeiras, vigilantes e apoio pedagógico), reduzindo drasticamente os temporários\n(PSS) e valorizando efetivamente os funcionários de escolas (reivindicação do SAE-AL). Realizar\nconcursos públicos imediatos para professores da Educação Especial (Atendimento Educacional\nEspecializado - AEE), intérpretes de Libras, tradutores, psicólogos, assistentes sociais e terapeutas\nocupacionais.\n19. Reestruturação e Unificação dos Planos de Cargos, Carreiras e Salários (PCCS): Garantir o\nreajuste salarial anual com ganho real acima da inflação para ativos e aposentados, garantindo\nisonomia, progressão por titulação e reajustes. Respeito à experiência profissional e à pontuação por\ntempo de serviço, criando o Reconhecimento de Saberes e Competências (RSC) para conceder\nadicionais equivalentes aos percentuais do Incentivo à Qualificação.\n20. Saúde Integrada e Segurança do Trabalhador: Implementar o Programa Estadual de Saúde do\nEducador, focado em saúde mental, ergonomia e combate ao burnout, além de garantir\nauxílio-transporte, reajuste do difícil acesso e alimentação digna para todas as regiões.\n21. Pacto Estadual pela Alfabetização e EJA Integrada, vinculando a alfabetização de jovens, adultos\ne idosos à qualificação profissional e à inclusão digital. Criação da Bolsa Alfabetiza Alagoas,\nincentivo financeiro de permanência para adultos vulneráveis que frequentarem a EJA.\n22. Fortalecimento da Educação Infantil em Regime de Colaboração: Apoiar financeiramente os 102\nmunicípios alagoanos na ampliação de vagas em creches e pré-escolas, garantindo o letramento na\nidade certa até os 7 anos.\n23. Criar novas unidades descentralizadas da Uneal e Uncisal, fortalecendo a presença do ensino\nsuperior nos polos regionais do interior de Alagoas. Firmar parcerias e convênios para fortalecer a\nexpansão da Ufal e do Ifal.\n24. Programa Estadual Transporte Universitário Garantido: Subvenção pública estadual para\nconsórcios intermunicipais de transporte escolar/universitário, evitando que estudantes do interior\nabandonem o ensino superior por falta de mobilidade.\n25. Rede de Permanência Estudantil (Bolsa e Moradia): Criar o fundo estadual de permanência para\nestudantes de baixa renda oriundos da rede pública matriculados no ensino superior alagoano.\n\nPágina 6"
+          },
+          {
+            "id": "26-eleicao-direta-para-gestores-escolares-consolidar-a-gestao-democratic",
+            "titulo": "26. Eleição Direta para Gestores Escolares: Consolidar a gestão democrática em 100% da rede",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "26. Eleição Direta para Gestores Escolares: Consolidar a gestão democrática em 100% da rede\nestadual, garantindo a escolha da comunidade escolar para diretores, com critérios técnicos e\nparticipação dos conselhos escolares.\n27. Criar comitês de inclusão em cada unidade escolar, formados por trabalhadores da educação,\nalunos, mães, pais e responsáveis, para fiscalizar as demandas específicas e adaptação escolar.\nFormação continuada anticapitalista e anticapacitista. Adaptação curricular emancipatória:\nDesenvolver metodologias que respeitem o tempo e a forma de aprendizagem de cada estudante,\nintegrando o conhecimento científico e popular para a autonomia plena do aluno\n28. Plano de Modernização: Climatização de 100% das salas de aula do estado, universalização da\ninternet de alta velocidade, laboratórios de ciências/robótica e garantia de acessibilidade estrutural e\npedagógica para alunos com deficiência, autistas e TDAHs (com contratação de profissionais de apoio\nespecializados).\n29. Transparência na Verba do FUNDEB e Precatórios: Criar uma comissão paritária permanente\n(Governo e Sindicatos: Sinteal e SAE-AL) para fiscalizar a aplicação dos recursos do Fundeb e o\npagamento dos precatórios do Fundef aos profissionais da educação. Instituição de um canal\npermanente de diálogo entre a Secretaria de Estado da Educação (Seduc), Secretaria de Gestão\nPública (Segesp) e a representação sindical (Sinteal/SAE-AL) com calendário fixo de reuniões\ntrimestrais para monitorar o PCCS e o cumprimento dos acordos.\n30. Fortalecimento da Fundação de Amparo à Pesquisa do Estado de Alagoas (FAPEAL) e do Centro\nde Inovação do Polo Tecnológico (CIPT) para avançar na pesquisa e assistência ao desenvolvimento\nde tecnologias sociais e desenvolvimento para o povo alagoano.\nComunicação pública, Cultura popular e Economia Criativa\nA cultura popular de Alagoas — expressa nos seus guerreiros, pastoris, boi bumbá, coco de roda,\nbaianas, cheganças, na tradição do bordado filé e nas mãos de seus artesãos — é a espinha dorsal da\nidentidade do estado. No entanto, historicamente, mestres, brincantes e trabalhadores da cultura\nenfrentam a precarização do fomento, a burocratização de editais e a mercantilização elitista das artes,\nalém da perda de territórios e da descontinuidade geracional de suas tradições. Para construir um\nprograma de governo popular na área da cultura, é necessário passar da lógica assistencialista para o\nreconhecimento soberano e a descentralização dos recursos estaduais:\n31. Valorização Real dos Patrimônios Vivos: Reajuste e pontualidade na bolsa da Lei do Patrimônio\nVivo (Lei Estadual nº 6.693/2006), além da criação de políticas de salvaguarda e transmissão de\nsaberes nas escolas públicas.\n32. Editais Acessíveis e Desburocratizados: Fim das exigências excessivas de burocracia que excluem\nmestres e grupos comunitários sem acesso a elaboradores de projetos. Apoio técnico e escritório\npermanente para auxiliar na inscrição de Editais. Garantia de recursos públicos aos territórios do\nAgreste, Sertão, Zona da Mata e Litoral.\n33. Proteção à Memória dos Bairros Afetados pela Mineração: Ações diretas para a recomposição dos\nlaços comunitários e salvaguarda dos mestres, grupos e terreiros dispersos pelo colapso dos bairros de\nMaceió provocados pela Braskem.\nPágina 7"
+          },
+          {
+            "id": "34-reestruturacao-do-instituto-zumbi-dos-palmares-izp-que-abriga-a-radio",
+            "titulo": "34. Reestruturação do Instituto Zumbi dos Palmares (IZP), que abriga a Rádio Difusora, a Rádio",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "34. Reestruturação do Instituto Zumbi dos Palmares (IZP), que abriga a Rádio Difusora, a Rádio\nEducativa FM, a TV Educativa (TVE) e o Espaço Cultural Linda Mascarenhas, para se tornar uma\nplataforma pública de comunicação comunitária e difusão artística. Cota de Produção Independente\nLocal: Destinar no mínimo 50% da grade de programação das emissoras de rádio (Educativa FM e\nDifusora AM/FM) e da TVE Alagoas para a difusão da música alagoana, manifestações tradicionais,\nprogramas educativos comunitários e podcasts de artistas independentes.\n35. Fortalecimento da Participação Popular no Conselho Estadual de Cultura (CEC): o Conselho\nEstadual de Política Cultural não pode ser um órgão meramente consultivo ou aparelhado pelo\ngoverno estadual. Ele deve funcionar como o pilar de deliberação e controle social sobre o orçamento\nda cultura.\n36. Investir na Imprensa Oficial Graciliano Ramos (Companhia de Edição, Impressão e Publicação de\nAlagoas – Cepal), que desempenha um papel fundamental para o estado de Alagoas: atua como órgão\noficial de comunicação pública e serviços gráficos/documentais e opera como editora de fomento à\ncultura e literatura alagoana. Garantir recursos e editais para estimular a produção literária de\nalagoanos.\n37. Plataforma Digital de Pesquisa Histórica: Criar um acervo digitalizado e indexado com busca\nfacilitada de edições antigas do Diário Oficial e obras históricas de Alagoas, atendendo pesquisadores\ne jornalistas. Presença Digital e Clubes de Leitura: Fomentar a presença nas redes sociais com clubes\ndigitais de leitura focados em autores locais e e-mail marketing com curadoria das obras do acervo.\n38. Criar projetos para que a Biblioteca Pública Estadual Graciliano Ramos, principal equipamento\npúblico bibliotecário do estado, possa ser reconhecida como polo depositário da memória\nbibliográfica de Alagoas, tornando-se um centro cultural para lançamentos de livros, saraus e eventos\nliterários.\n39. Investir nos museus sob a gestão do Governo de Alagoas, como o Museu da República, Museu\nPalácio Floriano Peixoto (MHPFP) e Museu da Imagem e do Som de Alagoas (MISA), para que se\ntornem espaços dinâmicoas, com programação cultural, exposições temporárias, integração com as\nações de educação e de atividades turísticas. Estabelecer parcerias com cursos de História, Arquitetura\ne Química da Ufal e Uneal e outras instituições para projetos de extensão voltados à conservação e\nrestauro. Propor a criação do curso de Museologia na Universidade Estadual de Alagoas (Uneal)\n40. Cinema alagoano - Atuar em conjunto com a Associação Brasileira de Documentaristas e\nCurta-Metragistas de Alagoas (ABDeC-AL) e o Fórum Setorial do Audiovisual Alagoano (FSAL)\npara a elaboração de um calendário anual e contínuo de ações do setor audiovisual: dar previsibilidade\ndos Editais nacionais e criar Editais estaduais (curtas, longas, desenvolvimento e finalização),\nevitando descontinuidades de fluxo orçamentário. Máximo Aproveitamento dos Arranjos Regionais:\nGarantir a contrapartida orçamentária do Estado para alavancar aportes do Fundo Setorial do\nAudiovisual (FSA), multiplicando a capacidade de investimento local através das parcerias federais.\n41. Descentralização e Interiorização da Produção: estruturar uma comissão estadual para atrair\nproduções nacionais e internacionais, mapeando locações no Agreste, Sertão e Zona da Mata, além de\nsimplificar autorizações de filmagem. Criar Núcleos Comunitários de Produção: Oferecer kits de\n\nPágina 8"
+          },
+          {
+            "id": "equipamentos-publicos-cameras-captacao-de-som-e-iluminacao-geridos-em-pa",
+            "titulo": "equipamentos públicos (câmeras, captação de som e iluminação) geridos em parceria com municípios",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "equipamentos públicos (câmeras, captação de som e iluminação) geridos em parceria com municípios\ne coletivos para produções universitárias e comunitárias.\n42. Difusão, Exibição e Preservação da Memória. Rede Estadual de Cineclube e Circuito Popular:\nEstruturar salas públicas de cinema em equipamentos culturais estaduais no interior e apoiar a rede de\ncineclubes com cotas de tela obrigatórias para curtas e longas alagoanos. Consolidar apoio financeiro\npleno aos festivais estruturantes do estado, como a Mostra Sururu, o Festival de Cinema de Penedo e\nfestivais universitários.\nDireitos Sociais e combate às opressões\n43. Combate ao Racismo Estrutural e Plano Estadual de Redução da Letalidade Policial: Implantação\nobrigatória de câmeras corporais nos fardamentos, reorientação da doutrina policial para a mediação e\ndireitos humanos, e investigação independente das mortes decorrentes de intervenção estatal. Atuar\npela desmilitarização da polícia e investir na inteligência civil.\n44. Descentralizar a Delegacia Especializada de Crimes Raciais e Intolerância Religiosa: Fortalecer\nDelegacia Especial dos Crimes Contra Vulneráveis Yalorixá Tia Marcelina, criando núcleos no\nAgreste e Sertão, além do fortalecimento dos terreiros e de espaços de resistência cultural\nafro-alagoana.\n45. Cotas e Permanência: Ampliação do sistema de cotas raciais para 40% nos concursos públicos\nestaduais e criação do Bolsa Permanência Afro-Alagoana para estudantes negros e de baixa renda nas\nuniversidades estaduais (UNCISAL e UNEAL).\n46. Rede Estadual Casas das Dandaras: Criação de centros de acolhimento integral (psicológico,\njurídico e abrigamento provisório) em cada uma das 10 regiões de planejamento de Alagoas,\ndescentralizando a proteção que hoje se concentra em Maceió e Arapiraca. Fortalecimento da Patrulha\nMaria da Penha: Expansão da cobertura para os 102 municípios alagoanos, garantindo o cumprimento\nefetivo das medidas protetivas.\n47. Garantir linha de crédito popular gerida pelo estado destinada exclusivamente a mulheres chefes\nde família da periferia e do campo, acompanhada de creches em tempo integral vinculadas à rede\nestadual de ensino.\n48. Programa Estadual de Titulação das Terras Quilombolas: Criação de uma força-tarefa no Instituto\nde Terras de Alagoas (Iteral) em parceria com órgãos federais para acelerar a regularização fundiária e\ntitulação das comunidades quilombolas que aguardam regularização.\n49. Centro Estadual de Referência LGBTQIA+ e Abrigos Públicos: Implementação de centros\nestaduais de atendimento especializado e criação de repúblicas de acolhimento para jovens expulsos\ndo convívio familiar em razão da orientação sexual ou identidade de gênero. Garantia de atendimento\nmultiprofissional (endocrinologia, psicologia, cirurgias e processo transexualizador) pela rede pública\nde saúde, integrando a capital e polos do interior. Inclusão no Mercado de Trabalho:Criação do\nprograma TRANSforma Alagoas, oferecendo incentivos fiscais para empresas que contratarem\npessoas trans e travestis, além de cursos de qualificação técnica pela rede estadual.\n\nPágina 9"
+          },
+          {
+            "id": "a-questao-indigena-em-alagoas",
+            "titulo": "A questão indígena em Alagoas",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "A questão indígena em Alagoas\nOs povos indígenas em Alagoas, representados por etnias como Kariri-Xocó, Wassu Cocal, Karapotó,\nKalankó, Katokinn, Koiupanká, Geripankó, Karuazu, Tingui-Botó e Kraunã, enfrentam desafios\nhistóricos no Sertão, Agreste e Baixo São Francisco. Principais Reivindicações dos Povos Indígenas\nem Alagoas são: Demarcação e Proteção Territorial, conclusão dos processos fundiários para\nhomologação de terras pela Funai, segurança nas áreas de retomada e resolução de conflitos\nfundiários, além de saneamento básico e acesso à educação, saúde e fomento à agricultura familiar\nnos territórios indígenas.\nEmbora a demarcação territorial e a atenção primária à saúde sejam competências da União (via\nFunai, Ministério dos Povos Indígenas e SESAI/DSEI), o Governo Estadual possui competências\nconcorrentes diretas em educação, saneamento, assistência social, segurança e saúde de alta\ncomplexidade. Propomos:\n50. Realizar Concurso Público para Educação Indígena: Instituir plano de cargos e carreira próprio e\nrealizar concurso público regionalizado para professores e gestores indígenas na rede estadual de\nensino.\n51. Protocolo de Atendimento Hospitalar (SUS Estadual): Pactuar fluxos de acolhimento intercultural\ncom os hospitais da rede estadual (como o Hospital Regional do Alto Sertão) para atendimentos de\nmédia e alta complexidade encaminhados pelo DSEI. Criar um programa estadual de saneamento\nrural para aldeias em parceria com a Casal e companhias de saneamento, priorizando perfuração de\npoços e sistemas de dessalinização.\n52. Criar um comitê interinstitucional (envolvendo PGE, Defensoria Pública do Estado, MPF, Funai e\nlideranças indígenas) para prevenir a violência e intermediar conflitos fundiários em áreas não\ndemarcadas.\n53. Instituir o Conselho Estadual de Políticas para os Povos Indígenas, garantindo caráter deliberativo\nna destinação de orçamentos e políticas públicas locais. Destinar cotas específicas nos programas\nestaduais de compras públicas para aquisição de produtos agrícolas e artesanais indígenas,\nalimentando a rede pública de ensino e equipamentos sociais.\nEstatização e Controle Público da Mineração\n54. Mudança do Modelo Predatório para o Controle Público: Defender o modelo de estatização da\nmineração sob gestão pública e controle popular. A atividade minerária, por tratar de recursos não\nrenováveis e do subsolo — que constitucionalmente pertence à União —, não deve estar submetida à\nbusca desenfreada pelo lucro corporativo privado às custas da segurança da população. Gestão com\nParticipação dos Trabalhadores e Comunidades\n55. Coordenadoria Estadual de Apoio às Vítimas da Mineração: Criar um órgão estatal dedicado a\ncentralizar o acolhimento, a assistência jurídica (em parceria com a Defensoria Pública), o\nacompanhamento psicológico e o apoio social permanente. Atuar judicial e institucionalmente para\nanular a transferência de propriedade dos bairros evacuados para a Braskem, garantindo que, após a\nestabilização do solo, a área seja convertida em patrimônio público estaduais (como parques urbanos,\nmemoriais e áreas de conservação).\nPágina 10"
+          },
+          {
+            "id": "56-conselho-estadual-de-licenciamento-e-fiscalizacao-mineraria-instituir",
+            "titulo": "56. Conselho Estadual de Licenciamento e Fiscalização Minerária: Instituir um conselho paritário e",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "56. Conselho Estadual de Licenciamento e Fiscalização Minerária: Instituir um conselho paritário e\ndeliberação pública composto por representantes dos moradores atingidos, movimentos sociais,\nsindicatos e universidades, com poder de veto sobre licenças ambientais de mineração no estado.\nAuditorias Ambientais Públicas e Independentes: Fortalecer o Instituto do Meio Ambiente de Alagoas\n(IMA-AL) e instituir auditorias técnicas externas com dados abertos e monitoramento em tempo real\npara qualquer atividade de lavra e extração mineral em Alagoas.\n57. Criação e Efetivação do Parque Estadual da Caatinga Alagoana: Expandir e garantir a gestão\nefetiva das Unidades de Conservação na região, como o fortalecimento da APA Serra da Caiçara e do\nRefúgio de Vida Silvestre (RVS) dos Morros do Craunã (Caraunã) e do Padre fica localizado no\nmunicípio de Água Branca, na região do sertão alagoano, mais especificamente na área do Distrito\nTingui., implementando seus planos de manejo com orçamento próprio.\n58. Criar uma força-tarefa estadual em parceria com o Comitê da Bacia Hidrográfica (CBHSF) e\nmunicípios ribeirinhos para o reflorestamento massivo das matas ciliares e topo de morros ao longo da\ncalha do rio e seus afluentes em Alagoas. Condicionar repasses de fundos estaduais à metas rigorosas\nde implantação de estações de tratamento de efluentes (ETEs) nos municípios ribeirinhos, eliminando\nos lançamentos in natura de esgoto.\n59. Impor restrições ambientais estaduais para conter a verticalização excessiva no Litoral Norte de\nMaceió e nos municípios costeiros, protegendo a vegetação de restinga e garantindo os acessos\npúblicos e gratuitos às praias (servidão de passagem).\n60. Comissão Integrada de Proteção dos Manguezais e Restinga: Fortalecer a fiscalização sobre o\nparcelamento irregular do solo e os aterros ilegais nas lagoas Mundaú e Manguaba e nos estuários dos\nrios Pratagy, Tatuamunha e Camaragibe. Implantar o Programa Corredores da Biodiversidade, criando\npontes florestais entre áreas protegidas cruciais (como a APA de Murici e a APA Pratagy) e\nestimulando a recuperação de Áreas de Preservação Permanente (APPs) em usinas e propriedades\nrurais privadas.\n61. Preservação Socioambiental do Complexo Estuarino Lagunar Mundaú-Manguaba (CELMM): O\ncomplexo estuarino sofre com o assoreamento severo, a poluição por esgoto urbano, os resíduos da\nmineração e os agrotóxicos. Criar um Comitê de Gestão Compartilhada do CELMM, unindo estado,\nmunicípios, pesquisadores das universidades, pescadores e marisqueiras para realizar a dragagem\necológica de pontos críticos, sanear a bacia contribuinte e garantir uma bolsa de defeso estadual\ndurante os períodos de recuperação das espécies marinhas e estuarinas.\n62. Enfrentamento aos eventos climáticos extremos associados ao Super El Niño. Parceria com o\nCentro Integrado de Monitoramento e Alerta da Defesa Civil de Maceió e criação de Salas de Alerta\nno interior. Criar um Comitê Estadual Intersetorial da Crise Climática:Articulação permanente entre\nSemarh, Defesa Civil, Agricultura, Saúde e Assistência Social.\nTurismo Sustentável\n63. Valorização da Cultura e Emprego Local (Turismo de Base Comunitária): Financiar e capacitar\nassociações de marisqueiras, pescadores, quilombolas e povos indígenas para oferecerem vivências\nPágina 11"
+          },
+          {
+            "id": "turisticas-geridas-por-eles-proprios-gastronomia-ancestral-passeios-ecol",
+            "titulo": "turísticas geridas por eles próprios (gastronomia ancestral, passeios ecológicos guias locais,",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "turísticas geridas por eles próprios (gastronomia ancestral, passeios ecológicos guias locais,\nhospedagem familiar).\n64. Rotas Turísticas do Interior:Criar e promover circuitos integrados (Rota do Vale do São\nFrancisco, Rota Quilombola eRota da Caatinga/Cânions), incentivando a permanência do visitante no\ninterior por meio do turismo deaventura, histórico e gastronômico. Definir limites de visitação para\necossistemas frágeis (como piscinas naturais e manguezais) geridos em parceria com condutores\nambientais locais credenciados.\n65. Garantir ampla participaçãopopular no Conselho Estadual de Turismo para garantir as\ndeliberações no sentido deumTurismo Popular, Sustentável e Comunitário de Alagoas. Garantir\nassento permanente e poderdevoto para representantes de associações de artesãos, federações de\ntrabalhadores do turismo,comunidades quilombolas e indígenas, cooperativas de transporte e\nentidades ambientais nãogovernamentais. Destinar uma porcentagem do fundo de promoção turística\ndo estado para ser decididaeaplicada com base nas diretrizes aprovadas por este Fórum popular.\nSaúde pública 100% SUS\n66. Alinhados às pautas históricas do Fórum Alagoano em Defesa do SUS e contra a Privatização,\npropomos a estatização da Gestão e o cancelamento gradual e planejado de todos os contratos de\ngestão com OSs, fundações privadas e empresas terceirizadas em hospitais e UPAs, reassumindo a\nadministração 100% pública e estatal. Realização de auditoria detalhada nos repasses às OSs e\nempresas privadas para identificar desvios, superfaturamentos e exigir o ressarcimento aos cofres\npúblicos do SUS. Concurso Público: substituição dos contratos temporários, bolsas e contratação via\nPJ por concurso público de provas e títulos para todas as categorias da saúde (médicos, enfermeiros,\ntécnicos, administrativos e apoio).\n67. Expansão da Rede Própria e Reestruturação da Regulação de Leitos. Transparência na Central de\nRegulação: Informatização com acesso público e em tempo real à fila de regulação de leitos de UTI e\nespecialidades, impedindo interferências políticas ou favorecimentos privados. Fortalecimento da\nAtenção Básica e Preventiva\n68. Valorizar o trabalho dos Agentes de Combate às Endemias e Agentes Comunitários de Saúde,\nconsiderando que são a primeira linha de defesa contra o Aedes aegypti (vetor do Zika, Dengue e\nChikungunya) e fundamentais para a vigilância em saúde no território alagoano\n69. Controle Social e Participação Popular: Garantia de caráter deliberativo efetivo ao Conselho\nEstadual de Saúde e incentivo à criação de comitês locais de usuários e trabalhadores para fiscalização\ndas unidades de saúde.\n70. Reestatização do Patrimônio do Laboratório Industrial Farmacêutico de Alagoas - Lifal e\ncontrole operário. Reverter imediatamente os decretos de alienação e venda dos bens e prédios do antigo\nLifal que foram repassados para a Secretaria de Planejamento (Seplag). Reabertura sob gestão dos\ntrabalhadores: Reconstruir o complexo industrial localizado no Distrito Industrial de Maceió, colocando\na gestão da nova fábrica sob o comando direto de comitês de químicos, farmacêuticos, cientistas das\nUniversidades e usuários do SUS. Reparação histórica aos demitidos: Absorver os\nantigos operários demitidos nas sucessivas crises e no fechamento do laboratório, integrando-os como\nservidores públicos estatutários com direitos plenos. Direcionar a produção para atender integralmente\nPágina 12"
+          },
+          {
+            "id": "a-demanda-da-secretaria-de-estado-da-saude-de-alagoas-sesau-priorizando",
+            "titulo": "a demanda da Secretaria de Estado da Saúde de Alagoas (Sesau), priorizando remédios para diabetes,",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "a demanda da Secretaria de Estado da Saúde de Alagoas (Sesau), priorizando remédios para diabetes,\nhipertensão, saúde da mulher e antibióticos básicos. Articular com outros estados do Nordeste a\ncriação de um polo regional de insumos e matérias-primas (IFA), reduzindo o custo de importação.\n71. Radicalização Antimanicomial e Expansão da Rede de Atenção Psicossocial - RAPS: Fechamento\nde Comunidades Terapêuticas; Extinção imediata de qualquer financiamento público a entidades\nconfessionais ou privadas que utilizem o isolamento, direcionando esses recursos para a rede pública.\nAmpliação dos CAPS: Implementação de CAPS III e IV (funcionamento 24 horas) em todos os\nterritórios, dimensionados pela densidade demográfica e não por tetos orçamentários.Universalização\ndos SRTs: Expansão massiva de Serviços Residenciais Terapêuticos para garantir moradia digna a\negressos de longas internações. Leitos em Hospitais Gerais: Garantia de leitos de retaguarda para\ncrises agudas exclusivamente em hospitais públicos gerais, humanizados e de curta permanência.\n72. Integração Radical entre Esporte, Lazer e Saúde Coletiva - Integração permanente de\nprofissionais de educação física, fisioterapia e nutrição às equipes da Atenção Básica do SUS\n(Núcleos de Apoio à Saúde da Família). Criação de programas públicos territoriais de atividade física\ndirecionados ao combate e controle de hipertensão, diabetes, obesidade e sofrimento psíquico.\nEstruturação de serviços públicos de hidroginástica, pilates e práticas corporais integrativas (como\nioga) integrados diretamente ao prontuário do paciente no SUS. Substituição da lógica da\nmedicalização excessiva pela garantia de acesso a atividades físicas orientadas e planejadas para a\nsaúde mental. Obrigatoriedade de pausas de ginástica laboral remunerada e estruturação de espaços de\ndescompressão física nas grandes empresas e repartições públicas.Formulação de colônias de férias\npúblicas e estatais voltadas ao descanso dos trabalhadores e de suas famílias, custeadas pelo Estado e\ngeridas pelos sindicatos. Construção de centros poliesportivos públicos em todas as periferias e\nbairros operários, equipados com piscinas, pistas e ginásios.\nCombate à fome\n73. Garantir dotação orçamentária estadual para as ações de promoção da segurança alimentar dos\ngrupos mais vulneráveis, construção e estruturação e ampliação do período de funcionamento de\nrestaurantes populares (atualmente funcionam só durante os dias úteis, e há 3 unidades em Maceió –\nEstádio Rei Pelé, Benedito Bentes e Jacintinho, e 1 unidade em Arapiraca – todos de gestão do\ngoverno estadual).\n74. Estimular a agricultura familiar por meio das compras institucionais – Programa de Aquisição de\nAlimentos (PAA) de ambientes públicos estruturados (mercados públicos, feiras de rua) e\nestabelecimentos (quitanda, sacolão) que ofertem e comercializem alimentos saudáveis em territórios\nperiféricos e estratégicos, em que o deslocamento das pessoas, comerciantes e consumidores seja\nfacilitado (terminais urbanos de ônibus e trens, rodoviárias).\n75. Promoção do acesso a alimentos, por meio de distribuição de cestas básicas (em situações de\ncalamidade pública ou de forma permanente para populações em situação de vulnerabilidade) deve\ncontemplar alimentos saudáveis e provenientes da agricultura familiar, pois movimenta e fortalece a\neconomia local e estimula a agricultura familiar. Regular propagandas e comercialização de alimentos\ne produtos ultraprocessados (salgadinhos de pacote, refrigerantes etc.) nas escolas (públicas e\nprivadas) e no entorno é uma medida necessária e urgente, pois a prevalência de sobrepeso e\nobesidade em crianças e adolescentes até 19 anos que foram atendidas na Atenção Primária à Saúde\nem Alagoas, no ano de 2025, foi de 33%. (https://panorama.obesidadeinfantil.org.br/)\nPágina 13"
+          },
+          {
+            "id": "76-o-mapeamento-de-espacos-publicos-ociosos-nas-areas-urbanas-e-periferi",
+            "titulo": "76. O mapeamento de espaços públicos ociosos nas áreas urbanas e periféricas gera informações sobre",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "76. O mapeamento de espaços públicos ociosos nas áreas urbanas e periféricas gera informações sobre\npotenciais espaços em que podem ser implantadas hortas urbanas e periurbanas com o apoio técnico e\ninsumos agrícolas fornecidos pelo Estado, possibilita que a população do entorno consiga produzir\nalimentos para consumo próprio e gerar renda com a produção excedente\n77. Transparência e correta aplicação dos recursos do Fundo Estadual de Combate e Erradicação da\nPobreza (Fecoep). Reestruturação do conselho do fundo para garantir 50% de representação da\nsociedade civil (entidades comunitárias, instituições de ensino superior, centrais sindicais e\nmovimentos sociais). Realização de consultas públicas semestrais descentralizadas para ouvir as\ndemandas prioritárias das regiões com maior densidade de pobreza.\nProteção à Infância e Adolescência\n78. Integração dos programas de visitas domiciliares com a atenção primária à saúde, garantindo prénatal adequado, vacinação completa e estímulo ao desenvolvimento cognitivo e motor. Ampliação de\nvagas em creches com foco em famílias em situação de extrema vulnerabilidade inscritas no CadÚnico,\ngarantindo infraestrutura adaptada e suporte nutricional completo. Ações de suporte socioemocional e de\ngeração de renda para famílias monoparentais chefiadas por mulheres em\nsituação de vulnerabilidade.\n79. Espaços de Convivência e Juventude: Criação de centros comunitários socioeducativos com\noficinas culturais, esportivas, inclusão digital e qualificação profissionalizante para adolescentes\n(aprendizagem profissional). Inclusão de módulos sobre uso seguro da internet, prevenção ao\ncyberbullying, combate à pedofilia online e desinformação na grade curricular básica.\nMemória, Verdade e Justiça\n80. Desenvolver ações de Memória, Verdade e Justiça, focando em ações concretas de reparação\nsimbólica, educação e preservação da história democrática do estado. Criar o Memorial Público aos\nAlagoanos Mortos e Desaparecidos Políticos, para prestar homenagem e preservar a memória dos\nnove alagoanos oficialmente reconhecidos como vítimas da repressão e dos abusos do regime militar:\nJayme Amorim de Miranda, Manoel Lisboa de Moura, Odijas Carvalho de Souza, José Dalmo\nGuimarães Lins (Dalmo Lins), Gastone Beltrão, Manoel Fiel Filho, Túlio Roberto Cardoso Ayres,\nJosé Gomes Teixeira e Luiz Almeida Araújo\n\nPágina 14"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "ec57118922113e7ff75019028964ce40129b5db562328cce38a839c2cb467232"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "39565c81ce9f75671876683d515b95dc7d07568f2342ce2cb3c5dc270a8a4c72"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "29e2736f7f01052273541a2feb9238a0c612a6e2d5e612af64de1866f6365a51"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c7c2dd7c3f765240dce5dafec8c9ec1760a78570e33d5c091ac3bfe6ce3c26fa"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e0024057eba9b6b3e7c8fd0a0ef62bc1371c17c2cf6fac5f481a588aba2109f3"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "5e443cb39134ece79ffc3b7f00c07aa643eae837b0868c2b0deaae4c2d12fffe"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "5fa3f5931c055e798713f877e4c9fc298757daf19799022cb7885f5fb7444c57"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "c760f51d4b5cf1bc29ad243adf2cf7daaa697bddd0ea37f06ed06d157dcca38a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "03088aa038119070ae63c5311832718d6a51a09534be4e534283a5b99ac8dee8"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "80725f34b2119171e10f2fa77febbab1b61215a8b5d99f148de4984b9002d5b0"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "b7ef1da4dcd8979041154c9be1770fa21b23366a64e96fb2b5b1d63e0dcc94d4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "8e382371229c8a00b9d17d3ec7fd9ab1f0c6fb61c41fd81eccc7d31655191e46"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "8f9faf0552bd95b8a7032cf206b8d8c5059edf426e18469787e373238df8a4c4"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "c9be62be283cb7b0745ea288d02b8a88ab71b326058b04013eb4af9e16b97e1a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta propostas de governo inspiradas na linha política definida pelo Congresso da Unidade Popular. No saneamento, o programa propõe reestruturar a CASAL como uma empresa pública sob controle dos trabalhadores e usuários. No financiamento estadual, prevê auditar a dívida pública do Estado de Alagoas. O programa prevê a criação do Banco de Desenvolvimento Popular de Alagoas para financiar cooperativas de trabalhadores. No transporte, propõe criar uma empresa pública de transporte de passageiros em Alagoas. Na educação, prevê concursos públicos para professoras/es e funcionárias/os de educação. Na saúde, propõe a estatização da gestão e o cancelamento gradual e planejado de contratos de gestão com OSs. Na proteção ambiental, propõe a criação e efetivação do Parque Estadual da Caatinga Alagoana.",
+    "frases": [
+      {
+        "texto": "O documento apresenta propostas de governo inspiradas na linha política definida pelo Congresso da Unidade Popular.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "Apresentamos aqui as propostas do Programa de Governo, inspirados na linha política definida pelo Congresso da Unidade Popular:"
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, o programa propõe reestruturar a CASAL como uma empresa pública sob controle dos trabalhadores e usuários.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "reestruturar a CASAL como uma empresa 100% pública e sob controle dos trabalhadores e usuários."
+          }
+        ]
+      },
+      {
+        "texto": "No financiamento estadual, prevê auditar a dívida pública do Estado de Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "auditar a dívida pública do Estado de Alagoas"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a criação do Banco de Desenvolvimento Popular de Alagoas para financiar cooperativas de trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "Criação do Banco de Desenvolvimento Popular de Alagoas (BDPA): Utilizar recursos públicos para financiar cooperativas de trabalhadores"
+          }
+        ]
+      },
+      {
+        "texto": "No transporte, propõe criar uma empresa pública de transporte de passageiros em Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 5,
+            "trecho": "Criação de uma empresa pública de transporte de passageiros em Alagoas (EPTA)."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê concursos públicos para professoras/es e funcionárias/os de educação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 6,
+            "trecho": "Realizar concursos públicos para professoras/es e funcionárias/os de educação"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe a estatização da gestão e o cancelamento gradual e planejado de contratos de gestão com OSs.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 12,
+            "trecho": "propomos a estatização da Gestão e o cancelamento gradual e planejado de todos os contratos de gestão com OSs"
+          }
+        ]
+      },
+      {
+        "texto": "Na proteção ambiental, propõe a criação e efetivação do Parque Estadual da Caatinga Alagoana.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 11,
+            "trecho": "Criação e Efetivação do Parque Estadual da Caatinga Alagoana:"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saneamento-publico",
+        "titulo": "Saneamento público",
+        "descricao": "Reestruturação da CASAL como empresa pública sob controle dos trabalhadores e usuários.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "reestruturar a CASAL como uma empresa 100% pública e sob controle dos trabalhadores e usuários."
+          }
+        ]
+      },
+      {
+        "id": "financiamento-estadual",
+        "titulo": "Financiamento estadual",
+        "descricao": "Auditoria da dívida pública do Estado de Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 3,
+            "trecho": "auditar a dívida pública do Estado de Alagoas"
+          }
+        ]
+      },
+      {
+        "id": "transporte-publico",
+        "titulo": "Transporte público",
+        "descricao": "Criação de uma empresa pública de transporte de passageiros em Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 5,
+            "trecho": "Criação de uma empresa pública de transporte de passageiros em Alagoas (EPTA)."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Realização de concursos públicos para profissionais da educação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 6,
+            "trecho": "Realizar concursos públicos para professoras/es e funcionárias/os de educação"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Estatização da gestão dos serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 12,
+            "trecho": "propomos a estatização da Gestão"
+          }
+        ]
+      },
+      {
+        "id": "protecao-ambiental",
+        "titulo": "Proteção ambiental",
+        "descricao": "Criação e efetivação do Parque Estadual da Caatinga Alagoana.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002539642:01",
+            "pagina": 11,
+            "trecho": "Criação e Efetivação do Parque Estadual da Caatinga Alagoana:"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:34:23.507Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:36:40.384Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única afirmação coerente sobre a origem do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:1:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não faz alegação numérica específica; evidência não contradiz."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:2:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (financiamento estadual)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:3:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (financiamento/economia)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:4:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (transporte)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:5:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:6:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:7:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (proteção ambiental)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:frase:8:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saneamento-publico:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:financiamento-estadual:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:transporte-publico:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:educacao-publica:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:saude-publica:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002539642:tema:protecao-ambiental:documentos:AL:20002539642:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AL:20002539642",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AL:20002539642:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 30145,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3343,
+          "reasoning_output_tokens": 2167
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27514,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22228,
+          "output_tokens_details": {
+            "thinking_tokens": 429
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27514,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22228,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27514,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27514
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3539374
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "bfe8500d3185468c1746b71f5de9edaba8b380c63b68cb834e6b2c435f2803f6",
+    "extractedTextSha256": "8000de13201cb4039b69e4387ea180e8e346009eeaf5418eb18d35ae78574e5f",
+    "documentCount": 1,
+    "documentSetSha256": "fe3d846187f5a26529413d4517408194bf686768fd9eb8cf4382c55c4d7fb0a8",
+    "contentSha256": "660d6c23ff28438565419d5e02d997248d840c9beb4b5799fa82a56b5e70a7aa"
+  }
+}

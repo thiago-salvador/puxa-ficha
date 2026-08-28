@@ -1,0 +1,848 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PR",
+    "sqCandidato": "160002547666",
+    "slug": "requiao-filho",
+    "nomeUrna": "REQUIÃO FILHO",
+    "partido": "PDT",
+    "arquivoNome": "2026PR160002547666_01.pdf",
+    "arquivoNoPacote": "PR/2026PR160002547666_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PR:160002547666:01",
+      "fonte": {
+        "arquivoNome": "2026PR160002547666_01.pdf",
+        "arquivoNoPacote": "PR/2026PR160002547666_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b8a822479c3609979135d6dd1acb61f5c924253c25aa194b60f369dfea08b4e9",
+        "extractedTextSha256": "867b5aec54da0260d21b2464c9613b824a038a29df5f65bcb5d9c523eba5b1cd",
+        "paginas": 15,
+        "secoes": [
+          {
+            "id": "o-parana-que-cuida",
+            "titulo": "O PARANÁ QUE CUIDA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "O PARANÁ QUE CUIDA\n\nPLANO DE GOVERNO\n2027 • 2030"
+          },
+          {
+            "id": "o-parana-que-cuida-2",
+            "titulo": "O Paraná que cuida.",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O Paraná que cuida.\nRequião Filho - PDT 12 - Coligação Paraná para Todos\n\nUm governo deve ser medido pelo que acontece na vida das pessoas: pela criança que aprende\na ler no tempo certo; pela mulher que encontra proteção quando denuncia uma violência; pelo\ntrabalhador que volta para casa com segurança; pelo agricultor que consegue produzir, armazenar\ne vender; pela pessoa idosa, pela pessoa com deficiência e por quem precisa do Estado para viver\ncom autonomia e dignidade.\nCuidar começa pelo essencial. Comida na mesa, água, energia, moradia, escola pública, atendimento\nde saúde, trabalho, renda e segurança. Isso exige presença em todo o Paraná, dos grandes centros\naos pequenos municípios, do campo ao litoral e à fronteira. O lugar onde alguém nasceu ou mora\nnão pode determinar a qualidade do serviço público que recebe.\nO Paraná que cuida respeita quem faz o Estado funcionar. Professores, profissionais da saúde,\npoliciais,bombeiros, técnicos, trabalhadores da assistência e demais servidores precisam de\ncondições, formação, proteção e equipes suficientes. Prédio vazio, equipamento parado e anúncios\nem atendimento não são entrega.\nDesenvolver o Paraná é fortalecer quem trabalha e produz. O crédito público, a infraestrutura,\na tecnologia, as compras do Estado e os incentivos devem abrir oportunidades, apoiar pequenos\nnegócios, cooperativas, agricultura familiar, indústria e comércio, gerar emprego digno e manter\nrenda nas regiões. Recurso público não servirá para garantir privilégio, transferir risco ao Estado\nou financiar lucro sem contrapartida.\nCuidar é preservar a capacidade do Paraná de decidir. Água, saneamento, energia, logística, dados,\ntecnologia e crédito são instrumentos para levar serviço, investimento e segurança a todas as\nregiões. O patrimônio público será protegido e colocado a serviço de metas concretas. Parcerias\nserão feitas quando entregarem resultado, com contratos transparentes, fiscalização e\nresponsabilidade.\nCuidar também é reconhecer que as pessoas não partem do mesmo lugar. As políticas enfrentarão\nas barreiras vividas por mulheres, população negra, povos indígenas, quilombolas, pessoas com\ndeficiência, pessoas idosas, juventudes, população LGBTQIA+ e famílias em vulnerabilidade.\nDireito não pode depender de favor, influência ou capacidade de abrir portas.\nEste plano assume compromissos verificáveis: reduzir desigualdades entre regiões, garantir\npresença humana nos serviços, tratar a tecnologia como ferramenta, valorizar profissionais, proteger\no patrimônio público e fazer cada real gasto servir a um resultado coletivo. Requião Filho apresenta\nao Paraná um governo que sabe a quem serve e assume a responsabilidade de cuidar.\nO Paraná que cuida será construído em cada escola que ensina, em cada unidade de saúde que\natende, em cada crime investigado, em cada família protegida, em cada produtor apoiado e em\ncada município respeitado. O governo existe para fazer o Estado funcionar para as pessoas.\n\n2"
+          },
+          {
+            "id": "1-governo-presente-para-cuidar-das-pessoas-e-proteger",
+            "titulo": "1. Governo presente para cuidar das pessoas e proteger",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1. Governo presente para cuidar das pessoas e proteger\no patrimônio público\nO Paraná precisa de um Estado que planeje, coordene e preste contas. A administração\nserá organizada para transformar orçamento, patrimônio e trabalho público em serviços\ncontínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo\ninteresse coletivo.\n\nCompromissos\n• Governo integrado — Criar um centro de governo para coordenar prioridades, destravar entregas,\norganizar respostas a crises e cobrar responsáveis, prazos e resultados.\n• Transparência de verdade — Publicar contratos, obras, benefícios fiscais, metas, prazos\ne resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas.\n• Serviço público valorizado — Planejar concursos, carreiras, formação, saúde e segurança dos\nservidores e cumprir a data-base com negociação e previsão orçamentária.\n• Atendimento humano e digital — Digitalizar serviços sem excluir quem precisa de atendimento\npresencial; nenhum direito dependerá exclusivamente de aplicativo ou decisão automatizada.\n• Celepar pública e soberania digital — Manter a Celepar sob controle público, recompor\nsua capacidade técnica e proteger os dados e os sistemas essenciais do Paraná.\n• Justiça fiscal — Revisar incentivos fiscais, preservar os que entregam investimento e emprego\ne encerrar privilégios sem retorno público.\n• Imposto menor para os pequenos — Zerar a carga estadual de ICMS das micro e pequenas\nempresas durante a transição para o IBS, pelos instrumentos juridicamente disponíveis.\n• Bens essenciais — Reduzir, dentro da competência estadual, a carga sobre medicamentos\nessenciais quando houver efeito comprovado no preço ao consumidor.\n• Patrimônio público protegido — Nenhuma privatização ou perda de controle de empresa estratégica\nocorrerá sem avaliação independente, transparência e demonstração do interesse público.\n• Governo sem loteamento — Organizar a administração por compromissos públicos, sem entregar\nsecretarias e empresas estatais como moeda de troca política.\n• Serviço que não para — Preparar planos de continuidade para saúde, segurança, energia,\nconectividade e outros serviços essenciais diante de crises e desastres.\n• Compras públicas limpas — Planejar aquisições, reduzir emergências previsíveis, abrir espaço\na pequenos fornecedores e responsabilizar quem atrasar ou entregar mal.\n\n3"
+          },
+          {
+            "id": "2-apoio-aos-municipios-e-desenvolvimento-regional",
+            "titulo": "2. Apoio aos municípios e desenvolvimento regional",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "2. Apoio aos municípios e desenvolvimento regional\nA desigualdade regional também nasce da falta de projetos, equipes e recursos nos\nmunicípios menores. O Estado será parceiro dos 399 municípios, levando capacidade técnica\na quem mais precisa e coordenando soluções que ultrapassam divisas municipais.\n\nCompromissos\n• Engenharia e assistência técnica — Oferecer equipes estaduais e regionais para projetos,\nlicenciamento, obras, manutenção e captação de recursos, sobretudo aos pequenos municípios.\n• Banco Estadual de Projetos — Organizar uma carteira pública de projetos maduros e ajudar cada\nmunicípio a transformar necessidades em propostas executáveis.\n• Planejamento regional — Fortalecer o IPARDES e construir pactos regionais para integrar saúde,\neducação, logística, ambiente, turismo e desenvolvimento.\n• Critérios públicos de apoio — Distribuir recursos e assistência por necessidade, desigualdade\nterritorial, risco e capacidade de execução, sem favorecimento político.\n• Mais apoio a quem tem menos — Definir contrapartidas proporcionais à capacidade financeira\nde cada município para que os menores não percam investimentos por falta de caixa.\n• Consórcios que resolvem — Apoiar soluções compartilhadas para saúde, resíduos, defesa civil,\ninspeção, máquinas e serviços especializados, sem criar estruturas duplicadas.\n• Regiões metropolitanas, litoral e fronteira — Coordenar transporte, saneamento, drenagem,\nresíduos e outros serviços que ultrapassam limites municipais.\n• Tecnologia compartilhada — Ampliar, por adesão voluntária, serviços tecnológicos públicos\ne soluções da Celepar para prefeituras e consórcios.\n• Projetos prontos para captar — Manter licenças, custos, terrenos e fontes de financiamento\norganizados para não perder recursos estaduais, federais ou internacionais.\n• Prestação de contas simplificada — Padronizar orientações, capacitação e sistemas, reduzindo\nburocracia sem abrir mão da fiscalização do dinheiro público.\n• Fronteira integrada — Manter agenda permanente com Paraguai e Argentina para mobilidade,\nsaúde, comércio, logística, turismo e resposta a emergências.\n• Pacto com metas por região — Reunir municípios, universidades e setores produtivos em\ncompromissos territoriais com responsáveis, prazos e acompanhamento público.\n\n4"
+          },
+          {
+            "id": "3-saude-publica-e-regionalizacao-do-atendimento",
+            "titulo": "3. Saúde pública e regionalização do atendimento",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "3. Saúde pública e regionalização do atendimento\nQuem depende do SUS não pode esperar indefinidamente nem atravessar o Paraná para\nreceber atendimento. A rede será organizada por regiões, com atenção básica forte, filas\ntransparentes, hospitais resolutivos e cuidado contínuo do diagnóstico à recuperação.\n\nCompromissos\n• Mais recursos próprios — Elevar gradualmente a aplicação estadual em saúde até o fim do mandato.\n• Atenção primária perto de casa — Ampliar o cofinanciamento estadual dos municípios e retomar\nprincípios do HOSPSUS, integrando unidades básicas, hospitais e referências regionais.\n• Fila única e transparente — Permitir que cada pessoa acompanhe exames, consultas e cirurgias,\ncom prioridade clínica, prazo, encaminhamento e oferta regional visíveis.\n• Mutirões com continuidade — Reduzir o passivo de cirurgias e exames sem abandonar\no acompanhamento antes e depois do procedimento.\n• Rede hospitalar e urgência — Recuperar a capacidade existente, ampliar leitos e serviços\nregionais e integrar hospitais, SAMU, transporte sanitário e atenção básica.\n• Profissionais onde mais faltam — Combinar concursos, carreira, residência, formação e incentivos\nde permanência para reduzir vazios assistenciais no interior.\n• Saúde mental e dependência — Ampliar CAPS, cuidado comunitário, prevenção do suicídio,\natenção ao álcool e outras drogas e leitos de referência.\n• Medicamento e diagnóstico — Fortalecer assistência farmacêutica, laboratórios e telessaúde\ne acompanhar o paciente do exame ao tratamento.\n• Prontuário integrado — Compartilhar informações essenciais com segurança para evitar repetição\nde exames e perda do histórico quando o paciente muda de serviço.\n• Vigilância e prevenção — Reforçar vacinação, controle de surtos, saúde do trabalhador e resposta\na riscos sanitários e ambientais em todas as regiões.\n• Paraná Sorridente — Ampliar saúde bucal na atenção básica, os Centros de Especialidades\nOdontológicas, próteses e atendimento regional.\n• Mais Especialidades — Levar consultas e diagnósticos hoje concentrados aos polos regionais\ne integrar hospitais universitários ao atendimento do SUS.\n• Hospitais Regionais da Mulher e da Infância — Criar hospitais regionais integrados ao SUS,\ncom maternidade, gestação de alto risco, ginecologia, oncologia, neonatologia, pediatria,\ndiagnóstico e apoio multiprofissional.\n\n5"
+          },
+          {
+            "id": "4-educacao-ciencia-e-ensino-superior",
+            "titulo": "4. Educação, ciência e ensino superior",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "4. Educação, ciência e ensino superior\nA escola pública voltará a ser organizada pela aprendizagem, pelo vínculo humano e pela\nvalorização de quem ensina. Estrutura, alimentação, inclusão e tecnologia estarão a serviço\ndo projeto pedagógico, com participação da comunidade e presença do Estado.\n\nCompromissos\n• Alfabetização no tempo certo — Universalizar até 2030 a alfabetização em leitura, escrita\ne conhecimentos matemáticos essenciais ao final do 2º ano.\n• Recuperação da aprendizagem — Oferecer apoio contínuo, material adequado e acompanhamento\ndesde os anos iniciais, sem maquiar resultados ou culpar estudantes e professores.\n• Nenhuma escola fechada para economizar — Manter turmas e escolas necessárias, respeitando\ndistância, transporte, condições pedagógicas e decisão das comunidades.\n• Fim do Parceiro da Escola — Devolver ao poder público a gestão administrativa das unidades,\ncom transição que preserve aulas, alimentação, limpeza e direitos dos trabalhadores.\n• Revisão do modelo cívico-militar — Submeter as escolas a avaliação independente e devolver\nà comunidade escolar a decisão sobre seu projeto pedagógico.\n• Professores valorizados — Realizar concursos, fortalecer carreira, formação e autonomia\npedagógica e assegurar eleição periódica de diretores.\n• Escola integral com estrutura — Ampliar a jornada com alimentação, profissionais, bibliotecas,\nlaboratórios, quadras e projeto pedagógico, e não simples permanência no prédio.\n• Tecnologia como ferramenta — Ensinar computação, programação, robótica e uso crítico\nda inteligência artificial sem plataformização, vigilância ou substituição dos professores.\n• Ensino médio, técnico e permanência — Integrar formação geral e profissional e ampliar EJA,\neducação do campo, inclusão, transporte, alimentação e apoio ao estudante.\n• Universidades e ciência públicas — Preservar autonomia, dar previsibilidade ao financiamento\ne ampliar assistência estudantil, pesquisa, extensão e hospitais universitários.\n• Alimentação segura e regional — Garantir refeições adequadas, inclusive para alergias e doença\ncelíaca, e ampliar compras da agricultura familiar.\n• Escola bem cuidada — Recuperar salas, cozinhas, banheiros, quadras, bibliotecas, laboratórios\ne redes elétricas e publicar o andamento das obras por unidade.\n• Celeiro Tech — Integrar universidades, centros de pesquisa, empresas, trabalhadores e territórios\npara mapear capacidades e gargalos, compartilhar laboratórios e mobilizar financiamento,\ncooperação, compras públicas e encomendas tecnológicas. Os polos de inovação usarão estruturas\nexistentes e só serão criados onde houver demanda, equipe e custeio, gerando emprego e\noportunidades para a juventude, do solo ao silício.\n\n6"
+          },
+          {
+            "id": "5-seguranca-publica-justica-e-defesa-civil",
+            "titulo": "5. Segurança pública, justiça e defesa civil",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "5. Segurança pública, justiça e defesa civil\nSegurança pública não se resume a viaturas e discurso. Cuidar da população exige presença\nterritorial, investigação, inteligência, prevenção e integração, com efetivo suficiente e\ncondições dignas para quem protege o Paraná.\n\nCompromissos\n• Efetivo permanente — Realizar concursos periódicos para repor vacâncias e ampliar\nPolícia Militar, Civil, Científica, Penal e Corpo de Bombeiros.\n• Presença nos 399 municípios — Adotar como horizonte presença policial permanente\ne atendimento operacional 24 horas, por equipes locais ou regionais.\n• Carreira e condições de trabalho — Corrigir distorções das praças, rever cargas horárias\nincompatíveis e reconhecer a responsabilidade de chefia em todas as carreiras policiais.\n• Emergência integrada — Regionalizar o despacho e reunir, numa mesma central,\no encaminhamento imediato a PM, Bombeiros, SAMU, Polícia Civil e Guardas Municipais.\n• Investigação e perícia — Reduzir o passivo de inquéritos, ampliar a Polícia Científica e permitir\nao cidadão acompanhar o encaminhamento de sua ocorrência.\n• Inteligência e câmeras — Integrar videomonitoramento, leitura de placas, alertas eletrônicos\ne análise criminal com auditoria e proteção de dados; ampliar câmeras corporais.\n• Polícia comunitária — Retomar Projeto Povo, Patrulhas Rurais e Bombeiros Comunitários,\ncom equipes estáveis e diálogo com os territórios.\n• Fronteira protegida — Fortalecer BPFRON, inteligência financeira e operações contra armas,\ndrogas, contrabando e roubo de cargas no campo, litoral e fronteira.\n• Cuidar de quem protege — Reformar o Hospital da PM como referência para as forças e organizar\natendimento regional, saúde mental, prevenção do suicídio e reabilitação.\n• Presídios industriais públicos — Separar lideranças criminosas, retomar unidades administradas\npelo Estado e ampliar trabalho remunerado, educação e qualificação.\n• Câmeras corporais para proteger — Ampliar o uso progressivamente, com regras de\nacionamento, armazenamento, acesso, cadeia de custódia, privacidade e auditoria.\n• Defesa Civil antes do desastre — Mapear riscos, ampliar alertas, apoiar planos municipais\ne garantir resposta rápida, abrigo, água, alimento e reconstrução transparente.\n\n7"
+          },
+          {
+            "id": "6-trabalho-renda-e-desenvolvimento-economico",
+            "titulo": "6. Trabalho, renda e desenvolvimento econômico",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "6. Trabalho, renda e desenvolvimento econômico\nCrescimento só interessa quando melhora a vida de quem trabalha. O desenvolvimento será\nmedido pela renda, pelo emprego digno e pela capacidade de produzir em todas as regiões,\ncom apoio público condicionado a resultados sociais e econômicos.\n\nCompromissos\n• Crédito para quem produz — Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual\nde Aval para pequenos negócios, cooperativas e inovação.\n• Política industrial com contrapartida — Vincular incentivos, terrenos, crédito e infraestrutura\na investimento, emprego, salário, inovação e permanência no Paraná.\n• Compras públicas locais — Facilitar a participação de micro e pequenas empresas, cooperativas\ne fornecedores regionais, com divisão de lotes quando cabível.\n• Menos imposto para micro e pequenas — Usar os instrumentos estaduais para zerar o ICMS\ndurante a transição ao IBS e simplificar obrigações acessórias.\n• Qualificação ligada a vagas — Planejar cursos com trabalhadores, empresas, sindicatos\ne territórios e avaliar colocação, renda e permanência no emprego.\n• Agências do Trabalhador fortalecidas — Integrar intermediação, documentação, orientação\nprofissional, seguro-desemprego e inclusão produtiva.\n• Piso regional com ganho real — Atualizar anualmente as faixas do piso salarial regional\npor negociação tripartite e política de valorização.\n• Economia solidária — Ampliar cooperativismo, incubação, assistência técnica, comercialização\ne crédito orientado para iniciativas coletivas.\n• Exportar e produzir no interior — Preparar pequenos negócios e cooperativas para certificação\ne mercados e qualificar áreas industriais já existentes antes de criar novas.\n• Saúde do trabalhador — Fortalecer prevenção de acidentes, vigilância de doenças ocupacionais\ne a rede regional dos Centros de Referência em Saúde do Trabalhador.\n• Proteção contra a precarização — Exigir integridade e respeito às relações de trabalho\ndas empresas que recebem apoio, crédito ou incentivo estadual.\n\n8"
+          },
+          {
+            "id": "7-agricultura-e-desenvolvimento-rural",
+            "titulo": "7. Agricultura e desenvolvimento rural",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "7. Agricultura e desenvolvimento rural\nO campo paranaense precisa de crédito, assistência técnica, infraestrutura e proteção diante\ndas mudanças do clima. Produzir mais deve significar renda para as famílias, comida de\nqualidade e agregação de valor perto de onde a produção acontece.\n\nCompromissos\n• Assistência técnica pública — Fortalecer o IDR Paraná e ampliar extensão rural contínua,\nmultidisciplinar e orientada à agricultura familiar.\n• Trator e Insumo Solidário — Retomar crédito adequado ao ciclo produtivo para máquinas,\nequipamentos, sementes, fertilizantes e bioinsumos.\n• Correção do solo — Retomar o programa de calcário com análise técnica, recomendação\nagronômica, logística regional e acompanhamento dos resultados.\n• Água, estradas e energia trifásica — Apoiar outorgas, irrigação eficiente, estradas rurais,\nconectividade e expansão da rede elétrica necessária à agroindustrialização.\n• Seguro e adaptação climática — Ampliar proteção contra perdas, pesquisa, manejo de solo\ne água, alertas e orientação para eventos extremos.\n• Armazenagem e agroindústria — Apoiar silos compartilhados, ampliar o SUSAF-PR e ajudar\nmunicípios e consórcios a alcançar equivalência ao SISBI-POA.\n• Cadeias regionais — Retomar o plano da cafeicultura, combater o greening e apoiar leite, frutas,\nmadeira, cooperativas e agregação de valor.\n• Leite com produtor valorizado — Condicionar incentivos à compra de produtores paranaenses,\nà qualidade e ao benefício comprovado para produtor e consumidor.\n• Comida local nos serviços públicos — Ampliar compras da agricultura familiar para escolas,\nhospitais, cozinhas e restaurantes populares.\n• Produção segura — Combater deriva de agrotóxicos e fortalecer bioinsumos, defesa sanitária,\npesquisa, rastreabilidade e bem-estar animal.\n• Estoques reguladores — Retomar compras transparentes da agricultura familiar para reduzir\nperdas, abastecer políticas públicas e responder a emergências.\n• Habitação rural — Apoiar construção e reforma de moradias com saneamento, água, energia,\nconectividade e infraestrutura produtiva básica.\n\n9"
+          },
+          {
+            "id": "8-infraestrutura-logistica-e-mobilidade",
+            "titulo": "8. Infraestrutura, logística e mobilidade",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "8. Infraestrutura, logística e mobilidade\nInfraestrutura deve ligar pessoas, produção e serviços, e não servir como vitrine de\ngoverno. Obras e transportes serão priorizados pelo que reduzem de isolamento, custo,\nrisco e desigualdade, com fiscalização pública das tarifas e entregas.\n\nCompromissos\n• Rodovias seguras — Priorizar manutenção, pontos críticos, duplicações e contornos\ncom demanda comprovada, incluindo os estudos do Contorno Norte de Cascavel.\n• Pedágio sob controle público — Fiscalizar tarifas, obras, reequilíbrios e atendimento;\nnenhum pagamento sem entrega verificável ao usuário.\n• Ferroeste pública — Recuperar a operação, ampliar terminais e intermodalidade e preparar\nfinanciamento de longo prazo para a malha ferroviária.\n• Portos modernizados — Manter governança pública e melhorar canais, terminais, acessos,\ncontêineres, fertilizantes, Antonina e a relação porto-cidade.\n• Transporte intermunicipal — Reformar contratos, linhas, frequência, informação ao usuário\ne acessibilidade e avançar na integração tarifária metropolitana.\n• Frota pública sem cobrança em dobro — Quando o Estado comprar ou financiar veículos,\nretirar da tarifa a depreciação e o retorno do investimento já pago com dinheiro público.\n• Ônibus mais limpos — Renovar gradualmente frotas intermunicipais e metropolitanas com\nveículos de baixa ou zero emissão, conforme demanda e efeito tarifário.\n• Aeroportos e cargas — Apoiar aeroportos regionais e estudar terminais de carga conforme\ndemanda, segurança, financiamento e custo de operação.\n• Energia e conectividade — Ampliar fibra pública, eficiência, biogás e armazenamento e conectar\nescolas, unidades de saúde, segurança e prefeituras.\n• Copel a serviço do Paraná — Auditar a privatização, revisar contratos e dividendos e manter\naberta a recuperação do controle quando houver viabilidade jurídica e econômica.\n• Tarifa justa — Condicionar benefícios ao transporte coletivo à melhoria do serviço e à redução\nou contenção das tarifas, com custos transparentes.\n• Integração de modais — Conectar rodovias, ferrovias, portos, aeroportos e hidrovias para\nreduzir o custo da produção e tirar pressão das estradas.\n\n10"
+          },
+          {
+            "id": "9-habitacao-cidades-e-planejamento-urbano",
+            "titulo": "9. Habitação, cidades e planejamento urbano",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "9. Habitação, cidades e planejamento urbano\nHabitação não é apenas entregar uma chave. Moradia digna precisa estar perto de trabalho,\nescola, saúde, transporte e saneamento, com urbanização dos bairros, regularização\nfundiária e proteção das famílias que vivem em áreas de risco.\n\nCompromissos\n• Mais moradias e melhorias — Combinar novas unidades, reforma de casas, urbanização, locação\nsocial, mutirões e aproveitamento de imóveis adequados.\n• Banco Estadual de Terras — Destinar imóveis bem localizados à habitação social, evitando\nconjuntos distantes e bairros sem serviços.\n• Casa perto da vida — Avaliar transporte, escola, saúde, saneamento e custo cotidiano antes\nde escolher a localização de novos conjuntos.\n• Regularização fundiária — Apoiar municípios e famílias na regularização urbana e rural,\ncom segurança jurídica, infraestrutura e proteção ambiental.\n• Energia em ocupações consolidadas — Criar procedimento estadual para regularizar\no fornecimento quando houver segurança e viabilidade jurídica e ambiental.\n• Áreas de risco — Priorizar permanência com segurança e, quando o reassentamento\nfor necessário, entregar solução adequada antes da remoção.\n• Aluguel social e proteção — Integrar moradia provisória, drenagem, contenção, recuperação\nambiental e urbanização para não abandonar famílias.\n• Cohapar com autonomia técnica — Fortalecer fiscalização de obras e realizar auditoria\nindependente quando houver paralisação, defeito ou perda de qualidade.\n• Reforma e acessibilidade — Apoiar melhorias sanitárias, eficiência energética, adaptação\nde moradias e desenho universal para pessoas idosas e com deficiência.\n• Cidades para caminhar — Apoiar centros urbanos, calçadas acessíveis, travessias, iluminação,\nbicicletas e integração ao transporte coletivo.\n• Imóvel vazio vira moradia — Priorizar prédios e terrenos bem localizados e com serviços antes\nde expandir a cidade para áreas distantes.\n• Urbanização completa — Levar água, esgoto, drenagem, iluminação, áreas públicas e mobilidade\naos bairros que cresceram sem infraestrutura adequada.\n\n11"
+          },
+          {
+            "id": "10-meio-ambiente-agua-saneamento-e-clima",
+            "titulo": "10. Meio ambiente, água, saneamento e clima",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "10. Meio ambiente, água, saneamento e clima\nA crise climática já afeta cidades, lavouras, tarifas e vidas. Proteger água, solo e\nbiodiversidade é uma política de saúde, produção e segurança, combinando prevenção,\nsaneamento, fiscalização e transição ecológica socialmente justa.\n\nCompromissos\n• Sanepar pública — Manter o controle público, recuperar capacidade de investimento e orientar\na empresa para a universalização e o interesse dos paranaenses.\n• Tarifa social automática — Conceder o benefício às famílias elegíveis por integração\nde cadastros, sem obrigá-las a provar repetidamente a mesma condição.\n• Água e esgoto para todos — Priorizar áreas sem rede, reduzir perdas e ampliar soluções\nde saneamento rural e para pequenas comunidades.\n• Licenciamento sem enfraquecimento — Dar prazo, equipe e prioridade à análise ambiental,\ncom exigências proporcionais ao risco e fiscalização do cumprimento.\n• Água e mananciais — Proteger nascentes, bacias e reservatórios, fiscalizar barragens e apoiar\nsegurança hídrica urbana e rural.\n• Plano climático — Preparar o Paraná para secas, enchentes, ondas de calor, deslizamentos\ne perdas produtivas, com metas e responsabilidades.\n• Reúso e drenagem natural — Ampliar o reúso seguro de água e apoiar jardins de chuva,\nparques inundáveis, áreas permeáveis e recuperação de várzeas.\n• Resíduos e reciclagem — Fortalecer catadores, logística reversa e arranjos regionais\npara reciclar resíduos urbanos e da construção.\n• Bem-estar animal — Ampliar castração, assistência veterinária, combate aos maus-tratos,\nresgate de fauna e protocolos para desastres.\n• Produzir preservando — Remunerar serviços ambientais, recuperar áreas e apoiar produtores,\ncooperativas e trabalhadores na transição ecológica.\n• Reciclagem popular — Remunerar o serviço ambiental de catadores e cooperativas, garantindo\nequipamentos, segurança e participação nos contratos públicos.\n• Saneamento rural — Apoiar soluções comunitárias seguras para água, esgoto e resíduos\nem áreas rurais e pequenas localidades.\n\n12"
+          },
+          {
+            "id": "11-protecao-social-igualdade-direitos-e-ciclos-de-vida",
+            "titulo": "11. Proteção social, igualdade, direitos e ciclos de vida",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "11. Proteção social, igualdade, direitos e ciclos de vida\nNinguém pode ficar sem proteção por causa da renda, idade, deficiência, gênero, raça,\norientação sexual ou lugar onde vive. O cuidado público será organizado para garantir\nautonomia, renda, segurança, participação e serviços próximos das pessoas.\n\nCompromissos\n• Pessoas com deficiência — Criar secretaria estadual própria, cofinanciar saúde especializada,\nampliar reabilitação, órteses, próteses e tecnologia assistiva.\n• Famílias e cuidadores — Oferecer orientação, apoio psicossocial, descanso do cuidador,\ncentros-dia, atendimento domiciliar e alternativas de vida independente.\n• Mulheres protegidas — Reformular e fortalecer a Secretaria, implementar o pacto contra\no feminicídio e criar centros integrados inspirados na Casa da Mulher Brasileira.\n• Autonomia das mulheres — Integrar cuidado, transporte, qualificação, crédito e emprego\ne garantir atendimento policial especializado em todas as regiões.\n• Mais mulheres nas decisões — Adotar a paridade como horizonte político, sem cota obrigatória,\ne ampliar progressivamente a presença feminina nos espaços de poder.\n• Pessoa idosa — Construir rede de cuidados de longa duração, atenção domiciliar, centros-dia,\nproteção contra violência e apoio aos cuidadores.\n• Leite das Crianças ampliado — Retomar o programa, preservar o atendimento infantil e incluir\npessoas idosas e outros grupos com indicação nutricional.\n• Renda e segurança alimentar — Criar renda complementar aos benefícios federais e ampliar\ncozinhas, restaurantes populares, bancos de alimentos e compras locais.\n• SUAS fortalecido — Ampliar cofinanciamento, CRAS, CREAS, proteção especial e equipes\nregionais, sobretudo nos pequenos municípios.\n• Juventudes, igualdade e direitos — Integrar escola, saúde mental, trabalho e cultura e fortalecer\npolíticas para população negra, povos indígenas, quilombolas e população LGBTQIA+.\n• Primeira infância — Ampliar visitas, cuidado, proteção contra violência, acesso a creches e apoio\nmaterial e profissional a quem cuida.\n• Consumidor protegido — Fortalecer o Procon, enfrentar fraudes digitais e criar atendimento\npermanente para superendividamento e dependência de apostas.\n\n13"
+          },
+          {
+            "id": "12-cultura-esporte-e-turismo",
+            "titulo": "12. Cultura, esporte e turismo",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "12. Cultura, esporte e turismo\nCultura, esporte e turismo não serão tratados como favor nem privilégio. Serão políticas\nde acesso, trabalho, identidade e desenvolvimento regional, com recursos chegando\nà atividade final, circulação pelo Estado e respeito à diversidade do Paraná.\n\nCompromissos\n• Fim do mecenato com intermediário — Levar integralmente ao Fundo Estadual de Cultura\nos recursos do incentivo fiscal e vedar a remuneração da captação.\n• Mais dinheiro no projeto — Sem o captador, a parcela que pode absorver cerca de\n30% permanecerá naturalmente na execução cultural, sem ser tratada como meta separada.\n• Cultura em todas as regiões — Ampliar editais, circulação, formação, bibliotecas, equipamentos\ne apoio a artistas e trabalhadores culturais fora dos grandes centros.\n• Fundo a fundo e pontos de cultura — Transferir recursos aos municípios integrados ao sistema\nestadual e ampliar a rede em periferias e comunidades tradicionais.\n• Autores e audiovisual do Paraná — Apoiar publicação e circulação de obras paranaenses\ne fortalecer editais, formação, filmagens e cadeia audiovisual.\n• Cultura nas escolas — Garantir visitas regulares a bibliotecas, museus, teatros e espaços\nde memória, com integração pedagógica e remuneração artística.\n• Esporte comunitário e escolar — Ampliar atividade física gratuita, recuperar equipamentos\ne integrar escolas, bairros, unidades de saúde e assistência.\n• Paradesporto e atletas — Garantir acessibilidade, transporte, profissionais, bolsas transparentes,\nmedicina esportiva e prevenção ao assédio.\n• Turismo regional e comunitário — Organizar rotas rurais e culturais e apoiar pequenos negócios,\ncom protagonismo e benefício das comunidades.\n• Turismo seguro — Priorizar sinalização, banheiros, acessibilidade, conectividade, qualificação,\ndefesa do consumidor e resposta integrada.\n• Jogos escolares e circuitos regionais — Ampliar iniciação esportiva, esporte e lazer em bairros,\náreas rurais e municípios com pouca oferta regular.\n• Patrimônio vivo — Proteger mestres, mestras, festas, culturas indígenas, negras, quilombolas,\ncaiçaras, caboclas, migrantes e populares.\n\n14"
+          },
+          {
+            "id": "coligacao-parana-para-todos",
+            "titulo": "COLIGAÇÃO PARANÁ PARA TODOS",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO PARANÁ PARA TODOS\nPLANO DE GOVERNO\n2027 • 2030\n\nELEICAO 2026 MAURICIO THADEU DE MELLO E SILVA GOVERNADOR - CNPJ: 68.519.900/0001-83"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "70629e4f9561c668591312c9ae88c0c3b68dd73a2f05d0be483d4b24fdd3de44"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "3b9d6b2d6ecafb34fe88a5c1843e4d0829644da50872555b61979946c10d7dfe"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "354b76677839a26eee792610b4cef58add104ea8c9152f6332326e63bd9b8c97"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "3f4f8e9c713df7cb8386c4602d4e1476b0e1357651a0509c731c7fa8cb40df25"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "34aaebda9c9200def075e1d2bf6603f5a45ab469b29f7374664216e5432bed3a"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "b00ed107099821908bbf449a7a32e6e743254f15d2c4a2cc3fde7c35d16d7d48"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "0a3f27bf4fefe6b3ba4b70998acb5db4c0d1d5a849e7981109004e8f91183753"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "5e1394f9ef0b7f547f18109bcf325dcb3f5ac0f22a217b2ebefaf54a8a390c70"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "6be0b1d63887d2f516fbad6496ceb0fc16064bedaa9c6a4c582623dc57783c9d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "6c56f668d7263f020d147fd06362d5c2d2937e40612bc4c602988b310ecb82f6"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "3eff9ecd7dfd8d79410625de8f37c2740b66b7e8882cec21df3a29373553fd89"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "61d5fb4cfb2ba1bf9d06f4ed9355ba339abab92f8f3ba769961088e111d6115a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "f7507c1329ef9d180a2e7aa4d5ff227ac5286897b8a2363740bcb812a373643a"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "53b00edbd0fa9d349afa4704452dc6645b163b959de22136505fb8f76fc6af70"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "ea0874c2dae426bbb3fcd8bec8ac3013b8201aad9812fedad35d8e0790426f10"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo. Publicar contratos, obras, benefícios fiscais, metas, prazos e resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas. Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis. Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano. Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais. Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação. Ampliar o reúso seguro de água e apoiar jardins de chuva, parques inundáveis, áreas permeáveis e recuperação de várzeas.",
+    "frases": [
+      {
+        "texto": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 3,
+            "trecho": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo."
+          }
+        ]
+      },
+      {
+        "texto": "Publicar contratos, obras, benefícios fiscais, metas, prazos e resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 3,
+            "trecho": "Publicar contratos, obras, benefícios fiscais, metas, prazos e resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas."
+          }
+        ]
+      },
+      {
+        "texto": "Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 5,
+            "trecho": "Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis."
+          }
+        ]
+      },
+      {
+        "texto": "Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 6,
+            "trecho": "Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano."
+          }
+        ]
+      },
+      {
+        "texto": "Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 7,
+            "trecho": "Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais."
+          }
+        ]
+      },
+      {
+        "texto": "Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 8,
+            "trecho": "Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação."
+          }
+        ]
+      },
+      {
+        "texto": "Ampliar o reúso seguro de água e apoiar jardins de chuva, parques inundáveis, áreas permeáveis e recuperação de várzeas.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 12,
+            "trecho": "Ampliar o reúso seguro de água e apoiar jardins de chuva, parques inundáveis, áreas permeáveis e recuperação de várzeas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governanca-publica",
+        "titulo": "Governança pública",
+        "descricao": "A administração será organizada por serviços contínuos, metas verificáveis, atendimento humano.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 3,
+            "trecho": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo."
+          }
+        ]
+      },
+      {
+        "id": "atendimento-no-sus",
+        "titulo": "Atendimento no SUS",
+        "descricao": "A proposta prevê acompanhamento individual de exames, consultas, cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 5,
+            "trecho": "Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis."
+          }
+        ]
+      },
+      {
+        "id": "alfabetizacao",
+        "titulo": "Alfabetização",
+        "descricao": "O plano prevê alfabetização em leitura, escrita, conhecimentos matemáticos.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 6,
+            "trecho": "Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-territorial",
+        "titulo": "Segurança territorial",
+        "descricao": "A segurança pública prevê presença policial permanente por equipes locais ou regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 7,
+            "trecho": "Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais."
+          }
+        ]
+      },
+      {
+        "id": "credito-produtivo",
+        "titulo": "Crédito produtivo",
+        "descricao": "O programa propõe fortalecimento de instituições de crédito para pequenos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002547666:01",
+            "pagina": 8,
+            "trecho": "Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:30:56.976Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:33:10.278Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do texto original, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: governança administrativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:1:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único compromisso de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:2:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:3:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Data 2030 e 2º ano sustentados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:4:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Número '24 horas' literal no trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:5:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de crédito produtivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:6:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:frase:7:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho, sem distorção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, apenas resume o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:governanca-publica:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência única cobre o resumo apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao compromisso citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: atendimento no SUS."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:atendimento-no-sus:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o resumo apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao compromisso citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase resumo (omissos, mas sem contradição)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:alfabetizacao:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o resumo apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao compromisso citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números divergentes no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: segurança territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:seguranca-territorial:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o resumo apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao compromisso citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: crédito produtivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002547666:tema:credito-produtivo:documentos:PR:160002547666:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o resumo apresentado."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PR:160002547666",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PR:160002547666:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 27878,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2264,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26318,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21820,
+          "output_tokens_details": {
+            "thinking_tokens": 327
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26318,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21820,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26318,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26318
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3440724
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "b8a822479c3609979135d6dd1acb61f5c924253c25aa194b60f369dfea08b4e9",
+    "extractedTextSha256": "867b5aec54da0260d21b2464c9613b824a038a29df5f65bcb5d9c523eba5b1cd",
+    "documentCount": 1,
+    "documentSetSha256": "77a6dad6ab44e1188b4bb879fab6a76c132ef3714f3e4b8cee152ac816049bb1",
+    "contentSha256": "893f58c9a1ed037d293f5222a882fb7041269e819b4c3da98d908eb03c509481"
+  }
+}

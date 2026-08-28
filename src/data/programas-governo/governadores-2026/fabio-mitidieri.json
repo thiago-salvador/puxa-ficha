@@ -1,0 +1,1114 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SE",
+    "sqCandidato": "260002542491",
+    "slug": "fabio-mitidieri",
+    "nomeUrna": "FÁBIO",
+    "partido": "PSD",
+    "arquivoNome": "2026SE260002542491_01.pdf",
+    "arquivoNoPacote": "SE/2026SE260002542491_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SE:260002542491:01",
+      "fonte": {
+        "arquivoNome": "2026SE260002542491_01.pdf",
+        "arquivoNoPacote": "SE/2026SE260002542491_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "bd4be7751374a5041c5568862195102e9ae4e49a31e3c09b901dc66348069ef3",
+        "extractedTextSha256": "eae74d3df8df4c00c31ce27e3aa956760818dc06d60415de6c324a1116bec5a8",
+        "paginas": 34,
+        "secoes": [
+          {
+            "id": "1",
+            "titulo": "1",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "1"
+          },
+          {
+            "id": "mensagem",
+            "titulo": "MENSAGEM",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "MENSAGEM\nFala, meu povo!\nSergipe vive um novo momento e quem viveu os últimos anos no nosso estado sabe\ndisso, não porque alguém disse, mas porque pôde sentir na própria pele. Na queda do\ndesemprego, que chegou ao menor nível da história. Na escola do filho, que ganhou\nestrutura nova, reforço pedagógico e educadores valorizados. No atendimento de saúde,\nque chegou mais perto de casa e realizou milhares de cirurgias com o Opera Sergipe. Na\nestrada, que facilitou a vida de quem mora no interior e de quem depende das rodovias\npara o seu sustento. No empreendedor, que encontrou apoio para crescer. Na segurança,\nque sentimos e que nos proporciona tanto bem-estar.\nEsses avanços não vieram por acaso, mas de um compromisso firmado com os\nsergipanos e sergipanas desde o primeiro dia de governo: planejar com rigor, executar com\nresponsabilidade e entregar com transparência. Nosso foco sempre foi o resultado para a\nsociedade. Assumimos há quatro anos o desafio da geração de empregos e do combate à\nextrema pobreza. Os indicadores demonstram que honramos com isso e muito mais.\nChegamos ao quarto ano de nossa gestão com um balanço satisfatório daqueles\ncompromissos firmados com a população em 2022. Das 476 propostas apresentadas,\njá contabilizamos até julho de 2026, 418 propostas realizadas ou\nem execução, que representam mais de 88% e, até o final deste\nano, esperamos ultrapassar a marca de\n93% de realização. Isso sem contar\nos inúmeros novos projetos e\nações que foram incorporadas\nao longo do nosso mandato.\nNossa gestão percorreu e\nassegurou realizações nos\n75 municípios e, através\ndo Sergipe é Aqui, cada\num deles pôde ser a\nCapital de nosso estado\npor um dia.\n2"
+          },
+          {
+            "id": "mesmo-com-tantas-realizacoes-a-comemorar-temos-consciencia-de-que-sergip",
+            "titulo": "Mesmo com tantas realizações a comemorar, temos consciência de que Sergipe ainda tem",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Mesmo com tantas realizações a comemorar, temos consciência de que Sergipe ainda tem\nmuito a conquistar e é para seguir avançando, transformando a vida da população, que\nfirmamos os 55 compromissos de Governo que deverão nortear a nossa próxima gestão.\nEstes compromissos não representam um balanço de nossa trajetória até aqui e de tudo\ndaquilo que foi alcançado, e sim um pacto com o futuro de Sergipe. Cada um deles\nrepresenta um eixo de atuação concreto, construído a partir do que aprendemos governando,\ndo que ouvimos percorrendo os 75 municípios, das demandas de quem trabalha, de quem\nestuda, de quem empreende, de quem cuida da família e sonha com um estado ainda\nmelhor. Esses eixos que apresentamos a seguir contemplarão ações e entregas efetivas\nque serão apresentadas em materiais temáticos ao longo dos próximos dias.\nAcredito que governar é um ato de responsabilidade contínua. Não basta começar bem, é\npreciso ter coragem para aprofundar o que funciona, humildade para corrigir o que precisa\nmelhorar e visão para seguir preparando o Estado para os desafios que ainda estão por vir.\nÉ com essa convicção que apresento, neste caderno, os compromissos que representam\no nosso Programa de Governo para continuar transformando Sergipe e a vida das pessoas\npara melhor!\n\nFabio Mitidieri\n\n\t\tGovernador\n\nJeferson Andrade\n\n\t\tVice-Governador\n\n3"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nA coligação Sergipe Cresce com Você apresenta neste documento as diretrizes gerais\nque servirão de base para consolidação do Programa de Governo 2027 a 2030. É\njustamente o Programa de Governo que irá nortear, de forma responsável e transparente,\no desenvolvimento de Sergipe nos próximos quatro anos; mas é preciso fazê-lo com a\nresponsabilidade de pensar horizontes que expressem nosso compromisso com esta e com\nas futuras gerações. Daí a importância de diretrizes respaldadas na experiência acumulada\nna trajetória do primeiro mandato e na compreensão dos desafios a serem enfrentados.\nEste documento tem como ponto de partida o balanço da execução do Programa de Governo\napresentado em 2022 e do Planejamento Estratégico da gestão estadual. Uma candidatura\nnova é uma página em branco, mas uma candidatura à reeleição como a do governador\nFábio Mitidieri, deve partir sempre das realizações e, sobretudo, das entregas que ainda\nseguem em execução. A elas se somam novos compromissos capazes de acelerar o\nprocesso de desenvolvimento econômico, humano e social de Sergipe.\nSerá preciso avançar ainda mais rumo a um futuro que vai exigir de nós, cada vez mais:\ninovação, criatividade, empreendedorismo e respeito aos direitos de cidadãos e cidadãs de\nnosso estado.\nO Programa de Governo apresentado a seguir procurou reunir os principais compromissos,\ndispostos de maneira mais abrangente em cada área para que no diálogo com as lideranças\ne com a população possam ser desdobrados em ações estratégicas com o foco no resultado\npara as sergipanas e os sergipanos. É uma primeira tradução de um processo dinâmico,\nplural, democrático e aberto, que desejamos manter com a sociedade, para que possamos\ntorná-lo o ponto de partida para a elaboração do Planejamento Estratégico de nosso próximo\nmandato. Portanto, trata-se de um documento preliminar a ser utilizado como referência\nnos debates com a população do nosso estado.\n\n4"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nAGRICULTURA, PECUÁRIA E PESCA\n\n____________________________________________ 10\n\nASSISTÊNCIA SOCIAL E COMBATE À POBREZA\n\n______________________________\n\n11\n\nCIÊNCIA, TECNOLOGIA E INOVAÇÃO ____________________________________________ 12\nCULTURA E SERGIPANIDADE\n\n___________________________________________________ 12\n\nDESENVOLVIMENTO ECONÔMICO\n\n_____________________________________________ 14\n\nDIREITOS HUMANOS __________________________________________________________ 16\nEDUCAÇÃO\n\n_________________________________________________________________ 18\n\nEMPREGO, RENDA E EMPREENDEDORISMO\nESPORTE E LAZER\n\n_____________________________________ 19\n\n__________________________________________________________ 20\n\nGOVERNANÇA ESTRATÉGICA E GESTÃO FISCAL DO ESTADO _______________________ 22\nHABITAÇÃO\n\n_________________________________________________________________ 23\n\nINFRAESTRUTURA\nJUVENTUDE\n\n__________________________________________________________ 23\n\n_________________________________________________________________ 24\n\nMEIO AMBIENTE, SUSTENTABILIDADE E CLIMA\nMULHERES\n\n______________________________ 25\n\n_________________________________________________________________ 26\n\nPRIMEIRA INFÂNCIA\n\n__________________________________________________________ 26\n\nPROTEÇÃO ANIMAL\n\n__________________________________________________________ 27\n\nSAÚDE ________________________________________________________________________ 27\nSEGURANÇA ALIMENTAR E NUTRICIONAL\n\n_____________________________________ 29\n\nSEGURANÇA HÍDRICA E SANEAMENTO\n\n_____________________________________ 29\n\nSEGURANÇA PÚBLICA __________________________________________________________ 30\nSISTEMA DE JUSTIÇA __________________________________________________________ 31\nTRANSPARÊNCIA E CONTROLE SOCIAL\nTURISMO\n\n_____________________________________ 31\n\n_________________________________________________________________ 32\n\nVALORIZAÇÃO DE SERVIDORES(AS) PÚBLICOS E PREVIDÊNCIA\n\n5\n\n________________ 33"
+          },
+          {
+            "id": "perspectivas-para-o-novo-ciclo",
+            "titulo": "PERSPECTIVAS PARA O NOVO CICLO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PERSPECTIVAS PARA O NOVO CICLO\nECONÔMICO DE SERGIPE\nSergipe passou a apresentar, a partir de 2023, sinais consistentes de recuperação de sua\natividade econômica e do mercado de trabalho, após um longo período de baixo dinamismo\neconômico, iniciado em meados da década de 2010.\nO ciclo econômico que agora se fortalece é fruto, também, dos esforços do Estado na\ninclusão social, no combate à pobreza e na geração de emprego ao longo dos últimos anos,\ncriando a base necessária para que Sergipe possa vivenciar esse cenário promissor.\nImpulsionado por essas ações, o crescimento do PIB voltou a acompanhar a retomada\nda economia brasileira, enquanto a expansão do emprego formal e da renda sinaliza uma\nmudança importante em relação ao período anterior. Os indicadores recentes sugerem que\no estado voltou a reunir condições mais favoráveis para ampliar investimentos, fortalecer\nsua estrutura produtiva e construir um novo ciclo de desenvolvimento.\nO novo contexto também criou condições para ampliar os investimentos públicos em\ninfraestrutura urbana e produtiva, e a continuidade dos investimentos em logística,\nmobilidade, saneamento, infraestrutura energética e digital poderá elevar a competitividade\nda economia estadual, fortalecendo sua capacidade de atrair investimentos privados.\nAo mesmo tempo, abre-se a oportunidade de impulsionar uma estratégia de diversificação\nprodutiva, apoiando setores capazes de ampliar a geração de emprego e renda, como a\nconstrução civil, o turismo, a agropecuária e a agricultura familiar, o complexo da saúde,\na educação, a economia digital e os serviços intensivos em conhecimento, levando\no desenvolvimento econômico e social para todo o território estadual, capital, região\nmetropolitana e interior.\nA consolidação dessas atividades será impulsionada pela capacidade de articular\ninvestimentos públicos e privados, fortalecer o ambiente de inovação e ampliar a qualificação\nda força de trabalho.\nO principal vetor desse novo momento é, sem sombra de dúvidas, a retomada dos\ninvestimentos da Petrobras em nosso estado. Depois de um prolongado processo de\ndesmobilização iniciado em 2016, a empresa voltou a identificar Sergipe como uma de suas\n6"
+          },
+          {
+            "id": "mais-importantes-fronteiras-de-expansao-da-producao-nacional-de-petroleo",
+            "titulo": "mais importantes fronteiras de expansão da produção nacional de petróleo e gás natural,",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "mais importantes fronteiras de expansão da produção nacional de petróleo e gás natural,\ncom potencial de produzir efeitos estruturantes sobre a economia sergipana nas próximas\ndécadas.\nA definição dos investimentos do Sergipe Águas Profundas (Seap I e Seap II), acompanhada\nda contratação e do início da implantação do gasoduto destinado ao escoamento da nova\nprodução, representa um marco para a economia estadual que apresenta impactos que\njá estão acontecendo nesse momento. A esses projetos soma-se a decisão de reativar a\nFábrica de Fertilizantes Nitrogenados (Fafen), recolocando Sergipe na estratégia nacional\nde produção de fertilizantes.\n\nAo mesmo tempo, a experiência internacional e brasileira demonstra que o desenvolvimento\nsustentável não pode estar apoiado em um único setor, por mais dinâmico que ele seja.\nO novo ciclo de investimentos em petróleo e gás deve ser compreendido como uma\noportunidade para impulsionar uma transformação mais ampla da estrutura produtiva\nestadual.\nO desafio consiste em utilizar essa nova base de investimentos para fortalecer a\ncapacidade tecnológica de Sergipe, ampliar suas cadeias produtivas, estimular a inovação,\nelevar a qualificação da força de trabalho e criar condições para o desenvolvimento de\nnovos segmentos associados à economia digital, às energias renováveis, aos serviços\ntecnológicos, ao turismo, ao complexo da saúde e à agroindústria. É a capacidade de\ntransformar a riqueza gerada pelos recursos naturais em uma economia mais diversificada,\ninovadora e intensiva em conhecimento que definirá a sustentabilidade desse novo ciclo de\ncrescimento.\nAinda que as perspectivas para os próximos anos se situem em um ambiente internacional\ndesafiador, com a continuidade da guerra na Ucrânia, os conflitos no Oriente Médio, a\nreorganização da geopolítica mundial e das cadeias globais de produção, a transição\ndemográfica e o avanço acelerado da inteligência artificial e da digitalização da economia\ndeverão influenciar os fluxos de comércio, investimento e inovação. Dessa forma, a transição\npara uma economia de baixo carbono abre novas oportunidades para países e regiões\ncapazes de combinar infraestrutura, capacidade institucional, inovação e qualificação\nprofissional.\n\n7"
+          },
+          {
+            "id": "nesse-cenario-de-profundas-transformacoes-sergipe-podera-beneficiar-se-t",
+            "titulo": "Nesse cenário de profundas transformações, Sergipe poderá beneficiar-se tanto da",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Nesse cenário de profundas transformações, Sergipe poderá beneficiar-se tanto da\nexpansão de sua base energética quanto das oportunidades associadas à transição verde\ne à economia digital, desde que consiga construir uma estratégia de desenvolvimento capaz\nde integrar esses diferentes vetores.\nSergipe parece reunir, neste momento, um conjunto de condições que há poucos anos\ndificilmente estariam presentes de forma simultânea: recuperação da atividade econômica,\nretomada dos investimentos públicos, reorientação da estratégia da Petrobras para o\nestado, perspectivas favoráveis para a cadeia de petróleo e gás, reativação da produção\nde fertilizantes e novas possibilidades abertas pela transição energética e pela revolução\ndigital. Soma-se a isso os expressivos investimentos anunciados pelo Governo Federal\nno âmbito do Plano de Aceleração do Crescimento (PAC) e que relevam a importância da\nparceria exitosa estabelecida entre o Governo do Estado, com o governador Fábio Mitidieri\ne a União, com o presidente Lula.\nEsses fatores configuram uma importante oportunidade de realizar uma transformação\nestrutural de grande alcance, um novo ciclo de desenvolvimento para Sergipe, e sua\nconcretização dependerá da capacidade de formular e executar uma estratégia de longo\nprazo que converta esses investimentos em ganhos permanentes de produtividade,\ninovação, diversificação produtiva e inclusão social, permitindo que o estado transforme\nseu potencial em desenvolvimento econômico sustentado e melhoria das condições de vida\nda população.\nÉ justamente a partir dessa percepção de um novo ciclo que inicia e da oportunidade que ele\ntraz que apresentamos a seguir os 55 compromissos da gestão Fábio Mitidieri e Jeferson\nAndrade.\nNosso Programa de Governo está, e seguirá, até o final da nossa Campanha, sendo\naperfeiçoado pelas Câmaras Temáticas, que incluem os melhores pensadores, técnicos\ne lideranças das diversas áreas, com ampla consulta à população nas diversas regiões\ndo estado, pelas redes sociais, nas universidades e demais espaços públicos. Ele será\num guia dinâmico e colaborativo. Estará aberto à contribuição de todas as pessoas que\npensam e querem que Sergipe avance cada vez mais.\nAssim, você é nosso convidado a participar ativamente desse processo.\n\n8"
+          },
+          {
+            "id": "9",
+            "titulo": "9",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "9"
+          },
+          {
+            "id": "agricultura-pecuaria-e-pesca",
+            "titulo": "AGRICULTURA, PECUÁRIA E PESCA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "AGRICULTURA, PECUÁRIA E PESCA\n\n1. Agro Forte e Seguro\nConsolidar uma defesa agropecuária rigorosa, garantindo a sanidade animal e vegetal,\na segurança dos alimentos, a proteção da saúde pública e a competitividade da produção\nagropecuária sergipana. A agilização da regularização fundiária trará segurança jurídica\naos produtores, enquanto uma governança estratégica voltada à captação de recursos\nassegurará a sustentabilidade financeira dessas políticas públicas a longo prazo. As\nreestruturações e o fortalecimento institucional da Emdagro e da Coderse serão fundamentais\npara fortalecer as ações no Agro sergipano.\n\n2. Campo Mais Forte\nFortalecer a agricultura familiar, promover o desenvolvimento do agronegócio com\nsustentabilidade e melhorar as condições de vida no campo, reforçando programas\ncomo o de Aquisição de Alimentos (PAA), Sementes do Futuro, Cadastro da\nAgricultura Familiar (CAF) e Alimentação Escolar (PNAE), assim como consolidar\nações de fomento à pesca e aquicultura para ampliação da produção e geração de\nrenda, simplificando processos e fortalecendo pequenos negócios, cooperativas e\nagroindústrias. Implementar e consolidar o Programa Sertão Vivo, em parceria com\nórgãos de desenvolvimento agrário, abrangendo ações de segurança hídrica e adaptação\nclimática para os municípios sergipanos do semiárido, com foco no acesso sustentável\nà água, na segurança alimentar e na geração de renda para a agricultura familiar.\n\n10"
+          },
+          {
+            "id": "assistencia-social-e-combate-a-pobreza",
+            "titulo": "ASSISTÊNCIA SOCIAL E COMBATE À POBREZA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "ASSISTÊNCIA SOCIAL E COMBATE À POBREZA\n\n3. Assistência Mais Presente\nFortalecer o Sistema Único de Assistência Social (SUAS), especialmente por meio da\nampliação do cofinanciamento estadual e do apoio técnico permanente aos municípios, do\nfortalecimento do CadÚnico e da articulação dos serviços de assistência social executados\nnos Centros de Referência da Assistência Social (CRAS) e nos Centros de Referência\nEspecializado da Assistência Social (CREAS) em todas as áreas.\n\n4. Proteção para Quem Precisa\nCombater a pobreza por meio do fortalecimento e da ampliação dos programas de\ntransferência de renda, como o CMais Inclusão, que concede auxílio financeiro a pessoas\ne famílias em situação de vulnerabilidade social, em diferentes modalidades de benefício,\ncom o objetivo de promover a inclusão social, a segurança alimentar e a melhoria da\nqualidade de vida de mães solo, gestantes, crianças e adolescentes, feirantes, pessoas\nvivendo com HIV/AIDS, entre outros grupos; e o Mão Amiga, que oferece apoio financeiro\ntemporário a trabalhadores e trabalhadoras rurais durante o período de entressafra,\ncontemplando atividades como a pecuária leiteira, o extrativismo da mangaba, a pesca\nartesanal, a citricultura, a cultura da cana-de-açúcar, entre outras.\n\n11"
+          },
+          {
+            "id": "ciencia-tecnologia-e-inovacao",
+            "titulo": "CIÊNCIA, TECNOLOGIA E INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "CIÊNCIA, TECNOLOGIA E INOVAÇÃO\n\n5. Sergipe Mais Inovador\nFortalecer o ecossistema sergipano de Inovação, por meio da criação do modelo de governança\npara o Plano Sergipano de Inteligência Artificial, voltado a garantir ações estratégicas\nde desenvolvimento desta tecnologia na administração pública e na sociedade, e da ampliação\nda oferta de editais de pesquisa e formação de talentos alinhados às cadeias produtivas locais,\nfomentando parcerias público-privadas (PPPs) em CT&I. Promover, também, a regulamentação e\nincentivos para inovação aberta, o crescimento de startups por meio da Fapitec e outras instituições\nde pesquisa, a estruturação de banco de projetos estratégicos para captação de recursos externos\ne integração das agências de fomento, estímulo ao investimento empresarial em P&D e integração\ndo setor privado ao ecossistema de inovação e a criação de um canal oficial para catalogação,\nvalidação e difusão das pesquisas aplicadas.\n\n6. Conexão para o Futuro\nImplementar o Programa de Aceleração Digital - Conecta-SE, que traz em seu escopo a\nimplantação do cinturão digital, que trata sobre a implantação de um anel de alta capacidade\npara distribuição de rede, transporte de dados em municípios com baixa densidade de\ninfraestrutura e habilitação da conectividade universal; ações de transformação digital,\nintegrando serviços, sistemas e bases de dados; letramento digital para servidores e\ncidadãos sergipanos, assim como programas de qualificação profissional voltados para\náreas de tecnologia; e eficiência energética compensatória em resposta ao aumento\npotencial de demanda por energia.\n\nCULTURA E SERGIPANIDADE\n\n7. Cultura Viva\nFortalecer a política estadual de cultura por meio da ampliação dos mecanismos de\nfinanciamento e fomento, com destaque para a Lei Estadual de Incentivo à Cultura,\nassegurando recursos permanentes para o desenvolvimento do setor. Promover a\ninteriorização das ações culturais, garantindo acesso equitativo às políticas públicas em\ntodas as regiões do estado, com valorização do patrimônio cultural material e imaterial, das\nculturas populares, afro-brasileiras, tradicionais e da produção audiovisual. Estruturar o\n\n12"
+          },
+          {
+            "id": "setor-de-patrimonio-cultural-atraves",
+            "titulo": "setor de patrimônio cultural, através",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "setor de patrimônio cultural, através\nda criação Centro Estadual de\nConservação\nPatrimônio\n\ne\n\nRestauro\n\nCultural.\n\nFacilitar\n\ndo\na\n\ngestão dos equipamentos culturais,\natravés de parcerias privadas e/ou\nOSC, simplificar o acesso aos\neditais e investir na formação\nde gestores e agentes culturais,\nbem como em ações de educação\npatrimonial,\n\nconsolidando\n\na\n\ncultura\n\ninstrumento\n\nde\n\ninclusão\nda\n\ncomo\n\nsocial,\n\nidentidade\n\npreservação\nsergipana\n\ne\n\nfortalecimento da economia criativa.\n\n8. Eventos que Movem Sergipe\nImplantar o Circuito de Eventos Regionais, estruturando uma rede permanente de eventos\nde pequeno e médio porte, de caráter cultural, turístico e de entretenimento nas 8 regiões\ndo Estado, com calendário integrado e atuação articulada entre Estado e municípios. A\niniciativa visa descentralizar e interiorizar investimentos em cultura e turismo, fortalecendo a\nidentidade sergipana, ampliando o fluxo turístico ao longo do ano, e impulsionar a economia\ncriativa nos territórios. Os circuitos funcionarão como instrumentos de desenvolvimento\neconômico e social, valorizando a cultura, o patrimônio e as tradições locais, além de gerar\nemprego, renda e oportunidades em toda a cadeia produtiva do turismo e da cultura. Serão\nfortalecidos os eventos âncora (Arraiá do Povo, Verão Sergipe e as vilas temáticas\nda Páscoa, das Crianças e do Natal), já consolidados como marcas institucionais e de\npromoção do destino Sergipe. Com isso, busca-se integrar cultura, turismo, esporte, lazer\ne economia criativa, reduzindo desigualdades regionais e consolidando Sergipe como\nreferência nacional em gestão de eventos públicos e valorização cultural.\n\n9. Patrimônio que Inspira\nConcluir as entregas do Programa Viva-SE com o fortalecimento e ampliação da\ninfraestrutura cultural no estado, que envolve o Museu e o Largo da Gente Sergipana,\n\n13"
+          },
+          {
+            "id": "o-mirante-santo-antonio-a",
+            "titulo": "o Mirante Santo Antônio, a",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "o Mirante Santo Antônio, a\nPinacoteca de Sergipe, as\nadequações de acessibilidade\ne\n\nexpografia\n\ndo\n\nMuseu\n\nHistórico em São Cristóvão,\nna Praça São Francisco, em\nLaranjeiras,\n\nalém\n\ndo\n\nPalácio\n\nMuseu Olímpio Campos, a reforma\nda Biblioteca Pública Epiphânio\nDória, implantação do Museu do\nForró e do Memorial dos Náufragos,\na modernização dos teatros Tobias Barreto, Atheneu e Lourival Baptista, Caminho de\nSanta Dulce, em São Cristóvão e os Memoriais Regionais de Boquim, Campo do Brito,\nJaparatuba, Riachão do Dantas e Porto da Folha. Também integram o Viva-SE os projetos\ndo Vila Vaticano e do Verde Tototó, no Centro Histórico de Aracaju.\n\nDESENVOLVIMENTO ECONÔMICO\n\n10. Capital da Energia\nConsolidar Sergipe como principal hub de gás do país e atrair indústrias intensivas em\nenergia, com a modernização da gestão portuária e integração do porto às cadeias\nprodutivas, fortalecendo também o papel da Sergás, agora novamente sob controle integral\ndo Estado, como polo indutor de desenvolvimento da economia sergipana, assim como a\n\n14"
+          },
+          {
+            "id": "estruturacao-do-fundo-soberano-uma-estrategia-para-gerir-as-receitas-ori",
+            "titulo": "estruturação do Fundo Soberano, uma estratégia para gerir as receitas oriundas do óleo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "estruturação do Fundo Soberano, uma estratégia para gerir as receitas oriundas do óleo\ne gás, sobretudo com o avanço do Sergipe Águas Profundas (Seap). O desafio maior\nserá assegurar que o novo ciclo de petróleo e gás sirva de alavanca para a industrialização\ndiversificada e de alto valor agregado, a inovação, a infraestrutura e a inclusão produtiva,\nindo muito além da simples arrecadação de royalties. “Sergipe não será o ‘Uber’ do gás!”\n\n11. Nova Economia Sergipana\n\nPromover a diversificação da economia sergipana, favorecendo a neoindustrialização, com\nfoco em um maior valor agregado na inovação, na sustentabilidade e na competitividade.\nImplementar uma política estadual de atração de empresas de base tecnológica, transição\nenergética e startups voltadas à pesquisa, desenvolvimento e inovação (PDI) e aos novos\nnegócios. Fomento à instalação de agroindústrias para processamento local e agregação\nde valor, regionalização industrial para descentralizar o crescimento econômico do estado\ne consolidação do Polo de Fertilizantes (indústria química, gás, bioeconomia).\n\n12. Banese do Desenvolvimento\nConsolidar o Banese como o principal agente do crescimento sustentável e inclusivo\ndo Estado de Sergipe, assumindo o compromisso de democratizar o acesso ao crédito,\ndirecionando nossos recursos para transformar realidades. Nossos esforços estarão focados\nem alavancar a infraestrutura turística estadual, financiar projetos habitacionais que tragam\nqualidade de vida às famílias sergipanas, nutrir o ecossistema de inovação tecnológica e\noferecer suporte financeiro robusto aos micro, pequenos e médios negócios locais. Dessa\nforma, o Banese transcende a função de agente financeiro e se firma, também, como o\nprincipal parceiro na construção de um futuro mais próspero para os sergipanos.\n\n13. Atrair para Crescer\nFortalecer a Agência Sergipe de Desenvolvimento (Desenvolve-SE) como principal\ninstrumento de atração de investimentos nacionais e internacionais, inteligência estratégica\ne facilitação de negócios de Sergipe, focada nos investimentos e na estruturação de\nParcerias Público-Privadas (PPPs) e concessões que modernizem a infraestrutura do\nestado. Consolidar, também, a atuação da agência como o elo central entre setor público\ne iniciativa privada, mapeando as vocações econômicas regionais, com forte ênfase no\npotencial de óleo, gás, energias renováveis, base tecnológica e data-centers, turismo\ne agronegócio, e facilitando a jornada do investidor nacional e estrangeiro em Sergipe.\n15"
+          },
+          {
+            "id": "ao-otimizar-os-ativos-do-estado-e-formular-projetos-estruturantes-transf",
+            "titulo": "Ao otimizar os ativos do Estado e formular projetos estruturantes, transformaremos a",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Ao otimizar os ativos do Estado e formular projetos estruturantes, transformaremos a\nDesenvolve-SE em uma ferramenta indispensável para alavancar a competitividade\nsergipana e garantir o desenvolvimento sustentável, gerando emprego e renda de forma\nsólida para a nossa população.\n\n14. Ambiente de Negócios Inteligente\nTransformar os dados empresariais administrados pela Jucese em uma política ativa\nde desenvolvimento econômico, mediante a implantação de um Sistema Estadual de\nInteligência Empresarial capaz de identificar, em tempo real, tendências de abertura e\nfechamento de empresas, setores emergentes, vazios econômicos municipais, concentração\nde atividades, mortalidade empresarial e potencial de formação de cadeias produtivas.\nAmpliar o Sistema de Licenciamento Integrado (SLIN) e o Agiliza-SE para todos os\nmunicípios sergipanos de maior densidade empresarial, integrando de forma definitiva\nprefeituras, Vigilância Sanitária, Meio Ambiente, Bombeiros, Sefaz e demais órgãos,\nde modo que o empresário obtenha registro, alvarás e licenças em fluxo único, digital e\nrastreável. Manter Sergipe entre os estados com menores tempos de abertura de empresas\ne promover a melhoria contínua dos indicadores de ambiente de negócios.\n\nDIREITOS HUMANOS\n\n15. Direitos para Todos\nCriar e implementar a Política Estadual de Direitos Humanos, instrumento de política\npública transversal com diretrizes para promoção, proteção e garantia dos Direitos Humanos\nà população sergipana, em especial aos grupos vulneráveis, garantindo direitos sociais\nalinhados ao Programa Nacional de Direitos Humanos.\n\n16. Envelhecer com Dignidade\nImplantar a Política Estadual de Atenção Integral à Pessoa Idosa, garantindo um\nenvelhecimento ativo, autônomo e digno, articulando ações conjuntas que vão desde o\natendimento humanizado na saúde e o fortalecimento da rede de assistência social, até a\npromoção da acessibilidade urbana e o rigoroso combate a todas as formas de violência\n(física, psicológica e patrimonial), assegurando assim o protagonismo, o respeito aos\ndireitos fundamentais e a plena integração social dessa população.\n16"
+          },
+          {
+            "id": "17-diversidade-com-respeito",
+            "titulo": "17. Diversidade com Respeito",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "17. Diversidade com Respeito\n\nFortalecer as ações voltadas à população LGBTQIAPN+\npara garantir a cidadania plena, a dignidade e o\nrespeito à diversidade sexual e de gênero, por meio\nda intensificação de iniciativas conjuntas do Estado para\naprimorar o acolhimento humanizado na rede pública\nde saúde e de assistência social, fomentar a educação\ninclusiva e o acesso seguro ao mercado de trabalho, além\nde ampliar os mecanismos de prevenção e combate à\nLGBTfobia, assegurando que todas as pessoas vivam e se\nintegrem socialmente livres de qualquer forma de violência\nou discriminação.\n\n18. Inclusão sem Barreiras\nFortalecer e expandir as políticas públicas de inclusão para\nassegurar a independência, o protagonismo e a dignidade das\npessoas com deficiência, intensificando ações focadas no combate direto ao capacitismo,\ncom a criação do selo anti capacitismo, na promoção da acessibilidade universal nos\nequipamentos do Estado, no cumprimento da Lei de Cotas e ampliação da oferta de vagas\nafirmativas e inclusivas pelo GO Sergipe, plataforma de empregabilidade do Governo, e no\napoio e assistência às mães e famílias atípicas.\n\n19. Igualdade em Ação\nPromover a igualdade racial como uma política de Estado estruturante, superando ações\nisoladas e integrando o combate ao racismo de forma transversal a todas as políticas\npúblicas. Para contribuir com a redução das desigualdades históricas, a gestão aprofundará\na Educação para as Relações Étnico-Raciais por meio da expansão do Selo Escola\nAntirracista e cumprimento da Lei n0 10.639, garantindo igualdade de oportunidades e\ncidadania plena para a população negra desde a base escolar. Simultaneamente, o Governo\nfortalecerá a proteção e a valorização dos direitos territoriais e culturais das comunidades\nquilombolas, indígenas e povos tradicionais, implementando ações rigorosas para erradicar\nqualquer forma de discriminação, com atenção especial ao combate ao racismo religioso,\nem todas as esferas e serviços da administração pública.\n17"
+          },
+          {
+            "id": "educacao",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\n20. Educação em Parceria\nFortalecer o regime de colaboração, priorizando o Programa de Apoio aos Municípios\npara a Expansão da Educação Infantil (AMEEI) e o Programa Leitura e Escrita na\nEducação Infantil (ProLEEI), com foco na formação continuada de professores e gestores\nde creches e pré-escolas, além do Programa Estadual de Melhoria e Fortalecimento\ndos Anos Finais, voltado a estudantes do 6º ao 9º ano, implementado em articulação com\nos municípios. Também será criada e implementada a Política Estadual de Educação\nEspecial Inclusiva e fortalecidos os programas Escola Nota 10 e Sergipe no Mundo.\n\n21. Escolas do Futuro\nModernizar a infraestrutura com a criação\ndo\n\nPrograma\n\nEscola\n\nMais\n\nSergipe,\n\ncom a construção de novas escolas e\na continuidade da realização das obras\nde\n\nreforma,\n\nampliação\n\ne\n\nmodernização\n\ndas unidades escolares, incluindo quadras\npoliesportivas, assegurando ambientes mais\nseguros, acessíveis, acolhedores e alinhados\naos padrões de qualidade da educação. As\nnovas\n\nunidades\n\ncontarão\n\ncom\n\nambientes\n\nvoltados à tecnologia, inovação, inteligência\nartificial, robótica, cultura maker e conectividade,\nintegrando o Programa Sergipe Educação 5.0\npara preparar os estudantes para os desafios do\npresente e do futuro.\n\n22. Juventude Preparada\n\nExpandir a educação profissionalizante em tempo integral, a partir da criação e\nimplementação do Programa de Aprendizagem e Inclusão Produtiva dos Jovens\n(JovemTEC), ampliando a oferta de cursos de Educação Profissional e Tecnológica da\n18"
+          },
+          {
+            "id": "rede-estadual-nas-formas-integrada-concomitante-subsequente-e-da-educaca",
+            "titulo": "rede estadual nas formas integrada, concomitante, subsequente e da Educação de Jovens",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "rede estadual nas formas integrada, concomitante, subsequente e da Educação de Jovens\ne Adultos integrada à Educação Profissional (EPT-EJATEC). A iniciativa fortalecerá a\ninserção dos jovens no mercado de trabalho, por meio de programas de aprendizagem,\nmonitoria, estágio e qualificação profissional, alinhados às vocações econômicas de\nSergipe. O programa também contemplará a criação do Centro de Referência em Artes\nda Rede Estadual de Ensino, uma escola de Educação Profissional e Tecnológica\nvoltada à economia criativa, ampliando as oportunidades de formação, inovação e inclusão\nprodutiva para a juventude sergipana.\n\n23. Universidade Estadual de Sergipe\nImplementar a oferta de ensino superior pelo Estado, com a Universidade Estadual\nde Sergipe (Unese), que deverá ter quinze cursos implantados até 2031, instalações\namplas, modernas e seguras. Elaborar e aprovar o Plano de Carreira dos cargos técnicoadministrativos e de magistério da instituição, e realizar, até 2030, o primeiro concurso\npúblico para compor seus quadros. Fortalecer, com a Unese, o Sistema Estadual de\nCiência, Tecnologia e Inovação.\n\nEMPREGO, RENDA E EMPREENDEDORISMO\n\n24. Mais Trabalho e Oportunidades\nValorizar o trabalho, gerar emprego e renda e estimular o empreendedorismo. Como eixo\ncentral dessa estratégia, a inserção da juventude será priorizada por meio da ampliação e do\nfortalecimento do programa Primeiro Emprego, assegurando maior inserção ao mercado\nde trabalho, e da criação de um programa de emprego voltado às pessoas com experiência\nque desejam recolocação profissional, além do cumprimento da Política de Empregabilidade\nInclusiva e o Banco de Talentos Inclusivos dentro do GO Sergipe; fortalecimento da economia\nsolidária e criação do Cinturão\nSergipano de Confecções,\ngerando emprego e renda no\ninterior do estado. Intensificar\nprojetos e criar um ambiente\nfavorável ao desenvolvimento de\nnovos negócios, em parceria com\no Banese.\n19"
+          },
+          {
+            "id": "25-qualificacao-para-crescer",
+            "titulo": "25. Qualificação para Crescer",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "25. Qualificação para Crescer\n\nFortalecer o programa Qualifica Sergipe, ampliando o número de participantes atendidos\ne a oferta de cursos de capacitação técnica alinhados às demandas e vocações do nosso\nmercado de trabalho para impulsionar a inclusão produtiva e elevar a empregabilidade dos\nsergipanos, garantindo que jovens e adultos desenvolvam as competências necessárias\npara acessar oportunidades de renda mais dignas, promovendo a autonomia financeira e a\nredução das desigualdades sociais em todo o território estadual.\n\nESPORTE E LAZER\n\n26. Infraestrutura para o Esporte\n\nAmpliar, modernizar e qualificar a infraestrutura esportiva do Estado, garantindo espaços\nadequados para a prática esportiva, o lazer, a formação de atletas e a realização de eventos,\ncom ações voltadas à melhoria contínua\ndos espaços esportivos de Sergipe.\nPara tal, destaca-se a criação do\nCadastro Estadual dos Equipamentos\nEsportivos e a construção de um\nCentro de Treinamento Esportivo\nMultimodalidades. Esse espaço será\ndestinado à preparação de atletas e\nparatletas\n\nde\n\nestrutura\n\npara\n\nalto\n\nrendimento,\n\ntreinamento,\n\ncom\n\navaliação\n\nfísica, acompanhamento técnico e suporte\nmultidisciplinar, fortalecendo, com isso, a\ncapacidade de Sergipe de sediar grandes\neventos esportivos regionais, nacionais e\ninternacionais. Construir uma Arena Multiuso,\ncom capacidade de recepcionar eventos\nesportivos,\n\nculturais,\n\nde\n\nentretenimento,\n\nentre outros. Estruturar o CPF do Esporte,\nque\n\nsignifica\n\nformalizar\n\numa\n\nestrutura\n\npara recebimento de recursos federais, em\nconsonância com a Lei Geral do Esporte, a partir da criação de conselho, plano e fundo\nvoltado ao fortalecimento do esporte e lazer no estado e municípios.\n20"
+          },
+          {
+            "id": "27-esporte-de-alto-nivel",
+            "titulo": "27. Esporte de Alto Nível",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "27. Esporte de Alto Nível\n\nFortalecer o esporte sergipano de alto rendimento no cenário estadual, regional, nacional e\ninternacional, valorizando atletas, paratletas e federações. Fortalecer o apoio aos atletas,\nparatletas, atletas-guia, surdo atletas e técnicos, por meio da ampliação de programas e do\napoio a federações e associações esportivas, com suporte técnico, jurídico e institucional.\nFortalecer e ampliar a capacidade de Sergipe sediar grandes eventos esportivos regionais,\nnacionais e internacionais. Apoiar o futebol de Sergipe e suas equipes, como elementos\nimportantes na constituição da identidade do povo sergipano. Fortalecer o esporte\neducacional como parte da formação de crianças e jovens, reconhecendo sua capacidade\nde promover educação, disciplina, saúde, convivência, inclusão e oportunidades. Para\ntanto, serão desenvolvidas ações\nvoltadas à ampliação dos programas\ncomo\n\nEscolas\n\nde\n\nEsporte,\n\nJogos da Primavera, Programa\nSeleções e Time Sergipe, garantindo\naperfeiçoamento esportivo e escolar.\n\n28. Esporte para Todos\n\nDemocratizar o acesso ao esporte, ao\nlazer e à atividade física, promovendo\nsaúde, convivência, inclusão social e\nmelhoria da qualidade de vida da população\nsergipana,\n\ncom\n\nações\n\ndesenvolvidas\n\nvoltadas ao fomento de estratégias com\nmunicípios, organizações sociais e parcerias\npúblico-privadas\n\npara\n\natuação\n\nconjunta\n\nna intervenção da atividade física. Para tal, serão desenvolvidas estratégias e ações\npermanentes de esporte, lazer, atividade física, especialmente para pessoas idosas,\npromovendo saúde, autonomia, socialização e qualidade de vida, a partir de projetos em\npraças e povoados, por exemplo, assim como para o desenvolvimento de escolinhas de\nfutebol de base para jovens. Implantar e estruturar a Rede Estadual de Atividade Física\ne Esportiva Inclusiva, articulada entre Estado, Municípios, entidades, escolas, clubes e\ninstituições parceiras, para ampliar o atendimento, a formação e o desenvolvimento de\npessoas com e sem deficiência em Sergipe. Instituir uma política estadual permanente de\npromoção, valorização e desenvolvimento das mulheres no esporte - Esporte Delas.\n21"
+          },
+          {
+            "id": "governanca-estrategica",
+            "titulo": "GOVERNANÇA ESTRATÉGICA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNANÇA ESTRATÉGICA\nE GESTÃO FISCAL DO ESTADO\n\n29. Governo Inteligente\n\nGarantir a excelência e a agilidade na prestação dos serviços públicos por meio da\nmodernização da gestão e de uma governança estratégica integrada com foco no\nplanejamento e monitoramento governamental baseado em evidências e comprometido\ncom os resultados e entregas para a sociedade. A referência para a atuação nos territórios\nserão os Planos de Desenvolvimento Regional, com o fortalecimento dos territórios de\nplanejamento e o planejamento de longo prazo, Sergipe 2050. Fomentar uma cultura de\ninovação institucional e consolidar uma política de transformação digital do Estado para\nmodernizar a administração pública e desburocratizar o atendimento, a partir da digitalização\nintegral dos serviços e consolidação do Portal Único de atendimento ao cidadão e\ncontribuinte, com uso intensivo de novas tecnologias e inteligência artificial, tendo como\npilar central a valorização e a qualificação contínua dos servidores. Paralelamente, a iniciativa\nestabelece um forte compromisso de cooperação técnica com os municípios, fornecendo\ncapacitação, conectividade e soluções compartilhadas para impulsionar a gestão pública\nlocal, garantindo a melhoria contínua dos serviços e a redução das desigualdades regionais.\nO programa Sergipe é Aqui será fortalecido tornando o governo cada vez mais presente e\npróximo de toda a população, em todas as regiões do estado.\n\n30. Decidir com Dados\n\nInstituir uma governança de geodados robusta por meio da implementação e do\nfortalecimento da Infraestrutura Sergipana de Dados Espaciais (ISDE). A sistematização\ne o compartilhamento ordenado das informações geoespaciais de Sergipe elevarão o\npadrão técnico do planejamento governamental, modernizando a máquina pública e\npermitindo respostas mais rápidas, assertivas e integradas aos desafios territoriais, sociais e\neconômicos do Estado. Fortalecer o Observatório de Sergipe e a Rede de Observatórios,\ncom meta de integração de dados e interoperabilidade, fortalecimento das Políticas públicas\ne disseminação de conhecimento.\n\n31. Equilíbrio para Avançar\nConduzir a adaptação do Estado à Reforma Tributária como eixo estruturante da agenda\nfiscal, promovendo a transição ao IBS/CBS, o acompanhamento ativo dos trabalhos do\nComitê Gestor do IBS e o alinhamento do arcabouço normativo e operacional estadual às\nnovas regras do sistema. Manter o equilíbrio das contas públicas e a sustentabilidade da\ndívida, associadas à geração de valor público, à regularidade dos pagamentos e à gestão\n22"
+          },
+          {
+            "id": "ativa-de-caixa-alem-de-aprimorar-o-marco-fiscal-lc-n-397-2023-o-planejam",
+            "titulo": "ativa de caixa, além de aprimorar o marco fiscal (LC nº 397/2023), o planejamento financeiro",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "ativa de caixa, além de aprimorar o marco fiscal (LC nº 397/2023), o planejamento financeiro\nde médio prazo e o monitoramento contínuo da Capag. Adaptar as finanças estaduais\nà economia verde e à transição energética, e avançar a fiscalização tributária de um\nmodelo reativo para a inteligência de dados, com malhas fiscais preventivas, monitoramento\nsetorial e cruzamento em tempo real de informações, reforçando o combate à sonegação\nem articulação com PGE, Ministério Público e forças policiais. Completar a agenda com\na qualidade do gasto público, o fortalecimento das relações federativas, a captação de\nrecursos, a conformidade cooperativa e a educação fiscal.\n\nHABITAÇÃO\n\n32. Casa para Viver\nAmpliar os programas estaduais estruturantes, garantindo a oferta de novas moradias\n(Casa Sergipana), a exemplo do Residencial Parque da Vitória, em Aracaju, a regularização\nfundiária urbana de interesse social (Casa Legal) e a reforma e melhoria de habitações\nprecárias (Novo Lar), com objetivo de reduzir o déficit habitacional e promover o direito\nà moradia digna no estado por meio de uma gestão integrada, baseada em evidências e\nna participação social. O compromisso engloba a formulação de diagnósticos precisos e o\nmapeamento e capacitação de instituições e movimentos sociais, assim como o incentivo à\nestruturação de políticas municipais.\n\nINFRAESTRUTURA\n\n33. Integração que Desenvolve\nImplantar o Arco Metropolitano e a nova entrada da cidade de Aracaju, ampliando a\ncapacidade logística, reduzindo o tráfego de passagem nas áreas urbanas e fortalecendo\na integração da Região Metropolitana de Aracaju, assim como o Quadrilátero Viário (BR101; SE-270 até Lagarto; SE-170, de Lagarto a Itabaiana, e a BR-235), consolidando,\nassim, o que será chamado de Rota do Desenvolvimento: um corredor logístico voltado a\nimpulsionar a competitividade nas regiões, integrar polos produtivos do estado e estimular\no desenvolvimento regional. Será estruturado um novo Sistema de Transporte Público\nIntermunicipal (PDTI), requalificada a rodoviária Governador José Rollemberg Leite\n(conhecida como rodoviária nova) e implantado o VLT na Grande Aracaju, entre São\nCristóvão, Aracaju, Nossa Senhora do Socorro e Laranjeiras.\n\n23"
+          },
+          {
+            "id": "34-infraestrutura-que-transforma",
+            "titulo": "34. Infraestrutura que Transforma",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "34. Infraestrutura que Transforma\n\nFortalecer o programa Acelera Sergipe e o Pró-Rodovias, com uma carteira de projetos\nde infraestrutura e apoio aos municípios. Entregar o Complexo Viário Senadora Maria\ndo Carmo, que liga o corredor Tancredo Neves ao bairro Coroa do Meio, a nova ponte\nAracaju/Barra dos Coqueiros e a obra de requalificação urbana do Bairro Guajará, em\nNossa Senhora do Socorro. Será implantada, ainda, a Adutora do Leite, empreendimento\nestruturante para ampliar a oferta de água, reduzir os impactos da seca e impulsionar o\ndesenvolvimento socioeconômico do Alto Sertão, com a expansão do saneamento rural e o\nfortalecimento de políticas de subsídio social que garantam à população de baixa renda o\nacesso aos serviços de abastecimento de água e esgotamento sanitário.\n\n35. Novo Centro, Nova História\nFomentar\n\no\n\ndesenvolvimento\n\neconômico,\n\nsocial, cultural e turístico do centro de Aracaju\npor meio da Requalificação Urbana, a partir\nda implantação de modelo de governança em\narticulação estratégica com o município e a\nsociedade civil. O Governo do Estado intensificará\nos investimentos na preservação e modernização\ndo\n\npatrimônio\n\nhistórico,\n\nna\n\nadequação\n\nda\n\ninfraestrutura e no estímulo ao comércio local, à\neconomia criativa, ao turismo e à ampliação da\nhabitação na região, a partir da criação de novos\nequipamentos culturais e da implantação do centro\nadministrativo do Estado na região, visando resgatar\na vitalidade do coração da capital sergipana,\ntransformando o espaço central em um ambiente\natrativo, dinâmico e gerador de oportunidades, cultura\ne renda para a população.\n\nJUVENTUDE\n\n36. Juventude Protagonista\n\nImplementar de forma coordenada as ações transversais de formação, qualificação e\ninserção produtiva nas áreas de tecnologia, inovação e economia digital, promovendo\n24"
+          },
+          {
+            "id": "hackathons-laboratorios-de-inovacao-capacitacoes-e-parcerias-com-institu",
+            "titulo": "hackathons, laboratórios de inovação, capacitações e parcerias com instituições de ensino",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "hackathons, laboratórios de inovação, capacitações e parcerias com instituições de ensino\nsuperior e centros de pesquisa, além de ampliar o acesso ao atendimento psicológico e\npsicossocial na rede pública. Criar, também, o Pacto Estadual pela Juventude Segura,\ncom ações integradas de prevenção à violência e redução da mortalidade e letalidade\njuvenil, especialmente da juventude negra, articulando políticas de segurança pública,\neducação, assistência social, cultura, esporte e cidadania.\n\nMEIO AMBIENTE, SUSTENTABILIDADE E CLIMA\n\n37. Natureza Protegida\n\nPromover a conservação da biodiversidade e a restauração dos ecossistemas por meio da\nproteção e ampliação das Unidades de Conservação, recuperação de áreas degradadas,\nrecomposição da vegetação nativa e fortalecimento das ações de preservação dos biomas\nestaduais e a gestão integrada dos resíduos sólidos por meio do fortalecimento da coleta\nseletiva, da logística reversa, dos consórcios, estimulando o protagonismo da juventude\ne fortalecendo os espaços de diálogo e controle social. Criar Centros de Educação\nAmbiental nos territórios do Estado, fortalecendo este instrumento de formação cidadã e\npromoção da sustentabilidade, incentivando a participação ativa da sociedade na proteção\ndos recursos naturais e na construção das políticas públicas ambientais.\n\n38. Licenciamento sem Burocracia\n\nModernizar e desburocratizar o licenciamento ambiental e sanitário, com foco inicial em\ncadeias tradicionais, como a carcinicultura, as queijarias artesanais e as casas de farinha,\nintegrar ao Portal Único o Balcão Único Agroambiental e a emissão de licenças digitais\npor adesão e compromisso. Essa integração sistêmica substituirá a lógica punitiva por uma\ngovernança ágil e orientadora, garantindo a regularização simplificada, a redução de custos\npara o pequeno produtor e a segurança jurídica necessária para gerar renda em harmonia\ncom a preservação ambiental.\n\n39. Economia Verde\n\nPromover a transição para uma economia verde por meio do incentivo a atividades\nprodutivas sustentáveis, da valorização dos serviços ecossistêmicos e da adoção de\ninstrumentos econômicos voltados à conservação ambiental. A diretriz busca fomentar\niniciativas como o Pagamento por Serviços Ambientais (PSA), o mercado de carbono e\noutras soluções inovadoras que conciliam desenvolvimento econômico, inclusão social e\nuso sustentável dos recursos naturais, contribuindo para uma economia mais resiliente e\nde baixo carbono.\n25"
+          },
+          {
+            "id": "mulheres",
+            "titulo": "MULHERES",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "MULHERES\n\n40. Proteção e Autonomia\nCombater as violências contra as mulheres a partir de uma gestão transversal, baseada\nem evidências e amparada por uma sólida governança colaborativa entre o Estado, os\nmunicípios, o Sistema de Justiça e a sociedade civil, intensificando o enfrentamento à\nviolência de gênero por meio da interiorização e integração da rede de proteção, aliadas\na ações educativas voltadas para a cultura de paz. Estrategicamente, o Estado também\nimpulsionará a autonomia socioeconômica feminina, fomentando a qualificação profissional,\no empreendedorismo e a inclusão produtiva, ao mesmo tempo em que estimula a presença\ndas mulheres em espaços de poder e decisão. Assegurando o direito à saúde integral\nem todas as fases da vida, as políticas públicas adotarão uma abordagem estritamente\ninterseccional, atendendo às necessidades específicas de mulheres do campo, negras,\nindígenas, quilombolas, com deficiência, idosas, jovens e LGBTQIAPN+, consolidando,\nassim, um cenário de efetiva equidade, respeito e justiça social em todo o território sergipano.\n\n41. Mulheres do Futuro\nO Programa Mulheres do Futuro se consolidará como estratégia para inserir e fortalecer\na presença feminina no ecossistema de tecnologia, ciência e inovação, por meio da\nimplantação do Programa Mulheres na Ciência, Pesquisa e Inovação, combinado à\nconcessão de bolsas de formação em áreas estratégicas da economia do conhecimento.\nPara converter essa inserção em negócios e cooperação, será criada a Rede Sergipana de\nMulheres Empreendedoras em Inovação, conectando talentos e fortalecendo o mercado\nlocal, além de um programa de mentoria voltado à liderança tecnológica feminina, que\nassegure suporte e orientação para essas profissionais assumirem cargos de destaque e\ndecisão na nova economia.\n\nPRIMEIRA INFÂNCIA\n\n42. Começo de Vida Melhor\nFortalecer programas estratégicos de valorização da primeira infância, como o Ser\nCriança, articulando entre as áreas de saúde, educação e assistência social, ampliando a\nRede de Atenção Materno-Infantil e as políticas de transferência de renda e segurança\nalimentar para famílias em situação de vulnerabilidade. Em paralelo, o Governo\n\n26"
+          },
+          {
+            "id": "intensificara-o-regime-de-colaboracao-com-os-municipios-para-a-expansao",
+            "titulo": "intensificará o regime de colaboração com os municípios para a expansão da oferta de",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "intensificará o regime de colaboração com os municípios para a expansão da oferta de\nvagas em creches, por meio do programa AMEEI, assegurando que todas as crianças\nsergipanas tenham acesso à proteção social, a cuidados em saúde e a um ambiente\neducacional estimulante desde os primeiros anos de vida. Criar o Sistema Estadual de\nAcompanhamento da Primeira Infância.\n\nPROTEÇÃO ANIMAL\n\n43. Respeito aos Animais\nConsolidar uma política ampla e descentralizada de defesa e bem-estar animal,\nreconhecendo a proteção à vida como um valor essencial da sociedade, garantindo que o\natendimento chegue aos animais em situação de rua e às famílias de baixa renda, por meio\nde expansão dos projetos de cirurgias veterinárias e atendimento clínico em todo o território.\nEsse esforço assistencial será coroado com a implantação de uma Unidade Pública\nVeterinária em Sergipe, alinhado a um programa permanente de ações socioeducativas\nde conscientização ambiental, prevenção à violência animal e fomento a uma cultura de\nrespeito e cuidado.\n\nSAÚDE\n\n44. Saúde Mais Forte\nRealizar a reestruturação do Hospital de Urgências de Sergipe (HUSE), com ampliação\nda capacidade hospitalar do estado: construir o Hospital 60+, em Aracaju, para atendimento\nàs pessoas idosas, fortalecer a Rede Materno-Infantil com a conclusão da nova Maternidade\nNossa Senhora de Lourdes, garantindo atendimento mais ágil, humanizado e resolutivo em\ntodas as regiões, e expansão da rede de atendimento em saúde mental. Consolidar a Política\nEstadual de Saúde Digital, por meio da implantação do Prontuário Eletrônico Estadual\nIntegrado, das teleconsultas, telelaudos e teleinterconsultas, criação do aplicativo da\nSaúde e integração entre atenção primária, hospitais e serviços especializados, ampliando\nexames, consultas e linhas de cuidado para toda a população, sobretudo idosos, pessoas\ncom doenças crônicas, pacientes oncológicos, saúde da mulher e do homem e saúde bucal.\nModernizar a assistência farmacêutica, a regulação e os serviços do SAMU, tornando o\nsistema mais eficiente. Ampliar o cofinanciamento da atenção primária, em parceria com\nos municípios, e fortalecer a linha de cuidado oncológico por meio de uma rede integrada,\n27"
+          },
+          {
+            "id": "tendo-o-hospital-do-cancer-concluido-e-operando-como-referencia-em-alta",
+            "titulo": "tendo o Hospital do Câncer concluído e operando como referência em alta complexidade,",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "tendo o Hospital do Câncer concluído e operando como referência em alta complexidade,\natuando com foco na agilidade e na descentralização do atendimento e na ampliação de\ntratamentos, e fortalecimento da assistência de saúde ao servidor por meio do Ipesaúde.\n\n45. Opera Sergipe\nAmpliar e fortalecer o Programa Opera Sergipe, ampliando tipos de cirurgias eletivas\nofertadas e quantidade de vagas, assim como aprimorando a logística de busca ativa,\ntriagem\n\ne\n\nexecução\n\ndos\n\nprocedimentos,\n\npromovendo maior interiorização dos serviços\npara aproximar o atendimento dos cidadãos\nem seus próprios territórios. Essa medida visa\nnão apenas zerar a demanda reprimida histórica\npor cirurgias eletivas, mas também otimizar a\nregulação e o fluxo da rede estadual, assegurando\num serviço público ágil, transparente e resolutivo\npara toda a população.\n\n46. Rede de Saúde Moderna\nAvançar com o Programa de Fortalecimento das\nRedes de Inclusão Social e de Atenção à Saúde\n(Proredes), principal programa estruturante e de\nmodernização da saúde pública do Estado de Sergipe,\nintensificando os investimentos na modernização da\ninfraestrutura hospitalar e na entrega de equipamentos\nestratégicos, garantindo uma rede de atenção integrada e bem estruturada. Com\nessa expansão, busca-se descentralizar o acesso a diagnósticos e tratamentos\nespecializados, assegurando um atendimento de alta resolutividade, contínuo e humanizado\npara os cidadãos, reduzindo a necessidade de deslocamentos e fortalecendo a saúde\npública em todas as regiões de Sergipe. Implantar diretrizes de monitoramento sistemático e\navaliação de desempenho das Organizações Sociais contratadas pelo Governo do Estado.\nA gestão estadual aperfeiçoará os instrumentos de controle interno, cruzamento de dados e\nprestação de contas, incorporando também a percepção da sociedade e dos conselhos de\nsaúde na avaliação dos serviços, assegurando que a parceria com o terceiro setor esteja\nestritamente subordinada ao interesse público, à racionalidade orçamentária e à oferta de\numa saúde pública digna e resolutiva.\n28"
+          },
+          {
+            "id": "seguranca-alimentar-e-nutricional",
+            "titulo": "SEGURANÇA ALIMENTAR E NUTRICIONAL",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA ALIMENTAR E NUTRICIONAL\n\n47. Sergipe Sem Fome\nFortalecer e ampliar o programa Sergipe Sem Fome,\nexpandindo o Prato do Povo para mais municípios\ndo estado, o atendimento nos restaurantes populares,\nalém de fortalecer os equipamentos estruturantes\nda rede estadual de segurança alimentar, bancos\nde alimentos, centrais de distribuição e cozinhas\ncomunitárias, para reduzir a insegurança alimentar em\ntodo o território sergipano.\n\nSEGURANÇA HÍDRICA E SANEAMENTO\n\n48. Água para o Futuro\nPromover a gestão sustentável dos recursos hídricos e fortalecer a capacidade de adaptação\nàs mudanças climáticas, por meio da implementação do Plano Estadual de Segurança\nHídrica, modernização dos sistemas de monitoramento, conservação das bacias\nhidrográficas e prevenção de eventos extremos. A diretriz visa garantir a disponibilidade\ne a qualidade da água, aumentar a resiliência dos ecossistemas e das comunidades e\ncontribuir para o desenvolvimento sustentável do Estado diante dos desafios climáticos,\na exemplo do fenômeno El Niño, assim como o fortalecimento da governança ambiental\ne climática por meio da integração entre os órgãos públicos, municípios, instituições de\npesquisa, setor produtivo e sociedade civil, promovendo uma gestão participativa, eficiente\ne transparente.\n\n49. Saneamento para Todos\nAcelerar a universalização dos serviços de abastecimento de água e esgotamento\nsanitário, reafirmando o compromisso com o cumprimento de metas contratuais e\na expansão da cobertura tanto nas sedes municipais quanto em comunidades rurais e\npovoados historicamente desassistidos. Fortalecer os mecanismos de controle,\nregulação e transparência das operações integradas, assegurando que a transição e\na gestão dos serviços de água e esgoto resultem em benefícios reais para a população,\ngarantindo a execução acelerada dos investimentos previstos e o cumprimento das metas\n29"
+          },
+          {
+            "id": "contratuais-viabilizando-a-melhoria-continua-do-abastecimento-e-a-amplia",
+            "titulo": "contratuais, viabilizando a melhoria contínua do abastecimento e a ampliação da coleta",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "contratuais, viabilizando a melhoria contínua do abastecimento e a ampliação da coleta\ne tratamento de esgoto, resultando em segurança hídrica, promoção da saúde pública,\npreservação ambiental e dignidade para todos os sergipanos.\n\nSEGURANÇA PÚBLICA\n\n50. Segurança Inteligente\nAmpliar a estratégia de uso da Inteligência na Segurança Pública, por meio de\ninvestimentos em tecnologia, inteligência policial e integração institucional, do fortalecimento\ndo Centro Integrado de Operações em Segurança Pública (CIOSP), recentemente\nmodernizado, expandindo o videomonitoramento inteligente, a utilização de inteligência\nartificial, análise preditiva e integração dos sistemas das forças de segurança. Também\nserão ampliados os investimentos em tecnologia, compartilhamento de informações\ne qualificação dos profissionais, consolidando uma atuação cada vez mais preventiva,\neficiente e baseada em evidências. Fortalecer a integração entre Polícia Militar,\nPolícia Civil, Corpo de Bombeiros Militar, Polícia Científica e demais instituições,\npromovendo o compartilhamento de informações, ampliação das operações integradas e\naperfeiçoamento de protocolos de atuação conjunta.\n\n30"
+          },
+          {
+            "id": "sistema-de-justica",
+            "titulo": "SISTEMA DE JUSTIÇA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "SISTEMA DE JUSTIÇA\n\n51. Justiça Mais Eficiente\nModernizar e fortalecer as políticas de Justiça e Defesa do Consumidor, promovendo um\nsistema prisional mais seguro, eficiente e humanizado. Consolidar o Plano Pena Justa\ncomo política permanente de Estado, com modernização da infraestrutura, fortalecimento\nda inteligência penitenciária, qualificação contínua da Polícia Penal, gestão baseada\nem resultados, ampliação das alternativas penais e expansão das ações de educação,\nprofissionalização e reintegração social, incluindo o apoio aos egressos, visando a redução\nda reincidência. Na Defesa do Consumidor, fortalecer o Procon Sergipe por meio da\ntransformação digital dos serviços e da ampliação do atendimento descentralizado nos\npolos do Ceac, garantindo maior acesso, agilidade e proteção aos consumidores.\n\nTRANSPARÊNCIA E CONTROLE SOCIAL\n\n52. Transparência que Gera Confiança\n\nConsolidar uma cultura de transparência ativa e responsabilidade fiscal, com prestação\nde contas clara, tempestiva e governança orientada a resultados mensuráveis. Fortalecer,\nainda, a gestão pública por meio da transformação digital, com automação de processos,\nintegração de sistemas e controle em tempo real da execução orçamentária, reduzindo\ninconsistências e ampliando a agilidade e precisão na aplicação dos recursos. Na área\neducacional, promover a formação cidadã e o protagonismo estudantil, por meio de\nprojetos participativos que estimulam pensamento crítico, liderança e responsabilidade\nsocial. Por fim, fortalecer a atividade correcional como instrumento preventivo e estratégico\nde governança, atuando no mapeamento de riscos, padronização de procedimentos e\nprevenção de ilícitos, de modo a proteger o patrimônio público e assegurar eficiência,\nintegridade e equidade na gestão.\n\n31"
+          },
+          {
+            "id": "turismo",
+            "titulo": "TURISMO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO\n\n53. Turismo que Gera Desenvolvimento\nTransformar o potencial turístico de Sergipe em um vetor central de desenvolvimento\neconômico mediante a execução estratégica do Plano Estadual de Turismo. A gestão\nfortalecerá o programa ‘Sergipe Portas Abertas’, consolidando o Estado como polo de\natração de grandes eventos e negócios por meio de incentivos financeiros direcionados,\nalém de fomentar a estruturação de novos roteiros e a interiorização da atividade turística.\n\n54. Destino Sergipe\nElevar a competitividade do ‘Destino Sergipe’ por meio de investimentos integrados em\ninfraestrutura, segurança turística, qualificação profissional e campanhas assertivas de\npromoção e marketing. Paralelamente, o Estado atuará de forma incisiva para expandir a\nconectividade aérea, negociando a ampliação estrutural da malha nacional e a captação de\nrotas internacionais diretas.\n\n32"
+          },
+          {
+            "id": "valorizacao-de-servidores-as",
+            "titulo": "VALORIZAÇÃO DE SERVIDORES(AS)",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "VALORIZAÇÃO DE SERVIDORES(AS)\nPÚBLICOS E PREVIDÊNCIA\n\n55. Servidores Valorizados\nValorizar os servidores públicos estaduais, por meio do fortalecimento das carreiras,\nda qualificação contínua, do reconhecimento do desempenho e da promoção de um\nambiente de trabalho saudável, colaborativo e voltado para resultados, reconhecendo que\na excelência dos serviços públicos prestados à população sergipana depende de equipes\nqualificadas, valorizadas, comprometidas e motivadas. O Governo também promoverá\na renovação responsável dos quadros por meio da realização de concursos públicos,\nespecialmente nas áreas essenciais. Fortalecer a Escola de Governo como instrumento\nestratégico de formação e aperfeiçoamento permanente; e investir na modernização dos\nserviços de atendimento ao cidadão e da gestão patrimonial, tornando a administração\npública cada vez mais eficiente, inovadora e centrada nas necessidades da população de\nSergipe. Modernizar e fortalecer o IPESaúde e sua rede assistencial própria. Proporcionar\numa vida plena ao servidor inativo do Estado, com o fortalecimento do Sergipeprevidência.\n\n33"
+          },
+          {
+            "id": "34",
+            "titulo": "34",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "34"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "9127a9b3cf1801320ac691ba3bc708d47d774f981c7fe96e97538ddb705d6b45"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "c4dc64ae8c9b2ae844e0bfbbbd0e42e4f618ee03d369781959efe2e342b97706"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "6931f8940960cddaa6142df56d125bb02d0bea8b104c6f6e4ff60f73e9cfda46"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "0ebac3606c0b03a2bde86545601a2d4177260d2b5df710c91dbe66b017e61621"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "60be148e30c006003d6f21d356c399ed9ada5795827e1bf11b5ddf9d93a504b0"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "8119f4da93b255cb12f2f3e879b266ededc3bffef87745aef07603b1b412bc41"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "443ce7da7eba50d9aebb2e857b5830aff30aa0443014a9eb78ace6dea03cce8f"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "91140123c98a3b3432394fccf572843ea8567fe410eb8f78f153041e5c55a868"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "d62a739aa4331df319eba4d9020f8dc27d259c9b5fffbb85f8e17216ad0ed571"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "7c8183ef12846cb6196b64ad051c6f3e8bb8c3355a2a5a71cc0bac1eb7d6ad9c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "bf2331cd9168efbc931d9f781e4e1b7e804421160d863430536ffd1d7530d834"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a5f7733d624ab8e7c4d409a24ed3f92fa860fecbd2d282d908a4d9dc5d370c59"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "cce046462a09b1053cbaa3d0991bf6ec850520d5a9999f9e507a49a9fbfe9086"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "6df21db7019242347ee20d6c9ee5bd219a649b39acbadb4f8bad16576e48c37a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "977cd63346268f00a691947c0be76c81e7d70d9fb70f48c30fbf81a753eb7d98"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "733ff9ab4865500ac6cbd4d5d1b639d930e1790ad205f6c09ed0a74a6143aee4"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "583133ec795e95c6921b9cf3fb9559a8e1654518ba78795ae5b097a80a0c5dfa"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "d1ed691ee57ecd64d54b3a6c07805156aa7fd556f8118f2e758abd3e1a874ee9"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "f6c39406777e44099912d8dfde9df226cbc9ebe5142905a1aad6eda8531a4341"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "0dc6d72cfabeaaf61cae378279af926604b4721c978267bebc2c68f014f783f4"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "e5d165b420c49df73e5ca71e861bf37077b342973a9302b7f1293fcf1fee5f2d"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "d88a42f362eb7eaa7138fdd6baa331c8a84d215ba4591326700ce2286b4a78ec"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "8b34648ed9869951ec3a33773eca1e89082e2097747120d705d8a85ebefe649f"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "558521b67094d17978460b6d0f69ba3629d7237aebbd1270b4736942a5db1603"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "1ed0f9c3fb77b6f3b4950963f8442c9a50801449c7a6c49f85ef2ae4604a7a8c"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "2ba76048d14192f578a022fa48fc1cfa68e2c148115b4e2d4ba911eaf9e68f3b"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "6321a62636dd3f8a618704443489f92b13c1b62dd0a9eb97f7f875e2ae1de7a0"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "efe93f23664d14988615ab556e3df86c51257b8107fad8564fd7e8a7709f9b96"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "967ff33b9c4bf509f35b3366af50746388583b95fb5374ae52b8fd80711cd5a3"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "a0f2b5610c8258b9126c28d9ecfe02de29a7b137ceb22a70e9c6b6b7281532ed"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "5bebe26f82a4fcd3ea0a453190f0f86402c3e81d1f30697448b0ff9d92d7d0ce"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta diretrizes gerais para consolidar o Programa de Governo 2027 a 2030 como base para a gestão estadual. Na agricultura familiar, o programa prevê fortalecer o Programa de Aquisição de Alimentos (PAA) no território sergipano. Na educação profissional, o programa prevê ampliar cursos alinhados às demandas e às vocações do mercado de trabalho sergipano. Na infraestrutura escolar, o programa propõe construir novas escolas por meio do Programa Escola Mais Sergipe. Na saúde digital, o programa prevê implantar o Prontuário Eletrônico Estadual Integrado para integrar informações da rede estadual de atendimento. No saneamento, o programa propõe acelerar a universalização dos serviços de abastecimento de água em comunidades rurais e povoados. Na administração pública, o programa prevê consolidar uma cultura de transparência ativa com prestação de contas clara, tempestiva e governança orientada a resultados mensuráveis.",
+    "frases": [
+      {
+        "texto": "O documento apresenta diretrizes gerais para consolidar o Programa de Governo 2027 a 2030 como base para a gestão estadual.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 4,
+            "trecho": "A coligação Sergipe Cresce com Você apresenta neste documento as diretrizes gerais que servirão de base para consolidação do Programa de Governo 2027 a 2030."
+          }
+        ]
+      },
+      {
+        "texto": "Na agricultura familiar, o programa prevê fortalecer o Programa de Aquisição de Alimentos (PAA) no território sergipano.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 10,
+            "trecho": "reforçando programas como o de Aquisição de Alimentos (PAA)"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação profissional, o programa prevê ampliar cursos alinhados às demandas e às vocações do mercado de trabalho sergipano.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 20,
+            "trecho": "ampliando o número de participantes atendidos e a oferta de cursos de capacitação técnica alinhados às demandas e vocações do nosso mercado de trabalho"
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura escolar, o programa propõe construir novas escolas por meio do Programa Escola Mais Sergipe.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 18,
+            "trecho": "com a construção de novas escolas"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde digital, o programa prevê implantar o Prontuário Eletrônico Estadual Integrado para integrar informações da rede estadual de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 27,
+            "trecho": "por meio da implantação do Prontuário Eletrônico Estadual Integrado"
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, o programa propõe acelerar a universalização dos serviços de abastecimento de água em comunidades rurais e povoados.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 29,
+            "trecho": "Acelerar a universalização dos serviços de abastecimento de água e esgotamento sanitário"
+          }
+        ]
+      },
+      {
+        "texto": "Na administração pública, o programa prevê consolidar uma cultura de transparência ativa com prestação de contas clara, tempestiva e governança orientada a resultados mensuráveis.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 31,
+            "trecho": "Consolidar uma cultura de transparência ativa e responsabilidade fiscal, com prestação de contas clara, tempestiva e governança orientada a resultados mensuráveis."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "Fortalecimento do Programa de Aquisição de Alimentos no território sergipano.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 10,
+            "trecho": "reforçando programas como o de Aquisição de Alimentos (PAA)"
+          }
+        ]
+      },
+      {
+        "id": "educacao-profissional",
+        "titulo": "Educação profissional",
+        "descricao": "Ampliação de cursos de capacitação técnica alinhados ao mercado de trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 20,
+            "trecho": "oferta de cursos de capacitação técnica alinhados às demandas e vocações do nosso mercado de trabalho"
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-escolar",
+        "titulo": "Infraestrutura escolar",
+        "descricao": "Construção de novas escolas pelo Programa Escola Mais Sergipe.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 18,
+            "trecho": "com a construção de novas escolas"
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Implantação do Prontuário Eletrônico Estadual Integrado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 27,
+            "trecho": "implantação do Prontuário Eletrônico Estadual Integrado"
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Universalização dos serviços de abastecimento de água.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002542491:01",
+            "pagina": 29,
+            "trecho": "Acelerar a universalização dos serviços de abastecimento de água e esgotamento sanitário"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:06:52.702Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:09:04.684Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Período citado (2027-2030) está literalmente presente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tópico coerente (apresentação do documento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:1:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação estão cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Documento confirma fortalecimento do PAA no contexto da agricultura familiar sergipana."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco em único tema coerente (agricultura familiar/PAA)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:2:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula principal (fortalecer PAA) coberta pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente (educação profissional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:3:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 18 associa a construção de novas escolas à criação do Programa Escola Mais Sergipe."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente (infraestrutura escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:4:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página completa cobre nome do programa e construção de escolas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 27 confirma implantação e integração entre atenção primária, hospitais e serviços especializados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:5:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página cobre implantação e integração da rede."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 29 completa menciona expansão em comunidades rurais e povoados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:6:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página completa cobre comunidades rurais e povoados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente (transparência)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:frase:7:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:agricultura-familiar:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula principal coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:educacao-profissional:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 18 associa construção de escolas ao programa citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:infraestrutura-escolar:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página cobre nome do programa e construção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saude-digital:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002542491:tema:saneamento:documentos:SE:260002542491:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SE:260002542491",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SE:260002542491:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 34981,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3570,
+          "reasoning_output_tokens": 2447
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24076,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21020,
+          "output_tokens_details": {
+            "thinking_tokens": 1529
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24076,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21020,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24076,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24076
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3254064
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "bd4be7751374a5041c5568862195102e9ae4e49a31e3c09b901dc66348069ef3",
+    "extractedTextSha256": "eae74d3df8df4c00c31ce27e3aa956760818dc06d60415de6c324a1116bec5a8",
+    "documentCount": 1,
+    "documentSetSha256": "406f2e92f3fd49077ca3527f538db4c3db3d9bb9444579f64c037bb7e4ca406e",
+    "contentSha256": "4e769d989a56e99fea3ec3320389395de66ea64e5e298e34a6e97faa7aa82e3b"
+  }
+}

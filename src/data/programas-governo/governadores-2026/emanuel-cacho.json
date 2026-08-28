@@ -1,0 +1,958 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SE",
+    "sqCandidato": "260002551712",
+    "slug": "emanuel-cacho",
+    "nomeUrna": "EMANUEL CACHO",
+    "partido": "PSDB",
+    "arquivoNome": "2026SE260002551712_01.pdf",
+    "arquivoNoPacote": "SE/2026SE260002551712_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SE:260002551712:01",
+      "fonte": {
+        "arquivoNome": "2026SE260002551712_01.pdf",
+        "arquivoNoPacote": "SE/2026SE260002551712_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "6a53e1e890c6df997c8bd2ee7ae633dfb826a702dca28896ec7909846a5fdb05",
+        "extractedTextSha256": "249badd442bab3517a2c5ccb6e4d74af0c580493a8c499d0d370dfb7674e6b8e",
+        "paginas": 20,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nGOVERNO DO ESTADO DE SERGIPE (2027/2030)\nCandidato: Emanuel Messias Oliveira Cacho\nFederação PSDB Cidadania\n\nDocumento apresentado à Justiça Eleitoral em cumprimento ao art. 11, §1º, IX, da Lei nº 9.504/1997, para\ninstrução do pedido de registro de candidatura ao cargo de Governador do Estado de Sergipe.\n\nAracaju/SE, 2026"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nSumário\nSumário ............................................................................................................................................................. 2\n1. Apresentação................................................................................................................................................. 3\n2. Diagnóstico Geral do Estado de Sergipe ...................................................................................................... 3\n2.1. O cenário econômico: crescimento aquém do potencial ....................................................................... 3\n2.2. O cenário social: avanços reais, desigualdades persistentes ................................................................. 4\n2.3. Síntese: o que o diagnóstico exige do próximo governo ........................................................................ 5\n3. Princípios e Valores Norteadores ................................................................................................................. 5\n4. Eixos de Atuação: Diagnóstico, Argumento e Compromissos .................................................................... 7\n4.1. Gestão Pública, Governança e Responsabilidade Fiscal....................................................................... 7\n4.2. Desenvolvimento Econômico, Emprego e Renda .................................................................................. 8\n4.3. Educação ................................................................................................................................................ 9\n4.4. Saúde ...................................................................................................................................................... 9\n4.5. Segurança Pública................................................................................................................................ 10\n4.6. Infraestrutura, Mobilidade e Habitação ............................................................................................. 11\n4.7. Desenvolvimento Social e Combate à Pobreza .................................................................................... 12\n4.8. Agropecuária, Desenvolvimento do Interior e Recursos Hídricos ..................................................... 13\n4.9. Meio Ambiente, Sustentabilidade e Transição Energética ................................................................. 14\n4.10. Turismo, Cultura e Economia Criativa............................................................................................. 15\n5. Propostas Regionais: Um Plano para Cada Sergipe ................................................................................. 15\n5.1. Região Sul............................................................................................................................................. 16\n5.2. Praia do Saco: um ativo de projeção nacional .................................................................................... 17\n5.3. Grande Aracaju ................................................................................................................................... 17\n5.4. Leste Sergipano .................................................................................................................................... 17\n5.5. Baixo São Francisco ............................................................................................................................. 18\n5.6. Agreste Central .................................................................................................................................... 18\n5.7. Centro-Sul ............................................................................................................................................ 18\n5.8. Médio Sertão ........................................................................................................................................ 18\n5.9. Alto Sertão............................................................................................................................................ 19\n6. Governança e Monitoramento do Plano .................................................................................................... 19\n7. Considerações Finais .................................................................................................................................. 20\n\n2"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-2",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\n1. Apresentação\nEste Plano de Governo é apresentado por Emanuel Messias Oliveira Cacho, candidato ao cargo\nde Governador do Estado de Sergipe, em atendimento ao disposto no art. 11, §1º, IX, da Lei nº\n9.504/1997, que exige a instrução do pedido de registro de candidatura com as propostas\ndefendidas pelo candidato para o cargo ao qual concorre. Mas este documento é bem mais do\nque o cumprimento de uma formalidade legal. Ele traduz uma concepção de Estado e uma\nconvicção que pode ser dita em poucas palavras: Sergipe não precisa de rupturas nem de\nexperimentos ideológicos. Sergipe precisa de gestão. Precisa de planejamento sério, de contas\nequilibradas, de serviços públicos que funcionem de verdade e de um olhar sincero para o\ninterior do Estado.\nGovernar é, antes de tudo, cuidar de recursos que são escassos diante de necessidades que são\nmuitas. Isso exige método, exige saber escolher prioridades e exige prestar contas. Por essa\nrazão, este plano não se organiza em torno de promessas genéricas, e sim de um raciocínio que\npercorre todas as suas páginas: parte de um diagnóstico honesto da realidade sergipana, extrai\ndele as prioridades de cada área de atuação do Estado, descreve as ações capazes de enfrentálas e assume compromissos que podem ser verificados por qualquer cidadão, de modo que a\nsociedade possa cobrar e medir os resultados da administração ao longo de todo o mandato.\nAs propostas aqui reunidas têm caráter técnico e administrativo. Nasceram da realidade\nconcreta do Estado, dos seus números, das suas desigualdades regionais e das suas\npotencialidades, e não de cartilhas ideológicas. Este plano sustenta uma convicção simples:\nboa política pública não é de esquerda nem de direita. Boa política pública é aquela que resolve\no problema do cidadão ao menor custo possível para a sociedade, com transparência e respeito\nà lei. Esse é o compromisso central desta candidatura, e é com essa régua que cada proposta\ndeste documento deve ser lida e julgada.\nO plano poderá ser aprimorado ao longo da campanha e do mandato, respeitados os limites\nlegais, para incorporar as contribuições do debate público, da conversa com os municípios,\ncom o setor produtivo, com os servidores e com a sociedade civil organizada, e para se ajustar\nàs condições orçamentárias e institucionais do Estado. Um plano de governo sério não é peça\nde propaganda: é o ponto de partida de um contrato de gestão entre o governante e o povo que\no elege.\n\n2. Diagnóstico Geral do Estado de Sergipe\n2.1. O cenário econômico: crescimento aquém do potencial\nSergipe vive um momento de recuperação econômica moderada, porém desigual e ainda frágil.\nAs projeções mais recentes indicam crescimento do Produto Interno Bruto estadual em ritmo\ninferior à média nacional e à média nordestina. E o dado mais preocupante não é o número em\n\n3"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-3",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nsi, mas a sua persistência: esse padrão se repete há anos, o que revela um problema estrutural,\ne não passageiro. O Estado continua dependendo demais do setor público, das transferências\nfederais e do setor de serviços. O comércio e os serviços concentram a imensa maioria das\nempresas sergipanas, enquanto o parque industrial segue pouco diversificado e muito distante\ndo que o potencial logístico, energético e humano do Estado permitiria.\nEssa configuração produz duas consequências que se alimentam mutuamente. A primeira é a\nvulnerabilidade fiscal: uma economia pouco diversificada gera base tributária estreita e sujeita\no orçamento estadual a oscilações que comprometem a capacidade de investimento. E um\nEstado que não investe não cria as condições para diversificar sua economia, fechando um\ncírculo vicioso que precisa ser rompido. A segunda consequência é a limitação do mercado de\ntrabalho: sem indústria robusta e sem cadeias produtivas densas, a economia gera empregos\nconcentrados em atividades de menor valor agregado, o que reduz a renda média das famílias,\nalimenta a informalidade e empurra os jovens mais qualificados para outros estados.\nHá, no entanto, sinais positivos que um governo competente deve saber aproveitar. O potencial\nde consumo das famílias sergipanas atingiu patamar recorde, sinal de um mercado interno\nvigoroso. O cooperativismo de crédito vem ampliando de forma expressiva o financiamento às\nmicro e pequenas empresas. E o Nordeste como um todo atrai um volume crescente e bilionário\nde investimentos em transição energética, economia digital, bioeconomia e infraestrutura. A\npergunta decisiva, que este plano se propõe a responder, é como fazer com que Sergipe deixe\nde assistir a esse movimento regional e passe a disputá-lo ativamente. A resposta, como se verá\nadiante, passa por desburocratizar, qualificar a força de trabalho e preparar a infraestrutura que\natrai investimentos.\n\n2.2. O cenário social: avanços reais, desigualdades persistentes\nO mercado de trabalho sergipano apresenta avanços recentes na taxa de desocupação, que\natingiu os menores patamares de sua série histórica. Seria um erro, porém, ler nesse número o\nfim do problema. O Estado convive com um contingente expressivo de trabalhadores\nsubutilizados, pessoas que trabalham menos do que poderiam ou que simplesmente desistiram\nde procurar ocupação. Essa subutilização é especialmente dura entre os jovens, as mulheres e\nos moradores do interior, e constitui o retrato mais fiel do desafio social sergipano: não basta\nreduzir o desemprego formal. É preciso gerar ocupações de qualidade e elevar a renda de quem\ntrabalha, o que nos devolve, mais uma vez, à necessidade de diversificar a economia e qualificar\nas pessoas.\nEm contrapartida, indicadores recentes de progresso social posicionam Sergipe entre os\nmelhores estados do Nordeste em qualidade de vida, com desempenho acima da média nacional\nem componentes como nutrição, cuidados médicos básicos, qualidade do meio ambiente e\ninclusão social. Esses resultados importam por duas razões. Primeiro, porque demonstram que\n\n4"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-4",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\no Estado dispõe de uma base institucional razoável sobre a qual é possível construir: o desafio\nnão é começar do zero, mas consolidar o que funciona e corrigir o que falha. Segundo, porque\na média esconde a desigualdade territorial que é a marca mais profunda do Estado. É no interior\nque se concentram os piores indicadores de saneamento, evasão escolar, acesso à saúde\nespecializada e renda. Um plano de governo que não enfrente essa distância entre a Grande\nAracaju e o restante do território estará, por definição, incompleto.\n\n2.3. Síntese: o que o diagnóstico exige do próximo governo\nO quadro descrito conduz a uma conclusão clara, que orienta tudo o que se segue neste\ndocumento. Sergipe precisa de um governo que trate o orçamento com seriedade, porque sem\nequilíbrio fiscal não há investimento. Que planeje com dados e governe por metas, porque\nrecursos escassos não admitem desperdício. Que atraia investimento produtivo e qualifique sua\ngente, porque só a economia diversificada gera renda e arrecadação sustentáveis. E que leve ao\ninterior a mesma qualidade de serviço público disponível na capital, porque nenhum estado se\ndesenvolve deixando metade do seu território para trás. É exatamente essa a arquitetura deste\nplano.\n\n3. Princípios e Valores Norteadores\nToda a ação do governo proposto será pautada por princípios que independem de posição\nideológica e que constituem, na verdade, pressupostos de qualquer administração pública séria.\nConvém enunciá-los não como retórica, mas com a justificativa que os sustenta, porque cada\num deles se desdobra em compromissos concretos e verificáveis ao longo do mandato.\nO primeiro princípio é a responsabilidade fiscal. O equilíbrio das contas públicas não é um fim\nem si mesmo, tampouco uma bandeira partidária: é a condição que torna possível todo o resto.\nGoverno endividado não constrói escola, não equipa hospital, não pavimenta rodovia. Apenas\npaga juros e adia problemas. O cumprimento rigoroso da Lei de Responsabilidade Fiscal será,\npor isso, inegociável em todos os exercícios do mandato.\nO segundo é a transparência e o controle social. O cidadão é o dono do dinheiro público e tem\no direito de saber, em tempo real e em linguagem que ele entenda, como cada real é arrecadado\ne gasto. A transparência será tratada como política de Estado, como instrumento de confiança,\nde combate à corrupção e de melhoria da própria gestão, e nunca como obrigação burocrática\ncumprida a contragosto.\nO terceiro é a eficiência administrativa, acompanhada da valorização do servidor público. Cada\nprocesso lento, cada fila desnecessária e cada exigência burocrática inútil representam um custo\ninvisível imposto ao cidadão e a quem empreende, e a modernização da máquina pública será\nprioridade em todas as áreas. Essa modernização, contudo, não se faz contra o servidor, e sim\ncom ele. Nenhuma política pública sai do papel sem quadros qualificados, motivados e\n\n5"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-5",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nrespeitados. Por isso, a capacitação continuada, a meritocracia e o diálogo permanente com o\nfuncionalismo serão tratados como investimento, e não como despesa.\nO quarto é a redução das desigualdades regionais. O desenvolvimento de Sergipe não pode\ncontinuar concentrado na Grande Aracaju. Por isso, todas as políticas deste plano, da saúde à\nsegurança, da educação à infraestrutura, contêm compromissos específicos com o interior do\nEstado. Não se trata de um eixo entre outros, mas de um critério que atravessa todos os eixos.\nO quinto é a continuidade do que funciona. Políticas públicas exitosas serão mantidas e\naperfeiçoadas, independentemente da origem partidária de quem as criou. O Estado não pode\ncontinuar refém do ciclo de destruição e reconstrução a cada troca de governo, que desperdiça\nrecursos, desmonta equipes técnicas e castiga, no fim das contas, o cidadão. Reconhecer o\nacerto alheio não é fraqueza política: é maturidade republicana.\nO sexto princípio, que costura todos os anteriores, é a gestão por resultados. Todas as\nsecretarias trabalharão com metas, indicadores e avaliação periódica de desempenho, com\ndivulgação pública dos resultados. Porque plano que não se mede é apenas promessa, e\npromessa não transforma a vida de ninguém.\n\n6"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-6",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\n4. Eixos de Atuação: Diagnóstico, Argumento e Compromissos\nAs propostas de governo estão organizadas em dez eixos temáticos. Em cada um deles, o texto\npercorre o mesmo caminho: expõe o problema tal como ele se apresenta na vida real do\nsergipano, mostra por que as ações escolhidas são a resposta adequada a esse problema e\nconclui com os compromissos verificáveis que o governo assume perante a população.\n\n4.1. Gestão Pública, Governança e Responsabilidade Fiscal\nA qualidade da gestão é o que diferencia estados que avançam de estados que ficam parados\ncom orçamentos parecidos. Essa constatação, amplamente demonstrada pela experiência\nadministrativa brasileira, justifica que o primeiro eixo deste plano seja dedicado à própria\nmáquina pública. Sergipe dispõe de estrutura administrativa consolidada, mas ainda convive\ncom processos excessivamente burocráticos, baixa integração de dados entre órgãos e serviços\nque obrigam o cidadão a se deslocar pessoalmente para resolver o que poderia ser resolvido\npelo celular, em poucos minutos. A isso se soma a rigidez do orçamento estadual, comprimido\npor despesas obrigatórias, o que reduz a margem de investimento e torna indispensável que\ncada real disponível seja aplicado com base em evidências e prioridades claras, e não em\ncritérios políticos ou por pura inércia.\nA resposta a esse quadro se dará em três movimentos que se complementam. O primeiro é a\ntransformação digital do Estado: os serviços estaduais de maior demanda serão\nprogressivamente digitalizados e reunidos em portal e aplicativo únicos, e as bases de dados\ndos órgãos serão integradas, acabando com a exigência, tão comum quanto absurda, de que o\ncidadão apresente documentos que o próprio Estado já possui. E para que a digitalização não\ndeixe ninguém para trás, serão mantidos pontos de atendimento assistido nos municípios do\ninterior, pensados para quem não tem acesso à internet. O segundo movimento é o da\ntransparência levada a sério: um portal único de transparência orçamentária, com dados\nabertos, atualização mensal e linguagem cidadã, acompanhado de audiências públicas regionais\nna elaboração do Plano Plurianual e das leis orçamentárias, e da publicação anual de relatório\nde metas e resultados de todas as secretarias. O terceiro movimento é o da valorização do\nservidor, com o fortalecimento da Escola de Governo, trilhas de capacitação continuada,\navaliação de desempenho com critérios objetivos e mesa permanente de negociação com as\nentidades representativas do funcionalismo. Porque não existe Estado eficiente com servidores\ndesvalorizados.\nComo compromissos verificáveis deste eixo, o governo assume: publicar o portal único de\ntransparência nos primeiros doze meses de mandato; digitalizar ao menos oitenta por cento dos\nserviços estaduais de maior demanda em até vinte e quatro meses; implantar contratos de gestão\ncom metas e indicadores em todas as secretarias no mesmo prazo; e manter, em todos os\n\n7"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-7",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nexercícios do mandato, os indicadores fiscais dentro dos limites da Lei de Responsabilidade\nFiscal.\n\n4.2. Desenvolvimento Econômico, Emprego e Renda\nA economia sergipana é dominada pelo setor de comércio e serviços: essas empresas superam\nem muitas vezes o número de indústrias instaladas no Estado. Essa composição explica, em\nboa medida, por que Sergipe cresce sistematicamente abaixo das médias nacional e regional.\nSem diversificação produtiva, não se geram empregos de maior valor agregado nem se amplia\na base tributária que financia os serviços públicos. Ao mesmo tempo, o ambiente regional é de\nrara oportunidade: o Nordeste atrai investimentos bilionários em transição energética,\neconomia digital, bioeconomia e infraestrutura, com participação decisiva das micro, pequenas\ne médias empresas, que respondem pela quase totalidade dos novos negócios abertos na região.\nA pergunta que orienta este eixo é direta: o que o governo estadual deve fazer para que essa\nonda de investimentos chegue a Sergipe, em vez de passar ao largo? A resposta se constrói\nsobre três frentes: desburocratizar, qualificar e atrair.\nDesburocratizar significa atacar o custo invisível que o próprio Estado impõe a quem produz.\nO tempo e as exigências para abertura, licenciamento e regularização de empresas serão\nreduzidos mediante integração efetiva entre a Junta Comercial, os órgãos ambientais e os\nmunicípios. O estoque de normas estaduais será revisto, com a revogação de regras obsoletas\nque dificultam a atividade produtiva sem proteger interesse público algum. E o Estado passará\na atuar com política ativa de atração de investimentos, mantendo carteira estruturada de\nprojetos e apresentando Sergipe a investidores nacionais e internacionais. Qualificar significa\nreconhecer que nenhum investimento se fixa onde não há gente preparada: a oferta de\nqualificação profissional será alinhada às demandas reais do mercado local, definidas em\nconjunto com o setor produtivo, com prioridade para os jovens em busca do primeiro emprego,\npara as mulheres chefes de família e para os trabalhadores do interior, em articulação com o\nSistema S, os institutos federais e as universidades. Atrair, por fim, significa cuidar de quem já\nempreende aqui: as linhas de microcrédito produtivo orientado serão ampliadas com foco no\ninterior, a formalização de microempreendedores e o cooperativismo de crédito receberão\napoio técnico, e as compras públicas estaduais serão organizadas de modo a facilitar, nos\nlimites da lei, a participação das micro e pequenas empresas locais.\nComo compromissos verificáveis deste eixo, o governo assume: reduzir em trinta por cento o\ntempo médio de abertura de empresas no Estado em até vinte e quatro meses; qualificar\nprofissionalmente ao menos cinquenta mil sergipanos, ao longo do mandato, em áreas de\ncomprovada empregabilidade; ampliar a participação da indústria e das energias renováveis no\nproduto estadual; e expandir, ano a ano, o volume de microcrédito produtivo concedido aos\nempreendedores do interior.\n\n8"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-8",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\n4.3. Educação\nNenhum estado se desenvolveu de forma sustentada sem resolver sua educação básica. Isso\nnão é frase de efeito: é a síntese de tudo o que a evidência econômica e social ensina. Em\nSergipe, os desafios são conhecidos: cobertura insuficiente de creches e pré-escolas, taxas\npreocupantes de evasão e defasagem no ensino médio, sobretudo no interior, infraestrutura\nescolar desigual entre as regiões e uma educação profissional ainda desconectada das vocações\neconômicas de cada território. É preciso dizer com clareza o que esses números significam. A\ndefasagem educacional não é apenas um problema social: é o principal gargalo econômico do\nEstado. Força de trabalho pouco qualificada afasta investimentos, reduz salários e perpetua o\nciclo de baixa produtividade descrito no diagnóstico deste plano. Investir em educação é,\nportanto, a política de desenvolvimento econômico mais eficaz de que Sergipe dispõe, e a de\nmaior retorno por real aplicado.\nA ação do governo começará pela primeira infância, porque é ali que as desigualdades nascem\ne é ali que são mais baratas de corrigir. O Estado cofinanciará a expansão de vagas em creches\ne pré-escolas municipais, priorizando os municípios de menor capacidade fiscal, investirá na\nformação específica dos professores da educação infantil e integrará as políticas de educação,\nsaúde e assistência social voltadas às crianças pequenas. No ensino médio, a rede estadual\ncaminhará para consolidar o tempo integral como padrão, com currículo articulado à educação\nprofissional técnica e às cadeias produtivas de cada região. Em paralelo, será implantado\nsistema de monitoramento nominal de frequência, capaz de identificar cedo o risco de evasão\ne acionar a busca ativa dos estudantes, junto com programas estruturados de recomposição de\naprendizagens. A infraestrutura receberá tratamento igualmente sistemático: conectividade de\nqualidade em todas as escolas, plano plurianual de reformas com critérios públicos de\npriorização e laboratórios técnicos nas unidades profissionalizantes. E, sustentando tudo isso,\na valorização do magistério, com formação continuada centrada em práticas de impacto\ncomprovado, plano de carreira com progressão clara e previsível e atenção à saúde e ao bemestar do professor. Porque não há reforma educacional que dê certo contra os professores ou\nsem eles.\nComo compromissos verificáveis deste eixo, o governo assume: ampliar em vinte por cento as\nmatrículas em ensino médio de tempo integral na rede estadual ao longo do mandato; garantir\nconectividade de qualidade na totalidade das escolas estaduais em até vinte e quatro meses;\nelevar os indicadores estaduais de aprendizagem aferidos pelas avaliações oficiais; e reduzir,\nano a ano, as taxas de evasão no ensino médio, com prioridade para o interior.\n\n4.4. Saúde\nSergipe apresenta resultados acima da média nacional em componentes de nutrição e de\ncuidados médicos básicos, o que revela uma atenção primária relativamente bem estruturada.\nO problema central do sistema estadual está na média e na alta complexidade: filas para\n9"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-9",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nconsultas especializadas, exames e cirurgias eletivas, concentração dos serviços na capital e\ndificuldade crônica de fixação de médicos especialistas no interior. Essa assimetria impõe ao\ncidadão do interior um duplo sacrifício. Além de esperar mais, ele precisa se deslocar, muitas\nvezes por conta própria, para ser atendido. A resposta racional a esse quadro não é apenas\nconstruir mais unidades, e sim organizar o sistema: regionalizar a oferta, usar intensivamente\na tecnologia, administrar as filas com transparência e criar incentivos reais para que\nprofissionais de saúde atuem fora da Grande Aracaju.\nO primeiro compromisso é com a fila, ou melhor, contra ela. Será implantada central única de\nregulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos,\nacabando com a opacidade que hoje alimenta a desconfiança e, não raro, a injustiça no acesso.\nMutirões regionais permanentes de cirurgias eletivas e exames serão realizados, inclusive\nmediante a contratação, nos limites legais, da capacidade ociosa da rede filantrópica e privada.\nE os tempos médios de espera por procedimento e por região serão divulgados periodicamente,\nporque o que se publica se cobra, e o que se cobra melhora. O segundo compromisso é\naproximar o atendimento da casa do paciente: os hospitais regionais serão fortalecidos como\npolos de média complexidade, a telemedicina será consolidada como instrumento permanente,\nlevando consultas especializadas, laudos a distância e apoio às equipes de atenção primária de\ntodos os municípios, e o transporte sanitário será regionalizado para os pacientes em tratamento\ncontinuado. O terceiro compromisso enfrenta a causa da concentração de serviços: incentivos\nfinanceiros e de carreira para os especialistas que atuarem no interior, parcerias com\ninstituições de ensino para a interiorização de residências médicas e multiprofissionais e\neducação permanente das equipes de saúde da família.\nComo compromissos verificáveis deste eixo, o governo assume: reduzir em vinte e cinco por\ncento o tempo médio de espera para cirurgias eletivas na rede estadual em até vinte e quatro\nmeses; implantar, no mesmo prazo, a central única de regulação com fila pública e auditável;\nlevar a telemedicina especializada a todos os municípios sergipanos ao longo do mandato; e\nampliar continuamente a fixação de médicos especialistas nas regiões de saúde do interior.\n\n4.5. Segurança Pública\nA segurança pública é a política em que a percepção do cidadão mais rapidamente se converte\nem juízo sobre o governo. E com razão: sem segurança não há liberdade que se exerça, não há\ncomércio que prospere, não há escola que funcione. O enfrentamento da criminalidade exige a\ncombinação de três elementos que não se substituem entre si: presença policial qualificada,\ninteligência e tecnologia, e prevenção social junto à juventude vulnerável. Este plano rejeita,\npor insuficientes, tanto o discurso que reduz a segurança à repressão quanto o que a reduz à\npolítica social. A experiência nacional e internacional demonstra que os melhores resultados\nvêm da integração: polícias valorizadas e bem equipadas, informação circulando entre as\ninstituições e oportunidades concretas disputando os jovens com a criminalidade.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-10",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nNo campo da tecnologia e da inteligência, o videomonitoramento integrado será expandido nas\nprincipais rodovias e centros urbanos, com análise de imagens e leitura automática de placas.\nAs unidades de inteligência das polícias Civil e Militar serão fortalecidas, assim como a\nintegração de dados com o Poder Judiciário e o Ministério Público. E serão instituídas metas\nregionais de redução da criminalidade, com acompanhamento público, porque também na\nsegurança vale a regra de que o que se mede, melhora. No campo da valorização profissional,\nhaverá concursos públicos regulares para a recomposição e a ampliação dos efetivos, renovação\nde frota, armamento e equipamentos de proteção individual, e atenção estruturada à saúde física\ne mental dos profissionais de segurança, tantas vezes esquecida. No campo da prevenção, ações\nintegradas de esporte, cultura, qualificação e emprego serão concentradas nos territórios de\nmaior vulnerabilidade, em parceria com os municípios e a sociedade civil, e o enfrentamento à\nviolência doméstica e de gênero será qualificado em articulação com toda a rede de proteção.\nPorque proteger a mulher e disputar o jovem com o crime não são políticas acessórias da\nsegurança: são a sua metade preventiva, sem a qual a metade repressiva enxuga gelo.\nComo compromissos verificáveis deste eixo, o governo assume: ampliar o sistema de\nvideomonitoramento integrado nas principais rodovias estaduais e centros urbanos em até vinte\ne quatro meses; realizar concursos públicos regulares para recomposição e ampliação do\nefetivo policial ao longo do mandato; implantar metas regionais públicas de redução da\ncriminalidade violenta; e reduzir, de forma consistente, os indicadores de crimes violentos\nletais intencionais no Estado.\n\n4.6. Infraestrutura, Mobilidade e Habitação\nInfraestrutura é a política pública que multiplica todas as outras. A rodovia conservada barateia\no frete do produtor rural. O saneamento reduz internações e mortalidade infantil. A habitação\ndigna estabiliza famílias e melhora o desempenho escolar das crianças. Em Sergipe, os déficits\nse concentram no saneamento do interior, na conservação da malha rodoviária estadual e na\nmobilidade da Grande Aracaju, que reúne a maior parte da população e dos deslocamentos\ndiários. Diante da escassez de recursos, o método importa tanto quanto o dinheiro: as obras\nserão escolhidas por critérios técnicos e públicos de custo-benefício, a manutenção será tratada\ncomo prioridade, porque conservar é sempre mais barato do que reconstruir, ainda que renda\nmenos inaugurações, e o Estado buscará ativamente parcerias, concessões e financiamentos\nfederais e multilaterais para ampliar a capacidade de investimento para além do orçamento\npróprio.\nNo saneamento, será elaborado plano estadual de universalização com metas por município,\nem articulação com o marco legal do setor, priorizando o investimento nos municípios do\ninterior com os piores indicadores de cobertura e apoiando tecnicamente as prefeituras na\nregulação e fiscalização dos serviços. Nas rodovias, a atuação se dará em dois patamares que\nse complementam. O primeiro é o da conservação: o plano plurianual de manutenção da malha\n\n11"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-11",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nestadual terá cronograma público e critérios técnicos de priorização, com atenção especial aos\neixos estratégicos de escoamento da produção e à sinalização e segurança viária, que serão\ncomponentes obrigatórios de toda intervenção. O segundo é o da ampliação de capacidade: as\nrodovias estaduais principais serão progressivamente duplicadas, priorizando os trechos de\nmaior volume de tráfego e de maior índice de acidentes. A duplicação não é luxo. É resposta a\numa dupla exigência: econômica, porque rodovia saturada significa frete caro, tempo perdido\ne investimento que se instala em outro lugar; e humana, porque pista simples com tráfego\nintenso é sinônimo de colisão frontal, o tipo de acidente que mais mata nas estradas brasileiras.\nDuplicar as rodovias troncais do Estado é, ao mesmo tempo, destravar a economia e salvar\nvidas. Na habitação, o Estado atuará de forma complementar aos programas federais,\npromoverá a regularização fundiária urbana em parceria com os municípios e executará\nmelhorias habitacionais para famílias de baixa renda que vivem em imóveis precários. Porque,\nem muitos casos, a política habitacional mais eficiente não é construir uma casa nova, e sim\ntornar digna a casa que já existe.\nComo compromissos verificáveis deste eixo, o governo assume: publicar e iniciar a execução\ndo plano plurianual de manutenção das principais rodovias estaduais em até vinte e quatro\nmeses; elaborar, no mesmo prazo, o programa estadual de duplicação das rodovias principais,\ncom ordem de prioridade definida por critérios públicos de tráfego e acidentalidade, e iniciar\nas primeiras duplicações ao longo do mandato; ampliar, de forma mensurável, a cobertura de\nsaneamento básico nos municípios do interior; viabilizar novas unidades e melhorias\nhabitacionais de interesse social em parceria com a União e os municípios; e buscar\npermanentemente parcerias, concessões e financiamentos que ampliem a capacidade estadual\nde investimento em infraestrutura.\n\n4.7. Desenvolvimento Social e Combate à Pobreza\nA pobreza e a vulnerabilidade social em Sergipe têm rosto conhecido: famílias chefiadas por\nmulheres, jovens fora da escola e do trabalho, trabalhadores informais do interior. A política\nsocial eficaz não se limita a transferir renda, embora a transferência de renda seja indispensável\ncomo proteção imediata. Ela constrói pontes para a autonomia: qualificação, inclusão\nprodutiva, a creche que permite à mãe trabalhar, a documentação civil que abre portas, o apoio\nao pequeno empreendimento que transforma sobrevivência em sustento. Há ainda uma segunda\npremissa que orienta este eixo: boa parte dos recursos da proteção social é federal e municipal,\nde modo que a contribuição decisiva do governo estadual está em coordenar a rede, cofinanciar\nonde o município não alcança, qualificar os serviços e, sobretudo, conectar os beneficiários das\npolíticas sociais às oportunidades econômicas geradas pelos demais eixos deste plano. Política\nsocial desarticulada da política econômica administra a pobreza. Articulada a ela, supera-a.\nA atuação começará pela busca ativa das famílias em extrema pobreza que hoje não são\nalcançadas pelos cadastros públicos, porque o Estado não pode proteger quem não enxerga.\n\n12"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-12",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nEssas famílias receberão acompanhamento com plano de superação da vulnerabilidade, e o\nEstado estudará, conforme sua capacidade fiscal, complementação articulada aos programas\nfederais de transferência de renda. Em paralelo, os beneficiários da assistência social terão\nvagas prioritárias nos programas de qualificação profissional deste plano, acesso a microcrédito\norientado e apoio ao autoemprego, além da articulação com creches e pré-escolas que viabilize\no trabalho das mães. A trajetória desenhada é a da transição progressiva da assistência para a\nrenda própria. A rede de proteção, por fim, será fortalecida com o cofinanciamento estadual\ndos serviços socioassistenciais nos municípios de menor porte, com a qualificação dos serviços\nde enfrentamento à violência contra a mulher, a criança e a pessoa idosa, e com a implantação\nde equipamentos públicos de esporte, cultura e convivência nos territórios vulneráveis do\ninterior.\nComo compromissos verificáveis deste eixo, o governo assume: reduzir de forma mensurável\nos indicadores estaduais de extrema pobreza ao longo do mandato; incluir os beneficiários da\nassistência social nos programas de qualificação e inclusão produtiva; e ampliar continuamente\no cofinanciamento estadual da rede socioassistencial nos municípios do interior.\n\n4.8. Agropecuária, Desenvolvimento do Interior e Recursos Hídricos\nO interior sergipano vive fundamentalmente da agropecuária. E o setor tem demonstrado\nvitalidade notável em cadeias como a pecuária leiteira, cuja produção cresceu de forma\nexpressiva nos últimos anos, provando que o campo sergipano responde quando encontra\ncondições mínimas. Esse dinamismo, porém, convive com fragilidades estruturais que\nimpedem sua generalização: assistência técnica insuficiente, infraestrutura hídrica limitada no\nsemiárido, dificuldade de acesso a crédito e baixa agregação de valor à produção primária, que\nsai do Estado in natura e retorna industrializada, levando consigo empregos e renda. Entre essas\nfragilidades, a segurança hídrica merece o primeiro lugar na ordem das prioridades. No\nsemiárido, água é a política pública que antecede todas as outras. Sem ela não há produção\nestável, não há fixação do homem no campo, não há desenvolvimento possível. É por isso que\neste plano trata a infraestrutura hídrica não como obra isolada, mas como eixo estruturante do\ndesenvolvimento do interior.\nA ação hídrica combinará a ampliação da infraestrutura de açudagem, adutoras, poços e\nsistemas simplificados de abastecimento com a expansão da irrigação nas áreas de vocação\nprodutiva, sempre sob o critério do uso racional da água, e com a difusão de tecnologias sociais\nde convivência com o semiárido, em parceria com a União e com as organizações\nespecializadas que acumulam décadas de experiência na região. Sobre essa base, o\nfortalecimento produtivo virá pela assistência técnica e extensão rural permanentes, com metas\nexplícitas de cobertura dos pequenos produtores, pelo apoio às cadeias do leite, da fruticultura,\nda mandiocultura e das demais vocações regionais, e pela facilitação do acesso ao crédito rural\ne ao seguro agrícola, que protege o produtor exatamente no ano em que tudo dá errado. O passo\n\n13"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-13",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nseguinte, e decisivo, é agregar valor: o Estado incentivará a implantação de agroindústrias de\npequeno e médio porte no interior, fortalecerá o cooperativismo e o associativismo rural e\nassegurará à agricultura familiar o acesso às compras públicas institucionais, nos termos da lei,\ntransformando a merenda escolar e os demais equipamentos públicos em mercado garantido\npara quem produz perto deles.\nComo compromissos verificáveis deste eixo, o governo assume: ampliar a infraestrutura\nhídrica e de irrigação no semiárido sergipano ao longo do mandato; elevar a cobertura da\nassistência técnica rural aos pequenos produtores do Estado; e apoiar continuamente a\nagregação de valor à produção rural por meio de agroindústrias e cooperativas.\n\n4.9. Meio Ambiente, Sustentabilidade e Transição Energética\nSergipe reúne condições privilegiadas para protagonizar a transição energética no Nordeste:\nirradiação solar abundante, potencial eólico, posição logística favorável e um movimento\nregional de investimentos bilionários em energias renováveis à procura de estados preparados\npara recebê-los. Ao mesmo tempo, o Estado tem passivos ambientais concretos a enfrentar:\ngestão de resíduos sólidos ainda deficiente em muitos municípios, pressão sobre mananciais e\nsobre os ecossistemas costeiros e estuarinos, e um órgão ambiental com capacidade de\nfiscalização limitada. Este plano rejeita a falsa oposição entre desenvolvimento e meio\nambiente, que empobrece o debate público há décadas. A agenda ambiental bem conduzida é,\nhoje, vetor de atração de investimento. Empresas e financiadores exigem segurança jurídica\nambiental e ativos sustentáveis. Licenciamento célere e tecnicamente rigoroso, fiscalização\nefetiva e aposta nas energias limpas são, ao mesmo tempo, boa política ambiental e boa política\neconômica.\nNa frente energética, o Estado atrairá ativamente projetos de geração solar e eólica, oferecendo\no que o investidor de infraestrutura mais valoriza: previsibilidade regulatória e licenciamento\norganizado. Estimulará a geração distribuída nos prédios públicos, convertendo telhados em\neconomia de custeio. E qualificará mão de obra local para a cadeia das renováveis, em\narticulação com o eixo de desenvolvimento econômico deste plano. Na frente do\nlicenciamento, os processos serão integralmente digitalizados, com prazos públicos e\nprevisíveis e priorização por complexidade e impacto, acompanhados do reforço técnico dos\nquadros do órgão ambiental. Porque celeridade sem rigor é conivência, e rigor sem celeridade\né obstáculo. Na frente da conservação, o Estado apoiará os consórcios municipais de destinação\nadequada de resíduos sólidos, protegerá e recuperará mananciais e matas ciliares e ordenará,\ncom fiscalização efetiva, a ocupação da orla e das áreas de proteção, patrimônio natural que é\ntambém o principal ativo turístico sergipano.\nComo compromissos verificáveis deste eixo, o governo assume: ampliar a participação das\nfontes renováveis na matriz energética estadual ao longo do mandato; digitalizar integralmente\n\n14"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-14",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\no licenciamento ambiental estadual, com prazos públicos, em até vinte e quatro meses; e apoiar\ncontinuamente as soluções consorciadas de destinação adequada de resíduos sólidos nos\nmunicípios.\n\n4.10. Turismo, Cultura e Economia Criativa\nO turismo sergipano cresceu de forma consistente nos últimos anos, com ampliação relevante\nda malha aérea e do fluxo de visitantes. E, ainda assim, o Estado explora fração modesta do\nseu potencial. O litoral, os cânions do São Francisco, as cidades históricas e o patrimônio\ncultural do interior compõem um portfólio que, devidamente estruturado, pode converter o\nturismo em um dos principais empregadores de Sergipe, com uma vantagem que poucas\natividades oferecem: a renda do turismo se distribui pelo território, alcançando o pescador, o\nartesão, a pousada familiar, o pequeno restaurante. A cultura, por sua vez, não é acessório dessa\nequação, nem despesa suntuária a ser cortada na primeira dificuldade. É identidade, é coesão\nsocial e é economia. As cadeias criativas, das festas populares ao artesanato, da gastronomia\nao audiovisual e à música, movimentam renda real e projetam a imagem do Estado para além\nde suas fronteiras. Tratá-las com profissionalismo é estratégia de desenvolvimento.\nA estratégia turística articulará três movimentos. Primeiro, a estruturação e sinalização de\nroteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos\nturísticos completos, capazes de prolongar a permanência e o gasto do visitante. Segundo, a\npromoção do destino Sergipe nos principais mercados emissores nacionais e a articulação\npermanente por novas rotas aéreas, porque destino que não se promove não é escolhido, por\nmelhor que seja. Terceiro, a qualificação dos serviços turísticos e o apoio ao empreendedor do\nsetor, porque a experiência do visitante é feita de mil pequenos encontros, e cada um deles\nimporta. Na cultura, o fomento será organizado em calendário permanente de editais públicos\ne transparentes, alcançando o audiovisual, as festas populares, tratadas como os ativos turísticos\nque efetivamente são, o artesanato e a gastronomia. E o patrimônio histórico será preservado e\nrequalificado em parceria com a União e os municípios, com educação patrimonial nas escolas\nda rede estadual e uso econômico sustentável dos sítios históricos, sempre com protagonismo\ndas comunidades locais, que são suas guardiãs naturais.\nComo compromissos verificáveis deste eixo, o governo assume: ampliar o fluxo turístico\nestadual mediante a estruturação de novos roteiros e a ampliação da conectividade aérea ao\nlongo do mandato; instituir, em até vinte e quatro meses, calendário permanente de editais de\nfomento à cultura e à economia criativa; e apoiar continuamente a preservação e o uso\nsustentável do patrimônio histórico sergipano.\n\n5. Propostas Regionais: Um Plano para Cada Sergipe\n\n15"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-15",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nO princípio da redução das desigualdades regionais, enunciado no capítulo terceiro, exige mais\ndo que declarações. Exige que o plano desça ao território. Sergipe é um estado pequeno em\nextensão, mas plural em realidades: o sertão que convive com a seca, o vale que convive com\no rio, o litoral que recebe o turista, o agreste que produz e a metrópole que concentra. Um\ngoverno que trate esses territórios como se fossem um só governará bem, no máximo, para um\ndeles. Por isso, este capítulo percorre as regiões do Estado e assume, para cada uma,\ncompromissos específicos, que se articulam aos eixos temáticos já apresentados e os traduzem\nem obras, serviços e prioridades que a população de cada lugar reconhece como suas.\n\n5.1. Região Sul\nA Região Sul ocupa posição estratégica no mapa do desenvolvimento sergipano: é a porta de\nentrada do Estado para quem vem da Bahia e o elo natural entre a economia sergipana e a\nregião metropolitana de Salvador, o maior mercado consumidor do Nordeste. Essa vocação,\ncontudo, permanece subaproveitada por déficits de infraestrutura que este plano se compromete\na enfrentar de forma sistemática, em três frentes que se complementam.\nA primeira frente é a pavimentação dos povoados dos doze municípios da Região Sul. A\nmedida se justifica precisamente pela localização estratégica da região na divisa com o Estado\nda Bahia: estradas vicinais pavimentadas promovem agilidade no escoamento da produção\nagropecuária, inauguram um novo e intenso ciclo de circulação de bens e serviços e, o que é\nigualmente decisivo, integram com dignidade as populações mais interioranas à dinâmica\nsocioeconômica regional. Um povoado sem acesso pavimentado é um povoado apartado da\nescola, do hospital, do mercado e da oportunidade. Pavimentar é, nesse sentido, política\neconômica e política social ao mesmo tempo.\nA segunda frente é a revitalização das praias da Região Sul: a Praia do Saco, a Praia das Dunas\ne a Praia do Abaís. Também aqui a geografia comanda o argumento. Essas praias estão na rota\nda Linha Verde, que liga diretamente a zona metropolitana de Salvador a Aracaju, colocandoas no caminho de um dos maiores fluxos turísticos do país. Revitalizá-las, com urbanização\ndas orlas, saneamento, ordenamento da ocupação e qualificação dos serviços, significa ampliar\no turismo de todo o Estado de Sergipe a partir do atrativo natural do seu litoral sul, conquistando\num visitante que hoje atravessa a região sem parar nela.\nA terceira frente é a construção da Ponte do Povoado Ouricuri, no Município de Estância,\nligando a Região Sul do Estado à sua zona litorânea. Atualmente, os dois acessos disponíveis\nàs praias da região passam por Itaporanga D'Ajuda, de um lado, ou por Santa Luzia do Itanhy\ne Indiaroba, de outro. São trajetos longos, que pesam no bolso e no tempo de moradores,\nprodutores e turistas. A ponte encurtará o percurso em aproximadamente trinta quilômetros,\ncom efeitos imediatos sobre o custo do transporte, o tempo de deslocamento e a atratividade\n\n16"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-16",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nturística de todo o litoral sul, funcionando como a obra de articulação que dá pleno sentido às\nduas frentes anteriores.\n\n5.2. Praia do Saco: um ativo de projeção nacional\nDentro da estratégia para o litoral sul, a Praia do Saco merece tratamento destacado. Trata-se\nde destino com projeção nacional e internacional, em razão de sua beleza natural singular, o\nencontro do Rio Real com o oceano, emoldurado por dunas e coqueirais, e de sua localização\nestratégica na divisa com o Estado da Bahia, bem em frente à Praia de Mangue Seco, no\nMunicípio de Jandaíra, destino igualmente consagrado. Essa vizinhança não é concorrência: é\ncomplementaridade. O visitante que chega a Mangue Seco está a uma travessia de distância do\nlitoral sergipano, e cabe ao poder público transformar essa proximidade em roteiro integrado.\nA revitalização da Praia do Saco compreenderá a requalificação urbanística da orla e dos\nacessos, a implantação de infraestrutura de saneamento e de recepção ao turista, o ordenamento\nda ocupação, protegendo o patrimônio natural que é o próprio ativo turístico, e a estruturação,\nem articulação com o eixo de turismo deste plano, de um produto turístico integrado entre os\ndois estados: o roteiro Saco e Mangue Seco, promovido conjuntamente nos mercados\nemissores. A Praia do Saco tem tudo para se tornar o cartão-postal do turismo sergipano. O que\nlhe falta não é beleza, é investimento ordenado, e é esse investimento que este plano assegura.\n\n5.3. Grande Aracaju\nA Grande Aracaju concentra quase metade da população do Estado e a maior parte dos seus\ndeslocamentos diários, e seus desafios são os de toda metrópole que cresceu mais depressa do\nque se planejou: mobilidade urbana pressionada, transporte coletivo perdendo qualidade e\npassageiros, periferias com déficit de serviços e drenagem urbana insuficiente. O governo\natuará na reorganização do sistema metropolitano de transporte coletivo, com racionalização\nde linhas, priorização viária do ônibus e integração tarifária. Atuará na requalificação dos\ncorredores viários estruturais e das ligações entre os municípios da região, no apoio à drenagem\nurbana e à prevenção de alagamentos nos pontos críticos, e no fortalecimento dos serviços de\nsaúde e segurança das áreas periféricas, onde a pressão de demanda é maior. A capital e seu\nentorno são a vitrine do Estado e seu principal polo de serviços. Cuidar do seu bom\nfuncionamento é cuidar da economia de todo o território sergipano.\n\n5.4. Leste Sergipano\nO Leste Sergipano articula a cana-de-açúcar, a citricultura e um patrimônio histórico dos mais\nrelevantes do Estado. Suas prioridades serão a diversificação produtiva, apoiando a\nmodernização da citricultura, que já foi orgulho sergipano e pode voltar a ser, e a agregação de\nvalor às cadeias agroindustriais existentes. Serão também a recuperação das rodovias de\nescoamento que conectam a região aos eixos troncais e a inserção definitiva de suas cidades\n\n17"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-17",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\nhistóricas nos roteiros turísticos estaduais, em diálogo direto com o eixo de turismo e cultura\ndeste plano. O Leste tem história, terra fértil e posição geográfica. O que o governo lhe deve é\ninfraestrutura e articulação.\n\n5.5. Baixo São Francisco\nO Baixo São Francisco é a região do rio. E o rio é, ao mesmo tempo, sua identidade, sua\neconomia e sua vulnerabilidade. A redução das vazões do Velho Chico afeta a pesca, a\nrizicultura e o turismo fluvial, e exige do Estado uma atuação firme em duas direções: a defesa\ninstitucional da revitalização do rio junto à União e aos comitês de bacia, e o apoio direto às\natividades produtivas ribeirinhas, como a piscicultura, a rizicultura irrigada, o artesanato e o\nturismo náutico e cultural, que tem no conjunto paisagístico da foz um ativo de valor\nincalculável. O governo investirá na estruturação dos roteiros turísticos do rio, no\nfortalecimento das colônias de pescadores e na assistência técnica às lavouras de várzea, para\nque a região que carrega tanto da história do Estado não seja a última a colher os frutos do seu\ndesenvolvimento.\n\n5.6. Agreste Central\nO Agreste Central é o coração produtivo e logístico do interior sergipano, com Itabaiana como\nentreposto comercial que abastece o Estado e parte dos vizinhos. Suas prioridades serão a\nqualificação da infraestrutura logística, com rodovias de acesso, anéis de contorno e apoio ao\ntransporte de cargas, o fortalecimento da horticultura e da fruticultura irrigada que caracterizam\na região, com assistência técnica e segurança hídrica, e o apoio ao comércio e aos serviços que\nfazem do Agreste um polo regional de emprego. A vocação empreendedora do agrestino é\nreconhecida em todo o Estado. O papel do governo é remover os gargalos que a limitam, não\nsubstituí-la.\n\n5.7. Centro-Sul\nO Centro-Sul sergipano, polarizado por Lagarto, reúne agricultura consolidada, com destaque\npara a mandiocultura, a citricultura e a fumicultura em transição, um polo universitário e de\nsaúde em expansão e uma posição rodoviária privilegiada. O governo apoiará a consolidação\nda região como polo regional de saúde e educação superior, ampliando a capacidade dos\nserviços de média complexidade que já atendem municípios vizinhos. Investirá na\ndiversificação das lavouras e na agroindustrialização da mandioca e das frutas regionais. E\nqualificará os eixos rodoviários que fazem do Centro-Sul o entroncamento natural entre o\nlitoral, o agreste e o sertão.\n\n5.8. Médio Sertão\nO Médio Sertão vive fundamentalmente da pecuária leiteira e da agricultura familiar, e é uma\ndas regiões que mais dependem das políticas de segurança hídrica e assistência técnica\n18"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-18",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\ndetalhadas no eixo agropecuário deste plano. Aqui, esses compromissos ganham endereço:\nampliação da infraestrutura de abastecimento e de pequenos sistemas hídricos comunitários,\nfortalecimento da bacia leiteira com apoio às queijarias e laticínios locais, inclusive na\nadequação sanitária que lhes abre novos mercados, e extensão rural presente e continuada. O\nMédio Sertão demonstra, há anos, que produz mesmo em condições adversas. Com água e\ntécnica, produzirá muito mais.\n\n5.9. Alto Sertão\nO Alto Sertão Sergipano é a região que mais duramente convive com a semiaridez. E é também\na que mais claramente demonstra a força transformadora do investimento público bem dirigido,\ncomo atestam os perímetros irrigados que mudaram o perfil produtivo de parte do território.\nAs prioridades do governo serão a expansão e a modernização da infraestrutura hídrica e de\nirrigação, dando escala ao que já provou funcionar, o fortalecimento da bacia leiteira e da\ncaprinovinocultura, vocações naturais do sertão, o apoio à energia solar como fonte de renda\ncomplementar ao produtor, e a garantia de que os serviços públicos de saúde, educação e\nsegurança cheguem aos povoados mais distantes da sede. Porque a presença do Estado não\npode rarear na mesma proporção em que a chuva rareia. O sertanejo sergipano não pede favor.\nPede as condições que qualquer cidadão do litoral já tem. Este plano as assegura.\n\n6. Governança e Monitoramento do Plano\nUm plano de governo só tem valor se puder ser cobrado. E é justamente para tornar essa\ncobrança possível que este capítulo existe. A execução deste plano seguirá mecanismos\nexplícitos de governança, começando pela sua tradução institucional: as metas aqui assumidas\nserão incorporadas ao Plano Plurianual 2028-2031 e às leis orçamentárias anuais, de modo que\ncada compromisso tenha lastro no orçamento e deixe de ser intenção para se tornar dotação.\nSerá instituído núcleo central de monitoramento de metas, vinculado diretamente ao\nGovernador, com acompanhamento sistemático da execução de cada eixo. Porque a\nexperiência ensina que meta sem dono e sem rotina de cobrança é meta que não se cumpre.\nA prestação de contas será igualmente estruturada. O governo publicará, todos os anos,\nrelatório público de resultados, comparando as metas previstas com as alcançadas e\njustificando, de forma fundamentada, os eventuais desvios. Errar faz parte de qualquer\nempreendimento humano, mas esconder o erro não pode fazer parte de governo algum. E serão\nrealizados fóruns regionais periódicos de prestação de contas e escuta da população, inclusive\ne especialmente no interior do Estado, fechando o ciclo que este plano propõe: diagnóstico,\nação, medição, transparência e correção de rumo. Com esses mecanismos, o presente\ndocumento não se esgota no momento do registro da candidatura. Ele se converte em contrato\nde gestão entre o governo e a sociedade sergipana, exigível ao longo de todo o mandato.\n\n19"
+          },
+          {
+            "id": "plano-de-governo-emanuel-cacho-sergipe-2027-2030-19",
+            "titulo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo | Emanuel Cacho | Sergipe 2027/2030\n\n7. Considerações Finais\nO diagnóstico apresentado neste plano é honesto e, por isso mesmo, exigente. Sergipe tem\nbases sociais razoáveis e sinais econômicos positivos, mas cresce menos do que poderia,\nconcentra oportunidades na capital e ainda não converteu seu potencial, em energia, em\nturismo, em agropecuária e, sobretudo, em gente, em desenvolvimento efetivo. A resposta a\nesse quadro, como se sustentou ao longo de todo este documento, não está em fórmulas\nideológicas de qualquer matiz. Está na gestão: planejamento sério, contas equilibradas, serviços\npúblicos que funcionam, ambiente favorável a quem produz e prioridade real para o interior.\nAs propostas aqui detalhadas não são uma lista de intenções soltas. Elas formam um todo\narticulado, uma engrenagem em que cada peça move as demais. A responsabilidade fiscal\nviabiliza o investimento. A educação e a qualificação alimentam a economia. A economia\ndiversificada amplia a arrecadação que financia a saúde, a segurança e a infraestrutura. E a\ngovernança por metas assegura que tudo isso seja executado, medido e prestado em contas\nperante a população. É essa engrenagem, e não promessas isoladas, que este plano oferece ao\npovo sergipano.\nUma vez eleito, o candidato submeterá a execução deste plano à interlocução permanente com\na Assembleia Legislativa, com os municípios, com os órgãos de controle e com a sociedade\ncivil, sob os princípios da legalidade, da impessoalidade, da moralidade, da publicidade e da\neficiência que regem a Administração Pública brasileira.\nEste documento é apresentado à Justiça Eleitoral em cumprimento ao disposto no art. 11, §1º,\nIX, da Lei nº 9.504/1997, para instrução do pedido de registro de candidatura de Emanuel\nMessias Oliveira Cacho ao cargo de Governador do Estado de Sergipe.\n\n20"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "1ce89636ab40e0a4d55e32466bdb5909a0dffb1f5fd6b0beb60ceaf4437991e9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "9d95506b8543b7d08662657968cb4eb06d722f0f0960a09952486ea856a2eebb"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "3257c996d1d797f7976bcf15194bdb627d998c74fa74c75d4ab4b2296a8ef4e2"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "97241a9fd82f50814be529f8f2a7b45681c08d090826631ed750453a28c4bd3b"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "eab05c8464a63319aca988269266fea4181bece59ae8451e997f8940c71018eb"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "3a3173c687bc4f7b302f8482cb19ae3f4f4f7fbf9dd907e3f7ed673f26e1ad9a"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "905dcbe92006b110614fb1f44450907dcf8da116b125d748be93647d1469f06b"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "639790f5dcff4197a230bcd41d512dfe3430838f8066b2d323f65f86500470ac"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "de56fb40642924d6c195930828a58566829fdd953a65c7ac9ef9863b8cda107d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "b5a2155733e8c2c3dee409f372323b434829598c74a203334658d0b6c4d17252"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2bc1b08eb6289008aaccfbc96b8ed9528ef7f08d8555e60e985186160c8495aa"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "c9ae9c50b37289de317a2b88c25da97e6e8b7be2b0a9dc4244c360f64dfab031"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "dc523ef8d01761cd067217686b849fee527f846d02a2427345da86fc24baf767"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "87909d89a6ba5399fb66a50d559626114cd202d29f221c9c029be18661f247b5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "b7c61abd8dd9720ad3ba4d8844618c9f47d6952f89f2b68f71245a2ef4188895"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "7359b155693cccaeeff2ecffceb79cdfb4b80047b83afbe78aab4906cf6e8876"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "c15011f528e6404c6eebbef2472920f952ab7b847e0b0dd10411ce75fab60136"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "d9f698a6f956109e68b1134831b6a0d3538face38c8088a94e47c8eea28de970"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "ba127d514b587643a22e8f297ae108eec15a6e81ed3fd1caba4b6ca1fea296aa"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "81238120e785a761a730fb9b7a36675305251ec9e440186030d60b85dd83b3d2"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a digitalização progressiva dos serviços estaduais de maior demanda, reunidos em portal e aplicativo únicos. A proposta prevê um portal único de transparência orçamentária, com dados abertos, atualização mensal e linguagem cidadã. Na educação, o governo cofinanciará a expansão de vagas em creches e pré-escolas municipais, priorizando municípios de menor capacidade fiscal. Na saúde, será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos. Na segurança, o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos, com análise de imagens e leitura automática de placas. No saneamento, será elaborado plano estadual de universalização com metas por município, priorizando municípios do interior com os piores indicadores de cobertura. Na agropecuária, o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior. No turismo, a estratégia prevê a estruturação e sinalização de roteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos turísticos completos.",
+    "frases": [
+      {
+        "texto": "O plano prevê a digitalização progressiva dos serviços estaduais de maior demanda, reunidos em portal e aplicativo únicos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 7,
+            "trecho": "os serviços estaduais de maior demanda serão progressivamente digitalizados e reunidos em portal e aplicativo únicos"
+          }
+        ]
+      },
+      {
+        "texto": "A proposta prevê um portal único de transparência orçamentária, com dados abertos, atualização mensal e linguagem cidadã.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 7,
+            "trecho": "um portal único de transparência orçamentária, com dados abertos, atualização mensal e linguagem cidadã"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o governo cofinanciará a expansão de vagas em creches e pré-escolas municipais, priorizando municípios de menor capacidade fiscal.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 9,
+            "trecho": "O Estado cofinanciará a expansão de vagas em creches e pré-escolas municipais, priorizando os municípios de menor capacidade fiscal"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 10,
+            "trecho": "Será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos, com análise de imagens e leitura automática de placas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 11,
+            "trecho": "o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos, com análise de imagens e leitura automática de placas"
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, será elaborado plano estadual de universalização com metas por município, priorizando municípios do interior com os piores indicadores de cobertura.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 11,
+            "trecho": "No saneamento, será elaborado plano estadual de universalização com metas por município, em articulação com o marco legal do setor, priorizando o investimento nos municípios do interior com os piores indicadores de cobertura"
+          }
+        ]
+      },
+      {
+        "texto": "Na agropecuária, o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 14,
+            "trecho": "o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior"
+          }
+        ]
+      },
+      {
+        "texto": "No turismo, a estratégia prevê a estruturação e sinalização de roteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos turísticos completos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 15,
+            "trecho": "a estruturação e sinalização de roteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos turísticos completos"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "digitalizacao-estatal",
+        "titulo": "Digitalização estatal",
+        "descricao": "O plano prevê a reunião de serviços estaduais de maior demanda em portal e aplicativo únicos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 7,
+            "trecho": "os serviços estaduais de maior demanda serão progressivamente digitalizados e reunidos em portal e aplicativo únicos"
+          }
+        ]
+      },
+      {
+        "id": "educacao-infantil",
+        "titulo": "Educação infantil",
+        "descricao": "A proposta prevê cofinanciamento estadual para ampliar vagas municipais em creches e pré-escolas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 9,
+            "trecho": "O Estado cofinanciará a expansão de vagas em creches e pré-escolas municipais"
+          }
+        ]
+      },
+      {
+        "id": "regulacao-saude",
+        "titulo": "Regulação da saúde",
+        "descricao": "A proposta prevê uma central única para organizar filas de procedimentos por critérios clínicos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 10,
+            "trecho": "Será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos"
+          }
+        ]
+      },
+      {
+        "id": "videomonitoramento",
+        "titulo": "Videomonitoramento",
+        "descricao": "O plano prevê a expansão do videomonitoramento integrado em rodovias principais e centros urbanos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 11,
+            "trecho": "o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos"
+          }
+        ]
+      },
+      {
+        "id": "agroindustria-interior",
+        "titulo": "Agroindústria no interior",
+        "descricao": "A proposta prevê incentivo à implantação de agroindústrias de pequeno e médio porte no interior.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002551712:01",
+            "pagina": 14,
+            "trecho": "o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:25:22.824Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:27:39.393Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação meramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de digitalização."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:1:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Frequência mensal está literalmente sustentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:2:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:3:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de regulação de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:4:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:5:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:6:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de agroindústria."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:7:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de roteiros turísticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:frase:8:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho fonte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de digitalização estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:digitalizacao-estatal:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho fonte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:educacao-infantil:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho fonte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de regulação de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:regulacao-saude:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho fonte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:videomonitoramento:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho fonte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de agroindústria."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002551712:tema:agroindustria-interior:documentos:SE:260002551712:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SE:260002551712",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SE:260002551712:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 32899,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2631,
+          "reasoning_output_tokens": 1310
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28567,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22536,
+          "output_tokens_details": {
+            "thinking_tokens": 291
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28567,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22536,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28567,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28567
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3618304
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "6a53e1e890c6df997c8bd2ee7ae633dfb826a702dca28896ec7909846a5fdb05",
+    "extractedTextSha256": "249badd442bab3517a2c5ccb6e4d74af0c580493a8c499d0d370dfb7674e6b8e",
+    "documentCount": 1,
+    "documentSetSha256": "b169db9d04964bc458563bd13b1effe0d92b63196eea91d8872c0c370d65ef5f",
+    "contentSha256": "995cb0316ff3a83767346988bf46e9170c4a233566bd384b09bb88248a51ed2d"
+  }
+}

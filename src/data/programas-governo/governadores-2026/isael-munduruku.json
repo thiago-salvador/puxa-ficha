@@ -1,0 +1,1399 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002550776",
+    "slug": "isael-munduruku",
+    "nomeUrna": "ISAEL MUNDURUKU",
+    "partido": "REDE",
+    "arquivoNome": "2026AM40002550776_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002550776_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002550776:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002550776_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002550776_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "1b28d5c7298f9904b4110748d1acdaea5291a6b13850c1b31f71154779d96e5f",
+        "extractedTextSha256": "726cc612801309654d5741d225ee5f7a659e265e61267bbd24c47872ce01b13b",
+        "paginas": 50,
+        "secoes": [
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nPROGRAMA DE GOVERNO\n\nAMAZONAS VIVO,\nJUSTO E FORTE\nIsael Munduruku\nGoverno do Estado do Amazonas · 2027–2030\n\nFEDERAÇÃO PSOL - REDE SUSTENTABILIDADE – AMAZONAS\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n1"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-2",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nAPRESENTAÇÃO\n\nUm governo que nasce dos territórios\nO Amazonas não pode continuar sendo tratado como um território distante, esquecido ou disponível para\na exploração de poucos. Somos o maior estado do Brasil, morada da maior população indígena do país\ne centro de uma diversidade cultural que não cabe nos velhos modelos de desenvolvimento. A floresta,\nos rios e os conhecimentos dos povos não são obstáculos ao progresso: são a base de um futuro com\ndignidade, trabalho e segurança para todas as pessoas.\nEste programa propõe um novo pacto entre o Estado e a sociedade. O governo deve chegar onde hoje\nchegam apenas a promessa, o improviso e o abandono. Isso significa organizar políticas para as\ndistâncias amazônicas, respeitar os calendários dos rios, reduzir desigualdades entre Manaus e o interior\ne colocar as comunidades no centro das decisões.\nCOMPROMISSOS E MEDIDAS\n\nGovernar para a vida, combinando justiça social, proteção ambiental, democracia e geração de trabalho\ndigno.\nReconhecer povos indígenas, ribeirinhos, quilombolas, extrativistas, pescadores artesanais e agricultores\nfamiliares como sujeitos das políticas públicas.\nPlanejar serviços de saúde, educação, segurança, transporte, energia e conectividade segundo as\nrealidades de cada calha de rio e região do estado.\nCombater privilégios, desperdícios e captura do orçamento por interesses privados, fazendo o dinheiro\npúblico chegar a quem mais precisa.\nConstruir soluções com ciência, saberes tradicionais, servidores públicos, universidades, movimentos\nsociais, setor produtivo responsável e governos municipais.\nNOSSA ESCOLHA Crescer sem destruir, produzir sem explorar e governar sem deixar ninguém para trás.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n2"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-3",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nMENSAGEM DE ISAEL MUNDURUKU\n\nO Amazonas pode ser cuidado por quem conhece seu\npovo\nMinha trajetória está ligada à defesa dos direitos dos povos indígenas, à construção comunitária e à luta\npara que o Estado reconheça a presença indígena também nas cidades. Como advogado, liderança e\num dos fundadores do Parque das Tribos, aprendi que direitos só se tornam reais quando as pessoas se\norganizam e quando o poder público escuta, respeita e cumpre sua obrigação.\nApresentamos este programa como ponto de partida para um governo construído coletivamente. Ele\ndialoga com reivindicações históricas de organizações indígenas, movimentos populares, associações\ncomunitárias, sindicatos, mulheres, juventudes, pessoas com deficiência, população negra,\ntrabalhadores da cultura, agricultores, pescadores e defensores da floresta.\nCOMPROMISSOS E MEDIDAS\n\nFazer do Palácio do Governo uma casa aberta ao povo, com presença regular do governador nas regiões\ne prestação pública de contas.\nTratar a consulta livre, prévia, informada e de boa-fé como obrigação, não como favor, sempre que\nmedidas afetarem povos e comunidades tradicionais.\nValorizar o serviço público e garantir condições para que profissionais permaneçam no interior.\nProteger quem cuida da floresta, das águas e dos territórios, enfrentando ameaças, racismo e violência\npolítica.\nGovernar com coragem para enfrentar interesses que lucram com a desigualdade e a destruição.\nCOMPROMISSO Este documento será aperfeiçoado em plenárias territoriais e setoriais. Participação popular\n\nnão termina na eleição; começa nela.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n3"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-4",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nSUMÁRIO POLÍTICO\n\nDez compromissos que organizam o programa\nO programa está organizado por missões integradas. Nenhuma política funcionará isoladamente: saúde\ndepende de água e transporte; educação depende de conectividade e alimentação; segurança depende\nde oportunidades; proteção florestal depende de direitos territoriais e renda.\nCOMPROMISSOS E MEDIDAS\n\n1. Saúde que chega a todos os territórios, com rede fluvial, aérea e terrestre, atenção básica forte e\nresposta às emergências climáticas.\n2. Educação pública que respeita identidades, valoriza profissionais e prepara a juventude para ciência,\ntrabalho, cultura e participação democrática.\n3. Economia da floresta em pé, com crédito, assistência técnica, cooperativismo, agregação de valor e\nrepartição justa dos benefícios.\n4. Clima e proteção da vida, com adaptação, prevenção de incêndios, defesa dos rios e transição para\nenergia limpa.\n5. Segurança cidadã e territorial, orientada por inteligência, prevenção, controle externo e enfrentamento\nao crime organizado e ambiental.\n6. Infraestrutura e conectividade adequadas à Amazônia, com transporte público fluvial, internet universal\ne logística de baixo impacto.\n7. Água, saneamento, moradia e cidades dignas, adaptados às cheias, secas, várzeas, periferias e\ncomunidades rurais.\n8. Direitos dos povos indígenas e comunidades tradicionais, com consulta, proteção territorial, políticas\nespecíficas e participação decisória.\n9. Estado democrático, transparente e eficiente, com orçamento participativo, valorização dos servidores\ne combate à corrupção.\n10. Equilíbrio entre Manaus e interior, com regionalização dos serviços, fortalecimento municipal e\ninvestimentos distribuídos de forma justa.\nCada compromisso terá metas anuais, responsáveis definidos, orçamento identificável e\nacompanhamento social.\nMÉTODO\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n4"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-5",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nDIAGNÓSTICO\n\nUm território imenso, uma desigualdade que precisa ser\nvencida\nO Amazonas possui 1,56 milhão de quilômetros quadrados, 62 municípios e baixa densidade\npopulacional. O Censo de 2022 registrou 3,94 milhões de habitantes, enquanto a estimativa de 2025\nchegou a 4,32 milhões. Mais da metade da população vive em Manaus. Essa concentração revela\ndécadas de políticas que levaram empregos, hospitais, universidades, equipamentos culturais e decisões\nadministrativas para a capital, deixando o interior dependente de viagens longas e caras.\nO estado tem a maior população indígena do Brasil: 490,9 mil pessoas em 2022. Manaus também é o\nmunicípio com maior população indígena do país. Esses números exigem que toda política estadual\nreconheça a diversidade étnica e linguística e enfrente o racismo institucional.\nCOMPROMISSOS E MEDIDAS\n\nAdotar indicadores territorializados, desagregados por município, raça, etnia, sexo, idade, deficiência,\nrenda e situação urbana ou rural.\nRever critérios de distribuição de investimentos para compensar custos amazônicos e vazios históricos de\natendimento.\nCriar mapas públicos de tempo de acesso a serviços essenciais, não apenas mapas de distância física.\nPriorizar municípios e comunidades com piores indicadores sociais e maior risco climático.\nIntegrar planejamento estadual, metropolitano, municipal e comunitário, evitando obras isoladas e sem\nmanutenção.\nDADOS DE PARTIDA Área: 1.558.704 km². População estimada em 2025: 4.321.616 pessoas. População\n\nindígena no Censo 2022: 490.854 pessoas.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n5"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-6",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nPRINCÍPIOS\n\nA vida acima do lucro e o território acima da imposição\nO desenvolvimento será medido pela redução da fome, da violência e do tempo de espera por\natendimento; pela qualidade da escola e da água; pela renda do trabalho; pela segurança de mulheres e\njovens; pela floresta protegida e pelos rios vivos. Crescimento econômico que concentra renda,\ncontamina comunidades ou destrói modos de vida não será tratado como sucesso.\nA ação do governo seguirá os princípios da dignidade humana, do bem comum, da precaução ambiental,\nda função social da propriedade, da igualdade racial e de gênero, do respeito à autonomia dos povos e\nda responsabilidade com as próximas gerações.\nCOMPROMISSOS E MEDIDAS\n\nUniversalidade com equidade: serviços para todos, com prioridade e desenho específico para quem\nenfrenta maiores barreiras.\nDescentralização com capacidade: transferir atribuições acompanhadas de recursos, equipes, tecnologia\ne controle social.\nParticipação com poder real: conselhos e consultas capazes de influenciar decisões e orçamento.\nTransparência ativa: contratos, metas, licenças, emendas e execução orçamentária em linguagem\nacessível.\nTrabalho digno: nenhuma política estadual aceitará trabalho escravo, infantil, discriminatório ou inseguro\nem suas cadeias.\nResponsabilidade climática: todo grande investimento passará por avaliação de riscos, emissões,\nimpactos cumulativos e alternativas.\nREGRA DE GOVERNO Nenhuma comunidade será sacrificada para que outra região ou empresa concentre\n\nos benefícios.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n6"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-7",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 1 · SAÚDE\n\nSaúde que chega a todos os territórios\nO direito à saúde não pode depender do preço da passagem, da disponibilidade de combustível ou de\numa vaga em Manaus. O Sistema Único de Saúde será fortalecido por uma rede estadual que combine\natenção básica municipal, serviços regionais, hospitais de referência, transporte sanitário e\nteleassistência. O estado assumirá seu papel de coordenar, financiar, regular e reduzir desigualdades.\nCOMPROMISSOS E MEDIDAS\n\nOrganizar linhas de cuidado regionais para gestação de risco, urgência, câncer, doenças\ncardiovasculares, trauma, saúde mental e doenças infecciosas.\nCriar central única e transparente de regulação, com critérios clínicos, rastreabilidade da fila e apoio aos\nmunicípios.\nFinanciar equipes fluviais e terrestres com calendário público e continuidade de atendimento.\nExpandir diagnóstico laboratorial e por imagem no interior, com redes de laudo remoto e manutenção\ngarantida.\nEstruturar transporte sanitário fluvial, terrestre e aeromédico, com protocolos, bases regionais e prioridade\nclínica.\nReforçar vigilância epidemiológica, ambiental, sanitária e de saúde do trabalhador.\nPactuar com a União e municípios o atendimento intercultural aos povos indígenas, sem substituir\nresponsabilidades federais.\nPRIORIDADE Atenção básica resolutiva perto de casa e acesso rápido à especialidade quando necessário.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n7"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-8",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 1 · SAÚDE\n\nUma rede fluvial, aérea e terrestre permanente\nMissões esporádicas não substituem uma rede. O governo criará rotas sanitárias regulares, integradas à\nregulação e aos hospitais regionais. Em cada calha, embarcações e bases terão equipes, conectividade,\ncadeia de frio, medicamentos, laboratório rápido e comunicação de emergência.\nCOMPROMISSOS E MEDIDAS\n\nImplantar barcos de saúde regionais com agenda anual, prontuário eletrônico interoperável e controle\nsocial.\nCriar pontos comunitários de telemedicina assistida, evitando transferências desnecessárias e\nacompanhando casos crônicos.\nFormar e valorizar agentes comunitários, agentes indígenas de saúde e agentes de combate às\nendemias.\nCriar incentivo de permanência no interior para equipes multiprofissionais, com moradia funcional onde\nnecessário.\nManter estoques regionais de medicamentos essenciais e insumos para surtos e emergências climáticas.\nGarantir transporte e hospedagem humanizada para pacientes e acompanhantes encaminhados a\ncentros regionais ou Manaus.\nEstabelecer manutenção preventiva de embarcações, ambulâncias, equipamentos e geradores, com\ncontratos transparentes.\nIntegrar saúde bucal, reabilitação, fisioterapia e cuidados paliativos à rede territorial.\nINDICADOR-CHAVE Reduzir o tempo entre encaminhamento, deslocamento e atendimento especializado,\n\npublicando resultados por região.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n8"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-9",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 1 · SAÚDE E CLIMA\n\nProteger a população da fumaça, do calor, das secas e\ndas cheias\nA crise climática já se manifesta em doenças respiratórias, interrupção de tratamentos, insegurança\nalimentar, contaminação da água, piora de doenças infecciosas e sofrimento mental. O Plano Estadual\nde Saúde e Clima integrará prevenção, adaptação e resposta, com prioridade para crianças, idosos,\ngestantes, trabalhadores expostos, povos e comunidades tradicionais.\nCOMPROMISSOS E MEDIDAS\n\nCriar observatório de saúde e clima com alertas de fumaça, calor, qualidade da água e risco\nepidemiológico.\nDistribuir orientações, máscaras adequadas e apoio a ambientes de ar limpo durante episódios críticos de\nfumaça.\nPreparar planos de continuidade para diálise, oxigênio, vacinação, pré-natal e tratamentos de uso\ncontínuo durante secas e cheias.\nMonitorar doenças relacionadas à poluição do ar causada por queimadas, caminhões, embarcações e\ngeração a diesel.\nInstalar sistemas de água segura, energia solar e comunicação de emergência em unidades estratégicas.\nCriar equipes rápidas para análise de água em áreas sujeitas a mercúrio, agrotóxicos, esgoto, mineração\ne acidentes.\nFormar profissionais sobre saúde climática, racismo ambiental e atenção a populações deslocadas.\nArticular Defesa Civil, SUS, assistência social, educação e órgãos ambientais em protocolos comuns.\nDIRETRIZ Emergência climática será tratada como questão de saúde pública e desigualdade, não apenas\n\ncomo evento natural.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n9"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-10",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 2 · EDUCAÇÃO\n\nEducação pública para o futuro e para o território\nA escola deve formar para a vida, o trabalho, a ciência, a cultura e a participação social. No Amazonas,\nela também precisa dialogar com rios, florestas, línguas e conhecimentos tradicionais. O governo\nenfrentará desigualdades de aprendizagem sem reduzir educação a testes, assegurando infraestrutura,\npermanência, alimentação, inclusão e valorização profissional.\nCOMPROMISSOS E MEDIDAS\n\nGarantir alfabetização na idade certa com apoio pedagógico, bibliotecas, materiais contextualizados e\ncooperação com municípios.\nExecutar busca ativa de crianças e adolescentes fora da escola, articulando educação, assistência, saúde\ne proteção de direitos.\nUniversalizar internet de qualidade e energia confiável nas escolas, com suporte técnico e dispositivos de\nuso pedagógico.\nReformar escolas com conforto térmico, água potável, banheiros, acessibilidade, cozinha, esporte e\nprevenção de incêndios.\nFortalecer educação integral com projeto pedagógico, cultura, ciência, esporte e alimentação, não apenas\nampliação de horário.\nGarantir alimentação escolar saudável, regional e adquirida da agricultura familiar e de comunidades\ntradicionais.\nCombater racismo, violência de gênero, capacitismo e discriminação, promovendo convivência\ndemocrática.\nCriar programa de recuperação das aprendizagens com atenção especial aos anos de transição.\nPRINCÍPIO Nenhuma tecnologia substituirá professor, comunidade escolar ou vínculo humano; ela deverá\n\nampliar possibilidades de aprendizagem.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n10"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-11",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 2 · VALORIZAÇÃO\n\nProfissionais respeitados e escolas com condições de\nfuncionar\nNão haverá educação de qualidade com trabalhadores sobrecarregados, contratos precários e escolas\nsem equipe. O estado estabelecerá diálogo permanente com sindicatos e conselhos, cumprirá planos de\ncarreira e organizará concursos de acordo com necessidades territoriais.\nCOMPROMISSOS E MEDIDAS\n\nRecompor progressivamente perdas, cumprir direitos de carreira e garantir negociação coletiva\ntransparente.\nRealizar concursos públicos para reduzir vínculos precários e assegurar equipes completas nas escolas.\nCriar adicional e política de permanência no interior, com critérios públicos e formação vinculada às\nnecessidades locais.\nAssegurar formação continuada no horário de trabalho, em parceria com universidades e institutos\npúblicos.\nGarantir saúde ocupacional, prevenção ao assédio e apoio psicossocial aos profissionais da educação.\nFortalecer gestão democrática, conselhos escolares e escolha de dirigentes com participação da\ncomunidade.\nReduzir burocracias que retiram tempo do trabalho pedagógico e melhorar sistemas de informação.\nManter equipes de apoio com merendeiras, administrativos, intérpretes, cuidadores, psicologia e serviço\nsocial conforme a lei.\nCOMPROMISSO Valorizar quem ensina é pagar corretamente, garantir carreira e oferecer condições reais\n\nde trabalho.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n11"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-12",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 2 · DIVERSIDADE\n\nEducação indígena, ribeirinha, quilombola e do campo\nUma escola amazônica não pode impor calendário, currículo e material produzidos longe do território. A\neducação escolar indígena será específica, diferenciada, intercultural, comunitária e bilíngue ou\nmultilíngue. Escolas ribeirinhas, quilombolas e do campo terão projetos próprios, transporte seguro e\nrespeito aos ciclos das águas e da produção.\nCOMPROMISSOS E MEDIDAS\n\nConstruir currículos e calendários com comunidades, reconhecendo línguas, conhecimentos, memória e\nformas próprias de organização.\nRealizar concursos e processos específicos para professores indígenas, respeitando formação e\npertencimento comunitário.\nProduzir materiais didáticos em línguas indígenas com autoria de professores, sábios, artistas e\npesquisadores dos povos.\nAdaptar arquitetura escolar ao clima, ao território e à cultura, garantindo água, energia e conectividade.\nRegularizar transporte escolar fluvial com padrões de segurança, fiscalização, rotas públicas e plano para\neventos extremos.\nFortalecer casas familiares rurais, pedagogia da alternância e educação de jovens e adultos\ncontextualizada.\nCriar programa de formação e valorização de mestres de saberes tradicionais.\nGarantir participação das organizações representativas na formulação, execução e avaliação dessas\npolíticas.\nDIREITO A escola deve fortalecer a identidade e a autonomia das comunidades, nunca funcionar como\n\ninstrumento de apagamento cultural.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n12"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-13",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 2 · JUVENTUDE E CIÊNCIA\n\nEnsino técnico, universidade e inovação a serviço do\npovo\nA juventude precisa ter direito de estudar, trabalhar e construir futuro sem abandonar sua região. O ensino\ntécnico será integrado às vocações locais e às necessidades públicas: saúde, saneamento, energia solar,\nmanejo florestal, agroecologia, pesca, tecnologia digital, manutenção naval, turismo de base comunitária\ne gestão cooperativa.\nCOMPROMISSOS E MEDIDAS\n\nExpandir ensino médio integrado e formação técnica nos polos regionais, evitando cursos sem\ninfraestrutura ou perspectiva de trabalho.\nCriar bolsas de permanência, moradia estudantil e transporte para jovens do interior, indígenas,\nquilombolas e de baixa renda.\nFirmar pacto com UEA, Ufam, Ifam e instituições de pesquisa para interiorização coordenada e pesquisa\naplicada.\nApoiar laboratórios escolares, feiras científicas, iniciação científica júnior e cultura digital crítica.\nCriar rede de extensão tecnológica para cooperativas, pequenos negócios e governos municipais.\nEstimular formação de mulheres e jovens em ciência, engenharia, tecnologia, gestão e ofícios da\ntransição energética.\nGarantir estágio remunerado e primeiro emprego em projetos estaduais, com critérios sociais e territoriais.\nProteger conhecimento tradicional e impedir apropriação privada sem consentimento e repartição de\nbenefícios.\nOBJETIVO Transformar conhecimento em autonomia, serviços melhores e renda distribuída nos territórios.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n13"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-14",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 3 · ECONOMIA\n\nEconomia da floresta em pé e do trabalho digno\nO Amazonas precisa superar a falsa escolha entre pobreza com floresta e emprego com destruição. A\npolítica econômica estadual apoiará quem produz alimento, conhecimento, cultura, serviços e bens com\nresponsabilidade. A Zona Franca continuará estratégica, mas deverá avançar em inovação,\ndescarbonização, conteúdo local e integração com o interior.\nCOMPROMISSOS E MEDIDAS\n\nElaborar Plano Estadual de Desenvolvimento Justo, com metas de emprego, redução de desigualdades e\nproteção ambiental.\nCondicionar incentivos estaduais a trabalho decente, transparência, metas ambientais, diversidade e\ncontrapartidas sociais.\nFortalecer pequenas empresas, cooperativas, associações e economia solidária com crédito, compras\npúblicas e assistência.\nCriar política de encadeamentos produtivos entre Polo Industrial de Manaus, universidades e\nfornecedores locais.\nCombater informalidade abusiva e apoiar transição de trabalhadores para ocupações protegidas.\nEstimular reparo, reuso, reciclagem e maior durabilidade de produtos.\nApoiar turismo de base comunitária e cultural, sob controle local e com limites ambientais.\nCriar observatório do trabalho, renda e custo de vida no Amazonas.\nCRITÉRIO Recurso público deve gerar benefício público: emprego digno, inovação, arrecadação justa e\n\nredução de impactos.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n14"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-15",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 3 · SOCIOBIODIVERSIDADE\n\nAgregar valor sem retirar o controle das comunidades\nAçaí, castanha, pirarucu, óleos, fibras, borracha, cacau, guaraná, frutas, artesanato e conhecimentos\nassociados podem gerar renda com floresta viva. Mas bioeconomia não pode ser novo nome para\nconcentração, patenteamento indevido ou compra barata de matéria-prima. O protagonismo deve ser de\nquem vive e produz nos territórios.\nCOMPROMISSOS E MEDIDAS\n\nCriar agência pública de assistência técnica e extensão rural, florestal, pesqueira e cooperativista com\npresença regional.\nImplantar unidades comunitárias de beneficiamento, armazenamento, gelo, energia, certificação e\ntransporte.\nGarantir capital de giro e crédito orientado para associações, cooperativas, mulheres e juventudes.\nAmpliar compras públicas de produtos regionais para escolas, hospitais, presídios e assistência social.\nApoiar marcas coletivas, indicação geográfica, rastreabilidade comunitária e comércio justo.\nCriar política estadual de repartição justa de benefícios e proteção do conhecimento tradicional.\nFinanciar inovação apropriada, definida com produtores e capaz de reduzir esforço, perdas e riscos.\nGarantir que licenciamento, vigilância sanitária e tributação tenham procedimentos proporcionais para\nprodução comunitária.\nLINHA VERMELHA Nenhum projeto será chamado de sustentável se retirar autonomia, território ou renda de\n\nquem conserva a floresta.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n15"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-16",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 3 · TRABALHO E INDÚSTRIA\n\nZona Franca inovadora, limpa e ligada ao Amazonas real\nO Polo Industrial de Manaus protege empregos e arrecadação, mas pode contribuir muito mais para uma\ntransição produtiva justa. O governo defenderá a Zona Franca e negociará contrapartidas para\nqualificação, pesquisa, eficiência energética, mobilidade limpa, redução de resíduos e encadeamentos\nlocais.\nCOMPROMISSOS E MEDIDAS\n\nDefender segurança jurídica do modelo e sua modernização com metas sociais, tecnológicas e\nambientais verificáveis.\nCriar programa de substituição gradual do diesel na logística industrial, começando por frotas cativas e\ncorredores urbanos.\nApoiar produção e manutenção de barcos eficientes, motores elétricos, baterias, sistemas solares e\nequipamentos de saneamento.\nEstabelecer plano de transição para trabalhadores de setores sujeitos a mudança tecnológica, com\nformação e proteção de renda.\nFortalecer inspeção do trabalho em cooperação com órgãos federais e combater terceirização predatória.\nEstimular inovação aberta com UEA, Ufam, Ifam, Inpa, Cetam e institutos de pesquisa.\nExigir inventários de emissões, metas de redução e planos de adaptação das empresas beneficiadas.\nCriar fundo de inovação com governança pública e social, evitando privatização do conhecimento\nfinanciado pelo Estado.\nVISÃO A Zona Franca do futuro deve produzir tecnologia para resolver problemas amazônicos e gerar bons\n\nempregos.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n16"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-17",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 3 · ALIMENTO E TERRITÓRIO\n\nAgroecologia, pesca e soberania alimentar\nComida saudável e adequada à cultura local é direito. O governo apoiará roças, quintais, pesca artesanal,\nmanejo comunitário, feiras e cozinhas solidárias. A política agrícola deixará de favorecer apenas grandes\noperações e passará a reconhecer a diversidade da produção familiar e tradicional.\nCOMPROMISSOS E MEDIDAS\n\nCriar Plano Estadual de Agroecologia e Produção Orgânica com participação de movimentos e\ninstituições de pesquisa.\nDistribuir sementes e mudas crioulas, apoiar casas de farinha, viveiros, sistemas agroflorestais e\nrecuperação de áreas degradadas.\nGarantir assistência técnica contínua, inclusive por equipes fluviais, e documentação para acesso a\npolíticas.\nApoiar manejo comunitário do pirarucu e de outras espécies com pesquisa, vigilância e comercialização\njusta.\nFortalecer feiras, mercados populares e circuitos curtos entre produtores e consumidores.\nAmpliar compras da agricultura familiar e estabelecer pagamento pontual aos fornecedores.\nCriar estoques regionais e protocolos de abastecimento para secas e cheias severas.\nCombater agrotóxicos perigosos, contaminação de águas e desmatamento associado a cadeias\nagropecuárias.\nPRIORIDADE O orçamento rural deve primeiro apoiar quem produz comida e conserva o território.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n17"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-18",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 4 · CLIMA\n\nAdaptação climática com justiça territorial\nSecas extremas, cheias, calor, erosão, incêndios e fumaça não atingem todos da mesma maneira.\nComunidades com menos renda, água, transporte e serviços sofrem primeiro e se recuperam por último.\nO Plano Estadual de Adaptação Climática será construído com os territórios e incorporado a todas as\nsecretarias.\nCOMPROMISSOS E MEDIDAS\n\nMapear riscos climáticos por comunidade, bairro, infraestrutura, serviço e cadeia produtiva.\nCriar Fundo Estadual de Emergência e Adaptação com regras públicas, controle social e acesso\nsimplificado por municípios e comunidades.\nExecutar planos regionais para seca, cheia, fumaça, incêndio, deslizamento, erosão e surto de doenças.\nGarantir água, alimento, saúde, transporte e renda emergencial antes que crises virem calamidade\nhumanitária.\nRevisar obras públicas para incorporar cenários climáticos e custos de manutenção.\nApoiar planos comunitários de adaptação, respeitando conhecimentos locais e protocolos próprios.\nCriar seguro e apoio à recuperação de pequenos produtores, pescadores e empreendimentos\ncomunitários.\nPublicar orçamento climático, distinguindo prevenção, adaptação, resposta e reconstrução.\nJUSTIÇA CLIMÁTICA Quem menos contribuiu para a crise não pode continuar pagando a conta mais alta.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n18"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-19",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 4 · FLORESTAS\n\nDesmatamento zero com renda, fiscalização e direitos\nO combate ao desmatamento exige presença pública, inteligência financeira, regularização fundiária,\nproteção territorial e alternativas econômicas. Não aceitaremos que pequenos produtores e comunidades\nsejam tratados como inimigos enquanto grandes financiadores e compradores da ilegalidade\npermanecem invisíveis.\nCOMPROMISSOS E MEDIDAS\n\nEstabelecer trajetória estadual de desmatamento zero, com metas anuais e transparência por município.\nFortalecer IPAAM, Sema e órgãos de terra com equipes, tecnologia, carreira, autonomia técnica e\ncontrole social.\nIntegrar fiscalização ambiental, fazendária, fundiária e policial para atingir cadeias econômicas e lavagem\nde dinheiro.\nPriorizar regularização de territórios coletivos, unidades de conservação e pequenas posses legítimas.\nSuspender destinação de terras e incentivos em áreas com conflito, fraude ou violência até apuração.\nApoiar manejo florestal comunitário e restauração com espécies nativas e geração de renda.\nProteger corredores ecológicos, nascentes, lagos, várzeas e áreas de reprodução da fauna.\nGarantir dados abertos sobre autorizações, autos de infração, embargos, licenças e compensações.\nFOCO Responsabilizar quem financia, compra, transporta e lucra com a destruição, não apenas quem está\n\nna ponta vulnerável.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n19"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-20",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 4 · INCÊNDIOS\n\nPrevenção permanente e brigadas comunitárias\nIncêndio não se combate apenas quando a fumaça chega às cidades. O estado organizará prevenção\nao longo do ano, apoiando manejo seguro, vigilância comunitária, aceiros, equipamentos, comunicação\ne resposta rápida. Brigadistas terão formação, remuneração, proteção e reconhecimento.\nCOMPROMISSOS E MEDIDAS\n\nCriar programa permanente de brigadas comunitárias indígenas, extrativistas, rurais e urbanas.\nEquipar bases regionais com embarcações, veículos, proteção individual, comunicação, drones e\nferramentas adequadas.\nIntegrar alertas meteorológicos, focos de calor, denúncias e conhecimento comunitário em sala de\nsituação pública.\nRealizar prevenção em áreas críticas antes do período seco, com pactos locais e fiscalização de\nqueimadas criminosas.\nGarantir seguro, saúde ocupacional e remuneração digna a brigadistas.\nCriar protocolos especiais para escolas, hospitais, aldeias, comunidades e áreas de turfa ou difícil acesso.\nInvestigar causas e responsabilizar agentes econômicos por danos e custos públicos.\nApoiar recuperação pós-fogo de moradias, produção, fauna e áreas comunitárias.\nMETA OPERACIONAL Reduzir tempo de detecção e primeira resposta, com indicadores publicados por\n\nregião e temporada.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n20"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-21",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 4 · ENERGIA\n\nTransição energética popular e fim da dependência do\ndiesel\nMilhares de famílias e serviços públicos ainda dependem de sistemas caros, poluentes e instáveis.\nBarcos e caminhões a diesel afetam o clima, a qualidade do ar e a saúde. A transição não será usada\npara impor mineração, barragens ou grandes projetos sobre comunidades. Ela será descentralizada,\neficiente, participativa e orientada ao bem público.\nCOMPROMISSOS E MEDIDAS\n\nSolarizar escolas, unidades de saúde, sistemas de água e equipamentos comunitários, com baterias e\nmanutenção local.\nCriar programa de formação e trabalho para instaladores e mantenedores de sistemas renováveis em\ntodos os polos regionais.\nSubstituir gradualmente geradores a diesel em serviços públicos e apoiar soluções comunitárias nos\nsistemas isolados.\nImplementar projetos-piloto de barcos elétricos e híbridos em rotas públicas e comunitárias.\nPlanejar corredores de carga limpa, começando pela Região Metropolitana e eixos industriais.\nNão conceder novos incentivos estaduais à expansão de petróleo e gás sem avaliação climática, territorial\ne econômica completa.\nExigir consulta prévia, licenciamento rigoroso e repartição justa em projetos minerais ligados à transição.\nCriar conselho social da transição energética com trabalhadores e territórios afetados.\nDIRETRIZ Mudar a fonte de energia sem mudar quem decide e quem se beneficia não é transição justa.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n21"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-22",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 4 · ÁGUAS\n\nRios vivos, pesca protegida e mercúrio zero\nOs rios são estrada, alimento, cultura, trabalho e memória. Sua contaminação ameaça toda a sociedade.\nO governo integrará monitoramento, saneamento, fiscalização, ciência cidadã e recuperação ambiental,\ncom prioridade para bacias afetadas por garimpo, esgoto, petróleo, resíduos e empreendimentos.\nCOMPROMISSOS E MEDIDAS\n\nCriar rede pública de monitoramento da qualidade da água e do pescado, com dados acessíveis e\ndevolutivas comunitárias.\nAmpliar vigilância do mercúrio e garantir cuidado integral às populações expostas.\nCombater balsas de garimpo e cadeias de combustível, máquinas, ouro e lavagem financeira associadas.\nProteger lagos de manejo e acordos de pesca, com apoio à vigilância comunitária.\nFiscalizar pesca industrial predatória e respeitar direitos de pescadores artesanais.\nCriar planos de prevenção e resposta a derramamentos de óleo e substâncias perigosas.\nRecuperar igarapés urbanos e impedir que obras transfiram poluição para comunidades mais pobres.\nReconhecer comitês de bacia e fóruns comunitários como espaços de decisão sobre usos da água.\nCOMPROMISSO Água potável e peixe seguro serão tratados como direitos fundamentais e indicadores de\n\ngoverno.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n22"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-23",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 5 · POVOS INDÍGENAS\n\nDireitos indígenas no centro do governo\nO Amazonas não pode ter a maior população indígena do país e manter políticas fragmentadas, sem\norçamento e sem poder de decisão. Será criada uma estrutura estadual de política indígena com direção\nqualificada, participação das organizações e articulação transversal. Ela atuará nas competências\nestaduais e cobrará da União o cumprimento de suas responsabilidades.\nCOMPROMISSOS E MEDIDAS\n\nCriar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo\nrepresentativo.\nInstituir plano plurianual indígena construído por regiões, povos, mulheres, juventudes e organizações.\nApoiar proteção territorial, vigilância comunitária e resposta a invasões em cooperação com União e\nmunicípios.\nGarantir intérpretes, mediação intercultural e combate ao racismo nos serviços estaduais.\nRegularizar e urbanizar comunidades indígenas em contexto urbano sem apagar sua identidade coletiva.\nApoiar documentação civil, acesso a benefícios, produção, cultura, esporte e comunicação indígena.\nReconhecer e apoiar medicina tradicional, parteiras, pajés e especialistas, em diálogo respeitoso com o\nSUS.\nAssegurar representação indígena em conselhos de educação, saúde, meio ambiente, cultura, segurança\ne desenvolvimento.\nREPRESENTATIVIDADE\n\nA presença indígena não será apenas simbólica: haverá poder, orçamento e\n\ncapacidade de decisão.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n23"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-24",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 5 · COMUNIDADES TRADICIONAIS\n\nRibeirinhos, quilombolas, extrativistas e pescadores\ncom direitos\nComunidades tradicionais cuidam de territórios extensos e prestam serviço ambiental à sociedade, mas\nconvivem com insegurança fundiária, dificuldade de crédito, transporte precário e serviços intermitentes.\nO Estado reconhecerá suas organizações, modos de vida e protocolos comunitários.\nCOMPROMISSOS E MEDIDAS\n\nImplementar política estadual de povos e comunidades tradicionais com comissão paritária e orçamento\npróprio.\nAcelerar reconhecimento e regularização de territórios quilombolas nas competências estaduais.\nApoiar reservas extrativistas e comunidades do entorno com produção, educação, saúde, comunicação e\nvigilância.\nGarantir acesso de pescadores artesanais a documentação, benefícios, seguro e mercados justos.\nReconhecer acordos comunitários de uso de recursos e fortalecer resolução não violenta de conflitos.\nApoiar protocolos autônomos de consulta e comitês gestores comunitários.\nProteger cemitérios, lugares sagrados, sítios arqueológicos, festas, línguas e patrimônios imateriais.\nCriar pagamento por serviços socioambientais com acesso direto, adicional e sem substituir direitos\nsociais.\nRECONHECIMENTO Conservar floresta e água é trabalho social. Quem realiza esse trabalho deve ter\n\ndireitos, renda e serviços públicos.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n24"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-25",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 5 · TERRA E PRODUÇÃO\n\nRegularização fundiária justa e reforma agrária\necológica\nA insegurança sobre a terra favorece violência, grilagem, desmatamento e exclusão do crédito. A\nprioridade será destinar terras públicas à proteção, ao uso coletivo, à reforma agrária e às famílias que\ncumprem função social, impedindo legalização de grandes ocupações fraudulentas.\nCOMPROMISSOS E MEDIDAS\n\nRealizar auditoria do cadastro fundiário estadual e integrar bases com transparência e proteção de dados\nsensíveis.\nSuspender titulação em áreas sobrepostas a territórios tradicionais, conflitos, unidades de conservação ou\nindícios de fraude.\nPriorizar titulação coletiva de povos e comunidades e regularização de pequenos produtores legítimos.\nDestinar terras públicas não destinadas para unidades de conservação, territórios coletivos e\nassentamentos sustentáveis.\nApoiar assentamentos com água, saúde, educação, energia, estrada vicinal de baixo impacto e\nassistência técnica.\nCombater violência no campo com comissão estadual, mediação, proteção e investigação patrimonial.\nExigir função social, cumprimento ambiental e ausência de trabalho degradante em políticas fundiárias.\nCriar mecanismos de recuperação de terras públicas apropriadas ilegalmente.\nTERRA PÚBLICA Patrimônio coletivo não será prêmio para grileiro; terá destinação social e ambiental\n\ntransparente.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n25"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-26",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 5 · DEMOCRACIA TERRITORIAL\n\nConsulta prévia e proteção de defensoras e defensores\nDecisões sobre estradas, mineração, petróleo, gás, energia, manejo, unidades de conservação ou\nserviços podem afetar profundamente povos e comunidades. O governo cumprirá a Convenção 169 da\nOIT e respeitará os protocolos próprios, com informação adequada, tempo comunitário e boa-fé.\nCOMPROMISSOS E MEDIDAS\n\nInstituir procedimento estadual de consulta prévia construído com povos e comunidades, sem uniformizar\nprotocolos autônomos.\nRealizar consulta antes da decisão administrativa, com estudos compreensíveis, tradução e custeio da\nparticipação.\nPublicar atas, respostas e justificativas, protegendo informações tradicionais e dados pessoais.\nGarantir que licenciamento avalie impactos cumulativos, culturais, climáticos, de gênero e sobre saúde.\nCriar programa estadual de proteção a defensoras e defensores com resposta rápida e participação da\nsociedade civil.\nCombater criminalização de lideranças e uso abusivo da força em conflitos territoriais.\nFormar servidores, policiais, promotores parceiros e gestores em direitos coletivos e combate ao racismo.\nRespeitar o direito de dizer não a medidas que ameacem existência física, cultural ou territorial.\nCONSULTA NÃO É AUDIÊNCIA É processo de diálogo antes da decisão, orientado a acordo e consentimento\n\nquando juridicamente exigido.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n26"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-27",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 6 · SEGURANÇA\n\nSegurança pública cidadã, territorial e baseada em\ninteligência\nSegurança é direito de viver sem medo da violência, do crime organizado e do abuso estatal. O governo\ncombinará investigação, inteligência, prevenção social, policiamento orientado por dados, controle da\natividade policial e presença pública nos territórios.\nCOMPROMISSOS E MEDIDAS\n\nPriorizar investigação de homicídios, feminicídios, desaparecimentos, violência sexual e crimes contra\nlideranças.\nIntegrar inteligência contra tráfico de armas, drogas, ouro, madeira, pescado e lavagem de dinheiro.\nFortalecer polícia científica, perícia no interior, cadeia de custódia e capacidade investigativa da Polícia\nCivil.\nReorganizar policiamento comunitário com metas de redução de violência e respeito aos direitos.\nCriar câmeras corporais com regras de acionamento, armazenamento, acesso e proteção de vítimas e\nagentes.\nValorizar profissionais com formação, saúde mental, equipamentos, carreira e condições seguras de\ntrabalho.\nPublicar dados de operações, letalidade, vitimização policial, abordagens e reclamações por território.\nFortalecer ouvidoria independente e corregedorias com capacidade de investigação.\nRESULTADO ESPERADO\n\nMais investigação e prevenção; menos impunidade, letalidade e violência\n\ninstitucional.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n27"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-28",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 6 · PROTEÇÃO\n\nPrevenir a violência contra mulheres, crianças e\njuventudes\nA violência doméstica, sexual e letal exige rede contínua, não campanhas ocasionais. O governo\nintegrará segurança, saúde, assistência, justiça e educação, alcançando bairros, municípios e\ncomunidades remotas.\nCOMPROMISSOS E MEDIDAS\n\nImplantar rede regional de delegacias e equipes especializadas, com atendimento presencial e canais\nseguros remotos.\nCriar casas de acolhimento regionais para mulheres e filhos sob ameaça.\nGarantir patrulhas de proteção e monitoramento efetivo de medidas protetivas.\nFormar profissionais para atendimento sem revitimização, racismo ou discriminação.\nPrevenir violência sexual contra crianças por educação, vigilância de rotas e investigação especializada.\nCriar programa Juventude Viva Amazonas em bairros e municípios com alta letalidade.\nOferecer cultura, esporte, formação, trabalho e mediação comunitária em territórios vulneráveis.\nCombater desaparecimento e tráfico de pessoas nas fronteiras e rotas fluviais.\nPROTEÇÃO INTEGRAL A vítima não terá de repetir sua história em cada porta: a rede compartilhará fluxos\n\ne responsabilidades com segurança.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n28"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-29",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 7 · INFRAESTRUTURA\n\nLogística que conecte pessoas sem abrir caminho para a\ndestruição\nInfraestrutura no Amazonas precisa servir primeiro às pessoas e à economia local. Toda grande obra\ndeverá demonstrar necessidade, alternativas, manutenção, segurança climática e respeito aos territórios.\nA discussão sobre a BR-319 e outras ligações não será reduzida a slogans: haverá ciência, governança\nterritorial, consulta e combate prévio à grilagem e ao desmatamento.\nCOMPROMISSOS E MEDIDAS\n\nElaborar plano multimodal estadual integrando rios, aeroportos, estradas existentes e conectividade\ndigital.\nPriorizar manutenção e segurança de infraestrutura já existente antes de anunciar obras sem capacidade\nde operação.\nExigir avaliação ambiental estratégica e impactos cumulativos em grandes corredores.\nGarantir consulta prévia a povos e comunidades afetados antes de decisões e licenças.\nCriar barreiras fundiárias e ambientais contra ocupação ilegal induzida por obras.\nModernizar portos públicos com acessibilidade, saneamento, segurança, abrigo e transparência tarifária.\nMelhorar aeroportos regionais e pistas essenciais para saúde, abastecimento e Defesa Civil.\nIncluir manutenção comunitária e adaptação climática em pequenas infraestruturas locais.\nTESTE PÚBLICO Uma obra só avançará se seus benefícios sociais superarem custos e riscos e se houver\n\ncondições de impedir impactos ilegais associados.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n29"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-30",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 7 · CONECTIVIDADE\n\nInternet como direito e infraestrutura pública\nConectividade é condição para educação, saúde, defesa civil, produção, cultura e acesso a direitos. O\ngoverno atuará para universalizar sinal funcional, reduzir custos e garantir segurança digital, combinando\nfibras, rádio, satélite e redes comunitárias.\nCOMPROMISSOS E MEDIDAS\n\nConectar escolas, unidades de saúde, centros de assistência e comunidades prioritárias com metas de\nvelocidade e disponibilidade.\nCriar pontos públicos de acesso em praças, portos, centros comunitários e Casas do Governo.\nApoiar redes comunitárias e provedores locais, com formação técnica e uso compartilhado de\ninfraestrutura.\nPublicar mapa independente de cobertura e qualidade, confrontando publicidade com medição real.\nNegociar redução de preços e expansão com operadoras mediante obrigações verificáveis.\nOferecer serviços digitais assistidos para quem não tem aparelho, conectividade ou letramento.\nProteger dados pessoais e adotar padrões de segurança cibernética no governo.\nIncentivar produção de conteúdo em línguas indígenas e comunicação comunitária.\nUNIVERSALIZAR É FUNCIONAR Não basta instalar antena: conexão precisa ter qualidade, manutenção,\n\nenergia e preço acessível.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n30"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-31",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 7 · ENERGIA PÚBLICA\n\nEnergia limpa, confiável e com controle social\nA conta de energia pesa no orçamento das famílias e a falta de confiabilidade prejudica serviços e\nprodução. O estado articulará União, concessionárias, comunidades e setor produtivo para eficiência,\ngeração distribuída e redução do diesel, protegendo consumidores e trabalhadores.\nCOMPROMISSOS E MEDIDAS\n\nCriar programa estadual de eficiência energética para famílias de baixa renda e equipamentos públicos.\nInstalar sistemas solares em telhados públicos e apoiar cooperativas de energia onde a legislação\npermitir.\nPriorizar energia para sistemas de água, refrigeração de alimentos, escolas, saúde e comunicação.\nFiscalizar qualidade do serviço e apoiar consumidores em interrupções, danos e cobrança indevida.\nFormar mão de obra local para instalação, operação, reciclagem e manutenção de equipamentos.\nPlanejar destinação responsável de baterias, painéis e eletrônicos ao fim da vida útil.\nNegociar transição dos sistemas isolados com metas, cronograma e transparência de subsídios.\nEvitar grandes projetos energéticos que transfiram impactos a territórios sem benefícios proporcionais.\nENERGIA PARA VIVER A prioridade será o uso que garante direitos e fortalece economia local, não o\n\nconsumo predatório.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n31"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-32",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 7 · MOBILIDADE\n\nTransporte público digno em Manaus e no interior\nMobilidade é acesso a trabalho, estudo, saúde e cultura. O governo coordenará políticas metropolitanas\ne apoiará municípios na construção de sistemas integrados, acessíveis e menos poluentes. O transporte\nfluvial de passageiros será tratado como serviço público essencial.\nCOMPROMISSOS E MEDIDAS\n\nCriar autoridade metropolitana de mobilidade com participação de Manaus e municípios vizinhos.\nApoiar corredores de ônibus, integração tarifária, bilhete social e informação em tempo real.\nPlanejar renovação para ônibus de emissão zero, começando por linhas de alta circulação e garagens\npúblicas.\nImplantar transporte público fluvial metropolitano e regional com rotas, frequência, tarifa e padrões de\nsegurança.\nGarantir acessibilidade universal em veículos, terminais, portos e calçadas.\nCriar infraestrutura segura para caminhar e pedalar, adequada ao calor e às chuvas.\nFiscalizar transporte intermunicipal e combater tarifas abusivas e embarcações inseguras.\nIntegrar transporte escolar, sanitário e comunitário onde houver eficiência sem prejudicar suas finalidades.\nDIREITO DE IR E VIR O tempo e o custo do deslocamento não podem condenar pessoas ao desemprego ou\n\nà ausência de tratamento.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n32"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-33",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 8 · ÁGUA E SANEAMENTO\n\nÁgua potável para cada casa e comunidade\nEm um estado cercado de água, ainda há famílias que consomem água contaminada ou passam horas\npara obtê-la. Universalizar exige soluções diferentes para bairros densos, pequenas cidades, várzeas,\naldeias, comunidades rurais e moradias dispersas.\nCOMPROMISSOS E MEDIDAS\n\nMapear sistemas, fontes, qualidade e interrupções, com prioridade para escolas e unidades de saúde.\nImplantar sistemas comunitários com captação segura, tratamento, reservação, energia e manutenção\nlocal.\nAmpliar redes urbanas, reduzir perdas e garantir tarifa social automática a famílias elegíveis.\nDistribuir soluções individuais certificadas apenas onde sistemas coletivos não forem viáveis.\nCriar laboratórios regionais e monitoramento participativo da qualidade da água.\nFormar operadores comunitários remunerados e manter estoque de peças e insumos.\nProteger nascentes, lagos e áreas de captação contra esgoto, lixo, garimpo e agrotóxicos.\nGarantir plano emergencial de água para secas, cheias, contaminações e deslocamentos.\nNenhuma escola, unidade de saúde ou comunidade prioritária sem água potável e plano de\nmanutenção.\nMETA\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n33"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-34",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 8 · SANEAMENTO AMAZÔNICO\n\nEsgoto, drenagem e soluções adaptadas aos territórios\nCopiar tecnologias de outras regiões produz sistemas caros, quebrados ou inadequados. O saneamento\namazônico combinará redes convencionais onde cabíveis, soluções descentralizadas, banheiros\nseguros, tratamento local, drenagem e proteção dos rios. A prestação será pública, transparente e\nsubmetida a metas.\nCOMPROMISSOS E MEDIDAS\n\nElaborar planos regionais com participação municipal e comunitária, priorizando saúde e qualidade da\nágua.\nExpandir coleta e tratamento de esgoto em áreas urbanas, com metas por bairro e fiscalização de\ncontratos.\nImplantar soluções descentralizadas em várzeas, palafitas, comunidades rurais, quilombolas e indígenas.\nCriar programa de banheiros dignos e eliminação de lançamento direto de dejetos em áreas críticas.\nIntegrar drenagem, recuperação de igarapés, arborização e prevenção de alagamentos.\nGarantir assistência técnica e fundo de manutenção, evitando obras abandonadas.\nRegular prestadores com indicadores de qualidade, tarifa, perdas, atendimento e transparência.\nImpedir privatizações ou concessões que retirem controle público e agravem desigualdades.\nSANEAMENTO É SAÚDE Cada real investido deve reduzir doença, poluição e tempo de trabalho doméstico\n\nnão remunerado.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n34"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-35",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 8 · MORADIA\n\nCasa segura, urbanização e direito à cidade\nMoradia não é apenas teto. É localização, água, saneamento, transporte, escola, saúde, energia e\nsegurança climática. O governo enfrentará déficit e inadequação habitacional com urbanização de\nbairros, produção de moradia popular, regularização responsável e aluguel social.\nCOMPROMISSOS E MEDIDAS\n\nCriar plano estadual de habitação com diagnóstico municipal e prioridade para mulheres chefes de\nfamília, idosos e pessoas com deficiência.\nUrbanizar assentamentos precários com participação dos moradores e sem remoções desnecessárias.\nReassentar famílias de risco não mitigável com proximidade de vínculos, indenização justa e\nacompanhamento social.\nApoiar autogestão habitacional, mutirões e assistência técnica pública de arquitetura e engenharia.\nAdaptar projetos a calor, chuvas, cheias, materiais locais seguros e eficiência energética.\nRegularizar moradias legítimas sem consolidar ocupação de risco ou grilagem.\nCriar programa de melhorias habitacionais, banheiros, acessibilidade e redução de calor.\nArticular imóveis públicos ociosos e terrenos bem localizados para habitação de interesse social.\nSEM EXPULSÃO Intervenção urbana deve melhorar a vida de quem mora no lugar, não abrir espaço para\n\nespeculação.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n35"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-36",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 8 · RESÍDUOS\n\nCidades limpas, reciclagem e trabalho digno\nLixões, queima de resíduos e plástico nos rios ameaçam saúde, clima e biodiversidade. A política\nestadual apoiará municípios, responsabilizará empresas e reconhecerá catadoras e catadores como\nagentes centrais da economia circular.\nCOMPROMISSOS E MEDIDAS\n\nApoiar encerramento seguro de lixões com inclusão socioprodutiva dos trabalhadores afetados.\nCriar consórcios regionais para tratamento, logística e destinação adequada, evitando soluções inviáveis\npara pequenos municípios.\nContratar cooperativas de catadores para coleta seletiva, triagem e educação ambiental.\nImplantar logística reversa efetiva para embalagens, pneus, baterias, eletrônicos, óleo e medicamentos.\nReduzir plásticos de uso único no governo e apoiar alternativas reutilizáveis.\nCriar ecopontos e sistemas de coleta em comunidades fluviais, com retorno de materiais pelas rotas\nlogísticas.\nAproveitar resíduos orgânicos por compostagem e biodigestão onde tecnicamente adequado.\nFiscalizar empresas e combater transferência de custos para municípios e comunidades.\nJUSTIÇA ECONÔMICA Quem produz e coloca embalagens no mercado deve financiar o ciclo completo;\n\ncatadores devem receber pelo serviço ambiental.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n36"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-37",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 9 · MANAUS\n\nUma capital menos desigual e mais preparada para o\nclima\nManaus concentra população, emprego e serviços, mas também desigualdades profundas. O governo\nestadual atuará em cooperação com o município, respeitando competências e priorizando periferias,\nigarapés, mobilidade metropolitana, segurança, hospitais e redução da poluição.\nCOMPROMISSOS E MEDIDAS\n\nCriar pacto metropolitano para transporte, saneamento, resíduos, habitação, drenagem, segurança e\nadaptação climática.\nPriorizar urbanização integrada de bairros periféricos e comunidades indígenas urbanas.\nRecuperar igarapés com saneamento, reassentamento digno quando necessário e parques de uso\npúblico.\nExpandir arborização com espécies adequadas, sombra em rotas de pedestres e proteção de fragmentos\nflorestais.\nImplantar rede de refúgios climáticos em escolas, centros sociais e equipamentos públicos.\nControlar emissões de ônibus, caminhões, embarcações e fontes industriais, publicando dados de\nqualidade do ar.\nDescentralizar cultura, esporte, formação e atendimento público para as zonas Norte, Leste, Oeste e\nrural.\nCombater especulação sobre terra urbana e apoiar habitação próxima a emprego e transporte.\nMETRÓPOLE AMAZÔNICA Manaus deve ser referência de cuidado com água, floresta urbana, diversidade\n\nindígena e justiça social.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n37"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-38",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 10 · INTERIOR\n\nInterior como prioridade orçamentária e política\nO interior não será lembrado apenas durante campanhas ou emergências. A regionalização dos serviços,\ndos investimentos e das oportunidades será compromisso verificável. Municípios receberão apoio técnico\npara planejar, executar e prestar contas, sem favorecimento partidário.\nCOMPROMISSOS E MEDIDAS\n\nDefinir piso territorial de investimentos e publicar distribuição per capita corrigida por distância e\nvulnerabilidade.\nInstalar polos regionais de saúde, educação técnica, cultura, assistência técnica e serviços\nadministrativos.\nCriar programa de apoio a projetos e captação de recursos para pequenas prefeituras.\nOrganizar compras compartilhadas e consórcios para reduzir custos e melhorar manutenção.\nFortalecer cadeias econômicas locais e reduzir dependência de atravessadores.\nGarantir calendário de transporte público e abastecimento em períodos críticos.\nValorizar servidores locais e formar quadros municipais em parceria com universidades.\nRealizar prestação de contas regional do governo a cada ano.\nEQUIDADE TERRITORIAL Tratar igualmente territórios desiguais mantém a desigualdade; o investimento\n\nseguirá necessidades e custos reais.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n38"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-39",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 10 · COOPERAÇÃO MUNICIPAL\n\nMunicípios fortes, sem abandono e sem tutela\nGrande parte dos serviços chega à população por meio dos municípios. O Estado deve cooperar,\nfinanciar e coordenar, não transferir obrigações sem recursos nem usar convênios como instrumento de\nsubmissão política.\nCOMPROMISSOS E MEDIDAS\n\nCriar mesa permanente de pactuação com os 62 municípios, consórcios e representações sociais.\nAdotar critérios técnicos e transparentes para convênios, transferências e máquinas públicas.\nOferecer engenharia, arquitetura, planejamento, compras e assessoria jurídica compartilhados.\nApoiar atualização de planos diretores, saneamento, resíduos, mobilidade, defesa civil e habitação.\nIntegrar bases de dados preservando privacidade e reduzindo cadastros repetidos.\nFormar equipes municipais para manutenção de sistemas de água, energia e conectividade.\nCriar fundo competitivo e solidário para soluções municipais inovadoras e replicáveis.\nGarantir fiscalização e controle sem burocracia desproporcional que paralise pequenos municípios.\nFEDERALISMO DE VERDADE Cooperação deve chegar com recurso, equipe e respeito à autonomia local.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n39"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-40",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 11 · PROTEÇÃO SOCIAL\n\nCombater fome, pobreza e abandono\nNenhuma família deve escolher entre comida, remédio, transporte e energia. A política de assistência\nsocial será fortalecida, territorializada e integrada a trabalho, habitação, saúde e segurança alimentar.\nBenefício é direito, não favor político.\nCOMPROMISSOS E MEDIDAS\n\nCofinanciar CRAS, CREAS, equipes volantes e unidades de acolhimento nos municípios.\nCriar equipes fluviais de assistência e documentação civil para comunidades remotas.\nFortalecer segurança alimentar com cozinhas comunitárias, bancos de alimentos, restaurantes populares\ne compras locais.\nGarantir resposta rápida a famílias atingidas por seca, cheia, incêndio, erosão e deslocamento.\nImplantar política integrada para pessoas em situação de rua com moradia, saúde, documentação e\ntrabalho.\nApoiar cuidadores familiares, idosos e pessoas com deficiência em pobreza.\nCombater trabalho infantil e exploração sexual nas rotas urbanas, fluviais e de grandes obras.\nCriar busca ativa para acesso a benefícios federais, estaduais e municipais.\nA assistência social não será usada para controlar votos; terá regras, controle social e\natendimento respeitoso.\nDIGNIDADE\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n40"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-41",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 11 · IGUALDADE\n\nMulheres, população negra, LGBTQIA+ e pessoas com\ndeficiência\nDesigualdades de gênero, raça, orientação sexual, identidade de gênero e deficiência atravessam todas\nas políticas. O governo terá metas, orçamento e estruturas de promoção de direitos, combatendo\ndiscriminação dentro e fora do Estado.\nCOMPROMISSOS E MEDIDAS\n\nAdotar orçamento sensível a gênero e raça, com indicadores e avaliação de impacto.\nAmpliar autonomia econômica de mulheres com crédito, formação, creches e compras públicas.\nImplementar política estadual de igualdade racial e valorização das culturas negras e quilombolas.\nGarantir nome social, atendimento sem discriminação e políticas de saúde e trabalho para pessoas\nLGBTQIA+.\nCumprir acessibilidade física, comunicacional e digital em todos os serviços e obras estaduais.\nAmpliar contratação de pessoas com deficiência e apoio à permanência no trabalho.\nCombater intolerância religiosa e proteger povos de terreiro e seus espaços.\nCriar mecanismos seguros de denúncia e responsabilização por assédio e discriminação no serviço\npúblico.\nTRANSVERSALIDADE Cada secretaria terá responsabilidades concretas; igualdade não ficará isolada em\n\numa estrutura sem poder.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n41"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-42",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 12 · CULTURA\n\nCultura amazônica como direito, memória e trabalho\nCultura não é ornamento. Ela produz identidade, saúde, renda, educação e pertencimento. O governo\ndescentralizará editais, protegerá patrimônio e apoiará artistas, mestres, grupos e espaços culturais, com\natenção a culturas indígenas, negras, populares e do interior.\nCOMPROMISSOS E MEDIDAS\n\nFortalecer o sistema estadual de cultura com fundo, conselho e conferências regulares.\nDescentralizar editais por territórios e simplificar prestação de contas para pequenos projetos.\nGarantir apoio contínuo a mestres de cultura, línguas, festas, bois-bumbás, cirandas, música, dança,\nteatro e literatura.\nProteger acervos, sítios arqueológicos, museus comunitários e memória dos movimentos sociais.\nCriar circuitos culturais fluviais e intercâmbio entre municípios.\nApoiar economia criativa sem precarizar artistas e técnicos.\nAmpliar bibliotecas, cineclubes, pontos de cultura e formação artística nas periferias e no interior.\nGarantir participação e consentimento na representação de culturas e conhecimentos tradicionais.\nCULTURA VIVA Quem produz cultura deve participar da decisão sobre recursos, prioridades e formas de\n\nreconhecimento.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n42"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-43",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 12 · JUVENTUDE E ESPORTE\n\nDireito ao futuro, ao lazer e à participação\nJuventudes amazônidas são diversas e enfrentam desemprego, violência, racismo, isolamento e falta de\nespaços. O Estado oferecerá oportunidades concretas para permanecer, circular, criar e decidir. Esporte\ne lazer serão políticas de saúde e convivência.\nCOMPROMISSOS E MEDIDAS\n\nCriar plano estadual de juventude com conselho, orçamento e metas territoriais.\nImplantar centros de juventude em polos regionais e bairros prioritários.\nOferecer bolsas de formação, cultura, esporte, ciência e comunicação comunitária.\nApoiar primeiro emprego, aprendizagem e empreendedorismo solidário com direitos.\nReformar quadras, campos e espaços de lazer com iluminação, acessibilidade e gestão comunitária.\nFortalecer esporte indígena, paralímpico, feminino, escolar e de comunidades tradicionais.\nCriar programas de intercâmbio entre juventudes de diferentes territórios.\nGarantir participação jovem nos conselhos e processos de planejamento.\nESCOLHA PÚBLICA É melhor financiar oportunidade, convivência e talento do que pagar depois o custo da\n\nexclusão e da violência.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n43"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-44",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 13 · GESTÃO PÚBLICA\n\nEstado presente, servidor valorizado e corrupção\nenfrentada\nUm governo transformador precisa de serviço público competente, estável e respeitado. A administração\nserá profissionalizada, com planejamento, concursos, formação e diálogo. O combate à corrupção\nalcançará contratos, incentivos, obras, compras e conflitos de interesse.\nCOMPROMISSOS E MEDIDAS\n\nRealizar planejamento da força de trabalho e concursos onde houver déficit permanente.\nValorizar carreiras, saúde do servidor, negociação coletiva e condições de trabalho no interior.\nReduzir cargos de livre nomeação sem função técnica e estabelecer critérios de integridade.\nPublicar agendas de autoridades, beneficiários finais de empresas contratadas e dados de execução.\nFortalecer controladoria, auditoria, ouvidorias e corregedorias com autonomia.\nAdotar compras abertas, padronização e análise de preços para prevenir sobrepreço.\nCriar proteção a denunciantes de boa-fé e canais seguros contra assédio e corrupção.\nAvaliar políticas por resultados sociais e territoriais, não apenas por gasto realizado.\nSERVIÇO PÚBLICO Servidor não é inimigo do Estado; é quem garante continuidade, memória e direito da\n\npopulação.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n44"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-45",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nEIXO 13 · DEMOCRACIA\n\nParticipação popular com poder sobre prioridades e\norçamento\nConselhos enfraquecidos e audiências formais não bastam. O governo reconstruirá espaços de\nparticipação, garantindo diversidade, recursos para presença do interior e devolutiva obrigatória. Parte\ndos investimentos será definida por orçamento participativo territorial.\nCOMPROMISSOS E MEDIDAS\n\nCriar Conselho de Desenvolvimento Justo do Amazonas com maioria social e representação territorial.\nRealizar orçamento participativo anual por regiões, com critérios técnicos e montante previamente\ndefinido.\nReativar e fortalecer conselhos setoriais, respeitando autonomia e eleições próprias.\nGarantir transporte, conectividade, tradução, alimentação e acessibilidade para participação do interior.\nPublicar resposta fundamentada a propostas aprovadas em conferências e consultas.\nCriar iniciativa popular digital e presencial para propostas ao governo.\nApoiar formação cidadã e observatórios sociais independentes.\nEvitar perseguição política e garantir tratamento institucional igual a organizações críticas.\nDEMOCRACIA COTIDIANA O povo deve participar antes da decisão, acompanhar a execução e avaliar o\n\nresultado.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n45"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-46",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nFINANCIAMENTO\n\nComo financiar a mudança\nO programa será financiado com prioridade orçamentária, revisão de gastos e incentivos, melhoria da\narrecadação, cooperação federativa, fundos climáticos e crédito público. Promessas serão\ncompatibilizadas com a realidade fiscal após auditoria de transição. A regra será proteger direitos e\ninvestimentos essenciais.\nCOMPROMISSOS E MEDIDAS\n\nRevisar renúncias fiscais e condicionar benefícios a resultados públicos mensuráveis.\nCombater sonegação, fraude fundiária e evasão em cadeias de alto impacto.\nReduzir desperdícios, contratos sobrepostos, obras sem projeto e locações desnecessárias.\nCaptar recursos federais e internacionais sem privatizar território, conhecimento ou decisão pública.\nEstruturar projetos de qualidade para saneamento, energia, saúde, educação, habitação e adaptação.\nUsar fundos estaduais com governança, critérios públicos e prestação de contas.\nPriorizar manutenção e prevenção, que custam menos do que abandono e reconstrução.\nPublicar quadro financeiro anual ligando cada prioridade a programa, fonte e execução.\nNão haverá ajuste sobre os mais pobres enquanto privilégios, desperdícios e\nincentivos ineficientes permanecerem intocados.\nRESPONSABILIDADE\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n46"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-47",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nPRIMEIROS 100 DIAS\n\nComeçar com transparência, emergência e participação\nNos primeiros 100 dias, o governo organizará a máquina, atenderá urgências e abrirá o processo de\nplanejamento participativo. Medidas estruturais exigirão diálogo e base técnica; ações imediatas não\nserão adiadas.\nCOMPROMISSOS E MEDIDAS\n\nPublicar diagnóstico fiscal, contratos, obras paradas, filas de saúde, estoques e riscos climáticos.\nInstalar gabinete de emergência para seca, cheia, fumaça, incêndios e abastecimento.\nEnviar proposta de criação da Secretaria dos Povos Indígenas e de fortalecimento das estruturas\nambientais.\nIniciar auditoria de renúncias fiscais, grandes contratos e passivos ambientais.\nLançar calendário das plenárias territoriais do Plano Plurianual e do orçamento participativo.\nCriar força-tarefa para água potável em escolas, unidades de saúde e comunidades críticas.\nReorganizar regulação de saúde e publicar filas com proteção de dados.\nInstituir mesa de negociação com servidores e agenda com os 62 municípios.\nApresentar plano de brigadas comunitárias e prevenção de incêndios antes da estação crítica.\nSuspender decisões fundiárias e licenças com indícios de fraude, conflito ou falta de consulta até revisão.\nSINAL DE MUDANÇA O primeiro ato político será abrir os dados, ouvir os territórios e orientar o orçamento\n\npara as prioridades sociais.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n47"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-48",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nMETAS 2027–2030\n\nResultados acompanhados pela sociedade\nAs metas finais serão pactuadas após diagnóstico de transição e participação popular. Desde já,\nassumimos indicadores obrigatórios, desagregados territorialmente e publicados em painel simples.\nCOMPROMISSOS E MEDIDAS\n\nSaúde: tempo de espera, cobertura territorial, mortalidade evitável, vacinação, saúde materna e resposta\nclimática.\nEducação: aprendizagem, permanência, conclusão, infraestrutura, conectividade, valorização e educação\nespecífica.\nRenda: emprego formal, renda do trabalho, compras locais, crédito comunitário e participação do interior.\nClima: desmatamento, incêndios, qualidade do ar e da água, população protegida e orçamento de\nadaptação.\nTerritórios: regularização coletiva, consultas realizadas, conflitos, ameaças e proteção de defensores.\nSegurança: homicídios, feminicídios, resolução de crimes, vitimização policial e violência institucional.\nInfraestrutura: tempo de deslocamento, segurança fluvial, conectividade funcional e redução do diesel.\nSaneamento e moradia: água segura, esgoto tratado, resíduos, urbanização e famílias retiradas de risco\ncom dignidade.\nGestão: execução por região, transparência, participação, concursos, integridade e satisfação do usuário.\nCONTROLE SOCIAL Cada indicador terá linha de base, meta anual, fonte, órgão responsável e possibilidade\n\nde verificação independente.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n48"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-49",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nCONCLUSÃO\n\nAmazonas vivo, justo e forte\nO Amazonas pode crescer sem destruir, gerar riqueza sem excluir e oferecer dignidade a quem vive na\ncapital, no interior, nas aldeias, comunidades, bairros, várzeas e terras firmes. Para isso, precisa romper\ncom um modelo que concentra decisões, transforma direitos em favor e trata a floresta como estoque\ndisponível.\nNossa proposta é simples de dizer e exigente de realizar: colocar a vida no centro do governo. Cuidar da\nágua, da floresta e do clima significa cuidar de emprego, saúde e alimento. Defender povos e\ncomunidades significa fortalecer democracia e patrimônio coletivo. Valorizar servidores significa fazer o\nEstado funcionar. Apoiar trabalho digno e produção local significa distribuir riqueza.\nCOMPROMISSOS E MEDIDAS\n\nUm governo que escuta antes de decidir.\nUm governo que chega aos territórios e presta contas.\nUm governo que enfrenta a desigualdade e protege quem protege a vida.\nUm governo que une conhecimento científico e sabedoria dos povos.\nUm governo que prepara o Amazonas para o futuro sem apagar sua história.\nCONVITE Este programa é um chamado para construir, com coragem e participação, um Amazonas que\n\npertença ao seu povo.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n49"
+          },
+          {
+            "id": "amazonas-vivo-justo-e-forte-programa-de-governo-2027-2030-50",
+            "titulo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "AMAZONAS VIVO, JUSTO E FORTE | PROGRAMA DE GOVERNO 2027–2030\n\nREFERÊNCIAS E BASES\n\nFontes públicas utilizadas na elaboração\nEsta versão foi construída a partir de demandas históricas de movimentos sociais amazônicos e de fontes\npúblicas.\nCOMPROMISSOS E MEDIDAS\n\nIBGE. Censo Demográfico 2022; portal Cidades e Estados – Amazonas; resultados sobre povos\nindígenas e quilombolas.\nIBGE. Amazonas: área territorial, população, densidade, receitas, despesas e rendimento domiciliar per\ncapita.\nINEP. Censo Escolar da Educação Básica e resultados do Ideb.\nMinistério da Saúde. Plano de Adaptação do Setor Saúde à Mudança do Clima – AdaptaSUS; estratégia\nMais Saúde Amazônia.\nMinistério do Meio Ambiente e Mudança do Clima. Plano Clima; PPCDAm; dados do INPE/TerraBrasilis.\nConvenção 169 da Organização Internacional do Trabalho; Constituição Federal de 1988; legislação\nnacional de povos e comunidades tradicionais.\nCartas e plataformas públicas de organizações indígenas, extrativistas, quilombolas, ribeirinhas, de\npescadores, mulheres, juventudes, sindicatos e movimentos urbanos.\nCarta de Demandas Vozes do Território da Amazônia para a COP30 e documentos sobre secas,\nqueimadas, água, alimento, consulta prévia e proteção de defensores.\nEstudos públicos sobre saneamento do Amazonas, saúde climática, assentamentos precários, logística e\ndesenvolvimento regional.\nVERSÃO Programa de Governo 2027–2030 – versão preliminar para debate público, julho de 2026.\n\nFEDERAÇÃO PSOL -REDE SUSTENTABILIDADE – AMAZONAS\n\n50"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "3bc1f7f74671c4b37c5c90de699d9c5f9155c0c9b24d5922612c316aa91e5c21"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "08935702445ace5de73e2301e5853ab6f050d3948d205357db8cd10c306baa63"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "c7a07e97aa5c9af173d291108a700163e4109de821668d783a295c29c16a90ef"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "cffa835300db4d8221cbfcebd427eb504ce1479f56ac4af13731993f2cbb2275"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "7e3d3765678d47bedc624add11e35c87ecac5f6e82a9d19815686ffb8b9c027d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e1fb299d76ca80477fdf90e4c42cc62f0ac9804a915cdbbfb1975eff72b984c6"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "9fe5491cd9e547ff3fb5951efe6f5a4beea863debad3e16f5d61dc17db63559b"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0320389d2ac83290da60e830eb95819c028b15c6cffbda1119128edae6678b57"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "1021cac5e7835ea3849ab7da9b88a528c8349491d18dc72354e6f6fa20758b2a"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e938e4aa38b74d36f04585359db5087fab5fc5b7334b8e90213e36afdb22fe8d"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "b2282bad3a5ca1cbb2cc2c6d0209a5d60a9aba09d2cdc182e7611c3117cf91a5"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "f6079256c6da8df4fb0d19c8563600b261005976d0b2d5ba27d02bf09c4f0e3c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "feed6cafe740b4d8df283ab1ad7fcb7327c4550aa9f84d9d90488f6ec326e255"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "c89bf9c64ff8db66bf3f65cbbfa460c663ba4ea78e211896a26d629663b23e1c"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "9bf2b6f75a47ddbabba46a2aae8294dcbdf19fc91378fb65c575d7a51cce67d9"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "ef91ac4c0e81187eedd7d1d36d7d7bd4bc02dd42d0465b3c02b26b0339f1a935"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "f161c394eef1fbdd3b45e96a3b3a5a0b6691882d36c5c5ce16b55deff62c8e5e"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "e95784fb953531060da48e5f2bd0416c61e6cfe0799bde6412f38dfc6e852018"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "5dea6594e705f33685d91e38446543681d11592c3e5d4d4191e4e89bc5494048"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0ba1e9fc0492a14ad125d2b49772b270fd5cdbe4e45ea76cb2cc6b118e17651e"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "94fa187f471d5606e6932fe57af03ca275c2146ceb9372d581f1d7e5810a117e"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "883978029d35ab6031d54e951d9723a8a2e851fbb3ed00ec2d4f41abd63a6f10"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "588dc60501df710bb0006ab180f07b31bc08462f557a96166a8497d1e5c46518"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "532356785435aa5d73b8c08b7c8fd2652779152d048e5ebd8504070a5a5ba9d3"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "c55a66550199ef1d96779c3045cc77e9205d89f7154ba9ea1f2b87eaf2e3872c"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "bb1428ad5c37294691239286041e6e52de516856fcebc8b2ed2f8b768aa532de"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "8895e13fb5e95ada6a187feadbed29eb1c58fc0e8886f38eedbcfcd3f4cd9fa9"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "b793fa77b086fa6ddeae9380043842f3e6db192a0704002ceb2a15cdc646f843"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "ae176acaed5d508fabf7c9116b701c645a85c7fff6e8fad113aba1dba3334faa"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "9490ac7e6a78dc35eae70d44a007badb076416fbc6bb06b44357daa1c8960ed0"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "1f43a7398eaf93868f057d816535473523aa63ed5542facffa7da3706fadca4d"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "be3f968982ffcbf8e0dd0543621f9dd1bd14b564a2d73e6563ffd3d954a434e2"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "3c9883943e93da14dfdde3e0e826d60ac7d3c8d08bff9a759218244ff28163d0"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "24c73509b8a76eb46cab43f7c3f9854d62d866785bb34e137be14314a72e7d93"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "c6957a172b61b47377aff677dc522a52fa7b8e5172e0fccff672c6d68de9c000"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "62048bbc693d9a8577c8e425fd8a3affc10d670bb137df1fcca68d7706f2b091"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "89faabd5753676dd6806231d924131f4aabe1729603c14d9d94a4b58dc33edfd"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "19b3906a59e859e5ac3ba8910e925298e91c63c2e2d5dc29d803637bc789944a"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "a70d3d2746468bbb240b576bc0771a733e9ff44f848fda9c0880e19d48fd1823"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "5b36e29378fc58c199a157f8a492c2c3fce0fde7bf6ed558d73256294fc49cec"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "c72e60b0f32a886ccb9f9d5f2c8b9182911ec3aeb526b2e008d29c494be41dda"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "b120c822b7057fd981d6bca93853f6dcbcc4f3e55c31998e1f5c5fbbfd4085d1"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "be7723ea722cc2bfbcacdb1040c83788e1eb806c30b39d08867c7cc2b600912b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "c6078162e0a5cb106fcdd76f5e34eeb3a518737879c084eea902e53ec137aaa3"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "f7f87e3b6b419738f032e187c918fccc54f8743cdbc6466c377d61c24d76cc5b"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "fb902c055e9bd257cb06f5c314db147fe19a607d960b277bc69d533b6fcebd65"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "52b29fa7bc9e62564a978228902bdbc28da6762fd6434a9bd1fc21b9b88a6fe8"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "406b33756bfb7c507f13a1debab27b8b1c0e5ce9172534672086e70f15b0b842"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "2ea399bc3331d58dcb47a0399c2f433e5804b3b374cada1ff6c3409f618595b9"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "91a0d61311a47d89ab5842a02ad8119f90aa89a412a8f6130cbcb9c762bcd102"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa de governo de Isael Munduruku para o Amazonas prevê rede estadual de saúde com transporte fluvial, terrestre e aeromédico, atenção básica e teleassistência. O plano propõe educação escolar indígena específica, diferenciada, intercultural, comunitária e bilíngue ou multilíngue. A proposta planeja economia da floresta em pé com crédito, assistência técnica, cooperativismo e repartição de benefícios. O documento prevê manter a Zona Franca como estratégica, com inovação, descarbonização e integração com o interior. O texto prevê o Plano Estadual de Adaptação Climática construído com os territórios e incorporado a todas as secretarias. O programa propõe trajetória estadual de desmatamento zero, com metas anuais e transparência por município. A proposta prevê criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo. O plano prevê solarizar escolas e unidades de saúde como parte da transição energética.",
+    "frases": [
+      {
+        "texto": "O programa de governo de Isael Munduruku para o Amazonas prevê rede estadual de saúde com transporte fluvial, terrestre e aeromédico, atenção básica e teleassistência.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 1,
+            "trecho": "Isael Munduruku\nGoverno do Estado do Amazonas · 2027–2030"
+          },
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 7,
+            "trecho": "O Sistema Único de Saúde será fortalecido por uma rede estadual que combine\natenção básica municipal, serviços regionais, hospitais de referência, transporte sanitário e\nteleassistência."
+          },
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 7,
+            "trecho": "Estruturar transporte sanitário fluvial, terrestre e aeromédico, com protocolos, bases regionais e prioridade\nclínica."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe educação escolar indígena específica, diferenciada, intercultural, comunitária e bilíngue ou multilíngue.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 12,
+            "trecho": "educação escolar indígena será específica, diferenciada, intercultural, comunitária e bilíngue ou\nmultilíngue."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta planeja economia da floresta em pé com crédito, assistência técnica, cooperativismo e repartição de benefícios.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 4,
+            "trecho": "Economia da floresta em pé, com crédito, assistência técnica, cooperativismo, agregação de valor e\nrepartição justa dos benefícios."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê manter a Zona Franca como estratégica, com inovação, descarbonização e integração com o interior.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 14,
+            "trecho": "A Zona Franca continuará estratégica, mas deverá avançar em inovação,\ndescarbonização, conteúdo local e integração com o interior."
+          }
+        ]
+      },
+      {
+        "texto": "O texto prevê o Plano Estadual de Adaptação Climática construído com os territórios e incorporado a todas as secretarias.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 18,
+            "trecho": "O Plano Estadual de Adaptação Climática será construído com os territórios e incorporado a todas as\nsecretarias."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe trajetória estadual de desmatamento zero, com metas anuais e transparência por município.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 19,
+            "trecho": "Estabelecer trajetória estadual de desmatamento zero, com metas anuais e transparência por município."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta prevê criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 23,
+            "trecho": "Criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo\nrepresentativo."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê solarizar escolas e unidades de saúde como parte da transição energética.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 21,
+            "trecho": "Transição energética popular e fim da dependência do\ndiesel"
+          },
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 21,
+            "trecho": "Solarizar escolas, unidades de saúde, sistemas de água e equipamentos comunitários, com baterias e\nmanutenção local."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-rede-territorial",
+        "titulo": "Rede estadual de saúde nos territórios",
+        "descricao": "Fortalecimento do SUS por rede estadual que combina atenção básica municipal, serviços regionais, hospitais de referência, transporte sanitário e teleassistência.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 7,
+            "trecho": "O Sistema Único de Saúde será fortalecido por uma rede estadual que combine\natenção básica municipal, serviços regionais, hospitais de referência, transporte sanitário e\nteleassistência."
+          },
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 7,
+            "trecho": "Estruturar transporte sanitário fluvial, terrestre e aeromédico, com protocolos, bases regionais e prioridade\nclínica."
+          }
+        ]
+      },
+      {
+        "id": "educacao-escolar-indigena",
+        "titulo": "Educação escolar indígena",
+        "descricao": "Educação escolar indígena específica, diferenciada, intercultural, comunitária e bilíngue ou multilíngue.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 12,
+            "trecho": "educação escolar indígena será específica, diferenciada, intercultural, comunitária e bilíngue ou\nmultilíngue."
+          }
+        ]
+      },
+      {
+        "id": "economia-floresta-em-pe",
+        "titulo": "Economia da floresta em pé",
+        "descricao": "Fomento da economia da floresta em pé com crédito, assistência técnica, cooperativismo, agregação de valor e repartição justa dos benefícios.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 4,
+            "trecho": "Economia da floresta em pé, com crédito, assistência técnica, cooperativismo, agregação de valor e\nrepartição justa dos benefícios."
+          }
+        ]
+      },
+      {
+        "id": "adaptacao-climatica",
+        "titulo": "Adaptação climática",
+        "descricao": "Plano Estadual de Adaptação Climática construído com os territórios e incorporado a todas as secretarias.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 18,
+            "trecho": "O Plano Estadual de Adaptação Climática será construído com os territórios e incorporado a todas as\nsecretarias."
+          }
+        ]
+      },
+      {
+        "id": "desmatamento-zero",
+        "titulo": "Trajetória de desmatamento zero",
+        "descricao": "Trajetória estadual de desmatamento zero com metas anuais e transparência por município.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 19,
+            "trecho": "Estabelecer trajetória estadual de desmatamento zero, com metas anuais e transparência por município."
+          }
+        ]
+      },
+      {
+        "id": "secretaria-povos-indigenas",
+        "titulo": "Secretaria Estadual dos Povos Indígenas",
+        "descricao": "Criação de Secretaria Estadual dos Povos Indígenas com orçamento, quadro técnico e conselho deliberativo representativo.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002550776:01",
+            "pagina": 23,
+            "trecho": "Criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo\nrepresentativo."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T06:11:23.598Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T06:16:52.896Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências identificam o programa de Isael Munduruku e sustentam a rede estadual de saúde com atenção básica, teleassistência e transporte sanitário fluvial, terrestre e aeromédico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do programa sem elogio, crítica, promoção ou certeza além do que o documento afirma."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, organização da rede estadual de saúde e seus meios de atendimento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento AM:40002550776:01 e identificam Isael Munduruku para o governo do Amazonas, compatíveis com a identityKey informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:1:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais da afirmação: rede estadual de saúde, atenção básica, teleassistência e transporte fluvial, terrestre e aeromédico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente as características atribuídas à educação escolar indígena na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, educação escolar indígena."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do documento informado e é compatível com a candidatura e a chave eleitoral fornecidas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:2:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as qualificações listadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de economia da floresta em pé com crédito, assistência técnica, cooperativismo e repartição de benefícios."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma área coerente, economia da floresta em pé."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado para a mesma candidatura ao governo do Amazonas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:3:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma que a Zona Franca continuará estratégica e deverá avançar em inovação, descarbonização e integração com o interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantificações a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta em termos informativos, sem valoração adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, diretriz para a Zona Franca."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:4:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais citadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz diretamente a formulação sobre o Plano Estadual de Adaptação Climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A afirmação apenas descreve a diretriz do documento, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, o plano estadual de adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:5:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as duas cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência coincide literalmente com a afirmação sobre desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números literais; apenas menciona metas anuais sem quantificá-las."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de forma descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta coerente, trajetória estadual de desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:6:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a criação da secretaria com orçamento, quadro técnico e conselho deliberativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantificações literais."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem carga elogiosa, crítica ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, criação de uma secretaria específica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à candidatura correspondentes à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:7:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências ligam explicitamente a solarização de escolas e unidades de saúde ao eixo de transição energética."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente dentro da área de transição energética."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento indicado e à mesma candidatura ao governo do Amazonas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:frase:8:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem tanto a ação de solarizar escolas e unidades de saúde quanto seu enquadramento na transição energética."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência principal sustenta diretamente o fortalecimento do SUS por rede estadual com atenção básica, serviços regionais, hospitais de referência, transporte sanitário e teleassistência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números ou prazos específicos a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apresenta o conteúdo programático de forma descritiva, sem elogio ou crítica externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, organização territorial da rede estadual de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado para a mesma candidatura e UF."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:saude-rede-territorial:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a formulação da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantificações."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, educação escolar indígena."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma candidatura indicada na identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:educacao-escolar-indigena:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente os componentes da afirmação temática sobre economia da floresta em pé."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantificações."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única área coerente, economia da floresta em pé."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma candidatura e UF."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:economia-floresta-em-pe:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a afirmação temática sobre adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantificações."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de forma informativa, sem juízo valorativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, adaptação climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento e à candidatura indicados na identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:adaptacao-climatica:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a afirmação temática sobre desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números literais; menciona metas anuais sem quantificação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do documento sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, trajetória estadual de desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à candidatura correspondentes à chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:desmatamento-zero:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação da secretaria com orçamento, quadro técnico e conselho deliberativo representativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona juízo de valor externo ao documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, criação da secretaria estadual específica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma candidatura ao governo do Amazonas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002550776:tema:secretaria-povos-indigenas:documentos:AM:40002550776:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação temática."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002550776",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002550776:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "1b28d5c7298f9904b4110748d1acdaea5291a6b13850c1b31f71154779d96e5f",
+    "extractedTextSha256": "726cc612801309654d5741d225ee5f7a659e265e61267bbd24c47872ce01b13b",
+    "documentCount": 1,
+    "documentSetSha256": "8fe33504ceeecb4fb369bd49637c5066709b959e5992df43f31a9dfae8cfb028",
+    "contentSha256": "db6199d69cf0b09c79a0623c9f935bb6003efd2bb3a6abf8163545c81bec1c06"
+  }
+}

@@ -5,6 +5,10 @@ import {
   programasGovernoPresidencia2026Identidades,
 } from "@/data/programas-governo-presidencia-2026"
 import {
+  getProgramaGovernoGovernador2026ManifestoEntry,
+  programasGovernoGovernadores2026Identidades,
+} from "@/data/programas-governo-governadores-2026"
+import {
   assertProgramaGovernoIdentidade,
   assertProgramaGovernoIdentidadeCorresponde,
   assertProgramaGovernoDocumento,
@@ -184,8 +188,14 @@ const presidentialEntries = programasGovernoPresidencia2026Identidades.map((iden
   return entry
 })
 
+const governorEntries = programasGovernoGovernadores2026Identidades.map((identidade) => {
+  const entry = getProgramaGovernoGovernador2026ManifestoEntry(identidade.slug ?? "")
+  if (!entry) throw new Error(`manifesto estadual ausente para ${identidade.slug ?? "slug nulo"}`)
+  return entry
+})
+
 export const programasGoverno2026Manifesto = createProgramaGovernoManifestoServer(
-  presidentialEntries,
+  [...presidentialEntries, ...governorEntries],
 )
 
 export const programasGoverno2026Identidades = programasGoverno2026Manifesto.identidades

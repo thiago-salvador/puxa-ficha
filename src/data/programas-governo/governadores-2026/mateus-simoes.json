@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002541911",
+    "slug": "mateus-simoes",
+    "nomeUrna": "MATEUS SIMÕES",
+    "partido": "PSD",
+    "arquivoNome": "2026MG130002541911_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002541911_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002541911:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002541911_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002541911_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "60794fb74dd02e57426130c1250102ccbb11b6f6ad8362059bd3c2a34a16bb74",
+        "extractedTextSha256": "bdb08121424fe0fe8ad13162bef08379da926222c7c8ec9377be857cc192f4fd",
+        "paginas": 5,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nDIRETRIZES DE GOVERNO PARA MINAS GERAIS\nMateus Simões • Governo do Estado de Minas Gerais • 2027–2030\n\nAPRESENTAÇÃO\nMinas Gerais chega a este momento em condições distintas daquelas que marcaram o início da última década. O\nreequilíbrio das contas públicas, a recuperação da capacidade de investimento, a retomada de obras paralisadas e a\nmodernização da gestão constituíram uma base a partir da qual é possível projetar o futuro do estado com maior\nambição. Esse ponto de partida, contudo, convive com desafios que não são exclusivamente mineiros: a transformação\ndo perfil da criminalidade, a transição demográfica e o envelhecimento da população, os efeitos da mudança do clima,\nas novas exigências de qualificação impostas por uma economia crescentemente tecnológica e a persistência de\ndesigualdades entre as regiões do estado.\nEste documento reúne o diagnóstico e as grandes linhas de atuação que orientarão o governo no próximo período. Não\nse trata de um catálogo de ações nem de um cronograma de execução, mas de um instrumento de direção: define\nprioridades, princípios e caminhos, deixando ao planejamento setorial, ao diálogo com a sociedade, à pactuação\nfederativa e às condições fiscais e institucionais de cada momento a definição dos meios, dos prazos e da escala de\nimplementação.\nAs diretrizes aqui apresentadas orientam-se por quatro princípios. Responsabilidade fiscal, porque não há política\npública sustentável sem equilíbrio nas contas. Eficiência, porque o recurso público pertence ao cidadão que paga\nimpostos e precisa ser aplicado com resultado mensurável. Centralidade da família, como unidade de referência das\npolíticas sociais. E um Estado que se comporte como parceiro, e não como obstáculo, de quem produz, empreende e\ngera oportunidades em Minas Gerais.\n\n1. SAÚDE\nDiagnóstico\nMinas Gerais opera uma das maiores e mais complexas redes públicas de saúde do país, organizada territorialmente\npelo Plano Diretor de Regionalização e composta por unidades próprias, hospitais filantrópicos e uma atenção primária\nmajoritariamente sob gestão municipal. O período recente foi marcado pela conclusão de hospitais regionais cujas obras\nestavam paralisadas, pela universalização da cobertura do serviço de atendimento móvel de urgência, pela ampliação\nda rede de atenção psicossocial, pelo avanço da triagem neonatal e pela expansão da atenção básica. Permanecem,\nentretanto, desafios estruturais: a desigualdade regional no acesso à atenção especializada, a dificuldade de formação\ne fixação de profissionais no interior, a demanda represada por procedimentos eletivos e de diagnóstico e a pressão de\ncustos decorrente do envelhecimento populacional e da incorporação de novas tecnologias.\nLinhas de atuação\n• Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e\nprevenção de doenças, em articulação com os municípios.\n• Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto\ne integração dos sistemas de informação em saúde\n• Aprimorar as condições de acesso a medicamentos, com atenção prioritária às regiões e populações hoje menos\nassistidas.\n• Qualificar o atendimento a pessoas com deficiência, transtorno do espectro autista e doenças raras, mediante\narticulação entre as políticas de saúde, educação e assistência social.\n• Investir em capacitação em toda rede de atendimento para melhorar o acolhimento do usuário, com agilidade e\ncontato humanizado em todas as etapas.\n• Acelerar e expandir a redução do tempo de espera por cirurgias e exames, consolidando os avanços já alcançados\nna saúde.\n• Estruturar, em parceria com a Assistência Social, políticas de acolhimento e oferta de serviços à saúde do idoso.\n\n2. EDUCAÇÃO\nDiagnóstico"
+          },
+          {
+            "id": "o-estado-mantem-a-maior-rede-estadual-de-ensino-basico-do-brasil-present",
+            "titulo": "O estado mantém a maior rede estadual de ensino básico do Brasil, presente na quase totalidade dos municípios",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O estado mantém a maior rede estadual de ensino básico do Brasil, presente na quase totalidade dos municípios\nmineiros. Os indicadores de aprendizagem apresentaram evolução consistente no período recente, acompanhados pela\nexpansão do ensino em tempo integral, pelo crescimento expressivo da educação profissional, pela recomposição do\ninvestimento em infraestrutura escolar e em alimentação e pela criação de programas de convivência e mediação de\nconflitos. Subsistem desafios relevantes, sobretudo no ensino médio: a defasagem de aprendizagem, a evasão, as\ndisparidades entre territórios e o descompasso entre a formação oferecida e as competências demandadas por uma\neconomia em transformação acelerada. A inclusão de estudantes neurodivergentes e com deficiência exige, igualmente,\nresposta mais estruturada da rede.\nLinhas de atuação\n• Avançar na modernização pedagógica e na conectividade das escolas, incorporando recursos digitais como\ninstrumento de aprendizagem e de personalização do ensino.\n• Dar continuidade à expansão do ensino em tempo integral, reconhecido como a política de maior impacto sobre a\naprendizagem e a redução de desigualdades educacionais.\n• Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do\nestado.\n• Fortalecer a inclusão escolar e o atendimento especializado a estudantes neurodivergentes, com deficiência e com\naltas habilidades, apoiado na formação continuada dos profissionais da rede.\n• Preservar a diversidade de modelos pedagógicos, assegurando às famílias possibilidade de escolha, e ampliar\nexperiências formativas complementares, inclusive de intercâmbio.\n\n3. SEGURANÇA PÚBLICA\nDiagnóstico\nO país atravessa uma transformação estrutural no perfil da criminalidade. As organizações criminosas evoluíram para\nestruturas de alcance transnacional que operam simultaneamente em três dimensões: a disputa pela governança de\nterritórios, a exploração de atividades econômicas formais como instrumento de lavagem de recursos e a tentativa de\ninfiltração em instituições públicas. A esse fenômeno somam-se o crescimento acelerado do crime cibernético, que\natinge de modo crescente o cidadão comum, e a persistência da violência doméstica e do feminicídio. Minas Gerais\napresenta hoje indicadores comparativamente favoráveis no cenário nacional, resultado do trabalho das forças de\nsegurança e de investimentos continuados em tecnologia, inteligência e integração institucional. A posição geográfica\ndo estado, que faz divisa com sete unidades da federação e possui a maior malha rodoviária do país, constitui, no\nentanto, vulnerabilidade permanente aos fluxos ilícitos interestaduais.\nLinhas de atuação\n• Manter postura de enfrentamento firme e permanente às organizações criminosas, atuando de forma simultânea\nsobre suas dimensões territorial, econômico-financeira e institucional.\n• Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração\nde bases de dados com as demais unidades da federação e com a União.\n• Ampliar o emprego de tecnologia e de inteligência na atividade policial e na perícia criminal, observados os marcos\nlegais aplicáveis.\n• Aprofundar as políticas de prevenção e de proteção às mulheres em situação de violência, com resposta integrada\nentre segurança, saúde e assistência social.\n• Estruturar o enfrentamento aos crimes cibernéticos, atuando sobre os fluxos financeiros que os sustentam e sobre\na educação digital da população.\n• Valorizar os profissionais de segurança pública, considerando remuneração, condições de trabalho, equipamentos\ne atenção à saúde mental.\n• Orientar o sistema prisional para os papéis indissociáveis de responsabilização e de ressocialização, com ênfase no\ntrabalho e na interrupção da atuação criminosa a partir das unidades.\n\n4. DESENVOLVIMENTO SOCIAL\nDiagnóstico\nA pobreza recuou de forma expressiva em Minas Gerais ao longo da última década, movimento associado sobretudo à\ngeração de empregos e à ampliação das oportunidades de qualificação. Permanecem, contudo, núcleos de\nvulnerabilidade fortemente concentrados em determinadas regiões do estado. A transição demográfica amplia a"
+          },
+          {
+            "id": "demanda-por-servicos-de-cuidado-para-os-quais-nem-o-estado-nem-as-famili",
+            "titulo": "demanda por serviços de cuidado para os quais nem o Estado nem as famílias estão plenamente preparados. A violência",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "demanda por serviços de cuidado para os quais nem o Estado nem as famílias estão plenamente preparados. A violência\ncontra crianças e adolescentes é predominantemente doméstica, o que desloca o foco da política pública para o\nfortalecimento dos vínculos familiares. Por fim, a fragmentação entre a ação do poder público, do setor privado e das\norganizações do terceiro setor reduz a efetividade agregada dos recursos aplicados na área social.\nLinhas de atuação\n• Adotar a família como unidade central das políticas sociais, com ênfase no apoio à parentalidade e na prevenção da\nviolência doméstica contra crianças e adolescentes.\n• Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o\nrecém-nascido.\n• Estruturar política de atenção à pessoa idosa que combine oferta de acolhimento institucional, apoio ao cuidador\nfamiliar e promoção do envelhecimento ativo.\n• Avançar em moradia e regularização fundiária urbana e rural, ampliando as alternativas de acesso à habitação,\ninclusive por meio de parcerias com o setor privado.\n• Promover a coordenação entre poder público, setor privado e terceiro setor, evitando duplicidades e direcionando\nesforços às lacunas efetivamente identificadas.\n• Tratar o uso problemático de drogas de forma integrada entre saúde, assistência social e segurança pública,\nampliando e qualificando a rede de acolhimento.\n\n5. DESENVOLVIMENTO ECONÔMICO\nDiagnóstico\nA economia mineira é uma das mais robustas e diversificadas do país, sustentada historicamente pela mineração e pelo\nagronegócio e complementada por parque industrial relevante, setor de serviços consolidado e liderança nacional em\ngeração de energia limpa. O período recente combinou geração expressiva de empregos formais, desburocratização do\nambiente de negócios e melhoria dos indicadores de competitividade. O debate global sobre minerais críticos e terras\nraras, impulsionado pela transição energética, abre uma janela de oportunidade singular para o estado. O desafio\ncentral é evitar que Minas permaneça predominantemente exportadora de matéria-prima, o que exige avanço\nsimultâneo em agregação de valor, infraestrutura logística, qualificação da mão de obra, segurança jurídica ao\ninvestidor, combate à informalidade e redução das disparidades regionais.\nLinhas de atuação\n• Consolidar ambiente de segurança jurídica e previsibilidade regulatória para o investimento produtivo, com fluxos\ndecisórios claros e resposta tempestiva do Estado.\n• Posicionar Minas Gerais na cadeia de minerais estratégicos além da extração, estimulando o beneficiamento, a\nmanufatura e o desenvolvimento tecnológico associados.\n• Adotar estratégias regionalizadas de desenvolvimento, respeitando as vocações produtivas específicas de cada\nterritório.\n• Fortalecer o sistema estadual de inovação, aproximando universidades, centros de pesquisa, empresas\nestabelecidas e novos empreendimentos.\n• Tratar a formação de capital humano como política econômica, alinhando a qualificação profissional às cadeias\nprodutivas prioritárias do estado.\n• Dar continuidade à desburocratização e enfrentar a informalidade como agenda de competitividade e de isonomia\nconcorrencial.\n• Promover a atração de investimentos alinhada às políticas de sustentabilidade, com foco na geração de energia verde\ne na descabornização.\n\n6. AGRICULTURA\nDiagnóstico\nO agronegócio mineiro combina escala e diversidade: o estado figura entre os maiores em valor bruto da produção\nagropecuária do país, lidera a produção nacional de café e de leite e detém reconhecimento internacional para produtos\nde identidade territorial, como o queijo artesanal. A defesa sanitária consolidada, a desburocratização da agroindústria\nartesanal, o fortalecimento institucional dos órgãos de pesquisa e assistência técnica e os programas de irrigação e\nregularização fundiária ampliaram a competitividade do setor no período recente. Os principais desafios são a\nirregularidade hídrica e a exposição ao risco climático, a insuficiência de conectividade no campo, as exigências"
+          },
+          {
+            "id": "crescentes-de-rastreabilidade-impostas-pelos-mercados-internacionais-a-d",
+            "titulo": "crescentes de rastreabilidade impostas pelos mercados internacionais, a degradação de áreas de pastagem e as",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "crescentes de rastreabilidade impostas pelos mercados internacionais, a degradação de áreas de pastagem e as\ndificuldades de acesso a crédito e a documentação fundiária por parte do pequeno e do médio produtor.\nLinhas de atuação\n• Ampliar a segurança hídrica da produção agropecuária, com atenção à agricultura familiar e de médio porte e aos\nprojetos estruturantes de infraestrutura hídrica.\n• Ampliar a internet de alta velocidade no campo é melhor) no meio rural e a assistência técnica apoiada em soluções\ndigitais.\n• Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados\nmais exigentes.\n• Estimular, através da Epamig e da Emater, a agregação de valor e a agroindustrialização, com apoio à formalização\ne à certificação dos produtos tradicionais mineiros.\n• Promover práticas de produção sustentável, com ênfase na recuperação de áreas degradadas e nos sistemas\nintegrados de produção.\n• Dar continuidade à regularização fundiária rural e à ampliação do acesso ao crédito para o pequeno e o médio\nprodutor.\n\n7. MEIO AMBIENTE\nDiagnóstico\nMinas Gerais abriga dois dos biomas mais relevantes do país, o Cerrado e a Mata Atlântica, e responde pela gestão de\nbacias hidrográficas que abastecem parcela significativa do Sudeste. O estado convive, simultaneamente, com uma das\nmais intensas atividades minerárias do mundo e com a memória de dois dos maiores desastres ambientais já\nregistrados, experiência que resultou em novo marco de segurança de barragens e na condução de processos de\nreparação de grande complexidade. A agenda climática tornou-se também agenda econômica: os mercados\ninternacionais impõem exigências crescentes de rastreabilidade ambiental, e as oportunidades ligadas à transição\nenergética dependem de credenciais verificáveis. Persistem como desafios o desmatamento ilegal, a exposição a\neventos climáticos extremos, a destinação inadequada de resíduos sólidos em parte dos municípios, os déficits de\nsaneamento e a necessidade de conciliar rigor ambiental com previsibilidade e tempestividade nos processos de\nlicenciamento.\nLinhas de atuação\n• Combater o desmatamento ilegal e promover a recuperação de áreas degradadas, com uso de monitoramento\nremoto e de instrumentos de incentivo à conservação.\n• Posicionar o estado na economia da descarbonização, estruturando as condições regulatórias e técnicas para a\nparticipação nos mercados de carbono.\n• Modernizar a gestão ambiental, conciliando rigor técnico com previsibilidade de prazos e uso intensivo de\ntecnologia na análise e na fiscalização.\n• Apoiar os municípios na adaptação climática e na redução da vulnerabilidade a eventos extremos.\n• Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante\narranjos regionais e parcerias.\n• Manter a fiscalização e o monitoramento permanentes da segurança de barragens.\n• Manter a realização de investimento e capacitação ao Corpo de Bombeiros para o enfrentamento às queimadas.\n\n8. INFRAESTRUTURA E TRANSPORTE\nDiagnóstico\nMinas Gerais possui a maior malha rodoviária do Brasil, o que representa, ao mesmo tempo, um ativo logístico e um\npassivo permanente de conservação. A qualidade da malha estadual alcançou no período recente o melhor patamar já\nregistrado, resultado de investimento continuado em recuperação e manutenção. Na Região Metropolitana de Belo\nHorizonte, o sistema metroviário passa por sua maior transformação em décadas, e obras estruturantes de contorno\nmetropolitano encontram-se contratadas. O planejamento logístico de longo prazo dispõe hoje de instrumento técnico\nconsolidado, complementado por processos de escuta regional que identificaram prioridades territoriais. Os desafios\npermanecem no custo de conservação de uma malha extensa, na mobilidade metropolitana, na integração entre modais\ne nas condições de escoamento da produção mineira.\nLinhas de atuação\n• Dar continuidade à expansão do sistema metroviário da Região Metropolitana de Belo Horizonte e à sua integração\ncom o transporte metropolitano por ônibus."
+          },
+          {
+            "id": "manter-e-aprimorar-a-qualidade-da-malha-rodoviaria-estadual-avancando-em",
+            "titulo": "• Manter e aprimorar a qualidade da malha rodoviária estadual, avançando em modelos de contratação orientados",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "• Manter e aprimorar a qualidade da malha rodoviária estadual, avançando em modelos de contratação orientados\na resultado.\n• Ampliar a capacidade e a segurança viária das rodovias estratégicas para a economia e a integração do estado.\n• Orientar os investimentos pelo planejamento logístico de longo prazo e pelas prioridades definidas com as regiões.\n• Ampliar o uso de parcerias e concessões como instrumento de viabilização dos investimentos em infraestrutura.\n\n9. GESTÃO, GOVERNO DIGITAL E INOVAÇÃO\nDiagnóstico\nMinas Gerais recebeu de gestões anteriores uma das maiores dívidas estaduais do país, cuja trajetória condicionou por\ndécadas a capacidade de investimento do estado. A recuperação do equilíbrio fiscal ao longo dos últimos anos, obtida\nsimultaneamente à ampliação do investimento em áreas finalísticas, alterou de forma substantiva essa condição, ainda\nque o equacionamento definitivo do endividamento permaneça como agenda central e dependa de instrumentos\nnegociados no âmbito federativo. Em paralelo, a digitalização dos serviços ao cidadão avançou de modo expressivo e a\ninclusão digital foi ampliada em localidades antes sem cobertura. A reforma tributária em curso no país abre uma janela\npara modernizar a política tributária estadual, tornando-a mais simples, mais transparente e mais competitiva.\nLinhas de atuação\n• Preservar o equilíbrio fiscal como condição de sustentabilidade de toda e qualquer política pública.\n• Buscar solução duradoura para o endividamento estadual no âmbito dos instrumentos federativos disponíveis.\n• Avançar na digitalização dos serviços públicos e no uso de inteligência artificial na gestão, com ganhos de eficiência\nem compras, arrecadação e atendimento, preservando canais presenciais para quem deles necessite.\n• Ampliar a inclusão digital, levando conectividade de qualidade às localidades ainda desassistidas.\n• Conduzir a transição tributária com foco em simplicidade, justiça fiscal, competitividade e transparência quanto aos\nbenefícios concedidos.\n\n10. CULTURA, TURISMO E ESPORTES\nDiagnóstico\nMinas Gerais reúne patrimônio cultural de reconhecimento mundial, com conjuntos urbanos e bens imateriais inscritos\npela Unesco, e uma identidade que constitui, em si mesma, ativo econômico. O turismo registrou no período recente\nseu melhor desempenho histórico em número de visitantes e em geração de ocupações, apoiado na diversificação de\nrotas e na estruturação de novos produtos. O investimento em cultura cresceu de forma acentuada, acompanhado por\nmelhoria expressiva na execução orçamentária e na gestão dos mecanismos de fomento. O principal desafio da política\ncultural é a concentração dos recursos na capital, em detrimento do interior, somada à fragmentação dos instrumentos\nde financiamento. No esporte, a ampliação dos mecanismos de incentivo e dos programas de base ainda convive com\ndesigualdades de acesso entre territórios.\nLinhas de atuação\n• Promover a desconcentração regional do fomento cultural, ampliando o acesso de agentes e projetos sediados no\ninterior do estado.\n• Integrar os diferentes mecanismos de financiamento à cultura em sistema mais simples e transparente.\n• Articular cultura e turismo como eixo econômico único, fortalecendo a identidade de Minas como ativo de mercado.\n• Estruturar política permanente de captação e qualificação de eventos, com ampliação e diversificação das rotas\nturísticas.\n• Consolidar o esporte como política social e territorial, com ênfase no esporte escolar, na formação cidadã e na\ndescentralização das oportunidades.\n\nCONSIDERAÇÕES FINAIS\nAs diretrizes reunidas neste documento expressam a orientação estratégica do governo e serão detalhadas,\nquantificadas e priorizadas pelos instrumentos próprios de planejamento e orçamento público — o Plano Plurianual de\nAção Governamental, a Lei de Diretrizes Orçamentárias e a Lei Orçamentária Anual —, observadas a disponibilidade de\nrecursos, a legislação aplicável, a pactuação federativa e o diálogo permanente com a sociedade mineira, com a\nAssembleia Legislativa e com os municípios. O compromisso que se assume é com a direção aqui apresentada: um\nEstado equilibrado, eficiente, próximo das pessoas e capaz de transformar oportunidade em desenvolvimento para\ntodas as regiões de Minas Gerais.\n\nMateus Simões"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "51f0049dfc70be91fa5fedb682e1a5c6fea6193b6de0317c074cd8441b0283b8"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "4e4c847321d7a3fa5456e9941facc042c9309d57401dd5900736a867e161b95d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f8824b4769ca6658b3b44976ee4ee01fabfe91031f5610eaba73fa8f33ae41dd"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "68834c0bfeb1e3d3224616ee01fd03d6d08fe954a7953194e90aeab785734af5"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ad3008114cbca4fc9be673d27302b5889beddbed60c0a90709f4a0a5beb62554"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e prevenção de doenças, em articulação com os municípios. Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto e integração dos sistemas de informação em saúde. Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do estado. Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União. Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o recém-nascido. Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados mais exigentes. Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante arranjos regionais e parcerias.",
+    "frases": [
+      {
+        "texto": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e prevenção de doenças, em articulação com os municípios.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 1,
+            "trecho": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e\nprevenção de doenças, em articulação com os municípios."
+          }
+        ]
+      },
+      {
+        "texto": "Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto e integração dos sistemas de informação em saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 1,
+            "trecho": "Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto\ne integração dos sistemas de informação em saúde"
+          }
+        ]
+      },
+      {
+        "texto": "Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do estado.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 2,
+            "trecho": "Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do\nestado."
+          }
+        ]
+      },
+      {
+        "texto": "Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 2,
+            "trecho": "Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União."
+          }
+        ]
+      },
+      {
+        "texto": "Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o recém-nascido.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 3,
+            "trecho": "Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o\nrecém-nascido."
+          }
+        ]
+      },
+      {
+        "texto": "Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados mais exigentes.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 4,
+            "trecho": "Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados\nmais exigentes."
+          }
+        ]
+      },
+      {
+        "texto": "Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante arranjos regionais e parcerias.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 4,
+            "trecho": "Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante\narranjos regionais e parcerias."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "atencao-primaria",
+        "titulo": "Atenção primária",
+        "descricao": "Fortalecimento da atenção primária como porta de entrada do sistema de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 1,
+            "trecho": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e\nprevenção de doenças, em articulação com os municípios."
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-em-saude",
+        "titulo": "Tecnologia em saúde",
+        "descricao": "Uso de tecnologia para ampliar o acesso aos serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 1,
+            "trecho": "Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto\ne integração dos sistemas de informação em saúde"
+          }
+        ]
+      },
+      {
+        "id": "educacao-profissional",
+        "titulo": "Educação profissional",
+        "descricao": "Aprofundamento da educação profissional e tecnológica regionalizada.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 2,
+            "trecho": "Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do\nestado."
+          }
+        ]
+      },
+      {
+        "id": "controle-de-fluxos-ilicitos",
+        "titulo": "Controle de fluxos ilícitos",
+        "descricao": "Controle dos fluxos ilícitos nas divisas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 2,
+            "trecho": "Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União."
+          }
+        ]
+      },
+      {
+        "id": "primeira-infancia",
+        "titulo": "Primeira infância",
+        "descricao": "Priorização da primeira infância nas políticas sociais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 3,
+            "trecho": "Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o\nrecém-nascido."
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Universalização do saneamento por meio de arranjos regionais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002541911:01",
+            "pagina": 4,
+            "trecho": "Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante\narranjos regionais e parcerias."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T16:00:50.818Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T16:03:09.406Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre atenção primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:1:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:2:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:3:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente sobre segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:4:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:5:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:6:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente (meio ambiente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:frase:7:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:atencao-primaria:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do tema resumido."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:tecnologia-em-saude:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:educacao-profissional:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:controle-de-fluxos-ilicitos:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:primeira-infancia:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002541911:tema:saneamento:documentos:MG:130002541911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002541911",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002541911:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25500,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2440,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28415,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23082,
+          "output_tokens_details": {
+            "thinking_tokens": 306
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28415,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23082,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28415,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28415
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36704139999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "60794fb74dd02e57426130c1250102ccbb11b6f6ad8362059bd3c2a34a16bb74",
+    "extractedTextSha256": "bdb08121424fe0fe8ad13162bef08379da926222c7c8ec9377be857cc192f4fd",
+    "documentCount": 1,
+    "documentSetSha256": "bec240cb07d0235c84482ec7661a5b5a607ae19ae0ea0fd94cd00affb7ea49b6",
+    "contentSha256": "f13b9837e59da9a93a9217d1638f95a5be5dfc696c2b92576a53bbb75b9e9f71"
+  }
+}

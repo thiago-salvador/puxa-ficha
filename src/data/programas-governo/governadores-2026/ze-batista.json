@@ -1,0 +1,1256 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002549967",
+    "slug": "ze-batista",
+    "nomeUrna": "ZÉ BATISTA",
+    "partido": "PSTU",
+    "arquivoNome": "2026CE60002549967_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002549967_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002549967:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002549967_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002549967_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "68a0510466f110476591ce4b2a179be84d14641547b73ad096135dde918c0d4c",
+        "extractedTextSha256": "031760fc42f41f286da0135f53596e7746af5ed04de6bdac6c7a91c5245264bd",
+        "paginas": 44,
+        "secoes": [
+          {
+            "id": "introducao",
+            "titulo": "Introdução",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Introdução\nGostaríamos de deixar claro, desde o início, que as mudanças necessárias\npara transformar o Brasil e o Ceará não virão simplesmente das urnas, nem da\neleição de qualquer representante ao poder político. Do nosso ponto de vista,\nas eleições são um momento oportuno para apresentar nosso programa, fazer\ndenúncias e fortalecer as lutas da classe trabalhadora. Mas a verdadeira força\ncapaz de transformar a sociedade reside na mobilização consciente e\norganizada dos explorados e oprimidos.\nPor isso, afirmamos que cabe aos trabalhadores e trabalhadoras, à\njuventude, aos negros e negras, aos povos indígenas, à população LGBT+ e a\ntodos os setores explorados e oprimidos protagonizar as transformações reais\nde que o Brasil e o Ceará necessitam. Sem que a classe trabalhadora se\norganize como sujeito político independente e lute para conquistar o poder,\nnenhuma transformação estrutural poderá se sustentar.\nÉ partindo desse caráter de classe e da necessária independência dos\ntrabalhadores em relação aos governos, aos patrões e às diferentes frações da\nburguesia que estruturamos os eixos programáticos de um programa mais\namplo a nível nacional que:\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\nCombate ao imperialismo, vinculado à defesa dos interesses da\nclasse trabalhadora, da soberania dos povos e da luta por uma\nsociedade socialista;\nDefesa das reivindicações imediatas, democráticas e das\nnecessidades concretas da população trabalhadora, articulando\nas lutas do presente com a necessidade de transformação\nestrutural da sociedade;\nAdoção de medidas que ultrapassem os limites impostos pelo\ncapitalismo e pela institucionalidade existente, enfrentando os\nprivilégios das classes dominantes e os mecanismos que\nreproduzem a desigualdade social;\nIndependência de classe, partindo do princípio de que a\nburguesia nacional não é aliada dos trabalhadores. Seus\ninteresses econômicos e políticos são incompatíveis com as\nnecessidades da maioria da população;\nCentralidade da mobilização, da organização e da ação direta da\nclasse trabalhadora, compreendendo que nenhuma conquista\nduradoura será alcançada sem a participação ativa dos próprios\ntrabalhadores e trabalhadoras;\nNecessidade de que a classe trabalhadora conquiste o poder\npolítico, colocando a riqueza socialmente produzida e os recursos\nda sociedade sob controle democrático daqueles que\nefetivamente os constroem com seu trabalho."
+          },
+          {
+            "id": "caracterizacao-inicial-ceara",
+            "titulo": "Caracterização inicial – Ceará",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Caracterização inicial – Ceará\nO Ceará é uma formação territorial do Nordeste brasileiro marcada pela\ncombinação entre litoral, semiárido, metrópole, sertão, serras úmidas, áreas\nrurais e grandes periferias urbanas. É amplamente conhecido por suas belezas\nnaturais, por seu rico patrimônio cultural e por sua importância histórica. No\nentanto, por trás da imagem turística e das propagandas oficiais, existe um\nterritório profundamente atravessado por contradições sociais, econômicas e\nambientais.\nO litoral cearense abriga paisagens mundialmente conhecidas, como as\nfalésias de Canoa Quebrada, as dunas, lagoas e praias de Jericoacoara, além\nde importantes polos turísticos, culturais e comerciais. Essas riquezas naturais\ne culturais, porém, servem de base para a exploração capitalista e beneficiam\nprincipalmente uma pequena minoria formada por grandes grupos econômicos.\nA riqueza produzida nessas áreas é apropriada por cadeias do turismo, da\nespeculação imobiliária, do comércio, dos transportes, da hotelaria e dos\nserviços, enquanto grande parte da população convive com trabalho\nprecarizado, informalidade, baixos salários e ausência de direitos. Esse\nprocesso exerce uma pressão absurda sobre a classe trabalhadora,\ncomunidades tradicionais, povos indígenas, quilombolas e moradores das\nperiferias.\nBanhado pelo Oceano Atlântico, o Ceará possui 573 quilômetros de\nlitoral e ocupa posição estratégica no Nordeste brasileiro. É o quarto maior\nestado da região e o décimo sétimo do Brasil em extensão territorial. Seu\nprincipal rio é o Jaguaribe, cuja bacia hidrográfica drena grande parte do\nterritório estadual. Ao norte, destacam-se rios como o Coreaú, o Acaraú e o\nAracatiaçu. Em razão das características climáticas do semiárido, grande parte\ndos rios cearenses possui regime temporário, sofrendo forte redução ou\ninterrupção do fluxo durante os períodos de seca.\nDo ponto de vista territorial e ambiental, o Ceará é melhor compreendido\ncomo uma formação semiárida e costeira. A Caatinga, dominante em grande\nparte do estado, combina solos rasos e pedregosos, depressões sertanejas,\nplanaltos, tabuleiros pré-litorâneos e áreas de transição ecológica. O litoral, por\nsua vez, é marcado por dunas, falésias, manguezais, estuários e áreas de\nintensa valorização econômica. Essa diversidade territorial impede qualquer\nleitura estereotipada. O Ceará não é somente “sertão”, nem pode ser reduzido\nà imagem turística de suas praias.\nO estado possui importantes recursos minerais, hídricos e energéticos.\nEm Santa Quitéria, localiza-se a jazida de Itataia, com urânio e fosfato\nassociados; somam-se a isso reservas de calcário e outros minérios, além de\nforte potencial eólico e solar. Nos últimos anos, o Ceará também passou a ser\napresentado como possível polo de hidrogênio verde, especialmente a partir\ndo Complexo do Pecém. Sua exploração, porém, depende de investimentos,\nconcessões, infraestrutura, incentivos públicos e cadeias produtivas"
+          },
+          {
+            "id": "comandadas-por-grandes-grupos-economicos-nacionais-e-estrangeiros",
+            "titulo": "comandadas por grandes grupos econômicos nacionais e estrangeiros.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "comandadas por grandes grupos econômicos nacionais e estrangeiros.\nA população cearense é estimada em 9.268.836 habitantes em 2025. O\nestado possui área territorial de 148.894,44 km² e, segundo o Censo de 2022,\ndensidade demográfica de 59,07 habitantes por km². Limita-se ao norte com o\nOceano Atlântico, ao leste com o Rio Grande do Norte e a Paraíba, ao sul com\nPernambuco e a oeste com o Piauí. São 184 municípios, com destaque para a\nRegião Metropolitana de Fortaleza, principal centro urbano, político, econômico\ne administrativo do estado, e para a Região Metropolitana do Cariri, importante\npolo populacional, cultural, comercial e religioso do interior.\nFortaleza concentra grande parte dos serviços, da infraestrutura, da\nadministração pública, das universidades, dos equipamentos de saúde e da\ncirculação comercial. Ao mesmo tempo, concentra profundas desigualdades\nurbanas, periferias extensas, déficit habitacional, violência, informalidade e\nprecarização. No interior, convivem agricultura familiar, pecuária, pequenos\ncomércios, polos industriais, áreas de mineração, turismo, agronegócio,\nassentamentos rurais, comunidades tradicionais e fortes desigualdades no\nacesso à terra, à água, ao crédito, ao saneamento, à saúde e à educação.\nVemos que, o Ceará possui riquezas naturais, culturais, humanas e\neconômicas significativas. O problema central é que essas riquezas são\napropriadas de forma profundamente desigual. Elas estão subordinadas as\nengrenagens da acumulação capitalista, aos interesses de grandes grupos\nprivados e a um modelo de desenvolvimento que concentra renda, terra, poder\npolítico e infraestrutura nas mãos de poucos. Há riqueza suficiente, mas ela\nnão está a serviço da maioria trabalhadora que a produz.\n\nEconomia e Exploração no Ceará\nAs principais atividades econômicas do Ceará estão ligadas à agricultura, à\npecuária, ao comércio, aos serviços, à indústria, à construção civil, à\nmineração, à energia, ao turismo e à administração pública. Esse conjunto de\natividades gerou, em 2023, um Produto Interno Bruto de R$ 232,24 bilhões.\nFortaleza respondeu por 37,44% do PIB estadual, concentrando grande parte\nda riqueza, da infraestrutura, dos serviços, dos equipamentos públicos e da\ncirculação econômica do Ceará.\nNesse mesmo ano, o Ceará registrou crescimento econômico de 3,04%.\nEntretanto, a estrutura do Valor Adicionado Bruto permaneceu fortemente\nconcentrada no setor de serviços, responsável por 75,76% da economia\nestadual. A indústria respondeu por apenas 18,27%, enquanto a agropecuária\nrepresentou 5,97%. Esses números mostram que o crescimento econômico\nrecente ocorreu sem alterar substancialmente a cadeia econômica do estado.\nO Ceará é muito dependente de atividades ligadas aos serviços, ao comércio,\nà logística, à administração pública, ao turismo, à construção civil e a\nsegmentos industriais relativamente limitados."
+          },
+          {
+            "id": "nas-ultimas-decadas-a-estrutura-economica-cearense-passou-por",
+            "titulo": "Nas últimas décadas, a estrutura econômica cearense passou por",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Nas últimas décadas, a estrutura econômica cearense passou por\nmudanças importantes. A participação da indústria no VAB caiu de 22,65% em\n2002 para 18,27% em 2023. No mesmo período, os serviços ampliaram seu\npeso relativo e passaram a representar mais de três quartos da economia\nestadual. Revelando a diminuição no peso da indústria, acompanhado pela\nexpansão de atividades comerciais, administrativas, financeiras, logísticas e de\nserviços.\nA categoria Valor Adicionado Bruto é um instrumento da contabilidade\nnacional que mede a contribuição monetária de cada setor para a formação do\nProduto Interno Bruto. Tanto o PIB quanto o VAB são indicadores úteis para\ndimensionar a atividade econômica, mas não revelam, por si mesmos, como a\nriqueza é produzida, apropriada e distribuída entre as classes sociais. Sob a\nótica da classe trabalhadora, essa limitação é decisiva. Aqui iremos apenas\nindicar, de forma simplificada. Para uma crítica mais aprofundada dos\nindicadores econômicos convencionais e de seus limites, recomendamos a\nleitura do Anuário Estatístico do ILAESE 2025.\nEsses indicadores não distinguem claramente as atividades diretamente\nligadas à produção de riqueza nova daquelas voltadas à circulação, à\nrealização, à administração ou à apropriação da riqueza já produzida. Ao reunir\nem uma mesma contabilidade atividades produtivas, comerciais, financeiras,\nimobiliárias e administrativas, as estatísticas oficiais ajudam a medir a\nmovimentação e tamanho da economia, mas obscurecem as relações sociais\nque estruturam o capitalismo.\nQuando observamos que os serviços representam mais de três quartos\nda economia cearense, isso não significa que houve uma expansão equivalente\nda produção de valor. Parte expressiva dessas atividades está vinculada à\ncirculação e à realização do valor produzido em outros setores, como a\nindústria, a agropecuária, a construção civil, a mineração e a energia.\nComércio, finanças, seguros, atividades imobiliárias e intermediações diversas\naparecem como crescimento econômico, mas expressam formas de\napropriação, redistribuição ou realização da riqueza social.\nUm exemplo simples ajuda a compreender essa dinâmica. Uma fábrica\nproduz mercadorias; em seguida, transportadoras movimentam os produtos,\natacadistas os distribuem, varejistas os comercializam, bancos financiam as\noperações e seguradoras atuam sobre todo esse circuito econômico.\nEntretanto, é necessário distinguir processos diferentes que aparecem\nmisturados nas estatísticas convencionais: a produção do valor, sua circulação,\nsua realização no mercado e sua apropriação pelas diferentes frações do\ncapital. Embora todos esses agentes sejam indispensáveis ao funcionamento\nda engrenagem do capital, isso não significa que desempenhem o mesmo\npapel na criação de riqueza social.\nDo ponto de vista da classe trabalhadora, uma economia cada vez mais\nconcentrada em atividades de circulação, comércio, serviços precarizados e\nintermediação pode significar salários menores, maior rotatividade,"
+          },
+          {
+            "id": "informalidade-terceirizacao-especulacao-imobiliaria-e-aumento-do-custo-d",
+            "titulo": "informalidade, terceirização, especulação imobiliária e aumento do custo de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "informalidade, terceirização, especulação imobiliária e aumento do custo de\nvida. Esse processo não é uma particularidade isolada do Ceará. Ele expressa,\nem escala regional, a desindustrialização relativa do Brasil, sua reprimarização\neconômica e seu rebaixamento na divisão internacional do trabalho.\nA redução do peso da indústria na estrutura econômica revela uma\ntransformação profunda na forma de inserção do Brasil no capitalismo mundial.\nEnquanto setores ligados à circulação, ao comércio, às finanças, aos serviços\ne à exportação de bens primários ampliam sua importância relativa, a atividade\nindustrial perde espaço, justamente o setor que ocupa posição estratégica na\nprodução capitalista.\nEsse processo aprofunda a dependência econômica, tecnológica e\nprodutiva. Resultando é uma economia mais vulnerável, com menor\ncapacidade de gerar empregos estáveis, mais dependente das oscilações do\nmercado internacional e mais subordinada aos interesses de grandes grupos\nprivados nacionais e estrangeiros.\nVivemos um processo acelerado de recolonização econômica, no qual\no país é empurrado cada vez mais para o papel de fornecedor de matériasprimas, commodities, recursos naturais, força de trabalho barata e espaços de\nvalorização para o capital internacional. O Ceará ocupa uma posição nessa\ndinâmica. Seus minérios, sua energia, seu litoral, sua infraestrutura portuária,\nsuas terras, sua água, seu turismo e sua força de trabalho estão na mira do\ngrande capital.\nNão basta festejar o crescimento do PIB. Precisamos defender a\nreindustrialização planejada do Brasil e do Ceará integrada a um projeto\nnacional soberano; colocar os setores estratégicos — energia, água,\nmineração, infraestrutura, portos, transportes e grandes cadeias logísticas —\nsob controle dos trabalhadores; combater a entrega de recursos naturais e\nincentivos públicos aos grandes grupos privados; garantir que a riqueza\nproduzida no estado seja direcionada para fornecer emprego, salário, moradia,\nsaúde, educação, saneamento, transporte público, cultura, ciência e\npreservação ambiental.\nA riqueza cresce, mas para quem?\nÉ alarmante notar que apesar de toda essa riqueza natural e do forte potencial\nturístico, o Ceará convive com profundas contradições sociais. Enquanto o\nestado atrai investimentos e visitantes de diversas partes do mundo, milhões\nde trabalhadores e trabalhadoras enfrentam baixos salários, precarização do\ntrabalho, dificuldades de acesso a serviços públicos de qualidade e o abandono\nde muitas regiões do interior.\nPor trás dos cartões-postais existe um Ceará marcado pela\ndesigualdade social, pelo descaso com os que mais necessitam e pela\nconcentração de riqueza nas mãos de poucos. É essa realidade que precisa\nser transformada para que as riquezas produzidas pelo povo cearense estejam"
+          },
+          {
+            "id": "verdadeiramente-a-servico-da-populacao",
+            "titulo": "verdadeiramente a serviço da população.",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "verdadeiramente a serviço da população.\nTodas as riquezas naturais contrastam com o empobrecimento e as\ncondições de vida impostas à maioria da população. A pobreza que afeta o\npovo cearense não é de responsabilidade da natureza ou da escassez de\nrecursos, mas a continuação de um processo histórico marcado pela\nexploração e pela concentração da riqueza nas mãos de uma pequena minoria.\nApesar de apresentar indicadores econômicos expressivos, em 2023, o\nCeará tinha cerca de 876 mil pessoas em situação de extrema pobreza, o\nequivalente a 9,4% da população, segundo estimativas do Ipece com base na\nPNAD Contínua e na linha internacional de extrema pobreza do Banco Mundial.\nEssa realidade ajuda a explicar por que 1,36 milhão de famílias são\nbeneficiárias do Bolsa Família. Quando considerados todos os membros\ndessas famílias, o programa atende aproximadamente 3,3 milhões de pessoas\nem todo o estado, ou seja, mais de um terço da população, segundo dados do\nIBGE combinados com o relatório de benefícios do Ministério do\nDesenvolvimento Social.\nA situação torna-se ainda mais grave quando observamos os índices de\npobreza ampla e desigualdade. Segundo dados compilados a partir da PNAD\nContínua de 2023, o Ceará apresentava: Renda domiciliar per capita média de\nR$ 1.166; Taxa de pobreza de 48,7%; Taxa de extrema pobreza de 9,4%;\nÍndice de Gini de 0,513. Em outras palavras, quase metade do povo do Ceará\nenfrenta algum grau de pobreza.\nÀ primeira vista, os números do mercado de trabalho parecem positivos.\nEm 2025, a taxa de desemprego do Ceará atingiu 6,5%, a menor desde o início\nda série histórica da PNAD Contínua, em 2012. Mas olhar apenas para esse\nindicador produz uma imagem parcial e distorcida da realidade.\nNo mesmo período, o nível de ocupação da população permaneceu em\napenas 47,8%, um dos mais baixos do país. Além disso, o rendimento médio\nreal habitual de todos os trabalhos alcançou apenas R$ 2.394, valor que\ncontinua entre os menores do Brasil.\nIsso significa que mais pessoas estão encontrando alguma forma de\nocupação, mas o indicador de desemprego não capta a qualidade dessas\ninserções no mercado de trabalho. Ele não revela se os empregos gerados\noferecem salários dignos, estabilidade, proteção social ou perspectivas de\nmelhoria das condições de vida. Por trás da queda do desemprego escondemse diversos problemas estruturais do mercado de trabalho, como baixos\nsalários, informalidade, alta rotatividade, terceirização, precarização das\ncondições de trabalho e insegurança econômica para milhões de\ntrabalhadores. Detalhes fundamentais são escamoteados para construir uma\naparência de normalidade e harmonia social. A propaganda dos governos\ndestaca os números mais favoráveis, mas nada dizem sobre aspectos centrais\nda realidade vivida pela classe trabalhadora. A maior parte da população,\nporém, experimenta diariamente na pele aquilo que os dados não conseguem\ndemonstrar."
+          },
+          {
+            "id": "outra-expressao-dramatica-dessa-desigualdade-e-o-deficit-habitacional",
+            "titulo": "Outra expressão dramática dessa desigualdade é o déficit habitacional.",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Outra expressão dramática dessa desigualdade é o déficit habitacional.\nAtualmente, o Ceará possui uma carência estimada em 211.473 moradias, o\nque significa que centenas de milhares de famílias vivem sem acesso a uma\nhabitação adequada, enquanto a especulação imobiliária e os interesses do\nmercado seguem determinando o destino das cidades.\n\nUberização\nA uberização do trabalho cresce no Brasil e no Ceará envolta na promessa de\nautonomia. As plataformas digitais, à primeira vista, parecem oferecer\nliberdade, flexibilidade e empreendedorismo. Seus defensores afirmam que o\ntrabalhador escolhe seus próprios horários, controla sua renda e trabalha para\nsi mesmo, como se fosse um empresário de sua própria atividade.\nO que se verifica na realidade é outra coisa.\nO motorista ou entregador pode escolher quando se conecta ao\naplicativo, mas não controla quase nada do essencial. Não define o preço da\ncorrida ou da entrega. Não controla a distribuição das chamadas. Não sabe\ncomo o algoritmo decide quem recebe mais ou menos demandas. Não participa\nda definição das tarifas, das promoções, dos bloqueios, dos critérios de\navaliação ou das mudanças nas regras da plataforma.\nEsse modelo cria a aparência de independência e camufla a\nsubordinação. O trabalhador não tem chefe visível, mas é comandado por um\nsistema opaco. Precisa permanecer conectado por longas jornadas para\nalcançar uma renda mínima. Não recebe ordens diretas de um gerente, mas é\npressionado por notas, metas, bloqueios, tarifas variáveis, corridas mal pagas\ne pelo carater incerto do trabalho.\nA uberização transforma o risco empresarial em responsabilidade\nindividual do trabalhador. O trabalhador entra com sua força de trabalho, seu\ntempo, seu corpo e seu próprio patrimônio. Motoristas e entregadores arcam\ncom veículo, combustível, manutenção, seguro, celular, internet, impostos,\ndepreciação e acidentes.\nEsse modelo se aproxima daquilo que Marx analisou como salário por\npeça. Nessa forma de remuneração, cria-se a impressão de que o trabalhador\nrecebe exatamente pelo que produz e de que sua renda depende apenas do\nesforço individual. Na prática, trata-se de uma forma de intensificar o trabalho.\nQuanto mais o trabalhador produz, mais ele é empurrado a produzir. E, quando\na produtividade aumenta, o capital pode reduzir o valor pago por tarefa,\nobrigando o trabalhador a trabalhar ainda mais para manter a mesma renda.\nÉ exatamente essa a lógica das plataformas. O pagamento por corrida\nou entrega amplia a jornada, intensifica o ritmo e transfere o controle para\ndentro da própria cabeça do trabalhador. Fazendo disso uma disciplina\npermanente, sem supervisor e sem contrato formal.\nOs dados disponíveis ajudam a revelar essa engrenagem. Em 2022, o"
+          },
+          {
+            "id": "ceara-tinha-cerca-de-60-mil-trabalhadores-em-plataformas-digitais-53-mil",
+            "titulo": "Ceará tinha cerca de 60 mil trabalhadores em plataformas digitais: 53 mil em",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Ceará tinha cerca de 60 mil trabalhadores em plataformas digitais: 53 mil em\naplicativos de serviços e 7 mil em plataformas de comércio. Naquele momento,\nos plataformizados recebiam, em média, R$ 1.822 por mês, acima dos R$\n1.444 recebidos pelos não plataformizados. À primeira vista, poderia parecer\nvantagem.\nMas essa aparência começa a se desfazer quando deixamos de abstrair\na jornada de trabalho.\nOs trabalhadores de plataformas cumpriam, em média, 46,3 horas\nsemanais, contra 36,8 horas dos demais ocupados. Em cálculo aproximado,\nisso significa cerca de R$ 9,09 por hora para os plataformizados e R$ 9,07 por\nhora para os demais. A diferença é irrisória. A renda mensal maior aparece\nporque o trabalhador trabalha mais, assume mais riscos e desgasta seus\npróprios meios de trabalho.\nLevantamentos mais recentes em Fortaleza mostram a mesma\nrealidade de forma ainda mais concreta. Um deles realizado pela GigU, revela\nque motoristas de aplicativo precisam cumprir jornadas próximas de 55 horas\nsemanais para obter uma remuneração líquida mensal em torno de R$ 2,9 mil.\nO faturamento bruto pode passar de R$ 6 mil, mas boa parte desse valor é\nconsumida pelos custos da atividade: combustível, manutenção, aluguel ou\ndepreciação do veículo, seguro e demais despesas operacionais.\nA importância desse setor não se mede apenas pelo número de\ntrabalhadores diretamente envolvidos. Em 2022, os cerca de 60 mil\nplataformizados representavam algo próximo de 1,9% da ocupação total do\nCeará. Pode parecer pouco. Mas esse setor funciona como laboratório de\nnovas formas de exploração. Nele são testados mecanismos que depois\npodem se espalhar para outros ramos da economia: remuneração variável,\ngestão algorítmica, disponibilidade permanente, transferência de custos,\nindividualização dos riscos, ausência de direitos e enfraquecimento dos\nvínculos formais de trabalho.\nO que hoje aparece com mais nitidez entre motoristas e entregadores\nde aplicativo pode se tornar o destino de parcelas cada vez maiores da classe\ntrabalhadora. A uberização é algo muito além de um fenômeno isolado. É parte\nde uma ofensiva mais ampla do capital para destruir direitos, fragmentar a\nclasse, reduzir salários e transformar cada trabalhador em uma pequena\nempresa endividada, isolada e permanentemente disponível. Por isso, o\nenfrentamento exige a unidade de toda a classe trabalhadora contra esse\nsistema de exploração, e não apenas dos setores diretamente atingidos pelas\nplataformas digitais.\nA luta contra a uberização não pode se limitar a pequenas regulações\nque legalizam a precarização. É preciso reconhecer o vínculo empregatício\nquando houver subordinação real, garantir direitos trabalhistas e\nprevidenciários, combater jornadas exaustivas, exigir transparência dos\nalgoritmos, proibir bloqueios arbitrários e assegurar remuneração mínima por\nhora trabalhada ou tempo logado."
+          },
+          {
+            "id": "mas-e-preciso-ir-alem-as-plataformas-digitais-nao-devem-permanecer",
+            "titulo": "Mas é preciso ir além. As plataformas digitais não devem permanecer",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Mas é preciso ir além. As plataformas digitais não devem permanecer\nsob controle de monopólios privados que exploram trabalhadores, usuários e\npequenos empreendimentos. A própria tecnologia hoje usada para precarizar\npode e deve ser colocada a serviço da organização social do trabalho.\nDefendemos a construção de plataformas públicas de transporte, entrega e\nserviços, sob controle democrático dos trabalhadores e usuários, com regras\ntransparentes, proteção social, remuneração digna e reinvestimento dos\nexcedentes em benefício da população.\nA uberização mostra o futuro que o capital deseja impor: trabalho sem\ndireitos, salário incerto, jornada ilimitada, risco individual e controle invisível.\nNossa resposta deve ser a organização coletiva dos trabalhadores de\nplataforma, sua unidade com o conjunto da classe trabalhadora e a luta para\ncolocar a tecnologia, os dados e as plataformas sob controle de quem trabalha.\nA engrenagem do Pecém\nO Complexo Industrial e Portuário do Pecém tornou-se a principal vitrine do\nmodelo de desenvolvimento econômico adotado no Ceará nas últimas\ndécadas. Apresentado como símbolo de modernização, integração logística,\ntransição energética e inserção internacional, o Pecém reúne porto, Zona de\nProcessamento de Exportação, siderurgia, termelétricas, fábricas de cimento,\nmetalurgia, operadores logísticos, transporte de cargas, infraestrutura\nenergética e projetos voltados ao hidrogênio verde.\nO complexo movimenta milhões de toneladas de cargas, atrai\ninvestimentos bilionários, recebe financiamento internacional e conecta o\nestado a cadeias globais de produção e circulação. Ao mesmo tempo, sua\nriqueza se apoia no trabalho de trabalhadores diretos, terceirizados,\ntemporários e subcontratados, muitos deles submetidos à instabilidade, à\nrotatividade, à pressão produtiva, a riscos graves e à fragmentação de direitos.\nOs dados sobre São Gonçalo do Amarante mostram a dimensão da\ntransformação produzida pelo complexo. O município passou de menos de 2\nmil vínculos formais em 2002 para quase 13 mil em 2020. A remuneração\nmédia real também cresceu no período. A indústria metalúrgica, praticamente\ninexistente no início dos anos 2000, tornou-se um dos principais setores do\nemprego formal local. Esses números indicam que o Pecém reorganizou a\neconomia do território, alterou a estrutura do emprego e criou um núcleo\nindustrial e logístico estratégico para o Ceará.\nO Porto do Pecém encerrou 2025 com mais de 20,9 milhões de\ntoneladas movimentadas. Em 2026, o complexo recebeu autorização para\noperações de crédito internacional voltadas ao chamado Pecém Verde, com\nrecursos destinados à infraestrutura de transição energética, expansão\nportuária e produção futura de hidrogênio e amônia verdes. Esses números são\nusados para vender a imagem de um Ceará moderno, competitivo e\nsustentável."
+          },
+          {
+            "id": "o-mercado-de-trabalho-do-pecem-se-estruturou-de-forma-desigual-de",
+            "titulo": "O mercado de trabalho do Pecém se estruturou de forma desigual. De",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "O mercado de trabalho do Pecém se estruturou de forma desigual. De\num lado, houve grandes ondas de emprego temporário ligadas à construção\npesada, especialmente nos ciclos das termelétricas, da siderúrgica e das\nexpansões logístico-portuárias. De outro, consolidou-se um núcleo mais\npermanente, menor e mais seletivo, concentrado em siderurgia, transporte,\nutilidades, operação portuária, engenharia, administração e serviços técnicos.\nNos relatórios da própria CIPP S.A., os terceirizados ou indiretos\nrepresentavam cerca de 71% a 73% da força de trabalho da companhia entre\n2020 e 2023. Em 2024, a composição mudou, reduzindo a participação relativa\ndos indiretos para 41,8%.\nAs formas mais agudas de precarização aparecem nas cadeias de\nsubcontratação. Em abril de 2026, 398 terceirizados vinculados à EVSA,\nprestadora de serviços da ArcelorMittal, foram barrados no acesso ao trabalho\npor atraso salarial; a mesma empresa havia demitido 119 trabalhadores em\nfevereiro sem pagar as verbas rescisórias de imediato. Em janeiro de 2026, a\nFiscalização do Trabalho interditou a esteira de carvão do Porto do Pecém após\na morte de um trabalhador terceirizado de 23 anos, apontando falhas graves\ncomo manutenção com a máquina em funcionamento, parada de emergência\ninoperante e ausência de proteção adequada.\nO portal institucional do Pecém destaca a atuação de diversas empresas\nprestadoras de serviços e operadores logísticos, entre elas APM Terminals,\nTecer, Unilink e VLI. Essas empresas atuam em atividades como\nmovimentação de cargas, operação portuária, transporte rodoviário, integração\nferroviária e logística de contêineres. Revelando que a expansão do Pecém\ntambém é baseada em uma complexa rede de terceirizações, subcontratações\ne operadores privados.\nO discurso da geração de empregos qualificados corresponde\nparcialmente à realidade em determinados setores técnicos, energéticos e\nindustriais. Entretanto, a estrutura efetiva do complexo cria uma divisão entre\num núcleo reduzido de trabalhadores mais especializados e relativamente\nprotegidos e uma ampla periferia de trabalhadores terceirizados, submetidos a\ndiferentes regimes de contratação, salários mais baixos, maior rotatividade e\nmenor capacidade de organização coletiva.\nHá muitos exemplos que ajudam a revelar as relações de exploração\npresentes em seu interior.\nA ArcelorMittal Pecém, usina siderúrgica integrada e empresa âncora do\ncomplexo, figura na 143ª posição entre as 250 empresas mais exploradoras do\nBrasil, segundo levantamento do ILAESE. De acordo com o estudo, a empresa\napropria-se de 77,29% do valor criado pelos trabalhadores ao longo de uma\njornada de oito horas de trabalho; aproximadamente 6 horas e 11 minutos da\njornada são dedicadas à produção de valor apropriado pela empresa, enquanto\no trabalhador fica com o equivalente a cerca de 1 hora e 49 minutos de sua\njornada.\nA experiência brasileira demonstra que grandes projetos de"
+          },
+          {
+            "id": "infraestrutura-frequentemente-produzem-crescimento-economico-sem-garanti",
+            "titulo": "infraestrutura frequentemente produzem crescimento econômico sem garantir",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "infraestrutura frequentemente produzem crescimento econômico sem garantir\nmelhorias proporcionais nas condições de vida da população trabalhadora. O\naumento da movimentação de cargas, dos investimentos e das exportações\nnão é sinônimo de melhores salários, estabilidade no emprego ou ampliação\ndos direitos sociais.\nRomper com as engrenagens do capitalismo: a necessidade de\numa alternativa socialista.\nAs condições de vida impostas pelo capitalismo à classe trabalhadora\nassumem contornos cada vez mais duros. A sociedade atual, organizada pelo\nmercado, pelo lucro e pela propriedade privada dos grandes meios de\nprodução, carrega contradições que não podem ser resolvidas por simples\nmedidas administrativas ou reformas pontuais, como se estivessem\ndescoladas da base social que as sustenta. Para que uma pequena minoria\nviva cercada de privilégios, milhões precisam conviver com baixos salários,\ndesemprego, fome, moradia precária, violência e ausência de direitos.\nA riqueza é produzida coletivamente, pelo trabalho de milhões, mas\napropriada privadamente por uma minoria de grandes empresários,\nbanqueiros, latifundiários, monopólios nacionais e internacionais. Por isso a\nconta nunca fecha para a maioria. Por isso não há saída real sem enfrentar a\nestrutura que concentra riqueza, terra, poder político, tecnologia e controle\nsobre os recursos são fabricados pela maioria.\nÉ diante de todo esse contexto caótico que o PSTU participa das eleições\nde 2026. É necessário apresentar uma alternativa que rompa com as\nengrenagens do sistema capitalista e combata as ilusões semeadas pelos\ndiferentes espectros políticos, da esquerda institucional à extrema direita\nreacionária. Reconhecemos as diferenças existentes entre eles e temos plena\nconsciência da ameaça representada pela extrema direita, com sua política\nreacionária, autoritária, racista, machista, LGBTfóbica e inimiga dos direitos\nsociais. Mas também afirmamos que os governos de conciliação de classes,\nmesmo quando falam em nome dos pobres, preservam as bases da mesma\nordem burguesa. Nenhuma das duas oferece uma saída para a maioria\nexplorada e oprimida.\nA história demonstra que nenhum direito importante foi concedido\nespontaneamente pelos governos ou pelas classes dominantes. Salário,\njornada, férias, previdência, serviços públicos, liberdades democráticas e\ndireitos sociais foram conquistados pela pressão, pela organização, pelas\ngreves, pelas ocupações, pela mobilização popular e pela luta coletiva. É por\nesse caminho que novas conquistas poderão surgir. E é por esse caminho que\numa transformação profunda poderá ser construída. Por isso, chamamos todos\ne todas à luta.\nDefendemos que a riqueza produzida pelos trabalhadores e\ntrabalhadoras seja colocada a serviço das necessidades da população. Nossas"
+          },
+          {
+            "id": "pre-candidaturas-estarao-a-servico-das-mobilizacoes-das-greves-das",
+            "titulo": "pré-candidaturas estarão a serviço das mobilizações, das greves, das",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "pré-candidaturas estarão a serviço das mobilizações, das greves, das\nocupações, das lutas populares e da organização independente dos\nexplorados e oprimidos. Queremos fortalecer uma alternativa socialista que vá\nalém das eleições e ajude a impulsionar a ação direta da classe trabalhadora.\nDefendemos representantes que utilizem seus mandatos para denunciar\nos privilégios da minoria, apoiar as lutas sociais e fortalecer a organização dos\ntrabalhadores. Parlamentares devem receber salários equivalentes aos de um\ntrabalhador qualificado, sem privilégios, sem mordomias e sem distância\nmaterial em relação à população que dizem representar. Também defendemos\nque seus mandatos possam ser revogados pela população caso traiam aquilo\nque prometeram defender.\nNossa candidatura ao Governo do Ceará, na figura do operário da\nconstrução civil Zé Batista, juntamente com nossas demais candidaturas\nregionais e aliada à candidatura de Hertz Dias à Presidência da República,\napresenta um projeto alternativo para o Ceará e para o Brasil. Um projeto que\nenfrente o poder dos grandes empresários, dos latifundiários e das oligarquias\npolíticas que historicamente controlam nosso estado. Um projeto que rompa\ncom os governos de conciliação de classes, como o de Lula e Elmano de\nFreitas, que foram eleitos sob a promessa de mudanças, mas seguem\ngovernando para os interesses do capital.\nLutamos por uma sociedade livre de exploração, opressão e\ndiscriminação. Uma sociedade que enfrente o racismo, o machismo, a\nLGBTfobia, o capacitismo, a xenofobia e todas as formas de violência contra\nos setores oprimidos. Defendemos os direitos dos povos indígenas, das\ncomunidades quilombolas e das populações tradicionais, com demarcação,\ntitulação e proteção de suas terras, respeito à sua cultura, ao seu modo de vida\ne à sua organização coletiva.\nQueremos uma sociedade que garanta não apenas sobrevivência, mas\nvida plena. Uma sociedade com moradia digna, emprego com direitos, salário\ndecente, saúde, educação, transporte, saneamento, cultura, lazer, ciência,\nliberdade e tempo livre para que todos possam desenvolver suas capacidades\nhumanas.\nEntre o socialismo e a barbárie capitalista, escolhemos o socialismo.\nLevantamos essa bandeira com orgulho. Hoje ainda somos minoria, mas\nqueremos levar esse debate ao conjunto da classe trabalhadora, da juventude\ne dos setores oprimidos. Queremos ajudar a construir uma alternativa capaz\nde transformar radicalmente a sociedade.\nDefendemos um governo dos trabalhadores e trabalhadoras, sem\npatrões, sem banqueiros e sem latifundiários. Um governo apoiado nas ruas,\nnas greves, nas ocupações, nos locais de trabalho, nas escolas, nas\nuniversidades, nos bairros, no campo e nas mobilizações populares. É a partir\ndessa perspectiva que apresentamos nossas propostas para o Ceará e para o\nBrasil."
+          },
+          {
+            "id": "1-acabar-com-o-desemprego-a-fome-e-a-precarizacao-do-trabalho",
+            "titulo": "1. Acabar com o desemprego, a fome e a precarização do trabalho",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "1. Acabar com o desemprego, a fome e a precarização do trabalho\nO Brasil e o Ceará produzem riqueza suficiente para garantir uma vida digna\nao seu povo. O que falta é colocá-la sob o controle de seus verdadeiros\nprodutores e distribuí-la de forma socialmente justa, para que trabalhadores e\ntrabalhadoras, hoje submetidos à pobreza, à fome, à informalidade e ao\ndesemprego, possam controlar aquilo que produzem e a forma como essa\nriqueza é distribuída na sociedade.\nNenhuma pessoa apta ao trabalho deve ser condenada ao desemprego\nou à miséria. Nenhuma família deve depender da caridade, do endividamento\nou de programas emergenciais para sobreviver. A fome precisa ser combatida\nimediatamente, mas não será derrotada apenas com medidas paliativas.\nProgramas de transferência de renda são necessários enquanto houver\ndesemprego e pobreza, mas a saída real exige emprego com direitos, salário\ndigno, redução da jornada, serviços públicos fortes e controle da riqueza\nproduzida pela classe trabalhadora.\nÉ preciso criar empregos úteis através de um plano de obras públicas e\nserviços essenciais para atender às necessidades da população\nPor isso, defendemos:\n•\n•\n\n•\n•\n\n•\n\n•\n\n•\n•\n\n•\n\nFim da escala 6x1, sem redução de salários, sem retirada de\ndireitos, sem pejotização e sem demissões.\nRedução da jornada de trabalho para 36 horas semanais, sem\nredução salarial e sem flexibilização de direitos. Trabalhar menos\npara que todos trabalhem.\nDistribuir o trabalho socialmente necessário entre todos os\ntrabalhadores aptos.\nAumento geral dos salários, rumo ao salário mínimo necessário\ncalculado pelo DIEESE, capaz de garantir moradia, alimentação,\nsaúde, educação, transporte, lazer, cultura e demais\nnecessidades básicas.\nNenhum trabalhador sem renda: enquanto não houver pleno\nemprego, todo desempregado deve ter direito a uma renda\nmínima equivalente a um salário mínimo.\nBolsa Família e demais programas de transferência de renda em\nvalor suficiente para garantir sobrevivência digna, sem substituir\na luta por emprego, salário e direitos.\nRevogação da Reforma Trabalhista, da lei das terceirizações e\nda Reforma da Previdência.\nProibição de demissões em massa por empresas que lucram,\nrecebem incentivos fiscais, contratos públicos, financiamentos\nestatais ou benefícios do governo.\nEstabilidade no emprego para trabalhadores de empresas\nbeneficiadas por recursos públicos."
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n•\n\n•\n\n•\n\n•\n•\n\n•\n\nRedução da jornada e ampliação das contratações nos setores\nque operam com sobrecarga, adoecimento e jornadas\nexaustivas.\nDireitos trabalhistas e previdenciários para trabalhadores\ninformais, autônomos dependentes, terceirizados, intermitentes,\npejotizados, trabalhadores de aplicativos e plataformas digitais.\nReconhecimento do vínculo empregatício dos trabalhadores de\naplicativos quando houver subordinação real às plataformas.\nPiso mínimo por hora trabalhada ou tempo logado para\nmotoristas, entregadores e demais trabalhadores de plataforma,\ncom garantia de previdência, férias, 13º, descanso remunerado,\nlicença-maternidade, seguro contra acidentes e proteção social.\nCombate à informalidade, à pejotização, ao trabalho intermitente,\nao falso empreendedorismo e a todas as formas de fraude\ntrabalhista.\nFiscalização permanente das condições de trabalho, com\nparticipação dos sindicatos, comissões de base e trabalhadores\norganizados.\nControle dos trabalhadores sobre a saúde e segurança nos locais\nde trabalho, com direito de paralisação diante de risco grave.\nSalário igual para trabalho igual, com combate à desigualdade\nsalarial que atinge especialmente mulheres, negros, negras,\npessoas LGBT, pessoas com deficiência e trabalhadores\nterceirizados.\nCreches públicas, escolas em tempo integral, restaurantes\npopulares, lavanderias públicas e serviços de cuidado como parte\nda luta contra a precarização e contra a sobrecarga das mulheres\ntrabalhadoras.\n\nNão se pode acabar com o desemprego, a fome e a precarização por\ndecreto. Isso exige enfrentar os interesses daqueles que lucram com salários\nbaixos, terceirização, informalidade, desemprego, miséria e insegurança\npermanente para a classe trabalhadora. Exige organização nos locais de\ntrabalho, nos bairros, nas escolas, nas universidades, nas comunidades e no\ncampo. Exige sindicatos independentes, comissões de base, assembleias\npopulares e unidade da classe trabalhadora.\n2. Auditoria da dívida pública do Estado\nO Ceará possui uma Dívida Consolidada próxima de R$ 20 bilhões e uma\nDívida Consolidada Líquida em torno de R$ 10 bilhões. É verdade que, quando\ncomparado a outros estados, o Ceará aparece em situação fiscal relativamente\nmais confortável. Porém, isso não é motivo de conforto. A dívida pública\ncontinua sendo um mecanismo de subordinação do orçamento aos interesses"
+          },
+          {
+            "id": "dos-bancos-fundos-financeiros-e-grandes-credores",
+            "titulo": "dos bancos, fundos financeiros e grandes credores.",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "dos bancos, fundos financeiros e grandes credores.\nA dívida pública não é apenas um problema de má gestão. Ela é parte\ndo funcionamento normal do capitalismo. Essa realidade é ainda pior em países\ndominados, cuja estrutura produtiva apresenta limitações para absorver os\nenormes volumes de capital existentes no mercado. O Estado torna-se um\nimportante destino para esses recursos. Por meio da emissão de títulos, da\ncontratação de empréstimos e de outros instrumentos financeiros, ele absorve\ncapitais que buscam remuneração relativamente segura e previsível.\nPosteriormente, o Estado arrecada recursos de toda a sociedade,\nprincipalmente por meio de impostos que pesam proporcionalmente mais sobre\ntrabalhadores e pobres, e depois transfere uma parte enorme dessa riqueza\npara remunerar capitais aplicados em títulos, empréstimos e contratos\nfinanceiros.\nIsso não significa que toda dívida pública seja necessariamente\ndesnecessária. Os Estados precisam de mecanismos de financiamento para\ncobrir lacunas de arrecadação, evitar déficits que comprometam o\nfuncionamento de serviços e políticas públicas.\nNo Brasil, a Dívida Bruta do Governo Geral já alcança a casa dos trilhões\ne representa cerca de três quartos do PIB. Somente em 2024, os juros nominais\ndo setor público consolidado chegaram a quase R$ 1 trilhão. Enquanto a\npopulação enfrenta filas no SUS, escolas precarizadas, déficit habitacional,\ndesemprego, fome e transporte caro, uma montanha de recursos públicos é\ndestinada todos os anos ao pagamento de juros e encargos da dívida.\nNo Ceará, a lógica é a mesma, ainda que em escala estadual. A dívida\ncresceu nas últimas décadas com empréstimos nacionais e internacionais\ndestinados a obras de infraestrutura, recursos hídricos, mobilidade urbana,\nmodernização administrativa e outros programas governamentais. Parte\ndessas obras pode responder a necessidades reais da população. Mas isso\nnão dá um cheque em branco aos governos, bancos, organismos\ninternacionais e empresas beneficiadas.\nOs trabalhadores têm o direito de saber quem emprestou? Em quais\ncondições? Com quais juros? Quem lucrou? Quais empresas foram\ncontratadas? Quais obras foram realizadas? Quais comunidades foram\nbeneficiadas? Quais foram prejudicadas? Quanto já foi pago? Quanto ainda\nserá pago? Há cláusulas abusivas? Há contratos ilegítimos? Há dívidas que já\nforam pagas várias vezes por meio de juros, rolagens e refinanciamentos?\nPor isso, defendemos:\n•\n\n•\n\nAbertura completa dos contratos da dívida pública estadual,\nincluindo empréstimos internos, externos, garantias, juros,\nprazos, credores e condições de pagamento.\nAuditoria pública de todos os financiamentos firmados com\nbancos\nnacionais,\nbancos\ninternacionais,\norganismos\nmultilaterais e fundos privados."
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\n•\n\n•\n•\n\n•\n\n•\n•\n\nSuspensão do pagamento das dívidas ilegítimas, abusivas ou\nsem comprovação de interesse público.\nProibição de novos empréstimos que imponham privatizações,\najuste fiscal, cortes sociais, congelamento salarial ou retirada de\ndireitos.\nFim da prioridade absoluta ao pagamento de juros, amortizações\ne encargos financeiros quando houver falta de recursos para\nsaúde, educação, moradia, saneamento, transporte e salário dos\nservidores.\nControle público e popular sobre o orçamento estadual, com\nparticipação direta dos trabalhadores, servidores e comunidades.\nFim dos incentivos fiscais, isenções e benefícios tributários\nconcedidos a grandes empresas sem transparência, sem controle\nsocial e sem garantia de emprego, salário e direitos.\nCobrança rigorosa da dívida ativa dos grandes devedores do\nEstado, especialmente grandes empresas, bancos, grupos\neconômicos e setores que lucram com benefícios públicos.\nResponsabilização de agentes públicos e privados envolvidos em\ncontratos lesivos.\nRevogação das regras fiscais que subordinam os serviços\npúblicos, os investimentos sociais e os salários dos servidores\naos interesses dos credores.\n\n3. Serviços públicos gratuitos e de qualidade para todos.\nOs serviços púbicos são parte fundamental das condições de vida da classe\ntrabalhadora. Saúde, educação, assistência social, moradia, transporte,\nsaneamento, cultura, esporte, lazer, previdência e cuidado determinam quanto\ncusta viver, em que condições o povo trabalha, se desloca, adoece, envelhece,\ncria seus filhos e organiza sua vida.\nA Lei de Responsabilidade Fiscal, aprovada durante o governo FHC\n(PSDB), os diversos mecanismos de austeridade fiscal aprofundados pelos\ngovernos posteriores, a Emenda Constitucional 95 do governo Temer (MDB)\n— posteriormente substituída pelo novo arcabouço fiscal aprovado no governo\nLula em 2023 — e medidas como a Emenda Constitucional 109, aprovada\ndurante o governo Bolsonaro (PL), expressam um fio de continuidade apesar\ndas diferenças ideológicas: subordinar as contas públicas às exigências do\nmercado financeiro.\nEsse fio impõe limites aos investimentos sociais, às contratações de\nservidores, aos concursos públicos e à valorização do funcionalismo, enquanto\npermanecem preservados os compromissos do Estado com o pagamento da\ndívida pública e os interesses dos grandes credores. Contribuindo para a\nmanutenção de serviços públicos insuficientes para atender às necessidades\nda população e condições de trabalho cada vez mais difíceis para os"
+          },
+          {
+            "id": "servidores-hospitais-superlotados-escolas-sem-estrutura-adequada-falta-d",
+            "titulo": "servidores. Hospitais superlotados, escolas sem estrutura adequada, falta de",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "servidores. Hospitais superlotados, escolas sem estrutura adequada, falta de\nprofissionais e precarização do atendimento são resultados de décadas de\npolíticas que subordinam os direitos sociais aos limites impostos pela\nausteridade fiscal.\nDefendemos a reversão dessa lógica. Os recursos públicos devem estar\na serviço da maioria da população, garantindo serviços públicos universais,\ngratuitos e de qualidade, e não subordinados às exigências do grande capital.\nDefendemos a reconstrução e a ampliação dos serviços públicos\nestaduais, garantindo atendimento universal, gratuito e de qualidade para toda\na população cearense.\nPara isso, defendemos:\n•\n\n•\n\n•\n\n•\n•\n•\n•\n•\n•\n•\n•\n\n•\n\n•\n\nFim da Lei de Responsabilidade Fiscal e de todos os mecanismos\nde austeridade que impedem concursos, investimentos sociais e\nvalorização dos servidores.\nDestinação prioritária do orçamento estadual para saúde,\neducação, moradia, saneamento, transporte público, assistência\nsocial, cultura, ciência, esporte, lazer e valorização dos\nservidores.\nFim das privatizações, terceirizações, organizações sociais,\nfundações privadas, parcerias público-privadas e concessões\nque transformam direitos sociais em fonte de lucro.\nReestatização dos serviços privatizados e controle público,\ndemocrático e dos trabalhadores sobre os serviços essenciais.\nRealização imediata de concursos públicos para suprir as\nnecessidades permanentes do Estado em todas as áreas.\nCumprimento integral dos acordos firmados entre o governo\nestadual e as categorias do funcionalismo público.\nRespeito, atualização e ampliação dos planos de cargos,\ncarreiras e salários dos servidores públicos.\nReposição das perdas salariais, aumento real dos salários e\ngarantia de condições dignas de trabalho.\nPagamento imediato dos precatórios devidos aos servidores e\ndemais trabalhadores.\nRedução da jornada dos servidores sem redução salarial, com\nnovas contratações para ampliar o atendimento à população.\nFortalecimento da assistência social, dos CRAS, CREAS,\nabrigos, políticas de proteção à infância, juventude, idosos,\npessoas com deficiência, mulheres em situação de violência e\npopulação em situação de rua.\nCriação e ampliação de restaurantes populares, cozinhas\ncomunitárias, lavanderias públicas e equipamentos coletivos de\ncuidado nas periferias e no interior.\nCultura, esporte e lazer como direitos sociais, com equipamentos"
+          },
+          {
+            "id": "pagina-18",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\npúblicos nos bairros, periferias, escolas, comunidades rurais e\ncidades do interior.\nSaneamento básico universal, público e estatal, com prioridade\npara periferias, comunidades rurais, assentamentos, territórios\nindígenas, quilombolas e regiões historicamente abandonadas.\nTransporte público estatal, integrado, de qualidade e com tarifa\nzero, sem repasse de recursos públicos para garantir lucro de\nempresas privadas.\nControle dos trabalhadores e usuários sobre os serviços públicos,\npor meio de conselhos populares, assembleias, comissões de\nbase e mecanismos reais de fiscalização.\n\nTambém somos contrários às políticas de isenção e renúncia fiscal\nconcedidas a grandes grupos empresariais sem contrapartidas sociais efetivas.\nDefendemos uma reforma tributária que faça os mais ricos pagarem mais\nimpostos, incluindo a taxação das grandes fortunas, dos lucros e dividendos,\nde modo a ampliar os recursos destinados às políticas públicas e garantir\nmelhores condições de vida para a maioria da população.\nOs recursos produzidos pela sociedade devem servir ao interesse\ncoletivo. Nossa prioridade é fortalecer os serviços públicos e assegurar direitos\npara quem vive do próprio trabalho, e não preservar privilégios eternos de uma\npequena minoria.\n4. Defesa da Natureza, reforma e revolução agrária\nO capitalismo não explora apenas a classe trabalhadora. Explora também a\nnatureza até o limite da destruição.\nSubordinada à busca incessante pelo lucro, a produção capitalista\ntransforma rios, florestas, terras, minérios, ventos, sol, mares e territórios em\nmercadorias. Trata a natureza como fonte inesgotável de matérias-primas e\ncomo depósito de resíduos. A engrenagem é brutal, extrair mais, produzir mais,\nvender mais e lucrar mais, independentemente das consequências sociais,\nambientais e humanas.\nEssa lógica está levando o planeta a uma crise ambiental sem\nprecedentes. O aquecimento global, a perda de biodiversidade, a\ncontaminação dos solos e das águas, a desertificação, o avanço do\ndesmatamento, a destruição de ecossistemas e a multiplicação de eventos\nclimáticos extremos já fazem parte da vida de milhões de pessoas. Secas\nprolongadas, enchentes, ondas de calor, erosão costeira e deslocamentos\nforçados mostram que a crise ambiental não é uma ameaça distante.\nNão estamos diante de um problema secundário. A crise ambiental é\numa das expressões mais concretas das contradições do capitalismo. A\nprodução organizada pelo lucro entra em choque com os limites naturais do\nplaneta e ameaça as próprias condições materiais que sustentam a vida"
+          },
+          {
+            "id": "humana",
+            "titulo": "humana.",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "humana.\nOs países dominados sofrem de forma ainda mais intensa essa crise.\nSua posição subordinada na economia mundial os empurra para atividades\nbaseadas na extração extensiva de recursos naturais, na exportação de\nmatérias-primas, na mineração, no agronegócio, na produção de commodities\ne na ocupação predatória dos territórios. Ao mesmo tempo, têm menos\nrecursos para enfrentar os impactos sociais e ambientais produzidos por esse\nmodelo.\nO Brasil e o Ceará estão no centro dessa contradição. O avanço da\ndesertificação ameaça extensas áreas do semiárido. A Caatinga, único bioma\nexclusivamente brasileiro, sofre com desmatamento, queimadas, degradação\nambiental e pressão do agronegócio. A erosão costeira avança sobre partes do\nlitoral. A irregularidade das chuvas e a escassez hídrica atingem trabalhadores\nurbanos e rurais. Comunidades tradicionais, pescadores, povos indígenas,\nquilombolas, camponeses e moradores das periferias são os primeiros a pagar\na conta da degradação ambiental.\nNo Ceará, essa contradição aparece também nos grandes projetos\nenergéticos. Os projetos de hidrogênio verde anunciados para o estado são\napresentados como oportunidade histórica, símbolo de modernização e\npromessa de transição ecológica. Mas, sob controle dos grandes grupos\nprivados, essa “economia verde” se torna parte da logica semicolonial. Usar\nvento, sol, território, infraestrutura pública, água e trabalho cearense para\nabastecer mercados externos e ampliar lucros privados.\nNão somos contra o desenvolvimento tecnológico nem contra a\ntransição energética. Pelo contrário. A humanidade precisa substituir\nurgentemente os combustíveis fósseis por fontes renováveis. Mas a transição\nenergética não pode servir para enriquecer multinacionais enquanto\ntrabalhadores e comunidades arcam com os custos sociais, ambientais e\nterritoriais.\nO chamado capitalismo verde é uma contradição em seus próprios\ntermos. Uma produção orientada pelo lucro não pode resolver, de forma\nconsequente, uma crise criada justamente pela busca permanente do lucro. A\nenergia renovável, quando subordinada aos interesses privados, também\nproduz destruição, como a expulsão de comunidades, concentração de terras,\npressão sobre recursos hídricos, especulação fundiária, contratos abusivos,\nimpactos ambientais e dependência externa.\nTambém é necessário enfrentar o modelo predatório de expansão dos\nparques eólicos e solares. Em várias regiões do Nordeste, comunidades rurais,\npescadores artesanais, povos indígenas, quilombolas e populações\ntradicionais denunciam a ocupação de territórios sem consulta adequada,\ncontratos desiguais, concentração fundiária e impactos ambientais. Casos\ncomo o da comunidade quilombola do Cumbe, em Aracati, mostram que não\nexiste transição justa quando os povos que vivem nos territórios são tratados\ncomo mero obstáculo ao lucro."
+          },
+          {
+            "id": "a-questao-da-agua-e-mais-que-decisiva-em-um-estado-marcado-pelo",
+            "titulo": "A questão da água é mais que decisiva. Em um estado marcado pelo",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "A questão da água é mais que decisiva. Em um estado marcado pelo\nsemiárido, a água não pode ser mercadoria, nem instrumento de especulação\nprivada. Grandes obras hídricas, como adutoras, canais, integração de bacias,\ndessalinização e infraestrutura de abastecimento, devem estar a serviço do\nconsumo humano, da agricultura familiar, da produção de alimentos e da\nconvivência com o semiárido. Não podem servir prioritariamente aos grandes\nempreendimentos, ao agronegócio, à mineração, ao turismo de luxo ou aos\nprojetos exportadores.\nÁgua é direito humano fundamental. Deve estar sob controle público e\nsocial, com prioridade absoluta para a população trabalhadora, comunidades\nrurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos\nprodutores.\nA crise ambiental também se expressa nos conflitos no campo. A\nexpansão do agronegócio, apoiada por governos e financiada com recursos\npúblicos, aprofunda a concentração de terras, a contaminação por agrotóxicos,\na expulsão de comunidades e a violência contra trabalhadores rurais, povos\nindígenas, quilombolas e populações tradicionais.\nNo Ceará, a flexibilização da Lei Zé Maria do Tomé é um exemplo grave\ndessa submissão aos interesses do agronegócio. A lei, conquistada após anos\nde luta de comunidades rurais, movimentos sociais, pesquisadores e\nambientalistas, tornou o Ceará o primeiro estado brasileiro a proibir a\npulverização aérea de agrotóxicos. A “chuva de veneno” foi proibida porque\ncontamina trabalhadores, comunidades vizinhas, rios, solos, lençóis freáticos,\nalimentos, animais e ecossistemas. A lei homenageia Zé Maria do Tomé,\nagricultor e ambientalista assassinado após denunciar os impactos do\nagronegócio e da pulverização aérea de agrotóxicos na Chapada do Apodi.\nNos últimos anos, o agronegócio passou a pressionar pela liberação da\npulverização por drones, como uma solução moderna, precisa e segura.\nPorém, a tecnologia não elimina a contaminação, não protege\nautomaticamente as comunidades, não impede a deriva dos venenos, não\nneutraliza os impactos sobre a saúde. Diversos estudos relacionam a\nexposição a agrotóxicos a doenças neurológicas, distúrbios hormonais,\nproblemas reprodutivos, diferentes tipos de câncer e contaminação ambiental\nde longo prazo. Os trabalhadores rurais, as mulheres, as crianças e as\npopulações do campo são os primeiros a sofrer esses impactos.\nA flexibilização da Lei Zé Maria do Tomé representa um enorme\nretrocesso. Ela demonstra que, quando os interesses do povo trabalhador\nentram em choque com os interesses do grande capital, governos que afirmam\ngovernar para “todos” acabam se curvando aos setores economicamente mais\npoderosos. Essa é a principal contradição dos governos de conciliação de\nclasses e das frentes amplas. Ao tentar conciliar interesses inconciliáveis,\nterminam preservando os privilégios daqueles que concentram riqueza e poder.\nO caso de Elmano de Freitas é um exemplo disso. Contraditoriamente, ele foi\num dos coautores do projeto original da Lei Zé Maria do Tomé, criada"
+          },
+          {
+            "id": "justamente-para-proibir-a-pulverizacao-aerea-de-agrotoxicos-no-ceara-ago",
+            "titulo": "justamente para proibir a pulverização aérea de agrotóxicos no Ceará. Agora,",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "justamente para proibir a pulverização aérea de agrotóxicos no Ceará. Agora,\na flexibilização dessa mesma legislação contou com o apoio direto, decisivo e\narticulado do governo estadual.\nO modelo agroexportador concentra terra, riqueza e poder nas mãos de\npoucos. Nunca a produção agropecuária brasileira foi tão elevada. Nunca o\nagronegócio exportou tanto. Nunca os grandes proprietários rurais lucraram\ntanto. E, ao mesmo tempo, milhões de trabalhadores seguem enfrentando\nfome, insegurança alimentar e dificuldade para comprar alimentos básicos.\nEssa contradição revela o fracasso social do agronegócio. Ele nunca\nexistiu para alimentar o povo. Existiu e existe para gerar lucro, exportar\ncommodities, controlar terras, receber subsídios públicos e fortalecer o poder\npolítico dos grandes proprietários.\nA agricultura familiar, os pequenos produtores, os assentamentos e as\ncomunidades camponesas têm papel fundamental na produção de alimentos\npara o povo, mas seguem sem crédito suficiente, assistência técnica,\ninfraestrutura, preço justo, água, transporte, armazenamento, comercialização\ne proteção contra a concorrência desigual dos grandes grupos\nagroexportadores.\nPor isso, defendemos a reforma agrária e uma revolução que mude as\nestruturas atuais. Não basta distribuir pequenos pedaços de terra sem\ncondições de produção. É preciso transformar a estrutura do campo, enfrentar\no latifúndio, combater a grilagem, expropriar as grandes propriedades\nimprodutivas, as terras griladas, as áreas usadas para especulação fundiária e\nas grandes monoculturas voltadas à exportação. A terra deve pertencer a quem\nnela vive e trabalha. O povo brasileiro precisa de soberania alimentar, não de\ndependência diante do agronegócio e das multinacionais do setor.\nA defesa da natureza não pode ser separada da luta contra a\nexploração. A crise ambiental tem classe, raça, território e interesses\neconômicos. Quem lucra com a destruição são os grandes grupos privados.\nQuem paga a conta são os trabalhadores, os pobres, os povos indígenas, os\nquilombolas, os camponeses, os pescadores, as mulheres, a juventude e as\nperiferias.\nPor isso, a defesa da natureza exige enfrentar o capitalismo em algumas\nde suas engrenagens mais destrutivas: o agronegócio predatório, a mineração\nvoltada ao saque dos recursos naturais, o imperialismo e os governos que\nadministram e sustentam esse modelo de destruição ambiental em nome do\nlucro privado. Não há saída ecológica real sem colocar a terra, a água, a\nenergia e os recursos naturais sob controle público, social e democrático dos\ntrabalhadores e da população organizada.\nPara isso, necessitamos:\n•\n•\n\nDefesa da natureza como condição de vida da classe\ntrabalhadora e dos povos.\nControle público, social e democrático dos recursos naturais"
+          },
+          {
+            "id": "pagina-22",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\n•\n•\n\n•\n•\n\n•\n\n•\n•\n•\n\n•\n•\n\n•\n\n•\n•\n•\n\nestratégicos: água, energia, minérios, terra, litoral, florestas, rios\ne infraestrutura ambiental.\nNenhum projeto de hidrogênio verde, parque eólico, parque solar,\nmineração, porto, resort ou grande empreendimento sem\nconsulta livre, prévia e informada às comunidades atingidas.\nEnergia renovável sob controle público e social, voltada às\nnecessidades da população, e não à exportação subordinada ao\nimperialismo.\nÁgua como direito humano fundamental, fora da lógica do lucro,\ncom prioridade para consumo humano, agricultura familiar,\nassentamentos, comunidades rurais, periferias, povos indígenas\ne quilombolas.\nRevogação da flexibilização da Lei Zé Maria do Tomé.\nProibição total da pulverização aérea de agrotóxicos no Ceará,\nincluindo aviões, drones, VANTs e qualquer tecnologia\nequivalente.\nFim dos subsídios, créditos públicos e incentivos fiscais ao\nagronegócio predatório.\nFiscalização permanente da água, do solo, dos alimentos e das\náreas contaminadas por agrotóxicos, com participação das\ncomunidades atingidas, universidades públicas e movimentos\nsociais.\nAtendimento público especializado às populações contaminadas\npor agrotóxicos e responsabilização das empresas e proprietários\nenvolvidos.\nTransição para uma agricultura agroecológica, popular,\ndiversificada e voltada à produção de alimentos saudáveis.\nReforma agrária sob controle dos trabalhadores.\nExpropriação dos latifúndios improdutivos, terras griladas, áreas\nde especulação fundiária e grandes propriedades usadas para\nmonoculturas de exportação.\nAssentamentos com moradia, água, energia, estradas, escolas,\npostos de saúde, internet, assistência técnica, maquinário.\nFortalecimento da agricultura familiar, dos pequenos produtores,\ndos assentamentos e das redes locais de produção e\nabastecimento.\nCompras públicas da agricultura familiar para escolas, hospitais,\nrestaurantes populares, cozinhas comunitárias e programas\nsociais.\nEstoques públicos reguladores para garantir alimento barato e\ncombater a carestia.\nProdução agrícola voltada prioritariamente ao mercado interno e\nà soberania alimentar.\nProteção integral das comunidades tradicionais, pescadores"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\n•\n\n•\n•\n\nartesanais, camponeses, povos das águas, das florestas e do\ncampo.\nCombate à grilagem, à pistolagem, à violência no campo e aos\ncrimes ambientais.\nReparação às populações atingidas por crimes ambientais,\ncontaminação química, expulsão territorial e grandes\nempreendimentos.\nRecuperação das áreas degradadas, das matas ciliares, dos rios,\nmanguezais, dunas, lagoas, serras úmidas e áreas de Caatinga\ndevastadas.\nPlano estadual de combate à desertificação e convivência com o\nsemiárido, com protagonismo das comunidades locais.\nInvestimento em pesquisa pública, universidades, institutos\ntecnológicos e assistência técnica voltados à agroecologia,\nconvivência com o semiárido, soberania alimentar e tecnologias\nadaptadas ao território cearense.\n\n5. Educação\nA educação pública é uma das principais trincheiras da luta por uma vida digna\ne libertadora. Não se resume à escola, ao conteúdo das disciplinas ou à\nconquista de um diploma. Diz respeito ao direito da classe trabalhadora de ter\nacesso ao conhecimento acumulado pela humanidade, à ciência, à cultura, à\narte, à tecnologia, ao pensamento crítico e ao pleno desenvolvimento humano.\nTrata-se de uma condição fundamental para que os trabalhadores\ncompreendam a realidade em que vivem e possam transformá-la\nconscientemente.\nNo capitalismo, esse direito é distribuido de forma desigual. Os filhos\ndos ricos têm acesso a escolas bem equipadas, formação ampla, idiomas,\ntecnologia, cultura, esporte e preparação para ocupar posições de comando.\nJá os filhos da classe trabalhadora enfrentam escolas precarizadas, salas\nlotadas, falta de professores, estruturas insuficientes, currículos empobrecidos,\npressão por resultados imediatos e uma formação cada vez mais adaptada ao\ntrabalho barato, flexível e precário.\nNo Ceará, a rede pública apresenta indicadores positivos em algumas\náreas, especialmente nos resultados do ensino fundamental e na expansão das\nescolas em tempo integral. Mas nenhum índice favorável pode esconder as\ncontradições reais. Ainda há desigualdade profunda entre capital e interior,\ncentro e periferia, escolas mais estruturadas e escolas abandonadas,\nestudantes que conseguem permanecer na escola e estudantes empurrados\nao trabalho precoce, à evasão, ao crime, ao desalento e à violência cotidiana.\nA crise da educação pública alimenta uma burguesia cada vez mais\npoderosa. Grandes grupos privados, fundações empresariais, empresas de\ntecnologia, editoras, plataformas digitais, consultorias e organizações privadas"
+          },
+          {
+            "id": "abocanham-boa-parte-do-orcamento-publico-com-o-objetivo-de-transformar-a",
+            "titulo": "abocanham boa parte do orçamento público. Com o objetivo de transformar a",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "abocanham boa parte do orçamento público. Com o objetivo de transformar a\neducação em negócio e adaptar a escola pública às necessidades do mercado.\nSomos contra essa captura empresarial da educação. Verba pública\ndeve ser destinada exclusivamente à educação pública. Nenhum recurso\npúblico para empresários da educação, plataformas privadas, fundações\nempresariais, PPPs, terceirizações ou projetos que transformem a escola em\nlaboratório de lucro privado.\nTambém somos contra a militarização das escolas. A juventude não\nprecisa de uma sala de aula como quartel autoritário. Precisa de escola viva,\ncrítica, democrática, com professores valorizados, infraestrutura adequada,\nliberdade de pensamento, convivência coletiva, arte, esporte, ciência e\nparticipação. Militarizar a educação é responder aos problemas sociais com\ndisciplina autoritária, controle dos corpos e repressão, em vez de enfrentar a\npobreza, a desigualdade, a violência e o abandono das escolas.\nA plataformização da educação é outra ameaça. A tecnologia pode e\ndeve ser usada a serviço do conhecimento, mas não para substituir\nprofessores, vigiar estudantes, padronizar o ensino, coletar dados para\nempresas privadas ou reduzir a formação humana a metas, rankings e\natividades automáticas.\nA juventude trabalhadora tem direito a uma formação completa:\ncientífica, humanística, artística, tecnológica, física, histórica, filosófica e\npolítica. Não aceitamos uma escola pobre para formar mão de obra barata.\nDefendemos o aumento imediato e radical do investimento público em\neducação. No Ceará, defendemos a ampliação substancial do orçamento\nestadual e municipal para a educação pública, acima dos mínimos\nconstitucionais, com controle social da comunidade escolar e dos\ntrabalhadores da educação sobre a aplicação dos recursos.\nA educação que defendemos não deve formar jovens para obedecer,\naceitar a precarização e se adaptar à miséria. Deve formar sujeitos capazes de\ncompreender o mundo para transformá-lo. Por isso, a luta pela educação\npública é inseparável da luta contra a exploração, contra as opressões e contra\na subordinação do conhecimento aos interesses do capital. O conhecimento\nproduzido pela humanidade deve estar nas mãos do pov.\nPara garantir uma educação pública de qualidade, defendemos:\n•\n•\n\n•\n\nVerba pública exclusivamente para a educação pública.\nFim das parcerias público-privadas, terceirizações, convênios,\ncompras de pacotes educacionais, plataformas privadas e\nmateriais empresariais que transferem dinheiro público para\ngrupos privados.\nRevogação do Novo Ensino Médio e da BNCC, com elaboração\ndemocrática de um novo currículo pelos trabalhadores da\neducação, estudantes, universidades públicas e comunidades\nescolares."
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\nNão à militarização das escolas e a qualquer forma de controle\nautoritário ou perseguição ideológica contra professores,\nestudantes e trabalhadores da educação.\nNão à plataformização da educação. Tecnologia deve ser\nferramenta pedagógica sob controle público, não mecanismo de\nvigilância, padronização e lucro privado.\nEducação pública, gratuita, laica, crítica, científica, inclusiva e de\nqualidade em todos os níveis.\nAcesso universal à creche e à educação infantil, com ampliação\nda rede pública, construção de unidades e contratação de\nprofissionais por concurso.\nUniversalização da escola em tempo integral com qualidade real:\nalimentação adequada, bibliotecas, laboratórios, quadras, salas\nclimatizadas, espaços culturais, atividades artísticas, esportivas,\ncientíficas e profissionais, sem transformar o tempo integral em\nconfinamento precário.\nReforma, climatização, acessibilidade e ampliação da\ninfraestrutura das escolas públicas, com bibliotecas, laboratórios,\ninternet pública, saneamento, água potável, segurança,\nequipamentos esportivos e espaços de convivência.\nConcurso público imediato para professores, técnicos\nadministrativos, profissionais de apoio, merendeiras, psicólogos,\nassistentes sociais, intérpretes de Libras, cuidadores e demais\ntrabalhadores necessários ao funcionamento das escolas.\nFim da contratação precária e temporária como regra\npermanente. Efetivação por concurso público e garantia de\ndireitos iguais para todos os trabalhadores da educação.\nValorização dos professores e demais trabalhadores da\neducação, com reajuste salarial, reposição das perdas, carreira\ndigna, piso acima do mínimo nacional e cumprimento integral dos\nplanos de cargos, carreiras e salários.\nRedução da jornada sem redução salarial, com garantia de tempo\nreal para planejamento, estudo, formação continuada e trabalho\ncoletivo.\nFormação continuada pública, gratuita, presencial e de qualidade,\nrealizada pelas universidades públicas e pelas redes de ensino,\nsem terceirização para empresas privadas.\nGestão democrática nas escolas, com eleições diretas para\ndireção, participação de professores, funcionários, estudantes,\npais e comunidade, e debate coletivo sobre as regras do processo\neleitoral.\nFortalecimento dos grêmios estudantis, centros acadêmicos,\nDCEs, sindicatos e conselhos escolares, com liberdade de\norganização política, sindical e estudantil."
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n•\n\n•\n•\n\nPermanência estudantil em todos os níveis: transporte gratuito,\nalimentação de qualidade, bolsas, material escolar, moradia\nestudantil, acesso à internet, apoio pedagógico e assistência\nsocial.\nPasse livre estudantil em todo o Ceará.\nCombate à evasão escolar com políticas de permanência, busca\nativa, assistência social, proteção contra o trabalho infantil e apoio\nàs famílias trabalhadoras.\nEducação especial inclusiva, com profissionais qualificados,\nacessibilidade, salas de recursos, transporte adaptado e garantia\nde aprendizagem para estudantes com deficiência.\nImplementação efetiva do ensino de história e cultura afrobrasileira, africana e indígena em toda a rede, com formação dos\nprofissionais e produção pública de materiais didáticos.\nEducação sexual científica nas escolas, combate à violência\nsexual, à gravidez infantil, à LGBTfobia, ao machismo e ao\nracismo, com proteção aos estudantes e respeito à diversidade.\nExpansão das universidades estaduais, federais e institutos\npúblicos no Ceará, com financiamento adequado, assistência\nestudantil, concursos, pesquisa, extensão e autonomia\nuniversitária.\nFortalecimento da UECE, URCA, UVA, UFC, IFCE, Unilab e\ndemais instituições públicas, com orçamento suficiente,\ncontratação de docentes e técnicos, permanência estudantil e\ninteriorização com qualidade.\nFim dos cortes, contingenciamentos e bloqueios de verbas da\neducação, da ciência e da tecnologia.\nPesquisa científica e tecnológica voltada às necessidades sociais\ndo povo: saúde pública, saneamento, moradia, transporte,\nagroecologia, energia, cultura, indústria, soberania alimentar e\nproteção ambiental.\nControle democrático do orçamento da educação por\ntrabalhadores, estudantes e comunidades escolares.\nEscola pública única, gratuita, laica, democrática, crítica e de\nqualidade para todos.\n\n6. Saúde\nA saúde pública não está em crise por acaso. Ela vem sendo sufocada por uma\npolítica consciente de subfinanciamento, privatização, terceirização e\ntransferência de recursos públicos para entidades privadas. Enquanto a\npopulação enfrenta filas, demora no atendimento, falta de profissionais,\nsobrecarga nas unidades e dificuldade de acesso a exames, consultas,\ncirurgias e medicamentos, múltiplos governos negociam a saúde no mercado."
+          },
+          {
+            "id": "o-sus-e-uma-conquista-historica-da-classe-trabalhadora-brasileira-mas",
+            "titulo": "O SUS é uma conquista histórica da classe trabalhadora brasileira. Mas,",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "O SUS é uma conquista histórica da classe trabalhadora brasileira. Mas,\ndesde sua criação, nunca recebeu os recursos necessários para funcionar\nplenamente. Foi atacado por décadas de austeridade, teto de gastos, regras\nfiscais, privatizações disfarçadas, contratos de gestão, fundações privadas,\nterceirizações.\nNo Ceará, não é diferente. Hospitais, UPAs e unidades de saúde\npassaram a ser administrados por organizações sociais e empresas\nterceirizadas. As consequências foram a fragmentação do serviço público, a\nprecarização dos vínculos de trabalho, a instabilidade para os profissionais e a\nabertura de um caminho permanente para a transferência de dinheiro público\npara os bolsos privados.\nSaúde não é mercadoria. Hospital não é empresa. Paciente não é\ncliente. Trabalhador da saúde não pode ser tratado como peça de uma\nengrenagem administrada por metas, contratos e planilhas.\nEnquanto faltam profissionais nas unidades, sobram contratos com\norganizações sociais, terceirizadas e prestadoras privadas. Enquanto\ntrabalhadores adoecem por sobrecarga, os governos falam em eficiência.\nEnquanto a população espera por atendimento, exames e cirurgias, a saúde\npública é cada vez mais fragmentada entre entes públicos, OSs, empresas,\ncontratos e subcontratos.\nÉ preciso romper essa engrenagem. Os recursos públicos devem\nfinanciar diretamente a saúde pública, com servidores formados, carreira,\nestabilidade, estrutura, planejamento, controle social e atendimento\nhumanizado. Nenhum recurso público deve servir para alimentar empresas,\nintermediários ou modelos de gestão que precarizam trabalhadores e\nenfraquecem o SUS.\nA saúde que defendemos não pode ser organizada pela lógica do lucro.\nNão queremos um SUS pobre para os pobres e um sistema privado para os\nricos. Queremos um sistema de saúde amplo e forte, universal, gratuito e\ncontrolado pelo povo trabalhador.\nAdoecer não pode ser uma sentença de abandono. Esperar meses por\numa consulta, um exame ou uma cirurgia não pode ser normalizado.\nDefendemos:\n•\n•\n•\n•\n•\n•\n\nSUS público, universal, gratuito, estatal e de qualidade para toda\na população.\nFim da privatização direta e indireta da saúde pública.\nFim da gestão privada por organizações sociais, fundações,\nPPPs, empresas terceirizadas e contratos de gestão.\nReestatização das unidades públicas hoje administradas por\nentidades privadas.\nGestão direta com controle dos trabalhadores da saúde, usuários\ne comunidades.\nAumento imediato dos recursos para a saúde pública, com"
+          },
+          {
+            "id": "pagina-28",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n•\n\n•\n\nprioridade para atenção básica, prevenção, saúde da família,\nsaneamento, saúde mental, assistência farmacêutica e\ninteriorização do atendimento.\nRevogação das regras fiscais que limitam investimentos sociais\nna saúde.\nAuditoria dos contratos da saúde, das organizações sociais,\nterceirizadas, fornecedores e prestadores privados.\nResponsabilização de gestores, empresas e entidades\nenvolvidas em irregularidades, atrasos salariais, descumprimento\nde direitos, desvios, negligência ou precarização dos serviços.\nConcurso público imediato para médicos, enfermeiros, técnicos\nde enfermagem, agentes comunitários de saúde, agentes de\ncombate às endemias, psicólogos, assistentes sociais,\nfisioterapeutas,\nterapeutas\nocupacionais,\nfarmacêuticos,\ndentistas, nutricionistas, técnicos administrativos e demais\nprofissionais necessários ao funcionamento do SUS.\nValorização dos trabalhadores da saúde, com carreira,\nestabilidade, salários dignos, reposição das perdas, condições de\ntrabalho e proteção contra assédio moral.\nCumprimento integral do piso nacional da enfermagem e\nextensão da valorização salarial a todos os trabalhadores da\nsaúde.\nRedução da jornada sem redução salarial e contratação de mais\nprofissionais para combater a sobrecarga, o adoecimento e a\nexaustão das equipes.\nGarantia de Equipamentos de Proteção Individual, condições\nseguras de trabalho, descanso adequado, alimentação,\ntransporte e proteção à saúde física e mental dos profissionais.\nFortalecimento da atenção básica, com ampliação das equipes\nde Saúde da Família, agentes comunitários de saúde, saúde\nbucal, vacinação, acompanhamento de gestantes, crianças,\nidosos, pessoas com deficiência e doentes crônicos.\nAmpliação da rede de postos de saúde, policlínicas, CAPS,\nunidades de reabilitação, centros de especialidades, hospitais\nregionais, maternidades e serviços de urgência e emergência.\nNenhuma transferência de leitos públicos para planos privados\nou interesses particulares.\nDefesa da saúde preventiva: vacinação, acompanhamento\nregular, educação em saúde, alimentação adequada,\nsaneamento, moradia digna, combate à fome, esporte, lazer e\nproteção ambiental.\nIntegração entre saúde, saneamento e meio ambiente,\nenfrentando doenças causadas pela falta de água tratada,\nesgotamento sanitário, coleta de lixo, drenagem urbana e"
+          },
+          {
+            "id": "pagina-29",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n•\n\n•\n\n•\n•\n\n•\n\ncontrole ambiental.\nPrograma público de atendimento domiciliar, com equipes\nmultiprofissionais, voltado a idosos, pessoas com deficiência,\npacientes acamados, pessoas com doenças crônicas e famílias\nque necessitam de acompanhamento continuado.\nFortalecimento da saúde mental, com ampliação dos CAPS,\nresidências terapêuticas, equipes multiprofissionais, atendimento\nterritorial e combate à internação manicomial.\nPolítica pública de combate ao sofrimento psíquico da juventude,\ndos trabalhadores, das mulheres, da população negra, LGBT,\nindígena, quilombola e das pessoas em situação de rua.\nDefesa de uma política pública sobre drogas baseada em saúde,\nredução de danos, assistência social, moradia, trabalho e\ncuidado, e não na repressão, no encarceramento e nas\ncomunidades terapêuticas privadas.\nSaúde da mulher com garantia de pré-natal, parto humanizado,\nmaternidades estruturadas, acesso a métodos contraceptivos,\natendimento às vítimas de violência sexual e defesa dos direitos\nsexuais e reprodutivos.\nSaúde da população negra, com combate ao racismo\ninstitucional, atenção à anemia falciforme, hipertensão,\nmortalidade materna, violência e desigualdade de acesso.\nSaúde indígena, quilombola, rural e das populações tradicionais,\ncom equipes territorializadas, respeito às culturas, transporte\nsanitário, saneamento e acesso regular a medicamentos e\nexames.\nFortalecimento da vigilância epidemiológica, sanitária, ambiental\ne do trabalhador.\nPlano permanente de combate a epidemias de dengue,\nchikungunya, zika, covid, influenza e outras doenças, com\nequipes, laboratórios, vacinação e campanhas públicas.\nInvestimento em pesquisa e produção de medicamentos,\nvacinas, insumos, equipamentos e tecnologias estratégicas para\nreduzir a dependência de empresas privadas e multinacionais.\nFarmácia pública abastecida, com distribuição gratuita e regular\nde medicamentos essenciais.\nInteriorização real da saúde, com hospitais regionais,\nmaternidades, policlínicas, especialistas, exames e cirurgias\npróximos da população, evitando que tudo dependa da capital.\nConselhos populares de saúde nos bairros, municípios, hospitais\ne unidades, com poder real de fiscalização sobre orçamento,\ncontratos, filas, atendimento, condições de trabalho e prioridades\nda rede."
+          },
+          {
+            "id": "7-reforma-urbana-e-plano-de-obras-publicas-para-resolver-o",
+            "titulo": "7. Reforma urbana e plano de obras públicas para resolver o",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "7. Reforma urbana e plano de obras públicas para resolver o\nproblema da moradia e do emprego\nO déficit habitacional no Ceará continua atingindo centenas de milhares de\nfamílias. Trabalhadores continuam pagando aluguel caro, famílias vivendo em\nocupações precárias, casas sem saneamento, moradias em áreas de risco,\ncomunidades ameaçadas por despejos, periferias abandonadas e milhares de\nimóveis vazios ou subutilizados servindo à especulação imobiliária. De um lado,\ncondomínios de luxo, prédios vazios, terrenos valorizados, grandes\nempreendimentos turísticos, shopping centers e áreas urbanas moldadas pelos\ninteresses do capital imobiliário. De outro, trabalhadores empurrados para\nlonge dos centros, submetidos a longos deslocamentos, transporte caro, falta\nde saneamento, ausência de equipamentos públicos, violência urbana e\ninsegurança habitacional.\nOs programas habitacionais existentes, como o Minha Casa, Minha\nVida, podem atender parcialmente famílias que precisam de moradia. Mas, nos\nlimites atuais, seguem subordinados à lógica do mercado, do financiamento,\ndo endividamento e da transferência de recursos públicos para grandes\nempresas da construção civil. Muitas vezes, produzem moradias distantes, mal\nintegradas à cidade, sem serviços públicos suficientes, sem transporte\nadequado e sem participação real dos trabalhadores na definição dos projetos.\nÉ preciso moradia digna com acesso a saneamento, transporte público,\nescolas, creches, postos de saúde, cultura, lazer, segurança, áreas verdes,\ntrabalho próximo e participação popular sobre o planejamento urbano.\nÉ necessário romper com o modelo predatório de urbanização. Em\nFortaleza, na Região Metropolitana, no litoral e em cidades do interior, grandes\nempreendimentos avançam sobre dunas, mangues, riachos, lagoas, áreas\nverdes, comunidades tradicionais e territórios populares. Casas, condomínios,\nresorts, obras viárias e projetos privados são construídos muitas vezes\naterrando nascentes, destruindo cobertura vegetal, impermeabilizando o solo e\nagravando enchentes, alagamentos, e outras inúmeras catástrofes que são\nencobertas pelos responsáveis.\nDefendemos um amplo plano de obras públicas para construir moradias\npopulares, universalizar o saneamento básico, ampliar hospitais, postos de\nsaúde, escolas, creches, restaurantes populares, lavanderias públicas,\nequipamentos culturais, áreas de esporte e lazer, obras de convivência com o\nsemiárido, infraestrutura hídrica, transporte público de qualidade e urbanização\ndas periferias.\nA reforma urbana que defendemos deve unir moradia, emprego,\nsaneamento, transporte, meio ambiente e controle popular do território.\nDefendemos:\n•\n\nPlano de obras públicas para zerar o déficit habitacional no"
+          },
+          {
+            "id": "pagina-31",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n•\n•\n\n•\n\n•\n\nCeará.\nConstrução massiva de moradias populares, com qualidade,\ninfraestrutura, saneamento, transporte e equipamentos públicos.\nMoradia digna para todas as famílias sem casa, em situação de\ncoabitação forçada, aluguel insuportável, área de risco, ocupação\nprecária ou moradia inadequada.\nDesapropriação, sem indenização aos grandes especuladores,\ndos imóveis vazios, abandonados ou subutilizados pertencentes\na grandes proprietários, bancos, fundos imobiliários e empresas.\nDestinação desses imóveis para moradia popular, equipamentos\npúblicos, abrigos, centros culturais, creches, escolas, postos de\nsaúde e serviços sociais.\nFim dos despejos e reintegrações de posse contra famílias\ntrabalhadoras, ocupações urbanas, comunidades tradicionais e\npopulações pobres.\nRegularização fundiária urbana com garantia de permanência\ndas famílias e proteção contra a expulsão pelo mercado\nimobiliário.\nUrbanização das favelas, ocupações, loteamentos populares e\nperiferias, com saneamento, pavimentação, iluminação,\ndrenagem, coleta de lixo, áreas verdes, creches, escolas, saúde,\ncultura e transporte.\nNenhuma remoção para beneficiar obra privada, especulação\nimobiliária, turismo de luxo, empreendimento empresarial ou\nvalorização artificial de áreas urbanas.\nCriação de uma empresa pública estadual de obras, sob controle\ndos trabalhadores, para construir moradias, escolas, creches,\nhospitais, saneamento, equipamentos culturais e infraestrutura\nurbana.\nContratação direta dos trabalhadores da construção civil, com\ncarteira assinada, salário digno, direitos, segurança e redução da\njornada sem redução salarial.\nControle operário sobre as condições de segurança nos canteiros\nde obra.\nFim das grandes empreiteiras como intermediárias privilegiadas\ndos recursos públicos.\nNenhum recurso público para construtoras envolvidas em\ncorrupção, superfaturamento, trabalho precarizado, atraso\nsalarial, crimes ambientais ou violações de direitos.\nReforma urbana com planejamento popular, decidido por\nconselhos, assembleias territoriais, movimentos de moradia,\nsindicatos, comunidades e trabalhadores.\nIPTU progressivo sobre grandes imóveis, terrenos ociosos e\nimóveis de luxo."
+          },
+          {
+            "id": "pagina-32",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n•\n\n•\n\n•\n\n•\n\nIsenção de impostos urbanos para famílias trabalhadoras de\nbaixa renda.\nControle dos aluguéis e combate à especulação imobiliária.\nCombate à gentrificação e à expulsão de comunidades populares\nde áreas valorizadas.\nProibição de obras que destruam mangues, dunas, lagoas,\nriachos, nascentes, áreas de preservação, comunidades\ntradicionais e territórios populares.\nRecuperação ambiental das áreas degradadas nas cidades, com\ndrenagem, arborização, parques públicos, proteção de rios\nurbanos, lagoas, manguezais e áreas verdes.\nConstrução de creches, escolas, postos de saúde, restaurantes\npopulares, lavanderias públicas, bibliotecas, centros culturais e\náreas de lazer nos bairros populares.\nPrograma público de acolhimento e moradia permanente para a\npopulação em situação de rua, articulado com saúde, assistência\nsocial, trabalho e renda.\n\n8. Combate ao racismo, ao machismo, à LGBTfobia, à xenofobia e\ndefesa dos povos originários e quilombolas\nA classe trabalhadora não é homogênea. Ela é formada por homens e\nmulheres, negros e negras, indígenas, quilombolas, pessoas LGBT, imigrantes,\npessoas com deficiência, juventude pobre, trabalhadores formais e informais,\ndesempregados, terceirizados e precarizados. O capitalismo explora toda a\nclasse trabalhadora, mas há várias formas de opressão que ele fomenta entre\na própria classe.\nEssas opressões são utilizadas para dividir a classe trabalhadora,\nrebaixar salários, justificar a violência, naturalizar a desigualdade e impor\ncondições ainda mais duras aos setores oprimidos. O racismo, o machismo, a\nLGBTfobia, a xenofobia e o capacitismo são apenas algumas das\nmanifestações de uma engrenagem profundamente perversa, que amplia a\nexploração e atinge duramente os nossos. Por isso, a luta contra as opressões\nnão pode ser vista como algo secundário. Ela é uma condição indispensável\npara a superação de toda forma de exploração.\nNão haverá unidade real da classe trabalhadora se mulheres, negros e\nnegras, pessoas LGBT, povos indígenas, quilombolas, imigrantes e pessoas\ncom deficiência forem chamados à unidade apenas para aceitar, em silêncio, a\nviolência que sofrem dentro e fora da classe. A unidade que defendemos\nprecisa ser construída combatendo as opressões de frente, com os setores\noprimidos na vanguarda de suas próprias lutas e com toda a classe assumindo\nessas bandeiras como suas."
+          },
+          {
+            "id": "contra-o-racismo-reparacao-emprego-direitos-e-fim-do-genocidio-da",
+            "titulo": "Contra o racismo: reparação, emprego, direitos e fim do genocídio da",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Contra o racismo: reparação, emprego, direitos e fim do genocídio da\njuventude negra\nEm 2026, completam-se 138 anos da abolição formal da escravidão no Brasil.\nDurante quase quatro séculos, a população negra produziu grande parte da\nriqueza do país sob o regime escravista. Após a Abolição, porém, não lhe foram\ngarantidos direitos fundamentais, como acesso à terra, moradia, trabalho,\neducação, indenização ou qualquer forma efetiva de reparação histórica. A\npopulação negra foi empurrada para a pobreza, a informalidade, a repressão\npolicial, o encarceramento e a morte. Mais de um século depois, as\nconsequências desse processo continuam presentes. O que vemos hoje é a\npermanência e a reprodução das marcas deixadas por séculos de exploração,\nviolência, discriminação e humilhação.\nEm 2024, 32.820 pessoas negras foram assassinadas, uma média de\n89,9 mortes por dia em todo o país. Entre 2014 e 2024, 301.825 jovens de 15\na 29 anos foram assassinados no país, cerca de 75 por dia. Só em 2024, foram\n19.801 jovens mortos.\nNo Ceará, o patamar não é tão diferente. Segundo o Censo 2022, 64,7%\nda população cearense se declara parda e 6,8% preta; somadas, as pessoas\nnegras representam cerca de 71,5% da população. A pobreza no Ceará tem\ncor, gênero e território. Em 2024, mesmo com queda nos indicadores, 43,3%\nda população cearense ainda vivia abaixo da linha de pobreza, com renda\ndomiciliar per capita inferior a R$ 703,62 mensais. A extrema pobreza atingia\n7,9% da população, ou cerca de 741 mil pessoas vivendo com menos de R$\n220,84 por mês. Entre os beneficiários do Cartão Ceará Sem Fome, 93% são\nmulheres, aproximadamente 90% são pessoas negras, 93% não têm trabalho\nou renda formal, 94% dependem de benefícios sociais como principal fonte de\nrenda e 88,92% vivem em insegurança alimentar.\nAo mesmo tempo, a violência letal segue destruindo a juventude pobre\ne negra. O Ceará registrou 3.021 crimes violentos letais intencionais em 2025.\nNo Atlas da Violência 2026, o Ceará aparece entre os estados com maiores\ntaxas de homicídio do país, com 34,3 mortes por 100 mil habitantes em 2024,\nacima da média nacional. No Brasil, em 2024, foram 42.590 homicídios; 32.820\nvítimas eram negras, ou seja, 77% do total. Isso representa quase 90 pessoas\nnegras assassinadas por dia. A taxa de homicídios entre negros é 170,3%\nsuperior à de não negros. Um negro tem 2,7 vezes mais chances de ser morto\npor homicídio do que uma pessoa não negra.\nA juventude negra das periferias de Fortaleza, Caucaia, Maracanaú,\nSobral, Juazeiro do Norte, Crato, Itapipoca, Iguatu, Quixadá, Russas, Crateús\ne das cidades do interior vive sob o cerco combinado do desemprego, da\npobreza, da violência policial, das facções, do abandono estatal e da falta de\nperspectivas."
+          },
+          {
+            "id": "em-novembro-de-2025-o-ceara-tinha-21-457-pessoas-encarceradas",
+            "titulo": "Em novembro de 2025, o Ceará tinha 21.457 pessoas encarceradas.",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Em novembro de 2025, o Ceará tinha 21.457 pessoas encarceradas.\nDesse total, 18.664 se autodeclaravam pretas ou pardas, ou seja, 87% da\npopulação carcerária. Entre os presos provisórios, havia 7.644 pardos e 889\npretos. Entre os condenados em regime fechado, 8.864 pardos e 1.267 pretos.\nIsso revela que o cárcere é uma engrenagem de controle da população negra\ne pobre.\nPor isso, defendemos:\n•\n•\n•\n•\n\n•\n\n•\n•\n\n•\n\nPlano pelo fim do genocídio da juventude negra e pobre.\nFim das operações policiais militarizadas nas periferias, favelas,\ncomunidades e bairros populares.\nPlano estadual de emprego e renda para a juventude negra.\nRedução da jornada de trabalho para 36 horas semanais, escala\n4x3, sem redução salarial, começando pelos setores mais\nprecarizados.\nImplementação efetiva da Lei 10.639/2003 e da Lei 11.645/2008,\ncom ensino obrigatório da história e cultura africana, afrobrasileira e indígena em toda a rede de ensino.\nProteção às religiões de matriz africana e punição aos ataques\ncontra terreiros, lideranças religiosas e comunidades tradicionais.\nPlano estadual de reparação ao povo negro, com orçamento\npróprio, controle dos movimentos negros, sindicatos,\norganizações populares e juventude negra.\nTitulação imediata dos territórios quilombolas.\n\nCombater duramente o machismo: nenhuma mulher a menos\nO machismo segue violando as mulheres no Brasil e no Ceará. A violência\ndoméstica, o assédio, o feminicídio, a desigualdade salarial, a dupla jornada,\nentre outros, formam uma mesma engrenagem que aprisiona as mulheres\ntrabalhadoras em posição desigual, sobrecarregadas e ultra exploradas.\nNo Ceará, levantamento sobre feminicídios entre 2022 e junho de 2025\nidentificou 174 vítimas. Foram 49 casos em 2022, 45 em 2023, 60 em 2024 e\n11 no primeiro semestre de 2025. A Grande Fortaleza concentrou 68 casos,\nseguida pelo Cariri, com 26, Sertão de Sobral, com 24, e Vale do Jaguaribe,\ncom 18. Quase metade dos casos envolveu cônjuges ou ex-cônjuges. Isso\ndemonstra que, para muitas mulheres, o espaço que deveria representar\nproteção e segurança transforma-se em um local de violência, medo e de\nmorte.\nA criminalização do aborto também mata. Ela impede abortos apenas\ncontra mulheres pobres, principalmente negras. Deixando-as à mercê de\nprocedimentos inseguros, sequelas, prisões, humilhações e morte. O mesmo\nEstado que nega às mulheres o direito de decidir sobre seus corpos não"
+          },
+          {
+            "id": "garante-creches-salario-moradia-pre-natal-digno-parto-humanizado-proteca",
+            "titulo": "garante creches, salário, moradia, pré-natal digno, parto humanizado, proteção",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "garante creches, salário, moradia, pré-natal digno, parto humanizado, proteção\ncontra violência ou condições reais para exercer a maternidade.\nDefendemos:\n•\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n•\n\n•\n•\n•\n\n•\n\n•\n\n•\n\nPlano de combate ao feminicídio, estupro, assédio e violência\ndoméstica.\nAplicação e ampliação real da Lei Maria da Penha, com\norçamento, estrutura, equipes completas e funcionamento\npermanente.\nDelegacias da Mulher funcionando 24 horas, todos os dias,\ninclusive fins de semana e feriados, em Fortaleza, Região\nMetropolitana e municípios-polo do interior.\nCasas-abrigo regionais para mulheres ameaçadas e seus filhos,\ncom segurança, sigilo, acompanhamento psicológico, assistência\njurídica, moradia provisória e garantia de renda.\nCentros de referência para mulheres em todas as regiões do\nCeará, com atendimento jurídico, psicológico, social e orientação\ntrabalhista.\nMonitoramento rigoroso dos agressores, resposta imediata ao\ndescumprimento de medidas protetivas e punição aos agentes\npúblicos que negligenciarem denúncias.\nEmprego, renda e moradia para mulheres vítimas de violência,\npara que nenhuma mulher seja obrigada a permanecer com o\nagressor por dependência econômica.\nIgualdade salarial: trabalho igual, salário igual. Fiscalização das\nempresas e punição às que pagarem menos a mulheres.\nFim da terceirização fraudulenta, que atinge principalmente\nmulheres negras nos serviços de limpeza, alimentação, saúde,\neducação, teleatendimento, comércio e cuidado.\nCreches públicas em tempo integral para todos os filhos e filhas\nda classe trabalhadora.\nEscolas em tempo integral, com alimentação, cultura, esporte e\nacompanhamento pedagógico.\nLavanderias públicas, restaurantes populares, cozinhas\ncomunitárias e centros públicos de cuidado para idosos, pessoas\ncom deficiência e crianças.\nSocialização do trabalho doméstico e de cuidados, retirando das\ncostas das mulheres uma responsabilidade que deve ser\ngarantida socialmente.\nLicença-maternidade ampliada, estabilidade no emprego,\ncombate à demissão de mães e garantia de locais adequados\npara amamentação.\nSaúde integral da mulher, com pré-natal de qualidade, parto\nhumanizado, atendimento ginecológico, saúde mental e acesso a"
+          },
+          {
+            "id": "pagina-36",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "•\n\ncontraceptivos.\nGarantia plena do aborto legal já previsto em lei nos hospitais\npúblicos e luta pela legalização do aborto no Brasil como questão\nde saúde pública e direito das mulheres.\n\nPelo fim da LGBTfobia: direito de existir, trabalhar, estudar e viver\nA LGBTfobia mata, expulsa de casa, empurra para a evasão escolar, para o\ndesemprego, para a prostituição compulsória e para o adoecimento mental.\nMuitas travestis e mulheres trans, especialmente negras e pobres, são\nexpulsas da família, da escola, do mercado formal e da própria expectativa de\nvida.\nO Brasil segue como o país que mais mata pessoas trans e travestis no\nmundo. Em 2025, foram registrados 80 assassinatos de pessoas trans e\ntravestis. Ceará e Minas Gerais foram os estados com maior número de\nassassinatos em 2025, com oito casos cada.\nNo conjunto da população LGBT+, em 2025 foram documentadas 257\nmortes violentas no Brasil: 204 homicídios, 20 suicídios, 17 latrocínios e 16\nmortes por outras causas. Isso significa uma morte violenta de pessoa LGBT+\na cada 34 horas. No Ceará, os dados oficiais registraram 46 mortes violentas\nde pessoas LGBTI+ em 2023, 34 em 2024 e 26 em 2025. Mesmo quando há\nqueda nos números, é preciso considerar a subnotificação e a dificuldade\nhistórica de registrar corretamente a orientação sexual e a identidade de gênero\ndas vítimas.\nHoje, o casamento civil homoafetivo já é reconhecido e a LGBTfobia foi\nenquadrada pelo STF como crime de racismo. A tarefa agora é garantir\naplicação efetiva, políticas públicas, orçamento, proteção real, emprego,\nsaúde, educação e punição aos agressores. Direitos no papel não salvam vidas\nquando a população LGBT continua sendo assassinada, humilhada, expulsa e\ndiscriminada.\nDefendemos:\n•\n\n•\n\n•\n\n•\n\nAplicação efetiva da criminalização da LGBTfobia, com\ninvestigação rigorosa, punição dos agressores e combate à\nsubnotificação.\nRegistro obrigatório de orientação sexual e identidade de gênero\nnos boletins de ocorrência, laudos, estatísticas de saúde e\nsegurança, respeitando a autodeterminação das vítimas.\nCasas de acolhimento para pessoas LGBT expulsas de casa,\nvítimas de violência ou em situação de rua, com prioridade para\njuventude LGBT, travestis, mulheres trans, homens trans e\npessoas não binárias.\nCotas para pessoas trans em universidades estaduais, escolas\ntécnicas, concursos públicos, programas de estágio e contratos"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\n•\n\n•\n\n•\n\n•\n\nde aprendizagem.\nPrograma estadual de emprego e renda para travestis, mulheres\ntrans, homens trans e pessoas não binárias, com contratação no\nserviço público e exigência de contratação pelas empresas que\nrecebem dinheiro público.\nDireito ao nome social sem burocracia em todos os serviços\npúblicos, escolas, hospitais, delegacias, presídios, universidades\ne equipamentos estaduais.\nFormação obrigatória de profissionais da saúde, educação,\nassistência social e segurança pública para atendimento sem\ndiscriminação.\nRespeito à identidade de gênero em escolas, universidades,\nrepartições públicas, hospitais, abrigos, unidades prisionais e\nequipamentos culturais.\nCombate às chamadas “curas gays”, à violência religiosa\nLGBTfóbica e ao uso de dinheiro público para instituições que\npratiquem discriminação.\nEducação sexual e combate à LGBTfobia nas escolas, com\nproteção aos estudantes LGBT contra bullying, evasão,\nagressões e humilhações.\nCentros culturais e de convivência LGBT nas periferias e no\ninterior, com formação, cultura, saúde mental, apoio jurídico e\ngeração de renda.\n\nEm defesa dos povos indígenas e quilombolas: terra, território, reparação\ne autodeterminação\nOs povos indígenas e quilombolas não são o passado. São parte viva do Ceará\ne da classe trabalhadora oprimida. Têm direito à terra, território, cultura,\nmemória, língua, religião, produção, organização própria e autodeterminação.\nO Censo 2022 registrou 56.372 indígenas vivendo no Ceará, 0,64% da\npopulação estadual, com crescimento expressivo em relação a 2010. Os povos\nindígenas do estado declararam pertencer a cerca de 140 etnias. Entre as\netnias mais numerosas estão Tapeba, Tremembé e Pitaguari.\nA população quilombola também foi finalmente recenseada pelo Censo\n2022. O Ceará tem 23.955 pessoas quilombolas, distribuídas em 181\nagrupamentos e 68 municípios. No entanto, apenas 19,1% vivem em territórios\noficialmente delimitados; 80,8% vivem fora desses territórios. O estado tem 15\nterras quilombolas oficialmente delimitadas, mas nenhuma titulada\ndefinitivamente. Há ainda 34 processos abertos no Incra aguardando\nandamento. Revelando a dimensão do abandono estatal e da dívida histórica\ncom as comunidades quilombolas."
+          },
+          {
+            "id": "a-luta-indigena-e-quilombola-e-luta-por-terra-mas-tambem-por-agua",
+            "titulo": "A luta indígena e quilombola é luta por terra, mas também por água,",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "A luta indígena e quilombola é luta por terra, mas também por água,\nsaneamento, escola, saúde, transporte, produção, cultura e proteção contra a\nviolência. No Ceará, esses povos enfrentam grilagem, especulação imobiliária,\nturismo predatório, grandes empreendimentos, ausência de infraestrutura e\nprojetos que avançam sem consulta real às comunidades.\nOs territórios indígenas e quilombolas são espaços de vida, memória e\npreservação ambiental. A defesa desses territórios se choca diretamente com\nos interesses do latifúndio, do agronegócio, da especulação, de grandes\nempresas de energia, mineração, turismo e infraestrutura.\nDefendemos:\n•\n•\n•\n•\n\n•\n•\n•\n\n•\n\n•\n•\n\nDemarcação imediata das terras indígenas e titulação imediata\ndos territórios quilombolas no Ceará e no Brasil.\nAbaixo o marco temporal e qualquer tentativa de restringir o\ndireito originário dos povos indígenas às suas terras.\nTitulação coletiva das terras quilombolas já reconhecidos e\naceleração imediata dos processos parados no Incra.\nConsulta prévia, livre, informada e vinculante às comunidades\nindígenas, quilombolas, pesqueiras e tradicionais antes de\nqualquer obra, empreendimento turístico, parque eólico,\nmineração, infraestrutura ou intervenção em seus territórios.\nSuspensão de todo empreendimento que avance sobre territórios\ntradicionais sem consentimento das comunidades.\nPlano estadual de reparação aos povos indígenas e quilombolas,\ncom orçamento próprio e controle das próprias comunidades.\nSaúde indígena e quilombola com equipes permanentes,\ntransporte sanitário, saneamento, água potável, medicamentos e\nrespeito às práticas culturais.\nApoio à agricultura familiar, pesca artesanal, artesanato, cultura,\nturismo comunitário e economia solidária sob controle das\npróprias comunidades.\nProteção às lideranças ameaçadas e punição aos responsáveis\npor grilagem, pistolagem, racismo, expulsões e ameaças.\nExpropriação, sem indenização, de latifúndios, empresas e\ngrandes propriedades que invadam ou explorem territórios\nindígenas, quilombolas e comunidades tradicionais.\n\n9. Por um novo plano de Segurança Pública\nA violência no Brasil e no Ceará é uma tragédia social permanente. Quem mais\nsofre são os trabalhadores pobres, a juventude negra, as mulheres, a\npopulação LGBT, os moradores das periferias, os entregadores, os pequenos\ncomerciantes, os estudantes das escolas públicas e as famílias que vivem sob"
+          },
+          {
+            "id": "dominio-das-faccoes-sob-medo-das-milicias-e-sob-a-violencia-do-proprio",
+            "titulo": "domínio das facções, sob medo das milícias e sob a violência do próprio",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "domínio das facções, sob medo das milícias e sob a violência do próprio\nEstado.\nEm 2025, o Ceará registrou 3.021 crimes violentos letais intencionais.\nIsso significa mais de oito mortes violentas por dia. Fortaleza teve 742 mortes\nviolentas em 2025. No interior, a violência se espalha por cidades médias e\npequenas. A Região Metropolitana é uma zona marcada por disputas\nterritoriais, assassinatos, expulsões de moradores, medo e domínio armado de\nbairros e comunidades.\nO Atlas da Violência 2026 mostra que o Ceará está entre os estados\nmais violentos do país. Quando são considerados os homicídios ocultos,\nmortes violentas que não aparecem corretamente indicadas nas estatísticas\noficiais, a taxa estimada de homicídios do Ceará chega a 43,7 por 100 mil\nhabitantes. Maranguape aparece com taxa estimada de 87,2 homicídios por\n100 mil habitantes; Maracanaú, 74,1; Itapipoca, 74; Caucaia, 72,9; Sobral, 59,9;\nFortaleza, 42,2; Crato, 40,5; Juazeiro do Norte, 35,3; e Iguatu, 34,2. Esses\ndados demonstram que a violência está longe de ser um problema localizado.\nEla atravessa todo o estado, de norte a sul.\nA violência urbana é uma das principais bandeiras utilizadas pela\nultradireita para difundir “soluções” simplistas para um problema extremamente\ncomplexo. Sempre embalada pela ideia de que a violência pode ser resolvida\napenas com mais polícia, mais armas, mais presídios, mais operações, mais\nviaturas e mais repressão. Mas essa política vem sendo aplicada durante\ndécadas e nunca resolveu nada. A polícia invade os bairros pobres, mata\njovens negros, prende varejistas do tráfico e usuários, mas não recupera\nterritorio das facções, não desmonta os grandes esquemas de lavagem de\ndinheiro, não atinge os bancos que movimentam dinheiro ilegal, não enfrenta\nos empresários e agentes públicos que lucram com o crime organizado. Em\nsuma, a ultradireita limita-se a fazer discursos inflamados sobre um sistema\naltamente articulado, que se reproduz de cima a baixo e envolve interesses\neconômicos, políticos e institucionais muito mais amplos do que aqueles\nencontrados nas periferias. Um sistema do qual setores das próprias elites\neconômicas e políticas também se beneficiam.\nO povo pobre vive sob uma tripla ameaça. Das facções criminosas, das\nmilícias e da polícia. As facções controlam territórios, recrutam jovens sem\nperspectiva, impõem medo, expulsam moradores, disputam mercados ilegais\ne transformam bairros inteiros em zonas de guerra. As milícias, formadas ou\nprotegidas por policiais, ex-policiais e agentes do Estado, substituem uma\nforma de domínio criminoso por outra. A polícia surge para o povo pobre muitas\nvezes como força de opressão, humilhação, extorsão, tortura, execução e\ncriminalização.\nEssa política fracassou porque não enfrenta as raizes reais da violência.\nA violência urbana é produto da miséria, do desemprego, da precarização do\ntrabalho, da falta de moradia, da ausência de escolas de qualidade, da\ndestruição dos espaços de cultura e esporte, do abandono da juventude,da"
+          },
+          {
+            "id": "guerra-as-drogas-e-da-mercantilizacao-da-seguranca",
+            "titulo": "guerra às drogas e da mercantilização da segurança.",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "guerra às drogas e da mercantilização da segurança.\nA chamada guerra às drogas é, na prática, uma guerra contra os pobres.\nEla não impede o consumo, não acaba com o tráfico, não destrói as facções e\nnão reduz a circulação de armas. Após décadas dessa política, o resultado tem\nsido a entrega de um mercado bilionário à clandestinidade, o fortalecimento de\ngrupos armados, o aumento da corrupção policial, a justificativa para operações\nviolentas nas periferias e o encarceramento em massa de jovens negros e\npobres. Enquanto o grande dinheiro do crime continua circulando pelo sistema\nfinanceiro, por empresas de fachada, imóveis, postos de gasolina, casas de\naposta, comércio, campanhas eleitorais e esquemas empresariais.\nPor isso, defendemos um novo plano de segurança pública para o Brasil\ne para o Ceará. Um plano que não abstraia a questão da segurança do conjunto\nde problemas sociais a ela interligados, e que seja construído com a\nparticipação, a contribuição e a mobilização da sociedade, especialmente\ndaqueles que mais sofrem com a violência e a insegurança.\nDesmilitarização da policia\nA Polícia Militar é uma herança autoritária, estruturada para tratar o povo pobre\ncomo inimigo interno. Essa engrenagem militarizada não está voltada\nprioritariamente para a proteção da população trabalhadora, mas para a defesa\nda propriedade privada, da ordem social existente e dos interesses dos setores\ndominantes da sociedade.\nNão é possível falar em segurança pública democrática mantendo uma\npolícia militarizada, sem controle da população, organizada pela hierarquia de\nquartel e treinada para a guerra. Também não basta trocar o comando ou fazer\ncursos pontuais de direitos humanos. É preciso mudar a estrutura.\nDefendemos:\n•\n•\n•\n•\n•\n•\n\n•\n\n•\n\nFim da Polícia Militar como força militarizada.\nCriação de uma polícia civil unificada, com ciclo completo, direitos\nsindicais, formação pública e controle popular.\nEleição dos comandos locais de segurança pela população, com\nmandatos revogáveis e prestação pública de contas.\nConselhos populares de segurança em bairros, municípios, etc.\nControle externo real da atividade policial por conselhos\npopulares, ouvidorias independentes e organizações formadas.\nCâmeras corporais em todas as operações policiais, com\ngravação contínua, acesso público controlado e punição em caso\nde desligamento injustificado.\nProibição de operações policiais em horário escolar, perto de\nescolas, postos de saúde e equipamentos públicos, salvo\nsituações excepcionais com controle comunitário.\nFim dos autos de resistência e investigação independente de toda"
+          },
+          {
+            "id": "pagina-41",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n•\n\n•\n\n•\n\nmorte causada por agente do Estado.\nPunição exemplar de policiais, comandantes e autoridades\nenvolvidos em execuções, torturas, chacinas, milícias, extorsões,\ndesaparecimentos e falsificação de provas.\nExpulsão de agentes envolvidos com milícias, facções, grupos de\nextermínio e corrupção.\nDissolução de batalhões, grupos ou unidades comprovadamente\nenvolvidos em práticas milicianas, chacinas ou violações\nsistemáticas.\nDireito de organização sindical, liberdade de expressão e\ncondições dignas de trabalho para policiais de base, rompendo\ncom a estrutura militar que também oprime os próprios\ntrabalhadores da segurança.\nSalário digno, saúde mental, formação permanente e jornada\nregulada para trabalhadores da segurança pública, sem\nprivilégios para a alta cúpula militarizada.\n\nLegalizar as drogas e tratar dependência como questão de saúde\npública\nA política de guerra às drogas fracassou. Ela não impede o consumo, não\nacaba com o tráfico e não reduz a violência. O que ela faz é fortalecer as\nfacções criminosas, facilitar o recrutamento de jovens pelo crime organizado,\nampliar o poder das armas, corromper setores do Estado e multiplicar a\nviolência e as mortes nas periferias.\nO uso problemático de drogas deve ser tratado como questão de saúde\npública. A dependência exige prevenção, cuidado, tratamento,\nacompanhamento psicológico e assistência social.\nDefendemos:\n•\n\n•\n•\n•\n•\n\n•\n\nLegalização e regulação pública das drogas, retirando esse\nmercado das mãos das facções e enfraquecendo sua base\neconômica.\nDescriminalização imediata do usuário e fim da prisão por porte\nde drogas.\nRevisão das condenações baseadas na atual Lei de Drogas, que\nencarcerou em massa a juventude negra e pobre.\nTratamento gratuito e humanizado para dependentes químicos\npelo SUS.\nPolítica de redução de danos, prevenção, saúde mental e\nassistência social nos bairros, escolas, unidades de saúde,\ncentros de referência e territórios vulneráveis.\nCentros públicos de atenção psicossocial, cuidado em liberdade,\nmoradia assistida e acompanhamento familiar."
+          },
+          {
+            "id": "pagina-42",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\nCombate ao grande capital ligado ao tráfico: lavagem de dinheiro,\nbancos, empresas de fachada, grandes movimentações\nfinanceiras, corrupção policial, financiamento eleitoral e compra\nde patrimônio.\nConfisco de todo dinheiro e patrimônio sem origem legal\ncomprovada ligado ao crime organizado, com destinação para\nsaúde, educação, moradia, cultura, esporte e reparação às\ncomunidades atingidas pela violência.\nAbertura das contas e investigação de empresas, bancos, casas\nde apostas, imobiliárias, postos de gasolina e grandes negócios\nusados para lavar dinheiro.\nContra as facções, milícias e grupos de extermínio\n\nAs facções criminosas são organizações capitalistas ilegais que disputam\nmercados, territórios, rotas, armas, drogas, extorsões e controle social.\nDominam territórios onde falta emprego, escola, transporte, cultura, moradia e\nperspectiva para a juventude.\nAs milícias são ainda mais graves porque nascem de dentro do próprio\nEstado. Policiais, ex-policiais, agentes públicos e grupos armados passam a\ncontrolar territórios, cobrar taxas, explorar transporte clandestino, internet, gás,\nsegurança privada, imóveis e comércio local. Trocam uma forma de terror por\noutra.\nDefendemos:\n•\n\n•\n\n•\n•\n\n•\n•\n•\n\nCombate às facções e milícias atingindo seus chefes,\nfinanciadores, lavadores de dinheiro, agentes públicos\nassociados e estruturas econômicas.\nFim da política que prende apenas soldados pobres do tráfico\npara usar de manchete enquanto preserva os grandes\noperadores financeiros do crime.\nInvestigação sobre a relação entre crime organizado, empresas,\npolíticos, agentes do Estado e sistema financeiro.\nPunição agravada para agentes públicos envolvidos em milícias,\nfacções, extorsões, torturas, execuções, desaparecimentos e\nvazamento de informações.\nProteção imediata a moradores ameaçados por facções, milícias\ne grupos de extermínio.\nProibição e punição exemplar de qualquer negociação secreta do\nEstado com facções, milícias ou grupos armados.\nTransparência\ntotal\ndos\ndados\nsobre\nviolência,\ndesaparecimentos, operações policiais, mortes por intervenção\ndo Estado, expulsões de moradores e denúncias de extorsão."
+          },
+          {
+            "id": "democratizar-a-justica-e-enfrentar-a-criminalizacao-dos-pobres",
+            "titulo": "Democratizar a Justiça e enfrentar a criminalização dos pobres",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Democratizar a Justiça e enfrentar a criminalização dos pobres\nO sistema de Justiça é duro com os pobres e complacente com os ricos. Um\njovem negro pode passar anos preso provisoriamente por pequena quantidade\nde droga, enquanto grandes corruptos, empresários, latifundiários, banqueiros,\nlavadores de dinheiro e agentes públicos envolvidos com esquemas milionários\nlogo são soltos, protegidos por bons advogados e pela morosidade do\nJudiciário.\nO cárcere é um depósito de trabalhadores descartados pelo sistema. Em\nvez de resolver a violência, as prisões se transformaram em escolas do crime\norganizado, fortalecendo facções e reproduzindo a engrenagem.\nPara por um fim a isso, defendemos:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\n•\n•\n\n•\n•\n•\n•\n\nFim da prisão provisória abusiva.\nLiberdade para presos provisórios por crimes sem violência.\nPenas alternativas para crimes cometidos por desespero social,\ncomo pequenos furtos e delitos patrimoniais sem violência.\nMutirão popular e jurídico para revisar prisões injustas, prisões\npor drogas e condenações sem provas.\nFortalecimento da Defensoria Pública, com defensores em todos\nos municípios e atendimento nas periferias.\nFim da privatização dos presídios.\nControle social sobre o sistema prisional.\nPolítica de desencarceramento para reduzir a população prisional\ne enfrentar o domínio das facções dentro dos presídios.\nTrabalho, estudo, saúde, assistência jurídica e contato familiar\npara pessoas privadas de liberdade.\nConfisco dos bens de grandes corruptos, lavadores de dinheiro,\nchefes de facções, milicianos e empresários envolvidos com o\ncrime organizado.\nMoradia digna para famílias em áreas de risco ou ameaçadas por\nfacções e milícias.\nEsporte e cultura como direito. Financiamento público para\nprojetos culturais e esportivos nas periferias, com controle dos\npróprios trabalhadores e jovens.\nConselhos populares de segurança em todos os bairros e\nmunicípios, eleitos pela população e com poder de fiscalização.\nControle popular sobre orçamento da segurança pública.\nOuvidoria independente, eleita e com poder de investigação.\nProteção a denunciantes, testemunhas, familiares de vítimas e\ndefensores de direitos humanos.\n\n10. Conselhos populares"
+          },
+          {
+            "id": "por-fim-sabemos-que-este-programa-possui-limitacoes-e-lacunas-as-medidas",
+            "titulo": "Por fim, sabemos que este programa possui limitações e lacunas. As medidas",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Por fim, sabemos que este programa possui limitações e lacunas. As medidas\naqui defendidas só poderão ser concretizadas por meio da mobilização da\nclasse trabalhadora e de uma transformação profunda da sociedade. Sem\nromper com a lógica do capital, os problemas fundamentais que afligem nosso\npovo continuarão sendo reproduzidos. A humanidade necessita de uma\nrevolução.\nÉ por isso que defendemos a criação de conselhos populares que\ndiscutam, planejem e decidam sobre a aplicação de todo o orçamento público.\nO orçamento do Estado deve estar a serviço dos trabalhadores e\ntrabalhadoras, que são plenamente capazes de definir as prioridades sociais e\na melhor forma de utilização dos recursos produzidos por toda a sociedade.\nNão defendemos conselhos decorativos, consultivos ou domesticados pelos\ngovernos. Não queremos espaços criados apenas para legitimar decisões já\ntomadas de cima para baixo. Defendemos conselhos populares com poder real\nde decisão, fiscalização e mobilização.\nOs conselhos populares devem ser escolas de democracia operária e\npopular. A democracia dos ricos ensina o povo a votar de quatro em quatro\nanos e depois voltar para casa. Nós defendemos outra lógica, o povo deve\ndiscutir, decidir, fiscalizar e lutar todos os dias. É na experiência concreta da\norganização coletiva que os trabalhadores aprendem a confiar em sua própria\nforça, a compreender o funcionamento da sociedade, a enfrentar os interesses\nda burguesia e a preparar uma nova forma de poder.\nPor um governo socialista dos trabalhadores. Operários e povo pobre no\npoder.\nFazemos um chamado a todos os trabalhadores e trabalhadoras para\nque se rebelem contra este sistema e fortaleçam a luta direta pela conquista de\nseus direitos. Só a luta muda a vida. O Brasil precisa de uma revolução\nsocialista."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "58c477f6db00a0f0614dc092a4856cb55e80300b5651458d542b8a54146393be"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "3c5c0dc86506cf01ae3eedd6211b54573eb1a9d5e30a54e3e01f212141ef3b60"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f0adbc197b05c87376d61ecb6c0c7a11b012ba39bc9bbfddbe36ac5b6fd99a60"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c5474508891d00a0f9c35665b10775ad873f0e1466ff258224ab18f111d10d2f"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "71503fc1e7c28755a06c06dd39faa25ac9aee5ecd171d5f1b160ebaeac997926"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "6609a69ea29ee4dc1ce92accfed7d916a8b9f6d573bb3f87c648b0bd435cf3b8"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "444a146533215c186bf28cb1c8a02deebcdf0d7785ce6b10a9a5aef1d8c48eef"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "2cf19386db41cd6ea34b855f515ae182758564871c6f44b103a7adcac3d5b4a5"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "168560e825c30b4a5e56e4e98a46d931533b6f6ed1b62b10fe4f6e940445429b"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "095f58f78dcfd26c155f31854f51db2090208cb1d601aec8b13cadb73f1fdb20"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "19deb5918b7c6e870541731d25b2ee13799c5e13d3939d70b61bb58d4fbc4eaf"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "4b2d826ec878e00de5c8645198f6c43179ba7358eee2d704fd845006cec9967e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "ad9ecccf7078585e652f11f3c99c7356cc4addddf7d85e0d9139fb8b7d6fe2f9"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "557d602bd18ee3f278c76d24bd4f978312616e6023a24eb9ae4d0fadcaf467b0"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "cd6f1c08c790826b7ae9ebbfd82c0ec7c4bfd0c061286fc0cced7177c8d6785f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "eea247a9f1e4bcf65baf9a5a20389695b1aafa6607ff424aba7d763e12c38dc4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "67ca04cc5f488af7f7614adbef0bd80d25b781b1713a53c37f00f700f18bb16b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "dbefd9c1f74a26005f3bd5aab3b22145b642d8c3c807b7cb148e60614ebe4f44"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "d119cb3d2bdf9a75c88ee89871c3d82ce89c17337b17465727756c6fcf8c76f2"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "6cb29723776dda5667aaed3e4ceee1c8b00a0e1d3a7e752db7947ed82ef1f2e6"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "eeac722c5846f23f7cf5ce1f5f59a80e249e2a560c5b8a78197ef15b0a84066b"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "764e79358ca427e6127452c0aa06adcb274610a9a6b4ccd0328e653fcced2835"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "22d9ebd979c37deecfbc24268127fbf8c10d23ac084deaada8122123ad6b11fa"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "0565ba2bef1acef575f567d6227df530caa7b51500f4d34bcd3135dbb10a8247"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "f66f9fb367a812a9fedb54ff3af153267fc413d30cc37a5483c70111fd1ac2fc"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "5be8f8adebc1a0e5a50c063501b66e684a6005337fffa54c0a92be37f28aaabe"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "10956375750c0d241e2489095a0b9f622e2101752658aaf55c7f35b0dcc00b90"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "725de52e6e869cd0f9ec1fd3cf7deddee9818c9d560a9b2486e3cd695a12dd51"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "70c89a3db7426dbba378594696b4fe62cdef3e343a46af4d5bd83cef6a8ca022"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "7c7bbc25a35f3ea11980b4fe05771656ce25f5a9b01c7c351ae06ea2f2290be2"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c8b46ddaf18e7afb396853df190a7f8ec8783b7b0d42472927c3dff81eeffba6"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "456da8b4f796cf1eb9115576dba0ceda454da1252c1a11b7108bb1c481bede04"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "25184d72571d7bb8541d6d2603a98d282a588ad78386bee6a0998d3ba39f3d72"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "3694f5d605998ff57db82dc7ee2da8999d6048a671a01a79a361b8c48b80b82e"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "e2ed6240350c33800ccf578205aea7efdf0531860d306ea989be07d3fd9a251a"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "ce573761e4c2924c90c9cb9dbe97300dc2e0918244069ea39263ac11b5bbe530"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "802cc66d485bf1b20273543f887cb7c7299dfd9e3d3f8b504066577d070afae2"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "bd39a73f3eb32c5c65347ed6d90a044babe966dff7a14a2d346736ad1c7bf4ed"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "63c5682207514d81befde0ba515b67f3ea2be5594f87be7f433b01aef014879b"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "91b3e90b790cfca1fedee1a6766532733565d428e0c6f0b55ea0d29b2652c2d3"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "d4986c752dd08514311001c9aaf2887beeb086e4482e36ee13f472a850f896fc"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "66681c07189fb118c3045a1c575ff0e21f94889a9f8765a7fc0d6f3dab225928"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "86b7263f92ea2010e3d8595e1c8ada52fe58365d2f5c3a0eed9afa58e5b3c81d"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "2fdca552baea9c74458c494697cc92fc284cc8f15d2f630055da89483f0f1b26"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a redução da jornada de trabalho para 36 horas semanais, sem redução salarial ou flexibilização de direitos. O programa propõe o reconhecimento do vínculo empregatício de trabalhadores de aplicativos quando houver subordinação real às plataformas. O programa prevê a abertura completa dos contratos da dívida pública estadual, incluindo empréstimos, garantias, juros, prazos, credores e condições de pagamento. O programa defende serviços públicos estaduais com atendimento universal, gratuito e de qualidade para toda a população cearense. O programa propõe água sob controle público e social, com prioridade para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores. O programa defende a criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana.",
+    "frases": [
+      {
+        "texto": "O programa prevê a redução da jornada de trabalho para 36 horas semanais, sem redução salarial ou flexibilização de direitos.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 13,
+            "trecho": "Redução da jornada de trabalho para 36 horas semanais, sem redução salarial e sem flexibilização de direitos."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o reconhecimento do vínculo empregatício de trabalhadores de aplicativos quando houver subordinação real às plataformas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 14,
+            "trecho": "Reconhecimento do vínculo empregatício dos trabalhadores de aplicativos quando houver subordinação real às plataformas."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a abertura completa dos contratos da dívida pública estadual, incluindo empréstimos, garantias, juros, prazos, credores e condições de pagamento.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 15,
+            "trecho": "Abertura completa dos contratos da dívida pública estadual, incluindo empréstimos internos, externos, garantias, juros, prazos, credores e condições de pagamento."
+          }
+        ]
+      },
+      {
+        "texto": "O programa defende serviços públicos estaduais com atendimento universal, gratuito e de qualidade para toda a população cearense.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 17,
+            "trecho": "Defendemos a reconstrução e a ampliação dos serviços públicos estaduais, garantindo atendimento universal, gratuito e de qualidade para toda a população cearense."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe água sob controle público e social, com prioridade para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 20,
+            "trecho": "Água é direito humano fundamental. Deve estar sob controle público e social, com prioridade absoluta para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores."
+          }
+        ]
+      },
+      {
+        "texto": "O programa defende a criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 31,
+            "trecho": "Criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Redução da jornada semanal para 36 horas, sem redução salarial.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 13,
+            "trecho": "Redução da jornada de trabalho para 36 horas semanais, sem redução salarial e sem flexibilização de direitos."
+          }
+        ]
+      },
+      {
+        "id": "vinculo-em-aplicativos",
+        "titulo": "Vínculo em aplicativos",
+        "descricao": "Reconhecimento do vínculo empregatício diante de subordinação real.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 14,
+            "trecho": "Reconhecimento do vínculo empregatício dos trabalhadores de aplicativos quando houver subordinação real às plataformas."
+          }
+        ]
+      },
+      {
+        "id": "auditoria-da-divida",
+        "titulo": "Auditoria da dívida",
+        "descricao": "Abertura completa dos contratos da dívida pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 15,
+            "trecho": "Abertura completa dos contratos da dívida pública estadual, incluindo empréstimos internos, externos, garantias, juros, prazos, credores e condições de pagamento."
+          }
+        ]
+      },
+      {
+        "id": "servicos-publicos-estaduais",
+        "titulo": "Serviços públicos estaduais",
+        "descricao": "Atendimento universal, gratuito e de qualidade nos serviços estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 17,
+            "trecho": "Defendemos a reconstrução e a ampliação dos serviços públicos estaduais, garantindo atendimento universal, gratuito e de qualidade para toda a população cearense."
+          }
+        ]
+      },
+      {
+        "id": "controle-publico-da-agua",
+        "titulo": "Controle público da água",
+        "descricao": "Controle público e social da água com prioridades territoriais definidas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 20,
+            "trecho": "Água é direito humano fundamental. Deve estar sob controle público e social, com prioridade absoluta para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores."
+          }
+        ]
+      },
+      {
+        "id": "empresa-publica-de-obras",
+        "titulo": "Empresa pública de obras",
+        "descricao": "Criação de empresa estadual para execução de obras públicas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002549967:01",
+            "pagina": 31,
+            "trecho": "Criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:53:43.752Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:56:00.103Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 36 horas confere com o texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação meramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:1:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente sobre vínculo em aplicativos."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem corretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:2:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos em disputa."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta sobre transparência da dívida."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:3:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas listadas estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de serviços públicos estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:4:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números em disputa."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente sobre controle da água."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:5:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as listas de prioridade estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente sobre obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:frase:6:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas listadas estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 36 horas confere."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro e factual."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:jornada-de-trabalho:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas essenciais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:vinculo-em-aplicativos:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números em disputa."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:auditoria-da-divida:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula central."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:servicos-publicos-estaduais:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:controle-publico-da-agua:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula sobre prioridades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002549967:tema:empresa-publica-de-obras:documentos:CE:60002549967:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da proposta resumida."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002549967",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002549967:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 47479,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2316,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27511,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22201,
+          "output_tokens_details": {
+            "thinking_tokens": 343
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27511,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22201,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27511,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27511
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.35360739999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "68a0510466f110476591ce4b2a179be84d14641547b73ad096135dde918c0d4c",
+    "extractedTextSha256": "031760fc42f41f286da0135f53596e7746af5ed04de6bdac6c7a91c5245264bd",
+    "documentCount": 1,
+    "documentSetSha256": "5f75bd4467a0fe2e2767541aa332ce5c91e59c556203104cfe2c5a31a633b11f",
+    "contentSha256": "ba9e0d0c340e6ad38e22665644bd7df1fc5379ee04491447d8559fad39675427"
+  }
+}

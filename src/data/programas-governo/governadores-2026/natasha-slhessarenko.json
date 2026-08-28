@@ -1,0 +1,1046 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MT",
+    "sqCandidato": "110002544985",
+    "slug": "natasha-slhessarenko",
+    "nomeUrna": "DOUTORA NATASHA",
+    "partido": "PSD",
+    "arquivoNome": "2026MT110002544985_01.pdf",
+    "arquivoNoPacote": "MT/2026MT110002544985_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MT:110002544985:01",
+      "fonte": {
+        "arquivoNome": "2026MT110002544985_01.pdf",
+        "arquivoNoPacote": "MT/2026MT110002544985_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "7fd01763297bbce7ce4bf327d0d896382fa97be7280ff8f5eb1e86641db81ef5",
+        "extractedTextSha256": "0c9d09f4d09b57689ae93c415bcd4d3b673e9c87c71ed2b6e8fc43e6de7fd9a7",
+        "paginas": 29,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027-2030\n\nMato Grosso diferente cuidando de gente\nColigação Mato Grosso para Todos:\nPSD - PDT - PT - PV - PC do B - PSB - PSOL - Rede Sustentabilidade"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nSumário\nCarta aos mato-grossenses ...........................................................3\nO cuidado tem método .........................................................................4\nFrente I — Cuidado que forma gente .........................................6\nFrente II — Cuidado que salva vidas........................................13\nFrente III — Cuidado que protege ............................................... 17\nFrente IV — Cuidado que empodera ....................................... 19\nFrente V — Cuidado que transforma .................................... 22\nFrente VI — Cuidado que desenvolve ....................................24\nFrente VII — Cuidado com responsabilidade ...................26"
+          },
+          {
+            "id": "plano-de-governo-3",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nCarta aos mato-grossenses\nMato Grosso é um estado gigante e acolhedor. Nossa gente é trabalhadora, resiliente e\napaixonada por esta terra. Entretanto, quem mora aqui sabe e sente na pele, o que é viver em um\nestado com muitas promessas não cumpridas e com um modelo de gestão que precisa olhar com\nurgência para as pessoas.\nTrago para esta candidatura a coragem de enfrentar os poderosos, a integridade e a\nhonestidade de quem nunca se serviu da política, características herdadas da minha mãe,\nprimeira mulher senadora de Mato Grosso. Trago também a certeza, ensinada pelo meu pai,\nLeonardo, de que não existe estado verdadeiramente rico sem justiça social e sem distribuição\nde renda. Trago, principalmente, o rosto de cada paciente que atendo há mais de 20 anos no\nCentro de Saúde do Grande Terceiro. Foi lá que uma mãe entrou chorando no consultório com seu\nﬁlho, de quase três anos, que ainda não falava e não conseguia consulta com especialista. Eu\nconsegui aquela vaga e entendi, naquele instante, que como médica ajudo uma vida de cada vez,\nmas na política posso transformar um estado inteiro.\nPor isso, esta candidatura é maior que uma pessoa só. Ela caminha ao lado de oito partidos\nem uma só coligação, a maior união progressista da história de Mato Grosso, unidos não por\nconveniência, mas pelo compromisso de fazer do Estado um melhor lugar para se viver. Caminho\ncom meu vice, Diogo Botelho, advogado e professor universitário, mas especialmente, um ser\nhumano que gosta e cuida de gente.\nPorque Mato Grosso tem uma dívida com você. Prometeram, que a riqueza da terra, a de\nser o maior produtor de soja, do maior produtor de algodão e do maior rebanho de gado do país,\nvoltaria em dignidade e em serviços públicos de qualidade.\nA promessa não se cumpriu. Sobrou a ﬁla da saúde, que não anda e tem o maior tempo de\nespera para consulta com especialista do Brasil. Sobrou a mulher que apanha, grita e não é\nouvida, em um dos estados que mais mata mulheres do país. Sobraram mais de 500 mil pessoas\nabaixo da linha da pobreza, com mães na ﬁla dos ossinhos. Sobraram 100 escolas fechadas.\nSobraram obras prometidas e nunca entregues. Sobraram servidores públicos desvalorizados\ne dinheiro público aparecendo em conta de banqueiro preso.\nCuidar de quem mais precisa não é virar as costas para quem gera trabalho. As pequenas,\nas médias e a grandes empresas mato-grossenses sustentam este estado, são imprescindíveis,\nsão geradoras de oportunidades, empregos e renda, e merecem um governo previsível, sem\nburocracias, que facilite em vez de atrapalhar.\nChega de esperar. Este plano nasce de um sonho simples, nasce do desejo de ser um Mato\nGrosso onde a mãe não precise implorar por tratamento para o ﬁlho, onde a mulher não tenha\nmedo de voltar para casa, onde a criança seja alfabetizada de verdade e na idade certa, onde a\nriqueza da soja, do algodão e do boi se transforme em futuro e em cuidado para a nossa gente\nnos 142 municípios do estado.\nCuidar não é favor. É a obrigação de um Estado que arrecada, e é a você que ele deve\nprestar contas.\n\nNatasha Slhessarenko\nMulher, médica, professora, mãe e candidata ao Governo de Mato Grosso\n\n3"
+          },
+          {
+            "id": "plano-de-governo-4",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nO cuidado tem método\nPrometer é fácil. Difícil é fazer diferente. Por isso este plano não é uma lista de promessas\nsoltas: é um método. Sete Frentes do Cuidado. Em cada uma, o diagnóstico que mostra a\nrealidade sem maquiagem e as propostas concretas para mudar essa realidade. Por trás destas\npáginas há um acervo de dados oﬁciais, pareceres de órgãos de controle e a contribuição de\nespecialistas mato-grossenses de cada área.\nE este plano não foi escrito em gabinete. Foi construído com a contribuição de mais de 30\nespecialistas e pessoas notáveis de Mato Grosso, e ouvindo pessoas que nunca foram ouvidas,\ncidade por cidade, em mais de 90 municípios visitados pela Caravana Mato Grosso para Todos.\nProfessores, pesquisadores, gestores públicos, lideranças indígenas e mulheres organizadas\nentregaram diagnósticos, dados e propostas de suas áreas — é esse trabalho que sustenta cada\nFrente do Cuidado nas páginas seguintes.\nCada Frente carrega o nome \"Cuidado que...\" porque cuidar, aqui, não é discurso: é forma\nde governar. É assim que se governa diferente. Cuidando de gente.\n\nÉ assim que se governa\n\ndiferente\nGente\nCuidando de\n\n4"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "“",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "“\n\nTem que fazer\n\ndiferente\n\n“\n\nGente\nTem que cuidar de\n\n5"
+          },
+          {
+            "id": "plano-de-governo-5",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente I - Cuidado que forma gente\nEducação, Desenvolvimento Social, Cultura e Esporte\nDiagnóstico\nO IDEB de 2025 mostra Mato Grosso acima da meta nos anos iniciais (6,3) e abaixo dela nos\nanos ﬁnais (5,1) e no ensino médio (4,4). No ensino médio queda do abandono de 10,5% para 0,2% e\nreprovação de 18,3% para 1% entre 2022 e 2025, porém, esses dados não retratam a realidade\nconforme denúncias.\nA primeira infância, que é de responsabilidade do município, é atendida com uma\ncobertura de creche de 32,9%, abaixo da média nacional (33,9%). Vamos fazer uma grande\ntransformação na Educação Infantil. Como Pediatra sei da importância e do impacto que os\nprimeiros anos de vida tem na vida de uma criança e de sua família.\nNão existe continuidade pedagógica onde a maior parte dos professores da rede\nestadual está em contrato temporário. A população que mais depende do Estado, pessoas com\ndeﬁciência, idosos, população LGBTQIA+, povos indígenas e comunidades tradicionais, é\natendida por ações espalhadas em várias secretarias, sem que ninguém acompanhe num lugar\nsó se a política está de fato chegando até ela e o que não se acompanha, não vira prioridade.\nCerca de 71% das escolas têm algum item de acessibilidade, ainda insuﬁciente e 29% não têm\nnenhum.\nA matrícula de jovens e adultos apresentou queda de 68% de 2014 a 2024 e a taxa de\nanalfabetismo no Centro-Oeste é de 3,8% (IBGE, 2025) e está concentrada em pessoas com 60\nanos ou mais (13,8%).\nO Programa do governo Federal, o Pé-de-Meia, beneﬁcia 166.243 estudantes em MT e\nprecisa ampliar o atendimento para a totalidade dos estudantes nessa etapa da educação\nbásica.\nQuanto ao ensino proﬁssionalizante, Mato Grosso conta com 19 unidades do IFMT (14\ncampi e 5 avançados) e cerca de 20 mil alunos. A Rede estadual de Educação Proﬁssional e\nTecnológica (EPT) conta com 275 escolas em 108 dos 142 municípios e as Escolas Técnicas\nEstaduais passaram de 12 para 17 unidades.\nO Estado de Mato Grosso dispõe de uma base institucional relevante — UNEMAT, UFMT,\nIFMT, FAPEMAT, Secretarias, Tribunal de Contas, Ministério Público, Assembleia Legislativa,\nParque Tecnológico e demais órgãos —, contudo esses componentes operam de forma setorial e\nfragmentada, com diferentes graus de integração e com pouca coerência estratégica\ncompartilhada.\nO modelo atual de governança é linear e fechado: as secretarias formulam políticas\nisoladamente, sem etapa de diagnóstico cientíﬁco prévio, partindo da intuição ou experiência\ninterna; a avaliação é subjetiva e pontual; inexistem mecanismos de correção de rota e\nretroalimentação, de modo que cada política nasce do zero, sem que o Estado aprenda com seus\npróprios resultados.\n\n6"
+          },
+          {
+            "id": "plano-de-governo-6",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\nA universidade, por sua vez, permanece à margem do processo de formulação de\npolíticas públicas, limitada ao papel tradicional de ensino, pesquisa e extensão, quando possui\ncapilaridade territorial em todas as regiões do Estado e capacidade instalada para produzir\nconhecimento aplicável ao desenvolvimento regional.\nEducação é dignidade. Só o conhecimento liberta e empodera as pessoas. É apenas pela\nEducação que acontece o desenvolvimento de uma sociedade. É só pela Educação que\nconseguiremos ter uma sociedade mais justa, igualitária e promover a verdadeira melhoria da\nqualidade de vida da cidadã e do cidadão mato-grossense.\n\nAs propostas\n1. Plano Nacional de Educação.\nEstar alinhada, com apoio da comunidade escolar, aos 19 objetivos, 73 metas e 372\nestratégias do novo Plano Nacional de Educação (PNE) e revisar o Plano Estadual de\nEducação (PEE-MT).\n\n2. Programa estadual permanente de regime de colaboração com os municípios.\nOperacionalizar o Sistema Nacional de Educação, que é uma maneira de funcionamento\norgânico e articulado das políticas educacionais entre União, estados, Distrito Federal e\nmunicípios, visando garantir o direito à educação inclusiva, diversa e equitativa em regime de\ncolaboração.\n\n3. Alfabetização e recomposição de aprendizagem como compromisso do Estado.\nCriança que sai do ciclo de alfabetização sem ler carrega a defasagem até o ensino médio, e\nquem já ﬁcou para trás não se recupera sozinho. Oferecer condições para que toda criança\nda rede esteja alfabetizada ao ﬁm do 2º ano, com formação continuada dos alfabetizadores,\navaliação com devolutiva rápida ao professor; avaliação diagnóstica no início de cada ano\nletivo, busca ativa dos alunos de baixo rendimento e tutoria individualizada, começando pelos\nanos ﬁnais do fundamental e pelo ensino médio. Tomada de ações para recuperação da\ncriança não alfabetizada.\n\n4. Proﬁssionais da educação valorizados: concurso, piso cumprido e cuidado com\nquem ensina.\nSem professor efetivo e estável não há projeto pedagógico que sobreviva, e o afastamento\npor doença na educação cresceu muito e boa parte dele é sofrimento mental do próprio\nprofessor, sem que exista política que trate disso. Concurso público imediato para zerar o\ndéﬁcit de professores efetivos, com calendário permanente e contínuo de reposição de\nvagas na rede estadual, cumprimento integral do piso do magistério, já garantido por lei\nfederal, para toda a carreira, com remuneração proporcional ao piso também para o contrato\ntemporário. Estabelecer política estadual permanente de saúde do trabalhador\nda educação, com retomada dos centros de formação e atualização dos proﬁssionais da\neducação e reconhecimento do quadro de apoio administrativo, sem o qual a escola não abre\na porta.\n\n7"
+          },
+          {
+            "id": "plano-de-governo-7",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n5. Creche pública para a infância e para a autonomia das famílias.\nA educação infantil é um direito da criança, uma política essencial para o seu\ndesenvolvimento e uma condição para que mães, pais e responsáveis possam trabalhar,\nestudar e organizar suas vidas com segurança. Assumimos o compromisso de realizar o\nmaior investimento em educação infantil da história de Mato Grosso.\nCriar programa estadual permanente de coﬁnanciamento com os municípios, com metas\npactuadas, para ampliar a oferta pública e gratuita de vagas em creches e pré-escolas.\nEmbora a educação infantil seja de competência prioritária dos municípios, o Estado criará\nlinha orçamentária especíﬁca e fortalecerá a atuação intersetorial das secretarias de\nEducação, Saúde e Assistência Social.\nSerão retomadas as obras paralisadas e utilizados prioritariamente imóveis públicos ociosos\ne equipamentos comunitários adequados. Em situações excepcionais, poderá haver cessão\ntemporária de espaços pertencentes a entidades civis sem ﬁns lucrativos, mediante\nchamamento ou credenciamento público, transparência, acessibilidade, licenciamento\nsanitário, gestão pedagógica integralmente pública, proﬁssionais habilitados e vedação\nabsoluta a cobrança das famílias.\n\n6. Escola de volta para o jovem, o adulto e o idoso.\nRetomar os Centros de Educação de Jovens e Adultos (CEJAs), fechados nos últimos\nanos, articulada à qualiﬁcação proﬁssional, com busca ativa dirigida à população idosa\ne negra e certiﬁcação acessível em todas as regiões do estado. Integrar EJA à\nqualiﬁcação proﬁssional (IFMT e Sistema S) e aderir ao Pacto Contra o Analfabetismo\nEJA e ao Pé-de-Meia EJA. Priorizar população idosa e negra no combate ao analfabetismo.\n\n7. Inclusão que garante atendimento, aprendizagem e permanência, não apenas\nmatrícula.\nA rede regular inclusiva será a regra e o direito de todo estudante, com os apoios necessários\nà participação, à convivência, à aprendizagem e à permanência na escola. Garantir\nformação continuada e especíﬁca aos proﬁssionais da educação para o atendimento de\nestudantes autistas, com deﬁciência intelectual, física, sensorial ou múltipla, contemplando\ncomunicação alternativa, tecnologia assistiva, acessibilidade pedagógica e apoio\ncomportamental positivo, não coercitivo, baseado em evidências e nos direitos da pessoa\ncom deﬁciência.\nAssegurar atendimento educacional especializado, complementar ou suplementar à\nescolarização, em salas de recursos, além de salas sensoriais e equipamentos de tecnologia\nassistiva. Garantir continuidade institucional por meio de concurso público e da presença\nde professores e proﬁssionais com formação adequada. Buscar a universalização da\nacessibilidade arquitetônica, comunicacional, pedagógica e digital. Instituições\nespecializadas poderão atuar como centros de apoio técnico, formação, habilitação,\nreabilitação e atendimento complementar, sem substituir a matrícula na rede regular,\npromover segregação ou retirar do estudante o direito à convivência escolar inclusiva.\n\n8"
+          },
+          {
+            "id": "plano-de-governo-8",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n8. Cadastro Único como porta de direitos, proteção e oportunidades.\nA garantia de renda protege as famílias nos períodos de maior vulnerabilidade e não será\ncondicionada à aceitação de emprego, crédito, curso ou atividade determinada pelo Estado.\nO Cadastro Único será utilizado para integrar cada família às políticas públicas às quais tem\ndireito e para oferecer, de forma voluntária e adequada à realidade de cada pessoa,\noportunidades de qualiﬁcação proﬁssional, elevação de escolaridade, economia solidária,\nmicrocrédito orientado, apoio ao empreendedorismo e acesso ao trabalho decente. O\nobjetivo será ampliar direitos e autonomia, sem retirar proteção de quem ainda precisa dela.\n\n9. Política permanente para quem hoje não é visto.\nCampanha de ocasião não protege ninguém: política estadual contínua para a pessoa com\ndeﬁciência — com avaliação por equipe multiproﬁssional e ampliação real do tempo de\nprofessor especializado — e para a população idosa, com inclusão, convivência comunitária e\nenfrentamento do abandono e da violência contra o idoso.\n\n10. Povos indígenas com estrutura própria de governo, economia, educação e\nassento nas decisões.\nPolítica indígena hoje é atendimento espalhado por várias secretarias, sem ninguém\nresponsável, reconhecer o território não basta sem dar condição de viver dele, e educação\nescolar indígena sem professor indígena é assimilação com outro nome: Mato Grosso terá\nestrutura própria de governo para os povos indígenas do estado, com orçamento e equipe\ntécnica, coordenando educação escolar indígena especíﬁca, saúde, proteção territorial e\ndesenvolvimento econômico — e com participação garantida das lideranças em toda\ndecisão que afete seus territórios; assistência técnica e extensão rural desenhadas para as\npráticas produtivas tradicionais, apoio ao artesanato, ao extrativismo sustentável e ao\nturismo de base comunitária, e acesso da produção indígena, quilombola e do campo às\ncompras públicas do estado; ampliação da formação intercultural de professores das\npróprias comunidades, material didático por povo e por língua — inclusive para os povos que\nainda não têm nenhum —, equipe técnica especializada dentro da secretaria de educação e\nconselho de educação escolar indígena com poder real de deliberação, além de acesso do\nestudante indígena ao ensino técnico e superior com bolsa e apoio à permanência.\n\n11. Educação do campo e quilombola, e escola do campo que não fecha.\nEscola rural com calendário de cidade não funciona, e cada escola que fecha empurra a\ncriança do interior para uma estrada mais longa ou para fora da escola: currículo,\nmaterial didático, transporte escolar e calendário adaptados à realidade do campo e das\ncomunidades quilombolas.\nCompromisso de não fechar escola do campo por critério administrativo, levantamento\npúblico das unidades já fechadas com avaliação de reabertura ouvindo a comunidade.\nApoiar as Escolas Família Agrícola e Casas Familiares Rurais e priorizar a compra da\nagricultura familiar local na alimentação escolar.\n\n9"
+          },
+          {
+            "id": "plano-de-governo-9",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n12. Ensino médio conectado ao futuro, com o estudante até o ﬁm da escola.\nO ensino médio é onde Mato Grosso mais perde o estudante, e o jovem que ﬁca não enxerga\npara que serve a escola. Ampliar o ensino técnico integrado com parceria formal do setor\nprodutivo. Ampliar a articulação com o IFMT e o Sistema S e estabelecer coordenação\npermanente entre Seduc-MT, Seciteci-MT e IFMT, evitando sobreposição de oferta. Alinhar a\nexpansão da educação proﬁssional aos arranjos produtivos locais, bioeconomia, agricultura\nfamiliar, agroecologia, economia verde, economia criativa, economia do cuidado e economia\ndigital. Oferecer preparação para o Enem e para o mercado de trabalho, educação ﬁnanceira,\nempreendedorismo, economia solidária e tecnologia no currículo. Perseguir a meta do novo\nPNE de, no mínimo, 50% das matrículas do médio integradas à educação proﬁssional até 2036.\nBuscar implementar plenamente o novo currículo (2.400h de Formação Geral Básica) com\nqualidade real. Capacitar os Professores com formação especíﬁca na Formação Geral\nBásica. Buscar ativamente o aluno que abandonou a escola, compreender e contornar as\ncausas da evasão, trazendo-os de volta à escola, com reforço escolar e atendimento\npsicossocial. Ampliar e melhorar o transporte escolar, a alimentação escolar e promover\nacompanhamento dirigido à permanência no ensino médio, onde a evasão é maior.\n\n13. Escola com infraestrutura para aprender.\nNão se cobra desempenho de quem estuda em sala sem climatização, no calor de Mato\nGrosso, e sem internet que funcione. Estabelecer um plano estadual de modernização\nda rede com climatização das salas, implantar internet de alta velocidade, laboratórios\nde informática e de ciências, biblioteca e espaço esportivo com o interior à frente na ﬁla.\nIncentivar o letramento digital e pensamento computacional desde os primeiros anos\nescolares.\n\n14. Escola segura, com equipe de apoio e prevenção à violência.\nProfessor não é psicólogo, e hoje é ele quem segura sozinho o conﬂito, o bullying e o\nsofrimento mental do aluno — e violência contra a mulher e a criança não se combate só com\ndelegacia, se previne também na escola: equipes multiproﬁssionais com psicólogo e\nassistente social na rede estadual, protocolos claros de segurança e programa permanente\nde cultura de paz; formação dos proﬁssionais da rede para reconhecer e prevenir o bullying, o\nassédio, o racismo e toda forma de violência entre estudantes; formação especíﬁca para\nreconhecer sinais de violência contra a criança e a adolescente, com a Lei Maria da Penha no\ncurrículo, em linguagem adequada a cada idade, e campanhas permanentes de prevenção à\nviolência doméstica nas escolas.\n\n15. Intercâmbio Internacional dos estudantes.\nIncrementar programas de intercâmbio acadêmico com alunos do ensino médio,\nproﬁssionalizante, nível superior e pós graduação.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-10",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n16. Acompanhamento pedagógico escola por escola, com diretor formado e\ntecnologia a serviço do professor.\nA média estadual esconde a escola que vai mal, e diretor de escola hoje é escolhido e deixado\nsozinho, afogado em burocracia: estabelecer metas pedagógicas, discutidas com a\ncomunidade acadêmica de cada unidade, monitoramento permanente dos indicadores de\naprendizagem, transparência do investimento por escola e mais apoio e recursos para as\nescolas com pior indicador — nunca corte ou punição. Promover o reconhecimento coletivo\ndas equipes que avançaram, discutir, com os envolvidos, métodos de premiação das\nmelhores práticas e reconhecimento das práticas que deram certo, para que sejam repetidas\nna rede. Promover Programa estadual de formação de diretores e coordenadores, mais\nautonomia de gestão para o diretor, com suporte técnico da Secretaria, não isolamento na\nresponsabilidade pelo resultado, e corte da papelada que tira o gestor da sala de aula;\nplataforma estadual de aprendizagem e uso de inteligência artiﬁcial como apoio ao\nplanejamento e à correção do professor — nunca no lugar dele —, com formação digital\ndocente e regras claras de uso responsável pelos estudantes.\n\n17. Soberania tecnológica e fortalecimento da capacidade pública da educação.\nPromover formação ética e capacitação técnica em inteligência artiﬁcial, proteção de dados,\ntecnologias digitais e robótica para os proﬁssionais da educação. Exercer plenamente as\ncompetências constitucionais do Estado no ensino fundamental e no ensino médio, em regime\nde colaboração com a União e os municípios, fortalecendo a capacidade pública de\nplanejamento, regulação, produção de tecnologia educacional e formação docente, sem\ntransferência das responsabilidades estatais ao setor privado.\n\n18. Educação integral em expansão.\nAmpliar gradualmente as escolas de tempo integral, com currículo atrativo e capaz de\npromover aprendizagem, convivência, proteção social, cultura, artes, ciência, esporte e\ndesenvolvimento socioemocional. A educação integral deverá ampliar as oportunidades das\ncrianças e dos adolescentes, fortalecer seus vínculos comunitários e apoiar as famílias, sem\ntransformar a escola em espaço de vigilância ou controle social. Serão oferecidas atividades\nesportivas, culturais, cientíﬁcas e de acompanhamento pedagógico no contraturno. A\nexpansão utilizará prioritariamente escolas, equipamentos públicos e espaços comunitários\nadaptados. Em situações excepcionais, espaços pertencentes a entidades civis sem ﬁns\nlucrativos poderão ser utilizados temporariamente, mediante instrumento público, critérios\ntransparentes, gestão pedagógica estatal, proﬁssionais habilitados e vedação a cobrança,\ndiscriminação e proselitismo político ou religioso.\n\n19. Tratar o combate às desigualdades como critério transversal de alocação\nde recursos.\n20. Cursinho Popular.\nProcurar ampliar, por meio do MEC, às escolas estaduais, nos territórios e comunidades o\ncursinho popular.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-11",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n21. Tornar a Educação ambiental como eixo formativo permanente ligado aos 3\nbiomas do estado.\n22. Política de verdade para quem só aparece na lista.\nCitar uma população não é atendê-la: política estadual permanente para a população\nLGBTQIA+, com atenção às pessoas trans e travestis — qualiﬁcação proﬁssional, incentivo à\ncontratação e rede de acolhimento e acesso à justiça —; qualiﬁcação proﬁssional e apoio à\nformalização também dirigidos à população negra, dentro do mesmo compromisso de\nautonomia econômica que este plano já assume para mulheres e populações tradicionais; e\npara as religiões de matriz africana, apoio às comunidades de terreiro, preservação do\npatrimônio afrobrasileiro, enfrentamento ao racismo religioso e participação dessas\ncomunidades nas decisões que lhes dizem respeito.\n\n23. Criar o Programa “Final de semana e férias de Educação Integral”.\nProporcionar aos ﬁnais de semana e nas férias, para crianças de 0 a 17 anos de idade,\nprogramas de arte, cultura, esporte e lazer dentro das escolas, garantindo refeições\npara os participantes.\n\n24. Ensino Superior, ciência e universidade como motores do desenvolvimento.\nPromover as Universidades Públicas como agentes diretos do desenvolvimento do estado,\natuando como infraestrutura de inteligência. Essa transformação se concretiza por meio de\ninstrumentos como a criação do Sistema Estadual de Governança Pública, do Observatório\nEstadual de Políticas Públicas, de Núcleos Cientíﬁcos Permanentes em cada Secretaria —\ncompostos por pesquisadores das universidades — e de gestão orientada por indicadores\ncom dashboards em tempo real e transparência ativa. Todo o ciclo de política pública passará\na contemplar diagnóstico cientíﬁco, estudo técnico, indicadores, avaliação de impacto,\nmonitoramento e prestação de contas, com retroalimentação permanente entre as etapas. A\nintegração sistêmica entre Governo, Universidades, setor produtivo e sociedade visa\ntransformar Mato Grosso em um Estado brasileiro com alto índice de inovação pública e\ndesenvolvimento regional baseado na produção cientíﬁca.\nCriar condições para que a UNEMAT se transforme em uma das maiores universidades\npúblicas multicampi do país assumindo papel importante na produção cientíﬁca aplicada ao\ndesenvolvimento. O plano não se propõe a criar componentes inexistentes, mas a dar\ncoerência estratégica, orientação por evidências e propósito de desenvolvimento ao que já\nexiste — transformando o que hoje é setorial e fragmentado em um sistema uniﬁcado de\ninteligência e gestão pública, no qual cada real investido na universidade produz retorno\nsocial, econômico, ambiental e tecnológico mensurável. Transformar conhecimento em\ndesenvolvimento, ciência em política pública e universidade em motor do Estado.\n\n11"
+          },
+          {
+            "id": "plano-de-governo-12",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n25. Cultura, esporte e juventude com política e orçamento.\nCultura e esporte em Mato Grosso vivem de edital de ocasião, e o jovem que sai da escola não\nencontra nada do outro lado. Estabelecer um sistema estadual de cultura em funcionamento,\ncom orçamento plurianual deﬁnido, editais regulares e calendário previsível. Apoio à cultura\npopular mato-grossense e aos movimentos culturais do interior; esporte de base e\nparadesporto nas escolas e nos bairros, com apoio ao atleta e aos jogos estudantis. Criar\npolítica estadual de juventude com primeiro emprego, aprendizagem e cultura de periferia,\npara que o jovem tenha porta de entrada e não só porta de saída.\n\n26. Rede de cuidado para idosos.\nFortalecer e coﬁnanciar as Instituições de Longa Permanência para Idosos (ILPIs)\nﬁlantrópicas e apoiar a criação de novas unidades onde houver demanda, garantindo\nacolhimento digno a idosos em situação de vulnerabilidade, abandono ou sem apoio familiar.\n\n12"
+          },
+          {
+            "id": "plano-de-governo-13",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente II - Cuidado que salva vidas\nSaúde e Qualidade de Vida\nDiagnóstico\nMato Grosso tem a 10ª maior taxa de mortalidade infantil do país — 14 óbitos por mil\nnascidos vivos. A meta do próprio estado para 2024 era 12,5.\nE quem não morre, espera. A espera por consulta com especialista, exame, cirurgia e vaga para\ninternação é o maior sofrimento da saúde pública mato-grossense — e o estado não a mede: no\nplano plurianual 2024-2027, o objetivo chamado \"melhorar o acesso da população à atenção\nespecializada\" tem cinco indicadores, e nenhum registra se o paciente conseguiu a consulta ou\nquanto esperou.\nO estado sabe medir espera quando quer: no mesmo plano, promete reduzir a da perícia médica\n— a que atende o servidor público — de 20 para 10 dias até 2027. Mede-se a espera de quem\ntrabalha para o Estado; não a de quem depende dele.\n\nAs propostas\n1. Saúde Digital integrada à rede presencial.\nGarantir acesso à telessaúde e a diferentes especialidades para a população de todas as\nregiões de Mato Grosso, inicialmente em horário regular, com expansão progressiva dos dias\ne horários de atendimento. A saúde digital será complementar ao atendimento presencial e\nintegrada às unidades básicas, hospitais e serviços especializados. Não será utilizada para\nsubstituir equipes, fechar unidades, precarizar vínculos de trabalho ou negar atendimento\npresencial quando ele for clinicamente necessário. Os dados dos pacientes serão protegidos\ne o atendimento deverá seguir protocolos de segurança, consentimento, sigilo e qualidade\nassistencial.\n\n2. Fila única estadual, pública e auditável, com tempo de espera como meta de\ngoverno.\nHoje o cidadão não sabe em que posição está nem quanto falta, e o que não se mede não se\ncobra: central estadual de regulação com ﬁla única para consulta especializada, exame e\ncirurgia, com a posição de cada paciente e o tempo médio de espera publicados; apuração e\npublicação do tempo de espera por especialidade e por região, com meta de redução sob o\nmesmo controle das demais metas do governo. A cidadã e o cidadão mato-grossense têm\nque ter na palma da sua mão um aplicativo da Secretaria de Saúde Estadual que dê\ntransparência e permita que ele acompanhe a sua progressão nesta ﬁla.\n\n3. Mutirões regionais de exames e cirurgias eletivas.\nO estoque represado não se resolve apenas no ritmo da rotina. Serão realizados mutirões\nregionais organizados prioritariamente pela rede pública, com ampliação temporária da\ncapacidade dos hospitais estaduais e municipais e mobilização dos proﬁssionais do SUS,\ncomeçando pelas especialidades de maior ﬁla e pelos municípios que mais dependem da\ncapital.\n\n13"
+          },
+          {
+            "id": "plano-de-governo-14",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\nQuando a capacidade pública for comprovadamente insuﬁciente, o Estado mobilizará\nprioritariamente prestadores ﬁlantrópicos e conveniados ao SUS hoje ociosos; apenas\nesgotada essa alternativa, poderá haver contratação complementar, excepcional e temporária\nde serviços privados, sob regulação exclusiva do SUS, com valores públicos, metas\nassistenciais, auditoria, transparência integral e prazo deﬁnido.\n\n4. Atenção Primária como porta de entrada de verdade.\nBoa parte do que vira ﬁla poderia ser resolvida perto de casa. O Estado tem que contribuir\ncom recursos para que não falte médicos nas Unidades de Atenção Primária à Saúde (UAPS),\nincluindo médicos de especialidades chaves em rodízio pelas UAPS nas cidades maiores:\npediatra, cardiologista, ginecologista e endocrinologista. Estes proﬁssionais além de prestar\nassistência, executarão a capacitação em serviço, qualiﬁcando a Atenção Primária.\nDisponibilizar aos municípios prontuário eletrônico integrado entre a Unidade de Atenção\nPrimária e o hospital.\nRepactuação de responsabilidades com cada município e telessaúde para resolver na\norigem o que se torna encaminhamento. As equipes e-multi têm que ser completas e\ntrabalhar com metas. A precariedade do atendimento nas UAPS compromete a saúde da\npopulação, que acaba precisando recorrer à média e alta complexidade, especialmente\ndevido a doenças que poderiam ter sido prevenidas. Ter Programa de Saúde Bucal\nconsistente e estabelecer parceria com universidades para prevenção e tratamento das\npatologias bucais.\n\n5. Especialistas em hospitais regionais e municipais.\nAssegurar a presença de especialistas que terão nas UAPS nos hospitais regionais e\nmunicipais dos grandes municípios, bem como de outras especialidades, em rodízio nestes\nhospitais e/ou on-line, incluindo urologista, cirurgião vascular, ortopedista, reumatologista,\nneurologista dentre outras.\n\n6. Quem cuida também precisa ser cuidado: valorização do trabalhador da saúde.\nFila que não anda e posto que fecha a porta também são reﬂexo de médico, enfermeiro e\nagente comunitário que faltam ou adoecem no caminho, e sistema que cobra meta de quem\natende sem cuidar de quem atende não se sustenta: plano de carreira do SUS estadual,\nconstruído com as entidades representativas da categoria na mesma mesa permanente de\nnegociação prevista para todo o funcionalismo, cumprimento do piso da enfermagem, já\ngarantido por lei federal, em toda a rede, política permanente de saúde mental e prevenção\nao esgotamento do trabalhador da saúde, e reposição regular de médicos, enfermeiros e\nagentes comunitários nas regiões com maior déﬁcit, com prioridade para o interior.\n\n14"
+          },
+          {
+            "id": "plano-de-governo-15",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n7. Hospitais de pequeno porte.\nHoje muitos hospitais no interior estão fechados ou funcionam parcialmente como pronto\natendimento. Ter uma política deﬁnida para hospitais de pequeno porte, garantindo o\nfuncionamento e atendimento à população. Atualmente o estado gasta muito e resolve\npouco. Fazer um mapeamento de todos os hospitais regionais e municipais, reduzindo a\nterceirização. Deﬁnir com clareza o que cada unidade hospitalar deve resolver, evitando\nsobreposição entre elas, e ampliar leitos nas regiões com déﬁcit comprovado.\n\n8. Agentes Comunitários de Saúde e de Combate a endemias.\nContribuir com estes proﬁssionais que conhecem a realidade de todas as famílias que\ncuidam, com colete, auxílio ﬁnanceiro para compra de protetor solar, kit para prestar\nassistência ao paciente (glicosímetro, esﬁgmomanômetro, oxímetro de pulso).\n\n9. Concurso público.\nFazer concurso público contemplando todos os proﬁssionais da saúde.\n\n10. Centros de diálise.\nOferecer mais centros de tratamento para doenças renais em mais cidades polos. Hoje os\npacientes que necessitam precisam ir para uma destas cidades: Cuiabá, Várzea Grande,\nSinop, Tangará da Serra, Sorriso, Cáceres, Primavera do Leste, Barra do Garças e\nRondonópolis.\n\n11. Centros regionais públicos de infusão, quimioterapia e atenção oncológica.\nAmpliar a oferta de Unidades de Assistência de Alta Complexidade em Oncologia, hoje\nconcentradas em Cuiabá, Rondonópolis e Sinop, priorizando a implantação de novas\nunidades públicas regionais e o fortalecimento das estruturas já existentes. A prioridade\norçamentária deste plano é a expansão da rede pública oncológica, com cronograma público\nde novas unidades. Apenas enquanto essa expansão estiver em curso, e por prazo\ndeterminado, poderá haver credenciamento complementar de clínicas privadas, sob\nregulação exclusiva do sistema público, tabela transparente, metas de atendimento,\nauditoria permanente e garantia de gratuidade integral ao paciente.\n\n12.Centros Regionais de Habilitação, Reabilitação e Apoio à Pessoa com\nDeﬁciência.\nPessoas com doenças raras, pessoas autistas e pessoas com deﬁciência podem necessitar\nde diferentes formas de cuidado, habilitação, reabilitação, apoio à comunicação, tecnologia\nassistiva e acompanhamento multiproﬁssional ao longo da vida. Implantar e fortalecer\nunidades regionais em cidades-polo, descentralizando o atendimento e garantindo equipes\nmultiproﬁssionais, cuidado individualizado, participação das famílias e respeito à autonomia,\nàs necessidades e às características de cada pessoa.\n\n15"
+          },
+          {
+            "id": "plano-de-governo-16",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n13. Saúde Mental.\nContribuir com os municípios, fortalecendo os serviços de atenção à saúde mental\nexistentes, com número de proﬁssionais (psicólogos, psiquiatras, assistentes sociais, dentre\noutros) na rede de atenção psicossocial, incluindo Centros de Especialidades Médicas e\nCentros de Atenção Psicossocial (CAPS).\nEm se tratando de políticas públicas de saúde, não há saídas dignas se não forem oferecidas a\ntodos. O CAPS não pode ser um serviço que gira em torno de consulta, psicoterapia,\nprescrição de medicamentos e normalização das consultas. Os CAPS têm que ser um local de\nincremento de vida! Ter CAPS III, em outras cidades com mais de 200.000 habitantes. Ampliar\no cuidado à dependência química e à ludopatia (jogos de azar) com tratamento e reinserção,\ne instituir política estadual de prevenção do suicídio, com atenção especial ao jovem.\n\n14. Ouvidoria de Saúde.\nGarantir as condições e suporte técnico, administrativo e ﬁnanceiro para funcionamento das\nouvidorias de saúde e Conselho Estadual de Saúde.\n\n15. Auditorias.\nRealizar auditorias técnica e contábil em todos os contratos da Secretaria Estadual de\nSaúde, em especial os contratos de terceirização de serviços, compra de medicamentos e\ninsumos.\n\n16. Política de Medicamentos.\nEstabelecer um rol de medicamentos, alinhados à Política Nacional, introduzindo\nmedicamentos mais modernos e eﬁcazes, para todos os níveis de Atenção da Saúde.\n\n16"
+          },
+          {
+            "id": "plano-de-governo-17",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente III - Cuidado que protege\nSegurança Pública\nDiagnóstico\nA impunidade também tem endereço técnico. Mais de 10 mil perícias aguardam laudo na\nPolitec, com 79 peritos em atividade frente a uma necessidade de 127 já identiﬁcada em 2003 —\num déﬁcit reconhecido há mais de vinte anos e enfrentado só agora. Enquanto isso, a fronteira\nconﬁrma o peso do estado na rota do narcotráﬁco, a taxa de homicídios segue acima da média\nnacional e o sistema socioeducativo é um dos únicos três do país com mais adolescentes\ninternados do que vagas.\n\nAs propostas\n1. Forças que trabalham juntas, não lado a lado.\nCada instituição resolve uma parte do problema e ninguém responde pelo todo: coordenação\npermanente da SESP sobre Polícia Militar, Polícia Judiciária Civil, Corpo de Bombeiros, Politec,\nPolícia Penal e Detran, com protocolo único de atuação conjunta e articulação estável com as\nforças federais — para que o cidadão receba uma resposta do Estado, não seis respostas\nparciais.\n\n2. Fim do gargalo da perícia.\nSem laudo não há condenação, e sem condenação não há justiça: concurso e plano de\ncarreira para a Politec, mutirão para eliminar o passivo de laudos represados e reposição\nregular — não emergencial — do efetivo das polícias Militar e Civil.\n\n3. Prédios compartilhados, atendimento no mesmo lugar.\nInstituições isoladas em sedes próprias multiplicam custo de manutenção e obrigam o\ncidadão a percorrer a cidade atrás de um registro: unidades integradas de segurança\nreunindo num só endereço as forças que hoje operam separadas, com economia de custeio\nrevertida para efetivo e equipamento.\n\n4. Inteligência permanente de fronteira.\nApreensão isolada não desmonta rota: o estado passa a articular de forma contínua suas\nforças de fronteira com as forças federais, tratando o corredor do narcotráﬁco como\nproblema estrutural de Mato Grosso.\n\n5. Dado de criminalidade aberto ao cidadão.\nQuem não conhece o risco não pode cobrar solução: portal público com mapa de\ncriminalidade por tipo de crime, unidade policial e período, e expansão do monitoramento por\ncâmeras para os municípios do interior ainda fora do programa.\n\n17"
+          },
+          {
+            "id": "plano-de-governo-18",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n6. Trabalho e qualiﬁcação dentro da unidade prisional.\nAmpliar as oportunidades de educação, trabalho remunerado e qualiﬁcação proﬁssional\ndentro das unidades prisionais, com trabalho remunerado que garante remição de pena,\nforma o preso para o mercado e devolve parte da remuneração ao custeio da própria\nunidade.\n\n7. Fim da superlotação como método.\nCadeia com mais preso do que vaga não cumpre pena, incuba facção: enfrentamento do\ndéﬁcit de vagas priorizando mutirão permanente de revisão de situação processual, para\nreduzir o excesso de presos provisórios, e alternativas penais para crime sem violência, com\nampliação da capacidade apenas onde a superlotação persistir mesmo após essas medidas,\npara que a unidade prisional deixe de ser escola de recrutamento do crime organizado.\n\n8. Reinserção de egressos como política de segurança.\nQuem sai da cadeia sem nenhuma porta volta a ela: expansão para todas as regiões do\nestado dos escritórios sociais de acompanhamento de egressos, com trabalho,\ndocumentação e encaminhamento proﬁssional — modelo que já reduziu reincidência onde foi\naplicado.\n\n9. Desafogamento do sistema socioeducativo\nAdolescente em unidade superlotada não se recupera, se proﬁssionaliza no crime: ampliação\nde vagas para eliminar o déﬁcit e programa obrigatório de reinserção escolar e proﬁssional\npara todo adolescente em cumprimento de medida.\n\n10. Polícia que aparece antes do crime.\nQuando a força de segurança só chega para reprimir, ela perde a comunidade que precisa ter\nao lado: programas permanentes de prevenção nos bairros mais vulneráveis — esporte,\ncultura, escola e enfrentamento ao álcool e às drogas —, conselhos de segurança com poder\nreal de propor e cobrar ações, e atuação integrada da segurança com educação, saúde e\nassistência social, porque a violência não nasce dentro da delegacia.\n\n11. Valorizar quem faz a segurança pública.\nCobra-se do agente de segurança o que não se oferece a ele: política permanente de\ncapacitação, apoio psicossocial e cuidado com a saúde mental dos proﬁssionais das forças\nestaduais, com carreira valorizada e compatível com a função em cada força — Polícia\nMilitar, Polícia Judiciária Civil, Corpo de Bombeiros, Politec e Polícia Penal —, construída na\nmesma mesa permanente de negociação prevista para todo o funcionalismo, porque agente\nadoecido e sem formação continuada custa caro ao cidadão — em erro, em afastamento e em\nconﬁança perdida.\n\n18"
+          },
+          {
+            "id": "plano-de-governo-19",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente IV - Cuidado que empodera\nA mulher mato-grossense: segurança, saúde e autonomia\nDiagnóstico\nMato Grosso está entre os estados que mais matam mulheres no Brasil: foi o primeiro do\npaís em taxa de feminicídio em 2023, manteve a liderança em 2024 e caiu para a terceira\ncolocação em 2025, com 2,7 casos por 100 mil mulheres. A queda é real e mostra que a violência\nletal contra a mulher pode ser reduzida — mas o estado segue entre os três piores do país, e das\nmulheres assassinadas em 2025, 55,8% foram vítimas de feminicídio, contra uma média nacional\nde 44,4%: matar mulher continua sendo, proporcionalmente, muito mais comum aqui do que no\nresto do Brasil. E essa melhora recente não está garantida por nenhuma estrutura permanente: o\nestado segue sem Secretaria própria da Mulher e sem plano estadual com metas e orçamento.\nO quadro se repete na saúde: Mato Grosso é o 8º pior estado do país em mortalidade materna,\ncom 64,9 óbitos por 100 mil nascidos vivos, distante da própria meta de 40 ﬁxada para 2024. E a\npolítica para a mulher mato-grossense está hoje espalhada pela saúde, pela segurança, pela\nassistência social e pelo desenvolvimento econômico, sem que nenhum órgão responda pelo\nconjunto — por isso este plano reúne, num eixo só, o diagnóstico e o compromisso completo do\nEstado com a mulher.\n\nAs propostas\n1. Secretaria de Estado da Mulher, com orçamento próprio.\nSuperintendência não comanda política de Estado: a nova Secretaria coordenará todas as\nações de proteção à mulher, com plano estadual de metas e prazos inscrito no orçamento e\nsujeito a prestação de contas.\n\n2. Rede de proteção que funciona 24 horas.\nA mulher em risco não escolhe o horário do socorro, e mulher com medida protetiva continua\nsendo morta em Mato Grosso — o papel sozinho não protege: Casas Regionais de Cuidado da\nMulher reunindo num só lugar atendimento psicossocial, delegacia, Defensoria Pública e\nalojamento provisório, com delegacias especializadas abertas dia e noite, disque-denúncia\nestadual, dispositivo de emergência ligado diretamente à polícia para a mulher sob medida\nprotetiva, com resposta prioritária ao acionamento, e acompanhamento ativo do agressor,\ncom o descumprimento da medida tratado como urgência e não como ocorrência de rotina.\n\n3. Enfrentamento à violência sexual, com a rede inteira treinada para enxergá-la.\nA vítima de violência sexual costuma passar por vários serviços do Estado sem que nenhum\nsaiba o que fazer com ela: plano estadual de enfrentamento à violência sexual com\natendimento rápido, sigiloso e humanizado, capacitação de toda a rede pública — saúde,\nassistência social, educação, segurança e justiça — para reconhecer sinais de violência e\nencaminhar corretamente, e núcleos regionais de apoio técnico aos proﬁssionais que\natendem essas mulheres no interior.\n\n19"
+          },
+          {
+            "id": "plano-de-governo-20",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n4. Violência contra a mulher também é caso de saúde.\nA mulher agredida chega ao posto e ao pronto socorro antes de chegar à delegacia, e muitas\nvezes volta para casa sem que ninguém tenha perguntado nada: rede formada para\nreconhecer sinais de violência, acolher sem julgamento e notiﬁcar; acolhimento com\nprivacidade 24 horas nos hospitais e unidades de referência; coleta de vestígios e proﬁlaxia\nimediata na violência sexual; núcleos de prevenção e grupos de apoio nas grandes unidades;\nacompanhamento psicológico de longo prazo para quem sobreviveu; e encaminhamento\nformal entre saúde, assistência social, segurança e justiça, para a mulher não precisar repetir\na mesma história em cada porta.\n\n5. Os ﬁlhos que ﬁcam.\nQuando uma mulher é assassinada, ﬁcam os ﬁlhos — e hoje o Estado não tem serviço nenhum\npara eles: acompanhamento psicológico, social e educacional garantido às crianças e\nadolescentes órfãos do feminicídio e aos atingidos pela violência doméstica, com\nresponsabilidade deﬁnida e acompanhamento até a vida adulta.\n\n6. Saúde da mulher em todas as regiões, do pré-natal ao puerpério e ao climatério,\nnão só na capital.\nGestante que não é acompanhada é mãe e ﬁlho em risco, e a mulher do interior descobre\ntarde o que a da capital descobre cedo — o que acontece do pré-natal à hora do parto ainda\ndepende de onde ela teve a sorte de ser atendida: o estado pactua com os municípios a busca\nativa e o acompanhamento de cada gestante do território, para reverter a mortalidade\nmaterno-infantil acima da média nacional; mutirões de exames e cirurgias femininas,\nrastreamento do câncer de mama e do colo do útero, atendimento para endometriose e\nclimatério, unidades móveis onde não há serviço próprio, centros de referência em saúde da\nmulher por região e protocolo de parto humanizado em toda a rede — com acompanhante\ngarantido, respeito às práticas culturais das mulheres indígenas e do campo e revisão\nobrigatória de cada morte materna.\n\n7. Autonomia econômica para quem precisa romper o ciclo da violência.\nMulher que depende ﬁnanceiramente do agressor não consegue sair de casa: fundo estadual\nde políticas para as mulheres, prioridade em qualiﬁcação proﬁssional e intermediação de\nemprego para a mulher em situação de violência, e habitação provisória enquanto ela não\npuder voltar a morar onde morava.\n\n8. Autonomia econômica da mulher mato-grossense.\nMulher sem renda própria não decide nada da própria vida: crédito orientado e apoio à\nformalização como microempreendedora individual, cooperativas e feiras regionais de\nprodução feminina, acesso das mulheres às compras públicas do estado e incentivo às\nempresas que contratam e qualiﬁcam mulheres — com prioridade para mães solo, mulheres\nrurais, indígenas, quilombolas e com deﬁciência.\n\n20"
+          },
+          {
+            "id": "plano-de-governo-21",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n9. Orçamento da mulher visível no orçamento do Estado.\nPolítica sem rubrica própria é política que some no primeiro aperto de caixa: os recursos\ndestinados às políticas para as mulheres passam a ter identiﬁcação própria no orçamento\nestadual, com execução publicada e acompanhável pela sociedade — a mesma régua de\ntransparência que este plano cobra do resto do governo.\n\n21"
+          },
+          {
+            "id": "plano-de-governo-22",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente V - Cuidado que transforma\nRodovias, saneamento, habitação, logística, mobilidade e energia\nDiagnóstico\nEm infraestrutura, Mato Grosso não tem problema de orçamento — tem problema de\nentrega. Dos mais de 32 mil quilômetros de rodovias estaduais, cerca de 6.800 estavam\npavimentados, e a pesquisa CNT de 2024 classiﬁcou 35,9% do trecho estadual avaliado como\nruim ou péssimo, com 822 quilômetros em condição crítica. No mesmo período, a secretaria de\ninfraestrutura recebeu o maior salto orçamentário de todo o plano plurianual — mais que\ntriplicou sua dotação — e é o único órgão do estado com falha em obras apontada pelo Ministério\nPúblico de Contas três anos seguidos.\nO resto do quadro repete a lógica: o estado atende 85,9% da população com água, mas só 58,7%\ncom coleta de esgoto e 51,3% com tratamento, e perde quase metade da água que produz na\nprópria distribuição. As ferrovias seguem sem cronograma público e vinculante, e a mobilidade\nsobre trilhos de Cuiabá, iniciada em 2012 e paralisada em 2015 por suspeita de fraude,\ncontinuava em discussão mais de uma década depois.\n\nAs propostas\n1. Pavimentação por criticidade técnica, com painel público de obras.\nO critério hoje não é claro para ninguém: os trechos em pior estado passam à frente, com\ncronograma divulgado e painel de acompanhamento aberto a qualquer cidadão.\n\n2. Universalização do saneamento com meta por região.\nA média estadual esconde o interior: meta escalonada região a região, priorizando os\nmunicípios hoje sem dado consolidado, e retomada da série estadual de indicadores para que\no avanço possa ser cobrado ano a ano.\n\n3. Política habitacional própria de Mato Grosso.\nHabitação não pode seguir como apêndice de outra política: linha estadual de ﬁnanciamento\npopular, com meta de unidades habitacionais por região, e mutirão de regularização\nfundiária urbana e rural nas periferias e no interior.\n\n4. Cronograma vinculante para a logística e a mobilidade.\nPromessa sem data é promessa que não vence. Deﬁnir traçado, responsabilidades e prazos\npara as ferrovias do Estado, com prestação de contas trimestral sobre o avanço físico,\narticulação interfederativa permanente, deﬁnição transparente das responsabilidades da\nUnião, do Estado e dos municípios e prestação pública de contas sobre o cumprimento de\ncada compromisso pactuado. Retomar a mobilidade estruturante de Cuiabá e Várzea\nGrande com cronograma público e marcos trimestrais.\n\n22"
+          },
+          {
+            "id": "plano-de-governo-23",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n5. Energia e internet no interior como pré-condição.\nSem elas nenhuma outra política chega: programa de eletriﬁcação rural e ampliação da\nconectividade digital nos municípios do interior, tratados como infraestrutura básica e não\ncomo item residual.\n\n6. Inventário público das obras paradas, com plano de retomada.\nO estado não sabe dizer ao cidadão quantas obras estão paradas nem por quê: levantamento\npúblico de toda obra estadual iniciada e não concluída, com o motivo da paralisação, o custo\njá gasto e a decisão de retomar ou encerrar — antes de anunciar obra nova.\n\n7. Corpo técnico à altura do orçamento que se recebe.\nO próprio controle externo apontou o quadro de pessoal defasado da secretaria de\ninfraestrutura como causa da má execução: concurso e recomposição da engenharia e da\nﬁscalização de contratos do estado, porque orçamento recorde sem gente para tocar obra\nvira obra atrasada.\n\n8. Fim das pontes de madeira nas estradas do estado.\nEstrada que termina em ponte de madeira é safra parada, ônibus escolar que não passa e\nambulância que não chega: programa estadual de substituição das pontes de madeira por\nestrutura de concreto, começando pelas rotas de escoamento da produção e pelos trechos\nde acesso a escola e a serviço de saúde.\n\n23"
+          },
+          {
+            "id": "plano-de-governo-24",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente VI - Cuidado que desenvolve\nEconomia, Meio Ambiente e Agricultura\nDiagnóstico\nMato Grosso produz quase um terço dos grãos do Brasil, mas distribui muito mal as\ncondições dessa produção: 68,79% dos estabelecimentos agropecuários do estado são de\nagricultura familiar e ocupam apenas 9,34% da área rural — e, entre eles, só 15,91% acessam\ncrédito, enquanto 87,49% não recebem nenhuma assistência técnica. A economia cresceu, com o\nestado saltando da 13ª para a 10ª maior do país, mas sem mudar de natureza: a agropecuária\nresponde por 21% do PIB e a indústria de transformação por apenas 17,4%.\nNo meio ambiente está o dado mais grave do eixo. Entre agosto de 2024 e julho de 2025,\nMato Grosso foi o único estado da Amazônia Legal com aumento de desmatamento, enquanto os\noutros oito reduziram, e passou a responder por mais de um quarto da área desmatada do bioma\nno período — no mesmo plano plurianual em que o eixo ambiental recebe 0,7% do orçamento do\nExecutivo, o menor de todos, e no mesmo estado em que 77,2% da consulta pública pediram mais\nmonitoramento da poluição dos rios.\n\nAs propostas\n1. Crédito e assistência técnica para a agricultura familiar.\nQuem produz alimento no pequeno não pode ser o único sem porta no banco: linha de crédito\ne assistência técnica dedicadas, para corrigir o desequilíbrio de acesso — sem reduzir o apoio\nao agronegócio de escala, que atua dentro da lei, cumpre seus compromissos\nsocioambientais — incluindo acordos privados de rastreabilidade como a Moratória da Soja —\ne sustenta a economia do estado. Fomento a cultivos de maior valor agregado adaptados ao\nclima do estado, como sistemas semi-hidropônicos de hortifrutigranjeiros em regiões\nquentes, ampliando a renda por hectare da agricultura familiar.\n\n2. Força-tarefa contra quem opera fora da lei.\nFiscalizar o infrator é proteger quem cumpre a lei: integração entre meio ambiente e\nsegurança pública contra o desmatamento criminoso, o garimpo e a extração de minerais\nilegais, com o produtor regularizado como parceiro da ﬁscalização, universalização do\ncadastro ambiental rural digital e revisão do ICMS Ecológico para remunerar quem protege o\nterritório.\n\n3. Diversiﬁcação econômica para além do agro.\nDepender de uma commodity é depender do humor do mercado: incentivo à indústria de\ntransformação e à bioeconomia e política estadual de geologia e recursos minerais — hoje\ninexistente num dos cinco maiores produtores minerais do país —, com mapeamento\ngeológico, qualiﬁcação de mão de obra nos municípios minerados e centro tecnológico com\nas universidades.\n\n24"
+          },
+          {
+            "id": "plano-de-governo-25",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n4. Pesquisa e inovação como a Constituição estadual já manda\nA regra existe e o estado não cumpre: destinação efetiva dos recursos de pesquisa,\ntecnologia e inovação previstos na Constituição de Mato Grosso, com bolsas competitivas\ncom as de outros estados, para o estado parar de formar e perder seus pesquisadores.\n\n5. Ambiente de negócios como política pública.\nQuem gera emprego no interior precisa de um Estado que facilite: programa de\ndesburocratização e crédito para a pequena e a média empresa, com a geração de emprego\nformal no interior acompanhada por indicador próprio de distribuição regional.\n\n6. Uma só porta para quem quer investir em Mato Grosso.\nInvestidor hoje precisa entender sozinho o que cabe à SEDEC, ao Invest MT, ao Desenvolve MT\ne à MTPar, e cada órgão toca sua parte isoladamente: integração efetiva da atuação desses\nquatro órgãos na promoção de investimentos, com estratégia, agenda e indicadores únicos\nde atração e acompanhamento de investidores.\n\n7. Mato Grosso com endereço comercial no mundo.\nUm único escritório comercial, na China, atende só uma fração do mercado que o estado pode\nalcançar: ampliação da rede de escritórios comerciais para outros países estratégicos e\nagenda permanente de missões comerciais internacionais, para atrair investimento e abrir\nmercado à produção mato-grossense.\n\n8. Orçamento ambiental compatível com o tamanho do problema.\nNão se combate o maior desmatamento da Amazônia Legal com a menor fatia do orçamento:\nrecomposição da verba ambiental e do efetivo de ﬁscalização, dimensionados pelo território.\n\n9. Água limpa e nascente recuperada.\nMonitorar a poluição dos rios é uma das maiores demandas da consulta pública, e é o que\nmenos se faz: monitoramento estadual da qualidade da água com resultado publicado,\nrecuperação de nascentes e matas ciliares junto ao produtor rural, e responsabilização de\nquem polui.\n\n10. Emissões medidas e auditadas, não apenas anunciadas.\nMeta divulgada sem veriﬁcação não vale no debate público: relatório periódico de emissões e\ndo avanço da meta de carbono neutro, veriﬁcado por instituição independente.\n\n11. Política estadual de pesquisa, desenvolvimento e inovação.\nUniversidade, empresa e instituto de pesquisa trabalham hoje de costas um para o outro, e a\nboa ideia morre antes de virar produto: política estadual que articule o setor produtivo, as\nuniversidades, os institutos de pesquisa e o governo, com editais regulares de pesquisa,\ninovação e extensão tecnológica e apoio a ambientes de inovação e à transferência de\ntecnologia para quem produz no estado. Isso inclui um polo ou incubadora dedicado a\nsoluções tecnológicas inteligentes para a produção e a otimização do agronegócio,\narticulado com universidades, institutos de pesquisa e o setor produtivo.\n\n25"
+          },
+          {
+            "id": "plano-de-governo-26",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n12. Mato Grosso como sede de pesquisa nacional, não só como objeto dela.\nEstuda-se muito Mato Grosso de fora para dentro, e o estado sedia pouco do que se pesquisa\nsobre ele: articulação permanente com o Governo Federal para ampliar a presença de\ninstituições estratégicas de pesquisa no estado — novos centros temáticos e fortalecimento\ndas estruturas já existentes, como a Embrapa na Baixada Cuiabana — em agronegócio,\nbiodiversidade, recursos naturais, energia, sustentabilidade e saúde.\n\n13. Pós-graduação forte e ciência mato-grossense reconhecida fora.\nFormar mestre e doutor sem inserção internacional é formar pela metade: fortalecimento\ndos programas de pós-graduação do estado e editais de cooperação com universidades,\ncentros de pesquisa e organismos internacionais, para que a produção cientíﬁca feita aqui\ncircule e atraia investimento de volta.\n\n14. Valor agregado onde hoje só se tira minério.\nMunicípio minerado que exporta pedra bruta e não ﬁca com nada é município que empobrece\nquando a mina fecha: fomento à lapidação de gemas e pedras preciosas como economia\ncriativa e apoio a outras cadeias produtivas nos municípios de atividade mineral, para que a\nriqueza do subsolo deixe alguma coisa em cima dele.\n\n15. Turismo de natureza como motor econômico do interior.\nMato Grosso tem Pantanal, Chapada dos Guimarães, Araguaia, águas cristalinas e enorme\ndiversidade cultural e ambiental, e vende pouco do que tem: criar política estadual de turismo\ncom regionalização de roteiros, infraestrutura de acesso, sinalização, proteção dos\nambientes naturais e capacitação proﬁssional. Apoiar o ecoturismo, o turismo de\nobservação da fauna, a pesca esportiva, o turismo cultural, cientíﬁco e de base comunitária,\nsempre de forma compatível com os planos de conservação de cada bioma. Promover Mato\nGrosso dentro e fora do país, gerando emprego e renda no interior com conservação\nambiental e participação das comunidades locais — porque turismo gera emprego onde o\nagro emprega pouco.\n\n15. Saúde e proteção animal.\nApoiar os municípios com programas de castração gratuita, consultas, exames e\natendimento veterinário para famílias de baixa renda e animais resgatados, além de\nimplantar um Hospital Veterinário Público Estadual.\n\n26"
+          },
+          {
+            "id": "plano-de-governo-27",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n\nFrente VII - Cuidado com responsabilidade\nGestão Pública, Fiscal e Governo Digital\nDiagnóstico\nO problema ﬁscal de Mato Grosso não é falta de arrecadação — é a distância entre o que\nse orça e o que se entrega. O parecer do Tribunal de Contas sobre as contas de 2024 mostra\nprogramas-chave executados muito abaixo do previsto: saneamento executou cerca de 4% do\norçado, o programa habitacional entregou 404 moradias com apenas uma de dez parcerias\nﬁrmadas, e o BRT de Cuiabá e Várzea Grande chegou a cerca de 15% do planejado.\nE, quando o termômetro incomoda, o governo troca o termômetro. Na revisão do plano\nplurianual de janeiro de 2026, o estado excluiu o indicador de transparência que permitia\ncomparação com os demais estados — alegando falta de apuração da fonte — e o substituiu por\num índice interno, sem histórico e sem comparação possível. Mato Grosso é hoje o 13º colocado\nno ranking nacional de transparência: se o indicador tinha problema de apuração, a resposta era\ncorrigir a apuração, não abandonar a régua.\n\nAs propostas\n1. Piso de 15% da receita para investimento.\nInvestimento é a primeira coisa a ser sacriﬁcada quando aperta: ao menos 15% da Receita\nCorrente Líquida — o dinheiro que o estado efetivamente tem para gastar — passam a ser\naplicados por ano em ações econômicas e sociais, no mesmo formato do piso que já existe\npara a saúde.\n\n2. Devolução do ICMS (Cash Back) para quem mais sente o imposto.\nO imposto sobre o consumo pesa mais no bolso de quem ganha menos: programa estadual de\ndevolução do ICMS às famílias do Cadastro Único com renda de até três salários-mínimos,\nantecipando em Mato Grosso o que a reforma tributária federal só entrega no ﬁm da década,\ncom impacto ﬁscal estimado e compensado na forma da Lei de Responsabilidade Fiscal.\n\n3. Transparência que se pode cobrar e governo digital que termina o serviço.\nRégua trocada é cobrança impedida, e sistema que não conversa com outro joga o cidadão\nde ﬁla em ﬁla: volta o indicador de transparência comparável com outros estados, com portal\núnico trazendo as metas de cada eixo de governo — e não só a execução do orçamento —,\ncanal de controle social com poder real de acompanhar obras e contratos, integração\nconcluída das bases entre os órgãos estaduais e serviços do estado disponíveis do começo\nao ﬁm em canal digital único, com indicador público de adesão por secretaria. Ampliação do\nnúmero de unidades do Ganha Tempo pelo interior do estado, para que o atendimento\npresencial acompanhe o mesmo padrão de agilidade do canal digital.\n\n26"
+          },
+          {
+            "id": "plano-de-governo-28",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n2027 - 2030\n4. Estado eﬁciente, servidor valorizado e serviço que chega.\nExecutar 4% do previsto não é gestão. Reorganizar estruturas e funções que hoje se\nsobrepõem, reduzir burocracias e estabelecer metas de execução e entrega por programa e\nsecretaria. Valorizar o servidor por meio de mesa permanente de negociação com as\nentidades representativas, tratando de carreira, remuneração e condições de trabalho,\ndentro da responsabilidade ﬁscal do Estado. O desempenho será acompanhado para corrigir\nproblemas e reconhecer coletivamente as equipes, nunca para retirar direitos ou promover\ndesligamentos por avaliação individual. Implantar controle permanente da folha de\npagamento para prevenir e corrigir inconsistências antes que causem prejuízo ao erário.\n\n5. Preparar Mato Grosso para o ﬁm dos benefícios de ICMS.\nEntre 2029 e 2033 os incentivos ﬁscais de hoje deixam de existir: o estado mapeará sua\nexposição e construirá um novo modelo de atração de investimento baseado em crédito,\nlogística e qualiﬁcação de mão de obra, com fundo estadual de empreendedorismo que\npriorize as cidades mais pobres.\n\n6. Pauta ﬁscal própria, levada à Assembleia Legislativa.\nMato Grosso não tem hoje projeto ﬁscal e tributário próprio — apenas reage ao que vem de\nBrasília: o governo enviará à Assembleia sua própria proposta ﬁscal-tributária e prestará\ncontas periódicas do resultado ﬁscal do estado, e não apenas da arrecadação bruta, com a\nsérie completa aberta ao cidadão.\n\n7. Dinheiro que chega ao município pobre.\nRepasse cego à realidade local aprofunda desigualdade: aprofundamento da reforma do\níndice de participação dos municípios, antecipando em lei estadual as premissas de\ndistribuição da reforma tributária, e extensão do critério de vulnerabilidade social — hoje já\nusado nos repasses estaduais de saúde — aos demais repasses voluntários do orçamento.\n\n8. Não roubar e não deixar roubar, com transparência e ﬁscalização permanente.\nExigir declaração anual de bens e rendimentos do governador, vice-governador, secretários\ne demais integrantes do primeiro escalão, estendendo a obrigação a cônjuges e ﬁlhos, com\nentrega aos órgãos de controle e regras de publicidade compatíveis com o sigilo ﬁscal e a\nproteção de dados, permitindo identiﬁcar evolução patrimonial incompatível durante o\nexercício do cargo, inclusive entre seus familiares.\n\nMato Grosso tem uma dívida com você. Este plano é o compromisso\nde pagá-la, com gestão, com transparência e com cuidado.\nTem que fazer diferente. Tem que cuidar de gente.\n\nNatasha Slhessarenko\nCandidata a Governadora de Mato Grosso\n\nDiogo Botelho\n\nCandidato a Vice-Governador de Mato Grosso\n\n27"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "4b755139d70fc46f362be942b8065abb96743608c8117455ff8e2787b7bf8eec"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "25c76ac9499023084462dccc80381a750d754a89610388ce23f41f1bd6dfa8cf"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "d133bbdf3f8afe4d28d5034037ea1e463232be0dfc0ab80f5d9c1f0fb08231b5"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "645a8e2e2154214cb245ba5567599b10354f79dffcaece82a5a21d91aee05e80"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "be04771dae98acc2e1424793bbbefd907c1bfe81aed6356eed8b634c91d74e74"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e35f12ee94068b57e0d9b19baceb0cbd4fe2dc6aa4d851323fa03f698b59d95d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "ca5d9b1942723a56390368abda33908b39952a42ba90507637ac1c2dda83cf51"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "b288a929f30cada5564228959009b11e1250e6231d9c2b8b44592599e20222b0"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "0243ac7a927f95fa4332e66d57449c7fe3ef2f1d1783e76a8a7a2c9a73eae4e4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "fbb94081cd81e88d0c88fc1ec4035f10fc9beab36c3f2a82cea84d909b02c294"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "247561dee60eb59bc4eeebd725754e161704142c833d6cc76f6180805e301a2b"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a1da99c5235ed1e410cd69beb10ac24a21df29778bf24735a66967fc1119e77f"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "2fbae5c445c81ddadf5e666ece11398f8d2a6dab2c0336dbcb808450273a2184"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1cacf6141327d8daa81fae141dffb425d2da99b2df0efb58296cffc6b87a9845"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "3cf380ac8effed2afdf36b5a84174470a30ee2d045a6f7d94feb0d6cbcbcf2d7"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "8309885b8034649fc5ff3aeb308ad0aae8d6e46a0231de6cff64d17747e07772"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "13045769e8a7b8d4427cf809d2da097a52a6c83f653ecd5630608170cd97c526"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "fd7444ad03fc5d7ce107f50409839930f04fa430758af89fa7dbb9c1a7ee1180"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "9b400d6d8ba39e24ef09063f2b6a36504a159335d432a497308425f02fe6269d"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0097e46918177aabe08dbaaf3f95eb6d410c29910e0ff8dfcd05dc642f66222f"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "ab8affd7642d159fff1cf4a8e23385255b74fa252dceb2764208a131717aa829"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "569ccea1cae24ef7aaa9b2077d846cbbb76d337ac2179c9504e56469d2ab82b5"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "1132f6a2b6ee454b94c1432d7dd1b7b61e7cfa91ed093ba6b3c2523d54da081e"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "5019dabfa74bd3bed8ce17ab766f88bae5c1d2a40c84f1bc168aff1ab2719ee4"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "c48567f11e6b6b3de15d19d918d29139495433c9e542224551fd6c8838a95d06"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "d24f78260dd6034abf3f465d36dd2508c9e65aa151cfd7759da432ea51465dee"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "22317a92bafd53bb8de98db3462f6b889c7f677dc303e4e13b819778d67e3366"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "84bfab5da421a312be64e34726f4c53ee77076b25b297818a6f7fafb5b1eadbf"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "1bd9c1b601134df64fdb59abab45b5b4703edbaf709a33d1b1473578824efbe1"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê alinhar a política estadual aos objetivos do novo Plano Nacional de Educação, conforme as diretrizes apresentadas no documento oficial para a educação pública. O programa propõe que toda criança da rede esteja alfabetizada ao fim do 2º ano, mediante ações de recomposição da aprendizagem previstas para o percurso escolar. O programa planeja criar programa estadual permanente de cofinanciamento com os municípios para ampliar vagas públicas em creches, com oferta gratuita prevista no texto. O programa prevê uma fila única estadual para consulta especializada, com posição do paciente publicada para acompanhamento individual da tramitação regulatória. O programa propõe um portal público com mapa de criminalidade por tipo de crime, permitindo consulta organizada das ocorrências por unidade policial. O programa planeja ampliar a conectividade digital nos municípios do interior, tratando esse serviço como infraestrutura básica para a população dessas localidades.",
+    "frases": [
+      {
+        "texto": "O programa prevê alinhar a política estadual aos objetivos do novo Plano Nacional de Educação, conforme as diretrizes apresentadas no documento oficial para a educação pública.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 7,
+            "trecho": "Estar alinhada, com apoio da comunidade escolar, aos 19 objetivos, 73 metas e 372 estratégias do novo Plano Nacional de Educação (PNE)"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe que toda criança da rede esteja alfabetizada ao fim do 2º ano, mediante ações de recomposição da aprendizagem previstas para o percurso escolar.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 7,
+            "trecho": "Oferecer condições para que toda criança da rede esteja alfabetizada ao fim do 2º ano"
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja criar programa estadual permanente de cofinanciamento com os municípios para ampliar vagas públicas em creches, com oferta gratuita prevista no texto.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 8,
+            "trecho": "para ampliar a oferta pública e gratuita de vagas em creches"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê uma fila única estadual para consulta especializada, com posição do paciente publicada para acompanhamento individual da tramitação regulatória.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 14,
+            "trecho": "central estadual de regulação com ﬁla única para consulta especializada"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe um portal público com mapa de criminalidade por tipo de crime, permitindo consulta organizada das ocorrências por unidade policial.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 18,
+            "trecho": "portal público com mapa de criminalidade por tipo de crime"
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja ampliar a conectividade digital nos municípios do interior, tratando esse serviço como infraestrutura básica para a população dessas localidades.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 24,
+            "trecho": "ampliação da conectividade digital nos municípios do interior, tratados como infraestrutura básica"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-educacional",
+        "titulo": "Planejamento educacional",
+        "descricao": "Alinhamento da política estadual ao Plano Nacional de Educação.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 7,
+            "trecho": "Estar alinhada, com apoio da comunidade escolar, aos 19 objetivos, 73 metas e 372 estratégias do novo Plano Nacional de Educação (PNE)"
+          }
+        ]
+      },
+      {
+        "id": "alfabetizacao-escolar",
+        "titulo": "Alfabetização escolar",
+        "descricao": "Alfabetização da rede escolar ao fim do 2º ano.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 7,
+            "trecho": "Oferecer condições para que toda criança da rede esteja alfabetizada ao fim do 2º ano"
+          }
+        ]
+      },
+      {
+        "id": "creche-publica",
+        "titulo": "Creche pública",
+        "descricao": "Ampliação de vagas públicas em creches.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 8,
+            "trecho": "para ampliar a oferta pública e gratuita de vagas em creches"
+          }
+        ]
+      },
+      {
+        "id": "regulacao-da-saude",
+        "titulo": "Regulação da saúde",
+        "descricao": "Fila única estadual para consulta especializada.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 14,
+            "trecho": "central estadual de regulação com ﬁla única para consulta especializada"
+          }
+        ]
+      },
+      {
+        "id": "dados-de-criminalidade",
+        "titulo": "Dados de criminalidade",
+        "descricao": "Portal público com mapa de criminalidade por tipo de crime.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 18,
+            "trecho": "portal público com mapa de criminalidade por tipo de crime"
+          }
+        ]
+      },
+      {
+        "id": "conectividade-interior",
+        "titulo": "Conectividade no interior",
+        "descricao": "Ampliação da conectividade digital nos municípios do interior.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002544985:01",
+            "pagina": 24,
+            "trecho": "ampliação da conectividade digital nos municípios do interior, tratados como infraestrutura básica"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:14:21.958Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:16:36.580Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o alinhamento ao PNE."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não cita números específicos a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:1:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 7 detalha ações de recomposição (busca ativa, tutoria) junto à meta de alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "O número '2º ano' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (alfabetização/recomposição)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:2:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas pelo texto integral da página 7."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 8 confirma o programa de cofinanciamento e a oferta pública e gratuita."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta sobre creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:3:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pelo texto integral da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 14 confirma a fila única e a publicação da posição de cada paciente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de regulação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:4:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Texto integral da página cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 18 confirma portal com mapa por tipo de crime e unidade policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta sobre dados de criminalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:5:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Texto integral da página cobre a cláusula de unidade policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta sobre conectividade."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:frase:6:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:planejamento-educacional:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo temático totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "'2º ano' sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:alfabetizacao-escolar:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:creche-publica:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:regulacao-da-saude:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:dados-de-criminalidade:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002544985:tema:conectividade-interior:documentos:MT:110002544985:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MT:110002544985",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MT:110002544985:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36551,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3638,
+          "reasoning_output_tokens": 2550
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23694,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21074,
+          "output_tokens_details": {
+            "thinking_tokens": 1506
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23694,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21074,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23694,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23694
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3240754
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "7fd01763297bbce7ce4bf327d0d896382fa97be7280ff8f5eb1e86641db81ef5",
+    "extractedTextSha256": "0c9d09f4d09b57689ae93c415bcd4d3b673e9c87c71ed2b6e8fc43e6de7fd9a7",
+    "documentCount": 1,
+    "documentSetSha256": "9b0570f543e88008ec9d393c9d11e7ac54610e6d61efb9e15b4e8aae9111fcce",
+    "contentSha256": "f4866c3888847b942db82a5b915cb9784d88d139cc97cad3447a4830482f903f"
+  }
+}

@@ -1,0 +1,1508 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002550464",
+    "slug": "patrus-ananias",
+    "nomeUrna": "PATRUS ANANIAS",
+    "partido": "PT",
+    "arquivoNome": "2026MG130002550464_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002550464_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002550464:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002550464_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002550464_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "edf7c6ac2ad4aad4931bdd8a929ab7595b9583f9c2a1e208e13b0298a26dc774",
+        "extractedTextSha256": "4bcff55921c88c18f8134570b1d6544761ad68d27f5acfc382b17122a5eab0ef",
+        "paginas": 68,
+        "secoes": [
+          {
+            "id": "coordenadora-do-plano-de-governo",
+            "titulo": "Coordenadora do Plano de Governo:",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Coordenadora do Plano de Governo:\nSandra Goulart Almeida\n\n1"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nNosso plano de governo busca reposicionar Minas Gerais no cenário nacional, fortalecendo\nsua autonomia, seu protagonismo político e sua contribuição para o desenvolvimento do\npaís. As propostas aqui reunidas organizam prioridades estratégicas para enfrentar os\nprincipais desafios do estado e orientar a ação do governo, reunindo forças políticas e\nsociais em torno da candidatura de Patrus Ananias e de um novo projeto para Minas Gerais.\nEste plano é resultado de um processo coletivo e, ao longo da campanha, continuará sendo\naperfeiçoado com novas contribuições de especialistas e pesquisadores; representantes\nde entidades; trabalhadores; movimentos sociais; representantes do meio empresarial,\nindustrial e comercial e de outros setores da sociedade mineira, reafirmando o compromisso\ncom a construção de um projeto democrático para Minas Gerais.\nApesar dos importantes investimentos sociais que o Governo Federal promoveu no\nEstado de Minas Gerais, o descompromisso do atual governo de Minas com as políticas\npúblicas e sociais agravou problemas que são evidentes para quem vive no estado:\na superlotação dos equipamentos de saúde, a crise na educação, o crescimento da\npopulação em situação de rua, o aumento da violência contra as mulheres, os crimes\nsocioambientais, a falta de planejamento para enfrentar a emergência climática, o descaso\ncom a infraestrutura e as rodovias estaduais, o caos no transporte público e no trânsito\nde grande parte das cidades, entre outros problemas. À revelia dos interesses populares,\nobservamos nos últimos anos a sanha por privatizar estatais de referência para o Estado\ncomo a COPASA e Cemig, bem como diversos serviços de saúde e até a educação.\nPara transformar essa realidade, nosso plano de governo reúne propostas para o\ndesenvolvimento social, econômico, cultural e ambiental de Minas Gerais, articuladas em\ntorno dos principais desafios do estado. Todos os aspectos são tratados a partir de três\npilares que sustentam uma forma de planejar e executar as políticas públicas que visam\na recuperar e ampliar as capacidades da economia mineira e promover qualidade de vida\npara a população, sempre respeitando e valorizando a diversidade cultural, territorial e\npopulacional do estado. São eles:"
+          },
+          {
+            "id": "1-prioridades-no-planejamento",
+            "titulo": "1) Prioridades no planejamento",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1) Prioridades no planejamento\ne na gestão das políticas públicas\nVisando a reduzir as desigualdades econômicas e sociais de Minas Gerais, propõe-se\ncritérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar\nregiões e territórios historicamente excluídos e vulnerabilizados. A inversão de prioridades\ncom relação ao que se observou nos últimos anos é, portanto, uma mudança de mentalidade\ncom relação às responsabilidades do Estado e chave para se alcançar a universalização\nde direitos e o acesso da população mais vulnerabilizada a serviços de saúde, educação,\nhabitação, mobilidade, saneamento, segurança pública, esporte e cultura.\nA transformação digital e as potencialidades trazidas pelas tecnologias de inteligência\nartificial podem representar uma oportunidade para construir um Estado mais eficiente,\ntransparente, participativo e orientado por evidências. O Governo de Minas promoverá o uso\nético e responsável dessas tecnologias, colocando-as a serviço da população, conjugado\ncom uma atenção humanizada, da melhoria da eficácia dos serviços públicos, da redução\ndas desigualdades, do combate à desinformação e do fortalecimento da democracia.\n\n2) Participação popular, gestão democrática\ne descentralização administrativa\nO estabelecimento das prioridades e os novos critérios redistributivos serão debatidos\ne elaborados coletivamente, a partir de processos envolvendo métodos de planejamento\ne orçamento participativo já amplamente conhecidos e consolidados, assim como novas\ntecnologias de diálogo e escuta da população, combinando espaços contínuos de diálogos\npresenciais e por meio de plataformas digitais, assegurando a participação plural e\nrepresentativa da diversidade social, territorial, étnico-racial, geracional e de gênero de\nMinas Gerais. A participação é, portanto, mais do que um instrumento de consulta eventual.\nÉ forma e método de construir, implementar e monitorar políticas públicas.\nRecuperando e atualizando as experiências participativas de Patrus Ananias como\nprefeito de Belo Horizonte, uma administração estadual mais descentralizada, menos\nconcentrada apenas na Região Metropolitana de Belo Horizonte, permitirá ao Estado\ncompreender melhor os desafios locais e regionais, assim como elaborar melhores\nrespostas para a especificidade desses desafios, trazendo a administração estadual para\nmais perto da vida dos mineiros."
+          },
+          {
+            "id": "3-desenvolvimento-das-potencialidades-mineiras-respeitando-e",
+            "titulo": "3) Desenvolvimento das potencialidades mineiras, respeitando e",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "3) Desenvolvimento das potencialidades mineiras, respeitando e\nvalorizando a diversidade econômica, cultural e territorial de Minas Gerais\nÉ compromisso de Patrus Ananias dar o devido valor à relevância territorial, histórica e\ncultural do estado de Minas Gerais. O reconhecimento e a valorização da riqueza de nossa\ngente e de nosso território serão processados por meio da recuperação das capacidades\nde desenvolvimento das diversas regiões do estado. Os instrumentos de planejamento e de\nfinanciamento do desenvolvimento serão organizados para potencializar as capacidades\njá instaladas e abrir novos caminhos de geração de oportunidades, trabalho, renda e\nqualidade de vida para o povo mineiro, fortalecendo a soberania de Minas Gerais sobre\nseus recursos estratégicos e suas capacidades produtivas. Nesse sentido, firma-se o\ncompromisso com um modelo de desenvolvimento socioambientalmente sustentável,\ncom a proteção e a valorização do meio ambiente, a preservação cultural, o enfrentamento\ndas mudanças climáticas, e o respeito aos variados biomas, fauna, flora, serras e águas\nde Minas, preparando nosso estado para uma transição energética socialmente justa,\neconomicamente viável e ecologicamente equilibrada.\n\nAssim, resgatam-se princípios que Patrus Ananias sempre elaborou e colocou\nem prática ao longo de sua trajetória nos poderes executivo e legislativo, em Belo\nHorizonte e no Brasil."
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nEducação .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .\nEducação Básica – da Educação Infantil ao Ensino Médio\nEducação Profissional Técnica\nEducação Superior\n\n6\n\nSaúde .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 13\nSegurança Alimentar, Moradia, Assistência Social e Políticas de Cuidado  .  .  . 17\nSoberania e Segurança Alimentar e Nutricional\nPolíticas Sociais e de Cuidados\nMoradia\n\nMeio Ambiente e Desenvolvimento Sustentável  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22\nEnfrentamento à crise climática, justiça e governança climática\nSaneamento Básico em Minas Gerais\nDireito dos Animais\n\nPolítica Minerária Soberana .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .\nMineração Responsável e Desenvolvimento Regional\nMinerais Críticos, Terras Raras e Justiça Territorial\n\n27\n\nCiência, Tecnologia e Inovação  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 31\nSegurança Pública Cidadã  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 35\nDesenvolvimento Produtivo, Competitivo e Inclusivo .  .  .  .  .  .  .  .  .  .  .  .  . 38\nDiversificação econômica\nTrabalho e Emprego\nEmprego verde como estratégia de desenvolvimento econômico\n\nAções para o Agronegócio, Agricultura Familiar\ne Agroecologia de Minas Gerais  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .\nAções para o Agronegócio de Minas Gerais\nAções para a Agricultura Familiar e Urbana e para Agroecologia de Minas Gerais\n\n42\n\nFinanças Públicas, Tributação e Política Fiscal .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 46\nDesenvolvimento Regional, Integração e Infraestrutura de Minas Gerais .  .  .  . 49\nDesenvolvimento e Integração Regional\nMobilidade e Infraestrutura\nInfraestrutura para o desenvolvimento social e econômico\n\nDesenvolvimento Territorial e Participativo de Minas Gerais  .  .  .  .  .  .  .  .  . 53\nCultura . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .56\nTurismo, Esporte e Lazer .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 60\nTurismo\nEsporte e Lazer\n\nPromoção dos Direitos Humanos, da Cidadania e da Igualdade  .  .  .  .  .  .  .  . 64\nPolíticas para as Juventudes; Igualdade Racial; Equidade de Gênero; Direitos das Mulheres, dos Povos\nIndígenas, das Comunidades Quilombolas e da População LGBTQIAPN+"
+          },
+          {
+            "id": "6",
+            "titulo": "6",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "6"
+          },
+          {
+            "id": "a-educacao-e-um-pilar-fundamental-para-o-desenvolvimento-de-um-estado-e",
+            "titulo": "A educação é um pilar fundamental para o desenvolvimento de um Estado e é essencial",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A educação é um pilar fundamental para o desenvolvimento de um Estado e é essencial\npara a construção de um futuro melhor e mais equânime para todos os cidadãos e cidadãs.\nA educação atua como um dos principais motores de transformação social, reduzindo as\ndesigualdades sociais e econômicas ao fornecer oportunidades de melhoria de condições\nde vida e bem-estar. Do ponto de vista cívico, a educação fortalece a democracia, pois\nforma cidadãos e cidadãs conscientes de seus direitos, capazes de exercer o pensamento\ncrítico e de participar ativamente das decisões políticas. Investir em ensino de qualidade,\nem todos os níveis, com acesso para toda a população, é um investimento no futuro e\numa estratégia imprescindível para garantir a saúde, a melhoria da qualidade de vida e o\ndesenvolvimento sustentável de um estado.\nÉ imprescindível que uma proposta para Minas Gerais estabeleça a educação como\ndireito e a partir de uma perspectiva da educação inclusiva e diversa, reconhecendo que\no aprendizado depende também de saúde, alimentação adequada, moradia, segurança,\nvínculos familiares e comunitários e condições de vida dignas. Para isso, o plano de governo\nde Patrus para Minas prevê o fortalecimento da articulação entre as políticas públicas e a\ncooperação com os municípios, garantindo as condições necessárias ao desenvolvimento\nintegral dos estudantes.\nNo plano de governo de Patrus, será priorizada a atenção à educação, em todos os\nníveis. Vamos promover uma política educacional comprometida com a diversidade, a\ninclusão e as desigualdades territoriais de Minas Gerais, reconhecendo as especificidades\ndas diferentes regiões, das populações urbanas e rurais, do campo, das águas e das\nflorestas, dos povos indígenas, quilombolas e demais povos e comunidades tradicionais.\nAs políticas educacionais deverão considerar as desigualdades regionais e territoriais\nna distribuição de recursos, infraestrutura, profissionais e oportunidades educacionais,\ngarantindo condições adequadas de acesso, permanência e aprendizagem em todas as\nregiões de Minas Gerais, em estreita parceria com os municípios.\n\nEducação Básica – da Educação Infantil ao Ensino Médio\nA educação pública de Minas Gerais precisa de um projeto robusto e uma política\nde longo prazo, com estabilidade e segurança. A prioridade é garantir o aprendizado de\nqualidade para cada criança e jovem do nosso estado. O plano de governo de Patrus\nAnanias assume o compromisso de resgatar a escola pública mineira, unindo investimentos\ne políticas públicas para a Educação Básica de Minas Gerais, focando na modernização da\ninfraestrutura escolar, na modernização tecnológica, valorização contínua dos professores\ne na redução das desigualdades regionais. O Estado precisa investir na educação integral,\nbem como conectar o aprendizado às demandas tecnológicas contemporâneas, garantindo\no acesso e a permanência dos estudantes na escola.\nMinas Gerais possui uma ampla Rede de Educação Básica, organizada em regime de\ncolaboração entre Estado e municípios. Enquanto os municípios concentram a oferta da\neducação infantil e dos anos iniciais do ensino fundamental, cabe ao Estado a principal\nresponsabilidade pelos anos finais, pelo ensino médio e pela maior parte da Educação\nde Jovens e Adultos. Apesar da dimensão dessa Rede, os indicadores de aprendizagem\nrevelam desafios importantes: no IDEB de 2021, a rede estadual alcançou 6,0 nos anos\n\n7"
+          },
+          {
+            "id": "iniciais-do-ensino-fundamental-5-0-nos-anos-finais-e-4-0-no-ensino-medio",
+            "titulo": "iniciais do ensino fundamental, 5,0 nos anos finais e 4,0 no ensino médio, resultados",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "iniciais do ensino fundamental, 5,0 nos anos finais e 4,0 no ensino médio, resultados\ninferiores às metas de 6,8, 5,6 e 5,3, respectivamente, evidenciando a necessidade de\nelevar a qualidade da aprendizagem em todas as etapas, especialmente no ensino médio.\nDiante desse quadro desafiador, apresentamos as seguintes propostas:\n•\n\nReforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria\nda oferta e da aprendizagem.\n\n•\n\nAssegurar, juntamente com os municípios, a ampliação e melhoria da infraestrutura\nfísica, a melhoria salarial dos professores e servidores do sistema educacional, bem\ncomo alimentação adequada aos estudantes em todos os níveis.\n\n•\n\nAmpliar o quadro de servidores efetivos da rede estadual de educação, hoje em torno\nde 20% da categoria, procurando nomear os aprovados nos concursos vigentes\ne realizar regularmente novos concursos públicos, reduzindo gradualmente a\ndependência de contratos temporários e garantindo maior estabilidade às equipes\ndas escolas.\n\n•\n\nApoiar a construção do novo Plano Estadual de Educação e a organização da\nConferência Estadual de Educação para subsidiar esse novo Plano.\n\n•\n\nReelaborar o projeto educacional, com a participação efetiva de seus profissionais,\nestudantes e famílias, de forma que garanta o acesso, a permanência e a conclusão\ndos estudantes da educação básica.\n\n•\n\nPromover a melhoria dos processos de ensino e aprendizagem na Rede Estadual,\nem todas as etapas, com atenção aos anos finais do ensino médio, no qual o IDEB\né mais baixo.\n\n•\n\nAmpliar e fortalecer a EJA estadual, especialmente no ensino médio, aumentando\na oferta e criando melhores condições para a permanência dos estudantes.\n\n•\n\nPromover a participação da comunidade escolar e da família na construção da escola.\n\n•\n\nArticular com os municípios a ampliação progressiva das matrículas da educação\nbásica em tempo integral, visando à escola em tempo integral para todos os\nestudantes.\n\n•\n\nIntegrar o ensino médio à formação técnico-profissional.\n\n•\n\nFortalecer programas de combate à evasão, monitorando a frequência e oferecendo\napoio social a grupos vulnerabilizados.\n\n•\n\nPromover programas de capacitação para preparar o jovem do ensino médio para\na cidadania e o trabalho.\n\n•\n\nEstabelecer a reestatização das escolas estaduais privatizadas e o fim da militarização\ndas escolas.\n\n•\n\nValorizar os profissionais da educação, provendo ações que permitam o pagamento\ndo piso nacional estabelecido, garantindo melhores condições de trabalho e atenção\nà promoção da saúde mental dos docentes.\n\n•\n\nAtuar progressivamente para assegurar a obrigatoriedade legal da matrícula de\ntodas as crianças e adolescentes na idade adequada.\n\n•\n\nPromover um Programa Estadual de Boa Convivência nas Escolas, integrando\neducação, saúde, assistência social, justiça e segurança pública para prevenir a\n\n8"
+          },
+          {
+            "id": "violencia-promover-a-cultura-de-paz-ampliar-o-apoio-psicossocial-promove",
+            "titulo": "violência, promover a cultura de paz, ampliar o apoio psicossocial. Promover ações",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "violência, promover a cultura de paz, ampliar o apoio psicossocial. Promover ações\npara qualificar a mediação de conflitos no ambiente escolar, de modo a prevenir\no bullying e a violência.\n•\n\nFortalecer institucionalmente as instituições do Estado - Fundação Educacional\nCaio Martins - FUCAM, Fundação Helena Antipoff e Ultramig para atuarem como\nPólos Locais e Regionais de Educação, ampliando os territórios e itinerários de\naprendizagens dos estudantes da Educação Básica.\n\n•\n\nDesenvolver ações de letramento midiático voltadas à identificação e ao combate\nà desinformação, ao exercício da cidadania e ao fortalecimento da democracia.\n\n•\n\nFortalecer a Educação Escolar Indígena, garantindo uma educação diferenciada,\nintercultural, bilíngue e comunitária, respeitando a territorialidade, o tempo, a língua\ne as especificidades das diversas etnias presentes no Estado, atuando para que as\nescolas das aldeias sejam espaços de pertencimento, preservação de sua história\ne sua identidade e construção de futuro.\n\n•\n\nFortalecer a Educação do Campo em Minas Gerais, em articulação com a Política\nNacional de Educação do Campo e o PRONACAMPO; valorizar e garantir a\npermanência das escolas, impedindo seu fechamento, assegurando currículos\nconstruídos a partir das realidades territoriais, culturais, ambientais e produtivas dos\npovos do campo, das florestas e das água; procurando assegurar financiamento,\ninfraestrutura adequada, transporte, alimentação escolar de qualidade e formação\ncontinuada das educadoras e dos educadores, respeitando as especificidades dos\nterritórios e das comunidades rurais.\n\n•\n\nFortalecer a formação inicial e continuada de educadoras e educadores da cidade e\ndo campo, ampliando a articulação entre universidades públicas, institutos federais,\nredes públicas de ensino e movimentos sociais, valorizando a Educação Popular\ncomo princípio pedagógico das políticas públicas.\n\n9"
+          },
+          {
+            "id": "educacao-profissional-tecnica",
+            "titulo": "Educação Profissional Técnica",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Educação Profissional Técnica\nAlém de prever metas e objetivos condizentes com o Plano Nacional de Educação\ne com o Programa Juros por Educação do Governo Federal, estamos diante da\npossibilidade de se pensar em um Plano para a Educação Profissional Técnica (EPT)\nde Minas Gerais.\nPropostas\n•\n\nDefinir eixos prioritários para a EPT em Minas Gerais, em diálogo com o setor\nprodutivo e os municípios.\n\n•\n\nOfertar vagas diretamente em Educação Profissional Técnica pelo Estado de Minas\nGerais.\n\n•\n\nConstrução de uma Rede Estadual de Escolas Técnicas de Minas Gerais.\n\n•\n\nApoiar a criação do Pé de Meia Estadual.\n\n•\n\nFomentar a formação de professores, técnicos e gestores em EPT, em parceria\ncom a UEMG, Unimontes e universidades federais.\n\n•\n\nEstruturar uma Plataforma Didática para professores, técnicos e gestores da EPT.\n\n•\n\nOrganizar, em parceria com Fapemig e com as indústrias mineiras, projetos de estímulo\nà inovação e à estruturação de Empresas Júnior e projetos de empreendedorismo\nvoltados para estudantes das EPT.\n\n•\n\nPromover programas de estímulo ao estágio, ao Programa de Aprendizagem e\na um Programa do Primeiro Emprego, em diálogo com setores de empresas,\nindústria e comércio.\n\n•\n\nPromover a estruturação de um Programa de Aprendizagem fora da sala de aula,\ncom estímulo a visitas técnicas, integração com setores empresariais e culturais..\n\n10"
+          },
+          {
+            "id": "educacao-superior",
+            "titulo": "Educação Superior",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Educação Superior\nMinas Gerais possui, entre todos os entes federativos, o maior número de instituições\npúblicas de educação superior, incluindo a Universidade do Estado de Minas Gerais (UEMG)\ne a Universidade Estadual de Montes Claros (Unimontes), as universidades federais e os\ninstitutos federais. Essas instituições são pilares fundamentais para o desenvolvimento\nsocioeconômico, cultural e científico de Minas Gerais e serão chamadas para colaborarem\nna construção de políticas públicas e no desenvolvimento do Estado.\nNo caso da UEMG e a Unimontes, universidades estaduais de responsabilidade do\nGoverno do Estado, é preciso ter políticas robustas para sua manutenção e desenvolvimento,\ngarantindo condições para que cumpram o papel estratégico que têm para o Estado. Juntas,\nessas duas instituições de ensino superior desempenham papel crucial na interiorização\nda educação, promovendo redução das desigualdades regionais e acesso a milhares\nde estudantes no interior do Estado. Enquanto a UEMG possui dezenas de unidades\nacadêmicas espalhadas por diversas regiões mineiras, a Unimontes atende fortemente o\nNorte de Minas e o Vale do Jequitinhonha. O impacto dessas universidades vai muito além\nda formação acadêmica e profissional, funcionando como motores de desenvolvimento\nsocial e econômico e de assistência social para as comunidades do entorno. Além disso,\ndesenvolvem pesquisas aplicadas que resolvem problemas logísticos, agrícolas e sociais\nespecíficos de cada região, são responsáveis pela formação de uma parcela significativa\ndos professores que atuam nas escolas estaduais e municipais, levam atendimento jurídico\ngratuito, cursinhos populares, suporte psicológico e capacitação profissional à população\ne preservam a identidade e o patrimônio histórico mineiro por meio de festivais, museus\ne incentivo às artes e cultura locais.\nUEMG e Unimontes são ferramentas indispensáveis do governo estadual para promover\na justiça social, a inovação, o desenvolvimento social e o crescimento econômico sustentável\nem todo o território mineiro. Para tanto, é imprescindível que sejam financiadas de forma\nadequada, valorizando a carreira do pessoal docente e técnico-administrativo e garantindo\nadequada inclusão e permanência dos estudantes.\nPropostas:\n•\n\nReafirmar a UEMG e a Unimontes como universidades estratégicas para o\ndesenvolvimento socioeconômico de Minas Gerais, assegurando financiamento\nadequado, valorização das carreiras, realização de concursos, ampliação da\ninfraestrutura.\n\n•\n\nFortalecer a atuação da UEMG e da Unimontes no desenvolvimento regional,\ninstitucionalizando as políticas de financiamento de projetos de pesquisa e extensão\nnas universidades estaduais, ampliando as ações de pesquisa, extensão e a inovação\nem articulação com os municípios, os arranjos produtivos locais e as demandas\nsociais de cada território.\n\n•\n\nRespeito à autonomia universitária, apoiando a realização de eleições diretas para\nas Reitorias da UEMG e Unimontes.\n\n•\n\nAprimorar os planos de carreira, com implementação da Dedicação Exclusiva para os\ndocentes, a promoção por escolaridade para os servidores técnicos administrativos\ne instituir funções gratificadas para a Gestão Universitária.\n\n¹Resolução SEE/MG n° 2.820, de 11 de dezembro de 2015 – institui as Diretrizes para a Educação Básica\nnas Escolas do Campo de Minas Gerais.\n\n11"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a política de assistência estudantil por meio da ampliação de benefícios\ne bolsas, com a implantação e manutenção de restaurantes universitários.\n\n•\n\nRetomar investimentos na infraestrutura predial e modernização de laboratórios,\ncom prioridade para a finalização de obras inacabadas nos campi.\n\n•\n\nFortalecer o papel da Fapemig, ampliando os investimentos em ciência, tecnologia\ne inovação e a interação com as universidades estaduais.\n\n•\n\nCriar uma articulação entre todas as instituições públicas de educação superior\ndo Estado para que possam atuar na formulação e execução de políticas públicas\npara o desenvolvimento social e econômico do Estado.\n\n12"
+          },
+          {
+            "id": "13",
+            "titulo": "13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "13\n13"
+          },
+          {
+            "id": "a-saude-e-um-direito-fundamental-e-deve-ser-garantido-por-meio-de-um-sus",
+            "titulo": "A saúde é um direito fundamental e deve ser garantido por meio de um SUS público,",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "A saúde é um direito fundamental e deve ser garantido por meio de um SUS público,\nuniversal, integral e de qualidade. O Governo de Patrus Ananias atuará para ampliar o\nacesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de\natenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta\ncomplexidade e articular os serviços em redes de atenção, assegurando atendimento\nintegral à população. Vamos ampliar a parceria do Governo de Minas com o Governo\nFederal para fortalecer e aprimorar as políticas de saúde no estado, como estratégia\ncentral para ampliar o acesso, qualificar os serviços e garantir uma atenção integral à\nsaúde da população.\n\nPropostas:\n•\n\nFortalecer a atenção primária à saúde, que é uma típica função municipal, com\naporte técnico e financeiro por parte do Estado (Secretaria Estadual de Saúde/\nSES) , fundado em metas de qualidade do cuidado e de sua relação com a rede de\natenção, com vistas ao aumento de sua resolubilidade e eficiência. Ampliação da\ncobertura da Estratégia de Saúde da Família (ESF) e das equipes multiprofissionais,\nincluindo a saúde mental e a saúde bucal.\n\n•\n\nTratar como prioridade a implantação da Política Nacional de Atenção Especializada\ncom todos os seus componentes, a começar da prioridade ao Programa Agora\nTem Especialistas – PATE – como forma de reduzir os tempos de espera em\ntodas as regiões do estado para consultas de especialistas, exames diagnósticos,\nprocedimentos ambulatoriais e cirurgias eletivas. Monitorar rigorosamente os\ntempos de espera a partir da implantação de um sistema estadual de informação\ncom interoperabilidade com todos os municípios e seus sistemas próprios, assim\ncomo com a Rede Nacional de Dados em Saúde.\n\n•\n\nValorizar as trabalhadoras e trabalhadores do SUS, por meio de política permanente\nde formação, educação continuada, dimensionamento adequado das equipes,\nmelhoria das condições de trabalho e fortalecimento da gestão pública do sistema,\nassim como estimulando e ampliando os espaços e fóruns de participação interna\ne a humanização do trabalho em saúde.\n\n•\n\nFortalecer a Mesa de Negociação Permanente do SUS Estadual.\n\n•\n\nRevisar os Planos de Cargos e Carreiras da SES com a participação dos trabalhadores.\n\n•\n\nRedimensionar as equipes regionais de saúde com o objetivo de fortalecimento e\nampliação da sua atuação para maior apoio às Secretarias Municipais buscando\numa melhor atuação e articulação nas regiões de saúde.\n\n•\n\nApoiar os municípios mineiros no processo de planejamento e gestão do SUS para\no desenvolvimento de políticas de saúde focadas no cidadão e em consonância\ncom as especificidades regionais, com transparência e participação social.\n\n•\n\nEfetivar a implementação da Regionalização da Saúde em todo o território mineiro,\ncomo forma de ter um diagnóstico dinâmico da situação da saúde, diagnóstico\nclaro da rede assistencial em todos os níveis de atenção, mapeamento dos vazios\nassistenciais temáticos e um plano de investimentos para redução das desigualdades.\n\n14"
+          },
+          {
+            "id": "sera-necessario-um-redesenho-do-fluxo-assistencial-atual-e-o-projeto-com",
+            "titulo": "Será necessário um redesenho do fluxo assistencial atual e o projeto com o futuro",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Será necessário um redesenho do fluxo assistencial atual e o projeto com o futuro\nplano de investimentos, incluindo a totalidade da oferta dos serviços municipais,\ndos consórcios públicos, das universidades federais, estaduais e filantrópicas e da\nrede contratada.\n•\n\nGarantir a plena implementação do processo de regionalização, fortalecendo as\ninstâncias de governança do SUS (CIBs micro e CIB estadual) e equipes técnicas\nqualificadas para implementar o plano e monitorar seu desempenho. Utilizar os\ndispositivos já previstos no PATE, como os Núcleos de Gestão do Cuidado e Núcleos\nde Apoio à Gestão – NAG e radicalizar sua implementação com recursos aportados\npela SES. Estabelecer um plano estadual com traçado regional de monitoramento\ndos pacientes prioritários para cuidado continuado em parceria com os municípios,\ngarantindo um cuidado oportuno e contínuo sob observação de equipes gestoras\nou navegadoras do cuidado.\n\n•\n\nAprimorar a regulação estadual do SUS, garantindo que nenhum paciente fique sem\natendimento por falhas de comunicação, informação ou gestão. A regulação deve\nser regionalizada, integrada e transparente, com participação dos municípios e dos\nserviços de saúde, com critérios públicos de prioridade e informações atualizadas\nsobre filas e disponibilidade de leitos. A plataforma de regulação deverá ser planejada\npara assegurar que cada paciente seja encaminhado, com segurança e agilidade,\nao serviço adequado à sua necessidade, ao mesmo tempo em que os dados da\nregulação serão utilizados para reduzir filas e orientar a expansão da oferta de\nserviços em todas as regiões do Estado;\n\n•\n\nImplementar no Estado a Política Nacional de Saúde Mental, Álcool e Outras\nDrogas, fortalecendo e ampliando de forma consistente a Rede de Atenção\nPsicossocial (RAPS), ampliando os CAPS e os serviços territoriais, tendo em\nvista o novo perfil de adoecimento da contemporaneidade. Atuação prioritária na\nredução de danos garantindo os direitos das pessoas que fazem uso prejudicial\nde álcool e outras drogas.\n\n•\n\nPromover a abordagem integral das pessoas com transtorno autista e outras\nneurodivergências em suas várias dimensões, incluindo a integração com as políticas\nde educação inclusiva e assistência social de alta complexidade.\n\n•\n\nConsolidar a cobertura de 100% da rede estadual de urgência e emergência do\nterritório mineiro do SAMU com os consórcios macrorregionais, ampliando o seu\nfinanciamento para melhoria do tempo resposta, do transporte eletivo de diferentes\nmodalidades no caso dos procedimentos eletivos na forma de um Programa Estadual\nCaminhos da Saúde, ampliando as iniciativas do Governo Lula.\n\n•\n\nEstabelecer dispositivos e financiamento para a implementação da Rede de Atenção\nObstétrica e Neonatal (componente estadual da Rede Alyne do MS) com diagnóstico\natualizado por microrregião, fluxos definidos, regulação das situações de parto em\nevolução, com central de regulação, transporte seguro e disponível e definição clara\ndas portas de entrada como casas de parto, maternidades de risco habitual e de\nalto risco. Ter como meta que cada gestante tenha garantido todo o seu pré-natal\ncomo previsto nos normativos do Ministério da Saúde, acesso ao parto seguro e\nhumanizado, referência para alto risco quando necessário e suporte de UTI adulto\ne neonatal. Ampliação das Casas da Gestante e do Bebê, dos Centros Seguros de\n\n15"
+          },
+          {
+            "id": "parto-normal-e-estabelecimento-de-um-programa-de-ampliacao-da-enfermagem",
+            "titulo": "Parto Normal e estabelecimento de um Programa de Ampliação da Enfermagem",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Parto Normal e estabelecimento de um Programa de Ampliação da Enfermagem\nObstétrica e do Programa de Doulas Comunitárias. Tratar a mortalidade materna\ne infantil como prioridade geral do Governo e de monitoramento contínuo. Incluir\na implantação de uma rede estadual de serviços de atendimento à mulher vítima\nde violência em todas as suas dimensões.\n•\n\nPromover o cuidado à saúde dos idosos de forma multidimensional, integrado\nà Política de Cuidados, incluindo iniciativas como os cuidadores comunitários,\nalimentação saudável, acesso às vacinas e academias da saúde, bem como cuidado\nem saúde mental e programa de atenção domiciliar quando necessário.\n\n•\n\nGarantir atenção integral à saúde das mulheres no Sistema Único de Saúde (SUS),\nassegurando atendimento humanizado, acesso à saúde sexual e reprodutiva,\nassistência à maternidade, e ações permanentes de prevenção e promoção da saúde.\n\n•\n\nViabilizar a integração da APS, vigilância em saúde, assistência farmacêutica e atenção\nespecializada por meio de prontuário eletrônico compartilhado, estabelecimento de\nfluxos adequados de referência e contra referenciamento dos usuários e articulação\ncom as ofertas de cuidado integrado (OCI).\n\n•\n\nFortalecer a rede pública de cuidado ao câncer em Minas Gerais garantindo o\natendimento, em prazo menor que 60 dias após o diagnóstico, possibilitando o\ninício do tratamento em tempo adequado e com maior efetividade.\n\n•\n\nConstruir mecanismos que fortaleçam a inserção das equipes de saúde bucal\nno trabalho interprofissional e na gestão do processo de trabalho na atenção\nbásica, conforme preconizado pela APS e pela Estratégia de Saúde da Família. Em\nrelação ao escopo de práticas, é fundamental a incorporação de procedimentos\nespecializados de menor complexidade técnica no âmbito da APS, bem como da\ntecnologia necessária a esses tratamentos (Raios X, laboratório, insumos).\n\n•\n\nGarantir projeto e investimento em saúde digital no estado para viabilizar a articulação\ndos serviços e atendimentos por meio das ferramentas digitais.\n\n•\n\nFortalecer e induzir por meio de financiamento diferenciado as políticas de saúde\ndos territórios em situação de vulnerabilidade social, como os das populações\nrurais, indígenas, quilombolas, pescadores, negros e pessoas em situação de rua,\nbuscando reduzir as desigualdades sociais no atendimento e acesso à saúde.\n\n•\n\nGarantir aos jovens acesso à saúde sexual e reprodutiva pelo SUS, com\ninformação, prevenção, métodos contraceptivos, planejamento reprodutivo e\natendimento humanizado.\n\n•\n\nCriar uma Rede Estadual de Saúde Mental da Juventude, articulada ao SUS e ao\nSUAS e presente nas regiões de Minas, ampliando a Rede de Atenção Psicossocial,\ncom ações de prevenção do suicídio, redução de danos e espaços de acolhimento\ne convivência.\n\n16"
+          },
+          {
+            "id": "17",
+            "titulo": "17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "17\n17"
+          },
+          {
+            "id": "nenhuma-sociedade-e-verdadeiramente-justa-e-desenvolvida-quando-parte-de",
+            "titulo": "Nenhuma sociedade é verdadeiramente justa e desenvolvida quando parte de sua",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Nenhuma sociedade é verdadeiramente justa e desenvolvida quando parte de sua\npopulação convive com insegurança alimentar, moradia precária ou ausência de proteção\nsocial. Nosso plano de governo fará dessas políticas um eixo estratégico da ação do\nEstado, fortalecendo a rede pública de proteção e cuidado, garantindo que os direitos\nsociais cheguem a quem mais precisa.\nO cuidado parte do reconhecimento de que todas as pessoas, em diferentes momentos\nda vida, precisam cuidar e ser cuidadas. Por isso, esse princípio deve orientar as políticas\npúblicas que garantem dignidade, autonomia e proteção – tarefa que deve ser partilhada\nentre Estado, famílias, comunidades e sociedade.\n\nSoberania e Segurança Alimentar e Nutricional\nA Segurança Alimentar e Nutricional é o primeiro degrau para o acesso à cidadania,\num Direito Fundamental que antecede e viabiliza todos os demais. Sua garantia\ndepende da atuação permanente do Estado e de políticas públicas vigorosas. Esse\ncompromisso é a marca da trajetória de Patrus Ananias e se renova neste plano de\ngoverno.\nPropostas:\n•\n\nTransformar Minas Gerais em território livre da fome, por meio do fortalecimento\nda agricultura familiar e das cadeias produtivas, da ampliação de hortas, cozinhas\ncomunitárias e restaurantes populares, visando à erradicação da insegurança\nalimentar e nutricional.\n\n•\n\nAmpliar e articular, em Minas Gerais, a implementação das políticas federais de\nfortalecimento da agricultura familiar e de segurança alimentar, facilitando o acesso\nao Pronaf, expandindo a participação de agricultores familiares no PAA e no PNAE\ne fortalecendo a atuação da Conab no estado.\n\n•\n\nFortalecer o CONSEA-MG, enquanto espaço fundamental de participação e controle\nsocial das políticas de segurança alimentar e nutricional.\n\n•\n\nO Governo de Minas atuará em parceria com municípios, cooperativas e organizações\nda agricultura familiar para ampliar a produção e a comercialização de alimentos, gerar\nrenda no campo e garantir o abastecimento de alimentos saudáveis à população.\n\n•\n\nPromover a reforma agrária com regularização fundiária, assistência técnica, crédito,\ninfraestrutura e inclusão produtiva dos assentamentos, ampliando a produção de\nalimentos e a geração de renda no campo.\n\n18"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nLevar para todo o estado de Minas Gerais as boas práticas implementadas por\nPatrus Ananias na gestão da Prefeitura de Belo Horizonte, articulando Produção\n> abastecimento > comercialização > preço > acesso> alimentação > nutrição,\nde modo a enfrentar a segurança alimentar como uma questão de direito e de\npolítica pública.\n\n•\n\nAmpliar os investimentos em políticas públicas voltadas às mulheres camponesas,\npriorizando agroecologia, quintais produtivos, produção de alimentos saudáveis,\nsementes crioulas, gestão da água, economia solidária e desenvolvimento sustentável\ndos territórios rurais.\n\n•\n\nFortalecer programas de habitação rural, infraestrutura comunitária e melhoria\ndas condições de vida nos territórios rurais, assegurando moradia digna, acesso à\nágua, saneamento, energia e demais serviços essenciais.\n\nPolíticas Sociais e de Cuidados\nFortalecer as redes comunitárias, ampliar a oferta de serviços públicos e valorizar\nquem cuida são condições essenciais para reduzir desigualdades e fazer uma\nsociedade mais justa. Cuidar é promover a vida em todas as suas dimensões e esse\né o compromisso do nosso plano de governo com os mineiros.\n•\n\nFortalecer as iniciativas e os territórios comunitários de cuidado, que já realizam\nações de cuidado de idosos, pessoas com deficiência e crianças e adolescentes\nem todo o estado.\n\n•\n\nPromover o fortalecimento e aprimoramento dos serviços dos CRAS (Centro de\nReferência de Assistência Social) e CREAS (Centro de Referência Especializado\nde Assistência Social) em parceria com os municípios, ampliando sua capacidade\nde prevenção, proteção e acompanhamento das famílias e indivíduos em situação\nde vulnerabilidade e violação de direitos. Fortalecer a rede de proteção social, com\nequipes qualificadas, estrutura adequada, busca ativa e atendimento humanizado,\nintegrando os serviços às demais políticas públicas e garantindo acesso a direitos.\n\n•\n\nInstituir o Conselho Estadual de Políticas de Cuidado, com a participação de órgãos\npúblicos e representações da sociedade civil.\n\n•\n\nEm parceria com os municípios, instituir centros de cuidado para idosos e populações\nem situação de rua.\n\n•\n\nImplementar e fortalecer o Programa “A Vez Delas” em todo o estado, estruturando\num banco de empregos, articulando serviços de atendimento às mulheres e políticas\nde qualificação profissional, para garantir acesso prioritário ao trabalho e à renda\nàs mulheres em situação de violência, fortalecendo sua autonomia econômica.²\n\n² MINAS GERAIS. Lei n° 23.680/2020. Acrescenta dispositivo à Lei n° 22.256, de 26 de julho de 2016, que\ninstitui a política de atendimento à mulher vítima de violência no Estado.\n\n19"
+          },
+          {
+            "id": "pagina-20",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplementar uma política estadual integrada para as mulheres, partindo das\ndeliberações da Quinta Conferência Estadual de Políticas para as mulheres, realizada\nem agosto de 2025. , fortalecendo a prevenção e o enfrentamento à violência de\ngênero e contra as mulheres, promovendo a autonomia financeira por meio da\nqualificação profissional e da inclusão produtiva, expandir as políticas de cuidado e\npromover a equidade de gênero.\n\n•\n\nPromover ações de atenção específica às meninas vítimas ou expostas à violência e\nproteção integral às crianças órfãs do feminicídio, com acompanhamento continuado\npelas redes sociais, de saúde e educação.\n\n•\n\nElaborar e implementar uma Política Estadual para o Envelhecimento Ativo e\nSaudável, preparando Minas Gerais para a transição demográfica e promovendo\nproteção, autonomia e qualidade de vida da população idosa, diante da perspectiva\nde que, em 2033, o estado terá mais pessoas com 65 anos ou mais do que crianças\nde até 14 anos.\n\n•\n\nGarantir condições para que a maternidade não interrompa os projetos de vida das\njovens, especialmente das mães solo, ampliando a oferta de creches públicas e\narticulando políticas de cuidado, assistência social, educação, qualificação profissional\ne inclusão produtiva, para assegurar a permanência nos estudos, o acesso ao trabalho\ne à renda e a construção de sua autonomia.\n\nMoradia\nA crise da moradia continua sendo um dos principais desafios sociais de Minas Gerais,\nrefletida na dificuldade de acesso à habitação adequada, no peso do aluguel sobre a renda\ndas famílias, na persistência de moradias precárias e no aumento da população em situação\nde rua. Diante desse quadro, nosso plano de governo se compromete a ampliar o acesso\nà moradia e a criar mecanismos que reduzam o comprometimento da renda das famílias\ncom aluguel.\nPropostas:\n•\n\nInstituir uma Política Estadual de Habitação de Interesse Social, articulada ao\nSistema Nacional de Habitação de Interesse Social, priorizando a produção e\naquisição de moradias para famílias de baixa renda, a urbanização e regularização\nde assentamentos precários e a destinação de imóveis públicos ociosos para\nprogramas habitacionais, em parceria com municípios e com o Governo Federal. 3\nCriar um Programa Estadual de Locação Social e Subsídio ao Aluguel, destinado a\nfamílias em situação de vulnerabilidade, especialmente aquelas com ônus excessivo\ncom aluguel, articulando auxílio financeiro, oferta de imóveis públicos e privados e\nmecanismos de mediação para prevenir despejos e reduzir o déficit habitacional. 4\n\n20"
+          },
+          {
+            "id": "pagina-21",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n* Implementar a Política Estadual para a População em Situação de Rua, priorizando\no acesso à moradia permanente (Moradia Primeiro), ampliando programas de\nlocação social e moradias transitórias, articulados a ações de saúde, assistência\nsocial, trabalho e geração de renda, com participação social e escuta permanente\nda população em situação de rua, dos movimentos populares e das organizações\nsociais. Moradia Primeiro é um modelo de política pública que parte de um princípio\nsimples: primeiro garante uma moradia estável e, a partir dela, organiza o acesso\naos demais serviços públicos. 5\n\n•\n\n* Promover a reforma urbana com a regularização fundiária e fortalecimento das\nocupações urbanas como estratégia de enfrentamento do déficit habitacional e\ngarantia de moradia.\n\n•\n\nRetomar o papel da Cohab Minas na construção de moradias populares, garantindo\nhabitação de qualidade e digna, com prioridade para as famílias de baixa renda e\npara a redução do déficit habitacional do estado.\n\n•\n\nFortalecer programas de habitação rural, infraestrutura comunitária e melhoria das\ncondições de vida nos territórios rurais, assegurando moradia digna, acesso à água,\nsaneamento, energia e demais serviços essenciais.\n\n³ BRASIL. Lei nº 11.124, de 16 de junho de 2005. Institui o Sistema Nacional de Habitação de Interesse Social\n(SNHIS) e o Fundo Nacional de Habitação de Interesse Social (FNHIS).\n4 Fundação João Pinheiro (FJP) – Estudos sobre o déficit habitacional demonstram que o principal\ncomponente do déficit em Minas Gerais é o ônus excessivo com aluguel urbano, indicando a necessidade de\npolíticas permanentes de locação social e subsídio ao aluguel. Déficit Habitacional no Brasil e em Minas Gerais\n– 2023. Belo Horizonte: FJP, 2025.\n5 MINAS GERAIS. Lei nº 20.846, de 6 de agosto de 2013. Institui a Política Estadual para a População em\nSituação de Rua. MINAS GERAIS. Lei nº 24.082/ 2022. Altera a Lei nº 20.846. BRASIL. Decreto nº 7.053/ 2009.\nInstitui a Política Nacional para a População em Situação de Rua e seu Comitê Intersetorial de Acompanhamento\ne Monitoramento.\n\n21"
+          },
+          {
+            "id": "22",
+            "titulo": "22",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "22\n22"
+          },
+          {
+            "id": "enfrentamento-a-crise-climatica-justica-e-governanca-climatica",
+            "titulo": "Enfrentamento à crise climática, justiça e governança climática",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Enfrentamento à crise climática, justiça e governança climática\n\nA emergência climática tornou-se um dos maiores desafios da atualidade. Secas\nprolongadas, enchentes, queimadas, contaminação das águas, perda da biodiversidade\ne eventos climáticos extremos afetam diretamente as populações das cidades, do campo,\ndas florestas e das águas. Nosso plano de governo tem como propostas:\n•\n\nConstruir uma política estadual de enfrentamento à emergência climática considerando\nas especificidades e desigualdades dos territórios de Minas Gerais e integrando\nmitigação, adaptação, justiça climática, transformação ecológica, governança e\neducação ambiental.\n\n•\n\nInstituir uma governança climática estadual permanente, intersetorial e participativa,\nincorporando a questão climática ao planejamento e ao orçamento do Estado e\narticulando meio ambiente, saúde, educação, agricultura, habitação, planejamento\nurbano, defesa civil e recursos hídricos.\n\n•\n\nFortalecer a educação ambiental como eixo transversal da política educacional,\narticulando escola, território e comunidade e preparando as novas gerações para\ncompreender e enfrentar a crise climática e os conflitos socioambientais. Valorizar\nconhecimentos científicos, populares e tradicionais, promovendo ações de educação\nambiental voltadas ao cuidado com as águas, a biodiversidade, a prevenção de\nincêndios e desastres, a justiça ambiental e climática e a construção de modos\nsustentáveis de vida.\n\n•\n\nFortalecer as instituições públicas e ampliar sua capacidade técnica, operacional\ne financeira para prevenção, monitoramento e resposta a incêndios florestais,\nenchentes, secas, deslizamentos e outros eventos extremos, priorizando a prevenção\ne a redução de riscos e protegendo especialmente populações e territórios mais\nvulnerabilizados.\n\n•\n\nAmpliar a participação de municípios, universidades, movimentos sociais, brigadas\nvoluntárias e comunitárias, povos indígenas, quilombolas e demais povos e\ncomunidades tradicionais na formulação, implementação e controle social das\npolíticas climáticas.\n\n•\n\nAmpliar a integração entre Bombeiros, Defesa Civil, órgãos ambientais, unidades de\nconservação, brigadas florestais voluntárias, municípios, universidades e comunidades,\nfortalecendo sistemas de prevenção, monitoramento, alerta e resposta rápida e\nconstruindo protocolos integrados de atuação nos territórios.\n\n•\n\nFortalecer políticas públicas de proteção dos bens comuns da natureza, assegurando\na recuperação e preservação das águas, nascentes, florestas, solos, sementes\ncrioulas e demais patrimônios naturais, reconhecendo-os como fundamentais para\na soberania alimentar e para o bem viver.\n\n•\n\nImplementar uma política estadual de redução do uso de agrotóxicos, com efetivação\ndo PRONARA (Programa Nacional de Redução de Agrotóxicos), controle rigoroso\ndas aplicações próximas às comunidades, monitoramento epidemiológico das\npopulações expostas e incentivo à transição agroecológica.\n\n23"
+          },
+          {
+            "id": "pagina-24",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPromover a segurança hídrica, protegendo e recuperando nascentes, mananciais\ne bacias hidrográficas e ampliando as ações de prevenção às secas e crises de\nabastecimento, com especial atenção aos territórios e populações mais vulneráveis.\nGarantir acesso à água em quantidade e qualidade adequadas.\n\n•\n\nFortalecer o Sistema Estadual de Meio Ambiente, de maneira a fortalecer as\ncapacidades de fiscalização e implementação das políticas estaduais de proteção\nambiental, de gestão das águas, de cuidado e ampliação de unidades de conservação\ne de educação ambiental.\n\n•\n\nAumentar as áreas florestais no Estado, com plantios em áreas públicas e privadas\ne estímulo de recuperação das nascentes, bacias e sub bacias.\n\n•\n\nEstimular a criação e o funcionamento dos conselhos municipais de meio ambiente\nde forma a avançar na democratização da gestão das políticas públicas.\nSaneamento Básico em Minas Gerais\n\nO saneamento básico é um direito humano fundamental e deve ser tratado como uma\npolítica de Estado, orientada pelo interesse público, pela sustentabilidade, pela justiça\nsocial e pela universalização dos serviços. É essencial para promover saúde, qualidade\nde vida, proteção ambiental, desenvolvimento econômico e redução das desigualdades.\nApesar dos avanços obtidos nas últimas décadas, milhões de brasileiros ainda não\ntêm acesso adequado à água potável, ao esgotamento sanitário, ao manejo de resíduos\nsólidos e à drenagem urbana.\nEm Minas Gerais, o setor vive um momento decisivo, marcado pelo processo de\nprivatização da COPASA, pela reorganização regional dos serviços e por importantes\nmudanças na governança do saneamento. São decisões que produzirão efeitos por décadas\ne, por isso, precisam ser tomadas com responsabilidade, transparência, participação social\ne fundamento técnico.\nO objetivo central das políticas públicas deve ser garantir serviços de qualidade, com\ninclusão e participação social, ampliar os investimentos e assegurar a universalização\ndo acesso para toda a população. Reconhecemos o saneamento básico como uma\npolítica pública estratégica para a saúde, a proteção ambiental, a segurança hídrica, o\ndesenvolvimento econômico e a redução das desigualdades. Assim, temos como propostas:\n•\n\nDefender o saneamento básico como política pública essencial e priorizar a\nuniversalização do acesso aos serviços.\n\n•\n\nGarantir que decisões estratégicas para o setor sejam fundamentadas em estudos\ntécnicos, planejamento de longo prazo e ampla transparência.\n\n•\n\nPromover amplo diálogo com os municípios, usuários, comunidade técnica e\nsociedade antes da implementação de mudanças estruturais no setor.\n\n•\n\nApoiar os municípios para o encerramento de todos os lixões no Estado de MG.\n\n•\n\nFortalecer o Sistema Estadual de Meio Ambiente - SISEMA, resgatando a importância\ndo Conselho Estadual de Meio Ambiente - COPAM como instância deliberativa da\npolítica estadual de meio ambiente garantindo o equilíbrio tripartite entre governo,\nempresa e sociedade civil.\n\n24"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a Política Estadual de Saneamento Básico, garantindo estrutura institucional\npermanente, equipe técnica qualificada e recursos suficientes para apoiar os\nmunicípios.\n\n•\n\nFortalecer a Política de Economia Circular, sua regulamentação, apoiando os municípios\nna estruturação da cadeia de reciclagem com a inclusão, estruturação e remuneração\njusta dos catadores de materiais recicláveis e reforçando as responsabilidades de\nprodutores, distribuidores e revendedores relativas à logística reversa.\n\n•\n\nFortalecer a Política Estadual de Resíduos Sólidos, instituída pela Lei Estadual n°\n18.031/2009 e regulamentada pelo Decreto Estadual no 45.181/2009, assegurando\na inclusão socioprodutiva das catadoras e dos catadores de materiais recicláveis.\n\n•\n\nAmpliar Programas de coleta seletiva solidária, garantindo infraestrutura, equipamentos,\nassistência técnica e condições adequadas de trabalho às associações e cooperativas,\nbem como reconhecer a reciclagem popular como atividade econômica, ambiental\ne socialmente relevante.\n\n•\n\nAcompanhar os processos de transição institucional do setor de saneamento,\nassegurando a preservação do corpo técnico, o respeito ao capital intelectual\nconstruído ao longo de décadas, a continuidade das capacidades institucionais\ne a garantia dos investimentos necessários para a expansão e a universalização\ndos serviços.\n\n•\n\nPromover uma regionalização dos serviços de saneamento construída por meio\ndo diálogo, respeitando a autonomia municipal e as diferentes realidades locais.\n\n•\n\nAssegurar que os recursos destinados ao saneamento sejam efetivamente aplicados\nno próprio setor, evitando sua utilização para outras finalidades.\n\n•\n\nRegulamentar e fortalecer o Fundo Estadual de Saneamento Básico (FUNESB),\ngarantindo fontes permanentes de recursos para investimentos.\n\n•\n\nApoiar a Política de Recursos Hídricos e fortalecer os Comitês de Bacias Hidrográficas.\n\n•\n\nFortalecer a Agência Reguladora de Serviços de Abastecimento de Água e de\nEsgotamento Sanitário de Minas Gerais - ARSAE-MG, assegurando autonomia\ntécnica, administrativa, financeira e orçamentária.\n\n•\n\nPriorizar ações de proteção ambiental, saneamento básico e urbanismo sustentável.\n\n•\n\nAmpliar o acesso à água tratada e ao esgotamento sanitário, priorizando os\nmunicípios e territórios com maiores déficits, com investimentos na expansão e\nmodernização da infraestrutura de saneamento.\n\n•\n\nReduzir as desigualdades regionais e elevar os indicadores de abastecimento de\nágua, tratamento de esgoto e qualidade dos serviços.\n\n•\n\nAmpliar o Bolsa Reciclagem e implementar a logística reversa no estado, assegurando\na coleta e o retorno de produtos e embalagens pós-consumo para reaproveitamento\nou destinação ambientalmente adequada, com prioridade para a participação de\nassociações e cooperativas de catadores.\n\n25"
+          },
+          {
+            "id": "direito-dos-animais",
+            "titulo": "Direito dos Animais",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Direito dos Animais\nA proteção dos animais exige políticas públicas eficazes, efetivas e intersetoriais,\nconstruídas com participação social e articuladas entre Estado, municípios, União,\nuniversidades, organizações da sociedade civil e demais atores envolvidos.\nNosso plano de governo propõe uma política estadual de proteção, defesa e direitos\nanimais, orientada pelos princípios da senciência, dignidade, antiespecismo, não violência.\nPropostas:\n•\n\nIncorporar a perspectiva de Saúde integrada às políticas estaduais, articulando\nsaúde humana, saúde animal e saúde ambiental.\n\n•\n\nFortalecer a prevenção e a vigilância de zoonoses e demais agravos relacionados à\nsaúde animal, integrando as ações dos órgãos estaduais e apoiando os municípios,\nde acordo com as competências de cada ente federativo.\n\n•\n\nInstitucionalizar a Política Estadual de Proteção e Defesa dos Direitos Animais,\ncom referência formal de coordenação, responsável pela articulação das políticas\npúblicas estaduais e pela integração entre os órgãos do Estado, municípios, União\ne sociedade civil.\n\n•\n\nCriar e fortalecer o Conselho Estadual de Proteção e Direitos Animais.\n\n•\n\nRealizar campanhas estaduais de conscientização sobre direitos animais, prevenção\nda crueldade, abandono e tráfico de animais, proteção da fauna silvestre, impactos\nda introdução de espécies exóticas e convivência responsável entre humanos e\nanimais.\n\n•\n\nFortalecer as políticas estaduais de proteção da fauna silvestre e conservação da\nbiodiversidade, incluindo a ampliação de corredores ecológicos e passagens de\nfauna e intensificar as ações de prevenção e combate ao tráfico e à captura ilegal.\n\n•\n\nIntegrar a proteção dos animais às políticas estaduais de prevenção e resposta a\ndesastres, mudanças climáticas e emergências ambientais.\n\n26"
+          },
+          {
+            "id": "27",
+            "titulo": "27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "27\n27"
+          },
+          {
+            "id": "minas-gerais-reune-extraordinaria-riqueza-ambiental-hidrica-e-mineral-qu",
+            "titulo": "Minas Gerais reúne extraordinária riqueza ambiental, hídrica e mineral, que deve",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Minas Gerais reúne extraordinária riqueza ambiental, hídrica e mineral, que deve\nconstituir a base de um projeto de desenvolvimento comprometido com a soberania\ndo estado e do país. Superar a fragmentação entre as políticas de desenvolvimento\neconômico, meio ambiente e mineração é condição para planejar o uso do território de\nforma integrada, conciliando geração de riqueza, proteção dos recursos naturais, redução\ndas desigualdades regionais e fortalecimento das capacidades produtivas mineiras. Só\nassim será possível enfrentar o desafio das mudanças climáticas e das novas tendências\nda economia global, preparando nosso estado para uma transição energética que seja\nsocialmente justa, economicamente viável e ecologicamente equilibrada.\n\nMineração Responsável e Desenvolvimento Regional\nMinas Gerais precisa superar um modelo minerário baseado na exportação de\nmatérias-primas e na concentração dos benefícios, enquanto os impactos ambientais\ne sociais permanecem nos territórios. A exploração de minério de ferro, ouro, bauxita,\nmanganês, nióbio, fosfato, calcário e outros bens minerais deve estar subordinada ao\ninteresse da população mineira, com agregação de valor, proteção das comunidades e\naplicação transparente da CFEM (Compensação Financeira pela Exploração Mineral) na\nrecuperação ambiental, na diversificação econômica e na melhoria das condições de vida\ndos municípios mineradores.\nPropostas:\n•\n\nAgregar valor à produção mineral incentivando o beneficiamento do minério de\nferro, ouro, bauxita, manganês, nióbio e demais minérios no estado, fortalecendo\na indústria e a geração de empregos qualificados.\n\n•\n\nTransformar a CFEM em instrumento de desenvolvimento regional, destinando\nprioritariamente seus recursos à diversificação econômica dos municípios mineradores,\nà recuperação ambiental e aos investimentos em saúde, educação e infraestrutura.\n\n•\n\nFortalecer a governança da atividade mineral, com maior rigor na fiscalização,\nsegurança de barragens, transparência na aplicação da CFEM (Compensação\nFinanceira pela Exploração Mineral) e participação efetiva das comunidades\natingidas nas decisões sobre novos empreendimentos.\n\n•\n\nUtilizar a riqueza mineral para construir uma economia progressivamente menos\ndependente da mineração, transformando receitas provenientes de recursos naturais\nnão renováveis em educação, ciência, tecnologia, industrialização, infraestrutura,\nrecuperação ambiental e novas atividades econômicas capazes de permanecer\nnos territórios após o encerramento das minas.\n\n28"
+          },
+          {
+            "id": "minerais-criticos-terras-raras-e-justica-territorial",
+            "titulo": "Minerais Críticos, Terras Raras e Justiça Territorial",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Minerais Críticos, Terras Raras e Justiça Territorial\nMinas Gerais detém uma das maiores reservas de minerais críticos e de terras raras do\nmundo. Permitir a exploração desses minerais estratégicos sem planejamento, coordenação\npública e compromisso com o desenvolvimento nacional significa desperdiçar uma\noportunidade histórica de superar esse modelo e aprofundar a dependência tecnológica\ne industrial do país.\nA mineração de terras raras e minerais críticos só pode fomentar industrialização se\nvier acompanhada das seguintes condições: (1) capacidade tecnológica de refinamento\ne manufatura em solo brasileiro, o que exige investimento de longo prazo em ciência,\nnão apenas na abertura de minas; (2) mecanismos regulatórios que vinculem a extração\nao adensamento produtivo, como conteúdo local, obrigatoriedade de processamento\ndoméstico e transferência tecnológica. (3) soberania sobre o destino do minério. Quando\num ativo mineral estratégico é vinculado por contrato de longo prazo à demanda de um\ncomprador estrangeiro, cria-se um desincentivo estrutural à industrialização doméstica.\nA exploração de minerais críticos e terras raras não pode ser decidida apenas pela\nlógica de empreendimentos isolados: deve considerar os impactos cumulativos sobre\nos territórios, a proteção das águas e dos ecossistemas, a segurança das populações, as\nfuturas gerações e a soberania nacional. Diante disso, as licenças e autorizações concedidas\npara empreendimentos minerários deverão ser reavaliadas sempre que houver riscos\nambientais relevantes, insuficiência dos estudos realizados ou incompatibilidade com o\ninteresse público e nacional.\nPropostas:\n•\n\nA pesquisa e o aproveitamento dos depósitos e jazidas dos minerais lítio, nióbio,\nterras raras, cobre, manganês, cobalto e grafite, considerados minerais críticos ou\nestratégicos, constituem matéria de relevante interesse coletivo, devendo obedecer\nàs prioridades nacionais e às diretrizes da Política de Soberania Mineral.\n\n•\n\nReavaliar isenções fiscais à mineração sem agregação de valor para setores que\npouco ou nada agregam à formação de cadeias internas de valor. É, portanto,\nnecessário a revisão do modelo de incentivos fiscais e redistribuição de benefícios.\n\n•\n\nAprimorar os instrumentos tributários, com destaque para a fiscalização das receitas\noriundas da CFEM (Compensação Financeira pela Exploração Mineral) para o\nEstado de Minas e para os municípios mineiros.\n\n•\n\nEstimular o desenvolvimento de processos produtivos menos poluentes, apoiados\nno conhecimento consolidado no Estado, pelas universidades, centros de pesquisa\ne empresas mineiras.\n\n•\n\nPromover, em articulação com a União, a revisão dos processos de licenciamento\nde empreendimentos minerários que apresentem riscos ambientais e radiológicos\nou envolvam minerais de interesse estratégico nacional, assegurando a atuação\ndos órgãos federais competentes.\n\n29"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAs populações e comunidades tradicionais potencialmente afetadas pelos\nempreendimentos de minerais críticos e estratégicos, seja diretamente em seus\nterritórios ou no município onde se situam, deverão ser previamente consultadas,\npor meio de procedimentos adequados, com prazo razoável, de forma livre,\nprévia e informada.\n\n•\n\nAssegurar padrões ambientais rigorosos e promover o processo de participação\nsocial.\n\n•\n\nCriar o Polo Mineiro de Industrialização do Lítio. Promover a industrialização e\nsoberania sobre o lítio. Instituir uma política estadual para que a exploração do lítio\nesteja vinculada à implantação de etapas de beneficiamento, processamento e\nfabricação de componentes para baterias em Minas Gerais, articulando universidades,\ncentros de pesquisa, empresas públicas e privadas e os municípios do Vale do\nJequitinhonha, de forma garantir o desenvolvimento sustentável da região.\n\n•\n\nPromover uma mineração responsável, ambientalmente segura e comprometida com\no desenvolvimento dos territórios, vinculando os incentivos e instrumentos de apoio\ndo Estado à adoção de tecnologias de menor impacto ambiental, à agregação de\nvalor aos minerais e à transferência de tecnologia, com investimentos em pesquisa,\nprocessamento e desenvolvimento tecnológico em parceria com universidades e\ncentros de pesquisa.\n\n30"
+          },
+          {
+            "id": "31",
+            "titulo": "31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "31\n31"
+          },
+          {
+            "id": "minas-gerais-possui-um-dos-mais-robustos-sistemas-de-ciencia-tecnologia",
+            "titulo": "Minas Gerais possui um dos mais robustos sistemas de Ciência, Tecnologia e Inovação",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Minas Gerais possui um dos mais robustos sistemas de Ciência, Tecnologia e Inovação\ndo Brasil, com um ecossistema que engloba um conjunto de instituições públicas de\nensino superior sendo geradora de uma gigantesca produção científica nacional. Abriga\nonze universidades federais, duas estaduais, dezenas de institutos tecnológicos, além de\nvários centros de pesquisa, hospitais universitários e uma ampla comunidade científica\ncapilarizada por todo Estado, além de parques tecnológicos em locais estratégicos que\nestabelecem a interação saudável e colaborativa entre a academia e a indústria.\nEssa estrutura constitui um patrimônio estratégico de todos os mineiros e mineiras,\nsendo um pilar para o desenvolvimento econômico e social do Estado, sendo necessário\npotencializar este ativo para fortalecer a inovação e o desenvolvimento produtivo,\ncontribuindo decisivamente para redução das desigualdades regionais.\nA FAPEMIG ocupa posição central nesse sistema e a Constituição mineira determina a\ndestinação de, no mínimo, 1% da receita orçamentária corrente ordinária do Estado para o\namparo e fomento à pesquisa, o que tem sido descumprido uma vez que o governo atual\ndestina 30% dos recursos da FAPEMIG para amortecer a dívida do Estado, diferentemente\nde outros estados da federação com São Paulo, Rio de Janeiro, o Distrito Federal, que\npreservam o orçamento voltado para a CT&I. A garantia permanente desses recursos,\nacompanhada de autonomia, previsibilidade e planejamento de longo prazo, é condição\nfundamental para uma política científica de Estado com garantia de uso obrigatório deste\npercentual e para os fins constitucionais devidos.\nPersistem desafios estruturais: concentração da infraestrutura científica nas regiões\nmais desenvolvidas; dificuldades de interiorização da pesquisa e da inovação; necessidade\nde fortalecimento da UEMG, Unimontes, Epamig e demais instituições públicas estaduais;\nmaior integração entre universidades, Institutos Federais, setor produtivo e poder público;\ne ampliação da capacidade de transformar conhecimento científico em tecnologias,\nempregos qualificados e desenvolvimento regional.\nMinas Gerais necessita, portanto, superar uma política de CT&I fragmentada e\nreativa para efetivamente consolidar uma estratégia estadual articulada a um projeto\nde desenvolvimento social e econômico. Ciência e tecnologia devem contribuir para\ndiversificar uma economia ainda fortemente dependente de atividades primárias e da\nexploração de recursos naturais, estimulando reindustrialização, agregação de valor e\nnovas cadeias produtivas.\nO Estado reúne condições para assumir protagonismo nacional em áreas como mineração\n(sob um novo modelo minerário), transição energética, biotecnologia, saúde, inteligência\nartificial, produção de vacinas, agricultura, novos materiais e tecnologias ambientais. Para\nisso, é necessário tratar Ciência, Tecnologia e Inovação não como gasto acessório, mas\ncomo política pública estratégica, capaz de gerar soberania tecnológica, desenvolvimento\neconômico, inclusão social e melhoria das condições de vida da população mineira.\nO estado tem forte potencial para converter conhecimento acadêmico aqui produzido\nem desenvolvimento social e econômico, além de abrigar um ambiente de negócios\ntecnológico com capacidade para atrair investimentos para o Estado. Além de Belo Horizonte,\nque abriga um dos principais ecossistemas de startups da América Latina, referência em\ninovação aberta, há importantes polos regionais como Santa Rita do Sapucaí (Vale da\nEletrônica), Itajubá, Montes Claros, Lavras, Viçosa e Uberlândia que descentralizam a alta\ntecnologia pelo interior.\n\n32"
+          },
+          {
+            "id": "propostas",
+            "titulo": "Propostas:",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Propostas:\n•\n\nInvestir em educação, ciência e tecnologia para garantir um projeto de desenvolvimento\nde Minas que enfrente os desafios sociais e econômicos do Estado e promova a\nsua diversidade econômica, com a participação efetiva das instituições estaduais\ne federais de educação superior.\n\n•\n\nElaborar um novo Plano Estadual de Ciência, Tecnologia e Inovação de longo prazo,\narticulado a uma estratégia de desenvolvimento econômico, social e ambiental para\nMinas Gerais, com a participação da comunidade científica mineira.\n\n•\n\nEstabelecer uma articulação permanente do Governo do Estado de integração\nentre universidades, Institutos Federais, centros de pesquisa, empresas, setores\nda indústria e comércio, visando transformar conhecimento científico em soluções\npara os problemas econômicos e sociais do Estado.\n\n•\n\nAmpliar o apoio à Fundação de Amparo à Pesquisa de Minas Gerais (FAPEMIG),\ngarantindo os recursos constitucionais destinados à Fundação, assegurando\nregularidade, previsibilidade financeira e planejamento plurianual, estimulando\na produção científica e tecnológica e fomentando o ecossistema de inovação\ndo Estado.\n\n•\n\nCriar um fundo dedicado à Ciência e Tecnologia para que a FAPEMIG possa atuar\nde forma autônoma, com previsibilidade e planejamento a médio e longo prazos.\n\n•\n\nDiscutir o contingenciamento de 30% da verba da FAPEMIG, utilizada para amortizar\na dívida do Estado, preservando a área de CT&I como fazem vários outros estados\nda federação.\n\n•\n\nArticular as fontes de conhecimento científico e tecnológico (Universidades,\nFundações de apoio, FAPEMIG, EPAMIG, Fiocruz, institutos de pesquisa e instituições\nfederais, CNPq, Capes ) com o sistema empresarial e com as instituições públicas\nde fomento estaduais e federais (BDMG, BNDES, FINEP, SUDENE, entre outras).\n\n•\n\nInteriorizar os investimentos em CT&I, criando mecanismos específicos para\nincentivar a articulação entre instituições, pesquisadores, empresas inovadoras e\nprojetos situados nas regiões historicamente menos contempladas.\n\n•\n\nFortalecer a UEMG, a Unimontes, a EPAMIG e demais instituições estaduais de\npesquisa, ampliando investimentos em infraestrutura, pesquisa, pós-graduação,\nlaboratórios, inovação e valorização de seus quadros profissionais.\n\n•\n\nCriar uma política estadual de parques científicos e tecnológicos, priorizando sua\nimplantação e consolidação também no interior.\n\n•\n\nUtilizar a Ciência, Tecnologia e Inovação como instrumento de reindustrialização\nde Minas Gerais, incentivando cadeias produtivas de maior conteúdo tecnológico\ne agregação de valor dentro do território mineiro.\n\n•\n\nEstabelecer um programa de transformação tecnológica das regiões mineradoras,\nvisando à diversificação econômica, pesquisa, inovação e novas atividades produtivas\nnestes locais.\n\n33"
+          },
+          {
+            "id": "pagina-34",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar programas estratégicos de pesquisa e inovação em áreas prioritárias,\ncomo inteligência artificial, biotecnologia, saúde, novos materiais, semicondutores,\ntransição energética, tecnologias ambientais e agricultura sustentável.\n\n•\n\nCriar uma política mineira de soberania tecnológica, estimulando o desenvolvimento\ne a produção local de tecnologias estratégicas e reduzindo a dependência externa\nem setores considerados essenciais.\n\n•\n\nApoiar startups, cooperativas, pequenas empresas de base tecnológica e\nempreendimentos inovadores, com destaque para a economia solidária e com\nenfoque na incubação, transferência tecnológica e acesso às instituições públicas\nde pesquisa.\n\n•\n\nReforçar o apoio às Unidades EMBRAPIIs (Empresa Brasileira de Pesquisa e\nInovação Industrial) mineiras, importante ação do governo federal para aproximar\na academia e as empresas.\n\n•\n\nApoiar programas de divulgação e democratização da ciência, aproximando o\nconhecimento científico da população e fortalecendo o combate à desinformação\ne ao negacionismo científico.\n\n•\n\nApoiar a Fundação João Pinheiro na formação de gestores públicos e no planejamento\nda gestão de cidades e do próprio estado.\n\n•\n\nApoiar o Centro Nacional de Vacinas, a Fundação Ezequiel Dias (FUNED) e ações\ninovadoras para a criação de um polo de vacinas, novos medicamentos.\n\n•\n\nCriar o Programa Mineiro de Inteligência Artificial, em consonância com o Plano\nBrasileiro de Inteligência Artificial (PBIA), para fortalecer a pesquisa e o desenvolvimento\ntecnológico nas universidades, instituições científicas e ecossistemas de inovação\ndo estado, fomentando a construção de soluções e aplicações baseadas em IA\nem áreas estratégicas como saúde, agricultura, mineração sustentável, educação,\nmobilidade, segurança pública, combate à desinformação e modernização da\nadministração pública.\n\n34"
+          },
+          {
+            "id": "35",
+            "titulo": "35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "35\n35"
+          },
+          {
+            "id": "a-reducao-dos-indicadores-de-crimes-violentos-nos-ultimos-anos-nao-dimin",
+            "titulo": "A redução dos indicadores de crimes violentos nos últimos anos não diminuiu os",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "A redução dos indicadores de crimes violentos nos últimos anos não diminuiu os\ndesafios da segurança pública em Minas Gerais. A expansão do crime organizado e das\nfacções criminosas, o aumento da violência contra as mulheres e a persistência da violência\nnos territórios mais vulneráveis exigem um novo ciclo de atuação do Estado. Diante desse\ncenário, nosso plano de governo propõe:\n•\n\nInstituir e consolidar o Sistema Único de Segurança Pública (SUSP) em Minas Gerais,\npromovendo atuação integrada, compartilhamento de informações, planejamento\nconjunto e valorização dos profissionais de segurança, respeito aos direitos humanos\ne proteção da população.\n\n•\n\nAmpliar o uso da inteligência e da investigação integrada para prevenir a violência\ne combater o crime organizado e facções criminosas, fortalecendo a atuação das\ninstituições estaduais de segurança pública.\n\n•\n\nFortalecer e ampliar as ações de desmantelamento das bases econômico-financeiras\ndas organizações criminosas, interrompendo os fluxos de lucratividade que são o\npilar fundamental de sustentação do crime organizado.\n\n•\n\nFortalecer o combate aos crimes cibernéticos, às fraudes digitais e ao roubo de\ncelulares, ampliando a estrutura especializada da Polícia Civil e criando uma sala\nintegrada de resposta rápida, articulada com bancos, fintechs e operadoras de\ntelefonia, para agilizar o bloqueio de contas e linhas telefônicas e o rastreamento\nde transferências via Pix. O atendimento às vítimas será integrado ao Procon,\nfacilitando os procedimentos para bloqueio de valores e recuperação de recursos.\n\n•\n\nImplantar a Estratégia Estadual Celular Seguro, com operações permanentes em\nparceria com os municípios para combater o comércio de aparelhos furtados e\nroubados, identificar e recuperar celulares e promover sua devolução aos proprietários.\n\n•\n\nAmpliar e interiorizar a rede de proteção às mulheres, assegurando Casas da Mulher\nBrasileira, Delegacias Especializadas, Centros de Referência, Patrulha Maria da\nPenha, Unidades Móveis de Atendimento e serviços integrados de acolhimento\npsicológico, jurídico, social e de segurança pública.\n\n•\n\nValorizar os agentes da segurança pública estadual, garantindo melhores condições\nde trabalho.\n\n•\n\nFortalecer a formação, a qualificação profissional e a saúde integral e psicológica\ndos profissionais, garantindo melhores condições para o exercício da função e para\na prestação de um serviço público de segurança de qualidade.\n\n•\n\nImplementar uma política estadual de segurança pública voltada ao enfrentamento\ndo feminicídio, do genocídio da juventude negra e das demais formas de violência,\norientada pela promoção da igualdade e pela garantia dos direitos humanos.\n\n•\n\nImplantar progressivamente câmeras corporais nas forças de segurança estaduais,\ninclusive nas unidades especializadas, com protocolos de uso e proteção das\nimagens, acompanhadas da qualificação permanente da formação policial.\n\n36"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nReorganização e Segurança do Sistema Prisional. Reforçar a fiscalização e a gestão\ndas unidades prisionais, ampliando a capacidade do Estado de prevenir a atuação\nde organizações criminosas e garantir o controle efetivo do sistema. Assegurar a\nseparação entre pessoas condenadas por crimes de menor gravidade e aquelas\nresponsáveis por crimes de maior potencial ofensivo, reduzindo a influência de\nfacções e favorecendo a ressocialização.\n\n•\n\nMelhorar as condições das unidades prisionais, garantindo tratamento digno e\ncondições adequadas à população carcerária. 6\n\n•\n\nAtuar, em articulação com o Poder Judiciário, o Ministério Público e a Defensoria\nPública, para reduzir o número de pessoas em prisão provisória.\n\n•\n\nAmpliar os Centros de Ressocialização, que demonstram ter custos menores e\nresultados efetivos para baixar as taxas de reincidência, e investir em ações de\neducação, emprego, esporte e cultura para a ressocialização.\n\n6 Lei Estadual nº 12.936/1998, que estabelece diretrizes para o sistema prisional de Minas Gerais.Lei Estadual\nnº 8.533/1984, especialmente os arts. 2º e 4º, que asseguram respeito à dignidade e condições adequadas de\nsalubridade e higiene nos estabelecimentos prisionais.\n37"
+          },
+          {
+            "id": "38",
+            "titulo": "38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "38\n38"
+          },
+          {
+            "id": "minas-gerais-possui-uma-economia-diversificada-com-forte-presenca-no-set",
+            "titulo": "Minas Gerais possui uma economia diversificada, com forte presença no setor",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Minas Gerais possui uma economia diversificada, com forte presença no setor\nindustrial, de serviços, da agropecuária, da agroindústria e da mineração. No entanto, a\nbaixa incorporação de tecnologia em parte da produção, a concentração regional dos\ninvestimentos e a dificuldade de transformar conhecimento em inovação limitam a geração\nde empregos qualificados e o aumento da produtividade. Nosso compromisso é fortalecer\na capacidade produtiva do estado por meio da inovação, da qualificação da força de\ntrabalho, do apoio às pequenas e médias empresas, à economia solidária, à economia\ncriativa e às atividades produtivas regionais, promovendo desenvolvimento econômico\ncom geração de trabalho, renda e inclusão social.\nPropostas:\n•\n\nAmpliação do parque tecnológico do Estado, em parceria com as universidades\npúblicas, e com atenção às vocações regionais de Minas Gerais.\n\n•\n\nImplantar uma política estadual de qualificação profissional voltada aos setores\nestratégicos da economia mineira, em parceria com universidades estaduais e\nfederais, institutos federais, Sistema S e escolas técnicas.\n\n•\n\nAmpliar o acesso das pequenas e médias empresas ao crédito produtivo e às\ncompras públicas estaduais, com linhas de financiamento, simplificação do acesso\ne estímulo à participação em licitações e programas de desenvolvimento regional.\n\n•\n\nFortalecer programas estaduais de inovação e transformação digital para pequenas e\nmédias empresas, oferecendo assistência técnica, capacitação gerencial, consultorias\ntecnológicas, visando o aumento da produtividade e da competitividade.\n\n•\n\nImplementar uma política estadual de desenvolvimento industrial para fortalecer as\ncadeias produtivas, articulando financiamento, inovação e incentivos à produção,\ncom foco na agregação de valor e na geração de empregos qualificados.\n\n•\n\nFortalecer a economia solidária, o cooperativismo, o artesanato, a gastronomia e\noutras atividades de base territorial, ampliando mercados, assistência técnica e\ncompras públicas.\n\n•\n\nPromover a formação profissional e o apoio à programas de aceleração de startups\ne setores criativos.\n\n•\n\nColaborar com a União no combate ao trabalho escravo contemporâneo e às\ndemais formas de precarização das relações de trabalho, assegurando proteção\nàs vítimas e responsabilização dos empregadores.\n\n39"
+          },
+          {
+            "id": "diversificacao-economica",
+            "titulo": "Diversificação econômica",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Diversificação econômica\n•\n\nPromover uma estratégia de desenvolvimento econômico que reduza progressivamente\na minerodependência de Minas Gerais e de seus municípios, diversificando as\neconomias regionais e fortalecendo atividades capazes de gerar trabalho, renda e\ndesenvolvimento territorial com sustentabilidade ambiental e justiça social.\n\n•\n\nPriorizar investimentos e políticas de incentivo à agricultura familiar e agroecológica,\neconomia solidária e popular, turismo de base comunitária, cultura, ciência,\ntecnologia e inovação, indústria e cadeias produtivas sustentáveis, valorizando as\npotencialidades de cada território.\n\n•\n\nFortalecer a capacidade do Estado de regular e fiscalizar a atividade minerária,\nampliar a participação social nas decisões que afetam os territórios e construir,\nespecialmente nos municípios minerodependentes, planos de transição e diversificação\neconômica de longo prazo, preparando Minas Gerais para uma economia menos\ndependente da exploração intensiva de seus bens naturais.\n\nTrabalho e Emprego\nO mercado de trabalho de Minas Gerais apresentou, em 2025, um quadro de expansão\nda ocupação e forte geração de empregos formais, basicamente em função das políticas\nde desenvolvimento e geração de empregos do Governo Federal. Entretanto, a expansão\nquantitativa do emprego não elimina problemas históricos do mercado de trabalho:\ninformalidade, desigualdade salarial, rotatividade, terceirização, precarização e diferenças\nprofundas entre regiões e segmentos da população.\nPara os trabalhadores e trabalhadoras, não basta ampliar o número de vagas: é preciso\ngarantir empregos de qualidade, com salários dignos, direitos e boas condições de\ntrabalho. A alta rotatividade, a terceirização, a pejotização e outras formas de contratação\nque reduzem a proteção trabalhista seguem como desafios. O crescimento do emprego\ndeve, portanto, estar associado a um modelo de desenvolvimento que valorize o trabalho\ne assegure direitos sociais\nAlém disso, observamos de forma muito clara que a recuperação do mercado de\ntrabalho não ocorre de maneira igual para todos. As desigualdades de gênero, raça, idade,\nescolaridade e território continuam determinando diferentes possibilidades de inserção\nprofissional.7 Para Minas Gerais, isso significa que uma política de trabalho e emprego\nnão pode ser construída de maneira uniforme. Além disso, é necessário considerar as\ndiferenças entre a Região Metropolitana de Belo Horizonte, o Triângulo, o Sul de Minas, a\nZona da Mata, o Norte e os Vales do Mucuri e Jequitinhonha, Vale do Aço e entre outras\nregiões e que levem em conta o perfil da população de cada região.\n\n7No primeiro trimestre de 2026, por exemplo, a taxa nacional de desocupação foi de 5,1% entre os homens\ne 7,3% entre as mulheres. Por raça ou cor, foi de 4,9% entre brancos, 7,6% entre pretos e 6,8% entre pardos.\n(Agência de Notícias IBGE).\n\n40"
+          },
+          {
+            "id": "propostas-2",
+            "titulo": "Propostas:",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Propostas:\n•\n\nCombater a pejotização, a terceirização abusiva e demais formas de precarização.\n\n•\n\nEnfrentar as desigualdades salariais entre homens e mulheres e entre grupos raciais;\n\n•\n\nPlano Estadual de Emprego para a Juventude — programa estadual de primeiro\nemprego, estágio e qualificação profissional, com incentivo a empresas que\ncontratem jovens.\n\n•\n\nImplantar políticas de permanência de jovens no mercado de trabalho.\n\n•\n\nDefender a saúde e a segurança no trabalho.\n\n•\n\nAmpliar as políticas públicas de emprego, qualificação e proteção social.\n\n•\n\nConstruir um projeto de desenvolvimento para Minas Gerais baseado na geração\nde emprego de qualidade e na redução das desigualdades regionais.\n\nEmprego verde como estratégia de desenvolvimento econômico\n•\n\nEmprego verde, diversificação econômica e reindustrialização: promover trabalho\ndecente em atividades que reduzam impactos ambientais e emissões, ampliando\ne diversificando a oferta de empregos em Minas Gerais, com geração de renda,\nnovas ocupações e qualificação profissional, fortalecendo especialmente pequenas\ne médias empresas, cooperativas e redes de economia solidária.\n\n•\n\nCadeias produtivas sustentáveis e economia do cuidado: fomentar setores com\npotencial de geração de emprego e desenvolvimento territorial, como saneamento\nbásico, reciclagem e economia circular, energias renováveis e atividades de cuidado,\narticulando justiça social, sustentabilidade ambiental, inovação e desenvolvimento\nprodutivo.\n\n•\n\nPolítica Estadual de Emprego Verde e Cooperação Produtiva: criar uma política\nestadual articulada à estratégia de reindustrialização, utilizando instrumentos como\ncompras públicas, fóruns regionais, redes de cooperação produtiva e diagnósticos\nparticipativos para identificar atividades existentes, possibilidades de reconversão\nindustrial e vocações econômicas dos diferentes territórios de Minas Gerais.\n\n41"
+          },
+          {
+            "id": "42",
+            "titulo": "42",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "42\n42"
+          },
+          {
+            "id": "acoes-para-o-agronegocio-de-minas-gerais",
+            "titulo": "Ações para o Agronegócio de Minas Gerais",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Ações para o Agronegócio de Minas Gerais\nO agronegócio brasileiro tem apresentado forte dinamismo, com importante contribuição\npara a economia, o emprego e as exportações. Minas Gerais, embora tenha grande potencial\ne forte participação no setor, ainda enfrenta desafios para ampliar a produtividade, o acesso\nao crédito e a agregação de valor à produção. Cabe ao Estado fortalecer políticas de apoio\nao agronegócio e à agropecuária e promover um desenvolvimento rural sustentável e\ninclusivo.\nPropostas:\n•\n\nFortalecer a política agrícola e o desenvolvimento do agronegócio mineiro, ampliando\na articulação entre a SEAPA, o Ministério da Agricultura e Pecuária (MAPA) e as\nentidades vinculadas ao Estado. Apoiar a modernização, a inovação tecnológica, a\nagregação de valor e a expansão dos mercados, fortalecendo cadeias estratégicas\ne a competitividade da produção mineira.\n\n•\n\nFortalecer a pesquisa, a assistência técnica e a defesa agropecuária, integrando\nEPAMIG, EMATER-MG e IMA e ampliando a difusão de tecnologias, a melhoria da\nprodutividade e a qualidade sanitária dos produtos mineiros.\n\n•\n\nAmpliar a infraestrutura e os investimentos no meio rural, com prioridade para\nestradas, logística, irrigação, acesso à água e conectividade, criando melhores\ncondições para a produção e a comercialização, com destaque para os processos\nde agregação de valor e geração e distribuição de renda no meio rural.\n\nAções para a Agricultura Familiar e Urbana\ne para Agroecologia de Minas Gerais\nAções para o Agronegócio de Minas Gerais\nA agricultura familiar ocupa lugar importante na estrutura socioeconômica de Minas Gerais.\nE seu papel poderá ser ainda maior na perspectiva de um caminho de desenvolvimento\nmais sustentável. Embora importantes políticas públicas tenham sido retomadas nos últimos\nanos pelo governo Lula, persistem obstáculos relacionados à burocracia administrativa,\nà fragmentação dos sistemas públicos, à exclusão digital e às dificuldades de acesso aos\nprogramas governamentais.\nA simplificação dos procedimentos administrativos, a transparência, o fortalecimento do\ncontrole social e a ampliação da presença do Estado nos territórios rurais são fundamentais\npara garantir que os direitos conquistados se transformem em políticas efetivamente\nacessíveis às populações do campo, das florestas e das águas.\nA agricultura mineira ainda enfrenta desafios estruturais, como a baixa produtividade\nem grande parte das cadeias produtivas, a insuficiência de assistência técnica e extensão\nrural (especialmente para os médios e pequenos produtores) e a limitada articulação da\npesquisa agropecuária com as demandas regionais. Essas dificuldades se concentram\nprincipalmente nas regiões do Norte de Minas, Jequitinhonha e Vale do Mucuri, onde vivem\nas maiores populações rurais e também os maiores índices de pobreza, evidenciando a\nnecessidade de políticas voltadas à inclusão produtiva e ao fortalecimento da agricultura.\n\n43"
+          },
+          {
+            "id": "alem-do-fomento-a-producao-e-a-comercializacao-e-fundamental-apoiar-as-f",
+            "titulo": "Além do fomento à produção e à comercialização, é fundamental apoiar as famílias rurais",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Além do fomento à produção e à comercialização, é fundamental apoiar as famílias rurais\nem suas condições de vida social e cultural, com atenção especial à juventude. A garantia\nde direitos básicos, como educação e saúde, e o acesso à tecnologia e à informação são\nessenciais para estimular a permanência dos jovens no campo e assegurar a continuidade\nda agricultura familiar entre gerações.\nPropostas:\n•\n\nFortalecer a agricultura familiar como estratégica para o desenvolvimento de Minas\nGerais e para a produção de alimentos, ampliando o acesso à assistência, crédito,\nseguro, tecnologias, infraestrutura e mercados.\n\n•\n\nAmpliar as compras públicas da agricultura familiar, fortalecendo a articulação com\no PAA (Programa de Aquisição de Alimentos) e o PNAE (Programa Nacional de\nAlimentação Escolar) para gerar renda no campo e garantir alimentação saudável.\n\n•\n\nFortalecer a EMATER-MG e as políticas estaduais de apoio à agricultura familiar,\narticulando-as às políticas federais e ampliando sua presença nos municípios, com\natenção especial aos jovens, às mulheres, aos povos e comunidades tradicionais\ne aos assentamentos da reforma agrária.\n\n•\n\nPromover a reforma agrária e implementar, em Minas Gerais, a Política de Juventude e\nSucessão Rural (Lei Federal n° 15.178/2025), de autoria de Patrus Ananias, garantindo\noportunidades para a permanência da juventude no campo, com educação, inovação\ne oportunidades de trabalho e a renovação geracional da agricultura familiar.\n\n•\n\nInstituir uma política permanente de fortalecimento da agricultura camponesa\nagroecológica, com subsídios, crédito diferenciado, assistência técnica, pesquisa,\ninfraestrutura e comercialização, reconhecendo-a como estratégica para a soberania\nalimentar e o desenvolvimento sustentável.\n\n•\n\nAmpliar o acesso das mulheres à terra, à água, ao crédito/subsídio, à habitação\nrural, aos equipamentos produtivos e às tecnologias apropriadas, assegurando\ncondições para produção agroecológica e vida digna no campo.\n\n•\n\nReconhecer, valorizar e fortalecer os conhecimentos tradicionais das mulheres\ncamponesas sobre plantas medicinais, práticas populares de cuidado e biodiversidade,\nampliando sua integração às políticas públicas de saúde, pesquisa e inovação.\n\n•\n\nAgroecologia: Ampliar a transição agroecológica, apoiando a produção sustentável de\nalimentos, a conservação dos recursos naturais e a redução do uso de agrotóxicos.\n\n•\n\nRegulamentar e implementar a Política Estadual de Agroecologia e Produção\nOrgânica (PEAPO) com orçamento, metas, controle social e participação efetiva\nda sociedade civil.\n\n•\n\nElaborar e implementar o Plano Estadual de Agroecologia e Produção Orgânica\n— PLEAPO, como instrumento de execução da PEAPO, com diagnóstico, metas,\nindicadores, orçamento e monitoramento.\n\n44"
+          },
+          {
+            "id": "pagina-45",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a Política Estadual de Segurança Alimentar e Nutricional Sustentável —\nPESANS, instituída pela Lei Estadual n° 22.806/2017, com valorização do CONSEAMG, dos conselhos municipais, dos Centros de Referência em Segurança Alimentar\ne Nutricional e do SISAN em Minas Gerais.\n\n•\n\nEfetivar a Política Estadual de Apoio à Agricultura Urbana, instituída pela Lei Estadual\nn° 15.973/2006, reconhecendo a agricultura urbana e periurbana como estratégia\nde segurança alimentar, geração de renda, saúde, educação e direito à cidade.\n\n•\n\nFortalecer a Política Estadual de Desenvolvimento Rural Sustentável da Agricultura\nFamiliar — PEDRAF, instituída pela Lei Estadual n° 21.156/2014, priorizando a\nagroecologia, a juventude, as mulheres, os povos e comunidades tradicionais e os\nterritórios dos Polos Agroecológicos.\n\n45"
+          },
+          {
+            "id": "46",
+            "titulo": "46",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "46\n46"
+          },
+          {
+            "id": "minas-gerais-enfrenta-ha-cerca-de-quatro-decadas-uma-crise-fiscal-estrut",
+            "titulo": "Minas Gerais enfrenta, há cerca de quatro décadas, uma crise fiscal estrutural que",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Minas Gerais enfrenta, há cerca de quatro décadas, uma crise fiscal estrutural que\nnão pode ser atribuída a uma única causa. O endividamento elevado foi agravado pela\ndesaceleração do crescimento da economia, pela perda de receitas decorrente da Lei\nKandir e das mudanças no ICMS, pela concentração tributária da União e pela estrutura\nde despesas do Estado. Soma-se a esse quadro a baixa capacidade de investimento\ndo Estado. Embora seja uma das maiores economias do país, Minas Gerais possui uma\nreceita por habitante muito inferior à de outros estados, o que limita sua capacidade de\nassegurar serviços públicos de qualidade e promover o desenvolvimento.\nA situação piorou muito nos últimos anos. A dívida do Estado, que era de R$113,8\nbilhões no início deste governo, chegou a R$213,5 bilhões ao final do período. Ao mesmo\ntempo, o ajuste sobre as despesas de pessoal reduziu a capacidade de valorização dos\nservidores, enquanto a previdência estadual permanece como um dos principais desafios\npara o equilíbrio das contas públicas. Minas também perdeu capacidade de investimento\ne passou a depender, em grande medida, de recursos extraordinários (principalmente os\nrecursos do acordo com a Vale pelos crimes de Brumadinho).\nO mineiro paga impostos ao município, ao Estado e à União. Quando o Estado se\nendivida com a União, está, em última análise, comprometendo recursos públicos que\npertencem à própria população. E quem acaba pagando o preço são os cidadãos, quando\nfaltam recursos para melhorar a escola, valorizar os profissionais de saúde, recuperar as\nestradas ou garantir atendimento digno. Por isso, a dívida não pode ser tratada apenas\ncomo uma questão de números e planilhas: é também uma questão política e social.\nA dívida de Minas com a União pode e deve ser negociada e resolvida com diálogo e\nresponsabilidade. Já a dívida do Estado com sua população, com a criança que precisa\nde uma boa escola, com a pessoa que espera por uma cirurgia, com o trabalhador que\nprecisa de um salário digno, não pode mais esperar.\nMinas Gerais aderiu ao Programa de Pleno Pagamento de Dívidas dos Estados (Propag),\nque oferece melhores condições para equacionar a dívida no médio e longo prazo. No\ncaso mineiro, o saldo devedor era de R$182,1 bilhões ao final de 2025. O Estado deverá\nutilizar cerca de R$36,3 bilhões em ativos para abatê-lo, refinanciando o saldo restante\nem 30 anos, com correção pelo IPCA e juros reais de 0%. A adesão, entretanto, aumenta a\npressão sobre as contas nos primeiros anos, quando crescerão os pagamentos da dívida,\nos aportes ao Fundo de Equalização Federativa e os investimentos obrigatórios.\n\n47"
+          },
+          {
+            "id": "para-superar-a-crise-fiscal-e-reconstruir-a-capacidade-de-investimento-d",
+            "titulo": "Para superar a crise fiscal e reconstruir a capacidade de investimento do Estado, será",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Para superar a crise fiscal e reconstruir a capacidade de investimento do Estado, será\nnecessário um conjunto articulado de medidas:\n•\n\nAprimorar o Propag, ampliando de cinco para dez anos a transição para o pagamento\nintegral dos encargos, de modo a reduzir a pressão sobre as contas estaduais.\n\n•\n\nDefender condições especiais para Minas Gerais, com redução mais significativa\ndo estoque da dívida e ampliação dos prazos de pagamento, compatibilizando o\nserviço da dívida com a capacidade de arrecadação do Estado.\n\n•\n\nAmpliar a capacidade de arrecadação, combatendo a sonegação, revendo subsídios\ne benefícios fiscais e buscando novas fontes de receitas, inclusive mecanismos de\ntributação sobre a exploração e exportação das riquezas minerais de Minas Gerais.\n\n•\n\nFortalecer a economia mineira, diversificando a estrutura produtiva e articulando\ninvestimentos públicos e privados, condição indispensável para ampliar a arrecadação\ne reduzir o peso da dívida.\n\n•\n\nPriorizar investimentos estruturantes, especialmente em infraestrutura, saneamento,\neducação, habitação, mobilidade e adaptação às mudanças climáticas, utilizando\no investimento público para estimular o crescimento e ampliar as receitas.\n\n•\n\nRetomar uma política de concursos públicos, substituindo progressivamente\nservidores temporários por efetivos e fortalecendo as receitas previdenciárias.\n\n•\n\nValorizar os servidores públicos, preservando seus direitos e evitando restrições\nadicionais às despesas de pessoal quando estas estiverem dentro dos limites legais.\n\n•\n\nPreservar as empresas públicas estratégicas, mantendo sob controle do Estado\nempresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento\nde Minas Gerais.\n\n•\n\nAmpliar o apoio federal a Minas Gerais, especialmente para investimentos, reconhecendo\nque um Estado fortemente endividado não dispõe, no curto prazo, de capacidade\nsuficiente para financiar sozinho a reconstrução de sua infraestrutura e economia.\n\nÉ necessário combinar responsabilidade na gestão das contas públicas, renegociação da\ndívida, recuperação da capacidade de investimento, crescimento econômico, fortalecimento\ndas receitas e preservação dos serviços e do patrimônio público.\n\n48"
+          },
+          {
+            "id": "49",
+            "titulo": "49",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "49\n\n49"
+          },
+          {
+            "id": "desenvolvimento-e-integracao-regional",
+            "titulo": "Desenvolvimento e Integração Regional",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Desenvolvimento e Integração Regional\nMinas Gerais reúne uma extraordinária diversidade de territórios, vocações econômicas,\nidentidades culturais e realidades sociais. Essa riqueza, no entanto, convive com profundas\ndesigualdades entre as regiões, que limitam oportunidades e comprometem um desenvolvimento\nequilibrado. Superar esse quadro exige um Estado capaz de planejar o território de forma\nintegrada, descentralizar decisões e investimentos e promover a expansão da infraestrutura\ne da mobilidade. Esse processo deve ser orientado pela participação social e pela escuta\npermanente da população, aproximando o governo das diferentes realidades e necessidades\ndo povo mineiro.\nNão é difícil constatar que uma boa parte dos principais problemas que afligem cidadãs\ne cidadãos de Minas ultrapassam os limites de um único município. Problemas como\ntransporte e mobilidade, logística, saneamento, segurança, meio ambiente, emprego e renda,\ndentre tantos outros, somente podem ser enfrentados adequadamente se entendemos que\neles nunca se restringem a um único município. Nesse sentido, em conformidade com o\nsegundo dos pilares mencionados logo na apresentação – participação popular, gestão\ndemocrática e descentralização administrativa –, uma descentralização administrativa apta\na incrementar a participação popular estrutura transversalmente este plano de governo,\nmaterializando-se nas seguintes propostas:\n•\n\nInovar na criação de arranjos administrativos que permitam um olhar mais atento às\nespecificidades locais e regionais, bem como viabilizem a reunião de capacidades\nlocais e regionais de construção de soluções para seus desafios peculiares. Isso\nsignifica uma administração menos concentrada na região metropolitana de Belo\nHorizonte e arejada por instâncias de deliberação e planejamento intermediárias,\nisto é, menores que o estado, mas maiores do que um único município. Em termos\nmais concretos, essa proposta pode ser traduzida tanto na instituição de regiões\nmetropolitanas, aglomerações urbanas e microrregiões, já previstas na Constituição\nde Minas Gerais como possibilidade, quanto na formulação de novas formas de\nparceria administrativa local e regional, mais adequadas à dinâmica do nosso\ntempo, com pleno respeito às administrações municipais envolvidas e em diálogo\nconstante com elas.\n\n•\n\nInstituir uma Política Estadual de Desenvolvimento Regional, com planos específicos\npara cada território, integrando investimentos em infraestrutura, ciência, inovação,\nturismo, agroindústria, economia criativa e cadeias produtivas estratégicas, de\nacordo com as vocações e necessidades de cada região. Os planos regionais serão\nelaborados com participação dos municípios, universidades e institutos, setor\nprodutivo e sociedade civil, para orientar as prioridades dos investimentos públicos.\n\n•\n\nArticular os planos regionais a partir de uma visão integrada de Minas Gerais,\nconsiderando as relações econômicas, sociais e territoriais entre as diferentes\nregiões e suas conexões com os estados vizinhos.\n\n•\n\nArticular as políticas territoriais (regionais e urbanas), no sentido de melhor integração\ndo território estadual, promovendo a melhoria da rede de acessibilidade, com\ndestaque para a infraestrutura viária, contribuindo para uma melhor distribuição\nda rede urbana e da população, evitando a aglomeração periférica nas grandes e\nmédias cidades.\n\n50"
+          },
+          {
+            "id": "pagina-51",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPromover a melhoria das condições de vida da população localizada nas periferias\nurbanas, com ênfase em habitação, transporte público, saneamento, educação\ninfantil e básica, saúde e segurança.\n\nMobilidade e Infraestrutura\nEm um estado com a dimensão territorial de Minas Gerais, a qualidade das rodovias\né decisiva para reduzir as desigualdades regionais, promover a integração do território,\nfortalecer a economia e garantir o direito de ir e vir. O Governo atuará para recuperar,\nmodernizar e ampliar a qualidade da malha rodoviária estadual, priorizando a segurança\nviária, a manutenção da infraestrutura e a integração entre as diferentes regiões do estado.\nAlém disso, a recuperação de trechos ferroviários estratégicos, a implantação de\nterminais intermodais, a expansão do metrô de Belo Horizonte e o aproveitamento do\ntransporte hidroviário devem integrar uma política voltada à diversificação da matriz de\ntransportes, com foco no fortalecimento da infraestrutura e da logística estadual e na\nampliação das opções de deslocamento de pessoas e mercadorias.\nPropostas:\n•\n\nFortalecer a integração logística do estado, promovendo a conexão qualificada entre\nrodovias estaduais, ferrovias, aeroportos, plataformas logísticas e polos regionais\nde produção, reduzindo custos de transporte e melhorando o acesso da população\naos serviços públicos.\n\n•\n\nImplantar um Programa Permanente de Recuperação e Conservação das Rodovias\nEstaduais, priorizando, com critérios técnicos e transparência, a recuperação do\npavimento, da drenagem, das pontes, dos acostamentos e da sinalização.\n\n•\n\nAmpliar a segurança da malha rodoviária estadual, eliminando pontos críticos de\nacidentes, reforçando a drenagem e a estabilidade de encostas.\n\n•\n\nAmpliar a pavimentação e a recuperação de rodovias que conectam municípios,\ndistritos e polos regionais, fortalecendo a integração territorial, o acesso aos serviços\npúblicos e o escoamento da produção.\n\n•\n\nModernizar a gestão da infraestrutura rodoviária por meio de inteligência artificial\ne sistemas inteligentes de transporte, com monitoramento em tempo real das\ncondições das vias, informações aos usuários e resposta mais ágil a acidentes e\neventos climáticos.\n\n•\n\nImplantar o Bilhete Único Metropolitano e integrar os sistemas de transporte da\nRegião Metropolitana de Belo Horizonte. Criar um sistema único de bilhetagem\nque permita ao passageiro utilizar, com o mesmo meio de pagamento, os ônibus\nmetropolitanos, os sistemas municipais e o metrô, com integração tarifária entre eles.\n\n•\n\nEstruturar um Sistema Metropolitano de Transporte e Trânsito, com planejamento\nregional, integração de linhas, bilhetagem, informação ao usuário, padrões de\nqualidade e mecanismos de financiamento. Paralelamente, deve ser desenvolvido\nestudo técnico, fiscal e institucional sobre políticas de redução tarifária, adotando\num modelo progressivo de tarifa zero.\n\n51"
+          },
+          {
+            "id": "pagina-52",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAmpliar e fortalecer as políticas de mobilidade acessível para estudantes e jovens\ntrabalhadores, fortalecendo o transporte público e buscando reduzir o peso das\ntarifas sobre a renda das famílias.\n\nFerrovias\nMinas Gerais possui a maior malha ferroviária do Brasil, com cerca de 5 mil quilômetros\nde ferrovias distribuídos por mais de 180 municípios, além de ocupar posição estratégica na\nlogística nacional. Apesar desse potencial, a infraestrutura ferroviária permanece voltada\nao transporte de cargas, especialmente o minério de ferro, enquanto os ramais regionais\nforam desativados e o transporte de passageiros praticamente desapareceu. Soma-se a\nisso, a dependência do transporte rodoviário, que eleva custos, reduz a competitividade\nda produção mineira e limita a mobilidade das pessoas.\nPropostas:\n•\n\nInstituir uma Política Estadual de Desenvolvimento Ferroviário, voltada à recuperação\ne ampliação da malha ferroviária, à integração logística e territorial do estado e à\nredução da dependência do transporte rodoviário.\n\n•\n\nPromover, em articulação com a União, a ANTT e as concessionárias, a retomada\ndo transporte regional de passageiros, o fortalecimento dos trens turísticos e a\nampliação do transporte ferroviário da produção mineira, transformando a ferrovia\nem instrumento de desenvolvimento econômico e coesão territorial.\n\nInfraestrutura para o desenvolvimento social e econômico\n•\n\nPreservar as empresas públicas estratégicas, mantendo sob controle do Estado\nempresas como Cemig, Codemig e Codemge e outras estatais fundamentais ao\ndesenvolvimento de Minas Gerais.\n\n•\n\nGarantir que a Cemig permaneça sob o controle do Estado de Minas Gerais,\npreservando seu caráter de sociedade de economia mista e seu papel estratégico\nno fornecimento de energia para a maior parte dos municípios mineiros.\n\n•\n\nRever o processo de privatização da COPASA, assegurando que a prestação dos\nserviços de abastecimento de água e saneamento esteja subordinada ao interesse\npúblico, à universalização do acesso e à redução das desigualdades regionais.\n\n52"
+          },
+          {
+            "id": "53",
+            "titulo": "53",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "53\n\n53"
+          },
+          {
+            "id": "o-estabelecimento-das-prioridades-e-dos-novos-criterios-redistributivos",
+            "titulo": "O estabelecimento das prioridades e dos novos critérios redistributivos será construído",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "O estabelecimento das prioridades e dos novos critérios redistributivos será construído\ncoletivamente, por meio de processos que combinam métodos de planejamento e\norçamento participativo, já amplamente conhecidos e consolidados, com novas tecnologias,\nprivilegiando o diálogo e a escuta da população. A proposta é articular espaços permanentes\nde participação presencial e em plataformas digitais com soluções de inteligência artificial.\nA participação, portanto, será mais do que um instrumento de consulta eventual. Será uma\nforma e um método para construir, implementar e monitorar as políticas públicas. A gestão\npública será orientada pela participação social, pela transparência, pelo uso estratégico\nde dados, pela inovação tecnológica e pela descentralização administrativa, fortalecendo\na capacidade do Estado de planejar, executar e avaliar políticas públicas com eficiência,\nresponsabilidade e compromisso com o interesse público.\n•\n\nPromover um processo de regionalização e territorialização participativa, visando\ngerar reconhecimento dos grupos sociais organizados no território com os limites\ne instâncias administrativas das 66 microrregiões do estado, além dos territórios\nde povos e comunidades tradicionais.\n\n•\n\nRealizar um processo de diálogo, levantamento e cadastro dos movimentos, coletivos\ne organizações da sociedade civil atuantes no estado, dividido entre microrregiões.\n\n•\n\nPromover, a partir das microrregiões e territórios de povos e comunidades tradicionais,\num processo de discussão participativa do Plano Plurianual de Ação Governamental,\na fim de definir prioridades temáticas de investimento para a gestão.\n\n•\n\nA partir das diretrizes estabelecidas no PPA Participativo, destinar, anualmente, ao\nmenos 1% da Receita Corrente Líquida do estado, para um Orçamento Participativo\nMineiro, focado em investimentos em infraestrutura regional.\n\n•\n\nViabilizar financiamentos de instâncias superiores e instituições financeiras (ex.:\nMinistério das Cidades, BNDES e, especialmente, BDMG) para projetos escolhidos\nno OP que não se enquadrem na quantidade de recursos disponíveis.\n\n•\n\nImplantar o Ciclo Estadual de Planejamento e Orçamento Participativo, com\nConselhos Regionais de Planejamento Participativo que reúnam população,\nmunicípios e organizações da sociedade civil para definir prioridades de investimento,\nconsiderando as desigualdades territoriais de Minas.\n\n•\n\nCriar o Portal Estadual de Participação e Monitoramento, em que a população possa\napresentar propostas e prioridades regionais; acompanhar obras e investimentos\npactuados; fiscalizar prazos e execução.\n\n•\n\nDisponibilizar a estrutura das microrregiões, com a constituição de escritórios de\nprojetos, voltados para fornecer apoio técnico para a população na construção de\npropostas para o OP.\n\n•\n\nCriar um Fórum Interconselhos, com representação de todos os Conselhos criados\n(atualmente ativos ou não) para promover a permeabilidade das decisões de cada\nárea.\n\n•\n\nInserir a juventude no Orçamento Participativo, permitindo que os jovens contribuam\ndiretamente para definir parte dos investimentos estaduais destinados às políticas\nde juventude.\n\n54"
+          },
+          {
+            "id": "pagina-55",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nTestar e implementar uma Plataforma Digital para disponibilizar e registrar informações\ndos Conselhos (composição, atas e gravações de reuniões, decisões e outros),\npossibilitar a interação entre conselheiros, cidadãos e técnicos e a participação\nremota nas reuniões.\n\n•\n\nPossibilitar também por meio de Plataforma Digital a realização de Consultas\nPopulares, Plebiscitos, Audiências Públicas e demais procedimentos previstos em lei.\n\n•\n\nImplantar uma política de uso responsável da inteligência artificial na administração\npública estadual, e ações visando automatizar processos administrativos repetitivos,\nreduzindo a burocracia, ampliando a eficiência da administração pública e agilizando/\nqualificando o atendimento ao cidadão, tais como o desenvolvimento de assistentes\ndigitais e a disponibilização de aplicativos e outras ferramentas inteligentes para\nfacilitar o acesso da população aos serviços do Estado.\n\n•\n\nAmpliar a parceria com centros de pesquisa e universidades, integrar bases de\ndados e utilizar inteligência artificial para apoiar o planejamento governamental,\na formulação, o monitoramento e a avaliação de políticas públicas, fortalecendo\numa gestão baseada em evidências.\n\n55"
+          },
+          {
+            "id": "56",
+            "titulo": "56",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "56\n56"
+          },
+          {
+            "id": "minas-gerais-e-uma-das-grandes-potencias-culturais-e-artisticas-do-brasi",
+            "titulo": "Minas Gerais é uma das grandes potências culturais e artísticas do Brasil. Sua força",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "Minas Gerais é uma das grandes potências culturais e artísticas do Brasil. Sua força\nnasce da diversidade de seus territórios, das culturas populares e tradicionais, de seus\npovos e comunidades, de seu patrimônio e memória, de sua produção artística, de seus\nfestivais, museus, arquivos, bibliotecas, espaços culturais, grupos, coletivos, artistas,\ntécnicos e demais profissionais da cultura e das artes. Essa riqueza é também força de\ncidadania, desenvolvimento, trabalho, renda e projeção de Minas no Brasil e no mundo.\nA cultura é um direito de todos e uma dimensão essencial do desenvolvimento de Minas\nGerais. O Estado deve assegurar condições para criação, produção, acesso, memória,\nfruição e circulação cultural, reconhecendo a diversidade das culturas urbanas, rurais,\npopulares, tradicionais, afro-mineiras, indígenas, quilombolas e periféricas e valorizando\no trabalho de quem produz cultura em todas as regiões do Estado.\nNosso plano de governo tem como diretrizes reconstruir e fortalecer a capacidade\npública da cultura, descentralizar recursos e consolidar o Sistema Estadual de Cultura como\ninfraestrutura institucional capaz de sustentar uma trajetória articulada de desenvolvimento\ncultural - entrar, formar, criar e produzir, circular, gerar renda, permanecer e reter valor\nno território. Essa trajetória não reduz a cultura à dimensão produtiva: articula direitos\nculturais, criação, memória, fruição, participação, diversidade, trabalho e autonomia. O\nfinanciamento público deve ampliar autonomia e deixar capacidade instalada: conhecimento,\nequipamentos, direitos, dados, redes e meios de produção e circulação.\nAs propostas abaixo constituem uma base programática inicial para o plano de\ngoverno Patrus Ananias 2026-2030. Seu detalhamento, priorização territorial, metas e\ninstrumentos de implementação serão aprofundados ao longo da campanha, em diálogo\ncom trabalhadores da cultura, movimentos, fóruns, conselhos, instituições, municípios,\nuniversidades e os diferentes setores culturais de Minas Gerais.\nPropostas:\n•\n\nRecriar a Secretaria de Estado de Cultura, preservando forte articulação entre\nas suas políticas sem subordinação administrativa, e recompor gradualmente a\ncapacidade técnica da Secretaria, IEPHA-MG, Fundação Clóvis Salgado, FAOP\ne demais estruturas culturais, com valorização dos servidores e realização de\nconcursos públicos quando necessários.\n\n•\n\nConsolidar o Sistema Estadual de Cultura como política de Estado, articulando\nórgãos, fundações, Conselho Estadual de Política Cultural, conferências, fóruns,\nmunicípios, universidades, equipamentos, comunicação pública, financiamento,\nplanejamento, orçamento e dados. Convocar a V Conferência Estadual de Cultura\ncomo espaço de mobilização, participação e pactuação do novo ciclo do Plano\nEstadual de Cultura, incluindo a revisão das diretrizes e prioridades acumuladas\nnos ciclos anteriores.\n\n•\n\nFortalecer o Fundo Estadual de Cultura, aperfeiçoar o Incentivo Fiscal à Cultura e\narticular a PNAB e demais recursos federais, com calendário previsível, transparência\ne critérios de desconcentração territorial. Simplificar inscrições e prestações de contas\nde forma proporcional ao valor e ao risco, reconhecer trajetória e portfólio, adotar\nmediação e busca ativa nos casos legalmente cabíveis e garantir acessibilidade e\nações afirmativas.\n\n57"
+          },
+          {
+            "id": "pagina-58",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nDescentralizar recursos, infraestrutura e oportunidades culturais, reduzindo as\ndesigualdades regionais e ampliando o acesso e a circulação da cultura em todos\nos territórios mineiros.\n\n•\n\nFortalecer a Política Estadual de Cultura Viva em Minas Gerais, através dos Pontos\nde Cultura, desenvolvendo a política de base cultural comunitária ancorada no\nterritório.\n\n•\n\nInstituir uma Política Estadual das Artes, articulada às políticas nacionais da área,\ncom instrumentos permanentes para teatro, dança, circo, música, literatura, artes\nvisuais e outras linguagens, apoiando criação, pesquisa, experimentação, produção,\nformação, difusão, memória, circulação e internacionalização. Articular cultura e\neducação, fortalecendo escolas como espaços culturais e ampliando formação\nartística, técnica e profissional por meio de UEMG, Unimontes, universidades\npúblicas, CEFET-MG, Institutos Federais e Escolas Livres de Arte e Cultura, com\nprioridade para territórios de menor oferta formativa.\n\n•\n\nFortalecer a política do livro, leitura e bibliotecas, ampliando acervos físicos e\ndigitais, acessibilidade, espaços de leitura, circulação de autores e obras mineiras,\nprogramas de incentivo à leitura e estratégias permanentes de formação de leitores\ne de público em parceria com municípios, escolas, equipamentos e comunicação\npública.\n\n•\n\nInstituir uma Política Estadual Permanente de Circulação Cultural e Artística,\ngarantindo mobilidade, intercâmbio e circulação da produção mineira em âmbito\nestadual, nacional e internacional, fortalecendo festivais, redes, equipamentos,\nescolas, bibliotecas, museus, feiras e circuitos existentes e apoiando novos arranjos\nquando necessários.\n\n•\n\nRetomar e atualizar o Música Minas como instrumento estratégico de circulação,\nintercâmbio e projeção da música produzida no Estado.\n\n•\n\nReestruturar a Empresa Mineira de Comunicação e fortalecer Rede Minas e\nRádio Inconfidência como infraestrutura pública de cultura, memória, produção e\ncirculação, com valorização de seus quadros, coproduções com Pontos de Cultura,\ncomunidades, universidades e produtores independentes, editais de produção\naudiovisual e radiofônica, acervo digital e mecanismos autorizados de retransmissão\nem redes públicas, comunitárias e digitais.\n\n•\n\nInstituir uma política estadual permanente para o Carnaval e as festas populares,\ncom linha anual de fomento e calendário antecipado, salvaguarda de agremiações\ne saberes, integração com cultura alimentar, agricultura familiar, cooperativismo e\neconomia local.\n\n•\n\nFortalecer o IEPHA-MG, o Conselho Estadual do Patrimônio Cultural, museus,\narquivos, acervos e a proteção do patrimônio material e imaterial, com recomposição\ntécnica, digitalização, prevenção de riscos climáticos, valorização do Patrimônio\nVivo e integração entre memória, educação, circulação e desenvolvimento territorial.\n\n•\n\nFortalecer e atualizar a política estadual de fomento ao audiovisual, retomando e\natualizando o Programa de Desenvolvimento do Audiovisual Mineiro - Prodam.\n\n58"
+          },
+          {
+            "id": "pagina-59",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nDesenvolver políticas para cultura digital e games, apoiando criação, formação,\nexperimentação, pesquisa, preservação digital, novas mídias e circulação em\nambientes digitais, com articulação entre cultura, ciência, tecnologia e educação.\n\n•\n\nValorizar e promover a cultura alimentar mineira, reconhecendo modos de produzir,\npreparar e compartilhar alimentos como patrimônio cultural e articulando cozinhas\nregionais, feiras, festas, agricultores familiares, mestres e mestras da cultura alimentar,\npovos e comunidades tradicionais e economia territorial.\n\n•\n\nFortalecer a economia da cultura com fomento, assistência técnica, crédito,\nmicrocrédito e capital de giro por meio do BDMG e de outros instrumentos\npúblicos adequados, apoio a pequenos negócios, cooperativas e cadeias de grande\ncapilaridade territorial, com políticas e instrumentos específicos para artesanato,\nmoda, música, audiovisual, culturas populares, design e outras atividades culturais.\n\n•\n\nPromover a internacionalização da produção mineira e assegurar governança\ntransparente dos patrocínios e investimentos de empresas controladas pelo Estado.\n\n•\n\nAdotar como princípio transversal a retenção de valor nos territórios, ampliando o\ncontrole dos criadores e comunidades sobre meios de produção, direitos, dados,\nacervos, conhecimento e canais de circulação, para que o recurso público deixe\ncapacidade instalada e fortaleça a autonomia cultural e econômica após cada ação.\n\n59"
+          },
+          {
+            "id": "60",
+            "titulo": "60",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "60\n60"
+          },
+          {
+            "id": "turismo",
+            "titulo": "Turismo",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "Turismo\nMinas Gerais constitui-se como um dos maiores emissores e receptores de turistas\nnacionais, revelando a importância dos estados mais populosos e economicamente\ndinâmicos na geração de fluxos turísticos domésticos. Do ponto de vista do turismo\ninternacional, tem uma importância estratégica, embora ainda subaproveitada.\nA relevância do estado de Minas Gerais para o turismo resulta de produtos turísticos\nsingulares com uma narrativa que conjuga: história colonial, barroco, arte contemporânea,\nmontanhas, gastronomia, cidades históricas, literárias e cultura interiorana. Com enorme\ndiversidade de atrativos em suas diferentes regiões que revelam paisagens, patrimônio\nhistórico e cultural, religiosidade, festas e modos de vida únicos, o turismo passa a ser um\nalicerce para o desenvolvimento local e regional.\nA capacidade do turismo em proporcionar emprego e renda é conhecida e seu efeito\nmultiplicador, ou seja, sua permeabilidade dentro do tecido social e econômico para\nimpulsionar outros setores econômicos. Desta forma, o turismo deve ser tratado como\npolítica de desenvolvimento regional sustentável, capaz de conjugar a preservação e\npromoção do patrimônio, manter as características de seu território, mas também gerar\noportunidades de desenvolvimento econômico e humano à sua população.\nPara isso, é necessário fortalecer a capacidade do Estado de articular os municípios,\nintegrar os diferentes setores econômicos e promover uma atuação coordenada nos\nterritórios, transformando as vocações regionais em produtos turísticos competitivos e\nsustentáveis, capazes de gerar maior permanência e circulação de renda em Minas Gerais.\nProposta:\n•\n\nFortalecer e regionalizar a Política Estadual de Turismo, ampliando a capacidade\nde coordenação do Governo de Minas e aproximando sua atuação dos municípios.\nEstabelecer uma agenda permanente de diálogo e cooperação com os secretários\ne gestores municipais de turismo, apoiando-os na formulação de políticas, na\nestruturação de produtos e destinos, na captação de investimentos e na integração\ndas ações estaduais e municipais.\n\n•\n\nPromover uma agenda multissetorial para o desenvolvimento do turismo, articulando\nturismo com cultura, patrimônio, meio ambiente, agricultura familiar, desenvolvimento\neconômico, infraestrutura, mobilidade, educação, qualificação profissional, economia\ncriativa e políticas de desenvolvimento regional.\n\n•\n\nAproximar o poder público, empresas, entidades empresariais, instituições de\nensino e pesquisa, organizações da sociedade civil e comunidades para construir\nsoluções e projetos capazes de elevar a competitividade dos destinos mineiros.\n\n•\n\nFortalecer o turismo cultural, histórico, rural, gastronômico, religioso, de natureza,\nliterário e das artes, e de base comunitária, articulando patrimônio e memória,\nconservação ambiental, economia criativa, agricultura familiar e produção local,\npara ampliar e fazer com que a renda gerada pelo turismo permaneça nos\nmunicípios e territórios.\n\n61"
+          },
+          {
+            "id": "pagina-62",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a cadeia produtiva do turismo como estratégia de geração de trabalho\npara a comunidade local e geração de renda, apoiando pequenos negócios,\nempreendedores individuais, cooperativas e iniciativas da economia solidária ligadas\nà hospedagem, gastronomia, artesanato, produção cultural, comércio, transporte\ne serviços turísticos.\n\n•\n\nArticular qualificação profissional, acesso ao crédito (incluindo o microcrédito), apoio\nà comercialização e incentivo à produção local, fortalecendo as vocações regionais\ne ampliando a geração e a circulação de renda gerada pelo turismo nos territórios.\n\n•\n\nAmpliar a promoção de Minas Gerais, fortalecendo a presença do estado em feiras\nde turismo e a divulgação de seus principais destinos, incluindo os patrimônios\nreconhecidos pela UNESCO, como Ouro Preto, Congonhas, Diamantina e\nPampulha, para atrair mais visitantes e fortalecer o estado como destino turístico\nno Brasil e no exterior.\n\nEsporte e Lazer\n\nO esporte e o lazer são direitos sociais e devem fazer parte da vida de todas as pessoas,\ncontribuindo para a qualidade de vida e a promoção da saúde. Nossa política será para\ntoda a população, em todas as regiões de Minas Gerais, atenta às diferentes condições\nde vida e comprometida com a inclusão de grupos que enfrentam barreiras estruturais\nde acesso.\nPara ampliar as oportunidades de acesso e de prática esportiva e de lazer, essa política\nserá desenvolvida de forma integrada às áreas de Educação, Saúde, Cultura, Assistência\nSocial, Segurança Pública, Turismo, Economia e Meio Ambiente.\nPropostas:\n•\n\nInstituir o Plano Estadual de Esporte e Lazer, construído em diálogo com os municípios,\na sociedade civil, entidades representativas e universidades e articulado ao Sistema\nNacional do Esporte. O Plano terá três pilares fundamentais: a formação esportiva\ne o esporte educacional, o esporte de rendimento e a ampliação e modernização\ndos equipamentos públicos de esporte e lazer.\n\n•\n\nIntegrar as escolas à Política Estadual de Esporte e Lazer, utilizando e ampliando o\nuso de quadras, ginásios e outros espaços escolares para atividades esportivas e de\nlazer. Fortalecer a Educação Física escolar, apoiar e aperfeiçoar os Jogos Escolares\nde Minas Gerais (JEMG), em diálogo com professores e comunidades escolares.\n\n•\n\nImplantar programas de esporte e lazer em parceria com os municípios, com\nPolos Comunitários de Esporte e Lazer, programas voltados às famílias e Núcleos\nde Aprendizagem e Formação Esportiva, ampliando a oferta de atividades nos\ndiferentes territórios.\n\n62"
+          },
+          {
+            "id": "pagina-63",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar Centros Regionais de Treinamento Esportivo, distribuídos pelas diferentes\nregiões do estado, para apoiar a formação e o desenvolvimento de atletas e\nparatletas, atendendo seus níveis de excelência.\n\n•\n\nEstabelecer parcerias com universidades, institutos federais, Sistema S, clubes\ne outras instituições, ampliando a oferta de espaços, equipamentos e ações de\nesporte e lazer em todas as regiões do estado.\n\n•\n\nGarantir uma política inclusiva de esporte e lazer, com a elaboração de planos\nespecíficos de ações para pessoas com deficiência e neurodivergentes, idosos,\npovos indígenas, comunidades quilombolas, população LGBTQIA+ e pessoas em\nsituação de rua e privadas de liberdade, considerando as necessidades, características\ne formas de participação de cada grupo.\n\n•\n\nPreservar a memória do esporte mineiro, com a revitalização do Centro de Memória\ne Informação do Esporte de Minas Gerais (CIMIE), e organizar um calendário\nestadual de eventos de esporte e lazer.\n\n•\n\nEsporte e lazer para pessoas idosas: ampliar, em parceria com os municípios,\nprogramas regulares de esporte, lazer e atividades físicas para pessoas idosas,\ncom oferta adequada às diferentes condições de saúde e autonomia, promovendo\no envelhecimento ativo, a qualidade de vida, a autonomia e a participação social.\n\n•\n\nEsporte e lazer para as Juventudes: ampliar programas de esporte e lazer para\njovens de 15 a 29 anos, com oferta regular e gratuita de diferentes modalidades\nesportivas, atividades de lazer e formação esportiva, especialmente nos territórios\nmais vulneráveis. Articular essas ações às políticas de educação, cultura, saúde e\nassistência social, promovendo qualidade de vida, inclusão, prevenção da violência\ne ampliação de oportunidades para as juventudes.\n\n•\n\nFortalecer os programas de incentivo ao esporte amador, às modalidades olímpicas\ne paraolímpicas, ao skate, às danças urbanas, às práticas esportivas comunitárias\ne às novas formas de lazer e expressão da juventude, apoiando atletas, coletivos\ne iniciativas locais.\n\n63"
+          },
+          {
+            "id": "64",
+            "titulo": "64",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "64\n64"
+          },
+          {
+            "id": "politicas-para-as-juventudes-igualdade-racial-equidade-de-genero",
+            "titulo": "Políticas para as Juventudes; Igualdade Racial; Equidade de Gênero;",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "Políticas para as Juventudes; Igualdade Racial; Equidade de Gênero;\nDireitos das Mulheres, dos Povos Indígenas, das Comunidades\nQuilombolas e da População LGBTQIAPN+\n\nAs desigualdades sociais não atuam de forma isolada. Marcadores sociais como\ngênero, raça, etnia, classe e condição socioeconômica, orientação sexual, identidade de\ngênero, deficiência, idade, território, religião e pertencimento a povos e comunidades\ntradicionais e outras dimensões se combinam e fazem com que as pessoas enfrentem\nobstáculos diferentes no acesso a direitos e oportunidades. Por isso, as políticas públicas\nnão podem tratar essas desigualdades separadamente. É preciso compreender como elas\nse somam na vida das pessoas, para que as ações do Estado sejam mais justas, eficazes\ne capazes de reduzir desigualdades de forma duradoura e garantir os direitos humanos.\nNessa perspectiva, temos como proposta:\n•\n\nCriar o Plano Estadual de Promoção da Igualdade Racial, com metas de enfrentamento\nao racismo e ações de valorização da história, da memória e da cultura afro-brasileira\ne indígena.\n\n•\n\nFortalecer a Política Estadual dos Direitos da Pessoa com Deficiência, garantindo\nacessibilidade, inclusão e participação social e ampliando o acesso à educação,\nsaúde, trabalho, cultura, esporte, mobilidade e demais serviços públicos, com\natenção às diferentes deficiências e à autonomia das pessoas.\n\n•\n\nFortalecer e executar a Política Estadual de Proteção dos Povos Indígenas. Cooperar\ncom a União na proteção e regularização dos territórios indígenas, assegurando\npolíticas estaduais de saúde, educação, infraestrutura, segurança e valorização\ndas culturas indígenas.\n\n•\n\nFortalecer e executar a Política Estadual de Promoção dos Direitos das Comunidades\nTradicionais e Quilombolas, articulando ações de regularização fundiária em\ncooperação com a União, desenvolvimento sustentável, educação, saúde, cultura,\ninfraestrutura, segurança alimentar e apoio à produção, com participação permanente\ndas comunidades.\n\n•\n\nImplementar uma Política Estadual Integrada para as Mulheres, partindo das\ndeliberações da 5a Conferência Estadual de Políticas para as mulheres, realizada\nem agosto de 2025. , fortalecendo a prevenção e o enfrentamento à violência de\ngênero e contra as mulheres, promovendo a autonomia financeira por meio da\nqualificação profissional e da inclusão produtiva. Expandir as políticas de cuidado\ne promover a equidade de gênero.\n\n•\n\nAtuar na coordenação conjunta e garantir o funcionamento das Casas da\nMulher Brasileira.\n\n•\n\nApoiar e ampliar projetos de grupos reflexivos e de responsabilização e reeducação\nde homens autores de violência, promovendo uma cultura de respeito aos direitos\nhumanos e de enfrentamento à violência contra as mulheres.\n\n65"
+          },
+          {
+            "id": "pagina-66",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a política estadual de garantia dos direitos da pessoa idosa, articulando\na rede de proteção para prevenir e enfrentar violências, abandono, negligência e\ndiscriminação, assegurar atendimento às vítimas e promover autonomia, convivência\nfamiliar e comunitária e participação social.\n\n•\n\nFortalecer a política estadual de promoção e defesa dos direitos da população\nLGBTQIA+, ampliando a rede de proteção e enfrentamento à violência e à discriminação\ne garantindo acesso, sem preconceito, aos serviços públicos e às políticas de saúde,\neducação, assistência social, trabalho e segurança\n\n•\n\nCriar e executar o Plano Estadual das Juventudes articulando educação, cultura,\nesporte, qualificação profissional, cuidado psicossocial, primeiro emprego, com\nfortalecimento dos Conselhos de Juventude e dos equipamentos públicos voltados\naos jovens.\n\n•\n\nFortalecer os Centros de Referência Regionais de Juventude, equipamentos\npúblicos descentralizados pelo estado, oferecendo orientação profissional, apoio\npsicossocial, cultura, esporte e acesso a políticas públicas, aproximando o Estado\nda juventude no território.\n\n•\n\nFortalecer a Rede Estadual de Saúde Mental da Juventude, articulada ao SUS e ao\nSUAS e presente nas regiões de Minas, ampliando a Rede de Atenção Psicossocial,\ncom ações de prevenção do suicídio, redução de danos e espaços de acolhimento\ne convivência. A política será integrada às demais ações de educação, trabalho,\ncultura, esporte e assistência social, garantindo atenção especial às diferentes\nrealidades vividas pelas juventudes.\n\n•\n\nConstruir um governo que coloque a juventude no centro das decisões. As juventudes\nmineiras não serão apenas destinatárias das políticas públicas, mas participantes\nativas de sua elaboração, execução e avaliação, fortalecendo os espaços de\nparticipação social e o diálogo permanente.\n\n•\n\nInstituir uma Rede Estadual de Ouvidorias de Direitos Humanos.\n\n•\n\nGarantir os direitos das populações atingidas por crimes socioambientais decorrentes\nda atividade minerária, fortalecendo a atuação do Estado para assegurar a reparação\nintegral e a justa indenização pelos responsáveis, bem como atendimento integral,\nacompanhamento permanente de saúde, proteção social e recuperação das\ncondições de vida nos territórios afetados.\n\n•\n\nAmpliar a rede estadual de proteção e garantia de direitos, integrando ações\npara mulheres, crianças, adolescentes, pessoas idosas, pessoas com deficiência\ne população LGBTQIA+, com prioridade para o enfrentamento das violências e a\nexpansão das políticas de cuidado.\n\n•\n\nGarantir o funcionamento e ampliar o atendimento dos programas de proteção\nem direitos humanos, como o Programa de Proteção a Crianças e Adolescentes\nAmeaçados de Morte (PPCAAM), o Programa de Proteção, Auxílio e Assistência\na Vítimas e Testemunhas Ameaçadas (PROVITA) e o Programa de Proteção aos\nDefensores dos Direitos Humanos de Minas Gerais (PPDDH-MG).\n\n66"
+          },
+          {
+            "id": "pagina-67",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplementar uma política estadual de prevenção e enfrentamento ao trabalho\nescravo, com proteção e garantia de direitos às vítimas.\n\n•\n\nImplementar o Museu de Direitos Humanos.\n\n•\n\nPromover ações para preservar a vida e a dignidade de pessoas encarceradas.\n\n•\n\nGarantir a gestão pública das medidas socioeducativas, preservando a responsabilidade\ndireta do Estado pela execução da política e pelo atendimento aos adolescentes.\n\n•\n\nInstituir a escola de conselhos tutelares.\n\n•\n\nGarantir a acessibilidade nos serviços públicos às pessoas falantes de libras por\nvia da ampliação e divulgação da central de libras.\n\n67"
+          },
+          {
+            "id": "13-2",
+            "titulo": "13",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "ocr",
+            "conteudo": "13\nGOVERNADOR\nPATRUS\nVICE JARBAS SOARES"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b94839e4109336aaac39ba74fb6a4e2b521f18781a9ac48124fab3924629384a"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "a8d7f92155efcf42c416b318e97ffe98a6ab8ab58f2d828f8c5982d9d209da54"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "778778faeab687ad32edd3a170a997f53f132bcb05771d0c981757115b58ee3a"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0767a6d854ec36aa1b2627a5896c7360477fcf9ebabf23a34be1029713bb665c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "904ee322daeb21915d788c062928b567878828a9160f34ed9177c26a07e17376"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "53cfa76749299824d3d0e7152ef3243655e76029336164e4c80864404d64a03b"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "e11b95af30805443849b96f1cc753be492dee015e64025a12f1647a4e18a7f94"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "6f87038968efaf41be2ca0faff455ab47d23d957b14ba9d6aa82239e515d9d5a"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "6acf1ae3eafbbca07d15d755b659976fb5aab53a27b7e805897d53ffc1f04c8e"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2a5d7c517d4597738b03787087a1561772697ce7631f839390ed862be4099687"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "6443c1ed50d85016215fe81c00ac6d1ee0fc54b71408de456708c2cae9efff07"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "959726af02ccba77b6a5d60ce897992769fb687b22b3ecf13ea6c25b06957d7b"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "dc279b75fc3458a46716e4c716dfa09e21e0c5d402af5b91c9593cdbc08aeef8"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "03ea6f7e133db71a9a069eaeff0bed243f6f939ad6eeb02c73abe4760e13f998"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "0e19391b84e378d8414b309c12e556ea4d79c2c90f533def79ee470c4b0c5e7d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "bbe4f2a07828d10c4d006651953502022a003062bee87caabee5b298ffec89c7"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "764261d67eb417c8826c195ca4b5f79155e182f6b42eb10d9f79ba03296d9a4c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "2de97d27f03c7bc4a1ea16775885d5222a8fce0829c559ea1093fe87c1d32627"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "cf0e6ecaf3a4e47c9c4b884f68a0ee1a948ff03f04ff2d5d6656a9a621d6c484"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "7e1aaa6e8436bbab86a984e739256988a50a2132fab252327b00f9b23636dad8"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "0433d31963468703cdf18f86af6b6143dbb2ae47e21efe64d424fab234c2c512"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d64caf9238c45aea5cc758cd7f774f5bd215923054906b00f84f9f67f1d20a77"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "0a232e21bc3afbb964a8c77f37fead12ee19849641ed4146a19facf32e141f89"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "e2007883b818a8c5490a7c467f1c8d26b2965d3cb4a1f4c9f32b1088cd8a2ddb"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "90a9407142e0c791de85b2785e27e6d98e7b78e38de7ecfd3c42b1a6ef3708ca"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "e863af8fed5ac07291c32353d6d3103a7e48744d3b8ba511d5653ee16fc8b332"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "3f21b16edaeb2acdf27d5c6f8dbaf8c98e465c43fbaf5b5243f0394e82cdc79f"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "300033e9a76ddf6b96a59c429b5ce045468da8005265be6d6930319b2ec24799"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f02bec569b43de43f3c9b3b9b54ba973d1c3e53bedf54a4e8178c0650b671aca"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "9514f7761106708fdc319a656bdf8f91db65259be1c8e30d2105c9fa4a98615d"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "78e810e76e55103a5104fd069381bbbbe96d7004878de391557fe5462009657e"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "16b3ee1cf9d8d183344cf0e4a9dfe5bb2375f6635b750771311e43532a7c79d6"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "0c3c128738e59cedc7a803c0b591379cf74f103f76208b17cc79c980d6d206bc"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "0653c1d8a7b8ff77421b305a5d9af80ecdcc2144400e6c318fe7592702ebe60f"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "45982a4da24f0bafcf21e8245b98353de82e9e25c267e756ef0e119e95f8bd71"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "3991fa8a8477b616073636329b81dc03f7ad8399af40d958539ffbf9e562fcbb"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "ddd9167ef1b08495048cfcc1a560575ab31af2497ac1cb57052e6f45cb844b86"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "3bfb23628a608122ac0529752eccbff65b14279b512497ca606f2194794f8f4d"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "52ed8e8f35a6ffb20c3b783bb03e04ddccf80f8558b5eeabd586b7d45a3d2a06"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "be09cd8a06f87fad2db06b751c155825d84eb232dc0770f98e88dcfc272d93e4"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "2b307e7d5059b0d30f598fc297dc45b8425e0ae3e00f98af1b3934ea6a26b49d"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "7927f89f3644542056d8640d9ac245dd921ff1311310df63bc4f399e357a4c35"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "16bcb32619ef99c0e06d77f7d9a096c5ca59cf779bfc141fc2152a2be510317d"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "45dc9b7bb8b92cd174be386e0cd3cb89da91e529972dd93a4b7368d63a5d9bbc"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "0f1e0814b9cca3f12cc41b02674a14b263b119345b2507a3838e4a3d95cddc2c"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "023aa4993cf890bd1ecdd7b78f4c8d6bd0234ef025795e062cbe9e41fa178c21"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "cf76d092d94a6c70bfdb08b4f324b3b1e56b0086fbafd142c94cb34033f0ae28"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "82b68235478b397834f079bf29621f89a378c2da24484091c6aeb80166200669"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "ad3d9cf8c0270cf8a2d4ee449a5e4391a20ca3edc9519ad802304d736d7c58ca"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "d17c809c673b2e76c5d69ee4d0742e181a08e9e7a11a5d55e688caa2ddcf5353"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "d35ff6993f01678632fe2c3905525b367334bbc71ba3c7212c4c6ead8ee2b4c6"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "ec8f5293ecfe00a3057cbc172879aad629e45df1b9e42b12e2df9ea967fd639e"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "da8f8c9557fbc5bc6f574c4f027f8fc5f0cdd553ae9d7848d68fa4518894f44f"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "5765be668dbeacf25f6df1d907c3fcb1928b6e8c7c3bec3823ae0cb352f66ed5"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "aec24fc50fc931b0b93afb3da7e187e2e5fdef7c22d978651394f19948b5afce"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "552838651e4468ad2f0dcc9f763b90dfa998b7a0c3ee1090914e2e68240143d8"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "c78cb1e1575ea2ccbf9ad399af22feb427d3756118f5f2fa3e71cfa634acb178"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "a11c3bc6932bebab3a45f8553c0ae199ff95e7a331841738dc2ef881f95ace75"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "62a2286d9df9963d9ac70d388ffcfa5a719a9e091fd9daeccf175f9457ce4d96"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "150061b2a5d5d9642c8675d7cc7c23e0d44ec61bf40765d991fde1b91d133876"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "8e44035357464a3e1e6632d0601b1bde0f6674fda95bdfdeae5a61e33e75a783"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "6e16f06edeb9e10cc29620ef8417f19121ef1203372fc1d47117d48135560764"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "ac463f140fe846bfa36fe056014e28c881fc72a19d475708ea41a4bde67c6c29"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "bc6746298339b7f1cbe899a1c17093f48193318c95cfdcb1b07591257d4d535f"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "3edce2aaf342a3197bea762f0321551b61bc685aaaddbc0783d82c1e70ddfbba"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "efd552bbe8b6d463027ed678c5a0e98004aedf53477038886c7da99111fbb4d2"
+          },
+          {
+            "pagina": 68,
+            "origem": "ocr",
+            "textSha256": "14886386efece7336a72b9eef0b1ea93e4a82110ffb062aecb52c675a778441a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano propõe critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados. Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem. O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população. Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental. Preservar as empresas públicas estratégicas, mantendo sob controle do Estado empresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento de Minas Gerais. Criar o Portal Estadual de Participação e Monitoramento, em que a população possa apresentar propostas e prioridades regionais; acompanhar obras e investimentos pactuados; fiscalizar prazos e execução.",
+    "frases": [
+      {
+        "texto": "O plano propõe critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 3,
+            "trecho": "propõe-se critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados."
+          }
+        ]
+      },
+      {
+        "texto": "Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 8,
+            "trecho": "Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem."
+          }
+        ]
+      },
+      {
+        "texto": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 14,
+            "trecho": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população."
+          }
+        ]
+      },
+      {
+        "texto": "Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 23,
+            "trecho": "Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental."
+          }
+        ]
+      },
+      {
+        "texto": "Preservar as empresas públicas estratégicas, mantendo sob controle do Estado empresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento de Minas Gerais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 48,
+            "trecho": "Preservar as empresas públicas estratégicas, mantendo sob controle do Estado empresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento de Minas Gerais."
+          }
+        ]
+      },
+      {
+        "texto": "Criar o Portal Estadual de Participação e Monitoramento, em que a população possa apresentar propostas e prioridades regionais; acompanhar obras e investimentos pactuados; fiscalizar prazos e execução.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 54,
+            "trecho": "Criar o Portal Estadual de Participação e Monitoramento, em que a população possa apresentar propostas e prioridades regionais; acompanhar obras e investimentos pactuados; fiscalizar prazos e execução."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "justica-distributiva",
+        "titulo": "Justiça distributiva",
+        "descricao": "Critérios de distribuição de recursos estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 3,
+            "trecho": "propõe-se critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados."
+          }
+        ]
+      },
+      {
+        "id": "educacao-municipal",
+        "titulo": "Cooperação educacional",
+        "descricao": "Cooperação com municípios nos anos iniciais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 8,
+            "trecho": "Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem."
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Ampliação do acesso aos serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 14,
+            "trecho": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população."
+          }
+        ]
+      },
+      {
+        "id": "emergencia-climatica",
+        "titulo": "Emergência climática",
+        "descricao": "Política estadual de enfrentamento climático.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550464:01",
+            "pagina": 23,
+            "trecho": "Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:16:32.388Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:18:36.284Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação quase literal da página 3."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: critérios de distribuição de recursos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:1:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do texto da página 8."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra, meramente descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (educação municipal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:2:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 14."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do compromisso proposto."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata exclusivamente da área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:3:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pela citação completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 23."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente: política climática única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:4:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 48."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta específica (estatais)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:5:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 54."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (portal de participação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:frase:6:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pela citação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho da página 3."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo descritivo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:justica-distributiva:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Rótulo resume adequadamente a cláusula da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho da página 8."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:educacao-municipal:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Rótulo resume adequadamente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho da página 14."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no rótulo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:saude-publica:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Rótulo resume adequadamente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho da página 23."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550464:tema:emergencia-climatica:documentos:MG:130002550464:01:cobertura",
+        "verdict": "yes",
+        "reason": "Rótulo resume adequadamente a cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002550464",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002550464:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 50752,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1703,
+          "reasoning_output_tokens": 385
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25874,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20030,
+          "output_tokens_details": {
+            "thinking_tokens": 440
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25874,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20030,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25874,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25874
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.32462339999999995
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "edf7c6ac2ad4aad4931bdd8a929ab7595b9583f9c2a1e208e13b0298a26dc774",
+    "extractedTextSha256": "4bcff55921c88c18f8134570b1d6544761ad68d27f5acfc382b17122a5eab0ef",
+    "documentCount": 1,
+    "documentSetSha256": "8246f44e1affdd588255283739d666c9677ff2162cb9b7b0fcbf4de54c8b773a",
+    "contentSha256": "34e6573368bd403ecacc40720601d6a27caa331f380d36e948a4cb521b6e71ea"
+  }
+}

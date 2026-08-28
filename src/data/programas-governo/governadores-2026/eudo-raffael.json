@@ -1,0 +1,763 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AC",
+    "sqCandidato": "10002549500",
+    "slug": "eudo-raffael",
+    "nomeUrna": "EUDO RAFFAEL",
+    "partido": "PCB",
+    "arquivoNome": "2026AC10002549500_01.pdf",
+    "arquivoNoPacote": "AC/2026AC10002549500_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AC:10002549500:01",
+      "fonte": {
+        "arquivoNome": "2026AC10002549500_01.pdf",
+        "arquivoNoPacote": "AC/2026AC10002549500_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "8c811667d3b306d3e2cdf5fbda08cf6665f1e78496560b3d0a1a10716e06773a",
+        "extractedTextSha256": "36e39bd97f35300b8bf32bcff5191f80309d266131f33ed83185add6966db731",
+        "paginas": 6,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nDEFESA DOS TRABALHADORES\nA defesa dos trabalhadores é o eixo fundamental da teoria marxista que direciona a\nluta comunista no Brasil e no mundo. A política nunca é neutra e as políticas\npúblicas do Partido Comunista Brasileiro defendem a classe trabalhadora, que\nproduz toda riqueza da nação. Devemos combater a precarização e as reformas\nneoliberais que retiraram direitos históricos e ameaçaram a fraca democracia\nliberal. O Estado deve garantir a plena liberdade de organização e o direito de luta\ntrabalhista impedindo que a força de trabalho seja tratada como engrenagem\ndescartável do capitalismo.\n\nDEMOCRACIA PARTICIPATIVA\nDefendemos a construção de um modelo de gestão baseado na participação direta\ndo povo nas decisões políticas, por meio de conselhos populares, assembleias\nterritoriais e orçamento participativo. A democracia deve ultrapassar o voto e se\nconsolidar como prática cotidiana de decisões sobre o Estado do Acre, garantindo\ntransparência, poder popular e enfrentamento às velhas políticas tradicionais.\n\nEDUCAÇÃO POPULAR, CRITICA E EMANCIPADORA\nA educação deve ser um instrumento de libertação da classe trabalhadora,\norientada por uma perspectiva crítica, científica e popular, garantindo acesso\nuniversal, permanência e qualidade em todos os níveis. O Estado deve fortalecer a\nescola pública como espaço de formação integral, valorizando profissionais da\neducação, promovendo gestão democrática e articulando o ensino com a realidade\nsocial amazônica, respeitando os saberes locais e formando cidadãos conscientes\ne transformadores.\n\nCULTURA, ARTE E PATRIMONIO HISTÓRICO\nA cultura deve ser reconhecida como direito fundamental e expressão da\nidentidade popular. O Estado deve garantir o financiamento público direto às\nmanifestações do povo, periféricas e tradicionais do Acre, retirando-as da\ndependência de editais seletivos e do mercado que seleciona uma suposta arte\n“comercialmente viável”. A preservação do patrimônio histórico deve servir à"
+          },
+          {
+            "id": "memoria-das-lutas-populares-e-das-raizes-amazonicas-combatendo-a-acultur",
+            "titulo": "memória das lutas populares e das raízes amazônicas, combatendo a aculturação",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "memória das lutas populares e das raízes amazônicas, combatendo a aculturação\npromovida pelo imperialismo.\n\nSAÚDE PÚBLICA E 100% ESTATAL\nA saúde deve ser retirada totalmente da esfera das mercadorias, acabando com\nqualquer forma de terceirização, privatização ou gestão por Organizações Sociais\n(OSs). Defendemos um sistema 100% estatal, com foco na medicina preventiva e\nna atenção básica voltada às especificidades amazônicas. A humanização do\natendimento só é possível quando a vida humana deixa de ser mercadoria.\n\nGERAÇÃO DE EMPREGO E DISTRIBUIÇÃO DE RENDA\nO Estado deve liderar uma industrialização sustentável, com geração de empregos\ndignos, economia solidária e valorização do salário que atenda às necessidades\ndas famílias. Defendendo que a redução da jornada de trabalho sem redução\nsalarial é pauta central para distribuir o trabalho disponível e combater o\ndesemprego\n\nSEGURANÇA PÚBLICA A SERVIÇO DO POVO\nA segurança deve ser baseada na proteção da vida e dos direitos humanos, com\npolíticas de prevenção, inclusão social, combate às desigualdades e focar em uma\ninteligência voltada ao combate do crime organizado. Defendemos a\ndesmilitarização da polícia militar, formação cidadã das forças de segurança e\ncontrole social, enfrentando a violência estrutural, o racismo e o encarceramento\nem massa.\n\nESPORTE E LAZER\nO esporte e o lazer devem ser reconhecidos enquanto ferramentas de\ndesenvolvimento integral da população acreana. Defendemos a criação de centros\nde cultura física em todas as periferias e vilas rurais do Acre, garantindo acesso\ngratuito e universal a atividades físicas e recreativas. O lazer é um direito social que\nexige o combate à jornada de trabalho exaustiva, permitindo o descanso e a\nconvivência comunitária plena. A infraestrutura esportiva deve ser pública e gerida\npelos próprios moradores, promovendo o bem-estar e a solidariedade de classe\ncontra o isolamento alienante."
+          },
+          {
+            "id": "agua-e-saneamento-basico-para-todos",
+            "titulo": "ÁGUA E SANEAMENTO BÁSICO PARA TODOS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "ÁGUA E SANEAMENTO BÁSICO PARA TODOS\nA água e o saneamento são bens comuns e direitos humanos fundamentais que\njamais podem ser submetidos à lógica do lucro e da privatização, garantindo\nqualidade e sustentabilidade de fornecimento de água e saneamento a todos.\nExigimos a manutenção e ampliação do aparato público estatal de todos os\nserviços de saneamento no Acre (gestão, coleta e tratamento), com investimentos\nmacetas para a universalização do atendimento em todos os municípios e na\ncapital. O controle público deve ser exercido pelos trabalhadores do setor e pelas\ncomunidades atendidas, garantindo tarifas sociais e qualidade técnica. A gestão\nhídrica deve ser planejada para resistir aos impactos climáticos e proteger os\nmananciais amazônicos contra a poluição industrial, urbana e rural, servindo\nexclusivamente ao bem-estar do povo.\n\nTRANSPORTE PÚBLICO E MOBILIDADE URBANA\nA mobilidade urbana deve ser um direito social garantido pelo Estado através de\nsistemas de transporte 100% públicos e gratuitos, por isso defendemos a criação\nde uma empresa estatal de transporte rodoviário, ferroviário e fluvial. Defendemos\no fim das concessões para empresas privadas que lucram com a precariedade do\ntransporte nas cidades acreanas, como ocorrido na cidade de Rio Branco e que\ngerou um sistema com ônibus sucateados e exploração violenta dos motoristas. A\ntarifa zero é uma meta central para garantir a livre circulação do povo e o acesso a\noutros direitos sociais como saúde e educação. O planejamento do transporte deve\npriorizar modelos sustentáveis e a integração entre as zonas rurais e urbanas,\nretirando das costas do trabalhador o custo do deslocamento necessário à\nreprodução da vida.\n\nINCLUSÃO DE PESSOAS COM DEFICIÊNCIA\nA inclusão de pessoas com deficiência sob o capitalismo é limitada pela lógica da\nprodutividade para o lucro, que marginaliza corpos considerados \"ineficientes\"\npara a burguesia. Precisamos garantir acessibilidade plena e inclusão em todas as\npolíticas públicas, combatendo o capacitismo estrutural. O Estado deve garantir\nautonomia, participação social e equidade nas oportunidades respeitando as\nespecificidades de cada ser humano, assegurando educação, trabalho e serviços\nadaptados às necessidades das pessoas com deficiência.\n\nIGUALDADE DE GÊNERO E COMBATE AO FEMINICÍDIO"
+          },
+          {
+            "id": "a-luta-contra-o-patriarcado-e-a-violencia-contra-a-mulher-e-central-dent",
+            "titulo": "A luta contra o patriarcado e a violência contra a mulher é central dentro do PCB,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "A luta contra o patriarcado e a violência contra a mulher é central dentro do PCB,\npois o capitalismo utiliza a opressão de gênero para super explorar o trabalho\nfeminino. O Estado deve garantir uma rede de proteção estatal com casas-abrigo e\nautonomia econômica, além de socializar o trabalho doméstico através de creches\ne lavanderias públicas. O combate ao feminicídio exige educação emancipadora e\npunição rigorosa aos agressores, atacando as bases materiais da dependência das\nmulheres em relação aos homens. A emancipação feminina só será completa com\na destruição da propriedade privada e da moral burguesa que transforma o corpo\nda mulher como objeto sexual e reprodutivo.\n\nDIREITOS LGBTQIAPN+\nA diversidade de orientação sexual e identidade de gênero deve ser plenamente\nrespeitada, combatendo a LGBTfobia que é alimentada pela moral conservadora\nnecessária à manutenção da ordem capitalista. O Estado deve garantir políticas de\nsaúde integral para a população LGBTQIAPN+ e programas de empregabilidade que\ncombatam a marginalização econômica desses sujeitos. O Acre deve ser um\nterritório livre de preconceitos e discriminações de gênero e sexualidade, com\neducação pública que promova o respeito às diferenças e a dignidade humana. A\nluta por direitos civis deve estar acoplada à luta por direitos sociais e econômicos,\n\nDEFESA DOS POVOS ORIGINÁRIOS E PROMOÇÃO DA IGUALDADE ÉTNICORACIAL\nGarantir que os povos indígenas e as comunidades tradicionais tenham seus\nterritórios respeitados é essencial, porque é deles que vêm seu sustento, sua\ncultura, sua história e sua forma de viver. Sem essas terras, suas vidas ficam\nameaçadas. Ao mesmo tempo, é preciso combater o racismo que ainda existe na\nsociedade e criar oportunidades reais para que indígenas e pessoas negras tenham\nos mesmos direitos que todos: acesso à educação de qualidade, saúde, justiça e\nespaço para participar das decisões políticas. Em resumo: respeitar os territórios,\ncombater o preconceito e garantir igualdade de oportunidades para todos\n\nECOSSISTEMA E ETNOBIODIVERSIDADE\nA proteção da Amazônia é incompatível com o modo de produção capitalista, que\nexige a expansão predatória e o esgotamento dos recursos naturais para manter a\ntaxa de lucro. O combate ao desmatamento no Acre deve ser, primordialmente, um\ncombate ao agronegócio e ao imperialismo que cobiça a nossa biodiversidade.\nValorizamos a megadiversidade do bioma amazônico aliando ciência e"
+          },
+          {
+            "id": "conhecimento-tradicional-reconhecendo-as-populacoes-originarias-e-tradic",
+            "titulo": "conhecimento tradicional, reconhecendo as populações originárias e tradicionais",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "conhecimento tradicional, reconhecendo as populações originárias e tradicionais\ncomo guardiãs essenciais desse patrimônio natural. Promover políticas de\nproteção territorial e incentivo à bioeconomia que fortaleçam modos de vida\nsustentáveis e a transmissão dos saberes ancestrais, fora da lógica dos \"créditos\nde carbono\" e do mercado verde.\n\nASSISTÊNCIA E DIREITOS SOCIAIS\nA assistência social deve ser um direito de cidadania pleno e estatal, rompendo\ncom o assistencialismo eleitoreiro e as parcerias com as entidades privadas. Os\nserviços de proteção social devem ser diretos e universais, garantindo dignidade e\ninclusão às crianças, idosos e todos em situação de vulnerabilidade, sem\ndiscriminações. A rede de assistência deve funcionar como parte de uma\nseguridade social integrada, pensando em saúde, segurança, dignidade e\nautonomia.\n\nINFRAESTRUTURA E REFORMA URBANA\nA reforma urbana deve combater a segregação espacial, a verticalização das\ncidades e a lógica da especulação imobiliária que expulsa o povo para as periferias.\nA infraestrutura deve ser redistribuída para atender às necessidades sociais,\npriorizando obras de saneamento, iluminação e mobilidade das vias. O solo urbano\ndeve cumprir sua função social, permitindo a expropriação de imóveis ociosos para\nfins de interesse público. O planejamento das cidades acreanas deve ser feito\natravés de assembleias populares, garantindo que o investimento público não\nprivilegie os centros comerciais da elite política e econômica.\n\nHABITAÇÃO E MORADIA DIGNA\nA moradia não é uma mercadoria, mas um direito fundamental que deve ser\nassegurado através de um programa estatal massivo de construção, reforma e\nregularização fundiária, especialmente nos terrenos de invasão. Defendemos que\nterrenos e edifícios mantidos para fins especulativos por bancos e grandes\nproprietários precisam ser desapropriados, destinando-os às políticas para\nretirada do povo das ruas e reabilitação social. O Estado deve prover moradias\ndignas com infraestrutura completa, integradas ao tecido urbano e aos serviços\npúblicos, especialmente de referência na educação, eliminando o déficit\nhabitacional e marginalização dos trabalhadores no Acre. A casa própria deve ser\num direito garantido pela coletividade, rompendo com o endividamento bancário e\na dependência de programas habitacionais vinculados ao sistema financeiro."
+          },
+          {
+            "id": "arrecadacao-e-divida",
+            "titulo": "ARRECADAÇÃO E DÍVIDA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "ARRECADAÇÃO E DÍVIDA\nA política fiscal, no sistema econômico vigente, deve ser um instrumento de\nredistribuição da riqueza social, baseada na taxação progressiva sobre o grande\ncapital, lucros, dividendos e heranças das elites, redirecionando esses recursos\nbilionários para a educação, saúde e infraestrutura popular. O Estado não deve ser\num garantidor de rendas para o sistema financeiro, mas o motor do\ndesenvolvimento produtivo e da seguridade social. A soberania econômica exige o\nrompimento com as ordens de austeridade impostos pelo mercado, priorizando o\ninvestimento no bem-estar da classe produtora. Nesse sentido, é urgente a\nrealização de uma auditoria integral da dívida pública, combatendo o mecanismo\nque drena o orçamento nacional para o pagamento de juros abusivos. A dívida não\npode ser um entrave ao direito à vida. Ela deve ser subordinada às necessidades\nsociais, suspendendo repasses que asfixiam os serviços públicos enquanto\nenriquecem o setor rentista.\n\nDEMOCRATIZAÇÃO DA COMUNICAÇÃO\nA democratização da comunicação passa necessariamente pelo combate aos\nmonopólios midiáticos, que agem como aparelhos ideológicos do capital.\nDefendemos a socialização dos meios de comunicação, fortalecendo emissoras\nestatais sob controle do povo e apoio a mídias comunitárias. O acesso à internet e\nà informação deve ser tratado como serviço público universal. A comunicação\npopular é uma ferramenta estratégica para a democratização da informação e para\no combate à desinformação e Fake News.\n\nREFORMA AGRARIA AGROECOLÓGICA, SOBERANIA ALIMENTAR E ENERGÉTICA\nPressionar pela reforma agrária no Acre, visando à divisão de latifúndios\nimprodutivos e das terras griladas pelo agronegócio predatório. A reforma agrária é\ndever do Governo Federal e deve objetivar a divisão da terra, priorizando a produção\ncoletiva e cooperativa voltada às necessidades reais do povo e não à exportação de\ncommodities. A agroecologia surge como resistência técnica e política contra a\ndependência do agronegócio, garantindo a soberania alimentar acreana, por meio\nde alimentação limpa, preço justo, favorecimento do mercado interno e coletivo. E,\ntambém, investir em matrizes energéticas renováveis (como solar e biomassa) deve\nser prioridade, servindo ao desenvolvimento das forças produtivas regionais e à\npreservação da vida contra a sanha do lucro."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "a1283705c9aa3b82e636172c0361382a769c4d8ec612d7659c888e909f3f4cc5"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "1127c363285c897961cd9373bba005ab464a65c785aac57195002e107f5e23ca"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "5b186f1f2943307bb83f3418c308947231fdbfab9acd1f2903da8fb8b36db2af"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b81d669b455956ec1fca1fd51185a0f1de9d5cbec9b5c3ca3eaccd9b95237dbc"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "485a291593dd2611c1b0cc3d20d9a388d7c684b919fd05ae1377a62e1fec8aba"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "243b2f85ce03bb07087c4fa48ad17628c8186e2a714d56e2cf1b9df393d4f604"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano de governo apresenta propostas organizadas em torno de direitos sociais e serviços públicos. O plano prevê o combate à precarização do trabalho e às reformas que retiraram direitos históricos dos trabalhadores. O plano propõe a participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo. O plano prevê o fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis. O plano prevê um sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica. O plano propõe a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial. O plano prevê a manutenção e a ampliação dos serviços públicos de saneamento no estado. O plano propõe um programa estatal de construção, reforma e regularização fundiária de moradias. O plano propõe a realização de uma auditoria integral da dívida pública.",
+    "frases": [
+      {
+        "texto": "O plano prevê o combate à precarização do trabalho e às reformas que retiraram direitos históricos dos trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "Devemos combater a precarização e as reformas neoliberais que retiraram direitos históricos e ameaçaram a fraca democracia liberal."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê o fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "garantindo acesso universal, permanência e qualidade em todos os níveis. O Estado deve fortalecer a escola pública como espaço de formação integral"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê um sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 2,
+            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 3,
+            "trecho": "por isso defendemos a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a manutenção e a ampliação dos serviços públicos de saneamento no estado.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 3,
+            "trecho": "Exigimos a manutenção e ampliação do aparato público estatal de todos os serviços de saneamento no Acre"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe um programa estatal de construção, reforma e regularização fundiária de moradias.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 5,
+            "trecho": "um programa estatal massivo de construção, reforma e regularização fundiária, especialmente nos terrenos de invasão."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a realização de uma auditoria integral da dívida pública.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 6,
+            "trecho": "é urgente a realização de uma auditoria integral da dívida pública"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "defesa-dos-trabalhadores",
+        "titulo": "Defesa dos trabalhadores",
+        "descricao": "Propostas de defesa dos trabalhadores, com combate à precarização do trabalho e às reformas que retiraram direitos históricos.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "Devemos combater a precarização e as reformas neoliberais que retiraram direitos históricos e ameaçaram a fraca democracia liberal."
+          }
+        ]
+      },
+      {
+        "id": "democracia-participativa",
+        "titulo": "Democracia participativa",
+        "descricao": "Proposta de gestão baseada na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Proposta de fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 1,
+            "trecho": "garantindo acesso universal, permanência e qualidade em todos os níveis. O Estado deve fortalecer a escola pública como espaço de formação integral"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica-estatal",
+        "titulo": "Saúde pública estatal",
+        "descricao": "Proposta de sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 2,
+            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas."
+          }
+        ]
+      },
+      {
+        "id": "transporte-publico",
+        "titulo": "Transporte público",
+        "descricao": "Proposta de criação de empresa estatal de transporte rodoviário, ferroviário e fluvial.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 3,
+            "trecho": "por isso defendemos a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial."
+          }
+        ]
+      },
+      {
+        "id": "habitacao",
+        "titulo": "Habitação",
+        "descricao": "Proposta de programa estatal de construção, reforma e regularização fundiária de moradias.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 5,
+            "trecho": "um programa estatal massivo de construção, reforma e regularização fundiária, especialmente nos terrenos de invasão."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:16:07.398Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T12:21:08.936Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma literalmente o combate à precarização e às reformas que retiraram direitos históricos, no eixo de defesa dos trabalhadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica adicional ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único eixo coerente, defesa dos trabalhadores contra precarização e perda de direitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência e o documento informado pertencem à mesma chave eleitoral e ao documento citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação: combate à precarização e às reformas que retiraram direitos históricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem linguagem valorativa adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de democracia participativa, com mecanismos do mesmo eixo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a participação direta e os três instrumentos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente acesso universal, permanência, qualidade em todos os níveis e fortalecimento da escola pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, educação pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral declarada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente sistema 100% estatal, medicina preventiva e atenção básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A afirmação resume a proposta sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e evidência correspondem à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais da afirmação; o detalhe amazônico é adicional, não faltante."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de empresa estatal de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação da empresa e os três modais citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta manutenção e ampliação do aparato público de todos os serviços de saneamento no estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do plano de forma descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, saneamento público."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre manutenção, ampliação e natureza pública dos serviços de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência traz literalmente o programa estatal de construção, reforma e regularização fundiária; o contexto da página é habitação e moradia."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, habitação e moradia."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "As cláusulas materiais do programa estão cobertas, e a página citada enquadra o trecho em habitação e moradia."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a realização de auditoria integral da dívida pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta enunciada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o combate à precarização e às reformas que retiraram direitos, no tema de defesa dos trabalhadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é classificatória e descritiva, sem promoção ou crítica adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em um único tema coerente, defesa dos trabalhadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais do tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente o conteúdo temático da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do tema e sem tom valorativo extra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único tema coerente de democracia participativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento e à identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a gestão participativa e os mecanismos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente fortalecimento da escola pública, acesso universal, permanência e qualidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, educação pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a descrição temática apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em um único tema coerente de saúde pública estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único tema coerente de transporte público."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a proposta e os modais mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o programa estatal de construção, reforma e regularização fundiária dentro do tema habitacional da página citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais do programa, e a página citada o enquadra explicitamente em habitação e moradia."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AC:10002549500",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AC:10002549500:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "8c811667d3b306d3e2cdf5fbda08cf6665f1e78496560b3d0a1a10716e06773a",
+    "extractedTextSha256": "36e39bd97f35300b8bf32bcff5191f80309d266131f33ed83185add6966db731",
+    "documentCount": 1,
+    "documentSetSha256": "4214a4287e554d0f4f1454813dc69e066ce7323d3459c6ccacd4ce4f287df315",
+    "contentSha256": "1423456ca43d959f1247ff1fdee6a77b6bb47b1538c7e5cb654543dcfd2bd9be"
+  }
+}

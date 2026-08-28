@@ -1,0 +1,1337 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RR",
+    "sqCandidato": "230002549223",
+    "slug": "arthur-henrique",
+    "nomeUrna": "ARTHUR HENRIQUE",
+    "partido": "PL",
+    "arquivoNome": "2026RR230002549223_01.pdf",
+    "arquivoNoPacote": "RR/2026RR230002549223_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RR:230002549223:01",
+      "fonte": {
+        "arquivoNome": "2026RR230002549223_01.pdf",
+        "arquivoNoPacote": "RR/2026RR230002549223_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "26da448b0ec767981835b0d5936275875f1631cc8f06ab65a29efa01b23805d3",
+        "extractedTextSha256": "bacd5693efc9066ed802926aeed5359f8854b459c68197eb9079c0ff4a494bf8",
+        "paginas": 47,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\nGOVERNADOR\n\nArthur\n\nVICE HAROLDO CATHEDRAL"
+          },
+          {
+            "id": "iole",
+            "titulo": "IOLE",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "ocr",
+            "conteudo": "IOLE\nRASIL"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nEleição Geral 2026 — Governador do Estado de Roraima\n\nRORAIMA RUMO AO\nDESENVOLVIMENTO\nPlano de Governo para o Mandato 2027–2030\n\nCandidato a Governador\n\nARTHUR HENRIQUE BRANDÃO MACHADO\nPartido Liberal — PL\n\nColigação - UNIDOS POR RORAIMA\n\nVice - HAROLDO CATHEDRAL\n\nRoraima · Agosto de 2026"
+          },
+          {
+            "id": "sumario",
+            "titulo": "Sumário",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Sumário\nApresentação\nParte I — Diagnóstico e o Legado de Boa Vista\nParte II — Gestão, Finanças e Transparência\nParte III — Agro, Logística e Infraestrutura\nParte IV — Educação\nParte V — Segurança Pública\nParte VI — Saúde\nParte VII — Primeira Infância e Assistência Social\nParte VIII — Turismo e Cultura\nParte IX — Meio Ambiente, Mineração e Diversificação Econômica\nParte X — Juventude, Esporte e Inclusão\nParte XI — Habitação e Regularização Fundiária\nParte XII — Roraima Digital: Conectividade, Governança e Inovação\nParte XIII — Metodologia e Governança\nCompromisso Final"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "Apresentação",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Apresentação\nEste não é um plano de governo qualquer. É um plano já aprovado nas urnas pela população de\nRoraima, que me deu a honra de me eleger governador com 61% dos votos válidos na eleição\nsuplementar de junho passado. Infelizmente, ainda não pude começar a colocar em marcha essas\ndiretrizes devido à injustiça praticada contra a vontade política do nosso povo pelas desavenças\nque tomam conta de nossas instituições e que ameaçam nossa democracia. A população de\nRoraima merece ser tratada com dignidade e ter sua vontade respeitada. Mas isso não me faz\nbaixar a cabeça. Injustiça é um sentimento que bate no nosso peito e que a gente converte em cada\nvez mais força e esperança em dias melhores para nosso estado.\nAgora é preciso pensar para frente. No melhor para Roraima. ​\nRevisitamos o plano que apresentamos naquela oportunidade e ampliamos seus horizontes. Um\ncaminho de perspectivas muito promissoras se abre para a população de Roraima num horizonte\nvisível, de mais prosperidade, mais igualdade e mais oportunidades. Nosso Estado está prestes a\nse tornar um dos principais faróis de desenvolvimento do Brasil. Para este sonho viável se realizar,\nentretanto, será preciso liderança, muito trabalho, união e capacidade administrativa.\nTivemos alguns avanços, como a chegada do linhão de Tucuruí, que reduziu a dependência\nenergética. Precisamos ir além. O Estado, com suas crônicas dificuldades em logística, em alguns\nanos terá uma saída para o mar, por meio de Georgetown, na Guiana, com a conclusão da via que\nliga Lethem à capital do país vizinho. De unidade federativa mais distante dos grandes polos\nconsumidores mundiais, nos tornaremos a mais próxima. Isso inclui até mesmo os cobiçados\nmercados asiáticos. Inclusive, com a esperada estabilização política da Venezuela, mais\npossibilidades se abrirão. Ao sul, estamos relativamente próximos de Manaus, metrópole com cerca\nde 2,3 milhões de habitantes. A janela de oportunidade de 360 graus precisa ser aproveitada de\nmaneira estratégica.\nVamos produzir mais no agro, porém respeitando o meio ambiente e as comunidades originárias.\nExtrair nossas riquezas, porém de maneira a beneficiar estruturalmente a nossa população.\nMelhorar nossa capacidade de escoamento, com técnicas modernas e racionais, aprimorando\nnossas estradas, inclusive as vicinais. Reduzir a dependência da economia das verbas do Estado\ncom mais produtividade. Vamos nos tornar um polo de atração de investimentos, inclusive\nindustriais. Temos terras disponíveis, mão de obra capaz e locais para onde vender.\nMas nada disso seguirá adiante se não enfrentarmos com seriedade e eficiência nossas questões\nagudas. Entre elas, superar índices de educação e saúde pública ainda abaixo da média brasileira.\nTambém qualificar uma população talentosa e criativa para estar pronta para os novos tempos.\nPrecisamos, ainda, por meio da ação das nossas forças policiais, oferecer paz e segurança para\nnossos roraimenses buscarem uma vida melhor.\nCom desburocratização e tecnologia, tornar Roraima um Estado muito aberto a quem quer\nempreender e ganhar dinheiro. Reduzir de vez também a pobreza e a miséria. Tudo isso sem\ndescuidar das contas públicas e da gestão."
+          },
+          {
+            "id": "e-o-que-pretendo-realizar-com-os-melhores-gestores-publicos-de-nosso-est",
+            "titulo": "É o que pretendo realizar. Com os melhores gestores públicos de nosso Estado, faremos com que",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "É o que pretendo realizar. Com os melhores gestores públicos de nosso Estado, faremos com que\nRoraima fique mais capacitada para esses novos tempos que virão. Tenho uma trajetória à frente da\nPrefeitura de Boa Vista que me deixa capacitado a liderar esse processo. Tenho confiança no nosso\nprojeto e, sobretudo, no povo do Estado onde nasci e que conheço por meio das dificuldades e\nsonhos de cada um dos habitantes de Boa Vista, Alto Alegre, Amajari, Bonfim, Cantá, Caracaraí,\nCaroebe, Iracema, Mucajaí, Normandia, Pacaraima, Rorainópolis, São João da Baliza, São Luiz do\nAnauá e Uiramutã.\nÉ com esperança que apresento este Plano de Governo para o nosso Estado.\nArthur Henrique Brandão Machado\n\nCandidato a Governador de Roraima\nPartido Liberal — PL"
+          },
+          {
+            "id": "0",
+            "titulo": "•0",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "ocr",
+            "conteudo": "•0\n7"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "parte-i-diagnostico-e-o-legado-de-boa-vista",
+            "titulo": "Parte I — Diagnóstico e o Legado de Boa Vista",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Parte I — Diagnóstico e o Legado de Boa Vista\n1.0. Quem é Arthur Henrique\nNascido em Boa Vista em 19 de agosto de 1981, Arthur Henrique Brandão Machado cursou\nEngenharia Elétrica na Universidade de São Paulo e trabalhou nas multinacionais de tecnologia\nSiemens e Capgemini antes de voltar à capital de Roraima.\nEntrou para o serviço público municipal em 2013, como Secretário Extraordinário de Inclusão\nDigital. Foi eleito vice-prefeito de Boa Vista em 2016, na chapa de Teresa Surita, com 79,39% dos\nvotos, e em 2019 assumiu também a Secretaria Municipal de Educação e Cultura. Eleito prefeito em\n2020, foi reeleito em 2024 em primeiro turno, com 75,18% dos votos válidos. Em outubro de 2025,\nfiliou-se ao Partido Liberal.\nÉ casado com a dentista Nathália Cortez, com quem tem quatro filhas.\n\n1.1. Roraima hoje\nRoraima é o Estado mais jovem da Federação e o que tem menos municípios, apenas 15. A\npopulação estimada é de cerca de 738 mil habitantes, e aproximadamente dois terços vivem em\nBoa Vista. O orçamento estadual de 2026 é de R$ 9,92 bilhões, com Receita Corrente Líquida\nprojetada em R$ 8,27 bilhões.\nRoraima teve o maior crescimento populacional do Brasil em 2025, de 3,07%, puxado pela\nmigração venezuelana. Estima-se que cerca de 90 mil venezuelanos vivam hoje no Estado. Isso\nsignifica que aproximadamente 1 em cada 8 moradores de Roraima é migrante, proporção que não\nexiste em nenhuma outra unidade da Federação. Toda conta de saúde, de vaga escolar e de\nsegurança pública, precisa partir desse número, e não da população de dez anos atrás.\nA economia se apoia no agronegócio, no comércio, nos serviços e numa presença muito grande do\nsetor público. Essa dependência de verbas provenientes do Estado para movimentar a economia\nconstitui o problema estrutural mais sério que temos, e este plano a trata como algo a ser\nenfrentado, não como destino. ​\n​\nOs 15 municípios são muito diferentes entre si. Boa Vista concentra serviços e atividade econômica.\nRorainópolis, Caracaraí, Pacaraima, Bonfim e Mucajaí têm dinâmicas próprias, ligadas ao\nagronegócio, à fronteira e à logística. Uiramutã, Normandia e Amajari enfrentam os maiores\ndesafios sociais. Qualquer política pública desenhada para Roraima precisa levar isso em conta."
+          },
+          {
+            "id": "1-2-o-que-a-gestao-de-boa-vista-mostrou-ser-possivel",
+            "titulo": "1.2. O que a gestão de Boa Vista mostrou ser possível",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "1.2. O que a gestão de Boa Vista mostrou ser possível\nOs números abaixo são do balanço final da gestão municipal, encerrada em abril de 2026:\n\nInfraestrutura e drenagem\n• 45 pontos de alagamento solucionados, com cerca de 60 km de rede de drenagem e 57\ngalerias implantadas.\n• Mais de 70 km de ruas asfaltadas na capital e cerca de 300 km de estradas e vicinais\nrecuperadas e asfaltadas.\n• Central de Monitoramento com 90 câmeras instaladas pela cidade.\nEducação e primeira infância\n• 19 escolas e creches construídas, chegando a 54 mil alunos na rede municipal.\n• Centro Especializado em Transtorno do Espectro Autista (CETEA) implantado na rede\nmunicipal.\n• Programa Bem-Te-Vi: mais de 5 mil óculos entregues a estudantes da rede.\n• 84 novos ônibus para o transporte escolar.\n• Reconhecimento da rede Urban95, da Fundação Van Leer, pelas políticas de primeira\ninfância.\nSaúde\n•\n\n​10 unidades básicas de saúde entregues.\n\n•\n\n​Equipes de Estratégia Saúde da Família mais que duplicadas, de 60 para 149.\n\n•\n\n​Consultório na Rua implantado para atendimento à população em situação de rua.\n\n• Duas carretas da Saúde da Mulher e Castramóvel para controle populacional de animais.\nGestão, servidor público e segurança\n• Concurso da saúde com 672 vagas e concurso da educação com 771 vagas.\n• Concurso da Guarda Civil Municipal, com 300 aprovados convocados — o dobro das vagas\nofertadas.\n• Mais de 5 mil concursados convocados ao longo da gestão.\n• Programa Descomplica: primeiro lugar no Ranking Nacional de Dispensa de Alvarás e\nLicenças do Governo Federal.\n• ​Boa Vista avançou na redução das mortes violentas, com queda aproximada de 27%, mas\nainda enfrenta um desafio inaceitável: os elevados índices de violência sexual contra\nmulheres, crianças e adolescentes. Segurança de verdade exige proteger a vida em todas\nas suas dimensões, o que proporemos neste plano de governo.\n• Orçamento municipal de R$ 1,419 bilhão em 2021 para R$ 3,4 bilhões em 2026."
+          },
+          {
+            "id": "agro-meio-ambiente-e-comunidades-indigenas",
+            "titulo": "Agro, meio ambiente e comunidades indígenas",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Agro, meio ambiente e comunidades indígenas\n•\n\n​Mais de R$ 60 milhões investidos em agricultura na zona rural.\n\n• 156 sistemas de irrigação com energia solar instalados, e tanques de piscicultura\nimplantados em comunidades do interior.\n• Dois ecopontos e um Centro de Compostagem implantados.\n• Quase 100% da iluminação pública convertida para LED."
+          },
+          {
+            "id": "parte-ii-gestao-financas-e-transparencia",
+            "titulo": "Parte II — Gestão, Finanças e Transparência",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Parte II — Gestão, Finanças e Transparência\nNão existe conquista social efetiva sem estabilidade fiscal. Finanças em ordem significam\nprevisibilidade para introduzir políticas públicas que vão beneficiar efetivamente a população. De\nnada adianta iniciar projetos que não irão à frente por falta de recursos no longo prazo. Por isso, a\ndisciplina fiscal que orientou o plano da eleição suplementar continua sendo a base deste plano.\nNum mandato de quatro anos, ela ganha duas ferramentas que há cinco meses não comportavam:\nplanejamento plurianual e orçamento vinculado ao resultado.\n\n2.1. Planejamento plurianual e orçamento por resultados\nO Governo de Roraima vai planejar suas ações pensando nos quatro anos de mandato, com\nmetas claras e compromisso de entregar resultados concretos para a população.\n• O diagnóstico fiscal completo previsto para os primeiros 45 dias de governo passa a servir de\nbase para um planejamento de quatro anos, o que permitirá definir prioridades e organizar\num planejamento responsável, compatível com a realidade de Roraima, e não apenas\npara um relatório de abertura de governo.\n• Cada programa do governo terá objetivos, metas e indicadores de desempenho para\nacompanhar o que está sendo entregue em áreas como saúde, educação, segurança,\ninfraestrutura e desenvolvimento econômico. Os programas que apresentarem bons\nresultados terão prioridade na destinação de recursos, enquanto aqueles que não\natingirem os objetivos serão reavaliados para garantir que o dinheiro público seja\nutilizado com mais eficiência.\n• Ampliação do Portal Roraima Aberto com painel público de resultados, atualizado\nperiodicamente e acessível a qualquer cidadão.\n\n2.2. Um Estado de alta capacidade\nUm governo eficiente não é aquele que apenas arrecada mais ou gasta mais. É aquele que\nconsegue transformar recursos públicos em obras concluídas, serviços de qualidade e respostas\nrápidas às necessidades da população.\nEntrega mais rápida de obra e serviço público depende de processo ágil, projeto bem feito, servidor\ncapacitado e acompanhamento sistemático — o tipo de investimento que não aparece em nenhum\nbalanço, mas é o que determina se a obra sai do papel no prazo certo.\n\n• Capacitação continuada do servidor estadual com foco em quem trabalha, com licitação,\ncontrato e fiscalização de obra.\n• Escritório de projetos ligado ao núcleo de governo para acompanhar prazo, custo e entrega\ndas iniciativas prioritárias.\n• Simplificação de processos internos para a entrega sair mais rápido sem perda de controle."
+          },
+          {
+            "id": "2-3-transparencia-total",
+            "titulo": "2.3. Transparência total",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "2.3. Transparência total\n• Portal de dados abertos e painel público de gestão para que o cidadão roraimense\nacompanhe a aplicação dos investimentos estaduais.\n• Publicação periódica de despesas, contratos e nomeações em formato pesquisável.\n• Relatórios de execução fiscal também em versão de linguagem simples, além do formato\ntécnico exigido por lei.\n\n2.4. Servidor público\nO servidor é quem executa tudo o que está neste plano. Em Boa Vista, isso significou concurso da\nsaúde com 672 vagas, concurso da educação com 771 vagas, concurso da Guarda Civil Municipal\ncom 300 aprovados convocados — o dobro das vagas ofertadas — e mais de 5 mil concursados\nchamados ao longo da gestão. Assumimos como compromisso inegociável o pagamento em dia da\nfolha e o respeito ao calendário. Pendências históricas serão tratadas com cronograma público e\nlastro fiscal demonstrado. Não prometemos reajuste sem estudo de impacto, porque promessa sem\nlastro prejudica a própria categoria no ano seguinte.\n\n• ​Diálogo permanente com sindicatos e categorias, com calendário de negociação definido e\nnão episódico.\n• ​ Plano de carreira construído com estudo atuarial prévio, nas categorias em que ele ainda\nnão existe ou está defasado.\n\n2.5. Descomplica Roraima\nEm Boa Vista, o Descomplica dispensou licenciamento para mais de mil atividades de baixo risco e\nrendeu à cidade o primeiro lugar nacional em dispensa de alvarás. A proposta é levar a mesma\nlógica para as licenças e autorizações de competência estadual: prazo definido para resposta,\ndigitalização de processos e dispensa onde o risco não justifica a exigência. O foco é o pequeno e\nmédio empreendedor, especialmente no interior, onde a burocracia custa mais caro em tempo e\ndeslocamento."
+          },
+          {
+            "id": "parte-iii-logistica-infraestrutura-saneamento-energia-e-agro",
+            "titulo": "Parte III — Logística, Infraestrutura, Saneamento, Energia e Agro",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Parte III — Logística, Infraestrutura, Saneamento, Energia e Agro\nDesenvolvimento sustentável em Roraima passa, entre outras coisas, por um agro forte e bem escoado.\nO agronegócio já é o setor mais dinâmico da economia roraimense, e o que limita seu crescimento hoje\nnão é a produção, é o que está fora da porteira: estrada, escoamento, armazenagem, crédito e\nsegurança jurídica sobre a terra.\nA safra 2024/2025 foi a maior da história de Roraima, com mais de 692 mil toneladas de grãos colhidos.\nA soja responde por cerca de 40% da produção estadual e segue em expansão: a área plantada deve\npassar de 132,4 mil hectares em 2025 para 144,9 mil em 2026, um crescimento projetado de 9,4%.\nRoraima virou fronteira agrícola de verdade, e agora precisa de infraestrutura à altura do que produz.\nArroz, soja, milho, banana e pecuária sustentam a atividade produtiva do Estado. Os gargalos são\nconhecidos por quem produz: burocracias, licenciamento, vicinais que se tornam intransitáveis no\nperíodo chuvoso, insegurança fundiária e crédito difícil para o pequeno e o médio produtor. A malha\nestadual tem trechos críticos, e as rodovias federais que cortam Roraima, BR-174, BR-401 e BR-432,\ndependem de manutenção da União.\nOutra questão estrutural tem relação com as pontes construídas no estado. Toda chuva forte em\nRoraima derruba ponte de madeira, e toda ponte derrubada isola comunidade. Neste 2026, foi assim no\nacesso a Uiramutã, no polo Jacamim em Bonfim e nas vicinais do Amajari, onde crianças ficaram\nsemanas sem chegar à escola porque o transporte escolar não passava. A resposta que se repete há\nanos é refazer a mesma estrutura de madeira, que a próxima cheia leva de novo. É gasto recorrente sem\nsolução permanente.\nEm relação a outras obras públicas, há construções começadas e abandonadas em quase todos os\nmunicípios: escola sem telhado, unidade de saúde sem equipamento, prédio cercado por tapume há\nanos. Cada uma dessas obras já consumiu dinheiro do roraimense e não entregou nada em troca. O\ncompromisso deste governo com a infraestrutura não é anunciar obra nova: é resolver a obra que já foi\npaga e não foi concluída. Nenhuma obra nova de porte contratada nos primeiros seis meses sem que a\nobra parada equivalente no mesmo município tenha destino decidido.\nEm saneamento, Roraima possui desafios estruturais. A capital Boa Vista alcançou níveis próximos à\nuniversalização no abastecimento de água potável (96,4%) e esgotamento sanitário (92,1%), já tendo\natingido as metas estipuladas no âmbito federal pelo Novo Marco Legal do Saneamento.\nCom relação ao tratamento de esgoto, o município de Boa Vista possui coleta e tratamento praticamente\nuniversalizados, contando com uma Estação de Tratamento de Esgoto (ETE) e 43 estações elevatórias\nde esgoto bruto, o que confere alta complexidade operacional ao sistema.\nOs demais municípios do Estado são marcados por insuficiência ou ausência dos serviços de água e\nesgoto. A média de cobertura de população atendida com água é de 76,9%, abaixo da média nacional\n(84,1%), sendo que o principal gargalo está nas áreas não urbanizadas (apenas 9,2% de cobertura).\nCom relação ao esgotamento, a média do Estado é de 64,4%, próximo ao índice nacional (62,3%). A\nuniversalização dos serviços de água e esgoto nos demais municípios do estado é muito desafiadora\ndevido às características geográficas e ao padrão de uso e ocupação do solo.\nO estado possui baixa densidade populacional, grandes distâncias entre comunidades, significativo\nnúmero de comunidades indígenas, extensas áreas rurais e limitações fiscais dos municípios, o que\nexige soluções técnicas diferenciadas. A política estadual de saneamento deve combinar investimentos"
+          },
+          {
+            "id": "estruturantes-nas-sedes-municipais-com-tecnologias-simplificadas-descent",
+            "titulo": "estruturantes nas sedes municipais com tecnologias simplificadas, descentralizadas e de baixo custo",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "estruturantes nas sedes municipais com tecnologias simplificadas, descentralizadas e de baixo custo\npara pequenas localidades e comunidades isoladas.\nEm energia, Roraima deixou de ser o único Estado brasileiro fora do Sistema Interligado Nacional em\nsetembro de 2025. O linhão de Tucuruí, no trecho Manaus–Boa Vista, encerrou décadas de dependência\nde termelétricas a diesel e de energia importada da Venezuela. É a maior mudança estrutural que o\nEstado viveu em muito tempo, e o plano de governo precisa tratá-la como tal.\nMas conexão não é o mesmo que benefício entregue. Até aqui não houve redução de tarifa para o\nconsumidor roraimense, e a rede de distribuição interna ainda limita o aproveitamento da energia que\nchega.\n\n3.1. Logística e infraestrutura viária\n•​ Apoio técnico e financeiro aos municípios na elaboração e execução de planos de\nsaneamento, área em que a maioria das prefeituras roraimenses não tem estrutura própria\npara avançar sozinha.\n•​ Prioridade para abastecimento de água tratada e esgotamento sanitário nas sedes\nmunicipais do interior, onde a carência é maior e o impacto na saúde pública é direto.\n\n•​ Integração entre saneamento e drenagem urbana, aproveitando a experiência acumulada\nem Boa Vista na eliminação de pontos críticos de alagamento.\n\n3.2. Saneamento\n•​ Elaboração e execução do Plano Plurianual de Recuperação e Pavimentação das Estradas\nVicinais, com cronograma anual de obras e critérios técnicos para definição de prioridades,\ncom classificação por nível de criticidade, priorizando regiões de maior produção\nagropecuária, maior população atendida e acesso a escolas, unidades de saúde e\ncomunidades rurais.\n•​ Preparação antecipada da malha viária para o período chuvoso, com patrolamento e\ndrenagem antes do pico das chuvas.\n•​ Cobrança permanente junto ao DNIT pela manutenção das BR-174, BR-401 e BR-432, com\noferta de cooperação técnica do Estado.\n•​ Estudos de parceria público-privada para trechos estratégicos, com viabilidade técnica e\nfinanceira demonstrada antes de qualquer compromisso contratual.\n•​ Plano estadual de pontes e acessos com diagnósticos, elaboração e execução de plano\nemergencial de recuperação. Serão de concreto para poderem resistir ao período de chuvas.\nPrioridade para aquelas que sejam acesso único às comunidades com manutenção\npreventiva e corretiva.\n•​ Inventário georreferenciado de todas as travessias das rodovias estaduais e vicinais no\nprimeiro ano de mandato, com classificação por criticidade e por população dependente,\npublicado no Portal Roraima Aberto."
+          },
+          {
+            "id": "prioridade-absoluta-para-as-travessias-que-constituem-acesso-unico-de-mu",
+            "titulo": "•​ Prioridade absoluta para as travessias que constituem acesso único de município ou de",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "•​ Prioridade absoluta para as travessias que constituem acesso único de município ou de\ncomunidade, e para as que integram rota de transporte escolar ou de escoamento de\nprodução.\n•​ Substituição programada por estrutura permanente, com cronograma anual e meta pública\nde pontes entregues por ano de mandato.\n•​ Manutenção preventiva executada antes do início do período chuvoso, e não durante a\ncheia, quando o custo é maior e a obra não se sustenta.\n•​ Protocolo de resposta imediata da Defesa Civil com travessia alternativa garantida em até 72\nhoras enquanto a obra definitiva não é concluída, para que nenhuma comunidade fique sem\nacesso a atendimento de saúde e a abastecimento.\n•​ Censo completo das obras estaduais paralisadas nos primeiros 90 dias de governo, com\nvalor já empenhado, percentual executado, empresa contratada e data da paralisação,\npublicado integralmente.\n•​ Painel público de acompanhamento no Portal Roraima Aberto, com atualização mensal do\nestágio de cada obra e do responsável por ela.\n•​ Decisão publicada para cada obra em até 180 dias, em uma de três alternativas: retomar\ncom prazo definido, rescindir e relicitar, ou desfazer quando a conclusão custar mais do que\nrecomeçar.\n•​ Cooperação formal com o Tribunal de Contas do Estado e com o Ministério Público,\nencaminhando o censo como provocação de ofício, para que a fiscalização deixe de\ndepender de denúncia isolada.\n•​ Respeitando a soberania do estado, buscar recursos de organismos internacionais que\npossam colaborar com projetos de desenvolvimento para a região.\n\n3.3. Energia: aproveitar o que mudou\n●​\n\n●​\n\n●​\n\n●​\n\nPlano Estadual de Energia, com metas de substituição da geração a diesel e de melhoria da\nrede de distribuição, hoje o gargalo entre a energia que chega e a que efetivamente se usa.\nPressão institucional e técnica, junto à ANEEL e ao Ministério de Minas e Energia, para que\na interligação se traduza em tarifa menor e em redução efetiva da geração térmica\ncontratada.\nRevisão das barreiras regulatórias estaduais que hoje inibem a geração solar distribuída, em\num Estado com um dos melhores índices de irradiação do país.\\\nUso da energia estável como argumento central de atração de investimento: irrigação,\nagroindústria, cadeia do frio e beneficiamento da produção dentro de Roraima."
+          },
+          {
+            "id": "3-4-fortalecimento-do-agro",
+            "titulo": "3.4. Fortalecimento do agro",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "3.4. Fortalecimento do agro\nA agropecuária de Roraima cresce de forma cada vez mais diversificada e regionalizada. Cada\nmunicípio possui vocações produtivas próprias, que devem ser reconhecidas e fortalecidas por\npolíticas públicas específicas, capazes de gerar emprego, renda e desenvolvimento sustentável. O\ndesafio é tornar Roraima a nova potência agro do Brasil com as condicionantes de respeito ao meio\nambiente e às comunidades originárias.\nBonfim consolidou-se como o principal polo de produção de grãos do Estado, com destaque para\nsoja, milho e arroz, impulsionado pela expansão da agricultura mecanizada e pela proximidade com\na Guiana. Caroebe destaca-se como o maior produtor de banana e vem ampliando sua produção\nde cacau, café e mandioca. Rorainópolis, São Luiz do Anauá e São João da Baliza formam um\nimportante corredor agropecuário no sul do Estado, combinando agricultura familiar, pecuária,\ncacau, café e fruticultura. Mucajaí, Cantá e Alto Alegre apresentam forte crescimento na produção\nde grãos, hortaliças, mandioca, leite e pecuária de corte, enquanto Caracaraí reúne condições\nestratégicas para ampliar sua produção agropecuária e consolidar-se como importante polo\nlogístico para o escoamento da produção.\nO crescimento não é só estadual, é municipal. É esse tipo de vocação regional que a política\nagrícola estadual precisa reconhecer e apoiar, em vez de tratar o agro como um bloco único.\nEssa diversidade demonstra que não existe um único modelo de desenvolvimento para o campo em\nRoraima. A política agrícola estadual deve respeitar as características de cada região, estimulando\ntanto a agricultura empresarial quanto a agricultura familiar, os povos indígenas produtores, a\npiscicultura, a fruticultura, a pecuária e as cadeias de maior valor agregado.\n\n• ​ Simplificação de licenças, alvarás e regularização ambiental para produtores rurais,\nintegrada ao Descomplica Roraima.\n• ​Apoio à expansão da infraestrutura rural, da assistência técnica, da irrigação, da pesquisa\nagropecuária, do crédito, da regularização fundiária e da agroindustrialização, incentivando\nque uma parcela cada vez maior da produção seja beneficiada dentro do próprio Estado.\n\n• ​ Mesa Permanente do Agronegócio Roraimense, reunindo governo, produtores, cooperativas,\nfederação da agricultura e Embrapa Roraima.\n• ​Articulação com Banco do Brasil, Banco da Amazônia e Caixa para linhas de crédito\nacessíveis ao pequeno e médio produtor.\n• Regularização fundiária das glebas estaduais, dentro da competência do Estado, com\nprioridade para pequenos e médios produtores.\n• ​Compra pública como instrumento de mercado: prioridade para a agricultura familiar no\nabastecimento de escolas, hospitais e unidades prisionais.\n• ​Estudo de viabilidade para frigorífico estadual habilitado para exportação.​"
+          },
+          {
+            "id": "parte-iv-educacao",
+            "titulo": "Parte IV — Educação",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Parte IV — Educação\nRoraima tem a maior concentração de matrículas na rede estadual do país nos anos finais do\nensino fundamental: 88,9% dos alunos dessa etapa estudam em escolas do Estado. Isso significa\nque, aqui, o resultado educacional depende da gestão estadual mais do que em qualquer outra\nunidade da Federação. Não há como terceirizar a responsabilidade.\nAs escolas de Roraima precisam formar cidadãos capazes de exercer seu aprendizado ocupando\nespaços dignos no mercado de trabalho. Por isso, vamos atuar para que as instituições de ensino\nofereçam formação técnica, garantindo a cada formando sua certificação profissional. É preciso\ntambém respeitar as peculiaridades econômicas de cada município, de maneira que o jovem possa\nconstruir sua carreira no local em que vive.\n\n4.1. Roraima avança na aprendizagem\nLevar a experiência exitosa de Boa Vista na educação para todo o estado. Os números da capital\nelevam o estado para cima. Nesse sentido, é preciso elevar, até a edição de 2029 do Índice de\nDesenvolvimento da Educação Básica (Ideb), o resultado da rede estadual de Roraima de 4,4 para\npelo menos 5,0 nos anos finais do ensino fundamental e de 3,8 para pelo menos 4,5 no ensino\nmédio. Em regime de colaboração com os municípios, elevar o Ideb da rede pública nos anos\niniciais de 5,9 para pelo menos 6,5.\nOs resultados serão monitorados por escola, município, território e modalidade de ensino, com\natenção específica às escolas rurais, indígenas e de maior vulnerabilidade social.\nA melhoria do Ideb deverá ocorrer simultaneamente ao avanço da aprendizagem em língua\nportuguesa e matemática, à redução do abandono e da distorção idade-série e ao aumento da\nfrequência escolar, vedada a elevação artificial do indicador por meio de aprovação sem\naprendizagem.\n\n4.2. Climatização das escolas\nRoraima já climatiza salas de aula, mas de forma dispersa, quando uma escola entra em reforma.\nFoi assim na reinauguração do colégio estadual de Rorainópolis, em março de 2026. O que não\nexiste é uma política com meta, prazo e cronograma público. É isso que propomos criar.\n\n• ​ Levantamento completo das salas ainda sem climatização, a partir do Censo do Estado das\nEscolas.\n• ​Cronograma público, ano a ano, até cobrir toda a rede estadual.\n• ​Prioridade para escolas do interior e da faixa de fronteira. Hoje a climatização avança mais\nrápido onde a estrutura já é melhor, e isso precisa ser invertido.\n• ​Readequação da rede elétrica incluída no mesmo programa. Sem isso, o aparelho instalado\nnão funciona, e essa é a razão mais comum de fracasso desse tipo de política.\n• ​Reforma emergencial de escolas mais degradadas do estado."
+          },
+          {
+            "id": "4-3-ensino-superior",
+            "titulo": "4.3 Ensino superior",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "4.3 Ensino superior\n​\nBuscar melhorias na estrutura da Universidade Estadual de Roraima para aumentarem os índices\nde qualidade acadêmica de seus cursos.\n\n4.4. Demais compromissos\n•​ Mapa anual de déficit de vagas por bairro e por sede municipal, publicado antes do período\nde matrícula, para que a família saiba com antecedência onde há e onde falta vaga.\n•​ Ampliação e reforma prioritárias nas unidades que hoje concentram a demanda reprimida,\nem vez de construção dispersa por critério político.\n•​ Integração formal com as redes municipais no planejamento de matrícula, dado que a rede\nestadual recebe anualmente milhares de concluintes do 5º ano vindos dos municípios.\n•​ Prioridade para escola de fronteira e escola indígena, onde a pressão de matrícula é maior e\na estrutura, menor.\n•​ Expansão das escolas em tempo integral, com cronograma de mandato.\n•​ Equidade na qualidade do ensino. As escolas do interior e da periferia precisam da mesma\nqualidade presente em Boa Vista.\n•​ Continuidade dos planos para escolas indígenas e rurais, com metas de infraestrutura\nvinculadas ao Censo do Estado das Escolas.\n\n• ​Valorização contínua dos profissionais da educação, tanto em relação às condições de\ntrabalho quanto à remuneração digna.\n• Estruturar plano de superação do analfabetismo na população idosa.\n• Apoio aos municípios na construção de creches.\n• Renovação da frota de transporte escolar.\n• Expansão do programa Bem-Te-Vi, de distribuição de óculos, para todo o estado (ver\nseção específica em saúde).\n\n4.5. Fundo Raiz — o que o chão de Roraima produz paga a escola do\nroraimense\n​\nRoraima tem um dos piores Ideb de ensino médio do país. É esse o dado que este programa existe\npara virar. O foco não é abandono escolar, que já vem caindo, e sim aprendizagem, que é onde o\npróximo salto precisa ocorrer.​\nA proposta é criar um fundo estadual com destinação exclusiva para o ensino médio, alimentado\npor receitas do subsolo e dos ativos ambientais do Estado. A lógica é simples: recurso de\nextrativismo é patrimônio que não se repõe. Quando vira folha de pagamento e custeio do ano,\nsome. Quando vira educação, fica."
+          },
+          {
+            "id": "4-5-1-de-onde-vem-o-dinheiro",
+            "titulo": "4.5.1. De onde vem o dinheiro",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "4.5.1. De onde vem o dinheiro\n• ​CFEM, a compensação financeira pela exploração mineral, na parcela que cabe ao Estado.\n• Receita do Estado com ativos ambientais, incluindo o que for gerado no âmbito do Roraima\nVerde e dos projetos de carbono.\n• Eventual receita futura de petróleo e gás, caso a exploração seja autorizada e produzida em\nterritório roraimense.\n•​ Aproximação com as universidades do estado, com a Agência Nacional de Mineração e com\nentes privados em busca de diagnósticos e potenciais de mineração sustentável.\n\n4.5.2. Foco no 3º ano e no Enem\nDesde o Decreto federal nº 12.915, de 30 de março de 2026, o Enem integra o Saeb e passou a\nservir de instrumento de avaliação da qualidade do ensino médio. A Portaria MEC nº 422/2026\ndeterminou ainda a inscrição automática dos concluintes da rede pública. Isso significa que Roraima\npassa a ter, sem custo próprio, um indicador nacional, padronizado e público sobre o resultado das\nsuas escolas.\n\n• ​Incentivo financeiro mensal ao estudante do 3º ano da rede estadual, condicionado à\nfrequência e aprovação.\n• Adicional para estudantes que se deslocam diariamente de comunidades rurais, indígenas\nou de difícil acesso, que hoje arcam com um custo de transporte que os demais não têm.\n• ​Bônus de conclusão, pago em parcela única após a aprovação final no ensino médio.\n\n4.5.3. Bonificação dos profissionais da educação\nAs escolas de ensino médio que apresentarem melhor desempenho e maior evolução nos\nindicadores oficiais receberão bonificação anual destinada a toda a equipe escolar, e não apenas ao\ncorpo docente. A definição de critérios, métricas e metas caberá à Secretaria de Estado da\nEducação, com regras publicadas antes do início de cada ciclo avaliativo."
+          },
+          {
+            "id": "parte-v-seguranca-publica",
+            "titulo": "Parte V — Segurança Pública",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Parte V — Segurança Pública\nA Polícia Militar de Roraima vem sendo equipada nos últimos anos. Recebeu viaturas, armamento,\nestande de tiro em 2024, novo bloco administrativo do BOPE em 2025 e um batalhão em Alto\nAlegre, também em 2025. O que falta agora é outro tipo de avanço: capacidade tática de ponta e\npresença real fora da capital. Hoje, a estrutura especializada está concentrada em Boa Vista.\nSome-se a isso a condição de fronteira com Venezuela e Guiana, que traz pressão de organizações\ncriminosas, contrabando e fluxo migratório, e o quadro fica claro. Em 2024, o índice de mortes\nviolentas intencionais (MVI) subiu 5,8% (de 132 para 144), ao contrário do Brasil, que teve uma\nqueda de 8,2% no mesmo período. Com índice de MVI por cem mil habitantes de 19,1 (Brasil:\n19,5), Roraima precisa de uma polícia mais bem armada, mais bem distribuída pelo território e\nintegrada com as forças federais.\nHá dois dados que este governo vai enfrentar. Segundo o Anuário Brasileiro de Segurança Pública\n2026, Roraima registrou em 2025 a maior taxa de estupro do Brasil: 127,1 casos por 100 mil\nhabitantes, mais de três vezes a média nacional, de 39,5, com 939 vítimas de estupro e estupro de\nvulnerável. O segundo dado é que as mortes violentas intencionais subiram no estado no mesmo\nano em que caíram no país: Roraima passou de 132 para 144 vítimas, alta de 5,8% na taxa,\nenquanto o Brasil registrou queda de 8,2%. Roraima está entre os sete estados que pioraram nesse\nindicador. É o oposto do que ocorreu em Boa Vista, onde as mortes violentas caíram cerca de 27%\ndurante a nossa gestão. Essa divergência entre a capital e o estado não é detalhe estatístico: é a\ndemonstração de que o problema é de gestão, e de que existe método que funciona e não foi\naplicado.\n\n5.1. Muralha Digital\nBoa Vista conta hoje com 90 câmeras de monitoramento. É preciso consolidar na capital e\nexpandir para o restante do Estado, com cruzamento de dados em tempo real a partir de\ncâmeras de leitura de placas de automóveis e reconhecimento facial. Modelo que reduziu\nexpressivamente crimes de furto e roubos no estado vizinho.\n\n5.2. Reequipamento e tecnologia\nO BOPE está na estrutura da PM-RR desde antes deste plano, ligado ao Comando de Policiamento\nda Capital. O salto que falta não é institucional, é de equipamento e capacidade:\n\n• ​Substituição do armamento convencional por submetralhadora na linha de frente das\noperações de alto risco, seguindo modelo já em uso em outras polícias militares do país.\n• ​Viaturas táticas e blindados leves, com prioridade para emprego na faixa de fronteira.\n• Óticas de precisão e equipamento de visão noturna, indispensáveis em operação de mata e\nem baixa visibilidade."
+          },
+          {
+            "id": "5-3-seguranca-fora-da-capital",
+            "titulo": "5.3. Segurança fora da capital",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "5.3. Segurança fora da capital\n• Emprego territorial baseado em dados de criminalidade violenta letal intencional, e não em\ncritério político de distribuição de efetivo.\n\n5.4. Comando Integrado\nReunião de cobrança presidida pelo próprio governador, unindo Polícia Militar, Polícia Civil, Polícia\nFederal e Polícia Rodoviária Federal em torno de uma única meta pública de redução de\ncriminalidade, com atenção especial à faixa de fronteira. Modelos semelhantes de cobrança\nunificada já produziram resultados expressivos em outros estados. Em Roraima, o desenho dá\ngovernança formal à Operação Integrada de Fronteira já prevista no plano de transição.\n\n• Uma das prioridades do comando integrado é a reocupação progressiva do território tomado\npor organizações criminosas. É intolerável que qualquer roraimense viva em locais tomados\npelo crime. É uma operação constante que deve ser comandada pessoalmente pelo próprio\ngovernador.\n•​ Bonificação por meta atingida às forças de segurança, com regras que premiem redução real\nde criminalidade, e não volume de prisão ou apreensão.\n\n5.5. Golpes e fraudes digitais\nA DERCC, Delegacia Especial de Repressão a Crimes Cibernéticos da Polícia Civil, tem histórico\nde operações contra fraude eletrônica e clonagem de cartão. Falta reforço de efetivo e capacidade\nde investigação, sobretudo diante do público mais atingido:\n\n• Reforço de efetivo e de capacidade investigativa da DERCC, em ação conjunta com a\nDelegacia de Proteção ao Idoso e à Pessoa com Deficiência (DPIPD), que já vem realizando\nmutirões de atendimento a vítimas de golpe idosas em Boa Vista e no interior.\n• Integração com programas federais de proteção ao usuário de serviços digitais, como o\nCelular Seguro, já em cooperação com a Sesp.\n\n5.6. Roraima Protege Elas\nNenhum indicador de Roraima é tão distante da média brasileira quanto os de violência contra a\nmulher. Em 2025, o estado registrou 1.173,5 ocorrências de violência psicológica por 100 mil\nmulheres, o maior índice do país e mais de vinte vezes a média nacional, de 55,6. O\ndescumprimento de medidas protetivas subiu para 669 registros, alta de 7,5%, chegando a 90,6 por\n100 mil mulheres — acima da média nacional. As tentativas de feminicídio passaram de 35 para 37.\nVários indicadores recuaram no mesmo período, o que mostra que a curva pode ser virada. Mas os\ndois que mais dizem respeito ao risco de morte, o descumprimento de protetiva e a tentativa de\nfeminicídio, seguiram subindo. É por isso que este é o único eixo deste plano com programa\npróprio, cinco frentes e cronograma, e não um parágrafo dentro de outro capítulo."
+          },
+          {
+            "id": "roraima-conta-com-a-secretaria-especial-da-mulher-o-grupo-terapeutico-fl",
+            "titulo": "Roraima conta com a Secretaria Especial da Mulher, o grupo terapêutico Flor de Lótus, a Deam, o",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Roraima conta com a Secretaria Especial da Mulher, o grupo terapêutico Flor de Lótus, a Deam, o\nRonda AME da Polícia Militar e a Patrulha Maria da Penha da Guarda Civil de Boa Vista, que\nacompanha medidas protetivas desde 2015. Esse conjunto é maior do que costuma se reconhecer\npublicamente, e a prioridade deste programa é dar alcance a ele, não reinventá-lo.\n\nAcolhimento\n• Rede estadual de acolhimento com Casa Abrigo em funcionamento, hoje um vazio crítico.\nEm todo o Brasil, apenas 3% dos municípios contam com esse equipamento, e as cidades\npequenas concentram metade dos feminicídios do país. Em Roraima, 14 dos 15 municípios\ntêm menos de 100 mil habitantes.\n• Interiorização do atendimento psicossocial e jurídico à mulher em situação de violência, hoje\nconcentrado na capital, com equipe própria nos polos regionais.\n• Acompanhamento até a vida adulta de crianças e adolescentes que perderam a mãe para o\nfeminicídio, com apoio psicológico contínuo e prioridade nos programas sociais estaduais.\n• Incentivo a políticas de proteção de vítimas de maus-tratos e lesão corporal em contexto\nde violência doméstica.\n\nProteção\n• Ronda AME nos 15 municípios, com visita obrigatória às mulheres classificadas como de\nmaior risco.\n• ​Ampliação do monitoramento eletrônico de agressores com medida protetiva, priorizando os\ncasos de risco elevado. A legislação federal de 2026 aumentou de 5% para 6% a fatia do\nFundo Nacional de Segurança Pública destinada ao enfrentamento da violência contra a\nmulher, com prioridade justamente para tornozeleiras e dispositivos de alerta. É recurso\ndisponível que Roraima precisa acessar.\n• Adesão ao Programa Nacional de Capacitação em Defesa Pessoal instituído pela Lei\n15.474/2026, com distribuição de aerossol de defesa pessoal e capacitação obrigatória,\npriorizando mulheres com medida protetiva ativa.\n\nEnfrentamento à violência sexual\nÉ aqui que Roraima difere de qualquer outro Estado, exigindo um planejamento que supere as\ndiretrizes do padrão nacional.\n\n• Atendimento integrado à vítima de violência sexual em unidade única, reunindo acolhimento,\nperícia, profilaxia e acompanhamento psicológico, para que a mulher não precise repetir o\nrelato em quatro lugares diferentes.\n• ​ Ambiente reservado para atendimento pericial, evitando a revitimização de quem já sofreu.\n• ​ Protocolo estadual específico para violência sexual contra crianças e adolescentes,\narticulado com conselhos tutelares, escolas e unidades de saúde."
+          },
+          {
+            "id": "autonomia",
+            "titulo": "Autonomia",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Autonomia\n• ​ Auxílio-moradia temporário para mulheres com medida protetiva em situação de\nvulnerabilidade, seguindo o caminho já aberto pela Lei federal 14.674/2023 e por modelos\nestaduais existentes.\n• ​Prioridade em qualificação profissional e intermediação de emprego pela Casa do\nTrabalhador, integrando a mulher atendida pela rede de proteção diretamente aos\nprogramas de renda do Estado.\n\nDados e responsabilização\n• ​ Cadastro estadual de agressores integrado ao Cadastro Nacional de Pessoas Condenadas\npor Violência contra a Mulher, criado pela Lei federal 15.409/2026, permitindo que a polícia\nroraimense identifique condenados que se desloquem entre estados.\n• ​ Painel estadual unificado com Polícia Civil, Polícia Militar, Judiciário e assistência social,\npara identificar risco e reincidência. Roraima não participou da última avaliação nacional\nsobre a qualidade dos seus registros de mortes violentas, e essa lacuna precisa ser\ncorrigida: sem dados confiáveis, não há política pública verificável.\n• ​ Criação de programa estadual de responsabilização de homens autores de violência — um\ndos poucos tipos de intervenção com potencial real de interromper a reincidência, e que\nRoraima ainda não tem.\n\n5.7. Sistema prisional\nHoje 6,27% dos presos em regime fechado de Roraima trabalham, o equivalente a 121 detentos de\num total aproximado de 1.520, segundo levantamento de agosto de 2024. A meta é pelo menos\ntriplicar esse percentual, e não apenas no regime semiaberto, com remição de pena de um dia a\ncada três trabalhados em atividades como capina, limpeza e manutenção de via pública.\n\n5.8. Carreira e efetivo\n• ​ Concurso para Polícia Militar e Polícia Civil, com cronograma dentro do mandato. No plano\nde transição, isso era apenas diretriz de estudo.\n• ​ Reestruturação da Polícia Penal, com plano de carreira e escola penitenciária.\n• ​ Continuidade da política de ascensão funcional já em curso nas corporações."
+          },
+          {
+            "id": "parte-vi-saude",
+            "titulo": "Parte VI — Saúde",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Parte VI — Saúde\nA saúde consome 17,61% do orçamento estadual em 2026, cerca de R$ 1,6 bilhão. Volume de\nrecurso não é o problema principal. O que vamos resolver é fila, desigualdade entre capital e interior\ne a gestão hospitalar, que precisa ficar mais próxima da execução diária.\nO Hospital Geral de Roraima, principal referência de alta complexidade do Estado, opera com 456\nleitos e ainda assim acumula pacientes em cadeira de plástico no corredor. O gargalo da fila\ncirúrgica está identificado e é conhecido de quem trabalha lá: falta leito de retaguarda para o\npós-operatório. Em 2026, cirurgias ortopédicas eletivas chegaram a ser interrompidas por problema\ncom a empresa prestadora, e pacientes já convocados foram devolvidos para a fila.\nA ampliação do HGR, hoje em execução, deve acrescentar cerca de 180 leitos à unidade. É\nnecessário investimento e será concluído e utilizado. Mas leito novo sem leito de retaguarda\norganizado, sem regulação integrada e sem publicação do tempo de espera, apenas desloca a fila\nde lugar. O compromisso deste plano não é anunciar leito: é publicar, por unidade, quanto tempo o\nroraimense espera — e reduzir esse número.\nO diagnóstico já existe. Falta executá-lo com continuidade, e é isso que este plano assume como\ncompromisso.\n\n6.1. Governo dentro do HGR\nApós a posse, o gabinete do governador será transferido para o interior das dependências do\nHospital Geral de Roraima. Mais do que uma ação simbólica, com a mudança o governador e\nequipe irão conhecer por dentro os principais dramas e desafios tanto dos pacientes como dos\nprofissionais de saúde. Para que as ações urgentes a serem tomadas na área sejam feitas com\nproximidade e embasamento.\nVisitar hospital é obrigação de qualquer governador e não é novidade em Roraima. A diferença\nque este plano propõe não é a visita: é ficar. O gabinete instalado dentro do HGR nos primeiros\nmeses de mandato existe para que a decisão sobre leito, escala e regulação seja tomada onde\no problema acontece e sob o mesmo indicador que o cidadão vê publicado.\n\n6.2. A fila como meta pública\nCada unidade da rede estadual passa a medir e publicar seu próprio tempo de espera. A fila deixa\nde ser um dado interno e vira indicador de gestão, acompanhável por qualquer cidadão. Isso amplia\na Central Estadual de Regulação de Leitos prevista no plano de transição, acrescentando a ela um\npainel público por unidade. As filas precisam ser transparentes."
+          },
+          {
+            "id": "6-3-regionalizacao-da-saude",
+            "titulo": "6.3 Regionalização da Saúde",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "6.3 Regionalização da Saúde\nAtualmente, Boa Vista concentra os serviços de saúde de todo o estado. É preciso fortalecer a\nsaúde básica nos municípios-polo, buscando recuperar os hospitais do interior, em padrão UPA,\ncom uso de tecnologia e telemedicina para evitar disparidades regionais. Melhorar os serviços de\nambulância, de forma integrada.\n\n• ​ Cesta de medicamentos: distribuição de medicamentos de maneira regular para os\nmunicípios do interior.\n\n6.4. Levar o Programa Bem-Te-Vi a todo estado\nO projeto Bem-Te-Vi, de entrega gratuita de óculos para estudantes da rede municipal de ensino, se\ntornou um dos programas mais bem-sucedidos da história de Boa Vista. Coordenado pela prefeitura\ne fruto de uma parceria das secretarias de Educação e Cultura (SMEC) com a de Saúde (SMSA),\ncontou com excepcionais resultados: 5 mil estudantes receberam óculos de grau. O programa será\nagora de âmbito estadual com expansão para os municípios do interior. Nos seguintes moldes:\n\n• ​ Oferta do aparelho de alta tecnologia para realizar o diagnóstico (escaneador ocular Spot\nVision Screener-Hillrom).\n•​ Mapeamento: realização de um mutirão de consulta por meio dos profissionais de cada\nmunicípio.\n•​ O público-alvo serão as crianças e adolescentes de todas as modalidades e etapas de\nensino da Educação Municipal - creches, pré-escolas, ensino fundamental, escolas\nindígenas e do campo, como também para alunos da Educação de Jovens e Adultos (EJA).\n•​ Durante a entrega dos óculos, será necessário um curso rápido sobre a importância de\ncuidar bem da visão e preservar o novo patrimônio adquirido.\n\n6.5. Saúde da mulher que chega ao interior\nBoa Vista opera desde 2016 as Carretas da Mulher — hoje duas unidades — que percorrem o\nmunicípio com mamografia, ultrassonografia e prevenção do câncer de mama e de colo do útero,\nsomadas ao atendimento fixo do CPCOM, que atende mais de 5 mil mulheres por ano. O modelo\nfunciona e está testado. Em dezembro de 2025, o Estado recebeu ainda uma carreta do Ministério\nda Saúde, que vem circulando pelos municípios.\nO problema é que a carreta federal é emprestada e uma hora vai embora, e a estrutura municipal\natende apenas a capital. A mulher de Uiramutã, Normandia, Caroebe, São Luiz do Anauá continua\ndependendo de viagem longa para fazer um exame que deveria ser de rotina.\n\n• ​ Frota estadual própria de unidades móveis de saúde da mulher, com mamografia digital,\nultrassonografia e capacidade de biópsia, levando o modelo que já funciona na capital para\nos 15 municípios."
+          },
+          {
+            "id": "rota-anual-fixa-e-publicada-para-que-cada-municipio-saiba-com-antecedenc",
+            "titulo": "• ​Rota anual fixa e publicada, para que cada município saiba com antecedência quando a",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "• ​Rota anual fixa e publicada, para que cada município saiba com antecedência quando a\nunidade chega e possa organizar a convocação pela atenção básica.\n• ​ Integração com a regulação estadual, de modo que a mulher com exame alterado já saia da\ncarreta com o encaminhamento marcado, e não volte para o fim de uma fila.\n\n6.6. Compromissos do mandato\n• ​ Ampliar e modernizar os principais hospitais e unidades de saúde no interior de Roraima,\ncomo o Hospital Délio de Oliveira Tupinambá em Pacaraima, o Hospital Ruth Quitéria em\nNormandia e o Hospital Epitácio de Andrade Lucena em Alto Alegre. Fortalecer e equipar o\nHospital Governador Ottomar de Souza Pinto, de Rorainópolis, assim como a Maternidade\nThereza Monay Montessi.\n•​ Execução do Plano Diretor de Saúde 2027–2030, que no plano de transição era apenas\ncompromisso de elaboração.\n•​ Expansão da Estratégia Saúde da Família no estado de Roraima, em parceria com os\nmunicípios, no mesmo caminho que levou Boa Vista de 60 para 149 equipes.\n. Carretas da Saúde nos municípios com atendimento médico e odontológico. Com logística e\nestratégia considerando as demandas do interior.\n• ​Concurso público para profissionais de saúde, com cronograma definido.\n• ​Mutirões de cirurgias eletivas como política permanente, com priorização por tempo de\nespera e gravidade clínica.\n• ​Plano específico para a saúde indígena, em articulação com a SESAI e com as lideranças\ndas comunidades.\n•​ Atenção à criança em programas nos moldes do programa Bem-Te-Vi."
+          },
+          {
+            "id": "parte-vii-primeira-infancia-e-assistencia-social",
+            "titulo": "Parte VII — Primeira Infância e Assistência Social",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Parte VII — Primeira Infância e Assistência Social\nPela Setrabes, funcionam hoje o Restaurante Cidadão, o Colo de Mãe, o Minha Horta Cidadã e a\nCasa do Trabalhador. Este eixo parte deles, ampliando cobertura e critério técnico, em vez de\nbatizar estrutura paralela com nome novo.\nCada proposta abaixo vem acompanhada de critério técnico e público de elegibilidade. Programa\nsocial não pode ser moeda de campanha, nem deste governo nem de nenhum outro.\n\n7.1. Fortalecer o que já funciona\n• ​ Ampliação do Colo de Mãe, que hoje acompanha 3.208 famílias, com critérios de\nelegibilidade publicados e acompanhamento por indicadores de saúde e desenvolvimento\ninfantil.\n•\n\nMinha Horta Cidadã sai do caráter experimental, em que atende cerca de 50 mães, e vira\nprograma permanente com meta de expansão por município.\n\n• ​Novas unidades do Restaurante Cidadão no interior. Hoje o serviço está concentrado na\ncapital.\n\n7.2. O que é novo\n• ​ Cozinhas comunitárias nas comunidades de maior vulnerabilidade, priorizando Uiramutã,\nNormandia e Amajari, municípios já identificados como críticos no diagnóstico do plano de\ntransição.\n• ​Auxílio emergencial para famílias atingidas por cheia, acionado e monitorado pela Defesa\nCivil. Roraima convive com esse risco de forma recorrente, e hoje a resposta é improvisada\na cada evento.\n• ​ Coordenação estadual do fluxo migratório na fronteira, em articulação permanente com a\nOperação Acolhida, a União e as agências internacionais, com atenção especial a\nPacaraima e Boa Vista. É uma questão de gestão de fronteira e de planejamento da rede de\nsaúde, educação e segurança, que sente essa pressão há quase uma década — não de\nemergência pontual a ser tratada ano a ano.\n• ​ Plano estadual de contingência para a fronteira capaz de responder a uma eventual\nmudança brusca no fluxo migratório diante da instabilidade na Venezuela, articulado com\nExército, Polícia Federal e Defesa Civil.\n• ​ Atenção à primeira infância como política intersetorial entre saúde, educação e assistência,\naproveitando a experiência reconhecida internacionalmente que Boa Vista acumulou nessa\nárea."
+          },
+          {
+            "id": "parte-viii-turismo-e-cultura",
+            "titulo": "Parte VIII — Turismo e Cultura",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Parte VIII — Turismo e Cultura\nO turismo e a cultura representam uma das maiores oportunidades para diversificar a economia de\nRoraima, reduzir a dependência do setor público e gerar emprego e renda em todas as regiões do\nEstado. Com uma combinação única de belezas naturais, diversidade cultural, povos indígenas,\nbiodiversidade amazônica e localização estratégica na fronteira com a Venezuela e a Guiana,\nRoraima reúne condições para se tornar um dos principais destinos de ecoturismo, turismo de\naventura, turismo de natureza e turismo cultural da Amazônia brasileira.\nNos últimos anos, o setor vem apresentando crescimento consistente. Segundo estimativa da\nFecomércio-RR, a temporada 2025/2026 deverá movimentar aproximadamente R$ 281 milhões,\nconsolidando o quinto ciclo consecutivo de expansão da atividade turística. Esse crescimento\ndemonstra que o turismo já é uma importante atividade econômica para o Estado, mas seu\npotencial permanece subaproveitado.\nApesar dos avanços, ainda existem obstáculos que limitam o desenvolvimento do setor. A\ninfraestrutura turística é insuficiente em diversas regiões; muitos atrativos carecem de acesso\nadequado, sinalização e serviços de apoio; a promoção turística do Estado ainda é limitada; e há\nnecessidade de ampliar a qualificação da mão de obra, fortalecer o empreendedorismo local e\nestruturar roteiros capazes de aumentar o tempo de permanência dos visitantes.\nRoraima possui atrativos reconhecidos nacional e internacionalmente, como o Monte Roraima, o\nParque Nacional do Viruá, o Tepequém, as corredeiras do Baixo Rio Branco, o turismo de pesca\nesportiva, o turismo científico e a riqueza cultural dos povos indígenas, além de manifestações\nculturais que expressam a identidade amazônica e roraimense. O Boa Vista Junina, promovido pela\nprefeitura, tem potencial para se consolidar como uma festa de caráter nacional. Municípios como\nPacaraima, Amajari, Normandia, Uiramutã, Caracaraí, Mucajaí e Rorainópolis possuem enorme\npotencial para ampliar a oferta turística e distribuir os benefícios econômicos para além da capital.\nDa mesma forma, a cultura é um importante ativo de desenvolvimento. O fortalecimento das\nmanifestações culturais, da produção artística, da economia criativa, do patrimônio histórico e das\ntradições indígenas e regionais contribui para preservar a identidade de Roraima, fortalecer o\nsentimento de pertencimento e gerar novas oportunidades de trabalho e renda para artistas,\nprodutores culturais, artesãos e empreendedores.\n\n8.1. Estruturar os roteiros\nO Estado tem três regiões turísticas reconhecidas: Brasil do Extremo Norte, Savana Amazônica e\nÁguas e Florestas da Linha do Equador. Os destinos mais procurados são o Monte Roraima, na\ntríplice fronteira, e a Serra do Tepequém, em Amajari, além do Parque do Rio Branco, em Boa Vista.\n\n• ​ Fortalecimento do Detur, com integração direta ao plano de vicinais. Turismo de interior\ndepende de estrada, e não adianta promover destino que o visitante não consegue alcançar."
+          },
+          {
+            "id": "marca-roraima-plano-unico-de-marketing-turistico-para-os-roteiros-ja-rec",
+            "titulo": "• ​ Marca Roraima: plano único de marketing turístico para os roteiros já reconhecidos, em vez",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "• ​ Marca Roraima: plano único de marketing turístico para os roteiros já reconhecidos, em vez\nde esforço promocional disperso.\n• ​ Qualificação do trade turístico local em parceria com o Sebrae-RR, que já mantém trabalho\nnessa linha.\n• ​ Turismo de base comunitária desenvolvido com protagonismo das comunidades indígenas e\nretorno econômico para elas.\n\n8.2. Cultura\n• ​Calendário estadual de eventos e apoio aos festivais municipais.\n• ​Equipamentos culturais no interior, com o Parque do Rio Branco servindo de referência de\nmodelo.\n• ​ Valorização da produção cultural roraimense: artesanato, música e as manifestações\npróprias de cada região do Estado."
+          },
+          {
+            "id": "parte-ix-meio-ambiente-mineracao-e-diversificacao",
+            "titulo": "Parte IX — Meio Ambiente, Mineração e Diversificação",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Parte IX — Meio Ambiente, Mineração e Diversificação\nEconômica\nPreservar é obrigação legal e responsabilidade técnica permanente. Isso não está em discussão. O\nque este plano recusa é a ideia de que preservação e desenvolvimento sejam coisas opostas. Em\nRoraima, elas precisam caminhar juntas, porque o Estado não pode continuar dependendo do\nfuncionalismo para gerar renda.\n\n• ​ Cumprimento da legislação ambiental, com fortalecimento da Fundação Estadual do Meio\nAmbiente nas funções de licenciamento e fiscalização.\n• ​ Rede estadual de ecopontos e centrais de compostagem nos municípios-polo, replicando em\nescala estadual o que Boa Vista já opera na capital.\n• ​Modernização do licenciamento ambiental, reduzindo prazo sem reduzir rigor técnico.\n• ​Defesa, junto ao governo federal e ao Congresso, da revisão dos marcos legais e fundiários\nque hoje inviabilizam o aproveitamento ordenado do potencial mineral do Estado. Roraima\nprecisa levar diagnóstico técnico próprio e dados confiáveis a essa discussão, não apenas\nreclamação.\n• ​Cooperação com IBAMA, ICMBio e Polícia Federal nas matérias de competência da União.\n• ​Estratégia estruturada de atração de investimento privado, usando a entrada de Roraima no\nSistema Interligado Nacional como principal argumento competitivo. Energia confiável abre\nsetores que antes não vinham para cá: agroindústria, irrigação, cadeia do frio, data centers e\nturismo estruturado.\n\n9.1. Bioeconomia e mercado de carbono\nRoraima já entrou nesse mercado. O Estado integra desde 2017 a Força-Tarefa dos Governadores\npara o Clima e Florestas e vem construindo, pela Femarh, o sistema jurisdicional de REDD+,\nconhecido como Roraima Verde. Em Caracaraí, o Projeto Agrupado REDD+ Vale do Rio Branco\nrecebeu a mais alta classificação já atribuída a um projeto de desmatamento evitado no mundo,\ncom área de abrangência potencial de 6,9 milhões de hectares. E em julho de 2026 foi lançado o\nProjeto Carbono Roraima, voltado a produtores rurais, com participação do Sebrae.\nO papel do governo estadual aqui é dar segurança jurídica, governança e escala ao que já\ncomeçou, para que a receita fique no Estado e chegue a quem preserva.\n\n• ​Consolidação do Roraima Verde, com regras claras de repartição de benefícios e\nsalvaguardas socioambientais.\n• Apoio à organização de cadeias da bioeconomia com mercado real, a exemplo da\ncastanha-do-Brasil, já identificada como oportunidade nos projetos em curso no sul do\nEstado.\n• ​Assistência técnica ao pequeno e médio produtor que queira acessar o mercado de carbono,\nhoje dominado por quem tem estrutura para arcar com custo de certificação."
+          },
+          {
+            "id": "9-2-comunidades-indigenas",
+            "titulo": "9.2. Comunidades indígenas",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "9.2. Comunidades indígenas\nRespeito às comunidades indígenas e apoio técnico a quem quiser estruturar projetos próprios de\nbioeconomia e preservação em seu território, sempre em articulação com a União."
+          },
+          {
+            "id": "parte-x-juventude-esporte-e-inclusao",
+            "titulo": "Parte X — Juventude, Esporte e Inclusão",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Parte X — Juventude, Esporte e Inclusão\n10.1. Juventude e primeiro emprego\nRoraima possui uma das populações mais jovens do Brasil. Segundo o Censo Demográfico de\n2022, aproximadamente 26% da população tem entre 15 e 29 anos, o que representa um enorme\npotencial para impulsionar o desenvolvimento econômico e social do Estado. Ao mesmo tempo,\nesse bônus demográfico impõe o desafio de oferecer educação de qualidade, qualificação\nprofissional, oportunidades de trabalho, cultura, esporte e perspectivas de futuro para milhares de\njovens.\nEntretanto, muitos jovens enfrentam dificuldades para ingressar no mercado de trabalho. O primeiro\nemprego continua sendo uma das principais barreiras, agravada pela baixa diversificação\neconômica, pela reduzida oferta de vagas no interior e pela exigência de experiência profissional.\nComo consequência, parcela significativa da juventude migra para Boa Vista em busca de\noportunidades de estudo e trabalho ou permanece em situação de informalidade.\nOs desafios são ainda maiores entre os jovens indígenas, moradores de comunidades rurais e\nmunicípios do interior, onde a oferta de cursos técnicos, ensino superior, acesso à internet, cultura,\nesporte e oportunidades de qualificação ainda é limitada. Em diversas localidades, o deslocamento\npara estudar ou trabalhar representa um custo elevado para as famílias.\nOutro problema relevante é o número de jovens que não estudam nem trabalham. Dados da PNAD\nContínua indicam que, assim como ocorre em outros estados da Região Norte, uma parcela\nsignificativa da juventude encontra-se fora da escola e do mercado de trabalho, comprometendo\nsua inserção produtiva e ampliando a vulnerabilidade social.\nAo mesmo tempo, Roraima vive um novo momento econômico. O crescimento da agropecuária, da\nagroindústria, da logística internacional, da economia digital, do turismo, da construção civil e da\nprestação de serviços cria oportunidades para formar uma nova geração de profissionais\nqualificados. O desafio do Estado é aproximar a educação das necessidades do mercado de\ntrabalho e criar condições para que os jovens construam seu futuro sem precisar deixar Roraima.\n\n• Qualificação profissional orientada pelas vocações econômicas reais de cada região:\nagronegócio, agroindústria, logística, turismo e serviços.\n• Programa de primeiro emprego articulado com a Casa do Trabalhador e com o setor\nprivado, com atenção ao jovem do interior, que hoje precisa migrar para a capital para\nencontrar oportunidade.\n• ​ Aproximação com a Universidade Estadual de Roraima e o Instituto Federal de Roraima\npara alinhar a oferta de cursos técnicos às cadeias produtivas que estão crescendo no\nEstado."
+          },
+          {
+            "id": "10-2-areninhas-de-roraima",
+            "titulo": "10.2. Areninhas de Roraima",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "10.2. Areninhas de Roraima\nQuadra e campo de qualidade em bairro periférico não é luxo, é política de segurança pública e de\npermanência escolar. O modelo deve ser implantado justamente em áreas de baixo IDH e alta\nvulnerabilidade social, com campo de grama sintética, alambrado, vestiário, acesso pavimentado e\niluminação. A engenharia do programa é simples e replicável: o Estado constrói, o município indica\ne cede o terreno.\nEm Roraima, três adaptações são necessárias para o modelo não fracassar:\n\n• ​ Iluminação não é item opcional, é o principal. Com o calor de Boa Vista e do lavrado, o uso\nreal ocorre no fim da tarde e à noite. Campo sem torre de luz fica vazio metade do tempo.\n• Cobertura ou sombreamento nas áreas de convivência, pelo mesmo motivo.\n• Prioridade territorial definida por dado, e não por conveniência política: bairros com maior\nvulnerabilidade social em Boa Vista e sede dos municípios do interior, começando pelos que\nhoje não têm nenhum equipamento esportivo público em condições de uso.​\nCada unidade virá acompanhada de programação no contraturno escolar, com monitoria esportiva,\nem articulação com as escolas estaduais e com as instituições de ensino superior do Estado.\nEquipamento sem programação vira patrimônio abandonado em dois anos.\n\n10.3. Pessoa com deficiência\nEsta é a área em que a experiência de Boa Vista é mais transferível, porque lá o modelo foi\nconstruído do zero e já está maduro. A rede municipal chegou a 79 Salas de Recursos\nMultifuncionais, presentes em escolas urbanas, do campo e indígenas. Foram criados o Centro\nMunicipal Integrado de Educação Especial e o Centro Especializado em Transtorno do Espectro\nAutista, com equipe de psicólogos, fonoaudiólogos, terapeutas ocupacionais, fisioterapeutas,\neducadores físicos, pedagogos, arte-educadores e assistentes sociais. O número de alunos com\nautismo acompanhados passou de algumas centenas para mais de 2 mil.\nA rede estadual não tem nada equivalente, e o interior praticamente não tem nada. É isso que\nvamos mudar.\n\n• ​Salas de Recursos Multifuncionais em toda a rede estadual, incluindo escolas rurais e\nindígenas, seguindo o padrão já consolidado na capital.\n• ​Centros de referência regionais em educação especial, começando pelos municípios-polo,\ncom equipe multiprofissional completa e não apenas um profissional isolado.\n• ​Atendimento itinerante para os municípios sem serviço especializado, para que a família não\nprecise viajar até Boa Vista a cada sessão de terapia.\n• ​Formação continuada dos professores da rede estadual em educação especial e uso de\ntecnologia assistiva, porque sala equipada sem professor formado não gera aprendizagem."
+          },
+          {
+            "id": "diagnostico-precoce-articulado-entre-saude-e-educacao-quanto-mais-cedo-a",
+            "titulo": "• ​ Diagnóstico precoce articulado entre saúde e educação: quanto mais cedo a criança é",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "• ​ Diagnóstico precoce articulado entre saúde e educação: quanto mais cedo a criança é\nidentificada, maior o ganho de autonomia, e hoje muitas famílias do interior descobrem tarde\ndemais.\n• ​ Inclusão produtiva, com mapeamento de vagas, qualificação profissional e apoio à\ncontratação de pessoas com deficiência.\n\n10.4. Pessoa idosa\n• ​Atenção à saúde do idoso na rede estadual, com foco em envelhecimento saudável e\nprevenção.\n• ​ Prioridade real no atendimento e nos deslocamentos entre interior e capital para tratamento\nde média e alta complexidade."
+          },
+          {
+            "id": "parte-xi-habitacao-e-regularizacao-fundiaria",
+            "titulo": "Parte XI — Habitação e Regularização Fundiária",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Parte XI — Habitação e Regularização Fundiária\n11.1. O problema real de Roraima não é só construir casa\nBoa parte das famílias roraimenses já mora na sua casa. O que elas não têm é o papel que prova\nisso. Sem título, não há financiamento, não há reforma com crédito, não há garantia contra despejo\ne não há herança tranquila para os filhos. Regularizar é a política habitacional de maior alcance e\nmenor custo que o Estado pode fazer.\nExiste aqui uma peculiaridade que vem da história de Roraima. Quando o Território Federal virou\nEstado, em 1988, boa parte das terras da União passou ao Estado, inclusive dentro da área urbana\nde Boa Vista. O resultado é que Estado e município regularizam a mesma cidade ao mesmo tempo,\npor caminhos separados, o que gera sobreposição de processos, conflito de competência e famílias\nque esperam anos sem saber em qual porta bater.\n\n11.2. O que já está em curso e será acelerado\nO Estado opera o programa de regularização de conjuntos habitacionais pela Codesaima, com\nmilhares de escrituras já entregues e outras milhares em processo, e o Iteraima concluiu o\ngeorreferenciamento de mais de dez mil lotes em bairros de Boa Vista, com expansão prevista para\no interior. Do lado municipal, a experiência de Boa Vista com o Morar Legal mostrou que a\nregularização gratuita, isenta de taxas e emolumentos, é o que efetivamente destrava o processo\npara a família de baixa renda.\n\n• ​ Integração formal entre Iteraima, Codesaima e os órgãos municipais, com fila única e\nsistema compartilhado, para acabar com a sobreposição de processos na mesma cidade.\n• ​ Conclusão da titulação dos lotes já georreferenciados, que hoje estão tecnicamente prontos\ne parados por etapa administrativa.\n• ​ Interiorização da regularização fundiária urbana, levando o serviço às sedes municipais do\ninterior, onde a informalidade é ainda maior e não há estrutura local para resolver.\n• ​ Gratuidade mantida para a família de baixa renda, incluindo isenção de taxas e de registro,\nporque o custo de cartório é a razão mais comum de a escritura ficar pela metade.\n\n11.3. Moradia\n• ​ Articulação permanente com o Ministério das Cidades e a Caixa Econômica Federal para\nampliar a oferta de moradia popular em Roraima, com o Estado entrando com terreno\nregularizado e infraestrutura, que é onde o município pequeno costuma travar.\n• ​ Critérios de seleção das famílias publicados antes da abertura de cada programa, com fila\npública e consultável. Nenhuma indicação política, de ninguém, em nenhuma etapa.\n• ​ Prioridade para famílias em área de risco de alagamento, aproveitando o mapeamento de\ndrenagem que a capital já produziu."
+          },
+          {
+            "id": "atencao-habitacional-as-mulheres-com-medida-protetiva-integrando-este-ei",
+            "titulo": "• ​ Atenção habitacional às mulheres com medida protetiva, integrando este eixo ao programa",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "• ​ Atenção habitacional às mulheres com medida protetiva, integrando este eixo ao programa\nRoraima Protege Elas, já que moradia é frequentemente o que decide se a mulher consegue\nsair da casa do agressor.\n•​ Implantar o Sistema Estadual de Regularização Fundiária Digital, permitindo o\nacompanhamento eletrônico de todos os processos.\n•​ Integrar a regularização fundiária aos programas de infraestrutura urbana, garantindo que\nbairros regularizados tenham acesso aos serviços públicos essenciais."
+          },
+          {
+            "id": "parte-xii-roraima-digital-conectividade-governanca-e",
+            "titulo": "Parte XII — Roraima Digital: Conectividade, Governança e",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Parte XII — Roraima Digital: Conectividade, Governança e\nInovação\nA transformação digital é uma das principais ferramentas para promover o desenvolvimento\neconômico, reduzir desigualdades, ampliar o acesso aos serviços públicos e aumentar a\ncompetitividade dos estados. Roraima enfrenta desafios estruturais de conectividade e serviços\npúblicos fragmentados que elevam custos e dificultam a vida do cidadão. A visão estratégica é\nimplantar uma política integrada de transformação digital que coloque o cidadão no centro, trate o\ngoverno como uma plataforma de serviços integrados e promova a transparência radical orientada\npor dados.\n\n12.1. Programas Estruturantes\n• ​ Roraima Conectada: Expansão da infraestrutura de internet de alta velocidade para todos os\nmunicípios, priorizando escolas, unidades de saúde e comunidades indígenas/rurais por\nmeio de fibra óptica, rádio e satélite.\n•​ Governo Digital e Portal Único: Criação de uma plataforma única (site e aplicativo) integrada\nao Gov.br para acesso a todos os serviços estaduais, eliminando a exigência repetida de\ndocumentos e reduzindo deslocamentos.\n•​ Plataforma de Governança e Transparência: Implementação de painéis de gestão em tempo\nreal (dashboards) para monitoramento de metas e abertura total de dados sobre gastos,\nobras e contratos para controle social.\n•​ Amazônia Tech: Fomento ao ecossistema de inovação e startups, conectando universidades\ne setor produtivo para desenvolver soluções tecnológicas voltadas às vocações regionais.\n\n• ​ 100% das escolas e unidades de saúde conectadas à internet de alta velocidade, até 2030.\n•​ 90% dos serviços públicos estaduais disponíveis de forma digital.\n•​ Transparência Total: 100% da execução orçamentária e obras publicadas em dados abertos\nem tempo real.\n•​ Inclusão: Formação de milhares de jovens em competências digitais e economia da\ninovação.\n\n12.2. Tecnologia nas Áreas Finalísticas\n• ​ Saúde e Educação: Buscar a universalização da telemedicina e do prontuário eletrônico,\nalém da conexão de 100% das escolas com ensino de robótica, programação e inteligência\nartificial.\n•​ Setor Produtivo: Digitalização de licenças e incentivo à agricultura de precisão e ao comércio\neletrônico para pequenos empreendedores."
+          },
+          {
+            "id": "12-3-inteligencia-artificial-ia-e-etica",
+            "titulo": "12.3. Inteligência Artificial (IA) e Ética",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "12.3. Inteligência Artificial (IA) e Ética\nAdoção transversal de IA para automatizar tarefas administrativas e oferecer assistentes virtuais\n24h no atendimento ao cidadão. O uso será regido por uma Estratégia Estadual de IA, garantindo\nsupervisão humana, ética e conformidade com a LGPD."
+          },
+          {
+            "id": "parte-xiii-metodologia-e-governanca",
+            "titulo": "Parte XIII — Metodologia e Governança",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Parte XIII — Metodologia e Governança\n• Planejamento plurianual com metas de mandato, evolução natural do método dos 100\nprimeiros dias adotado no plano de transição.\n• ​Sala de Situação permanente no Palácio Senador Hélio Campos, com reunião periódica do\nsecretariado e painel de indicadores atualizado.\n• ​Audiências públicas periódicas de prestação de contas, presenciais e transmitidas.\n• ​Cooperação institucional com os 15 municípios, sem distinção partidária.\n• ​ Canais formais e permanentes de cooperação com o Tribunal de Contas do Estado, o\nMinistério Público e a Controladoria-Geral do Estado."
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-3",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-4",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "compromisso-final",
+            "titulo": "Compromisso Final",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Compromisso Final\nRoraima chega a 2027 num ponto de virada. Saímos do isolamento elétrico, colhemos a maior safra\nda nossa história e temos uma fronteira que pode deixar de ser só problema para virar\noportunidade. Ao mesmo tempo, temos o pior ensino médio do país, a maior taxa de estupro do\nBrasil e um hospital de referência com gente esperando em cadeira de plástico.\nAs duas metades são verdadeiras. Um plano de governo sério não escolhe só a parte boa para\nmostrar.\nPor isso este documento se apoia em três ideias simples. O que já funciona em Roraima deve ser\nfortalecido, e não recriado com outro nome para parecer novidade. O que falta deve ser construído\ncom meta pública e prazo definido, para que o eleitor possa cobrar. E nenhum programa social\ndeste governo será usado como instrumento de campanha.\nDesenvolvimento, para este plano, não é sinônimo de obra. É agro forte, mas com estrada para\nescoar a produção. É Estado presente, mas com o servidor público valorizado e pago em dia,\nporque é ele quem entrega cada um dos compromissos aqui escritos. É cuidado com quem mais\nprecisa, da primeira infância à pessoa idosa, sem programa social usado como moeda de\ncampanha.\nNão peço voto para começar do zero. Peço voto para dar continuidade ao que funciona e enfrentar\no que ainda não foi enfrentado. É isso que quer dizer colocar Roraima no rumo do desenvolvimento.\nArthur Henrique Brandão Machado\n\nCandidato a Governador de Roraima — Partido Liberal (PL)"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-5",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "sontesinados",
+            "titulo": "SONTESINADOS",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "ocr",
+            "conteudo": "SONTESINADOS\nArthur"
+          },
+          {
+            "id": "governador",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNADOR\n\nArthur\n\nVICE HAROLDO CATHEDRAL\n\nPlano de Governo"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "2ca354c74421d73e64661f34d491c30c989079603ae98d544650fafc7e77822f"
+          },
+          {
+            "pagina": 2,
+            "origem": "ocr",
+            "textSha256": "9b451f9b89fa083927b9b85118b3e7bfb05f59ef2963714c04f244b45e234b3c"
+          },
+          {
+            "pagina": 3,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "1bcf31c7b5db2a41549e91d527b667df59ce00b2c22552325e102668a0530a5d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "9d25b9d719c8c30d07f4eefa82b3b40ce570483677ff47cbb99d5c87d2253e6d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "6e568cf2f120e7a93d9022730b85ece4ec901d44ac9c701a71510536a192544c"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "549774bcddf2bb75cf7f6afb5785adc3aa2dfcfbdfe707049b3d014860c266f0"
+          },
+          {
+            "pagina": 8,
+            "origem": "ocr",
+            "textSha256": "c3e0570bbf773e4ed73e2b55f51b48f5f30c1d2956934d961adad80b8e8dd2f0"
+          },
+          {
+            "pagina": 9,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "a65ce7a2f2deeba65051ae4cfbf83e7aa71d19c64c5e075bf481c70f48a8ef91"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "17b994cb6d584581e3a17dc5e6f5e2bebea61c032d2b0132b1f71134748f4879"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "bfe65b29d6e802381b364c750af222745ebff5475a960143166de406cd3f3c77"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "9c3ac128c21386ed4a8a362c36ddcb81d5ed8e3dab5e492f2caf30828cbc83ad"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "7df06a4a6ccbaf4f97cf04a3c165b16211ce69b0e7c396278ce8fc903646c10a"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "2dd55a4ae66c80634a2a4e18ce82e04884477ac144b81e317d3ddbb7c415694d"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "3d4498e6dc47311fe497d643c8302601f037a62b28259bdf0460e4f271542da3"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "9701fdecef1af58dd51b68548d3bf78d01928a50fdec76ed50a756990aa13ba7"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "c2333900b13230651a3fb3d1e47d7bd8083e06b7686c60644c1eb7f3b9fc95c9"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "bd47f3b245a72267440e02de4a1ff1ecafddbb1114b02a0cb531bfc18a9a4921"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "d7beb0de92c52d53056df84e23e559d82b79ae9c1bc2681b1e7d66e8590274c8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "215181bd36b7475a009e26f77dbd7ebd5ebdbbb8099ed4d62943fb09697c1fba"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "9a640a9191e1590af884c5fedc96399b435344573a0392974112f76cc358c1c2"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d67ba6ba11f8f42abd47fff1af93d2387ddab19924382b8b137044e3d6d795e4"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "9c31d18ed5e0ca5b06f0e34d28895b91a651b3a20d1f9f31c86b3beb2d3f9d38"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "0a78a60e4470f35a503abb329564396191e44d535d73c3b66cb1cfcfc74d8441"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "763ff8c956aa5d1539ffe06ea1e09cfd481d86c9d212fa25ba6696e24775dbc3"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "cea5f6ebf3aa6c338e819c02249d60fd1733e5b671684b0bcff82baafbda3c26"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "c228865862885a50c686d784e41a7ec2b665b03af63e62889ced473cbe65d3b0"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "f3ae49aabab8e3860a475ea500cb74061a954f28be82b0aaadd1748232d6350e"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "8dd854284052a4f1eff0f3ec3df8a4a60cc5d097ded5ced2e77339f22f7147f8"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "7977becb618707d60858f46d46d7f7091457cb82315224d68f1f191ca3c32633"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "48b73132f7ef30baa83cce1726fef8e9f2ba917a291f5d3e959c9dab46053f2f"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "940e00b3191fd3e8b9244da15b5d36da9b90af03fb13d08192e1ec1ea009fca8"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "4ae6a56a3fabd148be3828d8b6c60c7d7a2b50b716ee913c9ba067aaa0d405d9"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "ec7193e0233369f7fc1f59c5d678843ae4d068ef877567bced418be19bf7b43d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "5fc966676a750bcb00c14a2182b3de4bef02091ccf487129d09e73f9b0e3b9d4"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "10c3986d6b9915ba4aec06c96c54c0fa788d8923b526623a03019cde8a7bed20"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "ddb6017b7cc1066e886f345904e55d6e51ce26bda5a7a16a678d06e2e359e467"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "98a8af4148f29b614b66e3906f0ee49b437583a806d56750d8e3c5ed7e5e5fbd"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "aa7289b2cead60c3364635f6e87b609c9078a2196d63d3a71fa92694d5e18f0a"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "7087c02787c47195cbbca132982e7b9b182c66ed0960a813c23a9ba7d795e077"
+          },
+          {
+            "pagina": 42,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 43,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "c12cd58a82ac7083a81c11fa72df32daedaf8a163d817aab9184eaf915fa746e"
+          },
+          {
+            "pagina": 45,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 46,
+            "origem": "ocr",
+            "textSha256": "9acbc5d4c6a8590ed6e153a9b7e46b9bbbbfdf3a27f2b2ec7ec64b49e2c299ad"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "0fde392e8d5d4451278f60f9873b0bdd1c93c42f0167dd72523940af29314ab1"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na educação, o plano prevê a climatização das escolas da rede estadual, com cronograma público de execução ano a ano. Na saúde, a proposta prevê a publicação do tempo de espera de cada unidade da rede estadual. Na segurança pública, o documento propõe expandir o monitoramento por câmeras da capital para o restante do Estado. Na infraestrutura, o documento prevê um plano plurianual para as estradas vicinais, com cronograma anual de obras. Na gestão, o texto prevê a ampliação do Portal Roraima Aberto, com painel público de resultados. Na transformação digital, o plano prevê a expansão da internet de alta velocidade para todos os municípios. No agro, a proposta prevê a regularização fundiária das glebas estaduais sob competência do Estado. No meio ambiente, o plano propõe consolidar o programa Roraima Verde, com regras de repartição de benefícios.",
+    "frases": [
+      {
+        "texto": "Na educação, o plano prevê a climatização das escolas da rede estadual, com cronograma público de execução ano a ano.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 19,
+            "trecho": "Cronograma público, ano a ano, até cobrir toda a rede estadual."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, a proposta prevê a publicação do tempo de espera de cada unidade da rede estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 26,
+            "trecho": "Cada unidade da rede estadual passa a medir e publicar seu próprio tempo de espera."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o documento propõe expandir o monitoramento por câmeras da capital para o restante do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 22,
+            "trecho": "É preciso consolidar na capital e expandir para o restante do Estado, com cruzamento de dados em tempo real a partir de câmeras de leitura de placas de automóveis e reconhecimento facial."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o documento prevê um plano plurianual para as estradas vicinais, com cronograma anual de obras.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 16,
+            "trecho": "Elaboração e execução do Plano Plurianual de Recuperação e Pavimentação das Estradas Vicinais, com cronograma anual de obras"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão, o texto prevê a ampliação do Portal Roraima Aberto, com painel público de resultados.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 13,
+            "trecho": "Ampliação do Portal Roraima Aberto com painel público de resultados, atualizado periodicamente e acessível a qualquer cidadão."
+          }
+        ]
+      },
+      {
+        "texto": "Na transformação digital, o plano prevê a expansão da internet de alta velocidade para todos os municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 39,
+            "trecho": "Roraima Conectada: Expansão da infraestrutura de internet de alta velocidade para todos os municípios"
+          }
+        ]
+      },
+      {
+        "texto": "No agro, a proposta prevê a regularização fundiária das glebas estaduais sob competência do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 18,
+            "trecho": "Regularização fundiária das glebas estaduais, dentro da competência do Estado, com prioridade para pequenos e médios produtores."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, o plano propõe consolidar o programa Roraima Verde, com regras de repartição de benefícios.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 32,
+            "trecho": "Consolidação do Roraima Verde, com regras claras de repartição de benefícios e salvaguardas socioambientais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao",
+        "titulo": "Climatização das escolas da rede estadual",
+        "descricao": "O plano prevê a climatização das escolas da rede estadual de ensino, com cronograma público de execução ano a ano.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 19,
+            "trecho": "Cronograma público, ano a ano, até cobrir toda a rede estadual."
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Publicação do tempo de espera na saúde",
+        "descricao": "O plano prevê a publicação do tempo de espera de cada unidade da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 26,
+            "trecho": "Cada unidade da rede estadual passa a medir e publicar seu próprio tempo de espera."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Expansão do monitoramento por câmeras",
+        "descricao": "O plano propõe expandir o monitoramento por câmeras da capital para o restante do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 22,
+            "trecho": "É preciso consolidar na capital e expandir para o restante do Estado, com cruzamento de dados em tempo real a partir de câmeras de leitura de placas de automóveis e reconhecimento facial."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-vicinais",
+        "titulo": "Plano plurianual para as estradas vicinais",
+        "descricao": "O plano prevê a elaboração de plano plurianual para as estradas vicinais, com cronograma anual de obras.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 16,
+            "trecho": "Elaboração e execução do Plano Plurianual de Recuperação e Pavimentação das Estradas Vicinais, com cronograma anual de obras"
+          }
+        ]
+      },
+      {
+        "id": "transparencia-gestao",
+        "titulo": "Ampliação do Portal Roraima Aberto",
+        "descricao": "O plano prevê a ampliação do Portal Roraima Aberto, com painel público de resultados.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 13,
+            "trecho": "Ampliação do Portal Roraima Aberto com painel público de resultados, atualizado periodicamente e acessível a qualquer cidadão."
+          }
+        ]
+      },
+      {
+        "id": "roraima-digital",
+        "titulo": "Expansão da internet de alta velocidade",
+        "descricao": "O plano prevê a expansão da infraestrutura de internet de alta velocidade para todos os municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549223:01",
+            "pagina": 39,
+            "trecho": "Roraima Conectada: Expansão da infraestrutura de internet de alta velocidade para todos os municípios"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:46:14.964Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T12:51:15.242Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada trata da climatização das escolas e explicita cronograma público ano a ano para toda a rede estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números específicos, e o prazo qualitativo ano a ano aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta sem elogio, crítica, promoção ou certeza excessiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, climatização da rede estadual com seu cronograma."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento RR:230002549223:01 e à mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:1:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "As cláusulas materiais, climatização, rede estadual e cronograma público anual, estão cobertas pela página citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a publicação do tempo de espera por cada unidade da rede estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e não acrescenta juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de transparência na saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento, candidatura e chave eleitoral coincidem com os informados no item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:2:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente publicação, tempo de espera, cada unidade e rede estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada afirma a expansão do sistema baseado em câmeras da capital para o restante do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números ou quantidades específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem tom promocional ou crítico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, expansão do monitoramento por câmeras."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento listado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:3:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre monitoramento por câmeras, ponto de partida na capital e expansão ao restante do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz diretamente o plano plurianual para estradas vicinais com cronograma anual de obras."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação; os marcos temporais qualitativos plurianual e anual estão sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de infraestrutura viária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e identidade eleitoral especificados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:4:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação aparecem na evidência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ampliação do portal com painel público de resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos numéricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta de transparência e gestão."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e identidade eleitoral batem com os campos fornecidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:5:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre ampliação do portal e existência de painel público de resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência corresponde literalmente à expansão da internet de alta velocidade para todos os municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números; a universalidade para todos os municípios está literal na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é apenas descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de conectividade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do mesmo documento listado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:6:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre expansão, internet de alta velocidade e alcance a todos os municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a regularização fundiária das glebas estaduais dentro da competência do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de forma neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de regularização fundiária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:7:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "As cláusulas materiais de regularização, glebas estaduais e competência do Estado estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a consolidação do Roraima Verde com regras de repartição de benefícios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente dentro de meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma identidade eleitoral declarada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:frase:8:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre consolidação do programa e regras de repartição de benefícios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada é a seção de climatização e explicita cronograma público anual para cobrir a rede estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos; ano a ano está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência e a página pertencem ao mesmo documento indicado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:educacao:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre climatização da rede estadual e o cronograma público anual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a publicação do tempo de espera por cada unidade da rede estadual de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números ou prazos numéricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de gestão da fila na saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:saude:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente publicação, tempo de espera, cada unidade e rede estadual de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a expansão do monitoramento por câmeras da capital para o restante do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se limita a uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:seguranca-publica:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a proposta de expansão do monitoramento por câmeras para o restante do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz o conteúdo central da afirmação sobre plano plurianual e cronograma anual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números específicos; os termos temporais qualitativos estão sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de infraestrutura viária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento listado e à mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:infraestrutura-vicinais:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a ampliação do portal com painel público de resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos ou percentuais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se limita a uma única proposta coerente de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:transparencia-gestao:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre ampliação do portal e painel público de resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência corresponde literalmente à expansão da infraestrutura de internet de alta velocidade para todos os municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não tem números; todos os municípios está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de conectividade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento listado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549223:tema:roraima-digital:documentos:RR:230002549223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente expansão, infraestrutura de internet de alta velocidade e todos os municípios."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RR:230002549223",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RR:230002549223:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "26da448b0ec767981835b0d5936275875f1631cc8f06ab65a29efa01b23805d3",
+    "extractedTextSha256": "bacd5693efc9066ed802926aeed5359f8854b459c68197eb9079c0ff4a494bf8",
+    "documentCount": 1,
+    "documentSetSha256": "806921b9939709d96009ed9b15dc05163a47af88159e88ac0c1707bd925c64d5",
+    "contentSha256": "25cf33a62931296276ba6b1c6e89c859e66ebd1c7bb45512b1cbe703dba7af6c"
+  }
+}

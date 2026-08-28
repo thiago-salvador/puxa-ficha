@@ -1,0 +1,1032 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MA",
+    "sqCandidato": "100002545679",
+    "slug": "eduardo-braide",
+    "nomeUrna": "EDUARDO BRAIDE",
+    "partido": "PSD",
+    "arquivoNome": "2026MA100002545679_01.pdf",
+    "arquivoNoPacote": "MA/2026MA100002545679_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MA:100002545679:01",
+      "fonte": {
+        "arquivoNome": "2026MA100002545679_01.pdf",
+        "arquivoNoPacote": "MA/2026MA100002545679_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d9eef272900c8845b984a0c0bb8bca680415d6ccd2a6f83b8dfc8aa505649cc7",
+        "extractedTextSha256": "b3ef3173f735243aaa3a49f2fc8aeb3384053538127af040840f332632cd260d",
+        "paginas": 28,
+        "secoes": [
+          {
+            "id": "programa-de",
+            "titulo": "PROGRAMA DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE\nGOVERNO\n2027 - 2030"
+          },
+          {
+            "id": "definimos-55-propostas",
+            "titulo": "Definimos 55 propostas",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Definimos 55 propostas\npara compor nosso\nPlano de Governo e\ntransformar o Maranhão."
+          },
+          {
+            "id": "acoes-para",
+            "titulo": "AÇÕES PARA",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "AÇÕES PARA\nTRANSFORMAR\nO MARANHÃO"
+          },
+          {
+            "id": "combate-a-pobreza",
+            "titulo": "COMBATE À POBREZA,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "COMBATE À POBREZA,\nDESENVOLVIMENTO SOCIAL E\nREDUÇÃO DAS DESIGUALDADES\n1. Criar a Força Estadual de Combate à Pobreza, de caráter\nintersetorial, articulando estado, municípios e parceiros do\nterceiro setor e da iniciativa privada para integrar políticas\n\t\tde renda, educação, saúde, segurança alimentar, qualificação\n\t\te acesso a oportunidades\n\n2. Instituir o 13º pagamento do benefício\n\t\tMaranhão Livre da Fome"
+          },
+          {
+            "id": "combate-a-pobreza-2",
+            "titulo": "COMBATE À POBREZA,",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "COMBATE À POBREZA,\nDESENVOLVIMENTO SOCIAL E\nREDUÇÃO DAS DESIGUALDADES\n\n3. Ampliar e qualificar a rede de Restaurantes Populares e a\ncompra de alimentos da agricultura familiar\n\n4. Fortalecer a política de assistência social, implantando\nCREAS regionais para assegurar a oferta de serviços de\nproteção social especial e ampliar o atendimento às famílias\ne aos indivíduos em situação de violação de direitos\n\n5. Ampliar as políticas públicas estaduais de ações afirmativas,\npromovendo a igualdade racial e a equidade e enfrentando\ntoda forma de discriminação e violência"
+          },
+          {
+            "id": "saude",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n6. Implantar o Programa Hospital Novo para construção de\nnovos hospitais regionais e/ou macrorregionais, ampliando\no acesso à saúde de média e alta complexidade, reduzindo\no deslocamento de pacientes e fortalecendo a rede pública de\natendimento em todas as regiões do Maranhão\n\n7. Implantar Espaços TEA regionais, oferecendo atendimento\nespecializado às pessoas com Transtorno do Espectro Autista\nou neurodivergentes e suporte às famílias, nas diversas\nregiões do Maranhão"
+          },
+          {
+            "id": "saude-2",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n8. Construir, em parceria com o Hospital Aldenora Bello\n(Fundação Antônio Jorge Dino), hospitais especializados\ne centros regionais de prevenção, diagnóstico e tratamento\ndo câncer\n\n9. Viabilizar o pagamento da gratificação aos Agentes\nComunitários de Saúde e Agentes de Combate às\nEndemias, simplificando os critérios do cofinanciamento\nestadual aos municípios\n\n10. Ampliar e facilitar o acesso a medicamentos\nespecializados, fornecidos pelo Governo do Estado"
+          },
+          {
+            "id": "educacao",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n11. Criar o Programa Escola Nova para construção de novas\nescolas, quadras poliesportivas e requalificação das unidades\nexistentes, com climatização dos ambientes escolares\n\n12. Construir creches de tempo integral, em parceria com\nos municípios, com prioridade para as regiões de maior\nvulnerabilidade social e menor atendimento\n\n13. Implantar uma Política Estadual Permanente de\nAlfabetização, em regime de colaboração com os\nmunicípios, com apoio técnico, formação, materiais\npedagógicos e acompanhamento dos resultados"
+          },
+          {
+            "id": "educacao-2",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n14. Melhorar a aprendizagem na rede estadual e elevar o IDEB\n15. Reconhecer e valorizar os profissionais do magistério,\npromovendo o desenvolvimento profissional, a formação\ncontinuada, o reconhecimento da carreira e melhores\ncondições para o exercício da docência\n\n16. Ampliar a oferta de educação em tempo integral\nna rede estadual\n\n17. Ampliar a rede IEMA, ofertando a educação profissional\nintegrada ao ensino médio, com oferta de cursos técnicos"
+          },
+          {
+            "id": "educacao-3",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nalinhados às vocações econômicas regionais e às\noportunidades de inserção profissional dos jovens no\nmercado de trabalho\n\n18. Promover uma educação indígena, quilombola e do\ncampo que respeite as especificidades culturais, territoriais e\npedagógicas de cada comunidade\n\n19. Garantir condições para a inclusão dos estudantes\ncom deficiência, qualificando o atendimento educacional\nespecializado, a acessibilidade e o apoio pedagógico nas\nescolas estaduais"
+          },
+          {
+            "id": "educacao-4",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\n20. Ampliar e modernizar a infraestrutura da UEMA e da\nUEMASUL, equipar laboratórios, fortalecer a pesquisa\naplicada e ampliar a formação de profissionais em áreas\nestratégicas para as vocações e necessidades do Maranhão\n\n21. Implantar novos Conselhos Escolares de Políticas Sobre\nDrogas, promovendo ações de prevenção ao uso de drogas\nlícitas e ilícitas, com o envolvimento de membros da escola,\nda comunidade, das famílias e de instituições especializadas\nno enfrentamento às drogas"
+          },
+          {
+            "id": "desenvolvimento-economico",
+            "titulo": "DESENVOLVIMENTO ECONÔMICO,",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO ECONÔMICO,\nEMPREGO E RENDA\n22. Ampliar e qualificar a assistência técnica e extensão rural\n(ATER) para agricultores familiares por meio da\nreestruturação da AGERP e da articulação com\ninstituições parceiras\n\n23. Apoiar o acesso a linhas de crédito para produtores rurais,\nagricultores familiares, empreendedores, comerciantes e\nmicro e pequenas empresas\n\n24. Fomentar a industrialização e a agregação de valor aos\nprodutos agropecuários maranhenses, fortalecendo"
+          },
+          {
+            "id": "desenvolvimento-economico-2",
+            "titulo": "DESENVOLVIMENTO ECONÔMICO,",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO ECONÔMICO,\nEMPREGO E RENDA\n\ncadeias como couro, milho, soja, produtos da agricultura\nfamiliar e outras vocações produtivas do estado\n\n25. Fortalecer a cadeia produtiva do babaçu a partir da\nvalorização das mulheres quebradeiras de coco, ampliando\no beneficiamento, a agregação de valor, a industrialização e\no acesso a mercados\n\n26. Atrair empresas e novos investimentos para o Maranhão,\npromovendo as potencialidades do estado e criando\ncondições para sua instalação, expansão e geração\nde empregos"
+          },
+          {
+            "id": "desenvolvimento-economico-3",
+            "titulo": "DESENVOLVIMENTO ECONÔMICO,",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO ECONÔMICO,\nEMPREGO E RENDA\n\n27. Criar o Programa OportuCidades para impulsionar o\ndesenvolvimento dos municípios maranhenses, valorizando suas\nvocações econômicas, turísticas, culturais e produtivas"
+          },
+          {
+            "id": "infraestrutura-saneamento",
+            "titulo": "INFRAESTRUTURA, SANEAMENTO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA, SANEAMENTO\nE SUSTENTABILIDADE\n28. Implantar o Programa de Apoio às Prefeituras (PAP)\npara fortalecer a parceria entre estado e municípios, por meio\nda execução de obras, serviços e investimentos prioritários\nnas cidades do Maranhão\n\n29. Implantar o Programa Estrada Nova para reconstruir\nas rodovias estaduais, bem como construir novas estradas,\nmelhorando a mobilidade, interligando os municípios,\nreduzindo o tempo de deslocamento e impulsionando o\ndesenvolvimento do Maranhão"
+          },
+          {
+            "id": "infraestrutura-saneamento-2",
+            "titulo": "INFRAESTRUTURA, SANEAMENTO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA, SANEAMENTO\nE SUSTENTABILIDADE\n\n30. Atuar junto ao Governo Federal para acelerar a recuperação\ne a manutenção das rodovias federais no estado\n\n31. Implantar o Programa Asfalto Novo, levando pavimentação\nde qualidade para os municípios\n\n32. Implantar o Programa Trânsito Livre, em parceria com os\nmunicípios, levando mais mobilidade, reduzindo o tempo\nde deslocamento e melhorando a qualidade de vida\nda população"
+          },
+          {
+            "id": "infraestrutura-saneamento-3",
+            "titulo": "INFRAESTRUTURA, SANEAMENTO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA, SANEAMENTO\nE SUSTENTABILIDADE\n\n33. Construir anéis rodoviários, para desviar o tráfego de\ncarretas e cargas pesadas das áreas urbanas, melhorando\na mobilidade, a segurança e a qualidade de vida\nnos municípios\n\n34. Retomar e concluir obras paralisadas e inacabadas\n35. Ampliar e modernizar a infraestrutura de pontes\ndo Maranhão\n\n36. Implantar e modernizar espaços esportivos em\ndiferentes regiões do Maranhão"
+          },
+          {
+            "id": "infraestrutura-saneamento-4",
+            "titulo": "INFRAESTRUTURA, SANEAMENTO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA, SANEAMENTO\nE SUSTENTABILIDADE\n\n37. Ampliar a oferta de água tratada e a coleta e tratamento\nde esgoto, com investimentos prioritários nas regiões do\nMaranhão com menor índice de cobertura"
+          },
+          {
+            "id": "seguranca-e-protecao",
+            "titulo": "SEGURANÇA E PROTEÇÃO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA E PROTEÇÃO\n38. Implantar a Muralha Digital nas diversas regiões do\nMaranhão, com câmeras de reconhecimento facial, e\nfazer a integração das forças de segurança para avançar na\ncapacidade de prevenção, combate à criminalidade e\nlocalização de pessoas desaparecidas e veículos furtados\n\n39. Ampliar o efetivo das forças de segurança, modernizar\na frota de viaturas e equipamentos e fortalecer a estrutura\nde trabalho dos profissionais para ampliar a capacidade\nde prevenção e combate à criminalidade em todo\no Maranhão"
+          },
+          {
+            "id": "seguranca-e-protecao-2",
+            "titulo": "SEGURANÇA E PROTEÇÃO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA E PROTEÇÃO\n\n40. Fortalecer as guardas municipais por meio de apoio\ntécnico, capacitação e integração com as forças\nestaduais de segurança\n\n41. Ampliar a rede de proteção às mulheres em situação de\nviolência, com novas Casas da Mulher Maranhense e a\nexpansão da Patrulha Maria da Penha para diferentes\nregiões do Maranhão"
+          },
+          {
+            "id": "gestao-eficiente-e",
+            "titulo": "GESTAO EFICIENTE E",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "GESTAO EFICIENTE E\nCOMBATE À CORRUPÇÃO\n\n42. Reduzir o ICMS do estado do Maranhão\n43. Implantar uma gestão técnica, com diagnóstico,\nplanejamento e cumprimento de metas pelos secretários,\ncom foco nos resultados, na agilidade e na qualidade das\nobras e serviços públicos\n\n44. Realizar concursos públicos"
+          },
+          {
+            "id": "gestao-eficiente-e-2",
+            "titulo": "GESTAO EFICIENTE E",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "GESTAO EFICIENTE E\nCOMBATE À CORRUPÇÃO\n\n45. Garantir o reajuste anual para o\nfuncionalismo público estadual\n\n46. Fortalecer os mecanismos de prevenção, controle e\ncombate à corrupção, ampliando a transparência e\naprimorando os processos de fiscalização e controle dos\nrecursos públicos"
+          },
+          {
+            "id": "turismo-cultura",
+            "titulo": "TURISMO, CULTURA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO, CULTURA\nE PATRIMÔNIO\n\n47. Estruturar e promover novos destinos turísticos do\nMaranhão e fortalecer os já existentes, apoiando a\nmelhoria da infraestrutura local, a qualificação dos serviços\ne o desenvolvimento das potencialidades de cada região\n\n48. Recuperar e valorizar espaços e bens do patrimônio\nhistórico e cultural, fortalecendo sua preservação, uso e\nintegração às atividades culturais e turísticas de cada região"
+          },
+          {
+            "id": "turismo-cultura-2",
+            "titulo": "TURISMO, CULTURA",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO, CULTURA\nE PATRIMÔNIO\n\n49. Apoiar manifestações culturais e festas tradicionais\nmaranhenses, fortalecendo sua realização, circulação e\ngeração de oportunidades para artistas, grupos culturais\ne trabalhadores da economia criativa"
+          },
+          {
+            "id": "meio-ambiente-e",
+            "titulo": "MEIO AMBIENTE E",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "MEIO AMBIENTE E\nMUDANÇAS CLIMÁTICAS\n50. Revisar e atualizar o Plano Estadual de Mudanças\nClimáticas e a Política Estadual de Enfrentamento das\nMudanças Climáticas, alinhando-os ao Plano Nacional\nsobre Mudança do Clima e estabelecendo prioridades\npara sua execução\n\n51. Criar a Agência Estadual de Proteção Animal,\nfortalecendo a fiscalização de maus-tratos, o resgate e\no atendimento a animais abandonados e a responsabilização\npor condutas previstas em lei"
+          },
+          {
+            "id": "meio-ambiente-e-2",
+            "titulo": "MEIO AMBIENTE E",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "MEIO AMBIENTE E\nMUDANÇAS CLIMÁTICAS\n\n52. Modernizar e simplificar os procedimentos de\nlicenciamento ambiental e autorizações estaduais,\nreduzindo burocracias e prazos, sem comprometer a\nproteção do meio ambiente\n\n53. Fortalecer as Cooperativas e demais associações de\ncatadores de materiais recicláveis"
+          },
+          {
+            "id": "regularizacao-fundiaria",
+            "titulo": "REGULARIZAÇÃO FUNDIÁRIA",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "REGULARIZAÇÃO FUNDIÁRIA\nE HABITAÇÃO\n\n54. Ampliar a regularização fundiária no Maranhão, garantindo\nsegurança jurídica da posse e o direito à propriedade para as\nfamílias maranhenses\n\n55. Ampliar o acesso à moradia digna para famílias de baixa\nrenda, em articulação com o Governo Federal e os\nmunicípios, ampliando a oferta habitacional no Maranhão"
+          },
+          {
+            "id": "eduardobraide",
+            "titulo": "@eduardobraide",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "@eduardobraide\n@eduardo.braide\n@Eduardo.Braide\n@EduardoBraide"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "5fa4d0ffea3bf8dfb45c9400053cc72c93b630ed56d628a35a45496ce9e25ade"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "a16a99cdff0e3fdaeba9a24509534b4dd74686cc0664c088d81027af255f8283"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "585cf29e7330bd69ca06dee558a824923ba7c81a07b95729d996e85edf7e2ab1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "a712a812b6bf13c5f87cd7d39dd524e517669c48c74a2f8f2ee012287bb989dd"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "d1e1d930a386ab446d969fcd6d919f13c2f3e12f7eab6598c47374acba0386bf"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "f5aa61cb87d08c9e216f6c5b7603820e7ac2416a4a05f41d47add57be3026d5b"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "03d9dc659d891768bb751644d48b3eb6821e1bbb05a0e2ffcfbc1646f4961f17"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "947243c75ac30d2857293259d8b0f3afc768c8cbe49b7bbb40ec76dc06d579a7"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "63bfc87a910db400f3b699787f1c6254752a00dd7a21680a11c803399ebf1b17"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "348345157b2eaff55184c03985134b587ca258ddad782c38b9453b34ff3acb9c"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "b194e5f24862a981b738ecef7b0b2659e831334855649a7efc187a2b45e70797"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a5a4881aebdd6487dc45fead55a2989ba8c4f29ae436ae547ff21b4b9e4915e9"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "07e27e5bae8acd284f44a61186d4da1689565729853c0122496dde943fdf5afe"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "b357786a0abe4ed55c26bdc0372501c91f7af587eb452e13a31dad219ea7886e"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "92a4c8514d88e0f2c42fc4463fc7efc1d3adeae49764749315093a8331b54f8d"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e76603173965f426acfd7775970f9d325f4777cef606d9ff5301b065cce338cd"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "6cc3db1925d75a694bf81eb21449b5c1ab8a7395c14c001ff3f0d33e322b4be1"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "533796e28b796263a3bdc0b62d8f8aacfd519ae73acaf4a5b739ad9a704cb6c1"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "6e9c663aea7682712c48e1c0c1e050b8ad9aa49e6271bd87b8c01fa83e6fec11"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "312197f9ea51db06959874ac981a364a7d74e6f5cbb08994c768e468d8a8c527"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "6fcbf624d7048273a6e6e99a3068cff150680cd7d2177681c7d4abddda204dbc"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "816848474c151c38c56cdc97ec27f4b16428cb9ba05eb8b3735870b834f83c79"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "845d4d106ba6454cc97d1d9b1351912102eeffbf1966a6502fdc46ec29092e9a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "6c33e57342672d8b7be3289024901a0912983bcf7396c572ee7a506a0cf8a886"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "c86ea52793c21ea858be6191b03466fefbc0964bc8464185ccb40d516c4c33ef"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "2bcd7d478177c1c343fccfb360251d184760169a2945b2823b3130c496101db1"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "0e970b79528a5d3be6e877c414b6c10fe8b40dbf1961f2f01948d42fab7c4be1"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "8f922615d7dc1e8bf257bd02d85c5a3c8fc4c71cb5fcbcba760ee26f1f272c94"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a criação da Força Estadual de Combate à Pobreza, de caráter intersetorial, para integrar políticas de renda, educação, saúde, segurança alimentar, qualificação, acesso a oportunidades. Na saúde, propõe a implantação do Programa Hospital Novo para construir hospitais regionais ou macrorregionais. Na educação, planeja a criação do Programa Escola Nova para construir escolas, quadras poliesportivas, requalificar unidades existentes, climatizar ambientes escolares. No desenvolvimento econômico, prevê apoio ao acesso a linhas de crédito para produtores rurais, agricultores familiares, empreendedores, comerciantes, micro e pequenas empresas. Em infraestrutura, propõe a ampliação da oferta de água tratada, da coleta de esgoto, do tratamento de esgoto, com investimentos prioritários nas regiões de menor cobertura. Na segurança, prevê a implantação da Muralha Digital nas regiões do Maranhão, com câmeras de reconhecimento facial.",
+    "frases": [
+      {
+        "texto": "O programa prevê a criação da Força Estadual de Combate à Pobreza, de caráter intersetorial, para integrar políticas de renda, educação, saúde, segurança alimentar, qualificação, acesso a oportunidades.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 4,
+            "trecho": "1. Criar a Força Estadual de Combate à Pobreza, de caráter\nintersetorial"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe a implantação do Programa Hospital Novo para construir hospitais regionais ou macrorregionais.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 6,
+            "trecho": "6. Implantar o Programa Hospital Novo para construção de\nnovos hospitais regionais e/ou macrorregionais"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, planeja a criação do Programa Escola Nova para construir escolas, quadras poliesportivas, requalificar unidades existentes, climatizar ambientes escolares.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 8,
+            "trecho": "11. Criar o Programa Escola Nova para construção de novas\nescolas, quadras poliesportivas e requalificação das unidades\nexistentes, com climatização dos ambientes escolares"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, prevê apoio ao acesso a linhas de crédito para produtores rurais, agricultores familiares, empreendedores, comerciantes, micro e pequenas empresas.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 12,
+            "trecho": "23. Apoiar o acesso a linhas de crédito para produtores rurais,\nagricultores familiares, empreendedores, comerciantes e\nmicro e pequenas empresas"
+          }
+        ]
+      },
+      {
+        "texto": "Em infraestrutura, propõe a ampliação da oferta de água tratada, da coleta de esgoto, do tratamento de esgoto, com investimentos prioritários nas regiões de menor cobertura.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 18,
+            "trecho": "37. Ampliar a oferta de água tratada e a coleta e tratamento\nde esgoto, com investimentos prioritários nas regiões do\nMaranhão com menor índice de cobertura"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, prevê a implantação da Muralha Digital nas regiões do Maranhão, com câmeras de reconhecimento facial.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 19,
+            "trecho": "38. Implantar a Muralha Digital nas diversas regiões do\nMaranhão, com câmeras de reconhecimento facial"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "combate-pobreza",
+        "titulo": "Combate à pobreza",
+        "descricao": "Criação de uma força estadual intersetorial para integrar políticas de atendimento social.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 4,
+            "trecho": "1. Criar a Força Estadual de Combate à Pobreza, de caráter\nintersetorial"
+          }
+        ]
+      },
+      {
+        "id": "hospitais-regionais",
+        "titulo": "Hospitais regionais",
+        "descricao": "Implantação de um programa voltado à construção de hospitais regionais ou macrorregionais.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 6,
+            "trecho": "6. Implantar o Programa Hospital Novo para construção de\nnovos hospitais regionais e/ou macrorregionais"
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-escolar",
+        "titulo": "Infraestrutura escolar",
+        "descricao": "Criação de um programa destinado à construção de escolas e à requalificação de unidades existentes.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 8,
+            "trecho": "11. Criar o Programa Escola Nova para construção de novas\nescolas, quadras poliesportivas e requalificação das unidades\nexistentes, com climatização dos ambientes escolares"
+          }
+        ]
+      },
+      {
+        "id": "credito-produtivo",
+        "titulo": "Crédito produtivo",
+        "descricao": "Apoio ao acesso a linhas de crédito para segmentos produtivos especificados no documento.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 12,
+            "trecho": "23. Apoiar o acesso a linhas de crédito para produtores rurais,\nagricultores familiares, empreendedores, comerciantes e\nmicro e pequenas empresas"
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Ampliação da oferta de água tratada, coleta de esgoto e tratamento de esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 18,
+            "trecho": "37. Ampliar a oferta de água tratada e a coleta e tratamento\nde esgoto, com investimentos prioritários nas regiões do\nMaranhão com menor índice de cobertura"
+          }
+        ]
+      },
+      {
+        "id": "monitoramento-seguranca",
+        "titulo": "Monitoramento de segurança",
+        "descricao": "Implantação da Muralha Digital com câmeras de reconhecimento facial.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002545679:01",
+            "pagina": 19,
+            "trecho": "38. Implantar a Muralha Digital nas diversas regiões do\nMaranhão, com câmeras de reconhecimento facial"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:14:56.846Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:17:10.126Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a criação da Força Estadual intersetorial integrando as áreas citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a serem verificados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (Força Estadual intersetorial), mesmo mencionando múltiplas áreas integradas por ela."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:1:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da criação e caráter intersetorial da força estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:2:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente todos os elementos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único programa educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:3:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de crédito coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:4:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todos os segmentos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:5:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:frase:6:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:combate-pobreza:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema resumido."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:hospitais-regionais:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:infraestrutura-escolar:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:credito-produtivo:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:saneamento:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002545679:tema:monitoramento-seguranca:documentos:MA:100002545679:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MA:100002545679",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MA:100002545679:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 22876,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2875,
+          "reasoning_output_tokens": 1581
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21853,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21937,
+          "output_tokens_details": {
+            "thinking_tokens": 375
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21853,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21937,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21853,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21853
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3239924
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "d9eef272900c8845b984a0c0bb8bca680415d6ccd2a6f83b8dfc8aa505649cc7",
+    "extractedTextSha256": "b3ef3173f735243aaa3a49f2fc8aeb3384053538127af040840f332632cd260d",
+    "documentCount": 1,
+    "documentSetSha256": "602662e051bf52a865cc7a6a1c2dbe0c563dfe241be177c0f89880847a80fbf1",
+    "contentSha256": "b9be9ddfb6985b7280e72ba149ea3efd6bfc776d67878b7deceaa00fc78cc797"
+  }
+}

@@ -1,0 +1,1534 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "GO",
+    "sqCandidato": "90002551791",
+    "slug": "wilder-morais",
+    "nomeUrna": "WILDER MORAIS",
+    "partido": "PL",
+    "arquivoNome": "2026GO90002551791_01.pdf",
+    "arquivoNoPacote": "GO/2026GO90002551791_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "GO:90002551791:01",
+      "fonte": {
+        "arquivoNome": "2026GO90002551791_01.pdf",
+        "arquivoNoPacote": "GO/2026GO90002551791_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "5394744edddbbc8a97cadc210f1a28ba21a2cd23b33f730a15e0e711fbafa2dd",
+        "extractedTextSha256": "3f8624001e4784c57c3b2d3d671617bbdf149c64cbd84a8219e5cd9e0c7d6abe",
+        "paginas": 64,
+        "secoes": [
+          {
+            "id": "goias-para-quem-faz",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\nPlano de Governo 2027-2030\n\nWILDER MORAIS · Governador\nANA PAULA REZENDE · Vice-Governadora\nPartido Liberal (PL)\n\nTRABALHO, CUIDADO E OPORTUNIDADE CHEGANDO À VIDA DAS PESSOAS.\nFAMÍLIA PROTEGIDA · DESENVOLVIMENTO QUE FICA · PROSPERIDADE QUE CHEGA EM CASA"
+          },
+          {
+            "id": "goias-para-quem-faz-2",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nUMA PALAVRA AO POVO DE GOIÁS\n\nGoiás cresceu. E a sua vida?\nGoiás avançou. Recuperou a segurança, melhorou a educação, organizou as contas e voltou a\ninvestir. Esses resultados pertencem ao povo goiano e devem ser preservados. Governo responsável\nnão destrói o que funciona: melhora, amplia e corrige o que ainda não chegou a todos.\nMas o número do relatório não responde à pergunta que aparece na mesa da cozinha. A mãe sai do posto\ncom um pedido de exame e nenhuma data. O trabalhador vê o salário sumir em comida, moradia e\ntransporte. O produtor colhe bem e perde tempo e dinheiro na estrada. O jovem termina a escola na cidade\npequena e acha que só terá futuro se for embora. O Estado cresceu; a vida precisa crescer junto.\nO cidadão não pede favor ao Estado; exige respeito. Quer segurança para viver, serviço que não desperdice\nseu tempo, regra clara para produzir e oportunidade para avançar pelo próprio esforço. Quem trabalha,\nempreende, estuda, cuida da família ou procura proteção precisa encontrar um governo que faça bem a sua\nparte, apareça quando for necessário e deixe de atrapalhar quem quer crescer dentro da lei.\nGoiás para Quem Faz é um compromisso com quem trabalha, produz, estuda, empreende, cuida da família\ne ajuda a comunidade a seguir em frente. A família reúne o que o Estado deve proteger. O desenvolvimento\nreúne o que o Estado ajuda a construir e permanece. A prosperidade reúne o que cada pessoa conquista e\nleva para casa. O governo será firme no essencial, simples para quem trabalha e produz, parceiro dos\nmunicípios e presente nas dez regiões.\nCada programa diz o que será feito, quem precisa participar e como o resultado será acompanhado. Os\nnúmeros de 2026 serão conferidos e publicados nos cem primeiros dias. E toda nova despesa terá de caber\nno orçamento, respeitar a lei e ter um responsável claro.\nNOSSO COMPROMISSO\n\nManter o que deu certo. Corrigir o que ficou para trás. Fazer o crescimento de Goiás chegar à casa de quem\ntrabalha.\n\nWilder Morais\nCandidato a Governador de Goiás\nAna Paula Rezende\nCandidata a Vice-Governadora\n\nGOIÁS · 2"
+          },
+          {
+            "id": "goias-para-quem-faz-3",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nO que vamos preservar. O que precisa avançar.\nGoiás não precisa escolher entre continuar ou mudar tudo. A segurança, a aprendizagem e a\ncapacidade de investir serão preservadas. A mudança estará onde a população ainda sente demora,\ndistância ou falta de oportunidade: saúde, renda, moradia, mobilidade, infraestrutura e serviço\npúblico.\nO que será preservado\n\nO que precisa avançar\n\nSegurança com integração, inteligência e presença.\n\nSaúde com fila visível, previsão e resposta.\n\nAprendizagem e busca por bons resultados na escola.\n\nTrabalho que Melhora a Renda e abre a primeira porta.\n\nCapacidade de investimento.\n\nCreche, moradia e mobilidade para devolver tempo à família.\n\nProgramas que comprovarem resultado para a população.\n\nInfraestrutura cuidada e governo presente nas dez regiões.\n\nA ideia que une o plano\nQuem faz a sua parte merece um Estado que também faça. Governo não substitui trabalho, família ou\niniciativa. Deve proteger quando a pessoa enfrenta uma situação que não consegue resolver sozinha, abrir\ncaminho para a oportunidade e parar de desperdiçar o tempo de quem trabalha e produz.\n\nGOIÁS PARA QUEM FAZ\n\nTrabalho, cuidado e oportunidade chegando à vida das pessoas.\n\nGOIÁS · 3"
+          },
+          {
+            "id": "goias-para-quem-faz-4",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nSete prioridades fáceis de entender e cobrar\nNº\n\nCompromisso\n\nO que muda\n\n1\n\nMinha Vez, Saúde com Data\n\nEntrar na fila e saber a prioridade, a previsão e o próximo passo.\n\n2\n\nSegurança sem Retrocesso\n\nPreservar os avanços e enfrentar golpes digitais, violência contra a mulher e o\ncrime organizado.\n\n3\n\nTrabalho que Melhora a Renda\n\nCurso ligado a vaga, primeira oportunidade e renda acompanhada depois da\nformação.\n\n4\n\nFamília com Tempo para Viver\n\nCreche, moradia, cuidado e mobilidade para o trabalho não virar perda de tempo\ne renda.\n\n5\n\nGoiás Mais Simples\n\nUma porta, uma lista de documentos e prazo para quem produz dentro da lei.\n\n6\n\nInfraestrutura que Funciona\n\nManutenção rápida, transporte que cumpre e obra que começa com projeto e\ndinheiro definido.\n\n7\n\nGoverno nas Dez Regiões\n\nPrioridade, responsável, custo e prazo conhecidos nos dez territórios de Goiás.\n\nA ORDEM DAS PRIORIDADES\n\nSaúde, renda e custo da vida recebem atenção direta sem abandonar segurança, educação e\nresponsabilidade com as contas.\n\nGOIÁS · 4"
+          },
+          {
+            "id": "goias-para-quem-faz-5",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nO que chega na sua mão\nEstas entregas têm nome para serem reconhecidas e cobradas. Cada uma pertence a uma das sete\nprioridades e está detalhada nos programas deste plano. Nenhuma traz valor em dinheiro: custo,\nfonte e regra serão publicados antes da contratação.\nPrioridade 1 · Minha Vez, Saúde com Data\n•\n\nMinha Vez · entrar na fila e saber a prioridade, a previsão e o próximo passo.\n\n•\n\nSUS Goiás · a tabela estadual que paga mais a quem atende a fila, utilizando a capacidade instalada dos\nhospitais filantrópicos e privados.\n\n•\n\nProfissional de Saúde Especialista Onde Tem Unidade de Saúde Pública · unidade aberta com equipe, escala\ne serviço funcionando.\nRemédio em Casa · medicamento de uso contínuo entregue na casa de quem tem dificuldade de ir buscar.\n\n•\n\nPrioridade 2 · Segurança sem Retrocesso\n•\n•\n•\n\nGoiás sem Golpe Digital · a vítima de golpe pela internet registra numa porta só, tem o início imediato da\napuração e recebe orientação na hora.\nCombate aos Crimes Contra a Mulher · intensificação de políticas públicas com o uso de inteligência e\ntecnologia para a redução de crimes que envolvem estupro, feminicídio e violência doméstica.\nFortalecimento das Forças de Segurança · valorizar, cuidar e planejar o efetivo conforme disponibilidade\nfinanceira do Estado e a necessidade da população.\n\nPrioridade 3 · Trabalho que Melhora a Renda\n•\n\nCNH do Trabalho · as categorias profissionais A, C, D e E de habilitação serão pagas para inscritos nos\nprogramas sociais do Estado, com turma aberta a partir da disponibilidade de vagas.\n\n•\n\nPrimeiro Salário · a empresa contrata o jovem sem experiência e o Estado assume parte dos custos dos\nprimeiros meses.\nCurso com Vaga · formação definida pelas vagas reais de empresas e ligada à seleção e à contratação.\n\n•\n•\n\n•\n\nPrimeira Renda · capacitação, incentivo para compra de equipamentos e matéria-prima e acesso a crédito\nsem juros, com regra e fonte definidas antes do lançamento. Um programa para ajudar quem quer\nempreender a começar, crescer e gerar a própria renda.\nHUB de Inovação e Criatividade · centro de formação, qualificação e fomento para jovens e adultos que\nqueiram empreender nas novas profissões e na economia criativa, incluindo atividades que envolvem o uso\nde inteligência artificial.\n\nPrioridade 4 · Família com Tempo para Viver\n•\n•\n\nComeço Certo · gestantes em situação de vulnerabilidade social amparadas da gravidez aos primeiros anos\ndo filho, em parceria com os municípios. Nenhuma mãe vai ficar sozinha em Goiás.\nCartão Creche · a vaga criada e ocupada paga pelo Estado nos municípios com fila, em horário de quem\ntrabalha.\n\nPrioridade 5 · Goiás Mais Simples\nGOIÁS · 5"
+          },
+          {
+            "id": "goias-para-quem-faz-6",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n•\n•\n•\n\nPLANO DE GOVERNO 2027-2030\n\nEmpreende Goiás · crédito com orientação e acesso à compra pública para autônomo e pequeno negócio,\nnuma porta só.\nAgiliza Goiás · simplificar processos, reduzir burocracias e acelerar licenciamentos ambientais e autorizações.\nMais agilidade para quem quer investir, produzir e gerar emprego em Goiás.\nModernização de Todos os Serviços Ofertados Pelo Vapt-Vupt e Integração Entre Todos os Órgãos do Estado\n· modernizar e integrar os serviços e os órgãos do Estado, reduzindo etapas e prazos. Mais facilidade, rapidez\ne eficiência para o cidadão.\n\nPrioridade 6 · Infraestrutura que Funciona\n•\n\nGoiás Responde Rápido · sistema para comunicação de problemas nas rodovias estaduais, com\ndisponibilização de equipe de rápida resposta.\n\n•\n\nApoio ao Pequeno Produtor Rural · criar para os pequenos produtores o acesso aos serviços de tratores e\nmáquinas agrícolas, em parceria com os municípios. Mais apoio para preparar a terra, produzir mais e\nfortalecer a agricultura familiar.\n\n•\n\nPrograma de Recuperação de Rodovias e Urbanização de Vicinais · recuperar rodovias estaduais e melhorar\nas estradas vicinais, com pavimentação e infraestrutura. Mais segurança, mobilidade e condições para escoar\na produção em todo o Estado.\n\nPrioridade 7 · Governo nas Dez Regiões\n•\n\nEmprego do Lado de Casa · investimento e trabalho mais perto de onde as pessoas vivem.\n\n•\n\nMeia Passagem do Entorno · reduzir o peso da passagem de quem estuda e trabalha entre Goiás e o DF.\n\nGOIÁS · 6"
+          },
+          {
+            "id": "goias-para-quem-faz-7",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nDuas agendas de futuro\nInovação só fará sentido quando virar proteção, trabalho, renda e serviço melhor. As duas agendas\nabaixo usam estruturas que Goiás já possui, corrigem lacunas e organizam resultados que a\npopulação poderá reconhecer e cobrar.\n\nGoiás Inteligente para Quem Trabalha\nGoiás já reúne universidades, centros de pesquisa, empresas e infraestrutura pública de inteligência artificial.\nO próximo passo é fazer essa capacidade chegar a pequenas empresas, produtores, cooperativas,\ntrabalhadores, escolas, municípios e serviços públicos, com benefício medido e proteção de direitos.\n•\n\nCriar extensão tecnológica regional para diagnosticar processos, testar soluções e medir produtividade, custo,\nqualidade, emprego e renda.\n\n•\n\nOfertar formação prática ligada a vagas, profissões em transformação e problemas reais das cadeias\nprodutivas de cada região.\n\n•\n\nAbrir desafios para startups, universidades e empresas desenvolverem soluções para saúde, educação, agro,\nsegurança, municípios e atendimento ao cidadão, com caminho de contratação quando o piloto funcionar.\n\n•\n\nExigir avaliação de risco, proteção de dados, teste de erro, registro das decisões e revisão humana sempre\nque um sistema automatizado puder afetar direito, benefício ou serviço essencial.\n\nCompromisso. As dez regiões terão acesso organizado a formação e extensão tecnológica, com publicação\ndo ganho obtido e dos empregos alcançados pelos negócios e serviços atendidos.\n\nTerras Raras: da Mina ao Emprego Goiano\nGoiás trabalhará para que a mineração de terras raras e outros minerais críticos gere mais conhecimento,\nfornecedores, empregos qualificados e transformação industrial no Estado. O objetivo é avançar da extração\npara separação, refino, ligas, componentes, aplicações e reciclagem por meio de investimento privado,\npesquisa e cooperação nacional e internacional. O Brasil é a segunda maior reserva de Terras Raras do mundo\ne Goiás é um estados com maior potencial de transformação desses minérios, atualmente concentrados, em\nMinaçu, Nova Roma, Iporá e Catalão.\n•\n•\n•\n•\n•\n\nFormar trabalhadores antes das grandes contratações, com cursos em química, metalurgia, automação,\nmanutenção, logística, segurança e controle ambiental.\nDesenvolver fornecedores goianos e tornar públicas as compras locais, os empregos, os salários, a\narrecadação e o valor agregado dos projetos apoiados.\nApoiar projetos demonstradores de separação, ligas, componentes, ímãs e recuperação de minerais presentes\nem equipamentos descartados.\nCondicionar apoio estadual a metas legais de qualificação, contratação local, rastreabilidade, uso responsável\nda água, recuperação de área e fechamento de mina.\nPreparar a diversificação econômica dos municípios mineradores antes do encerramento da lavra e abrir a\naplicação da compensação mineral à fiscalização da comunidade.\nGOIÁS · 7"
+          },
+          {
+            "id": "goias-para-quem-faz-8",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nCompromisso. Todo novo projeto de minerais críticos beneficiado pelo Estado terá plano público de\nemprego, fornecedores, qualificação, rastreabilidade e fechamento, e Goiás buscará contratar projeto\ndemonstrador de etapa industrial avançada ou de reciclagem.\n\nGOIÁS · 8"
+          },
+          {
+            "id": "goias-para-quem-faz-9",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nO que começa nos primeiros cem dias\nO início do governo será usado para abrir os números, organizar as responsabilidades e começar as\nentregas que não podem esperar. O relatório do centésimo dia dirá o que começou, o que atrasou\ne qual providência foi tomada.\n•\n\nAssegurar o funcionamento regular de todos os serviços públicos ofertados pelo Estado.\n\n•\n\nAuditar as filas de saúde e abrir a primeira consulta pública dos pedidos de maior espera.\n\n•\n\nPublicar o mapa regional de vagas, salários e profissões em falta.\n\n•\n\nSelecionar os serviços estaduais de maior impacto e divulgar documentos, prazo e onde reclamar.\n\n•\n\nLevantar a condição das rodovias, pontes e obras paradas e divulgar a ordem de atendimento.\n\n•\n\nConferir filas de creche em parceria com os municípios, cadastros habitacionais e famílias atendidas pelos\nprogramas sociais do Estado.\n\n•\n•\n\nInstalar a coordenação das dez regiões.\nAbrir a carteira de projetos dos municípios e organizar a busca de recursos da União.\n\n•\n\nPublicar o custo, a fonte e o risco das sete prioridades antes de transformá-las em novas despesas\npermanentes.\nPRIMEIRA PRESTAÇÃO DE CONTAS\n\nNo 100º dia, cada prioridade terá número de partida, responsável, cronograma e situação publicada.\n\nGOIÁS · 9"
+          },
+          {
+            "id": "goias-para-quem-faz-10",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO PLANO EM CINCO MINUTOS\n\nTransparência: Como a população poderá acompanhar e cobrar\nA mesma informação usada pelo governador para decidir estará disponível para a população. Meta\nnão será trocada em silêncio. Atraso terá explicação, providência e nova data. Parceria com\nprefeitura, União ou empresa não apagará a responsabilidade do Estado de acompanhar e informar.\nUma régua só: Número de partida, meta anual e resultado mais recente.\nDinheiro aberto: Valor previsto, contratado, pago e custo para manter o serviço.\nResultado por região: O que chegou a cada território e onde ainda existe atraso.\nCorreção à vista: Motivo do problema, responsável pela solução e nova data.\nLinguagem direta: Informação curta para o cidadão e dados completos para quem quiser conferir.\n\nGOIÁS · 10"
+          },
+          {
+            "id": "goias-para-quem-faz-11",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nEXPERIÊNCIA PARA FAZER\n\nQuem assume este compromisso com Goiás\nUm plano vale pelo que promete e por quem o executa. Existe ainda uma terceira coisa, menos\nfalada: o olhar de quem vai decidir. Duas pessoas podem receber o mesmo relatório e enxergar\ncoisas diferentes. Quem nunca esperou numa fila lê a fila como número. Quem já esperou lê como\ntempo de vida. Por isso este capítulo conta de onde vem quem assina este compromisso.\n\nWilder Morais\nWilder Pedro de Morais nasceu em 29 de junho de 1968, na zona rural de Taquaral, interior de Goiás.\nSegundo de cinco filhos de um lavrador que depois virou taxista e de uma costureira que sustentava a casa\nno pé da máquina. Os pais trabalharam a vida inteira e nunca conseguiram comprar casa própria. A família\nmorou de aluguel e de favor, e o menino trocou de endereço 24 vezes antes dos 14 anos.\nAos 17, foi para Goiânia estudar. Morou num quarto pequeno no Centro, estudou nas bibliotecas públicas\nda cidade, formou-se em Técnico de Contabilidade e pagou um ano de cursinho com o dinheiro da costura\nda mãe. Reprovou no primeiro vestibular. No segundo, passou no curso que anunciava em casa desde a\nterceira série, para espanto da família: Engenharia Civil. Bancou a faculdade com o crédito educativo,\nembrião do financiamento estudantil de hoje. Ele resume assim: “Eu só sou engenheiro hoje porque eu tive\no crédito educativo”.\nO primeiro estágio numa construtora foi negociado em troca da marmita do almoço, porque calouro não\npodia estagiar. Numa sexta-feira em que o vigia faltou, dormiu na obra para o prédio não ficar sozinho. No\ndomingo, o dono da empresa o encontrou de plantão e o efetivou na hora. Onze anos depois, saía da empresa\ncomo diretor-presidente. Fundou então a própria construtora, que chegou a mais de 4 mil funcionários e a\nobras em 17 estados e em outros países. É importante ressaltar que durante toda a sua atividade como\nconstrutor, atendeu o mercado privado integralmente, sem nenhuma obra contratada ou entregue para um\nórgão público ou governo.\nA vida pública veio depois da vida profissional feita. Wilder foi secretário de Estado de Infraestrutura e\ntambém de Indústria, Comércio e Serviços. À frente da política de desenvolvimento econômico, trabalhou\npara que mais de 200 empresas se instalassem em Goiás ou ampliassem suas atividades, com mais de R$ 5\nbilhões em investimentos anunciados e potencial de geração de cerca de 60 mil empregos diretos e indiretos.\n\nGOIÁS · 11"
+          },
+          {
+            "id": "goias-para-quem-faz-12",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nEsse movimento alcançou 90 municípios, levando oportunidades também ao Norte, Nordeste goiano e\nEntorno do Distrito Federal. Criou o Goiás Empreendedor e a Caravana do Empreendedor, ampliando o\nacesso ao crédito e aproximando o Estado de quem queria abrir ou fortalecer o próprio negócio. Participou\nainda da aprovação do ProGoiás, da internacionalização do Aeroporto de Goiânia, da expansão da Ferrovia\nNorte-Sul e de medidas emergenciais que ajudaram microempresas, o turismo e o transporte escolar durante\na pandemia. Na Secretaria, conheceu Goiás cidade por cidade e aprendeu, por dentro, a distância entre\nautorizar um benefício, anunciar um investimento e fazer o emprego chegar de verdade. É por isso que este\nplano assume um compromisso objetivo: acompanhar cada incentivo até que ele se transforme em\ninvestimento realizado, contratação formal, renda e desenvolvimento para os municípios.\nEm 2022, 799.022 goianos o elegeram senador da República. No mandato, relatou a proposta relacionada as\nTerras Raras que beneficia o Estado de Goiás e o Brasil, também relatou a proposta que incluiu o biogás entre\nas fontes apoiadas pela política agrícola, defendeu a redução da burocracia para quem produz e levou\nemenda a cidade que nunca tinha visto um senador de perto.\n\nO olhar que a vida deu\nCurrículo conta o que a pessoa fez. O olhar diz o que ela enxerga na hora de decidir. Quem foi menino doente,\nlevado de carroça ao hospital de madrugada, sabe o que uma fila custa a uma família. Quem estudou com\ncrédito educativo sabe que uma porta de estudo muda um destino inteiro. Quem se esforçou para pagar\nsalários sabe o que uma exigência sem sentido faz com um negócio pequeno. Quem morou de aluguel e de\nfavor entende porque este plano trata moradia como assunto de família.\nÉ esse olhar que organiza as escolhas deste documento: a fila com data de atendimento, o curso profissional\nligado à vaga de emprego, o Estado que simplifica a vida de quem produz, a casa que cabe no orçamento da\nfamília. Esses temas não foram escolhidos em gabinete. São as pedras que ele encontrou no próprio caminho,\ne que este plano existe para tirar do caminho dos outros.\n\nO Goiás de que nos orgulhamos\nEste plano tem orgulho da história de Goiás: o estado que saiu do isolamento, ergueu uma capital nova, abriu\no Cerrado para a produção e se tornou uma das economias mais fortes do país.\nNessa caminhada, Iris Rezende é um divisor de águas. Foi o homem dos Mutirões, que mobilizou o povo e o\npoder público para fazer o que parecia impossível: mil casas em um único dia, mais de 3 mil casas em um fim\nde semana, num grande mutirão que alcançou 36 cidades goianas de uma só vez.\n\nGOIÁS · 12"
+          },
+          {
+            "id": "goias-para-quem-faz-13",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nFoi o governador que levou essa mesma capacidade de realização para todas as áreas. Abriu e pavimentou\nmilhares de quilômetros de rodovias, expandiu a energia elétrica pelo estado e pelo campo, ampliou as redes\nde água e saneamento, construiu escolas, ginásios, rodoviárias, maternidades e hospitais. Criou o Fomentar,\nfazendo do Estado um parceiro de quem queria produzir, investir e gerar empregos. Fortaleceu o interior e\najudou a criar as condições de infraestrutura para que a industrialização e o agronegócio avançassem.\nIris fez o desenvolvimento andar junto com o povo. Onde faltava casa, construiu. Onde faltava estrada, abriu\ncaminho. Onde faltava energia e água, levou infraestrutura. Onde faltava oportunidade, criou condições para\no desenvolvimento chegar.\nE deixou uma lição que este documento adota: em Goiás, as grandes transformações acontecem quando\nplanejamento, trabalho e capacidade de realização caminham ao lado das pessoas.\nOs governos que vieram depois preservaram conquistas e somaram outras, reconhecidas ao longo destas\npáginas. Queremos avançar mais. E sabemos que é possível, porque este estado já mostrou que sabe fazer o\ndifícil.\nO PREPARO QUE IMPORTA\n\nConhecer a iniciativa privada ajuda a entender quem produz. Conhecer o Estado ajuda a transformar uma\nboa ideia em orçamento, equipe e entrega. A experiência só terá valor se aparecer na vida do cidadão.\n\nAna Paula Rezende\nAna Paula Rezende é advogada, formada em Direito pela Universidade Federal de Goiás, e empresária, filha\nde Iris Rezende e Dona Iris Araújo. Ela conheceu a boa política dentro de casa. Cresceu vendo os pais\ntransformarem a vida pública em uma missão de servir.\nEra uma casa em que política significava gente na porta, problema na mesa e resposta sem hora marcada.\nFoi ali que Ana Paula aprendeu que o poder só faz sentido quando melhora a vida das pessoas; que governar\nexige ouvir, estar presente e cuidar; e que a boa política se mede menos pelo discurso e mais pela capacidade\nde entregar.\nDurante muitos anos, acompanhou a política de perto sem buscar para si o protagonismo que naturalmente\ncercava sua família. Essa experiência moldou sua visão: a de quem conhece o Estado, mas conhece\nigualmente a realidade de quem trabalha, empreende, administra, gera empregos e precisa de um poder\npúblico que funcione de verdade.\nEla carrega, portanto, não apenas um sobrenome conhecido pelos goianos, mas uma formação construída\ndurante toda a vida ao lado de duas pessoas que fizeram do serviço público uma vocação.\nCom Iris, aprendeu a força do trabalho, da presença e da realização. Com Dona Iris, aprendeu a dimensão\nhumana do cuidado, especialmente com as mulheres, as crianças, os idosos e as famílias.\n\nGOIÁS · 13"
+          },
+          {
+            "id": "goias-para-quem-faz-14",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nDepois da partida dos pais, assumiu também a responsabilidade de preservar uma história que pertence não\napenas à sua família, mas a Goiás. À frente do Instituto Iris Rezende Machado, aproximou-se ainda mais das\ncomunidades, ouviu histórias de famílias transformadas por políticas públicas e passou a percorrer lugares\nonde a presença de Iris e Dona Iris continua viva. Nesse processo, preservar a memória se transformou\ntambém em compromisso com o futuro.\nSua decisão de entrar na vida pública nasce dessa trajetória. Não de uma descoberta recente da política, mas\nde uma vida inteira convivendo com ela, conhecendo suas possibilidades, suas responsabilidades e,\nprincipalmente, o impacto que uma gestão séria pode produzir na vida de uma família.\nÉ dessa escola que vem sua maneira de enxergar a vida pública: a política que escuta antes de decidir, acolhe\nantes de julgar e trabalha até encontrar uma solução.\nAna Paula representa a continuidade de valores que marcaram uma geração da política goiana, mas com a\nresponsabilidade de construir o seu próprio caminho. Traz a experiência de quem aprendeu dentro de casa\nque legado não é aquilo que se recebe: é aquilo que se honra com trabalho, presença e novas entregas.\nComo vice-governadora, estará à frente das pautas do cuidado no acompanhamento deste plano, com\natenção prioritária às pessoas mais carentes, além do trabalho com a mulher, com a primeira infância, com\no idoso e com a família, e da articulação permanente com municípios e comunidades.\n\nGOIÁS · 14"
+          },
+          {
+            "id": "goias-para-quem-faz-15",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nNO QUE ACREDITAMOS\n\nPrincípios simples para decisões difíceis\nUm plano não consegue prever tudo o que acontecerá em quatro anos. Por isso, além das propostas,\na população precisa saber quais princípios orientarão as escolhas do governo quando surgir uma\ndecisão nova.\nTrabalho e responsabilidade\n\nFamília e cuidado\n\nO trabalho é caminho de autonomia e dignidade. O Estado\ndeve abrir caminho, qualificar, cumprir sua parte e deixar de\ncastigar quem produz dentro da lei.\n\nA família é o primeiro espaço de cuidado. O governo deve\nfortalecê-la e proteger quem enfrenta violência, abandono,\ndoença, deficiência ou perda de autonomia.\n\nFé e liberdade\n\nLiberdade para produzir\n\nO Estado é laico para proteger a liberdade religiosa, todas\nas crenças e também quem não professa religião. Parcerias\nterão regra pública, finalidade social e prestação de contas.\n\nQuem empreende precisa de regra clara, prazo cumprido e\nfiscalização proporcional ao risco. Simplificar é cobrar o\nnecessário com respeito e previsibilidade.\n\nOrdem e segurança\n\nDinheiro público tem dono\n\nSegurança é condição para a liberdade. A autoridade será\nexercida dentro da lei, com presença, inteligência,\ninvestigação e respeito ao cidadão.\n\nCada real pertence à população. Nenhuma estrutura, obra,\nincentivo ou benefício deve existir sem finalidade, fonte de\ndinheiro, meta e controle público.\n\nREGRA DE GOVERNO\n\nPreservar o que funciona, medir o que for feito e corrigir sem esconder o problema.\n\nGOIÁS · 15"
+          },
+          {
+            "id": "goias-para-quem-faz-16",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nGUIA DE LEITURA\n\nUm plano claro para ser entendido e cobrado\nO plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas\ndiretamente pelo governador. A agenda das dez regiões reconhece que Goiás não tem uma única\nrealidade. As últimas partes mostram o trabalho dos primeiros cem dias, o cuidado com o dinheiro\npúblico e a forma de prestar contas.\nFamília protegida\n\nSaúde, educação, segurança, moradia e cuidado: o que o Estado protege.\n\nDesenvolvimento que fica\n\nInfraestrutura, redes essenciais, produção e território: o que o Estado ajuda a\nconstruir e permanece.\n\nProsperidade que chega\nem casa\n\nQualificação, trabalho, pequeno negócio e valor local: o que a pessoa conquista e leva\npara casa.\n\nGoverno que entrega\n\nServiço com prazo, dez regiões, município parceiro, orçamento e controle público.\n\nOs doze programas\n1. Minha Vez, Saúde com Data\n\n7. Governo nas Dez Regiões\n\n2. Escola para a Vida\n\n8. Trabalho que Melhora a Renda\n\n3. Segurança sem Retrocesso\n\n9. Goiás Mais Simples\n\n4. Família, Moradia, Creche e Cuidado\n\n10. Agro, Indústria e Inovação com Valor em Goiás\n\n5. Mobilidade e Infraestrutura que Funciona\n\n11. Serviço e Projeto com Prazo\n\n6. Energia, Água e Conectividade\n\n12. Município Parceiro e Contas em Ordem\n\nGOIÁS · 16"
+          },
+          {
+            "id": "goias-para-quem-faz-17",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nO que está coberto pelo plano\n•\n\nVida e cuidado: saúde, educação, infância, creche, segurança, mulheres, idosos, deficiência, moradia e\nproteção social.\n\n•\n\nCidade e território: transporte, trânsito, habitação, saneamento, água, energia, internet, estradas, logística e\ndefesa civil.\n\n•\n\nTrabalho e prosperidade: qualificação, primeira oportunidade, pequeno negócio, crédito, agro, indústria,\nmineração, comércio e serviços.\nFuturo e identidade: ciência, tecnologia, inteligência artificial, cultura, esporte, lazer, turismo, Cerrado e clima.\n\n•\n•\n\nGoverno e confiança: municípios, regiões, servidores, orçamento, reforma tributária, integridade, dados,\nprazos e contas públicas.\n\nGOIÁS · 17"
+          },
+          {
+            "id": "goias-para-quem-faz-18",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n1 · PONTO DE PARTIDA\n\nGoiás é forte. O desafio é fazer essa força chegar por inteiro\nGoiás entra no próximo ciclo com base sólida. A economia é diversificada, o mercado de trabalho\ntem bons indicadores, a rede estadual de ensino ocupa posição de destaque e o Estado recuperou\ncapacidade de investimento. Essa fotografia afasta dois erros: negar os avanços ou imaginar que os\nnúmeros, sozinhos, resolvem a vida de quem espera, se desloca, paga aluguel e trabalha muito para\nmanter a casa.\n\n7,06 milhões\n\nR$ 336,7 bilhões\n\nhabitantes no Censo 2022 · IBGE\n\nde PIB em 2023 · IBGE/Contas Regionais\n\n3,86 milhões\n\nR$ 7,21 bilhões\n\nde pessoas ocupadas em 2025 · PNAD Contínua/IMB\n\ninvestidos pelo Estado em 2025 · Balanço Geral/RREO\n\nA economia cresceu, a sensação de avanço precisa crescer junto\nEm 2025, a taxa de desocupação foi de 4,6% e a renda média do trabalho chegou a R$ 3.628. Ao mesmo\ntempo, ainda existem informalidade, salário baixo em muitas ocupações, aluguel pesado, dificuldade de\nencontrar emprego qualificado, falta de creche e longos deslocamentos. A resposta não é prometer que o\ngoverno fará tudo pela pessoa. É retirar barreiras para que o esforço dê resultado: fazer qualificação\nencontrar vaga, simplificar a vida de quem empreende, apoiar moradia, levar infraestrutura e serviço aos\nlugares onde as oportunidades podem nascer.\nO campo é parte decisiva da identidade e da riqueza de Goiás. Mas a vida diária da maioria acontece nas\ncidades, e os serviços respondem por mais de 60% da economia. Por isso, este plano une agro, indústria,\ncomércio, tecnologia e serviços. Estrada e energia no campo caminham junto com saúde regional, moradia,\ntransporte e segurança nas áreas urbanas.\n\nComo o governo pode aliviar o custo da vida\nO Estado não controla sozinho o preço do mercado nem deve prometer solução mágica. Pode, porém, agir\nonde tem responsabilidade e reduzir despesas que pesam todo mês, aumentar a renda e devolver tempo à\nfamília.\n•\n\nAumentar a renda real com curso ligado a vaga de trabalho, primeira oportunidade, pequeno negócio e\nprodução com mais valor.\n\n•\n\nReduzir o peso da moradia com regularização, melhoria habitacional, casa própria e aluguel temporário com\ncaminho de saída.\nGOIÁS · 18"
+          },
+          {
+            "id": "goias-para-quem-faz-19",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n•\n•\n•\n•\n\nPLANO DE GOVERNO 2027-2030\n\nDevolver o tempo de espera com saúde que informa data, creche para quem trabalha e transporte que\ncumpre a viagem programada.\nAjudar o consumidor a comparar preços e proteger a concorrência sem tabelamento ou interferência\nindevida.\nFazer escola, saúde, segurança, água e assistência funcionarem para que a família não pague duas vezes pelo\nserviço público.\nMelhorar as condições de logística e escoamento de produção dos alimentos, reduzindo o preço da cesta\nbásica.\nA ESCOLHA CENTRAL\n\nPreservar o que funciona e concentrar energia onde a população ainda sente distância: saúde, renda,\ninfraestrutura e presença regional.\n\nGOIÁS · 19"
+          },
+          {
+            "id": "goias-para-quem-faz-20",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n2 · DIREÇÃO PARA 2030\n\nGoiás para quem faz\nNossa visão é um Goiás seguro, produtivo e bem cuidado, no qual o lugar de nascimento não limite\no acesso a serviço, estudo, trabalho ou renda. Até 2030, o Estado deve estar entre os melhores do\nBrasil nos resultados que chegam à vida real. A comparação usará dados públicos nacionais quando\nexistirem e metas estaduais abertas quando não houver medida comparável.\n\nTrês eixos e um método\n1 · Família protegida\n\n2 · Desenvolvimento que fica\n\nSaúde, educação, segurança, moradia e cuidado: o que o\nEstado deve proteger.\n\nEstrada, energia, água, saneamento, internet e cidades\nfortes: o que o Estado ajuda a construir e permanece.\n\n3 · Prosperidade que chega em casa\n\nMétodo · Governo que entrega\n\nCurso ligado a vaga, pequeno negócio simples e produção\ncom mais valor: o que a pessoa conquista.\n\nServiço com prazo, município parceiro, dez regiões, meta\npública e conta em ordem.\n\nSete prioridades de execução\nAs sete prioridades atravessam várias áreas e serão acompanhadas diretamente pelo governador.\nNº\n\nPrioridade\n\nResultado esperado\n\n1\n\nMinha Vez, Saúde com Data\n\nFila única, prazo informado e atendimento humano.\n\n2\n\nSegurança sem Retrocesso\n\nA criminalidade segue em queda e os crimes cometidos pela internet\npassam a ter resposta à altura.\n\n3\n\nTrabalho que Melhora a Renda\n\nEmprego, permanência e renda real, não apenas certificado.\n\n4\n\nFamília com Tempo para Viver\n\nMenos aluguel pesado, fila e tempo perdido para trabalhar.\n\n5\n\nGoiás Mais Simples\n\nQuem produz dentro da lei gasta menos tempo e menos dinheiro com\nburocracia para abrir e manter o negócio.\n\n6\n\nInfraestrutura que Funciona\n\nEstradas conservadas de forma permanente e obras que só começam com\nprojeto e dinheiro garantidos.\n\n7\n\nGoverno nas Dez Regiões\n\nPrioridade pactuada, prazo e prestação de contas.\n\nSeis regras para governar\n•\n\nServiço público com data: pedido, responsável, prazo e a quem cobrar.\n\n•\n\nAtendimento que respeita: quem procurar o Estado será acolhido por uma pessoa preparada, receberá\norientação clara e não precisará contar o mesmo problema várias vezes.\nResultado publicado em linguagem simples: a mesma informação usada pelo governo e pela população.\n\n•\n•\n\nDinheiro ligado a resultado: contrato e programa avaliados pelo que entregam, e não pelo tamanho da\nestrutura.\n\n•\n\nMunicípio tratado como parceiro: critério público, apoio técnico e decisão perto do território.\nGOIÁS · 20"
+          },
+          {
+            "id": "goias-para-quem-faz-21",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n•\n\nPLANO DE GOVERNO 2027-2030\n\nMelhorar o que existe antes de criar novidade: estrutura nova só quando a atual não puder resolver.\n\nGOIÁS · 21"
+          },
+          {
+            "id": "goias-para-quem-faz-22",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n3 · DOZE PROGRAMAS\n\nCompromissos que cabem na vida e no orçamento\nOs doze programas abaixo organizam o governo inteiro. Eles não substituem as obrigações de cada\nsecretaria. Servem para unir áreas que precisam trabalhar juntas e para deixar clara a cobrança:\nqual problema será enfrentado, qual resultado deve aparecer e em que prazo a população poderá\nconferir.\n•\n\nFamília protegida: saúde, escola, segurança, moradia e cuidado.\n\n•\n\nDesenvolvimento que fica: infraestrutura essencial, cidades fortes e presença nas dez regiões.\n\n•\n\nProsperidade que chega em casa: trabalho que melhora a renda, pequeno negócio e produção com valor.\n\n•\n\nGoverno que entrega: prazo, dados, município parceiro e conta em ordem.\n\nOs números relativos ao ano de 2026 serão consolidados, auditados e publicados nos cem primeiros dias.\nEsse cuidado impede que meta seja montada sobre um dado incompleto e permite que toda pessoa\nacompanhe a mesma régua durante o mandato.\n\nRegras que valem para todo o plano\n•\n\nAtender sem discriminação e garantir acesso a mulheres, crianças, jovens, idosos, pessoas com deficiência e\ncomunidades tradicionais.\n\n•\n\nProteger os dados pessoais e manter alternativa presencial para quem não consegue usar serviço digital.\n\n•\n•\n\nTratar água, solo, vegetação e clima como segurança para a vida e para a produção.\nOuvir usuários e servidores, publicar resultados e corrigir rápido o que não funcionar.\n\n•\n\nNão criar estrutura, benefício ou obra sem competência legal, custo de manutenção e fonte de dinheiro.\n\nGOIÁS · 22"
+          },
+          {
+            "id": "goias-para-quem-faz-23",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n1\n\nPLANO DE GOVERNO 2027-2030\n\nFAMÍLIA PROTEGIDA\nO que o Estado deve proteger: vida, aprendizagem, segurança, moradia, cuidado e dignidade.\n\nPROGRAMA 1\n\nMinha Vez, Saúde com Data\nUma rede de saúde só funciona de verdade quando a pessoa sabe qual é o próximo passo. Hoje, o\nsofrimento não está apenas na doença: está também na espera sem informação, na viagem\ndesnecessária e na repetição de exames. O Estado vai organizar o acesso, fortalecer a capacidade\nregional e cobrar qualidade de cada contrato.\nO QUE MUDA PARA QUEM ESPERA\n\nToda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade\nclínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso\nrelevante.\n\nComo reduzir a espera\n•\n\nUnificar as filas estaduais de consultas, exames, cirurgias e terapias. O sistema mostrará situação, prioridade\ne previsão sem expor dados pessoais.\n\n•\n\nImplantar a regra Data na Guia: o encaminhamento regulado terá prazo de referência, canal de\nacompanhamento e alternativa assistencial quando houver atraso relevante.\nCriar a Tabela SUS Goiás: uma tabela estadual que complementa os valores federais para pagar pelo\nprocedimento realizado com qualidade, destravando a capacidade ociosa de instituições filantrópicas e\nunidades privadas que atendam à fila única.\nGarantir o Profissional de Saúde Especialista Onde Tem Unidade de Saúde Pública: publicar o mapa de onde\nfalta atendimento e a escala das unidades. Hospital regional terá plano de equipe, leito, insumo e contrato\nantes de receber nova ampliação física.\n\n•\n\n•\n\n•\n•\n\n•\n\nCriar política regional de fixação e formação em serviço para médico, enfermagem e demais profissionais nas\nespecialidades em falta no interior.\nAmpliar e agilizar o acesso aos especialistas, criando um sistema que permita que equipes locais acessem o\napoio de profissionais de saúde especializados em áreas de atendimento para resolver mais casos perto de\ncasa.\nOrganizar caminhos completos, com prazo entre etapas, para câncer, saúde da mulher, gestação e parto,\nautismo, saúde mental, reabilitação, doenças raras e saúde bucal.\n\nGOIÁS · 23"
+          },
+          {
+            "id": "goias-para-quem-faz-24",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nAlém dos compromissos centrais, o programa terá uma carteira de iniciativas que poderá ser priorizada\nconforme diagnóstico, viabilidade, orçamento e capacidade de execução. Cada proposta abaixo terá\nresponsável, linha de base e meta antes da contratação.\n\nSaúde da mulher perto de casa\nUma linha regional de cuidado vai organizar prevenção, diagnóstico e tratamento de câncer de mama e colo\ndo útero, pré-natal de risco e endometriose. A regulação mostrará onde o exame será realizado, o prazo e a\ncontinuidade do tratamento. Unidades móveis poderão cobrir vazios assistenciais, sem substituir a rede\npermanente.\n\nSaúde bucal que volta a atender\nCofinanciar, com os municípios, equipes de saúde bucal, próteses e atendimento odontológico para crianças,\ngestantes, idosos e pessoas com deficiência. O apoio estadual dependerá de produção informada e\nintegração com a atenção básica, evitando consultório equipado e parado.\n\nAutismo com caminho e prazo\nUm protocolo único vai organizar triagem, avaliação multiprofissional e plano de cuidado para pessoas com\nsuspeita de transtorno do espectro autista. A família receberá orientação desde a primeira procura, sem\nprecisar refazer cadastros em cada porta. O Estado organizará apoio regional com a retaguarda do CRER\n(Centro Estadual de Reabilitação e Readaptação), teleconsultoria e pactuação de vagas com municípios e\nprestadores. O tempo entre a primeira procura, a avaliação e o início do cuidado dirá se o protocolo funciona,\njunto com a permanência da criança na escola.\n\nSaúde mental em rede\nEm parceria com os municípios, reforçar a rede regional de saúde mental com atendimento de crise,\nprevenção do suicídio, cuidado de álcool e outras drogas e apoio a crianças e adolescentes. A proposta\nintegra atenção básica, CAPS, hospitais, escolas e assistência social, com fluxo definido para urgências. O\ngoverno publicará cobertura, tempo para primeiro atendimento e reinternações, e apoiará municípios que\ncompartilhem equipes onde não houver escala para manter serviço isolado.\n\nDengue antes do hospital lotar\nUsar dados climáticos, notificações, armadilhas e imagens territoriais para antecipar surtos de dengue e\noutras arboviroses. Municípios receberão alerta, apoio operacional e insumos antes do pico, de acordo com\no risco publicado. A comunicação será simples e localizada, indicando o que a população e a prefeitura\nprecisam fazer. Tempo entre alerta e resposta, internações e óbitos serão acompanhados ano a ano.\n\nGOIÁS · 24"
+          },
+          {
+            "id": "goias-para-quem-faz-25",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nDoença rara sem peregrinação\nO paciente com doença rara ou condição de alta complexidade contará com uma equipe de navegação para\norganizar exames, referências, medicamentos e deslocamentos, evitando que a família percorra órgãos sem\nsaber o próximo passo. O Estado pactuará fluxos com centros de referência dentro e fora de Goiás e publicará\nprazos de autorização e continuidade.\n\nRemédio em Casa\nO medicamento de uso contínuo sob responsabilidade estadual poderá ser entregue na casa de idosos e de\npacientes com dificuldade de locomoção, com adesão voluntária e regras de segurança na entrega. A fila do\nbalcão deixará de ser mais um deslocamento na vida de quem já convive com a doença.\n\nGOIÁS · 25"
+          },
+          {
+            "id": "goias-para-quem-faz-26",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 2\n\nEscola para a Vida\nGoiás fez no Ideb de 2025 as melhores notas da sua história e, ainda assim, perdeu a liderança\nnacional que vinha ocupando. Os dois fatos importam: o primeiro mostra uma rede que funciona e\nmerece ser preservada; o segundo mostra que outros estados estão acelerando. O caminho é\nproteger o que levou Goiás ao topo, recuperar a dianteira e olhar para quem ainda fica para trás.\nUm dos maiores problemas da educação de Goiás não está no alcance, nem na evasão escolar,\nmuito menos na qualidade do corpo docente, mas sim nos baixos índices de eficiência relacionados\nao aprendizado. Boa parte das crianças não dominam o idioma e têm dificuldade na realização de\noperações matemáticas básicas. Aprender a ler, escrever, calcular, conviver e concluir os estudos é\na base da liberdade. A escola também precisa ser segura, bem cuidada, inclusiva e conectada às\nescolhas que o jovem fará depois.\nO QUE MUDA PARA O ESTUDANTE\n\nCada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte\nclara para o ensino técnico, a universidade, o trabalho ou o próprio negócio.\n\nPrioridades para a escola\n•\n•\n•\n•\n•\n\nConcentrar reforço em alfabetização, língua portuguesa e matemática, com diagnóstico por estudante e\nrecuperação durante o ano, não apenas no final.\nFazer busca ativa de faltas e abandono, reunindo escola, família, saúde e assistência quando o problema\nultrapassar a sala de aula.\nAmpliar o tempo integral onde houver procura, estrutura e resultado pedagógico, sem confundir mais horas\ncom aprendizagem automática.\nPublicar o calendário de manutenção de cada escola e garantir segurança, acessibilidade, internet, material e\napoio de intérprete, cuidador ou mediador quando necessário.\nLigar ensino técnico, UEG, universidades, Sistema S e empresas às vocações das regiões, mantendo formação\nampla e possibilidade de escolha.\n\n•\n\nValorizar professores e equipes com formação prática, apoio à gestão e reconhecimento ligado à\naprendizagem, à inclusão e à permanência do aluno.\n\n•\n\nGarantir oferta noturna e educação de jovens e adultos onde houver demanda, para que trabalhar durante o\ndia não obrigue ninguém a abandonar a escola.\nIntegrar esporte, cultura, ciência, leitura e educação digital ao projeto pedagógico, com uso ético de\ninteligência artificial e formação dos professores.\n\n•\n\nGOIÁS · 26"
+          },
+          {
+            "id": "goias-para-quem-faz-27",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nO programa carrega ainda uma carteira complementar, priorizada conforme diagnóstico, orçamento e\ncapacidade de execução. Nenhuma proposta será contratada sem responsável, linha de base e meta\ndefinidos.\n\nEscola arrumada, banheiro funcionando\nTodo ano, um mapa público mostrará a condição de cada escola: banheiro, telhado, cozinha, climatização,\nacessibilidade, quadra, conectividade e segurança elétrica. As obras serão contratadas em lotes regionais\ncom cronograma, responsável e fotografia de entrega. A prioridade combinará risco, número de alunos e\ntempo sem manutenção.\n\nTempo integral onde a família precisa\nAs vagas de tempo integral crescerão primeiro onde a vulnerabilidade é maior, onde as mães trabalham e\nonde a escola tem espaço para expandir. A jornada terá reforço de aprendizagem, esporte, cultura,\ntecnologia e projeto de vida, e não apenas permanência no prédio. O Estado publicará vagas criadas,\nfrequência, aprendizagem e abandono, além do custo por aluno, permitindo ajustar o modelo antes de\nampliar.\n\nMatemática e português sem aluno para trás\nAplicar avaliação diagnóstica curta no início do período letivo e oferecer recuperação dentro da jornada para\nquem estiver abaixo do esperado. Cada escola receberá material, formação e acompanhamento por turma,\nsem transformar a avaliação em punição. A família acompanhará a evolução do aluno em relatório fácil de\nentender. O avanço aparecerá no domínio das habilidades essenciais e na redução da defasagem.\n\nInteligência artificial com responsabilidade na escola\nEnsinar estudantes a usar inteligência artificial como suporte para pesquisar, criar e resolver problemas,\ndistinguindo apoio legítimo de cópia, fraude e desinformação. Professores receberão formação prática e\nferramentas seguras, com proteção de dados e revisão humana. Projetos serão ligados a desafios de Goiás,\ncomo água, agro, saúde e serviços. O Estado medirá escolas atendidas, docentes formados e projetos\ndesenvolvidos, sem substituir professor por tecnologia.\n\nProfessor com mais tempo\nRelatórios, lançamentos e cadastros exigidos das escolas serão revisados para eliminar duplicidade e integrar\nsistemas. Toda nova obrigação administrativa deverá informar porque existe e quanto tempo consome.\nEquipes regionais apoiarão prestação de contas e gestão, liberando diretor e professor para aprendizagem.\n\nGOIÁS · 27"
+          },
+          {
+            "id": "goias-para-quem-faz-28",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nInclusão com profissional e estrutura\nGarantir planejamento regional de intérpretes de Libras, cuidadores, mediadores e atendimento educacional\nespecializado segundo a necessidade dos estudantes. Banco de profissionais, formação continuada e\ncontratação compartilhada reduzirão salas sem apoio. A escola informará à família o recurso disponível e o\nprazo de atendimento.\n\nBusca ativa: aluno de volta\nIntegrar escola, assistência social e saúde para localizar estudante com faltas repetidas ou abandono,\nidentificar a causa e construir retorno individual. A família terá um responsável de referência, e problemas\nde transporte, trabalho precoce, gravidez, violência ou deficiência receberão encaminhamento. O indicador\ncentral será o número de alunos que retornaram e permaneceram, não apenas contatos realizados.\n\nEnsino técnico conectado ao ensino médio\nExpandir itinerários técnicos e cursos de curta duração ligados às vocações regionais e às vagas efetivas das\nempresas. Laboratórios poderão ser compartilhados com IFs, Sistema S, UEG e setor produtivo. O estudante\nconhecerá ocupações, salários e requisitos antes de escolher. Matrículas, conclusão, certificação, estágio e\nemprego após o curso serão publicados por unidade e região.\n\nGOIÁS · 28"
+          },
+          {
+            "id": "goias-para-quem-faz-29",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 3\n\nSegurança sem Retrocesso\nA melhora da segurança é uma conquista concreta de parte dos goianos. Atualmente temos muitas\ndelegacias operando apenas em horário comercial, cidades que não têm um único profissional de\nsegurança pública, e uma subnotificação que desconhecemos o alcance. Goiás ficou mais seguro,\nmas ainda estamos longe do que precisamos. O próximo governo deve manter integração,\ninteligência, presença policial e controle do sistema prisional, ao mesmo tempo em que responde a\ncrimes que cresceram ou mudaram de forma: golpes digitais, violência contra a mulher, crime\norganizado e fraude.\nO COMPROMISSO COM A SEGURANÇA\n\nA população seguirá vivendo com ordem e liberdade. A vítima terá resposta mais rápida, e as forças de\nsegurança usarão informação, investigação e tecnologia com controle e respeito à lei.\n\nComo preservar os avanços\n•\n\nPreservar a integração das forças, a inteligência e o controle dos presídios, com metas por território e auditoria\npara impedir subnotificação.\n\n•\n\nOrganizar plantão regional noturno e de fim de semana seguindo o mapa real de ocorrências, combinando\npresença física, atendimento remoto por autoridade e delegacia digital.\n\n•\n\nAprimorar o registro digital dos golpes e fraudes que possam ser registrados a distância, orientar a vítima a\nacionar imediatamente sua instituição financeira e integrar preservação de prova, investigação e defesa do\nconsumidor.\n\n•\n\nOrganizar o Goiás sem Golpe Digital, com uma porta clara, acompanhamento do encaminhamento e\npublicação de tempo de triagem, perícia, investigação e valores bloqueados ou recuperados.\n\n•\n\nCriar cobertura compartilhada de cibersegurança para órgãos estaduais essenciais e municípios aderentes,\ncom prevenção, cópias de segurança, continuidade de serviço e resposta testada a incidentes.\nReforçar a proteção contra deepfakes, montagens íntimas, perseguição digital, exploração de crianças e\nviolência online contra mulheres e idosos.\n\n•\n•\n•\n\nAmpliar as equipes especializadas de combate à violência contra a mulher, facções, roubo de carga, crime no\ncampo e delitos ambientais.\nDar prazo público a perícias e priorizar investigação de homicídios, crimes sexuais, desaparecimentos e\nviolência repetida.\n\n•\n\nIntegrar câmeras e leitores de placas em corredores estratégicos, com regra de acesso, guarda, auditoria e\ndescarte de dados.\n\n•\n\nFortalecer Corpo de Bombeiros, Defesa Civil e segurança no trânsito, com prevenção de incêndios, enchentes,\nseca e acidentes graves.\nDar cobertura regional à Patrulha Maria da Penha e à segurança rural, com prazo de primeira providência,\nacompanhamento e resultado publicado.\n\n•\n\nGOIÁS · 29"
+          },
+          {
+            "id": "goias-para-quem-faz-30",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nValorização de quem faz a segurança\nA conquista da segurança tem autor: o profissional que trabalha em escala, risco e cobrança. Preservar o\navanço exige tratar quem o produz como parte do resultado. Este bloco vale para policiais militares e civis,\nbombeiros, polícia penal e polícia científica. Esse conjunto forma o Fortalecimento das Forças de Segurança:\nvalorizar, cuidar e planejar o efetivo conforme a disponibilidade financeira do Estado e a necessidade da\npopulação.\n•\n\nPlanejar o efetivo, com calendário de concursos e reposição contínua das aposentadorias, revisado a cada ano\nconforme a disponibilidade financeira do Estado.\n\n•\n\nDar à carreira a mesma regra que este plano dá à fila: promoção com critério claro, requisitos publicados e\ncalendário cumprido, para o profissional saber o que precisa fazer e quando será avaliado.\nPremiar resultado: incentivo por metas de redução de crime verificadas por território, com regra pública e\nauditoria, valorizando a equipe, não apenas o indivíduo.\n\n•\n•\n\nGarantir assistência jurídica institucional ao profissional de segurança por atos praticados em serviço.\n\n•\n\nCuidar de quem protege: prevenção ao adoecimento, atendimento psicológico sigiloso, apoio após ocorrência\ncrítica e preparação para a aposentadoria, sem que buscar cuidado prejudique a carreira.\n\n•\n\nRepor equipamento com programação: colete, viatura e fardamento com ciclo de reposição definido.\n\n•\n\nManter mesa permanente com as entidades de praças, oficiais, policiais civis, penais, bombeiros e polícia\ncientífica, com pauta, prazo e resposta registrada. É nessa mesa que a previdência e o Ipasgo, o plano de saúde\ndo servidor, serão tratados com estudo e responsabilidade, sem promessa de campanha.\n\nGOIÁS · 30"
+          },
+          {
+            "id": "goias-para-quem-faz-31",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nAs iniciativas abaixo completam o programa e entram em execução conforme diagnóstico e espaço no\norçamento, sempre com responsável, linha de base e meta definidos antes da contratação.\n\nLaboratório regional contra crimes digitais\nNúcleos regionais de investigação e perícia digital vão reduzir a concentração de equipamentos e\nespecialistas na capital. Os núcleos apoiarão casos de fraude, exploração infantil, perseguição, extorsão,\ninvasão de sistemas e violência digital. Haverá triagem por gravidade, preservação de prova e cooperação\ncom autoridades competentes.\n\nCidade monitorada com regra e resultado\nMunicípios terão apoio para integrar câmeras, leitura de placas e centros de comando, com padrões de\nsegurança, finalidade definida e proteção de dados. O Estado priorizará entradas de cidades, rotas de fuga,\ndivisas e áreas de maior risco, evitando compra isolada sem operação. Câmera parada não conta: valem\nalertas úteis, veículos recuperados e ocorrências esclarecidas.\n\nPerícia com prazo publicado\nDefinir prazos de referência por tipo de laudo, organizar fila por gravidade e ampliar capacidade em regiões\ncom maior represamento. Contratações, equipamentos e plantões serão guiados pelo volume real. Polícia,\nMinistério Público e Judiciário acompanharão a mesma informação, respeitado o sigilo. O cidadão verá\ntempo mediano, estoque de exames e percentual entregue no prazo, sem exposição do caso individual.\n\nSegurança escolar preventiva\nCriar protocolo estadual de prevenção e resposta para ameaças, violência, drogas, bullying e ataques em\nambiente escolar. Cada escola terá contatos, fluxo de comunicação e exercícios adequados ao risco, sem\ntransformar o espaço em ambiente de medo. Educação, segurança, saúde mental e famílias atuarão juntas,\ncom acompanhamento público de ocorrências, tempo de resposta e escolas preparadas.\n\nPessoa desaparecida: procura começa na hora\nIntegrar registro, imagens autorizadas, hospitais, assistência social, transporte e bases policiais para acelerar\na busca por desaparecidos. Não haverá exigência de espera para iniciar o atendimento. Casos envolvendo\ncriança, idoso, pessoa com deficiência ou risco de violência terão prioridade.\n\nFronteira e divisa com inteligência\nAs rotas de entrada e saída do Estado terão operações permanentes contra tráfico, roubo de cargas, veículos\ne insumos do crime. Leitura de placas, análise de risco e cooperação com forças federais e estados vizinhos\nsubstituirão bloqueios aleatórios. A estratégia será avaliada por apreensões qualificadas, organizações\ndesarticuladas, bens recuperados e redução de crimes nas rotas.\n\nGOIÁS · 31"
+          },
+          {
+            "id": "goias-para-quem-faz-32",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nProteção completa para a mulher\nIntegrar medida protetiva, patrulha, acolhimento, aluguel social, atendimento jurídico e autonomia\neconômica em um único acompanhamento. A mulher não deverá narrar a violência repetidamente em cada\nórgão. O primeiro contato definirá risco e responsável pelo caso.\n\nCombate aos Crimes Contra a Mulher\nO Estado vai intensificar o enfrentamento ao estupro, ao feminicídio e à violência doméstica, usando\ninteligência e tecnologia para identificar o agressor com mais rapidez e proteger a vítima antes que a violência\nse repita. Delegacias especializadas, equipes de investigação e a Patrulha Maria da Penha trabalharão com\ninformação integrada. Esse esforço caminha junto com a proteção completa para a mulher descrita neste\nprograma.\n\nGOIÁS · 32"
+          },
+          {
+            "id": "goias-para-quem-faz-33",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 4\n\nFamília, Moradia, Creche e Cuidado\nA família sustenta a vida cotidiana, mas pode enfrentar situações que nenhum esforço individual\nresolve sozinho: violência, deficiência, doença, perda de renda, envelhecimento, aluguel pesado,\nfalta de creche ou ausência de cuidado. O apoio público deve acolher sem humilhar, proteger\ndireitos e ajudar cada pessoa a recuperar autonomia. Emergência exige amparo; a saída do\nmomento de dificuldade exige documentação, cuidado, moradia, qualificação e trabalho.\nO QUE A FAMÍLIA PODE ESPERAR\n\nQuem procurar proteção será recebido por uma pessoa de referência e sairá sabendo o próximo passo.\nMoradia e cuidado serão tratados junto com creche, água, transporte, escola, saúde e oportunidade de\nrenda.\n\nProteção, cuidado e autonomia\n•\n\nOrganizar acesso integrado à assistência social, com plano familiar e encaminhamento acompanhado nos\ncasos de maior risco.\n\n•\n\nCofinanciar vagas de creche em municípios com fila comprovada, por meio do Cartão Creche, inclusive em\nhorário compatível com a jornada de trabalho, pagando por vaga criada e ocupada e exigindo lista pública\nsem expor a criança.\nApoiar primeira infância, proteção de crianças e adolescentes, conselho tutelar, acolhimento familiar e adoção\nsegura.\n\n•\n•\n•\n\nAmpliar acolhimento à mulher vítima de violência, proteção aos filhos e caminhos de qualificação, trabalho e\nindependência financeira.\nReduzir a espera por cadeiras de rodas, órteses, próteses e outros recursos e garantir acessibilidade nos\nserviços estaduais.\n\n•\n\nFortalecer cuidado ao idoso.\n\n•\n\nAmpliar a atenção à dependência de álcool e outras drogas, população em situação de rua e famílias em\nemergência.\n\n•\n\nUnir casa própria, aluguel social temporário, regularização, melhoria de moradias e urbanização, com fila,\ncritério, valor, prazo de transição e caminho de saída publicados.\nApoiar municípios e entidades responsáveis em castração, adoção, atendimento veterinário regional e\ncombate aos maus-tratos, com prioridade por risco sanitário e abandono.\n\n•\n\nGOIÁS · 33"
+          },
+          {
+            "id": "goias-para-quem-faz-34",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nEste programa também terá uma carteira complementar. A ordem de execução dependerá de diagnóstico,\nviabilidade e orçamento, e cada proposta só será contratada com responsável, linha de base e meta.\n\nComeço Certo\nA gestante de Goiás em situação de vulnerabilidade social entrará no amparo social já na gravidez e sairá da\nprimeira consulta sabendo em que maternidade vai ganhar o bebê. No bairro, uma roda quinzenal de\ngestantes, com a mesma turma do início ao fim e um psicólogo conduzindo, vai acolher e ensinar o que\nninguém nasce sabendo. A menina que engravidar não perderá a escola: matrícula preservada, horário\najustado e busca ativa se ela deixar de aparecer. Visitas em casa acompanharão o desenvolvimento até os\ntrês anos, o enxoval chegará antes do parto, e quem frequenta a roda terá prioridade na vaga de creche. O\nobjetivo deste projeto é oferecer a gestante todas as condições necessárias para que ocorra a manutenção\nda gestação até o fim, protegendo a vida daquele que ainda não nasceu.\n\nPrimeira infância por inteiro\nIntegrar gestação, saúde, assistência, creche e proteção nos primeiros seis anos, com busca ativa de famílias\nvulneráveis e acompanhamento de marcos do desenvolvimento. Cada família terá orientação simples sobre\nbenefícios e serviços disponíveis. O Estado apoiará municípios com equipes e dados, sem criar cadastro\nparalelo. Pré-natal, vacinação, desenvolvimento e acesso à creche serão medidos nas famílias\nacompanhadas.\n\nFamília acolhedora em vez de abrigo\nMunicípios terão apoio para ampliar o acolhimento familiar temporário de crianças afastadas de casa por\ndecisão judicial. Famílias serão selecionadas, formadas e acompanhadas, com auxílio transparente. O\nobjetivo é reduzir permanência institucional e preservar vínculos quando seguro.\n\nEnvelhecer com proteção\nA fiscalização de instituições de longa permanência será reforçada, junto com prevenção de golpes, atenção\ndomiciliar e convivência para idosos. Um canal simples permitirá denunciar violência e abandono, com fluxo\npara assistência, saúde, polícia e justiça. O Estado apoiará municípios na formação de cuidadores e oferta\nregional de centros-dia.\n\nPessoa com deficiência com autonomia\nFortalecer o CRER como referência estadual de reabilitação e levar sua retaguarda ao interior, com centros\nregionais de reabilitação, tecnologia assistiva e orientação para acesso a escola, trabalho e benefícios.\nAvaliações já realizadas serão reaproveitadas quando a lei permitir, reduzindo peregrinação. O Estado\npublicará acessibilidade dos próprios serviços e cumprimento de cotas. Serão medidos tempo para\nreabilitação, equipamentos entregues, inclusão escolar e inserção no trabalho.\n\nGOIÁS · 34"
+          },
+          {
+            "id": "goias-para-quem-faz-35",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nComida na mesa e produção local\nAprimorar compra pública de agricultores familiares para escolas, hospitais e equipamentos sociais, com\ncardápio, logística e pagamento previsíveis. Cozinhas comunitárias e bancos de alimentos poderão atuar em\nrede com municípios e organizações. O programa unirá segurança alimentar e renda rural.\n\nBem-estar animal com responsabilidade\nApoiar municípios para castração, vacinação, identificação, atendimento básico e manejo ético de animais\nabandonados. Protetores cadastrados receberão capacitação e acesso transparente às vagas, sem\ntransferência informal de responsabilidade pública. Campanhas enfrentarão abandono e maus-tratos.\nCastrações realizadas, adoções responsáveis e a redução de ninhadas nas ruas medirão o avanço.\n\nGOIÁS · 35"
+          },
+          {
+            "id": "goias-para-quem-faz-36",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n2\n\nPLANO DE GOVERNO 2027-2030\n\nDESENVOLVIMENTO QUE FICA\nO que o Estado ajuda a construir e permanece: infraestrutura, redes essenciais e cidades fortes.\n\nPROGRAMA 5\n\nMobilidade e Infraestrutura que Funciona\nInfraestrutura boa não é apenas obra nova. É ponte inspecionada, estrada com manutenção,\nsinalização visível, ônibus que passa no horário, trajeto que não rouba horas do dia e projeto que\nnão para por falta de estudo. O Estado vai trocar a lógica do remendo pela manutenção programada\ne preparar corredores que reduzam acidente, perda de produção, congestionamento e custo de\ntransporte. Cuidar do que existe não significa deixar de fazer obra nova. Significa garantir que cada\nnova obra responda a uma necessidade real, tenha dinheiro para ser concluída e continue\nfuncionando depois da inauguração.\nO QUE PRECISA FUNCIONAR\n\nQuem viaja ou transporta produção conhecerá a condição da via. Obras começarão com projeto, licença,\nfonte de dinheiro e custo de manutenção definidos.\n\nManutenção, mobilidade e obras\n•\n\nMapear a condição de rodovias, pontes, sinalização, contratos e obras paradas, com prioridade técnica e\natualização pública.\n\n•\n\nCriar o sistema Goiás Responde Rápido para vias estaduais com foco na resolução de problemas, como\nsurgimento de buracos, erosão, estrutura em ponte e risco de acidente: comunicação, vistoria, sinalização e\nsolução acompanhada.\n\n•\n\nSeparar o orçamento de conservação do orçamento de expansão, evitando abandonar trecho existente para\nanunciar obra nova.\n\n•\n\nPreparar a Plataforma Multimodal de Anápolis e conexões ferroviárias, aeroportuárias e rodoviárias com\ndemanda, governança e etapas realistas.\nApoiar estradas vicinais e pontes municipais por meio de convênios realizados com os municípios, desde que\ncom padrão de engenharia, medição, manutenção e prestação de contas.\n\n•\n•\n\nPlanejar novos corredores de ônibus, terminais, segurança viária e informação ao passageiro nas Regiões\nMetropolitanas de Goiânia e entorno do Distrito Federal.\n\nGOIÁS · 36"
+          },
+          {
+            "id": "goias-para-quem-faz-37",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nA carteira complementar de projetos abaixo será priorizada pelo diagnóstico de cada região e pela\ncapacidade de execução. Antes de contratar, cada proposta receberá responsável, cronograma e meta.\n\nEstrada estadual com manutenção previsível\nA malha estadual será classificada por condição, tráfego, risco e importância produtiva, com calendário\npúblico de manutenção por trecho. Contratos terão nível de serviço, fotografia, georreferenciamento e\nconsequência por atraso. Emergências receberão triagem própria. A população acompanhará o\nplanejamento, previsão e conclusão. O padrão será cobrado por quilômetros em condição adequada, tempo\nde resposta e reincidência do defeito.\n\nEstrada da roça em parceria\nProjeto e apoio técnico ajudarão os municípios a recuperar estradas vicinais, pontes e bueiros usados por\ntransporte escolar, produção e acesso à saúde. A prefeitura poderá executar com equipe própria, mediante\nplano e prestação simplificada. A prioridade combinará população atendida e escoamento.\n\nPrograma de Recuperação de Rodovias e Urbanização de Vicinais\nO programa vai recuperar as rodovias estaduais e melhorar as estradas vicinais, com pavimentação e\ninfraestrutura onde fizer diferença para a segurança e para a produção. As vicinais serão recuperadas em\nparceria com os municípios, priorizando os trechos usados por transporte escolar, produção e acesso à saúde.\n\nPonto seguro para caminhoneiro\nPontos de parada com banheiro, chuveiro, água, iluminação e segurança serão implantados nas principais\nrotas, por parceria e concessão quando cabível. A escolha dos locais seguirá o fluxo e a distância segura.\nOperação e manutenção estarão definidas antes da obra.\n\nAeroportos regionais com função definida\nAvaliar aeródromos do interior por demanda de passageiros, saúde, turismo, agronegócio e logística,\npriorizando segurança e operação antes de novas obras. Em parceria com o município, cada aeroporto\napoiado terá plano de uso, responsável e custo de manutenção. Incentivo a voo dependerá de desempenho\ne prazo.\n\nPlataforma logística de Anápolis destravada\nReorganizar governança, licenças, acessos e modelo de ocupação da plataforma logística de Anápolis, com\ncalendário público de decisões. O projeto será conectado à ferrovia, rodovias, aeroporto e distrito industrial,\natraindo operadores e transformação de carga. Serão publicados áreas disponíveis, investimentos\ncontratados, empregos, movimentação e pendências sob responsabilidade de cada órgão.\n\nGOIÁS · 37"
+          },
+          {
+            "id": "goias-para-quem-faz-38",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nTransporte metropolitano com conta aberta\nIntegrar planejamento de linhas, terminais e corredores das Regiões Metropolitanas de Goiânia e entorno\ndo Distrito Federal, publicando custo, subsídio, qualidade e cumprimento de viagens. Bilhetagem e dados\napoiarão redes mais simples e menor espera. Toda mudança relevante terá avaliação do usuário. Tempo de\nviagem, lotação e custo por passageiro serão os termômetros principais.\n\nMeia Passagem do Entorno\nSegundo estudos, cerca de 150 mil pessoas trafegam de Goiás para o Distrito Federal por meio do transporte\npúblico todos os dias. As tarifas de transporte vão de cerca de R$ 5,00 a R$ 12,00 por trecho. Quem vive no\nEntorno paga uma das passagens mais caras do país e ficou fora do passe livre estadual. O Estado construirá,\ncom os entes responsáveis, o desenho legal para subsidiar o passageiro, começando por quem estuda e\ntrabalha, sem depender de mudança na tarifa federal. Prevemos uma queda no trânsito dessas pessoas a\npartir do momento que as condições no entorno representem oportunidades reais para a população\nresidente. O programa impactará cerca 26 milhões por mês dos cofres públicos.\n\nTrânsito que poupa vidas\nConcentrar engenharia, fiscalização e educação nos trechos com mortes e feridos graves das rodovias\nestaduais, usando dados de saúde e segurança. Intervenções rápidas, como sinalização, iluminação e\ntravessias, precederão obras caras quando forem suficientes. Municípios receberão apoio técnico.\n\nObra pública que não vira esqueleto\nNenhuma grande obra começará sem projeto executivo, licença, fonte de recurso, responsável por operar e\nplano de manutenção. Obras paradas serão inventariadas e classificadas entre concluir, adaptar ou encerrar.\nO andamento físico e financeiro de cada obra será informado com clareza. A prioridade será terminar o que\nentrega serviço antes de anunciar novo equipamento sem custeio.\n\nGOIÁS · 38"
+          },
+          {
+            "id": "goias-para-quem-faz-39",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 6\n\nEnergia, Água e Conectividade\nCasa, escola, hospital, lavoura e indústria dependem de três redes que já não podem falhar: energia,\nágua e conectividade. Boa parte dessas entregas envolve concessões, regulação federal ou\nmunicípios. Goiás conta com uma das piores distribuidoras de energia do Brasil, o que afasta\ninvestimentos e geração de oportunidades no nosso estado. O papel do Estado é planejar antes do\ngargalo, cobrar contrato, coordenar investimento e atuar diretamente onde tiver competência.\nO RESULTADO ESPERADO\n\nAs regiões terão informação sobre capacidade e investimento. O cidadão poderá acompanhar melhoria de\nágua e conectividade, e o investidor saberá onde há solução prevista para energia e conexão.\n\nEnergia, água e conexão\n•\n\nPublicar painel de qualidade e capacidade de energia, reunindo distribuidora, regulação, municípios e setores\nprodutivos para cobrar prazo e antecipar demanda.\n\n•\n\nPriorizar energia trifásica e conexão de empreendimentos em áreas de demanda comprovada, dentro das\ncompetências do Estado e dos contratos vigentes.\n\n•\n\nPlanejar água por bacia e território, juntando abastecimento, produção, reservação, redução de perdas,\nproteção de manancial e resposta a seca.\nMedir velocidade, disponibilidade, latência e tempo de reparo da internet em escolas, unidades de saúde e\ndemais serviços estaduais, ampliando soluções por fibra, rádio, satélite e compartilhamento de infraestrutura.\n\n•\n•\n•\n•\n\nEstimular geração distribuída, biogás, biometano e eficiência energética quando reduzirem custo e/ou\ngerarem receitas adicionais para o produtor, emissão e pressão sobre a rede com viabilidade comprovada.\nFortalecer prevenção a incêndios, recuperação de nascentes, gestão de resíduos e adaptação a seca, enchente\ne calor extremo, com mapa de risco e regra ambiental previsível.\nExigir que obras estaduais em área de risco considerem drenagem, temperatura, disponibilidade de água,\nincêndio e custo de manutenção ao longo da vida útil.\n\nGOIÁS · 39"
+          },
+          {
+            "id": "goias-para-quem-faz-40",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nCompletam o programa as iniciativas a seguir, executadas conforme diagnóstico, orçamento e capacidade\nde entrega, com responsável, linha de base e meta definidos antes da contratação.\n\nEnergia firme para produzir\nUma mesa permanente reunirá distribuidora, reguladores, municípios e setor produtivo para atacar\ninterrupções, demora de ligação e falta de capacidade em áreas de expansão. Um mapa público mostrará\ngargalos e cronograma de reforço, respeitando competências regulatórias. Serão medidas duração e\nfrequência das interrupções, prazo de conexão e empreendimentos liberados após melhoria da rede.\n\nSolar que reduz conta pública\nInstalar geração solar e eficiência energética em prédios estaduais onde o retorno econômico for\ncomprovado, por contratação baseada em desempenho, e quando possível em parceria com instituições\nprivadas. A economia financiará expansão e manutenção, com medição aberta. Hospitais e serviços\nessenciais terão análise de continuidade e armazenamento quando viável.\n\nBiogás e biometano com resíduo virando renda\nApoiar projetos que transformem dejetos animais, resíduos agroindustriais e lixo orgânico em biogás,\nbiometano, energia e biofertilizante. O Estado articulará licenciamento, conexão, pesquisa, crédito e\ncontratos, priorizando arranjos regionais. Apoio dependerá de balanço ambiental e destino seguro do\ndigestato.\n\nÁgua segura na zona rural\nExpandir soluções adequadas para comunidades rurais, assentamentos e pequenos povoados: poços onde\nhouver segurança, captação de chuva, tratamento, reservação e gestão comunitária. Diagnóstico\nhidrogeológico e qualidade da água orientarão cada solução. Operação e manutenção serão previstas desde\no início.\n\nMunicípio preparado para seca\nCada região terá plano de segurança hídrica com cenários de estiagem, níveis de alerta, obras prioritárias e\nregras de contingência. Abastecimento humano terá proteção explícita, junto à produção e aos ecossistemas.\nDados de reservatórios, chuva e consumo apoiarão decisão antecipada.\n\nSaneamento de pequenas localidades\nApoiar municípios e prestadores na implantação de soluções descentralizadas de esgoto e resíduos onde\nredes convencionais não forem viáveis. Projetos-padrão e assistência técnica reduzirão custo. O modelo\ndeverá definir quem opera e cobra antes da obra.\n\nGOIÁS · 40"
+          },
+          {
+            "id": "goias-para-quem-faz-41",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nConectividade que chega e permanece\nMapear localidades, escolas, unidades de saúde e áreas produtivas sem conexão adequada, combinando\nfibra, rádio e outras tecnologias pelo custo e pela qualidade. Contratos terão velocidade, disponibilidade e\nreparo medidos. O Estado usará sua demanda como âncora para ampliar cobertura e oferta de fibra ótica.\n\nEspaço público de acesso digital\nPontos regionais de acesso digital vão oferecer internet, computador, apoio para serviços, formação e\ntrabalho remoto em prédios públicos aproveitáveis. Atendimento assistido garantirá acesso a quem não\ndomina tecnologia ou tem deficiência. Municípios e parceiros poderão operar o espaço mediante padrão.\nUsuários frequentes, serviços concluídos e cursos realizados medirão cada espaço.\n\nGOIÁS · 41"
+          },
+          {
+            "id": "goias-para-quem-faz-42",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 7\n\nGoverno nas Dez Regiões\nGoiânia não pode concentrar todo o governo do Estado. É preciso fazer com que o governo seja\nmais próximo das pessoas, chegando a pelo menos 10 regiões. Cada região combina população,\nprodução, distância e serviço de modo diferente. A presença regional não será feita com novos\nprédios sem função. Será organizada por equipe que resolve, carteira curta de prioridades e\nencontro regular com os municípios.\nO QUE MUDA EM CADA REGIÃO\n\nCada região terá prioridades definidas com os municípios e um núcleo do governo responsável por fazê-las\nandar.\n\nPresença que resolve\n•\n\nInstalar dez núcleos de coordenação correspondentes às regiões oficiais de planejamento, aproveitando\nestrutura existente sempre que possível.\n\n•\n\nDesenvolver planejamento anual de metas e entregas com até três projetos prioritários, escolhidos por\nnecessidade, impacto, maturidade e equilíbrio territorial.\n\n•\n\nUnir regularização, moradia, transporte, saneamento e segurança nos territórios urbanos que crescem mais\nrápido.\nApoiar turismo de natureza, cultura, fé, gastronomia e águas quando houver produto, acesso, qualificação,\nproteção do patrimônio, calendário e estratégia de venda.\n\n•\n•\n•\n\nDescentralizar editais, circuitos culturais, esporte, lazer e economia criativa, com calendário anual e acesso\nreal para artistas, atletas e municípios do interior.\nRecuperar, junto com as prefeituras, espaços de convivência, esporte, feira e cultura onde a falta de lazer e\nuso seguro do bairro for problema comprovado.\n\nGOIÁS · 42"
+          },
+          {
+            "id": "goias-para-quem-faz-43",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nAlém do núcleo do programa, haverá uma carteira de propostas complementares. Cada uma só avança com\ndiagnóstico, viabilidade confirmada, responsável, linha de base e meta.\n\nBanco regional de projetos\nUma carteira permanente reunirá projetos municipais e regionais com estágio, custo, licença, fonte possível\ne impacto esperado. Equipes de engenharia e captação ajudarão a transformar ideia em projeto apto a\nreceber recurso. A seleção seguirá critérios publicados. Projetos preparados e recursos efetivamente\ncaptados serão o teste do banco.\n\nAgenda anual de cada região\nRealizar pactuação anual com municípios, setor produtivo e sociedade para selecionar poucos compromissos\nregionais, com responsável, orçamento e prazo.\n\nServiço itinerante com calendário\nAmpliar e garantir a rotina de atendimento de documentação, saúde, emprego, defesa do consumidor e\norientação a municípios sem estrutura permanente, em calendário publicado. A rota seguirá demanda e\ndistância, nunca o calendário político. O cidadão poderá agendar quando possível. Atendimentos resolvidos\nde primeira, sem exigir que a pessoa volte outra vez, serão o principal indicador.\n\nDados regionais para decidir\nPublicar painel simples de emprego, renda, saúde, educação, segurança, infraestrutura e ambiente para cada\nregião. A base terá fonte, atualização e comparação temporal, evitando números sem contexto. Prefeituras\ne sociedade poderão baixar os dados.\n\nCompras públicas com fornecedor regional\nOrientar pequenos negócios e cooperativas para participar de compras estaduais, dividir lotes quando\ntecnicamente adequado e divulgar calendário de contratação. Não haverá preferência ilegal, mas redução\nde barreiras de informação e escala. A prestação de contas mostrará concorrentes, vencedores, origem dos\nfornecedores, economia e cumprimento dos contratos.\n\nUniversidade e escola técnica ligadas à região\nPactuar com UEG, institutos, Sistema S e redes de ensino uma agenda de formação e pesquisa baseada nas\ncadeias e problemas de cada território. Cursos serão revistos de acordo com o emprego gerado e a demanda\npública. Matrículas, conclusão e inserção profissional serão acompanhadas curso a curso.\n\nGOIÁS · 43"
+          },
+          {
+            "id": "goias-para-quem-faz-44",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n3\n\nPLANO DE GOVERNO 2027-2030\n\nPROSPERIDADE QUE CHEGA EM CASA\nO que a pessoa conquista: trabalho, renda, autonomia e oportunidade perto de casa.\n\nPROGRAMA 8\n\nTrabalho que Melhora a Renda\nGoiás tem muito trabalho, mas nem todo trabalho oferece salário justo e futuro. Há curso que\ntermina sem contratação, empresa que não encontra profissional e jovem que precisa deixar sua\ncidade para construir a sua carreira e melhorar de vida. A qualificação pública passará a ser\nplanejada a partir de vagas de trabalho demandadas pela iniciativa privada, cadeias produtivas e\nsalários reais de cada região.\nO QUE VALE COMO RESULTADO\n\nQuem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e\nacompanhamento para entrar, permanecer e avançar no trabalho. Jovens e adultos sem experiência terão\numa porta real de entrada, sem depender de indicação pessoal.\n\nDa formação ao trabalho\n•\n\nCriar mapa regional de vagas, salários e profissões em falta, atualizado com empresas, escolas e\ntrabalhadores.\n\n•\n\nContratar cursos com metas de conclusão, aprendizagem e inserção. Parte do pagamento dependerá do\nresultado, com ajuste para participantes que enfrentam maiores barreiras.\nUnir escolas técnicas, UEG, universidades, Sistema S e empregadores em trilhas curtas ou longas, conforme a\nprofissão exigir.\n\n•\n•\n•\n\nArticular aprendizagem, estágio, seleção e formação em serviço para a primeira oportunidade, ampliando as\nvagas do próprio Estado e cobrando porta de entrada nas empresas apoiadas por política pública.\nGarantir, no Curso com Vaga, que turma ligada a profissão tenha empregador participante, processo seletivo\nou prática supervisionada, evitando curso sem ponte para o trabalho.\n\n•\n\nCriar a CNH do Trabalho: além da habilitação social que o Estado já oferece, custear as categorias profissionais\nde moto, caminhão e ônibus, com turmas abertas a partir de vagas combinadas com transportadoras,\nindústrias e produtores rurais. Terá acesso ao benefício os usuários inscritos em programas sociais do governo.\n\n•\n\nCriar o Emprego do Lado de Casa: polos de trabalho e serviços nas cidades médias e pequenas, combinando\ninternet, área produtiva, formação e atração de empresas, para aproximar oportunidade de onde as pessoas\nvivem.\n\n•\n\nCriar estratégia específica para o Entorno do Distrito Federal, combinando formação, instalação de empresas\ne trabalho remoto para reduzir a dependência de deslocamento diário a Brasília.\n\n•\n\nOferecer orientação para currículo, seleção e planejamento de carreira.\n\nGOIÁS · 44"
+          },
+          {
+            "id": "goias-para-quem-faz-45",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nAs propostas a seguir ampliam a entrega do programa. Serão priorizadas conforme diagnóstico e orçamento,\ne nenhuma será contratada sem responsável, linha de base e meta.\n\nO emprego que paga\nGoiás é o 7º estado do país em população com curso superior e o 14º em salário formal. Este compromisso\nataca essa distância por três caminhos. O Estado publicará a cada trimestre o salário médio de admissão por\nregião e por setor, medindo o emprego também pelo que ele paga, e não só pela quantidade de vagas. Os\napoios estaduais a novos investimentos incluirão compromissos de remuneração compatíveis com a\nrealidade de cada microrregião, acompanhados publicamente. E a qualificação será orientada para as\nocupações que pagam melhor em cada território.\n\nPrimeiro Salário\nO Primeiro Salário apoiará a primeira contratação pelo empregador: o Estado assumirá meio salário mínimo\nnos primeiros seis meses do jovem sem experiência, com formação durante o contrato e acompanhamento\ndepois dele. A porta de entrada deixará de depender de indicação.\n\nRecomeço depois dos 40\nTrabalhadores maduros terão trilhas rápidas de atualização, ligadas a vagas reais, reconhecimento de\nexperiência e intermediação ativa. Empresas beneficiadas pelo Estado serão estimuladas a adotar\nrecrutamento sem discriminação etária. Crédito orientado poderá apoiar atividade autônoma viável. O\nresultado será medido por entrevistas, contratações, permanência e renda.\n\nTrabalho de fora, morando em Goiás\nCombinar conectividade, espaços compartilhados, endereço empresarial facilitado e formação para atrair\ntrabalho remoto e prestação de serviços de outros mercados. Cidades médias poderão apresentar qualidade\nde vida e custo competitivo. A ação apoiará profissionais e pequenos negócios, sem prometer vínculo.\nContratos, faturamento vindo de fora e empregos mantidos no interior mostrarão o resultado.\n\nIA para trabalhar melhor\nEm parceria com instituições, ofertar formação prática em ferramentas digitais e inteligência artificial para\ntrabalhadores, autônomos e pequenos negócios, com exercícios da profissão e orientação sobre riscos. A\ntrilha será diferente para comércio, agro, serviços, indústria e administração. Parceiros acompanharão\naplicação no trabalho. Conclusão do curso e ganho real de produtividade valerão mais que o número de\ninscritos.\n\nGOIÁS · 45"
+          },
+          {
+            "id": "goias-para-quem-faz-46",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPessoa com deficiência acompanhada no emprego\nUm serviço de apoio à inclusão vai aproximar candidato e empresa, adaptar o posto e acompanhar as\nprimeiras semanas de contratação. O serviço atuará com qualificação, tecnologia assistiva e orientação às\nequipes, sem substituir obrigações legais. Contratações efetivas e permanência no emprego serão\npublicadas, junto com as adaptações realizadas.\n\nMulher empreendedora com mercado\nIntegrar capacitação, formalização, crédito orientado, compras públicas e canais de venda para mulheres que\nsustentam o próprio negócio. A prioridade será melhorar margem, gestão e acesso a clientes, não apenas\nabrir CNPJ. Redes de mentoria e cuidado infantil poderão apoiar permanência.\n\nCooperativa pronta para vender\nApoiar cooperativas de produção, reciclagem, agricultura, artesanato e serviços em governança, qualidade,\nlogística e contratos. Diagnóstico definirá o apoio e metas de autonomia, evitando dependência permanente.\nCompras públicas e empresas âncora poderão abrir mercado. Vendas, renda distribuída e novos clientes\nmostrarão a autonomia de cada cooperativa.\n\nPrimeira Renda\nO Primeira Renda vai ajudar quem quer começar o próprio negócio e ainda não tem nada: capacitação,\nincentivo para a compra de equipamentos e matéria-prima e crédito sem juros, com regra e fonte definidas\nantes do lançamento. A diferença para o Empreende Goiás está no momento da vida: o Primeira Renda\natende quem está começando do zero; o Empreende Goiás, quem já tem um negócio e quer crescer.\n\nHUB de Inovação e Criatividade\nO HUB de Inovação e Criatividade será um centro de formação, qualificação e fomento para jovens e adultos\nque queiram trabalhar e empreender nas novas profissões e na economia criativa, incluindo as atividades\nque usam inteligência artificial. O espaço vai unir cursos práticos, orientação para transformar habilidade em\nrenda e conexão com empresas e editais.\n\nGOIÁS · 46"
+          },
+          {
+            "id": "goias-para-quem-faz-47",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 9\n\nGoiás Mais Simples\nQuem abre uma pequena empresa coloca dinheiro, tempo e nome em risco. Não pode depender\nde informação diferente em cada balcão nem esperar sem prazo. Simplificar não é retirar proteção\nsanitária, ambiental ou trabalhista. É fazer a exigência combinar com o risco e dar uma resposta\nprevisível a quem quer produzir dentro da lei.\nO QUE MUDA PARA QUEM EMPREENDE\n\nAbrir, regularizar e manter um negócio de baixo risco será mais rápido. Pelo Goiás Mais Simples, a pessoa\nsaberá quais documentos entregar, quanto tempo o Estado levará e por que um pedido foi negado.\n\nMenos tempo e incerteza\n•\n•\n•\n•\n\nImplantar o Goiás Mais Simples: integrar cadastros e licenças estaduais em uma porta empresarial, com\nexigência por nível de risco e uma lista única de documentos.\nDar prazo público a cada autorização estadual e permitir aprovação automática apenas nos casos em que a\nlei e o baixo risco autorizarem.\nFirmar adesão com prefeituras para abertura de baixo risco em até 48 horas, preservando fiscalização\nposterior e responsabilidade do empreendedor.\nReunir no Empreende Goiás o crédito responsável, a garantia e a orientação financeira para MEI, autônomo\ne pequena empresa, medindo sobrevivência, emprego e inadimplência.\n\nGOIÁS · 47"
+          },
+          {
+            "id": "goias-para-quem-faz-48",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nO programa terá também estas iniciativas complementares, executadas conforme diagnóstico, viabilidade e\norçamento. A contratação exigirá responsável, linha de base e meta definidos.\n\nLicença conforme o risco\nRevisar procedimentos para separar atividade de baixo, médio e alto risco, reduzindo exigência onde ela não\nprotege ninguém e concentrando análise no que realmente importa. Regras, documentos e prazos serão\npublicados. A simplificação não reduzirá controle ambiental, sanitário ou urbano necessário. Serão medidos\ntempo, retrabalho, estoque de processos e conformidade após a licença.\n\nAgiliza Goiás\nO Agiliza Goiás vai simplificar processos, reduzir burocracias e acelerar licenciamentos ambientais e\nautorizações para quem quer investir, produzir e gerar emprego. A análise será proporcional ao risco da\natividade: o que é simples anda rápido, e a fiscalização se concentra onde o risco é real.\n\nUma informação, uma vez\nIntegrar cadastros estaduais e aceitar documento já disponível ao poder público quando a lei permitir.\nEmpresa e cidadão não serão obrigados a reapresentar repetidamente a mesma certidão. Cada integração\nterá base legal, segurança e registro de acesso.\n\nFiscalização que orienta quem quer acertar\nAdotar abordagem orientadora para primeira irregularidade de baixo risco e facilmente corrigível,\npreservando autuação imediata em fraude, reincidência ou risco à vida e ao ambiente.\n\nDívida negociada com regra clara\nOferecer canais permanentes de regularização de débitos estaduais, com simulação transparente e\ntratamento proporcional à capacidade de pagamento, dentro do que a lei permite. Negociação será ligada à\nretomada de atividade, sem premiar inadimplência recorrente.\n\nAmbiente de teste para inovação\nUm ambiente regulatório experimental vai permitir testar soluções em mobilidade, agro, energia, saúde e\nserviços, com prazo, usuários protegidos e critérios de saída. O teste não será atalho para descumprir lei,\nmas forma controlada de aprender antes de regular.\n\nGOIÁS · 48"
+          },
+          {
+            "id": "goias-para-quem-faz-49",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 10\n\nAgro, Indústria, Serviços e Inovação com Valor em Goiás\nGoiás produz muito e pode transformar mais. Quando grão, carne, leite, minério ou conhecimento\nsaem sem processamento, parte do emprego qualificado e da renda fica em outro lugar. O Estado\nvai conectar agro, indústria, mineração responsável, pesquisa, comércio, tecnologia, turismo e\nserviços para que mais valor permaneça nas cidades goianas.\nO GANHO PARA GOIÁS\n\nA produção crescerá com mais transformação local, emprego melhor, mercado para pequenos produtores\ne uso responsável da água, do solo e dos incentivos públicos.\n\nProduzir mais valor aqui\n•\n•\n\n•\n\nEscolher cadeias de valor de acordo com a vocação da região e reunir as condições de infraestrutura como\nestrada, energia, qualificação, pesquisa, crédito e acesso a mercado em um único planejamento.\nAtrair empresas de processamento de alimentos, proteína, biocombustíveis, fármacos e equipamentos e\navançar, nos minerais críticos e nas terras raras, da extração para separação, refino, ligas, componentes,\naplicações e reciclagem onde houver viabilidade ambiental, energética, logística e industrial.\nFortalecer assistência técnica, cooperativismo, rastreabilidade, inspeção e compra pública competitiva para\nagricultura familiar e pequeno produtor.\n\n•\n\nConectar Fapeg, universidades, institutos e empresas a problemas de produtividade, automação, inteligência\nartificial, clima, água, saúde e novos produtos. Atraindo instituições pesquisa presentes em outros estados e\npaíses.\n\n•\n\nFortalecer a UEG como rede de formação e pesquisa aplicada no interior, com cursos e laboratórios ligados\nàs vocações regionais, avaliação de permanência estudantil e parceria com municípios e empresas.\n\n•\n\nEm parcerias com instituições, ajudar pequenas e médias empresas e produtores a adotar tecnologia\ncomprovada, com diagnóstico, assistência e medição do ganho de produtividade.\n\n•\n\nUsar a infraestrutura estadual de inteligência artificial para extensão tecnológica, formação e desafios\nempresariais nas dez regiões, medindo produtividade, emprego, renda e qualidade do serviço.\n\n•\n\nDesenvolver fornecedores e trabalhadores goianos para a cadeia de terras raras e minerais críticos, com\ncursos antes das contratações, compras locais abertas e parceria para projetos industriais demonstradores.\nLigar bioinsumos, biogás, biometano, biofertilizantes e aproveitamento de resíduos em uma agenda de\nredução de custo, autonomia produtiva e nova renda para o campo.\n\n•\n•\n\n•\n•\n\nTratar o incentivo fiscal como parceria de resultados: o Estado oferece condições para investir, e a empresa\ntransforma a oportunidade em investimento, emprego, melhores salários, inovação e desenvolvimento\nregional.\nPreparar empresas e municípios para a transição da reforma tributária, preservando competitividade por\ninfraestrutura, talento, inovação, logística e segurança jurídica.\nConstruir, com comunidades Kalunga, quilombolas, indígenas e demais povos tradicionais, ações de\nregularização, água, energia, conectividade, economia criativa, produção, turismo comunitário, saúde e\neducação, respeitando consulta, território e modo de vida.\nGOIÁS · 49"
+          },
+          {
+            "id": "goias-para-quem-faz-50",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nA carteira abaixo complementa os compromissos centrais. A prioridade seguirá o diagnóstico e a capacidade\nde execução, com responsável, linha de base e meta antes de cada contratação.\n\nApoio ao Pequeno Produtor Rural\nO pequeno produtor terá acesso aos serviços de tratores e máquinas agrícolas em parceria com os\nmunicípios, para preparar a terra, plantar e colher na hora certa. A prioridade será de quem nunca foi\natendido e da agricultura familiar. É apoio para produzir mais e transformar o trabalho da roça em renda.\n\nAgroindústria perto da produção\nUnidades de processamento de alimentos, leite, carnes, frutas e grãos serão atraídas para as regiões\nprodutoras, com infraestrutura e licenciamento previsíveis. Incentivo dependerá de investimento, emprego,\ncompras locais e desempenho.\n\nBioinsumo feito em Goiás\nConectar pesquisa, registro, validação em campo e produção de bioinsumos, respeitando competência\nfederal e segurança agronômica. Pequenos e médios produtores terão acesso a demonstrações e assistência\ntécnica. O Estado apoiará laboratórios e empresas onde houver viabilidade. A medição incluirá produtos\ntestados, área atendida, redução de custo e empresas instaladas.\n\nAgricultura de precisão acessível\nCooperativas e produtores terão extensão tecnológica para adotar sensoriamento, gestão, irrigação,\nmáquinas e inteligência artificial quando o retorno econômico compensar. Diagnóstico virá antes da compra,\nevitando equipamento sem uso. Dados do produtor serão protegidos.\n\nMedicamentos, saúde e biotecnologia\nEstruturar agenda de atração e desenvolvimento para fármacos, dispositivos médicos, diagnóstico,\nbiotecnologia e serviços de saúde, articulando universidades, hospitais e empresas. Apoio público exigirá\ninvestimento, qualificação e inovação verificáveis.\n\nEconomia circular que gera negócio\nApoiar cadeias de reciclagem, reparo, remanufatura e aproveitamento de resíduos industriais, mineração e\nagropecuários. Municípios, cooperativas e empresas poderão formar arranjos regionais com rastreabilidade.\nIncentivos dependerão de resultado ambiental e econômico.\n\nMineração com fornecedor e transparência\nTodo projeto mineral apoiado pelo Estado apresentará plano de qualificação, fornecedores, água,\nrecuperação, fechamento e diálogo territorial, respeitando licenciamento e competências. Municípios\nreceberão apoio para planejar receitas e diversificar a economia.\n\nGOIÁS · 50"
+          },
+          {
+            "id": "goias-para-quem-faz-51",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nTerras raras além da extração\nBuscar investimento e parceria tecnológica para separação, refino, ligas, componentes, aplicações e\nreciclagem de terras raras e minerais críticos quando houver viabilidade. Formação começará antes da\noperação, e empresas goianas serão preparadas para fornecer.\n\nIndústria de baixo carbono competitiva\nApoiar eficiência energética, combustível renovável, reaproveitamento de calor e medição de emissões em\nindústrias, com foco na redução de custo e acesso a mercados. Pequenas empresas poderão receber\ndiagnóstico compartilhado. Benefício público exigirá ganho comprovado.\n\nGOIÁS · 51"
+          },
+          {
+            "id": "goias-para-quem-faz-52",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\n4\n\nPLANO DE GOVERNO 2027-2030\n\nGOVERNO QUE ENTREGA\nComo o Estado trabalha: prazo, resultado aberto, decisão regional e conta em ordem.\n\nPROGRAMA 11\n\nServiço e Projeto com Prazo\nO cidadão não precisará conhecer o organograma do governo para conseguir um direito. Precisa\nsaber onde entrar, o que levar, quanto tempo esperar e a quem cobrar. Tecnologia servirá para\nreduzir trabalho repetido e liberar equipes para resolver casos. Quem não tem internet ou facilidade\ndigital continuará tendo atendimento humano.\nO COMPROMISSO DO ATENDIMENTO\n\nOs principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo\natraso. A pessoa poderá começar em um canal e continuar em outro sem contar tudo de novo.\n\nAtendimento simples e com prazo\n•\n\nNo primeiro ano, selecionar pelo menos 50 serviços de maior volume, urgência ou impacto em direitos e\npublicar a carta com documentos, prazo, canal, responsável e caminho de reclamação.\n\n•\n\nIntegrar portal, aplicativo, telefone e atendimento presencial em um só caminho de atendimento, com apoio\npara quem não domina tecnologia. É a modernização de todos os serviços do Vapt-Vupt e a integração entre\nos órgãos do Estado, reduzindo etapas e prazos. Cada solicitação terá protocolo único: pelo celular, telefone\nou atendimento presencial, a pessoa poderá consultar a etapa, o prazo e o caminho de correção quando\nhouver atraso.\n\n•\n\nFirmar acordo de resultado entre governador e secretários, ligado aos doze programas, ao orçamento e à\navaliação trimestral.\nAbrir dados de filas, obras, contratos e metas em formato simples e reutilizável, protegendo informação\npessoal e segredo legal.\n\n•\n•\n\nCapacitar e reconhecer servidores por qualidade, solução, economia e respeito ao usuário, sem premiar\napenas volume.\n\n•\n\nReforçar segurança digital, continuidade de sistemas e resposta a incidentes para que serviço eletrônico não\nvire novo risco ao cidadão.\nRevisar cada caminho de atendimento antes de digitalizar, eliminando documento que o próprio governo já\npossui e exigência que não tenha base legal.\n\n•\n•\n\nCriar o Escritório Estadual de Projetos, vinculado diretamente ao governador, para apoiar a concepção, a\nimplantação e a conclusão dos projetos do governo.\n\nGOIÁS · 52"
+          },
+          {
+            "id": "goias-para-quem-faz-53",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nEstas propostas completam o programa e serão priorizadas conforme diagnóstico, orçamento e capacidade\nde execução. Cada uma terá responsável, linha de base e meta antes da contratação.\n\nServiço organizado por momento de vida\nReunir orientações e etapas de eventos como nascimento, abertura de negócio, perda de documento,\ndeficiência, falecimento e aposentadoria, evitando que a pessoa descubra cada órgão sozinha. A integração\ncomeçará pelos eventos mais frequentes.\n\nProtocolo que mostra onde está\nTodo pedido selecionado receberá número, responsável institucional, prazo e um histórico de movimentação\nque qualquer pessoa entende. O cidadão será avisado quando faltar informação e quando houver decisão.\nDados protegidos não serão expostos.\n\nCanal acessível para todos\nGarantir atendimento presencial, telefônico e digital com recursos de acessibilidade, linguagem simples e\napoio a quem não domina tecnologia. A digitalização não fechará a porta física onde ela ainda é necessária.\n\nOuvidoria que acompanha até o fim\nA ouvidoria deixará de apenas encaminhar manifestações e acompanhará prazos, reincidências e qualidade\nda resposta. Problemas repetidos gerarão recomendação de melhoria. O cidadão verá andamento e\nconclusão.\n\nServidor preparado para resolver\nA formação dos servidores será prática, com atendimento, dados, processos, acessibilidade e uso\nresponsável de inteligência artificial, ligada às necessidades de cada órgão. Chefias terão metas de melhoria\ne equipes participarão do redesenho.\n\nPagamento público no prazo\nMonitorar o prazo entre aceite da entrega e pagamento a fornecedores, especialmente pequenos negócios\ne entidades prestadoras de serviço. Pendências terão motivo e responsável.\n\nEscritório Estadual de Projetos\nO Escritório Estadual de Projetos será a área de organização e gestão dos projetos do governo, vinculada\ndiretamente ao governador, promovendo a integração entre os órgãos, a resolução de gargalos e o\nacompanhamento de cada etapa, da concepção à entrega.\n\nGOIÁS · 53"
+          },
+          {
+            "id": "goias-para-quem-faz-54",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPROGRAMA 12\n\nMunicípio Parceiro e Contas em Ordem\nA prefeitura será tratada como parceira, não como pedinte. Não pode gastar meses batendo em\nportas diferentes para tirar um projeto do papel. Também não é correto começar programa ou obra\nsem dinheiro para manter. O Estado será parceiro técnico dos municípios, usará critérios públicos e\nprotegerá a capacidade de investir que Goiás reconquistou.\nO QUE MUDA PARA OS MUNICÍPIOS\n\nMunicípios encontrarão apoio para preparar e executar projetos. A população saberá por que cada\nprioridade foi escolhida.\n\nParceria com responsabilidade\n•\n•\n•\n•\n•\n\nO mesmo Escritório Estadual de Projetos apoiará as prefeituras em engenharia, licenciamento, convênio,\ncaptação de recursos e modelagem de parcerias.\nManter banco de projetos prontos antes de abrir recurso, com prioridade por impacto, maturidade,\ncofinanciamento e equilíbrio regional.\nOrganizar uma mesa única de relação com prefeituras e atendimento nos dez núcleos regionais, reduzindo\nbalcões e decisões sem critério.\nApoiar os municípios em seus processos para gerar compras íntegras, fiscalização, controle interno e\ntransparência.\nCriar unidade de apoio aos municípios para a transição da reforma tributária acompanhando o IBS,\nprotegendo receitas, orientando o redesenho dos instrumentos de desenvolvimento dentro da nova regra.\n\nGOIÁS · 54"
+          },
+          {
+            "id": "goias-para-quem-faz-55",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPropostas complementares\nPor fim, o programa contará com iniciativas complementares, priorizadas pelo diagnóstico e pelo orçamento\ndisponível. Antes da contratação, cada proposta receberá responsável, linha de base e meta.\n\nPrefeitura com projeto pronto\nOferecer apoio técnico regional para estudos, projetos, orçamento, licença e captação de recursos,\npriorizando municípios com menor capacidade. O Estado não escolherá obra no lugar da comunidade, mas\najudará a transformar prioridade em proposta executável.\n\nTransferência com critério e prestação simples\nPublicar critérios, calendário e resultado das transferências voluntárias, com prestação proporcional ao risco\ne valor. Municípios terão orientação antes de errar. O controle continuará rigoroso sobre objeto e resultado.\n\nManutenção antes da nova obra\nApoiar inventário municipal de escolas, postos, pontes, máquinas e outros ativos para planejar manutenção\npreventiva. Convênios poderão financiar recuperação quando houver operação e contrapartida definidas.\nEquipamento funcionando e custo evitado valem mais que inauguração nova.\n\nDados municipais sem retrabalho\nIntegrar informações já enviadas ao Estado e oferecer painéis para que prefeituras acompanhem convênios,\nindicadores e obrigações.\n\nReceita própria sem aumentar imposto\nApoiar modernização de cadastro, cobrança administrativa, nota fiscal e gestão patrimonial para ampliar\njustiça fiscal e reduzir inadimplência, sem elevar alíquota automaticamente. A proteção de dados e o\natendimento ao contribuinte serão obrigatórios.\n\nDefesa civil regional\nPlanos de contingência, alertas, mapeamento de risco e estrutura compartilhada contra incêndios,\nenchentes, seca e acidentes receberão apoio estadual. Simulados e responsabilidades serão definidos antes\nda emergência.\n\nGOIÁS · 55"
+          },
+          {
+            "id": "goias-para-quem-faz-56",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n4 · AGENDAS QUE ATRAVESSAM O GOVERNO\n\nCinco compromissos presentes nos doze programas\nAlguns temas não cabem em uma única secretaria. Por isso, ciência, cultura, clima, inclusão e\nvalorização do servidor serão responsabilidades de todo o governo, com regras que aparecem no\norçamento, nos contratos e na prestação de contas.\n\nCiência, tecnologia e inteligência artificial\n•\n\nPesquisa pública partirá de problema de Goiás, terá parceiro capaz de usar o resultado e mostrará se a solução\nchegou à prática.\n\n•\n\nPequenas empresas, produtores, cooperativas, escolas, municípios e serviços públicos receberão apoio para\nadotar tecnologias eficientes.\n\n•\n\nFormação em inteligência artificial será ligada a vagas, produtividade, empreendedorismo e profissões em\ntransformação.\n\n•\n\nSistemas automatizados que afetem direitos terão avaliação de risco, proteção de dados, teste de erro,\nregistro das decisões e revisão humana.\n\nCompromisso. Os doze programas terão usos de dados, ciência e tecnologia, e as dez regiões terão acesso\norganizado à formação e à extensão tecnológica.\n\nCultura, esporte, lazer e turismo\n•\n\nEditais terão calendário conhecido, acesso simples e abrangente para todo o estado, sem escolher artista ou\nentidade por preferência política.\n\n•\n\nEsporte escolar, iniciação, paradesporto e alto rendimento serão articulados com saúde, educação e\nprevenção da violência.\n\n•\n\nRotas de fé, natureza, águas, gastronomia, história e cultura serão promovidas quando houver acesso,\nacolhimento, qualificação e proteção do patrimônio.\n\nCompromisso. As dez regiões terão calendário anual apoiado pelo Estado, com execução informada por\nmunicípio e indicadores de público e renda gerada.\n\nCerrado, água e adaptação ao clima\n•\n\nSegurança hídrica reunirá abastecimento humano, produção, redução de perdas, recuperação de nascente e\nregra de uso em período crítico.\n\n•\n\nObra, escola, hospital e estrada em área de risco terão plano para seca, calor, incêndio, enchente e\ninterrupção de serviço.\n\nCompromisso. Todo município classificado em risco alto ou muito alto pela Defesa Civil terá plano de\ncontingência atualizado com apoio estadual.\n\nGOIÁS · 56"
+          },
+          {
+            "id": "goias-para-quem-faz-57",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nAcesso sem discriminação e sem constrangimento\n•\n\nTodo serviço terá protocolo de respeito, acessibilidade e encaminhamento, independentemente de origem,\ncondição econômica, raça, sexo, idade, deficiência, religião ou orientação sexual.\n\n•\n\nMulheres, crianças, idosos, pessoas com deficiência e comunidades tradicionais que sofrerem violência terão\ndados protegidos.\n\n•\n\nCanal digital nunca será a única porta quando a pessoa precisar de atendimento humano ou recurso de\nacessibilidade.\n\nCompromisso. Os órgãos de atendimento direto terão plano de acessibilidade, protocolo, treinamento e\ncanal de correção.\n\nServidor respeitado e preparado\n•\n\nLotação partirá do serviço que falta, com atenção ao interior e permanência prevista no edital quando a lei\npermitir.\n\n•\n\nFormação estará ligada à meta real do órgão; saúde e segurança do trabalho serão acompanhadas, não\ntratadas apenas depois do afastamento.\n\n•\n\nCarreira e remuneração serão discutidas em mesa permanente, com impacto fiscal, regra clara e tratamento\nigual para situações iguais.\n\nCompromisso. O servidor público terá atenção, formação e remuneração com regra clara e tratamento igual\npara todos.\n\nGOIÁS · 57"
+          },
+          {
+            "id": "goias-para-quem-faz-58",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n5 · AGENDA TERRITORIAL\n\nDez regiões, um só Goiás\nAs prioridades abaixo são compromissos iniciais para orientar o trabalho regional. Nos cem\nprimeiros dias, cada núcleo vai confirmar o diagnóstico com dados, municípios e usuários. A escuta\npoderá mudar a ordem e o desenho da solução, mas não servirá para transformar toda demanda\nem promessa. Cada região terá até três projetos centrais por ano e metas de acesso a serviços.\nREGRA COMUM\n\nProjeto regional só entra no contrato anual quando tiver problema comprovado, responsável, custo, fonte,\nprazo e forma de medir.\n\nREGIÃO\n1\n\nREGIÃO\n2\n\nREGIÃO\n3\n\nMetropolitana de Goiânia\nFazer a metrópole funcionar como rede, não como cidades isoladas.\n\nCentro Goiano\nAproveitar a posição de Anápolis e do eixo central para gerar valor e distribuir oportunidade.\n\nNorte Goiano\nReduzir distância e transformar recursos locais em renda que fica na região.\n\nGOIÁS · 58"
+          },
+          {
+            "id": "goias-para-quem-faz-59",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nREGIÃO\n4\n\nREGIÃO\n5\n\nREGIÃO\n6\n\nREGIÃO\n7\n\nPLANO DE GOVERNO 2027-2030\n\nNordeste Goiano\nGarantir acesso básico e criar renda sem perder patrimônio natural e cultural.\n\nEntorno do Distrito Federal\nFazer o Estado chegar a quem vive entre Goiás e Brasília todos os dias.\n\nSudeste Goiano · Estrada de Ferro\nUnir logística, indústria, mineração responsável, turismo e qualidade dos serviços.\n\nSul Goiano\nSustentar crescimento industrial e urbano com infraestrutura e gente qualificada.\n\nGOIÁS · 59"
+          },
+          {
+            "id": "goias-para-quem-faz-60",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nREGIÃO\n8\n\nREGIÃO\n9\n\nREGIÃO\n10\n\nPLANO DE GOVERNO 2027-2030\n\nSudoeste Goiano\nConverter a força do agro em renda, cidade organizada e oportunidade para ficar.\n\nOeste Goiano\nFortalecer pecuária e alimentos com corredor seguro e serviços regionais.\n\nNoroeste Goiano\nVencer grandes distâncias com infraestrutura, saúde e produção sustentável.\n\nGOIÁS · 60"
+          },
+          {
+            "id": "goias-para-quem-faz-61",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n6 · PRIMEIROS CEM DIAS\n\nComeçar organizando para entregar mais rápido\nOs cem primeiros dias não serão usados para anunciar tudo ao mesmo tempo. Servirão para tornar\no plano executável, abrir os dados que faltam e começar as urgências. Diagnóstico só terá valor\nquando vier acompanhado de decisão, responsável e data do próximo passo.\nNº\n\nFrente\n\nEntrega até o 100º dia\n\n1\n\nGovernança\n\nPublicar o decreto dos três eixos, do método de governo e dos doze programas, com\num responsável por entrega e reunião mensal de solução.\n\n2\n\nMinha Vez\n\nAuditar as filas e lançar a primeira etapa da consulta de situação dos pedidos,\ncomeçando pelos procedimentos de maior espera.\n\n3\n\nHospitais regionais\n\nRevisar capacidade, escala de equipe, leitos, insumos e contratos; aprovar plano de\ncorreção por macrorregião.\n\n4\n\nSegurança\n\nAtualizar o mapa de ocorrências por horário e território; revisar o atendimento digital\nde golpes; aprovar o protocolo Goiás sem Golpe Digital e a cobertura regional para\ncrime digital, violência contra a mulher, crime organizado e crime rural.\n\nGOIÁS · 61"
+          },
+          {
+            "id": "goias-para-quem-faz-62",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nPRIMEIROS CEM DIAS · CONTINUAÇÃO\n\nTirar os gargalos do caminho\nNº\n\nFrente\n\nEntrega até o 100º dia\n\n5\n\nTrabalho que Melhora a\nRenda\n\nPublicar o primeiro mapa regional de vagas, salários e profissões em falta; firmar\npacto de formação com empresas, Sistema S, escolas técnicas e UEG\n\n6\n\nServiço e empresa\n\nPublicar a lista inicial de pelo menos 50 serviços ao cidadão e os serviços empresariais\nprioritários, com documento, prazo, responsável e canal de cobrança.\n\n7\n\nInfraestrutura e mobilidade\n\nPublicar inventário de rodovias, pontes, obras paradas, pontos de risco e indicadores\nde viagens, frequência e lotação dos serviços metropolitanos com participação\nestadual.\n\n8\n\nDez regiões\n\nInstalar os núcleos regionais e realizar a primeira rodada com os 246 municípios\nusando o mesmo critério de seleção.\n\n9\n\nMoradia e creche\n\nAuditar filas e cadastros, definir municípios prioritários e publicar a regra de\ncofinanciamento de creche e a carteira de moradia, regularização e melhoria\nhabitacional.\n\n10\n\nClima e redes essenciais\n\nPublicar municípios de maior risco e o primeiro mapa de gargalos de água, esgoto,\nenergia e conectividade.\n\n11\n\nProjetos, reforma e contas\n\nAbrir banco de projetos, instalar a unidade da reforma tributária e publicar o espaço\nfiscal e o pré-custeio das prioridades.\n\n12\n\nTerras raras\n\nPublicar o diagnóstico e o mapa da cadeia de terras raras, com lacunas de formação,\nfornecedores, etapas industriais, impacto ambiental e oportunidades por região.\n\nPRIMEIRA PRESTAÇÃO DE CONTAS\n\nNo 100º dia, o governo publicará um relatório: o que começou, o que atrasou, por quê e qual é a nova\nprovidência.\n\nGOIÁS · 62"
+          },
+          {
+            "id": "goias-para-quem-faz-63",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\n7 · COMO O PLANO SERÁ EXECUTADO\n\nMeta, orçamento e responsável na mesma mesa\nPlano de governo vira realidade quando prioridade, dinheiro e equipe caminham juntos. Cada uma\ndas entregas públicas terá uma ficha de execução com responsável, etapa, custo, fonte, risco e\nindicador. O Plano Plurianual, as leis de diretrizes e os orçamentos anuais traduzirão as escolhas\ndentro da lei.\n\nCiclo de entrega\nTodo mês\n\nResolver gargalos\n\nGovernador, secretários e unidade de entrega examinam atraso e\ndecisão pendente.\n\nA cada trimestre\n\nPrestar contas\n\nO governo informa meta, gasto, etapa, região e correção\nnecessária.\n\nTodo ano\n\nRevisar prioridade\n\nOrçamento e contratos regionais são atualizados com base no que\nentregou resultado.\n\nNo fim do mandato\n\nAvaliar impacto\n\nBalanço compara 2026 e 2030 e deixa dados e projetos\norganizados para Goiás.\n\nDe onde virá o dinheiro\nCOMPROMISSO FISCAL\n\nEste plano não prevê a criação de novo imposto para financiá-lo. A execução será feita prioritariamente\ncom orçamento existente, revisão de gasto, captação, crédito responsável e parcerias de interesse público.\n•\n\nPrioridade no orçamento: concentrar recurso nos doze programas e reduzir gasto que não entrega resultado.\n\n•\n\nRevisão de contratos, compras e incentivos: economizar com competição, gestão e avaliação, sem romper\nobrigação legal.\nRecursos da União e crédito responsável: captar com projetos prontos e medir o valor executado em vez do\nvalor anunciado.\nParcerias responsáveis: dividir tarefas com municípios e usar concessões ou parceiros privados somente após\ncomparar custo, risco, prazo, qualidade e efeito sobre o usuário.\n\n•\n•\n•\n\nBenefício fiscal com responsabilidade: calcular impacto, definir prazo e contrapartida, publicar metas e avaliar\no resultado a cada ano.\n\nGOIÁS · 63"
+          },
+          {
+            "id": "goias-para-quem-faz-64",
+            "titulo": "GOIÁS PARA QUEM FAZ",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "GOIÁS PARA QUEM FAZ\n\nPLANO DE GOVERNO 2027-2030\n\nCONCLUSÃO\n\nGoiás para quem faz, Goiás que entrega\nA força de Goiás nasce do trabalho de sua gente. O papel do governo é proteger a família, abrir\ncaminho para quem produz e fazer o serviço público funcionar quando a população precisa.\nEste plano preserva a segurança, a aprendizagem, as contas organizadas e tudo o que comprovar resultado.\nAo mesmo tempo, enfrenta o que ainda pesa na vida real: a espera na saúde, a renda que não acompanha o\nesforço, a falta de creche e moradia, os deslocamentos longos, a infraestrutura incompleta e a distância entre\no governo e as regiões.\nNenhuma promessa será maior que a responsabilidade de cumprir. Cada prioridade terá número de partida,\nprazo, responsável, fonte de dinheiro e prestação de contas. O governo será firme no essencial, simples para\nquem trabalha e produz, parceiro dos municípios e presente nas dez regiões.\nNOSSO COMPROMISSO COM GOIÁS\n\nManter o que deu certo. Corrigir o que ficou para trás. Fazer o crescimento de Goiás chegar à casa de\nquem trabalha.\nGoiás para Quem Faz é o compromisso de transformar crescimento em cuidado, desenvolvimento em\noportunidade e trabalho em prosperidade que chega em casa.\n\nGOIÁS · 64"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ff5932f288fedf861d5fd0ebd7d5d11e135d444ce1ea7b2441bde6f0469f57fb"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "aec318bde05c49fe65ed014b175c83f39ff3c5913507bdb70518e659157ea154"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "8b064afd5fdb52184925878928aa48d128917c63e4daa3c9758331bbda44aaac"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0015ee6962c5667e4f3dd9532d34c6b342ee1b952e3d243ec9b67dd54c03ee7b"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "aefbb671e642729568b71465ffda02eb05e32cda006090761f425b74af1a24b2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "5471e36bb74e9d756ce413121a845502684b3bc0b339b4f4d827fcb75002a7b8"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "48f1f173a1587fd7b6c9e33f63d4d5b170043da8d7c0f65edfe513b73557088d"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "fcb285f8b29fff017bc78ef0936e0794b4a2f508634e108f2368b9e7a80415b6"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "085f21ac90d6b72416a712c5f77df4dbd8b35ec59c9d97435fc0e26462815afd"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "979d9106a702fa82165ffdf4c389d0ed25986fee8e6f1fcc163686fb3c287445"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "d51e0728fcb492988773a5750529a78d422f0804da283aab427a69f5f6b2fcab"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "f1506c91b883c3a9550b15ec569302e787a7707ca2f356412d3eab91a757e040"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "ecca7c7ef48c67a845e28c389e03fcb631c8c040962c7e5e72db7c9d63fa2fca"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "eec328b6b48906128ccd4236b5c73d32ff9059b4a9f3239f7bbb380add2b32e3"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d31a0dc2639cd55730c01e60834949473cdcc76e82c43af3ca32579521ffc560"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "47c6d9e9b8304337b65f3475ae16865363056a4a3c3d231c8484b684a7b9b8a0"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "1e433005bd865e7625ddff5add7e9965d150dfd2bc21450e7db5b6cf37f7cdee"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "e4a454b2c5bc7bac2069777f4f78c13ca0b0fe52c30e0c48eaf60b0d0d87f195"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "68e984b28c26b4a933ab33d0436cb921a9cc87af21808c0b50eae60c73dc5b84"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "7619f040687693e2d2884bb9bfbbfb27444e24b0bac4f19e18b7bb0c0dcd44c9"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "e0a3f352c2351f6b30b0dc02cd347b13831318fe88b62e8221859569283d1aa9"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "0c4256fc9f82c7e8e48a45fb710420d8f33bee41bd00ab051d27a9f66da94cc5"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "b53548d84547eff11cf41f65d88342f7e225a8e53361575340bca9df8d2fde63"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "3291972041118b8271c47e6815ce4ca092f553d8429b893505bc2d875817ae67"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "23237c3bb3032bd4f6f1f285faf101967a92b6a6d505cd412af3777928ee9b4a"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "e0487385906e2e64100c013618862305be55419635c6c3b0b3690111450847bf"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "c17479d58581afcccdbaaf072208ff6b64dcda9e1fa95d6e06a51525dcc3c454"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "9a98a7f0edd13379e7625aaa2434d642f3e148245b19e1b121e18eb22a6f5927"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "413f4c34d881751f47a10669b0a7cbfb359d46b17bbcaf580bdb4ed2ed30146e"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "ee86b0883abb72fc980dcb45b1808647addd7dc08f1900d65ddea929847e05cb"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c9fd38ba9fc9252865584f32d427c281639eed3ebb0aec56d2011c63a8ddf120"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "fa806f7a2f6af70eaf98b3b553289c28ef86958d2ff0ab0b999f2cd64e2e813d"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "7c63fcdf865b1e26096798a45dddf1d3e12f784b646f5ab0070bef9e1e1ad2ef"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "ae0dfc3c78d28c7e922d4384e8313eb250a5d0f4eba337162b24bea272b667d4"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "aceeab2de3e91563689c6c94982ffb31dd5f2f9e37a39088494111312563e0fa"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "f947a158c2713e7e95d769fb0e7584e92434da82495acbe8f496acfa6762cdaa"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "504991e42101a4d460f050937912c60c9037997038e08ca235c02c3c4473dcbe"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "92301b540793e805a12737184580c7a63a31807bc5d7ebd2ef138748fab8c976"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "010e89045472deab8afc54128055d09637dd3ed2aabda1de5fec9f2b2d5435b3"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "630125acb1c9917a015702cf88a7052fa8bf771969335054e72fdb44b5e0e6ab"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "1657e8e0b52ec223c9982f6fdbcbf14078583c8c2ed894e5b4e9c3ae7f0b783e"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "840471f78ec90cf421de96bda157763c762c5a2b66fde6e8cbad0925c8f29777"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "d50611f8db59718a230ff23adfc0a58c65ff2fc6b9fe5d12982695b43c3d5479"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "b781374ac59ec3cb9bbf25e460a7b0b1b9ce6a66e9c2629adb60647b21465559"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "784ef0070d865c5d1b49884184f51f375e9f0caa3012e7e5b0c6f6cb99aea6c7"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "90384d1157d4fb81696855bc1d4659c37ff720f5e43da39e8bdd7183e5489ed6"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "3282c1de2133a291900ecfdb7c56f62c7689742c6fae1ebf3b67ed0b0db2d73d"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "1b9501b5afd09967d35f37d75977ecaeeddb14ed4d3a226d8db6c37084f56bd5"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "264ab695d6b88b803752a1ae2bd8dd6d13c9b5163977428e426caea7a4d9cc5a"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "a4f091f7b64791af63c9e469171f0e3b5ecbf643bdd84805f82eaf4cc9ffab89"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "6976ab8625e661d20e8823d096dbb711cec84930a6b16a19ccce9fe70eb757c8"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "f955b01b084b3d7ffd46bd2693dd3c58fef7cfd6b4181b83433e4f587bda5cd1"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "b5bd03a21feca7bdbb106f4474cc7a826acfe2d6a91a6ba2e068db009e18baad"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "b4139106a9c3a953ccf536648f004c39c7bca2631b9eaf534f6badb9168976e4"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "0f679b11b54df379048960d0dd11a5feba2cb8d4e710f1a4414ac120260e6a00"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "436c2044536bcced3373d5f9730cc65defa865193a2a7fc542cdb4fc7341cb55"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "141e500310812ef8ddbf95cb3c74e9afda34dcd23123af25d1b33241a9d5c19a"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "7825a3ca003308f4b4566547bcbc31c9868bc608429fcc84ffc35b4a3ef71660"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "43cc14915a3ab1058c8d85a4ef3d6996d11eb87302c5c92c5942448604be4020"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "f70072c56d691211a6ac81d092e50672a0f915dbcde36d5307092e3cf221513b"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "d81d7bfa4b77993c14fa1033861e5c837f10aac11e76a1f60b85cac50d1d772b"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "846dd0ba5c878a0efd07fcaf406c7fbd9dd85773736a80d99f5cefffd525da75"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "1139ae720a09d68126dae5f601e54943745aca7bbe893c5a2b677a65aa7c0cfa"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "7d8b7e3f96d8cbea40c7d42b9287b6e87164be335b1cb9247c5ca8e2463b212b"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador. Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante. Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio. A população seguirá vivendo com ordem e liberdade. Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho. Quem viaja ou transporta produção conhecerá a condição da via. Os principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo atraso.",
+    "frases": [
+      {
+        "texto": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 16,
+            "trecho": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador."
+          }
+        ]
+      },
+      {
+        "texto": "Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 23,
+            "trecho": "Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante."
+          }
+        ]
+      },
+      {
+        "texto": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 26,
+            "trecho": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio."
+          }
+        ]
+      },
+      {
+        "texto": "A população seguirá vivendo com ordem e liberdade.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 29,
+            "trecho": "A população seguirá vivendo com ordem e liberdade."
+          }
+        ]
+      },
+      {
+        "texto": "Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 44,
+            "trecho": "Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho."
+          }
+        ]
+      },
+      {
+        "texto": "Quem viaja ou transporta produção conhecerá a condição da via.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 36,
+            "trecho": "Quem viaja ou transporta produção conhecerá a condição da via."
+          }
+        ]
+      },
+      {
+        "texto": "Os principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo atraso.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 52,
+            "trecho": "Os principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo atraso."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "estrutura-do-plano",
+        "titulo": "Estrutura do plano",
+        "descricao": "O documento apresenta três eixos, doze programas e sete prioridades.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 16,
+            "trecho": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador."
+          }
+        ]
+      },
+      {
+        "id": "saude-regulada",
+        "titulo": "Saúde regulada",
+        "descricao": "A proposta prevê acompanhamento da regulação estadual.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 23,
+            "trecho": "Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante."
+          }
+        ]
+      },
+      {
+        "id": "aprendizagem-estudantil",
+        "titulo": "Aprendizagem estudantil",
+        "descricao": "O programa educacional prevê acompanhamento da aprendizagem.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 26,
+            "trecho": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio."
+          }
+        ]
+      },
+      {
+        "id": "qualificacao-profissional",
+        "titulo": "Qualificação profissional",
+        "descricao": "A formação financiada pelo Estado será ligada a oportunidades de trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 44,
+            "trecho": "Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-viaria",
+        "titulo": "Infraestrutura viária",
+        "descricao": "O programa prevê informação sobre a condição das vias.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002551791:01",
+            "pagina": 36,
+            "trecho": "Quem viaja ou transporta produção conhecerá a condição da via."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:22:28.085Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:24:48.870Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Números três, doze e sete estão literalmente sustentados pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: a estrutura do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:1:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: regulação de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:2:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: educação/aprendizagem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:3:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Reproduz o texto do documento sem acréscimo de elogio ou crítica externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:4:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Única cláusula da afirmação é coberta integralmente pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: qualificação profissional."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:5:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: infraestrutura viária."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:6:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Única cláusula da afirmação é coberta integralmente pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: atendimento com prazo."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:frase:7:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel dos elementos citados no trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Números três, doze e sete estão literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: estrutura do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:estrutura-do-plano:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação são cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pelo trecho sobre acompanhamento da regulação estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: saúde/regulação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:saude-regulada:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "A única cláusula material (acompanhamento) está coberta pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:aprendizagem-estudantil:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula material (acompanhamento) está coberta pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: qualificação profissional."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:qualificacao-profissional:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula material (ligação com oportunidades) está coberta pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: infraestrutura viária."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002551791:tema:infraestrutura-viaria:documentos:GO:90002551791:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula material (informação sobre condição das vias) está coberta pelo trecho."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:GO:90002551791",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "GO:90002551791:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 47991,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1742,
+          "reasoning_output_tokens": 659
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26926,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22400,
+          "output_tokens_details": {
+            "thinking_tokens": 1219
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26926,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22400,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26926,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26926
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3528504
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "5394744edddbbc8a97cadc210f1a28ba21a2cd23b33f730a15e0e711fbafa2dd",
+    "extractedTextSha256": "3f8624001e4784c57c3b2d3d671617bbdf149c64cbd84a8219e5cd9e0c7d6abe",
+    "documentCount": 1,
+    "documentSetSha256": "c81642638a2f2128339d685a2d2bae9f5148b0c3aeda37ee08306eb43308ac5a",
+    "contentSha256": "9b7d720244a56a473b3dd78f99c6c6bb0c49b9c04dd271a9a9c966698915fd07"
+  }
+}

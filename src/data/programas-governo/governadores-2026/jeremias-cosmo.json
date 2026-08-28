@@ -1,0 +1,736 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PE",
+    "sqCandidato": "170002541258",
+    "slug": "jeremias-cosmo",
+    "nomeUrna": "PROFESSOR JEREMIAS DO BANCO",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026PE170002541258_01.pdf",
+    "arquivoNoPacote": "PE/2026PE170002541258_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PE:170002541258:01",
+      "fonte": {
+        "arquivoNome": "2026PE170002541258_01.pdf",
+        "arquivoNoPacote": "PE/2026PE170002541258_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "5b4ca82a021b96f92f4d600242265c5b4a53d7861e6c4a7c4eac9b9106a50527",
+        "extractedTextSha256": "fd350f10517755de66d659c27250af6c009df2c8826df37b3e5034d5080f61c1",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "partido-democrata-35",
+            "titulo": "PARTIDO DEMOCRATA 35",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PARTIDO DEMOCRATA 35\nPLANO DE GOVERNO 2027–2030\nJEREMIAS COSMO SILVA DOS SANTOS\nCandidato ao Governo do Estado de Pernambuco\nEleições 2026\n\nAPRESENTAÇÃO\nO presente Plano de Governo foi elaborado a partir da realidade econômica, social, cultural e\nambiental do Estado de Pernambuco, tendo como finalidade estabelecer diretrizes e\ncompromissos para uma gestão moderna, eficiente, transparente e voltada para as necessidades\nda população.\nNossa proposta de governo nasce do compromisso com o desenvolvimento humano, a\nvalorização das pessoas e a redução das desigualdades entre as diversas regiões do Estado.\nComo candidato oriundo do interior de Pernambuco, assumimos o compromisso de aproximar\no Governo Estadual de todos os municípios, democratizando as relações institucionais,\nfortalecendo o diálogo permanente com prefeitos, vereadores, lideranças comunitárias, setor\nprodutivo e toda a sociedade civil.\nNossa administração será fundamentada nos princípios da ética, eficiência, inovação,\ntransparência, responsabilidade fiscal, desenvolvimento sustentável e participação popular.\nOs principais eixos deste Plano de Governo são:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nModernização da gestão pública;\nSegurança pública baseada em inteligência e tecnologia;\nSaúde humanizada e eficiente;\nEducação transformadora;\nDesenvolvimento econômico sustentável;\nInclusão social;\nMobilidade urbana e rural;\nTransformação digital;\nValorização da cultura e do esporte;\nDesenvolvimento regional integrado."
+          },
+          {
+            "id": "saude",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nA saúde será tratada como prioridade absoluta do Governo.\nNossa gestão trabalhará para reduzir filas de atendimento, ampliar o acesso aos serviços\nespecializados, investir em tecnologia e fortalecer a prevenção de doenças.\nPretendemos construir um sistema de saúde mais eficiente, moderno e humanizado, garantindo\natendimento digno tanto aos pernambucanos quanto aos visitantes do Estado.\n\nPropostas\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nConstrução de um novo Hospital Evangélico para atendimento da população\npernambucana e dos turistas;\nImplantação de Hospital especializado no atendimento à pessoa idosa;\nInformatização completa da rede estadual de saúde;\nIntegração eletrônica dos prontuários médicos;\nAmpliação do uso da telemedicina;\nFortalecimento da atenção básica;\nAmpliação dos programas preventivos;\nPrioridade para investimentos em tecnologia médica;\nProgramas permanentes de promoção da qualidade de vida.\n\nEDUCAÇÃO\nA educação será o principal instrumento de transformação social e desenvolvimento\neconômico.\nNossa proposta busca formar cidadãos preparados para os desafios do século XXI, valorizando\nprofessores, fortalecendo o ensino técnico e incentivando inovação, ciência e\nempreendedorismo.\n\nPropostas\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nAmpliação e construção de Escolas Militares;\nRevisão do modelo de progressão automática, assegurando aprendizagem efetiva;\nValorização salarial e profissional dos professores;\nAmpliação do tempo destinado ao planejamento pedagógico;\nImplantação de programas de bonificação por desempenho;\nExpansão das Escolas Técnicas Estaduais;\nCriação do Instituto Estadual de Robótica e Inteligência Artificial;\nInserção do empreendedorismo na educação básica;\nPrograma Jovem Aprendiz em parceria com empresas;\nIncentivo às áreas de ciência, tecnologia e inovação.\n\n2"
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nA segurança pública será baseada em inteligência, tecnologia, valorização profissional e\nintegração das forças policiais.\nO objetivo é combater o crime organizado, reduzir os índices de violência e oferecer maior\nsensação de segurança à população.\n\nPropostas\n•\n•\n•\n•\n•\n•\n•\n\nContratação de novos policiais militares, civis e bombeiros;\nModernização dos equipamentos das forças de segurança;\nAmpliação do uso de drones, monitoramento eletrônico e inteligência artificial;\nRedução do estoque de inquéritos policiais e processos investigativos em até três\nanos;\nFortalecimento da Polícia Científica;\nAmpliação da presença policial em todas as regiões do Estado;\nImplantação do Programa Pindorama para integração tecnológica da segurança\npública.\n\nDESENVOLVIMENTO SOCIAL\nO Governo Estadual deve estar presente em todas as regiões de Pernambuco.\nNossa proposta é aproximar a administração estadual da população, promovendo inclusão\nsocial e fortalecimento dos municípios.\n\nPropostas\n•\n•\n•\n•\n\nImplantação do programa Governo Itinerante, realizando dois dias de governo por\nmês em cada região do Estado;\nFortalecimento da cooperação entre Estado e municípios;\nCriação de programas de apoio às famílias de pessoas com Transtorno do Espectro\nAutista (TEA);\nAmpliação das políticas públicas de inclusão social.\n\n3"
+          },
+          {
+            "id": "esporte-e-lazer",
+            "titulo": "ESPORTE E LAZER",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "ESPORTE E LAZER\nO esporte é instrumento de saúde, cidadania e inclusão.\n\nPropostas\n•\n•\n•\n•\n\nIncentivo a todas as modalidades esportivas;\nConstrução e recuperação de equipamentos esportivos;\nProgramas de incentivo ao esporte escolar;\nAmpliação das atividades esportivas para idosos e pessoas com deficiência.\n\nCULTURA\nA cultura será valorizada como patrimônio histórico e instrumento de desenvolvimento\neconômico.\n\nPropostas\n•\n•\n•\n•\n\nIncentivo às manifestações culturais em todas as regiões do Estado;\nFortalecimento dos artistas locais;\nDesenvolvimento do Programa Pindorama voltado para cultura e identidade regional;\nIncentivo ao turismo cultural.\n\nDESENVOLVIMENTO ECONÔMICO\nO desenvolvimento econômico deverá ocorrer de forma sustentável, promovendo geração de\nemprego, renda e oportunidades.\n\nPropostas\n•\n•\n•\n•\n•\n•\n\nEstudo para criação do Banco do Estado de Pernambuco;\nImplantação do Programa Pindorama para desenvolvimento regional;\nIncentivo à agricultura familiar e ao agronegócio;\nEstímulo à inovação tecnológica;\nApoio ao empreendedorismo;\nDesburocratização dos serviços públicos para atração de investimentos.\n\n4"
+          },
+          {
+            "id": "turismo",
+            "titulo": "TURISMO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO\nPernambuco possui enorme potencial turístico que deve ser explorado de forma sustentável.\n\nPropostas\n•\n•\n•\n•\n\nIncentivo ao turismo cultural, histórico, ecológico e religioso;\nDesenvolvimento da infraestrutura turística;\nAmpliação das opções de lazer para idosos;\nIntegração entre esporte, turismo e cultura.\n\nMOBILIDADE URBANA\nUma mobilidade eficiente melhora a qualidade de vida e impulsiona o desenvolvimento\neconômico.\n\nPropostas\n•\n•\n•\n•\n•\n\nIncentivo ao uso da bicicleta em todo o Estado;\nExpansão da malha cicloviária;\nModernização do transporte público;\nApoio ao transporte alternativo regulamentado;\nInvestimentos na mobilidade urbana e rural.\n\nMODERNIZAÇÃO DA GESTÃO\nO Governo será conduzido com eficiência, inovação e transparência.\n\nPropostas\n•\n•\n•\n•\n•\n\nDigitalização dos serviços públicos;\nUso intensivo de tecnologia em toda a administração;\nImplantação do Programa Pindorama para integração da gestão pública;\nSimplificação de processos administrativos;\nRedução da burocracia.\n\n5"
+          },
+          {
+            "id": "transformacao-digital",
+            "titulo": "TRANSFORMAÇÃO DIGITAL",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "TRANSFORMAÇÃO DIGITAL\nA tecnologia será utilizada como ferramenta para aproximar o Governo da população.\n\nPropostas\n•\n•\n•\n•\n\nImplantação do Governo Digital;\nExpansão dos serviços públicos eletrônicos;\nIntegração dos bancos de dados estaduais;\nAmpliação do Programa Pindorama como plataforma tecnológica do Estado.\n\nPLANEJAMENTO URBANO\nO crescimento das cidades deve ocorrer de forma organizada, sustentável e ambientalmente\nresponsável.\n\nPropostas\n•\n•\n•\n•\n\nIncentivo à redução da poluição urbana;\nPlanejamento regional integrado;\nAmpliação das áreas verdes;\nDesenvolvimento do Programa Pindorama para planejamento territorial.\n\nHABITAÇÃO\nA política habitacional buscará ampliar o acesso à moradia digna.\n\nPropostas\n•\n•\n•\n•\n\nEstudo para criação de linhas de financiamento habitacional por meio do futuro\nBanco do Estado;\nAmpliação das parcerias para construção de moradias populares;\nRegularização fundiária;\nImplantação do Programa Pindorama voltado ao desenvolvimento habitacional.\n\n6"
+          },
+          {
+            "id": "consideracoes-finais",
+            "titulo": "CONSIDERAÇÕES FINAIS",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "CONSIDERAÇÕES FINAIS\nEste Plano de Governo representa o compromisso de construir um Pernambuco mais moderno,\nseguro, próspero e inclusivo.\nNossa gestão buscará promover desenvolvimento econômico com responsabilidade social,\nfortalecer os serviços públicos, valorizar os servidores, incentivar a inovação e aproximar o\nGoverno da população.\nNosso compromisso é governar para todos os pernambucanos, respeitando as diferenças\nregionais, fortalecendo os municípios e promovendo oportunidades para que Pernambuco\nalcance um novo ciclo de crescimento, justiça social e desenvolvimento sustentável.\n\n7"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "c3e23ef4f299fe9664a89081a0f61f8a35e7f8be5d534588d80d639f8372f399"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "4a9e3e5e39d85971feece078bdd1b6f4a4ce4e215ee85e9bfe5ebf9f4614d2f0"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "25af1f8b6f7bd32102ab94afc69609a2a871951d8fed0060c0affad2ca53441d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "44e98ba91ffd0429665c7f448ca92e06f4ab14c4199da7085a5d906bd77141eb"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "917a1c1755afaac495345f1dd4d07d183fab66235533370fada927aee4998842"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "471419e5c9b9f73528052647752302851294054b8ab73d33945041c07f58aae0"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "ab7ecafe19c265af985ca37e9e0002cb1d4f9a659c651a730ae6b6eb145c3441"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano descreve a modernização da gestão pública pela digitalização dos serviços públicos como diretriz administrativa estadual. Na saúde, o programa prevê a informatização completa da rede estadual de saúde como medida de organização dos serviços. Ainda na saúde, a proposta prevê a ampliação do uso da telemedicina como diretriz específica do eixo de saúde. Na educação, o documento propõe a expansão das Escolas Técnicas Estaduais dentro das ações educacionais apresentadas no plano. Na segurança pública, o plano prevê a ampliação do uso de drones para apoiar as atividades das forças de segurança. Para a mobilidade urbana, o programa inclui a expansão da malha cicloviária como ação de transporte estadual. Na habitação, a proposta estabelece a regularização fundiária como medida da política habitacional apresentada no documento.",
+    "frases": [
+      {
+        "texto": "O plano descreve a modernização da gestão pública pela digitalização dos serviços públicos como diretriz administrativa estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 5,
+            "trecho": "Digitalização dos serviços públicos;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê a informatização completa da rede estadual de saúde como medida de organização dos serviços.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 2,
+            "trecho": "Informatização completa da rede estadual de saúde;"
+          }
+        ]
+      },
+      {
+        "texto": "Ainda na saúde, a proposta prevê a ampliação do uso da telemedicina como diretriz específica do eixo de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 2,
+            "trecho": "Ampliação do uso da telemedicina;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o documento propõe a expansão das Escolas Técnicas Estaduais dentro das ações educacionais apresentadas no plano.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 2,
+            "trecho": "Expansão das Escolas Técnicas Estaduais;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o plano prevê a ampliação do uso de drones para apoiar as atividades das forças de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 3,
+            "trecho": "Ampliação do uso de drones, monitoramento eletrônico e inteligência artificial;"
+          }
+        ]
+      },
+      {
+        "texto": "Para a mobilidade urbana, o programa inclui a expansão da malha cicloviária como ação de transporte estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 5,
+            "trecho": "Expansão da malha cicloviária;"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, a proposta estabelece a regularização fundiária como medida da política habitacional apresentada no documento.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 6,
+            "trecho": "Regularização fundiária;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-publica-digital",
+        "titulo": "Gestão pública digital",
+        "descricao": "O plano prevê a digitalização dos serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 5,
+            "trecho": "Digitalização dos serviços públicos;"
+          }
+        ]
+      },
+      {
+        "id": "informatizacao-da-saude",
+        "titulo": "Informatização da saúde",
+        "descricao": "O programa propõe a informatização completa da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 2,
+            "trecho": "Informatização completa da rede estadual de saúde;"
+          }
+        ]
+      },
+      {
+        "id": "escolas-tecnicas-estaduais",
+        "titulo": "Escolas técnicas estaduais",
+        "descricao": "O documento prevê a expansão das Escolas Técnicas Estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 2,
+            "trecho": "Expansão das Escolas Técnicas Estaduais;"
+          }
+        ]
+      },
+      {
+        "id": "drones-na-seguranca",
+        "titulo": "Drones na segurança",
+        "descricao": "O plano inclui a ampliação do uso de drones na segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 3,
+            "trecho": "Ampliação do uso de drones, monitoramento eletrônico e inteligência artificial;"
+          }
+        ]
+      },
+      {
+        "id": "malha-cicloviaria",
+        "titulo": "Malha cicloviária",
+        "descricao": "A proposta inclui a expansão da malha cicloviária.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002541258:01",
+            "pagina": 5,
+            "trecho": "Expansão da malha cicloviária;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:51:50.561Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:53:46.474Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 5 traz a seção 'MODERNIZAÇÃO DA GESTÃO' listando 'Digitalização dos serviços públicos;' como proposta, o que sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números, prazos ou percentuais na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente dentro do eixo de gestão pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave eleitoral e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:1:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 2, seção Saúde, lista literalmente essa proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há elementos numéricos na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:2:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 2, seção Saúde, lista literalmente 'Ampliação do uso da telemedicina;'."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:3:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 2, seção Educação, lista literalmente essa proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:4:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 3, seção Segurança Pública, cita a ampliação do uso de drones nesse contexto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:5:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 5, seção Mobilidade Urbana, lista literalmente essa proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de mobilidade urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:6:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 6, seção Habitação, lista literalmente essa proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:frase:7:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta entre claim, evidência e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:gestao-publica-digital:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta entre claim, evidência e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:informatizacao-da-saude:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta entre claim, evidência e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:escolas-tecnicas-estaduais:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta entre claim, evidência e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:drones-na-seguranca:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta entre claim, evidência e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002541258:tema:malha-cicloviaria:documentos:PE:170002541258:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula material."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PE:170002541258",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PE:170002541258:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 23133,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2790,
+          "reasoning_output_tokens": 1819
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 19620,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19081,
+          "output_tokens_details": {
+            "thinking_tokens": 383
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19620,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19081,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 19620,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 19620
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2848874
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "5b4ca82a021b96f92f4d600242265c5b4a53d7861e6c4a7c4eac9b9106a50527",
+    "extractedTextSha256": "fd350f10517755de66d659c27250af6c009df2c8826df37b3e5034d5080f61c1",
+    "documentCount": 1,
+    "documentSetSha256": "067da96e6eb7ee61f17954d0eaa5381311bdfa15e049bca6526118b9a829e7d1",
+    "contentSha256": "fd18a3be085db76107d12fb77f2da23b88f231c8b23a3f534b8b4b9e40c6e781"
+  }
+}

@@ -1,0 +1,1130 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RS",
+    "sqCandidato": "210002551508",
+    "slug": "juliana-brizola",
+    "nomeUrna": "JULIANA BRIZOLA",
+    "partido": "PDT",
+    "arquivoNome": "2026RS210002551508_01.pdf",
+    "arquivoNoPacote": "RS/2026RS210002551508_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RS:210002551508:01",
+      "fonte": {
+        "arquivoNome": "2026RS210002551508_01.pdf",
+        "arquivoNoPacote": "RS/2026RS210002551508_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a42d6e9cc872b3d8897a62d5d5e8844b8e401e034b931ccf0876f40c5ce7ed8a",
+        "extractedTextSha256": "03f8676dce6fa5a0b97bd1944aaa90fb069182763b8bb90117d6c75cd66f2e55",
+        "paginas": 38,
+        "secoes": [
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nPLANO DE GOVERNO\n\nJULIANA BRIZOLA\nE EDEGAR PRETTO\n2027 - 2030\n\nCOLIGAÇÃO COM O POVO: PDT – Federação Brasil da Esperança\n(PT, PCdoB e PV) – Federação PSOL – REDE – PSB – AVANTE\n\n01"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-2",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nMENSAGEM AO POVO DO RIO GRANDE\nApresentamos este Plano de Governo como o alicerce de um projeto comprometido com a\nretomada do protagonismo do Rio Grande do Sul. Sob a bandeira da união entre o Partido\nDemocrático Trabalhista (PDT), a Federação PT/PCdoB/PV, a Federação PSOL/Rede, o PSB\ne o AVANTE, constituímos uma ampla frente democrática, formada por oito partidos, com\no propósito de colocar o povo gaúcho no centro das decisões e devolver à política sua\nvocação essencial: servir às pessoas.\nA Coligação Com o Povo, liderada por Juliana Brizola e Edegar Pretto, nasce de um\ncompromisso histórico com o desenvolvimento sustentável, a justiça social e a reconstrução\nda capacidade do Estado de cuidar de sua gente e impulsionar o desenvolvimento do\nRio Grande do Sul. Vivemos um tempo que exige coragem para enfrentar os desafios,\nsensibilidade para ouvir a sociedade e, sobretudo, responsabilidade e capacidade de\ndecisão.\nA formação de um governo liderado por Juliana Brizola e Edegar Pretto no Estado, com Lula\ne Alckmin à frente do Governo Federal, permitirá construir um ambiente de cooperação\ninstitucional no tratamento de demandas centrais para o Rio Grande do Sul. Temas como\na reconstrução do Estado e o equacionamento da dívida com a União serão tratados de\nforma responsável, respeitosa e altiva, tendo como objetivo recuperar a capacidade de\ninvestimento do Rio Grande do Sul e assegurar as condições necessárias à retomada de\nseu desenvolvimento.\nAs mudanças climáticas, as desigualdades entre as regiões, os desafios sociais e a\nnecessidade de retomar o crescimento econômico com inclusão nos convocam a pensar e\nplanejar o futuro com solidariedade, diálogo e conhecimento técnico. É preciso reconstruir,\nnão apenas reproduzindo o passado ou enfrentando as urgências do presente — o que é\nnecessário —, mas também, e a um só tempo, preparando o Rio Grande do Sul para as\ntransformações das próximas décadas.\nEste Plano de Governo, portanto, não constitui mera formalidade eleitoral. Representa\num compromisso público, construído a muitas mãos, através do movimento Coração\nGaúcho, que ouviu contribuições de especialistas, movimentos sociais, técnicos, entidades\nda sociedade civil, lideranças, empresários, cidadãos e cidadãs de todas as regiões do\nEstado. Reúne diferentes experiências e visões em torno de um propósito comum: fazer\no Rio Grande voltar a ocupar o lugar de protagonismo que sua história, sua capacidade\nprodutiva e a força de seu povo lhe reservam.\nRegistramos nosso agradecimento a todas e todos que participaram da construção deste\nPlano de Governo. Especialistas, intelectuais, pesquisadores, profissionais das mais diversas\náreas, representantes de movimentos sociais e entidades da sociedade civil, lideranças\ncomunitárias, cidadãos e cidadãs dedicaram conhecimento, experiência, tempo e\ncompromisso a este trabalho coletivo. Cada contribuição, formulada a partir de diferentes\ntrajetórias e realidades do Rio Grande do Sul, ajudou a construir um programa que procura\ntraduzir não apenas as ideias da Coligação Com o Povo, mas também as necessidades, as\nesperanças e as aspirações da sociedade gaúcha.\nNossa proposta está organizada em quatro grandes áreas, concebidas de forma\nintegrada para responder às necessidades da população e aos desafios estratégicos\ndo desenvolvimento estadual: Área Social, Área de Infraestrutura, Cidades e Resiliência\n02"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-3",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nClimática, Área de Desenvolvimento Econômico Sustentável e Reindustrialização e Área\nde Gestão Pública Democrática, Soberania Popular e Finanças.\nEssas quatro dimensões formam uma única estratégia. Não haverá desenvolvimento\neconômico duradouro sem inclusão social; não haverá justiça social sem crescimento\ne geração de oportunidades; não haverá crescimento sustentável sem infraestrutura,\nciência, tecnologia e proteção ambiental; e nenhuma dessas transformações será possível\nsem um Estado eficiente, democrático, financeiramente responsável e capaz de planejar\no futuro.\nNosso Estado encerra um ciclo político de 12 anos marcado pela promessa de que a\nredução do papel do estado, as privatizações e a retirada de direitos do funcionalismo nos\nlevariam ao crescimento, e a verdade é que não se cumpriu o prometido; ao contrário, a\nLDO de 2027 prevê um déficit de R$ 4,8 bilhões, ao mesmo tempo em que não se aplicam\nos mínimos constitucionais em Saúde e Educação.\nO Rio Grande do Sul atravessou, nos últimos anos, uma das mais difíceis provações de\nsua história. As catástrofes climáticas deixaram marcas profundas em nossas cidades,\nna economia e, sobretudo, na vida de milhares de famílias. Mas também revelaram a\nextraordinária capacidade de solidariedade, trabalho e reconstrução do povo gaúcho.\nÉ dessa força que deve nascer um novo projeto para o Estado. Um projeto que não se\nlimite a administrar dificuldades, mas que seja capaz de abrir caminhos. Que reconheça\nos problemas acumulados, sem se conformar com eles. Que recupere a capacidade de\nplanejamento público, mobilize as forças produtivas, valorize quem trabalha e transforme\nconhecimento, inovação e investimento em desenvolvimento e qualidade de vida.\nHá, na história do Rio Grande, uma força que atravessa o tempo e se confunde com a\nprópria formação desta terra. É a força das mulheres que souberam resistir e recomeçar,\nenfrentar guerras e tempestades, atravessar fronteiras, sustentar famílias e comunidades\ne permanecer de pé quando tudo ao redor parece ruir. Mulheres que, em sua travessia,\naprenderam com a terra a perseverança e fizeram da coragem uma forma de liberdade.\nEssa força também anuncia o novo tempo que se pretende construir. Porque honrar a\nhistória do Rio Grande não significa apenas preservar aquilo que recebemos, mas ter\ncoragem para escrever as páginas que ainda faltam. É chegado o tempo de uma dessas\npáginas começar a ser escrita.\nO Rio Grande do Sul voltará a acreditar em sua própria capacidade de construir o futuro,\nporque este Estado sempre soube se levantar diante das adversidades, transformar\ndificuldades em coragem e fazer da esperança uma força de construção coletiva. Mas os\ngaúchos e as gaúchas não precisam se levantar sempre sozinhos. Precisam de um governo\npresente, que faça a sua parte, que cuide, incentive e dê as condições necessárias para\nque cada pessoa possa reconstruir sua vida e prosperar.\nÉ tempo de recuperar a confiança, reunir nossas forças e voltar a olhar para a frente. É\ntempo de fazer do desenvolvimento uma obra de todos, da justiça social um compromisso\npermanente e da reconstrução o ponto de partida para um novo ciclo da história gaúcha.\nÉ tempo de reunir coragem e esperança, tomar novamente as rédeas do nosso destino e\nabrir novos caminhos. Há momentos em que um povo honra sua história justamente tendo\na coragem de transformá-la. De olhar para tudo o que já fomos e acreditar em tudo o que\nainda podemos ser. É hora de construirmos, juntos, o Rio Grande que a gente merece.\n\nJuliana Brizola\n\nEdegar Pretto\n03"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-4",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nSumário\nMENSAGEM AO POVO DO RIO GRANDE\n\n02\n\n1\n\nDESENVOLVIMENTO SOCIAL, CIDADANIA E GARANTIA\nDE DIREITOS, PROTEÇÃO E BEM-ESTAR ANIMAL\n\n06\n\n1.1 - EDUCAÇÃO PÚBLICA, BÁSICA E EMANCIPADORA\n\n06\n\n1.2 - SAÚDE PÚBLICA, REGIONALIZAÇÃO DO SUS,\n\n07\n\nCOMPLEXO INDUSTRIAL DA SAÚDE\n1.3 - SEGURANÇA PÚBLICA, INTELIGÊNCIA POLICIAL\n\n08\n\nE PREVENÇÃO À VIOLÊNCIA\n1.4 - POLÍTICAS PARA AS MULHERES E ENFRENTAMENTO\n\n09\n\nÀS VIOLÊNCIAS DE GÊNERO\n1.5 - TRABALHO, EMPREGO, RENDA E VALORIZAÇÃO\n\n10\n\nDO MÍNIMO REGIONAL\n1.6 - ASSISTÊNCIA SOCIAL, COMBATE À FOME\n\n11\n\nE ERRADICAÇÃO DA MISÉRIA\n1.7 - DIREITOS HUMANOS\n\n12\n\n1.8 - HABITAÇÃO DE INTERESSE SOCIAL E REGULARIZAÇÃO\n\n13\n\nFUNDIÁRIA URBANA (REURB)\n1.9 - CULTURA, MEMÓRIA, PATRIMÔNIO E ECONOMIA CRIATIVA\n\n14\n\n1.10 - COMUNICAÇÃO SOCIAL PÚBLICA, TRANSPARÊNCIA\n\n14\n\nE COMBATE À DESINFORMAÇÃO\n1.11 - ESPORTE, PARADESPORTO, LAZER\n\n15\n\nE INTEGRAÇÃO COMUNITÁRIA\n1.12 - IGUALDADE RACIAL E AÇÕES AFIRMATIVAS\n\n16\n\n1.13 - DIVERSIDADE SEXUAL E CIDADANIA\n\n17\n\n1.14 - PRIMEIRA INFÂNCIA E ADOLESCÊNCIA\n\n18\n\n1.15 - DIREITOS E CUIDADO INTEGRAL À PESSOA IDOSA (60+)\n\n18\n\n1.16 - INCLUSÃO, ACESSIBILIDADE E DIREITOS DA\n\n19\n\nPESSOA COM DEFICIÊNCIA (PCD)\n1.17 - ECONOMIA SOLIDÁRIA, POPULAR E COOPERATIVISMO\n\n20\n\n1.18 - POLÍTICAS PÚBLICAS PARA AS JUVENTUDES\n\n21\n\nE PRIMEIRO EMPREGO\n1.19 - DIREITOS, PROTEÇÃO E BEM-ESTAR ANIMAL\n04\n\n21"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-5",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n2\n\nINFRAESTRUTURA, CIDADES\nE RESILIÊNCIA CLIMÁTICA\n\n23\n\n2.1 - TRANSPORTES, LOGÍSTICA INTERMODAL E CONCESSÕES\n\n23\n\n2.2 - ENERGIA, MATRIZ RENOVÁVEL E TRANSIÇÃO\n\n24\n\nENERGÉTICA JUSTA\n2.3 - MINERAÇÃO ESTRATÉGICA, AGROMINERAIS\n\n24\n\nE BENEFICIAMENTO LOCAL\n25\n\n2.4 - SANEAMENTO BÁSICO, RECURSOS\nHÍDRICOS E COMITÊS DE BACIA\n2.5 - MEIO AMBIENTE, TRANSIÇÃO ECOLÓGICA E\n\n26\n\nPROTEÇÃO DO BIOMA PAMPA E MATA ATLÂNTICA\n2.6 - DEFESA CIVIL E GESTÃO PREDITIVA DE RISCOS CLIMÁTICOS\n\n27\n\n2.7 - MOBILIDADE URBANA METROPOLITANA\n\n28\n\n3\n\nDESENVOLVIMENTO ECONÔMICO\nSUSTENTÁVEL E REINDUSTRIALIZAÇÃO\n\n29\n\n3.1 - AGRICULTURA FAMILIAR E ABASTECIMENTO ALIMENTAR\n\n29\n\n3.2 - AGROPECUÁRIA SUSTENTÁVEL\n\n29\n\n3.3 - COMÉRCIO, SERVIÇOS, ECONOMIA DO\nMAR E POLO EXPORTADOR DO MERCOSUL\n\n30\n\n3.4 - CIÊNCIA, TECNOLOGIA, INOVAÇÃO E SOBERANIA DIGITAL\n\n31\n\n3.5 - TURISMO SUSTENTÁVEL E ROTAS CULTURAIS\n\n32\n\n4\n\nGESTÃO PÚBLICA DEMOCRÁTICA,\nSOBERANIA POPULAR E FINANÇAS\n\n33\n\n4.1 - GESTÃO PÚBLICA, VALORIZAÇÃO DO SERVIDOR,\n\n33\n\nPLANEJAMENTO REGIONAL E PARTICIPAÇÃO SOCIAL\n4.2 - FINANÇAS PÚBLICAS\n\n33\n\n4.3 - BANCOS PÚBLICOS\n\n35\n\nCONCLUSÃO - UM NOVO CICLO DE DESENVOLVIMENTO\nPARA O RIO GRANDE DO SUL\n\n05\n\n36"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-6",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n1\n\nDESENVOLVIMENTO SOCIAL, CIDADANIA E GARANTIA\nDE DIREITOS, PROTEÇÃO E BEM-ESTAR ANIMAL\n\n1.1 - EDUCAÇÃO PÚBLICA, BÁSICA\nE EMANCIPADORA\n\ne fortalecer a escola pública gaúcha\ncomo espaço democrático, inclusivo e\nseguro, avançando na educação em\ntempo integral e articulando a qualidade\ndo ensino à formação cidadã, à inovação,\nà inclusão digital, à cultura e ao esporte,\npreparando as novas gerações para\nos desafios do mundo do trabalho e da\ntransição climática.\n\nDIAGNÓSTICO SITUACIONAL\nA educação pública no Rio Grande do Sul\nenfrenta uma crise estrutural prolongada.\nO modelo de privatização e de contenção\ndos gastos públicos adotado na última\ndécada contribuiu para a precarização da\ninfraestrutura escolar, o congelamento das\ncarreiras do magistério e o fechamento\nde turmas e estabelecimentos de\nensino, especialmente no meio rural\ne nas periferias urbanas. Ao mesmo\ntempo, a evasão escolar no Ensino Médio\npermanece em níveis preocupantes,\nenquanto a alfabetização na idade certa\nainda carece de uma política permanente\nde cooperação técnica e financeira entre o\nEstado e os municípios.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo implantará\ngradualmente os CIEPs, com educação\nem tempo integral, alimentação,\nreforço pedagógico, cultura, esporte,\ntecnologia e apoio socioemocional.\nSerá assegurado o cumprimento do\npiso constitucional da educação,\ndestinando recursos à recuperação da\ninfraestrutura e à modernização das\nescolas. Será restabelecida a gestão\ndemocrática das escolas, com autonomia\nda comunidade escolar, eleição de\ndiretores e fortalecimento dos Conselhos\nEscolares e Grêmios Estudantis. O Estado\nfirmará com os 497 municípios o Pacto\nGaúcho pela Alfabetização e Educação\nBásica, ampliará a EJA e a Busca Ativa\nEscolar, fortalecerá as escolas do campo,\ndas águas e das florestas e garantirá\ntransporte escolar público, gratuito e\nseguro aos estudantes da zona rural.\n\nInspirado no legado de Leonel Brizola\ne Darcy Ribeiro, a Coligação Com o\nPovo reafirma a educação pública\ncomo eixo central de seu projeto de\ndesenvolvimento para o Rio Grande do Sul.\nEsse compromisso tem raízes concretas.\nComo Deputada Estadual, Juliana Brizola\nfoi autora da Emenda à Constituição\nEstadual nº 62/2011, posteriormente\nregulamentada pela Lei Estadual nº\n14.461/2014, sancionada e implementada\npelo Governador Tarso Genro, que\nestabeleceu a expansão progressiva da\neducação em tempo integral na rede\npública estadual. A Coligação Com o\nPovo reafirma, assim, um compromisso\nhistórico do Trabalhismo: a educação não\né custo, mas o investimento estratégico\nmais importante para a redução das\ndesigualdades, a consolidação da\nsoberania e o desenvolvimento econômico\ne social. Nosso compromisso é reconstruir\n\nO governo reconstruirá as carreiras da\neducação, garantirá o Piso Nacional\ndo Magistério e realizará concursos\npúblicos, além de criar uma Rede\nGaúcha de Formação Docente\nContinuada e fortalecer a UERGS. As\nescolas técnicas serão reestruturadas\nna rede IERS – Institutos Estaduais de\nEducação Profissional, articuladas às\nvocações econômicas regionais e à\n\n06"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-7",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\ntransição ecológica. A rede estadual\navançará na conectividade universal,\ninclusão digital, educação especial e\neducação antirracista, incorporando\ntambém educação ambiental, prevenção\nde desastres e resiliência climática.\nAo mesmo tempo, serão ampliadas as\nSalas de Recursos Multifuncionais e os\nprofissionais de apoio, valorizadas as\ncomunidades tradicionais e assegurado o\nacesso às tecnologias com soberania de\ndados. Por fim, será elaborado um Plano\nEstadual de Educação Pública decenal em\nconsonância com o novo Plano Nacional\nde Educação, construído com participação\nda comunidade educacional e da\nsociedade civil.\n\nqualificados e fortalecimento da soberania\nsanitária, articulando desenvolvimento\neconômico e proteção social.\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo garantirá a\naplicação integral do piso constitucional\nde 12% da Receita Líquida de Impostos\ne Transferências (RLIT) em Ações e\nServiços Públicos de Saúde, assegurando\nregularidade dos repasses ao SUS\nestadual e aos municípios. A Atenção\nPrimária será fortalecida com ampliação\ndo financiamento da Estratégia Saúde\nda Família e incentivos à fixação de\nprofissionais em pequenos municípios\ne periferias. Será implementada uma\nforça tarefa estadual para zerar as filas\nde espera por cirurgias eletivas, exames\nde alta complexidade e consultas\nespecializadas, utilizando a capacidade\nociosa de hospitais comunitários,\nfilantrópicos e universitários, contratando\nturnos extras e implantando Unidades\nMóveis de Diagnósticos. A média e alta\ncomplexidade serão regionalizadas,\nfortalecendo hospitais-polo, UTIs e serviços\nespecializados no interior. Também serão\nfortalecidas as redes de saúde mental,\nmaterno-infantil e de atenção às pessoas\ncom Transtorno de Espectro Autista (TEA),\ncom expansão dos Centros de Atenção\nPsicossocial (CAPS) e qualificação do\natendimento.\n\n1.2 - SAÚDE PÚBLICA, REGIONALIZAÇÃO DO\nSUS, COMPLEXO INDUSTRIAL DA SAÚDE\nDIAGNÓSTICO SITUACIONAL\nO Sistema Único de Saúde (SUS) no Rio\nGrande do Sul enfrenta graves gargalos\ndecorrentes da descentralização\nincompleta e da insuficiência de\nfinanciamento, que sobrecarrega os\nmunicípios. A concentração de leitos\nde alta complexidade e de exames\nespecializados na Região Metropolitana\nobriga milhares de pacientes do interior a\npercorrer longas distâncias em busca de\natendimento, fenômeno conhecido como\n“ambulancioterapia”. Paralelamente, as\nfilas para cirurgias eletivas e consultas\ncom especialistas cresceram de\nforma expressiva, enquanto a Atenção\nPrimária à Saúde sofre com a ausência\nde cofinanciamento estadual regular e\nprevisível.\n\nO governo criará a Força Estadual de\nResposta Rápida do SUS, preparada para\nemergências sanitárias, epidemias e\ndesastres socioambientais e promoverá\na adaptação climática das unidades\nde saúde. A regulação será integrada e\ndigitalizada, com transparência das filas\ne implantação do Prontuário Eletrônico\nGaúcho Unificado. Serão interiorizadas as\nresidências médicas e multiprofissionais,\nmodernizados o SAMU 192 e o transporte\naeromédico público e regionalizados\nos serviços do LACEN, fortalecendo a\nvigilância sanitária e ambiental. As 18\nCoordenadorias Regionais de Saúde\n\nO nosso governo reafirma, assim, o\ncompromisso de reconstruir e fortalecer\no SUS no Rio Grande do Sul, garantindo\nacesso universal, equânime e oportuno\naos serviços de saúde. A política estadual\ntambém buscará fomentar o Complexo\nEconômico-Industrial da Saúde como\nvetor de inovação, geração de empregos\n07"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-8",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nserão reestruturadas como núcleos de\nplanejamento e apoio técnico do SUS,\nenquanto o poder de compra do Estado,\nem articulação com universidades e o\nsetor produtivo, será utilizado para atrair\nindústrias farmacêuticas, de equipamentos\nmédicos e biotecnologia.\n\num Centro Integrado de Inteligência de\nFronteira, articulando Polícia Civil, Brigada\nMilitar, Polícia Federal, Polícia Rodoviária\nFederal e forças dos países vizinhos no\ncombate ao tráfico de armas, munições e\ndrogas. A Polícia\nCivil contará com estrutura especializada\nno enfrentamento aos crimes cibernéticos,\nestelionatos virtuais, fraudes bancárias\ne golpes digitais, com capacidade de\ninvestigação e resposta rápida para\nbloqueio de contas fraudulentas. Nos\npresídios, serão ampliados os mecanismos\nde segurança e bloqueio tecnológico, com\nbloqueadores de sinais, scanners corporais\ne sistemas anti-drones, ampliando a\ncapacidade operacional da Polícia Penal,\nsua carreira e suas condições de trabalho.\nO Instituto-Geral de Perícias será valorizado\ne fortalecido para qualificar o conjunto da\nsegurança pública do estado.\n\n1.3 - SEGURANÇA PÚBLICA, INTELIGÊNCIA\nPOLICIAL E PREVENÇÃO À VIOLÊNCIA\nDIAGNÓSTICO SITUACIONAL\nA segurança pública no Rio Grande do Sul\nenfrenta desafios que exigem respostas\npermanentes, integradas e cada vez\nmais especializadas. Os homicídios\npermanecem concentrados sobretudo\nem territórios vulneráveis, enquanto\navançam o crime organizado e as facções\ncriminosas, os estelionatos e golpes digitais\ne persiste a violência contra as mulheres.\nUma atuação predominantemente\nostensiva e pontual mostra-se insuficiente\ndiante da complexidade dessas formas de\ncriminalidade e da necessidade de ampliar\na segurança da população. Soma-se a esse\ncenário a necessidade de potencializar\nos efetivos da Brigada Militar, Polícia Civil,\nInstituto-Geral de Perícias e Corpo de\nBombeiros Militar.\n\nA política de segurança também priorizará\na recomposição e valorização dos efetivos,\nmediante concursos públicos e atenção\npermanente à saúde dos servidores,\ninclusive com uma Rede Estadual de\nAtenção à Saúde Mental dos profissionais\nda segurança pública. Serão ampliadas a\nintegração operacional e tecnológica entre\nEstado e municípios, com fortalecimento\ndos Gabinetes de Gestão Integrada,\narticulação entre Brigada Militar, Guardas\nMunicipais e fiscalização de trânsito,\nexpansão do videomonitoramento e\ndo cercamento digital com leitura de\nplacas, além da integração regional das\ncentrais de emergência. O uso gradual\nde câmeras corporais e em viaturas será\nacompanhado de protocolos transparentes\ne proporcionais de uso da força,\nprotegendo a atuação policial e os direitos\ndos cidadãos.\n\nDiante desse quadro, a Coligação Com\no Povo fortalecerá uma política de\nSegurança Pública Cidadã, baseada na\ninteligência de Estado, no uso de novas\ntecnologias, na integração das forças\nde segurança, na prevenção social da\nviolência e na valorização profissional\ne humana dos servidores. O objetivo\nserá combinar prevenção, investigação\ne repressão qualificada ao crime com\npolíticas públicas capazes de enfrentar os\nfatores sociais que alimentam a violência e\na criminalidade.\n\nA prevenção social será parte central\nda política de segurança, com a\nconsolidação e expansão do Programa de\nOportunidades e Direitos (POD), oferecendo\nqualificação profissional, esporte e cultura\naos jovens dos territórios mais vulneráveis.\nEm parceria com os municípios, o\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá a\ninteligência policial e o enfrentamento\nao crime organizado, com a criação de\n08"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-9",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nPrograma Territórios de Paz combinará\npoliciamento comunitário permanente\ncom intervenções urbanas e sociais,\ncomo iluminação pública, pavimentação,\nrecuperação de praças e ampliação\nde equipamentos culturais e esportivos,\nintegrando segurança, cidadania e\noportunidades para prevenir a violência\ne reduzir o recrutamento de jovens pelo\ncrime organizado.\n\nsem trégua à violência contra a mulher e\nao feminicídio.\nA essa realidade somam-se desigualdades\npersistentes no mercado de trabalho\n—\ndisparidade salarial, sobrecarga\ndo trabalho de cuidado não remunerado\ne insuficiência de creches públicas —,\nque limitam a autonomia econômica das\nmulheres. As recentes tragédias climáticas\nagravaram esse quadro, atingindo com\nespecial severidade as mulheres chefes\nde família em situação de pobreza e\nampliando as dificuldades para reconstruir\nsuas condições de vida.\n\n1.4 - POLÍTICAS PARA AS MULHERES E\nENFRENTAMENTO ÀS VIOLÊNCIAS DE\nGÊNERO\nDIAGNÓSTICO SITUACIONAL\n\nDiante desse cenário, a Coligação Com o\nPovo terá a política para as mulheres como\nprioridade, fortalecendo e reconstruindo\na rede estadual de prevenção, proteção\ne atendimento às vítimas e promovendo\nautonomia econômica, igualdade de\noportunidades no trabalho, direitos\nreprodutivos no âmbito do SUS e\nvalorização do trabalho de cuidado como\ndimensão essencial do desenvolvimento\ngaúcho.\n\nO Rio Grande do Sul vive uma verdadeira\npandemia de violência de gênero:\nsomente em 2025, foram registrados\nmais de 78 mil boletins de ocorrência de\nviolência contra a mulher, número que\nsegue em alta em 2026 — sem considerar\na expressiva subnotificação desses\ncrimes. A resposta estatal permanece\nfragmentada: cada serviço — saúde,\nassistência, segurança e justiça — atua\nisoladamente, sem um sistema capaz de\nreconhecer, acompanhar e proteger a\nmulher em qualquer ponto do território,\nsobretudo no interior, onde se concentra\nparcela importante dos feminicídios. Essa\nfragilidade foi agravada por uma década\nde desmonte institucional — a Secretaria\nde Políticas para as Mulheres foi extinta\nem 2015, o Conselho Estadual dos Direitos\nda Mulher ficou paralisado entre 2019\ne 2022, e a Secretaria da Mulher só foi\nrecriada em junho de 2025, tardiamente e\nsob pressão —, e o tema nunca recebeu a\ndevida atenção nem mesmo no Programa\nRS Seguro. O monitoramento eletrônico\npor tornozeleiras, criado através da Lei\nEstadual nº 14.478/2014 de autoria do\ncandidato a Vice-Governador da nossa\nchapa, alcança apenas uma fração das\nmulheres em situação de alto risco, e o RS\né o estado que menos prende agressores\nem flagrante. O RS Mulher Segura será o\ninstrumento necessário para o combate\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo implementará\no RS Mulher Segura como política\npermanente e integrada, criando o Sistema\nÚnico de Proteção das Mulheres, com\nos mesmos programas e protocolos em\ntodas as cidades e respostas coordenadas\nentre municípios e Estado. O Sistema\nserá coordenado pessoalmente pela\nGovernadora, com reuniões periódicas\nreunindo forças de segurança, Justiça e\nSecretarias Sociais e convite a todos os\nPrefeitos para participação on-line —\nmodelo que cada cidade será estimulada\na replicar para monitorar seus indicadores\ne projetos. Contará com Observatório\nEstadual, Pesquisa de Vitimização bienal,\nplataforma integrada de gestão de\ncasos (inspirada no VioGén espanhol) e\nreuniões de monitoramento em cada Área\nIntegrada de Segurança, nos moldes do\nMARAC britânico. Para coordená-lo, será\n09"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-10",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nreconstruída uma Secretaria da Mulher\nforte, com orçamento e estrutura próprios,\ne reativado o Conselho Estadual dos\nDireitos das Mulheres. Serão ampliados\nos serviços especializados, com Central\nEstadual de apoio funcionando 24 horas,\nacompanhamento individualizado de\nmulheres em alto risco pelo Programa\nProtetoras, atenção à saúde mental e\nprevenção permanente em escolas,\ncomunidades, empresas e espaços\nculturais.\n\nprotocolos de proteção em emergências\nclimáticas, incluindo espaços seguros nos\nabrigos e itens de higiene menstrual.\n\nO Governo avançará na autonomia\neconômica e na participação das\nmulheres, fiscalizando a igualdade\nsalarial — especialmente nas empresas\nbeneficiárias de incentivos estaduais\n— e implementando a Política Estadual\nde Cuidados, com creches em tempo\nintegral, terceiro turno na educação\ninfantil e centros-dia para idosos. Serão\nO programa fortalecerá as condições\nincentivadas a formação de lideranças\nde recomeço das mulheres, articulando\nfemininas e a paridade de gênero nos\nqualificação, emprego, empreendedorismo, cargos de chefia do Estado, e fortalecido o\ncrédito e moradia para garantir autonomia Conselho Estadual dos Direitos da Mulher\neconômica e romper o ciclo de violência.\n(CEDM) com condições adequadas de\nSerão reforçadas a fiscalização das\nfuncionamento e valorização do controle\nmedidas protetivas e o monitoramento\nsocial.\neletrônico de agressores de alto risco,\ncom Dissuasão Focada voltada aos\nautores de maior periculosidade — mais\n1.5 - TRABALHO, EMPREGO, RENDA E\nprisões em flagrante, busca e apreensão,\nVALORIZAÇÃO DO MÍNIMO REGIONAL\ndesarmamento e apreensão de celulares\n—, perícia progressivamente implantada\nDIAGNÓSTICO SITUACIONAL\nno local dos crimes e, para os casos de\nmenor risco, metodologia única de grupos\nO mercado de trabalho no Rio Grande\nreflexivos. Haverá atenção específica às\ndo Sul é marcado pelo crescimento da\ncrianças vítimas ou expostas à violência e\ninformalidade, pela precarização das\nproteção integral às órfãs do feminicídio,\nrelações de trabalho, especialmente por\ncom acompanhamento continuado pelas\nmeio de aplicativos, pela estagnação do\nredes sociais, de saúde e de educação.\nrendimento médio dos trabalhadores e\npela persistência das desigualdades de\nA Coligação fortalecerá e ampliará a Rede gênero e raça. As rápidas transformações\nLilás, articulando Judiciário, Ministério\ntecnológicas e os impactos dos eventos\nPúblico, Defensoria, Brigada Militar,\nclimáticos sobre o comércio, a prestação\nPolícia Civil e Assistência Social em um\nde serviços e a indústria têm provocado a\nfluxo integrado e humanizado, evitando\nredução de postos de trabalho tradicionais,\na revitimização. Serão expandidas as\nexigindo do Estado políticas públicas\nPatrulhas Maria da Penha, dobrado\nativas de intermediação de mão de obra,\no efetivo de policiais civis nas DEAMs\nqualificação e requalificação, proteção e\npara funcionamento 24 horas e criadas\nvalorização profissional.\nCasas da Mulher Gaúcha, integrando\natendimento policial, jurídico, psicossocial e A Coligação Com o Povo reafirma que\nde saúde em um único espaço. O Governo\no trabalho é fonte primária de riqueza,\ninvestirá na capacitação continuada de\ndesenvolvimento e dignidade humana.\npoliciais e profissionais da saúde e da\nA política de desenvolvimento do Estado\neducação e ampliará a Saúde Integral da\nterá como meta central a geração de\nMulher, com exames preventivos, métodos\nempregos formais, com direitos garantidos\ncontraceptivos, parto humanizado e\ne remuneração digna, a valorização\n10"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-11",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\ncontínua do Piso Salarial Regional, a\nproteção dos trabalhadores autônomos e\nde plataformas digitais e o apoio aos micro\ne pequenos empreendedores. Esses terão\no reconhecimento devido ao seu papel\nfundamental na geração de trabalho,\nrenda e oportunidades em todas as regiões\ndo Rio Grande do Sul.\n\ne redes de compras coletivas, bem\ncomo a integração do artesanato e da\neconomia criativa às políticas de turismo e\ndesenvolvimento regional.\nNas maiores cidades, em parceria com os\nmunicípios, serão implantados Pontos de\nApoio aos Trabalhadores de Aplicativo,\noferecendo infraestrutura adequada para\ndescanso, alimentação, higiene e apoio\ndurante a jornada. Paralelamente, o Estado\ndefenderá uma regulamentação nacional\nque concilie as novas formas de trabalho\ncom a garantia de direitos, assegurando\nproteção previdenciária, condições dignas\nde trabalho e remuneração justa aos\ntrabalhadores de plataformas digitais.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo reorganizará o\nSistema Público de Emprego, Trabalho\ne Renda, fortalecendo a FGTAS e\ntransformando as Agências SINE em\nCentros Integrados de Cidadania e\nTrabalho, com serviços de intermediação\nde mão de obra, orientação trabalhista,\nqualificação profissional e acesso ao\nmicrocrédito. O Governo promoverá, ainda,\na valorização permanente do Piso Salarial\nRegional, como instrumento de proteção\ndo trabalho e fortalecimento da renda.\n\n1.6 - ASSISTÊNCIA SOCIAL, COMBATE À\nFOME E ERRADICAÇÃO DA MISÉRIA\nDIAGNÓSTICO SITUACIONAL\n\nEm parceria com universidades,\ntrabalhadores e setor produtivo, o Estado\ndesenvolverá políticas permanentes de\nacompanhamento das transformações\nno mundo do trabalho, especialmente dos\nimpactos da automação, da inteligência\nartificial e da transição climática. A política\nde qualificação profissional será articulada\nàs necessidades dos Arranjos Produtivos\nLocais e dos setores estratégicos de cada\nregião, preparando os trabalhadores para\nnovas oportunidades em áreas como\ntecnologia, energia limpa, logística e\neconomia do cuidado.\n\nO agravamento das desigualdades\nsociais e os impactos dos recentes\ndesastres climáticos ampliaram as\nsituações de pobreza, extrema pobreza\ne insegurança alimentar entre milhares\nde famílias gaúchas. Ao mesmo tempo,\no Sistema Único de Assistência Social\n(SUAS) no Estado enfrenta dificuldades\ndecorrentes da insuficiência dos repasses\nestaduais, da precarização das equipes\ntécnicas dos Centros de Referência de\nAssistência Social (CRAS) e Centro de\nReferência Especializado de Assistência\nSocial (CREAS) e da falta de infraestrutura\nadequada para assegurar atendimento\ndigno às populações em situação de\nvulnerabilidade.\n\nO Governo fortalecerá também os micro\ne pequenos empreendedores, MEIs,\ntrabalhadores autônomos, artesãos e\ntrabalhadores de plataformas digitais,\nampliando as oportunidades de trabalho,\nempreendedorismo e geração de renda.\nSerá criado o CrediGaúcho, por meio\ndo Banrisul e/ou Badesul, com crédito\norientado, juros subsidiados e fundo de\naval voltado especialmente aos MEIs e aos\ntrabalhadores da economia popular. Serão\nigualmente incentivadas cooperativas\n\nA Coligação Com o Povo reafirma a\nAssistência Social como política pública\nde direito, dever do Estado e instrumento\nfundamental de proteção social e\ncidadania, superando qualquer concepção\nmeramente assistencialista ou de caridade.\nO enfrentamento à fome e à miséria\nserá prioridade de governo, por meio\ndo fortalecimento e do financiamento\n11"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-12",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nadequado do SUAS, da articulação das\nredes de proteção e solidariedade e da\nintegração com políticas de segurança\nalimentar e de fortalecimento da\nagricultura familiar, garantindo o acesso à\nalimentação saudável e de qualidade para\nquem mais precisa.\n\ntem ampliado situações de ameaça e\nviolações de Direitos Humanos. Lideranças\ncomunitárias, defensores de direitos\nhumanos, ambientalistas, povos indígenas\ne comunidades quilombolas enfrentam\nsituações crescentes de vulnerabilidade\ne violência. Ao mesmo tempo, o sistema\nprisional gaúcho convive com superlotação\ne condições inadequadas, enquanto a\nviolência de gênero, o racismo, a LGBTfobia\ne outras formas de discriminação exigem\nrespostas firmes e permanentes das\ninstituições públicas.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá\no Sistema Único de Assistência Social\n(SUAS), ampliando o financiamento\nestadual, qualificando a rede de CRAS,\nCREAS e demais serviços e valorizando\nseus trabalhadores, com recomposição\ndas equipes e formação continuada.\nSerá instituído protocolo permanente\nde resposta às calamidades climáticas,\ncom equipes volantes e concessão ágil\nde benefícios emergenciais. A Política\nEstadual de Cuidados ampliará os\nCentros-Dia para pessoas idosas e\ncom deficiência, e o Programa Família\nAcolhedora será fortalecido para a\nproteção de crianças e adolescentes.\n\nPara a Coligação com o Povo, a defesa dos\nDireitos Humanos constitui fundamento\nessencial da democracia, da cidadania e\nda justiça social. Cabe ao Estado proteger\nas pessoas e comunidades em situação de\nvulnerabilidade, prevenir e combater todas\nas formas de violência e discriminação,\nenfrentar a violência institucional e\nassegurar a proteção e a reparação diante\nde violações de direitos. Esse compromisso\npressupõe, ainda, promover uma cultura\nde paz, respeito à diversidade, convivência\ndemocrática e dignidade humana,\norientada pela construção de uma\nsociedade mais justa, inclusiva e solidária.\n\nO combate à fome será integrado\nà inclusão social e produtiva, com o\nprograma Comida no Prato, fortalecendo\ncozinhas comunitárias e solidárias, bancos\nde alimentos e restaurantes populares,\nalém da aquisição estadual de alimentos\nda agricultura familiar. A busca ativa\nampliará o acesso ao CadÚnico e às\npolíticas sociais, articulando assistência,\nhabitação, educação, qualificação\nprofissional e microcrédito para promover\nautonomia e superação da pobreza.\nSerão também fortalecidos o CEAS/RS,\no CONSEA/RS e os mecanismos de\nparticipação e controle social.\n\nDIRETRIZES E AÇÕES\nO Governo efetivará o Sistema Estadual\nde Direitos Humanos, regulamentando a\nLei Estadual nº 14.481/2014 e fortalecendo\na estrutura responsável pela política de\nJustiça, Cidadania e Direitos Humanos.\nO respeito aos direitos humanos e o\nenfrentamento ao racismo, capacitismo\ne demais formas de discriminação serão\ndiretrizes transversais da administração\nestadual, inclusive na concessão de\nincentivos e recursos públicos.\n\n1.7 - DIREITOS HUMANOS\n\nSerão fortalecidos o Programa de Proteção\na Defensores de Direitos Humanos, a\nOuvidoria Externa da Segurança Pública\ne o Mecanismo Estadual de Prevenção e\nCombate à Tortura, garantindo proteção\nàs pessoas ameaçadas, controle social e\nfiscalização independente das instituições.\n\nDIAGNÓSTICO SITUACIONAL\nO contexto recente de radicalização\npolítica e de agravamento dos conflitos\nsocioambientais no Rio Grande do Sul\n12"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-13",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nA reintegração de egressos do sistema\nprisional será ampliada por meio dos\nEscritórios Sociais, com atendimento\nintegrado e ações de prevenção à\nreincidência.\n\nde novas moradias em parceria com\no Programa Minha Casa, Minha Vida e\npolíticas de assistência técnica gratuita\npara habitação de interesse social. A\npolítica habitacional estará integrada ao\nplanejamento urbano e às estratégias de\nprevenção e adaptação às mudanças\nclimáticas, garantindo cidades mais\nseguras, inclusivas e preparadas para o\nfuturo.\n\nO Estado implantará mecanismos de\ndenúncia e apuração de violações\nsocioambientais, promoverá campanhas\npermanentes contra a intolerância\ne a discriminação e assegurará\nautonomia, infraestrutura e condições de\nfuncionamento ao Conselho Estadual de\nDireitos Humanos e aos demais conselhos\nde direitos, fortalecendo a participação\nsocial e a cultura de paz.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo reorganizará\na estrutura estadual de habitação,\nregularização fundiária, saneamento\ne política urbana, priorizando cidades\nresilientes. Será criado um Banco Estadual\nde Terras Públicas, articulado com União e\nmunicípios, para destinar imóveis ociosos\nà habitação popular e ao Programa Lote\nUrbanizado, com infraestrutura básica e\nautoconstrução assistida. A assistência\ntécnica pública e gratuita (ATHIS) apoiará\nfamílias de baixa renda na construção,\nreforma e melhoria das moradias e na\nredução de riscos.\n\n1.8 - HABITAÇÃO DE INTERESSE SOCIAL\nE REGULARIZAÇÃO FUNDIÁRIA URBANA\n(REURB)\nDIAGNÓSTICO SITUACIONAL\nO déficit habitacional no Rio Grande\ndo Sul ultrapassa 240 mil moradias, ao\nqual se soma uma expressiva demanda\npor regularização fundiária. Milhares\nde famílias vivem em loteamentos\ninformais, favelas e áreas ambientalmente\nvulneráveis, muitas vezes sem acesso\nadequado a infraestrutura básica de\nsaneamento, iluminação, mobilidade e\nserviços públicos. A tragédia climática\nde 2024 evidenciou a dimensão\ndesse problema e os riscos a que\nessas populações estão submetidas,\nespecialmente em comunidades\nlocalizadas em encostas, várzeas e\noutras áreas sujeitas a inundações e\ndeslizamentos.\n\nO Estado criará um cadastro\ngeorreferenciado das ocupações,\nloteamentos irregulares e áreas de risco,\norientando a regularização fundiária\ne a prevenção de desastres. O REURB\nGaúcha dará apoio técnico e financeiro\naos municípios, com isenção de taxas\ncartorárias e titulação preferencial em\nnome das mulheres chefes de família.\nFamílias residentes em áreas sujeitas\na inundações e deslizamentos terão\nreassentamento seguro, com moradia\ndigna e infraestrutura. Haverá ainda\nprogramas habitacionais específicos para\ncomunidades quilombolas e indígenas e\npopulação em situação de rua, além do\nfortalecimento da habitação rural para\nagricultores familiares, assentados e jovens\ndo campo.\n\nA moradia digna é condição fundamental\npara o acesso aos demais direitos\nsociais e para uma vida com segurança\ne dignidade. A Coligação Com o Povo\nassumirá a habitação de interesse social\ncomo política pública central de Estado,\narticulando um amplo programa de\nregularização fundiária, investimentos em\ninfraestrutura urbana resiliente, produção\n\nEm parceria com o Governo Federal, o\nEstado aportará recursos ao Minha Casa,\nMinha Vida para reduzir ou eliminar a\n13"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-14",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nDIRETRIZES E AÇÕES\n\nentrada das famílias das Faixas 1 e 2. Será\ncriado um Núcleo Estadual de Conciliação\ne Mediação Fundiária para prevenir\ndespejos violentos e buscar soluções\npactuadas para conflitos urbanos e rurais.\nO Conselho Estadual das Cidades será\nreativado e fortalecido, assegurando a\nparticipação dos movimentos de moradia,\nentidades profissionais e universidades na\nformulação da política urbana estadual.\n\nA Coligação Com o Povo promoverá a\ndescentralização e a democratização do\nfinanciamento à cultura, fortalecendo\no Fundo de Apoio à Cultura (FAC)\ne ampliando, com procedimentos\nsimplificados, o acesso de artistas,\ncoletivos e fazedores de cultura do interior\ne das periferias aos recursos públicos. Será\nexpandida a Rede Estadual de Pontos e\nPontões de Cultura, apoiando iniciativas\ncomunitárias, bibliotecas populares, CTGs,\npovos de terreiro, cineclubes e expressões\nculturais urbanas, rurais, indígenas e\nafro-gaúchas. Serão também estruturados\nnúcleos regionais de formação em\nartes, ofícios e restauro, em parceria\ncom universidades e Institutos Federais,\ne fortalecidos o Sistema Estadual de\nBibliotecas, as feiras do livro e as políticas\nde incentivo à leitura.\n\n1.9 - CULTURA, MEMÓRIA, PATRIMÔNIO\nE ECONOMIA CRIATIVA\nDIAGNÓSTICO SITUACIONAL\nO setor cultural do Rio Grande do Sul\ndistingue-se por sua extraordinária riqueza\ne diversidade, mas tem enfrentado o\nenfraquecimento dos mecanismos públicos\nde fomento, a insuficiente preservação\ndo patrimônio histórico e arquitetônico\ne a concentração de recursos na Região\nMetropolitana. Trabalhadores da cultura,\nartistas e fazedores da cultura popular,\npovos de terreiro, comunidades tradicionais\ne coletivos culturais das periferias ainda\nenfrentam burocracia excessiva e\ndificuldades de acesso aos mecanismos\nestaduais de financiamento e incentivo.\n\nA política cultural valorizará a memória\ne o patrimônio material e imaterial, com\ninvestimentos na recuperação e proteção\nde museus, teatros, bibliotecas e prédios\nhistóricos, e estimulará a economia\ncriativa, especialmente o audiovisual, os\ngames e a animação. O Estado apoiará\nos Sistemas Municipais de Cultura e\npromoverá um Circuito Gaúcho de Artes,\nlevando atividades culturais gratuitas\na todas as regiões. Serão fortalecidos o\nConselho Estadual de Cultura, o cadastro\ndos trabalhadores da cultura e os\nmecanismos de proteção em situações\nde emergência, além da integração entre\ncultura, educação, memória comunitária e\nsustentabilidade nas escolas públicas.\n\nA Coligação Com o Povo compreende\na cultura como dimensão essencial da\nidentidade e da formação de um povo,\ndireito fundamental de cidadania e\nimportante vetor de desenvolvimento\neconômico e social sustentável. A\npolítica cultural do Governo promoverá a\ndemocratização e a descentralização dos\nrecursos públicos, ampliando seu acesso\nem todas as regiões do Estado, fortalecerá\na proteção e a valorização do patrimônio\ncultural material e imaterial, ampliará\nos Pontos de Cultura e os mecanismos\nde fomento à produção artística e\nimpulsionará a economia criativa, com\nespecial atenção ao setor audiovisual,\nconsolidando o Rio Grande do Sul como\nreferência cultural e polo de produção e\nintegração no âmbito do Mercosul.\n\n1.10 - COMUNICAÇÃO SOCIAL PÚBLICA,\nTRANSPARÊNCIA E COMBATE À\nDESINFORMAÇÃO\nDIAGNÓSTICO SITUACIONAL\nA comunicação pública no Rio Grande do\nSul não atravessa o seu melhor momento,\nao contrário, sofre com a falta de políticas\n14"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-15",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\npúblicas consistentes para o setor. Ao\nmesmo tempo, a disseminação de fake\nnews e conteúdos de desinformação,\nespecialmente durante a crise climática de\n2024, evidenciou os riscos das informações\nfalsas para a segurança da população,\na confiança nas instituições e a própria\ndemocracia.\n\neducação e à produção regional. Será\ntambém regulamentado o Conselho\nEstadual de Comunicação Pública e\nSocial, com participação da sociedade no\nacompanhamento das políticas do setor.\nPortais, campanhas e transmissões\noficiais terão acessibilidade em Libras,\naudiodescrição, legendas e linguagem\nsimples. Nas escolas estaduais, programas\nde educomunicação e letramento\nmidiático contribuirão para que os\nestudantes reconheçam a desinformação\ne utilizem as redes digitais de forma crítica\ne responsável.\n\nA Coligação Com o Povo compreende\na comunicação pública como serviço\nessencial, instrumento de transparência\ne cidadania e garantia do direito à\ninformação de qualidade. O Governo\nconstruirá uma política de comunicação\npública democrática, descentralizada e\nacessível, voltada à prestação de serviços,\nao enfrentamento da desinformação\ne à valorização da imprensa regional e\ncomunitária, aproximando o Estado da\nsociedade.\n\n1.11 - ESPORTE, PARADESPORTO, LAZER E\nINTEGRAÇÃO COMUNITÁRIA\nDIAGNÓSTICO SITUACIONAL\n\nDIRETRIZES E AÇÕES\n\nO esporte e o lazer no Rio Grande do Sul\nenfrentam a descontinuidade das políticas\npúblicas, a deterioração de equipamentos\nesportivos estaduais, como ginásios e\npistas de atletismo, e a insuficiência\nde mecanismos descentralizados de\nfinanciamento. A prática esportiva ainda\né tratada de forma fragmentada, sem\numa articulação efetiva com as políticas\nde educação, saúde pública, inclusão\nsocial e segurança cidadã. Atletas de\nalto rendimento e paratletas, por sua\nvez, enfrentam dificuldades decorrentes\nda escassez de patrocínios públicos\npermanentes, de programas de incentivo\ne de bolsas que alcancem de forma\nequilibrada todas as regiões do Estado.\n\nA comunicação institucional será orientada\npor critérios republicanos, transparentes\ne auditáveis na contratação de agências,\nveículos e distribuição das verbas\npublicitárias, priorizando campanhas\neducativas e de utilidade pública em lugar\nda promoção da gestão. Do orçamento\nanual de publicidade, serão priorizados\nrecursos a ações permanentes de\neducação, prevenção e informação sobre\neventos climáticos extremos. O Portal\nda Transparência será modernizado,\ncom dados abertos e painéis de fácil\nacesso para acompanhamento de obras,\nlicitações, contratos e repasses aos\nmunicípios.\n\nA Coligação Com o Povo compreende\no esporte e o lazer como direitos\nde cidadania e instrumentos de\neducação, saúde preventiva, inclusão\nsocial, convivência comunitária e\ndesenvolvimento da juventude. O Governo\npromoverá a recuperação e a ampliação\nda infraestrutura esportiva pública, a\ndescentralização dos recursos e incentivos\ndestinados ao setor, o fortalecimento do\nesporte de base, do alto rendimento e do\nparadesporto, além da ampliação dos\n\nO Estado organizar-se-á, de forma\nintersetorial, no enfrentamento à\ndesinformação, em cooperação com\nuniversidades, imprensa e agências\nindependentes de checagem,\nespecialmente em temas como\nemergências climáticas, vacinação,\nsegurança e serviços públicos. A\nTVE-RS e a FM Cultura serão fortalecidas\ncomo rede pública de comunicação\ndedicada à cultura gaúcha, à ciência, à\n15"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-16",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nespaços e programas de lazer comunitário,\nassegurando o acesso ao esporte e\nao lazer em todas as regiões do\nRio Grande do Sul.\n\n1.12 - IGUALDADE RACIAL E AÇÕES\nAFIRMATIVAS\n\nDIRETRIZES E AÇÕES\n\nApesar da contribuição decisiva da\npopulação negra para a formação\nhistórica, social, cultural e econômica\ndo Rio Grande do Sul, persistem\ndesigualdades que se expressam nos\nmenores rendimentos, nas condições mais\nprecárias de moradia e na maior exposição\nà violência, à discriminação e à exclusão\nsocial. As comunidades quilombolas ainda\nenfrentam morosidade nos processos\nde reconhecimento e titulação de seus\nterritórios, enquanto os povos de terreiro\nsão vítimas recorrentes de intolerância,\ndiscriminação e violência religiosa.\n\nDIAGNÓSTICO SITUACIONAL\n\nA Coligação Com o Povo tratará o\nesporte, o paradesporto e o lazer como\ndireitos de cidadania e instrumentos\nde educação, saúde e inclusão social,\nintegrando a prática esportiva às escolas\nde tempo integral e ampliando programas\ncomunitários de iniciação esportiva,\nrecreação e atividades voltadas às\npessoas idosas e com deficiência. Serão\nrecuperados ginásios, quadras, pistas de\natletismo e demais equipamentos públicos,\ncom acessibilidade e infraestrutura\nadequada, e estruturados Centros\nRegionais de Excelência Esportiva\ne Paradesportiva, em parceria com\nmunicípios e universidades. Convênios\ncom federações, clubes e instituições de\nensino ampliarão o acesso gratuito de\ncrianças e adolescentes em situação de\nvulnerabilidade às práticas esportivas.\n\nA Coligação Com o Povo assumirá o\ncompromisso de promover a igualdade\nracial e enfrentar todas as formas de\nracismo e discriminação. Para isso, atuará\nno combate ao racismo institucional, na\nproteção e valorização das tradições e\ndo patrimônio afro-gaúcho, no avanço\nda regularização fundiária dos territórios\nquilombolas e na ampliação das\noportunidades de educação, trabalho,\ncultura e participação social para a\njuventude negra, contribuindo para a\nconstrução de um Rio Grande do Sul mais\njusto, plural e igualitário.\n\nO Estado fortalecerá o esporte de\nbase, escolar e de alto rendimento,\ndescentralizando a Lei de Incentivo ao\nEsporte e ampliando oportunidades\npara projetos paralímpicos, femininos e\nde municípios de pequeno porte. Serão\nreestruturados o Bolsa-Atleta e o BolsaTécnico, fortalecidos os Jogos Escolares do\nRio Grande do Sul (JERGS) e modernizado\no Centro Estadual de Treinamento\nEsportivo (CETE), com núcleos regionais\nde ciência do esporte articulados às\nuniversidades. A política esportiva incluirá\nainda a formação de gestores, árbitros e\nlideranças comunitárias, além de ações de\nprevenção e redução de danos voltadas\nàs pessoas afetadas pela ludopatia e pela\ndependência de jogos e apostas.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá\na Política Estadual de Promoção da\nIgualdade Racial (PEPIR), com estrutura\nexecutiva, orçamento próprio e atuação\ntransversal, assegurando o cumprimento\ndas cotas raciais nos concursos públicos e\ncargos em comissão. Será criado programa\nde proteção aos terreiros e espaços\ntradicionais de matriz africana, com apoio\njurídico, busca da imunidade tributária e\nenfrentamento à intolerância religiosa. Na\neducação, será fortalecida a aplicação\nda Lei nº 10.639/2003, com formação de\nprofessores, acompanhamento da rede e\n16"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-17",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nvalorização de materiais produzidos por\nautores negros e indígenas.\n\nA Coligação Com o Povo atuará\nfirmemente na promoção do respeito à\ndiversidade e na garantia dos direitos\nda população LGBTQIA+, assegurando\npolíticas de prevenção e enfrentamento\nà violência e à discriminação, proteção à\nintegridade física, inclusão no mercado\nde trabalho e acesso digno aos serviços\npúblicos. O combate a todas as formas de\nLGBTfobia será compromisso permanente\ndo Estado, tanto no âmbito de suas\ninstituições quanto nas relações sociais,\npromovendo uma cultura de respeito,\nconvivência democrática e igualdade de\ndireitos.\n\nO Estado atuará com o Governo Federal\ne o INCRA para acelerar a titulação\ndos territórios quilombolas, garantindo\nassistência técnica da Emater-RS, estímulo\nà produção agroecológica, internet de alta\nvelocidade e inclusão digital. Na saúde,\nserá implementada a Política Nacional de\nSaúde Integral da População Negra, com\natenção à anemia falciforme, hipertensão,\ndiabetes e saúde mental. O CrediGaúcho\ncontará com linha prioritária de\nmicrocrédito e qualificação para mulheres\nnegras empreendedoras, artesãs, feirantes\ne trancistas.\n\nDIRETRIZES E AÇÕES\n\nSerão valorizados o carnaval comunitário,\nas escolas de samba e expressões\nafro-gaúchas como o jongo, o\nmaçambique e o tambor Sopapo. Na\nsegurança pública, haverá formação\npermanente para combater a filtragem\ne o perfilamento racial nas abordagens\npoliciais, com monitoramento da Ouvidoria\nExterna. As cozinhas de terreiros e\nassociações quilombolas serão ainda\nreconhecidas e apoiadas como integrantes\nda rede estadual de combate à fome.\n\nA Coligação Com o Povo implementará\no Programa Estadual Rio Grande sem\nPreconceito, com formação de servidores,\nespecialmente das áreas de saúde,\neducação e segurança, para atendimento\nhumanizado e livre de discriminação por\norientação sexual ou identidade de gênero.\nSerá assegurado o uso do nome social\nem documentos, cadastros e sistemas\nda administração estadual, bem como o\nregistro da motivação por LGBTfobia nas\nocorrências policiais e atendimentos do\nSUS, permitindo dimensionar e enfrentar\na violência. Núcleos especializados\nde combate à intolerância serão\ndescentralizados para o interior do Estado.\nNa proteção social e na saúde, serão\nestruturados grupos de acolhimento\npsicológico nos CAPS para jovens\nLGBTQIA+, qualificada a atenção à\npopulação idosa nas ILPIs e na rede do\nSUS e apoiadas Casas de Passagem para\njovens expulsos do convívio familiar ou\nem situação de rua. O Estado promoverá\nainda a inserção de travestis e pessoas\ntrans no mercado formal de trabalho,\nreconhecendo empresas comprometidas\ncom essa inclusão. No sistema prisional,\nserão garantidos espaços adequados\ne seguros à população LGBTQIA+,\nassegurando sua dignidade e integridade\nfísica.\n\n1.13 - DIVERSIDADE SEXUAL E CIDADANIA\nDIAGNÓSTICO SITUACIONAL\nO Rio Grande do Sul ainda apresenta\nelevados índices de discriminação e\nviolência contra a população LGBTQIA+,\ncom especial gravidade em relação a\ntravestis e mulheres trans. A exclusão do\nmercado de trabalho formal, o abandono e\na vulnerabilidade social de jovens LGBTQIA+\ne as dificuldades de acesso a atendimento\nadequado e especializado na rede pública\nde saúde, inclusive nos serviços de saúde\nmental e de atenção às pessoas trans,\nconfiguram um quadro persistente de\ndesigualdade, discriminação e violação de\ndireitos.\n\n17"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-18",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n1.14 - PRIMEIRA INFÂNCIA E ADOLESCÊNCIA\n\nmental para adolescentes, com prevenção\nda automutilação e do suicídio.\n\nDIAGNÓSTICO SITUACIONAL\n\nNas escolas, será ampliada\ngradativamente a presença de psicólogos\ne assistentes sociais, conforme a Lei\nFederal nº 13.935/2019, e fortalecidas\nas CIPAVEs na prevenção da violência,\ndo uso de drogas e na mediação de\nconflitos. O Programa Primeiro Emprego e\nAprendizagem incentivará a contratação\nde jovens aprendizes por órgãos públicos\ne empresas beneficiárias de incentivos\nestaduais. O sistema socioeducativo da\nFASE será reorganizado para assegurar\nescolarização, qualificação profissional,\ncultura e atenção à saúde mental.\n\nA infância e a adolescência no Rio Grande\ndo Sul têm sido fortemente afetadas pelo\nagravamento da pobreza e da extrema\npobreza, pela violência doméstica e sexual,\npela evasão escolar e pela insuficiência de\nespaços adequados de convivência, lazer\ne desenvolvimento integral, especialmente\nnas periferias e nos territórios socialmente\nmais vulneráveis. Os Conselhos Tutelares,\nfundamentais para a garantia dos direitos\nde crianças e adolescentes, muitas vezes\natuam sem infraestrutura adequada e com\ndificuldades de articulação com as redes\nde educação, saúde, assistência social e\nproteção.\n\nO Governo articulará ações permanentes\nde combate à exploração sexual e ao\ntrabalho infantil, ampliará os canais digitais\ne anônimos de denúncia e acesso à rede\nde proteção e promoverá o Fundo Estadual\ne os Fundos Municipais da Criança e do\nAdolescente, incentivando a destinação\nde parcela do Imposto de Renda e a\ncooperação entre municípios, Poderes,\nórgãos públicos e entidades da sociedade\ncivil.\n\nFundamentado na Doutrina da Proteção\nIntegral e no princípio da prioridade\nabsoluta assegurado às crianças e aos\nadolescentes, a Coligação Com o Povo,\nno Governo, colocará a infância e a\nadolescência no centro das políticas\npúblicas e das prioridades orçamentárias\ndo Estado. As ações serão articuladas de\nforma intersetorial, assegurando proteção,\ncuidado, educação, saúde, convivência\nfamiliar e comunitária e oportunidades\npara o desenvolvimento pleno, com\natenção especial à primeira infância e aos\nprimeiros 1.000 dias de vida.\n\n1.15 - DIREITOS E CUIDADO INTEGRAL À\nPESSOA IDOSA (60+)\nDIAGNÓSTICO SITUACIONAL\n\nDIRETRIZES E AÇÕES\n\nO Rio Grande do Sul apresenta uma das\nmaiores proporções de pessoas idosas\nA Coligação Com o Povo fortalecerá\ndo Brasil, resultado de uma acelerada\na proteção integral à infância e à\ntransição demográfica que impõe novos\nadolescência, reestruturando o Comitê\ndesafios às políticas públicas. Entretanto,\nIntersetorial da Primeira Infância para\na infraestrutura de cuidados, a rede de\nintegrar saúde, educação e assistência\nsaúde, os serviços de assistência social e as\nsocial no acompanhamento de gestantes\ncondições de mobilidade e acessibilidade\ne crianças de até seis anos em situação\nainda não se adaptaram com a rapidez\nde vulnerabilidade. O Estado apoiará os\nnecessária a essa nova realidade. Pessoas\nmunicípios na qualificação dos Conselhos\nidosas, especialmente as de baixa renda,\nTutelares, implantará espaços de escuta\nenfrentam situações de isolamento social,\nespecializada para vítimas de violência\nabandono, dificuldades de locomoção\ne ampliará o acolhimento familiar, com\ne acesso ao transporte público, além de\nbolsa-auxílio às famílias cadastradas. Serão estarem particularmente expostas a golpes\nreforçados o acompanhamento nutricional financeiros, violência patrimonial e outras\nna primeira infância e as ações de saúde\nformas de abuso.\n18"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-19",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n1.16 - INCLUSÃO, ACESSIBILIDADE E DIREITOS\nDA PESSOA COM DEFICIÊNCIA (PCD)\n\nA Coligação Com o Povo assume a\natenção e a proteção à pessoa idosa\ncomo compromisso ético e estratégico\nde Estado, promovendo políticas\nintegradas de envelhecimento ativo\ne saudável, convivência e inclusão\nsocial, acessibilidade e proteção\ncontra todas as formas de violência e\nabuso. Ao mesmo tempo, fortalecerá a\nrede pública de cuidados e o apoio às\nfamílias responsáveis por pessoas idosas\ndependentes, assegurando condições\npara um envelhecimento com autonomia,\nsegurança, respeito e dignidade.\n\nDIAGNÓSTICO SITUACIONAL\nAs pessoas com deficiência no Rio\nGrande do Sul ainda enfrentam\nbarreiras arquitetônicas, atitudinais,\ncomunicacionais e institucionais que\nlimitam o pleno exercício de seus\ndireitos e de sua cidadania. Persistem\nproblemas de acessibilidade em prédios\ne espaços públicos, no transporte coletivo\nintermunicipal e nas instituições de\nensino. Ao mesmo tempo, o atendimento\nàs pessoas com Transtorno do Espectro\nAutista (TEA) e deficiências múltiplas\nenfrenta dificuldades decorrentes das\nfilas de espera para acesso a terapias e\nserviços especializados, bem como para\na concessão de órteses, próteses e outros\nrecursos de tecnologia assistiva.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo estruturará uma\npolítica integrada de proteção, cuidado\ne envelhecimento ativo, fortalecendo a\nCoordenadoria e o Conselho Estadual\nda Pessoa Idosa e ampliando a atenção\ngeriátrica no SUS. Serão apoiados\nCentros-Dia nos municípios-polo,\npromovidas a formação e a qualificação\nde cuidadores e fortalecidas as ILPIs\nfilantrópicas, além da criação de\nmecanismos de acompanhamento das\npessoas idosas que vivem sozinhas.\nO Estado promoverá programas de\nalfabetização e inclusão digital, esporte e\nconvivência, acessibilidade habitacional\ne facilitará o acesso à gratuidade no\ntransporte intermunicipal.\n\nSob o princípio “Nada sobre nós, sem nós”,\no Governo assegurará a participação\ne o protagonismo das pessoas com\ndeficiência na formulação, implementação\ne avaliação das políticas públicas que\nlhes dizem respeito. O Estado atuará\nno enfrentamento ao capacitismo, na\npromoção da acessibilidade universal e\nda inclusão social e no fortalecimento\ndo financiamento público da atenção\nespecializada e das tecnologias assistivas,\ngarantindo autonomia, igualdade de\noportunidades, participação social e pleno\nexercício da cidadania.\n\nA proteção às pessoas idosas em situação\nde vulnerabilidade será reforçada, com a\nefetiva aplicação da legislação estadual\nde proteção social, garantia de acesso a\nmedicamentos e articulação entre Polícia\nCivil, Procon, instituições financeiras\ne rede socioassistencial para prevenir\ngolpes, fraudes e violência patrimonial.\nO Governo fortalecerá ainda o Fundo\nEstadual e os Fundos Municipais da Pessoa\nIdosa, incentivando a destinação de\nparcela do Imposto de Renda e ampliando\nparcerias com municípios, demais Poderes,\nórgãos públicos, sociedade civil e setores\neconômicos para financiar políticas de\nproteção e promoção de direitos.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá a\npolítica estadual para as pessoas com\ndeficiência, recuperando a capacidade\ninstitucional da FADERS e assegurando sua\nparticipação na formulação e fiscalização\ndas políticas públicas. Será implementado\num Plano Estadual de Acessibilidade, com\natenção especial às novas obras públicas,\nampliada a acessibilidade comunicacional\nem Libras, Braille e audiodescrição e\nfortalecidos os Centros Regionais de\n19"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-20",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nReferência em Autismo, com a expansão\ndas equipes multiprofissionais do TEAcolhe.\n\ncooperativas, associativas e democráticas\nde organização do trabalho, valorizando a\ncapacidade das comunidades\nde gerar desenvolvimento, renda e\noportunidades em seus próprios territórios.\n\nO Governo promoverá autonomia,\ninclusão e igualdade de oportunidades,\nassegurando o cumprimento das\ncotas nos concursos estaduais,\naprimorando a avaliação biopsicossocial\ne desburocratizando o Passe Livre\nIntermunicipal. Serão ampliadas as ações\nde qualificação e inclusão profissional,\nem articulação com empresas e a rede\nde educação profissional, além do\nfortalecimento do COEPEDE, do incentivo\nao paradesporto e aos atletas paralímpicos\ne da realização de campanhas\npermanentes de combate ao capacitismo\ne às barreiras atitudinais.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo retomará a\neconomia solidária e o cooperativismo\npopular como instrumentos de\ndesenvolvimento, geração de trabalho e\nrenda, reestruturando a área responsável\npela Política Estadual de Economia\nSolidária e consolidando um cadastro\ngeorreferenciado de empreendimentos,\nfeiras e bancos comunitários. O Estado\nampliará o acesso dessas organizações às\ncompras públicas e apoiará cooperativas\nde reciclagem e associações de catadores\ncom infraestrutura, equipamentos e\nmelhores condições de trabalho.\n\n1.17 - ECONOMIA SOLIDÁRIA, POPULAR E\nCOOPERATIVISMO\nDIAGNÓSTICO SITUACIONAL\n\nSerão fortalecidas as redes locais e\nregionais de produção e comercialização,\ncom Centros de Comercialização\nda Economia Solidária, plataformas\ncomunitárias de comércio eletrônico e\napoio à agricultura urbana e periurbana.\nEm parceria com universidades públicas e\ncomunitárias, serão oferecidas assessoria\ntécnica e incubação jurídica, contábil e\nprodutiva às cooperativas populares. O\nGoverno assegurará ainda a participação\ndos trabalhadores e das entidades de\napoio na formulação das políticas e na\ndefinição da aplicação dos recursos\ndestinados ao setor.\n\nA economia solidária e o cooperativismo\npopular constituem importantes fontes de\ntrabalho, renda e inclusão produtiva para\nmilhares de famílias gaúchas, envolvendo\ncatadores de materiais recicláveis,\nfeirantes, artesãos, trabalhadores da\nagricultura urbana e diversos outros\nempreendimentos coletivos. Apesar de sua\nrelevância econômica, social e ambiental,\nessas iniciativas ainda enfrentam\ndificuldades de acesso ao crédito\nprodutivo, escassez de espaços adequados\npara produção e comercialização e\nentraves burocráticos para a obtenção de\nlicenças, registros e certificações.\nA Coligação Com o Povo retomará e\nfortalecerá a economia solidária como\nestratégia de desenvolvimento local e\nregional, geração de trabalho e renda,\ninclusão produtiva e transição ecológica.\nPara isso, promoverá o acesso ao crédito\ne aos mercados, apoiará redes de\nprodução e comercialização, estimulará\no comércio justo e fortalecerá formas\n\n20"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-21",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n1.18 - POLÍTICAS PÚBLICAS PARA AS\nJUVENTUDES E PRIMEIRO EMPREGO\n\nda juventude negra. Programas de\nformação em programação, inteligência\nartificial e tecnologias digitais ampliarão\nas oportunidades profissionais dos\nestudantes da rede pública. O Conselho e a\nConferência Estadual da Juventude serão\nfortalecidos como espaços permanentes\nde participação social e formulação das\npolíticas públicas.\n\nDIAGNÓSTICO SITUACIONAL\nA juventude gaúcha está entre as\nparcelas da população mais afetadas\npelo desemprego, pela informalidade,\npela evasão escolar e pela violência,\nespecialmente pelos homicídios que\natingem os jovens nas periferias.\n\n1.19 - DIREITOS, PROTEÇÃO\nSomam-se a esse cenário as dificuldades\nE BEM-ESTAR ANIMAL\nde acesso ao primeiro emprego\nqualificado, ao transporte público acessível DIAGNÓSTICO SITUACIONAL\ne a espaços adequados de cultura, esporte,\nlazer e convivência.\nO abandono e os maus-tratos de animais,\nsomados à insuficiência de políticas de\nA Coligação Com o Povo colocará\ncontrole populacional ético de cães e\na juventude no centro do projeto de\ngatos, constituem um desafio permanente\nreconstrução e desenvolvimento do Rio\nde saúde pública, bem-estar animal e\nGrande do Sul, promovendo políticas que\nsegurança comunitária em praticamente\nassegurem o direito à cidade, à educação\ntodos os municípios gaúchos. As\npública de qualidade, ao trabalho digno,\nrecentes enchentes tornaram ainda mais\nà cultura, ao esporte e a uma vida com\nevidente a necessidade de protocolos\noportunidades e segurança.\npúblicos permanentes para o resgate, o\nacolhimento e a assistência veterinária\nDIRETRIZES E AÇÕES\naos animais em situações de emergência e\ndesastre.\nA Coligação Com o Povo desenvolverá\numa política integrada de oportunidades\nA Coligação Com o Povo, no governo,\npara as juventudes, articulando educação, adotará a abordagem da Saúde Única,\ntrabalho, mobilidade, cultura, esporte e\nque integra a saúde humana, animal e\ninclusão digital. Serão fortalecidos o Passe\nambiental, reconhecendo a proteção e o\nFácil Estudantil e o acesso ao transporte\nbem-estar animal como responsabilidades\nintermunicipal, implantado o Programa\ndo poder público. Para isso, promoverá\nPrimeiro Emprego Gaúcho e ampliadas as\npolíticas de controle populacional ético,\npolíticas de permanência para estudantes\nfortalecerá o apoio aos protetores\ndos ensinos médio e técnico. Os Centros da independentes e às entidades de proteção\nJuventude serão expandidos e qualificados animal e atuará com rigor na prevenção e\nnas periferias, oferecendo espaços de\nna punição dos maus-tratos.\ncultura, esporte, tecnologia, convivência e\natendimento aos jovens.\nDIRETRIZES E AÇÕES\nO Governo reconhecerá a diversidade das\njuventudes e suas diferentes realidades\nsociais e territoriais, valorizando a cultura\nperiférica e o hip-hop, ampliando o acesso\na crédito e assistência técnica para a\nsucessão rural e promovendo ações de\nprevenção à violência e inclusão produtiva\n\nA Coligação Com o Povo adotará a\nperspectiva da Saúde Única, integrando\nsaúde humana, animal e ambiental,\nestruturando a coordenação estadual\ndas políticas de proteção e bem-estar\nanimal com capacidade de articulação\ntransversal e cooperação com os\n21"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-22",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nmunicípios. Será instituído protocolo\npermanente de resgate e acolhimento\nde animais em desastres climáticos,\nintegrado à Defesa Civil, e ampliadas as\npolíticas públicas de castração gratuita e\nmicrochipagem, priorizando famílias em\nsituação de vulnerabilidade e protetores\ncadastrados.\nO Estado fortalecerá o combate aos\nmaus-tratos e a promoção da guarda\nresponsável, qualificando a atuação\npolicial especializada e os canais de\ndenúncia e fiscalização. Também\napoiará os municípios na substituição\ngradual da tração animal, associada à\ninclusão e requalificação profissional\ndos trabalhadores, promoverá ações\neducativas sobre bem-estar e guarda\nresponsável nas escolas e ampliará a\nfiscalização das atividades comerciais\nde criação de cães e gatos, assegurando\ncondições sanitárias adequadas e\nproteção contra práticas abusivas.\n\n22"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-23",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n2\n\nINFRAESTRUTURA, CIDADES\nE RESILIÊNCIA CLIMÁTICA\n\n2.1 - TRANSPORTES, LOGÍSTICA\nINTERMODAL E CONCESSÕES\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo promoverá\numa nova política estadual de logística e\ntransportes baseada na intermodalidade,\nno planejamento público e na resiliência\nclimática, integrando os modais\nrodoviário, ferroviário, hidroviário,\nportuário e aéreo. Será implantado um\nsistema estadual de inteligência logística\npara orientar investimentos, promover a\nrecuperação das ferrovias, assegurar a\ndragagem permanente das hidrovias e\nmodernizar o Porto de Rio Grande e os\ncorredores de integração com o Uruguai e\na Argentina. Novas obras e reconstruções\nadotarão critérios de engenharia\nadaptados a eventos climáticos extremos,\nampliando a segurança e garantindo\nrotas alternativas para evitar o isolamento\ndas regiões.\n\nDIAGNÓSTICO SITUACIONAL\nA matriz de transportes do Rio Grande do\nSul enfrenta um estrangulamento histórico,\nmarcado pela forte concentração no\nmodal rodoviário, responsável por cerca\nde 88% da movimentação de cargas,\npela subutilização da extensa malha\nhidroviária navegável e pela progressiva\ndeterioração da infraestrutura ferroviária.\nAs concessões rodoviárias vigentes têm\nimposto tarifas de pedágio elevadas sem\na correspondente execução de obras de\nduplicação, manutenção e segurança em\nprazos compatíveis com as necessidades\nda população e da economia gaúcha.\nAo mesmo tempo, os recentes eventos\nclimáticos extremos evidenciaram a\nelevada vulnerabilidade de pontes e\nrodovias, cujo colapso ou interrupção\nchegou a isolar regiões inteiras durante\nas inundações.\n\nO Governo revisará o modelo de\nconcessões rodoviárias, fortalecendo\na fiscalização, o cumprimento das\nobras contratadas e a vinculação dos\ninvestimentos às necessidades regionais,\nalém de reestruturar o DAER e a EGR e\napoiar os municípios na recuperação\ndas estradas vicinais e de escoamento\nda produção. Serão reforçadas as ações\nde segurança viária, modernizados os\naeroportos regionais e implantados portos\nsecos e distritos logísticos integrados.\nO Estado estimulará ainda a renovação\ne a descarbonização das frotas, com\nfinanciamento público para veículos\nelétricos, híbridos e movidos a biometano.\n\nA Coligação Com o Povo compreende\na infraestrutura de transportes como\ninstrumento estratégico de integração\nterritorial, soberania nacional e indução do\ndesenvolvimento econômico e produtivo.\nA reorganização da logística estadual terá\ncomo eixo a intermodalidade, promovendo\na integração entre os modais rodoviário,\nferroviário, hidroviário e portuário. Para isso,\nserão priorizados estudos e investimentos\ndestinados à recuperação e expansão da\nmalha ferroviária, a revisão dos contratos\nde concessão à luz do interesse público,\no fortalecimento dos portos públicos\ne a reconstrução e modernização da\ninfraestrutura viária com critérios rigorosos\nde engenharia, adaptação e resiliência\nclimática.\n\n23"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-24",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n2.2 - ENERGIA, MATRIZ RENOVÁVEL E\nTRANSIÇÃO ENERGÉTICA JUSTA\n\nEnergia e Transição Climática orientará\no planejamento, o licenciamento e o\nacompanhamento da descarbonização.\nSerão incentivados projetos de geração\nrenovável associados a sistemas de\narmazenamento e PCHs, além de um plano\nde reconversão econômica para Candiota\ne o Baixo Jacuí, com atração de indústrias,\nrequalificação dos trabalhadores e\nrecuperação de áreas degradadas.\n\nDIAGNÓSTICO SITUACIONAL\nO Rio Grande do Sul possui extraordinário\npotencial para a geração de energia\nlimpa e renovável, especialmente\nnas áreas eólica, solar, de biomassa e\nbiometano. Entretanto, sua infraestrutura\nde transmissão e distribuição ainda\napresenta elevada vulnerabilidade aos\neventos climáticos extremos, provocando\ninterrupções recorrentes e prolongadas no\nfornecimento de energia, tanto no interior\nquanto na Região Metropolitana. Ao\nmesmo tempo, o progressivo encerramento\ndo ciclo das usinas térmicas a carvão,\nsem um planejamento adequado para a\ntransição econômica e social, ameaça\nempregos, renda e a atividade produtiva\nna Região Carbonífera e no Baixo Jacuí.\n\nO Estado estimulará as cadeias\ndo biometano, biodiesel e etanol,\naproveitando resíduos da produção\nagropecuária e cereais para ampliar a\ngeração de energia, biofertilizantes e\ncombustíveis sustentáveis. Será reforçada\na fiscalização das concessionárias\nde energia, exigindo investimentos na\nresiliência da rede elétrica, com redes\nsubterrâneas ou blindadas em áreas\ncríticas e manutenção preventiva. No meio\nrural, será ampliada a eletrificação trifásica\ne apoiada a geração solar para produtores\ne agroindústrias familiares.\n\nA Coligação Com o Povo reconhece a\nenergia como bem público essencial e\ninsumo estratégico para o desenvolvimento\ne a industrialização do Estado. A política\nenergética estadual estará orientada\npela segurança e confiabilidade do\nabastecimento, pela ampliação da\ngeração de energias limpas e renováveis e\npor uma transição ecológica socialmente\njusta, que assegure alternativas\neconômicas e oportunidades aos\ntrabalhadores e às comunidades atingidas.\nNesse sentido, o Estado fomentará\nespecialmente o desenvolvimento do\nbiometano e de outras fontes renováveis,\nao mesmo tempo em que atuará no\ncombate à pobreza energética nas\nperiferias urbanas e no meio rural.\n\nO Programa Solar Social apoiará a geração\nfotovoltaica em habitações de interesse\nsocial e para famílias de baixa renda,\nenquanto escolas, hospitais e outros\nprédios estaduais receberão investimentos\nem eficiência e geração solar. Banrisul e\nBRDE oferecerão linhas de financiamento\nverde para apoiar a transição energética\nde micro e pequenas empresas,\ncooperativas e condomínios.\n2.3 - MINERAÇÃO ESTRATÉGICA,\nAGROMINERAIS E BENEFICIAMENTO LOCAL\nDIAGNÓSTICO SITUACIONAL\n\nDIRETRIZES E AÇÕES\n\nO Rio Grande do Sul possui reservas\nminerais de grande relevância econômica\ne estratégica, entre elas calcário, gesso,\nfosfato, cobre, titânio, terras raras e argilas\nindustriais. Historicamente, porém, parte\nsignificativa da exploração mineral esteve\nvoltada à extração e à comercialização\nde matérias-primas com baixo grau de\n\nA Coligação Com o Povo implementará\no Plano Estadual de Energia e Transição\nEnergética Justa 2027-2035, diversificando\na matriz energética, ampliando as fontes\nrenováveis e promovendo alternativas\neconômicas para as regiões dependentes\ndo carvão. Um Observatório Estadual de\n\n24"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-25",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nbeneficiamento local, limitando a geração\nde valor, empregos e renda no Estado e,\nem determinados casos, deixando passivos\nambientais sem a adequada recuperação.\nAo mesmo tempo, a elevada dependência\nda agricultura gaúcha de fertilizantes e\ncorretivos de solo provenientes de outras\nregiões ou do exterior aumenta sua\nvulnerabilidade às oscilações de preços, às\ncrises internacionais e às interrupções nas\ncadeias de abastecimento.\n\ndas comunidades e retorno social,\ncom fortalecimento técnico da Fepam,\nrecuperação de áreas degradadas e\ntransparência sobre os empreendimentos\ne direitos minerários. O Governo fiscalizará\na aplicação dos recursos da Compensação\nFinanceira pela Exploração Mineral\n(CFEM) em benefício das comunidades\nimpactadas, garantirá a consulta prévia\nàs comunidades indígenas, quilombolas e\ntradicionais e adotará medidas rigorosas\nde segurança para barragens de rejeitos,\nincluindo a vedação de novas estruturas\npelo método de alteamento a montante\ne a descaracterização das existentes nos\ntermos da legislação aplicável.\n\nA Coligação Com o Povo defende o\naproveitamento soberano, sustentável\ne planejado dos recursos minerais,\nconciliando desenvolvimento econômico,\nagregação de valor e responsabilidade\nsocioambiental. A política mineral do\nEstado será orientada para ampliar o\nbeneficiamento e a industrialização em\nterritório gaúcho, com atenção especial\nà produção de agrominerais destinados à\nagricultura, especialmente à agricultura\nfamiliar, e ao aproveitamento responsável\nde minerais críticos e estratégicos\nindispensáveis às novas tecnologias e à\ntransição energética.\n\n2.4 - SANEAMENTO BÁSICO, RECURSOS\nHÍDRICOS E COMITÊS DE BACIA\nDIAGNÓSTICO SITUACIONAL\nO Rio Grande do Sul ainda enfrenta\ngraves déficits na coleta e no tratamento\nde esgotos sanitários, com menos da\nmetade dos efluentes gerados recebendo\ntratamento adequado, comprometendo\na qualidade das águas de importantes\nbacias hidrográficas, como as dos\nrios Taquari, Sinos, Gravataí e Caí e a\nBacia do Guaíba. Ao mesmo tempo, as\nestiagens recorrentes comprometem o\nabastecimento de água e as atividades\nprodutivas em diversas regiões do\ninterior, enquanto as chuvas intensas e\nas cheias expõem a insuficiência dos\nsistemas de drenagem e ampliam o\nrisco de inundações nas áreas urbanas.\nNesse contexto, a privatização da Corsan\nexige uma atuação regulatória rigorosa\ndo poder público, de modo a assegurar\na universalização dos serviços e o\natendimento adequado aos pequenos\nmunicípios, independentemente de sua\nrentabilidade econômica.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo estabelecerá uma\npolítica estadual de mineração estratégica\norientada pela soberania, agregação de\nvalor e responsabilidade socioambiental,\nampliando o conhecimento geológico do\nterritório e estimulando o beneficiamento\ndos recursos minerais no próprio Rio\nGrande do Sul. Será dada atenção\nespecial aos minerais críticos e aos\nagrominerais, com incentivo à produção\nde remineralizadores de solo e sua\nintegração aos bioinsumos, reduzindo a\ndependência externa de fertilizantes e\nfortalecendo especialmente a agricultura\nfamiliar e a transição agroecológica.\nO Estado também apoiará pesquisa,\ninovação, cooperativismo e pequenos\nempreendimentos minerais formalizados.\n\nA Coligação Com o Povo reconhece a\nágua como bem público essencial e o\nsaneamento como política fundamental\nde saúde preventiva, qualidade de vida e\n\nA exploração mineral estará condicionada\na rigorosos critérios ambientais, segurança\n25"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-26",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n2.5 - MEIO AMBIENTE, TRANSIÇÃO\nECOLÓGICA E PROTEÇÃO DO BIOMA\nPAMPA E MATA ATLÂNTICA\n\npreservação ambiental. A política estadual\nde recursos hídricos e saneamento estará\nvoltada ao cumprimento das metas de\nuniversalização dos serviços, à proteção de\nnascentes e mananciais, ao fortalecimento\ndos Comitês de Bacia Hidrográfica e\nà realização de obras estruturantes\npara ampliar a reservação e garantir a\nsegurança hídrica, tanto para o consumo\nhumano quanto para a produção.\n\nDIAGNÓSTICO SITUACIONAL\nO patrimônio ambiental do Rio Grande do\nSul enfrenta pressões crescentes, expressas\nna descaracterização do Bioma Pampa\npela expansão de monoculturas intensivas,\nna degradação dos remanescentes da\nMata Atlântica e na consequente perda da\nbiodiversidade nativa. O enfraquecimento\ndas estruturas de fiscalização da Sema\ne da Fepam reduziu a capacidade\ndo Estado de prevenir, fiscalizar e\nresponsabilizar adequadamente\ninfrações e danos ambientais. Ao mesmo\ntempo, a emergência climática impõe\na necessidade de superar uma atuação\npredominantemente reativa e avançar\npara uma política ambiental proativa,\norientada pela prevenção, pela adaptação\ne pela transição ecológica.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá\na estrutura pública de planejamento e\ngestão dos recursos hídricos, assegurando\nsuporte técnico aos municípios e o pleno\nfuncionamento dos 25 Comitês de Bacia,\ncom participação dos usuários, prefeituras\ne sociedade civil. Serão ampliados os\ninvestimentos em saneamento nas\nperiferias e áreas rurais, com sistemas\nde esgotamento, tratamento de água e\nabastecimento, e reforçada a atuação\nda AGERGS na fiscalização das metas de\nuniversalização e redução das perdas nas\nredes de distribuição.\n\nA Coligação Com o Povo compreende\nas questões ambiental e social como\ndimensões inseparáveis de um mesmo\nprojeto de desenvolvimento: não\nhá desenvolvimento sustentável e\nduradouro com degradação ambiental\ne aprofundamento das desigualdades. O\nGoverno assumirá papel ativo na condução\nda transição ecológica, fortalecendo os\nórgãos públicos de fiscalização e proteção\nambiental, preservando os biomas e\na biodiversidade nativa, valorizando o\nconhecimento científico e promovendo\na justiça socioambiental como princípio\norientador das políticas públicas.\n\nO Estado ampliará a segurança hídrica\npor meio do financiamento de cisternas,\nmicroaçudes e pequenas barragens\npara a agricultura familiar e expandirá\na rede telemétrica de monitoramento\ne alerta para secas e cheias. Serão\nprotegidas nascentes e matas ciliares,\ncom Pagamento por Serviços Ambientais\naos produtores que preservarem áreas\nestratégicas.\nNas cidades, serão apoiadas soluções de\ndrenagem sustentável e infraestrutura\nverde, como parques lineares, bacias\nde retenção, jardins de chuva e pisos\npermeáveis, além da adaptação das\nestações de tratamento de água e esgoto\naos riscos de inundação. Os recursos do\nFundo Estadual de Recursos Hídricos serão\nprioritariamente destinados a projetos de\nsaneamento e recuperação ambiental\ndefinidos no âmbito dos Comitês de Bacia.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo promoverá\numa política ambiental orientada pela\npreservação dos biomas, pela transição\necológica e pelo fortalecimento da\ncapacidade pública de fiscalização,\nrecompondo os quadros técnicos da\nSema e da Fepam e atualizando o\n\n26"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-27",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nplanejamento estadual de adaptação e\nmitigação climática. Serão fortalecidas e\nampliadas as Unidades de Conservação,\ncom infraestrutura, servidores, tecnologia,\neducação ambiental e incentivo ao\necoturismo. A Política Estadual de Recursos\nHídricos será efetivada, com ações de\nsegurança hídrica, recuperação das\nbacias e monitoramento das águas.\nO Zoneamento Ecológico-Econômico\norientará o uso sustentável do território,\nconciliando produção, conservação e\nprevenção da ocupação de áreas de risco.\n\nassim como os planos de contingência,\nevacuação e proteção das comunidades,\nque devem ser permanentemente\natualizados e testados junto às populações\ndas áreas de risco.\nA Coligação Com o Povo, no governo,\npromoverá uma mudança de paradigma,\navançando da gestão de desastres para\numa política permanente de prevenção\ne gestão preditiva de riscos. A ciência\nclimática ocupará papel central no\nplanejamento do Estado, com estrutura\ntécnica especializada e permanente,\nmonitoramento contínuo, sistemas\nmodernos de previsão e alerta antecipado\ne integração entre Estado, municípios,\nuniversidades e instituições científicas. O\nobjetivo será ampliar a capacidade de\nprevenção, antecipar eventos extremos,\nreduzir vulnerabilidades e, acima de tudo,\nproteger a vida da população gaúcha.\n\nO Governo intensificará o combate\naos crimes ambientais e a proteção\nda biodiversidade, ampliando o\nmonitoramento tecnológico e fortalecendo\no Batalhão Ambiental da Brigada Militar.\nSerão incentivadas a agroecologia e\na preservação de sementes crioulas,\napoiados os municípios na erradicação\nde lixões e na transição para a economia\ncircular e implantados Centros Regionais\nde Triagem de Animais Silvestres. O\nEstado ampliará ainda o controle sobre\no uso de agrotóxicos, especialmente\npróximo a escolas, comunidades rurais e\nmananciais, e fortalecerá a participação\nda comunidade científica e das entidades\nambientalistas no Conselho Estadual do\nMeio Ambiente.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo transformará a\nDefesa Civil em uma política permanente\nde prevenção e gestão preditiva dos riscos\nclimáticos, incorporando a ciência do clima\nà estrutura pública estadual e ampliando\na capacidade de pesquisa, previsão\nmeteorológica e monitoramento dos rios.\nSerá implantado um Sistema Integrado\nde Alerta Precoce nas bacias críticas\ne profissionalizado o quadro técnico\nda Defesa Civil, com meteorologistas,\ngeólogos, oceanógrafos, engenheiros e\noutros especialistas. O Estado apoiará\nos 497 municípios na elaboração e\natualização de planos de contingência e\nevacuação, na realização de simulados\ne no mapeamento das áreas sujeitas a\ninundações e deslizamentos.\n\n2.6 - DEFESA CIVIL E GESTÃO PREDITIVA DE\nRISCOS CLIMÁTICOS\nDIAGNÓSTICO SITUACIONAL\nAs recentes catástrofes climáticas no Rio\nGrande do Sul evidenciaram os limites de\num modelo de Defesa Civil historicamente\nconcentrado na resposta emergencial\ne no socorro após a ocorrência dos\ndesastres. O Estado ainda carece de uma\nestrutura científica pública e integrada\ncapaz de realizar o monitoramento\nhidrometeorológico permanente, produzir\ninformações qualificadas e antecipar\ncenários de risco. A articulação entre\na Defesa Civil estadual e os municípios\nprecisa ser fortalecida e institucionalizada,\n\nA prevenção será construída em parceria\ncom comunidades, escolas e instituições\ncientíficas, com a formação de brigadas\ncomunitárias de Defesa Civil e a criação\nde uma rede gaúcha de pesquisa sobre\neventos extremos, articulada pela Fapergs\ne integrada às universidades públicas e\ncomunitárias. Serão adotados protocolos\n27"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-28",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nDIRETRIZES E AÇÕES\n\nespecíficos de proteção e resgate de\nanimais em desastres, incorporados\nconteúdos de percepção de risco e\nautoproteção nas escolas e assegurado\no acesso público aos dados produzidos\npor radares e estações meteorológicas\nestaduais.\n\nA Coligação Com o Povo tratará a\nmobilidade urbana como direito social e\ninstrumento de integração metropolitana,\nreestruturando a Metroplan e fortalecendo\no planejamento, a fiscalização e o controle\nsocial do transporte coletivo. O Governo\narticulará a implantação do Bilhete\nÚnico Metropolitano, integrando ônibus\nmunicipais, intermunicipais e Trensurb, com\ntarifas socialmente justas. Defenderá a\nTrensurb como empresa pública e buscará,\njunto ao Governo Federal, investimentos\npara sua recuperação, proteção contra\neventos climáticos e expansão, além de\nincentivar a renovação das frotas com\nveículos elétricos e de baixa emissão.\n\n2.7 - MOBILIDADE URBANA METROPOLITANA\nDIAGNÓSTICO SITUACIONAL\nA mobilidade urbana nas regiões\nmetropolitanas do Rio Grande do Sul,\nespecialmente na Região Metropolitana\nde Porto Alegre e no Eixo Norte, enfrenta\nproblemas estruturais decorrentes do\naumento das tarifas, da redução do\nnúmero de passageiros no transporte\ncoletivo e da insuficiente integração entre\nos sistemas municipais e intermunicipais.\nEssa fragmentação compromete a\nqualidade, a eficiência e a acessibilidade\ndo transporte público, penalizando\nprincipalmente a população que depende\ndiariamente desses serviços. Ao mesmo\ntempo, o sistema metroferroviário operado\npela Trensurb, fortemente atingido\npelas inundações de 2024, necessita de\ninvestimentos estruturantes para sua\nrecuperação, modernização, expansão\ne proteção diante de futuros eventos\nclimáticos extremos.\n\nA política de mobilidade promoverá a\ndiversificação e a integração dos meios\nde transporte, ampliando o transporte\nhidroviário de passageiros no Guaíba e na\nLaguna dos Patos, incentivando ciclovias\nintermunicipais e bicicletários integrados\naos terminais e assegurando acessibilidade\nno transporte público. Serão também\nampliadas as alternativas de transporte\nintermunicipal para estudantes dos ensinos\ntécnico e superior, especialmente os\nresidentes nas periferias metropolitanas.\n\nA Coligação Com o Povo compreende a\nmobilidade como direito social e condição\nfundamental para o pleno acesso à\ncidade, ao trabalho, à educação, à\nsaúde e aos demais serviços públicos.\nO Governo fortalecerá a coordenação\nmetropolitana do transporte coletivo,\npromovendo a integração física,\noperacional e tarifária entre os diferentes\nsistemas, o fortalecimento e a expansão\ndo transporte metroferroviário público e\na construção progressiva de uma política\nde tarifa socialmente justa, sustentada\npor mecanismos transparentes de\nfinanciamento e subsídio público.\n\n28"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-29",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n3\n\nDESENVOLVIMENTO ECONÔMICO\nSUSTENTÁVEL E REINDUSTRIALIZAÇÃO\n\n3.1 - AGRICULTURA FAMILIAR E\nABASTECIMENTO ALIMENTAR\n\nampliando crédito e apoio à produção.\nO Estado fortalecerá a comercialização\ndireta, o cooperativismo e a\nagroindustrialização familiar. Será criado\num Programa Estadual de Abastecimento\npara disponibilizar produtos da\nagricultura familiar, de suas cooperativas\ne associações diretamente aos\nconsumidores, ampliando o mercado para\nos produtores e garantindo à população\nalimentos de qualidade a preços\nacessíveis. Serão também ampliadas as\ncompras governamentais, destinando\nparcela significativa dos recursos de\nalimentação escolar, hospitais, presídios\ne programas sociais à agricultura familiar,\ncom prioridade aos segmentos mais\nvulneráveis, bem como o acesso à internet\ne a infraestrutura de armazenamento de\nágua no meio rural.\n\nDIAGNÓSTICO SITUACIONAL\nA agricultura familiar é responsável por\ngrande parte dos alimentos que chegam à\nmesa dos gaúchos, mas enfrenta o êxodo\nrural, o envelhecimento das famílias, a falta\nde sucessão geracional e deficiências de\ninfraestrutura. As mudanças climáticas,\na dependência de insumos externos e o\navanço das monoculturas, como a soja,\nagravam o endividamento e comprometem\na sustentabilidade econômica e produtiva\ndas propriedades.\nOutro desafio é o acesso aos mercados\ne a agregação de valor por meio da\nagroindustrialização. Para ampliar a\nrenda das famílias, é necessário estimular\na venda direta aos consumidores,\nas compras governamentais e os\nprogramas de aquisição de alimentos,\nalém de fortalecer o cooperativismo e o\nassociativismo, aproximando produção e\nconsumo.\n\nPolíticas específicas apoiarão a\nautonomia das mulheres, a permanência\ndos jovens e a sucessão rural. Em\narticulação com o Governo Federal,\nserão promovidos o acesso à terra e o\ndesenvolvimento dos assentamentos, com\nfortalecimento do FUNTERRA e de uma\nestrutura estadual de política fundiária.\nA pesquisa, a extensão e a assistência\ntécnica serão fortalecidas e integradas,\narticulando EMATER, UERGS, FAPERGS,\norganizações do campo e uma estrutura\nestadual de pesquisa agropecuária.\n\nNesse contexto, o fortalecimento da\nSecretaria de Desenvolvimento Rural (SDR)\né fundamental para coordenar as políticas\nde apoio à agricultura familiar e manter\num canal permanente de diálogo com sua\nampla base social e econômica.\nDIRETRIZES E AÇÕES\n\n3.2 - AGROPECUÁRIA SUSTENTÁVEL\n\nA Coligação Com o Povo promoverá a\ntransição para uma agricultura familiar\nsustentável, agroecológica e resiliente às\nmudanças climáticas, protegendo solo\ne água e valorizando quem preserva.\nSerá retomado o Plano Safra Gaúcho,\nem parceria com o Governo Federal,\nsistema financeiro e organizações sociais,\n\nDIAGNÓSTICO SITUACIONAL\nA agropecuária é um dos pilares da\neconomia do Rio Grande do Sul, com\nforte participação na geração de renda,\nempregos e desenvolvimento regional.\n29"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-30",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nEntretanto, setores tradicionais enfrentam\ndesafios relevantes. A pecuária extensiva\ndo Pampa convive com a perda de\ncompetitividade, enquanto a cadeia do\nleite sofre com a instabilidade dos preços\ne a concorrência de produtos importados.\nAo mesmo tempo, as mudanças climáticas\ntornam urgente a incorporação de novas\ntecnologias, o manejo sustentável do solo e\ndos rebanhos e o aumento da eficiência e\nda resiliência produtiva.\n\nerva-mate, ovinos, suínos e aves, além\nde atividades emergentes, com crédito,\nseguro, assistência técnica, sanidade,\ncertificação e apoio à comercialização.\nProgramas específicos apoiarão cadeias\nem dificuldades e a recuperação e\no fortalecimento das cooperativas\nagropecuárias.\nO Governo ampliará a inserção da\nprodução gaúcha nos mercados, com\nrastreabilidade, defesa sanitária e\nadequação às exigências ambientais e\ncomerciais internacionais, protegendo\nas cadeias regionais e estimulando a\nagregação de valor. A regularização\nambiental será simplificada para\nampliar o acesso ao crédito e ao\nseguro agrícola, enquanto agricultura\nde precisão, digitalização, bioinsumos,\nmanejo regenerativo e mecanização\nserão incentivados. Em parceria com a\nSEDUC, as escolas agrícolas estaduais\nserão fortalecidas, articulando formação,\ninovação, agroecologia, cooperativismo e\nsucessão rural.\n\nA Coligação Com o Povo promoverá uma\nagropecuária moderna, competitiva\ne sustentável, articulando inovação,\nprodutividade e conservação do Bioma\nPampa. O Governo estimulará a agregação\nde valor à produção agropecuária,\nespecialmente à carne e ao leite gaúchos,\nfortalecerá as cadeias produtivas locais,\nassegurará uma defesa sanitária rigorosa e\natuará na proteção dos produtores diante\nde práticas comerciais que comprometam\ncondições justas de concorrência.\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo reconstruirá a\ncapacidade pública de planejamento,\ndefesa agropecuária, fomento e\ninteligência econômica da Secretaria\nda Agricultura e fortalecerá a pesquisa\nestadual, recuperando funções da antiga\nFepagro e ampliando a atuação do IRGA.\nPesquisa, assistência técnica e inovação\nserão orientadas à resiliência climática,\nconservação do solo e da água, genética,\nbioinsumos, diversificação produtiva e\nadaptação das diferentes escalas de\nprodução, tendo as bacias hidrográficas\ncomo referência de planejamento.\n\n3.3 - COMÉRCIO, SERVIÇOS, ECONOMIA\nDO MAR E POLO EXPORTADOR DO\nMERCOSUL\nDIAGNÓSTICO SITUACIONAL\nO comércio e os serviços estão entre os\nmaiores empregadores do Rio Grande\ndo Sul, mas foram fortemente afetados\npelas sucessivas crises econômicas e\npela crescente concorrência de grandes\nplataformas internacionais, que muitas\nvezes operam em condições tributárias\ndistintas das empresas locais. Ao mesmo\ntempo, importantes potencialidades\npermanecem subaproveitadas, entre elas\na Economia do Mar — envolvendo a zona\ncosteira, a pesca, as atividades portuárias\ne os serviços associados — e a posição\nestratégica do Estado como porta de\nentrada e saída do Mercosul.\n\nO Estado estimulará a agroindustrialização\ne a agroenergia, agregando valor à\nprodução de soja, canola e outros grãos\ne incentivando culturas de inverno para\nabastecer a indústria de biocombustíveis\ne gerar novas fontes de renda. Serão\nfortalecidas a pecuária de qualidade,\nespecialmente no Pampa, e cadeias\ncomo leite, arroz, frutas, viticultura, mel,\n\n30"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-31",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nNesse contexto, o Rio Grande do Sul deverá\nestar preparado para aproveitar, com\nresponsabilidade ambiental, segurança\njurídica e conhecimento científico,\neventuais oportunidades de pesquisa,\nexploração e prestação de serviços\nassociadas à Bacia de Pelotas, sem\nantecipar conclusões sobre a existência\nde reservas economicamente viáveis ou a\npossibilidade de produção comercial.\n\nmeio do Exporta RS, pequenas e médias\nempresas terão apoio para acessar\nmercados internacionais, com inteligência\ncomercial, orientação jurídica e facilitação\nlogística, ampliando a inserção do Rio\nGrande do Sul no Mercosul e na América\ndo Sul.\n3.4 - CIÊNCIA, TECNOLOGIA, INOVAÇÃO\nE SOBERANIA DIGITAL\n\nA Coligação Com o Povo fortalecerá o\nambiente de negócios para o comércio\nde rua, as micro e pequenas empresas\ne os prestadores de serviços, ao mesmo\ntempo em que promoverá a infraestrutura\nda zona costeira e a integração dos\nsistemas portuário, rodoviário e ferroviário.\nO objetivo será aproveitar a posição\nestratégica do Rio Grande do Sul para\nconsolidá-lo como polo logístico e\ncomercial do Mercosul e da América do Sul.\n\nDIAGNÓSTICO SITUACIONAL\nO Rio Grande do Sul dispõe de um parque\nuniversitário de excelência, instituições de\npesquisa qualificadas e ecossistemas de\ninovação reconhecidos, reunindo parques\ncientíficos e tecnológicos, incubadoras,\nstartups e empresas de base tecnológica.\nApesar desse potencial, ainda há um\ndescompasso entre o conhecimento\nproduzido nas universidades e centros\nde pesquisa e sua aplicação no setor\nprodutivo e na administração pública.\nSoma-se a isso a elevada dependência de\nsoftwares, plataformas e infraestruturas\ndigitais de grandes corporações\nestrangeiras, ampliando a vulnerabilidade\ntecnológica e os desafios à soberania e à\nproteção dos dados dos cidadãos.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo fortalecerá\no comércio, os serviços e as micro e\npequenas empresas como geradores de\nemprego e renda, apoiando a revitalização\ndos centros comerciais e do comércio de\nbairro, simplificando a formalização pelo\nEmpresa Fácil RS e ampliando o acesso\nà assistência técnica e ao microcrédito,\ninclusive para trabalhadores da economia\ndo cuidado e dos serviços pessoais. Em\nparceria com os municípios, apoiará a\nmodernização de mercados públicos e\ncentros de abastecimento e incentivará\nrotas gastronômicas integrando\nprodutores, comércio, restaurantes\ne hotelaria. Será também criado um\nespaço permanente de diálogo entre\ntrabalhadores, empreendedores, entidades\nempresariais e Governo.\n\nPara a Coligação Com o Povo, ciência,\ntecnologia e inovação são instrumentos\nestratégicos de desenvolvimento,\nemancipação e soberania. O Governo\nfortalecerá a pesquisa científica e\ntecnológica voltada aos grandes desafios\neconômicos, sociais e ambientais do Rio\nGrande do Sul, ampliando a integração\nentre universidades, centros de pesquisa,\nempresas e poder público. Também\napoiará startups e empresas inovadoras\ne promoverá a soberania digital da\nadministração estadual, com segurança,\nproteção de dados e maior domínio sobre\nas tecnologias estratégicas utilizadas pelo\nEstado.\n\nO Governo desenvolverá uma Estratégia\nGaúcha para a Economia do Mar e a\nintegração com o Mercosul, fortalecendo\na pesca, a maricultura, o turismo costeiro,\nos serviços portuários e as atividades\nvinculadas à Costa Doce e ao Litoral. Por\n31"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-32",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nDIRETRIZES E AÇÕES\n\na Campanha, o Litoral e a Costa Doce —\npermanecem aquém de sua capacidade\nde atração de visitantes. Soma-se a isso a\nprecariedade da infraestrutura de acesso e\nda sinalização turística em diversas regiões\ndo interior do Estado.\n\nA Coligação Com o Povo tratará ciência,\ntecnologia e inovação como instrumentos\nestratégicos de desenvolvimento e\nsoberania, assegurando os recursos\nda FAPERGS e ampliando a integração\nentre universidades, centros de pesquisa,\nparques tecnológicos, empresas e\nArranjos Produtivos Locais. O Governo\napoiará startups e GovTechs, expandirá\nambientes comunitários de inovação e\ninclusão digital nas periferias e promoverá\npolíticas de atração e permanência de\njovens pesquisadores no Estado. Serão\nfomentadas pesquisas e soluções em\ninteligência artificial, tecnologias assistivas\ne outras áreas estratégicas, voltadas aos\ndesafios da saúde, do clima, da agricultura\ne da gestão pública.\n\nNo Governo, a Coligação Com o Povo\nimplementará uma política estadual de\nturismo sustentável, descentralizada e\ninclusiva, capaz de ampliar e diversificar\nos destinos turísticos do Rio Grande\ndo Sul. Valorizará a história, a cultura\ne a identidade gaúcha, incentivando\no ecoturismo e o turismo comunitário,\nfortalecendo e integrando as rotas\nregionais e promovendo o turismo ao\nlongo de todo o ano.\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo desenvolverá\numa política de turismo sustentável,\ndescentralizada e integrada ao\ndesenvolvimento regional, ampliando a\npromoção das Missões, Pampa, Vales,\nCosta Doce, Litoral Norte e demais destinos\ndo interior, com ações para reduzir a\nsazonalidade do setor. Serão fortalecidos o\nturismo histórico, cultural, rural, ecológico\ne de aventura, com investimentos em\ninfraestrutura, sinalização, qualificação\ndos atrativos e preservação ambiental.\nO Governo apoiará também o turismo\ncomunitário, quilombola e de matriz\nafricana, valorizando a diversidade\ncultural e as identidades regionais do\nRio Grande do Sul.\n\nO Estado fortalecerá sua soberania e\ninfraestrutura tecnológica, expandindo\na Infovia Gaúcha para conectar escolas,\nunidades de saúde, órgãos de segurança e\ndemais serviços públicos e estimulando a\nimplantação de data centers sustentáveis,\nabastecidos por energia renovável. Será\nfortalecido o Conselho Estadual de Ciência,\nTecnologia e Inovação e implantado o\nPrograma Gaúcho de Microeletrônica\ne Semicondutores, articulando CEITEC,\nuniversidades, empresas e o ecossistema\nde inovação às políticas nacionais\nde reindustrialização, com foco na\nformação profissional, pesquisa, atração\nde investimentos e desenvolvimento\ntecnológico.\n\nSerão integradas e promovidas as rotas\ngastronômicas, o enoturismo e as cadeias\nturísticas regionais, articulando vinhos,\nqueijos, azeites, cervejas artesanais,\ngastronomia e produção local. O Estado\nampliará a qualificação dos trabalhadores\ndo setor e, por meio da plataforma\nVisite o RS, integrará a divulgação\nde destinos, hospedagens, eventos e\natrativos. Serão ainda promovidas a\nacessibilidade universal nos atrativos\npúblicos e a cooperação entre municípios\ne governanças regionais para a construção\nde roteiros integrados.\n\n3.5 - TURISMO SUSTENTÁVEL\nE ROTAS CULTURAIS\nDIAGNÓSTICO SITUACIONAL\nO turismo é uma importante fonte\nde geração de emprego, renda e\ndesenvolvimento regional no Rio Grande do\nSul. Entretanto, os principais fluxos turísticos\nainda se concentram na Serra Gaúcha,\nenquanto regiões com grande potencial\nhistórico, cultural e natural — como a Rota\ndas Missões, a Rota das Pedras Preciosas,\n32"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-33",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n4\n\nGESTÃO PÚBLICA DEMOCRÁTICA,\nSOBERANIA POPULAR E FINANÇAS\n\n4.1 - GESTÃO PÚBLICA, VALORIZAÇÃO DO\nSERVIDOR, PLANEJAMENTO REGIONAL E\nPARTICIPAÇÃO SOCIAL\n\nquadros por meio de concursos públicos\ne fortalecendo políticas de qualificação,\nsaúde ocupacional, qualidade de vida e\nprevenção ao assédio. A Escola de Governo\nserá fortalecida como espaço de formação\ne inovação, enquanto a administração\nestadual avançará na profissionalização\nda gestão, integridade, transparência,\ncontrole interno, transformação digital e\ngestão por resultados.\n\nDIAGNÓSTICO SITUACIONAL\nO Rio Grande do Sul enfrenta o desafio\nde fortalecer a capacidade institucional\ndo Estado, valorizar o serviço público\ne aperfeiçoar seus instrumentos de\nplanejamento, gestão e participação\nsocial. A qualificação das carreiras, a\nrecomposição de quadros em áreas\nestratégicas, o enfrentamento das\ndesigualdades regionais e a participação\nda sociedade na definição das prioridades\ngovernamentais são condições essenciais\npara uma gestão pública moderna,\neficiente, transparente e orientada para\nresultados.\n\nO Governo fortalecerá o planejamento\nregional e a participação popular,\nvalorizando os COREDEs, retomando\ne ampliando mecanismos como o\nOrçamento Participativo e a Consulta\nPopular e interiorizando a atuação\ndo Estado, com atenção especial ao\napoio técnico aos pequenos municípios.\nSerão ampliados a transparência e o\nacompanhamento público de obras,\ninvestimentos e programas e fortalecidos\nos conselhos estaduais e demais espaços\nde participação social. As ações e metas\ngovernamentais contarão ainda com\nmecanismos permanentes e participativos\nde monitoramento, avaliação e prestação\nde contas à sociedade.\n\nA Coligação Com o Povo entende\nque um Estado capaz de responder\nàs necessidades da população exige\nservidores valorizados, planejamento\nestratégico de longo prazo e diálogo\npermanente com a sociedade. O\nGoverno promoverá a valorização e a\nqualificação do serviço público, fortalecerá\no planejamento e o desenvolvimento\nregional e ampliará os mecanismos\nde participação cidadã, consolidando\numa gestão integrada, transparente e\neficiente, comprometida com a redução\ndas desigualdades e o desenvolvimento\nequilibrado de todas as regiões.\n\n4.2 - FINANÇAS PÚBLICAS\nDIAGNÓSTICO SITUACIONAL\nE DIRETRIZES E AÇÕES\nA Lei Orçamentária Anual de 2026 estima\nreceitas inferiores às realizadas em 2025\ne despesas superiores às do ano anterior,\nprojetando déficits orçamentário e\nprimário de R$ 3,797 bilhões e R$ 5,466\nbilhões, respectivamente. Tais números\ndemonstram que o modelo adotado nos\núltimos governos, de venda do patrimônio\npúblico e arrocho salarial do funcionalismo,\nnão funcionou.\n\nDIRETRIZES E AÇÕES\nA Coligação Com o Povo promoverá uma\ngestão pública democrática, eficiente\ne comprometida com a valorização dos\nservidores, mantendo diálogo permanente\ncom suas entidades representativas,\nrecompondo gradualmente carreiras e\n33"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-34",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nAdemais, desde 2021 o PIB gaúcho vem\napresentando crescimento inferior ao\nPIB brasileiro, sendo que esse menor\ndinamismo econômico repercute\nnegativamente sobre a arrecadação. O\nICMS, principal fonte de receita do Tesouro\nestadual, perdeu participação relativa\nno contexto nacional: o Rio Grande do\nSul respondia por 7,29% da arrecadação\nbrasileira do imposto em 2018 e passou a\nrepresentar 6,15% em 2025. A diferença\nde 1,14 ponto percentual corresponde, em\nvalores atuais, a aproximadamente\nR$ 10 bilhões anuais de arrecadação.\n\no equilíbrio fiscal sustentável não pode\ndepender de receitas extraordinárias,\nnem de aumento de impostos ou da\nredução da capacidade de atuação\ndo Estado. É preciso, isto sim, combinar\nresponsabilidade fiscal, otimização das\nreceitas, eficiência do gasto, gestão da\ndívida e capacidade de investimento\ncom uma estratégia permanente de\ncrescimento e desenvolvimento.\nO caminho correto para fortalecer as\nfinanças públicas é fazer o estado voltar\na crescer economica e socialmente, o\nque compõe a estratégia proposta pela\nColigação Com o Povo para a inauguração\nde um novo ciclo de desenvolvimento no\nEstado do Rio Grande do Sul.\n\nMas é a dívida pública com a União que\npermanece como um dos principais\nproblemas estruturais das finanças\ngaúchas. Em 31 de dezembro de 2025, seu\nsaldo devedor alcançava R$ 106,54 bilhões,\nsendo que as parcelas mensais deverão\nvoltar a ser pagas a partir de junho de 2027,\nquando termina o período de suspensão\nestabelecido em razão da catástrofe\nclimática de 2024. A retomada do\npagamento da dívida extinguirá a principal\nfonte recente de financiamento dos\ninvestimentos estaduais: o Fundo do Plano\nRio Grande – FUNRIGS, que recebeu R$ 6,2\nbilhões entre junho de 2024 e dezembro\nde 2025, razão pela qual buscar a sua\nprorrogação por mais três anos será uma\ndas metas prioritárias do nosso governo.\n\nPara tanto, lutaremos pela aprovação\nda proposta de emenda constitucional\nque cria o Fundo de Desenvolvimento\nda Região Sul; buscaremos o aumento\nsustentável da receita estadual, sem\naumento de impostos; participaremos\nativamente da regulamentação e da\nimplementação da reforma tributária\nde consumo; atuaremos para a\nimplementação e a transferência\nde recursos do Fundo Nacional de\nDesenvolvimento Regional e do Fundo\npara Compensação de Benefícios\nFiscais do ICMS criados pela Reforma\nTributária; atualizaremos o FUNDOPEM/\nRS e o INTEGRAR/RS, a fim de incentivar\ne atrair indústrias para o nosso Estado;\nzelaremos pela eficiência e qualidade\ndo gasto público; buscaremos, junto à\nUnião, prorrogar por mais três anos a\nsuspensão do pagamento da dívida,\ndestinando os recursos correspondentes\naos pagamentos suspensos para\ninvestimentos em infraestrutura e\nprojetos de sustentabilidade ambiental\ne econômica, inclusive de irrigação,\nmediante a correspondente prorrogação\ndo FUNRIGS por igual prazo; negociaremos\na redução dos encargos da dívida;\nfortaleceremos a gestão dos passivos\ncontingentes e dos riscos fiscais do Estado;\naperfeiçoaremos, permanentemente, a\n\nO Rio Grande do Sul precisa preservar sua\ncapacidade de investimento tanto para\nconcluir a reconstrução decorrente da\ncatástrofe climática de 2024, quanto para\nrecuperar sua infraestrutura e exercer\no papel de indutor do desenvolvimento\neconômico e social.\nNesse sentido, ganham importância a\ncriação do Fundo de Desenvolvimento da\nRegião Sul, previsto na PEC nº 27/2023, e\na implementação do Fundo Nacional de\nDesenvolvimento Regional (FNDR) instituído\nna Reforma Tributária.\nO diagnóstico das finanças estaduais\nconduz, portanto, a uma conclusão:\n34"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-35",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nDIRETRIZES E AÇÕES\n\ngestão da previdência social dos servidores\npúblicos estaduais; fortaleceremos o\nSistema de Controle Interno do Estado,\nampliando sua efetividade na orientação,\nno acompanhamento e na fiscalização\nda gestão e da aplicação dos recursos\npúblicos em toda a administração pública\nestadual.\n\nA Coligação Com o Povo reafirmará\nBanrisul, Badesul e BRDE como\ninstrumentos públicos estratégicos de\ndesenvolvimento, preservando o controle\npúblico do Banrisul e fortalecendo a\ncapacidade de financiamento de longo\nprazo do sistema financeiro público\npara pequenas empresas, agricultura,\ncooperativas, inovação, infraestrutura e\nreindustrialização.\n\n4.3 - BANCOS PÚBLICOS\nDIAGNÓSTICO SITUACIONAL\n\nO Governo fortalecerá a atuação dessas\ninstituições como instrumentos de uma\nestratégia estadual de desenvolvimento,\nampliando o acesso ao crédito e sua\ncapacidade de apoiar investimentos\nprodutivos, a reconstrução e a resiliência\nclimática, a inovação e o desenvolvimento\nregional. As instituições financeiras\npúblicas gaúchas atuarão de forma\narticulada às políticas de desenvolvimento\neconômico e social do Estado, preservando\nseu caráter público e sua função\nestratégica na geração de emprego, renda\ne oportunidades para os gaúchos.\n\nO Banco do Estado do Rio Grande\ndo Sul S.A. (Banrisul), o Badesul\nDesenvolvimento S.A. e o Banco Regional\nde Desenvolvimento do Extremo Sul (BRDE)\nserão reafirmados como instituições\npúblicas estratégicas e inegociáveis,\nfundamentais para ampliar o acesso\nao crédito, financiar investimentos\nprodutivos, apoiar empresas, cooperativas\ne empreendedores e promover o\ndesenvolvimento econômico e regional\ncom autonomia e soberania.\n\n35"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-36",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nCONCLUSÃO\n\nUM NOVO CICLO DE DESENVOLVIMENTO\nPARA O RIO GRANDE DO SUL\nO Rio Grande do Sul precisa inaugurar\num novo ciclo de desenvolvimento.\nNos três últimos governos, a política\neconômica estadual foi orientada por um\nmodelo baseado no aumento da carga\ntributária, na alienação de ativos públicos\nestratégicos, na redução da estrutura\nestatal e em profundas mudanças nas\ncarreiras do serviço público. Essas medidas\nforam apresentadas como indispensáveis\npara recuperar as finanças estaduais e\ncriar as condições para o desenvolvimento.\n\ndos Estados (PROPAG - Lei nº 212/2025)\npermitirá que bilhões de reais permaneçam\nno Estado, ampliando a capacidade\nde investimento público e criando\nmelhores condições para a retomada do\ncrescimento.\nA experiência demonstra que soluções\nestruturantes não são construídas\npela imposição de uma única visão,\nmas pelo diálogo entre União, Estado,\nmunicípios, setor produtivo, trabalhadores,\nuniversidades e sociedade civil.\nÉ nessa perspectiva que se propõe um\nNovo Ciclo de Desenvolvimento para o\nRio Grande do Sul, articulado em três\nhorizontes: curto, médio e longo prazo.\n\nOs resultados, entretanto, ficaram aquém\ndo esperado.\nA privatização de serviços essenciais\nnão produziu as melhorias prometidas à\npopulação haja vista o que se passa tanto\nno setor da energia elétrica quanto da\nágua, bens essenciais. Estruturas públicas\nde pesquisa foram descontinuadas e\nsubstituídas por contratações externas.\nOs servidores públicos sofreram perdas\nsignificativas. E o Regime de Recuperação\nFiscal-RRF, apresentado como solução para\no desequilíbrio das contas públicas, não\nfoi capaz de superar o problema estrutural\ndas finanças estaduais.\n\nCURTO PRAZO: GARANTIR A TRANSIÇÃO\nE PRESERVAR A CAPACIDADE DE\nINVESTIMENTO\nA primeira prioridade será enfrentar a\nsituação fiscal imediata sem comprometer\na capacidade de reconstrução e\ndesenvolvimento do Estado.\nNesse sentido, deverá ser buscada a\nprorrogação do Fundo do Plano Rio Grande\n- FUNRIGS (Decreto nº 57.647) por mais três\nanos, criando um período de transição\nadequado para o Rio Grande do Sul após\nas calamidades que atingiram o Estado.\n\nO resultado é um Estado com reduzida\ncapacidade de investimento e que\nainda enfrenta a perspectiva de déficits\nexpressivos nos próximos anos, chegando\na uma projeção de R$ 4,8 bilhões para o\norçamento de 2027.\n\nA manutenção temporária do fundo\npermitirá enfrentar os efeitos financeiros\nda reconstrução, preservar recursos para\ninvestimentos e contribuir para a solução\ndas questões relacionadas às dívidas\ngarantidas.\n\nEsse modelo precisa ser superado.\nO Rio Grande do Sul tem diante de si uma\noportunidade histórica para reconstruir sua\ncapacidade de planejamento, investimento\ne desenvolvimento. A redução dos\nencargos da dívida proporcionada pelo\nPrograma de Pleno Pagamento de Dívidas\n\nSerá estabelecida uma articulação\npermanente com o Governo Federal\npara assegurar as condições\nnecessárias à manutenção do FUNRIGS,\n36"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-37",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\nLONGO PRAZO: UM PLANO DE\nDESENVOLVIMENTO ECONÔMICO\nPARA O RIO GRANDE DO SUL\n\nindependentemente do resultado\ndas eleições presidenciais. A situação\nexcepcional enfrentada pelo Rio Grande\ndo Sul exige uma política de Estado,\ne não uma solução condicionada a\ncircunstâncias eleitorais.\n\nO equilíbrio fiscal, por si só, não\nproduz desenvolvimento. É necessário\naumentar a capacidade de geração\nde riqueza do Estado. Por isso, será\nelaborado e implementado um Plano\nde Desenvolvimento Econômico do Rio\nGrande do Sul, com horizonte de longo\nprazo e metas definidas para investimento,\nprodutividade, inovação, infraestrutura,\nindustrialização, emprego e renda.\n\nMÉDIO PRAZO: CRIAR O FUNDO\nCONSTITUCIONAL DA REGIÃO SUL\nA solução definitiva para o\ndesenvolvimento regional não poderá\ndepender indefinidamente de mecanismos\nextraordinários.\nSerá necessário construir uma ampla\narticulação política, institucional e\nfederativa para aprovar a criação do\nFundo Constitucional de Desenvolvimento\nda Região Sul. A proposta, já em discussão\nno Congresso Nacional, prevê a destinação\nde recursos equivalentes a 1% do Imposto\nde Renda e 1% do IPI, seguindo modelo\nsemelhante ao adotado pelos Fundos\nConstitucionais de Financiamento das\nregiões Norte, Nordeste e Centro-Oeste.\n\nO Estado deverá deixar de atuar apenas\ncomo administrador de suas dificuldades\nfiscais e assumir novamente uma\nfunção estratégica na promoção do\ndesenvolvimento.\n\nA criação desse fundo deverá ser tratada\ncomo uma agenda suprapartidária\ne regional. Sua aprovação exigirá a\nmobilização conjunta dos três estados\ndo Sul, de suas bancadas parlamentares,\ngovernos estaduais, municípios, setor\nprodutivo, trabalhadores, universidades e\ninstituições da sociedade civil.\n\nO que falta não é potencial. Falta\nestratégia.\n\nO Rio Grande do Sul possui capital humano,\nuniversidades, empresas, capacidade\nindustrial, produção agropecuária,\nlocalização estratégica e tradição de\ninovação suficientes para voltar a crescer.\n\nÉ hora de construir essa estratégia.\nA Coligação Com o Povo propõe um\nnovo ciclo de desenvolvimento para o\nRio Grande do Sul com Educação Pública\nIntegral, equilíbrio fiscal, capacidade\nde investimento, indústria forte, ciência,\ntecnologia e inovação, infraestrutura\nmoderna e empregos de qualidade.\n\nO Fundo Constitucional da Região Sul\ndeverá constituir uma fonte permanente\nde financiamento para investimentos\nprodutivos, infraestrutura, inovação,\nmodernização industrial, agricultura,\npequenas e médias empresas e\ndesenvolvimento tecnológico.\nMais do que substituir o FUNRIGS,\ndeverá representar a construção de\num novo instrumento permanente de\ndesenvolvimento regional.\n\nConstruiremos um Estado mais próspero,\njusto e sustentável, capaz de melhorar a\nvida de sua gente no presente e de abrir\nnovos caminhos e oportunidades para as\npróximas gerações.\n\n37"
+          },
+          {
+            "id": "plano-de-governo-juliana-brizola-2027-2030-38",
+            "titulo": "Plano de Governo Juliana Brizola - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Juliana Brizola - 2027-2030\n\n38"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "515a2fba2f8f202342856ac8be586506c33bf02827e7021297329a019c64bc0a"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "2633f58621c3167fd5f3c1b4b660b4e9a76e7e66f17f7856dfddad3d21bedeaa"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "1a79a99188c27755f7f5db5907fed475a21d7da6753b216fd9d978df23f41618"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "99ee7d032f816cd2bfff80cee9fc4fd5ce6ee5850d1f5926a9307bfde1aa926b"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "20ed9337e6509dc3706ffd7c87cf14fcb8824e6bb113cd57c6a4e9d9fa55e9c2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "723c02839bc5e11df0f06d8b643a08a1cbd3b317b1bb5c2e09dbd5456a7a26ce"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "09476b77653d64783e88a90f14e27c5665d54d680f8303d9c3765f8172804ccd"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "9bdf21bdc02926c8637305ce0b8032af82d73a0f4ed7154ac5703e48f57900aa"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "af304bc2b4b431f91ea31ff85d62c42181446f74ea7eafb5af586db86ae720bf"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f2ac8153a612dd3b9821f9b8636f2e3141d8b2d502b7b1195caf5dbe426ea115"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "0024ed195a46b9fba860b21fd9ff5c047876e54dac14b5e754da3522b65d76ab"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "c828803758cbbf7c938e374afc1dabd628330fe8b657e13b02e04dc6835a6fad"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "5723baab983256d31f46b257f9312876352162cc0938b1be834963446f6bb674"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "48d4c4ddf21f3b773fbaffd67befbe30ebd3b9c2bce21f8b5bb5f5ec73ab578b"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "ba400237d0520c463c30bda6ef02715d1d8cf716badd400036cedce60bc219ab"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "5e972ab79e67dae098e26874f51df7ffafeba96caa4ebddbbd12bdee9ca70951"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "679cb06245183fc0caeb83ab0bb86c0f483c52655efc26dcec261abbf567f077"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "4cf3975fac820a5e2d8393f4dd60e66cd9f7614362a5c933f4a3ec50b7b12a7c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "30096d574e6551a36a68e377e3689a9d149c872a53e02db6fe668bdc74a20fcf"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "4ac780028c37df7673d6254e68a30df604c28a19051b22d54e1ae7c9798c1db5"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "d01c95d07f42e46bad4d08e1e1fff0fc14fe3f2279fd68ef3212328939a18ec8"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "2b937340b017d8e829afff0d7929e5106c67eb1a678fe66d47d81c4b5bc7c3fb"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "efb2ea87b86d2054e9fa0a89391fa29cc76c3abfaf9e76cecc72102a13753a2d"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "1da0142d89a9314b108d880b0b2e003da76fcaef789b9840f098ee9e30b27747"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "58bd001880c49e054ef0af606d8dbc5f2792c46609619080e142d2ae0d865b3c"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "8f1e0ef3282988e2cdb4a183b818bc0a8af5d2f93ea138c9d68c7b528b76d3de"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "0de22bc3ad38bbfc40a47fd10f0b47fa60f88c61191ed91a13a4304565844b38"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "c926b0f917f1f5c3810b8e0aa0c60ed8efba0dac244bf51afee8d262be6b2a20"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "1f8db12630b51cd7d7be96c2b05c22710bad6ba065f72b7a64f9057e1e9addfa"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "33e59b42a42cbebe3c1af5a515ce87a6206653c92198f87b942817fbdc960eac"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "929e8e5ac0be49f14cc96a9b8472619787844d3bbfe8605e39577e6e4c89204a"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "cb34dd53115c0d7e823b2484500700ff7cbcb672bbd6db251a9539c6d64d16c8"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "8d7c6df81f5a9f38e0939907fbf7f803878f6597aec298d197a19426479fc686"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "a2bb6913a34013baf8c380f25989a52c2f1112e9fa4ed4dc04dbd014e7a39523"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "57acf87c0fcf3cb6fba1938f6970c9dd0b264cc42490eeada41173bb12923c4a"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "5f0a457717f889e2c875df7edaf8583df44e3822ec9d8271936ee8ccf3092055"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "d331dcf1c941446f1e63cf5bf97a09a8fc72cf0f343d0ccc688202201eb72e80"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "73f6dcfb9d7c194a267725a79f2bd0c14f7ce59dd7eb40943a38ed35f3e33609"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a implantação gradual dos CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional nas escolas estaduais. Na saúde pública, propõe regionalizar a média e alta complexidade, fortalecendo hospitais-polo, UTIs e serviços especializados no interior do Rio Grande do Sul. Para a proteção climática, planeja um Sistema Integrado de Alerta Precoce nas bacias críticas, com monitoramento contínuo dos riscos hidrometeorológicos. Na mobilidade urbana, propõe implantar o Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas. No desenvolvimento produtivo, prevê um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar diretamente aos consumidores, ampliando o mercado dos produtores. Na gestão pública, propõe ampliar a transparência e o acompanhamento público de obras, investimentos e programas, com mecanismos participativos de monitoramento.",
+    "frases": [
+      {
+        "texto": "O programa prevê a implantação gradual dos CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional nas escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 6,
+            "trecho": "A Coligação Com o Povo implantará gradualmente os CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, propõe regionalizar a média e alta complexidade, fortalecendo hospitais-polo, UTIs e serviços especializados no interior do Rio Grande do Sul.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 7,
+            "trecho": "A média e alta complexidade serão regionalizadas, fortalecendo hospitais-polo, UTIs e serviços especializados no interior."
+          }
+        ]
+      },
+      {
+        "texto": "Para a proteção climática, planeja um Sistema Integrado de Alerta Precoce nas bacias críticas, com monitoramento contínuo dos riscos hidrometeorológicos.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 27,
+            "trecho": "Será implantado um Sistema Integrado de Alerta Precoce nas bacias críticas"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade urbana, propõe implantar o Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 28,
+            "trecho": "O Governo articulará a implantação do Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento produtivo, prevê um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar diretamente aos consumidores, ampliando o mercado dos produtores.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 29,
+            "trecho": "Será criado um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar, de suas cooperativas e associações diretamente aos consumidores, ampliando o mercado para os produtores"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, propõe ampliar a transparência e o acompanhamento público de obras, investimentos e programas, com mecanismos participativos de monitoramento.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 33,
+            "trecho": "Serão ampliados a transparência e o acompanhamento público de obras, investimentos e programas e fortalecidos os conselhos estaduais e demais espaços de participação social."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Implantação gradual dos CIEPs com educação em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 6,
+            "trecho": "A Coligação Com o Povo implantará gradualmente os CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional."
+          }
+        ]
+      },
+      {
+        "id": "regionalizacao-do-sus",
+        "titulo": "Regionalização do SUS",
+        "descricao": "Regionalização da média e alta complexidade no interior.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 7,
+            "trecho": "A média e alta complexidade serão regionalizadas, fortalecendo hospitais-polo, UTIs e serviços especializados no interior."
+          }
+        ]
+      },
+      {
+        "id": "alerta-climatico",
+        "titulo": "Alerta climático",
+        "descricao": "Implantação de alerta precoce nas bacias críticas.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 27,
+            "trecho": "Será implantado um Sistema Integrado de Alerta Precoce nas bacias críticas"
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-metropolitana",
+        "titulo": "Mobilidade metropolitana",
+        "descricao": "Implantação do Bilhete Único Metropolitano.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 28,
+            "trecho": "O Governo articulará a implantação do Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas."
+          }
+        ]
+      },
+      {
+        "id": "abastecimento-alimentar",
+        "titulo": "Abastecimento alimentar",
+        "descricao": "Criação de programa estadual para produtos da agricultura familiar.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002551508:01",
+            "pagina": 29,
+            "trecho": "Será criado um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar, de suas cooperativas e associações diretamente aos consumidores, ampliando o mercado para os produtores"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:02:58.866Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:05:05.067Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente o conteúdo da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve o conteúdo, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (CIEPs)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:1:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (saúde/regionalização)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:2:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho e página confirmam a proposta, incluindo referência a monitoramento contínuo hidrometeorológico no mesmo texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e factual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (defesa civil/clima)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:3:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas pela página citada, que contém também 'monitoramento contínuo'."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (mobilidade)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:4:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente (abastecimento alimentar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:5:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação; página cita também mecanismos participativos de monitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (gestão pública/transparência)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:frase:6:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas; página cita também 'mecanismos permanentes e participativos de monitoramento'."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:educacao-publica:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:regionalizacao-do-sus:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:alerta-climatico:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:mobilidade-metropolitana:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002551508:tema:abastecimento-alimentar:documentos:RS:210002551508:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RS:210002551508",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RS:210002551508:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 49584,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3071,
+          "reasoning_output_tokens": 1851
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28120,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20530,
+          "output_tokens_details": {
+            "thinking_tokens": 349
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28120,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20530,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28120,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28120
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.33947839999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a42d6e9cc872b3d8897a62d5d5e8844b8e401e034b931ccf0876f40c5ce7ed8a",
+    "extractedTextSha256": "03f8676dce6fa5a0b97bd1944aaa90fb069182763b8bb90117d6c75cd66f2e55",
+    "documentCount": 1,
+    "documentSetSha256": "9b9d2370c53db8d4eaf1c3a08249942cd7ede32ff0ea46eaa1b7285f9fdcc87a",
+    "contentSha256": "15409d55414be36ffac0144d59a379e38e9984569c644b748d29e9b18299c308"
+  }
+}

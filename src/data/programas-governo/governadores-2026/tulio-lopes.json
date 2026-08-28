@@ -1,0 +1,1016 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002544122",
+    "slug": "tulio-lopes",
+    "nomeUrna": "PROFESSOR TÚLIO LOPES",
+    "partido": "PCB",
+    "arquivoNome": "2026MG130002544122_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002544122_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002544122:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002544122_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002544122_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a146399d87d2f7b4e1e2854e4bc9f87e8cf6059b9c779478fc680c611ff6b424",
+        "extractedTextSha256": "e251b54d7fc39b014ae28ff86c685867f110180af886bc55eb4edc634b0f2b0e",
+        "paginas": 27,
+        "secoes": [
+          {
+            "id": "programa-do-partidao-para-o-governo-de-minas-gerais",
+            "titulo": "PROGRAMA DO PARTIDÃO PARA O GOVERNO DE MINAS GERAIS",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DO PARTIDÃO PARA O GOVERNO DE MINAS GERAIS\n\nConstruindo o Poder Popular, por um Governo dos(as) Trabalhadores(as).\n\nCOMITÊ ESTADUAL DO PARTIDO COMUNISTA BRASILEIRO (PCB)\n\nMinas Gerais, junho de 2026."
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "Apresentação.",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Apresentação.\n\nO programa que apresentamos é fruto de uma síntese coletiva e do acúmulo de lutas dos\ntrabalhadores e de suas organizações. Aqui estão as bandeiras programáticas e lutas do povo\ntrabalhador mineiro e a apresentação dos interesses que o Partido Comunista Brasileiro (PCB)\nrepresenta. Também publicamos neste documento uma Plataforma Política Eleitoral das précandidaturas proporcionais legislativas estaduais do PCB. O Partido Comunista Brasileiro (PCB) foi\nfundado em 25 de março de 1922, organizando-se em Minas Gerais já em 1925. Manteve ao longo\nde sua história vínculo direto com as lutas do movimento operário, sindical, popular, estudantil,\ncultural e ambiental, com destaque para o período de 1945 a 1964, quando o Partidão foi a principal\nforça política da esquerda em Minas Gerais e no Brasil.\nA pré-candidatura do PCB ao Governo do Estado de Minas Gerais surge diretamente das lutas\nda classe trabalhadora, da juventude e do povo mineiro. O professor Túlio Lopes tem uma importante\ntrajetória, marcada pela firmeza de princípios e pela coerência política, e está vinculado\norganicamente às lutas dos(as) servidores públicos estaduais. No mesmo registro, as pré-candidaturas\nproporcionais do PCB também são ligadas às lutas dos movimentos populares. Este programa parte\nde uma afirmação simples e decisiva: os problemas de Minas Gerais não serão resolvidos sem\nevidenciar e enfrentar os interesses de quem lucra com a miséria, a destruição ambiental e a\nprecarização da vida. Da espoliação colonial ao modelo atual de saque mineral, energético e\nfinanceiro, Minas foi historicamente transformada em território de extração e descarte. O Estado,\nlonge de ser neutro, sempre operou para garantir essa ordem; nesses termos, é uma estrutura políticojurídica que assegura a reprodução da ordem capitalista, tendo, como função principal, assegurar os\ninteresses do grande capital. Nesses termos, não propomos administrar melhor a injustiça nem\nhumanizar um modo de produzir a vida que efetivamente produz fome, violência e desigualdade;\npropomos construir uma nova forma de poder, caracterizada como poder popular, reconhecendo que\nos interesses da classe trabalhadora, da juventude e dos setores sociais oprimidos e explorados são\ncentrais. Com nossa pré-candidatura, atuamos para garantir o protagonismo necessário ao povo\ntrabalhador, e o programa que apresentamos é de luta. Um esforço que se desenvolve em três níveis\nfundamentais: o econômico, o político e o ideológico. Reconhecendo os limites do Estado atual, o\ntransformamos em campo de enfrentamento político, pois entendemos que direitos não são\nconcessões, mas conquistas arrancadas pela organização e pela mobilização popular. Cada ponto aqui\napresentado busca fortalecer o povo trabalhador, reorganizar a economia, defender a vida e construir\npoder popular real no rumo do socialismo e do comunismo. A organização do programa expressa essa\nestratégia."
+          },
+          {
+            "id": "por-um-governo-dos-as-trabalhadores-as-governar-para-o-povo-trabalhador",
+            "titulo": "Por um Governo dos(as) trabalhadores(as): governar para o povo trabalhador: Reversão total",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Por um Governo dos(as) trabalhadores(as): governar para o povo trabalhador: Reversão total\ndas prioridades para atender às demandas populares.\nNossa palavra de ordem do governo para o povo trabalhador mineiro emerge da constatação\nde que os sucessivos governos de Minas Gerais atenderam ao grande capital, em um contexto em que\nas massas de mulheres e homens trabalhadores têm que defender sua existência contra estes\ninteresses. Façamos nós, com nossas mãos, tudo o que a nós nos diz respeito! Precisamos nos agrupar\ncomo uma força unida e decidida a transformar nossa indignação em luta, para derrotar a política\nneoliberal e construir um projeto socialista, que se desenvolva permanentemente na perspectiva\nhistórica da revolução social e da emancipação humana. Ou os grandes empresários, latifundiários e\nbanqueiros têm o controle do governo através de seus representantes, ou os trabalhadores governam\ne da mesma forma usam o governo em seu próprio interesse de classe, ou seja, contra os interesses\nda burguesia mineira. É improvável e praticamente impossível, em tempos de crise econômica e\nacirramento da luta de classes, um “equilíbrio justo”, fruto de uma ampla coalizão de forças políticas.\nA inviabilidade foi confirmada no governo anterior, que manteve a essência do desenvolvimento\nneoliberal no Estado de Minas Gerais e penalizou os servidores públicos estaduais com parcelamento\ne congelamento de salários. A perspectiva de garantir a presença de alguns integrantes da esquerda\nem um governo de centro-direita não garante a construção de uma alternativa de esquerda e popular,\nmuito menos a existência de um governo vinculado aos interesses do povo trabalhador mineiro.\nSomente um governo composto inteiramente de representantes dos partidos e organizações\nproletárias (incluindo os trabalhadores intelectuais) merecerá o nome de Governo dos(as)\nTrabalhadores(as).\nGoverno com essas características só pode ser constituído como fruto das lutas dos\nmovimentos sindicais, populares, da cultura e da juventude, cabendo aos partidos de esquerda e às\nfrentes de luta a articulação política necessária para sustentar, na prática, um programa de\ntransformações políticas, econômicas, sociais e culturais. Por isso seguimos construindo uma aliança\nsocial, capaz de se transformar em maioria política, na perspectiva de uma nova hegemonia alicerçada\nna organização do povo trabalhador, na construção do poder popular e do socialismo. Por isso,\npropomos a construção de um governo dos(as) trabalhadores(as). Um verdadeiro governo dos(as)\ntrabalhadores(as) será aquele cuja base social, programa e centro de gravidade político estejam\norganicamente vinculados aos interesses históricos dos trabalhadores, dos movimentos sindicais,\npopulares, da cultura e da juventude. Sua legitimidade não virá de uma cláusula excludente, mas da\nsua capacidade de, em aliança com todos os setores sociais dispostos a romper com o domínio do\ngrande capital, implementar um programa de transformações estruturais. A forma de governo que nos\ninteressa é a que amplia ao máximo a democracia para a maioria, transferindo poder real para o povo\ntrabalhador, em um processo que poderá, no seu acúmulo histórico de forças, tensionar e superar os"
+          },
+          {
+            "id": "limites-do-atual-estado-iremos-atuar-no-sentido-de-na-perspectiva-histor",
+            "titulo": "limites do atual Estado. Iremos atuar no sentido de na perspectiva histórica de superação do Estado",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "limites do atual Estado. Iremos atuar no sentido de na perspectiva histórica de superação do Estado\natual e de construção de uma nova forma de poder político, radicalmente democrática e fundada nos\ninteresses dos trabalhadores\nPor isso defendemos a construção do Poder Popular. O proletariado deve criar um sistema de\nconselhos, base de um Estado que expresse seu poder e sua dominação de classe através dos órgãos\nnecessários. O Governo dos(as) Trabalhadores(as) será a tentativa e a possibilidade de forçar que o\nEstado Burguês, no marco de suas limitações históricas essenciais, sirva aos interesses históricos do\nproletariado. As políticas de um governo dos(as) trabalhadores(as) serão definidas, em última forma\ne em última instância, pela participação dos trabalhadores nos processos de tomada de decisão.\nPoder Popular é o Controle Social Organizado!\nO “Poder Popular” não é uma palavra de ordem abstrata; é, em essência, a materialização da\nparticipação popular, com protagonismo político na tomada de decisões. Propomos estimular, garantir\ne instituir a organização do Poder Popular nos territórios, com participação direta da população na\nformulação, aplicação, acompanhamento e fiscalização das políticas públicas. Democratizar não é\napenas ampliar consultas, é transferir poder real para o povo trabalhador. Não confundimos espaço\nde pressão institucional com instância de poder popular. Construir poder real do povo trabalhador no\ninterior do Estado existente, acumulando força, consciência e organização para tensionar a forma do\npoder. O Poder Popular será exercido como prática permanente de controle, fiscalização e veto\npolítico sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da\norganização coletiva do povo trabalhador. Ao incidir sobre o orçamento, a execução das políticas\npúblicas e a atuação de órgãos estatais e empresas públicas e privadas, o Poder Popular rompe a\nseparação entre governo e sociedade, amplia a compreensão da coisa pública e acumula força política\npara tensionar, progressivamente, as formas de decisão existentes. Ao exercer controle real sobre o\nEstado existente, no plano da luta política, o Poder Popular explicita seus limites de classe e abre para\na disputa do que propomos como objetivo estratégico: a perspectiva histórica de superação do Estado\nburguês e de construção de uma nova forma de poder, fundada nos interesses da classe trabalhadora.\nEconomia planejada\nPara os partidos e representantes da burguesia, o mercado é o único mecanismo válido de\nregulação social. Nessa concepção, o elemento fundamental é o indivíduo isolado e egoísta, em\nconcorrência permanente com outros indivíduos, cada um buscando maximizar seus próprios\ninteresses; acredita-se que somente por meio dessa dinâmica seria possível alcançar o bem-estar\nsocial. Nesse tipo de concepção de mundo, a orientação para o lucro assume um papel central, e a\napropriação privada da riqueza social constitui sua própria razão de ser. Isso vai implicar na\nmanutenção de uma estrutura assimétrica de riqueza e poder, na qual as necessidades sociais"
+          },
+          {
+            "id": "permanecem-subordinadas-a-logica-da-valorizacao-do-capital-e-a-apropriac",
+            "titulo": "permanecem subordinadas à lógica da valorização do capital e à apropriação privada do excedente",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "permanecem subordinadas à lógica da valorização do capital e à apropriação privada do excedente\nsocial. Ademais, tal dinâmica produz desequilíbrios permanentes, o que resulta em um processo de\nreprodução social marcado por tensões e crises recorrentes.\nEm oposição a essa perspectiva, a tradição comunista toma o planejamento econômico como\nprincípio antagônico à centralidade do mercado. No núcleo da nossa proposta está o controle social\nconsciente da produção, o que pressupõe o planejamento econômico e a propriedade coletiva dos\nmeios de produção, condição para o autogoverno dos trabalhadores. Sendo assim, defendemos o\nplanejamento econômico como arma política da classe trabalhadora para garantir que a produção\natenda aos interesses de toda a sociedade, e não apenas a uma pequena minoria. Nessa proposta se\narticulam planejamento econômico popular, auditoria da dívida, orçamento popular, reforma agrária\npopular, criação de empresas públicas como a AgroMG e o desenvolvimento econômico sob controle\ndo povo, recolocando a produção a serviço da vida, e não do lucro. Apontamos a necessidade de\nconformarmos um governo dos trabalhadores e de que a riqueza de Minas deve servir a quem nela\nvive e trabalha.\nDefendemos a suspensão imediata das renúncias fiscais ocultas e cobrança dos débitos\nnão pagos e a promoção da auditoria da dívida pública do Estado de Minas Gerais. Apontamos a\nnecessidade de conformarmos um governo dos trabalhadores e de que a riqueza de Minas deve servir\na quem nela vive e trabalha. O minério tem que ser nosso e precisamos de um novo modelo de\nmineração. Sem planejamento econômico não há soberania, não há direitos sociais sustentáveis e não\nhá poder popular. Planejar é disputar quem controla a riqueza produzida em Minas Gerais. O\nPrograma do PCB para a classe trabalhadora, tem os seguintes 21 pontos.\n\n1. Poder popular e Governo dos trabalhadores e trabalhadoras.\n\nO Poder Popular será exercido como prática permanente de controle, fiscalização e veto\npolítico sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da\norganização coletiva do povo trabalhador. Ao incidir sobre o orçamento, a execução das políticas\npúblicas e a atuação de órgãos estatais e empresas públicas e privadas, o Poder Popular rompe a\nseparação entre governo e sociedade, amplia a compreensão da coisa pública e acumula força política\npara tensionar, progressivamente, as formas de decisão existentes. Ao exercer controle real sobre o\nEstado existente, no plano da luta política, o Poder Popular explicita seus limites de classe e abre para"
+          },
+          {
+            "id": "a-disputa-do-que-propomos-como-objetivo-estrategico-a-perspectiva-histor",
+            "titulo": "a disputa do que propomos como objetivo estratégico: a perspectiva histórica de superação do Estado",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "a disputa do que propomos como objetivo estratégico: a perspectiva histórica de superação do Estado\nburguês e de construção de uma nova forma de poder, fundada nos interesses da classe trabalhadora.\nPropomos:\n\n\nFormação de um governo dos(as) trabalhadores(as) a partir de uma aliança social. Este governo\nserá composto por representantes dos movimentos sindicais, populares, culturais, da juventude e\nde cientistas, técnicos e intelectuais.\n\n2. Poder Popular é o Controle Social Organizado!\n\nA nossa proposta é estimular, garantir e instituir a organização do Poder Popular nos\nterritórios, com participação direta da população na formulação, aplicação, acompanhamento e\nfiscalização das políticas públicas.\nEntre suas atribuições centrais estarão:\n Acompanhar a elaboração orçamentária;\n Analisar prioridades, cortes e destinações de recursos;\n Exercer poder de veto político e social sobre escolhas incompatíveis com as necessidades\npopulares;\n Fiscalizar a execução financeira ao longo do exercício.\n Acompanhar permanentemente a execução das políticas públicas, contratos e obras;\n Fiscalizar os órgãos públicos, as empresas estatais e as empresas privadas que operem\nserviços públicos ou explorem recursos estratégicos;\n Propor medidas corretivas, revisão de decisões governamentais e exigência pública de\njustificativas políticas e técnicas;\n Acessar plenamente a informação orçamentária, administrativa e contratual, garantindo\ntransparência real.\nEsse processo tem função pedagógica central: oferecer elementos para que o povo trabalhador\ncompreenda, na prática, o funcionamento do Estado, os limites impostos pelo capital e os conflitos\nreais entre interesses sociais e privados. O formato fiscalizador do Poder Popular não é um ponto de\nchegada, mas uma forma adequada às condições atuais para a sua consolidação plena posterior. Ao\nexercer controle real de um órgão fiscalizador, o povo trabalhador: desenvolve capacidade técnica e"
+          },
+          {
+            "id": "politica-amplia-sua-organizacao-coletiva-fortalece-sua-consciencia-sobre",
+            "titulo": "política; amplia sua organização coletiva; fortalece sua consciência sobre o Estado como síntese",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "política; amplia sua organização coletiva; fortalece sua consciência sobre o Estado como síntese\nsocial da disputa entre classes; permite reconhecer o Estado burguês e vislumbrar o Estado Proletário;\ncria condições para tensionar, no futuro, o poder deliberativo popular. O avanço do Poder Popular\ndependerá da correlação de forças, da organização social e da luta concreta. O programa não antecipa\nformalmente essa etapa, mas cria as bases materiais e políticas para que ela se torne possível.\n3. Estruturar e instituir o Poder Popular!\n\nO Poder Popular exercerá funções concretas, materiais e contínuas, não simbólicas. Essas\natribuições não substituem formalmente os poderes constituídos; retiram a opacidade da decisão\nintroduzindo controle social organizado e permanente. O Poder Popular será exercido por meio de\nestruturas próprias, organizadas territorial e setorialmente, com base na participação direta da\npopulação trabalhadora. Estimularemos a constituição de:\n Assembleias territoriais de Poder Popular em bairros, distritos, cidades e regiões;\n Formar conselhos populares setoriais (saúde, educação, transporte, meio ambiente,\nenergia, saneamento, economia, cultura, entre outros);\n O Conselho Popular estadual, responsável por consolidar informações, formular avaliações\ne apresentar demandas unificadas ao poder público.\nA convocação de um referendo popular pautando a anulação da privatização da COPASA, a\ninterrupção do processo de privatização de outros setores e a reversão das privatizações de empresas\npúblicas estaduais nas últimas décadas. Garantia da participação popular nos conselhos das empresas\npúblicas e autarquias estaduais. Iremos garantir e assegurar a Autonomia Universitária das\nUniversidades Estaduais Mineiras e a Gestão Democrática das Escolas públicas da Rede Estadual de\nEnsino. O processo de militarização das escolas estaduais e privatização dos serviços escolares será\nencerrado. São fundamentais o fortalecimento e a ampliação da Fundação Hospitalar de Minas Gerais\n(FHEMIG) e do Instituto da Previdência dos Servidores do Estado de Minas Gerais (IPSEMG).\nAfirmamos que educação, transporte, segurança, cultura, ciência e direitos humanos são\ndireitos fundamentais e devem ser assegurados pelo Estado em um Governo dos(as)\nTrabalhadores(as), contrapondo-se e enfrentando a lógica que transforma direitos em mercadoria.\nFortalecer os serviços públicos e os servidores é nossa prioridade. Construir o Poder Popular! Sem\norganização popular, nada muda. Propomos a criação de conselhos populares, com vistas à\nestruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o\nenfrentamento aos interesses do poder econômico."
+          },
+          {
+            "id": "4-planejamento-economico-para-o-povo-trabalhador",
+            "titulo": "4. Planejamento econômico para o povo trabalhador!",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "4. Planejamento econômico para o povo trabalhador!\nPlanejar a economia é disputar quem controla e decide o destino da riqueza produzida. A\neconomia de Minas Gerais é organizada para fora: exporta minérios, energia e commodities agrícolas\nenquanto importa desemprego, precarização, fome e dívida pública. Esse modelo não é disfuncional\n— ele funciona exatamente para atender aos interesses do poder econômico, em especial das\nmineradoras, do capital financeiro e do agronegócio. Nosso governo afirma a economia\nplanificada como princípio político: para atender às necessidades sociais, com controle público e\npopular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de\nvida. Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado.\nPropomos:\n Implantação de uma estrutura estadual de planejamento econômico e social, integrada e\nparticipativa;\n Criação do Conselho Popular de Economia e Desenvolvimento, com poder de\nformulação, acompanhamento e fiscalização do plano econômico;\n Planejamento regionalizado, respeitando as vocações e necessidades de cada macrorregião\ndo estado;\n Prioridade absoluta ao abastecimento interno, à geração de empregos e à elevação da\nqualidade de vida;\n Investimentos concentrados em áreas sociais intensivas em trabalho, como saúde,\nhabitação, transporte, educação e cultura;\n Articulação direta entre planejamento econômico e poder popular, garantindo que as\ndecisões técnicas estejam sob controle social popular.\n5. O Minério é nosso! — Soberania, Riqueza e Poder Popular\nMinas Gerais é o coração mineral do Brasil — e é essa riqueza que, há séculos, organiza a\nforma de dominação política no estado: subdesenvolvimento econômico, destruição ambiental,\ntrabalho escravo, salários baixos e obras públicas prontas só quando interessa à infraestrutura de\nmineração. Enquanto poucos conglomerados lucram bilhões com minério, energia e água, o povo\nmineiro vive insegurança alimentar, filas na saúde e escolas sucateadas. A riqueza de Minas é\napropriada por poucos enquanto o povo trabalhador mineiro paga a conta. O que está em jogo é\nsoberania, sobrevivência e poder."
+          },
+          {
+            "id": "nesse-sentido-entre-os-setores-com-maior-lucratividade-em-minas-gerais-f",
+            "titulo": "Nesse sentido, entre os setores com maior lucratividade em Minas Gerais figura a mineração,",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Nesse sentido, entre os setores com maior lucratividade em Minas Gerais figura a mineração,\nque registra uma alta taxa de rentabilidade. Como entendem os marxistas, as atividades extrativistas\ngeram superlucros permanentes, a chamada renda agrária. Isso ocorre em função de dois fatores: 1)\ncomo a terra é um monopólio, ou seja, não é possível reproduzir os terrenos, seu proprietário recebe\numa renda pelas atividades econômicas exercidas nela. 2) Os preços dos produtos agrícolas são\ndeterminados pela produção das terras menos férteis (no caso aqui em questão, pelas minas), o que\npermite aos proprietários das terras mais férteis receber uma renda diferencial, um superlucro, já que\nas terras mais férteis têm um ganho adicional de produtividade.\nDessa maneira, o faturamento do setor mineral em Minas Gerais, segundo o IBRAM, neste\nprimeiro trimestre foi de 29,6 bilhões. Minas Gerais lidera em faturamento neste setor, respondendo\na 38% do faturamento nacional de 77,9 bilhões no primeiro trimestre de 2026. Em termos de\narrecadação de impostos e tributos, desse montante, Minas arrecadou 876 milhões no primeiro\ntrimestre. Bem pouco diante dos lucros exorbitantes exibidos acima.\nPara romper esse ciclo, colocamos no centro do programa a luta pela soberania mineral,\narticulada ao controle popular e socialista da energia, da água e do território. Com isso,\ntransformamos a maior fonte de riqueza de Minas no ponto de partida para reconstruir o estado sob\noutra lógica: a riqueza de nós, o povo, deve voltar para o povo.\nPropomos:\n Fim do autolicenciamento e revisão de todos os licenciamentos com participação direta das\ncomunidades atingidas;\n Revisão da CFEM (Compensação Financeira pela Exploração de Recursos Minerais) e\nfim da Lei Kandir, assegurando que a riqueza extraída em Minas financie saúde, educação,\nmoradia e transporte — não dividendos para acionistas nem objeto para negociatas\npolitiqueiras;\n Controle social do ritmo de extração, garantindo a preservação do território, a segurança e\na autossuficiência das populações, assegurando o tempo necessário para diversificação\neconômica;\n Criação de territórios livres da mineração, definidos por lei, com alternativas econômicas\nsustentadas por cooperativas populares, agricultura agroecológica, bioeconomia e tecnologia\nsocial;\n Plano de fiscalização massiva, com concurso público e poder de intervenção estatal sobre\nempresas reincidentes em crimes ambientais e trabalhistas;"
+          },
+          {
+            "id": "reestatizacao-do-setor-mineral-sob-controle-social-dos-trabalhadores-a-c",
+            "titulo": " Reestatização do setor mineral sob controle social dos trabalhadores, a começar pelas",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": " Reestatização do setor mineral sob controle social dos trabalhadores, a começar pelas\nempresas que descumprem a lei; instauração de comitês populares em cada município\nminerado para fiscalizar, planejar e auditar a produção;\n Participação direta dos trabalhadores e das comunidades na elaboração de um novo\nmodelo de governança da mineração orientado para a autossuficiência e que coloque a vida\nacima do lucro.\nComo medidas imediatas, iremos realizar: (a) revisão das concessões que descumprem a\nfunção social e ambiental, algo já previsto na lei; (b) fortalecimento de empresas estatais para atuar\nno setor, competindo e regulando o mercado; (c) controle social rigoroso sobre as concessões\nexistentes.\n6. Auditoria da Dívida Pública do Estado de Minas Gerais.\nA dívida pública de Minas Gerais é usada como instrumento de chantagem permanente contra\no povo trabalhador, em especial os servidores públicos estaduais. Não há política popular possível\nenquanto a economia estiver refém dos credores. Em nome da dívida, congelam-se salários,\ndesmontam-se serviços públicos e privatizam-se empresas estratégicas. O Regime de Recuperação\nFiscal foi uma das formas institucionais dessa submissão e o Programa de Pleno Pagamento da Dívida\n(PROPAG) não alterou substancialmente e não resolveu a questão da dívida. A auditoria da dívida\npública do Estado de Minas Gerais é urgente e necessária.\nPropomos:\n Auditoria completa da dívida pública estadual, com participação popular e transparência\ntotal;\n Suspensão do pagamento das parcelas ilegítimas, até a conclusão da auditoria;\n Ruptura com o Regime de Recuperação Fiscal, que impede qualquer política de soberania\nestadual;\n Controle popular da arrecadação e do orçamento, garantindo que os recursos públicos\natendam às necessidades sociais;\n Cobrança progressiva de impostos sobre capital, finanças, grandes propriedades e\ngrandes fortunas."
+          },
+          {
+            "id": "7-reforma-agraria-popular",
+            "titulo": "7. Reforma Agrária Popular.",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "7. Reforma Agrária Popular.\nA terra deve produzir alimento e vida — não lucro especulativo. A concentração fundiária e o\nagronegócio exportador são incompatíveis com a soberania alimentar e com o planejamento\neconômico popular. Igualmente, o incentivo à monocultura e ao uso intensivo de agrotóxicos\ncompromete a saúde da população, compromete os pequenos produtores e destrói a biodiversidade.\nPropomos:\n Programa Estadual de Reforma Agrária, com direito de uso e usufruto da terra, sem\ndireito de venda;\n Expropriação das propriedades que utilizam trabalho escravo ou análogo à escravidão.\n Ocupação sem indenização de grandes propriedades improdutivas, que descumpram a\nfunção social, leis trabalhistas ou ambientais;\n Criação e fortalecimento de cooperativas de produção agroecológica;\n Centros públicos de armazenamento e escoamento, eliminando intermediários;\n Prioridade da agricultura popular nas compras públicas, para escolas, hospitais e\nrestaurantes populares;\n Demarcação e regularização de terras indígenas e quilombolas, com apoio à sua\nprodução;\n Criação da AgroMG, empresa pública estadual para desenvolvimento das terras\nagricultáveis, em articulação com universidades, institutos federais e institutos de pesquisa.\nEspecialmente com estímulo à pesquisa e à prática da agroecologia em todo o estado.\n Apoio estruturado à agricultura familiar e agroecológica; com consultoria, apoio de\nensaios analíticos, incentivos fiscais e garantia de compra.\n Regularização fundiária para pequenos agricultores;\n Sobretaxação de agrotóxicos e agentes químicos; e a reversão dessa arrecadação para o\npequeno e médio produtor.\n8. Desenvolvimento Econômico sob Controle Popular\nNo modelo que vigora no nosso estado e país, ser “competitivo” significa aumentar a taxa de\nlucro do dono da empresa a todo custo e recorrer às políticas assistencialistas para o povo. O\ndesenvolvimento da economia de Minas deve se voltar para a autossuficiência de seu povo, não para\nvalorizar o capital privado e estrangeiro"
+          },
+          {
+            "id": "para-nos-desenvolver-nao-significa-apenas-competir-no-mercado-global-mas",
+            "titulo": "Para nós, desenvolver não significa apenas competir no mercado global, mas garantir",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Para nós, desenvolver não significa apenas competir no mercado global, mas garantir\nprogressivamente condições dignas de vida para o povo. Se ser competitivo significar excluir o\ntrabalhador, escolhemos o povo trabalhador! O desenvolvimento econômico defendido por este\nprograma não se confunde com o mero crescimento quantitativo ou com a atração de capitais privados\ne estrangeiros especulativos. Trata-se nesta perspectiva de organizar a produção para atender às\nnecessidades sociais, com controle social popular dos meios de produção da vida.\nPropomos:\n Controle social da exploração do nióbio e de outras terras raras, hoje concentradas na\nCODEMIG/CBMM;\n Fortalecimento dos parques e distritos industriais públicos, com prioridade a setores\nestratégicos;\n Incentivo ao controle social popular nas atividades industriais;\n Redução da jornada de trabalho sem redução salarial;\n Apoio ao cooperativismo social, à economia popular e solidária;\n Criação de um Banco de Fomento público, sob controle social popular, para pequenos\nempreendimentos produtivos;\n Incentivo ao transporte ferroviário, aquaviário e metroviário, articulado ao\nplanejamento econômico voltado para a autossuficiência do povo.\nPromover direitos e defender a natureza e a vida em Minas!\nNão há justiça social sem defesa dos direitos, do território e da vida. A destruição ambiental\nnão é acidente, é projeto. Por isso, enfrentaremos diretamente o modelo predatório de extrativismo e\nde gestão ambiental vigente no estado. Defendemos a vida na luta contra as opressões, pelos direitos\ndas mulheres, dos povos originários, dos ribeirinhos, dos quilombolas, da população LGBTQIAPN+\ne contra o genocídio da população negra. Defendemos o direito ao esporte e ao lazer e a garantia do\nacesso à cultura popular. É preciso garantir e promover direitos como formas concretas de poder da\nclasse trabalhadora.\n9. Soberania Alimentar.\nA fome em Minas não é acidente — é expressão da mesma estrutura que exporta minério e\nimporta alimentos industrializados. Milhares de pessoas passam fome e vivem insegurança alimentar\nem Minas Gerais. A solução não é assistencialismo, mas poder popular no campo e nos circuitos de\nabastecimento rurais e urbanos."
+          },
+          {
+            "id": "propomos",
+            "titulo": "Propomos:",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Propomos:\n Centros Populares de Abastecimento nas regiões metropolitanas e cidades-polo,\nencampando intermediários e combatendo a especulação de preços;\n Compra direta da agricultura familiar e quilombola, priorizando alimentos saudáveis para\nescolas, hospitais, restaurantes populares e programas de assistência;\n Programa Estadual de Segurança Alimentar, integrado com a reforma agrária e com\npolíticas de distribuição;\n Incentivo à produção agroecológica, com apoio técnico público e crédito cooperativo.\nA fome não se enfrenta com caridade: enfrenta-se com terra, comida barata, cooperativas e poder\npopular.\n10. Saúde e Remédio para Todos — Cuidar de nós, o povo, com nossa riqueza\nA crise da saúde em Minas não é obra do acaso nem de má gestão: é resultado de um projeto\nde privatização silenciosa, baseado em terceirizações, OSS (Organização de Saúde Pública),\nsucateamento deliberado das unidades, atraso nas obras de hospitais regionais e abandono do\nfinanciamento da atenção básica.\nEnquanto bilhões de reais deixam o Estado na forma de minério bruto, energia e isenções\nfiscais, faltam médicos, equipes completas, transporte para consultas, tecnologia hospitalar e insumos\nbásicos. Esse é o desenho estrutural da violência contra o povo. Nosso governo romperá com essa\nlógica, reconstruindo o SUS mineiro com base em soberania econômica, valorização dos\ntrabalhadores e poder popular. A saúde não é custo, é direito. E a riqueza mineral de Minas pode e\ndeve financiá-la.\nApós sete anos de gestão, o Governo Romeu Zema (NOVO) ainda não finalizou a construção\nde nenhum dos seis hospitais regionais previstos para serem construídos com recursos oriundas das\nreparações da tragédia de Brumadinho. A expectativa é a de que mais de seis milhões de pessoas\nserão beneficiadas. O atraso na execução das obras e o vínculo com o calendário eleitoral demonstram\no desprezo e o oportunismo eleitoral do atual governo. Enquanto isso, milhares de pessoas adoecem\ne morrem nos poucos hospitais regionais em funcionamento no Estado. Defendemos: finalizar a\nconstrução imediata dos hospitais, o controle social popular e a gestão pública destes hospitais\nregionais.\nPropomos:\n Fim das OSS e da privatização interna da saúde, encerramento progressivo dos contratos\ncom organizações sociais, retomada da gestão pública direta e concursos para recompor as"
+          },
+          {
+            "id": "equipes-auditoria-popular-dos-contratos-atuais-e-responsabilizacao-finan",
+            "titulo": "equipes, auditoria popular dos contratos atuais e responsabilização financeira de gestores e",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "equipes, auditoria popular dos contratos atuais e responsabilização financeira de gestores e\nempresas.\n Conclusão imediata dos hospitais regionais, com gestão pública, controle popular e\nauditoria permanente dos contratos;\n Acesso real: saúde articulada ao transporte público, integração da política de saúde com\na de passe livre e transporte público estatal; transporte gratuito intermunicipal para\nprocedimentos e tratamentos. Reorganização das regionais de saúde com base no fluxo real\nda população.\n Ampliação da atenção básica, com novos postos, fortalecimento da Saúde da Família e\nformação de agentes comunitários;\n Valorização dos trabalhadores da saúde, com plano de carreira, concursos públicos e\ncondições de trabalho;\n Fortalecimento da FHEMIG e do IPSEMG, ampliando sua capacidade e democratizando\nsua gestão;\n Políticas específicas para saúde da mulher, combate ao câncer, pré-natal integral e\natendimento às vítimas de violência;\n Programa estadual de saneamento, integrado ao controle público da COPASA\n(Reestatização da COPASA) e ao planejamento territorial.\n Equipamentos hospitalares, manutenção e tecnologia como política de Estado, Plano\nEstadual de Tecnologia em Saúde, com compra pública centralizada, engenharia clínica\nprópria e manutenção preventiva. Expansão da capacidade diagnóstica (tomografia,\nressonância, exames laboratoriais) nos hospitais regionais. Formação técnica estadual para\ntrabalhadores de manutenção e operação de equipamentos.\n Reconstrução da gestão tripartite com poder popular; Cumprimento integral das\nobrigações estaduais no SUS (atualmente o governo de Minas descumpre o financiamento da\natenção básica e empurra responsabilidades para os municípios); Mecanismos legais e\npolíticos de cobrança ao governo federal e às prefeituras; Fortalecimento dos Conselhos de\nSaúde como órgãos deliberativos, com poder sobre orçamento e prioridades."
+          },
+          {
+            "id": "11-agua-e-energia-nao-sao-para-lucrar-reestatizar-e-baratear-para-viver",
+            "titulo": "11. Água e energia não são para lucrar! — Reestatizar e baratear para viver!",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "11. Água e energia não são para lucrar! — Reestatizar e baratear para viver!\nPor meio de tarifas abusivas, sucateamento, terceirização, perseguição aos trabalhadores organizados\ne lucros altíssimos, as gestões da COPASA, CEMIG e GASMIG estão sendo instrumentalizadas para\naumentar o saque sobre o povo mineiro. Para romper essa lógica:\nPropomos:\n Estatização plena da CEMIG e da COPASA, sob controle social dos trabalhadores e\nconselhos populares de saneamento e energia;\n Tarifa popular de água e energia, financiada com recursos da CFEM;\n Fim das terceirizações, concursos públicos para recompor as equipes técnicas e valorização\nsalarial;\n Planejamento energético voltado à vida, com expansão das energias renováveis e controle\nsocial popular sobre sua distribuição e planejamento;\n Reversão imediata da privatização da COPASA, anulando a retirada do referendo popular.\n12. Trabalho, Território e Dignidade — Trabalhador com direito a viver bem\nA precarização e o trabalho escravo são produtos diretos do modelo econômico de\ndependência mineral e agronegócio predatório. Dignidade não é promessa: é conquista com\norganização e poder.\nPropomos:\n Fiscalização para a erradicação do trabalho escravo, com prisão dos responsáveis, multa\npesada e desapropriação das propriedades;\n Programa estadual de moradia digna, com retomada da COHAB-MG, urbanização de\nfavelas e remoções negociadas, sem expulsão de comunidades;\n Habitação como direito de uso, evitando captura especulativa;\n Política de emprego ligada à reforma agrária, à reestatização e à obra pública,\npriorizando jovens e mulheres;\n Regularização fundiária urbana, com participação direta dos moradores e combate à\nespeculação imobiliária.\n Criação do Conselho Popular dos Direitos do Cidadão, com poder de fiscalização e\nproposição de políticas;"
+          },
+          {
+            "id": "rede-ampliada-de-centros-de-direitos-e-cidadania-com-juizados-de-pequena",
+            "titulo": " Rede ampliada de Centros de Direitos e Cidadania, com juizados de pequenas causas,",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": " Rede ampliada de Centros de Direitos e Cidadania, com juizados de pequenas causas,\ndocumentação, apoio social e jurídico;\n Políticas específicas para indígenas, quilombolas, mulheres, idosos, população\nLGBTQIAPN+ e pessoas em situação de rua;\n\n13. EDUCAÇÃO.\n13.1 - Escola Pública e popular — Ciência, Trabalho e Liberdade\nA educação mineira é uma fábrica de desigualdades: escolas sem estrutura, professores precarizados,\ncurrículos subordinados à empregabilidade empresarial e expansão acelerada do setor privado. Isso\nnão é falha: é parte do projeto de reprodução capitalista e sua estrutura inerentemente injusta. O\nGoverno Zema-Simões apresentou e busca desenvolver o projeto ultrapassado das Escolas CívicoMilitares. Defendemos a extinção das escolas cívico-militares e a construção das Escolas Populares\nna perspectiva da educação em tempo integral, abrangendo o ensino politécnico e a formação\nomnilateral. A educação deve ser arma para a emancipação da classe trabalhadora — não\nmercadoria para lucro de empresário. Para romper esse ciclo, nossa política educacional se\nfundamenta em três princípios: (1) Educação pública como ferramenta de emancipação política, não\nde adaptação ao mercado; (2) Controle social popular do sistema educacional; (3) Valorização\nmaterial do trabalho docente.\nPropomos:\n A universalização da escola pública, laica, crítica, politécnica de tempo integral, com\ndois currículos concomitantes: na educação básica, a divisão entre “escola classe” e\n“escola ativa”, e no ensino médio, “formação geral” e “formação técnica”. A formação ativa,\ndesenvolverá práticas laboratoriais, saúde física e artes; a formação técnica incorporará no\ncurrículo desde o desenvolvimento de sistemas até a música, a depender da decisão popular\nde cada região. Desenvolvimento da pedagogia histórico-crítica nas escolas da Rede Estadual\nde Ensino em contraponto ao novo ensino médio e aos projetos de escola cívico militares.\n Conselhos Populares de Educação nas escolas tendo como principal papel a direção\ncolegiada dos cursos técnicos a serem ofertados em sua região com poder real sobre\norçamento bem como a construção de seu projeto pedagógico;\n Desenvolvimento de infraestrutura para abarcar o currículo concomitante, incluindo a\nconstrução de bibliotecas, áreas esportivas, laboratórios, salas de estudo e prática e demais\ninstalações adequadas com condições materiais;"
+          },
+          {
+            "id": "alimentacao-escolar-implementacao-de-um-programa-estadual-de-alimentacao",
+            "titulo": " Alimentação escolar – Implementação de um programa estadual de alimentação escolar,",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": " Alimentação escolar – Implementação de um programa estadual de alimentação escolar,\nabrangendo toda a educação básica, com fornecimento majoritário, assegurado pela\nagricultura familiar.\n Plano de valorização docente, com concursos públicos, carreira estruturada e salários\ncompatíveis com a responsabilidade social da categoria;\n Passe livre estudantil universal, garantido por transporte estatal;\n Combate à mercantilização da educação e tributação progressiva dos lucros das instituições\nprivadas para financiar a expansão da escola pública;\n Fim da expansão descontrolada da educação privada, com fiscalização rigorosa e\npossibilidade de encampação pública de instituições irregulares;\n Construção e expansão da rede de bibliotecas comunitárias e populares, sob controle\nsocial popular e financiado com parte da CFEM;\n13.2 – Universidades Estaduais Mineiras (UEMG e UNIMONTES).\nOs sucessivos Governos Estaduais não garantiram a Autonomia Universitária das Universidades\nEstaduais Mineiras: Universidade do Estado de Minas Gerais (UEMG) e Universidade Estadual de\nMontes Claros (UNIMONTES). Reforçamos nosso compromisso com a Autonomia Universitária e\na democracia nas nossas universidades. Neste sentido propomos uma Reforma Universitária\ncontemplando os seguintes elementos:\n Assegurar em sua totalidade e integralidade a Autonomia Universitária das Universidades\nEstaduais Mineiras (UEMG e UNIMONTES) com a garantia do financiamento público\nconforme a proposta original da Constituição do Estado de Minas Gerais de 1989.\n Respeito à democracia universitária com o fim da lista tríplice e a paridade no processo de\nescolha dos dirigentes superiores.\n Políticas Estruturantes de Assistência Estudantil com restaurantes universitários, creches\nuniversitárias e moradia em todas as unidades.\n Construção e ampliação dos campings e das unidades acadêmicas da UEMG e da\nUNIMONTES.\n Fortalecimento e criação de novos Hospitais Universitários.\n Revisão do Plano de Carreira, cargos e vencimento dos Técnicos Administrativos e Analistas\nUniversitários."
+          },
+          {
+            "id": "cumprimento-do-acordo-de-greve-dos-docentes-das-universidades-estaduais",
+            "titulo": " Cumprimento do acordo de Greve dos Docentes das Universidades Estaduais mineiras.",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": " Cumprimento do acordo de Greve dos Docentes das Universidades Estaduais mineiras.\n\n14. Transportes Para o Povo Trabalhador — Direito de Ir e Vir com passe livre.\nO transporte coletivo em Minas opera hoje com tarifas altas, linhas canceladas, ônibus\nsuperlotados, ferrovias sucateadas e concessões blindadas juridicamente. Isso isola trabalhadores,\nencarece a vida e impede acesso à saúde, à educação e ao próprio território. Propomos uma\nrevolução na mobilidade, centrada no transporte estatal público sob controle social popular,\nintegrado e gratuito.\nPropomos:\n Fiscalização e encampação das empresas que não cumprirem obrigações contratuais. O\ntransporte não é só “serviço prestado”, é condição de vida e de trabalho. Ele não pode ser\nusado como chantagem por donos de empresas e seus truques para ganhar mais dinheiro;\n Estatização das linhas e criação da Empresa Mineira de Transportes, com frota pública,\nplanejamento integrado e controle social pelo conselho popular de transportes;\n Recuperação e reestatização da malha ferroviária, com trens regionais e urbanos para\npassageiros e sob controle social popular;\n Criação de Conselhos Populares de Transportes, com poder deliberativo sobre linhas,\ntarifas, contratos e condições de trabalho;\n VLTs nas regiões metropolitanas e cidades médias, integrados ao sistema;\n Integração entre saúde, educação e transporte, garantindo deslocamento gratuito para\nconsultas, exames e escolas;\n Tarifa Zero, subsidiada com recursos do CFEM, em todo o transporte urbano, rural e\nintermunicipal.\n15. Segurança Pública Para o Povo Trabalhador — Proteger a Vida, Não Apenas a Propriedade\nSegurança pública não pode ser mera coerção: é questão de justiça social. A estrutura do\nmodelo atual de segurança pública em Minas tem como prioridade a defesa da propriedade privada e\na circulação de mercadoria legal. Esse modelo de segurança pública não é destinado a proteger a vida,\nindependentemente da vontade dos próprios agentes que nele atuam. A estrutura desse modelo exibe\num sistema militarizado, racista, eleitoreiro e violento contra os trabalhadores. Expõe a vida e\nprecariza trabalhadores policiais enquanto criminaliza territórios pobres e a pobreza."
+          },
+          {
+            "id": "nossa-proposta-e-outra-seguranca-como-direito-social-nao-como-mero-apara",
+            "titulo": "Nossa proposta é outra: segurança como direito social, não como mero aparato repressivo.",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Nossa proposta é outra: segurança como direito social, não como mero aparato repressivo.\nPropomos:\n Planos de carreira e valorização salarial dos trabalhadores da segurança;\n Investimento na Inteligência Forense, ampliação da polícia científica, garantia de sua\nautonomia e imparcialidade frente aos processos.\n Prioridade investigativa para crimes financeiros, ambientais, corrupção empresarial e\nviolência doméstica, rompendo com a exclusividade em repressão sobre pobres;\n Lutar pela desmilitarização e unificação das polícias em uma força civil estadual para\naumentar a agilidade, diminuir a burocracia e garantir uma fiscalização transparente pelo\npoder popular;\n Conselhos Populares de Segurança Pública, formados por trabalhadores da segurança e\nmembros da comunidade com poder de fiscalização e investigação de abusos;\n Academia unificada de formação, com currículo voltado à proteção de direitos, mediação\nde conflitos e trabalho comunitário;\n Políticas de prevenção ligadas à educação, cultura, esporte e trabalho, integradas\nterritorialmente;\n Desarmamento civil e combate à milícia.\n16. Ciência, Tecnologia e Trabalho — Conhecimento Para Libertar, Não Para Enriquecer\nMonopólios\nA ciência deve servir a quem produz — não a quem explora. A política de ciência e tecnologia\nem Minas é hoje capturada por grandes conglomerados, como mostra o histórico de editais da\nFAPEMIG direcionados a montadoras e setores empresariais. Ciência sem referencial de classe vira\ninovação para aumentar o lucro privado. Propomos ciência como ferramenta de soberania,\nvinculada ao planejamento econômico socialista. Defendemos o fortalecimento da Empresa de\nAssistência Técnica e Extensão Rural do Estado de Minas Gerais (EMATER-MG), da Empresa de\nPesquisa Agropecuária de Minas Gerais (EPAMIG), e da Fundação de Amparo à Pesquisa do Estado\nde Minas Gerais (FAPEMIG).\nPropomos:"
+          },
+          {
+            "id": "reorientacao-da-fapemig-para-financiar-pesquisas-de-maneira-plural-e-que",
+            "titulo": " Reorientação da FAPEMIG para financiar pesquisas de maneira plural e que respondam às",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": " Reorientação da FAPEMIG para financiar pesquisas de maneira plural e que respondam às\nnecessidades da classe trabalhadora — saúde, saneamento, transporte, moradia, alimentos,\nenergias renováveis, tecnologias sociais;\n Democratização da FAPEMIG, com reformulação dos mecanismos de composição dos\ncomitês;\n Programa Estadual de Tecnologia Popular, para fomentar inovações de baixo custo nas\nregiões metropolitanas e no interior;\n Integração estrutural entre universidades, institutos de pesquisa e planejamento\neconômico estatal;\n Formação científica na educação básica, com laboratórios públicos, ciência cidadã,\nbibliotecas comunitárias e populares, infocentros, salas de acesso à internet, além da\nampliação das feiras e olimpíadas científicas;\n Fomento a cooperativas tecnológicas de trabalhadores.\n17. Cultura, Esporte e Vida — Um Estado Que Protege e Expande a Criação Popular\nCultura não é ornamento: é trabalho, sobrevivência e luta. A política cultural mineira atual é\nínfima, dependente de editais precários e subordinada ao turismo empresarial. Grupos populares,\nfolclóricos, periféricos, indígenas e quilombolas sobrevivem sem apoio. Nossa política cultural é de\nclasse: fortalecer a criatividade popular como forma de identidade, resistência e emancipação.\nPropomos:\n Conselhos Populares de Cultura, compostos pelos trabalhadores e produtores culturais com\norçamento efetivamente participativo;\n Centros Populares de Cultura, com bibliotecas, teatros, cinemas, estúdios e espaços de\ncriação;\n Fortalecimento da Empresa Mineira de Comunicação, com programação educativa e\npopular;\n Cadastramento, proteção e revitalização do patrimônio cultural, com participação\ncomunitária;\n Mercados populares de livros e artes, incentivo à produção editorial e circuito estadual de\narte independente;"
+          },
+          {
+            "id": "apoio-a-cultura-quilombola-indigena-ribeirinha-periferica-e-das-comunida",
+            "titulo": " Apoio à cultura quilombola, indígena, ribeirinha, periférica e das comunidades",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": " Apoio à cultura quilombola, indígena, ribeirinha, periférica e das comunidades\ntradicionais.\n Criação do Projeto Minas Olímpica, com incentivo a esportes olímpicos, populares e\ncomunitários;\n Reforma e ampliação de quadras, ginásios, praças e campos em todo o estado;\n Parcerias com escolas, universidades e comunidades para formação esportiva de base;\n Fortalecimento do futebol amador e comunitário, resgatando times locais e ligas regionais.\n17.1 - ESPORTE:\nO esporte, instrumento de emancipação. O esporte não pode ser tratado como entretenimento,\npropaganda ou um mercado de trabalho como qualquer outro, ele é parte de nossa cultura comunitária,\ndireito social e política de saúde.\n17.2.1 – MINAS OLÍMPICA - Todo apoio ao desenvolvimento de Esportes Olímpicos.\nO Esporte deve ser compreendido como uma ferramenta de transformação social e integração\nregional. O Governo do Estado de Minas Gerais deve fomentar o desenvolvimento de modalidades\nesportivas olímpicas e fortalecer às associações e ligas desportivas.\n17.2.2 – FUTEBOL POPULAR – O Futebol é o esporte mais praticado em Minas Gerais e no Brasil.\nEntretanto, existe uma diferença absurda entre os times de futebol profissionais e os times de futebol\npopular, incluindo os times semiprofissionais, de várzea e das zonas rurais. Não existem hoje políticas\npúblicas estruturantes que garantam o apoio financeiro, estrutural e material para o pleno\ndesenvolvimento desta modalidade esportiva.\nDefendemos:\n- Financiamento e fomento à realização do Campeonato Mineiro de Futebol, abrangendo times de\ndiversas regiões e cidades mineiras, em todas as modalidades.\n- Fortalecimento das Ligas Desportivas locais e regionais.\n- O apoio financeiro e o incentivo fiscal à regularização e profissionalização de times de futebol.\n18. Direitos Humanos, Memória e Justiça — lembrar também é lutar.\nDireitos humanos não podem ser apenas peça retórica: são campo direto da luta de classes,\nporque a violência institucional e a repressão sempre recaem, primeiro, sobre o povo trabalhador, a\njuventude periférica, as mulheres, a população negra, indígenas, quilombolas e os movimentos\npopulares. Por isso, defender direitos humanos é enfrentar a estrutura que transforma a pobreza em\nsuspeita e a organização popular em alvo para o enriquecimento do monopolismo internacional."
+          },
+          {
+            "id": "18-1-pelo-direito-a-verdade-memoria-e-justica",
+            "titulo": "18.1 – Pelo direito à Verdade, Memória e Justiça!",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "18.1 – Pelo direito à Verdade, Memória e Justiça!\nUma das primeiras medidas adotadas pelo desgoverno de Romeu Zema (NOVO) foi a extinção da\nComissão da Verdade de Minas Gerais (COVEMG). A democracia liberal conviveu — e convive —\ncom mecanismos de coerção, vigilância e impunidade, herdados e preservados do regime\nempresarial-militar que impediu o desenvolvimento econômico soberano na nossa região.\nPropomos:\n Reativação da Comissão da Verdade de Minas Gerais (COVEMG);\n Construção do Memorial dos Direitos Humanos na sede do antigo DOPS;\n Construção do Museu em Ipatinga em memória do massacre de 1963 e os eventos que se\nsucederam até o golpe militar.\n Abertura dos arquivos da Ditadura, no plano estadual, e punição para todos os responsáveis\ndireta e indiretamente por crimes cometidos contra a humanidade;\n18.2 – Ampliar os direitos das mulheres, dos povos indígenas, dos quilombolas e da população\nLGBTQIAPN+.\n18.2.1 – MINAS FEMINISTA - Direitos das mulheres.\n\n\nUniversalizar o acesso a creches públicas e inclusão de período noturno de cuidados infantis\nem zonas urbanas e rurais;\n\n\n\nEducação sexual em unidades escolares e de saúde básica, incluindo regiões rurais e\ncomunidades tradicionais, abordando a prevenção à violência sexual, doméstica e à gravidez\nprecoce ou indesejada.\n\n\n\nDignidade menstrual para pessoas em vulnerabilidade social.\n\n\n\nCentros de referências de atendimento à mulher em todas as cidades, para assegurar o acesso\nuniversal ao serviço;\n\n18.2.2 – MINAS INDÍGENA - Direitos dos povos indígenas localizados em Minas Gerais.\n\n\nElaboração de plano factível para retirada imediata de intrusos de todas as terras indígenas,\ninvadidas por fazendeiros, grileiros, garimpeiros, dentre outros.\n\n\n\nDar cumprimento à obrigação de consultar os povos indígenas quando medidas\nadministrativas e legislativas impactem seus territórios e direitos, respeitando seus protocolos\nautônomos de consulta e consentimento, em conformidade com a Convenção n. 169 da\nOrganização Internacional do Trabalho (OIT)."
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "\n\nPromover a assistência integral à saúde indígena e à educação bilíngue, respeitando as\nespecificidades culturais e sociais dos povos indígenas.\n\n18.2.3 – MINAS QUILOMBOLA – Direitos dos povos quilombolas.\n\n\nA preservação, proteção, certificação e titulação, como garantias de propriedade e\nreconhecimento coletivos dos territórios quilombolas, assegurando recursos orçamentários\npara a elevação da qualidade de vida nesses quilombos e comunidades tradicionais de matrizes\nafricanas.\n\n\n\nA garantia do direito de consulta prévia, livre e informada às comunidades quilombolas, dos\nrios, das florestas e de terreiro, de acordo com a Convenção 169 da Organização Internacional\ndo Trabalho (OIT), a respeito de todas as medidas legislativas e administrativas que afetem\ndireta ou indiretamente seus direitos, sobretudo aquelas relacionadas a grandes\nempreendimentos que afetam seus territórios e modos de vida;\n\n18.2.4 – MINAS LGBT – Direitos da população LGBTQIAPN+.\n\n\nEstado laico, liberdade de crença e de não-crença e da igualdade de direitos e oportunidades\npara LGBTQIA+;\n\n\n\nDiálogo com as LGBTQIA+ para elaboração e controle social de políticas públicas.\n\n\n\nPrevenir a discriminação e o preconceito contra as pessoas trans na infância e adolescência,\nna educação e na mídia;\n\n19 – Territórios, Água e Produção de Vida\n\nA destruição ambiental afeta diretamente o acesso à água, à alimentação saudável e à\nsegurança das populações urbanas e rurais. Defender o meio ambiente é defender as condições\nmateriais de existência do povo trabalhador.\nPropomos:\n Proteção das áreas de preservação permanente, com recomposição da vegetação nativa,\ncontrole do uso do solo, combate às ocupações e atividades ilegais, responsabilização de\ninfratores, apoio técnico às comunidades do entorno e participação popular no monitoramento\nterritorial.\n Políticas de produção de água e conservação dos biomas; por meio da proteção e\nrecuperação de nascentes, recuperação de rios, lagoas e mananciais (a exemplo do projeto\n“Conservador das Águas” do município de Extrema (MG)); recomposição da cobertura"
+          },
+          {
+            "id": "vegetal-manejo-sustentavel-do-solo-controle-das-atividades-predatorias-p",
+            "titulo": "vegetal, manejo sustentável do solo, controle das atividades predatórias, planejamento",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "vegetal, manejo sustentável do solo, controle das atividades predatórias, planejamento\nterritorial integrado e participação das comunidades no cuidado dos territórios.\n Ampliação e conservação, sob controle social popular, de parques e áreas verdes nas\ncidades com criação de novas áreas públicas, recuperação das existentes, gestão\ncomunitária, acesso universal e integração com políticas de saúde, cultura e lazer.\n\n20. Resíduos, Reciclagem e Justiça Ambiental\n\nA política de resíduos sólidos em Minas penaliza os mais pobres e expõe trabalhadores a\ncondições degradantes.\nPropomos:\n Eliminar lixões e aterros irregulares;\n Desenvolvimento de linhas públicas de pesquisa e inovação voltadas à redução estrutural\nde resíduos, ao redesenho dos processos produtivos, à substituição de materiais tóxicos e à\nprodução de rejeitos minimizados e ambientalmente seguros, integrando, de forma\nsubordinada, a avaliação de tecnologias de aproveitamento energético apenas para rejeitos não\nrecicláveis, sob controle social popular.\n Implantar usinas públicas de reciclagem com tecnologia apropriada por meio de\ninvestimento estatal direto, planejamento territorial, integração com a coleta seletiva,\nfortalecimento das cooperativas de catadores, garantia de condições dignas de trabalho e\ncontrole público e popular da gestão.\n Garantir direitos e proteção social aos trabalhadores da reciclagem por meio da\nformalização do trabalho, inclusão previdenciária, remuneração justa, acesso a equipamentos\nde proteção, formação técnica, apoio às cooperativas e reconhecimento desses trabalhadores\ncomo parte estratégica da política ambiental.\n Implementar coleta seletiva e educação ambiental em escolas e comunidades.\n\n21 – Fortalecer o Sistema Estadual de Meio Ambiente (SISEMA); Democratizar o\nLicenciamento Ambiental; e Reformular o COPAM;"
+          },
+          {
+            "id": "o-sucateamento-do-sisema-e-a-precarizacao-de-seus-trabalhadores-abriram",
+            "titulo": "O sucateamento do SISEMA e a precarização de seus trabalhadores abriram caminho para",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "O sucateamento do SISEMA e a precarização de seus trabalhadores abriram caminho para\ncrimes ambientais recorrentes e irreversíveis. O atual modelo de licenciamento ambiental legitima a\ndestruição e exclui a população das decisões que afetam diretamente seu território.\nPropomos:\n Fortalecer o Sistema Estadual de Meio Ambiente e Recursos Hídricos (SISEMA);\n Realizar concursos públicos e valorizar os servidores da área ambiental;\n Garantir estrutura técnica e autonomia aos órgãos de fiscalização;\n Ampliar a capacidade de monitoramento e controle das atividades econômicas de alto\nimpacto.\n Reformulação do COPAM, garantindo participação efetiva da população;\n Revisão de todos os licenciamentos que estejam sob questionamento judicial ou do\nMinistério Público;\n Cumprimento rigoroso das normas ambientais, com penalidades severas às empresas\ninfratoras.\n\nMEDIDAS EMERGENCIAIS DO GOVERNO DOS(AS) TRABALHADORES(AS)!\n\nPOLÍTICA:\nI – Formação de um Governo dos Trabalhadores e de conselhos populares em cada setor estratégico.\nII – Convocação de um referendo popular pautando a anulação da privatização da COPASA, a\ninterrupção do processo de privatização de outros setores e a reversão das privatizações de empresas\npúblicas estaduais realizadas nas últimas décadas. Garantia da participação popular nos conselhos das\nempresas públicas e autarquias estaduais.\nIII – Respeito à Autonomia Universitária das Universidades Estaduais Mineiras e à Gestão\nDemocrática das Escolas públicas da Rede Estadual de Ensino. Fim do processo de militarização das\nescolas estaduais e privatização dos serviços escolares.\nIV – Fortalecimento e ampliação da Fundação Hospitalar de Minas Gerais (FHEMIG) e do Instituto\nda Previdência dos Servidores do Estado de Minas Gerais (IPSEMG).\n\nECONÔMICA:\nI - Auditoria da dívida pública do Estado de Minas Gerais. Suspensão imediata das renúncias fiscais\nocultas e cobrança dos débitos não pagos."
+          },
+          {
+            "id": "ii-cumprimento-dos-acordos-de-greve-com-as-diversas-categorias-do-funcio",
+            "titulo": "II - Cumprimento dos acordos de greve com as diversas categorias do funcionalismo público estadual,",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "II - Cumprimento dos acordos de greve com as diversas categorias do funcionalismo público estadual,\nem especial com os(as) docentes das universidades estaduais mineiras (UEMG e UNIMONTES),\nservidores do SISEMA, trabalhadores da FHEMIG e trabalhadores da educação básica. Reabertura\nde negociação com todos os sindicatos e associações do funcionalismo público estadual.\nIII – Nomeação dos aprovados e classificados nos concursos públicos. Abertura de novos editais e\ncriação de novas vagas. Redução da Jornada de Trabalho dos servidores públicos estaduais para 30\nhoras semanais, sem redução de salários e direitos.\nIV - Fortalecimento da Companhia de Habitação de Minas Gerais (COHAB-MG) para promover a\nReforma Urbana e a criação da AgroMinas para promover a reforma agrária.\n\nSOCIAL:\nI – Programa emergencial de Soberania Alimentar com a garantia de abastecimento para todos os 853\nmunicípios mineiros.\nII – Erradicação do trabalho escravo e ampliação da fiscalização do trabalho análogo à escravidão.\nIII – Campanha Estadual de erradicação do analfabetismo e apoio incondicional à Educação Popular,\nIndígena e Quilombola.\nIV – Ampliação dos direitos humanos. Recriação da Comissão da Verdade (COVEMG) e garantia\ndos direitos das crianças, adolescentes, mulheres, negros, imigrantes, indígenas e população LGBT.\nV – Combate ao feminicídio, assinatura imediata do Pacto Nacional “Brasil contra o Feminicídio”.\nDesenvolvimento a nível estadual de políticas de cuidados\n\nCULTURAL:\nI – Resgate histórico e cultural promovendo a integridade das leis 10.639/2003 e 11.645/2008.\nII – Fortalecimento do Instituto Estadual do Patrimônio Histórico e Artístico.\nIII – Ampliação da Empresa Mineira de Comunicação (EMC), da Rede Minas e da comunicação\npopular.\nIV – Apoio à cultura popular e regional com a realização de festivais populares da cultura.\n\nSERVIDORES PÚBLICOS:\nI – Política salarial e valorização das carreiras — A revisão geral anual da remuneração dos servidores\nconstitui obrigação prevista no art. 37, X, da Constituição Federal e na Lei Estadual nº 19.973/2011,\nque instituiu a política remuneratória dos servidores públicos estaduais e fixou a data-base em 1º de\noutubro. O descumprimento dessa obrigação produziu perdas salariais históricas e ampliou\ndesigualdades entre as carreiras. Reivindicamos: (I) assegurar a revisão geral anual na data-base de\n1º de outubro, conforme determina a norma; (II) elaborar um plano estadual de recomposição das"
+          },
+          {
+            "id": "perdas-inflacionarias-acumuladas-desde-a-instituicao-da-politica-remuner",
+            "titulo": "perdas inflacionárias acumuladas desde a instituição da política remuneratória estadual; (III) atualizar",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "perdas inflacionárias acumuladas desde a instituição da política remuneratória estadual; (III) atualizar\nos planos de carreira vigentes, reduzindo distorções e promovendo maior isonomia entre as\ncategorias; (IV) cumprir integralmente os acordos coletivos firmados entre o Estado e as entidades\nrepresentativas das categorias, inclusive aqueles homologados judicialmente e ainda pendentes de\nimplementação; (V) fortalecer a negociação coletiva por meio da instituição de Mesa Permanente de\nNegociação com as entidades representativas; (VI) garantir vencimento básico nunca inferior ao\nsalário mínimo nacional.\nII – Fortalecimento do IPSEMG — A preservação do IPSEMG é condição essencial para assegurar\nassistência à saúde aos servidores públicos estaduais. Reivindicamos: (I) ampliar os investimentos e\na participação do Estado no IPSEMG; (II) realizar concurso público para recomposição dos quadros\ndo Instituto; (III) fortalecer o Hospital Governador Israel Pinheiro e as unidades em funcionamento;\n(IV) criar novas unidades regionais e ampliar as unidades da rede própria; (V) expandir a rede\ncredenciada em todo o estado, contemplando mais especialidades, exames e procedimentos; (VI)\nreestruturar as unidades regionais do IPSEMG para atendimento aos servidores.\nIII – Previdência e Seguridade Social — essenciais para garantir segurança financeira e dignidade\nhumana após décadas de dedicação e contribuição ao serviço público. Reivindicamos: (I) revogar a\ncontribuição previdenciária incidente sobre aposentados e pensionistas, com imediata suspensão de\nsua cobrança; (II) constituir grupo de trabalho destinado à elaboração de propostas de\naperfeiçoamento das regras previdenciárias, abrangendo, entre outros temas, a revisão das tabelas\nprogressivas, a ampliação do teto de isenção da contribuição previdenciária, o aperfeiçoamento das\nregras de aposentadoria decorrente de acidente de trabalho, o reconhecimento da conversão do tempo\nde serviço prestado em condições de insalubridade e a revisão das regras aplicáveis à pensão por\nmorte.\nIV – Defesa do serviço público e do patrimônio público — O fortalecimento da Administração\nPública exige a valorização dos seus servidores e a preservação das instituições públicas que prestam\nserviços estratégicos. Reivindicamos: (I) interromper imediatamente a política de terceirização no\nserviço público e a substituição de servidores efetivos por contratos precários em atividades\npermanentes; (II) realizar concursos públicos para recomposição da força de trabalho; (III) fortalecer\nas carreiras públicas como garantia de continuidade, eficiência e impessoalidade administrativa; (IV)\nproteger as empresas estatais mineiras e interromper os processos de privatização em curso,\nconsiderando seus impactos sociais, econômicos e estratégicos."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "609128f23bb8b41a0b313a5f60322dbcc169eebc93d4b17d5b31b23085862886"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "6e3bef2ed5567f1421d9138473b84af7778577e6dc0d69959a130389e2b421ad"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "8ddeb5f57f1494714408f318ec2bfec1ecacabf926f7c2dce87fb80638e51829"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "aeb6213addd62ed883bdf498a728b29a18e6070a76cbac0de3bfa0233ef221a7"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "609a8c1f18ba03fac8c774c9b84d84653bc4f6bd463c6e4332b4aca4829c50c1"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e73d19512a6b785850b889fa35bc0db9998ef234a7babcd231114b3a6ea0efe8"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "568873435112c22e6cdbb6a156112f176ef96bac6f295a82bc83c9c713f84a0a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "eaef776d598a4248743151e590d7733c35c503c9e6b9452883e7a7c2fb9c3bb8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e69b6f08f12d1137b5ac331cbbb4f659620ba82280b14093412da0c2d68df0e0"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e42357ced2fc318abf3c2632e04a0d75db65acf516f18e7da7a49d739a9e46dd"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "71af53326ecf45d95d52643fcb381c8aead765835533a060747872abefc2b448"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "22d9ea26a57041c63bd44296006a9637b65b391abf1844e2e7037b2d06fceb52"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "f4fb9c62793ab082d4f9c7c1c3503afa3c10118afcf2975ebf40cbf0b7c57199"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "bf59652b19cc19401f0ceb02c80dc1b3b37ce036fd148b95df65e272ce026af3"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f2e839503b194be57a327eeecde46ad1034df02897c8c8ad2826880a544c2790"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "2a8df24e38ec7f1ee237a4bd20a06739f934ae88c267dc6dcafbfe9ad021cf6e"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "60c0df06b06c356885d3d722ed10d94e0baa546e1d76b396ccdd0059bb804845"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "a8a3edac66c4ae33724d975064859ef31b2e723daf810b37f054076389c6124b"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "8e10dcbe03128a051263fb3abdcef11a8bf9894c8b6e58f5c36cb4a2dc224547"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "3de918afe65b56762c4b8bcee8d65fea1c53fe7bfef17ebb16c2465d8a380f7e"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9319d9cf38c657ddd5d46f3fb357b786fc142fea4647600de40d9ed23d36e581"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "5320cda69daf304b058cadce30be93ae92fd193d16f68d0aba968b1377e6c9a8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "e48888b45bb9c5d161a0c85c2a2616dba0579867538b487ef9de01b743695cef"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "600f9bc2aa3cd1ecd85e4f7d0edc7cc11f01f4be6ea53cb61136a1bce20a10ab"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "8ca88ee40474100b9819a07fe7341d165019eb00fd507613c89554e7af3ad84f"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "011dd6347a7439ccd9b94256185e5b9978ab9981a1b6585b743c5ba689202550"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "57870fcada143ff7aa7e678de4b993fe5a6988092a96c791fc3ff457ce0380c6"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as). O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da organização coletiva do povo trabalhador. Propomos a criação de conselhos populares, com vistas à estruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o enfrentamento aos interesses do poder econômico. Nosso governo afirma a economia planificada como princípio político: para atender às necessidades sociais, com controle público e popular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de vida. Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado. A saúde não é custo, é direito. Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais, com controle social popular dos meios de produção da vida.",
+    "frases": [
+      {
+        "texto": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as).",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 3,
+            "trecho": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as)."
+          }
+        ]
+      },
+      {
+        "texto": "O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da organização coletiva do povo trabalhador.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 5,
+            "trecho": "O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da organização coletiva do povo trabalhador."
+          }
+        ]
+      },
+      {
+        "texto": "Propomos a criação de conselhos populares, com vistas à estruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o enfrentamento aos interesses do poder econômico.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 7,
+            "trecho": "Propomos a criação de conselhos populares, com vistas à estruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o enfrentamento aos interesses do poder econômico."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo afirma a economia planificada como princípio político: para atender às necessidades sociais, com controle público e popular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de vida.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 8,
+            "trecho": "Nosso governo afirma a economia planificada como princípio político: para atender às necessidades sociais, com controle público e popular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de vida."
+          }
+        ]
+      },
+      {
+        "texto": "Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 8,
+            "trecho": "Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado."
+          }
+        ]
+      },
+      {
+        "texto": "A saúde não é custo, é direito.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 13,
+            "trecho": "A saúde não é custo, é direito."
+          }
+        ]
+      },
+      {
+        "texto": "Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais, com controle social popular dos meios de produção da vida.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 12,
+            "trecho": "Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais, com controle social popular dos meios de produção da vida."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governo-trabalhadores",
+        "titulo": "Governo dos trabalhadores",
+        "descricao": "O programa propõe a formação de um governo dos trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 3,
+            "trecho": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as)."
+          }
+        ]
+      },
+      {
+        "id": "poder-popular",
+        "titulo": "Poder popular",
+        "descricao": "O programa prevê controle popular sobre a ação do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 5,
+            "trecho": "O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado"
+          }
+        ]
+      },
+      {
+        "id": "planejamento-economico",
+        "titulo": "Planejamento econômico",
+        "descricao": "O programa afirma a economia planificada como princípio político.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 8,
+            "trecho": "Nosso governo afirma a economia planificada como princípio político"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "O programa apresenta a saúde como direito.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 13,
+            "trecho": "A saúde não é custo, é direito."
+          }
+        ]
+      },
+      {
+        "id": "producao-social",
+        "titulo": "Produção social",
+        "descricao": "O programa vincula a organização da produção ao atendimento das necessidades sociais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002544122:01",
+            "pagina": 12,
+            "trecho": "Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:15:06.884Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:17:10.155Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta sem adjetivação adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:1:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (Poder Popular)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:2:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:3:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (economia planificada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:4:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única ideia coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:5:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única ideia sobre saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:6:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única ideia coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:frase:7:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:governo-trabalhadores:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:poder-popular:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:planejamento-economico:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:saude-publica:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002544122:tema:producao-social:documentos:MG:130002544122:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002544122",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002544122:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 33936,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4634,
+          "reasoning_output_tokens": 3503
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24930,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20175,
+          "output_tokens_details": {
+            "thinking_tokens": 558
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24930,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20175,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24930,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24930
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3214734
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a146399d87d2f7b4e1e2854e4bc9f87e8cf6059b9c779478fc680c611ff6b424",
+    "extractedTextSha256": "e251b54d7fc39b014ae28ff86c685867f110180af886bc55eb4edc634b0f2b0e",
+    "documentCount": 1,
+    "documentSetSha256": "e88447ee59bdbcfa930a76d9fe87b9edb21e95d655b89cdb65c8dd0daf16a1e5",
+    "contentSha256": "bfb2f5835fb9ed93b66fa2e31b041445950b4100b5d623945e2ed5fa379db62e"
+  }
+}

@@ -1,0 +1,1028 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002552157",
+    "slug": "ralf-zimmer",
+    "nomeUrna": "RALF ZIMMER",
+    "partido": "PRD",
+    "arquivoNome": "2026SC240002552157_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002552157_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002552157:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002552157_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002552157_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b09199e2b606125d047b5101cfd63861b4a63191cd1abb16a1473971eb7b5cb9",
+        "extractedTextSha256": "33aabb4639c3e983da789a4499168b2c39c1262dd401173139fedb0c87e81d5b",
+        "paginas": 25,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nRALF ZIMMER\nGOVERNODESANTACATARINA | 2027–2030\n\nSANTA CATARINA EM PRIMEIRO LUGAR.\n\nÉ RALF ZIMMER.\nVICE-GOVERNADOR: CARLOS BORDIN\n\nPRD 25\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 1"
+          },
+          {
+            "id": "2",
+            "titulo": "2",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "2\n\nMENSAGEM DE RALF ZIMMER\nSanta Catarina é um estado construído pelo\nttrabalho.\nEm cada região, há famílias, empreendedore,\ntrabalhadores, produtores rurais, pescadores,\nprofissionais, estudantes e comunidades que\nfazem o Estado avançar todos os dias. Este Plano\nde Governo nasce com uma ideia simples: o\nGoverno deve estar a serviço dessas pessoas.\nDIRETRIZ E EXECUÇÃO\n\nColocar Santa Catarina em primeiro lugar significa administrar com\nresponsabilidade, proteger quem trabalha, enfrentar problemas antigos e\npreparar o Estado para o futuro. Significa também respeitar a autonomia dos\nmunicípios, ouvir as regiões e transformar planejamento em resultados\nconcretos.\nNossa proposta para 2027–2030 combina eficiência administrativa, segurança,\nsaúde, educação, infraestrutura, liberdade econômica, inovação, proteção social\ne resiliência climática. O objetivo não é aumentar o tamanho do Estado, mas\naumentar sua capacidade de entregar aquilo que o cidadão precisa.\nEste é um plano aberto ao diálogo e à participação. As propostas apresentadas\naqui serão aperfeiçoadas com a sociedade, com os municípios, com as\nuniversidades, com o setor produtivo e com todos aqueles que desejam construir\num Estado mais seguro, competitivo, moderno e humano.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 2"
+          },
+          {
+            "id": "visao-de-futuro",
+            "titulo": "VISÃO DE FUTURO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "VISÃO DE FUTURO\n\n3\n\nSanta Catarina em primeiro lugar significa construir\num Estado que preserve suas conquistas e enfrente\nseus desafios sem\nacomodação. A visão para 2027–2030 é de um\ngoverno orientado por resultados, com metas\nclaras, avaliação permanente e capacidade de\nexecução.\nDIRETRIZ E EXECUÇÃO\n\nO desenvolvimento deve alcançar todas as regiões: litoral, Vale do Itajaí, Norte,\nOeste, Serra, Sul, Meio-Oeste e Grande Florianópolis. Cada território possui\nvocações próprias, e o Estado deve atuar para transformar essas vocações em\noportunidades de emprego, renda, inovação e qualidade de vida.\nO Governo Ralf Zimmer terá como princípios: responsabilidade com o dinheiro\npúblico; liberdade para empreender e produzir; segurança para as famílias;\nserviços públicos eficientes; valorização do trabalho; inovação; respeito ao meio\nambiente; integração com os municípios; transparência e compromisso com\nresultados.\nO cidadão não deve ser obrigado a escolher entre desenvolvimento econômico e\nqualidade de vida. O desafio é construir ambos ao mesmo tempo.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 3"
+          },
+          {
+            "id": "principios-de-governo",
+            "titulo": "PRINCÍPIOS DE GOVERNO •",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PRINCÍPIOS DE GOVERNO •\n1. Santa Catarina em primeiro lugar - decisões\npúblicaqs orientadas pelo interesse dos\ncatarinenses\n\n4\n\n2. Dinheiro público respeitado — planejamento, controle, transparência e busca permanente\npor eficiência.\n\n3. Governo que entrega — metas, indicadores, prazos e avaliação dos programas.\n\n4. Liberdade para produzir — menos burocracia e mais segurança jurídica para quem trabalha\ne investe.\n\n5. Segurança para viver — integração, inteligência, prevenção e valorização dos profissionais.\n\n6. Saúde com resposta — redução de filas, regionalização e uso inteligente da capacidade\ndisponível.\n\n7. Educação para o futuro — conhecimento, tecnologia, formação profissional e preparação\npara o trabalho.\n\n8. Estado parceiro dos municípios — planejamento regional e cooperação para acelerar\nsoluções.\n\n9. Desenvolvimento com responsabilidade ambiental — prevenção de riscos, saneamento e\nresiliência climática.\n\n10. Transparência e integridade — governo aberto, controle e combate a desperdícios e\nirregularidades.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 4"
+          },
+          {
+            "id": "gestao-publica-e-responsabilidade",
+            "titulo": "GESTÃO PÚBLICA E RESPONSABILIDADE",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "GESTÃO PÚBLICA E RESPONSABILIDADE\nFISCAL\n\n5\n\nOBJETIVO\n\nconstruir um Estado mais simples, eficiente, digital e orientado por resultados.\n\nPROPOSTAS\nrevisar estruturas administrativas e sobreposições de funções; estabelecer metas para\nórgãos e programas; ampliar a avaliação de desempenho institucional; digitalizar\nserviços; simplificar procedimentos; fortalecer mecanismos de controle interno;\naprimorar compras públicas; ampliar transparência de contratos e despesas; e revisar\ngastos administrativos em busca de economia sem comprometer serviços essenciais.\n\nDIRETRIZ E EXECUÇÃO\n\nO Governo deverá publicar um painel de metas, com indicadores\ncompreensíveis para a população. Cada grande programa terá objetivos,\nresponsáveis, cronograma e critérios de avaliação.\nA gestão pública deve deixar de ser medida apenas pelo quanto gasta e passar\na ser avaliada pelo que entrega. Economizar onde é possível permitirá\nconcentrar recursos onde a população mais precisa.\n\nCOMPROMISSO\n\nresponsabilidade fiscal, transparência e foco permanente na qualidade do\ngasto público.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 5"
+          },
+          {
+            "id": "governo-digital-e-desburocratizacao",
+            "titulo": "GOVERNO DIGITAL E DESBUROCRATIZAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNO DIGITAL E DESBUROCRATIZAÇÃO\n\n6\n\nOBJETIVO\n\nfazer o Estado funcionar de maneira mais rápida, simples e acessível.\n\nPROPOSTAS\n\nAdotar o modelo de Gestão 100% Transparente, disponibilizando em portal público o\nrelatório de produtividade trimestral de todos os servidores e comissionados, a\npublicação da agenda diária, o banco de horas e a divulgação pública obrigatória dos\ndados/declarações financeiras dos ocupantes de cargos comissionados. Implementar a\ntransmissão ao vivo de todas as reuniões do Colegiado de Governo.\n\nDIRETRIZ E EXECUÇÃO\n\nA tecnologia deverá servir para reduzir filas, deslocamentos e custos. O cidadão\ndeve conseguir resolver cada vez mais demandas sem precisar enfrentar\nsucessivas etapas presenciais.\nPara empresas, a prioridade será reduzir o tempo gasto com burocracia. Para\nmunicípios, o Estado deverá ampliar apoio técnico e ferramentas\ncompartilhadas.\n\nCOMPROMISSO\n\nmenos papel, menos espera e mais serviço público entregue.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 6"
+          },
+          {
+            "id": "seguranca-publica-e-cidadania",
+            "titulo": "SEGURANÇA PÚBLICA E CIDADANIA",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA E CIDADANIA\n\n7\n\nOBJETIVO\n\nproteger as famílias catarinenses, combater o crime organizado e fortalecer a\ncapacidade operacional das forças de segurança.\n\nPROPOSTAS\nampliar o uso de inteligência policial; integrar informações entre as forças; expandir\nvideomonitoramento e leitura de placas conforme a legislação; modernizar\nequipamentos; recompor efetivos por concursos e gestão eficiente de pessoal;\nfortalecer ações nas fronteiras, portos e aeroportos; aprimorar investigação e\nprevenção; Criar o Aplicativo Gratuito de Consulta Pública para expor e dar\ntransparência aos nomes dos condenados por violência contra a mulher.\n\nDIRETRIZ E EXECUÇÃO\n\nA segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia\nCientífica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil\ndeverão trabalhar com protocolos e tecnologia compartilhados.\nO sistema prisional deverá ampliar oportunidades de trabalho e ressocialização,\nobservando a legislação e a segurança das unidades.\n\nCOMPROMISSO\n\npresença do Estado, inteligência contra o crime e valorização de quem\nprotege a população.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 7"
+          },
+          {
+            "id": "defesa-civil-e-resiliencia-climatica",
+            "titulo": "DEFESA CIVIL E RESILIÊNCIA CLIMÁTICA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "DEFESA CIVIL E RESILIÊNCIA CLIMÁTICA\n\n8\n\nOBJETIVO\n\nproteger vidas, reduzir perdas e preparar Santa Catarina para eventos climáticos\nextremos.\n\nPROPOSTAS\nmodernizar monitoramento hidrológico e meteorológico; ampliar sistemas de alerta;\nintegrar dados de universidades e centros de pesquisa; fortalecer a Defesa Civil; criar\nmecanismos permanentes de financiamento para prevenção e reconstrução; apoiar\nmunicípios no mapeamento de áreas de risco; ampliar obras de drenagem, contenção,\nmacrodrenagem e desassoreamento; e aperfeiçoar protocolos de resposta.\n\nDIRETRIZ E EXECUÇÃO\n\nBarragens e estruturas de contenção deverão contar com acompanhamento\ntécnico, monitoramento e planos de emergência atualizados. As comunidades\npotencialmente afetadas devem participar de treinamentos e simulados. Abrir\nedital de concorrência pública internacional para elaboração e execução do\nprojeto definitivo de solução para as cheias do Rio Itajaí-Açu, abrangendo obras\naudaciosas de engenharia como a transposição ou desvio do curso do rio\nA prevenção será prioridade. Cada real aplicado antes do desastre pode evitar\nperdas humanas, econômicas e sociais muito maiores.\nCOMPROMISSO\n\nSanta Catarina preparada antes da emergência, não apenas depois dela.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 8"
+          },
+          {
+            "id": "saude-atendimento-mais-rapido",
+            "titulo": "SAÚDE: ATENDIMENTO MAIS RÁPIDO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE: ATENDIMENTO MAIS RÁPIDO\n\n9\n\nOBJETIVO\n\nReduzir filas e ampliar o acesso à média e alta complexidade, aproximando o\natendimento da população.\n\nPROPOSTAS\n\nTransformar a residência oficial no Hospital e Centro de Referência Estadual para\nCrianças, Mulheres e Idosos Vítimas de Queimaduras, integrando-o ao Hospital\nInfantil Joana de Gusmão e usando seu heliponto para resgates aéreos\nexpeditos.Utilizar a infraestrutura das escolas públicas estaduais no contraturno\npara oferecer atividades físicas, terapêuticas e de saúde mental preventivas aos\npais e às comunidades locais.\n\nDIRETRIZ E EXECUÇÃO\n\nAdotar uma visão holística e transversal da saúde pública, unindo educação e\nesporte na prevenção de doenças físicas e mentais para reduzir a sobrecarga\nhospitalar.Priorizar a máxima eficiência dos ativos estatais, revertendo o uso de\nimóveis de representação oficial em serviços essenciais de saúde para a\npopulação vulnerável.\n\nCOMPROMISSO\n\nsaúde eficiente, humana e mais perto de casa.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 9"
+          },
+          {
+            "id": "educacao-e-formacao-profissional",
+            "titulo": "EDUCAÇÃO E FORMAÇÃO PROFISSIONAL",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO E FORMAÇÃO PROFISSIONAL\n\n10\n\nOBJETIVO\n\npreparar crianças e jovens para a cidadania, para o ensino superioreparao\nmercado de trabalho.\n\nPROPOSTAS\nampliar progressivamente a educação em tempo integral; fortalecer leitura, escrita,\nmatemática, lógica, ciências, inglês e competências digitais; expandir educação\nprofissional e tecnológica conforme as vocações regionais; fortalecer programas de\nacesso ao ensino superior; melhorar infraestrutura escolar; reforçar segurança nas\nescolas; valorizar professores e gestores; e ampliar ações de permanência no ensino\nmédio.\n\nDIRETRIZ E EXECUÇÃO\n\nA formação profissional deverá dialogar com empresas, cooperativas,\nuniversidades e instituições técnicas. O estudante precisa encontrar caminhos\nconcretos entre escola, qualificação e oportunidade.\nA educação inclusiva será fortalecida com capacitação dos profissionais e apoio\nàs estruturas especializadas.\n\nCOMPROMISSO\n\neducação que abre portas e prepara para o futuro.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 10"
+          },
+          {
+            "id": "11",
+            "titulo": "11",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "11\n\nINFRAESTRUTURA E MOBILIDADE\n\nOBJETIVO\n\neliminar gargalos que prejudicam a mobilidade das pessoas eoescoamentoda\nprodução.\n\nPROPOSTAS\n\nAssumir a duplicação da BR-282 como prioridade número um e obsessão de gestão,\nrealizando concessão e/ou parceria público-privada por edital de concorrência\nnacional/internacional com pedágio como fonte compensatória de custeio. Integrar os\nmodais de transporte criando a Secretaria de Logística, viabilizar a implantação da\nFerrovia do Frango para ligação logística do Oeste aos portos; ampliar os aeroportos de\nChapecó e Navegantes; e estruturar PPP para aquisição de aeronaves de carga de\ngrande porte dedicadas ao escoamento de produtos perecíveis catarinenses.\n\nDIRETRIZ E EXECUÇÃO\n\nA infraestrutura será planejada com visão regional, considerando indústria,\nagropecuária, turismo, comércio, portos, mobilidade urbana e acesso a serviços.\nO Estado também deverá atuar institucionalmente junto ao Governo Federal\npela melhoria das rodovias federais estratégicas para Santa Catarina.\n\nCOMPROMISSO\n\ninfraestrutura para aproximar pessoas, reduzir custos e aumentar\ncompetitividade.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 11"
+          },
+          {
+            "id": "portos-ferrovias-e-logistica",
+            "titulo": "PORTOS, FERROVIAS E LOGÍSTICA",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PORTOS, FERROVIAS E LOGÍSTICA\n\n12\n\nOBJETIVO\n\ntransformar a posição geográfica de Santa Catarina em vantagem competitiva\npermanente conforme descrito no plano dde Insfraestrutura e mobilidade.\n\nPROPOSTAS\nfortalecer os portos catarinenses; apoiar dragagens e melhorias de acesso aquaviário;\nampliar integração logística; acelerar estudos e projetos ferroviários; estimular terminais\nintermodais; melhorar acessos terrestres aos portos; fortalecer conexões aéreas\nregionais; e utilizar concessões e PPPs quando houver benefício comprovado.\n\nDIRETRIZ E EXECUÇÃO\n\nA estratégia logística deverá reduzir dependência de um único modal e\naumentar eficiência no transporte de cargas. A integração entre produção,\narmazenamento, ferrovias, rodovias, portos e aeroportos será tratada como\npolítica de Estado.\nO setor privado será chamado a participar de projetos estruturantes, com regras\nclaras, segurança jurídica e fiscalização pública.\n\nCOMPROMISSO\n\nSanta Catarina conectada ao Brasil e ao mundo.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 12"
+          },
+          {
+            "id": "12-1",
+            "titulo": "12+1",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "12+1\n\nDESENVOLVIMENTO ECONÔMICO E\nLIBERDADE PARA EMPREENDER\n\nOBJETIVO\n\ntornar Santa Catarina cada vez mais competitiva para empreendedores,\ntrabalhadores e investidores.\n\nPROPOSTAS\n\nsimplificar abertura e fechamento de empresas; reduzir burocracia; ampliar crédito para\nmicro e pequenos negócios; fortalecer instrumentos de apoio ao empreendedor;\nmelhorar segurança jurídica; revisar exigências regulatórias desnecessárias; atrair\ninvestimentos produtivos; apoiar parques tecnológicos; fortalecer ciência, tecnologia e\ninovação; e aperfeiçoar incentivos econômicos com critérios transparentes.\n\nDIRETRIZ E EXECUÇÃO\n\nO Governo deverá atuar como facilitador. Quem deseja abrir uma empresa\nprecisa encontrar portas abertas, informação clara e processos previsíveis.\nA política de desenvolvimento econômico deverá considerar as diferentes vocações\nregionais, apoiando indústria, comércio, serviços, tecnologia, turismo, agroindústria e\neconomia\n\ndo\n\nmar.\n\nManter\n\npolíticas\n\nde\n\nbenefícios\n\nfiscais\n\nindispensáveis\n\nà\n\ncompetitividade, com transparência total dos valores e dos beneficiários no Portal da\nTransparência.\n\nCOMPROMISSO\n\ngoverno parceiro de quem trabalha, investe e gera emprego.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 13"
+          },
+          {
+            "id": "agricultura-agroindustria-e",
+            "titulo": "AGRICULTURA, AGROINDÚSTRIA E",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "AGRICULTURA, AGROINDÚSTRIA E\nDESENVOLVIMENTO RURAL\n\n14\n\nOBJETIVO\n\nfortalecer o campo, a agricultura familiar, a agroindústria e a competitividade do\nprodutor catarinense.\n\nPROPOSTAS\nampliar qualificação profissional; estimular tecnologia no campo; melhorar\nconectividade rural; apoiar infraestrutura de estradas produtivas; fortalecer segurança\nhídrica; incentivar energia e soluções sustentáveis; ampliar acesso a crédito; apoiar\nagregação de valor e profissionalização das produções familiares; estimular\naproveitamento de resíduos e dejetos; e fortalecer assistência técnica.\n\nDIRETRIZ E EXECUÇÃO\n\nO produtor rural precisa de infraestrutura, crédito, tecnologia, segurança\nsanitária e acesso a mercados. A sucessão familiar e a permanência dos jovens\nno campo também deverão ser estimuladas.\nO Estado deverá proteger a capacidade produtiva sem abandonar a\nresponsabilidade ambiental e a conservação dos recursos naturais.\n\nCOMPROMISSO\n\ncampo forte, produção competitiva e renda no interior.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 14"
+          },
+          {
+            "id": "pesca-e-economia-do-mar",
+            "titulo": "PESCA E ECONOMIA DO MAR",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PESCA E ECONOMIA DO MAR\n\n15\n\nOBJETIVO\n\ntransformar a vocação marítima catarinense em desenvolvimento,empregoe\nrenda.\n\nPROPOSTAS\nvalorizar a pesca artesanal; apoiar associações e cooperativas; facilitar acesso a\ncrédito e tecnologia; modernizar estruturas pesqueiras; estimular a maricultura;\nfortalecer pesquisa aplicada; melhorar informações meteorológicas e oceanográficas\npara a navegação; apoiar processamento e agregação de valor; e ampliar a integração\nentre pesca, turismo, portos e economia do mar.\n\nDIRETRIZ E EXECUÇÃO\n\nSanta Catarina possui uma relação histórica com o mar. O Estado deve\ntransformar essa identidade em uma estratégia econômica que beneficie\npescadores, trabalhadores, empreendedores e comunidades costeiras.\nA sustentabilidade será condição para o crescimento de longo prazo da pesca e\nda maricultura.\n\nCOMPROMISSO\n\nvalorizar quem vive do mar e ampliar as oportunidades da economia azul\ncatarinense.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 15"
+          },
+          {
+            "id": "saneamento-agua-e-meio-ambiente",
+            "titulo": "SANEAMENTO, ÁGUA E MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "SANEAMENTO, ÁGUA E MEIO AMBIENTE\n\n16\n\nOBJETIVO\n\nampliar investimentos em saneamento e conciliar proteção ambiental com\ndesenvolvimento.\n\nPROPOSTAS\napoiar a regionalização do saneamento; ampliar capacidade técnica e financeira dos\nmunicípios; estimular concessões e PPPs quando adequadas; acelerar investimentos\nem água, esgoto e resíduos; melhorar drenagem e gestão de águas urbanas;\nsimplificar processos ambientais sem reduzir proteção; definir competências com\nclareza; ampliar segurança jurídica; e incentivar energia renovável e eficiência\nenergética.\n\nDIRETRIZ E EXECUÇÃO\n\nA universalização do saneamento exige planejamento regional, escala,\ninvestimentos e capacidade de execução. O Estado deverá apoiar municípios\nmenores para que também tenham acesso a soluções viáveis.\nO licenciamento deverá ser mais previsível e eficiente, preservando critérios\ntécnicos e ambientais. A expansão do saneamento básico garantirá água\npotável e coleta de esgoto como direito básico para promover dignidade e\nsaúde preventiva a todos os catarinenses.\n\nCOMPROMISSO\n\nágua de qualidade, saneamento e desenvolvimento responsável.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 16"
+          },
+          {
+            "id": "17",
+            "titulo": "17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "17\n\nHABITAÇÃO E PROTEÇÃO SOCIAL\n\nOBJETIVO\n\napoiar famílias em situação de vulnerabilidade e ampliar caminhospara\nautonomia.\n\nPROPOSTAS\n\nEnfrentar a questão das pessoas em situação de rua sem populismo ou soluções\nsimplistas: realizar o cadastramento e mapeamento individualizado completo de\nperfis; disponibilizar equipes multidisciplinares (psiquiatras, psicólogos, assistentes\nsociais e enfermeiros); apoiar o retorno voluntário aos municípios de origem; e aplicar\na internação compulsória estritamente nos casos autorizados pela Justiça em ações\nindividuais e fundamentadas.\n\nDIRETRIZ E EXECUÇÃO\n\nA política social deve combinar proteção imediata com oportunidades de\nreconstrução de trajetórias. O Estado deve trabalhar em conjunto com\nmunicípios, entidades e rede de serviços.\nNa habitação, serão priorizadas soluções que combinem segurança,\ninfraestrutura urbana, localização adequada e capacidade de pagamento das\nfamílias.\n\nCOMPROMISSO\n\nproteção social com dignidade, autonomia e oportunidade.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 17"
+          },
+          {
+            "id": "18",
+            "titulo": "18",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "18\n\nMULHER, FAMÍLIA, JUVENTUDE E INCLUSÃO\n\nOBJETIVO\n\nfortalecer políticas de proteção, prevenção e oportunidades.\n\nPROPOSTAS\nampliar a proteção e o atendimento às mulheres vítimas de violência; fortalecer redes\nde prevenção; ampliar ações de formação e emprego para jovens; apoiar esporte,\ncultura e educação como instrumentos de inclusão; fortalecer políticas para pessoas\ncom deficiência; qualificar serviços de educação inclusiva; e promover ações\nintegradas de cidadania.\n\nDIRETRIZ E EXECUÇÃO\n\nA família, em suas diferentes realidades, deve encontrar no Estado serviços\npúblicos capazes de apoiar educação, saúde, segurança e oportunidades.\nPara a juventude, a prioridade será transformar talento em oportunidade por\nmeio de formação, tecnologia, esporte, cultura, empreendedorismo e primeiro\nacesso ao mundo do trabalho.\n\nCOMPROMISSO\n\nproteger, incluir e criar oportunidades para cada geração.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 18"
+          },
+          {
+            "id": "turismo-sc-365-dias",
+            "titulo": "TURISMO: SC 365 DIAS",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO: SC 365 DIAS\n\n19\n\nOBJETIVO\n\nreduzir a sazonalidade e transformar Santa Catarina em destino turístico durante\ntodo o ano.\n\nPROPOSTAS\n\nDescentralizar eventos e turnês de artistas para os municípios do interior do Estado.\nCriar e implementar os Jogos Abertos de Inverno Catarinense e Brasileiro; inserir o\nAberto de Santa Catarina no calendário mundial de Tênis em sedes itinerantes no\ninterior; e descentralizar competições de skate por todas as regiões do Estado.\nRegular a distribuição de verbas estaduais de comunicação/imprensa por meio de lei\ncom critérios objetivos de audiência, visibilidade e proporcionalidade\n\nDIRETRIZ E EXECUÇÃO\n\nO litoral não será o único protagonista. Serra, Vale, Oeste, Meio-Oeste e Sul\npossuem produtos turísticos próprios que podem gerar renda durante todo o\nano.\nO turismo será articulado com cultura, esporte, gastronomia, economia do mar,\ninfraestrutura e desenvolvimento local.\n\nCOMPROMISSO\n\nmais turistas, mais tempo de permanência e mais renda circulando nas\nregiões.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 19"
+          },
+          {
+            "id": "20",
+            "titulo": "20",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "20\n\nCULTURA, ESPORTE E ECONOMIA CRIATIVA\n\nOBJETIVO\n\nampliar oportunidades de participação cultural e esportiva e fortalecer talentos\ncatarinenses, conforme mencionado no plano de turismo 365 dias.\n\nPROPOSTAS\naperfeiçoar mecanismos de incentivo à cultura; apoiar novos talentos; fortalecer\npatrimônio e identidade regional; ampliar esporte de base; apoiar atletas de\nrendimento; fortalecer paradesporto; revitalizar espaços públicos; e estimular a\neconomia criativa.\n\nDIRETRIZ E EXECUÇÃO\n\nCultura e esporte são políticas de desenvolvimento humano, prevenção,\ninclusão e geração de oportunidades. O Estado deverá buscar equilíbrio regional\nna distribuição de investimentos e editais.\nParcerias com municípios, organizações e iniciativa privada poderão ampliar o\nalcance das ações sem substituir a responsabilidade pública.\n\nCOMPROMISSO\n\ntalento catarinense valorizado e oportunidades espalhadas por todas as\nregiões.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 20"
+          },
+          {
+            "id": "tecnologia-inovacao-e-ciencia",
+            "titulo": "TECNOLOGIA, INOVAÇÃO E CIÊNCIA",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "TECNOLOGIA, INOVAÇÃO E CIÊNCIA\n\n21\n\nOBJETIVO\n\nposicionar Santa Catarina na fronteira da inovação e usar tecnologiapara\nmelhorar serviços e produtividade.\n\nPROPOSTAS\n\nfortalecer ambientes de inovação; apoiar parques tecnológicos; aproximar\nuniversidades e empresas; ampliar formação tecnológica; estimular inteligência artificial\ne ciência de dados no setor público; criar ambientes para testes de soluções\ninovadoras; apoiar atração de investimentos em tecnologia e data centers; e ampliar\nconectividade.\n\nDIRETRIZ E EXECUÇÃO\n\nO Governo será usuário e indutor de tecnologia. Dados deverão apoiar decisões,\nidentificar gargalos e medir resultados, sempre respeitando a legislação e a\nproteção de dados.\nA inovação também deverá chegar ao campo, à indústria, à saúde, à educação,\nà segurança e aos pequenos negócios.\n\nCOMPROMISSO\n\ntransformar conhecimento em produtividade, empregos e melhores\nserviços públicos.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 21"
+          },
+          {
+            "id": "municipalismo-e-desenvolvimento",
+            "titulo": "MUNICIPALISMO E DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "MUNICIPALISMO E DESENVOLVIMENTO\nREGIONAL\n\n22\n\nOBJETIVO\n\nfazer do Governo do Estado um parceiro efetivo dos 295 municípios\ncatarinenses.\n\nPROPOSTAS\nfortalecer convênios e transferências com critérios transparentes; ampliar apoio\ntécnico; planejar investimentos por regiões; utilizar consórcios públicos quando forem\nmais eficientes; integrar planos estaduais e municipais; realizar agendas regionais\npermanentes; e criar mecanismos de acompanhamento de obras e programas.\n\nDIRETRIZ E EXECUÇÃO\n\nO município é onde o cidadão encontra a maioria dos serviços públicos. Por\nisso, o Estado deve respeitar sua autonomia e, ao mesmo tempo, cooperar para\nresolver problemas que ultrapassam fronteiras municipais.\nAs decisões de investimento deverão considerar indicadores, população,\nnecessidades de infraestrutura, vocações econômicas e capacidade de\nexecução.\n\nCOMPROMISSO\n\num Estado presente nas regiões e parceiro de cada município.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 22"
+          },
+          {
+            "id": "23",
+            "titulo": "23",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "23\n\nPLANEJAMENTO TERRITORIAL E EQUILÍBRIO\nREGIONAL\n\nOBJETIVO\n\nreduzir desigualdades regionais e orientar investimentos públicos de acordo com\nas características e necessidades de cada território.\n\nPROPOSTAS\n\ncriar uma carteira estadual de projetos prioritários organizada por regiões; utilizar\nindicadores socioeconômicos, demográficos, logísticos e ambientais para orientar\ninvestimentos; fortalecer a integração com associações de municípios e consórcios\npúblicos; apoiar projetos que conectem infraestrutura e desenvolvimento econômico; e\nacompanhar regionalmente a execução das políticas públicas.\n\nDIRETRIZ E EXECUÇÃO\n\nO planejamento estadual deverá reconhecer que Santa Catarina não é\nhomogênea. As prioridades do litoral podem ser diferentes das prioridades do\nOeste, da Serra, do Vale, do Norte ou do Sul. O Estado precisa enxergar essas\ndiferenças sem perder uma visão integrada.\nA descentralização das decisões não significa fragmentar o Estado. Significa\naproximar o planejamento de quem conhece a realidade local e estabelecer\ncritérios transparentes para que os recursos sejam aplicados onde produzem\nmaior benefício público.\n\nCOMPROMISSO\n\nnenhum catarinense será tratado como cidadão de segunda classe por\nviver em uma determinada região.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 23"
+          },
+          {
+            "id": "24",
+            "titulo": "24",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "24\n\nMETAS E GOVERNANÇA 2027–2030\nO Plano de Governo será transformado em uma\nagenda de execução.\nAs metas serão detalhadasnoinícioda gestão a\npartir de diagnóstico técnicoatualizado, orçamento\ndisponível, legislação e pactuação\ncom os órgãos responsáveis.\n\nDIRETRIZ E EXECUÇÃO\n\nMecanismos de governança: painel público de metas; avaliação periódica de\nprogramas; reuniões de acompanhamento; indicadores por secretaria; carteira\nde projetos prioritários; avaliação de impacto; transparência de contratos e\ninvestimentos; e revisão anual das prioridades.\nPrioridades transversais para o ciclo: reduzir burocracia; acelerar investimentos;\nmelhorar segurança; reduzir filas de saúde; ampliar educação integral e\nprofissional; fortalecer infraestrutura; apoiar municípios; ampliar conectividade;\nmelhorar prevenção de desastres; e aumentar competitividade econômica.\nO princípio será simples: promessa precisa virar planejamento; planejamento\nprecisa virar execução; execução precisa gerar resultado; e resultado precisa\nser medido e apresentado à sociedade.\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 24"
+          },
+          {
+            "id": "25",
+            "titulo": "25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "25\n\nCOMPROMISSOS FINAIS\n\nDIRETRIZ E EXECUÇÃO\n\nSanta Catarina em primeiro lugar não é apenas um slogan. Éumaformade\ngovernar.\nÉ colocar o cidadão no centro das decisões. É respeitar o dinheiro público. É\nvalorizar quem trabalha. É proteger as famílias. É apoiar quem produz. É dar\noportunidade aos jovens. É cuidar de quem precisa. É preparar o Estado para os\ndesafios climáticos, econômicos e tecnológicos.\nO Governo Ralf Zimmer será construído com diálogo, planejamento e\nresponsabilidade. As propostas deste documento deverão ser acompanhadas de\nmetas, indicadores e mecanismos de transparência para que a população possa\ncobrar, acompanhar e avaliar os resultados.\nSanta Catarina tem força, talento, diversidade regional e capacidade\nempreendedora. O papel do Governo é criar condições para que essa força se\ntransforme em oportunidades.\nNosso compromisso é governar para todos os catarinenses, respeitando as\ndiferenças entre as regiões e trabalhando para que o desenvolvimento chegue a\ncada comunidade.\nSANTA CATARINA EM PRIMEIRO LUGAR.\nÉ RALF ZIMMER.\nPRD 25 — GOVERNO DE SANTA CATARINA 2027–2030\n\nRALF ZIMMER • CARLOS BORDIN • PRD 25\n\nPLANO DE GOVERNO 2027–2030 • 25"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "55bbf4a23a52b9a5c04f1b584c88c96501c9c382d4f8c11bb40a5c37374fcd51"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "75d9a85d96029cbc3b39911be2f46a9de7f180568e5aace2b670d43f5f75185e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "45974fe619f953b5ffddc973ffc783369c184aa1fa8f1fec67f3ffac72833d73"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "17e88e9b203b566339db4708b42c966b80d6df6b28dba9f35ca94f6c7889e3c5"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "abfced5ab445cbd3297cb3001046373e94a4a9c670b6f392694eefa929ce3068"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c1eace666b8264179e24b0732e229a45057175d6c236bbb583ecb3781466799a"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "e2aeb61fb542e88e9f8f62e1dc090b2930a142503c8d830ba0cdec1962f09e3b"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "b7c571977b8867cdbc8a9a0068c70acf55a0e92440d1db49f5cba03ed80a4ff4"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "95d6cd2c9ec49add66ef55d82415e7c00b76b74c62e640f74302d56b72b466c5"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "6bfd8defdb75020d07b8e826f051889230e910071e379b5480c152cd27ab9826"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "5641cb44a407a81ffbd4afaef62da246f8926204928e69be5cd593b49d6b0711"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "fbcbc222df1d61b2af12760e8a55bb3956de330b386a7e4866c4aeb19e2aa83e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "bc8017649f61bd0f7d6dff8eba225ff2d079830072ab119cfa954b71d881e2e2"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "bf7c1a838c59a6c5dcbccf344c132ab60fce0d2c61af4dea07f8cc0f66378653"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "335fb3b46f1ef4747b6d55220d3668071b1224e8ee9e54b291d94e3a3948eef3"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "8ea664f53b43b4fdb159cc00069252946f111000797450bb1255b847596e8c64"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "6d582af9f16aad9649b57bff3c7ca45ad299321883b29aac44dbac0498b65086"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "81c53d299ee8325f3f50a18c5c7c7ad322bb4c77b986a41aad1703ceb65453f2"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "6f0634d57c6bfd174cd6b9526e85cd6aabca353a278a1295d3121359b29af1c2"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "b7f4c351a0ec812f0f9062dcb925482ca9cd156877cd984dea53356b26c1ed30"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "4cdadf34ea69e7dce616809ff30cd3ec05fc3aac9a0588db796acf9af1dd0317"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "39475730e60fb425b77cde24b8e1cfe0852b6a4e558f72d0b3cea2ca4df52200"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "7c5a6beb34ab47e1b2c8137127274eaa843a4a4668ebfd938fc9f8d21c5ff0d1"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "635372626984cdd09f4887502d9b3f49296c7a18d1e38c169dcf897415e6ecbd"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "540a63718a923384ecc0d7ef82df80458ceca4c6b2db7ffe4d40c98fd734b4b0"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Governo deverá publicar um painel de metas, com indicadores compreensíveis para a população. A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia Científica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil deverão trabalhar com protocolos e tecnologia compartilhados. Barragens e estruturas de contenção deverão contar com acompanhamento técnico, monitoramento e planos de emergência atualizados. A formação profissional deverá dialogar com empresas, cooperativas, universidades e instituições técnicas. A estratégia logística deverá reduzir dependência de um único modal e aumentar eficiência no transporte de cargas. A universalização do saneamento exige planejamento regional, escala, investimentos e capacidade de execução. A política social deve combinar proteção imediata com oportunidades de reconstrução de trajetórias. As decisões de investimento deverão considerar indicadores, população, necessidades de infraestrutura, vocações econômicas e capacidade de execução.",
+    "frases": [
+      {
+        "texto": "O Governo deverá publicar um painel de metas, com indicadores compreensíveis para a população.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 5,
+            "trecho": "O Governo deverá publicar um painel de metas, com indicadores\ncompreensíveis para a população."
+          }
+        ]
+      },
+      {
+        "texto": "A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia Científica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil deverão trabalhar com protocolos e tecnologia compartilhados.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 7,
+            "trecho": "A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia\nCientífica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil\ndeverão trabalhar com protocolos e tecnologia compartilhados."
+          }
+        ]
+      },
+      {
+        "texto": "Barragens e estruturas de contenção deverão contar com acompanhamento técnico, monitoramento e planos de emergência atualizados.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 8,
+            "trecho": "Barragens e estruturas de contenção deverão contar com acompanhamento\ntécnico, monitoramento e planos de emergência atualizados."
+          }
+        ]
+      },
+      {
+        "texto": "A formação profissional deverá dialogar com empresas, cooperativas, universidades e instituições técnicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 10,
+            "trecho": "A formação profissional deverá dialogar com empresas, cooperativas,\nuniversidades e instituições técnicas."
+          }
+        ]
+      },
+      {
+        "texto": "A estratégia logística deverá reduzir dependência de um único modal e aumentar eficiência no transporte de cargas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 12,
+            "trecho": "A estratégia logística deverá reduzir dependência de um único modal e\naumentar eficiência no transporte de cargas."
+          }
+        ]
+      },
+      {
+        "texto": "A universalização do saneamento exige planejamento regional, escala, investimentos e capacidade de execução.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 16,
+            "trecho": "A universalização do saneamento exige planejamento regional, escala,\ninvestimentos e capacidade de execução."
+          }
+        ]
+      },
+      {
+        "texto": "A política social deve combinar proteção imediata com oportunidades de reconstrução de trajetórias.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 17,
+            "trecho": "A política social deve combinar proteção imediata com oportunidades de\nreconstrução de trajetórias."
+          }
+        ]
+      },
+      {
+        "texto": "As decisões de investimento deverão considerar indicadores, população, necessidades de infraestrutura, vocações econômicas e capacidade de execução.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 22,
+            "trecho": "As decisões de investimento deverão considerar indicadores, população,\nnecessidades de infraestrutura, vocações econômicas e capacidade de\nexecução."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-por-resultados",
+        "titulo": "Gestão por resultados",
+        "descricao": "O plano prevê um painel público de metas com indicadores para a população.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 5,
+            "trecho": "O Governo deverá publicar um painel de metas, com indicadores\ncompreensíveis para a população."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-integrada",
+        "titulo": "Segurança integrada",
+        "descricao": "O plano prevê protocolos compartilhados entre as forças de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 7,
+            "trecho": "A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia\nCientífica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil\ndeverão trabalhar com protocolos e tecnologia compartilhados."
+          }
+        ]
+      },
+      {
+        "id": "resiliencia-climatica",
+        "titulo": "Resiliência climática",
+        "descricao": "O plano prevê acompanhamento técnico para barragens e estruturas de contenção.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 8,
+            "trecho": "Barragens e estruturas de contenção deverão contar com acompanhamento\ntécnico, monitoramento e planos de emergência atualizados."
+          }
+        ]
+      },
+      {
+        "id": "formacao-profissional",
+        "titulo": "Formação profissional",
+        "descricao": "O plano prevê diálogo entre a formação profissional e instituições técnicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 10,
+            "trecho": "A formação profissional deverá dialogar com empresas, cooperativas,\nuniversidades e instituições técnicas."
+          }
+        ]
+      },
+      {
+        "id": "logistica-de-cargas",
+        "titulo": "Logística de cargas",
+        "descricao": "O plano prevê redução da dependência de um único modal no transporte de cargas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002552157:01",
+            "pagina": 12,
+            "trecho": "A estratégia logística deverá reduzir dependência de um único modal e\naumentar eficiência no transporte de cargas."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:18:38.137Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:20:52.221Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:1:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (segurança)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:2:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (defesa civil)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:3:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (educação profissional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:4:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (logística)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:5:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:6:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (proteção social)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:7:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (investimento regional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:frase:8:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (gestão pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:gestao-por-resultados:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o essencial da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (segurança)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:seguranca-integrada:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o essencial da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (defesa civil)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:resiliencia-climatica:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o essencial da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (formação profissional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:formacao-profissional:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o essencial da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (logística)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002552157:tema:logistica-de-cargas:documentos:SC:240002552157:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre o essencial da afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002552157",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002552157:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 27121,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4427,
+          "reasoning_output_tokens": 3211
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25649,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22604,
+          "output_tokens_details": {
+            "thinking_tokens": 308
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25649,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22604,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25649,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25649
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3486824
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "b09199e2b606125d047b5101cfd63861b4a63191cd1abb16a1473971eb7b5cb9",
+    "extractedTextSha256": "33aabb4639c3e983da789a4499168b2c39c1262dd401173139fedb0c87e81d5b",
+    "documentCount": 1,
+    "documentSetSha256": "e8ea218cda4b13ebbd70690b32ea4d01f07c6285db4ab04f780ca88ac3c228ff",
+    "contentSha256": "5f7a104a767f4f4e41fc584b77e84e7956b1a2f41e97493940966bc9738a9f40"
+  }
+}

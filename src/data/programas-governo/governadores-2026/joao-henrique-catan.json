@@ -1,0 +1,1378 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002552191",
+    "slug": "joao-henrique-catan",
+    "nomeUrna": "JOÃO HENRIQUE CATAN",
+    "partido": "NOVO",
+    "arquivoNome": "2026MS120002552191_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002552191_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002552191:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002552191_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002552191_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "cd0b955dc13cb98e9d3aa5d00498d6eaccc86654fdeb82d69a013f50f6e61266",
+        "extractedTextSha256": "6dae4774182321b02198abb84a9f1f0da6b2a5a129766fd0f47c5d61fec53594",
+        "paginas": 50,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE GOVERNO\n2027 - 2030\nMATO GROSSO DO SUL\n30\nGOVERNADOR é\nCATAN\nVICEJACINTHO"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\n2027.2030\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nUm Plano de Governo não pode ser apenas uma\ncoleção de promessas. Ele precisa dizer o que será\nfeito, para quem, onde, em quanto tempo e como o\nresultado será acompanhado.\nMato Grosso do Sul tem força, riqueza, capacidade\nde produção e, acima de tudo, gente que trabalha e\nacredita no futuro. Mas o Estado ainda convive com\nproblemas que não podem ser tratados como\nnormais: filas na saúde, falta de moradia, estradas e\ninfraestrutura que precisam de respostas, excesso\nde burocracia e impostos que pesam sobre quem\nproduz e empreende.\nÉ hora de transformar a força de Mato Grosso do Sul\nem qualidade de vida, oportunidades e\ndesenvolvimento para todos.\nNosso compromisso é construir um Estado forte por\ninteiro, presente nos 79 municípios e planejado a\npartir das 9 regiões, respeitando as características,\nnecessidades e vocações de cada território.\nQueremos um Estado que esteja perto das pessoas.\nNa saúde, isso significa ampliar a capacidade dos\nhospitais regionais, reduzir deslocamentos, enfrentar\nas filas e garantir diagnóstico cada vez mais\nprecoce, especialmente na infância, além de\ncuidado integral para pessoas com deficiência,\nautismo e suas famílias.\nNa infraestrutura, vamos promover uma grande\nmissão de obras, com investimentos em rodovias,\nestradas vicinais, pavimentação, drenagem, pontes,\nsaneamento, hospitais e corredores estruturantes. A\npopulação precisa ver o imposto transformado em\nobra, serviço e benefício concreto.\nNa habitação, vamos trabalhar para viabilizar 30 mil\nmoradias, integradas à infraestrutura urbana, aos\nserviços públicos e às oportunidades de trabalho,\nenfrentando de forma objetiva o déficit habitacional."
+          },
+          {
+            "id": "plano-de-governo-3",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\n2027.2030\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nNa economia, a direção será clara: menos impostos,\nmenos burocracia e mais liberdade para produzir.\nVamos rever distorções tributárias, aprimorar os\nincentivos para que alcancem também pequenos e\nmédios produtores e empreendedores e garantir\nque recursos gerados pela produção retornem em\ninfraestrutura e desenvolvimento.\nTudo isso será acompanhado por uma nova forma\nde governar: metas, prazos, transparência e\navaliação dos resultados.\nCada município terá prioridades definidas e\nacompanhamento público. O cidadão poderá\nsaber quanto foi investido, qual o prazo, o que foi\nentregue e, principalmente, se aquilo resolveu o\nproblema.\nNão queremos um governo que apareça apenas na\nfotografia. Queremos um governo que entrega.\nMato Grosso do Sul precisa de um novo ciclo: com\nresponsabilidade no uso do dinheiro público,\ncoragem para enfrentar problemas antigos,\nliberdade para quem produz e presença do Estado\nonde as pessoas vivem.\nEste é o nosso compromisso: fazer o Estado\nfuncionar, fazer o dinheiro público chegar onde\nprecisa e construir um Mato Grosso do Sul forte por\ninteiro.\n\nJoão Henrique Catan\n\nCandidato a Governador de Mato Grosso do Sul"
+          },
+          {
+            "id": "p-l-a-n-o",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nA FORÇA DO PLANO\nMato Grosso do Sul pode crescer e esse crescimento precisa aparecer\nno asfalto, no hospital, na escola, na segurança e na vida da população.\n\n79\n\n9\n\n4 anos\n\nmunicípios no centro\n\nregiões com estratégia\n\nDe transformação e grandes obras\n\ncada cidade com carteira de\nentregas, prioridades e apoio técnico\n\nmais proximidade, menos centralização\ne mais presença do Estado\n\nChoque de investimento em infraestrutura,\nsaúde, educação, mobilidade, saneamento,\ncultura e habitação\n\nProximidade entre governo e população.\nMenos espera. Mais presença. Mais resultado."
+          },
+          {
+            "id": "p-l-a-n-o-2",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nA GRANDE MARCA DO MANDATO\nUm Estado que transforma arrecadação em obras, serviços, oportunidades e\nqualidade de vida.\nInfraestrutura será uma das grandes alavancas do próximo ciclo, conectando\nasfalto, saúde, educação, segurança, saneamento, habitação, mobilidade,\ntecnologia e desenvolvimento regional.\n\nSEIS COMPROMISSOS ESTRUTURANTES\n1\n\n2\n\nNenhum município invisível\n\nObras que transformam\n\nPresença do Estado, obras, serviços,\nsaúde, tecnologia, educação e metas.\n\nRodovias, pavimentação urbana, pontes,\nviadutos,\ndrenagem,\nsaneamento,\nhospitais, escolas e equipamentos\npúblicos\n\n3\n\n4\n\nSaúde perto de casa\n\nEstado digital de verdade\n\nMenos deslocamento para resolver o\nbásico e mais atendimento, estrutura e\nespecialidades dentro de cada região.\n\nServiços no celular, fila visível\nacompanhamento,\ntransparência\navaliação dos serviços públicos.\n\ne\ne\n\n5\n\n6\n\nSegurança com presença\n\nDinheiro público com resultado\n\nFronteira, campo e cidade tratados com\ninteligência, integração e resposta.\n\nEquilíbrio fiscal, menos desperdício, mais\neficiência e transparência. O Estado deve\ngastar melhor, cobrar de forma mais\njusta e transformar cada recurso público\nem serviço, obra e benefício concreto\npara a população.\n\n5"
+          },
+          {
+            "id": "p-l-a-n-o-3",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n79 MUNICÍPIOS\n9 REGIÕES\n1 DESENHO DE ESTADO\nO Plano de Governo 2027-2030 parte de uma visão territorial: cada região tem\nnecessidades, vocações e prioridades próprias, mas todas devem fazer parte de\num mesmo projeto de desenvolvimento.\n\nCampo Grande\n\nDourados\n\nBolsão\n\nCone Sul\n\nPantanal\n\nLeste\n\nNorte\n\nSudoeste\n\nSul-Fronteira\n\nA estratégia para Mato Grosso do Sul não parte de uma solução única para\ntodos, mas de um projeto Estadual com prioridades adequadas em cada\nregião.\nO objetivo é simples: fazer o cidadão perceber, no seu município e na sua vida,\nque o dinheiro dos impostos está se transformando em resultado."
+          },
+          {
+            "id": "p-l-a-n-o-4",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nA organização do plano parte de eixos estratégicos com objetivos claros, ações\nexecutáveis e resultados acompanháveis. Grandes projetos serão combinados\ncom intervenções locais, continuidade das obras em andamento, modernização\nda gestão e critérios técnicos para definição de prioridades.\nO planejamento será acompanhado por metas, cronogramas, indicadores e\ntransparência da execução, fortalecendo a capacidade do Estado de\ntransformar planejamento em entrega.\nO objetivo é promover uma mudança que possa ser percebida na vida real:\nmelhores conexões entre municípios e regiões, saúde mais resolutiva perto de\ncasa, infraestrutura moderna, novas oportunidades de desenvolvimento e um\nEstado mais eficiente na aplicação dos recursos públicos.\n\nMais do que apresentar propostas, este plano\norganiza o Estado para executar, medir\nresultados e fazer a mudança ser sentida em\ntodo Mato Grosso do Sul."
+          },
+          {
+            "id": "p-l-a-n-o-5",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nC A D E R N O\n\nC O M P L E T O\n\nD O\n\nP L A N O\n\nD E\n\nG O V E R N O\n\nUm projeto para os 79 municípios, estruturado em infraestrutura,\ndesenvolvimento dos municípios, entrega eficiente de serviços públicos e\nfortalecimento da confiança da população no Estado."
+          },
+          {
+            "id": "p-l-a-n-o-6",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nP L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7 . 2 0 3 0\n\nMato Grosso do Sul Forte por Inteiro\nUm plano de Estado para modernizar Mato Grosso do Sul, superar\ngargalos históricos e transformar crescimento em infraestrutura,\noportunidades e qualidade de vida.\n\nEste Plano de Governo organiza uma visão integrada para Mato Grosso do Sul,\ncom atuação territorial, regionalizada e orientada por resultados. A prioridade é\ntransformar planejamento e investimento em entregas concretas nos 79\nmunicípios, com forte atenção à infraestrutura, logística e pavimentação ao\nlongo dos próximos quatro anos.\nO plano articula essas prioridades com saúde, educação, segurança pública,\ntecnologia, desenvolvimento econômico, sustentabilidade, proteção social e\nresponsabilidade fiscal, estabelecendo uma direção clara para o Estado:\nintegrar regiões, reduzir gargalos, ampliar oportunidades e fazer o crescimento\nser percebido na vida da população.\n\n79\n\n9\n\nmunicípios com\ncarteira de entregas\n\nregiões com agenda\nprópria\n\n4 Anos\n\n1 Prioridade\n\nde execução e\nmonitoramento\n\ninfraestrutura\ntransformar Mato\nGrosso do Sul\n\nUm Estado forte por inteiro, com resultado chegando onde as pessoas vivem."
+          },
+          {
+            "id": "p-l-a-n-o-7",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nSUMÁRIO\n01\n\nVISÃO DE ESTADO E DIAGNÓSTICO ESTRATÉGICO\n\n1\n\n02 E Q U I L Í B R I O F I S C A L E L I B E R D A D E E C O N Ô M I C A\n\n4\n\n03 P A C T O 7 9 M U N I C Í P I O S E G O V E R N A N Ç A R E G I O N A L\n\n6\n\n04\n\nGRANDE MISSÃO DE INFRAESTRUTURA 2027-2030\n\n8\n\n05\n\nPLANO ESTADUAL DE PAVIMENTAÇÃO EXPRESSIVA\n\n11\n\n06\n\nLOGÍSTICA, ROTA BIOCEÂNICA E INTEGRAÇÃO MULTIMODAL\n\n14\n\n07\n\nSANEAMENTO, DRENAGEM, URBANISMO E HABITAÇÃO\n\n16\n\n08\n\nSAÚDE PERTO DE CASA\n\n18\n\n09\n\nSAÚDE E PROTEÇÃO ANIMAL\n\n21\n\n10\n\nEDUCAÇÃO, QUALIFICAÇÃO E JUVENTUDE\n\n22\n\n11\n\nTECNOLOGIA, GOVERNO DIGITAL E CIDADES INTELIGENTES\n\n25\n\n12\n\nSEGURANÇA PÚBLICA, FRONTEIRA E PROTEÇÃO SOCIAL\n\n26\n\n13\n\nCULTURA, IDENTIDADE, ECONOMIA CRIATIVA E ESPORTE\n\n28\n\n14\n\nDESENVOLVIMENTO ECONÔMICO\n\n30\n\n15\n\nMEIO AMBIENTE, PANTANAL E\nDESENVOLVIMENTO RESPONSÁVEL\n\n32\n\n16\n\nCOMBATE À CORRUPÇÃO, TRANSPARÊNCIA E\nGOVERNO EFICIENTE\n\n34\n\n17\n\nGESTÃO EFICIENTE, TRANSPARÊNCIA E RESULTADOS\n\n35\n\n18\n\nMATO GROSSO DO SUL POR INTEIRO\n\n37"
+          },
+          {
+            "id": "p-l-a-n-o-8",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n1. VISÃO DE ESTADO E DIAGNÓSTICO ESTRATÉGICO\nMato Grosso do Sul tem potencial para muito mais. O Estado precisa transformar sua capacidade\neconômica, sua posição estratégica e sua arrecadação em resultados concretos na vida das pessoas —\nem infraestrutura, saúde, educação, segurança, habitação, mobilidade, emprego e qualidade dos serviços\npúblicos.\nDepois de anos sob o comando do mesmo grupo político, é preciso reconhecer que ainda existem grandes\ndiferenças entre as regiões, municípios e comunidades. Há estradas que precisam de investimentos, bairros\nsem infraestrutura adequada, déficit habitacional, dificuldades de acesso à saúde especializada, falta de\noportunidades de qualificação e regiões produtivas que ainda enfrentam gargalos para crescer.\nO desafio de 2027–2030 será romper com uma gestão concentrada, pouco perceptível para grande parte\nda população, e construir um Estado mais presente, eficiente e equilibrado territorialmente. Cada cidadão\nprecisa conseguir perceber onde o dinheiro dos impostos está sendo aplicado e, principalmente, sentir o\nresultado dessa aplicação.\nO próximo governo deverá colocar o investimento público no centro da estratégia de desenvolvimento,\ncom planejamento, transparência, metas e acompanhamento regional. Não basta anunciar grandes\nnúmeros: é necessário entregar obras, serviços e oportunidades onde as pessoas vivem e trabalham.\nMato Grosso do Sul precisa de um novo ciclo de desenvolvimento: mais obras, mais infraestrutura, mais\nsaúde, mais habitação, mais educação, mais segurança e mais oportunidades — com presença efetiva do\nEstado nos 79 municípios e atenção às diferentes necessidades de cada região.\nA proposta para 2027–2030 é fazer o Estado avançar de forma concreta, equilibrada e visível, colocando o\ncidadão no centro das decisões e fazendo com que a população veja e sinta o retorno dos impostos que\npaga.\n\nO que este plano assume como verdade política\nNão haverá salto social sem uma ofensiva séria de infraestrutura e pavimentação.\nNão haverá saúde eficiente se o cidadão continuar viajando demais para resolver o básico.\nNão haverá educação conectada ao futuro sem internet, formação técnica e presença regional.\nNão haverá segurança suficiente se a fronteira, o campo e a cidade forem tratados como problemas\nisolados.\nNão haverá governo moderno sem integração digital com os municípios e metas públicas por\nsecretaria.\nNão haverá desenvolvimento sustentável com carga tributária excessiva, burocracia e insegurança\npara quem produz, investe e gera empregos.\nNão haverá economia regional forte sem valorizar os empresários locais, especialmente os pequenos e\nmédios empreendedores, responsáveis por gerar empregos, renda, investimentos e oportunidades nos\nmunicípios.\nNão haverá Estado eficiente sem valorizar os servidores públicos de carreira, investir em qualificação,\nreconhecer o mérito e garantir condições para que possam servir a população.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n01"
+          },
+          {
+            "id": "p-l-a-n-o-9",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nMato Grosso do Sul precisa voltar a\navançar. Seu potencial econômico deve se\ntransformar em infraestrutura moderna,\nestradas melhores, logística eficiente,\ncidades estruturadas, serviços públicos de\nqualidade e novas oportunidades.\nCrescer não basta. É preciso fazer o\ndesenvolvimento chegar a todas as regiões\ne ser percebido na vida das pessoas.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n02"
+          },
+          {
+            "id": "p-l-a-n-o-10",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n1.1. Leituras centrais para orientar o mandato\nInfraestrutura precisa ser tratada como política de produtividade, saúde pública e\nintegração territorial ao mesmo tempo.\nO apoio aos municípios não pode se limitar a repasses pontuais; deve incluir projeto,\nfiscalização, dados, capacitação e manutenção.\nPavimentar não é só asfaltar: é drenar, sinalizar, calçar, garantir acessibilidade e\nreduzir custo de manutenção futura.\nA regionalização da saúde precisa diminuir deslocamentos, filas invisíveis e\ndependência excessiva da capital.\nTecnologia deve simplificar a vida do cidadão, apoiar a gestão municipal e dar\ninteligência às forças de segurança.\nA política tributária precisa ser simples e previsível, preservando a competitividade\nde quem produz e investe.\nA gestão pública precisa valorizar os servidores de carreira, com qualificação, mérito\ne foco em resultados.\nO Pantanal, a fronteira e a Rota Bioceânica exigem um modelo próprio de\ndesenvolvimento e proteção.\n\nO compromisso é simples: fazer o desenvolvimento chegar à vida real. O crescimento\nde Mato Grosso do Sul precisa ser percebido nas cidades, nas estradas, nas rotas de\nprodução, nas escolas, nos hospitais, na segurança, nas comunidades rurais e no dia a\ndia de quem depende do Estado. Avançar significa transformar potencial econômico\nem infraestrutura, serviços que funcionam, oportunidades e qualidade de vida em todas\nas regiões.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n03"
+          },
+          {
+            "id": "p-l-a-n-o-11",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n2. EQUILÍBRIO FISCAL, LIBERDADE ECONÔMICA E MENOS IMPOSTOS\nMato Grosso do Sul precisa de um Estado que gaste melhor, cobre menos e entregue mais. O dinheiro\narrecadado deve ser tratado com responsabilidade, e quem produz, investe e gera empregos não pode ser\npenalizado por excesso de impostos, burocracia ou distorções tributárias.\nA proposta é construir um ambiente econômico mais livre, simples e competitivo, com menos burocracia,\ntributação mais justa, revisão de distorções e estímulo à produção e ao investimento.\nO objetivo é ampliar a atividade econômica, gerar oportunidades e fortalecer a arrecadação pelo\ncrescimento, e não pelo aumento permanente da carga sobre quem já paga.\n\n2.1. Menos impostos, menos burocracia\nReduzir alíquotas e taxas, sempre com responsabilidade fiscal e planejamento.\nSimplificar procedimentos e reduzir a burocracia para abrir, manter e expandir empresas e atividades\nprodutivas.\nRever mecanismos que resultem em cobrança em duplicidade ou bitributação.\nRever a pauta fiscal e mecanismos de cobrança que aumentem artificialmente o custo da produção.\nUtilizar tecnologia e inteligência fiscal para combater a sonegação e a concorrência desleal, sem\ntransformar o contribuinte regular no alvo permanente da fiscalização.\n\n2.2. Novo Fundersul: dinheiro da produção voltando para a produção\nReformular o Fundersul, direcionando seus recursos exclusivamente para infraestrutura, transporte,\nlogística e viabilidade da produção, especialmente estradas, pavimentação, duplicações e novos\nacessos.\nEstabelecer um critério de distribuição que considere quanto cada município contribui e produz,\ngarantindo maior retorno às regiões que geram os recursos.\nAvaliar a retirada de vinculações que desvirtuem a finalidade do fundo, concentrando seus recursos\nna infraestrutura necessária ao escoamento e à competitividade da produção.\nRevisar a tributação dentro das cadeias produtivas para eliminar situações de cobrança em\nduplicidade, incluindo mecanismos específicos para evitar a bitributação na comercialização de\nanimais.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n04"
+          },
+          {
+            "id": "p-l-a-n-o-12",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n2.3. ICMS com equilíbrio entre Capital e Interior\nReformular os critérios de rateio do ICMS, buscando uma distribuição mais\nequilibrada dos recursos entre os municípios.\nCorrigir distorções na distribuição, fortalecendo a participação de Campo Grande\nsem prejudicar o interior.\nCriar um fundo de compensação, utilizando recursos da renúncia global para evitar\nperdas dos municípios durante a transição.\n\n2.4. Incentivo fiscal para quem produz - não apenas para os\ngrandes\nReformular o modelo de incentivos fiscais, para que os benefícios não fiquem\nconcentrados apenas nos grandes grupos e no topo das cadeias produtivas.\nFazer o incentivo descer pela cadeia produtiva, alcançando também pequenos e\nmédios produtores e empreendedores que querem investir, ampliar sua produção e\ngerar empregos.\nCriar instrumentos que permitam transformar parte dos incentivos existentes em\ninvestimento produtivo, inclusive para pequenos produtores que desejem\nmodernizar sua atividade, como energia, tecnologia e infraestrutura.\nCriar um modelo estadual de incentivo à produção, inspirado na lógica do Plano\nSafra, mas ampliado para diferentes atividades, incluindo agricultura e pecuária.\n\n2.5. Equilíbrio fiscal e eficiência do Estado\nA redução de impostos precisa caminhar junto com controle de despesas, combate\nao desperdício e eficiência na arrecadação. O Estado deve buscar uma base\neconômica mais ampla, com menos distorções e maior atividade produtiva, em vez\nde depender continuamente do aumento da carga sobre quem já produz e paga.\n\nO princípio é claro: cobrar menos, simplificar mais, produzir\nmais e arrecadar melhor.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n05"
+          },
+          {
+            "id": "p-l-a-n-o-13",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n3. PACTO 79 MUNICÍPIOS E GOVERNANÇA REGIONAL\nO Pacto 79 Municípios será a principal engrenagem político-administrativa do mandato.\nEm vez de trabalhar com uma relação episódica com as prefeituras, o Estado adotará\numa plataforma permanente de cooperação. Cada município terá acesso a uma\ncarteira estadual de entregas, organizada por prioridades pactuadas nas áreas de\ninfraestrutura, saúde, transformação digital, segurança, habitação, saneamento e\ndesenvolvimento econômico.\n\nArquitetura do pacto\nCarteira de obras e serviços prioritários por município, revisada anualmente.\nEscritórios regionais de apoio técnico para projetos executivos, convênios,\nfiscalização e captação de recursos.\nSistema estadual de informação territorial com dados por município, metas,\ncronograma e mapas de entrega.\nFóruns regionais trimestrais com prefeituras, setor produtivo, universidades e\nsociedade civil.\nApoio a consórcios intermunicipais em resíduos sólidos, manutenção viária, compras\npúblicas e saúde regional.\nCom isso, o Estado deixa de ser apenas um repassador e passa a ser um parceiro\ntécnico e operacional. Essa mudança é decisiva para cidades pequenas e médias, que\nmuitas vezes têm demanda, área urbana em expansão e necessidade de obras, mas\nnão possuem equipes robustas para desenhar, licitar e fiscalizar projetos complexos.\nComo o Pacto 79 Municípios mudará a ponta:\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n06"
+          },
+          {
+            "id": "p-l-a-n-o-14",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nPrefeituras com menor capacidade fiscal terão contrapartidas moduladas para não\nficarem fora do plano de obras.\nMunicípios com grande déficit de pavimentação urbana receberão carteira própria\nde requalificação territorial.\nRegiões rurais e corredores de produção serão integrados à agenda de\ndesenvolvimento dos municípios.\nCada município terá um retrato anual de gargalos: saúde. asfalto, drenagem, pontes,\nsaneamento, iluminação, conectividade, habitação e capacidade social.\nAs prioridades passarão por critérios públicos: população atendida, impacto\nsanitário, integração logística, vulnerabilidade, potencial produtivo e urgência\noperacional.\nEsse desenho assegura que nenhum município fique sem planejamento específico.\nAdministrativamente permite trabalhar com calendário, sequência de entregas e\ncritérios verificáveis.\nE tecnicamente, cria uma base para que investimentos não sejam guiados apenas por\nocasião ou pressão, mas por mapa de necessidades e estratégia territorial.\n\nMais previsibilidade para os municípios, menos dependência\nde articulação política e mais segurança para planejar e\nexecutar.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n07"
+          },
+          {
+            "id": "p-l-a-n-o-15",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n4. GRANDE MISSÃO DE INFRAESTRUTURA 2027-2030\nA espinha dorsal do plano é uma missão de infraestrutura com escala de Estado. A\nproposta é iniciar, já no primeiro ano, um ciclo de investimentos e manutenção capaz de\nproduzir efeito perceptível na mobilidade, no escoamento, na saúde urbana e na\ncompetitividade regional. O eixo não é apenas inaugurar obras, mas corrigir passivos,\nconsolidar corredores e fazer a infraestrutura chegar a localidades que hoje ainda\ndependem de soluções incompletas.\n\nOs quatro blocos da missão\n1) Rodovias estaduais e eixos transversais entre cidades-polo.\n2) Estradas vicinais e rotas de produção, transporte escolar e acesso à saúde.\n3) Pavimentação urbana expressiva com drenagem e calçadas acessíveis.\n4) Pontes, saneamento, conectividade e energia como infraestrutura complementar.\nO compromisso central é executar o maior programa de pavimentação territorial dos\núltimos anos, articulando infraestrutura rural e urbana.\nA meta política do mandato é fazer com que as pessoas sintam a presença do Estado\nem três escalas ao mesmo tempo: no trajeto entre municípios, no acesso aos distritos e\náreas produtivas e no interior das cidades.\n\n4.1. Programa Rodovia Forte\nRecuperação e requalificação dos trechos estaduais prioritários, com foco nas\nligações entre cidades-polo e corredores estratégicos.\nContratos de manutenção por desempenho, garantindo conservação permanente\ne evitando o modelo de tapa-buraco.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n08"
+          },
+          {
+            "id": "p-l-a-n-o-16",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nModernização da drenagem, sinalização, acostamentos e segurança viária.\nBanco Estadual de Projetos Executivos, com projetos completos e previamente\nestruturados para dar mais rapidez às obras, reduzir improvisos, evitar paralisações e\ndiminuir a necessidade de aditivos contratuais.\nClassificação pública da malha rodoviária por nível de criticidade, orientando\nprioridades e investimentos anuais.\n\n4.2. Programa Estrada da Produção\nApoio estadual aos municípios na recuperação e manutenção de estradas vicinais\nestratégicas, por meio de convênios, equipamentos, apoio técnico e investimentos\ncompartilhados.\nPrioridade para rotas essenciais ao transporte escolar, acesso à saúde e\nescoamento da produção.\nIntegração regional das ações para melhorar a trafegabilidade e reduzir\ninterrupções no período de chuvas.\nPlanejamento conjunto entre Estado e municípios, com critérios públicos de\nprioridade e acompanhamento dos resultados.\n\n4.3. Programa Ponte Segura\nNos primeiros 90 dias de governo, realizar o mapeamento estadual das pontes\ncríticas e publicar um plano de intervenção com prioridades e cronograma.\nRecuperar, substituir e modernizar as pontes prioritárias, começando pelas\nestruturas em situação crítica e pelas rotas estratégicas para produção, transporte\nescolar, acesso à saúde e circulação regional.\nApoiar os municípios, por meio de convênios, projetos, recursos e soluções de\nengenharia, na recuperação de pontes de estradas vicinais estratégicas.\nPadronizar projetos para reduzir custos, acelerar contratações e diminuir a\nnecessidade de aditivos.\nIntegrar as intervenções às rodovias e estradas da produção, garantindo\ncontinuidade dos corredores de acesso.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n09"
+          },
+          {
+            "id": "p-l-a-n-o-17",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n4.4. Infraestrutura para o Desenvolvimento\nConectividade de qualidade em todo o Estado, com expansão de fibra óptica e\ninternet de alta velocidade para escolas, unidades de saúde, segurança, empresas e\ncomunidades, especialmente no interior.\nModernização e ampliação da infraestrutura aeroportuária, apoiando municípios\ncom potencial turístico, empresarial e logístico e fortalecendo a integração regional.\nMais segurança hídrica, energia e saneamento para sustentar a expansão das\ncidades e das atividades produtivas.\nMelhoria dos acessos e apoio à infraestrutura de escoamento da produção,\nespecialmente para pequenas propriedades e assentamentos, em parceria com os\nmunicípios.\n\nO sentido estratégico dessa missão é direto: estrada boa reduz custos, economiza\ntempo, melhora o acesso aos serviços públicos, dá segurança e previsibilidade ao\nprodutor, valoriza as cidades e movimenta a economia.\nInfraestrutura bem planejada e bem executada transforma investimento público em\nresultado concreto. É o Estado presente onde a população vive, trabalha e produz — e o\ncidadão percebendo, na prática, onde seu dinheiro está sendo aplicado.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n10"
+          },
+          {
+            "id": "p-l-a-n-o-18",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n5. MS EM OBRAS — PLANO ESTADUAL DE PAVIMENTAÇÃO E OBRAS ESTRUTURANTES.\nO Estado terá um Plano Estadual permanente de Pavimentação e Obras Estruturantes,\ncom planejamento de longo prazo e execução contínua em todas as regiões.\nA prioridade será pavimentar, recuperar e modernizar a infraestrutura existente, eliminar\ngargalos urbanos e rodoviários e viabilizar obras estruturantes capazes de melhorar a\nmobilidade, a logística, os serviços públicos e a qualidade de vida.\nAs obras serão definidas por critérios técnicos e transparência, considerando\nnecessidade regional, impacto social e econômico, urgência e capacidade de\nexecução, garantindo que o investimento público resulte em obras úteis, duráveis e\npercebidas pela população.\n\n5.1. Onde o Estado vai investir\nPavimentação urbana: acelerar a pavimentação e a recuperação viária nos\nmunicípios, priorizando bairros populosos, áreas de expansão e locais com maior\ndéficit de infraestrutura.\nAcesso a serviços essenciais: melhorar a mobilidade e os acessos a hospitais,\nunidades de saúde, escolas e demais equipamentos públicos.\nIntegração urbana e regional: eliminar gargalos e melhorar as conexões entre\nbairros, municípios e regiões de maior circulação.\nAcessos produtivos: garantir infraestrutura adequada para conectar distritos\nindustriais, polos produtivos, cooperativas e áreas geradoras de emprego à malha\nviária principal.\nObras estruturantes: executar duplicações, pontes, viadutos, contornos, anéis viários,\nterceiras faixas e acessos urbanos onde essas intervenções forem necessárias para\ndestravar mobilidade e desenvolvimento.\nRecuperação e manutenção: restaurar e conservar a malha rodoviária e as\nestruturas existentes, evitando que obras já realizadas se deteriorem e voltem a exigir\ngrandes investimentos.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n11"
+          },
+          {
+            "id": "p-l-a-n-o-19",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nCritérios de prioridade: as obras serão definidas com transparência, considerando\npopulação beneficiada, déficit de infraestrutura, segurança, acesso a serviços\nessenciais, fluxo de veículos, impacto econômico e regional, urgência e viabilidade\ntécnica.\n\n5.2. Padrão Técnico, Inovação e Durabilidade\nAs obras públicas deverão ser planejadas para durar mais, custar menos ao longo do\ntempo e entregar melhor resultado, com projetos completos, controle de qualidade e\nfiscalização rigorosa.\nProjetos executivos completos, incluindo\ndimensionamento adequado ao tráfego.\n\ndrenagem,\n\nsegurança\n\nviária\n\ne\n\nEngenharia moderna e soluções adequadas a cada necessidade, como pontes,\nviadutos, duplicações, terceiras faixas e contornos.\nMateriais e pavimentos de maior desempenho, com controle tecnológico e\nfiscalização independente da qualidade.\nDrenagem integrada às obras, evitando alagamentos, erosões e deterioração\nprematura.\nTecnologia na fiscalização, com drones, georreferenciamento e monitoramento\ndigital da execução.\nManutenção preventiva, preservando pavimentos, pontes, bueiros, drenagem,\nacostamentos e sinalização.\nFiscalização por desempenho, com acompanhamento de prazo, custo, qualidade e\nexecução física, reduzindo retrabalho, desperdícios e aditivos contratuais.\n\nProjeto bem feito, obra bem executada e resultado duradouro.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n12"
+          },
+          {
+            "id": "p-l-a-n-o-20",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n5.3. MS em Obras — Execução e Entrega em Quatro Anos\nPrimeiros 90 dias — Planejar e destravar\n\nCarteira geral de obras, diagnóstico das estruturas críticas, definição de prioridades e\npreparação dos projetos.\n\nAno 1 — Atacar os gargalos\n\nInício imediato das obras para enfrentar os principais gargalos de infraestrutura e\nserviços públicos, com atuação em saúde, educação, segurança, mobilidade,\nsaneamento e desenvolvimento regional.\n\nAno 2 — Ampliar\n\nExpansão simultânea das frentes de obras nas nove regiões, aumentando o volume de\ninvestimentos e entregas.\n\nAno 3 — Integrar\n\nConsolidação dos grandes projetos e conexão das obras para melhorar mobilidade,\nserviços públicos, logística e desenvolvimento regional.\n\nAno 4 — Concluir e preparar o próximo ciclo\n\nConclusão das obras prioritárias, entrega dos resultados e manutenção de uma carteira\nde projetos prontos para garantir continuidade dos investimentos.\n\nContinuidade e controle\nAs obras em andamento terão continuidade sempre que apresentarem viabilidade\ntécnica e interesse público, preservando investimentos já realizados e evitando\nparalisações que aumentem custos ou atrasem entregas.\nA execução será acompanhada tecnicamente ao longo de todo o processo, permitindo\ncorrigir falhas, atualizar soluções de engenharia, controlar aditivos e melhorar a\nqualidade sem interrupções desnecessárias.\nO resultado não será medido apenas por quilômetros executados ou número de obras\niniciadas, mas por qualidade, prazo, custo, segurança, durabilidade e redução efetiva\ndos gargalos de cada região.\n\nObra certa, no lugar certo, com padrão, prazo e resultado.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n13"
+          },
+          {
+            "id": "p-l-a-n-o-21",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n6. LOGÍSTICA, ROTA BIOCEÂNICA E INTEGRAÇÃO MULTIMODAL\nMato Grosso do Sul consolidará sua posição como eixo logístico nacional e internacional\npor meio da integração entre rodovias, ferrovias, hidrovias, aeroportos, portos, terminais\ne estruturas aduaneiras. A atuação será concentrada na conclusão e integração dos\nprojetos estruturantes, na eliminação de gargalos e na ampliação da capacidade\noperacional dos corredores.\nOs investimentos incorporarão engenharia moderna, digitalização, sistemas inteligentes\nde transporte, georreferenciamento, monitoramento remoto e gestão por dados,\nelevando o padrão de planejamento, execução, operação e manutenção da\ninfraestrutura logística.\n\nAgenda logística de Estado\nRota Bioceânica: consolidar sua operação no Estado, com adequação de acessos,\nentroncamentos, estruturas de apoio, segurança viária e integração aos demais\nmodais.\nHidrovia do Rio Paraguai: atuar para que os projetos de navegabilidade e\nmodernização resultem em operação regular e segura, integrando Corumbá,\nLadário e Porto Murtinho às redes rodoviária e ferroviária.\nMalha Oeste: atuar para que o processo de nova concessão resulte efetivamente na\nretomada e modernização da ferrovia, com capacidade operacional e conexão aos\nprincipais polos produtivos e logísticos.\nIntegração multimodal: estruturar conexões eficientes entre rodovias, ferrovia,\nhidrovia, portos e terminais, priorizando os pontos de maior demanda logística.\nAcessos estratégicos: executar ligações de última milha e eliminar gargalos entre\ncorredores, terminais, portos, áreas industriais e polos produtivos.\nTravessias urbanas: implantar contornos, variantes e dispositivos viários onde o\naumento do fluxo de cargas gerar conflito com a circulação urbana.\nLogística inteligente: incorporar monitoramento remoto, georreferenciamento,\nsistemas de gestão de tráfego e análise de dados à operação e manutenção dos\ncorredores.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n14"
+          },
+          {
+            "id": "p-l-a-n-o-22",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n6.1. Desenvolvimento associado aos corredores logísticos\nA infraestrutura logística será acompanhada de ações direcionadas aos\nmunicípios diretamente impactados, para converter os novos fluxos econômicos\nem oportunidades locais.\nMunicípios da Rota: adequar infraestrutura urbana, mobilidade e serviços\npúblicos às novas demandas geradas pelo aumento da circulação de\ncargas e pessoas.\nPolos de serviços logísticos: estruturar municípios estratégicos para\natividades de armazenagem, manutenção, transporte, distribuição e apoio\noperacional.\nQualificação profissional: direcionar formação técnica às demandas efetivas\nde logística, comércio exterior, indústria, turismo e serviços.\nEmpresas locais: ampliar a participação de pequenos e médios negócios nas\ncadeias de fornecimento e prestação de serviços relacionadas aos novos\ncorredores.\nTurismo da Rota Bioceânica: integrar destinos, sinalização, informação\nmultilíngue e serviços turísticos nos municípios do corredor.\n\nIntegração entre modais, capacidade operacional\ninfraestrutura logística funcionando de verdade.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\ne\n\n15"
+          },
+          {
+            "id": "p-l-a-n-o-23",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n7. SANEAMENTO, DRENAGEM, URBANISMO E HABITAÇÃO\nO plano de infraestrutura só estará completo se as obras urbanas integrarem\nsaneamento, drenagem, resíduos sólidos, mobilidade, habitação e qualificação do\nespaço público. O investimento não pode se limitar à capa asfáltica sem resolver o\nescoamento das águas, a destinação de resíduos, a acessibilidade e o crescimento\nordenado das cidades.\n\n7.1. Saneamento como política de saúde\nApoio técnico e financeiro aos municípios para o cumprimento das metas do marco\nlegal do saneamento.\nExpansão da coleta e do tratamento de esgoto, priorizando localidades com maior\ndéficit de cobertura e pressão urbana.\nDrenagem integrada à infraestrutura viária, reduzindo alagamentos, erosões e\ndeterioração precoce do pavimento.\nSoluções regionalizadas para resíduos sólidos, com escala adequada para\nmunicípios menores e áreas de maior vulnerabilidade.\n\n7.2. Requalificação urbana e habitabilidade\nPacotes urbanos integrados com pavimentação, drenagem, sinalização, calçadas\nacessíveis, iluminação e arborização.\nIntegração dos programas habitacionais à infraestrutura urbana, priorizando\nlocalidades com maior déficit social e habitacional.\nMoradia bem localizada, com acesso a emprego, transporte, escola, saúde,\nsaneamento e conectividade.\nRequalificação de praças, parques e espaços públicos, integrando lazer,\nacessibilidade, iluminação e segurança urbana.\nEssa agenda produz efeito eleitoral e administrativo ao mesmo tempo: de um lado,\nresponde a dores muito concretas da população; de outro, melhora indicadores de\nsaúde, sustentabilidade social, moradia, serviços urbanos e desenvolvimento local. É a\ndiferença entre apenas fazer obra e realmente fazer cidade.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n16"
+          },
+          {
+            "id": "p-l-a-n-o-24",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n7.3. Plano Estadual de Redução do Déficit Habitacional\nMato Grosso do Sul ampliará a produção de moradias em escala, com planejamento\ncontínuo para reduzir o déficit habitacional e acompanhar o crescimento das cidades.\nMeta: viabilizar 30 mil novas moradias até o final do segundo ano de governo, por meio\nda combinação de recursos estaduais, programas federais, FGTS, terrenos públicos,\ncontrapartidas municipais e participação privada.\nProdução em escala: ampliar simultaneamente os programas de construção,\naquisição subsidiada, lote urbanizado e substituição de moradias precárias.\nRecursos estaduais para multiplicar investimentos: utilizar recursos próprios\nprincipalmente em subsídios, terrenos, infraestrutura e contrapartidas, permitindo\ncaptar volumes maiores de recursos federais e de financiamento.\nParticipação dos grandes investimentos: empreendimentos beneficiados por\nincentivos fiscais ou que gerem forte pressão habitacional poderão contribuir com\nmoradias, terrenos, infraestrutura ou aportes ao programa, conforme critérios\ntécnicos.\nMoradia onde o Estado cresce: antecipar a demanda habitacional nos municípios\nque receberem novas indústrias, polos logísticos e grandes investimentos, evitando\npressão excessiva sobre aluguel e crescimento urbano desordenado.\nCasa Sustentável MS: as novas unidades terão soluções de conforto térmico,\neficiência energética, economia de água, energia renovável quando viável e\ntecnologias construtivas modernas e duráveis.\nMoradia integrada à cidade: os empreendimentos serão implantados com acesso\na saneamento, transporte, escola, saúde, internet e oportunidades de trabalho.\nTransparência: a população acompanhará, por município,\ncontratadas, em construção e entregues e os recursos mobilizados.\n\nas\n\nmoradias\n\nUm governo que transforma crescimento em qualidade de\nvida e coloca a moradia digna no centro das prioridades.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n17"
+          },
+          {
+            "id": "p-l-a-n-o-25",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n8. SAÚDE PERTO DE CASA\nMato Grosso do Sul fará um choque de gestão na saúde, com foco na redução do\ntempo de espera, ampliação da capacidade regional, prevenção e controle rigoroso\ndos custos. A rede será organizada para resolver mais casos dentro de cada região e\nreduzir deslocamentos provocados pela falta de estrutura assistencial.\n\n8.1. Hospitais regionais 24 horas e rede resolutiva\nHospitais regionais 24 horas, com estrutura compatível para urgência, internação,\ndiagnóstico, cirurgias e especialidades conforme a demanda de cada região.\nAmpliação da capacidade regional, com leitos, exames, especialistas e suporte\nhospitalar onde houver vazios assistenciais.\nGestão por desempenho, com indicadores de produção, ocupação de leitos, tempo\nde permanência, qualidade e resolutividade.\nCusto por paciente e procedimento, com controle de medicamentos, materiais,\nestoques e preços para identificar desperdícios e distorções nas compras.\n\n8.2. Regulação transparente e fim das longas esperas\nMeta dos primeiros 12 meses: zerar o estoque represado das filas críticas de\nconsultas, exames e cirurgias e estabelecer parâmetros de tempo de atendimento\nconforme prioridade clínica.\nFila única e consultável, permitindo saber quantas pessoas aguardam cada\nprocedimento, por município e região.\nAcompanhamento individual, com consulta da prioridade clínica, tempo de espera e\nandamento da solicitação.\nPainel público das filas, com entradas, atendimentos realizados, tempo de espera e\nevolução mensal de cada procedimento.\nAção direta sobre os gargalos, ampliando produção, horários, contratação\ncomplementar e utilização da capacidade disponível onde a fila exigir.\nRastreabilidade da regulação, com registro e justificativa de alterações de prioridade\ne situação do paciente.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n18"
+          },
+          {
+            "id": "p-l-a-n-o-26",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n8.3. Prevenção, diagnóstico precoce e Telessaúde\nConcluir e universalizar o prontuário digital integrado da rede pública, garantindo ao\ncidadão um histórico único de saúde, acessível em toda a rede, com segurança e\nproteção de dados.\nPrimeira infância acompanhada, com protocolos para identificação precoce de\nalterações de desenvolvimento, linguagem, audição, visão e comportamento.\nRastreamento\nprecoce\ndo\nautismo\ne\nde\noutros\ntranstornos\ndo\nneurodesenvolvimento, com prioridade para avaliação e início do cuidado quando\nhouver sinais de risco.\nTelessaúde integrada à regulação, ampliando teleconsulta, teleinterconsulta e\ntelediagnóstico para aproximar especialidades do interior.\nPrevenção orientada por dados, com foco em doenças crônicas, saúde da mulher e\nda criança, vacinação e vigilância epidemiológica.\n\n8.4. Trauma, trânsito e capacidade hospitalar\nPrevenção de acidentes orientada por dados, integrando saúde, segurança e\ninfraestrutura para atuar nos pontos e comportamentos de maior risco.\nRede regional de trauma, ampliando capacidade de estabilização, diagnóstico,\ncirurgia e atendimento ortopédico nas regiões.\nProteção da capacidade cirúrgica, organizando leitos e centros cirúrgicos para\nreduzir o impacto das emergências traumáticas sobre as cirurgias eletivas.\nTempo de resposta, integrando SAMU, Corpo de Bombeiros, regulação e hospitais\npara acelerar o atendimento e o encaminhamento ao serviço adequado.\nIndicadores de trauma, acompanhando acidentes, internações, ocupação de leitos,\ncirurgias de urgência e impacto sobre as filas hospitalares.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n19"
+          },
+          {
+            "id": "p-l-a-n-o-27",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n8.5. Diagnóstico precoce, cuidado e apoio às famílias\nToda criança deverá ser acompanhada desde os primeiros anos de vida, com\nprotocolos para identificar precocemente sinais de autismo, deficiência intelectual,\nfísica, visual e auditiva, transtornos do neurodesenvolvimento e outras alterações\nque possam comprometer seu desenvolvimento.\nIdentificadas as necessidades, a criança terá encaminhamento rápido para\navaliação, diagnóstico e tratamento, evitando que a família passe anos aguardando\numa definição ou seja obrigada a buscar atendimento fora de sua região.\nAmpliar a oferta de neuropediatria, pediatria especializada, psicologia,\nfonoaudiologia, terapia ocupacional, fisioterapia, psicopedagogia e demais\nprofissionais, conforme a necessidade de cada criança.\nGarantir estimulação precoce e reabilitação para crianças com deficiência ou\natraso no desenvolvimento, priorizando o atendimento nos primeiros anos de vida.\nFortalecer a rede de atendimento às pessoas com autismo, garantindo avaliação,\nterapias e acompanhamento individualizado conforme a necessidade.\nGarantir atenção também ao adulto e ao idoso com deficiência ou autismo, com\ncontinuidade do cuidado e estratégias voltadas à autonomia e à qualidade de vida.\nCriar uma política de apoio aos pais, familiares e cuidadores, com orientação,\nacompanhamento e acesso a informações sobre diagnóstico, tratamento, direitos e\nserviços disponíveis.\nIntegrar saúde, educação e assistência social, para que a pessoa não perca o\nacompanhamento ao mudar de etapa da vida ou de serviço público.\n\nSaúde não pode ser espera, distância ou abandono. É cuidado\nno tempo certo, perto de casa e com dignidade para todos.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n20"
+          },
+          {
+            "id": "p-l-a-n-o-28",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n9. SAÚDE E PROTEÇÃO ANIMAL\nMato Grosso do Sul avançará da política predominantemente preventiva para uma rede\nestadual de assistência veterinária, complementando as ações de castração,\nmicrochipagem e controle de zoonoses que já existem.\nProtetores independentes e entidades de proteção animal cumprem papel relevante,\nmas não podem carregar sozinhos casos que exigem exames, cirurgias, internações e\ntratamentos de maior custo. A política estadual organizará capacidade pública e\nparcerias para ampliar o acesso e dar suporte a quem já atua nessa área.\n\n9.1. Rede Estadual de Assistência Veterinária\nImplantar um Hospital Veterinário Estadual de Referência, com atendimento clínico,\ndiagnóstico, cirúrgico e de urgência para públicos prioritários.\nOrganizar atendimento regional, utilizando universidades, estruturas públicas e rede\nparceira para evitar concentração exclusiva na Capital.\nEstabelecer fluxo para animais resgatados, casos de maior complexidade e famílias\nem situação de vulnerabilidade.\n\n9.2. Parceria com quem já protege\nEstruturar mecanismos transparentes de parceria e apoio às entidades que\ncomprovadamente prestam assistência animal.\nIntegrar protetores, entidades, universidades e municípios à rede de\nencaminhamento, evitando que casos de alto custo fiquem exclusivamente sob\nresponsabilidade da iniciativa voluntária.\nManter critérios de acesso, prestação de contas e acompanhamento dos resultados.\n\n9.3. Prevenção permanente\nDar continuidade e ampliar castração e microchipagem, integrando-as à nova rede\nassistencial.\nFortalecer vigilância de zoonoses e a abordagem de Saúde Única.\nIntegrar prevenção, guarda responsável, adoção e combate ao abandono.\n\nSaúde animal com acesso, prevenção e responsabilidade pública.\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n21"
+          },
+          {
+            "id": "p-l-a-n-o-29",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n10. EDUCAÇÃO, QUALIFICAÇÃO E JUVENTUDE — PREPARAR PARA O FUTURO\nEducação será tratada como base do desenvolvimento de Mato Grosso do Sul, com\nfoco em aprendizagem, qualidade do ensino, tecnologia e preparação dos jovens para\nas oportunidades do futuro. O objetivo não é apenas manter o aluno mais tempo na\nescola, mas garantir que esse tempo resulte em conhecimento, formação, autonomia e\noportunidades.\n\n10.1. Escola Forte e Conectada\nQualificar o tempo integral já existente, garantindo que a jornada ampliada resulte\nem mais aprendizagem, tecnologia, esporte, cultura e preparação para a vida e o\ntrabalho.\nRecuperar a aprendizagem com acompanhamento de resultados, apoio\npedagógico e atenção aos alunos e municípios com maiores dificuldades.\nGarantir internet de qualidade em todas as escolas estaduais, com infraestrutura\ndigital adequada ao ensino.\nFortalecer a gestão escolar e a formação dos profissionais da educação, valorizando\nquem está na sala de aula.\nUtilizar dados e avaliações para identificar dificuldades e agir rapidamente onde os\nresultados estiverem abaixo do esperado.\nEstimular laboratórios, ciência, tecnologia, inovação e atividades práticas que tornem\na escola mais atrativa e conectada ao mundo real.\n\n10.2. Ensino Técnico e Qualificação para o Trabalho\nConectar a formação técnica às vocações e oportunidades de cada território:\nagroindústria, logística, turismo, tecnologia, saúde, indústria e bioeconomia.\nLevar cursos e trilhas de qualificação aos municípios do interior, aproximando\nformação, emprego e renda.\nFortalecer a conexão entre educação\nempreendedorismo e inclusão digital.\n\nprofissional,\n\nprimeiro\n\nemprego,\n\nIntegrar escolas, instituições de ensino e setor produtivo para ampliar oportunidades\nde estágio, formação prática e inserção profissional.\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n22"
+          },
+          {
+            "id": "p-l-a-n-o-30",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n10.3. Juventude — Oportunidade para Ficar e Crescer\nLevar tecnologia, robótica, ciência aplicada, inovação e cultura maker para a rede\nestadual.\nCombater a evasão escolar e fortalecer ações de prevenção à violência e às\nvulnerabilidades que afetam os jovens.\nCriar conexões entre estudantes, universidades, institutos e empresas para estágios,\npesquisa, inovação e primeiro emprego.\nEstimular empreendedorismo, formação digital e novas competências para as\nprofissões do futuro.\nDesenvolver políticas específicas para jovens das áreas rurais, comunidades\ntradicionais e povos originários, respeitando suas realidades.\n\n10.4. Escola Inclusiva de Verdade\nNenhum aluno deixado para trás: garantir que estudantes autistas e com deficiência\nestejam na escola regular, com os apoios necessários para aprender, participar e\ndesenvolver autonomia.\nImplantar um modelo estadual de suporte à inclusão, com equipes preparadas para\norientar professores e escolas diante das diferentes necessidades dos alunos.\nAdotar princípios do Desenho Universal para a Aprendizagem, tornando o ensino\nmais acessível e flexível, com diferentes formas de apresentar conteúdos,\ndesenvolver atividades e avaliar a aprendizagem.\nAmpliar tecnologia assistiva, comunicação alternativa e recursos pedagógicos\nadaptados, incluindo ferramentas digitais quando adequadas.\nDesenvolver planos individuais de aprendizagem para estudantes que necessitem\nde acompanhamento específico, em diálogo com escola, família e profissionais\nenvolvidos.\nPreparar as escolas para questões sensoriais, com recursos e ambientes de\nregulação dentro da própria escola, sem separar o aluno dos demais.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n23"
+          },
+          {
+            "id": "p-l-a-n-o-31",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nGarantir formação prática e continuada para professores e equipes escolares, para\nque a inclusão aconteça na sala de aula e não apenas no papel.\nIntegrar educação, saúde e assistência social nos casos que exigirem atuação\nconjunta.\n\n10.5. Escola que Motiva e Prepara\nA escola precisa voltar a despertar interesse, confiança e perspectiva de futuro. O\nobjetivo é que o estudante encontre sentido no que aprende, desenvolva autonomia e\nconclua a educação básica preparado para fazer suas escolhas.\nTornar o aprendizado mais dinâmico, prático e conectado à realidade, despertando\ncuriosidade e participação.\nFortalecer projeto de vida, orientação e protagonismo estudantil, ajudando cada\naluno a reconhecer seus talentos e possibilidades.\nCriar uma cultura de mérito, esforço, responsabilidade e superação, valorizando o\ndesenvolvimento de cada estudante.\nIdentificar e enfrentar precocemente situações que levam ao abandono,\ndesmotivação e afastamento da escola.\nGarantir que o aluno conclua sua formação com conhecimento, confiança e\nperspectivas reais para o futuro.\nA meta é simples: nenhum jovem sem perspectiva, sem estudo e sem caminho. O\nEstado deve trabalhar para formar uma geração mais preparada, mais confiante e\nmais entusiasmada com o futuro.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n24"
+          },
+          {
+            "id": "p-l-a-n-o-32",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n11. TECNOLOGIA, GOVERNO DIGITAL E CIDADES INTELIGENTES\nTecnologia será tratada como infraestrutura administrativa. O objetivo é fazer o Estado\ncaber no celular do cidadão, reduzir burocracia, integrar bases de dados, apoiar a\ngestão municipal e usar inteligência para melhorar saúde, segurança, educação e\nobras públicas.\n\n11.1. Governo na palma da mão\nAplicativo único do Estado para documentos, protocolos, saúde, matrícula,\nbenefícios, obras e segurança.\nNavegação simples, integração de serviços e ferramentas de acessibilidade.\nCanal telefônico e atendimento assistido para pessoas consideradas analfabetas\ndigitais.\n\n11.2. Integração digital com municípios\nRede de comunicação e sistemas automatizados para as unidades gestoras\nestaduais e municipais.\nSuporte técnico regionalizado para adoção de plataformas e gestão de informação.\nPadrões de interoperabilidade que evitem retrabalho e ampliem a confiabilidade\ndos dados.\n\n11.3. Cidades inteligentes do interior\nApoio aos municípios para iluminação eficiente, sensores, videomonitoramento,\ngestão de tráfego e serviços digitais.\nUso de dados para identificar áreas com pressão sobre drenagem, mobilidade,\nsaúde e segurança.\nInternet rápida e de qualidade em todos os municípios, com prioridade para serviços\npúblicos essenciais.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n25"
+          },
+          {
+            "id": "p-l-a-n-o-33",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n11.4. Governo na palma da mão\nBig data, inteligência artificial e internet das coisas aplicados a políticas públicas e\nprevenção de fraudes.\nModernização da informação contábil, de obras e de indicadores setoriais para\nmelhorar a decisão de governo.\nPainéis públicos que permitam ao cidadão acompanhar metas, filas, repasses e\nexecução física das entregas.\n\n12. SEGURANÇA PÚBLICA, FRONTEIRA E PROTEÇÃO SOCIAL\n\n12.1. Presença, tecnologia e resposta\nObservatório de dados para orientar prevenção, patrulhamento e investigação.\nVideomonitoramento, leitura de placas e centros integrados de comando em\nregiões estratégicas.\nFortalecimento e interiorização da capacidade operacional das forças de\nsegurança.\nMelhoria das estruturas físicas, equipamentos e valorização dos profissionais.\n\n12.2. Fronteira e campo\nIntegração com forças federais e estaduais em rotas críticas da fronteira e da Rota\nBioceânica.\nConsolidação da patrulha rural e proteção de eixos produtivos.\nCombate ao crime organizado, crimes ambientais, roubo de cargas e furtos em\náreas rurais.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n26"
+          },
+          {
+            "id": "p-l-a-n-o-34",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n12.3. Segurança da mulher, da infância e do cidadão comum\nEnfrentamento forte ao feminicídio, assédio e demais formas de violência contra a\nmulher.\nFortalecimento das políticas de proteção infantojuvenil e integração com a rede de\nassistência.\nPolícia comunitária, conselhos locais e presença preventiva em áreas de maior\nvulnerabilidade.\nMelhorias nos serviços de identificação e acesso a documentos essenciais.\n\n12.4. Proteção social articulada\nAções sociais, esportivas e educativas integradas à prevenção da violência.\nAtendimento a comunidades indígenas, quilombolas, ribeirinhas e demais\npopulações tradicionais.\nIntegração entre segurança, assistência social, educação e saúde mental para\náreas de maior risco.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n27"
+          },
+          {
+            "id": "p-l-a-n-o-35",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n13. CULTURA, IDENTIDADE, ECONOMIA CRIATIVA E ESPORTE\nMato Grosso do Sul possui uma identidade própria, formada pelas culturas pantaneira,\nfronteiriça, indígena, rural e urbana. A política cultural valorizará esse patrimônio,\nfortalecerá quem produz cultura e ampliará oportunidades de trabalho e renda em\ntodas as regiões.\nO esporte será tratado como política pública de saúde, inclusão, formação, prevenção e\noportunidade, garantindo acesso à prática esportiva desde a infância e criando\ncaminhos para o desenvolvimento de talentos em todas as regiões do Estado.\n\n13.1. Cultura em Dia\nEstabelecer prazos e fluxo específico para contratação e pagamento de artistas.\nImplantar acompanhamento digital dos processos.\nSimplificar exigências, preservando os controles legais.\nDar transparência aos contratos, apresentações e pagamentos.\n\n13.2. Cultura nos municípios\nCriar uma agenda permanente de circulação cultural pelas regiões.\nApoiar a utilização de teatros, bibliotecas, museus e centros culturais existentes.\nIncentivar festivais, feiras e circuitos que valorizem artistas locais.\nAmpliar as ações nos pequenos e médios municípios.\n\n13.3. Identidade e patrimônio\nPreservar o patrimônio histórico, artístico, material e imaterial.\nValorizar as culturas indígena, pantaneira, fronteiriça e das comunidades\ntradicionais.\nApoiar a memória, o artesanato, a música, a literatura e a gastronomia regionais.\nIntegrar cultura, turismo e desenvolvimento local.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n28"
+          },
+          {
+            "id": "p-l-a-n-o-36",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n13.4. Economia criativa\nCapacitar artistas, produtores, artesãos e empreendedores culturais.\nEstimular as produções audiovisual, musical, editorial e artística.\nAproximar cultura, tecnologia, inovação e empreendedorismo.\nAmpliar a circulação das produções sul-mato-grossenses.\n\n13.5. Rede Estadual de Pontos de Cultura\nFortalecer e ampliar a Rede Estadual de Pontos de Cultura.\nApoiar a certificação de novas iniciativas, especialmente no interior.\nPromover editais simplificados, regionalizados e transparentes.\nCapacitar entidades e coletivos para elaboração de projetos e prestação de contas.\nApoiar Pontões de Cultura na articulação e integração regional da rede.\n\n13.6. Esporte: oportunidade em todo Mato Grosso do Sul\nMato Grosso do Sul precisa transformar o esporte em política de oportunidade, saúde,\nformação e inclusão, levando estrutura e programas para além da Capital.\nRecuperar e ampliar espaços esportivos nos 79 municípios, priorizando regiões com\nmenor oferta.\nEsporte na escola, com atividades regulares e identificação de talentos desde a\ninfância.\nCriar uma rede estadual de iniciação esportiva, especialmente para crianças e\njovens em situação de vulnerabilidade.\nApoiar atletas e equipes sul-mato-grossenses, com critérios transparentes e foco\nem resultados.\nRegionalizar competições, levando campeonatos e eventos para o interior e\nmovimentando a economia dos municípios.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n29"
+          },
+          {
+            "id": "p-l-a-n-o-37",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nIntegrar esporte, saúde, educação e prevenção à violência, usando a prática\nesportiva como instrumento de proteção e desenvolvimento da juventude.\n\nMais esporte, mais saúde, mais oportunidades. Em Mato\nGrosso do Sul, talento não pode depender do CEP.\n14. DESENVOLVIMENTO ECONÔMICO, PRODUTIVIDADE,\nINOVAÇÃO E INTEGRAÇÃO SUL-AMERICANA\nMato Grosso do Sul ocupa posição estratégica no centro da América do Sul e possui\ncondições para ampliar sua integração econômica com Paraguai, Argentina e demais\nmercados do continente.\nEssa posição geográfica precisa se transformar em desenvolvimento concreto. O\npróximo ciclo econômico buscará aproximar cadeias produtivas, ampliar mercados,\natrair investimentos, fortalecer a indústria, agregar valor à produção e gerar novas\noportunidades em todas as regiões.\nA integração sul-americana será tratada não apenas como corredor de passagem,\nmas como instrumento permanente de desenvolvimento econômico, industrial e\ncomercial.\n\n14.1. Integração Regional e Cadeias Produtivas Internacionais\nAlianças produtivas transnacionais: estimular a integração entre empresas,\nprodutores, fornecedores e cadeias industriais de Mato Grosso do Sul e dos países\nvizinhos.\nIntegração industrial e comercial: criar ambiente favorável à instalação de empresas\nque utilizem a posição estratégica do Estado para atender mercados brasileiros e\nsul-americanos.\nAgregação de valor: incentivar investimentos capazes de transformar matériasprimas produzidas no Estado em produtos de maior valor agregado.\nIntegração de fornecedores: aproximar pequenas, médias e grandes empresas\nlocais das novas cadeias produtivas.\nComércio exterior: ampliar o apoio às empresas na abertura de mercados,\nexportação, importação e inserção em cadeias internacionais.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n30"
+          },
+          {
+            "id": "p-l-a-n-o-38",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nA integração logística com Paraguai, Argentina e demais mercados sul-americanos\nserá utilizada como instrumento para atrair investimentos, ampliar cadeias produtivas,\nagregar valor à produção estadual e gerar novos empregos em Mato Grosso do Sul.\n\n14.2. Estratégia por região e cadeia produtiva\nAgroindustrialização com apoio à transformação local da produção.\nFortalecimento da\ngovernamentais.\n\nagricultura\n\nfamiliar,\n\nde\n\ncooperativas\n\ne\n\nde\n\ncompras\n\nApoio ao pequeno empreendedor, ao MEI e à formalização como política\npermanente.\nAmbiente de negócios mais simples, digital e previsível.\n\n14.3. Inovação, ciência e patentes\nPrograma estadual para transformar pesquisa em produto, patente, processo e\nempresa.\nEstímulo a parques tecnológicos, incubadoras, ecossistemas criativos e inovação\naplicada ao agro, à indústria e à saúde.\nParcerias entre governo, universidades e setor produtivo para responder aos desafios\nregionais.\nFoco em tecnologias verdes, biocombustíveis, energia renovável, agricultura\ninteligente e inovação aplicada às cadeias produtivas do Estado.\n\n14.4. Turismo e economia de experiência\nIntegração entre turismo, esporte, meio ambiente e desenvolvimento regional.\nApoio técnico e financeiro às regiões turísticas para inovação, criação de novos\nprodutos e profissionalização da governança.\nMelhoria de acessos, saneamento, sinalização, informação ao visitante e segurança\nem destinos estratégicos.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n31"
+          },
+          {
+            "id": "p-l-a-n-o-39",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\nAproveitamento econômico sustentável do Pantanal, da fronteira e das rotas de\nnatureza.\nViabilização de um grande parque aquático em Campo Grande, por meio de\nparceria com a iniciativa privada, criando uma nova atração turística e de lazer,\ncapaz de ampliar a permanência dos visitantes, gerar empregos e movimentar\nhotéis, restaurantes, comércio e serviços.\nA meta é fazer com que as vocações de cada região se transformem em investimento,\nemprego, renda e oportunidade, ampliando a presença de Mato Grosso do Sul nos\nmercados nacionais e sul-americanos.\n\n15. MEIO AMBIENTE, PANTANAL E DESENVOLVIMENTO RESPONSÁVEL\nMato Grosso do Sul tem uma das maiores riquezas naturais e produtivas do Brasil. O\ndesafio é preservar esse patrimônio sem travar quem produz, investe e gera emprego.\nA política ambiental precisa proteger o que é único no Estado, combater com firmeza\nquem atua ilegalmente e, ao mesmo tempo, garantir segurança jurídica, previsibilidade\ne respeito a quem produz dentro da lei.\nNo Pantanal, em Bonito, na Serra da Bodoquena e nas demais regiões sensíveis, a\nproteção ambiental será construída com ciência, tecnologia e conhecimento de quem\nvive o território todos os dias. O Estado não tratará produção e preservação como lados\nopostos.\n\n15.1. Pantanal: proteger com quem conhece\n• Integrar produtores, comunidades, pesquisadores e poder público às decisões sobre\nprevenção e conservação.\n• Fortalecer a prevenção permanente a incêndios, com manejo adequado, brigadas,\nmonitoramento e resposta rápida.\n• Reconhecer, quando tecnicamente indicado, o papel do manejo das pastagens e da\npecuária tradicional na redução de biomassa combustível.\n• Planejar infraestrutura compatível com a dinâmica das águas e as características do\nbioma.\n• Valorizar a experiência de quem vive e produz no Pantanal como parte essencial da\nproteção do território.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n32"
+          },
+          {
+            "id": "p-l-a-n-o-40",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n15.2. Água e territórios sensíveis\n• Bonito e Serra da Bodoquena: proteger a qualidade e a transparência das águas,\nnascentes e bacias hidrográficas.\n• Ampliar o monitoramento de alterações de turbidez, vazão e qualidade da água, com\nresposta técnica rápida quando houver anormalidades.\n• Avaliar os impactos acumulados das atividades sobre bacias e áreas\nambientalmente sensíveis.\n• Fortalecer ações de recuperação de nascentes, matas ciliares e áreas sujeitas a\nerosão e assoreamento.\n• Tratar segurança hídrica como parte do planejamento econômico e territorial do\nEstado.\n\n15.3. Segurança jurídica e parceria com quem produz\n• Produtor como parceiro: reconhecer o papel do agro e de quem vive no campo na\nconservação do território e na economia de Mato Grosso do Sul.\n• Segurança jurídica: estabelecer regras claras, previsíveis e estáveis para quem produz\ne investe dentro da legalidade.\n• Fiscalização focada no ilegal: concentrar rigor sobre crimes ambientais,\ndesmatamento ilegal, queimadas criminosas e demais atividades irregulares.\n• Tecnologia e produtividade: estimular inovação, manejo responsável e soluções que\naumentem eficiência no uso do solo, da água e dos recursos naturais.\n• Diálogo técnico permanente: construir soluções com produtores, entidades do setor,\npesquisadores e órgãos públicos.\n\n15.4. Conservação que gera valor\n• Valorizar economicamente quem conserva água, vegetação e biodiversidade.\n• Estimular bioeconomia, inovação, economia circular e novos negócios ligados aos\nativos naturais do Estado.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n33"
+          },
+          {
+            "id": "p-l-a-n-o-41",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nAproximar conservação, ciência, produção e desenvolvimento regional.\nCriar condições para que preservar também gere renda, investimento e\noportunidades locais.\n\nPreservar sem paralisar. Produzir com responsabilidade. Dar\nsegurança a quem faz certo.\n\n16. COMBATE À CORRUPÇÃO, TRANSPARÊNCIA E GOVERNO EFICIENTE\nO dinheiro público pertence à população. O Estado precisa ter tolerância zero com\ncorrupção, desperdício, favorecimento e uso ineficiente dos recursos públicos.\nTransparência não pode ser apenas publicação de dados: deve permitir controle,\nfiscalização e responsabilização.\nTolerância zero com corrupção, desvios e favorecimentos, fortalecendo prevenção,\ncontrole e responsabilização.\nReforçar auditoria, controle interno, corregedoria e mecanismos de integridade em\ntoda a administração estadual.\nTransparência em tempo real de contratos, licitações, pagamentos, obras, emendas,\nrenúncias fiscais e execução orçamentária.\nCriar acompanhamento público de grandes obras e contratos, com valor, prazo,\nempresa responsável, execução física e pagamentos realizados.\nAmpliar o uso de tecnologia e inteligência de dados para identificar sobrepreço,\npagamentos suspeitos, direcionamento e outras irregularidades.\nReduzir aditivos, desperdícios e contratos mal planejados, com projetos completos,\nfiscalização e responsabilização quando houver falhas.\nFortalecer mecanismos de denúncia e proteção ao cidadão e ao servidor que\ncomuniquem irregularidades.\nAvaliar permanentemente programas, contratos e benefícios públicos, mantendo\naquilo que entrega resultado e corrigindo ou encerrando o que não funciona.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n34"
+          },
+          {
+            "id": "p-l-a-n-o-42",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nO compromisso é simples: dinheiro público não é dinheiro de\ngoverno. É dinheiro do cidadão. Cada real deve ser rastreável,\nfiscalizado e transformado em serviço, obra ou oportunidade\npara a população.\n\n17. GESTÃO EFICIENTE, TRANSPARÊNCIA E RESULTADOS\nUm governo eficiente não é aquele que apenas arrecada e administra recursos, mas\naquele que transforma dinheiro público em resultados concretos para a população. A\ngestão será orientada por planejamento, controle, execução, transparência e avaliação\npermanente.\n\n17.1. Instrumentos de governança\n·Estabelecer metas por área e acompanhar obras, contratos, serviços e entregas,\ncom alertas para atrasos, custos elevados e baixa execução.\n·Criar um painel público com prazo, custo, andamento e resultado das principais\nações do governo.\n·Utilizar dados e tecnologia para aprimorar fiscalização, compras públicas,\nplanejamento e tomada de decisões.\n·Integrar informações para identificar problemas e permitir correção rápida das\nações governamentais.\n\n17.2. Dinheiro público com prioridade e resultado\nOrganizar uma carteira de investimentos com base em impacto social e econômico,\nurgência, maturidade técnica e capacidade de execução.\nGarantir a rastreabilidade dos recursos, permitindo acompanhar o dinheiro público\ndesde a previsão orçamentária até a entrega.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n35"
+          },
+          {
+            "id": "p-l-a-n-o-43",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\nRevisar despesas, contratos e custos, eliminando desperdícios e direcionando\nrecursos para as áreas prioritárias.\nPriorizar investimentos capazes de gerar melhoria concreta na vida da população,\ncom acompanhamento de resultados.\n\n17.3. Gestão com o povo\nPermitir que a população avalie serviços, obras e políticas públicas, incorporando\nessa percepção aos indicadores de desempenho.\nProblemas recorrentes deverão gerar resposta, correção e acompanhamento pela\nárea responsável.\nAmpliar os canais de participação e fiscalização social, aproximando o governo das\nnecessidades reais de cada região.\nDar transparência não apenas ao que o Estado gastou, mas ao que foi efetivamente\nentregue à população.\n\nO governo entrega. A população avalia. O Estado corrige e\nmelhora.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n36"
+          },
+          {
+            "id": "p-l-a-n-o-44",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n18. MATO GROSSO DO SUL POR INTEIRO\n9 Regiões . 9 missões . Um projeto de Estado.\nMato Grosso do Sul será planejado como um único Estado, respeitando as diferenças de\ncada território. Cada região terá uma missão estratégica própria, conectada a um\nprojeto estadual de infraestrutura, desenvolvimento, saúde, segurança, educação e\nlogística.\nO Governo do Estado concentrará sua atuação naquilo que exige escala: grandes\nconexões, obras estruturantes, redes regionais de serviços, integração logística e\npreparação para novos ciclos econômicos.\nEstado e municípios: parceria sem dependência\nA relação com os municípios será institucional, previsível e baseada em critérios\npúblicos. Prefeitos não dependerão de pedidos sucessivos, relações pessoais ou\nalinhamento político para acessar investimentos e apoio estadual.\nCritérios claros: prioridades definidas por necessidade, impacto, relevância regional e\ncapacidade de execução.\nProgramação conhecida: municípios saberão quais projetos estão priorizados e em\nque etapa se encontram.\nApoio técnico: o Estado dará suporte à estruturação de projetos e à captação de\nrecursos quando necessário.\nTratamento institucional: todos os municípios terão acesso ao Governo do Estado,\nindependentemente de partido ou posição política.\n\nMunicípio não dependerá de favor político para ser atendido\npelo Estado: terá critérios claros, previsibilidade e respeito\ninstitucional.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n37"
+          },
+          {
+            "id": "p-l-a-n-o-45",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n18.1. Campo Grande - Comandar sem concentrar\nFortalecer a Capital como centro de alta complexidade, tecnologia, logística e serviços\navançados, enquanto as demais regiões ganham maior capacidade de resolver suas\npróprias demandas.\nPrioridades: grandes acessos, alta complexidade em saúde, inovação, logística e\nintegração com o entorno.\n\n18.2. Grande Dourados — Produzir e transformar mais\nAproveitar a força produtiva e acadêmica da região para ampliar industrialização, valor\nagregado, inovação e emprego qualificado.\nPrioridades: corredores estruturantes, agroindustrialização, saúde regional, formação\ntécnica, inovação e fornecedores locais.\n\n18.3. Bolsão — Industrializar com estrutura\nPreparar a região para expansão industrial sem permitir que infraestrutura, serviços e\nqualificação fiquem para trás.\nPrioridades: novas conexões logísticas, acessos industriais, energia, formação\nprofissional, saúde regional e integração de fornecedores locais.\n\n18.4. Cone Sul — Conectar a produção\nCompletar as ligações capazes de dar confiabilidade à produção, ao deslocamento das\npessoas e ao acesso regional aos serviços.\nPrioridades: novas pavimentações estratégicas, pontes definitivas, conexões entre\npolos, agroindustrialização e capacidade regional de atendimento.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n38"
+          },
+          {
+            "id": "p-l-a-n-o-46",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n18.5. Pantanal — Desenvolver respeitando o território\nExecutar uma estratégia própria para um território marcado pelas águas, grandes\ndistâncias, produção tradicional e patrimônio ambiental único.\nPrioridades: infraestrutura adaptada, pontes e acessos estratégicos, prevenção\npermanente ao fogo, conectividade e serviços regionais.\n\n18.6. Região Leste — Antecipar o crescimento\nPreparar infraestrutura e capacidade regional antes que novos investimentos\nprovoquem gargalos.\nPrioridades: conexões rodoviárias e industriais, integração logística, energia,\nqualificação profissional e fortalecimento dos serviços regionais.\n\n18.7. Região Norte — Vencer as distâncias\nReduzir o impacto das grandes distâncias sobre produção, saúde, educação e\nsegurança.\nPrioridades: novas conexões, pavimentações estratégicas, pontes, polos regionais de\nsaúde, formação profissional, conectividade e segurança rural.\n\n18.8. Sudoeste — Fazer a Bioceânica gerar desenvolvimento\nTransformar a Rota Bioceânica em instrumento de desenvolvimento dentro de Mato\nGrosso do Sul, e não apenas em corredor de passagem.\nPrioridades: conexões estaduais com a rota, acessos logísticos, segurança, qualificação\nprofissional e novas atividades econômicas.\n\n18.9. Sul-Fronteira — Transformar fronteira em vantagem\nFortalecer presença do Estado, segurança e integração econômica em uma das áreas\nmais estratégicas de Mato Grosso do Sul.\nPrioridades: inteligência de fronteira, corredores estruturantes, integração produtiva,\ntecnologia, saúde regional e formação profissional.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n39"
+          },
+          {
+            "id": "p-l-a-n-o-47",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2 0 2 7\n\n.\n\n2 0 3 0\n\nCORAGEM PARA MUDAR E O MS AVANÇAR\n\n18.10. Grandes conexões e pontes estruturantes\nO Estado executará uma carteira de novas conexões estratégicas, priorizando ligações\ncapazes de integrar regiões, polos produtivos, hospitais regionais, áreas industriais,\nfronteiras e corredores logísticos.\nEntram nessa carteira novas pavimentações, novas pontes, substituição de estruturas\ncríticas, duplicações, contornos, variantes e intervenções que eliminem gargalos de\ncapacidade.\nA recuperação e conservação da malha existente serão tratadas separadamente como\nobrigação permanente do Estado, e não como nova entrega.\nManutenção preserva. Obra estruturante transforma.\n\nNove regiões. Grandes conexões. Municípios\nrespeitados. Um só Mato Grosso do Sul, mais\npresente, mais próximo das pessoas e avançando\npor inteiro.\n\nJoão Henrique Catan - Candidato ao Governo de Mato Grosso do Sul\n\n40"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "837d6ff570383bf49da97f47c5fd9e79edce9e1d49d4bd9f62c1bb26a8a4f837"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "57b5bcc54211536f11ec2bb5c8a08b0b49d167b80cf14c8f66a4ea93b79ee1bc"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f2cb06f24986fa50f8699593261633a2a3783cf5f7a78dd899d960d1df0f74d6"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "ce4a56e0d2fa7c7b4b32b73f0a942c60dc2e537c19c3a6d99ac22129e61be954"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "935f726292634dd9516348233a3c2531ddd46c42544109d62670c274e2bb3fcb"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "480f62aa660b789288b2980037764a641bee5573e4b6d620e6eafac7b3cf0299"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "8b6ce978f4b469ba96176392ddd5d0c3a84c6546be1f4332ea2cc7967d6ee7b4"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "5b194c943b7e0461886ae1b09669b94839139b3ff62894bec0e13e5f24f957fb"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "b2dd1dba266459aefaf184547d81b624bd1ff7ecfa55c05de494a5e4949cd04f"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "03ea8c64e513a8e9e90ce57f8ffec09e221cd5a840a87fa4472d396ca7457432"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4dfd4eb5dad29901088c933168cefb5f3d70c469b92dd4862d010831a3f3f1ef"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "406de5f65cd22554f77251b0033c60f8c1181d849c305e1ca2f0db79f7fbcebd"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "3178a3841bbc3964376f082dd8b8ae645c38f14c31fcc8d8d633bb3ce6386fde"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "55fa1a706838fe9bb57f4f9475167e64f277f2423516b77ea3c43b4acbde5cfd"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c0b5ff658fde0e8eca0b1249e7b45508576df7eac2b1224682177fc81bae8c2d"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "d6dedb3c1f0f55fd0d3cf0e14c628ff0edcc608e2e803cfe6eba1fd6d9404bd4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "3df932c18d25b46045174f480dabfdbff78b93b070419970ae1c5295a14d013b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "7c8cf0c00249f3287cc8848c18421d4d7d4bae25a306fe2b56bd06ed34c58f98"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "0161e9020113696085d04a220abae7d98ec78b4ca7ea5a601d6e1c767cc64793"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "ed26ade9d33f8a220db350e444a20eefa6c1eab82eec6e471c82e15b842173d1"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "0a0da5d9261a6b351a99b8d9f2c502adf6695542b801759e16a151322c6a36db"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "a8a3d38db26a8933c47ff3dfb6c7414c2e83fc108dc317c1415e228d691a8e68"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "904fdaa218c40dc3e11b9a15494e45e6ab16f80714522ea1bc3a43a3d45dd28b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "e9ca9c49833d7c80e0d3d218f6c247c8eac29b87a3eb3133d74bffafe2a43203"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "3add4d811ee0b694dd88b0ff2e013a387d39e1cbe197894a2293fa3c2c40bdeb"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "3e804ceccfd254d88d78345abda6ebe1bda13f0373849824f13cf44a2397a263"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "842e7b41861e278e643924e3f794d1b1ae2f5df0979cf09c74c2148257d7059b"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "4429a5217559d84f6ef38dfa2fab0c1156090add9073e551baa9f2088a98bd00"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "e357a96e28409b0d8492a512419f0ea0923f18c080f568e9489dead26115ee09"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "ca234502cdad6d422d6cc35ca4e84c8c37a5af5668c0d8568f36704a4fcea05f"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "8c21f461a5f927207c14982d0b7292533f16fa71272e7d83e98a84cf1ba9415a"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "a67ba634c65b0b091835a16a4c9b3223defc752935e0bc965e55f23992272100"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "818525f91dd60a7caa33313b4a891f4981a79dc561d4e7ac0cb544c922243396"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "5042691a2840e071cff631956f55310ef7fc1a2382175f300268fcfa03a2969f"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "80fc347eef019fa0b81b338d3621171063de52e025825c01f5dd6ea35d51fa57"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "7f7faea63ea9b1030c87f0598dcf818a7b0af519c6b4c0245e0c6c98b0b95beb"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "95b0236697356eab9e86bfe2f5ff0746ab1092375fc426b5c9d2771ff978c419"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "72364da1f979b6d6a54e1fdac97fcd08710cf62a3f3dfaff5cadecf9a87166cf"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "b19179cb25e48d406073472038c6686eff7fbbf76a16473727d8d6481ed2e8fa"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "f39422ecaf16310407bb7b7e18b6e10c1e321d54308265465ceb2b83a25bd792"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "f0327db3a451f0c2ba9020aa56edded62daf39b2e3a1eab49c12311724a996ef"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "312bcec7fbd40ef24eae9d084823575e33b6a51af9fa8a96a6f88ee836a3dfa0"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "0b4e02eb95a3a3acff3866722b6799b9e4f809dcbc66bfca166506389679606b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "2bf091a6406211283aa93064a40ff9040c5821e266a254ca35425af71a7f8577"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "e51109dcd009f45d196f625921aa71ce2a2fb1dd230f48ca3e376b123df86aae"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "7286d565111c64b8b4f30fc5fc8301bea102fd2625f1a4f9da73051e2124f7c8"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "63da9de71e9373d71cdf0b70160adf9c1668049e0f72250a4fcce3ea9cb7cdae"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "7ccbec431b4c4649d422169e2a10331ab40efb68a757751e3f84ee6ecde7cb28"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "b5fba248b71fd2642cbbee75d35eabb0ef3d817b0d21fd6b5afe826f114f309d"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "be9b2eccccf40d58d70f2317c05926a20a9e8f94a6c5d9212a3c0e452438b192"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano adota uma visão territorial para os 79 municípios e as 9 regiões do estado. A estratégia prevê prioridades adequadas em cada região. O documento propõe a expansão da coleta e do tratamento de esgoto. O plano estabelece a meta de viabilizar 30 mil novas moradias até o final do segundo ano de governo. A proposta de saúde prevê hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região. O programa de governo prevê um aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança. A política ambiental prevê o monitoramento de alterações de turbidez, vazão e qualidade da água. A política educacional prevê internet de qualidade em todas as escolas estaduais, com infraestrutura digital adequada ao ensino.",
+    "frases": [
+      {
+        "texto": "O plano adota uma visão territorial para os 79 municípios e as 9 regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 6,
+            "trecho": "O Plano de Governo 2027-2030 parte de uma visão territorial: cada região tem necessidades, vocações e prioridades próprias, mas todas devem fazer parte de um mesmo projeto de desenvolvimento."
+          }
+        ]
+      },
+      {
+        "texto": "A estratégia prevê prioridades adequadas em cada região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 6,
+            "trecho": "A estratégia para Mato Grosso do Sul não parte de uma solução única para todos, mas de um projeto Estadual com prioridades adequadas em cada região."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a expansão da coleta e do tratamento de esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 26,
+            "trecho": "Expansão da coleta e do tratamento de esgoto, priorizando localidades com maior déficit de cobertura e pressão urbana."
+          }
+        ]
+      },
+      {
+        "texto": "O plano estabelece a meta de viabilizar 30 mil novas moradias até o final do segundo ano de governo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 27,
+            "trecho": "Meta: viabilizar 30 mil novas moradias até o final do segundo ano de governo, por meio da combinação de recursos estaduais, programas federais, FGTS, terrenos públicos, contrapartidas municipais e participação privada."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta de saúde prevê hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 28,
+            "trecho": "Hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região."
+          }
+        ]
+      },
+      {
+        "texto": "O programa de governo prevê um aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 35,
+            "trecho": "Aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança."
+          }
+        ]
+      },
+      {
+        "texto": "A política ambiental prevê o monitoramento de alterações de turbidez, vazão e qualidade da água.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 43,
+            "trecho": "Ampliar o monitoramento de alterações de turbidez, vazão e qualidade da água, com resposta técnica rápida quando houver anormalidades."
+          }
+        ]
+      },
+      {
+        "texto": "A política educacional prevê internet de qualidade em todas as escolas estaduais, com infraestrutura digital adequada ao ensino.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 32,
+            "trecho": "Garantir internet de qualidade em todas as escolas estaduais, com infraestrutura digital adequada ao ensino."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-territorial",
+        "titulo": "Planejamento territorial",
+        "descricao": "O plano organiza prioridades específicas para cada região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 6,
+            "trecho": "A estratégia para Mato Grosso do Sul não parte de uma solução única para todos, mas de um projeto Estadual com prioridades adequadas em cada região."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-urbano",
+        "titulo": "Saneamento urbano",
+        "descricao": "O programa prevê ampliar a cobertura de esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 26,
+            "trecho": "Expansão da coleta e do tratamento de esgoto, priorizando localidades com maior déficit de cobertura e pressão urbana."
+          }
+        ]
+      },
+      {
+        "id": "habitacao",
+        "titulo": "Habitação",
+        "descricao": "O plano estabelece uma meta para novas moradias.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 27,
+            "trecho": "Meta: viabilizar 30 mil novas moradias até o final do segundo ano de governo, por meio da combinação de recursos estaduais, programas federais, FGTS, terrenos públicos, contrapartidas municipais e participação privada."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "A proposta prevê hospitais regionais com atendimento contínuo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 28,
+            "trecho": "Hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região."
+          }
+        ]
+      },
+      {
+        "id": "governo-digital",
+        "titulo": "Governo digital",
+        "descricao": "O programa prevê um aplicativo estadual para serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552191:01",
+            "pagina": 35,
+            "trecho": "Aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:48:06.733Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:50:31.740Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 6 confirma a visão territorial e explicitamente menciona 79 municípios e 9 regiões no texto da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Os números 79 municípios e 9 regiões aparecem literalmente na página 6 citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva, sem juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente: a visão territorial do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave eleitoral MS:120002552191."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:1:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página 6 cobre todos os elementos materiais da afirmação (visão territorial, 79 municípios, 9 regiões)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 6 sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:2:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:3:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 30 mil e o prazo do segundo ano estão literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual, sem adjetivos de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: meta habitacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:4:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 24 horas está literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:5:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números relevantes na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e objetiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: aplicativo único do governo digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:6:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a afirmação, listando os mesmos serviços."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: monitoramento ambiental hídrico."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:7:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta: infraestrutura digital escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:frase:8:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase adequada do conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: planejamento territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:planejamento-territorial:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação de forma resumida mas completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase adequada do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saneamento-urbano:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a meta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação genérica não cita número específico, e o número na evidência é consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:habitacao:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação genérica integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência (24 horas = atendimento contínuo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números explícitos na afirmação genérica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:saude-regional:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação genérica integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: governo digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552191:tema:governo-digital:documentos:MS:120002552191:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação genérica integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002552191",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002552191:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 40932,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2808,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26493,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23247,
+          "output_tokens_details": {
+            "thinking_tokens": 835
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26493,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23247,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26493,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26493
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3589254
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "cd0b955dc13cb98e9d3aa5d00498d6eaccc86654fdeb82d69a013f50f6e61266",
+    "extractedTextSha256": "6dae4774182321b02198abb84a9f1f0da6b2a5a129766fd0f47c5d61fec53594",
+    "documentCount": 1,
+    "documentSetSha256": "54ac6dee39d23ec7b726f35ce37c984778333d8f3ab29a3e4923240470fbd119",
+    "contentSha256": "18ed18efd9400726a715d97673dced71347b92fe0cf77859ba8c2cb50b0ac3c5"
+  }
+}

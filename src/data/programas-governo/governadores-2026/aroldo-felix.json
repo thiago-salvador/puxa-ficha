@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "BA",
+    "sqCandidato": "50002544692",
+    "slug": "aroldo-felix",
+    "nomeUrna": "AROLDO FELIX",
+    "partido": "UP",
+    "arquivoNome": "2026BA50002544692_01.pdf",
+    "arquivoNoPacote": "BA/2026BA50002544692_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "BA:50002544692:01",
+      "fonte": {
+        "arquivoNome": "2026BA50002544692_01.pdf",
+        "arquivoNoPacote": "BA/2026BA50002544692_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b383e75810226556bbab78450d816c328e7a2768ef3424ed8d0c224847f2641f",
+        "extractedTextSha256": "d8be7b8155707cd75138ec29b161c04f2d3380255666d5bf5ac32a640f77a32f",
+        "paginas": 1,
+        "secoes": [
+          {
+            "id": "80",
+            "titulo": "ДРОНА 80",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "ДРОНА 80\nGOVERNADOR\nUP% VICE MARÍLIA\nPOR UMA BAHIA DO POVO TRABALHADOR\n15 PONTOS DA UNIDADE POPULAR PARA MUDAR A BAHIA\nPrograma de Governo de Aroldo Félix e Marília Regina\n1. Aumento em 100% do salário-mínimo. Criação do salário-mínimo baiano para que o Estado consiga intervir de manei-\nsemanais.\nra efetiva na valorização do salário dos trabalhadores. Acabar com a escala 6x1 e reduzir a jornada de trabalho para 36h\n2. Combate ao feminicídio e à violência contra as mulheres. Aumento nos serviços de atendimento às mulheres vítimas\nde violência através da ampliação de DEAMs por toda a Bahia e casas de referência como espaços de atendimento psi-\n3. Suspensão do pagamento da dívida pública estadual que hoje ultrapassa R$ 30 bi. Instalação de uma auditoria e re-\ncossocial e jurídico, além de oferecer cursos e abrigo temporário às mulheres.\nversão dos recursos de pagamento de juros e amortizações em Saúde, Educação e Moradia Popular. Defender junto ao\nGoverno Federal a suspenção do pagamento da dívida pública federal e fortalecimento junto aos Estados em investi-\n4. Reestatização de empresas públicas privatizadas como a Empresa Baiana de Alimentos (EBAL). Retomar a Empresa\nmentos nas áreas sociais.\ncomo o desenvolvimento de tecnologias para combate a pragas nas plantações dos agricultores baianos. Retomar a\nBaiana de Desenvolvimento Agrícola (EBDA), responsável pela implementação de diversas culturas agrícolas, bem\n5. Redução do preço dos alimentos. Criação, fortalecimento e recuperação de medidas que permitem o Governo do\nEmpresa de Turismo da Bahia (Bahiatursa) e o Departamento de Infraestrutura de Transportes da Bahia (Derba).\n6. Desmilitarização das polícias na Bahia. Garantir formação dos agentes de segurança no tema de direitos humanos,\nEstado regular os preços. Reestatização da Cesta do Povo com esse objetivo e investigação da privatização corrupta.\ncâmeras no fardamento de todos os policiais e outras medidas para combater a letalidade policial que hoje é a maior\n7. Equiparação do salário do governador e deputados estaduais a de professoras e professores das escolas públicas\ndo país. Pelo fim do genocídio do povo preto na Bahia!\nbaianas. Estabelecer a obrigatoriedade de que todo político deve usar o Sistema Único de Saúde (SUS) e a educação\n8. Destinar 10% do PIB da Bahia para a educação. Acabar com o sucateamento das Universidades Estaduais e escolas\npública.\nestaduais. Realizar contratação imediata de profissionais da educação para as escolas e universidades do estado. Ne-\nreal dos salários.\ngociação com os docentes para garantir o piso nacional da educação em todas as instituições de ensino e aumento\n9. Concurso público para contratação efetiva em todos os serviços oferecidos pelo Estado. Aplicar concurso interno\n10. Trabalhar para que todos os baianos tenham seu direito à moradia digna garantido com a transformação de prédios\npara os servidores em contrato de Regime Especial de Direito Administrativo (REDA) para torna-los efetivos.\nverno estadual e, em seguida, de outros entes públicos e privados.\nabandonados das cidades baianas em moradia popular. Iniciar pelos prédios sem função social de propriedade do go-\n11. Defesa das riquezas naturais baianas como a Serra da Chapadinha e todos os biomas da Bahia com o fim da explora-\nblica.\nção privada dos recursos naturais. Criação de uma empresa pública de energia baiana. Defender a Petrobrás 100% pú-\n12. Reforma agrária popular com o fim do latifúndio na Bahia. Respeito e reconhecimento de terras dos povos originá-\nrios indígenas e quilombolas com a demarcação desses territórios. Defesa das terras, florestas e todos os biomas em\n13. Extinguir o trabalho análogo à escravidão na Bahia através da fiscalização e expropriação de empresas que o prati-\nsolo baiano.\n14. Acabar com os contratos privados na saúde e as longas filas de regulação de pacientes. Capilarizar os hospitais e ser-\nquem.\n15. Reversão das privatizações de empresas públicas baianas de transporte e concessões públicas de portos, aeropor-\nviços de alta complexidade por todo o estado.\ntos, ferrovias e metrovias. Implementar o transporte público, gratuito e de qualidade.\nLute contra as injustiças sociais, os feminicídios, a exploração\ndos trabalhadores e pelos direitos da juventude!\nNo dia 4 de outubro, vote nos candidatos\nda Unidade Popular 80!\nUPIN\nIPir\nPELO SOCIALISMO\nUNIDADE POPULAR"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "d8be7b8155707cd75138ec29b161c04f2d3380255666d5bf5ac32a640f77a32f"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a criação do salário-mínimo baiano para que o Estado intervenha na valorização do salário dos trabalhadores, conforme a política apresentada no documento. A proposta prevê a ampliação das DEAMs por toda a Bahia para atendimento de mulheres vítimas de violência, com serviços de referência descritos no programa. O documento propõe a suspensão do pagamento da dívida pública estadual, medida apresentada no eixo financeiro do programa. O programa prevê a reestatização da Cesta do Povo como medida de redução do preço dos alimentos, segundo a formulação registrada na página. A proposta planeja a instalação de câmeras no fardamento de todos os policiais como medida de segurança pública. O documento prevê destinar 10% do PIB da Bahia para a educação, vinculando essa alocação ao financiamento das instituições estaduais de ensino. O programa propõe concurso público para contratação efetiva em todos os serviços oferecidos pelo Estado, conforme a política de pessoal descrita na página.",
+    "frases": [
+      {
+        "texto": "O programa prevê a criação do salário-mínimo baiano para que o Estado intervenha na valorização do salário dos trabalhadores, conforme a política apresentada no documento.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Criação do salário-mínimo baiano para que o Estado consiga intervir"
+          }
+        ]
+      },
+      {
+        "texto": "A proposta prevê a ampliação das DEAMs por toda a Bahia para atendimento de mulheres vítimas de violência, com serviços de referência descritos no programa.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "ampliação de DEAMs por toda a Bahia e casas de referência"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a suspensão do pagamento da dívida pública estadual, medida apresentada no eixo financeiro do programa.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "suspensão do pagamento da dívida pública estadual"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a reestatização da Cesta do Povo como medida de redução do preço dos alimentos, segundo a formulação registrada na página.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Reestatização da Cesta do Povo"
+          }
+        ]
+      },
+      {
+        "texto": "A proposta planeja a instalação de câmeras no fardamento de todos os policiais como medida de segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "câmeras no fardamento de todos os policiais"
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê destinar 10% do PIB da Bahia para a educação, vinculando essa alocação ao financiamento das instituições estaduais de ensino.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Destinar 10% do PIB da Bahia para a educação"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe concurso público para contratação efetiva em todos os serviços oferecidos pelo Estado, conforme a política de pessoal descrita na página.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Concurso público para contratação efetiva em todos os serviços oferecidos pelo Estado"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "salario-minimo",
+        "titulo": "Salário-mínimo baiano",
+        "descricao": "Criação de um salário-mínimo baiano.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Criação do salário-mínimo baiano"
+          }
+        ]
+      },
+      {
+        "id": "atendimento-mulheres",
+        "titulo": "Atendimento às mulheres",
+        "descricao": "Ampliação das DEAMs na Bahia.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "ampliação de DEAMs por toda a Bahia"
+          }
+        ]
+      },
+      {
+        "id": "divida-publica",
+        "titulo": "Dívida pública estadual",
+        "descricao": "Suspensão do pagamento da dívida pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "suspensão do pagamento da dívida pública estadual"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-policial",
+        "titulo": "Segurança policial",
+        "descricao": "Instalação de câmeras no fardamento policial.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "câmeras no fardamento de todos os policiais"
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Destinação de recursos do PIB baiano para a educação.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002544692:01",
+            "pagina": 1,
+            "trecho": "Destinar 10% do PIB da Bahia para a educação"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T16:04:05.676Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T16:06:11.563Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma literalmente a criação do salário-mínimo baiano para intervenção estatal na valorização salarial."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou percentuais a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre salário-mínimo baiano."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:1:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula específica descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a ampliação de DEAMs e casas de referência para mulheres vítimas de violência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: atendimento a mulheres vítimas de violência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:2:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta de suspensão do pagamento da dívida estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre dívida pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:3:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula central da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "O texto liga a reestatização da Cesta do Povo ao objetivo de redução do preço dos alimentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre preço de alimentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:4:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta de câmeras no fardamento policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar; 'todos' não constitui dado numérico."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única medida específica de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:5:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula citada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o percentual e o contexto de financiamento das instituições estaduais mencionado no texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 10% está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: financiamento da educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:6:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula central sobre percentual e finalidade educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única política de pessoal coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:frase:7:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a criação do salário-mínimo baiano."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:salario-minimo:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a ampliação das DEAMs na Bahia."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:atendimento-mulheres:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a suspensão do pagamento da dívida estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:divida-publica:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta de câmeras no fardamento policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única medida coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:seguranca-policial:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a destinação de recursos do PIB para educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:numeros",
+        "verdict": "yes",
+        "reason": "O claim não cita percentual específico, e a evidência contém o número real (10%), não havendo contradição."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem entre claim e evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002544692:tema:educacao-publica:documentos:BA:50002544692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente o resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:BA:50002544692",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "BA:50002544692:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 22031,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2589,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 19151,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19916,
+          "output_tokens_details": {
+            "thinking_tokens": 1144
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19151,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19916,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 19151,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 19151
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.29109440000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "b383e75810226556bbab78450d816c328e7a2768ef3424ed8d0c224847f2641f",
+    "extractedTextSha256": "d8be7b8155707cd75138ec29b161c04f2d3380255666d5bf5ac32a640f77a32f",
+    "documentCount": 1,
+    "documentSetSha256": "71f6afd27d47c614c887713a37d757f58c1ee5e385de5069c79a92d318eb0df2",
+    "contentSha256": "1cbd0f75ec8b760c196cfce7fedee991e54a4375295701b2a034cdc79fdc658f"
+  }
+}

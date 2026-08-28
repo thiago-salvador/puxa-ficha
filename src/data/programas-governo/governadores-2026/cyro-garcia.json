@@ -1,0 +1,776 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RJ",
+    "sqCandidato": "190002540198",
+    "slug": "cyro-garcia",
+    "nomeUrna": "CYRO GARCIA",
+    "partido": "PSTU",
+    "arquivoNome": "2026RJ190002540198_01.pdf",
+    "arquivoNoPacote": "RJ/2026RJ190002540198_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RJ:190002540198:01",
+      "fonte": {
+        "arquivoNome": "2026RJ190002540198_01.pdf",
+        "arquivoNoPacote": "RJ/2026RJ190002540198_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "8398563d5b691e4eb122e1d7af14ddfe99fd2c6852879ec121adfab35e001b0c",
+        "extractedTextSha256": "a3d2e36f2511d3394d062f111539f17bcf546e680ac7fa28c792a68798be4303",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "programa-de-governo-pstu",
+            "titulo": "Programa de Governo – PSTU",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo – PSTU\nEleições 2026 – Governo do Estado do Rio de Janeiro\nCandidato a Governador: Cyro Garcia / Candidata a ViceGovernadora: Perciliana Rodrigues\nApresentação\nEste programa é fruto do acúmulo de elaboração construído pela militância do PSTU no Rio de\nJaneiro. Não se trata de uma lista de promessas eleitorais, mas de um conjunto de propostas\nfundamentadas em dados que expressam os interesses da classe trabalhadora fluminense diante\nde um estado marcado pela decadência econômica, pelo desemprego, pela fome, pela violência\ndo Estado e pelas privatizações. Apresentamos este programa ao Tribunal Superior Eleitoral como\ncompromisso público de nossa candidatura, ciente de que sua realização plena exige a\nmobilização organizada dos trabalhadores e trabalhadoras.\n\nO diagnóstico: o estado mais decadente de um país decadente\nO Rio de Janeiro atravessa um processo de desindustrialização absoluta, e não apenas relativa\ncomo ocorre no restante do Brasil. Enquanto o país como um todo produz proporcionalmente\nmenos riqueza industrial em comparação ao mercado mundial, mas ainda cresce em termos\nabsolutos, no Rio de Janeiro a indústria de transformação encolheu fisicamente: sua produção é\nhoje 15% menor em valor do que era em 1985. Entre 2002 e 2018, o PIB brasileiro cresceu 20,6%\na mais que o do Rio de Janeiro, e no mesmo período o valor produzido pela indústria de\ntransformação fluminense caiu 14,9% em termos absolutos.\nO reflexo mais dramático dessa decadência aparece no emprego. Entre 1985 e 2020, o emprego\nformal cresceu apenas 40,88% no Rio de Janeiro, o pior resultado entre todos os estados\nbrasileiros, contra uma média nacional de 130,66%, mais de três vezes maior. Somente entre\n2012 e 2020, o Rio perdeu 15,57% de seus empregos formais, enquanto a média nacional caiu\napenas 2,58%. Já na indústria de transformação especificamente, o Rio de Janeiro é, ao lado de\nSão Paulo, o único estado do país que teve queda absoluta de postos de trabalho entre 1985 e\n2020: uma redução de 34,45%, contra um crescimento médio nacional de 37,88% e picos de mais\nde 800% em estados como Roraima.\nEssa destruição da estrutura produtiva foi mascarada, em parte, pelo peso do setor extrativo de\npetróleo, cuja participação chegou a representar até três vezes o valor gerado pela indústria de\ntransformação em determinados anos. Mas esse setor, por mais lucrativo que seja, emprega\npouquíssimos trabalhadores: ao fim de 2021 eram apenas 37 mil empregados na extração mineral,\nquase dez vezes menos que na indústria de transformação, mesmo esta estando em franca\ndecadência. O petróleo gera renda para acionistas e royalties para o Estado, mas não gera"
+          },
+          {
+            "id": "emprego-nem-alimenta-as-demais-cadeias-produtivas-internas-ja-que-sua-pr",
+            "titulo": "emprego nem alimenta as demais cadeias produtivas internas, já que sua produção é",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "emprego nem alimenta as demais cadeias produtivas internas, já que sua produção é\nmajoritariamente exportada.\nO resultado desse quadro é que 65,51% da força de trabalho fluminense hoje está desempregada\nou subempregada, formando um imenso exército industrial de reserva que pressiona salários para\nbaixo em toda a economia. Em 2021, mais de 4,6 milhões de pessoas estavam sem emprego no\nestado, quase 600 mil a mais que em 2015. Ao mesmo tempo, o trabalho informal cresceu 25%\nentre 2015 e 2021, enquanto o trabalho formal caiu quase 9% no mesmo período. Nos últimos\nanos, o número de pessoas passando fome no estado quadruplicou, chegando a mais de 2,7\nmilhões, e mais de 57% da população fluminense vive algum grau de insegurança alimentar.\nEnquanto isso, da riqueza produzida pelos trabalhadores do estado, apenas cerca de 25% fica em\nsuas mãos: os outros 75% são apropriados por empresários, bancos e pelo próprio Estado. Ao\nfinal de 2021, o Rio de Janeiro tinha 37 bilionários, segundo a revista Forbes, concentrando uma\nfortuna pessoal próxima de 80 bilhões de reais, mais do que toda a arrecadação estadual em um\nano. Somente a Petrobras distribuiu, em 2021, mais de 100 bilhões de reais em dividendos a\nacionistas, valor superior aos 91 bilhões de reais arrecadados por todo o governo do estado\nnaquele ano. A CSN, no mesmo ano, viu seu lucro líquido crescer 1.179% e seus dividendos\n223%, enquanto a massa salarial de seus trabalhadores cresceu apenas 4,39%, um valor inferior\nà inflação do período.\n\nFinanças públicas: royalties, privatizações e dívida\nO Rio de Janeiro tornou-se estruturalmente dependente dos royalties do petróleo, que respondem,\nhistoricamente, por cerca de 20% da arrecadação estadual. O problema é que essa receita, que\ndeveria ser um recurso extra para compensar impactos sociais e ambientais da exploração\npetrolífera, tornou-se orgânica ao funcionamento do Estado. Como essa receita oscila de acordo\ncom o preço internacional do petróleo, cada queda brusca de preços provoca o colapso das\nfinanças estaduais, como ocorreu entre 2014 e 2017, quando o déficit orçamentário chegou a mais\nde 10 bilhões de reais em 2016. Diferentemente de Minas Gerais e Rio Grande do Sul, outros\nestados que também enfrentaram crise fiscal na mesma época, o Rio de Janeiro apresenta uma\ndinâmica de arrecadação muito mais instável e dependente dessa fonte externa de receita.\nO estado foi pioneiro nas privatizações no Brasil, com a venda, ainda entre 1996 e 1998, de\nempresas como CSN, CERJ, Light, Banerj, CEG, além da entrega do sistema de trens, metrô e\nbarcas à iniciativa privada. Se privatizar fosse solução para as finanças públicas, o Rio de Janeiro\nseria hoje o estado mais estável do país. Não é o que ocorre. O caso mais recente e emblemático\né o da CEDAE, privatizada em 2021 por 22,7 bilhões de reais, mesmo nunca tendo apresentado\nproblemas financeiros: a empresa sempre gerou lucro líquido e dividendos ao Estado, e seu lucro\nsó caiu em 2020, quando o governo já se preparava para a venda.\nDesde 2017, o Rio de Janeiro está sob um Regime de Recuperação Fiscal que suspendeu o\npagamento de juros e amortizações da dívida, atualmente na casa de 163 bilhões de reais, quase\no dobro da receita corrente líquida anual do estado. Em troca, o plano impôs privatizações,"
+          },
+          {
+            "id": "reforma-da-previdencia-estadual-teto-de-gastos-e-limitacao-do-cresciment",
+            "titulo": "reforma da previdência estadual, teto de gastos e limitação do crescimento das despesas à",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "reforma da previdência estadual, teto de gastos e limitação do crescimento das despesas à\ninflação. O resultado aparente de \"recuperação\" nas contas públicas a partir de 2018 não passa\nde uma suspensão temporária da dívida, que continua crescendo com juros, empurrando a conta\npara o futuro e para a classe trabalhadora.\n\nO abandono dos serviços públicos em números\nOs efeitos dessa lógica podem ser vistos diretamente no orçamento. As despesas do estado com\neducação, que representavam 18,53% da arrecadação total em 2003, caíram para 7,42% em 2021.\nEm quatro dos últimos anos analisados, o estado sequer cumpriu o piso constitucional de 25% do\norçamento em educação. Os investimentos em creches, fundamentais para a permanência das\nmães trabalhadoras no mercado de trabalho, caíram de 382 milhões de reais em 2015 para 312\nmilhões em 2021, uma queda de 19% mesmo sem descontar a inflação do período. O\ninvestimento no ensino superior estadual ficou praticamente estagnado por uma década, o que\nrepresenta queda real de cerca de um terço quando descontada a inflação acumulada de 61% no\nperíodo.\nNa saúde, o piso constitucional de 12% do orçamento tornou-se, na prática, um teto: o estado saiu\nde 17,26% de investimento em 2016 para apenas 12,55% em 2021. Ao mesmo tempo, entre 2016\ne 2020, mais de 7 bilhões de reais foram repassados às Organizações Sociais que administram\nunidades de saúde, modelo marcado por escândalos de corrupção, incluindo o processo de\nimpeachment do ex-governador Wilson Witzel. Ao final de 2021, mais da metade dos profissionais\nde saúde vinculados à Secretaria de Estado de Saúde eram contratados por OSs, enquanto os\nservidores estatutários não chegavam a 24% do total.\nNo transporte, o investimento estadual em transporte ferroviário correspondeu a apenas 0,09% do\norçamento do setor, menos de 1 milhão de reais, enquanto quase a totalidade dos recursos foi\ndestinada ao transporte rodoviário, mais caro, mais poluente e menos eficiente. Não por acaso, o\nMetrôRio e o Metrô da Bahia são as únicas duas operadoras de metrô do país que não recebem\nsubvenção pública, e justamente por isso apresentam as maiores taxas de lucro do setor no Brasil,\nobtidas às custas da redução do número de passageiros atendidos.\nNa habitação, o déficit chegou a 481 mil moradias em 2019, atingindo mais de 2 milhões de\npessoas, enquanto o investimento estadual em habitação urbana jamais ultrapassou 0,2% da\nreceita total do estado entre 2013 e 2021, chegando a apenas 687 mil reais em 2017.\nParadoxalmente, a taxa de vacância residencial na cidade do Rio chegou a quase 20% em 2021:\nhá imóveis disponíveis, mas fora do alcance financeiro de quem precisa de moradia.\n\nRacismo, machismo e violência do Estado em dados\nO Rio de Janeiro concentra uma das maiores populações negras do país, mais de 9 milhões de\npessoas, e ao mesmo tempo apresenta uma das maiores desigualdades salariais raciais do Brasil.\nA remuneração de trabalhadores negros no estado fica cerca de 28% a 32% abaixo da média\ngeral, uma diferença ainda maior que a média nacional. O percentual de vítimas negras entre os"
+          },
+          {
+            "id": "homicidios-no-estado-passou-de-cerca-de-51-no-fim-dos-anos-1990-para-mai",
+            "titulo": "homicídios no estado passou de cerca de 51% no fim dos anos 1990 para mais de 70% nos anos",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "homicídios no estado passou de cerca de 51% no fim dos anos 1990 para mais de 70% nos anos\nrecentes, evidenciando o caráter cada vez mais racializado da violência letal no Rio de Janeiro,\nseja ela praticada por policiais, por facções ou por milícias.\nA violência do Estado tem endereço certo: em 2021, das 4.750 mortes violentas registradas, 1.356\nforam causadas por intervenção policial, e o peso da letalidade policial no total de homicídios\ncresceu 317% desde o ano 2000. Na região metropolitana do Rio, operações policiais\nresponderam por 56% de todas as vítimas de letalidade violenta em determinado período recente.\nTrês das cinco chacinas mais sangrentas cometidas pela polícia fluminense ocorreram nos últimos\nanos: Jacarezinho, Vila Cruzeiro e Complexo do Alemão, todas sob o mesmo governo estadual.\nUm fenômeno decisivo, documentado por pesquisas da UFF, é que as milícias hoje controlam\nmais da metade do território da região metropolitana do Rio, com cerca de 3,6 milhões de pessoas\nvivendo sob seu domínio direto. Essas organizações, compostas majoritariamente por policiais e\nagentes de segurança na ativa ou aposentados, deixaram de ser um poder paralelo para se\ntornarem parte da estrutura do próprio Estado, ocupando cargos eletivos e mediando o acesso a\nserviços públicos como moradia popular, distribuição de gás e licenciamento de terrenos.\nQuanto às mulheres, os casos de feminicídio cresceram 73% em cinco anos no estado. Em 2020,\n55% das vítimas de feminicídio eram mulheres negras, e 58% dos casos ocorreram dentro da\nprópria casa da vítima. A diferença salarial entre homens e mulheres também é histórica e\npersistente em toda a série de dados disponível.\n\n1. Emprego, renda e plano de obras públicas\nDiante desse quadro estrutural, defendemos um plano emergencial para acabar com a fome e\ngarantir emprego, moradia e renda digna. Propomos auxílio emergencial de um salário mínimo\npara todo desempregado, isenção de tarifas de água, luz e IPTU para essa população, passe livre\nem transporte público e suspensão dos aluguéis para inquilinos de grandes proprietários. Para\nampliar postos de trabalho, defendemos a redução da jornada para 30 horas semanais sem\nredução de salário, um piso salarial estadual digno, a proibição das terceirizações e a efetivação\nde trabalhadores terceirizados em empresas e órgãos públicos, além da convocação imediata de\ntodos os aprovados em concursos públicos.\nPropomos um amplo plano de obras públicas, financiado por taxação sobre as grandes fortunas,\nque construa creches, escolas, clínicas da família, hospitais, restaurantes populares, moradia\npopular capaz de zerar o déficit habitacional de quase meio milhão de unidades, saneamento\nbásico, equipamentos culturais e esportivos nos subúrbios e favelas, além de casas-abrigo para\nmulheres e pessoas LGBTI vítimas de violência.\n\n2. Transporte público estatizado e de qualidade\nDefendemos a revogação das privatizações da Supervia e do MetrôRio, sem indenização às\nempresas, com gestão sob controle dos trabalhadores do setor e da população usuária. A\nexperiência concreta mostra que enquanto o investimento pesado em infraestrutura fica a cargo do"
+          },
+          {
+            "id": "patrimonio-publico-como-no-caso-da-rio-trilhos-os-lucros-ficam-com-a-ope",
+            "titulo": "patrimônio público, como no caso da Rio Trilhos, os lucros ficam com a operadora privada: a",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "patrimônio público, como no caso da Rio Trilhos, os lucros ficam com a operadora privada: a\nMetrôRio obtém lucro bruto de centenas de milhões de reais sobre uma receita superior a 800\nmilhões, enquanto o ativo público que sustenta toda a operação sequer é remunerado. Propomos\nauditoria pública das concessões, apuração de responsabilidades por desvios e corrupção, e um\nplano de ampliação da malha metroferroviária, priorizando o transporte sobre trilhos como espinha\ndorsal da mobilidade urbana, tal como ocorre em sistemas subsidiados de outras capitais\nbrasileiras, onde a subvenção pública permite tarifas mais baixas sem sacrificar o número de\npassageiros atendidos.\nDefendemos também a estatização dos serviços de barcas e ônibus municipais, com tarifas\nsociais, passe livre para desempregados e caminho para a tarifa zero.\n\n3. Educação pública, gratuita, laica e de qualidade\nDefendemos o investimento mínimo constitucional de 25% do orçamento em educação, patamar\nhoje sistematicamente descumprido, com a revogação de mecanismos que limitam gastos sociais.\nPropomos a suspensão da implementação autoritária do Novo Ensino Médio e a construção\ncoletiva de propostas pedagógicas pela comunidade escolar, sem interferência da iniciativa\nprivada. Somos contrários a projetos como Escola Sem Partido e às escolas cívico-militares.\nDefendemos a estatização das instituições privadas de ensino superior, o fim das dívidas\nestudantis, a ampliação da rede pública em todas as regiões do estado, com cursos que atendam\nàs necessidades da população e não apenas aos interesses econômicos regionais, e a gestão\ndemocrática das universidades por conselhos comunitários com participação de estudantes,\ntrabalhadores e moradores. Diante da estagnação orçamentária de mais de uma década no\nensino superior estadual, defendemos aumento substancial e imediato de recursos para UERJ,\nUENF e FAETEC. Defendemos a manutenção e ampliação das cotas raciais, políticas afirmativas\npara povos indígenas, refugiados e pessoas LGBTI, além de educação sexual nas escolas e\ncombate à LGBTIfobia.\n\n4. Saúde pública, sem privatização\nDefendemos o fim do modelo de gestão por Organizações Sociais e qualquer forma de\nprivatização da saúde, modelo que já custou bilhões de reais em recursos públicos sem garantir\nqualidade de atendimento. Defendemos investimento acima do piso constitucional de 12%, hoje\ntratado pelo governo estadual como teto. Propomos concursos públicos imediatos com plano de\ncargos e carreira em todos os níveis de atenção, reabertura de vagas fechadas em clínicas da\nfamília, UPAs e hospitais, recuperação da rede federal e estadual, e ampliação da vacinação.\nDefendemos que unidades de saúde de grandes grupos privados sejam integradas ao SUS\nmediante taxação das fortunas do setor, garantindo saúde totalmente pública e gratuita para todos.\n\n5. Segurança pública sem militarização\nRejeitamos a ideia de que o problema da violência se resolve com mais repressão policial. Os\ndados mostram que a própria força policial é hoje um dos principais agentes de letalidade violenta"
+          },
+          {
+            "id": "no-estado-com-peso-crescente-ano-apos-ano-defendemos-a-desmilitarizacao",
+            "titulo": "no estado, com peso crescente ano após ano. Defendemos a desmilitarização da segurança",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "no estado, com peso crescente ano após ano. Defendemos a desmilitarização da segurança\npública e da Polícia Militar, com constituição de uma polícia civil única, democracia interna e direito\nde organização dos policiais de base. Somos contrários às UPPs e ao programa Cidade Integrada,\nque reeditam a mesma lógica militarizada e racista.\nDefendemos a punição de agentes envolvidos em chacinas e tortura, e a descriminalização das\ndrogas, com controle estatal da produção e comercialização, revertendo os lucros para\ninvestimento social e acompanhada de política de reparação à juventude negra encarcerada pela\nguerra às drogas. Diante da constatação de que as milícias hoje controlam mais da metade do\nterritório metropolitano e ocupam postos dentro do próprio aparato estatal, defendemos\ninvestigação e punição rigorosa de agentes públicos envolvidos nessas organizações, com\nexpropriação de seu patrimônio ilícito. Defendemos ainda o direito à autodefesa dos trabalhadores,\nmoradores de favelas e setores oprimidos frente à violência do Estado, das milícias e da extremadireita.\n\n6. Meio ambiente\nDefendemos a universalização do saneamento básico, com fim do despejo de esgoto in natura na\nBaía de Guanabara, onde apenas cerca de 24% do esgoto coletado é efetivamente tratado, e nos\ndemais rios do estado, e obrigatoriedade de tratamento de efluentes e emissões pelas grandes\nempresas, com estatização daquelas que descumprirem normas ambientais. Propomos plano de\nfechamento controlado das usinas nucleares de Angra e das termelétricas, garantindo realocação\ncom emprego e direitos para os trabalhadores do setor. Defendemos a estatização, sob controle\ndos trabalhadores, da Petrobras, CSN e grandes metalúrgicas, com o objetivo de reduzir impactos\nambientais, além de um plano de expansão do transporte sobre trilhos para reduzir a circulação de\nautomóveis.\n\n7. Contra o racismo, o machismo e a LGBTIfobia\nDiante de uma desigualdade salarial racial que supera a média nacional e de uma letalidade\npolicial cada vez mais concentrada sobre a população negra, defendemos reparação histórica aos\nnegros e povos indígenas, demarcação de terras indígenas e quilombolas, salário igual para\ntrabalho igual e fim do encarceramento em massa da juventude negra. Diante do aumento de 73%\nno feminicídio em cinco anos, defendemos delegacias especializadas com funcionamento 24\nhoras, casas-abrigo, ampliação da Lei Maria da Penha, socialização do trabalho doméstico com\nlavanderias e restaurantes públicos, creches em tempo integral, licença maternidade e\npaternidade de um ano com estabilidade, e o direito ao aborto legal, seguro e gratuito pelo SUS.\nPara a população LGBTI, defendemos cotas em empresas públicas e privadas, ampliação do\nacesso à terapia hormonal e antirretroviral pelo SUS sem restrições, delegacias especializadas e\ncombate efetivo à LGBTIfobia nas escolas e nas instituições.\n\n8. Um programa para a juventude"
+          },
+          {
+            "id": "a-juventude-trabalhadora-do-rio-de-janeiro-vive-dividida-entre-o-desempr",
+            "titulo": "A juventude trabalhadora do Rio de Janeiro vive dividida entre o desemprego, a precarização e a",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A juventude trabalhadora do Rio de Janeiro vive dividida entre o desemprego, a precarização e a\nviolência policial, sendo a principal vítima tanto do desmonte da indústria quanto do modelo de\nsegurança pública vigente. Defendemos investimento maciço em educação pública com\npermanência estudantil garantida, fim das reformas trabalhista e previdenciária, desmilitarização\nda PM e fim das UPPs, e legalização das drogas como instrumento de combate ao tráfico e à\nguerra que hoje vitima majoritariamente jovens negros e pobres.\n\n9. Expropriar os bilionários, romper com a recuperação fiscal\nDefendemos a taxação das grandes fortunas do estado, hoje concentradas em pouco mais de\ntrinta famílias, a proibição de remessa de lucros ao exterior, o fim de todas as isenções fiscais\nconcedidas a grandes empresas, com auditoria pública desses acordos, e a nacionalização da\nPetrobras sob controle dos trabalhadores, de forma a constituir uma cadeia produtiva de petróleo e\nderivados que gere emprego e renda para a população fluminense, revertendo a atual lógica em\nque o setor extrativo concentra a maior parte do PIB estadual mas emprega uma fração mínima da\nforça de trabalho.\nDefendemos a suspensão e auditoria da dívida pública estadual, hoje próxima de 200% da receita\ncorrente líquida, e a inversão da lógica orçamentária, priorizando saúde, educação e salários dos\nservidores públicos, com revisão da alíquota previdenciária cobrada dos trabalhadores do estado.\n\n10. Democracia operária e participação popular\nDefendemos que o plano de obras e as políticas públicas propostas neste programa sejam\ndiscutidos e fiscalizados diretamente pela população organizada, por meio de conselhos populares\nnos bairros, escolas, hospitais e locais de trabalho, com representantes eleitos e revogáveis a\nqualquer momento pelas bases. Entendemos que a plena realização deste programa depende da\nmobilização e organização independente da classe trabalhadora, rediscutindo o papel das\ninstituições, e nos comprometemos a usar o mandato, se eleitos, como instrumento de denúncia,\norganização e fortalecimento da luta popular no Rio de Janeiro."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "4b79ffcc49e1b5ca52b5844c5e7f5cc42ad9ddeba940cac5e2e1cd45bf6f3534"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "9c8c391b72b54a1bde07d52145d2d335b721c9922a7621e679ff051d042b6ff9"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "055410be6c5669cce08020e94b9081b1797482554e824297bc73eca61e1fa8cf"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "119054efa6af60f418f4f8e133c37f5f61b59012b9ef5c4c02f20a4454442405"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "1ce5612edbdf8f87419dc18884f184b40dc2cdde3918e9fb0149b9cf981f1eeb"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "28fb82dd8bb2a875e4905353fa1a3a06b9efac36d474d62a2a8d8e0d4d89abfd"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b76009771da95d20e1b65fc9dd71f10aab2d6b9e06794a5d6665e4656687fda4"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta propostas para o governo do Estado do Rio de Janeiro. Na área de emprego, o programa prevê auxílio emergencial de um salário mínimo para todo desempregado. Na organização do trabalho, propõe a redução da jornada para 30 horas semanais sem redução de salário. Na mobilidade, defende a revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas. Na educação, defende o investimento mínimo constitucional de 25% do orçamento em educação. Na saúde, defende o fim do modelo de gestão por Organizações Sociais. Na segurança pública, defende a desmilitarização da segurança pública e da Polícia Militar. No meio ambiente, defende a universalização do saneamento básico. Na participação popular, propõe conselhos populares nos bairros, escolas, hospitais e locais de trabalho.",
+    "frases": [
+      {
+        "texto": "O documento apresenta propostas para o governo do Estado do Rio de Janeiro.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "Programa de Governo – PSTU\nEleições 2026 – Governo do Estado do Rio de Janeiro"
+          }
+        ]
+      },
+      {
+        "texto": "Na área de emprego, o programa prevê auxílio emergencial de um salário mínimo para todo desempregado.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 4,
+            "trecho": "auxílio emergencial de um salário mínimo para todo desempregado"
+          }
+        ]
+      },
+      {
+        "texto": "Na organização do trabalho, propõe a redução da jornada para 30 horas semanais sem redução de salário.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 4,
+            "trecho": "redução da jornada para 30 horas semanais sem redução de salário"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, defende a revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 4,
+            "trecho": "revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, defende o investimento mínimo constitucional de 25% do orçamento em educação.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 5,
+            "trecho": "investimento mínimo constitucional de 25% do orçamento em educação"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, defende o fim do modelo de gestão por Organizações Sociais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 5,
+            "trecho": "fim do modelo de gestão por Organizações Sociais"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, defende a desmilitarização da segurança pública e da Polícia Militar.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 6,
+            "trecho": "desmilitarização da segurança pública e da Polícia Militar"
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, defende a universalização do saneamento básico.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 6,
+            "trecho": "universalização do saneamento básico"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "auxilio-desempregado",
+        "titulo": "Auxílio ao desempregado",
+        "descricao": "O programa prevê auxílio emergencial para pessoas desempregadas.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 4,
+            "trecho": "auxílio emergencial de um salário mínimo para todo desempregado"
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-publica",
+        "titulo": "Mobilidade pública",
+        "descricao": "O programa defende a revogação de privatizações no transporte metroferroviário.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 4,
+            "trecho": "revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas"
+          }
+        ]
+      },
+      {
+        "id": "educacao-orcamento",
+        "titulo": "Orçamento da educação",
+        "descricao": "O programa defende um percentual constitucional do orçamento para educação.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 5,
+            "trecho": "investimento mínimo constitucional de 25% do orçamento em educação"
+          }
+        ]
+      },
+      {
+        "id": "gestao-saude",
+        "titulo": "Gestão da saúde",
+        "descricao": "O programa defende o fim da gestão por Organizações Sociais na saúde.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 5,
+            "trecho": "fim do modelo de gestão por Organizações Sociais"
+          }
+        ]
+      },
+      {
+        "id": "desmilitarizacao-seguranca",
+        "titulo": "Desmilitarização da segurança",
+        "descricao": "O programa defende a desmilitarização da segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 6,
+            "trecho": "desmilitarização da segurança pública e da Polícia Militar"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:55:20.344Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:57:27.105Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "O título confirma que é programa de governo para o Estado do Rio de Janeiro."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e factual do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente: apresentação geral do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Afirmação genérica totalmente coberta pela evidência do título."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor 'um salário mínimo' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de emprego."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 30 horas está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 25% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não cita número específico, compatível com evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não cita percentual específico, compatível com evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral corresponde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RJ:190002540198",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RJ:190002540198:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 24899,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2690,
+          "reasoning_output_tokens": 1634
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23801,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20693,
+          "output_tokens_details": {
+            "thinking_tokens": 635
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23801,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20693,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23801,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23801
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3209574
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "8398563d5b691e4eb122e1d7af14ddfe99fd2c6852879ec121adfab35e001b0c",
+    "extractedTextSha256": "a3d2e36f2511d3394d062f111539f17bcf546e680ac7fa28c792a68798be4303",
+    "documentCount": 1,
+    "documentSetSha256": "b55fddea4483351b9680d0584d49952d8bcfa0065b28901507ab667086228fa4",
+    "contentSha256": "45a0ebfc428018283e6b92d1ac223fdf412cabfde49f87a8db65fda56a6d208f"
+  }
+}
