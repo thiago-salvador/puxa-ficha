@@ -27,6 +27,32 @@ interface RedesSociais {
   site_oficial?: string
 }
 
+function normalizeInstagramCandidate(raw: string | null | undefined): string | null {
+  let value = raw?.trim()
+  if (!value) return null
+
+  const looksLikeUrl = /^(?:https?:\/\/|www\.|instagram\.com\/)/i.test(value)
+  if (looksLikeUrl) {
+    try {
+      const parsed = new URL(/^https?:\/\//i.test(value) ? value : `https://${value}`)
+      const host = parsed.hostname.toLowerCase().replace(/^www\./, "")
+      if (host !== "instagram.com") return null
+      value = parsed.pathname.split("/").filter(Boolean)[0] ?? ""
+    } catch {
+      return null
+    }
+  }
+
+  value = value.replace(/^@/, "")
+  return /^[A-Za-z0-9._]{1,30}$/.test(value) ? value.toLowerCase() : null
+}
+
+export function normalizeInstagramUsername(instagram: RedesSociais["instagram"]): string | null {
+  if (typeof instagram === "string") return normalizeInstagramCandidate(instagram)
+  if (!instagram) return null
+  return normalizeInstagramCandidate(instagram.username) ?? normalizeInstagramCandidate(instagram.url)
+}
+
 async function fetchInstagramFollowers(username: string): Promise<number | null> {
   // Tentativa 1: endpoint oficial da web
   if (IG_APP_ID) {
@@ -125,21 +151,21 @@ export async function enrichInstagram(): Promise<IngestResult[]> {
 
       if (!redes.instagram) {
         log("instagram", `  ${cand.slug}: sem username do Instagram, pulando`)
+        result.skipped = true
+        result.skip_reason = "perfil sem Instagram declarado"
+        result.coleta_resultado = "nao_aplicavel"
+        result.coleta_detalhe = "Perfil sem Instagram declarado; nenhuma consulta externa foi executada."
         result.duration_ms = Date.now() - start
         results.push(result)
         continue
       }
 
-      // Suporta tanto formato string quanto objeto
-      let username: string
-      if (typeof redes.instagram === "string") {
-        username = redes.instagram
-      } else {
-        username = redes.instagram.username
-      }
+      const username = normalizeInstagramUsername(redes.instagram)
 
       if (!username) {
-        log("instagram", `  ${cand.slug}: username vazio, pulando`)
+        warn("instagram", `  ${cand.slug}: valor de Instagram inválido; nenhuma URL foi construída`)
+        result.coleta_resultado = "indeterminado"
+        result.coleta_detalhe = "Valor de Instagram inválido; nenhuma consulta ou escrita foi executada."
         result.duration_ms = Date.now() - start
         results.push(result)
         continue
@@ -149,10 +175,27 @@ export async function enrichInstagram(): Promise<IngestResult[]> {
 
       const followers = await fetchInstagramFollowers(username)
 
+      const currentUsername = typeof redes.instagram === "string"
+        ? redes.instagram
+        : redes.instagram.username
+      const currentUrl = typeof redes.instagram === "string"
+        ? redes.instagram
+        : redes.instagram.url
+      const normalizedUrl = `https://instagram.com/${username}`
+      const needsNormalization = currentUsername !== username || currentUrl !== normalizedUrl
+
+      if (followers === null && !needsNormalization) {
+        result.coleta_resultado = "indeterminado"
+        result.coleta_detalhe = "Instagram não disponibilizou a contagem de seguidores; o valor anterior foi preservado."
+        result.duration_ms = Date.now() - start
+        results.push(result)
+        continue
+      }
+
       const instagramAtualizado = {
         username,
-        url: `https://instagram.com/${username}`,
-        followers,
+        url: normalizedUrl,
+        followers: followers ?? (typeof redes.instagram === "string" ? null : redes.instagram.followers ?? null),
       }
 
       const redesAtualizado: RedesSociais = {
@@ -173,9 +216,14 @@ export async function enrichInstagram(): Promise<IngestResult[]> {
         result.rows_upserted++
 
         if (followers !== null) {
+          result.coleta_resultado = "encontrado"
+          result.coleta_volume = 1
+          result.coleta_detalhe = "Perfil consultado e contagem de seguidores atualizada."
           log("instagram", `  ${cand.slug}: @${username} — ${followers.toLocaleString()} seguidores`)
         } else {
-          log("instagram", `  ${cand.slug}: @${username} — followers nao disponivel, username salvo`)
+          result.coleta_resultado = "indeterminado"
+          result.coleta_detalhe = "Username normalizado, mas o Instagram não disponibilizou a contagem de seguidores."
+          log("instagram", `  ${cand.slug}: @${username} — username normalizado; followers indisponível`)
         }
       }
     } catch (err) {
