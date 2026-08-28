@@ -1,12 +1,23 @@
 import { supabase } from "./supabase"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
-import { fetchJSON, sleep } from "./helpers"
+import { fetchJSON } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
-const BASE_URL = "https://legis.senado.leg.br/dadosabertos/senador"
-const ANOS = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
+const BASE_URL = "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps"
+const ANOS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+
+export interface DespesaCeapsOficial {
+  ano?: number | string
+  codSenador?: number | string
+  tipoDespesa?: string
+  fornecedor?: string
+  data?: string
+  valorReembolsado?: number | string
+}
+
+const despesasPorAno = new Map<number, Promise<DespesaCeapsOficial[]>>()
 
 interface Despesa {
   TipoDespesa?: string
@@ -151,6 +162,63 @@ function parseValor(v: string | undefined): number {
   return parseFloat(v.replace(/\./g, "").replace(",", ".")) || 0
 }
 
+function parseValorOficial(v: number | string | undefined): number {
+  if (typeof v === "number") return Number.isFinite(v) ? v : 0
+  return parseValor(v)
+}
+
+/**
+ * Agrega o endpoint administrativo vigente do Senado, que devolve todos os
+ * senadores de um ano. A identidade e o ano sao filtrados pelo retorno, nunca
+ * inferidos apenas pela URL consultada.
+ */
+export function agregarDespesasCeapsOficial(
+  payload: DespesaCeapsOficial[] | null | undefined,
+  senadoId: number,
+  ano: number,
+): ConferenciaDespesas {
+  if (!Array.isArray(payload)) return { ok: true, dados: null }
+
+  const porCategoria: GastoPorCategoria = {}
+  const allDespesas: GastoDestaque[] = []
+  const anosDescartados: string[] = []
+  let total = 0
+
+  for (const despesa of payload) {
+    if (String(despesa.codSenador ?? "").trim() !== String(senadoId)) continue
+
+    const anoRetornado = String(despesa.ano ?? "").trim()
+    if (anoRetornado !== String(ano)) {
+      anosDescartados.push(anoRetornado || "sem ano")
+      continue
+    }
+
+    const valor = parseValorOficial(despesa.valorReembolsado)
+    if (valor <= 0) continue
+
+    const categoria = (despesa.tipoDespesa || "OUTROS").trim().toUpperCase()
+    porCategoria[categoria] = (porCategoria[categoria] ?? 0) + valor
+    total += valor
+    allDespesas.push({
+      fornecedor: (despesa.fornecedor || "").trim(),
+      tipo: categoria,
+      valor,
+      data: despesa.data ?? null,
+    })
+  }
+
+  if (total === 0) return { ok: true, dados: null }
+  return {
+    ok: true,
+    dados: {
+      total,
+      porCategoria,
+      destaques: allDespesas.sort((a, b) => b.valor - a.valor).slice(0, 5),
+      anosDescartados: [...new Set(anosDescartados)],
+    },
+  }
+}
+
 function toArray<T>(v: T | T[] | undefined): T[] {
   if (!v) return []
   return Array.isArray(v) ? v : [v]
@@ -184,27 +252,24 @@ type TentativaDespesas =
   | { tipo: "erro"; motivo: string }
 
 async function fetchDespesasAno(senadoId: number, ano: number): Promise<TentativaDespesas> {
-  const url = `${BASE_URL}/${senadoId}/despesas?ano=${ano}`
+  const url = `${BASE_URL}/${ano}`
 
-  let data: DespesasResponse
+  let data: DespesaCeapsOficial[]
   try {
-    data = await fetchJSON<DespesasResponse>(url, {
-      Accept: "application/json",
-    })
+    let request = despesasPorAno.get(ano)
+    if (!request) {
+      request = fetchJSON<DespesaCeapsOficial[]>(url, { Accept: "application/json" })
+      despesasPorAno.set(ano, request)
+    }
+    data = await request
   } catch (err) {
-    // Em 2026-08-05 esta rota responde 404 ("No static resource
-    // dadosabertos/senador/{id}/despesas") para todo id testado, enquanto
-    // /senador/{id} segue 200: a rota de despesas saiu do ar.
-    //
-    // `fetchJSON` tambem lanca em timeout, DNS, 5xx, 429 e JSON invalido, e
-    // aqui os cinco caem juntos em `erro`. Isso e proposital: nenhum deles
-    // autoriza afirmar que o senador nao tem gasto. Qual foi vai no motivo.
+    despesasPorAno.delete(ano)
     const motivo = err instanceof Error ? err.message : String(err)
-    warn("ceaps-senado", `  HTTP erro para id=${senadoId} ano=${ano}: ${motivo}`)
+    warn("ceaps-senado", `  HTTP erro no conjunto anual ${ano}: ${motivo}`)
     return { tipo: "erro", motivo }
   }
 
-  const conferencia = agregarDespesasDoAno(data, senadoId, ano)
+  const conferencia = agregarDespesasCeapsOficial(data, senadoId, ano)
   if (!conferencia.ok) {
     // Retorno recusado pela guarda de identidade tambem nao e vazio: a API
     // respondeu com dado de outra pessoa ou de outro ano.
@@ -265,14 +330,12 @@ export async function ingestCeapsSenado(): Promise<IngestResult[]> {
 
           if (tentativa.tipo === "erro") {
             anosComErro.push(`${ano} (${tentativa.motivo})`)
-            await sleep(800)
             continue
           }
 
           if (tentativa.tipo === "vazio") {
             anosVazios.push(ano)
             log("ceaps-senado", `  ${cand.slug} ${ano}: sem gasto declarado`)
-            await sleep(800)
             continue
           }
 
@@ -351,8 +414,6 @@ export async function ingestCeapsSenado(): Promise<IngestResult[]> {
           result.errors.push(`Erro no ano ${ano}: ${msg}`)
           error("ceaps-senado", `  ${cand.slug} ${ano}: ${msg}`)
         }
-
-        await sleep(800)
       }
     } catch (err) {
       result.errors.push(err instanceof Error ? err.message : String(err))
