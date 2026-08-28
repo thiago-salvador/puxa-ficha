@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:20:11.774Z",
+  "reviewedAt": "2026-08-28T23:21:42.718Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 128,
-    "human_review_required": 16
+    "approved": 129,
+    "human_review_required": 15
   },
   "items": [
     {
@@ -275,7 +275,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MS:120002532257",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MS",
       "slug": "lucien-rezende",
       "sqCandidato": "120002532257",
@@ -337,7 +337,7 @@
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002543953",
