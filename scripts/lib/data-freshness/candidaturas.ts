@@ -131,7 +131,8 @@ export function compareCandidacies(
       })
     }
 
-    if (!publishedRecord.perfil_slug) {
+    const exigeFichaPublica = !officialRecord.cargo.startsWith("VICE ")
+    if (exigeFichaPublica && !publishedRecord.perfil_slug) {
       addChange(changes, {
         kind: "missing_profile",
         slot: candidacySlot(officialRecord),

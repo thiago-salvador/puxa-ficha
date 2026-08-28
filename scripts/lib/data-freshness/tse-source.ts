@@ -127,6 +127,7 @@ export class OfficialSourceError extends Error {
 
 function normalized(value: string): string {
   return stripAccents(value)
+    .replace(/[-\u2010-\u2015]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .toUpperCase()
