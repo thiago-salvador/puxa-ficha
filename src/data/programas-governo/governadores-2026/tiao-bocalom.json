@@ -1,0 +1,1238 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AC",
+    "sqCandidato": "10002544015",
+    "slug": "tiao-bocalom",
+    "nomeUrna": "TIÃO BOCALOM",
+    "partido": "PSDB",
+    "arquivoNome": "2026AC10002544015_01.pdf",
+    "arquivoNoPacote": "AC/2026AC10002544015_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AC:10002544015:01",
+      "fonte": {
+        "arquivoNome": "2026AC10002544015_01.pdf",
+        "arquivoNoPacote": "AC/2026AC10002544015_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "002ade727df6b7e2bb6fa4e5b1e26eb83e2a9e3ed49eda04f6a5d16f4e87fb1a",
+        "extractedTextSha256": "18ca80536bf0910b0cb708dd906116266ad816f1aa355c997d949a6710341fcf",
+        "paginas": 40,
+        "secoes": [
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027–2030\n\nTIÃO BOCALOM\nCandidato ao Governo do Estado do Acre\n“Trabalho, experiência e compromisso com todo o Acre”\n\n1"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n1. Mensagem do Candidato\n2. Diagnóstico e Visão de Governo\nEixo 1 — Segurança Pública\nEixo 2 — Saúde\nEixo 3 — Comércio e Serviços\nEixo 4 — Indústria, Inovação e Ambiente de Negócios\nEixo 5 — Agronegócio, Bioeconomia e Meio Ambiente\nEixo 6 — Infraestrutura, Logística e Integração Internacional\nEixo 7 — Tecnologia e Governo Digital\nEixo 8 — Educação e Qualificação Profissional\nEixo 9 — Esporte, Cultura e Turismo\nConsiderações Finais\n\n2"
+          },
+          {
+            "id": "1-mensagem-do-candidato",
+            "titulo": "1. MENSAGEM DO CANDIDATO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1. MENSAGEM DO CANDIDATO\n\nO Acre é uma terra de gente trabalhadora, que conhece as dificuldades do isolamento\ngeográfico, da distância dos grandes centros e das desigualdades regionais — mas que\ntambém conhece o valor do trabalho, da experiência de gestão e do compromisso com\nresultados concretos para a população.\nAo longo de mais de quatro décadas de vida pública, como vereador, secretário de\nAgricultura, prefeito de Acrelândia por três mandatos e prefeito de Rio Branco por dois\nmandatos, tive a oportunidade de conhecer de perto a realidade de cada canto do nosso\nEstado: das comunidades ribeirinhas às regiões de fronteira, das áreas rurais aos centros\nurbanos. Essa experiência de gestão pública é o que trago para este Plano de Governo.\nEste documento reúne diretrizes e programas construídos a partir do diálogo com os\nprincipais setores produtivos do Acre — comércio, indústria, agronegócio — e com as\náreas essenciais de infraestrutura, saneamento básico, habitação, segurança pública,\nsaúde, educação, esporte, cultura, turismo e meio ambiente, que exigem um olhar\ntécnico, integrado e permanente. Não é uma promessa vazia, mas um roteiro de\ntrabalho para os quatro anos de mandato, com eixos estratégicos, programas e diretrizes\nclaras.\nNosso compromisso é com um governo que trabalhe para todos e para todo o Acre —\nda capital ao interior, das fronteiras às comunidades tradicionais —, que respeita o\ndinheiro público, que dialoga com os setores produtivos e que entrega resultados\nconcretos para a vida das famílias acreanas.\nAo final de nosso mandato, espero ter contribuído para a melhoria da qualidade de vida\nda nossa população Acreana!\n\n3"
+          },
+          {
+            "id": "2-visao-de-governo-o-verdadeiro-desenvolvimento",
+            "titulo": "2. Visão de Governo: O Verdadeiro Desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "2. Visão de Governo: O Verdadeiro Desenvolvimento\nSustentável - Econômico, Social e Ambiental\nPRODUZIR PARA EMPREGAR! Essa é a visão central do nosso governo. Visão que\ndefendemos há mais de trinta anos, e que foi por um bom tempo ironizada por aqueles\nque defendiam a floresta como eixo central da economia do estado. Para nossa\nsatisfação, os mesmos que ironizam reconhecem que o PRODUZIR PARA\nEMPREGAR é a estratégia correta para promover o verdadeiro desenvolvimento\nsustentável do nosso querido Estado do Acre! O tempo sempre será o Senhor da razão!\nA economia do Acre é predominantemente baseada no setor de serviços, que responde\npor cerca de 85% do valor adicionado ao PIB estadual, com destaque para a\nadministração pública, o comércio e as atividades imobiliárias. O comércio varejista\ntem mostrado sinais de recuperação, mas o setor de serviços permanece sensível às\noscilações de consumo e renda, evidenciando a necessidade de uma nova matriz\neconômica estadual.\nO Acre ocupa posição geográfica estratégica, com fronteira internacional com o Peru e\na Bolívia e a Rodovia Interoceânica cruzando seu território — um ativo ainda\nsubaproveitado para o comércio exterior e a integração logística sul-americana. Ao\nmesmo tempo, o Estado enfrenta gargalos estruturais históricos: deficiência crônica em\nsaneamento básico (últimos lugares em investimento entre os estados brasileiros),\ndependência quase exclusiva do modal rodoviário, conectividade digital ainda\nincompleta fora dos centros urbanos, e insuficiência crônica de infraestrutura de saúde\nregionalizada.\nNa segurança pública, o Acre convive com desafios ligados ao tráfico internacional de\ndrogas e armas, à atuação de facções criminosas e a índices de criminalidade acima da\nmédia nacional, agravados pela extensa fronteira seca e fluvial com Peru e Bolívia. Na\nsaúde, o modelo de financiamento federal não reflete adequadamente os custos de\n4"
+          },
+          {
+            "id": "operar-em-um-territorio-amazonico-de-grandes-distancias-rios-sazonais-e",
+            "titulo": "operar em um território amazônico de grandes distâncias, rios sazonais e municípios de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "operar em um território amazônico de grandes distâncias, rios sazonais e municípios de\ndifícil acesso.\nPor outro lado, o Estado acumula ativos importantes: uma das maiores coberturas de\nensino técnico integrado do país, avanços recentes em governo digital e conectividade\n(Infovia Acre), a Zona de Processamento de Exportação em Senador Guiomard, uma\nagropecuária em expansão e uma biodiversidade estratégica para a bioeconomia e o\nmercado de créditos de carbono.\nNesse contexto, o desenvolvimento econômico do Acre passa obrigatoriamente por\nmaiores investimentos em infraestrutura urbana e rural, fortalecimento da segurança\npública, melhoria da qualidade da saúde pública, melhoria da qualidade da educação,\nfortalecimento do turismo e da economia criativa, e pelo pelo desenvolvimento do\nagronegócio, cujas potencialidades são indiscutíveis dadas as características especiais\nda nossa terra e do nosso clima, sendo este último, segundo a EMBRAPA, O MELHOR\nCLIMA DO BRASIL PARA A AGROPECUÁRIA! O agronegócio passará a ser o eixo\nprincipal da nossa matriz econômica, - CAMPO RICO, CIDADE RICA; CAMPO\nPOBRE, CIDADE POBRE!\nA segurança jurídica e um melhor ambiente de negócios para os investidores são\nelementos essenciais considerados no nosso plano de governo.\nÉ preciso fortalecer o desenvolvimento econômico para estabelecer as bases\nfundamentais para o verdadeiro desenvolvimento social e ambiental. Nesse sentido,\njamais deve haver a escravização do ser humano pelo meio ambiente, mas sim uma\nutilização racional desse último em benefício do desenvolvimento econômico e da\nqualidade de vida.\nO desenvolvimento social é diretriz estratégica do nosso plano de governo, que será\nimplementado através do fortalecimento das políticas de apoio às populações\nvulneráveis, às populações em situação de vulnerabilidade, às crianças, aos jovens e\n\n5"
+          },
+          {
+            "id": "aos-idosos-tendo-como-foco-as-familias-cuja-protecao-e-integridade-sao-o",
+            "titulo": "aos idosos, tendo como foco as famílias, cuja proteção e integridade são os pilares de",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "aos idosos, tendo como foco as famílias, cuja proteção e integridade são os pilares de\numa sociedade saudável.\nNesse contexto, será dado apoio igualmente às populações indígenas, que constituem\nparte fundamental da nossa diretriz de desenvolvimento social.\nOs programas sociais do nosso governo estarão articulados com programas sociais\nfederais como o Bolsa Família, cuja origem remonta ao Bolsa Escola criado pelo\nPresidente Fernando Henrique Cardoso, do PSDB 45, e são muito importantes para\napoiar as populações em situação de vulnerabilidade social. Eles terão como objetivo\nfinal proporcionar às famílias acreanas as condições para sair da situação de\nvulnerabilidade e poder ingressar no mercado, seja como trabalhadores ou\nempreendedores nos diversos setores da economia, proporcionando o aumento de renda\ne da qualidade de vida.\nNo desenvolvimento ambiental, a nossa diretriz é muito clara: não há incompatibilidade\ncom o desenvolvimento econômico e social. Ao contrário, as nossas riquezas\nambientais não somente devem ser preservadas, mas utilizadas, de forma sustentável,\nem benefício do ser humano. Nesse sentido, vamos modernizar a legislação ambiental\nestadual e, somar esforços, em nível federal, para modernizar e flexibilizar a legislação\nambiental federal de tal forma a viabilizar maior exploração das nossas terras\nagricultáveis.\nObras de qualidade realizadas a custos justos de mercado e com pagamentos em dia,\nsendo ao mesmo tempo intolerável com quaisquer desvios e desperdícios de recursos\npúblicos, constituem diretrizes inegociáveis do nosso Governo.\nEste Plano de Governo parte dessa visão para propor um conjunto integrado de\npolíticas públicas, organizadas em eixos estratégicos, com foco em resultados\nmensuráveis, gestão orientada por dados e diálogo permanente com toda a sociedade\nAcreana.\n\n6"
+          },
+          {
+            "id": "eixo-1-seguranca-publica",
+            "titulo": "EIXO 1 — SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1 — SEGURANÇA PÚBLICA\nTecnologia, integração e autoridade para proteger o Acre.\nO Acre vive, desde meados de 2015, uma transformação profunda no cenário da\nsegurança pública, marcada pela consolidação de organizações criminosas, pelo\naumento da violência letal, pela expansão do tráfico de drogas e pelo agravamento da\nviolência contra a mulher. A fronteira internacional com Peru e Bolívia impõe desafios\npermanentes ao controle territorial. Some-se a isso características particulares do\nEstado — renda média abaixo da nacional, alta dependência de programas sociais,\nmunicípios isolados e limitações logísticas — que exigem um modelo próprio de\nenfrentamento.\nNosso governo assumirá o compromisso de reconstruir a segurança pública acreana por\nmeio de um novo modelo de gestão, baseado em inteligência, tecnologia, integração\ninstitucional e atuação transversal de todo o governo do Estado. A segurança pública\ndeixará de ser responsabilidade exclusiva das forças policiais e passará a orientar\npolíticas integradas de educação, assistência social, saúde, infraestrutura, cultura,\nesporte, juventude e desenvolvimento econômico.\n1.1 Governo Digital da Segurança Pública\n•​ Implantar o Programa Acre Mais Seguro, estruturando um moderno ecossistema\nestadual de segurança inteligente.\n•​ Ampliar significativamente o videomonitoramento inteligente em todos os\nmunicípios.\n•​ Ampliar o reconhecimento inteligente de veículos, pessoas e padrões criminais,\nrespeitando a legislação vigente.\n•​ Integrar os dados de todas as forças de segurança em uma única plataforma\ntecnológica.\n7"
+          },
+          {
+            "id": "utilizar-inteligencia-artificial-como-apoio-a-tomada-de-decisao-operacio",
+            "titulo": "•​ Utilizar inteligência artificial como apoio à tomada de decisão operacional.",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•​ Utilizar inteligência artificial como apoio à tomada de decisão operacional.\n•​ Expandir o uso de drones, sensores e monitoramento remoto em áreas urbanas,\nrurais e de fronteira.\n1.2 Combate ao Crime Organizado\n•​ Fortalecer a inteligência policial e intensificar operações integradas permanentes.\n•​ Priorizar o combate às lideranças das organizações criminosas.\n•​ Ampliar o enfrentamento aos crimes financeiros relacionados às facções.\n•​ Fortalecer o combate ao tráfico de drogas e armas, com integração permanente\nentre ações estaduais e federais.\n•​ Criar protocolos estaduais de enfrentamento às organizações criminosas.\n1.3 Segurança das Fronteiras\n•​ Integrar operações com forças federais e fortalecer a inteligência transfronteiriça.\n1.4 Integração do Sistema Estadual de Segurança\n•​ Potencializar a integração entre Polícia Militar, Polícia Civil, Corpo de Bombeiros,\nPolícia Penal, Perícia Oficial, Defesa Civil e a Polícia Federal.\n•​ Aperfeiçoar protocolos operacionais conjuntos e compartilhar bases de dados e\ninteligência.\n•​ Estabelecer metas integradas entre os órgãos e modernizar a gestão baseada em\nindicadores.\n1.5 Valorização dos Profissionais de Segurança\n•​ Modernizar a política de valorização profissional e investir continuamente em\ncapacitação.\n•​ Ampliar o uso de tecnologias individuais de proteção e fortalecer programas de\nsaúde física e mental.\n8"
+          },
+          {
+            "id": "modernizar-equipamentos-e-infraestrutura-incentivando-inovacao-e-formaca",
+            "titulo": "•​ Modernizar equipamentos e infraestrutura, incentivando inovação e formação",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "•​ Modernizar equipamentos e infraestrutura, incentivando inovação e formação\npermanente.\n1.6 Segurança das Mulheres\n•​ Implantar o Programa Escudo Rosa, com fluxo interinstitucional de proteção às\nvítimas.\n•​ Expandir mecanismos tecnológicos de proteção e fortalecer o monitoramento de\nagressores.\n•​ Integrar segurança pública, justiça, assistência social e saúde, com ações educativas\nde prevenção.\n1.7 Juventude sem Violência\n•​ Ampliar oportunidades de esporte, cultura e lazer, e fortalecer programas de\nqualificação profissional.\n•​ Incentivar o primeiro emprego e desenvolver ações de inclusão digital para jovens.\n•​ Integrar educação, assistência social, esporte e segurança pública na prevenção ao\nrecrutamento pelo crime organizado.\n1.8 Transversalidade Governamental e Gestão por Resultados\n•​ Integrar todas as secretarias estaduais em um plano único de prevenção da\nviolência, com metas compartilhadas.\n•​ Priorizar investimentos públicos nos territórios com maiores índices de\nvulnerabilidade.\n•​ Estabelecer metas anuais de redução da criminalidade e utilizar análise de dados no\nplanejamento estratégico.\n•​ Firmar convênios com universidades para pesquisas aplicadas em segurança\npública.\n1.9 Segurança Rural e Proteção do Território\n9"
+          },
+          {
+            "id": "implantar-o-programa-campo-seguro-voltado-a-protecao-das-propriedades-e",
+            "titulo": "•​ Implantar o Programa Campo Seguro, voltado à proteção das propriedades e",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "•​ Implantar o Programa Campo Seguro, voltado à proteção das propriedades e\ncomunidades rurais.\n•​ Criar Batalhões Rurais, com atuação permanente e policiamento especializado.\n•​ Implantar canais tecnológicos de comunicação direta entre produtores rurais e\nforças de segurança.\n•​ Promover operações integradas permanentes para proteção da produção\nagropecuária.\n1.10 Segurança nas Escolas\n•​ Potencializar o Programa Escola Segura Acre, integrando Segurança Pública,\nEducação, Assistência Social, Saúde e Justiça.\n•​ Implantar videomonitoramento inteligente nas unidades escolares mais vulneráveis.\n•​ Capacitar gestores e professores para identificação precoce de situações de risco.\n•​ Implantar canais tecnológicos seguros de comunicação entre escolas e forças de\nsegurança.\nCompromisso de governo: devolver ao cidadão acreano o direito de viver sem medo,\ncom tecnologia de ponta, integração institucional, valorização dos profissionais e forte\natuação preventiva — recuperando territórios, protegendo fronteiras, defendendo as\nmulheres e oferecendo oportunidades à juventude.\n\n10"
+          },
+          {
+            "id": "eixo-2-saude",
+            "titulo": "EIXO 2 — SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2 — SAÚDE\nDireito não deve ser favor, e acesso não deve ser privilégio. “Regionalizar para garantir\nacesso.”\nA saúde pública no Acre enfrenta desafios amplificados pela realidade amazônica:\ngrandes distâncias, sazonalidade dos rios, limitações logísticas, baixa densidade\npopulacional e vazios assistenciais. O Estado está organizado em três regionais de\nsaúde e 22 municípios, dos quais quatro dependem exclusivamente de transporte aéreo\ne fluvial durante grande parte do ano. A precariedade da principal rodovia federal\ncompromete a remoção segura de pacientes em urgência e emergência, gerando gasto\nelevado com remoções aeromédicas que poderiam ser progressivamente redirecionados\npara uma rede regionalizada mais resolutiva.\nNosso governo assumirá o compromisso de garantir que todo cidadão acreano tenha\nacesso oportuno e resolutivo aos serviços de saúde, independentemente de onde vive —\nlevando o cuidado até onde as pessoas estão, e não apenas o paciente até o cuidado. Os\nprincípios que orientam esta política são: defesa do SUS, regionalização da assistência,\nequidade, eficiência do gasto público, transparência, valorização dos profissionais,\nciência e inovação, e atenção centrada no cidadão.\n2.1 Fortalecimento da Atenção Primária\n•​ Ampliar o financiamento e a habilitação de unidades de saúde, tornando cada\nmunicípio mais resolutivo.\n•​ Fortalecer a Estratégia Saúde da Família, com foco em prevenção.\n•​ Incentivar a telemedicina para reduzir a necessidade de transporte de pacientes.\n•​ Ampliar a oferta de exames diagnósticos por meio de política estadual de\ncofinanciamento.\n2.2 Regionalização da Média e Alta Complexidade\n11"
+          },
+          {
+            "id": "reduzir-deslocamentos-de-pacientes-por-rodovias-intrafegaveis-ampliando",
+            "titulo": "•​ Reduzir deslocamentos de pacientes por rodovias intrafegáveis, ampliando centros",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•​ Reduzir deslocamentos de pacientes por rodovias intrafegáveis, ampliando centros\nregionais resolutivos.\n•​ Fortalecer hospitais regionais em municípios como Tarauacá e Brasiléia, incluindo\ncentro cirúrgico para urgência, emergência, atendimento pediátrico e obstétrico 24\nhoras.\n•​ Expandir a oferta de cirurgias eletivas por meio de centros cirúrgicos\ndescentralizados.\n•​ Concluir a construção do novo hospital de Xapuri.\n•​ Transformar Unidades Mistas em Hospitais de Pequeno Porte (HPP) em\nmunicípios estratégicos.\n•​ Expandir o serviço de hemodiálise para Sena Madureira e Tarauacá.\n2.3 Urgência e Emergência\n•​ Fortalecer o SAMU, priorizando o atendimento pré-hospitalar primário e as\ntransferências de alta complexidade.\n•​ Renovar a frota de ambulâncias tipo A para transporte intermunicipal.\n•​ Ampliar a cobertura do transporte aeromédico para 100% do Estado, com convênio\njunto ao CIOPAER.\n•​ Implantar Central de Regulação das Urgências (CRU) e um complexo regulador\nregional no Alto Acre.\n•​ Construir a UPA 24h de Epitaciolândia e concluir a UPA da parte alta e a nova\nMaternidade de Rio Branco.\n•​ Reativar a UPA do Tucumã e construir CAPS e policlínicas regionais em Cruzeiro\ndo Sul e Brasiléia.\n•​ Criar o pronto-socorro pediátrico de Rio Branco e concluir o Hospital João Câncio,\nem Sena Madureira.\n\n12"
+          },
+          {
+            "id": "implantar-linha-de-cuidado-para-avc-e-infarto-agudo-do-miocardio-em-todo",
+            "titulo": "•​ Implantar linha de cuidado para AVC e infarto agudo do miocárdio em todo o",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "•​ Implantar linha de cuidado para AVC e infarto agudo do miocárdio em todo o\nEstado.\n•​ Implantar centro de hemodinâmica em Brasiléia e leitos de UTI adulto no Alto\nAcre e UTI pediátrica em Cruzeiro do Sul.\n2.4 Saúde Digital\n•​ Implantar prontuário eletrônico integrado em todas as unidades de saúde estaduais.\n•​ Ampliar telemedicina, telerradiologia e TeleUTI, via PROADI-SUS.\n•​ Utilizar inteligência artificial como apoio ao diagnóstico.\n•​ Portal de Transparência da Regulação (Paciente acompanha pelo Celular).\n2.5 Saúde da Mulher\n•​ Fortalecer campanhas de prevenção do câncer e a cobertura vacinal contra o HPV.\n•​ Regionalizar o tratamento oncológico, com sala de infusão em Brasiléia.\n•​ Garantir pré-natal de qualidade por teleinterconsulta e reduzir a mortalidade\nmaterna.\n•​ Ampliar a mamografia com mamógrafos móveis para as regionais.\n2.6 Saúde da Criança\n•​ Expandir a cobertura vacinal e adquirir doses de nirsevimabe para combate ao vírus\nsincicial respiratório.\n•​ Fortalecer a triagem neonatal e combater a mortalidade infantil.\n•​ Expandir a pediatria especializada via teleinterconsulta e concluir os CER II de\nBrasiléia e Cruzeiro do Sul.\n•​ Apoiar as famílias com Crianças com Deficiência, oferecendo ambientes e\nmão-de-obra especializados.\n2.7 Saúde Mental\n13"
+          },
+          {
+            "id": "fortalecer-os-caps-municipais-com-politica-estadual-de-cofinanciamento",
+            "titulo": "•​ Fortalecer os CAPS municipais com política estadual de cofinanciamento.",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "•​ Fortalecer os CAPS municipais com política estadual de cofinanciamento.\n•​ Criar um Programa de Recuperação de Dependentes Químicos em parceria com\nPrefeituras e entidades especializadas na área.\n2.8 Povos Indígenas e Populações Isoladas\n•​ Garantir logística diferenciada e aproximação do governo estadual à SESAI.\n•​ Respeitar as especificidades culturais no atendimento.\n2.9 Combate às Endemias\n•​ Buscar a erradicação da malária e ampliar a vacinação contra a dengue.\n•​ Fortalecer o enfrentamento à leishmaniose, tuberculose e hanseníase por meio de\nvigilância ativa, tecnologia, educação em saúde e diagnóstico precoce.\n2.10 Valorização dos Profissionais\n•​ Ampliar vagas de residência e implantar residência médica estadual.\n•​ Fortalecer a Escola de Saúde Pública (ESP) e incentivar a fixação de profissionais\nem áreas remotas.\n\n14"
+          },
+          {
+            "id": "eixo-3-comercio-e-servicos",
+            "titulo": "EIXO 3 — COMÉRCIO E SERVIÇOS",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3 — COMÉRCIO E SERVIÇOS\nO comércio, os serviços e o turismo são setores essenciais da economia acreana. Nosso\ngoverno tratará esses setores como prioridade estratégica, atuando para reduzir a\nburocracia, qualificar a mão de obra e ampliar os mercados para os negócios locais.\n3.1 Desburocratização e Ambiente de Negócios\n•​ Simplificar processos de licenciamento e alvarás, reduzindo prazos e entraves à\nabertura e regularização de empresas.\n•​ Substituir a lógica puramente punitiva de fiscalização por um modelo de\nfiscalização orientadora, baseado em matrizes de risco.\n•​ Agilizar a emissão de laudos de sanidade animal e vegetal e o rastreamento digital\nda cadeia produtiva para exportação.\n3.2 Capacitação Profissional e Diálogo Institucional\n•​ Criar fóruns e mesas de concertação permanentes entre o setor produtivo e a gestão\npública.\n•​ Incentivar programas de qualificação profissional em parceria com o Sistema\nComércio (Senac/Fecomércio), alinhados às demandas reais do mercado.\n3.3 Interiorização das Atividades Econômicas\n•​ Investir em infraestrutura de interligação rodoviária entre os municípios para\nfortalecer o comércio e os serviços fora da capital.\n•​ Apoiar a diversificação dos mercados externos, aproveitando a posição do Acre\njunto ao Peru e a corredores logísticos andinos.\n3.4 Zona de Processamento de Exportação (ZPE)\n•​ Desenvolver políticas públicas para posicionar o Estado como plataforma logística\ne produtiva voltada ao comércio exterior.\n15"
+          },
+          {
+            "id": "investir-na-revitalizacao-e-modernizacao-da-zpe-de-senador-guiomard-como",
+            "titulo": "•​ Investir na revitalização e modernização da ZPE de Senador Guiomard como hub",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•​ Investir na revitalização e modernização da ZPE de Senador Guiomard como hub\nlogístico transfronteiriço.\n3.5 Compras Governamentais como Política de Estado\n•​ Direcionar o orçamento público de custeio e investimento para a aquisição de bens\ne serviços de empresas locais.\n•​ Consolidar as Compras Governamentais como política permanente de indução do\n\ndesenvolvimento socioeconômico regional.\n\n16"
+          },
+          {
+            "id": "eixo-4-industria-inovacao-e-ambiente-de",
+            "titulo": "EIXO 4 — INDÚSTRIA, INOVAÇÃO E AMBIENTE DE",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4 — INDÚSTRIA, INOVAÇÃO E AMBIENTE DE\nNEGÓCIOS\nA industrialização do Acre passa pela redução do chamado “Custo Acre” — o conjunto\nde custos logísticos, tributários e regulatórios que hoje penalizam o setor produtivo.\nNosso governo atuará de forma estruturada para reverter esse cenário.\n4.1 Infraestrutura, Logística e Comércio Exterior\n•​ Priorizar recursos e atuar junto ao Governo Federal para manutenção e recuperação\ndas rodovias BR-364 e BR-317 durante todo o ano.\n•​ Executar programa contínuo de pavimentação e manutenção de ramais estratégicos,\ncom construção de pontes definitivas.\n•​ Atuar junto junto ao Governo Federal para modernizar a infraestrutura e otimizar\nos serviços aduaneiros nas alfândegas de Epitaciolândia e Assis Brasil.\n•​ Atuar junto ao Governo Federal para estruturar um recinto alfandegado do tipo\nPorto Seco integrado à ZPE/AC.\n•​ Viabilizar a internacionalização dos aeroportos de Rio Branco e Cruzeiro do Sul e\nfomentar rotas aéreas regionais com os países andinos.\n•​ Promover a integração física e aduaneira com Peru e Bolívia, com um Comitê\nEstadual dedicado.\n•​ Expandir a conectividade digital (fibra óptica) em polos industriais, áreas rurais\nprodutivas e rodovias federais.\n•​ Firmar convênios com o Estado do Amazonas para manutenção de ramais e linhas\nelétricas em regiões limítrofes.\n•​ Implantar pequenos portos e rampas de acesso ao longo das hidrovias estaduais.\n4.2 Compras Governamentais e Segurança do Setor Produtivo\n17"
+          },
+          {
+            "id": "criar-editais-de-licitacao-que-facilitem-a-participacao-de-industrias-lo",
+            "titulo": "•​ Criar editais de licitação que facilitem a participação de indústrias locais e divulgar",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "•​ Criar editais de licitação que facilitem a participação de indústrias locais e divulgar\no calendário de compras com antecedência.\n•​ Entregar projetos de engenharia completos para evitar obras paradas e atrasos de\npagamento.\n•​ Cumprir integralmente os calendários de pagamento às empresas contratadas.\n•​ Firmar convênios com instituições financeiras para linhas de antecipação de\nrecebíveis das empresas contratadas pelo Estado.\n•​ Instalar sistemas de videomonitoramento nas vias estaduais para combater o roubo\nde cargas.\n•​ Priorizar, sempre que juridicamente possível, a aquisição de produtos de empresas\nacreanas nas compras públicas.\n4.3 Ambiente de Negócios\n•​ Criar a Agência INVEST ACRE, à semelhança da Agência Invest SP, onde todas\nas informações necessárias para a tomada de decisões de investimentos no nosso\nEstado possam ser encontradas, e a partir da qual os empreendedores do Estado\npossam buscar novos mercados, novas oportunidades de negócios e novos\nparceiros de investimento.\n•​ Criar Conselho Estadual de Desenvolvimento, de caráter estratégico, unindo\ngoverno, federações e associações.\n•​ Modernizar e agilizar o fluxo administrativo nos órgãos de fiscalização e\nlicenciamento (Sefaz, Imac/Sema).\n•​ Rever as regras do diferencial de alíquota do ICMS para tornar a indústria local\nmais competitiva.\n•​ Expandir o Programa Governo Digital do Acre para o setor produtivo.\n4.4 Produção, Inovação e Sustentabilidade\n\n18"
+          },
+          {
+            "id": "firmar-parceria-com-o-sistema-s-sesi-senai-iel-para-capacitacao-em-novas",
+            "titulo": "•​ Firmar parceria com o Sistema S (Sesi/Senai/IEL) para capacitação em novas",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "•​ Firmar parceria com o Sistema S (Sesi/Senai/IEL) para capacitação em novas\ntecnologias.\n•​ Revitalizar e expandir a infraestrutura dos parques industriais existentes.\n•​ Fomentar armazenagem e logística agropecuária (silos e câmaras frigoríficas).\n•​ Fortalecer a Fundação de Tecnologia do Acre (Funtac).\n•​ Implementar política estadual de concessão florestal sustentável, priorizando a\nregularização fundiária.\n4.5 Construção Civil e Habitação\n•​ Expandir redes de água e esgoto nos municípios;\n•​ Apoiar as prefeituras na destinação correta de resíduos sólidos, priorizando a\nreciclagem;\n•​ Ampliar o programa de habitação popular para todos os municípios;\n•​ Articular junto à ANEEL a modernização das subestações e linhas de transmissão,\nviabilizando geração fotovoltaica.\n\n19"
+          },
+          {
+            "id": "eixo-5-agronegocio-bioeconomia-e-meio",
+            "titulo": "EIXO 5 — AGRONEGÓCIO, BIOECONOMIA e MEIO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5 — AGRONEGÓCIO, BIOECONOMIA e MEIO\nAMBIENTE\nA agropecuária é um dos principais pilares do desenvolvimento econômico e social do\nAcre, presente em todos os municípios. Nosso governo tratará o campo como\nprioridade de Estado, superando gargalos históricos de infraestrutura, crédito,\narmazenagem e conectividade rural.\n\n5.1 Programas de Produção para Agricultura Familiar\n•​ Programa de produção de alimentos como arroz, feijão, milho e seus derivados e\noutros, além do leite e seus derivados em parceria com os municípios;\n•​ Programa de produção de produtos de exportação como café, cacau, açaí, banana e\noutros em parceira com os municípios;\n5.2 Programa PoupeVerde de Incentivo ao Plantio Árvores de Madeiras\nComerciais\n•​ Apoiar o plantio de árvores de madeiras comerciais ao longo das cercas de\npastagens em parceria com os municípios.\n5.3 Programa de Recuperação de Matas Ciliares\n•​ Criar um programa de recuperação de matas ciliares em parceria com os\nmunicípios.\n5.4 Programa de Arborização de Áreas Urbanas\n•​ Criar um programa de arborização de áreas urbanas em parceria com os\nmunicípios..\n5.5 Regularização Fundiária e Segurança Jurídica no Campo\n20"
+          },
+          {
+            "id": "criar-programa-estadual-de-regularizacao-fundiaria-rural-digitalizando-p",
+            "titulo": "•​ Criar Programa Estadual de Regularização Fundiária Rural, digitalizando processos",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "•​ Criar Programa Estadual de Regularização Fundiária Rural, digitalizando processos\ne promovendo mutirões itinerantes nos municípios com maior demanda.\n•​ Subsidiar o georreferenciamento de pequenas propriedades e minifúndios, em\nconvênio com universidades.\n•​ Ampliar recursos humanos e integrar sistemas para dar celeridade à análise do\nCadastro Ambiental Rural (CAR).\n•​ Criar Câmara Permanente de Conciliação de Conflitos Fundiários, com mediação\npreventiva de disputas de terra.\n•​ Atualizar tecnicamente o Zoneamento Econômico-Ecológico (ZEE) do Estado.\n5.6 Crédito Rural, Gestão de Riscos e Segurança da Produção\n•​ Articular convênios com Sociedades de Garantia de Crédito para flexibilizar\ngarantias exigidas de pequenos e médios produtores.\n•​ Estabelecer protocolo integrado de resposta rápida a desastres climáticos, em\ncoordenação com a Defesa Civil.\n5.7 Infraestrutura, Logística e Ambiente para a Produção\n•​ Instituir política permanente de recuperação, manutenção e pavimentação de\nramais rurais estratégicos, em parceria com os municípios.\n•​ Substituir, sempre que possível, pontes de madeira por estruturas definitivas e\nimplantar sistemas eficientes de drenagem.\n•​ Cobrar da ENERGISA a expansão da rede elétrica trifásica nos principais\ncorredores produtivos, incentivando a geração fotovoltaica.\n5.8 Competitividade, Comercialização e Inserção em Mercados\n•​ Criar agência estadual de inteligência de mercado e promoção comercial do\nagronegócio acreano.\n\n21"
+          },
+          {
+            "id": "prestar-suporte-tecnico-para-adequacao-sanitaria-a-normas-federais-e-int",
+            "titulo": "•​ Prestar suporte técnico para adequação sanitária a normas federais e internacionais",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "•​ Prestar suporte técnico para adequação sanitária a normas federais e internacionais\n(SISBI e protocolos de exportação).\n•​ Desenvolver plataformas digitais para comercialização direta da produção\nagropecuária.\n•​ Fortalecer o Corredor Bioceânico e a Rota do Pacífico como eixos estratégicos de\nescoamento internacional, cobrando do Governo Federal a interligação com o Peru\nvia Pucalpa.\n5.9 Agroindustrialização e Agregação de Valor\n•​ Atrair\n\ninvestimentos\n\npara\n\ninstalação\n\nde\n\nindústrias\n\nprocessadoras,\n\ncom\n\ndesburocratização ambiental.\n•​ Estruturar a cadeia do couro bovino, incentivando curtumes locais via PPPs.\n•​ Apoiar o fortalecimento da bacia leiteira em todos os municípios.\n•​ Incentivar biorrefinarias e biocombustíveis, atraindo usinas de etanol de milho\nintegradas à pecuária.\n5.10 Modernização da Produção e Resiliência Climática\n•​ Desburocratizar o licenciamento ambiental e a outorga de uso de recursos hídricos\npara a agricultura irrigada.\n5.11 Assistência Técnica, Beneficiamento, Armazenamento, Inovação e\nTransformação Digital no Campo\n•​ Recriar a EMATER para prestar assistência técnica gratuita à Agricultura Familiar\nem todos os municípios.\n•​ Fortalecer a CAGEACRE para que possa atender à agricultura familiar com\nbeneficiamento, armazenamento e comercialização, em todos os municípios.\n•​ Democratizar o acesso a drones, telemetria e estações meteorológicas para\nagricultura de precisão.\n22"
+          },
+          {
+            "id": "modernizar-a-assistencia-tecnica-rural-com-plataformas-remotas-e-monitor",
+            "titulo": "•​ Modernizar a assistência técnica rural com plataformas remotas e monitoramento",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "•​ Modernizar a assistência técnica rural com plataformas remotas e monitoramento\nvia satélite.\n•​ Estimular a profissionalização da gestão das propriedades rurais, com foco em\nplanejamento sucessório e permanência do jovem no campo.\n•​ Fomentar parcerias entre universidades, Sistema S e o setor produtivo para o\nsurgimento de agtechs amazônicas.\n\n23"
+          },
+          {
+            "id": "eixo-6-infraestrutura-logistica-e",
+            "titulo": "EIXO 6 — INFRAESTRUTURA, LOGÍSTICA E",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6 — INFRAESTRUTURA, LOGÍSTICA E\nINTEGRAÇÃO INTERNACIONAL\nA infraestrutura é a base que condiciona todos os demais eixos deste Plano de Governo.\nSem rodovias trafegáveis, saneamento adequado, energia estável e conectividade\ndigital, nenhum setor produtivo consegue atingir seu potencial pleno.\n6.1 Saneamento Básico\n•​ Ampliar de forma acelerada os investimentos em água tratada e coleta de esgoto\n6.2 Malha Rodoviária e Ramais\n•​ Assegurar manutenção preventiva e contínua da malha viária estadual, e garantir\nintegração rodoviária dos municípios de difícil acesso - Santa Rosa, Jordão,\nMarechal Thaumaturgo e Porto Walter.\n•​ Cobrar do Governo Federal intervenções definitivas em pavimentação, drenagem e\npontes na BR-364, principal ligação entre o Vale do Juruá e Rio Branco, bem como\na recuperação definitiva do trecho da Divisa de Rondônia a Rio Branco (BR-364) e\nda BR 317 da Divisa do Amazonas até Assis Brasil.\n•​ Executar cronograma permanente de conservação de ramais em parceria com as\nprefeituras municipais.\n•​ Criar um programa de desobstrução de rios e igarapés para facilitar a navegação\nfluvial.\n6.3 Integração Bioceânica e Comércio Exterior\n•​ Fortalecer acordos institucionais com departamentos peruanos para impulsionar a\nintegração logística e o fluxo comercial.\n•​ Posicionar o Acre como hub logístico transfronteiriço, aproveitando o acesso aos\nportos de Matarani, Ilo e Chancay, no Peru.\n24"
+          },
+          {
+            "id": "digitalizar-integralmente-os-processos-de-importacao-e-exportacao-com-ba",
+            "titulo": "•​ Digitalizar integralmente os processos de importação e exportação, com balcão",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "•​ Digitalizar integralmente os processos de importação e exportação, com balcão\núnico transfronteiriço.\n6.4 Energia e Conectividade\n•​ Ampliar a conectividade digital em regiões urbanas e rurais, utilizando a\ninfraestrutura da Infovia Acre.\n•​ Investir em energia limpa e expansão das redes digitais ao longo das rotas\ncomerciais estratégicas.\n•​ Reduzir apagões e expandir redes móveis 4G/5G e fibra óptica, com foco em áreas\ncomerciais e produtivas.\n\n25"
+          },
+          {
+            "id": "eixo-7-tecnologia-e-governo-digital",
+            "titulo": "EIXO 7 — TECNOLOGIA E GOVERNO DIGITAL",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7 — TECNOLOGIA E GOVERNO DIGITAL\nNosso governo ampliará a incorporação de tecnologia e implantará o governo digital,\nincorporando inteligência artificial à gestão pública e à qualificação da população.\n7.1 Governo Digital e Desburocratização\n•​ Expandir plataformas on-line unificadas para acesso rápido, transparente e\npadronizado a serviços públicos.\n•​ Digitalizar processos fiscais — emissão de notas eletrônicas, parcelamento on-line,\nemissão de certidões — para reduzir custos das empresas.\n•​ Priorizar micro e pequenos empresários na simplificação de processos, reduzindo\nrisco de multas e informalidade.\n7.2 Inteligência Artificial na Gestão Pública\n•​ Aplicar inteligência artificial na priorização da manutenção viária, cruzando dados\nde imagens aéreas (drones) com informações de rotas de transporte público e\nescoamento de produção.\n•​ Utilizar IA como apoio à tomada de decisão operacional em segurança pública e\nsaúde (apoio diagnóstico).\n•​ Estruturar central de dados governamental integrada entre secretarias.\n7.3 Qualificação Digital e Inovação\n•​ Criar Programa Estadual de Qualificação Digital, em parceria com Fecomércio,\nSistema S e Senac, voltado a jovens e trabalhadores.\n•​ Desenvolver trilhas de capacitação para micro e pequenas empresas em gestão\ndigital, vendas on-line e marketplaces.\n•​ Criar o Hub de Inovação do Estado.\n•​ Ampliar a Infovia Acre e a conectividade em regiões rurais e de fronteira.\n26"
+          },
+          {
+            "id": "eixo-8-educacao-e-qualificacao",
+            "titulo": "EIXO 8 — EDUCAÇÃO E QUALIFICAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 8 — EDUCAÇÃO E QUALIFICAÇÃO\nPROFISSIONAL\n\nA educação é o maior instrumento de transformação social, desenvolvimento\neconômico e promoção da cidadania. É por meio dela que se rompe o ciclo da\npobreza, ampliam-se oportunidades, fortalece-se a democracia e constrói-se uma\nsociedade mais justa, inovadora e preparada para enfrentar os desafios do século\nXXI.\nO desenvolvimento do Acre passa, necessariamente, pela construção de uma\neducação pública de excelência, capaz de garantir não apenas o acesso à escola,\nmas, sobretudo, a permanência dos estudantes, a aprendizagem efetiva, a\nformação integral e a preparação para a vida, para o mundo do trabalho e para o\nexercício pleno da cidadania.\nOs avanços tecnológicos, as novas demandas do mercado de trabalho e as\nprofundas transformações sociais exigem uma escola conectada com o futuro.\nNesse cenário, o Governo do Estado assume o compromisso de implementar uma\npolítica educacional moderna, baseada na valorização dos profissionais da\neducação, na inovação pedagógica, na inclusão, na transformação digital, na\nmelhoria da infraestrutura escolar e na busca permanente pela qualidade da\naprendizagem.\nNosso compromisso é fazer da educação a principal política pública de\ndesenvolvimento humano do Acre, promovendo investimentos estruturantes que\nfortaleçam a escola pública, ampliem oportunidades para crianças, adolescentes e\n27"
+          },
+          {
+            "id": "jovens-e-posicionem-o-estado-entre-as-melhores-redes-publicas-de-ensino",
+            "titulo": "jovens e posicionem o Estado entre as melhores redes públicas de ensino da",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "jovens e posicionem o Estado entre as melhores redes públicas de ensino da\nRegião Norte.\nPara alcançar esse objetivo, apresentamos um conjunto de propostas organizadas\nem eixos estratégicos, alinhadas ao Plano Nacional de Educação, ao\nCompromisso Nacional Criança Alfabetizada, à Base Nacional Comum\nCurricular e às melhores experiências educacionais desenvolvidas no Brasil e no\nmundo.\nEIXO 1\nVALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO\nNenhum sistema educacional supera a qualidade de seus professores. Valorizar o\nmagistério significa reconhecer que os profissionais da educação são os\nprincipais agentes da transformação social e do desenvolvimento do Estado.\nPolítica Estadual Permanente de Valorização do Magistério\n●​ Realizar concursos públicos e reposição das vacâncias.\n●​ Melhorar as condições de trabalho nas unidades escolares.\n●​ Implantar\n\nprogramas permanentes de saúde física e mental dos\n\nprofissionais da educação.\n●​ Desenvolver políticas de reconhecimento por desempenho e inovação\n\npedagógica.\nFormação Continuada para a Educação do Século XXI\nImplantar um programa permanente de formação continuada para professores,\ncoordenadores pedagógicos e gestores escolares, contemplando:\n28"
+          },
+          {
+            "id": "cultura-digital",
+            "titulo": "•​ Cultura Digital;",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "•​ Cultura Digital;\n•​ Inteligência Artificial aplicada à educação;\n•​ Programação e Pensamento Computacional;\n•​ Metodologias Ativas;\n•​ Educação Inclusiva;\n•​ Alfabetização e Recomposição das Aprendizagens;\n•​ Liderança Escolar;\n•​ Uso\n\npedagógico de\n\nChromebooks, livros digitais\n\ne plataformas\n\neducacionais.\n\nEIXO 2\nAPRENDIZAGEM, INOVAÇÃO E EXCELÊNCIA ACADÊMICA\nA melhoria dos indicadores educacionais exige investimentos permanentes em\ninovação, tecnologia e fortalecimento das aprendizagens.\nPrograma Estadual de Inovação e Tecnologia na Educação\nOfertar em todas as escolas estaduais, preparando os estudantes para as profissões\ndo futuro por meio do desenvolvimento de competências em:\n●​ Lógica;\n●​ Programação;\n●​ Robótica;\n●​ Inteligência Artificial;\n●​ Ciência de Dados;\n\n29"
+          },
+          {
+            "id": "pensamento-computacional",
+            "titulo": "●​ Pensamento Computacional;",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "●​ Pensamento Computacional;\n●​ Empreendedorismo Digital.\n\nPrograma Estadual de Reforço Escolar\nInstituir um amplo programa de recomposição das aprendizagens, ofertando\natendimento complementar aos estudantes com defasagem em Língua Portuguesa\ne Matemática, mediante:\n●​ aulas em contraturno;\n●​ monitorias;\n●​ plataformas adaptativas;\n●​ acompanhamento individualizado;\n●​ avaliações diagnósticas permanentes.\n\nPrograma Acre Vai à NASA e DISNEY!\nCriar o Programa Acre Vai à NASA e DISNEY, selecionando, anualmente, pelo\nmenos 50 estudantes da Rede Estadual de Ensino com melhor desempenho\nacadêmico para participarem de uma imersão internacional em ciência,\ntecnologia, engenharia e inovação no Centro Espacial da NASA.\nO programa estimulará:\n●​ excelência acadêmica;\n●​ protagonismo estudantil;\n●​ cultura científica;\n●​ domínio da língua inglesa;\n●​ inovação tecnológica;\n\n30"
+          },
+          {
+            "id": "desenvolvimento-de-liderancas-juvenis",
+            "titulo": "●​ desenvolvimento de lideranças juvenis.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "●​ desenvolvimento de lideranças juvenis.\n\nEIXO 3\nPERMANÊNCIA, EQUIDADE E SUCESSO ESCOLAR\nGarantir matrícula não basta. É preciso assegurar que cada estudante permaneça\nna escola, aprenda e conclua sua trajetória educacional.\nPrograma Estadual de Busca Ativa Escolar\nImplementar um Programa Intersetorial de Prevenção e Enfrentamento à\nInfrequência e à Evasão Escolar, integrando Educação, Saúde, Assistência Social,\nConselho Tutelar, Ministério Público, Defensoria Pública e demais órgãos da\nRede de Proteção.\nAs ações incluirão:\n●​ monitoramento permanente da frequência;\n●​ visitas domiciliares;\n●​ acompanhamento familiar;\n●​ busca ativa;\n●​ atendimento psicossocial;\n●​ reinserção escolar.\n\nPrograma Estudar Transforma\nCriar o Programa Estudar Transforma, concedendo incentivos aos estudantes\ndo Ensino Médio vinculada:\n31"
+          },
+          {
+            "id": "a-frequencia-escolar",
+            "titulo": "●​ à frequência escolar;",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "●​ à frequência escolar;\n●​ ao desempenho acadêmico;\n●​ à participação nas avaliações externas;\n●​ ao protagonismo estudantil.\n\nAo final do Ensino Médio, os estudantes aprovados e ingressos em universidades\npúblicas receberão um notebook para apoiar sua formação superior e promover a\ninclusão digital.\n\nEIXO 4\nEDUCAÇÃO INCLUSIVA\nConstruir uma rede educacional verdadeiramente inclusiva é garantir que todos\nos estudantes tenham acesso, participação, aprendizagem e desenvolvimento.\nAcre Referência Nacional em Educação Inclusiva\nImplementar uma política estadual de fortalecimento da Educação Especial,\nmediante:\n●​ ampliação do número de professores mediadores;\n●​ contratação de cuidadores;\n●​ fortalecimento das equipes multiprofissionais;\n●​ expansão do Atendimento Educacional Especializado;\n●​ aquisição de tecnologias assistivas;\n●​ formação permanente dos profissionais.\n\n32"
+          },
+          {
+            "id": "o-objetivo-e-tornar-o-acre-referencia-nacional-em-educacao-inclusiva",
+            "titulo": "O objetivo é tornar o Acre referência nacional em educação inclusiva.",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "O objetivo é tornar o Acre referência nacional em educação inclusiva.\n\nEIXO 5\nENSINO TÉCNICO E EMPREGABILIDADE\nExpandir significativamente a oferta de Ensino Técnico integrado ao Ensino\nMédio, alinhando a formação profissional às potencialidades econômicas do\nAcre.\nPrioridades:\n●​ Agronegócio;\n●​ Bioeconomia;\n●​ Tecnologia;\n●​ Turismo;\n●​ Indústria;\n●​ Empreendedorismo;\n●​ Economia Criativa.\n\nEIXO 6\nINFRAESTRUTURA ESCOLAR\nAmbientes escolares adequados favorecem a aprendizagem, reduzem a evasão e\npromovem melhores condições de trabalho.\n\n33"
+          },
+          {
+            "id": "programa-escola-digna",
+            "titulo": "Programa Escola Digna",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Programa Escola Digna\nExecutar um amplo plano de modernização das escolas estaduais, contemplando:\n●​ reformas estruturais;\n●​ acessibilidade;\n●​ ampliação de salas;\n●​ quadras cobertas;\n●​ bibliotecas;\n●​ refeitórios;\n●​ espaços maker.\n\nClimatização Total das Escolas\nAmpliar o número de salas de aula climatizadas nas escolas urbanas e rurais.\nPrograma Laboratórios do Futuro\nModernizar e equipar os laboratórios escolares com:\n●​ Ciências;\n●​ Física;\n●​ Química;\n●​ Biologia;\n●​ Informática;\n●​ Robótica;\n●​ Impressão 3D;\n●​ Cultura Maker.\n\n34"
+          },
+          {
+            "id": "eixo-7",
+            "titulo": "EIXO 7",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7\nTRANSFORMAÇÃO DIGITAL\nPromover a transformação digital da educação pública estadual.\nAs ações incluem:\n●​ internet de alta velocidade nas escolas;\n●​ plataformas digitais de aprendizagem;\n●​ chromebooks para uso pedagógico;\n●​ ambientes virtuais;\n●​ inteligência artificial aplicada ao ensino;\n●​ segurança digital;\n●​ recursos educacionais digitais.\n\nEIXO 8\nGESTÃO, AVALIAÇÃO E RESULTADOS\nImplantar uma política permanente de gestão por resultados, baseada em\nevidências e monitoramento contínuo.\nEntre as ações:\n●​ fortalecimento das avaliações diagnósticas;\n●​ monitoramento dos indicadores de aprendizagem;\n●​ painéis de gestão em tempo real;\n●​ acompanhamento individualizado das escolas;\n35"
+          },
+          {
+            "id": "pactuacao-de-metas",
+            "titulo": "●​ pactuação de metas;",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "●​ pactuação de metas;\n●​ reconhecimento das escolas com melhores resultados.\n\nO Acre possui um enorme potencial humano. Acreditamos que o maior\npatrimônio do Estado está em suas crianças, adolescentes e jovens. Investir em\neducação significa investir na capacidade de transformar vidas, reduzir\ndesigualdades, impulsionar a economia e construir um futuro mais próspero para\ntoda a sociedade.\nNosso compromisso é promover uma verdadeira transformação na educação\npública estadual, pautada na inovação, na inclusão, na valorização dos\nprofissionais, na modernização da infraestrutura e na melhoria contínua da\naprendizagem. Queremos uma escola conectada com os desafios do século XXI,\ncapaz de desenvolver competências, despertar talentos e formar cidadãos\npreparados para liderar o desenvolvimento do Acre.\nMais do que ampliar investimentos, propomos uma mudança de paradigma: uma\ngestão\n\neducacional\n\norientada\n\npor\n\nresultados,\n\nbaseada\n\nem evidências,\n\ncomprometida com a equidade e centrada no estudante. A integração entre\ntecnologia, formação docente, ensino técnico, cultura científica, educação\ninclusiva e permanência escolar permitirá construir uma rede pública mais\neficiente, moderna e acolhedora.\nNosso propósito é que cada escola seja um espaço de oportunidades, inovação e\nesperança; que cada professor seja valorizado e reconhecido; e que cada\nestudante encontre na educação o caminho para realizar seus sonhos e contribuir\npara o desenvolvimento do Estado. Investir na educação é investir no futuro\ndo Acre. E esse futuro começa agora!\n36"
+          },
+          {
+            "id": "eixo-9-esporte-cultura-e-turismo",
+            "titulo": "EIXO 9 — ESPORTE, CULTURA E TURISMO",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 9 — ESPORTE, CULTURA E TURISMO\n\nO nosso governo dará prioridade total ao Esporte e à Cultura, dimensões\nessenciais para a qualidade de vida da população.\n\n9.1 Esporte\nNo Esporte, vamos ampliar a implantação de quadras esportivas cobertas, a\nrealização de campeonatos locais e estaduais, a formação de atletas, a\nparticipação em competições nacionais e internacionais e a diversificação das\nmodalidades esportivas, tudo isso sempre em parceria com as prefeituras,\nfederações e entidades afins.\n\n9.2 Cultura\nNa Cultura, vamos apoiar e incentivar os artistas e as diversas manifestações\nculturais já existentes, investir no fortalecimento e ampliação de eventos culturais\ne datas comemorativas, e na divulgação nacional e internacional de toda a riqueza\ncultural presente no nosso Estado.\nA exemplo do que foi feito em Rio Branco, vamos adquirir pelo menos quatro\nônibus rodoviários semi-leitos (um para o Juruá, outro para o Alto Acre e dois\npara Rio Branco) para traslado de equipes esportivas e culturais, dentro do Estado\ne para todo o Brasil.\n\n37"
+          },
+          {
+            "id": "9-3-turismo",
+            "titulo": "9.3 Turismo",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "9.3 Turismo\nO ecoturismo, o etnoturismo, o turismo de aventura e o turismo de negócios estão\nentre os segmentos que mais crescem no mundo, e o Acre reúne condições\nnaturais e culturais para se posicionar nesse mercado — desde que supere seus\ngargalos históricos de infraestrutura e conectividade.\nInfraestrutura e Acesso\n•​ Estruturar sistema de aviação regional, com modernização e sinalização de\n\naeródromos em cidades estratégicas.\n•​ Investir na modernização de portos e atracadouros fluviais, essenciais para o acesso a\n\natrativos como a Serra do Divisor.\n•​ Estimar a ampliação de rotas aéreas e redução custos para tornar o destino mais\n\nacessível.\n\nInteriorização e Desenvolvimento Regional\n•​ Priorizar o desenvolvimento turístico do Vale do Juruá — Cruzeiro do Sul, Mâncio\n\nLima, Marechal Thaumaturgo, Rodrigues Alves e Porto Walter.\n•​ Fortalecer a identidade cultural local e o turismo de proximidade, incentivando a\n\npopulação a valorizar o próprio território.\n\nMarketing, Qualificação e Conectividade\n•​ Estruturar campanhas integradas e permanentes de promoção do destino Acre, em\n\nmídias tradicionais e digitais.\n•​ Ampliar a capacitação em idiomas estrangeiros (inglês e espanhol) para guias,\n\nhotelaria e atendimento.\n•​ Qualificar profissionais em atendimento, hotelaria, gastronomia e gestão de\n\nempreendimentos turísticos.\n38"
+          },
+          {
+            "id": "garantir-conectividade-digital-nos-polos-turisticos-para-viabilizar-paga",
+            "titulo": "•​ Garantir conectividade digital nos polos turísticos para viabilizar pagamentos,",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "•​ Garantir conectividade digital nos polos turísticos para viabilizar pagamentos,\n\ndivulgação e comunicação com visitantes.\n\n39"
+          },
+          {
+            "id": "consideracoes-finais",
+            "titulo": "CONSIDERAÇÕES FINAIS",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "CONSIDERAÇÕES FINAIS\nEste Plano de Governo representa um roteiro estratégico e integrado para o Acre dos\npróximos quatro anos. segurança pública, saúde, políticas sociais, comércio, serviços,\nindústria, agronegócio, infraestrutura, tecnologia, educação, cultura, esporte e turismo não\ndevem ser tratados como agendas isoladas, mas como pilares complementares de uma\npolítica de Estado moderna, permanente e orientada por resultados.\nNosso governo se compromete a manter diálogo permanente com os setores produtivos —\ncomércio, indústria e agropecuária — e com a sociedade civil, tratando o planejamento\npúblico como processo colaborativo e não como decisão isolada de gabinete.\nInvestir de forma integrada nesses nove eixos significa promover desenvolvimento\nregional equilibrado, reduzir desigualdades entre capital e interior, ampliar a segurança da\npopulação, fortalecer a economia acreana e construir, com trabalho e experiência de\ngestão, um Acre mais próspero para todas as suas famílias.\n\nCom as Graças de Deus, realizaremos o nosso Plano de Governo para o bem-estar do\nnosso Querido Povo Acreano!\n\nTião Bocalom\nCandidato ao Governo do Estado do Acre — 2026\n\n40"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b29b79d0873e57446046a5fbbaef75682fc8694dfb332f24caf870be8c110d29"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "1c100cbbbcfa0ce7283e653df1fd2dbe24d1432656f6955d24fbf8dc31c9bfc0"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "5e64696e22c4859d7c7e575b441edbe4c3ee3fdda79b7fbe493f765d7cdf33c4"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2573eb0c8d97474efb128647c54ae0fe7dc6ba674ae80f408c706c7e08040fdb"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "818e64110821189691ab4aa27f3544f1f46322282f0c7d19777aade69a49bdfd"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "aa285654503b22a4e3e8b4c9a199ad95c77dad42aea67f3ead0fa8b2133e5166"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "445b1937d7212eaef4c362438bade5940a1eb6bf768774201940df200ce49cbf"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "51af971aa8699eb269befff637325e1517dd88fce75d495ff08ef089ceb1aae7"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "c541aabc4eddc4256443b6463e857d23dcecd932d0b9593faca03dde6e482a46"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "cc3a5a4b8354dad6401c80727a145e393802d3ef6aae3230eb28d95f106c5240"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9df70b180fdf5f16f14183658e733301178f97cc4f9718acb211e65e51ecad4f"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "77f3f7ea20e18c11d7132eda0848aa20d5e32ddc0bf359791808810a0f573386"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "8d276d36b518ef92b067a0eac28434e94a0406c7d8673e471042362603b9fa01"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "9275857b9bbd2982cc7501e4eb6f126ec4279833f5fd9824ad9d1b1ec1f7b7a0"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f152f6681cb358bf511eefcc8f5412d522068e111802bf9eb6efc17d85eec817"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "3092ac922b51e1c2379b7f91bdef0173b881cf9cfc0dfc264f8a48a2b2daf72b"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "019c973e011f5941ec39452d4154026506e03ea388d111c1f12764edfa87c2ac"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "f042c3180235e04e1721f797d333387c11aba7170eff4cb0464718c731213fb0"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "30b1daf9a1dd035ffcdb3595d4e74fc45434fda0f1f03fc8eada9cb39c629025"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "a2bdccfd52ba6b248e529ed6be333e690f826057ee9b7557545fdb91d82294eb"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "1ead8c3580ca24e8841b98663980f6a7ac3e93a205645a9e5760d588a4b3ae52"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "430f3bc22e8c913c2580a123a2fa37d76755c075ee1fea71acdd3de9a8b83d29"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "56a32472bf71abf1a7a5732164f53d10799f5fb01043973bd9252594bc59a9b3"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "688dd40f64f6551b1169cdddde8cf857dded07709fa554147dfd6429166dc48c"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "f3a6edd5fa2bfdb092bf0b79b9b1e7cb6e4781564c6ad8cd0398b199b07ae837"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "927126e8e941d792966b4005d6adadd0d022f13160b9b75746aa66b770737519"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "65338bdddd55528f871ff51cafeae6585df71a97689e6e8052bb05095f0b480f"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "c8e8b7e3e190e48febf7943c8c395d0c85b7ece9d6fc4b5e17df6a67f4885d77"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "f5a7cd230d70b57aaa6a266f6fc47dc0837e1af6a2e18b56cafd980a3152138c"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "fefd1744668744d8972431ea61f2e63e41dd37961d39f972edf9f7f7c8376a05"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "a7efe65da9ee73e5b5f3dcd6c34bb98515350ef4e14b3dfafacf92549644a75a"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e999e18f5307238f7dd08a091935df4801eb8dfe5c90f583ded499c1f0541fbb"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "52cbe83f673cf65f187459d21b0d607ed46bdb19ae80b60c4d342e5037771cb7"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "bd9a68acc4e9c4dbb3461ef4adb8e0e8d002ff0bf02847489e0adde68e09633d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "bd666fca9d0bf0d17627da0292928c7b16af08b97554afe5bb5a87fd17e70ecb"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "b9a13f1075ea089ca366991ddc36f598e344bb4dd53e580fa4aee083ceded10a"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "f08cfe3ffd14d5a21b5098892f0ff1696d46607c2919de6ce84cf6d06045eb1c"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "52467f7a912f934716a0b1ab401acf83064dc1accd1cb63db1ecda6a5e682482"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "04df34da3bf33d6bf6f1e90a6df207d05bb893a530ec63213b4564e09403488a"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "da9826d09bbd15659509d4f561a6f36babe7d4426e317744653573385f7c4594"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a implantação de prontuário eletrônico integrado em todas as unidades de saúde estaduais. O programa propõe a criação de uma agência estadual de inteligência de mercado para o agronegócio acreano. O documento prevê a ampliação da conectividade digital em regiões urbanas e rurais com uso da infraestrutura da Infovia Acre. O plano propõe a expansão de plataformas on-line unificadas para acesso rápido a serviços públicos. O programa prevê a implementação de uma política estadual de fortalecimento da Educação Especial. O documento propõe a criação de um programa de recuperação de dependentes químicos em parceria com prefeituras e entidades especializadas na área. O plano prevê a execução de cronograma permanente de conservação de ramais em parceria com as prefeituras municipais. O documento propõe a criação de um Programa Estadual de Qualificação Digital voltado a jovens e trabalhadores.",
+    "frases": [
+      {
+        "texto": "O plano prevê a implantação de prontuário eletrônico integrado em todas as unidades de saúde estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 13,
+            "trecho": "Implantar prontuário eletrônico integrado em todas as unidades de saúde estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a criação de uma agência estadual de inteligência de mercado para o agronegócio acreano.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 21,
+            "trecho": "Criar agência estadual de inteligência de mercado e promoção comercial do\nagronegócio acreano."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê a ampliação da conectividade digital em regiões urbanas e rurais com uso da infraestrutura da Infovia Acre.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 25,
+            "trecho": "Ampliar a conectividade digital em regiões urbanas e rurais, utilizando a\ninfraestrutura da Infovia Acre."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a expansão de plataformas on-line unificadas para acesso rápido a serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 26,
+            "trecho": "Expandir plataformas on-line unificadas para acesso rápido, transparente e\npadronizado a serviços públicos."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a implementação de uma política estadual de fortalecimento da Educação Especial.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 32,
+            "trecho": "Implementar uma política estadual de fortalecimento da Educação Especial,"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a criação de um programa de recuperação de dependentes químicos em parceria com prefeituras e entidades especializadas na área.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 14,
+            "trecho": "Criar um Programa de Recuperação de Dependentes Químicos em parceria com\nPrefeituras e entidades especializadas na área."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a execução de cronograma permanente de conservação de ramais em parceria com as prefeituras municipais.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 24,
+            "trecho": "Executar cronograma permanente de conservação de ramais em parceria com as\nprefeituras municipais."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a criação de um Programa Estadual de Qualificação Digital voltado a jovens e trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 26,
+            "trecho": "Criar Programa Estadual de Qualificação Digital, em parceria com Fecomércio,\nSistema S e Senac, voltado a jovens e trabalhadores."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Implantação de prontuário eletrônico integrado nas unidades estaduais de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 13,
+            "trecho": "Implantar prontuário eletrônico integrado em todas as unidades de saúde estaduais."
+          }
+        ]
+      },
+      {
+        "id": "inteligencia-de-mercado",
+        "titulo": "Inteligência de mercado",
+        "descricao": "Criação de agência estadual voltada à inteligência de mercado do agronegócio.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 21,
+            "trecho": "Criar agência estadual de inteligência de mercado e promoção comercial do\nagronegócio acreano."
+          }
+        ]
+      },
+      {
+        "id": "conectividade-digital",
+        "titulo": "Conectividade digital",
+        "descricao": "Ampliação da conectividade digital em regiões urbanas e rurais.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 25,
+            "trecho": "Ampliar a conectividade digital em regiões urbanas e rurais, utilizando a\ninfraestrutura da Infovia Acre."
+          }
+        ]
+      },
+      {
+        "id": "educacao-inclusiva",
+        "titulo": "Educação inclusiva",
+        "descricao": "Fortalecimento da Educação Especial na política estadual.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 32,
+            "trecho": "Implementar uma política estadual de fortalecimento da Educação Especial,"
+          }
+        ]
+      },
+      {
+        "id": "qualificacao-digital",
+        "titulo": "Qualificação digital",
+        "descricao": "Criação de programa estadual de qualificação digital para jovens e trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002544015:01",
+            "pagina": 26,
+            "trecho": "Criar Programa Estadual de Qualificação Digital, em parceria com Fecomércio,\nSistema S e Senac, voltado a jovens e trabalhadores."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:38:16.512Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:40:26.280Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Texto do claim é cópia literal do trecho evidenciado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação, nada a contradizer."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação puramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave eleitoral AC:10002544015."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:1:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação corresponde ao trecho evidenciado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente sobre agronegócio."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:2:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e factual."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre conectividade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:3:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem dados numéricos envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de governo digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:4:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre educação especial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:5:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:6:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem dados numéricos envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de manutenção viária."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:7:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação corresponde ao trecho, omitindo apenas os parceiros nominados sem contradizê-los."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre qualificação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:frase:8:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente da cláusula principal (jovens e trabalhadores)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, com rótulo temático apenas classificatório."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:saude-digital:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única sobre agronegócio."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:inteligencia-de-mercado:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:conectividade-digital:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:educacao-inclusiva:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única sobre qualificação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002544015:tema:qualificacao-digital:documentos:AC:10002544015:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente da cláusula principal."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AC:10002544015",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AC:10002544015:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 32559,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2854,
+          "reasoning_output_tokens": 1689
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23818,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21381,
+          "output_tokens_details": {
+            "thinking_tokens": 173
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23818,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21381,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23818,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23818
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.32790939999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:41:05Z",
+    "sourceSha256": "002ade727df6b7e2bb6fa4e5b1e26eb83e2a9e3ed49eda04f6a5d16f4e87fb1a",
+    "extractedTextSha256": "18ca80536bf0910b0cb708dd906116266ad816f1aa355c997d949a6710341fcf",
+    "documentCount": 1,
+    "documentSetSha256": "d2dd71e6fad37feb65d64e90a84ebd6817e4a1a87877fe4ea7775203d485b30e",
+    "contentSha256": "f04f25950914ce2e074cee243679bfb9246448e037735d68a44b73c4feb406ec"
+  }
+}

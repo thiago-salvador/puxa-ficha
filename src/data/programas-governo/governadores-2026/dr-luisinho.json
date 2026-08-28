@@ -1,0 +1,1200 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AC",
+    "sqCandidato": "10002533539",
+    "slug": "dr-luisinho",
+    "nomeUrna": "DR.LUISINHO",
+    "partido": "AGIR",
+    "arquivoNome": "2026AC10002533539_01.pdf",
+    "arquivoNoPacote": "AC/2026AC10002533539_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AC:10002533539:01",
+      "fonte": {
+        "arquivoNome": "2026AC10002533539_01.pdf",
+        "arquivoNoPacote": "AC/2026AC10002533539_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "f1a6f8f3b526b195f9103d4f617702c4354ed768bf60766559ca8ffbb4fa63ce",
+        "extractedTextSha256": "988d240d30e2304235174d4a430bfacce3482e46704f34792cf84922d602d79b",
+        "paginas": 40,
+        "secoes": [
+          {
+            "id": "1",
+            "titulo": "1",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "1\n\nPLANO DE GOVERNO\nGOVERNO DA INDUSTRIA\n\nGOVERNO DA INDUSTRIA\nIndustrialização, Crescimento Econômico e\nDesenvolvimento\nUm Plano de Governo para Superar Décadas de Atraso\n\nDR. LUISINHO\nCandidato a Governador do Acre\nVice: Daniela Paiva"
+          },
+          {
+            "id": "2",
+            "titulo": "2",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "2\n\nPartido AGIR 36\n\nTODOS OS DIREITOS RESERVADS À\nDR. LUISINHO\nCANDIDATO AO GOVERNADOR DO ACRE\n\nGOVERNO DA INDUSTRIA: Industrialização, Geração de\nEmprego e Futuro para Todos.\nO Acre é uma terra de coragem. Mas durante muitos anos, o estado ficou distante das grandes\ndecisões econômicas que transformaram outras regiões do Brasil.\nEnquanto outros estados avançaram na industrialização, na geração de empregos e na atração\nde investimentos, o Acre continuou enfrentando desafios estruturais que limitaram seu\ncrescimento.\nEste plano apresenta uma nova visão para o futuro do estado.\nUm projeto de desenvolvimento baseado na industrialização da economia, na geração de\nempregos, na valorização do servidor público e na melhoria da qualidade de vida da\npopulação.\nEntre as propostas apresentadas estão a criação do Polo Industrial do Acre, a implantação\nda Faculdade Estadual do Polo Industrial, o Banco de Desenvolvimento Econômico, os"
+          },
+          {
+            "id": "3",
+            "titulo": "3",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "3\n\ncomplexos regionais de saúde e educação e o Plano Antienchente do Rio Acre, uma das\nmaiores obras de engenharia da história da região Norte.\nMais do que um plano de governo, este projeto representa um compromisso com o futuro.\nPorque quando um povo acredita em seu potencial, e ousa mudar nenhum sonho é grande\ndemais."
+          },
+          {
+            "id": "4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nAPRESENTAÇÃO\nEste plano nasce de um compromisso com o futuro do Estado do Acre. Não se trata apenas de\num documento político ou de um plano administrativo. Trata-se de uma visão de\ndesenvolvimento construída a partir da realidade do nosso povo, dos desafios que enfrentamos\ne das oportunidades que temos diante de nós.\nO Acre é um estado de grande riqueza natural, de enorme diversidade cultural e, acima de\ntudo, de um povo trabalhador, resiliente e cheio de esperança. No entanto, ao longo das\núltimas décadas, nosso estado não conseguiu transformar plenamente suas potencialidades\nem desenvolvimento econômico e oportunidades para sua população.\nMuitos jovens deixam o Acre em busca de trabalho em outros estados. Pequenos produtores\nenfrentam dificuldades para agregar valor à sua produção. Empreendedores lutam contra\nlimitações estruturais que impedem o crescimento dos seus negócios.\nEssa realidade precisa mudar.\nÉ com esse espírito que apresentamos este projeto: Governo da Industira.\nO eixo central dessa transformação será o Governo da Indústria, uma estratégia de\ndesenvolvimento que busca fortalecer a economia do estado, gerar empregos, atrair\ninvestimentos e criar oportunidades para a população acreana."
+          },
+          {
+            "id": "5",
+            "titulo": "5",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "5\n\nPLANO DE GOVERNO DA INDUSTRIA\n\nAS 10 METAS\nDO DESENVOLVIMENTO ECONÔMICO DO ACRE.\nPIA – Polo Industrial do Acre\nFEPI – Faculdade Estadual do Polo Industrial\nFaculdade de Medicina do Acre\nBanco de Desenvolvimento Econômico\nComplexos Regionais de Saúde e Educação\nPrograma de Habitação Popular Sustentável\nDuplicação das Rodovias Estratégicas\nÁgua e Saneamento 24 horas para todos\nPlano de Valorização do Servidor Público\nPlano Antienchente do Rio Acre\n\nNOVA GOVERNANÇA DO ESTADO\nGovernança Pública Moderna\nCentro de Governo\nDepartamento de Integridade dos Recursos Públicos\n\nEIXOS DE TRANSFORMAÇÃO DO ACRE.\nPolíticas públicas prioritárias para um novo tempo.\nEducação\nSaúde\nSegurança Pública\nAgricultura\nTurismo\nLazer e esporte\nInfraestrutura\nMeio Ambiente\nA capital Turística da Amazonia\nCiência, Técnico e Inovação\nDesenvolvimento Social\nEnergia e Desenvolvimento Sustentabilidade\nAgricultura, pecuária e agronegócio\nDesenvolvimento Economico e indústria"
+          },
+          {
+            "id": "6",
+            "titulo": "6",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "6\n\nPROJETO: PISCINÕES DO POVO – LAZER, DIGNIDADE E VIDA\nPARA O ACRE\nConceito\nObjetivo do Projeto\nEstrutura dos piscinões\nModelo de Gestão – Parceria Privada\nImplantação\nFinanciamento\nGeração de Emprego\nSegurança e Organização\nImpacto Social\nForça política da proposta\nFrase de impacto para campanha\n\nAS 10 METAS DO DESENVOLVIMENTO ECONÔMICO DO\nACRE\nGoverno da Indústria – Um Novo Acre Começa Agora\nO desenvolvimento do Acre exige planejamento, coragem e decisões estruturantes.\nEste plano apresenta 10 grandes metas que irão transformar a economia, gerar empregos e\nmelhorar a vida da população.\nEste é o modelo do Governo da Indústria: produzir, crescer e dar oportunidades reais ao povo\nacreano.\n\nPIA – POLO INDUSTRIAL DO ACRE\nObjetivo: Transformar o Acre em um novo polo produtivo da Amazônia.\nEstrutura\na)\nb)\nc)\n\nDistrito industrial moderno e planejado\nCondomínio industrial para empresas nacionais e internacionais\nInfraestrutura completa para produção\n\nIncentivos\na)\nb)\nc)\nd)\ne)\n\nCessão de terras\nIncentivos fiscais\nCrédito produtivo (via BDA)\nApoio logístico\nMão de obra qualificada (via FEPI)"
+          },
+          {
+            "id": "7",
+            "titulo": "7",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "7\n\nCadeias Produtivas\na)\nb)\nc)\nd)\n\nMadeira → móveis e produtos industrializados\nAgricultura → alimentos processados\nPiscicultura → exportação\nBioeconomia → produtos sustentáveis\n\nEstratégia\na)\nb)\nc)\n\nConexão com Peru e Bolívia\nAcesso ao Pacífico\nIntegração com mercados internacionais\n\nImpacto\na)\nb)\nc)\n\nGeração massiva de empregos\nIndustrialização real do estado\nRetenção de riqueza no Acre\n\nFEPI – FACULDADE ESTADUAL DO POLO INDUSTRIAL\nObjetivo: Formar profissionais para sustentar o desenvolvimento econômico.\nModelo\na)\nb)\nc)\n\nEnsino técnico e superior integrado\nCursos alinhados à economia real\nAcesso facilitado (sem modelo tradicional excludente)\n\nÁreas Prioritárias\na)\nb)\nc)\nd)\ne)\nf)\n\nEngenharia\nTecnologia\nLogística\nAgroindústria\nAdministração\nInovação\n\nDiferencial\na)\nb)\nc)\n\nIntegração direta com o PIA\nParcerias com empresas\nFormação voltada para emprego real\n\nFaculdade de Medicina do Acre"
+          },
+          {
+            "id": "8",
+            "titulo": "8",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "8\n\nMissão: Democratizar o acesso à medicina e resolver a falta de médicos.\nModelo\na)\nb)\nc)\n\nMensalidades reduzidas com subsídio do Estado\nFinanciamento acessível\nParcerias público-privadas\n\nEstrutura\na)\nb)\nc)\n\nHospitais como campo de prática\nCentros de simulação\nIntegração com rede pública\n\nMedidas Estratégicas\na)\nb)\nc)\n\nAproveitamento de estudantes do exterior\nInteriorização da formação médica\nContrapartida social (atuar no Acre)\n\nImpacto\na)\nb)\nc)\n\nFormação de médicos locais\nFortalecimento do SUS\nRedução da falta de profissionais\n\nBANCO DE DESENVOLVIMENTO DO ACRE (BDA)\nObjetivo: Financiar o crescimento econômico do estado.\nAtuação\na)\nb)\nc)\nd)\ne)\n\nCrédito para indústria\nApoio ao agronegócio\nFinanciamento para pequenos negócios\nMicrocrédito produtivo\nCrédito estudantil (FEPI)\n\nDiferenciais\na)\nb)\nc)\n\nJuros reduzidos\nAcesso facilitado\nFoco em quem produz\n\nIntegração\na)\n\nFinancia o PIA"
+          },
+          {
+            "id": "9",
+            "titulo": "9",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "9\nb)\nc)\n\nApoia a FEPI\nSustenta a nova economia\n\nGestão\na)\nb)\nc)\n\nTécnica e transparente\nSem interferência política\nControle rigoroso\n\nImpacto\na)\nb)\nc)\nd)\n\nEconomia destravada\nMais empresas\nMais empregos\nMais renda\n\nCOMPLEXOS REGIONAIS DE SAÚDE E EDUCAÇÃO\nSaúde – Programa “VIDA PERTO”\nObjetivo: Levar saúde de qualidade para perto das pessoas.\nEstrutura Regional\na)\nb)\nc)\nd)\n\nAlto Acre\nBaixo Acre\nJuruá\nPurus / Tarauacá-Envira\n\nEstrutura dos Complexos\na)\nb)\nc)\nd)\ne)\nf)\n\nHospital completo\nCentro cirúrgico\nUTI\nMaternidade\nExames e diagnóstico\nAtendimento 24h\n\nEquipe\na)\nb)\n\nMédicos especialistas\nProfissionais multidisciplinares\n\nTecnologia\na)\nb)\n\nTelemedicina\nProntuário eletrônico"
+          },
+          {
+            "id": "10",
+            "titulo": "10",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "10\nc)\n\nEquipamentos modernos\n\nImpacto\na)\nb)\nc)\n\nFim da “peregrinação por saúde”\nRedução de filas\nAtendimento regionalizado\n\nEducação – Complexos Educacionais\nObjetivo: Garantir educação completa em todos os municípios.\nEstrutura\na)\nb)\nc)\nd)\n\nEnsino infantil ao médio\nEnsino técnico e profissional\nLaboratórios e tecnologia\nBibliotecas e centros de inovação\n\nIntegração\na)\nb)\n\nFormação alinhada ao mercado\nConexão com saúde e indústria\n\nImpacto\na)\nb)\nc)\n\nJovens formados no próprio estado\nRedução da evasão\nDesenvolvimento humano\n\nPROGRAMA CASA PARA TODOS (HABITAÇÃO)\nObjetivo: Zerar o déficit habitacional.\nMetas\na)\nb)\n\n40 mil moradias em 8 anos\n20 mil em 4 anos\n\nEixos Principais\na)\nb)\nc)\n\nConstrução em massa\nCasa + emprego\nAluguel social"
+          },
+          {
+            "id": "11",
+            "titulo": "11",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "11\nd)\ne)\nf)\ng)\n\nRegularização fundiária\nReforma de moradias\nUrbanização planejada\nCrédito habitacional\n\nDiferenciais\na)\nb)\nc)\n\nCasas com energia solar\nIntegração com emprego\nBairros planejados\n\nImpacto\na)\nb)\nc)\n\nRedução da pobreza\nGeração de empregos\nDignidade para famílias\n\nINFRAESTRUTURA E LOGÍSTICA\n\nRodovias\na)\nb)\nc)\nd)\n\nDuplicação da BR-364\nBR-317\nAC-10\nAC-40\n\nObjetivo: Reduzir custos logísticos e integrar o estado.\n\nPrograma Ramal Produtivo\nMissão: Garantir acesso ao produtor rural.\nAções\na)\nb)\nc)\nd)\n\nRecuperação total dos ramais\nTrafegabilidade o ano inteiro\nAsfaltamento estratégico\nPatrulhas mecanizadas regionais\n\nIntegração: Ligação com indústrias e mercados\nImpacto\na)\n\nAumento da produção"
+          },
+          {
+            "id": "12",
+            "titulo": "12",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "12\nb)\nc)\n\nRedução de perdas\nMais renda no campo\n\nÁGUA E SANEAMENTO 24H\nObjetivo: Universalizar água e saneamento.\nAções\na)\nb)\nc)\nd)\n\nÁgua tratada 24h\nExpansão da rede\nTratamento de esgoto\nModernização do sistema\n\nIntegração\na)\n\nLigação com habitação e urbanização\n\nImpacto\na)\nb)\nc)\n\nRedução de doenças\nMais qualidade de vida\nDignidade para a população\n\nVALORIZAÇÃO DO SERVIDOR PÚBLICO\nObjetivo: Fortalecer quem faz o Estado funcionar.\nMedidas\na)\nb)\nc)\nd)\ne)\n\nRecuperação financeira (via BDA)\nRenegociação de dívidas\nValorização salarial\nQualificação profissional\nPlano de carreira\n\nImpacto\na)\nb)\nc)\n\nServidor valorizado\nMelhor serviço público\nMais eficiência do Estado"
+          },
+          {
+            "id": "13",
+            "titulo": "13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "13\n\nPLANO ANTIENCHENTE DO RIO ACRE\nObjetivo: Resolver definitivamente as enchentes.\nEstrutura\na)\nb)\nc)\n\nEclusas\n7 lagoas artificiais\nSistema de controle hídrico\n\nInovação\na) Usinas solares flutuantes\nb) Turismo e desenvolvimento\n\nImpacto\nc) Segurança para a população\nd) Geração de empregos\ne) Novo polo turístico\n\nSÍNTESE DO MODELO – O NOVO ACRE\nIntegração Total\nf)\ng)\nh)\ni)\nj)\n\nPIA → Produção\nFEPI → Formação\nBDA → Financiamento\nInfraestrutura → Logística\nSaúde + Educação → Qualidade de vida\n\nResultado Final\nk) Mais empregos\nl) Mais renda\nm) Mais dignidade\nn) Economia forte e sustentável\n“O Acre não nasceu para depender. O Acre nasceu para produzir, crescer e prosperar. E é isso que nós\nvamos fazer: construir um novo estado, com emprego, dignidade e oportunidade para todos.”"
+          },
+          {
+            "id": "14",
+            "titulo": "14",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "14\n\nModelo de Governança – Governo da Indústria 15 Pastas\nEstratégicas\n\n1. Secretaria de Desenvolvimento Econômico e Indústria\nMissão: Liderar a industrialização do Acre.\nPlano Estratégico:\na)\nb)\nc)\nd)\n\nImplantar polos industriais regionais\nAtrair empresas e investidores\nIncentivos fiscais estratégicos\nIntegrar campo + indústria\n\n2. Secretaria de Agricultura, Pecuária e Agroindústria\nMissão: Fortalecer quem produz. Plano Estratégico:\na)\nb)\nc)\nd)\n\nApoio à agricultura familiar\nExpansão da produção rural\nAgroindustrialização\nAssistência técnica e crédito\n\n3. Secretaria de Infraestrutura e Logística\nMissão: Garantir base para o desenvolvimento. Plano Estratégico:\na)\nb)\nc)\nd)\n\nDuplicação de rodovias\nPrograma de ramais produtivos\nObras estruturantes\nLogística integrada\n\n4. Secretaria de Energia e Desenvolvimento Sustentável\nMissão: Garantir energia para crescer. Plano Estratégico:"
+          },
+          {
+            "id": "15",
+            "titulo": "15",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "15\na)\nb)\nc)\nd)\n\nExpansão da rede energética\nEnergia solar e limpa\nSegurança energética para indústria\nSustentabilidade produtiva\n\n5. Secretaria de Educação e Formação Profissional\nMissão: Preparar o povo para o mercado. Plano Estratégico:\na)\nb)\nc)\nd)\n\nComplexos educacionais\nEnsino técnico e profissionalizante\nParcerias com universidades\nEducação voltada à indústria\n\n6. Secretaria de Saúde\nMissão: Garantir atendimento digno e eficiente. Plano Estratégico:\na)\nb)\nc)\nd)\n\nComplexos Regionais de Saúde\nIntegração dos serviços\nTelemedicina\nRedução de filas\n\n7. Secretaria de Habitação e Urbanismo\nMissão: Garantir moradia digna. Plano Estratégico:\na)\nb)\nc)\nd)\n\nPrograma Casa para todos\nRegularização fundiária\nPlanejamento urbano\nInfraestrutura básica\n\n8. Secretaria de Desenvolvimento Social\nMissão: Combater a pobreza com dignidade. Plano Estratégico:\na)\nb)\nc)\nd)\n\nInclusão produtiva\nApoio a famílias vulneráveis\nProgramas sociais integrados\nTransição do assistencialismo para emprego"
+          },
+          {
+            "id": "16",
+            "titulo": "16",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "16\n\n9. Secretaria de Segurança Pública\nMissão: Garantir ordem e proteção. Plano Estratégico:\na)\nb)\nc)\nd)\n\nIntegração das forças de segurança\nUso de tecnologia\nCombate ao crime organizado\nSegurança nas áreas rurais\n\n10. Secretaria de Administração e Gestão\nMissão: Fazer o governo funcionar. Plano Estratégico:\na)\nb)\nc)\nd)\n\nModernização da máquina pública\nDigitalização dos serviços\nGestão por desempenho\nRedução da burocracia\n\n11. Secretaria da Fazenda e Planejamento\nMissão: Equilibrar e impulsionar as finanças. Plano Estratégico:\na)\nb)\nc)\nd)\n\nResponsabilidade fiscal\nPlanejamento estratégico do estado\nCaptação de recursos\nInvestimentos estruturantes\n\n12. Secretaria de Ciência, Tecnologia e Inovação\nMissão: Trazer o futuro para o presente. Plano Estratégico:\na)\nb)\nc)\nd)\n\nIncentivo à inovação\nApoio a startups\nTecnologia aplicada à produção\nGoverno digital\n\n13. Secretaria de Meio Ambiente"
+          },
+          {
+            "id": "17",
+            "titulo": "17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "17\n\nMissão: Produzir com responsabilidade. Plano Estratégico:\na)\nb)\nc)\nd)\n\nLicenciamento eficiente\nPreservação ambiental\nDesenvolvimento sustentável\nEconomia verde\n\n14. Secretaria de Cultura, Esporte e Juventude\nMissão: Valorizar o povo e sua identidade. Plano Estratégico:\na)\nb)\nc)\nd)\n\nIncentivo à cultura local\nEsporte como inclusão social\nPolíticas para juventude\nFormação cidadã\n\n15. Casa Civil - Centro de Governo (o cérebro da gestão)\nEssa é a mais importante estrategicamente. Missão: Coordenar todo o governo.\nPlano Estratégico:\na) Monitorar metas de todas as secretarias\nb) Garantir execução do plano de governo\nc) Integrar políticas públicas\nd) Tomada de decisão estratégica\n\nO CENTRO DE GOVERNO e DEPARTAMENTO D INTEGRIDADE\nO Centro de Governo será o cérebro estratégico da gestão estadual, responsável por\ncoordenar, monitorar e garantir que todas as políticas públicas sejam executadas com\neficiência, transparência e resultado.\nÉ onde o governo deixa de ser burocrático e passa a ser orientado por metas e entregas\nreais.\n\nESTRUTURA DO CENTRO DE GOVERNO\n1. Núcleo de Planejamento Estratégico\na)\nb)\nc)\n\nDefine metas e prioridades do governo\nAlinha todas as secretarias ao plano de governo\nCria indicadores de desempenho"
+          },
+          {
+            "id": "18",
+            "titulo": "18",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "18\n\n2. Núcleo de Monitoramento e Resultados\na)\nb)\nc)\n\nAcompanha obras, programas e ações em tempo real\nIdentifica atrasos e gargalos\nCobra resultados das secretarias\n\n“O que não é medido, não é entregue.”\n\n3. Núcleo de Gestão Orçamentária\na)\nb)\nc)\n\nGarante que o orçamento esteja alinhado às prioridades\nControla gastos e evita desperdícios\nFoca em eficiência do uso do dinheiro público\n\n1. Núcleo de Integridade e Controle\na)\nb)\nc)\n\nCombate corrupção e desvios\nFiscaliza contratos e execução de recursos\nAtua com transparência total\n\n2. Núcleo de Articulação Política e Institucional\na)\nb)\nc)\n\nIntegra governo com Assembleia, municípios e instituições\nFortalece alianças e governabilidade\nGarante apoio para execução dos projetos\n\n3. Núcleo de Comunicação e Transparência\nd)\ne)\nf)\n\nInforma a população sobre ações do governo\nPresta contas de forma clara\nCombate desinformação\n\n4. Núcleo de Inovação e Transformação Digital\na)\nb)\nc)\n\nModerniza a máquina pública\nDigitaliza serviços\nReduz burocracia\n\nCOMO FUNCIONARÁ\na)\n\nReuniões periódicas com secretários"
+          },
+          {
+            "id": "19",
+            "titulo": "19",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "19\nb)\nc)\nd)\n\nPainel de controle com metas e indicadores\nAcompanhamento direto pelo governador\nDecisões baseadas em dados, não em achismo\n\nIMPACTO NO GOVERNO\nRESULTADOS DIRETOS:\na)\nb)\nc)\nd)\n\nObras entregues no prazo\nRedução de desperdício de dinheiro público\nMais eficiência na gestão\nMais transparência\n\nIMPACTO NA POPULAÇÃO:\na)\nb)\nc)\n\nServiços públicos mais rápidos e eficientes\nMais confiança no governo\nMelhor qualidade de vida\n\nIMPACTO POLÍTICO:\na) Governo forte e organizado\nb) Capacidade real de executar promessas\nc) Liderança consolidada\n\nDiferencial do nosso modelo de governo.\nQuero dizer a todos os acreanos algo muito claro: Eu não estou construindo um governo\ncomum. Eu estou construindo um projeto de Estado.\nUm projeto que não começa e termina em quatro anos. Um projeto pensado para as futuras\ngerações, para os nossos filhos, para os nossos netos, para o futuro do Acre.\nNós não podemos mais aceitar governos passageiros, que pensam só no presente e\nesquecem o amanhã.\nO que nós estamos propondo é diferente. É estruturar o Acre para crescer, se desenvolver e\ndar oportunidades de verdade para o seu povo.\nEu quero que, no futuro, quando olharem para trás, lembrem desse momento como o início de\numa nova história. Uma história de desenvolvimento, dignidade e transformação."
+          },
+          {
+            "id": "20",
+            "titulo": "20",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "20\n\nE mais do que obras ou números, eu quero que a nossa marca fique no coração do povo\nacreano. Como um governo que cuidou das pessoas. Que respeitou o cidadão. Que teve\ncoragem de fazer o que precisava ser feito.\nEsse é o nosso compromisso: não apenas governar, mas construir um legado para o Acre.\nVocê está criando um governo:\na)\nb)\nc)\nd)\n\nintegrado (uma secretaria depende da outra)\norientado a resultado (com metas claras)\nbaseado em desenvolvimento econômico\ncom foco na industrialização\n\nSECRETARIA DE EFICIÊNCIA E GESTÃO DO ACRE\n\n“Fazer mais com menos, com responsabilidade e\nresultado”\n\nMISSÃO\nGarantir que cada real do dinheiro público seja utilizado com eficiência, transparência e\nresponsabilidade, reduzindo desperdícios, eliminando desvios e direcionando recursos\npara as verdadeiras prioridades do povo acreano.\n\nOBJETIVOS ESTRATÉGICOS\na)\nb)\nc)\nd)\ne)\n\nReduzir gastos desnecessários do Estado\nCombater fraudes, superfaturamentos e desvios\nAumentar a eficiência da máquina pública\nOtimizar contratos e compras governamentais\nRedirecionar recursos economizados para áreas essenciais\n\nESTRUTURA DA SECRETARIA\n1. Departamento de Auditoria e Controle\na)\nb)\nc)\n\nFiscalização de contratos e licitações\nAuditorias periódicas em secretarias\nIdentificação de irregularidades"
+          },
+          {
+            "id": "21",
+            "titulo": "21",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "21\n\nAtua na prevenção e combate direto ao desperdício e corrupção\n\n2. Departamento de Gestão de Custos e Eficiência\na)\nb)\nc)\n\nRevisão de gastos públicos\nIdentificação de despesas excessivas\nImplantação de metas de economia\n\nFoco: fazer mais com menos\n\n3. Departamento de Integridade e Compliance\na)\nb)\nc)\n\nCriação de normas de conduta\nMonitoramento de riscos\nPrevenção de fraudes e desvios\n\nGarante segurança e credibilidade da gestão\n\n4. Departamento de Compras Inteligentes\na)\nb)\nc)\n\nCentralização de compras públicas\nNegociação em escala (redução de preços)\nCombate ao superfaturamento\n\nO governo passa a comprar melhor e mais barato\n\n5. Departamento de Monitoramento de Contratos\na) Acompanhamento em tempo real\nb) Verificação de execução e qualidade\nc) Revisão de contratos superfaturados\n\n6. Departamento de Inovação e Desburocratização\na)\nb)\nc)\n\nDigitalização de processos\nRedução de burocracia\nAumento da produtividade\n\nCOMO FUNCIONA NA PRÁTICA\na)\nb)\nc)\nd)\ne)\n\nRevisão geral dos contratos do Estado\nCorte de gastos desnecessários\nMonitoramento contínuo das despesas\nRelatórios de economia gerados mensalmente\nReinvestimento dos recursos economizados\n\nDESTINO DOS RECURSOS ECONOMIZADOS"
+          },
+          {
+            "id": "22",
+            "titulo": "22",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "22\n\nO dinheiro que antes era desperdiçado será investido em:\na)\nb)\nc)\nd)\ne)\n\nSaúde\nEducação\nHabitação\nInfraestrutura\nProgramas sociais\n\nIMPACTO NO GOVERNO\na)\nb)\nc)\nd)\n\nRedução significativa do desperdício\nCombate efetivo à corrupção\nMais recursos disponíveis sem aumentar impostos\nGoverno mais ágil e eficiente\n\nIMPACTO NA POPULAÇÃO\na)\nb)\nc)\n\nMelhor qualidade dos serviços públicos\nMais investimentos em áreas essenciais\nMaior confiança no governo\n\nPROGRA JUVENTUDE\nTRANSFORMA”\n\nDO\n\nFUTURO\n\n–\n\n“GERAÇÃO\n\nQUE\n\nUm programa revolucionário para transformar a juventude do Acre na força mais preparada,\ninovadora e protagonista da história do Estado.\n\nBOLSA FUTURO (Renda + Educação + Propósito)\nTodo jovem de baixa renda terá acesso a uma bolsa mensal para:\na)\nb)\nc)\n\nEstudar (ensino técnico ou superior)\nParticipar de cursos de inovação e tecnologia\nAtuar em projetos sociais e produtivos\n\nNão é assistencialismo. É investimento no talento acreano.\n\nUNIVERSIDADE DA INDÚSTRIA (Formação para o mercado real)\nCriação de um sistema integrado com:\na)\n\nInstitutos técnicos"
+          },
+          {
+            "id": "23",
+            "titulo": "23",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "23\nb)\nc)\n\nUniversidades\nEmpresas\n\nCursos focados em:\na)\nb)\nc)\nd)\ne)\n\nEnergia solar\nAgroindústria\nTecnologia e programação\nLogística e comércio internacional\nConstrução civil industrializada\n\nAqui o jovem sai empregado — não desempregado com diploma.\n\nPRIMEIRO EMPREGO GARANTIDO\nO governo entra como parceiro do setor privado para garantir:\na)\nb)\nc)\n\nO primeiro emprego de jovens entre 18 e 29 anos\nSubsídio parcial do salário inicial\nIncentivos fiscais para empresas que contratarem\n\nExperiência não será mais uma barreira.\n\nSTARTUP ACRE (Jovens empreendedores)\nCriação do maior programa de incentivo ao empreendedorismo jovem do Norte:\na)\nb)\nc)\nd)\n\nCapital semente (até R$ 50 mil por projeto)\nMentoria com empresários\nIncubadoras em todos os municípios\nEspaços de coworking públicos\n\nIdeia boa vira negócio. Negócio vira renda.\n\nESCOLA DO FUTURO (Nova educação)\nTransformação do ensino médio:\na)\nb)\nc)\nd)\n\nEnsino em tempo integral\nAulas práticas e tecnológicas\nEducação financeira e empreendedorismo\nProgramação e inteligência artificial"
+          },
+          {
+            "id": "24",
+            "titulo": "24",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "24\n\nChega de escola que não prepara para a vida.\n\nJUVENTUDE NA GESTÃO (Protagonismo político)\nCriação de:\na)\nb)\nc)\n\nConselho Estadual da Juventude com poder real\nPrograma Jovem Líder (formação política e gestão pública)\nEstágios dentro do governo\n\nO jovem não será plateia. Será protagonista.\n\nESPORTE, CULTURA E IDENTIDADE\na)\nb)\nc)\nd)\n\nBolsa atleta estadual\nIncentivo à cultura urbana (rap, dança, arte digital)\nCentros de esporte e lazer em bairros\nFestivais culturais da juventude\n\nO talento da periferia será valorizado, não ignorado.\n\nCONEXÃO DIGITAL TOTAL\na)\nb)\nc)\n\nInternet gratuita em escolas e espaços públicos\nDistribuição de tablets/notebooks para alunos de baixa renda\nPlataformas digitais de ensino\n\nQuem não tem acesso, não tem oportunidade. Isso vai acabar.\n\nPROGRAMA SAÚDE MENTAL JOVEM\na)\nb)\nc)\n\nAtendimento psicológico nas escolas\nCombate à ansiedade, depressão e drogas\nCentros de apoio à juventude\n\nCuidar da mente é cuidar do futuro.\n\nMISSÃO INTERNACIONAL (Abrindo o mundo)\na)\n\nIntercâmbios para jovens de baixa renda"
+          },
+          {
+            "id": "25",
+            "titulo": "25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "25\nb)\nc)\n\nParcerias com outros países\nProgramas de formação fora do Brasil\n\nO jovem acreano vai sair do Acre para conquistar o mundo — e voltar para transformar sua\nterra.\n\n“A juventude não é o futuro do Acre… ela é o presente que vai construir o nosso futuro.”\n\nNOSSO MODELO DE DESENVOLVIMENTO SUSTENTÁVEL DO\nACRE\n“Produzir, crescer e preservar — tudo ao mesmo tempo.”\nO Acre não precisa escolher entre preservar a floresta e desenvolver sua economia. O nosso\nmodelo prova que é possível fazer os dois — com inteligência, tecnologia e planejamento.\n\n1. Industrialização Verde\nVamos implantar o Governo da Indústria, com foco em:\na)\nb)\nc)\n\nIndústrias de base florestal (manejo sustentável da madeira)\nBioeconomia (óleos, fármacos, cosméticos, alimentos)\nAgroindústria (processamento da produção local)\n\nAqui, a floresta em pé vale mais do que derrubada.\n\n2. Energia Limpa e Barata\na)\nb)\nc)\n\nExpansão de energia solar em larga escala\nUsinas híbridas (solar + biomassa)\nAutonomia energética para polos industriais\n\nEnergia não será mais desculpa para o atraso — será motor do desenvolvimento.\n\n3. Infraestrutura Inteligente\nDuplicação das principais rodovias com:\na)\nb)\nc)\n\nSustentabilidade nos materiais\nRedução de custos de manutenção\nMelhor escoamento da produção"
+          },
+          {
+            "id": "26",
+            "titulo": "26",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "26\n\nEstrada aqui não é só obra — é integração econômica.\n\n4. Fundo Solidário e Ativos Ambientais\na)\nb)\nc)\n\nMonetização dos ativos ambientais da floresta\nRecursos reinvestidos em desenvolvimento regional\nFinanciamento de projetos sustentáveis\n\nO Acre será protagonista na nova economia verde global.\n\n5. Juventude como Motor do Futuro\na)\nb)\nc)\n\nBolsas de ensino técnico e superior\nFormação voltada para indústria e tecnologia\nIncentivo ao empreendedorismo jovem\n\nA juventude não será espectadora — será protagonista.\n\n6. Estado Eficiente e Combate ao Desperdício\na)\nb)\nc)\n\nCriação da Secretaria de Eficiência e Gestão\nCombate a desvios e desperdícios\nMais resultado com menos custo\n\nCada real economizado será investido no povo.\n\n7. Valorização do Servidor Público\na)\nb)\nc)\n\nRecuperação da saúde financeira\nQualificação profissional\nMelhoria das condições de trabalho\n\nServidor valorizado entrega um estado mais eficiente.\n\n8. Desenvolvimento Regional Equilibrado\na)\nb)\nc)\n\nPolos industriais regionais\nIncentivo à produção local\nGeração de emprego no interior\n\nO desenvolvimento não ficará só na capital chegará a todo o Acre.\n\nGESTÃO AMBIENTAL SUSTENTÁVEL DO ACRE\n“Preservar com inteligência. Desenvolver com responsabilidade.”"
+          },
+          {
+            "id": "27",
+            "titulo": "27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "27\n\nNo nosso governo, a gestão ambiental deixa de ser um entrave e passa a ser um ativo\nestratégico de desenvolvimento econômico. Vamos transformar o meio ambiente em\nriqueza, oportunidade e qualidade de vida para o povo acreano.\n\nCOMO SERÁ A GESTÃO AMBIENTAL\n1. Floresta como Ativo Econômico\na)\nb)\nc)\n\nValorização da floresta em pé por meio da bioeconomia\nIncentivo ao manejo florestal sustentável\nCadeias produtivas de alto valor (óleos, fármacos, cosméticos, alimentos)\n\nA floresta deixa de ser vista como obstáculo e passa a ser fonte de renda.\n\n2. Monetização de Ativos Ambientais\na)\nb)\nc)\n\nCriação de um sistema estadual de ativos ambientais\nCaptação de recursos nacionais e internacionais\nIntegração com o Fundo Solidário para financiar projetos sustentáveis\n\nO Acre será pago por preservar — e investirá esse recurso no seu povo.\n\n3. Energia Limpa e Transição Energética\na)\nb)\nc)\n\nExpansão da energia solar em todo o estado\nIncentivo à biomassa e outras fontes renováveis\nRedução da dependência de fontes caras e poluentes\n\nEnergia limpa para sustentar o crescimento industrial.\n\n4. Produção Sustentável no Campo\na)\nb)\nc)\n\nAssistência técnica ao produtor rural\nIncentivo à produção sem desmatamento ilegal\nRegularização fundiária com responsabilidade ambiental\n\nProduzir mais, sem destruir.\n\n5. Licenciamento Ágil e Responsável\na)\n\nModernização do licenciamento ambiental"
+          },
+          {
+            "id": "28",
+            "titulo": "28",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "28\nb)\nc)\n\nMenos burocracia, mais eficiência\nSegurança jurídica para quem quer investir\n\nQuem quer produzir certo terá apoio, não obstáculos.\n\n6. Combate ao Desmatamento Ilegal\na)\nb)\nc)\n\nUso de tecnologia e monitoramento em tempo real\nIntegração entre órgãos de fiscalização\nPunição firme para crimes ambientais\n\nPreservação com autoridade e responsabilidade.\n\n7. Cidades Sustentáveis\na)\nb)\nc)\n\nGestão moderna de resíduos sólidos\nIncentivo à reciclagem e economia circular\nSaneamento básico e qualidade de vida\n\nSustentabilidade também é cuidar das pessoas.\n\n8. Educação Ambiental e Consciência Social\na)\nb)\nc)\n\nProgramas nas escolas\nFormação de uma cultura de preservação\nEnvolvimento da população nas decisões ambientais\n\nO futuro sustentável começa na consciência das pessoas.\nA sua proposta rompe com o modelo predatório e coloca o produtor rural como protagonista do\ndesenvolvimento. Ela se baseia em cinco pilares principais:\n\nProdução com preservação\nVocê defende um modelo onde o produtor ganha dinheiro mantendo a floresta em pé,\natravés de:\na)\nb)\nc)\n\nSistemas agroflorestais (integração lavoura + floresta)\nManejo sustentável da madeira\nProdução de açaí, castanha, borracha e outros ativos da floresta\n\nRegularização fundiária"
+          },
+          {
+            "id": "29",
+            "titulo": "29",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "29\n\nA segurança jurídica da terra é essencial:\na)\nb)\nc)\n\nO produtor com título tem acesso a crédito\nPode investir com segurança\nEntra na economia formal\n\nAssistência técnica e inovação\nSeu plano inclui:\na)\nb)\nc)\n\nApoio técnico contínuo ao pequeno e médio produtor\nUso de tecnologia no campo (drones, monitoramento, mecanização leve)\nIntegração com universidades e centros de pesquisa\n\nCombate ao desmatamento ilegal com alternativa econômica\nAo invés de apenas punir, seu modelo cria opções reais de renda, reduzindo a pressão por\ndesmatamento:\na)\nb)\nc)\n\nPagamento por serviços ambientais\nMonetização de ativos ambientais\nCadeias produtivas sustentáveis\n\nAgroindustrialização\nVocê conecta o campo com a indústria:\na)\nb)\nc)\n\nBeneficiamento local da produção\nGeração de valor agregado\nCriação de empregos dentro do Acre\n\nEnergia Renovável como base do desenvolvimento\nVocê enfrenta diretamente um dos maiores argumentos contra a industrialização do Acre: a\nfalta de energia. Seu plano resolve isso com uma transição energética moderna.\n\nEnergia solar em larga escala\na)\nb)\nc)\n\nImplantação de usinas solares\nIncentivo à energia solar rural\nRedução do custo de energia para produção e indústria\n\nBiomassa como solução amazônica\na)\nb)\nc)\n\nUso de resíduos agrícolas e florestais\nGeração de energia limpa e renda extra para produtores\nIntegração com cadeias produtivas\n\nAutossuficiência energética do Acre"
+          },
+          {
+            "id": "30",
+            "titulo": "30",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "30\na)\nb)\nc)\n\nRedução da dependência externa\nSegurança energética para atrair indústrias\nEstabilidade para o crescimento econômico\n\nEnergia como ferramenta social\na)\nb)\nc)\n\nEnergia mais barata = produção mais barata\nInclusão energética no campo\nMelhoria da qualidade de vida\n\nIntegração entre agricultura e energia\nO diferencial do seu plano é a integração inteligente:\na)\nb)\nc)\nd)\n\nO produtor rural produz alimentos e energia\nResíduos viram combustível (biomassa)\nPropriedades rurais podem gerar sua própria energia solar\nA floresta gera renda (créditos, ativos ambientais)\n\nIsso criará um ciclo virtuoso: Produção → Energia → Renda → Preservação →\nDesenvolvimento\n\nResultado do modelo\nSe implementado, seu modelo transforma o Acre em:\na)\nb)\nc)\nd)\n\nReferência internacional em economia verde\nPolo de produção sustentável\nEstado industrializado com base limpa\nExemplo de que é possível desenvolver sem destruir\n\nA essência do projeto\nO seu plano envia uma mensagem forte: O Acre não precisa escolher entre preservar e\ncrescer. Ele pode fazer os dois — e liderar o Brasil nesse caminho.\n\nNo seu plano de governo, o programa das 12 mil bolsas de estudo integrais “Bolsa\nEsperança” é um dos pilares mais transformadores. Ele não é apenas uma política\neducacional, é uma estratégia de desenvolvimento humano, econômico e social para\nmudar o futuro do Acre.\n\nEDUCAÇÃO QUE TRANSFORMA, ESPERANÇA QUE NASCE"
+          },
+          {
+            "id": "31",
+            "titulo": "31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "31\n\nA proposta parte de uma ideia simples, mas poderosa: sem educação, não existe\nindustrialização nem desenvolvimento sustentável.\nPor isso, você cria um programa robusto, com 12 mil bolsas 100% integrais, voltadas para\njovens e adultos de baixa renda.\n\nO que é a Bolsa Esperança\nA Bolsa Esperança garante:\na)\nb)\nc)\n\nEnsino superior completo (faculdades)\nCursos técnicos e profissionalizantes\nFormação alinhada com as demandas do mercado\n\nTudo isso com:\na) Mensalidade 100% paga\nb) Inclusão social real\nc) Oportunidade para quem nunca teve acesso\n\nQuem será beneficiado\nO foco do programa é claro:\na)\nb)\nc)\nd)\n\nJovens que estão fora da universidade\nAdultos que querem recomeçar\nPessoas de baixa renda\nTrabalhadores que precisam se qualificar\n\nOu seja: gente que hoje está sem oportunidade, mas cheia de potencial.\n\nIntegração com o seu projeto de desenvolvimento\nEsse programa não é isolado ele está diretamente ligado ao seu plano de industrialização do\nAcre.\nAs bolsas serão direcionadas para áreas estratégicas, como:\na)\nb)\nc)\n\nEngenharia e tecnologia\nEnergias renováveis\nAgroindústria"
+          },
+          {
+            "id": "32",
+            "titulo": "32",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "32\nd)\ne)\n\nGestão e empreendedorismo\nSaúde e serviços essenciais\n\nResultado: será formado profissionais exatamente para as vagas que serão criadas no novo\nmodelo econômico do estado.\n\nParcerias para viabilizar\nO programa será construído com:\na)\nb)\nc)\nd)\n\nGoverno do Estado\nUniversidades públicas e privadas\nSetor produtivo\nParcerias Público-Privadas (PPPs)\n\nIsso garante:\na)\nb)\nc)\n\nEscala (atingir 12 mil pessoas)\nSustentabilidade financeira\nQualidade na formação\n\nImpacto econômico e social\nA Bolsa Esperança gera uma transformação em cadeia:\n\nNo curto prazo:\na)\nb)\nc)\n\nMais acesso à educação\nRedução da desigualdade\nInclusão social\n\nNo médio prazo:\na)\nb)\nc)\n\nMão de obra qualificada\nAumento da empregabilidade\nGeração de renda\n\nNo longo prazo:\na)\nb)\nc)\n\nCrescimento econômico sustentável\nRedução da pobreza estrutural\nUm novo perfil de desenvolvimento para o Acre"
+          },
+          {
+            "id": "33",
+            "titulo": "33",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "33\n\nO ciclo da esperança\nNosso programa de governo criará um ciclo poderoso: Educação → Qualificação →\nEmprego → Renda → Desenvolvimento → Mais oportunidades\n\nA força política da proposta\nA Bolsa Esperança carregará uma mensagem forte para a população: “Ninguém fica para\ntrás. O filho do pobre também pode ser engenheiro, técnico, profissional qualificado.”\nEla representa:\na)\nb)\nc)\n\nJustiça social\nOportunidade real\nFuturo para a juventude\n\nEssência do seu projeto\nA Bolsa Esperança é mais do que ensino gratuito é: um programa de transformação de\nvidas, um motor para o desenvolvimento do Acre e acima de tudo, um símbolo de um\nnovo começo\n\nOS EIXOS DE TRANSFORMAÇÃO PRIORITARIAS DO ACRE.\nPolíticas Públicas Prioritárias para um Novo Tempo\nEducação\nA educação será uma das bases fundamentais para o desenvolvimento do estado. O governo\ninvestirá na melhoria da qualidade do ensino, na formação de professores e na ampliação da\neducação técnica e profissional.\nO objetivo é preparar os jovens acreanos para os desafios do mercado de trabalho e para as\noportunidades geradas pela nova economia.\n\nSaúde\nO sistema de saúde será fortalecido por meio da integração dos serviços, da modernização da\ninfraestrutura e da ampliação do acesso da população aos atendimentos médicos. O objetivo é\ngarantir atendimento digno, eficiente e humanizado para todos os cidadãos."
+          },
+          {
+            "id": "34",
+            "titulo": "34",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "34\n\nSegurança Pública\nA segurança pública será tratada como prioridade estratégica, com investimentos em\ntecnologia, inteligência policial e valorização dos profissionais da área. A integração entre as\nforças de segurança será fundamental para combater a criminalidade e proteger a população.\n\nAgricultura\nA agricultura continuará sendo uma das bases da economia acreana. O governo trabalhará\npara fortalecer o pequeno produtor, ampliar o acesso a crédito e incentivar a agroindústria.\n\nTurismo\nO Acre possui um grande potencial turístico, especialmente nas áreas de turismo ecológico,\ncultural e de aventura. O governo buscará desenvolver políticas para fortalecer o setor,\ngerando emprego e renda para as comunidades locais.\n\nInfraestrutura\nA infraestrutura será uma prioridade central do nosso plano de governo, porque é ela que\nsustenta o desenvolvimento. Vamos investir na recuperação e duplicação de rodovias,\ngarantindo mobilidade, segurança e escoamento da produção. Ao mesmo tempo, vamos\nampliar o acesso à energia limpa e de qualidade, fundamental para a industrialização do\nAcre.\nNosso compromisso é claro: integrar o estado, reduzir custos, atrair investimentos e gerar\noportunidades, levando desenvolvimento para quem mais precisa.\n\nCAPITAL TURÍSTICA DA AMAZÔNIA\n\nRio Branco será a capital turística da Amazônia. Uma cidade viva, movimentada, que gera\nemprego, renda e oportunidade para o seu povo.\nVamos transformar Rio Branco em um grande destino, com lazer, cultura, eventos e turismo\npara todos — tanto para quem vem de fora, quanto para quem vive aqui.\nRio Branco deixará de ser esquecida para se tornar referência.\nEsse é o nosso compromisso."
+          },
+          {
+            "id": "35",
+            "titulo": "35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "35\n\nUrbanismo moderno e inteligente\nCom conceito:\na)\nb)\nc)\nd)\n\nFiação elétrica subterrânea no centro e áreas turísticas\nRuas bem planejadas, padronizadas e acessíveis\nPavimentação em concreto nos bairros (durabilidade e menos manutenção)\nReestruturação e modernização das pontes\n\nCidade limpa, organizada e visualmente bonita.\n\nOrla do Rio Acre como cartão-postal\na)\nb)\nc)\nd)\n\nRevitalização completa da orla\nIluminação cênica moderna\nEspaços para caminhada, lazer e gastronomia\nQuiosques, cafés e restaurantes regionais\n\nToda cidade turística forte tem um ponto icônico. Esse será o seu.\n\nCentro histórico vivo (não abandonado)\na)\nb)\nc)\n\nRevitalizar prédios históricos\nIncentivar bares, cafés e cultura local\nProgramação noturna (música, feiras, eventos)\n\nTurismo precisa de vida, não só obra.\n\nRoteiro turístico amazônico\nCriar experiências:\na)\nb)\nc)\nd)\n\nTurismo de floresta\nGastronomia regional\nCultura acreana e história\nEventos e Festivais\n\nO turista precisa ter o que fazer, não só o que ver.\n\nCidade limpa, segura e organizada\na)\nb)\n\nColeta de lixo eficiente\nCombate à poluição visual"
+          },
+          {
+            "id": "36",
+            "titulo": "36",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "36\nc)\n\nSegurança reforçada nas áreas turísticas\n\nSem isso, nenhuma cidade se sustenta como destino turístico.\n\nMobilidade urbana eficiente\na)\nb)\nc)\n\nTransporte público de qualidade\nCiclovias e mobilidade sustentável\nSinalização moderna\n\nO turista precisa se deslocar com facilidade.\n\nIluminação e estética urbana\na)\nb)\nc)\n\nIluminação em LED em toda a cidade\nPaisagismo moderno (praças, avenidas, entradas da cidade)\nPadronização visual urbana\n\nA cidade precisa ser bonita de dia e de noite.\n\nParcerias e investimento\na)\nb)\nc)\n\nParcerias Público-Privadas (PPPs)\nIncentivos para hotéis, restaurantes e empreendimentos turísticos\nCaptação de investimento nacional e internacional\n\nGoverno não faz tudo sozinho ele atrai quem faz junto.\n\nJETO: PISCINÕES DO POVO – LAZER, DIGNIDADE E VIDA PARA O\nACRE\nCONCEITO\nCriação de grandes complexos públicos de lazer aquático gratuitos, inspirados em modelos\ncomo o Piscinão de Ramos, adaptados à realidade do Acre.\nSerão espaços completos com:\na)\nb)\nc)\nd)\ne)\nf)\n\nPiscinas gigantes (adulto e infantil)\nToboáguas e brinquedos aquáticos\nÁreas de sombra e descanso\nPraça de alimentação\nEspaço para shows e eventos\nProgramação cultural e esportiva"
+          },
+          {
+            "id": "37",
+            "titulo": "37",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "37\n\nObjetivo: tirar a população da ociosidade, do álcool como única diversão, e oferecer\nlazer saudável, familiar e gratuito.\n\nOBJETIVOS DO PROJETO\na)\nb)\nc)\nd)\ne)\n\nGarantir lazer gratuito e de qualidade\nCombater o alcoolismo social de fim de semana\nFortalecer a convivência familiar\nEstimular a economia local\nCriar espaços seguros para juventude e crianças\n\nESTRUTURA DOS PISCINÕES\nCada unidade contará com:\n\nÁrea Aquática\n1)\n2)\n3)\n\nPiscinão principal (estilo praia artificial)\nPiscinas infantis com segurança\nToboáguas e atrações aquáticas\n\nÁrea de Eventos\na)\nb)\nc)\n\nPalco para shows\nEventos culturais, gospel, esportivos e comunitários\nFestivais regionais\n\nÁrea de Alimentação\na)\nb)\n\nQuiosques e food trucks\nAlimentação popular a preços acessíveis\n\nÁrea de Esporte e Lazer\na)\nb)\nc)\n\nQuadras esportivas\nEspaço fitness\nAtividades recreativas\n\nMODELO DE GESTÃO (PARCERIA PRIVADA)\nO projeto será executado via concessão/terceirização:\na)\nb)\nc)\nd)\n\nO Estado constrói a estrutura\nEmpresa privada administra o espaço\nContrato com metas de qualidade, segurança e manutenção\nFiscalização rígida do Governo"
+          },
+          {
+            "id": "38",
+            "titulo": "38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "38\n\nA empresa poderá lucrar com:\na)\nb)\nc)\nd)\n\nAlimentação\nEventos\nShows\nPublicidade\n\nMas o acesso ao espaço e às piscinas será 100% gratuito para a população\n\nIMPLANTAÇÃO\nFase 1: Rio Branco (projeto piloto)\nFase 2:Cruzeiro do Sul, Sena Madureira\nFase 3: Expansão para outros municípios\n\nFINANCIAMENTO\na)\nb)\nc)\nd)\n\nRecursos do Estado\nParcerias público-privadas (PPP)\nEmendas parlamentares\nInvestimento privado via concessão\n\nGERAÇÃO DE EMPREGOS\nCada piscinão vai gerar:\na)\nb)\n\nEmpregos diretos (segurança, limpeza, monitores)\nEmpregos indiretos (alimentação, eventos, turismo)\n\nPode virar um polo de economia local\n\nSEGURANÇA E ORGANIZAÇÃO\na)\nb)\nc)\nd)\n\nPresença de salva-vidas\nControle de entrada\nSegurança privada e apoio policial\nRegras de convivência (ambiente familiar)\n\nIMPACTO SOCIAL\nEsse projeto combate diretamente:\na)\nb)\nc)\n\nFalta de lazer\nViolência\nUso excessivo de álcool"
+          },
+          {
+            "id": "39",
+            "titulo": "39",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "39\nd)\n\nOciosidade da juventude\n\nE promove:\na)\nb)\nc)\n\nSaúde mental\nInclusão social\nQualidade de vida\n\nFORÇA POLÍTICA DA PROPOSTA\nEssa é uma proposta de alto impacto popular porque:\na)\nb)\nc)\nd)\n\nÉ visível\nÉ imediata\nÉ para todos\nGera pertencimento\n\nÉ o tipo de projeto que faz o povo dizer: “Esse governo fez algo que mudou nossa vida.”\n\nCONSIDERAÇÕES FINAIS - UM NOVO ACRE COMEÇA AGORA\nO Acre possui todas as condições para iniciar um novo ciclo de desenvolvimento. Temos\nriquezas naturais, temos um povo trabalhador e temos um enorme potencial de crescimento.\nCom planejamento, coragem e compromisso com a população, é possível transformar o estado\nem um lugar de mais oportunidades, mais prosperidade e mais esperança.\nEste livro representa um compromisso com o futuro do Acre.\nPorque acreditamos que um novo tempo pode começar agora.\n\nIndustrializar para Prosperar: o novo modelo econômico do Acre\nSe existe uma lição clara na história econômica das nações, é que nenhum país ou região\nalcançou prosperidade duradoura sem desenvolver uma base industrial forte. A industrialização\nnão é apenas um processo econômico; ela é o motor que transforma riqueza natural em\nempregos, renda, inovação e progresso social.\nO Acre precisa compreender essa realidade.\nDurante muitos anos, nossa economia permaneceu dependente de atividades de baixa escala\nprodutiva e de uma forte presença do setor público como principal indutor da economia.\nEmbora essas atividades tenham sua importância, elas não foram capazes de gerar o nível de\ncrescimento econômico necessário para transformar a vida da população.\nO resultado é uma economia limitada, com poucas oportunidades de trabalho, pouca\nagregação de valor à produção local e uma constante dependência de recursos externos."
+          },
+          {
+            "id": "40",
+            "titulo": "40",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "40\n\nIndustrializar o Acre não significa simplesmente instalar fábricas. Significa construir um novo\nmodelo econômico capaz de transformar o potencial produtivo do estado em prosperidade\nconcreta para sua população.\nO Acre possui condições favoráveis para esse processo. Temos recursos naturais, produção\nagrícola, riqueza florestal, posição estratégica na Amazônia e um povo trabalhador disposto a\nproduzir e empreender.\nO que falta é organização, planejamento e visão estratégica.\nUm novo modelo econômico para o Acre precisa estimular a criação de agroindústrias,\nincentivar a transformação da matéria-prima produzida no estado e fortalecer cadeias\nprodutivas locais. Em vez de exportarmos apenas produtos in natura, precisamos criar\ncondições para que esses produtos sejam processados e industrializados dentro do próprio\nestado.\nIsso significa gerar empregos, aumentar a renda da população e fortalecer a economia\nregional.\nOutro ponto fundamental é a melhoria da infraestrutura. Sem estradas adequadas, logística\neficiente, energia confiável e acesso a crédito produtivo, nenhum projeto de industrialização\nconsegue prosperar. O desenvolvimento econômico exige investimentos estratégicos que\npermitam ao setor produtivo crescer com segurança e competitividade.\nTambém é essencial criar um ambiente favorável ao empreendedorismo, simplificando\nprocessos burocráticos, oferecendo incentivos à produção e estimulando a inovação\ntecnológica.\nIndustrializar o Acre não é apenas uma opção de política econômica. É uma necessidade\nhistórica.\nSem industrialização, continuaremos presos a uma economia limitada e dependente. Com\nindustrialização, podemos abrir caminho para um ciclo de crescimento capaz de gerar\noportunidades reais para nossa população.\nO Acre tem potencial para construir uma nova economia baseada na produção, na inovação e\nno trabalho.\nIndustrializar é prosperar.\nIndustrializar é gerar oportunidades.\nIndustrializar é construir o futuro.\nE o futuro do Acre depende da coragem de iniciar essa transformação."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "546878768e846e8463fc79980b534be91143aad96f3eece85cd517e6cdaac9a3"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d4ca2bc1c590bca93e9705d4ae7ca00740ead72195f9899fc6e813c05fc34fc1"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e2a02406c5aee18d8fb9611e7c8ab9ba045f00138ad256637f646be0fb91f751"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "67acd93365901784b197968b3d717ed67e1a9bfb1666204ceffe08d511a0b170"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ff3046ddc3daf757520c25c3ffe616ea28df9002c7c7616f657cd7aa6fcb1550"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "67f988efe510c72453e4cf4a9e0ad0ce0f65052b62e2f2309e91eaded308816e"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "4a0197910fc9493e2460a38e25a90aa0fd9b5b31a285523dd58d957c8a3b287a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "c3536c144931d0c39794dfa1f7c3a1fe2aef4261e853482459ed2c2593c1f518"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "ec1e9c6337779b90c9462db954a5fc353984d3e826e98d284d87c59dcad3f93d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "7a93f5556e0bc880213e69cd1299167d6247d4cffac73f8340391f9c3c17da29"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "42b233f6ac4e307a2c4cb985e92556f88098b088c535877c7313336a0ba4a310"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "1c5a42b8048cbd32b17f4225d05336546bcd78ae8f7d3d1104dddd8969f23442"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "cb5492459bb342f38afd4a8b9b72da2a42bb989ea7348bf3a501968c7dcf16fa"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "94cb139ad81b51016bbfb1a00e59cabdabc3a27bed340c18adfc1dfb86be8285"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "a0848dec883a12fbcd764e92e5b46547c79450777992e01a402a3a074c0b5b6f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "d04207175b4cb1433696b767b20f827632faff33aa0fcd767dfab559da215c3e"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "c56b643193181b0efe0bc7e5333b29aa79b5863798d516ce2f86abcf5dba2f0c"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "25f298560d93d61d98db5360702d085789991f3eb8bd8408272b2fa0521dfae0"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "dc0dac6c144c88fdcb8cd9496c1a99dbf906ef0d353354efe8f8c74c437de1e1"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "6cf738b306111c423ab73e735a23529f17db585f853e1b5fff6290fb9e66ac90"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9b96126953b91b67d520dad2bf54b899a8ba4e39e39409a7ce520fc866ef86b8"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "4be8cc9397199052b87629c4e4f36e2ef28228809edc48a4f296f142d541d52e"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "ddc61ad522c1fccd18260fac9451d08779d7e6679dc5548fa6195f9c9148dbbe"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "a5c4b8a5ac8ab7a63ce3adc3622743c1b4260213260c426fbd1c0955129a541a"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "ac9a1e6c44e512d584aba6d4d01fbd16e8f47993ecac19dc7f98c86f208c6ad0"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "a5dffd61868e4fe4aa905f6a3633a644f014d4419ec89f8853a971343c8a1ee1"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "8d0159304d930a0de9c4e55a24e959cf830ae4df531831f44cb9e2f5d219a470"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "f1e5eb7c88a3d40300d48fa6cec43661570dc0807e24b4bc8c2de5013b712da9"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "fe7015461d1400faa450fed878ff004b772322d2302f166c3ff20094ca340cf9"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "62cc5a57e20646999cecb62ed45541a3b492177c65952ff04bf82e8e811ef7b1"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "8d525956fb718fc2a1baf98ebe97736f464bac67500c66460adef12999c9e058"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "c174f5a676e6eb1ac9397ed072eeb83f423ac8a1c756ce07899b3d82f2259c49"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "65452dfed409fab3fb9a4a0eb8650a9ab1f41a908a95fd35f4178a1fc7483160"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "0cf4ca031660b1681696509708b62827ed1587a581c4d47ad47d3ddd1860a2a2"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "28780a72358d8c321005bf0845b2bf3234cb0399e8a704bbd7646282f6c95816"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "2c356f376e7ee9a2c37a4e6abfba1aa0d34ebcd6552f069d1be6676e51e2f537"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "75c515726afffe57c59ec0d2798e5dd2079a2b7193ed188844dc942cfbd630eb"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "42d833498186682acc63cd60f3357942c50b0463e242e773136cde9113d0b7fc"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "fedbee5a9c7562b76856463211b255199df74694abca76a2f0e259cde1e6c672"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "344282fc9d81ce01b92c683596d4c31d62d411b027f2f038444081efa1321ec0"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a criação do Polo Industrial do Acre como estrutura produtiva estadual. Propõe a Faculdade Estadual do Polo Industrial para formar profissionais voltados ao desenvolvimento econômico. Prevê um Banco de Desenvolvimento do Acre para financiar atividades produtivas no estado. Planeja Complexos Regionais de Saúde para ampliar o atendimento regionalizado à população. Propõe o Programa Casa para Todos como política de habitação popular. Prevê o Plano Antienchente do Rio Acre com estruturas de controle hídrico. O documento também organiza áreas de atuação governamental relacionadas à educação, saúde, segurança pública, agricultura, turismo, infraestrutura, meio ambiente, ciência, tecnologia, desenvolvimento social, energia, sustentabilidade, desenvolvimento econômico e indústria. A proposta apresenta essas iniciativas como componentes de um modelo estadual orientado à industrialização, à prestação de serviços públicos, à infraestrutura, à habitação, à prevenção de enchentes e ao desenvolvimento regional.",
+    "frases": [
+      {
+        "texto": "O programa prevê a criação do Polo Industrial do Acre como estrutura produtiva estadual.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 6,
+            "trecho": "Objetivo: Transformar o Acre em um novo polo produtivo da Amazônia."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe a Faculdade Estadual do Polo Industrial para formar profissionais voltados ao desenvolvimento econômico.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 7,
+            "trecho": "Objetivo: Formar profissionais para sustentar o desenvolvimento econômico."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê um Banco de Desenvolvimento do Acre para financiar atividades produtivas no estado.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 8,
+            "trecho": "Objetivo: Financiar o crescimento econômico do estado."
+          }
+        ]
+      },
+      {
+        "texto": "Planeja Complexos Regionais de Saúde para ampliar o atendimento regionalizado à população.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 9,
+            "trecho": "Objetivo: Levar saúde de qualidade para perto das pessoas."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe o Programa Casa para Todos como política de habitação popular.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 10,
+            "trecho": "PROGRAMA CASA PARA TODOS (HABITAÇÃO)"
+          }
+        ]
+      },
+      {
+        "texto": "Prevê o Plano Antienchente do Rio Acre com estruturas de controle hídrico.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 13,
+            "trecho": "Sistema de controle hídrico"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "industrializacao",
+        "titulo": "Industrialização",
+        "descricao": "Criação de estrutura produtiva estadual.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 6,
+            "trecho": "Objetivo: Transformar o Acre em um novo polo produtivo da Amazônia."
+          }
+        ]
+      },
+      {
+        "id": "formacao-profissional",
+        "titulo": "Formação profissional",
+        "descricao": "Formação de profissionais para o desenvolvimento econômico.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 7,
+            "trecho": "Objetivo: Formar profissionais para sustentar o desenvolvimento econômico."
+          }
+        ]
+      },
+      {
+        "id": "financiamento-produtivo",
+        "titulo": "Financiamento produtivo",
+        "descricao": "Financiamento do crescimento econômico estadual.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 8,
+            "trecho": "Objetivo: Financiar o crescimento econômico do estado."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Ampliação do atendimento de saúde próximo à população.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 9,
+            "trecho": "Objetivo: Levar saúde de qualidade para perto das pessoas."
+          }
+        ]
+      },
+      {
+        "id": "habitacao-popular",
+        "titulo": "Habitação popular",
+        "descricao": "Implementação de programa estadual de habitação.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 10,
+            "trecho": "PROGRAMA CASA PARA TODOS (HABITAÇÃO)"
+          }
+        ]
+      },
+      {
+        "id": "controle-hidrico",
+        "titulo": "Controle hídrico",
+        "descricao": "Implantação de estruturas para o controle de enchentes.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 13,
+            "trecho": "Sistema de controle hídrico"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:32:49.723Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:34:44.928Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o PIA como estrutura produtiva estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente o objetivo da FEPI."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o BDA com esse objetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma proposta de complexos regionais e objetivo de aproximar o atendimento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma nome do programa e área de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o Plano Antienchente com sistema de controle hídrico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula sobre estruturas de controle hídrico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a criação de estrutura produtiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente o objetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente o objetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente o objetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o programa de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma sistema de controle hídrico no plano antienchente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AC:10002533539",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AC:10002533539:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 31915,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1446,
+          "reasoning_output_tokens": 516
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 19937,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 18892,
+          "output_tokens_details": {
+            "thinking_tokens": 909
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19937,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 18892,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 19937,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 19937
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2840624
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:41:05Z",
+    "sourceSha256": "f1a6f8f3b526b195f9103d4f617702c4354ed768bf60766559ca8ffbb4fa63ce",
+    "extractedTextSha256": "988d240d30e2304235174d4a430bfacce3482e46704f34792cf84922d602d79b",
+    "documentCount": 1,
+    "documentSetSha256": "8cc066639238e0a605f6b023807b52b5402a8f9879830239ce8a63b4531cf632",
+    "contentSha256": "9b098988c806cc61bca473d4d944fc458358f000c468ba9735fcf17f80ccdd44"
+  }
+}
