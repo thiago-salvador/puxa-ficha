@@ -228,6 +228,15 @@ interface GastoPorCategoria {
   [categoria: string]: number
 }
 
+export function detalhamentoCeaps(
+  porCategoria: GastoPorCategoria,
+): Array<{ categoria: string; valor: number }> {
+  return Object.entries(porCategoria).map(([categoria, valor]) => ({
+    categoria,
+    valor: Math.round(valor * 100) / 100,
+  }))
+}
+
 interface GastoDestaque {
   fornecedor: string
   tipo: string
@@ -341,11 +350,9 @@ export async function ingestCeapsSenado(): Promise<IngestResult[]> {
 
           const { total, porCategoria, destaques } = tentativa.dados
 
-          // Detalhamento: objeto com categorias e valores
-          const detalhamento: Record<string, number> = {}
-          for (const [categoria, valor] of Object.entries(porCategoria)) {
-            detalhamento[categoria] = Math.round(valor * 100) / 100
-          }
+          // O contrato público é uma lista de { categoria, valor }. Um objeto
+          // aqui derruba o DTO inteiro quando ele chama .map().
+          const detalhamento = detalhamentoCeaps(porCategoria)
 
           // gastos_destaque: array dos top 5
           const gastosDestaque = destaques.map((d) => ({

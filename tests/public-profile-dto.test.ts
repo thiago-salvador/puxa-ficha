@@ -344,6 +344,21 @@ describe("public profile DTO", () => {
     assert.deepEqual(findForbiddenPublicProfileKeys(dto), [])
   })
 
+  it("normaliza detalhamento legado em objeto sem derrubar a ficha", () => {
+    const ficha = fixtureProfile()
+    ficha.gastos_parlamentares[0].detalhamento = {
+      PASSAGENS: 100.5,
+      ALUGUEL: 200,
+    } as unknown as FichaCandidato["gastos_parlamentares"][number]["detalhamento"]
+
+    const dto = toPublicCandidatoProfileDto(ficha)
+
+    assert.deepEqual(dto.gastos_parlamentares[0].detalhamento, [
+      { categoria: "PASSAGENS", valor: 100.5, fornecedor: undefined },
+      { categoria: "ALUGUEL", valor: 200, fornecedor: undefined },
+    ])
+  })
+
   it("expõe a série institucional sem IDs internos", () => {
     const dto = toPublicCandidatoProfileDto(fixtureProfile())
 
