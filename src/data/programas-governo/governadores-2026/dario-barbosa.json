@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002542481",
+    "slug": "dario-barbosa",
+    "nomeUrna": "DÁRIO BARBOSA",
+    "partido": "PSTU",
+    "arquivoNome": "2026RN200002542481_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002542481_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002542481:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002542481_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002542481_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "855b4d827ab66cef92afdc399ab87f0ce16456bb8724eb338c6bd8ad2dabee35",
+        "extractedTextSha256": "575653d6a299377a0e63f0066a787e467decf57446272fdd21735168f14cd26c",
+        "paginas": 5,
+        "secoes": [
+          {
+            "id": "programa-de-governo-pstu-rio-grande-do-norte",
+            "titulo": "PROGRAMA DE GOVERNO PSTU RIO GRANDE DO NORTE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO PSTU RIO GRANDE DO NORTE\nDário Barbosa Governador – Fernanda Soares Vice\n\nROMPER O SISTEMA CAPITALISTA\nDerrotar o bolsonarismo e combater a conciliação de classes do PT\nUm RN Socialista para a Classe Trabalhadora\n\nNas lutas e nas eleições, o PSTU apresenta um programa voltado aos interesses\nda classe trabalhadora, em oposição aos projetos políticos atualmente colocados para o\nRN e o Brasil. Defendemos um programa de esquerda, socialista e revolucionário, de\nruptura com as engrenagens do sistema capitalista que aprisionam os trabalhadores e\ntrabalhadoras e a população na exploração e na desigualdade.\nEntra governo, sai governo, e a vida da classe trabalhadora e do povo pobre não\nmuda, porque continuamos sendo governados por ricos e poderosos capitalistas. A\npopulação vota a cada dois anos, mas não decide nada sobre os temas que interferem\nna sua vida; da escola do bairro ao orçamento público do governo, tudo é decidido por\nquem não vive a vida do povo. O direito à saúde e à educação públicas não é garantido;\nos salários são baixos e não chegam ao fim do mês; as pessoas continuam passando\nnecessidades, mesmo se matando de trabalhar na escala 6x1; milhares não têm nem\nmesmo onde morar, não há transporte nem segurança nas ruas; além disso, vivemos\numa epidemia de feminicídios e de toda forma de violência contra negros, negras e a\npopulação LGBT.\nEnquanto isso, parlamentares, governantes, secretários, juízes e tudo que é\nburocrata do Estado vivem às custas do nosso trabalho, recebendo privilégios e altos\nsalários, para manter tudo como está, o capitalismo funcionando (para os empresários),\nos patrões explorando mais e o povo sobrevivendo com o mínimo, e muitas vezes nem\nisso. É esse modelo de sociedade, desigual e injusta, que bolsonaristas e petistas brigam\nentre eles para manter, a extrema direita com golpe e ditadura, e a esquerda\nconservadora com eleição, mas sem enfrentar os capitalistas.\nÉ preciso dar um basta nessa situação, tanto no RN quanto no Brasil!\nPor isso, no Rio Grande do Norte, a candidatura do professor Dário Barbosa,\ntendo como vice a jornalista Fernanda Soares, representa uma alternativa socialista e\n1"
+          },
+          {
+            "id": "com-independencia-de-classe-para-romper-com-a-polarizacao-entre-a-extrem",
+            "titulo": "com independência de classe para romper com a polarização entre a extrema direita",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "com independência de classe para romper com a polarização entre a extrema direita\nbolsonarista e a “esquerda” capitalista do PT/PSOL. Os candidatos Álvaro Dias e Alysson\nBezerra são dois bolsonaristas inimigos dos direitos dos trabalhadores e aliados dos\ngolpistas que ameaçaram as liberdades democráticas do povo brasileiro em 2023, além\nde estarem envolvidos em casos de corrupção, como abuso de poder econômico e\ndesvio de verbas da saúde.\nJá o candidato Cadu Xavier é a continuação do governo Fátima, que seguiu com\no caos na saúde e na educação públicas, com o alto índice de feminicídios, e sem\nmelhorar a vida dos trabalhadores e dos servidores. Nacionalmente, PT e PSOL estão\njuntos, inclusive com ministérios no governo Lula. O PSOL no RN apresentou a\ncandidatura de Robério Paulino, mas não faz nenhuma oposição de esquerda a este\nmesmo governo Lula, que aplica um arcabouço fiscal e corta recursos em investimentos\npúblicos. Além disso, nunca revogou nenhum dos ataques feitos pelos governos Temer\ne Bolsonaro, como as reformas trabalhista e da previdência.\nHertz Dias e Vanessa Portugal para Presidência!\nNestas eleições de 2026, vamos apresentar um programa com propostas\nconcretas, para resolver os problemas mais sentidos pela classe trabalhadora, mas\ntambém apontar um plano de ruptura com o sistema capitalista e sua lógica de\nexploração e desigualdade. A candidatura de Hertz Dias à presidência da República e da\nprofessora Vanessa Portugal à vice representa este projeto, alternativo, socialista e\nindependente, contra a extrema direita e do governo Lula. Entre as principais propostas\nestão o fim da escala 6x1 sem redução dos salários, o aumento geral dos salários rumo\nao valor do salário-mínimo calculado pelo Dieese, a revogação das reformas Trabalhista\ne da Previdência, a defesa dos serviços públicos, a soberania nacional frente a todo e\nqualquer imperialismo e o controle das riquezas do país pelos trabalhadores.\n\nUm programa socialista para o RN!\n1. Desenvolvimento Econômico e Emprego\n• Cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, que\nsoma mais de R$ 11 bilhões.\n• Fim das isenções fiscais para grandes empresários, que deixam de render ao Estado\nmais de R$ 1,4 bilhões ao ano; criação de impostos progressivos para grandes empresas.\n• Plano de Obras Públicas e Estatais para geração de empregos e desenvolvimento da\ninfraestrutura do RN.\n• Construção e ampliação de hospitais, escolas, moradias populares, saneamento básico\ne transporte coletivo.\n• Incentivo fiscal e apoio aos pequenos negócios e à agricultura familiar.\n• Realização de concursos públicos para suprir déficits em saúde, educação e segurança.\n2"
+          },
+          {
+            "id": "ampliacao-dos-restaurantes-populares-em-todo-o-rn",
+            "titulo": "• Ampliação dos restaurantes populares em todo o RN.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "• Ampliação dos restaurantes populares em todo o RN.\n\n2. Saúde Pública\n• Dobrar os investimentos estaduais em saúde pública.\n• Destinar 25% da Receita Total do Estado para a saúde pública.\n• Fortalecimento do SUS 100% público e estatal.\n• Estatização progressiva da rede privada de saúde que recebe recursos do SUS.\n• Reabertura e construção de hospitais públicos no interior.\n• Ampliação do Programa Saúde da Família para toda a população.\n• Fim da terceirização no Estado, que levou em 2025 cerca de R$ 2,5 bilhões de recursos\npúblicos para o setor privado; absorção dos terceirizados ao serviço público através de\nconcurso específico.\n• Concursos públicos para suprir o déficit de profissionais.\n• Plano de carreira e jornada de 30 horas para profissionais da saúde.\n• Gestão democrática nas unidades de saúde.\n\n3. Educação Pública\n• Investimento imediato de 10% do PIB em educação pública.\n• Destinação de 25% da Receita Total do Estado para a educação pública.\n• Universalização do acesso às creches, ensino básico e universidades.\n• Defesa da educação pública, gratuita e estatal.\n• Contra privatizações e terceirizações no setor.\n• Concursos públicos para professores e servidores.\n• Piso salarial baseado no DIEESE.\n• Garantia de internet, saneamento, equipamentos e espaços pedagógicos adequados.\n• Ampliação da UERN e defesa de sua autonomia.\n\n4. Segurança Pública\n• Dobrar os investimentos públicos em segurança, chegando a 20% da Receita Total do\nEstado.\n3"
+          },
+          {
+            "id": "desmilitarizacao-da-policia-militar-e-unificacao-das-policias-em-policia",
+            "titulo": "• Desmilitarização da Polícia Militar e unificação das polícias em Polícia Civil Unificada.",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "• Desmilitarização da Polícia Militar e unificação das polícias em Polícia Civil Unificada.\n• Direito de sindicalização e greve para policiais.\n• Eleição de comandantes e controle popular da segurança a partir de conselhos\npopulares de segurança.\n• Melhoria salarial e estrutural das forças de segurança.\n• Formação em direitos humanos e combate ao racismo.\n• Fim da repressão policial contra movimentos sociais.\n• Reforma do sistema penitenciário com foco em reinserção social.\n\n5. Transporte e Mobilidade Urbana\n• Prioridade para transporte ferroviário.\n• Convênio para ampliação e modernização do sistema de trens urbanos da Grande\nNatal.\n• Reativação das linhas ferroviárias regionais.\n• Integração entre trens, ônibus e ciclovias.\n• Criação de empresa estatal de transporte coletivo.\n• Redução das tarifas e perspectiva de tarifa zero.\n\n6. Moradia e Saneamento\n• Construção massiva de moradias populares, urbanização e legalização de ocupações.\n• Desapropriação de imóveis ociosos (públicos e privados), que não estejam cumprindo\nfunção social, destinando-os para fins de moradia popular.\n• Ampliação do saneamento básico para cobrir 100% de todo o RN.\n\n7. Agricultura, água e meio ambiente\n• Reforma agrária em grandes propriedades, expropriação de propriedades com\ntrabalho análogo à escravidão; apoio à agricultura familiar para produção de alimentos\nsem agrotóxicos.\n• Plano de enfrentamento à seca e democratização do acesso à água.\n• Construção de barragens, adutoras, cisternas e poços.\n• Prioridade para abastecimento humano e agricultura familiar.\n4"
+          },
+          {
+            "id": "defesa-da-mata-atlantica-caatinga-e-manguezais",
+            "titulo": "• Defesa da Mata Atlântica, Caatinga e manguezais.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "• Defesa da Mata Atlântica, Caatinga e manguezais.\n• Combate ao desmatamento e à poluição.\n• Taxação de empresas poluidoras.\n• Controle ambiental sobre carcinicultura e agronegócio.\n\n8. Incentivo à Cultura\n• Ampliação do orçamento para Cultura.\n• Financiamento estatal direto para artistas e produções culturais.\n• Criação de escolas estaduais de arte.\n• Fortalecimento do ensino artístico nas escolas públicas.\n• Construção e ampliação de teatros, museus, cinemas populares e bibliotecas.\n• Criação de conselhos populares de cultura.\n\n9. Combate às opressões\n• Intensificar as medidas de combate ao racismo, ao machismo, à lgbtifobia; contra o\nfeminicídio e as diversas formas de opressão.\n• Campanhas permanentes de reeducação sobre opressões nas escolas e todo o setor\npúblico.\n• Dobrar o número de delegacias especializadas de atendimento à mulher e ampliar as\ncasas de acolhimento às vítimas de violência de gênero.\n• Destinar 10% da Receita Total do Estado para a Secretaria das Mulheres, da Juventude,\nda Igualdade Racial e dos Direitos Humanos, que hoje não chega a 1%.\n\n10. Conselhos Populares e combate aos privilégios dos políticos\n• Organização do poder do governo através de conselhos populares, eleitos nos locais\nde trabalho, estudo e moradia.\n• Participação direta da população e da classe trabalhadora nas decisões sobre saúde,\neducação, segurança e demais temas de interesse popular.\n• Redução dos salários dos políticos, governador, vice, secretários e deputados; que\ntodo político receba o equivalente à remuneração de um professor do RN.\n\n5"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "1cbedd68fea6b00c45f98ce019e2ea16d6eb681cbe964846631a3e113f3872f8"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "56eb80046b2327809f1d2ae9a66358b1228c28027e6270385326df650a6bd8f2"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "eaa26a6d201070eaf749b191e2dfc84239499fbcb04ed081c2faf3b61c67f08a"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "08e0f4ac52ba7a8d73bee8b96f83fbec13749d6b6de5af22a3995611b3382306"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c606f0972bb1e742da7ead76a5cb147f903af19b7d2286fc95f67781db3c4b2e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, conforme a seção de desenvolvimento econômico e emprego. O programa propõe um Plano de Obras Públicas e Estatais para geração de empregos, apresentado como medida de desenvolvimento da infraestrutura do RN. Na saúde pública, o programa prevê o fortalecimento do SUS 100% público e estatal, conforme a seção dedicada ao setor. Na educação pública, o programa prevê a universalização do acesso às creches, ensino básico e universidades, dentro da defesa da educação pública. Para a mobilidade urbana, o programa propõe a criação de empresa estatal de transporte coletivo, vinculada à organização do transporte no estado. Na moradia, o programa prevê a ampliação do saneamento básico para cobrir 100% de todo o RN, conforme a seção de moradia e saneamento. Na cultura, o programa prevê a criação de escolas estaduais de arte, como proposta específica de incentivo à cultura no estado.",
+    "frases": [
+      {
+        "texto": "O programa prevê a cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, conforme a seção de desenvolvimento econômico e emprego.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 2,
+            "trecho": "Cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, que soma mais de R$ 11 bilhões."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe um Plano de Obras Públicas e Estatais para geração de empregos, apresentado como medida de desenvolvimento da infraestrutura do RN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 2,
+            "trecho": "Plano de Obras Públicas e Estatais para geração de empregos e desenvolvimento da infraestrutura do RN."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, o programa prevê o fortalecimento do SUS 100% público e estatal, conforme a seção dedicada ao setor.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 3,
+            "trecho": "Fortalecimento do SUS 100% público e estatal."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação pública, o programa prevê a universalização do acesso às creches, ensino básico e universidades, dentro da defesa da educação pública.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 3,
+            "trecho": "Universalização do acesso às creches, ensino básico e universidades."
+          }
+        ]
+      },
+      {
+        "texto": "Para a mobilidade urbana, o programa propõe a criação de empresa estatal de transporte coletivo, vinculada à organização do transporte no estado.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 4,
+            "trecho": "Criação de empresa estatal de transporte coletivo."
+          }
+        ]
+      },
+      {
+        "texto": "Na moradia, o programa prevê a ampliação do saneamento básico para cobrir 100% de todo o RN, conforme a seção de moradia e saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 4,
+            "trecho": "Ampliação do saneamento básico para cobrir 100% de todo o RN."
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, o programa prevê a criação de escolas estaduais de arte, como proposta específica de incentivo à cultura no estado.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 5,
+            "trecho": "Criação de escolas estaduais de arte."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "desenvolvimento-economico",
+        "titulo": "Desenvolvimento econômico",
+        "descricao": "Cobrança da dívida ativa de grandes empresas devedoras do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 2,
+            "trecho": "Cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, que soma mais de R$ 11 bilhões."
+          }
+        ]
+      },
+      {
+        "id": "obras-publicas",
+        "titulo": "Obras públicas",
+        "descricao": "Plano de obras públicas para geração de empregos.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 2,
+            "trecho": "Plano de Obras Públicas e Estatais para geração de empregos e desenvolvimento da infraestrutura do RN."
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Fortalecimento do SUS público e estatal.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 3,
+            "trecho": "Fortalecimento do SUS 100% público e estatal."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Universalização do acesso às creches, ao ensino básico e às universidades.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 3,
+            "trecho": "Universalização do acesso às creches, ensino básico e universidades."
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-urbana",
+        "titulo": "Mobilidade urbana",
+        "descricao": "Criação de empresa estatal de transporte coletivo.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 4,
+            "trecho": "Criação de empresa estatal de transporte coletivo."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-basico",
+        "titulo": "Saneamento básico",
+        "descricao": "Ampliação do saneamento básico no Rio Grande do Norte.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002542481:01",
+            "pagina": 4,
+            "trecho": "Ampliação do saneamento básico para cobrir 100% de todo o RN."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:29:27.731Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:31:40.533Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação que precisem verificação além do que já consta na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:1:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente sobre obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:2:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:3:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação e o item 'defesa da educação pública' também consta na mesma seção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:4:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (mobilidade urbana)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:5:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 100% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:6:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:frase:7:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:desenvolvimento-economico:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:obras-publicas:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número citado na afirmação resumida, evidência coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saude-publica:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:educacao-publica:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (mobilidade)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:mobilidade-urbana:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número na afirmação resumida, evidência coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002542481:tema:saneamento-basico:documentos:RN:200002542481:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002542481",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002542481:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 23317,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2381,
+          "reasoning_output_tokens": 1236
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22620,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21570,
+          "output_tokens_details": {
+            "thinking_tokens": 1020
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22620,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21570,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22620,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22620
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3243554
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:33:03Z",
+    "sourceSha256": "855b4d827ab66cef92afdc399ab87f0ce16456bb8724eb338c6bd8ad2dabee35",
+    "extractedTextSha256": "575653d6a299377a0e63f0066a787e467decf57446272fdd21735168f14cd26c",
+    "documentCount": 1,
+    "documentSetSha256": "4c4471803e946da02080cca6a464e7f5853cc4ba8b5249c5f7964dae1d7e8ac9",
+    "contentSha256": "9eb6012c3625ae9e3dd8b568005df3639a70582465efe917e44fc22f9d8f110b"
+  }
+}

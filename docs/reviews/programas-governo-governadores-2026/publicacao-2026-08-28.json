@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:26:25Z",
+  "reviewedAt": "2026-08-28T19:33:03Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 112,
-    "human_review_required": 32
+    "approved": 114,
+    "human_review_required": 30
   },
   "items": [
     {
@@ -1012,14 +1012,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002542481",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "dario-barbosa",
       "sqCandidato": "200002542481",
       "nomeUrna": "DÁRIO BARBOSA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "dario-barbosa: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002546757",
@@ -1034,14 +1034,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002546756",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "rodrigo-bolsonaro",
       "sqCandidato": "200002546756",
       "nomeUrna": "RODRIGO BOLSONARO",
       "partido": "AGIR",
       "sourceState": "em_revisao",
-      "reason": "rodrigo-bolsonaro: Eval tem 5 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SE:260002547415",
