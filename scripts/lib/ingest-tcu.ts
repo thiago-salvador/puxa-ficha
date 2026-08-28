@@ -5,7 +5,8 @@ import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 import { motivoRecusaDeFonte } from "../../src/lib/public-attention-point"
 
-const TCU_BASE = "https://contas.tcu.gov.br/ords"
+const TCU_INABILITADOS_URL =
+  "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados"
 
 function stripCPF(cpf: string): string {
   return cpf.replace(/[.\-]/g, "")
@@ -13,11 +14,11 @@ function stripCPF(cpf: string): string {
 
 interface TCUInabilitado {
   nome?: string
-  cpf?: string
-  dt_inicio?: string
-  dt_fim?: string
-  fundamentacao?: string
-  numero_acordao?: string
+  numeroRegistro?: string
+  dataAcordao?: string
+  dataFinalSancao?: string
+  numeroAcordaoFormatado?: string
+  linkDeliberacoesProcesso?: string
 }
 
 interface TCUCadirreg {
@@ -30,10 +31,15 @@ interface TCUCadirreg {
 
 // Retorno null = fonte indisponível (HTTP != 200, payload inválido, rede).
 // null NUNCA pode ser tratado como lista vazia: vazio verdadeiro é 200 + [].
-async function fetchTCUInabilitados(cpf: string): Promise<TCUInabilitado[] | null> {
+export async function fetchTCUInabilitados(
+  cpf: string,
+  fetchImpl: typeof fetch = fetch,
+): Promise<TCUInabilitado[] | null> {
   try {
-    const res = await fetch(`${TCU_BASE}/condenacao/consulta/inabilitados/${cpf}`, {
-      headers: { Accept: "application/json" },
+    const res = await fetchImpl(TCU_INABILITADOS_URL, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({ cpf }),
     })
     if (!res.ok) return null
     const data = await res.json()
@@ -192,10 +198,9 @@ export async function ingestTCU(): Promise<IngestResult[]> {
       if (tcuInabilitado) {
         const primeiro = inabilitados[0]
         const descricao = [
-          primeiro.numero_acordao ? `Acórdão: ${primeiro.numero_acordao}` : null,
-          primeiro.dt_inicio ? `Início: ${primeiro.dt_inicio}` : null,
-          primeiro.dt_fim ? `Fim: ${primeiro.dt_fim}` : null,
-          primeiro.fundamentacao ? `Fundamento: ${primeiro.fundamentacao}` : null,
+          primeiro.numeroAcordaoFormatado ? `Acórdão: ${primeiro.numeroAcordaoFormatado}` : null,
+          primeiro.dataAcordao ? `Data do acórdão: ${primeiro.dataAcordao}` : null,
+          primeiro.dataFinalSancao ? `Fim da sanção: ${primeiro.dataFinalSancao}` : null,
         ]
           .filter(Boolean)
           .join(" | ")

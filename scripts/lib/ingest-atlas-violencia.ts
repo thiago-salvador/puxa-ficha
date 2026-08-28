@@ -5,22 +5,47 @@ import type { IngestResult } from "./types"
 
 const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"]
 
-const BASE_URL = "https://www.ipea.gov.br/atlasviolencia/api/v1"
+const BASE_URL = "https://www.ipea.gov.br/dados-api"
 
-// ID da serie -> nome do indicador
-// Serie 107 (letalidade_policial_100k) removida: retorna [] no nivel estadual
+// O catálogo atual expõe somente a taxa geral no nível estadual (abrangência
+// 3). Jovens, armas de fogo e feminicídios deixaram de ter série estadual no
+// endpoint vigente e permanecem como revisão explícita, sem fabricar zero.
 const SERIES: Record<number, string> = {
-  40: "homicidios_100k",
-  48: "homicidios_arma_fogo_100k",
-  62: "feminicidios_100k",
-  8: "homicidios_jovens_100k",
+  20: "homicidios_100k",
+}
+
+const SERIES_SEM_ABRANGENCIA_ESTADUAL = [
+  "homicidios_jovens_100k",
+  "homicidios_arma_fogo_100k",
+  "feminicidios_100k",
+] as const
+
+const UF_POR_CODIGO_IBGE: Record<number, string> = {
+  11: "RO", 12: "AC", 13: "AM", 14: "RR", 15: "PA", 16: "AP", 17: "TO",
+  21: "MA", 22: "PI", 23: "CE", 24: "RN", 25: "PB", 26: "PE", 27: "AL",
+  28: "SE", 29: "BA", 31: "MG", 32: "ES", 33: "RJ", 35: "SP", 41: "PR",
+  42: "SC", 43: "RS", 50: "MS", 51: "MT", 52: "GO", 53: "DF",
 }
 
 interface AtlasValor {
-  cod: string      // codigo IBGE do estado ("29")
-  sigla: string    // UF ("BA")
-  valor: string    // valor como string ("80")
-  periodo: string  // data ISO ("1989-01-15")
+  valor: number | string
+  periodo: string
+  serie_id: number
+  tipo_regiao: number
+  regiao_id: number | string
+}
+
+export function normalizarAtlasValor(
+  item: AtlasValor,
+): { uf: string; ano: number; valor: number } | null {
+  if (item.tipo_regiao !== 3) return null
+  const uf = UF_POR_CODIGO_IBGE[Number(item.regiao_id)]
+  if (!uf) return null
+  const ano = new Date(item.periodo).getUTCFullYear()
+  if (isNaN(ano) || ano < 2015 || ano > 2030) return null
+  const valor = typeof item.valor === "number" ? item.valor : parseFloat(item.valor)
+  if (!Number.isFinite(valor)) return null
+  return { uf, ano, valor }
 }
 
 async function upsertIndicador(
@@ -68,7 +93,7 @@ export async function ingestAtlasViolencia(): Promise<IngestResult[]> {
 
     try {
       // Nivel 3 = estadual
-      const url = `${BASE_URL}/valores-series/${serieId}/3`
+      const url = `${BASE_URL}/series-values/${serieId}/3`
       log("atlas_violencia", `  Buscando serie ${serieId} (${indicador})`)
 
       const dados = await fetchJSON<AtlasValor[]>(url)
@@ -86,15 +111,9 @@ export async function ingestAtlasViolencia(): Promise<IngestResult[]> {
 
       for (const item of dados) {
         try {
-          const uf = item.sigla?.trim().toUpperCase()
-          if (!uf || !ESTADOS.includes(uf)) continue
-          if (!item.periodo || !item.valor) continue
-
-          const ano = new Date(item.periodo).getFullYear()
-          if (isNaN(ano) || ano < 2015 || ano > 2030) continue
-
-          const valor = parseFloat(item.valor)
-          if (isNaN(valor)) continue
+          const normalized = normalizarAtlasValor(item)
+          if (!normalized || !ESTADOS.includes(normalized.uf)) continue
+          const { uf, ano, valor } = normalized
 
           await upsertIndicador(
             uf,
@@ -107,7 +126,7 @@ export async function ingestAtlasViolencia(): Promise<IngestResult[]> {
           )
           result.rows_upserted++
         } catch (itemErr) {
-          result.errors.push(`${item.sigla}/${item.periodo}: ${itemErr instanceof Error ? itemErr.message : String(itemErr)}`)
+          result.errors.push(`${item.regiao_id}/${item.periodo}: ${itemErr instanceof Error ? itemErr.message : String(itemErr)}`)
         }
       }
 
@@ -122,6 +141,20 @@ export async function ingestAtlasViolencia(): Promise<IngestResult[]> {
     result.duration_ms = Date.now() - start
     results.push(result)
     await sleep(500)
+  }
+
+  for (const indicador of SERIES_SEM_ABRANGENCIA_ESTADUAL) {
+    results.push({
+      source: "atlas_violencia",
+      candidato: `serie_${indicador}`,
+      tables_updated: [],
+      rows_upserted: 0,
+      errors: [],
+      duration_ms: 0,
+      coleta_resultado: "indeterminado",
+      coleta_detalhe:
+        "o catálogo oficial vigente não oferece esta série na abrangência estadual; manter revisão e não converter ausência em zero",
+    })
   }
 
   return results
