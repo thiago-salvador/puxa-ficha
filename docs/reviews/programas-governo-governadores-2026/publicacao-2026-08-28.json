@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:54:18.355Z",
+  "reviewedAt": "2026-08-28T23:58:29.827Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 143,
-    "human_review_required": 1
+    "approved": 144,
+    "human_review_required": 0
   },
   "items": [
     {
@@ -1419,14 +1419,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002541939",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "marcos-rogerio",
       "sqCandidato": "220002541939",
       "nomeUrna": "MARCOS ROGÉRIO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "marcos-rogerio: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002551251",
