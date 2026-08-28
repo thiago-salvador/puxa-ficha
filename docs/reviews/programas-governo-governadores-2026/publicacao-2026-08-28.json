@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:40:32.069Z",
+  "reviewedAt": "2026-08-28T23:44:51.998Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 138,
-    "human_review_required": 6
+    "approved": 140,
+    "human_review_required": 4
   },
   "items": [
     {
@@ -1408,14 +1408,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "hildon-chaves",
       "sqCandidato": "220002542916",
       "nomeUrna": "HILDON CHAVES",
       "partido": "UNIÃO",
       "sourceState": "em_revisao",
-      "reason": "hildon-chaves: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002541939",
@@ -1430,14 +1430,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002551251",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "pedro-abib",
       "sqCandidato": "220002551251",
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002550927",

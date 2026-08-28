@@ -1,0 +1,1178 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RO",
+    "sqCandidato": "220002551251",
+    "slug": "pedro-abib",
+    "nomeUrna": "PEDRO ABIB",
+    "partido": "MDB",
+    "arquivoNome": "2026RO220002551251_01.pdf",
+    "arquivoNoPacote": "RO/2026RO220002551251_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RO:220002551251:01",
+      "fonte": {
+        "arquivoNome": "2026RO220002551251_01.pdf",
+        "arquivoNoPacote": "RO/2026RO220002551251_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ec9d80a9fbd5601272a4160e37899639e7f9feecd481a6badffd60846537c916",
+        "extractedTextSha256": "89bb27915362594973b37ccf6058c8848d7a431184f0614be0a497486123a646",
+        "paginas": 41,
+        "secoes": [
+          {
+            "id": "mdb",
+            "titulo": "MDB",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "MDB\nPLANO DE GOVERNO\nPEDRO ABIB\nCAMINHOS PARA RONDÔNIA\n2027-2030\nA transição econômica necessária e inclusiva\nJULHO/2026\nMOB RONDÔNIA\nPORTO VELHO"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "ocr",
+            "conteudo": "SUMÁRIO\nApresentação do Plano\nIntrodução ao Plano\nContextos históricos, politicos e estratégicas\nAções estratégicas do Plano\nPolíticas, ações, programas e projetos\nMensagem de convergência\nCAMINHOS PARA RONDONIA"
+          },
+          {
+            "id": "secao-01",
+            "titulo": "SEÇÃO 01",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 01\nAPRESENTAÇÃO\nDO PLANO\nEste Plano de Governo tem como orientador o documento\nOs três eixos de \"Caminhos para o Brasil\" foram adaptados às\npolitico-programático nacional \"Caminhos para o Brasil\",\nprioridades estratégicas do estado, com um posicionamento\nelaborado pela Fundação Ulysses Guimarães - FUG a partir de\npolítico estruturante, responsável e propositivo, cuja\nencontros realizadas em todo o pais em 2025, com mais de\ncentralidade é a reorientação da matriz econômica de\n8.500 participantes entre lideranças, militantes do MDB e\nRondônia. Estruturado a partir da ausculta da realidade - 40\nespecialistas em políticas públicas. Nas eleições estaduais, o\nmunicípios visitados, gestores publicos, pesquisadores,\nMDB vê uma oportunidade de inserir no debate uma agenda\nuniversidades, igrejas, movimentos sociais e todos os\nresponsável, equilibrado e despolarizada, facada nos assuntos\ndiretórios municipais do MDB - o Plano tem absoluta conexão\nprioritários de Rondônia.\ncom o que o MDB formula para o Brasil: não pensamos\nRondônia desconectada do País,\nmas central ao\ndesenvolvimento da nossa nação.\n03"
+          },
+          {
+            "id": "a-transicao-economica-que-propomos-tem-como",
+            "titulo": "A transição econômica que propomos tem como",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "ocr",
+            "conteudo": "A transição econômica que propomos tem como\nTenho convicção de que este é o momento. Ou\nobjetivo oferecer autonomia estrutural ao estado,\niniciamos agora, ou a década de 2030 será mais uma\npara que deixe de ser ofertador permanente de\ndécada perdida para os nossos jovens - e de\nmatéria-prima in natura, sujeito a ciclos que\nprivações para os nossos idosos. Isto não é tarefa\nbeneficiam grupos, familias ou individuos. Um estado\napenas de um governo: é o desafio posto à sociedade\nrico como este não pode estar na 23ª posição no\nde Rondônia. Não se faz isso com canetada ou no\nIndice de Progresso Social - IPS. E inaceitável que\ngrito. Conseguirá governar quem tiver diálogo,\nPorto Velho seja a última colocada nesse indice. Se é\nfirmeza e compromisso com o futuro.\nrico, só alguns usufruem dessa riqueza.\nE ISTO EU FAREI!\nPEDRO ABIB\nCandidato do MDB ao Gaverno do Estado\n1. Visitamos 40 municipios nos dois meses de pré-campanha e dialoquei com\n2; O IPS mede três indicadores: a) atendimenta de necessidades humanas\ngestares publicos municipais, representantes de instituições, pesquisadores.\nbásicas: b) garantias de bem-estar social; c) ofertas de oportunidades para\nuniversidades, igrejas e movimentos sociais, além de todos os diretorios\nos pessoas.\nmunicipais do MOB.\n04"
+          },
+          {
+            "id": "secao-02",
+            "titulo": "SEÇÃO 02",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 02\nINTRODUÇÃO AO PLANO\nO Plano de Governo que ara apresentamos a sociedade\nEste Plana incorpora, como base de evidências, o diagnóstico\nrondoniense tem como objetivo reorientar a matriz econômica do\ntécnico produzido pelo controle externo estadual, que reuniu\nestado, e todas as políticas públicas propostas foram formuladas\ndados do IBGE, do SICONFI, dos Relatórios de Gestão Fiscal, das\npara contribuir para isso - a centralidade do Plano é, ao final do\navaliações atuariais, do Anuário Brasileiro de Segurança Pública e\nmandato, ter contribuído para que as metas de saude, segurança\nde processos de fiscalização sabre saúde, educação,\npública, educação e desenvolvimento social assumidos neste\ninfraestrutura, meio ambiente e saneamento. Governar com\ndocumento sejam alcançados. Por se tratar de um documento\nevidências não é uma formalidade técnica: é a condição para que\npropositivo, cuja função é orientar o discurso e o diálogo entre o\ncada compromissa assumido aqui tenha uma linha de base\ncandidoto e a sociedade - inclusive para permitir a comparação\nconhecida, uma meta verificável e um responsável identificado. O\ncom os demais concorrentes — as ações aqui contidas serão\nleitor encontrará, ao longo deste documento, os numeros que\ndetalhadas por ocasião de sua implementação, mas descritas em\njustificam cada escolha - e é por eles que esta gestão pede para\nlinguagem que não deixe dúvidas sobre o que tratam e quais\nser cobrada.\nimpactos causarão na vida de seus beneficiorios.\nO Plano é ambicioso em suas metas: além de reorientar a matriz\nAo contrário de peças produzidas apenas para atender a\nprodutiva do estado, as politicas aqui propostas impactarão\nnormativa da Justiça Eleitaral, este Plano situa o que propõe no\npositivamente os indicadores econômicos e sociais mais\ncontexto histórico, econômico e social do estado, oferecendo ao\nimportantes, para que a população de Rondônia inicie a década\nleitor os elementos para compreender a necessidade, a\nem outro patamar de atendimento às suas necessidades basicas\nimportância e a urgência de cada política sugerida - a partir do\nbem-estar sacial e oportunidades. A máquina pública continuará\npanorama das vantagens comparativas que Rondônia possui em\noperando as atividades já desenvolvidos pelas suas Pastas:\nfunção de sua localização geográfica, de seus recursos naturais e\npor integrar uma região à qual o mundo e os mercados dão\nas políticas aqui propostas serão acrescidas as ja em\ncurso - ou criadas novas - com os devidos ajustes à nova\nespecial atenção.\ngestão emedebista."
+          },
+          {
+            "id": "um-estado-rico-nao-pode",
+            "titulo": "UM ESTADO RICO NÃO PODE",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "ocr",
+            "conteudo": "UM ESTADO RICO NÃO PODE\nTER POUCOS BENEFICIÁRIOS\nA centralidade deste Plano e reorientar a matriz econômica de Rondônio."
+          },
+          {
+            "id": "secao-03",
+            "titulo": "SEÇÃO 03",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 03\nCONTEXTOS HISTÓRIÇOS,\nPOLÍTICOS E ESTRATÉGICOS\n3.1 O ESTADO DE RONDÔNIA, O TERRITÓRIO EM TRANSFORMAÇÃO\nO estado de Rondonia está localizada totalmente no\nO Produto Intero Bruto de Rondonio possat de R$ 36,6 Bilhões,\nhemisteria sul, fazendo fronteira ao norte com a\nem 2015, para R$ 68,8 bilhões, em 2022 - último resultado oticial\nAmazonas, no extremo oeste limito-se em uma pequena\ndas Contas Regionais do IBGE = com estimativa de R$ 77,8\nfaixa com o Acre, a leste foz limite com Mato Grosso e a\nbilhões para 2024, equivalente a cerca de 0,66% do PIB\nbrasileiro e a 11.8% da aconomia da Região Norte. O crescimento:\noeste e sudoeste faz fronteira internacional com a Bolivia,\nporem. não se converteu no mesma proporçao em renda por\nseparado pelo Rio Guapore. O estado possul uma área de\nhabitante: em 2024: o PIB per capita estimado de Rondônio fai\n237,766, 233 km.\nde R$ 44,6 mil. frente a R$ 55,2 mil no Brasil - cerca de 19%\nabaixo da média nacional. A trajetoria é positiva fentre 2015 e\nNos últimos dez anos, Rondânia passou por uma das\n2024 o indicador estadual cresced 175%- em volores correntes.\nmaiores tronsformações económicas de sua história, O\nacima dos 86% nacionais), mas a distancia permanece,\nestado deixou de ser visto apenas cama uma fronteira\nE exatamente esse o ponto de partido deste Plano: Rondônio ja\nagricala para se tornar lima das principais potencias\nsabe produzir o desatio do proximo decada e fazer com que a\nagropecuários do Brasil: O crescimento ocorreu na\nriqueza produzida se fransfarme em renda em serviço público e\npecuária, leite, soja, milho, café, piscicultura e agricultura\nem oportunidade para quem vive aqui. No entanto, os\nfamillar: Hoje a agro representa a principal motor.\nindicadores sociais de qualidade de vida em nada se alterarom\neconômico do estado. No entanto, o modelo tem produzido\nna mesma proporcão, menos ainda o ocesso aos.\nVICOS\ndistorções no apropriação da riqueza gerada pelo agro,\nresultande em acumulação nas mãos de poucos — e um\ngrande passivo ambiental no territorio.\n1.751.950\nR$ 2.317\nR$ 44,6 mil\nlub tantes (esturotivo!\nretida medid mental\nPIB per capita\n(BR: R$ 55,2 mil)\n~90%\n15,24%\n14,6%\nsporte (BR 8,9%)\ndo PIB é industria\nQUATRO PROCESSOS SISTÊMICOS\nORIENTAM A GESTAO 2027-2030\nEduca\ndetalnados"
+          },
+          {
+            "id": "com-populacao-estimada-em-1-751-950-habitantes-1-591-196-no",
+            "titulo": "Com população estimada em 1.751.950 habitantes (1.591.196 no",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "ocr",
+            "conteudo": "Com população estimada em 1.751.950 habitantes (1.591.196 no\nprodução de móveis e mineração. Apesar de ser incipiente, a\nCenso 2022) e renda média de R$ 2.317,00, Rondônia tem no\nindústria tem apresentado crescimento, com aumento de 19% no\nagranegócio o carro-chefe da economia. Quase 90% das\nfaturamento entre 2023 e 2024, impulsionada pela inovação e\nexportações do estado se concentram em três produtos - carne\nexpansão de unidades produtivas.\nbovina (48,7%), soja e milho -, o que é, ao mesmo tempo, a força\ne a vulnerabilidade da economia estadual: a mesma\nO setor de serviços é responsável por aproximadamente 65% do\nconcentração que sustenta as exportações expõe o estado\nPIB estadual, sendo impulsionado principalmente pelo comércio\na oscilações de preço internacional, barreiras sanitárias e\ne pelo turismo. O comércio registrou aumento de 20% no\neventos climáticos.\nfaturamento em 2024, refletindo o dinamismo do mercado local e\no crescimento urbano em cidades como Porto Velho e Ji-Paraná.\nA agricultura é diversificada, com cultivos de soja, milho, arroz,\nO turismo, embora ainda pouco explorado, contribui com\ncafé, cacau, feijão e mandioca, favorecidos pelas terras férteis e\nvisitantes interessados nas belezas naturais, históricas e\nclima adequado. Em 2024, o setor agropecuário atingiu R$ 18\nculturais do estado.\nbilhões, com crescimento de 13% em relação ao ano anterior.\nevidenciando expansão continua e fortalecimento das cadeias\nEm Rondônia são identificados especialmente quatro processos\nprodutivas de grãos e carne bovina.\nsistémicos que se traduzem em indicativos de ação e prioridade\npara a gestão proposta pelo MDB para o periodo 2027-2030. A\nO setor industrial de Rondônia é pouco diversificado,\nidentificação desses processos fundamenta as escolhas em\nrepresentando apenas 14.6% do PIB estadual. Os principais\ntorno de ações estruturantes voltadas à efetivação da transição\nsegmentos incluem indústria alimentícia, frigoríficos, laticínios,\neconômica defendida pelo candidato.\n08"
+          },
+          {
+            "id": "3-2",
+            "titulo": "3.2",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "ocr",
+            "conteudo": "3.2\nO QUE RONDÔNIA COMPRA DE FORA: A\nOPORTUNIDADE ESCONDIDA NAS IMPORTAÇÕES\nProblema ou contexto. Em 2025, enquanto as exportações\nOutra parte, porém, revela dependência. Rondônia importa laticinios\nbrasileiras cresceram 3,45%, as de Rondônia cresceram 17,21% -\n- exceto manteiga e queijo - no equivalente a 7,20% de sua pauta de\nquase cinco vezes a media nacional. O mesmo padrão se repetiu em\nimportações; legumes, raizes e tubérculos, 3.70%; pneus de borracha\n2022, com expansão de 38,94% no estado contra 18,99% no país. 0\ne câmaras de ar, 2,60%. São bens que o estado produz ou tem plenas\nestado mantém superávit comercial há uma décado. Mas o\ncondições de produzir. Um dos maiores produtores de leite do pais\ndado mais revelador está do outro lado da balança: em 2025 as\ncompra laticinios de fora.\nimportações rondonienses cresceram 61,52% contra 6,66% de\ncrescimento nacional.\nObjetivo. Transformar parte dessa pauta de importação em\nprodução, emprego e arrecadação dentro do território.\nO que esse número significa. Nem tada importação tem o mesmo\nsignificado econômico. Parte dela é investimento: geradores\nProposta. Uma agendo estadual de substituição de importações e\nelétricos (6,10% da pauta), que suprem a ausência de rede elétrica\nagregação de valor, orientado pelos produtos em que o estado já\nconfiável em áreas produtivas; produtos laminados planos de\npossui base produtiva instalada - leite e derivados,\naço (4,40%) e de ferro (3,00%), tipicos de obras e ampliação de\nhortifrutigranjeiros e insumos industriais de menor complexidade -\ncapacidade instalada. Essa parcela sinaliza uma economia que\narticulada às politicas de agroindustrialização, crédito e\nestá crescendo.\ninfraestrutura descritos na Seção 05.\n+61,52%\n+6,66%\nimportações de Rondônia em 2025\nimportações do Brasil em 2025\nUM DOS MAIORES PRODUTORES DE LEITE DO PAÍS IMPORTA LATICÍNIOS. ISSO É UMA\nOPORTUNIDADE, NÃO UM DESTINO.\n09"
+          },
+          {
+            "id": "3-3",
+            "titulo": "3.3",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "ocr",
+            "conteudo": "3.3\nO ESPAÇO FISCAL: CAPACIDADE PARA\nINVESTIR, RESTRIÇÃO PARA CUSTEAR\nProblema ou contexto. Rondônia chega a 2027 com indicadores\n7,29% para investimento (R$ 1,29 bilhão), dos quais apenas cerca de\nfiscais formalmente favoráveis. O estado mantém a nota A na\n3% financiados diretamente por fontes do Tesouro Estadual. E a\nCapacidade de Pagamento (CAPAG) avaliada pelo Tesouro Nacional -\ntendência é de queda continua: o participação dos investimentos no\na mais elevada classificação existente. A dívida consolidada\norçamento executado caiu de 10,96% em 2022 para 9,22% em 2023,\ncorresponde a aproximadamente 2% da Receita Corrente Liquida,\n8,70% em 2024 e 7,29% em 2025.\nquando o limite fixado pelo Senado Federal é de 200%. A adesão ao\nPrograma de Pleno Pagamento de Dividas dos Estados (Propag)\nA Lei de Diretrizes Orçamentárias paro 2027 (Lei n° 6.465, de 3 de\nreduziu os juros da divido de 4% para 0% ao ano e substituiu a\njulho de 2026) é explicita quanto ao limite: a Margem de Expansão das\ncorreção pela Selic pelo atualização pelo IPCA além de abrir acesso\nDespesas Obrigatórios de Carater Continuado é Igual a zero. Qualquer\nao Fundo de Equalização Federativa (FEF), com previsão de\nnova despesa permanente - criação de cargos, reajustes, novas\naproximadamente R$ 250 milhoes ja em 2026.\nbeneficios ou pragramas continuados - só poderá ser instituída se\nintegralmente compensada por aumento permanente de receita ou\nA primeira vista, esse conjunto sugeriria ampla liberdade para\npor redução equivalente de outras despesas. A despesa com pessoal\nexpandir politicas públicas. A leitura correta é outra.\ndo Poder Executivo encerrou 2025 em 37,55% da Receita Corrente\n0 paradoxo. Do total de despesas executadas em 2025 - cerca de R$\nLiquida ajustada e alcançou 39,14% no primeiro semestre de 2026 -\n17,8 bilhões - aproximadamente 91% (RS 15,05 bilhões) foram\nabaixo dos limites legais, mas em trajetória de alta.\nconsumidos por pessoal e custelo da estrutura pública. Restaram\n91% × 7,29%\nMargem DOCC =\ncusteio * investimento no orçamento de 2025\nzero\nLDO 2027 (Lei n° 6:465/2026)"
+          },
+          {
+            "id": "a-pressao-que-nao-aparece-nos-limites-legais",
+            "titulo": "A PRESSÃO QUE NÃO APARECE NOS LIMITES LEGAIS",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "ocr",
+            "conteudo": "A PRESSÃO QUE NÃO APARECE NOS LIMITES LEGAIS\nO déficit atuarial do regime próprio de previdência possou de R$ 10.27\nSoma-se a esse quadro a situação da Companhia de Águas e Esgotos\nbilhões, em 2021, para R$ 14,63 bilhões em 2026 - crescimento de\nde Rondônia (CAERD), cujo passivo passou de aproximadamente R$\n42,4% em cinco anos. O Plano de Amortização Instituido pela Lei n°\n1,02 bilhão, em 2019, para cerca de R$ 1,58 bilhão em 2025 - elevação\n5.111/2021 prevê aportes obrigatórios de aproximadamente R$ 697\nde 54,5%. Desde o Decreto n° 30,665, de 12 de setembro de 2025, a\nmilhões, R$ 703 milhões. R$ 710 milhões e R$ 717 milhões entre 2027 e\ncompanhia é oficialmente reconhecida como estatal dependente. o\n2030 - cerca de R$ 2,82 bilhões nos quatro primeiros anos da\nque transfere suas obrigações para o orçamento geral do Estado.\npróxima gestão, com destinação carimbada e sem possibilidade de\nExiste acordo com a Procuradoria-Geral da Fazenda Nacional cujo\nremanejamento. Paralelamente, o Sistema de Proteção Social dos\ndescumprimento pode implicar retenção de parcelas do Fundo de\nMilitares, que não dispõe de fundo acumulado e é custeado\nParticipação dos Estados - receita da qual Rondônia é\ndiretamente pelo Tesouro, evoluiu de R$ 179,5 milhões em 2023 para\nestruturalmente dependente.\nR$ 476,2 milhões em 2026 - alta de 165,4% em quatro anos.\nO QUE ISSO EXIGE DESTE PLANO\nA leitura correta desse quadro não é a do imobilismo, e sim a da\nPor isso, todas as politicas propostas na Seção 05 deste Plano\nprecisão. Rondônia tem capacidade de contratar crédito para investir\nobservam três condições: cada investimento estruturante é\nem haspitais, escolas, rodovias e saneamento - a Lei Estadual n°\napresentado com a previsão de seu custeio futuro; cada nava\n6.021, de 9 de maio de 2025, já autoriza operações de crédito com\ndespesa continuada indica sua fonte de compensação; e a prioridade\ngarantia da União de até R$ 985,9 milhões para infraestrutura. O\nde curto prazo recai sobre a conversão de recursos já disponíveis e\nque o estado não tem é margem para criar despesa permanente\nnão executados - federais, de fundos e de operações ja autorizados\nsem compensação.\n- em serviço entregue à população.\nO PROBLEMA DE RONDÔNIA NÃO É FALTA DE DINHEIRO. É FALTA DE\nCAPACIDADE DE TRANSFORMAR DINHEIRO EM RESULTADO.\n11"
+          },
+          {
+            "id": "3-4",
+            "titulo": "3.4",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "ocr",
+            "conteudo": "3.4\nRECUPERAÇÃO DA ESTRUTURA FUNCIONAL E FÍSICA DO SISTEMA DE\nEDUCAÇÃO, COM MAIOR ÊNFASE NO ENSINO FUNDAMENTAL E MÉDIO\nO sistema educacional do estado apresenta claras necessidades\noferecer melhor formação profissional e melhorar a qualificação\nde redimensionamento, inclusive com melhor adaptação às\ndos profissionais em atividade.\nmudanças demográficas mais recentes no estado. A qualidade\nde educação oferecida atualmente no território rondoniense tem\nA dimensão do problema e conhecida e mensurada, O SAERO 2025 mostra\ncomo meta ganhar mais homogeneidade em todas as suas\nque a rede alfabetiza razoavelmente bem e depois perde o aluno pelo\ncaminho: no 2ª ano do Ensino Fundamental, 70% dos estudantes\nregiões, e elevá-la passa por maior padronização metodologica e\napresentam aprendizagem adequada em Lingua Portuguesa e 77% em\nformação de professores e gestores da rede pública.\ndo Ensino Médio, apenas 24% alcançam a nivel adequada em Lingua\nMatemática; no 9ª ano, esses percentuais caem para 22% e 9%; ao final\nOs níveis de proficiência e aprendizagem, especialmente,,\nPortuguesa e 5% em Matemática. Noventa e cinco em cada cem jovens\nprecisam ser melhorados, de forma a atingir, no mínimo, a média\nrondonienses concluem a educação básica sem o conhecimento esperado\nnacional, em todos os indicadores.\nem Matemática - o acúmulo de lacunas nunca identificadas nem\ncorrigidos ao longo da trojetaria escolar. Enfrentar esse quadro é a\nprioridade absoluta deste Plano na areo do educação.\nAs estruturas do ensino: fundamental, especialmente o\nFundamental 2, Ensino Médio, Sistema S, Instituto Federal e\n3.5\nRELAÇÃO MAIS CONVERGENTE COM O SETOR PRODUTIVO, TORNANDO-O\nMAIS RECEPTIVO A ADOÇÃO DE POLÍTICAS DE SUSTENTABILIDADE E\nPRESERVAÇÃO AMBIENTAL\nÉ importante assegurar o avanço produtivo com uma visão convergente e portadora\nde futuro para a economia e a sociedade de Rondônia, que terá como resultado\ntornar-se gradativamente um território pleno de agropecuária e agroindustria\nsustentável, aliada à preservação do ambiente amazônico e garantir a regularização\nfundiária para produzir a segurança juridica necessária.\nO equilibrio deve ser a tônica dessa visão sistémica para o estado, buscando conciliar\na logística, a integração a mercados globais, o abastecimento do mercado interno, o\ndesenvolvimento da agroindústria complementar com a identidade da preservação e\npromoção da sustentabilidade social e ambiental, uma condição inarredável diante da\nColorino\nconjuntura global e do contexto amazônico e que se constitui em uma oportunidade\npara o estado de Rondônia - encerrando a falsa dicotomia produção versus\ndevastação ambiental de uma vez por todas.\nbred penc\nEssa convergência tem um pré-requisito que o próprio setor produtivo identifica como prioridade\nabsoluta: a regularização fundiária e ambiental. A ausência de titulação das posses, a\nsobreposição de cadastros e a lentidão dos processos comprometem o acesso ao crédito, a\nrastreabilidade e a inserção em mercados que exigem comprovação de origem. Segurança\njuridica no campo não é uma pauta setorial: é uma politica de desenvolvimenta económico e, ao\nmesmo tempo, o instrumento mois eficaz de proteção ambiental de que o Estado dispõe.\n12"
+          },
+          {
+            "id": "3-6",
+            "titulo": "3.6",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "ocr",
+            "conteudo": "3.6\nRETOMADA DA CAPACIDADE DE INVESTIMENTOS EM\ncomnidyy\nINFRAESTRUTURA, A PARTIR DO RESGATE POSITIVO DA\nRELAÇÃO FEDERATIVA\nA posição geoestratégica de Rondônia exige a configuração de\num sistema logístico integrado, acessível e competitivo que trara\nimpactos na produtividade em várias áreas da economia e da\nSCANIA\nvida cotidiana.\nO estado reúne condições de utilizar ferrovia, hidrovia, aerovia e\nrodovia em um sistema harmônico e eficiente, integrado ao Arco\nNorte, mas também com ligação aos centros de pesquisa e\nserviços no Centro-Oeste e Sudeste brasileiros. A construção da\nponte binacional Brasil-Bolivia por Guajará-Mirim já em curso e a\ndesejável construção de nova ponte Brasil-Bolívia em Costa\nMarques são ativos importantes para isso.\nO ponto de partida, contudo, é severo. Rondônia possui aproximadamente 76%\nde sua malha rodoviária estadual sem pavimentação - a piar posição entre\nos dezenove estados avaliados (média de 38.17% de vias não pavimentadas). O\nefeito aparece no bolso de quem produz: o estado destina 15,24% de seu PIB\naos custos de transporte, quase a dobro do referência nacional (8,8%). E\naparece no isolamento: 40 dos 52 municipios condonienses têm integração\ninferior à media nacional. Cado ponto percentual de custo logístico excedente\ne margem que sai do produtor, imposto que não é arrecadado e emprego que\nnão é gerado no território.\n3.7\nRECOMPOSIÇÃO DO BEM-ESTAR SOCIAL COMO PARTE DA TRANSIÇÃO - SEGURANÇA\nPÚBLICA, SAÚDE E CULTURA, ESPORTE E LAZER\nA reorientação da matriz econômica só se traduz em avanço real se vier\na equipamentos publicos de cultura, esporte e lazer em tados os\nIndice de Progresso Social mede diretamente e na qual Rondônia - e\nacompanhada de recomposição do bem-estar social, dimensão que o\nmunicipios do estado - tratando essas três frentes não como politicas\nsetoriais isoladas, mas como parte constitutivo da mesma transiçao.\nparticularmente Porto Velha - está mal posicionada. Não há transição\neconómico bem-sucedida em um estado onde a população não se sente\nOs números são conhecidos e precisam ser ditos com clareza. A expectativa\nconvivencia, culturo, esparte e lazer.\nsegura, não tem acesso oportuno a saúde ou não dispõe de espaços de\nde vida do nascer em Rondônia e de 72,79 anos, contra 77,60 na media\nnacional - a terceira pior posição do pais. A mortalidade infantil e de 17.1\nóbitos por mil nascidos vivos (2024), a segunda piar do país, e a mortalidade\nPor isso, ao lado dos três processos anteriores, o Plano assume coma\nmatema alcançou 62.27 óbitos por 100 mil nascidos vivos em 2025, mais que\nquarto processo sistêmico a redução dos taxos de vialência a patamares\no dobro do meta das ODS. No segurança, o estado registro 2,9 feminicidios\nno máximo equivalentes à média nacional, a garantia de padrão minimo\npor 100 mil habitantes (BR: 1.4) e 75,9 casos de estupro de vulnerável por 100\nde estrutura e cabertura na rede de saúde, e a universalização do acesso\nmil habitontes (BR: 30,5). Nenhum desses indicadores e aceitavel em um\nestado com a economia que Rondônia tem - e nenhum se resolve com\npolitico setorial isolada\n13"
+          },
+          {
+            "id": "secao-04",
+            "titulo": "SEÇÃO 04",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 04\nAÇÕES ESTRATÉGICAS\nDO PLANO\nOito frentes estruturantes que organizam a transição econômica de Rondônia e\norientam todas as politicas propostas na Seção 05.\na)\nb)\nGovernança e gestão inovadora e eficiente\nDesenvolvimento com sustentabilidade no agro\nc)\nd)\nHub logistico e de armazenamento\nSetor de serviços com valor e empregos\ne)\nf)\nRedução dos desigualdades e educação\nBem-estar sociol: segurança, saúde e cultura\nh)\nCiência, tecnologia e inovação\nTurisma, economia criativa e empreendedorismo"
+          },
+          {
+            "id": "acao-a",
+            "titulo": "AÇÃO A",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "ocr",
+            "conteudo": "AÇÃO A\nINSTITUCIONALIZAR SISTEMA DE GOVERNANÇA\nE GESTÃO INOVADORA E EFICIENTE\nAs necessidades de articulação exigidas pela transição\nimplementadas no estado - e se fundamentar em dados,\neconômica proposta neste Plano, nas mais diferentes áreas,\ncom obsessão permanente na busca da inovação.\ndevem ser organizadas e dispostas em um \"grid\" único,\ncomposto de quadro de recursos humanos qualificados,\nA evolução para uma estrutura integrada e altamente\nvinculado ao Gabinete do Governador, sólida engenharia\ncapacitada de gestão, dentro dos\nprincípios\ninstitucional e solidez política, além de incluir cooperação\ncontemporâneos de governança e compliance, desenvolverá\ncom agências internacionais, bancos de fomento, recursos\na capacidade de \"gestão por projetos transversais\" que\nprivados e parcerias público-privadas (PPPS).\nabrangem também as oportunidades de financiamento\nadvindas do contexto amazônico e sustentável, além da\nEsse \"grid\" deverá apresentar metas intermediárias anuais,\nnecessária eficiência e confiabilidade dos agentes externos.\ne contar com um comitê gestor interinstitucional, em um\nnível de sinergia superior a todas as gestões transversais já\nAÇÃO B\nPROMOVER DESENVOLVIMENTO COM SUSTENTABILIDADE,\nESPECIALMENTE NA AGROPECUÁRIA E AGROINDÚSTRIA\nA condição de Rondônia como estado produtor de proteina\nde arigem como a piscicultura, a criação, abate e\nanimal e grãos e como lider na exportação global via Arco\nindustrialização de suínos, o café robusta amazônico e\nNorte precisa de um elemento estratégico consolidador nos\noutros produtos da biodiversidade.\npráximos 20 anos, para assegurar condições competitivas\nem padrão igual ou superior a outras regiões produtoras no\nOs mercados de serviços ambientais e carbono também\nCentro-Sul do Brasil, no que tange não só à logística, mas\ndevem ser estruturados, acompanhando a evolução gradual\ntambém no financiamento da produção, na oferta de\nda produção para uma certificação de sustentabilidade\nextensão rural pública e de qualidade, formação de recursos\ne origem que garanta a sua colocação nos principais\nhumanos especificos para a área e armazenamento. O\nmercados globais, do mesmo tempo em que preserva\nadensamento de polos de agroindústria, por afinidade de\no ecossistema.\ncultura, agrega valor à produção e permite o pleno\nA potencialização de \"hubs\" tecnológicos, ainda incipientes\naproveitamento da competitividade\nno processo\nem Rondônia, centrados na biotecnologia, mas com\nagropecuário, dentro do próprio estado.\nconexões com outras áreas da economia é um elemento\nAlém de criar as condições para a alta produtividade, são\nalavancador de grande importância.\nnecessárias a diversificação e a permanente qualificação\nempreendedora, e o estimulo cada vez maior de produção\n15"
+          },
+          {
+            "id": "acao-a-complemento",
+            "titulo": "AÇÃO A - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "ocr",
+            "conteudo": "AÇÃO A - COMPLEMENTO\nEsse \"grid\" nasce com uma regra inegociável: nenhuma iniciativa\nO \"grid\" incorporara, oinda, três funções que hoje operam de forma\nentra na carteira de governo sem que estejam demonstrados a seu\nfragmentada na administração estadual: a gestão de riscos, para\ncusto de implantação, o seu custo de operação nos anos seguintes\nantecipar problemas fiscais, operacionais, ambientais e jurídicos\ne a sua fonte de financiamento. A Lei de Diretrizes Orçamentárias\nantes que se convertam em crise: a decisão baseada em\npara 2027 fixa em zero a margem de expansão das despesas\nevidências, com painéis gerenciais e ciclos periódicos de avaliação\nobrigatórias de caráter continuado - o que significa que toda nova\nde resultado; e a profissionalização das funções estratégicas, com\ndespesa permanente precisará ser compensada por aumento\ncritérios objetivos de seleção e programa permanente de formação\nefetivo de receita ou por redução equivalente de outros gastos.\nde lideranças públicas.\nLonge de ser um obstáculo, essa disciplina é o que confere\ncredibilidade do conjunto de propostas deste Plano.\nAÇÃO B - COMPLEMENTO\nEssa agenda foi construída em diálogo com quem produz. A escuta\npropriedade: e, sobretudo, agroindustrialização - a passo que\nrealizada pelas entidades representativas do setor produtiva\ntransforma produção em riqueza dentro do território. Concentrar\nrondoniense em abril de 2026 organizou as demandas do campo em\nesforços nas cadeias com maior escala e capacidade de agregação\nprioridades convergentes com este Plano: prioridade política e\nde valor - carne, soja e milho, leite, pescado, café, cacou e\nadministrativa à regularização fundiária e ambiental; recuperação\nmandioca - sem perder de vista cadeias emergentes como a\nda infraestrutura rural e das estradas vicinais; crédito compativel\nhortifruticultura, é a caminho para que mais valor permaneça\ncom a realidade amazônica; fortalecimento da defesa agropecuária\nno estado.\ne da segurança no meio rural; energia e conectividade na\nAÇÃO C - COMPLEMENTO\nUm \"hub\" logistico, porém, não se sustenta apenas com grandes\nautorizado para agir: a Lei Estadual n° 6.021, de 9 de maio de 2025,\nobras federais. Ele começa na estrada vicinal que liga a propriedade\npermite a contratação de operações de credito com garantia da\nao entreposto e termina na estrutura de armazenagem e de cadeia\nUnião de até R$ 985,9 milhões destinadas a investimentos,\nde frio que permite ao produtor escalher quando vender. Rondônia\nespecialmente em infraestrutura rodoviária. A disponibilidade de\nperde competitividade nos dois extremos - nas vias de acesso à\nrecursos, entretanto, nunca garantiu entrega de obra - o que\nprodução e na capacidade de armazenar e processar antes de\ngarante é projeto tecnicamente consistente, contratação correta,\nescoar. Este Plano trata as duas pontas como parte do mesmo\nfiscalização permanente e continuidade administrativo. E isso que o\nsistemo, e reconhece que o estado dispõe de instrumento já\n\"grid\" de governança existe para assegurar.\n16"
+          },
+          {
+            "id": "acao-c",
+            "titulo": "AÇÃO C",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "ocr",
+            "conteudo": "AÇÃO C\nVIABILIZAR \"HUB\" LOGÍSTICO E DE ARMAZENAMENTO\nA condição no longo prazo de 'hub logístico para o estado de\nmonitorada e otimizado. A instalação de portos secos em\nRondônia depende especialmente da combinação de eficiência\nPorto Velho e Guajará-Mirim são importantes para integrar\nem seus principais modais logisticos e de distribuição. No madal\nlogisticamente o Estado, além de facilitar armazenamento\nrodoviário, a dependência da BR-364 é um gargalo que pode ser\ne distribuição.\nvencido não apenas com as melhorias trazidas pela Nova 364,\nmas especialmente com o desenvolvimento de alternativas que\nA Ferrovia Bioceânica é uma realidade de médio e longo prazo\nonerem menos a produção de soja e milho, especialmente.\nque deve ser estudada a fundo para permitir a viabilização do\nescoamento para o Pacifico com a minima agressão ambiental\nA BR-319 (Porto Velho-Manaus) asfaltada também será de suma\npossível. As expansões de infraestrutura devem fazer parte do\nimportância para a conectividade do território e o\n\"grid\" de governança e pactuado entre todas as instâncias de\ndesafogamento da BR-364, e deverá desenvolver-se um modelo\ngoverno, iniciativa privada e instituições multilaterais, incluindo a\namplamente sustentável, sendo a sua execução monitorada a\nplena capacidade operacional no entorno dos portos\npartir do \"grid\" proposto na alinea a. A hidrovia do Rio Madeira\nexportadores do Arco Norte brasileiro.\ndeve ter seu usa ampliado a partir de utilização cada vez melhor\nAÇÃO D\nDESENVOLVIMENTO DE SETOR ECONÔMICO DE\nSERVIÇOS COMPLEMENTAR, COM AGREGAÇÃO\nDE VALOR E GERAÇÃO DE EMPREGOS\nUm estado que atingiu os patamares gerais de economia e\nhumanos qualificados a partir de um bom ensino médio e\nprodução de Rondônia necessita de um setor de serviços mais\nprofissionalizante (neste caso, a IFRO é peça importante), e a\ncompleto, estruturado e melhor distribuído por todo o estado.\nexistência de políticas de apoio decisivo ao empreendedorismo.\nEssa expansão será particularmente importante a partir da atual\nreforma tributária, e exige a combinação de três elementos: a\nEsses três fatores, para que tenham sucesso, podem e devem ser\ndisponibilidade de crédito em condições adequadas, recursos\ndesenvolvidos juntamente com a expansão de infraestrutura, em\numa camada de planejamento de um lado, e um amplo programa\nsocial integrado, em outro."
+          },
+          {
+            "id": "acao-e",
+            "titulo": "AÇÃO E",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "ocr",
+            "conteudo": "AÇÃO E\nREDUÇÃO DAS DESIGUALDADES, EDUCAÇÃO DE\nQUALIDADE, SANEAMENTO E VIDA SUSTENTAVEL\nA educação é a principal política pública transformadora da\nNesse esforço se inclui especialmente a qualidade do ensino\nperspectiva de futuro e realidade da população,\nmédio e técnico-profissionalizante, utilizando também a\nespecialmente em um contexto social e politico complexo,\nestrutura do Instituto Federal e se criando trilhas de\nmas pleno de oportunidades.\naprendizagem mais adequadas à cultura local e às\ncaracterísticas econômicas e sociais do território, Para\nNo caso de Rondônia, o plena execução dos princípios do\ntanto, as organizações empresariais, o Sistema \"S' e a rede\nnavo Plano Nacional de Educação - PNE levarão à ampliação\nprivada de ensino superior devem amplificar o seu\nde ações como o melhor monitoramento do sistema,\nengajamento, juntamente com\nOS\ntres\ninstâncias\nincluindo o desempenho por escola; a formação básica e\ngovernamentais em pactuação.\ncontinuada de professores: a ampliação do número de\nmatriculas de alunos no ensino integral; a alfabetização na\nO saneamento básico, apesar de caro e complexo, deve\nidade certa, mas especialmente uma visão sistêmica sobre\nfazer parte do \"grid\" de governança com prioridade total,\nas condições das escolas, professores e alunos de forma a\ndada sua importáncia direta para a saúde e a qualidade de\npoder transformar, no transcurso de um mandato, as\nvida da população. A esse esforço se soma o Programa Vida\ncondições qualitativas da educação em todo o território,\nSustentável, que integra as sistemas social, de saúde, de\ninclusive no acesso à educação de papulações indigenas\ninformações e de prevenção na segurança pública, com\ne ribeirinhas.\nmonitoramento continuo da evolução da qualidade de vida\ndas familias atendidas - e que inclui, no campo da\nsegurança, o estimulo à cultura de paz nas escolas e em\ncentros comunitários.\nAÇÃO F\nRECOMPOR O BEM-ESTAR SOCIAL\nCOMO PILAR DA TRANSIÇÃO\nA confiança da sociedade rondoniense na transição econômica proposta depende de resultados\npercebidos no dia a dia: sentir-se segura, ter acesso oportuno a serviços de saúde e contar com espaços\npúblicos de convivência, cultura, esporte e lazer. Este eixo estratégico organiza as políticas de segurança\npública, saúde e cultura, esporte e lazer descritas no item 5.5 em torno de metas mensuráveis, com\nacompanhamento pelo mesmo \"grid\" de governança proposto na alínea a.\n18"
+          },
+          {
+            "id": "acao-g",
+            "titulo": "AÇÃO G",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "ocr",
+            "conteudo": "AÇÃO G\nESTIMULAR CIÊNCIA, TECNOLOGIA, INOVAÇÃO\nE A MODERNIZAÇÃO DA GESTÃO PÚBLICA\nRondônia não vai diversificar sua economia apenas com base em commodities: precisa\ntambém de um sistema estruturado de ciência, tecnologia e inovação, capaz de agregar valor à\nprodução estadual e de reter talentos no território. Isso passa por orçamento próprio e\nprotegido para pesquisa, fortalecimento da FAPERO, aproximação entre universidades e o setor\nprodutivo, e fomento a áreas como inteligência artificial, tecnologia da informação e economia\ndigital. Esse esforço caminha junto com a modernização da própria máquina pública estadual,\nque preciso se reorganizar em torno do cidadão como razão de ser do serviço público..\nAÇÃO H\nDIVERSIFICAR A ECONOMIA COM\nTURISMO, ECONOMIA CRIATIVA E NOVAS\nMODALIDADES DE EMPREENDEDORISMO\nAlém da agroindústria e das serviços já descritos. Rondônia tem\npara quem empreende, fortalecer o microcrédito e organizar\npotencial pouco explorado em turismo - especialmente o fluvial\na oferta turística do estado são formas adicionais de gerar\ne o de natureza -, em economia criativa e em novas modalidades\nrenda e oportunidades sem depender exclusivamente do ciclo\nde trabalho e empreendedorismo. Ampliar o acesso ao crédito\nde commodities.\n19"
+          },
+          {
+            "id": "secao-05",
+            "titulo": "SEÇÃO 05",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 05\nPOLÍTICAS, AÇÕES, PROGRAMAS\nE PROJETOS DO PLANO\nO detalhamento operacional de cada frente estratégica - o que será feito, em qual área e\ncom qual instrumento de gestão:\n5.1 Governança\n5.2 Agro sustentável\n5.3 Hub logistico\n5.4 Serviços\n5.5 Desigualdades\n5.6 Meio ombiente\n5.7 Ciência e inovação\n5.8 Turismo e criativa\nSeção DE Convergência\n20"
+          },
+          {
+            "id": "5-1",
+            "titulo": "5.1",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "ocr",
+            "conteudo": "5.1\nINSTITUCIONALIZAR SISTEMA DE GOVERNANÇA\nE GESTÃO INOVADORA E EFICIENTE\na) Criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance com a atribuição de:\ni) Identificar oportunidades de politicas públicas estruturantes de\nvii) Realizar articulação com órgãos governamentais nas três\ninteresse do estado e da sociedade;\nesferas administrativas, inclusive com organismos internacionais:\nii) Criar as condições politicas, legislativas e tributárias para\nviii) Reorganizar a máquina pública estadual em torno do cidadão\natração e recepção de investimentos externos no estado;\ncomo razão de ser do serviço publico, com atendimento\n¡lI) Elaborar projetos técnicos estruturantes de interesse do estado;\neficiente, respeitoso e resolutivo em todos os órgãos, e usa da\ndigitalização para reduzir prazos, simplificar processos e ampliar\niv) Identificar e articular fontes de financiamento para os projetos\na transparência:\nestruturantes de interesse do estado;\nix) Adotar parcerias público-privadas (PPPS) como mecanismo\nv) Organizar as informações de todas as ações das secretarias e\ncomplementar de financiamento para os projetos estruturantes de\nórgãos do governo do estado;\ninfraestrutura organizados no \"grid\", e tratar o saneamento básico\ncomo prioridade dentro dessa governança, dada sua complexidade\nvi) Organizar e oferecer dados socioeconômicos confiáveis para a\ntomada de decisões da alta direção governamental:\n5.2\nPROMOVER DESENVOLVIMENTO COM SUSTENTABILIDADE,\nESPECIALMENTE NA AGROPECUÁRIA E AGROINDÚSTRIA\ni) Estimular, via apoio técnico e financeiro, a verticalização da\nvi) Monitorar os indicadores de produtividade em tempo real e\nprodução de leite, agregando o máximo de valor aos produtos\nintervir sempre que houver oscilação negativa relevante:\nda cadeia:\nvii) Adotar a responsabilidade ambiental e social como principio\nii) Reestruturar o Sistema de Assistência Técnica do estado, para\norientador da politica agropecuária e agroindustrial do estado\napoio prioritario à agricultura familiar:\ncondicionando o apoio técnico e financeiro público à adoção de\niii) Construir condições para a implantação da Cadeia de Suinos no\npráticas sustentáveis e certificáveis:\nestado, incluindo a verticalização produtiva e a redução da\nvili) Priorizar o adensamento de polos regionais de agroindustria\nintegrados aos corredores logísticos do estado, com apoio de\n¡V) Conduzir a organização do 'cinturão verde\" no entorno de Porto\nbancos de tomento estaduais, federais e regionais, como eixo\nVelho, de modo a ampliar o abastecimento do mercado local com\ncentral da diversificação econômica de Rondônia:\nprodutos hortifrutigranjeiros:\nix) Apoiar a gestão e a sucessão familiar nas propriedades rurais do\nv) Fomentar a industrialização de parte da produção de soja e milho\nestado, e ampliar a diversificação de cursos técnicos de manejo e\nno território, para atendimento nutricional da Cadeia de Suína:\ngestão do produção agropecuaria, com enfase no ensino medio\ntécnico, para reter jovens no campo com perspectiva concreta de\ntrabalho e empreendedorismo:\n21"
+          },
+          {
+            "id": "5-1-governanca-complemento",
+            "titulo": "5.1 GOVERNANÇA - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "ocr",
+            "conteudo": "5.1 GOVERNANÇA - COMPLEMENTO\nx) Instituir, no âmbito da Coordenação de Projetos Estruturais e\nxiv) Adotar critérios objetivos de seleção, avaliação e\nCompliance, sistema permanente de gestão de riscos -\ndesenvolvimento para os cargos estratégicos da administração,\nfiscais, operacionais, juridicos, ambientais e institucionais -,\nprivilegiando competência técnica, experiência gerencial e\ncom identificação prévia, plano de resposta e monitoramento\ncompromisso com resultados, e implantar programa permanente de\npor indicadores;\nformação de lideranças públicas:\nxi) Submeter toda proposta de nova despesa obrigatória de caráter\nxv) Instituir politica permanente de gestão do ciclo de vida dos ativos\ncontinuado à demonstração prévia de compensação, por\npúblicos - rodovias, pontes, escolas, hospitais e unidades de\naumento permanente de receita ou redução equivalente de\nsegurança -, com planejamento de longo prazo, priorização técnica\ndespesa, em atendimento ao limite estabelecido na Lei de\ndos investimentos, gestão patrimonial continua e manutenção\nDiretrizes Orçamentarias:\npreventiva baseada em indicadores;\nxii) Condicionar a inclusão de qualquer projeto estruturante na\nxvi) Tratar como prioridade da agenda fiscal do Estado a situação da\ncarteira de governo à apresentação, no ato da proposição, do custo\nCAERD, com plano de gestão do passivo, revisão da estrutura de\nde operação e manutenção da estrutura após sua conclusão, e da\ncustos operacionais e cumprimento rigoroso dos compromissas\nrespectiva fonte de custeio;\npactuados com a União;\nxiii) Estruturar unidade permanente de captação e execução de\nxvii) Publicar painel público de acompanhamento das metas do \"grid\"\nrecursos externos - federais, de fundos constitucionais, de bancos\nde governança, com atualização periódica, indicadores de execução\nde fomento e de organismos multilaterais -, com metas anuais\nfisica e financeira e prestação de contas acessível à população.\nde execução e responsabilização pela devolução de recursos\nnão aplicados:\n5.2 AGRO - COMPLEMENTO (GOVERNANÇA FUNDIÁRIA E AMBIENTAL)\nxiii) Instituir politica permanente de governança fundiária, com\nciclo produtivo:\nintegração dos sistemas e cadastros dos órgãos estaduais e federais,\ntransparência quanto a trâmites, prazos e valores cobrados,\nxvi) Promover a revisão e atualização do Zoneamento\nmonitoramento eletrônico do andamento dos processos e metas\nSocioeconômico-Ecológico de Rondônia, com base tecnica e\nanuais públicas de titulação e georreferenciamento;\nparticipação do setor produtivo, das comunidades tradicionais e dos\nórgãos ambientais:\nregularidade ambiental - licenciamento, CAR, PRA, outorgas e\nxiv) Conferir celeridade e previsibilidade aos processos de\nxvii) Recompor e qualificar o quadro técnico da IDARON, preservando\nautorizações -, com prazos definidos, padronização de exigências e\no status sanitário do estado, com reforço da vigilância nas regiões de\ntratamento diferenciado as atividades dependentes de recursos\nfronteira e integração entre a defesa sanitária animal e vegetal:\nhidricos, como piscicultura, cafeicultura e cacauicultura:\nxviii) Ampliar a capilaridade das pontos de recebimento de\npelas autorgas de uso da água, dotando-a de quadro técnico,\nxv) Desmembrar e fortalecer a estrutura estadual responsável\nembalagens vazias de defensivos agricolas e aprimorar os sistemas\nde agendamento e logistica de coleta, bem como o monitoramento\nsistema informatizado e prazos de resposta compatíveis com o\ndas aplicações aéreas de agrotóxicos:\n22"
+          },
+          {
+            "id": "xix-articular-com-instituicoes-financeiras-cooperativas-de-credito-e",
+            "titulo": "xix) Articular com instituíções financeiras, cooperativas de crédito e",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "ocr",
+            "conteudo": "xix) Articular com instituíções financeiras, cooperativas de crédito e\ndistribuido e de energia limpa nas propriedades:\nbancos de fomento a ampliação do acesso ao credito rural em\ncondições compativeis com a realidade amazónica, incluindo a\nxxii) Ampliar a conectividade digital no meio rural, com soluções\nfacilitação de garantias, a simplificação de exigências e o\nadaptadas à realidade das propriedades e priorização das regiões\nfortalecimento do repasse dos fundos constitucionais do Norte ao\nprodutoras, viabilizando gestão, rastreabilidade e acesso a mercados\npequeno e médio produtor;\nmais exigentes;\nxx) Estabelecer, em articulação com os órgãos competentes,\nxxiii) Fomentar a ampliação da capacidade de armazenagem e da\nmecanismos de resposta a eventos climáticos extremos que\ncadeia de frio no território, e facilitar o acesso dos produtores e\npermitam o reconhecimento tempestivo de situações de emergência\ncooperativas aos processos de certificação de origem e de\ne viabilizem instrumentos de renegociação e manutenção da\nsustentabilidade exigidos pelos mercados internacionais;\natividade produtiva;\nxxiv) Reestruturar a assistência técnica e a extensão rural pública,\nxxi) Promover, junto à concessionária de energia elétrica e aos órgãos\ncom foco na transferência efetiva de tecnologias adaptadas ao\nreguladores, a ampliação do capacidade da rede elétrica rural, a\nbioma amazônico, e fomentar a pesquisa local aplicada às\nredução dos prazos de manutenção e a expansão da geração\nespecificidades regionais, em articulação com universidades,\ninstitutos federais e instituições de pesquisa agropecuária.\nNota: os pleitos de \"adequação da legislação ao marco temporal\" e de \"consolidação de desembargos\", registrados pelo setor produtivo, não foram\nIncorparados a este Plano por envolverem materia de competência federal e questões de risco juridico e reputacional.\n23"
+          },
+          {
+            "id": "x-apoiar-a-regularizacao-fundiaria-e-o-georreferenciamento",
+            "titulo": "x) Apoiar a regularização fundiária e o georreferenciamento",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "ocr",
+            "conteudo": "x) Apoiar a regularização fundiária e o georreferenciamento\nambientais e mercado de carbono como fontes\nde propriedades rurais como base para o ordenamento\ncomplementares de renda para produtores rurais:\nterritorial, a segurança juridica da produção e o combate\nà ilegalidade:\nxii) Fortalecer a presença institucional qualificada do estado\nnas regiões amazônicas de Rondônia, conciliando a\nxi) Fortalecer as capacidades locais de prevenção, controle\nproteção ambiental com o direito das populações locais ao\ne resposta a queimadas e incêndios florestais, e apoiar a\ndesenvolvimento sustentável e com a cumprimento dos\nestruturação de mecanismos de remuneração por serviços\ndireitos constitucionais dos povos originários.\n5.3\nVIABILIZAR \"HUB\" LOGÍSTICO E DE ARMAZENAMENTO NO TERRITÓRIO\ni) Criar, no âmbito da Coordenação de Projetos Estruturais e\nproximidades dos modais:\nCompliance, Grupo de Trabalho para interagir e acompanhar\na evolução das obras da Ponte Binacional Brasil-Bolivia, da\niv) Reorientar a utilização do Fundo de Infraestrutura\nBR-364, da BR-319, da dragagem da Hidrovia do Madeira, da\nde Transporte e Habitação - FITHA, de modo que\nampliação e modernização dos aeroportos do território e da\npriorize a manutenção das vias de escoamento da\nfutura Ferrovia Bioceânica;\nprodução municipal:\nii) Articular e efetivar parcerias com o Governo Federal para,\nv) Posicionar Rondônia como elo estratégico das rotas de\nno que couber ao estado de Rondônia, criar as conexões\nintegração sul-americana rumo ao Oceano Pacífico,\nnecessárias entre os modais;\nacompanhando o avanço da Ferrovia Bioceânica e\narticulando-se com os demais entes federativos e países\nIii) Articular e efetivar parceria com a Governo Federal, por\nvizinhos envolvidos nesse corredor logístico.\nmeio da CONAB, ou a iniciativa privada, para a instalação de\narmazéns de grãos de grande porte ao longo das\n24"
+          },
+          {
+            "id": "5-3-hub-logistico-complemento",
+            "titulo": "5.3 HUB LOGISTICO - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "ocr",
+            "conteudo": "5.3 HUB LOGISTICO - COMPLEMENTO\nvi) Elaborar e executar Plano Estadual de Gestão da Infraestrutura\nx) Articular com a União e com o setor privado a estruturação do\nRodoviária, com inventário completo das rodovias, pontes e demais\nPorto Público de Porto Velho, a adequação das vias de acesso e\nativos sob responsabilidade do Estado, sistema de monitoramento de\nramais ao Porto da SOPH e aos demais pontos de embarque fluvial no\nsuas condições, programação de manutenção preventiva e critérios\nRio Madeira, e a implantação de sistema on-line de agendamento de\ntécnicos de risco e criticidade para priorização dos investimentos;\ncargas e de segurança patrimonial;\nvii) Avaliar, com base em estudos técnicos comparativos de custo,\nxi) Apoiar a estruturação do eixo logístico da BR-429, o acesso aos\nprazo, qualidade e sustentabilidade financeira, o modelo de execução\ncomércios transfronteiriços e a viabilidade técnica de um Terminal\ndas obras rodoviarias estaduais, considerando a ampliação da\nde Uso Privado em Costa Marques, ampliando as alternativas de\nexecução indireta, com o DER concentrando-se em planejar, projetar.\nintegração com a Bolivia e o Peru:\ncontratar, fiscalizar e medir resultados:\nxii) Promover a ampliação da capacidade de armazenagem estática\nviii) Aplicar a autorização conferida pela Lei Estadual n° 6.021/2025\nde grãos no território, por meio de parcerias com a União, com a\npara contratação de operações de crédito destinadas à\nCONAB, com cooperativas e com a iniciativa privada, localizadas\ninfraestrutura, condicionando o uso dos recursos à seleção de\njunto dos principais corredores logisticos;\nprojetos tecnicamente consistentes, ao cumprimento das regras\nfiscais e à capacidade comprovada de execução;\nxili) Atuar pela expansão da malha aérea e pela ampliação da\nconcorrência nas rotas que atendem Rondônia, dado o impacto do\nix) Promover, junto aos órgãos reguladores e concessionários\ncusto das passagens sobre o desenvolvimento empresarial e a\ncompetentes, a revisão dos custos logísticos e tarifários incidentes\nacesso a serviços;\nsobre o escoamento da produção, assegurando previsibilidade,\nproporcionalidade entre tarifa e investimento efetivamente realizado\nxiv) Priorizar, na aplicação do FITHA, a manutenção permanente das\nnos rodovias e transparência nas revisões contratuais;\nestradas vicinais de escoamento da produção, em pactuação com os\nmunicípios e com cronograma público de atendimento.\n25"
+          },
+          {
+            "id": "5-4",
+            "titulo": "5.4",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "ocr",
+            "conteudo": "5.4\nSETOR ECONÔMICO DE SERVIÇOS COMPLEMENTAR,\nCOM AGREGAÇÃO DE VALOR E GERAÇÃO DE EMPREGOS\ni) Qualificar os órgãos públicos estaduais para a oferta de\nvi) Facilitar o acesso ao crédito para quem empreende no estado,\nserviços normativos adequados à nova configuração produtiva\ncom fortalecimento de linhas de microcrédito, fundos de aval e\ndo estado (Junta Comercial, corpo de bombeiros, SEDAM, IDARON,\nparcerias com bancos de fomento regionais, e simplificação dos\nFazenda, AGEVISA):\nprocessos de abertura e formalização de negócios;\nII) Analisar e ajustar, quando possível, a legislação estadual para\nvii) Instituir agenda estadual de substituição de importações\nidentificando os produtos hoje adquiridos de fora que o estado já\nadequá-la aos tipos de demandas originadas pelo novo ambiente\neconómico do estado;\ntem condições de produzir - com destaque para laticinios,\nhortifrutigranjeiros e insumos industriais de menor complexidade -\niii) Pactuar, no que couber, com os municipios, ajustes normativos\ne articulando crédito, assistência tecnica, qualificação e acesso a\nque contribuam para potencializar o empreendedorismo na estado:\nmercado para viabilizar sua produção no território;\niv) Ampliar o número de unidades do Banco do Povo no estado,\nviii) Estruturar, no âmbito da Coordenação de Projetos Estruturais e\ntendo como critério a sustentabilidade econômica do Programa de\nCompliance, sistema estadual de informações econômicas e\nMicrocrédito Produtivo Orientado:\nterritoriais, com dados abertos sobre produção, comércio exterior,\nemprego e cadeias produtivas, disponibilizado ao setor privado,\nV) Realizar parceria com o SEBRAE-RO para o apoio ao micro e\nàs universidades e aos municipios como instrumento de decisão\npequeno empreendedor, incluindo o MEI;\nde investimento.\n5.5\nREDUÇÃO DAS DESIGUALDADES, EDUCAÇÃO DE\nQUALIDADE, SANEAMENTO E VIDA SUSTENTAVEL\nA) ASSISTENCIA SOCIAL\ni) Apoiar os municípios na qualificação da Proteção Social Básica -\niv) Qualificar, melhorar e ampliar o acesso aos programas de\nPSB, por meio dos CRAS, adequando o número de equipamentos a\ntransferência de renda estadual e federal:\npopulação do território a ser atendido;\nv) Implementar o Programa Vida Sustentável, integrando os\nii) Apoiar os municipios na qualificação da Proteção Social Especial\nsistemas social, de saúde, de informações e de prevenção na\n- PSE, por meio dos CREAS, adequando o número de equipamentos\nsegurança pública, com monitoramento continuo da evolução da\nà população do território atendido:\nqualidade de vida das familias e cidadãos atendidos.\niii) Ampliar o número de restaurantes populares, se existirem, ou\nimplementar Programa de acesso à alimentação básica;\n26"
+          },
+          {
+            "id": "b-educacao",
+            "titulo": "B) EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "ocr",
+            "conteudo": "B) EDUCAÇÃO\ni) Instituir o Programa Indice Rondônia do Ensino Médio - IREM,\nviii) Ampliar o número de vagas em escolas em tempo integral:\ncom meta de igualar os indicadores desta faixa educacional à\nmédia nacional:\nix) Tratar a qualidade da educação como prioridade absoluta para a\nIgualdade de oportunidades, com atenção especial à primeira\nii) Adequar os itinerários formativos abrigatórios do Novo Ensina\ninfância = etapa decisiva para o desenvolvimento cagnitivo\nMedio à realidade económica do estado;\n- por meia de atuação articulada entre educação, saude e\nHI) Atuar para que o MEC implante mais unidades do Instituto\nassistência social;\nFederal nos municipios de maior porte ainda não atendidos\nx) Priorizar a alfabetização na idade certa e a requalificação dos\npela instituição:\nanas iniciais e finais do ensino fundamental, de modo a evitar\niv) Universalizar o acessa à internet na rede pública estadual\nque defasagens de aprendizagem se acumulem ao longo da\ntrajetória escolar:\nde ensino;\nV) Pactuar parcerias com instituições privadas de ensino superior\nxi) Investir na formação inicial e continuada de professores cama\npara a formação de mestres e doutores da rede publica estadual\nfator determinante da qualidade da educação, valorizando a\nde ensino;\ncategoria profissional e fortalecendo sua atuação em sala de aula:\nvil Apoiar os municipios no manutenção da trafegabilidade dos vias\nxii) Estimular a adoção de cultura de paz nas escolas e em\nde acesso às escolas;\ncentros comunitários, como estratégia de prevenção à violência\nem articulação com as politicas de segurança pública e\nViil Definir e implantar padrão minimo de habitabilidade estrutural,\nassistência social.\nmobiliário, tecnológica e material das escolas de rede pública\nestadual de ensino:"
+          },
+          {
+            "id": "b-educacao-complemento",
+            "titulo": "B) EDUCAÇÃO - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "ocr",
+            "conteudo": "B) EDUCAÇÃO - COMPLEMENTO\nxiii). Instituir o Programa Estodual de Recomposição das\nxvil) Elaborar e executar planejamento plurianual da infraestrutura\nAprendizagens, permanente, voltado aos Anos Finais do Ensino\nescolar, com diagnostico por unidade e critérios técnicos de\nFundamental e ao Ensino Médio, com avaliações diagnósticas:\npriorização, tendo como referência o levantamento que classificou\nperiodicas, identificação nominal das estudantes com maior\n20% dos escolas estaduais avaliadas em condições ruins e outros\ndefasagem, curriculo priorizado nas habilidades essenciais e metas\n40% em condição regular;\npor etapa, componente, escola e regional de ensino;\nxvii) Instituir programa estadual de manutenção preventiva das\nxiv) Estabelecer calendário anual permanente de formação\nescolas, com inspeções periodicas, protocolos: padronizados,\ncontinuada dos profissionais da educação, orientado pelos\ncronogramas anuais de conservação e prozos de atendimenta\nresultados do SAERO e das avaliações diagnosticas - substituindo a\ndiferenciados conforme o grau de risco;\ntormação\ngenérica par formação vinculada às dificuldades\nefetivamente identificadas na rede;\nxix) Fortalecer a governança dos aquisições da educação, com\nplanejamento permanente das compros, comité de aquisições,\nxv) Institucionalizar protocolos de tutoria pedagógica nas escolas\nvinculação de cada investimento a objetivo pedagógica definida e\nestaduais, contemplando observação de sala de aula, devolutivas\nmonitoramento da efetiva utilização dos bens pelas escolas;\npedagogicas,\nplanejamento\ncoletivo.\npapéis\ndefínidos,\nregistros padronizados e acompanhamento da implementação\nxx) Implantar planejamento sucessório da força de trabalho docente,\ndas intervenções:\nprojetanda aposentadorias e desligamentos e antecipando\nconcursos, considerando que aproximadamente 10% do quadro atual\nxvi) Redefinir o papel das Superintendências Regionais de Ensina\nde professores esto proximo da aposentadoria;\ncomo elo entre a política formulada pela Secretaria de Estado\nda Educação e sua implementação em cada território, com\nxxi) Adotar mecanismos que ampliem a permanência dos professores\napolo técnico às equipes gestoras e identificação das unidades\nna atividade pedagógica, valorizando a sala de aula como espaço\nmais vulneraveis:\nprioritário da carreira docente\n28"
+          },
+          {
+            "id": "c-saude",
+            "titulo": "C) SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "ocr",
+            "conteudo": "C) SAÚDE\ni) Concluir ou implementar, se for o caso, Programa Estadual de\nx) Informatizar, na sua totalidade, os registros e prontuários de\nDescentralização da Saúde:\nusuários da rede publica estadual de saude, com prontuário\nii) Implementar Programa Estadual de Consórcio Intermunicipal em\neletrônico único e integrado:\nSaude, ampliando progressivamente a cobertura entre as regiões de\nxi) Universalizar os serviços de telemedicina na rede estadual de\nsaúde do estado:\nsaúde, priorizando o acesso a especialidades médicas no interior\nili) Definir e implantar padrão minimo estrutural, mobiliário,\ndo estado;\ntecnolágico e material dos hospitais regionais, incluindo\nxii) Contribuir para a redução da mortalidade infantil, hoje em 17,1\nrecursos humanos;\nóbitos por mil nascidos vivos - a segunda pior taxa do país -, com\niv) Viabilizar politica, institucional e financeiramente a construção de\nmeta de 10,5 por 1.000 nascidos vivos até 2030;\nnova unidade hospitalar de urgência e emergência:\nxili) Dar maior ênfase e resolutividade à atenção primária,\nv) Fortalecer, qualificar e ampliar o Serviço de Atendimento Médico\nfortalecendo a prevenção de doenças crónicas por meia de\nDomiciliar - SAMD:\ncampanhas de conscientização sobre alimentação, consumo de\nálcool e tabagismo, e combate à desinformação em saude,\nvi) Fortalecer, qualificar e ampliar a Serviço Remédio em Domicilio;\nespecialmente sobre vacinação;\nVii) Atualizar e ampliar o acervo tecnológico do LEPAC, reduzindo a\nxiv) Dar atenção especializada à saúde da mulher e preparar a rede\ntempo médio de entrega de resultados:\nde saude estadual para o envelhecimento populacional, com\nestrutura de acompanhamento a idosos;\nvili) Qualificar e ampliar o Sistema Estadual de Vacinação, elevando a\ncobertura vacinal infantil em todos os municípios:\nxv) Apoiar a criação de espaços de convivência comunitária como\nestratégia de prevenção ao isolamento e à solidão, em articulação\nix) Concluir o processo de atualização do pagamento do Piso Nacional\ncom a rede de assistência social e cultura.\nda Enfermagem;\n29"
+          },
+          {
+            "id": "c-saude-complemento",
+            "titulo": "C) SAÚDE - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "ocr",
+            "conteudo": "C) SAÚDE - COMPLEMENTO\nxvi) Elaborar o orçamento da saúde com base nos necessidades\nxxii) Implantar protocolo estadual de transporte materno e neonatal\nefetivas da rede, encerrando o ciclo de dotação inicial subestimada\nde urgência, integrado às centrais de regulação, assegurando\nseguida de créditos adicionais sucessivos - prática que levou à\nremoção rápido e segura de gestantes e recém-nascidos de\nedição de mais de 2.130 decretos de abertura de crédito em menos de\nalto risco;\ncinco anos;\nxxiii) Fortalecer e qualificar o pré-natal na Atenção Primária,\nxvii) Implantar gestão contratual preventiva na SESAU, com controle\ngarantindo os exames essenciais e o inicio do acompanhamento\ncentralizado do vencimento dos contratos, antecipação das\nantes da 12° semana gestacional, com meta de reduzir a mortalidade\nlicitações e qualificação técnica das equipes, eliminando\nmaterna (hoje em 62,27/100 mil) e a neonatal (8,54/mil);\ncontratações emergenciais e reconhecimentos de divida como\nprática ordinária:\nxxiv) Promover a redução das cesarianas sem indicação clínica - hoje\nem 71,87% dos partos -, assegurando sempre a via de nascimento\nxviii) Instituir planejamento permanente da força de trabalho da\nmais segura para cada caso;\nsaúde, projetando aposentadorias e necessidades assistenciais para\nantecipar concursos e residências - considerando o déficit de 7.082\nxxv) Institucionalizar politica permanente de manutenção preventiva\npostos de trabalho previstos e vagos;\nda infraestrutura hospitalar, com planos plurianuais e recursos\nespecificos para conservação:\nxix) Implementar politica de retenção de profissionais de saúde, com\nmelhoria das condições de trabalho e mecanismos de mobilidade\nxxvi) Recuperar, com prioridade, o Hospital e Pronto-Sacorro João\ninterna que reduzam os vazios assistenciais nas regiões de\nPaulo II, classificado como critico pelo controle externo, e modernizar\nditicil provimento:\nas demais unidades hospitalares estaduais:\nxx) Concluir a Maternidade de Alto Risco da Macrorregião II, em Ji-\nxxvii) Estabelecer solução definitiva para o novo Hospital de Urgência\nParaná, cujos recursos federais de R$ 60 milhões já estão autorizados\ne Emergência de Rondônia - HEURO, com governanço própria e\nno PAC-Maternidades, e buscar financiamento para a Maternidade de\ncronograma público, considerando que os recursos do fundo\nAlto Risco da Macrorregião I, em Porto Velho, cujo projeto executivo já\nespecifico permanecem disponíveis desde 2019:\nestá concluido;\nxxviii) Tratar a segurança viária como politica de saúde pública,\nxxi) Regionalizar os leitos de UTI Neonatal, hoje limitados a 31 leitos\nconsiderando que Rondônia registra 30,7 óbitos no trânsito por 100\ndo SUS e concentrados em Porto Velho, eliminando deslocamentos\nmil habitantes, contra 16,9 na média nacional.\nsuperiores a 600 km para acesso a terapia intensiva neonatal;\n30"
+          },
+          {
+            "id": "d-seguranca-publica",
+            "titulo": "D) SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "ocr",
+            "conteudo": "D) SEGURANÇA PÚBLICA\n1) Fortalecer o Núcleo de Fronteira da Policia Militar, com melhoria\nvi) Reestruturar e qualificar as unidades de inteligência das policias\ndo sistema de informação e integração entre as forças de\ncivil e militar;\nsegurança baseadas no território, reduzindo conflitos e situações\nde risco associadas a questões agrárias e à criminalidade na\nvii) Reduzir a taxa de Mortes Violentas Intencionais de 26 para no\nfronteira com a Bolivia:\nmáximo 20 par 100 mil habitantes até 2030, e os feminicidios e\ntentativas em 20% no mesmo perlodo;\nii) Atualizar o acervo tecnológico das policias civil e militar,\nincluindo sistema de videomonitoramento integrado nos municipios\nvii) Ampliar ações de conscientização em escalas, unidades de\nde fronteiro:\nassistência social e espaços publicos sobre situações de risco e\nviolência contra mulheres e crianças, em articulação com as\nIII) Redistribuir o contingente policial no território, com prioridade\npolíticas de educação e assistência social:\nao policiamento ostensivo;\nix) Integrar os sistemas de informação entre as policias e o sistema\niv) Articular e implementar integração total e efetiva entre as forças\npenitenciário estadual, e fortalecer a polícia ambiental e a\nde seguranço estadual e federal, inclusive o CENSIPAM;\nfiscalização de crimes ambientais;\nV) Realizar estudo sobre a proporção policial versus habitantes e, se\nx) Adotar estruturas urbanas de prevenção ao crime - iluminação\ncouber, adequá-la à realidade;\nmonitoramento e desenho de espaços públicos - em terminais,\nestações e locais de grande circulação.\n26 → 20\n-20%\n-5%\nMVI por 100 mil habitantes até 2030\nfeminicidios e tentativas no período\nredução minima ao ano\n2,9 → 1,4\n13,2% → 90%\nnacional\nfeminicidios por 100 mil hab.: convergir à média\nexecução anual minima dos recursos do FNSP\n31"
+          },
+          {
+            "id": "d-seguranca-publica-complemento",
+            "titulo": "D) SEGURANÇA PÚBLICA - COMPLEMENTO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "ocr",
+            "conteudo": "D) SEGURANÇA PÚBLICA - COMPLEMENTO\nxi) Fortalecer a governança dos recursos do Fundo Nacional de\nxiv) Ampliar o investimento em tecnologia, videomonitoramento\nSegurança Pública e do Funesp, com planejamento antecipado das\ninteligente e análise de dados criminais, replicando o estratégia que\naquisições e meta de execução minima anual - considerando que a\nreduziu os roubos e furtas de veículos de 4.416 para 1.904 ocorrências\nexecução dos recursos federais caiu de 93,2% em 2022 para 13,2%\nentre 2022 e 2025;\nem 2025,\ndeixando de converter mais de R$ 39 milhões em\nequipamentos e serviços;\nxv) Corisalidar a Patrulha Rural como política de Estado, com previsão\norçamentária própria e presença permanente nas regiões de maior\nxil) Instituir plano estadual de enfrentamento à violência contra a\ncirculação de produção, enfrentando furtos, invasões e depredações:\nmulher, com execução integral dos recursos federais destinados a\nfinalidade, interiorização do atendimento e expansão da Patrulha,\nxvi) Fortalecer a prevenção e a resposta a incêndios rurais, com\nMaria da Penha - considerando que Rondônia registra taxa de\nIntegração entre o Corpo de Bombeiros, a Defesa Civil, os orgãos\nfeminicídio 2,07 vezes superior à media nacional,\nambientais e os municipios, e segurança jurídica para a atuação\npreventivo dos produtores:\nxiii) Estruturar politica específica de enfrentamento à violência sexual\ncontra crianças e adolescentes, diante da taxa estadual de 75,9\nxvi) Ampliar e qualificar o enfrentamento dos crimes patrimoniais.\ncasos de estupro de vulnerável por 100 mil habitantes, 2,49 vezes\ncom prioridade para roubos a residencias e a estabelecimentos\nsuperior à médio nacional;\ncomerciais, cujos taxas em Rondônia são, respectivamente, 3,8 e 2\nvezes superiores às referências nacionais.\n32"
+          },
+          {
+            "id": "e-cultura-esporte-e-lazer",
+            "titulo": "E) CULTURA, ESPORTE E LAZER",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "ocr",
+            "conteudo": "E) CULTURA, ESPORTE E LAZER\nESTRUTURA INSTITUCIONAL E FINANCIAMENTO\nI) Fortalecer e reestruturar a SECEL, criando em seu âmbito a\nfomento, difusão e prestação de contas;\nSuperintendência de Cultura e Economia Criativa, com autonamia\ntécnica, administrativa e orçamentária para a formulação,\nv) Garantir a execução integral dos recursos oriundos da União e\nexecução, acompanhamento e avaliação das politicas públicas\nadesão ativa a novos programas, politicas e editais federais,\nde cultura;\nIncluindo a Politica Nacional Aldir Blanc - PNAB, os CEUs da Cultura,\nas MOVCEUs, os Arranjos Regionais e demais editais, convênios e\nii) Elevar progressivamente o percentual do Fundo Estadual de\nchamadas publicas federais, monitorada pelo grid de governança\nDesenvolvimento da Cultura de Rondônia - FEDEC-RO em relação\npara evitar devolução de recursos;\nao orçamento estadual, com trajetória de aumento anual ao longo\ndo mandato:\nvi) Reformular a Lei Estadual de Incentivo à Cultura, adequando-a\naos novos marcos legais da cultura, às necessidades atuais do setor\niii) Vincular a execução do FEDEC-RO e dos recursos federais de\ne as boas práticas de transparência, democratização do acesso,\ncultura ao mesmo \"grid\" de governança da alinea a) da Seção 04,\ndescentralização territorial e segurança juridica;\ncom metas anuais e prestação de contas pública, garantindo\ntransparência e execução célere;\nvii) Celebrar convênio com o CONFAZ, viabilizando a efetivação da\nLei Estadual de Incentivo à Cultura n° 435/2011 e permitindo sua\niv) Realizar concurso público para cargos efetivos na área cultural,\naplicação como mecanismo de financiamento complementar à\ncom quadro técnico permanente qualificado para execução de\ncultura no Estado.\npoliticas, editais, programas, ações de patrimônio, formação,\nRONDÔNIA CRIATIVA\nA economia criativa já responde por 3,59% do PIB brosileiro (R$ 393,3 bilhões) e por 126 milhão de empregos, crescenda a um ritmo quase\nduas vezes maior que o do mercado de trabalho em geral. Rondônia ainda não figura entre os estados com maior PIB criativo do país - o que,\npara nás, é oportunidade, não atraso. Se a transição da matriz ecanômica busca reduzir a dependência de commodities, cultura e economia\ncriativo são um eixo de diversificação tão legitimo quanto a agroindustria ou os serviços: geram trabalho, renda e identidade sem depender de\nciclo de commodity.\n35"
+          },
+          {
+            "id": "programas-estruturantes-da-cultura",
+            "titulo": "PROGRAMAS ESTRUTURANTES DA CULTURA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "ocr",
+            "conteudo": "PROGRAMAS ESTRUTURANTES DA CULTURA\nRONDÔNIA MEMORIA VIVA AND 1-Z\nRONDÔNIA TELA AMAZÔNICA ANO 2-4\nPrograma Estadual de Patrimônio Material e Imaterial com.\nPrograma Estadual do Audiovisual, com estruturação de polo de\nrecursos anuais garantidos para: identificação: registro:\ncinema, implantação de cursos de formação techico, criação de\npreservação, valorização e difusão dos bens culturais do estado\numa Film Cammission e criação de Empresa Pública Estadual do\n- e para as festividades ligadas dos patrimánios imateriais\nCinema Rondoniense.\ncomo Guelo na Fronteira, Flor do Maracujá, Festival Cultural de\nNazore e Festo do Divino-\nRONDONIA RAIZES ANO 3-4\nRONDÔNIA FORMA CULTURA ANO 2-3\nPrograma de Valorização das Manifestações Populares e das:\nPrograma de Formação em Arte e Cultura com criação e\nCulturas dos Povos Tradicionais: e Originarios, assegurando\nfortalecimento de Escolas Livres e Escolas: Tecnicas e ações\nreconhecimento, fomento, proteção e visibilidade os expressoes\ncontinuados de capacitação paro artistas, produtores, tecnicos\nque formam a identidade de Rondânia.\ngestores e agentes culturais.\nCIRCULA RONDONIA AND 3-4\nRONDONIA EM CENA ANO 1. CONTINUO\nPrograma de O¡fusão, Distribuição e Circulação das Artes\nConsolidação do Programa Estodual de Editais de Fomenta,\nNandonienses.\ngarantindo que artistas.\ngrupos,\nabras\ncom calendaria anual, metadalagia clara,\ncomissões\ne produções culturais circulem nos 52 municipios de\nqualificadas, criterios transparentes, pagamento celere e\nRondônio, em cutros estados e em espaços nacionais e\nacompanhamento permanente\ninternacionais estratégicos.\nCULTURA NA ESCOLA PÚBLICA ANO 1-4\nCULTURA VIVA RONDONIA ANO 4\nContinuidade e ampliação do Programa, de Arte e Culturo nos\nContinuidade e ampliação do\nPrograma Cultura Viva.\nEscolas; garantindo açoes permanentes de formação, criação,\nassegurando orçamento próprio, calendario permanente de\nfruição e circulaçon artistica na rede publico estadual de ensino:\neditais e ações de reconhecimento, certificação e fomento aos:\nPontos e Pantões de Culturo de Rondônia.\nAno i - realizar diognostico completo dos equipamentos culturais e esportivos públicos existentes em cada municipio do estado.\nbase de dados que orienta o sequenciamento acima: e ampliar progressivamente a cobertura de equipamento cultural ou\nesportivo publico em funcionamento regular, priorizando as municipias hoje sem nenhum equipamento.\nESPORTE, TURISMO E JUVENTUDE\nxvill) Manter no âmbito da SECEL, as Coordenadorias de\nxix) Consolidar/criar o Calendário Estodual da Cultura - CEC e\nEsparte furisma e Juventude, articuladas com a\napalar todas as manifestações culturais nele inclusas:\nSuperintendência de Cultura e Economia Criativa:\nxx) Criar/consalidar a Roteim Turistico do estado:\nxxi) Criar politico de famento ao trade turistico;\n34"
+          },
+          {
+            "id": "pagina-35",
+            "titulo": "Página 35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "ocr",
+            "conteudo": "xxii) Criar a Politica Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e\nEconomia Criativa:\nxxiii) Ampliar o número de vagas no Programa Primeiro Emprego/Javem Aprendiz no âmbito das instituições públicas estaduais;\nxxiv) Criar o Calendário Estadual de Esporte e Lazer - CEEL e apoiar os eventos nele incluidos:\nxxv) Institucionalizar o esporte de base nas escolas públicas, com competições organizadas articuladas ao CEEL, e ampliar o papel do esporte\ncomo eixo de projetos sociais e de cultura da paz:\nxxvi) Estimular o turismo como vetor econômico do estado, incluindo a economia do visitante, esportes e entretenimento, e o aproveitamento\nsustentável do potencial fluvial e natural de Rondônia.\nF) SANEAMENTO BÁSICO E VIDA SUSTENTÁVEL\ni) Tratar o saneamento básico como prioridade dentro do \"grid\" de\nIii) Consolidar a Programa Vida Sustentável como eixo transversal que\ngovernança da Seção 5.1, ampliando progressivamente o acesso da\nconecta saneamento, saúde, assistência social e prevenção na\npopulação ao serviço, apesar de seu custo e complexidade:\nsegurança publica:\niI) Articular fontes de financiamento, inclusive por meio de PPPs, para\niV) Estruturar politica estadual de gestão integrada de residuas\nviabilizar a expansão do saneamento basico no estado;\nsólidos, apoiando os municipios na implantação de soluções de\ncoleta, tratamento e destinação final adequada, com recuperação de\náreas degradadas e inclusão de catadores.\nG) GRUPOS PRIORITÁRIOS E DIREITOS\ni) Fortalecer a rede estadual de atendimento à mulher em situação de\nili) Instituir politica estadual de acessibilidade para pessoas com\nviolência, integrando delegacias especializadas, casas de\ndeficiência, articulada entre as secretarios do estado, voltada a\nacolhimento e serviços de assistência juridica e psicológica, com\neliminação de barreiras fisicas, de comunicação e digitais nos\ninteriorização do atendimento; ampliar o acesso das mulheres\nserviços e espaços públicos:\nrondonienses a crédito, qualificação profissional e inclusão\nprodutiva, com atenção especifica às mulheres do campo e das\niv) Fortalecer a rede estadual de proteção à pessoa idosa, incluindo\ncomunidades ribeirinhas; assegurar a execução integral dos recursos\nunidades de acolhimento e centros de convivência no modelo centro-\nfederais destinados ao enfrentamento da violência contra a mulher,\ndia, com atendimento humanizado voltado à autonomia, à proteção\ncuja aplicação no estado caiu de 71.7% dos valores repassados, em\nintegral e à qualidade de vida;\n2023, para 9,9% em 2024 e 0,15% em 2025 - situação incompatível\ncom as taxas de feminicídio, homicidio de mulheres e estupro muito\nv) Fortalecer a política estadual de proteção à infância e à\nsuperiores às médias nacionais;\nadolescência, ampliando a capacidade de atendimento\nsocioeducativo, as ações de prevenção à violência contra crianças\nil) Fortalecer as politicas voltadas às comunidades quilombolas.\ne adolescentes, e o atendimento integrado a quem está em situação\nribeirinhas e povos indígenas de Rondônia, com ações articuladas de\neducação, saúde, infraestrutura e saneamento adequadas à\nvi) Estruturar, em articulação com os municipios. a União e as\nrealidade de cada território, valorização dos saberes e das culturas\nconcessionárias, plano de atendimento às comunidades rurais,\ntradicionais, e apoio ao acesso à energia elétrica e à regularização\nribeirinhas, quilombolas e indigenas em situação de maior\nfundiária nas comunidades mais isoladas;\nisolamento, integrando acesso à energia elétrico, à água tratada, à\nconectividade, à atenção básica em saúde e à regularização\nfundiária, com cronograma e metas por território.\n35"
+          },
+          {
+            "id": "f-saneamento-basico-complemento-concessao-regionalizada",
+            "titulo": "F) SANEAMENTO BÁSICO - COMPLEMENTO (CONCESSÃO REGIONALIZADA)",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "ocr",
+            "conteudo": "F) SANEAMENTO BÁSICO - COMPLEMENTO (CONCESSÃO REGIONALIZADA)\niii) Assegurar a execução qualificada da concessão regionalizada dos\nvi) Garantir mecanismos permanentes de proteção tarifaria e\nserviços de água e esgoto, que abrange 40 municipios, prazo\ninclusão social, com efetiva aplicação da tarifa social, de modo que a\ncontratual de 35 anos e valor estimado de R$ 8,477 bilhões, tratando o\nexpansão dos serviços não exclua a população mais vulnerável par\ncontrato como politica pública que ultrapassa ciclos governamentais;\nbarreira financeira:\niv) Fortalecer a Agência de Regulação de Serviços Públicos Delegados\nvii) Monitorar publicamente a trajetória das metas de universalização\ndo Estado de Rondonia - AGERO, com quadro tecnico qualificado,\ndo marco legal do saneamento - 99% da papulação com água\nautonomia e transparência ativa, para fiscalizar o cumprimento das\npotável e 90% com coleta e tratamento de esgoto ate 2033 -, com\nmetas contratuais ao longo de toda a vigencia da concessão;\nrelatórios periódicos de acompanhamento:\nV) Planejar e financiar soluções especificas para as áreas não\nviii). Estruturar a gestão dos riscos criticos da concessão,\nabrangidas pela concessão, notadamente zonas rurais, localidades\nespecialmente quanto do reequilibrio econômico-financeira do\nremotas e comunidades ribeirinhas, assegurando que a\ncontrato e à compatibilização integral entre edital, contrato e anexos;\nuniversalização não se restrinja aos centros urbanos:\nix) Assegurar continuidade institucional ao processo, preservando\nequipes técnicas, informações e cronogramas durante a transição\nde mandato.\n36"
+          },
+          {
+            "id": "5-6",
+            "titulo": "5.6",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "ocr",
+            "conteudo": "5.6\nMEIO AMBIENTE, CLIMA E PROTEÇÃO DO TERRITÓRIO\nProblema ou contexto. Em 2024. Rondânia viveu uma dos crises\nEm 2025, quando o Estado se organizou, os números mudaram: a\nambientais mais graves de sua história recente. Somente em outubro\nárea queimada em outubro caiu de 573,5 mil para 23 mil hectares -\ndaquele ano foram destruídos 573,5 mil hectares. A população\nredução de 96%; os dias com ar prejudicial à saúde cairam de 31 para\nconviveu com di dias de ar prejudicial à saude em agosto e 28 dias\n8 em agosto e de 28 para 2 em setembro. A lição é direta: prevenção\nem setembro. Mais de um milhão de hectares queimaram dentro das\nestruturada produz resultado, e resultado ambiental é também\nUnidades de Conservação estaduais - 45,56% de toda a área\nresultado econômico e de saúde pública.\nprotegida pelo Sistema Estadual de Unidades de Conservação:\nObjetivo. Transformar a proteção ambiental de resposta emergencial\nO controle externo demonstrou que esse resultado não decorreu\nem politica permanente de Estado, com orçamento previsível,\napenas de fatores climaticos: faltaram coordenação operacional\nmetas de desempenho e continuidade independente de mudanças\nentre os órgãos, monitoramento contínuo capaz de antecipar areas\nde gestão.\ncriticas e mobilização preventiva de equipes e recursos. O Estado\napagava tago em vez de evitá-lo.\n573,5 mil —→ 23 mil\n-96%\nha\nredução da drea queimada\narea queimada em outubro, 2024 x 2025\nEM 2024, O ESTADO APAGAVA FOGO EM VEZ DE EVITÁ-LO. EM 2025, QUANDO SE\nORGANIZOU, A ÁREA QUEIMADA CAIU 96%.\n37"
+          },
+          {
+            "id": "principais-acoes",
+            "titulo": "PRINCIPAIS AÇOES",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "ocr",
+            "conteudo": "PRINCIPAIS AÇOES\ni) Consolidar sistema permanente de prevenção e resposta a\nv) Enfrentar o passivo fundiário das Unidades de Conservação, com\nqueimadas e incêndios florestais, estruturado em monitoramento\ngeorreferenciamento definitivo e resolução das sobreposições com\ncontinuo por sensoriamento remoto, protocolos de atuação\nglebas federais - considerando a identificação de 6.550 CARs\npreviamente definidos e mabilização antecipada de equipes\nsobrepostos a áreas protegidas, dos quais menos de 21,71% se\ne recursos;\nencontravam regularizados;\nii) Estabelecer protocolos permanentes de atuação integrada entre a\nvi) Recompor a capacidade operacional da SEDAM, com reforço das\nSEDAM, o Corpo de Bombeiros Militar, a Polícia Militar Ambiental, a\nequipes de fiscalização, melhoria da infraestrutura logística e uso\nDefesa Civil, os árgãos federais competentes, o Ministério Público e\nintensivo de geotecnologias;\nos municípios, com compartilhamento de informações geoespaciais;\nvii) Implantar sistema estadual de inteligência territorial, baseado em\nIII) Elaborar plano estadual de priorização para conclusão e revisão\nimagens de satélite, com monitoramento continuo do desmatamento,\ncerca de 2,59 milhões de hectares, ou 10,9% do território -\ndos Planos de Manejo das 49 Unidades de Conservação estaduais -\ndas queimadas e dos ocupações irregulares, e painel público\nde acompanhamento;\ncomeçando pelas unidades com maior pressão ambiental e\nrelevância ecológica:\nviii) Estruturar os mercados de serviços ambientais e de carbona\ncomo fonte complementar de renda para produtores rurais e\niv) Instituir e manter em funcionamento os Conselhos Gestores de\ncomunidades tradicionais:\ntodas as Unidades de Conservação, assegurando representação das\ncomunidades locais, dos pesquisadores e da sociedade civil:\nix) Instituir politica estadual de gestão integrada de residuos sólidos,\napoiando os municípios na implantação de soluções de coleta,\ntratamento e destinação final adequada, com recuperação de áreas\ndegradadas e inclusão produtiva de catadores.\n38"
+          },
+          {
+            "id": "5-7",
+            "titulo": "5.7",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "ocr",
+            "conteudo": "5.7\nESTIMULAR CIÊNCIA, TECNOLOGIA, INOVAÇÃO\nE A MODERNIZAÇÃO DA GESTÃO PÚBLICA\ni) Criar rubrica orçamentária própria e especifica para pesquisa no\nv) Reorganizar a máquina pública estadual em torno do cidadão\norçamento estadual, protegida de contingenciamento, com a\ncomo razão de ser do serviço público, com atendimento eficiente,\nFAPERO como instrumento central dessa politica:\nrespeitoso e resolutivo, e uso da digitalização para reduzir prazos e\nii) Estimular o desenvolvimento da mentalidade empreendedora\nampliar a transparência;\nnos universidades e institutos de pesquisa de Rondônia, com maior\nvi) Fomentar a bioeconomia e a biotecnologia amazônicas como\ndedicação à resolução de desafios concretos do estado e das\nfrente prioritária do sistema estadual de inovação, com apoio\nao desenvolvimento de tecnologias sustentáveis aplicados às\nsuas cidades;\nespecificidades do bioma e à agregação de valor dos produtos\nili) Fomentar projetos de inteligência artificial, tecnologia da\nda biodiversidade;\ninformação e economia digital, aproveitando os ecossistemas de\ninovação já existentes no estado e ampliando parcerias entre\nvii) Aproximar a pesquisa aplicada da realidade do campo.\nuniversidades, institutos federais e setor produtivo;\nassegurando que as inovações cheguem ao produtor de forma\nutilizável, por meio de programas de transferência de tecnologia\niv) Fortalecer a articulação entre ciência, pesquisa, tecnalagia\nexecutados com universidades e institutos federais;\ne produção, aproximando centros de pesquisa, universidades e\nvili) Aplicar inteligência artificial e análise de dados na melhoria dos\nsetores produtivos estratégicos do estado, como agroindústria\ne biotecnalogia;\nserviços públicos estaduais, com prioridade para a regulação\nassistencial em saúde, o monitoramento territorial e ambiental, a\ninteligência em segurança pública e a simplificação do atendimento\nao cidadão.\n5.8\nDIVERSIFICAR A ECONOMIA COM TURISMO, ECONOMIA\nCRIATIVA E NOVAS MODALIDADES DE EMPREENDEDORISMO\ni) Estruturar a oferta turistica de Rondônia, com destaque ao\niii) Apoiar a formalização de negócios informais e a organização de\nturismo fluvial e de natureza, à economia do visitante e à integração\nnovas modalidades de trabalho e empreendedorismo digital,\ncom esportes e entretenimento:\nampliando a proteção social de quem empreende:\nii) Facilitar o acesso ao crédito para quem empreende, com\niv) Integrar as politicas de turismo, cultura e economia criativa à\nfortalecimento de linhas de microcredito e de novas modalidades de\nestratégia mais ampla de diversificação da economia do estado:\nseguro para negócios de pequeno porte, em parceria com bancos\nv) Estruturar o uso público e a visitação nas Unidades de\nde fomento regionais:\nConservação estaduais, com base no zoneamento e nas regras\ndefinidas nos respectivos Planos de Manejo, transformando o\n39\npatrimônio ambiental de Rondônia em ativo turistico e em\noportunidade de renda para as comunidades do entorno."
+          },
+          {
+            "id": "secao-06",
+            "titulo": "SEÇÃO 06",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "ocr",
+            "conteudo": "SEÇÃO 06\nMENSAGEM DE CONVERGÊNCIA\nNÃO HÁ GESTÃO EFICIENTE SEM COMBATE À CORRUPÇÃO\nUm celeiro produtivo e sustentável. Uma Amazonia\nNa minha gestão, a eficiência significa entregar mais á\nequilibrada que busca soluções para si e para toda a\npopulação, com mais assertividade e para todos os\nregião. Um Estado que a partir do aumento do seu\nquais esta ou aquela palitica for criada. Para mim,\ncapital: social - resultado das politicas: aqui\ngrupos são todos os cidadãos e cidadas elegiveis para\nopresentadas - saberá fazer de sua nova realidade um\nas ações oferecidos pelo meu gaverno:\nexemplo para a Brasil e para o mundo. Essa e a visão\npossível para Rondânia, em um momento de esforços\nAcredito que a ineficiência e tão nocivo quanto a\nreunidos pelo melhor interesse publico e uma alocação\ncorrupção, mas não ha eficiência administrativa sem\ninteligente de esforças, de pessoas e recursos publicos.\ncombate: e vigilância permanente à corrupção. O\nE esse horizonte só se cumpre com ênfase e respeito à\ndinheiro público é património de todos, de todas as\nnatureza e ao elemento humano como a gênese de todo\nclasses sociais, raça e credo, e não propriedade de um\no processo de desenvolVimento:\nindividuo, grupo ou partido politico. Ninguém está\nlegitimado a governar para si, sua familia ou seu grupo.\nA transição da matriz económica proposto neste\nNão tergiversarei nem com a ineficiêncio, menos aindo\nDocumento e absolutamente factível. Basto, para isso, a\ncom a comrupçdo:\ncredibilidade politica construida em torno da eficiencia\nadministrativa, assentada sobre a uso racional e criativo\nAcredito em um estado de Rondônia forte, autônomo,\nda tecnologia; a apolo da ciencia e a busca incessante\nexportador de exemplos positivas e imune a ciclos\nda inovação: Gestão eficiente significa o oposto de\ntransitorios que beneficiam poucos: e explaratti o\nachismo, do improviso ou da crença no acaso.\nterritório de todos.\nVAMOS JUNTOS\nNESTE DESAFIO!\nPEDRO ABIB\n¡Candidato da MDB do Governo do Estado de Rondônia"
+          },
+          {
+            "id": "ficha-catalografica",
+            "titulo": "FICHA CATALOGRAFICA",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "ocr",
+            "conteudo": "FICHA CATALOGRAFICA\nCAMINHOS PARA RONDÔNIA\nA transição econômica necessária e inclusiva\nPLANO DE GOVERNO PEDRO ABIB • 2027-2030\nCOORDENAÇÃO\nORGANIZAÇÃO, PESQUISA E REDAÇÃO\nPedro Abib\nCarla Manuela Franco\nElizeu Lira\nDIAGRAMAÇÃO\nREVISÃO\nCarla Manuela Franco\nGeruzza Vargas\nFabio A. Hecktheuer\nFabio A. Hecktheuer\nAlex Andrade\nCOLABORAÇÃO\nIMAGENS\nGustavo Grisa\nAtair Chacão\nAPOIO ADMINISTRATIVO\nBrenda Pereira\nREFERÊNCIAS BIBLIOGRÁFICAS\n• Instituto Brasileiro de Geografia e Estatistica - IBGE, Cidades e Estados, 2026, Fórum Brasileiro de Segurança Pública, 20ª Anuário Brasileiro\nde Segurança Pública, 2025. Ministeria da Saúde, Sistema de Informações sobre Mortalidade, 2026. Fundação Abrina, Cenário da Infância e\nAdolescência no Brasil, 2026. Ministério do Desenvolvimento, Assistência Social, Familia e Combate à Fome, 2026, Governo do Estado de\nRondônia / SECEL, 2026. Fundação Ulysses Guimarães, Caminhos para o Brasil, 2025.\n41"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "1b5571a18dcecb828d00cd7ea024a5db8ffa2a2550aa30c7882ca51eb32f75eb"
+          },
+          {
+            "pagina": 2,
+            "origem": "ocr",
+            "textSha256": "d2a2d341dc9d50b7a94f32f50c9a517b29c92ace40177e100cd1c9e6b14e02d3"
+          },
+          {
+            "pagina": 3,
+            "origem": "ocr",
+            "textSha256": "22b0f20d592c00d97809bcf33b830ec20acb9d179f92f05ca65106ecc16a7bf3"
+          },
+          {
+            "pagina": 4,
+            "origem": "ocr",
+            "textSha256": "77d8eef1363d835de2954d3f86fb91a7f2c15503a49be8a2a328f63b8cb8cd86"
+          },
+          {
+            "pagina": 5,
+            "origem": "ocr",
+            "textSha256": "62344cb2c90d0bc753600252b808270096c30e1faa92751b6cc9fc021a0cecf5"
+          },
+          {
+            "pagina": 6,
+            "origem": "ocr",
+            "textSha256": "7cd8482e94695a073b855b1660e974fdb5a25e31fc8d669edf430837fe7dad87"
+          },
+          {
+            "pagina": 7,
+            "origem": "ocr",
+            "textSha256": "77185671057d1ae103e09ca2c4d4d034ee25d65241bf1a5afc88da460d0dfa51"
+          },
+          {
+            "pagina": 8,
+            "origem": "ocr",
+            "textSha256": "561581ee5fff572f1fdc282484435f7718cd55c4fecfc3f6ea6e728ac6ee60fb"
+          },
+          {
+            "pagina": 9,
+            "origem": "ocr",
+            "textSha256": "b54b1024b3792b90253ef62d79605310184aee270e3f72179c0da573572ac358"
+          },
+          {
+            "pagina": 10,
+            "origem": "ocr",
+            "textSha256": "bc4e30beb30b6a9acdcf21fc437eecd57451fbd044015c917ce6f549b8b19515"
+          },
+          {
+            "pagina": 11,
+            "origem": "ocr",
+            "textSha256": "15cee93e62a461f03e205f600cee2e9734faa24d0a191c1a18a493536410b4cf"
+          },
+          {
+            "pagina": 12,
+            "origem": "ocr",
+            "textSha256": "c24e9badf2a1fd61d0dd6041fe38ecb1098036c522eba2fbe715bbf91f7da1e1"
+          },
+          {
+            "pagina": 13,
+            "origem": "ocr",
+            "textSha256": "2fa47e4fd84ba6c9f4b32fe07c31c8dafbec8d5dd5bc5fcf0cbaa5127ca0c48c"
+          },
+          {
+            "pagina": 14,
+            "origem": "ocr",
+            "textSha256": "910587dc78789c3ddac40219d190aeaddc35f042d7da64867fcde064815c8c74"
+          },
+          {
+            "pagina": 15,
+            "origem": "ocr",
+            "textSha256": "9003ce9f14893591009c851da0ecd1c1fc2a18db8d15e16ed02dc17f9481869f"
+          },
+          {
+            "pagina": 16,
+            "origem": "ocr",
+            "textSha256": "2565879ee20ca0468aa59c4c45b10feb46e38abae2c3c016a807c91b8fc3fcba"
+          },
+          {
+            "pagina": 17,
+            "origem": "ocr",
+            "textSha256": "a56cbaba5a027e3244650e3d7ee6077c86921525d73e4d856a4c201cc0fe9868"
+          },
+          {
+            "pagina": 18,
+            "origem": "ocr",
+            "textSha256": "b377d58fb18216c741480a5a8260866839d6bd6d1b7d84385a93097a8642b7d2"
+          },
+          {
+            "pagina": 19,
+            "origem": "ocr",
+            "textSha256": "a52c32a74bb20578ca4cc44c4efa0e20de97651d397fe829edae2788a125048f"
+          },
+          {
+            "pagina": 20,
+            "origem": "ocr",
+            "textSha256": "acf9da5b9f24f954026b34fd2778c5061b10a7344733aea5b83dd249a92504fc"
+          },
+          {
+            "pagina": 21,
+            "origem": "ocr",
+            "textSha256": "1dadebc8ab8192943fbd5cd989237dfe596af39bda68a7b4179c33e75c462495"
+          },
+          {
+            "pagina": 22,
+            "origem": "ocr",
+            "textSha256": "abbab6f878d45b13832d9e7267f5961ffd6b5930906fdad29c2d406b1b3151be"
+          },
+          {
+            "pagina": 23,
+            "origem": "ocr",
+            "textSha256": "4a04d4e19dbcc7b86c8406c22e59c259df5858eb6e26be91456381afa60cdea5"
+          },
+          {
+            "pagina": 24,
+            "origem": "ocr",
+            "textSha256": "6a659ccd8f8e877a9fedbaaa6732ed50c9dcad3f71ec16e706ef4dd025fb5abf"
+          },
+          {
+            "pagina": 25,
+            "origem": "ocr",
+            "textSha256": "e80ce6a901165b94f6a38ac73ec3ffcf6704a57832a07470043a5bdd21fb8bea"
+          },
+          {
+            "pagina": 26,
+            "origem": "ocr",
+            "textSha256": "8101a83a7782f4ce4a21b5fb6695dc9e04372dc33587895ed8c912a7592c0026"
+          },
+          {
+            "pagina": 27,
+            "origem": "ocr",
+            "textSha256": "475f2db9be76864ce2fd3ff6e2e5554bb1c437bdffb45940867e69c3473259d9"
+          },
+          {
+            "pagina": 28,
+            "origem": "ocr",
+            "textSha256": "fae3d50d67573f05afa6d7a6c489ab330053fcc2d802e0e304f1bad24d68d92b"
+          },
+          {
+            "pagina": 29,
+            "origem": "ocr",
+            "textSha256": "940ed1a920bc78fca42f8f2b00ea1ff65976ae98d55548db3ea85c7b37d4873a"
+          },
+          {
+            "pagina": 30,
+            "origem": "ocr",
+            "textSha256": "e4ceffa89feab56089dee81c3c5e58b14f5eec1851c9eb340f7f3b6a61893351"
+          },
+          {
+            "pagina": 31,
+            "origem": "ocr",
+            "textSha256": "c9b40c6391530b45840a29b3e15db98b935ae4704a3b825de8fef20d99ee5bcb"
+          },
+          {
+            "pagina": 32,
+            "origem": "ocr",
+            "textSha256": "a4c9f28c8e96d8d6e689defbe20c545a7de5c1c526e90914bc072c7116561782"
+          },
+          {
+            "pagina": 33,
+            "origem": "ocr",
+            "textSha256": "3334312672ed3caaf43ce9bec2678898ac66b6aaf6d88bb40c17a842b04d1a95"
+          },
+          {
+            "pagina": 34,
+            "origem": "ocr",
+            "textSha256": "803b63c2fe1e426616d7b497f9bbf4debe734d42a2586cb648b67f454f4a0b6c"
+          },
+          {
+            "pagina": 35,
+            "origem": "ocr",
+            "textSha256": "ff6561bfa1390447fcd3241b3fdd04c4778f7eb569adb6bb27c887eef86c9090"
+          },
+          {
+            "pagina": 36,
+            "origem": "ocr",
+            "textSha256": "bda919c1586d81b2fa83b9831b509dd13a8d55893a77372bdc20b0f7f8eb80fb"
+          },
+          {
+            "pagina": 37,
+            "origem": "ocr",
+            "textSha256": "435c2eee5acbe1766508495d8cc85bf285db25203b6a3fea8df8e107160813b6"
+          },
+          {
+            "pagina": 38,
+            "origem": "ocr",
+            "textSha256": "719d68b63bc849255a2b26f538489f986df5946b5ada7d7e6716865d800c976a"
+          },
+          {
+            "pagina": 39,
+            "origem": "ocr",
+            "textSha256": "d138fcc765f2e10b7d26fc257fe1f91a744779f6a69fc4c1cd491a5f74afe87d"
+          },
+          {
+            "pagina": 40,
+            "origem": "ocr",
+            "textSha256": "643c63572ed9a235ca12c7413dda3e2e2bd522668164df2d3f81665e89e91d2a"
+          },
+          {
+            "pagina": 41,
+            "origem": "ocr",
+            "textSha256": "5d326f13a98728e8ff6ff6dbb4a8b979515583c05d6b39e0b7e18b19db009cbe"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano informa que, durante os dois meses de pré-campanha, foram visitados 40 municípios. O registro das visitas indica uma abrangência de 40 municípios ao longo do período de dois meses de pré-campanha. O plano informa que aproximadamente 76% da malha rodoviária estadual de Rondônia não é pavimentada. A malha rodoviária estadual de Rondônia é descrita no plano como tendo aproximadamente 76% de sua extensão sem pavimentação. O plano organiza a transição econômica de Rondônia em oito frentes estruturantes, apresentadas como orientação das políticas propostas na Seção 05. As oito frentes estruturantes constituem a forma indicada pelo plano para organizar a transição econômica de Rondônia e orientar as políticas propostas na Seção 05. O plano relaciona as oito frentes estruturantes à organização da transição econômica de Rondônia e à orientação das políticas propostas na Seção 05.",
+    "frases": [
+      {
+        "texto": "O plano informa que, durante os dois meses de pré-campanha, foram visitados 40 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 4,
+            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+          }
+        ]
+      },
+      {
+        "texto": "O registro das visitas indica uma abrangência de 40 municípios ao longo do período de dois meses de pré-campanha.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 4,
+            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+          }
+        ]
+      },
+      {
+        "texto": "O plano informa que aproximadamente 76% da malha rodoviária estadual de Rondônia não é pavimentada.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 13,
+            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+          }
+        ]
+      },
+      {
+        "texto": "A malha rodoviária estadual de Rondônia é descrita no plano como tendo aproximadamente 76% de sua extensão sem pavimentação.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 13,
+            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+          }
+        ]
+      },
+      {
+        "texto": "O plano organiza a transição econômica de Rondônia em oito frentes estruturantes, apresentadas como orientação das políticas propostas na Seção 05.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 14,
+            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+          }
+        ]
+      },
+      {
+        "texto": "As oito frentes estruturantes constituem a forma indicada pelo plano para organizar a transição econômica de Rondônia e orientar as políticas propostas na Seção 05.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 14,
+            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+          }
+        ]
+      },
+      {
+        "texto": "O plano relaciona as oito frentes estruturantes à organização da transição econômica de Rondônia e à orientação das políticas propostas na Seção 05.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 14,
+            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "pre-campanha",
+        "titulo": "Pré-campanha",
+        "descricao": "Registro de visitas realizadas durante os dois meses de pré-campanha.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 4,
+            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+          }
+        ]
+      },
+      {
+        "id": "municipios-visitados",
+        "titulo": "Municípios visitados",
+        "descricao": "Visitas informadas em 40 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 4,
+            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+          }
+        ]
+      },
+      {
+        "id": "malha-rodoviaria",
+        "titulo": "Malha rodoviária",
+        "descricao": "Situação de pavimentação da malha rodoviária estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 13,
+            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+          }
+        ]
+      },
+      {
+        "id": "transicao-economica",
+        "titulo": "Transição econômica",
+        "descricao": "Organização da transição econômica em oito frentes estruturantes.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 14,
+            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:41:35.148Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:43:28.597Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência afirma literalmente o mesmo fato."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 40 e prazo de dois meses estão literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve o fato, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta/fato coerente sobre visitas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Números coincidem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do dado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente e única sobre visitas de pré-campanha."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 76% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único sobre infraestrutura rodoviária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre toda a cláusula material do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel ao texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Número consistente com evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde quase literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'oito' e 'Seção 05' sustentados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Números sustentados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Números literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Prazo de dois meses sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 40 sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no claim; não conflita com evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única sobre infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'oito' sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente o resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RO:220002551251",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RO:220002551251:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 19222,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 18387,
+          "output_tokens_details": {
+            "thinking_tokens": 633
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19222,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 18387,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 19222,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 19222
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2765044
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "0deec340a7c9db6689eb06c766db57f42d8b9748db7c881c05c2aa0c0032cef2",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:44:51.998Z",
+    "sourceSha256": "ec9d80a9fbd5601272a4160e37899639e7f9feecd481a6badffd60846537c916",
+    "extractedTextSha256": "89bb27915362594973b37ccf6058c8848d7a431184f0614be0a497486123a646",
+    "documentCount": 1,
+    "documentSetSha256": "b20d138f062a07207de458398b0c52cee192ac888e88057b2c33fbcfe698584c",
+    "contentSha256": "6eaea1e297e03d13061276482ef19f8374a79e76b60ca9f8fed62f7ceb08f330"
+  }
+}
