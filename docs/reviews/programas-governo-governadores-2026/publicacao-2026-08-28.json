@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T20:17:16Z",
+  "reviewedAt": "2026-08-28T23:20:11.774Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 127,
-    "human_review_required": 17
+    "approved": 128,
+    "human_review_required": 16
   },
   "items": [
     {
@@ -154,7 +154,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:GO:90002540993",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "GO",
       "slug": "daniel-vilela",
       "sqCandidato": "90002540993",
@@ -1151,7 +1151,7 @@
       "nomeUrna": "MAILZA ASSIS",
       "partido": "PP",
       "sourceState": "em_revisao",
-      "reason": "mailza-assis: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002550719",
