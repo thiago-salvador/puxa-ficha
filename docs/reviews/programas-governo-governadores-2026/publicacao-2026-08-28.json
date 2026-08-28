@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:31:22.478Z",
+  "reviewedAt": "2026-08-28T23:35:45.824Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 135,
-    "human_review_required": 9
+    "approved": 137,
+    "human_review_required": 7
   },
   "items": [
     {
@@ -715,14 +715,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002551789",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "lucas-ribeiro",
       "sqCandidato": "150002551789",
       "nomeUrna": "LUCAS RIBEIRO",
       "partido": "PP",
       "sourceState": "em_revisao",
-      "reason": "lucas-ribeiro: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002540204",
@@ -858,14 +858,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002537422",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PI",
       "slug": "geraldo-carvalho",
       "sqCandidato": "180002537422",
       "nomeUrna": "GERALDO CARVALHO",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "geraldo-carvalho: Eval tem 3 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002549970",

@@ -1,0 +1,1008 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002537422",
+    "slug": "geraldo-carvalho",
+    "nomeUrna": "GERALDO CARVALHO",
+    "partido": "PSTU",
+    "arquivoNome": "2026PI180002537422_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002537422_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002537422:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002537422_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002537422_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a7170e0a2cefe3c955406d261779cfd269ff5ca452d7e9ec9d9d045baf1676a8",
+        "extractedTextSha256": "2405d80550a7410ab91f269e01e19248992d0ae87e984eea98a1b33368c99a41",
+        "paginas": 20,
+        "secoes": [
+          {
+            "id": "pstu",
+            "titulo": "PSTU",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PSTU\n\nPROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPIAUÍ PARA QUEM TRABALHA\nPROGRAMA DE GOVERNO DO ESTADO DO PIAUÍ\n2027-2030\n\nGERALDO CARVALHO/ GERVÁSIO\nSANTOS\nPARTIDO SOCIALISTA DOS TRABALHADORES UNIFICADO - PSTU\n\nDiretrizes e propostas apresentadas à Justiça Eleitoral para as Eleições de 2026\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 1"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\nAPRESENTAÇÃO\nEste Programa de Governo apresenta as diretrizes, prioridades e propostas da\ncandidatura de Geraldo Carvalho, ao Governo do Estado do Piauí, e Gervásio Santos, à\nvice-governador, para o período de 2027 a 2030. O documento parte da realidade\nconcreta do povo piauiense, das lutas dos trabalhadores e trabalhadoras e do\ndiagnóstico político aprovado no processo de Conferência Regional do PSTU em 2026.\nO programa estadual está alinhado ao Programa de Governo nacional\napresentado pelo Partido Socialista dos Trabalhadores Unificado - PSTU, encabeçado\npor Hertz Dias, candidato à Presidência da República, e Vanessa Portugal, candidata à\nVice-Presidência. Esse alinhamento não elimina as competências próprias do Estado\ndo Piauí, ao contrário, articula propostas estaduais imediatas com um projeto nacional\nde transformação social, soberania, defesa dos serviços públicos e enfrentamento das\ndesigualdades.\nMuitos problemas do Piauí - baixa renda do trabalho, dependência econômica,\nendividamento das famílias, precarização, concentração fundiária e fragilidade\nindustrial - têm raízes nacionais e internacionais. Por isso, o governo estadual atuará\ndentro de suas atribuições e, ao mesmo tempo, defenderá mudanças nacionais como\na revogação das reformas que retiraram direitos, a redução da jornada sem redução\nsalarial, a auditoria da dívida pública e suspensão do pagamento da dívida, o controle\npúblico do sistema financeiro e a reorganização da economia segundo as necessidades\nsociais.\nEste é um programa de ruptura com a administração do Estado subordinada aos\ngrandes grupos econômicos. Propõe um governo dos trabalhadores e das\ntrabalhadoras, apoiado na mobilização popular, na transparência, no controle social e\nna defesa incondicional dos direitos humanos. As medidas serão executadas por\nmudanças estruturais urgentes e necessárias à maioria da população, com o apoio da\nmobilização popular e da classe trabalhadora.\n\n1. PRINCÍPIOS E COMPROMISSOS CENTRAIS\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 2"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-2",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nGovernar para a maioria que vive do trabalho, e não para bancos, grandes\n\nproprietários, empreiteiras, fundos de investimento e grupos privados.\n●\n\nDefender os serviços públicos, o patrimônio estadual e a gestão pública direta,\n\ncom reversão das privatizações e terceirizações, observado o interesse público.\n●\n\nValorizar servidores públicos, realizar concursos e combater vínculos precários,\n\nassédio, clientelismo e perseguição política.\n●\n\nPromover igualdade racial e de gênero; combater o racismo, o machismo, a\n\nLGBTfobia, xenofobia, ao capacitismo e todas as formas de discriminação.\n●\n\nRegularizar e proteger territórios indígenas, quilombolas, camponeses e\n\ncomunidades tradicionais, enfrentando grilagem, violência no campo e danos\nsocioambientais.\n●\n\nInstituir participação popular efetiva na elaboração, execução e fiscalização do\n\norçamento e das políticas públicas, através de conselhos populares.\n●\n\nGarantir transparência ativa, controle social e combate à corrupção, através dos\n\nconselhos populares que definirão como o orçamento estadual deve ser planejado e\nexecutado.\n\n2. CONJUNTURA INTERNACIONAL E NACIONAL\n2.1 Um mundo marcado por crises e desigualdades\n\nA conjuntura internacional é marcada pela combinação de guerras, disputas\nentre grandes potências, instabilidade econômica, avanço da extrema direita, crise\nclimática e aumento das desigualdades. Recursos que deveriam assegurar\nalimentação, moradia, saúde, educação e adaptação climática são desviados para\ndespesas militares, especulação financeira e proteção de grandes corporações.\nA inserção subordinada do Brasil na economia mundial mantém o país como\nexportador de produtos primários e importador de bens de maior conteúdo\ntecnológico. Essa dependência atinge de forma ainda mais intensa estados periféricos\ncomo o Piauí, onde a expansão de commodities agrícolas, minerais e energéticas não\nse\n\ntraduz\n\nautomaticamente\n\ne\n\nperenemente\n\nem\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 3\n\nempregos\n\nde\n\nqualidade,"
+          },
+          {
+            "id": "pstu-2",
+            "titulo": "PSTU",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PSTU\n\nPROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nindustrialização, renda e bem-estar coletivo. Pelo contrário, o que existe é muita\nprecarização das relações de trabalho e superexploração dos trabalhadores, incluindo\na desumanização com a exploração do trabalho escravo, com gravíssimos impactos\nsocioambientais.\nO programa estadual defenderá cooperação entre povos, paz com justiça social,\nsolidariedade internacional e oposição a guerras e ocupações, o que inclui a ruptura\nimediata de toda e qualquer relação com o estado genocida e racista de Israel, que\nameaça a existência do povo palestino. No âmbito econômico, o Piauí deve aproveitar\nseus recursos naturais sem submetê-los à lógica predatória das grandes empresas,\nexpropriando o agronegócio e estatizando a extração mineral e todas as formas de\nprodução de energia, assegurando controle público, a partir da participação ativa de\nindígenas, quilombolas, vazanteiros e outras comunidades tradicionais e pequenos\nagricultores, com proteção ambiental e retorno social.\n\n2.2 Brasil: crescimento com precariedade e dependência\n\nO país registrou melhora de indicadores gerais de emprego, mas essa média\nesconde grandes desigualdades regionais, alta informalidade, baixíssimos salários e\nprecarização das relações de trabalho, com terceirizações, e com a pejotização e\n“uberização”, além da escravizante e desumana escala 6x1. A desindustrialização\nreduziu a capacidade produtiva nacional, ampliou a dependência tecnológica e\nenfraqueceu empregos qualificados. A política de juros altos e a prioridade concedida\nao pagamento da dívida pública resultam em diminuição substancial de investimentos\nsociais e favorecem o sistema financeiro (banqueiros nacionais e internacionais).\nAs reformas trabalhista e previdenciária, as terceirizações, pejotização e a\nexpansão do trabalho por plataformas aprofundaram a insegurança. O pacto federativo\ntambém transfere aos estados responsabilidades crescentes sem assegurar\nfinanciamento adequado. O Brasil e o Piauí necessitam de uma política nacional de\nreindustrialização sob controle público, reforma agrária, fortalecimento do SUS e da\neducação pública, além de investimentos federais e estaduais capazes de atacar as\ndesigualdades históricas.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 4"
+          },
+          {
+            "id": "pstu-3",
+            "titulo": "PSTU",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PSTU\n\nPROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\n3. DIAGNÓSTICO ECONÔMICO E SOCIAL DO PIAUÍ\n3.1 Crescimento econômico insuficiente para superar desigualdades\n\nO Produto Interno Bruto do Piauí alcançou R$ 80,917 bilhões em 2023, com\ncrescimento real de 3,1%. O PIB per capita foi de R$ 24.736,15. Os serviços\nresponderam por 71,7% do Valor Adicionado Bruto; a agropecuária ganhou peso, e a\nindústria permaneceu limitada. Esses números mostram expansão econômica, mas\nnão demonstram, por si, melhoria proporcional das condições de vida da classe\ntrabalhadora.\nA economia estadual continua concentrada em serviços, administração pública,\ncomércio, construção civil, produção agropecuária de commodities e geração de\nenergia. A indústria de transformação tem baixa densidade e limitada capacidade de\nagregar valor. O crescimento do agronegócio nos cerrados concentra terra e riqueza e\nproduz conflitos fundiários, desmatamento, contaminação de solos e rios, redução de\nágua disponível e deslocamento de comunidades, além de trabalho escravo\ncontemporâneo.\n\n3.2 Trabalho, renda, informalidade e desalento\n\nEm 2025, a taxa anual de desemprego no Piauí foi de 9,3%, a maior entre as\nunidades da Federação, segundo o IBGE. A taxa de subutilização chegou a 31%,\ntambém a maior do país. No primeiro trimestre de 2026, 30,4% da força de trabalho\nampliada continuava subutilizada; o Piauí apresentava 7,6% de desalentados e apenas\n53,7% dos empregados do setor privado tinham carteira assinada.\nO rendimento médio do trabalho permanece entre os menores do Brasil. A\ninformalidade envolve mais da metade da população ocupada em diferentes medições\nrecentes. Portanto, o problema não é apenas criar qualquer ocupação, mas gerar\ntrabalho estável, protegido, com salário digno e direito à organização sindical.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 5"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-3",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n3.3 Pobreza, endividamento e insegurança social\n\nCentenas de milhares de famílias dependem de transferências de renda para\nsobreviver. Isso demonstra a importância dos programas sociais para um amplo setor\nda população, mas também evidencia a insuficiência do emprego e da renda. A\nelevação do custo dos alimentos, da moradia, da energia e dos transportes pressiona o\norçamento familiar. O endividamento bancário e no cartão de crédito aprisiona\ntrabalhadores em juros abusivos.\nO governo estadual não tem competência para anular unilateralmente dívidas\nbancárias privadas. Entretanto, poderá criar serviços públicos de orientação e defesa\ndo consumidor, apoiar renegociações sem utilização predatória do FGTS, combater\npráticas abusivas e defender nacionalmente a anulação das dívidas impagáveis de\nassalariados e pequenos proprietários. São medidas, no entanto, insuficientes.\nDefendemos o proposto no programa de Hertz Dias e Vanessa Portugal: a estatização do\nsistema financeiro.\n\n3.4 Serviços públicos e privatizações\n\nO governo estadual de Rafael Fonteles (PT,) adotou concessões, parcerias\npúblico-privadas, terceirizações e contratos de gestão com organizações privadas\ncomo instrumentos centrais, política neoliberal defendida e aplicada por governos da\nextrema-direita. O sistema de abastecimento de água e saneamento foi concedido à\niniciativa privada, com a criminosa privatização da Agespisa; rodovias estratégicas para\no agronegócio foram inseridas em PPPs; hospitais e unidades públicas passaram a ser\nadministrados por entidades privadas (Organizações Sociais – OSs). Esse modelo\ntransfere recursos públicos para o empresariado, causa corrupção, acaba com o\ncontrole democrático e cria riscos de tarifas elevadas, demissões e precarização como\naconteceu na privatização da telefonia, da energia (Cepisa) e da água e Saneamento\n(Agespisa).\nAs candidaturas de Hertz Dias e Geraldo Carvalho se opõem à privatização dos\nserviços públicos e defendem a reestatização deles. A água, o saneamento, energia, a\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 6"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-4",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\nsaúde, a educação, a mobilidade e a infraestrutura devem ser orientadas pelo direito da\npopulação, não pela remuneração de acionistas.\n\n3.5 Educação e juventude\n\nA expansão da educação profissional e do tempo integral deve ser\nacompanhada de formação geral, liberdade pedagógica, infraestrutura e valorização\nprofissional. Não aceitaremos que a escola pública seja reduzida a treinamento para\nempregos precários. O fechamento de escolas no campo provoca longos\ndeslocamentos, descontextualização do ensino, evasão e esvaziamento das\ncomunidades.\nNa juventude, desemprego, ausência de perspectivas, violência e sofrimento\npsíquico têm dimensões coletivas. A resposta exige educação, cultura, esporte,\ntrabalho protegido, moradia, transporte e saúde mental.\n\n4. UM PLANO ECONÔMICO PARA QUEM TRABALHA\n4.1 Emprego e renda\n\n●\n\nCriar um Plano Estadual de Obras e Serviços Públicos, com prioridade para\n\nsaneamento, habitação, recuperação de escolas, hospitais, estradas vicinais,\nequipamentos culturais e adaptação climática.\n●\n\nFim da escala 6x1\n\n●\n\nDe imediato, exigir contratação regular, direitos trabalhistas, salários decentes e\n\ncotas sociais nos contratos financiados pelo Estado; combater trabalho análogo à\nescravidão e fraude na terceirização. Criação de empresa pública de obras públicas,\npara acabar com a necessidade de contratos com empreiteiras e construtoras.\n●\n\nInstituir programa de apoio técnico e crédito público a cooperativas,\n\nassociações, economia solidária e pequenos empreendimentos, com prioridade para\nmulheres, negros, juventude, quilombolas, indígenas e pessoas com deficiência.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 7"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-5",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nDefender salário mínimo do Dieese, redução da jornada sem redução de\n\nsalários.\n●\n\nRevogar reformas que retiraram direitos, como as reformas previdenciárias\n\nimplantadas nas últimas décadas no Piauí b, que causam confisco nas aposentadorias\ne pensões de servidores, e respectivo empobrecimento.\n\n4.2 Desenvolvimento e industrialização sob controle social\n\n●\n\nElaborar Plano Estadual de Industrialização e Transição Ecológica, articulado a\n\nuniversidades, institutos federais, trabalhadores e comunidades.\n●\n\nPriorizar cadeias de alimentos, medicamentos, equipamentos de saúde,\n\nmateriais de construção, reciclagem, tecnologia da informação, máquinas agrícolas\napropriadas e beneficiamento da produção familiar.\n●\n\nFim dos incentivos fiscais para grandes empresas e agronegócio. Isenção de\n\nimpostos e criação de incentivos para micro e pequenos empreendedores e para a\nagricultura familiar.\n●\n\nExpropriação sem indenização de empresas que pratiquem trabalho escravo,\n\nracismo, violência de gênero, lgbtfobia, dano ambiental grave ou demissões coletivas.\n●\n\nCriar empresa pública estadual de desenvolvimento e engenharia para planejar\n\ne executar obras, projetos, inovação e planejamento regional, sob controle da classe\ntrabalhadora e comunidades tradicionais.\n●\n\nAs terras raras são nossas! Criação de uma Empresa Estatal de Terras Raras sob\n\ncontrole dos trabalhadores.\n\n4.3 Finanças públicas e orçamento\n\n●\n\nSuspensão do pagamento da dívida pública e realização da auditoria da dívida\n\nestadual. Com os recursos que deixarem de ir para os banqueiros, bancar o programa\nde obras públicas e outras áreas sociais.\n●\n\nRevogação de todos os contratos de PPPs, concessões, renúncias fiscais e\n\ngrandes contratos. Reestatização do que foi privatizado.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 8"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-6",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nFim dos benefícios fiscais às grandes empresas; combate à sonegação e\n\ncobrança das dívidas de grandes devedores;\n●\n\nIncentivo aos micros e pequenos negócios.\n\n●\n\nImplantar orçamento participativo estadual, de 100% dos recursos, com\n\nplenárias territoriais e publicação do cumprimento das deliberações, através de\nconselhos populares.\n●\n\nDefender tributação progressiva sobre grandes fortunas, reduzindo o peso sobre\n\ntaxação no consumo da maioria da população.\n\n5. SERVIÇOS PÚBLICOS, SERVIDORES E PATRIMÔNIO\nESTADUAL\n●\n\nReconstruir a capacidade estatal direta, com concursos, planejamento,\n\ncarreiras e investimento em órgãos públicos. Efetivação de trabalhadores terceirizados.\n●\n\nRecompor perdas salariais dos servidores. Garantir mesas permanentes e\n\nefetivas de negociação. Liberdade sindical, direito de greve e combate ao assédio\nmoral e sexual.\n●\n\nFim dos vínculos precários de servidores.\n\n●\n\nFim dos privilégios e altos-salários dos políticos.\n\n●\n\nEleição direta dos secretários e secretárias e chefias, em cada órgão público\n\nestadual ou autarquia, com participação de servidores dos órgãos/autarquias e\ncomunidade.\n●\n\nDemocratização dos conselhos públicos, sem participação do empresariado.\n\n●\n\nFim dos cargos vitalícios no TCE. Eleição direta, com mandatos temporários e\n\nrevogáveis do TCE e de desembargadores do TJ.\n●\n\nRevogação de todas as leis que retiraram direitos e precarizam o trabalho dos\n\nservidores. Aprovação de Planos de Cargos, Carreiras e Salários de categorias e\nretomada do Estatuto do Magistério, dentre outros.\n●\n\nRevogação das reformas da previdência dos governos anterioresb.\n\n●\n\nFim da cobrança previdenciária dos aposentados/as e pensionistas! Chega de\n\nconfisco. Devolução do dinheiro confiscado pelas reformas previdenciárias!\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 9"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-7",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n6. EDUCAÇÃO PÚBLICA, CIÊNCIA E TECNOLOGIA\n6.1 Educação básica\n\n●\n\nConstruir um plano estadual sem a participação de empresários, e com a\n\npresença efetiva de trabalhadores(as) da educação, estudantes, famílias e\ncomunidades. Fim do modelo precarizante atual de “escola de tempo integral”,\nassegurando formação/educação integral, pensamento crítico, artes, ciência, esporte\ne tecnologia.\n●\n\nValorizar trabalhadores/as da educação, cumprir o piso nacional com\n\nrepercussão na carreira e garantir concursos e condições de trabalho dignas.\n●\n\nReativar escolas do campo; reabrir unidades onde houver demanda social e\n\ngarantir transporte escolar.\n●\n\nFortalecer EJA, educação especial inclusiva, educação indígena, quilombola e\n\ndo campo, com currículos construídos com e pelas comunidades.\n●\n\nGarantir alimentação escolar saudável, priorizando compras da agricultura\n\nfamiliar e produção agroecológica.\n●\n\nImplantar equipes multiprofissionais de psicologia e serviço social e uma\n\npolítica permanente de saúde mental nas escolas.\n\n6.2 Educação Superior\n\n●\n\nAssegurar autonomia didático-científica, administrativa e de gestão financeira e\n\npatrimonial da UESPI.\n●\n\nEstabelecer\n\nfinanciamento\n\nestável\n\ne\n\nsuficiente,\n\nmediante\n\npercentual\n\norçamentário debatido com a comunidade universitária.\n●\n\nNomear aprovados em concursos, realizar novos certames e superar a\n\ndependência de professores substitutos e contratos temporários.\n●\n\nGarantir assistência estudantil, restaurantes universitários, residências, bolsas\n\ndecentes, acessibilidade, transporte e políticas de permanência efetivas.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 10"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-8",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nPlanejar expansão somente com infraestrutura, pessoal e aprovação das\n\ninstâncias de base e conselhos universitários, evitando abertura precarizada de cursos.\n●\n\nFortalecer ensino, pesquisa, extensão e pós-graduação, com prioridade aos\n\nproblemas sociais, ambientais, culturais e econômicos do Piauí.\n●\n\nDar orçamento digno à Fundação de Amparo à Pesquisa do Piauí (Fapepi), que\n\ndeve ser controlada democraticamente por trabalhadores da educação e\npesquisadores, sem participação de empresas privadas.\n●\n\nIncorporar a Faculdade PIT ao patrimônio da Uespi, a partir dos anseios da\n\ncomunidade universitária.\n●\n\nDemocratizar a Uespi, com o fim da lista tríplice para reitor(a); Voto, no mínimo,\n\nparitário para reitor(a); reformulação dos conselhos universitários que permitam\nparticipação efetiva e a devida representatividade de estudantes, servidores(as) e\ndocentes; de eleição direta para escolha de chefias e pró-reitorias.\n\n6.3 Ciência, tecnologia e comunicação digital\n\n●\n\nCriar rede pública estadual de conectividade, laboratórios e dados abertos, com\n\nsoberania e proteção de dados pessoais.\n●\n\nApoiar software livre, ciência aberta e tecnologias sociais desenvolvidas por\n\nuniversidades e comunidades.\n●\n\nUtilizar inteligência artificial apenas com transparência, avaliação de impacto,\n\nsupervisão humana e proibição de discriminação algorítmica.\n\n7. SAÚDE PÚBLICA E SUS\n●\n\nFim das terceirizações e contratos com Organizações Sociais (OSs); fortalecer\n\ngestão pública direta dos hospitais e serviços estaduais. Dinheiro público só para a\nsaúde pública.\n●\n\nEstatização dos grandes hospitais e centros de diagnósticos e exames privados\n\n●\n\nAmpliar concursos e planos de carreira para profissionais da saúde; acabar com\n\ncontratos precários e garantir condições de trabalho e salários dignos.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 11"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-9",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nRegionalizar atendimento com hospitais, maternidades policlínicas, centros de\n\ndiagnóstico, transporte adequado e regulação transparente.\n●\n\nFortalecer saúde mental, rede psicossocial, prevenção ao suicídio e cuidado\n\nterritorial, com atenção especial à juventude.\n●\n\nAmpliar atenção integral à saúde da mulher, planejamento reprodutivo,\n\nmaternidades, enfrentamento à mortalidade materna e atendimento humanizado às\nvítimas de violência.\n●\n\nDescriminalização do aborto. Garantia do direito do aborto legal e seguro, com\n\napoio psicossocial para mulheres. Às mulheres têm direito de decidir!\n●\n\nGarantir políticas específicas para população negra, indígena, quilombola,\n\nLGBTQIA+, pessoas com deficiência, idosos e pessoas privadas de liberdade.\n●\n\nGarantir educação sexual laica e científica.\n\n●\n\nCriar laboratório público estadual e ampliar produção/distribuição de\n\nmedicamentos e insumos, em cooperação com instituições públicas.\n●\n\nReestruturação do PLAMTA e do IASPI (IAPEP Saúde), para atendimento à saúde\n\nintegral do funcionalismo.\n\n8. TERRA, AGRICULTURA FAMILIAR E SOBERANIA\nALIMENTAR\n●\n\nAtacar o latifúndio. Fazer reforma agrária radical e regularização dos territórios\n\nquilombolas e demarcação de territórios indígenas, cobrando atuação federal e\nexecutando as competências estaduais.\n●\n\nCombater grilagem com cadastro transparente, fiscalização, proteção de\n\nposseiros, revisão de títulos suspeitos e retomada de terras públicas.\n●\n\nGarantir crédito, assistência técnica pública, sementes, água, armazenagem,\n\nagroindústrias comunitárias e compras governamentais da agricultura familiar.\n●\n\nCriar programa estadual de transição agroecológica e redução de agrotóxicos,\n\ncom monitoramento de água, solo e saúde.\n●\n\nFortalecer mercados públicos, feiras e cozinhas comunitárias; combater fome e\n\ndesperdício de alimentos.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 12"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-10",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nGarantir consulta livre, prévia e informada a povos e comunidades tradicionais\n\nem projetos que afetem seus territórios.\n\n9. MEIO AMBIENTE, ÁGUA, ENERGIA E CLIMA\n●\n\nCriar plano estadual de adaptação climática com metas para convivência com a\n\nseca, calor extremo, queimadas, enchentes e proteção de populações vulneráveis.\n●\n\nReestatização da água, com revitalização da Agespisa, com garantia de\n\nempregos e direitos para agespisianos(as);\n●\n\nA água é direito humano, não é mercadoria! Tarifa social, controle de qualidade\n\ne proibição de cortes abusivos para famílias pobres.\n●\n\nFazer a transição energética, a partir dos interesses da classe trabalhadora e\n\ndas comunidades de territórios tradicionais com garantia de direitos, de forma\nsustentável; Estatização das empresas de energia eólica e solar, com continuidade dos\nserviços apenas se isso for de interesse da população local, com garantia de direitos e\nproteção de modos de vida das comunidades. Defender energia renovável sob\nplanejamento e controle público, com retorno social, proteção ambiental e geração de\nempregos locais.\n●\n\nImplantar política de resíduos sólidos com coleta seletiva em todos os\n\nmunicípios, atendendo demandas de áreas urbanas e rurais, com inclusão e\nremuneração digna de catadores e fim dos lixões.\n●\n\nAmpliar unidades de conservação e recuperar nascentes e matas ciliares dos\n\nrios e riachos. Executar política de recuperação e proteção ambiental de todos os\nbiomas afetados pelo agronegócio, energias ditas renováveis e mineração, a partir de\nconselho\n\ncomposto\n\npor\n\nambientalistas,\n\npequenos\n\nagricultores,\n\nindígenas,\n\nquilombolas, pescadores, quebradeiras de coco, vazanteiros, com apoio de\npesquisadores das universidades públicas.\n\n10. SEGURANÇA PÚBLICA E DIREITOS HUMANOS\n●\n\nGerar emprego e renda.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 13"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-11",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nFortalecer políticas públicas de educação, cultura e lazer, para combater as\n\ndesigualdades sociais e respectiva vulnerabilidade de setores da população;\n●\n\nAdotar segurança pública orientada pela prevenção, inteligência, investigação e\n\nrespeito aos direitos humanos.\n●\n\nValorizar policiais, bombeiros, peritos e servidores, com formação, saúde\n\nmental, equipamentos e carreira, combatendo assédio e jornadas exaustivas.\nDesmilitarização da polícia. Polícia única, desmilitarizada, com controle social. Chefes\nde polícias devem ser eleitos democraticamente pelas comunidades;\n●\n\nFortalecer perícia, investigação de homicídios, desaparecimentos,\n\n●\n\nImplantar controle externo e ouvidoria independente, com transparência sobre\n\nmortes e lesões em intervenções policiais.\n●\n\nCombater milícias, grupos de extermínio, tráfico de armas, corrupção policial e\n\nfacções, sem criminalizar a pobreza.\n●\n\nPromover política prisional com dignidade, promoção da educação, trabalho\n\ndigno e bem remunerado, saúde, assistência jurídica e reintegração, enfrentando\nsuperlotação e tortura.\n●\n\nTratar a questão das drogas como problema de saúde pública. Tratamento\n\nhumanizado e gratuito para quem precisa. Fim do financiamento público para\ncomunidades terapêuticas privadas. Fortalecimento e ampliação dos CAPS AD para\ntodas as regiões do Piauí.\n●\n\nPara acabar com o tráfico e as relações criminosas com o sistema financeiro,\n\npolícia, judiciário, parlamentos e governos, é preciso descriminalizar e legalizar as\ndrogas, sob controle social.\n\n11. MULHERES E ENFRENTAMENTO À VIOLÊNCIA\n●\n\nCombate ao feminicídio e violência à mulher! Delegacias de mulher devem\n\nfuncionar 24h por dia, de domingo à domingo. Educação desde o Ensino básico sobre\nrespeito à mulher e combate ao machismo e misoginia.\n●\n\nCriar rede estadual 24 horas de atendimento, casas-abrigo regionais, centros de\n\nreferência, delegacias especializadas e patrulhas de proteção, sete dias por semana.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 14"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-12",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nGarantir atendimento integrado de saúde, assistência, segurança e justiça, sem\n\nrevitimização.\n●\n\nAmpliar autonomia econômica das mulheres, creches públicas, qualificação,\n\nemprego, crédito e apoio às trabalhadoras rurais e donas de casa.\n●\n\nCombater desigualdade salarial, assédio e discriminação no serviço público e\n\nem empresas contratadas pelo Estado.\n●\n\nAssegurar políticas específicas para mulheres negras, indígenas, quilombolas,\n\nlésbicas, bissexuais, trans, com deficiência e do campo.\n\n12. IGUALDADE RACIAL, POVOS E COMUNIDADES\nTRADICIONAIS\n●\n\nImplementar plano estadual de combate ao racismo com metas, orçamento e\n\nindicadores.\n●\n\nFortalecer cotas raciais em concursos, universidades e programas estaduais,\n\ncom mecanismos de controle e permanência.\n●\n\nProteger comunidades quilombolas, povos indígenas, quebradeiras de coco,\n\npovos de terreiro, ciganos e demais comunidades tradicionais.\n●\n\nCombater intolerância religiosa e assegurar proteção aos locais de culto de\n\nmatriz africana.\n●\n\nValorizar memória, cultura e patrimônio negro e indígena nos currículos,\n\nmuseus, arquivos e políticas culturais.\n●\n\nEducação antirracista.\n\n13. JUVENTUDE, CULTURA, ESPORTE E LAZER\n●\n\nCriar programa estadual de primeiro emprego com direitos e salários decentes,\n\nvedando substituição de trabalhadores por mão de obra juvenil barata.\n●\n\nAmpliar bolsas de permanência, garantir passe livre estudantil, garantir\n\nrestaurantes universitários em todos os campi da Uespi, moradia para estudantes.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 15"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-13",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nImplantar centros públicos de juventude com cultura, esporte, tecnologia,\n\nformação e atenção psicossocial.\n●\n\nDescentralizar editais culturais, simplificar acesso e garantir apoio a culturas\n\npopulares, quilombolas, indígenas, periféricas e LGBTQIA+.\n●\n\nRecuperar equipamentos esportivos e culturais e garantir uso comunitário\n\ngratuito.\n●\n\nProteger liberdade artística e impedir censura ou perseguição política,\n\nrespeitados o direito da pessoa humana.\n\n14. DIREITOS LGBTQIA+, PESSOAS COM DEFICIÊNCIA E\nIDOSOS\n●\n\nCriar política estadual contra LGBTfobia, com acolhimento, saúde integral,\n\nempregabilidade e proteção de vítimas.\n●\n\nRespeitar nome social e identidade de gênero em todos os serviços estaduais.\n\n●\n\nGarantir acessibilidade em escolas, hospitais, transportes\n\ne demais\n\nequipamentos e prédios públicos.\n●\n\nAmpliar diagnóstico, reabilitação, tecnologias assistivas, educação inclusiva e\n\napoio às famílias de pessoas com deficiência.\n●\n\nFortalecer proteção aos idosos, combate à violência, garantir atenção domiciliar\n\ne centros de convivência.\n\n15. HABITAÇÃO, SANEAMENTO, MOBILIDADE E\nINFRAESTRUTURA\n●\n\nCriar programa estadual de habitação popular com urbanização, regularização\n\nfundiária e prioridade a famílias de baixa renda, mulheres chefes de família e pessoas\nem áreas de risco.\n●\n\nApoiar ocupações urbanas e famílias ameaçadas de despejo com mediação,\n\nassistência jurídica e soluções habitacionais, evitando remoções forçadas.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 16"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-14",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nUniversalizar água e esgoto com controle público, metas territoriais e tarifa\n\nsocial.\n●\n\nApoiar municípios na implantação de transporte coletivo público, integrado e\n\nacessível; defender tarifa zero financiada por fundos públicos e contribuição de\ngrandes empregadores.\n●\n\nEstatização das grandes empresas de transportes de passageiros urbanos e\n\ninterurbanos; Criação de empresa 100% pública de transporte.\n●\n\nPriorizar ferrovias, transporte regional, estradas vicinais e infraestrutura voltada\n\nà população e à produção familiar.\n●\n\nAmpliação do metrô para todas as regiões de Teresina, com integração a RIDE\n\nGrande Teresina.\n●\n\nGarantir internet pública em escolas, unidades de saúde, comunidades rurais e\n\nterritórios tradicionais.\n\n16. COMUNICAÇÃO PÚBLICA, TRANSPARÊNCIA E\nDEMOCRACIA\n●\n\nFortalecer comunicação pública independente do governo, com conselho\n\nsocial, diversidade regional e respeito ao jornalismo profissional. Sistema Antares sob\ntotal controle dos trabalhadores/as, com eleição livre e direta de chefias, e com\nconselho editorial eleito diretamente pela população;\n●\n\nDistribuir\n\npublicidade\n\noficial\n\npor\n\ncritérios\n\ntécnicos,\n\ntransparentes\n\ne\n\ndemocráticos, incluindo veículos comunitários da capital e do interior.\n●\n\nGarantir dados públicos abertos, linguagem acessível e transmissão de\n\nlicitações, audiências e reuniões decisórias.\n●\n\nCriar mecanismos de iniciativa popular, consultas, conferências e conselhos\n\ncom poder efetivo de acompanhamento do sistema de mídia;\n●\n\nCriar e executar política efetiva de educomunicação/educação para a mídia.\n\n●\n\nProteger denunciantes de irregularidades, com ampla liberdade de imprensa e\n\nacesso à informação. Fim da mordaça e da imposição de censura no jornalismo.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 17"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-15",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n●\n\nEstatização das empresas de comunicação que promoverem fake news)\n\ndesinformação, misoginia, machismo, LGBTfobia, xenofobia, racismo, capacitismo, e\nque promoverem campanhas contra os direitos sociais, trabalhistas e previdenciários.\n●\n\nValorização dos trabalhadores/as da comunicação; não à pejotização e\n\ncontratos precários. Concurso público e valorização salarial dos/as profissionais.\n\n17. PLANO PARA OS PRIMEIROS 16 DIAS\nNos primeiros 16 dias, o governo apresentará um conjunto de medidas\nemergenciais e de reorganização administrativa:\n●\n\nConvocação de conferências para eleição democrática dos conselhos\n\npopulares territoriais para revisão geral do orçamento público de 2027 e do plano\nplurianual.\n●\n\nFim das PPPs, das concessões, das terceirizações, das renúncias fiscais às\n\ngrandes empresas;\n●\n\nReestatização da Agespisa;\n\n●\n\nConvocação de mesa geral de negociação com servidores e apresentação de\n\ncalendário de concursos e nomeações.\n●\n\nEnvio de proposta de financiamento estável para a UESPI e plano emergencial\n\nde infraestrutura, assistência estudantil e pessoal.\n●\n\nPlano emergencial para filas da saúde, regionalização, recomposição de\n\nequipes e auditoria dos contratos de gestão.\n●\n\nLançamento do Plano Estadual de Emprego, Obras Públicas e Transição\n\nEcológica, para construção imediata de moradias populares, para dar fim ao déficit\nhabitacional, e garantir universalização de qualidade de serviço de abastecimento de\nágua, saneamento e energia.\n●\n\nCriação de força-tarefa contra feminicídio, violência racial, conflitos agrários e\n\ncrimes ambientais.\n●\n\nImplantação de programa de regularização imediata das ocupações urbanas e\n\nrurais a favor do povo trabalhador.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 18"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-16",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\n18. COMO FINANCIAR O PROGRAMA\nAs prioridades serão financiadas pela reorganização do orçamento em favor dos\ndireitos sociais, com a suspensão imediata do pagamento da dívida pública, pela\nrevisão de contratos e incentivos fiscais, pelo combate à sonegação, pela cobrança da\ndívida ativa dos grandes devedores, pelo fim dos gastos de publicidade com grandes\nempresas de comunicação, fim dos privilégios e altos salários dos governantes e\nparlamentares.\nO governo buscará recursos federais sem subordinar políticas públicas a\ninteresses empresariais. Obras e programas serão submetidos a planejamento,\navaliação de impacto e controle popular.\nAs transformações mais profundas dependem de medidas nacionais: reforma\ntributária progressiva, auditoria e suspensão do pagamento da dívida aos grandes\nrentistas, estatização do sistema financeiro, reindustrialização pública e reforma\nagrária. O governo de Geraldo Carvalho e Gervásio Santos defenderá essas medidas\nem articulação com o programa nacional de Hertz Dias e Vanessa Portugal.\n\nCONSIDERAÇÕES FINAIS\nO Piauí possui trabalhadores, juventude, universidades, diversidade cultural,\nterras férteis, recursos hídricos, potencial energético, terras raras e capacidade\ncientífica. O problema não é falta de riqueza, mas quem decide sobre ela, quem se\napropria dos resultados e quais interesses orientam o Estado.\nNossa proposta é colocar o orçamento, o patrimônio e a administração pública\na serviço da maioria. Isso exige enfrentar privilégios, romper com privatizações e\nconstruir poder popular e operário. Um governo estadual não resolverá isoladamente\ncontradições produzidas pelo capitalismo brasileiro, mas pode apoiar as lutas, garantir\ndireitos, ampliar serviços públicos e demonstrar que é possível governar com\nprioridades opostas às dos grandes grupos econômicos.\nEste projeto é parte de um Programa de Transição para o Socialismo. É, portanto, parte\nde um projeto socialista e revolucionário defendido pelo PSTU e pelas candidaturas de\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 19"
+          },
+          {
+            "id": "programa-de-governo-piaui-2027-2030-17",
+            "titulo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO • PIAUÍ 2027–2030\n\nPSTU\n\nHertz Dias e Vanessa Portugal, em nível nacional. No Piauí, Geraldo Carvalho e\nGervásio Santos assumem o compromisso de governar com independência política\ndiante dos poderosos, transparência, participação popular e fidelidade às necessidades\nde quem trabalha.\n\nFONTES E REFERÊNCIAS BÁSICAS\n●\n\nDocumento da Conferência Regional 2026 - Teresina, PSTU, junho de 2026.\n\n●\n\nBRASIL. Tribunal Superior Eleitoral. Eleições 2026: registro de candidaturas e\n\nSistema CANDex.\n●\n\nIBGE. Pesquisa Nacional por Amostra de Domicílios Contínua: indicadores\n\nanuais de 2025 e primeiro trimestre de 2026.\n●\n\nIBGE e Secretaria do Planejamento do Piauí. Contas Regionais: Produto Interno\n\nBruto do Piauí 2023, divulgado em novembro de 2025.\n●\n\nINEP. Censo Escolar da Educação Básica, edições mais recentes disponíveis.\n\n●\n\nMinistério do Trabalho e Emprego. Novo Caged, dados de emprego formal.\n\n●\n\nMinistério do Desenvolvimento e Assistência Social. Bolsa Família e Cadastro\n\nÚnico.\n●\n\nLegislação federal e estadual aplicável às políticas públicas e às competências\n\ndo Estado do Piauí.\n\nGeraldo Carvalho / Gervásio Santos • PSTU | 20"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "9b60e9049ee2e78f35877976fa7aebaae21ac3c9a2d94f8f273d7ed8ed2f5f86"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "df33ce62d73034a57ca50424a82e122299e19dd59e2838797ac0055ebd3dd1ad"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "d4b95480e7f53269fa641b35cb21f85b63e198295fda1650479d69251f215e01"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "6ac56dbdbe31a0826710eb9eadced6ba27a901e9c3ca29a5d0dd3cbfa8e858e2"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e0c263571882203b8f4dd220c2330ad5f302ae550ff9087bc1c3e6773acdf408"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "dd2f70956b126cb500ed87a95b7acb76bc8f042fc5d8ed10cc8be956778aa1ba"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "2527e66be368944fbc452f8bedad8c6b1665c9bfacb4043bfc4fb2682e1ba085"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "efcca84ee3cc686d9da182796fce21ab786e2245406131d7584457f8e503ce8c"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e4bdcb1001a2edfb22fa401571e45eea50e7e1670b8b6adfc09133cc862b94d1"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c65838ce5feace6a8759c5c6b7f8ecb9e46ac1fea585531163c317460e3ebaf8"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "94dc18acd19099ce0faec69a8eb3efe9141ca3e2ed46edbb2217e8970456dbe1"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "9530640eae16f83a30d507d57ffffff42574e47408bea4f21cf2ebfb8222212e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "101664574714bc5d3e0cf8875e4bbcb0ff3778f97a7fd5f028acb34e2d2279d3"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "d447439c21cde36a41f14ef19c018fe3d1537f885a0f150b49be8de40215ccfe"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d46e1212d32a6e146a6e8d8632f6c0d3efad17d83eb9139121e1598faa2b33b8"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "9db884d6041433b75baae5a1e7c8200a963a45f4cb735fdac08e6f41c56b70f7"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "20c523a3f21e08450f1f3a3baaefdc6f5db71594a49d348e38915dcd9f1e75ed"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "979a9d9deee934b13f8f4527158d91db80447658dd1140d89f7dd7bbbdedcafd"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "a5797c23c2de1375f78be243ab43a96abbb32c7ed25e84a6035bb4eeeaa3bc19"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "50ba3e664de0e2cff2877c28e01439eb0befa9b35d3dc3e3c2dac94d97f5029a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe o fim da escala 6x1. Também propõe criar um Plano Estadual de Obras e Serviços Públicos, com prioridades definidas no documento. Prevê elaborar um Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades. Propõe criar uma empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional. Prevê orçamento participativo estadual abrangendo 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações. Na educação, propõe reativar escolas do campo, reabrir unidades onde houver demanda social e garantir transporte escolar. Na área ambiental, propõe criar plano estadual de adaptação climática com metas para seca, calor extremo, queimadas e enchentes. No transporte, propõe criar uma empresa 100% pública.",
+    "frases": [
+      {
+        "texto": "O programa propõe o fim da escala 6x1.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 7,
+            "trecho": "Fim da escala 6x1"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe criar um Plano Estadual de Obras e Serviços Públicos, com prioridades definidas no documento.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 7,
+            "trecho": "Criar um Plano Estadual de Obras e Serviços Públicos, com prioridade para saneamento, habitação, recuperação de escolas, hospitais, estradas vicinais, equipamentos culturais e adaptação climática."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê elaborar um Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 8,
+            "trecho": "Elaborar Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe criar uma empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 8,
+            "trecho": "Criar empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional, sob controle da classe trabalhadora e comunidades tradicionais."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê orçamento participativo estadual abrangendo 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 9,
+            "trecho": "Implantar orçamento participativo estadual, de 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações, através de conselhos populares."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe reativar escolas do campo, reabrir unidades onde houver demanda social e garantir transporte escolar.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 10,
+            "trecho": "Reativar escolas do campo; reabrir unidades onde houver demanda social e garantir transporte escolar."
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, propõe criar plano estadual de adaptação climática com metas para seca, calor extremo, queimadas e enchentes.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 13,
+            "trecho": "Criar plano estadual de adaptação climática com metas para convivência com a seca, calor extremo, queimadas, enchentes e proteção de populações vulneráveis."
+          }
+        ]
+      },
+      {
+        "texto": "No transporte, propõe criar uma empresa 100% pública.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 17,
+            "trecho": "Criação de empresa 100% pública de transporte."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "O programa propõe o fim da escala 6x1.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 7,
+            "trecho": "Fim da escala 6x1"
+          }
+        ]
+      },
+      {
+        "id": "obras-e-servicos-publicos",
+        "titulo": "Obras e serviços públicos",
+        "descricao": "O programa propõe criar um plano estadual para obras e serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 7,
+            "trecho": "Criar um Plano Estadual de Obras e Serviços Públicos, com prioridade para saneamento, habitação, recuperação de escolas, hospitais, estradas vicinais, equipamentos culturais e adaptação climática."
+          }
+        ]
+      },
+      {
+        "id": "industrializacao-e-transicao",
+        "titulo": "Industrialização e transição",
+        "descricao": "O programa propõe elaborar um plano estadual de industrialização e transição ecológica.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 8,
+            "trecho": "Elaborar Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades."
+          }
+        ]
+      },
+      {
+        "id": "empresa-de-engenharia",
+        "titulo": "Engenharia pública",
+        "descricao": "O programa propõe criar uma empresa pública estadual de desenvolvimento e engenharia.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 8,
+            "trecho": "Criar empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional, sob controle da classe trabalhadora e comunidades tradicionais."
+          }
+        ]
+      },
+      {
+        "id": "orcamento-participativo",
+        "titulo": "Orçamento participativo",
+        "descricao": "O programa propõe implantar orçamento participativo estadual abrangendo 100% dos recursos.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 9,
+            "trecho": "Implantar orçamento participativo estadual, de 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações, através de conselhos populares."
+          }
+        ]
+      },
+      {
+        "id": "adaptacao-climatica",
+        "titulo": "Adaptação climática",
+        "descricao": "O programa propõe criar um plano estadual de adaptação climática.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002537422:01",
+            "pagina": 13,
+            "trecho": "Criar plano estadual de adaptação climática com metas para convivência com a seca, calor extremo, queimadas, enchentes e proteção de populações vulneráveis."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:31:32.237Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:34:00.142Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Único número (6x1) está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:1:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a criação do plano e suas prioridades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no claim ou na evidência a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem qualificação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (o plano)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:2:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente ao claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação puramente descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:3:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa das cláusulas do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o claim (parte adicional sobre controle social não contradiz)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem opinião."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:4:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas principais do claim cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:5:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente ao claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (educação/escolas do campo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:6:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total das cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o claim (omissão de proteção a vulneráveis não contradiz)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única, área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:7:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais citadas no claim cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta literalmente o claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 100% sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:frase:8:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 6x1 sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:jornada-de-trabalho:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a criação do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:obras-e-servicos-publicos:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula principal coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde ao claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:industrializacao-e-transicao:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a criação da empresa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:empresa-de-engenharia:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 100% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:orcamento-participativo:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002537422:tema:adaptacao-climatica:documentos:PI:180002537422:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula essencial coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002537422",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002537422:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27944,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24344,
+          "output_tokens_details": {
+            "thinking_tokens": 379
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27944,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24344,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27944,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27944
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.37705340000000004
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "fc01a3a21f6834c773217a96a7f2e7f738e28af9a83a70eebf0b66bc4f9ec8e9",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:35:45.824Z",
+    "sourceSha256": "a7170e0a2cefe3c955406d261779cfd269ff5ca452d7e9ec9d9d045baf1676a8",
+    "extractedTextSha256": "2405d80550a7410ab91f269e01e19248992d0ae87e984eea98a1b33368c99a41",
+    "documentCount": 1,
+    "documentSetSha256": "6ad65a0c6e0c076055db3eac55e91bd9735e9931b7d515559ef810b02fdc4f99",
+    "contentSha256": "5e76eaadab728791bf10971bac8626f98e8fdb85cbd70c958fe3422fbaf4de0a"
+  }
+}
