@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Driver do batch nacional restante dos programas de governo (governadores 2026) - corrigido para 12 itens: envelope 190k compartilhado, fila 106 regenerada, batch-driver rampa/quota/checkpoint/telemetria/atomico, gate familias, orfaos: envelope 190k, fila 106, rampa por conclusoes, quota prova unica, checkpoints familia, telemetria, orfaos, atomico.
+// Driver do batch nacional restante dos programas de governo (governadores 2026).
 // Fila por candidato (nunca por UF), concorrencia adaptativa com rampa 3->4
 // (inicial 3, sobe para 4 apenas apos 3 conclusoes), retomada granular com
 // estados atomicos e semaforo global de processos geradores.
@@ -11,9 +11,9 @@
 //        --models-config=<json> [--max-minutos=<n>]
 //   node24 batch-driver.mjs consolidar --run-dir=<dir> --inventory=<json> [--norte-ondas-dir=<dir>]
 import { spawn } from "node:child_process"
-import { randomUUID } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { existsSync, statSync } from "node:fs"
-import { copyFile, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises"
+import { appendFile, copyFile, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises"
 import os from "node:os"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
@@ -39,9 +39,152 @@ export const PASSAGENS_CONCORRENCIA_INTERNA = 3
 export const DISPAROS_RAMPA = { para4: 3, fimRampa: 6 }
 export const THROUGHPUT_NORTE_CAND_H = 13.8
 export const MS_MINUTO = 60_000
+export const PLANNER_VERSION = "multipassagem-v3"
+export const LEASE_TIMEOUT_MS = 120_000
 
 const PADRAO_COTA = /quota|token.?plan|usage.?limit|billing|insufficient|rate.?limit|429|401|403|unauthor|forbidden|credit/iu
 const PADRAO_SQ = /^\d{11,12}$/u
+const estadoWriteQueues = new Map()
+const telemetryWriteQueues = new Map()
+
+function enfileirarEscrita(filas, chave, operacao) {
+  const anterior = filas.get(chave) ?? Promise.resolve()
+  const atual = anterior.catch(() => {}).then(operacao)
+  filas.set(chave, atual)
+  return atual.finally(() => {
+    if (filas.get(chave) === atual) filas.delete(chave)
+  })
+}
+
+export function calcularFingerprintFila(itens, plannerVersion = PLANNER_VERSION) {
+  const normalizados = [...itens]
+    .sort((a, b) => String(a.chave).localeCompare(String(b.chave), "pt-BR"))
+    .map((item) => ({
+      chave: item.chave,
+      uf: item.uf,
+      sqCandidato: item.sqCandidato,
+      multipassagem: Boolean(item.multipassagem),
+      passagensPlanejadas: Number(item.passagensPlanejadas),
+      bytesTextoExtraidos: Number(item.bytesTextoExtraidos),
+      bytesEntradaEstimados: Number(item.bytesEntradaEstimados),
+    }))
+  return createHash("sha256").update(JSON.stringify({ plannerVersion, itens: normalizados })).digest("hex")
+}
+
+export function validarFilaPlanejada(itens, planejados, manifesto) {
+  if (!manifesto || manifesto.plannerVersion !== PLANNER_VERSION) {
+    throw new Error(`fila stale: plannerVersion ${manifesto?.plannerVersion ?? "ausente"} != ${PLANNER_VERSION}`)
+  }
+  const fingerprint = calcularFingerprintFila(itens, PLANNER_VERSION)
+  if (manifesto.fingerprint !== fingerprint) throw new Error("fila stale: fingerprint divergente")
+  if (!planejados) return
+  const esperados = new Map(planejados.map((item) => [item.chave, item]))
+  if (esperados.size !== itens.length) throw new Error(`fila stale: total ${itens.length} != planner ${esperados.size}`)
+  for (const item of itens) {
+    const esperado = esperados.get(item.chave)
+    if (!esperado) throw new Error(`fila stale: identidade ausente no planner ${item.chave}`)
+    for (const campo of ["multipassagem", "passagensPlanejadas", "bytesTextoExtraidos", "bytesEntradaEstimados"]) {
+      if (item[campo] !== esperado[campo]) throw new Error(`fila stale: ${item.chave}.${campo} divergente`)
+    }
+  }
+}
+
+function pidAtivoPadrao(pid) {
+  try { process.kill(pid, 0); return true } catch (error) { return error?.code !== "ESRCH" }
+}
+
+export async function adquirirLeaseExecucao(runDir, options = {}) {
+  const executionId = options.executionId ?? randomUUID()
+  const pid = options.pid ?? process.pid
+  const hostname = options.hostname ?? os.hostname()
+  const now = options.now ?? (() => Date.now())
+  const timeoutMs = options.timeoutMs ?? LEASE_TIMEOUT_MS
+  const pidAtivo = options.pidAtivo ?? pidAtivoPadrao
+  const heartbeatMs = options.heartbeatMs ?? Math.max(1_000, Math.floor(timeoutMs / 3))
+  const caminho = path.join(runDir, "execution-lease.json")
+  const travaAquisicao = path.join(runDir, "execution-lease.acquire")
+  await mkdir(runDir, { recursive: true })
+  const tentarCriar = async () => {
+    const instante = new Date(now()).toISOString()
+    const lease = { executionId, pid, hostname, startedAt: instante, heartbeat: instante }
+    await writeFile(caminho, `${JSON.stringify(lease, null, 2)}\n`, { flag: "wx" })
+    return lease
+  }
+  let lease
+  try {
+    await writeFile(travaAquisicao, `${JSON.stringify({ executionId, pid, hostname })}\n`, { flag: "wx" })
+  } catch (error) {
+    if (error?.code === "EEXIST") throw new Error("lease ativa: aquisicao concorrente")
+    throw error
+  }
+  try {
+    try {
+      lease = await tentarCriar()
+    } catch (error) {
+      if (error?.code !== "EEXIST") throw error
+      let anterior
+      try { anterior = JSON.parse(await readFile(caminho, "utf8")) } catch { throw new Error("lease ativa ou corrompida") }
+      const referencia = Date.parse(anterior.heartbeat ?? anterior.startedAt ?? "")
+      const expirou = Number.isFinite(referencia) && now() - referencia > timeoutMs
+      const pidAusente = anterior.hostname === hostname && !pidAtivo(Number(anterior.pid))
+      if (!expirou || !pidAusente) throw new Error(`lease ativa: executionId=${anterior.executionId ?? "desconhecida"}`)
+      await rm(caminho, { force: true })
+      try { lease = await tentarCriar() } catch { throw new Error("lease ativa: corrida ao recuperar lease stale") }
+    }
+  } finally {
+    await rm(travaAquisicao, { force: true })
+  }
+  const timer = setInterval(() => {
+    const atualizado = { ...lease, heartbeat: new Date(now()).toISOString() }
+    void escreverAtomico(caminho, `${JSON.stringify(atualizado, null, 2)}\n`).then(() => { lease = atualizado }).catch(() => {})
+  }, heartbeatMs)
+  timer.unref?.()
+  return { caminho, executionId, pararHeartbeat: () => clearInterval(timer) }
+}
+
+export async function liberarLeaseExecucao(lease) {
+  lease?.pararHeartbeat?.()
+  if (!lease?.caminho) return
+  try {
+    const atual = JSON.parse(await readFile(lease.caminho, "utf8"))
+    if (atual.executionId === lease.executionId) await rm(lease.caminho, { force: true })
+  } catch {}
+}
+
+export function criarContadoresExecucao(historicos = {}) {
+  return {
+    concluidosHistoricos: historicos.concluidos ?? 0,
+    bloqueadosHistoricos: historicos.bloqueados ?? 0,
+    concluidosAtuais: 0,
+    bloqueadosAtuais: 0,
+    conclusoesAtuais: 0,
+  }
+}
+
+export function criarControleQuota() {
+  return { estado: "normal", falhasQuota: 0 }
+}
+
+export function prepararProvaQuota(controle, emVoo) {
+  if (controle.estado === "draining_after_quota" && emVoo === 0) return { ...controle, estado: "single_probe" }
+  return controle
+}
+
+export function registrarResultadoQuota(controle, resultado) {
+  if (resultado.tipo === "quota") {
+    const falhasQuota = controle.falhasQuota + 1
+    return { estado: controle.estado === "single_probe" || falhasQuota >= 2 ? "stopped_by_quota" : "draining_after_quota", falhasQuota }
+  }
+  if (resultado.tipo === "sucesso" && controle.estado === "single_probe") return criarControleQuota()
+  if (resultado.tipo === "erro_tecnico" && controle.estado === "single_probe") return { ...controle, estado: "draining_after_quota" }
+  return controle
+}
+
+export function concorrenciaPermitidaPorQuota(controle, emVoo, concorrencia) {
+  if (controle.estado === "normal") return concorrencia
+  if (controle.estado === "single_probe") return emVoo === 0 ? 1 : 0
+  return 0
+}
 
 export function eErroCota(texto) {
   return PADRAO_COTA.test(String(texto ?? ""))
@@ -119,58 +262,65 @@ export function definirProbeRecursos(fn) {
 // Recebe item, registro materializado e estado anterior (se houver) e devolve
 // o estado reconciliado para a proxima execucao, com contagem por familia.
 // Generator_pending sem lease vivo vira retryable (recuperavel).
-export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual }) {
-  const familiaAnterior = estadoAnterior?.familia ?? null
+export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual = null }) {
+  const familiaAnterior = estadoAnterior?.familiaDaUltimaTentativa ?? estadoAnterior?.familia ?? null
+  const modeloAnterior = estadoAnterior?.modeloDaUltimaTentativa ?? null
   const tentativaBase = estadoAnterior?.tentativas ?? 1
   // Mudanca de familia reseta contador: tentativas GLM nao bloqueiam Luna
   const tentativasEfetivas = familiaAnterior && familiaAtual && familiaAnterior !== familiaAtual ? 1 : tentativaBase
-  const familiaEfetiva = familiaAtual ?? familiaAnterior ?? null
+  const camposFamilia = {
+    familia: familiaAnterior,
+    familiaDaUltimaTentativa: familiaAnterior,
+    modeloDaUltimaTentativa: modeloAnterior,
+    familiaPlanejada: familiaAtual ?? estadoAnterior?.familiaPlanejada ?? null,
+    modeloPlanejado: modeloAtual ?? estadoAnterior?.modeloPlanejado ?? null,
+  }
 
   if (registro) {
     const classificacao = classificarRegistro(registro)
     // aprovado nunca deve existir; se existir, bloqueia para auditoria
     if (registro.estado === "aprovado") {
-      return { estado: "blocked", motivo: "registro aprovado inesperado", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "blocked", motivo: "registro aprovado inesperado", tentativas: tentativasEfetivas, ...camposFamilia }
     }
     if (classificacao.estado === "complete") {
-      return { estado: "complete", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "complete", motivo: classificacao.motivo, tentativas: tentativasEfetivas, ...camposFamilia }
     }
     if (classificacao.estado === "blocked") {
-      return { estado: "blocked", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "blocked", motivo: classificacao.motivo, tentativas: tentativasEfetivas, ...camposFamilia }
     }
     // retryable_error
     if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
-      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${classificacao.motivo}`, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${classificacao.motivo}`, tentativas: tentativasEfetivas, ...camposFamilia }
     }
-    return { estado: "retryable_error", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    return { estado: "retryable_error", motivo: classificacao.motivo, tentativas: tentativasEfetivas, ...camposFamilia }
   }
 
   // Sem registro: usa estado anterior se terminal
   if (estadoAnterior?.estado === "complete" || estadoAnterior?.estado === "blocked") {
     // Se estado anterior era complete, verifica se registro existe e e valido; se nao, mantem complete mas prova deve falhar se registro ausente
-    return { estado: estadoAnterior.estado, motivo: estadoAnterior.motivo ?? estadoAnterior.estado, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    return { estado: estadoAnterior.estado, motivo: estadoAnterior.motivo ?? estadoAnterior.estado, tentativas: tentativasEfetivas, ...camposFamilia }
   }
 
   // generator_pending sem processo/lease vivo -> recuperavel como retryable
   if (estadoAnterior?.estado === "generator_pending") {
     if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
-      return { estado: "blocked", motivo: "generator_pending sem lease e limite de tentativas atingido", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "blocked", motivo: "generator_pending sem lease e limite de tentativas atingido", tentativas: tentativasEfetivas, ...camposFamilia }
     }
-    return { estado: "retryable_error", motivo: "generator_pending recuperavel", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    return { estado: "retryable_error", motivo: "generator_pending recuperavel", tentativas: tentativasEfetivas, ...camposFamilia }
   }
 
   if (estadoAnterior?.estado === "retryable_error") {
     if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
-      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${estadoAnterior.motivo ?? ""}`, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${estadoAnterior.motivo ?? ""}`, tentativas: tentativasEfetivas, ...camposFamilia }
     }
-    return { estado: "retryable_error", motivo: estadoAnterior.motivo ?? "retryable", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    return { estado: "retryable_error", motivo: estadoAnterior.motivo ?? "retryable", tentativas: tentativasEfetivas, ...camposFamilia }
   }
 
   // pending ou sem estado
   if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
-    return { estado: "blocked", motivo: "falha tecnica antes do registro; limite de tentativas atingido na retomada", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    return { estado: "blocked", motivo: "falha tecnica antes do registro; limite de tentativas atingido na retomada", tentativas: tentativasEfetivas, ...camposFamilia }
   }
-  return { estado: "pending", motivo: "sem registro", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  return { estado: "pending", motivo: "sem registro", tentativas: tentativasEfetivas, ...camposFamilia }
 }
 
 export function escaladaPermitida(metricas) {
@@ -235,21 +385,45 @@ async function lerEstadoArquivo(runDir, item) {
   }
 }
 
-async function gravarEstado(runDir, item, campos) {
+export async function gravarEstado(runDir, item, campos) {
   const dir = dirDoCandidato(runDir, item)
   await mkdir(dir, { recursive: true })
-  const registro = {
-    chave: item.chave,
-    uf: item.uf,
-    sqCandidato: item.sqCandidato,
-    estado: campos.estado,
-    ...(campos.tentativas !== undefined ? { tentativas: campos.tentativas } : {}),
-    ...(campos.motivo !== undefined ? { motivo: campos.motivo } : {}),
-    ...(campos.duracaoMs !== undefined ? { duracaoMs: campos.duracaoMs } : {}),
-    ...(campos.familia !== undefined ? { familia: campos.familia } : {}),
-    atualizadoEm: new Date().toISOString(),
-  }
-  await escreverAtomico(path.join(dir, "estado.json"), `${JSON.stringify(registro, null, 2)}\n`)
+  const destino = path.join(dir, "estado.json")
+  await enfileirarEscrita(estadoWriteQueues, destino, async () => {
+    let anterior = {}
+    try { anterior = JSON.parse(await readFile(destino, "utf8")) } catch {}
+    const definidos = Object.fromEntries(Object.entries(campos).filter(([, value]) => value !== undefined))
+    const registro = {
+      chave: item.chave,
+      uf: item.uf,
+      sqCandidato: item.sqCandidato,
+      ...anterior,
+      ...definidos,
+      atualizadoEm: new Date().toISOString(),
+    }
+    await escreverAtomico(destino, `${JSON.stringify(registro, null, 2)}\n`)
+  })
+}
+
+export async function registrarTelemetriaTentativa(runDir, tentativa) {
+  const logsDir = path.join(runDir, "logs")
+  const destino = path.join(logsDir, "tentativas.ndjson")
+  await mkdir(logsDir, { recursive: true })
+  await enfileirarEscrita(telemetryWriteQueues, destino, async () => {
+    await appendFile(destino, `${JSON.stringify(tentativa)}\n`, "utf8")
+  })
+}
+
+export async function validarCachesRetomada(workDir, { minExtracao = 1, minPassagens = 1 } = {}) {
+  const cacheExtracao = path.join(workDir, "cache-extracao")
+  const cachePassagens = path.join(workDir, "cache-passagens")
+  if (!existsSync(cacheExtracao)) throw new Error(`cache-extracao ausente: ${cacheExtracao}`)
+  if (!existsSync(cachePassagens)) throw new Error(`cache-passagens ausente: ${cachePassagens}`)
+  const extracoes = await readdir(cacheExtracao)
+  const passagens = await readdir(cachePassagens)
+  if (extracoes.length < minExtracao) throw new Error(`cache-extracao insuficiente: ${extracoes.length} < ${minExtracao}`)
+  if (passagens.length < minPassagens) throw new Error(`cache-passagens insuficiente: ${passagens.length} < ${minPassagens}`)
+  return { extracoes: extracoes.length, passagens: passagens.length }
 }
 
 export async function resolverNode24(runDir) {
@@ -319,7 +493,7 @@ export async function planoDoBatch({ runDir, inventoryPath, workDir, archiveDir 
     if (!regiao || regiao === "norte") throw new Error(`fila: UF fora do escopo restante ${item.uf}`)
     if (!PADRAO_SQ.test(item.sqCandidato)) throw new Error(`fila: SQ invalido ${item.sqCandidato}`)
     if (typeof item.custoEstimado !== "number") throw new Error(`fila: custo ausente ${item.chave}`)
-    return { ...item, regiao }
+    return { ...item, regiao, plannerVersion: PLANNER_VERSION }
   })
   await validarFilaContraInventario(itens, inventoryPath)
   itens.sort((a, b) => b.custoEstimado - a.custoEstimado || a.chave.localeCompare(b.chave, "pt-BR"))
@@ -340,6 +514,12 @@ export async function planoDoBatch({ runDir, inventoryPath, workDir, archiveDir 
     paginas: itens.reduce((soma, item) => soma + item.totalPaginas, 0),
     bytesTexto: itens.reduce((soma, item) => soma + item.bytesTextoExtraidos, 0),
     ordenacao: "custoEstimado desc",
+    criadoEm: new Date().toISOString(),
+  }, null, 2)}\n`)
+  await escreverAtomico(path.join(dirFila, "manifesto.json"), `${JSON.stringify({
+    plannerVersion: PLANNER_VERSION,
+    fingerprint: calcularFingerprintFila(itens, PLANNER_VERSION),
+    total: itens.length,
     criadoEm: new Date().toISOString(),
   }, null, 2)}\n`)
   void workDir
@@ -366,6 +546,11 @@ export async function validarFilaContraInventario(itens, inventoryPath) {
   }
   const chaves = new Set(itens.map((item) => item.chave))
   if (chaves.size !== itens.length) falhas.push("chave duplicada na fila")
+  const identidadesEsperadas = new Set(inventory.candidaturas
+    .filter((candidatura) => !UFS_NORTE.includes(candidatura.uf))
+    .map((candidatura) => candidatura.chave ?? `2026:GOVERNADOR:${candidatura.uf}:${candidatura.sqCandidato}`))
+  for (const chave of identidadesEsperadas) if (!chaves.has(chave)) falhas.push(`identidade ausente na fila: ${chave}`)
+  for (const chave of chaves) if (!identidadesEsperadas.has(chave)) falhas.push(`identidade inesperada na fila: ${chave}`)
   if (itens.some((item) => UFS_NORTE.includes(item.uf))) falhas.push("candidatura Norte presente na fila")
   const totalEsperado = [...esperadoPorUf.values()].reduce((a, b) => a + b, 0)
   if (itens.length !== totalEsperado) falhas.push(`total fila=${itens.length}; inventario restante=${totalEsperado}`)
@@ -408,14 +593,14 @@ function metricasParaRampa(contexto) {
 }
 
 function proximoAgendavel(contexto) {
-  // Freeze apos primeiro erro de quota: nao iniciar novos ate emVoo esvaziar ou segunda quota parar
-  if (contexto.metricas.errosCota > 0 && contexto.emVoo.size > 0) return null
   const emVoo = [...contexto.emVoo.values()]
+  const limiteQuota = concorrenciaPermitidaPorQuota(contexto.quota, emVoo.length, contexto.concorrencia)
+  if (emVoo.length >= limiteQuota) return null
   const slotsEmUso = emVoo.reduce((soma, unidade) => soma + unidade.slots, 0)
   const multipassagemEmVoo = emVoo.filter((unidade) => unidade.multipassagem).length
   for (const unidade of contexto.ordem) {
     if (unidade.estado !== "pending" && unidade.estado !== "retryable_error") continue
-    if (contexto.emVoo.size >= contexto.concorrencia) break
+    if (contexto.emVoo.size >= limiteQuota) break
     const slots = slotsDeItem(unidade.item)
     if (slotsEmUso + slots > LIMITE_SLOTS_GERADOR) continue
     if (unidade.item.multipassagem && multipassagemEmVoo >= MAX_MULTIPASSAGEM_SIMULTANEOS) continue
@@ -425,13 +610,38 @@ function proximoAgendavel(contexto) {
 }
 
 export async function executarBatch(params) {
+  const filaCaminho = params.filaPath ?? path.join(params.runDir, "fila", "fila.ndjson")
+  if (!existsSync(filaCaminho)) throw new Error("fila ausente: rode o modo plan primeiro")
+  const itens = (await readFile(filaCaminho, "utf8")).trim().split("\n").filter(Boolean).map((linha) => JSON.parse(linha))
+  if (params.validarFilaFn) {
+    await params.validarFilaFn(itens)
+  } else {
+    await validarFilaContraInventario(itens, params.inventoryPath)
+    let manifesto = null
+    try { manifesto = JSON.parse(await readFile(path.join(path.dirname(filaCaminho), "manifesto.json"), "utf8")) } catch {}
+    const planejados = params.planejarItensFn ? await params.planejarItensFn() : null
+    validarFilaPlanejada(itens, planejados, manifesto)
+  }
+  const executionId = randomUUID()
+  const lease = await adquirirLeaseExecucao(params.runDir, {
+    executionId,
+    ...(params.leaseOptions ?? {}),
+  })
+  try {
+    return await executarBatchSobLease({ ...params, filaPath: filaCaminho, executionId })
+  } finally {
+    await liberarLeaseExecucao(lease)
+  }
+}
+
+async function executarBatchSobLease(params) {
   const { runDir, inventoryPath, workDir, archiveDir, modelsConfig, maxMinutos = 480, pollMs = 2_000, spawnFn = spawn, node24Resolver = resolverNode24, qwenExtraArgs = "", codexExtraArgs = "", filaPath } = params
   const filaCaminho = filaPath ?? path.join(runDir, "fila", "fila.ndjson")
   if (!existsSync(filaCaminho)) throw new Error("fila ausente: rode o modo plan primeiro")
   const itens = (await readFile(filaCaminho, "utf8")).trim().split("\n").filter(Boolean).map((linha) => JSON.parse(linha))
   const node24 = await node24Resolver(runDir)
   await mkdir(path.join(runDir, "logs"), { recursive: true })
-  const executionId = randomUUID()
+  const executionId = params.executionId
   const startedAt = new Date().toISOString()
   let metricsOffset = 0
   try {
@@ -439,10 +649,12 @@ export async function executarBatch(params) {
     if (existsSync(metricsPath)) metricsOffset = statSync(metricsPath).size
   } catch {}
   let familiaAtual = null
+  let modeloAtual = null
   try {
     if (modelsConfig && existsSync(modelsConfig)) {
       const cfg = JSON.parse(await readFile(modelsConfig, "utf8"))
       familiaAtual = familiaDoModelo(cfg.generator?.name ?? "")
+      modeloAtual = cfg.generator?.version ?? cfg.generator?.name ?? null
     }
   } catch {}
   const inicio = Date.now()
@@ -465,7 +677,8 @@ export async function executarBatch(params) {
     latencias: [],
     latenciasBase: [],
     parada: null,
-    errosCotaConsecutivos: 0,
+    quota: criarControleQuota(),
+    historicos: criarContadoresExecucao(),
     metricas: {
       concluidos: 0,
       bloqueados: 0,
@@ -478,15 +691,39 @@ export async function executarBatch(params) {
   }
 
   // retomada: reconcilia cada item com registro/estado persistidos via funcao pura
+  const historicos = { concluidos: 0, bloqueados: 0 }
   for (const item of itens) {
     const registro = await lerRegistro(runDir, item)
     const estadoAnterior = await lerEstadoArquivo(runDir, item)
-    const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual })
-    const unidade = { item, estado: reconciliado.estado, tentativas: reconciliado.tentativas, familia: reconciliado.familia, slots: slotsDeItem(item), multipassagem: item.multipassagem, estadoObservado: null }
+    const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual })
+    const unidade = {
+      item,
+      estado: reconciliado.estado,
+      tentativas: reconciliado.tentativas,
+      familiaDaUltimaTentativa: reconciliado.familiaDaUltimaTentativa,
+      modeloDaUltimaTentativa: reconciliado.modeloDaUltimaTentativa,
+      familiaPlanejada: reconciliado.familiaPlanejada,
+      modeloPlanejado: reconciliado.modeloPlanejado,
+      slots: slotsDeItem(item),
+      multipassagem: item.multipassagem,
+      estadoObservado: null,
+      inicioIso: null,
+    }
     // Persiste reconciliacao apenas se mudou ou se estado anterior era generator_pending fantasma
-    const precisaGravar = !estadoAnterior || estadoAnterior.estado !== reconciliado.estado || estadoAnterior.tentativas !== reconciliado.tentativas || estadoAnterior.familia !== reconciliado.familia
+    const precisaGravar = !estadoAnterior
+      || estadoAnterior.estado !== reconciliado.estado
+      || estadoAnterior.tentativas !== reconciliado.tentativas
+      || estadoAnterior.familiaPlanejada !== reconciliado.familiaPlanejada
     if (precisaGravar) {
-      await gravarEstado(runDir, item, { estado: reconciliado.estado, motivo: reconciliado.motivo, tentativas: reconciliado.tentativas, familia: reconciliado.familia })
+      await gravarEstado(runDir, item, {
+        estado: reconciliado.estado,
+        motivo: reconciliado.motivo,
+        tentativas: reconciliado.tentativas,
+        familiaDaUltimaTentativa: reconciliado.familiaDaUltimaTentativa,
+        modeloDaUltimaTentativa: reconciliado.modeloDaUltimaTentativa,
+        familiaPlanejada: reconciliado.familiaPlanejada,
+        modeloPlanejado: reconciliado.modeloPlanejado,
+      })
     }
     // Validacao: complete deve ter registro valido; aprovado nunca
     if (reconciliado.estado === "complete") {
@@ -496,8 +733,8 @@ export async function executarBatch(params) {
       // Garante que Norte nunca foi reprocessado e que aprovados nao existem
       if (registro.estado === "aprovado") throw new Error(`registro aprovado inesperado ${item.chave}`)
     }
-    if (unidade.estado === "complete") contexto.metricas.concluidos += 1
-    if (unidade.estado === "blocked") contexto.metricas.bloqueados += 1
+    if (unidade.estado === "complete") historicos.concluidos += 1
+    if (unidade.estado === "blocked") historicos.bloqueados += 1
     contexto.ordem.push(unidade)
   }
   const totalEsperado = itens.length
@@ -507,8 +744,15 @@ export async function executarBatch(params) {
   contexto.startedAt = startedAt
   contexto.metricsOffset = metricsOffset
   contexto.familiaAtual = familiaAtual
+  contexto.modeloAtual = modeloAtual
+  contexto.historicos = criarContadoresExecucao(historicos)
 
   while (!contexto.parada) {
+    contexto.quota = prepararProvaQuota(contexto.quota, contexto.emVoo.size)
+    if (contexto.quota.estado === "stopped_by_quota") {
+      await parar(contexto, "stopped_by_quota")
+      break
+    }
     const alvo = concorrenciaAlvo({
       conclusoes: contexto.metricas.concluidos + contexto.metricas.bloqueados,
       concorrenciaAtual: contexto.concorrencia,
@@ -516,14 +760,14 @@ export async function executarBatch(params) {
     })
     contexto.concorrencia = alvo
     for (;;) {
-      if (contexto.parada || contexto.errosCotaConsecutivos >= 2) break
+      if (contexto.parada || contexto.quota.estado === "stopped_by_quota") break
       const unidade = proximoAgendavel(contexto)
       if (!unidade) break
       await disparar(contexto, unidade, inventoryPath)
     }
     if (contexto.parada) break
-    if (contexto.errosCotaConsecutivos >= 2) {
-      await parar(contexto, "duas falhas consecutivas de cota/autenticacao")
+    if (contexto.quota.estado === "stopped_by_quota") {
+      await parar(contexto, "stopped_by_quota")
       break
     }
     if (contexto.emVoo.size === 0) break
@@ -532,7 +776,13 @@ export async function executarBatch(params) {
       const observado = estadoObservadoDeFases(runDir, unidade.item)
       if (observado !== unidade.estadoObservado) {
         unidade.estadoObservado = observado
-        await gravarEstado(runDir, unidade.item, { estado: observado, tentativas: unidade.tentativas })
+        await gravarEstado(runDir, unidade.item, {
+          estado: observado,
+          fase: observado,
+          tentativa: unidade.tentativas,
+          tentativas: unidade.tentativas,
+          executionId: contexto.executionId,
+        })
       }
     }
     await atualizarProgress(contexto, totalEsperado, inicio)
@@ -544,12 +794,15 @@ export async function executarBatch(params) {
   return {
     parada: contexto.parada,
     total: totalEsperado,
-    concluidos: contexto.metricas.concluidos,
-    bloqueados: contexto.metricas.bloqueados,
+    concluidos: contexto.historicos.concluidosHistoricos + contexto.metricas.concluidos,
+    bloqueados: contexto.historicos.bloqueadosHistoricos + contexto.metricas.bloqueados,
+    concluidosAtuais: contexto.metricas.concluidos,
+    bloqueadosAtuais: contexto.metricas.bloqueados,
     tentativas: contexto.metricas.tentativas,
     errosTecnicos: contexto.metricas.errosTecnicos,
     errosCota: contexto.metricas.errosCota,
     concorrenciaFinal: contexto.concorrencia,
+    quota: contexto.quota.estado,
   }
 }
 
@@ -563,7 +816,18 @@ async function disparar(contexto, unidade, inventoryPath) {
   await mkdir(path.join(candDir, "fases"), { recursive: true })
   unidade.estado = "inflight"
   unidade.estadoObservado = "extracting"
-  await gravarEstado(runDir, item, { estado: "extracting", tentativas: unidade.tentativas, familia: contexto.familiaAtual })
+  unidade.inicioIso = new Date().toISOString()
+  await gravarEstado(runDir, item, {
+    estado: "extracting",
+    fase: "extracao.iniciada",
+    tentativa: unidade.tentativas,
+    tentativas: unidade.tentativas,
+    executionId: contexto.executionId,
+    familiaDaUltimaTentativa: contexto.familiaAtual,
+    modeloDaUltimaTentativa: contexto.modeloAtual,
+    familiaPlanejada: contexto.familiaAtual,
+    modeloPlanejado: contexto.modeloAtual,
+  })
   const args = [
     "--conditions", "react-server", "--import", "tsx", CLI,
     `--ufs=${item.uf}`,
@@ -587,6 +851,12 @@ async function disparar(contexto, unidade, inventoryPath) {
           ...process.env,
           ...(contexto.qwenExtraArgs ? { PF_QWEN_EXTRA_ARGS: contexto.qwenExtraArgs } : {}),
           ...(contexto.codexExtraArgs ? { PF_CODEX_EXTRA_ARGS: contexto.codexExtraArgs } : {}),
+          PF_EXECUTION_ID: contexto.executionId,
+          PF_CANDIDATO_CHAVE: item.chave,
+          PF_CANDIDATO_SQ: item.sqCandidato,
+          PF_CANDIDATO_UF: item.uf,
+          PF_CANDIDATO_REGIAO: item.regiao,
+          PF_MODEL_TELEMETRY_PATH: path.join(contexto.runDir, "logs", "tentativas.ndjson"),
         },
       })
       child.stderr?.on("data", (c) => { stderr += c })
@@ -613,37 +883,60 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
   if (classificacao.estado === "complete") {
     unidade.estado = "complete"
     contexto.metricas.concluidos += 1
-    contexto.errosCotaConsecutivos = 0
+    contexto.quota = registrarResultadoQuota(contexto.quota, { tipo: "sucesso" })
     contexto.latencias.push(duracao)
     if (contexto.latenciasBase.length < 4) contexto.latenciasBase.push(duracao)
     await contabilizarSucesso(contexto, item, registro)
-    await gravarEstado(runDir, item, { estado: "complete", motivo: classificacao.motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
+    await gravarEstado(runDir, item, { estado: "complete", fase: "concluida", motivo: classificacao.motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
   } else if (classificacao.estado === "blocked" && !cota) {
     unidade.estado = "blocked"
     contexto.metricas.bloqueados += 1
-    contexto.errosCotaConsecutivos = 0
-    await gravarEstado(runDir, item, { estado: "blocked", motivo: classificacao.motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
+    contexto.quota = registrarResultadoQuota(contexto.quota, { tipo: "sucesso" })
+    await gravarEstado(runDir, item, { estado: "blocked", fase: "concluida", motivo: classificacao.motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
   } else {
     const motivo = classificacao.motivo || (code === 0 ? "exit 0 sem registro" : `exit ${code}`)
     if (cota) {
       contexto.metricas.errosCota += 1
-      contexto.errosCotaConsecutivos += 1
+      contexto.quota = registrarResultadoQuota(contexto.quota, { tipo: "quota" })
     } else {
       contexto.metricas.errosTecnicos += 1
-      contexto.errosCotaConsecutivos = 0
+      contexto.quota = registrarResultadoQuota(contexto.quota, { tipo: "erro_tecnico" })
     }
     if (unidade.tentativas < MAX_TENTATIVAS_CANDIDATO) {
       unidade.estado = "retryable_error"
       unidade.tentativas += 1
-      await gravarEstado(runDir, item, { estado: "retryable_error", motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
+      await gravarEstado(runDir, item, { estado: "retryable_error", fase: "falha", motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
     } else {
       unidade.estado = "blocked"
       contexto.metricas.bloqueados += 1
-      await gravarEstado(runDir, item, { estado: "blocked", motivo: `falha tecnica apos ${unidade.tentativas} tentativas: ${motivo}`, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
+      await gravarEstado(runDir, item, { estado: "blocked", fase: "falha", motivo: `falha tecnica apos ${unidade.tentativas} tentativas: ${motivo}`, tentativas: unidade.tentativas, duracaoMs: duracao })
     }
   }
-  if (contexto.errosCotaConsecutivos >= 2 && !contexto.parada) {
-    await parar(contexto, "duas falhas consecutivas de cota/autenticacao")
+  await registrarTelemetriaTentativa(runDir, {
+    executionId: contexto.executionId,
+    candidato: item.chave,
+    sqCandidato: item.sqCandidato,
+    uf: item.uf,
+    regiao: item.regiao,
+    papel: "pipeline",
+    modelo: contexto.modeloAtual,
+    familia: contexto.familiaAtual,
+    etapa: unidade.estadoObservado,
+    passagem: null,
+    inicio: unidade.inicioIso,
+    fim: new Date().toISOString(),
+    duracaoMs: duracao,
+    exitCode: code,
+    erro: code === 0 && classificacao.estado === "complete" ? null : textoErro.trim() || classificacao.motivo,
+    retry: unidade.estado === "retryable_error",
+    cacheHit: false,
+    uso: {
+      generator: registro?.ingestao?.modelos?.generator?.uso ?? null,
+      judge: registro?.ingestao?.modelos?.judge?.uso ?? null,
+    },
+  })
+  if (contexto.quota.estado === "stopped_by_quota" && !contexto.parada) {
+    await parar(contexto, "stopped_by_quota")
   }
 }
 
@@ -667,8 +960,12 @@ async function contabilizarSucesso(contexto, item, registro) {
 
 async function atualizarProgress(contexto, totalEsperado, inicio) {
   const emVoo = [...contexto.emVoo.values()]
-  const concluidos = contexto.metricas.concluidos
-  const bloqueados = contexto.metricas.bloqueados
+  const concluidosAtuais = contexto.metricas.concluidos
+  const bloqueadosAtuais = contexto.metricas.bloqueados
+  const concluidosHistoricos = contexto.historicos.concluidosHistoricos
+  const bloqueadosHistoricos = contexto.historicos.bloqueadosHistoricos
+  const concluidos = concluidosHistoricos + concluidosAtuais
+  const bloqueados = bloqueadosHistoricos + bloqueadosAtuais
   let generatorAtivo = 0
   let judgeAtivo = 0
   for (const unidade of emVoo) {
@@ -677,7 +974,8 @@ async function atualizarProgress(contexto, totalEsperado, inicio) {
   }
   const decorridoMs = Date.now() - inicio
   const horas = decorridoMs / 3_600_000
-  const porHora = horas > 0.05 ? concluidos / horas : 0
+  const conclusoesAtuais = concluidosAtuais + bloqueadosAtuais
+  const porHora = horas > 0.05 ? conclusoesAtuais / horas : 0
   const pendentes = totalEsperado - concluidos - bloqueados - emVoo.length
   const medianaRecente = mediana(contexto.latencias.slice(-10))
   const etaMs = porHora > 0 ? (pendentes / porHora) * 3_600_000 : null
@@ -689,6 +987,11 @@ async function atualizarProgress(contexto, totalEsperado, inicio) {
     totalEsperado,
     concluidos,
     bloqueados,
+    concluidosHistoricos,
+    bloqueadosHistoricos,
+    concluidosAtuais,
+    bloqueadosAtuais,
+    conclusoesAtuais,
     pendentes,
     emVoo: emVoo.length,
     generatorAtivo,
@@ -698,6 +1001,7 @@ async function atualizarProgress(contexto, totalEsperado, inicio) {
     disparos: contexto.disparos,
     taxaErroTecnico: contexto.metricas.tentativas > 0 ? Number((contexto.metricas.errosTecnicos / contexto.metricas.tentativas).toFixed(4)) : 0,
     errosCota: contexto.metricas.errosCota,
+    estadoQuota: contexto.quota.estado,
     cacheHits: contexto.metricas.cacheHits,
     chamadasPorModelo: contexto.metricas.chamadas,
     tempoDecorridoMs: decorridoMs,
@@ -714,8 +1018,8 @@ async function checarParadasDuras(contexto, totalEsperado, inicio, limiteWall) {
   if (contexto.parada) return
   const decorrido = Date.now() - inicio
   const concluidos = contexto.metricas.concluidos
-  if (contexto.errosCotaConsecutivos >= 2) {
-    await parar(contexto, "duas falhas consecutivas de cota/autenticacao")
+  if (contexto.quota.estado === "stopped_by_quota") {
+    await parar(contexto, "stopped_by_quota")
     return
   }
   if (contexto.metricas.tentativas >= 10 && contexto.metricas.errosTecnicos / contexto.metricas.tentativas > 0.05) {

@@ -38,14 +38,18 @@ test("planeja passagens sem truncar pagina e respeitando limite", () => {
   }
 })
 
-test("pagina gigante vira passagem unica sem cortar conteudo", () => {
+test("pagina gigante e repartida por bytes sem cortar conteudo", () => {
   const documentos = [{
     documentoId: "AC:2:01",
     paginas: [{ pagina: 1, origem: "ocr", texto: "x".repeat(2000) }],
   }]
   const planos = planejarProgramaGovernoPassagens(documentos, 300)
-  assert.equal(planos.length, 1)
-  assert.equal(planos[0].bytes, 2000)
+  assert.equal(planos.length, 7)
+  assert.ok(planos.every((plano) => plano.bytes <= 300))
+  assert.equal(
+    planos.flatMap((plano) => plano.documentos.flatMap((doc) => doc.paginas.map((pagina) => pagina.texto))).join(""),
+    documentos[0].paginas[0].texto,
+  )
 })
 
 test("passagens em sequencia documental estavel com fingerprint deterministico", () => {

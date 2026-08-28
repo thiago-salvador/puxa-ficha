@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process"
+import path from "node:path"
 
 import judgeSchema from "./prompts/programa-governo-governadores-judge-v2.schema.json"
 import type { ProgramaGovernoEvidencia, ProgramaGovernoResumo } from "../src/lib/programa-governo"
@@ -13,10 +14,10 @@ export const PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION = "programa-governo-g
 export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-governadores-judge-v2" as const
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS = 2
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_OUTPUT_BYTES = 8 * 1024 * 1024
-export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION = "multipassagem-v2" as const
+export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION = "multipassagem-v3" as const
 export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES = 180_000
 
-const GENERATOR_INSTRUCTIONS = [
+export const PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS = [
   "Produza um resumo factual e neutro do programa oficial, com 120 a 180 palavras, 6 a 8 frases materiais e 4 a 6 temas.",
   "Toda evidencia deve copiar um trecho literal e continuo de uma unica pagina e preservar exatamente documentoId e pagina recebidos.",
   "Restricoes mecanicas obrigatorias: o campo 'texto' tem 120 a 180 palavras e cada frase de 'frases' aparece verbatim dentro dele; ids de tema no padrao slug minusculo com hifen.",
@@ -69,6 +70,7 @@ export type ProgramaGovernoModelMetadata = {
   version: string
   promptVersion: string
   attempts: number
+  uso?: Record<string, unknown>
 }
 
 export type ProgramaGovernoGeneratorInput = {
@@ -384,7 +386,7 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   // Consistencia nome/versao: Luna deve ser gpt-5.6-luna, nao muse; DeepSeek deve ser deepseek-v4-flash, etc.
   const nomeLower = config.name.toLocaleLowerCase("pt-BR")
   const versaoLower = config.version.toLocaleLowerCase("pt-BR")
-  const comandoLower = config.command.toLocaleLowerCase("pt-BR")
+  const comandoLower = [config.command, ...(config.args ?? [])].join(" ").toLocaleLowerCase("pt-BR")
   if (nomeLower.includes("luna")) {
     if (!versaoLower.includes("gpt-5.6-luna")) throw new Error(`${path}.version: Luna deve ser gpt-5.6-luna, nao ${config.version}`)
     if (versaoLower.includes("muse")) throw new Error(`${path}.version: Muse nao e Luna`)
@@ -399,6 +401,25 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   if (comandoLower.includes("luna") && !nomeLower.includes("luna")) throw new Error(`${path}.command: runner Luna exige nome Luna`)
   if (comandoLower.includes("deepseek") && !nomeLower.includes("deepseek")) throw new Error(`${path}.command: runner DeepSeek exige nome DeepSeek`)
   if (comandoLower.includes("glm") && !nomeLower.includes("glm")) throw new Error(`${path}.command: runner GLM exige nome GLM`)
+}
+
+function runnerReal(config: ProgramaGovernoModelCommand): string {
+  const partes = [config.command, ...(config.args ?? [])]
+  const script = partes.find((parte, index) => index > 0 && /\.(?:mjs|cjs|js|ts)$/iu.test(parte))
+  const selecionado = script ?? config.command
+  return path.normalize(path.isAbsolute(selecionado) ? selecionado : path.resolve(selecionado))
+}
+
+function usoDoStderr(stderr: string): Record<string, unknown> | undefined {
+  const prefixo = "PF_OPENCODE_USAGE="
+  const linha = stderr.split("\n").reverse().find((item) => item.startsWith(prefixo))
+  if (!linha) return undefined
+  try {
+    const value = JSON.parse(linha.slice(prefixo.length)) as unknown
+    return isObject(value) ? value : undefined
+  } catch {
+    return undefined
+  }
 }
 
 function isObject(value: unknown): value is Record<string, unknown> {
@@ -587,9 +608,10 @@ async function runStructured<T>(
         config.timeoutMs,
       )
       const parsed = JSON.parse(result.stdout) as unknown
+      const uso = usoDoStderr(result.stderr)
       return {
         output: validate(parsed),
-        metadata: { name: config.name, version: config.version, promptVersion, attempts: attempt },
+        metadata: { name: config.name, version: config.version, promptVersion, attempts: attempt, ...(uso ? { uso } : {}) },
       }
     } catch (error) {
       lastError = error instanceof Error ? error.message : String(error)
@@ -607,6 +629,9 @@ export function createProgramaGovernoModelAdapters(
   if (modelFamily(config.generator.name) === modelFamily(config.judge.name)) {
     throw new Error("generator e judge devem usar familias diferentes")
   }
+  if (runnerReal(config.generator) === runnerReal(config.judge)) {
+    throw new Error(`generator e judge resolvem para o mesmo runner real: ${runnerReal(config.generator)}`)
+  }
   const generator = Object.freeze({
     ...config.generator,
     args: Object.freeze([...(config.generator.args ?? [])]),
@@ -623,7 +648,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
         PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
-        GENERATOR_INSTRUCTIONS,
+        PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
         input,
         validateSummary,
         runner,
@@ -669,5 +694,3 @@ export function createProgramaGovernoModelAdapters(
     },
   }
 }
-
-// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

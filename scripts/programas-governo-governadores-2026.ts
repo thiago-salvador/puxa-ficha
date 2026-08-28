@@ -15,13 +15,19 @@ import {
 import {
   calcularFingerprintProgramaGovernoPassagens,
   coletarFatosProgramaGovernoPassagens,
+  envelopeExcedeLimite,
   filtrarFatosLiterais,
+  medirEnvelopeBytes,
   planejarProgramaGovernoPassagens,
   type ProgramaGovernoFato,
 } from "./lib/programas-governo-multipassagem"
 import {
   createProgramaGovernoModelAdapters,
+  PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+  PROGRAMA_GOVERNO_FATOS_SCHEMA,
   PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
   PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
   PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
   type ProgramaGovernoGeneratorInput,
@@ -308,6 +314,7 @@ export type ProgramaGovernoGovFilaItem = {
 function estimarPassagens(
   documentos: readonly { paginas: number; textoExtraidoBytes: number }[],
   limite: number,
+  identityKey: string,
 ): { multipassagem: boolean; passagens: number; bytesEntrada: number } {
   const paginasPorDocumento = documentos.map((documento) => {
     const porPagina = documento.paginas > 0
@@ -315,15 +322,26 @@ function estimarPassagens(
       : 1
     return Array.from({ length: documento.paginas }, () => "x".repeat(porPagina))
   })
-  const bytesEntrada = Buffer.byteLength(JSON.stringify(paginasPorDocumento), "utf8")
-  if (documentos.length === 0 || bytesEntrada <= limite) {
-    return { multipassagem: false, passagens: 1, bytesEntrada }
-  }
   const entrada = documentos.map((documento, indice) => ({
     documentoId: `${indice}`,
     paginas: paginasPorDocumento[indice].map((texto, pagina) => ({ pagina: pagina + 1, origem: "planejamento", texto })),
   }))
-  return { multipassagem: true, passagens: planejarProgramaGovernoPassagens(entrada, limite).length, bytesEntrada }
+  const inputCompleto = { identityKey, documentos: entrada }
+  const bytesEntrada = medirEnvelopeBytes(
+    PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+    PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
+    inputCompleto,
+  )
+  if (documentos.length === 0 || bytesEntrada < limite) {
+    return { multipassagem: false, passagens: 1, bytesEntrada }
+  }
+  const passagens = planejarProgramaGovernoPassagens(entrada, {
+    limiteBytes: limite,
+    instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    criarInput: (docs) => ({ identityKey, documentos: docs }),
+  }).length
+  return { multipassagem: true, passagens, bytesEntrada }
 }
 
 export function planejarFilaProgramaGovernoGovernadores(
@@ -358,7 +376,7 @@ export function planejarFilaProgramaGovernoGovernadores(
     })
     const totalPaginas = documentos.reduce((acumulado, documento) => acumulado + documento.paginas, 0)
     const bytesTextoExtraidos = documentos.reduce((acumulado, documento) => acumulado + documento.textoExtraidoBytes, 0)
-    const estimativa = estimarPassagens(documentos, limite)
+    const estimativa = estimarPassagens(documentos, limite, candidate.chave)
     const usaModelos = candidate.fonteEstado === "documento_oficial_encontrado"
       && candidate.identidadeEstado === "confirmada"
       && candidate.perfilEstado === "vinculado"
@@ -568,10 +586,6 @@ function citedPages(items: readonly ProgramaGovernoJudgeItem[], documents: reado
     .map((section) => ({ documentoId: document.documentoId, pagina: section.paginaInicial, texto: section.conteudo })))
 }
 
-function contarBytesDocumentosEntrada(input: ProgramaGovernoGeneratorInput): number {
-  return Buffer.byteLength(JSON.stringify(input.documentos.map(({ paginas }) => paginas.map(({ texto }) => texto))), "utf8")
-}
-
 const PROGRAMA_GOVERNO_PASSAGENS_CONCORRENCIA = 3
 
 export type ProgramaGovernoMultipassagemMetrics = {
@@ -641,7 +655,12 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   }
   const limiteBytes = params.limiteBytes
   const documentosEntrada = entradaMultipassagem(extracted)
-  const planos = planejarProgramaGovernoPassagens(documentosEntrada, limiteBytes)
+  const planos = planejarProgramaGovernoPassagens(documentosEntrada, {
+    limiteBytes,
+    instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    criarInput: (docs) => ({ identityKey, documentos: docs }),
+  })
   const subDiretorio = resolve(params.cacheDir, createHash("sha256").update(identityKey).digest("hex").slice(0, 16))
   await adapters.ensureDir(subDiretorio)
   const metrics: ProgramaGovernoMultipassagemMetrics = {
@@ -930,7 +949,12 @@ async function ingestCandidate(
     await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
     let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
     let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
-    if (contarBytesDocumentosEntrada(entradaCompleta) > multipassagemLimiteBytes) {
+    if (envelopeExcedeLimite(
+      PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+      PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
+      entradaCompleta,
+      multipassagemLimiteBytes,
+    )) {
       const multipass = await gerarResumoProgramaGovernoMultipassagem({
         identityKey: candidate.chave,
         nomeUrna: candidate.nomeUrna,

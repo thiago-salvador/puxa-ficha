@@ -166,4 +166,16 @@ test("usa cópia congelada da configuração depois da criação", async () => {
   assert.ok(Object.isFrozen(adapters.generator.args))
 })
 
+test("preserva wrapper.uso na metadata do modelo", async () => {
+  const adapters = createProgramaGovernoModelAdapters(config(), async () => ({
+    stdout: JSON.stringify(summary()),
+    stderr: `PF_OPENCODE_USAGE=${JSON.stringify({ input_tokens: 12, output_tokens: 5, cost_usd: 0.02 })}\n`,
+  }))
+  const result = await adapters.generate({
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    documentos: [],
+  })
+  assert.deepEqual(result.metadata.uso, { input_tokens: 12, output_tokens: 5, cost_usd: 0.02 })
+})
+
 console.log("PROGRAMAS_MODELS_PASS")

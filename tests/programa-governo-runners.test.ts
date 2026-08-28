@@ -1,7 +1,10 @@
 import assert from "node:assert/strict"
 import { spawn } from "node:child_process"
+import { chmod, mkdtemp, rm, writeFile } from "node:fs/promises"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { fileURLToPath } from "node:url"
-import test from "node:test"
+import test, { after, before } from "node:test"
 
 type RunnerResultado = { code: number | null; stdout: string; stderr: string }
 
@@ -27,6 +30,19 @@ const RUNNER_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-gov
 const RUNNER_DEEPSEEK = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-opencode-deepseek.mjs", import.meta.url))
 const RUNNER_GLM = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-glm.mjs", import.meta.url))
 const DIR_RUNNERS = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url))
+let DIR_FIXTURES = ""
+
+before(async () => {
+  DIR_FIXTURES = await mkdtemp(join(tmpdir(), "pf-programa-governo-runners-"))
+})
+
+after(async () => {
+  await rm(DIR_FIXTURES, { recursive: true, force: true })
+})
+
+function fixturePath(nome: string): string {
+  return join(DIR_FIXTURES, nome)
+}
 
 const ENVELOPE = JSON.stringify({
   schema: { type: "object", required: ["ok"], properties: { ok: { type: "boolean" } } },
@@ -36,8 +52,7 @@ const ENVELOPE = JSON.stringify({
 })
 
 test("runner do generator qwen converte resposta de CLI em objeto estruturado", async () => {
-  const fakeCli = "/tmp/pf-fake-qwen.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
+  const fakeCli = fixturePath("pf-fake-qwen.mjs")
   await writeFile(fakeCli, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({response:'{\"ok\": true}'}))\n")
   await chmod(fakeCli, 0o755)
   const resultado = await rodarRunner(
@@ -50,13 +65,12 @@ test("runner do generator qwen converte resposta de CLI em objeto estruturado", 
 })
 
 test("runner do judge codex extrai mensagem final do stream ndjson e devolve objeto", async () => {
-  const fakeCli = "/tmp/pf-fake-codex.mjs"
+  const fakeCli = fixturePath("pf-fake-codex.mjs")
   const eventoFake = [
     JSON.stringify({ type: "item.started", item: { type: "agent_message" } }),
     JSON.stringify({ type: "item.completed", item: { type: "agent_message", text: '```json\\n{"ok": false}\\n```' } }),
     "",
   ].join("\n")
-  const { writeFile, chmod } = await import("node:fs/promises")
   await writeFile(fakeCli, `#!/usr/bin/env node\nprocess.stdin.resume(); process.stdout.write(${JSON.stringify(eventoFake)})\n`)
   await chmod(fakeCli, 0o755)
   const resultado = await rodarRunner(
@@ -71,8 +85,7 @@ test("runner do judge codex extrai mensagem final do stream ndjson e devolve obj
 test("envelope invalido falha fechado nos runners qwen/codex", async () => {
   const base = DIR_RUNNERS
   for (const runner of ["run-generator-qwen.mjs", "run-judge-codex.mjs"]) {
-    const fakeCli = "/tmp/pf-fake-nunca-chamado.mjs"
-    const { writeFile, chmod } = await import("node:fs/promises")
+    const fakeCli = fixturePath(`pf-fake-nunca-chamado-${runner}`)
     await writeFile(fakeCli, "#!/usr/bin/env node\nconsole.error('NAO DEVE SER CHAMADO'); process.exit(1)\n")
     await chmod(fakeCli, 0o755)
     const resultado = await rodarRunner(base + runner, { PF_QWEN_CLI: fakeCli, PF_CODEX_CLI: fakeCli }, '{"foo":1}')
@@ -89,8 +102,7 @@ test("opencode runners falham fechado com envelope invalido (sem chamada ao go)"
 })
 
 test("runner opencode luna converte resposta do go em JSON valido", async () => {
-  const fakeGo = "/tmp/pf-fake-opencode-luna-ok.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
+  const fakeGo = fixturePath("pf-fake-opencode-luna-ok.mjs")
   // fake opencode-go que responde com --json wrapper {texto: '{"ok": true}'}
   await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'gpt-5.6-luna', formato:'responses', uso:{}, texto:'{\"ok\": true}'}))\n")
   await chmod(fakeGo, 0o755)
@@ -104,8 +116,7 @@ test("runner opencode luna converte resposta do go em JSON valido", async () => 
 })
 
 test("runner opencode deepseek converte resposta do go em JSON valido", async () => {
-  const fakeGo = "/tmp/pf-fake-opencode-deepseek-ok.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
+  const fakeGo = fixturePath("pf-fake-opencode-deepseek-ok.mjs")
   await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'deepseek-v4-flash', formato:'chat', uso:{}, texto:'{\"ok\": false}'}))\n")
   await chmod(fakeGo, 0o755)
   const resultado = await rodarRunner(
@@ -118,8 +129,7 @@ test("runner opencode deepseek converte resposta do go em JSON valido", async ()
 })
 
 test("runner rejeita subprocesso com exit 7 mesmo se stdout tem JSON valido", async () => {
-  const fakeGo = "/tmp/pf-fake-opencode-exit7.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
+  const fakeGo = fixturePath("pf-fake-opencode-exit7.mjs")
   // stdout com JSON valido, stderr com erro de transporte, exit 7
   await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'gpt-5.6-luna', formato:'responses', uso:{}, texto:'{\"ok\": true}'})); process.stderr.write('transport error: connection reset'); process.exit(7)\n")
   await chmod(fakeGo, 0o755)
@@ -137,8 +147,7 @@ test("runner rejeita subprocesso com exit 7 mesmo se stdout tem JSON valido", as
 })
 
 test("runner opencode glm usa api chat explicitamente e converte resposta", async () => {
-  const fakeGo = "/tmp/pf-fake-opencode-glm-ok.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
+  const fakeGo = fixturePath("pf-fake-opencode-glm-ok.mjs")
   // verifica que args contem --api chat
   await writeFile(fakeGo, "#!/usr/bin/env node\nconst args=process.argv.join(' '); if(!args.includes('--api') || !args.includes('chat')){console.error('sem --api chat'); process.exit(2)}; process.stdout.write(JSON.stringify({modelo:'glm-5.3', formato:'chat', uso:{}, texto:'{\"ok\": true}'}))\n")
   await chmod(fakeGo, 0o755)

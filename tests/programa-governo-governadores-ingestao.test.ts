@@ -18,6 +18,8 @@ import {
 } from "../scripts/programas-governo-governadores-2026"
 import {
   createProgramaGovernoModelAdapters,
+  PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+  PROGRAMA_GOVERNO_FATOS_SCHEMA,
   PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
   PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS,
   type ProgramaGovernoModelProcessRunner,
@@ -545,7 +547,7 @@ test("multipassagem retomavel: cache evita re-chamada e retries por passagem fic
     archiveDir: "/archives",
     outputDir: "/output",
     cachePassagensDir: "/cache-passagens",
-    multipassagemLimiteBytes: 300,
+    multipassagemLimiteBytes: 2_000,
   }
 
   // Primeira execucao: gera com retry em UMA passagem (a segunda chamada de
@@ -565,7 +567,12 @@ test("multipassagem retomavel: cache evita re-chamada e retries por passagem fic
       origem: secao.origem,
       texto: secao.conteudo,
     })),
-  }], 300).length
+  }], {
+    limiteBytes: 2_000,
+    instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    criarInput: (documentos) => ({ identityKey: item.chave, documentos }),
+  }).length
   assert.equal(metricasPrimeira.passagens, planosEsperados)
   assert.equal(metricasPrimeira.passagensCacheadas, 0)
   assert.equal(chamadasFatosPassagem, planosEsperados + 1)

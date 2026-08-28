@@ -2,26 +2,24 @@
 // Valida: complete nao reexecuta, 104 agendaveis (98 pending +6 retryable), Norte 0,
 // Qwen+GPT 2 intactos, sem aprovado, extracoes e passagens reutilizaveis,
 // lista exata de bloqueados antes de qualquer spawn.
-import { readFile, readdir } from "node:fs/promises"
+import { readFile } from "node:fs/promises"
 import { existsSync } from "node:fs"
 import path from "node:path"
-import { classificarRegistro, lerRegistro, reconciliarParaRetomada } from "./batch-driver.mjs"
+import { classificarRegistro, lerRegistro, reconciliarParaRetomada, validarCachesRetomada } from "./batch-driver.mjs"
 
 const runDir = process.argv[2]
 if (!runDir) {
   console.error("uso: node prova-retomada.test.mjs <runDir>")
   process.exit(2)
 }
+const workDir = path.resolve(runDir, "../..")
 
 // Detecta familia atual (Luna) para reconciliacao por familia
 let familiaAtual = "openai"
 try {
-  const cfgPath = path.join(path.dirname(runDir), "..", "models-config-restante-luna.json")
-  // fallback: procura em pf-gov-2026-work
-  const alt = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/models-config-restante-luna.json"
-  const p = existsSync(cfgPath) ? cfgPath : alt
-  if (existsSync(p)) {
-    const cfg = JSON.parse(await readFile(p, "utf8"))
+  const cfgPath = path.join(workDir, "models-config-restante-luna.json")
+  if (existsSync(cfgPath)) {
+    const cfg = JSON.parse(await readFile(cfgPath, "utf8"))
     const nome = cfg.generator?.name ?? ""
     familiaAtual = nome.toLowerCase().includes("luna") ? "openai" : nome.toLowerCase().includes("deepseek") ? "deepseek" : nome.toLowerCase().includes("glm") ? "glm" : "openai"
   }
@@ -100,7 +98,7 @@ if (totalAprovado !== 0) { console.error("FALHA: existe registro aprovado"); pro
 const esperado = { complete: 47, blocked: 2, pending: 98, retryable: 8 }
 for (const [k, v] of Object.entries(esperado)) {
   if (estadosContados[k] !== v) {
-    console.error(`FALHA: ${k} ${estadosContados[k]} != ${v} (esperado apos normalizacao 104 agendaveis)`)
+    console.error(`FALHA: ${k} ${estadosContados[k]} != ${v} (esperado apos normalizacao 106 agendaveis)`)
     console.error(`estados: ${JSON.stringify(estadosContados)}`)
     process.exit(1)
   }
@@ -113,7 +111,7 @@ if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending
   }
 }
 if (agendaveisLista.length !== 106) {
-  console.error(`FALHA: agendaveis ${agendaveisLista.length} != 104`)
+  console.error(`FALHA: agendaveis ${agendaveisLista.length} != 106`)
   process.exit(1)
 }
 
@@ -139,18 +137,9 @@ for (const chave of chavesQwen) {
 console.log(`qwen preservadas: ${chavesQwen.join(", ")}`)
 
 // Extracoes e passagens reutilizaveis: verifica que cache-extracao e cache-passagens existem e nao foram apagados
-const cacheExtracao = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/cache-extracao"
-const cachePassagens = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/cache-passagens"
-if (existsSync(cacheExtracao)) {
-  const n = (await readdir(cacheExtracao)).length
-  console.log(`cache-extracao arquivos: ${n} (esperado >=41)`)
-  if (n < 40) { console.error("FALHA: cache-extracao ausente"); process.exit(1) }
-}
-if (existsSync(cachePassagens)) {
-  const n = (await readdir(cachePassagens)).length
-  console.log(`cache-passagens candidatos: ${n} (esperado >=5)`)
-  if (n < 5) { console.error("FALHA: cache-passagens ausente"); process.exit(1) }
-}
+const caches = await validarCachesRetomada(workDir, { minExtracao: 40, minPassagens: 5 })
+console.log(`cache-extracao arquivos: ${caches.extracoes} (esperado >=40)`)
+console.log(`cache-passagens candidatos: ${caches.passagens} (esperado >=5)`)
 
 // Verifica que extracao e passagens dos dois normalizados ainda existem
 for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
@@ -160,5 +149,3 @@ for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
 }
 
 console.log("RETOMADA_OK total=155 complete=47 blocked=2 pending=98 retryable=8 agendaveis=106 norte=0 qwen=2 aprovado=0")
-
-// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

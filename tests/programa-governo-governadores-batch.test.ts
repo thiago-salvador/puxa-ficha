@@ -636,6 +636,7 @@ async function testeBatch(opcoes: {
     pollMs: opcoes.pollMs ?? 20,
     spawnFn: spawnFn as unknown as Parameters<typeof executarBatch>[0]["spawnFn"],
     node24Resolver: async () => process.execPath,
+    validarFilaFn: async () => undefined,
   })
   return { runDir, resultado, disparos, maximosConcorrentes }
 }
@@ -658,7 +659,7 @@ test("executarBatch: retomada nao repete candidato concluido e estados sao atomi
   await rm(primeira.runDir, { recursive: true, force: true })
 })
 
-test("executarBatch: erro de cota consecutivo para com checkpoints preservados", async () => {
+test("executarBatch: segunda falha de quota entra em stopped_by_quota com checkpoints preservados", async () => {
   // Com concorrencia 3, inicialmente 3 candidatos entram em voo; o 4o deve ficar pendente apos parada por 2 quotas consecutivas
   const itens = [itemFila("PE", "44000000001", "cota-1"), itemFila("PE", "44000000002", "cota-2"), itemFila("PE", "44000000003", "cota-3"), itemFila("PE", "44000000004", "cota-4")]
   const unidades = new Map<string, UnidadeFake>([
@@ -666,7 +667,7 @@ test("executarBatch: erro de cota consecutivo para com checkpoints preservados",
     ["2026:GOVERNADOR:PE:44000000002", { chamadas: 0, acao: "erro-cota" }],
   ])
   const { runDir, resultado, disparos } = await testeBatch({ itens, unidades })
-  assert.equal(resultado.parada, "duas falhas consecutivas de cota/autenticacao")
+  assert.equal(resultado.parada, "stopped_by_quota")
   assert.equal(existsSync(path.join(runDir, "parada.json")), true)
   const estado1 = JSON.parse(await readFile(path.join(dirDoCandidato(runDir, { chaveCacheDir: itens[0].chaveCacheDir as string }), "estado.json"), "utf8")) as { estado: string; tentativas: number }
   assert.equal(estado1.tentativas, 2, "primeira falha de cota concede um retry antes da parada")
