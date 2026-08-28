@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Driver do batch nacional restante dos programas de governo (governadores 2026) - corrigido para 11 itens: envelope 190k, fila 106, rampa por conclusoes, quota prova unica, checkpoints familia, telemetria, orfaos, atomico.
+// Driver do batch nacional restante dos programas de governo (governadores 2026) - corrigido para 12 itens: envelope 190k compartilhado, fila 106 regenerada, batch-driver rampa/quota/checkpoint/telemetria/atomico, gate familias, orfaos: envelope 190k, fila 106, rampa por conclusoes, quota prova unica, checkpoints familia, telemetria, orfaos, atomico.
 // Fila por candidato (nunca por UF), concorrencia adaptativa com rampa 3->4
 // (inicial 3, sobe para 4 apenas apos 3 conclusoes), retomada granular com
 // estados atomicos e semaforo global de processos geradores.

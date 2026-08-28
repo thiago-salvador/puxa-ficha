@@ -318,3 +318,5 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
   for (const id of cobertura) fatosUsados.set(id, (fatosUsados.get(id) ?? 0) + 1)
   if (cobertura.size === 0) throw new Error("multipassagem: nenhum fato referenciado")
 }
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

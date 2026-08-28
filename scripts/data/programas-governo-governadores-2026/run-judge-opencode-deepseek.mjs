@@ -155,3 +155,5 @@ main().catch((error) => {
   console.error(error instanceof Error ? error.message : String(error))
   process.exit(1)
 })
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

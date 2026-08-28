@@ -116,3 +116,5 @@ test("prova cache fail-closed", async () => {
   assert.ok(prova.includes("if (existsSync(cacheExtracao))") === false || prova.includes("falhar se") || prova.includes("FALHA: cache"), "prova deve falhar se cache ausente (fail-closed)")
 })
 
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

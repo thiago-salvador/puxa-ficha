@@ -115,3 +115,5 @@ npx -y -p node@24 -c 'node --conditions react-server --import tsx --test tests/p
 ```
 
 O teste usa inventário, ZIPs, PDFs, extração e respostas de modelos sintéticos. Nenhum modelo, rede ou arquivo eleitoral real é acionado.
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

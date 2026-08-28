@@ -669,3 +669,5 @@ export function createProgramaGovernoModelAdapters(
     },
   }
 }
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger

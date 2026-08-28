@@ -160,3 +160,5 @@ for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
 }
 
 console.log("RETOMADA_OK total=155 complete=47 blocked=2 pending=98 retryable=8 agendaveis=106 norte=0 qwen=2 aprovado=0")
+
+// 12 itens: envelope, fila, lease, rampa, quota, familia, telemetria, orfaos, cache, atomico, ledger
