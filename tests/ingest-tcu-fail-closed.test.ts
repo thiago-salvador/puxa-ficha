@@ -24,4 +24,12 @@ describe("ingest TCU fail-closed", () => {
     assert.match(source, /flags nao atualizadas/)
     assert.match(source, /results\.push\(result\)\s+continue/)
   })
+
+  it("anexa link oficial do processo e nao contabiliza ponto recusado", () => {
+    assert.match(source, /fontes: FonteTCU\[\]/)
+    assert.match(source, /motivoRecusaDeFonte\(row\.gravidade, row\.fontes\)/)
+    assert.match(source, /linkAcompanhamentoProcesso/)
+    assert.match(source, /if \(gravado\)/)
+    assert.match(source, /sem link publico de processo do TCU/)
+  })
 })

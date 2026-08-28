@@ -6,6 +6,7 @@ import type { IngestResult } from "../scripts/lib/types"
 import {
   agregarDespesasCeapsOficial,
   agregarDespesasDoAno,
+  detalhamentoCeaps,
 } from "../scripts/lib/ingest-ceaps-senado"
 
 // Irmaos do incidente de 2026-08-04 (sancoes com `cpfCnpj`, parametro que a API
@@ -238,4 +239,11 @@ test("ceaps oficial: ausencia do senador no conjunto nao vira gasto de outra pes
     2026,
   )
   assert.deepEqual(conferencia, { ok: true, dados: null })
+})
+
+test("ceaps grava detalhamento no contrato de lista consumido pela ficha", () => {
+  assert.deepEqual(detalhamentoCeaps({ PASSAGENS: 100.567, ALUGUEL: 200 }), [
+    { categoria: "PASSAGENS", valor: 100.57 },
+    { categoria: "ALUGUEL", valor: 200 },
+  ])
 })
