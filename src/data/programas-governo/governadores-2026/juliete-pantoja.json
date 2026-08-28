@@ -1,0 +1,820 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RJ",
+    "sqCandidato": "190002547272",
+    "slug": "juliete-pantoja",
+    "nomeUrna": "JULIETE",
+    "partido": "UP",
+    "arquivoNome": "2026RJ190002547272_01.pdf",
+    "arquivoNoPacote": "RJ/2026RJ190002547272_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RJ:190002547272:01",
+      "fonte": {
+        "arquivoNome": "2026RJ190002547272_01.pdf",
+        "arquivoNoPacote": "RJ/2026RJ190002547272_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "be2238356a70992f9ddd20ef35ba0783daaf890d52bfd20d566302cee667efcf",
+        "extractedTextSha256": "320001bd7dfbb53d7d515d924d78c53524f316949c38e5d939b393a9044e2bf7",
+        "paginas": 13,
+        "secoes": [
+          {
+            "id": "80-propostas-da-unidade-popular-para",
+            "titulo": "80 PROPOSTAS DA UNIDADE POPULAR PARA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "80 PROPOSTAS DA UNIDADE POPULAR PARA\nTRANSFORMAR O RIO DE JANEIRO\nINTRODUÇÃO\nO Estado do Rio de Janeiro é uma construção relativamente recente, que nasceu a\npartir da mudança da capital federal da cidade do Rio de Janeiro para Brasília,\ndurante o Governo Juscelino Kubitschek, em 1960. Com a transferência, o antigo\ndistrito federal foi fundido ao Estado da Guanabara, que tinha Niterói como capital,\nmodificando o eixo de poder local.\nEssa transformação não se deu sem traumas. De uma hora para outra, milhares de\npostos de trabalho, recursos financeiros e orçamentários foram arrancados do Rio\nde Janeiro, que, na esteira da transferência da capital, também teve sua influência\npolítica reduzida no cenário nacional.\nTodavia, as marcas da antiga capital são inegáveis, com uma profusão de aparelhos\npúblicos e órgãos federais que ainda se mantêm na cidade, apesar de serem objeto\nde um constante processo de esvaziamento e concentração de atividades na capital\nda República.\nO enfraquecimento do Rio de Janeiro se fez presente em diversos momentos da\nhistória política recente, seja através da alocação direta de recursos públicos do\norçamento da União, seja pela própria estrutura tributária brasileira, que beneficia\nnosso vizinho em detrimento do povo fluminense.\nSe o passado recente traz dificuldades, a herança de uma economia baseada na\nexploração de mão de obra africana escravizada e um processo de abolição\nincompleto é outro elemento prejudicial ao povo fluminense. Encostas e periferias\n1"
+          },
+          {
+            "id": "sao-ocupadas-por-milhares-de-brasileiros-em-sua-maioria-descendentes-de",
+            "titulo": "são ocupadas por milhares de brasileiros, em sua maioria descendentes de",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "são ocupadas por milhares de brasileiros, em sua maioria descendentes de\nquilombolas insurrectos e de escravizados libertos, que têm sua própria existência\ncriminalizada pelo aparato repressivo do Estado. De fato, segundo dados de 2025\ndo Ministério da Justiça, o Rio de Janeiro é o 3º no total absoluto de mortes por\nintervenção policial. Quase 800 pessoas foram assassinadas em operações\npoliciais ano passado, 121 delas no horrível Massacre da Penha comandado pelo\nex-governador Cláudio Castro.\nAo mesmo tempo, nosso estado sempre foi foco da revolta popular contra essas\ninjustiças. Desde os quilombos, no período colonial e imperial, passando pelas\ngreves e revoltas de trabalhadores escravizados e livres no século XIX, o\nmovimento abolicionista, o movimento operário e o movimento estudantil durante\ntodo o século passado, o povo do Rio de Janeiro sempre se mobilizou contra a\nexploração.\nNossa candidatura tem como prioridade dar voz a essa história de luta do nosso\npovo. O Rio de Janeiro só pode se transformar radicalmente se o povo que aqui\nvive há 526 anos possa de fato estar no poder. Precisamos reverter séculos de\nexploração do trabalho e humilhação da condição humana.\nO nosso estado possui o segundo maior Produto Interno Bruto (PIB) do país.\nPossui, ainda, o segundo maior parque industrial, mesmo assim nosso povo é\nsubmetido aos baixos salários, à fome e à pobreza. Os sucessivos governos liberais\ne de extrema-direita não buscaram construir nenhuma política pública de longo\nprazo para reverter esse cenário, limitando-se ao “toma lá, dá cá” entre estado e\nempresas privadas, através de isenções fiscais para amigos. Pior, privatizaram a\nCEDAE, se recusam a reestatizar os trens e metrô e deixam as empresas de\nenergia elétrica fazerem o que bem entendem com a nossa conta de luz.\nApesar da grande concentração de instituições públicas de ensino superior e\npesquisa (UFRJ, UFF, UNIRIO, CEFET, UFRRJ, IFRJ, IFF, UENF, UERJ), centros\nde pesquisa de ponta na área da saúde pública (Fiocruz e o Instituto Vital Brasil),\nalém de institutos de ciências nas mais diversas áreas, o conhecimento gerado por\n2"
+          },
+          {
+            "id": "essas-instituicoes-nao-e-apoiado-pelo-poder-publico-e-nao-se-reverte-em",
+            "titulo": "essas instituições não é apoiado pelo poder público e não se reverte em melhoria",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "essas instituições não é apoiado pelo poder público e não se reverte em melhoria\nconcreta para a população.\nO Rio de Janeiro, apesar de seu esvaziamento econômico, ainda é sede de grandes\ngrupos de mídia, com perfil monopolista, que concentram boa parte de sua\nprodução de conteúdo centralizada no estado, dando projeção nacional ao que\nocorre aqui, com enfoque principal na capital. Globo e Record disputam a liderança\nda audiência e gigantescos contratos de propaganda pública e privada. Suas\ncoberturas são tendenciosas, atendendo aos interesses de bancos e grandes\ngrupos econômicos, e se recusando a oferecer à população qualquer contraponto\nde caráter e conteúdo popular.\nEsse aparato midiático, ao propagar um misto de falso moralismo, fascismo e\nliberalismo econômico, ajudou a garantir a vitória da extrema-direita nas eleições de\n2018. Jair Bolsonaro, que tentou um golpe de Estado em 2022-2023, foi preso após\numa grande luta do povo, mas seus aliados e cúmplices continuam defendendo\numa intervenção estrangeira no Brasil impunemente. O Senado, por sua vez, foi\nocupado pelos reacionários Flávio Bolsonaro (PL), que hoje tenta assumir o lugar do\npai na direção do movimento fascista no Brasil, e dois de seus aliados que nunca\nfizeram nada para mudar a vida do povo fluminense.\nMas a crise do estado não é responsabilidade apenas dos atuais mandatários, ela\ndecorre de uma longa sequência de governos capitalistas que se impuseram à\npopulação carioca e cuja trajetória política guarda profunda relação com a crise do\nRio de Janeiro.\nDesde a redemocratização, depois da ditadura militar nada esperaríamos de\ndiferente, foram raras as iniciativas que visavam melhorar as condições de vida da\npopulação. A exceção foram o programa dos CIEPs, a política de regularização\nfundiária e a tentativa de impor freios à violência policial durante os dois governos\nde Leonel Brizola (PDT).\n\n3"
+          },
+          {
+            "id": "sofremos-com-decadas-de-descaso-privatizacoes-cortes-nos-investimentos-s",
+            "titulo": "Sofremos com décadas de descaso, privatizações, cortes nos investimentos sociais,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Sofremos com décadas de descaso, privatizações, cortes nos investimentos sociais,\ngastança com privilégios e isenções fiscais para empresários bilionários. Tudo isso\nlevou nosso estado à falência econômica. Governadores presos, prefeitos corruptos\ne deputados que se vendem politicamente em troca de cargos e benefícios virou a\nregra. Ao povo restou o desemprego, a miséria e a fome.\nOs principais problemas do estado do Rio de Janeiro até hoje continuam sem\nsolução: a falta de escolas com qualidade, um sistema de saúde com financiamento\nadequado, saneamento básico universalizado, o fim do analfabetismo, garantia de\nmoradia digna etc. Tudo isso ainda segue previsto apenas no papel, mas sem\nencaminhamento prático por parte do governo.\nO estado do Rio de Janeiro viveu sob o governo incompetente e reacionário de\nCláudio Castro (PL). Fascista aliado de Bolsonaro, ele governou o Rio de Janeiro\ndesde que o antigo governador Wilson Witzel foi deposto, após se envolver em\ndiversos escândalos de corrupção. O governo Castro foi marcado pela\nsubserviência aos interesses do imperialismo estadunidense e às ordens de\nBolsonaro, pela política de chacinas nas favelas, pelos cortes nos investimentos em\náreas sociais e pela gastança desenfreada com favores políticos advindos de\nrecursos que o estado recebeu com a venda criminosa da CEDAE.\nDepois de 3 anos e meio do atual mandato, Castro renunciou para tentar escapar da\ninelegibilidade e concorrer ao Senado, mas foi cassado pelo TSE por, assim como\nseus antecessores, ser acusado de estar envolvido em diversos esquemas de\ncorrupção. Desde o início do atual governo interino, ficou claro que o governo\nestado do Rio estava tomado de funcionários fantasmas que serviam apenas para\ntomar os recursos do estado para entregar aos bolsos de políticos e empresários\ncorruptos.\nNão podemos aceitar mais esta situação! Para transformar essa realidade, a\nUnidade Popular (UP) apresenta à população fluminense o seguinte Programa de\nGoverno Popular:\n\n4"
+          },
+          {
+            "id": "80-propostas-da-up-para-transformar-o-rio-de-janeiro",
+            "titulo": "80 PROPOSTAS DA UP PARA TRANSFORMAR O RIO DE JANEIRO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "80 PROPOSTAS DA UP PARA TRANSFORMAR O RIO DE JANEIRO\nECONOMIA E TRABALHO PARA O POVO\n1.​ Realizar a suspensão e uma auditoria da dívida pública do estado do Rio de\nJaneiro com entes estatais e privados para eliminar irregularidades e\nrenegociar dívidas que só servem para sangrar os recursos públicos e\nenriquecer bancos e especuladores do sistema financeiro;\n2.​ Auditoria e anulação da privatização da Cedae e a reestatização da energia\nelétrica;\n3.​ Redução imediata das tarifas de luz, água e esgoto;\n4.​ Criação de um Banco Estadual para fortalecer a capacidade de investimento\npúblico em infraestrutura;\n5.​ Revisão da política de isenções fiscais às grandes empresas e auditoria dos\ngrandes devedores de impostos para que estes quitem integralmente suas\nobrigações;\n6.​ Criação de frentes emergenciais de trabalho para acabar com o desemprego\ne ampliar as obras públicas de primeira necessidade para a população, como\nsaneamento e urbanização;\n7.​ Fortalecer e ampliar os quadros da Empresa de Obras Públicas do Estado\ndo Rio de Janeiro (EMOP), tornando-a vetor central do setor de construção\ncivil do estado;\n8.​ Fortalecer e ampliar o CEASA (Central de Abastecimento do Estado do Rio\nde Janeiro), acabando com as indicações eleitoreiras para a diretoria e\ndando mais representação aos pequenos produtores agrícolas e feirantes;\n9.​ Gestão democrática do Estado com eleição dos dirigentes das estatais pelos\ntrabalhadores das próprias estatais, acabando com as indicações eleitoreiras\ne proibindo agentes ligados ou que já tenham tido ligação com os bancos\nprivados de participarem da gestão dessas empresas;\n10.​Defender no plano nacional a Petrobrás 100% Estatal e a retomada do setor\nda construção naval no Rio de Janeiro;\n\n5"
+          },
+          {
+            "id": "11-apoio-a-economia-popular-e-aos-pequenos-comerciantes-especialmente-na",
+            "titulo": "11.​ Apoio à economia popular e aos pequenos comerciantes, especialmente nas",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "11.​ Apoio à economia popular e aos pequenos comerciantes, especialmente nas\ncomunidades e bairros pobres, com crédito popular fornecido por um banco\nestatal estadual;\n12.​Política de Crédito Estatal para micro e pequenos empresários;\n13.​Garantia de renda mínima para a população com um programa social que\nutilize o Sistema Único de Assistência Social como forma de acompanhar e\napoiar famílias em situação de miséria;\n14.​Fim da perseguição aos camelôs. Autorização do trabalho no metrô;\n15.​Ampliação da rede de restaurantes populares;\nSEGURANÇA PÚBLICA\n16.​\n\nDesmilitarização das polícias e da guardas municipais;\n\n17.​\n\nFormar rede de casas-abrigo para mulheres em situação de violência e\nvulnerabilidade, oferecendo apoio multiprofissional às vítimas de violência\ndoméstica, violência sexual, violência obstétrica e assédio moral,\nfortalecendo a rede de apoio junto às organizações feministas;\n\n18.​\n\nMudança nos critérios de seleção e treinamento de novos policiais, com\nenfoque nos direitos humanos, não letalidade, antirracismo e feminismo;\n\n19.​\n\nAcabar com as operações militares e policiais violentas nas comunidades,\nsubstituindo-as por ações de inteligência em todo o estado, com forte\nfiscalização e controle das armas e munições em controle do governo\nestadual;\n\n20.​\n\nAtrelar o atendimento de requisitos de direitos humanos e sociais à\nprogressão nas carreiras policiais, desestimulando a valorização da\ntruculência policial;\n\n21.​\n\nReformulação dos atuais CCS (Conselhos Comunitários de Segurança):\nfunções novas para que se transformem em assembleias populares\ndedicadas à Segurança Popular. Cada CCS será formado por um corpo\nadministrativo composto por servidores públicos concursados (assistentes\nsociais, sociólogos, antropólogos, psicólogos, educadores), cidadãos e\ncidadãs voluntários/as, organizações locais da sociedade civil e associações\n\n6"
+          },
+          {
+            "id": "comunitarias-todos-com-representacao-e-direito-a-voto-nas-reunioes",
+            "titulo": "comunitárias, todos com representação e direito a voto nas reuniões",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "comunitárias, todos com representação e direito a voto nas reuniões\nperiódicas;\n22.​\n\nTransformar as penitenciárias e cadeias em Unidades de Reeducação\nPopular. Serão centros para a formação, acompanhamento psicossocial e\nprofissionalização de pessoas em conflito com a lei;\n\n23.​\n\nBuscar parcerias e convênios com empresas, associações de bairro e ONGs\npara viabilizar a ressocialização real das pessoas em conflito com a lei. O\ngoverno do estado dará atenção e oportunidades de emprego para todos/as\nos condenados/as que se destacarem nos processos formativos das\n\n24.​\n\nUnidades de Educação Popular;\nSubstituição do DEGASE pela Comissária da Juventude, nova instituição que\nbuscará aplicar verdadeiramente as medidas socioeducativas e integradoras\nprevistas no ECA, mantendo a atual estrutura do DEGASE sob a alçada da\nSecretaria de Educação;\n\n25.​\n\nTrabalhar junto às polícias Federal e Rodoviária Federal para investigar,\nperseguir e prender os verdadeiros criminosos de alta periculosidade do Rio\nde Janeiro. Eles não são moradores de comunidade, mas pessoas com\ncargos públicos, empresários, políticos e policiais corruptos que se escondem\natrás de privilégios e de negócios de fachada;\n\n26.​\n\nEnfrentamento direto e diário às milícias. Afastamento imediato de qualquer\nservidor da segurança que tenha suspeita de ligação com milícias;\n\nSAÚDE PÚBLICA\n27.​Retomada da administração direta da saúde pública pelo Estado, encerrando\ne auditando os contratos com as OS (Organizações Sociais) e punindo\npossíveis casos de corrupção;\n28.​Realização de concursos públicos para saúde e recomposição de orçamento\npara a área;\n29.​Criação de entidade pública de pesquisa e produção de vacinas e\nmedicamentos, articulada com as instituições de Ciência, Tecnologia e\nInovação estabelecidas no Estado;\n\n7"
+          },
+          {
+            "id": "30-criacao-de-laboratorio-farmaceutico-do-estado-do-rio-de-janeiro-para",
+            "titulo": "30.​Criação de Laboratório Farmacêutico do Estado do Rio de Janeiro para a",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "30.​Criação de Laboratório Farmacêutico do Estado do Rio de Janeiro para a\nprodução de remédio a baixo custo para a população;\n31.​Valorização profissional: garantir aumentos anuais a todos os servidores da\nsaúde, plano de cargos e carreiras para os servidores, fim dos contratos\nterceirizados para atividades-meio, com contratação direta também de\npessoal para áreas de limpeza, segurança, maqueiros etc.\n32.​Criação de uma rede de apoio à saúde mental para a população, ampliando\na capacidade de atendimento dos CAPS (Centro de Atenção Psicossocial),\ndisponibilizando equipes de profissionais da área para visitar as instituições\nde ensino públicas e realizando campanhas permanentes sobre o tema;\n33.​Universalização do saneamento básico em todo o estado para diminuir os\níndices de doenças evitáveis, que ainda se proliferam devido à falta de\ntratamento de água e esgoto;\n34.​Garantia de atendimento primário e Saúde da Família em todas as cidades;\n35.​Intervir junto ao Governo Federal para garantir a abertura de todos os leitos\nda rede federal de hospitais, exigindo concursos públicos federais para\natender a demanda de pessoal;\nEDUCAÇÃO\n36.​ Defesa da educação pública, gratuita, laica e de qualidade;\n37.​ Garantir o cumprimento efetivo da Lei do Grêmio Livre;\n38.​ Garantir o livre acesso dos estudantes da rede pública de educação às\nescolas técnicas e universidades estaduais com ampliação da rede;\n39.​ Erradicar o analfabetismo completo e funcional em um ano;\n40.​ Desmilitarização imediata das escolas da rede estadual de educação do Rio\nde Janeiro. Fim do programa de escolas cívico-militares e da presença de\nPMs dentro das escolas;\n41.​ Lutar pela reabertura das unidades escolares fechadas, abertura de novas\nescolas e expansão das vagas nas escolas e universidades até garantir a\nuniversalização de todo ensino básico e superior;\n42.​ Criar um observatório da política educacional fluminense para acompanhar\nas ofensivas do capital e desenvolver estratégias de defesa da educação\n8"
+          },
+          {
+            "id": "publica-nesse-sentido-propomos-acabar-com-os-investimentos-publicos-em",
+            "titulo": "pública. Nesse sentido, propomos acabar com os investimentos públicos em",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "pública. Nesse sentido, propomos acabar com os investimentos públicos em\nfundações e outras instituições privadas. O dinheiro público deve ir para a\neducação pública!\n43.​ Defender a criação de um plano de carreira unificado dos profissionais de\neducação da rede pública de educação básica, das escolas técnicas e\nuniversidades estaduais do Rio de Janeiro. Nesse sentido, queremos a\nrealização de concursos públicos para a elevada demanda de profissionais\nde educação e o fim da política de contratações temporárias e terceirização;\n44.​ Instituir a Política Estadual de Auxílio-permanência Estudantil tanto para\nestudantes da educação básica como do ensino superior. Construção de\nalojamentos\n\nestudantis\n\nnas\n\nproximidades\n\ndas\n\nescolas\n\ntécnicas\n\ne\n\nuniversidades estaduais;\n45.​ Ampliar gradualmente o Ensino Integral para 100% das escolas da rede\npública estadual até 2030;\n46.​ Revisar a política de alimentação escolar, priorizando produtores locais da\nagricultura familiar, garantindo alimentos de qualidade e livres de agrotóxicos\npara a comunidade escolar e fomentando a economia local, com a inclusão\nde opções vegetarianas;\n47.​ Manutenção obrigatória das 12 disciplinas (Artes, Educação Física, Língua\nPortuguesa, Língua Estrangeira, Biologia, Física, Química, Matemática,\nFilosofia, Geografia, História e Sociologia) na grade curricular das instituições\nque ofertam o ensino médio e suas modalidades no estado do Rio de\nJaneiro. Revogação da aplicação do Novo Ensino Médio no RJ;\n48.​ Ampliar e interiorizar as universidades públicas estaduais com a instalação\nde campi em municípios no interior do estado do Rio de Janeiro,\ndemocratizando e levando ensino, pesquisa e extensão para toda a\npopulação;\n49.​ Reverter o fechamento sistemático de turmas e escolas que ofertam o\nensino noturno. Manutenção, em todas as escolas, de turmas para\natendimento da classe trabalhadora, bem como a manutenção da Educação\nde Jovens e Adultos (EJA).\n\n9"
+          },
+          {
+            "id": "50-instituir-uma-politica-de-abono-de-ponto-para-as-os-profissionais-da",
+            "titulo": "50.​ Instituir uma política de abono de ponto para as/os profissionais da",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "50.​ Instituir uma política de abono de ponto para as/os profissionais da\neducação em atividades de formação continuada;\n51.​ Instituir convênios entre a Secretaria Estadual de Educação e as Instituições\nPúblicas de Ensino do Estado do Rio de Janeiro para a promoção de\natividades de formação continuada gratuitas para as/os profissionais da\neducação;\n52.​ Instituir convênios entre a Secretaria Estadual de Educação e as Instituições\nPúblicas de Ensino do Estado do Rio de Janeiro para a garantia de reserva\nde vagas para as/os profissionais da educação nos Programas de\nPós-Graduação Stricto Sensu;\nHABITAÇÃO, MOBILIDADE URBANA E DIREITO À CIDADE\n51.​ Garantir a gestão democrática e o controle social do estado como formas de\nplanejar, produzir e governar coletivamente o espaço urbano. Criação e\npromoção do Conselho Estadual das Cidades;\n52.​ Promover uma profunda Reforma Urbana que democratize o espaço das\ncidades. Garantir que imóveis e terrenos desocupados sejam destinados à\neliminação do déficit habitacional. Fim dos despejos;\n53.​ Investir na construção de casas populares por meio de cooperativas de\ntrabalhadores e mutirões. O Governo do Estado deve parar de dar dinheiro\npara grandes empreiteiras e oferecer capacitação técnica, por meio de\nconvênios com entidades profissionais e instituições de ensino, para que o\npróprio povo construa suas residências. As unidades habitacionais também\npodem ser projetadas de maneira sustentável, utilizando tecnologias já\ncomprovadas, como tijolo ecológico e energia solar;\n54.​ Realizar a regularização fundiária de unidades habitacionais em favelas,\nocupações e bairros populares para garantir o direito humano à moradia,\nassim como um programa de apoio e financiamento de reformas nas casas;\n55.​ Ampliar vagas em creches e escolas públicas, em tempo integral, para\ngarantir que todas as crianças tenham seu direito à educação respeitado e\npara que as mães consigam estudar e trabalhar.\n\n10"
+          },
+          {
+            "id": "56-administracao-estatal-com-controle-popular-dos-trens-e-metros-reducao",
+            "titulo": "56.​ Administração Estatal com controle popular dos trens e metrôs. Redução de",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "56.​ Administração Estatal com controle popular dos trens e metrôs. Redução de\n50% das passagens em todos os transportes em janeiro de 2027 e\nimplementação da Política de Bilhete Único Intermodal e Intermunicipal;\n57.​ Implementar o passe-livre intermunicipal para os estudantes de todas as\nséries e etapas do ensino, inclusive de instituições de ensino superior\npúblicas;\n58.​ Ampliar a malha ferroviária e metroviária por meio das frentes emergenciais\nde trabalho e fortalecimento da EMOP;\n59.​ Garantir a chegada do metrô à Baixada Fluminense, Niterói e São Gonçalo.\nDiminuição nos intervalos de circulação dos trens urbanos;\nCULTURA E JUVENTUDE\n60.​\n\nCriação da Agência Estadual do Primeiro Emprego, com banco de dados de\nempregos específicos para a juventude, especialmente para juventude\nperiférica. Ênfase nos setores mais promissores da economia fluminense,\nespecialmente o turismo, a cultura, petróleo e gás, o setor naval e a\neconomia sustentável;\n\n61.​\n\nPromoção de política voltada para prevenção de gravidez na adolescência e\nproteção para as jovens mães, através do estabelecimento de políticas de\npermanência para as mães nas escolas e universidades públicas;\n\n62.​\n\nValorização da cultura de favela e periférica! Reconhecimento do Funk, Rap\ne demais produções culturais das periferias como patrimônio imaterial.\nGarantia do direito à livre expressão dessas manifestações culturais.\nImplementação de uma política de fomento à cultura de favela, através da\ndivulgação de editais e da garantia da utilização e expansão dos aparelhos\nculturais;\n\n63.​\n\nDefesa da vida da Juventude Negra! Pelo fim da violência policial nas favelas\ne periferias. Implementação imediata de câmeras nos uniformes dos policiais\ne fim das operações policiais nas favelas;\n\n64.​\n\nPela promoção da prática esportiva entre a juventude! Fomento a federações\ne ligas esportivas. Melhorias da infraestrutura nas escolas, praças públicas,\nvilas olímpicas e ciclovias. Apoio às entidades estudantis e atléticas\n\n11"
+          },
+          {
+            "id": "universitarias-para-realizacao-de-jogos-estudantis-no-estado",
+            "titulo": "universitárias para realização de jogos estudantis no estado;",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "universitárias para realização de jogos estudantis no estado;\n65.​\n\nAmpliação da representação da sociedade civil no Conselho Estadual da\nJuventude. Mudança de caráter do conselho, que terá caráter deliberativo e\nservirá de apoio para criação de políticas públicas para a juventude.\nAmpliação de recursos destinados ao Funjovem (Fundo Estadual de\nJuventude do Estado do Rio de Janeiro) e realização da Conferência\nEstadual da Juventude, com ampla divulgação e participação de coletivos e\nentidades que representam a juventude;\n\n66.​\n\nApoio a pré-vestibulares populares através de incentivos fiscais, auxílio para\nalocação de espaços e doação de materiais;\n\n67.​\n\nRealização de parcerias com as universidades públicas e privadas e escolas\ntécnicas para a realização de um grande programa de estágios no serviço\npúblico estadual através da reserva de vagas nesse setor;\n\nDIREITOS HUMANOS\n68.​\n\nUnificar todas as políticas públicas relacionadas aos Direitos Humanos em\numa Secretaria com foco único (hoje a pasta é compartilhada com a pasta de\ndesenvolvimento social, que administra a parte de SUAS, Sistema Único de\nAssistência Social, de competência estadual). Promover campanhas\neducativas permanentes e em massa sobre esses quatro eixos.\n\n69.​\n\nAssegurar a liberdade religiosa, especialmente a promoção do respeito às\nreligiões de matriz afro-brasileira (candomblé e umbanda). Ter como\nprioridade o enfrentamento por parte do governo dos crimes de intolerância\nreligiosa contra essas religiões;\n\n70.​\n\nCombater o racismo e punir os racistas será uma das prioridades do governo,\ntanto dentro das instituições do estado como na sociedade em geral;\n\n71.​\n\nEfetivar as Leis 10.639/2003 e 11.645/08, que asseguram o ensino de\nHistória e Cultura Africana, Afro-brasileira e Indígena em todas as escolas da\nrede estadual.\n\n72.​\n\nCriar casas-abrigo para membros da comunidade LGBTIA+ vítimas de\nexclusão familiar, seja por processo de violência física ou psicológica, de\nmodo que não fiquem desamparados e contem com apoio multiprofissional.\n\n12"
+          },
+          {
+            "id": "assegurar-o-uso-do-nome-social-em-todos-os-formularios-protocolos-e",
+            "titulo": "Assegurar o uso do nome social em todos os formulários, protocolos e",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Assegurar o uso do nome social em todos os formulários, protocolos e\ndemais atos no âmbito da administração estadual para pessoas transgênero\ne não binárias;\n73.​\n\nTer como centro no atendimento à população LGBTIA+ a formação\neducacional e profissional e o combate à pobreza e miséria, em especial à\npopulação trans, garantindo acesso a empregos de qualidade;\n\n74.​\n\nOrganizar a acessibilidade em todos os espaços públicos e cobrar o\ncumprimento das diretrizes nos espaços privados, no sentido de garantir o\npleno acesso das pessoas com deficiência à cidade;\n\n75.​\n\nPromover a educação inclusiva como parte do sistema de educação do\nestado, com a inserção de pessoas com deficiência nas turmas regulares da\neducação básica e superior;\n\n76.​\n\nFacilitar o ingresso da mulher ao mercado de trabalho, garantindo acesso à\neducação e capacitação profissional gratuita;\n\n77.​\n\nGarantir o debate de gênero nas escolas voltado ao combate ao machismo.\nAmpliação e efetivo funcionamento da rede de enfrentamento à violência\ncontra a mulher com mais equipamentos de atendimento e acolhimento das\nvítimas. Para a implementação dessas propostas é importante que o estado\npromova parcerias com os movimentos sociais;\n\n78.​\n\nTer no enfrentamento a violência obstétrica uma das prioridades da política\nde saúde das pessoas grávidas;\n\n79.​\n\nImplementação de todas as medidas e recomendações previstas no Relatório\nFinal da Comissão Nacional da Verdade, documento da alçada do poder\npúblico estadual;\n\n80.​\n\nApresentar Projeto de Lei para retirada de estátuas, nomes de ruas, praças,\nescolas e demais logradouros e equipamentos municipais que homenageiam\npersonalidades racistas, escravocratas, fascistas e integrantes dos governos\ne órgãos de repressão da Ditadura Militar.\n\n13"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "c0ceb19df07a892fc5195908f329e8d75ec6501e7730ba255eb8d459aee96570"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "cec69761e16f2ec5b0fe0ef69868d6a5d5dfd2871884712b65c23851d4337f16"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "d7574e0e7014e7f9dffd7fd3d63946d66789f8d7db211e64c37a7e3a679cd0aa"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0aa2cce8b0e9e311abd6c2a1e2a5014669fd5a10d7cc54632162f2bd9eb3fc28"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "3546ab024620dc20df6e2505f03cc0c7bc3668bd8fe0befddd138c76a4346394"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ad02330fc7a1430c76ee977251dd5482bde289c5f404b15e4d40ce7ffe513b70"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "a6ac079c17923f24ad7ce915efce6104c60d8706c8f91b5a57f36106f620ad7c"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a0b60def1d80f07a3fb35d7afc1d60a634089dd9f11ee1e2a0808bb3bf1fe13f"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "7e4e4ecfb26ccdd8a1fd595fd6a00e2faa4a01b1ecc0c797603bee86162236cb"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c2ccf6abcab29d7ebfdb0bbb46818fa42e3a2bd696283b3279f273973b8ef48b"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9792f5ff405c18438371296d6896155aa842576e8f8003e95a71087cba9f60e8"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "9be7ac2b5ff46c64a4a3eccba8ca4240d9a31f13f7e8caadd0e09840bc570178"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "79f7ef747d11976431d8bd10f5b46fecc209d1ee5629b07eaa4309f132d946a6"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a suspensão da dívida pública estadual para realizar auditoria das obrigações mantidas com entes estatais e privados, conforme sua primeira proposta econômica. No setor elétrico, o documento propõe a reestatização da energia elétrica como medida de reorganização da prestação desse serviço no estado. Na segurança pública, prevê a desmilitarização das polícias e das guardas municipais como alteração institucional do modelo de segurança estadual. Na saúde pública, propõe a criação de entidade estadual dedicada à pesquisa e à produção de vacinas e medicamentos para atendimento da população. Na educação, defende a oferta pública, gratuita, laica e de qualidade como diretriz para o sistema educacional do Rio de Janeiro. Na habitação, planeja a regularização fundiária de unidades habitacionais situadas em favelas, ocupações e bairros populares, vinculada ao direito humano à moradia. Na mobilidade urbana, propõe a administração estatal dos trens e metrôs sob controle popular, conforme a proposta apresentada no capítulo sobre direito à cidade.",
+    "frases": [
+      {
+        "texto": "O programa prevê a suspensão da dívida pública estadual para realizar auditoria das obrigações mantidas com entes estatais e privados, conforme sua primeira proposta econômica.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 5,
+            "trecho": "Realizar a suspensão e uma auditoria da dívida pública do estado do Rio de Janeiro com entes estatais e privados"
+          }
+        ]
+      },
+      {
+        "texto": "No setor elétrico, o documento propõe a reestatização da energia elétrica como medida de reorganização da prestação desse serviço no estado.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 5,
+            "trecho": "a reestatização da energia elétrica"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, prevê a desmilitarização das polícias e das guardas municipais como alteração institucional do modelo de segurança estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 6,
+            "trecho": "Desmilitarização das polícias e da guardas municipais"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, propõe a criação de entidade estadual dedicada à pesquisa e à produção de vacinas e medicamentos para atendimento da população.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 7,
+            "trecho": "Criação de entidade pública de pesquisa e produção de vacinas e medicamentos"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, defende a oferta pública, gratuita, laica e de qualidade como diretriz para o sistema educacional do Rio de Janeiro.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 8,
+            "trecho": "Defesa da educação pública, gratuita, laica e de qualidade"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, planeja a regularização fundiária de unidades habitacionais situadas em favelas, ocupações e bairros populares, vinculada ao direito humano à moradia.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 10,
+            "trecho": "Realizar a regularização fundiária de unidades habitacionais em favelas, ocupações e bairros populares para garantir o direito humano à moradia"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade urbana, propõe a administração estatal dos trens e metrôs sob controle popular, conforme a proposta apresentada no capítulo sobre direito à cidade.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 11,
+            "trecho": "Administração Estatal com controle popular dos trens e metrôs"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "divida-publica",
+        "titulo": "Dívida pública",
+        "descricao": "Suspensão da dívida pública estadual para auditoria das obrigações.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 5,
+            "trecho": "Realizar a suspensão e uma auditoria da dívida pública do estado do Rio de Janeiro com entes estatais e privados"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Desmilitarização das polícias e das guardas municipais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 6,
+            "trecho": "Desmilitarização das polícias e da guardas municipais"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Criação de entidade pública para pesquisa e produção de vacinas e medicamentos.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 7,
+            "trecho": "Criação de entidade pública de pesquisa e produção de vacinas e medicamentos"
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Defesa da educação pública, gratuita, laica e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 8,
+            "trecho": "Defesa da educação pública, gratuita, laica e de qualidade"
+          }
+        ]
+      },
+      {
+        "id": "habitacao-popular",
+        "titulo": "Habitação popular",
+        "descricao": "Regularização fundiária de unidades habitacionais em bairros populares.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002547272:01",
+            "pagina": 10,
+            "trecho": "Realizar a regularização fundiária de unidades habitacionais em favelas, ocupações e bairros populares para garantir o direito humano à moradia"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:40:56.014Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:43:05.910Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma suspensão e auditoria da dívida com entes estatais e privados, item 1 da lista."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: dívida pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:1:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta de reestatização da energia elétrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco em único tema: energia elétrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:2:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula sobre energia elétrica coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:3:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde à criação de entidade pública nesse propósito."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: saúde pública/entidade de vacinas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:4:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:5:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:6:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a proposta, presente na seção sobre habitação, mobilidade e direito à cidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: mobilidade urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:frase:7:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:divida-publica:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:seguranca-publica:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:saude-publica:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:educacao-publica:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002547272:tema:habitacao-popular:documentos:RJ:190002547272:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RJ:190002547272",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RJ:190002547272:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 26054,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2624,
+          "reasoning_output_tokens": 1477
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23697,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20681,
+          "output_tokens_details": {
+            "thinking_tokens": 1018
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23697,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20681,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23697,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23697
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.32040740000000006
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "be2238356a70992f9ddd20ef35ba0783daaf890d52bfd20d566302cee667efcf",
+    "extractedTextSha256": "320001bd7dfbb53d7d515d924d78c53524f316949c38e5d939b393a9044e2bf7",
+    "documentCount": 1,
+    "documentSetSha256": "d2fcb4483fb1e4935210c863a645e8c73bc982bb007b97ef70678eb7dacd48de",
+    "contentSha256": "0fbf7b5544d184bff9335ee89587dc3ab12a6223c86e836787ce069be693d631"
+  }
+}

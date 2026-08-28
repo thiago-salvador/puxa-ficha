@@ -1,0 +1,1800 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002548388",
+    "slug": "ravenna-castro",
+    "nomeUrna": "RAVENNA DA INCLUSÃO",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026PI180002548388_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002548388_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002548388:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002548388_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002548388_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "684d0e4560de3b2ac80e1aef69f581f37a33ba01215bc2011d8a850adb8aeb1e",
+        "extractedTextSha256": "20c0a1cfbb242c18a439b4f53d90232bbdea3d574d0d38b6f61bc76826d77692",
+        "paginas": 80,
+        "secoes": [
+          {
+            "id": "programa-de-governo",
+            "titulo": "PROGRAMA DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO\nRAVENNA CASTRO\n“a Ravenna da Inclusão”\nCandidata ao Governo do Estado do Piauí\n\nDEMOCRATA PIAUI 35\n\n2027–2030"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Piauí vive um momento decisivo de sua história. Nosso Estado reúne\nriquezas naturais, localização estratégica, um povo trabalhador e enorme\npotencial econômico, mas ainda convive com desigualdades sociais,\ndificuldades de acesso aos serviços públicos e diferenças marcantes entre as\nregiões.\nEste Programa de Governo nasce do compromisso de construir um Piauí\nmais justo, desenvolvido, inclusivo e eficiente. É um plano fundamentado na\nresponsabilidade com os recursos públicos, no respeito às pessoas e na\nconvicção de que governar é servir.\nNosso projeto foi elaborado para atender às necessidades reais da população,\npromovendo desenvolvimento econômico aliado à justiça social,\nvalorizando a saúde, a educação, a segurança, a inclusão, a geração de\nempregos e o fortalecimento dos municípios.\nComo mulher, mãe atípica e defensora da inclusão, assumo o compromisso\nde governar com sensibilidade, planejamento e firmeza, colocando as\npessoas no centro das decisões e garantindo que nenhuma região e nenhum\ncidadão fiquem para trás.\nEste documento apresenta os princípios, objetivos e ações que orientarão\nnossa gestão entre 2027 e 2030, buscando transformar o Piauí em referência\nnacional em qualidade de vida, desenvolvimento sustentável e gestão\npública."
+          },
+          {
+            "id": "mensagem-da-candidata",
+            "titulo": "MENSAGEM DA CANDIDATA",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "MENSAGEM DA CANDIDATA\n\nGovernar é cuidar das pessoas.\nAcredito que um Estado forte não é aquele que apenas arrecada mais, mas\naquele que oferece oportunidades, protege quem mais precisa e administra\ncom honestidade, eficiência e transparência.\nNosso governo terá como prioridade reduzir desigualdades, fortalecer os\nmunicípios, modernizar os serviços públicos e garantir que cada piauiense\ntenha acesso à saúde, educação, segurança e oportunidades de crescimento.\nQueremos um Piauí que valorize sua gente, incentive quem produz, acolha\nas famílias e respeite a diversidade.\nNosso compromisso é com um governo humano, técnico e responsável,\ncapaz de transformar desafios em oportunidades e construir um futuro\nmelhor para todas as regiões do Estado."
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n\nCapítulo 1 – Saúde, Vida e Qualidade de Vida\nCapítulo 2 – Inclusão, Pessoa com Deficiência e Famílias Atípicas\nCapítulo 3 – Educação, Ciência, Cultura e Esporte\nCapítulo 4 – Segurança Pública e Defesa Social\nCapítulo 5 – Desenvolvimento Econômico, Trabalho e Renda\nCapítulo 6 – Infraestrutura, Mobilidade e Desenvolvimento Regional\nCapítulo 7 – Agricultura, Meio Ambiente e Recursos Hídricos\nCapítulo 8 – Desenvolvimento Social e Direitos Humanos\nCapítulo 9 – Gestão Pública, Transparência e Inovação\nCapítulo 10 – Plano Estratégico de Governo e Metas para os Primeiros\n100 Dias"
+          },
+          {
+            "id": "capitulo-1",
+            "titulo": "CAPÍTULO 1",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 1\nSAÚDE, VIDA E QUALIDADE DE VIDA\n1.1 Introdução\nA saúde será a prioridade absoluta do Governo Ravenna Castro, a Ravenna\nda Inclusão.\nO direito à saúde deve ser assegurado de forma universal, integral e\nhumanizada. Nosso compromisso é reduzir filas, ampliar o acesso aos\nserviços especializados, fortalecer a atenção básica em parceria com os\nmunicípios e descentralizar o atendimento para todas as regiões do Estado.\nO Governo promoverá investimentos estruturantes, modernização da gestão,\nvalorização dos profissionais e ampliação da rede pública, garantindo\natendimento digno, eficiente e de qualidade para toda a população.\nA política estadual de saúde será organizada em cinco grandes pilares:\n\n\nacesso rápido aos serviços;\n\n\n\nregionalização da assistência;\n\n\n\nprevenção e promoção da saúde;\n\n\n\ninovação tecnológica;\n\n\n\nhumanização do atendimento.\n\n1.2 Programa Saúde Sem Espera\nSerá implantado o maior programa estadual de redução das filas do SUS da\nhistória do Piauí.\nObjetivos\n\n\nreduzir drasticamente o tempo de espera para consultas, exames e\ncirurgias;\n\n\n\ninformatizar completamente a Central Estadual de Regulação;\n\n\n\ncriar mutirões permanentes de cirurgias eletivas;\n\n\n\nampliar contratos com hospitais públicos, filantrópicos e privados\nconveniados;\n\n\n\nacompanhar digitalmente cada paciente na fila."
+          },
+          {
+            "id": "o-cidadao-podera-acompanhar-sua-posicao-na-fila-por-aplicativo-e-portal",
+            "titulo": "O cidadão poderá acompanhar sua posição na fila por aplicativo e portal",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "O cidadão poderá acompanhar sua posição na fila por aplicativo e portal\neletrônico, garantindo transparência e previsibilidade.\n1.3 Regionalização da Saúde\nA concentração dos serviços especializados em Teresina gera custos elevados\ne dificulta o acesso da população do interior.\nNosso governo fortalecerá a regionalização por meio de:\n\n\nampliação dos hospitais regionais;\n\n\n\ncriação de policlínicas especializadas;\n\n\n\nimplantação de centros regionais de diagnóstico por imagem;\n\n\n\nfortalecimento do transporte sanitário;\n\n\n\nexpansão da telemedicina.\n\nCada território de desenvolvimento contará com capacidade crescente para\natendimento de média e alta complexidade.\n\n1.4 Hospitais Regionais\nOs hospitais estaduais passarão por um amplo programa de modernização.\nSerão priorizados:\n\n\nreforma e ampliação da infraestrutura;\n\n\n\nrenovação dos equipamentos;\n\n\n\nampliação dos leitos clínicos e de UTI;\n\n\n\ninformatização hospitalar;\n\n\n\nmelhoria da hotelaria hospitalar;\n\n\n\nfortalecimento das maternidades.\n\nCada unidade terá metas assistenciais e indicadores públicos de desempenho."
+          },
+          {
+            "id": "1-5-centro-de-referencia-e-apoio-a-saude-mental-prefeito-firmino",
+            "titulo": "1.5 Centro de referência e apoio à Saúde Mental \"Prefeito Firmino",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "1.5 Centro de referência e apoio à Saúde Mental \"Prefeito Firmino\nFilho\"\nSerá criada a primeira clínica estadual especializada em depressão, ansiedade\ne prevenção ao suicídio além de ser referencia em apoio a saúde mental de\nfamílias atípicas e de PCDs.\nA unidade oferecerá:\n\n\natendimento multiprofissional;\n\n\n\npsiquiatria;\n\n\n\npsicologia;\n\n\n\nterapia ocupacional;\n\n\n\nserviço social;\n\n\n\nacolhimento familiar;\n\n\n\nreabilitação psicossocial.\n\nO Centro atuará em formato de clínica e atuará também como centro de\npesquisa e formação em saúde mental.\n\n1.6 Rede Estadual de Saúde Mental\nO Governo ampliará e integrará toda a rede de atenção psicossocial.\nAs principais ações incluem:\n\n\nfortalecimento dos CAPS;\n\n\n\natendimento especializado para crianças e adolescentes;\n\n\n\nampliação da assistência a dependentes químicos;\n\n\n\nprogramas de prevenção ao suicídio;\n\n\n\napoio psicossocial às escolas;\n\n\n\nacolhimento às famílias.\n\n1.7 Saúde da Mulher\nA política estadual de saúde da mulher será fortalecida por meio de:\n\n\nampliação do pré-natal de alto risco;"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "\n\ncombate à mortalidade materna;\n\n\n\nprevenção do câncer de mama e colo do útero;\n\n\n\nplanejamento reprodutivo;\n\n\n\nclimatério e menopausa;\n\n\n\natenção integral à saúde feminina.\n\n1.8 Saúde da Criança\nAs crianças terão prioridade absoluta.\nSerão ampliados:\n\n\nacompanhamento do desenvolvimento infantil;\n\n\n\nvacinação;\n\n\n\ntriagem neonatal;\n\n\n\natendimento neuropediátrico;\n\n\n\nreabilitação infantil;\n\n\n\nprogramas de combate à desnutrição.\n\n1.9 Pessoa com Deficiência\nA saúde da pessoa com deficiência será tratada de forma integrada.\nO Governo implantará:\n\n\ncentros regionais de reabilitação;\n\n\n\nampliação da oferta de órteses e próteses;\n\n\n\ndiagnóstico precoce;\n\n\n\nfisioterapia especializada;\n\n\n\nterapia ocupacional;\n\n\n\nfonoaudiologia;\n\n\n\ntecnologia assistiva."
+          },
+          {
+            "id": "1-10-familias-atipicas",
+            "titulo": "1.10 Famílias Atípicas",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "1.10 Famílias Atípicas\nSerá criado o Programa família forte, oferecendo:\n\n\nacolhimento psicológico;\n\n\n\norientação jurídica;\n\n\n\nassistência social;\n\n\n\ncapacitação profissional;\n\n\n\nintegração entre saúde, educação e assistência social.\n\nAs famílias atípicas terão prioridade na formulação das políticas públicas\nestaduais.\n\n1.11 Programa Estadual de Combate à Obesidade – \"Piauí Leve e\nSaudável\"\nA obesidade é uma das maiores crises de saúde pública da atualidade,\naumentando significativamente o risco de diabetes, hipertensão, doenças\ncardiovasculares, AVC, alguns tipos de câncer e comprometendo a qualidade\ne a expectativa de vida da população. O Governo do Estado implementará\num programa permanente de prevenção, diagnóstico e tratamento da\nobesidade, reconhecendo-a como uma doença crônica que exige atendimento\nmultidisciplinar e acesso ao tratamento adequado.\nO programa contemplará:\n\n\nImplantação de Centros de Referência em Obesidade em todas as\nregiões do Estado, com atendimento integrado por médicos,\nendocrinologistas, nutricionistas, psicólogos, educadores físicos,\nfisioterapeutas e demais profissionais de saúde.\n\n\n\nCriação de linhas de cuidado específicas para crianças, adolescentes e\nadultos com sobrepeso e obesidade.\n\n\n\nAmpliação do acesso à prática de atividade física por meio de\nacademias populares, programas comunitários e incentivo à adoção de\nhábitos saudáveis.\n\n\n\nCampanhas permanentes de educação alimentar e prevenção da\nobesidade nas escolas, unidades de saúde e meios de comunicação.\n\n\n\nAcompanhamento contínuo\ndos\npacientes,\ncom\nindividualizadas para redução de peso e melhoria da saúde.\n\nmetas"
+          },
+          {
+            "id": "acesso-aos-medicamentos-modernos-para-tratamento-da-obesidade",
+            "titulo": "Acesso aos medicamentos modernos para tratamento da obesidade",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Acesso aos medicamentos modernos para tratamento da obesidade\nO Governo do Estado buscará, em conformidade com as diretrizes do\nSistema Único de Saúde (SUS), as evidências científicas disponíveis e a\nlegislação vigente, ampliar o acesso aos tratamentos medicamentosos mais\neficazes para pacientes com indicação clínica.\nSerão adotadas medidas para viabilizar, mediante critérios médicos,\nprotocolos clínicos e avaliação socioeconômica, a oferta gratuita de\nmedicamentos modernos para tratamento da obesidade, inclusive\naqueles à base de tirzepatida (como o Mounjaro®), quando incorporados\nàs políticas públicas competentes ou disponibilizados por programas\nestaduais legalmente instituídos, priorizando pacientes em situação de\nvulnerabilidade econômica que não tenham condições de arcar com o custo\ndo tratamento.\nO Estado também atuará junto ao Ministério da Saúde para defender a\nampliação da incorporação de terapias inovadoras para o tratamento da\nobesidade no SUS, garantindo que avanços científicos cheguem à população\nque mais precisa.\nObjetivo: reduzir os índices de obesidade no Piauí, prevenir doenças\nassociadas, diminuir internações e proporcionar mais qualidade de vida,\nsaúde e dignidade aos piauienses\n\n1.12 Programa Estadual \"Piauí sorridente\"\n\nA saúde bucal é parte essencial da saúde, da autoestima, da inclusão social e\nda dignidade humana. Milhares de piauienses convivem com a perda de\ndentes por falta de acesso ao tratamento odontológico, o que compromete a\nalimentação, a fala, a empregabilidade e a qualidade de vida. O Governo do\nEstado implantará o Programa Estadual Piauí sorridente, voltado à\nprevenção, reabilitação oral e ampliação do acesso à odontologia\nespecializada.\nO programa contemplará:\n\n\nAmpliação da rede pública de atendimento\nespecializado em todas as regiões do Piauí.\n\nodontológico\n\n\n\nOferta gratuita de próteses dentárias totais e parciais para pessoas em\nsituação de vulnerabilidade social."
+          },
+          {
+            "id": "pagina-11",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "\n\nImplantação gradual de um programa estadual de implantes dentários\npara pacientes com perda dentária, conforme critérios clínicos,\nprioridade social e disponibilidade orçamentária.\n\n\n\nAmpliação dos Centros de Especialidades Odontológicas (CEOs),\nreduzindo o tempo de espera para cirurgias, tratamentos de canal,\nperiodontia e reabilitação oral.\n\n\n\nMutirões permanentes de saúde bucal nos municípios, levando\natendimento especializado às comunidades mais distantes.\n\n\n\nAtendimento prioritário para idosos, pessoas com deficiência,\npacientes oncológicos, vítimas de violência, pessoas com fissuras\nlabiopalatinas e demais grupos em situação de maior vulnerabilidade.\n\n\n\nPrograma estadual de prevenção nas escolas, com ações educativas,\naplicação de flúor, avaliação odontológica periódica e distribuição de\nkits de higiene bucal.\n\n\n\nCapacitação permanente dos profissionais da rede pública e\nmodernização dos equipamentos odontológicos.\n\nReabilitação Oral e Combate à Perda Dentária\nO Governo desenvolverá uma política pública permanente de combate ao\nedentulismo (perda de dentes), reconhecendo que recuperar o sorriso\nsignifica devolver saúde, dignidade, oportunidades de trabalho e qualidade\nde vida.\nSerão promovidas ações integradas para garantir diagnóstico precoce,\ntratamento das doenças bucais, preservação dos dentes naturais e acesso à\nreabilitação oral completa, incluindo próteses e, quando clinicamente\nindicados e observados os critérios técnicos e a disponibilidade da política\npública, implantes dentários para pacientes que não possuam condições\nfinanceiras de custear o tratamento.\nObjetivo: reduzir significativamente o número de piauienses sem dentes,\nampliar o acesso aos tratamentos odontológicos especializados e garantir que\nnenhuma pessoa deixe de sorrir, se alimentar adequadamente ou buscar uma\noportunidade de trabalho por falta de condições de cuidar da própria saúde\nbucal."
+          },
+          {
+            "id": "1-13-assistencia-farmaceutica",
+            "titulo": "1.13 Assistência Farmacêutica",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "1.13 Assistência Farmacêutica\nO Governo ampliará a disponibilidade de medicamentos essenciais.\nAs ações incluem:\n\n\ninformatização dos estoques;\n\n\n\ndistribuição regionalizada;\n\n\n\ncombate ao desabastecimento;\n\n\n\nfortalecimento da Farmácia de Medicamentos Especializados.\n\n1.14 Metas do Capítulo\nAo final do mandato, o Governo buscará:\n\n\nreduzir significativamente o tempo de espera por consultas, exames e\ncirurgias;\n\n\n\nampliar a capacidade dos hospitais regionais;\n\n\n\nimplantar a o Centro de Referência e apoio a Saúde Mental;\n\n\n\nfortalecer a Rede Estadual de Saúde Mental;\n\n\n\nexpandir os serviços de reabilitação para pessoas com deficiência;\n\n\n\ngarantir atendimento mais humanizado e regionalizado em todo o\nEstado.\n\nCAPÍTULO 2\nINCLUSÃO, PESSOA COM DEFICIÊNCIA, FAMÍLIAS ATÍPICAS E\nACESSIBILIDADE\n\n\"Uma sociedade verdadeiramente desenvolvida é aquela em que todas\nas pessoas têm oportunidades, autonomia, dignidade e respeito.\"\n\n2.1 INTRODUÇÃO\nA inclusão será uma política transversal de todo o Governo Ravenna Castro,\na Ravenna da Inclusão"
+          },
+          {
+            "id": "mais-do-que-cumprir-a-legislacao-nosso-compromisso-e-construir-um-estado",
+            "titulo": "Mais do que cumprir a legislação, nosso compromisso é construir um Estado",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Mais do que cumprir a legislação, nosso compromisso é construir um Estado\nonde nenhuma pessoa seja excluída por possuir uma deficiência, por sua\ncondição de saúde, por limitações de mobilidade, por transtornos do\nneurodesenvolvimento ou por qualquer outra condição que dificulte sua\nplena participação na sociedade.\nO Governo do Estado atuará para garantir igualdade de oportunidades,\nacessibilidade, autonomia, respeito aos direitos humanos e participação\nsocial.\nAs políticas públicas voltadas às pessoas com deficiência, às famílias\natípicas e às pessoas com doenças raras deixarão de ser ações isoladas e\npassarão a integrar permanentemente todas as áreas da administração\npública.\n\n2.2 PLANO ESTADUAL DE INCLUSÃO\nSerá instituído o Plano Estadual de Inclusão da Pessoa com Deficiência,\ncom vigência permanente, estabelecendo metas, indicadores e ações\nintegradas entre todas as secretarias estaduais.\nO plano contemplará:\n\n\nsaúde;\n\n\n\neducação;\n\n\n\nassistência social;\n\n\n\ntrabalho e renda;\n\n\n\nesporte;\n\n\n\ncultura;\n\n\n\nmobilidade;\n\n\n\nhabitação;\n\n\n\nsegurança pública;\n\n\n\ntecnologia.\n\nTodas as políticas serão avaliadas periodicamente por indicadores de\ndesempenho e participação da sociedade civil."
+          },
+          {
+            "id": "2-3-secretaria-estadual-da-inclusao",
+            "titulo": "2.3 SECRETARIA ESTADUAL DA INCLUSÃO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "2.3 SECRETARIA ESTADUAL DA INCLUSÃO\nSerá fortalecida a estrutura administrativa específica para coordenar as\npolíticas públicas voltadas às pessoas com deficiência, famílias atípicas e\nacessibilidade.\nCompete à Secretaria:\n\n\ncoordenar políticas intersetoriais;\n\n\n\nacompanhar programas estaduais;\n\n\n\ncaptar recursos nacionais e internacionais;\n\n\n\npromover capacitação permanente;\n\n\n\nfiscalizar a execução das políticas de inclusão;\n\n\n\nfortalecer a participação das entidades representativas.\n\n2.4 CASA DA INCLUSÃO\nSerá implantada a Casa da Inclusão, um espaço estadual de atendimento\nintegrado às pessoas com deficiência e suas famílias.\nEm um único local serão ofertados:\n\n\natendimento multiprofissional;\n\n\n\nassistência social;\n\n\n\norientação jurídica;\n\n\n\nemissão de documentos;\n\n\n\nencaminhamento para benefícios;\n\n\n\napoio psicológico;\n\n\n\norientação educacional;\n\n\n\ncapacitação profissional.\n\nO objetivo é reduzir a burocracia e oferecer atendimento humanizado.\n\n2.5 CENTRO ESTADUAL DA PESSOA COM DEFICIÊNCIA\nSerá criado o maior centro especializado do Estado para atendimento às\npessoas com deficiência."
+          },
+          {
+            "id": "a-unidade-contara-com",
+            "titulo": "A unidade contará com:",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "A unidade contará com:\n\n\nfisioterapia;\n\n\n\nterapia ocupacional;\n\n\n\nfonoaudiologia;\n\n\n\npsicologia;\n\n\n\nneuropediatria;\n\n\n\nortopedia;\n\n\n\nneurologia;\n\n\n\noftalmologia;\n\n\n\naudiologia;\n\n\n\nreabilitação física;\n\n\n\nreabilitação intelectual;\n\n\n\nreabilitação auditiva;\n\n\n\nreabilitação visual.\n\nTambém funcionará como centro de pesquisa, formação profissional e\ninovação em tecnologia assistiva.\n\n2.6 PRIMEIRA INFÂNCIA E DIAGNÓSTICO PRECOCE\nO diagnóstico precoce melhora significativamente a qualidade de vida das\ncrianças.\nNosso Governo ampliará:\n\n\ntriagem neonatal;\n\n\n\nrastreamento do desenvolvimento infantil;\n\n\n\navaliação multidisciplinar;\n\n\n\nacompanhamento neuropediátrico;\n\n\n\nintervenção precoce;"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "\n\norientação familiar.\n\nA prioridade será reduzir o tempo entre a suspeita clínica e o início do\ntratamento.\n\n2.7 AUTISMO, TDAH E NEURODIVERSIDADE\nSerá implantada uma política estadual permanente de atenção às pessoas\nneurodivergentes.\nAs ações incluem:\n\n\nampliação dos centros especializados;\n\n\n\natendimento multiprofissional;\n\n\n\nprotocolos estaduais de diagnóstico;\n\n\n\napoio às famílias;\n\n\n\nformação continuada dos profissionais;\n\n\n\nintegração entre saúde e educação.\n\nO Estado atuará para garantir atendimento digno desde a primeira infância\naté a vida adulta.\n\n2.8 PROGRAMA FAMÍLIA FORTE\nAs famílias atípicas enfrentarão menos burocracia e mais acolhimento.\nO Programa Mãe Forte oferecerá:\n\n\nacolhimento psicológico;\n\n\n\norientação jurídica;\n\n\n\nassistência social;\n\n\n\nqualificação profissional;\n\n\n\ngrupos de apoio;\n\n\n\nincentivo ao empreendedorismo;\n\n\n\nfortalecimento da autonomia financeira.\n\nO programa reconhecerá o papel das famílias como parceiras fundamentais\ndo desenvolvimento das pessoas com deficiência."
+          },
+          {
+            "id": "2-9-educacao-inclusiva",
+            "titulo": "2.9 EDUCAÇÃO INCLUSIVA",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "2.9 EDUCAÇÃO INCLUSIVA\nToda criança tem direito à aprendizagem.\nO Governo fortalecerá:\n\n\nsalas de recursos multifuncionais;\n\n\n\nprofissionais de apoio escolar;\n\n\n\ncapacitação de professores;\n\n\n\nacessibilidade física;\n\n\n\nacessibilidade pedagógica;\n\n\n\ntecnologia assistiva;\n\n\n\ntransporte escolar acessível.\n\nNenhum estudante ficará fora da escola por falta de estrutura.\n\n2.10 ACESSIBILIDADE UNIVERSAL\nTodos os investimentos públicos estaduais observarão os princípios do\ndesenho universal.\nSerão promovidas ações para:\n\n\nadaptação dos prédios públicos;\n\n\n\ncalçadas acessíveis;\n\n\n\nsinalização tátil;\n\n\n\nsemáforos sonoros;\n\n\n\nelevadores;\n\n\n\nrampas;\n\n\n\nbanheiros acessíveis;\n\n\n\ncomunicação acessível.\n\nO Governo buscará tornar o Piauí referência nacional em acessibilidade.\n\n2.11 TECNOLOGIA ASSISTIVA"
+          },
+          {
+            "id": "sera-criado-o-programa-estadual-de-tecnologia-assistiva",
+            "titulo": "Será criado o Programa Estadual de Tecnologia Assistiva.",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Será criado o Programa Estadual de Tecnologia Assistiva.\nSerão ampliados o acesso a:\n\n\ncadeiras de rodas;\n\n\n\npróteses;\n\n\n\nórteses;\n\n\n\naparelhos auditivos;\n\n\n\nrecursos ópticos;\n\n\n\nsoftwares acessíveis;\n\n\n\ncomunicação alternativa;\n\n\n\nequipamentos de autonomia.\n\nTambém serão estimuladas pesquisas em inovação tecnológica para\ninclusão.\n2.12 EMPREGO, RENDA E EMPREENDEDORISMO\nA inclusão somente será completa quando houver independência econômica.\nO Governo implantará políticas para:\n\n\nqualificação profissional;\n\n\n\nempreendedorismo inclusivo;\n\n\n\nmicrocrédito;\n\n\n\ncooperativas;\n\n\n\nincentivo às empresas inclusivas;\n\n\n\napoio ao trabalhador com deficiência.\n\nTambém serão ampliadas parcerias com o setor produtivo para geração de\noportunidades.\n\n2.13 ESPORTE, CULTURA E LAZER\nO esporte e a cultura são instrumentos de inclusão.\nSerão fortalecidos:"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "\n\ncentros esportivos adaptados;\n\n\n\nprogramas de paradesporto;\n\n\n\nfestivais culturais inclusivos;\n\n\n\nincentivo aos atletas paralímpicos;\n\n\n\nacessibilidade em eventos públicos;\n\n\n\nprogramas de lazer acessível.\n\n2.14 DOENÇAS RARAS\nSerá implantada uma política estadual específica para pessoas com doenças\nraras.\nAs ações incluem:\n\n\ndiagnóstico precoce;\n\n\n\natendimento especializado;\n\n\n\naconselhamento genético;\n\n\n\nreabilitação;\n\n\n\nacesso a medicamentos;\n\n\n\napoio às famílias.\n\n2.15 DIREITOS HUMANOS E PARTICIPAÇÃO SOCIAL\nO Governo fortalecerá os Conselhos Estaduais da Pessoa com Deficiência e\nincentivará a participação ativa da sociedade civil na formulação e\nfiscalização das políticas públicas.\nSerão ampliados os canais de diálogo entre governo, entidades\nrepresentativas e população.\n\nMETAS DO CAPÍTULO\nAté o final do mandato, o Governo buscará:\n\n\ninstituir o Plano Estadual de Inclusão;"
+          },
+          {
+            "id": "pagina-20",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "\n\nimplantar a Casa da Inclusão e o Centro Estadual da Pessoa com\nDeficiência;\n\n\n\nampliar os serviços de diagnóstico precoce e reabilitação;\n\n\n\nfortalecer a educação inclusiva em todas as regiões;\n\n\n\nexpandir o acesso à tecnologia assistiva;\n\n\n\npromover acessibilidade em todos os órgãos estaduais;\n\n\n\nampliar oportunidades de trabalho e empreendedorismo para pessoas\ncom deficiência;\n\n\n\nconsolidar uma política permanente de apoio às famílias atípicas.\n\nCONCLUSÃO\nA inclusão não será tratada como uma política setorial, mas como um\ncompromisso permanente de governo. Todas as secretarias estaduais atuarão\nde forma integrada para assegurar igualdade de oportunidades, autonomia,\nrespeito às diferenças e participação plena das pessoas com deficiência e de\nsuas famílias.\nO Governo Ravenna Castro, Ravenna da Inclusão, fará da inclusão um dos\npilares da administração pública, construindo um Piauí onde cada cidadão\nseja reconhecido por suas capacidades e tenha garantido o direito de viver\ncom dignidade, segurança e independência.\n\nCAPÍTULO 3\nEDUCAÇÃO, CIÊNCIA, TECNOLOGIA, CULTURA E ESPORTE\n\"A educação é o caminho mais seguro para reduzir desigualdades,\npromover cidadania e transformar o futuro do Piauí.\"\n\n3.1 INTRODUÇÃO\nA educação será um dos principais instrumentos de desenvolvimento do\nGoverno Ravenna Castro, Ravenna da Inclusão.\nNosso compromisso é garantir ensino público de qualidade, valorização dos\nprofissionais, inovação tecnológica, inclusão, permanência dos estudantes na\nescola e preparação da juventude para os desafios do século XXI."
+          },
+          {
+            "id": "a-politica-educacional-sera-construida-em-parceria-com-os-municipios",
+            "titulo": "A política educacional será construída em parceria com os municípios,",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "A política educacional será construída em parceria com os municípios,\nuniversidades, institutos federais, iniciativa privada e sociedade civil,\npromovendo uma educação moderna, inclusiva e voltada para resultados.\nO Governo compreenderá a educação como uma política permanente de\nEstado, integrando conhecimento, ciência, tecnologia, cultura, esporte e\ncidadania.\n\n3.2 PRIMEIRA INFÂNCIA\nOs primeiros anos de vida são decisivos para o desenvolvimento humano.\nO Governo fortalecerá as políticas voltadas à primeira infância por meio de:\n\n\nampliação da oferta de creches;\n\n\n\nmelhoria da educação infantil;\n\n\n\nformação continuada dos profissionais;\n\n\n\nintegração entre saúde, educação e assistência social;\n\n\n\nacompanhamento do desenvolvimento infantil;\n\n\n\nestímulo à participação das famílias.\n\n\n\nAmpliação de oferta de creche/escola em tempo integral\n\n3.3 ENSINO FUNDAMENTAL\nEm parceria com os municípios, serão desenvolvidas políticas para elevar a\nqualidade do ensino fundamental.\nAs prioridades incluem:\n\n\nalfabetização na idade certa;\n\n\n\nfortalecimento da leitura e da escrita;\n\n\n\nrecuperação da aprendizagem;\n\n\n\nredução da evasão escolar;\n\n\n\nmelhoria do desempenho em avaliações educacionais;\n\n\n\nincentivo às disciplinas de matemática, ciências e tecnologia.\n\n\n\nAmpliação de oferta de escola em tempo integral"
+          },
+          {
+            "id": "serao-implantados-programas-permanentes-de-reforco-escolar-e",
+            "titulo": "Serão implantados programas permanentes de reforço escolar e",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Serão implantados programas permanentes de reforço escolar e\nacompanhamento individualizado dos estudantes.\n\n3.4 ENSINO MÉDIO\nO ensino médio será fortalecido para preparar os jovens para o ensino\nsuperior, o mercado de trabalho e o empreendedorismo.\nAs ações incluem:\n\n\nampliação do ensino integral;\n\n\n\nmodernização curricular;\n\n\n\norientação profissional;\n\n\n\nincentivo ao protagonismo juvenil;\n\n\n\nfortalecimento dos itinerários formativos;\n\n\n\npreparação para o ENEM e vestibulares.\n\n\n\nAmpliação de oferta de escola em tempo integral\n\nO Estado ampliará programas de bolsas, monitorias e atividades\nextracurriculares.\n\n3.5 EDUCAÇÃO TÉCNICA E PROFISSIONAL\nO desenvolvimento econômico exige mão de obra qualificada.\nO Governo expandirá a rede estadual de educação profissional com cursos\nalinhados às vocações econômicas de cada região.\nSerão priorizadas áreas como:\n\n\ntecnologia da informação;\n\n\n\nenergias renováveis;\n\n\n\nagronegócio;\n\n\n\nturismo;\n\n\n\nlogística;"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "\n\nconstrução civil;\n\n\n\nsaúde;\n\n\n\nindústria.\n\nA política de educação profissional será integrada aos programas estaduais\nde geração de emprego e renda.\n3.6 EDUCAÇÃO INCLUSIVA\nA inclusão será princípio permanente da política educacional.\nO Governo garantirá:\n\n\nprofissionais de apoio escolar;\n\n\n\nsalas de recursos multifuncionais;\n\n\n\nmateriais acessíveis;\n\n\n\ntecnologia assistiva;\n\n\n\nacessibilidade arquitetônica;\n\n\n\ncapacitação continuada dos educadores;\n\n\n\natendimento educacional especializado.\n\nNenhum estudante será excluído do processo educacional por falta de\nestrutura.\n3.7 VALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO\nA qualidade da educação depende da valorização dos seus profissionais.\nSerão desenvolvidas políticas para:\n\n\nformação continuada;\n\n\n\nqualificação tecnológica;\n\n\n\nincentivo à inovação pedagógica;\n\n\n\nmelhoria das condições de trabalho;\n\n\n\nsaúde ocupacional;\n\n\n\nfortalecimento da gestão escolar."
+          },
+          {
+            "id": "o-governo-buscara-permanente-dialogo-com-os-profissionais-da-educacao",
+            "titulo": "O Governo buscará permanente diálogo com os profissionais da educação",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "O Governo buscará permanente diálogo com os profissionais da educação\npara aperfeiçoar as políticas públicas.\n\n3.8 ESCOLA DO FUTURO\nSerá implantado o programa Escola do Futuro, modernizando a rede\nestadual de ensino.\nEntre as ações previstas estão:\n\n\nlaboratórios de informática;\n\n\n\ninternet de alta velocidade;\n\n\n\nsalas inteligentes;\n\n\n\nplataformas digitais;\n\n\n\nbibliotecas modernas;\n\n\n\nlaboratórios de ciências;\n\n\n\neducação financeira;\n\n\n\nrobótica;\n\n\n\nprogramação;\n\n\n\ninteligência artificial aplicada à educação.\n\nO objetivo é preparar os estudantes para as profissões do futuro.\n3.9 ENSINO SUPERIOR\nO Governo fortalecerá o ensino superior público por meio de parcerias\ninstitucionais e incentivo à pesquisa.\nSerão ampliadas iniciativas de:\n\n\nbolsas de estudo;\n\n\n\niniciação científica;\n\n\n\nextensão universitária;\n\n\n\ninovação tecnológica;\n\n\n\nempreendedorismo acadêmico;"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "\n\nintegração entre universidades e setor produtivo.\n\nO conhecimento produzido nas instituições de ensino superior será utilizado\npara apoiar o desenvolvimento do Estado.\n\n3.10 CIÊNCIA, TECNOLOGIA E INOVAÇÃO\nA inovação será tratada como política estratégica de desenvolvimento.\nAs ações incluem:\n\n\nincentivo à pesquisa científica;\n\n\n\napoio às startups;\n\n\n\ncriação de ambientes de inovação;\n\n\n\nfortalecimento dos parques tecnológicos;\n\n\n\natração de empresas de base tecnológica;\n\n\n\nampliação da economia digital.\n\nSerá criado o Programa Piauí Inovador, incentivando soluções\ntecnológicas para os desafios da administração pública e do setor produtivo.\n\n3.11 INCLUSÃO DIGITAL\nA transformação digital exige acesso universal à tecnologia.\nO Governo ampliará:\n\n\ninternet nas escolas;\n\n\n\ndistribuição de equipamentos tecnológicos conforme programas\nespecíficos;\n\n\n\nplataformas educacionais digitais;\n\n\n\nformação em competências digitais;\n\n\n\ninclusão tecnológica das comunidades mais vulneráveis.\n\nA democratização do acesso à internet será prioridade para reduzir\ndesigualdades educacionais.\n\n3.12 CULTURA"
+          },
+          {
+            "id": "a-cultura-fortalece-a-identidade-do-povo-piauiense-e-impulsiona-a-econom",
+            "titulo": "A cultura fortalece a identidade do povo piauiense e impulsiona a economia",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "A cultura fortalece a identidade do povo piauiense e impulsiona a economia\ncriativa.\nO Governo desenvolverá políticas para:\n\n\nvalorização dos artistas locais;\n\n\n\npreservação do patrimônio histórico;\n\n\n\nincentivo às manifestações culturais;\n\n\n\nfortalecimento dos editais públicos;\n\n\n\ninteriorização das ações culturais;\n\n\n\nformação artística.\n\nSerá ampliado o acesso da população às atividades culturais em todas as\nregiões do Estado.\n3.13 ESPORTE\nO esporte será reconhecido como instrumento de educação, inclusão e\npromoção da saúde.\nAs ações incluem:\n\n\nconstrução e recuperação de espaços esportivos;\n\n\n\nincentivo ao esporte escolar;\n\n\n\nfortalecimento do paradesporto;\n\n\n\napoio aos atletas de alto rendimento;\n\n\n\nprogramas comunitários de atividade física;\n\n\n\nincentivo às modalidades olímpicas e paralímpicas.\n\n3.14 JUVENTUDE\nOs jovens terão papel central na construção do futuro do Estado.\nSerão implantadas políticas voltadas para:\n\n\nqualificação profissional;\n\n\n\nempreendedorismo;"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "\n\ninovação;\n\n\n\ncultura;\n\n\n\nesporte;\n\n\n\nparticipação cidadã;\n\n\n\nprevenção à violência.\n\nO Governo incentivará programas de liderança juvenil e voluntariado.\n\n3.15 GESTÃO EDUCACIONAL\nA gestão da educação será orientada por planejamento, transparência e\navaliação permanente.\nSerão adotadas medidas para:\n\n\nmodernização administrativa;\n\n\n\nmonitoramento de indicadores;\n\n\n\nfortalecimento da gestão escolar;\n\n\n\nintegração de sistemas;\n\n\n\ntransparência dos resultados;\n\n\n\nparticipação das comunidades escolares.\n\nMETAS DO CAPÍTULO\n\nAo final do mandato, o Governo buscará:\n\n\nampliar a oferta de ensino integral;\n\n\n\nfortalecer a alfabetização e a recuperação da aprendizagem;\n\n\n\nexpandir a educação profissional em todas as regiões;\n\n\n\nuniversalizar o acesso à internet nas escolas estaduais;\n\n\n\nmodernizar a infraestrutura da rede de ensino;\n\n\n\nfortalecer a educação inclusiva;"
+          },
+          {
+            "id": "pagina-28",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "\n\nincentivar a pesquisa científica e a inovação;\n\n\n\nampliar o acesso da população à cultura e ao esporte;\n\n\n\npromover maior integração entre educação, desenvolvimento\neconômico e tecnologia.\n\nCONCLUSÃO\nO Governo Ravenna Castro, Ravenna da Inclusão, acredita que a educação\né o principal investimento para transformar o Piauí. Por isso, fará da escola\num espaço de aprendizagem, inclusão, inovação e cidadania, formando\ncrianças, jovens e adultos preparados para construir um Estado mais\ndesenvolvido, competitivo e socialmente justo.\nA integração entre educação, ciência, tecnologia, cultura e esporte permitirá\nampliar oportunidades, reduzir desigualdades e impulsionar o\ndesenvolvimento sustentável, assegurando que cada piauiense tenha\ncondições de desenvolver plenamente seus talentos e contribuir para o\ncrescimento do Estado.\n\nCAPÍTULO 4\nSEGURANÇA PÚBLICA, DEFESA SOCIAL E PROTEÇÃO DO\nCIDADÃO\n\"Segurança pública se faz com inteligência, valorização dos\nprofissionais, tecnologia, prevenção e presença do Estado.\"\n\n4.1 INTRODUÇÃO\nGarantir segurança é garantir liberdade.\nNenhuma sociedade se desenvolve plenamente quando a população vive\ncom medo da violência. O Governo Ravenna Castro compreende que a\nsegurança pública deve ser tratada como uma política permanente de Estado,\nbaseada na integração entre prevenção, repressão qualificada, inteligência\npolicial, tecnologia e valorização dos profissionais."
+          },
+          {
+            "id": "nosso-compromisso-e-fortalecer-todas-as-instituicoes-do-sistema-estadual",
+            "titulo": "Nosso compromisso é fortalecer todas as instituições do Sistema Estadual de",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Nosso compromisso é fortalecer todas as instituições do Sistema Estadual de\nSegurança Pública, ampliar a capacidade de investigação, combater as\norganizações criminosas e aproximar as forças de segurança da população.\nA política estadual será desenvolvida em parceria com o Governo Federal,\nmunicípios, Poder Judiciário, Ministério Público, Defensoria Pública e\nsociedade civil.\n\n4.2 POLÍCIA MILITAR MAIS FORTE\nA Polícia Militar continuará sendo a principal força de policiamento\nostensivo do Estado.\nO Governo promoverá:\n\n\nrecomposição gradual do efetivo;\n\n\n\nmodernização das viaturas;\n\n\n\naquisição de equipamentos de proteção individual;\n\n\n\nrenovação do armamento;\n\n\n\nexpansão do policiamento motorizado;\n\n\n\nfortalecimento da Polícia Comunitária;\n\n\n\nampliação das Bases Integradas de Segurança.\n\nSerá implantado um plano permanente de capacitação e atualização\nprofissional.\n4.3 FORTALECIMENTO DA POLÍCIA CIVIL\nA investigação criminal será modernizada para aumentar a resolução de\ncrimes.\nSerão priorizados:\n\n\nampliação do efetivo de delegados, investigadores e peritos;\n\n\n\nmodernização das delegacias;\n\n\n\ninformatização dos inquéritos;\n\n\n\nfortalecimento da perícia criminal;\n\n\n\nampliação das delegacias especializadas;\n\n\n\ncriação de núcleos regionais de inteligência."
+          },
+          {
+            "id": "o-governo-investira-em-tecnologia-para-acelerar-investigacoes-e-reduzir",
+            "titulo": "O Governo investirá em tecnologia para acelerar investigações e reduzir a",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "O Governo investirá em tecnologia para acelerar investigações e reduzir a\nimpunidade.\n\n4.4 POLÍCIA CIENTÍFICA\nA produção de provas técnicas fortalece a Justiça e reduz erros processuais.\nSerão ampliados:\n\n\nlaboratórios periciais;\n\n\n\nperícia digital;\n\n\n\nmedicina legal;\n\n\n\nidentificação criminal;\n\n\n\nbalística;\n\n\n\ngenética forense.\n\nA Polícia Científica contará com equipamentos modernos e atuação\nregionalizada.\n\n4.5 CORPO DE BOMBEIROS MILITAR\nO Corpo de Bombeiros terá sua estrutura fortalecida para ampliar a proteção\nda população.\nSerão desenvolvidas ações voltadas para:\n\n\ncombate a incêndios urbanos e florestais;\n\n\n\nsalvamento aquático;\n\n\n\ndefesa civil;\n\n\n\natendimento pré-hospitalar;\n\n\n\nprevenção de desastres naturais;\n\n\n\neducação preventiva.\n\nNovas unidades serão implantadas conforme critérios técnicos e regionais.\n\n4.6 COMBATE AO CRIME ORGANIZADO"
+          },
+          {
+            "id": "o-enfrentamento-as-organizacoes-criminosas-sera-prioridade-permanente",
+            "titulo": "O enfrentamento às organizações criminosas será prioridade permanente.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "O enfrentamento às organizações criminosas será prioridade permanente.\nO Governo ampliará:\n\n\ninteligência policial;\n\n\n\nintegração entre forças estaduais e federais;\n\n\n\ncombate ao tráfico de drogas;\n\n\n\ncombate ao tráfico de armas;\n\n\n\ncombate à lavagem de dinheiro;\n\n\n\noperações integradas.\n\nA atuação será baseada em planejamento estratégico e compartilhamento de\ninformações.\n\n4.7 TECNOLOGIA NA SEGURANÇA\nSerá implantado o Programa Piauí Seguro Digital, modernizando a\nsegurança pública.\nEntre as ações estão:\n\n\nvideomonitoramento inteligente;\n\n\n\nreconhecimento de placas veiculares;\n\n\n\nmonitoramento por drones;\n\n\n\nintegração de bancos de dados;\n\n\n\ncentros de comando e controle;\n\n\n\nanálise criminal baseada em inteligência artificial.\n\nA tecnologia será utilizada para prevenir crimes e aumentar a eficiência\noperacional.\n\n4.8 SEGURANÇA NAS ESCOLAS\nAs escolas estaduais devem ser ambientes seguros e acolhedores.\nSerão implantadas medidas como:\n\n\nprogramas de prevenção à violência;"
+          },
+          {
+            "id": "pagina-32",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "\n\npatrulhamento escolar;\n\n\n\ncapacitação de gestores;\n\n\n\nacompanhamento psicossocial;\n\n\n\ncombate ao bullying;\n\n\n\nprevenção ao uso de drogas.\n\nA integração entre educação, assistência social e segurança será fortalecida.\n4.9 PROTEÇÃO À MULHER\nO combate à violência contra a mulher será prioridade do Governo.\nSerão ampliadas:\n\n\nDelegacias Especializadas de Atendimento à Mulher;\n\n\n\nCasas de Acolhimento;\n\n\n\nPatrulha Maria da Penha;\n\n\n\natendimento psicológico e jurídico;\n\n\n\nprogramas de autonomia financeira das vítimas;\n\n\n\ncampanhas permanentes de conscientização.\n\nO Estado atuará para garantir acolhimento humanizado e rápida resposta às\ndenúncias.\n4.10 PROTEÇÃO À CRIANÇA, AO IDOSO E À PESSOA COM\nDEFICIÊNCIA\nSerão fortalecidas políticas específicas de prevenção e enfrentamento à\nviolência contra grupos vulneráveis.\nAs ações incluem:\n\n\ncapacitação permanente das forças de segurança;\n\n\n\natendimento especializado;\n\n\n\nintegração com Conselhos Tutelares;\n\n\n\nfortalecimento da rede de proteção social;\n\n\n\ncombate ao abuso e à exploração."
+          },
+          {
+            "id": "a-protecao-das-pessoas-em-situacao-de-vulnerabilidade-sera-tratada-como",
+            "titulo": "A proteção das pessoas em situação de vulnerabilidade será tratada como",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "A proteção das pessoas em situação de vulnerabilidade será tratada como\nprioridade absoluta.\n\n4.11 POLÍTICAS DE PREVENÇÃO\nA segurança também depende da prevenção.\nO Governo desenvolverá programas voltados para:\n\n\nesporte e cultura em comunidades vulneráveis;\n\n\n\nqualificação profissional de jovens;\n\n\n\nprevenção ao uso de drogas;\n\n\n\nfortalecimento das famílias;\n\n\n\nmediação comunitária de conflitos.\n\nA prevenção reduzirá a violência e ampliará oportunidades para a juventude.\n\n4.12 SISTEMA PENITENCIÁRIO\nO sistema prisional será administrado com foco em segurança,\nressocialização e respeito à legislação.\nSerão priorizados:\n\n\nmodernização das unidades;\n\n\n\ncapacitação dos policiais penais;\n\n\n\neducação prisional;\n\n\n\nqualificação profissional;\n\n\n\ncombate ao crime organizado dentro dos presídios;\n\n\n\nfortalecimento da inteligência penitenciária.\n\n4.13 DEFESA CIVIL\nO Governo fortalecerá a Defesa Civil Estadual para responder com rapidez\na situações de emergência.\nAs ações incluem:"
+          },
+          {
+            "id": "pagina-34",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "\n\nmonitoramento climático;\n\n\n\nplanos de contingência;\n\n\n\ncapacitação dos municípios;\n\n\n\nprevenção de enchentes e estiagens;\n\n\n\nresposta rápida a desastres naturais.\n\n4.14 VALORIZAÇÃO DOS PROFISSIONAIS DA SEGURANÇA\nA qualidade da segurança pública depende da valorização dos seus\nprofissionais.\nSerão promovidas políticas voltadas para:\n\n\nformação continuada;\n\n\n\nsaúde física e mental;\n\n\n\napoio psicossocial;\n\n\n\nmelhoria das condições de trabalho;\n\n\n\nmodernização dos equipamentos;\n\n\n\nreconhecimento do mérito profissional.\n\n4.15 GESTÃO INTEGRADA DA SEGURANÇA\nA política estadual será baseada em gestão por resultados.\nSerão implantados:\n\n\nindicadores públicos de desempenho;\n\n\n\nintegração entre instituições;\n\n\n\nplanejamento estratégico;\n\n\n\ntransparência;\n\n\n\navaliação permanente das políticas de segurança.\n\nA população acompanhará os resultados das ações desenvolvidas pelo\nEstado."
+          },
+          {
+            "id": "metas-do-capitulo",
+            "titulo": "METAS DO CAPÍTULO",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "METAS DO CAPÍTULO\nAté o final do mandato, o Governo buscará:\n\n\nfortalecer as forças estaduais de segurança;\n\n\n\nampliar o policiamento ostensivo em todas as regiões;\n\n\n\nmodernizar a investigação criminal;\n\n\n\nexpandir o videomonitoramento inteligente;\n\n\n\nfortalecer o combate ao crime organizado;\n\n\n\nampliar a proteção às mulheres, crianças, idosos e pessoas com\ndeficiência;\n\n\n\nmodernizar o sistema penitenciário;\n\n\n\nconsolidar uma política permanente de prevenção à violência.\n\nCONCLUSÃO\nO Governo Ravenna Castro entende que segurança pública não se resume ao\ncombate ao crime. Ela exige planejamento, inteligência, tecnologia,\nintegração institucional e políticas sociais capazes de prevenir a violência\nantes que ela aconteça.\nNossa gestão trabalhará para construir um Piauí mais seguro, onde cada\ncidadão possa viver com tranquilidade, exercer seus direitos e confiar nas\ninstituições públicas. A proteção da vida, a valorização dos profissionais da\nsegurança e o fortalecimento da cidadania serão compromissos permanentes\ndeste governo.\n\nCAPÍTULO 5\nDESENVOLVIMENTO\nECONÔMICO,\nTRABALHO,\nEMPREENDEDORISMO, INDÚSTRIA, COMÉRCIO E TURISMO\n\"Nosso compromisso é construir um Piauí que gere oportunidades,\nfortaleça quem produz e transforme crescimento econômico em\nqualidade\nde\nvida\npara\ntoda\na\npopulação.\"\n5.1 INTRODUÇÃO"
+          },
+          {
+            "id": "o-desenvolvimento-economico-sera-um-dos-principais-pilares-do-governo",
+            "titulo": "O desenvolvimento econômico será um dos principais pilares do Governo",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "O desenvolvimento econômico será um dos principais pilares do Governo\nRavenna Castro.\nNosso objetivo é transformar o Piauí em um Estado competitivo, moderno,\ninovador e atrativo para investimentos, capaz de gerar empregos de\nqualidade, ampliar a renda das famílias e estimular o empreendedorismo em\ntodas as regiões.\nA política econômica será baseada em cinco princípios:\n\n\ngeração de emprego e renda;\n\n\n\nincentivo ao empreendedorismo;\n\n\n\ndesenvolvimento regional equilibrado;\n\n\n\ninovação e tecnologia;\n\n\n\nresponsabilidade ambiental.\n\nO Governo atuará como parceiro do setor produtivo, criando um ambiente\nfavorável para novos investimentos e fortalecendo os pequenos, médios e\ngrandes empreendedores.\n5.2 GERAÇÃO DE EMPREGO E RENDA\nO trabalho é o principal instrumento de inclusão social.\nSerá criado o Programa Trabalha Piauí, destinado a ampliar as\noportunidades de emprego e qualificação profissional.\nO programa contemplará:\n\n\nintermediação de mão de obra;\n\n\n\nqualificação profissional gratuita;\n\n\n\nprimeiro emprego para jovens;\n\n\n\nrecolocação profissional;\n\n\n\nincentivo à contratação de pessoas com deficiência;\n\n\n\ncapacitação para trabalhadores acima de 50 anos.\n\nO Governo atuará em parceria com empresas, instituições de ensino e\nentidades do Sistema S para aproximar trabalhadores das vagas disponíveis."
+          },
+          {
+            "id": "5-3-empreendedorismo",
+            "titulo": "5.3 EMPREENDEDORISMO",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "5.3 EMPREENDEDORISMO\nOs pequenos empreendedores movimentam a economia do Estado e geram\nmilhares de empregos.\nSerá implantado o Programa Empreende Piauí, oferecendo:\n\n\ncapacitação empresarial;\n\n\n\nconsultorias gratuitas;\n\n\n\neducação financeira;\n\n\n\nincentivo ao empreendedorismo feminino;\n\n\n\napoio às startups;\n\n\n\nincentivo ao empreendedorismo jovem.\n\nSerão fortalecidas políticas de simplificação para abertura e funcionamento\nde empresas.\n\n5.4 MICRO E PEQUENAS EMPRESAS\nAs micro e pequenas empresas terão tratamento prioritário.\nO Governo promoverá:\n\n\nredução da burocracia;\n\n\n\nincentivo às compras governamentais;\n\n\n\napoio à inovação;\n\n\n\ncapacitação gerencial;\n\n\n\nfortalecimento do crédito orientado;\n\n\n\nsimplificação dos licenciamentos.\n\nO objetivo é ampliar a sobrevivência e a competitividade dos pequenos\nnegócios.\n5.5 INDÚSTRIA\nO fortalecimento da indústria será fundamental para aumentar a geração de\nempregos e agregar valor à produção estadual.\nAs prioridades incluem:"
+          },
+          {
+            "id": "pagina-38",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "\n\natração de novas indústrias;\n\n\n\nampliação dos distritos industriais;\n\n\n\nincentivos à inovação;\n\n\n\nmodernização tecnológica;\n\n\n\nfortalecimento da indústria alimentícia;\n\n\n\nincentivo às cadeias produtivas regionais.\n\nO Governo buscará transformar matérias-primas produzidas no Estado em\nprodutos industrializados de maior valor agregado.\n\n5.6 COMÉRCIO E SERVIÇOS\nO comércio é um dos maiores empregadores do Piauí.\nSerão implantadas políticas voltadas para:\n\n\nfortalecimento do comércio local;\n\n\n\nincentivo à economia digital;\n\n\n\ncapacitação empresarial;\n\n\n\nmodernização dos centros comerciais;\n\n\n\nsimplificação tributária;\n\n\n\nestímulo ao comércio eletrônico.\n\nO Governo incentivará o crescimento dos setores de serviços, tecnologia e\neconomia criativa.\n\n5.7 TURISMO\nO turismo será tratado como uma política estratégica de desenvolvimento.\nO Governo desenvolverá o Plano Estadual de Turismo Sustentável,\nvalorizando as potencialidades de todas as regiões.\nSerão priorizados:\n\n\nSerra da Capivara;"
+          },
+          {
+            "id": "pagina-39",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "\n\nDelta do Parnaíba;\n\n\n\nlitoral piauiense;\n\n\n\nturismo religioso;\n\n\n\nturismo ecológico;\n\n\n\nturismo cultural;\n\n\n\nturismo de aventura;\n\n\n\nturismo de negócios.\n\nTambém serão realizados investimentos em infraestrutura, qualificação\nprofissional e promoção nacional e internacional dos destinos turísticos do\nEstado.\n\n5.8 ECONOMIA CRIATIVA\nA economia criativa representa uma importante fonte de geração de renda.\nO Governo incentivará:\n\n\nartesanato;\n\n\n\naudiovisual;\n\n\n\ndesign;\n\n\n\nmoda;\n\n\n\nmúsica;\n\n\n\ngastronomia;\n\n\n\nprodução cultural;\n\n\n\ndesenvolvimento de jogos digitais.\n\nSerão criados editais específicos para estimular novos empreendedores\ncriativos.\n\n5.9 CIÊNCIA, TECNOLOGIA E INOVAÇÃO\nA inovação será um diferencial competitivo para o Piauí.\nSerá criado o Programa Piauí Inovador, incentivando:"
+          },
+          {
+            "id": "pagina-40",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "\n\nincubadoras de empresas;\n\n\n\nparques tecnológicos;\n\n\n\npesquisa aplicada;\n\n\n\ninteligência artificial;\n\n\n\ntransformação digital;\n\n\n\ncidades inteligentes;\n\n\n\nstartups.\n\nO Estado buscará integrar universidades, centros de pesquisa e setor\nprodutivo.\n\n5.10 CRÉDITO E MICROCRÉDITO\nO acesso ao crédito impulsiona o crescimento econômico.\nO Governo ampliará programas de financiamento para:\n\n\nmicroempreendedores;\n\n\n\nagricultura familiar;\n\n\n\ncooperativas;\n\n\n\nmulheres empreendedoras;\n\n\n\njovens empresários;\n\n\n\npessoas com deficiência empreendedoras.\n\nAs políticas serão desenvolvidas em parceria com instituições financeiras\npúblicas e privadas.\n\n5.11 ECONOMIA VERDE\nO Piauí possui enorme potencial para liderar a economia sustentável.\nSerão incentivados investimentos em:\n\n\nenergias renováveis;\n\n\n\nhidrogênio verde;"
+          },
+          {
+            "id": "pagina-41",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "\n\nbioeconomia;\n\n\n\nreflorestamento;\n\n\n\nreciclagem;\n\n\n\neconomia circular.\n\nO desenvolvimento econômico será conciliado com a preservação ambiental.\n\n5.12 DESBUROCRATIZAÇÃO\nSerá implantado o programa Empresa Fácil Piauí.\nAs medidas incluem:\n\n\ndigitalização dos processos;\n\n\n\nintegração entre órgãos estaduais;\n\n\n\nredução dos prazos para abertura de empresas;\n\n\n\nsimplificação do licenciamento;\n\n\n\natendimento eletrônico.\n\nO objetivo é tornar o ambiente de negócios mais competitivo.\n5.13 ATRAÇÃO DE INVESTIMENTOS\nO Governo desenvolverá uma política permanente de promoção do Estado.\nSerão realizadas ações para:\n\n\nparticipação em eventos nacionais e internacionais;\n\n\n\npromoção das potencialidades econômicas do Piauí;\n\n\n\napoio aos investidores;\n\n\n\nfortalecimento das parcerias público-privadas;\n\n\n\nsegurança jurídica.\n\nO Estado atuará de forma proativa para atrair novos empreendimentos.\n\n5.14 DESENVOLVIMENTO REGIONAL"
+          },
+          {
+            "id": "o-crescimento-economico-sera-distribuido-entre-todas-as-regioes",
+            "titulo": "O crescimento econômico será distribuído entre todas as regiões.",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "O crescimento econômico será distribuído entre todas as regiões.\nCada território receberá políticas específicas conforme suas vocações\nprodutivas.\nSerão fortalecidos:\n\n\npolos industriais;\n\n\n\npolos turísticos;\n\n\n\npolos tecnológicos;\n\n\n\ncadeias agroindustriais;\n\n\n\ncomércio regional.\n\nA descentralização dos investimentos reduzirá as desigualdades entre os\nmunicípios.\n5.15 METAS DO CAPÍTULO\nAté o final do mandato, o Governo buscará:\n\n\nampliar a geração de empregos formais em todas as regiões do Estado;\n\n\n\nfortalecer micro e pequenas empresas;\n\n\n\nincentivar o empreendedorismo feminino, jovem e inclusivo;\n\n\n\natrair novos investimentos privados;\n\n\n\nampliar a participação da indústria na economia estadual;\n\n\n\nconsolidar o turismo como vetor estratégico de desenvolvimento;\n\n\n\nexpandir a economia digital e a inovação;\n\n\n\nsimplificar os processos para abertura e funcionamento de empresas;\n\n\n\nfortalecer a economia verde e a produção sustentável.\n\nCONCLUSÃO\nO Governo Ravenna Castro entende que o desenvolvimento econômico deve\nbeneficiar toda a sociedade. A geração de empregos, o fortalecimento do\nempreendedorismo, a valorização da indústria, do comércio, do turismo e da"
+          },
+          {
+            "id": "inovacao-serao-instrumentos-para-construir-um-estado-mais-prospero",
+            "titulo": "inovação serão instrumentos para construir um Estado mais próspero,",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "inovação serão instrumentos para construir um Estado mais próspero,\ncompetitivo e socialmente justo.\nNosso compromisso é criar um ambiente favorável para quem trabalha,\nproduz, investe e empreende, transformando o potencial econômico do Piauí\nem oportunidades concretas para todas as famílias piauienses, com\ncrescimento sustentável, inclusão social e desenvolvimento regional\nequilibrado.\n\nCAPÍTULO 6\n\nINFRAESTRUTURA,\nMOBILIDADE,\nREGIONAL, HABITAÇÃO E LOGÍSTICA\n\nDESENVOLVIMENTO\n\n\"O desenvolvimento do Piauí passa por estradas de qualidade, cidades\nplanejadas, infraestrutura moderna e integração entre todas as regiões\ndo Estado.\"\n6.1 INTRODUÇÃO\nO desenvolvimento econômico e social depende de uma infraestrutura\nmoderna, eficiente e sustentável.\nO Governo Ravenna Castro promoverá um amplo programa de\ninvestimentos para melhorar a mobilidade, ampliar a logística, fortalecer os\nmunicípios, reduzir desigualdades regionais e garantir infraestrutura de\nqualidade para impulsionar a economia e melhorar a vida das pessoas.\nNosso compromisso é integrar todas as regiões do Piauí, levando\ndesenvolvimento, oportunidades e qualidade de vida aos municípios.\nA política estadual será baseada em seis pilares:\n\n\ninfraestrutura moderna;\n\n\n\nmobilidade eficiente;\n\n\n\ndesenvolvimento regional equilibrado;"
+          },
+          {
+            "id": "pagina-44",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "\n\nlogística competitiva;\n\n\n\nhabitação digna;\n\n\n\nsustentabilidade ambiental.\n\n6.2 PLANO ESTADUAL DE INFRAESTRUTURA\nSerá elaborado o Plano Estadual de Infraestrutura 2027–2040,\nestabelecendo prioridades para investimentos em obras estruturantes.\nO plano contemplará:\n\n\nrodovias;\n\n\n\npontes;\n\n\n\nmobilidade urbana;\n\n\n\nlogística;\n\n\n\ninfraestrutura hídrica;\n\n\n\nenergia;\n\n\n\nconectividade digital;\n\n\n\nobras públicas estratégicas.\n\nOs investimentos serão planejados com critérios técnicos, garantindo\ncontinuidade das políticas públicas.\n6.3 RECUPERAÇÃO E PAVIMENTAÇÃO DE RODOVIAS\nO Governo implantará o maior programa de recuperação da malha viária\nestadual.\nAs ações incluem:\n\n\nrecuperação das rodovias estaduais;\n\n\n\npavimentação de novos trechos;\n\n\n\nduplicação de vias estratégicas;\n\n\n\nmanutenção permanente;\n\n\n\nsinalização horizontal e vertical;"
+          },
+          {
+            "id": "pagina-45",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "\n\nconstrução de acostamentos onde tecnicamente viáveis.\n\nAs obras priorizarão segurança, integração regional e escoamento da\nprodução.\n\n6.4 PONTES E OBRAS DE ARTE ESPECIAIS\nSerão realizados investimentos na construção, ampliação e recuperação de\npontes para melhorar a mobilidade entre municípios.\nAs ações incluem:\n\n\nnovas pontes em regiões isoladas;\n\n\n\nrecuperação estrutural de pontes existentes;\n\n\n\nsubstituição de passagens precárias;\n\n\n\nmelhoria da segurança viária.\n\nEssas obras reduzirão distâncias e fortalecerão a integração regional.\n\n6.5 MOBILIDADE URBANA\nO Governo apoiará os municípios na implantação de sistemas modernos de\nmobilidade urbana.\nSerão incentivados:\n\n\ncorredores de transporte coletivo;\n\n\n\nterminais integrados;\n\n\n\nciclovias;\n\n\n\ncalçadas acessíveis;\n\n\n\nsinalização inteligente;\n\n\n\nacessibilidade universal.\n\nA mobilidade será planejada para garantir segurança, eficiência e inclusão.\n\n6.6 HABITAÇÃO\nToda família merece viver com dignidade."
+          },
+          {
+            "id": "o-governo-fortalecera-a-politica-habitacional-por-meio-de-parcerias-com",
+            "titulo": "O Governo fortalecerá a política habitacional por meio de parcerias com o",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "O Governo fortalecerá a política habitacional por meio de parcerias com o\nGoverno Federal, municípios e iniciativa privada.\nAs prioridades incluem:\n\n\nconstrução de novas moradias;\n\n\n\nregularização fundiária;\n\n\n\nmelhorias habitacionais;\n\n\n\nurbanização de comunidades;\n\n\n\ninfraestrutura básica;\n\n\n\nacessibilidade nas habitações destinadas às pessoas com deficiência.\n\nTambém serão priorizadas famílias em situação de vulnerabilidade social.\n6.7 SANEAMENTO BÁSICO\nO acesso ao saneamento é fundamental para a saúde pública.\nO Governo atuará para ampliar:\n\n\nabastecimento de água;\n\n\n\ncoleta de esgoto;\n\n\n\ntratamento de esgoto;\n\n\n\ndrenagem urbana;\n\n\n\nmanejo de resíduos sólidos.\n\nAs ações serão desenvolvidas em parceria com municípios e\nconcessionárias, visando à universalização gradual dos serviços.\n6.8 INFRAESTRUTURA HÍDRICA\nO Piauí convive historicamente com períodos de seca e escassez hídrica.\nO Governo desenvolverá ações para:\n\n\nconstrução e recuperação de barragens;\n\n\n\nperfuração de poços;\n\n\n\nampliação de adutoras;\n\n\n\nproteção de nascentes;"
+          },
+          {
+            "id": "pagina-47",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "\n\narmazenamento de água;\n\n\n\nsegurança hídrica das comunidades rurais.\n\nA gestão dos recursos hídricos será baseada em planejamento e\nsustentabilidade.\n\n6.9 LOGÍSTICA E TRANSPORTE\nUma logística eficiente reduz custos e aumenta a competitividade.\nO Governo promoverá:\n\n\nmelhoria dos acessos rodoviários;\n\n\n\nintegração entre modais de transporte;\n\n\n\nfortalecimento da infraestrutura de cargas;\n\n\n\napoio aos polos logísticos;\n\n\n\nmelhoria das rotas de escoamento da produção.\n\nA infraestrutura logística será planejada para atender às demandas do\nagronegócio, da indústria, do comércio e do turismo.\n\n6.10 ENERGIA E TRANSIÇÃO ENERGÉTICA\nO Piauí possui grande potencial para energias renováveis.\nO Governo incentivará:\n\n\nexpansão da energia solar;\n\n\n\nenergia eólica;\n\n\n\nhidrogênio verde;\n\n\n\neficiência energética;\n\n\n\neletrificação rural;\n\n\n\ninovação no setor energético.\n\nA política energética buscará atrair investimentos e gerar empregos\nsustentáveis."
+          },
+          {
+            "id": "6-11-conectividade-digital",
+            "titulo": "6.11 CONECTIVIDADE DIGITAL",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "6.11 CONECTIVIDADE DIGITAL\nA inclusão digital é indispensável para o desenvolvimento.\nO Governo implantará o programa Piauí Conectado, com ações para:\n\n\nampliar o acesso à internet de alta velocidade;\n\n\n\nconectar escolas, hospitais e órgãos públicos;\n\n\n\napoiar municípios na expansão da infraestrutura digital;\n\n\n\nincentivar a instalação de redes de fibra óptica;\n\n\n\nreduzir desigualdades no acesso à tecnologia.\n\n6.12 DESENVOLVIMENTO REGIONAL\nO crescimento econômico deve alcançar todas as regiões do Estado.\nO Governo fortalecerá os Territórios de Desenvolvimento, estimulando\npolíticas específicas conforme as vocações locais.\nSerão incentivados:\n\n\npolos agroindustriais;\n\n\n\npolos turísticos;\n\n\n\npolos tecnológicos;\n\n\n\ncadeias produtivas regionais;\n\n\n\narranjos produtivos locais.\n\nCada região contará com planejamento próprio para estimular\ninvestimentos\ne\ngerar\nempregos.\n6.13 MUNICIPALISMO\nOs municípios são parceiros fundamentais do desenvolvimento estadual.\nO Governo adotará uma política permanente de cooperação com as\nprefeituras, baseada em:\n\n\ndiálogo institucional;\n\n\n\nassistência técnica;\n\n\n\napoio à elaboração de projetos;"
+          },
+          {
+            "id": "pagina-49",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "\n\ncapacitação de gestores;\n\n\n\ndescentralização de investimentos;\n\n\n\nfortalecimento dos consórcios intermunicipais.\n\nO objetivo é reduzir desigualdades e ampliar a capacidade administrativa dos\nmunicípios.\n\n6.14 OBRAS PÚBLICAS COM TRANSPARÊNCIA\nTodas as obras estaduais observarão critérios de planejamento, eficiência e\ncontrole social.\nSerão adotadas medidas para:\n\n\nmonitoramento digital das obras;\n\n\n\ntransparência dos contratos;\n\n\n\ndivulgação do andamento físico e financeiro;\n\n\n\nfiscalização permanente;\n\n\n\ncontrole de qualidade.\n\nA população poderá acompanhar a execução dos investimentos públicos.\n\n6.15 METAS DO CAPÍTULO\nAo final do mandato, o Governo buscará:\n\n\nrecuperar e ampliar a malha rodoviária estadual;\n\n\n\nconstruir e recuperar pontes estratégicas;\n\n\n\nampliar investimentos em habitação e regularização fundiária;\n\n\n\nexpandir o acesso ao saneamento básico;\n\n\n\nfortalecer a infraestrutura hídrica;\n\n\n\nconsolidar uma política estadual de logística;\n\n\n\nampliar a conectividade digital em todo o Estado;\n\n\n\nfortalecer o desenvolvimento regional e o municipalismo;"
+          },
+          {
+            "id": "pagina-50",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "\n\npromover obras públicas planejadas, transparentes e sustentáveis.\n\nCONCLUSÃO\nO Governo Ravenna Castro fará da infraestrutura um instrumento de\nintegração, desenvolvimento e inclusão social. Rodovias seguras, habitação\ndigna, saneamento, logística eficiente, conectividade digital e apoio aos\nmunicípios formarão a base para um Piauí mais competitivo e preparado para\no futuro.\nNossa gestão investirá em obras estruturantes com planejamento,\nresponsabilidade fiscal e transparência, garantindo que o desenvolvimento\nalcance todas as regiões do Estado e melhore a qualidade de vida da\npopulação.\nCAPÍTULO 7\nAGRICULTURA, PECUÁRIA, MEIO AMBIENTE, RECURSOS\nHÍDRICOS E DESENVOLVIMENTO RURAL\n\"Quem produz alimentos, preserva o meio ambiente e gera riqueza\nmerece apoio, segurança e oportunidades para crescer.\"\n\n7.1 INTRODUÇÃO\nO Piauí possui enorme potencial agrícola, pecuário e ambiental.\nO desenvolvimento sustentável do Estado depende da valorização do homem\ne da mulher do campo, do fortalecimento da agricultura familiar, da\nmodernização do agronegócio, da preservação ambiental e da gestão\nresponsável dos recursos naturais.\nO Governo Ravenna Castro promoverá políticas públicas voltadas ao\naumento da produção, da produtividade e da renda rural, conciliando\ncrescimento econômico com sustentabilidade ambiental.\nA política estadual será orientada pelos seguintes pilares:\n\n\nfortalecimento da agricultura familiar;\n\n\n\nincentivo ao agronegócio;\n\n\n\nsustentabilidade ambiental;"
+          },
+          {
+            "id": "pagina-51",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "\n\nsegurança hídrica;\n\n\n\ninovação tecnológica;\n\n\n\ndesenvolvimento rural inclusivo.\n\n7.2 AGRICULTURA FAMILIAR\nA agricultura familiar é responsável pela produção de grande parte dos\nalimentos consumidos pela população.\nO Governo implantará o Programa Produzir Piauí, destinado a fortalecer\nos pequenos produtores rurais por meio de:\n\n\nassistência técnica permanente;\n\n\n\ndistribuição de sementes certificadas;\n\n\n\nincentivo à mecanização agrícola;\n\n\n\nacesso ao crédito rural;\n\n\n\napoio à comercialização;\n\n\n\nfortalecimento das cooperativas e associações.\n\nTambém serão ampliadas políticas para estimular a permanência dos jovens\nno campo.\n\n7.3 AGRONEGÓCIO\nO agronegócio continuará sendo um dos motores do desenvolvimento\neconômico do Estado.\nO Governo promoverá:\n\n\nsegurança jurídica para investidores;\n\n\n\nmelhoria da infraestrutura logística;\n\n\n\napoio à exportação;\n\n\n\nincentivo à inovação tecnológica;\n\n\n\nfortalecimento das cadeias produtivas;\n\n\n\nintegração entre produção, indústria e comércio."
+          },
+          {
+            "id": "o-objetivo-e-ampliar-a-competitividade-do-setor-e-gerar-novos-empregos",
+            "titulo": "O objetivo é ampliar a competitividade do setor e gerar novos empregos.",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "O objetivo é ampliar a competitividade do setor e gerar novos empregos.\n\n7.4 PECUÁRIA\nA pecuária terá políticas específicas para elevar a produtividade e garantir\nqualidade sanitária.\nAs ações incluem:\n\n\nmelhoramento genético;\n\n\n\nfortalecimento da defesa agropecuária;\n\n\n\napoio à produção de leite;\n\n\n\nincentivo à\nsuinocultura;\n\n\n\nassistência veterinária;\n\n\n\nampliação da inspeção sanitária.\n\nbovinocultura,\n\ncaprinocultura,\n\novinocultura\n\ne\n\nO Estado apoiará produtores de pequeno, médio e grande porte.\n\n7.5 PESCA E AQUICULTURA\nO Governo incentivará o crescimento sustentável da pesca artesanal e da\naquicultura.\nSerão desenvolvidas ações voltadas para:\n\n\ncapacitação técnica;\n\n\n\nacesso ao crédito;\n\n\n\nmelhoria da infraestrutura de produção;\n\n\n\nincentivo à piscicultura;\n\n\n\napoio à comercialização;\n\n\n\nfortalecimento das colônias de pescadores.\n\nO setor será tratado como importante fonte de geração de renda e segurança\nalimentar."
+          },
+          {
+            "id": "7-6-recursos-hidricos",
+            "titulo": "7.6 RECURSOS HÍDRICOS",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "7.6 RECURSOS HÍDRICOS\nA água é patrimônio estratégico do Estado.\nSerá implantado um programa permanente de segurança hídrica\ncontemplando:\n\n\nconstrução e recuperação de barragens;\n\n\n\nampliação das adutoras;\n\n\n\nperfuração de poços;\n\n\n\nsistemas simplificados de abastecimento;\n\n\n\nproteção de nascentes;\n\n\n\nrecuperação de matas ciliares;\n\n\n\nuso racional da água.\n\nAs ações buscarão aumentar a resiliência às secas e garantir abastecimento\npara as populações urbanas e rurais.\n\n7.7 IRRIGAÇÃO\nO Governo ampliará os investimentos em irrigação para aumentar a\nprodutividade agrícola.\nAs prioridades incluem:\n\n\nincentivo à irrigação eficiente;\n\n\n\nmodernização dos perímetros irrigados;\n\n\n\napoio técnico aos produtores;\n\n\n\nuso sustentável dos recursos hídricos;\n\n\n\ntecnologias de economia de água.\n\nA irrigação será estimulada especialmente em regiões de maior potencial\nprodutivo."
+          },
+          {
+            "id": "7-8-meio-ambiente",
+            "titulo": "7.8 MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "7.8 MEIO AMBIENTE\nA preservação ambiental será tratada como compromisso permanente.\nO Governo fortalecerá políticas para:\n\n\nproteção dos biomas piauienses;\n\n\n\ncombate ao desmatamento ilegal;\n\n\n\nrecuperação de áreas degradadas;\n\n\n\npreservação da biodiversidade;\n\n\n\neducação ambiental;\n\n\n\nlicenciamento ambiental eficiente e responsável.\n\nO desenvolvimento econômico será compatível com a conservação dos\nrecursos naturais.\n\n7.9 MUDANÇAS CLIMÁTICAS\nO Estado desenvolverá estratégias para adaptação e mitigação dos impactos\ndas mudanças climáticas.\nSerão promovidas ações para:\n\n\nredução das emissões de gases de efeito estufa;\n\n\n\nreflorestamento;\n\n\n\nagricultura de baixo carbono;\n\n\n\nprevenção às queimadas;\n\n\n\nmonitoramento ambiental;\n\n\n\nincentivo às energias renováveis.\n\n7.10 ENERGIAS RENOVÁVEIS\nO Piauí possui posição estratégica na produção de energia limpa.\nO Governo incentivará investimentos em:\n\n\nenergia solar;"
+          },
+          {
+            "id": "pagina-55",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "\n\nhidrogênio verde;\n\n\n\ninovação energética.\n\nA expansão desse setor contribuirá para geração de empregos, atração de\ninvestimentos e desenvolvimento sustentável.\n\n7.11 COOPERATIVISMO E ASSOCIATIVISMO\nO fortalecimento das organizações\ncompetitividade do setor rural.\n\nde\n\nprodutores\n\naumentará\n\nSerão ampliadas políticas de apoio para:\n\n\ncooperativas;\n\n\n\nassociações comunitárias;\n\n\n\ncomercialização coletiva;\n\n\n\ncapacitação em gestão;\n\n\n\nacesso ao crédito;\n\n\n\nagregação de valor aos produtos.\n\n7.12 INSPEÇÃO E SANIDADE AGROPECUÁRIA\nA qualidade sanitária da produção será fortalecida.\nO Governo promoverá:\n\n\nampliação da fiscalização sanitária;\n\n\n\nmodernização dos serviços de inspeção;\n\n\n\ncombate às doenças animais;\n\n\n\nrastreabilidade da produção;\n\n\n\ncertificação sanitária.\n\nEssas ações ampliarão a competitividade dos produtos piauienses.\n\na"
+          },
+          {
+            "id": "7-13-pesquisa-e-inovacao-no-campo",
+            "titulo": "7.13 PESQUISA E INOVAÇÃO NO CAMPO",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "7.13 PESQUISA E INOVAÇÃO NO CAMPO\nA inovação será instrumento permanente de desenvolvimento rural.\nO Governo incentivará:\n\n\nagricultura de precisão;\n\n\n\nmecanização inteligente;\n\n\n\nbiotecnologia;\n\n\n\npesquisa agropecuária;\n\n\n\ncapacitação tecnológica;\n\n\n\nextensão rural digital.\n\nParcerias com universidades, institutos de pesquisa e setor privado serão\nfortalecidas.\n\n7.14 DESENVOLVIMENTO RURAL SUSTENTÁVEL\nO desenvolvimento do campo deve promover qualidade de vida.\nSerão ampliadas políticas para:\n\n\nmelhoria das estradas vicinais em parceria com os municípios;\n\n\n\nacesso à internet nas comunidades rurais;\n\n\n\neducação do campo;\n\n\n\nsaúde rural;\n\n\n\nhabitação rural;\n\n\n\nincentivo à permanência das famílias no campo.\n\nO Governo atuará para reduzir desigualdades entre as áreas urbanas e\nrurais.\n7.15 METAS DO CAPÍTULO\nAo final do mandato, o Governo buscará:\n\n\nfortalecer a agricultura familiar e o agronegócio;\n\n\n\nampliar o acesso ao crédito e à assistência técnica;"
+          },
+          {
+            "id": "pagina-57",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "\n\nexpandir os sistemas de irrigação;\n\n\n\nfortalecer a pecuária e a pesca;\n\n\n\nampliar investimentos em segurança hídrica;\n\n\n\nproteger os recursos naturais e os biomas piauienses;\n\n\n\nincentivar energias renováveis e economia sustentável;\n\n\n\nmodernizar a defesa agropecuária;\n\n\n\npromover desenvolvimento\nsustentabilidade.\n\nrural\n\ncom\n\ninclusão\n\nsocial\n\ne\n\nCONCLUSÃO\nO Governo Ravenna Castro entende que o desenvolvimento do Piauí passa\npelo fortalecimento do campo e pela preservação do meio ambiente. A\nvalorização dos produtores rurais, o incentivo à inovação, a proteção dos\nrecursos naturais e a promoção da segurança hídrica formarão a base de uma\npolítica capaz de gerar riqueza, empregos e qualidade de vida.\nNosso compromisso é construir um Piauí que produza mais, preserve melhor\ne ofereça oportunidades para quem vive e trabalha no campo, garantindo\ndesenvolvimento sustentável para as atuais e futuras gerações.\n\nCAPÍTULO 8\nDESENVOLVIMENTO\nSOCIAL,\nDIREITOS\nHUMANOS,\nCIDADANIA, MULHERES, JUVENTUDE E PROTEÇÃO ÀS\nFAMÍLIAS\n\"Nenhum governo é verdadeiramente forte se deixa alguém para trás.\nNosso compromisso é cuidar das pessoas, reduzir desigualdades e\ngarantir dignidade para todos os piauienses.\"\n\n8.1 INTRODUÇÃO\nO desenvolvimento social será uma prioridade permanente do Governo\nRavenna Castro."
+          },
+          {
+            "id": "nossa-gestao-compreendera-que-combater-a-pobreza-promover-a-inclusao",
+            "titulo": "Nossa gestão compreenderá que combater a pobreza, promover a inclusão",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "Nossa gestão compreenderá que combater a pobreza, promover a inclusão\nsocial, proteger as famílias e garantir os direitos humanos são condições\nessenciais para o desenvolvimento sustentável do Estado.\nAs políticas públicas serão integradas entre assistência social, saúde,\neducação, segurança, habitação, geração de renda e inclusão produtiva,\npromovendo autonomia e cidadania.\nO Governo atuará para proteger especialmente crianças, adolescentes,\nidosos, mulheres, pessoas com deficiência, povos tradicionais, juventude e\ntodas as pessoas em situação de vulnerabilidade social.\n8.2 COMBATE À POBREZA E À FOME\n\nSerá implantado o Programa Piauí Sem Fome, articulando ações entre\nEstado, municípios, iniciativa privada e organizações da sociedade civil.\nAs principais ações incluem:\n\n\nfortalecimento da segurança alimentar;\n\n\n\napoio aos bancos de alimentos;\n\n\n\nampliação das cozinhas comunitárias;\n\n\n\nincentivo à agricultura familiar para abastecimento de programas\nsociais;\n\n\n\ncombate ao desperdício de alimentos;\n\n\n\ndistribuição emergencial em situações de calamidade.\n\nO objetivo é garantir que nenhuma família piauiense enfrente insegurança\nalimentar\nextrema.\n8.3 FORTALECIMENTO DO SISTEMA ÚNICO DE ASSISTÊNCIA\nSOCIAL\nO Governo fortalecerá a rede estadual de assistência social em parceria com\nos municípios.\nSerão ampliadas ações para:\n\n\nqualificação dos serviços socioassistenciais;\n\n\n\ncapacitação permanente dos profissionais;"
+          },
+          {
+            "id": "pagina-59",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "\n\nfortalecimento da proteção social básica e especial;\n\n\n\nmodernização da gestão no setor;\n\nO Estado prestará apoio técnico e financeiro aos municípios para ampliar a\nqualidade dos serviços.\n\n8.4 PROTEÇÃO ÀS FAMÍLIAS\nA família será reconhecida como núcleo fundamental da sociedade.\nSerão desenvolvidas políticas para:\n\n\nfortalecimento dos vínculos familiares;\n\n\n\nprevenção da violência doméstica;\n\n\n\nacompanhamento psicossocial;\n\n\n\nmediação familiar;\n\n\n\nprogramas de parentalidade positiva;\n\n\n\napoio às famílias em situação de vulnerabilidade.\n\nAs ações buscarão fortalecer a convivência familiar e comunitária.\n\n8.5 POLÍTICAS PARA AS MULHERES\nO Governo implementará uma política estadual voltada ao fortalecimento da\nautonomia, da segurança e da participação das mulheres.\nAs ações incluem:\n\n\ncombate à violência contra a mulher;\n\n\n\nfortalecimento da rede de proteção;\n\n\n\nincentivo ao empreendedorismo feminino;\n\n\n\nqualificação profissional;\n\n\n\napoio às mulheres chefes de família;\n\n\n\npromoção da igualdade de oportunidades.\n\nTambém serão ampliadas campanhas educativas sobre prevenção da\nviolência e promoção da igualdade de gênero."
+          },
+          {
+            "id": "8-6-juventude",
+            "titulo": "8.6 JUVENTUDE",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "8.6 JUVENTUDE\nOs jovens terão acesso a políticas integradas de desenvolvimento pessoal e\nprofissional.\nO Governo fortalecerá programas voltados para:\n\n\nprimeiro emprego;\n\n\n\nempreendedorismo jovem;\n\n\n\nqualificação profissional;\n\n\n\ninovação tecnológica;\n\n\n\nesporte;\n\n\n\ncultura;\n\n\n\nvoluntariado;\n\n\n\nliderança juvenil.\n\nO objetivo é ampliar oportunidades e reduzir a vulnerabilidade social da\njuventude.\n\n8.7 POLÍTICAS PARA A PESSOA IDOSA\nO envelhecimento da população exige políticas públicas específicas.\nSerão fortalecidas ações para:\n\n\nenvelhecimento ativo;\n\n\n\ncentros de convivência;\n\n\n\nprevenção da violência contra idosos;\n\n\n\nassistência social;\n\n\n\ninclusão digital;\n\n\n\natividades esportivas e culturais.\n\nO Governo promoverá o respeito à autonomia e à dignidade da pessoa idosa.\n\n8.8 PROMOÇÃO DOS DIREITOS HUMANOS"
+          },
+          {
+            "id": "a-promocao-dos-direitos-humanos-sera-principio-permanente-da",
+            "titulo": "A promoção dos direitos humanos será princípio permanente da",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "A promoção dos direitos humanos será princípio permanente da\nadministração pública.\nO Governo desenvolverá políticas voltadas para:\n\n\ncombate a todas as formas de discriminação;\n\n\n\npromoção da igualdade;\n\n\n\nfortalecimento da cidadania;\n\n\n\neducação em direitos humanos;\n\n\n\nacesso à justiça;\n\n\n\nproteção das populações vulneráveis.\n\nTodas as ações observarão os princípios constitucionais da dignidade da\npessoa humana e da igualdade perante a lei.\n\n8.9 POVOS INDÍGENAS, QUILOMBOLAS E COMUNIDADES\nTRADICIONAIS\nO Governo respeitará e apoiará os povos e comunidades tradicionais do\nPiauí.\nSerão desenvolvidas políticas para:\n\n\nfortalecimento das atividades produtivas;\n\n\n\npreservação cultural;\n\n\n\nacesso à saúde;\n\n\n\neducação diferenciada;\n\n\n\ninfraestrutura básica;\n\n\n\nsegurança alimentar;\n\n\n\nvalorização das tradições.\n\nAs políticas serão construídas com diálogo e participação das comunidades.\n\n8.10 PROMOÇÃO DA IGUALDADE RACIAL"
+          },
+          {
+            "id": "o-governo-fortalecera-acoes-de-combate-ao-racismo-e-promocao-da",
+            "titulo": "O Governo fortalecerá ações de combate ao racismo e promoção da",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "O Governo fortalecerá ações de combate ao racismo e promoção da\nigualdade racial.\nSerão desenvolvidos programas para:\n\n\neducação antirracista;\n\n\n\nvalorização da cultura afro-brasileira;\n\n\n\napoio ao empreendedorismo negro;\n\n\n\nqualificação profissional;\n\n\n\nacesso às políticas públicas;\n\n\n\ncombate à discriminação.\n\nA diversidade será reconhecida como patrimônio social do Estado.\n\n8.11 POLÍTICAS SOBRE DROGAS\nO enfrentamento às drogas será baseado na prevenção, acolhimento e\nreinserção social.\nAs ações incluem:\n\n\nprevenção nas escolas;\n\n\n\napoio às famílias;\n\n\n\nfortalecimento das comunidades terapêuticas credenciadas;\n\n\n\ntratamento especializado na rede de saúde;\n\n\n\nreinserção social e profissional.\n\nO Governo atuará em integração com as políticas de segurança pública e\nassistência social.\n\n8.12 VOLUNTARIADO E PARTICIPAÇÃO SOCIAL\nO fortalecimento da cidadania depende da participação da sociedade.\nSerá criado o Programa Piauí Solidário, incentivando:\n\n\nvoluntariado;\n\n\n\nações comunitárias;"
+          },
+          {
+            "id": "pagina-63",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "\n\nresponsabilidade social;\n\n\n\nparticipação popular;\n\n\n\nfortalecimento das organizações da sociedade civil.\n\nO Governo apoiará iniciativas\ndesenvolvimento comunitário.\n\nque\n\npromovam\n\nsolidariedade\n\n8.13 CIDADANIA DIGITAL\nA transformação digital facilitará o acesso aos serviços públicos.\nSerão ampliados:\n\n\nserviços digitais;\n\n\n\nemissão eletrônica de documentos;\n\n\n\natendimento virtual;\n\n\n\ninclusão digital;\n\n\n\nplataformas de participação cidadã.\n\nO objetivo é aproximar o Estado da população e reduzir a burocracia.\n\n8.14 PARTICIPAÇÃO POPULAR\nO Governo adotará mecanismos permanentes de diálogo com a sociedade.\nSerão fortalecidos:\n\n\nconselhos estaduais;\n\n\n\naudiências públicas;\n\n\n\nconsultas populares;\n\n\n\norçamento participativo em programas específicos;\n\n\n\nplataformas digitais de participação.\n\nA população será protagonista na construção das políticas públicas.\n\n8.15 METAS DO CAPÍTULO\n\ne"
+          },
+          {
+            "id": "ao-final-do-mandato-o-governo-buscara",
+            "titulo": "Ao final do mandato, o Governo buscará:",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "Ao final do mandato, o Governo buscará:\n\n\nfortalecer o Sistema Único de Assistência Social em todas as regiões;\n\n\n\nampliar as ações de combate à fome e à pobreza;\n\n\n\nfortalecer a proteção às famílias;\n\n\n\nampliar políticas para mulheres, juventude e idosos;\n\n\n\npromover os direitos humanos e a igualdade de oportunidades;\n\n\n\napoiar povos indígenas, quilombolas e comunidades tradicionais;\n\n\n\nfortalecer programas de prevenção às drogas;\n\n\n\nampliar a participação social e os serviços digitais de cidadania.\n\nCONCLUSÃO\nO Governo Ravenna Castro fará da política social um instrumento de\ntransformação, promovendo dignidade, inclusão e oportunidades para todos.\nNossa gestão atuará para reduzir desigualdades, proteger as famílias e\nfortalecer os direitos humanos, assegurando que cada cidadão tenha acesso\naos serviços públicos e às condições necessárias para desenvolver seu\npotencial.\nCom diálogo, responsabilidade e sensibilidade social, construiremos um\nPiauí mais justo, solidário e humano, onde o desenvolvimento econômico\ncaminhe lado a lado com a proteção das pessoas e a promoção da cidadania.\n\nCAPÍTULO 9\n\nGESTÃO\nPÚBLICA,\nGOVERNANÇA,\nTRANSPARÊNCIA,\nCONTROLE, INOVAÇÃO E TRANSFORMAÇÃO DIGITAL\n\"Um governo eficiente administra com responsabilidade, presta contas\nà população e coloca a tecnologia a serviço das pessoas.\"\n\n9.1 INTRODUÇÃO"
+          },
+          {
+            "id": "o-governo-ravenna-castro-sera-pautado-pelos-principios-constitucionais-d",
+            "titulo": "O Governo Ravenna Castro será pautado pelos princípios constitucionais da",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "O Governo Ravenna Castro será pautado pelos princípios constitucionais da\nlegalidade, impessoalidade, moralidade, publicidade, eficiência e\ntransparência.\nNossa administração será moderna, inovadora e orientada por resultados,\nbuscando oferecer serviços públicos de qualidade, reduzir a burocracia e\nfortalecer a confiança da população nas instituições.\nA gestão pública será baseada em planejamento estratégico, responsabilidade\nfiscal, transformação digital, participação popular e permanente avaliação\ndas políticas públicas.\nNosso objetivo é construir um Estado eficiente, capaz de responder\nrapidamente às necessidades da sociedade e utilizar os recursos públicos com\nresponsabilidade.\n\n9.2 GOVERNANÇA PÚBLICA\nSerá implantado o Modelo Estadual de Governança Pública, integrando\ntodas as secretarias e órgãos estaduais em torno de metas estratégicas\ncomuns.\nAs ações incluem:\n\n\nplanejamento de longo prazo;\n\n\n\ndefinição de metas anuais;\n\n\n\nmonitoramento permanente dos resultados;\n\n\n\ngestão por indicadores;\n\n\n\nfortalecimento da coordenação entre secretarias;\n\n\n\navaliação periódica das políticas públicas.\n\nA tomada de decisões será baseada em evidências, dados e indicadores\ntécnicos.\n\n9.3 RESPONSABILIDADE FISCAL\nA estabilidade financeira do Estado será preservada.\nO Governo atuará para:\n\n\nmanter o equilíbrio das contas públicas;"
+          },
+          {
+            "id": "pagina-66",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "\n\nampliar a eficiência da arrecadação;\n\n\n\nreduzir desperdícios;\n\n\n\nmelhorar a qualidade do gasto público;\n\n\n\nfortalecer o planejamento orçamentário;\n\n\n\ngarantir sustentabilidade financeira das políticas públicas.\n\nToda expansão de programas será acompanhada de planejamento fiscal\nresponsável.\n\n9.4 GOVERNO DIGITAL\nSerá implantado o programa Piauí Digital, promovendo a transformação\ntecnológica da administração pública.\nAs iniciativas incluem:\n\n\ndigitalização de serviços públicos;\n\n\n\natendimento eletrônico;\n\n\n\nassinatura digital;\n\n\n\nprocessos administrativos eletrônicos;\n\n\n\naplicativos de serviços ao cidadão;\n\n\n\nintegração dos sistemas estaduais.\n\nO objetivo é reduzir filas, tempo de atendimento e custos administrativos.\n\n9.5 DESBUROCRATIZAÇÃO\nO Governo simplificará os procedimentos administrativos para cidadãos e\nempresas.\nSerão adotadas medidas para:\n\n\nrevisão de normas excessivamente burocráticas;\n\n\n\nintegração entre órgãos públicos;\n\n\n\nredução de exigências documentais;\n\n\n\natendimento unificado;"
+          },
+          {
+            "id": "pagina-67",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "\n\nampliação dos serviços digitais;\n\n\n\nsimplificação dos licenciamentos.\n\n\n\nSistema de avaliação de atendimento pelo piauiense, que avaliará\no servidor dando uma nota ao atendimento, ao final de cada\natendimento público, modelo “avalie o meu atendimento”,\natualmente utilizado nos sistemas de comércio e bancário, com\nvistas a cumprimento da meta de serviço público pautado no\nprincípio constitucional da eficiência, pautado na resolução\nrápida das demandas da população e combater a burocratização\ndos serviços públicos, além de controle da qualidade do\natendimento e dos serviços prestados ao piauiense.\n\nA administração pública será mais ágil, eficiente e acessível.\n\n9.6 TRANSPARÊNCIA E CONTROLE SOCIAL\nA transparência será um compromisso permanente do Governo.\nSerão fortalecidos:\n\n\nPortal da Transparência;\n\n\n\ndivulgação dos gastos públicos em tempo real;\n\n\n\nacompanhamento das obras estaduais;\n\n\n\ntransparência dos contratos;\n\n\n\nacesso à informação;\n\n\n\nprestação permanente de contas à sociedade.\n\nA população terá acesso facilitado às informações sobre a gestão estadual.\n9.7 COMBATE À CORRUPÇÃO E INTEGRIDADE PÚBLICA\nA ética será um valor permanente da administração.\nO Governo implantará um Programa Estadual de Integridade,\ncontemplando:\n\n\ncódigos de conduta;\n\n\n\nprevenção de conflitos de interesse;"
+          },
+          {
+            "id": "pagina-68",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "\n\nfortalecimento das corregedorias;\n\n\n\ncapacitação dos servidores;\n\n\n\ncanais seguros para denúncias.\n\nToda irregularidade será tratada com rigor, respeito ao devido processo legal\ne absoluta transparência.\n9.8 VALORIZAÇÃO DOS SERVIDORES PÚBLICOS\nOs servidores públicos são fundamentais para a qualidade dos serviços\nprestados à população.\nO Governo promoverá:\n\n\nformação continuada;\n\n\n\ncapacitação tecnológica;\n\n\n\nprogramas de qualidade de vida;\n\n\n\nsaúde ocupacional;\n\n\n\nvalorização do mérito;\n\n\n\nmodernização das condições de trabalho.\n\nO diálogo permanente com as categorias será prioridade.\n\n9.9 INOVAÇÃO NA GESTÃO\nSerá criado o Laboratório Estadual de Inovação Pública, destinado ao\ndesenvolvimento de soluções modernas para a administração.\nAs ações incluem:\n\n\ninovação em serviços públicos;\n\n\n\ninteligência artificial aplicada à gestão;\n\n\n\nanálise de dados;\n\n\n\nautomação de processos;\n\n\n\nsimplificação administrativa;\n\n\n\ndesenvolvimento de soluções digitais."
+          },
+          {
+            "id": "a-inovacao-sera-utilizada-para-aumentar-a-eficiencia-do-estado",
+            "titulo": "A inovação será utilizada para aumentar a eficiência do Estado.",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "A inovação será utilizada para aumentar a eficiência do Estado.\n\n9.10 GESTÃO POR RESULTADOS\nTodas as secretarias estaduais trabalharão com metas previamente definidas.\nSerão implantados:\n\n\nindicadores de desempenho;\n\n\n\ncontratos de gestão;\n\n\n\nmonitoramento permanente;\n\n\n\navaliação de políticas públicas;\n\n\n\ndivulgação periódica dos resultados.\n\nA população acompanhará o desempenho do Governo por meio de\nindicadores públicos.\n9.11 COMPRAS PÚBLICAS E LICITAÇÕES\nO Governo aperfeiçoará os processos de contratação pública.\nAs prioridades incluem:\n\n\nmaior transparência;\n\n\n\nfortalecimento dos pregões eletrônicos;\n\n\n\nplanejamento das compras;\n\n\n\nincentivo à participação de micro e pequenas empresas;\n\n\n\ncontrole de custos;\n\n\n\nprevenção de fraudes, trazendo a comunidade e abrindo as portas para\nos órgãos de fiscalização.\n\nAs contratações buscarão eficiência, economicidade e segurança jurídica.\n\n9.12 PLANEJAMENTO E DESENVOLVIMENTO INSTITUCIONAL\nSerá fortalecido o planejamento governamental de médio e longo prazo.\nAs ações incluem:"
+          },
+          {
+            "id": "pagina-70",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "\n\nintegração entre Plano Plurianual, Lei de Diretrizes Orçamentárias e\nLei Orçamentária;\n\n\n\navaliação permanente das políticas públicas;\n\n\n\nmodernização administrativa;\n\n\n\nfortalecimento da gestão estratégica.\n\nO planejamento será orientado por evidências e indicadores técnicos.\n9.13 GOVERNO ABERTO E PARTICIPAÇÃO POPULAR\nA participação da sociedade será ampliada por meio de instrumentos\nmodernos de diálogo.\nSerão fortalecidos:\n\n\nconsultas públicas;\n\n\n\naudiências públicas;\n\n\n\nconselhos estaduais;\n\n\n\nplataformas digitais de participação;\n\n\n\nouvidorias.\n\nO Governo adotará práticas de Governo Aberto para aproximar o Estado da\npopulação.\n\n9.14 PARCERIAS E COOPERAÇÃO INSTITUCIONAL\nO desenvolvimento do Estado exige cooperação entre instituições.\nO Governo fortalecerá parcerias com:\n\n\nGoverno Federal;\n\n\n\nmunicípios;\n\n\n\nPoder Legislativo;\n\n\n\nPoder Judiciário;\n\n\n\nMinistério Público;\n\n\n\nDefensoria Pública;"
+          },
+          {
+            "id": "pagina-71",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "\n\nuniversidades;\n\n\n\niniciativa privada;\n\n\n\norganizações da sociedade civil.\n\nA atuação integrada permitirá ampliar resultados e otimizar recursos\npúblicos.\n9.15 METAS DO CAPÍTULO\nAo final do mandato, o Governo buscará:\n\n\nconsolidar um modelo moderno de governança pública;\n\n\n\nampliar a digitalização dos serviços estaduais;\n\n\n\nfortalecer a transparência e o controle social;\n\n\n\nreduzir significativamente a burocracia administrativa;\n\n\n\nvalorizar os servidores públicos;\n\n\n\nimplantar gestão baseada em indicadores e resultados;\n\n\n\nfortalecer programas de integridade e combate à corrupção;\n\n\n\nampliar a participação popular na formulação das políticas públicas;\n\n\n\npromover uma administração pública eficiente, sustentável e\ninovadora.\n\nCONCLUSÃO\nO Governo Ravenna Castro acredita que uma administração pública eficiente\né condição indispensável para melhorar a qualidade dos serviços prestados à\npopulação. A modernização da gestão, a valorização dos servidores, a\ntransformação digital, a transparência e a responsabilidade fiscal serão\npilares permanentes da administração estadual.\nNosso compromisso é construir um Estado moderno, ético, inovador e\npróximo das pessoas, capaz de administrar com eficiência os recursos\npúblicos, fortalecer a confiança da sociedade nas instituições e entregar\nresultados concretos para todos os piauienses.\n\nCAPÍTULO 10"
+          },
+          {
+            "id": "plano-estrategico-de-governo-primeiros-100-dias",
+            "titulo": "PLANO ESTRATÉGICO DE GOVERNO, PRIMEIROS 100 DIAS,",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": "PLANO ESTRATÉGICO DE GOVERNO, PRIMEIROS 100 DIAS,\nMETAS, MONITORAMENTO E VISÃO DE FUTURO\n\n\"Governar é transformar compromissos em resultados. Nosso governo\nterá planejamento, metas, transparência e responsabilidade para\nentregar um Piauí mais desenvolvido, inclusivo e humano.\"\n\n10.1 INTRODUÇÃO\nEste Programa de Governo representa o compromisso do Governo Ravenna\nCastro, a Ravenna da Inclusão, com uma gestão moderna, responsável e\norientada por resultados.\nMais do que um conjunto de propostas, este documento estabelece uma visão\nestratégica para o desenvolvimento do Estado do Piauí, integrando todas as\náreas da administração pública em torno de objetivos comuns: melhorar a\nqualidade de vida da população, reduzir desigualdades, promover\ncrescimento econômico sustentável e fortalecer os serviços públicos.\nA execução deste plano será acompanhada por indicadores, metas e\nmecanismos permanentes de transparência, garantindo que a sociedade possa\nacompanhar a evolução das políticas públicas.\n\n10.2 MISSÃO DO GOVERNO\nGovernar o Estado do Piauí com responsabilidade, eficiência, transparência\ne sensibilidade social, promovendo desenvolvimento sustentável, inclusão,\ninovação e melhoria da qualidade de vida da população.\n\n10.3 VISÃO DE FUTURO\nTransformar o Piauí em referência nacional em gestão pública eficiente,\ndesenvolvimento econômico sustentável, saúde, inclusão, educação,\ninovação e qualidade de vida, garantindo oportunidades para todas as regiões\ndo Estado.\n\n10.4 VALORES"
+          },
+          {
+            "id": "o-governo-ravenna-castro-sera-orientado-pelos-seguintes-valores",
+            "titulo": "O Governo Ravenna Castro será orientado pelos seguintes valores:",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "O Governo Ravenna Castro será orientado pelos seguintes valores:\n\n\nética;\n\n\n\nhonestidade;\n\n\n\nresponsabilidade fiscal;\n\n\n\ntransparência;\n\n\n\neficiência;\n\n\n\nrespeito às pessoas;\n\n\n\ninclusão;\n\n\n\njustiça social;\n\n\n\ndiálogo permanente;\n\n\n\ninovação;\n\n\n\nsustentabilidade;\n\n\n\nvalorização da vida;\n\n\n\nrespeito à diversidade;\n\n\n\ncompromisso com o interesse público.\n\n10.5 OS PRIMEIROS 100 DIAS DE GOVERNO\nOs primeiros meses de gestão serão dedicados à organização administrativa\ne ao início das principais ações estruturantes.\nAs prioridades incluem:\nSaúde\n\n\nLançamento do Programa Saúde Sem Espera.\n\n\n\nAuditoria das filas de consultas, exames e cirurgias.\n\n\n\nPlano emergencial para redução da fila do SUS.\n\n\n\nModernização da Central Estadual de Regulação.\n\n\n\nInício do Centro de Referência à Saúde Mental;"
+          },
+          {
+            "id": "inclusao",
+            "titulo": "Inclusão",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "pdftotext",
+            "conteudo": "Inclusão\n\n\nInstituição do Plano Estadual de Inclusão.\n\n\n\nCriação do Grupo de Trabalho da Casa da Inclusão.\n\n\n\nLevantamento estadual das pessoas com deficiência.\n\n\n\nInício da política estadual de apoio às famílias atípicas.\n\nEducação\n\n\nDiagnóstico da infraestrutura escolar.\n\n\n\nPlano de recuperação das escolas estaduais.\n\n\n\nImplantação do Programa Escola do Futuro.\n\n\n\nAmpliação da conectividade das escolas\n\n\n\nForça tarefa para já iniciar o ano ampliando o número de ofertas de\nvagas de ensino em tempo integral.\n\nSegurança Pública\n\n\nModernização do Centro Integrado de Comando e Controle.\n\n\n\nPlano de fortalecimento das Polícias.\n\n\n\nAmpliação do videomonitoramento.\n\n\n\nReforço do policiamento ostensivo.\n\nDesenvolvimento Econômico\n\n\nLançamento do Programa Empreende Piauí.\n\n\n\nPlano Estadual de Atração de Investimentos.\n\n\n\nImplantação do Empresa Fácil Piauí.\n\n\n\nAgenda de diálogo com o setor produtivo."
+          },
+          {
+            "id": "infraestrutura",
+            "titulo": "Infraestrutura",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "pdftotext",
+            "conteudo": "Infraestrutura\n\n\nLevantamento das obras paralisadas.\n\n\n\nPrograma de recuperação das rodovias estaduais.\n\n\n\nPlano Estadual de Infraestrutura.\n\n\n\nPriorização de obras estratégicas.\n\nAgricultura\n\n\nPrograma Produzir Piauí.\n\n\n\nAmpliação da assistência técnica rural.\n\n\n\nRecuperação de sistemas hídricos prioritários.\n\n\n\nFortalecimento da agricultura familiar.\n\nGestão Pública\n\n\nImplantação do Comitê Estratégico de Governo.\n\n\n\nRevisão dos contratos administrativos.\n\n\n\nModernização dos serviços digitais.\n\n\n\nPlano Estadual de Integridade.\n\n10.6 PLANEJAMENTO ESTRATÉGICO\nToda a administração estadual trabalhará com planejamento baseado em\nmetas e indicadores.\nCada secretaria elaborará:\n\n\nPlano Estratégico Setorial;\n\n\n\nPlano Anual de Metas;\n\n\n\nIndicadores de desempenho;\n\n\n\nCronograma de execução;\n\n\n\nRelatórios periódicos."
+          },
+          {
+            "id": "10-7-indicadores-de-desempenho",
+            "titulo": "10.7 INDICADORES DE DESEMPENHO",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "10.7 INDICADORES DE DESEMPENHO\nO Governo utilizará indicadores públicos para acompanhar a execução das\npolíticas.\nSerão monitorados, entre outros:\nSaúde\n\n\ntempo de espera por consultas;\n\n\n\ntempo de espera por cirurgias;\n\n\n\ncobertura vacinal;\n\n\n\nmortalidade infantil;\n\n\n\nsaúde especializada e inclusiva para PCDs e famílias atípicas\n\n\n\nsaúde mental fortalecida;\n\n\n\nmortalidade materna.\n\nEducação\n\n\naprendizagem;\n\n\n\nevasão escolar;\n\n\n\nalfabetização;\n\n\n\nIDEB;\n\n\n\nensino integral.\n\nSegurança\n\n\nredução dos homicídios;\n\n\n\nredução dos roubos;\n\n\n\nresolução de crimes;\n\n\n\nresposta às ocorrências.\n\nDesenvolvimento Econômico\n\n\ngeração de empregos;\n\n\n\nabertura de empresas;\n\n\n\ninvestimentos privados;"
+          },
+          {
+            "id": "pagina-77",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 77,
+            "paginaFinal": 77,
+            "origem": "pdftotext",
+            "conteudo": "\n\ncrescimento regional.\n\nInclusão\n\n\natendimento às pessoas com deficiência;\n\n\n\nacessibilidade;\n\n\n\ninclusão escolar;\n\n\n\nempregabilidade.\n\nGestão\n\n\ndigitalização dos serviços;\n\n\n\nsatisfação do cidadão;\n\n\n\nexecução orçamentária;\n\n\n\ntransparência.\n\n10.8 GOVERNO BASEADO EM RESULTADOS\nTodas as secretarias trabalharão com metas previamente estabelecidas.\nSerão realizadas:\n\n\nreuniões mensais de avaliação;\n\n\n\nmonitoramento permanente;\n\n\n\nrevisão de indicadores;\n\n\n\nauditorias internas;\n\n\n\ncorreção de desvios;\n\n\n\ntransparência pública dos resultados.\n\nO foco será a entrega de resultados concretos para a população.\n\n10.9 PARTICIPAÇÃO POPULAR\nO Governo manterá diálogo permanente com a sociedade.\nSerão fortalecidos:"
+          },
+          {
+            "id": "pagina-78",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 78,
+            "paginaFinal": 78,
+            "origem": "pdftotext",
+            "conteudo": "\n\naudiências públicas;\n\n\n\nconsultas populares;\n\n\n\nconselhos estaduais;\n\n\n\nplataformas digitais;\n\n\n\nouvidorias;\n\n\n\nreuniões regionais.\n\nA população participará da avaliação das políticas públicas.\n\n10.10 RESPONSABILIDADE FISCAL\nTodas as ações previstas neste Programa serão executadas observando:\n\n\nConstituição Federal;\n\n\n\nLei de Responsabilidade Fiscal;\n\n\n\nPlano Plurianual;\n\n\n\nLei de Diretrizes Orçamentárias;\n\n\n\nLei Orçamentária Anual.\n\nO equilíbrio financeiro será condição permanente para a sustentabilidade das\npolíticas públicas.\n10.11 INOVAÇÃO E TRANSFORMAÇÃO DIGITAL\nA tecnologia será utilizada para modernizar o Estado.\nSerão ampliados:\n\n\ninteligência artificial;\n\n\n\nanálise de dados;\n\n\n\ngoverno digital;\n\n\n\nautomação de processos;\n\n\n\nserviços eletrônicos;\n\n\n\nintegração de sistemas.\n\nA inovação aumentará a eficiência da administração pública."
+          },
+          {
+            "id": "10-12-parcerias-institucionais",
+            "titulo": "10.12 PARCERIAS INSTITUCIONAIS",
+            "nivel": 1,
+            "paginaInicial": 79,
+            "paginaFinal": 79,
+            "origem": "pdftotext",
+            "conteudo": "10.12 PARCERIAS INSTITUCIONAIS\nO Governo buscará permanente cooperação com:\n\n\nGoverno Federal;\n\n\n\nmunicípios;\n\n\n\nuniversidades;\n\n\n\nsetor produtivo;\n\n\n\norganismos internacionais;\n\n\n\norganizações da sociedade civil.\n\nAs parcerias ampliarão investimentos e fortalecerão as políticas públicas.\n\n10.13 DESENVOLVIMENTO REGIONAL\nTodas as regiões do Estado participarão do processo de desenvolvimento.\nOs investimentos observarão critérios técnicos, reduzindo desigualdades\nregionais e fortalecendo as potencialidades econômicas de cada território.\nNenhum município ficará à margem das políticas públicas estaduais.\n\n10.14 COMPROMISSOS DO GOVERNO\nO Governo Ravenna Castro assume os seguintes compromissos\npermanentes:\n\n\ngovernar com ética;\n\n\n\nrespeitar os recursos públicos;\n\n\n\ncombater desperdícios;\n\n\n\nvalorizar os servidores;\n\n\n\nfortalecer os municípios;\n\n\n\nreduzir desigualdades;\n\n\n\npromover inclusão social e fortalecimento as saúde de grupos de\npessoas vulneráveis e de Pessoas com Deficiência físicas e\nneurológicas - PCDS, pessoas atípicas e suas famílias;"
+          },
+          {
+            "id": "pagina-80",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 80,
+            "paginaFinal": 80,
+            "origem": "pdftotext",
+            "conteudo": "\n\nampliar oportunidades;\n\n\n\nproteger o meio ambiente;\n\n\n\nmelhorar os serviços públicos;\n\n\n\nouvir permanentemente a população.\n\n10.15 MENSAGEM FINAL\n\nEste Programa de Governo representa um compromisso com um novo tempo\npara o Piauí. Não se trata apenas de um conjunto de propostas, mas de uma\nvisão de futuro construída sobre responsabilidade, planejamento, diálogo e\nrespeito às pessoas.\nQueremos um Estado onde a saúde funcione, a educação transforme vidas, a\nsegurança proteja as famílias, a economia gere oportunidades e a inclusão\nseja uma realidade. Um Piauí em que cada criança tenha perspectivas, cada\njovem encontre oportunidades, cada trabalhador seja valorizado, cada\nempreendedor tenha apoio para crescer e cada cidadão seja tratado com\ndignidade.\nComo mulher, mãe atípica e cidadã comprometida com o futuro do nosso\npovo, assumo o compromisso de governar com coragem, sensibilidade e\nresponsabilidade. Nosso propósito é construir um governo presente,\ntransparente e eficiente, que trabalhe diariamente para melhorar a vida das\npessoas e fortalecer todas as regiões do Estado.\nConvido cada piauiense a caminhar conosco nesta missão. O\ndesenvolvimento do Piauí será fruto do esforço coletivo, da união entre\ngoverno e sociedade e da confiança de que é possível construir um Estado\nmais justo, inclusivo, próspero e humano para esta e para as próximas\ngerações.\nRavenna\nCastro,\na\nRavenna\nCandidata ao Governo do Estado do Piauí\n\nda\n\nInclusão"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "1fc4ae8d170c1bee8bc6776d53f92463f359903f516340c676b32a54d29fc711"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "6be3841d8fa1a795f8d57abd59445a950a63c53a90fd74f53db68fde51139c5e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f0dd16a25723e0fec178469acb3a58c174e47c58b7c550926adc0f8d6a7ba5c0"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "f6aa1ea38a22dc6016220411c42bb6e062d961f643b128dcc001266d2e87b0f6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "f2d44e6057425675cd1661265b4a014ab1d8a517d7d763b84321f7cdcf47e7a3"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "218297406c0c7b2f87f810cfd691ebe7b2474df48471eaa7e71d9f087d6a6b00"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "5f85ae9769118efd81e71a62344f95c4f220e543b6e7ab2b40e5b2221f746917"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "c4af67ae6b8b3a752864ed18b54f9b11910b58da70ec1920da562e156e4fe368"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "5e3f00636583bc165433853fa6cfab9d28c21766759fe672df3afe40eff49674"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "012107f219922a58ba179f42bd2666a8e115124a0a80b2e2b75afe46768e26db"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6178a45fdcba8e56e9bb2f678908f8442fbdcd070b6797a21fb12475130c89d7"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "baee703b872f98be729a81c68713396b488dd39a31ea16b42c9ab3fd212d4c71"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "6d4570a0e266b33d9da0dfa026144abd13c784ab2d4066164313369d5d31d90e"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "371ee5eeaa6fbdb74db20152eaf39269b454ca23c04c2235de2cd42b4cdfde74"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "1cd84543105182ee01f65cb2e6fb4f9567c0830b1db5aa4cfe9e3af2f376217b"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "45d4fc0b5d10a5f3840648c5976230b558b7626cfea00bab42a5fd2dbdfb8277"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "db6f733bd1a32532780d1af68a63edd0212a2d8a32594657b47f5ce8fdf5e91e"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "183b644a6403ab3f3aaffb9085d958d52cedec2054b320e47444fb0d870ee8a0"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "537492571e80a48f3b6fec166a41927a8910c0899b2682507609b3839ab672a0"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "77cdd0ab092ca64da04b07a843b5e9ec9e7737878bd77adfe960cb22761f99db"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "67db0c6dcce1bb843dd270b3431d5ec99ed54a1a2ae863535a44f27e379d0ae9"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "730b621c26d286ef32217bfe921c5fd006e0be240f503bf7612ac47d07fb11b8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "3ac2105f8f1b218d4c345c543db879fd20bc5f97514f9dff5f93ffcd843bfa7b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "2fe4464a25cc48acf273b75a5e1c804746b1114cd74489b15c2d76d34a78fcc0"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "55802de7dbb7e84c059c1d297ee1c190c18bfd86e95e4d411958cb454e487a58"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "1148701b00292e73f59e6894bceedef6830aa8cb95182c7a45cc89b0191f257f"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "a05d180e9803932957c815df9892909413662aa9f28e6fcb3ce74b50e0aa0e0f"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "b68e2e9a09f24acd73b80040e48b6c2bc0f9ab8123f461526e94108a30c97478"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "7a886d796fda3e59853c8c9666cf65e7c9cee5becd5118ceea8079ba53c1f2da"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "e115d2298b76fc25133600ea710d388d0ab122b0d24381670264338eaf72d96d"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "590c220cb0f148bd2efb48fab65a0917a6ee7a5cd159cdca1a78c9bb58592db0"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "1539bfc56fb78abead796287f3d7412dcd73aab5dcf2c373ae166b13416574cc"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "b5ba2d166edff80786187993df34c9b576ef385b0e5a2ab3f2a6445e0749b6d4"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "0c9cd30035f190faed6c4e1b09feb2b0d54bda526ed0422f4035f73d23fc96dd"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "2f41d885eaa6cd504b110162aa7c26ffabd3b52d231855c8b4f8e228b7001728"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "337f07d82e63790416cb98db7fecfed4f4c0c1c192c7713a9a428dbe786c0c5d"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "306648c11d7b324025072129c7ef716d5998fae7b0d10094d158d0f0187192e6"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "b107690d8a3a754c167b083b53483ee438c65461084ed988d3cf68a29d3df138"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "27a8879852be0b593c2f70f2b76db3927fd7f5622dec478c66c0a9c5fb903aed"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "e07994faab906ad12cfec423fb91b97a5de66a6c743a7cf2a26497b4efac40c3"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "b2f4afe0628d3f223169210f82a4029e5f654174c7460ca6cae0220b0bd96852"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "c0b129d57b9f82c5d50f15084ad9ed323c0f6900d0c98257c8af4ab37addd89c"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "b8e9a3c610e65960610c75dcdd95b45265dbca57f065ed521e66813c796bccbf"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "3ff126dacb61ebac7c9be5094060cd5cffb20b7997c22a665edd070277cad176"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "05bc372a809d7890e0157e58727a9732d75f4f83da5153a02389f2c375760898"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "c4b1715567c11465a6bd2042797f6a50b1b2875654ecc2675400ca380d94a4bc"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "86eb010151a5638090938299f05fa451c691020b78e5ebc04745ce654429c499"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "37086219272033a1c0f5533bf6f5224b3f98f803fe32ea29cbafb076060636af"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "ee5050ad7ee693ff1aa1602310be3b77b106e5338b009ad74ccc96debee76164"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "08445e4ff3650923da1759e8ce75fb4a47639056e56088b4ac0f38d28ec7f11b"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "4ac4fe2ffea0c40776924ef86f0b9c36358054620257b4b9c3dd6b20b162c162"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "68980f39276b00fb0bad8af3d6afb281fff06ead041747d69dca3f4f6134327e"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "001a781d06f9b36059b3398016ccded948c5110667cd9a896555edd0401917df"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "9f7ccdeef1dd5588e2b07f511900ffe2a0c6207318143c8ded784f6d6b852a3e"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "f0b302291802fad1873e7ffe2b61706bd5b02a133ca3636540c3b57d9fd82716"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "2e926a17e480f2953f91bc216da22d31a7ca8377e33fe3d04fb4016a1c5fd536"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "4fc24ad967935d825a7357bfd73ebbf0f40ea6b4a2673900e2b1fc00d262ee7d"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "c5934675c1e9c0f826f39f2cfb567a0676366c4b225c7a4662840ecc6265db11"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "3a34f0465e254a0937121657981c80c8389bbf824a4da45c06827aa7491559b8"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "b9685d4413742dd3fc0819a023eada6115d86dc0944f3bfd9c152d753473cc83"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "403eb2ac3b8b5c5e7a1dc497badcc25ea5c60e695de11164f573754465223791"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "b2847200d4abe77d5b8af8dce28be71441267b516a91f22121ef447d002ee00f"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "db669d81632797fad1e32da28c32ddb6e36eaf480f4350534b8d00b6c34504ce"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "a49bcd88139b060f0e8f81384c7f52cec4dde6302505d1d26ac1d8330f26146c"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "78dffeff068d28019398f7386eb54c2110ce998b6e2c9071115981e43e5d2a9c"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "8e5ad05c371c0ad5dd7e9d14a01643cd27b6cccec3561b339696eeddcb2f7bfd"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "c0cde87d71ff36f99449494421cc673d1806a561c3d8a0430581dc298ab62440"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "c7f0cc0f5ff794b98eff46db630fc24b5c2a10f5c0bcedf82f3a7483c6b91ea0"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "903754c591ca26ba9741aa6eac71ddbd8b8bb76a7798f68f73578496dd4cf9a9"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "ca674a809af01c72d9354d66c0184ec1388e87fdedd87a0f1250e7a767d974b2"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "614a47ca9e6e02c28a62515f4f1c855a3b1850240e9979861349c53053bd6879"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "a131703f1dbb0475f08cb1d2214cddd18b6a208ffee44bc411da6b3ec4a63766"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "e2ea542c1a7263721227c7fea161e675ed2e247567f6fb0cc6b8d2e1f0ef1ab5"
+          },
+          {
+            "pagina": 74,
+            "origem": "pdftotext",
+            "textSha256": "958c70c1e170b78d10e73d77707b826a935f43be809fd203206435ed5bba3391"
+          },
+          {
+            "pagina": 75,
+            "origem": "pdftotext",
+            "textSha256": "2e4621ffccb4ffac6d298666fc59590c870253736190059992a376b2e17a2c5b"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "e2551fea3487c9965a04ad37e2856e98774422201fac6d35e15593ff8750694a"
+          },
+          {
+            "pagina": 77,
+            "origem": "pdftotext",
+            "textSha256": "e6426ae6b43dae97537d89b64111356cb51c2a42715d8c25ee8ecdfbf7824ff6"
+          },
+          {
+            "pagina": 78,
+            "origem": "pdftotext",
+            "textSha256": "eb83a89f6db6d7308a72bc03c8c00a428c79dfcae934e03121235877b2ad22fb"
+          },
+          {
+            "pagina": 79,
+            "origem": "pdftotext",
+            "textSha256": "54ffd35e4d03c0b2bd64d244938c3befee68e91b3c27328912100f66c89cfb21"
+          },
+          {
+            "pagina": 80,
+            "origem": "pdftotext",
+            "textSha256": "76773443b49620a60980b44bc0d5698a9f5281af08b211aa023c5de08733a5cb"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada. Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente, estabelecendo metas, indicadores e ações integradas entre todas as secretarias estaduais. Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino. Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública. Será implantado o programa Empresa Fácil Piauí. Será implantado o programa Piauí Conectado, com ações para ampliar o acesso à internet de alta velocidade. Será implantado um programa permanente de segurança hídrica contemplando construção e recuperação de barragens, ampliação das adutoras, perfuração de poços, sistemas simplificados de abastecimento, proteção de nascentes, recuperação de matas ciliares e uso racional da água.",
+    "frases": [
+      {
+        "texto": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 5,
+            "trecho": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada."
+          }
+        ]
+      },
+      {
+        "texto": "Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente, estabelecendo metas, indicadores e ações integradas entre todas as secretarias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 13,
+            "trecho": "Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente, estabelecendo metas, indicadores e ações integradas entre todas as secretarias estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 24,
+            "trecho": "Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino."
+          }
+        ]
+      },
+      {
+        "texto": "Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 31,
+            "trecho": "Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública."
+          }
+        ]
+      },
+      {
+        "texto": "Será implantado o programa Empresa Fácil Piauí.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 41,
+            "trecho": "Será implantado o programa Empresa Fácil Piauí."
+          }
+        ]
+      },
+      {
+        "texto": "Será implantado o programa Piauí Conectado, com ações para ampliar o acesso à internet de alta velocidade.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 48,
+            "trecho": "O Governo implantará o programa Piauí Conectado, com ações para:"
+          }
+        ]
+      },
+      {
+        "texto": "Será implantado um programa permanente de segurança hídrica contemplando construção e recuperação de barragens, ampliação das adutoras, perfuração de poços, sistemas simplificados de abastecimento, proteção de nascentes, recuperação de matas ciliares e uso racional da água.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 53,
+            "trecho": "Será implantado um programa permanente de segurança hídrica contemplando:"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "O programa prevê atendimento universal, integral e humanizado em saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 5,
+            "trecho": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada."
+          }
+        ]
+      },
+      {
+        "id": "inclusao",
+        "titulo": "Inclusão",
+        "descricao": "O programa propõe um plano permanente para políticas voltadas às pessoas com deficiência.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 13,
+            "trecho": "Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente"
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O programa planeja modernizar a rede estadual de ensino por meio da Escola do Futuro.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 24,
+            "trecho": "Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino."
+          }
+        ]
+      },
+      {
+        "id": "seguranca",
+        "titulo": "Segurança pública",
+        "descricao": "O programa propõe o uso de tecnologia na modernização da segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 31,
+            "trecho": "Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública."
+          }
+        ]
+      },
+      {
+        "id": "empreendedorismo",
+        "titulo": "Empreendedorismo",
+        "descricao": "O programa prevê a implantação do Empresa Fácil Piauí.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 41,
+            "trecho": "Será implantado o programa Empresa Fácil Piauí."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-hidrica",
+        "titulo": "Segurança hídrica",
+        "descricao": "O programa propõe um programa permanente para segurança hídrica.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548388:01",
+            "pagina": 53,
+            "trecho": "Será implantado um programa permanente de segurança hídrica contemplando:"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:05:46.618Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:08:00.487Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é citação literal da página 5."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Texto meramente descritivo, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:1:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 13."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente: plano de inclusão."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:2:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 24."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:3:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 31."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:4:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 41."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:5:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 48 lista 'ampliar o acesso à internet de alta velocidade' entre as ações do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única: conectividade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:6:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula citada consta explicitamente na lista da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 53 lista integralmente todos os itens citados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área: segurança hídrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:frase:7:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todos os itens listados na afirmação constam na página."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:saude-publica:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: inclusão."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:inclusao:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:educacao:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: desburocratização/empreendedorismo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:empreendedorismo:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única: recursos hídricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548388:tema:seguranca-hidrica:documentos:PI:180002548388:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002548388",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002548388:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 46582,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1589,
+          "reasoning_output_tokens": 440
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23322,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21491,
+          "output_tokens_details": {
+            "thinking_tokens": 935
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23322,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21491,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23322,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23322
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3265664
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "684d0e4560de3b2ac80e1aef69f581f37a33ba01215bc2011d8a850adb8aeb1e",
+    "extractedTextSha256": "20c0a1cfbb242c18a439b4f53d90232bbdea3d574d0d38b6f61bc76826d77692",
+    "documentCount": 1,
+    "documentSetSha256": "155c8fad5460b43069e7fcbdd3214a1bf2f30bed8e9d663b3bf58fbc09053bf4",
+    "contentSha256": "87c2a29b4063e85cf6dd828cd16dbfe085c2815c74a723341daacd2f5f5d2dd3"
+  }
+}

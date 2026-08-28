@@ -1,0 +1,808 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SP",
+    "sqCandidato": "250002549705",
+    "slug": "haddad-gov-sp",
+    "nomeUrna": "FERNANDO HADDAD",
+    "partido": "PT",
+    "arquivoNome": "2026SP250002549705_01.pdf",
+    "arquivoNoPacote": "SP/2026SP250002549705_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SP:250002549705:01",
+      "fonte": {
+        "arquivoNome": "2026SP250002549705_01.pdf",
+        "arquivoNoPacote": "SP/2026SP250002549705_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "6bca690843bd1e205e6e6b8f5b37641b8969252aeb7cb7e39269a264e81fdfb0",
+        "extractedTextSha256": "15febcbaf9927c2e53adb6b63b5c5c305bba84211bc27114b454b367f720e825",
+        "paginas": 15,
+        "secoes": [
+          {
+            "id": "diretrizes",
+            "titulo": "Diretrizes",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "Diretrizes\ndo Programa\nde Governo\nHADDAD\nGovernador de São Paulo • 2027 - 2030"
+          },
+          {
+            "id": "sumario",
+            "titulo": "Sumário",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Sumário\n1. Carta de Fernando Haddad aos Paulistas\n\n4\n\n2. PRIORIDADE Nº 1: SP PROTEGE COM IMPUNIDADE ZERO\n\n6\n\nValorização de quem nos protege\n\n7\n\nCâmeras corporais com gravação contínua\n\n7\n\nO Meu Celular de Volta\n\n7\n\nGolpe Zero\n\n7\n\nSegurança no campo\n\n8\n\nO estado inteiro nos territórios\n\n8\n\nA cadeia que corta o ciclo do crime\n\n8\n\n3. EDUCAÇÃO: A PORTA DA PROSPERIDADE\n\n8\n\nNinguém para trás\n\n8\n\nEscola completa, com profissão\n\n9\n\nUniversidade pública, patrimônio de São Paulo\n\n9\n\nO professor no centro\n\n9\n\nEducação com liderança\n\n9\n\n4. PROSPERIDADE PARA TODO MUNDO\n\n9\n\nO trabalho que rende\n\n10\n\nO pequeno que cresce\n\n10\n\nO campo que enriquece\n\n10\n\nA aposta na inteligência artificial\n\n10\n\n5. SAÚDE NA HORA CERTA\n\n11\n\nConsulta, exame e cirurgia com menor tempo de espera\n\n11\n\nO remédio e o socorro na hora certa\n\n11\n\n2"
+          },
+          {
+            "id": "a-sua-saude-nas-suas-maos",
+            "titulo": "A sua saúde nas suas mãos",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A sua saúde nas suas mãos\n\n11\n\nO cuidado que chega antes da doença\n\n11\n\nUma rede só, com o estado de volta à coordenação\n\n11\n\n6. SÃO PAULO POR INTEIRO\n\n12\n\nIgualdade e respeito\n\n12\n\nMoradia digna\n\n12\n\nMobilidade que liberta tempo\n\n12\n\nÁgua e saneamento para todos\n\n12\n\nPreparo para o clima que mudou\n\n12\n\nCultura que pertence a todos\n\n13\n\nEsporte como política pública\n\n13\n\nTurismo que gera renda\n\n13\n\nProteção social e segurança alimentar\n\n13\n\nRespeito a quem envelhece\n\n13\n\nAcessibilidade e inclusão\n\n13\n\n7. UM GOVERNO QUE FUNCIONA\n\n13\n\nGestão com liderança e instituições que ficam\n\n13\n\nO estado que funciona na vida das pessoas\n\n14\n\nContrato vale, e vale para os dois lados\n\n14\n\nO estado no controle das tecnologias\n\n14\n\nTransparência, contas prestadas e escuta\n\n14\n\nResponsabilidade com o dinheiro do paulista\n\n14\n\n3"
+          },
+          {
+            "id": "1-carta-de-fernando-haddad-aos-paulistas",
+            "titulo": "1. Carta de Fernando Haddad aos Paulistas",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "1. Carta de Fernando Haddad aos Paulistas\nSão Paulo pode mais. Essa é a convicção que me trouxe até aqui e que atravessa cada\npágina deste programa.\nDesde que deixei o Ministério da Fazenda, tenho me dedicado a mergulhar fundo em São\nPaulo. Rodei o estado, estudei os números e conversei com quem faz este estado funcionar\ntodos os dias, dos prefeitos aos professores, dos policiais aos médicos, de quem emprega a\nquem trabalha. E o que encontrei foi uma situação pior do que eu imaginava: um governo que\nentrega pouco, muito menos do que toda a força paulista é capaz de gerar. Um estado com\ngente batalhadora, economia vigorosa e cidades cheias de vida não combina com um governo\nassim. Hoje, São Paulo é um gigante andando no piloto automático, sem a liderança, a visão e\no projeto que os paulistas merecem.\nEssa falta de direção aparece justamente naquilo que mais importa para a vida das pessoas.\nNa segurança, o plano que o atual governador registrou na Justiça Eleitoral em 2022\nreconhecia que menos de 4% dos crimes eram esclarecidos e prometia mudar essa realidade,\nmas a promessa não saiu do papel. Na saúde, a espera por uma cirurgia passa de onze\nmeses. Na educação, eu pergunto: como é que pode a locomotiva do Brasil alfabetizar suas\ncrianças abaixo da média nacional? E quando olhamos para a renda das famílias, apesar de ter\na segunda maior do país, São Paulo aparece em 24º lugar entre os 27 estados quando o\nassunto é crescimento. O estado mais rico do país não pode se contentar com tão pouco.\nFoi para mudar isso que me tornei candidato. E quero dizer aos paulistas, com clareza, por\nonde pretendo começar.\nA segurança pública será a prioridade número um do meu governo, uma agenda que vou\nacompanhar pessoalmente e pela qual vou responder diante de vocês. O programa SP Protege\ntem como eixo central a Impunidade Zero, e começa por investigar bem cada crime desde a\nprimeira hora, proteger com rigor as mulheres, crianças e idosos, valorizar de verdade os\nnossos policiais e sufocar o dinheiro que sustenta o crime organizado, da esquina ao andar de\ncima. Porque quando o crime compensa, ele cresce; e quando a investigação funciona, ele\nrecua. No meu governo, o trabalhador vai voltar a viver em paz porque o criminoso vai voltar a\nter medo de ser pego.\nO segundo compromisso é com a prosperidade, e prosperidade para todo mundo. O mundo\nestá mudando numa velocidade impressionante: a inteligência artificial vai transformar as\nprofissões, e a economia verde vai criar as maiores oportunidades das próximas décadas. São\nPaulo tem todos os ingredientes para liderar essa virada: as melhores universidades do país, o\nparque industrial mais completo, o agro mais sofisticado, energia limpa e gente talentosa e\ntrabalhadora em cada região. O que falta é um governo que prepare o estado para esse futuro.\n\n4"
+          },
+          {
+            "id": "isso-comeca-por-uma-educacao-publica-que-nao-deixe-ninguem-para-tras-que",
+            "titulo": "Isso começa por uma educação pública que não deixe ninguém para trás: que alfabetize na",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Isso começa por uma educação pública que não deixe ninguém para trás: que alfabetize na\nidade certa, que forme jovens dominando matemática e os prepare para as profissões que vêm\naí. E continua na economia do dia a dia, que precisa funcionar para quem trabalha: empresa\nque se abre em minutos, crédito que chega ao pequeno negócio, formação profissional casada\ncom a vocação de cada região, estrada bem cuidada para escoar o que o campo produz. É\nassim que o trabalho rende, o pequeno cresce e o campo enriquece, na capital e no interior.\nO terceiro compromisso é com um governo que funciona e entrega. O paulista vai sentir isso no\ndia a dia: a cirurgia chegando na hora certa, o trem passando no horário, a obra ficando pronta\nno prazo. Também vou instalar no centro do governo um esforço permanente de simplificação\npara repensar processos, eliminar exigências desnecessárias e usar a tecnologia de hoje para\nentregar serviços à altura do nosso tempo. O cidadão vai resolver a vida com o poder público\nem minutos. Quem empreende terá menos burocracia e mais tempo para produzir e empregar.\nE ninguém vai ficar para trás: o estado irá ao encontro do paulista no canal que ele já usa, por\nmensagem, por voz ou pessoalmente, em um Poupatempo refeito para o mundo de hoje, com\no servidor ao lado do cidadão, do mesmo lado do balcão, resolvendo junto e ensinando.\nE governo que entrega é governo limpo. Vou abrir os dados e fortalecer os órgãos de controle,\nporque contrato assinado no escuro o cidadão paga depois, no pedágio, na passagem e na\nconta de água. Nas concessões e nas privatizações, o princípio será claro: contrato vale, e vale\npara os dois lados. Quem assumiu o compromisso de prestar um serviço ao paulista vai\nentregá-lo no prazo e na qualidade combinados, com fiscalização de verdade e com\ntransparência desde a assinatura. No meu governo, a regra vale igual para todo mundo, para o\nrico e para o pobre, para o grande e para o pequeno, e quem tem poder também presta contas.\nE termino com o compromisso que considero essencial: quero ser cobrado. No primeiro ano de\ngoverno, este programa será transformado num plano de gestão com metas públicas e, a cada\ntrês meses, um placar aberto vai mostrar a qualquer cidadão o que avançou e o que ainda\nprecisa avançar, a começar pela segurança. Afinal, o que não se mede não melhora.\nNão peço um cheque em branco. Peço a confiança de vocês e o direito de ser cobrado por ela.\nSão Paulo pode mais, muito mais. E chegou a hora de ter um governo à altura da sua gente.\nFernando Haddad\n\n5"
+          },
+          {
+            "id": "2-prioridade-n-1-sp-protege-com-impunidade-zero",
+            "titulo": "2. PRIORIDADE Nº 1: SP PROTEGE COM IMPUNIDADE ZERO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "2. PRIORIDADE Nº 1: SP PROTEGE COM IMPUNIDADE ZERO\nGovernar é escolher, e a primeira escolha deste programa está feita: a segurança pública será\na prioridade número um do governo Haddad. O tamanho do desafio está documentado na\nprópria Justiça Eleitoral: o plano registrado pelo atual governador em 2022 afirmava que menos\nde 4% dos crimes no estado eram elucidados, e assumia o compromisso de mudar esse\nquadro. Passados quatro anos, a promessa não saiu do papel: o governo atravessou o\nmandato sem publicar um indicador oficial do esclarecimento dos crimes, e a impunidade\nsegue sendo a regra que sustenta o ciclo da violência, do celular roubado à violência contra a\nmulher, passando pelo patrimônio das facções.\nO eixo de tudo é proteger a vida e o patrimônio do paulista, e isso começa por vencer a\nimpunidade. A violência prospera em São Paulo porque a chance de um crime ser esclarecido\ne punido é pequena demais, e essa certeza da impunidade é o maior incentivo que o criminoso\nrecebe. Por isso, o SP Protege tem como eixo central a Impunidade Zero, para que os crimes\nfinalmente sejam resolvidos no estado. A estratégia se organiza em três frentes: nas ruas, nas\ncasas e \"no andar de cima\".\nNas ruas, a proposta é integrar polícias e guardas municipais com um maior uso da\ninteligência. Vamos chamar os municípios para um grande pacto, em que as Guardas Civis\nMunicipais trabalhem em conjunto com a Polícia Militar, ampliando de forma expressiva a\npresença policial nas ruas. A inteligência artificial vai cruzar os dados de ocorrência e as\nchamadas ao 190 para montar mapas de calor que mostrem onde e quando o crime acontece,\ncolocando a viatura no lugar certo, na hora certa, para prevenir o crime. O 190 terá resposta\nrápida: a chamada será cruzada em tempo real com o sistema de inteligência e câmeras, que\nlocalizará a ocorrência e permitirá acionar, de imediato, a viatura mais próxima.\nCada ocorrência será tratada como o início de uma investigação, e não como o fim de um\nregistro. Vamos fortalecer a perícia e a investigação, integrar as bases de dados das forças de\nsegurança e adotar tecnologia para transformar boletins de ocorrência em casos resolvidos. O\ncompromisso central é elevar, de forma consistente, a elucidação dos crimes, e o seu\ncumprimento será exposto num Placar da Segurança, que vai publicar a cada trimestre os\nindicadores de esclarecimento de roubo, furto, homicídio e feminicídio, com dados abertos por\nregião e metas públicas.\nNas casas, o objetivo é proteger mulheres, crianças e idosos, alvos frequentes de violência\ndoméstica no estado. O combate à violência que acontece dentro de casa terá estrutura\ndedicada e permanente. Para as mulheres, um sistema em que a plataforma de proteção\nacompanhe os sinais de risco, as Delegacias de Defesa da Mulher funcionarão 24 horas nas\nregiões de maior demanda e a Polícia Militar garantirá proteção efetiva a quem tem medida\nprotetiva, com adesão imediata ao Alerta Mulher Segura, o programa federal que combina a\n\n6"
+          },
+          {
+            "id": "tornozeleira-eletronica-no-agressor-e-o-dispositivo-que-avisa-a-vitima-e",
+            "titulo": "tornozeleira eletrônica no agressor e o dispositivo que avisa a vítima e aciona a polícia quando",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "tornozeleira eletrônica no agressor e o dispositivo que avisa a vítima e aciona a polícia quando\na distância determinada pela Justiça é desrespeitada.\nPara crianças e adolescentes vítimas de violência, atendimento especializado e prova pericial\nem até 48 horas, para que nenhum caso se perca entre a denúncia e a responsabilização. E\npara a pessoa idosa, que sofre calada dentro da própria família, canal de denúncia com\nresposta e acompanhamento de cada caso.\nNo andar de cima, o objetivo é combater o comando do crime organizado. Vencer o crime\nexige atacar a raiz: o dinheiro que compra a arma, corrompe e recruta. É preciso inteligência,\ncoordenação e coragem para enfrentar o dinheiro grosso e os poderosos do crime. Vamos criar\na Agência Estadual Antifacção, estrutura permanente de inteligência e investigação sob a\ndireção estratégica do governador, reunindo Polícia Civil, Polícia Militar, Receita Estadual e\nórgãos de controle, com participação do Ministério Público e integrada por convênio com a\nReceita Federal, a Polícia Federal, o Banco Central e o COAF. A missão é seguir o dinheiro do\ncrime, desarticular as organizações, bloquear seu patrimônio, impedir sua infiltração na\neconomia formal e dar destinação social aos bens confiscados.\nValorização de quem nos protege. Não existe segurança pública forte com profissionais\ndesvalorizados. Vamos cuidar da carreira, das condições de trabalho e da saúde física e mental\ndos policiais civis, militares e penais, dos bombeiros e dos profissionais da Polícia\nTécnico-Científica. As promoções voltarão a seguir critérios profissionais, sem interferência\npolítica. E vamos valorizar os salários para tirar São Paulo da vergonhosa posição de um dos\nestados que pagam os menores salários policiais do país.\nCâmeras corporais com gravação contínua. Vamos dar, a cada policial, formação de\nqualidade, protocolos claros e equipamentos modernos. As câmeras corporais terão gravação\ncontínua durante todo o serviço na rua, sem depender do acionamento de cada agente,\nprotegendo o cidadão nas ocorrências e o policial contra acusações injustas. Quem age dentro\nda lei sai fortalecido quando a verdade está gravada.\nO Meu Celular de Volta, em parceria com o Governo Federal, vai devolver ao cidadão o que\nlhe foi tirado. Roubar um celular hoje não é roubar um aparelho: é levar junto o trabalho, o\ndinheiro e a memória de uma família. O programa fecha o ciclo inteiro: o boletim dispara o\nrastreamento por IMEI, o bloqueio e a devolução na mão do dono, e quem comprou aparelho\nroubado recebe o aviso oficial para devolver, sob pena de responder por receptação. E São\nPaulo entra com a metade que só o estado pode fazer, desmontando o mercado que torna o\nroubo lucrativo, pelo caminho da Lei dos Desmanches: IMEI obrigatório na nota fiscal, venda\nvedada sem comprovante de origem e fiscalização sobre o comércio de usados.\nGolpe Zero. O crime que mais cresce em São Paulo não usa arma, usa tela: o golpe do falso\ninvestimento, a clonagem de aplicativos, a fraude que esvazia em minutos a poupança de uma\nvida. Vamos enfrentá-lo com uma central estadual de reação imediata, capaz de receber a\ndenúncia e agir para bloquear o dinheiro antes que ele desapareça, com investigação\nespecializada em crimes digitais e responsabilização de toda a cadeia do golpe, do laranja ao\n\n7"
+          },
+          {
+            "id": "financiador-o-golpista-conta-que-a-vitima-nao-saiba-a-quem-recorrer-em-s",
+            "titulo": "financiador. O golpista conta que a vítima não saiba a quem recorrer; em São Paulo, vai passar",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "financiador. O golpista conta que a vítima não saiba a quem recorrer; em São Paulo, vai passar\na saber.\nSegurança no campo. Vamos levar às áreas rurais o patrulhamento orientado por dados,\nintegrado aos centros regionais de comando e controle, priorizando o combate ao furto de\ngado, maquinário, defensivos e insumos e à receptação que o financia, com atenção especial\naos pequenos produtores e articulação com os estados vizinhos nas divisas.\nO estado inteiro nos territórios. Segurança não é tarefa de uma secretaria, e sim do governo\ninteiro. Nos territórios mais atingidos pela violência, o estado vai chegar por completo: a polícia,\nmas também a escola em tempo integral, o esporte, a cultura e as oportunidades para a\njuventude, com programas de mentoria e primeiro emprego para os jovens mais expostos ao\nrecrutamento. E vamos criar o Alistamento Civil Remunerado, para tirar dezenas de milhares de\njovens em vulnerabilidade das garras do crime organizado, oferecendo a eles perspectiva\nprofissional e um futuro decente. Cada jovem com futuro é um recruta a menos para o crime.\nA cadeia que corta o ciclo do crime. As facções que aterrorizam São Paulo nasceram nos\npresídios e seguem comandando de dentro deles. Vamos reforçar o controle do sistema\nprisional: separar os presos por perfil e por facção, cortar as comunicações que sustentam o\ncomando do crime atrás das grades e ampliar o trabalho prisional, com preso aprendendo\nprofissão enquanto cumpre pena. Também vamos fazer a nossa parte contra o prende-e-solta:\ninvestigação e prova bem-feitas para a prisão se sustentar na Justiça, e egresso acompanhado\npara romper com o ciclo do crime.\nEm São Paulo, o trabalhador vai voltar a viver em paz, porque o criminoso vai voltar a ter medo\nde ser pego.\n\n3. EDUCAÇÃO: A PORTA DA PROSPERIDADE\nNão existe projeto de prosperidade sem escola pública de qualidade, e é na educação que a\nfalta de projeto cobra o preço mais alto. Pela régua federal do Ministério da Educação, 61% das\ncrianças paulistas da rede pública foram alfabetizadas na idade certa em 2025, contra 66% na\nmédia nacional, enquanto o Ceará, com uma fração da riqueza paulista, alcançou 84%, graças\na um regime sério de colaboração entre estado e municípios e ao apoio efetivo a quem está na\nponta. O que falta a São Paulo é um governo que assuma a educação como obra de estado.\nNinguém para trás. Toda criança paulista alfabetizada na idade certa, com o estado exercendo\nde verdade o papel de coordenador das redes: um pacto com os 645 municípios, com apoio\ntécnico e financeiro, avaliação transparente e metas medidas pela régua federal, a mesma que\nvale para o Brasil inteiro. E, para os estudantes que a escola vem perdendo, busca ativa,\nreforço de aprendizagem e apoio à permanência, porque cada aluno que abandona os estudos\né um projeto de vida interrompido.\n\n8"
+          },
+          {
+            "id": "escola-completa-com-profissao-vamos-expandir-com-qualidade-o-ensino-em-t",
+            "titulo": "Escola completa, com profissão. Vamos expandir com qualidade o ensino em tempo integral",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Escola completa, com profissão. Vamos expandir com qualidade o ensino em tempo integral\ne conectar o ensino médio à formação profissional que emprega, aproveitando a força do\nCentro Paula Souza, das Etecs e Fatecs, para que o jovem conclua a educação básica com\ndiploma e com profissão, preparado para as carreiras que a nova economia está criando. A\nescola pública paulista deve ser o caminho mais curto entre a origem de um jovem e o futuro\nque ele deseja.\nUniversidade pública, patrimônio de São Paulo. A USP, a Unicamp, a Unesp e a FAPESP\nsão conquistas de décadas e serão tratadas como aquilo que, de fato, são, instituições de\nestado. Vamos respeitar a autonomia universitária e a estabilidade do financiamento que a\nsustenta, aproximar a pesquisa paulista dos desafios concretos do estado, da saúde à\nsegurança e à nova economia, e fortalecer a formação inicial e continuada dos nossos\nprofessores, que é onde a universidade encontra a escola. E vamos cuidar da permanência de\nquem entra, porque vaga sem condição de ficar não é oportunidade.\nO professor no centro. Nenhuma rede de ensino é melhor do que os seus professores, e hoje\no professor paulista perde horas de aula alimentando sistemas: a plataformização do ensino o\ntransformou em preenchedor de planilha, cobrado pela tela e não pela aprendizagem. Vamos\nfazer uma revisão completa desse modelo, devolvendo ao professor o tempo de ensinar e à\ntecnologia o seu lugar de ferramenta, que serve ao professor, e não o contrário. E vamos\nvalorizar a carreira docente, investir em formação continuada de qualidade e dar condições\nreais de trabalho, com o protagonismo e o respeito que a função exige. Um governo que trata\nmal quem ensina está tratando mal o futuro.\nEducação com liderança. A educação paulista terá governança clara, prioridades definidas e\nresponsabilidade nomeada, do gabinete do governador à sala de aula, com metas públicas e\nacompanhamento permanente. Chega de cada um fazendo o que quer: rede boa é rede\ncoordenada, e coordenar é responsabilidade de quem governa.\n\n4. PROSPERIDADE PARA TODO MUNDO\nNosso programa tem o compromisso de fazer a riqueza de São Paulo chegar ao bolso de quem\ntrabalha, empreende e produz, sem deixar ninguém para trás. Hoje não é isso que acontece:\nestudo do FGV IBRE com dados da PNAD Contínua mostra que a renda domiciliar per capita\nreal do estado cresceu em média 1,5% ao ano entre 2012 e 2025, abaixo dos 2% da média\nbrasileira e entre os quatro menores ritmos do país. São Paulo segue tendo a segunda maior\nrenda do Brasil; o problema não é o nível, é o ritmo. E um ritmo que se arrasta há mais de uma\ndécada é um problema de projeto, não de conjuntura: um estado que gera riqueza como\nnenhum outro precisa de um governo que a converta em prosperidade para a sua gente. O\nnosso projeto econômico se mede pela renda do paulista subindo, na capital e em cada região\ndo interior.\n\n9"
+          },
+          {
+            "id": "o-trabalho-que-rende-vamos-atuar-para-que-o-emprego-paulista-seja-de-mel",
+            "titulo": "O trabalho que rende. Vamos atuar para que o emprego paulista seja de melhor qualidade e",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "O trabalho que rende. Vamos atuar para que o emprego paulista seja de melhor qualidade e\nmelhor remuneração, conectando a formação profissional às vocações econômicas de cada\nregião, apoiando os setores que pagam bons salários e preparando os trabalhadores para as\ntransformações que a inteligência artificial e a transição ecológica já estão trazendo. O futuro\ndo trabalho vai premiar quem se preparar para ele, e o papel do governo é garantir que o\ntrabalhador paulista chegue preparado, com qualificação acessível, requalificação para quem\nprecisa mudar de área e ensino técnico conectado com as profissões que vêm aí.\nO pequeno que cresce. A imensa maioria dos negócios de São Paulo é pequena, e é neles\nque a prosperidade se enraíza nos bairros e nas cidades. Vamos simplificar radicalmente a vida\nde quem empreende, ampliar o acesso a crédito justo, apoiar a formalização e abrir as compras\npúblicas ao pequeno fornecedor, para que o mercado do estado também seja motor do\npequeno negócio. Empreender em São Paulo tem que valer a pena para todo mundo, de quem\nestá começando a quem já é grande.\nO campo que enriquece. O interior paulista é uma potência: o agro mais sofisticado do país, a\nagroindústria, a energia da biomassa, o cooperativismo e a agricultura familiar que abastece as\ncidades. E essa potência pode subir de patamar: com a força da cana, São Paulo tem tudo\npara liderar a nova geração dos combustíveis renováveis, do etanol ao combustível sustentável\nde aviação, atraindo os investimentos que vão descarbonizar o transporte no mundo e\nindustrializando aqui esse valor. Vamos dar ao produtor as condições que essa liderança exige:\ndefesa sanitária animal e vegetal tratada como infraestrutura estratégica, porque é a confiança\nna qualidade paulista que abre mercados, estradas vicinais que escoam a produção, prevenção\nde incêndios e assistência técnica e inovação para o produtor de todos os portes.\nA aposta na inteligência artificial. São Paulo reúne o que pouquíssimos lugares do mundo\nreúnem: universidades de ponta, base industrial, energia limpa, um mercado gigante e o\necossistema de startups mais desenvolvido da América Latina. Com esses ingredientes, vamos\ndisputar os grandes investimentos da era da inteligência artificial, dos data centers movidos a\nenergia limpa aos centros de pesquisa das empresas de tecnologia, oferecendo regras\nestáveis, ambientes de teste para inovar com segurança e talento formado em escala. E a\naposta maior: levar essa tecnologia para dentro da economia real, aumentando a produtividade\nda indústria, do agro, do comércio e dos serviços, da grande empresa à padaria do bairro. A\ninteligência artificial em São Paulo não será privilégio de poucos: será ferramenta de todos para\nproduzir mais, ganhar mais e viver melhor.\nAtravessando os quatro compromissos, um selo único: regra clara. Quem investe, empreende\ne trabalha em São Paulo saberá as regras do jogo, terá segurança jurídica e será tratado com\nisonomia, porque a economia do compadrio, dos balcões e dos atalhos empobrece a todos. A\nprosperidade que buscamos é a que se constrói à luz do dia.\n\n10"
+          },
+          {
+            "id": "5-saude-na-hora-certa",
+            "titulo": "5. SAÚDE NA HORA CERTA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE NA HORA CERTA\nHoje em São Paulo, quem depende da saúde pública tem que esperar. O trabalhador perde o\ndia por uma consulta, a mãe aguarda meses por um exame e milhares esperam por uma\ncirurgia sem que ninguém diga quando, nem se, a vez deles vai chegar. A espera média por\numa cirurgia no estado passa de onze meses, segundo dados da própria Secretaria da Saúde,\ne ainda assim o portal oficial da regulação afirma que não possui fila de espera. No nosso\ngoverno, a saúde vai chegar na hora certa: com o paciente no centro do cuidado, uma rede de\natenção que funcionará e o atendimento que chegará antes da doença.\nConsulta, exame e cirurgia com menor tempo de espera. Já no primeiro ano, a fila às\nclaras: posição e tempo de espera consultáveis pelo CPF, prioridade por critério clínico e\ncomunicação direta com cada pessoa sobre os seus agendamentos pelo Meu SUS Digital,\ncomo já é feito pelo Ministério da Saúde no programa Agora Tem Especialistas. O programa vai\nampliar o acesso a consultas especializadas, exames, diagnóstico completo mais rápido e\ncirurgias, quando necessário, com o apoio da telessaúde, das carretas da saúde e da oferta\ncomplementar de serviços da rede privada, sempre gratuito para o paciente. E o especialista\nvai chegar perto de casa, com telessaúde nas unidades do interior e das periferias, para que\nninguém atravesse o estado à procura de diagnóstico.\nO remédio e o socorro na hora certa. O Farmácia Popular, do Ministério da Saúde, será\nfortalecido no estado de São Paulo, garantindo que os remédios cheguem a quem precisa, de\nforma ágil e sem espera. As ambulâncias do SAMU estarão conectadas à rede hospitalar de\nurgências e emergências e a uma central de monitoramento e regulação dos leitos, com\nsuporte da telessaúde e da inteligência artificial, iniciando o manejo precocemente, reduzindo\ncomplicações e salvando vidas.\nA sua saúde nas suas mãos. Seu histórico de saúde estará disponível no seu celular pelo\naplicativo Meu SUS Digital. Em qualquer ponto da rede de atenção onde você for atendido, seja\nna Unidade Básica de Saúde, no hospital ou na UPA, o profissional de saúde que atender você\nterá acesso ao seu prontuário clínico e aos resultados de exames, garantindo a continuidade, a\nqualidade e a segurança do cuidado com a sua saúde.\nO cuidado que chega antes da doença. O cuidado com a sua saúde será personalizado, e\nvocê será lembrado periodicamente pelo Meu SUS Digital sobre os cuidados que deve ter na\nsua rotina e quando for a hora da consulta ou de agendar algum exame.\nUma rede só, com o estado de volta à coordenação. Vamos fazer o posto, o ambulatório, o\nhospital e o laboratório trabalharem juntos. Eles estarão integrados, com registros clínicos\nunificados, facilitando a continuidade, a qualidade e a segurança do cuidado dedicado a cada\npaciente em qualquer serviço do SUS em que ele for atendido. A Secretaria Estadual de Saúde\n\n11"
+          },
+          {
+            "id": "retomara-seu-papel-de-coordenacao-da-rede-de-organizacao-da-regionalizac",
+            "titulo": "retomará seu papel de coordenação da rede, de organização da regionalização, de regulação",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "retomará seu papel de coordenação da rede, de organização da regionalização, de regulação\nda atenção especializada e de participação no financiamento das ações e serviços de saúde. O\nsistema de vigilância em saúde será fortalecido em integração com a atenção à saúde. Os\nprofissionais de saúde serão valorizados com concurso público, educação permanente e\ncuidado com quem cuida.\nEm São Paulo, a saúde vai ter dia e vai ter hora. E vai chegar até você.\n\n6. SÃO PAULO POR INTEIRO\nUm projeto de estado não cabe em cinco capítulos, e as diretrizes a seguir estendem às\ndemais áreas da vida paulista os mesmos princípios deste programa: prioridade, cooperação\ncom os municípios e resultado medido. Cada uma delas será detalhada no plano de governo\ncompleto.\nIgualdade e respeito. São Paulo é feito de gente de todas as origens, e um estado que tolera\ndiscriminação desperdiça talento e nega futuro. Vamos enfrentar o racismo e toda forma de\ndiscriminação com política pública séria: igualdade de oportunidades na escola e no trabalho,\nresposta rigorosa aos crimes de ódio e serviço público que trate cada paulista com o mesmo\nrespeito, seja qual for a sua cor, a sua fé ou a sua orientação.\nMoradia digna. São Paulo convive com um déficit habitacional que constrange o estado mais\nrico do país. Vamos enfrentá-lo com uma política habitacional articulada com os programas\nfederais e com os municípios, priorizando a habitação de interesse social, a regularização\nfundiária e a melhoria das moradias existentes, porque cidade boa começa com endereço\ndigno.\nMobilidade que liberta tempo. O paulista das regiões metropolitanas perde horas de vida no\ndeslocamento diário. Vamos expandir o transporte sobre trilhos, avançar na integração entre os\nsistemas e os modais, qualificar o transporte metropolitano e cuidar das ligações que conectam\no interior, porque tempo de deslocamento é tempo roubado da família, do estudo e do\ndescanso.\nÁgua e saneamento para todos. Vamos exercer com rigor o papel do estado na\nuniversalização do saneamento, fiscalizando a qualidade e a expansão dos serviços\ncontratados, protegendo os mananciais e garantindo segurança hídrica para as próximas\ndécadas, com atenção especial às áreas mais vulneráveis, onde a ausência de saneamento\ncobra o preço mais alto em saúde.\nPreparo para o clima que mudou. Os eventos extremos deixaram de ser exceção, e o estado\nprecisa estar preparado. Vamos fortalecer a prevenção de desastres e a Defesa Civil, mapear e\n12"
+          },
+          {
+            "id": "cuidar-das-areas-de-risco-em-parceria-com-os-municipios-e-apoiar-a-adapt",
+            "titulo": "cuidar das áreas de risco em parceria com os municípios e apoiar a adaptação das cidades,",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "cuidar das áreas de risco em parceria com os municípios e apoiar a adaptação das cidades,\nalém de proteger o patrimônio ambiental paulista, porque a transição ecológica que\ndefendemos na economia começa pelo dever de proteger vidas.\nCultura que pertence a todos. A cultura paulista é potência econômica e alma do estado.\nVamos apoiar a produção cultural em todas as regiões, garantir o acesso da população aos\nequipamentos e às linguagens culturais e tratar a economia criativa como o setor estratégico\nque ela é, gerador de renda, identidade e futuro.\nEsporte como política pública. O esporte educa, inclui, promove saúde e abre portas para a\njuventude. Vamos ampliar o acesso à prática esportiva nas escolas e nos territórios, apoiar o\nesporte de base e usar o esporte como ferramenta de presença do estado justamente onde ele\nmais faz falta.\nTurismo que gera renda. Das estâncias turísticas ao litoral, dos circuitos do interior ao\npatrimônio histórico, São Paulo tem um potencial turístico subaproveitado. Vamos estruturar o\nturismo como vetor de desenvolvimento regional, em parceria com os municípios, gerando\nemprego e renda onde eles são mais necessários.\nProteção social e segurança alimentar. Vamos fortalecer a rede de assistência social em\ncooperação com os municípios, apoiar quem mais precisa com prioridade à primeira infância e\nàs famílias em vulnerabilidade e garantir que nenhum paulista conviva com a fome, articulando\nas políticas de segurança alimentar com a força da agricultura paulista.\nRespeito a quem envelhece. São Paulo envelhece rapidamente, e isso é uma conquista que\nexige preparo. Vamos adequar os serviços públicos à longevidade, com atenção à saúde da\npessoa idosa, ao cuidado e à participação, para que envelhecer neste estado seja viver mais e\nviver bem.\nAcessibilidade e inclusão. As pessoas com deficiência têm direito a um estado que funcione\npara elas em todas as políticas, da escola ao transporte, do trabalho à saúde. Vamos garantir\nacessibilidade, apoiar a autonomia e assegurar que a inclusão seja critério de qualidade de\ntodo serviço público paulista.\n\n7. UM GOVERNO QUE FUNCIONA\nOs compromissos deste programa, da segurança à saúde, dependem de um estado que\nfunciona e que entrega, com liderança presente, gestão profissional e a mesma regra valendo\npara todos.\nGestão com liderança e instituições que ficam. O governador vai liderar pessoalmente um\nmodelo de gestão com prioridades claras, metas públicas e responsáveis nomeados, cobrados\nem ciclos regulares de avaliação e em parceria com as prefeituras de cada região do estado. E\n13"
+          },
+          {
+            "id": "vamos-construir-para-durar-as-estruturas-de-coordenacao-os-sistemas-de-d",
+            "titulo": "vamos construir para durar: as estruturas de coordenação, os sistemas de dados e as carreiras",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "vamos construir para durar: as estruturas de coordenação, os sistemas de dados e as carreiras\ntécnicas deste governo serão desenhadas como instituições de estado, feitas para sobreviver\naos governos e servir aos paulistas por décadas. Valorizar o servidor público faz parte dessa\nconstrução, porque nenhum estado funciona contra os próprios quadros: funciona com eles,\nformados, respeitados e cobrados por resultado.\nO estado que funciona na vida das pessoas. Facilitar a vida do paulista será um esforço\npermanente deste governo: vamos repensar processos, eliminar exigências desnecessárias e\nusar a tecnologia de hoje para entregar serviços à altura do nosso tempo. O cidadão vai\nresolver a sua vida com o poder público de forma simples e rápida, em minutos e sem fila, com\num estado que se antecipa e avisa antes que falte. Quem empreende terá menos burocracia e\nmais tempo para produzir e empregar. E ninguém vai ficar para trás: o estado irá ao encontro\ndo paulista no canal que ele já usa, por mensagem, por voz ou pessoalmente, com um\nPoupatempo refeito para o mundo de hoje, em que o servidor se senta ao lado do cidadão,\nresolvendo junto e ensinando.\nContrato vale, e vale para os dois lados. Boa parte dos serviços que o paulista usa todos os\ndias, do pedágio ao trem, da água ao esgoto, é prestada por empresas contratadas pelo\nestado, e é dever do governo garantir que o combinado seja cumprido. Nas concessões e\nprivatizações, quem assumiu o compromisso de servir o paulista vai entregar no prazo e na\nqualidade contratados, com fiscalização de verdade, agências reguladoras fortes e\ntransparência desde a assinatura. Segurança jurídica para quem investe e cumpre; cobrança\nrigorosa, com as sanções previstas em contrato, para quem não entrega.\nO estado no controle das tecnologias. Os dados dos paulistas são patrimônio dos paulistas.\nVamos garantir a soberania do estado sobre os seus dados e as suas plataformas, com\nprivacidade protegida, regras públicas para o uso de inteligência artificial no governo e\ntecnologia contratada para servir ao cidadão, sem criar dependências caras e opacas.\nTransparência, contas prestadas e escuta. Vamos abrir os dados, as filas e os contratos,\nfortalecer a controladoria e os órgãos de fiscalização e tratar o dinheiro público com o rigor de\nquem sabe de onde ele vem: nenhum fornecedor, nenhum contrato e nenhuma autoridade\nacima do escrutínio público. E governo que presta contas também escuta, com conselhos,\nouvidorias e participação da sociedade levados a sério, porque quem governa para o povo\ngoverna com o povo. A corrupção e o privilégio se escondem no escuro, e o nosso governo vai\ngovernar com a luz acesa.\nResponsabilidade com o dinheiro do paulista. Este programa foi feito para caber na\nresponsabilidade fiscal: cada compromisso será implementado com fonte identificada no\nplanejamento e no orçamento do estado, com rigor contra o gasto que não entrega e prioridade\npara o que muda a vida das pessoas.\n\n14"
+          },
+          {
+            "id": "este-programa-termina-com-o-compromisso-que-o-sustenta-o-direito-do-paul",
+            "titulo": "Este programa termina com o compromisso que o sustenta: o direito do paulista de cobrar o",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Este programa termina com o compromisso que o sustenta: o direito do paulista de cobrar o\nseu governador. No primeiro ano de governo, estas diretrizes serão convertidas em um plano\nde gestão com metas públicas, prazos e responsáveis com nome e sobrenome, acompanhado\npor um placar aberto, atualizado a cada trimestre e iniciado pela segurança pública. Governo\nque se esconde do número é governo que desistiu do resultado. O nosso fará o contrário: vai\nse medir em público, porque foi para entregar que pediu o voto.\nSão Paulo pode mais. E, com a confiança dos paulistas, vai comprovar isso a cada\ntrimestre.\n\n15"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "fb5da5f28c930dfab38d9758a420bdd1003da702c533f1a636345ab5c2f69051"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "fc17fa0498d4d047490053a2e1a3929384cec0d1c47a1a74087ed6f2afc1404d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "57f8feddb34bb77f23ee9c183d7e63b01009a873332546145c1ac5d5c859e4d9"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b729204a549b965d3bde4761577c7baefac9b53e5953b8d62674a86a5aaed602"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "291efd2a9ec9d0888c2d255fe881034fafe5a9492b2bdcbca929814fc9363f5d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "81614f17cf16f6e87835eca47a075d3f2516735eef8d6faba0156e88c223dde1"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "9b7440b1f7e7bd58e3734494fc98b4e36d6f27254d302a68644ac65bb69d6b00"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "68fa8847a1d22a778f89ae268661a14f48df3a0fcc6ebdda67cdb595f577c09e"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "994921c47e0cbf7fb9d168bc9c1c59a53f6242e1650921fbd34786a1c7b44759"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "02e900d7a0d09ce2657a361e528115f600b2656d5ce70d56489be116b5bbc6d7"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "173df0c83e69dab61faa695df63c77d5f52fbf67dd601df8a4f4bd0cbda337f0"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "92dcc531eee9c7964208f0fd46e12c567263bf4a97c9f3cf8904ef1025e139b2"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "07945aceab34479c98b1c25b78a34f5470d5b1df349c277abd994f2d32757a7b"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1e79b8f2b5233deb1fcb4499f5a5cb99e78890778f4140a9f7ee3a26756cc427"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f13f912affec1171ad6b27e0b97b4124ef3189e68f24bc2cbeccd1cf5aebc63b"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na segurança pública, o programa propõe integrar polícias e guardas municipais com maior uso da inteligência para ampliar a presença policial nas ruas. O programa planeja câmeras corporais com gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente, para registrar as ocorrências. Na educação, o programa propõe expandir com qualidade o ensino em tempo integral, conectando o ensino médio à formação profissional que emprega. Na saúde, o programa prevê disponibilizar posição e tempo de espera consultáveis pelo CPF, com prioridade definida por critério clínico. Na mobilidade, o programa planeja expandir o transporte sobre trilhos para qualificar os deslocamentos metropolitanos. Na gestão pública, o programa prevê abrir dados, filas e contratos sob escrutínio público, com informações acessíveis à sociedade.",
+    "frases": [
+      {
+        "texto": "Na segurança pública, o programa propõe integrar polícias e guardas municipais com maior uso da inteligência para ampliar a presença policial nas ruas.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 6,
+            "trecho": "Nas ruas, a proposta é integrar polícias e guardas municipais com um maior uso da inteligência. Vamos chamar os municípios para um grande pacto, em que as Guardas Civis Municipais trabalhem em conjunto com a Polícia Militar, ampliando de forma expressiva a presença policial nas ruas."
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja câmeras corporais com gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente, para registrar as ocorrências.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 7,
+            "trecho": "As câmeras corporais terão gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente, protegendo o cidadão nas ocorrências e o policial contra acusações injustas."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe expandir com qualidade o ensino em tempo integral, conectando o ensino médio à formação profissional que emprega.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 9,
+            "trecho": "Vamos expandir com qualidade o ensino em tempo integral e conectar o ensino médio à formação profissional que emprega"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê disponibilizar posição e tempo de espera consultáveis pelo CPF, com prioridade definida por critério clínico.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 11,
+            "trecho": "posição e tempo de espera consultáveis pelo CPF, prioridade por critério clínico"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, o programa planeja expandir o transporte sobre trilhos para qualificar os deslocamentos metropolitanos.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 12,
+            "trecho": "Vamos expandir o transporte sobre trilhos, avançar na integração entre os sistemas e os modais, qualificar o transporte metropolitano"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, o programa prevê abrir dados, filas e contratos sob escrutínio público, com informações acessíveis à sociedade.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 14,
+            "trecho": "Vamos abrir os dados, as filas e os contratos, fortalecer a controladoria e os órgãos de fiscalização"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "integracao-policial",
+        "titulo": "Integração policial",
+        "descricao": "Integração entre polícias, guardas municipais e inteligência para orientar a presença policial.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 6,
+            "trecho": "Nas ruas, a proposta é integrar polícias e guardas municipais com um maior uso da inteligência."
+          }
+        ]
+      },
+      {
+        "id": "cameras-corporais",
+        "titulo": "Câmeras corporais",
+        "descricao": "Gravação contínua das atividades policiais durante o serviço nas ruas.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 7,
+            "trecho": "As câmeras corporais terão gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente"
+          }
+        ]
+      },
+      {
+        "id": "ensino-profissional",
+        "titulo": "Ensino profissional",
+        "descricao": "Expansão do ensino em tempo integral conectado à formação profissional.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 9,
+            "trecho": "Vamos expandir com qualidade o ensino em tempo integral e conectar o ensino médio à formação profissional que emprega"
+          }
+        ]
+      },
+      {
+        "id": "fila-da-saude",
+        "titulo": "Fila da saúde",
+        "descricao": "Consulta da posição da fila pelo CPF com prioridade por critério clínico.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 11,
+            "trecho": "posição e tempo de espera consultáveis pelo CPF, prioridade por critério clínico"
+          }
+        ]
+      },
+      {
+        "id": "transparencia-publica",
+        "titulo": "Transparência pública",
+        "descricao": "Abertura de dados, filas e contratos ao escrutínio público.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002549705:01",
+            "pagina": 14,
+            "trecho": "Vamos abrir os dados, as filas e os contratos"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:33:59.614Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:35:52.064Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (integração policial nas ruas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:1:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas: integração, guardas municipais, inteligência, ampliação da presença."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:2:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:3:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:4:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:5:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal (escrutínio público mencionado no mesmo parágrafo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:frase:6:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:integracao-policial:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre os elementos citados no resumo do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:cameras-corporais:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre os elementos do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:ensino-profissional:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:fila-da-saude:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte literal, escrutínio confirmado no mesmo parágrafo do doc."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002549705:tema:transparencia-publica:documentos:SP:250002549705:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas do resumo."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SP:250002549705",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SP:250002549705:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 28161,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2140,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25438,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 18590,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25438,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 18590,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25438,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25438
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.30755239999999995
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "6bca690843bd1e205e6e6b8f5b37641b8969252aeb7cb7e39269a264e81fdfb0",
+    "extractedTextSha256": "15febcbaf9927c2e53adb6b63b5c5c305bba84211bc27114b454b367f720e825",
+    "documentCount": 1,
+    "documentSetSha256": "c7b4da6ea29cbb7e81f51f449a7b5d1257e7685cbf82f09bbfe87b5d04aa7dfd",
+    "contentSha256": "79df11866bcf7198bc552f47bb533f732339d6c43de9a8777cf666579f705320"
+  }
+}

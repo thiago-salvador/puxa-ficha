@@ -1,0 +1,1228 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002553055",
+    "slug": "celina-leao",
+    "nomeUrna": "CELINA LEÃO",
+    "partido": "PP",
+    "arquivoNome": "2026DF70002553055_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002553055_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002553055:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002553055_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002553055_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "07e5646b8492d28acacd222d7af70d2441c62a162cba965a9a5ebf619a40b269",
+        "extractedTextSha256": "c22be94b1a27c178bb8fd4f1660fa70977a381034e9cec3ede9fd5fc9182e8c4",
+        "paginas": 42,
+        "secoes": [
+          {
+            "id": "p-l-a-n-o",
+            "titulo": "P L A N O",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O\n\nD E\n\nG O V E R N O\n\n2027 a 2030\nCELINA LEÃO\nGovernadora do Distrito Federal\n\nGUSTAVO ROCHA\nVice-governador"
+          },
+          {
+            "id": "s-u-m-a-r-i-o",
+            "titulo": "S U M Á R I O",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "S U M Á R I O\n\n1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n• Família\n• Mulheres\n• Pessoa Idosa\n• Juventude\n• Pessoas com Deficiência, Acessibilidade e Inclusão\n• Desenvolvimento Social e Superação das Vulnerabilidades\n• Segurança Alimentar\n• Saúde\n• Educação\n• Segurança Pública\n• Esporte e Lazer\n• Igualdade, Respeito e Cidadania\n\n2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n• Habitação e Regularização Fundiária\n• Infraestrutura, Saneamento, Iluminação e Obras Públicas\n• Mobilidade Urbana\n• Sustentabilidade e Meio Ambiente\n• Proteção Animal\n\n3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n• Desenvolvimento Econômico, Trabalho e Renda\n• Feiras\n• Agricultura\n• Turismo\n• Cultura e Economia Criativa\n\n4\n\nBRB, DESENVOLVIMENTO E FOMENTO DO DF\n• Patrimônio Estratégico\n• Entorno\n\n5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n• Gestão de Pessoas e Valorização dos Servidores\n• Transformação Digital, Governo Inteligente e Inovação\n• Planejamento, Orçamento, Gestão e Governança\n• Sociedade Civil e Governo de Proximidade\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n2"
+          },
+          {
+            "id": "plano-de-governo-2027-a-2030-celina-leao-gustavo-rocha",
+            "titulo": "Plano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n3"
+          },
+          {
+            "id": "a-p-r-e-s-e-n-t-a-c-a-o",
+            "titulo": "A P R E S E N T A Ç Ã O",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "A P R E S E N T A Ç Ã O\n\nEu acredito que governar é cuidar das pessoas. Foi assim que comecei com o governador Roriz\ne construí minha trajetória. Meu compromisso é fazer um governo integrado, porque os\ndesafios da população não cabem dentro de uma única secretaria. Saúde, educação, assistência\nsocial, segurança, habitação e geração de oportunidades precisam caminhar juntas. O nosso\nfoco é garantir dignidade, fortalecer as famílias e ampliar a proteção social em todas as regiões\nadministrativas do DF.\nAs políticas sociais serão o centro da minha gestão. Vamos fortalecer a rede de proteção às mulheres,\nampliar o atendimento às mães-solo, às pessoas idosas, às pessoas com deficiência e às famílias em\nsituação de vulnerabilidade, sempre com acolhimento, respeito e compromisso com a reconstrução de\nvidas. Quero um Distrito Federal em que o cuidado seja uma política permanente, com ações integradas\nque promovam autonomia, inclusão produtiva, segurança alimentar e oportunidades para quem mais\nprecisa. A nossa prioridade é fazer com que as políticas públicas sejam verdadeiramente universais,\nalcançando todas as pessoas, sem deixar ninguém para trás.\nTambém vamos transformar a saúde pública em uma rede integrada de atendimento. Vamos ampliar a\nAtenção Primária, reduzir filas, modernizar hospitais, construir novas unidades e utilizar a tecnologia\npara aproximar o cidadão dos serviços. O prontuário eletrônico unificado, as teleconsultas e o\nacompanhamento digital do atendimento permitirão uma gestão mais eficiente e um atendimento mais\nrápido e mais humano. Cuidar da saúde é cuidar da qualidade de vida das pessoas em todas as fases da\nvida, da infância ao envelhecimento.\nNa educação, acredito que preparar o futuro significa investir nas pessoas desde os primeiros anos de\nvida. Vamos ampliar a educação integral, fortalecer a inclusão, modernizar as escolas e oferecer mais\nacesso à tecnologia, à inovação e às competências digitais. Quero que nossos jovens tenham\noportunidades reais de qualificação, empreendedorismo e inserção no mercado de trabalho.\nMeu compromisso também é construir um governo moderno, próximo das pessoas e preparado para os\ndesafios do futuro. A transformação digital será uma ferramenta para facilitar a vida da população,\nintegrar serviços públicos, reduzir burocracias e ampliar o acesso aos direitos. Ao mesmo tempo,\nmanteremos o atendimento presencial para quem precisar, porque inovação só faz sentido quando\nfortalece o atendimento humano e melhora a vida das pessoas. Essa é a nossa visão de governo: eficiente,\nacessível e conectado com a realidade de cada cidadão.\nQuero continuar governando com diálogo, responsabilidade e muito trabalho. Acredito na força da\nzeladoria, no cuidado permanente com as cidades e com as pessoas, na presença do Estado onde ele é\nmais necessário e na construção de políticas públicas integrando órgãos e ações, planejamento e\nresultados. Meu compromisso é fazer do Distrito Federal uma referência em inclusão social,\ndesenvolvimento e qualidade de vida, sempre colocando o ser humano no centro das decisões e\ntrabalhando todos os dias para que cada família tenha mais segurança, mais oportunidades e mais\nesperança no futuro. Só assim teremos uma verdadeira Capital da Esperança! Feliz é a nação cujo Deus\né o Senhor. Que Deus nos guie e nos proteja nessa caminhada.\n\nCELINA LEÃO\nGovernadora do Distrito Federal\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n4"
+          },
+          {
+            "id": "e-i-x-o-1",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nE I X O\n\n1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\nFAMÍLIA\n\n6 ações\n\nA família é o primeiro espaço de cuidado, proteção, formação de valores e desenvolvimento das\npessoas. Fortalecê-la significa apoiar mães, pais, responsáveis e cuidadores, proteger crianças,\nadolescentes, pessoas idosas e com deficiência e criar condições para a convivência saudável, a\nautonomia e a superação das situações de vulnerabilidade.\nO Governo do Distrito Federal integrará os serviços de saúde, educação, assistência social, habitação,\nsegurança e trabalho para oferecer atendimento mais próximo, acolhedor e eficiente às famílias. As\nações terão como prioridades a primeira infância, a maternidade, a paternidade responsável, a\nproteção contra a violência, o apoio a quem cuida e a geração de oportunidades para que as famílias\npossam construir seus projetos de vida com dignidade e segurança.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o Programa Família Forte como porta única de acesso à política social, com cadastro\nunificado, com técnicos responsáveis pelas famílias atendidas e plano de saída com metas e prazos\nacordados, articulando os serviços públicos para fortalecer os vínculos familiares, prevenir\nsituações de vulnerabilidade e facilitar o acesso das famílias às políticas de saúde, educação,\nassistência social, habitação, segurança alimentar e trabalho.\n▪ Fortalecer a proteção à primeira infância e o exercício responsável da maternidade e da\npaternidade, apoiando as famílias desde a gestação e nos primeiros anos de vida das crianças, com\norientação, acompanhamento e integração dos serviços públicos.\n▪ Apoiar as famílias responsáveis pelo cuidado de pessoas idosas, pessoas com deficiência, doenças\nraras ou em situação de dependência e neurodivergentes, oferecendo orientação, capacitação,\nacolhimento e articulação dos serviços de apoio aos cuidadores.\n▪ Promover a convivência familiar e comunitária e a proteção de crianças e adolescentes, com ações\nde prevenção à violência doméstica, ao abandono, à negligência e a outras formas de violação de\ndireitos, em articulação com as redes de saúde, educação, assistência social, segurança e justiça.\n▪ Ampliar as oportunidades de autonomia econômica das famílias, por meio da qualificação\nprofissional, do acesso ao trabalho, do empreendedorismo, da educação financeira e da inclusão\nprodutiva, com atenção especial aos responsáveis familiares em situação de vulnerabilidade.\n▪ Incentivar a prática da adoção e o apoio aos órfãos.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n5"
+          },
+          {
+            "id": "e-i-x-o-1-2",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nMULHERES\n\n10 ações\n\nO compromisso com as mulheres será orientado pela proteção à vida, auxiliando as mães-solo, pela\npromoção da saúde e pela ampliação das oportunidades de autonomia econômica e profissional. As\npolíticas públicas serão organizadas para prevenir e enfrentar a violência, garantir acolhimento e\nproteção às vítimas e a seus dependentes e oferecer atendimento humanizado nas diferentes fases da\nvida, com prioridade para as mulheres em situação de maior vulnerabilidade. O Governo fortalecerá o\nacesso das mulheres à qualificação, ao emprego, ao empreendedorismo, ao crédito e à educação\nfinanceira, com atenção especial às mães-solo, cuidadoras e mulheres responsáveis pelo sustento\nfamiliar. Também serão incentivadas a participação de meninas e mulheres nas áreas de ciência,\ntecnologia e inovação, a igualdade de oportunidades no mercado de trabalho e a presença feminina em\nespaços de liderança e decisão.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Ampliar a marca Viva Flor Integral à rede de prevenção e enfrentamento à violência contra as\nmulheres, estendendo a proteção aos filhos e dependentes das vítimas.\n▪ Integrar e ampliar a rede especializada de atendimento nas Regiões Administrativas com\nprotocolos integrados, proteção às vítimas e a seus dependentes e fortalecimento de programas\ncomo PROVID, PRÓ-VÍTIMA e Viva Flor, em articulação com as forças de segurança, o sistema de\njustiça e os serviços psicossociais, para ampliar a proteção às nossas mulheres.\n▪ Ampliar as ações de prevenção à violência e ao feminicídio, promovendo orientação nas\ncomunidades e atividades educativas adequadas às diferentes faixas etárias, com respeito às\nfamílias, além do acompanhamento dos casos de maior risco e do apoio aos filhos e dependentes\ndas vítimas.\n▪ Fortalecer e ampliar a rede de atenção integral à saúde da mulher, assegurando acesso à prevenção,\nao diagnóstico precoce, ao tratamento e ao acompanhamento especializado em todas as fases da\nvida.\n▪ Fortalecer a rede de apoio às mães, cuidadoras e famílias, oferecendo orientação, acolhimento e\narticulação dos serviços destinados às mulheres responsáveis pelo cuidado de crianças, pessoas\ncom deficiência, transtornos do neurodesenvolvimento, doenças raras, pessoas idosas e outros\nfamiliares dependentes.\n▪ Promover a autonomia econômica, educacional e profissional das mulheres, ampliando o acesso à\nqualificação, ao emprego, ao empreendedorismo, ao microcrédito, à educação financeira, à inclusão\ndigital e à igualdade de oportunidades e remuneração, com incentivo à participação de meninas e\nmulheres nas áreas de ciência, tecnologia e inovação.\n▪ Garantir atendimento digno, acessível e adaptado às diferentes realidades das mulheres, com\natenção às mulheres com deficiência, idosas, rurais, em situação de rua, privadas de liberdade e em\noutras condições de vulnerabilidade.\n▪ Fortalecer a governança da política para as mulheres, ampliando a capacidade institucional e os\nrecursos da Secretaria da Mulher e do Conselho dos Direitos da Mulher do Distrito Federal,\nincentivando a liderança feminina nos espaços decisórios e assegurando atendimento acessível e\nespecializado às mulheres em condições de vulnerabilidade.\n▪ Implantar o Mãe Por Inteiro, assegurando prioridade às mulheres que sustentam sozinhas o\ndomicílio no acesso a vaga em creche com horário compatível com a jornada de trabalho,\nqualificação profissional, microcrédito produtivo e programas habitacionais.\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n6"
+          },
+          {
+            "id": "e-i-x-o-1-3",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\n▪ Criar o Centro de Referência da Saúde da Mulher.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n7"
+          },
+          {
+            "id": "e-i-x-o-1-4",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nPESSOA IDOSA\n\n7 ações\n\nO envelhecimento da população do Distrito Federal exige políticas públicas que promovam saúde,\nautonomia, proteção e convivência familiar e comunitária. O Governo fortalecerá a rede de\natendimento à pessoa idosa, apoiará as famílias e os cuidadores e ampliará as oportunidades de\nparticipação social, inclusão digital e envelhecimento ativo, com atenção especial às pessoas em\nsituação de dependência, isolamento ou vulnerabilidade.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer a Atenção Primária e a assistência farmacêutica, ampliar o acesso às especialidades de\ngeriatria, gerontologia, reabilitação e saúde mental, qualificar o atendimento domiciliar às pessoas\ncom mobilidade reduzida ou em situação de dependência.\n▪ Implantar o Hospital Geriátrico de Brasília.\n▪ Ampliar as oportunidades de convivência e envelhecimento ativo, ampliando o Programa Ginástica\nnas Quadras e o atendimento nas vilas olímpicas.\n▪ Criar o Programa Casa Viver, residenciais de acolhimento diário ou integral para idosos.\n▪ Fortalecer a proteção da pessoa idosa, integrando as ações de prevenção e enfrentamento à\nviolência, ao abandono, às fraudes financeiras, aos golpes digitais e à discriminação em razão da\nidade, com atendimento humanizado.\n▪ Promover a autonomia e a participação da pessoa idosa, ampliando ações de inclusão digital,\neducação financeira, preparação para a aposentadoria, qualificação profissional,\nempreendedorismo e valorização das pessoas com mais de 60 anos no mercado de trabalho.\n▪ Apoiar as famílias e os cuidadores, oferecendo orientação, capacitação, acompanhamento\npsicossocial e articulação dos serviços de cuidado, com foco na preservação dos vínculos familiares,\nna convivência entre gerações e na prevenção da sobrecarga de quem cuida.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n8"
+          },
+          {
+            "id": "e-i-x-o-1-5",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nJUVENTUDE\n\n7 ações\n\nA juventude do Distrito Federal é uma força essencial para o desenvolvimento social e econômico. O\nGoverno tratará os jovens como prioridade, ampliando oportunidades de educação, qualificação,\ntrabalho, esporte, cultura e inovação, com atenção especial à prevenção da violência, à saúde emocional\ne aos territórios de maior vulnerabilidade. As ações serão desenvolvidas de forma integrada com as\nfamílias, as escolas, as comunidades e o setor produtivo, estimulando a autonomia, a responsabilidade\ne a construção de projetos de vida.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer a formação educacional, profissional e tecnológica dos jovens, ampliando o acesso ao\nensino médio integrado, à preparação para o Enem e os vestibulares, ao ensino de idiomas e à\nqualificação em competências digitais e profissões associadas às novas demandas do mercado de\ntrabalho.\n▪ Ampliar as oportunidades de primeiro emprego, estágio e empreendedorismo por meio do\nPrimeiro Sim, fortalecendo a articulação entre escolas, Agências do Trabalhador e setor produtivo,\ncom orientação profissional, capacitação, mentorias, educação financeira e apoio à formalização de\npequenos negócios.\n▪ Prevenir a violência e reduzir situações de vulnerabilidade entre os jovens, por meio da integração\nentre escolas, famílias, comunidades, assistência social e segurança pública, com ações de proteção,\norientação, acompanhamento e fortalecimento dos projetos de vida.\n▪ Fortalecer o esporte, a cultura e os espaços públicos como instrumentos de formação e convivência,\napoiando atividades comunitárias, iniciação esportiva, identificação de talentos e participação de\njovens atletas em competições, conforme critérios e programas específicos.\n▪ Promover a saúde e o bem-estar da juventude, fortalecendo ações de prevenção ao uso de álcool e\noutras drogas, apoio à saúde mental, combate ao bullying e orientação às famílias, com atendimento\nacolhedor e articulação entre as redes de saúde e educação.\n▪ Implantar o Trampo Novo, programa de formação técnica e profissionalizante da juventude,\noferecendo cursos técnicos e profissionalizantes gratuitos voltados às novas demandas da\neconomia digital, criativa e tecnológica, em áreas como inteligência artificial, desenvolvimento de\naplicativos, UX/UI audiovisual, design gráfico, produção de conteúdo, marketing digital, games,\nrobótica, articulando a formação com estágios, empreendedorismo, incubação de negócios e\noportunidades de inserção no mercado de trabalho.\n▪ Resgatar os programas Picasso Não Pichava e Esporte à Meia-Noite.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n9"
+          },
+          {
+            "id": "e-i-x-o-1-6",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nPESSOAS COM DEFICIÊNCIA, ACESSIBILIDADE E INCLUSÃO\n\n5 ações\n\nO compromisso com as pessoas com deficiência e suas famílias será orientado pela dignidade, pela\nautonomia, pela acessibilidade e pela igualdade de oportunidades. O Governo fortalecerá a integração\ndos serviços de saúde, educação, assistência social, mobilidade, trabalho e esporte, buscando reduzir\nbarreiras, descentralizar o atendimento e oferecer apoio mais próximo às famílias, aos cuidadores e às\nmães atípicas.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Descentralizar e qualificar o atendimento às pessoas com deficiência e suas famílias, fortalecendo\nos pontos de orientação e encaminhamento nas Regiões Administrativas e integrando os serviços\nde saúde, assistência social, educação e garantia de direitos.\n▪ Ampliar e qualificar a rede de diagnóstico, tratamento, habilitação e reabilitação, agilizando\nperícias e emissão de laudos e planejando a ampliação gradual dos serviços especializados,\nconforme as necessidades da população e a viabilidade técnica e orçamentária.\n▪ Implantar e expandir os Centros TEA, ampliando a cobertura territorial para todas as regiões,\nfortalecendo o atendimento às pessoas com transtorno do espectro autista, doenças raras e\nsíndromes, ampliando a capacidade da rede existente e assegurando acompanhamento integrado\nàs pessoas atendidas e às suas famílias, garantindo diagnósticos e a emissão de laudos técnicos.\n▪ Promover a autonomia e a acessibilidade, aprimorando o transporte especializado, os serviços de\nmanutenção de cadeiras de rodas, os bancos de órteses e próteses e os recursos de comunicação e\napoio às pessoas com deficiência visual, auditiva ou de mobilidade.\n▪ Ampliar as oportunidades de inclusão educacional, profissional, esportiva e social, fortalecendo a\nqualificação, os estágios, o acesso ao trabalho, o paradesporto e as atividades de lazer, em\narticulação com as famílias, as instituições de ensino e o setor produtivo.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n10"
+          },
+          {
+            "id": "e-i-x-o-1-7",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nDESENVOLVIMENTO SOCIAL E SUPERAÇÃO DAS VULNERABILIDADES 5 ações\nO Governo do Distrito Federal fortalecerá a rede socioassistencial, ampliando sua capacidade de\noferecer atendimento humanizado, integrado e regionalizado às pessoas e famílias em situação de\nvulnerabilidade.\nA atuação será articulada com as políticas de saúde, educação, trabalho, habitação e segurança pública,\ncom atenção prioritária à população em situação de rua, às pessoas com necessidades decorrentes do\nuso problemático de álcool e outras drogas, ao fortalecimento dos vínculos familiares e comunitários e\nà construção de trajetórias de autonomia.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar a Operação Retorno, rede integrada de atendimento à população em situação de rua com\nfoco no retorno à vida, reunindo abordagem social, vaga de abrigo, emissão de documento,\nencaminhamento a serviços e reencontro familiar.\n▪ Fortalecer a prevenção, o cuidado e a reinserção social das pessoas com necessidades decorrentes\ndo uso problemático de álcool e outras drogas, ampliando a articulação entre a Rede de Atenção\nPsicossocial, os CAPS, o Programa Acolhe DF e os demais serviços especializados, com apoio às\nfamílias, acompanhamento pós-tratamento e reconstrução dos vínculos sociais e comunitários.\n▪ Transformar o modelo de atendimento do Centro POP na plataforma Na Hora Social, concentrando\nem um único espaço assistência social, acolhimento e emissão de documentação básica.\n▪ Modernizar e integrar a rede socioassistencial do Distrito Federal, fortalecendo a capacidade de\natendimento dos CRAS, CREAS, Na Hora Social, CECONS, unidades de acolhimento e equipes de\nabordagem social, na redução do tempo de espera e no acompanhamento continuado das famílias\nem situação de vulnerabilidade.\n▪ Qualificar a rede socioassistencial executada em parceria com organizações da sociedade civil,\naprimorando a gestão das parcerias, os mecanismos de acompanhamento e a regularidade dos\nrepasses, de modo a favorecer a continuidade e a qualidade dos serviços prestados.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n11"
+          },
+          {
+            "id": "e-i-x-o-1-8",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nSEGURANÇA ALIMENTAR\n\n4 ações\n\nA segurança alimentar é essencial para a proteção das famílias, a promoção da saúde e a superação das\nsituações de vulnerabilidade. O Governo do Distrito Federal fortalecerá os programas de acesso à\nalimentação adequada, modernizando os Restaurantes Comunitários e o Cartão Prato Cheio,\nampliando o atendimento nas Regiões Administrativas de maior necessidade e aproximando as\ncompras públicas da produção da agricultura familiar.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo\nrefeições adequadas, acessíveis e de qualidade.\n▪ Promover ações de educação alimentar e nutricional, incentivando hábitos saudáveis, a autonomia\ndas famílias, o aproveitamento integral dos alimentos e a redução do desperdício.\n▪ Ampliar a participação da agricultura familiar nas compras públicas, fortalecendo pequenos\nprodutores, associações e cooperativas locais e promovendo o abastecimento dos Restaurantes\nComunitários e dos demais programas alimentares.\n▪ Ampliar a cobertura do Programa Prato Cheio.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n12"
+          },
+          {
+            "id": "e-i-x-o-1-9",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nSAÚDE\n\n15 ações\n\nO compromisso será fortalecer a rede pública do Distrito Federal, reduzir o tempo de espera e\nassegurar atendimento digno, eficiente e próximo da população. A Atenção Primária será fortalecida\ncomo porta de entrada e coordenadora do cuidado, com melhor integração aos serviços especializados,\nde diagnóstico, urgência e hospitalares. Também serão priorizadas a modernização das unidades\nexistentes, a valorização dos profissionais, a ampliação planejada da capacidade assistencial e o uso da\ntecnologia para melhorar o acesso, a gestão e a qualidade do atendimento.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o Expresso da Saúde, reduzindo o tempo de espera por consultas, exames e\nprocedimentos, com apoio da telemedicina e uso de Inteligência Artificial.\n▪ Fortalecer e ampliar o programa Opera-DF, aumentando a oferta de cirurgias eletivas, gestão\neficiente das filas e integração entre a Atenção Primária, os serviços especializados e a rede\nhospitalar.\n▪ Fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando\no atendimento com equipes multidisciplinares.\n▪ Modernizar e qualificar a rede pública de saúde, promovendo a recuperação das instalações, a\natualização de equipamentos, centros cirúrgicos, laboratórios e sistemas de apoio, além do\nfortalecimento da manutenção preventiva e corretiva.\n▪ Assegurar, no âmbito do programa Hospital Perto de Casa, a inauguração do Hospital Ortopédico\ndo Guará, do Hospital de São Sebastião, do Novo Hospital de Ceilândia, do Hospital do Recanto das\nEmas e do Hospital Oncológico, além do Bloco Especializado em Doenças Raras e da modernização\nda Unidade de Tratamento de Queimados do HRAN.\n▪ Implantar o IntegraSaúde, com cada unidade identificada pelo nome da cidade, reunindo consultas\nespecializadas, serviço de diagnóstico e imagem, reabilitação, saúde mental e atendimento\nmultiprofissional, de forma articulada com a Atenção Primária, as emergências e os Centros de\nAtenção Psicossocial (CAPS).\n▪ Modernizar a gestão e o acesso aos serviços de saúde, implantando, no âmbito do IntegraSaúde, o\nprontuário eletrônico unificado, avançando na telemedicina, no acompanhamento digital de\nagendamentos e filas e no uso de dados para apoiar o planejamento, a transparência e a redução\ndo tempo de espera.\n▪ Ampliar o acesso à saúde bucal e implementar unidades móveis de atendimento odontológico\n(Carreta Bucal) nas escolas públicas.\n▪ Valorizar e fortalecer a força de trabalho da saúde, planejando a reposição de profissionais,\npromovendo formação continuada, saúde ocupacional e melhores condições de trabalho, além de\nadotar estratégias para ampliar a disponibilidade de especialistas nas regiões com maior\nnecessidade.\n▪ Construir 7 novas UPAs nas RAs, Águas Claras, Água Quente, Guará 2, Taguatinga, Estrutural,\nArapoanga e Ceilândia.\n▪ Implantar o Centro de Diagnóstico e Imagem no Distrito Federal.\n▪ Reestruturar as carreiras com valorização salarial e reposição de profissionais de saúde por meio\nde concursos públicos.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n13"
+          },
+          {
+            "id": "e-i-x-o-1-10",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\n▪ Promover a capacitação e formação profissional continuada dos profissionais de saúde.\n▪ Promover o bem-estar dos profissionais, fortalecendo a atenção à saúde mental, física e laboral.\n▪ Expandir as redes de CAPS para todas as RAs com equipes multidisciplinares, fortalecendo a\npolítica permanente de saúde mental.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n14"
+          },
+          {
+            "id": "e-i-x-o-1-11",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nEDUCAÇÃO\n\n19 ações\n\nNosso compromisso é garantir ensino de qualidade, inclusivo e inovador, assegurando que crianças,\njovens e adultos tenham acesso a oportunidades que promovam aprendizagem, cidadania e preparação\npara os desafios do futuro. Para isso, investiremos na valorização dos profissionais da educação, na\nmodernização da infraestrutura escolar, na ampliação do acesso à educação integral e inclusiva, na\nintegração entre tecnologia, ciência, esporte e formação profissional, além do fortalecimento da gestão\npor resultados e da parceria entre escola, família e comunidade, construindo uma rede de ensino mais\neficiente, democrática, acolhedora e preparada para transformar vidas.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o Primeiras Letras, com o compromisso de que toda criança conclua o 2º ano lendo e\nescrevendo, com foco na aprendizagem.\n▪ Ampliar a oferta da Escola em Tempo Integral, priorizando as regiões com maior demanda, com a\nperspectiva de alcançar toda a rede pública.\n▪ Criar o Programa Futuro Agora com concessão de bolsa de incentivo financeiro aos alunos do\nensino médio da rede pública vinculado à frequência e ao desempenho escolar.\n▪ Fortalecer a educação inclusiva, com aumento de monitores nas escolas, qualificando o\natendimento aos estudantes com deficiência, transtorno do espectro autista, altas habilidades e\noutras necessidades educacionais específicas, com acessibilidade, recursos pedagógicos.\n▪ Ampliar a Escola Cívico-Militar, modelo de gestão compartilhada nas escolas públicas do Distrito\nFederal, conforme critérios técnicos, fortalecendo a disciplina, a cultura de paz, a participação das\nfamílias e a segurança no ambiente escolar, garantindo a autonomia pedagógica da Secretaria de\nEducação.\n▪ Preparar os estudantes para as oportunidades do futuro, integrando ciência, tecnologia, inovação,\nesporte, cultura, empreendedorismo e educação profissional, além de promover o uso ético e\nresponsável da inteligência artificial e ampliar a cooperação com instituições de ensino e o setor\nprodutivo.\n▪ Modernizar e ampliar a infraestrutura da rede pública de ensino, com reformas, manutenção\npreventiva, acessibilidade, conectividade, energia elétrica e climatização das salas de aula,\nrefeitórios e despensas.\n▪ Reduzir a dependência de imóveis alugados na rede pública de ensino, com a construção de novas\nunidades próprias.\n▪ Reforçar o efetivo e a capacidade operacional do Batalhão Escolar, ampliando a cobertura das\nescolas públicas do Distrito Federal.\n▪ Substituir os programas Educa-DF e Cartão PDAF por soluções com recursos de Inteligência\nArtificial.\n▪ Promover ambientes escolares seguros, acolhedores e favoráveis à aprendizagem, fortalecendo a\nmediação de conflitos, o enfrentamento ao bullying, a prevenção da violência, os primeiros socorros\ne o cuidado com a saúde emocional dos estudantes e profissionais.\n▪ Ampliar o número de escolas com refeitório, quadra coberta e espaços de convivência e lazer,\npriorizando as unidades com maior necessidade.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n15"
+          },
+          {
+            "id": "e-i-x-o-1-12",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\n▪ Ampliar o acesso a equipamentos e conectividade nas escolas públicas, com a distribuição de\ntablets a estudantes e professores.\n▪ Desenvolver ações integradas de educação, saúde e proteção social, promovendo vacinação,\nprevenção, alimentação saudável, acompanhamento do desenvolvimento e orientação às famílias,\nem articulação com os órgãos responsáveis.\n▪ Modernizar a gestão educacional, utilizando dados, indicadores e sistemas integrados para\nacompanhar frequência, aprendizagem, infraestrutura e aplicação dos recursos, promovendo\nmaior eficiência, transparência e capacidade de planejamento.\n▪ Construir no mesmo terreno, da creche ao ensino médio, escolas com segmentação adequada dos\nespaços por etapa de ensino, para facilitar a rotina das famílias com filhos de diferentes idades.\n▪ Valorizar os profissionais da educação, com formação continuada, desenvolvimento profissional,\napoio à inovação pedagógica, atenção à saúde dos servidores e planejamento adequado da força de\ntrabalho.\n▪ Avançar na valorização dos profissionais da educação básica e na reestruturação do plano de\ncarreira, em alinhamento com as diretrizes do Plano Nacional de Educação, com destaque para as\nmetas 17 e 18.\n▪ Criar o programa Bolsa Universitária DF para conceder apoio financeiro a estudantes universitários\nde baixa renda.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n16"
+          },
+          {
+            "id": "e-i-x-o-1-13",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nSEGURANÇA PÚBLICA\n\n13 ações\n\nO Distrito Federal fortalecerá uma política de segurança pública integrada, preventiva, inteligente e\norientada para a proteção da vida, das famílias e do patrimônio. A atuação do Estado combinará\npresença territorial, investigação qualificada, uso responsável da tecnologia, prevenção da violência,\nvalorização profissional e cooperação entre as forças distritais, com os órgãos federais e os municípios\nda região do Entorno.\nO Programa DF 360, Segurança Integral será fortalecido como instrumento de articulação entre\nsegurança pública, mobilidade, saúde, educação, assistência social, defesa civil e gestão urbana. A\nprioridade será reduzir os crimes contra a vida e o patrimônio, enfrentar o crime organizado, ampliar\na segurança nos espaços públicos e fortalecer a proteção das pessoas em situação de maior\nvulnerabilidade.\nA modernização tecnológica será acompanhada de segurança da informação, proteção de dados\npessoais, integração operacional e avaliação permanente dos resultados. Também serão priorizados o\nplanejamento dos efetivos, a modernização das estruturas e a valorização dos profissionais\nresponsáveis pela segurança da população.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Buscar a reestruturação das carreiras militares, com a revisão da exigência de interstício.\n▪ Atuar junto ao Governo Federal e ao Congresso Nacional em defesa da isonomia salarial entre a\nPolícia Civil do Distrito Federal e a Polícia Federal e dos planos de reestruturação de carreira da\nPMDF e do CBMDF.\n▪ Modernizar e ampliar o Programa DF 360, universalizando o uso de inteligência artificial ao\nmonitoramento, e fortalecer o Centro Integrado de Operações de Brasília, CIOB, incorporando\ninteligência artificial e outras tecnologias para aprimorar o monitoramento, o compartilhamento\nde informações e a atuação coordenada entre a Polícia Militar, a Polícia Civil, o Corpo de Bombeiros\nMilitar, a Polícia Penal, o Detran e a Defesa Civil.\n▪ Ampliar a presença territorial e o policiamento preventivo, utilizando dados e informações de\ninteligência para orientar a atuação das forças de segurança, com atenção às áreas residenciais,\ncomerciais, escolares, rurais e de maior incidência criminal.\n▪ Modernizar o sistema penitenciário e fortalecer a Polícia Penal, incorporando tecnologias de\ncontrole, fiscalização e inteligência para impedir comunicações ilícitas, aumentar a segurança das\nunidades e evitar que estabelecimentos prisionais sejam utilizados como centros de comando de\norganizações criminosas.\n▪ Fortalecer a inteligência policial, a investigação financeira e a recuperação de ativos do crime\norganizado.\n▪ Enfrentar o tráfico de drogas.\n▪ Reprimir os crimes cibernéticos em cooperação com a União e os entes da região do Entorno.\n▪ Combater o parcelamento irregular do solo.\n▪ Colocar 100% da população carcerária para trabalhar dentro das unidades prisionais.\n▪ Criar delegacias e batalhões de polícia nas RAs que ainda não possuem.\n▪ Qualificar a infraestrutura e a capacidade operacional das forças de segurança, priorizando a\nmanutenção, a reforma e a adequação de batalhões, delegacias, grupamentos do Corpo de\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n17"
+          },
+          {
+            "id": "e-i-x-o-1-14",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nBombeiros e unidades prisionais, com planejamento da renovação de viaturas, equipamentos e\ndemais recursos operacionais.\n▪ Modernizar a perícia oficial e fortalecer a investigação científica, ampliando a digitalização dos\nlaudos, a capacidade de extração e análise de dados, a perícia genética, as tecnologias de\nreconstrução de locais de crime e os serviços especializados de perícia veterinária.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n18"
+          },
+          {
+            "id": "e-i-x-o-1-15",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nESPORTE E LAZER\n\n9 ações\n\nO Governo do Distrito Federal fortalecerá o esporte e o lazer como instrumentos de promoção da saúde,\ninclusão social, educação, cidadania, convivência comunitária e desenvolvimento econômico. Entre\n2027 e 2030, serão priorizadas a ampliação do acesso às práticas esportivas, a qualificação dos espaços\npúblicos, o fortalecimento da formação de atletas e o incentivo ao esporte de rendimento, com atenção\nàs diferentes regiões e públicos do Distrito Federal.\nMais do que ampliar equipamentos, o compromisso será criar oportunidades para crianças, jovens,\nadultos, pessoas idosas e pessoas com deficiência, promovendo qualidade de vida, ocupação saudável\ndos espaços públicos e fortalecimento dos vínculos familiares e comunitários. Brasília também será\nconsolidada como referência na realização de eventos esportivos e no desenvolvimento da economia\ndo esporte.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Incentivar o acesso ao esporte e ao lazer, ampliar a distribuição de materiais esportivos,\nfortalecendo atividades em parques, praças, escolas, ginásios e demais equipamentos públicos,\nconforme a demanda de cada região.\n▪ Qualificar a iniciação esportiva e a formação de atletas, articulando escolas, Centros Olímpicos e\nParalímpicos, federações, clubes, universidades e projetos sociais, com ampliação do Projeto\nFuturo Campeão e desenvolvimento de espaços voltados à identificação e preparação de talentos.\n▪ Fortalecer o esporte de rendimento e o paradesporto, apoiando a formação, a permanência e o\ndesenvolvimento de atletas e profissionais, por meio do aperfeiçoamento de programas de\nincentivo, apoio técnico e participação em competições\n▪ Ampliar e consolidar os Centros Olímpicos e Paralímpicos, com aumento de vagas e atividades\npromovendo acessibilidade e assegurando manutenção, modernização e melhores condições de\natendimento à população.\n▪ Modernizar a infraestrutura esportiva do Distrito Federal, com recuperação, iluminação,\nacessibilidade e manutenção preventiva de quadras, campos, ginásios e demais equipamentos,\nalém da implantação gradual de complexos esportivos em regiões prioritárias.\n▪ Ampliar o calendário de eventos e competições esportivas, valorizando iniciativas tradicionais,\ncomo a Corrida de Reis e a Corrida do Servidor, incentivando competições comunitárias e atraindo\neventos nacionais e internacionais que fortaleçam o turismo, o comércio e a economia do esporte.\n▪ Modernizar a gestão pública do esporte, com transformação digital, integração dos cadastros e\nsistemas, produção de indicadores e acompanhamento dos programas, equipamentos, atletas e\neventos esportivos do Distrito Federal.\n▪ Resgatar o Programa Esporte à Meia-Noite.\n▪ Consolidar o Distrito Federal como capital nacional do esporte.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n19"
+          },
+          {
+            "id": "e-i-x-o-1-16",
+            "titulo": "■E I X O 1",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 1\n\nCUIDADO, DIGNIDADE E INCLUSÃO SOCIAL\n\nIGUALDADE, RESPEITO E CIDADANIA\n\n5 ações\n\nO Governo do Distrito Federal promoverá o respeito, a igualdade de oportunidades e a proteção dos\ndireitos de todos os cidadãos, enfrentando o racismo, a intolerância religiosa, a homofobia, a violência,\no preconceito e qualquer forma de discriminação. As ações serão articuladas com as políticas de\neducação, saúde, segurança, trabalho, cultura e assistência social, considerando as necessidades dos\ndiferentes territórios e assegurando atendimento digno, humanizado e em conformidade com a\nlegislação.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer a rede de acolhimento, proteção e acesso a direitos das vítimas de racismo, intolerância\nreligiosa, homofobia e outras formas de discriminação, qualificando o atendimento jurídico e\npsicossocial, o encaminhamento das denúncias e a articulação entre os órgãos públicos e as\ninstituições responsáveis pela garantia de direitos.\n▪ Fortalecer a educação e o respeito nas relações étnico-raciais.\n▪ Promover a igualdade no acesso às políticas e aos serviços públicos, qualificando o atendimento,\nprevenindo práticas discriminatórias e assegurando tratamento digno a toda população.\n▪ Proteger a liberdade religiosa e as comunidades tradicionais, fortalecendo o diálogo institucional,\na preservação das manifestações culturais e o enfrentamento à intolerância e à violência.\n▪ Promover o combate ao racismo.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n20"
+          },
+          {
+            "id": "e-i-x-o-2",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nE I X O\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\n2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E\nSUSTENTABILIDADE\nHABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA\n\n8 ações\n\nO Governo do Distrito Federal ampliará o acesso à moradia digna, acelerará a regularização fundiária\ne promoverá a urbanização das comunidades, com prioridade para as famílias de baixa renda e os\nterritórios de maior vulnerabilidade. A política habitacional será integrada ao planejamento urbano, à\ninfraestrutura e aos serviços públicos, buscando formar bairros organizados, seguros e conectados à\ncidade. A gestão territorial será modernizada com processos digitais, uso responsável de tecnologia,\ntransparência e fiscalização permanente, assegurando crescimento planejado, sustentabilidade e\nsegurança jurídica.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o Escritura na Mão, acelerando e simplificando os procedimentos de regularização\nfundiária e a emissão de títulos, aprimorando o licenciamento urbanístico e ambiental, a elaboração\nde projetos e a emissão de títulos, para os núcleos urbanos e rurais e prioridade para as famílias de\nbaixa renda.\n▪ Criar programa Casa pra Viver de doação de lotes unifamiliares para população carente.\n▪ Criar o programa Cheque Moradia para beneficiar os participantes do programa Casa pra Viver.\n▪ Ampliar a produção e a oferta de habitações de interesse social e de lotes semiurbanizados, por\nmeio da implantação de novos empreendimentos, parcelamentos urbanos e diferentes\nmodalidades de acesso à moradia, aproveitando as áreas destinadas à política habitacional no Plano\nDiretor de Ordenamento Territorial e priorizando as regiões com maior déficit habitacional.\n▪ Promover a urbanização e a qualificação das áreas em regularização, das comunidades\nconsolidadas e dos novos empreendimentos habitacionais, com infraestrutura, serviços públicos,\nacessibilidade, melhoria das moradias e recuperação dos espaços comunitários, integrando esses\nterritórios à rede de serviços e oportunidades da cidade\n▪ Instituir o programa Grilagem Zero para prevenir e combater ocupações irregulares de terras,\nampliando a fiscalização, o monitoramento territorial, com a atuação integrada dos órgãos\npúblicos.\n▪ Avaliar e regulamentar novos instrumentos de acesso à moradia e de organização territorial,\nincluindo modelos aplicáveis às áreas rurais, agrovilas e territórios de interesse social, observadas\na legislação, a segurança jurídica e a viabilidade urbanística e ambiental.\n▪ Modernizar o cadastro e a gestão habitacional, implantando plataforma digital integrada para\ninscrição, atualização cadastral, acompanhamento dos processos, seleção dos beneficiários e\nmonitoramento das entregas, com maior transparência e controle.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n21"
+          },
+          {
+            "id": "e-i-x-o-2-2",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\nINFRAESTRUTURA, SANEAMENTO, ILUMINAÇÃO E OBRAS PÚBLICAS 9 ações\nO Governo do Distrito Federal ampliará e modernizará a infraestrutura urbana, o saneamento básico,\na drenagem pluvial, as edificações públicas e a iluminação, priorizando os territórios com maiores\ndéficits de atendimento, as comunidades em processo de regularização e as áreas rurais. Por meio do\nprograma Brasília Capital da Sustentabilidade, serão promovidas obras mais eficientes, acessíveis e\nresilientes, associadas ao uso de novas tecnologias, à eficiência energética, à manutenção preventiva e\nà gestão integrada da cidade.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Modernizar, reformar e padronizar a infraestrutura das edificações públicas, priorizando unidades\nde saúde, educação, assistência social, segurança, cultura, feiras, sedes administrativas e demais\nequipamentos de atendimento à população, assegurando acessibilidade, eficiência energética,\nsegurança, funcionalidade e conforto, por meio da adoção de modelos construtivos modernos,\nsustentáveis e de alta eficiência, que reduzam os custos e prazos de implantação e manutenção.\n▪ Organizar, sob a marca GDF na sua Porta, a zeladoria urbana e a manutenção da cidade, reunindo\ncalçadas, iluminação pública, pavimentação, drenagem, praças e parques, pichação, entulho e mato\nalto, com registro do problema por foto, protocolo e prazo publicado de conserto, executados em\nconjunto com os mutirões itinerantes de atendimento nas Regiões Administrativas.\n▪ Executar o Programa Rotas Acessíveis, ampliando e recuperando calçadas e passeios públicos, com\npadronização, acessibilidade, segurança nas travessias e conexão com escolas, unidades de saúde,\nterminais de transporte, áreas comerciais e demais equipamentos públicos.\n▪ Promover a requalificação dos espaços públicos, com recuperação de praças, parques, áreas de\nlazer e convivência, melhoria do paisagismo, do mobiliário urbano, da iluminação e da\nacessibilidade, conforme as necessidades de cada região.\n▪ Implantar um programa integrado de pavimentação e conservação da malha viária e rodoviária,\ncontemplando a execução de vias previstas em projetos urbanísticos, a recuperação de pavimentos,\nos acessos às comunidades rurais, as áreas em processo de regularização e os trechos urbanos e\nrodoviários considerados prioritários.\n▪ Modernizar e ampliar a infraestrutura viária do Distrito Federal, com duplicação e adequação de\nrodovias estratégicas, avanço dos projetos do Anel Viário e inspeção, recuperação e manutenção\npreventiva de pontes, viadutos e demais estruturas viárias.\n▪ Ampliar, modernizar e manter o sistema de drenagem pluvial, priorizando os pontos históricos de\nalagamento, a recuperação e o redimensionamento das redes e a manutenção preventiva e\nprogramada de galerias, bocas de lobo, canais e demais dispositivos.\n▪ Expandir e modernizar a iluminação pública, com tecnologia LED, telegestão e monitoramento\nremoto, priorizando áreas com deficiência de atendimento, comunidades rurais, territórios em\nregularização, espaços públicos e locais relevantes para a segurança da população.\n▪ Fortalecer a segurança hídrica e ampliar o acesso ao abastecimento de água e ao esgotamento\nsanitário, promovendo investimentos nos sistemas de captação, produção, reservação e\ndistribuição de água, bem como na coleta e no tratamento de esgoto, com prioridade para\ncomunidades rurais, áreas de expansão urbana e territórios em processo de regularização, além do\nfortalecimento do Programa Água Legal e da Tarifa Social.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n22"
+          },
+          {
+            "id": "e-i-x-o-2-3",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\nMOBILIDADE URBANA\n\n12 ações\n\nA mobilidade urbana será tratada como política essencial de inclusão social, desenvolvimento\neconômico e qualidade de vida no Distrito Federal. O Governo atuará para reduzir o tempo de\ndeslocamento, melhorar a qualidade do transporte público e oferecer alternativas seguras, acessíveis,\nintegradas e sustentáveis. A estratégia priorizará a expansão planejada dos sistemas de média e alta\ncapacidade, a integração com os municípios da região do Entorno, a qualificação do transporte por\nônibus, o fortalecimento da mobilidade ativa e o uso de tecnologia para melhorar a gestão, a fiscalização\ne a experiência dos usuários.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a\npopulação de baixa renda.\n▪ Estruturar, sob o programa DF nos Trilhos, uma carteira estratégica de investimentos em\ntransporte de média e alta capacidade, priorizando os projetos de Metrô, VLT e BRT com maior\nmaturidade, demanda, impacto na redução do tempo de deslocamento e viabilidade técnica,\nambiental e financeira.\n▪ Concluir, no âmbito do DF nos Trilhos, a expansão da Linha 1 do Metrô, com quatro novas estações,\ncontemplando os trechos de Samambaia e Ceilândia, a implantação de novas estações e a ampliação\nda infraestrutura operacional, ampliando a oferta e a qualidade do transporte público sobre trilhos.\n▪ Implantar a Linha 2 do Metrô para o Gama, conforme Estudo de Viabilidade Técnica, Econômica e Ambiental\n(EVTEA), com ordem de serviço número 1823321941, do Governo do Distrito Federal.\n▪ Ampliar linhas, horários e rotas de acordo com as novas demandas da população.\n▪ Fortalecer a integração física, operacional e tarifária do transporte público, ampliando e\nrequalificando terminais, estações e pontos de parada e promovendo conexões eficientes entre\nônibus, trilhos, bicicletas e outros modos de transporte.\n▪ Promover a integração da mobilidade entre o Distrito Federal e a região do Entorno, fortalecendo\na cooperação com o Estado de Goiás, os municípios da RIDE-DF e o Governo Federal para\ndesenvolver soluções conjuntas de transporte coletivo, infraestrutura e circulação de passageiros.\n▪ Executar conexões viárias estruturantes e qualificar a infraestrutura de mobilidade, priorizando\nintervenções capazes de melhorar a integração entre as regiões, eliminar gargalos, aumentar a\nsegurança e reduzir o tempo de deslocamento.\n▪ Fortalecer a mobilidade ativa e a acessibilidade urbana, ampliando e conectando ciclovias,\nciclofaixas, calçadas, travessias seguras e rotas acessíveis aos terminais, estações, escolas, áreas\ncomerciais e equipamentos públicos.\n▪ Promover um trânsito mais seguro, com fiscalização, educação, engenharia de tráfego, melhoria da\nsinalização, adequação de pontos críticos e implantação planejada de medidas de moderação de\nvelocidade, como as Zonas 30.\n▪ Modernizar a gestão e a experiência dos usuários da mobilidade, integrando dados e sistemas,\nampliando o monitoramento em tempo real, a fiscalização tecnológica, a bilhetagem digital e o\nacesso às informações sobre linhas, horários, tarifas, gratuidades e condições operacionais.\n▪ Implantar o anel viário do Distrito Federal para reduzir o congestionamento da EPIG e região\ncentral de Brasília.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n23"
+          },
+          {
+            "id": "e-i-x-o-2-4",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\n▪ Articular com a União e com o Estado de Goiás a implantação do trem regional Brasília-Luziânia.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n24"
+          },
+          {
+            "id": "e-i-x-o-2-5",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\nSUSTENTABILIDADE E MEIO AMBIENTE\n\n15 ações\n\nO Governo do Distrito Federal fortalecerá a gestão sustentável dos resíduos sólidos, a economia\ncircular e as políticas de enfrentamento às mudanças climáticas por meio do programa DF Circular e\nSustentável. A estratégia integrará a redução da geração de resíduos, a ampliação da coleta seletiva, o\nreaproveitamento de materiais, a recuperação ambiental e o estímulo a atividades econômicas de baixo\ncarbono.\nSerão fortalecidas a proteção do Cerrado, a recuperação de nascentes e áreas degradadas, a\narborização urbana e a preparação dos territórios para os efeitos dos eventos climáticos extremos. Os\ncatadores de materiais recicláveis e as comunidades mais afetadas por passivos ambientais serão\nconsiderados públicos prioritários nas políticas de inclusão produtiva, qualificação urbana e proteção\nsocial.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o programa DF 100% sustentável, transformando a região em referência nacional.\n▪ Implantar o programa Brasília Lixo Zero, com o objetivo de combater o lançamento de lixo e\nentulhos nas ruas do DF.\n▪ Fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os\ncentros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de\ncontratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais.\n▪ Fortalecer a logística reversa e a responsabilidade compartilhada pelo ciclo de vida dos produtos,\nampliando a destinação adequada de embalagens, eletroeletrônicos, vidros, medicamentos, pneus\ne outros materiais, em articulação com o setor produtivo, o comércio e as cooperativas.\n▪ Ampliar o reaproveitamento dos resíduos da construção civil, incentivando a triagem, a reciclagem\ne o uso de materiais reaproveitados em obras e serviços públicos, observados os critérios técnicos,\nambientais e de segurança.\n▪ Promover gradualmente o tratamento e o aproveitamento dos resíduos orgânicos, priorizando os\nmateriais gerados por escolas, hospitais, feiras, restaurantes comunitários e demais equipamentos\npúblicos, por meio de compostagem, biodigestão e outras soluções ambientalmente adequadas.\n▪ Expandir a arborização urbana e as soluções baseadas na natureza, com infraestrutura verde,\njardins de chuva, recuperação de áreas permeáveis e formação de corredores ecológicos,\npriorizando os territórios mais vulneráveis ao calor, aos alagamentos e aos processos erosivos.\n▪ Fortalecer a conservação e a recuperação do Cerrado, promovendo a proteção de nascentes, a\nrestauração de áreas degradadas, o manejo integrado do fogo, a proteção da fauna e a conectividade\nentre áreas de conservação.\n▪ Fomentar a bioeconomia, os negócios sustentáveis e os empregos verdes, apoiando cadeias\nprodutivas compatíveis com a conservação ambiental, o uso eficiente dos recursos naturais e a\ngeração de renda.\n▪ Preparar o Distrito Federal para os efeitos das mudanças climáticas, incorporando critérios de\nadaptação, resiliência e redução de emissões ao planejamento urbano, às obras públicas, à\nmobilidade, à drenagem e à gestão dos recursos naturais.\n▪ Modernizar o licenciamento e a fiscalização ambiental, utilizando processos digitais,\ngeotecnologias, sensoriamento remoto e Inteligência Artificial para aumentar a eficiência, a\ntransparência, a segurança jurídica e a prevenção de danos ambientais.\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n25"
+          },
+          {
+            "id": "e-i-x-o-2-6",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\n▪ Monitorar as áreas de proteção ambiental por meio de recursos tecnológicos.\n▪ Criar o programa Preserva DF com ações de educação e combate ao vandalismo do patrimônio\npúblico.\n▪ Implantar educação ambiental nas escolas do Distrito Federal.\n▪ Preservar, revitalizar e ampliar os parques urbanos.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n26"
+          },
+          {
+            "id": "e-i-x-o-2-7",
+            "titulo": "■E I X O 2",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 2\n\nMORADIA, INFRAESTRUTURA, MOBILIDADE E SUSTENTABILIDADE\n\nPROTEÇÃO ANIMAL\n\n6 ações\n\nO Governo do Distrito Federal fortalecerá a política permanente de proteção animal, ampliando o\nacesso ao atendimento veterinário, às ações de castração e identificação dos animais e às iniciativas de\nprevenção e combate aos maus-tratos. A política será desenvolvida de forma integrada, com apoio aos\nprotetores independentes, incentivo à guarda responsável e uso de tecnologia para qualificar os\nserviços e aproximá-los dos territórios com maior demanda. Serão priorizadas a modernização da\nestrutura veterinária existente, a ampliação planejada da capacidade de atendimento e a estruturação\nde novos serviços, observadas a demanda regional e a viabilidade técnica, sanitária, ambiental e\norçamentária.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer e modernizar a rede pública de atendimento veterinário, qualificando a estrutura\nexistente e ampliando a capacidade de consultas, exames, cirurgias e atendimentos especializados.\n▪ Ampliar as ações de castração e controle populacional de cães e gatos, combinando unidades\npúblicas, clínicas credenciadas, serviços móveis e agendamento digital simplificado, com\nprioridade para áreas de maior vulnerabilidade e incidência de abandono.\n▪ Aprimorar o Sistema CRIA como plataforma integrada de proteção animal, reunindo o cadastro de\ntutores e animais, informações sanitárias e canais de denúncia, fiscalização e acompanhamento dos\ncasos de maus-tratos.\n▪ Ampliar os espaços públicos destinados à convivência com animais, os Parcões, implantando e\nrevitalizando áreas adequadas em parques e praças, conforme a demanda.\n▪ Fortalecer a rede de proteção animal, apoiando protetores independentes, organizações da\nsociedade civil e iniciativas de acolhimento, adoção responsável, prevenção do abandono e\ncombate aos maus-tratos.\n▪ Estruturar soluções públicas ou conveniadas para a destinação digna e ambientalmente adequada\nde animais domésticos mortos, observadas a viabilidade técnica, sanitária, ambiental e financeira.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n27"
+          },
+          {
+            "id": "e-i-x-o-3",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nE I X O\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\n3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E\nVOCAÇÕES REGIONAIS\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E RENDA\n\n12 ações\n\nO desenvolvimento econômico do Distrito Federal será orientado pela geração de emprego e renda,\npelo fortalecimento das empresas locais, pela atração de investimentos e pelo estímulo à inovação. O\nGoverno aprimorará os instrumentos fiscais, imobiliários, financeiros e creditícios, simplificará a\ninstalação e a expansão de negócios e promoverá a melhoria gradual da infraestrutura das Áreas de\nDesenvolvimento Econômico.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar e fortalecer uma rede de Pontos de Apoio ao Trabalhador por Aplicativo nas Regiões\nAdministrativas, oferecendo infraestrutura adequada para descanso, higiene, hidratação, recarga\nde equipamentos, conectividade e apoio ao desempenho seguro da atividade profissional, por meio\nde parcerias com o setor privado e as plataformas digitais.\n▪ Incentivar e ampliar as parcerias com o Sistema S (SENAR, SESC, SESI, SEBRAE, IEL, SENAI, FIBRA)\ne Fecomércio.\n▪ Criar 5 polos de desenvolvimento econômico social de beleza, logística, distribuição de alimentos,\nfármacos e agricultura.\n▪ Aperfeiçoar e modernizar o sistema de incentivos fiscais, imobiliários e creditícios, tornando o\nambiente de negócios mais seguro, simplificado e previsível e vinculando a concessão de benefícios\na contrapartidas de geração de empregos, realização de investimentos e desenvolvimento\neconômico e social.\n▪ Ampliar o acesso das empresas aos instrumentos de financiamento, fortalecendo os fundos e\nprogramas distritais e apoiando a captação de recursos junto a fontes regionais, nacionais e\ninternacionais para projetos de inovação, expansão produtiva e modernização tecnológica.\n▪ Fortalecer o microcrédito produtivo orientado e a inclusão financeira, integrando acesso ao crédito,\ncapacitação, assistência técnica e educação financeira para microempreendedores, trabalhadores\nautônomos, feirantes, artesãos, cooperativas e agricultores familiares.\n▪ Estruturar a política de atração e retenção de investimentos, oferecendo atendimento integrado ao\ninvestidor, simplificação dos processos de instalação e acompanhamento dos projetos estratégicos\npara a diversificação da economia e a geração de empregos no Distrito Federal.\n▪ Estimular a inovação, a transformação digital e a economia do conhecimento, apoiando parques e\nambientes tecnológicos, startups, empresas de base tecnológica e projetos de cooperação entre\nuniversidades, centros de pesquisa e o setor produtivo.\n▪ Consolidar a Política Distrital de Qualificação Social e Profissional, conectando cursos, formação\nprática e certificações às vocações econômicas dos territórios, às demandas do mercado de\ntrabalho e às transformações tecnológicas.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n28"
+          },
+          {
+            "id": "e-i-x-o-3-2",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\n▪ Reestruturar e modernizar a infraestrutura das Áreas de Desenvolvimento Econômico,\npromovendo intervenções prioritárias em pavimentação, saneamento, energia, iluminação,\nmobilidade e conectividade, conforme a demanda empresarial, a capacidade de geração de\nempregos e a viabilidade técnica e orçamentária.\n▪ Implantar o Primeiro Sim, modernizando as Agências do Trabalhador e os canais de intermediação\nde mão de obra, ampliando a captação ativa de vagas, a orientação profissional, o encaminhamento\nde trabalhadores e a integração com empresas e instituições de qualificação.\n▪ Implantar o Programa Nossa Feira, construindo, modernizando e requalificando as feiras, com\nmelhorias na infraestrutura, cobertura, iluminação, acessibilidade, segurança, limpeza, banheiros\ne organização dos espaços, fortalecer as feiras como espaços de geração de trabalho e renda,\nvalorização da produção local, convivência comunitária e acesso da população a produtos de\nqualidade, garantindo melhores condições para feirantes, produtores e consumidores.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n29"
+          },
+          {
+            "id": "e-i-x-o-3-3",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\nFEIRAS\n\n7 ações\n\nAs feiras do Distrito Federal são importantes espaços de geração de trabalho e renda,\nempreendedorismo, abastecimento, convivência comunitária, manifestações culturais e valorização da\nidentidade e das tradições das Regiões Administrativas.\nO Governo fortalecerá esses espaços por meio da construção de novas unidades, da modernização e\nmanutenção das feiras existentes e de ações de apoio aos feirantes, produtores, artesãos e pequenos\nempreendedores, promovendo melhores condições de trabalho, conforto e segurança, além de\nincentivar a cultura, a gastronomia e a produção local.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Implantar o Programa Nossa Feira, estabelecendo uma política permanente de construção,\nmodernização, requalificação e manutenção das feiras do Distrito Federal, com planejamento\nintegrado e definição de prioridades de acordo com as necessidades de cada Região Administrativa.\n▪ Modernizar, requalificar e manter permanentemente a infraestrutura das feiras do Distrito Federal,\ncom melhorias em cobertura, pisos, instalações elétricas e hidráulicas, iluminação, banheiros,\nacessibilidade, segurança, limpeza, manejo de resíduos, estacionamento, áreas de carga e descarga\ne organização dos espaços, assegurando conservação contínua, melhores condições de trabalho\npara os feirantes e maior conforto e segurança para a população.\n▪ Construir novas feiras no Jardim Botânico, Itapoã, Arniqueira, Águas Claras e Recanto das Emas e\nconcluir a obra do Paranoá, ampliando os espaços destinados ao comércio popular, aos pequenos\nempreendedores e à comercialização da produção local.\n▪ Requalificar a Feira da Torre de TV, preservando sua identidade cultural e sua importância\neconômica, com melhorias na infraestrutura, acessibilidade, segurança e nos espaços destinados\naos feirantes e visitantes.\n▪ Fortalecer os feirantes, produtores, artesãos e pequenos empreendedores, ampliando o acesso à\ncapacitação, orientação empresarial, inclusão digital, educação financeira e microcrédito\nprodutivo, estimulando a formalização, a melhoria da gestão e a geração de renda.\n▪ Promover a modernização e transformação digital das feiras, estimulando soluções de pagamento\ndigital, divulgação dos empreendedores, conectividade e ferramentas que facilitem a\ncomercialização e aproximem feirantes e consumidores.\n▪ Valorizar as feiras como polos de desenvolvimento econômico, cultura, gastronomia e convivência\ncomunitária, incentivando eventos, atividades culturais, produtos regionais e iniciativas capazes de\nampliar o fluxo de consumidores e fortalecer a economia das Regiões Administrativas.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n30"
+          },
+          {
+            "id": "e-i-x-o-3-4",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\nAGRICULTURA\n\n10 ações\n\nO Distrito Federal possui uma área rural produtiva, moderna e estratégica para a segurança alimentar,\no abastecimento e a geração de emprego e renda. O Governo fortalecerá o desenvolvimento rural por\nmeio da segurança jurídica, da inovação tecnológica, da sustentabilidade, da assistência técnica e da\nvalorização dos produtores.\nSerão priorizados o avanço da regularização fundiária, o fortalecimento da agricultura familiar, a\nmodernização das cadeias produtivas, a agregação de valor e a ampliação do acesso aos mercados. A\natuação integrada da Seagri-DF, da Emater-DF, da Ceasa-DF e das instituições de pesquisa contribuirá\npara aumentar a produtividade, estimular a inovação e gerar novas oportunidades no campo.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer o Distrito Federal como polo de inovação agropecuária, estimulando a integração entre\na Emater-DF, a Embrapa, universidades, centros de pesquisa e o setor produtivo no\ndesenvolvimento de agrotechs, biotecnologia, agricultura de precisão e tecnologias sustentáveis\nadaptadas às diferentes escalas de produção.\n▪ Avançar na regularização fundiária das áreas rurais, conferindo maior celeridade e segurança\njurídica à análise dos processos e à emissão dos instrumentos de regularização cabíveis, com\nprioridade para a agricultura familiar, assentamentos, associações e cooperativas, observadas as\nexigências fundiárias e ambientais.\n▪ Incentivar a produção sustentável, a irrigação eficiente e a agricultura de baixo carbono, apoiando\na conservação do solo e da água, o uso de bioinsumos, os sistemas agroecológicos, a produção\norgânica e a recuperação ambiental das áreas produtivas.\n▪ Ampliar a comercialização e a agregação de valor à produção, fortalecendo as compras\ngovernamentais, os mercados institucionais, as feiras locais, a agroindustrialização, a\nrastreabilidade, a certificação e os selos de origem.\n▪ Ampliar o acesso ao crédito, ao fomento e aos equipamentos produtivos, fortalecendo o Fundo de\nDesenvolvimento Rural, o Programa Prospera e outros instrumentos financeiros, integrados à\norientação técnica, à modernização das propriedades e à agregação de valor à produção.\n▪ Modernizar a Ceasa-DF e os canais de abastecimento, qualificando as instalações físicas, a logística\ninterna, os processos sanitários, os espaços destinados aos produtores e os sistemas de\ncomercialização.\n▪ Fortalecer a assistência técnica e extensão rural, ampliando e qualificando o apoio ao planejamento\ndas propriedades, à organização produtiva, à inovação tecnológica, ao acesso aos mercados e à\nadoção de práticas sustentáveis, com prioridade para a agricultura familiar.\n▪ Estimular a sucessão rural e a participação dos jovens e das mulheres no campo, ampliando o\nacesso à capacitação, à assistência técnica, aos instrumentos de crédito, ao empreendedorismo e às\ntecnologias digitais para o desenvolvimento de novos projetos produtivos.\n▪ Fortalecer o cooperativismo e o associativismo rural, apoiando o uso compartilhado de máquinas\ne equipamentos, as estruturas coletivas de beneficiamento, a comercialização conjunta e o acesso\na novos mercados.\n▪ Implantar e ampliar a rede de Galpões do Produtor nas regiões de maior produção rural do Distrito\nFederal, criando espaços estruturados para recebimento, organização, armazenamento e\ncomercialização direta da produção da agricultura familiar, com apoio à logística, cooperativismo,\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n31"
+          },
+          {
+            "id": "e-i-x-o-3-5",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\nassistência técnica e acesso aos mercados, integrando esses equipamentos às feiras permanentes e\naos circuitos locais de abastecimento.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n32"
+          },
+          {
+            "id": "e-i-x-o-3-6",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\nTURISMO\n\n6 ações\n\nBrasília reúne atributos para se consolidar como um dos principais destinos turísticos do Brasil e da\nAmérica Latina. Reconhecida como Patrimônio Cultural da Humanidade e referência em arquitetura,\npolítica, negócios, gastronomia, cultura e natureza, a capital possui potencial para atrair visitantes\ndurante todo o ano, movimentar a economia e gerar emprego e renda.\nO Governo fortalecerá a internacionalização de Brasília, a conectividade aérea, o turismo de eventos e\nnegócios, o aproveitamento sustentável do Lago Paranoá e a qualificação dos atrativos e serviços\nturísticos. A política de turismo será integrada à economia criativa, ao patrimônio cultural, à\nsustentabilidade e ao desenvolvimento regional, valorizando as vocações das Regiões Administrativas\ne dos municípios da RIDE-DF.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Consolidar Brasília como destino turístico nacional e internacional e polo de eventos e negócios,\npromovendo a cidade nos principais mercados emissores, ampliando a captação de feiras,\ncongressos e grandes eventos e fortalecendo parcerias com companhias aéreas e operadoras de\nturismo, de modo a ampliar o fluxo de visitantes e a movimentação da hotelaria, do comércio e dos\nserviços ao longo do ano.\n▪ Estimular programa de turismo cívico-escolar para atrair os estudantes de todo o país para\nconhecer a capital.\n▪ Qualificar a infraestrutura dos atrativos e a recepção ao visitante, promovendo a conservação, a\nmelhoria da sinalização e da acessibilidade, a modernização dos Centros de Atendimento ao Turista\ne a integração entre os canais presenciais e digitais.\n▪ Promover o aproveitamento turístico sustentável da Orla do Lago Paranoá, qualificando os espaços\nde convivência, lazer, gastronomia, esporte e turismo náutico, com acessibilidade, proteção\nambiental e integração entre os principais atrativos.\n▪ Descentralizar e diversificar a oferta turística, valorizando e estruturando os atrativos culturais,\nhistóricos, arquitetônicos, ambientais, religiosos, rurais, cívicos e gastronômicos das diferentes\nRegiões Administrativas.\n▪ Fortalecer a integração turística com os municípios da RIDE-DF, articulando roteiros regionais,\nações conjuntas de promoção e iniciativas de cooperação voltadas ao ecoturismo, ao turismo rural,\ncultural e de experiências.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n33"
+          },
+          {
+            "id": "e-i-x-o-3-7",
+            "titulo": "■E I X O 3",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 3\n\nDESENVOLVIMENTO ECONÔMICO, TRABALHO E VOCAÇÕES REGIONAIS\n\nCULTURA E ECONOMIA CRIATIVA\n\n8 ações\n\nA cultura fortalece a identidade, a cidadania, a inclusão social e o desenvolvimento econômico. O\nGoverno do Distrito Federal ampliará o acesso às políticas culturais, promoverá a descentralização das\nações e dos investimentos, valorizará as diferentes expressões artísticas e preservará a memória e o\npatrimônio cultural do Distrito Federal.\nA política cultural será articulada ao fortalecimento da economia criativa, à modernização dos\nequipamentos públicos, ao incentivo à produção artística e à geração de oportunidades para artistas,\nprodutores e empreendedores. A gestão será orientada pela transparência, pela eficiência e pelo\nacompanhamento de resultados, valorizando a identidade brasiliense e as vocações culturais dos\ndiferentes territórios.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Ampliar e descentralizar o acesso às políticas culturais, aperfeiçoando os mecanismos de fomento\ne os editais do Fundo de Apoio à Cultura, ampliando o alcance territorial dos investimentos e\nfortalecendo a participação de artistas, produtores, coletivos, grupos tradicionais e agentes\nculturais das diferentes Regiões Administrativas.\n▪ Modernizar e qualificar a infraestrutura cultural do Distrito Federal, recuperando equipamentos\nculturais, fortalecendo a rede de bibliotecas públicas e estruturando espaços, iniciativas itinerantes\ne ambientes de formação, produção, inovação e circulação cultural, conforme as necessidades de\ncada território.\n▪ Impulsionar a economia criativa, o empreendedorismo e o trabalho cultural, promovendo a\nqualificação e a formalização dos profissionais, o acesso aos instrumentos de crédito, aos mercados\ne às oportunidades de comercialização, além do fortalecimento de cooperativas, empreendimentos\ncriativos e da integração entre cultura e turismo.\n▪ Valorizar o patrimônio cultural, a memória e a identidade brasiliense, fortalecendo a preservação\ndo patrimônio material e imaterial, o reconhecimento dos mestres da cultura, as manifestações\ntradicionais, os circuitos culturais e as ações de educação patrimonial.\n▪ Fortalecer a produção, a circulação e a formação cultural, apoiando projetos artísticos, festivais,\nmostras, apresentações e atividades formativas, com atenção à diversidade de linguagens e à\nampliação das oportunidades para novos talentos.\n▪ Modernizar a governança e a gestão da política cultural, aperfeiçoando o marco normativo,\nampliando a transparência e a eficiência na aplicação dos recursos, qualificando o diálogo com\nartistas, produtores, instituições e comunidades culturais e estruturando instrumentos de dados,\nacompanhamento e avaliação das políticas públicas.\n▪ Concluir a reforma do Teatro Nacional Cláudio Santoro, entregando a Sala Villa-Lobos e seu foyer,\na Sala Alberto Nepomuceno e o Espaço Cultural Dercy Gonçalves, após a reabertura da Sala Martins\nPena, restituindo à população o principal equipamento cultural do Distrito Federal, com\nacessibilidade, condições técnicas de operação e programação regular.\n▪ Transformar o Setor Comercial Sul em um polo de economia criativa, cultura e tecnologia.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n34"
+          },
+          {
+            "id": "e-i-x-o-4",
+            "titulo": "■E I X O 4",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 4\n\nE I X O\n\nBRB, DESENVOLVIMENTO E FOMENTO DO DF\n\n4\n\nBRB, DESENVOLVIMENTO E FOMENTO DO DF\nPATRIMÔNIO ESTRATÉGICO\n\n9 ações\n\nO BRB – Banco de Brasília é um patrimônio estratégico do Distrito Federal e um importante\ninstrumento de desenvolvimento econômico, inclusão financeira e apoio à população e às empresas. O\nGoverno reafirmará o compromisso com o fortalecimento de seu caráter público, sua solidez financeira\ne a transparência, promovendo o aprimoramento contínuo da governança, dos controles internos e da\ngestão de riscos.\nA atuação do BRB será fortalecida para ampliar o acesso ao crédito, financiar projetos estratégicos e de\ninfraestrutura, impulsionar a inovação e ampliar as oportunidades econômicas em todas as Regiões\nAdministrativas.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Recuperar e fortalecer a capacidade operacional e financeira do BRB, aprimorando a governança,\na integridade, os controles internos, a gestão de riscos e a transparência, com foco na solidez da\ninstituição e na preservação do patrimônio público do Distrito Federal.\n▪ Aprimorar as plataformas e os serviços digitais do banco, simplificando a jornada dos clientes e\nampliando a eficiência dos serviços, sem abrir mão do atendimento presencial e humanizado,\nespecialmente para idosos e pessoas com maior dificuldade de acesso aos meios digitais.\n▪ Ampliar o microcrédito produtivo e as linhas de crédito para micro e pequenos empreendedores,\ncom atenção às vocações econômicas das Regiões Administrativas, oferecendo condições\nadequadas de financiamento, orientação financeira e apoio à abertura, modernização e expansão\ndos negócios, estimulando a geração de emprego e renda nos territórios.\n▪ Integrar a concessão de crédito a ações de orientação, capacitação e assistência aos\nempreendedores, em parceria com instituições de apoio empresarial, órgãos do GDF e demais\nentidades, contribuindo para a sustentabilidade e o crescimento dos negócios financiados.\n▪ Desenvolver e ampliar mecanismos de garantia de crédito para micro, pequenas e médias empresas\ncom dificuldade de oferecer garantias suficientes, facilitando o acesso a recursos destinados à\nmodernização, expansão dos negócios e geração de empregos.\n▪ Reforçar o papel do BRB como agente estratégico de fomento e desenvolvimento do Distrito\nFederal, ampliando sua participação no financiamento de projetos estruturantes, infraestrutura,\ninovação, desenvolvimento urbano e atividades produtivas capazes de gerar emprego, renda e\nnovas oportunidades.\n▪ Fortalecer e financiar o ecossistema de inovação, startups e a economia criativa do Distrito Federal,\nampliando linhas de crédito e instrumentos de financiamento e investimento voltados a empresas\ninovadoras, incluindo mecanismos de apoio ao capital semente e ao capital de risco, à\ntransformação digital, à modernização tecnológica e à transição energética das empresas locais.\n▪ Fortalecer e aprimorar as linhas de crédito imobiliário, consignado e demais produtos destinados\naos servidores públicos do Distrito Federal, oferecendo condições competitivas e promovendo\nações de educação financeira e prevenção ao superendividamento.\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n35"
+          },
+          {
+            "id": "e-i-x-o-4-2",
+            "titulo": "■E I X O 4",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 4\n\nBRB, DESENVOLVIMENTO E FOMENTO DO DF\n\n▪ Desenvolver programa de educação financeira, orientação e negociação de dívidas para famílias e\npequenos empreendedores, contribuindo para a prevenção do superendividamento, a recuperação\nda capacidade financeira e a reinserção econômica.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n36"
+          },
+          {
+            "id": "e-i-x-o-4-3",
+            "titulo": "■E I X O 4",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 4\n\nBRB, DESENVOLVIMENTO E FOMENTO DO DF\n\nENTORNO\n\n5 ações\n\nO Governo do Distrito Federal fortalecerá a integração regional por meio da governança\ninterfederativa, do planejamento compartilhado e da articulação de investimentos estratégicos. A\npolítica do Entorno promoverá a cooperação entre o Distrito Federal, a União, os Estados de Goiás e\nMinas Gerais e os municípios da RIDE-DF em áreas como mobilidade, saúde, educação, segurança,\ninfraestrutura, desenvolvimento econômico, transformação digital e sustentabilidade.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Articular a construção do Plano Estratégico e o fortalecimento dos instrumentos de governança\ncompartilhada da RIDE-DF, promovendo a cooperação entre o Distrito Federal, os Estados de Goiás\ne Minas Gerais, os municípios integrantes e a União para o planejamento e a implementação\ncoordenada de políticas, projetos e serviços de interesse regional.\n▪ Estruturar mecanismos de financiamento para o desenvolvimento da RIDEDF, articulando a\nconstituição de fundos, a captação de recursos nacionais e internacionais e a formação de parcerias\ndestinadas à viabilização de projetos estruturantes de infraestrutura, saneamento, saúde, inovação\ne sustentabilidade.\n▪ Promover a integração da mobilidade regional, articulando soluções para a compatibilização da\nbilhetagem, a integração operacional e tarifária do transporte coletivo e o desenvolvimento de\nalternativas para o transporte regional de passageiros, em cooperação com a União, os Estados e\nos municípios.\n▪ Fortalecer o desenvolvimento econômico regional, integrando ações de qualificação profissional,\nempreendedorismo, agricultura familiar, inovação, turismo, atração de investimentos e\nfortalecimento das cadeias produtivas da RIDE-DF.\n▪ Ampliar a cooperação regional em segurança pública, defesa civil e gestão de riscos, promovendo\no compartilhamento de informações, a integração da inteligência, o planejamento conjunto e a\ncoordenação de respostas a emergências e eventos climáticos extremos.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n37"
+          },
+          {
+            "id": "e-i-x-o-5",
+            "titulo": "■E I X O 5",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 5\n\nE I X O\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n\n5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E\nGOVERNO DE PROXIMIDADE\nGESTÃO DE PESSOAS E VALORIZAÇÃO DOS SERVIDORES\n\n9 ações\n\nNenhuma política pública se concretiza sem o empenho, a qualificação e a dedicação das pessoas que a\nexecutam. Por isso, nosso compromisso é valorizar os servidores públicos, modernizar a gestão de\npessoas e aprimorar as condições de trabalho, conciliando desenvolvimento profissional, inovação e\nresponsabilidade fiscal. Reconhecer e valorizar quem faz o serviço público acontecer é fundamental\npara construir uma administração mais eficiente, motivada, preparada para os desafios do futuro e\norientada à entrega de melhores resultados para a população do Distrito Federal.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Valorizar os servidores e empregados públicos como agentes estratégicos para o desenvolvimento\ndo Distrito Federal, promovendo políticas de reconhecimento profissional, desenvolvimento nas\ncarreiras, qualificação permanente e melhoria das condições de trabalho, observadas as\nespecificidades de cada categoria.\n▪ Fortalecer e ampliar o plano de saúde dos servidores do GDF (INAS), expandindo a rede conveniada\npara cobertura em todo o território nacional.\n▪ Promover a recomposição gradual dos quadros efetivos, priorizando a convocação e a nomeação\nde candidatos aprovados em concursos públicos vigentes de acordo com as necessidades da\nAdministração e observada a responsabilidade fiscal.\n▪ Modernizar o planejamento da força de trabalho, realizando estudos permanentes sobre\ndimensionamento de pessoal, aposentadorias, vacâncias e necessidades futuras de cada órgão e\nentidade, de forma a orientar concursos públicos, nomeações, movimentações e demais estratégias\nde recomposição dos quadros.\n▪ Promover a saúde integral, a segurança e a qualidade de vida no trabalho, fortalecendo ações de\nsaúde mental, segurança ocupacional, acompanhamento dos afastamentos e programas de\npromoção do bem-estar dos servidores.\n▪ Implantar uma política permanente de formação e desenvolvimento de servidores e lideranças,\nampliando a capacitação em áreas técnicas estratégicas — como inteligência artificial,\ntransformação digital, gestão de projetos e contratos — e fortalecendo as competências de gestão\npara condução de equipes, mediação de conflitos e governança orientada a resultados\n▪ Estimular a inovação e o protagonismo dos servidores, criando mecanismos para identificar,\nreconhecer e disseminar boas práticas, projetos inovadores e soluções desenvolvidas pelas equipes\nque resultem em melhoria dos serviços públicos, redução de custos e simplificação de processos.\n▪ Modernizar os processos de gestão de pessoas por meio da transformação digital, integrando\nsistemas e bases de dados, automatizando rotinas administrativas e ampliando o uso de\ninformações para planejamento, tomada de decisão e acompanhamento da força de trabalho.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n38"
+          },
+          {
+            "id": "e-i-x-o-5-2",
+            "titulo": "■E I X O 5",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n\n▪ Aperfeiçoar a gestão do desempenho, utilizando critérios transparentes, indicadores e\ninstrumentos de acompanhamento que contribuam para o desenvolvimento profissional, o\nreconhecimento das equipes e a melhoria contínua da qualidade dos serviços prestados à\npopulação.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n39"
+          },
+          {
+            "id": "e-i-x-o-5-3",
+            "titulo": "■E I X O 5",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n\nTRANSFORMAÇÃO DIGITAL, GOVERNO INTELIGENTE E INOVAÇÃO\n\n9 ações\n\nO Governo do Distrito Federal avançará na consolidação de um modelo de governança digital\nintegrado, seguro, inovador e orientado às necessidades do cidadão. A estratégia combinará a\nsimplificação e a digitalização dos serviços públicos, a integração de sistemas e bases de dados, o uso\nresponsável da inteligência artificial, o fortalecimento da segurança cibernética e a ampliação da\ninclusão digital.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Consolidar Brasília como capital inteligente com uso da tecnologia na gestão e prestação dos\nserviços públicos.\n▪ Ampliar e fortalecer o programa TECH-HUB Brasília consolidando o Distrito Federal como polo\nnacional de tecnologia e inovação.\n▪ Ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e\nadotando linguagem simples, acessibilidade e múltiplos canais de atendimento, de modo a tornar\na relação entre o cidadão e o Governo mais ágil, segura e eficiente.\n▪ Integrar sistemas, plataformas e bases de dados governamentais, fortalecendo a\ninteroperabilidade, a governança e o compartilhamento seguro de informações entre os órgãos\npúblicos, com redução de burocracias, retrabalho, custos administrativos e tempo de atendimento.\n▪ Ampliar o uso de dados, automação e inteligência artificial na gestão pública, apoiando o\nplanejamento, a tomada de decisões, a prestação de serviços e a avaliação das políticas públicas,\ncom observância da ética, da transparência, da proteção de dados e da supervisão humana.\n▪ Promover a inclusão e a cidadania digital, ampliando a conectividade pública, a acessibilidade dos\nserviços, o letramento tecnológico e os canais de atendimento assistido, com atenção prioritária às\npessoas e aos territórios com maior dificuldade de acesso às tecnologias digitais.\n▪ Modernizar a infraestrutura tecnológica do Distrito Federal e fortalecer a segurança cibernética,\nampliando a confiabilidade, a disponibilidade e a capacidade de recuperação dos sistemas públicos,\nalém da prevenção, identificação e resposta a incidentes digitais.\n▪ Consolidar o Distrito Federal como referência em cidades inteligentes e inovação urbana,\nutilizando tecnologias e dados para qualificar a mobilidade, a segurança, a zeladoria urbana, os\nserviços públicos e a gestão territorial.\n▪ Fortalecer o ecossistema de ciência, tecnologia e inovação, valorizando o Parque Tecnológico\nBIOTIC e estimulando a integração entre governo, universidades, centros de pesquisa, startups e\nempresas de base tecnológica, com foco na atração de investimentos, no empreendedorismo\ninovador e na geração de empregos qualificados.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n40"
+          },
+          {
+            "id": "e-i-x-o-5-4",
+            "titulo": "■E I X O 5",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n\nPLANEJAMENTO, ORÇAMENTO, GESTÃO E GOVERNANÇA\n\n5 ações\n\nO Distrito Federal avançará na consolidação de um modelo de governança pública moderno,\ntransparente, íntegro e orientado por resultados. A estratégia integrará o planejamento de longo prazo,\na responsabilidade fiscal, a valorização dos servidores públicos, a modernização da gestão tributária e\na adequação ao novo sistema tributário nacional, além do fortalecimento do controle interno, da\ntransparência e da prevenção à corrupção.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Modernizar a estrutura administrativa do Governo do Distrito Federal, revisando competências,\nprocessos e modelos de gestão para reduzir sobreposições, fortalecer a integração entre órgãos e\nentidades, racionalizar estruturas e ampliar a eficiência na prestação dos serviços públicos.\n▪ Promover a ocupação do Centro Administrativo do Distrito Federal (CAD), com a integração de\nórgãos e entidades da Administração Pública, a racionalização das estruturas administrativas e o\ncompartilhamento de serviços, de modo a reduzir despesas com aluguéis e custos operacionais,\nampliar a eficiência da gestão.\n▪ Consolidar a governança estratégica e o planejamento integrado e territorial, alinhando o\nplanejamento de longo prazo ao PPA, à LDO e à LOA e fortalecendo sua aplicação nas\nAdministrações Regionais, com definição de prioridades para cada cidade, utilização de indicadores\nde desempenho, monitoramento sistemático, avaliação de resultados e gestão de riscos.\n▪ Fortalecer a responsabilidade fiscal e a inteligência tributária, aprimorando a qualidade do gasto\npúblico, a gestão estratégica dos investimentos e a adequação institucional, tecnológica e\nnormativa do Distrito Federal ao novo sistema tributário nacional.\n▪ Fortalecer a integridade e a transparência, ampliando os programas de integridade e gestão de\nriscos, as ações de prevenção de irregularidades, a transparência ativa, os canais de atendimento e\nescuta da população e os instrumentos de acompanhamento dos resultados governamentais.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n41"
+          },
+          {
+            "id": "e-i-x-o-5-5",
+            "titulo": "■E I X O 5",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "■E I X O 5\n\nGESTÃO, GOVERNANÇA, TRANSFORMAÇÃO DIGITAL E GOVERNO DE PROXIMIDADE\n\nSOCIEDADE CIVIL E GOVERNO DE PROXIMIDADE\n\n6 ações\n\nO Governo do Distrito Federal fortalecerá uma administração próxima da população, baseada na escuta\ndas demandas locais, no diálogo com as organizações da sociedade civil e na oferta de atendimento\nacessível, integrado e eficiente. Com o apoio da transformação digital, da inteligência de dados e de\numa comunicação pública clara e transparente, serão aprimorados o planejamento, a execução e a\navaliação das políticas públicas, ampliando a capacidade de resposta do Governo, a confiança nas\ninstituições e a qualidade dos serviços prestados à população.\n\nA Ç Õ E S\n\nE S T R U T U R A N T E S\n\n▪ Fortalecer o Programa GDF na sua Porta nas Regiões Administrativas, promovendo periodicamente\nações integradas de atendimento, prestação de serviços e escuta comunitária, com participação dos\nórgãos governamentais e das Administrações Regionais, de modo a aproximar o Governo da\npopulação e agilizar o encaminhamento das demandas locais.\n▪ Implantar o GDF na sua PORTEIRA levando às áreas e aos núcleos rurais do Distrito Federal as\nações integradas de atendimento e prestação de serviços, com emissão de documentos, orientação\nsobre regularização fundiária e crédito rural, assistência técnica e extensão rural, atendimento de\nsaúde e atendimento veterinário, em articulação com as Administrações Regionais, a Emater-DF e\nos órgãos setoriais, respeitando as distâncias e a sazonalidade do calendário produtivo.\n▪ Ampliar a participação social e fortalecer a cooperação com a sociedade civil, valorizando\nconselhos, conferências, consultas públicas, audiências, plataformas colaborativas, organizações da\nsociedade civil, iniciativas comunitárias, voluntariado e redes de cooperação na formulação, no\nacompanhamento e na avaliação das políticas públicas.\n▪ Fortalecer a atuação territorial das Administrações Regionais, aprimorando sua capacidade de\nidentificar, organizar e encaminhar as demandas da população, articular os órgãos governamentais\ne acompanhar a execução dos serviços públicos nos territórios.\n▪ Modernizar e integrar os canais de atendimento ao cidadão, fortalecendo o programa\nAdministração Regional Digital 24 Horas e articulando os serviços presenciais e digitais, com\nlinguagem simples, acessibilidade e atendimento assistido.\n▪ Fortalecer a comunicação pública, o diálogo com a população e a atuação das Administrações\nRegionais como espaços permanentes de participação cidadã, ampliando a divulgação de\ninformações de interesse coletivo, a prestação de contas, a orientação sobre políticas, programas e\nserviços públicos, bem como o acompanhamento das demandas locais e a avaliação dos serviços\nprestados, por meio de linguagem simples, acessível e adequada aos diferentes canais de\ncomunicação.\n\nPlano de Governo 2027 a 2030 | Celina Leão | Gustavo Rocha\n\n42"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "89390b73ae907d05c061d72a4e726a5c949b66ac603d68a487ba245ddd1634ff"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "9b592750c5435958610c5e46effd08868e1464378dbe68a79aa2d8afcb7ec441"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "ac7c45e713caaf84c0424202d3d61617035e0f9813ccd784ef0f9f3a145ac75b"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "41ccc7ede5448cc51e4beb1ec5c29f85402d72de0cd194f4e67ad48e94e2dbbb"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "93f4b219ac4be4e9adc0480ea282a2d63e5601014ba5a590fc01b7fc2e68c7ed"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cd9230a1632baa7c71b34c9f7c30eed05376c31b7b6c96fe57ae5618399e5462"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "368e2bae5ba14d2560db7fbd29f3f4faa506f1ae034a445d45605c7ae29c2165"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "48591ae1a49d3b9048a22777021bc78a4e9c3cc6e189075cb7c0914ad8b837a1"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "036cb271b0a3bd385eabae2dcfbba8a3429e01bfc3369e20e6b2d7cdcb3c0767"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "3e43a0b49859c06127141834757bb59da9c702a20a7d9de2b09395a0014fc45c"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6f647c2fe7cf5fe2d534a11acc88d87aace99094d662d70bf4c6c0f779631f23"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "dd3a65bdda254c7af6fbe0bc45e2cbc215e3b14592dd14e2b8cb7c49b68d33bd"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "062a9fdbc1ec208cf8836d99305c2870346534955005a3bc657376383395da91"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "7b188cee406bae987d52c14ee187a11dfc5a997cd93baed9dc36f8bc72f4b46b"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "5da52bbce58953a4ec6a8ab2d5ef7e80e8d0f71571b6db85cc8416deb441879a"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "89c774aea1d406f920a58a09942512ac3af13331de954f3f7c2ac11fed7b5ee0"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "cf3059c8b162a6862af19a7f4c083391be765d7c9f4bbebb3ebd2aa42b72f871"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "62acf012eb83cae39c77aeee823d91e832ee1f7901522f74cca04de051c68cc0"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "f3e76482bc94531027560e5922f98890ff66584b553924a70336d7743de9ff2e"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0002be620930c3fb5543e04b54fced762ea0ce9e183a34014918ae3450a9dae8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "a6866f67ad214ddccb001a6cedca0930d138c02c225135057a09e5dc80df7017"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "4973702ffdb342d925b4230811171284e69b2ff8b3460dad69281033e528c217"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "3765568d97c21f4639ce31f7a6f5a49c133243d110d1ab51c26b84e26290399d"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "51f5bae779e7965df673e27fefc85897bb6d19c28ab0f064e90cb9cc4238de83"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "87baadacfe681aeb7ecb35aac948d3700375b5c70fe8608c621d3c5500e5024a"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "6c084476703a88be0ed28ac088f47f2d4372ee01fdae411e8dc2a160a2eeae6e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "df8f8d427ed6c9049e8c419fced19acc575f5655841c9a2d5f9d40798a8ec0fa"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "9daf8bad3bf7498a8746037a118c8d5df87875d5707ecf50ca1c5b8c81bb54b8"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "b219c254304e7701fb78cfe7e3eec6e08c52dc4c0fa6e8fa75a00aebeb3391ac"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "94d26e89eed54a0cb9169f05b6edf289996ea0e671951236b91aa34b3d003c92"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4d6d2f071ab7c131bd6d61717e96efb235aa3bd3e89caaa448637a5f0ac96d93"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "454138c5214965ed65338f50148cd7b7c359bc92a99df849cf0dd42b23412000"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "e8da8348f2298aaabc1e2daeedb2d97af0a15ec6a01f29bc3848abff50e98520"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "d77463c67faa57e6bb247aa1e78bed3249bd6065dd08c7760d40066a802f92b5"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "9daf5bd1db88f7e0b2e20903766168032f40447267f2af2be04ef3f01a6cf1c3"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "6e57db9fef64b7a0d2b7c0609e0702fe00249360e29b20894fb9998ade33d0be"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "e76608c4bc4c960337993f0e3854e718b7112a906297a1254ffe17b19491a660"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "22e77feb586966d5fb64c8f31175c16809e3a94a36277589082ccafec1569fcd"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "b045beb3af46a79a3496be2eb29311f765c84612e07661b5a8c6afea7bd369c1"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "6146cbde2f7e81ba9d535a71b1de039936ddd35df1bc0c89836a9290d206e6da"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "d0cccf58c7e6c7a2d6c2096099b8b8ad156a484ebdde6c9dbb7ca61c53d5d3cf"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "3fe50e1fc7efb130f4e85fa9c0bd1f773a0a34433e2dc4fe6554e21d3b464359"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento. O plano prevê fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares. O governo propõe ampliar a Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública. O programa prevê modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade. O plano propõe implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda. O governo propõe fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais.",
+    "frases": [
+      {
+        "texto": "O programa prevê ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 40,
+            "trecho": "Ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento, de modo a tornar a relação entre o cidadão e o Governo mais ágil, segura e eficiente."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 13,
+            "trecho": "Fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares."
+          }
+        ]
+      },
+      {
+        "texto": "O governo propõe ampliar a Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 15,
+            "trecho": "Ampliar a oferta da Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 12,
+            "trecho": "Modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 23,
+            "trecho": "Implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda."
+          }
+        ]
+      },
+      {
+        "texto": "O governo propõe fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 25,
+            "trecho": "Fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "Ampliação e simplificação dos serviços públicos digitais.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 40,
+            "trecho": "Ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento, de modo a tornar a relação entre o cidadão e o Governo mais ágil, segura e eficiente."
+          }
+        ]
+      },
+      {
+        "id": "atencao-primaria",
+        "titulo": "Atenção Primária à Saúde",
+        "descricao": "Fortalecimento da Atenção Primária à Saúde.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 13,
+            "trecho": "Fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares."
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Ampliação da oferta da Escola em Tempo Integral.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 15,
+            "trecho": "Ampliar a oferta da Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública."
+          }
+        ]
+      },
+      {
+        "id": "restaurantes-comunitarios",
+        "titulo": "Restaurantes Comunitários",
+        "descricao": "Modernização e expansão da rede de Restaurantes Comunitários.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 12,
+            "trecho": "Modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade."
+          }
+        ]
+      },
+      {
+        "id": "tarifa-zero",
+        "titulo": "Tarifa Zero",
+        "descricao": "Gratuidade do transporte público para a população de baixa renda.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 23,
+            "trecho": "Implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda."
+          }
+        ]
+      },
+      {
+        "id": "coleta-seletiva",
+        "titulo": "Coleta seletiva",
+        "descricao": "Fortalecimento das cooperativas e associações de catadores de materiais recicláveis.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553055:01",
+            "pagina": 25,
+            "trecho": "Fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:59:09.908Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:01:27.201Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (serviços digitais)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:1:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em Atenção Primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:2:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:3:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em restaurantes comunitários."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:4:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único no programa Tarifa Zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:5:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em coleta seletiva/catadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:frase:6:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:servicos-digitais:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente para o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:atencao-primaria:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:educacao-integral:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:restaurantes-comunitarios:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:tarifa-zero:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553055:tema:coleta-seletiva:documentos:DF:70002553055:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002553055",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002553055:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 42131,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2293,
+          "reasoning_output_tokens": 882
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29620,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22709,
+          "output_tokens_details": {
+            "thinking_tokens": 257
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29620,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22709,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29620,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29620
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36915440000000005
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "07e5646b8492d28acacd222d7af70d2441c62a162cba965a9a5ebf619a40b269",
+    "extractedTextSha256": "c22be94b1a27c178bb8fd4f1660fa70977a381034e9cec3ede9fd5fc9182e8c4",
+    "documentCount": 1,
+    "documentSetSha256": "d823416a406fda0f48aa12947bc08017960342272a2702c95bf2822786da7190",
+    "contentSha256": "35ce584e91564fff76bd783805756b26fba63948382df383ec77db31398840e3"
+  }
+}

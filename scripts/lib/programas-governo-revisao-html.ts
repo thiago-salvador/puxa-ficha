@@ -177,13 +177,13 @@ export function renderizarProgramaGovernoRevisaoRegional(
 body{font:16px/1.55 system-ui,sans-serif;max-width:1020px;margin:auto;padding:24px;color:#17202a}
 header.cabecalho{position:sticky;top:0;background:#fff;border-bottom:2px solid #b91c1c;padding:12px 0}
 header.cabecalho strong{color:#b91c1c}
-article.candidato{border:1px solid #ccd6dd;border-radius:12px;padding:20px;margin:20px 0}
-article.candidato header{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+article.candidato{border:1px solid #ccd6dd;border-radius:12px;padding:20px;margin:20px 0;min-width:0;overflow-wrap:anywhere}
+article.candidato header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:baseline}
 span.estado{white-space:nowrap;border-radius:999px;border:1px solid #94a3b8;padding:2px 10px;font-size:.8rem;font-weight:700}
 div.alerta{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px;margin-top:12px;font-size:.9rem}
-table{border-collapse:collapse;width:100%;font-size:.82rem;margin-top:8px}
+table{border-collapse:collapse;display:block;width:100%;max-width:100%;overflow-x:auto;font-size:.82rem;margin-top:8px}
 th,td{border:1px solid #d8dee3;padding:4px 6px;text-align:left;vertical-align:top}
-p.meta{font-size:.78rem;color:#57606a}code{word-break:break-all}
+p.meta{font-size:.78rem;color:#57606a}code{word-break:break-all}input{max-width:100%}
 mark{padding:0 2px}
 .garantia{margin-top:14px;font-weight:600;color:#b91c1c}
 details{margin:10px 0}ul{margin:6px 0}

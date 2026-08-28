@@ -1,0 +1,1046 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MA",
+    "sqCandidato": "100002543869",
+    "slug": "orleans-brandao",
+    "nomeUrna": "ORLEANS BRANDÃO",
+    "partido": "MDB",
+    "arquivoNome": "2026MA100002543869_01.pdf",
+    "arquivoNoPacote": "MA/2026MA100002543869_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MA:100002543869:01",
+      "fonte": {
+        "arquivoNome": "2026MA100002543869_01.pdf",
+        "arquivoNoPacote": "MA/2026MA100002543869_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a637981388d05744e44978e9c84b187b841f8cce6463d81f5c22a9df2792e178",
+        "extractedTextSha256": "1ece90c478c33a0954fec59934a9b7e3cb0eb88676809e38f6449b581ef17000",
+        "paginas": 29,
+        "secoes": [
+          {
+            "id": "coligacao-avanco-por-todo-maranhao",
+            "titulo": "Coligação Avanço por todo Maranhão",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "Coligação Avanço por todo Maranhão\nMDB, Republicanos, PDT, Podemos e PRD/Solidariedade.\nDIRETRIZES\nORLEANS\nGOVERNADOR\nBRANDAO\nPARA UM\n15\nPLANO\nDE GOVERNO\nVICE EDIVALDO\nHOLANDA\n2027 -\n- 2030\nDO LADO CERTO\nDO LADO DO POVO\n@ • @orleansbrandaoma\nf Orleans Brandão @orleansbrandao_\nACESSE orleansbrandao.com.br"
+          },
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nO Maranhão está preparado para dar um novo passo em sua história, rumo\nà construção de um estado mais moderno, inclusivo, inovador e capaz de\ntransformar seu enorme potencial em oportunidades para todos.\nEste Plano de Governo foi construído para representar a força e a diversidade\ndo povo maranhense. As propostas aqui apresentadas contemplam todas as\npessoas, respeitando suas histórias, particularidades e realidades.\nAs ações previstas englobam políticas voltadas às mulheres, às crianças,\naos jovens, aos idosos, às pessoas com deficiência, aos povos originários, às\ncomunidades quilombolas, à população LGBTQIAPN+, à população negra,\naos trabalhadores da zona rural e da cidade, aos empreendedores e a todos\naqueles que contribuem para a formação da identidade do nosso estado.\nPor isso, este plano reúne propostas voltadas para ampliar o acesso à saúde, à\neducação, fortalecer a segurança pública, modernizar a infraestrutura, proteger\no meio ambiente, por meio de um desenvolvimento sustentável, promover a\nacessibilidade, a inclusão social e impulsionar a geração de emprego e renda\npara, assim, reduzir as desigualdades sociais entre as regiões do estado.\nAcreditamos em um Maranhão que não espera pelo futuro, ele o constrói, dia\napós dia, dando continuidade a tudo que já conquistamos juntos. Queremos\nseguir entregando resultados, atraindo investimentos e abrindo caminhos para\nquem empreende, trabalha e sonha.\nNosso compromisso é governar para todos e por todo o Maranhão, sem\ndistinções, ampliando direitos e oportunidades, para que ninguém fique para\ntrás.\n\n- Orleans Brandão"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nÍNDICE\nPÁG.\n\n• GESTÃO E PLANEJAMENTO ..................................................................................... 04\n• ATRAÇÃO DE INVESTIMENTOS E INOVAÇÃO ...................................................... 05\n• SEGURANÇA PÚBLICA E DEFESA CIVIL ............................................................... 07\n• INFRAESTRUTURA E LOGÍSTICA ........................................................................... 09\n• MOBILIDADE URBANA ............................................................................................... 10\n\n• CIDADES ........................................................................................................................ 11\n• SAÚDE .......................................................................................................................... 12\n• EDUCAÇÃO ................................................................................................................... 15\n• PRIMEIRA INFÂNCIA .................................................................................................. 17\n• PRODUÇÃO, TRABALHO E RENDA .......................................................................... 18\n• MEIO AMBIENTE E SUSTENTABILIDADE .............................................................. 20\n• TURISMO ...................................................................................................................... 21\n• CULTURA ...................................................................................................................... 22\n• ESPORTE ...................................................................................................................... 23\n• JUVENTUDE ................................................................................................................. 24\n• DESENVOLVIMENTO SOCIAL E DIREITOS HUMANOS ....................................... 25\n• COMBATE À FOME E ERRADICAÇÃO DA POBREZA ........................................... 27\n• PROTEÇÃO E BEM-ESTAR ANIMAL ........................................................................ 28"
+          },
+          {
+            "id": "plano-de-governo-3",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nGESTÃO E PLANEJAMENTO\n\n1. Fundo Estadual de Recursos Estratégicos do Maranhão | Criar o Fundo Estadual de Recursos\nEstratégicos do Maranhão com o objetivo de financiar o desenvolvimento socioeconômico do\npovo maranhense, garantir a sustentabilidade fiscal e atender emergências provocadas por\nintempéries.\n2. Gestão Digital | Promover a transformação digital do Governo do Estado e a adoção de processos\nágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta.\n3. Portal do Servidor Integrado | Ampliar e aprimorar os serviços do Portal do Servidor do\nGoverno do Estado do Maranhão, com objetivo de centralizar e facilitar o acesso a sistemas\ncorporativos que tratam de benefícios e direitos dos servidores ativos e inativos, tais como\nlicença-maternidade, licença-paternidade, certidão de tempo de serviço, licença para tratamento\nde saúde, entre outros.\n4. Conecta MA | Assegurar a ampliação da conectividade no estado e o acesso à internet nos\nmunicípios maranhenses, com o objetivo de promover a inclusão digital para o povo maranhense\nem áreas urbanas e rurais.\n5. Regiões Administrativas | Realizar estudo de revisão e adequação da regionalização\nadministrativa do território do estado, observando cenários atuais e potenciais de desenvolvimento\nsocioeconômico sustentável.\n6. Unidades Regionais de Gestão | Implantar Unidades Regionais de Gestão, objetivando a\nintegração, implementação, monitoramento e avaliação de políticas públicas, voltadas à redução\ndas desigualdades regionais.\n7. Monitora MA | Implementar sistema estadual de monitoramento, avaliação e controle de políticas\npúblicas, e formalizar sua adoção como instrumento de planejamento da administração pública\nestadual.\n8. Participa MA | Fortalecer os mecanismos de transparência e participação social no planejamento\ne no controle da gestão.\n9. Cadastro Cidadão | Criar o cadastro estadual de beneficiários de programas sociais do Maranhão,\nintegrado ao Cadastro Único do Governo Federal e a outras bases de dados relevantes para a\nformulação e implementação de políticas públicas.\n10. Programa Boas-vindas | Instituir programa de acolhimento, treinamento e orientação como\netapa final do processo de admissão de servidores públicos para cargos efetivos e cargos em\ncomissão.\n11. FUNBEN - Saúde | Ampliar e descentralizar a assistência de saúde dos servidores contribuintes\ndo FUNBEN (Fundo de Benefícios dos Servidores do Estado do Maranhão), por meio de\ncredenciamento de clínicas particulares.\n12. Parcerias Estratégicas | Identificar potencialidades para parcerias público-privadas que\ngarantam complementaridade aos recursos públicos para implementação e ampliação de\ninvestimentos e oferta de serviços de interesse da sociedade.\n\n4"
+          },
+          {
+            "id": "plano-de-governo-4",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nATRAÇÃO DE INVESTIMENTOS E INOVAÇÃO\n\n1. Captação de Recursos | Instituir uma unidade orgânica dotada de especialistas e acervo\ntecnológico capazes de viabilizar a captação de recursos nacionais e internacionais,\nreembolsáveis e não reembolsáveis, com foco no financiamento de projetos estruturantes\nvoltados ao desenvolvimento socioeconômico sustentável do estado.\n2. Investimentos Privados | Elaborar portfólio de oportunidades de investimentos para o\nsetor privado, compatibilizando as prioridades do estado com formação de mão de obra,\ndesenvolvimento científico e tecnológico, recursos estratégicos, como petróleo e gás, energia\nrenovável, terras raras, minerais críticos, além de sinalizações da conjuntura econômica nacional\ne internacional.\n3. Economia Azul | Elaborar, em parceria com o setor privado, universidades, entidades de classe\nempresarial e outras instituições interessadas, diagnóstico do potencial econômico do litoral\nmaranhense e o plano estadual de desenvolvimento da economia do mar, com foco na geração\nde emprego e renda.\n4. Empregos Azuis | Implantar, em parceria com universidades, Sistema S, entidades de classe\nempresarial e setor privado, programa de qualificação profissional para demandas decorrentes\nda Economia Azul e do desenvolvimento das indústrias naval, offshore e portuária.\n5. Margem Equatorial | Promover articulação político-institucional com o governo federal e seus\nórgãos e entidades ligadas às áreas de petróleo, gás e meio ambiente, objetivando a agilização\ndo processo de início da exploração de petróleo na Margem Equatorial.\n6. Margem Equatorial - Qualificação profissional | Assegurar, em parceria com universidades\ne outras instituições de ensino e qualificação para o trabalho, a implantação de cursos de\nformação técnica e profissional, conforme demandas decorrentes da potencial exploração da\nMargem Equatorial.\n7. Distritos Industriais | Revisão das concessões de áreas dos distritos industriais, de modo a\notimizar a ocupação desses territórios com a instalação de empresas, notadamente aquelas\ncom maior potencial de contribuir para o crescimento econômico e com a geração de emprego\ne renda.\n8. Zona de Processamento de Exportação - ZPE | Garantir o funcionamento pleno da ZPE, com\no objetivo primordial de promover o crescimento econômico, gerar emprego, renda e superávit\nna balança comercial do Estado.\n9. Incentiva ZPE | Instituir programa de incentivos para aquisição de insumos e serviços locais\npelas empresas instaladas na ZPE.\n10. Desenvolvimento de Fornecedores | Fortalecer, em parceria com a Federação das Indústrias\ndo Maranhão (FIEMA), o Programa de Desenvolvimento de Fornecedores (PDF), com foco\nna atração e implantação de empresas fornecedoras para demandas de empreendimentos\ninstalados na ZPE.\n11. Integra ZPE | Implantar o Sistema Estadual de Cadeias Produtivas Integradas à ZPE, conectando\na produção regional à indústria exportadora.\n\n5"
+          },
+          {
+            "id": "plano-de-governo-5",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nATRAÇÃO DE INVESTIMENTOS E INOVAÇÃO\n\n12. Qualifica ZPE | Instituir, em parceria com as academias, Sistema S e outras unidades formadoras,\nprograma de formação técnica e industrial, alinhado às demandas da ZPE e de outros polos\nprodutivos do estado.\n13. Pesquisa e Desenvolvimento | Fomentar, por meio da Fundação de Amparo à Ciência e\nTecnologia do Estado do Maranhão (FAPEMA), a realização de pesquisas em conformidade com\nprioridades do planejamento estratégico do estado, voltadas ao desenvolvimento socioeconômico\ne à redução de desigualdades regionais.\n14. Startups | Estimular, em parceria com universidades e iniciativa privada, o desenvolvimento de\nstartups de ciência, tecnologia e inovação, com foco na concepção de soluções e modelos de\nnegócios atrelados às potencialidades regionais do estado.\n15. Transporte e Logística | Ampliar e requalificar a infraestrutura rodoviária, portuária e\naeroportuária, fortalecendo as vantagens logísticas e a competitividade do estado nos cenários\nregional, nacional e internacional.\n\n6"
+          },
+          {
+            "id": "plano-de-governo-6",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nSEGURANÇA PÚBLICA E DEFESA CIVIL\n\n1. Maranhão Seguro | Ampliar o efetivo das forças de segurança pública do estado, com destaque\npara Polícia Militar, Perícia Oficial, Bombeiro Militar e Polícia Civil.\n2. Cinturão da Paz | Integrar as forças de segurança do estado com as guardas municipais,\napoiando os municípios na estruturação, capacitação e fortalecimento das Guardas Municipais,\npara o combate ao crime, aliando inteligência artificial e inteligência policial, com uso de\nvideomonitoramento integrado.\n3. Saúde Mental e Física | Implantar programa de serviços de atendimento psicológico, psiquiátrico\ne terapia ocupacional para servidores das forças de segurança pública do estado.\n4. Segurança Conectada | Investir na conectividade e na atualização tecnológica das delegacias\ne viaturas da Polícia Militar, Polícia Civil e Perícia Oficial, incluindo a implantação de um sistema\núnico de dados das forças de segurança do estado.\n5. Combate a Facções | Assegurar investimentos para equipamentos, infraestrutura e tecnologia\nvoltados para o combate a facções criminosas nos presídios estaduais, com foco em atuação\npreditiva e desarticulação de ações dentro e fora das unidades prisionais.\n6. Inteligência e Tecnologia | Qualificar e intensificar o uso da inteligência e tecnologia, objetivando\nmaior eficiência e efetividade das operações contra facções criminosas.\n7. Coletivo Seguro | Fortalecer a atuação dos órgãos estaduais de segurança pública na prevenção\nde roubos, furtos e importunação sexual no transporte coletivo, incluindo terminais urbanos,\ncom destaque para a Grande Ilha.\n8. Rua Segura | Intensificar as rondas da Polícia Militar e Guardas Municipais, com foco no\nenfrentamento e na prevenção da violência, fortalecendo a presença das forças de segurança\npública nos bairros e avenidas.\n9. Escola Segura | Fortalecer o Comando de Segurança Comunitária da Polícia Militar do\nMaranhão (CSCPMMA), garantindo a ampliação da Ronda Escolar e do Programa Educacional\nde Resistência às Drogas e à Violência (PROERD).\n10. Atendimento Especializado para Escolas | Implantar protocolo de atendimento para ameaças\ne violência no ambiente escolar, assim como canal de comunicação direto com as escolas da\nrede pública na Ilha de São Luís.\n11. Patrulha Maria da Penha | Ampliar as unidades operacionais da Patrulha Maria da Penha e a\nassistência especializada a mulheres vítimas de violência nos municípios maranhenses.\n12. Monitoração de agressores | Firmar parceria com o Poder Judiciário e o Ministério Público\npara assegurar a aplicação da Lei 15.383/2026, que estabelece a monitoração eletrônica de\nagressores, por meio de tornozeleira eletrônica e dispositivo de alerta, como medida protetiva\nautônoma para mulheres em situação de violência doméstica e familiar.\n13. Regionalização da Perícia Oficial | Implantar unidades regionalizadas da Perícia Oficial, com as\nrespectivas unidades orgânicas e operacionais.\n\n7"
+          },
+          {
+            "id": "plano-de-governo-7",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nSEGURANÇA PÚBLICA E DEFESA CIVIL\n\n14. Núcleos de Medicina Legal | Implantar Núcleos de Medicina Legal da Perícia Oficial de forma\nregionalizada, voltados para a realização de exames periciais em vivos, como exames de lesão\ncorporal, violência sexual, toxicológicos e de embriaguez.\n15. Corpo de Bombeiros | Fortalecer o acervo de equipamentos operacionais do Corpo de\nBombeiros Militar do Maranhão (CBMMA), incluindo prevenção e combate a incêndio, assim\ncomo operações de salvamento.\n16. Sistemas Municipais de Defesa Civil | Apoiar municípios para implantação do sistema municipal\nde defesa civil, incluindo capacitação para decretação e homologação de estado de calamidade\ne emergência, capacitação em protocolos de desastre em massa e de identificação de vítimas\nde desastre (DVI).\n17. Delegacia Civil | Ampliar a rede de delegacias civis, conforme demanda fundamentada em\ndiagnóstico socioterritorial.\n18. Central Digital de Flagrantes | Implantar a Central Digital de Flagrantes, garantindo plantão 24\nhoras, apoio remoto às unidades fora da capital e a padronização de peças e procedimentos com\nintegração ao Plantão Digital.\n19. Software de Reconhecimento Facial | Implantar o sistema de reconhecimento facial em viaturas\nde patrulhamento e novos pontos de monitoramento em locais estratégicos, como terminais de\ntransporte público urbano de grande circulação.\n20. Acessibilidade no Sistema de Segurança | Garantir atendimento especializado às pessoas com\ndeficiência no sistema de segurança pública, incluindo protocolos de abordagem humanizada,\nadaptação de estruturas físicas e comunicação acessível (como LIBRAS), promovendo a\ncapacitação dos servidores de forma continuada.\n21. Segurança no Trânsito | Fortalecer a política de educação para a segurança no trânsito, com\ndestaque para a segurança de pedestres, a prevenção de acidentes com motociclistas e perigos\nda direção associada ao consumo de bebidas alcoólicas.\n22. Combate a Crimes Raciais e Agrários | Fortalecer as unidades especializadas em prevenção e\ncombate a crimes raciais e agrários, incluindo adequações de infraestrutura e capacitação para\natendimento humanizado às vítimas.\n23. Batalhão Ambiental | Fortalecer e ampliar a estrutura operacional das unidades da Polícia\nMilitar incumbidas da prevenção e repressão a crimes ambientais.\n\n8"
+          },
+          {
+            "id": "plano-de-governo-8",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nINFRAESTRUTURA E LOGÍSTICA\n\n1. Rodovias Estaduais | Assegurar a pavimentação e manutenção das rodovias estaduais.\n2. Remodelagem da Transnordestina | Articular junto ao governo federal visando à remodelagem\nda via ferroviária entre São Luís e Caxias e a implantação, em parceria com a iniciativa privada,\ndo terminal intermodal no município de Caxias.\n3. Ampliação da Transnordestina | Articular junto ao governo federal a ampliação da Ferrovia\nTransnordestina mantendo a proposta original de ligação de Balsas até Estreito.\n4. Itaqui - Anjo da Guarda | Promover articulação com o Governo Federal visando à duplicação da\nBR 135 no trecho Porto do Itaqui - Anjo da Guarda (Avenida dos Portugueses).\n5. Acesso ao Porto do Itaqui | Implantar pera de acesso ao Porto do Itaqui (acesso da BR 135 à\nAvenida Engenheiro Emiliano Macieira).\n6. Integração São Luís - Baixada | Finalizar o acesso rodoviário que liga o leste maranhense\nà Baixada, pelos municípios de Anajatuba e São João Batista, reduzindo o tempo de viagem\nentre São Luís e a Baixada Maranhense e interligando a região à Zona de Processamento de\nExportação (ZPE).\n7. Acessos Rodoviários da Baixada | Concluir os acessos rodoviários dos municípios do entorno\nda rodovia MA 014.\n8. Anel da Soja | Articular junto ao Governo Federal a conclusão da implementação do projeto\nrodoviário Anel da Soja.\n9. Destinos Turísticos | Garantir a implantação e manutenção de infraestrutura de acesso rodoviário\naos principais municípios que são parte do polo turístico do estado.\n10. BR 222 | Articular junto ao Governo Federal a federalização dos trechos remanescentes de\nrodovias estaduais - MA 232 (Chapadinha até Brejo) e MA 010 (Açailândia até Itinga) - que\nintercalam a BR 222.\n11. Complexo Portuário | Fortalecer, em parceria com a iniciativa privada, a atração de\ninvestimentos para a implantação de um novo porto, com foco no escoamento da produção e no\ndescongestionamento do Porto do Itaqui.\n12. Aeroporto de Balsas | Implantar aeroporto regional no município de Balsas, com distância\nadequada em relação ao centro da cidade.\n13. Distrito Industrial de Balsas | Criar o segundo distrito industrial no município de Balsas, haja\nvista a ocupação plena do primeiro polo.\n\n9"
+          },
+          {
+            "id": "plano-de-governo-9",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nMOBILIDADE URBANA\n\n1. Avenida Metropolitana | Concluir a implantação da Avenida Metropolitana, garantindo\nmobilidade entre os municípios da Grande Ilha com mais segurança e agilidade.\n2. Anel Metropolitano | Ampliar as obras de integração dos quatro municípios da Ilha de São Luís\ne interbairros, incluindo a construção de mais uma ponte sobre o Rio Bacanga.\n3. Via Expressa | Ampliar a Via Expressa até o Cruzeiro do Anil, facilitando o fluxo da Ilha de São\nLuís.\n4. MA 201 | Duplicação da MA 201 no trecho Maiobão até a sede do município de São José de\nRibamar.\n5. Programa Interbairros na Grande Ilha | Requalificação de vias secundárias, a partir da Avenida\nMetropolitana, abrangendo os quatro municípios da Grande Ilha.\n6. Grande Ilha Integrada | Estabelecer parceria com os municípios da Grande Ilha objetivando\nharmonizar as revisões ou atualizações dos respectivos Planos Diretores, Lei de Zoneamento,\nLei de Uso e Ocupação do Solo e Plano de Mobilidade Inter e intra municipal.\n7. Transporte Gratuito na Ilha - Feriados | Instituir programa de gratuidade no transporte público\nsemiurbano da Grande Ilha aos feriados estaduais e federais.\n8. Políticas para Acessibilidade | Criar a Secretaria Estadual da Pessoa com Deficiência, como\nórgão centralizador das políticas públicas para as pessoas com deficiência.\n9. Ampliação da Isenção do IPVA | Ampliar a faixa de isenção do IPVA para motocicletas de até\n180 cilindradas.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-10",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nCIDADES\n\n1. Habitação e Qualidade de Vida | Implantar, em parceria com municípios, programa de habitação\nde interesse social integrado à oferta de serviços de saúde, educação, assistência social e\nqualificação para o trabalho.\n2. Fundo de Habitação | Fortalecer a implementação do Fundo Estadual de Habitação de Interesse\nSocial.\n3. Acesso à Água | Adotar medidas para garantir a ampliação de sistemas de abastecimento de\nágua e tratamento de esgoto nos municípios maranhenses.\n4. Praia Limpa | Fortalecer o programa Praia Limpa, com o objetivo de assegurar condições\nde balneabilidade das praias da Grande Ilha, incluindo ações educativas para banhistas e\nestabelecimentos instalados na orla.\n5. Acessibilidade em Equipamentos Públicos | Promover as necessárias adequações para\ngarantir a acessibilidade em prédios públicos da administração pública estadual.\n6. Prevenção a Desastres | Prevenção a desastres resultantes de emergência climática, como\nenchentes, em parceria com municípios, SES, Bombeiro Militar e Defesa Civil.\n7. Voçorocas | Apoiar municípios, com destaque para Buriticupu, Açailândia e Bom Jesus das\nSelvas, nas ações de evacuação das moradias localizadas em áreas atingidas pelas voçorocas,\nbem como de realocação da população para áreas seguras.\n8. Região Metropolitana de Balsas | Implantar a região metropolitana de Balsas.\n\n11"
+          },
+          {
+            "id": "plano-de-governo-11",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nSAÚDE\n\n1. Plano Integrado da Saúde do Maranhão | Elaborar e implementar, em parceria com municípios,\no Plano Integrado de Assistência à Saúde do Maranhão.\n2. Plataforma de Integração de Dados | Implantar o Portal de Integração da Rede Estadual de\nDados em Saúde (REDS).\n3. Saúde Conectada | Conectar unidades da rede estadual e das redes municipais de saúde à\ninternet, assim como à Secretaria de Estado da Saúde para oferecer atendimento de qualidade\nao povo maranhense.\n4. PEP | Implantar o Prontuário Eletrônico do Paciente (PEP) em unidades de saúde da rede pública\nestadual e apoiar a implantação em unidades da rede pública municipal para melhor atender o\npovo do Maranhão.\n5. Telessaúde | Implementar Rede Estadual de Saúde Digital (Telessaúde), integrando inovação\ntecnológica e suporte clínico especializado em benefício do povo maranhense.\n6. Intérprete de LIBRAS | Implementar programa de formação e contratação de intérpretes da\nLíngua Brasileira de Sinais (LIBRAS) para atuar em unidades da rede estadual de saúde.\n7. Centrais Regionais de Regulação | Implantar centrais macrorregionais de regulação vinculadas\ndiretamente ao Complexo Regulador Estadual.\n8. Medicamentos Especializados | Ampliar o acesso do povo à Assistência Farmacêutica\nEspecializada, por meio da implantação de unidades regionais.\n9. Centros de Diagnóstico por Imagem | Implantar centros de diagnóstico por imagem regionalizados,\nincluindo tomografia computadorizada, ressonância magnética, mamografia, ultrassonografia,\necocardiografia, eletrocardiografia, colonoscopia, endoscopia e eletroencefalografia.\n10. SAMU 192 | Implantar novas bases descentralizadas e fortalecer as Centrais de Regulação das\nUrgências, ampliando o atendimento ao povo maranhense.\n11. Atendimento a vítimas de violência | Instalar ambulatórios regionais de saúde mental e de\natendimento especializado para vítimas de violência, com destaque para mulheres em situação\nde violência doméstica e familiar.\n12. Policlínicas | Ampliar a rede de Policlínicas, conforme demanda fundamentada em diagnóstico\nsocioterritorial, incluindo nova unidade da Policlínica do Idoso.\n13. Atenção Especializada em Oftalmologia | Instituir, na política estadual de saúde, a atenção\nespecializada em oftalmologia, ampliando o acesso do povo aos serviços de diagnóstico,\ntratamento clínico e cirúrgico.\n14. Tratamento Oncológico | Expandir o atendimento especializado em oncologia na rede pública\nestadual ou em parceria com a rede privada, de modo a garantir diagnóstico precoce e tratamento\nadequado.\n\n12"
+          },
+          {
+            "id": "plano-de-governo-12",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nSAÚDE\n\n15. TEA | Ampliar a rede de atendimento especializado a pessoas com Transtorno do Espectro\nAutista (TEA).\n16. Saúde Bucal | Ampliar a rede de atendimento odontológico de alta complexidade na rede pública\nestadual, incluindo atendimentos de urgência e emergência.\n17. Transplantes | Fortalecer a política de transplantes de órgãos e tecidos, garantindo que o povo\ntenha acesso a transplantes de coração, rim, fígado, medula óssea e córnea, em consonância\ncom o Plano Estadual de Transplantes.\n18. Nefrologia | Expandir a rede de prestação de serviços de nefrologia, fortalecendo os serviços de\ndiagnóstico e atendimento integral.\n19. Hospital do Coração | Implantar o Hospital do Coração da rede estadual do Maranhão.\n20. Serviço Vascular | Implantar centros especializados de serviço vascular em hospitais regionais\nda rede estadual.\n21. Hemoterapia | Fortalecer a rede de hemoterapia, incluindo a reestruturação física das agências\ntransfusionais e a modernização da gestão.\n22. Endemias | Construir macrolaboratórios centrais e regionais para garantir exames rápidos e\nalta tecnologia para controle de surtos endêmicos, com ênfase nas endemias de hanseníase,\ntuberculose e malária.\n23. Rede de Cuidado à Pessoa com Deficiência (RCPD) | Implantar, de forma regionalizada, novos\nCentros Especializados em Reabilitação (CER) II, III e IV, objetivando fortalecer e descentralizar\no atendimento e a dispensação de órteses, próteses e meios auxiliares de locomoção.\n24. Rede de Atenção Psicossocial (RAPS) | Implantar Centros de Atenção Psicossocial (CAPS) e\nfortalecer o atendimento multiprofissional especializado, de forma integrada com a rede estadual\nde educação e de assistência social.\n25. Vigilância Ambiental | Estruturar a inteligência da Vigilância Ambiental, em parceria com a\nDefesa Civil e o Corpo de Bombeiros Militar, objetivando o monitoramento preventivo de\ndesastres naturais e a atuação imediata para envio de insumos de saúde e mitigação de doenças\nassociadas.\n26. Atenção Primária | Instituir, em parceria com os municípios, estratégia estadual de fortalecimento\nda Atenção Primária à Saúde e de especialidades.\n27. Exames Laboratoriais | Garantir o financiamento estadual para realização de exames\nlaboratoriais nas unidades de Atenção Primária das redes municipais de saúde.\n28. Consórcios Intermunicipais de Saúde | Incentivar e apoiar a constituição de consórcios\nmunicipais, visando à superação dos vazios assistenciais e ao fortalecimento das redes hospitalar\ne ambulatorial regionalizadas.\n\n13"
+          },
+          {
+            "id": "plano-de-governo-13",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nSAÚDE\n\n29. Comunidades Ribeirinhas e Quilombolas | Implantar programa de assistência de saúde\nitinerante, utilizando unidades móveis fluviais e terrestres, com foco no atendimento a\ncomunidades ribeirinhas e quilombolas.\n30. Maternidade da Baixada | Implantar uma maternidade de alta complexidade na Baixada\nMaranhense.\n31. Macrorregional da Baixada | Oferecer especialidades de traumato-ortopedia, neurologia,\nneurocirurgia e cardiologia no Hospital Macrorregional da Baixada Maranhense.\n32. Macrorregional de Presidente Dutra | Ampliar o Hospital Macrorregional de Urgência e\nEmergência de Presidente Dutra, de forma a incluir atendimento especializado em cardiologia,\nneurocirurgia, trauma e ortopedia, assim como UTI adulto e pediátrica.\n33. Timon - Urgências | Implantar serviços de urgência em ortopedia, neurocirurgia e cardiologia\nem Timon.\n34. Maternidade de Caxias | Implantar maternidade de alta complexidade em Caxias, para ampliar\no acesso do povo à assistência materno-infantil.\n35. Macrorregional de Caxias | Ampliar o Hospital Macrorregional de Caxias, incluindo as\nespecialidades de radioterapia e oncologia pediátrica.\n36. Macrorregional de Imperatriz | Ampliar os serviços de diagnóstico e tratamento oncológico no\nHospital Macrorregional de Imperatriz e na Policlínica do município.\n37. Urgência e Emergência em Imperatriz | Estruturar a urgência e a emergência em ortopedia,\nneurocirurgia e cardiologia do Hospital Macrorregional de Imperatriz.\n38. Hospital de Balsas | Implantar hospital (porta aberta) para urgência e emergência de média e\nalta complexidade no município de Balsas.\n39. Maternidade da Região Sul | Implantar maternidade de média e alta complexidade da região sul\ndo estado, garantindo que mais gente tenha acesso à assistência materno-infantil especializada.\n\n14"
+          },
+          {
+            "id": "plano-de-governo-14",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nEDUCAÇÃO\n\n1. Plano Integrado da Educação Básica do Maranhão | Elaborar e implementar, em parceria com\nmunicípios, o Plano Integrado da Educação Básica do Maranhão.\n2. Premiação com Metas | Implantar sistema de avaliação e premiação financeira para municípios\nque definirem e atingirem metas de indicadores da educação, contemplando secretários\nmunicipais, gestores escolares, professores e alunos.\n3. Saúde na Escola | Fortalecer os cuidados preventivos de saúde dos alunos da rede pública,\nem parceria com os municípios, promovendo ações de atenção básica, nutrição, oftalmologia e\nsaúde bucal nas escolas.\n4. Cuidado Integral | Implantar programa de apoio psicológico permanente para adolescentes e\njovens da rede estadual de ensino, com atendimento individualizado e em grupos, nos formatos\npresencial e online.\n5. Projetos de Vida | Implantar, na rede estadual de ensino, programa de apoio e orientação para\ndefinição de projetos de vida, incluindo orientação profissional, educação financeira e apoio à\nelaboração de currículos.\n6. Prevenção da Gravidez na Adolescência | Implantar programa de sensibilização aos riscos\nda gravidez na adolescência e infecções sexualmente transmissíveis (ISTs) na rede estadual de\nensino, com foco em saúde preventiva e no combate à evasão escolar.\n7. Professor Valorizado | Valorizar a carreira docente na rede estadual de ensino, incluindo\ninvestimentos na formação superior, formação continuada e melhoria das condições de trabalho.\n8. Busca Ativa | Promover, em parceria com municípios, a busca ativa de crianças e adolescentes\nque estão fora da escola, visando compreender e enfrentar as causas da evasão de forma\nindividualizada.\n9. Acesso à Creche | Apoiar municípios para a implantação de creches, por meio de cooperação\ntécnica e financeira, incluindo infraestrutura, equipamentos e capacitação profissional para\neducação de crianças de 0 a 3 anos.\n10. Ensino Fundamental em Tempo Integral | Estimular e apoiar os municípios para implantação\nde escolas de Ensino Fundamental em tempo integral.\n11. Ensino Médio em Tempo Integral | Ampliar a rede de escolas de Ensino Médio em tempo integral,\ngarantindo educação de qualidade, com inclusão e respeito à diversidade dos estudantes\nindígenas, quilombolas e afrodescendentes .\n12. Rede IEMA | Fortalecer a educação profissional na rede pública estadual (IEMA), com foco na\nformação científica e tecnológica e com oferta de cursos observando necessidades da economia\nregional, estadual e municipal.\n13. IEMA Agropecuária | Implantar, na região sul do estado, o primeiro IEMA com oferta de cursos\nespecíficos para a qualificação profissional voltada ao setor agropecuário, ampliando as\noportunidades para mais gente.\n14. Colégios Militares | Instituir, na Secretaria de Estado da Educação (SEDUC), uma unidade\ngestora dos colégios militares do estado.\n\n15"
+          },
+          {
+            "id": "plano-de-governo-15",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nEDUCAÇÃO\n\n15. Conexão Segura | Implantar, na rede estadual de ensino, programa de enfrentamento à violência\nno ambiente virtual, voltado para a comunidade escolar, com foco no uso consciente de redes\nsociais e aplicativos online e na segurança de adolescentes e jovens.\n16. Cartão Transporte Universitário | Ampliar o programa Cartão Transporte Universitário, de\nforma a contemplar mais estudantes da rede pública no interior e na Grande Ilha, beneficiando\nmais gente.\n17. Reforço Escolar no Ensino Médio | Fortalecer programa de reforço escolar para alunos do Ensino\nMédio da rede pública, com ênfase na melhoria da aprendizagem de português e matemática.\n18. Educação Física | Garantir a realização das aulas curriculares de Educação Física em espaços\nadequados, incluindo parcerias com universidades públicas e privadas para o fortalecimento da\nprática de atividades desportivas para estudantes da rede estadual.\n19. Maranhão sem Fronteiras | Fortalecer o programa Maranhão Sem Fronteiras, garantindo\noportunidades de intercâmbio estudantil em países de língua estrangeira (inglês e espanhol)\npara alunos da rede pública estadual, beneficiando mais gente.\n20. Formação Acadêmica para o CLA | Ofertar, em parceria com o Instituto Tecnológico de\nAeronáutica (ITA), cursos de ensino superior e pós-graduação, com foco nas demandas do\nCentro de Lançamento de Alcântara (CLA).\n21. UEMA | Garantir a ampliação da oferta de vagas de graduação presencial nos campi da UEMA,\nconforme demanda definida em diagnóstico de potencialidades econômicas regionais e\ncaracterísticas socioterritoriais.\n22. Extensão Universitária | Promover a integração das instituições de Ensino Superior com as\ncomunidades em que estão inseridas, fortalecendo seu papel no desenvolvimento territorial a\npartir de projetos de extensão universitária.\n23. Atendimento Educacional Especializado | Fortalecer as equipes técnicas das escolas da\nrede estadual para assegurar Atendimento Educacional Especializado (AEE) e maior inclusão\nde pessoas com deficiência, transtorno do espectro autista (TEA) e altas habilidades ou\nsuperdotação, em escolas de Ensino Médio, garantindo mais inclusão para o povo.\n24. Atendimento Educacional Especializado - Municípios | Apoiar municípios para a implantação\nde Salas de Recursos Multifuncionais (SRMs) e a capacitação de profissionais de apoio para\natuação no Atendimento Educacional Especializado (AEE) em escolas de Ensino Fundamental.\n25. Smart EJA | Fortalecer a Educação de Jovens e Adultos, incluindo programa de letramento\ndigital e segurança online para mais gente.\n26. Educação do Campo | Assegurar a qualidade do ensino nas escolas estaduais da zona rural, a\npartir da oferta de educação do campo voltada à promoção da cidadania, inclusão socioprodutiva\ne desenvolvimento sustentável, observando características identitárias e ambientais.\n27. Maranhão Livre do Analfabetismo | Vamos unir entidades para ensinar jovens e adultos a ler e\nescrever e acabar com o analfabetismo em todo o estado.\n\n16"
+          },
+          {
+            "id": "plano-de-governo-16",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nPRIMEIRA INFÂNCIA\n\n1. Pacto Maranhense pela Primeira Infância | Implantar a Política Estadual Integrada para a\nPrimeira Infância, articulando as ações de saúde, educação, assistência social, segurança\nalimentar, cultura e proteção integral para crianças de 0 a 6 anos, em regime de colaboração com\nos municípios, garantindo atendimento intersetorial, monitoramento de indicadores e prioridade\nàs regiões de maior vulnerabilidade social.\n2. Maranhão que Cuida | Ampliar o acesso à educação infantil de qualidade por meio da construção,\nampliação e modernização de creches e pré-escolas, apoiando técnica e financeiramente os\nmunicípios para reduzir o déficit de vagas, ampliar a oferta em tempo integral e assegurar\nambientes adequados ao desenvolvimento integral das crianças.\n3. Toda Criança na Escola | Implantar um programa estadual permanente de busca ativa para\nidentificar, localizar e reinserir crianças fora da escola, integrando as redes de educação,\nassistência social, saúde e conselhos tutelares, com acompanhamento das famílias e ações\nvoltadas à permanência, ao sucesso escolar e à prevenção da evasão.\n4. Infância Protegida | Criar Centros Regionalizados de Atendimento Integrado para crianças\ne adolescentes vítimas de violência, reunindo em um único espaço atendimento psicológico,\nsocial, jurídico, médico e pericial, garantindo acolhimento humanizado, e maior agilidade na\nproteção dos direitos da infância.\n5. Nascer Bem, Crescer Melhor | Fortalecer a política estadual de desenvolvimento integral da\nprimeira infância por meio da ampliação do acompanhamento pré-natal, da puericultura, da\nvacinação, da nutrição infantil, da estimulação precoce e do apoio às famílias, promovendo o\ndesenvolvimento físico, cognitivo, emocional e social das crianças desde a gestação até os seis\nanos, com prioridade para populações em situação de vulnerabilidade.\n\n17"
+          },
+          {
+            "id": "plano-de-governo-17",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nPRODUÇÃO, TRABALHO E RENDA\n\n1. Abatedouros Regionais | Implantar programa de apoio técnico e financeiro voltado à criação de\nconsórcios regionais para a implantação de abatedouros industriais regionais para concessão à\niniciativa privada.\n2. Nova ATER | Ampliar o número de unidades de Assistência Técnica, Pesquisa e Extensão Rural\n(ATER), incluindo aumento de equipes e equipamentos.\n3. Sistemas Municipais | Apoiar municípios para a criação e fortalecimento de órgãos municipais de\nagricultura, pesca e abastecimento, assim como dos respectivos conselhos e fundos municipais.\n4. Validação do CAR | Intensificar o processo de validação do Cadastro Ambiental Rural (CAR),\nobservando áreas com passivo ambiental para instituir Planos de Recuperação de Áreas\nDegradadas (PRAD).\n5. Cooperativas e Associações | Implantar programa de apoio ao desenvolvimento do\ncooperativismo e associativismo, com foco em pequenos produtores rurais e comunidades\ntradicionais.\n6. Cadeias Produtivas | Garantir infraestrutura e assistência técnica para desenvolvimento e\nfortalecimento de cadeias produtivas, com foco em potencialidades regionais.\n7. Fruticultura | Promover o fortalecimento da fruticultura, observando as ações estabelecidas no\nPlano de Desenvolvimento da Fruticultura do Estado do Maranhão (PDFMA).\n8. Selos SIM e SIE | Apoiar municípios e pequenos produtores rurais para adequação da produção,\nobjetivando a aquisição de selos do Serviço de Inspeção Municipal (SIM) e Estadual (SIE).\n9. Centrais de Recebimento - PROCAF | Assegurar a ampliação do Programa de Compras da\nAgricultura Familiar (PROCAF), associada à implantação de centrais de recebimento, em parceria\ncom municípios, em benefício do povo.\n10. Tempo de Semear | Ampliar o número de beneficiários do programa Tempo de Semear e garantir\no lançamento de editais conforme o calendário agrícola das diferentes regiões do estado.\n11. Pescador Artesanal | Implantar terminais pesqueiros e estruturas de refrigeração para apoio ao\npescador artesanal, conforme demanda fundamentada em diagnóstico socioterritorial.\n12. Usinas de Beneficiamento | Implantar, em parceria com municípios, usinas de beneficiamento\nde pescados e mariscos, conforme potencialidades regionais.\n13. Aquicultura na Baixada | Implantar projeto produtivo de aquicultura na Baixada Maranhense,\nobjetivando garantir infraestrutura e capacitação técnica para aquicultores da região.\n14. Regularização Fundiária | Fortalecer a política de regularização fundiária, associada a políticas\nde inclusão socioprodutiva da população beneficiada, com ênfase no apoio técnico a pequenos\nprodutores rurais e comunidades tradicionais, em benefício do povo.\n\n18"
+          },
+          {
+            "id": "plano-de-governo-18",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nPRODUÇÃO, TRABALHO E RENDA\n\n15. Terras para Elas | Garantir, em parceria com universidades e outras instituições, a implantação\nde novas unidades produtivas geridas por mulheres, associada ao projeto de regularização\nfundiária Terras para Elas.\n16. Centro de Empreendedorismo Catarina Mina | Implantar rede de centros de capacitação para\no empreendedorismo feminino, com foco na inclusão socioprodutiva e promoção da autonomia\nfinanceira das mulheres.\n17. Rotas Quilombolas | Criar as Rotas de Desenvolvimento Sustentável das Comunidades\nQuilombolas, enquanto estratégia de planejamento territorial e implementação de políticas\npúblicas, agrupando as comunidades em territórios por proximidade geográfica, padrões\nculturais e de produção.\n18. Feira do Afro Empreendedor | Implantar a Feira Permanente do Afro Empreendedor, voltada à\nvalorização da produção e identidade afro-maranhense.\n19. Espaço de Apoio aos Trabalhadores de Aplicativos | Em parceria com as prefeituras, criaremos\nespaços para assistência ao trabalhador com consultoria jurídica, área de descanso, copa\nequipada e mais.\n\n19"
+          },
+          {
+            "id": "plano-de-governo-19",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nMEIO AMBIENTE E SUSTENTABILIDADE\n\n1. PEEC MA | Elaborar o Plano Estadual de Emergência Climática, em parceria com universidades\ne outras instituições.\n2. Plano de Reflorestamento | Assessorar os municípios na elaboração de planos municipais de\narborização, observando a biodiversidade local.\n3. Biodiversidade | Fortalecer as políticas e parcerias para a preservação da biodiversidade\ndo estado, incluindo os Biomas Amazônia e Cerrado, assim como as bacias hidrográficas\nmaranhenses.\n4. Infraestrutura Hídrica | Fortalecer, em parceria com o Governo Federal, a manutenção e\nmonitoramento da infraestrutura hídrica, com destaque para barragens hídricas estaduais e\nfederais.\n5. ZEE Aplicado | Regulamentar o Zoneamento Ecológico e Econômico do Maranhão (ZEE/MA) e\nintegrar as políticas ambientais pertinentes.\n6. Bioeconomia | Criar núcleos de pesquisa, em parceria com a Empresa Brasileira de Pesquisa\nAgropecuária (Embrapa), universidades e outras instituições, para desenvolvimento da\nbioeconomia, reconhecendo os saberes tradicionais e a cultura de povos indígenas e\ncomunidades quilombolas e ribeirinhas.\n7. Resíduos Sólidos | Assegurar, em parceria com municípios e iniciativa privada, a implantação\nde aterros sanitários regionais.\n8. Coleta Seletiva | Apoiar, em parceria com municípios e iniciativa privada, iniciativas de coleta\nseletiva, priorizando municípios que destinam os resíduos sólidos para aterro sanitário.\n9. Reciclagem na Administração Pública | Implantar coleta seletiva em órgãos e entidades da\nadministração pública estadual e em eventos realizados pelo Governo do Estado, atrelada a\nações de educação ambiental e sustentabilidade.\n10. Pesca Extrativista | Aprofundar estudos relacionados à área costeira, considerando as\npotencialidades econômicas, com destaque para a pesca extrativista e comunidades tradicionais.\n11. Margem Equatorial - Pesquisa e Mitigação | Fomentar o desenvolvimento de pesquisas com foco\nnos impactos sociais, ambientais e econômicos da potencial exploração da Margem Equatorial.\n12. Prevenção de Voçorocas | Intensificar estudos geológicos para a identificação das causas das\nvoçorocas, com foco na prevenção e mitigação desse fenômeno no estado.\n13. Contenção de Voçorocas | Assegurar, em parceria com o Governo Federal, a implementação de\nações de contenção de voçorocas, priorizando municípios já afetados pelo fenômeno.\n14. Conservação do Solo | Promover a conservação dos solos, visando reduzir os processos\nerosivos e a desertificação, com ênfase em áreas mais vulneráveis.\n15. Gás Natural | Ampliar, por meio da GASMAR, o Sistema de Distribuição de Gás Natural de\nSão Luís (SDNG2), em parceria com a iniciativa privada, incluindo implantação de terminal de\nabastecimento de Gás Natural Veicular (GNV).\n\n20"
+          },
+          {
+            "id": "plano-de-governo-20",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nTURISMO\n\n1. Plano Estadual do Turismo | Elaborar e implementar o Plano Estadual de Desenvolvimento\nSustentável do Turismo.\n2. Recursos para Polos Turísticos | Assegurar recursos no orçamento do Estado aos municípios\nque integram os principais polos de turismo do Maranhão, objetivando apoiar o desenvolvimento\nsocioeconômico sustentável nessas localidades.\n3. Plano Diretor | Apoiar municípios localizados em polos de turismo do estado na elaboração\nou atualização do Plano Diretor, observando os vetores de expansão urbana, bem como as\ndemandas por serviços decorrentes.\n4. Cadeias Produtivas do Turismo | Promover o desenvolvimento e integração de cadeias\nprodutivas do turismo, com foco na geração de emprego e renda e no fortalecimento das aptidões\ne potencialidades regionais, beneficiando o povo.\n5. Parques Nacionais | Assegurar, em parceria com municípios e o trade turístico, o cumprimento\ndas normas de visitação ao Parque Nacional dos Lençóis Maranhenses e ao Parque Nacional da\nChapada das Mesas.\n6. Capacitação para o Turismo | Implantar, em parceria com o Sistema S e outras instituições,\nprograma de capacitação para qualificação da prestação de serviços nos polos turísticos do\nestado.\n7. Turismo e empreendedorismo | Apoiar o empreendedorismo em municípios de polos turísticos,\nincluindo atividades vinculadas à economia criativa, com foco na geração de trabalho e renda\npara a população local.\n8. Sinalização Turística | Apoiar municípios com potencialidades turísticas para implantação de\nsinalização turística em vias públicas e atrativos, facilitando a mobilidade da nossa gente.\n\n21"
+          },
+          {
+            "id": "plano-de-governo-21",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nCULTURA\n\n1. Cultura e Cidadania | Promover, em parceria com municípios, iniciativa privada, universidades e\noutras instituições, a prática de atividades e vivências culturais, como estratégia de fortalecimento\nda cidadania e desenvolvimento social da nossa gente.\n2. Economia Criativa | Fortalecer a participação dos segmentos da cultura como vetor de\ndesenvolvimento da economia e de geração de trabalho e renda para o povo maranhense.\n3. Memória Cultural | Assegurar a salvaguarda do patrimônio imaterial, incluindo a realização de\ninventário e a difusão de manifestações culturais do povo maranhense e de saberes tradicionais\ndo estado.\n4. Guardiões da Cultura | Instituir programa de apoio financeiro permanente a fazedores de\ncultura e grupos artísticos reconhecidamente tradicionais do estado, como forma de preservar e\nvalorizar manifestações artísticas representativas da cultura e da história do povo maranhense.\n5. Capacitação para Editais | Capacitar dirigentes de grupos e organizações fazedoras de cultura\nem relação à aplicação de recursos públicos e prestação de contas, de modo a ampliar o acesso\nda nossa gente a recursos de editais de incentivo à cultura.\n6. Modernização de Museus | Realizar parcerias para assegurar investimentos voltados à\nmodernização e manutenção de museus e casas de cultura sob gestão da administração pública\nestadual.\n7. Eventos Acessíveis | Garantir às pessoas com deficiência acessibilidade e inclusão em espaços\ne eventos culturais.\n8. Música Popular e Erudita | Promover, em parceria com municípios e iniciativa privada, a\nimplantação de centros de formação musical popular e erudita, com oferta de cursos para\npessoas de todas as idades.\n9. Centro Histórico de São Luís e Alcântara | Assegurar, por meio de parceria com a iniciativa\nprivada, governo federal, governo municipal e instituições diversas, a ampliação de investimentos\nvoltados à conservação e revitalização do centro histórico de São Luís e de Alcântara.\n10. Casa de Matriz Africana | Implantar, em parceria com a iniciativa privada, universidades e\noutras instituições, a Casa de Matriz Africana, com o objetivo de preservar, valorizar e difundir\nas religiões e culturas africanas e afro-brasileiras para o povo maranhense, incluindo exposições\npermanentes e temporárias para visitação.\n11. Patrimônio Arqueológico e Paleontológico | Fortalecer, em parceria com universidades e\noutras instituições, ações de pesquisa e mapeamento de sítios arqueológicos e paleontológicos,\nassim como de valorização desse patrimônio, fomentando cadeias produtivas associadas.\n\n22"
+          },
+          {
+            "id": "plano-de-governo-22",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nESPORTE\n\n1. Esporte e Transformação | Promover, em parceria com municípios, iniciativa privada,\nuniversidades e outras instituições, a prática de esportes e outras atividades físicas como\ninstrumento de transformação social da nossa gente e promoção da qualidade de vida da\npopulação.\n2. Grandes Eventos | Estimular a realização de eventos esportivos regionais e nacionais no estado,\npromovendo diferentes práticas esportivas, assim como o fortalecimento da cadeia produtiva\ndos setores de eventos e turismo.\n3. Esporte Inclusivo | Fortalecer as políticas de esporte e lazer para pessoas com deficiência, com\ndestaque para a acessibilidade e inclusão nos espaços de prática desportiva e disponibilidade\nde tradução na Língua Brasileira de Sinais (LIBRAS).\n4. Bolsa Atleta | Assegurar a continuidade do Programa Bolsa Atleta e ampliar o total anual de\nbeneficiários, contemplando atletas com deficiência e promovendo a inclusão social do povo\nmaranhense.\n5. Jogos Escolares Maranhenses | Garantir a realização anual dos Jogos Escolares Maranhenses\n(JEMs) e dos Jogos Paralímpicos Escolares Maranhenses (ParaJEMs).\n6. Esporte nos Municípios | Apoiar financeiramente os municípios na realização dos Jogos\nEstudantis Municipais.\n7. Espaços Esportivos | Implantar, em parceria com municípios, centros de prática esportiva com\nquadra coberta.\n\n23"
+          },
+          {
+            "id": "plano-de-governo-23",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nJUVENTUDE\n\n1. Jovem Empreendedor | Implantar programa de incentivo ao empreendedorismo para atender,\nprioritariamente, jovens de 18 a 29 anos.\n2. Capacitação para a Juventude | Firmar parcerias com o Sistema S ou entidades afins para\nviabilizar a capacitação, presencial e online, de jovens para o mercado de trabalho e para o\nempreendedorismo.\n3. Crédito para a Juventude | Construir parcerias com instituições financeiras para viabilizar\ncrédito orientado a jovens empreendedores, com ênfase no desenvolvimento de startups ou\natividades econômicas de base tecnológica.\n4. Carreta da Juventude | Adquirir unidades móveis do tipo ônibus adequadas para a oferta de\ncapacitação para atender, prioritariamente, jovens de 18 a 29 anos.\n5. Pé-de-Meia PLUS | Cofinanciar o programa federal Pé-de-Meia, de forma a ampliar o valor\natualmente concedido pelo governo brasileiro.\n6. Trabalho Jovem | Ampliar a oferta de vagas do programa Trabalho Jovem, voltado para jovens de\n17 a 25 anos que estejam cursando ensino médio, técnico, superior ou modalidade de educação\nespecial.\n7. Voluntariado Jovem | Implantar programa de voluntariado jovem para realização de ações nas\ncomunidades e implantação de equipamentos, conforme prioridades definidas pela juventude.\n8. Espaços da Juventude | Implantar “Espaços da Juventude”, em parceria com municípios, com\nênfase na oferta de espaços e equipamentos para realização de atividades de desporto e\nrecreativas, reuniões e ações de participação social de interesse de adolescentes e jovens.\n9. Estágio Profissional | Ofertar, mediante critérios meritórios, nos órgãos e entidades da\nadministração estadual, estágio profissional para alunos de universidades, bem como das redes\npúblicas de ensino médio e educação de jovens e adultos.\n10. Jovens e Políticas Públicas | Fortalecer a participação da juventude nos fóruns de discussão e\nformulação de políticas públicas.\n11. Juventude Cidadã | Estimular nos sistemas públicos de educação o protagonismo juvenil para\ncontribuir com a construção de uma sociedade mais justa, participativa, produtiva e menos\ndesigual.\n12. Coordenadorias da Juventude | Fortalecer as coordenadorias e secretarias municipais de\njuventude, garantindo estrutura administrativa, recursos orçamentários e condições adequadas\npara o planejamento e a execução de políticas públicas nos municípios.\n13. Combate ao Abuso de Álcool | Desenvolver políticas permanentes de prevenção ao uso abusivo\nde álcool e outras drogas, enfrentamento à violência e promoção da saúde integral e da saúde\nmental da juventude.\n14. Inclusão Digital | Implantar e fortalecer programas de inclusão digital, garantindo acesso à\ninternet, equipamentos tecnológicos e formação para o uso das ferramentas digitais.\n\n24"
+          },
+          {
+            "id": "plano-de-governo-24",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nDESENVOLVIMENTO SOCIAL E DIREITOS HUMANOS\n\n1. Segurança Alimentar | Adequar a rede de Restaurantes Populares, com foco na oferta de\nalimentação aos segmentos populacionais mais vulneráveis.\n2. Maranhão Acolhe | Ampliar o programa Maranhão Acolhe, que fornece kits de enxoval para\ngestantes e puérperas, além de promover e incentivar a realização das consultas de pré-natal,\nobjetivando abranger mais beneficiárias em mais municípios.\n3. ECA Digital | Implantar programa de divulgação e implementação do Estatuto Digital da Criança\ne do Adolescente (ECA Digital), instituído pela Lei nº 15.211/2025, incluindo capacitação de\nagentes públicos da educação, saúde, assistência social e segurança pública.\n4. SUAS | Assegurar, em parceria com municípios, a oferta de programas, projetos, serviços e\nbenefícios do Sistema Único de Assistência Social (SUAS) para o povo maranhense, conforme\ndispõe a Política Nacional de Assistência Social.\n5. População em Situação de Vulnerabilidade | Firmar parcerias com municípios para fortalecer\nas ações, programas e projetos de assistência social aos segmentos de maior vulnerabilidade\nsocial, a exemplo de população em situação de rua, idosos, crianças e adolescentes, entre outros.\n6. Instituição de Longa Permanência para Idosos - ILPI | Implantar ILPIs regionalizadas, que\nacolhem idosos em situação de vulnerabilidade, negligência ou sem referência familiar, com\noferta de assistência integral e atividades lúdico-pedagógicas.\n7. Dignidade Menstrual | Apoiar municípios e iniciativa privada para a implantação do programa\nfederal Dignidade Menstrual, que oferta absorventes menstruais para meninas e mulheres em\nsituação de vulnerabilidade.\n8. Autonomia Financeira Feminina | Promover a autonomia financeira da mulher, por meio da\noferta de capacitação profissional e acesso facilitado a crédito, como estratégia de proteção à\nmulher contra diversas formas de violência.\n9. Casa da Mulher Maranhense | Ampliar a rede de Casas da Mulher Maranhense, em parceria\ncom o Tribunal de Justiça, Ministério Público e Defensoria Pública do Estado do Maranhão,\ngarantindo equipe multidisciplinar e acolhimento adequado a mulheres vítimas de violência.\n10. Travessia | Ampliar o Programa Travessia, que oferta traslado gratuito para pessoas com\ndeficiência e idosos para consultas médicas e atividades de lazer.\n11. LIBRAS | Promover a formação de profissionais na Língua Brasileira de Sinais (LIBRAS) para\natuarem na administração pública estadual, objetivando ampliar a oferta de serviços públicos\ncom acessibilidade e inclusão para pessoas surdas e com deficiência auditiva.\n12. Observatório de Direitos Humanos | Fortalecer o Observatório de Direitos Humanos do Estado\ndo Maranhão, garantindo atualização contínua, monitoramento e divulgação de indicadores.\n13. Promoção da Igualdade Racial | Assegurar a implantação, monitoramento e avaliação do Plano\nEstadual de Promoção da Igualdade Racial (PRANEPIR 2025-2035).\n\n25"
+          },
+          {
+            "id": "plano-de-governo-25",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nDESENVOLVIMENTO SOCIAL E DIREITOS HUMANOS\n\n14. Comunidades Quilombolas | Fortalecer as ações governamentais para certificação de\ncomunidades quilombolas pela Secretaria de Estado da Igualdade Racial (SEIR) e Fundação\nPalmares.\n15. Maranhão contra a LGBTfobia | Criar programa estadual para prevenir e combater a violência\ne a discriminação contra pessoas LGBTQIAPN+, além de promover cidadania e acesso a\ndireitos, com serviços gratuitos, como atendimento jurídico, psicológico e apoio a vítimas de\ndiscriminação e violência.\n\n26"
+          },
+          {
+            "id": "plano-de-governo-26",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nCOMBATE À FOME E ERRADICAÇÃO DA POBREZA\n\n1. Maranhão Livre da Fome | Ampliar o alcance do programa Maranhão Livre da Fome, de modo a\nidentificar pessoas em situação de vulnerabilidade social que não estejam contempladas e que\nvivam em situação de fome.\n2. Cozinhas comunitárias | Implementar cozinhas comunitárias em áreas de vulnerabilidade\nsocial e cuja a fome ainda esteja presente, com fornecimento de equipamentos e insumos, cujos\nalimentos serão adquiridos na agricultura familiar.\n3. Restaurantes populares | Ampliar a rede de restaurantes populares, priorizando regiões de\nvulnerabilidade social, com refeições balanceadas e a preços acessíveis.\n4. Mais Renda | Ampliar o programa Mais Renda, com a concessão de equipamentos para pequenos\nempreendedores do ramo de alimentos, com a concessão de microcrédito para que eles possam\nadquirir a matéria-prima para a produção.\n5. Banco de Alimentos | Estudo e criação de bancos de alimentos nas zonas urbanas e rurais do\nestado, que atuarão na arrecadação de doações de alimentos que seriam desperdiçados na\ncadeia produtiva, com armazenamento, distribuição desses alimentos para o combate à fome.\n\n27"
+          },
+          {
+            "id": "plano-de-governo-27",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n2027------------------2030\n\nDO LADO CERTO DO LADO DO POVO\n\nPROTEÇÃO E BEM-ESTAR ANIMAL\n\n1. Maranhão Amigo dos Animais | Criar a Secretaria Estadual de Proteção e Bem-Estar Animal\npara formular, coordenar e executar políticas públicas estaduais voltadas à proteção, saúde e\nbem-estar dos animais.\n2. Plano Estadual de Proteção Animal | Elaborar Plano Estadual de Proteção Animal em\narticulação com os municípios, com apoio às organizações da sociedade civil e coordenação\ndos programas estaduais de castração, identificação, rede pública de atendimento veterinário e\nadoção responsável.\n3. Patrulha Estadual de Proteção Animal | Implantar política integrada de prevenção e combate\naos maus-tratos contra animais, envolvendo Governo do Estado, forças de segurança, Ministério\nPúblico, municípios e organizações da sociedade civil. A iniciativa contemplará capacitação de\nagentes públicos, protocolos de atendimento, canal estadual de denúncias, apoio às operações\nde resgate e banco estadual de informações sobre ocorrências.\n\n28"
+          },
+          {
+            "id": "15",
+            "titulo": "15",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "ocr",
+            "conteudo": "15\n*BC!\nGOVERNADOR\nORLEANS\n15\nBRANDAO\nVICE EDIVALDO HOLANDA\n@orleansbrandaoma\nf Orleans Brandão y @orleansbrandao_\nMDB\nACESSE orleansbrandao.com.br"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "67a412191eaadd83783d12200e695ca990311540c397a8ac81638cae18f802ee"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "5a1612d3e5933559cb4cf3540585f2eeab6f4ad0bef2dc0e93d625e984693f1b"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "38a25ad0bb935f6086ad1d5675da5f7fd6449809206f1ca99b4165d306c2754c"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b5e02cc5ee2779b2c34b126995b27acadcdf8c33e0274baa6421a3de6da091a6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "3c10b81a24e037f6d55872551e0f14105267612dfe7aea4d84ba4f54037b4a2a"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "7d70e74a160444d83d9e5ed5274e02c626647061cbfe500599fb58eeb31fbb0c"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "0f145655f1508be674807996d7d12ef79909bb0cc4c57d5e445f9e06e9e63f0d"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "c3826e686a9b1b9ff915aab3fdd3e6f58b1245541ea59955ae660bc8fdfc7eec"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "0b83d3e1227599767a36b6f2625d813a4bccbbd0d4460821e667362e598ee339"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f71f68b03a7094ea68420552cd6b718573855d273da099709b9cb12d8b878dda"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "fb7e5bad4cee88d81a556d8746c75a66da3718497c193da804a22c65e71ceef0"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "d05be76a6563592a1ef2eee76c940517e9b77ef1477be38e4a0ea7a5d9f9aff7"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "40e2a978fd31b8c5638fb6346779ddfc79c3422d01f7bb2f83fa6ac7e8345849"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "48090f14a6f52f0015de4f87ed95c810bd48a273428a03308bb6d4d601ac04d5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "12e58f7c8cc8a3ebd925872e0a5cea60736f22551c60548e4e350384c519c519"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e643e3d5bd0d6dbebb6ebceb510e3c96671fde98068d8fcc241052a67d324ebc"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "9ecd5b02ed194ba90d48c8c35f67113a0641801bd4887be1356863dabb8249fe"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "ff09eb1495f5278c21b779dc72aa8894fd419d50770976fa144e0fb8ac2f1fcc"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "cfe243509911218cb3b70c0072594d84affae2b95834a39db78be8fa869d05ed"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "f295fafc48f5e4e9267512270aa0b6c4aaa065724034dded680177d8a456428a"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "e54bb7764019130670530c5100bc251c53a2d1d804135e7963fd324f77ece0fe"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "39235e0605e8b3cd6d4af57e989c4bb189ffc1e7c72ec2f66a7af824ac958179"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "0f8dbae3064afb125f9468ed0fcd61ad9c1c897b13250a3b67acba9e660d8094"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "bc561cac2f7329be26db6cf149666d3ddfeb0c5ec05c22a27992990944e20a85"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "464c961895bc52488ea51056d7ca39db5be1727eb9eb77e452f7191b7ab81f33"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "14eecfc4a9660e247b913f2e58b0502d877f9978f88f9bab27ade5c46eb97bf2"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "64f23e178daacd9077809a1f6068fd53c18e7d05ac52a6700e12549f983e62a7"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "4299c08718a33492d02fae6b8e5285f6f3191938373742a45524c4cfaf391aec"
+          },
+          {
+            "pagina": 29,
+            "origem": "ocr",
+            "textSha256": "96217193823cb6209ae6e1fcc7732b511b6340b3cecd3e5d2537d7dbeec8bb0a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a transformação digital do Governo do Estado por meio da adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta. O programa propõe ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária para fortalecer as vantagens logísticas do estado. Na saúde, o programa planeja implementar a Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica com suporte clínico especializado. Na educação, o programa prevê apoiar municípios na implantação de creches, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos. Na área ambiental, o programa propõe elaborar o Plano Estadual de Emergência Climática em parceria com universidades e outras instituições. Para a proteção animal, o programa prevê criar uma Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais.",
+    "frases": [
+      {
+        "texto": "O programa prevê a transformação digital do Governo do Estado por meio da adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 4,
+            "trecho": "Promover a transformação digital do Governo do Estado e a adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária para fortalecer as vantagens logísticas do estado.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 6,
+            "trecho": "Ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária, fortalecendo as vantagens logísticas e a competitividade do estado nos cenários regional, nacional e internacional."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa planeja implementar a Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica com suporte clínico especializado.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 12,
+            "trecho": "Implementar Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica e suporte clínico especializado em benefício do povo maranhense."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa prevê apoiar municípios na implantação de creches, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 15,
+            "trecho": "Apoiar municípios para a implantação de creches, por meio de cooperação técnica e financeira, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos."
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, o programa propõe elaborar o Plano Estadual de Emergência Climática em parceria com universidades e outras instituições.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 20,
+            "trecho": "Elaborar o Plano Estadual de Emergência Climática, em parceria com universidades e outras instituições."
+          }
+        ]
+      },
+      {
+        "texto": "Para a proteção animal, o programa prevê criar uma Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 28,
+            "trecho": "Criar a Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais voltadas à proteção, saúde e bem-estar dos animais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-digital",
+        "titulo": "Gestão digital",
+        "descricao": "Transformação digital da administração pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 4,
+            "trecho": "Promover a transformação digital do Governo do Estado e a adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-logistica",
+        "titulo": "Infraestrutura logística",
+        "descricao": "Requalificação da infraestrutura rodoviária, portuária e aeroportuária.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 6,
+            "trecho": "Ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária, fortalecendo as vantagens logísticas e a competitividade do estado nos cenários regional, nacional e internacional."
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Implementação da Rede Estadual de Saúde Digital.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 12,
+            "trecho": "Implementar Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica e suporte clínico especializado em benefício do povo maranhense."
+          }
+        ]
+      },
+      {
+        "id": "educacao-infantil",
+        "titulo": "Educação infantil",
+        "descricao": "Apoio municipal para implantação de creches.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 15,
+            "trecho": "Apoiar municípios para a implantação de creches, por meio de cooperação técnica e financeira, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos."
+          }
+        ]
+      },
+      {
+        "id": "emergencia-climatica",
+        "titulo": "Emergência climática",
+        "descricao": "Elaboração do Plano Estadual de Emergência Climática.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 20,
+            "trecho": "Elaborar o Plano Estadual de Emergência Climática, em parceria com universidades e outras instituições."
+          }
+        ]
+      },
+      {
+        "id": "protecao-animal",
+        "titulo": "Proteção animal",
+        "descricao": "Criação de secretaria estadual dedicada à proteção animal.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002543869:01",
+            "pagina": 28,
+            "trecho": "Criar a Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais voltadas à proteção, saúde e bem-estar dos animais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:10:54.091Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:13:05.736Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de gestão digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem ao mesmo documento/chave."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:1:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de infraestrutura/logística."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:2:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:3:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Faixa etária '0 a 3 anos' está literalmente presente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:4:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Área ambiental única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:5:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de proteção animal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:frase:6:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro e descritivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:gestao-digital:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o essencial da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:infraestrutura-logistica:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o essencial da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:saude-digital:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o essencial da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:educacao-infantil:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o essencial da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:emergencia-climatica:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o essencial da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Rótulo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002543869:tema:protecao-animal:documentos:MA:100002543869:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre o essencial da cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MA:100002543869",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MA:100002543869:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 34058,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2196,
+          "reasoning_output_tokens": 900
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26671,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21863,
+          "output_tokens_details": {
+            "thinking_tokens": 108
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26671,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21863,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26671,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26671
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3463874
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a637981388d05744e44978e9c84b187b841f8cce6463d81f5c22a9df2792e178",
+    "extractedTextSha256": "1ece90c478c33a0954fec59934a9b7e3cb0eb88676809e38f6449b581ef17000",
+    "documentCount": 1,
+    "documentSetSha256": "2c26bd3b7d099ef46909a9ecdbbea6988e0a11281a5f8515c6e8a1a91b8bdda9",
+    "contentSha256": "8509657c4d70d90ea86151ef30cd8aa87c538a698ec255be559ba8a2f7f6842a"
+  }
+}

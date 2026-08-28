@@ -1,0 +1,874 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002537111",
+    "slug": "samara-mineiro",
+    "nomeUrna": "PROFESSORA SAMARA MINEIRO",
+    "partido": "UP",
+    "arquivoNome": "2026DF70002537111_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002537111_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002537111:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002537111_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002537111_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ec83b163ad05efc80a2579f23b97b524e3546a39312be2871739ff46990f0a1f",
+        "extractedTextSha256": "06b51be10c05031334519158d8290c5f8b7fb8d013446a6a56c1d141c48c6656",
+        "paginas": 11,
+        "secoes": [
+          {
+            "id": "propostas-da-unidade-popular-para",
+            "titulo": "PROPOSTAS DA UNIDADE POPULAR PARA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROPOSTAS DA UNIDADE POPULAR PARA\nTRANSFORMAR O DISTRITO FEDERAL\nINTRODUÇÃO\nO Distrito Federal ocupa um lugar singular na história do Brasil. Criado para sediar a\nnova capital da República, fruto do projeto de interiorização do desenvolvimento\nnacional conduzido durante o governo Juscelino Kubitschek, Brasília foi inaugurada\nem 21 de abril de 1960 como símbolo da modernização do país. Desde então, o\nDistrito Federal passou a concentrar as principais instituições políticas da República,\ntornando-se o centro das decisões administrativas, legislativas e judiciais do Brasil.\nA construção da nova capital atendeu ao projeto político de fornecer infraestrutura\nurbana para sustentar a chamada “expansão da fronteira agrícola”, com o\ncrescimento do agronegócio na região centro-oeste do país. Além disso, o\nsurgimento e crescimento das Ligas Camponesas e o fortalecimento do movimento\noperário e estudantil aguçou a luta de classes e deixou as classes dominantes em\nalerta. Por isso, a construção da capital distante dos principais centros urbanos do\nBrasil também teve como objetivo dificultar as mobilizações populares que se\ndesenvolveram ao longo das décadas anteriores.\nAssim, a imagem monumental da capital esconde profundas contradições. Ao lado\ndo Plano Piloto, concebido como vitrine do planejamento urbano moderno,\ncresceram dezenas de cidades para onde foram expulsos os trabalhadores\nresponsáveis pela construção de Brasília. Essas regiões administrativas concentram\ngrande parte da população do Distrito Federal e convivem diariamente com o\nabandono por parte do poder público, resultando em problemas de mobilidade,\nsaúde, educação, moradia, saneamento e acesso aos serviços públicos.\nAS LUTAS DO POVO\nNo entanto, o povo nunca aceitou pacificamente essa situação. Desde sua\nconstrução, a capital foi também palco da resistência da classe trabalhadora. Nos\ncanteiros de obras, os candangos organizaram greves e protestos contra as jornadas\nexaustivas, os baixos salários e as condições degradantes de trabalho, enfrentando\na repressão violenta da Guarda Especial de Brasília (GEB), cujo episódio mais\nconhecido foi o massacre do acampamento da construtora Pacheco Fernandes, em\n10"
+          },
+          {
+            "id": "1959-nesse-mesmo-periodo-os-trabalhadores-da-vila-amaury-organizaram-se",
+            "titulo": "1959. Nesse mesmo período, os trabalhadores da Vila Amaury organizaram-se em",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1959. Nesse mesmo período, os trabalhadores da Vila Amaury organizaram-se em\ndefesa do direito à moradia e contra sua remoção compulsória. Abrigando cerca de\n16 mil pessoas, a vila foi deliberadamente inundada para a formação do Lago\nParanoá, e seus moradores foram expulsos para dar lugar ao projeto urbanístico da\nnova capital, tornando-se protagonistas da formação de cidades como Sobradinho e\nexpressão da segregação socioespacial que marcaria o desenvolvimento do Distrito\nFederal.1\nDurante a ditadura militar, Brasília transformou-se também em um importante foco\nde resistência. A Universidade de Brasília sofreu sucessivas invasões das forças de\nrepressão em 1964, 1965, 1968 e 1977, mas estudantes, professores e servidores\nmantiveram a mobilização em defesa da autonomia universitária e das liberdades\ndemocráticas, enfrentando prisões, demissões, torturas e perseguições políticas.\nTrês estudantes da UnB foram assassinados pelas forças da ditadura. Hoje,\nHonestino Guimarães, Ieda Santos Delgado e Paulo de Tarso figuram no panteão\ndos herois do povo brasileiro.\nEssa tradição de luta prosseguiu nas mobilizações por moradia, nas organizações\ncomunitárias, entre os servidores públicos, as mulheres, a juventude, a população\nnegra, os povos indígenas, as pessoas com deficiência e diversos movimentos\npopulares, que seguem construindo a resistência em defesa dos direitos sociais, da\ndemocracia e da justiça social no Distrito Federal.\nOS RICOS FICAM COM O BANQUETE E O POVO COM AS MIGALHAS\nO Distrito Federal está entre as unidades da Federação com a maior renda domiciliar\nper capita do país. Entretanto, essa riqueza está concentrada nas mãos de uma\npequena parcela da população. Os ricaços que moram nas mansões do Lago Sul\ndesfrutam da riqueza produzida coletivamente pela sociedade. Enquanto isso, os\ntrabalhadores que vivem nas periferias como Sol Nascente e Pôr do Sol sobrevivem,\nem média, com R$ 845,372 por mês e enfrentam a precarização do trabalho, déficit\nde infraestrutura urbana e acesso desigual aos serviços públicos.\nO contraste entre o centro político da República e a periferia do Distrito Federal\nevidencia que a riqueza produzida pelos trabalhadores permanece apropriada por\numa minoria privilegiada, enquanto a maioria da população continua submetida às\nconsequências da concentração de renda e da segregação socioespacial.\n1\n\nLeia mais em: https://averdade.org.br/2024/04/a-luta-candanga-a-historia-da-classe-trabalhadora-naconstrucao-de-brasilia/ e https://averdade.org.br/2024/08/vila-amaury-a-ocupacao-dos-operarios-queconstruiram-brasilia/\n2\nPDAD Ampliada 2024 – Instituto de Pesquisa e Estatística do Distrito Federal (IPEDF)\n\n10"
+          },
+          {
+            "id": "para-se-ter-uma-ideia-da-desigualdade-social-e-do-roubo-de-recursos-publ",
+            "titulo": "Para se ter uma ideia da desigualdade social e do roubo de recursos públicos, no",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Para se ter uma ideia da desigualdade social e do roubo de recursos públicos, no\nano de 2021, o senador e pré-candidato à presidência Flávio Bolsonaro comprou\numa mansão de R$ 5,97 milhões no Lago Sul3. Ou seja, quem mora no Sol\nNascente precisaria de 589 anos trabalhando sem gastar um centavo para conseguir\ncomprar a mesma mansão que o senador milionário comprou com dinheiro do povo.\nQuem anda pelas ruas da nossa cidade vê de perto o resultado da desigualdade\nsocial. Milhares de pessoas vivem em situação de rua, sobrevivendo da\nsolidariedade alheia e disputando diariamente comida, água e um lugar para dormir.\nA pobreza deixou de ser uma realidade invisível e passou a fazer parte da paisagem\ncotidiana do Distrito Federal.\nAs mães trabalhadoras enfrentam enormes dificuldades para encontrar vagas em\ncreches públicas, sendo obrigadas, muitas vezes, a abandonar o emprego, recorrer\na familiares ou deixar os filhos sob cuidados precários. Enquanto isso, milhares de\njovens convivem com a falta de oportunidades de estudo, trabalho, cultura e esporte,\nalimentando um ciclo permanente de exclusão social.\nEssa realidade não é consequência do acaso. É resultado do sistema capitalista de\nprodução, onde uns poucos se apropriam de toda a riqueza produzida coletivamente\nna sociedade. Enquanto os ricaços vivem esbanjando em festas à beira do lago\nParanoá, o povo sofre com a ausência de políticas públicas capazes de garantir\nemprego digno, moradia, educação, saúde e assistência social para toda a\npopulação. Enquanto uma pequena parcela desfruta de todos os benefícios da\ncidade, milhares de famílias seguem privadas dos direitos mais básicos garantidos\npela Constituição.\nCAOS NA SAÚDE DEIXA O POVO MORRENDO NAS FILAS\nA saúde pública do Distrito Federal vive uma crise que afeta diariamente milhares de\nfamílias. A realidade do povo continua sendo marcada por hospitais superlotados,\nlongas filas por consultas, exames e cirurgias, falta de profissionais e dificuldades\npara conseguir leitos de internação. Neste momento, 1 milhão e 197 mil pessoas\nestão esperando para realizar simples exames ou consultas4. A longa espera é a\nrealidade enfrentada por muitas pessoas que adoecem, sofrem e morrem sem\nconseguir um tratamento adequado.\nEssa situação ocorre por uma decisão política do governo de Ibaneis e Celina, que\n3\n\nhttps://oglobo.globo.com/politica/noticia/2024/07/03/flavio-bolsonaro-quita-mansao-de-r-597-milhoes27-anos-antes-do-previsto.ghtml acesso em 10/09/2026 19h13min\n4\nhttps://www.mpdft.mp.br/acompanhamento-sus-df/ acesso em 09/07/2026 19h18min\n\n10"
+          },
+          {
+            "id": "deixam-a-administracao-da-saude-no-df-por-conta-da-iniciativa-privada-at",
+            "titulo": "deixam a administração da saúde no DF por conta da iniciativa privada através do",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "deixam a administração da saúde no DF por conta da iniciativa privada através do\nIGESDF e não garantem infraestrutura e mão de obra suficientes para garantir o\natendimento à população. De fato, faltam 4.800 médicos, 1.600 enfermeiros, 5 mil\ntécnicos de enfermagem e mais de 25 mil profissionais de saúde no geral.\nÉ necessário ampliar o investimento direto no SUS, acabar com o IGESDF e realizar\nconcursos públicos para recompor o quadro de servidores, fortalecer a atenção\nbásica, reduzir as filas por consultas e cirurgias, ampliar a capacidade hospitalar e\ngarantir uma gestão transparente dos recursos públicos. A saúde deve ser tratada\ncomo um direito fundamental da população, e não como um serviço submetido à\nlógica do lucro.\nA FARRA COM O DINHEIRO DO POVO\nO caso Banco Master colocou o Distrito Federal no centro de uma grave crise\nenvolvendo a gestão do BRB. Segundo investigações do Ministério Público Federal,\nentre julho de 2024 e outubro de 2025 o BRB realizou operações que somaram\nR$ 16,7 bilhões (mais do que o orçamento para saúde e educação5) com o Banco\nMaster. As apurações apontam que essas operações chegaram a representar cerca\nde 30% dos ativos do BRB, levantando questionamentos sobre a exposição do\npatrimônio público, a transparência das decisões e os mecanismos de controle.\nAs operações ocorreram durante o governo Ibaneis Rocha e continuaram sendo\nobjeto de debate público na gestão de Celina Leão. Diante disso, ambos são alvo de\ncobranças por responsabilidade política quanto à condução da estratégia do BRB e\nà prestação de esclarecimentos à sociedade. Assim, fica claro que o Estado\ncapitalista é, de fato, um balcão de negócios para favorecer os ricos. Ibaneis e\nCelina são, na realidade Robin Hood ao contrário, tiram dos pobres para dar aos\nricos.\nPor isso, a Unidade Popular defende o controle estatal e popular do sistema\nfinanceiro como forma de ampliar a transparência na gestão dos recursos públicos e\ngarantir que as riquezas da sociedade estejam voltadas ao financiamento do\ndesenvolvimento social, da geração de empregos e da melhoria das condições de\nvida da população, e não à realização de operações que possam colocar em risco o\npatrimônio do povo. Para acabar com a sangria do dinheiro público é necessário dar\npunição exemplar com prisão e confisco dos bens de todos os envolvidos com caso\nde corrupção.\n5\n\nPortal da transparência DF\n\n10"
+          },
+          {
+            "id": "um-programa-popular-e-socialista-por-um-distrito-federal-para",
+            "titulo": "UM PROGRAMA POPULAR E SOCIALISTA POR UM DISTRITO FEDERAL PARA",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "UM PROGRAMA POPULAR E SOCIALISTA POR UM DISTRITO FEDERAL PARA\nA CLASSE TRABALHADORA\nNossa candidatura nasce do seio da classe trabalhadora, da luta e resistência\npopular. O Distrito Federal somente poderá superar suas profundas desigualdades\nquando o povo trabalhador que construiu esta cidade passar a governá-la\nefetivamente. É necessário romper com um modelo capitalista que privilegia poucos\ne condena a maioria da população à precariedade, ao endividamento, à insegurança\ne à exclusão dos espaços de decisão política.\nSamara Mineiro é uma trabalhadora que sente na pele a exploração e os problemas\nvividos pelo povo. Por isso, a Unidade Popular apresenta o seu nome para\nrepresentar um Programa de Governo Popular para o Distrito Federal:\n\n10"
+          },
+          {
+            "id": "propostas-da-up-para-transformar-distrito-federal",
+            "titulo": "PROPOSTAS DA UP PARA TRANSFORMAR DISTRITO FEDERAL",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROPOSTAS DA UP PARA TRANSFORMAR DISTRITO FEDERAL\nI. Economia, Administração Pública e Trabalho para o Povo\n1. Auditoria e Controle Popular do BRB: Realizar auditoria imediata nas\noperações do Banco de Brasília, especialmente em casos de exposição de\nativos a bancos privados (como o caso Banco Master), adotando medidas de\ncontrole social sobre a gestão financeira para garantir que o patrimônio\npúblico não seja usado para favorecer elites. Garantir que a administração do\nBRB seja 100% estatal.\n2. Revisão do acordo do GDF com o Fundo Garantidor de Crédito: Auditoria\ne revisão do empréstimo estabelecido entre o GDF e o FGC para salvar o\nBRB que irá comprometer o acesso da população do DF a direitos básicos\ncomo saúde, educação, transporte, entre outros.\n3. Auditoria da Dívida Pública do DF: Revisão dos contratos financeiros que\nsangram o orçamento para enriquecer bancos. Rompimento de todos os\ncontratos que o GDF firmou com o Estado genocida de Israel.\n4. Recomposição do quadro de funcionários do Governo do Distrito\nFederal: realização de concursos públicos em todas as áreas que possuem\ndéficit de funcionários, priorizando saúde e educação.\n5. Plano de Reestatização: Anulação das privatizações da CEB, Rodoviária do\nPlano Piloto e demais empresas e patrimônios públicos.\n6. Gestão Operária das Estatais: Eleição direta de dirigentes pelas categorias\nde trabalhadores de cada empresa pública, que funcionarão em modelo de\nautogestão, gozando de autonomia orçamentária e rígida fiscalização do uso\ndos recursos públicos para que não sejam indevidamente repassados ao\ninteresse privado.\n7. Corte Radical de Cargos Comissionados: Realização de novos concursos\npúblicos e redução de no mínimo 30% das indicações políticas, privilegiando\nservidores de carreira.\n8. Democracia nas Administrações Regionais: Alteração da Lei Orgânica do\nDistrito Federal para possibilitar o fim do uso das RAs como moeda de troca\npolítica com a CLDF. Eleição quadrienal dos administradores de cada RA e\ncriação de Comitês de Orçamento Participativo para definição sobre as\nprioridades de investimento nas RAs.\n9. Conselho de Entidades: Criação de órgão consultivo e deliberativo com\nmovimentos sociais para nortear o planejamento do DF.\n10. Rompimento com o Estado Ilegítimo de Israel: Rescisão de todos os\ncontratos firmados entre o GDF e o Estado Ilegítimo de Israel. Nossa cidade\nnão será mais cúmplice do genocídio dos povos palestino, sírio e libanês.\n11. Programa Renda Básica Permanente: Garantia de R$ 600 mensais para\nfamílias no CADÚnico com renda per capita de até meio salário mínimo,\ndobrando o valor para mães solo.\n12. Frentes Emergenciais de Trabalho: Contratação direta pelo Estado para\nobras de saneamento e urbanização em áreas vulneráveis, combatendo o\ndesemprego.\n10"
+          },
+          {
+            "id": "13-salario-minimo-regional-estabelecer-um-aumento-de-100-do-valor-do",
+            "titulo": "13. Salário Mínimo Regional: Estabelecer um aumento de 100% do valor do",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "13. Salário Mínimo Regional: Estabelecer um aumento de 100% do valor do\nsalário mínimo nacional atual.\n14. Rede de Lavanderias e Ampliação dos Restaurantes Comunitários:\nConstrução de uma rede de lavanderias públicas e ampliação dos\nrestaurantes comunitários, socializando o trabalho doméstico, para atender a\npopulação trabalhadora e do Entorno.\n15. Auditoria e Cobrança dos Grandes Devedores: Fim dos convênios de\nisenção do ICMS para grandes empresas e cobrança rigorosa da dívida ativa\n16. Fim da Perseguição aos Camelôs: Regularização do comércio popular no\nmetrô e rodoviária, integrando-os à economia social\n17. Ampliação da Rede do SUAS com criação de albergues: Expansão do\natendimento digno à população sem-teto com higiene e alimentação em\nimóveis abandonados pelo próprio GDF\n18. Qualidade de Vida e Trabalho aos Trabalhadores de Aplicativo: Instalar\nem todas as Regiões Administrativas (RAs) centros de apoio com\ninfraestrutura básica (banheiros, água potável, área de descanso e\ncarregamento de veículos elétricos) para motoristas e entregadores. Fornecer\nassessoria técnica e jurídica para que motoristas e entregadores se\norganizem de forma autogestionada, superando a subordinação algorítmica\nII. Saúde\n19. Fim do IGESDF e da Tabela SUS Candanga: Retomada da administração\ndireta de todos os hospitais públicos pelo Estado e eliminação dos repasses\nemergenciais do SUS para hospitais e clínicas privadas.\n20. Concursos Públicos Massivos: Recomposição do quadro com médicos,\nenfermeiros e técnicos, farmacêuticos, psicólogos, terapeutas ocupacionais,\nentre outros profissionais, para zerar as filas de espera\n21. Laboratório Farmacêutico Público: Criação do Laboratório Farmacêutico\nPúblico do Distrito Federal para produzir medicamentos, insumos estratégicos\ne produtos para o SUS, em articulação com a Fiocruz Brasília, a Universidade\nde Brasília (UnB), o Instituto Federal de Brasília (IFB) e outras instituições\npúblicas de pesquisa, garantindo o abastecimento da rede pública e\nampliando o acesso da população a medicamentos de baixo custo.\n22. Universalização do Saneamento: Garantia de água tratada e esgoto em\n100% das ARIS e áreas rurais\n23. Estratégia Saúde da Família 100%: Cobertura total de agentes comunitários\nem áreas com déficit de serviços públicos, priorizando a atenção básica e a\nsaúde da família\n24. Saúde Mental Comunitária: Expansão da rede de CAPS e fim da lógica\nmanicomial em hospitais psiquiátricos e comunidades terapêuticas\n25. Centros de Reabilitação para Acidentados: Atendimento especializado\npara trabalhadores vítimas de acidentes laborais ou LER/DORT\nIII.\n\nDireito à Cidade (Habitação, Transporte e Acessibilidade)\n10"
+          },
+          {
+            "id": "26-reforma-urbana-radical-a-cidade-deve-estar-voltada-para-quem-nela",
+            "titulo": "26. Reforma Urbana Radical: A cidade deve estar voltada para quem nela",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "26. Reforma Urbana Radical: A cidade deve estar voltada para quem nela\ntrabalha. Ataque ao déficit habitacional com a destinação de imóveis e\nterrenos públicos/privados ociosos ou que devam ser executados por acúmulo\nde dívida fiscal para moradia popular, e indexação de reajustes de aluguéis ao\nIGP-M, que serão fiscalizados por setor próprio da SEDUH. Estabelecer uma\npolítica de tributação progressiva do IPTU e regulamentar em Lei Distrital\nfinalidade social para o mesmo.\n27. Criação de empresa pública de transporte: Criação de uma empresa\npública para o transporte no DF, que concentre o orçamento desse setor, com\na implementação gradual do transporte gratuito para toda a população do DF\ne Entorno\n28. Fortalecimento do metrô público: ampliar a malha metroviária para todo o\nDistrito Federal, garantindo, ao mesmo tempo, a modernização das estações,\ncom manutenção permanente, acessibilidade universal e infraestrutura\nadequada para todos os usuários.\n29. Mutirões de Autogestão Habitacional: Financiamento público para que o\npovo construa suas próprias casas com assessoria técnica\n30. Regularização Fundiária Social: Escrituração gratuita de vilas e bairros\npopulares historicamente marginalizados\nIV. Segurança Pública\n31. Desmilitarização da Polícia: Transição para o policiamento de ciclo completo,\ncom carreira única e civil, rompendo com o paradigma herdado pela Ditadura\nfascista Empresarial-Militar\n32. Câmeras nos Uniformes: Implementação imediata e obrigatória do\nmonitoramento das ações policiais para coibir abusos dos agentes fardados\nsobre a população\n33. Reforma Prisional Radical: Descentralização do sistema prisional para\nCentros Macrorregionais de Ressocialização e Detenção Provisória.\n34. Reformular os atuais Conselhos Comunitários de Segurança (CONSEGs):\ndemocratizar sua composição e ampliar suas atribuições para que se\ntransformem em Assembleias Populares de Segurança, com participação de\nmoradores, movimentos populares, organizações comunitárias, servidores\npúblicos e representantes da sociedade civil, todos com direito a voz e voto na\ndefinição, fiscalização e acompanhamento das políticas de segurança pública.\n35. Ouvidoria Única Independente: Órgão externo para fiscalizar a conduta de\npoliciais e bombeiros com participação popular\nV. Educação\n36. Extinção da militarização na educação básica: Retirada imediata da PM da\ngestão pedagógica e administrativa da rede básica de ensino, dando fim ao\nprojeto das escolas cívico-militares\n37. Ampliação de vagas em creches: Construção de novas creches, públicas,\npara que se possa ao longo dos 4 anos de governo ter o fim da fila para\ncrianças de 0 a 3 anos.\n10"
+          },
+          {
+            "id": "38-fim-da-superlotacao-das-escolas-construcao-de-novas-escolas-em-todas",
+            "titulo": "38. Fim da superlotação das escolas: Construção de novas escolas em todas",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "38. Fim da superlotação das escolas: Construção de novas escolas em todas\nas Regiões Administrativas do DF, além da reforma das escolas já existentes,\ngarantido um espaço adequado para formação integral das crianças e\nadolescentes do Distrito Federal.\n39. Educação Integral: Formulação de um programa de educação integral em\ntoda a educação básica do Distrito Federal com a garantia das disciplinas\nbásicas já presentes no currículo em movimento, mais a inclusão de\nformações nas áreas de cultura, esporte e lazer.\n40. Fim da Precarização Docente: Recomposição imediata do quadro de\nservidores da Secretaria de Educação do Distrito Federal com a contratação\nde professores(as), orientadores(as) educacionais, psicólogos(as), e todos os\ndemais servidores necessários para a garantia de uma educação pública,\ngratuita e de qualidade.\n41. Acesso e permanência estudantil: Criação da Política Distrital de Auxíliopermanência Estudantil para estudantes da Educação Básica, incluindo a\nEducação de Jovens e Adultos, e também do Ensino Superior. Construção de\nalojamentos estudantis nas proximidades das escolas técnicas e\nuniversidades públicas.\n42. Reestruturação da Universidade Distrital (UnDF): Expansão de campi,\nampliação das políticas de permanência estudantil e oferta de cursos voltados\nàs necessidades locais\n43. Bibliotecas Públicas em Todas as RAs: Espaços com internet livre e acervo\ndiversificado para formação crítica\nVI. Mulheres\n44. Rede de Casas-Abrigo 24h: Acolhimento multiprofissional para vítimas de\nviolência doméstica em localidades estratégicas do DF\n45. Justiça Reprodutiva no SUS: Garantia de acesso a métodos contraceptivos\ne realização segura do aborto legal. Realização de ações de educação sexual\n46. Enfrentamento à Violência Obstétrica: Protocolos rígidos e humanização do\nparto para proteger a gestante\n47. Dignidade Menstrual: Distribuição gratuita de absorventes em escolas, UBSs\ne para a população sem-teto e as internas do sistema prisional\n48. Incentivo à Mulher na Ciência e Tecnologia: Reservas de vagas e bolsas\nem cursos técnicos e na UnDF\n49. Ampliação no número de Delegacias Especializadas no Atendimento à\nMulher (DEAMs): Descentralização do atendimento especializado 24 horas\nVII. População LGBTQIA+\n50. Casas-Abrigo LGBTQIA+: Espaços de residência provisória e cursos para\njovens expulsos de casa pela LGBTfobia\n51. Descentralização do Ambulatório Trans: Atendimento especializado em\ntransição e hormonioterapia em todas as regiões de saúde\n52. Direito de uso do Nome Social: Garantia de acesso ao direito de uso do\nnome social em todos os órgãos, protocolos e serviços do GDF\n10"
+          },
+          {
+            "id": "53-cotas-trans-no-servico-publico-e-em-empresas-de-grande-porte",
+            "titulo": "53. Cotas Trans no Serviço Público e em Empresas de Grande Porte:",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "53. Cotas Trans no Serviço Público e em Empresas de Grande Porte:\nReserva de vagas em concursos e estágios para inclusão no mercado formal\n54. Saúde Integral e Prevenção Combinada: Fortalecimento de CTAs para\ndiagnóstico precoce de HIV/AIDS, combatendo o estigma\n55. Sanções a Estabelecimentos LGBTfóbicos: Lei distrital prevendo multas e\nsuspensão de alvarás em decorrência de atos discriminatórios\n56. Educação para Diversidade: Formação continuada de professores e\nprofissionais da educação para garantir a permanência de alunos LGBTQIA+\nVIII. Cultura, Esporte e Lazer\n57. Fortalecimento da cultura popular e periférica: destinar 1% da Receita\nCorrente Líquida (RCL) ao Fundo de Apoio à Cultura (FAC), garantindo a\nampliação do financiamento à produção cultural, com prioridade para a arte\npopular e periférica, além do reconhecimento e fomento permanente às\nexpressões culturais das periferias, como o Funk, o Rap e o Slam, por meio\nde editais públicos específicos.\n58. Criação do Centro Educativo de Arte Comunitária: Instituição pública que\noferecerá ensino gratuito de música, dança, teatro e artes plásticas.\n59. Futebol de Várzea e Amador: Apoio financeiro e infraestrutura para ligas de\nbairro e campeonatos estudantis\n60. Fechamento de vias públicas específicas nos domingos: Incentivo às\nadministrações regionais pela replicação da iniciativa bem-sucedida do Eixão\ndo Lazer para demais Regiões Administrativas.\nIX. Meio Ambiente e Área Rural\n61. DF Livre de Agrotóxicos: Plano de transição para matriz orgânica e\nproibição de aplicação de venenos em áreas de manancial\n62. Demarcação de Terra Indígena: Apoio irrestrito do GDF sobre o\nprocedimento de homologação e restrição de uso da Reserva Indígena\nSantuário Sagrado dos Pajés\n63. Proteção e recuperação dos recursos hídricos do Distrito Federal:\nimplementar uma política permanente de preservação, recuperação e\nmonitoramento de todos os rios, córregos, nascentes, lagoas e reservatórios\ndo DF, incluindo ações de combate à poluição, prevenção da eutrofização,\nrecuperação de matas ciliares, fiscalização ambiental e garantia da qualidade\ne da segurança hídrica para a população.\n64. Coleta Seletiva em 100% do DF: Protagonismo às cooperativas de\ncatadores com remuneração digna.\n65. Zoneamento Ecológico-Econômico (ZEE): Aplicação rígida da legislação\nambiental para conter o espraiamento urbano e proteger o Cerrado.\n66. Educação Ambiental nas RAs: Hortas comunitárias e pomares urbanos\ncomo estratégia de segurança alimentar e conscientização, seguindo o\nexemplo bem-sucedido dos organopónicos de Havana.\n67. Recuperação da CEASA-DF para a Agricultura Familiar: Modernizar a\ninfraestrutura da CEASA para que funcione como o principal polo de logística\n10"
+          },
+          {
+            "id": "e-comercializacao-direta-do-pequeno-produtor-fortalecendo-a-soberania",
+            "titulo": "e comercialização direta do pequeno produtor, fortalecendo a soberania",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "e comercialização direta do pequeno produtor, fortalecendo a soberania\nalimentar e reduzindo o preço final ao consumidor trabalhador.\n68. Política Distrital de Bem-Estar Animal: implantação de um programa\npermanente de proteção aos animais em situação de rua, com resgate,\natendimento veterinário gratuito, castração, vacinação, microchipagem,\nacolhimento temporário, incentivo à adoção responsável e apoio aos\nprotetores independentes, garantindo o combate aos maus-tratos e ao\nabandono por meio de uma rede pública de proteção animal.\n\n10"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "e747bdaf0706726f7f953369e2a34bcb024967f126b025c25d511c47cf619a48"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ebfc68a60f548e1c20d0228ffe031fcfcf80bba00a96bf1ae0c0f446c94afa59"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "ab505bbf58afd4259fdf8ca606147566452f4f19f0bdb67bf834c8d6ac807dc3"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "3d092bc88c05938e51547a012658043726079233a113a4a40ee74968c0e4ecb9"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c7df8798de9b203bab7730d31afafff2cd681ea0de9ab4aee443aad80ad71c14"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "9cab39c8ef3fc7fb82f621ae5b2363523a8f04e0a1c7d37fbc24f29ccd96dee6"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "72522b0289520e48898b21be3577ed4b4d830559caa441f337fbbb984ab2db5e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "d9d52d2d5f99e30c6e1a18bea0131b77130a2a76f647cce5c9e1eed12df39ec1"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "da5fa179015b9ce0ad078674e011342198ecb4010cee6aa6be2b2aa725ac3a35"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c1c2a5e87a794988e8350827eb4f0d2a875dfff1e3bf0135e3e68f55d416fce2"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "92a4f4077c3d8a02a6471fac8bfbd54e8599d7eecbfd0a1401acf914bc097dfb"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe auditoria imediata nas operações do Banco de Brasília, com medidas de controle social sobre a gestão financeira. O programa prevê que a administração do BRB seja 100% estatal. Na saúde, propõe retomar a administração direta de todos os hospitais públicos pelo Estado. O documento prevê a criação de um Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos e insumos estratégicos para o SUS. Na mobilidade, propõe criar uma empresa pública para o transporte no Distrito Federal. Na educação, prevê a construção de novas creches públicas para ampliar o atendimento a crianças de 0 a 3 anos. Na área ambiental, prevê coleta seletiva em 100% do Distrito Federal, com protagonismo às cooperativas de catadores. O programa propõe regularização fundiária social, com escrituração gratuita de vilas e bairros populares historicamente marginalizados.",
+    "frases": [
+      {
+        "texto": "O programa propõe auditoria imediata nas operações do Banco de Brasília, com medidas de controle social sobre a gestão financeira.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 6,
+            "trecho": "Realizar auditoria imediata nas operações do Banco de Brasília, especialmente em casos de exposição de ativos a bancos privados (como o caso Banco Master), adotando medidas de controle social sobre a gestão financeira"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê que a administração do BRB seja 100% estatal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 6,
+            "trecho": "Garantir que a administração do BRB seja 100% estatal."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe retomar a administração direta de todos os hospitais públicos pelo Estado.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 7,
+            "trecho": "Retomada da administração direta de todos os hospitais públicos pelo Estado"
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê a criação de um Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos e insumos estratégicos para o SUS.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 7,
+            "trecho": "Criação do Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos, insumos estratégicos e produtos para o SUS"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, propõe criar uma empresa pública para o transporte no Distrito Federal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 8,
+            "trecho": "Criação de uma empresa pública para o transporte no DF"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê a construção de novas creches públicas para ampliar o atendimento a crianças de 0 a 3 anos.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 8,
+            "trecho": "Construção de novas creches, públicas, para que se possa ao longo dos 4 anos de governo ter o fim da fila para crianças de 0 a 3 anos."
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, prevê coleta seletiva em 100% do Distrito Federal, com protagonismo às cooperativas de catadores.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 10,
+            "trecho": "Coleta Seletiva em 100% do DF: Protagonismo às cooperativas de catadores com remuneração digna."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe regularização fundiária social, com escrituração gratuita de vilas e bairros populares historicamente marginalizados.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 8,
+            "trecho": "Regularização Fundiária Social: Escrituração gratuita de vilas e bairros populares historicamente marginalizados"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "auditoria-brb",
+        "titulo": "Auditoria do BRB",
+        "descricao": "Auditoria das operações do Banco de Brasília.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 6,
+            "trecho": "Realizar auditoria imediata nas operações do Banco de Brasília"
+          }
+        ]
+      },
+      {
+        "id": "gestao-hospitalar",
+        "titulo": "Gestão hospitalar",
+        "descricao": "Administração direta dos hospitais públicos.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 7,
+            "trecho": "Retomada da administração direta de todos os hospitais públicos pelo Estado"
+          }
+        ]
+      },
+      {
+        "id": "laboratorio-farmaceutico",
+        "titulo": "Laboratório farmacêutico",
+        "descricao": "Produção pública de medicamentos para o SUS.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 7,
+            "trecho": "Criação do Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos"
+          }
+        ]
+      },
+      {
+        "id": "transporte-publico",
+        "titulo": "Transporte público",
+        "descricao": "Criação de empresa pública de transporte.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 8,
+            "trecho": "Criação de uma empresa pública para o transporte no DF"
+          }
+        ]
+      },
+      {
+        "id": "creches-publicas",
+        "titulo": "Creches públicas",
+        "descricao": "Construção de creches públicas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 8,
+            "trecho": "Construção de novas creches, públicas"
+          }
+        ]
+      },
+      {
+        "id": "coleta-seletiva",
+        "titulo": "Coleta seletiva",
+        "descricao": "Coleta seletiva no Distrito Federal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002537111:01",
+            "pagina": 10,
+            "trecho": "Coleta Seletiva em 100% do DF"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:40:18.554Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:42:34.237Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre auditoria do BRB."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:1:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 100% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:2:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única em saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:3:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:4:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única em mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:5:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Faixa etária '0 a 3 anos' literalmente sustentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única em educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:6:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 100% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:7:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:frase:8:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:auditoria-brb:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo simples totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:gestao-hospitalar:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:laboratorio-farmaceutico:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:transporte-publico:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:creches-publicas:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002537111:tema:coleta-seletiva:documentos:DF:70002537111:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo totalmente coberto."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002537111",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002537111:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25953,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2224,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25454,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22495,
+          "output_tokens_details": {
+            "thinking_tokens": 691
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25454,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22495,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25454,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25454
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3471204
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "ec83b163ad05efc80a2579f23b97b524e3546a39312be2871739ff46990f0a1f",
+    "extractedTextSha256": "06b51be10c05031334519158d8290c5f8b7fb8d013446a6a56c1d141c48c6656",
+    "documentCount": 1,
+    "documentSetSha256": "c62768d19ffe3f83d058c8a08ef47f3e521e058ecf56a302477fd9478be5dc51",
+    "contentSha256": "9771bcd8711508b1fc7f8cd0e9f8ee957b2a85f4acf275eb15e68204b12f21cb"
+  }
+}

@@ -1,0 +1,1086 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002544216",
+    "slug": "lucia-santos",
+    "nomeUrna": "DRA. LÚCIA SANTOS",
+    "partido": "PSDB",
+    "arquivoNome": "2026PI180002544216_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002544216_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002544216:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002544216_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002544216_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "634f6e74281d828b5d4a36e2da880a3482db8acbe3b2768b69c0f2262c76c173",
+        "extractedTextSha256": "de7dd43cd9ed4c6032aedc75f70b8739a44fc774de3665a779e96371378acf14",
+        "paginas": 32,
+        "secoes": [
+          {
+            "id": "piaui-que-funciona",
+            "titulo": "PIAUÍ QUE FUNCIONA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PIAUÍ QUE FUNCIONA\nPlano de Governo 2027–2030\nUM NOVO TEMPO PARA O PIAUÍ\nGovernar é cuidar das pessoas.\nO Piauí possui um povo trabalhador, resiliente e cheio de potencial. Somos um estado\nrico em recursos naturais, cultura, empreendedorismo e talentos, mas que ainda convive\ncom problemas históricos que impedem seu pleno desenvolvimento. Milhares de\npiauienses enfrentam diariamente longas filas na saúde, estradas precárias, serviços\npúblicos insuficientes, dificuldades para empreender, elevada carga tributária e poucas\noportunidades de crescimento.\nNão faltam potencialidades ao nosso Estado. Falta planejamento, eficiência na gestão\npública e coragem para enfrentar os desafios estruturais que se repetem há décadas.\nEste Plano de Governo nasce da convicção de que é possível construir um Piauí mais\nmoderno, justo e desenvolvido. Um Estado que valorize as pessoas, respeite o dinheiro\npúblico e tenha capacidade de transformar investimentos em resultados concretos para a\npopulação.\nNossa proposta é implementar uma gestão técnica, transparente e baseada em evidências,\ncom prioridades bem definidas e compromisso permanente com a melhoria da qualidade\nde vida dos piauienses. Governar não é administrar problemas; é construir soluções.\nAo longo deste documento apresentamos um conjunto de propostas voltadas para\nfortalecer a saúde, valorizar a educação, impulsionar o desenvolvimento econômico,\nmodernizar a infraestrutura, reduzir desigualdades e tornar o Estado mais eficiente e\npróximo da população.\nMais do que um plano de governo, este documento representa um compromisso com uma\nnova forma de administrar o Piauí: com responsabilidade, diálogo, competência técnica\ne foco em resultados.\nPorque acreditamos que um Estado forte é aquele que funciona para quem mais precisa."
+          },
+          {
+            "id": "e-quando-o-estado-funciona-a-saude-atende-a-educacao-transforma-a-econom",
+            "titulo": "E quando o Estado funciona, a saúde atende, a educação transforma, a economia cresce,",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "E quando o Estado funciona, a saúde atende, a educação transforma, a economia cresce,\nos empreendedores prosperam, as estradas ligam oportunidades e as famílias vivem com\nmais dignidade.\nEste é o nosso compromisso: construir um Piauí que funciona para todos.\nNOSSA IDENTIDADE\nOs princípios que orientarão o Governo Dra. Lúcia Santos\nEste Plano de Governo não é apenas uma relação de propostas para os próximos quatro\nanos. É a apresentação de um projeto de Estado, construído sobre valores,\nresponsabilidade e compromisso com a população piauiense.\nCada política pública aqui apresentada parte de uma mesma convicção: o\ndesenvolvimento só é verdadeiro quando melhora a vida das pessoas. É por isso que todas\nas ações deste plano serão guiadas por três pilares fundamentais, que traduzem a forma\ncomo entendemos a administração pública.\n\nHumanização\nGovernar é, antes de tudo, cuidar de pessoas.\nA experiência da Dra. Lúcia Santos na medicina consolidou uma visão de gestão baseada\nno acolhimento, na empatia e no respeito à dignidade humana. Assim como um médico\nobserva cada paciente de forma individual, o Estado deve olhar para cada cidadão com\nresponsabilidade, sensibilidade e compromisso.\nEsse princípio estará presente em todas as políticas públicas, da saúde à educação, da\ninfraestrutura à assistência social, colocando o ser humano no centro das decisões\ngovernamentais.\nNosso compromisso é construir um Estado que esteja próximo da população, que escute,\nacolha e resolva problemas, sempre respeitando as necessidades de cada comunidade.\n\nGestão técnica\nBoas intenções não substituem boa gestão.\nOs desafios do Piauí exigem decisões fundamentadas em planejamento, evidências,\nresponsabilidade fiscal e avaliação permanente dos resultados.\nNosso governo adotará uma gestão moderna, baseada em metas claras, indicadores de\ndesempenho, transparência e eficiência administrativa. Cada secretaria será orientada por\nobjetivos definidos, com acompanhamento contínuo das políticas públicas e prestação de\ncontas à sociedade."
+          },
+          {
+            "id": "a-tecnica-sera-o-instrumento-para-transformar-recursos-publicos-em-resul",
+            "titulo": "A técnica será o instrumento para transformar recursos públicos em resultados concretos,",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A técnica será o instrumento para transformar recursos públicos em resultados concretos,\ngarantindo que cada investimento produza benefícios reais para a população.\nGovernar bem significa fazer escolhas responsáveis, utilizar corretamente o dinheiro\npúblico e entregar serviços de qualidade.\n\nDesenvolvimento\nO crescimento econômico deve servir às pessoas.\nNosso projeto de desenvolvimento busca construir um Piauí mais competitivo, inovador\ne preparado para o futuro, sem perder de vista a inclusão social e a redução das\ndesigualdades.\nInvestiremos em infraestrutura, geração de empregos, educação, inovação, segurança\njurídica e incentivo ao empreendedorismo, criando um ambiente favorável para que\nempresas prosperem, trabalhadores tenham oportunidades e os municípios se fortaleçam.\nAcreditamos que desenvolvimento econômico e justiça social caminham juntos. Uma\neconomia forte gera empregos, amplia a arrecadação e permite que o Estado invista mais\nem saúde, educação, segurança e qualidade de vida.\nNosso objetivo não é apenas fazer o Piauí crescer. É fazer com que esse crescimento\nalcance todas as regiões e beneficie todos os piauienses.\n\nNossa missão\nConstruir um governo eficiente, humano e transformador, capaz de colocar as pessoas em\nprimeiro lugar, administrar com responsabilidade e criar as condições necessárias para\nque o Piauí cresça de forma sustentável, reduzindo desigualdades e ampliando as\noportunidades para toda a população.\n\nNossa visão de futuro\nQueremos um Piauí reconhecido pela qualidade dos seus serviços públicos, pela força da\nsua economia, pela valorização das pessoas e pela capacidade de transformar potencial\nem desenvolvimento.\nUm Estado onde o cidadão tenha orgulho de viver, trabalhar, empreender e construir sua\nfamília.\nUm Piauí que funciona porque cuida das pessoas, administra com competência e\ncresce sem deixar ninguém para trás."
+          },
+          {
+            "id": "1-um-novo-caminho-para-o-piaui",
+            "titulo": "1. UM NOVO CAMINHO PARA O PIAUÍ",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "1. UM NOVO CAMINHO PARA O PIAUÍ\nDiagnóstico: reconhecer os desafios para construir as soluções\nTodo grande projeto de transformação começa por um diagnóstico honesto da realidade.\nNão acreditamos que governar seja fazer promessas vazias ou apresentar soluções\nsimplistas para problemas complexos. O primeiro compromisso deste Plano de Governo\né reconhecer, com transparência, os desafios que o Piauí enfrenta e estabelecer prioridades\nclaras para superá-los.\nNos últimos anos, o Estado registrou avanços em algumas áreas, mas persistem problemas\nestruturais que afetam diretamente a vida da população. A dificuldade de acesso à saúde,\na precariedade da infraestrutura, a concentração dos serviços públicos na capital, a\nelevada carga tributária e a baixa capacidade de geração de oportunidades demonstram\nque o atual modelo de gestão precisa ser aperfeiçoado.\nO Piauí possui condições para crescer mais, gerar mais empregos e oferecer melhores\nserviços públicos. Para isso, será necessário um governo capaz de planejar, executar e\navaliar políticas públicas com responsabilidade, eficiência e compromisso com\nresultados.\nOs principais desafios que orientarão nossas ações são:\nSaúde em colapso\nA saúde pública vive uma crise marcada por longas filas de regulação, superlotação dos\nhospitais, demora na realização de exames e cirurgias, escassez de especialistas no\ninterior e dificuldades de acesso à assistência de média e alta complexidade. Tudo piorou\nquando a gestão atual decidiu entregar a administração para empresas privadas,\nprecarizando o serviço. A população não pode continuar aguardando meses por um\natendimento que, muitas vezes, define a diferença entre a vida e a morte. É preciso\nreorganizar a rede estadual de saúde, ampliar sua capacidade de atendimento e garantir\nque o sistema funcione de forma eficiente e humanizada.\nEstradas deterioradas e infraestrutura insuficiente\nA malha rodoviária estadual apresenta trechos em condições precárias, comprometendo a\nsegurança de motoristas, aumentando o custo do transporte e dificultando o\ndesenvolvimento econômico. Ao mesmo tempo, a infraestrutura urbana da capital\nencontra-se saturada, com congestionamentos crescentes e ausência de intervenções\nestruturantes que acompanhem o crescimento de Teresina. Investir em rodovias,\nmobilidade urbana, pontes, viadutos, ferrovias e logística é investir na integração do\nEstado e na competitividade da economia.\nFalta de oportunidades e baixo dinamismo econômico\nEmbora o Piauí possua grande potencial agrícola, turístico, energético e empresarial,\nmuitos jovens ainda deixam o Estado em busca de oportunidades. O ambiente de negócios\nprecisa ser mais favorável ao empreendedorismo, à inovação e à geração de empregos. O"
+          },
+          {
+            "id": "desenvolvimento-economico-deve-alcancar-todas-as-regioes-do-estado-forta",
+            "titulo": "desenvolvimento econômico deve alcançar todas as regiões do Estado, fortalecendo tanto",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "desenvolvimento econômico deve alcançar todas as regiões do Estado, fortalecendo tanto\no pequeno empreendedor quanto os grandes investimentos produtivos.\nAlta carga tributária\nO Piauí figura entre os estados com maior carga de ICMS do país em diversos setores,\nelevando o custo de vida da população e reduzindo a competitividade das empresas. Um\nsistema tributário mais equilibrado, aliado à simplificação de procedimentos e ao estímulo\nao crescimento econômico, permitirá ampliar investimentos privados, gerar empregos e\nfortalecer a arrecadação de forma sustentável.\nTransporte público e mobilidade deficientes\nO sistema de mobilidade da Região Metropolitana de Teresina não acompanhou o\ncrescimento da cidade. O metrô permanece subutilizado, importantes corredores viários\nencontram-se saturados e faltam investimentos estruturantes capazes de reduzir\ncongestionamentos e melhorar o deslocamento diário da população. É necessário\nconstruir uma política integrada de mobilidade, com planejamento de longo prazo e obras\nque preparem a capital para as próximas décadas.\nInteriorização insuficiente dos serviços públicos\nGrande parte dos serviços especializados permanece concentrada em Teresina, obrigando\nmilhares de piauienses a percorrer longas distâncias em busca de atendimento médico,\nserviços públicos e oportunidades. A interiorização das políticas públicas será uma\nprioridade, fortalecendo hospitais regionais, ampliando a presença de especialistas,\nvalorizando os servidores que atuam no interior e aproximando o Estado da população.\nNecessidade de uma gestão mais eficiente e transparente\nO cidadão espera mais do poder público do que boas intenções: espera resultados. Isso\nexige planejamento, metas claras, transparência e avaliação permanente das políticas\npúblicas. Um governo moderno deve utilizar tecnologia para simplificar serviços, reduzir\nburocracias, combater desperdícios e prestar contas à sociedade. A eficiência\nadministrativa não é apenas uma exigência de boa gestão; é uma forma de respeitar cada\nrecurso pago pelo contribuinte.\n\nNosso compromisso\nOs desafios do Piauí são conhecidos. O que falta é enfrentá-los com planejamento,\ncoragem e capacidade de execução. Este Plano de Governo propõe um novo caminho\npara o Estado: um caminho baseado na valorização das pessoas, na responsabilidade com\nos recursos públicos e na busca permanente por resultados concretos.\nMais do que administrar problemas, queremos construir soluções que promovam\ndesenvolvimento, reduzam desigualdades e façam do Piauí um Estado mais moderno,\neficiente e preparado para o futuro."
+          },
+          {
+            "id": "2-educacao-para-transformar-vidas",
+            "titulo": "2. EDUCAÇÃO PARA TRANSFORMAR VIDAS",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "2. EDUCAÇÃO PARA TRANSFORMAR VIDAS\nEducação como instrumento de liberdade, desenvolvimento e oportunidades\nA educação é o maior investimento que um Estado pode fazer em seu futuro. É por meio\ndela que transformamos vidas, reduzimos desigualdades, promovemos cidadania,\nimpulsionamos o desenvolvimento econômico e construímos uma sociedade mais justa e\npreparada para os desafios do século XXI.\nNosso compromisso é oferecer uma educação pública de qualidade, capaz de formar\ncidadãos críticos, profissionais qualificados e jovens preparados para ingressar no\nmercado de trabalho ou no ensino superior.\nReconhecemos que não existe educação de excelência sem profissionais valorizados,\ninfraestrutura adequada, inovação pedagógica e participação da família na formação dos\nestudantes. Por isso, nossas ações estarão voltadas para fortalecer toda a rede estadual de\nensino, desde a primeira infância até a educação profissional.\n\nValorização dos professores e dos profissionais da educação\nNenhuma política educacional terá sucesso sem professores motivados, respeitados e\nvalorizados.\nNosso governo promoverá uma política permanente de valorização dos profissionais da\neducação, reconhecendo seu papel essencial na formação das futuras gerações.\nCompromissos\n•\n\nvalorização da carreira do magistério;\n\n•\n\npolítica de remuneração compatível com a importância da profissão;\n\n•\n\nformação continuada e qualificação permanente;\n\n•\n\nmelhores condições de trabalho nas escolas;\n\n•\n\nfortalecimento da gestão democrática da educação.\n\nInvestir nos professores é investir diretamente na qualidade da aprendizagem.\n\nMelhoria salarial\nA valorização profissional deve ser acompanhada de uma política remuneratória justa e\nresponsável."
+          },
+          {
+            "id": "nosso-compromisso-e-construir-em-dialogo-com-a-categoria-uma-politica-de",
+            "titulo": "Nosso compromisso é construir, em diálogo com a categoria, uma política de valorização",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Nosso compromisso é construir, em diálogo com a categoria, uma política de valorização\nsalarial sustentável, respeitando a responsabilidade fiscal do Estado e reconhecendo o\nmérito e a dedicação dos profissionais da educação.\n\nConcurso público e fortalecimento da rede estadual\nA educação precisa de estabilidade e continuidade.\nNosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação\nestadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança\npara profissionais e estudantes.\nAlém da ampliação do quadro de professores, serão fortalecidas as equipes pedagógicas,\ntécnicas e administrativas das escolas.\n\nExpansão das escolas de tempo integral\nA escola deve ser um espaço de aprendizagem, cultura, esporte, inovação e\ndesenvolvimento humano.\nVamos ampliar gradativamente a oferta de escolas de tempo integral, priorizando regiões\ncom maior vulnerabilidade social e municípios que apresentam menor cobertura dessa\nmodalidade de ensino.\nO ensino integral contribuirá para:\n•\n\nmelhoria da aprendizagem;\n\n•\n\nredução da evasão escolar;\n\n•\n\nfortalecimento das atividades esportivas e culturais;\n\n•\n\ndesenvolvimento de competências socioemocionais;\n\n•\n\nmaior proteção social para crianças e adolescentes.\n\nEnsino técnico e preparação para o mercado de trabalho\nA escola precisa preparar os jovens para os desafios do mundo contemporâneo.\nNosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a\neducação das necessidades do mercado de trabalho e das vocações econômicas de cada\nregião do Estado.\nAs políticas serão voltadas para áreas estratégicas como:\n•\n\ntecnologia da informação;"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nenergias renováveis;\n\n•\n\nagronegócio;\n\n•\n\nindústria;\n\n•\n\nturismo;\n\n•\n\nlogística;\n\n•\n\nsaúde;\n\n•\n\nempreendedorismo.\n\nTambém serão fortalecidas parcerias com universidades, institutos federais, Sistema S e\nsetor produtivo para ampliar oportunidades de qualificação profissional.\n\nPrimeira infância: investir onde o futuro começa\nOs primeiros anos de vida representam a fase mais importante do desenvolvimento\nhumano.\nNosso governo apoiará os municípios na ampliação do acesso à educação infantil e\nfortalecerá políticas voltadas ao desenvolvimento integral da criança, promovendo a\nintegração entre educação, saúde e assistência social.\nA prioridade será garantir que toda criança tenha acesso a ambientes seguros, acolhedores\ne estimulantes desde os primeiros anos de vida.\n\nTecnologia e inovação na educação\nA transformação digital exige uma escola preparada para formar cidadãos capazes de\nutilizar a tecnologia de forma crítica, ética e produtiva.\nNosso governo promoverá a modernização da rede estadual por meio de investimentos\nem infraestrutura tecnológica, conectividade e inovação pedagógica.\nEntre as prioridades estão:\n•\n\nampliação do acesso à internet de alta velocidade nas escolas;\n\n•\n\nmodernização dos laboratórios de informática;\n\n•\n\nutilização de plataformas digitais de aprendizagem;\n\n•\n\nincorporação de recursos tecnológicos ao processo de ensino;\n\n•\n\ncapacitação permanente dos professores para o uso de novas tecnologias;\n\n•\n\nincentivo à robótica, programação e educação científica."
+          },
+          {
+            "id": "a-tecnologia-nao-substitui-o-professor-ela-amplia-as-possibilidades-de-e",
+            "titulo": "A tecnologia não substitui o professor. Ela amplia as possibilidades de ensinar, aprender",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "A tecnologia não substitui o professor. Ela amplia as possibilidades de ensinar, aprender\ne preparar nossos estudantes para um mercado de trabalho cada vez mais inovador e\ncompetitivo.\n\nNosso compromisso\nAcreditamos que uma educação pública forte transforma realidades e rompe ciclos de\npobreza. Nosso objetivo é construir uma rede estadual moderna, inclusiva e orientada por\nresultados, onde cada criança, adolescente e jovem tenha acesso a ensino de qualidade,\nprofessores valorizados, oportunidades de desenvolvimento e condições para construir\nseu próprio futuro.\nEducar é preparar o presente para transformar o amanhã. Investir na educação é\ninvestir no desenvolvimento do Piauí.\n\n3. DESENVOLVIMENTO ECONÔMICO E GERAÇÃO DE EMPREGOS\nUm Piauí que produz, empreende e cresce\nO desenvolvimento econômico é a principal ferramenta para reduzir desigualdades, gerar\nempregos e promover qualidade de vida. Um Estado forte depende de uma economia\ndinâmica, capaz de atrair investimentos, estimular o empreendedorismo e criar\noportunidades para que as pessoas prosperem pelo próprio trabalho.\nO Piauí reúne condições privilegiadas para se tornar uma referência nacional em\nagronegócio, energias renováveis, mineração, turismo, indústria, comércio e tecnologia.\nEntretanto, esse potencial ainda não se traduz plenamente em desenvolvimento devido à\nelevada carga tributária, à burocracia excessiva, à deficiência da infraestrutura e à\ninsegurança para quem deseja investir.\nNosso compromisso é construir um ambiente econômico moderno, competitivo e\nfavorável aos negócios, onde o Estado deixe de ser um obstáculo e passe a ser um parceiro\ndo desenvolvimento.\nO crescimento econômico não será um objetivo isolado, mas um instrumento para ampliar\nempregos, aumentar a renda das famílias e fortalecer os municípios piauienses.\n\nRedução gradual da carga tributária\nO Piauí possui uma das maiores cargas de ICMS do Brasil em diversos setores, elevando\no custo de vida da população, reduzindo a competitividade das empresas e dificultando\nnovos investimentos."
+          },
+          {
+            "id": "nosso-governo-promovera-uma-revisao-responsavel-da-politica-tributaria-e",
+            "titulo": "Nosso governo promoverá uma revisão responsável da política tributária estadual, com",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo promoverá uma revisão responsável da política tributária estadual, com\nredução gradual do ICMS em setores estratégicos, respeitando o equilíbrio das contas\npúblicas.\nAcreditamos que um ambiente tributário mais competitivo estimula o consumo, amplia a\natividade econômica, atrai investimentos e aumenta a arrecadação de forma sustentável\npor meio do crescimento da economia.\nEntre as prioridades estão:\n•\n\nrevisão gradual das alíquotas de ICMS;\n\n•\n\nsimplificação da legislação tributária;\n\n•\n\nredução da burocracia fiscal;\n\n•\n\nmaior previsibilidade para empresas e investidores.\n\nIncentivo ao empreendedorismo\nO pequeno empreendedor movimenta a economia dos municípios, gera empregos e\nfortalece o comércio local.\nNosso governo atuará para criar um ambiente favorável à abertura, manutenção e\nexpansão de pequenos e médios negócios.\nSerão desenvolvidas políticas voltadas para:\n•\n\nfortalecimento dos micro e pequenos empreendedores;\n\n•\n\nincentivo ao empreendedorismo feminino;\n\n•\n\napoio aos jovens empreendedores;\n\n•\n\nprogramas de capacitação em gestão e inovação;\n\n•\n\nincentivo à formalização de pequenos negócios.\n\nEmpreender deve ser uma oportunidade, e não um desafio burocrático.\n\nDesburocratização e segurança jurídica\nQuem deseja investir precisa encontrar um Estado eficiente, previsível e transparente.\nNosso compromisso é reduzir a burocracia e simplificar procedimentos administrativos,\ntornando o Piauí mais competitivo na atração de investimentos.\nEntre as ações previstas estão:\n•\n\nsimplificação dos processos de licenciamento;"
+          },
+          {
+            "id": "pagina-11",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "•\n\ndigitalização dos serviços públicos relacionados à atividade empresarial;\n\n•\n\nredução do tempo para abertura de empresas;\n\n•\n\nintegração entre os órgãos estaduais de fiscalização e licenciamento;\n\n•\n\nmaior segurança jurídica para investidores.\n\nUm governo moderno deve facilitar o desenvolvimento econômico sem abrir mão da\nresponsabilidade ambiental e do cumprimento da legislação.\n\nEnergia solar: transformar o sol em desenvolvimento\nO Piauí possui uma das maiores incidências solares do planeta, condição que representa\numa extraordinária oportunidade de desenvolvimento econômico e redução do custo da\nenergia.\nNosso governo fará do Estado uma referência nacional em geração distribuída e energias\nrenováveis.\nEntre as principais propostas estão:\n•\n\neliminar a incidência de ICMS sobre a geração própria de energia solar, nos\nlimites da legislação aplicável;\n\n•\n\ncriar programas de incentivo para aquisição de sistemas fotovoltaicos por\nfamílias, produtores rurais e pequenos empreendedores;\n\n•\n\nampliar linhas de financiamento para instalação de energia solar;\n\n•\n\nestimular cooperativas e condomínios de geração compartilhada;\n\n•\n\nincentivar a utilização de energia solar em escolas, hospitais e prédios públicos.\n\nAlém da economia para consumidores e empresas, essa política fortalecerá uma cadeia\nprodutiva capaz de gerar milhares de empregos qualificados em todas as regiões do\nEstado.\n\nCrédito para produzir e crescer\nMuitas empresas deixam de investir não por falta de capacidade, mas por dificuldade de\nacesso ao crédito.\nNosso governo buscará ampliar o acesso ao financiamento para pequenos\nempreendedores, agricultores familiares, cooperativas e empresas inovadoras, por meio\nde parcerias com instituições financeiras públicas e privadas.\nAs políticas priorizarão:\n•\n\ncapital de giro;"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•\n\ninovação;\n\n•\n\nmodernização produtiva;\n\n•\n\naquisição de equipamentos;\n\n•\n\nexpansão de negócios.\n\nO crédito deve funcionar como instrumento de desenvolvimento e geração de\noportunidades.\n\nFortalecimento da indústria e agregação de valor\nO desenvolvimento do Piauí exige uma economia mais diversificada e capaz de agregar\nvalor àquilo que produz.\nNosso governo atuará para estimular a instalação e expansão de indústrias, priorizando\ncadeias produtivas com potencial de geração de empregos e aproveitamento das vocações\nregionais.\nAs ações incluirão:\n•\n\nmelhoria da infraestrutura dos distritos industriais;\n\n•\n\natração de novos investimentos produtivos;\n\n•\n\nincentivo à industrialização da produção agropecuária;\n\n•\n\nfortalecimento das cadeias de mineração, energias renováveis e alimentos;\n\n•\n\nintegração entre indústria, universidades e centros de pesquisa.\n\nIndustrializar significa produzir riqueza dentro do próprio Estado, aumentando a renda e\nreduzindo a dependência de outras regiões.\n\nFortalecimento do comércio e dos serviços\nO comércio é um dos principais geradores de emprego no Piauí.\nNosso governo desenvolverá políticas voltadas para ampliar a competitividade do setor,\nfortalecer os centros comerciais e incentivar o consumo local.\nEntre as iniciativas estão:\n•\n\nmelhoria da infraestrutura urbana;\n\n•\n\nsimplificação tributária;\n\n•\n\nestímulo ao comércio regional;\n\n•\n\nincentivo à realização de eventos, feiras e negócios;"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nfortalecimento do turismo como indutor da atividade comercial.\n\nTecnologia, inovação e economia do conhecimento\nO futuro do desenvolvimento econômico passa pela inovação.\nO Piauí precisa criar oportunidades para que seus talentos permaneçam no Estado,\ndesenvolvendo empresas inovadoras, startups e soluções tecnológicas.\nNosso governo estimulará a criação de um ambiente favorável à economia do\nconhecimento por meio de:\n•\n\nincentivo às startups e empresas de base tecnológica;\n\n•\n\nfortalecimento dos parques tecnológicos e centros de inovação;\n\n•\n\nampliação da conectividade digital;\n\n•\n\nincentivo à pesquisa científica aplicada;\n\n•\n\naproximação entre universidades, setor produtivo e governo;\n\n•\n\nformação de mão de obra qualificada para a economia digital.\n\nQueremos transformar o Piauí em um ambiente competitivo para inovação, atraindo\ninvestimentos de alto valor agregado e criando empregos qualificados para as novas\ngerações.\n\nNosso compromisso\nAcreditamos que o desenvolvimento econômico deve beneficiar toda a população. Nosso\ngoverno trabalhará para construir um ambiente de negócios moderno, competitivo e\ninovador, reduzindo a carga tributária, incentivando o empreendedorismo, fortalecendo a\nindústria, valorizando o comércio, ampliando o acesso ao crédito e consolidando o Piauí\ncomo referência nacional em energias renováveis e inovação.\nGerar empregos, estimular investimentos e criar oportunidades será o caminho para\nconstruir um Piauí mais próspero, competitivo e socialmente justo.\n\n4. INFRAESTRUTURA PARA DESENVOLVER O ESTADO\nInvestir em infraestrutura é investir no futuro do Piauí\nNenhum estado alcança crescimento sustentável sem uma infraestrutura moderna, segura\ne eficiente. Rodovias de qualidade, mobilidade urbana, integração logística e transporte\neficiente reduzem custos, atraem investimentos, fortalecem o turismo, impulsionam o\nagronegócio e melhoram diretamente a qualidade de vida da população."
+          },
+          {
+            "id": "o-piaui-ainda-enfrenta-gargalos-historicos-que-limitam-seu-desenvolvimen",
+            "titulo": "O Piauí ainda enfrenta gargalos históricos que limitam seu desenvolvimento. Rodovias",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "O Piauí ainda enfrenta gargalos históricos que limitam seu desenvolvimento. Rodovias\ndeterioradas, estradas de pista simples com elevado índice de acidentes,\ncongestionamentos crescentes em Teresina, baixa integração ferroviária e dificuldades\nlogísticas aumentam o custo da produção, reduzem a competitividade das empresas e\ndificultam o deslocamento diário dos cidadãos.\nNosso governo colocará a infraestrutura entre as prioridades estratégicas do Estado, com\nplanejamento de longo prazo e investimentos capazes de preparar o Piauí para as\npróximas décadas.\n\nDuplicação das rodovias estaduais\nAs rodovias são corredores de desenvolvimento. Elas conectam pessoas, cidades,\nempresas e oportunidades.\nNosso governo implantará um programa permanente de recuperação, modernização e\nduplicação das principais rodovias estaduais, priorizando os trechos com maior fluxo de\nveículos, maior número de acidentes e maior importância econômica.\nOs investimentos terão como objetivos:\n•\n\naumentar a segurança viária;\n\n•\n\nreduzir acidentes;\n\n•\n\ndiminuir o tempo de deslocamento;\n\n•\n\nfacilitar o transporte de cargas;\n\n•\n\nintegrar as regiões do Estado;\n\n•\n\nimpulsionar o desenvolvimento do turismo e do agronegócio.\n\nA infraestrutura rodoviária deixará de ser apenas manutenção corretiva para se tornar uma\npolítica permanente de desenvolvimento.\n\nMais pontes para integrar cidades e desenvolver regiões\nOs rios que cortam o Piauí devem ser instrumentos de integração, e não barreiras ao\ndesenvolvimento.\nNosso governo defenderá a construção de novas pontes estratégicas para melhorar a\nmobilidade urbana e fortalecer a integração regional.\nEntre as prioridades estão:\n•\n\nconstrução de uma ponte ligando a Avenida Raul Lopes à região da Cidade Verde,\nampliando a mobilidade da zona leste de Teresina;"
+          },
+          {
+            "id": "pagina-15",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nnovas ligações entre Piauí e Maranhão sobre o Rio Parnaíba, fortalecendo o\ncomércio, o turismo e o deslocamento diário da população;\n\n•\n\nestudos para novos corredores metropolitanos que acompanhem o crescimento\nurbano da capital.\n\nEssas obras reduzirão congestionamentos, distribuirão melhor o fluxo de veículos e\nampliarão as possibilidades de desenvolvimento regional.\n\nMobilidade urbana para uma Teresina do futuro\nO crescimento de Teresina exige soluções estruturantes.\nNosso governo elaborará um Plano Estadual de Mobilidade Urbana em parceria com o\nmunicípio e com a iniciativa privada, priorizando intervenções que aumentem a fluidez\ndo trânsito e preparem a cidade para as próximas décadas.\nEntre as principais obras previstas estão:\nElevados e viadutos\nConstrução de elevados e viadutos nos principais cruzamentos de grande fluxo da capital,\nreduzindo conflitos entre veículos e melhorando a circulação urbana.\nRebaixamentos viários\nImplantação de passagens inferiores (“rebaixamentos”) em cruzamentos críticos,\nespecialmente nos grandes corredores de tráfego, permitindo maior fluidez sem\nnecessidade de interrupções por semáforos.\nEntre os locais prioritários para estudos técnicos destacam-se:\n•\n\nAvenida Frei Serafim × Avenida Miguel Rosa;\n\n•\n\nAvenida Coelho de Resende × Avenida Frei Serafim;\n\n•\n\nAvenida Pires de Castro × Avenida Frei Serafim.\n\nEssas intervenções reduzirão congestionamentos, emissões de poluentes, tempo de\ndeslocamento e custos logísticos para empresas e trabalhadores.\n\nReestruturação do Metrô de Teresina\nO metrô de Teresina representa um patrimônio público que permanece subutilizado diante\ndas necessidades de mobilidade da população.\nNosso governo promoverá uma ampla reestruturação do sistema metroviário,\ntransformando-o em um verdadeiro eixo estruturante do transporte público metropolitano.\nAs ações compreenderão:"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nmodernização da infraestrutura existente;\n\n•\n\nampliação gradual da cobertura do sistema;\n\n•\n\nintegração tarifária com ônibus e demais modais;\n\n•\n\nmelhoria das estações;\n\n•\n\naumento da frequência das viagens;\n\n•\n\nplanejamento de futuras expansões conforme estudos de demanda.\n\nO objetivo é oferecer uma alternativa eficiente, segura e sustentável ao transporte\nindividual, reduzindo congestionamentos e melhorando a qualidade da mobilidade\nurbana.\n\nFerrovias: integrar o Piauí de Norte a Sul\nA extensão territorial do Piauí exige uma nova visão sobre transporte de cargas e\npassageiros.\nNosso governo defenderá a expansão da malha ferroviária como instrumento de\ndesenvolvimento econômico, integração regional e redução dos custos logísticos.\nAs ferrovias desempenharão papel estratégico para:\n•\n\nfacilitar o escoamento da produção agrícola;\n\n•\n\nfortalecer a mineração;\n\n•\n\nampliar a competitividade industrial;\n\n•\n\nreduzir a sobrecarga das rodovias;\n\n•\n\ndiminuir acidentes de trânsito;\n\n•\n\nestimular o transporte regional de passageiros.\n\nA integração ferroviária permitirá que o Piauí aproveite melhor sua posição estratégica\nno Nordeste brasileiro.\n\nLogística para aumentar a competitividade\nO desenvolvimento econômico depende da capacidade de transportar pessoas,\nmercadorias e serviços de maneira rápida e eficiente.\nNosso governo desenvolverá uma política integrada de logística estadual, articulando\nrodovias, ferrovias, aeroportos e centros de distribuição para reduzir custos e aumentar a\ncompetitividade das empresas piauienses.\nEntre as prioridades estão:"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nmelhoria dos acessos aos polos produtivos;\n\n•\n\nfortalecimento dos corredores logísticos do agronegócio;\n\n•\n\nintegração entre modais de transporte;\n\n•\n\nincentivo à instalação de centros de distribuição e armazenamento;\n\n•\n\napoio aos municípios estratégicos para o desenvolvimento regional.\n\nIntegração Piauí–Maranhão\nO Rio Parnaíba une dois estados que compartilham relações econômicas, sociais e\nculturais intensas.\nNosso governo atuará em cooperação com o Governo do Maranhão e com o Governo\nFederal para fortalecer a integração regional por meio de investimentos conjuntos em\ninfraestrutura.\nEssa cooperação buscará:\n•\n\nampliar a conectividade entre os dois estados;\n\n•\n\nfortalecer o comércio regional;\n\n•\n\nestimular o turismo integrado;\n\n•\n\nfacilitar o deslocamento de trabalhadores e estudantes;\n\n•\n\ncriar novos corredores de desenvolvimento econômico.\n\nA integração regional será tratada como política estratégica para ampliar oportunidades e\nfortalecer toda a região do MATOPIBA.\n\nNosso compromisso\nA infraestrutura será tratada como uma política permanente de desenvolvimento, e não\napenas como um conjunto de obras isoladas. Cada ponte construída, cada rodovia\nduplicada, cada ferrovia implantada e cada intervenção de mobilidade urbana terão um\nobjetivo comum: aproximar pessoas, reduzir desigualdades regionais, impulsionar a\neconomia e melhorar a qualidade de vida da população.\nConstruiremos um Piauí mais conectado, mais competitivo e preparado para crescer\ncom planejamento, segurança e visão de futuro.\n\n5. SEGURANÇA JURÍDICA E SERVIÇOS PÚBLICOS EFICIENTES\nO cidadão merece respeito. Os serviços públicos também precisam funcionar."
+          },
+          {
+            "id": "a-prestacao-de-servicos-publicos-essenciais-como-abastecimento-de-agua-e",
+            "titulo": "A prestação de serviços públicos essenciais, como abastecimento de água e fornecimento",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "A prestação de serviços públicos essenciais, como abastecimento de água e fornecimento\nde energia elétrica, deve ter como prioridade o interesse da população. Quando esses\nserviços falham, não são apenas números que são afetados: são famílias sem água,\ncomerciantes impossibilitados de trabalhar, hospitais vulneráveis e produtores rurais\nprejudicados.\nNos últimos anos, o Piauí conviveu com inúmeras reclamações relacionadas à qualidade\ndos serviços prestados pelas concessionárias. Interrupções frequentes, demora na\nrealização de reparos, baixa capacidade de resposta diante de emergências e dificuldades\nde atendimento ao consumidor demonstram a necessidade de uma atuação mais firme do\nEstado na fiscalização dos contratos de concessão.\nNosso compromisso é garantir que as empresas concessionárias cumpram rigorosamente\nsuas obrigações, assegurando serviços eficientes, contínuos e compatíveis com aquilo que\na população paga.\nO Governo do Estado será um defensor permanente do cidadão diante das concessionárias\nde serviços públicos.\n\nFiscalização rigorosa das concessionárias\nConcessionárias administram serviços públicos, e não podem atuar sem fiscalização\nefetiva.\nNosso governo fortalecerá a atuação do Estado no acompanhamento dos contratos de\nconcessão, exigindo o cumprimento integral das metas de qualidade, manutenção e\nexpansão previstas contratualmente.\nAs ações incluirão:\n•\n\nfiscalização permanente da prestação dos serviços;\n\n•\n\nmonitoramento dos indicadores de desempenho;\n\n•\n\ndivulgação periódica dos resultados para a sociedade;\n\n•\n\ncobrança imediata das obrigações contratuais;\n\n•\n\narticulação com agências reguladoras e órgãos de controle para garantir maior\nefetividade na fiscalização.\n\nO interesse público será sempre superior ao interesse econômico das concessionárias.\n\nÁgua de qualidade para todos os piauienses\nO acesso à água tratada é um direito fundamental e uma condição indispensável para a\nsaúde pública e o desenvolvimento."
+          },
+          {
+            "id": "nosso-governo-atuara-para-garantir-a-expansao-do-abastecimento-reduzir-i",
+            "titulo": "Nosso governo atuará para garantir a expansão do abastecimento, reduzir interrupções no",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo atuará para garantir a expansão do abastecimento, reduzir interrupções no\nfornecimento e exigir maior eficiência operacional da concessionária responsável.\nAs prioridades serão:\n•\n\nampliação da cobertura de abastecimento;\n\n•\n\nredução das perdas na distribuição;\n\n•\n\nmaior agilidade nos reparos de vazamentos;\n\n•\n\nmelhoria da qualidade do atendimento ao consumidor;\n\n•\n\nfortalecimento da infraestrutura de distribuição, especialmente nos municípios do\ninterior.\n\nNenhuma família deve conviver com a insegurança de não saber quando a água chegará\nà sua casa.\n\nEnergia elétrica confiável para desenvolver o Estado\nUma economia forte depende de energia segura e de qualidade.\nInterrupções frequentes comprometem o funcionamento de hospitais, escolas, empresas,\npropriedades rurais e residências, causando prejuízos econômicos e colocando vidas em\nrisco.\nNosso governo exigirá maior eficiência na prestação dos serviços de distribuição de\nenergia, com atenção especial às áreas rurais e aos municípios mais distantes.\nEntre as prioridades estão:\n•\n\nredução do tempo de interrupção no fornecimento;\n\n•\n\nampliação da capacidade de manutenção preventiva;\n\n•\n\nfortalecimento da rede elétrica nas regiões em expansão;\n\n•\n\nmaior rapidez no atendimento de ocorrências;\n\n•\n\nmelhoria da infraestrutura de distribuição.\n\nAlém disso, promoveremos políticas de incentivo à geração distribuída por meio da\nenergia solar, ampliando a autonomia energética do Estado e reduzindo os custos para\nfamílias e empresas.\n\nMetas públicas de qualidade e desempenho\nA população tem o direito de saber se os serviços públicos estão sendo prestados com\nqualidade."
+          },
+          {
+            "id": "nosso-governo-defendera-a-adocao-de-indicadores-publicos-de-desempenho-p",
+            "titulo": "Nosso governo defenderá a adoção de indicadores públicos de desempenho para os",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo defenderá a adoção de indicadores públicos de desempenho para os\nserviços concedidos, permitindo que a sociedade acompanhe a evolução da qualidade do\nabastecimento de água e da distribuição de energia.\nSerão acompanhados indicadores como:\n•\n\ntempo médio de interrupção dos serviços;\n\n•\n\nprazo para realização de reparos;\n\n•\n\ntempo de atendimento ao consumidor;\n\n•\n\níndice de reclamações solucionadas;\n\n•\n\nexpansão da cobertura dos serviços.\n\nA transparência será um instrumento permanente de controle social e melhoria da gestão.\n\nDefesa do consumidor como política de Estado\nO cidadão não pode enfrentar sozinho grandes empresas concessionárias.\nNosso governo fortalecerá a política estadual de defesa do consumidor, ampliando\nmecanismos de fiscalização, orientação e resolução de conflitos relacionados aos serviços\npúblicos.\nEntre as ações previstas estão:\n•\n\nfortalecimento dos órgãos estaduais de proteção ao consumidor;\n\n•\n\nampliação dos canais de atendimento e denúncia;\n\n•\n\natuação integrada entre Procon, Ministério Público, Defensoria Pública e agências\nreguladoras;\n\n•\n\ncampanhas permanentes de orientação sobre os direitos do consumidor;\n\n•\n\nacompanhamento das reclamações para identificação de problemas recorrentes.\n\nO consumidor será tratado como parte central da política pública, e não apenas como\nusuário dos serviços.\n\nSegurança jurídica para quem investe\nServiços públicos eficientes também significam previsibilidade para investidores.\nNosso governo trabalhará para fortalecer a segurança jurídica, garantindo estabilidade\nregulatória, respeito aos contratos e ambiente institucional confiável para atrair novos\ninvestimentos ao Estado."
+          },
+          {
+            "id": "uma-regulacao-firme-e-transparente-beneficia-tanto-a-populacao-quanto-os",
+            "titulo": "Uma regulação firme e transparente beneficia tanto a população quanto os",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Uma regulação firme e transparente beneficia tanto a população quanto os\nempreendedores, pois cria regras claras, reduz conflitos e aumenta a confiança nas\ninstituições.\n\nNosso compromisso\nDefendemos um Estado que cumpra seu papel de regulador com responsabilidade,\nindependência e firmeza. Água e energia são serviços essenciais e devem ser prestados\ncom qualidade, continuidade e respeito ao cidadão.\nNosso governo exigirá das concessionárias o mesmo compromisso que a população\ndemonstra ao pagar suas contas: eficiência, responsabilidade e respeito. Porque\nquem presta um serviço público deve servir, antes de tudo, ao interesse público.\n\n6. SERVIDOR VALORIZADO\nValorizar quem faz o Estado funcionar\nNenhum governo entrega bons serviços públicos sem profissionais qualificados,\nmotivados e respeitados. São os servidores que mantêm hospitais, escolas, delegacias,\nórgãos administrativos e demais serviços essenciais em funcionamento todos os dias.\nValorizar o servidor público não significa apenas reconhecer sua importância. Significa\ngarantir condições adequadas de trabalho, estabilidade institucional, formação\npermanente, carreiras estruturadas e uma política previdenciária responsável.\nNosso governo tratará o servidor como parte central da melhoria da gestão pública. Um\nEstado eficiente depende de equipes técnicas preparadas, vínculos estáveis e\nplanejamento de longo prazo.\n\nConcurso público e recomposição dos quadros\nA precarização dos vínculos e a ausência de reposição adequada comprometem a\ncontinuidade dos serviços públicos.\nNosso governo realizará concursos públicos de forma planejada, priorizando áreas\nessenciais e órgãos com maior déficit de pessoal.\nAs ações incluirão:\n•\n\nlevantamento técnico das necessidades de cada secretaria e órgão;\n\n•\n\nrealização periódica de concursos públicos;\n\n•\n\nsubstituição gradual de vínculos precários;\n\n•\n\nreposição de servidores em áreas estratégicas;"
+          },
+          {
+            "id": "pagina-22",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nplanejamento para aposentadorias e vacâncias.\n\nO objetivo será garantir continuidade, eficiência e qualidade na prestação dos serviços\npúblicos.\n\nFortalecimento do IAPEP\nO Instituto de Assistência à Saúde dos Servidores Públicos do Estado do Piauí precisa ser\nfortalecido para oferecer atendimento digno, ágil e confiável aos servidores e seus\ndependentes.\nNosso governo promoverá uma reestruturação administrativa e assistencial do IAPEP,\ncom foco em:\n•\n\nampliação da rede credenciada;\n\n•\n\nmelhoria do atendimento;\n\n•\n\nredução de atrasos e dificuldades de acesso;\n\n•\n\nmodernização dos sistemas de autorização;\n\n•\n\nmaior transparência na gestão;\n\n•\n\nequilíbrio financeiro e sustentabilidade do serviço.\n\nO servidor precisa ter segurança de que contará com assistência quando mais precisar.\n\nPrevidência estadual sustentável e transparente\nA previdência dos servidores deve ser administrada com responsabilidade, transparência\ne planejamento.\nNosso compromisso será garantir segurança aos servidores ativos, aposentados e\npensionistas, preservando direitos e buscando o equilíbrio de longo prazo do sistema.\nAs prioridades serão:\n•\n\ntransparência sobre receitas, despesas e situação atuarial;\n\n•\n\ngestão técnica e profissional;\n\n•\n\ncombate a desperdícios e irregularidades;\n\n•\n\nplanejamento previdenciário de longo prazo;\n\n•\n\ndiálogo permanente com as categorias.\n\nQualquer mudança deverá ser precedida de estudos técnicos e discussão transparente com\nos servidores."
+          },
+          {
+            "id": "capacitacao-e-desenvolvimento-profissional",
+            "titulo": "Capacitação e desenvolvimento profissional",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Capacitação e desenvolvimento profissional\nUm serviço público moderno exige atualização permanente.\nNosso governo instituirá uma política contínua de formação e capacitação dos servidores,\nalinhada às necessidades de cada área e aos objetivos estratégicos da administração\nestadual.\nSerão priorizados:\n•\n\nformação técnica;\n\n•\n\ngestão pública;\n\n•\n\ntransformação digital;\n\n•\n\natendimento ao cidadão;\n\n•\n\nliderança e planejamento;\n\n•\n\natualização profissional por área de atuação.\n\nTambém serão fortalecidas parcerias com universidades, escolas de governo e instituições\nde ensino.\nA capacitação será tratada como investimento na qualidade dos serviços, e não como\ndespesa acessória.\n\nPlanos de carreira e valorização profissional\nCarreiras desorganizadas, progressões atrasadas e ausência de critérios claros\ndesmotivam os profissionais e prejudicam o funcionamento do Estado.\nNosso governo revisará e fortalecerá os planos de cargos, carreiras e remuneração,\nrespeitando as particularidades de cada categoria e a capacidade financeira do Estado.\nAs medidas buscarão:\n•\n\nestabelecer critérios objetivos de progressão;\n\n•\n\ngarantir previsibilidade funcional;\n\n•\n\ncorrigir distorções entre cargos e carreiras;\n\n•\n\nreconhecer qualificação, experiência e desempenho;\n\n•\n\npromover diálogo permanente com as entidades representativas.\n\nA valorização deve ser justa, sustentável e baseada em regras claras."
+          },
+          {
+            "id": "melhores-condicoes-de-trabalho",
+            "titulo": "Melhores condições de trabalho",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Melhores condições de trabalho\nA qualidade do serviço público também depende da estrutura oferecida ao servidor.\nNosso governo atuará para:\n•\n\nmodernizar equipamentos e sistemas;\n\n•\n\nmelhorar ambientes de trabalho;\n\n•\n\nampliar a segurança ocupacional;\n\n•\n\nreduzir sobrecarga e adoecimento;\n\n•\n\nfortalecer ações de saúde do trabalhador.\n\nServidores com melhores condições conseguem atender melhor a população.\n\nGestão por mérito, metas e respeito\nA administração pública precisa reconhecer o bom desempenho sem transformar a\navaliação em instrumento de perseguição.\nNosso governo adotará mecanismos transparentes de acompanhamento\ndesenvolvimento profissional, com critérios objetivos e direito ao contraditório.\n\ne\n\nA avaliação será utilizada para identificar necessidades de capacitação, aprimorar equipes\ne melhorar os serviços, sempre respeitando a estabilidade, a dignidade e os direitos dos\nservidores.\n\nNosso compromisso\nO servidor público não será tratado como problema, mas como parceiro da transformação\ndo Estado. Nosso compromisso é reconstruir a confiança entre governo e funcionalismo,\nfortalecer as carreiras e criar condições para que cada profissional desempenhe sua função\ncom dignidade e eficiência.\nValorizar o servidor é melhorar a escola, fortalecer o hospital, ampliar a segurança\ne fazer o Estado funcionar melhor para toda a população.\n\n7. COMBATE À POBREZA E INCLUSÃO SOCIAL\nSuperar a pobreza por meio da oportunidade, da educação e do trabalho\nCombater a pobreza vai muito além da transferência de renda. Significa criar condições\npara que cada pessoa tenha acesso à educação, qualificação profissional, emprego,\nalimentação adequada e oportunidades para construir seu próprio futuro com dignidade."
+          },
+          {
+            "id": "nosso-governo-acredita-que-a-verdadeira-inclusao-social-acontece-quando",
+            "titulo": "Nosso governo acredita que a verdadeira inclusão social acontece quando o Estado",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo acredita que a verdadeira inclusão social acontece quando o Estado\nprotege quem mais precisa, mas também cria caminhos para que famílias conquistem\nautonomia econômica e rompam o ciclo da pobreza.\nAs políticas sociais serão desenvolvidas de forma integrada, unindo saúde, educação,\nassistência social, geração de emprego e desenvolvimento econômico, sempre com\nprioridade para as crianças, as mulheres, as pessoas com deficiência e as famílias em\nsituação de maior vulnerabilidade.\nNosso objetivo é construir um Piauí onde nenhuma criança passe fome, nenhum jovem\nfique sem oportunidades e nenhuma família seja esquecida pelo poder público.\n\nExpansão das creches e apoio à primeira infância\nOs primeiros anos de vida são decisivos para o desenvolvimento humano.\nAlém de favorecer o desenvolvimento das crianças, as creches representam uma\nimportante política de inclusão social, permitindo que mães e pais possam trabalhar ou\nbuscar qualificação profissional.\nNosso governo apoiará os municípios na ampliação da oferta de vagas em creches e\nfortalecerá programas voltados ao desenvolvimento integral da primeira infância.\nAs prioridades incluem:\n•\n\nampliação da cobertura de creches;\n\n•\n\napoio técnico e financeiro aos municípios;\n\n•\n\nfortalecimento da alimentação escolar;\n\n•\n\nintegração entre educação, saúde e assistência social;\n\n•\n\nacompanhamento do desenvolvimento infantil.\n\nInvestir na primeira infância é reduzir desigualdades desde o início da vida.\n\nTransporte como instrumento de inclusão\nA falta de transporte impede milhares de piauienses de acessar empregos, escolas,\nuniversidades e serviços públicos.\nNosso governo desenvolverá políticas para ampliar a mobilidade da população mais\nvulnerável, fortalecendo o transporte intermunicipal e apoiando iniciativas que facilitem\no acesso da população aos serviços essenciais.\nEntre as ações previstas estão:\n•\n\nmelhoria do transporte para estudantes;"
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nfortalecimento da integração entre municípios;\n\n•\n\nampliação da acessibilidade para pessoas com deficiência;\n\n•\n\napoio às regiões com maior isolamento geográfico.\n\nA distância não pode ser um obstáculo ao exercício da cidadania.\n\nSegurança alimentar\nNenhuma sociedade pode aceitar que famílias convivam com a fome.\nNosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da\nintegração entre produção agrícola, assistência social e programas de alimentação.\nAs ações compreenderão:\n•\n\nfortalecimento dos bancos de alimentos;\n\n•\n\napoio à agricultura familiar para abastecimento de programas públicos;\n\n•\n\ncombate ao desperdício de alimentos;\n\n•\n\nincentivo às cozinhas comunitárias e iniciativas solidárias;\n\n•\n\nintegração das políticas de alimentação escolar e assistência social.\n\nGarantir alimentação adequada é promover saúde, dignidade e desenvolvimento.\n\nQualificação profissional para gerar oportunidades\nO emprego é a principal política social.\nNosso governo ampliará programas de qualificação profissional alinhados às\nnecessidades do mercado de trabalho e às vocações econômicas de cada região do Estado.\nSerão priorizadas áreas como:\n•\n\nconstrução civil;\n\n•\n\ntecnologia;\n\n•\n\nenergias renováveis;\n\n•\n\nturismo;\n\n•\n\ncomércio;\n\n•\n\nindústria;\n\n•\n\nagronegócio;\n\n•\n\nsaúde;"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "•\n\neconomia criativa.\n\nTambém serão fortalecidas parcerias com universidades, institutos federais, Sistema S e\nsetor produtivo para ampliar a oferta de cursos e certificações.\nPreparar as pessoas para o mercado significa gerar renda, fortalecer a economia e reduzir\ndesigualdades.\n\nInclusão produtiva e empreendedorismo social\nNosso compromisso é transformar beneficiários de programas sociais em protagonistas\ndo próprio desenvolvimento.\nO Estado atuará para criar oportunidades de geração de renda por meio do\nempreendedorismo, do cooperativismo e da economia solidária.\nEntre as iniciativas estão:\n•\n\nincentivo ao microempreendedor individual;\n\n•\n\napoio às cooperativas de produção;\n\n•\n\nacesso facilitado ao microcrédito;\n\n•\n\ncapacitação em gestão e empreendedorismo;\n\n•\n\nincentivo ao artesanato, à agricultura familiar e aos pequenos negócios locais;\n\n•\n\napoio especial às mulheres chefes de família, jovens e pessoas com deficiência\nque desejam empreender.\n\nA inclusão produtiva será tratada como política permanente de emancipação econômica.\n\nProteção às famílias mais vulneráveis\nNosso governo fortalecerá a rede estadual de assistência social em parceria com os\nmunicípios, garantindo que as políticas públicas alcancem quem mais precisa.\nAs ações incluirão:\n•\n\nfortalecimento dos Centros de Referência de Assistência Social (CRAS) e Centros\nEspecializados (CREAS);\n\n•\n\nampliação dos programas de acolhimento e proteção social;\n\n•\n\npolíticas específicas para idosos, crianças, adolescentes e pessoas em situação de\nvulnerabilidade;\n\n•\n\nintegração entre assistência social, saúde, educação e qualificação profissional."
+          },
+          {
+            "id": "a-protecao-social-deve-ser-eficiente-humanizada-e-orientada-para-a-auton",
+            "titulo": "A proteção social deve ser eficiente, humanizada e orientada para a autonomia das",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "A proteção social deve ser eficiente, humanizada e orientada para a autonomia das\nfamílias.\n\nNosso compromisso\nA pobreza não será enfrentada apenas com políticas assistenciais, mas principalmente\ncom oportunidades. Nosso governo trabalhará para garantir que cada piauiense tenha\nacesso à educação, alimentação, qualificação profissional, transporte e condições para\nconstruir sua própria trajetória de desenvolvimento.\nNosso objetivo é um Piauí onde o Estado esteja presente para proteger quem precisa,\nmas também para abrir caminhos para que cada cidadão possa prosperar pelo seu\ntrabalho, talento e dedicação.\n\n8. GESTÃO EFICIENTE,\nRESULTADOS\n\nTRANSPARENTE\n\nE\n\nORIENTADA\n\nPARA\n\nUm Estado moderno, transparente e comprometido com resultados\nGovernar bem não significa apenas criar novos programas ou realizar grandes obras.\nSignifica administrar com planejamento, responsabilidade e eficiência, utilizando cada\nrecurso público da melhor forma possível para melhorar a vida da população.\nNosso governo será pautado pela gestão técnica, pela inovação e pela transparência. Cada\nsecretaria terá objetivos claros, metas definidas e responsabilidade pelos resultados\nentregues. O cidadão saberá como os recursos públicos estão sendo aplicados e poderá\nacompanhar, de forma transparente, o desempenho da administração estadual.\nO Estado do futuro deve ser mais simples para o cidadão, mais eficiente para quem\ntrabalha e mais rigoroso com o desperdício do dinheiro público.\nNosso compromisso é construir uma administração pública moderna, digital e focada na\nentrega de resultados.\n\nGoverno Digital\nA tecnologia deve aproximar o cidadão do Estado, reduzindo burocracias e facilitando o\nacesso aos serviços públicos.\nNosso governo promoverá uma ampla transformação digital da administração estadual,\nintegrando serviços, reduzindo documentos físicos e simplificando procedimentos\nadministrativos.\nEntre as principais iniciativas estão:\n•\n\ncriação de uma plataforma única de serviços públicos digitais;"
+          },
+          {
+            "id": "pagina-29",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "•\n\ndigitalização de processos administrativos;\n\n•\n\natendimento eletrônico para cidadãos e empresas;\n\n•\n\nintegração entre os sistemas das secretarias;\n\n•\n\nampliação da assinatura eletrônica e dos processos sem papel;\n\n•\n\nutilização de inteligência de dados para apoiar a tomada de decisões.\n\nNosso objetivo é que o cidadão resolva a maior parte de suas demandas sem precisar\nenfrentar filas ou deslocamentos desnecessários.\n\nTransparência e controle social\nA população tem o direito de conhecer como cada recurso público está sendo utilizado.\nNosso governo fortalecerá os mecanismos de transparência ativa, ampliando o acesso às\ninformações públicas e estimulando a participação da sociedade no acompanhamento da\ngestão.\nAs ações incluirão:\n•\n\nmodernização do Portal da Transparência;\n\n•\n\ndivulgação acessível dos investimentos públicos;\n\n•\n\nacompanhamento online das principais obras e programas do governo;\n\n•\n\nfortalecimento da Ouvidoria Estadual;\n\n•\n\nincentivo à participação da sociedade na avaliação dos serviços públicos.\n\nTransparência não é apenas obrigação legal; é instrumento de confiança entre governo e\npopulação.\n\nIndicadores públicos de desempenho\nO governo deve ser avaliado pelos resultados que entrega.\nNosso governo implantará um sistema estadual de indicadores de desempenho para\nacompanhar a qualidade dos serviços públicos e orientar a tomada de decisões.\nSerão monitorados indicadores relacionados à:\n•\n\nsaúde;\n\n•\n\neducação;\n\n•\n\nsegurança pública;\n\n•\n\ninfraestrutura;"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "•\n\ndesenvolvimento econômico;\n\n•\n\nassistência social;\n\n•\n\ngestão administrativa.\n\nEsses indicadores serão públicos e atualizados periodicamente, permitindo que a\nsociedade acompanhe a evolução das políticas públicas.\n\nMetas por secretaria\nCada órgão da administração estadual terá responsabilidades claramente definidas.\nSerão estabelecidas metas anuais para todas as secretarias e entidades da administração,\nalinhadas aos objetivos estratégicos do governo.\nAs metas permitirão:\n•\n\nmaior integração entre os órgãos públicos;\n\n•\n\nplanejamento baseado em resultados;\n\n•\n\nmelhor utilização dos recursos públicos;\n\n•\n\nacompanhamento permanente da execução das políticas públicas;\n\n•\n\nresponsabilização administrativa pelo cumprimento dos objetivos.\n\nO foco da gestão deixará de ser apenas o processo administrativo e passará a ser a entrega\nde resultados concretos para a população.\n\nAvaliação permanente das políticas públicas\nUma boa política pública precisa ser continuamente avaliada.\nNosso governo implantará mecanismos permanentes de monitoramento e avaliação para\nverificar a efetividade dos programas estaduais, permitindo aperfeiçoamentos constantes\ne garantindo maior eficiência na aplicação dos recursos.\nAs avaliações considerarão critérios como:\n•\n\nalcance dos objetivos;\n\n•\n\nimpacto social;\n\n•\n\ncusto-benefício;\n\n•\n\nsatisfação dos usuários;\n\n•\n\neficiência operacional."
+          },
+          {
+            "id": "programas-bem-sucedidos-serao-fortalecidos-aqueles-que-nao-produzirem-re",
+            "titulo": "Programas bem-sucedidos serão fortalecidos. Aqueles que não produzirem resultados",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Programas bem-sucedidos serão fortalecidos. Aqueles que não produzirem resultados\nserão reestruturados ou substituídos.\n\nCombate ao desperdício e eficiência do gasto público\nCada recurso economizado representa mais investimentos em saúde, educação,\ninfraestrutura e segurança.\nNosso governo adotará uma política permanente de racionalização dos gastos públicos,\neliminando desperdícios e promovendo maior eficiência administrativa.\nEntre as medidas previstas estão:\n•\n\nrevisão periódica de contratos administrativos;\n\n•\n\nfortalecimento do planejamento das compras públicas;\n\n•\n\ncentralização de aquisições estratégicas para reduzir custos;\n\n•\n\nmodernização da gestão patrimonial;\n\n•\n\nredução de despesas desnecessárias;\n\n•\n\nampliação da eficiência energética nos prédios públicos;\n\n•\n\nincentivo à sustentabilidade na administração estadual.\n\nA responsabilidade com o dinheiro público será um princípio permanente da gestão.\n\nUma cultura de inovação no serviço público\nO Estado precisa acompanhar as transformações da sociedade.\nNosso governo estimulará a inovação na administração pública, incentivando soluções\ntecnológicas, simplificação de processos e melhoria contínua dos serviços prestados à\npopulação.\nA inovação será incorporada como política permanente de governo, fortalecendo a\ncapacidade do Estado de responder aos desafios do presente e do futuro.\n\nNosso compromisso\nAcreditamos que um governo eficiente é aquele que entrega resultados, respeita o\ndinheiro do contribuinte e coloca o cidadão no centro das decisões. Nossa gestão será\nbaseada em planejamento, transparência, inovação e responsabilidade, substituindo a\ncultura da burocracia pela cultura da eficiência."
+          },
+          {
+            "id": "queremos-um-estado-que-funcione-com-a-mesma-dedicacao-que-o-povo-piauien",
+            "titulo": "Queremos um Estado que funcione com a mesma dedicação que o povo piauiense",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Queremos um Estado que funcione com a mesma dedicação que o povo piauiense\ndemonstra todos os dias: trabalhando com seriedade, responsabilidade e\ncompromisso com o futuro. Um governo que planeja, executa, presta contas e\nentrega resultados para toda a população."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "f47fc387a2af16d317ecf8e575d893b57cd3333ba04857adca58b90678201026"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "07967a16dfec7adba0c1c9343b8737842e95ae55515143fa566839743380d166"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e95c7ad1dbab59bdd14552f09e8b96f455800a45f0f28c77760784648e98d194"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "31eb09031ed59c1b9ca99f135e5f5d86e509fcfafd227235b89093cb5f1aabf9"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "6a353ee37e268d07dec153bf8d5b9dc2b318346e0d74e737684eca42f0222bfd"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ee674caa6c0727630b6ca00b0e4b5b260ed2ddc9582c5b8739eaaf7ad242bd15"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "5743db175048aee7b4ed0e9b25c6989cb223cb65311d739f3b0ef5ab9cf4e88f"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0ba486e723339cf2ecf173a9d85c13b46104244cf46e8ec7bd2c9bb6c812bc20"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "2172cb8465c90dddc4caa9d46d3d635f03351e9cadb5329a5903b539c0014887"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "b5a2fa54059354c46cdff8cee09ed571781c0374a4b34fed9384a0b793136169"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6c9cf5c971561757e5fba16121004e3da8ffed7aeeb5e9d8eebd6c9015328d26"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "749240b17c884a643174aa7ad7aa7fbd8170727acba32bce99b4ebd078857f8f"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "7b397644a30989318d387fe644fcf2447a1ed0c6a86c23b6dc4b160b33029696"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a69ce032dcf9b857ed6a052cf5cc7a2e8c6dbeb99d7ab7027b00fdc3c3e9ebf7"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "e011abf17ba537d23a39409bc262ae9b60d44f8b03fce8d9e9202b4bf7da4a58"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "ebc569ab3359eebbbfa091589a9f6a90c0061f3d215ac6c2e08af045cd57e916"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "c2a9b7f3772935390b96874f9d65fc31d4e3bcb3f719b46e40f2bbbacc29e498"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "2543853b382165c28700b99ed22af43a89e23385d1c98c672ff7aecfe58dc2e5"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "59c70e26b82886668a7d50fec6da535873aabb9ff51742a3869c3e5c23645e50"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0c236cdff349dc8d337826e055d7332088d9c0e7b044feedfaff3875734135ee"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "04a2dff14c9999ad5914bfb8aa0339b69b6c752951a4edfcface198cdbb4d280"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "62b6d8d7bb7692af2d1d456d2a8f627b8389f3f3d750d9a7d7e8657de28d31bb"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "258eb1739ea529b6bfb7ea486e66db1d9934cd7837dff67003346213a73aed27"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "a9df2cccd91c9b63db7a191046b992ef66eb1250e36f1a77cfb5e8282fcfc0d4"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "7c89c0c65eb5002e3c4b1d37e2e371d895351ba7bc996ec87b1183db208a903d"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "7601256857acd03c64f8b840831eae5e0827af2bdbd66c64659838b0265df35c"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "8de2481e530dfb76ab58c140e326e4a0c7fc1c5907e29d2c5566abd8aaa5a51e"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "35474b439cdfd70288f260b27e42b983995bce58d23b73ec93fff84e0e068ab4"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "8583e1daa9c5671be193a5cc5aee1628a68ab48c2b70d779bf70ae63cb03be28"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "865e9a543b7896a4c7a8cfc03679ad6ca473ce86708ac750a9fff329394ca234"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "52f4c9e5862173d2b58d564d7a50386d0b26e5ae16c226621efcb978c5ea6327"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "7c340de601db4876f2ac2519eba31ca5851abe1ae1b2e42068d1c191989c4116"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes. Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado. Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança. Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos. Nosso governo implantará um sistema estadual de indicadores de desempenho para acompanhar a qualidade dos serviços públicos e orientar a tomada de decisões. Nosso governo implantará um programa permanente de recuperação, modernização e duplicação das principais rodovias estaduais. Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação.",
+    "frases": [
+      {
+        "texto": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 7,
+            "trecho": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 7,
+            "trecho": "Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 8,
+            "trecho": "Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança"
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 28,
+            "trecho": "Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo implantará um sistema estadual de indicadores de desempenho para acompanhar a qualidade dos serviços públicos e orientar a tomada de decisões.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 29,
+            "trecho": "Nosso governo implantará um sistema estadual de indicadores de desempenho para acompanhar a qualidade dos serviços públicos e orientar a tomada de decisões."
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo implantará um programa permanente de recuperação, modernização e duplicação das principais rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 14,
+            "trecho": "Nosso governo implantará um programa permanente de recuperação, modernização e duplicação das principais rodovias estaduais"
+          }
+        ]
+      },
+      {
+        "texto": "Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 26,
+            "trecho": "Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "concursos-publicos",
+        "titulo": "Concursos públicos",
+        "descricao": "O programa prevê concursos públicos para fortalecer o quadro efetivo da educação estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 7,
+            "trecho": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes."
+          }
+        ]
+      },
+      {
+        "id": "ensino-tecnico",
+        "titulo": "Ensino técnico",
+        "descricao": "O programa prevê a ampliação da oferta de ensino técnico e profissionalizante.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 7,
+            "trecho": "Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado."
+          }
+        ]
+      },
+      {
+        "id": "educacao-infantil",
+        "titulo": "Educação infantil",
+        "descricao": "O programa prevê apoio aos municípios para ampliar o acesso à educação infantil.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 8,
+            "trecho": "Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança"
+          }
+        ]
+      },
+      {
+        "id": "governo-digital",
+        "titulo": "Governo digital",
+        "descricao": "O programa prevê a transformação digital da administração estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 28,
+            "trecho": "Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-alimentar",
+        "titulo": "Segurança alimentar",
+        "descricao": "O programa prevê o fortalecimento das políticas estaduais de segurança alimentar.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002544216:01",
+            "pagina": 26,
+            "trecho": "Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:11:06.047Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:13:19.146Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:1:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:2:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação praticamente literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:3:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:4:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:5:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação praticamente literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:6:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:frase:7:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem adjetivação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:concursos-publicos:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:ensino-tecnico:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:educacao-infantil:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:governo-digital:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002544216:tema:seguranca-alimentar:documentos:PI:180002544216:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002544216",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002544216:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 34068,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3109,
+          "reasoning_output_tokens": 1861
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25305,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21907,
+          "output_tokens_details": {
+            "thinking_tokens": 316
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25305,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21907,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25305,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25305
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.33973739999999997
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "634f6e74281d828b5d4a36e2da880a3482db8acbe3b2768b69c0f2262c76c173",
+    "extractedTextSha256": "de7dd43cd9ed4c6032aedc75f70b8739a44fc774de3665a779e96371378acf14",
+    "documentCount": 1,
+    "documentSetSha256": "24b0aee825732cd38cd95ab5eccebae50581b9f6bec26092b1abca18c1fbdc91",
+    "contentSha256": "ff59f6f9373484101f87530b955461503d4de038f9a5486db1d6c135510cd3e8"
+  }
+}

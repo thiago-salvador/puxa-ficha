@@ -1,0 +1,1561 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002544494",
+    "slug": "laurez-moreira",
+    "nomeUrna": "LAUREZ MOREIRA",
+    "partido": "PSD",
+    "arquivoNome": "2026TO270002544494_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002544494_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002544494:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002544494_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002544494_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "1ac0de50de41dbbbdb395973698b8a1e1d6f7913190cec2483b55aa59ad8216c",
+        "extractedTextSha256": "fef9bac886ceaf85ce6f41b8c6d0bccb481983d07a01431fa47f6f745979ec6d",
+        "paginas": 63,
+        "secoes": [
+          {
+            "id": "pra-frente-tocantins",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS"
+          },
+          {
+            "id": "pra-frente-tocantins-2",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nsumário\nCARTA AO POVO TOCANTINENSE.......................................................................................................01\nGOVERNAR PARA TRANSFORMAR..................................................................................................... 02\nOS PRINCÍPIOS DA NOSSA GESTÃO................................................................................................... 03\nOS 7 EIXOS ESTRATÉGICOS PARA TRANSFORMAR O TOCANTINS.........................................08\nEIXO I (GOVERNANÇA INOVAÇÃO E TRANSFORMAÇÃO DIGITAL). ...............................................................10\nEIXO II (DESENVOLVIMENTO ECONÔMICO, INOVAÇÃO E EMPREENDEDORISMO)..................................... 22\nEIXO III (INFRAESTRUTURA, DESENVOLVIMENTO REGIONAL, MOBILIDADE E SUSTENTABILIDADE). .......... 28\nEIXO IV (EDUCAÇÃO, CIÊNCIA, TECNOLOGIA E FORMAÇÃO PARA O FUTURO)........................................... 36\nEIXO V (SAÚDE, BEM-ESTAR E QUALIDADE DE VIDA).................................................................................... 41\nEIXO VI (SEGURANÇA PÚBLICA, JUSTIÇA E DEFESA SOCIAL)....................................................................... 45\nEIXO VII (DESENVOLVIMENTO SOCIAL, CULTURA, ESPORTE E CIDADANIA)................................................ 50\nCONSIDERAÇÕES FINAIS. ..................................................................................................................... 58\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-3",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nCarta ao povo tocantinense\nMinhas amigas e meus amigos do Tocantins,\nComecei minha vida pública ouvindo as pessoas, como vereador em Dueré. Lutei pela\ncriação do Tocantins. Fui secretário de Siqueira Campos, deputado estadual, deputado\nfederal e prefeito de Gurupi, onde transformamos a cidade.\nHoje, como vice-governador, conheço as responsabilidades de um governante. Fui\ntestado na prática quando, por decisão da Justiça, assumi o governo. Enfrentei dificuldades\ne ataques, mas atuei com responsabilidade, transparência, firmeza e equilíbrio. Fui\nisolado por não concordar com irregularidades. Tomei, como sempre, a decisão de ficar\nao lado do povo. E estou pronto para a luta.\nUma luta pelo cidadão que deseja ser visto. Por um Tocantins que deixe de ser apenas\nexportador de matérias-primas e se torne um estado industrializado e justo com sua\ngente. Que tenha um governo estável, seguro, transparente, acessível e humano. Que\nfaça da educação um exemplo, da saúde um cuidado digno e da cidadania um direito\nde todos.\nAcredito no diálogo popular e na honestidade como princípios morais. Peço que\nconheçam a minha história e escrevam comigo esta nova página para o Tocantins.\n\nLaurez Moreira\nCandidato a Governador\n\nPLANO DE GOVERNO 2027 / 2030\n\n01"
+          },
+          {
+            "id": "pra-frente-tocantins-4",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nGOVERNAR PARA TRANSFORMAR\nNossa Forma de Governar\n“OS DESAFIOS DO TOCANTINS EXIGEM MAIS DO QUE BOAS INTENÇÕES. EXIGEM\nPLANEJAMENTO, DIÁLOGO, RESPONSABILIDADE E A CAPACIDADE DE TRANSFORMAR\nCOMPROMISSOS EM RESULTADOS CONCRETOS PARA A POPULAÇÃO.”\nL AU R E Z M O R E I R A\n\nUma gestão eficiente se mede pela capacidade de melhorar a vida das\npessoas. É isso que significa governar: transformar o potencial do Tocantins\nem oportunidades para cada cidadão.\nO Tocantins reúne condições extraordinárias para viver um novo ciclo de\ndesenvolvimento. Sua localização estratégica, a força do agronegócio, o\npotencial turístico, a riqueza ambiental e, sobretudo, a capacidade de\ntrabalho do seu povo criam as bases para um futuro de prosperidade. No\nentanto, potencial não se transforma em desenvolvimento por acaso. É\npreciso planejamento, responsabilidade, capacidade de execução e\ncompromisso permanente com resultados.\nÉ com essa visão que apresentamos nossa forma de governar. Mais do\nque um conjunto de propostas, este Plano de Governo estabelece os princípios\nque orientarão cada decisão da administração estadual. São eles que darão\nunidade às políticas públicas, assegurarão a boa aplicação dos recursos\npúblicos e permitirão que o desenvolvimento alcance todas as regiões do\nEstado.\nGovernar também significa ouvir, planejar, executar, acompanhar e avaliar\ncontinuamente as ações do governo. Significa administrar com responsabilidade,\n\n02\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-5",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ntomar decisões baseadas em evidências, respeitar as instituições e manter\no cidadão no centro das políticas públicas.\nTodas as políticas públicas deste Plano serão conduzidas pelos princípios\nda inclusão, da acessibilidade e da igualdade de oportunidades, garantindo\nque o desenvolvimento do Tocantins alcance todas as pessoas, respeitando\nsuas diferentes condições e necessidades e assegurando que ninguém fique\npara trás.\nOs princípios a seguir representam os fundamentos que orientarão nossa\ngestão e estarão presentes em todos os eixos estratégicos deste Plano de\nGoverno.\n\nOs Princípios da Nossa Gestão\nGOVERNO MUNICIPALISTA\n\nO desenvolvimento do Tocantins começa nos municípios, afinal é nas\ncidades que as pessoas vivem, trabalham, estudam, empreendem e constroem\nsuas famílias. Por isso, nenhuma estratégia estadual será eficaz se não\nfortalecer a capacidade dos governos municipais de atender às necessidades\nda população.\nO Governo do Estado atuará como parceiro permanente dos 139 municípios\ntocantinenses, respeitando sua autonomia, apoiando suas prioridades e\npromovendo soluções compartilhadas que ampliem a eficiência das políticas\npúblicas.\n\nPLANO DE GOVERNO 2027 / 2030\n\n03"
+          },
+          {
+            "id": "pra-frente-tocantins-6",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nOs investimentos estaduais considerarão as diferentes realidades regionais,\nvalorizando as vocações econômicas, reduzindo desigualdades e assegurando\nque cada município tenha condições de participar do desenvolvimento do\nEstado.\nA cooperação institucional será baseada no diálogo, na assistência técnica,\nna integração entre os entes públicos e na construção de soluções conjuntas\npara desafios comuns.\nCada município importa e terá a atenção que merece.\nPLANEJAMENTO COM VISÃO DE FUTURO\n\nOs desafios do Tocantins exigem uma administração pública capaz de\nplanejar o presente sem perder de vista o futuro.\nNossa gestão adotará o planejamento estratégico como instrumento\npermanente de governo, estabelecendo objetivos claros, prioridades\ndefinidas, metas mensuráveis e acompanhamento contínuo da execução\ndas políticas públicas.\nAs decisões estratégicas serão orientadas por indicadores, evidências e\navaliação constante dos resultados, permitindo aperfeiçoar programas,\ncorrigir rumos quando necessário e garantir maior eficiência na aplicação\ndos recursos públicos.\nPlanejar significa antecipar desafios, organizar prioridades e assegurar\nque cada investimento gere benefícios concretos para a população.\n\n04\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-7",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nTRANSPARÊNCIA, INTEGRIDADE E GOVERNANÇA\n\nA confiança da sociedade é construída diariamente por meio da ética,\nda transparência e da responsabilidade na gestão pública.\nNossa administração fortalecerá a cultura da integridade, ampliará os\nmecanismos de controle interno, estimulará a transparência ativa e garantirá\nque a população tenha acesso claro às informações sobre a aplicação dos\nrecursos públicos.\nA boa governança exige processos eficientes, decisões responsáveis e\nprestação permanente de contas à sociedade. Cada ação do governo\ndeverá ser conduzida com respeito aos princípios da legalidade, da eficiência\ne do interesse público.\nDIÁLOGO E PARTICIPAÇÃO SOCIAL\n\nOs melhores resultados são construídos quando governo e sociedade\ntrabalham juntos.\nNossa gestão manterá diálogo permanente com municípios, Poderes\nconstituídos, setor produtivo, universidades, organizações da sociedade civil\ne demais instituições, fortalecendo uma cultura de cooperação e construção\ncoletiva das políticas públicas.\nOuvir a população, valorizar diferentes perspectivas e estimular a\nparticipação social permitirá que as decisões governamentais sejam mais\nlegítimas, mais eficientes e mais próximas das necessidades reais dos\ntocantinenses.\n\nPLANO DE GOVERNO 2027 / 2030\n\n05"
+          },
+          {
+            "id": "pra-frente-tocantins-8",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nINOVAÇÃO E TRANSFORMAÇÃO DIGITAL\n\nA inovação será uma ferramenta permanente para tornar o Estado mais\neficiente, mais moderno e mais próximo das pessoas.\nA transformação digital da administração pública buscará simplificar\nprocedimentos, reduzir burocracias, integrar sistemas, ampliar a\ninteroperabilidade entre os órgãos estaduais e facilitar o acesso da população\naos serviços públicos.\nA utilização inteligente da tecnologia contribuirá para melhorar a qualidade\ndo atendimento, reduzir custos administrativos, aumentar a eficiência da\ngestão e oferecer respostas mais rápidas às demandas dos cidadãos e das\nempresas.\nModernizar o Estado significa facilitar a vida das pessoas.\nRESPONSABILIDADE FISCAL E DESENVOLVIMENTO SUSTENTÁVEL\n\nO equilíbrio das contas públicas será tratado como condição essencial\npara garantir investimentos, ampliar a capacidade do Estado de executar\npolíticas públicas e manter a confiança da sociedade e dos investidores.\nNossa gestão adotará uma administração responsável dos recursos\npúblicos, buscando eficiência nos gastos, qualidade do investimento e\nsustentabilidade financeira.\nTodas as políticas públicas serão orientadas pelos princípios da\nsustentabilidade, alinhadas aos Objetivos de Desenvolvimento Sustentável\n(ODS) da Agenda 2030, conciliando desenvolvimento econômico, justiça\nsocial, responsabilidade ambiental e boa governança. Esse alinhamento\n\n06\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-9",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nservirá como referência para o planejamento e a integração das ações\ngovernamentais, sempre respeitando as prioridades e as necessidades do\nTocantins.\nO desenvolvimento econômico caminhará ao lado da preservação\nambiental, da valorização das potencialidades regionais e do uso responsável\ndos recursos naturais, assegurando que crescimento e conservação avancem\nde forma integrada e produzam benefícios duradouros para as atuais e\nfuturas gerações.\nGESTÃO ORIENTADA PARA RESULTADOS\n\nCada programa, cada obra e cada investimento deverão produzir benefícios\nconcretos para a população.\nNossa administração fortalecerá uma cultura de gestão orientada por\nresultados, com monitoramento permanente, avaliação de desempenho,\nmelhoria contínua dos serviços públicos e compromisso com a entrega\nefetiva das políticas governamentais.\nOs resultados obtidos orientarão o aperfeiçoamento contínuo das políticas\npúblicas, fortalecendo a capacidade do Estado de aprender com a\nexperiência, corrigir rumos quando necessário e ampliar a efetividade das\nações governamentais.\nO sucesso da gestão será medido pela capacidade de reduzir desigualdades,\nampliar oportunidades, melhorar a qualidade dos serviços públicos e\npromover o desenvolvimento em todas as regiões do Estado.\nUma gestão eficiente não se mede pelo número de ações realizadas, mas\npela capacidade de melhorar a vida das pessoas.\nPLANO DE GOVERNO 2027 / 2030\n\n07"
+          },
+          {
+            "id": "pra-frente-tocantins-10",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nOS 7 EIXOS ESTRATÉGICOS PARA TRANSFORMAR\nO TOCANTINS\nO Plano de Governo 2027–2030 está organizado em sete eixos estratégicos\nque estruturam uma visão integrada de desenvolvimento para o Tocantins.\nCada eixo reúne prioridades voltadas ao fortalecimento da economia, da\nqualidade de vida da população, da infraestrutura, da gestão pública e das\ninstituições, formando um conjunto de políticas públicas articuladas e\norientadas para resultados.\nEmbora apresentados de forma individual, os sete eixos são complementares\ne interdependentes. O desenvolvimento econômico gera oportunidades; a\neducação prepara as pessoas para o futuro; a saúde promove qualidade\nde vida; a segurança fortalece a cidadania; a infraestrutura integra regiões\ne amplia a competitividade; o desenvolvimento social reduz desigualdades;\ne a governança assegura que todas essas políticas sejam planejadas,\nexecutadas e avaliadas com eficiência, transparência e responsabilidade.\nMais do que um conjunto de capítulos, os sete eixos representam uma\nestratégia única de governo, construída para que cada política pública\nfortaleça as demais e contribua para um objetivo comum: construir um\nTocantins mais próspero, justo, seguro, sustentável, inovador e humano.\n\n08\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-11",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPLANO DE GOVERNO 2027 / 2030\n\nPODE CONFIAR!\n\n09"
+          },
+          {
+            "id": "pra-frente-tocantins-12",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nEIXO I\nGovernança, Inovação e Transformação Digital\n“GOVERNAR BEM SIGNIFICA UTILIZAR CADA CENTAVO DOS RECURSOS PÚBLICOS\nCOM RESPONSABILIDADE, TRANSPARÊNCIA E EFICIÊNCIA. NOSSO COMPROMISSO É\nCONSTRUIR UM ESTADO MODERNO, DIGITAL, INOVADOR E PRÓXIMO DAS PESSOAS,\nQUE SIMPLIFIQUE A VIDA DO CIDADÃO, OFEREÇA SERVIÇOS PÚBLICOS CADA VEZ\nMELHORES E FORTALEÇA A CONFIANÇA DA SOCIEDADE NAS INSTITUIÇÕES.”\nL AU R E Z M O R E I R A\n\nO desenvolvimento sustentável do Tocantins depende de uma administração\npública moderna, inovadora, eficiente e comprometida com resultados. A\nboa governança, a inovação e a transformação digital serão os pilares da\nmodernização do Estado, promovendo serviços públicos mais ágeis,\ntransparentes, acessíveis, integrados e centrados nas necessidades da\npopulação.\nOs avanços tecnológicos, as novas demandas da sociedade e a necessidade\nde maior eficiência na aplicação dos recursos públicos exigem uma gestão\norientada por dados, planejamento estratégico, inovação permanente,\ngestão de riscos e melhoria contínua da qualidade dos serviços públicos.\nA transformação digital deverá evoluir de um modelo baseado apenas\nna disponibilização de serviços eletrônicos para um Estado integrado,\norientado por dados e capaz de oferecer serviços cada vez mais proativos,\nantecipando necessidades e facilitando o acesso da população aos seus\ndireitos e às políticas públicas.\nNesse sentido, a transformação digital será um dos principais instrumentos\npara integrar os órgãos estaduais, fortalecer a interoperabilidade entre\n\n10\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-13",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nsistemas, simplificar processos administrativos, ampliar a oferta de serviços\npúblicos digitais e utilizar, de forma ética, segura e responsável, tecnologias\ninovadoras, incluindo soluções baseadas em Inteligência Artificial, para\naprimorar a gestão pública e a experiência do cidadão.\nNosso compromisso é consolidar uma administração pública inovadora,\ntransparente, digital e orientada por resultados, fundamentada nos princípios\nda boa governança, da responsabilidade fiscal, da integridade e da melhoria\ncontínua dos serviços públicos, fortalecendo as instituições e ampliando a\nconfiança da sociedade no Estado.\nPRIORIDADES DE GOVERNO\n\nPolítica Estadual de Transformação Digital\n• • Instituir a Política Estadual de Transformação Digital como estratégia permanente\n\nde modernização da administração pública.\n• • Implantar plataformas de participação social, permitindo que o cidadão contribua\n\ncom decisões e acompanhe políticas públicas.\n• • Estruturar uma arquitetura digital de Governo como Plataforma, com padrões e\n\nsoluções compartilhadas que reduzam a fragmentação, a duplicidade de sistemas\ne os custos administrativos.\n• • Construir um Estado Inteligente, integrado, inovador e orientado por dados,\n\nfortalecendo a eficiência da gestão pública.\n• • Integrar sistemas, bases de dados e processos da administração pública direta e\n\nindireta, promovendo interoperabilidade e compartilhamento seguro de informações.\n• • Disponibilizar, progressivamente, os serviços públicos em formato digital por meio\n\nde uma plataforma única de atendimento ao cidadão, promovendo a simplificação\ndos processos e adotando o princípio da coleta única de informações, de modo\na evitar a solicitação de dados ou documentos já disponíveis na administração\npública, observada a legislação vigente.\n\nPLANO DE GOVERNO 2027 / 2030\n\n11"
+          },
+          {
+            "id": "pra-frente-tocantins-14",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Promover políticas permanentes de desburocratização e simplificação administrativa,\n\nreduzindo etapas, exigências e tempo de atendimento.\n• • Fortalecer a governança digital, a segurança da informação, a proteção de\n\ndados e a infraestrutura tecnológica do Estado.\n• • Instituir diretrizes para a adoção ética, segura e responsável de soluções baseadas\n\nem Inteligência Artificial na administração pública, visando ampliar a eficiência da\ngestão, apoiar a tomada de decisões e aprimorar os serviços prestados à população.\n\nGestão Pública e Inovação\n• • Modernizar os processos administrativos com foco na eficiência, inovação e\n\nqualidade dos serviços públicos.\n• • Fortalecer o planejamento estratégico e a gestão orientada por resultados.\n• • Incentivar soluções inovadoras e o uso de dados e evidências na formulação,\n\nexecução, monitoramento e avaliação das políticas públicas.\n• • Estimular a cultura da inovação da melhoria contínua e da gestão por resultados\n\nem toda a administração estadual.\n• • Incentivar parcerias com universidades, centros de pesquisa, setor produtivo e\n\necossistemas de inovação, incluindo iniciativas GovTech e projetos-piloto, para\ndesenvolver e testar soluções aplicadas à gestão pública.\n• • Estruturar ambientes e laboratórios de inovação pública para identificar problemas,\n\ndesenvolver, testar e disseminar soluções voltadas à melhoria da gestão e dos\nserviços públicos.\n• • Apoiar os 139 municípios tocantinenses na modernização administrativa e na\n\ntransformação digital, promovendo o compartilhamento de soluções, conhecimentos\ne experiências, respeitada a autonomia municipal.\n\nTransparência, Integridade e Controle\n• • Fortalecer os mecanismos de transparência ativa e ampliar o acesso às informações\n\npúblicas.\n• • Incentivar a política estadual de dados abertos, ampliando a transparência, a\n\ninovação, o controle social e o uso responsável das informações públicas, observada\na legislação vigente.\n\n12\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-15",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Aperfeiçoar as políticas de integridade, ética e prevenção à corrupção.\n• • Reforçar os sistemas de controle interno, auditoria e governança.\n• • Incentivar a participação da sociedade no acompanhamento e na avaliação\n\ndas políticas públicas.\n\nValorização dos Servidores Públicos\n• • Investir na capacitação permanente e no desenvolvimento profissional dos\n\nservidores, fortalecendo competências digitais, inovação, liderança e gestão\npública.\n• • Preparar os servidores para os desafios da transformação digital, incluindo o uso\n\nresponsável de dados, automação e Inteligência Artificial.\n• • Modernizar as políticas de gestão de pessoas.\n• • Promover ações voltadas à saúde, qualidade de vida e valorização do serviço\n\npúblico.\n• • Incentivar a inovação, o mérito e o reconhecimento de boas práticas na\n\nadministração estadual.\n\nServiços Públicos Digitais e Atendimento ao Cidadão\n• • Ampliar os canais digitais de atendimento ao cidadão e implantar atendimento\n\nmulticanal integrado, garantindo mais rapidez, acessibilidade e eficiência na\nprestação dos serviços públicos.\n• • Assegurar que os serviços públicos sejam simples, intuitivos, acessíveis, seguros\n\ne centrados nas necessidades da população.\n• • Integrar serviços públicos a partir das necessidades e jornadas dos cidadãos\n\ne das empresas, buscando oferecer serviços cada vez mais proativos e reduzir\nsolicitações e procedimentos desnecessários.\n• • Estabelecer mecanismos de avaliação da qualidade e da satisfação dos usuários,\n\nutilizando os resultados para promover a melhoria contínua dos serviços públicos.\n• • Fortalecer os mecanismos digitais de participação social e relacionamento entre\n\no cidadão e o Estado.\n\nPLANO DE GOVERNO 2027 / 2030\n\n13"
+          },
+          {
+            "id": "pra-frente-tocantins-16",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nPlanejamento Estratégico e Desenvolvimento Institucional\n• • Fortalecer a cultura do planejamento governamental de longo prazo.\n• • Promover gestão fiscal responsável, transparente e sustentável.\n• • Aperfeiçoar o monitoramento e a avaliação das políticas públicas com base em\n\nindicadores de desempenho, evidências e avaliação de resultados e impactos.\n• • Fortalecer o acompanhamento das prioridades estratégicas do Governo,\n\npermitindo identificar riscos, atrasos e necessidades de correção de rumo.\n• • Priorizar investimentos estratégicos voltados à modernização da administração\n\npública e à melhoria contínua dos serviços públicos.\n\nGOVERNANÇA DO PLANO DE GOVERNO\n“UM GOVERNO EFICIENTE É AQUELE QUE TRANSFORMA PLANEJAMENTO EM\nRESULTADOS E RESULTADOS EM QUALIDADE DE VIDA PARA AS PESSOAS.”\nL AU R E Z M O R E I R A\n\nO Plano de Governo 2027–2030 foi concebido para orientar a atuação\nda administração pública estadual de forma integrada, organizada e\nalinhada às necessidades da sociedade tocantinense. Sua implementação\ndependerá de uma governança eficiente, capaz de transformar diretrizes\nestratégicas em programas, projetos e ações concretas.\nPara isso, será adotado um modelo de gestão baseado no planejamento\nestratégico, na integração entre os órgãos estaduais, na definição de\nprioridades, no acompanhamento contínuo das ações e na avaliação\npermanente dos resultados. Essa abordagem permitirá maior eficiência na\naplicação dos recursos públicos, fortalecerá a capacidade institucional do\nEstado e ampliará a transparência na execução das políticas públicas.\n\n14\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-17",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nA governança do Plano também estará fundamentada na inovação, no\nuso de dados para apoiar a tomada de decisões e na participação da\nsociedade, fortalecendo uma gestão pública moderna, responsável e\ncomprometida com a entrega de resultados que promovam o desenvolvimento\nsustentável do Tocantins. A adoção de indicadores de desempenho e\nmecanismos permanentes de monitoramento permitirá acompanhar a\nexecução das ações, avaliar seus resultados e promover os ajustes necessários\nao cumprimento dos objetivos estabelecidos neste Plano.\nPRINCÍPIOS DA GOVERNANÇA DO PLANO\n\nA implementação deste Plano de Governo será orientada pelos seguintes\nprincípios:\n• • Planejamento estratégico como instrumento permanente de gestão;\n• • Integração entre órgãos e instituições, promovendo atuação coordenada e\n\ncolaborativa;\n• • Gestão orientada por resultados, com foco na efetividade das políticas públicas;\n• • Monitoramento e avaliação contínua das ações governamentais;\n• • Eficiência e responsabilidade na gestão dos recursos públicos;\n• • Transparência e prestação de contas, fortalecendo o controle social;\n• • Participação social, valorizando o diálogo permanente com a população.\n\nImplementação e Monitoramento\nA execução deste Plano ocorrerá de forma integrada entre os órgãos e\nentidades da administração pública estadual, mediante o desdobramento\ndas diretrizes estratégicas em programas, projetos e ações governamentais.\nO acompanhamento da implementação será realizado por meio de\nPLANO DE GOVERNO 2027 / 2030\n\n15"
+          },
+          {
+            "id": "pra-frente-tocantins-18",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nindicadores de desempenho, metas e mecanismos permanentes de\nmonitoramento, permitindo avaliar a execução das políticas públicas,\nidentificar oportunidades de melhoria e promover os ajustes necessários\nao alcance dos objetivos estabelecidos.\nEsse processo contribuirá para fortalecer a gestão pública, ampliar a\ntransparência, aperfeiçoar a tomada de decisões e assegurar que os\ncompromissos assumidos neste Plano sejam efetivamente transformados\nem resultados para a população tocantinense.\nALINHAMENTO AOS OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL\n\nOs Objetivos de Desenvolvimento Sustentável (ODS), estabelecidos pela\nAgenda 2030 da Organização das Nações Unidas (ONU), constituem uma\nreferência internacional para a promoção do desenvolvimento econômico,\nsocial e ambiental de forma integrada e sustentável.\nO Plano de Governo 2027–2030 está alinhado a esses objetivos, incorporando\nseus princípios às diretrizes, prioridades e ações previstas nos sete eixos\nestratégicos. Esse alinhamento reforça o compromisso com uma gestão\npública responsável, inovadora, transparente e orientada para resultados,\ncontribuindo para a redução das desigualdades, a promoção da inclusão\nsocial, o fortalecimento da economia, a preservação ambiental e a melhoria\nda qualidade de vida da população tocantinense.\nAo orientar a formulação e a execução das políticas públicas, os ODS\nservirão como referência para o acompanhamento dos resultados e para\na construção de um Tocantins mais próspero, sustentável e preparado para\nos desafios das próximas gerações.\n\n16\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "2027-2030",
+            "titulo": "2027 - 2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "ocr",
+            "conteudo": "2027 - 2030\nPODE CONFIAR!\nELE SABE TRABALHAR!\nFLUXO\nDA GOVERNANÇA\nDO PLANO\nDE GOVERNO\nUm ciclo contínuo que transforma planejamento\nem resultados concretos para a população tocantinense.\nPLANO\nPLANEJAMENTO\nde futuro, diretrizes e\nEstabelecimento da visão\nprioridades,\nDefinição de\nobjetivos estratégicos.\nmetas, indicadores,\ne responsáveis.\nrecursos,\nPROGRAMAS\nEXECUÇÃO\ndiretrizes\nDesdobramento das\nImplementação das\nem programas,\nações\nintegradas.\nprojetos e ações\nentidades\npelos os orgãos e\ndo Governo do estado.\nMONITORAMENTO\nAVALIAÇÃO\ncontinuo\nAcompanhamento\nAnálise dos resultados\nda execução por meio\nalcançados e dos\nsistemas.\nde indicadores e\nimpactos das políticas\npúblicas.\nMELHORIA\nRESULTADOS\noportunidades de\nIdentificação de\npúblico.\nGeração de valor\ndefinição de ajustes.\naperfeiçoamento e\nmelhorias da qualidade\ndesenvolvimento do\nde vida e\nTocantins.\nA PARTICIPAÇÃO SOCIAL E A TRANSPARÊNCIA EM TODO CICLO\nA sociedade acompanhando, contribuindo e fiscalizando\nPlanejar • Executar • Monitorar • Avaliar • Melhorar • Entregar resultados\nGovernança que transforma compromissos\nem qualidade de vida para todos os tocantinenses."
+          },
+          {
+            "id": "pra-frente-tocantins-19",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nTOCANTINS 2030\nUma Visão de Futuro\n“O FUTURO É CONSTRUÍDO PELAS ESCOLHAS QUE FAZEMOS HOJE E PELO\nCOMPROMISSO QUE ASSUMIMOS COM AS PRÓXIMAS GERAÇÕES.”\nL AU R E Z M O R E I R A\n\nO futuro do Tocantins começa com as decisões que tomamos hoje. Mais\ndo que responder aos desafios do presente, este Plano de Governo estabelece\numa visão de longo prazo para construir um Estado mais desenvolvido, justo,\ninovador e preparado para as transformações das próximas décadas.\nA visão Tocantins 2030 representa o compromisso de promover um\ndesenvolvimento equilibrado, capaz de gerar oportunidades, fortalecer a\neconomia, reduzir desigualdades, preservar o patrimônio ambiental e\noferecer serviços públicos cada vez mais eficientes e acessíveis à população.\nNosso objetivo é construir um Estado que cresça de forma sustentável,\nvalorizando suas pessoas, suas potencialidades e suas riquezas naturais. Um\nTocantins que inspire confiança, atraia investimentos, fortaleça suas\ninstituições e ofereça melhores condições de vida para todos os cidadãos,\nindependentemente da região onde vivem.\nEssa visão de futuro orienta todas as propostas apresentadas neste Plano\nde Governo e servirá como referência para o planejamento, a execução, o\nmonitoramento e a avaliação das políticas públicas, reafirmando o\ncompromisso com uma gestão pública moderna, transparente, inovadora\ne comprometida com resultados que promovam o desenvolvimento e o\nbem-estar da população tocantinense.\n\n18\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-20",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nDESENVOLVIMENTO QUE GERA OPORTUNIDADES\n\nEm 2030, queremos um Tocantins reconhecido por sua capacidade de\ntransformar potencial em prosperidade. Um Estado que tenha consolidado\num ambiente favorável aos investimentos, ao empreendedorismo, à inovação\ne à geração de empregos, aproveitando plenamente suas vocações\neconômicas e promovendo desenvolvimento em todas as regiões.\nMais do que ampliar indicadores econômicos, queremos que o crescimento\nseja percebido no cotidiano das pessoas. O desenvolvimento deverá fortalecer\nos municípios, estimular novos negócios, ampliar oportunidades para os\njovens, incentivar a produção local e criar um ambiente seguro e competitivo\npara quem deseja investir, produzir e empreender.\nEsse desenvolvimento deverá alcançar todas as regiões do Estado,\nrespeitando suas vocações, reduzindo desigualdades regionais e fortalecendo\no protagonismo dos municípios como agentes do desenvolvimento sustentável.\nPESSOAS NO CENTRO DAS DECISÕES\n\nO desenvolvimento somente terá sentido se melhorar a vida das pessoas.\nTodas as políticas públicas propostas neste Plano têm como finalidade\nampliar oportunidades, reduzir desigualdades e garantir que o crescimento\ndo Estado seja acompanhado de inclusão social, qualidade de vida e respeito\nà dignidade humana.\nEm 2030, queremos um Tocantins onde crianças tenham acesso a uma\neducação de qualidade, jovens encontrem oportunidades para estudar e\ntrabalhar, famílias contem com serviços públicos eficientes e pessoas idosas\nsejam valorizadas e cuidadas. Um Estado que promova saúde, segurança,\nPLANO DE GOVERNO 2027 / 2030\n\n19"
+          },
+          {
+            "id": "pra-frente-tocantins-21",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ncultura, esporte, assistência social e cidadania como direitos fundamentais\npara todos.\nAs decisões governamentais serão orientadas pelas necessidades da\npopulação, priorizando políticas públicas capazes de produzir resultados\nconcretos e melhorar a vida das pessoas em todas as regiões do Estado. O\ndesenvolvimento humano continuará sendo o principal indicador do sucesso\nda gestão pública.\nUM ESTADO MODERNO, CONECTADO E EFICIENTE\n\nO Tocantins do futuro exige uma administração pública preparada para\nresponder aos desafios de uma sociedade cada vez mais dinâmica, conectada\ne inovadora. Modernizar o Estado significa simplificar processos, integrar\ninstituições, ampliar a transformação digital e oferecer serviços públicos\ncada vez mais eficientes, acessíveis e centrados no cidadão.\nEm 2030, queremos um governo reconhecido pela eficiência da gestão,\npela inovação, pela transparência e pela utilização inteligente da tecnologia\npara apoiar a tomada de decisões e melhorar a prestação dos serviços\npúblicos.\nA transformação digital, a integração entre os órgãos estaduais, a utilização\nde dados e indicadores, a inovação permanente e a gestão orientada por\nresultados serão instrumentos fundamentais para fortalecer a capacidade\ninstitucional do Estado, aumentar a eficiência administrativa e ampliar a\nconfiança da sociedade nas instituições públicas.\n\n20\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-22",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nCRESCIMENTO COM RESPONSABILIDADE\n\nConstruir o futuro exige equilíbrio entre desenvolvimento, responsabilidade\ne sustentabilidade. O progresso que buscamos deve gerar benefícios\npermanentes para a sociedade, preservando as riquezas naturais do Tocantins\ne assegurando oportunidades para as futuras gerações.\nEm 2030, queremos um Estado reconhecido pela capacidade de conciliar\ncrescimento econômico, conservação ambiental e responsabilidade na\ngestão dos recursos públicos. Um Estado que valorize seus biomas, incentive\npráticas sustentáveis e transforme seu patrimônio natural em vantagem\ncompetitiva para o desenvolvimento.\nDa mesma forma, fortalecer a responsabilidade fiscal, o planejamento\nde longo prazo e a eficiência administrativa será essencial para garantir\ninvestimentos consistentes, ampliar a capacidade do Estado e assegurar\nque as políticas públicas produzam resultados duradouros.\nCrescer de forma responsável significa assegurar que o desenvolvimento\neconômico caminhe lado a lado com a responsabilidade fiscal, a inovação,\na inclusão social e a preservação ambiental, garantindo prosperidade para\nas atuais e futuras gerações.\nUM FUTURO CONSTRUÍDO POR TODOS\n\nNenhuma transformação verdadeira é resultado da ação isolada de um\ngoverno. O desenvolvimento do Tocantins dependerá da união de esforços\nentre Estado, municípios, setor produtivo, universidades, organizações da\nsociedade civil e cidadãos, todos comprometidos com um mesmo propósito:\nconstruir um futuro melhor para as atuais e as próximas gerações.\nPLANO DE GOVERNO 2027 / 2030\n\n21"
+          },
+          {
+            "id": "pra-frente-tocantins-23",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nEm 2030, queremos um Tocantins reconhecido não apenas pelos seus\nindicadores econômicos, mas também pela confiança de sua população,\npela força de suas instituições e pela capacidade de transformar desafios\nem oportunidades. Um Estado que inspire orgulho aos tocantinenses e seja\nreferência nacional em desenvolvimento, inovação, sustentabilidade e\nqualidade da gestão pública.\nEste Plano de Governo representa mais do que um conjunto de propostas\npara um mandato. Ele expressa um compromisso com um projeto de Estado,\nbaseado no planejamento, na responsabilidade, na inovação e na valorização\ndas pessoas. Um compromisso de governar olhando para o futuro, sem\nperder de vista as necessidades do presente.\nO Tocantins de 2030 não será resultado do acaso. Será fruto de planejamento,\nresponsabilidade, diálogo e trabalho. Mais do que um horizonte distante,\nrepresenta um compromisso assumido desde o primeiro dia de governo:\nconstruir um Estado que gere oportunidades, valorize as pessoas, fortaleça\nseus municípios, preserve suas riquezas naturais e prepare as futuras gerações\npara um futuro de desenvolvimento, inovação e prosperidade compartilhada.\nÉ essa a visão que orienta este Plano de Governo e inspira o compromisso\nde trabalhar, todos os dias, para construir um Tocantins mais próspero, justo,\ninovador, sustentável e preparado para oferecer oportunidades e qualidade\nde vida às presentes e futuras gerações.\n\n22\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-24",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nEIXO II\nDesenvolvimento Econômico, Inovação e\nEmpreendedorismo\n\"DESENVOLVIMENTO NÃO É APENAS FAZER A ECONOMIA CRESCER. É CRIAR OPORTUNIDADES,\nREDUZIR DESIGUALDADES E MELHORAR A VIDA DAS PESSOAS EM CADA MUNICÍPIO DO TOCANTINS. É\nTRANSFORMAR O POTENCIAL DO NOSSO ESTADO EM PROSPERIDADE COMPARTILHADA PARA TODOS.\"\nL AU R E Z M O R E I R A\n\nO Tocantins reúne condições únicas para liderar um novo ciclo de\ndesenvolvimento no Brasil. Sua localização estratégica, a força do agronegócio,\no potencial da agricultura familiar, a riqueza de seus recursos naturais, a\ndisponibilidade de energia, a diversidade de suas vocações regionais e o\nespírito empreendedor de seu povo formam uma base sólida para ampliar\noportunidades, atrair investimentos e promover um crescimento sustentável.\nNosso compromisso é construir uma economia mais dinâmica, inovadora,\ncompetitiva e inclusiva, capaz de gerar emprego, renda e prosperidade\npara toda a população. O Governo atuará como parceiro de quem produz,\nempreende, investe e trabalha, criando um ambiente favorável aos negócios,\nfortalecendo a infraestrutura econômica, estimulando a inovação, agregando\nvalor à produção tocantinense e ampliando as oportunidades de\ndesenvolvimento em todas as regiões do Estado.\nEsse desenvolvimento será construído de forma equilibrada e sustentável,\nintegrando agronegócio, agricultura familiar, cooperativismo, indústria,\ncomércio, serviços, turismo, ciência, tecnologia e economia criativa. Em\nparceria com os municípios, o setor produtivo, as universidades, os institutos\nde pesquisa, as cooperativas e a sociedade civil, o Tocantins consolidará\nPLANO DE GOVERNO 2027 / 2030\n\n23"
+          },
+          {
+            "id": "pra-frente-tocantins-25",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\numa economia moderna, resiliente e preparada para os desafios e\noportunidades das próximas décadas, transformando seu potencial em\ndesenvolvimento, oportunidades e qualidade de vida para a população.\nPRIORIDADES DE GOVERNO\n\nAmbiente de Negócios e Competitividade\n• • Fortalecer ambiente de negócios moderno, transparente, seguro e competitivo,\n\nampliando a confiança dos investidores e impulsionando o desenvolvimento\neconômico do Tocantins.\n• • Organizar, por meio da FAPTO, SEPLAN, SIC e Gabinete do Governador, um banco\n\nde projetos e oportunidades que mostre o potencial econômico do Tocantins e\najude a atrair novos investimentos para o Estado, com apresentação em feiras\nnacionais e internacionais e junto a instituições de fomento.\n• • Simplificar processos administrativos, reduzindo a burocracia por meio da\n\ntransformação digital, da integração dos serviços públicos e da modernização dos\nprocedimentos, promovendo maior eficiência na relação entre o poder público,\ncidadãos e empresas.\n• • Estimular a diversificação da economia, agregando valor à produção tocantinense,\n\nfortalecendo cadeias produtivas e impulsionando setores estratégicos intensivos\nem inovação, tecnologia e economia criativa.\n• • Estruturar políticas de atração de investimentos voltadas aos setores estratégicos,\n\nampliando a geração de emprego, renda e desenvolvimento regional.\n• • Integrar economicamente as diferentes regiões do Estado, valorizando as\n\npotencialidades de cada município e estimulando a formação de polos regionais\nde desenvolvimento.\n• • Ampliar parcerias entre o poder público, a iniciativa privada, instituições de\n\npesquisa e organismos de fomento para impulsionar projetos estruturantes de\ninteresse econômico e social.\n• • Aprimorar o ambiente regulatório estadual, promovendo maior segurança\n\njurídica, previsibilidade e estabilidade institucional, fortalecendo a confiança dos\ninvestidores e estimulando novos empreendimentos.\n\n24\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-26",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Reduzir burocracia, certificações redundantes, barreiras digitais e entraves\n\nlogísticos às pequenas e médias empresas (PMEs).\n• • Fortalecer a pesca e a aquicultura no Tocantins, aproveitando o potencial do\n\nEstado para gerar emprego, renda e novas oportunidades, com atenção especial\naos pequenos produtores, piscicultores familiares, pescadores artesanais, colônias,\nassociações e cooperativas.\n\nAgronegócio, Agricultura Familiar, Cooperativismo e Agroindustrialização\n\n• • Fortalecer o agronegócio como um dos principais motores do desenvolvimento\n\neconômico do Tocantins, incentivando a produtividade, a inovação, a sustentabilidade\ne a competitividade das cadeias produtivas.\n• • Criar programa de agroindustrialização, processamento de grãos e serviços\n\ntecnológicos para cadeias competitivas, porque o agronegócio cresce, mas o\nestado ainda agrega pouco valor ao produto primário.\n• • Valorizar a agricultura familiar por meio da ampliação da assistência técnica,\n\ndo acesso à tecnologia, ao crédito, da organização da produção e da abertura\nde novos mercados.\n• • Estimular o cooperativismo e o associativismo como instrumentos de fortalecimento\n\nda produção, inclusão produtiva, agregação de valor e geração de emprego e\nrenda.\n• • Expandir assistência técnica e extensão rural, crédito e compras públicas para\nPLANO DE GOVERNO 2027 / 2030\n\n25"
+          },
+          {
+            "id": "pra-frente-tocantins-27",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ncooperativas rurais, porque elas promovem educação, democratizam acesso ao\ncrédito e sustentam desenvolvimento social, político e econômico.\n• • Ampliar a agroindustrialização e a agregação de valor à produção rural, fortalecendo\n\npequenos, médios e grandes produtores, estimulando a industrialização no campo\ne impulsionando o desenvolvimento das economias locais.\n• • Priorizar a regularização fundiária para agricultura familiar, combinada com\n\nassistência técnica e extensão rural, crédito e participação de mulheres e\ncomunidades vulneráveis nos processos de titulação, ampliando a capacidade\nprodutiva e a resiliência econômica das famílias rurais frente a choques climáticos\ne de mercado.\n• • Fortalecer as políticas de compras públicas voltadas à agricultura familiar,\n\npromovendo segurança alimentar, desenvolvimento local e valorização da produção\ntocantinense.\n• • Criar um Programa Estadual de Compras Inclusivas, com metas para cooperativas,\n\nagricultura familiar e pequenas agroindústrias venderem para escolas, hospitais,\npresídios e restaurantes populares.\n• • Incentivar a adoção de tecnologias, da agricultura de precisão, da inovação no\n\ncampo, da ampliação da irrigação eficiente e de práticas produtivas sustentáveis,\nconciliando aumento da produtividade, a segurança hídrica, conservação ambiental\ne uso responsável dos recursos naturais.\n• • Expandir a infraestrutura de apoio à produção agropecuária, contribuindo para\n\nmelhorar o armazenamento, o escoamento da produção e a competitividade das\ncadeias produtivas.\n• • Apoiar a diversificação das cadeias produtivas e das atividades rurais, fortalecendo\n\nvocações econômicas regionais, como aquicultura, piscicultura, pesca artesanal,\nfruticultura e outras atividades compatíveis com as características de cada território.\n• • Criar um Plano de Logística para os Pequenos Municípios, priorizando estradas\n\nvicinais, armazéns, internet, energia e centros de distribuição regionais\n• • Aprovar o Marco Estadual de Mineração Responsável para assegurar a transparência\n\ncontratual, a consulta prévia às comunidades e a celebração de pactos locais\n\nEmpreendedorismo, Inovação, Indústria e Tecnologia\n• • Fortalecer o ecossistema de inovação do Tocantins, promovendo a integração\n\n26\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-28",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nentre governo, universidades, centros de pesquisa, setor produtivo e empreendedores\npara estimular o desenvolvimento tecnológico e a geração de soluções inovadoras.\n• • Consolidar o Parque Tecnológico do Tocantins como ambiente estratégico de\n\npesquisa aplicada, inovação, empreendedorismo e desenvolvimento tecnológico,\npromovendo a integração entre universidades, instituições de pesquisa, empresas,\nstartups, poder público e investidores e estimulando a transformação do conhecimento\nem produtos, processos, serviços e novos negócios.\n• • Estruturar o Pacto Tecnológico do Tocantins, construindo uma agenda comum\n\nentre poder público, instituições de ensino e pesquisa, setor produtivo e sociedade,\ncapaz de articular investimentos, infraestrutura, formação de pessoas, pesquisa e\ninovação em torno das prioridades estratégicas para o desenvolvimento do Estado.\n• • Incentivar o empreendedorismo em todas as regiões do Estado, apoiando micro,\n\npequenas e médias empresas, startups e novos negócios, simplificando o ambiente\nde negócios, reduzindo entraves regulatórios e estimulando a geração de emprego,\nrenda e desenvolvimento local\n• • Estimular a pesquisa, o desenvolvimento e a inovação em áreas estratégicas\n\npara o futuro do Tocantins, incluindo agricultura sustentável e de baixo carbono,\nsegurança alimentar, recursos hídricos, biodiversidade e bioeconomia, energias\nrenováveis, mudanças climáticas, inteligência artificial e tecnologias digitais,\nsaúde, cidades sustentáveis e tecnologias sociais.\n• • Estimular a modernização e a expansão do setor industrial, promovendo a\n\nagregação de valor à produção tocantinense, o aumento da competitividade e a\ndiversificação da economia.\n• • Ampliar o acesso à transformação digital e às novas tecnologias, incentivando\n\na digitalização de empresas, a automação de processos e a adoção de soluções\ninovadoras nos diversos setores econômicos.\n• • Apoiar ambientes de inovação, incubadoras, aceleradoras, parques tecnológicos\n\ne iniciativas voltadas ao desenvolvimento de startups e negócios inovadores.\n• • Promover a qualificação profissional em áreas estratégicas da economia digital,\n\nda inovação, da indústria e da tecnologia, preparando a população para as novas\ndemandas do mercado de trabalho.\n• • Estimular a pesquisa, o desenvolvimento e a inovação, fortalecendo a produção\n\nde conhecimento, a transferência de tecnologia e a aproximação entre ciência e\n\nPLANO DE GOVERNO 2027 / 2030\n\n27"
+          },
+          {
+            "id": "pra-frente-tocantins-29",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nmercado.\n\nTurismo, Cultura e Economia Criativa\n• • Fortalecer o turismo como vetor estratégico de desenvolvimento econômico,\n\npromovendo os destinos turísticos do Tocantins, valorizando seus patrimôniosnaturais,\nculturais e históricos e ampliando a geração de emprego e renda.\n• • Incentivar o desenvolvimento integrado do turismo regional, estruturando roteiros\n\nturísticos, fortalecendo a infraestrutura de apoio e promovendo a integração entre\nmunicípios e regiões com potencial turístico.\n• • Valorizar os ativos culturais do Tocantins como instrumentos de fortalecimento do\n\nturismo, da economia criativa e do desenvolvimento regional, apoiando manifestações\nculturais, artistas, produtores e iniciativas que ampliem seu potencial econômico\ne turístico, promovendo também a divulgação e a inserção da produção cultural\ntocantinense em mercados e eventos de âmbito estadual, nacional e internacional.\n• • Estimular a economia criativa como instrumento de geração de oportunidades,\n\nincentivando atividades ligadas à cultura, ao artesanato, ao audiovisual, à música,\nao design, à gastronomia, às tecnologias criativas e a outros segmentos inovadores.\n• • Incentivar o empreendedorismo cultural, fortalecendo as cadeias produtivas da\n\neconomia da cultura e da economia criativa, ampliando oportunidades de geração\nde trabalho, renda, inovação, negócios e desenvolvimento regional, valorizando os\ntalentos, as manifestações culturais e as potencialidades econômicas do Tocantins.\n• • Promover ações de qualificação profissional, empreendedorismo e inovação\n\nvoltadas aos setores do turismo, da cultura e da economia criativa, ampliando sua\ncompetitividade e capacidade de geração de renda.\n• • Ampliar parcerias entre o poder público, a iniciativa privada e o terceiro setor\n\npara fortalecer investimentos, eventos e projetos voltados ao desenvolvimento do\nturismo e da cultura.\n\nQualificação Profissional e Geração de Oportunidades\n• • Ampliar a oferta de programas de qualificação e capacitação profissional,\n\nalinhados às vocações econômicas regionais e às demandas atuais e futuras do\nmercado de trabalho.\n• • Fortalecer parcerias com instituições de ensino, Sistema S, universidades, setor\n\n28\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-30",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nprodutivo e municípios para ampliar o acesso à formação profissional em todas\nas regiões do Estado.\n• • Promover a inclusão produtiva de jovens, mulheres, pessoas com deficiência,\n\npopulação em situação de vulnerabilidade e trabalhadores que buscam recolocação\nprofissional, ampliando suas oportunidades de inserção no mercado de trabalho.\n• • Priorizar a formação profissional em áreas estratégicas para o desenvolvimento\n\neconômico do Tocantins, como tecnologia, indústria, agronegócio, turismo, economia\ncriativa e serviços.\n• • Estimular programas de aprendizagem, estágio, empreendedorismo e primeiro\n\nemprego, fortalecendo a transição entre a formação e a inserção profissional.\n• • Apoiar iniciativas de educação empreendedora, inovação e desenvolvimento\n\nde competências, estimulando a autonomia, a geração de renda e a criação de\nnovos negócios.\n• • Estimular a aprendizagem ao longo da vida, promovendo a atualização contínua\n\ndas competências técnicas, digitais e socioemocionais necessárias às transformações\ndo mundo do trabalho.\n\nEIXO III\nInfraestrutura, Desenvolvimento Regional, Mobilidade e\nSustentabilidade\n\"DESENVOLVER O TOCANTINS É INTEGRAR PESSOAS, MUNICÍPIOS E OPORTUNIDADES.\nNOSSO COMPROMISSO É INVESTIR EM INFRAESTRUTURA MODERNA, FORTALECER AS\nCIDADES E GARANTIR QUE O CRESCIMENTO CHEGUE A TODAS AS REGIÕES DO ESTADO,\nPROMOVENDO DESENVOLVIMENTO COM RESPONSABILIDADE E SUSTENTABILIDADE.\"\nL AU R E Z M O R E I R A\n\nUma infraestrutura moderna, integrada e resiliente é fundamental para\npromover o desenvolvimento econômico, reduzir desigualdades regionais\nPLANO DE GOVERNO 2027 / 2030\n\n29"
+          },
+          {
+            "id": "pra-frente-tocantins-31",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ne melhorar a qualidade de vida da população. Rodovias, ferrovias, aeroportos,\nhidrovias, cidades planejadas, saneamento básico, segurança hídrica e\nmobilidade eficiente fortalecem a competitividade do Estado e ampliam\noportunidades para todos os tocantinenses.\nO Tocantins possui posição estratégica no cenário nacional, destacandose como corredor logístico entre as regiões Norte, Nordeste e Centro-Oeste.\nO crescimento econômico e populacional exige investimentos contínuos\npara ampliar a capacidade logística, modernizar a infraestrutura pública,\nfortalecer o planejamento territorial e promover um desenvolvimento\nequilibrado entre todas as regiões.\nNosso governo atuará de forma integrada com os municípios, a União, a\niniciativa privada e a sociedade para planejar e coordenar investimentos\nestruturantes em infraestrutura, logística, desenvolvimento regional e\nsustentabilidade, promovendo uma infraestrutura moderna, capaz de\nintegrar o território tocantinense, ampliar o acesso da população aos serviços\npúblicos, fortalecer a competitividade do Estado, preservar os recursos\nnaturais e criar condições para que o Tocantins continue crescendo de\nforma equilibrada, resiliente e sustentável.\nOs investimentos em infraestrutura serão orientados por critérios técnicos,\neconômicos, sociais e ambientais, priorizando obras e projetos estruturantes\ncapazes de ampliar a integração regional, reduzir desigualdades, fortalecer\na competitividade, melhorar a eficiência logística e promover o desenvolvimento\nsustentável em todas as regiões do Tocantins.\n\n30\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-32",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nPRIORIDADES DE GOVERNO\n\nInfraestrutura e Logística\n\n• • Recuperar, pavimentar e conservar a malha rodoviária estadual.\n• • Realizar o asfaltamento da TO-010, no trecho entre Pedro Afonso, Tocantínia e\n\nLajeado, com diálogo e respeito às comunidades indígenas da região.\n• • Viabilizar a duplicação das ligações entre Palmas e Paraíso, Palmas e Porto\n\nNacional e Palmas e Miranorte.\n• • Defender, junto ao Governo Federal, a duplicação integral da Rodovia Bernardo\n\nSayão (BR-153) no Tocantins.\n• • Defender a conclusão da BR-010, especialmente no trecho entre Aparecida do\n\nRio Negro e Goiatins.\n\nPLANO DE GOVERNO 2027 / 2030\n\n31"
+          },
+          {
+            "id": "pra-frente-tocantins-33",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Concluir as rodovias estaduais (TOs) com obras inacabadas.\n• • Articular, junto ao Governo Federal, a conclusão da BR-235 e a reconstrução\n\nda ponte sobre o Rio Tocantins, em Pedro Afonso, fortalecendo a ligação com o\nNordeste.\n• • Defender a implantação da BR-242 (Transbananal), ampliando a integração do\n\nTocantins com o Mato Grosso.\n• • Defender a consolidação da Hidrovia do Tocantins, com o avanço das obras do\n\nPedral do Lourenço e da Eclusa de Lajeado.\n• • Articular, junto ao Governo Federal, a viabilização da conexão da Ferrovia\n\nTransnordestina à Ferrovia Norte-Sul por Guaraí.\n• • Ampliar a integração rodoviária do Tocantins com o Nordeste, estruturando\n\ncorredores estratégicos pelas regiões de Lizarda, em direção ao Maranhão, e\nMateiros, em direção à Bahia.\n• • Melhorar pontes, acessos e corredores logísticos.\n• • Promover a modernização da infraestrutura viária, ampliando a segurança nas\n\nrodovias estaduais por meio da melhoria da sinalização, das pontes, da drenagem,\nda conservação e de outras intervenções voltadas à redução de acidentes e ao\naumento da eficiência da malha rodoviária.\n• • Apoiar a implantação, ampliação, modernização e adequação da infraestrutura\n\naeroportuária, ferroviária e hidroviária, em parceria com os governos federal\ne municipal e com a iniciativa privada, fortalecendo a integração regional, a\nmobilidade da população, a logística do Estado e o atendimento às demandas de\nsaúde, segurança pública, defesa civil e desenvolvimento econômico.\n• • Estruturar e fortalecer corredores logísticos estratégicos, promovendo a integração\n\ndos modais rodoviário, ferroviário, hidroviário e aeroportuário, ampliando a eficiência\ndo transporte de pessoas e mercadorias, reduzindo custos logísticos, fortalecendo\no desenvolvimento regional e a inserção do Tocantins nos mercados nacionais e\ninternacionais.\n• • Priorizar investimentos em infraestrutura logística voltados ao escoamento da\n\nprodução, à integração regional, à redução dos custos logísticos, ao aumento\nda eficiência das cadeias produtivas e ao fortalecimento da competitividade do\nTocantins.\n\n32\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-34",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Incentivar a implantação e a modernização de plataformas logísticas e centros\n\nde distribuição estratégicos para ampliar a competitividade do Tocantins.\n• • Promover a articulação entre Estado, Governo Federal, municípios e iniciativa\n\nprivada para viabilizar projetos estruturantes de infraestrutura logística, priorizando\ninvestimentos de elevado impacto econômico e social, capazes de integrar regiões,\nreduzir custos logísticos, ampliar a competitividade da produção, fortalecer os\ncorredores de desenvolvimento e impulsionar o crescimento sustentável do Tocantins.\n• • Aperfeiçoar o planejamento e a gestão da infraestrutura de transportes,\n\npriorizando investimentos com base em critérios técnicos, econômicos, sociais e\nregionais, orientados pelas vocações econômicas e pelo potencial produtivo das\ndiferentes regiões, promovendo maior integração logística e desenvolvimento\nregional sustentável.\n• • Criar um Programa Estadual de Estradas Vicinais, com metas anuais de\n\ncascalhamento, manutenção e recuperação, priorizando comunidades rurais,\nassentamentos, territórios quilombolas e indígenas, em parceria com os municipios\ndo Tocantins.\n\nDesenvolvimento Regional e Municipalismo\n• • Fortalecer a cooperação entre Estado e municípios na execução de projetos\n\nestruturantes voltados ao desenvolvimento regional.\n• • Apoiar projetos estruturantes que promovam o desenvolvimento regional\n\nequilibrado e reduzam as desigualdades entre as diferentes regiões do Tocantins.\n• • Incentivar consórcios públicos e soluções compartilhadas para ampliar a eficiência\n\nda prestação de serviços públicos.\n• • Fortalecer os instrumentos de planejamento regional, territorial e de governança\n\ninterfederativa como base para o desenvolvimento sustentável das cidades e das\nregiões.\n• • Promover a integração entre políticas públicas estaduais e municipais para\n\nampliar a capacidade de desenvolvimento dos municípios.\n• • Fortalecer as cidades-polo como indutoras do desenvolvimento regional,\n\nampliando sua capacidade de oferta de serviços públicos, infraestrutura, logística\ne oportunidades para os municípios do entorno, promovendo maior integração\nregional, atração de investimentos e dinamização das economias locais.\nPLANO DE GOVERNO 2027 / 2030\n\n33"
+          },
+          {
+            "id": "pra-frente-tocantins-35",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Criar Núcleos de Desenvolvimento Regional de referência voltados ao\n\ndesenvolvimento e aplicação de tecnologias sustentáveis em parceria com os\nmunicípios e instituições de ensino\n• • Implantar incubadoras de economia solidária regionais voltadas para o segmento\n\nde confecções artesanais e biojoias;\n• • Oferecer suporte em gestão estratégica e inovação tecnológica para micro e\n\npequenas empresas nos setores rural e urbano.\n• • Incentivar projetos inovadores e tecnologias sustentáveis integradas às cadeias\n\nprodutivas do Plano ABC (Agricultura de Baixa Emissão de Carbono).\n•\n\nMobilidade Urbana e Desenvolvimento das Cidades\n\n• • Apoiar projetos municipais de mobilidade urbana.\n• • Incentivar soluções de transporte acessível, sustentável e integrado.\n• • Promover melhorias na infraestrutura urbana, na acessibilidade universal e na\n\nqualificação dos espaços públicos.\n\n• • Apoiar iniciativas de planejamento urbano voltadas ao crescimento ordenado\n\ne sustentável das cidades.\n• • Incentivar projetos de mobilidade ativa, promovendo deslocamentos seguros\n\npara pedestres e ciclistas.\n\n34\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-36",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Apoiar ações de revitalização urbana e requalificação de áreas públicas em\n\nparceria com os municípios.\n• • Incentivar soluções inovadoras para o desenvolvimento de cidades mais inteligentes,\n\nsustentáveis, acessíveis e resilientes.\n• • Estimular a elaboração e a atualização dos Planos Diretores Municipais e de outros\n\ninstrumentos de planejamento urbano, respeitada a autonomia dos municípios.\n• • Expandir soluções descentralizadas em áreas sem viabilidade de rede, com\n\ncisternas, pequenos sistemas comunitários e tratamento local de esgoto.\n•\n\nHabitação e Regularização Fundiária\n\n• • Ampliar programas habitacionais em parceria com os municípios e o Governo\n\nFederal.\n• • Priorizar empreendimentos habitacionais destinados às famílias em situação de\n\nmaior vulnerabilidade social.\n• • Apoiar ações de regularização fundiária urbana, promovendo segurança jurídica,\n\ninclusão social e melhoria da qualidade de vida das famílias.\n• • Incentivar projetos de urbanização, requalificação de áreas degradadas e\n\nrevitalização de espaços públicos.\n• • Promover políticas voltadas à melhoria das condições de moradia.\n• • Apoiar programas de melhoria habitacional destinados à reforma, ampliação e\n\nadequação de moradias de famílias em situação de vulnerabilidade social.\n• • Promover a implantação de infraestrutura urbana, equipamentos públicos\n\ne serviços essenciais nos empreendimentos habitacionais, em parceria com os\nmunicípios.\n• • Ampliar a oferta de Habitação de Interesse Social (HIS) em áreas bem localizadas,\n\npróximas de transporte, emprego, escola e saúde;\n• • Formar um banco público de terras com terrenos vazios, subutilizados ou bem\n\nservidos de infraestrutura para habitação popular.\n• • Garantir participação comunitária no desenho, implantação e gestão dos\n\nempreendimentos habitacionais.\n•\nPLANO DE GOVERNO 2027 / 2030\n\n35"
+          },
+          {
+            "id": "pra-frente-tocantins-37",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n•\n\nPODE CONFIAR!\n\nSaneamento Básico e Segurança Hídrica\n\n• • Ampliar o acesso à água tratada e ao esgotamento sanitário.\n• • Fortalecer a gestão integrada dos recursos hídricos.\n• • Incentivar soluções sustentáveis para abastecimento de água, esgotamento\n\nsanitário e gestão integrada de resíduos sólidos.\n• • Apoiar projetos voltados à segurança hídrica, à proteção das nascentes e à\n\nconservação das bacias hidrográficas.\n• • Apoiar projetos de drenagem urbana e manejo sustentável das águas pluviais,\n\nem parceria com os municípios.\n• • Incentivar ações voltadas ao armazenamento, uso eficiente e conservação da\n\nágua, especialmente nas regiões com maior vulnerabilidade hídrica.\n• • Fortalecer a cooperação entre Estado, municípios, comitês de bacias hidrográficas\n\ne demais instituições responsáveis pela gestão dos recursos hídricos.\n•\n\nMeio Ambiente e Desenvolvimento Sustentável\n\n• • Fortalecer e aprimorar o ICMS Ecológico;\n• • Fortalecer a conservação do Cerrado, da biodiversidade e dos recursos naturais,\n\nconciliando preservação ambiental e desenvolvimento sustentável.\n• • Implantar política de Manejo Integrado do Fogo (MIF) para evitar o avanço\n\ndescontrolado nos índices de queimadas.\n• • Fortalecer ações integradas de prevenção, monitoramento e combate aos\n\nincêndios florestais e às queimadas ilegais, em parceria com os municípios e órgãos\ncompetentes.\n• • Apoiar tecnicamente os municípios de pequeno porte na criação de consórcios\n\nregionais para a construção de aterros sanitários licenciados, erradicando lixões\na céu aberto remanescentes no estado.\n• • Criar força-tarefa estadual de combate ao desmatamento ilegal\n• • Incentivar a recuperação de áreas degradadas, nascentes e matas ciliares.\n• • Desenvolver políticas de mitigação e adaptação às mudanças climáticas,\n\nfortalecendo a resiliência ambiental e das comunidades.\n\n36\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-38",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Estimular a economia verde, a bioeconomia, a produção sustentável e o uso\n\nracional dos recursos naturais.\n• • Incentivar mecanismos de pagamento por serviços ambientais e outras iniciativas\n\nque valorizem a conservação dos recursos naturais e o desenvolvimento sustentável.\n\n• • Fortalecer ações de educação ambiental e conscientização da população sobre\n\na conservação dos recursos naturais e o desenvolvimento sustentável.\n\nEIXO IV\nEducação, Ciência, Tecnologia e Formação para o\nFuturo\n\"A EDUCAÇÃO É O CAMINHO MAIS SEGURO PARA TRANSFORMAR VIDAS, REDUZIR\nDESIGUALDADES E PREPARAR O TOCANTINS PARA OS DESAFIOS DO FUTURO. INVESTIR\nNAS PESSOAS É O MAIOR INVESTIMENTO QUE UM GOVERNO PODE FAZER.\"\nL AU R E Z M O R E I R A\n\nA educação é a base sobre a qual se constrói uma sociedade mais justa,\nPLANO DE GOVERNO 2027 / 2030\n\n37"
+          },
+          {
+            "id": "pra-frente-tocantins-39",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ndesenvolvida e preparada para enfrentar os desafios do século XXI. É por\nmeio dela que se ampliam oportunidades, fortalecem-se a cidadania, a\ninovação e a capacidade de transformar conhecimento em desenvolvimento\neconômico e social. O Tocantins avançou nas últimas décadas, mas ainda\nenfrenta desafios relacionados à aprendizagem, à permanência dos\nestudantes na escola, à redução das desigualdades educacionais e à\npreparação dos jovens para um mundo cada vez mais orientado pela ciência,\npela tecnologia e pela inovação.\n\nNosso compromisso é promover uma educação pública de qualidade,\ninclusiva, inovadora e conectada às necessidades do presente e às\noportunidades do futuro. O Governo atuará para fortalecer a aprendizagem,\nvalorizar os profissionais da educação, modernizar a gestão educacional,\nampliar o acesso ao conhecimento, à ciência, à tecnologia e à formação\nprofissional, preparando crianças, jovens e adultos para os desafios de uma\neconomia baseada no conhecimento.\nEsse compromisso será construído em cooperação com os municípios,\n\n38\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-40",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ninstituições de ensino, universidades, institutos de pesquisa, setor produtivo\ne sociedade civil, integrando educação, ciência, tecnologia, inovação e\ndesenvolvimento regional. Mais do que preparar estudantes para o presente,\nqueremos formar cidadãos críticos, criativos, empreendedores e capazes\nde construir um Tocantins mais próspero, inclusivo e preparado para as\ntransformações das próximas décadas.\nPRIORIDADES DE GOVERNO\n\nEducação Básica de Qualidade\n• • Fortalecer a qualidade da educação básica, promovendo a melhoria contínua\n\nda aprendizagem, do desempenho escolar e dos indicadores educacionais.\n• • Ampliar ações voltadas à alfabetização na idade adequada, assegurando que\n\ntodas as crianças desenvolvam plenamente as competências essenciais para sua\ntrajetória escolar.\n• • Incentivar o uso ético, responsável e seguro das tecnologias digitais, promovendo\n\na cidadania digital e preparando estudantes para os desafios e oportunidades da\nsociedade conectada.\n• • Fortalecer a educação inclusiva por meio da ampliação do Atendimento Educacional\n\nEspecializado (AEE), da formação continuada dos profissionais da educação, do uso\nde tecnologias assistivas e do apoio aos estudantes com deficiência, Transtorno do\nEspectro Autista (TEA), Transtorno do Déficit de Atenção e Hiperatividade (TDAH) e\ndemais condições que demandem acompanhamento educacional especializado,\npromovendo sua aprendizagem, permanência e desenvolvimento integral.\n• • Assegurar recursos e tecnologias assistivas de forma equitativa, especialmente\n\nonde a distribuição de materiais e suporte é mais precária.\n• • Estimular práticas pedagógicas inovadoras, que promovam o desenvolvimento\n\nintegral dos estudantes, o protagonismo, o pensamento crítico e a aprendizagem\nsignificativa.\n• • Implementar protocolos de prevenção de violência e de todas as formas de\n\ndiscriminação ( bullying, racismo, homofobia e exclusão);\nPLANO DE GOVERNO 2027 / 2030\n\n39"
+          },
+          {
+            "id": "pra-frente-tocantins-41",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Fortalecer políticas de permanência escolar, prevenção da evasão e recomposição\n\ndas aprendizagens, especialmente entre crianças, adolescentes e jovens.\n• • Implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por\n\nmeio de bolsas de estudo e outros mecanismos de apoio aos estudantes da rede\npública estadual, especialmente aos jovens em situação de vulnerabilidade social,\ncontribuindo para a redução da evasão escolar, a melhoria do desempenho\nacadêmico e a ampliação das oportunidades de acesso ao ensino técnico e superior.\n• • Integrar EJA a universidades, qualificação e diagnóstico contínuo, porque parcerias\n\npúblicas melhoram gestão e reorientam ações.\n• • Ampliar a cooperação entre Estado e municípios para fortalecer a educação\n\npública, promovendo a integração de políticas, o compartilhamento de boas\npráticas e a melhoria dos resultados educacionais.\n\nValorização dos Profissionais da Educação\n• • Valorizar os profissionais da educação por meio de políticas permanentes de\n\nformação continuada, desenvolvimento profissional, reconhecimento, inovação\npedagógica e melhoria das condições para o exercício da atividade docente.\n• • Fortalecer a gestão escolar e o apoio pedagógico às equipes educacionais,\n\nestimulando práticas de liderança, planejamento, inovação e melhoria contínua\nda aprendizagem.\n• • Promover ambientes escolares colaborativos, inclusivos, seguros e acolhedores,\n\nfortalecendo o bem-estar da comunidade escolar, a qualidade da educação e o\ndesenvolvimento integral dos estudantes.\n\nCiência, Tecnologia e Inovação\n• • Incentivar a produção científica, a pesquisa aplicada e o desenvolvimento\n\ntecnológico voltados às demandas estratégicas e ao desenvolvimento sustentável\ndo Tocantins.\n• • Fortalecer a integração entre universidades, institutos de pesquisa, setor produtivo\n\ne Governo, promovendo a transferência de conhecimento, tecnologia e inovação.\n• • Apoiar projetos de inovação com impacto social, econômico e ambiental,\n\nestimulando soluções que contribuam para a melhoria dos serviços públicos, da\ncompetitividade e da qualidade de vida da população.\n\n40\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-42",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Estimular a criação e o fortalecimento de ambientes de inovação, laboratórios,\n\ncentros tecnológicos, incubadoras, aceleradoras e programas de empreendedorismo\ninovador.\n• • Promover a transformação digital na educação, fortalecendo as instituições\n\nde ensino, ampliando o acesso às tecnologias educacionais, à conectividade e às\nmetodologias inovadoras de aprendizagem.\n• • Estimular a captação de recursos e parcerias nacionais e internacionais para\n\npesquisa, inovação e desenvolvimento tecnológico, fortalecendo a capacidade\ncientífica e inovadora do Tocantins.\n\nEducação Profissional e Ensino Superior\n• • Articular a rede pública de ensino (Unitins, UFT, UFNT, IFTO) para ampliar a oferta\n\nde vagas e cursos, conectando diretamente a formação acadêmica e tecnológica\nàs potencialidades regionais e às novas exigências do mercado de trabalho.\n• • Fortalecer a integração entre a educação profissional, o ensino superior, a\n\npesquisa, a inovação e o setor produtivo, aproximando a formação acadêmica\ndas necessidades do desenvolvimento do Estado.\n• • Incentivar a oferta de cursos e programas voltados às novas profissões, à economia\n\ndigital, à inovação, ao empreendedorismo e às tecnologias emergentes\n• • Promover por meio da Unitins o fortalecimento da gestão municipal ao oferecer\n\nprogramas de especialização para dirigentes educacionais, democratizando o\nacesso ao conhecimento.\n• • Melhorar a infraestrutura física e tecnológica da Unitins, com investimentos em\n\nsalas de aula, laboratórios, bibliotecas, conectividade, climatização, construção\ne manutenção predial e acessibilidade.\n• • Apoiar programas e parcerias que aproximem estudantes do ambiente produtivo,\n\nda pesquisa científica, da inovação, do empreendedorismo e das oportunidades\nde inserção no mercado de trabalho.\n• • Estimular a formação continuada e a aprendizagem ao longo da vida, ampliando\n\nas oportunidades de atualização profissional e desenvolvimento de competências\npara acompanhar as transformações do mundo do trabalho.\n\nPLANO DE GOVERNO 2027 / 2030\n\n41"
+          },
+          {
+            "id": "pra-frente-tocantins-43",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nEIXO V\nSaúde, Bem-Estar e Qualidade de Vida\n\"CUIDAR DA SAÚDE É CUIDAR DAS PESSOAS. NOSSO COMPROMISSO É CONSTRUIR UM\nSISTEMA MAIS HUMANO, EFICIENTE E ACESSÍVEL, PARA QUE CADA TOCANTINENSE\nTENHA ATENDIMENTO DIGNO, PRÓXIMO DE CASA E MAIS QUALIDADE DE VIDA.\"\nL AU R E Z M O R E I R A\n\nA saúde pública é um dos maiores compromissos do Estado com a\npopulação e um direito fundamental para a promoção da qualidade de\nvida. Garantir acesso oportuno a serviços de qualidade, reduzir desigualdades\nregionais e fortalecer a prevenção exige planejamento, gestão eficiente e\natuação integrada entre Estado e municípios. O Tocantins avançou na\nampliação da rede de atendimento e da assistência especializada, mas\nainda enfrenta desafios relacionados ao acesso, à regionalização dos\nserviços, à redução do tempo de espera e à incorporação de tecnologias\nque tornem o sistema de saúde mais eficiente.\n\n42\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-44",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nNosso compromisso é fortalecer o Sistema Único de Saúde (SUS) por meio\nde uma gestão moderna, humanizada e orientada para resultados, ampliando\no acesso à prevenção, ao diagnóstico, ao tratamento e à reabilitação. O\nGoverno atuará para fortalecer a atenção primária, ampliar a assistência\nespecializada, valorizar os profissionais da saúde, modernizar a infraestrutura\ne incorporar inovação e transformação digital para qualificar os serviços\nprestados à população.\nEsse compromisso será desenvolvido em parceria com os municípios,\nconsórcios públicos, instituições de ensino, entidades de pesquisa e\norganizações da sociedade civil, fortalecendo uma rede regionalizada,\nintegrada e resolutiva. Mais do que tratar doenças, queremos promover\nsaúde, prevenir agravos e garantir que cada tocantinense tenha acesso a\num atendimento digno, humanizado e de qualidade, contribuindo para uma\nvida mais saudável e com mais bem-estar.\nPRIORIDADES DE GOVERNO\n\nFortalecimento da Atenção Primária\n• • Fortalecer a Atenção Primária à Saúde como principal porta de entrada do\n\nSistema Único de Saúde (SUS), ampliando sua capacidade de prevenção, promoção\nda saúde, acompanhamento e cuidado contínuo da população.\n• • Apoiar os municípios na qualificação da Atenção Básica e da Estratégia Saúde\n\nda Família, fortalecendo a capacidade de resposta dos serviços e a resolutividade\ndo atendimento.\n• • Incentivar ações permanentes de promoção da saúde, prevenção de doenças\n\ne acompanhamento das condições crônicas, contribuindo para a melhoria da\nqualidade de vida da população.\n• • Ampliar programas de atenção materno-infantil, saúde da mulher, saúde do\n\nhomem, saúde da pessoa idosa e cuidado às pessoas com doenças crônicas,\nPLANO DE GOVERNO 2027 / 2030\n\n43"
+          },
+          {
+            "id": "pra-frente-tocantins-45",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\npromovendo um atendimento integral ao longo de todas as fases da vida.\n•\n\nRegionalização e Assistência Especializada\n\n• • Reforçar SUS, assistência e segurança, incorporando lições da Covid 19 sobre\n\nvulnerabilidade, gestão democrática e continuidade do direito à saúde.\n• • Fortalecer a regionalização da assistência à saúde, ampliando a oferta de serviços\n\nespecializados nas diferentes regiões do Estado e reduzindo os deslocamentos\ndesnecessários da população para atendimento.\n• • Ampliar serviços de hemodiálise, cardiologia, neurologia, oncologia, nefrologia\n\ne outras especialidades, reduzindo a necessidade de deslocamento até a Capital.\n• • Ampliar o acesso a consultas, exames especializados, cirurgias eletivas e\n\nprocedimentos de média e alta complexidade, buscando reduzir o tempo de espera\ne ampliar a resolutividade da rede de saúde.\n• • Modernizar a infraestrutura hospitalar e fortalecer a rede estadual de atendimento,\n\npromovendo a melhoria contínua da qualidade, da segurança e da eficiência dos\nserviços de saúde.\n• • Incentivar a adoção de protocolos assistenciais, linhas de cuidado e boas práticas\n\nem saúde, promovendo maior integração, eficiência e qualidade no atendimento\nà população.\n• • Fortalecer a rede estadual de atenção especializada destinada às pessoas com\n\ndeficiência e aos transtornos do neurodesenvolvimento, ampliando o diagnóstico\nprecoce, o atendimento multiprofissional, a reabilitação e o apoio às famílias, em\narticulação com as áreas de educação e assistência social.\n•\n\nHumanização e Qualidade dos Serviços\n\n• • Promover um atendimento humanizado, acolhedor e centrado nas necessidades\n\ndo paciente, assegurando qualidade, respeito e dignidade em todas as etapas do\ncuidado.\n• • Fortalecer as políticas de acolhimento, segurança do paciente e humanização da\n\nassistência, contribuindo para um atendimento mais seguro, eficiente e resolutivo.\n• • Implantar mecanismos permanentes de avaliação da qualidade, do desempenho\n\ne da satisfação dos usuários, promovendo a melhoria contínua dos serviços de\nsaúde.\n\n44\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-46",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Estimular a adoção de boas práticas de gestão, inovação e melhoria contínua dos\n\nprocessos assistenciais, fortalecendo a eficiência, a transparência e a qualidade\nda rede estadual de saúde.\n\nInovação, Transformação Digital e Inteligência em Saúde\n• • Ampliar o uso de soluções digitais para qualificar a gestão dos serviços de saúde,\n\ntornando os processos mais ágeis, eficientes e centrados nas necessidades da\npopulação.\n• • Fortalecer a integração das informações em saúde, promovendo a interoperabilidade\n\ndos sistemas, a segurança dos dados e maior eficiência na gestão e na tomada\nde decisões.\n• • Expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso\n\nà assistência especializada, especialmente nas regiões de maior vulnerabilidade\ne difícil acesso.\n• • Utilizar tecnologias inovadoras, inteligência de dados e ferramentas de\n\nmonitoramento para aprimorar o planejamento, a avaliação e a gestão das políticas\npúblicas de saúde.\n\nValorização dos Profissionais da Saúde\n• • Valorizar os profissionais da saúde por meio de políticas permanentes de\n\nqualificação, desenvolvimento profissional, reconhecimento e melhoria contínua\ndas condições de trabalho.\n• • Fortalecer ambientes de trabalho seguros, colaborativos, humanizados e\n\norientados à qualidade da assistência, ao bem-estar das equipes e à segurança\ndos pacientes.\n• • Estimular a integração entre assistência, ensino, pesquisa e inovação, promovendo\n\na atualização permanente dos profissionais e a melhoria contínua dos serviços de\nsaúde.\n\nVigilância em Saúde e Qualidade de Vida\n• • Fortalecer as ações de vigilância epidemiológica, sanitária, ambiental e de\n\nsaúde do trabalhador, ampliando a capacidade de prevenção, monitoramento e\nresposta aos principais agravos à saúde.\n\nPLANO DE GOVERNO 2027 / 2030\n\n45"
+          },
+          {
+            "id": "pra-frente-tocantins-47",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Ampliar campanhas permanentes de vacinação, prevenção de doenças, promoção\n\nda saúde e educação em saúde, fortalecendo a conscientização e o cuidado\npreventivo da população.\n• • Incentivar políticas públicas voltadas à promoção da saúde mental, da alimentação\n\nsaudável, da prática de atividades físicas e do envelhecimento ativo, contribuindo\npara a melhoria da qualidade de vida da população.\n• • Desenvolver ações integradas para prevenção, controle e enfrentamento das\n\nprincipais doenças que impactam a população tocantinense, em articulação com\nos municípios e demais instituições parceiras.\n\nEIXO VI\nSegurança Pública, Justiça e Defesa Social\n\"SEGURANÇA PÚBLICA SE CONSTRÓI COM PLANEJAMENTO, INTELIGÊNCIA, VALORIZAÇÃO\nDOS PROFISSIONAIS, INTEGRAÇÃO ENTRE AS INSTITUIÇÕES E PROMOÇÃO DA\nCIDADANIA. NOSSO COMPROMISSO É GARANTIR QUE CADA FAMÍLIA TOCANTINENSE\nPOSSA VIVER COM TRANQUILIDADE, LIBERDADE, JUSTIÇA E CONFIANÇA.\"\nL AU R E Z M O R E I R A\n\nA segurança pública é um dos pilares fundamentais para o desenvolvimento\ndo Tocantins e para a garantia da qualidade de vida da população. Nosso\ncompromisso é construir um estado mais seguro, por meio da integração\nentre inteligência, tecnologia, prevenção, valorização dos profissionais e\nfortalecimento das instituições, assegurando respostas mais rápidas,\neficientes e próximas da sociedade.\nEntendemos que segurança pública, justiça e defesa social são dimensões\ncomplementares de uma mesma política pública. Por isso, promoveremos\nações articuladas que fortaleçam o sistema de segurança, aperfeiçoem a\n\n46\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-48",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ngestão do sistema penitenciário, ampliem as oportunidades de ressocialização,\nincentivem a cultura de paz e reforcem a cooperação entre os órgãos\nresponsáveis pela proteção dos direitos e da cidadania, sempre respeitando\na autonomia das instituições.\nNosso governo atuará de forma integrada com os municípios, a União, os\ndemais Poderes e a sociedade para prevenir a violência, combater a\ncriminalidade, proteger as pessoas, promover a cidadania, fortalecer a\nDefesa Civil e ampliar a capacidade do Estado de prevenir e responder a\nriscos e emergências, construindo um Tocantins mais seguro, justo, resiliente\ne preparado para os desafios do presente e do futuro.\nPRIORIDADES DE GOVERNO\n\nCentro Integrado de Comando e Controle\n• • Implantar o Centro Integrado de Comando e Controle do Estado do Tocantins\n\n(CICC), integrando as operações, os sistemas de monitoramento, comunicação,\ninteligência e gestão de ocorrências dos órgãos estaduais de segurança pública\ne defesa social.\n• • Fortalecer a cooperação operacional com instituições federais e municipais,\n\nrespeitadas as competências legais de cada órgão.\n• • Ampliar a utilização de tecnologias de análise de dados, inteligência artificial,\n\ngeorreferenciamento, monitoramento em tempo real e análise preditiva para\napoiar a tomada de decisões, a prevenção da criminalidade e a gestão de crises.\n• • Promover a interoperabilidade entre os sistemas tecnológicos das forças de\n\nsegurança, garantindo o compartilhamento seguro de informações e maior\neficiência operacional.\n\nModernização das Forças de Segurança\n• • Modernizar a infraestrutura operacional das forças estaduais de segurança\n\npública, com renovação de equipamentos, armamentos, viaturas, sistemas de\nPLANO DE GOVERNO 2027 / 2030\n\n47"
+          },
+          {
+            "id": "pra-frente-tocantins-49",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\ncomunicação e recursos tecnológicos.\n• • Fortalecer a Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros\n\nMilitar e demais órgãos estaduais, ampliando sua capacidade operacional.\n• • Ampliar as equipes e a estrutura do Corpo de Bombeiros para prevenção de\n\nafogamentos, com campanhas educativas intensificadas em municípios de maior\nincidência;\n• • Expandir o uso de tecnologias embarcadas, equipamentos de proteção individual\n\ne soluções digitais de apoio às operações.\n• • Modernizar a infraestrutura física das unidades operacionais e administrativas\n\ndas instituições de segurança pública.\n\nValorização dos Profissionais da Segurança Pública\n• • Valorizar os profissionais da segurança pública e do sistema socioeducativo por\n\nmeio de programas permanentes de capacitação, aperfeiçoamento, desenvolvimento\nprofissional e reconhecimento do mérito.\n• • Promover políticas de saúde física, saúde mental, qualidade de vida e melhoria\n\ndas condições de trabalho.\n• • Modernizar os ambientes de trabalho e incentivar a inovação institucional.\n• • Fortalecer programas de formação em liderança, gestão pública e inovação\n\npara os profissionais que exerçam funções estratégicas.\n\nInteligência, Tecnologia e Enfrentamento ao Crime\n• • Fortalecer os sistemas estaduais de inteligência policial.\n• • Ampliar o monitoramento eletrônico de agressores e a rede de proteção a\n\nmulheres, crianças e idosos, com resposta rápida articulada entre segurança\npública, assistência social e Judiciário.\n• • Integrar bases de dados e plataformas de segurança pública, fortalecendo o\n\ncompartilhamento seguro de informações entre os órgãos estaduais, federais e\nmunicipais, respeitadas as competências legais e a proteção dos dados pessoais.\n• • Ampliar o uso de videomonitoramento inteligente em áreas estratégicas.\n• • Investir em soluções de inteligência artificial e análise preditiva para apoio às\n\n48\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-50",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nações operacionais.\n• • Fortalecer laboratórios de tecnologia e inteligência voltados à investigação\n\ndigital e aos crimes cibernéticos.\n• • Intensificar o combate às organizações criminosas, aos crimes cibernéticos, aos\n\ncrimes ambientais e ao tráfico de drogas.\n• • Articular uma força-tarefa permanente entre Estado, União e municípios para\n\nenfrentar a expansão das facções criminosas no Tocantins, com integração de\ninteligência policial.\n\nSegurança Cidadã e Prevenção da Violência\n• • Desenvolver políticas permanentes de prevenção à violência, fortalecendo\n\no policiamento comunitário e a aproximação entre as forças de segurança e a\npopulação.\n• • Fortalecer a atuação integrada entre Estado e municípios na implementação\n\nde políticas de prevenção da violência e promoção da segurança cidadã.\n• • Implantar programas preventivos voltados às escolas, à juventude e às comunidades\n\nem situação de maior vulnerabilidade.\n• • Incentivar ações de mediação de conflitos e promoção da cultura de paz.\n• • Estimular a participação da sociedade na construção das políticas públicas de\n\nsegurança.\n• • Fortalecer ações de policiamento e inteligência voltadas à segurança no meio\n\nrural, em articulação com produtores, comunidades e instituições parceiras.\n\nProteção das Pessoas e Defesa Social\n• • Fortalecer as políticas públicas de enfrentamento à violência contra mulheres,\n\ncrianças, adolescentes, idosos e demais pessoas em situação de vulnerabilidade.\n• • Ampliar a integração entre segurança pública, assistência social, saúde e\n\neducação, conselhos tutelares e demais instituições responsáveis pela proteção\ndas pessoas em situação de vulnerabilidade.\n• • Fortalecer a rede estadual de atendimento às vítimas.\n\nPLANO DE GOVERNO 2027 / 2030\n\n49"
+          },
+          {
+            "id": "pra-frente-tocantins-51",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Fortalecer políticas integradas de segurança viária, educação para o trânsito e\n\nredução dos acidentes, em parceria com os municípios e órgãos competentes.\n• • Intensificar a fiscalização de trânsito e a sinalização em trechos urbanos e\n\nrodoviários de maior risco de acidentes fatais.\n\nSistema Penitenciário, Polícia Penal e Ressocialização\n• • Fortalecer a estrutura e a atuação da Polícia Penal.\n• • Modernizar as unidades do sistema penitenciário estadual.\n• • Ampliar programas de educação, qualificação profissional e trabalho para\n\npessoas privadas de liberdade.\n• • Fortalecer ações de reinserção social e acompanhamento de egressos do sistema\n\nprisional.\n• • Incentivar ações de prevenção à reincidência criminal.\n• • Ampliar vagas e construir novas unidades penitenciárias, com metas para redução\n\nda superlotação e do tempo médio de prisão provisória, em articulação com o\nJudiciário e a Defensoria Pública.\n• • Reformular o modelo de gestão do sistema penitenciário, com critérios claros\n\nde transparência, custo por preso e indicadores efetivos de ressocialização;\n\nJustiça, Cidadania e Proteção de Direitos\n• • Ampliar a relação institucional com o sistema de justiça, por meio de diálogo\n\npermanente com o Poder Judiciário, o Ministério Público, a Defensoria Pública e\ndemais instituições.\n• • Ampliar ações de cidadania e acesso à documentação civil.\n• • Fortalecer políticas de proteção e atendimento às vítimas.\n• • Incentivar ações de mediação comunitária e promoção da cultura de paz, em\n\nparceria com os órgãos competentes.\n• • Fortalecer a cooperação institucional entre o Governo do Estado, o Poder\n\nJudiciário, o Ministério Público, a Defensoria Pública e as demais instituições do\nsistema de justiça, respeitada a autonomia de cada órgão.\n\n50\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-52",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nDefesa Civil e Gestão de Riscos\n• • Fortalecer a estrutura estadual da Defesa Civil.\n• • Implantar sistemas modernos de monitoramento de riscos e eventos climáticos\n\nextremos.\n• • Desenvolver planos estaduais de prevenção, preparação, resposta e recuperação\n\npara desastres e calamidades públicas.\n• • Integrar a atuação da Defesa Civil aos municípios e aos demais órgãos estaduais\n\ne federais, fortalecendo a coordenação e a capacidade de resposta a eventos\nadversos.\n• • Fortalecer ações de educação preventiva, capacitação e preparação das\n\ncomunidades para reduzir riscos e aumentar a resiliência frente a desastres.\n• • Fortalecer a mediação de conflitos agrários e a regularização fundiária, prevenindo\n\na escalada de violência no campo.\n\nEIXO VII\nDesenvolvimento Social, Cultura, Esporte e Cidadania\n“O VERDADEIRO DESENVOLVIMENTO ACONTECE QUANDO TODAS AS PESSOAS TÊM OPORTUNIDADES\nPARA VIVER COM DIGNIDADE, PARTICIPAR DA VIDA EM SOCIEDADE E CONSTRUIR UM FUTURO\nMELHOR PARA SUAS FAMÍLIAS. NOSSO COMPROMISSO É CUIDAR DAS PESSOAS, REDUZIR\nDESIGUALDADES E FORTALECER A CIDADANIA EM TODAS AS REGIÕES DO TOCANTINS.”\nL AU R E Z M O R E I R A\n\nO desenvolvimento de um Estado não pode ser medido apenas pelo\ncrescimento econômico ou pela expansão da infraestrutura. Ele se concretiza\nquando seus benefícios chegam às pessoas, promovendo inclusão social,\nredução das desigualdades, acesso à cultura, incentivo ao esporte,\nfortalecimento da cidadania e ampliação das oportunidades para todos.\nPLANO DE GOVERNO 2027 / 2030\n\n51"
+          },
+          {
+            "id": "pra-frente-tocantins-53",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nO Tocantins possui uma rica diversidade cultural, forte identidade regional\ne grande potencial humano. A cultura será valorizada como direito de\ncidadania, expressão da identidade do povo tocantinense e instrumento\nde desenvolvimento humano, social, econômico e territorial. Ao mesmo\ntempo, enfrenta desafios relacionados à vulnerabilidade social, à insegurança\nalimentar, à inclusão produtiva e ao acesso desigual às oportunidades,\nespecialmente entre crianças, jovens, idosos, pessoas com deficiência, povos\nindígenas, comunidades quilombolas e demais grupos em situação de\nvulnerabilidade.\nA construção de uma sociedade mais justa exige políticas públicas\nintegradas que fortaleçam a proteção social, promovam a inclusão, valorizem\na cultura, o esporte, o lazer e a economia criativa, ampliem a participação\ncidadã e reforcem a atuação conjunta entre Estado, municípios e sociedade\ncivil.\n\n52\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-54",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nNosso compromisso é desenvolver políticas integradas às áreas de\neducação, saúde, segurança pública, geração de emprego e desenvolvimento\nregional, capazes de reduzir desigualdades, fortalecer as famílias, promover\ninclusão e garantir que o desenvolvimento do Tocantins alcance todas as\npessoas, respeitando a diversidade e valorizando a identidade cultural do\nEstado.\nPRIORIDADES DE GOVERNO\n\nAssistência Social e Proteção às Famílias\n• • Fortalecer a rede estadual de assistência social, em articulação com os municípios\n\ne o Sistema Único de Assistência Social (SUAS).\n• • Ampliar ações de enfrentamento à pobreza e à insegurança alimentar, fortalecendo\n\npolíticas de segurança alimentar e nutricional e priorizando famílias em situação\nde maior vulnerabilidade social.\n• • Promover ações de inclusão produtiva, geração de renda e fortalecimento da\n\nautonomia das famílias em situação de vulnerabilidade social.\n• • Fortalecer políticas de proteção e promoção dos direitos de crianças, adolescentes,\n\nidosos, mulheres, pessoas com deficiência e demais públicos em situação de\nvulnerabilidade.\n• • Ampliar o acesso da população aos serviços de proteção social.\n• • Apoiar o fortalecimento da estrutura e da capacidade de atendimento dos\n\nequipamentos públicos da assistência social, em parceria com os municípios.\n• • Promover a integração das políticas de assistência social com as áreas de\n\nsaúde, educação, qualificação profissional e geração de emprego, favorecendo\na superação das situações de vulnerabilidade.\n\nJuventude e Inclusão\n• • Fortalecer políticas públicas voltadas à promoção dos direitos, da autonomia,\n\nda inclusão social e do protagonismo da juventude.\n\nPLANO DE GOVERNO 2027 / 2030\n\n53"
+          },
+          {
+            "id": "pra-frente-tocantins-55",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Apoiar programas de qualificação profissional, empreendedorismo, inovação e\n\npreparação dos jovens para o mercado de trabalho.\n• • Incentivar iniciativas voltadas à inserção dos jovens no mercado de trabalho, ao\n\nprimeiro emprego e à geração de oportunidades.\n• • Estimular a participação dos jovens na vida pública, comunitária, estudantil e\n\nnos espaços de construção das políticas públicas.\n• • Ampliar oportunidades de formação, desenvolvimento pessoal, inclusão digital\n\ne acesso à cultura, ao esporte e à cidadania.\n• • Estimular o desenvolvimento de lideranças juvenis e o protagonismo social como\n\ninstrumentos de transformação das comunidades.\n• • Reconhecer a juventude e as redes comunitárias como protagonistas culturais,\n\nampliando oportunidades de formação, criação, produção, circulação e fruição,\ncom atenção às periferias, áreas rurais, povos indígenas, comunidades quilombolas\ne culturas digitais e urbanas, além da constituição da Rede Tocantinense de\nFormação e Produção do Conhecimento em Cultura.\n\nCultura e Economia Criativa\n• • Construir, em diálogo com a comunidade, o Centro de Eventos dos Povos\n\nOriginários da Ilha do Bananal.\n• • Reconhecer a cultura como política de Estado e direito fundamental, com gestão\n\ndemocrática, inclusiva, descentralizada, acessível, sustentável e orientada pela\ndiversidade e pela equidade territorial.\n• • Fomentar a Cultura por meio de editais possibilitando assim a participação dos\n\nmais diversos setores culturais dos municípios tocantinenses.\n• • Apoiar os 139 municípios na estruturação de seus sistemas de cultura, fortalecendo\n\nórgãos gestores, conselhos, fundos, planos municipais e a Rede Tocantinense de\nGestores Municipais de Cultura, com regionalização das políticas conforme as\nidentidades e potencialidades de cada território.\n• • Fortalecer o Fundo Cultural do Estado do Tocantins, com modernização da\n\ngestão, maior autonomia operacional, planejamento financeiro de longo prazo e\nmelhor governança administrativa e financeira.\n• • Implantar uma política permanente de formação e produção do conhecimento\n\n54\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-56",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nem cultura, articulando Secretaria de Educação, UFT, UFNT, Unitins, IFTO e outras\ninstituições para formação artística, técnica e de gestão cultural.\n• • Articular cultura e clima nas políticas públicas, com valorização dos saberes\n\ntradicionais, proteção do Cerrado e dos territórios culturais, fortalecimento da\nsociobiodiversidade, economia circular, educação patrimonial e ambiental e\nadaptação às mudanças climáticas.\n• • Valorizar, preservar e promover o patrimônio histórico, artístico, cultural, material\n\ne imaterial do Tocantins, fortalecendo as identidades culturais, a memória e o\nsentimento de pertencimento da população.\n• • Incentivar as manifestações culturais, populares e tradicionais, promovendo a\n\nregionalização das políticas culturais e valorizando as identidades, o patrimônio\ne os ativos culturais presentes em todas as regiões do Estado.\n• • Fortalecer a economia criativa como instrumento de desenvolvimento regional,\n\ngeração de emprego, renda, inovação e valorização dos talentos tocantinenses,\nincentivando o empreendedorismo cultural e o fortalecimento das cadeias produtivas\nda cultura.\n• • Apoiar artistas, produtores culturais, grupos, coletivos e eventos tradicionais,\n\nampliando o acesso às políticas de fomento à cultura.\n• • Fortalecer o Sistema Estadual de Cultura, ampliando a cooperação entre\n\nEstado, municípios e sociedade civil, fortalecendo os mecanismos permanentes\nde financiamento e promovendo o planejamento, a gestão e a participação social\nna implementação das políticas culturais.\n• • Incentivar ações de formação artística e cultural, capacitação e profissionalização\n\nde artistas, produtores culturais e agentes da economia criativa, estimulando\ntambém a pesquisa, a documentação, a preservação da memória e a valorização\ndos saberes tradicionais do Tocantins.\n• • Promover a cultura como instrumento de fortalecimento da identidade\n\ntocantinense, do turismo, do desenvolvimento regional e do desenvolvimento\nsustentável, valorizando os conhecimentos tradicionais e preservando o patrimônio\ncultural para as futuras gerações.\n• • Valorizar as expressões culturais dos povos indígenas, das comunidades quilombolas\n\ne das demais comunidades tradicionais, respeitando sua diversidade e contribuição\npara a identidade cultural do Tocantins.\n\nPLANO DE GOVERNO 2027 / 2030\n\n55"
+          },
+          {
+            "id": "pra-frente-tocantins-57",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\n• • Ampliar o acesso da população aos bens, serviços e direitos culturais, incentivando\n\na descentralização das ações culturais e ampliando o acesso da população às\natividades culturais em todas as regiões do Estado.\n\nEsporte e Lazer\n• • Ampliar o acesso da população às práticas esportivas e às atividades de lazer\n\nem todas as regiões do Estado.\n• • Incentivar o esporte educacional, comunitário, de participação e de alto\n\nrendimento, promovendo oportunidades para todas as faixas etárias.\n• • Apoiar competições, projetos esportivos e eventos de integração, em parceria\n\ncom os municípios e entidades esportivas.\n• • Promover o esporte e o lazer como instrumentos de inclusão social, cidadania,\n\nsaúde e melhoria da qualidade de vida.\n• • Apoiar a implantação, modernização e revitalização de espaços e equipamentos\n\nesportivos, em parceria com os municípios.\n• • Incentivar a identificação e o desenvolvimento de talentos esportivos, fortalecendo\n\na formação de atletas em diferentes modalidades.\n\nDireitos Humanos e Cidadania\n• • Fortalecer políticas de promoção, proteção e garantia dos direitos humanos,\n\n56\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-58",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nrespeitando a diversidade e a dignidade da pessoa humana.\n• • Fortalecer ações de prevenção e enfrentamento de todas as formas de\n\ndiscriminação, violência e violações de direitos.\n• • Promover políticas públicas de inclusão e acessibilidade que assegurem igualdade\n\nde oportunidades, autonomia e participação plena às pessoas com deficiência,\nfortalecendo o exercício da cidadania e o respeito à diversidade.\n• • Promover políticas públicas de inclusão e acessibilidade que assegurem igualdade\n\nde oportunidades, autonomia e participação plena às pessoas com deficiência,\nfortalecendo o exercício da cidadania e o respeito à diversidade.\n\n• • Fortalecer os mecanismos de participação social, diálogo com a sociedade e\n\ncontrole cidadão das políticas públicas.\n• • Integrar políticas públicas voltadas à promoção da cidadania, da inclusão social\n\ne da redução das desigualdades.\n• • Fortalecer a articulação entre Estado, municípios e organizações da sociedade\n\ncivil na promoção da cidadania e da inclusão social.\n• • Incentivar ações de educação para a cidadania, cultura de paz, respeito à\n\ndiversidade e fortalecimento da convivência democrática.\n\nPLANO DE GOVERNO 2027 / 2030\n\n57"
+          },
+          {
+            "id": "ampliar-o-acesso-da-populacao-aos-servicos-de-orientacao-defesa-e-promoc",
+            "titulo": "• • Ampliar o acesso da população aos serviços de orientação, defesa e promoção",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "• • Ampliar o acesso da população aos serviços de orientação, defesa e promoção\n\nde direitos, especialmente para pessoas e grupos em situação de vulnerabilidade.\n\nPolíticas para as mulheres\n• • Instituir programa de capacitação continuada para profissionais da rede de\n\natendimento sobre identificação e notificação de violência contra públicos\nvulneráveis\n• • Promover ações permanentes de capacitação, qualificação profissional e educação\n\npara mulheres, com prioridade para aquelas em situação de vulnerabilidade, a fim\nde ampliar sua autonomia econômica, geração de renda, inserção no mercado de\ntrabalho e criação de novos negócios\n• • Expandir o uso de tornozeleira eletrônica e o botão do pânico para agressores\n\ne vítimas monitoradas pela Lei Maria da Penha, com prioridade para municípios\ndo interior onde a fiscalização judicial é mais frágil.\n• • Criar metas de redução do feminicídio por território, com integração entre SSP-\n\nTO, SecMulher, Judiciário e Defensoria Pública, priorizando as regiões com maior\nletalidade e menor cobertura de rede de proteção.\n• • Fortalecer o Fórum de Políticas Públicas para as Mulheres e as Conferências\n\nEstaduais e Regionais como espaços permanentes de escuta e monitoramento\ndas políticas de enfrentamento à violência.\n• • Estruturar uma rede intersetorial de proteção à infância e à terceira idade,\n\narticulando Conselhos Tutelares, Delegacias Especializadas, CREAS, saúde mental\nescolar e Ministério Público, com prioridade nos municípios de maior vulnerabilidade.\n• • Criar protocolo estadual de resposta rápida à violência intrafamiliar contra\n\ncrianças e idosos, com equipes multiprofissionais compartilhadas entre saúde,\nassistência social e segurança pública."
+          },
+          {
+            "id": "pra-frente-tocantins-59",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nConsiderações Finais\nAo longo deste Plano de Governo apresentamos uma visão para o futuro\ndo Tocantins construída sobre princípios de responsabilidade, planejamento,\ninovação e compromisso com as pessoas. Cada proposta aqui apresentada\nrepresenta o propósito de construir um Estado mais desenvolvido, mais\njusto, mais eficiente e preparado para os desafios das próximas décadas.\nO Tocantins possui todas as condições para se tornar uma referência\nnacional em desenvolvimento, inovação, qualidade de vida e gestão pública.\nCabe ao Governo criar as condições para que esse potencial se transforme\nem oportunidades, investimentos, geração de emprego, melhoria dos\nserviços públicos e desenvolvimento sustentável em todas as regiões do\nEstado.\nO sucesso deste Plano dependerá da capacidade de unir pessoas,\ninstituições e municípios em torno de objetivos comuns, fortalecendo a\ncooperação, a transparência e a confiança entre o Estado e a sociedade.\nO diálogo permanente, a gestão orientada por resultados e o planejamento\nde longo prazo serão instrumentos essenciais para alcançar essa visão de\nfuturo.\nEste Plano de Governo representa um compromisso com as pessoas, com\nos municípios e com o futuro do Tocantins. Mais do que estabelecer objetivos\npara um mandato, apresenta uma visão estratégica de longo prazo, baseada\nno diálogo, na responsabilidade, na inovação e na capacidade de transformar\nplanejamento em resultados concretos para toda a população tocantinense.\nCom trabalho, união e compromisso, construiremos um Tocantins mais\nPLANO DE GOVERNO 2027 / 2030\n\n59"
+          },
+          {
+            "id": "pra-frente-tocantins-60",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPODE CONFIAR!\n\nforte, mais justo, mais competitivo, sustentável e preparado para os desafios\ndo futuro. Um Estado que orgulhe seus cidadãos, valorize suas potencialidades\ne seja reconhecido nacionalmente pela capacidade de transformar\noportunidades em desenvolvimento, qualidade de vida e bem-estar para\ntodos.\n\npara mais informações acesse o site:\nwww.laurezgovernador.com.br\n60\n\nPLANO DE GOVERNO 2027 / 2030"
+          },
+          {
+            "id": "pra-frente-tocantins-61",
+            "titulo": "PRA FRENTE TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "PRA FRENTE TOCANTINS\n\nPLANO DE GOVERNO 2027 / 2030\n\nPODE ONFI\nCONFIAR!\n\n61"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "51e856479de1f5a49c711a2fc81105a9affc760826fd232a36d33add7d7b8ee9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c5d14b56877d9b587cfde56088165d7fa41d082d36677c5b295b799c6bb1f6fb"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "10dc325a711a9845551d12007261386d86df1a0b890ffa59a0c481647acc0402"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b9823e351ec77ebdf880ce3d98879de6397c3013cce95d551b52de3f25ba468e"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "cdf6868e0efd25587502ac3a8c9d3e8d9bd7282f14580391b7d1a56240389e93"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "bd9a697346f0b292f553dcb8dae4e9237b24534110daf6d335602a07e75f522c"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "16e496e6d473c16db0e444474e12c5c06bb561ed367fc24adbbb7bd440c61857"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "52d1c3a861d8d6c2e58ee00abb6a833e9206fd805fb5fda1be21c40d23688b62"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "f44c1b7e898725bf9f3740774f631e41e9f815b4b2e4b4c6f8783de01e60acb9"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "638f5d915b0290d1f2e21b3e7e36d1cec8a10e42d3ed844c08b0a28388e59af0"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "f771cb0acb2407bac9788b8d812660e5c436066c9eaf5c3913b9e4c2c7c1a1e3"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a4b906d9f45dd5dc477aa6dac4ef6383f90d46c9ce7b46295b128ded3760bbcc"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "b2ea5b21f1c51048369cf2d9bb291f70a4e1a5a98a14bc4f3420ff3db9ef4a91"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "990a50bc0ca2aa200319e7ac5182c4319b208608790f72c6287a84bc87af7fdb"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "00f9e5c754823983910a7acd8770373100f449967fffb63ca3f18a352174c869"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "4218a5f4021107bac90d11511cd8007e5ff79845ef0fa0e79b86b85bc82c54dd"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "b812b467804e587cb8b1b0f244fe375df1bf4a27b5cbefff5e5a5e48a2bbc5f6"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "f508c7676a17871713495a9dd21ec74c0f3133d1158025b976625d5b82a216b0"
+          },
+          {
+            "pagina": 19,
+            "origem": "ocr",
+            "textSha256": "aae1fc30c7ceda2da29a5dfdbcab3e96963dea77bb16918a05682cca24dc58da"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "df710670be448836fa71500eba92bee96cb42fd7bbc6330e0eaff034e8d7ba52"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "f1fde3708152a671336b22ea47952f1cf6b307ef1020d7ea30c6917b0453a13b"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7d24d112ef53cc8d5b8e0f8c0b229f4e71ceb0a436e65925eb63f5bfc223bd4a"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "dd8935fdc201be8b0f5586433bdc53fec44b39489dff98d1861a5e901ce5b04f"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "932c9021a9a3c7b1a0827eac9536581d369823b329962e939a0a542d02e17742"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "f50e76d3069d634b2ed8304dfe017c75d5df07359b4486d4b9061775e6f50f47"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "b92b3dc1b985d6487081e63288b4ad9e4ee7b5c231768f3977c8991eed1fff54"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "fa1136eeba5094ad1fe126c02c1cfc27227dd701347e5eccd3742ec98509197d"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "cec010b65360285b5fff4ba1be246efcc395c23786377fb97a062f72e9cee78e"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "ffb7d9490cc4a453ef486ce0b95e45b87db02ff4bbbea5932e36eacf717ab2a1"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "a34472a6c64373e21c4150b6939414bac7ba390827b6dec5274737838d430789"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "daed3d18bd801a54a4d622603312ee1effa5690151bc65336090571487c191d0"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "ef80d8389a23f6064139371989febffb614913b9abf1382cc2634251145372b3"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "bb12d3f8ba04d1da91b4678577a60ba2135802f76c57351514998a69195c1d01"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "bc5c75a48e21eeaf26ef5a06112fd9db0daa7c477ecf94c748ea08ef5d8cdf17"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "4ba4fdd238281fbb5779cf4e35c4a8e9da00725eb2853433145bd98b6c33f170"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "14ccac02825823c82b5724d767ba83919536c082a1ddb21251662439f1beb764"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "10c577fd29224983351b2365ecd72867ccedf9bb3b1a847994f708f2e45c4757"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "e11bd6881f5f70746f20b785a6c80a30147d1d79917b3096b66d6546fe67eeae"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "f4519c3814bad73a020299c3cd7b87908dec95fe104ba2ba2518c0b8304f09dd"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "ff8d5f14e7fcbf974a540ab1fb813e127cb569c31115ed77b430e38cbb91c4ab"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "fb6ca5e4109e69359af6513654c7d8a669ab98a3e66dab5014289fbb17cce88b"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "e234a4ac7536217363b7ba04f24fc16e678c72ac1da1add383550ea64f62062e"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "6abdc68364a54306b9d67652b244920ed0117e8d7666f6150bf116e396ed704d"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "39c65f70c716536cd5ebc3b35da3fa88ff7e3cc7fde3ba01b433417683b8a730"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "72508e0ec873b877a655134a6f103f7cd368125e8f743591a3938b0bb90a9ba9"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "899c0f5c5d0225eddb3d0ea5774c8fad409f8f12f3a143b77f6204af0b1d1aaa"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "0eeee2cc74f94d0a1c8af93cf8be2d15629f1f971acbaa5818a9605300364a42"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "63b3a1177825f0c6ac2092bb57eaf73061912f1785d1b59be2b7322f7f63aa21"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "3728567ded7ef93f9865cf08c57f4abf519133e0f4e676141eada81c9923c3ab"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "8e1f50eea0427ff2779d3761dcedda679ab1398b9deeb75537534d4620bb9336"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "d149608c8baa8f3cc5ec4140ea14b6fa18ae746e447feb5ea57d575a302cac24"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "5f289f26ccbb699c08a7fca0cc4fc9ee1f1e55e17a715b0c8d042d4038b72596"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "774b78ddfe0ad511c903a124aa4c7db222cc8a0ec6d7a054edef4515bccbc992"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "4f363f8205e014d98426adda4c489139551375b3cf56155474b9f884b262afe3"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "42ee9caee607a92c155c5c9f16c3078f6ce017d3b0896713d45c19176c044aa9"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "7b51ee1609ca0ee24ff84edea1923be21c96c8fe2d7ed2546ca626abb3bcd8fc"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "7e3bf3f100053f53f2782a1c142bb41aef0a6b6b917ad4ddadf23ff79126b008"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "75c4e0551e33446239bcce42ed30f3e3b83a86eca4bf2f01e5fc8078566c796a"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "b12ee506aba2d6114d68925f26ed81c2982e56d0c92aa55a1b5d71008e7b469d"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "8a93cb216638241f81db0a4c67155632cc3fde16640ebce55aff49b4d5740a22"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "46d54440f38f37d5a0d46fd1c7a43c254075e8d2ac0eb471d7a820c1bb111b30"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "3b8902c117782fbf655bf6b5d43d8f2f9322a13740b2e9b6bba046b28fc2ee3e"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "7fb69f1d25f57d93a7a150d58be5d46d074349fe28490412ce88303579686992"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano de governo para o período de 2027 a 2030 está organizado em sete eixos estratégicos. Na gestão estadual, o documento prevê instituir a Política Estadual de Transformação Digital como estratégia permanente de modernização da administração pública. O plano propõe criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas. Na infraestrutura, o texto prevê recuperar, pavimentar e conservar a malha rodoviária estadual. Na saúde, o documento propõe expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada. Na segurança pública, o plano prevê implantar o Centro Integrado de Comando e Controle do Estado do Tocantins. Na educação, o plano prevê implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo. Na cultura, o plano prevê construir, em diálogo com a comunidade, o Centro de Eventos dos Povos Originários da Ilha do Bananal.",
+    "frases": [
+      {
+        "texto": "O plano de governo para o período de 2027 a 2030 está organizado em sete eixos estratégicos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 10,
+            "trecho": "O Plano de Governo 2027–2030 está organizado em sete eixos estratégicos que estruturam uma visão integrada de desenvolvimento para o Tocantins."
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão estadual, o documento prevê instituir a Política Estadual de Transformação Digital como estratégia permanente de modernização da administração pública.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 13,
+            "trecho": "Instituir a Política Estadual de Transformação Digital como estratégia permanente de modernização da administração pública."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 27,
+            "trecho": "Criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas"
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o texto prevê recuperar, pavimentar e conservar a malha rodoviária estadual.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 33,
+            "trecho": "Recuperar, pavimentar e conservar a malha rodoviária estadual."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o documento propõe expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 47,
+            "trecho": "Expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o plano prevê implantar o Centro Integrado de Comando e Controle do Estado do Tocantins.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 49,
+            "trecho": "Implantar o Centro Integrado de Comando e Controle do Estado do Tocantins"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano prevê implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 42,
+            "trecho": "Implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo"
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, o plano prevê construir, em diálogo com a comunidade, o Centro de Eventos dos Povos Originários da Ilha do Bananal.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 56,
+            "trecho": "Construir, em diálogo com a comunidade, o Centro de Eventos dos Povos Originários da Ilha do Bananal."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governanca-e-transformacao-digital",
+        "titulo": "Governança e transformação digital",
+        "descricao": "O plano prevê a transformação digital da administração pública para simplificar procedimentos e integrar sistemas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 8,
+            "trecho": "A transformação digital da administração pública buscará simplificar procedimentos, reduzir burocracias, integrar sistemas, ampliar a interoperabilidade entre os órgãos estaduais e facilitar o acesso da população aos serviços públicos."
+          }
+        ]
+      },
+      {
+        "id": "agroindustrializacao",
+        "titulo": "Agroindustrialização",
+        "descricao": "O plano propõe criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 27,
+            "trecho": "Criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas"
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-rodoviaria",
+        "titulo": "Infraestrutura rodoviária",
+        "descricao": "O plano prevê recuperar, pavimentar e conservar a malha rodoviária estadual.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 33,
+            "trecho": "Recuperar, pavimentar e conservar a malha rodoviária estadual."
+          }
+        ]
+      },
+      {
+        "id": "saude-e-telessaude",
+        "titulo": "Saúde e telessaúde",
+        "descricao": "O plano propõe expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 47,
+            "trecho": "Expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O plano prevê implantar o Centro Integrado de Comando e Controle do Estado do Tocantins.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 49,
+            "trecho": "Implantar o Centro Integrado de Comando e Controle do Estado do Tocantins"
+          }
+        ]
+      },
+      {
+        "id": "educacao-e-permanencia-escolar",
+        "titulo": "Educação e permanência escolar",
+        "descricao": "O plano prevê implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544494:01",
+            "pagina": 42,
+            "trecho": "Implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T13:32:03.624Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T13:36:59.434Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a organização do plano para 2027–2030 em sete eixos estratégicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "Os números e período citados, 2027 a 2030 e sete eixos, aparecem literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não traz elogio, crítica, certeza promocional ou juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único ponto, a estrutura do plano em sete eixos estratégicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa o mesmo documento informado e não há sinal de divergência com a chave eleitoral indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:1:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o período e a quantidade de eixos mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a instituição da política como estratégia permanente de modernização da administração pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta do documento, sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a instituição da política estadual de transformação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e evidência correspondem ao identificador informado, sem indício de troca de candidatura ou peça."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:2:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da proposta tal como redigidos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a criação do programa de agroindustrialização, processamento de grãos e serviços tecnológicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números nem prazos a serem confirmados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O texto descreve a proposta sem elogio, crítica ou extrapolação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única proposta coerente dentro da área de agroindustrialização."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:3:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todos os componentes materiais da afirmação aparecem no trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta de recuperar, pavimentar e conservar a malha rodoviária estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números ou prazos na afirmação para validação literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e não introduz qualificação opinativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, infraestrutura rodoviária estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "O documento citado e a evidência permanecem na mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:4:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente as três ações e o objeto material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a expansão da telemedicina e telessaúde para ampliar o acesso à assistência especializada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem juízo de valor ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta coerente no campo da saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "O trecho citado pertence ao mesmo documento e identidade eleitoral indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:5:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais enunciados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta literalmente a implantação do Centro Integrado de Comando e Controle do Estado do Tocantins."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números, percentuais, prazos ou quantidades na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é informativa e não contém adjetivação promocional, crítica ou categórica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:6:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente o objeto principal da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação do programa por meio de bolsas de estudo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números ou percentuais a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O enunciado é descritivo e neutro, sem adjetivos valorativos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se concentra em uma única proposta coerente de permanência escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:7:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente o programa e o mecanismo material citado, bolsas de estudo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a construção do centro de eventos em diálogo com a comunidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta cultural coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "O documento e a evidência permanecem alinhados com a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:frase:8:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todos os elementos materiais da afirmação aparecem na evidência citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a transformação digital para simplificar procedimentos e integrar sistemas estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Apesar do rótulo temático, a redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, transformação digital da administração pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e não há indício de desalinhamento de identidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:governanca-e-transformacao-digital:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os núcleos materiais da afirmação, simplificação de procedimentos e integração de sistemas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números ou prazos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O texto é meramente descritivo, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente no campo da agroindustrialização."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento, evidência e chave eleitoral permanecem alinhados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:agroindustrializacao:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta listada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números nem prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático não compromete a neutralidade; o restante é descritivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, a malha rodoviária estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:infraestrutura-rodoviaria:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho citado cobre integralmente as ações e o objeto da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência corresponde literalmente à proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números ou quantidades para checagem literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação permanece descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de telessaúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento, evidência e identidade eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:saude-e-telessaude:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz a implantação do centro exatamente como afirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A afirmação descreve a proposta sem tom valorativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única proposta coerente na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:seguranca-publica:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente o núcleo material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta indicada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O texto é descritivo e neutro, sem elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de permanência e incentivo aos estudos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado e não há sinal de identidade diversa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544494:tema:educacao-e-permanencia-escolar:documentos:TO:270002544494:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente o programa e o meio citado, bolsas de estudo."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002544494",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002544494:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "1ac0de50de41dbbbdb395973698b8a1e1d6f7913190cec2483b55aa59ad8216c",
+    "extractedTextSha256": "fef9bac886ceaf85ce6f41b8c6d0bccb481983d07a01431fa47f6f745979ec6d",
+    "documentCount": 1,
+    "documentSetSha256": "7ea4f4fd2e889ef68e57b293060d54f9edd7160d7bc9c461f12227584f170469",
+    "contentSha256": "05d634e25cd0a2a74ff975f4d2ba29a7a560acfa37f43ab9a7e73ad462e9559e"
+  }
+}

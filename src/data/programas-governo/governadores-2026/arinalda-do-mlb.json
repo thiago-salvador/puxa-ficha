@@ -1,0 +1,806 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002547826",
+    "slug": "arinalda-do-mlb",
+    "nomeUrna": "ARINALDA DO MLB",
+    "partido": "UP",
+    "arquivoNome": "2026RN200002547826_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002547826_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002547826:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002547826_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002547826_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a39f68d9094a16f34fc3fd64f869c085bc47cd5f65a2bb0aa068dd2b6d2d2a22",
+        "extractedTextSha256": "b1122eb8148463814683fdff65a202d2b8cc3598a11c595205b1e3aeca72c770",
+        "paginas": 9,
+        "secoes": [
+          {
+            "id": "pelo-poder",
+            "titulo": "pelo poder",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "pelo poder\npopular e o\nsocialismo: o povo\npotiguar no poder"
+          },
+          {
+            "id": "plano-de-governo-da-unidade-popular-para-o-estado",
+            "titulo": "PLANO DE GOVERNO DA UNIDADE POPULAR PARA O ESTADO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DA UNIDADE POPULAR PARA O ESTADO\nDO RIO GRANDE DO NORTE\n\nAPRESENTAÇÃO\nO Rio Grande do Norte é um estado formado através da luta dos povos\noriginários, que resistiram aos ataques de colonizadores através da resistência\nPotiguara. A história do Estado do RN é marcada ainda por uma grandiosa luta dos\npovos do interior do estado, com os Tapuya e Tarairus. Ainda assim, o RN é o único\nestado sem nenhuma terra indígena demarcada, o que demonstra uma não superação\ndessas desigualdades e que persistem até os dias atuais. Vale ressaltar que, a\nescravidão do povo negro, arrastado do continente africano foi uma das bases do\ndesenvolvimento da economia e do espaço potiguar, onde instituiu-se o plantio da\ncana e do algodão, tal qual a realidade brasileira como um todo.\nApesar disso, a resistência desses povos foi fundamental para aumentar a\norganização e espaços de luta. O RN também tem uma importante tradição de luta da\nclasse operária, que organizou os trabalhadores do sal na região do Oeste Potiguar e\nLitoral Norte, bem como uma grande luta no período da Ditadura Militar Fascista de\n1964.\nHoje, o povo do RN amarga um salário mínimo e que não permite as condições\nmínimas de vida. O aluguel, o preço dos alimentos, transporte, saúde e educação ficam\ndefasadas em cada família potiguar. Isso não é por acaso: tudo que é produzido em\nnosso estado, não fica com o povo. As riquezas estão nas mãos dos poucos bilionários\ne ricos.\nIsso, em realidade, é uma prova concreta de que esse sistema, o capitalismo, não\nserve aos trabalhadores e ao povo brasileiro, tampouco ao povo potiguar. Da mesma\nforma, não há como administrar um modo econômico que prioriza o lucro, em vez da\nvida do povo. É preciso transformá-lo em algo melhor, superior e justo, que é o\nsocialismo. Construir o socialismo no Rio Grande do Norte é colocar povo para\n1"
+          },
+          {
+            "id": "controlar-e-distribuir-as-riquezas-da-terra-das-fabricas-e-empresas-e-de",
+            "titulo": "controlar e distribuir as riquezas da terra, das fábricas e empresas. É desenvolver uma",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "controlar e distribuir as riquezas da terra, das fábricas e empresas. É desenvolver uma\nreforma agrária e urbana de maneira popular para ter terra para quem nela plantar, e\npara ter moradia digna para o povo viver. Combater qualquer tipo de descriminação\ne opressão. Portanto, significa bater de frente com os ricos de nosso estado,\nfortalecendo a luta popular e coletiva pelo socialismo.\nNossas candidaturas lutam exatamente por essa transformação através da\norganização da classe operária e do povo potiguar e brasileiro, que demonstra, a cada\ndia, firmeza e convicção que é possível mudar, e é possível aqueles que tudo\nproduzem, comandarem o estado. Que é possível o povo ser poder. Com Samara\nMartins na presidência\n\nPelo poder popular e o socialismo.\n\n1. TRABALHO E DESENVOLVIMENTO ECONÔMICO\na) Redução da jornada de trabalho para 30h semanais (para todo funcionalismo\npúblico estadual) e demais trabalhadores do estado;\nb) Elevação de 100% do salário mínimo para todos os trabalhadores que ganham\napenas 1 salário mínimo, ao lado do fim da escala 6x1 junto a redução da\njornada de trabalho para 30h semanais para todos os trabalhadores;\nc) Realização de concursos públicos para elevação do quadro estadual de\nprofessores e trabalhadores da saúde;\nd) Reverter as privatizações de setores estratégicos do estado;\ne) Criação de frentes emergenciais de trabalho para realização de obras públicas a\npartir das cidades e bairros pobres e com menor infraestrutura, de\nimplementação de saneamento básico, construção de postos de saúde,\nhospitais, escolas, calçamento, etc. Atualmente, é um dos setores que mais\nempregam em nosso estado, sendo responsável por quase 20% do PIB, e\n2"
+          },
+          {
+            "id": "empregando-mais-de-41-mil-trabalhadores-ao-lado-disso-atrelar-parceria-c",
+            "titulo": "empregando mais de 41 mil trabalhadores. Ao lado disso, atrelar parceria com",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "empregando mais de 41 mil trabalhadores. Ao lado disso, atrelar parceria com\na Universidade do Estado do RN e Federal, bem como como os Institutos\nEstaduais e Federais, buscando técnicos populares dispostos a contribuírem\ncom seu povo\nf) Reativação de parques industriais abandonados, sobretudo no setor têxtil e\nconfecções, bem como de alimentos, os quais representam mais de 4% e 9% do\nPIB estadual;\ng) Fim do desemprego;\nh) Garantia de trabalho para todos em capacidade de trabalho;\ni) Fim do trabalho escravo e infantil: nos últimos 5 anos, mais de 50 pessoas foram\nresgatadas da situação de trabalho análogo à escravidão;\nj) Socialização de todos os monopólios e consórcios capitalistas e dos meios de\nprodução nos setores estratégicos da economia; planificação da economia para\natender às necessidades da população e acabar com as desigualdades estaduais\ne sociais;\nk) Fortalecer controle e decisão popular e de trabalhadores sobre a distribuição,\ncomercialização e produção;\nl) Avançar na política de industrialização do território potiguar;\nm) Criação do Banco Estadual do Rio Grande do Norte;\nn) Fim do envio das riquezas e lucros para os acionistas e capitalistas do estado;\no) Fim das dívidas dos pequenos e médios produtores com os bancos. Elaborar\num plano nacional de produção de alimentos e necessidades do povo potiguar;\np) O povo decide: ampliar participação popular no controle das finanças públicas\ndo estado. Elevar transparência das contas;\nq) Garantir o desenvolvimento econômico com base nos princípios do\ninternacionalismo, sem negócios com países que praticam a guerra e promovem\ngenocídios;\n\n3"
+          },
+          {
+            "id": "r-ampliar-a-solidariedade-entre-os-povos-enviando-alimentos-medicamentos",
+            "titulo": "r) Ampliar a solidariedade entre os povos, enviando alimentos, medicamentos,",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "r) Ampliar a solidariedade entre os povos, enviando alimentos, medicamentos,\nrecursos materiais e humanos para locais que tenham passado dificuldades\nclimáticas, ambientais, políticas e econômicas;\n\n2. MOBILIDADE URBANA\na) Fim da doação de subsídios para empresas privadas do transporte público;\nb) Ampliação do sistema ferroviário e combate a privatização da CBTU;\nc) Estatização de todo o transporte estadual, garantindo passe livre para todos;\nd) Criação de uma empresa pública de transporte coletivo, ampliando para\nmunicípios das regiões do Seridó e Oeste Potiguar\ne) Integração das linhas com o trem;\nf) Ampliação da rede de ciclovias e ciclofaixas;\n\n3. REFORMA AGRÁRIA, URBANA E HABITAÇÃO\na) Garantia de moradia digna, saneamento e coleta de lixo para todas as famílias\nbrasileiras; destinar os imóveis abandonados para resolver o déficit\nhabitacional;\nb) Realização de uma profunda reforma urbana;\nc) Realização de uma reforma agrária popular, combatendo o latifúndio,\ndesapropriando-o e garantindo alimentação digna para o povo potiguar e\nbrasileiro;\nd) Ampliação da distribuição de alimentos através do fortalecimento da\ncompanhia e abastecimento nacional (Conab), e ampliação de uma companhia\nestadual;\ne) Confisco de toda as terras, de forma imediata, de empresários e latifundiários\nenvolvidos em casos de trabalho análogo a escravidão, destinando essas terras\na assentamentos agrários populares, em formas de fazendas coletivas;\n\n4"
+          },
+          {
+            "id": "f-criacao-de-uma-empresa-agricola-do-estado-destinada-como-uma-fazenda",
+            "titulo": "f) Criação de uma empresa agrícola do estado destinada como uma fazenda",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "f) Criação de uma empresa agrícola do estado destinada como uma fazenda\nestatal, intensificando, especializando, concentrando e integrando a produção\nagropecuária através da cooperação;\ng) Fortalecimento da EMPARN, EMATER E CENTERN, realizando sua\ncapacitação técnica, tecnológica, expandindo e ampliando o quadro de\nfuncionários;\nh) Demarcação e proteção urgente das terras e territórios indígenas, quilombolas\ne ribeirinhas;\ni) Investimento na pequena produção camponesa, desapropriação e titulação de\nterras para os camponeses e povos do campo. Criação de mercados populares\nque garantam venda dos alimentos a preços reduzidos, objetivando acabar com\na fome no estado;\n\n4. SEGURANÇA PÚBLICA E DIREITOS HUMANOS\na) Proibição de operações militares em vilas e favelas;\nb) Contribuir ao máximo para desmilitarizar a PM, desarticular os batalhões\nespeciais como de choque, dentre outros;\nc) Punir os torturadores e assassinos que compunham as forças policiais e do\nestado. Focar o combate ao crime organizado combatendo os ricos que os\nfinanciam;\nd) Lutar para implementação da desmilitarização a nível nacional;\ne) Utilizar uma força tática de inteligência contra o crime organizado: desmantelar\no centro financeiro desses grupos, integrando os estados e a federação,\ncombatendo a lógica de guerra nas periferias;\nf) Fim da criminalização e repressão a movimentos sociais e populares;\ng) Combate fervoroso ao machismo, xenofobia, discriminação religiosa, racismo e\nLGBTfobia, bem como quaisquer tipos de opressão;\n\n5"
+          },
+          {
+            "id": "h-enfrentamento-firme-ao-feminicidio-com-a-criacao-um-programa-publico-c",
+            "titulo": "h) Enfrentamento firme ao feminicídio, com a criação um Programa Público contra",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "h) Enfrentamento firme ao feminicídio, com a criação um Programa Público contra\no Machismo e a Misoginia obrigatório em todas as escolas da rede estadual;\ni) Criação de delegacias especializadas (DEAMs) 24h em todas as regiões,\norçamento para Casas-Abrigo e defesa intransigente da legalização ao direito\nao aborto legal na rede de saúde pública;\nj) Ampliação de Casas e centros de Referência as mulheres vítimas de violência;\nk) Fim das chacinas nas favelas e bairros e do encarceramento em massa.\nReestruturação do sistema prisional, transformando penitenciárias em centros\nde trabalho para a sociedade, bem como buscando a socialização e\nressocialização integral dos apenados, combatendo a reincidência e\nrecrutamento para as facções criminosas;\nl) Formação\n\ne\n\nampliação\n\nde\n\nempregos,\n\nqualificação,\n\nacompanhamento\n\npsicossocial e educacional para pessoas privadas de liberdade;\nm) Realizar grande campanha pelo direito à memória, verdade, justiça e reparação\nas vítimas de tortura e assassinatos pela violência de estado.\n\n5. EDUCAÇÃO, SAÚDE E CULTURA\na) Investimento massivo nas universidades estaduais, construção de novas\nunidades em todas as cidades polo do estado;\nb) Garantia de investimento massivo em educação e saúde estadual;\nc) Acabar com a militarização das escolas, garantia de eleição direta para diretores\ndas escolas, valorização dos professores e demais profissionais da educação e\nsaúde;\nd) Abertura de concurso público e convocação dos aprovados nos concursos\nanteriores;\ne) Obrigatoriedade para que todos os políticos do estado e suas famílias sejam\nobrigados a usar o SUS e a educação públicas;\n\n6"
+          },
+          {
+            "id": "f-educacao-publica-e-gratuita-para-todos-e-em-todos-os-niveis-fim-do-luc",
+            "titulo": "f) Educação pública e gratuita para todos e em todos os níveis; fim do lucro na",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "f) Educação pública e gratuita para todos e em todos os níveis; fim do lucro na\neducação. Garantia de livre acesso do povo à universidade e/ou cursos técnicos\nprofissionalizantes;\ng) Reforma imediata de toda a estrutura escolar do estado, abrindo laboratórios,\nquadras, banheiros e climatizando todas as escolas, principalmente as dos\nmunicípios que apresentam maiores temperaturas;\nh) Ampliação da quantidade de creches em todos os municípios;\ni) Retirar empresas terceirizadas da administração e setores da escola,\ncontratando os profissionais por vínculo direto com o estado;\nj) Defesa e incentivo à cultura nacional e popular; nacionalização de todas as\ncompanhias gravadoras de música e produtoras de filmes;\nk) Incentivo a cultura popular potiguar, defendendo seus patrimônios artísticos\nbem como os artistas locais;\nl) Incentivo ao esporte e lazer;\nm) Criação de novas e ampliação de academias populares e quadras esportivas nos\nbairros pobres, vilas e favelas;\n\n6. MEIO AMBIENTE\na) Combate ao desmatamento ilegal;\nb) Combate ao avanço predatório das energias eólicas no interior e litoral do\nestado;\nc) Programa de incentivo a recuperação florestal de áreas desmatadas;\nd) Proteção e controle popular dos biomas potiguares;\ne) Reflorestamento e arborização natural nas cidades potiguares;\nf) Garantir saneamento básico, rede de esgoto e água tratada para toda a\npopulação potiguar;\ng) Ampliar programas de combate a seca, elevando políticas de segurança hídrica\natravés do fornecimento de água, perfuração de poços e reservatórios;\n7"
+          },
+          {
+            "id": "h-incluir-programas-de-alfabetizacao-e-educacao-ambiental-nas-escolas",
+            "titulo": "h) Incluir programas de alfabetização e educação ambiental nas escolas;",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "h) Incluir programas de alfabetização e educação ambiental nas escolas;\ni) Avançar na desapropriação de latifúndios improdutivos, destinando para\nplantações agroecológicas;\nj) Proibição do desmatamento nas áreas de mata atlântica e caatinga;\nk) Proibir atividades produtivas que ameacem rios, lagos, aquíferos e açudes;\nl) Implementar plano estadual popular e gestão democrática das águas;\nm) Proibição e combate ao uso indiscriminado de transgênicos e agrotóxicos\n\n8"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ceccff443f2f75c1faa31d92df9e818d639f1892df7fb4304246410b37cc6dd7"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ee280bfdfe58310bcd4c8ff23c14483ec8df5470f181d367019e7a590f10715e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e42566013fbbfcf2a085a96154a71815bcb3d0f94fd7f3c866a491509ac9ad68"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "65eae8445ec08ecfc45302ed823b3be08f3b671f6c25270e5e1326449bcf1ea3"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "59eb001acaaccddd66f2d4c3b07ef34087a6b4f8ec5bf1f3e48a5112c7d4716c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e00559d5eb7223e6c0654ea01aea08c8d229447535a3bab8e94edab57f4e4d71"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "955aad965e71320acb389d9fc2b7cf915278f782a024c5474e810aafeaf49b1a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "100119f2c2be751cf7fa3db05ecbbb12dbb53ce4448d911ad8c6cb1c596d428b"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "5a8f5ca084cf6b32b97dd53217bf7ab89a7bf67c863f4939084ed55583e7d4ac"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta propostas distribuídas em seções temáticas do plano de governo estadual. O programa prevê a redução da jornada de trabalho para 30h semanais para todo o funcionalismo público estadual. Também propõe a criação de uma empresa pública de transporte coletivo para municípios das regiões do Seridó e Oeste Potiguar. No campo habitacional, prevê a garantia de moradia digna para as famílias. Na segurança pública estadual, propõe a proibição de operações militares em vilas e favelas. Para a educação pública, prevê a ampliação da quantidade de creches em todos os municípios. Na área ambiental do estado, propõe um programa de incentivo à recuperação florestal de áreas desmatadas. O documento prevê a demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas.",
+    "frases": [
+      {
+        "texto": "O programa prevê a redução da jornada de trabalho para 30h semanais para todo o funcionalismo público estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 3,
+            "trecho": "Redução da jornada de trabalho para 30h semanais (para todo funcionalismo público estadual)"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe a criação de uma empresa pública de transporte coletivo para municípios das regiões do Seridó e Oeste Potiguar.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 5,
+            "trecho": "Criação de uma empresa pública de transporte coletivo, ampliando para municípios das regiões do Seridó e Oeste Potiguar"
+          }
+        ]
+      },
+      {
+        "texto": "No campo habitacional, prevê a garantia de moradia digna para as famílias.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 5,
+            "trecho": "Garantia de moradia digna"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública estadual, propõe a proibição de operações militares em vilas e favelas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 6,
+            "trecho": "Proibição de operações militares em vilas e favelas"
+          }
+        ]
+      },
+      {
+        "texto": "Para a educação pública, prevê a ampliação da quantidade de creches em todos os municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 8,
+            "trecho": "Ampliação da quantidade de creches em todos os municípios"
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental do estado, propõe um programa de incentivo à recuperação florestal de áreas desmatadas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 8,
+            "trecho": "Programa de incentivo a recuperação florestal de áreas desmatadas"
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê a demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 6,
+            "trecho": "Demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "jornada-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Redução da jornada de trabalho no funcionalismo público estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 3,
+            "trecho": "Redução da jornada de trabalho para 30h semanais (para todo funcionalismo público estadual)"
+          }
+        ]
+      },
+      {
+        "id": "transporte-coletivo",
+        "titulo": "Transporte coletivo",
+        "descricao": "Criação de empresa pública de transporte coletivo.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 5,
+            "trecho": "Criação de uma empresa pública de transporte coletivo"
+          }
+        ]
+      },
+      {
+        "id": "moradia-digna",
+        "titulo": "Moradia digna",
+        "descricao": "Garantia de moradia digna para as famílias.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 5,
+            "trecho": "Garantia de moradia digna"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Proibição de operações militares em vilas e favelas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 6,
+            "trecho": "Proibição de operações militares em vilas e favelas"
+          }
+        ]
+      },
+      {
+        "id": "creches-municipais",
+        "titulo": "Creches municipais",
+        "descricao": "Ampliação da quantidade de creches nos municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 8,
+            "trecho": "Ampliação da quantidade de creches em todos os municípios"
+          }
+        ]
+      },
+      {
+        "id": "recuperacao-florestal",
+        "titulo": "Recuperação florestal",
+        "descricao": "Incentivo à recuperação florestal de áreas desmatadas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 8,
+            "trecho": "Programa de incentivo a recuperação florestal de áreas desmatadas"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:44:15.270Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:46:19.270Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 30h está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "O documento afirma 'Garantia de moradia digna...para todas as famílias brasileiras', sustentando a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (habitação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre demarcação de terras."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não cita números; evidência tem número mas não contradiz."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002547826",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002547826:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 24016,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3343,
+          "reasoning_output_tokens": 2274
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21210,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20411,
+          "output_tokens_details": {
+            "thinking_tokens": 752
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21210,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20411,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21210,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21210
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3060514
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a39f68d9094a16f34fc3fd64f869c085bc47cd5f65a2bb0aa068dd2b6d2d2a22",
+    "extractedTextSha256": "b1122eb8148463814683fdff65a202d2b8cc3598a11c595205b1e3aeca72c770",
+    "documentCount": 1,
+    "documentSetSha256": "49c2c9410622b856fe8b1719b2ee4de71d332668dc7e3ed7a89917c14ad68c99",
+    "contentSha256": "c467498f513045726498145a22b7f215f1c2d87c902f27cf24f8a88c486eb71d"
+  }
+}

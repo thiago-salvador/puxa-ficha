@@ -1,0 +1,920 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002550544",
+    "slug": "lais-chaud",
+    "nomeUrna": "LAÍS CHAUD",
+    "partido": "UP",
+    "arquivoNome": "2026SC240002550544_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002550544_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002550544:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002550544_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002550544_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "552428823ee4d34d41e4011f1be270281e92eacc39a73336d21b9b35cfd6010b",
+        "extractedTextSha256": "1b0d8c950d7034c315ee123099b4eb8fef4afa189fb23793d7eff57b062d0982",
+        "paginas": 23,
+        "secoes": [
+          {
+            "id": "programa-politico-da-unidade-popular-pelo-socialismo-para-santa-catarina",
+            "titulo": "Programa político da Unidade Popular pelo Socialismo para Santa Catarina.",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Programa político da Unidade Popular pelo Socialismo para Santa Catarina.\n\nTRABALHO E ECONOMIA\nA economia catarinense alcançou um PIB estimado em R$ 604,1 bilhões no ano de\n2025, esses números mostram a capacidade produtiva de Santa Catarina e a importância de\nsua economia no cenário nacional. Nosso estado apresenta uma estrutura industrial\ndiversificada, com destaque para os setores metalmecânico, têxtil, alimentício, cerâmico,\nmadeireiro, de máquinas e equipamentos e de tecnologia. Em 2024, a indústria de\ntransformação catarinense cresceu 7,7%, demonstrando a força do setor produtivo estadual. O\nestado também possui uma extensa rede de pequenas e médias empresas, cooperativas e\nprodutores rurais, que participam diretamente da geração de nossas riquezas e empregos.\nEsse desempenho demonstra que Santa Catarina possui capacidade para produzir\nalimentos, bens industriais e produtos de alto valor agregado. Mas quem se beneficia dessa\nriqueza e qual é o papel do Estado na organização desse desenvolvimento? A\ncontradição fundamental é que quem trabalha não usufrui dos frutos de seu trabalho.\nOs indicadores do mercado de trabalho catarinense são positivos quando comparados ao\nrestante do país. Em 2025, Santa Catarina registrou taxa anual de desemprego de apenas\n2,3%, a segunda menor do Brasil. A informalidade ficou em 26,3%, também a menor taxa\nentre os estados. O nível de ocupação chegou a 66,2%, um dos maiores do país. A questão\nposta é: qual emprego está sendo criado, se os trabalhadores recebem o suficiente para\nsobreviver, quais condições de trabalho possuem e como os ganhos de produtividade são\ndistribuídos.\nA existência de baixos índices de desemprego não elimina as desigualdades. O\ntrabalhador catarinense depende de transporte público, moradia, saúde, educação, saneamento\ne demais serviços públicos. O desenvolvimento econômico precisa ser acompanhado pela\nmelhoria das condições concretas de vida da população.\nOs números sobre saúde e segurança no trabalho mostram que a realidade de muitos\ntrabalhadores ainda é marcada por acidentes, adoecimento e assédio. Dados do Tribunal\nRegional do Trabalho da 12ª Região mostram que os processos relacionados a esses temas\ncresceram 42% em apenas um ano. Foram 12.450 ações em 2025, contra 8.764 em 2024. Os\ncasos de doença ocupacional passaram de 3.062 para 5.016, enquanto os acidentes de"
+          },
+          {
+            "id": "trabalho-aumentaram-de-3-523-para-4-845-tambem-cresceram-os-processos-po",
+            "titulo": "trabalho aumentaram de 3.523 para 4.845. Também cresceram os processos por assédio moral",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "trabalho aumentaram de 3.523 para 4.845. Também cresceram os processos por assédio moral\ne assédio sexual.\nA situação é especialmente preocupante no Oeste catarinense, a região das\nagroindústrias e frigoríficos. Em Chapecó, 22% dos processos trabalhistas distribuídos entre\n2024 e 2025 estavam relacionados à saúde e à segurança no trabalho, o maior percentual do\nestado. Em 2025, cerca de 39 mil trabalhadores sofreram acidentes de trabalho em\nSanta Catarina e 170 perderam a vida. Entre 2016 e 2025, o estado registrou 459.716\nacidentes e 1.623 mortes durante o exercício da atividade profissional, ficando entre os\ncinco estados brasileiros com os maiores números nesses indicadores.\nSanta Catarina também possui a maior participação feminina no emprego industrial\ndo Brasil. Em 2025, as mulheres ocupavam mais de 314 mil postos de trabalho na indústria\ncatarinense, representando 33,65% da força de trabalho do setor. Elas estão presentes não\napenas nos segmentos têxtil e alimentício, mas também em áreas técnicas, de engenharia e de\ngestão. Isso significa que os problemas relacionados às condições de trabalho, ao\nadoecimento ocupacional e ao assédio atingem diretamente centenas de milhares de mulheres\ntrabalhadoras em todo o estado.\nA situação é tão grave que o estado também convive com casos de trabalho análogo à\nescravidão. Entre 1995 e 2024, 1.131 trabalhadores foram resgatados dessa condição em\nSanta Catarina. A maioria atuava no setor agropecuário e grande parte era formada por jovens\ntrabalhadores submetidos a formas extremas de exploração.\nÉ PRECISO OUTRO MODELO DE DESENVOLVIMENTO\nSanta Catarina precisa de um modelo de desenvolvimento que utilize sua capacidade\nprodutiva para melhorar concretamente a vida da população. É necessário garantir que a\nriqueza produzida no estado se transforme em salários melhores, serviços públicos de\nqualidade, infraestrutura, moradia, saneamento, ciência e tecnologia e oportunidades para\ntodas as regiões. Isso significa utilizar universidades públicas, institutos federais, Epagri e\ncentros de pesquisa para desenvolver tecnologias que atendam às necessidades da população\ne aumentem a capacidade produtiva do próprio estado.\nO desenvolvimento econômico precisa estar associado à preservação ambiental. O\nestado não pode aceitar que projetos econômicos sejam aprovados sem considerar seus\nimpactos sobre rios, florestas, áreas rurais, comunidades e cidades. A atividade produtiva"
+          },
+          {
+            "id": "deve-estar-submetida-a-regras-ambientais-rigorosas-e-a-fiscalizacao-publ",
+            "titulo": "deve estar submetida a regras ambientais rigorosas e à fiscalização pública. A capacidade",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "deve estar submetida a regras ambientais rigorosas e à fiscalização pública. A capacidade\neconômica de Santa Catarina deve estar a serviço de quem produz a riqueza do estado.\nNESSE SENTIDO PROPOMOS:\n1.​ Elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos\nde orçamento participativo e garantindo transparência sobre a execução dos recursos\npúblicos.\n2.​ Criar o Observatório Catarinense de Desenvolvimento, Trabalho e Emprego, reunindo\ndados sobre investimentos públicos e privados, incentivos fiscais, empregos, salários,\nprodução e desigualdades regionais.\n3.​ Revisar os programas estaduais de incentivos fiscais, garantindo transparência sobre\nos valores concedidos, empresas beneficiadas e receitas que deixam de ser\narrecadadas.\n4.​ Criar mecanismos de fiscalização e avaliação periódica dos incentivos fiscais,\nsuspendendo benefícios quando as empresas não cumprirem as contrapartidas\nestabelecidas.\n5.​ Criar uma política estadual de industrialização e agregação de valor, estimulando que\nmatérias-primas produzidas em Santa Catarina sejam processadas no próprio território\nantes de serem exportadas.\n6.​ Fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de\nbaixo custo, assistência técnica, seguro rural, infraestrutura e programas de\ncomercialização.\n7.​ Ampliar os programas estaduais de compra de alimentos da agricultura familiar para\nescolas, hospitais, restaurantes populares e demais equipamentos públicos.\n8.​ Criar um Programa Estadual de Cooperativismo e Economia Solidária, oferecendo\nassistência técnica, contábil, jurídica e comercial e linhas de crédito público de baixo\ncusto.\n9.​ Fortalecer a Epagri, e Cidasc e as demais instituições públicas de pesquisa e\nassistência técnica, garantindo estrutura e servidores suficientes para atender os\nprodutores catarinenses.\n10.​Ampliar investimentos públicos em ciência, tecnologia e inovação, fortalecendo as\nuniversidades públicas, institutos federais e centros de pesquisa do estado."
+          },
+          {
+            "id": "11-criar-um-programa-estadual-de-tecnologia-e-inovacao-voltado-ao-desenv",
+            "titulo": "11.​Criar um programa estadual de tecnologia e inovação voltado ao desenvolvimento de",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "11.​Criar um programa estadual de tecnologia e inovação voltado ao desenvolvimento de\ntecnologias sociais, industriais e ambientais que atendam às necessidades da\npopulação catarinense.\n12.​Criar uma política estadual de desenvolvimento regional, direcionando investimentos\npúblicos para regiões com maiores déficits de infraestrutura, emprego, renda e\nserviços públicos.\n13.​Estabelecer metas de redução das desigualdades regionais no planejamento estadual,\nvinculando parte dos investimentos públicos ao cumprimento dessas metas.\n14.​Ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual\npara universalizar o abastecimento de água, a coleta e o tratamento de esgoto.\n15.​Fortalecer a CASAN enquanto empresa pública estratégica, ampliando sua capacidade\nde investimento e garantindo a expansão dos serviços de saneamento para as regiões\nainda não atendidas.\n16.​Garantir que os municípios tenham apoio técnico e financeiro do Estado para\nimplantação de redes de saneamento, drenagem urbana e gestão adequada de resíduos\nsólidos.\n17.​Criar programas estaduais de apoio a pequenas empresas, trabalhadores autônomos,\nfeirantes e empreendimentos da economia popular, com crédito de baixo custo e\nassistência técnica.\n18.​Ampliar programas de qualificação profissional gratuita, articulados às necessidades\neconômicas de cada região e priorizando jovens, trabalhadores desempregados e\npessoas em situação de vulnerabilidade.\n19.​Criar programas estaduais de primeiro emprego e formação profissional para jovens,\narticulando educação, qualificação e inserção no mercado de trabalho.\n20.​Criar frentes de trabalho para obras de infraestrutura, recuperação ambiental,\nsaneamento e manutenção de equipamentos públicos, priorizando regiões com\nmaiores necessidades sociais.\n21.​Incentivar a instalação de empresas de reciclagem, reaproveitamento de resíduos e\ntecnologias de baixo impacto ambiental, vinculando os incentivos públicos ao\ncumprimento de metas trabalhistas e ambientais.\n22.​Fortalecer a infraestrutura logística estadual, priorizando investimentos em rodovias,\nferrovias, portos e transporte de cargas que reduzam custos para os produtores e\nbeneficiem também a população."
+          },
+          {
+            "id": "23-ampliar-os-investimentos-em-infraestrutura-digital-garantindo-acesso",
+            "titulo": "23.​Ampliar os investimentos em infraestrutura digital, garantindo acesso à internet de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "23.​Ampliar os investimentos em infraestrutura digital, garantindo acesso à internet de\nqualidade nas regiões rurais e nos municípios pequenos.\n24.​Estabelecer critérios sociais e ambientais para grandes projetos de infraestrutura\nbeneficiados por recursos públicos, garantindo fiscalização e participação das\ncomunidades atingidas.\n25.​Fortalecer os instrumentos públicos de financiamento ao desenvolvimento, ampliando\no\n\nacesso\n\nde\n\ncooperativas,\n\npequenos\n\nprodutores,\n\npequenas\n\nempresas\n\ne\n\nempreendimentos da economia solidária ao crédito de baixo custo.\n26.​Utilizar a política econômica estadual para garantir que o crescimento da produção e\nda produtividade resulte também em melhoria das condições de trabalho, aumento dos\nsalários e ampliação dos serviços públicos.\n27.​Política de valorização do salário mínimo e dos pisos salariais estaduais, com o\nobjetivo de ampliar o poder de compra dos trabalhadores e acompanhar a evolução do\ncusto de vida.\n28.​Redução da jornada de trabalho sem redução salarial.\n\nSAÚDE\nO sistema de saúde pública de Santa Catarina apresenta uma contradição evidente.\nApesar de o estado ser frequentemente apontado como referência nacional em indicadores\nsociais, milhares de catarinenses enfrentam dificuldades para acessar consultas, exames e\nprocedimentos especializados. Em 2025, a fila de cirurgias eletivas alcançou 116 mil\npacientes, o maior número já registrado, e a espera média por procedimentos ultrapassou 300\ndias em diversas especialidades. Ao mesmo tempo, embora Santa Catarina possua 313\nhospitais, apenas 48 deles são públicos, evidenciando a forte dependência da rede privada e\nfilantrópica para garantir o atendimento da população. A concentração de investimentos na\nmédia e alta complexidade, sem o fortalecimento proporcional da atenção básica, contribui\npara a sobrecarga dos serviços de urgência e emergência e dificulta a prevenção de doenças e\no acompanhamento contínuo da população.\nOs principais problemas da saúde catarinense passam pela demora no acesso a\nconsultas, exames e cirurgias, pela insuficiência da rede pública própria e pelas desigualdades\nde acesso entre as diferentes regiões do estado. Fortalecer o SUS exige ampliar os\ninvestimentos na atenção básica, contratar mais profissionais, expandir a capacidade da rede"
+          },
+          {
+            "id": "publica-estadual-e-garantir-que-o-acesso-a-saude-seja-tratado-como-um-di",
+            "titulo": "pública estadual e garantir que o acesso à saúde seja tratado como um direito da população, e",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "pública estadual e garantir que o acesso à saúde seja tratado como um direito da população, e\nnão como uma oportunidade de negócio para grupos privados.\nNESSE SENTIDO PROPOMOS:\n1.​ Fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo\nacompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças\ncrônicas, reduzindo internações evitáveis.\n2.​ Expandir concursos públicos e a contratação de profissionais para o SUS,\nespecialmente em regiões com maior dificuldade de acesso a médicos especialistas e\noutros trabalhadores da saúde.\n3.​ Valorizar os Agentes Comunitários de Saúde, ampliando sua formação e condições de\ntrabalho para fortalecer ações de prevenção e acompanhamento das famílias.\n4.​ Desenvolver programas permanentes de promoção da saúde nas escolas estaduais,\nabordando alimentação saudável, saúde mental, atividade física, prevenção ao uso de\ndrogas e educação sexual.\n5.​ Fortalecer a parceria entre a Secretaria de Saúde e as universidades públicas\ncatarinenses, como a Universidade Federal da Fronteira Sul, a Universidade Federal\nde Santa Catarina e a Universidade do Estado de Santa Catarina para pesquisa,\nformação de profissionais e desenvolvimento de políticas públicas.\n6.​ Atualizar os planos regionais de saúde com participação popular, considerando as\ndiferenças entre o litoral, o Oeste, a Serra e outras regiões do estado.\n7.​ Ampliar os CAPS e os CAPS-AD, especialmente em cidades médias e polos\nregionais, fortalecendo a rede pública de saúde mental.\n8.​ Implementar políticas de redução de danos e ampliar o acesso ao atendimento em\nsaúde mental, com equipes multiprofissionais e acompanhamento contínuo.\n9.​ Expandir os horários de funcionamento das UBS em regiões de grande demanda,\nincluindo atendimento noturno e aos fins de semana onde houver necessidade.\n10.​Desenvolver programas estaduais de atividade física e prevenção de doenças crônicas,\nutilizando espaços públicos e equipamentos comunitários.\n\nPCD’S"
+          },
+          {
+            "id": "segundo-o-censo-2022-do-ibge-santa-catarina-possui-499-mil-pessoas-com",
+            "titulo": "Segundo o Censo 2022 do IBGE, Santa Catarina possui 499 mil pessoas com",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Segundo o Censo 2022 do IBGE, Santa Catarina possui 499 mil pessoas com\ndeficiência com 2 anos ou mais de idade, o que corresponde a 6% da população nessa faixa\netária. Embora o percentual catarinense esteja abaixo da média nacional de 7,3%, trata-se de\nquase meio milhão de pessoas que enfrentam diariamente barreiras de acessibilidade,\neducação, saúde, trabalho e participação social.\nNo mercado de trabalho, a situação também exige atenção. Apesar da Lei 8.213/91\nestabelecer a reserva de vagas para pessoas com deficiência nas empresas com 100 ou mais\nempregados, Santa Catarina ainda não preenche integralmente as vagas previstas pela\nlegislação. Em 2026, cerca de 37 mil pessoas com deficiência trabalhavam em empresas\nsujeitas à Lei de Cotas, mas apenas 65,8% das vagas que deveriam ser destinadas a PCDs\nestavam efetivamente preenchidas. Isso mostra que a existência da lei, por si só, não garante a\ninclusão. É necessário fiscalizar seu cumprimento e garantir condições adequadas de\nacessibilidade e permanência no trabalho.\nNESSE SENTIDO PROPOMOS:\n1.​ Criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas,\nunidades de saúde, prédios públicos, espaços culturais, esportivos e demais\nequipamentos públicos.\n2.​ Ampliar a fiscalização do cumprimento da Lei 8.213/91 em Santa Catarina,\ngarantindo o preenchimento integral das vagas destinadas às pessoas com deficiência.\n3.​ Criar uma política estadual de inclusão profissional das pessoas com deficiência, com\nqualificação gratuita, intermediação de mão de obra, acompanhamento das\ncontratações e fiscalização das condições de trabalho.\n4.​ Ampliar a contratação de profissionais de apoio e profissionais especializados para a\neducação inclusiva, garantindo condições adequadas para o atendimento dos\nestudantes com deficiência.\n5.​ Garantir acessibilidade nos concursos públicos estaduais, com provas adaptadas,\nintérpretes de Libras e tecnologias assistivas quando necessárias.\n6.​ Garantir o fornecimento regular de órteses, próteses, cadeiras de rodas, aparelhos\nauditivos, medicamentos e demais tecnologias assistivas pelo SUS.\n7.​ Garantir a participação das pessoas com deficiência na elaboração e fiscalização das\npolíticas públicas, fortalecendo o Conede e os Conselhos Municipais dos Direitos da\nPessoa com Deficiência.."
+          },
+          {
+            "id": "8-garantir-acessibilidade-em-equipamentos-publicos-de-cultura-esporte-e",
+            "titulo": "8.​ Garantir acessibilidade em equipamentos públicos de cultura, esporte e lazer,",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "8.​ Garantir acessibilidade em equipamentos públicos de cultura, esporte e lazer,\nampliando a participação das pessoas com deficiência nessas atividades.\n9.​ Criar políticas de apoio à autonomia das pessoas com deficiência, articulando saúde,\neducação, assistência social, trabalho, moradia, transporte e acessibilidade.\n10.​Criar uma política estadual de prevenção e enfrentamento à violência contra pessoas\ncom deficiência, articulando saúde, assistência social, educação e segurança pública.\n\nEDUCAÇÃO\nEm 2025 o Governo de Santa Catarina transferiu diretamente para o setor privado\nmais de R$1 Bilhão, através do programa Universidade Gratuita (UG). Isso representou um\ncrescimento de mais de 30% comparado ao valor destinado ao programa no ano anterior,\nquando o valor transferido chegava a 90% do orçamento da UDESC (Universidade do Estado\nde Santa Catarina). Mas será que essa transferência de recursos à rede privada é a melhor\nforma de investir na educação?\nDe acordo com um relatório elaborado pelo Sindicato Docente da UDESC\n(APRUDESC), não. O relatório apresenta a relação de gasto por aluno com programas como\no UG e os compara com os gastos por aluno das universidades estaduais. Na verdade, as\nuniversidades estaduais apresentam um custo menor por aluno do que as universidades\nparticulares. Excluindo os gastos com folha de pagamento de servidores aposentados e gastos\ncom obras chega à quase metade do custo de manutenção do UG.\nMas o que embasa a atual política do Governo de SC para o Ensino Superior? A\nlógica privatista. O interesse dos grandes grupos financeiros que impulsionam essa política\nem SC e no Brasil busca substituir gradualmente os investimentos públicos em educação\npública, gratuita e de qualidade por investimentos no setor privado. Esse movimento sucateia\nas universidades públicas, abrindo ainda mais o mercado da educação no Brasil para o setor\nprivado. A consequência é clara: em Santa Catarina 3 a cada 4 estudantes são forçados a\npagar pela educação superior.\nO Ensino Superior não representa, entretanto, a maior fatia do orçamento da Educação\nCatarinense. O ensino básico, apesar de ter a maior parcela do orçamento destinado à\neducação, vive a situação mais precária. Não são poucas as reclamações: prédios antigos,\nnecessitando reformas; planos de carreira defasados; ausência de recursos para as aulas; falta\nde climatização; falta de transporte escolar; entre muitas outras."
+          },
+          {
+            "id": "quantas-escolas-estaduais-em-santa-catarina-ainda-ocupam-predios-do-secu",
+            "titulo": "Quantas escolas estaduais em Santa Catarina ainda ocupam prédios do século",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Quantas escolas estaduais em Santa Catarina ainda ocupam prédios do século\npassado? Quantas tem instalações elétricas que não comportam a instalação de sistemas de\nclimatização? Quantas apresentam telhados com vazamentos, problemas de infiltração,\nbanheiros interditados, etc? A situação material da educação catarinense hoje é preocupante.\nÉ urgente que o poder público atue na reforma das escolas estaduais.\nO povo catarinense não pode aceitar um programa para a educação que perpetue a\ndesvalorização dos profissionais da educação e que precarize a formação de nossa juventude!\nNESSE SENTIDO PROPOMOS:\n1.​ Suspensão do Programa Universidade Gratuita, com reversão dos recursos que seriam\ninvestidos em novas matrículas para criação de novas vagas na UDESC contemplando\nos estudantes que viriam a utilizar o programa; Fim dos “serviços de contrapartida”\ndo Universidade Gratuita para matrículas anteriores ao fim do programa;\n2.​ Consulta popular sobre a federalização ou estadualização das Universidades\nComunitárias;\n3.​ Chega de escolas precarizadas; participação popular na decisão a respeito da\ndestinação de verbas das escolas; Elaboração de plano para garantir a todos os jovens\nde Santa Catarina o acesso a um ambiente de ensino digno;\n4.​ Descompactação da carreira docente de Santa Catarina: maiores aumentos por tempo\nde carreira e expansão dos benefícios pela formação continuada;\n5.​ Abertura de novos concursos públicos visando efetivar o quadro de servidores ACT’s\nda rede; Novas chamadas dos concursos visando reduzir a carga horária do professor\ncatarinense para 36 horas semanais;\n6.​ Organização do Congresso Catarinense de Educadores para pautar a reformulação do\nCurrículo do Território Catarinense;\n7.​ Expansão do CEDUP para articular a necessidade de trabalho da juventude\ncatarinense com a formação tecnológica profissional integral;\n8.​ Democracia na Educação: revogação do Decreto Estadual nº 273 de 2023,\nassegurando eleições diretas para as direções escolares e posse dos eleitos, assim\ncomo implementação de eleições das Coordenadorias Regionais;"
+          },
+          {
+            "id": "9-fim-da-intervencao-da-gestao-escolar-ou-do-governo-nas-entidades-estud",
+            "titulo": "9.​ Fim da intervenção da gestão escolar ou do Governo nas entidades estudantis:",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "9.​ Fim da intervenção da gestão escolar ou do Governo nas entidades estudantis:\nfaremos cumprir a Lei do Grêmio Livre, que garante a autonomia das entidades\nestudantis.\n\nMORADIA\nDe acordo com dados censitários do IBGE de 2022, mais de 100 mil pessoas residem\nem Favelas ou Comunidades Urbanas no Estado de Santa Catarina. Tais assentamentos\nsurgem da incapacidade do mercado imobiliário de atender à demanda por moradia, fruto da\nlógica de especulação à qual os imóveis privados são submetidos. Somada à inação do setor\npúblico frente à esse fenômeno, milhares de Catarinenses se veem forçados a morar em\nassentamentos irregulares, frequentemente negligenciados pelo poder público.\nEntre os 106.717 catarinenses residentes em Favelas ou Comunidades Urbanas, 37\nmil relataram ao IBGE que as ruas onde moram não possibilitam acesso de ônibus, e 99 mil\n(92,5%) relatam que não possuem acesso à ponto de ônibus ou van para transporte coletivo.\nAlém disso, 40 mil (37%) relatam que não há bueiros nas comunidades em que residem, ou\nseja, não há acesso ao sistema de drenagem pluvial público, submetendo essas regiões à\nriscos severos durante chuvas.\nMais: a população sem-teto do estado quadruplicou na última década, atingindo mais\nde 8 mil pessoas em 2023.\nPor outro lado, enquanto 1 a cada 75 catarinenses residem em assentamentos\nirregulares, são mais de 300 mil domicílios permanentes vagos nos Estados de Santa\nCatarina. 200 mil casas, 97 mil apartamentos e 5 mil estruturas residenciais inacabadas ou\ndegradadas. Esses não são domicílios “de veraneio”, ocupados periódicamente ou sendo\nutilizados por alguém - são domicílios completamente vagos, servindo ou para gerar escassez\nartificial no mercado imobiliário, inflando os preços dos aluguéis, ou como investimentos a\nlongo prazo, como forma de especulação.\nO efeito da transformação da moradia em mercadoria é claro: Santa Catarina figura\nentre os estados com o custo de vida mais elevado no Brasil, com 3 cidades catarinenses\nfigurando entre as 20 com aluguel mais caros do Brasil. Em alguns municípios, como\nFlorianópolis e Joinville, o custo passa dos R$35,00 por M², levando até um apartamento\npequeno ou kitnet a passar dos R$1400,00 por mês. O crescimento desenfreado do preço dos\naluguéis pressiona cada vez mais os quase 2 milhões de catarinenses que não têm casa"
+          },
+          {
+            "id": "propria-vivendo-acorrentados-pelo-aluguel-a-se-endividar-atraves-de-cart",
+            "titulo": "própria, vivendo acorrentados pelo aluguel, à se endividar através de cartões de crédito e",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "própria, vivendo acorrentados pelo aluguel, à se endividar através de cartões de crédito e\nempréstimos bancários para conseguir o mínimo para viver.\nNESSE SENTIDO PROPOMOS:\n1.​ Restabelecimento da Companhia de Habitação de Santa Catarina, com o objetivo de\nfornecer moradia acessível para toda a população do Estado. Expansão dos projetos\nde moradia popular financiados pelo governo do estado;\n2.​ Estabelecimento do Conselho Estadual da Reforma Urbana, com o objetivo de\npromover, em conjunto com universidades públicas, a requalificação de favelas e\nassentamentos urbanos para garantir a todos os seus moradores os direitos à moradia,\nao acesso à cidade, à educação e à saúde, o acesso ao saneamento básico, à água\ntratada, à rede elétrica ao trabalho, à cultura e ao lazer para todos os catarinenses;\n3.​ Representação da população geral e de movimentos sociais no Conselho Estadual da\nReforma Urbana e na Secretaria De Assistência Social, da Mulher e da Família;\n4.​ Fim da subutilização dos imóveis públicos: destinação de todos os imóveis públicos\nsubutilizados ou desocupados do estado à iniciativas públicas ou sociais de moradia,\nsaúde pública, educação ou combate às violências;\n5.​ Entrega de terras públicas para construção de moradia popular. Utilizar os terrenos de\npropriedade do poder público do Estado para a construção de habitações populares,\nacelerando o processo de resolução do déficit habitacional.\n6.​ Promoção de iniciativas de regularização fundiária de favelas, ocupações\nconsolidadas e demais assentamentos;\n7.​ Promoção de iniciativas de combate à gentrificação, priorizando que imóveis de\nhabitação popular sejam localizados em bairros centrais nas cidades;\n8.​ Estabelecimento de uma rede estadual pública de mercados populares, que\ncomercialize alimentos de qualidade à preço de custo, com subsídios do Governo de\nSanta Catarina;\n9.​ Fazer valer o Estatuto das Cidades: desapropriar imóveis sem função social! A Lei nº\n10.257/2001, conhecida como Estatuto das Cidades, prevê que prédios sem função"
+          },
+          {
+            "id": "social-sejam-desapropriados-nos-esforcaremos-para-cumprir-a-lei-mapeando",
+            "titulo": "social sejam desapropriados. Nos esforçaremos para cumprir a lei, mapeando no",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "social sejam desapropriados. Nos esforçaremos para cumprir a lei, mapeando no\nEstado do Ceará prédios sem função e, a partir daí, elaborar um banco de moradia,\nvisando doar o prédio ou terreno desapropriado para moradia popular de forma\ngratuita. Garantir a implementação do IPTU progressivo sobre imóveis sem função\nsocial;\n10.​Fim da repressão à ocupações de imóveis sem função social. Nosso governo atuará\npara fazer cumprir a constituição federal no que diz respeito à obrigação da\npropriedade de servir função social e, nesse sentido, ao invés de combater, apoiará e\ntrabalhará em conjunto com movimentos sociais que promovem ocupações como\nforma legítima de protesto;\nSEGURANÇA PÚBLICA E COMBATE AO RACISMO\nSanta Catarina se apresenta nacionalmente como o estado mais seguro do Brasil. Essa\nsegurança, porém, não é para todos.\nNo período entre 2024 e 2025, Santa Catarina registrou uma queda de mais de 10% na\ntaxa de Mortes Violentas Intencionais. No mesmo período, entretanto, o número de\nfeminicídios cresceu em 2%. Finalmente, enquanto a taxa geral de mortes violentas caiu,\ncresceu em 24% o número de mortes decorrentes de intervenção policial.\nPara além das mortes violentas, nesse período foram registrados 1398 estupros, além\nde 3229 estupros de vúlnerável (violência sexual contra pessoa que não pode se defender ou\nconsentir), colocando Santa Catarina como 6º estado com mais estupros por 100 mil\nhabitantes (17 estupros/100000 habitantes), e 11º com mais casos registrados de estupro de\nvúlnerável (39 estupros de vúlnerável/100000 habitantes). A vasta maioria das vítimas de\nestupro em Santa Catarina são mulheres menores de 15 anos.\nVale ressaltar que, nos casos de violência contra a mulher, os agressores são, em\ngrande maioria, parceiros ou familiares das vítimas. Essa é uma forma de violência que\npersiste principalmente dentro dos lares catarinenses. Fora deles, nas ruas, a violência se\napresenta com outra face: 16% das mortes violentas em Santa Catarina ocorreram como\nconsequência de ação da polícia. Um a cada quatro dos assassinados pela polícia em\nSanta Catarina em 2025 não tinham antecedentes criminais. Esse aumento corresponde\ndiretamente ao fim das câmeras corporais da PM e a ausência de dados aprofundados. Não\npodemos continuar permitindo que nossos agentes de segurança pública figurem entre os\nprincipais causadores de insegurança na população catarinense!"
+          },
+          {
+            "id": "nesse-sentido-propomos",
+            "titulo": "NESSE SENTIDO PROPOMOS:",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "NESSE SENTIDO PROPOMOS:\n1.​ Organizar, sob a Secretaria de Segurança Pública de Santa Catarina, o Observatório\nCatarinense da Violência, com o objetivo de levantar e publicar dados sobre a\nsegurança pública no estado de forma permanente, permitindo o escrutínio da\npopulação em geral;\n2.​ Retomar imediatamente a obrigatoriedade do uso de câmeras corporais entre todos os\npoliciais militares e civis de Santa Catarina;\n3.​ Garantia de investigação de todas as acusações de abusos praticados por profissionais\nda segurança pública, garantindo a punição adequada com todo o peso da lei em caso\nde comprovação;\n4.​ Construção de Delegacias da Mulher 24 horas em todos os municípios catarinenses,\naliado à expansão da rede de casas de referência, casas de passagem e casas-abrigo\npara atendimento de mulheres em situação de violência;\n5.​ Ampliar a fiscalização e cooperação com os municípios para assegurar a atuação das\nGuardas Municipais como prevê a Lei 13022 de 2014, ou seja, como organizações de\ncaráter civil, de defesa do patrimônio;\n6.​ Ampliar as ações de instrução dos agentes de segurança pública no desescalonamento\nde crises, assim como centralizar a formação das Guardas Municipais, como prevê a\nLei 13022 de 2014, para que todas melhor cumpram seu dever de proteger à vida do\npovo catarinense;\n7.​ Assegurar ampla cooperação entre as forças de segurança estaduais e federais no\nsentido de combater o avanço do crime organizado através da inteligência e combate\naos crimes financeiros necessários para garantir as operações em larga escala das\nfacções;\n8.​ Redução da intervenção da Polícia Militar em ocorrências cotidianas (reclamações de\nsom alto, festas, disputas domésticas, brigas, etc) através da formação de Conselhos\nde Convivência, disponibilizando recursos do estado para a capacitação de seus\nmembros, que funcionarão como mediadores de conflitos entre moradores;"
+          },
+          {
+            "id": "mulheres",
+            "titulo": "MULHERES",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "MULHERES\n\nA violência contra a mulher em Santa Catarina é alarmante. O estado, frequentemente\napresentado pelo governo do estado como um dos mais desenvolvidos e seguros do país,\nconvive com uma realidade de violência cotidiana contra suas mulheres. Em 2025, foram\nregistrados 52 feminicídios e 255 tentativas de feminicídio, além de mais de 31 mil medidas\nprotetivas requeridas por mulheres ameaçadas, muitas delas por companheiros e\nex-companheiros.\nOs números de 2026 demonstram que essa realidade permanece. Entre janeiro e junho\ndeste ano, já foram registrados 32 feminicídios e 19.795 medidas protetivas requeridas em\nSanta Catarina. Isso significa que, enquanto o governo fala sobre um estado seguro e\ndesenvolvido, mulheres continuam sendo assassinadas, ameaçadas e agredidas dentro de suas\npróprias casas.\nO Tribunal de Justiça de Santa Catarina também demonstra a dimensão dessa\nviolência. Em 2025, mais de 600 mulheres por semana recorreram à Justiça catarinense em\nbusca de proteção. Somente entre janeiro e julho daquele ano, foram concedidas 18.387\nmedidas protetivas e julgadas 23.416 ações relacionadas à violência doméstica. O próprio\nJudiciário reconhece que esses números representam apenas a violência que chega ao sistema\nde Justiça, enquanto milhares de outras mulheres permanecem sem proteção e sequer\nconseguem denunciar.\nIsso mostra que a violência contra as mulheres é uma experiência de medo e\ninsegurança que faz parte da vida de milhares de mulheres catarinenses. Precisamos construir\num Estado no qual as mulheres possam viver seguras nas ruas e dentro de casa. O Governo\ntem responsabilidade direta sobre a vida de seu povo e deve garantir justiça social,\nacolhimento e condições para que as mulheres possam viver com dignidade.\nA estrutura de proteção existente em Santa Catarina ainda não corresponde à\ndimensão desse problema. O estado conta com DPCAMIs e vem ampliando a implantação de\nDelegacias Especializadas de Atendimento à Mulher, mas o atendimento especializado ainda\nnão alcança adequadamente todas as regiões. Além disso, a violência não acontece apenas\ndurante o horário comercial. Uma mulher pode ser agredida durante a madrugada, em um\ndomingo ou feriado, e precisa encontrar proteção imediatamente. Não podemos normalizar\nque uma mulher em situação de violência tenha que esperar o expediente de uma delegacia\ncomeçar para conseguir denunciar seu agressor."
+          },
+          {
+            "id": "mas-nao-basta-dizer-as-mulheres-para-denunciar-seus-agressores-muitas-mu",
+            "titulo": "Mas não basta dizer às mulheres para denunciar seus agressores. Muitas mulheres",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Mas não basta dizer às mulheres para denunciar seus agressores. Muitas mulheres\npermanecem em relações violentas porque dependem economicamente do agressor, não\npossuem moradia, precisam sustentar seus filhos ou não encontram uma rede pública capaz\nde ajudá-las a reconstruir suas vidas. Uma mulher não é verdadeiramente livre para\nabandonar uma relação violenta quando não possui renda, moradia, creche ou qualquer outra\nforma de sustento e acolhimento.\nA realidade das mulheres trabalhadoras demonstra ainda que, mesmo trabalhando fora\nde casa, elas continuam responsáveis por grande parte das tarefas domésticas e dos cuidados\ncom os filhos, idosos e demais familiares. A falta de creches, escolas em período integral e\nserviços públicos de cuidado transfere para dentro das famílias uma responsabilidade que\ndeveria ser compartilhada por toda a sociedade, recaindo principalmente sobre as mulheres.\nAssim, a trabalhadora enfrenta uma dupla jornada, a exploração no trabalho remunerado e o\ntrabalho doméstico não remunerado.\nEssa desigualdade também aparece no mercado de trabalho. As mulheres enfrentam\nmaior desemprego, salários menores e maior inserção em atividades precarizadas e informais.\nEm Santa Catarina, a taxa de desemprego feminina chegou a 7,6% no quarto trimestre de\n2024, contra 5,1% entre os homens, demonstrando que o crescimento econômico do estado\nnão significa igualdade para as trabalhadoras.\nNESSE SENTIDO, PROPOMOS:\n1.​ Ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher\n(DEAMs), garantindo atendimento especializado 24 horas por dia, 7 dias por semana,\nem todas as regiões do estado, além de fortalecer e estruturar as DPCAMIs existentes.\n2.​ Fortalecer a Patrulha Maria da Penha e o acompanhamento das medidas protetivas,\ngarantindo resposta rápida diante do descumprimento das medidas e construindo uma\npolítica estadual de prevenção ao feminicídio articulada entre Segurança Pública,\nJudiciário, Ministério Público, Defensoria, Saúde e Assistência Social.\n3.​ Ampliar a rede de Casas-Abrigo e acolhimento regionalizado, garantindo proteção\ngratuita e segura para mulheres vítimas de violência e seus filhos, além de auxílio\nfinanceiro emergencial para aquelas que precisam romper imediatamente com o\nagressor."
+          },
+          {
+            "id": "4-criar-uma-politica-estadual-de-moradia-para-mulheres-em-situacao-de-vi",
+            "titulo": "4.​ Criar uma política estadual de moradia para mulheres em situação de violência,",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "4.​ Criar uma política estadual de moradia para mulheres em situação de violência,\ngarantindo prioridade nos programas habitacionais para aquelas que precisam deixar\nsuas casas para romper com o agressor.\n5.​ Criar um Programa Estadual de Autonomia Econômica para Mulheres em Situação de\nViolência, articulando emprego, qualificação profissional, renda, creches e serviços\npúblicos de cuidado.\n6.​ Garantir creches públicas, gratuitas e em período integral e escolas em tempo integral,\nreduzindo a sobrecarga do trabalho doméstico e permitindo que as mulheres possam\ntrabalhar, estudar e participar da vida política e social.\n7.​ Combater a desigualdade e a exploração das mulheres no trabalho, garantindo\nigualdade salarial, enfrentamento ao assédio sexual e moral, proteção às trabalhadoras\ninformais e redução da jornada de trabalho sem redução salarial.\n8.​ Combater o trabalho análogo à escravidão e todas as formas extremas de exploração\ndas mulheres trabalhadoras, fortalecendo a fiscalização das condições de trabalho, os\nmecanismos de denúncia e a responsabilização dos empregadores. O Estado deve\ngarantir às trabalhadoras resgatadas acolhimento, moradia, assistência jurídica, saúde,\nrenda e condições para reconstruírem suas vidas com autonomia, com atenção\nespecial às trabalhadoras domésticas, negras, migrantes e com deficiência.\n9.​ Construir uma política permanente de combate ao machismo e à violência de gênero,\nenvolvendo escolas, universidades, locais de trabalho e equipamentos públicos, com\nações de prevenção e formação.\n10.​Garantir atendimento integral à saúde das mulheres pelo SUS, incluindo saúde sexual\ne reprodutiva, atendimento psicológico e combate à violência obstétrica.\n11.​Combater a exploração sexual de mulheres e crianças e garantir políticas específicas\nde proteção para mulheres negras, indígenas, quilombolas, camponesas, com\ndeficiência, idosas e LGBTQIA+, considerando as diferentes formas de violência e\nopressão.\n12.​Criar um Plano Estadual de Enfrentamento à Violência contra as Mulheres, com\nmetas para redução dos feminicídios, orçamento permanente e participação dos\nmovimentos de mulheres na elaboração, fiscalização e avaliação das políticas."
+          },
+          {
+            "id": "13-garantir-transparencia-e-execucao-integral-dos-recursos-destinados-as",
+            "titulo": "13.​Garantir transparência e execução integral dos recursos destinados às políticas para as",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "13.​Garantir transparência e execução integral dos recursos destinados às políticas para as\nmulheres, com controle popular sobre o orçamento e divulgação dos recursos\nprevistos, executados e não executados.\n14.​Interiorizar as políticas públicas para as mulheres e fortalecer a participação popular,\ngarantindo que movimentos de mulheres, organizações populares, sindicatos e\ntrabalhadoras participem da construção e fiscalização das políticas estaduais.\n15.​Incorporar a perspectiva de gênero ao planejamento das políticas estaduais,\nreconhecendo que saúde, educação, habitação, trabalho, transporte, assistência social\ne cultura também são fundamentais para a emancipação das mulheres.\n\nLGBTTIA+\n\nA população LGBTTIA+ de Santa Catarina enfrenta uma realidade de violência,\ndiscriminação e exclusão que permanece, em grande medida, invisibilizada. Apesar da\nimagem de um estado com elevados indicadores sociais, milhares de pessoas ainda são\nimpedidas de viver plenamente sua orientação sexual, identidade ou expressão de gênero,\nsofrendo com a violência, a discriminação no trabalho, a expulsão de suas famílias, a evasão\nescolar e as dificuldades de acesso à saúde, à moradia e aos demais direitos básicos.\nOs próprios dados oficiais demonstram a dimensão desse problema de invisibilização.\nSegundo dados do Anuário Brasileiro de Segurança Pública analisados pela Agência\nDiadorim, Santa Catarina registrou, em 2024, apenas um caso de racismo por LGBTfobia, 85\ncasos de lesão corporal dolosa e nenhum homicídio doloso. No entanto, a Associação\nNacional de Travestis e Transexuais (ANTRA) registrou três assassinatos de pessoas trans no\nestado no mesmo ano. A diferença entre os registros oficiais e os dados produzidos pela\nsociedade civil evidencia a existência de uma grave subnotificação da violência contra a\npopulação LGBTTIA+. A ausência de registros não significa ausência de violência. Muitas\npessoas deixam de denunciar por medo, por falta de confiança nas instituições ou por já terem\nexperimentado situações de discriminação quando procuraram o poder público.\nNESSE SENTIDO, PROPOMOS:"
+          },
+          {
+            "id": "1-criar-uma-politica-estadual-de-enfrentamento-a-lgbtfobia-com-orcamento",
+            "titulo": "1.​ Criar uma Política Estadual de Enfrentamento a LGBTfobia, com orçamento próprio e",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "1.​ Criar uma Política Estadual de Enfrentamento a LGBTfobia, com orçamento próprio e\natuação conjunta das áreas de segurança, saúde, educação, assistência social e\ntrabalho.\n2.​ Criar um sistema estadual de registro da violência contra a população LGBTTIA+,\ngarantindo que os casos de LGBTfobia sejam corretamente identificados nos registros\npoliciais e permitindo enfrentar a atual subnotificação.\n3.​ Criar e fortalecer espaços públicos de acolhimento às vítimas de LGBTfobia,\noferecendo assistência psicológica, social e jurídica e garantindo encaminhamento\nadequado das denúncias.\n4.​ Combater a discriminação LGBTTIA+ no trabalho, criando mecanismos de denúncia\ne fiscalização e responsabilizando empresas e instituições que discriminem\ntrabalhadores por orientação sexual ou identidade de gênero.\n5.​ Impedir políticas de censura ao debate sobre gênero, sexualidade e diversidade nas\nescolas, garantindo uma educação pública científica, plural e baseada no respeito aos\ndireitos humanos.\n6.​ Criar o Conselho Estadual dos Direitos da População LGBTTIA+, garantindo a\nparticipação\n\ndos\n\nmovimentos e\n\norganizações LGBTTIA+ na formulação,\n\nacompanhamento e fiscalização das políticas públicas.\n7.​ Garantir o respeito ao nome social e à identidade de gênero em todos os serviços\npúblicos estaduais, evitando constrangimentos e assegurando o direito de cada pessoa\nser tratada de acordo com sua identidade.\n8.​ Criar programas de apoio à permanência de estudantes LGBTTIA+ em situação de\nvulnerabilidade,\n\narticulando\n\nassistência\n\nestudantil,\n\nalimentação,\n\ntransporte,\n\nacompanhamento social e psicológico e prevenção da evasão escolar.\n9.​ Incentivar a produção de pesquisas e dados sobre a população LGBTTIA+ em Santa\nCatarina, garantindo que o Estado conheça a realidade dessa população e possa\nelaborar políticas públicas de acordo com suas necessidades.\n10.​Garantir que todas as políticas estaduais de direitos humanos considerem a população\nLGBTTIA+, articulando as políticas de mulheres, juventude, população negra,"
+          },
+          {
+            "id": "pessoas-com-deficiencia-populacao-em-situacao-de-rua-e-demais-setores-da",
+            "titulo": "pessoas com deficiência, população em situação de rua e demais setores da classe",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "pessoas com deficiência, população em situação de rua e demais setores da classe\ntrabalhadora."
+          },
+          {
+            "id": "cultura",
+            "titulo": "CULTURA",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "CULTURA\nA cultura em Santa Catarina é conhecida por uma enorme diversidade. O estado é\nformado por diferentes povos, comunidades e tradições que construíram, ao longo de sua\nhistória, uma riqueza cultural presente nas cidades, no campo, nas comunidades indígenas e\nquilombolas, nas festas populares, na música, na dança, no teatro, na literatura, no\naudiovisual, no artesanato e nas diversas manifestações culturais produzidas pelo nosso povo.\nPorém, essa diversidade não significa que todos tenham o mesmo direito de produzir e\nacessar cultura.\nA cultura ainda é para grande parte dos catarinenses um direito distante. O acesso a\ncinemas, teatros, museus, bibliotecas, centros culturais e atividades artísticas é\nprofundamente desigual entre as diferentes regiões e classes sociais do Estado. Enquanto\nalgumas cidades concentram equipamentos, eventos e investimentos, muitas comunidades do\ninterior e das periferias permanecem sem espaços públicos adequados para produzir e\nconsumir cultura. Não basta que Santa Catarina possua uma rica diversidade cultural se\ngrande parte do nosso povo não possui condições de conhecê-la, preservá-la ou produzir sua\nprópria cultura.\nA cultura deve estar a serviço do povo. Por isso a Unidade Popular conclama os\nartistas, trabalhadores da cultura, estudantes, produtores, coletivos, comunidades tradicionais\ne toda a população catarinense a lutar pela democratização da cultura. Não aceitaremos que a\ncultura seja privilégio de poucos ou que trabalhadores sejam obrigados a viver da\nprecarização para continuar produzindo. Defendemos uma cultura popular, democrática e\nacessível, construída pelo povo e colocada a serviço da transformação da sociedade.\nNESSE SENTIDO, PROPOMOS:\n1.​ Ampliar progressivamente os recursos próprios do Estado destinados à cultura,\ngarantindo financiamento público permanente para a produção e o acesso cultural.\n2.​ Descentralizar os recursos públicos da cultura, garantindo investimentos em todas as\nregiões de Santa Catarina, com prioridade para municípios do interior, periferias e\nregiões com menor oferta de equipamentos culturais.\n3.​ Criar uma política estadual permanente de valorização dos trabalhadores da cultura,\ngarantindo formação, proteção social e condições dignas de trabalho."
+          },
+          {
+            "id": "4-democratizar-o-acesso-aos-editais-culturais-simplificando-inscricoes-d",
+            "titulo": "4.​ Democratizar o acesso aos editais culturais, simplificando inscrições, documentação e",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "4.​ Democratizar o acesso aos editais culturais, simplificando inscrições, documentação e\nprestação de contas e oferecendo assistência técnica gratuita para artistas e coletivos\npopulares.\n5.​ Ampliar e fortalecer os Pontos de Cultura, garantindo apoio permanente aos coletivos,\ngrupos e espaços comunitários que desenvolvem atividades culturais nos bairros,\nperiferias e municípios do interior.\n6.​ Ampliar a rede pública de equipamentos culturais, criando e fortalecendo bibliotecas,\nmuseus, teatros, centros culturais, cinemas e espaços públicos de produção artística\nfora dos grandes centros.\n7.​ Criar um programa estadual de circulação cultural, levando teatro, música, dança,\ncinema, literatura e outras manifestações culturais para os municípios do interior.\n8.​ Fortalecer as bibliotecas públicas, ampliando seus acervos, espaços de leitura, acesso\nà internet e atividades culturais.\n9.​ Criar uma política permanente de preservação do patrimônio histórico e cultural de\nSanta Catarina, destinando recursos para restauração, conservação e valorização do\npatrimônio material e imaterial.\n10.​Garantir apoio às culturas indígenas, quilombolas e de povos e comunidades\ntradicionais, assegurando a participação dessas comunidades na definição das\npolíticas que envolvam sua cultura e seus territórios.\n11.​Criar programas permanentes de incentivo à cultura popular, apoiando mestres e\nmestras, festas populares, grupos tradicionais, artesanato, música, dança e outras\nmanifestações produzidas pelas comunidades.\n12.​Criar um programa estadual de apoio às festas de rua e manifestações culturais\ncomunitárias, garantindo recursos, infraestrutura e apoio para sua realização e\nimpedindo que manifestações populares sejam tratadas apenas como problema de\nsegurança pública.\n13.​Garantir a ocupação cultural dos espaços públicos, utilizando praças, parques e ruas\npara apresentações gratuitas de música, teatro, dança, cinema, literatura e outras\nmanifestações artísticas."
+          },
+          {
+            "id": "14-criar-uma-politica-estadual-de-apoio-a-cultura-periferica-reconhecend",
+            "titulo": "14.​Criar uma política estadual de apoio à cultura periférica, reconhecendo o funk,",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "14.​Criar uma política estadual de apoio à cultura periférica, reconhecendo o funk,\nhip-hop, grafite, batalhas de rima, saraus, bailes, audiovisual, dança e demais\nmanifestações produzidas nas periferias como parte legítima da cultura catarinense.\n15.​Ampliar o acesso gratuito ou subsidiado a cinemas, teatros, museus, shows e demais\natividades culturais, priorizando a população de baixa renda.\n16.​Garantir a presença da cultura nas escolas públicas, ampliando o acesso dos\nestudantes ao teatro, cinema, música, literatura, dança e artes visuais.\n17.​Fortalecer a produção audiovisual catarinense, garantindo financiamento para\nprodução, distribuição e exibição de obras realizadas por artistas e trabalhadores do\nestado.\n18.​Garantir acessibilidade nos equipamentos e eventos culturais públicos, assegurando o\ndireito das pessoas com deficiência de produzir e acessar cultura.\n19.​Criar programas públicos e gratuitos de formação artística, oferecendo oficinas e\ncursos de música, teatro, dança, cinema, literatura, artes visuais e cultura digital.\n20.​Ampliar a participação popular na definição da política cultural, fortalecendo os\nconselhos e garantindo a participação dos trabalhadores da cultura e dos movimentos\nculturais.\n21.​Garantir transparência na aplicação dos recursos públicos destinados à cultura,\ndivulgando valores, projetos contemplados e distribuição territorial dos investimentos.\n22.​Articular a política cultural com a defesa do direito ao tempo livre, combatendo\njornadas e escalas de trabalho que impossibilitem o trabalhador de usufruir do lazer,\nda cultura e da convivência comunitária.\n23.​Criar políticas de incentivo à literatura catarinense, fortalecendo escritores, editoras\nindependentes, bibliotecas, feiras literárias e iniciativas de leitura.\n24.​Garantir apoio à produção cultural de mulheres, população negra, indígena,\nquilombola e LGBTTIA+, combatendo a exclusão histórica desses grupos dos\nespaços de produção e financiamento cultural."
+          },
+          {
+            "id": "25-criar-mecanismos-de-apoio-aos-espacos-culturais-independentes-garanti",
+            "titulo": "25.​Criar mecanismos de apoio aos espaços culturais independentes, garantindo condições",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "25.​Criar mecanismos de apoio aos espaços culturais independentes, garantindo condições\npara a manutenção de teatros, cinemas, centros culturais, ateliês e demais espaços de\nprodução cultural."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "8d4484a76bdd0f9ef36ac20c9693b8448b7d41be04e85d7490e67ad30a977e89"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "5e71a203b4de808cd2169a6a05a6282b873608c709cd9de032cec2e01b8864c2"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "95c3ecb43fa9a6d449cfe667675cea968e6c648bfdf5785f7c634c6814f738ab"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "72540373cddc3c07685aeb2b9fe67fd160d3829da784c1dca6f81d6d6d399ce2"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "9c696e9e68d4754a20d65876c196fb4e5b128e665782b73cda1bd7133e018404"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "61e3e322a7ca52c0ddc741c68aaaad4879890ab0af00204d506ec3728ecc30e1"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "05969e8b36a649684467bd4115b73eb00fae796e78e53c6b994b9e03156fd8ed"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "02db7ec22346f4581deef1622e2e2fd2534c4e797f1f46f996c8f03049636640"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "1ff8b2f7f8ec4c2b4b3700ffde2c1ca94fc8814cdb1aa64ff6bcd59927bcb1e2"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "9a1e98023dfdbc41cec506e64dce03e76f0dd4b8a5f095238e89287f204a0cb1"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "64746bd1960d31a3966b8c3af34f9c5cc9f2efd1391eb75dd49c1df1d5a07fe4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "01a21260435fb9a64f84cad333a8e27e5da148afa159587d7af03d235297dab2"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "1c0f88b8c00e3d5e97a13fccf9f15f726420b4ebb93c3be85e93b2b5004b4996"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "f98f049626cb56f3436e074d9630869e1db84569580b508aa75498753a35770b"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "a7cb31fc3cf0cd37a4df8b9154916ed391418a7422c03ef857f4b6c57c117340"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "c42c689df7380f046e57085739187da8687121a1206c9227a54ec4905efb78e3"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "8f25e40d4cb0ad7c2ef0e3b305287120822a06b53fed9eb88cebb753c1c2532b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "3d0f177389ae6c53632f52485e7099947503787b54ac98f834164aad03e66be0"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "c7051d4f3468d438361db4f77dc2bd04b1ecfb6f6713b302848317a5a78586f4"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "c109c1e8d2e2c705542a377c48c6a84217479599b6bec6f3aa9fbfbaf91137df"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "acbdac4b309cd4a34e8943d038dae99396267bbe9b2108bbeccdf25670c366d3"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "aca09736c6a43bde95ee90524a2a18b042348ba7fd5c6b13156d9001884f7de0"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "f2a0d9a57e38f3129b016ef66978915f49de8b5eab3cb51d57f3d312a08520fa"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos. Propõe fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização. Planeja ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto. Propõe fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas. Prevê criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos. Propõe ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher, garantindo atendimento especializado 24 horas por dia, 7 dias por semana, em todas as regiões do estado.",
+    "frases": [
+      {
+        "texto": "O programa prevê elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 3,
+            "trecho": "Elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 3,
+            "trecho": "Fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização."
+          }
+        ]
+      },
+      {
+        "texto": "Planeja ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 4,
+            "trecho": "Ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 6,
+            "trecho": "Fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas, reduzindo internações evitáveis."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 7,
+            "trecho": "Criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher, garantindo atendimento especializado 24 horas por dia, 7 dias por semana, em todas as regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 15,
+            "trecho": "Ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher (DEAMs), garantindo atendimento especializado 24 horas por dia, 7 dias por semana, em todas as regiões do estado, além de fortalecer e estruturar as DPCAMIs existentes."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-participativo",
+        "titulo": "Planejamento participativo",
+        "descricao": "A proposta prevê participação popular no planejamento orçamentário estadual.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 3,
+            "trecho": "Elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos."
+          }
+        ]
+      },
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "A proposta prevê apoio à agricultura familiar e aos pequenos produtores rurais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 3,
+            "trecho": "Fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-publico",
+        "titulo": "Saneamento público",
+        "descricao": "A proposta prevê investimentos públicos em abastecimento de água e esgotamento sanitário.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 4,
+            "trecho": "Ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto."
+          }
+        ]
+      },
+      {
+        "id": "atencao-basica",
+        "titulo": "Atenção básica",
+        "descricao": "A proposta prevê o fortalecimento das equipes de Saúde da Família.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 6,
+            "trecho": "Fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas, reduzindo internações evitáveis."
+          }
+        ]
+      },
+      {
+        "id": "acessibilidade",
+        "titulo": "Acessibilidade",
+        "descricao": "A proposta prevê um plano estadual para adaptar equipamentos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002550544:01",
+            "pagina": 7,
+            "trecho": "Criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:20:55.122Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:23:06.033Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: planejamento participativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:1:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:2:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:3:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: atenção básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:4:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral das cláusulas citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: acessibilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:5:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação, exceto trecho adicional não incluído mas não contraditório."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Números '24 horas' e '7 dias por semana' literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: DEAMs."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:frase:6:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre as cláusulas principais citadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:planejamento-participativo:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:agricultura-familiar:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:saneamento-publico:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:atencao-basica:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002550544:tema:acessibilidade:documentos:SC:240002550544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002550544",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002550544:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 31724,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2344,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25171,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21457,
+          "output_tokens_details": {
+            "thinking_tokens": 232
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25171,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21457,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25171,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25171
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.33481540000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "552428823ee4d34d41e4011f1be270281e92eacc39a73336d21b9b35cfd6010b",
+    "extractedTextSha256": "1b0d8c950d7034c315ee123099b4eb8fef4afa189fb23793d7eff57b062d0982",
+    "documentCount": 1,
+    "documentSetSha256": "ad79886fe8e17f4d8d6fd2e97c2dc94aeec701f2f8180f22696133bd624f934a",
+    "contentSha256": "0e2a9c807ce0186d6895cedc0a74aa4ffd1acc5b45a060476d6b721efaebaec2"
+  }
+}

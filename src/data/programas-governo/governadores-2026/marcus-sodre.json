@@ -1,0 +1,1378 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002541913",
+    "slug": "marcus-sodre",
+    "nomeUrna": "PROFESSOR MARCUS SODRÉ",
+    "partido": "PSTU",
+    "arquivoNome": "2026SC240002541913_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002541913_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002541913:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002541913_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002541913_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "66f6eb23af087c30496778a3cc5ea0f2ecd633ddd7f9e837da36cd18614fb220",
+        "extractedTextSha256": "39d3e8b4b511619a122cbb6ecd016c4b04d6b2322ef817053d12659de092b30a",
+        "paginas": 50,
+        "secoes": [
+          {
+            "id": "programa-do-pstu",
+            "titulo": "PROGRAMA DO PSTU",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DO PSTU\nEM SANTA CATARINA\nPARA AS ELEIÇÕES DE\n2026.\n\nSanta Catarina\nJulho de 2026.\n1"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO.",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO.\nApresentação dos candidatos......................................................................................... 03\nNos escombros da ordem mundial................................................................................ 05\nPrograma comunista para o Brasil hoje....................................................................... 06\nSanta Catarina: um estado rico, com um povo pobre................................................. 20\nO governo Jorginho Melo (PL)...................................................................................... 25\nAs propostas do PSTU para Santa Catarina e o Brasil............................................... 26\n\n2"
+          },
+          {
+            "id": "apresentacao-dos-candidatos",
+            "titulo": "APRESENTAÇÃO DOS CANDIDATOS.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO DOS CANDIDATOS.\nO PSTU apresenta em Santa Catarina chapa própria encabeçada pelo professor\nMarcus Sodré, candidato ao Governo do Estado, e pela Tatiane Pasdiora, como\ncandidata a Vice-Governadora. Uma chapa com base em um programa, sem coligações\ne bem distante do vale-tudo eleitoral. Apresentamos ainda Joaninha de Oliveira e\nMarcos Dorval para o Senado, Nadir Fernandes e Cristiano Florêncio para Deputado\nEstadual.\nMarcus Alexandre Sodré é graduado em História e professor em escola pública\nhá mais de 25 anos, ativista sindical e político, sempre atuante nas lutas pela categoria\ndos professores e pela classe trabalhadora em geral, participando das greves e\nmanifestações contra todos os ataques aos direitos da classe, sejam trabalhistas,\nambientais, sociais ou das minorias. É casado e pai de um filho e sente na pele as\ndificuldades que o capitalismo impõe às famílias trabalhadoras.\nTatiane Pasdiora é professora graduada em Sociologia, casada e mãe de uma filha.\nAtua nas lutas em valorização dos professores e dos trabalhadores em geral. Constrói o\nMovimento Mulheres em Luta – MML, que luta pelos direitos das mulheres. Uma\ncandidatura presente nas lutas dos trabalhadores, das mulheres, dos oprimidos e em\ndefesa da educação.\nJoaninha de Oliveira é histórica militante socialista e uma das fundadoras do\nPSTU, tendo sido candidata pelo partido em outras eleições. Graduada em Quimica e\nmãe de duas filhas. Participou de todas as lutas (iniciada nos anos 1980), em defesa da\neducação pública e dos professores, dirigente da Central Sindical e Popular CSP\nConlutas.\nMarcos Dorval Bacharel em Geografia, Especialista em Gestão Pública,\nservidor público do IFSC ha mais de 30 anos, foi dirigente nacional do sindicato de\ntécnicos e professores e ajudou a fundar a CSP Conlutas sempre lutou em defesa da\neducação pública e dos servidores públicos. Nascido em Anitápolis conhece a realidade\ndos trabalhadores rurais, dos estudantes do interior que chagam nas grandes cidades\npara estudar e como técnico em refrigeração conhece a realidade dos pequenos\nempresários.\nNadir Fernandes graduada em História pela Univali, é professora aposentada da\nRede Estadual de Ensino em Itajaí. Sempre participou das mobilizações e greves dos\ntrabalhadores em educação em defesa da educação pública gratuita e de qualidade e dos\ndireitos dos professores.\nCristiano Florêncio é natural de Itapema, é casado e pai de três filhos. Professor\n3"
+          },
+          {
+            "id": "de-sociologia-na-rede-estadual-de-ensino-e-trabalhador-da-prefeitura-de",
+            "titulo": "de Sociologia na Rede Estadual de Ensino e trabalhador da prefeitura de Itapema,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "de Sociologia na Rede Estadual de Ensino e trabalhador da prefeitura de Itapema,\nsempre lutou em defesa dos direitos dos trabalhadores e em defesa de uma educação\npública, gratuita e de qualidade.\nAs candidaturas do PSTU em Santa Catarina se completam com a candidatura\na presidência da república de Hertz Dias e a vice presidente de Vanessa Portugal\ntambém pelo PSTU. Hertz é natural do Maranhão, professor e reper além de militante\ndo movimento negro, atua nas lutas em defesa dos direitos dos trabalhadores. Vanessa é\nnatural de Minas Gerais, professora luta em defesa da educação pública e de qualidade e\ndos direitos do professores na Rede Municipal de Belo Horizonte, participa das lutas por\nmoradia\n\ne\n\nde\n\ndefesa\n\ndos\n\ndireitos\n\ndos\n\ntrabalhadores\n\nem\n\ngeral.\n\n4"
+          },
+          {
+            "id": "nos-escombros-da-ordem-mundial",
+            "titulo": "NOS ESCOMBROS DA ORDEM MUNDIAL.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "NOS ESCOMBROS DA ORDEM MUNDIAL.\n\nGuerras e invasões militares como a da Venezuela e Irã pelos Estados Unidos,\nUcrania por Putin, a barbárie do genocídio levado adiante por Israel na Palestina,\nexplicitam a crise e a extrema violência desse sistema capitalista mundial, em que um\npequeno número de países e seus monopólios são dominantes e outros dominados.\nAssentada na maior crise econômica mundial desde os anos 30, em meio a uma revolução\ntecnológica, a uma gravíssima crise climática e ambiental e do sistema mundial de\nEstados, vivemos uma situação de desiquilíbrio e nesse momento de ruptura na Ordem\nImperialista antes consensuada.\nPor trás dos escombros da Ordem Mundial está a decadência do imperialismo\nmais forte, os Estados Unidos, e a ascensão da China como país imperialista emergente; e\numa luta feroz entre monopólios e países imperialistas, tanto tecnológica como por uma\nnova repartição do mundo. A tendência às guerras e intervenções diretas econômicas,\npolíticas e militares se aprofundam, já que a crise e a disputa não podem ser superadas ou\nestancadas por “meios normais”.\nA situação exige do ponto de vista do sistema capitalista uma elevação do patamar\nde exploração da força de trabalho, inaugurando um período de ataques sem precedentes\naos trabalhadores do mundo todo, de aumento da pilhagem dos países dominados e dos\nelementos de barbárie.\nAprofunda tendências a regimes mais autoritários, bonapartistas, desenvolvimento\nde correntes de extrema direita, e não pode se descartar que venham a existir regimes\nfascistas. Assim, o período em que o sistema mundial capitalista/imperialista tinha\nmargem para se disfarçar e operar mais pelo engano, utilizando a política de “reação\ndemocrática”, dá lugar à violência mais aberta e descarada.\nEssa crise e nova ofensiva recolonizadora se projeta diretamente sobre a América\nLatina, com maior pressão sobre países dominados em decadência e já espoliados nas\nultimas décadas. Buscam se apropriar ainda mais de recursos estratégicos, mercados e\nterritórios.\nNão há “alternativa progressiva” entre os blocos em disputa: nem os Estados\nUnidos, nem a China oferecem uma saída. Os Estados Unidos com a doutrina Monroe, o\nprojeto “Escudo” e a associação de narcotráfico a terrorismo, retomaram uma política de\nintervenção direta. A China, por sua vez, amplia sua presença com objetivos semelhantes\nde exploração e apropriação de riquezas. Nem a América Latina, nem o Brasil devem ser\nquintal de ninguém.\nMas as direções reformistas e neo-reformistas de colaboração de classes não\napenas não enfrentam os imperialismos de forma consequente; como conciliam com os\nimperialismos e atuam contra a mobilização da classe trabalhadora. E quando no\ngoverno, como no caso do governo de Frente Ampla de Lula, do PT, PSOL, PCdoB e\nvários partidos e figuras da classe dominante, gerenciam os negócios da burguesia\nnacional e imperialista.\nEssa ofensiva e disputa dos monopólios e dos Estados Unidos e demais países\nimperialistas é expressão de decadência, crise e fragilidade do sistema imperialista e não\nocorre sem resistência ou sobre uma classe trabalhadora derrotada, ainda que a nossa\nclasse esteja bastante desorganizada e que a maioria de suas organizações estejam\ncontroladas por direções tradicionais, burocratizadas, adaptadas ao sistema à ordem\nburguesa imperialista. Esse novo momento pode e tende a provocar reação de grande\nmagnitude: lutas, revoltas, enfrentamentos rebeliões e revoluções por parte da classe\ntrabalhadora e dos povos e países oprimidos.\n\n5"
+          },
+          {
+            "id": "programa-comunista-para-o-brasil-hoje",
+            "titulo": "PROGRAMA COMUNISTA PARA O BRASIL HOJE.",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA COMUNISTA PARA O BRASIL HOJE.\nNos últimos anos, o comunismo voltou ao centro do debate político, mas de uma\nmaneira inusitada – e até mesmo cômica.\nDe um lado, agrupamentos políticos de direita e de extrema direita proclamam\naos quatro ventos o comunismo como a principal ameaça. Ele estaria presente no\nconjunto das organizações de esquerda que governam ou governaram boa parte dos países\ncapitalistas nas últimas décadas – no caso brasileiro, por cerca de 17 dos últimos 23 anos,\npor meio do PT. Estaria presente, ainda, nas teorias dominantes das ciências humanas,\nnas universidades, nos meios de comunicação de massa, em instituições internacionais\ncomo a ONU e, pasmem, até na interferência dos principais bilionários e capitalistas\nfinanceiros no Brasil e no mundo.\nDe outro lado, entre os grupos dominantes da própria esquerda, no Brasil e no\nmundo, o comunismo estaria morto e enterrado: não passaria de um fantasma do século\npassado, ressuscitado como arma retórica e instrumental pela extrema direita. Para uns, o\ncomunismo é onipresente; para os outros, de fato, inexistente.\nMas há algo em comum nessas duas perspectivas: uma e outra não dizem\nclaramente o que são, a que projeto servem, o que pretendem, de fato, fazer. Para cada\num desses campos, o culpado é sempre e unicamente o outro. Todos os\nproblemas, a cada passo sentidos, sofridos e vividos por quase todos seriam\nartificialmente criados pelo campo político oposto. Tanto é assim que, hoje, o grande\nobjetivo da esquerda é derrotar a direita – e a conversa se encerra aí. O grande objetivo\nda direita é derrotar a esquerda, a quem chama de comunista.\nÉ como se não houvesse problema estrutural algum a ser superado. No seio da\nsociedade, tudo iria bem. Ou, ao menos, poderia ir bem, não fosse o grupo rival e os\naparatos que lhe dão suporte.\nÉ preciso, no entanto, tornar transparente o caminho que este manifesto propõe e\nevitar as falsas questões que lançam no vazio temas cada vez mais necessários e urgentes.\nExistem inimigos a serem derrotados no interior desse espectro puramente\npolítico? Com certeza. Os grandes campos, por vezes superficialmente enquadrados da\nextrema direita à esquerda dita radical, são todos iguais? De forma alguma. Várias\nalternativas políticas atualmente existentes, notoriamente na nova direita, representam\nameaças sem precedentes recentes às liberdades democráticas, a algumas conquistas e às\ngarantias arrancadas a duras penas pela população nas décadas passadas? Somente um\nlouco poderia negar algo tão evidente. As questões que são urgentes colocar e debater são\noutras.\nPor que a extrema direita cresce?\nPor que a extrema direita emergiu e ganhou corpo no Brasil e em tantos outros\nrecantos do mundo na última década? E o que é pior: por que encontrou terreno fértil para\ncrescer e se desenvolver? Para avançarmos nessas e outras questões correlatas, é\n6"
+          },
+          {
+            "id": "necessario-dizer-algumas-palavras-sobre-a-forma-e-o-conteudo-da-nova-dir",
+            "titulo": "necessário dizer algumas palavras sobre a forma e o conteúdo da nova direita, em",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "necessário dizer algumas palavras sobre a forma e o conteúdo da nova direita, em\nparticular no nosso caso específico.\nNo Brasil, a nova direita personifica não a mera manutenção da ordem atualmente\nexistente, mas uma reação em todos os domínios. Setores do capital, estagnados há\nmais de uma década e constantemente ameaçados por concorrentes externos, querem, a\ntodo custo, mudanças. E elas não são pequenas.\nCom cerca de 80 milhões de brasileiros sem emprego ou na informalidade, já não\nse exige um sistema que garanta, nem sequer precariamente, direitos universais por meio\nda seguridade social, notoriamente saúde e previdência. Deixai morrer! Uma fração da\npopulação que nada produz e quase nada consome tornou-se um estorvo para o capital.\nCom a digitalização dos produtos, a automação e a inteligência artificial aplicada\nmassivamente ao processo produtivo, tampouco se requer um sistema de educação\nuniversal minimamente abrangente. Plataformas digitais e cadeias logísticas integradas\npermitem coordenar produção e circulação com cada vez menos trabalhadores estáveis.\nEssa nova etapa de precarização do trabalho se apoia também no aprofundamento das\ndesigualdades e opressões já existentes. Mulheres trabalhadoras, negros e negras,\nimigrantes e população LGBT concentram-se de forma desproporcional nos setores mais\nprecarizados da economia, marcados pela informalidade, pelos baixos salários, pela\ninstabilidade e pela superexploração.\nNesse cenário, a formalização pode simplesmente ser descartada. Bastaria\ncapacitar uma massa amorfa de trabalhadores a seguir um manual e a seguir instruções\nsimples de uma máquina automática sob a supervisão de seus superiores.\nChega de desperdiçar o orçamento público com pesquisa e desenvolvimento. Tais\ngastos tornam-se desnecessários em um país que já não produz tecnologia de modo\nsignificativo e cujo capital nacional se limita às cadeias mais básicas da indústria\nestrangeira aqui instalada ou ao setor primário exportador. Não são mais necessárias nem\nmesmo as garantias trabalhistas mais elementares, pois o capital que aqui se acumula,\ncada vez mais, concentra-se nos setores exportadores, alheios ao poder de compra da\npopulação e ao mercado interno. Nesse contexto, até mesmo garantias políticas mínimas\ntornam-se indesejáveis. Uma massa de trabalhadores submetida continuamente à\ninsegurança e à miséria precisa ser administrada pelo chicote e pelas armas. O excedente\nde força de trabalho é então ajustado por meio do encarceramento em massa e do\ngenocídio de seus estratos mais pauperizados e oprimidos – aqueles que, para o capital, já\nse tornaram descartáveis, um mero ônus para o orçamento público.\nEssa militarização da vida social atinge de maneira particularmente brutal a\njuventude negra, as mulheres negras das periferias e a população LGBT trabalhadora,\ntransformados em alvo permanente da repressão estatal, paraestatal e da violência social\ncotidiana. O capitalismo em decadência não reduz o machismo, o racismo ou a\nLGBTfobia; ao contrário, reorganiza e aprofunda suas bases materiais, ampliando a\nexploração, fragmentando a classe trabalhadora e reduzindo os custos sociais da\nreprodução da força de trabalho.\nNão há dúvidas de que se a nova direita brasileira anunciasse de modo tão\n7"
+          },
+          {
+            "id": "cristalino-os-seus-reais-objetivos-seria-mandada-para-o-inferno-pela-gra",
+            "titulo": "cristalino os seus reais objetivos, seria mandada para o inferno pela grande maioria da",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "cristalino os seus reais objetivos, seria mandada para o inferno pela grande maioria da\npopulação. Ela precisa anunciar seus interesses particulares como solucionando os\nproblemas e necessidades da população: renda, previdência, saneamento, emprego, saúde,\neducação etc. E o faz jogando, continuamente, um estrato da classe trabalhadora contra o\noutro. Em outros termos, anunciando seus interesses particulares como solução para esse\nou aquele setor, em detrimento dos demais.\nA ideologia da precarização e da meritocracia.\nÉ assim que, em um mundo marcado pela informalidade de quem já não tem\ngarantia trabalhista alguma, a retirada de direitos é travestida de meritocracia, liberdade\nindividual, flexibilidade e modernização. Os trabalhadores celetistas e servidores públicos\nseriam os culpados pela informalidade e péssimas condições do restante da população.\nTal discurso ganhou tanto peso que, hoje, para muitos, ser empregado por meio da CLT\nvirou xingamento. Para aqueles em piores condições, seriam privilegiados; para aqueles\nem melhores condições, seriam escravos da jornada de trabalho, da previdência pública e\ndo FGTS.\nA precariedade dos serviços públicos serve de pólvora para vender a ilusão de\nserviços baratos e de qualidade por meio do controle do setor privado. As contrarreformas\neducacionais e científicas são justificadas em nome da eficiência, do utilitarismo, do\npragmatismo e do combate às ideologias diabolicamente comunistas, financiadas com\ndinheiro público. Órgãos que procuram regulamentar minimamente as relações entre\npaíses dominados e dominantes, bem como a apropriação desmedida da natureza, são\nrotulados como globalistas, e assim por diante.\nA ofensiva ideológica da extrema direita busca também reorganizar formas\nreacionárias de controle social. O ataque às mulheres e à sua luta por igualdade, também à\npopulação LGBT, assim como o fortalecimento do moralismo familiar e religioso,\ncumprem um papel central na tentativa de disciplinar setores da população trabalhadora\nem meio à crise social e econômica.\nA cereja do bolo, contudo, é a contradição por todos sentida entre o enorme\ncrescimento da técnica, das capacidades humanas e da produtividade do trabalho, de um\nlado, e a elevação das instabilidades, da insegurança para quase toda população\ntrabalhadora, de outro. A deterioração física, moral e psicológica das condições de vida\nao lado do crescimento desmedido da riqueza por um grupo cada vez mais reduzido de\nindivíduos, alimenta o conspiracionismo. Segundo esse discurso, tudo poderia funcionar\nbem por meio do mercado, da livre concorrência e do mérito individual, não fosse o\ncontrole, a conspiração e as ações secretas de uma elite financeira associada a instituições\ninternacionais, aos meios de comunicação de massa e, é claro, ao Estado.\nEm um país em que a classe trabalhadora de maior qualificação tem, há mais de\nduas décadas, suas condições de vida comprimidas; em que profissionais liberais e\npequenos empreendimentos são, dia após dia, varridos do mapa por grandes\nconglomerados internacionais; em que uma fração cada vez mais ampla da população\nprefere um emprego sem qualquer direito a direitos sem emprego, tais discursos\nencontram terreno fértil e florescem.\n8"
+          },
+          {
+            "id": "a-responsabilidade-da-esquerda-do-sistema-e-o-aprofundamento-da-crise",
+            "titulo": "A responsabilidade da esquerda do sistema e o aprofundamento da crise.",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "A responsabilidade da esquerda do sistema e o aprofundamento da crise.\nBasta esboçar o quadro acima e salta aos olhos que a emergência da nova direita\nno país não se deve apenas a uma mudança no ânimo de setores do capital, dos grandes\nempresários ou da burguesia brasileira. Deve-se a uma deterioração das condições não\napenas para acumulação de capital em nossas terras, mas, sobretudo, uma deterioração\ndas condições de vida de amplos setores da classe trabalhadora, dos pequenos\nempreendimentos, dos profissionais liberais etc., isto é, para a maior parte da população.\nÉ resultado, portanto, de um período histórico em que a chamada esquerda governou a\nmaior parte do tempo, sem alterar de forma substantiva a estrutura econômica e social do\npaís. Ao contrário, foi um período em que se aprofundaram a reprimarização da\neconomia, o rebaixamento do país na divisão internacional do trabalho e a transferência\nde infraestruturas públicas ao setor privado por meio de privatizações, concessões,\nparcerias público-privadas e abertura de capital de estatais.\nAo longo de mais de duas décadas, não se estruturou um projeto consistente de\npaís, mesmo no curto ou médio prazo. Em seu lugar, prevaleceu a tentativa de amenizar a\nsituação por meio de programas de renda mínima: uma redução da miséria extrema que\nnão atingiu as bases que a produzem. Mesmo essas medidas limitadas só foram possíveis\ngraças a uma conjuntura internacional favorável, marcada pelo crescimento dos preços e\nda demanda dos produtos primários exportados pelo país. Quando esse cenário se alterou,\nseus limites vieram à tona. Não fosse o bastante, estas ações da nova direita encontram,\nhoje, via aberta em uma esquerda dominante que já não tem nada a oferecer, que já não\ntem perspectiva alguma para indicar.\nA esquerda dominante, que não ultrapassa os limites do sistema e da ordem,\ntornou-se, segundo seu próprio discurso, o bastião da resistência pela manutenção do\nvelho. A correlação de forças, dizem, não permite nada fazer além de resistir e defender\nas relações jurídicas atualmente existentes, as instituições atualmente existentes, o\nregime político atualmente existente, a ordem constitucional atualmente existente, os\nmarcos regulatórios atualmente existentes, o arranjo federativo atualmente existente, os\nmecanismos de representação atualmente existentes, as instituições internacionais\natualmente existentes, a estrutura econômica atualmente existente e assegurar o que for\npossível dos direitos sociais atualmente existentes. A esquerda converteu-se no baluarte\nmundial do conservadorismo. Propagam em bom e alto som: diante do avanço da reação,\nnada mais nos resta do que assegurar o que ainda resta.\nA administração do retrocesso.\nDiante\ndas\nameaças, inquestionavelmente existentes, tal\ndiscurso, admitimos, parece razoável. Afinal, nada é tão ruim que não possa piorar. Por\nisso, logra algum sucesso. Uma vez no poder, contudo, esse conservadorismo de\nesquerda, honesto ou não, converte-se em administração do retrocesso, degradação\nracionalmente justificada. Aprisionado em um ciclo de dominação, o país se vê obrigado\na expandir a exploração predatória e destrutiva de recursos naturais e humanos de modo a\ncompensar o déficit tecnológico da indústria que possui e, cada vez mais, da que não\n9"
+          },
+          {
+            "id": "possui-reforcando-sua-posicao-subordinada-nas-cadeias-globais-de-valor-n",
+            "titulo": "possui, reforçando sua posição subordinada nas cadeias globais de valor. Nesse",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "possui, reforçando sua posição subordinada nas cadeias globais de valor. Nesse\nquadro, o trabalho de mais elevada qualificação é cada vez mais comprimido,\naproximando-se daqueles de menor remuneração, tendendo a um nivelamento social por\nbaixo. Ao mesmo tempo, os trabalhadores de menor renda mergulham em condições tão\nprecárias que a fronteira entre o trabalho formal e informal se embaça.\nA destruição dos serviços públicos, a ausência de creches, o colapso da saúde, o\nencarecimento da moradia, o envelhecimento da população e a informalidade crescente\ndeslocam para dentro das famílias o peso da sobrevivência social.\nEm meio à destruição da proteção social, a família trabalhadora passa a absorver\nindividualmente tarefas de cuidado, alimentação, educação e sobrevivência que\ndeveriam ser socialmente garantidas, ampliando a sobrecarga doméstica e o trabalho não\nremunerado, sobretudo das mulheres trabalhadoras e mais ainda das mulheres negras.\nCom um mercado interno cada vez mais limitado, o Estado não mais encontra um\nninho para chocar seus ovos. Com déficit orçamentário permanente, a única política\npública que não se torna impotente é a absorção dos lucros dos grandes capitalistas\nbrasileiros por meio do endividamento público. Isto é, ajuste fiscal e a deterioração dos\nserviços públicos para todos, juros elevados de modo a garantir os rendimentos de\ngrandes capitais nacionais tornados improdutivos.\nÉ diante destes obstáculos objetivos tão característicos do capitalismo em nosso\ntempo, que a esquerda dominante, apesar de propor resistir paralisada a espera de que\ndias melhores virão, no fim das contas acaba por cavar todos os dias a sua própria cova.\nEnquanto ela apresenta um discurso supostamente universal e aplicável a todos por ser\nvazio de conteúdo e por não apresentar qualquer caminho a ser seguido, a direita\nrepresenta interesses tão particulares que sua intervenção e propaganda apenas pode\nganhar alguma efetividade dividindo setores distintos da classe trabalhadora, jogando-os\nuns contra os outros.\nA guerra social aberta e a diferença entre os projetos.\nPor trás das abstrações vazias de Deus, Pátria e Família, ela joga os trabalhadores\ninformais contra os formais, os trabalhadores do setor privado contra o setor público, os\nempreendimentos médios e pequenos contra o Estado. Alimenta opressões de todos os\ntipos assentadas na nacionalidade, no gênero, na raça, na orientação sexual etc. Por esse\nmotivo, ao lado do crescimento da ultradireita, desenvolve-se, necessariamente, um\namplo movimento em sentido oposto. Uma guerra social, que em outros tempos era por\nvezes velada, mostra sua face nua e eclode em cada poro da sociedade. Irrompe, à luz do\ndia, sem disfarces e sem véus. Mas sob essa base, há uma\ndiferença\nfundamental\nentre a intervenção da nova direita e da esquerda do sistema.\nApesar de os reais objetivos da nova direita serem conscientemente reacionários,\neles são apresentados à amplos setores da sociedade como antissistema. Colocam-se\ncomo o bastião das mudanças, para uma população que anseia por mudanças. Ela indica\nalvos específicos para serem varridos do mapa: indivíduos, instituições, organizações os\nquais, muitas vezes, expressam, de fato, a decadência, a corrupção e a deterioração de\n10"
+          },
+          {
+            "id": "nossa-falsa-democracia-valendo-se-de-meios-legais-e-ilegais-de-meias-ver",
+            "titulo": "nossa falsa democracia. Valendo-se de meios legais e ilegais, de meias-verdades ou",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "nossa falsa democracia. Valendo-se de meios legais e ilegais, de meias-verdades ou\nmentiras, das novas formas de comunicação emergentes alimentadas por recursos semfim dos setores sociais interessados; a nova direita move seus adeptos à ação, como\nsujeitos ativos do processo.\nA esquerda do sistema e a política de passividade.\nA esquerda do sistema, por sua vez, com ares de sensatez e de pragmatismo, nada\npropõe, nada indica. Quando o faz, as saídas são tão tímidas e localizadas que não são\ncapazes de comover nem mesmo os seus formuladores. Com uma postura utilitária tão\nprópria ao mundo capitalista de então, argumentam partir da vida real para manter a vida\ncomo ela está; justificam limitar-se aos espaços reservados pela correlação de forças, mas\nnão têm saídas que permitam rompê-la, no presente ou no futuro. Uma resistência que se\nsatisfaz em registrar derrotas e convertê-las em prova de lucidez. Com essa postura e com\na ausência de um programa bem determinado, convidam os adeptos à passividade, à\ninércia. Ou, no melhor dos casos, a uma resistência melancólica, inócua, vazia, estéril.\nCultivam o medo paralisante, o pânico antecipado, a quietude resignada. Seu lema é:\ndeposite o seu voto na urna, corra para casa e se esconda embaixo da cama.\nEsse modo de agir conduz à paralisia justamente do setor que começa a se mover\ndiante das contradições existentes. Sem rumo claro, sem objetivo definido, sem indicar\ncaminhos concretos, a indignação perde força ou se dispersa. O efeito mais grave, porém,\né outro: ao governar sem projeto e sem perspectiva real de transformação, os dilemas\nestruturais não apenas se mantêm, mas se agravam. A base popular que, antes, lhe dava\nsustentação, em maior ou menor medida, desmoraliza-se. As lutas forjadas em uma justa\nreação à direita e as consequências reais de seus governos é desmobilizada. Os\nremanescentes passam atuar passivamente, acompanhando angustiados as pesquisas\neleitorais. Nesse cenário que uma e outra vez se repete, a defesa impotente do velho é\numa vez mais realçada em nome da estabilidade e da responsabilidade. Enquanto a\nesquerda dominante prega cautela, a direita oferece direção, inimigos, promessa de\nruptura.\nNo Brasil, essa orientação conservadora da esquerda dominante, do sistema e da\nordem, encontra sua expressão mais nítida no petismo. O petismo tenta preservar um\nmundo que já não existe. De modo quase utópico, busca reviver um momento do\ncapitalismo que ficou para trás, cujos espaços foram minados, entre outras razões, pelos\nfracassos sucessivos de seus próprios governos “de esquerda”. Alimenta a nostalgia de\num tempo em que a direita brasileira era hegemonizada pelo PSDB, e em que Alckmin,\nSerra e FHC eram os grandes adversários a serem batidos. Ao mesmo tempo, não\ndemonstra qualquer nostalgia da própria origem do PT, forjado nas lutas operárias que\ncolocaram a ditadura militar nas cordas bambas e que, apoiadas numa base classista\nfortemente organizada, moveram milhões à ação, à mobilização permanente, à construção\ncoletiva, à formação política e à intervenção direta na cena pública, com os olhos\nvoltados para o futuro.\n\nO contraste com o passado e a ausência de projeto atual.\n11"
+          },
+          {
+            "id": "e-verdade-que-mesmo-naquela-epoca-o-projeto-dominante-do-pt-jamais-foi",
+            "titulo": "É verdade que, mesmo naquela época, o projeto dominante do PT jamais foi",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "É verdade que, mesmo naquela época, o projeto dominante do PT jamais foi\nrevolucionário e socialista, comunista. Mas convenhamos: milhões não eram mobilizados\napenas para combater a direita (ou mesmo a ditadura), nem em torno de palavras de\nordem vazias. Partindo dos dilemas concretos do presente, reformas estruturais eram\napresentadas como projeto de futuro: reforma agrária ampla e estrutural, auditoria\ne suspensão do pagamento da dívida externa, controle público do sistema financeiro e\nfortalecimento dos bancos estatais, defesa dos monopólios estratégicos e ampliação\nsubstantiva dos direitos sociais e trabalhistas, entre outras medidas. Hoje, o que resta?\nMas não propomos substituir um saudosismo por outro. A classe trabalhadora em\ngeral – e o operariado industrial em particular – já não é a mesma dos anos 1980 e do\ninício dos anos 1990. Não nos referimos à posição social que ocupa, mas à sua\nconfiguração histórica específica. Se hoje é muito mais numerosa e concentrada, também\nestá mais fragmentada e individualizada em suas atividades. Naquela época, o país havia\natingido o ápice de um processo de industrialização subordinada; hoje, essa mesma\nsubordinação se expressa como desindustrialização relativa, isto é, como rebaixamento\ncontínuo do país na divisão internacional do trabalho. Antes, a experiência compartilhada\ndo chão de fábrica forjava solidariedades quase orgânicas; hoje, a rotatividade, a\nterceirização, o teleassalariamento, a plataformização e a informalidade corroem a\ncontinuidade das relações e obscurecem a identificação da cadeia de comando e dos\nverdadeiros empregadores.\nApesar de tudo isso, em vez de forjar novas ferramentas de luta e adaptar as já\nexistentes, em vez de propor novas tarefas diante desse novo quadro – aliás, muito mais\ngrave –, o que se tem é um vocabulário difuso e amorfo sobre os pobres, os mais\nhumildes, os mais vulneráveis, a população de baixa renda, os que mais precisam, os que\nmenos têm. Digamos sem meias-palavras. Já não se convoca um sujeito ativo à ação.\nTratam-se indivíduos como meros destinatários passivos de políticas governamentais.\nNovas possibilidades objetivas de organização.\nA classe trabalhadora jamais foi homogênea, talvez, apenas, nas caricaturas do\nséculo XIX. Cada período histórico coloca novas dificuldades, mas, também, novas\npossibilidades.\nSe\né\nverdade\nque\nas plataformas digitais fragmentam e\nindividualizam tecnicamente o trabalho, também associam milhões de trabalhadores –\noutrora dispersos em pequenas unidades comerciais, táxis etc… – em grandes monopólios\nglobais de e-commerce, transporte, comunicação. Se é verdade que o teletrabalho separa\nos trabalhadores em seu local de trabalho, também possibilita sua associação em escala\nregional, nacional e, até mesmo mundial por meio de mega-empresas associadas a formas\ndigitais de comunicação. Se é verdade que a automação reduz relativamente a classe\ntrabalhadora industrial, as transformações denominadas indústria 4.0 unificam em um\nmesmo processo e espaço físico os fornecedores e a empresa central. Se é verdade que,\ncada vez mais, os proprietários do capital se separam espacial e nacionalmente de todas\nas atividades, mostram-se, a cada vez, como meros parasitas sociais que apenas usurpam a\nriqueza social no grande jogo das bolsas de valores e dos títulos de todos os tipos. E\nassim por diante.\n12"
+          },
+          {
+            "id": "no-entanto-em-vez-de-se-apropriar-dos-novos-meios-que-emergem-e-se-assen",
+            "titulo": "No entanto, em vez de se apropriar dos novos meios que emergem e se assentar",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "No entanto, em vez de se apropriar dos novos meios que emergem e se assentar\nnas novas possibilidades colocadas, a esquerda do sistema, com base em uma concepção\ndeterminista e messiânica da história, permanece inerte. Ela espera um giro na correlação\nde forças, uma volta ao passado independente da ação e da atividade na e a partir da\nclasse trabalhadora. Seu projeto de futuro é determinista, escatológico: devemos resistir\naté que, no dia do juízo final, a correlação de forças se inverta e, como que do nada,\nmilhões saiam às ruas conscientes de sua posição de classe e dispostos a abraçar as\ntarefas que esta mesma esquerda fez questão de esconder e guardar a sete chaves por\ndécadas.\nNós nos apoiamos na classe trabalhadora e, centralmente, na classe operária. No\nentanto, não como categorias abstratas, mas como uma classe constituída por indivíduos\nvivos. Não partimos de uma classe social hipotética, tal como ela deveria ser, mas como\nela é. Queremos nos apoiar nas potencialidades que caracterizam uma classe social em\nconstante mutação e minar os seus limites por meio de uma intervenção adequada e\nadaptada a suas especificidades.\n\nComunismo como necessidade concreta, não como abstração.\nNós, ao contrário dessa esquerda do sistema e da ordem, não tiramos nossa\npoesia do passado, mas do futuro, sem romantizá-lo. Afirmamos que o comunismo – feito\num fantasma pela direita e um cadáver insepulto pela esquerda do sistema– permanece\nvivo, sendo a única saída possível. O PARTIDO é, sim, um partido revolucionário e\nsocialista, um partido comunista. Mas o comunismo não é uma ideia abstrata ou um\nsonho utópico de futuro reservado para conversas de bar e seções privadas de autoajuda.\nPartimos do que existe, do mundo real: esse que se encontra sob os nossos pés. Partimos\ndas condições de fato existentes no país e no mundo. Partimos dos problemas efetivos\nque se impõem e das possibilidades que a realidade atual nos reserva. Não denunciamos\numa idéia chamada capitalismo. O capitalismo não é uma teoria a ser refutada, mas o\nmundo tal como ele está organizado. É a forma concreta por meio da qual os homens\nestruturam hoje a produção, a distribuição, o trabalho e a vida social. E, no Brasil, essa\nforma assume contornos próprios, com limites evidentes e contradições específicas que\nprecisam ser encaradas como são. Vejamos!\n\nÉ hipocrisia falar em desenvolvimento mantendo o país preso a um ciclo de\ndominação.\nNão é possível falar, sem hipocrisia, em crescimento econômico brasileiro\nmantendo uma estrutura produtiva quase inteiramente fora das principais cadeias de valor\nque emergiram nas últimas décadas. Falamos dos ramos que concentram tecnologia,\nescala e o controle efetivo das cadeias globais de produção – indústria digital,\nsemicondutores, eletroeletrônicos de ponta, inteligência artificial, biotecnologia e novos\nmateriais. O Brasil permanece preso a um ciclo de dominação. Importa-se praticamente\ntudo aquilo que hoje está na fronteira da produção capitalista, além das máquinas,\nequipamentos e insumos estratégicos necessários até mesmo às indústrias de baixa e\nmédia tecnologia aqui instaladas. Esse déficit é compensado pela exportação de produtos\n13"
+          },
+          {
+            "id": "primarios-sobretudo-mineracao-e-agropecuaria-mercadorias-pouco-processad",
+            "titulo": "primários – sobretudo mineração e agropecuária –, mercadorias pouco processadas, de",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "primários – sobretudo mineração e agropecuária –, mercadorias pouco processadas, de\nbaixo valor agregado, que empregam relativamente menos trabalhadores e exigem menor\nqualificação média. Troca-se complexidade produtiva por volume bruto. Troca-se\ndensidade tecnológica por extrativismo extensivo, espoliando recursos naturais não\nrenováveis, cuja expansão contínua cobra um preço ambiental e social cada vez mais alto,\ncomo ilustram os casos de Brumadinho e Mariana.\n\nA impossibilidade de desenvolvimento sob a burguesia nacional.\nNão há livre mercado capaz de alterar esse quadro. O capital nacional não dispõe\ndas dezenas ou centenas de bilhões de dólares exigidos por esses ramos em infraestrutura,\npesquisa e desenvolvimento etc. Além disso, tais setores concentram segredos\ncomerciais, patentes e domínio tecnológico guardados a sete chaves por grandes\nconglomerados globais. Conhecimento e técnicas que o capital local não possui – nem\ndemonstra disposição real para tal, dados os custos elevados, o risco envolvido e o longo\nprazo de retorno mesmo em caso de sucesso da empreitada.\nIngressar, portanto, nesses novos ramos de produção fundamentais para um\ncrescimento consistente do país é, portanto, uma possibilidade inexistente para a\nburguesia nacional. Não se trata, assim, de uma mera escolha moral, mas de uma\nimpossibilidade objetiva. Apesar disso, limitada como está às cadeias superficiais que\natendem um mercado interno estagnado, a classe dominante brasileira mergulha na\ndegeneração moral por meio da violação sistemática das frágeis regulações existentes,\ndos conchavos com o poder público, do uso de informações privilegiadas, da falsificação\nde relatórios contábeis, da sobrevalorização fraudulenta de ativos. Em suma, mecanismos\ndiversos que socializam os prejuízos jogando-os para o Estado e privatizam os lucros\ncriados de forma fraudulenta. Faz com que o sangue, o suor, o esforço de cérebros e\nmúsculos de 120 milhões de trabalhadores brasileiros resultem em um grande jogo em\nque os tubarões da Bolsa devoram os peixes pequenos. Vide o caso do Banco Master\nou das Lojas Americanas, esta última controlada pelos três maiores bilionários do país.\nTampouco é possível reverter essa situação por meio de uma simples intervenção\nestatal nos marcos da estrutura atualmente dada. A crise do capital privado pressiona as\nfinanças públicas, que operam em déficit crônico há quase uma década: gasta-se mais do\nque se arrecada. O buraco é tapado com o endividamento público que, de quebra, absorve\nos capitais excedentes dos grandes empresários já sem destino produtivo, mediante o\npagamento de juros vultuosos. As reservas em moeda estrangeira, sobretudo dólares,\nacumuladas no período do boom das commodities, não podem ser aplicadas em local\nalgum. São mantidas como títulos do tesouro estadunidense para serem vendidas no\nmomento necessário com o objetivo de segurar o câmbio e contrabalancear a saída\ncontínua da moeda brasileira em função da fuga de capitais para o exterior, feita tanto\npelo capital estrangeiro como pelo nacional. Torna-se evidente que o Estado não é o\noposto do mercado privado. Está enredado no mesmo ciclo de dominação que a ambos\nlimita e condiciona; envolvendo-os.\n\nO fracasso das políticas reformistas.\n14"
+          },
+          {
+            "id": "esse-e-o-motivo-de-a-esquerda-do-sistema-apesar-de-muitas-vezes-falar-ai",
+            "titulo": "Esse é o motivo de a esquerda do sistema, apesar de, muitas vezes, falar, ainda",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Esse é o motivo de a esquerda do sistema, apesar de, muitas vezes, falar, ainda\nque muito vagamente, sobre a debilidade estrutural do Brasil, a desigualdade e outros\ntemas mais, quando se encontra no poder, nada consegue fazer. Por um lado, está\nassociada ao grande capital nacional que explora um mercado interno em retração – o\nsetor dito “progressivo” do capital. De outro, encontra um Estado comprimido por\nmargens cada vez mais estreitas. Resta-lhe administrar restrições e a barbárie, como é o\ncaso do encarceramento em massa da juventude pobre e negra da periferia. Política fiscal\npara conter gastos públicos; política monetária para compensar a estagnação do país com\njuros elevados; política cambial para compensar a saída de capital do país com a venda\ndos dólares oriundos da balança comercial favorável; política financeira para preservar os\nlucros não investidos pelo capital nacional por meio de elevados juros dos títulos da\ndívida pública.\nÉ justamente à luz dessas limitações estruturais que devem ser examinadas as\npropostas de muitas organizações ligadas ao PSOL ou como a UP que se consideram\nesquerda radical, as quais se embrenham em programas utópicos e pseudocientíficos de\ntodos os tipos. Querem baixar a taxa de juros sem qualquer contraparte imediata no\nprocesso de produção, isto é, alavancar a “produção” de dinheiro por meio do crédito sem\na respectiva alavancagem do processo de produção. O resultado previsível é pressão\ninflacionária sem transformação estrutural. Fala-se, com razão, em saúde, educação,\nprevidência, pesquisa, renda mínima. No entanto, raramente se explica de onde virão os\nrecursos necessários para tal, já que o Estado se encontra em déficit há uma década. Por\nvezes, esses recursos são justificados por meio da criação miraculosa de valor com a\nimpressão de mais títulos públicos ou com reformas fiscais que impactam tão somente os\nsetores médios da classe trabalhadora por meio do imposto de renda. Os exemplos\npoderiam se multiplicar interminavelmente.\n\nA necessidade de expropriação dos setores estratégicos.\nNão é possível tapar o sol com a peneira. Para prover serviços públicos decentes –\nsaúde, educação, moradia, saneamento –, bem como concentrar a riqueza apropriada\npelos múltiplos capitais individuais e direcioná-los para investimentos produtivos é\nnecessário expropriar as empresas estratégicas que acumulam bilhões ou dezenas de\nbilhões de reais em setores diretamente dependentes de recursos naturais como\nmineração, petróleo e energia. Empresas como a Petrobras e a VALE que distribuíram\nrespectivamente uma média de 100 e 300 bilhões de reais em dividendos nos últimos\nquatro anos. É necessário expropriar, ainda, setores estratégicos, outrora estatais, como a\nsiderurgia e o de derivados do petróleo. É necessário controlar o topo da hierarquia do\nagronegócio, hoje operado por empresas estrangeiras ou grandes conglomerados\nbrasileiros como a JBS que direcionam, administram e orientam toda produção\nnacional ao mercado externo, seguindo seus preços e cotações. É necessário uma taxação\nfortemente progressiva sobre os lucros das empresas bilionárias nos mais diversos ramos\ne, em particular, o controle da conta de capitais continuamente evadidos para fora do país\ntanto por capitalistas nacionais como estrangeiros: cerca de meio trilhão de reais anuais\ndesde 2020. Ao lado disso, é fundamental o controle do sistema financeiro e dos grandes\nbancos, de modo a canalizar os recursos para o que realmente importa.\n15"
+          },
+          {
+            "id": "sem-interromper-essa-drenagem-da-riqueza-nacional-para-fora-do-brasil-ou",
+            "titulo": "Sem interromper essa drenagem da riqueza nacional para fora do Brasil ou para",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Sem interromper essa drenagem da riqueza nacional para fora do Brasil ou para\ntítulos fictícios da dívida pública, não há projeto nacional viável. Somente por meio de\nmedidas que coloquem em questão a propriedade do capital e o destino dos excedentes\nserá possível financiar um projeto nacional de desenvolvimento que assegure, de um lado,\no crescimento da riqueza produzida no país e, de outro, que esta riqueza permaneça no\npróprio país. O resto é conversa para boi dormir.\nTecnologias que concentram décadas de conhecimento acumulado, como os\nsemicondutores, poderão ser adquiridas estrategicamente; já aquelas oriundas do\ndesenvolvimento técnico recente – como a inteligência artificial e suas aplicações em\nplataformas de comércio, transporte e serviços – deverão ser desenvolvidas sob controle\ndo Estado, com a participação organizada dos trabalhadores que as produzem, dos\ntrabalhadores autônomos e das pequenas empresas que delas dependem. O vasto acervo\ncientífico, técnico e cultural incorporado em seu treinamento deve ser reconhecido,\nremunerando seus efetivos criadores. Conselhos formados por produtores, usuários e\ndetentores de direitos intelectuais devem definir seus critérios de funcionamento, seus\nlimites e suas finalidades, de modo que essas ferramentas sejam estruturadas para servir a\nquem trabalha e utiliza, e não para submetê-los a mecanismos automáticos voltados\nexclusivamente ao lucro de grandes empresas estrangeiras. Tais ferramentas devem, de\nimediato, ser incorporadas de forma coordenada ao serviço público e às empresas estatais\nagora substancialmente ampliadas.\n\nPlanejamento econômico e pleno emprego.\nTambém não é possível falar, sem hipocrisia, em pleno emprego e renda sem\nvinculá-los ao conjunto das transformações antes mencionadas. Emprego depende de um\nplanejamento econômico que articule produção e consumo, que direcione investimentos\npara setores capazes de ampliar a base produtiva e que converta ganhos tecnológicos e de\nprodutividade em redução da jornada de trabalho – e, por consequência, em ampliação do\nnúmero de postos de trabalho. Ao mesmo tempo, é necessário que a produção esteja\nvoltada prioritariamente para o mercado interno, de modo que a produção crescente se\nvincule ao consumo também crescente dos trabalhadores, sem que um obstaculize o\ndesenvolvimento do outro. Isso apenas é possível com planejamento econômico. O\ncomunismo é precisamente isso. Não o mercado que impulsiona irracionalmente a\nprodução e a oferta, restringindo o poder de compra daqueles capazes de consumir essa\nprodução agora alargada. Não o intervencionismo Estatal via mercado que procura\nalargar o consumo por meio de gastos estatais e tributação excessiva, restringindo a\ncapacidade de produção de capitalistas dispersos e alheios a qualquer interesse nacional.\nO que queremos é a vinculação da produção ao consumo, da produção de riqueza às\nnecessidades dos trabalhadores e da população.\nA questão ambiental e a necessidade de reorganizar a produção.\nNão é possível falar, sem hipocrisia, no drama ambiental em que vivemos, local e\nglobalmente, sem reconhecer a necessidade de transformações estruturais que\nreorganizem a produção em função de interesses e necessidades sociais, e não da busca\n16"
+          },
+          {
+            "id": "pela-valorizacao-rapida-e-de-curto-prazo-de-capitais-individuais-aplicad",
+            "titulo": "pela valorização rápida e de curto prazo de capitais individuais aplicados de forma",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "pela valorização rápida e de curto prazo de capitais individuais aplicados de forma\nanárquica e desprovida de planejamento. Somente por meio de um planejamento\neconômico, o crescimento da produção de riqueza deixa de implicar, necessariamente, a\nelevação dos ônus ambientais e naturais. Em uma produção voltada ao atendimento das\nnecessidades sociais e individuais, pode-se priorizar a construção de malhas\nferroviárias e metroviárias em detrimento da expansão massiva da frota de automóveis\nindividuais; parte do excedente de empresas que exploram combustíveis fósseis, como a\nPetrobras, pode ser sistematicamente redirecionada para a produção de energia renovável.\nPode-se, ainda, priorizar projetos de elevado custo e menores danos ambientais, mesmo\nquando seus resultados não se manifestam no curto prazo – horizonte temporal que\norienta a atuação do setor privado.\n\nSoberania e ruptura com o imperialismo.\nNão é possível falar, sem hipocrisia, em um país soberano sem problematizar uma\nruptura com o imperialismo, isto é, com os países dominantes na atual divisão\ninternacional do trabalho. Se o capital privado não pode solucionar o problema do\ndesenvolvimento brasileiro, tampouco o pode o capital internacional. Os Estados Unidos\ne países europeus, que dominam vastamente a cadeia de produção com maior valor\nagregado existente no Brasil, há décadas, apenas extraem os excedentes da riqueza\nproduzida pela classe trabalhadora brasileira sem realizar qualquer investimento de maior\nmonta. Parasitam nossos recursos e alimentam suas matrizes: eis a fuga de capitais que\nconstantemente desvaloriza nossa moeda, exigindo que se queimem os royalties do\npetróleo e da mineração, bem como os excedentes do agronegócio e outros setores\nexportadores em meras operações cambiais.\nTampouco a China é uma alternativa, como pretendem alguns agrupamentos da\nesquerda do sistema e mesmo da chamada esquerda radical. O gigante asiático tem\npriorizado adquirir empresas brasileiras em vez de construir novas, isto é, realizar a\ncompra de ativos já existentes – fusões e aquisições – sobretudo em setores como energia,\nmineração e infraestrutura. Nesses casos, o “investimento” estrangeiro entra no país\napenas para trocar a propriedade do capital: nenhuma nova unidade produtiva é criada,\nnenhum emprego adicional surge, e a produção nacional não aumenta um só centavo.\nMesmo quando novas instalações são abertas, como no caso da BYD, grande parte\nda cadeia produtiva permanece na China, cabendo ao Brasil apenas a etapa final de\nmontagem. O resultado é que, à medida que empresas chinesas substituem outras no\nmercado automobilístico brasileiro, definham empresas nacionais de autopeças, siderúrgicas e\nquímicas que até então abasteciam as montadoras instaladas no país. Em suma, os\nobjetivos da China não diferem daqueles de países dominadores atuantes no país há quase\num século: exportar capital para nossas terras a fim de se apropriar dos lucros aqui\nproduzidos – agora, porém, sob uma forma ainda mais nociva aos nossos interesses.\nQuerem, ainda, inundar inteiramente o mercado brasileiro com mercadorias. Avança com\no mega porto recentemente construído no Peru e com o projeto em curso que o liga ao\nBrasil.\n\n17"
+          },
+          {
+            "id": "a-reconfiguracao-da-ordem-imperialista",
+            "titulo": "A reconfiguração da ordem imperialista.",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "A reconfiguração da ordem imperialista.\nNos dias de hoje, as invasões de Donald Trump na Venezuela e no Irã, de Putin na\nUcrânia e, muito provavelmente, em breve, de Xi Jinping em Taiwan; já jogaram por\nterra todo o discurso de um mundo não imperialista – o mundo dito globalizado. Um\nmundo baseado em regras “iguais” entre os capitais privados e os Estados, bem como na\ndiplomacia como via de resolução dos conflitos. Todo esse lero lero já não pode ser\nlevado a sério nem mesmo pelos apologistas desse sistema idílico, agora perplexos diante\ndos novos acontecimentos. A ascensão da China explicitou o que foi sempre a realidade\ndesse sistema: a violência na divisão social do trabalho entre os países, em que alguns\npoucos são dominantes e os demais dominados. Esse processo se reproduz por meio da\npropriedade do grande capital, do controle tecnológico e militar. Não é possível, como\nsugere alguns, pensar em nossos próprios interesses jogando com os dois lados, pois\nambos os lados, por vezes com métodos diferentes, visam os mesmos objetivos: o saque\ndas riquezas nacionais, sobretudo nossos recursos naturais, e o controle de nosso mercado\ninterno por meio de suas empresas. A negociação entre o Brasil e os países dominantes,\nsejam eles quais forem, assemelha-se a negociação entre o assaltante com a arma\nempunhada nas mãos e sua necessidade de avançarmos rumo a uma soberania\nnacional de fato, não em palavras. Soberania não é um discurso abstrato de defesa do\nnosso país e a apologia de símbolos nacionais. Soberania significa controle nacional\nabsoluto sobre todos nossos recursos naturais. Soberania significa ter autonomia para\ndefinir os rumos do país, incluindo um projeto nacional de desenvolvimento não\nsubordinado ao capital estrangeiro. Soberania significa, ainda, iniciarmos um processo\nque inverta a lógica atual em que a produção de média e alta intensidade tecnológica aqui\ninstalada são de propriedade do capital estrangeiro. Soberania significa ter autonomia\nmilitar, o que demanda a estatização imediata de empresas estratégicas como a\nEMBRAER e AVIBRAS. Soberania significa orientar a produção agrária nacional para o\nmercado interno, afastando as megas empresas, predominantemente estrangeiras, que\nhoje orientam toda produção nacional às exportações, sacrificando o trabalhador rural e\nos médios e pequenos proprietários, contribuindo para a fome nas grandes cidades ao\ndolarizar e encarecer o preço dos alimentos, erodindo também a nossa soberania\nalimentar. Soberania significa estatizar a produção nacional de metais preciosos, bem\ncomo as reservas do grande capital privado de modo a substituirmos as atuais reservas\ninternacionais que atualmente são títulos do tesouro estadunidense.\nTudo isso, não é um sonho ou uma ideia abstrata de futuro. São medidas e tarefas\nnecessárias, sem as quais o Brasil continuará a reproduzir o mesmo ciclo de dominação\nque se encontra mergulhado nas últimas décadas. Ciclo esse que amarra o Estado ao\ncapital nacional privado, o capital nacional ao capital estrangeiro em um contexto\ninternacional marcado pela disputa comercial e militar entre a China e os Estados Unidos\npelos excedentes do capital dispersos em todo o mundo periférico.\n\nOs sujeitos da transformação.\nNão é\npreciso muito esforço para entender que os grandes interessados\nnessas transformações são os trabalhadores brasileiros, do campo e da cidade, formais e\ninformais, com ou sem emprego; bem como os pequenos empreendimentos dispersos em\ntodas as áreas.\n18"
+          },
+          {
+            "id": "a-grande-e-media-burguesia-brasileira-representa-aproximadamente-0-8-da",
+            "titulo": "A grande e média burguesia brasileira representa aproximadamente 0,8% da",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "A grande e média burguesia brasileira representa aproximadamente 0,8% da\npopulação, conforme levantamento do Ilaese, uma ínfima minoria e que nenhum setor da\nmesma tem o menor interesse na soberania do país e no bem estar da classe trabalhadora e\nda maioria do povo. São cúmplices dos países e monopólios imperialistas na destruição e\nsaque das riquezas do país. O PT que vende a ilusão de desenvolver o país junto com um\nsetor da burguesia nacional, não tem como encontrar um único aliado para tomar as\nmedidas estruturais necessárias para a mera soberania do país.\nAs mudanças necessárias só podem ser levadas adiante pelo proletariado, pela\nclasse trabalhadora da cidade e do campo, tendo na sua vanguarda a classe operária\nindustrial, unindo empregados e desempregados, efetivos e terceirizados, formais e\ninformais, trabalhadores de plataformas, tele assalariados, e os setores mais oprimidos e\nsuperexplorados da classe trabalhadora num programa que combine a luta contra a\nexploração e as opressões numa só luta contra o sistema capitalista, contra o imperialismo\ne a burguesia nacional. São aliados da classe trabalhadora os povos indígenas, os\ncamponeses sem terra e quilombolas, os estudantes e a juventude, os micro e pequenos\nprodutores rurais e os micro e pequenos empresários da cidade e do campo, os\nintelectuais e setores médios em geral que estejam ao lado da classe trabalhadora, do\npovo e defendam a soberania do país.\nÉ necessário indicar a todos esses setores um rumo, uma direção. É preciso ganhar\ntoda uma massa da população que, dia após dia, toma consciência dos interesses restritos\nocultos na atuação da nova direita, no entanto, são estimulados, pela esquerda dominante,\na ficarem onde estão e a aceitarem o mal menor, isto é, apenas resistir.\nÉ necessário fazê-los sujeito de um processo que, pela gravidade do quadro,\nurge soluções que não mais podem ser meramente paliativas e conjunturais. Isto apenas é\npossível por meio da organização e mobilização unificada de milhões considerando as\nespecificidades da classe operária e trabalhadora atual. Por meio de um chamado a ação\nque polarize a maior parte da sociedade em outra direção ao invés do estímulo à\npassividade e ao mero exercício individual e desorganizado de ir às urnas a cada quatro\nanos em eleições controladas pelo poder econômico dos grupos interessados.\nSomente assim a correlação de forças poderá ser outra e toda energia depositada\nnas lutas, do presente e do futuro, poderão ser canalizadas para sua solução!\n\n19"
+          },
+          {
+            "id": "santa-catarina-um-estado-rico-com-um-povo-pobre",
+            "titulo": "SANTA CATARINA: UM ESTADO RICO, COM UM POVO POBRE.",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "SANTA CATARINA: UM ESTADO RICO, COM UM POVO POBRE.\nSanta Catarina é um estado rico. Somos a 6ª maior economia do país, apesar de\nsermos apenas o 10º estado em número de população e de estarmos apenas em 20º lugar\nem termos de área. Nosso PIB per capita (PIB dividido pela população do estado) é o 5º\nmaior entre os estados brasileiros. Somos o 6º estado do país em participação da indústria\nno PIB. A arrecadação de impostos do estado tem batido recordes em cima de recordes.\nSendo assim, existem condições para garantir vida digna para o conjunto da população,\nmas não é isso que acontece.\nQuase dois terços dos catarinenses sofre com uma ou mais carências básicas:\nsem acesso a educação básica, falta de moradia adequada, sem acesso ao saneamento\nbásico, sem proteção social ou acesso à internet. Os dados do saneamento básico e, em\nespecial, da coleta e do tratamento de esgotos são alarmantes.\nNo mundo do trabalho a situação é ainda pior. Os acidentes de trabalho em Santa\nCatarina subiram 19,4% em 2025 em comparação ao ano anterior, os óbitos no\ntrabalho também cresceram 11%, passando para 360 mortes no mesmo período em\nSanta Catarina, que é o quinto Estado com o maior número de acidentes de trabalho do\npaís, sendo que nossa população é apenas a décima.\nAo quadro ruim se soma a deterioração mais geral das condições de vida. Santa\nCatarina não possui grandes metrópoles, mas acumula os problemas destas. A começar\npelo transporte público que é privatizado, com poucas linhas e muito caro. Os serviços\npúblicos, em geral, estão caóticos, incluindo a saúde e a educação públicas. Outro dos\nprincipais elementos da crise das grandes cidades é o aumento da violência urbana. O\ncaos na segurança pública é parte da crise econômica capitalista e está relacionado ao\naumento da desigualdade social, ao aumento do desemprego, da criminalização das\ndrogas, do sucateamento da educação pública, da falta de moradias populares etc.\nOs trabalhadores e o povo pobre das periferias sofrem com a violência policial,\ncom os despejos, com a violência machista, racista e lgbtfóbica. Enquanto os ricos\nmoram em condomínios com sofisticada vigilância e andam em carros blindados e até\nhelicópteros, os trabalhadores e pobres andam em ônibus lotados, caminham em ruas\nsem iluminação, são vítimas de assaltos e roubos dos poucos bens que conseguem\ncomprar.\nOutra trágica estatística que nos coloca entre os campeões nacionais é a\nviolência contra os setores mais oprimidos da sociedade. Santa Catarina apresenta um\ncenário alarmante de violência de gênero, liderando o ranking nacional de registros\npoliciais de ameaça contra mulheres e acumula 52 feminicídios em 2025. Se você é\nnegro a chance de ser assassinado é duas vezes maior do que se você for branco em\nSanta Catarina. Os povos indígenas sofrem ameaça e violência constantes contra a vida\ne sua cultura por parte de fazendeiros e especuladores imobiliários. As LGBTIs\n20"
+          },
+          {
+            "id": "continuam-sendo-assassinadas-e-os-crimes-sao-acompanhados-de-tortura-e-m",
+            "titulo": "continuam sendo assassinadas, e os crimes são acompanhados de tortura e muita",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "continuam sendo assassinadas, e os crimes são acompanhados de tortura e muita\ncrueldade.\nA juventude, por sua vez, tem cada dia menos perspectiva de futuro, dado o\ndesemprego, a proliferação de subempregos e o aumento da violência, que tem como\nmaiores vítimas a juventude negra e pobre da periferia.\nDesse modo, a opressão se une com a exploração para aumentar a própria\nexploração, com mulheres, negros, LGBTs e indígenas sendo o maior alvo da violência,\ndo desemprego e dos empregos precários. Isso talvez fique mais evidente se citarmos o\nexemplo dos haitianos e dos demais imigrantes negros que vieram para o estado. Eles\nforam recrutados prioritariamente para a agroindústria, a construção civil e as empresas\nde limpeza.\nDos salários desses imigrantes são constantemente descontados valores\nreferentes a moradias, que são totalmente insalubres, onde 11 adultos chegam a dividir\ndois cômodos e um único banheiro. São empurrados para os postos de trabalho com os\nserviços mais pesados e com os maiores índices de acidentes de trabalho.\nApesar dessa realidade, a burguesia catarinense, seus partidos e entidades\ngostam de propagandear que somos privilegiados, que nosso povo tem boas condições de\nvida, que nosso estado é próspero, que somos empreendedores. Tudo isso justificado por\num flagrante racismo que atribui essas condições ao fato de que Santa Catarina teve uma\nforte imigração europeia. No governo de Vilson Kleinübing (1991 a 1994), o estado\ncomprava páginas inteiras dos jornais locais para propagandear que Santa Catarina era\num estado que fazia fronteira com a Europa. Assim, seria o fato de sermos descendentes\nde europeus que explicaria nossa abnegação e capacidade de trabalho, o que, por sua vez,\njustificaria termos melhores indicadores sociais que outros estados da federação.\nEssa ideologia racista amplamente divulgada é mentirosa pois, como vimos\nanteriormente, na maioria dos aspectos que são mais importantes para os trabalhadores e\na juventude pobre, estamos entre os piores estados. Mas há, sim, alguns aspetos sociais\ne econômicos em que nossos indicadores sociais demonstram serem “menos ruins” que\nna maioria dos estados brasileiros. E isso se deve puramente a nosso desenvolvimento\nhistórico e não à superioridade de alguma raça.\nA causa principal disso se deve a termos tido uma colonização baseada na\npequena propriedade familiar, o que será também a base para o início de um processo de\nindustrialização local. A não existência generalizada do latifúndio é um fator decisivo\npara o desenvolvimento do estado. Em Santa Catarina os imigrantes, mesmo que a\nduríssimas penas, conseguiram acesso à terra, ao contrário do que ocorreu com os negros\n21"
+          },
+          {
+            "id": "depois-da-abolicao-que-nao-so-foram-privados-das-terras-em-que-trabalhav",
+            "titulo": "depois da abolição, que não só foram privados das terras em que trabalhavam como foram",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "depois da abolição, que não só foram privados das terras em que trabalhavam como foram\nem grande maioria expulsos do campo, tendo que sobreviver amontoados de forma\nprecaríssima nas periferias e áreas de riscos das grandes cidades.\nA industrialização local também foi um fator diferencial no estado. Enquanto na\nmaioria do país as indústrias eram multinacionais, aqui tivemos um grande\ndesenvolvimento industrial baseado em uma mão de obra abundante altamente explorada.\nTambém a pequena propriedade rural foi um fator decisivo na industrialização. Ela não\nsó criou um mercado para produtos como ferramentas, tecidos, chapéus, moto bombas\netc., como propiciou uma enorme oferta de mão de obra barata. O crescimento\npopulacional não permitia que as pequenas propriedades absorvessem todos os\ndescendentes das famílias de pequenos proprietários e estes, em parte, se dirigiam à\nindústria, mas sem se afastarem das famílias.\nAfinal, estamos falando de cidades relativamente pequenas em que essas\npropriedades ficavam relativamente perto das fábricas, o que permitia deslocamentos\ncotidianos, na maioria das vezes com sua própria bicicleta. Assim, esse rendimento era\nquase que complementar, o que permitia que as empresas explorassem ao máximo estes\ntrabalhadores que conseguiam mesmo assim sobreviver por terem se mantido ligados ao\ncampo. Isso também será um fator muito importante para que tenhamos tido tão pouca\ntradição sindical de lutas operárias no estado.\nOs pequenos proprietários também vão ser fundamentais para a indústria, na\nforma de exploração direta. Esse modelo vai ser a base da agroindústria do oeste\ncatarinense, em que não só as fabricas exploram terrivelmente os operários e\nprincipalmente operárias, como também se assentam sobre uma brutal exploração dos\npequenos produtores, que são totalmente controlados por essas empresas. Hoje isso\ntambém se dá em grande quantidade para as indústrias têxteis do vale do Itajaí, onde\ncentenas de pequenas fábricas são exploradas por poucas grandes indústrias.\nMas essa industrialização local em grande medida já desapareceu. Parte\nimportante simplesmente faliu e outra parte foi incorporada por grandes grupos nacionais\nou estrangeiros. E as que se mantém, muitas têm parte significativa de seus produtos\nimportados da China. Tornaram-se, em grande parte, empacotadoras e distribuidores\ndestes produtos.\nA crise sobre a pequena propriedade é tão grande que boa parte delas\nsimplesmente teve que ser abandonada ou vendida para grupos maiores. Isso tem\nprovocado um esvaziamento no campo e um inchaço na periferia das cidades maiores,\ncom todas as consequências que daí advêm. Assim, vemos a tragédia de dezenas de\n22"
+          },
+          {
+            "id": "pequenas-cidades-do-interior-catarinense-que-estao-em-processo-de-desapa",
+            "titulo": "pequenas cidades do interior catarinense que estão em processo de desaparecimento. Nas",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "pequenas cidades do interior catarinense que estão em processo de desaparecimento. Nas\núltimas décadas vêm desaparecendo as características sócio econômicas que faziam de\nSanta Catarina um estado com algumas importantes diferenças com os demais.\nPara reverter esse quadro de decadência são necessárias medidas urgentes e\nradicais. Em primeiro lugar é preciso acabar imediatamente com a farra de subsídios e\nisenções fiscais dados pelo governo estadual para um pequeno número de grandes\nempresários. Em 2026, Santa Catarina deixará de arrecadar R$31,09 bilhões em razão de\nisenções fiscais adotada pelo governo Jorginho Melo (PL), o montante equivale a 40% da\narrecadação do Estado. É preciso cobrar os grandes empresários devedores do Estado, parar as\nprivatizações e terceirizações que só servem para piorar o serviço público e para\naumentar a corrupção, favorecendo todo tipo de falcatrua para os governantes, políticos\ne empresários. A CELESC, a CASAN e outras empresas precisam ser 100% do estado\npara que o seu papel social seja realmente realizado (baixas tarifas), e o seu lucro\nreinvestido na empresa e não apriopriado por um pequeno grupo de privilegiados.\nEsse dinheiro poderia estar sendo usado para apoiar os pequenos proprietários do\ncampo e das cidades, que vivem à míngua, e para fazer uma reforma agrária. Isso sim\ngeraria milhares de novos empregos e assentaria as famílias no campo em condições de\nvida dignas além de diminuir o preço dos alimentos nas cidades.\nOs pequenos empresários devem perceber que a única saída real para eles é se\njuntar às lutas dos trabalhadores e da juventude para avançar em suas reinvindicações e\nparar de confiar nas promessas eleitoreiras dos grandes partidos. Muito menos devem\ndar ouvidos a falsas promessas da extrema direita representada por Flávio Bolsonaro e\nJorginho Melo (PL), bem como os políticos da direita tradicional com João Rodrigues\n(PSD), mas também Gelson Merísio (PSB - Frente Ampla). Estes só governam para os\nbilionários, deixando os pequenos empresários à mingua, à própria sorte.\nNossas indústrias foram criadas pelo suor dos operários e operárias catarinenses,\nnão podem simplesmente ser fechadas quando estão em crise deixando os trabalhadores\nem uma situação dramática. As indústrias que fecharem devem ser tomadas pelos\ntrabalhadores, que passem a administrá-las para garantir sua subsistência. E as empresas\nque ameaçam demitir em massa devem ser paralisadas, juntando todos os funcionários na\nluta pela readmissão de todos.\nMas a garantia de que Santa Catarina e o Brasil se tornem realmente lugares em\nque os trabalhadores e a juventude tenham boas condições de vida só ocorrerá quando\neles próprios governarem através de conselhos populares, organizados pelos operários\nnas fábricas, pela população dos bairros pobres e no campo, entre os empregados do\n23"
+          },
+          {
+            "id": "agronegocio-e-os-colonos-nos-acampamentos-e-ocupacoes-dos-sem-terras-e-s",
+            "titulo": "agronegócio e os colonos, nos acampamentos e ocupações dos sem terras e sem teto.",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "agronegócio e os colonos, nos acampamentos e ocupações dos sem terras e sem teto.\nPelos trabalhadores das empresas, pelos os estudantes nas escolas e universidades. Aí\nteremos verdadeiramente uma democracia para o povo.\n\n24"
+          },
+          {
+            "id": "o-governo-de-jorginho-melo-pl",
+            "titulo": "O GOVERNO DE JORGINHO MELO (PL).",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "O GOVERNO DE JORGINHO MELO (PL).\nO Governo Jorginho Mello já mostrou para que veio. Garantir o lucro dos grupos\nempresariais em Santa Catarina. Para citar em um exemplo vejamos a educação onde\ndesde o início de seu governo impôs um duro ataque aos servidores públicos: implantação\ndo novo ensino médio; privatização do ensino; falta de concurso público; contrato\nprecarizado dos professores ACTs; precarização dos serviços de limpeza e merenda\nescolar; perseguição ideológica de professores; assédio moral e violência escolar se\nagravando; dificuldades nas perícias médicas, aumento de professores com problemas de\nsaúde mental; confisco de 14% no salário dos aposentados, entre outros.\nO Programa Universidade Gratuita aparenta democratização do ensino superior,\nmas transfere o dinheiro da educação pública para os empresários deixando de investir na\nampliação da UDESC. Já que o Sistema ACAFE foi construido com dinheiro público e\nhoje o estado paga o salário dos professores, via bolsa de estudos, o Sistema ACAFE\ndeve ser estadualizado e incorporado a UDESC.\n\n25"
+          },
+          {
+            "id": "as-propostas-do-pstu-para-santa-catarina-e-o-brasil",
+            "titulo": "AS PROPOSTAS DO PSTU PARA SANTA CATARINA E O BRASIL.",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "AS PROPOSTAS DO PSTU PARA SANTA CATARINA E O BRASIL.\nAs propostas que aqui apresentamos partem de um entendimento básico de que\nas trabalhadoras e os trabalhadores podem e precisam governar, e que só assim seus\nproblemas serão resolvidos. De que é preciso se levantar contra toda injustiça e\ndesigualdades sociais. As greves de trabalhadores, as manifestações populares e\nestudantis, as batalhas de hip-hop, as aldeias indígenas, os Slams e as ocupações de semteto e sem-terra são o ponto de apoio para a construção de um projeto socialista e\nrevolucionário para o Brasil e Santa Catarina.\nO primeiro passo de um legítimo governo socialista dos trabalhadores é mudar\nradicalmente a política econômica, suspendendo o pagamento das dívidas públicas,\nacabando com as desonerações fiscais e financiamentos subsidiados aos grandes\nempresários, estatizando sob controle dos trabalhadores o sistema financeiro e as grandes\nempresas que mandam no estado e no país, além de reestatizar sob controle dos\ntrabalhadores o que já foi entregue para a iniciativa privada. Essas medidas são\nimportantes para que seja garantida a existência de recursos para investir nas áreas sociais\ne de infraestrutura. Para que de fato o dinheiro chegue aonde precisa ser investido. Sem\na mobilização e organização da classe trabalhadora e do povo pobre nada disso será\npossível. Só um governo socialista dos trabalhadores formado por conselhos populares\npode sustentar essas medidas.\n1. É PRECISO INVERTER AS PRIORIDADES.\nPara resolver o problema dos baixos salários, do desemprego, da saúde pública,\ndo caos nos serviços públicos, da falta de moradia, do descaso com a educação pública,\nda falta de saneamento básico e os demais problemas sociais.\nA pandemia escancarou que para a burguesia, o lucro está acima das vidas. Nós\ndo PSTU achamos que deve ser o contrário, as nossas vidas é que estão acima do lucro!\nÉ por isso que defendemos:\nA.\n\nO fim das isenções fiscais aos grandes empresários e do pagamento da\n\ndívida pública aos banqueiros. Defendemos a cobrança das dívidas dos grandes devedores\nde tributos e o perdão das dívidas junto aos bancos dos pequenos devedores. Pelo fim da\nLei de Responsabilidade Fiscal, pelo fim dos financiamentos subsidiados aos grandes\nempresários e pelo fim dos cargos comissionados.\nOs números do desemprego e subemprego em Santa Catarina e no Brasil\naumentaram absurdamente nos últimos anos e com isso os salários baixaram ainda mais\ne não chegam até o fim do mês.\nPara a garantia de uma vida digna, defendemos algumas medidas que\n26"
+          },
+          {
+            "id": "aumentarao-o-numero-de-postos-de-trabalho-com-renda-digna",
+            "titulo": "aumentarão o número de postos de trabalho com renda digna:",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "aumentarão o número de postos de trabalho com renda digna:\nB.\n\nPor um plano de obras públicas, controlado e fiscalizado pela classe\n\ntrabalhadora em conselhos populares, para suprir as enormes deficiências de\ninfraestrutura para a maior parte da população. Um plano para construir hospitais, postos\nde saúde, escolas e creches, casas populares, obras de saneamento, investimentos\npreventivos e para socorro contra as enchentes, vendavais e secas. Obras de infraestrutura\nnecessárias para o povo, e desta forma, gerar emprego e renda.\nC.\n\nRevogação dos ataques à classe trabalhadora com as reformas neoliberais\n\nrealizadas nas últimas décadas, de Collor a Bolsonaro. Defendemos a revogação das\nreformas da previdência de FHC, Lula e Dilma, do governo Temer, revogação da\nreforma trabalhista, da lei das terceirizações, das restrições ao seguro desemprego, ao\nabono do PIS e a outros direitos, da Emenda Constitucional que congelou gastos com\nsaúde, educação e demais áreas sociais por 20 anos, da reforma do ensino médio e da\nbase nacional comun curricular. Revogação dos ataques realizados por Colombo, Pinho\nMoreira, Moisés e Jorginho Melo, a exemplo da recente reforma da previdência, dos\nataques ao plano de carreira do magistério e contra as demais categorias do serviço\npúblico.\nD.\n\nNão à reforma da previdência! Defendemos uma previdência pública\n\nsolidária e por repartição que garanta integralidade das aposentadorias, paridade e\ndignidade. Defendemos a cobrança dos grandes sonegadores da previdência social.\nE.\n\nDemitiu, parou! Fechou a fábrica ou a empresa, ocupou! Seguro-\n\ndesemprego de dois anos, redução da jornada de trabalho sem redução de salários e\nestatização sob controle dos trabalhadores das empresas que demitirem em massa, a\nexemplo da agroindústria no estado. – Por reajuste mensal de salários de acordo com a\ninflação do mês anterior\nF.\n\nPara combater o flagelo do desemprego, defendemos também lutar e\n\nmobilizar a classe trabalhadora pelo seguro-desemprego de dois anos no mínimo e a\nredução da jornada de trabalho para 36 horas semanais, sem redução de salários (fim da\nescala 6 por 1).\nG.\n\nAumento geral de salários rumo ao salário mínimo proposto pelo DIEESE\n\npara 2026, de R$ 8.110,92.\nH.\n\nContra a precarização e pejotização do trabalho!\n\nI.\n\nRevogação das privatizações e terceirizações dos serviços públicos e das\n\nempresas públicas. Defendemos CELESC, CASAN, SC GÁS, CIASC, EPAGRI e\nCIDASC 100% públicas e sob controle dos trabalhadores. Somos contrários à\n27"
+          },
+          {
+            "id": "privatizacao-da-embraer-avibras-vale-petrobras-eletrobras-correios-e-dem",
+            "titulo": "privatização da Embraer, Avibras, Vale, Petrobrás, Eletrobrás, Correios e demais",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "privatização da Embraer, Avibras, Vale, Petrobrás, Eletrobrás, Correios e demais\nestatais.\nCOMBATE A FOME.\nAs famílias catarinenses não estão longe de viver a insegurança alimentar e a\nfome. Pelo contrário, só em 2025 mais de 803 mil catarinenses viviam algum grau de\ninsegurança alimentar, sendo cerca de 209 mil pessoas em situação de fome\n(insegurança alimentar grave). Para combater a fome, defendemos:\nA.\n\nMedidas concretas para pleno emprego e renda digna;\n\nB.\n\nConstrução de restaurantes populares;\n\nC.\n\nInvestimentos para fomentar a agricultura familiar;\n\nD.\n\nCongelamento dos preços dos alimentos, fim dos impostos sobre produtos\n\nbásicos de alimentação, como o leite.\n2. EM DEFESA DA VIDA E DOS DIREITOS DAS MULHERES, NEGRAS E\nNEGROS, INDÍGENAS, LGBTs E IMIGRANTES.\nOs efeitos da crise econômica, das políticas de ajuste fiscal e do aumento da\nviolência atingem mais gravemente as mulheres, negras e negros, indígenas, LGBTs e\nimigrantes pobres. Por isso defendemos:\nMULHERES.\nA.\n\nSalário igual para trabalho igual;\n\nB.\nC.\n\nFim da dupla jornada e socialização do trabalho doméstico;\nFim da violência contra a mulher: uma política para combater os\n\nfeminicídios e a violência sexual. Punição exemplar aos agressores e direito à autodefesa.\nPor mais segurança para as mulheres ao andar nas ruas, com iluminação pública,\ncalçamento de ruas e muros e limpeza de terrenos baldios;\nD.\n\nA aplicação e ampliação da Lei Maria da Penha. Construção de Casas\n\nAbrigo e Centros de Referência para as mulheres vítimas de violência;\nE.\n\nConstrução de NEIs (creches) com horário integral, para que nenhuma\n\ncriança fique sem creche e nenhuma mãe sem emprego;\nF.\n\nMedidas concretas para combater a dupla ou tripla jornada das mulheres\n\ncomo a construção de lavanderias, restaurantes públicos e centros de convivência de\nidosos;\nG.\n\nEm defesa do direito a decidir, legalização e descriminalização do aborto;\n\nH.\n\nDireito ao exercício da maternidade. Licença-maternidade de seis meses.\n28"
+          },
+          {
+            "id": "licenca-paternidade-de-45-dias",
+            "titulo": "Licença paternidade de 45 dias;",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Licença paternidade de 45 dias;\nI.\n\nAs mulheres negras são ainda mais exploradas e mais oprimidas. Isso não\n\npode ser esquecido pelas mulheres brancas e pelos homens da classe trabalhadora;\nJ.\n\nUnidade entre homens e mulheres trabalhadoras contra o machismo e a\n\nexploração.\n\nNEGRAS E NEGROS.\nA.\nB.\n\nCombater o genocídio da juventude negra e o feminicídio das mulheres\nnegras.\nReparações já!\n\nC.\n\nDesmilitarização da Polícia Militar!\n\nD.\n\nFormação de conselhos populares de segurança pública;\n\nE.\n\nChega de guerra aos pobres! Pela legalização e descriminalização das\n\ndrogas sob monopólio e controle estatais!\nF.\n\nSalário igual para trabalho igual!\n\nG.\n\nPelo direito à autodefesa de negros, indígenas, mulheres e todos os\n\ntrabalhadores.\nH.\n\nDireito a emprego e moradia! Revogação de todas as medidas neoliberais\n\nde Pinho Moreira, Colombo, Moisés e Jorginho Melo!\nI.\n\nFim do racismo religioso! Chega de perseguições às religiões de matrizes\n\nafricanas!\nJ.\n\nTitulação das terras de remanescentes de quilombolas.\n\nK.\n\nAplicação das Leis 10.639/2003 e 11.645/08, que instituíram a\n\nobrigatoriedade das disciplinas de História da África e da Cultura Afro-Brasileira e\nIndígena nas instituições de ensino brasileiras;\nL.\n\nAtenção médica às enfermidades com maior incidência entre negros e\n\nnegras, como anemia falciforme, diabetes, miomas, hipertensão, dentre outras;\nM.\n\nPor uma política estatal e “humanizada” de saúde mental, cujos distúrbios,\n\nem função das péssimas condições de vida e o impacto psicológico e emocional da\nopressão, têm aumentado entre negros e negras.\nIMIGRANTES.\nA.\n\nDireito à dupla cidadania para haitianos, venezuelanos e todos os\n\nimigrantes que vêm para Santa Catarina! Punição rigorosa para todo crime de xenofobia\ne/ou racismo;\nB.\n\nDefesa do trabalho, da moradia e da vida digna para todo trabalhador e\n29"
+          },
+          {
+            "id": "trabalhadora-imigrante",
+            "titulo": "trabalhadora imigrante;",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "trabalhadora imigrante;\nC.\n\nPleno direito à sindicalização.\n\nINDÍGENAS.\nA.\n\nDemarcação e homologação dos territórios indígenas;\n\nB.\n\nAutonomia política das comunidades indígenas;\n\nC.\n\nReparações já!\n\nD.\n\nInterrupção imediata dos projetos hidrelétricos que impactam as\n\ncomunidades indígenas;\nE.\n\nFim do latifúndio e do agronegócio, em defesa da vida e das culturas\n\nindígenas;\nF.\n\nGarantia de Ensino diferenciado;\n\nG.\n\nPolíticas de permanência para os povos indígenas nas universidades;\n\nH.\n\nGarantir condições efetivas para a produção familiar nos territórios\n\nindígenas;\nI.\n\nPolíticas para garantir a segurança das mulheres indígenas nas aldeias e na\n\ncidade (Delegacia da Mulher, com atendimento diferenciado, respeitando a diversidade\nda língua e da cultura das mulheres indígenas);\nJ.\n\nSaúde diferenciada e de qualidade e para a mulher indígena;\n\nK.\n\nDefesa do Aquífero Guarani! Água não é mercadoria!\n\nL.\n\nNão ao marco temporal!\n\nLGBT.\nA.\n\nCriminalização da LGBTfobia;\n\nB.\n\nCampanhas que combatam o preconceito e a discriminação;\n\nC.\n\nAmplo atendimento médico e psicológico às vítimas de violência,\n\nconstrução de casas abrigo, investigação hábil e punição aos agressores;\nD.\n\nFim da exclusão, da discriminação no mercado de trabalho e do\n\ndesemprego impostos pela LGBTfobia;\nE.\n\nAbaixo à repressão policial LGBTfóbica!\n\nF.\n\nRespeito à identidade de gênero na saúde, nas instituições de ensino, nos\n\npresídios e em todos os espaços sociais;\nG.\n\nDireito ao nome social de transexuais, transgêneros e travestis, sem\n\nburocracia;\nH.\n\nAcesso amplo à saúde para transexuais, incluindo o direito à cirurgia de\n30"
+          },
+          {
+            "id": "redesignacao-sexual-e-a-tratamentos-hormonais-pelo-sus",
+            "titulo": "redesignação sexual e a tratamentos hormonais pelo SUS;",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "redesignação sexual e a tratamentos hormonais pelo SUS;\nI.\n\nEducação pública que respeite a diversidade de identidade de gênero e a\n\norientação sexual e garanta o livre e seguro desenvolvimento e exercício da sexualidade;\nJ.\n\nEstado laico de fato: abaixo a intervenção religiosa sobre os direitos de\n\nK.\n\nPelo direito à União Civil.\n\nLGBTs;\n\n3. GARANTIR SAÚDE E EDUCAÇÃO PÚBLICAS DE QUALIDADE.\nPara a burguesia, cada vez mais, a saúde e a educação são mercadorias. Ao\ninvés de garantir a vacinação o mais rápido possível para a população, o governo\nBolsonaro atrasou a compra de vacinas na tentativa de arrancar propina das indústrias\nfarmacêuticas, provocando a morte de pelo menos 300 mil brasileiros de uma doença\npara a qual já havia vacinas eficazes.\nIsso ocorre porque toda a política deste Estado burguês está voltada para os\ninteresses do mercado segundo a lógica neoliberal. Na educação, a reforma do Ensino\nMédio, por exemplo, retira do currículo básico disciplinas importantes para a formação\nintegral do estudante para substituir por matérias de aplicação prática imediata conforme\na necessidade do mercado. O efeito disto é o contrário do que prometem: ao invés de o\nEnsino Médio ser uma plataforma de lançamento para uma formação superior de\nqualidade, passa a ser um teto intransponível que forma mão de obra barata para o\nmercado. Afinal, com tantos técnicos em oferta, os salários tenderão ao mínimo. Como\njá acontece com muitos formados em diversas faculdades que não encontram emprego na\nárea e são subempregados.\nAlém disso, a exigência de tempo integral para o Ensino Médio irá provocar, em\ncurto prazo, o aumento da evasão escolar. A precarização do trabalho e os baixos salários\nobrigam os jovens a ingressarem no mercado cada vez mais cedo para complementar a\nrenda familiar. Nesse caso, entre escola e trabalho, a necessidade material vem primeiro.\nSabemos que o governo ofereceu uma falsa solução para isso com a possibilidade de 40%\ndo ensino se dar de forma remota. Contudo, como esperar que jovens que trabalham e\nestudam todos os dias tenham tempo de qualidade para estudar além da forma presencial?\nMais uma vez a tendência será atribuir o fracasso do sistema ao próprio estudante.\nPrecisamos reverter esses processos se quisermos garantir Saúde e Educação\npúblicas, gratuita e de qualidade para todos.\n\nDEFENDEMOS:\n31"
+          },
+          {
+            "id": "a",
+            "titulo": "A.",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "A.\n\nDobrar o orçamento estadual da Saúde para dotá-lo das condições\n\nnecessárias para oferecer atendimento de qualidade e acabar com as filas, inclusive de\nmédicos especialistas.\n\n32"
+          },
+          {
+            "id": "b",
+            "titulo": "B.",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "B.\n\nDobrar o orçamento estadual da Educação no estado para garantir vagas\n\npara todas as crianças também com qualidade, nas creches e escolas públicas.\nC.\n\nLutar pelo investimento nacional de 10% do PIB na área da saúde e mais\n\n10% do PIB na área da educação. Investimento público somente para a área pública e\nestatal.\nD.\n\nLutar pela garantia de uma saúde 100% SUS, gratuita e de qualidade.\n\nRetomar para o SUS o controle do Hospital Florianópolis e demais unidades de saúde\npúblicas que foram entregues para as entidades privadas comandarem. Garantir\natendimento estadualizado de saúde em seus diferentes graus de complexidade.\nE.\n\nAmpliação das unidades de atenção e hospitais gerais e pediátricos\n\npúblicos e dos leitos de UTI para garantir atendimento às famílias!\nF.\n\nEstatização das grandes redes de educação e da saúde privada. Saúde e\n\neducação são direitos. Não podem ser mercadorias.\nG.\n\nNão às privatizações e implantação de OSs (Organizações Sociais),\n\nfundações privadas e terceirizações na saúde, na educação e nas demais áreas dos serviços\npúblicos.\nH.\n\nPela valorização dos trabalhadores da Saúde e da Educação no estado com\n\no atendimento de suas pautas de reivindicações. Abertura de concursos públicos.\nI.\n\nPela revogação do atual plano estadual de Educação e pela construção de\n\num plano que garanta investimento público somente para a Educação pública!\nJ.\n\nPelo imediato cumprimento da lei 11.645/08 que determina o estudo da\n\nHistória e Cultura Afro-Brasileira e Indígena, com contratação de professores\nespecializados e recursos para materiais didáticos! Por uma educação de gênero, inclusiva\ne diversa!\nK.\n\nÉ preciso também garantir democracia nas escolas para que professores,\n\nestudantes e demais membros da comunidade escolar possam debater e decidir o projeto\npedagógico, a gestão pública da escola e eleger diretamente sua direção (diretor eleito\ndeve ser diretor empossado, sem filtros). Combatendo assim projetos retrógrados e\nautoritários como o “Escola sem Partido”, evitando a evasão escolar, aumentando a\nqualidade do ensino público.\nL.\n\nNão ao projeto \"Escola sem Partido\"! Esse projeto surge para colocar uma\n\nmordaça na educação para que não seja democrática, crítica e transformadora. Vem com\no objetivo de criminalizar as lutas em defesa da educação pública, gratuita e de\nqualidade a exemplo das greves do magistério.\nM.\n\nFim das escolas cívico militares!\n33"
+          },
+          {
+            "id": "n",
+            "titulo": "N.",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "N.\n\nGarantia de alimentação nas escolas! Ninguém aprende de barriga vazia!\n\nO.\n\nCombate à insegurança alimentar: que os alunos tenham uma alimentação\n\nde qualidade, nutricionalmente correta, incluindo alimentação ao chegar na escola, lanche\ne almoço ou janta;\nP.\n\nParidade do custo-aluno na Educação Básica, atendendo à reivindicação\n\nde estudantes e trabalhadores da Educação de Jovens e Adultos. Não ao fechamento de\nvagas nos CEDUPs! Pela ampliação e melhorias dos CEDUPs!\nQ.\n\nPor uma UDESC 100% pública, gratuita e de qualidade! Defesa de sua\n\nautonomia universitária e por democracia na instituição: voto universal, já! Por uma\ngestão tripartite entre estudantes, trabalhadores e professores da UDESC! Os órgãos\ncolegiados devem ter representação paritária! Manutenção e ampliação da política de\ncotas étnico-raciais, sociais e para pessoas trans em todos os Programas de PósGraduação da UDESC, já! Transparência nos processos seletivos da UDESC! Por uma\npolítica de permanência estudantil na UDESC com bolsas, restaurantes, moradias e\nmateriais didáticos!\nR.\n\nEstatização e federalização das instituições privadas de ensino superior do\n\nsistema da Associação Catarinense das Fundações Educacionais (ACAFE);\nS.\n\nNão à implantação da Reforma do Ensino Médio e da Base Nacional\n\nComum Curricular que determina a obrigatoriedade apenas de português e matemática\nnos currículos do ensino médio e até 40% pode ser ensino à distância!\nT.\n\nPor uma educação e desenvolvimento de pesquisas científicas e\n\ntecnológicas. Abaixo o negacionismo!\n4. MORADIA.\nA especulação imobiliária, a alta da inflação e o desemprego levaram milhares\nde famílias da classe trabalhadora a viverem em situações cada vez mais precárias e nas\nruas. Nós entendemos que as ocupações de casas, prédios ou terrenos inutilizados são\nmais do que justas para que nenhum trabalhador ou trabalhadora e suas famílias fiquem\nsem ter onde morar. Só em Santa Catarina o déficit habitacional é de mais de 260 mil\nmoradias! Por isso, defendemos:\nA.\n\nA regularização das ocupações do povo trabalhador e oferecimento por\n\nparte do poder público de alternativas de moradia digna para os que vivem em áreas de\nrisco. Não à repressão das ocupações;\nB.\n\nIncentivar\n\nPlanos\n\nDiretores\n\nnos\n\nmunicípios,\n\nconstruídos\n\ndemocraticamente pelas comunidades e organizações da classe trabalhadora, com\n34"
+          },
+          {
+            "id": "recuperacao-de-areas-degradadas-praias-e-a-preservacao-de-areas-verdes-e",
+            "titulo": "recuperação de áreas degradadas, praias e a preservação de áreas verdes e com criação ou",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "recuperação de áreas degradadas, praias e a preservação de áreas verdes e com criação ou\nmanutenção de parques e áreas públicas;\nC.\n\nDar a função de moradias populares a prédios, casarões e edificações que\n\nse encontram inutilizadas por um período maior do que 2 anos. Estes imóveis devem ser\ntomados pelas administrações municipais e reformados para servirem como moradias\ne/ou espaços públicos, de cultura, educação e lazer. Estes imóveis devem ser de\npropriedade pública e serem destinados ao aluguel social, por um preço justo, nunca\nsuperior a 1/3 da renda dos que necessitam. Não à venda de imóveis públicos!\nD.\n\nCriar uma empresa estatal de obras para garantir a construção de moradias\n\npopulares faltantes e obras de infraestrutura, a baixo custo.\nE.\n\nContra a construção de moradias populares em locais remotos e sem\n\ninfraestrutura urbana, como fez o programa “Minha Casa Minha Vida”. Garantir\ntransporte público, asfaltamento, saneamento básico e infraestrutura de saúde, educação,\ntransporte e outros serviços públicos decentes para esses bairros onde já existem moradias\npopulares.\n5. ASSISTÊNCIA SOCIAL.\nA Assistência Social é uma política pública implementada através da Política\nNacional de Assistência Social (PNAS) em 2005. Faz parte da Seguridade Social\nintegrando o tripé Saúde, Previdência e Assistência Social. Esta política não tem caráter\ncontributivo e é voltada para aqueles/aquelas que dela necessitarem, sendo articulada a\noutras políticas públicas.\nA conjuntura atual, com o corte de verbas públicas trazida pelo Arcabouço\nFiscal, a Reforma Trabalhista, entre outras medidas que afetam duramente a classe\ntrabalhadora, principalmente a mais pauperizada que necessita deste acesso, traz uma\ndemanda maior para a política de Assistência Social. No entanto, na contracorrente dos\nfatos, esta política também sofre efeitos desastrosos com a redução de verbas, com a\nredução dos benefícios assistenciais, como o Benefício de Prestação Continuada (BPC),\nque passa a estreitar ainda mais o critério de acesso, com critérios comprobatórios ainda\nmais vexatórios para os usuários.\nA regra geral dos governos, quando se trata da Política de Assistência Social e\ndo corte dos recursos públicos para esta área, é culpabilizar a população pobre pela sua\ncondição de pobreza, tornando o discurso oficial sobre os benefícios da Assistência Social\n\n35"
+          },
+          {
+            "id": "como-mero-assistencialismo-e-nao-como-direito-desta-forma-tentam-jogar-a",
+            "titulo": "como mero assistencialismo e não como direito. Desta forma, tentam jogar a culpa pela",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "como mero assistencialismo e não como direito. Desta forma, tentam jogar a culpa pela\npobreza no indivíduo e não no sistema capitalista que gera a pobreza.\nNo que se refere a organização dos municípios, a política de assistência social se\nestrutura através dos Centros de Referência de Assistência Social (CRAS) e nos Centros\nde Referência Especializados de Assistência Social (CREAS) que devem atender à\nproteção social básica e especial de média e alta complexidade. Os ataques às políticas\npúblicas afetam também os CRAS, os CREAS e os/as trabalhadores/ras que neles atuam\natravés das péssimas condições de trabalho, do arrocho salarial, da precarização na forma\nde contratação, das demissões em massa etc. Para enfrentar esta dura realidade os/as\ntrabalhadores/as da Assistência Social se somam nas mobilizações do conjunto da classe\ntrabalhadora, a exemplo da greve do serviço público municipal no início de 2018 em\nFlorianópolis, que se enfrentou diretamente contra a implantação da privatização de\nserviços públicos via Organizações Sociais (OSs). Os profissionais de serviço social estão\nna luta pela defesa das políticas públicas de Assistência Social e em defesa do serviço\npúblico.\nEntendemos a Assistência Social como uma política conquistada pela classe\ntrabalhadora. Entendemos também que vêm e vão governos e estes desconstroem a visão\nde política pública, defendendo a ideia de que a Assistência Social deve ser uma caridade\noferecida na lógica de critérios que humilham o usuário, fortalecendo assim a ideologia\nde criminalização da pobreza.\nAo contrário desta lógica politiqueira atribuída à Assistência Social que a\ndesconstrói como processo construído pelos/pelas trabalhadores/as na luta por melhores\ncondições de vida, defendemos a Assistência Social como uma política pública garantida\npelo Estado com verbas públicas, já que estes recursos fazem parte da riqueza construída\npelos/pelas trabalhadores/as.\n\nDEFENDEMOS:\nA.\n\nAmpliação dos recursos orçamentários para a área;\n\nB.\n\nReestruturação dos CRAS e CREAS para que sejam espaços públicos que\n\nfortaleçam as lutas coletivas;\nC.\n\nCriação de espaços de controle social para discussões e decisões coletivas\n\nsobre a Política;\nD.\n\nQualificação na implantação do Sistema Único da Assistência Social –\n\nSUAS, com ações básicas e específicas integradas, conforme a necessidade da população;\n36"
+          },
+          {
+            "id": "e",
+            "titulo": "E.",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "E.\n\nFim da terceirização da Assistência Social, com a contratação de todos os\n\nprofissionais através de concurso público;\nF.\n\nValorização do/da profissional de assistência social, com salário digno,\n\nprograma de capacitação continuada e plano de carreira;\nG.\n\nCriação de casas-abrigo, para as mulheres e crianças vítimas da violência\n\ndoméstica, com estrutura e atendimento interdisciplinar, além do pagamento do aluguel\nsocial;\nH.\n\nInvestimentos nas estruturas dos projetos com equipes interdisciplinares\n\npara acompanhamento das crianças vítimas da exploração sexual.\nI.\n\nImplementar políticas geradoras de trabalho com empregos formais e\n\npolíticas sociais universais como saúde, habitação, saneamento básico, educação, como\nconsta dos demais tópicos do programa.\nJ.\n\nEmergencialmente instituir uma cesta básica mensal para as famílias que\n\nnecessitam, e restaurantes populares nos bairros vulneráveis socialmente.\n6. EM DEFESA DAS REFORMAS URBANA E AGRÁRIA. EM\nDEFESA DO MEIO AMBIENTE.\nOs padrões de desenvolvimento nas cidades que são impostos pela especulação\nimobiliária e as políticas de desmonte de serviços essenciais vêm trazendo impactos\nsociais e naturais profundos e resultam na acentuação de desigualdades e na ocupação\ndesordenada do espaço urbano. Situação semelhante existe no campo, com a imposição\nde padrões capitalistas de desenvolvimento devido ao peso do agronegócio e que vêm\nimpondo a concentração das terras, destruição da natureza, aumento da violência e a\nutilização de grandes quantidades de agrotóxicos e sementes transgênicas sem garantias\ncientíficas sobre o impacto ao meio ambiente e aos seres humanos. Em relação a isso,\ndefendemos:\nA.\n\nReforma urbana ampla e radical que destine terrenos e imóveis de\n\nespeculadores para as famílias sem teto e para outras utilizações sociais.\nB.\n\nReforma das ruas, praças, parques, becos e vielas das cidades; iluminação,\n\nrede wi-fi gratuita por todas as cidades, infraestrutura de áudio e vídeo para todas as\npraças e parques (priorizando as localizadas nas periferias) e que desenvolva a realização\npermanente de atividades culturais, de esporte, lazer e formação, inclusive noturnas,\ndando a estes espaços vida e fortalecendo experiências de socialização entre as pessoas.\n\n37"
+          },
+          {
+            "id": "c",
+            "titulo": "C.",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "C.\n\nReforma agrária, já! Defesa do emprego, dos salários e direitos para os\n\noperários agrícolas. Acesso ao crédito barato para os pequenos produtores.\nD.\n\nFim do desmatamento! Em defesa da nossa fauna, flora e rios.\n\nE.\n\nRevolução agrária, já! Estatização sob controle dos trabalhadores do\n\nagronegócio que tem sua produção voltada para o mercado internacional e não para\natender as necessidades do povo brasileiro!\nF.\n\nEstatização sob controle dos trabalhadores das grandes empresas que\n\ncometem crimes ambientais!\nG.\n\nPor um plano de saneamento ambiental estadual, que seja debatido e\n\ndeliberado democraticamente pelos trabalhadores e o povo pobre nos conselhos\npopulares, visando à universalização do seu acesso.\nH.\n\nNão à privatização da CASAN e da água. Reversão dos processos de\n\nmunicipalização do saneamento básico que abriram caminhos para a privatização dos\nserviços e maior poluição. Por uma CASAN 100% estatal e controlada democraticamente\npelos trabalhadores. Não à privatização dos serviços de coleta de lixo e de melhoramentos\nnas cidades.\n7.\n\nTRANSPORTE COLETIVO, INFRAESTRUTURA E ACESSIBILIDADE.\n\nTRANSPORTE COLETIVO.\nA.\n\nTarifa única valendo para o dia todo. Redução da tarifa, rumo à tarifa zero.\n\nCriação de mais linhas e horários. Garantir integração intermunicipal nas regiões\nmetropolitanas.\nB.\n\nEstatização do transporte coletivo sem indenização e sob controle dos\n\ntrabalhadores do transporte e usuários.\nC.\n\nEstabilidade no emprego e valorização dos trabalhadores do transporte.\n\nContra as demissões de cobradores e pela reversão das demissões que ocorreram durante\na pandemia. Admissão de cobradores onde a função não existe mais.\nD.\n\nInvestimento público para a implantação de alternativas de transporte\n\npúblico, como o marítimo e sob trilhos, e pela instalação de ciclovias seguras, de acordo\ncom a realidade dos municípios. Todos 100% públicos e gratuitos.\nINFRAESTRUTURA.\nA.\n\nConstrução de nova rodovia ligando o norte do estado ao Contorno\n\nViário de Florianópolis.\nB.\n\nVerbas para as melhorias e projetos de duplicação necessários das\n38"
+          },
+          {
+            "id": "rodovias-estaduais-fim-dos-pedagios-e-a-reversao-dos-processos-de-privat",
+            "titulo": "rodovias estaduais. Fim dos pedágios e a reversão dos processos de privatização das",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "rodovias estaduais. Fim dos pedágios e a reversão dos processos de privatização das\nrodovias!\nC.\n\nDefendemos investimentos para construir novos modais de transporte, a\n\nexemplo das ferrovias e transporte marítimo, e que não deixem o país refém somente do\nmodelo rodoviário. Defendemos a aplicação anual de 2% do PIB nos transportes, onde o\nestado de Santa Catarina participaria desse investimento de acordo com sua participação\nna arrecadação dos tributos que existem no país. Acreditamos também que toda essa\nampliação da infraestrutura tem que se dar respeitando os direitos e as terras indígenas e\nquilombolas, assim como a preservação da natureza e suas reservas.\nD.\n\nDefendemos um projeto de ferrovias para o transporte cargas e de\n\npassageiros por todo o estado e que atenda a diversidade econômica do estado.\nACESSIBILIDADE ÀS PESSOAS COM DEFICIÊNCIA:\nA.\n\nGarantir verbas e projetos de acessibilidade para que as pessoas com\n\ndeficiência possam ter condições de alcançar e utilizar, com segurança e autonomia, os\nespaços, mobiliários e equipamentos urbanos, as edificações, os transportes e os sistemas\ne meios de comunicação, atendendo às exigências já presentes na legislação vigente e\natendendo também às reivindicações próprias do setor.\nB.\n\nCotas em todos os concursos públicos para pessoas com deficiência;\n\ninvestimento em Educação e Saúde 100% públicas, com contratação de profissionais que\natendam às suas necessidades.\n8.\n\nPREVENÇÃO DAS ENCHENTES E DE OUTRAS TRAGÉDIAS\n\nNATURAIS E SOCIAIS E AOS SEUS EFEITOS.\nA prevenção a essas catástrofes praticamente inexiste, embora as grandes\nenchentes em nosso estado sejam recorrentes. Além disso, temos os deslizamentos,\nvendavais e a estiagem que aterrorizam principalmente o Vale do Itajaí e o Oeste do\nEstado.\nMesmo com todo esse histórico, os políticos sempre se dizem surpresos e culpam\na “natureza” pelas perdas. Para piorar, quando tomam alguma atitude, os governos se\nlimitam a trazer os desalojados para ginásios e galpões sem o mínimo de dignidade para\nas famílias, aumentando o sofrimento. Prefeitos, governadores, e às vezes, até\npresidentes, tomam medidas demagógicas e midiáticas de vestir casacos ou coletes da\n\n39"
+          },
+          {
+            "id": "defesa-civil-ou-dos-bombeiros-e-sobrevoar-areas-de-helicoptero-mas-de-fa",
+            "titulo": "Defesa Civil ou dos Bombeiros e sobrevoar áreas de helicóptero. Mas de fato, nada fazem",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Defesa Civil ou dos Bombeiros e sobrevoar áreas de helicóptero. Mas de fato, nada fazem\nde efetivo.\nDEFENDEMOS:\nA.\n\nVerbas para um plano de obras que inclua obras de infraestrutura e\n\nsaneamento ambiental, moradia popular, drenagem e desassoreamento de rios e córregos,\nsistemas de alerta nas cidades e mais investimentos em defesa civil;\nB.\n\nAs pessoas que vierem a perder tudo ou quase tudo nas enchentes vão\n\nprecisar de apoio para se reerguerem na vida. É importante ter estabilidade no emprego,\nisenção da cobrança de impostos e taxas públicas, pelo menos por 2 anos, e que tenham\na reconstrução de suas casas subsidiadas pelo poder público;\nC.\n\nÉ fundamental nos momentos de desastres a formação de comitês por\n\nbairro e populares para controlar e coordenar a ajuda aos atingidos;\nD.\n\nImóveis hoje destinados à especulação imobiliária (aqueles que se incluem\n\ncomo propriedade de especuladores com 5 ou mais imóveis) devem ser destinados\nemergencialmente para o abrigo das famílias e pessoas desabrigadas e desalojadas.\n9.\n\nCULTURA, ESPORTE, LAZER E ARTE LIVRES.\nUm programa socialista tem de partir da necessidade urgente de emancipar a\n\ncultura das mãos dos capitalistas e garantir acesso à cultura e lazer nos bairros operários\ne populares.\nAlém disso, há uma tremenda desigualdade na distribuição dos equipamentos\nculturais (cinema, teatro, museus, parques etc). Se já não bastassem os altos preços, esses\nequipamentos culturais geralmente ficam nos centros e nas áreas nobres das cidades. Por\nisso, defendemos um plano de obras públicas para construir salas de cinema, teatro,\nbibliotecas, museus, centros culturais e parques nos bairros operários e populares de todos\nos municípios de Santa Catarina.\nNo país que sediou a Copa do Mundo e os Jogos Olímpicos, o acesso ao lazer e\nà prática esportiva continuam precários! É preciso investir na criação de centros\npoliesportivos e áreas verdes nos bairros operários e populares, já!\nDEFENDEMOS:\nA.\n\nSuspensão do pagamento da dívida pública e auditoria para aumentar o\n\norçamento para a Cultura do estado, garantindo concursos públicos para o setor. Garantia\nde um mínimo percentual do orçamento investidos em cultura a ser debatido e deliberado\njunto do setor (trabalhadores da área e artistas);\n40"
+          },
+          {
+            "id": "b-2",
+            "titulo": "B.",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "B.\n\nPlano de Obras Públicas para a construção de equipamentos culturais como\n\nMuseus, salas de Cinema, Teatros, Bibliotecas, Arquivos Públicos e Centros Culturais\nnos bairros operários e populares!\nC.\n\nPor reparações aos negros e indígenas! Restituição dos bens históricos,\n\nartísticos e culturais reivindicados pelos povos africanos e latino-americanos!\nD.\n\nAcessibilidade em todos os espaços educacionais e culturais!\n\nE.\n\nPlano de obras públicas para a construção de equipamentos para práticas\n\nesportivas, como ginásios poliesportivos e áreas verdes em bairros operários e populares.\nF.\n\nQue todas as escolas públicas tenham anfiteatros e quadras poliesportivas\n\ncobertas e com vestiários e funcionem também como centros de cultura completos, geridos\npelos trabalhadores. A educação artística deve ser matéria obrigatória no currículo.\nG.\n\nDefesa de toda a liberdade em arte e cultura. Não deve haver qualquer\n\nprivilégio a qualquer grupo, escola ou corrente artística. Tampouco discriminação às\ncorrentes artísticas. Fim da criminalização de manifestações culturais populares, como as\nbatalhas de HIP-HOP, os Slams, o maracatu etc. Valorização da cultura local que inclua\na contribuição de negros, negras e indígenas.\nH.\n\nDefesa de todas as formas independentes de organização dos artistas e\n\ntrabalhadores da arte e da cultura.\nI.\n\nDefesa dos grupos amadores e independentes, livrando-os da pressão\n\neconômica, para que possam se desenvolver livremente.\nJ.\n\nPela preservação do patrimônio histórico do estado com garantia de verbas\n\nK.\n\nFim dos monopólios privados de produção e da exploração da arte e da\n\npúblicas.\ncultura. Estatização dos equipamentos dos grandes centros culturais, museus e galerias\nsem indenização. Sem qualquer tipo de dirigismo cultural, o Estado deve providenciar a\nesses equipamentos toda a verba necessária para seu funcionamento. Eles devem ser\ngeridos pelos trabalhadores da cultura e artistas. Fim da lei Rouanet.\nL.\n\nIncentivar, com garantia de verbas, produções artísticas e culturais que\n\ntratem da herança e das contribuições indígenas, negras e de outros grupos étnico-raciais\noprimidos;\n10.\n\nTURISMO.\nA.\n\nGarantir, em primeiro lugar, o acesso dos trabalhadores à sua própria\n\ncidade com transporte de qualidade e acessível a todos e garantindo emprego e renda.\n\n41"
+          },
+          {
+            "id": "b-3",
+            "titulo": "B.",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "B.\n\nSomos contra o modelo de turismo baseado nos grandes empreendimentos\n\nempresariais que degradam o meio ambiente e super exploram a força de trabalho.\nCombatemos o turismo sexual.\nC.\n\nAbertura de concurso público na área.\n\nD.\n\nLutar pela criação de um imposto sobre leitos ocupados da rede hoteleira\n\npara financiar moradias populares e investimentos públicos e sociais.\nE.\n\nDefendemos a estatização sob controle dos trabalhadores e sem\n\nindenização dos grandes empreendimentos que cometerem crimes ambientais ou\nincentivarem o turismo sexual, e a destinação dessas áreas para uma função pública e\nsocial.\nF.\n\nDefendemos incentivar o turismo que respeita o meio ambiente, combata\n\no turismo sexual e garanta boas condições de trabalho e renda para a população local.\nIncentivo à criação de colônias de férias de sindicatos e associações de trabalhadores, a\nexemplo da doação de terrenos.\nG.\n\nIncentivo público às festas locais e populares. Contra a privatização da\n\ncultura popular. Pela sua livre manifestação.\n11.\n\nSEGURANÇA PÚBLICA.\nA solução do problema da segurança pública está diretamente ligada à solução\n\nde outros graves problemas sociais, como a criminalização das drogas, o caráter\nrepressivo da polícia, o desemprego, os baixos salários, a falta de serviços públicos e a\nfalta de lazer e cultura para nossa juventude.\nSe quisermos resolver o problema da segurança pública teremos que enfrentar o\nproblema do tráfico de drogas, responsável direta e indiretamente pela maior parte dos\ncrimes, e por 35% dos crimes que levam ao encarceramento no país. Por isso, defendemos\na legalização das drogas e seu controle estatal para acabar com o narcotráfico. Junto com\nisso, o Estado deve garantir campanhas de saúde pública e atendimento estatal de saúde\naos usuários. Defendemos a criação de centros de recuperação que sejam públicos e\ngratuitos para os dependentes químicos.\n\nDESMILITARIZAÇÃO DA POLÍCIA MILITAR.\nNessas eleições, fazemos um chamado aos praças da Polícia Militar de Santa\nCatarina para que se organizem. Seus oficiais, que agem como se fossem seus patrões,\nganhando mais do que vocês, correndo menos riscos do que vocês e, por isso, vivendo\n42"
+          },
+          {
+            "id": "mais-do-que-voces-esses-oficiais-que-lhes-dao-ordens-humilham-e-lhes-obr",
+            "titulo": "mais do que vocês. Esses oficiais que lhes dão ordens, humilham e lhes obrigam a fazer",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "mais do que vocês. Esses oficiais que lhes dão ordens, humilham e lhes obrigam a fazer\ncoisas que ferem sua honra e sua moral.\nNós do PSTU estamos aqui pra dizer que a vida dos praças da PM-SC só vai\nmudar com organização e mobilização. Ou seja, suas necessidades imediatas (por\nmelhores salários, diminuição da jornada de trabalho, mais democracia no quartel etc.) e\nsuas necessidades históricas (que é o fim da exploração de vocês e de todos os\ntrabalhadores) não virão das urnas, mas da rebelião organizada contra esse sistema.\nDesmilitarizar significa mudar o caráter repressivo da Polícia, que hoje é um\nbraço do Exército em todos os estados da federação. Em todo o país os policiais\nmilitares são aqueles que mais matam, e também os que mais morrem.\nDefendemos a unificação das polícias estaduais numa única polícia civil,\ngarantindo o direito à livre organização sindical dos policiais e eleições para os chefes de\npolícia. Significa pôr fim aos arcaicos regimentos internos e códigos disciplinares que, na\nmaioria das vezes, são anteriores à Constituição de 1988, como é o caso da PM-SC.\nNão é possível que em pleno século XXI ainda se admitam detenções e prisões\nnos quartéis, violando as garantias constitucionais da própria democracia burguesa. Além\ndisso, enquanto soldados e cabos amargam a prisão no “xadrez”, os oficiais podem ficar\npresos e detidos nos lugares que o Comandante decidir… Isso tem que acabar!\nNão podemos deixar de abordar a questão do sistema prisional. Hoje o sistema\npenitenciário vem prendendo em massa e, quase que exclusivamente, os pobres, os negros\ne os jovens com baixa escolarização, e sem julgamento. Não à toa dizemos que todo\npresídio tem muito de um navio negreiro.\nA Lei antidrogas, criada em 2006 por Lula, gerou uma explosão de\nencarceramento no Brasil, jogando nos cárceres os negros e pobres. Defender a\nlegalização das drogas implica, também, em reparar as consequências de uma guerra que\nmatou e encarcerou o povo negro e pobre. Portanto, defendemos uma política de\ndesencarceramento dos negros e pobres, que envolva “limpar a ficha” dos presos\nrelacionados à lei antidrogas e o cumprimento de penas de maneira alternativa.\n\nDEFENDEMOS:\nA.\n\nO plano de segurança pública é inseparável de um plano de investimentos\n\nsociais, geração de emprego e aumento da renda dos trabalhadores.\n\n43"
+          },
+          {
+            "id": "b-4",
+            "titulo": "B.",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "B.\n\nDesmilitarização da polícia militar e criação de uma polícia civil unificada\n\ncom controle democrático dos trabalhadores e do povo pobre; e direito de organização\nsindical para os policiais.\nC.\n\nFim de toda a política racista de genocídio da juventude negra das\n\nperiferias e de higienização social das cidades.\nD.\n\nLutar não é crime! Fim da repressão aos movimentos sociais e às lutas da\n\nclasse trabalhadora.\nE.\n\nDefesa da legalização das drogas e seu controle estatal para acabar com o\n\nnarcotráfico. Defendemos a criação de centros de recuperação que sejam públicos,\nhumanizados e gratuitos para os dependentes químicos.\nF.\n\nValorização dos servidores da segurança pública com melhores salários e\n\nredução da jornada de trabalho.\nG.\n\nFim do machismo nos concursos para a PM-SC! Todas as vagas devem ser\n\nde ampla concorrência entre homens e mulheres!\nH.\n12.\n\nCotas étnico-raciais nos concursos para a PM-SC!\n\nCONTRA A CRIMINALIZAÇÃO DOS MOVIMENTOS SOCIAIS E DA\n\nPOBREZA.\nO país vive uma conjuntura de aumento das manifestações, das ocupações e das\ngreves nos últimos anos. Os governos, a Justiça e a polícia, no entanto, enfrentam essas\nmobilizações com criminalização e repressão. Somos contra a criminalização das lutas,\nda pobreza e da negritude!\nA.\n\nPelo fim da repressão às batalhas de hip-hop e Slams de poesia!\n\nB.\n\nRevogação da Lei Antiterrorismo, e das medidas de garantia da lei e da\n\nC.\n\nPela apuração e punição rigorosa dos assassinos e dos mandantes do\n\nordem!\nassassinato de Marielle Franco!\nD.\n\nPunição a todos os torturadores da ditadura militar e aos que têm usado\n\nessa prática nas delegacias de polícia e sistema prisional!\nE.\n\nFim dos serviços de segurança como a ABIN e os estaduais, como o\n\nserviço de P2 na PM, utilizados contra os que lutam contra as injustiças e desigualdades\nsociais.\n\n44"
+          },
+          {
+            "id": "13",
+            "titulo": "13.",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "13.\n\nPELO FIM DA CORRUPÇÃO.\nA.\n\nPrisão de todos os corruptos e corruptores e o confisco de seus bens;\n\nB.\n\nFim dos privilégios dos políticos, através de mandatos revogáveis, e de\n\nsalário igual ao de um professor ou operário especializado;\nC.\n\nEstatização sob controle dos trabalhadores das grandes empresas\n\nenvolvidas em corrupção, a exemplo das empreiteiras e da JBS;\nD.\n\nFim do sigilo fiscal, telefônico e bancário de políticos e empresários\n\nenvolvidos em corrupção.\n14.\n\nCONTRA O MONOPÓLIO DA MÍDIA.\nNestas eleições, o PSTU não tem tempo de televisão, enquanto os candidatos\n\nenvolvidos em esquemas de corrupção chegam a ter vários minutos. Isso sem falar na\nexclusão dos debates e da cobertura jornalística desigual por conta das emissoras de rádio\ne televisão.\nNo capitalismo é assim, a imprensa torna-se também mercadoria, e nunca será\njusta em seus critérios, por isso tentam a todo custo impedir que partidos e candidaturas\nque querem combater essa lógica surjam como uma alternativa viável frente aos olhos da\nmaioria da população.\nDesde o início, a construção da imprensa, das redes de rádio e TV no Brasil\nfavoreceu o controle da produção e disseminação da informação nas mãos de poucas\nfamílias e grupos econômicos. Vale lembrar que os pontos de TV e rádio das grandes\nemissoras e difusoras são concessões públicas cujos contratos são totalmente nebulosos.\nO fim dos governos militares e a Constituição de 1988 não mudaram esse\npanorama. Pelo contrário, aprofundou-se a prática de barganha das concessões por apoio\npolítico. O PT manteve a prática, distribuindo as concessões de rádio e TV a políticos\naliados em todo o país, e destinando bilhões às grandes emissoras como a Globo, Record,\nSBT e Bandeirantes. Para se ter ideia do tamanho dessa mamata, entre 2003 e 2014, a\nRecord e o grupo Globo receberam R$ 8,4 bilhões do governo federal por publicidade.\nNo ano de 2016 tivemos um acordo entre os acionistas da RBS e os empresários\nLírio Parisotto e Carlos Sanchez, do Grupo NC, juntamente com outros investidores, que\nselou a venda das operações de televisão, rádio e jornal que atuavam sob a marca RBS\nem Santa Catarina. Atualmente temos a NSC, parte de um grande grupo econômico que\n\n45"
+          },
+          {
+            "id": "atua-em-outras-areas-e-conta-com-parisotto-como-um-de-seus-proprietarios",
+            "titulo": "atua em outras áreas, e conta com Parisotto como um de seus proprietários, o mesmo que",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "atua em outras áreas, e conta com Parisotto como um de seus proprietários, o mesmo que\nagrediu fisicamente Luiza Brunet. Assim segue a tendência de maior concentração dos\nmeios de comunicação, com o agravante de ter um agressor de mulher como proprietário\nde um grande meio de comunicação, quando este devia estar na cadeia.\nParte fundamental da construção de uma sociedade socialista passa pela\ndemocratização da grande mídia. Defendemos a desconcentração da mídia, hoje na mão\nde grupos econômicos que controlam toda uma cadeia de redes de televisão e rádio, além\nde jornais. Defendemos o incentivo às inciativas comunitárias e de organizações de\ntrabalhadores de rádio, TV e jornal. Precisamos também avançar para questionar a\npropriedade privada dos grandes meios de comunicação, que devem ser controlados pela\nclasse trabalhadora e o povo pobre e da periferia. Vamos conseguir isso através de uma\nampla mobilização dos trabalhadores e da juventude.\n\nDEFENDEMOS:\nA.\n\nChega de dinheiro para os grandes oligopólios da mídia!\n\nB.\n\nAuditoria e quebra do sigilo dos contratos de concessões públicas para as\n\ngrandes emissoras de TV e rádio difusoras;\nC.\n\nIncentivo às rádios comunitárias; e à produção de áudio e visual nos bairros\n\noperários e populares;\npaís;\n\nD.\n\nCotas étnico-raciais em todas as produções audiovisuais do estado e do\n\nE.\n\nUniversalização do acesso à internet rápida e gratuita;\n\nF.\n\nAcesso à concessão de rádio e TV para sindicatos, associações dos bairros\n\npopulares, movimentos sociais e demais organizações dos trabalhadores como a CSPConlutas.\n15.\n\nESTATIZAÇÃO\n\nDAS\n\n100\n\nMAIORES\n\nEMPRESAS\n\nDO\n\nPAÍS.\n\nESTATIZAÇÃO DO SISTEMA FINANCEIRO SOB O CONTROLE DOS\nTRABALHADORES. FIM DAS REMESSAS DE LUCROS AO EXTERIOR.\nA economia brasileira é controlada hoje por um punhado de grandes empresas,\ngrande parte delas sob controle do capital estrangeiro. As 100 maiores empresas têm o\nfaturamento igual a 40% de tudo o que o Brasil produz em um ano. Mas só são\nresponsáveis por 2 milhões de empregos, num universo de mais de 100 milhões de\ntrabalhadores brasileiros.\nDEENDEMOS:\n46"
+          },
+          {
+            "id": "a-2",
+            "titulo": "A.",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "A.\n\nA estatização dessas empresas, colocá-las sob controle dos trabalhadores\n\ne fazer com que produzam de acordo com as necessidades da população brasileira, e não\npara a exportação e o lucro de alguns poucos empresários.\nB.\n\nProibição das remessas de lucros e estatização das grandes multinacionais\n\ne o agronegócio sob o controle dos trabalhadores, incluindo os bancos.\nC.\n\nEstatização do sistema financeiro, sob controle dos trabalhadores,\n\ncentralizado num banco que garanta o financiamento ao pequeno empresário e produtor,\no desenvolvimento público, científico e tecnológico\nD.\n\nDefendemos também impostos sobre grandes fortunas e um modelo\n\ntributário com tributos progressivos e que tribute prioritariamente a renda e o patrimônio.\n16.\n\nPOR\n\nUM\n\nGOVERNO\n\nSOCIALISTA\n\nDOS\n\nTRABALHADORES\n\nFORMADO POR CONSELHOS POPULARES!\nA campanha do PSTU quer ser um ponto de apoio para as lutas e a organização\nda classe operária, dos trabalhadores, da juventude e do povo pobre, dos bairros\npopulares, da periferia. Fazemos um chamado à rebelião dos de baixo contra os de cima.\nVamos juntos construir um quilombo socialista contra a exploração, o\ndesemprego, o racismo, a LGBTfobia, o machismo, a xenofobia. Em defesa de uma vida\ndigna, do emprego, do salário, da educação e saúde públicas e gratuitas, da moradia, do\nsaneamento básico para todos e do transporte público de qualidade. Os ricos é que devem\npagar pela crise e a corrupção que eles mesmos criaram.\nHoje, os donos das fábricas, dos bancos, das construtoras, das grandes redes de\nvarejo e atacado são os donos das cidades, do estado e do poder. Nós queremos Santa\nCatarina nas mãos dos trabalhadores e do povo pobre, pois eles produzem todas as\nriquezas e nada a eles é permitido. Por isso, defendemos um governo dos trabalhadores,\nsem os ricos e poderosos, formado por conselhos populares e acreditamos que Santa\nCatarina e o Brasil precisam de uma revolução socialista.\nSanta Catarina deve ser controlada por Conselhos Populares Deliberativos que\nvão deliberar e fiscalizar 100% do orçamento público, e que será eleito nas periferias, nos\nlocais de trabalho e nos locais de estudo. Essa tarefa não pode ficar nas mãos da\nAssembleia Legislativa cheia de privilégios e controlada por picaretas e partidos\nenvolvidos em mega escândalos de corrupção.\n\n47"
+          },
+          {
+            "id": "acreditamos-que-o-socialismo-so-e-possivel-se-enfrentarmos-a-fundo-os-in",
+            "titulo": "Acreditamos que o socialismo só é possível se enfrentarmos a fundo os interesses",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Acreditamos que o socialismo só é possível se enfrentarmos a fundo os interesses\ndos ricos e dos poderosos e se garantirmos democracia para os trabalhadores e o povo\npobre decidir os rumos da cidade, do estado e do país. Nesse sentido não defendemos e\nnão reivindicamos os regimes políticos instalados em Cuba, China, Coreia do Norte e na\nantiga URSS a partir da era stalinista, que usurparam o poder das mãos da classe\ntrabalhadora e que nada tinham de socialistas. Igualmente não defendemos governos\ncapitalistas, como o de Maduro na Venezuela ou Ortega na Nicarágua, que se dizem de\nesquerda e mancham a bandeira do socialismo. Sempre tivemos como princípio a\ndemocracia operária, que representa o poder de decisão nas mãos da base e o controle dos\ndirigentes pela sua base.\nSempre tivemos também como princípio não aceitar receber dinheiro de\nempresas, porque sabemos que quem paga a banda escolhe a música. Nos opomos à\nprática do PT, do PCdoB e, inclusive, do PSOL que pegam dinheiro com empresários.\nPor isso, o PSTU não se envolve com corrupção. Nós fazemos questão de sermos\nfinanciados pela classe trabalhadora e pelo povo pobre.\nMesmo assim, um partido como o PSTU não tem tempo de televisão, não é\nchamado a participar de debates e sofre o boicote de grandes meios de comunicação.\nEnquanto os grandes partidos da burguesia têm muito tempo na TV e no rádio e rios de\ndinheiro de empresários e corruptos para mentir descaradamente. Não vamos mudar para\nvaler o estado ou o país através das eleições burguesas. Elas são um jogo de cartas\nmarcadas. Vivemos uma democracia a serviço da burguesia e do imperialismo. Somente\ncom a luta unificada e independente dos trabalhadores podemos mudar os rumos de Santa\nCatarina e do Brasil. As últimas grandes mudanças que tivemos na política do país vieram\ndas ruas, a exemplo da queda da ditadura militar com as mobilizações do final da\ndécada de 70 e início da década de 1980, do movimento “Fora Collor” de 1992 e das\nmanifestações de junho de 2013. Votar e eleger revolucionários e socialistas do PSTU\nfortalece as lutas dos trabalhadores.\nEntendemos também que a luta pelo socialismo só é viável se for levada à escala\ninternacional. Estamos ao lado do povo haitiano, cubano e da Nicarágua que se\nlevantam contra seus governos e o imperialismo e todos e todas que lutam contra a\nopressão e a exploração em qualquer país do mundo. Saudamos e nos colocamos ao lado\ndos povos de todo o mundo, que lutam contra seus governos e por seus direitos.\nTambém nos solidarizamos com os trabalhadores ucranianos que vivem uma guerra de\nagressão nacional por força da invasão russa no início de 2022, e com o povo palestino\nque lutam contra o Estado assassino de Israel, por uma Palestina única, laica e não\n48"
+          },
+          {
+            "id": "racista-do-rio-ao-mar",
+            "titulo": "racista do rio ao mar.",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "racista do rio ao mar.\nCada voto no PSTU, no 16, vai ser útil para fortalecer o projeto revolucionário\ne socialista, e a luta da classe trabalhadora, do povo pobre, dos negros, das mulheres e\nLGBTs para mudar de verdade tudo isso que está aí.\nVote PSTU 16! Ajude a multiplicar a campanha no seu bairro, no seu local de\ntrabalho, no seu local de estudo, nas redes sociais!\nVenha para o PSTU! Venha construir um partido socialista, classista,\nrevolucionário e internacionalista.\n\n49"
+          },
+          {
+            "id": "programa-do-pstu-em-santa-catarina",
+            "titulo": "PROGRAMA DO PSTU EM SANTA CATARINA",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DO PSTU EM SANTA CATARINA\nELEIÇÕES 2026\nPartido Socialista dos Trabalhadores Unificado\nSanta Catarina\n06 de agosto de 2026.\nEmail: pstu.itajai@gmail.com\nFacebook: pstusantacatarina\nInstagram: @pstusantacatarina\n\n50"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "0847094e6c5c68596c270a552d1ee92c4dc92fadabc738d8e8c29711436e6875"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c9902a559c96c23d9b02aa8bf6641c64a7e8370594baa752f8b53fd5bd00b4a1"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "1452d364d33eb4be876b28f400f59846fd77c494b5f16cef17d88f9ea60cd99e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "43a8be41be1961a44cf1c044740b5de8b34ea8e86257d2dde342cfdf990c4c96"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ed36475625c346a9bcbd9a8e19961dec7eb89136600be514dd7c09414c0de6a0"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ba2f05f8893424685be50af6337a0d89aa2f55211b8bc7ebd75c3196e6966d9f"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "cecaea5948dd93ec09bf5672fa779a344631df1b905be7f920f9732e89ac6f4e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "d59476250299b790f1c26f9c00094993748fed588544d80915c96368fbfdd0b0"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "888a3fa346e75673b75300e8a484ac71770cd4ce0cd29d7f0fb439ce8b137c95"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "8dc4951c2fb162a4af5d3b8c523c08b72a8500ed5934679ad7e649ccacdc8403"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "40baf0fc6f64eb46a27bdb1ce0e146c7b2751381ec4292fc39a94936c4b2e8b2"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "2b93a0a870b40fc8f4003bafa66b271c7f259b0a4644d8036259e5234430dfdf"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "a2a57a43350530053ca1d7a3fd9c51a116f41c87ab2b76579ea84a94fa2310b0"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "2985f44f0f4b545040033e668675860f52e5dad94610e9e1cdb25e4fa5299709"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c4e88f66503da91b3b48846a689b67ff98c8dca3c86c5b43aa538310d0f286d5"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "2f9a9ddfe0c9148bbb7b16806bfc5ae5a67f596473dc85f35170f1b6975dc63f"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "5980d7434f1b80f6f457d93889d90601ddb9971462f91af1bc94b2bf8fa9ef1e"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "9e4ac4c92ab9f946489c4327ed7a23d36223fd5e50eb2af2cd0b66ca0847afd8"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "d19eb625fbf18dd9448d25b674181e6beda55cb7aa87c9c71d7c115d57657978"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "d34281576125bf43f703cba08f9aad4ea56c949ab16773a6e7299ae68078f24f"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "4d9c2643f95a9277877d59fbb9068ccc8ac2c7bb7a8e0b18401f588f92844239"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "11ae2f4667dce203613448a8ff33492f28d9b882c2d0eaba7917f9121a638a84"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "72b37aae77586b4e3af0344d9e228d27a6f8ad985677b2aac01313e8f07a8b4b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "15b4d1607c6c49fe1e2ddf3162392b2ecfbf986ad9589035526227366546b25e"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "d834086c3b35de2c983b6ca8ff5ceef835d917fbafca32fc328120c3a42a8ed3"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "c6c7b91ca9656347d8953f7cb46ef6b03bdedec6ecc12a05613d7d145be2b0ff"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "8b1c69ab0fdbc45cc007e00ff2e8129c776cd10f82560f637fb65879bbc6ce14"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "2a65453db572195940e875c7aa4078987fdcee2a11bf3e915c8fbf067da6f590"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "5879f44dba8123dfb1abc4a9271ba799af43e93c029d33b079af4c20b355fc65"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "2ce10ee155bd497a34c3e3eef16259f5d3860b67646b1292fc1c6bb234255d11"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "b73bb4e0b3c5a2496ab045f0be41d115b0c526c9f68f79e4345f473508e4c256"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "6827b4f9bbe24a4b56b46e7ae278c0b6a045ca73c869f0989f520e79abc8424c"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "14c99bbdb7f6dcd5e5b631075ce433ce136ecaea80ddc6a0600e00da21f0e90a"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "9518291747384d5457777d55f488fe27fd692574be80b87e531453ea4c4076d1"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "a7deb8cdafeb0352be3791a9fd9d33d30e1361039f3a1d84a677d430b78e08c5"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "13dd2965de2cb5709e8e3656c4fa81701856f8a414f59c58f9baa3adaf90bd3d"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "f51ba8f1a795fde8478a718743a1ba20b6787966f9f14b4708e778583f3b7947"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "fc64314b3d897593599f2d4c23f623fc22521b5b4301f5c0e2d9f205ebcdd72e"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "4240f60d315f72c7a3e8ed1a1aa9489c68c288a89ad402530cb40d212d2eebba"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "2617f6a609f14b791f382f7635b35c44b93839f1b18aa99c7135f33d212a07df"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "f6fc85d1421782fa55088f401de69ef53b15073cd394ad2f3ee592724c9447b3"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "646f0da30bf095e75d2a7eef1155cbb4b9fd5918246fdee647d07ccd43309335"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "6dfdf56ecd09fae2b1ee0ef330cf9b2d4d685e27c03521a0ac46c533ba9c6618"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "b02468b3b0a6b5911e46c1b2b97d30690eeeb118e216877172c0fb59559b5717"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "ce02e23e99c49bdbb430b430774af160fb584b973c013b1dd02d830c065dc21c"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "d2b57893936a851f18d3f6338d6c0de6a35f27d742380e445cb14b60b8064f4c"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "4a9d85ebbca851539c41f4bd1743f871bc75b3d16064114349f02c36b89f54cd"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "177b97a12df910ac67dc90f050a4727baf747c944832721af9e22609b123b7e6"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "09cc02bbc86c9c4e0458e93ba6ad6adf2a320021732ad60bd2b837c929f90653"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "b39c9baaea05eb2b9a510dd592ced876429ab185ff92e909652d863699981a97"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa apresenta um governo dos trabalhadores, formado por conselhos populares, como proposta de organização política para Santa Catarina e o Brasil. Os conselhos populares devem deliberar e fiscalizar 100% do orçamento público em Santa Catarina. O documento propõe suspender o pagamento das dívidas públicas como medida central da política econômica. Defende um plano de obras públicas para construir hospitais, postos de saúde, escolas e creches em áreas de infraestrutura social. Prevê uma previdência pública solidária e por repartição, com integralidade das aposentadorias, paridade e dignidade para os beneficiários. Propõe a construção de restaurantes populares como medida pública de combate à fome. Defende a garantia de uma saúde 100% SUS, gratuita e de qualidade, com atendimento estadualizado em diferentes graus de complexidade. Propõe uma tarifa única válida para o dia todo no transporte coletivo, com redução da tarifa rumo à tarifa zero.",
+    "frases": [
+      {
+        "texto": "O programa apresenta um governo dos trabalhadores, formado por conselhos populares, como proposta de organização política para Santa Catarina e o Brasil.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 47,
+            "trecho": "Por isso, defendemos um governo dos trabalhadores, sem os ricos e poderosos, formado por conselhos populares"
+          }
+        ]
+      },
+      {
+        "texto": "Os conselhos populares devem deliberar e fiscalizar 100% do orçamento público em Santa Catarina.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 47,
+            "trecho": "Santa Catarina deve ser controlada por Conselhos Populares Deliberativos que vão deliberar e fiscalizar 100% do orçamento público"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe suspender o pagamento das dívidas públicas como medida central da política econômica.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 26,
+            "trecho": "O primeiro passo de um legítimo governo socialista dos trabalhadores é mudar radicalmente a política econômica, suspendendo o pagamento das dívidas públicas"
+          }
+        ]
+      },
+      {
+        "texto": "Defende um plano de obras públicas para construir hospitais, postos de saúde, escolas e creches em áreas de infraestrutura social.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 27,
+            "trecho": "Por um plano de obras públicas, controlado e fiscalizado pela classe trabalhadora em conselhos populares, para suprir as enormes deficiências de infraestrutura para a maior parte da população. Um plano para construir hospitais, postos de saúde, escolas e creches"
+          }
+        ]
+      },
+      {
+        "texto": "Prevê uma previdência pública solidária e por repartição, com integralidade das aposentadorias, paridade e dignidade para os beneficiários.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 27,
+            "trecho": "Defendemos uma previdência pública solidária e por repartição que garanta integralidade das aposentadorias, paridade e dignidade."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe a construção de restaurantes populares como medida pública de combate à fome.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 28,
+            "trecho": "Construção de restaurantes populares"
+          }
+        ]
+      },
+      {
+        "texto": "Defende a garantia de uma saúde 100% SUS, gratuita e de qualidade, com atendimento estadualizado em diferentes graus de complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 33,
+            "trecho": "Pela garantia de uma saúde 100% SUS, gratuita e de qualidade. Retomar para o SUS o controle do Hospital Florianópolis e demais unidades de saúde públicas que foram entregues para as entidades privadas comandarem. Garantir atendimento estadualizado de saúde em seus diferentes graus de complexidade."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe uma tarifa única válida para o dia todo no transporte coletivo, com redução da tarifa rumo à tarifa zero.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 38,
+            "trecho": "Tarifa única valendo para o dia todo. Redução da tarifa, rumo à tarifa zero."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governanca-popular",
+        "titulo": "Governança popular",
+        "descricao": "Governo dos trabalhadores formado por conselhos populares.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 47,
+            "trecho": "defendemos um governo dos trabalhadores, sem os ricos e poderosos, formado por conselhos populares"
+          }
+        ]
+      },
+      {
+        "id": "politica-economica",
+        "titulo": "Política econômica",
+        "descricao": "Suspensão do pagamento das dívidas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 26,
+            "trecho": "suspendendo o pagamento das dívidas públicas"
+          }
+        ]
+      },
+      {
+        "id": "obras-publicas",
+        "titulo": "Obras públicas",
+        "descricao": "Construção de hospitais, postos de saúde, escolas e creches.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 27,
+            "trecho": "Um plano para construir hospitais, postos de saúde, escolas e creches"
+          }
+        ]
+      },
+      {
+        "id": "previdencia-publica",
+        "titulo": "Previdência pública",
+        "descricao": "Previdência pública solidária e por repartição.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 27,
+            "trecho": "uma previdência pública solidária e por repartição"
+          }
+        ]
+      },
+      {
+        "id": "saude-sus",
+        "titulo": "Saúde pública",
+        "descricao": "Garantia de uma saúde 100% SUS, gratuita e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002541913:01",
+            "pagina": 33,
+            "trecho": "Pela garantia de uma saúde 100% SUS, gratuita e de qualidade."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:49:15.362Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:51:30.193Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta de governo dos trabalhadores formado por conselhos populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica explícita."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de organização política."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:1:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está literalmente presente no trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:2:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho descreve a suspensão da dívida como primeiro passo/medida central da mudança de política econômica."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e factual da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única (política econômica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:3:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de infraestrutura social."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:4:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única, previdência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:5:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho está sob a seção 'Combate à fome', sustentando a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (combate à fome)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:6:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:7:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos, apenas conceitos qualitativos sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (transporte)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:frase:8:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra (formato de rótulo temático)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:governanca-popular:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:politica-economica:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:obras-publicas:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:previdencia-publica:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002541913:tema:saude-sus:documentos:SC:240002541913:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002541913",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002541913:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 49491,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2767,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26527,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22102,
+          "output_tokens_details": {
+            "thinking_tokens": 715
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26527,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22102,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26527,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26527
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3478174
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "66f6eb23af087c30496778a3cc5ea0f2ecd633ddd7f9e837da36cd18614fb220",
+    "extractedTextSha256": "39d3e8b4b511619a122cbb6ecd016c4b04d6b2322ef817053d12659de092b30a",
+    "documentCount": 1,
+    "documentSetSha256": "69a6b05b69f8ebce922b4763a5443957921036af64c49e3e4abae3846f6a4f1c",
+    "contentSha256": "f63f72dfe33e9c23124c6be76427ff8bb08e2266552a8644dc8a841e0d0a906e"
+  }
+}

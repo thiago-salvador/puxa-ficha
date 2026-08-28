@@ -1,0 +1,1197 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AP",
+    "sqCandidato": "30002536311",
+    "slug": "clecio-luis",
+    "nomeUrna": "CLÉCIO",
+    "partido": "UNIÃO",
+    "arquivoNome": "2026AP30002536311_01.pdf",
+    "arquivoNoPacote": "AP/2026AP30002536311_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AP:30002536311:01",
+      "fonte": {
+        "arquivoNome": "2026AP30002536311_01.pdf",
+        "arquivoNoPacote": "AP/2026AP30002536311_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "1e95175516a9a444d8bcec408eea308f9f7a1a635fed58ebaf1a1b0f81d6c81f",
+        "extractedTextSha256": "c512698ce492ecf2f0415b321129bdc389e629efab16b2534786a0c60ba7efc6",
+        "paginas": 37,
+        "secoes": [
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n1\n\nPROGRAMA DE GOVERNO\nESTADO DO AMAPÁ\n2027 - 2030\nClécio Luís Vilhena Vieira\nVice Antônio Pinheiro Teles Júnior\n\nMacapá/AP - Julho de 2026."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-2",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n2\n\nSumário\nO AMAPÁ AVANÇOU ............................................................................................................ 4\nEIXO 1: DESENVOLVIMENTO ECONÔMICO ................................................................ 6\n1.1 Desenvolvimento Econômico: preparando o Amapá para crescer com investimentos e\ngeração de empregos............................................................................................................... 6\n\n2\n\n1.2\n\nAtração de investimentos para a promoção do desenvolvimento ................................ 8\n\n1.3\n\nPreparar o Estado para a Economia do óleo e gás: conquistas e avanços .................... 9\n\n1.4\n\nEconomia da Floresta e Produção de Alimentos ....................................................... 11\n\n1.5\n\nCiência, Tecnologia e Inovação ................................................................................. 13\n\n1.6\n\nPecuária ...................................................................................................................... 14\n\n1.7\n\nAgricultura ................................................................................................................. 14\n\n1.8\n\nPesca e aquicultura ..................................................................................................... 14\n\n1.9\n\nDesenvolvimento mineral .......................................................................................... 14\n\n1.10\n\nRegularização Fundiária - Emissão de Títulos de Propriedade.............................. 15\n\n1.11\n\nCultura, turismo, eventos e economia criativa ....................................................... 15\n\n1.12\n\nCultura e economia criativa.................................................................................... 16\n\n1.13\n\nTurismo .................................................................................................................. 17\n\nEIXO 2. INFRAESTRUTURA E MOBILIDADE PARA O FUTURO .................... 18\n2.1\n\n3\n\nInfraestrutura e mobilidade ........................................................................................ 18\n\nEIXO 3: DESENVOLVIMENTO SOCIAL ................................................................. 21\n3.1 Educação para o Futuro: mais qualidade, inclusão e oportunidades para transformar\nvidas 21\n3.2\n\nSaúde da Gente: a primeira de todas as prioridades .................................................. 24\n\n3.3\n\nProteção Social........................................................................................................... 26\n\n3.4\n\nDireitos humanos ....................................................................................................... 27\n\n3.4.1\n\nPolítica para mulheres ........................................................................................ 27\n\n3.4.2\n\nAmapá Jovem – Oportunidades para a Juventude .............................................. 27\n\n3.4.3\n\nEsporte e lazer .................................................................................................... 27\n\n3.4.4\n\nQuilombolas e ribeirinhos .................................................................................. 28\n\n3.4.5\n\nPovos indígenas .................................................................................................. 28"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-3",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n3\n3.4.6\n\nIgualdade racial e ações afirmativas ................................................................... 28\n\n3.4.7\n\nPessoas com deficiência ..................................................................................... 29\n\n3.4.8\n\nPessoa idosa ........................................................................................................ 29\n\n3.4.9\n\nLGTBQIAPN+ ................................................................................................... 29\n\n3.4.10 Criança e adolescente .......................................................................................... 29\n4\n\nEIXO 4: MAIS SEGURANÇA - MAIS FUTURO ...................................................... 30\n4.1\n\n5\n\n6\n\nSegurança Pública: ações consistentes gerando resultados ....................................... 30\n\nEIXO 5: GESTÃO E TRANSFORMAÇÃO DIGITAL ............................................. 33\n5.1\n\nConcursos públicos e transposição de servidores ...................................................... 33\n\n5.2\n\nGestão Fiscal que gera confiança e resultados ........................................................... 33\n\nEIXO 6: INTERIORIZAÇÃO DO DESENVOLVIMENTO ..................................... 35\n6.1\n\nInteriorização do Desenvolvimento do Amapá.......................................................... 35"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-4",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n4\nO AMAPÁ AVANÇOU\nA partir de 2023, o Amapá iniciou um novo ciclo de desenvolvimento, estruturado na\nrecuperação da capacidade de investimento do Estado, melhoria dos serviços públicos,\nexpansão da infraestrutura, fortalecimento da segurança, modernização da gestão, inovação e\nredução das desigualdades territoriais.\nEsse ciclo foi marcado pela execução de um amplo programa de investimentos\nestruturantes e pela retomada da capacidade do Estado de planejar, financiar e entregar políticas\npúblicas. O resultado desse processo está refletido no cumprimento de 91% das metas\nestabelecidas, segundo levantamento divulgado pelo G1, do Grupo Globo, demonstrando\nelevada capacidade de efetividade da gestão pública.\nDesde o início da gestão do governador Clécio Luís, a estratégia foi criar bases fiscais,\ninstitucionais e econômicas para um crescimento sustentável, combinando responsabilidade na\ngestão das contas públicas, ampliação dos investimentos e melhoria da qualidade dos serviços.\nO Estado avançou simultaneamente em educação, saúde, segurança, infraestrutura, cultura,\nturismo, inovação e geração de emprego e renda, ampliando sua integração regional e sua\ncapacidade de articulação com as agendas nacionais de desenvolvimento.\nA expansão da infraestrutura, o fortalecimento da indústria, da bioeconomia e da\ninovação, associada às perspectivas da Margem Equatorial e ao potencial das energias\nrenováveis, abre possibilidades concretas de diversificação da matriz produtiva estadual. O\ndesafio estratégico é transformar essas vantagens comparativas em vantagens competitivas,\nagregando valor à produção, atraindo investimentos, formando mão de obra qualificada e\nreduzindo a dependência da economia estadual da Administração Pública.\nO próximo ciclo deverá, portanto, avançar ainda mais na conversão das oportunidades\nem resultados econômicos e sociais. Isso significa integrar infraestrutura, educação,\nqualificação profissional, empreendedorismo, inovação e desenvolvimento produtivo para\nampliar a competitividade do Estado, fortalecer empresas locais, criar empregos e combater a\npobreza.\nAo mesmo tempo, o Amapá ampliou seu protagonismo político e institucional no\ncenário nacional, fortalecendo a articulação com o Governo Federal, Congresso Nacional e\ndemais instituições da República. Essa capacidade de coordenação permitiu transformar\ndemandas históricas em projetos, investimentos e entregas concretas, posicionando o Estado de"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-5",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n5\nforma mais estratégica nas agendas nacionais de infraestrutura, energia, desenvolvimento\nregional, sustentabilidade e integração amazônica.\nO próximo desafio é utilizar essa capacidade para acelerar a transformação econômica,\nampliar oportunidades e converter o potencial estratégico do Amapá em desenvolvimento,\nemprego, renda e qualidade de vida para sua população."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-6",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n6\n\nEIXOS ESTRATÉGICOS PARA O DESENVOLVIMENTO DO\nAMAPÁ: 2027 - 2030 NO SEGUNDO GOVERNO CLÉCIO\n\nEIXO 1: DESENVOLVIMENTO ECONÔMICO\n1.1\n\nDesenvolvimento Econômico: preparando o Amapá para crescer com investimentos\ne geração de empregos\nEram conhecidos alguns gargalos para a atividade econômica do Estado do Amapá:\n\nprofunda dependência do setor público com quase a metade da economia sendo gerada pelo\nEstado; escassas oportunidades de trabalho, com nossos jovens migrando em busca de emprego\nem outras unidades da federação; extrema dificuldade em licenciar empreendimentos ou\nregularizar as propriedades rurais, dentre outros desafios.\nO governo Clécio Luís arregaçou as mangas e enfrentou essas dificuldades com firmeza.\nDestravou-se o aparato institucional com a transferência definitiva das terras da União para o\nEstado, o que tem garantido o desenvolvimento fundiário e novos projetos produtivos. Nos\nprimeiros 3 anos e 6 meses, foram emitidos 410 títulos definitivos e 656 declarações de\nreconhecimento de posse, assegurando a regularização de 133 mil hectares voltados ao\ncrescimento das atividades produtivas. Igualmente, na área ambiental, o governo avançou com\nsegurança jurídica, sem ferir a responsabilidade com a natureza: foram emitidas entre 2023 e\n2026, 512 licenças ambientais, 293 autorizações florestais – retomando a atividade madeireira\nlegal, que estava paralisada há décadas, como vetor de progresso econômico – e 540 atos de\nregularização de recursos hídricos.\nO setor florestal consolidou-se como um dos principais vetores da bioeconomia. O\nmanejo florestal em mais de 45 mil hectares fortaleceu a cadeia produtiva, viabilizou a produção\nde mais de 1 milhão de metros cúbicos de madeira legal e contribuiu para a geração de muitos\nempregos diretos e indiretos. Esses resultados demonstram que a floresta em pé é um ativo\nestratégico para promover desenvolvimento econômico, inclusão social e conservação\nambiental."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-7",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n7\nOs projetos de mineração, que marcaram o início da economia do Amapá, estão\nvoltando, com a retomada e expansão da mineração industrial na mina Tucano, em Pedra\nBranca do Amapari.\nUm exemplo marcante dessa nova fase do Amapá foi a retomada da Expofeira. O evento\nvoltou a ser um grande ambiente de negócios, inovação, cultura e economia criativa. A edição\nde 2025 foi a maior já realizada, movimentando mais de R$1 bilhão em negócios, recebendo\naproximadamente 2,6 milhões de visitantes e estimulando a economia popular, o agronegócio,\no turismo, além dos segmentos de bares, restaurantes e entretenimento.\nO primeiro mandato consolidou uma transformação no ecossistema de inovação,\nempreendedorismo e bioeconomia do Amapá, fortalecendo uma economia baseada no\nconhecimento e na sustentabilidade. Como resultado, o Estado avançou da 21ª para a 8ª posição\nno pilar de inovação do Ranking de Competitividade dos Estados (CLP), enquanto o número\nde startups cresceu de 41 para 224, impulsionado por políticas de crédito, fomento, aceleração\nde empresas e fortalecimento do ambiente de negócios.\nNo próximo ciclo, esse avanço será ampliado com a implantação do Parque Tecnológico\ndo Amapá, que integrará universidades, centros de pesquisa, empresas, startups e governo para\nacelerar a inovação, atrair investimentos e gerar empregos. A iniciativa reforçará o\nprotagonismo do Estado na economia da floresta e no desenvolvimento de soluções\ntecnológicas capazes de diversificar a economia e ampliar as oportunidades para a população.\nTambém se destacaram políticas públicas voltadas ao empreendedorismo e à\nvalorização da produção local. O Programa Minha Primeira Empresa fortaleceu pequenos\nnegócios e ampliou oportunidades de geração de renda, enquanto o Programa Selo Amapá\ncertificou mais de 1,4 mil produtos nos 16 municípios, impulsionando a industrialização, a\nbioeconomia e a valorização dos produtos do Meio do Mundo, consolidando o Amapá como\nreferência em inovação e desenvolvimento sustentável. Na prática, o Selo Amapá é um dos\nmaiores programas de bioeconomia do Brasil.\nO Amapá desponta ainda como a economia industrial que mais cresce no Brasil. De\nacordo com dados do Banco do Brasil, o Estado lidera a projeção de crescimento do Produto\nInterno Bruto (PIB) da indústria para 2026, com expansão estimada em 16,8%, índice superior\nà média nacional. A indústria cresceu em número de empresas, ampliou o emprego formal e\nreúne mais de 1300 empresas locais, concentrando a maior parte do emprego do Estado,\ndestacando-se a fabricação de alimentos, produtos de madeira e minerais não metálicos."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-8",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n8\nEsses resultados refletem a modernização da política industrial do Amapá, que integra\na Lei e Decreto Estadual nº 3.395/2025 e nº 4.596/2022, combinando incentivos fiscais,\ninovação, sustentabilidade, verticalização e geração de empregos. Essa nova base fortalece a\natração de investimentos e cria condições para o desenvolvimento de cadeias estratégicas, como\npetróleo e gás, mineração, bioeconomia, alimentos e indústria de transformação, ampliando a\ncompetitividade e a agregação de valor à economia do Estado.\nRefletem também o fortalecimento do ambiente de negócios, a atração de investimentos\ne o avanço de uma política de desenvolvimento voltada à industrialização, à inovação e ao\naproveitamento sustentável das potencialidades econômicas do Estado.\nOs resultados comprovam tal avanço: em apenas 3 anos e 6 meses o número de\ntrabalhadores com emprego formal cresceu, aproximadamente, de 80 mil para mais de 107 mil\npessoas empregadas, o desemprego é o menor da história e a economia cresce acima da média\ndo Brasil.\n\n1.2\n\nAtração de investimentos para a promoção do desenvolvimento\nO Amapá precisa construir uma imagem nacional e internacional como destino seguro\n\npara investimentos.\n\nPropostas:\n● Melhoria do ambiente de negócios\nO primeiro mandato de Clécio Luís avançou significativamente aprimorando a\nsegurança jurídica, por meio da modernização da legislação tributária, agilização do processo\nregulatório fundiário e licenciamento ambiental rápido e seguro. No próximo mandato essas\nmelhorias serão aprofundadas, tornando o ambiente cada vez mais favorável para negócios no\nAmapá.\n● Promoção do Amapá\nSerá implementado uma campanha permanente de divulgação nacional e internacional\ndas vantagens de se investir no Amapá, destacando o ambiente favorável, os benefícios fiscais\ne os segmentos de maior competitividade aptos a receber investidores."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-9",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n9\n● Parcerias para o desenvolvimento\nO Governo não dispõe, sozinho, do volume e da velocidade necessários ao\ndesenvolvimento do Estado. Por isso, serão firmadas parcerias público-privadas e concessões\nem setores como infraestrutura e saneamento, como alguns dos exemplos.\n● O Estado da sociobioeconomia\nO Amapá foi um dos primeiros estados brasileiros a elaborar um plano de\nsociobioeconomia, apresentado durante a COP-30, em Belém. Neste segundo mandato vamos\nestimular a industrialização de biodiversidade nos segmentos de fármacos, alimentos,\ncosméticos, moda, joias e outros.\n● Maximização dos benefícios fiscais\nO Amapá conta com dois regimes fiscais estratégicos: a Área de Livre Comércio e a\nZona Franca Verde de Macapá e Santana. Esta última, ainda subutilizada, será potencializada\ncom um distrito industrial próprio e apoio à implantação de novas empresas. Também será\ncriada a Zona de Processamento de Exportação (ZPE), um novo regime aduaneiro especial.\n● Segurança jurídica e tributária\nO primeiro mandato de Clécio Luís avançou significativamente aprimorando a\nsegurança jurídica, por meio da modernização da legislação tributária, agilização do processo\nregulatório fundiário e licenciamento ambiental rápido e seguro. No próximo mandato essas\nmelhorias serão aperfeiçoadas, tornando o ambiente mais favorável para negócios no Amapá.\n\n1.3\n\nPreparar o Estado para a Economia do óleo e gás: conquistas e avanços\nO Amapá reúne condições para se consolidar como a nova fronteira brasileira de\n\nenergias estratégicas. A perspectiva de exploração de óleo e gás na Margem Equatorial, aliada\nao potencial para o desenvolvimento de fontes renováveis e da bioeconomia, inaugura um novo\nciclo de oportunidades e pode vir a promover uma profunda alteração da matriz econômica do\nEstado, hoje ainda fortemente dependente da Administração Pública.\nEstimativas preliminares apontam que o bloco que está sendo prospectado na costa do\nAmapá tem potencial de 5,6 bilhões de barris de óleo que podem gerar um valor de\naproximadamente R$ 10 bilhões ao ano, mais de 50 mil empregos (formais e informais) e forte\nincremento das receitas tributárias para o Estado e para os municípios."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-10",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n10\nO leilão realizado pela Agência Nacional do Petróleo em junho de 2025 ampliou\nsignificativamente a fronteira exploratória da Margem Equatorial, com o arremate de 34 blocos\nexploratórios, sendo 19 na Bacia da Foz do Amazonas. Esse avanço fortalece as perspectivas\ndo Amapá para a exploração de petróleo e gás, amplia a atração de investimentos e cria\noportunidades para geração de empregos, desenvolvimento de fornecedores e estruturação de\numa nova cadeia econômica.\nAssim, a indústria de óleo e gás tem grande capacidade de indução econômica, porque\npromove encadeamentos produtivos e grande demanda por bens e serviços especializados.\nEntretanto, para potencializar esse impacto positivo na economia, o poder público tem que fazer\nsua parte.\nO governo vai atuar em qualificação profissional, apoio à cadeia de fornecedores,\ncertificações técnicas, governança empresarial e propiciar a infraestrutura produtiva necessária.\nSerá feito um amplo programa de qualificação profissional, em parceria com instituições\nde ensino, Sistema S, universidades, centros de pesquisa e empresas, para formar trabalhadores\ne ampliar a oferta de cursos em áreas estratégicas, como engenharias, geociências, tecnologia,\ngestão e inovação, segurança do trabalho, eletrotécnica, soldagem industrial e logística\nportuária. A iniciativa preparará a população para as oportunidades geradas pela cadeia de óleo\ne gás e pela diversificação da economia, fortalecendo a empregabilidade, a competitividade das\nempresas amapaenses e o desenvolvimento sustentável do Estado.\nO governo do Estado deve assegurar o aproveitamento de vantagens comparativas\nconsideráveis, como o meio ambiente preservado, localização geográfica estratégica, oferta\ncrescente de força de trabalho e algumas cadeias produtivas promissoras como fruticultura,\nprodutos florestais, mineração, turismo e logística, por exemplo.\nEste novo ciclo deverá ser acompanhado de metas consistentes de planejamento,\ncoordenação institucional e integração produtiva. Um governo competente, experiente, com\nforça política e comprometido com a agenda poderá fazer com que o boom do petróleo reduza\na dependência histórica da administração pública, amplie as atividades empreendedoras e\npropicie condições mais favoráveis para a melhoria da qualidade de vida da população, da\ninfraestrutura produtiva e das condições de sustentabilidade urbana, sem ameaçar a preservação\nambiental do Estado.\nDemonstrar capacidade do governo de transformar essa riqueza em desenvolvimento\nsustentável, diversificação econômica e melhoria da qualidade de vida."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-11",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n11\nPropostas:\n● Qualificação profissional\nPreparar a população amapaense para as oportunidades da economia do óleo e gás na\nMargem Equatorial. A iniciativa ofertará cursos técnicos, de qualificação e aperfeiçoamento\nalinhados às demandas do setor, formando profissionais para atividades offshore e onshore,\nlogística, operação portuária, manutenção industrial, meio ambiente, construção civil e serviços\nespecializados. O programa também promoverá certificação profissional, ensino de idiomas e\ncapacitação de jovens e trabalhadores, priorizando a contratação de mão de obra local e\nampliando a empregabilidade, a renda e a competitividade do Amapá.\n● Programa Amapá Fornecedor de Óleo & Gás\nFortalecer a competitividade das empresas amapaenses e ampliar sua participação no\nsetor de óleo e gás. O programa promoverá a qualificação empresarial, certificação, inovação,\nacesso ao crédito e à tecnologia, além de incentivar rodadas de negócios e parcerias entre\nempresas locais e grandes operadoras do setor. A iniciativa também apoiará a estruturação de\num cadastro estadual de fornecedores, estimulando a geração de empregos, a retenção de\nriqueza no Estado e o fortalecimento da indústria e dos serviços locais, consolidando o Amapá\ncomo um pólo competitivo da cadeia de suprimentos do óleo e gás.\n● Fundo Soberano do Amapá\nCriar um Fundo Soberano Estadual com receitas provenientes do óleo e gás,\nconstituindo uma reserva financeira de longo prazo para preservar e multiplicar a riqueza gerada\npelos recursos naturais, com gestão profissional, transparência e governança, garantindo\nbenefícios permanentes para o desenvolvimento e as futuras gerações do Amapá. Investimentos\npermanentes em infraestrutura, educação e inovação.\n1.4\n\nEconomia da Floresta e Produção de Alimentos\nFortalecer a floresta em pé e a produção de alimentos, gerando valor, renda e\n\ndesenvolvimento sustentável por meio do agronegócio, bioeconomia, agricultura, pecuária,\npesca e extrativismo.\nPropostas:\n● Agronegócio de escala e familiar\nAmpliar a capacidade de produção e de armazenagem no Amapá como política\nestruturante para reduzir perdas pós-colheita, melhorar a logística, fortalecer a competitividade"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-12",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n12\ndo agronegócio de escala e da agricultura familiar, agregar valor à produção agrícola e ampliar\na capacidade de comercialização, beneficiando produtores, cooperativas e demais organizações\ndo setor.\n● Sociobioeconomia com inovação\nConsolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o\nPlano Estadual, o Selo Amapá e o Parque Tecnológico. A iniciativa transformará\nbiodiversidade, conhecimentos tradicionais e ciência em inovação, produtos de maior valor\nagregado, novos negócios, emprego e renda, fortalecendo uma economia amazônica\ncompetitiva e sustentável.\n● Fruticultura de alto valor agregado\nDesenvolver a fruticultura de alto valor agregado, com integração da pesquisa,\nprodução, tecnologia e processamento de frutas como cacau, castanha e abacaxi. Consolidar o\naçaí como produto estratégico da economia amapaense, com a implantação do Escritório de\nProjetos do Açaí, conectando produtores, cooperativas, empresas e instituições de pesquisa para\ndesenvolver produtos de maior valor agregado.\n● Manejo florestal sustentável\nConsolidar o Amapá como referência nacional e internacional em manejo florestal\nsustentável, ampliando as concessões florestais e implantando o Centro de Pesquisa e\nTreinamento em Manejo Florestal, integrando ciência, tecnologia, qualificação profissional,\nindústria e conservação para gerar emprego, renda e valor agregado a partir da floresta.\n● Floresta em pé - renda no campo\nRemunerar quem preserva a floresta, por meio do pagamento por serviços ambientais e\nda valorização do mercado de carbono, transformando a conservação, a biodiversidade e os\nserviços ecossistêmicos em oportunidades de renda e inclusão produtiva para o Amapá.\n● Projeto Fundo Amazônia\nImplantar os projetos financiados pelo Fundo Amazônia para fortalecer a regularização\nfundiária, o manejo florestal sustentável, o Zoneamento Ecológico-Econômico e Costeiro, a\ngestão ambiental e das unidades de conservação, a proteção dos territórios indígenas e a\nimplantação de viveiros florestais, promovendo a conservação da biodiversidade, o\ndesenvolvimento sustentável e a valorização dos ativos ambientais do Amapá."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-13",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n13\n1.5\n\nCiência, Tecnologia e Inovação\nPropostas:\n● Talentos para a nova economia\nFortalecer a formação de talentos em áreas estratégicas, ampliando o acesso à\n\neducação profissional, tecnológica e superior, com foco em competências digitais, ciência de\ndados, programação, engenharia, inovação, empreendedorismo, economia da floresta e\ntecnologias aplicadas à indústria e aos serviços. A integração entre escolas, universidades,\ncentros de pesquisa e setor produtivo permitirá que a formação esteja alinhada às demandas\nreais do mercado de trabalho, para liderar a transformação produtiva do Amapá.\n● Ecossistema de inovação\nFortalecer o ambiente de inovação, com geração de conhecimento integrado às\nInstituições de Ciência e Tecnologia (ICTs), negócios e empreendedorismo, com a implantação\nde incubadoras, aceleradoras e laboratórios, implantação do Parque Tecnológico,\nfortalecimento da pesquisa aplicada e pela modernização do marco legal da inovação do\nAmapá. Essas ações fortalecem a conexão entre pesquisadores, empresas e investidores,\ntransformando conhecimento em soluções, negócios e desenvolvimento para o Estado.\n● Interiorização da ciência, tecnologia e inovação\nLevar infraestrutura, conhecimento, capacitação, empreendedorismo e soluções\ntecnológicas aos 16 municípios, fortalecendo as vocações econômicas locais e aproximando a\npopulação dos benefícios da inovação. A interiorização da CT&I permitirá que jovens,\nempreendedores, agricultores, comunidades tradicionais, povos indígenas, estudantes e\ngestores públicos tenham acesso às ferramentas necessárias para impulsionar o\ndesenvolvimento regional, promovendo inclusão digital, geração de renda e melhoria da\nqualidade de vida.\n● Estado da inovação: 1000 startups no Amapá\nConsolidar o Amapá em um polo de inovação da Amazônia, criando um ambiente\nfavorável ao empreendedorismo tecnológico, à inovação e à atração de investimentos, com a\nmeta de alcançar 1.000 empresas inovadoras ativas até 2030."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-14",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n14\n1.6\n\nPecuária\nImplantar o Programa Pecuária do Amapá, fortalecendo a cadeia produtiva por meio\n\nde assistência técnica, melhoramento genético, recuperação de pastagens, sanidade animal,\nmanutenção do Amapá como território livre de febre aftosa, regularização fundiária e\nambiental, acesso ao crédito e agregação de valor à produção, promovendo uma pecuária mais\nprodutiva, competitiva e sustentável.\n1.7\n\nAgricultura\nExpandir a agricultura amapaense, ampliando a assistência técnica, o acesso ao crédito,\n\na mecanização e a inovação tecnológica, acelerando a regularização fundiária e ambiental,\nfortalecendo a agricultura familiar e as cadeias produtivas estratégicas da bioeconomia, com\nincentivo ao beneficiamento, à comercialização e à inserção dos produtores nos mercados. A\npolítica também apoiará o registro e a regularização de produtos de origem animal e vegetal,\npromovendo maior competitividade, agregação de valor, produtividade, geração de renda e\ndesenvolvimento sustentável no meio rural.\n1.8\n\nPesca e aquicultura\nExpandir e fortalecer a pesca e aquicultura amapaense, elevando a produção aquícola\n\nde 1.000 para 10.000 toneladas/ano até 2030, com regularização e expansão das unidades\nprodutivas, oferta de alevinos de qualidade, redução de custos, licenciamento simplificado,\nassistência técnica e agregação de valor, garantindo maior produtividade, abastecimento,\ngeração de renda e segurança alimentar.\n1.9\n\nDesenvolvimento mineral\nExpandir e fortalecer a mineração do Amapá como vetor estratégico de\n\ndesenvolvimento econômico, promovendo a atração de investimentos, a pesquisa mineral e o\naproveitamento de minerais estratégicos e de alto valor agregado. A política priorizará a\nconsolidação de cadeias produtivas, o fortalecimento de fornecedores locais, a qualificação\nprofissional, a agregação de valor à produção por meio da industrialização e da inovação, a\nimplantação do Laboratório de Tecnologia e Produção de Joias e a consolidação dos Distritos\nMineiros de Lourenço e Vila Nova."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-15",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n15\n1.10 Regularização Fundiária - Emissão de Títulos de Propriedade\nAmpliar a regularização fundiária urbana e rural em todo o Amapá, com a entrega de\n10 mil títulos de propriedade, garantindo segurança jurídica, valorização dos imóveis e acesso\ndas famílias ao crédito, à moradia digna e às políticas públicas.\n1.11 Cultura, turismo, eventos e economia criativa\nO Governo retomou a realização de grandes eventos como estratégia para impulsionar\no desenvolvimento econômico, fortalecer o turismo e valorizar a cultura amapaense. O\nCarnaval, o Festival Equinócio, o Ciclo do Marabaixo, a Quadra Junina, a Festa de São Tiago,\na Expofeira e o Réveillon, voltaram a movimentar a economia, estimular o comércio e os\nserviços, gerar emprego e renda e reafirmar a identidade cultural do Estado.\nEsse novo ambiente de dinamismo também ampliou, apoiou e estimulou a realização de\neventos privados, como feiras, congressos, encontros empresariais, festivais e competições\nesportivas, fortalecendo o setor de eventos, atraindo visitantes, incentivando investimentos e\nconsolidando o Amapá como um destino cada vez mais preparado para receber grandes\niniciativas de negócios, turismo e entretenimento.\nTambém foi fortalecida a conectividade aérea do Estado, com a ampliação de 3 para 11\nvoos diários e o aumento das frequências para importantes centros do país, como\nMacapá/Brasília, Macapá/Rio de Janeiro, Macapá/São Paulo e Macapá/Minas Gerais. A\nexpansão da malha aérea reduziu o isolamento logístico do Estado, impulsionou o turismo,\nampliou as oportunidades de negócios e fortaleceu sua integração aos mercados nacionais.\nOutro importante avanço é a implantação do Corredor Histórico-Cultural e Econômico\nde Macapá, que integra obras concluídas, em andamento e em revitalização, como a Escola\nCândido Portinari, Parque Residência, Parque Tecnológico do Amapá, Casa do Artesão, Teatro\ndas Bacabeiras, Fortaleza de São José de Macapá, Biblioteca Pública Elcy Lacerda e Píer Santa\nInês.\nO corredor conecta patrimônio histórico, cultura, tecnologia, turismo e economia\ncriativa, ampliando as opções de lazer e convivência, atraindo visitantes e fortalecendo o\ncomércio, os serviços, a geração de emprego e renda e o desenvolvimento econômico da capital.\nDe acordo com o Observatório do Turismo, o Amapá vive um novo ciclo de crescimento\ndo setor turístico, consolidando essa atividade como um importante motor do desenvolvimento"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-16",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n16\neconômico, da geração de empregos e da dinamização da economia. Nos últimos 3 anos e 6\nmeses, a taxa de ocupação hoteleira aumentou 36%, acompanhada pela ampliação da\ncapacidade da rede de hospedagem, com taxa de ocupação histórica de 80% em 2025.\nOs resultados refletem o fortalecimento do destino Amapá no cenário nacional. Em\n2025, o Estado recebeu aproximadamente 280 mil hóspedes, que permaneceram, em média,\ncinco dias - um aumento em relação aos quatro dias registrados anteriormente. Com gasto\nmédio diário de R$ 798 por visitante, o turismo movimentou cerca de R$ 1,1 bilhão na\neconomia amapaense ao longo do ano, impulsionando os setores de hospedagem, alimentação,\ntransporte, comércio e serviços e reafirmando o turismo como uma das atividades estratégicas\npara o crescimento do Estado.\n1.12 Cultura e economia criativa\nImplementar o Programa Amapá Criativo, estruturado para afirmar a cultura como eixo\nfundamental de desenvolvimento econômico, simbólico e social em todo o Estado. Ampliar o\nacesso às políticas culturais, a preservação do patrimônio histórico e o fortalecimento da\neconomia criativa como geradora de emprego e renda. Fortalecer os princípios, objetivos,\nestrutura, organização, gestão e interrelações entre os seus componentes, garantindo recursos\nhumanos e financiamento para o pleno funcionamento do Sistema Estadual de Cultura, com o\nConselho, Plano, Fundo e Lei de Incentivo à Cultura.\nGarantir a participação ativa dos agentes culturais tendo como principal mecanismo\nde participação popular o Programa Gestão Cultural na Estrada, promovendo o diálogo direto\ncom os municípios, territórios culturais, setoriais e agentes culturais. Descentralizar recursos e\ninvestimentos por meio do fortalecimento da cadeia produtiva da cultura, aliando a\nmodernização dos equipamentos públicos à qualificação continuada dos artistas e demais\ntrabalhadores da cultura. Fomentar a produção cultural com a consolidação de um Calendário\nCultural, garantindo a visibilidade das manifestações tradicionais e a promoção dos eventos\nculturais amapaenses.\nImplantar o programa de desenvolvimento da Cadeia Produtiva da Moda do Amapá,\nfortalecendo os segmentos de confecção, biojoias, joias, joalheria, artesanato e design, com\nincentivo à qualificação, inovação, empreendedorismo, acesso a mercados e uso sustentável da\nsociobiodiversidade."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-17",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n17\n1.13 Turismo\nO turismo como vetor de desenvolvimento econômico, geração de emprego e\nvalorização do patrimônio natural e cultural do Amapá. O programa priorizará a entrega do\nCentro de Convenções do Amapá como referência para o turismo de negócios e eventos, além\nda estruturação dos principais destinos turísticos, da promoção nacional e internacional do\nEstado, da qualificação profissional, do fortalecimento do ecoturismo, turismo cultural, de\npesca esportiva e de base comunitária, ampliando investimentos, atraindo visitantes e\nimpulsionando o desenvolvimento do Estado."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-18",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n18\n2\n\nEIXO 2. INFRAESTRUTURA E MOBILIDADE PARA O FUTURO\n\n2.1\n\nInfraestrutura e mobilidade\nO Governo Clécio Luís transformou a infraestrutura em um dos pilares do\n\ndesenvolvimento do Estado, ampliando investimentos em mobilidade urbana, integração\nregional e qualidade de vida da população. Por meio dos programas Governo em Ação, Ponte\nFirme e Parque Firme, estabeleceu parcerias com prefeituras para executar obras de\npavimentação, passarelas, saneamento e urbanização em todos os municípios.\nO Arco Metropolitano da Integração é uma estratégia estruturante para reorganizar a\nmobilidade da Região Metropolitana, conectando Macapá, Santana e Mazagão e integrando as\nprincipais rodovias e áreas de expansão urbana. A Rodovia do Centenário, a Duca Serra e a\nJosmar Pinto formam os principais eixos dessa estratégia, promovendo a integração das zonas\nNorte, Oeste, Sul e Centro de Macapá, além de fortalecer a conexão metropolitana com Santana\ne Mazagão.\nO Arco Metropolitano será consolidado no segundo mandato, integrando Fazendinha,\nCoração, Goiabal e Josmar Pinto, com novos trechos, duplicações, pontes e acessos\nestratégicos. O projeto contemplará ainda a revitalização da AP-010, entre Macapá e Mazagão,\ne duplicação da AP-440, entre a Duca Serra e o km 9 da BR-210, com obras já iniciadas, além\nda ampliação de ciclovias, calçadas acessíveis e sistemas inteligentes de trânsito, fortalecendo\na mobilidade, a integração territorial e o desenvolvimento econômico da Região Metropolitana.\nAvançar na infraestrutura rodoviária estadual, com obras estratégicas para integrar\nregiões, melhorar a mobilidade e impulsionar o desenvolvimento econômico, é nosso\ncompromisso. As intervenções na rodovia Laranjal do Jari–Vitória do Jari, no sul do Estado,\nno ramal do Farinha Seca, em Macapá, e nos ramais da Aldeia do Manga e de Vila Vitória, em\nOiapoque, ampliam a conectividade, facilitam o acesso às comunidades e fortalecem a\ncirculação de pessoas, da produção e de mercadorias em todo o Amapá.\nAté o final do primeiro mandato, serão entregues aproximadamente 400 quilômetros de\npavimentação asfáltica, dos quais quase 300 quilômetros na Região Metropolitana de Macapá,\nSantana e Mazagão, promovendo mais mobilidade, segurança viária e desenvolvimento urbano.\nOutro marco foi a implantação de aproximadamente 35 quilômetros de passarelas, sendo\n15 quilômetros em concreto e 20 quilômetros em madeira, beneficiando comunidades urbanas\ne rurais, especialmente em Macapá."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-19",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n19\nSomam-se a esses investimentos a manutenção de 4.600 quilômetros de ramais e\nestradas vicinais, ampliando a integração regional, garantindo mais acessibilidade, segurança e\nmobilidade e reduzindo o isolamento de milhares de famílias em todo o Estado.\nSantana consolidou-se como principal eixo logístico e portuário do Amapá, com\navanços na infraestrutura de transporte de passageiros, cargas e logística. O Porto do Povo\nfortaleceu a conexão com comunidades ribeirinhas e o transporte de passageiros, enquanto a\nPlataforma Logística do Amapá (PLA) e a Cianport ampliarão a capacidade de movimentação\nde cargas e o escoamento da produção industrial, fortalecendo a integração regional e a\nparticipação do Amapá no comércio nacional e internacional.\nPropostas:\n●\n\nArco Metropolitano da Integração\nConsolidar o Arco Metropolitano da Integração de Macapá, Santana e Mazagão,\n\nintegrando Fazendinha, Coração, Goiabal e Josmar Pinto por meio de novos trechos,\nduplicações, pontes e acessos estratégicos. Consolidar a revitalização das AP-010 e duplicação\nda AP-440, além de expandir ciclovias, calçadas acessíveis e sistemas inteligentes de trânsito,\ngarantindo maior mobilidade, integração territorial, segurança viária e desenvolvimento\neconômico para a Região Metropolitana.\n●\n\nViaduto Hildemar Maia com Josmar Chaves Pinto\nImplantar o viaduto na interligação da Rua Hildemar Maia com a Rodovia Josmar\n\nChaves Pinto, transformando o cruzamento em um corredor estruturante da mobilidade urbana\nde Macapá. A iniciativa ampliará a capacidade viária, reduzirá congestionamentos, aumentará\na segurança no trânsito e integrará os principais eixos de circulação da capital à Região\nMetropolitana.\n● Parque Aeroportuário\nImplantar um complexo turístico, ambiental, cultural e esportivo no Parque\nAeroportuário, com aquário da ictiofauna amazônica, píer para esportes náuticos, áreas de lazer\ne espaços de convivência, valorizando a paisagem e a floresta urbana. O projeto transformará a\nárea em novo polo de turismo, lazer, emprego, renda e desenvolvimento de Macapá.\n●\n\nAmapá Solar\nAmpliar o acesso a linhas de crédito e incentivos para instalação de sistemas solares,\n\nalém da expansão da energia fotovoltaica em escolas, hospitais e prédios públicos. Também"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-20",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n20\npromoverá eficiência energética e incentivo ao uso de equipamentos mais eficientes,\ncontribuindo para economia, sustentabilidade e segurança energética.\n●\n\nPorto Industrial da Antiga ICOMI\nReconstruir e modernizar o Complexo Portuário Industrial da antiga ICOMI, em\n\nSantana, transformando-o em polo logístico estratégico para a Margem Equatorial. Por meio de\nparcerias público-privadas e novos investimentos, implantar uma estrutura portuária moderna\ne integrada, voltada aos setores mineral, agroindustrial, energético e de petróleo e gás,\nampliando a capacidade logística, gerando empregos e consolidando Santana como eixo\nestratégico de entrada e saída da produção do Amapá.\n● Ferrovia do Amapá\nAvançar nas tratativas institucionais e de parcerias para viabilizar a revitalização e\nretomada da Ferrovia do Amapá como ativo estratégico para o desenvolvimento do Estado. A\niniciativa buscará segurança jurídica, recuperação gradual da infraestrutura e atração de\ninvestimentos para ampliar o transporte ferroviário de cargas e passageiros, fortalecendo a\nintegração regional e reduzindo custos logísticos.\n● Pavimentação e Infraestrutura Urbana\nImplantar 500 quilômetros de pavimentação urbana e buscar parcerias com os 16\nmunicípios, integrando drenagem, calçadas acessíveis, iluminação pública, arborização e\nrequalificação de espaços públicos. As ações incorporarão soluções de adaptação às mudanças\nclimáticas, prevenção de alagamentos e erosões e recuperação de áreas vulneráveis,\npromovendo cidades mais seguras, acessíveis, resilientes e com melhor qualidade de vida.\n● Expansão Habitacional\nAmpliar a política habitacional com a construção de 3 mil novas moradias, priorizando\nfamílias em situação de vulnerabilidade. A proposta contribuirá para reduzir o déficit\nhabitacional e garantir moradia digna, segurança e qualidade de vida às famílias amapaenses.\n●\n\nTerminal Hidroviário da Zona Norte de Macapá\nConcluir e colocar em operação o Terminal Hidroviário da Zona Norte de Macapá,\n\nintegrando o transporte fluvial ao sistema viário e ampliando a mobilidade de passageiros e\ncargas. Com estrutura moderna, acessível e sustentável, o terminal atenderá comunidades\nribeirinhas, fortalecerá o turismo e o comércio regional e impulsionará a logística e o\ndesenvolvimento econômico do Amapá, com capacidade inicial para cerca de 1.200 passageiros\ne 200 toneladas de cargas por dia."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-21",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n21\n3\n\nEIXO 3: DESENVOLVIMENTO SOCIAL\n\n3.1\n\nEducação para o Futuro: mais qualidade, inclusão e oportunidades para\ntransformar vidas\nA educação no Amapá vive um dos maiores ciclos de investimentos e transformação de\n\nsua história. O Governo do Estado reformou, ampliou e construiu 93 escolas, destinando\nrecursos para melhorar a infraestrutura escolar, incluindo unidades em comunidades indígenas,\nquilombolas, ribeirinhas e rurais. Além disso, promoveu a modernização de refeitórios, ampliou\na climatização das escolas, fortaleceu o transporte escolar e investiu em mobiliário,\nequipamentos e melhorias que proporcionam mais conforto e melhores condições de\naprendizagem.\nOs resultados desse esforço já aparecem nos indicadores educacionais. A rede estadual\nalcançou recordes históricos nas taxas de aprovação em todas as etapas da Educação Básica,\navançou entre os estados que mais evoluíram no IDEB e tornou-se a terceira unidade da\nFederação que mais elevou os índices de alfabetização infantil. O percentual de crianças\nalfabetizadas passou de 17% em 2021 para 60% em 2025, superando a meta nacional e\nconsolidando o Amapá como referência na melhoria da aprendizagem.\nA inclusão também se fortaleceu. O atendimento da Educação Especial mais que\ntriplicou na última década, houve expansão das escolas indígenas e quilombolas e foram\nimplementadas políticas pedagógicas que garantem acompanhamento individualizado dos\nestudantes, avaliação formativa e maior permanência na escola.\nA inovação passou a fazer parte do cotidiano das salas de aula. Foram adquiridos 15 mil\nnotebooks, implantadas 150 antenas Starlink para conectar escolas em todos os municípios e\ncriados 85 laboratórios maker e 16 laboratórios de robótica. O Estado também distribuiu\ndezenas de milhares de kits pedagógicos, ampliou a formação tecnológica dos professores e\nincorporou a computação ao currículo da educação básica.\nA valorização dos profissionais da educação também ganhou prioridade. Desde 2023,\nos servidores recebem reajuste salarial acumulado superior a 38%, milhares de progressões\nfuncionais foram concedidas e aproximadamente 2,3 mil profissionais foram convocados por\nconcurso público, no maior ingresso de servidores efetivos da educação em mais de uma\ndécada. Depois de 20 anos, o Estado também realizou concurso específico para professores\nindígenas."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-22",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n22\nO Governo ainda estruturou uma política de expansão da educação profissional, por\nmeio do programa Mais Emprego com a oferta de 50 mil vagas para os próximos quatro anos,\ne implantou novas ferramentas de gestão, segurança e acompanhamento dos estudantes, como\no aplicativo Boletim na Palma da Mão, o programa Escola Segura e ações permanentes de saúde\nmental e cultura de paz, fortalecendo um ambiente escolar mais seguro, moderno e acolhedor.\nPropostas:\n● Infraestrutura e ambiente escolar\nExpandir o programa de revitalização de escolas da rede estadual de educação básica,\nmodernizando estruturas físicas, salas de aula, laboratórios, bibliotecas, espaços esportivos,\nacessibilidade, climatização, conectividade e segurança, garantindo ambientes mais adequados,\nacolhedores e preparados para melhorar a aprendizagem e a qualidade da educação no Amapá.\n● Educação Profissional – Programa Qualifica Amapá - Mais Emprego\nAmpliar e consolidar o Programa Mais Emprego, expandindo a educação profissional\nno Amapá com a oferta de 50 mil vagas nos próximos quatro anos, priorizando cursos alinhados\nàs demandas do mercado de trabalho e às vocações econômicas regionais. A iniciativa integrará\nqualificação, certificação e inserção profissional, fortalecendo a empregabilidade dos jovens e\ntrabalhadores e ampliando oportunidades de emprego e renda em todo o Estado.\n● Aprendizagem com Qualidade – Alfabetização na Idade Certa\nGarantir e consolidar a alfabetização de todas as crianças na idade certa, fortalecendo a\nformação de professores, o acompanhamento da aprendizagem, a recomposição das defasagens\ne o apoio técnico aos municípios, com foco em qualidade, equidade e redução das desigualdades\neducacionais.\n● Ciência, Pesquisa e Inovação na Educação Básica\nFortalecer a ciência, a pesquisa e a inovação na educação básica, patrocinando feiras de\niniciação científica nas escolas e ampliando a relevância da Feira de Ciências e Engenharias do\nAmapá (FECEAP), estimulando estudantes e professores a desenvolver projetos, pesquisas e\nsoluções inovadoras para desafios locais, com apoio à participação em eventos estaduais,\nnacionais e internacionais.\n● Escolas e Transformação Digital\nConsolidar a transformação digital das escolas da educação básica do Amapá,\nampliando conectividade, equipamentos e plataformas educacionais, capacitando professores e"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-23",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n23\ngestores para o uso pedagógico das tecnologias e fortalecendo a educação híbrida, a inovação,\na aprendizagem e a inclusão digital.\n● Educação de Jovens e Adultos – EJA\nAmpliar e modernizar a EJA no Amapá, integrando educação, qualificação profissional\ne empregabilidade por meio dos programas Mais Emprego e Empreendedorismo Inovador, com\nformação alinhada às demandas do mercado e às vocações locais, ampliando oportunidades de\ntrabalho, geração de renda e autonomia para jovens e adultos.\n● Educação Especial Inclusiva\nFortalecer a educação especial inclusiva no Amapá, em consonância com o Decreto\nFederal nº 12.686/2025, ampliando o atendimento educacional especializado, a acessibilidade,\nos recursos de tecnologia assistiva e o apoio multiprofissional, além da formação continuada\ndos profissionais da educação, garantindo inclusão, aprendizagem, autonomia e igualdade de\noportunidades para estudantes com deficiência, transtornos do desenvolvimento e altas\nhabilidades ou superdotação, integrando a escola, a saúde e a família.\n● Bônus Professor e Gestor – Valorização e Aprendizagem\nInstituir o Bônus Professor e Gestor como política permanente de valorização\nprofissional, com pagamento ao final de cada exercício, combinando indicadores coletivos de\ndesempenho das escolas e resultados individuais, vinculados à melhoria da alfabetização e da\naprendizagem. A iniciativa reconhecerá o compromisso de professores e gestores com os\nresultados educacionais.\n● Escolas de Gestão Compartilhada\nAmpliar o modelo de gestão compartilhada (Polícia Militar e Corpo de Bombeiros\nMilitar) na rede estadual, priorizando escolas em áreas de maior vulnerabilidade social, com\nfoco na melhoria da aprendizagem, disciplina, respeito, cidadania e cultura de paz. A proposta\nintegrará profissionais da educação e agentes de segurança pública na gestão escolar,\npreservando a autonomia pedagógica dos professores e fortalecendo a participação das famílias\ne da comunidade.\n● Escolas Famílias Agrícolas\nFomentar e fortalecer as ações das escolas famílias agrícolas, com foco nos saberes da\nterra, valorizando a diversidade cultural e regional da Amazônia amapaense."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-24",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n24\n3.2\n\nSaúde da Gente: a primeira de todas as prioridades\nDesde o primeiro dia de governo, a saúde foi definida como prioridade absoluta,\n\nimediata e inegociável. O compromisso era reconstruir e ampliar a rede pública, garantindo\nestruturas modernas, mais profissionais e melhor atendimento à população. O planejamento\nconcentrou esforços na reestruturação da rede hospitalar.\nO Amapá passou por uma transformação histórica na saúde pública. Foram entregues o\nHospital da Criança e Adolescente/HCA; o Hospital Regional de Porto Grande; a Unidade de\nUrgência e Emergência do Hospital Estadual de Santana; o Hospital de Oiapoque; o Hospital\nde Pequeno Porte de Tartarugalzinho; e a histórica Implantação do Centro de Radioterapia do\nAmapá, garantindo tratamento oncológico pela primeira vez no próprio Estado.\nPara os próximos quatro anos, vamos ampliar e modernizar a rede pública de saúde,\ngarantindo a conclusão das obras já em andamento, como a segunda fase do Hospital de Porto\nGrande, da Maternidade e do Centro Obstétrico de Santana, da Maternidade da Zona Norte de\nMacapá, da Maternidade Mãe Luzia, da UPA da Zona Oeste e da Nefrologia com a unidade\nAntônio Pinheiro Teles, fortalecendo o acesso, a qualidade e a resolutividade do atendimento à\npopulação.\nApesar de ainda haver muito por fazer, os avanços são incontestáveis: 497 novos leitos\ngerais; leitos de UTI adulto passando de 40 para 88 disponíveis; de UTI pediátrica saltamos de\napenas 15 para 31 leitos e de UTI neonatal evoluindo de 25 para 39 leitos.\nA ampliação da estrutura veio acompanhada da expansão do quadro de servidores da\nsaúde que saltou de 7,7 mil para 11,5 mil trabalhadores, entre médicos, enfermeiros, técnicos e\ndemais profissionais.\nE ainda vem mais pela frente! O novo Hospital de Emergência, prestes a ser entregue,\nserá a maior obra de saúde já realizada no Estado. Com cinco pavimentos, 212 leitos, ambientes\ntecnologicamente avançados, áreas de estabilização e centros cirúrgicos de última geração.\nPropostas:\n● Governança Integrada da Saúde\nFortalecer a gestão estratégica da saúde no Amapá, integrando planejamento,\nregionalização, regulação e governança da rede hospitalar, incluindo o HU e as novas unidades.\nAprimorar protocolos, prazos e fluxos de atendimento, reduzir o tempo de espera e fortalecer a"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-25",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n25\nAtenção Primária e UPAs como portas de entrada, ampliando a resolutividade e a eficiência da\nrede, com monitoramento de indicadores e transparência dos resultados.\n● Financiamento e Estrutura de Custo da Saúde\nFortalecer o financiamento da saúde no Amapá, ampliando a captação de recursos e\nqualificando a execução orçamentária. Aperfeiçoar, ainda, o registro, a informação e o\nfaturamento dos procedimentos prestados ao SUS e ampliar as habilitações de leitos já\nexistentes.\n● Saúde Digital e Telessaúde\nAmpliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação,\ncadastro e prontuário eletrônico em uma única plataforma. Expandir consultas e diagnósticos\nespecializados para os 16 municípios, fortalecendo os pontos de telessaúde nas UBS.\n● Prestação de Serviços de Saúde\nAmpliar os atendimentos do Zera Filas, Mais Saúde Vascular, Mais Visão, Mais Sorriso\ne Telemedicina fortalecendo toda a rede de atenção e garantindo acesso mais ágil e oportuno à\npopulação, especialmente nas áreas remotas.\n● Infraestrutura Hospitalar\nGarantir a conclusão das obras já em andamento da II Fase do Hospital de Porto Grande,\nda Maternidade e do Centro Obstétrico de Santana, da Maternidade da Zona Norte de Macapá,\nda Maternidade Mãe Luzia, da UPA da Zona Oeste e da unidade de Vitória do Jari, fortalecendo\no acesso, a qualidade e a resolutividade do atendimento à população.\nReformar e/ou ampliar do Centro de Nefrologia Antônio Pinheiro Telles, da unidade de\nsaúde Calçoene, da unidade de Ferreira Gomes, da UPA e do hospital Laranjal Jari, fortalecendo\no acesso, a qualidade e a resolutividade do atendimento à população.\nImplantar um novo Hospital de Especialidades para ampliar o acesso e a capacidade de\natendimento especializado no Amapá, fortalecendo a oferta de serviços clínicos, cirúrgicos,\ndiagnósticos e terapêuticos.\nImplantar o CACON, unidade especializada para garantir atendimento integral aos\npacientes oncológicos, ampliando e qualificando a capacidade assistencial atualmente ofertada.\n● Novo Modelo de Gestão do HE Amapá\nImplantar um modelo de gestão inovadora no HE Amapá, alinhado à sua moderna\nestrutura física e tecnológica, com foco em eficiência, humanização e qualidade. A iniciativa"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-26",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n26\nreduzirá o tempo de espera, ampliará a capacidade de atendimento e fortalecerá a oferta de\nespecialidades e serviços de média e alta complexidade, consolidando o hospital como\nreferência estadual em urgência, emergência e atendimento especializado.\n3.3\n\nProteção Social\nO combate à pobreza no Amapá exige uma abordagem ampla, que priorize assistência\n\ne outros ativos sociais e econômicos.\nPropostas\n● Fortalecer a proteção social\nImplementar Programa de Transferência de Renda que integrará acompanhamento\nfamiliar, qualificação profissional, intermediação para o mercado de trabalho, promovendo a\nautonomia e mudança estrutural das famílias beneficiadas, com ampliação das oportunidades\nde geração de renda.\n● Segurança alimentar e nutricional\nFortalecer o Programa Amapá Sem Fome consolidando-o como a principal política das\nações de segurança alimentar e nutricional em todo o Estado.\n● Casa de Acolhimento Animal do Amapá\nImplantar a Casa de Acolhimento Animal do Amapá, integrando hospital veterinário e\nabrigo rotativo para oferecer atendimento clínico, tratamento, reabilitação e acolhimento\ntemporário de cães e gatos, com estrutura para diagnóstico, quarentena e cuidados\nespecializados, promovendo bem-estar animal e adoção responsável.\n● Ponte Firme\nExpandir o programa Ponte Firme, com a implantação de mais 60 km de passarelas,\nampliando o acesso das periferias urbanas e das comunidades do interior aos serviços públicos\nessenciais, como energia elétrica, iluminação, água tratada, gestão de resíduos, conectividade e\ninfraestrutura urbana. A iniciativa também promoverá a requalificação de áreas alagáveis,\ngarantindo mais mobilidade, segurança, dignidade e qualidade de vida à população.\n●\n\nFeiras e Mercados nos Residenciais\nImplantar e estruturar feiras e mercados nos conjuntos habitacionais e áreas de ocupação\n\nde Macapá, garantindo espaços adequados para comercialização de alimentos, produtos locais\ne serviços. A iniciativa fortalecerá a agricultura familiar, o empreendedorismo e a economia"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-27",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n27\ndos bairros, ampliando oportunidades de trabalho e renda e aproximando produtores,\ncomerciantes e consumidores. O programa contemplará os residenciais Jardim Açucena,\nMacapaba, Miracema, Mestre Oscar, Vila das Oliveiras e a Ocupação Área J.\n3.4\n\nDireitos humanos\n\n3.4.1\n\nPolítica para mulheres\nPropostas:\nInstitucionalizar o Programa Amapá Por Todas Elas como política permanente de\n\nEstado, fortalecendo a Casa da Mulher Brasileira, o CAMUF, o CRAM e a Rede de\nAtendimento à Mulher, com interiorização dos serviços por unidades terrestres e fluviais.\nAmpliar a autonomia econômica, o acesso ao crédito e a inclusão produtiva, além das ações\npara mulheres diversas, ribeirinhas e extrativistas, e implantar o Painel Estadual de\nMonitoramento da Violência contra a Mulher, qualificando a gestão, a proteção e a qualidade\nde vida das mulheres em todo o Amapá.\n3.4.2\n\nAmapá Jovem – Oportunidades para a Juventude\nProposta:\nFortalecer uma política integrada para a juventude, articulando os programas Qualifica\n\nAmapá, Amapá Jovem, Jovem Motora, Mais Emprego, Central do ENEM, e Central dos\nConcursos, com qualificação profissional, bolsa-qualificação, empregabilidade, mobilidade,\npreparação educacional e intercâmbio. A iniciativa levará oportunidades aos 16 municípios,\nampliando a inclusão produtiva e empregabilidade.\n3.4.3\n\nEsporte e lazer\nProposta:\nInstituir o Plano Estadual de Esporte e Lazer como instrumentos de educação, inclusão\n\nsocial, saúde e cidadania, ampliando o acesso da população às práticas esportivas. E ampliar\npara os 16 municípios o Bolsa Atleta Amapaense para apoiar atletas e paratletas de alto\nrendimento na formação e participação em competições."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-28",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n28\n3.4.4\n\nQuilombolas e ribeirinhos\nProposta:\nFortalecer e consolidar a política estadual de igualdade racial, com adesão ao Sistema\n\nNacional de Promoção da Igualdade Racial de todos os municípios do Estado, ampliando ações\npara a população negra, quilombolas, ribeirinhas e comunidades tradicionais, com foco em\neducação, saúde, habitação, infraestrutura e saneamento, fortalecendo a autonomia econômica\ne a valorização dos saberes tradicionais.\n3.4.5\n\nPovos indígenas\nProposta:\nConsolidar o Amapá Indígena para fortalecer a política estadual para os povos\n\nindígenas, ampliando o acesso a direitos, serviços públicos e oportunidades de desenvolvimento\nsustentável. Garantir energia elétrica de forma contínua e sustentável para as comunidades\nindígenas por meio do fornecimento de combustível, manutenção e substituição de geradores e\nmodernização dos sistemas de energia alternativos. O programa também prevê a expansão da\nrede elétrica para comunidades próximas ao linhão da BR-156 e a reforma de escolas indígenas,\nfortalecendo a infraestrutura, a educação e a qualidade de vida dos povos indígenas do Estado.\n3.4.6\n\nIgualdade racial e ações afirmativas\nProposta:\nConsolidar o Programa Amapá Afro como política de Estado, ampliando a execução\n\nintersetorial das políticas de promoção da igualdade racial, implantando metas e indicadores de\ndesempenho, assegurando orçamento específico e expandindo ações de educação, saúde,\ncultura, empreendedorismo, geração de renda, regularização de territórios quilombolas e\ncombate ao racismo institucional, em articulação com o Sistema Nacional de Promoção da\nIgualdade Racial.\nImplantar o Observatório da Igualdade Racial para monitorar e orientar políticas\npúblicas de inclusão e garantia de direitos."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-29",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n29\n3.4.7\n\nPessoas com deficiência\nProposta:\nCriar o Programa Amapá Sem Barreiras para promover a inclusão da pessoa com\n\ndeficiência nas políticas públicas estaduais, eliminando barreiras físicas, comunicacionais,\natitudinais e digitais. O programa integrará as secretarias de Estado para garantir acessibilidade,\nautonomia, igualdade de oportunidades e inclusão em todo o Amapá.\n3.4.8\n\nPessoa idosa\nPropostas:\nFortalecer a política estadual de proteção à pessoa idosa por meio da revitalização do\n\nAbrigo São José, da implantação do primeiro Casalar para Pessoas Idosas na modalidade\ncentro-dia, garantindo atendimento humanizado, proteção integral, autonomia e qualidade de\nvida à população idosa.\n3.4.9\n\nLGTBQIAPN+\nPropostas:\nImplantar o Programa Amapá Mais Diversidade, fortalecendo as políticas para a\n\npopulação LGTBQIAPN+ com ampliação dos serviços de saúde, assistência e cidadania,\ninteriorização das ações, combate à discriminação e promoção da inclusão, respeito e igualdade\nde oportunidades em todo o Estado.\n3.4.10 Criança e adolescente\nPropostas:\nFortalecer a política estadual de proteção à infância e à adolescência, consolidando a\natuação da Fundação Sócio Educativa e ampliando a capacidade técnico-assistencial e ampliar\no registro civil e a prevenção às violências, e fortalecer o atendimento integrado a crianças e\nadolescentes em situação de risco, garantindo cidadania, educação e proteção integral em todo\no Estado."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-30",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n30\n4\n\nEIXO 4: MAIS SEGURANÇA - MAIS FUTURO\n\n4.1\n\nSegurança Pública: ações consistentes gerando resultados\nA segurança pública tornou-se uma das prioridades estratégicas da gestão, com a\n\nimplantação do programa Amapá Mais Seguro e uma política baseada em investimentos,\ninteligência, tecnologia, ampliação do quadro de policiais e valorização dos profissionais.\nNa infraestrutura 45 unidades foram modernizadas ou construídas nos 16 municípios do\nEstado, incluindo a ampliação do Instituto Estadual de Segurança Pública, novas delegacias,\nsedes de batalhões e um ciclo histórico de obras no sistema penitenciário, com destaque para a\nnova penitenciária de 408 vagas e a Unidade Prisional José Eder.\nNa modernização tecnológica e patrimonial, destacam-se a maior entrega da história do\nAmapá em viaturas, motocicletas, pistolas Glock e fuzis israelenses, além da adoção de\ntecnologias de ponta como o Sinesp+, o Guardião Web e o sistema francês Mercure, utilizados\npara suporte a investigação policial.\nNa recomposição do efetivo, 3.352 aprovados em concursos públicos foram\nconvocados, com destaque para os chamamentos na Polícia Militar, no Corpo de Bombeiro\nMilitar, Polícia Civil, Polícia Científica e o reforço histórico do IAPEN, promovendo não\napenas o crescimento numérico, mas o rejuvenescimento e a qualificação técnica das forças de\nsegurança do Amapá.\nOs resultados alcançados colocaram o Amapá em posição de destaque nacional. Entre\n2023 e 2024, os homicídios dolosos reduziram 28,71%, desempenho que levou o Estado ao\nprimeiro lugar nacional na redução proporcional dos Crimes Violentos Letais Intencionais\n(CVLI), segundo o Fórum Brasileiro de Segurança Pública.\nOutros indicadores também apresentaram queda significativa, como a redução de\n69,23% nos latrocínios e de 76,66% nos roubos entre 2022 e 2026.\nAssim como no enfrentamento à violência contra a mulher, o Estado avançou com a\nimplantação da Casa da Mulher Brasileira, reunindo em um único espaço atendimento\nespecializado, proteção, assistência psicossocial e capacitação profissional."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-31",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n31\nPropostas:\n● Combate ao Crime Organizado\nFortalecer o enfrentamento ao crime organizado por meio da integração das forças de\nsegurança, da ampliação das ações de inteligência, do combate às organizações criminosas e\naos seus fluxos financeiros, do reforço do policiamento em áreas estratégicas e da intensificação\nda cooperação com as instituições federais e os municípios, priorizando a prevenção da\nviolência, a proteção da população e a recuperação de territórios sob influência do crime.\n● Homicídios e Violência Urbana\nReduzir os homicídios e a violência urbana por meio da integração das forças de\nsegurança, do policiamento orientado por inteligência, da ocupação estratégica de áreas críticas\ne da ampliação de ações preventivas voltadas à juventude.\n● Rede de Proteção à Mulher\nTransformar a Casa da Mulher Brasileira no centro de uma rede estadual de proteção\nà mulher com resposta rápida e presença no interior, incorporando tecnologias já consolidadas\nem outros estados e exigidas por lei federal, além de alcançar comunidades ribeirinhas hoje fora\ndo raio de atendimento.\n● Policiamento Comunitário e Escola Segura\nFortalecer a política estadual permanente de prevenção à criminalidade, integrando\nPoliciamento Comunitário, o programa Escola Segura e políticas sociais, com atuação territorial\ncoordenada, prevenção da violência e fortalecimento da segurança nas comunidades e no\nambiente escolar.\n● Projetos Sociais na Segurança Pública\nIntegração estratégica dos programas sociais, educacionais, esportivos, culturais e\npreventivos vinculados à segurança pública - incluindo Peixinhos Voadores, Telecentro de\nInclusão Digital, Campeões do Amapá, Artes Marciais, Bombeiro Cidadão, Nadadores do\nAmanhã, Cidadão Mirim e Bombeiro Mirim Músico — sob uma marca institucional única,\nestruturada como uma política estadual integrada de prevenção, inclusão e transformação\nsocial.\n● Carreta da Segurança Pública\nFortalecer e ampliar o uso da carreta da Segurança Pública, hoje concentrado em\ngrandes eventos, para uma rotina permanente de presença nos bairros e municípios do interior,"
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-32",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n32\nunindo sua capacidade tecnológica de comando e controle a serviços diretos de atendimento ao\ncidadão.\n● Integração do Sistema Estadual de Urgência e Emergência\nEstrutura uma rede integrada de resposta envolvendo SAMU, Corpo de Bombeiros\nMilitar e Polícia Militar, com mesa de operação compartilhada, protocolos unificados, e\nintegração dos sistemas de comunicação e coordenação conjunta, visando respostas rápidas às\nocorrências.\n● Integração dos Sistema Estadual de Proteção e Defesa Civil\nEstruturar um Sistema Estadual Integrado de Defesa Civil, unindo órgãos estaduais e\nmunicipais para fortalecer a prevenção, o monitoramento, a resposta e o atendimento\nhumanitário em situações de risco e desastres, garantindo maior coordenação e proteção às\nfamílias afetadas.\n● Sistema Prisional\nConsolidação da Política Estadual de Ressocialização no Sistema Prisional do Amapá\npor meio do Trabalho, Educação e Monitoramento Eletrônico.\n● Segurança Pública e Meio Ambiente\nFortalecer o combate aos crimes ambientais, por meio do monitoramento contínuo por\nsatélite, da integração das forças de segurança e dos órgãos ambientais ao Ciodes e da atuação\npermanente e coordenada com instituições federais.\n● Cercamento eletrônico\nFortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento\neletrônico, com instalação de câmeras inteligentes em pontos estratégicos, entradas e saídas dos\nmunicípios, áreas de maior incidência criminal, rodovias e equipamentos públicos. O sistema\ndeverá integrar reconhecimento de placas, identificação de veículos com restrição,\nvideomonitoramento em tempo real e inteligência artificial, conectado ao Centro Integrado de\nOperações de Segurança Pública."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-33",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n33\n5\n\nEIXO 5: GESTÃO E TRANSFORMAÇÃO DIGITAL\n\n5.1\n\nConcursos públicos e transposição de servidores\nA valorização do serviço público foi uma das marcas da gestão, com investimentos na\n\nrecomposição do quadro de servidores e na garantia de direitos. Ao todo, foram empossados\n5.473 novos servidores por meio de concursos públicos, fortalecendo a capacidade do Estado\nde prestar serviços de qualidade à população em diversas áreas.\nParalelamente, 6.345 servidores foram transpostos para o quadro federal, garantindo\nsegurança jurídica, reconhecimento de direitos e maior estabilidade para milhares de famílias\namapaenses.\nA realização de concursos públicos e o avanço da transposição de servidores produziram\nimpactos que vão além da valorização do serviço público. O Amapá passou a contar com uma\ninjeção estimada de R$ 130 milhões por mês e cerca de R$ 1 bilhão e 700 milhões anuais na\neconomia, fortalecendo o comércio, os serviços, o mercado imobiliário e diversos segmentos\nprodutivos, além de ampliar a arrecadação e impulsionar o desenvolvimento econômico do\nEstado.\n5.2\n\nGestão Fiscal que gera confiança e resultados\nO Governo do Estado consolidou uma gestão fiscal responsável, ampliando a\n\ncapacidade de investimento, fortalecendo o equilíbrio das contas públicas e modernizando a\nadministração financeira.\nEsse desempenho foi reconhecido nacionalmente com premiações em Qualidade da\nInformação Contábil e Fiscal e Transparência Pública, reafirmando o compromisso com a boa\ngovernança, a credibilidade institucional e a eficiência na gestão dos recursos públicos.\nPropostas\n● Gestão de pessoas\nValorizar os servidores públicos como um dos principais patrimônio do Estado,\nfortalecendo uma gestão de pessoas moderna, humanizada e orientada para resultados, baseada\nno diálogo permanente para valorização das carreiras, na realização de concursos públicos para\nrenovação do quadro funcional, na qualificação continuada, na valorização da titulação, na\npromoção funcional e na inovação no serviço público."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-34",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n34\n● Transformação digital e inovação governamental\nAmpliar o Governo Digital, com a criação do Super Fácil Amapá Digital como portal\ne aplicativo únicos do Governo do Amapá, integrando serviços e agendamentos de saúde,\neducação, segurança, documentação e demais áreas. A iniciativa ampliará os serviços digitais\ne os canais de atendimento, como WhatsApp, chat e videoatendimento, simplificando o acesso,\nreduzindo a burocracia e garantindo mais eficiência, agilidade e acesso aos serviços públicos\nem todo o Estado.\n● Governo orientado por resultados\nConsolidar uma política estadual de gestão orientada por dados, ampliando a\nintegração entre os sistemas de informação e fortalecendo o uso de inteligência analítica para\nsubsidiar a formulação, o monitoramento e a avaliação das políticas públicas. Expandir\niniciativas como o Observa Amapá e as Salas de Situação, promovendo a integração entre os\nórgãos estaduais, a transparência das informações e a tomada de decisões baseada em\nevidências, tornando a gestão pública mais eficiente, preventiva e orientada a resultados para a\npopulação."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-35",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n35\n6\n\nEIXO 6: INTERIORIZAÇÃO DO DESENVOLVIMENTO\n\n6.1\n\nInteriorização do Desenvolvimento do Amapá\nA interiorização do desenvolvimento foi prioridade da primeira gestão e será\n\nconsolidada como política permanente, levando investimentos, infraestrutura, serviços\npúblicos, segurança e oportunidades aos municípios, reduzindo desigualdades e valorizando as\nvocações de cada território.\nNa educação e saúde, o Governo ampliou e qualificou a infraestrutura; no setor\nprodutivo, fortaleceu a agropecuária, a assistência técnica, a inspeção sanitária e o turismo.\nTambém avançou na pavimentação e recuperação de rodovias e estradas vicinais,\nampliou a presença da segurança pública e fortaleceu o empreendedorismo, a cultura e o\nturismo, com iniciativas como Minha Primeira Empresa, Amapá Startups, Pesca Esportiva,\nFeira Binacional, Feira Internacional do Oiapoque e Oiapoque Energy.\nNos próximos quatro anos, o compromisso é avançar para uma nova geração de\ninfraestrutura, com o Arco Metropolitano, infraestrutura hospitalar, integração Laranjal do Jari–\nVitória do Jari, Porto Industrial da Antiga ICOMI, pavimentação urbana, expansão\nhabitacional, Lixão Zero Amapá e Terminais Hidroviários, fortalecendo a integração, a\nconectividade e a resiliência do Amapá\nPropostas\n● Arco Metropolitano da Integração\nConsolidar o Arco Metropolitano da Integração de Macapá, Santana e Mazagão, a\nrevitalização da AP-010 além de expandir ciclovias, calçadas acessíveis e sistemas inteligentes\nde trânsito, garantindo maior mobilidade, integração territorial, segurança viária e\ndesenvolvimento econômico para a Região Metropolitana.\n● Infraestrutura hospitalar\nAmpliar e modernizar a rede pública de saúde do Amapá, garantindo a conclusão das\nobras já em andamento da II Fase do Hospital de Porto Grande, da Maternidade e do Centro\nObstétrico de Santana, reformar e/ou ampliar a unidade de saúde Calçoene, a unidade de\nFerreira Gomes, a UPA e do hospital Laranjal Jari, fortalecendo o acesso, a qualidade e a\nresolutividade do atendimento à população."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-36",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n36\n●\n\nIntegração Laranjal do Jari - Vitória do Jari\nConcluir a implantação dos 34 quilômetros da AP-160, integrando por rodovia os\n\nmunicípios de Laranjal do Jari e Vitória do Jari. A obra fortalecerá a mobilidade regional,\nreduzirá o isolamento, facilitará o transporte de pessoas e mercadorias e ampliará as\noportunidades de desenvolvimento econômico no Vale do Jari.\n●\n\nPorto Industrial da Antiga ICOMI\nReconstruir e modernizar o Complexo Portuário da antiga ICOMI, em Santana,\n\ntransformando-o em polo logístico estratégico para a Margem Equatorial. Por meio de parcerias\npúblico-privadas e novos investimentos, implantar uma estrutura portuária moderna e\nintegrada, voltada aos setores mineral, agroindustrial, energético e de petróleo e gás, ampliando\na capacidade logística, gerando empregos e consolidando Santana como eixo estratégico de\nentrada e saída da produção do Amapá.\n● Pavimentação Infraestrutura Urbana\nImplantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios,\nintegrando pavimentação, drenagem, calçadas acessíveis, iluminação pública, arborização e\nrequalificação de espaços públicos. As ações incorporarão soluções de adaptação às mudanças\nclimáticas, prevenção de alagamentos e erosões e recuperação de áreas vulneráveis,\npromovendo cidades mais seguras, acessíveis, resilientes e com melhor qualidade de vida.\n● Expansão Habitacional\nAmpliar a política habitacional com a construção de novas moradias, priorizando\nfamílias em situação de vulnerabilidade. A proposta contribuirá para reduzir o déficit\nhabitacional e garantir moradia digna, segurança e qualidade de vida às famílias amapaenses.\n● Programa Lixo Zero\nEstruturar uma política estadual de gestão integrada de resíduos sólidos para todos os\nmunicípios do Estado. A iniciativa apoiará os municípios na implantação de soluções adequadas\npara coleta, tratamento e destinação final, com recuperação das áreas degradadas, incentivo à\nreciclagem e inclusão de catadores.\n● Terminais Hidroviários\nEstruturar terminais hidroviários em Oiapoque, Calçoene e Jari, integrando passageiros,\ncargas, pesca, abastecimento e turismo, com cais, apoio à navegação, conservação, controle e\nintegração urbana e viária, fortalecendo a logística e o desenvolvimento regional."
+          },
+          {
+            "id": "programa-de-governo-estado-do-amapa-clecio-luis-vilhena-vieira-ano-2027-37",
+            "titulo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo Estado do Amapá – Clécio Luís Vilhena Vieira – Ano 2027-2030\n\n37\nO Programa de Governo Clécio Luís Governador 2027–2030 é um documento em\npermanente construção, aberto ao diálogo e à participação da sociedade. Estamos à disposição\npara receber contribuições, sugestões e propostas de todos os cidadãos e cidadãs, com o objetivo\nde aprimorá-lo continuamente e torná-lo cada vez mais representativo dos anseios, necessidades\ne expectativas da população do Amapá."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "f6f14c2385e452a30426bb818f78d8fe0ec8eae7ebcb1a0e8050eb17ae60951f"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c37e937fa76860ddca540e4bad172add997fca25c75d009794fffe36972ec950"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "653cd47e3397a75fec50c4904a4c8325f1bdd94f9b92461e987a05042d626de8"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "5417ff26580337190f38eb7b86063fb307adb3d0ef235296d4af6062b94e1e0d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "a5a88bed226d64544abb4b1c7b46dac8ded99b265b25b96d60b04e868a87aed5"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "1e0a60ec0c41b7e2f9a547823b76669feae5eada4b217cc4b52bb2b3ca60c458"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "02c5be3a0959a278ed3d10091381d176b8c9929b64cb1622054f50b77cd0408d"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "d4fd3a4396e12521c25a973deb89198fb273345b3e2ba8e88fb845a58f905dc9"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "94654c414fc6f76a9b3cc16d4f595c9c232c1eff158af9b660a8e20c47198ad0"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "98899c0db98d7fcbfee94c9bf4710f07885fd9268acbe0a3e7fcde9f60d160b7"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "e645b795283994833990c16c1760b04a21f44f4ab7d2473610c35663a8a3a35a"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "1b95dbcfb74e503da8dc06c30be671bfd748180eaee06cf85275b24ae67ca436"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "d48db3bfe7cff302f58587dfad9916f84742e0e8b3ec1055b8486c47c3934107"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "b8d4cf8c2c4db8c7c6b74fe0aa8ad496969923a3fec7a57d59813e6dd1eb95d5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "b3a12ebe30fcbd6f9246d3dbd2401e66a0d20e67e5d0548a6a7fd60d87268cee"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "082e55c9b1e658e44569ded32e8640c60e8e817a3f61f6d14632bef759078e51"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "175c0dc677fe2b5095da5d8248be0105cfa6a877b1827f38ed9a5bdbf3fcabc8"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "0f68168d6037b1a63a39d5e6ea4e7753d4914784cc828e26f5a288afc19431b2"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "d29b01a10da8d80c61f8fbaaba13302a134275dae385fd3c54ee760482ea606b"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "64294d899fd72357fe8aad5a24b753aa76cdf61e95a6c54533a209ed77210ee8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "89194eea3063fc66a56b4bfc02fe1335c12737b64efdfded007d5da4ee601e04"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "fba5095c5b5ef0e974810e09a3ba3d894786c6bd957a33e1c3e92e2fc1ac4cfd"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "69ec1d3aadb1cedcf327327b34d986ef6663c95b62bd4d52635f10ee3b51e102"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "1762e08c3e973c96cf26d8998c4fff5e615b12322ebbbacfa0c42ba67c496fd2"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "5a6357cfae487310a8d283ef8ab5cb99fbd1a79df4ad9acfbf4b98a0f9487558"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "48a444256c40a59fd2bba0ac0ee885b96cd7f740f6f7d20cbee19c29ccafe93a"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "e3eb1006c365e54524f91f4946ba29e809057c578a518091e42daf600808a1e2"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "df9958f03933ac10faa6f2806a6ac41ea5ec4ea12960175ac18edf29703fffc1"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "523e5c45e7afc6336ef7a7ce9eb6e244b299fb02c4e5d756a957e38afcef7893"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "b8203295297f32610288065b3a2a08dcee6f71d6f7e31a95533ef16b4a984c92"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4c06b0dc4e475db5b8dec93a2d971b9009f1b47cd9d8f7906775d261228e1fca"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "844775f68008786a9e2c8d1e2bd7b2d012728d933e1ffb9cd6385075a3110173"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "d5e759fbbd0e499a67d327be181f3270e8686eeb07b85d4212e034f9706795ec"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "1f3165bedc6df1a8a972ebc7b36941faa593ff7f5cab63b6b8407b47e7e70f56"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "8700c3205d30840b3f95710f58f7b83131bde2df77cc5799828e04cf8d849ff6"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "8c56161b6dc2c0c93978a6cb979290cd2dbdca8e411a8d9b8acb6176ed22809f"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "c3d81f1b0a88e9d90e098bce840c416f55465d05742fa8edc5145fbcbdf86e02"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê preparar a população amapaense para as oportunidades da economia do óleo e gás na Margem Equatorial. O plano propõe criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás. O documento propõe consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o Plano Estadual, o Selo Amapá e o Parque Tecnológico. O plano planeja implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios. O programa prevê garantir e consolidar a alfabetização de todas as crianças na idade certa. O plano propõe ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação, cadastro e prontuário eletrônico em uma única plataforma. O documento prevê fortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento eletrônico. O plano planeja ampliar o Governo Digital, com a criação do Super Fácil Amapá Digital.",
+    "frases": [
+      {
+        "texto": "O programa prevê preparar a população amapaense para as oportunidades da economia do óleo e gás na Margem Equatorial.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 11,
+            "trecho": "Preparar a população amapaense para as oportunidades da economia do óleo e gás na\nMargem Equatorial."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 11,
+            "trecho": "Criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o Plano Estadual, o Selo Amapá e o Parque Tecnológico.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 12,
+            "trecho": "Consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o\nPlano Estadual, o Selo Amapá e o Parque Tecnológico."
+          }
+        ]
+      },
+      {
+        "texto": "O plano planeja implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 36,
+            "trecho": "Implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê garantir e consolidar a alfabetização de todas as crianças na idade certa.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 22,
+            "trecho": "Garantir e consolidar a alfabetização de todas as crianças na idade certa"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação, cadastro e prontuário eletrônico em uma única plataforma.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 25,
+            "trecho": "Ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação,\ncadastro e prontuário eletrônico em uma única plataforma."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê fortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento eletrônico.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 32,
+            "trecho": "Fortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento\neletrônico"
+          }
+        ]
+      },
+      {
+        "texto": "O plano planeja ampliar o Governo Digital, com a criação do Super Fácil Amapá Digital.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 34,
+            "trecho": "Ampliar o Governo Digital, com a criação do Super Fácil Amapá Digital"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "qualificacao-oleo-e-gas",
+        "titulo": "Qualificação profissional para o óleo e gás",
+        "descricao": "O programa prevê preparar a população amapaense para as oportunidades da economia do óleo e gás na Margem Equatorial.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 11,
+            "trecho": "Preparar a população amapaense para as oportunidades da economia do óleo e gás na\nMargem Equatorial."
+          }
+        ]
+      },
+      {
+        "id": "fundo-soberano",
+        "titulo": "Fundo Soberano do Amapá",
+        "descricao": "O plano propõe criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 11,
+            "trecho": "Criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás"
+          }
+        ]
+      },
+      {
+        "id": "sociobioeconomia",
+        "titulo": "Sociobioeconomia",
+        "descricao": "O documento propõe consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o Plano Estadual, o Selo Amapá e o Parque Tecnológico.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 12,
+            "trecho": "Consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o\nPlano Estadual, o Selo Amapá e o Parque Tecnológico."
+          }
+        ]
+      },
+      {
+        "id": "pavimentacao-urbana",
+        "titulo": "Pavimentação urbana",
+        "descricao": "O plano planeja implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 36,
+            "trecho": "Implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios"
+          }
+        ]
+      },
+      {
+        "id": "alfabetizacao-na-idade-certa",
+        "titulo": "Alfabetização na idade certa",
+        "descricao": "O programa prevê garantir e consolidar a alfabetização de todas as crianças na idade certa.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 22,
+            "trecho": "Garantir e consolidar a alfabetização de todas as crianças na idade certa"
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital e telessaúde",
+        "descricao": "O plano propõe ampliar a saúde digital e a telessaúde no Amapá, integrando cadastro e prontuário eletrônico em uma única plataforma.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536311:01",
+            "pagina": 25,
+            "trecho": "Ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação,\ncadastro e prontuário eletrônico em uma única plataforma."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T11:42:20.685Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T11:47:22.677Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a afirmação sobre preparar a população amapaense para oportunidades da economia do óleo e gás na Margem Equatorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta do documento sem elogio, crítica, promoção ou extrapolação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de qualificação ligada ao setor de óleo e gás."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa exatamente o documento informado e é compatível com a mesma chave eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:1:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação de um Fundo Soberano Estadual com receitas do óleo e gás."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de forma descritiva e sem linguagem valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente, a criação do fundo com essa fonte de receita."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e não há divergência de identidade eleitoral no item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:2:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a totalidade da proposição material afirmada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona elogio, crítica ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, a sociobioeconomia, com seus elementos articulados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento listado e mantém a mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:3:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a meta de 500 quilômetros em parceria com os 16 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "Os números 500 quilômetros e 16 municípios aparecem literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta e seus números, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de pavimentação urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado e não há conflito com a identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:4:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente quantidade, objeto e parceria mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de alfabetização na idade certa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem adicionar elogio, crítica ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral declarada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:5:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de saúde digital e telessaúde descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra em relação ao conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de saúde digital e telessaúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado e corresponde à mesma identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:6:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o fortalecimento do programa com ampliação e integração do cercamento eletrônico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do documento sem linguagem valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de cercamento eletrônico dentro do programa citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento listado e é compatível com a identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:7:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ampliação do Governo Digital com a criação do Super Fácil Amapá Digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra em relação ao documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de transformação digital governamental."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:frase:8:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A parte substantiva da afirmação é sustentada literalmente pela evidência, e o rótulo temático é compatível com o conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O texto funciona como rotulação temática e descrição neutra da proposta, sem elogio ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, qualificação profissional ligada ao óleo e gás."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e é compatível com a identidade eleitoral indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:qualificacao-oleo-e-gas:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposição material da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do fundo com receitas do óleo e gás, e o rótulo temático é compatível."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é temática e descritiva, sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente, a criação do fundo soberano."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa o documento informado e não há divergência com a identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:fundo-soberano:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta, e o rótulo temático é compatível com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e neutra, sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única área coerente, a sociobioeconomia e sua articulação interna."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento listado e à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:sociobioeconomia:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposição material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta e seus números, e o rótulo temático é compatível com o conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "Os números 500 quilômetros e 16 municípios aparecem literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é temática e descritiva, sem linguagem valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de pavimentação urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa o documento informado e não há divergência com a identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:pavimentacao-urbana:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente quantidade, objeto e parceria materialmente afirmados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta, e o rótulo temático é compatível com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva, sem promoção, crítica ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:alfabetizacao-na-idade-certa:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposição material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação, pois inclui ampliar saúde digital e telessaúde e integrar cadastro e prontuário eletrônico em uma única plataforma."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é temática e descritiva, sem juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, saúde digital e telessaúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e é compatível com a identidade eleitoral declarada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536311:tema:saude-digital:documentos:AP:30002536311:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais afirmados, ainda que o trecho original traga detalhes adicionais não contraditórios."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AP:30002536311",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AP:30002536311:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "1e95175516a9a444d8bcec408eea308f9f7a1a635fed58ebaf1a1b0f81d6c81f",
+    "extractedTextSha256": "c512698ce492ecf2f0415b321129bdc389e629efab16b2534786a0c60ba7efc6",
+    "documentCount": 1,
+    "documentSetSha256": "ed1b8f1abb2bcd0eb3b7106673540394f5f6f35475373c036f480848cb1b2661",
+    "contentSha256": "9fec49143f000cac65c94136eb76fe45b9b2d8bdc859c83efb67bebfbc53334b"
+  }
+}

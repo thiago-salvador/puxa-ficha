@@ -1,0 +1,2093 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002541741",
+    "slug": "roberto-cidade",
+    "nomeUrna": "ROBERTO CIDADE",
+    "partido": "UNIÃO",
+    "arquivoNome": "2026AM40002541741_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002541741_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002541741:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002541741_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002541741_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "eddd0e80ecc6f14e24743e17ee7370d1b32a8e9c08440d5ac182b9196e29e4b3",
+        "extractedTextSha256": "7709ec9aee32c2839c4eb604f7cbab961fb75e83896947c852b9f538823cf222",
+        "paginas": 101,
+        "secoes": [
+          {
+            "id": "o-amazonas-do",
+            "titulo": "O AMAZONAS DO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "O AMAZONAS DO\n=FUTURO=\nCOMEÇOU!\nPROJETO AMAZONAS 2035\n44 COMPROMISSOS, UM SO PROPOSITO.\nMELHORAR A VIDA DAS PESSOAS\n•CIDADE:"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nHá momentos em que uma geração é chamada a fazer mais do que administrar o presente.\nEla é chamada a construir o futuro.\nEu acredito que este é um desses momentos.\nDurante muito tempo, acostumaram o Amazonas a pensar pequeno.\nDisseram que era impossível crescer preservando a floresta. Que era impossível gerar riqueza sem destruir o meio ambiente. Que o interior\nsempre estaria distante. Que nossos jovens precisariam deixar sua terra para encontrar oportunidades. Que a pobreza seria um destino.\nEu nunca aceitei essa ideia.\nPorque quem conhece o Amazonas sabe que o nosso povo nunca foi pequeno. Pequenos sempre foram os sonhos de quem governou sem\nacreditar na força desta terra.\nO Amazonas é grande. Grande na sua história. Grande na sua diversidade. Grande na sua cultura.\nGrande nas suas riquezas. Grande na coragem de quem acorda antes do sol para trabalhar. Grande na esperança das mães que lutam todos\nos dias por seus filhos. Grande na determinação dos jovens que insistem em acreditar no amanhã. Grande na sabedoria dos nossos idosos.\nGrande na força dos nossos povos indígenas, ribeirinhos, agricultores, pescadores, empreendedores, professores, profissionais da saúde,\nservidores públicos e trabalhadores que fazem este Estado acontecer todos os dias.\nÉ por essas pessoas que vale a pena governar.\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "apresentacao-2",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nPorque governar nunca foi apenas construir estradas, levantar hospitais ou entregar obras. Governar é transformar a vida das pessoas.\nÉ fazer com que uma mãe tenha tranquilidade para criar seus filhos. É fazer com que um jovem encontre seu primeiro emprego. É fazer com\nque um produtor rural consiga escoar sua produção. É garantir que um idoso seja tratado com respeito e dignidade. É permitir que uma criança\ntenha acesso a uma educação capaz de mudar seu destino. É cuidar de quem mais precisa. E preparar quem ainda vai nascer.\nO Amazonas reúne algumas das maiores oportunidades econômicas do planeta. Poucos lugares concentram tanta biodiversidade. Poucos\npossuem uma indústria tão estratégica. Poucos têm reservas tão importantes de gás natural, potássio e minerais estratégicos. Poucos\ncarregam uma riqueza cultural tão extraordinária.\nMas existe uma riqueza ainda maior: as pessoas.\nÉ nelas que acreditamos. Porque nenhuma riqueza natural transforma um Estado. Quem transforma um Estado são homens e mulheres que\ntrabalham, estudam, empreendem, inovam e sonham.\nChegou a hora de transformar potencial em prosperidade. Transformar riqueza em oportunidade.\nTransformar crescimento em qualidade de vida. Transformar esperança em realidade.\nNos próximos anos, queremos construir um Amazonas que cuide melhor das pessoas. Que gere mais empregos. Que tenha uma saúde mais\nrápida e humana. Que seja referência em segurança pública. Que prepare nossas crianças e nossos jovens para as profissões do futuro.\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "apresentacao-3",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nQue valorize quem produz, fortaleça quem empreende, respeite quem preserva, integre o interior e olhe para frente sem esquecer de ninguém.\nEsse não é um projeto para um governo. É um projeto para uma geração.\nNão queremos que nossos filhos procurem oportunidades longe daqui. Queremos que o mundo procure oportunidades aqui.\nE para isso que este plano existe: não para fazer promessas, mas para assumir compromissos.\nCompromissos com metas, resultados, responsabilidade, transparência e, acima de tudo, com as pessoas.\nAcreditamos que é possível crescer preservando, desenvolver incluindo, modernizar sem perder nossa identidade e gerar riqueza sem deixar\nninguém para trás.\nO futuro não chegará sozinho. Ele será construído pelas mãos de milhões de amazonenses.\nE essa construção começa agora.\nPorque o Amazonas do futuro já começou.\n\nRoberto Cidade\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "amazonas",
+            "titulo": "Amazonas",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Amazonas\n\nSEGURO\n“A liberdade começa quando uma\nfamília volta a viver sem medo.”\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "o-estado-presente-onde-a",
+            "titulo": "O Estado presente onde a",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "O Estado presente onde a\npopulação mais precisa."
+          },
+          {
+            "id": "compromisso-01",
+            "titulo": "COMPROMISSO 01",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 01\nO DESAFIO\nÁreas críticas precisam de presença permanente, e não apenas ações passageiras.\n\nNOSSO COMPROMISSO\nIntegrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e\nserviços públicos.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nOcupação permanente.\nRedução de homicídios.\nCombate ao tráfico.\nMais presença do Estado.\n\nQuando o Estado ocupa, o crime perde\nterritório.\n\nA operação é sustentada pelo Tesouro\nEstadual, pelo Fundo Nacional de\nSegurança Pública e por convênios com a\nUnião, além de emendas parlamentares\npara viaturas e tecnologia. Boa parte usa o\nefetivo e a estrutura que já existem — o\nganho vem da integração e da presença\npermanente, não só de nova despesa."
+          },
+          {
+            "id": "compromisso-02",
+            "titulo": "COMPROMISSO 02",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 02\n\nMURALHA\nDIGITAL DO\n\nAMAZONAS\nTecnologia protegendo vidas."
+          },
+          {
+            "id": "compromisso-02-2",
+            "titulo": "COMPROMISSO 02",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 02\nO DESAFIO\nO crime utiliza tecnologia; o Estado precisa responder com inteligência.\n\nNOSSO COMPROMISSO\nExpandir câmeras inteligentes, leitura de placas, drones, análise de\nimagens e integração policial.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais inteligência.\nInvestigações eficientes.\nRespostas rápidas.\nMonitoramento permanente.\n\nA tecnologia será aliada da segurança.\n\nA expansão tecnológica é viabilizada pelo\nFundo Nacional de Segurança Pública, por\nemendas parlamentares, pelo Tesouro\nEstadual e por operações de crédito para\ntecnologia. É investimento que se paga em\neficiência: câmera e leitura de placa\nrecuperam veículos e prendem sem precisar\nmultiplicar o efetivo na mesma proporção."
+          },
+          {
+            "id": "proteger-nossas-fronteiras-e",
+            "titulo": "Proteger nossas fronteiras é",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Proteger nossas fronteiras é\nproteger nossas famílias."
+          },
+          {
+            "id": "compromisso-03",
+            "titulo": "COMPROMISSO 03",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 03\nO DESAFIO\nDrogas e armas atravessam rios e fronteiras antes de chegar às cidades.\n\nNOSSO COMPROMISSO\nFortalecer bases fluviais, terrestres e aéreas, com operações\nintegradas e inteligência.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais fiscalização.\nMais apreensões.\nIntegração federal.\nFronteiras protegidas.\n\nA primeira linha de defesa começa nas\nfronteiras.\n\nA\nsegurança\nnas\nfronteiras\né\nresponsabilidade compartilhada com a\nUnião: o financiamento vem do Fundo\nNacional de Segurança Pública, de\nconvênios e operações conjuntas com as\nforças federais (PF, PRF, Forças Armadas) e\ndo Tesouro Estadual para a manutenção das\nbases fluviais. Integrar esforços multiplica o\nresultado sem duplicar o custo."
+          },
+          {
+            "id": "compromisso-04",
+            "titulo": "COMPROMISSO 04",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 04\n\nPOLÍCIA\n\nPRESENTE NO\n\nINTERIOR\nSegurança para\ntodos os municípios."
+          },
+          {
+            "id": "compromisso-04-2",
+            "titulo": "COMPROMISSO 04",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 04\nO DESAFIO\nO interior precisa de estrutura adequada aos desafios regionais.\n\nNOSSO COMPROMISSO\nReforçar efetivos, delegacias, batalhões, embarcações, viaturas,\ncomunicação e tecnologia.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais policiais.\nMais viaturas.\nMais embarcações.\nMais tecnologia.\n\nTodo amazonense tem direito à\nsegurança.\n\nO reforço combina Tesouro Estadual\n(concursos e efetivo), Fundo Nacional de\nSegurança Pública, emendas parlamentares\ne operações de crédito para viaturas e\nembarcações. A ampliação será planejada\npor região e de forma gradual, respeitando a\ncapacidade fiscal e a Lei de\nResponsabilidade Fiscal quanto a pessoal."
+          },
+          {
+            "id": "compromisso-05",
+            "titulo": "COMPROMISSO 05",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 05\n\nvalorizar\nQUEM\n\nPROTEGE\nQuem protege também\nmerece cuidado."
+          },
+          {
+            "id": "compromisso-05-2",
+            "titulo": "COMPROMISSO 05",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 05\nO DESAFIO\nProfissionais da segurança enfrentam riscos, pressão e jornadas intensas.\n\nNOSSO COMPROMISSO\nInvestir em formação, equipamentos, saúde física e mental, proteção\njurídica e promoção de carreira para servidores da segurança das\náreas civil e militar.\n\nCOMO VAMOS PAGAR ESSA CONTA\n\nO QUE VAI MUDAR\nMais capacitação.\nEquipamentos modernos.\nSaúde mental.\nValorização profissional.\n\nUma polícia forte começa pela\nvalorização.\n\nA valorização é sustentada pelo Tesouro\nEstadual, dentro do planejamento de\ncarreira e da Lei de Responsabilidade\nFiscal, com apoio do Fundo Nacional de\nSegurança Pública para formação e\nequipamentos. Investir na tropa reduz\nafastamentos e eleva a eficiência — uma\npolícia bem cuidada rende mais para a\npopulação."
+          },
+          {
+            "id": "compromisso-06",
+            "titulo": "COMPROMISSO 06",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 06\n\nESCOLA\n\nSEGURA\nO futuro começa dentro\nda sala de aula."
+          },
+          {
+            "id": "compromisso-06-2",
+            "titulo": "COMPROMISSO 06",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 06\nO DESAFIO\nA escola deve ser espaço de proteção e convivência.\n\nNOSSO COMPROMISSO\nFortalecer prevenção, equipes psicossociais, monitoramento, cultura de\npaz e integração comunitária.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nEscolas protegidas.\nApoio aos estudantes.\nMais prevenção.\nAmbiente seguro.\n\nEducar também é proteger.\n\nO programa integra recursos da educação e\nda segurança: Tesouro Estadual, Fundo\nNacional de Segurança Pública e programas\nfederais de prevenção, com parceria dos\nmunicípios e das comunidades. É prevenção\nde baixo custo que evita gastos muito\nmaiores lá na frente, dentro e fora da escola."
+          },
+          {
+            "id": "compromisso-07",
+            "titulo": "COMPROMISSO 07",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 07\n\nmulher\nSEGURA\n\nAMAZONAS\nNenhuma mulher deve\nviver com medo."
+          },
+          {
+            "id": "compromisso-07-2",
+            "titulo": "COMPROMISSO 07",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 07\nO DESAFIO\nA violência exige acolhimento, rapidez e integração.\n\nNOSSO COMPROMISSO\nAmpliar delegacias especializadas de crimes contra a Mulher,\npatrulhas, Ronda Maria da Penha Fluvial e terrestre, patrulhas, casas\nde acolhimento, monitoramento de agressores e apoio jurídico e\npsicológico.\n\nO QUE VAI MUDAR\nMais proteção.\nAtendimento humanizado.\nCombate permanente.\nRede integrada.\n\nToda mulher tem direito à liberdade e à\nsegurança.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA rede de proteção é viabilizada pelo\nTesouro Estadual, por recursos federais de\npolíticas para as mulheres e pelo Fundo\nNacional de Segurança Pública, com\nemendas parlamentares para as casas de\nacolhimento e patrulhas. É uma prioridade\nque combina proteção imediata e\nprevenção, articulando estruturas que já\nexistem."
+          },
+          {
+            "id": "compromisso-08",
+            "titulo": "COMPROMISSO 08",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 08\n\nrecupera\nFONE\nAMAZONAS\nO celular roubado deve\nvoltar ao verdadeiro dono."
+          },
+          {
+            "id": "compromisso-08-2",
+            "titulo": "COMPROMISSO 08",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 08\nO DESAFIO\nO roubo de celulares alimenta uma cadeia criminosa.\n\nNOSSO COMPROMISSO\nExpandir rastreamento, recuperação e devolução dos aparelhos em\ntodo o Estado.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais celulares recuperados.\nMenos receptação.\nMais eficiência policial.\n\nCada aparelho devolvido enfraquece o\ncrime.\n\nO programa é de baixo custo e alto impacto:\nusa tecnologia e integração de dados da\nprópria polícia, financiadas pelo Tesouro\nEstadual e pelo Fundo Nacional de\nSegurança Pública. Atacar a receptação\ndesmonta o incentivo econômico do roubo\n— segurança que se paga atacando a raiz\ndo crime."
+          },
+          {
+            "id": "compromisso-09",
+            "titulo": "COMPROMISSO 09",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 09\n\nJOVEM\nLONGE DO\n\nCRIME\nA melhor arma contra o\ncrime é a oportunidade."
+          },
+          {
+            "id": "compromisso-09-2",
+            "titulo": "COMPROMISSO 09",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 09\nO DESAFIO\nJovens vulneráveis precisam de alternativas reais ao recrutamento criminoso.\n\nNOSSO COMPROMISSO\nCriar rede de esporte, cultura, tecnologia, qualificação, primeiro\nemprego e acompanhamento social.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais esporte.\nMais cultura.\nMais qualificação.\nMais emprego.\nMenos violência.\n\nO futuro de um jovem vale mais do que\nqualquer promessa do tráfico.\n\nEste é o elo entre segurança e\noportunidade: financia-se com Tesouro\nEstadual, Fundo Nacional de Segurança\nPública (na vertente de prevenção),\nprogramas federais de esporte e cultura e\nparcerias com o setor privado e o terceiro\nsetor. Cada jovem afastado do crime\neconomiza ao Estado um custo futuro\nenorme em segurança e justiça."
+          },
+          {
+            "id": "compromisso-10-e",
+            "titulo": "= COMPROMISSO 10 E",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "ocr",
+            "conteudo": "= COMPROMISSO 10 E\nNOVOS\nPRESIDIOS"
+          },
+          {
+            "id": "compromisso-10",
+            "titulo": "COMPROMISSO 10",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 10\nO DESAFIO\nO Amazonas enfrenta um grave déficit de infraestrutura prisional no interior. Sem unidades adequadas para o cumprimento de penas, as delegacias acabam\nfuncionando como cadeias improvisadas, comprometendo a segurança, favorecendo fugas, dificultando a ressocialização e desviando policiais da atividade\nde policiamento para exercer funções de carcereiros. Essa realidade enfraquece o combate à criminalidade e sobrecarrega os municípios.\n\nNOSSO COMPROMISSO\nConstruir dois complexos prisionais regionais em áreas estratégicas do interior do\nAmazonas, ampliando a capacidade do sistema prisional e descentralizando o\ncumprimento de penas. A medida será acompanhada da modernização das cadeias\npúblicas e adoção de tecnologias para gestão e monitoramento do sistema prisional.\n\nCOMO VAMOS PAGAR ESSA CONTA\n\nO QUE VAI MUDAR\nConstrução de dois presídios regionais em pontos estratégicos do interior.\nRedução da superlotação e do uso inadequado das delegacias.\nMelhoria da gestão do sistema prisional.\nMais segurança para os municípios e melhores condições para a\nressocialização dos apenados.\n\nVamos fortalecer a segurança começando por onde ela\ntambém precisa existir: dentro das unidades prisionais.\n\nOs investimentos serão realizados com\nrecursos do Tesouro Estadual, operações de\ncrédito destinadas à infraestrutura pública,\nconvênios com o Governo Federal, por meio\ndo Fundo Penitenciário Nacional (Funpen),\nalém de parcerias institucionais para\nmodernização do sistema prisional. A\nregionalização das unidades também\nreduzirá custos operacionais com escoltas,\ntransporte de presos e manutenção de\nestruturas improvisadas, aumentando a\neficiência da segurança pública."
+          },
+          {
+            "id": "amazonas-2",
+            "titulo": "Amazonas",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Amazonas\nSEM\n\nESPERA\n\n“Mais perto. Mais\nrápido. Mais humano.”\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "especialistas-mais-perto",
+            "titulo": "Especialistas mais perto",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Especialistas mais perto\nde quem precisa."
+          },
+          {
+            "id": "compromisso-11",
+            "titulo": "COMPROMISSO 11",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 11\nO DESAFIO\nExames e consultas poderiam ser realizados perto da casa das pessoas.\n\nNOSSO COMPROMISSO\nAmpliar a quantidade de carretas da saúde para atendimento\nitinerantes na capital e região metropolitana, com exames de\nmamografia, ultrassom, oftalmologia, exames de cardiologia,\nlaboratório, odontologia e pequenas cirurgias.\n\nO QUE VAI MUDAR\nMais exames.\nMenos filas.\nAtendimento itinerante.\nDiagnóstico rápido.\n\nSaúde de qualidade chega antes da\ndoença avançar.\n\nCOMO VAMOS PAGAR ESSA CONTA\nAs carretas serão custeadas pelo SUS e\npelo Ministério da Saúde, por emendas\nparlamentares e pelo Tesouro Estadual. O\natendimento itinerante rende mais por real\ninvestido: um mesmo equipamento percorre\nvários municípios, antecipa diagnósticos e\nevita internações caras lá na frente."
+          },
+          {
+            "id": "cuidar-da-saude-da-mulher",
+            "titulo": "Cuidar da saúde da mulher",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar da saúde da mulher\nem todas as fases da vida."
+          },
+          {
+            "id": "compromisso-12",
+            "titulo": "COMPROMISSO 12",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 12\nO DESAFIO\nServiços especializados ainda estão concentrados e sobrecarregados.\n\nNOSSO COMPROMISSO\nConstruir hospital de referência em ginecologia, obstetrícia, mastologia,\noncologia e medicina fetal.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nAtendimento especializado.\nMais exames e cirurgias.\nEstrutura humanizada.\nSegurança materno-infantil.\n\nCuidar da mulher é cuidar de toda a\nfamília.\n\nSaúde é prioridade e tem parceiro certo. A\nobra será viabilizada pelo Novo PAC, pelo\nMinistério da Saúde e pelo SUS, com apoio\ndo Tesouro Estadual, operações de crédito\npara infraestrutura hospitalar e emendas\nparlamentares."
+          },
+          {
+            "id": "salvar-vidas-formar-profissionais",
+            "titulo": "Salvar vidas, formar profissionais",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Salvar vidas, formar profissionais\ne produzir conhecimento."
+          },
+          {
+            "id": "compromisso-13",
+            "titulo": "COMPROMISSO 13",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 13\nO DESAFIO\nO Estado precisa ampliar atendimento especializado e formação prática.\n\nNOSSO COMPROMISSO\nImplantar hospital universitário integrado a ensino, pesquisa, inovação\ne assistência.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais leitos.\nFormação prática.\nPesquisa fortalecida.\nMais capacidade de atendimento.\n\nConhecimento e cuidado caminharão\njuntos.\n\nPor unir saúde e educação, o hospital\nuniversitário acessa duas fontes: recursos\ndo SUS, do Ministério da Saúde e do Novo\nPAC, e programas federais de apoio a\nhospitais universitários (rede Ebserh/MEC),\nsomados ao Tesouro Estadual e a\noperações de crédito. Além de atender, ele\nforma médicos aqui — reduzindo a\ndependência futura de profissionais de fora."
+          },
+          {
+            "id": "menos-espera-mais-saude",
+            "titulo": "Menos espera. Mais saúde.",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Menos espera. Mais saúde."
+          },
+          {
+            "id": "compromisso-14",
+            "titulo": "COMPROMISSO 14",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 14\nO DESAFIO\nA demora por especialistas adia diagnósticos e tratamentos.\n\nNOSSO COMPROMISSO\nModernizar a regulação, ampliar horários, usar telemedicina e rede\ncomplementar para reduzir espera.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMenos espera.\nRegulação eficiente.\nHorários ampliados.\nFila transparente.\n\nA saúde não pode esperar.\n\nEste compromisso é mais gestão do que\nobra: usa melhor o que já existe. É\nfinanciado pelo custeio do SUS e pelo\nTesouro Estadual, com ganho de eficiência\nna regulação e contratos com a rede\ncomplementar por produtividade. Organizar\na fila e ampliar horários custa pouco e\nentrega muito."
+          },
+          {
+            "id": "cirurgias-no-tempo",
+            "titulo": "Cirurgias no tempo",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Cirurgias no tempo\ncerto salvam vidas."
+          },
+          {
+            "id": "compromisso-15",
+            "titulo": "COMPROMISSO 15",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 15\nO DESAFIO\nFilas eletivas comprometem qualidade de vida e capacidade de trabalhar.\n\nNOSSO COMPROMISSO\nRealizar mutirões permanentes, ampliar equipes e usar toda a rede\npública e complementar.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais cirurgias.\nFilas reduzidas.\nAtendimento rápido.\nMais qualidade de vida.\n\nNinguém deve esperar além do necessário\npara voltar a viver com dignidade.\n\nOs mutirões são custeados pelo SUS, por\nincentivos federais para redução de filas e\npelo Tesouro Estadual, com contratação da\nrede complementar por produtividade. É um\ndos investimentos de maior retorno em\nsaúde: quem opera no tempo certo volta a\ntrabalhar e deixa de gerar custos maiores\ncom a doença agravada."
+          },
+          {
+            "id": "saude-especializada-mais",
+            "titulo": "Saúde especializada mais",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Saúde especializada mais\nperto de quem precisa."
+          },
+          {
+            "id": "compromisso-16",
+            "titulo": "COMPROMISSO 16",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 16\nO DESAFIO\nO atendimento de média e alta complexidade ainda está concentrado em Manaus.\n\nNOSSO COMPROMISSO\nFortalecer hospitais estratégicos do interior com especialidades,\nexames de imagem, leitos de UTI, centros cirúrgicos, clínicas da\nmulher e equipes multiprofissionais.\n\nCOMO VAMOS PAGAR ESSA CONTA\n\nO QUE VAI MUDAR\nHospitais regionais fortalecidos.\nNovas especialidades.\nMais exames e cirurgias.\nMenos deslocamentos.\n\nO melhor hospital é aquele que está\nperto das pessoas.\n\nO fortalecimento se apoia no SUS e no\nMinistério da Saúde, no Novo PAC, em\nemendas parlamentares e no Tesouro\nEstadual, com operações de crédito para\nequipamentos. Regionalizar reduz o custo\ncom transporte de pacientes (TFD) e\ndesafoga a capital, tornando toda a rede\nmais barata de operar."
+          },
+          {
+            "id": "a-distancia-nao-pode-impedir-o-acesso-a-saude",
+            "titulo": "A distância não pode impedir o acesso à saúde.",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "A distância não pode impedir o acesso à saúde."
+          },
+          {
+            "id": "compromisso-17",
+            "titulo": "COMPROMISSO 17",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 17\nO DESAFIO\nPacientes viajam longas distâncias apenas por uma consulta ou laudo.\n\nNOSSO COMPROMISSO\nConectar hospitais, unidades e barcos-hospital a especialistas da\ncapital e da UEA.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nEspecialistas em todo o Estado.\nDiagnósticos rápidos.\nMenos viagens.\nRede integrada.\n\nA tecnologia deve aproximar o cidadão\nda saúde.\n\nA telemedicina é viabilizada por programas\nfederais de saúde digital e conectividade,\npelo custeio do SUS e pelo Tesouro\nEstadual, aproveitando a estrutura da UEA.\nÉ tecnologia que economiza: cada laudo à\ndistância evita uma viagem paga pelo\nEstado e um leito ocupado sem\nnecessidade."
+          },
+          {
+            "id": "e",
+            "titulo": "e",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "e\nd\nn\no\né\nt\na\ne\nd\nLevar a saú\n.\nm\ne\nv\ni\nv\ns\na\no\nas pess"
+          },
+          {
+            "id": "compromisso-18",
+            "titulo": "COMPROMISSO 18",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 18\nO DESAFIO\nDistâncias obrigam pacientes a viajar dias em busca de atendimento.\n\nNOSSO COMPROMISSO\nAmpliar de um para seis barcos-hospital, com consultas, exames,\npequenas cirurgias, odontologia, saúde da mulher, oftalmologia e\ntelemedicina.\n\nO QUE VAI MUDAR\nSeis barcos em operação.\nAtendimento por macrorregião.\nMenos deslocamentos.\nMais exames e cirurgias.\n\nNo Amazonas, a saúde precisa navegar.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA ampliação da frota será viabilizada pelo\nSUS e pelo Ministério da Saúde, pelo Novo\nPAC, por emendas parlamentares e pelo\nTesouro Estadual, com operações de crédito\npara a construção das embarcações. É uma\nsolução desenhada para a nossa geografia:\num barco-hospital atende dezenas de\ncomunidades a um custo menor do que\nconstruir hospital em cada uma."
+          },
+          {
+            "id": "cuidar-da-mente-tambem",
+            "titulo": "Cuidar da mente também",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar da mente também\né cuidar da vida."
+          },
+          {
+            "id": "compromisso-19",
+            "titulo": "COMPROMISSO 19",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 19\nO DESAFIO\nA demanda por atendimento psicológico e psiquiátrico cresceu.\n\nNOSSO COMPROMISSO\nFortalecer o Centro Estadual de Saúde Mental do Amazonas\n(CESMAM), implantar a Clínica de Retaguarda à Saúde Mental,\nampliar equipes e programas para crianças, adolescentes, adultos,\nidosos e profissionais da segurança, sistema prisional, educação e\nsaúde.\n\nO QUE VAI MUDAR\nMais atendimento.\nCESMAM fortalecidos.\nPrevenção.\nApoio às famílias.\n\nNenhuma dor invisível deve ser\nignorada.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA rede de saúde mental é financiada pelo\nSUS, por incentivos federais da Rede de\nAtenção Psicossocial e pelo Tesouro\nEstadual, em parceria com os municípios.\nPrevenir e tratar cedo custa muito menos,\nem vidas e em recursos, do que a\ninternação e o abandono."
+          },
+          {
+            "id": "amazonas-3",
+            "titulo": "Amazonas",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Amazonas\nDO\n\nFUTURO\n\n“Nenhuma geração escolhe o tempo em que nasce.\nToda geração escolhe o legado que deixa.”\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "compromisso-20",
+            "titulo": "COMPROMISSO 20",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 20\n\nescola\nFUTURO\nDO\n\nPreparar nossos filhos para\nas profissões do século XXI."
+          },
+          {
+            "id": "compromisso-20-2",
+            "titulo": "COMPROMISSO 20",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 20\nO DESAFIO\nA educação precisa acompanhar IA, robótica, programação e idiomas.\n\nNOSSO COMPROMISSO\nModernizar escolas com conectividade, laboratórios, tecnologia,\neducação financeira e ensino de idiomas.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nEscolas conectadas.\nLaboratórios modernos.\nRobótica e programação.\nInglês ampliado.\n\nO futuro começa dentro da sala de aula.\n\nA modernização se apoia em fontes\nvinculadas à educação (Fundeb e receitas\nconstitucionais), no Tesouro Estadual, em\nprogramas federais de conectividade e\ntecnologia nas escolas e em emendas\nparlamentares para laboratórios. Parte pode\nser custeada por parcerias com empresas\nde tecnologia interessadas em formar\ntalentos locais."
+          },
+          {
+            "id": "compromisso-21",
+            "titulo": "COMPROMISSO 21",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 21\n\nUEA EM\nMUNICÍPIOS\nTODOS OS\n\nO conhecimento deve chegar\nonde as pessoas vivem."
+          },
+          {
+            "id": "compromisso-21-2",
+            "titulo": "COMPROMISSO 21",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 21\nO DESAFIO\nÉ preciso ampliar a presença e a capacidade transformadora da UEA.\n\nNOSSO COMPROMISSO\nExpandir polos, cursos presenciais e híbridos, laboratórios, pesquisa e\nextensão.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais presença da UEA.\nCursos ligados às vocações regionais.\nPesquisa fortalecida.\nOportunidades no interior.\n\nQuando a universidade chega ao\ninterior, o futuro chega junto.\n\nA expansão da UEA é sustentada pelo\nTesouro Estadual (a UEA é universidade do\nEstado), por recursos federais de educação\nsuperior e ciência e tecnologia e por\nemendas parlamentares para laboratórios e\npolos. O ensino híbrido permite chegar a\nmais municípios com um custo por aluno\nmenor do que o modelo tradicional."
+          },
+          {
+            "id": "compromisso-22",
+            "titulo": "COMPROMISSO 22",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 22\n\namazonas\nPARA O\n\nMUNDO\nO talento amazonense\nnão tem fronteiras."
+          },
+          {
+            "id": "compromisso-22-2",
+            "titulo": "COMPROMISSO 22",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 22\nO DESAFIO\nPoucos jovens têm acesso a intercâmbios e centros de excelência.\n\nNOSSO COMPROMISSO\nOferecer intercâmbios nacionais e internacionais a estudantes,\npesquisadores e jovens talentos.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais oportunidades internacionais.\nIdiomas.\nFormação de lideranças.\nIntercâmbio científico.\n\nQueremos que nossos jovens conheçam\no mundo e tragam o melhor dele.\n\nO programa será viabilizado pelo Tesouro\nEstadual e pelas fundações de amparo à\npesquisa e agências federais (Fapeam,\nCapes, CNPq), somados a parcerias com\nuniversidades e empresas e ao patrocínio\nprivado. Bolsa de intercâmbio é investimento\nde alto retorno: forma lideranças que voltam\npara desenvolver o próprio Estado."
+          },
+          {
+            "id": "preparar-os-amazonenses-para-os",
+            "titulo": "Preparar os amazonenses para os",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Preparar os amazonenses para os\nempregos que ainda vão surgir."
+          },
+          {
+            "id": "compromisso-23",
+            "titulo": "COMPROMISSO 23",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 23\n\nO DESAFIO\nA transformação tecnológica exige novas competências profissionais.\n\nNOSSO COMPROMISSO\nAmpliar cursos de IA, programação, robótica, indústria 4.0, energia, logística, turismo,\nsaúde, bioeconomia e economia criativa.\n\nO QUE VAI MUDAR\nNovos cursos tecnológicos.\nExpansão regional.\nParcerias com empresas e universidades.\nEnsino móvel e híbrido.\n\nPreparar pessoas para o futuro é o melhor\ninvestimento.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA ampliação se apoia na estrutura já\nexistente do CETAM, no Tesouro Estadual e\nem parcerias com o setor privado, que\nfinancia formação para a mão de obra que\nele mesmo vai contratar (Sistema S,\nindústria do Polo e empresas do novo ciclo).\nFormar dentro do Estado é mais barato do\nque importar mão de obra de fora."
+          },
+          {
+            "id": "compromisso-24",
+            "titulo": "COMPROMISSO 24",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 24\n\nconcursos\nPÚBLICOS\nAMAZONAS\nDO\n\nValorizar quem transforma vidas, cuida\nda nossa gente e produz conhecimento."
+          },
+          {
+            "id": "compromisso-24-2",
+            "titulo": "COMPROMISSO 24",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 24\nO DESAFIO\nA ampliação dos serviços de educação, saúde, seguranca e ensino superior exige recompor e\nfortalecer os quadros de profissionais, reduzindo a dependência de contratos temporários e\ngarantindo estabilidade e qualidade no atendimento à população.\n\nNOSSO COMPROMISSO\nRealizar um amplo programa de concursos públicos nas áreas\nessenciais do Estado: Educação, Saúde, Segurança Pública e UEA.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO QUE VAI MUDAR\nMais profissionais efetivos nas escolas, unidades de saúde, universidade e na segurança\nMenos contratos temporários e mais estabilidade nas equipes\nCarreiras valorizadas e serviços fortalecidos\nAtendimenro mais rápido e de mais qualidade para a população\n\nValorizar quem serve ao povo é\nvalorizar o próprio povo.\n\nCada concurso tem a sua fonte própria e\ngarantida. A Educação conta com o Fundeb\ne as receitas constitucionais vinculadas ao\nensino; a Saúde, com o piso constitucional\nda saúde e as transferências do SUS; a\nUEA e a Segurança, com o Tesouro\nEstadual. Em todas as áreas, as nomeações\nserão feitas de forma gradual e planejada,\nconforme a disponibilidade orçamentária e\nos limites da Lei de Responsabilidade Fiscal.\nServidor efetivo, no lugar do improviso\ntemporário, sai mais barato e entrega mais:\nmenos rotatividade, menos hora extra e\nmais qualidade no serviço."
+          },
+          {
+            "id": "cuidar",
+            "titulo": "cuidar",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "cuidar\nDAS\n\nPESSOAS\n“Nenhuma sociedade prospera\nquando deixa alguém para trás.”\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "mais-protecao",
+            "titulo": "Mais proteção.",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "Mais proteção.\nMais dignidade.\nMais oportunidades."
+          },
+          {
+            "id": "compromisso-25",
+            "titulo": "COMPROMISSO 25",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 25\n\nO DESAFIO\nMilhares de famílias enfrentam dificuldades para garantir alimentação, transporte,\nmedicamentos e outras necessidades básicas.\n\nNOSSO COMPROMISSO\nAmpliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando\naproximadamente 300 mil famílias. O programa será integrado à qualificação\nprofissional, ao primeiro emprego, ao empreendedorismo e à inclusão produtiva.\n\nO QUE VAI MUDAR\nAuxílio ampliado para R$ 250.\nCerca de 300 mil famílias beneficiadas.\nIntegração com emprego e qualificação.\nCadastro permanentemente atualizado.\n\nProteger quem mais precisa hoje também\nsignifica criar oportunidades para o amanhã.\n\nCOMO VAMOS PAGAR ESSA CONTA\nProteção social tem fonte própria e\nprioridade no orçamento. A ampliação será\nsustentada pelo Tesouro Estadual e por\nfundos estaduais de combate à pobreza e\nde assistência social, com o pagamento\nacompanhando\no\ncrescimento\nda\narrecadação do Estado.\nO reajuste será implantado de forma gradual\ne responsável, dentro da capacidade fiscal,\npara que o benefício seja permanente — e\nnão uma promessa de um só ano."
+          },
+          {
+            "id": "mais-cuidado-para",
+            "titulo": "Mais cuidado para",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "Mais cuidado para\nquem dedica a vida a\ncuidar."
+          },
+          {
+            "id": "compromisso-26",
+            "titulo": "COMPROMISSO 26",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 26\n\nO DESAFIO\nMães, pais e responsáveis reorganizam suas vidas para cuidar de pessoas com\ndeficiência ou TEA, muitas vezes deixando o mercado de trabalho.\n\nNOSSO COMPROMISSO\nCriar o Auxílio Atípico de R$ 500 mensais para famílias vulneráveis, integrado à Rede\nAmazonas de Cuidado Atípico.\n\nO QUE VAI MUDAR\nBenefício mensal de R$ 500.\nPrioridade na rede especializada.\nAtendimento integrado entre saúde, educação e assistência.\nApoio permanente às famílias.\n\nQuem dedica a vida a cuidar também\nmerece ser cuidado.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO Auxílio Atípico será custeado pelo Tesouro\nEstadual e por fundos estaduais de\nassistência\nsocial,\ncom\nprioridade\norçamentária dentro da política de proteção\nàs famílias.\nPor ser um público definido e prioritário, o\ncusto é previsível e planeável, o que permite\ngarantir o benefício de forma permanente e\nresponsável."
+          },
+          {
+            "id": "a-maior-rede",
+            "titulo": "A maior rede",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "A maior rede\nespecializada da\nRegião Norte."
+          },
+          {
+            "id": "compromisso-27",
+            "titulo": "COMPROMISSO 27",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 27\n\nO DESAFIO\nMuitas famílias ainda percorrem grandes distâncias para encontrar terapias e\natendimento especializado.\n\nNOSSO COMPROMISSO\nConstruir o Centro TEA Amazonas, ampliar os CAICs TEA, implantar centros regionais\nno interior e criar o maior Parque TEA das regiões Norte e Nordeste.\n\nO QUE VAI MUDAR\nCentro TEA Amazonas.\nNovos CAICs TEA.\nAtendimento regionalizado.\nParque TEA.\nCapacitação permanente de profissionais.\nNenhuma família enfrentará essa caminhada\nsozinha.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA rede será viabilizada pelo Tesouro\nEstadual e por recursos do SUS e do\nMinistério da Saúde, com apoio do Novo\nPAC e de emendas parlamentares para a\nconstrução e o equipamento dos centros.\nA expansão será feita por etapas,\npriorizando as regiões de maior demanda,\ndentro da capacidade de investimento do\nEstado."
+          },
+          {
+            "id": "o-estado-ao",
+            "titulo": "O Estado ao",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "O Estado ao\nlado de quem\nnunca desiste."
+          },
+          {
+            "id": "compromisso-28",
+            "titulo": "COMPROMISSO 28",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 28\n\nO DESAFIO\nMilhares de mulheres sustentam sozinhas suas famílias e enfrentam barreiras para\ntrabalhar, estudar ou empreender.\n\nNOSSO COMPROMISSO\nCriar uma política estadual para mães solo, com prioridade em creches, qualificação,\nmicrocrédito, orientação jurídica e atendimento psicossocial.\n\nO QUE VAI MUDAR\nMais vagas em creches.\nQualificação profissional.\nMicrocrédito.\nApoio psicológico.\nInclusão produtiva.\nQuando uma mãe avança, toda a família\navança junto.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA política combina recursos que já existem:\nTesouro Estadual, convênios federais de\nassistência e qualificação, linhas de\nmicrocrédito da agência de fomento do\nEstado e parcerias com os municípios para\nas creches.\nÉ uma política de articulação, mais do que\nde nova despesa: aproveita estruturas\nexistentes para chegar a quem mais precisa."
+          },
+          {
+            "id": "o-futuro-comeca",
+            "titulo": "O futuro começa",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "O futuro começa\nnos primeiros\nanos de vida."
+          },
+          {
+            "id": "compromisso-29",
+            "titulo": "COMPROMISSO 29",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 29\n\nO DESAFIO\nOs primeiros anos são decisivos para o desenvolvimento cognitivo, emocional e social\ndas crianças.\n\nNOSSO COMPROMISSO\nAmpliar a educação infantil e integrar saúde, nutrição, vacinação, proteção social e\napoio às famílias.\n\nO QUE VAI MUDAR\nInstalação das primeiras creches no interior.\nApoio aos municípios.\nIntegração entre saúde e educação.\nPrioridade à primeira infância.\n\nInvestir na infância é a maneira mais\ninteligente de construir o futuro.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA ampliação se apoia em fontes vinculadas\nà educação (Fundeb e receitas\nconstitucionais), no Tesouro Estadual e em\nconvênios federais para creches e primeira\ninfância, em regime de colaboração com os\nmunicípios, que são os responsáveis diretos\npela educação infantil. O Estado entra como\nparceiro e indutor."
+          },
+          {
+            "id": "respeito-para-quem-ajudou",
+            "titulo": "Respeito para quem ajudou",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "Respeito para quem ajudou\na construir o nosso Estado."
+          },
+          {
+            "id": "compromisso-30",
+            "titulo": "COMPROMISSO 30",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 30\n\nO DESAFIO\nO envelhecimento da população exige políticas permanentes de saúde, convivência,\nautonomia e qualidade de vida.\n\nNOSSO COMPROMISSO\nImplantar centros de convivência, atendimento domiciliar, inclusão digital, atividades\nfísicas e apoio às famílias cuidadoras.\n\nO QUE VAI MUDAR\nCentros de convivência regionais.\nAtendimento domiciliar.\nInclusão digital.\nAtividades esportivas e culturais.\nEnvelhecimento ativo.\nUma sociedade que respeita seus idosos\ndemonstra respeito pela própria história.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO programa será sustentado pelo Tesouro\nEstadual, por recursos da assistência social\ne da saúde e por convênios federais\nvoltados à pessoa idosa, com parceria dos\nmunicípios na oferta dos centros de\nconvivência. A implantação será gradual,\ncomeçando pelas regiões de maior\ndemanda."
+          },
+          {
+            "id": "nenhuma-familia",
+            "titulo": "Nenhuma família",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "Nenhuma família\ndeve conviver com\na fome."
+          },
+          {
+            "id": "compromisso-31",
+            "titulo": "COMPROMISSO 31",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 31\n\nO DESAFIO\nA insegurança alimentar ainda faz parte da rotina de muitas famílias.\n\nNOSSO COMPROMISSO\nExpandir restaurantes populares, cozinhas comunitárias, bancos de alimentos e\ncompras da agricultura familiar para os 62 municípios.\n\nO QUE VAI MUDAR\nAlimentação mais acessível para as famílias\nBancos de alimentos fortalecidos.\nMais compras da agricultura familiar.\nCombate à fome e ao desperdício.\n\nUm governo que cuida começa\ngarantindo alimento na mesa.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA expansão combina Tesouro Estadual,\nprogramas federais de segurança alimentar\ne as compras da agricultura familiar — que\nfazem o recurso circular duas vezes:\nalimenta quem precisa e gera renda para\nquem produz. As parcerias com os\nmunicípios reduzem o custo de operação de\ncada unidade."
+          },
+          {
+            "id": "moradia-digna",
+            "titulo": "Moradia digna",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "Moradia digna\ntransforma vidas."
+          },
+          {
+            "id": "compromisso-32",
+            "titulo": "COMPROMISSO 32",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 32\n\nO DESAFIO\nFamílias vivem em imóveis com problemas estruturais, falta de acessibilidade, riscos à\nsaúde e em áreas de risco, sujeitas a deslizamentos, alagamentos e outras situações\nque colocam suas vidas em perigo.\n\nNOSSO COMPROMISSO\nReformar moradias de baixa renda e construir habitações populares para famílias em\nsituação de vulnerabilidade e que vivem em áreas de risc. Nas reformas, priorizar\nmelhorias em telhados, instalações elétricas, banheiros, acessibilidade e\nhabitabilidade.\n\nO QUE VAI MUDAR\nReforma de moradias vulneráveis.\nConstrução de habitações populares para famílias que vivem em áreas de risco.\nAcessibilidade para idosos e PCDs.\nMais dignidade e segurança para as famílias.\n\nToda família merece viver em uma casa\nsegura, digna e longe de áreas de risco.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO programa será financiado com recursos\ndo Novo PAC, de programas habitacionais\nfederais, do Tesouro Estadual, de operações\nde crédito para habitação de interesse social\ne de parcerias com os municípios. As\nreformas serão priorizadas quando a\nrecuperação do imóvel for viável. Nos casos\nde famílias que vivem em áreas de risco ou\nem moradias sem condições de\nrecuperação, o Estado investirá na\nconstrução de habitações populares,\ngarantindo a solução mais adequada para\ncada realidade."
+          },
+          {
+            "id": "amazonas-4",
+            "titulo": "Amazonas",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "Amazonas\nDAS\n\nOPORTUNIDADES\n\n“Toda oportunidade muda uma vida. Milhares de\noportunidades mudam um Estado.”\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "a-oportunidade-que",
+            "titulo": "A oportunidade que",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "pdftotext",
+            "conteudo": "A oportunidade que\nmuda uma vida."
+          },
+          {
+            "id": "compromisso-33",
+            "titulo": "COMPROMISSO 33",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 33\n\nO DESAFIO\nJovens concluem os estudos, mas esbarram na exigência de experiência profissional.\n\nNOSSO COMPROMISSO\nCriar o maior programa estadual de inserção de jovens no mercado, integrando\nescolas, CETAM, universidades e empresas.\n\nO QUE VAI MUDAR\nEstágio e aprendizagem.\nParcerias com empresas.\nFormação alinhada ao mercado.\nIncentivo à contratação local.\n\nTodo jovem merece uma oportunidade\npara mostrar do que é capaz.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO maior financiador do primeiro emprego é o\nsetor produtivo. O Estado entra com\narticulação, incentivo e a estrutura que já\ntem (CETAM e escolas), somada a recursos\ndo Tesouro e do FAT/programas federais de\naprendizagem. É baixo custo público e alto\nretorno social: cada jovem empregado passa\na produzir, consumir e gerar arrecadação."
+          },
+          {
+            "id": "fortalecer-quem-impulsiona",
+            "titulo": "Fortalecer quem impulsiona",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "Fortalecer quem impulsiona\na economia do Amazonas."
+          },
+          {
+            "id": "compromisso-34",
+            "titulo": "COMPROMISSO 34",
+            "nivel": 1,
+            "paginaInicial": 77,
+            "paginaFinal": 77,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 34\n\nO DESAFIO\nA nova economia exige inovação, pesquisa e diversificação para manter a\ncompetitividade do Polo Industrial.\n\nNOSSO COMPROMISSO\nEstimular automação, IA, semicondutores, biotecnologia, economia digital e indústria\nde baixo carbono. E construir um novo Distrito Industrial para destravar investimentos\nque já existem: empresas com projetos aprovados que hoje não saem do papel por\nfalta de área e infraestrutura para instalar suas fábricas.\n\nO QUE VAI MUDAR\nMais inovação.\nNovas empresas e empregos qualificados.\nIntegração indústria-universidades.\nMaior competitividade.\nNovo Distrito Industrial, com terreno e infraestrutura prontos para quem já tem\nprojeto aprovado e precisa de espaço para construir e gerar emprego.\n\nFortalecer a Zona Franca é fortalecer o\nfuturo do Amazonas.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA Zona Franca não se sustenta com gasto\ndo Estado: ela se sustenta com investimento\nprivado e com o emprego e a arrecadação\nque gera. O papel do Governo é destravar e\natrair. O novo Distrito Industrial será\nviabilizado com áreas e infraestrutura do\nEstado, em parceria com a Suframa e o\nsetor privado, além de financiamento via\nfundos de desenvolvimento regional e\noperações de crédito para infraestrutura,\nquando cabíveis. Cada real público aplicado\naqui volta multiplicado em fábrica\nfuncionando, imposto pago e carteira\nassinada."
+          },
+          {
+            "id": "a-floresta-em-pe-tambem",
+            "titulo": "A floresta em pé também",
+            "nivel": 1,
+            "paginaInicial": 78,
+            "paginaFinal": 78,
+            "origem": "pdftotext",
+            "conteudo": "A floresta em pé também\ngera riqueza."
+          },
+          {
+            "id": "compromisso-35",
+            "titulo": "COMPROMISSO 35",
+            "nivel": 1,
+            "paginaInicial": 79,
+            "paginaFinal": 79,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 35\n\nO DESAFIO\nO Amazonas ainda exporta biodiversidade sem agregar valor suficiente.\n\nNOSSO COMPROMISSO\nCriar polos regionais de bioeconomia para açaí, castanha, óleos, cosméticos,\nfitoterápicos, alimentos e novos produtos.\n\nO QUE VAI MUDAR\nPolos regionais.\nPesquisa e inovação.\nCooperativas fortalecidas.\nEmprego e renda no interior.\n\nA floresta pode ser fonte de inovação e\nprosperidade\n\nCOMO VAMOS PAGAR ESSA CONTA\nA bioeconomia atrai fontes que outros\nsetores não alcançam: fundos ambientais e\nclimáticos nacionais e internacionais,\ninvestimento privado e crédito verde, além\ndo Tesouro Estadual para a estrutura de\npesquisa. É desenvolvimento que se paga\npreservando — e que traz recurso de fora\npara dentro do Amazonas."
+          },
+          {
+            "id": "compromisso-36-e",
+            "titulo": "= COMPROMISSO 36 E",
+            "nivel": 1,
+            "paginaInicial": 80,
+            "paginaFinal": 80,
+            "origem": "ocr",
+            "conteudo": "= COMPROMISSO 36 E\n* NOVAS*\nMATRIZES\nTRANSFORMAR\nPOTENCIAL MINERAL\nEM DESENVOLVIMENTO"
+          },
+          {
+            "id": "compromisso-36",
+            "titulo": "COMPROMISSO 36",
+            "nivel": 1,
+            "paginaInicial": 81,
+            "paginaFinal": 81,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 36\nO DESAFIO\nO Amazonas possui grandes reservas de gás natural e minerais estratégicos, mas\nprecisa transformar esse potencial em desenvolvimento, atraindo investimentos,\nagregando valor à produção, reduzindo custos para a indústria e gerando emprego e\nrenda, sempre com responsabilidade ambiental.\n\nNOSSO COMPROMISSO\nPromover o aproveitamento sustentável do gás natural e dos recursos minerais, como\npotássio, em Autazes, e as terras raras, em Apuí, por exemplo, fortalecendo as\nmatrizes econômicas do Amazonas, estimulando novas cadeias produtivas, a geração\nde energia, a industrialização, a inovação e o desenvolvimento regional, com respeito\nao meio ambiente e às comunidades.\n\nO QUE VAI MUDAR\nMais investimentos e novas oportunidades de negócios, com empregos e geração de renda.\nEnergia mais competitiva para impulsionar a indústria.\nFortalecimento da economia regional e dos municípios produtores.\nDesenvolvimento sustentável com responsabilidade ambiental.\n\nTransformar nossas riquezas naturais em oportunidades,\nemprego e qualidade de vida para quem vive no Amazonas.\n\nCOMO VAMOS PAGAR ESSA CONTA\nOs investimentos nas cadeias do gás natural\ne dos minerais estratégicos são realizados,\nprincipalmente, pela iniciativa privada, com\naportes de bilhões de reais. Ao Estado cabe\ngarantir segurança jurídica, licenciamento\nambiental responsável e regras claras para\natrair investimentos e assegurar que essa\nriqueza gere desenvolvimento para o\nAmazonas. O retorno para a população virá\npor meio da geração de empregos, da\nampliação da atividade econômica, da\narrecadação\nde\ntributos\ne\ndas\ncompensações financeiras (royalties e\nCFEM), fortalecendo os municípios\nprodutores e criando novas receitas para\ninvestir em saúde, educação, segurança e\ninfraestrutura."
+          },
+          {
+            "id": "produzir-mais-preservar-sempre",
+            "titulo": "Produzir mais. Preservar sempre.",
+            "nivel": 1,
+            "paginaInicial": 82,
+            "paginaFinal": 82,
+            "origem": "pdftotext",
+            "conteudo": "Produzir mais. Preservar sempre."
+          },
+          {
+            "id": "compromisso-37",
+            "titulo": "COMPROMISSO 37",
+            "nivel": 1,
+            "paginaInicial": 83,
+            "paginaFinal": 83,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 37\n\nO DESAFIO\nO produtor enfrenta dificuldades de assistência, crédito, logística e mercado.\n\nNOSSO COMPROMISSO\nAmpliar assistência técnica, mecanização, crédito, regularização, armazenagem,\nagroindústria e vicinais.\n\nO QUE VAI MUDAR\nMais produtividade.\nAgricultura familiar fortalecida.\nMais agroindústrias.\nRenda no interior.\n\nQuem produz alimento merece um Estado\nparceiro.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO agro se financia com crédito rural (Pronaf\ne bancos de fomento), com o Tesouro\nEstadual na assistência técnica e com\nconvênios federais para mecanização e\narmazenagem. É investimento que retorna\nrápido: mais produção significa mais renda\nno interior e mais alimento na mesa,\nreduzindo até o custo de outros programas\ndo Estado."
+          },
+          {
+            "id": "e-2",
+            "titulo": "e",
+            "nivel": 1,
+            "paginaInicial": 84,
+            "paginaFinal": 84,
+            "origem": "pdftotext",
+            "conteudo": "e\nd\ne\nt\nn\no\nf\no\nm\no\nc\nO rio\n.\ne\nd\na\nid\nr\ne\np\ns\no\nr\np\nemprego e"
+          },
+          {
+            "id": "compromisso-38",
+            "titulo": "COMPROMISSO 38",
+            "nivel": 1,
+            "paginaInicial": 85,
+            "paginaFinal": 85,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 38\n\nO DESAFIO\nO Amazonas possui um dos maiores potenciais pesqueiros do mundo, mas ainda\nenfrenta dificuldades para agregar valor à produção, ampliar o beneficiamento, garantir\ninfraestrutura adequada e abrir novos mercados para o pescado produzido no estado.\n\nNOSSO COMPROMISSO\nFortalecer a cadeia do pescado, com investimentos em piscicultura, pesca artesanal e\nmanejo sustentável, ampliação da infraestrutura de beneficiamento e armazenamento,\nincentivo à produção de ração, assistência técnica aos produtores, certificação\nsanitária e abertura de novos mercados para comercialização e exportação.\n\nO QUE VAI MUDAR\nExpansão da piscicultura em todas as regiões do estado.\nImplantação e fortalecimento de frigoríficos e unidades de beneficiamento.\nMais assistência técnica e acesso à tecnologia para pescadores e piscicultores\nMais empregos, renda e desenvolvimento no interior.\n\nNossos rios podem gerar muito mais\noportunidades.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA cadeia do pescado combina crédito rural e\nda agência de fomento, investimento privado\nnos frigoríficos e no beneficiamento, e\nTesouro Estadual na assistência técnica e\nna certificação. O Estado organiza e\ndestrava; o setor produtivo investe e\nemprega. O resultado é renda no interior e\num produto amazonense pronto para o\nmercado nacional e internacional"
+          },
+          {
+            "id": "transformar-talento",
+            "titulo": "Transformar talento",
+            "nivel": 1,
+            "paginaInicial": 86,
+            "paginaFinal": 86,
+            "origem": "pdftotext",
+            "conteudo": "Transformar talento\nem oportunidades."
+          },
+          {
+            "id": "compromisso-39",
+            "titulo": "COMPROMISSO 39",
+            "nivel": 1,
+            "paginaInicial": 87,
+            "paginaFinal": 87,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 39\n\nO DESAFIO\nPequenos negócios enfrentam barreiras de crédito, capacitação e mercado.\n\nNOSSO COMPROMISSO\nAmpliar microcrédito, qualificação, inovação, incubação, compras governamentais e\ndigitalização.\n\nO QUE VAI MUDAR\nMais crédito.\nCapacitação.\nCompras públicas.\nApoio à inovação.\n\nTodo sonho empreendedor merece uma\noportunidade para crescer.\n\nCOMO VAMOS PAGAR ESSA CONTA\nO motor aqui é o crédito, não a despesa:\nlinhas de microcrédito da agência de\nfomento do Estado, parcerias com o Sebrae\ne o sistema financeiro, e o poder de compra\ndo próprio Governo direcionado aos\npequenos negócios locais. O Tesouro entra\nsobretudo na qualificação. É dinheiro que\nvolta: o microcrédito é pago de volta e\nreempresta a outro empreendedor."
+          },
+          {
+            "id": "compromisso-40e",
+            "titulo": "= COMPROMISSO 40E",
+            "nivel": 1,
+            "paginaInicial": 88,
+            "paginaFinal": 88,
+            "origem": "ocr",
+            "conteudo": "= COMPROMISSO 40E\nTURISMO *\nE CULTURA\nDESENVOLVIMENTO QUE\nGERA EMPREGO E RENDA"
+          },
+          {
+            "id": "compromisso-40",
+            "titulo": "COMPROMISSO 40",
+            "nivel": 1,
+            "paginaInicial": 89,
+            "paginaFinal": 89,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 40\nO DESAFIO\nO Amazonas reúne um dos maiores potenciais turísticos e culturais do mundo. Da\nfloresta aos rios, dos festivais populares às tradições indígenas, cada município possui\nriquezas capazes de gerar emprego, renda e desenvolvimento. No entanto, esse\npotencial ainda é pouco explorado por falta de infraestrutura, promoção, qualificação e\ninvestimentos permanentes que integrem cultura, turismo e economia criativa.\n\nNOSSO COMPROMISSO\nTransformar o turismo e a cultura em uma das principais matrizes econômicas do\nAmazonas, promovendo os destinos turísticos dos 62 municípios, fortalecendo\nfestivais, manifestações culturais e a economia criativa. Ampliar a infraestrutura\nturística , executando obras estratégicas, como o novo Bumbódromo de Parintins.\n\nO QUE VAI MUDAR\nPlano Estadual de Desenvolvimento do Turismo para os 62 municípios.\n• Fortalecimento dos festivais culturais e manifestações tradicionais em todo o Amazonas.\n• Mais infraestrutura turística, sinalização, acessibilidade e apoio aos destinos do interior.\n• Promoção do ecoturismo, turismo de pesca esportiva, turismo de aventura, turismo cultural,\ngastronômico e de base comunitária.\n• Mais visitantes, mais empregos e mais renda para as famílias amazonenses.\nO Amazonas tem a maior riqueza natural e cultural do\nBrasil. Vamos transformar esse patrimônio em\noportunidades para quem vive aqui.\n\nCOMO VAMOS PAGAR ESSA CONTA\nOs investimentos serão viabilizados por\nrecursos do Tesouro Estadual, operações de\ncrédito para infraestrutura, Novo PAC,\nrecursos federais destinados ao turismo e à\ncultura, fundos de desenvolvimento,\nemendas parlamentares, leis de incentivo,\npatrocínio da iniciativa privada e parcerias\ncom os municípios. O turismo e a cultura\nmovimentam cadeias produtivas inteiras —\nhotelaria, transporte, comércio, gastronomia,\nartesanato e serviços — fazendo com que\ncada investimento retorne em forma de\nemprego,\nrenda,\narrecadação\ne\ndesenvolvimento regional."
+          },
+          {
+            "id": "compromisso",
+            "titulo": "COMPROMISSO",
+            "nivel": 1,
+            "paginaInicial": 90,
+            "paginaFinal": 90,
+            "origem": "ocr",
+            "conteudo": "COMPROMISSO\npelcil\nAMAZONAS\nEM MOVIMENTO"
+          },
+          {
+            "id": "compromisso-41",
+            "titulo": "COMPROMISSO 41",
+            "nivel": 1,
+            "paginaInicial": 91,
+            "paginaFinal": 91,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 41\nO DESAFIO\nO Amazonas possui enorme potencial esportivo, mas ainda enfrenta a falta de infraestrutura, de espaços\nadequados para a prática esportiva, de incentivo à formação de atletas e de oportunidades permanentes,\nespecialmente no interior. O esporte precisa ser tratado como política pública de saúde, educação, inclusão\nsocial e geração de oportunidades.\n\nNOSSO COMPROMISSO\nTransformar o esporte em uma política pública permanente, garantindo acesso à prática\nesportiva em todos os municípios do Amazonas, fortalecendo o esporte educacional, comunitário\ne de alto rendimento, promovendo inclusão social, saúde, qualidade de vida e formação de\nnovos talentos.\n\nO QUE VAI MUDAR\n* Implantação dos programas Muito Mais Pelci e Amazonas em Movimento, com atividades\nesportivas permanentes para crianças, jovens, adultos e idosos.\n* Construção, reforma e modernização de centros esportivos, ginásios, quadras, campos e\nespaços públicos de esporte e lazer na capital e no interior.\n* Fortalecimento do esporte escolar, ampliando competições estudantis e programas de\niniciação esportiva.\n* Incentivo ao esporte de alto rendimento e apoio à participação de atletas amazonenses em\ncompetições estaduais, nacionais e internacionais.\nO esporte transforma vidas e precisa ser tratado como\npolítica pública de saúde, educação, inclusão social e\ngeração de oportunidades.\n\nCOMO VAMOS PAGAR ESSA CONTA\nOs investimentos serão realizados por meio\nde recursos próprios do Estado, convênios\ncom o Governo Federal, emendas\nparlamentares, parcerias com prefeituras,\nfederações esportivas e iniciativa privada,\nalém da captação de recursos por meio das\nleis de incentivo ao esporte. Também serão\npriorizados investimentos na recuperação e\nmelhor utilização da infraestrutura esportiva\njá existente, reduzindo custos e ampliando o\nacesso da população."
+          },
+          {
+            "id": "compromisso-42g",
+            "titulo": "COMPROMISSO 42G",
+            "nivel": 1,
+            "paginaInicial": 92,
+            "paginaFinal": 92,
+            "origem": "ocr",
+            "conteudo": "COMPROMISSO 42G\nMEIO\nAMBIENTE\nCLIMA E\nPOVOS DA\nFLORESTA"
+          },
+          {
+            "id": "compromisso-42",
+            "titulo": "COMPROMISSO 42",
+            "nivel": 1,
+            "paginaInicial": 93,
+            "paginaFinal": 93,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 42\nO DESAFIO\nTransformar o Amazonas em referência mundial em desenvolvimento sustentável, conciliando a preservação\nda floresta com a valorização de quem vive nela, fortalecendo a adaptação às mudanças climáticas e\nprotegendo a população dos impactos das cheias e das secas extremas.\n\nNOSSO COMPROMISSO\nImplantar uma política estadual de desenvolvimento sustentável que una preservação ambiental,\ngeração de renda e proteção das populações que vivem da floresta.\n\nO QUE VAI MUDAR\n* Plano Permanente de Enfrentamento às Cheias e Estiagens, com ações preventivas e\nrespostas rápidas às comunidades atingidas.\n* Fortalecimento da Defesa Civil, com ampliação do monitoramento climático, sistemas de\nalerta e logística humanitária para o interior.\n* Apoio à produção sustentável, ao manejo florestal, à pesca, ao extrativismo e à bioeconomia,\ngerando emprego e renda sem destruir a floresta.\n* Infraestrutura adaptada às mudanças climáticas, reduzindo os impactos de eventos extremos\nsobre comunidades, estradas e serviços públicos.\nNão existe floresta em pé sem gente vivendo com\ndignidade. O maior aliado da preservação é o povo que\nconhece, protege e vive da floresta.\n\nCOMO VAMOS PAGAR ESSA CONTA\nAmpliação da captação de recursos\nnacionais e internacionais destinados à\npreservação ambiental e ao enfrentamento\ndas mudanças climáticas. Fortalecimento do\nFundo Estadual de Meio Ambiente e dos\nmecanismos de pagamento por serviços\nambientais. Parcerias com o Governo\nFederal, organismos multilaterais, setor\nprivado e instituições de pesquisa para\nfinanciar projetos de adaptação climática e\ndesenvolvimento sustentável."
+          },
+          {
+            "id": "compromisso-43",
+            "titulo": "COMPROMISSO 43",
+            "nivel": 1,
+            "paginaInicial": 94,
+            "paginaFinal": 94,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 43\n\namazonas\nOBRAS\nEM\n\nO maior programa de\ninfraestrutura municipal\nda história do Estado."
+          },
+          {
+            "id": "compromisso-43-2",
+            "titulo": "COMPROMISSO 43",
+            "nivel": 1,
+            "paginaInicial": 95,
+            "paginaFinal": 95,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 43\nO DESAFIO\nMunicípios enfrentam ruas sem pavimentação, drenagem insuficiente, vicinais precárias e\ninfraestrutura logística deficiente.\n\nNOSSO COMPROMISSO\nExecutar um amplo programa de asfaltamento urbano nos 62\nmunicípios, recuperar rodovias e vicinais, modernizar portos, terminais,\naeroportos e pontes e apoiar a BR-319 em articulação com a União.\n\nO QUE VAI MUDAR\nAsfaltamento urbano nos 62 municípios.\nRodovias e vicinais recuperadas.\nPortos e terminais modernizados.\nAeroportos regionais.\nPontes, drenagem e mobilidade.\nArticulação pela BR-319.\n\nCada obra deve aproximar pessoas,\noportunidades e desenvolvimento.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA infraestrutura se paga com o\ndesenvolvimento que ela mesma gera. As\nfontes são conhecidas e responsáveis:\nTesouro Estadual, Novo PAC, convênios\nfederais e emendas, operações de crédito, o\nFundo Estadual de Infraestrutura, parcerias\ncom os municípios e concessões, onde\ncouberem. Cada obra, dentro da\nresponsabilidade fiscal e da capacidade de\ninvestimento do Estado."
+          },
+          {
+            "id": "compromisso-44",
+            "titulo": "COMPROMISSO 44",
+            "nivel": 1,
+            "paginaInicial": 96,
+            "paginaFinal": 96,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 44\n\nÁGUA BOA\nPARA\n\nTODOS\n\nPorque saúde também\ncomeça na torneira."
+          },
+          {
+            "id": "compromisso-44-2",
+            "titulo": "COMPROMISSO 44",
+            "nivel": 1,
+            "paginaInicial": 97,
+            "paginaFinal": 97,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO 44\nO DESAFIO\nComunidades urbanas, rurais e ribeirinhas ainda convivem com acesso irregular à água tratada e\nsaneamento.\n\nNOSSO COMPROMISSO\nUniversalizar gradualmente o acesso à água segura, com sistemas\nsimplificados, poços, tratamento, soluções ribeirinhas e apoio técnico e\nfinanceiro aos municípios.\n\nO QUE VAI MUDAR\nMais água tratada.\nSistemas adaptados ao interior.\nSaneamento ampliado.\nMenos doenças de veiculação hídrica.\nApoio aos municípios.\n\nÁgua limpa é saúde, dignidade e futuro.\n\nCOMO VAMOS PAGAR ESSA CONTA\nA universalização é viabilizada pelo Novo\nPAC e pelo marco legal do saneamento, por\nrecursos federais e fundos socioambientais,\npelo Tesouro Estadual e por operações de\ncrédito, com parceria dos municípios e da\ncompanhia de saneamento. Investir em\nágua tratada reduz a conta da saúde: menos\ndoença de veiculação hídrica é menos\ninternação paga pelo Estado"
+          },
+          {
+            "id": "governo",
+            "titulo": "governo",
+            "nivel": 1,
+            "paginaInicial": 98,
+            "paginaFinal": 98,
+            "origem": "pdftotext",
+            "conteudo": "governo\nENTREGA\nRESULTADOS\nQUE\n\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "o-desafio",
+            "titulo": "O DESAFIO",
+            "nivel": 1,
+            "paginaInicial": 99,
+            "paginaFinal": 99,
+            "origem": "pdftotext",
+            "conteudo": "O DESAFIO\nA população quer saber o que foi prometido, o que está sendo executado e quais resultados estão\nsendo alcançados. Um governo moderno precisa prestar contas, medir resultados e corrigir rumos.\n\nNOSSO COMPROMISSO\nImplantar um modelo de gestão baseado em metas, indicadores,\ntransparência e avaliação permanente. Todos os compromissos terão\ncronograma, metas anuais e acompanhamento público.\n\nO QUE VAI MUDAR\nPlano de Metas 2027-2030.\nPainel público de obras, programas e indicadores.\nGestão orientada por resultados.\nAvaliação periódica das políticas públicas.\nMais transparência e participação social.\n\nGovernar é assumir compromissos.\nLiderar é entregá-los."
+          },
+          {
+            "id": "compromissos",
+            "titulo": "COMPROMISSOS",
+            "nivel": 1,
+            "paginaInicial": 100,
+            "paginaFinal": 100,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSOS\nUM SÓ PROPÓSITO\n\nMELHORAR A VIDA DAS PESSOAS\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          },
+          {
+            "id": "o-maior-patrimonio-do",
+            "titulo": "O maior patrimônio do",
+            "nivel": 1,
+            "paginaInicial": 101,
+            "paginaFinal": 101,
+            "origem": "pdftotext",
+            "conteudo": "O maior patrimônio do\nAmazonas não está debaixo\nda terra, nem dentro da\nfloresta. O maior patrimônio\ndo Amazonas são as\npessoas. É por elas. É para\nelas. Que vamos governar.\n\nRoberto Cidade\nO AMAZONAS DO FUTURO JÁ COMEÇOU\n• PROJETO AMAZONAS 2035"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "86fb6b284d99ae164d56ef01885a40ea69b341f9a63c56a007519cabe416457e"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ba5aeec3e1f0d069b13d36b4b40e1cab69b4524af6dce742a7b4fea668037dbe"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "038eb44614ff1e28200ebc45a78c0d425af664b9c80b0f9ed5f0d0c167498072"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "bf20e017545931101e42c43754901db32d2524d0847054808efd7aaafd809e27"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e3f496ad444f564a9dab84bcaae93a1a1086dd4f2ec6309a94822b8dfe093454"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "dfb84715d0d4ed49e28d04e4429092d1ac99615b7566770a57ec17eaa6feb4d4"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "a2b3271bdb2c9341adf278bb1a4ea8fc939c0c208e55fac60eea2577f3352d85"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "28b7426b3ce579bb7b7870e48cbcd9ffa435af6f5bad815a9818cfcff0da4334"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "af77f7466f4ecd628ca8867b2c8d066dee3bc3e0a2ad6c88d6e1f8d51649677d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "43745a7c3fce7dc79c41c2253c1bcd785b898e5b51112f9b441c9ecce94af893"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "762d8348d77470ee96e8821bbc331b0eae6790cbbdf8b61de6b4d10a66bdf9c8"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "ba4636d156e0cff1000a1434b0f0a45419871f40f5628355490f3b4a34fa2111"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "2171041763761b7b3400be146768339f709012c4dcc40e98b2d66984ecbfccf9"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "d5ff168e77bfe795b263dc2468c9339b9d0d9ab3766a31b744aab4e7ed73bd85"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f4afd7a7102e00597abd739a4dee98c69c3f845eb1aa71a50c641e120f58698e"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "3d0a3676c0dae39464542fc3c0fef84c806d2e1005f1fe682be2104ee239a9fc"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "3f46ebd39b6de241f563ce1ca9cd59f657bac419e8bcde31c768cc8b9c4c1685"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "dbc8c02b056c990e0fd1440d347a4432912a61ff107d5f641f4ef20d412c7795"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "f2c07b00c83c595d296b43fb99f3d7a11a8cbfb709b65172d1fbab29b8760538"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "98eafac91cccc85a0f5cc137058161ea27f6d542512a46056353fbd1d5c120f7"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "bbcb789ad0048c7d7b042eed1a64fac4e8a83ed9f2e73a5fe8d0398bd09be946"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "a7905a76621b39eee61aa1b21611df19b9e2f36e312330f0551af9ea670570ab"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "67c1f31f665612578cf5a4c291ab17e3a87b7a5a7f1d86d33e3fecc556ca439a"
+          },
+          {
+            "pagina": 24,
+            "origem": "ocr",
+            "textSha256": "bd3548d43b498537a30718efd3cfddcc3610e3e22d0ce742b3a551b9c85b35ca"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "7234a22177d8ffa14c6f4b58936d99d84609822445e16d41b3af1017c72590fb"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "6e91878e43a29ed91ee18f2f4f52b74d4a8c52d031fb1ff4dff32730b58a8b49"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "908a574f3030ea70ac46b706144a3dcab7dfd91b23e8c55b4e1f798f3479de31"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "fb5370d82107fed787284c38c3235d009ed04ac39b39793d5249c20dd04d902c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "055983562519a686bed4da03758de065d80b1a72125b8002e1952da2e42844d4"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "2ad6285f404f82f03190981eb70c14dfc73c103da698a901dbe87a4e8e3ce927"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "e412e4c25eafdba9ccd088e5d63dbfd392af4ccfad5d49795ee1e71025640ca0"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "85888eabf4ce27fc28a11da6c0e1fc33c032c718b0d3934636eb63509277ab06"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "d3f1593eb7e0fb3c80fbc43651fc005f6509e8e62ce4897ebbad5761ef9d4f91"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "3cebd986ca28274c4a489c5eb64aef865334fda07b4641eafaebdd7b98f45be2"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "3a7a7cbdabc8662809b1d4f46c6beeb6714cec1c52f39ce688f94ec9ab5e860d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "0bf4e3fb51f0bc3d8f65cdda679986a8a2084eba8bc925a5639acd2aefe0a956"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "9bd6e416f4f925475d55a1e7830da7a7a887bd2c49b59a37c607a6497e3ef768"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "8b8274a60cfca7b2d6e345375fe99086dd5fc692d93547f48ff72501d3c2aae2"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "a62bdb7cdfc351a172a33fd0b7bdd027dec87501746b123bca60a97d8c5f142b"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "8d02f18c1c8c7ce1b70635f66c1b3daf2f2be23906fb6b4c131f515849580bfc"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "3284d605551be34a800e3935014bf30fe97c228f864687299d86287fc8167634"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "d14a0847c5e8faa28e938d56eb11c5519481fc3bfdf753d8ced819e40f0e7860"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "69ba463e6e6ed2a83404e8b028cef42b329b027d217851954cf2f3f051b04cae"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "d923edaa7d24efd39332e47993e29994aee7683c1e3200af87f0cae61f3a5899"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "a4e27c5b769856d318085ecc14f2127d5a7649f38901bc8826abcbf91da0067d"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "c968f84205c43712294a594d61b80a9c7f18609893715d1add9d89f685af8c62"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "76824c6c0646c4a3305af18c15443fe5eecc502389acc1630b5fc2a7a8f29fc8"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "73c1f94628b03339af06a8289b163ae37cfe941487274f822259afe2df81bacf"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "7d4e1aa2e44ef7c58c8defad8c9a327365d25795e555cacf6b44f435431ba999"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "1e3f3f5f587a02a9c0b28131f11e759d706c3d2ef14b556b6e06b72c90e27b24"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "a963b3492de15e3c5a63c8d68dae0668fba7dbb45758ace0d2e654a9c071ece1"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "2682ad36f128f6c84b107edb43b883a68bbc64034dbce0030ff983fdaa09c436"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "0a6743f0a094d918baacc5f7b50db79bd15b17ee72135c5c90c9d829cd362983"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "d92fb4d784afb382f322faaa35ff227777966e3b98366cddd8e5c36e54577d85"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "3b67c66f9aa64bb42b075c741a11dfabeb616b2feed011a9b201bc2854937964"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "cd24d98ae8525bba03abdbd17375338f165b3be236d9201893a41644cfc70ef8"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "f48cfc3c6662ef1670a216cf27c3609e8ec61fac0e38f1ab24beed9327d29632"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "6cc1132f838ba06f02a82c214de846c773e20bc3ddd1984584289a62db88eb9f"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "262f52ed39d05086f0d90f7ce7b183b561fd7044e3fcc8e9a5c799c9010b7d50"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "c77fa9567fad159e341e88fb01d48101f06cf8730905c3a98913e6783fbc1f34"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "8e3ff57938fe3eafdc50a0c4cf415b5f12b835332db3eb066b475da2d49d3911"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "58fd1dfd56d117fa738fc41549e9b107731f648aa35e4e51430ed94303167349"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "ac2484db4408fd1fd0fc750cb4dce87fe2107b090f03e8ef197cf5db13030df9"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "63ae36efd42a92d02c80ba77c03199218a329672170215a3fe827965f84b9172"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "a3b275cc135a3cb1c897a594b8eaeb39e11076aa9ebb14470cdee77264dc7532"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "4b8bd29e2d853f602415e7b1927189fe3dc15aa901d99aa38b3c973a3b070155"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "1127a779dbd3883cc2b5558161a28e6e66ce564a66ad654812798826916a4d24"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "f19e6b2ca5f8bf23e7cdc60f31236ba4da11a51c4f0a388c11341ccd79e6e5f0"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "fe00c7809d1d6f7c553ce6ad0483512fd0be35f3477bdf4961f9f562aa8616cc"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "3a1e6f097c294c7966d6eaedee190b4b972babb4043f2aaa4f51060561a00bcf"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "eb71d3b617cdaf4768aecf8e2467e626cc516470174a6e345b71d459446a4b64"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "de4318a56740166edd4bde7a7be04a6a5fa53f76930595b5940ef292640fc21d"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "b6b01ea06365925e36784249517c6349fd6bc9f6961b9393bd2ea1bc74587855"
+          },
+          {
+            "pagina": 74,
+            "origem": "pdftotext",
+            "textSha256": "a4ec2b5ff218008baa5b453df73ec1d30b3df8d7d33a400eebe513cb8f1dea59"
+          },
+          {
+            "pagina": 75,
+            "origem": "pdftotext",
+            "textSha256": "d071fe41d146dc57278e8f385963bed0af919b9a1b912839342ab4d5b2ebc838"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "9f62527df3fc70fe359fbae6ed8b67b4e2aafa2a735fa214f341878cc49bf84e"
+          },
+          {
+            "pagina": 77,
+            "origem": "pdftotext",
+            "textSha256": "0fb074d877af7e31c892bb0fe6003a04dca4ccf85cf334a14f14fc81ae7a106e"
+          },
+          {
+            "pagina": 78,
+            "origem": "pdftotext",
+            "textSha256": "064649a35e876d8408418a8abbed608cb24c51c16577a636cdd66cbb260b7b9b"
+          },
+          {
+            "pagina": 79,
+            "origem": "pdftotext",
+            "textSha256": "c06534e5d2cc24bc1fc8ddaa51636851ad90a52c63083e87b3543f25bc830a8a"
+          },
+          {
+            "pagina": 80,
+            "origem": "ocr",
+            "textSha256": "c9905485f6f9cc65bc3d4b6f5b2e86e316f2f800b987b3a0a226b4ffec940b71"
+          },
+          {
+            "pagina": 81,
+            "origem": "pdftotext",
+            "textSha256": "abe0b4fcf994381ca43e92d2647a8f4703c48be01bc5f39f87e57a7aff79f039"
+          },
+          {
+            "pagina": 82,
+            "origem": "pdftotext",
+            "textSha256": "484f37ddc036ca372d774114dd497b1d2a5f43409f4d5bb76e1f5e1a6397a039"
+          },
+          {
+            "pagina": 83,
+            "origem": "pdftotext",
+            "textSha256": "f60496cd7821b527b763c924376eae8a3b5c8584cba52581bc3c61fc98b40c8a"
+          },
+          {
+            "pagina": 84,
+            "origem": "pdftotext",
+            "textSha256": "a4dbfbd1a8c8149887a8c63e34ced6fb5146e4b01a5a2b02d471f2bb11666112"
+          },
+          {
+            "pagina": 85,
+            "origem": "pdftotext",
+            "textSha256": "da6d463431691a2b5681d90f1a575cf6a3c70044dc22c9acb68dda7d732fdd36"
+          },
+          {
+            "pagina": 86,
+            "origem": "pdftotext",
+            "textSha256": "caf052a51490d61a26155bc7cc3388c669f5febd18dd5a264947001be286a995"
+          },
+          {
+            "pagina": 87,
+            "origem": "pdftotext",
+            "textSha256": "96b066236b7638f65c063d810459ce90d065d142b8100808f70027c6b1cccbfe"
+          },
+          {
+            "pagina": 88,
+            "origem": "ocr",
+            "textSha256": "dda09997e53a2ad739c98dbc3cc9b3f66c8ee4b761ed4e3332588cb0d889e884"
+          },
+          {
+            "pagina": 89,
+            "origem": "pdftotext",
+            "textSha256": "79fcdb5d1614efb33b86a83ce5884931de83f7c077c34dabe8ee470553707110"
+          },
+          {
+            "pagina": 90,
+            "origem": "ocr",
+            "textSha256": "c1ca6d44a7636bf293718285c69735ef5aadf5244b2d81a646d68861d04fef46"
+          },
+          {
+            "pagina": 91,
+            "origem": "pdftotext",
+            "textSha256": "68300ab629d02e07790b492807239080daf4515d6eded38d08cc018beb2d1e35"
+          },
+          {
+            "pagina": 92,
+            "origem": "ocr",
+            "textSha256": "5e201008a0c647940772ce6d31d5ea22db7fe0a9cb80ceb640bd0122d2ce3140"
+          },
+          {
+            "pagina": 93,
+            "origem": "pdftotext",
+            "textSha256": "a194d77d0cd6273aef113a792965f66c2f1deb4f98c0892edf350f3fff6730cc"
+          },
+          {
+            "pagina": 94,
+            "origem": "pdftotext",
+            "textSha256": "8be023c0fe008122f6654b0287028e87b316126cd64f98fa6860092aceb841ca"
+          },
+          {
+            "pagina": 95,
+            "origem": "pdftotext",
+            "textSha256": "44c445a19f19b37f21d1da361d27bfd9714b44694dd16a101d9b60401f0aaadb"
+          },
+          {
+            "pagina": 96,
+            "origem": "pdftotext",
+            "textSha256": "1aefc2b06a9069b003cc7fcb1224287933a14da30398d1598fc3104cf0b94a69"
+          },
+          {
+            "pagina": 97,
+            "origem": "pdftotext",
+            "textSha256": "d1ace9b61672012d1f319a82d71ba5fd342ee24711ea089b652961d3c2f83ace"
+          },
+          {
+            "pagina": 98,
+            "origem": "pdftotext",
+            "textSha256": "00b0273b5624dd96fd05cf3862a93e5612ba78349605a6226ce35704c5d69b4c"
+          },
+          {
+            "pagina": 99,
+            "origem": "pdftotext",
+            "textSha256": "73b0102bf82a6ba43d436d1788a2a1c6a5e7951b2085fd2d6370e431e7eb914f"
+          },
+          {
+            "pagina": 100,
+            "origem": "pdftotext",
+            "textSha256": "4379f1cd9f0b060da88071cc0632b35253d99e2ae15c3a7aad4fb0ab604e2ca5"
+          },
+          {
+            "pagina": 101,
+            "origem": "pdftotext",
+            "textSha256": "1372f8d58850f9621dd545ed163cedb11e90b90c835a4d4f3a5b913bc8e9ea66"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na segurança pública, o plano propõe integrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e serviços públicos. O documento prevê expandir câmeras inteligentes, leitura de placas, drones, análise de imagens e integração policial. Na saúde, o plano propõe ampliar as carretas da saúde para atendimento itinerante na capital e região metropolitana. O texto também planeja conectar hospitais, unidades e barcos-hospital a especialistas da capital e da UEA. Na educação, o plano prevê modernizar escolas com conectividade, laboratórios, tecnologia, educação financeira e ensino de idiomas. Na proteção social, o documento propõe ampliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando aproximadamente 300 mil famílias. No desenvolvimento econômico, o plano prevê criar polos regionais de bioeconomia para açaí, castanha, óleos, cosméticos, fitoterápicos, alimentos e novos produtos. Na infraestrutura, o plano prevê executar um amplo programa de asfaltamento urbano nos 62 municípios.",
+    "frases": [
+      {
+        "texto": "Na segurança pública, o plano propõe integrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 7,
+            "trecho": "Integrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e serviços públicos."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê expandir câmeras inteligentes, leitura de placas, drones, análise de imagens e integração policial.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 9,
+            "trecho": "Expandir câmeras inteligentes, leitura de placas, drones, análise de imagens e integração policial."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano propõe ampliar as carretas da saúde para atendimento itinerante na capital e região metropolitana.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 28,
+            "trecho": "Ampliar a quantidade de carretas da saúde para atendimento itinerantes na capital e região metropolitana"
+          }
+        ]
+      },
+      {
+        "texto": "O texto também planeja conectar hospitais, unidades e barcos-hospital a especialistas da capital e da UEA.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 40,
+            "trecho": "Conectar hospitais, unidades e barcos-hospital a especialistas da capital e da UEA."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano prevê modernizar escolas com conectividade, laboratórios, tecnologia, educação financeira e ensino de idiomas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 47,
+            "trecho": "Modernizar escolas com conectividade, laboratórios, tecnologia, educação financeira e ensino de idiomas."
+          }
+        ]
+      },
+      {
+        "texto": "Na proteção social, o documento propõe ampliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando aproximadamente 300 mil famílias.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 58,
+            "trecho": "Ampliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando aproximadamente 300 mil famílias."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, o plano prevê criar polos regionais de bioeconomia para açaí, castanha, óleos, cosméticos, fitoterápicos, alimentos e novos produtos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 79,
+            "trecho": "Criar polos regionais de bioeconomia para açaí, castanha, óleos, cosméticos, fitoterápicos, alimentos e novos produtos."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o plano prevê executar um amplo programa de asfaltamento urbano nos 62 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 95,
+            "trecho": "Executar um amplo programa de asfaltamento urbano nos 62 municípios"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "integracao-das-forcas-de-seguranca",
+        "titulo": "Integração das forças de segurança",
+        "descricao": "Proposta de integrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 7,
+            "trecho": "Integrar PM, PC, BOPE, Rocam, cavalaria, helicóptero, inteligência e serviços públicos."
+          }
+        ]
+      },
+      {
+        "id": "muralha-digital",
+        "titulo": "Muralha digital",
+        "descricao": "Proposta de expandir câmeras inteligentes, leitura de placas, drones, análise de imagens e integração policial.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 9,
+            "trecho": "Expandir câmeras inteligentes, leitura de placas, drones, análise de imagens e integração policial."
+          }
+        ]
+      },
+      {
+        "id": "saude-itinerante",
+        "titulo": "Saúde itinerante",
+        "descricao": "Proposta de ampliar as carretas da saúde para atendimento itinerante na capital e região metropolitana.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 28,
+            "trecho": "Ampliar a quantidade de carretas da saúde para atendimento itinerantes na capital e região metropolitana"
+          }
+        ]
+      },
+      {
+        "id": "telemedicina",
+        "titulo": "Telemedicina",
+        "descricao": "Proposta de conectar hospitais, unidades e barcos-hospital a especialistas da capital e da UEA.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 40,
+            "trecho": "Conectar hospitais, unidades e barcos-hospital a especialistas da capital e da UEA."
+          }
+        ]
+      },
+      {
+        "id": "modernizacao-das-escolas",
+        "titulo": "Modernização das escolas",
+        "descricao": "Proposta de modernizar escolas com conectividade, laboratórios, tecnologia, educação financeira e ensino de idiomas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 47,
+            "trecho": "Modernizar escolas com conectividade, laboratórios, tecnologia, educação financeira e ensino de idiomas."
+          }
+        ]
+      },
+      {
+        "id": "ampliacao-do-auxilio-estadual",
+        "titulo": "Ampliação do Auxílio Estadual",
+        "descricao": "Proposta de ampliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando aproximadamente 300 mil famílias.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541741:01",
+            "pagina": 58,
+            "trecho": "Ampliar o Auxílio Estadual de R$ 150 para R$ 250 mensais, beneficiando aproximadamente 300 mil famílias."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T06:00:28.123Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T06:05:26.270Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza excessiva ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de integração na segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:1:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência coincide literalmente com a proposta afirmada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de vigilância e integração policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:2:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a ampliação das carretas para atendimento itinerante na capital e região metropolitana."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de forma neutra, sem qualificação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde itinerante."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:3:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação: ampliar carretas, atendimento itinerante e recorte geográfico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz exatamente a conexão proposta na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é meramente descritiva, sem tom promocional ou crítico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de telemedicina e integração assistencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento listado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:4:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os componentes materiais mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a modernização das escolas com os elementos listados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta, sem avaliação positiva ou negativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de modernização escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:5:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais listadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação, inclusive valores e quantidade de famílias."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "Os números e quantidades da afirmação estão literalmente sustentados pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ampliação do auxílio estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está vinculada ao mesmo documento e à mesma chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:6:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais, inclusive valores, periodicidade e público estimado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência coincide integralmente com a proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem tom elogioso, crítico ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de bioeconomia regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:7:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os componentes materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o programa de asfaltamento urbano nos 62 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 62 está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de asfaltamento urbano."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:frase:8:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o núcleo material da afirmação, inclusive a abrangência territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a frase permanecem descritivos, sem tom promocional ou crítico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de integração das forças de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento vinculado à identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:integracao-das-forcas-de-seguranca:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da proposta mencionada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a descrição não expressam elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de monitoramento e integração policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:muralha-digital:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais enunciadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a frase são descritivos, sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde itinerante."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento vinculado à identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:saude-itinerante:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a descrição mantêm tom neutro e apenas informativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:telemedicina:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os componentes materiais da proposta enunciada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a frase permanecem descritivos, sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de modernização das escolas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento listado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:modernizacao-das-escolas:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita após o rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:numeros",
+        "verdict": "yes",
+        "reason": "Os valores e a quantidade de famílias estão literalmente sustentados pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O rótulo temático e a descrição são neutros e não contêm elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ampliação do auxílio estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541741:tema:ampliacao-do-auxilio-estadual:documentos:AM:40002541741:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação, inclusive valores e público estimado."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002541741",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002541741:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "eddd0e80ecc6f14e24743e17ee7370d1b32a8e9c08440d5ac182b9196e29e4b3",
+    "extractedTextSha256": "7709ec9aee32c2839c4eb604f7cbab961fb75e83896947c852b9f538823cf222",
+    "documentCount": 1,
+    "documentSetSha256": "a3b75f8e07c733eefdfd7da98dab0b3abeb5e746f272abcf46d318e6a872586e",
+    "contentSha256": "2db50f6d4880473d218f6f5ba123431226427700f429bd0dd348e1110ef4bbe9"
+  }
+}

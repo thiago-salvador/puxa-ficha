@@ -1,0 +1,710 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "BA",
+    "sqCandidato": "50002535253",
+    "slug": "ariel-capistrano",
+    "nomeUrna": "ARIEL CAPISTRANO",
+    "partido": "DC",
+    "arquivoNome": "2026BA50002535253_01.pdf",
+    "arquivoNoPacote": "BA/2026BA50002535253_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "BA:50002535253:01",
+      "fonte": {
+        "arquivoNome": "2026BA50002535253_01.pdf",
+        "arquivoNoPacote": "BA/2026BA50002535253_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "6dcb8f02559f086bf5b8fdfa783201a6c8f0f477404d2a7b272a36c147c28e03",
+        "extractedTextSha256": "f1bc8ae1032948d8543e1c2b64a8e33fd0a1d050666bb44e5ce674a9e6fff78a",
+        "paginas": 5,
+        "secoes": [
+          {
+            "id": "plano-de-governo-bahia-2027-2030",
+            "titulo": "PLANO DE GOVERNO – BAHIA 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO – BAHIA 2027–2030\nARIEL DA SILVA CAPISTRANO – GOVERNADOR\nAPRESENTAÇÃO\nEste plano de governo tem como objetivo promover o desenvolvimento econômico, social e\nhumano do estado da Bahia, fortalecendo a geração de empregos, a segurança pública, a\neducação, a saúde, a infraestrutura e a valorização da família. Nosso compromisso é construir\numa Bahia mais segura, próspera e eficiente, por meio da correta aplicação dos recursos\npúblicos, da valorização dos servidores e da implementação de políticas públicas voltadas para\nas necessidades da população.\nSlogan: Terceira Via – Uma Bahia para Todos.\n1. SEGURANÇA PÚBLICA\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nAmpliação do efetivo das polícias Civil, Militar e Técnica.\nInvestimentos em inteligência, tecnologia e monitoramento eletrônico.\nCriação de delegacias especializadas em todas as regiões do estado.\nReforço do policiamento ostensivo nas zonas urbana e rural.\nAmpliação do sistema de videomonitoramento.\nFortalecimento das guardas municipais por meio de convênios com os municípios.\nImplantação de centros regionais de perícia técnica.\nCombate ao tráfico de drogas e ao crime organizado.\nAmpliação das ações de prevenção à violência.\n\n2. SAÚDE\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nAmpliação do número de leitos hospitalares.\nConstrução e modernização de hospitais regionais.\nRedução das filas para exames e cirurgias.\nAmpliação da oferta de medicamentos.\nImplantação de unidades móveis de atendimento.\nFortalecimento da atenção básica.\nAmpliação do atendimento psicológico e psiquiátrico.\nCriação de programas de prevenção e diagnóstico precoce.\nReestruturação do sistema de regulação para reduzir o tempo de espera por consultas,\nexames e procedimentos."
+          },
+          {
+            "id": "3-educacao",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n•\n•\n\nExpansão do ensino profissionalizante.\nImplantação de escolas cívico-militares.\nValorização dos professores.\nModernização da infraestrutura escolar.\nAmpliação do acesso à internet.\nIncentivo ao ensino técnico e científico.\nImplantação de programas de alfabetização.\nFortalecimento das atividades esportivas e culturais.\n\n4. GERAÇÃO DE EMPREGO E RENDA\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n•\n\nCriação de programas de incentivo à instalação de empresas.\nRedução da burocracia para a abertura de novos negócios.\nEstímulo ao empreendedorismo.\nQualificação profissional.\nIncentivos aos setores da indústria, do comércio e dos serviços.\nApoio aos pequenos produtores rurais.\nIncentivo à economia criativa.\n\n5. AGRICULTURA E PECUÁRIA\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n•\n\nAmpliação do acesso ao crédito rural.\nIncentivo à agricultura familiar.\nRecuperação de estradas vicinais.\nInvestimentos em armazenamento e distribuição da produção.\nImplantação de programas de irrigação.\nFortalecimento das cooperativas.\nApoio técnico aos produtores rurais.\n\n6. INFRAESTRUTURA\nPrincipais propostas:"
+          },
+          {
+            "id": "pagina-3",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n•\n•\n•\n•\n\nRecuperação e ampliação da malha rodoviária estadual.\nConstrução de pontes e viadutos.\nAmpliação do saneamento básico.\nExpansão do acesso à água potável.\nInvestimentos em mobilidade urbana.\nModernização dos portos e aeroportos.\nIncentivo à interiorização do desenvolvimento econômico.\n\n7. MEIO AMBIENTE\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n\nRecuperação de rios e nascentes.\nCombate ao desmatamento ilegal.\nIncentivo à coleta seletiva.\nImplantação de programas de educação ambiental.\nPreservação dos ecossistemas da Bahia.\nFortalecimento das políticas de sustentabilidade.\n\n8. CULTURA, ESPORTE E TURISMO\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n\nValorização das manifestações culturais.\nIncentivo ao esporte amador.\nRecuperação de equipamentos esportivos.\nFortalecimento do turismo religioso.\nDesenvolvimento do turismo histórico e ecológico.\nIncentivo ao turismo no litoral e no interior do estado.\n\n9. ASSISTÊNCIA SOCIAL\nPrincipais propostas:\n•\n•\n•\n•\n•\n\nAmpliação das políticas de proteção social.\nProgramas de capacitação profissional.\nFortalecimento das ações voltadas às crianças, mulheres, aos idosos e às pessoas com\ndeficiência.\nCombate à fome e à extrema pobreza.\nAmpliação das políticas de inclusão social."
+          },
+          {
+            "id": "10-gestao-publica",
+            "titulo": "10. GESTÃO PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "10. GESTÃO PÚBLICA\nPrincipais propostas:\n•\n•\n•\n•\n•\n•\n\nCombate permanente à corrupção.\nTransparência na aplicação dos recursos públicos.\nDigitalização dos serviços públicos.\nModernização da administração estadual.\nValorização dos servidores públicos.\nAmpliação dos mecanismos de participação popular.\n\n11. COMPROMISSOS PRIORITÁRIOS\n•\n•\n•\n•\n•\n•\n•\n\nRecuperar a segurança pública.\nGerar empregos e fortalecer a economia.\nMelhorar a qualidade da saúde.\nInvestir na educação.\nAmpliar a infraestrutura.\nDesenvolver o interior da Bahia.\nGarantir transparência e responsabilidade na gestão pública.\n\nA Bahia possui riquezas naturais, culturais e humanas capazes de transformar o estado em uma\nreferência nacional de desenvolvimento. O nosso compromisso é trabalhar em favor de uma\nadministração eficiente, transparente e comprometida com a melhoria da qualidade de vida da\npopulação.\nTERCEIRA VIA – UMA BAHIA PARA TODOS\nARIEL DA SILVA CAPISTRANO\nGovernador\n\nglobalvinho10@gmail.com\n\n(71) 99374-8510"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "764283ce70cc7f19f19dedb1623e17bc12800c244a643fe1da7548dfb0e0757c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "2106e28ce7abcf54d9f6cc2a8daf13efafd52d550813f0b084b4e7016aba6887"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "66ad290e7aa977cfbd2c3dd20fb9fc1d301cdab2548e2775173a5c716e0c9df0"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "7a50f339e68cf75c996198e8e8098cac0ce018556976812942d053562742f424"
+          },
+          {
+            "pagina": 5,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na segurança pública, o programa prevê investimentos em inteligência, tecnologia e monitoramento eletrônico para orientar a atuação estadual no setor. Na saúde, o programa prevê a construção e modernização de hospitais regionais como proposta de organização da oferta hospitalar estadual. Na educação, o programa prevê a expansão do ensino profissionalizante como eixo de formação educacional previsto para o estado da Bahia. Na geração de emprego e renda, o programa prevê a redução da burocracia para a abertura de novos negócios no território estadual. Na infraestrutura, o programa prevê a ampliação do saneamento básico como proposta para os serviços de infraestrutura previstos no estado. No meio ambiente, o programa prevê a recuperação de rios e nascentes como ação de proteção ambiental indicada para a Bahia.",
+    "frases": [
+      {
+        "texto": "Na segurança pública, o programa prevê investimentos em inteligência, tecnologia e monitoramento eletrônico para orientar a atuação estadual no setor.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 1,
+            "trecho": "Investimentos em inteligência, tecnologia e monitoramento eletrônico."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê a construção e modernização de hospitais regionais como proposta de organização da oferta hospitalar estadual.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 1,
+            "trecho": "Construção e modernização de hospitais regionais."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa prevê a expansão do ensino profissionalizante como eixo de formação educacional previsto para o estado da Bahia.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 2,
+            "trecho": "Expansão do ensino profissionalizante."
+          }
+        ]
+      },
+      {
+        "texto": "Na geração de emprego e renda, o programa prevê a redução da burocracia para a abertura de novos negócios no território estadual.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 2,
+            "trecho": "Redução da burocracia para a abertura de novos negócios."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o programa prevê a ampliação do saneamento básico como proposta para os serviços de infraestrutura previstos no estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 3,
+            "trecho": "Ampliação do saneamento básico."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, o programa prevê a recuperação de rios e nascentes como ação de proteção ambiental indicada para a Bahia.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 3,
+            "trecho": "Recuperação de rios e nascentes."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O programa prevê investimentos em inteligência, tecnologia e monitoramento eletrônico.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 1,
+            "trecho": "Investimentos em inteligência, tecnologia e monitoramento eletrônico."
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "O programa prevê a construção e modernização de hospitais regionais.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 1,
+            "trecho": "Construção e modernização de hospitais regionais."
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O programa prevê a expansão do ensino profissionalizante.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 2,
+            "trecho": "Expansão do ensino profissionalizante."
+          }
+        ]
+      },
+      {
+        "id": "emprego-renda",
+        "titulo": "Emprego e renda",
+        "descricao": "O programa prevê a redução da burocracia para a abertura de novos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 2,
+            "trecho": "Redução da burocracia para a abertura de novos negócios."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura",
+        "titulo": "Infraestrutura",
+        "descricao": "O programa prevê a ampliação do saneamento básico.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 3,
+            "trecho": "Ampliação do saneamento básico."
+          }
+        ]
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "Meio ambiente",
+        "descricao": "O programa prevê a recuperação de rios e nascentes.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002535253:01",
+            "pagina": 3,
+            "trecho": "Recuperação de rios e nascentes."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:58:03.800Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:59:56.503Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (segurança pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:1:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:2:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:3:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (emprego e renda)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:4:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (infraestrutura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:5:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (meio ambiente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave e candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:frase:6:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:seguranca-publica:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:saude:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:educacao:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:emprego-renda:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:infraestrutura:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002535253:tema:meio-ambiente:documentos:BA:50002535253:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:BA:50002535253",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "BA:50002535253:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 21385,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2472,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 18977,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 18223,
+          "output_tokens_details": {
+            "thinking_tokens": 153
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 18977,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 18223,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 18977,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 18977
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2731714
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "6dcb8f02559f086bf5b8fdfa783201a6c8f0f477404d2a7b272a36c147c28e03",
+    "extractedTextSha256": "f1bc8ae1032948d8543e1c2b64a8e33fd0a1d050666bb44e5ce674a9e6fff78a",
+    "documentCount": 1,
+    "documentSetSha256": "42336156682b797dd9e08fa2eb5727924d4587913b1c002a80a7be996a0895bb",
+    "contentSha256": "abae05b976621f21a9081c2fd1ea9336259fbc4346584a47bf3c0925931bc574"
+  }
+}

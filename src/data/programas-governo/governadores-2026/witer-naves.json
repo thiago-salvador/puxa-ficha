@@ -1,0 +1,942 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002539187",
+    "slug": "witer-naves",
+    "nomeUrna": "PROF WITER NAVES",
+    "partido": "PSOL",
+    "arquivoNome": "2026TO270002539187_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002539187_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002539187:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002539187_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002539187_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ddbab69e74b2271c4c006c6e9b98f7034bf8a83eedecdf2885bd978d40c937de",
+        "extractedTextSha256": "8583633b174303ff57fb93b242fedbc56eff253b9987fe41c6c752e22e44e67b",
+        "paginas": 17,
+        "secoes": [
+          {
+            "id": "1",
+            "titulo": "1",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "1"
+          },
+          {
+            "id": "o-tocantins-de-toda-nossa-gente",
+            "titulo": "O TOCANTINS DE TODA NOSSA GENTE",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O TOCANTINS DE TODA NOSSA GENTE\nPelo Direito, pelo Bem-estar e pelo Bem-querer da gente tocantinense.\n\nO Tocantins precisa voltar a pertencer a sua gente.\nAo longo dos últimos anos, o nosso Estado cresceu economicamente, ampliou sua presença\nnacional e fortaleceu importantes setores da economia. Entretanto, esse crescimento não foi capaz\nde alcançar de forma equilibrada todas as regiões, todos os municípios e todas as pessoas. Enquanto\nalgumas áreas receberam investimentos, infraestrutura e oportunidades, outras continuaram\nconvivendo com dificuldades históricas relacionadas à saúde, educação, geração de emprego, acesso\naos serviços públicos e presença efetiva do Estado.\nEssa desigualdade não é apenas econômica. Ela também é territorial, social e política.\nMuitos tocantinenses passaram a sentir que o Estado ficou distante da sua realidade\ncotidiana. As decisões se concentraram cada vez mais nos centros administrativos, enquanto os\nmunicípios, as comunidades, os trabalhadores, a juventude e grande parte da gente tocantinense\npermaneceram afastadas da construção das prioridades públicas.\nÉ justamente diante dessa realidade que nasce esta proposta de governo.\n“O Tocantins de Toda Nossa Gente” não é apenas um título. É uma ideia de Estado. Uma\ncompreensão de que o Tocantins precisa ser reorganizado para funcionar a partir da vida concreta das\npessoas, das necessidades dos municípios e da construção coletiva de um novo pacto entre governo\ne sociedade.\nNão estamos propondo apenas uma mudança administrativa. Estamos propondo uma nova\nmaneira de governar o Tocantins.\nUma maneira em que o Estado deixe de ser apenas uma máquina burocrática distante da\npopulação e passe a atuar como instrumento de garantia de direitos, promoção do bem-estar e do\nbem-querer e fortalecimento da participação cidadã.\nO Tocantins é um Estado diverso. Cada região possui sua própria dinâmica econômica, social\ne cultural. Não é possível governar um território tão complexo olhando apenas para os gabinetes da\ncapital. É preciso compreender a realidade do interior, ouvir os municípios, dialogar com a população\ne construir políticas públicas conectadas à vida real da gente tocantinense.\nÉ por isso que nosso plano de governo está organizado a partir de três grandes princípios: o\nDireito, o Bem-estar e o Bem-querer da gente tocantinense.\nO primeiro princípio é o Direito da gente Tocantinense. Ele representa o compromisso de\ngarantir que todos os tocantinenses tenham acesso às condições fundamentais da cidadania. Saúde\npública funcionando de verdade, educação de qualidade, segurança, assistência social, mobilidade,\nacesso à cultura, ao esporte e às oportunidades não podem depender da condição econômica das\npessoas nem da região onde vivem. O papel do Estado é assegurar dignidade, proteção social e\npresença pública em todos os territórios do Tocantins.\n2"
+          },
+          {
+            "id": "o-segundo-principio-e-o-bem-estar-da-gente-tocantinense-nao-existe-desen",
+            "titulo": "O segundo princípio é o Bem-estar da gente Tocantinense. Não existe desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "O segundo princípio é o Bem-estar da gente Tocantinense. Não existe desenvolvimento\nverdadeiro quando apenas alguns crescem e muitos continuam sem oportunidades. O\ndesenvolvimento econômico do Tocantins precisa produzir qualidade de vida para o conjunto da\npopulação. Isso significa fortalecer a economia regional, gerar emprego e renda, apoiar o\nempreendedorismo, valorizar as populações originárias, quilombolas e o elemento norteador da\ncontinuidade dessas pessoas, como a agricultura familiar o diálogo com o setor produtivo e garantir\nque o desenvolvimento econômico esteja articulado à uma distribuição justa da riqueza e à proteção\ne preservação dos nossos recursos naturais. O Tocantins precisa crescer com equilíbrio,\nsustentabilidade, distribuição, inclusão e emancipação.\nO terceiro princípio é o Bem-querer da gente tocantinense. Governar exige mais do que\nadministrar estruturas públicas. Governar é cuidar das pessoas, aproximar o Estado da sociedade e\nreconstruir a confiança entre governo e a gente tocantinense. O Bem-querer representa uma nova\nrelação entre o poder público, os municípios e o povo tocantinense. Uma relação baseada no diálogo,\nna participação popular, na transparência e na cooperação institucional. O cidadão não pode ser\napenas espectador das decisões políticas; ele precisa participar da construção do futuro do Estado.\nEsses três princípios reorganizam não apenas o plano de governo, mas a própria forma de\npensar o Poder Executivo do Tocantins. A administração pública deixa de funcionar apenas de maneira\nfragmentada e burocrática e passa a atuar de forma integrada, articulada e territorializada, orientada\npelas necessidades reais da gente tocantinense.\nO que propomos é um Estado mais presente, mais humano e mais democrático. Um Estado\ncapaz de integrar desenvolvimento econômico com distribuição de riquezas, planejamento com\nparticipação popular e crescimento com qualidade de vida.\nNão se trata de negar a importância do setor produtivo, do empreendedorismo ou da\nagropecuária para a economia tocantinense. Pelo contrário. O Tocantins precisa continuar produzindo\nriqueza, ampliando investimentos e gerando oportunidades. Mas é preciso garantir que esse\ndesenvolvimento alcance toda nossa gente e esteja comprometido com o interesse coletivo, com os\nmunicípios e com o futuro sustentável do Estado.\n“O Tocantins de Toda Nossa Gente” nasce exatamente dessa compreensão: um outro\ncaminho para o Tocantins precisa ser construído coletivamente, com equilíbrio territorial,\nresponsabilidade pública e participação popular.\nMais do que um programa eleitoral, esta proposta representa um compromisso político com a\nreconstrução da relação entre Estado e sociedade. Um compromisso de fazer o Tocantins voltar a\nfuncionar para as pessoas.\nPorque a maior riqueza do Tocantins não está apenas na sua economia ou no seu território.\nA maior riqueza do Tocantins somos nós, a GENTE DO TOCANTINS!\n\n3"
+          },
+          {
+            "id": "ases-de-um-novo-projeto-de-governo",
+            "titulo": "ASES DE UM NOVO PROJETO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "ASES DE UM NOVO PROJETO DE GOVERNO\nOrganização do Poder Executivo do Estado do Tocantins a partir dos princípios do:\nDireito • Bem-estar • Bem-querer da gente Tocantinense.\nOs três princípios estruturarão o Sistema Estadual de Políticas Públicas do Tocantins. A\nadministração direta e a administração indireta deixam de constituir apenas formas organizacionais\ndo Estado e passam a operar como arranjos institucionais voltados à formulação, coordenação,\nexecução, monitoramento e avaliação das políticas públicas orientadas pelos princípios do Direito da\nGente, do Bem-estar da Gente e do Bem-querer da Gente.\nA organização do Poder Executivo do Estado do Tocantins não pode permanecer limitada à\ndivisão clássica entre administração direta e administração indireta, nem tampouco à simples\ndistribuição burocrática de competências entre secretarias, autarquias, fundações e empresas\npúblicas. Embora essa estrutura seja necessária para o funcionamento do Estado, ela não deve\nconstituir o eixo organizador da ação governamental.\nO verdadeiro objeto da ação estatal são as políticas públicas. São elas que materializam\ndireitos, promovem o desenvolvimento econômico, organizam o território, reduzem desigualdades e\nconstroem a relação democrática entre Estado e sociedade.\nPor essa razão, propomos reorganizar o Governo do Estado do Tocantins a partir de um Sistema\nEstadual de Políticas Públicas, estruturado por três grandes princípios orientadores:\n•\n\nO Direito da gente\n\n•\n\nO Bem-estar da gente\n\n•\n\nO Bem-querer da gente\n\nA inovação proposta consiste em substituir a lógica tradicional de organização do Poder\nExecutivo, centrada na divisão entre administração direta e indireta, por um Sistema Estadual de\nPolíticas Públicas, no qual os órgãos deixam de ser o centro da ação governamental e passam a atuar\ncomo instrumentos institucionais de execução de políticas públicas integradas.\nAssim, o Governo do Tocantins passa a estruturar sua atuação em torno de três sistemas\ncomplementares:\n•\n\nSistema Estadual de Garantia dos Direitos (Direito da Gente);\n\n•\n\nSistema Estadual de Desenvolvimento Territorial (Bem-estar da Gente);\n\n•\n\nSistema Estadual de Governança Democrática (Bem-querer da Gente).\n\nEssa arquitetura institucional permite superar a fragmentação burocrática do Estado,\nfortalecer a transversalidade das políticas públicas e aproximar a ação governamental das\nnecessidades concretas dos territórios e da população.\nEsses três princípios não se anulam. Eles se articulam como partes de uma mesma\nconcepção republicana de governo, onde:\n4"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n\no Estado garante direitos,\npromove dignidade material,\ne constrói pertencimento social e territorial.\n\nEsses princípios não representam apenas eixos temáticos de governo. Constituem sistemas\nintegrados de formulação, coordenação, execução, monitoramento e avaliação das políticas públicas\nestaduais, articulando toda a administração direta e indireta em torno de objetivos comuns.\nNessa concepção, as secretarias deixam de funcionar como estruturas isoladas e passam a\nintegrar redes permanentes de políticas públicas. Da mesma forma, autarquias, fundações, empresas\npúblicas e demais instituições da administração indireta deixam de atuar como organismos\nautônomos e passam a compor sistemas articulados de implementação das políticas\ngovernamentais.\nA reorganização proposta supera a lógica fragmentada da administração pública tradicional e\nestabelece uma nova racionalidade estatal baseada na integração institucional, na territorialização\ndas ações governamentais e na centralidade da vida concreta da população tocantinense.\nO Estado deixa de ser compreendido apenas como uma máquina administrativa e passa a\natuar como uma organização pública orientada por resultados sociais, pela garantia de direitos, pela\npromoção do desenvolvimento e pelo fortalecimento da democracia.\nNesse novo desenho institucional, a administração pública não se organiza em torno dos\nórgãos, mas das políticas públicas que esses órgãos executam coletivamente.\nSISTEMA ESTADUAL DE GARANTIA DOS DIREITOS\nO Direito da Gente\nO Direito da Gente constitui o Sistema Estadual de Garantia dos Direitos Fundamentais. Sua\nfinalidade é assegurar que todas as pessoas tenham acesso universal às condições essenciais da\ncidadania, independentemente do município onde vivem, de sua renda, raça, gênero, geração ou\ncondição social.\nEsse sistema integra políticas públicas destinadas à proteção social, promoção da igualdade\ne garantia dos direitos fundamentais, articulando órgãos da administração direta e indireta\nresponsáveis pela formulação, coordenação e execução dessas políticas.\nEstruturam esse sistema, entre outras, as seguintes políticas públicas:\n•\n\nPolítica Estadual de Saúde;\n\n•\n\nPolítica Estadual de Educação;\n\n•\n\nPolítica Estadual de Assistência Social;\n\n•\n\nPolítica Estadual de Segurança Pública e Segurança Cidadã;\n\n•\n\nPolítica Estadual de Direitos Humanos;\n\n•\n\nPolítica Estadual de Igualdade Racial;\n5"
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPolítica Estadual das Mulheres;\n\n•\n\nPolítica Estadual dos Povos Originários e Comunidades Tradicionais;\n\n•\n\nPolítica Estadual de Cultura;\n\n•\n\nPolítica Estadual de Esporte e Juventude.\n\nAs secretarias estaduais e os órgãos da administração indireta deixam de atuar isoladamente\ne passam a constituir uma rede integrada de garantia dos direitos da população.\nSISTEMA ESTADUAL DE DESENVOLVIMENTO TERRITORIAL\nO Bem-estar da Gente\nO Bem-estar da Gente organiza o Sistema Estadual de Desenvolvimento Territorial,\ncompreendendo que o desenvolvimento econômico somente possui legitimidade quando produz\nqualidade de vida, distribuição de oportunidades, sustentabilidade ambiental e equilíbrio regional.\nO desenvolvimento deixa de ser compreendido apenas pelo crescimento do Produto Interno\nBruto e passa a ser orientado pela melhoria das condições materiais de existência da população\ntocantinense.\nIntegram esse sistema políticas públicas voltadas para:\n•\n\ndesenvolvimento econômico;\n\n•\n\nagricultura familiar e agropecuária;\n\n•\n\nindústria, comércio e inovação;\n\n•\n\ninfraestrutura e logística;\n\n•\n\ncidades e habitação;\n\n•\n\nsaneamento ambiental;\n\n•\n\nrecursos hídricos;\n\n•\n\nproteção do Cerrado;\n\n•\n\ndesenvolvimento regional;\n\n•\n\nturismo;\n\n•\n\neconomia solidária;\n\n•\n\ngeração de trabalho e renda.\n\nAs secretarias responsáveis por essas áreas atuam de forma integrada com as autarquias,\nfundações, empresas públicas e agências estaduais, compondo uma única estratégia de\ndesenvolvimento territorial.\nISTEMA ESTADUAL DE GOVERNANÇA DEMOCRÁTICA\n6"
+          },
+          {
+            "id": "o-bem-querer-da-gente",
+            "titulo": "O Bem-querer da Gente",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "O Bem-querer da Gente\nO Bem-querer da Gente organiza o Sistema Estadual de Governança Democrática.\nSeu objetivo é reconstruir a relação entre Estado, municípios e sociedade, fortalecendo a\ndemocracia participativa, a transparência pública, o planejamento territorial e a cooperação\ninstitucional.\nGovernar deixa de significar apenas administrar recursos públicos e passa a representar a\nconstrução permanente de consensos democráticos, por meio do diálogo entre governo e sociedade.\nIntegram esse sistema:\n•\n\nPolítica Estadual de Planejamento Participativo;\n\n•\n\nPolítica Estadual de Gestão Pública;\n\n•\n\nPolítica Estadual de Transparência e Controle Social;\n\n•\n\nPolítica Estadual de Governo Digital;\n\n•\n\nPolítica Estadual de Participação Popular;\n\n•\n\nPolítica Estadual de Cooperação Federativa;\n\n•\n\nPolítica Estadual de Comunicação Pública;\n\n•\n\nPolítica Estadual de Formação Permanente dos Servidores Públicos.\n\nA Governadoria, Casa Civil, secretarias de planejamento, administração, fazenda, controle\ninterno, tecnologia, comunicação e relações institucionais passam a operar como estruturas de\ncoordenação da governança democrática, articuladas aos órgãos da administração indireta\nresponsáveis pela inovação, regulação, formação e participação social.\nNOGRAMA CONCEITUAL DO SISTEMA ESTADUAL DE POLÍTICAS PÚBLICAS\n1. SISTEMA ESTADUAL DE GARANTIA DOS DIREITOS\nDireito da Gente\nAdministração Direta (8)\n1. Secretaria da Saúde\n2. Secretaria da Educação\n3. Secretaria da Proteção Social e Emancipação da Gente\n4. Secretaria dos Direitos da Gente e da Justiça Cidadã\n5. Secretaria da Mulher\n6. Secretaria da Igualdade Racial\n7. Secretaria dos Povos Originários, Quilombolas e Comunidades Tradicionais\n7"
+          },
+          {
+            "id": "8-secretaria-da-cultura-juventude-e-economia-criativa",
+            "titulo": "8. Secretaria da Cultura, Juventude e Economia Criativa",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "8. Secretaria da Cultura, Juventude e Economia Criativa\nAdministração Indireta (4)\n1. Fundação de Cultura, Memória e Patrimônio Tocantinense\n2. UNITINS\n3. IGEPREV\n4. DETRAN-TO\nTotal do Sistema\nAdministração Direta\n\nAdministração Indireta\n\nTotal\n\n8\n\n4\n\n12\n\n2. SISTEMA ESTADUAL DE DESENVOLVIMENTO TERRITORIAL\nBem-estar da Gente\nAdministração Direta (6)\n1. Secretaria da Agricultura Familiar, Agroecologia e Desenvolvimento Rural\n2. Secretaria do Desenvolvimento Econômico, Indústria, Comércio, Ciência, Tecnologia e\nInovação\n3. Secretaria das Cidades, Habitação, Mobilidade e Saneamento\n4. Secretaria do Patrimônio Natural e Desenvolvimento Territorial Sustentável\n5. Secretaria do Turismo, Economia Criativa e Patrimônio Natural\n6. Secretaria do Desenvolvimento Territorial\nAdministração Indireta (10)\n1. Naturatins\n2. Agência Estadual de Infraestrutura e Mobilidade\n3. Agência de Desenvolvimento Econômico e Economia Solidária\n4. Agência Tocantinense de Mineração e Geodiversidade\n5. ADAPEC\n6. JUCETINS\n7. Instituto de Terras, Regularização Fundiária e Desenvolvimento Territorial\n8. Agência Estadual de Desenvolvimento Regional\n8"
+          },
+          {
+            "id": "9-instituto-tocantinense-das-aguas-saneamento-e-mudancas-climaticas",
+            "titulo": "9. Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "9. Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas\n10. Instituto Estadual de Economia Solidária e Cooperativismo\nTotal do Sistema\nAdministração Direta\n\nAdministração Indireta\n\nTotal\n\n6\n\n10\n\n16\n\n3. SISTEMA ESTADUAL DE GOVERNANÇA DEMOCRÁTICA\nBem-querer da Gente\nÓrgãos Estratégicos do Estado\n1. Governadoria\n2. Casa Civil\n3. Procuradoria-Geral do Estado\n4. Controladoria-Geral do Estado\nAdministração Direta (5 Secretarias)\n1. Secretaria de Planejamento, Gestão e Inovação Pública\n2. Secretaria de Governança Democrática e Relações Republicanas\n3. Secretaria de Relações Institucionais e Cooperação Federativa\n4. Secretaria de Comunicação Pública e Participação Social\n5. Secretaria de Participação Popular e Territorialização\nAdministração Indireta (7)\n1. Fundação Estadual de Ciência, Tecnologia e Inovação (FAPT)\n2. Agência Estadual de Transformação Digital\n3. Agência Tocantinense de Regulação e Governança dos Serviços Públicos\n4. Instituto Tocantinense de Gestão Pública e Formação Permanente\n5. Empresa Tocantinense de Comunicação Pública – ETCOM\n6. Instituto Tocantinense de Estatística, Planejamento e Avaliação de Políticas Públicas\n7. Conselho Estadual de Participação Social\nTotal do Sistema\n9"
+          },
+          {
+            "id": "orgaos-estrategicos",
+            "titulo": "Órgãos Estratégicos",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Órgãos Estratégicos\n\nSecretarias\n\nAdministração Indireta\n\nTotal\n\n4\n\n5\n\n7\n\n16\n\nSÍNTESE DA REORGANIZAÇÃO DO PODER EXECUTIVO\nSistema\nPúblicas\n\nEstadual\n\nde\n\nPolíticas\n\nAdministração Direta\n\nAdministração\nIndireta\n\nTotal\n\nSistema Estadual de Garantia dos\nDireitos\n\n8\n\n4\n\n12\n\nSistema Estadual de Desenvolvimento\nTerritorial\n\n6\n\n10\n\n16\n\nSistema Estadual de Governança\nDemocrática\n\n9 (4 órgãos estratégicos + 5\nsecretarias)\n\n7\n\n16\n\n23\n\n21\n\n44\n\nTOTAL GERAL\nLeitura político-institucional\n\nA proposta reorganiza o Poder Executivo do Estado do Tocantins em 44 unidades gestoras,\ndistribuídas entre 23 órgãos da administração direta e 21 entidades da administração indireta,\narticuladas em três Sistemas Estaduais de Políticas Públicas. Essa arquitetura institucional substitui a\nlógica tradicional, centrada em estruturas administrativas isoladas, por um modelo integrado de\ngovernança, no qual secretarias, autarquias, fundações, agências, institutos e empresa pública atuam\nde forma coordenada para garantir direitos, promover o desenvolvimento territorial e fortalecer a\ngovernança democrática.\nESTRUTURAS DE IMPLEMENTAÇÃO DAS POLÍTICAS PÚBLICAS\nADMINISTRAÇÃO DIRETA\n\nADMINISTRAÇÃO INDIRETA\n\nSecretarias de Estado\n\nAutarquias\n\nGovernadoria\n\nFundações\n\nCasa Civil\n\nAgências\n\nProcuradoria-Geral\n\nEmpresas Públicas\n\nControladoria-Geral\n\nInstitutos\n\nDemais Secretarias\n\nÓrgãos Vinculados\n10"
+          },
+          {
+            "id": "para-que-essa-inovacao-seja-completa-a-estrutura-administrativa-tambem-p",
+            "titulo": "Para que essa inovação seja completa, a estrutura administrativa também precisa ser",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Para que essa inovação seja completa, a estrutura administrativa também precisa ser\nreorganizada. Não basta redistribuir as atuais secretarias entre os três sistemas; é necessário fundir\nestruturas sobrepostas, criar áreas estratégicas e reorganizar a administração indireta para funcionar\ncomo um verdadeiro Sistema Estadual de Políticas Públicas.\nORGANOGRAMA CONCEITUAL DO PODER EXECUTIVO\nGOVERNO DO ESTADO DO TOCANTINS\n1. DIREITO DA GENTE\nGarantia universal de\ndireitos\n\n2. BEM-ESTAR DA GENTE\nDesenvolvimento e qualidade de\nvida\n\n3. BEM-QUERER DA GENTE\nDemocracia, pertencimento e\npacto republicano\n\nSÍNTESE POLÍTICO-CONCEITUAL\n\nDIREITO DA GENTE\ngarante direitos fundamentais.\n\nBEM-ESTAR DA GENTE\n\nBEM-QUERER DA GENTE\n\norganiza o desenvolvimento\ncom justiça social.\n\nconstrói pertencimento\ndemocrático entre Estado e\nsociedade.\n\nLEITURA ESTRATÉGICA\nEla substitui a lógica puramente burocrática do Estado por uma lógica:\ncidadã,\n•\nterritorial,\n•\nrepublicana,\n•\ne orientada pela vida concreta das pessoas.\nO Estado deixa de ser apenas uma máquina administrativa e passa a ser:\n•\n\num instrumento de garantia de direitos, promoção do bem-estar e o bem-querer da\nconstrução coletiva do Tocantins da gente.\n\n11"
+          },
+          {
+            "id": "proposta-de-reorganizacao-da-estrutura-de-governanca-do-estado-do",
+            "titulo": "PROPOSTA DE REORGANIZAÇÃO DA ESTRUTURA DE GOVERNANÇA DO ESTADO DO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PROPOSTA DE REORGANIZAÇÃO DA ESTRUTURA DE GOVERNANÇA DO ESTADO DO\nTOCANTINS\nADMINISTRAÇÃO DIRETA\n\nEstrutura atual\n\nProposta de reorganização\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nSecretaria do Trabalho Secretaria da Proteção Integra\nassistência\nsocial,\nDireito da\ne Desenvolvimento\nSocial e emancipação da segurança alimentar, trabalho,\nGente\nSocial\nGente\nrenda e inclusão produtiva.\nSecretaria da\nCidadania e Justiça +\nDireitos Humanos\n\nReúne\ncidadania,\njustiça,\nSecretaria dos Direitos da\nDireito da\ndireitos humanos e sistema\nGente e da Justiça Cidadã\nGente\nsocioeducativo.\n\nSecretaria da Mulher\n\nMantém\n\nGanha caráter transversal de\nDireito da\ncoordenação das políticas para\nGente\nmulheres.\n\nSecretaria da\nIgualdade Racial\n\nMantém\n\nAmplia atuação para equidade\nDireito da\nracial\ne\ncombate\nàs\nGente\ndesigualdades.\n\nSecretaria dos Povos\nOriginários\n\nSecretaria\ndos\nPovos\nAmplia o reconhecimento dos Direito da\nOriginários, Quilombolas e\npovos tradicionais.\nGente\nComunidades Tradicionais\n\nSecretaria\nSecretaria da Cultura +\nJuventude\nJuventude\nCriativa\n\nda\nCultura,\nIntegra cultura, juventude e Direito da\ne\nEconomia\neconomia criativa.\nGente\n\nSecretaria dos\nEsportes\n\nIncorporada\nacima\n\nà\n\nSecretaria da\nAgricultura\n\nSecretaria da Agricultura\nDiferencia agricultura familiar Bem-estar\nFamiliar, Agroecologia e\ndo agronegócio.\nda Gente\nDesenvolvimento Rural\n\nSecretaria da Pecuária\n\nIncorporada à Secretaria de Produção animal passa\nDesenvolvimento Econômico integrar a política produtiva.\n\nSecretaria da\nIndústria, Comércio e\nServiços\n\nSecretaria\ndo Coloca inovação como vetor do Bem-estar\nDesenvolvimento\ndesenvolvimento.\nda Gente\nEconômico,\nIndústria,\n\nsecretaria Evita\nadministrativa.\n\nfragmentação Direito da\nGente\n\na Bem-estar\nda Gente\n\n12"
+          },
+          {
+            "id": "estrutura-atual",
+            "titulo": "Estrutura atual",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Estrutura atual\n\nProposta de reorganização\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nComércio,\nCiência,\nTecnologia e Inovação\nSecretaria das Cidades, Integra planejamento urbano,\nBem-estar\nSecretaria das Cidades Habitação, Mobilidade e transporte,\nhabitação\ne\nda Gente\nSaneamento\nsaneamento.\nSecretaria\ndos Incorporada\nTransportes e Obras\nacima\n\nà\n\nsecretaria Planejamento\nunificado.\n\nterritorial Bem-estar\nda Gente\n\nIntegra a proteção do patrimônio\nSecretaria do Meio Secretaria do Patrimônio natural, o uso sustentável dos\nBem-estar\nAmbiente e Recursos Natural e Desenvolvimento recursos\nnaturais\ne\no\nda Gente\nHídricos\nTerritorial Sustentável\nplanejamento\nterritorial\nsustentável.\nSecretaria\ndo\nTurismo,\nIntegra turismo sustentável e Bem-estar\nSecretaria do Turismo Economia\nCriativa\ne\ndesenvolvimento regional.\nda Gente\nPatrimônio Natural\nSecretaria\nDesenvolvimento\nRegional\n\ndo\n\nSecretaria\nPlanejamento\nSecretaria\nAdministração\n\ndo\nIntegra\nplanejamento\n+ Secretaria de Planejamento,\nBem-querer\nestratégico,\ngestão\ne\nda Gestão e Inovação Pública\nda Gente\nmodernização administrativa.\n\nSecretaria\ndo Coordena políticas regionais e Bem-estar\nDesenvolvimento Territorial territorialização.\nda Gente\n\nIntegra a coordenação política, a\nSecretaria de Governança\ngovernança democrática e a Bem-querer\nSecretaria de Governo Democrática e Relações\ncooperação\nentre\nEstado, da Gente\nRepublicanas\nmunicípios e sociedade.\n\nSecretaria\nrepresentação\n\nFortalece\na\narticulação\nde Relações Institucionais e institucional e a cooperação Bem-querer\nCooperação Federativa\nentre Estado, União e demais da Gente\nPoderes.\n\n13"
+          },
+          {
+            "id": "estrutura-atual-2",
+            "titulo": "Estrutura atual",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Estrutura atual\n\nSecretaria\nComunicação\n\nNova estrutura\n\nProposta de reorganização\n\nda\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nSecretaria de Comunicação\nComunicação passa a dialogar Bem-querer\nPública\ne\nParticipação\ncom participação cidadã.\nda Gente\nSocial\nCoordena\norçamento\nSecretaria de Participação participativo,\nconselhos, Bem-querer\nPopular e Territorialização conferências\ne\npresença da Gente\nregional do governo.\n\nADMINISTRAÇÃO INDIRETA\n\nEstrutura atual\n\nProposta de reorganização\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nSuprimida\n\nCompetências incorporadas ao\nInstituto Tocantinense das\nBem-estar\nÁguas, Saneamento e Mudanças da Gente\nClimáticas.\n\nNaturatins\n\nMantém\n\nFortalece o licenciamento, a\nfiscalização e a proteção\nambiental do Estado.\n\nBem-estar\nda Gente\n\nAGETO\n\nAgência Estadual de\nInfraestrutura e Mobilidade\n\nIntegra infraestrutura logística,\nmobilidade e obras estratégicas.\n\nBem-estar\nda Gente\n\nATS\n\nFAPT – Fundação de Mantém como Fundação\nAmparo à Pesquisa Estadual de Ciência,\ndo Tocantins\nTecnologia e Inovação\n\nATI\n\nAgência Estadual de\nTransformação Digital\n\nFortalece a produção científica,\na inovação tecnológica e a\npesquisa aplicada ao\nBem-querer\ndesenvolvimento sustentável e à da Gente\nqualificação das políticas\npúblicas estaduais.\nModerniza a gestão pública por\nmeio da inovação tecnológica e\ndo governo digital.\n\nBem-querer\nda Gente\n\n14"
+          },
+          {
+            "id": "estrutura-atual-3",
+            "titulo": "Estrutura atual",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Estrutura atual\n\nProposta de reorganização\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nATR\n\nAmplia a regulação dos serviços\npúblicos, fortalecendo a\nAgência Tocantinense de\ngovernança, a fiscalização, a\nBem-querer\nRegulação e Governança dos\ntransparência e a qualidade da\nda Gente\nServiços Públicos\nprestação dos serviços\nestaduais.\n\nEscola de Governo\n\nInstituto Tocantinense de\nGestão Pública e Formação\nPermanente\n\nFortalece a qualificação dos\nservidores e a inovação na\nadministração pública.\n\nBem-querer\nda Gente\n\nFundação Cultural\n\nFundação de Cultura,\nMemória e Patrimônio\nTocantinense\n\nPreserva o patrimônio cultural e\nfortalece a identidade\ntocantinense.\n\nDireito da\nGente\n\nAgência de Desenvolvimento Amplia o apoio ao\nAgência de Fomento Econômico e Economia\ndesenvolvimento produtivo e à\nSolidária\neconomia solidária.\n\nBem-estar\nda Gente\n\nFortalece o ambiente de\nnegócios e a formalização das\natividades econômicas.\n\nBem-estar\nda Gente\n\nFortalece a gestão sustentável\ndos recursos minerais, da\nAMETO – Agência de\nAgência Tocantinense de\ngeodiversidade e do\nMineração do\nMineração e Geodiversidade aproveitamento econômico\nTocantins\nresponsável do patrimônio\nmineral do Estado.\n\nBem-estar\nda Gente\n\nBem-estar\nda Gente\n\nBem-estar\nda Gente\n\nJUCETINS\n\nMantém\n\nADAPEC\n\nMantém\n\nFortalece a defesa agropecuária\ne a segurança sanitária da\nprodução estadual.\n\nITERTINS\n\nInstituto de Terras,\nRegularização Fundiária e\nDesenvolvimento Territorial\n\nIntegra regularização fundiária e\nordenamento territorial.\n\n15"
+          },
+          {
+            "id": "novas-autarquias-e-institutos-estrategicos",
+            "titulo": "NOVAS AUTARQUIAS E INSTITUTOS ESTRATÉGICOS",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "NOVAS AUTARQUIAS E INSTITUTOS ESTRATÉGICOS\n\nEstrutura\n\nProposta de criação\n\nJustificativa\n\nSistema de\nPolíticas\nPúblicas\n\nBem-querer\nda Gente\n\nNova Empresa\nPública\n\nEmpresa Tocantinense de\nComunicação Pública –\nETCOM\n\nIntegra a comunicação pública\nestadual por meio da rádio\npública, portal digital,\nplataforma de streaming,\nagência pública de notícias,\npodcasts, educação digital,\ncomunicação institucional,\nprodução audiovisual, inclusão\ndigital e infraestrutura de\ncomunicação pública\n\nNova Autarquia\n\nInstituto Tocantinense de\nEstatística, Planejamento e\nAvaliação de Políticas\nPúblicas\n\nProduz indicadores, estudos e\navaliações para subsidiar o\nBem-querer\nplanejamento estratégico, o\nda Gente\nmonitoramento e a avaliação\ndas políticas públicas estaduais.\n\nNova Agência\n\nAgência Estadual de\nDesenvolvimento Regional\n\nCoordena programas e\ninvestimentos voltados à\nredução das desigualdades\nregionais e ao desenvolvimento\nterritorial integrado.\n\nBem-estar\nda Gente\n\nNova Autarquia\n\nInstituto Tocantinense das\nÁguas, Saneamento e\nMudanças Climáticas\n\nIntegra a gestão das águas, do\nsaneamento, da segurança\nhídrica e da adaptação às\nmudanças climáticas.\n\nBem-estar\nda Gente\n\nNovo Instituto\n\nInstituto Estadual de\nEconomia Solidária e\nCooperativismo\n\nFortalece o cooperativismo, a\neconomia solidária, a inclusão\nprodutiva e o desenvolvimento\nsustentável dos territórios.\n\nBem-estar\nda Gente\n\nConselho Estadual de\nParticipação Social\n\nInstitucionaliza a participação\npopular e o controle social na\nBem-querer\nformulação, monitoramento e\nda Gente\navaliação das políticas públicas\nestaduais.\n\nNovo Conselho\nPermanente\n\n16"
+          },
+          {
+            "id": "a-reorganizacao-proposta-consolida-uma-nova-concepcao-de-estado-para-o-t",
+            "titulo": "A reorganização proposta consolida uma nova concepção de Estado para o Tocantins, na qual",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "A reorganização proposta consolida uma nova concepção de Estado para o Tocantins, na qual\na administração pública deixa de atuar por estruturas isoladas e fragmentadas para constituir uma\nrede integrada de políticas públicas, organizada pelos princípios do Direito da Gente, do Bem-estar\nda Gente e do Bem-querer da Gente. Mais do que uma reforma administrativa, esta proposta\nrepresenta a construção de um novo caminho para o Estado, fundamentado nos valores republicanos,\nna transparência, na solidariedade, na participação popular e na emancipação social. É a afirmação\nde um governo que compreende que o desenvolvimento somente alcança seu verdadeiro sentido\nquando fortalece a democracia, reduz desigualdades, aproxima o poder público da sociedade e\nreconhece a população como protagonista da vida política. Assim, nasce o compromisso de construir\no Tocantins de Toda Nossa Gente: um Estado presente, democrático e territorialmente integrado,\nonde governar significa cuidar das pessoas, garantir direitos, promover o bem-estar e construir,\ncoletivamente, um futuro de esperança, justiça social e dignidade para toda a gente tocantinense.\n\n17"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "1ff2e3b70d23dd14d6986b8c5c1d22c1b93cf04939c72ef49dd9ca326b69012f"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "bd248d3c9751d2bbf1d7b71120f2553f7e1795c5e45aaf449c6ecf899bd30e19"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "aed9e38d889c9eca15e217a6fdb445848c8502c4a18d1fd181b3e89e9a06e1a9"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "2c3cb499a099a760309c339bf36cadad61a9ecff94643ba269fb52b9d466a526"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "37460b80629148b3f1bf8cad0de072fa0838f6670b623dda866c727e85eb499b"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "2bfb782e5e7839f767c6edd4fb31f4d67f97b6dd3648af58ab0a5e9a3995a0a4"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ad2bad64705e67f67256f74f0a519458219f2599b8f31815797c20804f0348ff"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "a879c864c26884dd170209a797abecde2c2b3c26e800f2ad8c84cfd4e1998a83"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "1cccd26c62011d0b701ac48d9c9560a4d7ff63e24f7a87fdcc492fbecdc88768"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "31b098d396c52b66c938b7fb344fe47822f7f65e50ccc5ee5aa81665505b6422"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "0e3b133319f87fcd25ab01e5b633c7f711e58242d4a7e2f810a89ac41989c141"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "34227469048a48d19004ae2707a429f13c0c354c852589873ff3de9fdf7b1a26"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "2081cb2dd0d84c14b6cdacea780b1e47fc4d61dfe8fd6b82768d067a59ebb2b6"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d13364c421020add7ccf0536ca3105afc81258db1fc97bfb81c987180531ffbe"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "b95d2404a734a7036b317e39c96b74a569ba62477166aba2a7c73e25ad3cf029"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "ceff116c7e31bbdea84b3cc7c0f17c3d09618d384dd867d479a9f59435155946"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe reorganizar o Poder Executivo do Tocantins por meio de um Sistema Estadual de Políticas Públicas. O Sistema Estadual de Garantia dos Direitos busca assegurar o acesso universal às condições essenciais da cidadania. O Sistema Estadual de Desenvolvimento Territorial orienta o desenvolvimento econômico para a qualidade de vida da população. O Sistema Estadual de Governança Democrática busca reconstruir a relação entre Estado, municípios e sociedade. A proposta reorganiza o Poder Executivo em 44 unidades gestoras, distribuídas entre administração direta e indireta. O programa propõe criar a Agência Estadual de Desenvolvimento Regional para reduzir desigualdades regionais. O programa planeja criar o Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas. O plano propõe criar o Conselho Estadual de Participação Social para institucionalizar a participação popular.",
+    "frases": [
+      {
+        "texto": "O programa propõe reorganizar o Poder Executivo do Tocantins por meio de um Sistema Estadual de Políticas Públicas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 4,
+            "trecho": "Por essa razão, propomos reorganizar o Governo do Estado do Tocantins a partir de um Sistema\nEstadual de Políticas Públicas, estruturado por três grandes princípios orientadores:"
+          }
+        ]
+      },
+      {
+        "texto": "O Sistema Estadual de Garantia dos Direitos busca assegurar o acesso universal às condições essenciais da cidadania.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 5,
+            "trecho": "O Direito da Gente constitui o Sistema Estadual de Garantia dos Direitos Fundamentais. Sua\nfinalidade é assegurar que todas as pessoas tenham acesso universal às condições essenciais da\ncidadania"
+          }
+        ]
+      },
+      {
+        "texto": "O Sistema Estadual de Desenvolvimento Territorial orienta o desenvolvimento econômico para a qualidade de vida da população.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 6,
+            "trecho": "O Bem-estar da Gente organiza o Sistema Estadual de Desenvolvimento Territorial"
+          },
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 3,
+            "trecho": "O desenvolvimento econômico do Tocantins precisa produzir qualidade de vida para o conjunto da\npopulação."
+          }
+        ]
+      },
+      {
+        "texto": "O Sistema Estadual de Governança Democrática busca reconstruir a relação entre Estado, municípios e sociedade.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 7,
+            "trecho": "O Bem-querer da Gente organiza o Sistema Estadual de Governança Democrática.\nSeu objetivo é reconstruir a relação entre Estado, municípios e sociedade"
+          }
+        ]
+      },
+      {
+        "texto": "A proposta reorganiza o Poder Executivo em 44 unidades gestoras, distribuídas entre administração direta e indireta.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 10,
+            "trecho": "A proposta reorganiza o Poder Executivo do Estado do Tocantins em 44 unidades gestoras,\ndistribuídas entre 23 órgãos da administração direta e 21 entidades da administração indireta"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe criar a Agência Estadual de Desenvolvimento Regional para reduzir desigualdades regionais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Agência Estadual de\nDesenvolvimento Regional\n\nCoordena programas e\ninvestimentos voltados à\nredução das desigualdades\nregionais"
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja criar o Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Nova Autarquia\n\nInstituto Tocantinense das\nÁguas, Saneamento e\nMudanças Climáticas\n\nIntegra a gestão das águas, do\nsaneamento, da segurança\nhídrica e da adaptação às\nmudanças climáticas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe criar o Conselho Estadual de Participação Social para institucionalizar a participação popular.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Conselho Estadual de\nParticipação Social\n\nInstitucionaliza a participação\npopular e o controle social"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "principios-organizadores",
+        "titulo": "Princípios organizadores do plano",
+        "descricao": "O plano de governo está organizado a partir de três princípios orientadores definidos no documento.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 2,
+            "trecho": "É por isso que nosso plano de governo está organizado a partir de três grandes princípios: o\nDireito, o Bem-estar e o Bem-querer da gente tocantinense."
+          }
+        ]
+      },
+      {
+        "id": "sistema-de-politicas-publicas",
+        "titulo": "Sistema Estadual de Políticas Públicas",
+        "descricao": "O documento propõe reorganizar o Governo do Estado a partir de um sistema estadual de políticas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 4,
+            "trecho": "Por essa razão, propomos reorganizar o Governo do Estado do Tocantins a partir de um Sistema\nEstadual de Políticas Públicas, estruturado por três grandes princípios orientadores:"
+          },
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 4,
+            "trecho": "Assim, o Governo do Tocantins passa a estruturar sua atuação em torno de três sistemas\ncomplementares:"
+          }
+        ]
+      },
+      {
+        "id": "garantia-de-direitos",
+        "titulo": "Sistema Estadual de Garantia dos Direitos",
+        "descricao": "O sistema busca assegurar o acesso universal às condições essenciais da cidadania.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 5,
+            "trecho": "O Direito da Gente constitui o Sistema Estadual de Garantia dos Direitos Fundamentais. Sua\nfinalidade é assegurar que todas as pessoas tenham acesso universal às condições essenciais da\ncidadania"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-territorial",
+        "titulo": "Sistema Estadual de Desenvolvimento Territorial",
+        "descricao": "O sistema orienta o desenvolvimento econômico para a qualidade de vida da população.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 6,
+            "trecho": "O Bem-estar da Gente organiza o Sistema Estadual de Desenvolvimento Territorial"
+          },
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 3,
+            "trecho": "O desenvolvimento econômico do Tocantins precisa produzir qualidade de vida para o conjunto da\npopulação."
+          }
+        ]
+      },
+      {
+        "id": "governanca-democratica",
+        "titulo": "Sistema Estadual de Governança Democrática",
+        "descricao": "O sistema busca reconstruir a relação entre Estado, municípios e sociedade.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 7,
+            "trecho": "O Bem-querer da Gente organiza o Sistema Estadual de Governança Democrática.\nSeu objetivo é reconstruir a relação entre Estado, municípios e sociedade"
+          }
+        ]
+      },
+      {
+        "id": "novos-orgaos-estrategicos",
+        "titulo": "Criação de novas estruturas estratégicas",
+        "descricao": "O plano propõe a criação de novas estruturas estratégicas para a administração estadual.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Agência Estadual de\nDesenvolvimento Regional\n\nCoordena programas e\ninvestimentos voltados à\nredução das desigualdades\nregionais"
+          },
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Nova Autarquia\n\nInstituto Tocantinense das\nÁguas, Saneamento e\nMudanças Climáticas\n\nIntegra a gestão das águas, do\nsaneamento, da segurança\nhídrica e da adaptação às\nmudanças climáticas."
+          },
+          {
+            "documentoId": "TO:270002539187:01",
+            "pagina": 16,
+            "trecho": "Conselho Estadual de\nParticipação Social\n\nInstitucionaliza a participação\npopular e o controle social"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T13:20:58.670Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T13:26:43.954Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma explicitamente a reorganização do governo estadual a partir de um Sistema Estadual de Políticas Públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta do documento, sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente: a reorganização do Executivo por meio desse sistema."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento do Tocantins informado em documentoIds e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:1:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação: proposta, reorganização do governo estadual e uso do Sistema Estadual de Políticas Públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma textualmente que a finalidade do sistema é assegurar acesso universal às condições essenciais da cidadania."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o objetivo do sistema sem adjetivação valorativa ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se concentra em uma única área coerente, o objetivo do sistema de garantia de direitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:2:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o objetivo atribuído ao sistema e a cláusula de acesso universal às condições essenciais da cidadania."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências ligam explicitamente o sistema ao desenvolvimento territorial e afirmam que o desenvolvimento econômico deve produzir qualidade de vida para a população."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do documento sem elogio, crítica ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a orientação do desenvolvimento territorial para qualidade de vida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "As duas evidências pertencem ao mesmo documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:3:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "Em conjunto, as evidências cobrem o sistema citado, a dimensão econômica e a finalidade de qualidade de vida da população."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente o objetivo atribuído ao Sistema Estadual de Governança Democrática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não inclui números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase descreve o objetivo do sistema em termos informativos, sem tom opinativo ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a governança democrática e seu objetivo central."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do mesmo documento do Tocantins indicado na identidade e em documentoIds."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:4:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o sistema nomeado e o objetivo de reconstruir a relação entre Estado, municípios e sociedade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma textualmente a reorganização em 44 unidades gestoras distribuídas entre administração direta e indireta."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 44 aparece literalmente na evidência e a distribuição entre administração direta e indireta também está expressa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta coerente: a síntese quantitativa da reorganização do Executivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:5:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a reorganização, a quantidade total de unidades e a distribuição entre os dois tipos administrativos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "Na página citada de proposta de criação, a Agência Estadual de Desenvolvimento Regional aparece vinculada à redução das desigualdades regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a criação e finalidade do órgão sem linguagem valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta específica, a criação dessa agência e sua finalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento do Tocantins indicado e coincide com a chave eleitoral fornecida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:6:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a estrutura específica e a finalidade material de redução das desigualdades regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência lista explicitamente a proposta de criação dessa nova autarquia com esse nome."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas identifica a estrutura proposta, sem elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a criação desse instituto específico."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento informado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:7:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a criação e a identificação nominal do instituto citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência identifica o conselho e afirma que ele institucionaliza a participação popular."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e sua finalidade em termos neutros."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a criação do conselho de participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:frase:8:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o órgão específico e sua finalidade material de institucionalizar a participação popular."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma literalmente que o plano está organizado a partir de três grandes princípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de três princípios aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a organização do plano sem juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único tema coerente, a organização do plano por princípios orientadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do documento informado para a mesma chave eleitoral do Tocantins."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:principios-organizadores:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a organização do plano e a existência de três princípios orientadores definidos no documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A primeira evidência afirma diretamente a reorganização do governo a partir do Sistema Estadual de Políticas Públicas, e a segunda mostra a estrutura decorrente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta institucional do documento sem tom valorativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, a reorganização do governo por esse sistema."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "Ambas as evidências pertencem ao mesmo documento do Tocantins especificado na identidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:sistema-de-politicas-publicas:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem a proposta de reorganização do governo estadual e o enquadramento no Sistema Estadual de Políticas Públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma explicitamente que a finalidade do sistema é assegurar acesso universal às condições essenciais da cidadania."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, o objetivo do sistema de garantia de direitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do documento indicado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:garantia-de-direitos:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o sistema citado e a finalidade completa atribuída a ele na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências conectam o sistema ao desenvolvimento territorial e vinculam o desenvolvimento econômico à qualidade de vida da população."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase resume o conteúdo do documento em tom neutro, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, o desenvolvimento territorial orientado ao bem-estar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências citadas pertencem ao mesmo documento e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:desenvolvimento-territorial:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "Em conjunto, as evidências cobrem o sistema nomeado, a orientação econômica e a finalidade de qualidade de vida da população."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente o objetivo atribuído ao sistema."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase é descritiva e não usa linguagem de elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único tema coerente, o objetivo do sistema de governança democrática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento correto e corresponde à identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:governanca-democratica:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a estrutura citada e a finalidade de reconstruir a relação entre Estado, municípios e sociedade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências mostram múltiplas propostas de criação de novas estruturas estratégicas para a administração estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a existência de propostas de criação sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:mistura",
+        "verdict": "yes",
+        "reason": "Embora cite exemplos diversos, todos pertencem a uma única área coerente: a criação de novas estruturas estratégicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento do Tocantins indicado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002539187:tema:novos-orgaos-estrategicos:documentos:TO:270002539187:01:cobertura",
+        "verdict": "yes",
+        "reason": "O conjunto de evidências cobre a cláusula material de que o plano propõe criar novas estruturas estratégicas para a administração estadual."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002539187",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002539187:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "ddbab69e74b2271c4c006c6e9b98f7034bf8a83eedecdf2885bd978d40c937de",
+    "extractedTextSha256": "8583633b174303ff57fb93b242fedbc56eff253b9987fe41c6c752e22e44e67b",
+    "documentCount": 1,
+    "documentSetSha256": "4e34c11475d0adf4721df36b5797f10b49a3e3b5391f780f563d45aff68fc8fc",
+    "contentSha256": "eec00a1fe89ba0d0bb7d2111f05096dda928312a718a25664e4b6c149aa06bea"
+  }
+}

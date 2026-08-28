@@ -1,0 +1,1252 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002549970",
+    "slug": "gisvaldo-oliveira",
+    "nomeUrna": "PROFESSOR GISVALDO",
+    "partido": "PSOL",
+    "arquivoNome": "2026PI180002549970_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002549970_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002549970:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002549970_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002549970_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "26418e0c2473940c867872215d8cee18b7203e13a17c903925305be80032d10f",
+        "extractedTextSha256": "fdd1bcd63ecad5232aca41e686244661df876d97732a2cdab78c52b1b9582156",
+        "paginas": 38,
+        "secoes": [
+          {
+            "id": "lo-piaui",
+            "titulo": "LO PIAUÍ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "LO PIAUÍ\nPROGRAMA\n¡É O POVO\nGOVERNO\nIDE\nQUE FAZ\nPROFESSOR GISVALDO\nLE EDILENE PINHO\nPSOL\nREDE\nSUSTENTABILIDADE"
+          },
+          {
+            "id": "apresentacao-do",
+            "titulo": "Apresentação do",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Apresentação do\ne"
+          },
+          {
+            "id": "queridos-piauienses",
+            "titulo": "Queridos piauienses,",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Queridos piauienses,\nqueridas piauienses\nO cenário das eleições de 2026 é\nbastante desaﬁador. Nesta disputa\neleitoral se decidirá, em larga medida,\nqual rumo nosso país e nosso estado\nseguirá diante\n\ndas profundas\n\nmudanças promovidas pelo avanço da\nextrema-direita, fenômeno que persiste\nhá pelo menos 10 anos no mundo todo.\nO PSOL tem duas tarefas centrais\nnestas eleições de 2026. A primeira,\nimpedir o retorno da extrema-direita ao\ngoverno federal. Por isso já declaramos\napoio à reeleição do presidente Lula\ndesde o primeiro turno. A segunda,\nreaﬁrmar nosso compromisso com a\nconstrução de um Piauí livre do domínio\nde grupos familiares, estabelecendo\numa política de efetiva participação\npopular e de garantia de direitos sociais.\n\n3"
+          },
+          {
+            "id": "minha-candidatura-ao-governo-do-piaui-expressa-uma-construcao-coletiva-u",
+            "titulo": "Minha candidatura ao governo do Piauí expressa uma construção coletiva. Uma",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Minha candidatura ao governo do Piauí expressa uma construção coletiva. Uma\ncaminhada pela efetivação de um projeto que tenha o rosto do povo trabalhador do\nnosso estado. Sou professor da Universidade Estadual do Piauí, do curso de\nLicenciatura em História, exercendo minhas atividades no Campus de Floriano.\nConstruo uma militância política há mais de trinta anos, tendo iniciado bem cedo, aos\n14 anos, atuando simultaneamente em grupos de jovens da Pastoral da Juventude e\nno movimento estudantil secundarista. Posteriormente, atuei no movimento\nestudantil universitário e atualmente exerço minha militância no movimento sindical\ndocente e na luta antirracista, colaborando com diversos movimentos sociais.\nFui por duas vezes diretor do Sindicato Nacional dos Docentes das Instituições de\nEnsino Superior (ANDES-SN), e também Coordenador Regional e Coordenador de\nPolítica e Formação Sindical da Associação dos Docentes da UESPI (ADCESP). Sou\nmembro da Executiva Estadual do PSOL, assumindo a tarefa de Secretário Sindical.\nÉ com essa trajetória de intensa militância na defesa da classe trabalhadora que\nestou representando o PSOL como candidato a governador do Piauí. Com ﬁrmeza\npolítica pautaremos o debate sobre os principais problemas que afetam a\npopulação do nosso estado e que tem sido historicamente ignorados pelas elites\npolíticas. Aﬁrmaremos um projeto que coloque a vida acima do lucro, em que o povo\nesteja no centro das decisões políticas.\nConvido você a construirmos juntos um Piauí para a classe trabalhadora.\n\nGisvaldo Oliveira da Silva\n\nCandidato a governador do Piauí pelo PSOL\n\n4"
+          },
+          {
+            "id": "o-psol-se-apresenta-na-eleicao-de-2026-para-o-governo-do-estado-do-piaui",
+            "titulo": "O PSOL se apresenta na eleição de 2026 para o governo do estado do Piauí com",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "O PSOL se apresenta na eleição de 2026 para o governo do estado do Piauí com\numa proposta ousada. Apostamos que nas brechas entre uma extrema-direita\nentreguista, corrupta e que estimula o que de pior existe em nossa sociedade, e uma\ncentro-esquerda neoliberal privatista que reforça o papel de dependência da\neconomia piauiense, há espaço para um projeto político que coloque a esperança na\npauta e o povo no poder.\nEm meio a um Congresso Nacional formado em 74% pela direita conservadora,\nprivatista e elitista, o PSOL tem sido aliado fundamental do Governo Lula para aprovar\ndiversos programas sociais e de transferência de renda e para lutar por justiça\ntributária como na votação da isenção do imposto de renda para quem ganha até\nR$5.000. Conseguimos responsabilizar golpistas civis e militares que atentaram\ncontra a democracia e, com a pressão nas ruas, barrar a PEC da Blindagem. Mesmo\nna base de apoio ao Governo Lula, condição necessária para a luta contra a extremadireita, o PSOL mantém sua independência política, sem receio de divergir do governo\nem questões que consideramos retrocessos, como o teto de gastos do arcabouço\nﬁscal e a exploração de petróleo na foz do Amazonas. Mas no caso do Piauí, não há um\nLegislativo que busque constantemente pressionar e boicotar iniciativas do Governo\ndo Estado. As políticas neoliberais do governo Rafael são uma prioridade do próprio\ngoverno, o que nos leva à decisão de apresentar uma alternativa, reaﬁrmando o\nlançamento de candidatura própria do PSOL.\nA maior vitrine dos limites desta política estadual é a privatização dos serviços\npúblicos, que se mostrou desastrosa tanto no fornecimento de água e saneamento\nquanto na distribuição de energia. Enquanto o partido do governador questionou no\nSTF privatização da SABESP em São Paulo, aqui a privatização da AGESPISA ocorreu de\nforma autoritária e truculenta com os trabalhadores da estatal, para dar lugar a\nÁguas do Piauí, controlada pela AEGEA, no mesmo ano que a empresa recebeu várias\nmultas milionárias por descumprimento de metas e cobranças indevidas na capital.\nA Equatorial, de forma ainda mais agravada, pois se trata de uma empresa de capital\naberto, com investidores do Canadá às Ilhas Caymã, segue há anos fornecendo um\nserviço de energia de baixa qualidade na lógica de cortar gastos para aumentar\nlucros.\n5"
+          },
+          {
+            "id": "a-politica-de-privatizacao-tambem-se-mostra-destrutiva-no-ambito-da-saud",
+            "titulo": "A política de privatização também se mostra destrutiva no âmbito da saúde pública,",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "A política de privatização também se mostra destrutiva no âmbito da saúde pública,\ncom a entrega da gestão dos hospitais estaduais a entidades privadas chamadas de\n“Organizações Sociais”. Este modelo de gestão, conforme denunciado pelo Sindicato\ndos Empregados em Estabelecimentos de Saúde Pública do Piauí (SINDESPI) e pelo\nSindicato dos Médicos do Piauí (SIMEPI), tem comprometido gravemente o\natendimento à população e o trabalho dos proﬁssionais de saúde. As ﬁscalizações\ntêm constatado diversas irregularidades: fachadas daniﬁcadas, ﬁação exposta e\ntetos deteriorados; superlotação com pacientes sendo realocados para corredores\nimprovisados e medicamentos guardados em locais com temperatura incorreta.\nAlém disso, a prestação de serviços médicos passou a ser feita por meio de contratos\nprecários sem a garantia de direitos trabalhistas, colocando em risco a assistência à\npopulação.\nSaúde é um direito social, não pode ser tratado como mercadoria. É\nresponsabilidade do Estado garantir o acesso à saúde de qualidade para toda a\npopulação. Ao privatizar a gestão dos hospitais estaduais, o governo Rafael transfere\na responsabilidade da saúde dos piauienses para grupos que buscam atender aos\nseus próprios interesses ﬁnanceiros em detrimento do atendimento digno à\npopulação.\nAlgo que é comum a vários destes projetos de privatização é o desprezo com o meio\nambiente piauiense, com vários projetos paralisados por ignorar seus impactos\nambientais, como a privatização da rodovia Transcerrados e, mais recentemente, a\nsuspensão da usina de Hidrogênio Verde em Parnaíba. O modelo de desenvolvimento\nbaseado em mineração e agronegócio é propagandeado como motor do\ncrescimento do estado, entretanto crescimento não é desenvolvimento. Na realidade\neste modelo econômico condena as populações locais e tradicionais a grilagem de\nterras, devastação dos biomas e ecossistemas, violentos conﬂitos agrários, trabalho\nanálogo à escravidão, enquanto no topo as grandes empresas e latifundiários\nconcentram a maior parte da riqueza produzida, isenta de ICMS pela lei kandir.\nO PSOL defende um projeto de distribuição radical do poder político, de justiça\neconômica e climática, de prioridade no desenvolvimento pleno das potencialidades\nhumanas. Queremos dar voz e poder de decisão para as maiorias que vivem de seu\ntrabalho: trabalhadores de aplicativo, servidores públicos, micro, pequenos e médios\nempreendedores, CLTs. Queremos por na mesa as mulheres, negros e negras,\npessoas LGBTQIA+, indígenas, quilombolas, representantes de direitos dos animais,\nPCDs, imigrantes, estudantes, sindicatos. Queremos justiça por cada feminicídio e\ntransfeminicídio, cada centímetro de terra indígena, quilombola e pública grilada,\ncada árvore ancestral derrubada. Queremos de volta o patrimônio do povo piauiense\n6"
+          },
+          {
+            "id": "que-foi-entregue-ao-setor-privado-e-assumimos-o-compromisso-de-colocar-a",
+            "titulo": "que foi entregue ao setor privado e assumimos o compromisso de colocar a serviço",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "que foi entregue ao setor privado e assumimos o compromisso de colocar a serviço\ndo bem viver coletivo e do equilíbrio ecológico todas as potencialidades naturais e\nhumanas do Piauí.\n\n7"
+          },
+          {
+            "id": "eixo-1-modelo-economico-e-justica-climatica-09",
+            "titulo": "EIXO 1 MODELO ECONÔMICO E JUSTIÇA CLIMÁTICA .............................................. 09",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1 MODELO ECONÔMICO E JUSTIÇA CLIMÁTICA .............................................. 09\nEIXO 2 DIREITOS HUMANOS E COMBATE ÀS OPRESSÕES ......................................... 20\nEIXO 3 DIREITOS SOCIAIS\n\n3.1 EDUCAÇÃO ................................................................................... 27\n3.2 SAÚDE ........................................................................................ 29\n3.3 SEGURANÇA ................................................................................. 33\n3.4 CULTURA ..................................................................................... 34\n\nEIXO 4 ORÇAMENTO, SERVIÇO PÚBLICO E RADICALIZAÇÃO DA DEMOCRACIA .............. 36"
+          },
+          {
+            "id": "a-economia-piauiense-hoje-apesar-dos-resultados-numericos-comemorados-an",
+            "titulo": "A economia piauiense hoje, apesar dos resultados numéricos comemorados ano",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "A economia piauiense hoje, apesar dos resultados numéricos comemorados ano\napós ano, é baseada num modelo que reforça a dependência regional e nacional, é\naltamente predatória dos ecossistemas e violenta com as comunidades tradicionais.\nA matriz econômica baseada no agronegócio de exportação é pouquíssimo\nprodutiva, depende do avanço da fronteira do agronegócio sobre os biomas, gera\npoucos empregos e com baixos salários, além de contribuir em quase nada em\nimpostos, já que produtos primários e semiprimários destinados à exportação são\nisentos de ICMS pela lei Kandir.\nObservemos a estrutura produtiva do estado:\n\nEXPORTAÇÕES PIAUÍ PERCENTUAL DO VALOR EM REAIS, 2025\nMINÉRIO\n\nALCALÓIDES DE FERRO\nOUTROS\n\nFARELO\nDE SOJA\n\nMEL\n\n1,5% 1,0% 1,9\n%\n\n2,5%\n2,6%\n\nCERAS\nVEGETAIS\n\n4,3%\n\n86,2%\n\nSOJA\nFONTE: DATAVIVA\n\n9"
+          },
+          {
+            "id": "6-1",
+            "titulo": "6,1%",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "6,1%\n\n4,5%\n\nPARNAÍBA\n\nCORRENTE\n\nSANTA FILOMENA\n\n7,4%\n\n3,4%\n\n1,9%\n\n10\n\n1,8%\n\n1,5%\n\nões\n\nAvi\n\n1,4%\n\nOEIRAS\n\nBAIXA GRANDE DO RIBEIRO\n\n1,7%\n\nFer\nt\nfos ilizan\nfat tes\nad\nos\n\no\n\n3,7%\n\nPICOS\n\n5,8%\n\nTrig\n\nPro\ndu\na q tos la\nuen mi\nte d nad\ne fe os\nrro\nPro\ndut\nde\no\nfer s lam\nro r\neveinado\nstid s\nos\nPro\ndut\nos\na fr lamin\nio d ad\ne fe os\nrro\nlam Ba\nina rras\ndos de\na q ferr\nuen o\nte\n\niso Fio c\nlam om\nent\no\n\nqui Outro\nnár s\nios\n\n5,4%\n\nCAMPO MAIOR\n\n34,3%\nma\n\nsem Disp\nico osit\nndu ivo\ntor s\nes\nTra\nnsf\norm\na\nelé dores\ntric\nos\n\nPorcentagem (%)\n\n9,7%\n\nPIRIPIRI\n\nURUÇUI\n\nBOM JESUS\n\n35,7%\n\nMONTE ALEGRE DO PIAUÍ\n\nPorcentagem (%)\n\nIMPORTAÇÕES PIAUÍ, PERCENTUAL DO VALOR EM REAIS 2025\n\n20,5%\n\n11,4%\n8,9%\n6,0%\n\n3,6%\n1,3%\n\nFONTE: DATAVIVA\n\nPRINCIPAIS MUNICÍPIOS EXPORTADORES, PERCENTUAL DO VALOR TOTAL\n\nDAS EXPORTAÇÕES PIAUÍ, 2025\n\n1,0%\n\nFONTE: DATAVIVA"
+          },
+          {
+            "id": "destino-das-importacoes-percentual-do-valor-total",
+            "titulo": "DESTINO DAS IMPORTAÇÕES, PERCENTUAL DO VALOR TOTAL",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "DESTINO DAS IMPORTAÇÕES, PERCENTUAL DO VALOR TOTAL\n\n0,8%\n\nBAIXA GRANDE DO RIBEIRO\n\n0,9%\n\nFLORIANO\n\n1,1%\n\nPARNAÍBA\n\n2,7%\n\nPICOS\n\n3,3%\n\nURUÇUI\n\n5,4%\n\nLAGOA DO BARRO DO PIAUÍ\n\nPorcentagem (%)\n\n30,4%\n\nRIBEIRO GONÇALVES\n\n48,3%\n\nCRISTINO CASTRO\n\nTERESINA\n\nDAS IMPORTAÇÕES EM REAIS, PIAUÍ, 2025\n\n0,7%\n\nFONTE: DATAVIVA\n\nA participação do Piauí no mercado brasileiro e mundial se resume a um exportador\nde produtos primários (soja e derivados, ceras vegetais, minério), ao passo que\nimporta semicondutores (utilizados em placas solares), bens de capital (máquinas)\ne metais beneﬁciados (laminados de ferro, ﬁos de cobre, etc). Isso leva a uma\nsituação chamada deterioração dos termos da troca: o preço da soja, nosso\nprincipal produto no mercado internacional, tende a cair ou não acompanhar o preço\ndos produtos industrializados. Para compensar esta desvalorização os produtores de\nsoja buscam aumentar a produção. Eventualmente, mesmo com a mecanização e os\nmelhoramentos genéticos produzidos pela EMBRAPA, a forma mais barata de\naumentar a produção da soja é expandindo a fronteira agrícola sobre os\necossistemas naturais e as comunidades tradicionais.\nAlém disso, a predominância do agronegócio exportador na cadeia produtiva\npiauiense traz cada vez menos retorno em benefício para a sociedade. Com a\nmecanização, informatização e melhoramentos genéticos, o setor emprega cada vez\nmenos, diminuindo sua força de trabalho em 51% de 2012 a 2024 (IBGE, PNAD contínua).\nCom isenções e benefícios ﬁscais, o setor também contribui pouco em impostos em\ncomparação com sua participação no PIB e com o impacto ambiental que gera.\n11"
+          },
+          {
+            "id": "em-2023-o-piaui-recolheu-cerca-de-r-6-8-milhoes-em-icms-primario-gerado",
+            "titulo": "Em 2023 o Piauí recolheu cerca de R$6,8 milhões em ICMS primário (gerado por",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Em 2023 o Piauí recolheu cerca de R$6,8 milhões em ICMS primário (gerado por\natividades primárias: agropecuária, extrativismo, mineração, etc), o que representa\n9,8%. Em comparação, a débil indústria piauiense contribuiu com R$ 1,1 bilhão, 16,5%\n(boletim de arrecadação tributos estaduais, CONFAZ, Fazenda, Brasil).\nDo outro lado temos o setor de comércio e serviços, que lidera tanto em número\ntotal quanto em geração de novos postos de trabalho, bem como de arrecadação de\nICMS (R$ 2,5 bilhões, 37% do total). Em que pese sua importância na economia e seus\nrendimentos médios mais elevados que a agropecuária, o crescimento desse setor\ntem contribuído pouco para diminuir a taxa de trabalho informal, acima da média\nnacional, bem como de subocupação. É exatamente neste setor em que avançam\nformas criativas de precarização do trabalho através da plataformização.\nTudo isso contribui para criação de uma economia que concentra renda e gera\ndesigualdade e uma sociedade com baixíssima mobilidade social e\ndesesperançada.\nAcreditamos que a chave para superar esse modelo de desenvolvimento agressivo\ncom os ecossistemas e com a dignidade humana passa pela transição de uma\nmatriz agroexportadora para uma baseada na indústria de transformação e na\ninternalização das cadeias de produção. O Governo deve utilizar seu poder de\ninvestimento direto e de direcionamento indireto de investimentos para estimular a\ncriação massiva de empregos industriais formais, a formação de complexos\nindustriais intensamente tecnológicos e inseridos em uma cadeia produtiva\naltamente regulamentada para mitigar seus efeitos sobre os ecossistemas. Parcerias\ncomerciais com outros países devem ser baseadas não apenas na compra e venda,\nmas na transferência de conhecimento e tecnologia. O estudo e a preservação dos\necossistemas, bem como a busca de inovações em eﬁciência da geração e uso de\nenergias renováveis deve ser, em si, um motor para o desenvolvimento do estado.\n\nPIRÂMIDE DA RENDA NO PIAUÍ (IBGE, PNAD CONTÍNUA)\n10% MAIS RICOS\n\n40,8%\nde renda\n\n50% MAIS POBRES\n\n10% MAIS POBRES\n\n19%\n\nde renda\n\n1,6%\n\nde renda\n\n12"
+          },
+          {
+            "id": "897",
+            "titulo": "897",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "897\n\n835\n\nMULHERES NEGRAS OU PARDAS\n\n858\n\nMULHERES BRANCAS\n\n990\n\nHOMENS NEGROS OU PARDOS\n\nEm reais (R$)\n\nPIAUÍ\n\n1328\n\nHOMENS BRANCOS\n\nBRASIL\n\nRENDA DOMICILIAR MEDIANA* PER CAPITA POR SEXO E COR OU RAÇA, EM R$, PIAUÍ, 2024\n\n820\n\n*Por que usamos a mediana?\nEm situações com extrema desigualdade de riqueza e renda, a renda média, ou\nrenda per capita, pode não ser ﬁel à realidade da maioria das pessoas. Nestes casos,\na mediana pode dar um panorama mais próximo da realidade, pois é o valor que\ndivide a série exatamente ao meio. No caso do Piauí, o gráﬁco mostra que metade dos\npiauienses vive com uma renda domiciliar menor do que R$ 858 por pessoa.\n\nPERCENTUAL DE PESSOAS POR CLASSE DE RENDA DOMICILIAR PER CAPITA,\nEM SALÁRIOS MÍNIMOS, PIAUÍ, 2024.\n0,40%\n\n26,90%\n\n16,30%\n\n2,40%\n\nSem Renda\n0 a 1/4\n1/4 a 1/2\n1/2 a 1\n1a2\n2a3\n3a5\n>5\n\n12,20%\n\n35,60%\n\nApenas 9% dos piauienses ganham mais de R$5000,00.\n13\n\n4,20% 2%"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFomento da agricultura familiar com fornecimento de assessoria técnica,\nincentivo à aquisição de bens de capital, prioridade de aquisição de alimentos\ndireto com o pequeno produtor nas compras públicas;\n\n•\n\nInvestir no turismo ecológico responsável, explorando as possibilidades da\nconstrução de uma cadeia produtiva de turismo,valorizando suas\nespeciﬁcidades locais do Litoral ao Sertão;\n\n•\n\nCriar linha de crédito especíﬁca na agência de fomento e desenvolvimento do\nPiauí (BADESPI) para aquisição facilitada de bens de capital e outros\ninvestimentos produtivos;\n\n•\n\nIniciar estudos de capitalização da BADESPI com vistas a torná-lo um banco\nestadual de poupança e desenvolvimento, tendo como principal diretriz dar apoio\nao crescimento de pequenas e médias empresas e industrializar o estado sob\nbases tecnológicas e energéticas descarbonizadas;\n\n•\n\nIncentivos ﬁscais com redução do ICMS para plantas produtivas que realizem\ntransição para matriz energética descarbonizada;\n\n•\n\nUtilizar o poder de compra estatal para induzir investimentos em novas plantas\nprodutivas e desenvolver novos setores da indústria descarbonizada (veículos\nelétricos, placas solares, etc) com desenvolvimento da cadeia produtiva\nrelacionada e fomento à geração de energia limpa e renovável;\n\n•\n\nIncentivo às iniciativas de economia criativa com desenvolvimento de complexos\nregionais de economia criativa, voltado especiﬁcamente para a juventude utilizar\nseu potencial criativo e incentivar uma dinâmica de geração de emprego e renda\npara a juventude;\n\n•\n\nIncentivo às cooperativas de artesanato baseado na cultura extrativista,\ndesenvolvendo o intercâmbio de insumos locais para a formação de uma cadeia\nprodutiva autossustentável com matérias-primas locais;\n\n•\n\nPrograma de Recuperação de Empresas: Inclusão de contrapartidas trabalhistas\ne sociais nos programas de parcelamento de dívidas com o Estado com grandes\ndevedores, vinculando a renúncia de multas e juros do Estado a contrapartidas\ntrabalhistas e sociais para os trabalhadores e a comunidade, como obrigação de\nimplantação do Programa de Participação em Lucros e Resultados;\n\n•\n\nOferecimento de subsídios para trabalhadores de aplicativos que desejem trocar\nseu veículo à combustão por veículos elétricos;\n\n14"
+          },
+          {
+            "id": "pagina-15",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar espaços públicos de trabalho compartilhados (coworking) para atender\ndemandas de micro e pequenos empreendedores, trabalhadores autônomos,\ntrabalhadores da economia solidária e outros grupos que necessitam de\nespaços de apoio para suas atividades laborais.\n\n•\n\nCriação de cursos proﬁssionalizantes de média duração para jovens combinada\ncom programa de bolsas de estágio nos órgãos e empresas do estado como\nforma de possibilitar a esses jovens a primeira experiência proﬁssional, abrindo as\nportas para quem hoje não possui oportunidade de ingresso qualiﬁcado no\nmercado de trabalho;\n\n•\n\nIncentivar a reciclagem com inclusão dos catadores de rua e lixões, através de\nações de geração de trabalho e renda, de combate à fome, acesso às novas\ntecnologias e ao crédito.\n\n•\n\nBuscar o desmatamento zero da vegetação nativa no estado, com absoluto rigor\nna ﬁscalização do desmatamento e grilagem de terras, bem, como na aplicação\ndas sanções.\n\n•\n\nPromover programas de reﬂorestamento e recuperação das matas ciliares e\npagamento de serviço ambientais para estimular a preservação das ﬂorestas;\n\n•\n\nApoiar e estimular uma gestão dos resíduos sólidos que reduza a emissão de\nmetano, em direção ao lixo zero por meio da eliminação dos lixões; da destinação\nadequada dos resíduos com a recuperação energética exclusivamente por\nprocessos biológicos; da ampliação da reciclagem, do fomento às cooperativas\nde catadores, e da compostagem dos orgânicos e da sua reutilização na\nagricultura\n\n•\n\nApoiar e ﬁnanciar a adaptação das cidades e ampliação de sua resiliência para\nenfrentar a emergência climática, com intervenções que garantam um\nadequado manejo das águas pluviais; obras de contenção de encostas;\nrecuperação da cobertura vegetal; e estruturação da defesa civil estimulando a\norganização das comunidades nos planos de contingência;\n\n•\n\nIncorporar os conceitos de construção sustentável na produção habitacional e\nnos edifícios públicos, com o reuso de água, a eﬁciência energética, a energia\nsolar, os sistemas locais de tratamento primário de resíduos orgânicos e esgoto\netc;\n\n15"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAdotar critérios de responsabilidade socioambiental nas compras estatais, como\neconomia no consumo de água e de energia, minimização na geração de\nresíduos, racionalização do uso de matérias-primas e redução de emissões de\npoluentes, gerando um ambiente de maior competitividade para estes produtos\ntambém no setor privado;\n\n•\n\nPromover a transição para uma agricultura de baixo carbono, com a ampliação\nda agricultura regenerativa, estímulo à agroecologia, à certiﬁcação dos\norgânicos e ao uso dos bioinsumos, restrição ao uso dos agrotóxicos e apoio às\npesquisas voltadas para a transição ecológica na agricultura familiar e na\nagroindústria;\n\n•\n\nIdentiﬁcar e mapear as áreas mais vulneráveis às múltiplas ameaças climáticas\ne sanitárias e promover ações preventivas e o monitoramento de ocupações\nurbanas em área de risco geotécnico;\n\n•\n\nOrganizar e formalizar núcleos comunitários de proteção e de defesa civil,\nestimulando e qualiﬁcando a participação das populações afetadas, garantindo\no protagonismo das comunidades locais organizadas em sua autodefesa e na\nproteção civil;\n\n•\n\nGarantir participação e controle social na elaboração do Zoneamento Ecológico\ne Econômico, com sustentabilidade ambiental, econômica e social, e\ninterlocução com os municípios e as comunidades locais;\n\n•\n\nAmpliar e acelerar a agenda de criação de novas áreas de proteção ambiental;\n\n•\n\nValorizar e investir na gestão de unidades de conservação do estado já existentes,\nincentivando a pesquisa, o lazer, a educação ambiental, o ecoturismo e a\nconservação ambiental;\n\n•\n\nAdoção de política de ﬁscalização socioambiental com viés preponderante de\neducação socioambiental, com permanente monitoramento remoto por\nimagens, visitas programadas anuais a cada território e estímulo para que os\nmunicípios criem órgãos socioambientais municipais;\n\n•\n\nGarantia de aplicação dos recursos oriundos das multas por violação da\nlegislação ambiental a atividades ﬁns que atuem como proteção\nsocioambiental;\n\n•\n\nIdentiﬁcação das vocações socioambientais de cada município piauiense para\ndeﬁnir e redeﬁnir perﬁs territoriais e de preservação ambiental;\n\n•\n\nEstabelecimento da Educação ambiental como atividade nas escolas,\nobjetivando capacitar a comunidade escolar para a participação na defesa do\nmeio ambiente, incluindo-se o patrimônio histórico, artístico, paisagístico e\ncultural;\n16"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nRevitalização e recuperação dos rios e outros corpos d’água da região semiárida\ndo Piauí no intuito de favorecer a preservação, a agricultura de base orgânica e de\nsubsistência.\n\n•\n\nIncentivo à criação de cinturões verdes ao redor dos municípios;\n\n•\n\nExpansão do programa de aquisição de alimentos, visando universalizar o\nfornecimento de alimentos pela agricultura familiar às instituições públicas de\nensino e saúde;\n\n•\n\nCriação do estoque regulador estadual de alimentos, adicionando uma camada\nde proteção contra os choques do mercado no preço dos alimentos;\n\n•\n\nApoio no setor das pesquisas e produção de novas tecnologias agrícolas e\naproximação das instituições de ensino superior e de pesquisa dos territórios e\ndos(as) produtores(as);\n\n•\n\nCriação de programa de fomento a semente crioula, com pesquisas, apoio e\nmanutenção dessas espécies;\n\n•\n\nFortalecer a implementação do Sistema Nacional de Segurança Alimentar e\nNutricional nos municípios piauienses\n\n•\n\nReunir as cozinhas comunitárias e restaurantes populares presentes no estado\nem uma Rede de Equipamentos de Segurança Alimentar, coordenando a oferta\nde alimentação por estes aparelhos e a aquisição de alimentos pela agricultura\nfamiliar;\n\n•\n\nAmpliar a rede de restaurantes populares, garantindo unidades em todos os\nmunicípios com mais de 50.000 habitantes.\n\n17"
+          },
+          {
+            "id": "pagina-18",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nRegistro das terras públicas pra que possam ser destinadas às ﬁnalidades\nestratégicas da politica fundiária;\n\n•\n\nAgilização dos processos de regularização fundiária existentes no INTERPI e\ndeﬁnição de limites no regime de colaboração do INCRA, visando o mesmo\nobjetivo;\n\n•\n\nConstrução de agenda de atividades fundiárias do governo, estabelecendo\nações de curto e médio prazos;\n\n•\n\nAperfeiçoamento das práticas cartorárias para facilitação da regulação\nfundiária;\n\n•\n\nCorreição nos cartórios de registro de imóveis para evitar o acobertamento da\nprática de grilagem e especulação quanto à terra;\n\n•\n\nRealização de concurso público para contratação de pessoal qualiﬁcado, voltado\npara os processos de reforma agrária, com valorização em sua carreira,\ncondições de trabalho e salário\n\n•\n\nEstrita observação, nos processos de regularização fundiária, do Zoneamento\nEcológico;\n\n•\n\nIntegração das ações do INTERPI às do INCRA, visando potencializar a realização\nda reforma agrária;\n\n•\n\nGarantia de funcionamento pleno da Vara Agrária de Bom Jesus; criação de\nDelegacia Agrária para lidar com crimes decorrentes de conﬂitos especíﬁcos;\n\n•\n\nValorização da produção econômica do povo do Piauí, com destaque para a\nagricultura familiar;\n\n•\n\nCriação de condições econômicas e estruturais para tornar o Piaui uma\nreferência na produção agroecológica;\n\n•\n\nRestruturação da política de licenciamento ambiental, impedindo a invasão e\ndestruição dos territórios pelo agronegócio;\n\n•\n\nCriação de oportunidades de estudo e trabalho para que a juventude tenha\ncondições de permanecer no campo;\n\n•\n\nAcolhimento das diversidades religiosas, étnico-cultural e de gênero, existentes\nnos territórios;\n\n•\n\nCombate à grilagem de terras, ao desmatamento e queimadas, contaminação\ndas águas por agrotóxicos e assoreamento de margens de rios, lagoas e brejos;\n\n•\n\nArticulação da produção de conhecimento nas instituições de ensino superior,\ntécnico e tecnológico do estado, com mecanismos de apoio e assistência aos\nprodutores, especialmente da agricultura familiar;\n18"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecimento efetivo da ﬁscalização do processo de grilagem de terra e\ndestruição ambiental e mecanismos para impedir a utilização de mão de obra\nescrava no estado;\n\n•\n\nIntensiﬁcação dos processos de regularização fundiária urbana e rural, com\ntitulação em nome das mulheres; e enfrentamento aos conﬂitos por terra;\n\n•\n\nAdoção de medidas coibitivas e ﬁscalizatórias do uso de agrotóxicos em todo o\nestado.\n\n19"
+          },
+          {
+            "id": "o-piaui-e-o-lar-de-mais-de-3-2-milhoes-de-pessoas-com-uma-pequena-maiori",
+            "titulo": "O Piauí é o lar de mais de 3,2 milhões de pessoas com uma pequena maioria",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "O Piauí é o lar de mais de 3,2 milhões de pessoas com uma pequena maioria\nmulheres e uma enorme maioria de negros e negras e pardos e pardas . Além disso,\nmais de 7mil pessoas indígenas e mais de 31mil quilombolas têm sua história e a de\nseus ancestrais ligadas a esse território. E mais recentemente começamos a receber\nrefugiados indígenas, principalmente de etnia Warao, cujos primeiros descendentes\njá vivem e reproduzem sua cultura em meio à cultura e às instituições piauienses.\nEstas mesmas instituições, portanto, devem encarar o desaﬁo de cumprir tarefas\nque consideramos civilizacionais.\nSegundo o Anuário Brasileiro de Segurança Pública de 2025, o Piauí apresentou uma\nredução de feminicídios, mas ainda com o alarmante número de 37 casos, mais do\nque 3 por mês, bem como o aumento de 31% dos casos de perseguição/stalking, 59%\nde violência psicológica e 10,6% de estupros contra mulheres. Além disso, o\nconﬁnamento ao serviço doméstico não pago ainda é uma realidade prevalente,\ncom 49,7% das mulheres trabalhadoras com ﬁlhos de 0 a 3 anos sem frequentarem\ncreche ou escola (Relatório PI conf nac trabalho).\nJá o relatório Pele Alvo, da Rede de Observatórios da Segurança, mostra que 85%\ndas mortes em ações policiais no Piauí em 2025 foram de pessoas negras.\nImplementaremos políticas públicas de igualdade racial, com o foco na defesa e\npromoção da vida com dignidade, enfrentando a violência estrutural e promovendo\na inserção econômica da população negra.\nA população LGBTQIA+ também segue sendo alvo de toda uma pirâmide de\nviolência, em cuja base estão a chacota, o bullying, as piadas, passando pela\nexclusão do mercado de trabalho, expulsão das famílias, ameaças, e culminando na\nviolência e na morte. Segundo relatório do Grupo Gay da Bahia, o nordeste é a região\nmais perigosa para essa população e o Piauí segue a mesma tendência, com taxas\nde violência acima da média nacional. As pessoas transsexuais em especíﬁco, estão\nhoje na mira da extrema-direita, que incita o ódio gratuito a esta população. O\nresultado é que, entre os crimes cometidos contra pessoas LGBTQIA+, as travestis e\ntranssexuais concentram a maior proporção de lesão corporal e ameaça (3º Boletim\nde violência contra LGBTQIAPN+ no Piauí, SSP-PI), além da aprovação de leis\n20"
+          },
+          {
+            "id": "esdruxulas-como-a-proibicao-do-uso-do-banheiro-feminino-em-teresina",
+            "titulo": "esdrúxulas, como a proibição do uso do banheiro feminino, em Teresina.",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "esdrúxulas, como a proibição do uso do banheiro feminino, em Teresina.\nO PSOL acredita que a enorme diversidade humana é o que torna o Piauí mais forte e\ncapaz de encontrar soluções criativas para nossos problemas. Mas o contrário\nacontece, nos tornamos mais dependentes e pobres cultural e intelectualmente,\nquando estas diferenças se traduzem em enormes desigualdades. E se o próximo\ngrande poeta piauiense estiver neste momento sendo recrutado por organizações\ncriminosas? E se a próxima grande engenheira estiver agora sendo expulsa de casa\npor ser lésbica ou bissexual? E se a cura deﬁnitiva para a AIDS estiver guardada na\nmente de um adolescente quilombola a quem nunca foi dada a oportunidade do\nensino universitário?\nAcreditamos que uma das tarefas principais de um governo é o combate à\ndesigualdade através de políticas públicas direcionadas para estas pessoas, que o\nsistema capitalista brasileiro reduz à mera mão-de-obra barata ou ao trabalho\nreprodutivo não pago (cuidar da casa e dos ﬁlhos como única perspectiva de vida).\n•\n\nCriar uma Secretaria Estadual de Direitos Humanos, dotada de estrutura para\narticular, coordenar e promover políticas focais e transversais de promoção,\nproteção e defesa de direitos humanos, garantindo sua interlocução com todas\nas áreas de governo;\n\n•\n\nCriar um programa de proteção a lideranças dos movimentos sociais\nameaçados;\n\n•\n\nAtender às demandas reparatórias e históricas dos quilombolas e povos\nindígenas, apoiando junto à União as demarcações ainda pendentes,\ncooperando ativamente com a Educação Indígena e fomentando o resgate e o\nfortalecimento das tradições culturais indígenas e quilombolas;\n\n•\n\nArticular ações de combate ao trabalho análogo à escravidão e ao tráﬁco de\npessoas no Piauí;\n\n•\n\nEstimular a descentralização e a regionalização de serviços e programas na área\nda infância e juventude com forte apoio aos municípios;\n\n•\n\nInclusão social, laboral e produtiva do imigrante por meio de políticas públicas,\ncom oferta de cursos gratuitos de português para imigrantes dentro de unidades\nestratégicas do Programa de Educação de Jovens Adultos (EJA).\n\n21"
+          },
+          {
+            "id": "pagina-22",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAmpliar a Participação das Mulheres nos Espaços de Poder, garantindo no\nmínimo 50% de mulheres no primeiro escalão do governo do estado e nos cargos\nde direção das autarquias e empresas públicas;\n\n•\n\nCriar Programa de Promoção e Fortalecimento das Mulheres no Mundo do\nTrabalho, com incentivo à contratação, à formação proﬁssional com ênfase em\natividades não tradicionais e que não reforcem a divisão sexual do trabalho,\nassistência técnica nas áreas urbanas e rurais, com uma política dirigida de\ncompras públicas;\n\n•\n\nGarantir os direitos igualitários das mulheres à terra, com a titularidade conjunta,\nou, caso sejam mulheres sozinhas, somente no nome delas; com condições de\ninvestimento, crédito subsidiado especíﬁco para mulheres, novas tecnologias e\ninovação, assistência técnica; com apoio à comercialização e ao fortalecimento\nde organizações produtivas das trabalhadoras rurais e das mulheres que atuam\nna agricultura; com incentivo especial à manutenção da biodiversidade, da\nprodução de base agroecológica e orientada pela economia solidária; com\natenção às mulheres dos territórios quilombolas e dos povos indígenas;\n\n•\n\nEstabelecer educação sexual em todas as unidades escolares, incluindo regiões\nrurais e comunidades tradicionais, com pedagogia adequada para cada faixa\netária, abordando a prevenção à violência sexual, doméstica e de gravidez\nprecoce ou indesejada. Saúde reprodutiva para além da lógica materno infantil e\nassegurando a escolha ou abstenção do uso de contraceptivos;\n\n•\n\nConstituir e ampliar oferta de equipamentos públicos e sociais que contribuam\npara o compartilhamento social das tarefas domésticas (restaurantes\npopulares, cozinhas comunitárias, banco de alimentos, lavanderias\ncomunitárias, centros de convivência de idosos, etc);\n\n•\n\nIncentivar programas e conteúdos especíﬁcos nas áreas de comunicação e\ncultura contribuindo para desconstrução da cultura do machismo e\npatriarcalismo;\n\n•\n\nEstimular programas de fomento à produção e difusão cultural para a promoção\nda igualdade e valorização da expressão das mulheres, sua diversidade e sua\ncontribuição social, política, econômica e cultural;\n\n•\n\nIncentivar e fortalecer a participação das mulheres nos programas e iniciativas\nde formação proﬁssional, voltados especialmente para o ensino técnicoproﬁssionalizante;\n22"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nDemocratizar o ingresso e a permanência na educação superior, especialmente\npara mães jovens e mulheres negras, indígenas, imigrantes e rurais;\n\n•\n\nAmpliação do acesso à atenção à saúde reprodutiva e sexual, com centros\nregionais de planejamento familiar;\n\n•\n\nGarantir meios técnicos, ﬁnanceiros e operacionais para a aplicação integral da\npolítica nacional de atenção integral à saúde das mulheres em todos os\nestabelecimentos de saúde do estado;\n\n•\n\nAmpliação da atenção ao parto e puerpério de médio e alto risco, visando a\nmanter a tendência à redução da mortalidade materna;\n\n•\n\nFortalecimento do cuidado de saúde das mulheres no sistema prisional;\n\n•\n\nUniversalização do acesso à dignidade menstrual no Piauí;\n\n•\n\nReconhecimento institucional e criação de estratégia para combate à violência\nobstétrica em todos os níveis de cuidado;\n\n•\n\nGarantia de acolhimento e anonimato para os casos de aborto legal;\n\n•\n\nIncentivo à participação das mulheres na formulação das políticas de saúde no\nPiauí através dos conselhos e conferências estaduais de saúde;\n\n•\n\nFortalecimento das Conferências de Políticas paras Mulheres e de Políticas de\nSaúde para as Mulheres.\n\n•\n\nFortalecer a educação sobre questões étnico raciais nas escolas, visando\ncombater questões sociais e culturais enraizadas na sociedade reproduzem o\nracismo estrutural.\n\n•\n\nPromover a valorização das comunidades tradicionais de matriz africana,\ntitulação de suas terras, facilitação da sua formalização junto aos órgãos\npúblicos, criação de mecanismos para sua sobrevivência e seu reconhecimento\ncomo interlocutoras privilegiadas junto às instâncias governamentais.\n\n•\n\nGarantia do direito de consulta prévia, livre e informada às comunidades\nquilombolas, dos rios, das ﬂorestas e de terreiro, de acordo com a Convenção 169\nda Organização Internacional do Trabalho (OIT), a respeito de todas as medidas\nlegislativas e administrativas que afetem direta ou indiretamente seus direitos,\nsobretudo aquelas relacionadas a grandes empreendimentos que afetam seus\nterritórios e modos de vida;\n\n23"
+          },
+          {
+            "id": "pagina-24",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nA efetivação e o monitoramento do cumprimento da da Lei 10.639/2003, Lei de\nDiretrizes e Bases da Educação Nacional e da Resolução 01/2004 do Conselho\nNacional de Educação, que tornaram obrigatório, em todos os níveis, o ensino de\nHistória e Cultura Africana e Afro-Brasileira e Educação das Relações ÉtnicoRaciais;\n\n•\n\nInvestir em um Programa de Saúde da População Negra, incorporando os saberes\ntradicionais, com atenção especial à saúde da mulher negra e à saúde mental;\n\n•\n\nCriar a Secretaria Estadual de Políticas para a Promoção da Igualdade Racial,\nassegurando condições políticas, orçamentárias e de pessoal com dimensão\nsuﬁciente para garantir o alcance de suas ações;\n\n•\n\nEstímulo a adoção de programas de ação aﬁrmativa e de combate ao racismo\ninstitucional no setor público e privado, além de considerar a existência desses\nprogramas como critério para participação das empresas privadas em\nprocessos licitatórios;\n\n•\n\nEstímulo às manifestações culturais das juventudes negras, com editais\nespecíﬁcos para fomento de expressões dessas juventudes, tais como: os\nelementos do hip hop (rap, graﬁte, breakdance), o funk e os saraus das periferias.\n\n•\n\nFortalecer e incentivar a participação da população LGBTQIA+ no Conselho\nEstadual de Políticas para a População LGBTQIA+\n\n•\n\nCriação de um programa de integralidade social à população trans, nos moldes\ndo programa Transcidadania, da prefeitura de São Paulo, com políticas de\ninserção dessa população no mercado de trabalho formal e para garantir seu\nacesso à qualiﬁcação educacional, segurança alimentar, habitação e saúde\nintegral;\n\n•\n\nFomentar a cultura LGBTQIA+, por meio de editais de fomento à cultura como o\nProac, para a realização de eventos, festivais e feiras. Valorizar e preservar a\nmemória e cultura popular LGBTQIAP+, fomentando a criação e/ou manutenção\nde espaços culturais e centros de documentação e pesquisa, bem como a\nprodução, o resgate, a aquisição e a circulação de acervos e bens materiais e\nimateriais da população LGBTQIA+;\n\n•\n\nOrganização de uma Política Estadual de Saúde da População LGBTQIA+;\n\n•\n\nDefesa dos direitos sexuais e reprodutivos historicamente conquistados pela\ncomunidade LGBTQIA+;\n24"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nGarantir acolhimento universal e integral a população LGBTQIA+ em todos os\nníveis de atenção;\n\n•\n\nFortalecimento do ambulatório Makelly Castro como centro de referência no\nacolhimento e acompanhamento de pessoas trans. Criação de centros regionais\nde acompanhamento especializado e multidisciplinar para pessoas trans.\n\n•\n\nIncentivar a participação de pessoas LGBTQIA+ nos instrumentos de participação\npopular do SUS;\n\n•\n\nFomento às pesquisas, levantamento e análise de indicadores de dados da\npopulação LGBTQIA+ na área de ciência e tecnologia e no âmbito do sistema de\ninformação do SUS.\n\n•\n\nGarantir a demarcação imediata a nível estadual das terras dos povos AkroáGamella, Guegue do Sangue, Kariri e Tabajara-Ipy, bem como de todas as terras\nindígenas eventualmente presentes nas unidades de conservação do estado.\nInvestimentos para a recuperação destas terras degradadas pelo agronegócio\npredatório;\n\n•\n\nCriar o Conselho Estadual de Política Indigenista, com núcleos do conselho com\nfuncionamento periódico nas aldeias e nas comunidades indígenas urbanizadas;\n\n•\n\nConstruir o Plano Estadual de Políticas para os Povos Indígenas, com deﬁnição de\nmetas e revisão periódica a cada dois anos;\n\n•\n\nRealizar a Conferência Estadual dos Povos Indígenas;\n\n•\n\nConsolidar e ampliar os CETI Indígena;\n\n•\n\nFomentar o resgate das línguas indígenas e a implantação de escolas bilíngues\nem suas terras;\n\n•\n\nFavorecer e valorizar a agrobiodiversidade indígena e quilombola, promovendo\nfeiras de trocas de sementes e de venda de produtos oriundos de seus sistemas\ntradicionais de plantio.\n\n25"
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPrograma de formação continuada para todo o serviço público estadual com\nfoco na qualiﬁcação para atendimento de pessoas com deﬁciência (PcD) e\npessoas com transtorno do espectro autista (TEA) com apoio de organizações da\nsociedade civil, como a ACEP, APADA, Associação Prismas, AMA, etc;\n\n•\n\nAmpliar a rede especializada de atendimento especializado à pessoa com TEA,\nlevando os Centros Especializados de Atendimento às Pessoas com Transtorno do\nEspectro Autista do Piauí (CETEA) para todas as macrorregiões de saúde do\nEstado;\n\n•\n\nPrograma Piauí Acessível: ampliar a acessibilidade em prédios públicos, escolas,\nhospitais, terminais rodoviários e espaços culturais, garantindo rampas,\nsinalização tátil, comunicação acessível, intérpretes de Libras e tecnologias\nassistivas. Criar um plano estadual de eliminação de barreiras arquitetônicas em\ntodos os municípios;\n\n•\n\nPrograma Primeiro Emprego Inclusivo: criar incentivos para empresas que\ncontratem pessoas com deﬁciência, ampliar a qualiﬁcação proﬁssional em\nparceria com universidades, IFPI, Sistema S e cooperativas, além de fortalecer\npolíticas de empreendedorismo para PcDs;\n\n•\n\nFortalecer a educação especial inclusiva por meio da ampliação das salas de\nAtendimento Educacional Especializado (AEE) e da contratação e valorização de\nproﬁssionais de apoio escolar, visando também a democratização do acesso a\nesses recursos aos municípios do interior;\n\n•\n\nCentral Estadual de Acessibilidade e Libras: expandir o atendimento por\nintérpretes de Libras em serviços públicos estaduais, inclusive por\nvideoconferência, e ampliar a produção de materiais acessíveis para pessoas\nsurdas, cegas e surdocegas.\n\n26"
+          },
+          {
+            "id": "realizar-no-intervalo-dos-dois-primeiros-anos-de-gestao-concurso-publico",
+            "titulo": "Realizar, no intervalo dos dois primeiros anos de gestão, concurso público para",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Realizar, no intervalo dos dois primeiros anos de gestão, concurso público para\npreenchimento total do quadro de professores(as) e funcionários(as) efetivos da\neducação básica. Meta de substituir todos os contratos temporários e precários por\nprofessores de carreira, com formação adequada, atuando no mesmo campo do\nconhecimento de sua licenciatura;\nDiscussão e implementação de uma política própria de avaliação contemplando\nas diversas dimensões da formação escolar, incluindo a gestão democrática,\nbaseada nos princípios da educação laica e libertadora, com a participação das\nInstituições de Ensino Superior do estado. Garantir autonomia e independência da\niniciativa privada na gestão e avaliação da política educacional no Piauí;\nAmpliar os esforços para superar o analfabetismo e elevar os índices de aprendizado\nadequado no Piauí;\nInvestimento na formação continuada dos(as) trabalhadores(as) em Educação e\nno provimento de condições adequadas de trabalho e de salário;\nCumprimento sem ressalvas da Lei do Piso Nacional do magistério;\nGarantir o acesso à educação básica nos territórios indígenas e quilombolas do Piauí,\ncom abordagem focada nos conhecimentos ancestrais;\nAuditoria dos contratos do transporte escolar e de empresas prestadoras de\nserviços educacionais no Estado;\nAperfeiçoar mecanismos de gestão democrática descentralizada da educação,\nincluindo a eleição de gestores, em discussão com a comunidade escolar e a\nsociedade.\n\n27"
+          },
+          {
+            "id": "pagina-28",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCumprimento do Artigo 224 da Constituição do Estado do Piauí, inciso II, que\ngarante o repasse de cinco por cento da receita proveniente de impostos para a\nUESPI, com garantia de repasse do duodécimo;\n\n•\n\nCumprimento do Artigo 228 da Constituição do Estado do Piauí que garante a\nautonomia administrativa e ﬁnanceira da UESPI;\n\n•\n\nRealizar, no intervalo dos dois primeiros anos de gestão, concurso público para\npreenchimento total do quadro vagas docente e de técnico-administrativos,\ngarantindo o pleno funcionamento dos cursos de graduação e pós-graduação\ndos 12 campi da UESPI;\n\n•\n\nContratação de professores temporários apenas em casos de afastamento de\nprofessores efetivos;\n\n•\n\nReforma e ampliação dos campi em funcionamento garantindo infraestrutura\nadequada para os cursos de graduação e para os estudantes, com laboratórios,\nbibliotecas, residências universitárias, creches e restaurantes universitários em\ntodos os campi;\n\n•\n\nBuscar a democratização da educação superior principalmente através da\nassistência estudantil, inclusive transporte universitário, favorecendo a formação\npresencial. Educação à distância deve ser usada somente de forma\ncomplementar;\n\n•\n\nIncentivo à abertura de programas de mestrado e doutorado na capital e demais\nmunicípios;\n\n•\n\nAbertura bienal de processo seletivo para ﬁnanciamento, através de edital, de\nprojetos em ciência e tecnologia com real potencial de impacto para a melhoria\nda qualidade de vida da população piauiense.\n\n28"
+          },
+          {
+            "id": "pagina-29",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nDefesa da Reforma Sanitária Brasileira e do SUS;\n\n•\n\nReverter a lógica da a expansão do setor privado na saúde pública, aumentando\ninvestimentos na aquisição de tecnologia e recursos humanos, com objetivo de\nminimizar a dependência do SUS do setor privado;\n\n•\n\nDefender em âmbito nacional a revogação das contrarreformas e retrocessos\nnas políticas sociais especialmente a Emenda Constitucional 95/2016.\n\n•\n\nOrientar o modelo de gestão da Secretaria Estadual de Saúde de Piauí (SESAPI)\npelos pressupostos da gestão estratégica e participativa;\n\n•\n\nEnvolver universidade, gestão, trabalhadores de saúde, comunidade e\nmovimentos sociais no planejamento estratégico e participativo da SESAPI;\n\n•\n\nFortalecimento do processo de regionalização do SESAPI através das Comissões\nIntergestoras Regionais (CIR) – instâncias colegiadas entre estado e municípios,\nampliando a gestão e atenção à saúde de forma regionalizada.\n\n•\n\nBuscar a ampliação em 100% a cobertura da APS de forma regionalizada;\n\n•\n\nApoio institucional aos municípios na perspectiva de construção da APS\nAmpliada;\n\n•\n\nFortalecimento e ampliação do repasse estadual para as equipes\nMultidisciplinares (eMulti);\n\n29"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nConstrução de estratégias de avaliação e monitoramento da Atenção Básica em\nSaúde.\n\n•\n\nDefesa da Reforma Psiquiátrica Brasileira, Saúde Mental e da Atenção\nPsicossocial;\n\n•\n\nOrganização da Política Estadual de Saúde Mental orientada pelos pressupostos\nda RPB;\n\n•\n\nFortalecimento da Rede de Atenção Psicossocial (RAPS) orientado pelos\npressupostos da RPB e com os seguintes dispositivos: ampliação das equipes de\nsaúde mental na atenção básica em saúde, organização de centros de atenção\npsicossocial 24 horas com manejo de crise, acolhimento noturno, criação de\nserviços descentralizados de urgência psiquiátrica, organização de residências\nterapêuticas, criação de serviços de desintoxicação, criação de centros de\nconvivência, criação de consultório de rua orientado pela abordagem de redução\nde danos, ampliação dos leitos psiquiátricos em hospitais gerais, fortalecimento\ndos dispositivos de educação permanente em saúde orientados para a reforma\npsiquiátrica e para a luta antimanicomial;\n\n•\n\nReforma e recomposição do quadro de funcionários do Hospital Psiquiátrico\nAreolino de Abreu;\n\n•\n\nConstrução de um programa estadual de desinstitucionalização voltada para\nmoradores de hospitais psiquiátricos;\n\n•\n\nConstrução de uma política estadual de atenção integral à saúde mental de\ncrianças e adolescentes;\n\n•\n\nConstrução de uma política estadual de álcool e outras drogas orientada pelo\ncuidado em liberdade e pela redução de danos;\n\n•\n\nDesenvolvimento de dispositivos de educação permanente em saúde orientados\npara Reforma Psiquiátrica, Saúde Mental e Atenção Psicossocial;\n\n•\n\nRegulamentação do uso da Cannabis medicinal.\n\n30"
+          },
+          {
+            "id": "pagina-31",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecimento do processo de regionalização em saúde e a organização político\nadministrativas das regiões de saúde;\n\n•\n\nPrioridade de ampliação da atenção à saúde para regiões de saúde com maior\nvulnerabilidade social;\n\n•\n\nBuscar, junto ao governo federal, a universalização do Serviço Pré-Hospitalar\n(pronto-atendimento) 24h;\n\n•\n\nRegionalização da atenção especializada em microrregiões de assistência às\nurgências e emergências;\n\n•\n\nOrganização e ampliação a estrutura especializada regionalizada, fortalecendo\nos polos regionais de saúde.\n\n•\n\nFortalecimento da Política de Gestão do Trabalho e Educação na Saúde;\n\n•\n\nCriação da Mesa de Negociação do SUS com o objetivo de atuar na\ndesprecarização das condições de trabalho no campo da saúde;\n\n•\n\nOrganização de um Plano de Cargos, Carreiras e Salários para o todas as\ncategorias proﬁssionais do SUS, garantindo progressão automática;\n\n•\n\nOrganização de concursos públicos para todas as áreas do Sistema Estadual de\nSaúde;\n\n•\n\nDesenvolvimento do apoio institucional no desenvolvimento de políticas de\neducação permanente de saúde em contextos regionais;\n\n•\n\nFortalecimento e ampliação das experiências de educação em saúde, como as\nResidências Integradas em Saúde: Residência Multiproﬁssional e Residência\nMédica, voltadas para especialização multiproﬁssional em saúde da família e\ncomunidade;\n\n•\n\nDesenvolvimento do diálogo entre educação, serviços de saúde e comunidade no\ncampo da educação superior, da educação proﬁssional e do saber popular;\n\n•\n\nFortalecimento da área de ciência e tecnologia orientada para o Sistema Único de\nSaúde;\n\n31"
+          },
+          {
+            "id": "pagina-32",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nConstrução de espaços de gestão participativa e compartilhada entre gestão,\nuniversidade, trabalhadores e movimentos sociais no âmbito da gestão da\neducação permanente em saúde considerando todos os atores como\nprotagonistas do processo através de colegiados de gestão como comissões\nintergestoras regionais (CIR), conselhos estaduais e municipais de saúde, entre\noutros dispositivos.\n\n•\n\nIncentivo à participação popular institucionalizada e não institucionalizada\natravés dos movimentos sociais no campo da saúde, conselhos de saúde e\nconferências de saúde;\n\n•\n\nFortalecimento dos conselhos de saúde: conselho estadual de saúde, conselhos\nregionais de saúde;\n\n•\n\nFortalecimento das conferências de saúde com espaços de formulação,\nmonitoramento e avaliação da política estadual de saúde.\n\n32"
+          },
+          {
+            "id": "pagina-33",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nInvestimento na valorização do proﬁssional da segurança pública, através de um\nplano de cargos e salários que garantam a isonomia nos processos de promoção\ndos proﬁssionais, no fornecimento de equipamentos modernos e adequados ao\nserviço, que garantam mais segurança e proteção ao proﬁssional durante a\nexecução de seu trabalho;\n\n•\n\nRescisão imediata de contratos, seja de fornecimento de equipamento, seja de\ntreinamento, com sujeitos, individuais ou institucionais, reconhecidamente\nvioladores de direitos humanos, criminosos de guerra e/ou implicados em\ngenocídio;\n\n•\n\nInvestir em reformas e melhorias dos presídios estaduais e programas de\nressocialização de pessoas privadas de liberdade (PPL), com objetivo de quebrar\no ciclo de renovação de quadros do crime organizado;\n\n•\n\nPrioridade de investimento na capacidade de inteligência, investigação e\nprevenção de crimes contra a vida e o patrimônio e corrupção. Criação de\ncomplexo de inteligência em segurança pública na capital, integrando as\ndiretoria de inteligência da polícia militar e da polícia civil e investimento na\nampliação radical da capacidade de elucidação de crimes em todo o estado;\n\n•\n\nModernização e expansão das capacidades operativas do departamento de\ncombate à corrupção da PM, com objetivo de impedir a entrada do crime\norganizado na política;\n\n•\n\nInvestir na formação continuada em direitos humanos, práticas antirracistas,\ndireitos da população LGBTQIA+, atendimento a mulheres vítimas de violência,\natendimento a pessoas em situação de rua e outros grupos vulneráveis e\npoliciamento comunitário para todos os agentes de segurança;\n\n•\n\nAparelhamento e expansão para todas as mesorregiões do estado das\ndelegacias especializadas, com prioridade para mulheres, idosos, criança e\nadolescente, crimes virtuais e meio ambiente;\n\n•\n\nElaboração de um plano estadual integrado participativo de segurança pública,\njunto aos movimentos sociais e entidades da sociedade civil que contemple\nquestões transversais como educação, juventude, esporte e lazer, tendo como\nfoco as políticas voltadas para crianças e adolescentes, levando em conta as\nquestões de gênero, raça e diversidade sexual;\n\n•\n\nCriação de protocolo de uso da força letal e não-letal da polícia e investimento\nem habilidades de mediação e descalonamento de conﬂitos;\n\n33"
+          },
+          {
+            "id": "pagina-34",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nVedação de privatizações e/ou parcerias público-privadas na gestão dos\npresídios;\n\n•\n\nRegulamentação do cultivo da cannabis medicinal pelas associações de\npacientes e familiares e garantia de fornecimento de medicamentos a base de\ncannabis pelo SUS a quem precisa;\n\n•\n\nEstabelecer a obrigatoriedade do uso de câmeras corporais para todos os\nagentes em atividade de policiamento ostensivo;\n\n•\n\nRecuperação, revitalização e fortalecimento dos espaços públicos e de\nconvivência comunitária, com opções para a comunidade local através de\nparcerias com entes públicos;\n\n•\n\nDefendemos que o paradigma da segurança está fundamentado na promoção e\nproteção da vida e da dignidade, é necessário que o próprio proﬁssional de\nsegurança também se identiﬁque como trabalhador/a e tenha seus direitos\nhumanos garantidos. Na lógica da guerra, não avançaremos em nada.\n\n•\n\nDemocratização da gestão da política de cultura no estado do Piauí, com\ninvestimentos na ampliação da sede e da capacidade de mobilização do\nconselho estadual de cultura;\n\n•\n\nMapear as cadeias produtivas da cultura e a economia criativa do estado\nidentiﬁcando as diferentes expressões e vocações criativas do território,\nestabelecendo áreas de atuação de políticas públicas especíﬁcas para o\ndesenvolvimento local, aliando projetos de cultura, turismo e desenvolvimento\neconômico;\n\n•\n\nImplementar uma política de formação e qualiﬁcação de proﬁssionais, artistas,\ntécnicos, gestores e produtores, com a oferta de cursos técnicos\n\n•\n\nDestinação de recursos para fortalecer a pasta da cultura, com plano de ação\ndenominado “Arte em Toda Parte”, onde teremos um mês especíﬁco para ações\nde promoção da cultura no Estado, com diversos festivais;\n\n•\n\nApoio técnico e incentivo para artistas locais a participarem dos editais nacionais\nde cultura, captando recursos para o desenvolvimento de ações nas diversa\náreas e expressões culturais;\n\n•\n\nCriação de uma editora digital pública, que edite obras em domínio público e\npublicações de interesse da administração pública, disponibilizando o conteúdo\nao público em geral por meio de uma plataforma online;\n\n34"
+          },
+          {
+            "id": "pagina-35",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nElaborar um calendário cultural integrado ao setor de turismo com festivais, feiras,\nexposições e outros eventos de natureza pública, privada ou independente;\n\n•\n\nPromover um programa efetivo de circulação, itinerância dos espetáculos e\nmostras dos acervos públicos em todo o estado, dando visibilidade a agendas\nregionais e dinamizando a cadeia econômica da cultura;\n\n•\n\nIncentivar marcos regulatórios locais que incentivem a economia da noite, as\npolíticas locais para o carnaval de rua, o apoio ao turismo ambiental e cultural\nnão predatório, a indução às redes econômicas das culturas periféricas, pontos\nde cultura e demais iniciativas comunitárias;\n\n•\n\nDeﬁnir zonas e circuitos criativos de acordo com as vocações regionais, com\nfomento especíﬁco e transversal para o desenvolvimento local;\n\n•\n\nFomento à estruturação e ampliação da programação da TV Antares, com\nincentivo ao oferecimento de produções do audiovisual piauiense e brasileiro.\n\n35"
+          },
+          {
+            "id": "o-psol-acredita-que-um-governo-de-esquerda-deve-ter-como-estrategia-e-me",
+            "titulo": "O PSOL acredita que um governo de esquerda deve ter como estratégia e meta a",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "O PSOL acredita que um governo de esquerda deve ter como estratégia e meta a\ndistribuição do poder político, signiﬁcado a capacidade de tomar decisões que se\ntornam políticas concretas.\nUm governo estadual tem um potencial enorme para ser um agente de\nconsolidação desta democracia, através da redução de desigualdades\nsocioeconômicas e regionais, e de sua capacidade de mobilização e organização.\nPorém isto depende de um estado que seja administrado com planejamento,\ninformação de qualidade e uma profunda cultura de participação popular.\nEntendemos também que um governo, muito mais do que uma corte de\nprivilegiados, é construídos pelas pernas, braços, mentes e corações dos mais de\n83mil servidores públicos estaduais, 36mil dos quais terceirizados ou em contratos\ntemporários. Defenderemos nacionalmente a revogação dos limites para a\ncontratação de pessoal da Lei de Responsabilidade Fiscal.\nA valorização dos conselhos de base e gestores, com o fortalecimento de seu\ncaráter deliberativo, a ampliação do alcance e do orçamento dirigido ao Orçamento\nParticipativo, o diálogo permanente com a Associação Piauiense e Municípios, a\njustiça tributária, a valorização do serviço público e a substituição de terceirizações,\nbem como a criação de uma cultura de participação popular em todos os níveis, do\nbairro ao parlamento, serão prioridades do governo do PSOL.\n•\n\nGestão baseada nos princípios do Governo Aberto, aumentar a transparência e\ncombater a corrupção, universalizando integralmente o acesso à informação e o\ncontrole cidadão dos gastos e das atividades do Estado, além de uma ampla\nabertura de dados e estruturação de um sistema de controle interno;\n\n•\n\nReformular o Portal da Transparência, divulgando dados sobre andamento das\nobras, renúncias ﬁscais, emendas parlamentares, convênios e transferências\npara municípios e entidades, sobre planejamento e orçamento, e alcance das\nmetas de governo;\n\n36"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPromover a integração digital com serviços municipais, permitindo o acesso a\nserviços digitais do âmbito municipal e estadual em um único aplicativo;\n\n•\n\nAmpliar o orçamento destinado ao OPA e ampliação imediata do programa para\ntodas as cidades acima de 50 mil habitantes, com planejamento para a gradual\ndiminuição deste ponto de corte até 30 mil;\n\n•\n\nGarantir diversidade e representatividade, aprimorar o funcionamento e\nfortalecer o caráter deliberativo dos conselhos estaduais e outras instâncias\nparticipativas;\n\n•\n\nRealizar conferências estaduais temáticas para formulação e revisão das\npolíticas e programas;\n\n•\n\nImediata reversão das privatizações do fornecimento de água, saneamento,\nenergia e saúde no estado;\n\n•\n\nReposição sistemática das perdas salariais, mediante revisão das prioridades e\nna relação direta com o incremento das receitas do Estado e melhoria dos\nsalários;\n\n•\n\nRealização da auditoria da dívida publica do estado do Piauí, conforme\nmandamento da Constituição Federal de 1988;\n\n•\n\nArticular com outros governos estaduais a defesa da revogação da isenção do\nICMS para produtos primários e semi primários destinados à exportação (Inciso II\ne Parágrafo único do Art 3º da “lei Kandir”);\n\n•\n\nInstituir uma política de compras e contratações públicas moderna, eﬁciente e\nsustentável, que permita usar o poder de compra do Estado para apoiar as micro\ne pequenas empresas, a agricultura familiar, o desenvolvimento local, bem como\npara fomentar modelos de negócios inovadores, de modo a aumentar a\neﬁciência da gestão estadual com redução de custos e melhoria dos serviços\nprestados;\n\n•\n\nValorizar o servidor público estadual de forma plena, por meio de uma gestão de\npessoas com mais respeito e diálogo, inovadora, efetiva, transparente e que\npotencialize a capacidade de realização da administração pública, de modo a\ntornar as carreiras atrativas;\n\n•\n\nFortalecer a negociação coletiva no setor público estadual, de forma a valorizar o\ndiálogo transparente com as carreiras e melhorar as condições de trabalho;\n\n•\n\nAperfeiçoar a estrutura dos cargos de direção e de assessoria, criar critérios para\nocupação e priorizar a participação de servidores efetivos.\n\n•\n\nIniciar estudo sobre a implantação de programa de devolução de ICMS a pessoas\ne famílias inscritas no CADÚnico, inspirado no Devolve ICMS, do Rio Grande do Sul.\n\n37"
+          },
+          {
+            "id": "lo-piaui-2",
+            "titulo": "LO PIAUÍ",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "ocr",
+            "conteudo": "LO PIAUÍ\nTÉ O POVO\nQUE FAZ\nREDE\nSUSTENTABILIDADE"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "ad7ebf98028512e8f072d66c60c353a46228aa55a32e42c5c3ad1a312205b081"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "a7d6a1e3483e5b29d00b4ecc587a706ea95d09ce945dde70fae354fb7700c2fd"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "65c63a6e4c297179796e3c28aa102f1b2cf8257831183297b4cd1a7c2790b839"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "7d0c19a67d74638725cf6d4a3aaedef05691f166a8b5fdf0b75f4a71f5cce4e6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "895a61f460248b15841d125e8760246323af733785b630e27a4699dc58bc264d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "b6827d60fb34bfb0be8f5d35c74f2204a5f00a6060bb1c9d1c313b51bd72c326"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "725fb45f829b8055ffcc7307da94197e635eb690d37b1519ea8e61b0b4283e38"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a744b00c04939fdbda591777f9d1f28a816095c7b08dec875020bcaaf3e61cf8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "3454c50517232cf0fa64c5fa5a8631c629ce77572ffe001dea01e37fac635221"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "fab935cd21586874d54beb8bd4e8b163f651b35e6edf3e289d798e178c07ee21"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "e236bb868a3c8960ab2c32acee1c9a9f91c52fde72d1775c4845313bbe9b5dd5"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a315e34af335da8310117475ceac6b0a680382c0dbdff57ccd44239da8bdf28c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "1327d3c56ad0317d22b62f3d555f37629e5ef6cb07c87992ef18dbdc22700d34"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "2b1605a4367ca96947e68f048790e8b2e28fee687e21ccde8b6d4cfb0bf14231"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c0c12fbf03c509f2ea58b3f2c6c660c95f6e54c10fd0f7977fbbafe9fa8d7a45"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "86c7fd3499b7f5daf6285b8c5d6b09b6b7e15fc663e9883527fa720bc9157c00"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "9ad696b2ea7e3c68aa8a58c650b7d8bb120a81ec90419c62a40a8e87c37d3c0e"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "35693a20497077ffb70978d9d065c3611e8cedb14dce0f071b5c9fd1bf3ae592"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "be4d3c57544bf64d832f43901eb83927a74d4c34a907015b9dca8cc79a1c4451"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "437c1f6ae7e5bf1a493301d4cfb9b85c7c6c105bd7b5045854f029731959c6b8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "fd73a778dec27cd36b4bd7ac335445c0bc2e9fe6bf43737195c08e8b93a2f3d7"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "2023aeb6c1c4a88a730eef35e2d6f7d8354e9b11b2f6966722cc26e9b75e8098"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "304c39f94850b0492394996e980c64a841555ac07ffe2538253e76601099f4a0"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "e08828827295232656ba9e328effd69cef44dbb0499ca7908bd882bb6df61826"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "4f7041b0b780ad820779c1db62b0a92aebb2dfb5ced14796cc368090d6723db7"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "064b541f3b6e2f64a546281365706407b9dde64409a28d0fb2bb261a5ffaf308"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "d85ec8d646e68cdcb7d8776b1695d361e1c2e49358d6fd02649b1322094e156e"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "dfff89f91b357c6af14ad4f6b542880b94f14b0a691210da1f4e819fb3f53c7c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "0cdebaeccfec5785aefeaa29018708d94647b165e42e1e84324482fe275ac09e"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f4849e4cac369f70ed0a3848744f6a4c10de0be2813c57aff76dfa08c70ec743"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "97a8e747335332c2010466dc3e6f7ec8ef877c96da6d029e66e0e00c4bc449bf"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "77a90a803c6ff906d0b37757860faaf91b65a494e43520400104f7d733919770"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "9f173e019b960374152854311f191df72569f07d66062f3f2528ab232ed14c61"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "63d511150b90cd5c9b03a33d1f12b85d36cc674194e8021024f45d07a54d191d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "b3a6f39152ea8266dc54abf1b2ea532ed2243686fad9464a66137622e67f3979"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "0ee02f6e12a4ccb95ddb78c3757b206d266850ee0ba8c12e1dd0e8b61e57d954"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "ae534a27416226d65ccf96e91025c36c95da80393856af4ec84689e14704bd83"
+          },
+          {
+            "pagina": 38,
+            "origem": "ocr",
+            "textSha256": "67dd1c24043bc3ecc3397a53b0a430f76e9542ea736b5b5859cab67c8db5cc99"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê o fomento da agricultura familiar por meio de assessoria técnica, conforme uma proposta voltada à produção de pequenos produtores. O programa propõe investir no turismo ecológico responsável, valorizando especificidades locais do Litoral ao Sertão. O programa prevê criar espaços públicos de trabalho compartilhados para micro e pequenos empreendedores. O programa propõe buscar o desmatamento zero da vegetação nativa no estado, com fiscalização do desmatamento. O programa prevê criar uma Secretaria Estadual de Direitos Humanos para articular políticas de promoção, proteção e defesa. O programa prevê realizar concurso público para preenchimento total do quadro de professores e funcionários efetivos da educação básica. O programa prevê o fortalecimento da Rede de Atenção Psicossocial orientada pelos pressupostos da Reforma Psiquiátrica Brasileira. O programa propõe reformular o Portal da Transparência, divulgando dados sobre obras, renúncias fiscais, emendas parlamentares.",
+    "frases": [
+      {
+        "texto": "O programa prevê o fomento da agricultura familiar por meio de assessoria técnica, conforme uma proposta voltada à produção de pequenos produtores.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 14,
+            "trecho": "Fomento da agricultura familiar com fornecimento de assessoria técnica, incentivo à aquisição de bens de capital, prioridade de aquisição de alimentos direto com o pequeno produtor nas compras públicas;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe investir no turismo ecológico responsável, valorizando especificidades locais do Litoral ao Sertão.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 14,
+            "trecho": "Investir no turismo ecológico responsável, explorando as possibilidades da construção de uma cadeia produtiva de turismo,valorizando suas especiﬁcidades locais do Litoral ao Sertão;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar espaços públicos de trabalho compartilhados para micro e pequenos empreendedores.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 15,
+            "trecho": "Criar espaços públicos de trabalho compartilhados (coworking) para atender demandas de micro e pequenos empreendedores, trabalhadores autônomos, trabalhadores da economia solidária e outros grupos que necessitam de espaços de apoio para suas atividades laborais."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe buscar o desmatamento zero da vegetação nativa no estado, com fiscalização do desmatamento.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 15,
+            "trecho": "Buscar o desmatamento zero da vegetação nativa no estado, com absoluto rigor na ﬁscalização do desmatamento e grilagem de terras, bem, como na aplicação das sanções."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar uma Secretaria Estadual de Direitos Humanos para articular políticas de promoção, proteção e defesa.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 21,
+            "trecho": "Criar uma Secretaria Estadual de Direitos Humanos, dotada de estrutura para articular, coordenar e promover políticas focais e transversais de promoção, proteção e defesa de direitos humanos, garantindo sua interlocução com todas as áreas de governo;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê realizar concurso público para preenchimento total do quadro de professores e funcionários efetivos da educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 27,
+            "trecho": "Realizar, no intervalo dos dois primeiros anos de gestão, concurso público para preenchimento total do quadro de professores(as) e funcionários(as) efetivos da educação básica."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê o fortalecimento da Rede de Atenção Psicossocial orientada pelos pressupostos da Reforma Psiquiátrica Brasileira.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 30,
+            "trecho": "Fortalecimento da Rede de Atenção Psicossocial (RAPS) orientado pelos pressupostos da RPB"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe reformular o Portal da Transparência, divulgando dados sobre obras, renúncias fiscais, emendas parlamentares.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 36,
+            "trecho": "Reformular o Portal da Transparência, divulgando dados sobre andamento das obras, renúncias ﬁscais, emendas parlamentares, convênios e transferências para municípios e entidades, sobre planejamento e orçamento, e alcance das metas de governo;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "Fomento da agricultura familiar por meio de assessoria técnica.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 14,
+            "trecho": "Fomento da agricultura familiar com fornecimento de assessoria técnica, incentivo à aquisição de bens de capital, prioridade de aquisição de alimentos direto com o pequeno produtor nas compras públicas;"
+          }
+        ]
+      },
+      {
+        "id": "turismo-ecologico",
+        "titulo": "Turismo ecológico",
+        "descricao": "Investimento no turismo ecológico responsável.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 14,
+            "trecho": "Investir no turismo ecológico responsável, explorando as possibilidades da construção de uma cadeia produtiva de turismo,valorizando suas especiﬁcidades locais do Litoral ao Sertão;"
+          }
+        ]
+      },
+      {
+        "id": "protecao-ambiental",
+        "titulo": "Proteção ambiental",
+        "descricao": "Busca pelo desmatamento zero da vegetação nativa.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 15,
+            "trecho": "Buscar o desmatamento zero da vegetação nativa no estado, com absoluto rigor na ﬁscalização do desmatamento e grilagem de terras, bem, como na aplicação das sanções."
+          }
+        ]
+      },
+      {
+        "id": "direitos-humanos",
+        "titulo": "Direitos humanos",
+        "descricao": "Criação de uma Secretaria Estadual de Direitos Humanos.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 21,
+            "trecho": "Criar uma Secretaria Estadual de Direitos Humanos, dotada de estrutura para articular, coordenar e promover políticas focais e transversais de promoção, proteção e defesa de direitos humanos, garantindo sua interlocução com todas as áreas de governo;"
+          }
+        ]
+      },
+      {
+        "id": "educacao-basica",
+        "titulo": "Educação básica",
+        "descricao": "Realização de concurso público para a educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 27,
+            "trecho": "Realizar, no intervalo dos dois primeiros anos de gestão, concurso público para preenchimento total do quadro de professores(as) e funcionários(as) efetivos da educação básica."
+          }
+        ]
+      },
+      {
+        "id": "transparencia-publica",
+        "titulo": "Transparência pública",
+        "descricao": "Reformulação do Portal da Transparência.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549970:01",
+            "pagina": 36,
+            "trecho": "Reformular o Portal da Transparência, divulgando dados sobre andamento das obras, renúncias ﬁscais, emendas parlamentares, convênios e transferências para municípios e entidades, sobre planejamento e orçamento, e alcance das metas de governo;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:02:49.737Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:05:32.956Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:1:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais da afirmação cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente: turismo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:2:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a criação de espaços compartilhados para micro e pequenos empreendedores, embora inclua outros públicos também."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:3:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material do claim coberta, ainda que evidência inclua públicos adicionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números literais que contradizem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área: proteção ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:4:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:5:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação que contradigam a evidência; o prazo de dois anos foi omitido mas não distorcido."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:6:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "RPB refere-se à Reforma Psiquiátrica Brasileira, conforme contexto da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:7:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente: transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:frase:8:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais citadas na afirmação cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:agricultura-familiar:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:turismo-ecologico:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:protecao-ambiental:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:direitos-humanos:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:educacao-basica:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549970:tema:transparencia-publica:documentos:PI:180002549970:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002549970",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002549970:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 35316,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2908,
+          "reasoning_output_tokens": 1379
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29616,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 26570,
+          "output_tokens_details": {
+            "thinking_tokens": 654
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29616,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 26570,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29616,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29616
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.4070904
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "26418e0c2473940c867872215d8cee18b7203e13a17c903925305be80032d10f",
+    "extractedTextSha256": "fdd1bcd63ecad5232aca41e686244661df876d97732a2cdab78c52b1b9582156",
+    "documentCount": 1,
+    "documentSetSha256": "111883dbefd57ea465c8fcac9d43931202a426de2c3be4bc6c54b8694c670b7d",
+    "contentSha256": "578550a71d70b4d3d8abf4d8122b5b57935a4e642c8064d977a48ee50aa02be7"
+  }
+}

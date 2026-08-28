@@ -1,0 +1,1018 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PE",
+    "sqCandidato": "170002537230",
+    "slug": "joao-campos",
+    "nomeUrna": "JOÃO CAMPOS",
+    "partido": "PSB",
+    "arquivoNome": "2026PE170002537230_01.pdf",
+    "arquivoNoPacote": "PE/2026PE170002537230_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PE:170002537230:01",
+      "fonte": {
+        "arquivoNome": "2026PE170002537230_01.pdf",
+        "arquivoNoPacote": "PE/2026PE170002537230_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "1aa6a600b86302301a350eaec58dc1d7c0180b0bd7ceaa13f145370f6115520f",
+        "extractedTextSha256": "fe04df1264366e1e472e058940029a6df14a86220d365ba71d7bed4e7901b7b7",
+        "paginas": 30,
+        "secoes": [
+          {
+            "id": "diretrizes-do-programa-de-governo",
+            "titulo": "DIRETRIZES DO PROGRAMA DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "DIRETRIZES DO PROGRAMA DE GOVERNO\nCAMPOS\n+\nPERNAMBUCO PRONTO\nPARA FAZER HISTÓRIA"
+          },
+          {
+            "id": "pernambuco-sempre-foi-movido-por-ideias-maiores-do-que-aquelas-do-seu-pr",
+            "titulo": "Pernambuco sempre foi movido por ideias maiores do que aquelas do seu próprio",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Pernambuco sempre foi movido por ideias maiores do que aquelas do seu próprio\ntempo. Ideias de liberdade, quando parecia impossível proclamar uma República.\nIdeias de justiça, quando a desigualdade parecia destino de um Nordeste esquecido. Ideias de futuro, quando muitos diziam que o nosso lugar era assistir aos\noutros liderarem. A história pernambucana nunca foi feita por resignação, mas, sim,\nporque o nosso povo sonhou antes, decidiu lutar durante e, assim, abriu caminhos\npara um futuro melhor.\nEm diferentes momentos, a Frente Popular soube transformar esses sonhos em\npactos concretos com o povo de Pernambuco. Com Miguel Arraes, firmou-se o\npacto da democracia: a afirmação de que projetos de desenvolvimento somente\nvalem se a maioria for a grande beneficiada e o povo puder falar, escolher, participar e ser sujeito da própria história. Com Eduardo Campos, firmou-se o pacto da\njustiça social: a demonstração de que crescimento econômico, investimentos estruturantes, educação, saúde, segurança e inclusão social podiam caminhar juntos\npara mudar o patamar do Estado e nos consolidar como líderes do Nordeste.\n\n2\n\nPrograma de Governo\n\nJoão Campos\n\n3"
+          },
+          {
+            "id": "a-forca-das-ideias-mobiliza-as-pessoas-a-fazerem-novos-futuros-e-pernamb",
+            "titulo": "A força das ideias mobiliza as pessoas a fazerem novos futuros e Pernambuco",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A força das ideias mobiliza as pessoas a fazerem novos futuros e Pernambuco\nestá diante de uma oportunidade histórica: firmar o pacto da transformação.\nVivemos tempos de disrupção, convivendo com a inteligência artificial, as novas\ninfraestruturas digitais, a crise climática, a transição energética e as mudanças\nno mundo do trabalho que reorganizam economias, governos e relações sociais\nem velocidade inédita. Nesse mundo, não basta administrar problemas antigos\ncom instrumentos antiquados. É preciso revolucionar a capacidade de governar,\ntornando o Estado mais inteligente, mais ágil, mais presente e mais capaz de\ntransformar oportunidades em direitos.\nPernambuco não será governado pela lógica da ruptura por conveniência política. Todas as políticas, programas e ações atualmente desenvolvidos pelo\nEstado serão avaliados com responsabilidade, a partir de critérios técnicos,\nresultados concretos e interesse público. O que funciona, produz impacto\npositivo e melhora a vida da população será preservado e, quando necessário,\naperfeiçoado, independentemente de quem o tenha criado. Os servidores\nserão respeitados por sua contribuição e não por suposto vínculo com a oposição. Nosso compromisso será com Pernambuco, garantindo continuidade às\nboas iniciativas, corrigindo o que precisa mudar e superando qualquer prática\nde perseguição ou descontinuidade motivada por razões político-partidárias.\nPernambuco não pode se contentar em assistir a história acontecer nem se conformar com uma gestão sem estratégia de desenvolvimento sintonizada com o\nmomento de profundas mudanças no mundo. Pernambuco nasceu para liderar, e\na hora de avançar é agora. Não podemos perder a oportunidade histórica de ter\num pernambucano na Presidência da República pronto para fazer a nossa terra\nvoltar a crescer. Pernambuco pode mais e o nosso povo não pode esperar.\n\n4\n\nPlano de Governo\n\nJoão Campos\n\n5"
+          },
+          {
+            "id": "pronto-para-pernambuco",
+            "titulo": "Pronto para Pernambuco",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Pronto para Pernambuco\nEste Programa de Governo não é apenas uma relação de propostas. É um\ncompromisso com um novo ciclo de desenvolvimento para Pernambuco,\nconstruído para transformar potencialidades em oportunidades e crescimento econômico em melhoria concreta da vida das pessoas.\nNosso projeto parte de uma convicção: Pernambuco deve voltar a liderar o\nNordeste sem deixar nenhuma região e nenhuma pessoa para trás. Isso significa\nconectar inovação, infraestrutura e sustentabilidade à geração de empregos, à\nredução da pobreza e à ampliação dos direitos.\nVamos globalizar Pernambuco, conectando nossa economia, nossa cultura\ne nosso conhecimento às oportunidades do mundo. Vamos adensar nossas\ncadeias produtivas para gerar mais valor, tecnologia, renda e empregos dentro\ndo Estado. Vamos integrar nossas regiões, aproximando serviços, mercados e\noportunidades. E vamos incluir os excluídos, garantindo que o desenvolvimento chegue primeiro a quem mais precisa.\nEsse trabalho será conduzido com planejamento, responsabilidade, participação popular e capacidade de entrega. Cada compromisso assumido será\nacompanhado por metas, recursos, prazos e resultados. Porque governar não\né anunciar. Governar é fazer acontecer, cuidar das pessoas e honrar a palavra\ndada ao povo.\nPernambuco já mostrou ao Brasil que é capaz de sonhar grande, inovar e transformar. Temos história, talento, vocações econômicas e a força de um povo\nque nunca aceitou a desigualdade ou o atraso como destino. O que falta é um\nGoverno que reúna essas forças, assuma a liderança e trabalhe com a urgência\nque o nosso tempo exige.\nChegou a hora de recuperar a confiança, retomar o protagonismo e abrir\nnovos caminhos para quem vive no Sertão, no Agreste, na Mata e na Região Metropolitana. Com o povo participando, o Estado funcionando e Pernambuco\nnovamente unido ao Governo do presidente Lula, vamos fazer mais por quem\nmais precisa e construir um futuro com desenvolvimento, justiça social e oportunidades em todos os cantos.\n\n6\n\nPrograma de Governo\n\nJoão Campos\n\n7"
+          },
+          {
+            "id": "metodo-escuta-evidencia-integracao",
+            "titulo": "Método: escuta, evidência, integração,",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Método: escuta, evidência, integração,\ninclusão e viabilidade\n\nO Plano combina três dimensões inseparáveis de compromisso:\n\nA construção do Plano Pernambuco Pronto para Fazer História seguiu um\nmétodo atento à diversidade do Estado, à redução das desigualdades e ao\naproveitamento de suas potencialidades. O processo combinou diagnóstico\nregional e temático, escuta da população e diálogo com especialistas. Mais de\n30 mil sugestões foram recebidas apenas nesta primeira etapa, que seguirá em\nfrente com novas escutas e diálogos, mantendo um processo vivo e permanente de construção popular e coletiva.\n\nCompromisso com as pessoas\nColocando a redução das desigualdades sociais, raciais, de gênero, geracionais e territoriais, a garantia de direitos, a geração de oportunidades e a\nmelhoria da qualidade de vida no centro das decisões;\n\nEsse processo de escuta ganhou forma por meio de uma plataforma digital e\nde encontros territorializados realizados em todas as regiões de Pernambuco,\nampliando o diálogo direto da Frente Popular com a população. Plenárias, reuniões e outras formas de participação aproximaram a construção do Plano das\ndiferentes realidades do Estado e permitiram incorporar demandas, propostas e prioridades apresentadas pela sociedade. Esse percurso reforçou uma\nconvicção central: um projeto para Pernambuco precisa ser construído não\napenas para as pessoas, mas com as pessoas.\n\nCompromisso com os territórios\nReconhecendo que Pernambuco possui realidades distintas e que as políticas precisam responder às necessidades da Região Metropolitana, da Zona\nda Mata, do Agreste, do Sertão, das cidades-polo, dos pequenos municípios,\ndas periferias urbanas e das zonas rurais;\n\nA partir dessas contribuições, o diagnóstico foi aprofundado e as propostas\npassaram por sucessivas rodadas de avaliação e validação. Mais do que uma\nmetodologia de elaboração do Plano, esse método deve se transformar em\numa forma de governar. Dados e evidências devem orientar as escolhas do\ngoverno, ajudando a identificar desigualdades, definir prioridades e avaliar se\nas políticas estão produzindo os resultados esperados.\n\nCompromisso com o desenvolvimento\nFortalecendo Pernambuco como centro de gravidade do Nordeste, ampliando investimentos, produtividade, inovação e competitividade, mas garantindo\nque esse crescimento gere emprego, renda, serviços públicos melhores e\noportunidades para todos e, em especial, para quem mais precisa.\n\nIntegração também precisa significar mais do que articulação entre secretarias. Significa organizar planejamento, orçamento e execução em torno\ndos problemas concretos da população. Educação precisa dialogar com\nemprego e renda; saúde com saneamento, habitação e assistência social;\nsegurança com prevenção e oportunidades para a juventude; infraestrutura\ncom desenvolvimento regional; ciência e tecnologia com inclusão produtiva.\nO Estado deve chegar às pessoas de forma integrada, e não como uma soma\nde políticas desconectadas.\n\n8\n\nPrograma de Governo\n\nJoão Campos\n\n9"
+          },
+          {
+            "id": "eixos-estrategicos",
+            "titulo": "Eixos estratégicos",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Eixos estratégicos\nAs propostas deste Programa de Governo estão organizadas em eixos estratégicos que traduzem, em políticas concretas, a visão de desenvolvimento\napresentada até aqui. Essa organização busca superar a fragmentação das\npolíticas públicas e garantir que cada área de atuação do Estado contribua\npara objetivos comuns: reduzir desigualdades, ampliar oportunidades, melhorar a qualidade de vida e promover o desenvolvimento de todas as regiões de\nPernambuco.\nPor isso, os eixos não devem ser compreendidos de forma isolada. Desenvolvimento econômico, educação, saúde, segurança, infraestrutura, sustentabilidade e proteção social precisam atuar de maneira integrada, considerando as\ndiferentes realidades territoriais e colocando a inclusão das pessoas no centro\ndas decisões.\nÉ a partir dessa perspectiva que apresentamos, a seguir, diretrizes de propostas para cada área, conectando as políticas setoriais a uma estratégia maior de\ndesenvolvimento econômico, social, territorial e ambiental para Pernambuco.\nTrata-se de um norteador que abre passagem para esse processo de escuta\npermanente que acontece antes e depois do pleito eleitoral.\nEntre as principais diretrizes estão:\n» Desenvolvimento Social e Enfrentamento à Pobreza\n» Educação e Esportes\n» Saúde\n» Segurança Cidadã\n» Políticas para as Mulheres\n» Garantia de Direitos e Diversidades\n» Cultura e Economia Criativa\n» Ciência, Tecnologia e Inovação\n» Desenvolvimento Econômico e Turístico\n» Desenvolvimento Agrário\n» Infraestrutura e Recursos Hídricos\n» Desenvolvimento Urbano e Mobilidade\n» Habitabilidade\n» Meio Ambiente, Sustentabilidade & Proteção e Direito dos Animais\n» Gestão Integrada, Regionalizada, Participativa e Digital.\n\n10\n\nPrograma de Governo\n\nJoão Campos\n\n11"
+          },
+          {
+            "id": "desenvolvimento-social-e-enfrentamento-a-pobreza",
+            "titulo": "» Desenvolvimento Social e Enfrentamento à Pobreza",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "» Desenvolvimento Social e Enfrentamento à Pobreza\n\nPRIMEIRAS PROPOSTAS\n\nA Assistência Social será fortalecida como uma política pública essencial para\nconstruir um Pernambuco mais justo, em que ninguém fique para trás. Em\num estado marcado por profundas desigualdades territoriais, a presença do\nEstado precisa chegar com mais força às periferias urbanas, às áreas rurais e\naos municípios do interior, garantindo proteção, cuidado e acesso a direitos\npara quem mais precisa.\nO novo ciclo da Assistência Social em Pernambuco terá como base uma\nestrutura pública mais presente, qualificada e preparada para responder às\ndiferentes formas de vulnerabilidade. CRAS, CREAS, serviços de acolhimento\ne acompanhamento familiar terão papel central na prevenção de riscos, no\nfortalecimento de vínculos e na proteção social. Essa atuação, contudo, não\npoderá se restringir às situações emergenciais: deverá também criar condições para a superação da pobreza e da exclusão e desigualdade, ampliando\nperspectivas e oportunidades ao longo da vida.\nIntegra de forma indissociável a essa rede de proteção o nosso pacto com\numa Política Sobre Drogas humanizada e eficiente, fundamentada na ampliação e modernização do Programa Atitude. Criado na gestão do governador\nEduardo Campos como uma resposta pioneira e internacionalmente reconhecida baseada na redução de danos e na prevenção à violência, o Atitude\nhoje sofre com a escassez de recursos, o sucateamento de suas unidades e a\nredução do alcance de suas equipes. Reverter essa estagnação é prioridade.\nVamos recuperar o financiamento do programa, expandir os Centros de Acolhimento e as estratégias de acesso à moradia, além de interiorizar o trabalho\ndas equipes itinerantes. A abordagem sobre drogas voltará a ser pautada pelo\ncuidado integral, pela reinserção produtiva e pela preservação da vida.\n\n•\n\nAmpliar a rede socioassistencial, fortalecendo a capacidade do Estado\nde apoiar e capacitar os municípios na identificação, no acolhimento\ne no acompanhamento das famílias e pessoas em situação de extrema\npobreza e vulnerabilidade social.\n\n•\n\nFomentar estratégias de promoção da autonomia, priorizando grupos\nvulneráveis através do acesso à educação qualificada, ao trabalho\ndigno, à sustentabilidade financeira e ao desenvolvimento pessoal.\n\n•\n\nArticular com o Governo do Brasil e com os municípios uma governança capaz de reduzir desigualdades, dialogando permanentemente\ncom saúde, educação, habitação, segurança alimentar e trabalho.\n\n•\n\nCriar uma política estadual de apoio aos trabalhadores de duas rodas,\ninstituindo a isenção de IPVA para motocicletas de até 180 cilindradas,\nbeneficiando principalmente trabalhadores que utilizam a moto como\ninstrumento de trabalho e meio essencial de deslocamento. Além\nda redução dos custos de manutenção da atividade, o Governo do\nEstado ampliará para outras regiões de Pernambuco a experiência dos\nPontos de Apoio aos Entregadores, oferecendo espaços com estrutura básica de descanso, acesso a água, banheiro, internet e carregamento para trabalhadores de aplicativo.\n\n•\n\nCriar uma política de justiça tarifária para áreas submetidas ao rodízio\nde abastecimento de água, garantindo que nenhuma família pague por\num serviço que não é prestado de forma regular. Beneficiários da Tarifa\nSocial que vivem em regiões com fornecimento intermitente terão\nisenção da tarifa mínima de água e da cobrança mínima de esgoto\nassociada, enquanto que os consumidores residenciais que consomem até 10 m³ por mês, mas não fazem parte da Tarifa Social, passarão a pagar apenas pelo volume efetivamente consumido. A medida\nprotege as famílias mais vulneráveis, adequa a cobrança à realidade do\nserviço prestado e estabelece um incentivo para que a Compesa ou\na futura concessionária acelerem investimentos, reduzam o rodízio e\ngarantam um abastecimento contínuo em todo Pernambuco.\n\n•\n\nEstruturação de programa que conecte adolescentes e jovens vulneráveis à aprendizagem profissional, com preparação individualizada e\nacompanhamento até sua permanência no trabalho.\n\nComplementando esse compromisso com a dignidade humana, a Segurança\nAlimentar e Nutricional será tratada como prioridade absoluta e transversal em\nPernambuco. Diante o cenário de insegurança alimentar que o Estado enfrenta, o governo estadual atuará com firmeza e urgência para garantir a todos o\nDireito Humano à Alimentação Adequada. Estruturaremos uma rede integrada\nde combate à fome que une o fortalecimento da agricultura familiar, o incentivo aos circuitos locais de produção e o apoio direto às famílias em situação de\nextrema vulnerabilidade.\n\n12\n\nPrograma de Governo\n\nJoão Campos\n\n13"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar e modernizar as Gerências Regionais de Assistência Social,\nque atuarão como braços regionais da gestão estadual do Sistema\nÚnico de Assistência Social.\n•\n\n•\n\n•\n\n14\n\nAumentar o cofinanciamento estadual, com possibilidade de uso para\ninvestimentos e estruturação, para a implantação municipal de Centros\nde Referência de Assistência Social (CRAS), Centros de Referência\nEspecializados de Assistência Social (CREAS) e Centros de Referência\nEspecializados para População em Situação de Rua (Centro Pop).\n\n•\n\nIncentivar a criação de uma rede de Centros de Direitos Humanos,\nofertando acolhimento, assegurando direitos e referenciando as redes\nmunicipais de atendimento à População em Situação de Rua, comunidade LGBTQIAPN+, povos indígenas e comunidades quilombolas e\ndemais grupos populacionais em suas diversidades.\n\n•\n\n•\n\nImplantar Programa estadual de apoio à população em situação de\nrua, estruturando uma rede integrada de acolhimento e suporte social\nem parceria com os municípios. A iniciativa garantirá o cofinanciamento para oferta de serviços essenciais de atendimento, alimentação,\nhigiene, saúde e cidadania, além de frentes voltadas para a inserção\nprodutiva e o acesso à moradia assistida.\n\n•\n\nRetomar, expandir e criar programas com a finalidade de transferência de renda e apoio socio-econômico para mães pernambucanas, crianças e adolescentes em situação de vulnerabilidade, em sintonia com as políticas de redução de segurança\nalimentar e da pobreza que contribuíram para retirar o país do Mapa\nda Fome, segundo a apontou novamente a FAO, das Nações Unidas.\n\nAmpliar a cobertura dos CRAS expansão do atendimento às comunidades rurais, periféricas e de difícil acesso.\n\nIncentivar a criação de uma rede de Centros Dia, organizada em polos\nestratégicos de Pernambuco para ampliar a oferta de serviços especializados de proteção social voltados a pessoas idosas e pessoas\ncom deficiência.\n\n•\n\nIncentivar a criação de uma rede de Centros de Referência em Segurança Alimentar e Nutricional (CRESAN), inspirados no modelo do\nRecife, cuja missão é contribuir para a redução da fome e da insegurança alimentar e nutricional, garantindo o acesso a uma alimentação\nadequada para famílias em situação de vulnerabilidade social.\n\nFortalecer e descentralizar a Escola de Formação dos Trabalhadores do SUAS de Pernambuco.\n\n•\n\n•\n\n•\n\nEducação e Esportes\nPernambuco já provou que a educação pública pode mudar o destino de uma\ngeração quando é tratada como prioridade. Foi assim que o estado virou, anos\natrás, referência nacional: com meta, gestão e compromisso com a escola e os\nestudantes.\n\nAmpliar e desburocratizar o Chapéu de Palha, assegurando proteção de\nrenda e qualificação aos trabalhadores rurais e pescadores artesanais\ndurante os períodos de entressafra e elevando o benefício para meio\nsalário-mínimo aliado a cursos de alfabetização e profissionalizantes.\n\nO próximo passo é reconstruir esse caminho com uma visão mais completa:\ncuidar da criança desde a primeira infância, com o entendimento que cada estudante pernambucano precisa ser acompanhado pelo Estado. Esse será um\ncompromisso direto do governador: pensar a educação como uma trajetória\ninteira, da primeira vaga na creche ao primeiro emprego.\n\nAmpliar, em parceria com os municípios, o acompanhamento domiciliar de pessoas idosas e pessoas com deficiência que enfrentam limitações de mobilidade, isolamento social ou dificuldades para acessar\npresencialmente os serviços públicos.\n\nIsso significa estar próximo dos municípios para entregar equipamentos e\npolíticas para uma educação de qualidade desde os primeiros anos de vida\ne, para a rede estadual, entender o estudante como sujeito protagonista da\nsua trajetória estudantil, garantindo uma escola que alcança os sonhos e endereçar os desafios do momento em que vivemos. Ainda, a educação passa a\ncompor espaço estratégico para potencializar o desenvolvimento do estado,\nsendo um dos pilares para a estratégia regional através da educação técnica e\nqualificação profissional.\n\nFomentar a criação de uma rede de Bancos de Alimentos no Estado,\natravés de políticas de financiamento e apoio técnico para implantação, além da expansão de cozinhas comunitárias e de outras ações\nque asseguram o direito à alimentação de crianças e adolescentes,\nbeneficiando as famílias pernambucanas.\nPrograma de Governo\n\nJoão Campos\n\n15"
+          },
+          {
+            "id": "dentro-dessa-visao-de-formacao-integral-o-esporte-precisa-voltar-a-ocupa",
+            "titulo": "Dentro dessa visão de formação integral, o esporte precisa voltar a ocupar",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Dentro dessa visão de formação integral, o esporte precisa voltar a ocupar\num lugar central na formação das novas gerações. Pernambuco deve ampliar\no acesso ao esporte desde a infância, fortalecer o esporte escolar, apoiar a\nformação de atletas e paratletas e utilizar seus equipamentos esportivos como\nespaços permanentes de educação, convivência e desenvolvimento.\nA escola pública pernambucana precisa ser uma ponte permanente para o\nfuturo. Uma escola que ensine bem, mantenha o jovem estudando e abra caminhos para a formação profissional e técnica, o ensino superior e o mundo\ndo trabalho. Para isso, a educação precisa dialogar com as vocações de cada\nregião e com as oportunidades que Pernambuco quer gerar.\n\nPRIMEIRAS PROPOSTAS\n•\n\n16\n\nFortalecer a escola pública pernambucana, elevando a equidade e a\nqualidade do ensino, ampliando o tempo integral e valorizando professores e os demais profissionais da educação.\n\n•\n\nImplantar novas creches em Pernambuco, ampliando o acesso à educação infantil e concluindo unidades que a atual gestão não entregou,\nfortalecendo a parceria com os municípios para garantir a construção,\nmanutenção e apoio técnico e formação das equipes.\n\n•\n\nFortalecer a política estadual de alfabetização na idade certa, em\nregime de colaboração com os municípios, garantindo apoio técnico,\npedagógico e financeiro às redes municipais.\n\n•\n\nAmpliar o tempo integral nos Anos Finais do Ensino Fundamental, em\nregime de colaboração entre Estado e municípios.\n\n•\n\nUniversalizar a oferta do Ensino Médio em tempo integral em Pernambuco, e permitir que o estado retome o protagonismo nacional no\nEnsino Médio e nesta modalidade de ensino.\n\n•\n\nGarantir que estudantes do Ensino Médio possam ter acesso a uma\nformação conectada ao mundo do trabalho, com educação profissional integrada e alinhadas às vocações econômicas de cada Região de\nDesenvolvimento e ensino estruturado de língua inglesa para ampliar\nsuas oportunidades acadêmicas e profissionais.\n\n•\n\nCriar centros de formação para os profissionais da educação, garantindo processos contínuos de desenvolvimento nas respectivas carreiras\ne priorização da melhoria nos processos de ensino e aprendizagem\ndos estudantes.\n\n•\n\nGarantir uma trajetória educacional completa e de qualidade, da\nprimeira infância ao ensino superior e primeiro emprego, com aprendizagem, permanência e acompanhamento de cada estudante pernambucano.\n\n•\n\nInteriorizar o acesso à educação técnica e superior, ampliando as\noportunidades para que jovens de todas as regiões se qualifiquem e\nconstruam seu futuro em Pernambuco.\n\n•\n\nFortalecer o esporte como parte da formação integral, criando mais\noportunidades para estudantes, atletas e paratletas.\n\n•\n\nFortalecer a gestão democrática das unidades de ensino da rede estadual, com compromisso em aprendizagem e participação.\n\n•\n\nFortalecer a educação especial inclusiva, garantindo condições\nadequadas de aprendizagem e desenvolvimento aos estudantes com\ndeficiência, TEA e outras condições do neurodesenvolvimento, em\narticulação com as famílias e as redes de saúde e assistência social.\n\n•\n\nModernizar as ETEs, com laboratórios, equipamentos, softwares e ambientes de aprendizagem mais conectados às vocações econômicas\nde cada região. A proposta ampliará a formação prática em áreas estratégicas e a oferta de língua inglesa para ampliar a qualificação e as\noportunidades de trabalho dos jovens.\n\n•\n\nPromover uma educação antirracista e conectada à diversidade dos\nterritórios, garantindo acessibilidade pedagógica, atendimento educacional especializado e respeito às especificidades da educação do\ncampo, da educação escolar indígena e da educação escolar quilombola.\n\n•\n\nContinuar o processo de interiorização da UPE, entendendo a educação superior como um dos principais vetores de desenvolvimento\neconômico que podem existir, além de oferecer cursos alinhados às\nvocações econômicas e às demandas de cada território.\n\nPrograma de Governo\n\nJoão Campos\n\n17"
+          },
+          {
+            "id": "pagina-10",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\n•\n\nImplantar, em Caruaru, o Campus UPE da Moda, um centro de excelência voltado à formação da cadeia produtiva da moda e confecção\ndo Agreste pernambucano. A proposta também terá uma frente de\ninternacionalização, com a construção de convênios com centros de\nreferência em moda internacional.\n\n•\n\nImplantar uma política permanente de ocupação e gestão dos equipamentos esportivos estaduais, e parceria com equipamentos esportivos\nmunicipais, garantindo sua utilização durante todo o ano para eventos\nesportivos, atividades educacionais e grandes eventos culturais.\n\n•\n\nPermitir que associações, escolinhas comunitárias, projetos sociais\ne grupos esportivos cadastrados utilizem gratuitamente instalações\nestaduais ociosas e tenham acesso compartilhado a materiais e orientação profissional.\n\n•\n\nFinanciar a transformação de áreas públicas degradadas, terrenos estaduais e espaços subutilizados em núcleos esportivos de baixo custo,\npriorizando periferias e territórios com pouca oferta de lazer.\n\n•\n\nImplementar estratégia de melhoria da infraestrutura das escolas da\nrede pública estadual, inclusive com a climatização das unidades de\nensino.\n\n•\n\nExpansão das políticas que contribuam para a redução da evasão\nescolar, seja por meio do transporte para chegar até a escola, ou a\npartir de programas e ações que contribuam com a permanência na\nsala de aula, a exemplo do que foi feito na rede no Recife com a rede\nde ensino mais tecnológica do país.\n\nExpandir o Programa Embarque Digital, implantando polos regionais\nde formação tecnológica de ensino superior, residência profissional\ne inovação também no interior do estado, através da oferta, em quatro\nanos, de dez mil vagas.\nRetomar o Programa Ganhe o Mundo com intercâmbios anuais regulares, garantindo a mais estudantes da rede pública acesso a novas\nexperiências, culturas e oportunidades.\nPromover, em parceria com o Governo Federal, uma nova etapa da\nexpansão da Rede de IFPE em Pernambuco, em consonância com os\narranjos produtivos locais e as áreas com déficit de oferta de educação profissional e tecnológica.\n\n•\n\nArticular, em parceria com o Governo Federal, a implantação em Pernambuco de uma instituição federal de excelência em ciência, tecnologia e inovação, nos moldes do ITA, do IMPA ou do IME.\n\n•\n\nGarantir a implantação do campus definitivo da UFRPE no Cabo de\nSanto Agostinho e Belo Jardim, fortalecendo a interiorização do ensino\nsuperior federal.\n\n•\n\nCriar o Brinca Pernambuco, programa de colônia de férias para os estudantes da rede pública com atividades gratuitas de esporte, cultura\ne lazer durante os períodos de recesso escolar.\n\n•\n\nFortalecer o Bolsa Atleta Pernambuco, garantindo mais apoio para\nquem representa o Estado e vive do esporte. O programa terá valores\natualizados e uma categoria voltada a jovens talentos de baixa renda\nque se destaquem nos Jogos Escolares de Pernambuco e campeonatos estaduais, garantindo apoio para que possam avançar da formação\nesportiva às competições regionais e nacionais.\n\nSaúde\nCuidar da saúde dos pernambucanos exige antes de tudo concluir a ampliação\nda rede de saúde no interior, com base nos principais vazios assistenciais, dispondo de uma rede mais resolutiva e integrada em todas as regiões do estado.\nA partir do legado das últimas gestões da Frente Popular, marcado pela construção de grandes hospitais na Região Metropolitana e interior, Pernambuco\nprecisa inaugurar uma nova etapa do SUS: interiorizar serviços de maior complexidade e encurtar a distância entre o cidadão e o cuidado especializado.\nA prioridade será adensar a rede estadual de saúde, garantindo que cada região\ntenha mais especialistas e rede de cuidado. Isso significa garantir, mais perto\nde casa, consultas com especialistas, exames, cirurgias eletivas, diagnóstico\ne reabilitação, reduzindo deslocamentos e fortalecendo os polos regionais\ncomo referência de cuidado em cada região.\nEssa nova etapa também exige integração e inovação. Atenção básica, média\ne alta complexidade precisam funcionar com regulação eficiente, encaminhamento seguro entre os serviços e acompanhamento contínuo do paciente\n\n18\n\nPrograma de Governo\n\nJoão Campos\n\n19"
+          },
+          {
+            "id": "ao-longo-de-sua-jornada-de-cuidado-prontuario-integrado-telemedicina",
+            "titulo": "ao longo de sua jornada de cuidado. Prontuário integrado, telemedicina,",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "ao longo de sua jornada de cuidado. Prontuário integrado, telemedicina,\ninteligência de dados, qualificação do processo regulatório e navegação do\npaciente serão instrumentos para reduzir filas, acompanhar tratamentos e dar\nmais transparência ao funcionamento da rede.\n\n•\n\nAmpliar e qualificar o cuidado materno-infantil, assegurando acompanhamento integrado da gestação à primeira infância, o direito ao parto\npróximo de casa e maior proteção às famílias.\n\n•\n\nGarantir o acesso à telessaúde em Pernambuco, especialmente na\nSaúde Mental (consultas e consultoria com psiquiatras, psicólogos) e\nno acompanhamento de pacientes com condições crônicas (consultas e consultoria com endocrinologista, cardiologistas, pneumologistas, nutricionistas).\n\nFortalecer o SUS em Pernambuco com a valorização dos servidores\nda saúde e a consolidação da regionalização da saúde, privilegiando\na rede própria.\n\n•\n\nImplantar salas de teleconsultas nas unidades básicas, conectadas às\nUPAEs e ao prontuário eletrônico, para levar especialistas ao interior e\nàs áreas rurais, reduzindo filas e deslocamentos.\n\nConstruir novos hospitais de referência no interior de Pernambuco,\npara garantir que toda a população esteja mais próxima a uma unidade\nhospitalar de alta complexidade.\n\n•\n\nCriar plataforma digital estadual para gestão do agendamento de consultas, exames e procedimentos especializados do SUS, permitindo\nque o paciente possa confirmar, cancelar ou reagendar suas consultas,\nexames e cirurgias e, consequentemente, dando maior eficiência na\nocupação das agendas e redução do absenteísmo.\n\n•\n\nImplantar a gestão unificada das filas, com todos os procedimentos\ninseridos no sistema de regulação e utilizando Inteligência Artificial,\nevitando filas paralelas e garantindo uma classificação de risco real,\ncom priorização no atendimento dos casos mais graves.\n\n•\n\nImplantar o Centro Estadual de Comando e Navegação do Paciente,\nresponsável pelo monitoramento em tempo real de leitos, filas e fluxos\nde pacientes, de modo a antecipar problemas e apoiar a tomada de\ndecisão, incorporando soluções digitais para reduzir o tempo de\nespera nas filas e garantindo a jornada integrada para continuidade do\ncuidado com o paciente. Com isso, a regulação deixará de ter seu foco\nno procedimento e passará a ter o paciente no centro do processo.\n\n•\n\nImplantar o programa Atende Gestante Pernambuco que oferecerá\norientação e suporte a distância, 24 horas por dia, a gestantes e puérperas, dispensando o deslocamento até uma unidade de saúde. Um\nde seus pilares são as teleconsultas com enfermeiras e médicas obstetras, que asseguram o encaminhamento à maternidade no momento\nadequado, com mais segurança e sem sobrecarregar a rede.\n\n•\n\nFortalecer e expandir o Programa Mãe Coruja, ampliando sua presença em todo o estado e qualificando o acompanhamento integrado de\ngestantes, puérperas, crianças na primeira infância e suas famílias.\n\nPRIMEIRAS PROPOSTAS\n•\n\n•\n\n•\n\n•\n\nImplantar um novo Hospital em Petrolina para referência regional e\nmacrorregional em trauma, cardiologia e neurologia\n\n•\n\nFortalecer os hospitais regionais como centros de referência em\natendimento hospitalar de maior complexidade, ampliando sua capacidade de resposta e reduzindo a dependência da Região Metropolitana do Recife e aproximando a alta complexidade da população do\ninterior.\n\n•\n\nFortalecer e expandir as UPAEs como principal porta de acesso à\natenção especializada nas regiões de saúde de Pernambuco, ampliando consultas, exames e terapias para reduzir filas e garantir atendimento resolutivo perto de onde as pessoas vivem.\n\n•\n\n20\n\nImplantar o Hospital da Criança do Agreste, em Caruaru, garantindo\natendimento integral à saúde infantil, com consultas especializadas,\nexames, atendimento odontológico, Centro TEA, cirurgias, internação\ne UTI pediátrica.\n\nImplantar a Política de Fixação de Médicos para levar profissionais às\nregiões onde mais faltam a partir da adesão aos programas federais\nMais Médicos e ao Mais Médicos Especialistas, além de ampliar a formação médica da UPE, as residências e a rede de preceptores para\ngarantir presença permanente de profissionais em todo o estado.\n\nPrograma de Governo\n\nJoão Campos\n\n21"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar o Mãe Coruja Atípica para garantir às famílias de crianças com\nTEA e outras condições do neurodesenvolvimento acompanhamento\nintegrado, orientação sobre direitos, acesso a benefícios e apoio contínuo entre saúde, assistência social e educação.\n\n•\n\nFortalecer a Farmácia Estadual, garantindo o abastecimento e a\nentrega de remédios em domicílio para pacientes que dependem de\ntratamentos contínuos, especialmente pessoas com condições crônicas, idosos e pacientes com mobilidade reduzida.\n\n•\n\nTambém será fundamental reconstruir a capacidade de articulação do Estado.\nPernambuco não enfrenta sozinho crimes que atravessam territórios. Por isso,\na cooperação com os municípios, com o Governo Federal e com os estados\nvizinhos será parte essencial da estratégia, permitindo atuação conjunta e respostas mais rápidas.\n\nCriar uma política estadual de fortalecimento da Atenção Primária para\nexpansão da Estratégia de Saúde da Família, priorizando áreas rurais,\ncomunidades de difícil acesso e territórios com vazios assistenciais.\n\n•\n\nEstruturar uma Política de Fortalecimento da Saúde Bucal de Pernambuco, com foco na recomposição das equipes, na valorização profissional, na modernização da infraestrutura e na ampliação do acesso da\npopulação.\n\n•\n\nFortalecer a Rede de Atenção Psicossocial, com a implantação de\nCAPS regionais 24 horas e incentivos aos municípios com recursos estaduais para ajudar na implantação de CAPS e centros de convivência,\najudando os municípios a manter equipes completas e serviços funcionando com qualidade.\n\n•\n\nO novo ciclo da segurança pública terá como foco enfrentar o crime com\nfirmeza, reduzir a violência e devolver tranquilidade à população. Para isso, será\nnecessário fortalecer as polícias, valorizar seus profissionais, ampliar a investigação e usar melhor a tecnologia e os dados disponíveis. Segurança não pode\nser apenas reação ao crime consumado. O Estado precisa se antecipar, identificar onde a violência se organiza, agir com inteligência e reduzir a impunidade.\n\nMas segurança pública também se faz com presença do Estado onde a população mais precisa. Nas periferias urbanas, no interior e nos territórios mais\nvulneráveis, a resposta precisa combinar proteção às vítimas e oportunidades\npara a juventude. O compromisso é construir uma segurança firme contra o\ncrime, acompanhada de perto pelo governador, orientada por dados e mais\npróxima da vida real dos pernambucanos.\n\nPRIMEIRAS PROPOSTAS\n\nAtenção especial às mães pernambucanas atípicas para garantir às\nfamílias de crianças com TEA uma rede que melhore as condições\nde neurodesenvolvimento, acompanhamento integrado, orientação\nsobre direitos, acesso a benefícios e apoio contínuo de saúde, assistência social e educação.\n\nSegurança Cidadã\nPernambuco precisa voltar a tratar a segurança pública com comando,\nmétodo e cobrança de resultado. O Pacto pela Vida deixou uma lição importante: quando o governador assume a prioridade, define metas, acompanha\nos números e cobra a integração das instituições, o Estado consegue reagir\ne reduzir a violência. Esse método precisa ser retomado e atualizado para os\ndesafios de hoje, especialmente diante do avanço do crime organizado, da\npersistência dos homicídios e da violência contra a mulher.\n\n22\n\nPrograma de Governo\n\nJoão Campos\n\n•\n\nFortalecer o enfrentamento às facções criminosas e à impunidade,\nampliando a capacidade operacional e investigativa das forças de\nsegurança, e garantindo valorização dos profissionais de segurança\npública.\n\n•\n\nInstituir espaço permanente de diálogo com os profissionais de segurança pública, buscando fortalecer a carreira, discutindo condições\nde trabalho, atualizando as políticas de formação e de valorização das\ncategorias.\n\n•\n\nRetomar o comando da segurança pública, com liderança direta do\ngovernador, metas territoriais, acompanhamento permanente da violência e do crime organizado.\n\n•\n\nAmpliar a presença da segurança pública nos territórios, aproximando\no policiamento das comunidades e fortalecendo a prevenção da violência.\n\n•\n\nFortalecer a proteção às mulheres e às vítimas de violência, garantindo\nprevenção, resposta rápida e atendimento integrado.\n23"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nReposicionar a segurança pública como política central do Governo\ndo Estado, recuperando o modelo de gestão por metas que fez Pernambuco reduzir a violência.\n\n•\n\nRequalificar o sistema prisional e as políticas de ressocialização de Pernambuco, fortalecendo as ações de educação, trabalho, qualificação\nprofissional, com foco na redução da reincidência.\n\n•\n\n•\n\n•\n\n24\n\n•\n\nImplantar novas unidades do Compaz na Região Metropolitana e em\ncidades do interior, ampliando o acesso da população a espaços de\ncultura, esporte, lazer e cidadania como estratégia de fortalecimento\ndos territórios e prevenção da violência.\n\n•\n\nEstabelecer convênios de cooperação operacional e de inteligência\nentre o Governo do Estado e as Guardas Municipais dos 14 municípios\nda Região Metropolitana, formando uma rede integrada de atuação\npreventiva, troca de informações e resposta rápida a crimes patrimoniais e desordens urbanas.\n\n•\n\nAmpliar a presença territorial dos Batalhões Integrados Especializados\nde Policiamento (BIEsp), garantindo que a atuação especializada da\nPolícia Militar esteja mais próxima dos territórios onde há crescimento\nda criminalidade, avanço de facções, tráfico de drogas e disputa de\nterritórios.\n\n•\n\nAmpliar e reorganizar a presença do Batalhão Especializado de Policiamento do Interior (BEPI) nas regiões de divisa estadual, áreas rurais\nestratégicas e principais corredores logísticos de Pernambuco.\n\nImplantar a Cultura de Polícia Inteligente, reorganizando a segurança\npública de Pernambuco com o objetivo de orientar a atuação policial\ncom estratégia e precisão, garantindo presença qualificada nas ruas.\nImplantar um Centro de Operações Metropolitano, inspirado na experiência do Centro de Operações do Recife (COP), integrando monitoramento inteligente da segurança pública, mobilidade, defesa civil,\nordenamento urbano e gestão de riscos em uma estrutura coordenada\nde abrangência metropolitana.\nCriar o Pacto Anti-Facção, uma política estadual permanente para enfrentar as organizações criminosas em toda a sua cadeia de atuação.\n•\n\nFortalecer a atuação da Polícia Civil por meio de suas unidades especializadas, com atribuições complementares.\n\n•\n\nConcentrar a atuação do DENARC nas estruturas de tráfico que abastecem e financiam essas organizações. A presença será ampliada\ncom novas bases regionais e implantação de núcleos especializados\nnas delegacias circunscricionais.\n\n•\n\nAtuar, nos crimes que ultrapassem os limites do Estado, em cooperação com a FICCO/PE, o Governo Federal e os estados de divisa,\nenvolvendo, Polícia Federal, Polícia Rodoviária Federal, Receita\nFederal, Coaf, órgãos de inteligência e administrações tributárias.\n\n•\n\nImplantar o programa de monitoramento digital, a partir de uma rede\nintegrada de videomonitoramento e inteligência nas divisas e principais\nrodovias para identificar criminosos, combater o tráfico e a expansão\ndas facções, e fortalecer operações conjuntas com outros estados e o\nGoverno do Brasil.\n\n•\n\nRetomar a Patrulha Escolar e o Patrulhamento na Comunidade, integrando polícias e guardas municipais para proteger escolas, espaços\npúblicos e comunidades e reduzir o recrutamento de jovens pelo crime.\n\nPrograma de Governo\n\nPolíticas para as Mulheres\nA política para as mulheres será uma dimensão central do novo projeto de\ndesenvolvimento de Pernambuco. Elas são maioria da população, estão no\ncampo e nas cidades, sustentam famílias e lideram negócios. No entanto, ainda\nenfrentam desafios que limitam sua liberdade, sua segurança e suas oportunidades, desde a violência doméstica, familiar e sexista e a sobrecarga do\ntrabalho de cuidado até as desigualdades de salários e de oportunidades no\nmundo do trabalho\nNossa visão é construir um Pernambuco onde toda mulher tenha o direito de\nviver sem violência, desenvolver plenamente seu potencial e acessar oportunidades para construir seu próprio projeto de vida. Isso exige uma atuação firme\nno enfrentamento a todas as formas de violência contra a mulher, com uma\nrede de prevenção, proteção e acolhimento presente em todas as regiões do\nestado. Mas exige também ir além da resposta à violência: é preciso ampliar\nas ações de promoção da autonomia econômica das mulheres, fortalecendo\no acesso à educação, à qualificação profissional, ao empreendedorismo, ao\ncrédito, à ciência e aos setores mais dinâmicos da economia.\nGarantir oportunidades para as mulheres é ampliar sua liberdade de escolha,\nfortalecer sua autonomia e assegurar que esforço, capacidade e vocação\nnão encontrem barreiras impostas pela violência, pela discriminação ou pela\nJoão Campos\n\n25"
+          },
+          {
+            "id": "desigualdade-nosso-compromisso-e-fazer-com-que-essa-politica-chegue-a",
+            "titulo": "desigualdade. Nosso compromisso é fazer com que essa política chegue a",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "desigualdade. Nosso compromisso é fazer com que essa política chegue a\ntodo o território pernambucano, alcançando as mulheres que mais precisam\nda presença do Estado. Mulheres e meninas vítimas de violência, mães solo,\nmulheres negras, periféricas, rurais, indígenas, quilombolas, com deficiência e\nem situação de vulnerabilidade social estarão no centro das prioridades governamentais. Pernambuco só será um estado mais justo, seguro e desenvolvido\nquando cada mulher puder viver sem medo, escolher seus caminhos e transformar sua potência em autonomia, renda, liberdade e construir seu projeto\nde vida.\n\n•\n\nAmpliar a rede de Salas Lilás em Pernambuco, garantindo espaço reservado, equipe capacitada e protocolo especializado para atendimento\nde mulheres vítimas de violência, em especial, nas Delegacias 24h e\ndelegacias ordinárias ou em equipamentos da Assistência Social ou da\nSaúde.\n\n•\n\nInstituir a Gratificação de Proteção à Mulher para profissionais de segurança pública que atuam nas Delegacias Especializadas de Atendimento à Mulher (DEAMs) e Salas Lilás.\n\n•\n\nCriar o Pernambuco Tá com Elas para ampliar a autonomia econômica\ndas mulheres, fortalecendo empreendedoras por meio de capacitação, educação financeira e crédito orientado.\n\n•\n\nAmpliar e interiorizar a rede de hospitais da mulher, com foco em\nparto humanizado e alto risco, implementação de protocolos para\nendometriose e cânceres de colo do útero e mama, e criação de linha\nde cuidado para mães de crianças com deficiência, doenças raras,\nautismo e outras neurodivergências.\n\nPRIMEIRAS PROPOSTAS\n•\n\n26\n\nGarantir às mulheres o direito pleno de viver, ampliando o enfrentamento à violência contra a mulher, com proteção e acolhimento em\ntodas as regiões de Pernambuco.\n\n•\n\nAmpliar a autonomia econômica das mulheres, criando mais oportunidades de qualificação e geração de renda.\n\n•\n\nReduzir as desigualdades que limitam a liberdade e as oportunidades\ndas mulheres, ampliando o acesso a políticas de cuidado, saúde, educação e participação social.\n\n•\n\nAmpliar a política de saúde da mulher ao longo de todo o ciclo de vida,\ncontemplando prevenção, diagnóstico e tratamento de doenças que\natingem especialmente as mulheres.\n\n•\n\nIncorporar a realidade das mulheres ao planejamento, à execução e ao\nmonitoramento do orçamento estadual. Todas as secretarias deverão\navaliar o impacto de seus programas sobre as mulheres e estabelecer\nmetas para reduzir desigualdades. A proposta fará com que a promoção da igualdade de gênero seja responsabilidade de todo o Governo.\n\n•\n\nAmpliar o acesso das mulheres rurais e jovens agricultores nas políticas\nde apoio à agricultura familiar, estimulando autonomia econômica,\nsucessão rural e permanência no campo.\n\n•\n\nIncentivar a criação de uma rede de Centros de Promoção dos Direitos da Mulher, estruturados como hubs de acolhimento, capacitação\ninstitucional e promoção da autonomia das mulheres.\n\n•\n\nFortalecer e expandir a rede de Delegacias da Mulher, garantindo\natendimento 24 horas, presença de policiais mulheres e novas unidades no interior. Associar núcleos do DHPP às DEAMs para dar resposta\nmais rápida aos casos de feminicídio, tentativa de feminicídio e alto\nrisco de morte.\n\nPrograma de Governo\n\nGarantia de Direitos e Diversidades (Crianças e Adolescentes, Juventude, Pessoas Idosas, LGBTQIAPN+, Pessoas com\nDeficiência, Pessoas Negras, Povos Originários)\nA finalidade última e a própria base de qualquer projeto de desenvolvimento\ninclusivo, justo e sustentável é a garantia de dignidade para o povo. Povo aqui\ncompreendido não como palavra abstrata, mas como gente de verdade, com\ncor, idade, gênero, ancestralidade e história familiar. Nesse espírito, os planos\nde governo da Frente Popular trazem desde 2006, ano da primeira eleição de\nEduardo Campos, uma seção dedicada aos diversos segmentos da população\npernambucana.\n\nJoão Campos\n\n27"
+          },
+          {
+            "id": "crianca-e-adolescente",
+            "titulo": "Criança e Adolescente",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Criança e Adolescente\n\nTodas as propostas aqui presentes foram construídas em diálogo direto com\nos movimentos sociais e políticos que representam esse segmento. A prosperidade compartilhada pressupõe igualdade e acolhimento para todos os\ngêneros, raças e etnias e pessoas com deficiência. E um olhar atento para as\nfases mais cruciais de nossas vidas: crianças, adolescentes, jovens, idosos, imigrantes e refugiados demandam políticas públicas específicas e garantia de\nprotagonismo na política.\n\nAssumimos o compromisso de tratar a infância e a adolescência como eixos\nestratégicos de governo. A gestão assegurará recursos, proteção jurídica capilarizada e o desenvolvimento sadio das novas gerações com foco na base\nterritorial e na primeira infância.\n\nOs governos da Frente Popular têm um histórico de realizações nessa área.\nPolíticas como o Centro de Convivência da Pessoa Idosa, os Jogos da Pessoa\nIdosa, o Mãe Coruja, a Caderneta de Criança do Recife, o PE Conduz, o Praia\nsem Barreiras, o Casa sem Barreiras, Caravanas de Direitos, Centro de Referência e Cidadania LGBTQIAPN+, Casa de Acolhimento Roberta Nascimento, as\ncotas raciais no Embarque Digital, Prouni e Protec, o Recife sem Racismo.\n\nPRIMEIRAS PROPOSTAS\n\nOs êxitos de Mãe Coruja, o Pacto pela Vida, a rede de Escolas de Tempo Integral e mais recentemente o Compaz tornaram-se inspiração direta para as\npolíticas públicas nacionais. Com a mesma ousadia que nos fez referência para\no Brasil, a Frente Popular apresenta diretrizes dos segmentos para a População\nPernambucana.\n\nPRIMEIRAS PROPOSTAS\n•\n\nGarantir que ninguém fique para trás, com políticas de direitos, proteção e inclusão que alcancem quem mais precisa do Estado.\n\n•\n\nAmpliar a autonomia e as oportunidades para que cada pessoa possa\ndesenvolver seu potencial.\n\n•\n\nFortalecer a proteção e o cuidado em todas as fases da vida, da primeira infância ao envelhecimento.\n\n•\n\nPromover a formação continuada de servidores públicos de secretarias e autarquias, em parceria com os órgãos de formação, focada na\nconscientização e no atendimento a grupos vulnerabilizados.\n\n•\n\nAssegurar a existência de canais de comunicação entre a gestão e\ntodos os segmentos a fim de garantir que as ações do Governo estejam\nsempre alinhadas aos pleitos e necessidades dos mais vulneráveis.\n\nPrograma de Governo\n\nExpandir e descentralizar o número de Delegacias Especializadas em\nCrianças e Adolescentes nas regiões hoje descobertas, com garantia\nde plantão e atendimento ininterrupto de 24 horas.\n\n•\n\nImplementar os Centros de Referência da Primeira Infância em modelo\ncompartilhado com municípios (nos moldes do CRIAR), criação da\nCaderneta Digital Estadual da Criança integrada e garantia de polos\ninfantis nos ciclos festivos estaduais, bem como o Protocolo Unificado\nde Proteção às Crianças e Adolescentes em Grandes Eventos.\n\n•\n\nCriar o Brinca Pernambuco, programa de colônia de férias para os estudantes da rede pública com atividades gratuitas de esporte, cultura\ne lazer durante os períodos de recesso escolar.\n\nJuventude\nA juventude pernambucana necessita de suporte concreto para superar os\nobstáculos de permanência estudantil, mobilidade e inserção profissional.\nNosso compromisso é cuidar das diversas juventudes a partir de uma abordagem integral que viabilize a formação, o deslocamento seguro e o ingresso\nqualificado no mercado de trabalho.\n\nPRIMEIRAS PROPOSTAS\n•\n\nAs propostas a seguir apresentadas são resultado da retomada do processo\nde escuta aos mais diversos representantes de segmentos. Por se tratar de um\ngoverno com viés popular, as demandas poderão ser redirecionadas a partir\ndo diálogo permanente que será estabelecido com cada grupo.\n28\n\n•\n\nJoão Campos\n\nAmpliar o auxílio-permanência e fortalecer o programa PE no Campus\npara estudantes vindos do Ensino Médio, além da implantação de Restaurantes Universitários (RUs) e Moradias Estudantis nos campi da UPE,\npriorizando cursos de tempo integral.\n\n29"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\n•\n\nImplementar a plataforma unificada e Clique Zero do ID Jovem PE para\nacesso a direitos, cultura e lazer, aliada à desburocratização do Passe\nLivre Estudantil para assegurar a gratuidade real de transporte para\njovens de baixa renda e da UPE.\n\nComplexidades, com implementação de programa de saúde mental,\nreabilitação domiciliar e suporte técnico para a capacitação dos familiares cuidadores.\n\nLançar um programa de inserção profissional que atrela a atração de\nnovos investimentos no estado à contratação de jovens locais em sua\nprimeira experiência formal, através de programas como o Jovem\nAprendiz e estágios, utilizando as ETEs para a formação direcionada,\nsobretudo na área de tecnologia. Além disso, fortalecer, por meio de\neditais de financiamento, o incentivo a startups locais e ao empreendedorismo jovem.\nInvestir recursos na requalificação e na construção de equipamentos\nesportivos e de espaços destinados a atividades culturais, garantindo\no protagonismo das juventudes em seus diversos segmentos.\n\n30\n\nImplantar serviço estadual de enfrentamento ao etarismo, atendendo\ndenúncias, acolhendo e garantindo encaminhamento para os serviços\nde Saúde e Assistência Social.\n\nPRIMEIRAS PROPOSTAS\nGarantir suporte contínuo em saúde mental para a população LGBTQIAPN+ em\ntodas as macrorregiões do estado e capacitação obrigatória na rede pública\nquanto ao uso do nome social.\n\nPRIMEIRAS PROPOSTAS\n\n•\n\n•\n\nA orientação sexual e a identidade de gênero não podem constituir barreiras\npara o pleno exercício dos direitos. O governo atuará de forma estruturante\npara combater as discriminações e a violência, promovendo o acolhimento, a\nqualificação profissional e a inclusão nos serviços de saúde.\n\nPernambuco responderá à transição demográfica estruturando o envelhecimento ativo como uma diretriz intersetorial e intergeracional. Superaremos a\nvisão puramente clínica para promover uma política de Estado focada na dignidade, na proteção contra o isolamento e na autonomia das pessoas idosas.\n\n•\n\nExpandir e descentralizar o número de Delegacias Especializadas da\nPessoa Idosa nas regiões hoje descobertas, com garantia de plantão e\natendimento ininterrupto de 24 horas.\n\nLGBTQIAPN+\n\nPessoas Idosas\n\n•\n\n•\n\nDescentralizar os Centros de Convivência e os Centros de Referência\ne Centros Dia da Pessoa Idosa voltados ao convívio, ao acolhimento e\nà assistência contínua, integrando um Sistema de Garantias de Direitos\ncom protocolos unificados de proteção por meio de atendimento\nhumanizado e combate ao isolamento.\nExpandir a Educação de Jovens, Adultos e Idosos (EJAI) nos turnos\nda manhã e tarde, oferta de cursinhos para o ENEM formatados para\nmaiores de 60 anos, interiorização da Universidade Aberta na UPE e\nprogramas específicos de letramento e segurança digital.\n\n•\n\nApoiar a implantação de abrigos integrados de proteção social para o\nacolhimento de pessoas em situação de vulnerabilidade ou abandono\nfamiliar, oferecendo suporte psicossocial, jurídico e reinserção social.\n\n•\n\nReestruturar políticas ativas de qualificação e inserção no mercado de\ntrabalho formal aliadas a editais de fomento específicos para a produção artística da comunidade.\n\n•\n\nImplantar serviço estadual de combate a LGBTfobia, atendendo denúncias, acolhendo e garantindo encaminhamento para os serviços de\nSaúde e Assistência Social.\n\nEstruturar o diagnóstico e o acompanhamento de doenças relacionadas ao envelhecimento desde a Atenção Primária à Média e Alta\n\nPrograma de Governo\n\nJoão Campos\n\n31"
+          },
+          {
+            "id": "pessoas-com-deficiencia",
+            "titulo": "Pessoas com Deficiência",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Pessoas com Deficiência\n\nequidade racial serão tratadas como políticas orientadas por evidências e\nfundamentadas na preservação da vida da juventude, na autonomia jurídica e\nna emancipação econômica.\n\nA verdadeira inclusão requer que as estruturas públicas se adaptem às pessoas.\nRomperemos com abordagens meramente assistenciais para transversalizar\na acessibilidade urbana, à moradia digna e o desenvolvimento de autonomia\nplena para a população com deficiência.\n\nPRIMEIRAS PROPOSTAS\n•\n\nAmpliar as políticas de igualdade racial na saúde e na educação, fortalecendo a atenção integral à saúde da população negra, a formação\ndos profissionais para o enfrentamento das desigualdades raciais e a\neducação antirracista na rede estadual de ensino.\n\n•\n\nInstituir o Pacto transversal de redução da mortalidade de jovens\nnegros e periféricos, dotado de monitoramento com dados desagregados por raça e interiorização da rede COMPAZ.\n\n•\n\nFomentar o afroempreendedorismo e a inclusão produtiva com a\ncriação de linhas de microcrédito subsidiado e orientado via AGE com\nprioridade para mulheres negras, integradas ao lançamento de editais\nculturais para atender às especificidades das comunidades quilombolas e de terreiros, dos blocos afro e dos mestres e grupos de capoeira.\n\n•\n\nCriar o Centro Estadual de Referência para Combate ao Racismo e\nIntolerância Religiosa, atuando como equipamento de suporte psicológico, social e jurídico especializado para o acompanhamento de\ndenúncias, atuando como indutor de núcleos de atendimento especializado nas delegacias do estado, tendo como referência digital a\nPlataforma Pernambuco sem Racismo.\n\nPRIMEIRAS PROPOSTAS\n•\n\n32\n\nAmpliar a acessibilidade comunicacional nos serviços públicos estaduais, garantindo recursos como Libras, Braille, tecnologias assistivas e\ncanais digitais acessíveis, com formação dos servidores para o atendimento adequado às diferentes deficiências.\n\n•\n\nDescentralizar a Rede de Centros TEA e de Reabilitação alcançando\ntodas as regiões do estado.\n\n•\n\nCriar linhas de crédito subsidiadas para aquisição de próteses e cadeiras de rodas e fomento à pesquisa em tecnologias assistivas nas\nuniversidades estaduais.\n\n•\n\nSeguir os princípios da acessibilidade e do Desenho Universal com\natenção às pessoas autistas, às pessoas neurodivergentes e às diferentes condições associadas ao desenvolvimento atípico, reconhecendo\na neurodiversidade e assegurando autonomia, participação e acesso\na direitos.\n\n•\n\nImplementar o programa Casa Sem Barreiras para o Estado, para executar reformas gratuitas de acessibilidade em habitações (rampas, banheiros adaptados, portas alargadas), priorizando famílias vulneráveis e\nlares chefiados por mulheres.\n\n•\n\nRealizar o Censo dos Povos Quilombolas e Terreiros, produzindo\ndados atualizados para orientar políticas públicas, reconhecer demandas territoriais, sociais, culturais e econômicas, e fortalecer a atuação\nintegrada do Estado junto a essas comunidades.\n\n•\n\nInstituir reserva obrigatória de vagas no programa CNH Social para\npessoas com deficiência e fiscalização rigorosa com aplicação de\nsanções a empresas concessionárias para garantir acessibilidade em\n100% das frotas de transporte público.\n\n•\n\nQualificar a atuação das forças de segurança para o enfrentamento ao\nracismo e às diferentes formas de discriminação, fortalecendo protocolos, formação e monitoramento.\n\nPessoas Negras\n\nPovos Originários\n\nO enfrentamento estrutural ao racismo é um compromisso central de gestão\nem um estado de população majoritariamente negra. A igualdade racial e a\n\nA soberania das comunidades indígenas consolida-se por meio da autonomia,\ndos direitos territoriais e dos projetos próprios de desenvolvimento dos povos\nindígenas. O Estado criará condições, pautado sempre no diálogo, para que os\n\nPrograma de Governo\n\nJoão Campos\n\n33"
+          },
+          {
+            "id": "povos-indigenas-possam-permanecer-em-seus-territorios-por-livre-escolha",
+            "titulo": "povos indígenas possam permanecer em seus territórios por livre escolha, com",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "povos indígenas possam permanecer em seus territórios por livre escolha, com\nacesso à educação, renda e oportunidades, garantindo a proteção cultural e o\nimpulsionamento de cadeias produtivas tradicionais.\n\nma criativo relevante, mas ainda faltam conexões mais sólidas entre produção e acesso aos mercados. Também é preciso aproximar a política cultural\ndo turismo e da ciência e tecnologia, fazendo com que diferentes áreas do\ngoverno atuem de forma integrada.\n\nPRIMEIRAS PROPOSTAS\n•\n\nFirmar Acordo de Cooperação Técnica entre o ITERPE e a FUNAI para\ndisponibilizar engenheiros e suporte do Estado em estudos de identificação, georreferenciamento e demarcação de territórios indígenas.\n\n•\n\nLançar o Programa Estadual de Residência Técnica em Extensão\nRural para recém-graduados atuarem no IPA e no ITERPE, garantindo o\nretorno do conhecimento científico para o desenvolvimento de suas\npróprias aldeias.\n\nPodemos muito mais. Cultura não pode ser tratada apenas como uma sequência de grandes festas, que terminam quando o palco é desmontado. A cultura\nque corre na veia do povo pernambucano precisa de planejamento e de um\ngoverno que chegue junto dos fazedores de cultura do litoral ao sertão. Isso\nsignifica valorizar quem cria, investir com estratégia e preservar nossa memória.\n\n•\n\nFomentar a produção científica por meio de bolsas e editais da FACEPE\nexclusivos para o resgate de línguas tradicionais, com a criação de\nnúcleos de pesquisa dedicados na UPE.\n\nÉ a partir dessa força que vamos desenvolver uma economia criativa com identidade pernambucana, capaz de transformar talento em trabalho e inclusão\nprodutiva. Cultura é pertencimento, mas também é gente trabalhando: o artista\nque cria, o técnico que faz o espetáculo acontecer e o mestre que transmite\nseu saber. Fortalecer a cultura é garantir que o investimento público deixe\nlegado, movimente as economias locais e permita que mais pernambucanos\nvivam, com dignidade, daquilo que sabem criar.\n\n•\n\nFinanciar a agricultura familiar e a fruticultura de sequeiro com a\nentrega de kits de irrigação, associado à inclusão estratégica e comercial do artesanato indígena nos Centros Estaduais de Artesanato.\n\nPRIMEIRAS PROPOSTAS\n\n•\n\nApoiar a educação escolar indígena, respeitando as identidades,\nlínguas, culturas e especificidades territoriais dos povos indígenas de\nPernambuco.\n\n•\n\nAmpliar a articulação do Estado com a política de saúde indígena, garantindo atenção adequada às especificidades territoriais, culturais e\nepidemiológicas dos povos indígenas.\n\nCultura e Economia Criativa\nPernambuco é terra de criação. Nossa cultura nasce da identidade, do território\ne da capacidade de um povo que transforma experiência em futuro. Está nas\ntantas expressões que fazem o Estado ser reconhecido dentro e fora do Brasil.\nEssa força permanece viva graças aos artistas, mestres e trabalhadores da\ncultura que, muitas vezes na força da resistência e sempre com muito talento.\nPernambuco pulsa cultura, mas ainda tem dificuldade para transformar toda\nessa potência em geração de renda. Há criação, identidade e um ecossiste-\n\n34\n\nPrograma de Governo\n\nJoão Campos\n\n•\n\nSuperar uma política cultural concentrada em eventos e construir uma\nestratégia permanente de desenvolvimento dessas atividades, com\nplanejamento, continuidade e geração de oportunidades.\n\n•\n\nValorizar quem faz cultura, fortalecendo a economia criativa e criando\nmais condições para transformar talento em trabalho e renda.\n\n•\n\nPreservar e projetar a identidade cultural de Pernambuco, ampliando o\nacesso à cultura e sua conexão com as novas gerações.\n\n•\n\nModernizar a gestão da cultura e fortalecer seus equipamentos, tornando o Estado mais presente e conectado às necessidades do setor.\n\n•\n\nReconhecer e reafirmar a Cultura Popular como referência estrutural\ne histórica da nossa identidade e como propulsor de criatividade e\ndesenvolvimento social, simbólico e econômico do Estado.\n\n•\n\nConsolidar uma rede de Escolas Técnicas da Cultura voltada aos fazedores de cultura, abrangendo formação continuada em áreas essenciais à produção cultural e ofertando o ensino do 2º idioma.\n\n35"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCriar o EduCultura Pernambuco para integrar cultura nas escolas estaduais, garantindo que estudantes de todas as regiões tenham acesso\nà fruição artística.\n\n•\n\nCriar o Crédito Criativo, específico para trabalhadores da economia\ncriativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro.\n\n•\n\nImplantar o Investe Cultura Pernambuco para transferir recursos diretamente aos equipamentos culturais estaduais, garantindo manutenção,\npequenos reparos e reposição de itens com mais autonomia, agilidade\ne continuidade das atividades.\n\n•\n\nCriar a Pernambuco Film Commission para atrair produções nacionais\ne internacionais e transformar a diversidade dos territórios do Estado\nem trabalho e fortalecimento da cadeia audiovisual.\n\n•\n\nEstruturar a Rede Viva de Equipamentos Culturais para recuperar e modernizar os espaços culturais, com obras de requalificação e entrega\nde kits de modernização para atualizar a capacidade técnica e digital\ndos nossos equipamentos culturais.\n\nCiência, Tecnologia e Inovação\n\n•\n\nReestruturar o Sistema de Incentivo à Cultura de Pernambuco, fortalecendo o Funcultura e criando editais plurianuais para eventos do\ncalendário oficial.\n\n•\n\nCriar os Jogos Escolares da Cultura de Pernambuco para identificar\ne valorizar talentos artísticos entre estudantes da rede estadual de\nensino.\n\n•\n\nFortalecer e modernizar a Fundarpe para torná-la mais ágil, técnica e\npróxima de quem faz cultura. Será criado o Balcão Único da Cultura\npara reunir, em uma única plataforma digital, os principais serviços da\nSecult e da Fundarpe.\n\n•\n\n36\n\nCriar plataforma pública e gratuita de streaming dedicada à difusão\ne preservação da produção cultural do Estado, integrando a Secult, a\nFundarpe e a TV Pernambuco.\n\n•\n\n•\n\nTornar Pernambuco o maior polo da economia do conhecimento do Nordeste\nexige tratar ciência, tecnologia e inovação como um eixo transversal da ação\ndo Estado e, sobretudo, como instrumentos de inclusão, transformação social\ne ampliação de oportunidades. CT&I não pode ser uma agenda isolada, restrita a laboratórios, universidades, empresas ou parques tecnológicos.\nEssa visão parte do reconhecimento de que Pernambuco já reúne ativos\nimportantes, como universidades, institutos de pesquisa, parques tecnológicos, Porto Digital, polos industriais, centros de saúde, empresas inovadoras e\ninstituições estaduais estratégicas. O desafio é articular essas capacidades,\naproximando a produção científica e a inovação tecnológica das necessidades reais da população e do sistema produtivo.\nPara ser alcançada, a transformação tecnológica precisa fortalecer instituições e ativos como FACEPE, ITEP, IPA, LAFEPE e ParqTel, apoiar jovens pesquisadores e estimular a inovação aberta. O compromisso é fazer da economia do\nconhecimento um instrumento real de desenvolvimento, cidadania e ascensão\nsocial.\n\nPRIMEIRAS PROPOSTAS\n\nFortalecer e modernizar o Observatório da Cultura Pernambucana,\nconsiderando a revisão metodológica, ampliação do escopo e produção de informações e indicadores com a finalidade de subsidiar a\nformulação, implementação, avaliação e aperfeiçoamento de políticas\nculturais, buscando parceria com instituições de pesquisa.\nTirar do papel o Programa de Fomento à Economia Criativa e estruturá-lo como política de Estado, conectando experiências já existentes,\ncomo o Portomídia e o Armazém da Criatividade formando uma rede\nestadual capaz de apoiar trabalhadores e empreendimentos desde a\nformação ao acesso a mercados.\n\nPrograma de Governo\n\nJoão Campos\n\n•\n\nFortalecer o ecossistema estadual de alta tecnologia, promovendo a\nconexão entre as universidades, a pesquisa científica e o cliente final,\ncom o objetivo de empregar mão-de-obra especializada e exportar\nserviços para outros estados e para o exterior.\n\n•\n\nInstituir um Programa Estadual de Inovação Aberta, inspirado no\nmodelo do EITA Recife, conectando Governo, universidades, centros\nde pesquisa, startups e empresas para contratar soluções para desafios públicos.\n\n37"
+          },
+          {
+            "id": "pagina-20",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\nFortalecer a UPE com ampliação da iniciação científica, dos programas de mestrado e doutorado, da formação de pesquisadores e da\nqualificação docente. Investir em laboratórios, bolsas, redes de pesquisa e fixação de talentos, priorizando os desafios de Pernambuco e\na expansão da pesquisa nos campi do interior.\n\n•\n\nImplantar unidades compactas do Porto Digital em cidades-polo do\ninterior, estes centros oferecerão formação digital, coworking, mentorias, incubação de startups e apoio tecnológico aos pequenos negócios e cadeias produtivas locais.\n\n•\n\nImplantar o Cinturão da Inteligência, conectando a entrada de cabos\nsubmarinos em Suape ao Polo Industrial de Goiana e à expansão da\nfibra óptica para o interior. A rede ampliará a conectividade de empresas, serviços públicos e comunidades e fortalecerá a atração de data\ncenters e investimentos tecnológicos.\n\n•\n\n38\n\nTransformar Pernambuco em uma potência econômica regional exige que o\nEstado volte a liderar, de forma ativa, a atração de investimentos, o fortalecimento das cadeias produtivas e a interiorização do desenvolvimento. Essa nova\netapa deve partir das vocações reais de cada território, apoiando os setores\njá consolidados e criando condições para o surgimento de novas atividades\neconômicas.\n\nFortalecer a FACEPE como instituição estratégica de fomento à\nciência, tecnologia e inovação, com editais, bolsas e programas específicos voltados às vocações e aos desafios do Agreste e do Sertão.\nApoiar os Núcleos de Inovação Tecnológica para acelerar patentes,\ntransferência de tecnologia e desenvolvimento de novas soluções.\n\n•\n\n•\n\nDesenvolvimento Econômico e Turístico\n\nReestruturar a Agência Estadual de Tecnologia da Informação de\nPernambuco (ATI-PE) para consolidá-la como empresa pública de tecnologia capaz de prover a infraestrutura digital do Governo do Estado\ne, simultaneamente, desenvolver, operar e comercializar soluções tecnológicas para outros órgãos públicos.\n\nPara mudar essa realidade, será necessário combinar política industrial, microcrédito, inovação, promoção econômica e qualificação profissional. O Estado\ndeverá buscar empresas e investimentos, abrir mercados, fortalecer suas\ninstituições e agências de desenvolvimento, apoiar microempreendedores e\npreparar as cidades-polo como bases de serviços, logística e formação. No\nturismo, isso significa melhorar os acessos e a infraestrutura dos destinos, qualificar trabalhadores e empreendedores e ampliar a presença de Pernambuco\njunto às operadoras, agências, companhias aéreas e mercados emissores.\nO compromisso é construir uma economia menos concentrada e mais conectada, capaz de transformar vocações locais em indústria, serviços qualificados,\ntecnologia, experiências turísticas e prosperidade compartilhada. Recife será\nfortalecido como porta de entrada, mas o desenvolvimento deverá alcançar\no Litoral, a Zona da Mata, o Agreste e o Sertão, fazendo da economia e do\nturismo instrumentos concretos de geração de oportunidades e redução das\ndesigualdades territoriais.\nNesse processo, o turismo deve ser reconhecido como uma atividade econômica estratégica. Pernambuco reúne alguns dos principais ativos turísticos do\nBrasil, com patrimônio histórico e cultural, praias, cachoeiras, rios, festas populares, gastronomia e uma diversidade regional capaz de atrair visitantes durante\ntodo o ano. No entanto, grande parte desse potencial ainda se concentra em\npoucos destinos e períodos, enquanto municípios com vocações culturais, religiosas, ambientais, gastronômicas e de lazer permanecem fora dos principais\nroteiros e canais de comercialização.\n\nImplantar o Ecossistema da Saúde, Biotecnologia e Ciências da Vida,\narticulando LAFEPE, Hemobrás, Fiocruz, universidades, hospitais e\nempresas para fortalecer a pesquisa e a produção de medicamentos,\nvacinas, hemoderivados, biofármacos e diagnósticos, além de ampliar\npesquisas clínicas, estudos sobre doenças tropicais e o uso de inteligência artificial na saúde.\n\nPRIMEIRAS PROPOSTAS\n\nOperacionalizar a Zona de Processamento de Exportação (ZPE) de\nSuape e expandir sua atuação para o setor de serviços intensivos em\ntecnologia, integrando seus benefícios aos territórios do Porto Digital\ne aos novos empreendimentos.\n\nPrograma de Governo\n\n•\n\nJoão Campos\n\nImplantar uma estratégia estadual de reindustrialização e aumento da\ncomplexidade produtiva de Pernambuco, atraindo e apoiando atividades de maior valor agregado, intensivas em tecnologia e conhecimento.\nA política priorizará o adensamento das cadeias produtivas, a inovação\ne a geração de empregos formais, qualificados, com melhores salários\ne condições de trabalho, reduzindo a dependência de ocupações precárias e ampliando as oportunidades para os pernambucanos.\n39"
+          },
+          {
+            "id": "pagina-21",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nInteriorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego,\nrenda e investimento em todas as regiões do Estado.\n\n•\n\nQualificar destinos turísticos e integrar municípios por meio de corredores estruturados, com melhorias em acessos, sinalização, iluminação,\nsaneamento, segurança e atendimento ao visitante.\n\n•\n\nFortalecer quem produz e empreende em Pernambuco, ampliando\nacesso a crédito, mercados, inovação, qualificação e um ambiente de\nnegócios mais simples e competitivo.\n\n•\n\n•\n\nFortalecer o PRODEPE no cenário da Reforma Tributária, reduzindo a\ndependência de incentivos fiscais e estruturando uma nova política de\natração de investimentos baseada em infraestrutura, apoio financeiro e\náreas produtivas estruturadas. O novo modelo orientará o uso do Fundo\nNacional de Desenvolvimento Regional para gerar empregos, interiorizar\no desenvolvimento e fortalecer as cadeias produtivas de Pernambuco.\n\nConstruir a Rede Escola e o Qualifica Turismo Pernambuco, políticas\npermanentes de formação gratuita para o setor, articulando Escolas\nTécnicas Estaduais, universidades, institutos federais e Sistema S nos\nmunicípios das principais rotas turísticas. A iniciativa oferecerá cursos\npresenciais, digitais e itinerantes em hospitalidade, gastronomia,\nidiomas, eventos, gestão, marketing e atendimento.\n\n•\n\nReformular a ADEPE, devolvendo à agência protagonismo na política de\ndesenvolvimento econômico do Estado, retomando sua atuação ativa na\natração de indústrias âncoras, prospecção de empresas, interiorização\ndos investimentos e fortalecimento das cadeias produtivas regionais.\n\nCriar uma certificação estadual para destinos, estabelecimentos, equipamentos, guias e transportadores que cumpram padrões de qualidade, segurança, acessibilidade e sustentabilidade. Os certificados terão\nprioridade nas campanhas oficiais de promoção turística, nas ações\ncom operadoras e nos programas estaduais de capacitação.\n\n•\n\nAgilizar abertura de empresas e processos de licenciamento de novos\nnegócios, com foco nos pequenos e médios empreendimentos. É\npreciso retirar os fardos administrativos desnecessários de quem empreende no Estado de Pernambuco, buscando retomar a competitividade do nosso ambiente de negócios.\n\nImplantar uma estratégia permanente de promoção de Pernambuco\nnos mercados nacional e internacional, com campanhas, presença em\nfeiras e ações conjuntas com companhias aéreas, hotéis, operadoras\ne plataformas de viagem. Promover o turismo de sol e praia, natureza e\naventura, cultura, gastronomia e eventos, ampliando rotas aéreas, atraindo cruzeiros e fortalecendo a comercialização dos destinos durante\ntodo o ano.\n\n•\n\nImplantar novos distritos industriais produtivos em áreas estratégicas,\ncomo Suape, Zona da Mata, o entorno da Transnordestina e cidades-polo do interior. Os polos terão infraestrutura, acesso viário, serviços\nprodutivos e, quando possível, conexão ferroviária para atrair empresas,\nreduzir custos logísticos e interiorizar empregos.\n\nPromover Pernambuco nos demais estados nordestinos, aproveitando\na proximidade territorial e as conexões rodoviárias. As campanhas destacarão o turismo de compras, gastronomia, eventos, religioso, rural,\nnatureza e aventura, estimulando viagens de curta duração em fins de\nsemana, feriados e ciclos culturais.\n\n•\n\nCriar uma política estadual de incentivo ao turismo interno, estimulando\na circulação entre as regiões. Desenvolver roteiros e campanhas voltados ao turismo rural, de natureza e aventura, gastronômico, cultural e\nreligioso, com pacotes para fins de semana, feriados e férias escolares,\nreduzindo a sazonalidade e movimentando pequenos negócios locais.\n\n•\n\nEstruturar um calendário estadual permanente de grandes eventos para\natrair visitantes durante todo o ano, fortalecer os destinos e movimentar\nas economias locais. A política integrará Carnaval, Semana Santa, São\nJoão, festivais, feiras, eventos esportivos, empresariais e ciclos natalinos,\narticulando promoção antecipada, segurança, qualificação da infraestrutura turística e dos espaços de realização dos eventos.\n\n•\n\n•\n\n•\n\n40\n\n•\n\nViabilizar a Zona de Processamento de Exportação em Suape, com\ncondições tributárias, regulatórias e logísticas competitivas. A ZPE priorizará projetos de baixo carbono, tecnologia limpa, hidrogênio e amônia\nverdes e equipamentos industriais.\n\n•\n\nFortalecer as cidades-polo como centros regionais de serviços e\ndesenvolvimento, oferecendo cofinanciamento, assistência técnica\ne apoio à elaboração de projetos para implantação de equipamentos\nurbanos estratégicos como parques urbanos, terminais, mercados públicos, unidades de inovação e centrais de abastecimento, ampliando a\noferta de serviços para os municípios do entorno.\n\nPrograma de Governo\n\nJoão Campos\n\n41"
+          },
+          {
+            "id": "pagina-22",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPRIMEIRAS PROPOSTAS\n\nCriar um programa estadual de incentivo ao turismo rural, apoiando\nengenhos, fazendas históricas e propriedades rurais na melhoria da\ninfraestrutura de visitação e na qualificação dos serviços. Os empreendimentos certificados integrarão rotas regionais promovidas pelo\nEstado, fortalecendo a renda no campo, os pequenos produtores e a\npreservação do patrimônio rural.\n\n•\n\nFortalecer a presença do Estado no campo, reconstruindo a capacidade de planejamento, pesquisa, assistência técnica e extensão rural\npara garantir apoio permanente aos produtores e à agricultura familiar\nem todas as regiões de Pernambuco.\n\n•\n\nApoiar a reforma agrária e a democratização do acesso à terra, garantindo condições para que agricultores familiares e famílias assentadas\npossam produzir, gerar renda e viver com dignidade no campo.\n\n•\n\nPreparar a agropecuária pernambucana para uma nova etapa de produtividade e sustentabilidade, ampliando o acesso à irrigação eficiente, pesquisa e inovação.\n\n•\n\nReestruturar o IPA e retomar sua relevância para a pesquisa agropecuária, a inovação e a assistência técnica continuada. Um novo IPA levará às\ncadeias produtivas regionais sementes adaptadas, novas tecnologias,\nmanejo eficiente da água, melhoria genética e auxílio nos projetos técnicos para apoio ao crédito, em parceria com universidades e centros\nde pesquisa.\n\n•\n\nCriar o Centro Conecta Agro, uma rede regional que concentre, em\num único espaço, os principais serviços ao produtor rural, reunindo IPA,\nAdagro, CPRH, ITERPE, instituições financeiras e outros órgãos para\nfacilitar a regularização, o acesso ao crédito e à assistência técnica.\n\n•\n\nReformular a política de apoio produtivo à agricultura familiar, revisando\nos critérios e a eficiência da distribuição dos atuais kits e incorporando\nnovos focos, como sistemas de irrigação, energia solar e equipamentos para mecanização da produção.\n\n•\n\nCriar o Programa Regulariza Agro, tendo como objetivo promover a regularização sanitária e produtiva dos empreendimentos agropecuários\nde origem animal e vegetal em Pernambuco, por meio de uma atuação\nintegrada entre o Governo do Estado, o Ministério da Agricultura e\nPecuária (MAPA), consórcios públicos intermunicipais e prefeituras\nmunicipais.\n\nDesenvolvimento Agrário\nO desenvolvimento de Pernambuco passa necessariamente pelo fortalecimento de quem produz no campo. É necessário reconstruir a capacidade do\nEstado de planejar, prestar assistência técnica continuada, produzir conhecimento, organizar cadeias produtivas e oferecer ao agricultor as condições\nnecessárias para produzir com qualidade, segurança e maior produtividade.\nIsso significa integrar pesquisa, extensão rural, regularização fundiária, infraestrutura hídrica, energia, conectividade, financiamento e proteção social em\numa estratégia permanente de desenvolvimento do campo.\nEssa estratégia deve reconhecer a diversidade produtiva de Pernambuco e\natuar a partir das vocações de cada região. Do Sertão do São Francisco ao\nAraripe, do Pajeú ao Agreste Meridional, da Mata ao litoral, cada território possui\ncadeias, desafios e oportunidades próprias. Cabe ao Estado organizar essas\npotencialidades, apoiar cooperativas e associações, ampliar a capacidade de\nbeneficiamento e armazenamento, estruturar a logística e aproximar os produtores das centrais de abastecimento, das compras públicas, do comércio, da\nindústria e de novos mercados.\nAo mesmo tempo, o campo pernambucano precisa estar preparado para os\ndesafios da mudança climática e para uma nova etapa de inovação produtiva.\nO desenvolvimento agrário deve combinar o conhecimento acumulado pelas\ncomunidades rurais com pesquisa, tecnologia, irrigação eficiente, melhoramento genético, bioinsumos, agricultura de precisão e soluções adaptadas ao\nSemiárido. O objetivo é transformar conhecimento em produtividade, reduzir\nperdas, ampliar a renda e fazer com que Pernambuco não apenas produza\nalimentos e matérias-primas, mas também desenvolva tecnologias e soluções\npara a agricultura tropical.\nFortalecer o desenvolvimento agrário é interiorizar renda, reduzir desigualdades, assegurar segurança alimentar e criar novas perspectivas para quem vive e\ntrabalha nas áreas rurais de Pernambuco.\n\n42\n\nPrograma de Governo\n\nJoão Campos\n\n43"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nReforçar a política estadual de regularização fundiária rural, ampliando\nsua cobertura com ações integradas de levantamento, georreferenciamento, orientação jurídica e o apoio documental gratuitos para\ngarantir a titulação de produtores, famílias assentadas e comunidades\ne ampliar seu acesso a crédito, assistência técnica, cooperativas,\ncompras públicas e novos mercados.\n\n•\n\nFortalecer o Cooperativismo e a Inclusão Produtiva por meio de uma\npolítica estadual de apoio técnico, jurídico, contábil e gerencial às\ncooperativas e associações rurais, ajudando os produtores a cumprir\nexigências sanitárias, acessar crédito, qualificar produtos e embalagens, ampliar mercados e reduzir a dependência de atravessadores.\n\n•\n\nImplantar o Caminhos do Campo, programa estadual de adequação,\npavimentação e manutenção de estradas vicinais, priorizando áreas\nde agricultura familiar, assentamentos, cooperativas, agroindústrias e\nturismo rural para melhorar o escoamento da produção e o acesso das\ncomunidades a escolas, unidades de saúde e serviços públicos.\n\n•\n\nEstruturar o Programa de Passagens Molhadas e Pontilhões Rurais, com\nconstrução e recuperação de estruturas que garantam acesso permanente às comunidades durante os períodos de chuva, priorizando rotas\nescolares, serviços públicos e áreas de escoamento da produção.\n\n•\n\nO Estado precisará transformar energia, segurança hídrica, infraestrutura econômica e urbana em vantagens concretas de competitividade, capazes de\natrair novas indústrias, fortalecer as cadeias produtivas e assegurar a permanência e a expansão das empresas já instaladas. Sem planejamento e investimentos\npúblicos estruturantes, Pernambuco perderá competitividade, oportunidades\nprodutivas e empregos, mantendo grande parte da população distante dos\nbenefícios do desenvolvimento.\nO desafio do nosso tempo é construir uma nova geração de infraestrutura,\ncapaz de responder às transformações que já moldam o futuro da economia e\nda tecnologia. Isso exige que Pernambuco volte a planejar e executar grandes\nobras estruturantes, com investimentos estratégicos e vinculados a um planejamento de futuro. É tempo de grandes projetos, de pensar o futuro do Estado\ncom garra e visão. Ao mesmo tempo, é preciso qualificar a infraestrutura existente, enfrentar gargalos históricos e integrar o litoral, a Região Metropolitana,\na Zona da Mata, o Agreste e o Sertão em uma estratégia de desenvolvimento\ncoordenada.\n\nPRIMEIRAS PROPOSTAS\n\nEstruturar o Vale AgroTech do São Francisco como polo de inovação\nagrícola, conectando produtores, universidades, Embrapa, startups,\nempresas e instituições de fomento para desenvolver soluções em\nirrigação inteligente, genética, bioinsumos, automação e agricultura\nde precisão.\n\n•\n\nConstruir uma nova geração de infraestrutura em Pernambuco, retomando a capacidade do Estado de planejar e executar grandes\nprojetos capazes de preparar o território para o desenvolvimento das\npróximas décadas.\n\n•\n\nIntegrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos,\naeroportos e mercados para reduzir custos, ampliar a competitividade\ne gerar novas oportunidades de desenvolvimento.\n\n•\n\nTransformar a segurança hídrica em uma prioridade estratégica do\nEstado, ampliando e modernizando a infraestrutura de abastecimento para garantir água com regularidade nas cidades, no campo e nas\nregiões historicamente mais afetadas pela escassez.\n\n•\n\nAssumir a liderança da expansão ferroviária estadual, garantindo a execução do ramal Salgueiro–Suape da Transnordestina, com abertura\nsimultânea de uma nova frente de obras a partir de Suape e implantar\nterminais logístico-industriais em cidades estratégicas ao longo do\npercurso.\n\nInfraestrutura e Recursos Hídricos\nPernambuco ocupa posição estratégica no Brasil e no Nordeste, reunindo\nativos logísticos de escala nacional, polos produtivos distribuídos pelo território e localização privilegiada para conexão com mercados globais. No cenário\nda Reforma Tributária, com a redução progressiva da capacidade dos estados\nde utilizar incentivos de ICMS como instrumento de atração, a infraestrutura\npassa a assumir papel ainda mais decisivo na política de desenvolvimento econômico.\n\n44\n\nPrograma de Governo\n\nJoão Campos\n\n45"
+          },
+          {
+            "id": "46",
+            "titulo": "46",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "46\n\n•\n\nExecutar o Arco Metropolitano para retirar o tráfego pesado da BR-101, conectar Suape ao interior e ao Litoral Norte e instalar polos logístico-industriais ao longo do traçado a fim de traduzir essa infraestrutura em emprego\ne renda para as populações do entorno.\n\n•\n\nTriplicar a BR-101 Contorno Metropolitano, entre Abreu e Lima e Cajueiro\nSeco (Jaboatão dos Guararapes), integrada ao sistema metropolitano de\ntransporte. A intervenção incluirá a construção de quatro viadutos melhorando a conexão entre bairros, bem como passarelas ao longo de todo o\ntrecho facilitando a travessia de pedestres. Com a intervenção, espera-se\nque o transporte público seja beneficiado com a redução do tempo de\ndeslocamento dos cerca de 150 mil passageiros que circulam pela rodovia.\n\n•\n\nImplantar o Contorno Abreu e Lima-Igarassu da BR-101, uma nova variante de\ncerca de 14 quilômetros entre Paulista, Abreu e Lima e Igarassu, desviando o\ntráfego local dos trechos urbanos da BR-101 Norte. A intervenção organizará\nos acessos ao Litoral Norte e permitirá priorizar o transporte coletivo e a mobilidade local na rodovia existente.\n\n•\n\nImplantar o Contorno Muribeca-Prazeres da BR-101, em Jaboatão dos Guararapes, integrado à PE-017, e desviando o tráfego local dos trechos urbanos\nda BR-101 Sul. A intervenção organizará os fluxos locais, metropolitanos e de\ncarga, melhorando a conexão dos polos empresariais de Recife e Jaboatão\ncom o Porto de Suape.\n\n•\n\nDuplicar trechos estratégicos das principais rodovias, ampliando a capacidade viária e a segurança das viagens. As obras serão executadas pelo Estado\nou em parceria com o Governo Federal, fortalecendo a integração e o transporte de cargas entre as regiões.\n\n•\n\nRequalificar rodovias estaduais e federais com correção de curvas, acostamentos, terceiras faixas, sinalização, iluminação, acessos urbanos e travessias\nmais seguras.\n\n•\n\nExpandir a rede de gás natural para pólos industriais, oferecendo energia\nmais competitiva e menos poluente. Implantar estações de regaseificação\nonde a rede encanada ainda não esteja disponível, acelerando a interiorização do serviço e a atração de investimentos.\n\n•\n\nExecutar um conjunto de obras hídricas prioritárias para ampliar o abastecimento de água, reduzir os impactos das secas e proteger áreas urbanas\ncontra enchentes, incluindo a conclusão da Barragem do Engenho Pereira\ne a viabilização da Barragem Engenho Maranhão e da segunda etapa da\nAdutora do Agreste.\nPrograma de Governo\n\n•\n\nConsolidar a infraestrutura hídrica e agrícola por meio da recuperação\nde açudes e da estruturação de perímetros irrigados baseados em um\nmodelo de ocupação mista. A iniciativa visa democratizar o acesso a sistemas de micro e pequena irrigação tecnificada, integrando produtores\nde todos os portes para maximizar a eficiência hídrica e a geração de\nriqueza no campo.\n\n•\n\nImplantar soluções permanentes de abastecimento para comunidades\nrurais, combinando cisternas, poços, pequenos sistemas de distribuição, dessalinização, reservação e energia renovável. Os sistemas terão\nmanutenção, controle da qualidade da água e participação comunitária,\ndeixando os carros-pipa restritos às emergências.\n\n•\n\nModernizar os aeroportos de Serra Talhada, Araripina, Caruaru e Garanhuns, com melhorias nas pistas, pátios, terminais, sinalização e segurança operacional. Os equipamentos serão preparados para ampliar\nos voos regulares e transportar cargas leves e produtos de maior valor\nagregado.\n\nDesenvolvimento Urbano e Mobilidade\nO desenvolvimento de Pernambuco passa pela retomada do papel do Estado\nno planejamento do território, na coordenação metropolitana, no apoio\ntécnico e financeiro aos municípios e na viabilização de obras estruturadoras.\nA agenda urbana precisa enfrentar problemas que já fazem parte do cotidiano\ndas cidades. Isso inclui a falta de moradia adequada, a precariedade da infraestrutura e as dificuldades de mobilidade. Também passa pelo crescimento\nurbano desordenado, pela vulnerabilidade socioambiental e pela falta de\nespaços públicos qualificados.\nAs cidades são parte central da estratégia de desenvolvimento do Estado. É\nnelas que a vida acontece, que os serviços chegam à população, que o conhecimento circula e que os polos produtivos encontram suporte para crescer.\nCidades bem estruturadas ajudam a preencher vazios assistenciais, aproximam\nas pessoas das oportunidades e criam condições para atrair e manter profissionais qualificados. Sem qualidade de vida, infraestrutura e bons serviços, fica\nainda mais difícil sustentar qualquer projeto de desenvolvimento.\nPlanejar o desenvolvimento urbano do território, portanto, não é uma pauta\nacessória. É condição para orientar o crescimento, reduzir desigualdades e\n\nJoão Campos\n\n47"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "Página 25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "preparar Pernambuco para o futuro. O Estado precisa recuperar sua capacidade de formular grandes projetos urbanos, produzir dados e conhecimento,\ncoordenar políticas públicas e apoiar cada região de acordo com sua realidade: articulando a Região Metropolitana do Recife, as cidades-polo, os centros\nurbanos do interior, os territórios vulneráveis e as áreas ambientalmente estratégicas.\n\n•\n\nReorganizar o transporte público metropolitano, fortalecendo o Grande\nRecife Consórcio e retomando a presença ativa do Estado no planejamento, financiamento e qualificação do sistema. Serão realizadas novas\nlicitações com contratos por desempenho, renovação obrigatória da\nfrota, ampliação da integração temporal, bilhetagem por aproximação\ne monitoramento permanente da qualidade do serviço prestado, além\nde investimentos na melhoria de terminais, paradas, vias e calçadas\nde acesso ao transporte público, para garantir viagens mais rápidas,\nseguras e confortáveis, maior regularidade e previsibilidade dos horários\ne mais facilidade de acesso e integração nos deslocamentos diários da\npopulação.\n\n•\n\nAtuar para garantir a recuperação e modernização do Metrô do Recife e\na ampliação da rede metroviária da Região Metropolitana, aumentando\na capacidade e promovendo a integração com os demais modos de\ntransporte.\n\n•\n\nFortalecer a política estadual de mobilidade ativa para ampliar e integrar\na infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios.\nExpandir os sistemas de bicicletas compartilhadas, especialmente nos\nterminais e principais polos de deslocamento do Estado.\n\nPRIMEIRAS PROPOSTAS\n•\n\n•\n\n48\n\nPromover cidades mais estruturadas, inclusivas e resilientes, ampliando\ne qualificando a infraestrutura urbana, a mobilidade e o transporte intermunicipal e metropolitano e articulando os investimentos estaduais\nàs necessidades de cada região.\nApoiar técnica e financeiramente os municípios na qualificação de\ncentralidades, espaços públicos, áreas verdes e demais intervenções\nurbanas, com prioridade para os territórios mais vulneráveis.\n\n•\n\nGarantir transporte público metropolitano de qualidade, com integração entre ônibus, metrô e bicicleta, redução do tempo de viagem,\naumento da velocidade e da regularidade dos serviços e melhoria das\ncondições de acesso a pé e por bicicleta.\n\n•\n\nCriar uma Agência de Planejamento e Desenvolvimento Urbano Integrado de Pernambuco, a partir da reformulação da Fidem. A Agência\nprestará apoio técnico aos municípios, organizará um Banco Estadual\nde Projetos Estruturantes, retomará a agenda das funções públicas de\ninteresse comum como transporte, uso do solo e saneamento e fortalecerá a articulação entre Estado, prefeituras e sociedade.\n\nHabitabilidade\n\n•\n\nCriar o Programa de Qualificação Urbana dos Pequenos Municípios\npara oferecer cofinanciamento, assistência técnica e projetos modelo\nvoltados à qualificação de centralidades e espaços públicos, como\npraças da infância, feiras, rodoviárias e pontos de embarque. O programa também apoiará intervenções em passagens molhadas, estradas\nvicinais e iluminação pública.\n\nGarantir habitabilidade significa assegurar que as pessoas possam viver com\ndignidade, segurança e acesso regular aos serviços essenciais, independentemente do município ou da comunidade onde estejam. Enfrentar esse cenário\nexige uma atuação integrada do Estado, articulando saneamento, urbanização\nde comunidades, macrodrenagem, contenção de encostas, regularização\nfundiária, melhorias habitacionais e produção de novas moradias. Também é\nnecessário ampliar a capacidade de prevenção e adaptação climática das\ncidades, priorizando os territórios mais vulneráveis e garantindo reassentamento seguro nos casos em que os riscos não possam ser eliminados por obras de\ninfraestrutura.\n\n•\n\nCriar, em parceria com as Prefeituras, um programa estadual de\nparques, praças e áreas verdes, contemplando a revitalização dos\nparques metropolitanos e o apoio aos municípios para criação de\nnovos parques, praças e áreas de lazer. A iniciativa também incentivará\na integração desses espaços a equipamentos públicos estratégicos,\ncomo creches, escolas e COMPAZ, ampliando as áreas de convivência, cultura, esporte e cidadania.\n\nA política de habitabilidade deve, portanto, organizar diferentes instrumentos\nem torno de um objetivo comum: oferecer condições concretas para que as\nfamílias vivam em territórios seguros, saudáveis, regularizados e conectados à\ncidade. O compromisso é reduzir riscos, universalizar o saneamento, enfrentar\no déficit habitacional em suas diferentes dimensões e transformar comunidades historicamente desassistidas em lugares preparados para o presente e\npara os desafios do futuro.\n\nPrograma de Governo\n\nJoão Campos\n\n49"
+          },
+          {
+            "id": "primeiras-propostas",
+            "titulo": "PRIMEIRAS PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PRIMEIRAS PROPOSTAS\n•\n\nPriorizar investimentos nos territórios com maior precariedade urbana\ne socioambiental, integrando ações de habitação, saneamento, urbanização, drenagem, redução de riscos e regularização fundiária para\nmelhorar as condições de vida e reduzir desigualdades territoriais.\n\n•\n\nAmpliar a produção de moradias do Minha Casa, Minha Vida em Pernambuco, articulando com o Governo Federal a expansão dos investimentos e das contratações no Estado. O Governo de Pernambuco\napoiará municípios na disponibilização de terrenos, elaboração de\nprojetos e viabilização da infraestrutura necessária para acelerar novos\nempreendimentos e atender as famílias que mais precisam.\n\n•\n\nRealizar obras de urbanização de comunidades vulneráveis com foco\nna redução de riscos associados às mudanças climáticas, como deslizamentos, alagamentos e outros eventos extremos. A política integrará\nobras de macrodrenagem, contenção de encostas, saneamento, infraestrutura urbana e melhorias habitacionais.\n\n•\n\nEstruturar um Banco de Imóveis Públicos Estaduais para identificar\nterrenos e edificações públicas subutilizadas e formar uma carteira\npermanente de áreas destinadas à habitação de interesse social. Por\nmeio de editais permanentes, mobilizar municípios, entidades e setor\nprivado para viabilizar moradias bem localizadas, próximas a transporte,\nempregos e serviços.\n\n•\n\nNão existe desenvolvimento sustentável que não envolva preservação do meio\nambiente. Cuidar dos recursos naturais, enfrentar as mudanças climáticas,\nproteger a biodiversidade e assegurar os direitos dos animais são responsabilidades inegociáveis de um Estado comprometido com a qualidade de vida,\na saúde pública e o futuro das próximas gerações. A política ambiental e de\nproteção animal não pode permanecer restrita a ações isoladas, emergenciais\nou desigualmente distribuídas pelo território.\nPernambuco enfrenta desafios ambientais que atingem diretamente sua população e sua economia. Enfrentar esses problemas exige prevenção, planejamento de longo prazo, fiscalização efetiva e integração entre meio ambiente,\nsaneamento, recursos hídricos, desenvolvimento urbano, infraestrutura, defesa\ncivil e desenvolvimento econômico.\n\nMonitorar o cumprimento das metas de universalização do saneamento em Pernambuco, fortalecendo a regulação e a fiscalização das\nconcessionárias e priorizando os territórios mais vulneráveis.\n\n•\n\n•\n\n50\n\nMeio Ambiente, Sustentabilidade & Proteção e Direito dos\nAnimais\n\nNosso compromisso é construir uma política presente em todas as regiões,\ncapaz de proteger a costa, os rios, as florestas e os demais ecossistemas,\nmodernizar a gestão dos resíduos e apoiar uma economia de baixo carbono,\nao mesmo tempo que assegure os direitos e o cuidado com os animais. Uma\npolítica planejada, integrada, transparente e orientada por resultados, que una\ndesenvolvimento sustentável, justiça ambiental e climática, proteção da biodiversidade, saúde coletiva e respeito a todas as formas de vida.\n.\n\nPRIMEIRAS PROPOSTAS\n\nImplantar um programa estadual integrado de regularização fundiária e\nmelhorias habitacionais, inclusive em áreas rurais. A iniciativa combinará\ntitulação dos imóveis com reformas em banheiros, cobertas, instalações elétricas e hidráulicas e a execução de ligações intradomiciliares\nde esgoto, priorizando comunidades vulneráveis.\nAmpliar o acesso das famílias ao subsídio destinado ao pagamento da\nentrada da casa própria, seguindo as regras do Programa Minha Casa,\nMinha Vida.\n\nPrograma de Governo\n\nJoão Campos\n\n•\n\nPromover a economia de base regenerativa, apoiando iniciativas\ndisruptivas que dialoguem com modus operandi da diversidade do\nquadro natural do estado.\n\n•\n\nAmpliar a rede estadual de Unidades de Conservação e apoiar atividades sustentáveis no entorno, assim como implantar a gestão compartilhada das Unidades de Conservação de uso sustentável, protegendo\nos ecossistemas e gerando renda para as comunidades locais.\n\n•\n\nCriar as condições institucionais, tecnológicas e financeiras para a\nefetivação do Plano Estadual de Mudanças Climáticas.\n\n•\n\nImplantar uma Política Estadual de Resiliência Climática e Gestão Integrada de Riscos, articulando Estado e municípios na prevenção de\ndesastres, mitigação, preparação, resposta e recuperação diante de\n\n51"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "Página 27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "eventos extremos, priorizando os territórios e populações mais vulneráveis e incorporando soluções baseadas na natureza e infraestrutura\nverde e azul.\n•\n\n•\n\n•\n\nAmpliar para outros rios o programa Janelas para os Rios, que foi bem-sucedido no Rio Ipojuca com parques lineares de borda d’água como\nestratégia de adaptação climática e recuperação ambiental.\n\n•\n\n•\n\n•\n\n52\n\nExpandir a recuperação de áreas degradadas, matas ciliares, margens\nde rios e ecossistemas estratégicos, por meio do Programa Estadual\nde Recuperação Ambiental, fortalecendo os instrumentos de fiscalização, controle e compensação ambiental.\nCriar um Plano Integrado de Proteção da Costa Metropolitana para\nconter a erosão costeira e preparar as orlas de Jaboatão dos Guararapes, Recife, Olinda e Paulista para os efeitos das mudanças climáticas.\n\n•\n\n•\n\nTransformar gradualmente aterros sanitários estratégicos em ecoparques\ncapazes de reciclar resíduos, tratar orgânicos e gerar energia, reduzindo o\nvolume destinado ao aterramento e criando novas atividades econômicas.\n\n•\n\nCriar, no novo PRODEPE, incentivos para atrair e desenvolver negócios\nsustentáveis, inovação e tecnologias verdes, gerando empregos e modernizando a economia pernambucana.\n\n•\n\nImplantar o Pernambuco Recicla para apoiar os municípios na expansão\nda coleta seletiva por meio de cofinanciamento, assistência técnica e\nimplantação de infraestrutura regional. O programa também fortalecerá\ncooperativas e associações de catadores de materiais recicláveis, apoiando sua formalização, capacitação, contratação pelos municípios e comercialização dos materiais recicláveis, ampliando a reciclagem e a renda dos\ntrabalhadores.\n\n•\n\nUsar as compras públicas para ampliar o mercado de produtos reciclados\ne circulares, estimular o processamento de resíduos em Pernambuco e\ngerar novos negócios, renda e empregos verdes.\n\n•\n\nCriar uma rede estadual integrada de proteção e bem-estar animal, articulando Estado, municípios, universidades e organizações sociais. A política\nimplantará centros veterinários regionais, com consultas, exames, internações, cirurgias, resgate e adoção. Também garantirá calendário permanente de castração e microchipagem, priorizando animais comunitários,\nem situação de rua ou cujos tutores estejam inscritos no CadÚnico.\n\n•\n\nImplantar uma força integrada e um serviço estadual de resgate animal\npara atender denúncias, preservar provas, retirar animais em risco e garantir encaminhamento veterinário rápido, com atuação coordenada entre\nEstado, municípios e organizações credenciadas.\n\n•\n\nDisponibilizar um canal específico ligado a Delegacia Digital de Proteção\nAnimal para receber denúncias de maus-tratos, abandono, envenenamento, acumulação e criação clandestina de animais.\n\n•\n\nDesenvolver uma plataforma digital estadual de adoção responsável\nreunindo animais acolhidos por municípios, protetores, abrigos e organizações cadastradas.\n\nImplantar um plano de aprimoramento institucional, tecnológico e\noperacional da CPRH, fortalecendo sua capacidade de licenciamento, fiscalização, monitoramento e controle ambiental.\n\n•\n\n•\n\nções de transbordo e projetos de ampliação ou substituição, com apoio\ntécnico e cofinanciamento estadual aos municípios e consórcios.\n\nCriar uma política integrada de segurança hídrica, recuperação de\nbacias e despoluição dos rios, enfrentando o lançamento irregular de\nefluentes, a ocupação das margens e as deficiências de saneamento\ne monitoramento. Uma frente prioritária será a interlocução com o empresariado local para uma transição produtiva que vise a despoluição\ndos cursos d’água próximos ao Polo de Confecções do Agreste.\nPromover a transição energética do Polo Gesseiro do Araripe, substituindo gradualmente as fontes mais poluentes por gás natural, energia\nsolar e tecnologias de maior eficiência energética e gerando renda\npor meio da produção local de energia.\nExpandir as energias renováveis em Pernambuco, atraindo investimentos e gerando empregos a partir do potencial da natureza.\nFortalecer a política ambiental de Fernando de Noronha, com investimentos em energia limpa, segurança hídrica, saneamento, gestão de\nresíduos e proteção dos ecossistemas insulares.\nCriar um programa estadual permanente para impedir o retorno dos\nlixões e recuperar a segurança operacional dos aterros sanitários. As\nunidades críticas terão planos emergenciais, rotas alternativas, esta-\n\nPrograma de Governo\n\nJoão Campos\n\n53"
+          },
+          {
+            "id": "gestao-integrada-regionalizada-participativa-e-digital",
+            "titulo": "Gestão Integrada, Regionalizada, Participativa e Digital",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Gestão Integrada, Regionalizada, Participativa e Digital\nGovernar Pernambuco exige mais do que administrar a máquina pública ou\nincorporar novas tecnologias. Exige liderança, planejamento, coordenação e\ndiálogo para transformar as demandas da população em prioridades e as prioridades em resultados concretos. O Estado precisa recuperar sua capacidade\nde pensar o futuro, organizar suas ações e conduzir um projeto de desenvolvimento que enfrente desigualdades, articule as diferentes regiões e responda\ncom eficiência aos desafios do presente.\nEssa integração exige integrar dados, sistemas e tecnologias para apoiar a\ntomada de decisão, fortalecer o monitoramento em tempo real, ampliar a prevenção de riscos e tornar as políticas públicas mais eficientes e responsivas.\nGovernar bem também significa reconhecer que as decisões públicas não\npodem ser construídas apenas nos gabinetes. A participação popular deve\norientar a definição das prioridades. O diálogo permitirá formular políticas mais\npróximas das necessidades de cada região e a transformação digital será parte\ndessa nova cultura de gestão: mais do que digitalizar processos, é preciso reorganizar o Estado a partir das necessidades das pessoas.\nNeste sentido, torna-se necessário ampliar a inclusão e a cidadania digital, simplificar o acesso aos serviços públicos e garantir que a tecnologia fortaleça o\ncuidado, a segurança, a transparência e a relação entre o Estado e o cidadão.\nO compromisso é construir um Governo presente, eficiente e com foco em\npreparar o estado de Pernambuco para o futuro.\n\n•\n\nAmpliar a participação social e o controle social nas decisões de\nGoverno, criando mecanismos permanentes de escuta, pactuação de\nprioridades e acompanhamento das políticas públicas, com práticas\nde governo aberto, transparência ativa e ampliação da oferta de dados\nabertos.\n\n•\n\nFortalecer a gestão de pessoas e valorizar os servidores públicos estaduais, com reconhecimento salarial e formação continuada, a partir\ndas necessidades específicas dos serviços públicos e em diálogo as\ncategorias.\n\n•\n\nRealizar concursos públicos de forma planejada para recompor e\nampliar os quadros do Estado, priorizando as áreas com maior déficit\nde pessoal e as necessidades estratégicas da administração pública.\n\n•\n\nInstituir o Sistema Pernambucano de Planejamento Estratégico com o\nobjetivo de formular projetos estruturantes e metas para o desenvolvimento do Estado, com a participação da sociedade e a liderança de\num novo CONDEPE.\n\n•\n\nRecuperar a capacidade de execução do Estado, ampliando o percentual do orçamento para investimentos que mudem a vida das pessoas.\n\n•\n\nCriar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido. Com um único cadastro, a população poderá solicitar serviços,\nrealizar pagamentos, acompanhar processos e acessar documentos e\nbenefícios. O Estado fornecerá infraestrutura tecnológica compartilhada, preservando a autonomia dos municípios.\n\n•\n\nApoiar a modernização das prefeituras, especialmente daquelas com\nmenor capacidade técnica e financeira. O Estado auxiliará na digitalização de processos, disponibilizará sistemas compartilhados de\nprocesso eletrônico, assinatura digital, atendimento, ouvidoria, transparência, armazenamento em nuvem e segurança cibernética.\n\n•\n\nInstituir uma Política Estadual de Inclusão e Cidadania Digital, ampliando o acesso da população à internet, à identidade digital e às competências necessárias para utilizar os serviços públicos digitais.\n\nPRIMEIRAS PROPOSTAS\n•\n\n•\n\n54\n\nRetomar a Gestão por Resultados, Metas e Transparência para estabelecer objetivos claros nas principais áreas do Governo, acompanhar\npermanentemente os resultados e garantir à população acesso transparente às informações da gestão.\nImplantar uma governança integrada e territorializada, articulando\nórgãos estaduais, municípios e Governo Federal para enfrentar problemas complexos de forma coordenada e adaptar as políticas às\nnecessidades de cada região de Pernambuco.\n\nPrograma de Governo\n\nJoão Campos\n\n55"
+          },
+          {
+            "id": "56",
+            "titulo": "56",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "56\n\n•\n\nImplantar serviços públicos proativos nos moldes da estratégia Zero\nClique, permitindo que o Estado identifique direitos e necessidades sem\nexigir solicitação do cidadão. A integração segura das bases públicas\npermitirá informar benefícios, preencher cadastros e iniciar atendimentos\nautomaticamente, quando autorizado. O modelo respeitará a LGPD e a\nautonomia do cidadão.\n\n•\n\nUtilizar inteligência artificial para automatizar processos administrativos,\napoiar a tomada de decisão, reduzir burocracias, antecipar demandas\nda população e ampliar a eficiência dos serviços públicos, sempre com\nsupervisão humana, transparência e respeito à Lei Geral de Proteção de\nDados.\n\n•\n\nImplantar o Programa Pernambuco Cloud & Data, como uma infraestrutura estadual de nuvem híbrida para modernizar sistemas, integrar dados\ne ampliar a segurança digital, melhorando a prestação de serviços e a\ntomada de decisões em áreas essenciais.\n\nPrograma de Governo\n\nJoão Campos\n\n57"
+          },
+          {
+            "id": "58",
+            "titulo": "58",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "58\n\nPlano de Governo"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "a6d111879ad33b15e60e245ed6f39e56900ff89d8982b955f9eb3dbb9cb27346"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "a107e6751d96d54085b0a57bb15f50678f956b410e33527f5688fa9c3cf3c408"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "9325a98a3fc785f807d5daabf36a1cb5cee83fae70a0beb71f63bcc0f9df1f5e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "a8e60cbfbf6a712160d4f68f10c738e3416785065f87a32ac1612666518784b0"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c45d1670d9eed5dad6ae1b32972d983a31381eeb6707e02cb08ab87d0dee0966"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "6ccb68d6508bae94f787e190a2174b464477a685f69f87a06c565c71f0a781fb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "d18a7a5d228bb38cd951ea17ce8d8ece8399af7b1f115972ca915b48873e652f"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "472b010c63fa06102641d5dc15831e40fdff039cd1c04cce6bb627e253e1018c"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e80f07375e00bc44e715f217a28ca991d613c745a0fee0a8872400a94855c061"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "78431485fad0ef9ed6fd7647390acb99f9fb26baee15f76e7e9848f51a7a6a6b"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "ce9614aa5cde8860d49c6880a4ec14b3b3bff023c11b6baf016cae45aec5d056"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "1c1691498d852453190c13713bd58915c26ca74d5366bf21fa3c7df36363b98e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "ccaef2fed64af39cb1f8da2bfc6a0ce241302c443a2321823fe8548ded106974"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "93db4386bcf38eabb01ec1757c7c41836ef059119d5eb940bc159035b07a2268"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "ff47ed25043decfa935d64d23c5a4f426e3b1a89fcf6ae0e187ac75376cc5000"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "25e95b8437a5925ffd7718307f30103c4ca17cbfc82205c074044ddc8718d33a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "7edde754c34285a2c1099a6af6a3e43e259bbf1979e252f7f5e11648c10b6238"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "13bf9afde1156fee5ed1425d85655a1c34af07398e3789f7ec91be38ef93ad8c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "57860bfd94206d501fea11a71e14147dfa4633f62b270b6972b5647ee712d877"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "e5a9730530bcfba95d5d2092c0443738608f5724d4164eb50eed22cbb9b4380b"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "21c60522e1f7a1f5f293f5fc523842cd93bc3cc20123caa874bb17d8a4408778"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7f414e29aa27ccf3b47c1dd147cc867895d09478737971de6a3645792aac86c6"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "168a503232888db8b2b021d1821edff1f571a294b6601118b233082f99affac4"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "3c49d64d6c2c413b099ca3f11c696ff90ecd91ecae8ab70a4d08c83f64b4e406"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "b3764980eca9fd4f22e292545307785cd184737d40ba2385e224c9b498fe1c24"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "1641cd4063395fd4272aa22e405a49b23443a5c86dfaaa50439492218d6a01d4"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "470ae114f169fb1e2b66872eaf18a157b0d58f944517d476e720dfa06dd7cabc"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "9bfcdbbc1a47455552bce64e205ea399f2f52ff9adefcca64321ed3594448ed2"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "19eac3fcf1c580faee47b764c8c8c89b92ea895dd2388e43c1e29ce9c642ff21"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "bdf5371aa8a556c5ade81959b3932469bf7a0f7105bdcc3cafd462a5c7de8402"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas. O programa propõe criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro. O programa prevê interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado. O programa propõe integrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos, aeroportos e mercados para reduzir custos, ampliar a competitividade e gerar novas oportunidades de desenvolvimento. O programa prevê fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios. O programa propõe criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido.",
+    "frases": [
+      {
+        "texto": "O programa prevê fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 9,
+            "trecho": "Fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 19,
+            "trecho": "Criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 21,
+            "trecho": "Interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe integrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos, aeroportos e mercados para reduzir custos, ampliar a competitividade e gerar novas oportunidades de desenvolvimento.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 23,
+            "trecho": "Integrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos, aeroportos e mercados para reduzir custos, ampliar a competitividade e gerar novas oportunidades de desenvolvimento."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 25,
+            "trecho": "Fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 28,
+            "trecho": "Criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "esporte-formacao",
+        "titulo": "Esporte e formação",
+        "descricao": "O programa prevê fortalecer o esporte como parte da formação integral.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 9,
+            "trecho": "Fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas."
+          }
+        ]
+      },
+      {
+        "id": "economia-criativa",
+        "titulo": "Economia criativa",
+        "descricao": "O programa propõe criar crédito específico para trabalhadores da economia criativa.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 19,
+            "trecho": "Criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "O programa prevê interiorizar o desenvolvimento segundo as vocações regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 21,
+            "trecho": "Interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado."
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-ativa",
+        "titulo": "Mobilidade ativa",
+        "descricao": "O programa prevê ampliar a infraestrutura cicloviária estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 25,
+            "trecho": "Fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios."
+          }
+        ]
+      },
+      {
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "O programa propõe uma plataforma única para serviços estaduais e municipais.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537230:01",
+            "pagina": 28,
+            "trecho": "Criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:11:27.473Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:13:36.790Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre esporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:1:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre crédito para economia criativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:2:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre desenvolvimento regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:3:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre infraestrutura logística."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:4:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre mobilidade ativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:5:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre serviços digitais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:frase:6:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação resumida é sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:esporte-formacao:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula essencial do tema está coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação resumida é sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:economia-criativa:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula essencial do tema está coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação resumida é sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:desenvolvimento-regional:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula essencial do tema está coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação resumida é sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:mobilidade-ativa:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula essencial do tema está coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação resumida é sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537230:tema:servicos-digitais:documentos:PE:170002537230:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula essencial do tema está coberta pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PE:170002537230",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PE:170002537230:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 44347,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4318,
+          "reasoning_output_tokens": 3047
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 31376,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21547,
+          "output_tokens_details": {
+            "thinking_tokens": 104
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 31376,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21547,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 31376,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 31376
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3649124
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "1aa6a600b86302301a350eaec58dc1d7c0180b0bd7ceaa13f145370f6115520f",
+    "extractedTextSha256": "fe04df1264366e1e472e058940029a6df14a86220d365ba71d7bed4e7901b7b7",
+    "documentCount": 1,
+    "documentSetSha256": "34b2b56437984c247a9079b5386de3d93574e6bd434acd1388ccc1bc19aba68f",
+    "contentSha256": "f4a8f75b2bcb06a7b244117390ac313d9095ca5f0b9b9965ee2e18d96c4720ad"
+  }
+}

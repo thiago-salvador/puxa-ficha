@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AP",
+    "sqCandidato": "30002536313",
+    "slug": "carlos-cley",
+    "nomeUrna": "CARLOS CLEY",
+    "partido": "PSTU",
+    "arquivoNome": "2026AP30002536313_01.pdf",
+    "arquivoNoPacote": "AP/2026AP30002536313_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AP:30002536313:01",
+      "fonte": {
+        "arquivoNome": "2026AP30002536313_01.pdf",
+        "arquivoNoPacote": "AP/2026AP30002536313_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0fe3ca8c7888366a5e64e2310da4cb60d4d4163d3a042de4cf324ba96ccdc175",
+        "extractedTextSha256": "bb03bc0d4579ca8339e8bc492e58804103a811d143c8e7de4cf76e98d5cac28f",
+        "paginas": 12,
+        "secoes": [
+          {
+            "id": "programa-politico-do-pstu-para-as-eleicoes-no-amapa",
+            "titulo": "PROGRAMA POLÍTICO DO PSTU PARA AS ELEIÇÕES NO AMAPÁ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA POLÍTICO DO PSTU PARA AS ELEIÇÕES NO AMAPÁ\n\n1. A Crise do Capitalismo Mundial e a Nova Ofensiva Imperialista\n\nVivemos um momento de mudanças profundas e perigosas no mundo. O sistema\ncapitalista, em sua fase de decadência imperialista, demonstra uma total incapacidade de\ngarantir uma vida digna à humanidade e de preservar a natureza. A crise econômica que se\narrasta desde 2008 acentuou a face cruel e irracional deste sistema, onde a riqueza é produzida\nnão para o bem-estar social, mas para a acumulação desenfreada de uma minoria de bilionários\ne grandes monopólios, resultando em uma dinâmica de espoliação permanente.\nNeste cenário, a eleição de Donald Trump nos Estados Unidos representa um salto de\nqualidade na política do imperialismo. Como principal expoente da extrema direita mundial,\nTrump busca reverter a decadência da hegemonia norte-americana, acirrada pela disputa com\no imperialismo chinês, por meio de uma subversão da ordem mundial atual. Diferente da antiga\n\"reação democrática\", a nova política de Trump baseia-se na agressão e intervenção direta,\ninclusive com o uso de força militar para impor os interesses dos monopólios estadunidenses.\nEssa agressividade manifesta-se de forma brutal na retomada e atualização da Doutrina\nMonroe, tratando a América Latina explicitamente como seu \"quintal\". A iniciativa Shield of\nAmerica, sob o pretexto de combate ao narcotráfico, funciona como uma ferramenta para\nampliar o controle militar e a ingerência política direta no subcontinente. Isso se traduz em\nameaças reais contra países que não se alinham totalmente ao seu projeto, como o México, a\nColômbia e, fundamentalmente, o Brasil. O exemplo da Venezuela é emblemático: a submissão\ndo governo local resultou em um domínio quase completo dos EUA, que passou a controlar\ndesde a extração do petróleo até as decisões sobre com quem o país pode comercializar.\nO avanço desse projeto imperialista está intrinsecamente ligado à ascensão da extrema\ndireita mundial, que serve como correia de transmissão dos interesses de Washington em cada\npaís. A vitória de figuras como Milei na Argentina demonstra que o projeto do capital para a nossa\nregião é a barbárie social. Milei impôs reformas trabalhistas que dilapidaram direitos históricos,\nservindo de modelo para o que a ultradireita deseja aplicar em todo o continente: a\nmercantilização absoluta da vida e a entrega das riquezas naturais ao capital privado. No"
+          },
+          {
+            "id": "equador-o-apoio-a-politica-repressiva-de-noboa-e-o-aumento-da-presenca-m",
+            "titulo": "Equador, o apoio à política repressiva de Noboa e o aumento da presença militar no Paraguai são",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Equador, o apoio à política repressiva de Noboa e o aumento da presença militar no Paraguai são\noutras faces dessa mesma ofensiva.\nO impacto dessa realidade sobre a classe trabalhadora é devastador. Os trabalhadores\nimigrantes sofrem perseguições brutais e um clima de terror permanente sob o comando do ICE,\numa polícia com nítida orientação pró-Trump. Enquanto isso, o governo garante lucros recordes\nàs big techs e bancos por meio de isenções fiscais bilionárias, descarregando o custo da crise\neconômica sobre os ombros do proletariado.\nNa América Latina e no Brasil, a ofensiva resulta no aprofundamento da\ndesindustrialização e da dependência econômica. O controle de recursos estratégicos, como as\nterras raras, é negociado para atender aos interesses estrangeiros, transformando o país em um\nmero exportador de commodities de baixo valor agregado.\nEssa subordinação condena o povo trabalhador a salários arrochados, jornadas\nextenuantes e ao endividamento recorde, que atingiu 80% das famílias brasileiras em 2026. Nas\nperiferias, a política de segurança elitista e racista, muitas vezes inspirada no modelo autoritário\nde Bukele e defendida pela ultradireita local (como o MBL e o bolsonarismo), aprofunda o\nencarceramento e o extermínio da juventude negra.\nO apoio incondicional ao genocídio do povo palestino pelo Estado de Israel e a expansão\nde conflitos no Irã e na Ucrânia colocam a humanidade à beira de catástrofes globais,\ndemonstrando que o imperialismo não hesita em promover a destruição em massa para garantir\nseus mercados.\nDiante da falência das instituições da democracia burguesa, que se mostram cada vez\nmais submetidas à corrupção sistêmica e aos interesses do mercado financeiro, a única saída\nreal é a revolução socialista internacional. Não basta administrar a decadência ou confiar na\n\"esquerda da ordem\" que capitula à conciliação de classes. É urgente a organização\nindependente da nossa classe para construir um governo dos trabalhadores, sem capitalistas,\nque rompa com o imperialismo e coloque a produção a serviço das necessidades humanas e\nnão do lucro. Entre o socialismo e a barbárie, nossa escolha é a revolução!\nBrasil: O Governo Lula-Alckmin e a Administração da Decadência\nNo Brasil, o governo de Lula-Alckmin atua como um administrador da decadência\ncapitalista e da subordinação do país ao imperialismo. Ao contrário das promessas de\ncampanha de garantir soberania e reindustrialização, o que vemos é o aprofundamento da\ndesindustrialização e reprimarização da economia. O governo Lula não apenas não enfrentou o\nimperialismo, como também negociou riquezas estratégicas, como as terras raras, e manteve o\npaís refém dos interesses das grandes multinacionais e do agronegócio."
+          },
+          {
+            "id": "a-politica-economica-deste-governo-e-pautada-pelo-arcabouco-fiscal-uma-v",
+            "titulo": "A política econômica deste governo é pautada pelo Arcabouço Fiscal, uma versão",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A política econômica deste governo é pautada pelo Arcabouço Fiscal, uma versão\nrequentada do teto de gastos que prioriza o pagamento da fraudulenta dívida pública aos\nbanqueiros em detrimento dos investimentos em saúde, educação e saneamento básico.\nEnquanto os bancos comemoram lucros recordes, a classe trabalhadora amapaense e brasileira\nsofre com o alto custo de vida, salários arrochados e o endividamento recorde, que atingiu 80%\ndas famílias em 2026.\nO projeto do PT é, na verdade, estabelecer um governo de ampla aliança com a burguesia,\na direita e o centrão. É falsa a narrativa de que o governo \"não faz mais porque o Congresso não\ndeixa\". O governo Lula tratou as medidas aprovadas em acordos com figuras como Hugo Motta\ncomo vitórias próprias, demonstrando que as reformas que atacam os servidores e as\nprivatizações — incluindo a entrega de hidrovias e florestas — fazem parte do seu próprio projeto\npolítico. Mesmo medidas supostamente progressivas, como a isenção de imposto de renda até\n5 mil reais, são insuficientes e funcionam apenas como políticas compensatórias dentro de um\nmodelo neoliberal.\nA Ameaça da Extrema Direita e o Papel da \"Esquerda da Ordem\"\nA extrema direita brasileira segue com força e em processo de reorganização. Liderada\npor figuras como Flávio Bolsonaro, ela pauta o debate público com temas como a segurança\npública elitista e a defesa do capitalismo ultraliberal. Este setor representa um perigo real às\nliberdades democráticas conquistadas com luta, defendendo um projeto autoritário de\nbonapartização do regime e o acoplamento absoluto do Brasil aos interesses de Donald Trump.\nAlém do bolsonarismo tradicional, novas forças como o MBL (Partido Missão) ganham\nterreno entre a juventude, defendendo ideologias misóginas, racistas e xenofóbicas, e propondo\nestados de exceção para lidar com a segurança pública. O avanço deste setor é impulsionado\ntambém pelo fundamentalismo religioso de cúpulas de grandes igrejas evangélicas, que utilizam\na fé das massas para construir um projeto político de poder e domínio.\nA chamada \"esquerda da ordem\" (PT, PSOL, PCdoB) capitulou à conciliação de classes e\nao regime burguês. O PSOL, ao integrar o governo e ocupar ministérios, abandonou qualquer\nperspectiva de independência de classe, servindo como uma \"ala esquerda\" da administração\nneoliberal de Lula. Candidaturas como a de Boulos são parte de cálculos eleitorais para herdar\no espólio político do petismo, mantendo-se nos marcos da institucionalidade que asfixia a luta\ndos trabalhadores.\nLutas e Resistência: O Caminho da Independência de Classe\nApesar da ofensiva sistemática dos governos e do capital contra os direitos e as\ncondições de vida das massas, a classe trabalhadora brasileira demonstra uma persistente"
+          },
+          {
+            "id": "disposicao-de-luta-o-cenario-nacional-e-marcado-por-processos-de-resiste",
+            "titulo": "disposição de luta. O cenário nacional é marcado por processos de resistência que, embora",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "disposição de luta. O cenário nacional é marcado por processos de resistência que, embora\nainda fragmentados, indicam a existência de um descontentamento profundo que corre \"por\nbaixo\" da aparente estabilidade institucional.\nUm dos exemplos mais significativos deste período é a mobilização contra a escala 6x1.\nEste movimento é particularmente emblemático porque não nasceu das cúpulas sindicais\ntradicionais, mas sim de um processo espontâneo de base que mobilizou trabalhadores\nprecarizados e informais, escapando parcialmente ao controle das burocracias ligadas ao\ngoverno. Além disso, a força dos \"batalhões pesados\" da classe operária manifestou-se em lutas\nestratégicas, como as greves na Embraer, a vitória histórica dos trabalhadores da Avibrás e a\ngreve nacional petroleira, que enfrentou a política de continuidade das privatizações e do\nfatiamento da Petrobras.\nNo campo e nas florestas, a resistência é protagonizada pelos povos indígenas,\nquilombolas e ribeirinhos, que enfrentam diretamente a pistolagem e a grilagem impulsionadas\npelo agronegócio e por multinacionais espoliadoras, como a Cargill. Essas lutas estão\nintrinsecamente conectadas à defesa do meio ambiente e à denúncia do \"PL da Devastação\",\ndemonstrando que a preservação dos biomas brasileiros só é possível através do enfrentamento\naos lucros dos grandes latifundiários. Somam-se a isso o levante das mulheres contra o\ncrescimento alarmante do feminicídio e da violência machista, e as mobilizações da juventude\nprecarizada que se recusa a aceitar um futuro de desemprego e adoecimento mental.\nDizemos categoricamente: a mobilização independente é o único caminho real para\nbarrar a agenda predatória e os ataques contidos no Arcabouço Fiscal, que estrangula os\ninvestimentos em saúde e educação para privilegiar os banqueiros. Não podemos depositar\nqualquer confiança na justiça burguesa ou em acordos parlamentares espúrios com a cúpula do\nCongresso Nacional. As negociações lideradas por figuras do Centrão e da direita, muitas vezes\ncom o aval e a articulação direta do governo Lula-Alckmin, servem apenas para travar os projetos\nde interesse dos trabalhadores e pavimentar o caminho para a aplicação de reformas que retiram\ndireitos.\nA experiência histórica prova que a conciliação de classes desarmou a nossa classe e\nabriu as portas para o fortalecimento da extrema direita. Por isso, o PSTU afirma que a tarefa\nurgente é a construção de uma alternativa socialista e revolucionária, baseada na autoorganização e na independência política. Somente a unificação das lutas, rumo a uma Greve\nGeral, poderá colocar as riquezas do país nas mãos de quem as produz e substituir esse regime\napodrecido por um Governo dos Trabalhadores, sem capitalistas, governado por Conselhos\nPopulares. A emancipação dos trabalhadores será obra dos próprios trabalhadores!\nA Necessidade de uma Alternativa Socialista no Amapá e no Brasil"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "Página 5",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Nesta eleição, o PSTU apresenta a candidatura de Hertz Dias à presidência como portavoz de um programa revolucionário que enfrenta o governo Lula, a extrema direita e todo o\nsistema capitalista. No Amapá, nossas candidaturas estão a serviço de construir um quilombo\nsocialista.\nDizemos claramente: as mudanças que o Amapá precisa não virão de alianças com a\nburguesia ou da confiança cega nas instituições desse regime falido. Elas virão da unificação das\nlutas, da construção de uma greve geral e da organização de Conselhos Populares onde os\npróprios trabalhadores decidam os rumos do estado e do país.\nPropomos um governo dos trabalhadores, sem capitalistas, que rompa com a\nsubordinação ao imperialismo, exproprie os grandes latifúndios e grupos privados de educação\ne saúde, e coloque a riqueza produzida no Amapá a serviço das necessidades do povo pobre.\nEntre o socialismo e a barbárie, nossa escolha é o socialismo!\n\n2. Conjuntura do Amapá\n\nO Mundo do Trabalho\nA realidade do trabalho no Amapá é a expressão mais nítida da decadência do sistema\ncapitalista em uma região periférica. Caracterizamos o estado não apenas pela falta de postos\nde trabalho, mas por uma crise estrutural do emprego formal, que condena a maioria da classe\ntrabalhadora a uma sobrevivência baseada na precariedade absoluta.\nO Amapá consolidou-se como um estado onde a renda do trabalho formal foi superada\npela dependência de transferências de renda governamentais. Em 2022, o estado registrou um\nfenômeno alarmante: o número de beneficiários do Auxílio Brasil superou em 26 mil o total de\ntrabalhadores com carteira assinada. Esta não é uma estatística isolada, mas a caracterização\nde um modelo econômico que não gera desenvolvimento para quem produz, mantendo a classe\ntrabalhadora sob um regime de vulnerabilidade permanente.\nA queda circunstancial nas taxas de desemprego, frequentemente celebrada pelos\ngovernos burgueses de Clécio Luís e Waldez Góes, mascara uma realidade perversa: a explosão\ndo trabalho por conta própria e da informalidade. Cerca de 35,9% dos trabalhadores\namapaenses atuam de forma autônoma, um índice muito superior à média nacional, o que\nsignifica a ausência total de direitos previdenciários, férias ou qualquer seguridade social. A\nclasse trabalhadora amapaense é forçada a jornadas exaustivas de mais de 12 horas diárias no\nsetor informal para garantir o mínimo sustento, enquanto o custo de vida — impulsionado por\numa inflação real sobre alimentos e serviços básicos — corrói o poder de compra de forma\nbrutal."
+          },
+          {
+            "id": "este-cenario-e-agravado-por-um-endividamento-recorde-que-atinge-80-das-f",
+            "titulo": "Este cenário é agravado por um endividamento recorde, que atinge 80% das famílias em",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Este cenário é agravado por um endividamento recorde, que atinge 80% das famílias em\n2026. O trabalhador amapaense vive para pagar juros aos bancos, enquanto os grandes lucros\ndo sistema financeiro são garantidos pela política econômica neoliberal compartilhada pelo\ngoverno federal e pelas elites locais. No Amapá, a economia gira em torno de um setor público\ninchado em cargos de confiança e uma iniciativa privada que sobrevive de subsídios e da\nexploração de mão de obra barata, incapaz de oferecer um horizonte de dignidade para a\njuventude que ingressa no mercado de trabalho.\nInfraestrutura e Saneamento\nA crise das cidades no Amapá, especialmente em Macapá e Santana, revela o fracasso\ncompleto das sucessivas gestões burguesas em garantir o direito à cidade. A caracterização\nurbana de Macapá é a de uma cidade fragmentada, onde a maioria da população vive em \"áreas\nde ressaca\" e aglomerados subnormais, sem acesso a serviços básicos.\nO saneamento básico é, talvez, o símbolo mais dramático dessa negligência. Macapá\nfigura sistematicamente entre as 20 piores cidades do Brasil neste índice, com apenas 14,94%\nda população tendo acesso à coleta de esgoto. A privatização do serviço, entregue à\nConcessionária de Saneamento do Amapá (CSA/Equatorial), não resolveu o problema estrutural;\nao contrário, transformou um direito humano essencial em mercadoria lucrativa, enquanto\nmilhares de vazamentos e a falta de água tratada continuam a ser a regra nas periferias.\nNas áreas de ressaca, como a Lagoa dos Índios e o Zerão, o crescimento urbano\ndesordenado, promovido pela especulação imobiliária, expulsou comunidades tradicionais e\nquilombolas para áreas cada vez mais insalubres. O descarte de efluentes líquidos e detritos\ndomésticos diretamente nos corpos hídricos sem qualquer tratamento gera um conflito\nsocioambiental permanente, onde a saúde da classe trabalhadora é rifada em favor do lucro de\nempreendimentos privados e da inércia deliberada do poder público. O estado e o município\natuam como facilitadores dessa espoliação, omitindo-se da responsabilidade de urbanizar e\nregularizar essas áreas com infraestrutura digna.\nO Caos do Transporte Público\nO sistema de transporte coletivo em Macapá e Santana é uma caracterização perfeita do\nconluio entre o empresariado e o Estado contra o povo pobre. Com apenas duas empresas\noperando de forma precária e não legalizada, a população sofre com a falta de ônibus, tempos\nde espera intermináveis e veículos sucateados.\nPara a classe trabalhadora rodoviária, o cenário é de exploração brutal. Os motoristas\namapaenses recebem os piores salários do setor no país, enquanto são obrigados a exercer a\ndupla função de dirigir e cobrar passagens, o que coloca em risco a vida de trabalhadores e"
+          },
+          {
+            "id": "passageiros-empresas-como-a-expresso-macapa-e-siao-tur-desrespeitam-dire",
+            "titulo": "passageiros. Empresas como a Expresso Macapá e Sião Tur desrespeitam direitos básicos,",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "passageiros. Empresas como a Expresso Macapá e Sião Tur desrespeitam direitos básicos,\natrasando salários, negando cestas básicas e até mesmo o fornecimento de água potável e\nbanheiros dignos nos terminais.\nEnquanto isso, a Prefeitura de Macapá e o Governo do Estado mantêm um \"balcão de\nnegócios\" com os empresários do setor, perdoando dívidas milionárias e permitindo o aumento\ndas tarifas sem qualquer contrapartida em qualidade ou valorização profissional. A crise do\ntransporte não é um erro de gestão, mas um projeto político que prioriza o lucro das\nconcessionárias sobre o direito à mobilidade da classe trabalhadora.\nSegurança Pública e o Extermínio da Juventude Negra e Periférica\nO Amapá tornou-se o epicentro da violência letal no Brasil. Com a maior taxa de mortes\nviolentas intencionais do país (42,5 a 45,7 por 100 mil habitantes), o estado vive uma situação de\nbarbárie social. Esta violência tem classe, cor e idade: atinge desproporcionalmente jovens\nnegros de 15 a 29 anos residentes nas periferias.\nA política de segurança pública aplicada pelos governos locais baseia-se quase\nexclusivamente na letalidade policial e no encarceramento em massa. O Amapá lidera\nnacionalmente as taxas de mortes por intervenção policial, demonstrando que o braço armado\ndo Estado atua para reprimir a revolta gerada pela miséria, em vez de combater as causas do\ncrime. A guerra entre facções, que disputa o controle dos territórios abandonados pelo Estado,\ntorna a vida nas comunidades um \"inferno diário\", onde o trabalhador fica no fogo cruzado entre\no tráfico e a polícia.\nSomado a isso, a violência contra a mulher atinge níveis alarmantes, com o Amapá\nliderando o crescimento da taxa de feminicídios no país. A ideologia machista e a falência dos\nmecanismos de proteção deixam as mulheres da classe trabalhadora vulneráveis, enquanto o\ngoverno utiliza operações policiais pontuais para mascarar a ausência de políticas estruturais de\nemancipação e segurança real.\nEducação e Saúde\nO descaso histórico com as áreas sociais completam a caracterização da crise\namapaense. Na educação, o estado registra o pior índice de acesso à educação infantil do país,\ncom apenas 8,1% das crianças de 0 a 3 anos matriculadas em creches. A falta de vagas e de\nescolas próximas às residências condena as famílias trabalhadoras a um ciclo de exclusão que\nse reflete na baixa escolaridade e na desigualdade racial no ensino médio. Professores e\nprofissionais da educação sofrem com salários defasados e a ausência de gestão democrática,\nenquanto o governo prioriza o fomento a grupos privados em detrimento da escola pública."
+          },
+          {
+            "id": "na-saude-a-realidade-e-marcada-por-filas-interminaveis-falta-de-insumos",
+            "titulo": "Na saúde, a realidade é marcada por filas intermináveis, falta de insumos e infraestrutura",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Na saúde, a realidade é marcada por filas intermináveis, falta de insumos e infraestrutura\nhospitalar degradada. Promessas de novos hospitais e UPAs arrastam-se por anos sem\nconclusão, enquanto o Hospital de Emergências de Macapá permanece como o símbolo da\nfalência do SUS no estado. A crise de saúde mental é outra face oculta dessa conjuntura, com\naltos índices de suicídio e um sistema de atendimento psicossocial (CAPS) insuficiente para a\ndemanda de uma população adoecida pela miséria e pela falta de perspectiva.\nToda essa situação de degradação social é mantida por um sistema político dominado\npor poucas famílias e grupos econômicos que se revezam no poder há décadas. As oligarquias\nmantêm o Amapá no atraso, utilizando o dinheiro público para administrar seus próprios\ninteresses e os do capital nacional e internacional. Essas elites entregam as terras do estado\npara a expansão predatória da monocultura da soja e para a mineração destruidora, que ameaça\nterritórios indígenas e quilombolas sob o pretexto de um \"progresso\" que nunca chega ao povo\npobre. No campo, o agronegócio avança sobre a agricultura familiar, expulsando o camponês\npara as periferias urbanas e destruindo a biodiversidade amazônica.\nTrabalhadores à frente da Mudança\nA caracterização geral do Amapá hoje é a de um estado rico em recursos, mas\nempobrecido por um sistema de exploração que nega o básico à sua população. Não há saída\ndentro dos marcos da conciliação de classes ou da confiança nas instituições burguesas que\nsustentam esse cenário.\nA única alternativa real é a independência de classe. Somente a organização dos\ntrabalhadores, dos povos da floresta, da juventude e dos oprimidos pode romper com esse ciclo\nde barbárie. É necessário construir um governo que rompa com o capital, exproprie os grandes\nlatifúndios e coloque o controle da economia, do transporte e do saneamento nas mãos de quem\nproduz a riqueza através de Conselhos Populares. O Amapá precisa de uma revolução socialista\nque transforme a sobrevivência em vida digna. Trabalhadores no poder para que o Amapá\npertença ao povo!\n\n3. Um Programa Socialista para o Amapá\nDemocracia Operária e Conselhos Populares\nA mudança real no Amapá não virá das urnas controladas pelo poder econômico, mas\nda organização direta da nossa classe. O PSTU propõe a substituição do atual regime, onde\npoucos decidem o destino de muitos, por uma Democracia Operária baseada em Conselhos\nPopulares. Esses conselhos devem ser organizados em cada bairro, local de trabalho, escola e"
+          },
+          {
+            "id": "universidade-funcionando-como-as-instancias-maximas-de-decisao-politica",
+            "titulo": "universidade, funcionando como as instâncias máximas de decisão política e econômica do",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "universidade, funcionando como as instâncias máximas de decisão política e econômica do\nestado.\nDiferente do atual balcão de negócios das oligarquias amapaenses, os representantes\neleitos sob um programa socialista devem ser meros executores das decisões populares. Para\nisso, defendemos:\n•\n\nMandatos revogáveis: Qualquer representante eleito pode ter seu mandato cassado a\nqualquer momento se não cumprir as decisões do Conselho.\n\n•\n\nSalário de operário para políticos: Vereadores, deputados, secretários e o governador\ndevem receber o mesmo salário médio de um trabalhador ou de uma professora,\nacabando com os privilégios da casta política.\n\n•\n\nControle de 100% do Orçamento: Acabar com a farsa do orçamento participativo\nconsultivo e colocar o controle total das receitas do estado nas mãos dos trabalhadores\npara priorizar áreas esquecidas, como as áreas de ressaca e periferias.\nEconomia e Trabalho\nO Amapá vive a tragédia de ter mais beneficiários de auxílios governamentais do que\n\ntrabalhadores com carteira assinada, uma marca da decadência capitalista local. Para enfrentar\no desemprego estrutural e a precarização, o programa socialista propõe:\n•\n\nRedução da Jornada de Trabalho sem redução salarial: Dividir o trabalho existente entre\ntodos os desempregados, garantindo o sustento das famílias.\n\n•\n\nFim da Escala 6x1: Apoio total à mobilização de base pelo fim da escala extenuante, sem\nqualquer flexibilização ou troca de direitos, como tentam articular Davi Alcolumbre e a\ncúpula do Senado.\n\n•\n\nPlano de Obras Públicas e Empresa Estadual de Construção: Criação de uma estatal\n100% pública para construir creches, escolas, hospitais e redes de saneamento, gerando\nmilhares de empregos diretos para os profissionais da área.\n\n•\n\nPasse Livre e Isenção de Tarifas: Garantia de transporte gratuito, água e luz para todos os\ndesempregados do estado.\n\n•\n\nSuspensão do pagamento da Dívida Pública: Auditoria e suspensão imediata do\npagamento da dívida estadual aos banqueiros, destinando esses recursos para a saúde\ne educação.\nEstatização do Transporte e Tarifa Zero"
+          },
+          {
+            "id": "o-transporte-publico-em-macapa-e-santana-e-uma-bolha-de-exploracao-prest",
+            "titulo": "O transporte público em Macapá e Santana é uma bolha de exploração prestes a",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "O transporte público em Macapá e Santana é uma bolha de exploração prestes a\nexplodir, com empresas como Sião Tur e Expresso Macapá operando frotas sucateadas e\natrasando salários. O motorista amapaense recebe hoje o pior salário da categoria no país.\nNossa proposta é:\n•\n\nEstatização total do sistema de transporte: Retirada das concessões das empresas\nprivadas sem qualquer indenização, uma vez que elas já lucraram décadas sobre o\nsofrimento do povo.\n\n•\n\nTarifa Zero: O transporte deve ser um serviço público gratuito financiado pelos grandes\nlucros das empresas e impostos progressivos sobre os ricos.\n\n•\n\nFim da dupla função: Cumprimento rigoroso da Lei nº 2398/2020 que proíbe o motorista\nde cobrar passagens, assegurando a segurança dos passageiros e os postos de trabalho\ndos cobradores.\n\n•\n\nControle Popular: Conselhos de passageiros e rodoviários devem gerir as rotas, horários\ne a manutenção da frota estatal.\nSaneamento Básico\nMacapá figura entre as 20 piores cidades em saneamento básico do país, e a privatização\n\nentregue à CSA/Equatorial apenas aprofundou o descaso e os vazamentos sem solução. O\nprograma socialista exige:\n•\n\nReestatização imediata do saneamento: Anulação da privatização e retorno da\nCompanhia de Água e Esgoto (CAESA) ao controle estatal sob gestão dos trabalhadores\ne usuários.\n\n•\n\nSaneamento em todas as áreas de ressaca: Prioridade total para obras de esgoto e água\ntratada em aglomerados como o Zerão e Lagoa dos Índios, impedindo o despejo de\nefluentes in natura nos corpos hídricos.\n\n•\n\nÁgua como Direito, não Mercadoria: Isenção de tarifas para famílias de baixa renda e\npequenos negócios.\nSegurança Pública\nO Amapá é o estado mais violento do Brasil e líder nacional em mortes por intervenção\n\npolicial. A atual política de extermínio da juventude negra precisa ser substituída por uma\nconcepção socialista de segurança. Propomos:"
+          },
+          {
+            "id": "pagina-11",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nDesmilitarização das polícias: Fim da estrutura militar formada para a guerra contra o\npovo pobre. Defendemos uma Polícia Civil Unificada e democratizada.\n\n•\n\nControle Popular da Segurança: Chefes de polícia e delegados devem ser eleitos\ndiretamente pela população nos bairros e comunidades.\n\n•\n\nLegalização das Drogas sob controle do Estado: Para acabar com o poder do narcotráfico\ne a violência das facções, é preciso tratar o tema como saúde pública, com distribuição\ncontrolada e assistência estatal aos usuários.\n\n•\n\nCombate à Violência Contra a Mulher: Construção imediata de mais casas abrigo em\ntodos os municípios do estado e programas de autonomia financeira para as mulheres,\nenfrentando o aumento recorde de feminicídios no Amapá.\nEducação e Saúde:\nCom o pior índice de educação infantil do país e hospitais em colapso, o Amapá precisa\n\nde um choque de investimentos públicos.\n•\n\nEducação Infantil: Meta de 100% de vagas em creches públicas e escolas próximas às\nresidências das famílias trabalhadoras.\n\n•\n\nFim do Ensino Militarizado: Retomada da gestão civil e democrática nas escolas,\ncombatendo o autoritarismo e projetos como o \"Escola sem Partido\".\n\n•\n\nSaúde Mental: Ampliação drástica da rede de CAPS e contratação de médicos\npsiquiatras para atender à demanda recorde gerada pelo adoecimento social e índices\nde suicídio.\n\n•\n\nEstatização da Saúde Privada: Incorporação dos leitos e hospitais privados ao SUS sob\ncontrole estatal, garantindo que ninguém morra por falta de dinheiro enquanto houver\nvagas em clínicas particulares.\nTerra, Território e Defesa da Amazônia\nO agronegócio da soja e a mineração predatória ameaçam o modo de vida tradicional no\n\nAmapá. O programa socialista defende:\n•\n\nReforma Agrária Ampla: Expropriação do latifúndio e do agronegócio, colocando a terra\nnas mãos de camponeses e da agricultura familiar para produzir alimento barato para o\npovo, e não commodities para exportação.\n\n•\n\nFormação e Tecnologia para os Assentados: Não basta dar a terra; é preciso dar os meios\npara produzir. Propomos que o Estado garanta a distribuição de equipamentos pesados,"
+          },
+          {
+            "id": "como-tratores-alem-de-ferramentas-sementes-selecionadas-e-insumos-basico",
+            "titulo": "como tratores, além de ferramentas, sementes selecionadas e insumos básicos para as",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "como tratores, além de ferramentas, sementes selecionadas e insumos básicos para as\nfamílias assentadas em Projetos de Assentamento.\n•\n\nRede Estadual de Escoamento e Comercialização: A classe trabalhadora camponesa\nhoje sofre com o isolamento e as péssimas condições de rodovias como a AP-020, que\ndificultam o transporte da produção e encarecem o alimento na cidade. Propomos a\ncriação de uma estatal de transporte e logística agrícola que ofereça uma frota de\ncaminhões para buscar a produção diretamente nos lotes e uma rede de feiras populares\ne centros de distribuição geridos pelos próprios produtores.\n\n•\n\nDemarcação Imediata de Terras Quilombolas e Indígenas: Garantia da soberania\nterritorial e proteção contra a pistolagem e o avanço da soja sobre as comunidades\ntradicionais.\n\n•\n\nContra a Exploração na Foz do Amazonas: Denunciamos a pressão do governo Lula e de\noligarquias locais para explorar petróleo na Margem Equatorial sem considerar os riscos\nambientais irreparáveis à região.\nPor um Quilombo Socialista no Amapá\nEste programa não será aplicado pelas mãos daqueles que administram o sistema\n\ncapitalista. Ele exige a derrubada do poder da burguesia local e nacional. Conclamamos a classe\ntrabalhadora, a juventude, as mulheres, os negros e negras, os povos da floresta e os oprimidos\na unificarem suas lutas. Somente um Governo dos Trabalhadores, sem capitalistas, governado\npor Conselhos Populares, poderá transformar o Amapá em um quilombo de liberdade e\ndignidade socialista. Trabalhador, o poder deve ser seu!"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "3a1e8531708e873c9e00dec661653f50907a813021aeb47f4a79397f31e8ffb7"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "961f4245ad143ff34a51e0c14d15a44b42f1cd1b1b5aa5eb937b002fde8f4d75"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e5bd020183ed3161edf29073448593215617ef73cd786c0ca41ff76dd0928d26"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "40b5bf079a75e45d8cca03abc78760ba91ed707e803d6b36d917b3ac0eb12e47"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "90eeebb4f083cb8c4dfe849285d572248b98c4c8f2cfed28ff2a9a99887cb5ee"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "41a65518572a956f3fa6238c30068fcafe494c066dedd400eba6ad72389fd98d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "53c03cde586537796ddd518b0c604add12dbc1d9a5e35a9102d7d01ae8740dce"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ccf3a030db4670dd19789e00131eeb196c3ceb18f27be2f79d2cb8340b38a72d"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "cd4cd0ae244fe72bccd2547116170eea777600b821e18c72c9a65648e6d45ffc"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "ec3ff3a77029c1284e2d9bc46d2c79e8eb36e2088ab27e4115cb6297a63cd688"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "218e55e326614fdd4340d6f8a0dc192f6c4b91365ceac02b9526ed345d5d93d0"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "673d612ebc440296b0b43349f4babc89e9eb9997fa5fd45240da8045fb630376"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe a substituição do atual regime por uma Democracia Operária baseada em Conselhos Populares. O documento prevê mandatos revogáveis para representantes eleitos que não cumprirem as decisões do Conselho. O plano prevê que vereadores, deputados, secretários e o governador recebam o mesmo salário médio de um trabalhador. A proposta inclui a redução da jornada de trabalho sem redução salarial, com divisão do trabalho existente entre os desempregados. O programa propõe a criação de uma empresa estadual de construção para executar um plano de obras públicas. O texto prevê a estatização do sistema de transporte coletivo de Macapá e Santana. O documento propõe a reestatização do saneamento, com retorno da Companhia de Água e Esgoto ao controle estatal. O plano prevê a desmilitarização das polícias e a criação de uma Polícia Civil Unificada.",
+    "frases": [
+      {
+        "texto": "O programa propõe a substituição do atual regime por uma Democracia Operária baseada em Conselhos Populares.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 8,
+            "trecho": "O PSTU propõe a substituição do atual regime, onde poucos decidem o destino de muitos, por uma Democracia Operária baseada em Conselhos Populares."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê mandatos revogáveis para representantes eleitos que não cumprirem as decisões do Conselho.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Mandatos revogáveis: Qualquer representante eleito pode ter seu mandato cassado a qualquer momento se não cumprir as decisões do Conselho."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê que vereadores, deputados, secretários e o governador recebam o mesmo salário médio de um trabalhador.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Salário de operário para políticos: Vereadores, deputados, secretários e o governador devem receber o mesmo salário médio de um trabalhador ou de uma professora, acabando com os privilégios da casta política."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta inclui a redução da jornada de trabalho sem redução salarial, com divisão do trabalho existente entre os desempregados.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Redução da Jornada de Trabalho sem redução salarial: Dividir o trabalho existente entre todos os desempregados, garantindo o sustento das famílias."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a criação de uma empresa estadual de construção para executar um plano de obras públicas.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Plano de Obras Públicas e Empresa Estadual de Construção: Criação de uma estatal 100% pública para construir creches, escolas, hospitais e redes de saneamento, gerando milhares de empregos diretos para os profissionais da área."
+          }
+        ]
+      },
+      {
+        "texto": "O texto prevê a estatização do sistema de transporte coletivo de Macapá e Santana.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "O transporte público em Macapá e Santana é uma bolha de exploração prestes a explodir, com empresas como Sião Tur e Expresso Macapá operando frotas sucateadas e atrasando salários."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Estatização total do sistema de transporte: Retirada das concessões das empresas privadas sem qualquer indenização, uma vez que elas já lucraram décadas sobre o sofrimento do povo."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a reestatização do saneamento, com retorno da Companhia de Água e Esgoto ao controle estatal.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Reestatização imediata do saneamento: Anulação da privatização e retorno da Companhia de Água e Esgoto (CAESA) ao controle estatal sob gestão dos trabalhadores e usuários."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a desmilitarização das polícias e a criação de uma Polícia Civil Unificada.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 11,
+            "trecho": "Desmilitarização das polícias: Fim da estrutura militar formada para a guerra contra o povo pobre. Defendemos uma Polícia Civil Unificada e democratizada."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "democracia-operaria",
+        "titulo": "Democracia operária",
+        "descricao": "Organização do poder político proposta pelo programa, baseada em Conselhos Populares.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 8,
+            "trecho": "O PSTU propõe a substituição do atual regime, onde poucos decidem o destino de muitos, por uma Democracia Operária baseada em Conselhos Populares."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Mandatos revogáveis: Qualquer representante eleito pode ter seu mandato cassado a qualquer momento se não cumprir as decisões do Conselho."
+          }
+        ]
+      },
+      {
+        "id": "trabalho-e-renda",
+        "titulo": "Trabalho e renda",
+        "descricao": "Medidas do programa voltadas ao emprego e à renda dos trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Redução da Jornada de Trabalho sem redução salarial: Dividir o trabalho existente entre todos os desempregados, garantindo o sustento das famílias."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 9,
+            "trecho": "Plano de Obras Públicas e Empresa Estadual de Construção: Criação de uma estatal 100% pública para construir creches, escolas, hospitais e redes de saneamento, gerando milhares de empregos diretos para os profissionais da área."
+          }
+        ]
+      },
+      {
+        "id": "transporte-publico",
+        "titulo": "Transporte público",
+        "descricao": "Propostas do programa para o sistema de transporte coletivo.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Estatização total do sistema de transporte: Retirada das concessões das empresas privadas sem qualquer indenização, uma vez que elas já lucraram décadas sobre o sofrimento do povo."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Tarifa Zero: O transporte deve ser um serviço público gratuito financiado pelos grandes lucros das empresas e impostos progressivos sobre os ricos."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-basico",
+        "titulo": "Saneamento básico",
+        "descricao": "Propostas do programa para os serviços de saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Reestatização imediata do saneamento: Anulação da privatização e retorno da Companhia de Água e Esgoto (CAESA) ao controle estatal sob gestão dos trabalhadores e usuários."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 10,
+            "trecho": "Água como Direito, não Mercadoria: Isenção de tarifas para famílias de baixa renda e pequenos negócios."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Propostas do programa para a política de segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 11,
+            "trecho": "Desmilitarização das polícias: Fim da estrutura militar formada para a guerra contra o povo pobre. Defendemos uma Polícia Civil Unificada e democratizada."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 11,
+            "trecho": "Controle Popular da Segurança: Chefes de polícia e delegados devem ser eleitos diretamente pela população nos bairros e comunidades."
+          }
+        ]
+      },
+      {
+        "id": "terra-e-territorio",
+        "titulo": "Terra e território",
+        "descricao": "Medidas do programa sobre terra e território.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 11,
+            "trecho": "Reforma Agrária Ampla: Expropriação do latifúndio e do agronegócio, colocando a terra nas mãos de camponeses e da agricultura familiar para produzir alimento barato para o povo, e não commodities para exportação."
+          },
+          {
+            "documentoId": "AP:30002536313:01",
+            "pagina": 12,
+            "trecho": "Demarcação Imediata de Terras Quilombolas e Indígenas: Garantia da soberania territorial e proteção contra a pistolagem e o avanço da soja sobre as comunidades tradicionais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T11:52:34.059Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T11:58:23.324Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação sobre substituir o regime por Democracia Operária baseada em Conselhos Populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou afirmação além do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta política coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e não há indício de troca de identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:1:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a previsão de mandatos revogáveis para quem não cumprir decisões do Conselho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação apenas descreve o conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única medida institucional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:2:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre toda a afirmação, inclusive a condição de descumprimento das decisões do Conselho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta que esses cargos recebam o mesmo salário médio de um trabalhador, ainda que o texto também mencione a alternativa de uma professora."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação descreve uma única medida remuneratória coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:3:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os cargos listados e a regra do salário médio de trabalhador."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma exatamente a redução da jornada sem redução salarial e a divisão do trabalho entre desempregados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas resume o conteúdo programático sem qualificá-lo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação descreve uma medida única de política de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à identidade eleitoral indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:4:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a criação de uma estatal de construção vinculada a um plano de obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantidades a comprovar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de modo descritivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de obras públicas e estatal de construção, em área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência é do documento listado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:5:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação da empresa estatal de construção e seu vínculo com obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "Uma evidência situa o tema em Macapá e Santana e a outra afirma a estatização total do sistema de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e não adota o tom valorativo presente no documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre transporte coletivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:6:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "Em conjunto, as evidências cobrem a localização em Macapá e Santana e a estatização do sistema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma diretamente a reestatização do saneamento e o retorno da companhia ao controle estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é meramente descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência é do documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:7:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a desmilitarização e a defesa de uma Polícia Civil Unificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não inclui números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação resume o conteúdo sem adotar linguagem elogiosa, crítica ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma reforma coerente da estrutura policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento e na identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:frase:8:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as duas cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam que o programa organiza o poder político em torno de Conselhos Populares e seus mecanismos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o tema programático sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação cobre uma única área coerente, a organização política por Conselhos Populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento listado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:democracia-operaria:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem a base em Conselhos Populares e um mecanismo central dessa organização."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências mostram medidas ligadas a emprego, sustento e geração de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação temática não traz números específicos a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é classificatória e descritiva, sem promoção ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne propostas de uma única área coerente, trabalho e renda."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:trabalho-e-renda:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem materialmente o eixo de emprego e renda dos trabalhadores."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências trazem propostas programáticas claras para o sistema de transporte coletivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação temática não contém números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o tema sem adotar certeza promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se limita a uma única área coerente, transporte público."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao mesmo documento e à mesma identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:transporte-publico:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem materialmente o tema de propostas para transporte coletivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências mostram propostas programáticas diretamente ligadas aos serviços de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação temática não apresenta números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é apenas descritiva do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se restringe a uma área coerente, saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:saneamento-basico:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem materialmente propostas para os serviços de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências apresentam propostas programáticas específicas para a política de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas identifica o tema e não emite juízo adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se refere a uma única área coerente, segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:seguranca-publica:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem materialmente o eixo de segurança pública do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências mostram medidas programáticas diretamente ligadas a terra e território."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação temática não apresenta números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas identifica o tema programático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne medidas de uma única área coerente, terra e território."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento indicado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002536313:tema:terra-e-territorio:documentos:AP:30002536313:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem materialmente propostas sobre terra e território."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AP:30002536313",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AP:30002536313:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "0fe3ca8c7888366a5e64e2310da4cb60d4d4163d3a042de4cf324ba96ccdc175",
+    "extractedTextSha256": "bb03bc0d4579ca8339e8bc492e58804103a811d143c8e7de4cf76e98d5cac28f",
+    "documentCount": 1,
+    "documentSetSha256": "53b1f576ceb25570f53fe89a11d35a50b8ae70c8b69d09d41a1d2367e5fba44e",
+    "contentSha256": "2ec6d9b1d1261b74f16da060cb76ed58a0dad0d92e163de5f8ac3ea0b3832561"
+  }
+}

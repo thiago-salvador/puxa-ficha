@@ -1,0 +1,796 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002550198",
+    "slug": "jeferson-bezerra",
+    "nomeUrna": "JEFERSON BEZERRA",
+    "partido": "AGIR",
+    "arquivoNome": "2026MS120002550198_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002550198_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002550198:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002550198_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002550198_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "834b708ff3dcad62fbfc884c81a209f036c826516e90b631df044325dcac76ee",
+        "extractedTextSha256": "867235a48959a84746ac9408ac83cfc2c6cdd5871e3d23871315368bfaef042b",
+        "paginas": 3,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nMato Grosso do Sul: Emprego e Desenvolvimento Descentralizado\nJeferson José Bezerra — Agir\n\nApresentação\nMato Grosso do Sul reúne condições únicas para consolidar-se entre os estados mais competitivos do país — força\ndo agronegócio, riqueza ambiental, localização estratégica e diversidade econômica. Este Plano de Governo tem foco\nem dois compromissos centrais: gerar emprego e renda, e levar desenvolvimento a todas as regiões do Estado, com\nresponsabilidade fiscal e gestão orientada a resultados.\n\nDiagnóstico\nHoje, boa parte do emprego formal e do investimento privado no Estado ainda se concentra em poucos polos,\nenquanto regiões com forte vocação econômica — como o Pantanal, o Cone Sul e as áreas de fronteira — crescem\nabaixo do seu potencial. Setores como bioeconomia, logística de fronteira e turismo sustentável seguem pouco\nexplorados frente à capacidade real do Estado. É esse diagnóstico que orienta os dois focos deste Plano: gerar\nemprego a partir de setores com potencial comprovado, e fazer esse crescimento chegar a todas as regiões.\n\nPrincípios da Gestão\n• Responsabilidade fiscal e eficiência administrativa.\n• Transparência e diálogo permanente com a sociedade.\n• Planejamento orientado por resultados e metas públicas.\n• Descentralização como método, não apenas discurso.\n\nEixo 1 — Geração de Emprego e Renda\nObjetivo: criar um ambiente favorável ao investimento, ao empreendedorismo e à qualificação da força de trabalho.\n• Crédito MS Empreendedor — linha de crédito estadual com juros subsidiados e prazo estendido para micro\n\ne pequenas empresas do interior.\n• Desburocratização — alvará digital único e simplificação de obrigações estaduais (ICMS, licenciamento) para\n\npequenos negócios.\n• Qualificação Profissional por Região — cursos técnicos regionalizados em parceria com SENAI/SENAC e\n\nempresas âncora, orientados à demanda real de cada região (agroindústria, logística, turismo, energia).\n• Cadeias Produtivas — apoio a arranjos produtivos locais (APLs) e cadeias estratégicas — agronegócio,\n\nbioenergia, celulose, turismo.\n• Atração de Investimentos — incentivos fiscais regionalizados para atrair novas indústrias e centros de\n\ndistribuição para fora do eixo mais consolidado, ampliando a base geradora de empregos do Estado.\nMeta: [a definir com a campanha] número de empregos formais gerados e de micro/pequenas empresas atendidas por\ncrédito no mandato.\n\nEixo 2 — Desenvolvimento Regional Equilibrado\nObjetivo: fazer cada região de Mato Grosso do Sul crescer a partir da sua própria vocação econômica, com o Estado\npresente e investindo em todo o território.\n• Grande Campo Grande — consolidação como polo logístico, de serviços e de inovação, com papel de irradiar\n\noportunidades para as demais regiões.\n• Grande Dourados — agroindústria e logística de exportação.\n• Região de Três Lagoas / Bolsão — energia, celulose e indústria de base.\n• Pantanal — turismo sustentável e ecoturismo.\n• Cone Sul / Fronteira — comércio exterior e logística de fronteira."
+          },
+          {
+            "id": "presenca-do-estado-em-todo-o-territorio-interiorizacao-de-escritorios-e",
+            "titulo": "• Presença do Estado em Todo o Território — interiorização de escritórios e serviços estaduais, com concursos",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "• Presença do Estado em Todo o Território — interiorização de escritórios e serviços estaduais, com concursos\n\npúblicos com vagas regionalizadas.\n• Orçamento Regionalizado — plano plurianual com recursos destinados por região, para que cada polo tenha\n\ninvestimento previsível e acompanhável.\nMeta: [a definir com a campanha] número de municípios com serviço estadual descentralizado; volume de investimento\nestadual por região.\n\nEixo 3 — Serviços Públicos a Serviço do Desenvolvimento\nSaúde, educação, infraestrutura, segurança e assistência social sustentam os dois eixos centrais e são tratados de\nforma integrada, não como blocos isolados.\n\nSaúde\n• regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital.\nEducação\n• valorização de profissionais e expansão do ensino técnico alinhado às vocações regionais.\nInfraestrutura e Logística\n• rodovias e conectividade priorizadas pelos polos regionais definidos no Eixo 2.\nSegurança Pública\n• integração de forças de segurança e investimento em tecnologia, com presença ampliada no interior.\nDesenvolvimento Social\n• inclusão produtiva articulada ao Eixo 1: programas sociais como ponte para qualificação e emprego.\n\nGovernança e Execução\nUm plano só tem valor se for possível acompanhar sua execução. Por isso, a gestão adotará mecanismos concretos\nde coordenação e transparência:\n• Conselho Estadual de Desenvolvimento Regional — instância permanente de coordenação entre governo,\n\nprefeituras e setor produtivo, para acompanhar as prioridades de cada região.\n• Orçamento por Resultados — recursos vinculados a metas de emprego e de presença estadual por região, com\n\nprestação de contas periódica.\n• Painel de Metas Aberto à Sociedade — acompanhamento público, em linguagem acessível, dos indicadores\n\nde emprego, investimento e serviços por região.\n\nSequenciamento de Execução\nPara que o Plano se traduza em entregas visíveis desde o início, as ações estão organizadas em duas fases:\n\nPrimeiros 100 Dias\n• lançamento do alvará digital único e simplificação inicial de obrigações estaduais para pequenos negócios.\n• instalação do Conselho Estadual de Desenvolvimento Regional.\n• abertura do primeiro escritório estadual descentralizado em região prioritária.\n\nAo Longo do Mandato\n• operação plena do Crédito MS Empreendedor em todas as regiões do Estado.\n• expansão dos cursos técnicos regionalizados, em parceria com SENAI/SENAC e empresas âncora.\n• consolidação do orçamento regionalizado e do painel público de metas.\n• atração de novas indústrias e centros de distribuição via incentivos fiscais regionalizados."
+          },
+          {
+            "id": "consideracoes-finais",
+            "titulo": "Considerações Finais",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Considerações Finais\nEste Plano representa o compromisso com um Mato Grosso do Sul mais competitivo e equilibrado, onde cada região\ncresce a partir das suas próprias forças. A gestão será pautada por planejamento, responsabilidade fiscal, transparência\ne geração de oportunidades — para que o crescimento do Estado seja sentido por quem vive na capital e por quem\nvive no interior."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "d6e7ca08010c99614c2f3bee5392a8cea921ad4257d2ea77277d55a4eef045d3"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "32d93dabd284f1b0a21f186c8103cde01e9692080d63d399629741981055422a"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "11b914d5394bd1ca9f66136ab897526fdb8b32192a1d3b9005981c6212f6b650"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Plano de Governo de Mato Grosso do Sul, intitulado Emprego e Desenvolvimento Descentralizado, é apresentado por Jeferson José Bezerra (Agir). O plano prevê o Crédito MS Empreendedor, linha de crédito estadual com juros subsidiados e prazo estendido para micro e pequenas empresas do interior. O plano propõe, na desburocratização, alvará digital único e simplificação de obrigações estaduais para pequenos negócios. A qualificação profissional está planejada com cursos técnicos regionalizados em parceria com SENAI/SENAC e empresas âncora, orientados à demanda real de cada região. No Pantanal, o plano propõe turismo sustentável e ecoturismo. O plano prevê a interiorização de escritórios e serviços estaduais, com concursos públicos com vagas regionalizadas. O plano estabelece orçamento regionalizado, com plano plurianual e recursos destinados por região. Na saúde, o plano propõe regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital.",
+    "frases": [
+      {
+        "texto": "O Plano de Governo de Mato Grosso do Sul, intitulado Emprego e Desenvolvimento Descentralizado, é apresentado por Jeferson José Bezerra (Agir).",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Mato Grosso do Sul: Emprego e Desenvolvimento Descentralizado"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Jeferson José Bezerra — Agir"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê o Crédito MS Empreendedor, linha de crédito estadual com juros subsidiados e prazo estendido para micro e pequenas empresas do interior.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Crédito MS Empreendedor — linha de crédito estadual com juros subsidiados e prazo estendido para micro"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "e pequenas empresas do interior."
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "operação plena do Crédito MS Empreendedor em todas as regiões do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe, na desburocratização, alvará digital único e simplificação de obrigações estaduais para pequenos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Desburocratização — alvará digital único e simplificação de obrigações estaduais (ICMS, licenciamento) para"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "lançamento do alvará digital único e simplificação inicial de obrigações estaduais para pequenos negócios."
+          }
+        ]
+      },
+      {
+        "texto": "A qualificação profissional está planejada com cursos técnicos regionalizados em parceria com SENAI/SENAC e empresas âncora, orientados à demanda real de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Qualificação Profissional por Região — cursos técnicos regionalizados em parceria com SENAI/SENAC e"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "empresas âncora, orientados à demanda real de cada região (agroindústria, logística, turismo, energia)."
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "expansão dos cursos técnicos regionalizados, em parceria com SENAI/SENAC e empresas âncora."
+          }
+        ]
+      },
+      {
+        "texto": "No Pantanal, o plano propõe turismo sustentável e ecoturismo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Pantanal — turismo sustentável e ecoturismo."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a interiorização de escritórios e serviços estaduais, com concursos públicos com vagas regionalizadas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "Presença do Estado em Todo o Território — interiorização de escritórios e serviços estaduais, com concursos"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "públicos com vagas regionalizadas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano estabelece orçamento regionalizado, com plano plurianual e recursos destinados por região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "Orçamento Regionalizado — plano plurianual com recursos destinados por região, para que cada polo tenha"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "investimento previsível e acompanhável."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano propõe regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "credito-ms-empreendedor",
+        "titulo": "Crédito MS Empreendedor",
+        "descricao": "Linha de crédito estadual com juros subsidiados e prazo estendido para micro e pequenas empresas do interior.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Crédito MS Empreendedor — linha de crédito estadual com juros subsidiados e prazo estendido para micro"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "e pequenas empresas do interior."
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "operação plena do Crédito MS Empreendedor em todas as regiões do Estado."
+          }
+        ]
+      },
+      {
+        "id": "desburocratizacao",
+        "titulo": "Desburocratização para pequenos negócios",
+        "descricao": "Alvará digital único com simplificação de obrigações estaduais (ICMS, licenciamento) para pequenos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Desburocratização — alvará digital único e simplificação de obrigações estaduais (ICMS, licenciamento) para"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "lançamento do alvará digital único e simplificação inicial de obrigações estaduais para pequenos negócios."
+          }
+        ]
+      },
+      {
+        "id": "qualificacao-profissional-regionalizada",
+        "titulo": "Qualificação profissional regionalizada",
+        "descricao": "Cursos técnicos regionalizados em parceria com SENAI/SENAC e empresas âncora, orientados à demanda real de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "Qualificação Profissional por Região — cursos técnicos regionalizados em parceria com SENAI/SENAC e"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 1,
+            "trecho": "empresas âncora, orientados à demanda real de cada região (agroindústria, logística, turismo, energia)."
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "expansão dos cursos técnicos regionalizados, em parceria com SENAI/SENAC e empresas âncora."
+          }
+        ]
+      },
+      {
+        "id": "presenca-estadual-no-territorio",
+        "titulo": "Presença do Estado em todo o território",
+        "descricao": "Interiorização de escritórios e serviços estaduais, com concursos públicos com vagas regionalizadas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "Presença do Estado em Todo o Território — interiorização de escritórios e serviços estaduais, com concursos"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "públicos com vagas regionalizadas."
+          }
+        ]
+      },
+      {
+        "id": "orcamento-regionalizado",
+        "titulo": "Orçamento regionalizado",
+        "descricao": "Plano plurianual com recursos destinados por região, para investimento previsível em cada polo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "Orçamento Regionalizado — plano plurianual com recursos destinados por região, para que cada polo tenha"
+          },
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "investimento previsível e acompanhável."
+          }
+        ]
+      },
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Saúde regionalizada",
+        "descricao": "Regionalização da rede hospitalar com telemedicina para reduzir deslocamentos do interior à capital.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002550198:01",
+            "pagina": 2,
+            "trecho": "regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Z.ai GLM@opencode-go/glm-5.3",
+    "generatedAt": "2026-08-27T22:31:30.846Z"
+  },
+  "julgamento": {
+    "model": "DeepSeek@opencode-go/deepseek-v4-flash",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T22:33:26.811Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências reproduzem o título do plano e a autoria (Jeferson José Bezerra — Agir), sustentando integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (apresentação do plano de governo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:1:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: título do plano e apresentação pelo candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam todos os elementos: linha de crédito estadual, juros subsidiados, prazo estendido e público-alvo (micro e pequenas empresas do interior)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (Crédito MS Empreendedor)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:2:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: natureza da linha, juros subsidiados, prazo estendido e público-alvo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam o alvará digital único e a simplificação de obrigações estaduais para pequenos negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente (desburocratização para pequenos negócios)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:3:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: alvará digital único e simplificação de obrigações estaduais para pequenos negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam cursos técnicos regionalizados, parceria com SENAI/SENAC e empresas âncora e orientação à demanda real de cada região."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (qualificação profissional regionalizada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:4:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: cursos regionalizados, parcerias e orientação à demanda regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência confirma integralmente a proposta de turismo sustentável e ecoturismo no Pantanal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (turismo no Pantanal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:5:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material (turismo sustentável e ecoturismo no Pantanal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam a interiorização de escritórios e serviços estaduais e os concursos públicos com vagas regionalizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (presença do Estado no território)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:6:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: interiorização de escritórios/serviços e concursos com vagas regionalizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam o orçamento regionalizado com plano plurianual e recursos destinados por região."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (orçamento regionalizado)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:7:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: plano plurianual e recursos destinados por região."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência confirma integralmente a regionalização da rede hospitalar e a telemedicina para reduzir deslocamentos do interior à capital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente (saúde regionalizada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:frase:8:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais (regionalização da rede hospitalar e telemedicina)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam todos os elementos: linha de crédito estadual, juros subsidiados, prazo estendido e público-alvo (micro e pequenas empresas do interior)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (Crédito MS Empreendedor)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:credito-ms-empreendedor:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: natureza da linha, juros subsidiados, prazo estendido e público-alvo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam o alvará digital único e a simplificação de obrigações estaduais (ICMS, licenciamento) para pequenos negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente (desburocratização para pequenos negócios)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:desburocratizacao:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: alvará digital único e simplificação de obrigações estaduais para pequenos negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam cursos técnicos regionalizados, parceria com SENAI/SENAC e empresas âncora e orientação à demanda real de cada região."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (qualificação profissional regionalizada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:qualificacao-profissional-regionalizada:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: cursos regionalizados, parcerias e orientação à demanda regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam a interiorização de escritórios e serviços estaduais e os concursos públicos com vagas regionalizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (presença do Estado no território)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:presenca-estadual-no-territorio:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: interiorização de escritórios/serviços e concursos com vagas regionalizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências confirmam o orçamento regionalizado com plano plurianual e recursos destinados por região, com investimento previsível por polo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente (orçamento regionalizado)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:orcamento-regionalizado:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: plano plurianual, recursos por região e investimento previsível por polo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência confirma integralmente a regionalização da rede hospitalar e a telemedicina para reduzir deslocamentos do interior à capital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades; não há valores a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e factual, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente (saúde regionalizada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave eleitoral 2026:GOVERNADOR:MS:120002550198 e ao documento informado MS:120002550198:01."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002550198:tema:saude-regionalizada:documentos:MS:120002550198:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais (regionalização da rede hospitalar e telemedicina)."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002550198",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002550198:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Z.ai GLM",
+        "version": "opencode-go/glm-5.3",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "DeepSeek",
+        "version": "opencode-go/deepseek-v4-flash",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "834b708ff3dcad62fbfc884c81a209f036c826516e90b631df044325dcac76ee",
+    "extractedTextSha256": "867235a48959a84746ac9408ac83cfc2c6cdd5871e3d23871315368bfaef042b",
+    "documentCount": 1,
+    "documentSetSha256": "cf46ee4d4dabeb5740a95aea9cd9072bda142555eac85a85220b4f2ab113aadb",
+    "contentSha256": "b5fbacb454990c2a9341d99a8a751f1cfab1c4e6b9597309d6692c2d5e061958"
+  }
+}

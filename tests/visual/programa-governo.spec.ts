@@ -237,6 +237,22 @@ test("estado real aprovado é explícito, lazy e acessível", async ({ browser }
   await context.close()
 })
 
+test("governador real aprovado aparece na ficha e carrega o documento", async ({ page }, testInfo) => {
+  let programRequests = 0
+  page.on("request", (request) => {
+    if (request.url().includes("/api/candidato-profile/acm-neto/programa")) programRequests += 1
+  })
+
+  await page.goto("/candidato/acm-neto")
+  await expect(page.locator("[data-pf-programa-overview]")).toBeVisible()
+  await expect(page.getByText("Resumo por IA, revisado editorialmente")).toBeVisible()
+  expect(programRequests).toBe(0)
+  await page.getByRole("tab", { name: "Programa" }).click()
+  await expect(page.locator("[data-pf-programa-document]")).toBeVisible()
+  expect(programRequests).toBeGreaterThan(0)
+  await page.screenshot({ path: testInfo.outputPath("approved-governor-acm-neto.png"), fullPage: true })
+})
+
 test("fixture estadual aprovada prova busca, sumário e navegação do documento", async ({ page }, testInfo) => {
   let programRequests = 0
   await page.route("**/api/candidato-profile/lula/programa", async (route) => {

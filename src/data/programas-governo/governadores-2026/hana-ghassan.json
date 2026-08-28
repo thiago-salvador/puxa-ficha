@@ -1,0 +1,1645 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PA",
+    "sqCandidato": "140002551598",
+    "slug": "hana-ghassan",
+    "nomeUrna": "HANA GHASSAN",
+    "partido": "MDB",
+    "arquivoNome": "2026PA140002551598_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002551598_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PA:140002551598:01",
+      "fonte": {
+        "arquivoNome": "2026PA140002551598_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002551598_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "3feb4edbe2b82e1fecf48ac9c3474d97bfd5de8f193b764d50d3859f7a6ca09f",
+        "extractedTextSha256": "e9fecba6ade1b95629a8f9517c626c9f8732758a40311fb2667a8b2237844a6b",
+        "paginas": 69,
+        "secoes": [
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n1"
+          },
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0-2",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n2"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nMensagem da Governadora Hana Ghassan, 4\nEstrutura do Plano de Governo, 6\nPILAR 1 • CUIDAR DAS PESSOAS. 7\nGarantir direitos, proteção, bem-estar e qualidade de vida.\n1. Saúde, 9\n2. Segurança, 14\n3. Educação, 19\n4. Políticas para as Mulheres, 22\n5. Desenvolvimento Social, 29\n6. Desenvolvimento Urbano e Qualidade de Vida, 32\nPILAR 2 • DESENVOLVER O PARÁ. 37\nImpulsionar a economia, gerar\noportunidades e integrar todas as regiões.\n7. Competitividade, Dinamismo Econômico e Emprego e Renda, 39\n8. Infraestrutura e Logística, 44\n9. Turismo, 47\n10. Cultura e Economia Criativa, 51\nPILAR 3 • PREPARAR O FUTURO. 52\nConstruir um estado moderno, inovador\ne sustentável para as próximas gerações.\n11. Ciência, Tecnologia e Inovação, 56\n12. Clima e Meio Ambiente, 59\n13. Governança e Gestão Inovadora, 63\nUM COMPROMISSO COM O FUTURO DO PARÁ, 67\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n3"
+          },
+          {
+            "id": "bora-avancar",
+            "titulo": "BORA AVANÇAR!",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "BORA AVANÇAR!\nNos últimos oito anos, o Pará viveu um tempo de mudança e de muito trabalho. Avançamos,\ncrescemos e transformamos o nosso estado em uma terra de oportunidades. Resgatamos\no orgulho de ser paraense e mostramos que é possível fazer uma política que coloca as\npessoas em primeiro lugar e entrega resultados de verdade.\nHoje, o Pará é reconhecido por sua capacidade de crescer, atrair investimentos, gerar\nempregos e cuidar da sua gente. Esse trabalho mudou a realidade de milhares de famílias e\nprovou que, quando há planejamento, responsabilidade e compromisso, o desenvolvimento\nchega e melhora a vida das pessoas.\nAgora, é hora de avançar ainda mais.\nQuero construir um Pará que continue crescendo, mas que faça esse crescimento chegar\nà vida de cada família. Um estado onde o desenvolvimento econômico se transforme em\nmais empregos, mais renda e mais oportunidades para quem quer trabalhar, empreender\ne construir um futuro melhor.\nO Pará é a terra das oportunidades. Um estado rico em gente, em natureza, em cultura e\nem potencial. E eu acredito que chegou a hora de intensiﬁcar todo esse potencial em uma\nvida melhor para cada paraense.\nA saúde será sempre a minha prioridade. Porque ninguém pode esperar quando precisa\nde atendimento. Quero ampliar o acesso, fortalecer a rede pública e garantir que o cuidado\nchegue mais perto das pessoas, em todas as regiões do estado.\nA segurança também continuará no centro das nossas ações. Quero um Pará onde as\nfamílias possam viver em paz, onde as nossas forças de segurança tenham estrutura,\ntecnologia e valorização para proteger quem mais precisa.\nMas eu também sei que desenvolvimento se faz com emprego. O melhor programa social\né aquele que abre portas para o trabalho, para o empreendedorismo e para a geração de\nrenda.\nQuero um Pará que atraia investimentos, fortaleça quem produz, incentive os pequenos\nnegócios e crie oportunidades para os nossos jovens construírem seu futuro sem precisar\ndeixar sua terra. O trabalho digno é o caminho para reduzir desigualdades e transformar\nvidas.\nTenho um compromisso especial com as mulheres paraenses. Sei da força que move cada\nmãe, cada trabalhadora, cada empreendedora e cada mulher que luta diariamente para\ncuidar da sua família. Mas sei também que muitas ainda vivem com medo da violência. No\nmeu governo, proteger as mulheres será uma prioridade permanente. Vamos ampliar as\npolíticas de proteção, fortalecer a autonomia econômica feminina e garantir que nenhuma\nmulher esteja sozinha quando mais precisar do Estado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n4"
+          },
+          {
+            "id": "minha-trajetoria-na-gestao-publica-sempre-foi-marcada-pela-responsabilid",
+            "titulo": "Minha trajetória na gestão pública sempre foi marcada pela responsabilidade com o",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Minha trajetória na gestão pública sempre foi marcada pela responsabilidade com o\ndinheiro do cidadão. Cada recurso precisa voltar para a população em forma de hospitais,\nescolas, estradas, moradias, saneamento, segurança e serviços públicos de qualidade.\nTambém acredito que nenhum governo transforma um estado sozinho. É ao lado dos\nprefeitos e prefeitas que as políticas públicas chegam onde as pessoas vivem. Meu\ncompromisso é manter uma relação de parceria com todos os municípios, respeitando\nsuas realidades e trabalhando juntos para levar desenvolvimento a cada região do Pará.\nMinha forma de governar será guiada por quatro princípios que orientam cada decisão:\nplanejamento para fazer mais e melhor; regionalização para respeitar as vocações e\nnecessidades de cada território; parceria para unir esforços entre os diferentes níveis de\ngoverno e a sociedade; e municipalização para garantir que as políticas públicas cheguem\nonde as pessoas vivem.\nTenho um compromisso com cada paraense: governar com seriedade, sensibilidade e\ncapacidade de realizar. Cuidar das pessoas será sempre o meu primeiro dever. Desenvolver\no Pará será o caminho para gerar oportunidades. E preparar o futuro será a responsabilidade\nde quem acredita que o nosso estado pode crescer sem deixar ninguém para trás.\nEsse é o compromisso que assumo com cada paraense: trabalhar todos os dias para que\no desenvolvimento chegue à mesa das famílias, que a segurança esteja nas ruas, que a\nsaúde esteja presente quando ela for necessária e que nenhuma mulher caminhe sozinha.\nPorque o futuro do Pará se constrói com trabalho, responsabilidade e coragem. E eu estou\npronta para liderar esse novo tempo ao lado de cada paraense.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n5"
+          },
+          {
+            "id": "estrutura-do-plano-de-governo",
+            "titulo": "ESTRUTURA DO PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "ESTRUTURA DO PLANO DE GOVERNO\nEste Plano de Governo apresenta uma visão estratégica para o desenvolvimento do Pará\nno período de 2027 a 2030. Sua construção parte do entendimento de que os desaﬁos\ndo estado exigem políticas públicas integradas, capazes de promover crescimento\neconômico, reduzir desigualdades, ampliar oportunidades e garantir qualidade de vida\npara toda a população.\nMais do que um conjunto de propostas, este plano estabelece uma agenda de\ndesenvolvimento orientada por resultados e fundamentada nos princípios que norteiam a\nação do Governo do Estado: planejamento, regionalização, parceria e municipalização.\nEsses princípios refletem a convicção de que governar é planejar o futuro, respeitar\nas diferentes realidades do território paraense, fortalecer a cooperação entre os entes\npúblicos e aproximar cada vez mais as políticas públicas das pessoas.\nPara transformar essa visão em ações concretas, o plano foi organizado em três grandes\npilares estratégicos. Eles expressam uma lógica de atuação em que o cuidado com\nas pessoas, o desenvolvimento econômico e a preparação para o futuro caminham\nde forma integrada. Cuidar das pessoas cria as condições para o desenvolvimento. O\ndesenvolvimento gera oportunidades, emprego e renda. E preparar o futuro garante que\nesse crescimento seja sustentável, inovador e capaz de melhorar a vida das próximas\ngerações.\nOs três pilares apresentados neste plano traduzem uma visão integrada para o futuro do\nPará. Cuidar das pessoas, desenvolver o estado e preparar as próximas gerações não\nsão objetivos isolados, mas compromissos complementares que orientam a ação do\ngoverno. Essa será a base para construir um Pará mais justo, mais competitivo, sustentável\ne inovador, onde o desenvolvimento alcance todas as regiões e se transforme em mais\nqualidade de vida para cada paraense.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n6"
+          },
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0-3",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n7"
+          },
+          {
+            "id": "pilar-1",
+            "titulo": "PILAR 1",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PILAR 1\n\nCUIDAR DAS PESSOAS\nGarantir direitos, proteção,\nbem-estar e qualidade de vida.\n\nCuidar das pessoas é o propósito que orienta este Plano de Governo. O desenvolvimento\nsó faz sentido quando melhora a vida da população, reduz desigualdades e amplia\noportunidades.\nNosso compromisso é construir um Pará onde cada pessoa tenha acesso a serviços\npúblicos de qualidade, viva com mais segurança, tenha seus direitos garantidos e encontre\ncondições para desenvolver plenamente seu potencial.\nEste pilar reúne as políticas públicas voltadas à promoção da qualidade de vida, da proteção\nsocial e da cidadania. O foco é colocar as pessoas no centro das decisões, fortalecendo\na presença do Estado e ampliando o acesso a direitos, para que o desenvolvimento seja\npercebido no cotidiano das famílias em todas as regiões do Pará.\nCuidar das pessoas é investir no presente e construir um estado mais justo, humano e\ninclusivo, onde o crescimento econômico se traduza em bem-estar, dignidade e melhores\noportunidades para todos.\n\nÁREAS QUE COMPÕEM ESTE PILAR: Saúde; Segurança; Educação; Políticas para\nMulheres; Desenvolvimento Social; e, Desenvolvimento Urbano e Qualidade de Vida.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n8"
+          },
+          {
+            "id": "a-saude-sera-a-principal-prioridade-do-nosso-governo-cuidar-das-pessoas",
+            "titulo": "A saúde será a principal prioridade do nosso governo. Cuidar das pessoas é garantir que",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "A saúde será a principal prioridade do nosso governo. Cuidar das pessoas é garantir que\ncada paraense tenha acesso a uma assistência pública de qualidade, no tempo certo e\ncada vez mais próxima de onde vive. Nosso compromisso é fortalecer o Sistema Único de\nSaúde (SUS) no Pará, ampliando o acesso, reduzindo desigualdades regionais e garantindo\num atendimento mais humanizado, eﬁciente e resolutivo em todas as regiões do estado.\nO Pará avançou na construção de uma rede de saúde mais estruturada, com a ampliação\nde serviços, novos equipamentos e investimentos que fortaleceram a capacidade de\natendimento da população. O desaﬁo agora é consolidar esse avanço, integrando cada\nvez mais os diferentes níveis de atenção e garantindo que o cidadão percorra uma rede\norganizada, com acesso ao diagnóstico, ao tratamento e ao acompanhamento adequado.\nVamos fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos\nserviços de Média e Alta Complexidade, garantindo uma rede regionalizada e capaz de\nresponder às necessidades da população. Também ampliaremos o acesso aos exames,\nconsultas especializadas e serviços de diagnóstico, fortalecendo a medicina especializada\ne reduzindo o tempo de espera para o início dos tratamentos.\nTeremos atenção especial às pessoas com Transtorno do Espectro Autista (TEA) e\nsuas famílias, ampliando o atendimento multiproﬁssional, fortalecendo os serviços de\nreabilitação e garantindo um cuidado integral, humanizado e regionalizado em todo o Pará.\nA saúde da mulher continuará sendo uma prioridade estratégica da nossa gestão. Vamos\nfortalecer a atenção à saúde feminina em todas as fases da vida, ampliando ações de\nprevenção, diagnóstico precoce e tratamento, além de qualiﬁcar a assistência materna,\ngarantindo cuidado seguro e humanizado para mães e bebês.\nCuidar da saúde é cuidar da vida. Esse continuará sendo o compromisso permanente do\nnosso governo: fortalecer o SUS, ampliar o acesso e garantir que cada paraense tenha\natendimento de qualidade quando mais precisar.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n9"
+          },
+          {
+            "id": "principais-realizacoes",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Construção de 16 novos hospitais Estaduais\n• Hospital da Mulher, com 120 leitos.\n• Hospital Pronto Socorro Dr Roberto Macedo, em Belém, com 178 leitos.\n• Hospital Materno Infantil Dr. Álvaro de Oliveira Duarte, em Santarém, 120 leitos\n• Hospital Materno Infantil Dr. Nagib Mutran, em Marabá, 172 leitos\n• Hospital Materno Infantil Anitta Gerosa, em Ananindeua, com 87 leitos.\n• Hospital Regional da PA 279, em Ourilândia do Norte, com 149 leitos.\n• Hospital Regional de Rio Maria, com 38 leitos.\n• Hospital Regional Menino Jesus em Oriximiná, com 50 leitos.\n• Hospital Regional da Tapajós, em Itaituba, com 162 leitos.\n• Hospital Regional Público do Caetés, em Capanema, com 117 leitos.\n• Hospital Regional de Castanhal, com 160 leitos\n• Hospital Regional Abelardo Santos, com 395 leitos\n• Hospital Regional Castelo dos Sonhos, em Altamira, 21 leitos\n• Hospital Regional de Cametá / Novo Pronto Socorro.\n• Hospital Regional do Baixo Tocantins, em Abaetetuba, com 97 leitos.\n• Centro de Cuidados Paliativos / HOL, com 31 leitos.\n• Reconstrução, ampliação e reforma de 31 hospitais municipais e estaduais, em Abaetetuba,\nÁgua Azul do Norte, Alenquer, Anajás, Baião, Bannach, Belém, Breu Branco, Cumaru do\nNorte, Curralinho, Eldorado do Carajás, Itupiranga, Medicilândia, Monte Alegre, Novo\nProgresso, Ourém, Pau D’arco, Redenção, Salinópolis, Salvaterra, Santana do Araguaia, São\nDomingos do Araguaia, São Domingos do Capim, São Geraldo do Araguaia, São João do\nAraguaia, São Miguel do Guamá, Sapucaia, Soure, Tailândia, Tucumã e Vigia.\n• Ampliação da oferta de tratamento oncológico, com expansão dos serviços para os\nmunicípios de Belém, Marabá e Castanhal\n• Implantação de 6 Núcleos de Atendimento Especializado para pessoas com Transtorno\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n10"
+          },
+          {
+            "id": "de-espectro-autista-natea-em-belem-maraba-capanema-lago-de-tucurui-santo",
+            "titulo": "de Espectro Autista (NATEA) em Belém, Marabá, Capanema, Lago de Tucuruí, Santo",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "de Espectro Autista (NATEA) em Belém, Marabá, Capanema, Lago de Tucuruí, Santo\nAntônio do Tauá e Santarém.\n• Implantação de 6 Policlínicas Estaduais, nos municípios de Belém, Bragança, Capanema,\nMarabá, Santarém e Tucuruí.\n• Implantação de 30 agências transfusionais ampliando a cobertura da hemorrede nas\nregiões do Pará.\n• Inauguração do maior Centro Público de Radioterapia da região Norte, ampliando a\ncapacidade de diagnóstico e tratamento do câncer no Pará.\n• Implantação de Unidades de Hemodiálise, em Bragança, Breves, Capanema, Castanhal,\nMarabá, Belém, Ourilândia do Norte e Tailândia.\n• Ampliação de 75% do valor mensal do Repasse Financeiro da Atenção Primária aos\nmunicípios.\n\nCOMO VAMOS AVANÇAR\n• Construir o Hospital Estadual dos Olhos.\n• Construir 2 novos Hospitais da Mulher.\n• Construir o Hospital Regional do Nordeste do Pará, em Capitão-Poço.\n• Construir o Hospital Regional de Parauapebas, na região Carajás.\n• Construir o Hospital Regional do Baixo Tocantins, em Igarapé-Miri.\n• Concluir o Hospital do Leste, em Paragominas, na região do Rio Capim.\n• Reformar 20 Hospitais e Unidades de Saúde Municipais, nas regiões do estado.\n• Construir Unidades de Pronto Atendimento pelo Pará em parceria com o Ministério da\nSaúde e Prefeituras.\n• Construir um novo Hospital do Câncer Infantil.\n• Construir o Hospital do Coração.\n• Implantar o Programa Saúde Digital, com marcação de consulta e exames online,\nrealização de consultas por videochamada e expansão da telessaúde e telemedicina com\noferta de especialidades como: cardiologia, endocrinologia, neurologia, pneumologia,\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n11"
+          },
+          {
+            "id": "psiquiatria-e-reumatologia-e-marcacao-de-consulta-e-exame-na-palma-da-ma",
+            "titulo": "psiquiatria e reumatologia e Marcação de consulta e exame na palma da mão.",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "psiquiatria e reumatologia e Marcação de consulta e exame na palma da mão.\n• Realizar mutirões cirúrgicos permanentes em todas as regiões de integração.\n• Implantar Centros de Acolhimento a Dependentes Químicos.\n• Apoiar a implantação do primeiro Hospital Inteligente com medicina de alta precisão e\nuso de inteligência artiﬁcial.\n• Entregar o Hospital Materno Infantil de Breves, no Marajó.\n• Entregar o Hospital Materno Infantil de Altamira, na região do Xingu.\n• Entregar o Novo Hospital Regional de Tucuruí.\n• Ampliar os Hospitais Regional de Altamira, Breves, Santarém, Marabá e Redenção.\n• Requaliﬁcar o Hospital Regional de Conceição do Araguaia, na região do Araguaia.\n• Ampliar a rede de hemodiálise em Paragominas, Santarém, Abaetetuba, Redenção,\nBreves, Tucuruí, Altamira, Parauapebas.\n• Ampliar a rede de diagnóstico e tratamento oncológico no interior do Estado, em\nCastanhal, Marabá, Tucuruí, Santarém e Belém.\n• Ampliar o número de leitos de UTI em Breves, Santarém, Tucuruí, Parauapebas, Conceição\ndo Araguaia e Paragominas.\n• Concluir e implantar Policlínicas no Xingu, Marajó e Tapajós (Altamira, Breves e Itaituba).\n• Construir Núcleos de Atendimento ao Transtorno do Espectro Autista (NATEA) em Breves,\nAltamira e Itaituba.\n• Ampliar os serviços de cirurgias cardiovasculares.\n• Priorizar os investimentos em Média e Alta complexidade no interior do Estado.\n• Combater a mortalidade materno e infantil\n• Expandir a rede de saúde mental.\n• Implementar o Prontuário Digital Integrado, visando o compartilhamento de histórico\nclínico.\n• Ampliar os serviços de apoio diagnóstico.\n• Incentivar a criação de sala de estabilização nos municípios de pequeno porte, em todas\nas regiões de integração.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n12"
+          },
+          {
+            "id": "expandir-a-oferta-no-tratamento-do-transtorno-do-espectro-autista-e-neur",
+            "titulo": "• Expandir a oferta no tratamento do Transtorno do Espectro Autista e neurodivergentes",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "• Expandir a oferta no tratamento do Transtorno do Espectro Autista e neurodivergentes\nnas Usinas da Paz.\n• Implantar ações voltadas para o Autista adulto, estimulando a autonomia e independência.\n• Expandir os serviços de Hemoterapia nos municípios do Pará.\n• Implantação do Hemonúcleo em Paragominas e Canaã dos Carajás.\n• Ampliar as ações de saúde ribeirinha, quilombola, indígena, bucal e do homem.\n• Articular junto aos municípios a ampliação de Centros Especializados em Reabilitação e\nOﬁcinas Ortopédicas para as pessoas com deﬁciência.\n• Ampliar a oferta de serviços de transplantes.\n• Fortalecer a Atenção Básica integrada à Média e Alta Complexidade.\n• Fortalecer a Regionalização da saúde.\n• Valorizar os proﬁssionais da área da saúde.\n• Formar, treinar e capacitar as equipes proﬁssionais para melhorar o acolhimento da\npopulação.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n13"
+          },
+          {
+            "id": "a-seguranca-publica-continuara-sendo-uma-das-principais-prioridades-do-n",
+            "titulo": "A segurança pública continuará sendo uma das principais prioridades do nosso governo.",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "A segurança pública continuará sendo uma das principais prioridades do nosso governo.\nGarantir o direito de ir e vir, proteger vidas e promover a paz social são condições\nessenciais para o desenvolvimento do Pará e para a qualidade de vida da população.\nNosso compromisso é consolidar uma política de segurança cada vez mais moderna,\nintegrada e eﬁciente, fortalecendo a presença do Estado em todas as regiões e ampliando\na proteção das famílias paraenses.\nNos últimos anos, o Pará alcançou resultados históricos na redução da criminalidade\npor meio de investimentos em inteligência, tecnologia, valorização dos proﬁssionais e\nfortalecimento das forças de segurança. O desaﬁo agora é avançar ainda mais, ampliando\na capacidade de prevenção e enfrentamento ao crime organizado, aos crimes patrimoniais,\naos crimes cibernéticos e à violência em todas as suas formas.\nA proteção das mulheres permanecerá como prioridade permanente da política estadual\nde segurança pública. Vamos fortalecer a rede de prevenção e enfrentamento à violência\ncontra a mulher, ampliando o acesso aos serviços especializados, à tecnologia de proteção,\nao acolhimento humanizado e às ações integradas entre segurança pública, justiça e\nassistência social. Nosso compromisso é garantir que nenhuma mulher esteja sozinha\nquando precisar do Estado e que todo agressor seja responsabilizado com o rigor da lei.\nTambém seguiremos investindo na valorização dos proﬁssionais de segurança, na\nmodernização da infraestrutura, no uso da inteligência policial e na ampliação da presença\ndas forças de segurança no campo, nos rios e nas cidades, garantindo uma atuação cada\nvez mais eﬁciente, preventiva e próxima da população.\nConstruir um Pará mais seguro é proteger vidas, fortalecer a conﬁança da população nas\ninstituições e garantir que cada família possa viver com tranquilidade. Esse continuará\nsendo o compromisso permanente do nosso governo.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n14"
+          },
+          {
+            "id": "principais-realizacoes-2",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Redução de mais de 72% das ocorrências dos crimes de roubo em geral.\n• Redução de mais de 56% nas Taxas de Crimes Violentos Letais Intencionais (CVLI).\n• Conquista do 1º lugar nacional em qualidade das informações sobre criminalidade.\n• Reconhecimento do Pará como o 4º estado brasileiro que mais reduziu os índices de\ncriminalidade em 2025.\n• Ampliação de 103% nos investimentos em segurança pública.\n• Implantação de mais de 1.000 câmeras de videomonitoramento e 100 Totens de\nsegurança.\n• Aquisição de mais de 1.150 novas viaturas.\n• Implantação de 14 Centro Integrado de Comando e Controle (CICC), em todas as regiões.\n• Construção e reconstrução de mais de 190 batalhões e delegacias.\n• Criação das Bases Integradas Fluviais nas regiões do Baixo Amazonas, Marajó e Baixo\nTocantins.\n• Apreensão de mais de 67 toneladas de drogas e entorpecentes.\n• Incorporação de mais de 14 mil novos agentes de segurança pública.\n• Criação do SOS Mulher, ferramenta tecnológica que permite o acionamento\nemergencial das forças de segurança, inclusive sem a necessidade de a vítima falar, com\ncompartilhamento de localização em tempo real.\n• Iniciativa e sanção da Lei Estadual nº 11.521/2026, que determina o ressarcimento, pelo\nagressor, dos custos da Tornozeleira Eletrônica no cumprimento das medidas protetivas.\n• Criação do Programa Pró-Mulher Pará, com mais de 18 mil atendimentos em 25 municípios,\nsomente em 2025, as ações do programa contribuíram para 5.684 prisões.\n• Aquisição de 39 Viaturas Rosas e 2 Lanchas Rosas, primeiras embarcações do país\ndestinadas exclusivamente ao atendimento feminino em diferentes regiões.\n• Realização de mais de 2 mil capacitações dentro do programa Pró-Mulher Pará.\n• Implantação do aplicativo SOS Maria da Penha e a criação do sistema Alerta Pará Mulher\npara monitoramento e proteção das mulheres acompanhadas por programa de proteção.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n15"
+          },
+          {
+            "id": "realizacao-da-operacao-escudo-feminino-em-todos-os-144-municipios-com-ma",
+            "titulo": "• Realização da Operação Escudo Feminino em todos os 144 municípios com mais de 5 mil",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "• Realização da Operação Escudo Feminino em todos os 144 municípios com mais de 5 mil\nmulheres atendidas e 104 prisões.\n• Realização do Programa Ação para Meninas e Mulheres do Marajó, desenvolvido em\nparceria com o Tribunal de Justiça do Pará e o Conselho Nacional de Justiça.\n• Criação de Batalhões Rurais nas regiões de Carajás, Guamá e Xingu.\n• Criação de Delegacias Especializadas de Repressão a Crimes Rurais, Roubos e Furtos de\nGado (DELEAGRO), nas regiões Araguaia e Marajó.\n• Realização de ações de combate aos crimes ambientais, mineração ilegal, desmatament\no e ocupações irregulares em áreas protegidas, em cooperação com órgãos federais.\n• Capacitação de mais de 100 mil pessoas pelo Programa Educacional de Resistência às\nDrogas e à Violência (PROERD), ampliando as ações de prevenção às drogas e à violência\ne fortalecendo a proteção de crianças e adolescentes em todo o Pará.\n\nCOMO VAMOS AVANÇAR\n• Expandir totens e câmeras de videomonitoramento com reconhecimento facial, placa de\nveículos e interligar com os bancos de dados de criminosos e de pessoas desaparecidas.\n• Ampliar o uso de drones táticos com inteligência artiﬁcial de alta tecnologia para fortalecer\no policiamento ostensivo e apoiar operações em todo o Estado.\n• Fortalecer o SOS Mulher, ferramenta tecnológica que permite o acionamento\nemergencial das forças de segurança, inclusive sem a necessidade de a vítima falar, com\ncompartilhamento de localização em tempo real.\n• Intensiﬁcar a Operação Escudo Feminino em todos os 144 municípios.\n• Implantar o Espaço Acolher nas Usinas da Paz, oferecendo atendimento reservado e\nsigiloso, orientação e encaminhamento à rede de proteção para mulheres e meninas em\nsituação de violência.\n• Implantar Totens de Segurança voltados às mulheres vítimas de violência nas Usinas da\nPaz.\n• Expandir as quantidades de Delegacias Especializadas de Atendimento à Mulher (DEAM),\ncom funcionamento 24 horas nas regiões de integração.\n• Promover a capacitação contínua do efetivo de segurança pública para o acolhimento\nhumanizado de mulheres vítimas de violência.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n16"
+          },
+          {
+            "id": "realizar-concurso-publico-para-area-da-seguranca-publica",
+            "titulo": "• Realizar concurso público para área da Segurança Pública.",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "• Realizar concurso público para área da Segurança Pública.\n• Entregar o Hospital da Polícia Militar, em Belém.\n• Construir Creche para atender os ﬁlhos dos policiais militares.\n• Implantar o programa de proteção ao policial.\n• Ampliar o Programa “Alerta Celular” permitindo o bloqueio, rastreamento e recuperação\nde aparelhos furtados ou roubados.\n• Fortalecer a segurança no campo, ampliando a atuação dos Batalhões Rurais e das\nDelegacias Especializadas de Repressão a Crimes Rurais, Roubos e Furtos de Gado DELEAGRO.\n• Fortalecer o combate ao crime organizado no Pará, com integração entre as forças de\nsegurança, uso de inteligência avançada e ﬁnanceira, e monitoramento ampliado em todo\no estado.\n• Expandir as Superintendências Integradas da Polícia Civil, nas principais regiões de\nintegração.\n• Fortalecer e ampliar as operações fluviais e expandir as Bases Integradas Fluviais.\n• Criar uma central única 24h, unindo tecnologia e integração entre a Polícia Civil, Militar,\nJustiça e apoio psicológico, para atendimento de mulheres vítimas de violência.\n• Ampliar e modernizar os canais protegidos de denúncias, garantindo atendimento\nsigiloso.\n• Garantir o cumprimento de medidas protetivas com o uso de tecnologia de monitoramento\ndas vítimas e também dos agressores.\n• Modernizar o Sistema Estadual de Planejamento Operacional Integrado.\n• Ampliar o combate aos crimes cibernéticos, fortalecendo as delegacias especializadas,\na inteligência cibernética e a investigação digital.\n• Ampliar a atuação integrada nas regiões de fronteira, divisas estaduais e corredores\nlogísticos.\n• Fortalecer o Sistema Prisional, ampliando a modernização da segurança e controle\noperacional do sistema penitenciário.\n• Fortalecer as políticas de ressocialização através de programas e projetos\nproﬁssionalizantes voltados à população carcerária, com destaque para o cooperativismo\ne empreendedorismo feminino.\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n17"
+          },
+          {
+            "id": "apoiar-e-ampliar-as-acoes-do-programa-educacional-de-resistencia-as-drog",
+            "titulo": "• Apoiar e ampliar as ações do Programa Educacional de Resistência às Drogas e à",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "• Apoiar e ampliar as ações do Programa Educacional de Resistência às Drogas e à\nViolência (PROERD) nas escolas, fortalecendo a parceria entre poder público, Polícia Militar,\ncomunidade escolar e famílias na promoção da cultura de paz, da cidadania e da proteção\nde crianças e adolescentes.\n• Modernizar o combate a incêndios.\n• Valorizar os proﬁssionais da área de segurança.\n• Formar, treinar e capacitar os agentes de segurança para melhorar o atendimento à\npopulação.\n• Promover a capacitação contínua do efetivo para o enfrentamento de desastres climáticos\nna Amazônia e ampliação de vistorias técnicas preventivas.\n• Fortalecer os serviços de atendimento biopsicossocial na segurança pública.\n• Fortalecer a Política Estadual de Trânsito, ampliando e modernizando a gestão através da\ntransformação digital e inteligência artiﬁcial.\n• Fortalecer o programa CNH Pai D’Égua.\n• Fortalecer o combate ao feminicídio, aos crimes de gênero, de racismo, de LGBTfobia e\ndemais crimes além das intolerâncias estruturais.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n18"
+          },
+          {
+            "id": "a-educacao-sera-uma-das-grandes-prioridades-do-nosso-governo-e-um-dos-pr",
+            "titulo": "A educação será uma das grandes prioridades do nosso governo e um dos principais",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "A educação será uma das grandes prioridades do nosso governo e um dos principais\ncaminhos para reduzir desigualdades, ampliar oportunidades e transformar o futuro do\nPará. Nosso compromisso é garantir uma educação pública de qualidade, inclusiva e\ninovadora, que acompanhe o estudante desde a primeira infância, assegure aprendizagem\ne permanência na escola e prepare crianças e jovens para construir seus projetos de vida\ne aproveitar as oportunidades de um mundo em transformação.\nNos últimos anos, o Pará deu um salto importante na educação. Avançamos nos\nindicadores de aprendizagem, ampliamos a educação em tempo integral, modernizamos\nescolas, expandimos creches, fortalecemos a educação proﬁssional e levamos tecnologia,\nconectividade, robótica e inovação para dentro da rede pública. Agora, nosso desaﬁo é\navançar ainda mais na qualidade do ensino e fazer com que essas oportunidades alcancem\nestudantes de todas as regiões do estado.\nVamos fortalecer a educação desde os primeiros anos de vida, ampliando as creches e\nas políticas voltadas à primeira infância. Na educação básica, seguiremos investindo na\nalfabetização na idade certa, na recomposição da aprendizagem, na educação em tempo\nintegral, no ensino bilíngue, na inclusão e na valorização dos proﬁssionais da educação,\ngarantindo escolas cada vez mais estruturadas, acolhedoras e preparadas para ensinar.\nQueremos também uma escola conectada com o presente e preparada para o futuro.\nVamos ampliar o ensino de robótica, programação e inteligência artiﬁcial, incorporar a\neducação ﬁnanceira e fortalecer a formação técnica e proﬁssional. A aproximação entre\nescola, ensino superior e mundo do trabalho permitirá criar trajetórias de formação\nalinhadas às vocações econômicas de cada região e às novas oportunidades de emprego\ne renda.\nA educação superior também terá papel estratégico nesse processo. Vamos fortalecer\nsua interiorização, ampliar a formação tecnológica e aproximar universidades, educação\nproﬁssional e desenvolvimento regional, levando novas oportunidades de formação para\nos jovens sem que precisem deixar suas regiões para construir o próprio futuro.\nInvestir em educação é investir no maior patrimônio do Pará: as pessoas. Nosso\ncompromisso é construir uma educação que acolha desde a primeira infância, garanta\naprendizagem, reconheça e valorize seus proﬁssionais, abra caminhos para o trabalho e\nprepare uma nova geração de paraenses para transformar o futuro do nosso estado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n19"
+          },
+          {
+            "id": "principais-realizacoes-3",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• O Pará foi o estado que mais avançou na avaliação do IDEB do Ensino Médio, desde 2017,\nsendo o líder da região norte.\n• Melhor desempenho da Região Norte na redação do ENEM em 2024.\n• Expansão do Programa Alfabetiza Pará.\n• Expansão do Programa Qualiﬁca Reforço.\n• Construção, reconstrução e/ou ampliação de 186 escolas em todas as regiões.\n• Criação do Programa Creches por Todo o Pará, com 36 creches entregues e mais de 7\nmil famílias beneﬁciadas.\n• Educação em tempo integral em mais de 199 escolas.\n• Modernização tecnológica de mais de 1.175 escolas estaduais e municipais.\n• Implantação do Programa Conecta Pará, expandindo a conectividade nas escolas com\nnotebooks, televisores e equipamentos tecnológicos\n• Criação de 33 Centros de Inovação e Sustentabilidade da Educação Básica (CISEBs),\npromovendo robótica, inteligência artiﬁcial, cultura maker e iniciação cientíﬁca, em 19\nmunicípios.\n• Expansão do curso preparatório ENEM Pará para as usinas da paz, SECTET e polos\nuniversitários e Implantação do ENEM Pará Digital.\n• Criação do Programa Bora Estudar, com mais de 21 mil alunos contemplados.\n• Instituição da Política de Educação Escolar Indígena do Pará (Lei Estadual nº 11.455/2026).\n• Implantação da disciplina obrigatória de Educação Ambiental em toda a rede estadual.\n• Implantação do Programa Escola que transforma, com boniﬁcação por metas do IDEB.\n• Implantação da primeira Escola Estadual de Ensino Integral Bilíngue.\n• Ampliação e modernização da Rede Estadual de Educação Proﬁssional e Tecnológica.\n• Expansão da educação proﬁssional técnica, integrada ao Ensino Médio e à Educação de\nJovens e Adultos, em parceria com a SEDUC.\n• Criação e fortalecimento de programas como CapacitaCOP30, Capacita COP30 –\nMulheres Mil, Capacita Pará e o PRONATEC, ampliando a qualiﬁcação de jovens, adultos e\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n20"
+          },
+          {
+            "id": "mulheres-para-o-mercado-de-trabalho",
+            "titulo": "mulheres para o mercado de trabalho.",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "mulheres para o mercado de trabalho.\n• Consolidação do Programa Forma Pará como política de interiorização da educação\nsuperior, ampliando o acesso à graduação nos 144 municípios do Estado.\n• Implantação dos Campi da Uepa em Bragança, Ananindeua e Parauapebas.\n• Implantação das cotas étnico-raciais e fortalecimento das ações aﬁrmativas para negros,\nindígenas, quilombolas, pessoas com deﬁciência e estudantes em vulnerabilidade social.\n• Modernização de Campi da UEPA em Altamira, Castanhal, Tucuruí e Belém.\n• Expansão do Programa UEPA nas Comunidades e dos projetos destinados às populações\nindígenas, quilombolas, ribeirinhas e tradicionais.\n• Implantação do Núcleo de Apoio a Imigrantes e Refugiados.\n• Realização da Caravana da Educação em 69 municípios, com mais de 10 mil atendimentos\nrealizados.\n• Implantação do Programa Escola Segura, levando policiamento e ações de prevenção e\ncultura de paz a aproximadamente 600 escolas, com mais de 2,4 mil ações realizadas e\n263 mil estudantes atendidos em todo o Pará.\n• Implantação do Programa Dinheiro na Escola Paraense (PRODEP), com mais de R$329\nmilhões repassados para manutenção, climatização, mobiliário, equipamentos tecnológicos,\nmateriais, alimentação e projetos pedagógicos.\n\nCOMO VAMOS AVANÇAR\n• Implantar 200 Escolas Cívico-militar.\n• Implantar programa de estágio remunerado, com concessão de bolsa e qualiﬁcação\nproﬁssional de estudantes do ensino médio e Educação de Jovem e Adulto (EJA),\npromovendo a permanência escolar e a preparação para o mundo do trabalho.\n• Criar o Programa Bora Estudar pelo Mundo, oferecendo intercâmbio internacional para\nestudantes do Ensino Médio da rede estadual.\n• Entregar tablets para estudantes do ensino médio.\n• Implantar o Ensino Superior Tecnológico, com formação iniciada no Ensino Médio ou\npor ingresso direto na graduação, possibilitando a conclusão do curso superior em menor\ntempo e priorizando formações alinhadas às vocações econômicas de cada região.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n21"
+          },
+          {
+            "id": "implantar-mais-50-centros-de-robotica-da-educacao-basica-do-para",
+            "titulo": "• Implantar mais 50 Centros de Robótica da Educação Básica do Pará.",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "• Implantar mais 50 Centros de Robótica da Educação Básica do Pará.\n• Ampliar o número de acompanhante especializado para estudantes com autismo e\noutras neurodivergências.\n• Expandir o Programa Forma Pará, ampliando vagas, cursos e parcerias para fortalecer a\ninteriorização do ensino superior.\n• Criar a Universidade Estadual do Sul e Sudeste do Pará.\n• Criar a Universidade Estadual do Oeste do Pará.\n• Incluir na grade curricular do ensino médio a disciplina de educação em inteligência\nartiﬁcial e educação ﬁnanceira.\n• Fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e\nprotagonismo juvenil.\n• Expandir a Rede Estadual de Educação Proﬁssional e Tecnológica, com novas escolas,\npolos, laboratórios e infraestrutura respeitando a vocação regional.\n• Ampliar a formação continuada e as trilhas em tecnologia, educação digital, inteligência\nartiﬁcial, robótica, programação e metodologias ativas, preparando os jovens para os\nempregos do futuro.\n• Construir Creche para atender os ﬁlhos dos policiais militares.\n• Universalizar as creches do Programa Creches Por Todo o Pará.\n• Ampliar o Programa Dinheiro na Escola Paraense (PRODEP), onde a comunidade escolar\né que decide de forma conjunta a aplicação do recurso.\n• Fortalecer o Programa Escola Segura.\n• Construir, reconstruir e ampliar escolas em todas as regiões.\n• Construir escolas indígenas e quilombolas.\n• Concluir o novo Centro de Saúde Escola do Marco da Uepa.\n• Construir a terceira etapa do Campus Uepa de Ananindeua\n• Expandir as escolas bilíngues.\n• Ampliar o Bora Estudar como incentivo à permanência.\n• Ampliar a alfabetização na idade certa (Alfabetiza Pará).\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n22"
+          },
+          {
+            "id": "reduzir-a-distorcao-idade-serie-no-ensino-medio",
+            "titulo": "• Reduzir a distorção idade-série no Ensino Médio.",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "• Reduzir a distorção idade-série no Ensino Médio.\n• Fortalecer o Programa Qualiﬁca Reforço Escolar.\n• Fortalecer o Sistema Paraense de Avaliação Educacional.\n• Aprimorar o transporte escolar, ampliando o acesso e garantindo mais segurança e\nregularidade no deslocamento dos estudantes da rede pública.\n• Fortalecer a alimentação escolar, assegurando refeições adequadas, nutritivas e de\nqualidade aos estudantes.\n• Ampliar as ações voltadas à saúde mental e o apoio socioemocional nas escolas.\n• Aumentar a oferta de cursos técnicos, alinhada às matrizes produtivas e à bioeconomia.\n• Fortalecer e expandir o conhecimento em empreendedorismo e educação ﬁnanceira.\n• Usar inteligência artiﬁcial para combater a evasão, apoiar a gestão e personalizar a\naprendizagem.\n• Fortalecer a educação inclusiva e especial.\n• Fortalecer a educação do campo, ribeirinha, indígena e quilombola, garantindo melhores\ncondições de acesso e ensino.\n• Fortalecer a capacitação continuada e a valorização de todos os proﬁssionais da\neducação, promovendo qualiﬁcação, desenvolvimento proﬁssional, reconhecimento e\nmelhores condições de trabalho.\n• Ampliar a valorização dos professores, fortalecendo a carreira docente, a formação\ncontinuada, o reconhecimento proﬁssional e as condições para o exercício do magistério.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n23"
+          },
+          {
+            "id": "as-mulheres-estarao-no-centro-das-prioridades-do-nosso-governo-cuidar-da",
+            "titulo": "As mulheres estarão no centro das prioridades do nosso governo. Cuidar das mulheres é",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "As mulheres estarão no centro das prioridades do nosso governo. Cuidar das mulheres é\ncuidar das famílias, fortalecer as comunidades e promover um desenvolvimento mais justo\npara toda a sociedade. Nosso compromisso é ampliar as oportunidades, garantir direitos\ne construir um Pará onde todas as mulheres possam viver com liberdade, segurança,\nautonomia e dignidade.\nO Pará tornou-se referência nacional na implantação de políticas públicas voltadas às\nmulheres, ampliando a rede de proteção, fortalecendo o atendimento especializado e\ninvestindo em ações integradas de prevenção e enfrentamento à violência. Agora, vamos\nconsolidar esses avanços, ampliando a presença do Estado em todas as regiões e\nfortalecendo uma política permanente de proteção, acolhimento e promoção da autonomia\nfeminina.\nO combate à violência contra a mulher continuará sendo uma prioridade absoluta\nda nossa gestão. Vamos fortalecer a rede de proteção, ampliar o acesso aos serviços\nespecializados, integrar as políticas de segurança, saúde, assistência social e justiça e\ninvestir em tecnologia, prevenção e atendimento humanizado, garantindo respostas\nrápidas, acolhimento qualiﬁcado e proteção para mulheres em situação de violência. Nosso\ncompromisso é que nenhuma mulher paraense esteja sozinha quando precisar do Estado.\nTambém ampliaremos as políticas voltadas à autonomia econômica, à qualiﬁcação\nproﬁssional, ao empreendedorismo feminino, à inclusão produtiva e à ampliação da\nparticipação das mulheres nos espaços de decisão. Vamos promover ações que fortaleçam\na igualdade de oportunidades, assegurem direitos e contribuam para que mais mulheres\nconquistem independência ﬁnanceira e protagonismo em suas comunidades.\nPromover políticas para as mulheres é construir um estado mais seguro, mais justo e\nmais igualitário. Esse continuará sendo um compromisso permanente do nosso governo:\nproteger, acolher, respeitar e criar oportunidades para que todas as mulheres paraenses\npossam viver com dignidade, autonomia e sem violência.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n24"
+          },
+          {
+            "id": "principais-realizacoes-4",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Criação da Secretaria de Estado das Mulheres.\n• Instalação de espaços para o Conselho Estadual dos Direitos das Mulheres, a Ouvidoria\nda Mulher, atendimento psicossocial, capacitação e atendimento humanizado.\n\n• Criação da Câmara Técnica Interinstitucional de Gestão das Políticas Públicas para as\nMulheres.\n\n• Criação do Programa Pará Mulheres 360º, reunindo ações de proteção, saúde, autonomia\neconômica, empreendedorismo, formação sociopolítica e inclusão digital.\n\n• Apoio ao funcionamento da Casa da Mulher Brasileira de Ananindeua com mais de 46\nmil atendimentos.\n\n• Criação do Centro Especializado de Atendimento a Meninas e Mulheres Marajoaras\n(CEAME), em Breves.\n\n• Ampliação das Salas Lilás em diferentes regiões do Estado (espaço reservado para\nacolhimento de mulheres e meninas em situação de violência de gênero).\n\n• Utilização do Ônibus Lilás para levar orientação, atendimento e encaminhamento a\nmunicípios e comunidades com menor acesso aos serviços.\n\n• Realização de mais de 15 mil atendimentos itinerantes, campanhas educativas, oﬁcinas,\nformações e mobilizações comunitárias com oferta de serviços de documentação, saúde,\norientação jurídica, atendimento psicossocial, autocuidado e qualiﬁcação.\n\n• Criação do Pacto Estadual de Prevenção e Enfrentamento à Violência contra Meninas e\nMulheres no Estado do Pará.\n\n• Formação e qualiﬁcação proﬁssional, com apoio à inclusão produtiva e ao\nempreendedorismo feminino.\n\n• Formação de homens pelo Programa Eles com Elas como agentes multiplicadores na\nprevenção à violência contra mulheres.\n\n• Ações com estudantes, professores e gestores das escolas e Usinas da Paz para prevenir\na violência contra meninas e mulheres no Programa Educação para a Proteção.\n\n• Criação da Expo Mulheres da Amazônia com a qualiﬁcação, comercialização, geração de\nrenda e fortalecimento dos negócios liderados por mulheres.\n\n• Criação do Observatório Mulheres da Amazônia.\n• Criação da Lei Estadual nº 10.261/2023, garantindo prioridade às mulheres vítimas de\nviolência doméstica em todos os programas sociais do Governo do Estado.\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n25"
+          },
+          {
+            "id": "prioridade-as-mulheres-vitimas-de-violencia-no-programa-sua-casa",
+            "titulo": "• Prioridade às mulheres vítimas de violência no Programa Sua Casa.",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "• Prioridade às mulheres vítimas de violência no Programa Sua Casa.\n• Criação do premiado Programa Por Todas Elas, com mais de 390 mil atendimentos,\nintegrando ações de proteção, prevenção à violência, autonomia econômica, qualiﬁcação\nproﬁssional e garantia de direitos.\n\n• Criação do SOS Mulher, ferramenta tecnológica que permite o acionamento\nemergencial das forças de segurança, inclusive sem a necessidade de a vítima falar, com\ncompartilhamento de localização em tempo real.\n\n• Iniciativa e sanção da Lei Estadual nº 11.521/2026, que determina o ressarcimento, pelo\nagressor, dos custos da Tornozeleira Eletrônica no cumprimento das medidas protetivas.\n\n• Regulamentação pelo Decreto nº 5.507/2026, do procedimento para que o agressor\nressarça ao SUS os custos do atendimento prestado às mulheres vítimas de violência\ndoméstica.\n\n• Fortalecimento do microcrédito para mulheres empreendedoras, beneﬁciando mais de\n17 mil mulheres por meio do CredCidadão Mulheres.\n\n• Ampliação do empreendedorismo feminino por meio de linhas de crédito orientadas,\nbeneﬁciando mais de 25 mil mulheres, por meio dos programas Empodera, Banpará\nComunidade e BanparáBio, promovendo geração de renda, autonomia econômica e\nfortalecimento dos pequenos negócios liderados por mulheres.\n\n• Criação do Programa Pró-Mulher Pará, com mais de 18 mil atendimentos em 25 municípios,\nsomente em 2025, as ações do programa contribuíram para 5.684 prisões.\n\n• Aquisição de 39 Viaturas Rosas e 2 Lanchas Rosas, primeiras embarcações do país\ndestinadas exclusivamente ao atendimento feminino em diferentes regiões.\n\n• Realização de mais de 2 mil capacitações dentro do programa Pró-Mulher Pará.\n• Implantação do aplicativo SOS Maria da Penha e a criação do sistema Alerta Pará Mulher\npara monitoramento e proteção das mulheres acompanhadas por programa de proteção.\n\n• Implantação de 7 totens de atendimento à mulher, com mais de 2 mil acessos, sendo\no primeiro instalado no Hospital da Mulher, em Belém, facilitando o acesso imediato aos\nserviços especializados.\n\n• Realização da Operação Escudo Feminino em todos os 144 municípios com mais de\n4.800 mulheres atendidas e 104 prisões.\n\n• Realização do Programa Ação para Meninas e Mulheres do Marajó, desenvolvido em\nparceria com o Tribunal de Justiça do Pará e o Conselho Nacional de Justiça.\n\n• Manutenção de abrigos estaduais 24 horas para mulheres e seus ﬁlhos em situação de\nviolência, em Belém, Santarém, Marabá e Altamira.\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n26"
+          },
+          {
+            "id": "como-vamos-avancar",
+            "titulo": "COMO VAMOS AVANÇAR",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "COMO VAMOS AVANÇAR\n• Criar benefícios sociais e ﬁnanceiros para mulheres social e economicamente vulneráveis\ne em situação de violência doméstica.\n\n• Fortalecer o SOS Mulher, ferramenta tecnológica que permite o acionamento\nemergencial das forças de segurança, inclusive sem a necessidade de a vítima falar, com\ncompartilhamento de localização em tempo real.\n\n• Intensiﬁcar a Operação Escudo Feminino em todos os 144 municípios.\n• Implantar o Espaço Acolher nas Usinas da Paz, oferecendo atendimento reservado e\nsigiloso, orientação e encaminhamento à rede de proteção para mulheres e meninas em\nsituação de violência.\n\n• Implantar Totens de Segurança voltados às mulheres vítimas de violência nas Usinas da\nPaz.\n\n• Expandir as quantidades de Delegacias Especializadas de Atendimento à Mulher (DEAM),\ncom funcionamento 24 horas nas regiões de integração.\n\n• Promover a capacitação contínua do efetivo de segurança pública para o acolhimento\nhumanizado de mulheres vítimas de violência.\n\n• Construir 2 novos Hospitais da Mulher.\n• Implantar novos abrigos para mulheres vítimas de violência doméstica.\n• Facilitar o acesso ao crédito, à assistência técnica e à comercialização.\n• Realizar curso de defesa pessoal e distribuir kit de segurança em todas as Regiões de\nIntegração.\n\n• Construir novas Casas da Mulher Paraense.\n• Criar programa de benefício ﬁscal para empresas que atingirem a equidade de gênero.\n• Fortalecer a autonomia econômica, a geração de renda e a inclusão produtiva em todas\nas regiões do Estado.\n\n• Ofertar formação proﬁssional e apoio ao empreendedorismo feminino.\n• Expandir o Por Todas Elas, ampliando os serviços, com presença em todas as regiões.\n• Transformar as Usinas da Paz em um espaço de fortalecimento sociopolítico da mulher\ne oferecer grupos terapêuticos para mulheres.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n27"
+          },
+          {
+            "id": "ampliar-os-programas-de-conscientizacao-educacao-e-responsabilizacao-dos",
+            "titulo": "• Ampliar os programas de conscientização, educação e responsabilização dos homens.",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "• Ampliar os programas de conscientização, educação e responsabilização dos homens.\n• Incentivar a criação de Organismos de Políticas para as Mulheres nos municípios.\n• Desenvolver ações educativas permanentes nas escolas, comunidades, empresas e\nmeios de comunicação para conscientização do combate à violência contra a mulher.\n\n• Implementar e acompanhar grupos reflexivos para homens autores de violência\ndoméstica.\n\n• Implementar espaço mulher nos hospitais regionais.\n• Fortalecer a ﬁscalização de medidas protetivas com o uso de tecnologia para garantir a\npunição dos agressores.\n\n• Criar uma central única 24h, unindo tecnologia e integração entre a Polícia Civil, Militar,\nJustiça e apoio psicológico, para atendimento de mulheres vítimas de violência.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n28"
+          },
+          {
+            "id": "o-desenvolvimento-social-e-o-caminho-para-reduzir-desigualdades-promover",
+            "titulo": "O desenvolvimento social é o caminho para reduzir desigualdades, promover cidadania e",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "O desenvolvimento social é o caminho para reduzir desigualdades, promover cidadania e\ngarantir que nenhuma pessoa ﬁque para trás. Nosso compromisso é fortalecer uma ampla\nrede de proteção social, assegurando direitos, ampliando oportunidades e promovendo\ninclusão para crianças, jovens, idosos, pessoas com deﬁciência, povos tradicionais e\nfamílias em situação de vulnerabilidade em todas as regiões do Pará.\nA primeira infância será uma prioridade estratégica da nossa gestão. Vamos fortalecer\npolíticas integradas voltadas ao desenvolvimento infantil, ampliando o acesso a serviços\nde qualidade, apoiando as famílias e garantindo que cada criança tenha as condições\nnecessárias para crescer com saúde, proteção, educação e oportunidades desde os\nprimeiros anos de vida.\nTambém acreditamos na força da juventude como protagonista da transformação do\nPará. Vamos ampliar as oportunidades de qualiﬁcação, inclusão produtiva, esporte, cultura,\ninovação e participação cidadã, criando caminhos para que nossos jovens desenvolvam\nseus talentos, ingressem no mercado de trabalho e construam seus projetos de vida com\nautonomia e esperança.\nAs Usinas da Paz continuarão sendo uma das principais marcas da política de\ndesenvolvimento social do nosso governo. Vamos ampliar e fortalecer esse modelo\nintegrado de cidadania, levando serviços públicos, qualiﬁcação proﬁssional, esporte,\ncultura, tecnologia e inclusão social para as comunidades, promovendo a prevenção\nda violência, a geração de oportunidades e o fortalecimento dos vínculos familiares e\ncomunitários.\nPromover o desenvolvimento social é garantir direitos, ampliar oportunidades e fortalecer\na cidadania. Esse continuará sendo o compromisso permanente do nosso governo:\nconstruir um Pará mais justo, inclusivo e solidário, onde cada pessoa tenha a oportunidade\nde desenvolver seu potencial e construir um futuro melhor.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n29"
+          },
+          {
+            "id": "principais-realizacoes-5",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Implantação do Programa Territórios Pela Paz voltado para inclusão, assistência à\npopulação vulnerável.\n\n• Construção de 33 Usinas da Paz com a oferta de mais de 70 serviços gratuitos à\npopulação.\n\n• Requaliﬁcação do Novo Mangueirão.\n• Implantação das Carretas da Paz com o objetivo de levar assistências aos territórios que\nnão possuem Usina da Paz.\n\n• Implantação do premiado Programa Por Todas Elas, com mais de 390 mil atendimentos.\n• Criação da Secretaria Estadual dos Povos Indígenas.\n• Realização da Semana dos Povos Indígenas, Seminário Estadual de Políticas Públicas\npara os Povos Indígenas e Caravana dos Povos Indígenas rumo à COP.\n\n• Regularização dos repasses aos municípios para proteção social básica e especial.\n• Manutenção dos abrigos para idosos e mulheres e ﬁlhos em risco, no Guajará, Carajás,\nBaixo Amazonas e Xingu.\n\nCOMO VAMOS AVANÇAR\n• Duplicar o número de Usinas da Paz no Estado do Pará.\n• Implantar o Programa Banheiro em Casa, para construção de banheiros decentes de uso\nexclusivo nas moradias de famílias vulneráveis do Pará.\n\n• Criar benefícios sociais e ﬁnanceiros para mulheres social e economicamente vulneráveis\ne em situação de violência doméstica.\n\n• Construir moradia digna para idoso.\n• Implantar o programa de reforma de moradia.\n• Construir Praças da Inclusão pelo interior do Estado.\n• Implantar Centros de Acolhimento à dependentes químicos.\n• Incluir nas Usinas da Paz o atendimento à pessoa com autismo e programa de\nenvelhecimento saudável.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n30"
+          },
+          {
+            "id": "estimular-a-inclusao-digital-para-pessoas-com-de-ciencia-e-idosos",
+            "titulo": "• Estimular a inclusão digital para pessoas com deﬁciência e idosos.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "• Estimular a inclusão digital para pessoas com deﬁciência e idosos.\n• Concluir o Colosso do Tapajós, em Santarém.\n• Intensiﬁcar as ações de promoção do protagonismo juvenil.\n• Fortalecer o regime de colaboração entre Estado e municípios para apoiar a implementação\nde políticas de desenvolvimento infantil na primeira infância.\n\n• Ampliar o acesso ao registro civil de nascimento.\n• Priorizar famílias com crianças na primeira infância nos programas habitacionais.\n• Fortalecer o Sistema de Garantias de Direitos da Criança e do Adolescente.\n• Fortalecer projetos direcionados a adolescentes e jovens que cumprem medidas\nsocioeducativas, promovendo a ressocialização e inclusão social.\n\n• Combater a discriminação, intolerância e violência com as pessoas com deﬁciência,\nautistas, idosos, população LGBTQIA+, povos tradicionais, quilombolas e indígenas.\n\n• Construir espaços públicos para prática de esporte e lazer como quadras e academias\nao ar-livre.\n\n• Ampliar a concessão de Bolsa Atleta.\n• Promover a prática de esporte olímpico, paraolímpico e surdolímpico.\n• Ampliar a participação em eventos esportivos nacionais e internacionais.\n• Modernizar o Centro Integrado de Inclusão e Cidadania (CIIC).\n• Incentivar a política de segurança alimentar e nutricional.\n• Fortalecer o Programa de Proteção à Pessoa Ameaçada de Morte.\n• Expandir a atuação do Projeto ParáPet.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n31"
+          },
+          {
+            "id": "construir-cidades-mais-humanas-inclusivas-e-sustentaveis-e-essencial-par",
+            "titulo": "Construir cidades mais humanas, inclusivas e sustentáveis é essencial para melhorar a",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Construir cidades mais humanas, inclusivas e sustentáveis é essencial para melhorar a\nqualidade de vida da população. Nosso compromisso é promover um desenvolvimento\nurbano que coloque as pessoas no centro do planejamento, garantindo acesso à moradia\ndigna, ao saneamento básico, à mobilidade, à regularização fundiária e a espaços públicos\nmais seguros, acessíveis e bem cuidados.\nO Pará avançou nos últimos anos com importantes investimentos em urbanização,\nhabitação, pavimentação e infraestrutura urbana, transformando a realidade de milhares\nde famílias.\nAgora, o desaﬁo é consolidar esses avanços, ampliando o acesso aos serviços urbanos\ne promovendo cidades cada vez mais organizadas, resilientes e preparadas para o\ncrescimento sustentável.\nVamos fortalecer uma política integrada de desenvolvimento urbano, ampliando o acesso\nà habitação de interesse social, acelerando a regularização fundiária, expandindo a\ncobertura de saneamento básico e promovendo soluções de mobilidade que facilitem o\ndeslocamento da população. Também seguiremos investindo na qualiﬁcação de espaços\npúblicos, criando ambientes mais acolhedores, acessíveis e voltados à convivência, ao\nlazer, ao esporte e à cidadania.\nMelhorar a qualidade de vida é transformar os lugares onde as pessoas vivem. Esse\ncontinuará sendo o compromisso permanente do nosso governo: construir cidades mais\nplanejadas, inclusivas e sustentáveis, onde o desenvolvimento urbano seja sinônimo de\ndignidade, bem- estar e oportunidades para todos os paraenses.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n32"
+          },
+          {
+            "id": "principais-realizacoes-6",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Conclusão de 5 viadutos na Região Metropolitana de Belém: Viaduto na interseção da\nRod. BR-316 com a Avenida Independência, Viaduto na interseção da PA-483 (Alça Viária),\nViaduto da Avenida Independência com a Avenida Mário Covas (Ananindeua), Viaduto da\nAvenida Três Corações com a Avenida Mário Covas (Ananindeua) e Viaduto da Avenida\nAnanin (Ananindeua).\n\n• Conclusão do BRT Metropolitano, integrando o sistema de transporte público até\nCastanhal, com integração operacional e tarifária.\n\n• Aquisição de 265 novos ônibus para o BRT Metropolitano, incluindo 40 veículos 100%\nelétricos e 225 ônibus Euro 6 de baixa emissão de poluentes, modernizando a frota do\ntransporte público da Região Metropolitana de Belém.\n\n• Conclusão de importantes vias estruturantes, como a Avenida Liberdade e a Duplicação\nda Rua da Marinha, além da requaliﬁcação da Avenida Ananin e da Avenida Padre Bruno\nSechi.\n\n• Implantação e ampliação de ciclovias e ciclofaixas em obras estruturantes e na\nrequaliﬁcação de corredores urbanos.\n\n• Realização do Programa Asfalto por todo o Pará com pavimentação de 2.000 km,\nbeneﬁciando todas as regiões.\n\n• Implantação de Sistema de Inteligência Urbana, com soluções tecnológicas em nove\nimportantes corredores viários: Avenida Júlio César, Avenida Dr. Freitas, Avenida Pedro\nÁlvares Cabral, Rua Belém, Rua Municipalidade, Avenida Senador Lemos, Avenida Duque\nde Caxias, Avenida Visconde de Souza Franco e Avenida Almirante Tamandaré.\n\n• Implantação do Parque Linear da Tamandaré, revitalizando a orla histórica de Belém e\ncriando espaços de convivência, lazer, esporte e contemplação.\n\n• Requaliﬁcação da Nova Doca, transformando um dos principais cartões-postais da\ncapital em um moderno espaço público de convivência, lazer e mobilidade urbana;\n\n• Revitalização e urbanização de orlas, praças e áreas públicas em diversos municípios\nparaenses, entre eles Altamira, Bragança, Salinópolis (Orla do Maçarico), Santarém, Marabá\ne Breves.\n\n• Implantação de duas Praças da Inclusão, nos bairros Mundurucus e Caraparu, em Belém,\ncom equipamentos inclusivos e adaptados para crianças com TEA, acessibilidade universal\ne espaços de lazer e convivência.\n\n• Construção, reconstrução e modernização de 28 mercados, feiras e complexos\ncomerciais em diversas regiões do Estado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n33"
+          },
+          {
+            "id": "consolidacao-do-programa-sua-casa-bene-ciando-139-mil-familias-com-auxil",
+            "titulo": "• Consolidação do Programa Sua Casa, beneﬁciando 139 mil famílias com auxílio ﬁnanceiro",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "• Consolidação do Programa Sua Casa, beneﬁciando 139 mil famílias com auxílio ﬁnanceiro\ndestinado à construção, reforma, ampliação e melhoria de moradias.\n\n• Regularização Fundiária Urbana, com a entrega de mais de 5.900 títulos deﬁnitivos de\npropriedade.\n\n• Retomada do Programa Minha Casa, Minha Vida – Cidades, com a seleção de mais de\n8mil novas unidades habitacionais.\n\n• Concessão regionalizada dos serviços de abastecimento de água e esgotamento\nsanitário, em conformidade com o Novo Marco Legal do Saneamento, estabelecendo\nmetas de universalização, ampliação dos investimentos e melhoria da qualidade dos\nserviços prestados à população em áreas urbanas de 126 municípios paraenses;\n\n• Ampliação e modernização dos sistemas de abastecimento de água e esgotamento\nsanitário em diversos municípios, como Belém, Marabá, Santarém, Castanhal, Marituba,\nMoju, Faro, Viseu, Salinópolis, Ananindeua e Bragança;\n\n• Operação da Estação de Tratamento de Esgoto (ETE Una), em Belém, beneﬁciando cerca\nde 90 mil habitantes em 10 bairros.\n\n• Modernização da Estação de Tratamento de Água do Complexo Bolonha, na ampliação\ndos sistemas de abastecimento de água em Belém, Marituba, Castanhal, Moju, Santarém.\n\n• Implantação do Programa Caixa D’Água para Todos, beneﬁciando mais de 50 mil pessoas.\n• Conclusão da 4ª Etapa do Projeto de Macrodrenagem da Bacia do Tucunduba, com a\nreconstrução dos canais Mundurucus, Gentil Bittencourt, Cipriano Santos, Vileta, Timbó,\nUnião e Leal Martins.\n\nCOMO VAMOS AVANÇAR\n• Integrar os sistemas do BRT Metropolitano, BRT Belém e ônibus urbano, com tarifa\nuniﬁcada.\n\n• Universalizar o transporte coletivo urbano com ônibus climatizado para as maiores\ncidades.\n\n• Implantar novos viadutos em importantes entroncamentos rodoviários.\n• Construir moradia digna para idoso.\n• Implantar o programa de reforma de moradia.\n• Implantar o Programa Entrada Garantida Pará, ampliando a concessão de subsídios para\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n34"
+          },
+          {
+            "id": "viabilizar-empreendimentos-habitacionais",
+            "titulo": "viabilizar empreendimentos habitacionais.",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "viabilizar empreendimentos habitacionais.\n\n• Implantar o programa de apoio aos municípios para redução de alagamento.\n• Ampliar o Programa Asfalto por Todo o Pará com pavimentação asfáltica urbana.\n• Implantar novos projetos de recuperação e urbanização de canais.\n• Modernizar e ampliar os terminais rodoviários e hidroviários.\n• Estimular a utilização de meios de transporte sustentáveis, por meio da ampliação da\ninfraestrutura cicloviária e da integração com o transporte coletivo.\n\n• Fortalecer a integração entre os sistemas rodoviário e hidroviário, ampliando a\nconectividade entre municípios e regiões do Estado.\n\n• Expandir o modelo de Inteligência Urbana.\n• Incentivar os municípios a implantar iluminação pública em LED com sistemas inteligentes.\n•\n\nExpandir a infraestrutura verde, promovendo arborização urbana, recuperação de\náreas degradadas, criação de parques lineares, jardins públicos e soluções baseadas na\nnatureza para aumentar o conforto térmico, reduzir alagamentos e fortalecer a adaptação\ndas cidades às mudanças climáticas.\n\n• Apoiar os municípios na implantação e requaliﬁcação de espaços públicos, fortalecendo\na parceria entre Estado e prefeituras para criar cidades mais acolhedoras, sustentáveis e\ncom melhor qualidade de vida para a população.\n\n• Revitalizar e urbanizar orlas fluviais e marítimas.\n• Construir, reconstruir, ampliar e modernizar mercados municipais, feiras livres e centros\nde comercialização.\n\n• Ampliar a produção de habitações de interesse social, em parceria com o Governo\nFederal, os municípios e a iniciativa privada.\n\n• Fortalecer o Programa Minha Casa, Minha Vida – Rural, ampliando o acesso à moradia\ndigna para agricultores familiares, povos indígenas, quilombolas, ribeirinhos, extrativistas e\ndemais populações do campo e das águas.\n\n• Expandir a Regularização Fundiária Urbana, acelerando a entrega de títulos deﬁnitivos.\n• Consolidar a nova política estadual de saneamento, garantindo que a concessão dos\nserviços de abastecimento de água e esgotamento sanitário resulte em mais investimentos,\neﬁciência, qualidade e universalização do atendimento.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n35"
+          },
+          {
+            "id": "pagina-36",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nFortalecer a regulação e a ﬁscalização dos serviços de abastecimento de água e\nesgotamento sanitário, assegurando o cumprimento das metas contratuais de investimento,\nqualidade, eﬁciência, expansão da cobertura e universalização dos serviços.\n\n•\n\nApoiar os municípios na expansão do saneamento rural, implantando sistemas\nsustentáveis de abastecimento de água e esgotamento sanitário.\n\n• Concluir as obras estruturantes, incluindo a ampliação e modernização do Complexo\nBolonha, em Belém, além da ampliação dos sistemas de abastecimento de Ananindeua\n(Águas Lindas), Alenquer, Breves, Alter do Chão, Castanhal, Mosqueiro, Oriximiná e\ncomunidades da Região Metropolitana de Belém.\n\n• Expandir a coleta e o tratamento de esgoto, dando continuidade à ampliação da Estação\nde Tratamento de Esgoto (ETE Una) e implantando novos sistemas de esgotamento\nsanitário nos municípios prioritários.\n\n• Incentivar soluções sustentáveis e inovadoras para o saneamento.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n36"
+          },
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0-4",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n37"
+          },
+          {
+            "id": "pilar-2",
+            "titulo": "PILAR 2",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PILAR 2\n\nDESENVOLVER O PARÁ\nImpulsionar a economia,\ngerar oportunidades e integrar todas as regiões.\n\nDesenvolver o Pará é transformar as potencialidades do nosso estado em prosperidade para\na população. O crescimento econômico será o principal motor da geração de empregos,\nda ampliação da renda e da redução das desigualdades, fortalecendo a capacidade do\nPará de competir, inovar e aproveitar suas vocações para construir uma economia cada\nvez mais dinâmica, sustentável e integrada.\nEste pilar reúne as políticas voltadas ao fortalecimento da atividade econômica, à atração\nde investimentos, à ampliação da infraestrutura, à valorização das potencialidades regionais\ne à criação de um ambiente favorável para quem produz, empreende, trabalha e investe.\nO desenvolvimento precisa alcançar todas as regiões, impulsionando a economia dos\nmunicípios e criando oportunidades para que as pessoas prosperem sem precisar deixar\nsua terra.\nDesenvolver o Pará é gerar riqueza com responsabilidade, fortalecer as cadeias produtivas,\nampliar a competitividade do estado e garantir que o crescimento econômico se converta\nem mais emprego, renda e qualidade de vida para toda a população.\nÁREAS QUE COMPÕEM ESTE PILAR: Competitividade, Dinamismo Econômico, Emprego\ne Renda; Turismo. Infraestrutura e Logística; e, Cultura e Economia Criativa.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n38"
+          },
+          {
+            "id": "o-desenvolvimento-economico-e-o-caminho-para-gerar-oportunidades-criar-e",
+            "titulo": "O desenvolvimento econômico é o caminho para gerar oportunidades, criar empregos e",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "O desenvolvimento econômico é o caminho para gerar oportunidades, criar empregos e\nmelhorar a qualidade de vida da população. Nosso compromisso é consolidar um modelo\nde crescimento que combine competitividade, inovação, sustentabilidade e inclusão,\ntransformando as potencialidades do Pará em mais renda, prosperidade e desenvolvimento\npara todas as regiões do estado.\nO Pará reúne condições únicas para liderar um novo ciclo de desenvolvimento, impulsionado\npela força de seus recursos naturais, pela capacidade produtiva do seu povo, pela\nbioeconomia, pela industrialização sustentável e pelo protagonismo que exerce na agenda\nambiental mundial. O desaﬁo agora é agregar mais valor à nossa produção, fortalecer as\ncadeias produtivas, ampliar a competitividade e criar um ambiente cada vez mais favorável\npara quem produz, empreende e investe.\nVamos promover um desenvolvimento regional equilibrado, valorizando as vocações\neconômicas de cada território, atraindo investimentos, fortalecendo a economia dos\nmunicípios e ampliando as oportunidades de trabalho e geração de renda. A qualiﬁcação\nproﬁssional, o empreendedorismo, a inovação, a agricultura familiar, o cooperativismo e os\npequenos negócios serão instrumentos fundamentais para ampliar a inclusão produtiva e\ngarantir que o crescimento econômico beneﬁcie toda a população.\nGerar emprego e renda continuará sendo o principal compromisso da nossa política de\ndesenvolvimento econômico. Vamos preparar os paraenses para as oportunidades da\nnova economia, fortalecer a competitividade do estado e consolidar o Pará como uma\nreferência nacional em desenvolvimento sustentável, inovação e geração de oportunidades\npara o seu povo.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n39"
+          },
+          {
+            "id": "principais-realizacoes-7",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Terceira maior balança comercial do país, com superávit de US21,5 bilhões.\n• Maior PIB Industrial da região norte.\n• Quinto estado quemais exportouem 2025, com US 24,2 bilhões.\n• Consolidação como a 12ª maior economia do país.\n• Geração de 36 mil empregos formais em 2025.\n• Maior gerador de empregos formais da região norte.\n• Queda na Taxa de Desocupação, reflexo direto da ampliação da atividade produtiva.\n• Queda de 21% no desemprego no Pará, só em 2025.\n• Menor Taxa de Desemprego, desde 2012.\n• Abertura de 101 mil novas empresas.\n• 13º no Ranking Nacional de Empregabilidade consolidado por novos postos.\n• Segundo maior rebanho bovino do Brasil, com 26 milhões de cabeças\n• Conquista do status de Zona Livre de Febre Aftosa sem Vacinação junto à Organização\nMundial de Saúde Animal.\n• Implantação do Sistema de Rastreabilidade Bovídea Individual (SRBIPA), com identiﬁcação\neletrônica por RFID, e primeira exportação de carne rastreada à China.\n• Maior produtor nacional de cacau, açaí, abacaxi, mandioca e dendê.\n• Liderança nacional na cadeia produtiva de bubalinos.\n• Fortalecimento das agroindústrias, em especial ao Produtor Artesanal.\n• Execução do Plano Estadual de Qualiﬁcação Social e Proﬁssional.\n• Capacitação de mais de 40 mil pessoas no CapacitaCOP30.\n• Capacitação proﬁssional nas Usinas da Paz, em empreendedorismo, empregabilidade,\nﬁnanças, qualidade e sustentabilidade.\n\nCOMO VAMOS AVANÇAR\n• Incentivar a verticalização de produtos, expandindo e diversiﬁcando o ecossistema\nprodutivo do Pará, transformando sua produção em matéria-prima para cadeias inovadoras.\n• Ampliar a inserção do Pará no comércio exterior e fortalecer a verticalização mineral, a\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n40"
+          },
+          {
+            "id": "bioeconomia-e-a-industrializacao-sustentavel-do-estado",
+            "titulo": "bioeconomia e a industrialização sustentável do Estado.",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "bioeconomia e a industrialização sustentável do Estado.\n• Implantar o Programa de formalização do pequeno e médio minerador, com mais\nassistência técnica, facilitação de licenciamento, apoio a formalização, infraestrutura\ncompartilhada, acesso ferroviário e apoio à exportação.\n• Fortalecer o Agronegócio Paraense priorizando a infraestrutura de alta capacidade e a\nsegurança jurídica ambiental.\n• Fortalecer a agropecuária, o desenvolvimento rural e a produção sustentável.\n• Expandir o Cheque Pecuária, apoiando o pecuarista a recuperar pastagem degradada e\nproduzir mais na área já aberta.\n• Fortalecer a estratégia do combustível do futuro, estimulando a cadeia produtiva de\ndendê e da cana-de-açúcar.\n• Estimular as cadeias produtivas do algodão, milho, soja, dendê, açaí, cacau, mandioca,\nabacaxi, cana-de-açúcar, pimenta do reino, castanha do Pará, pescado, carne bovina e\nbubalina.\n• Fortalecer e ampliar a piscicultura, a ostreicultura e a produção de mariscos, promovendo\na modernização e o desenvolvimento sustentável da cadeia do pescado e da aquicultura.\n• Ampliar a infraestrutura logística e portuária do Estado, elevando a capacidade de\nmovimentação de cargas.\n• Apoiar a integração dos modais rodoviário, ferroviário, hidroviário e aeroportuário.\n• Criar o Comitê Estadual Intersetorial da Margem Equatorial.\n• Implantar o Programa de Qualiﬁcar mão-de-obra para atuarem na Margem Equatorial.\n• Interiorizar e modernizar a política de incentivos ﬁscais.\n• Implantar 3 novos distritos industriais: Castanhal, Breves e Santarém.\n• Qualiﬁcar mão-de-obra para o campo, incentivando o jovem na área rural.\n• Lançar o Vende Pará, ferramenta digital, para produtores organizarem pedidos e venderem\ndireto ao consumidor.\n• Ampliar a regularização fundiária rural e urbana, dando segurança à família no campo e\nna cidade.\n• Desburocratizar o ambiente de negócios por meio da implantação de um Balcão Único\ndo Empreendedor, com integração digital de serviços.\n• Garantir a segurança jurídica e sustentabilidade às propriedades rurais promovendo a\narticulação entre a regularização fundiária e ambiental fortalecendo ações conjuntas para\nfacilitar o acesso ao crédito, à assistência técnica e aos programas de apoio à produção.\n• Modernizar a vigilância e a defesa agropecuária do Pará, com inteligência artiﬁcial,\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n41"
+          },
+          {
+            "id": "monitoramento-por-drones-e-imagens-de-satelite-paineis-de-gestao-em-temp",
+            "titulo": "monitoramento por drones e imagens de satélite, painéis de gestão em tempo real e",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "monitoramento por drones e imagens de satélite, painéis de gestão em tempo real e\ngeorreferenciamento das propriedades rurais.\n• Promover estudos e pesquisas sobre o potencial geológico de terras raras e minerais\ncríticos do Estado, estimulando a atração de investimentos privados para desenvolvimento\neconômico com a extração, o beneﬁciamento e evolução de cadeias produtivas de maior\nvalor agregado.\n• Consolidar a política estadual de desenvolvimento econômico pautada na inovação, na\nsustentabilidade, na competitividade e na agregação de valor às cadeias produtivas.\n• Ampliar programas de qualiﬁcação e capacitação contemplando os setores industrial,\nmineral, agropecuário, turístico, comercial e de serviços.\n• Fortalecer a economia dos municípios paraenses por meio da atração de investimentos\ne da melhoria do ambiente de negócios.\n• Promover o crescimento saudável das micro e pequenas empresas e empreendedores\nindividuais, reduzindo a informalidade.\n• Garantir a expansão e o fortalecimento da agricultura familiar por meio da modernização\nprodutiva.\n• Modernizar a assistência técnica e extensão rural ampliando o incentivo ao cooperativismo\ne o suporte técnico para a rastreabilidade e certiﬁcação de cadeias produtivas.\n• Expandir e desburocratizar os programas de microcrédito para agricultura familiar,\ncontribuindo para o Programa de Aquisição de Alimentos (PAA) e o Programa Nacional de\nAlimentação Escolar (PNAE).\n• Apoiar projetos de agricultura orgânica.\n• Fortalecer o cooperativismo paraense, ampliando a divulgação, a integração e o acesso\ndas cooperativas a novos mercados, para impulsionar a economia e o desenvolvimento\ndas regiões onde atuam.\n• Estimular os arranjos produtivos locais e fortalecer o cooperativismo agregando valor à\nprodução e ampliando mercados.\n• Impulsionar a Inovação e a Bioeconomia Paraense.\n• Democratizar o acesso ao crédito para o produtor e incentivar a inovação dos processos\ne melhorias da produção.\n• Internacionalizar os produtos da sociobiodiversidade paraense, desenvolvendo ações de\npreparação para exportação e inteligência comercial.\n• Fomentar o artesanato local, com estímulo à abertura de mercado.\n• Fortalecer o empreendedorismo, com orientação sobre preciﬁcação, comercialização e\ncanais de venda.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n42"
+          },
+          {
+            "id": "ampliar-o-programa-de-capacitacao-pro-ssional-com-estimulo-ao-negocio-pr",
+            "titulo": "• Ampliar o Programa de Capacitação Proﬁssional com estímulo ao negócio próprio.",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "• Ampliar o Programa de Capacitação Proﬁssional com estímulo ao negócio próprio.\n• Realizar a prospecção ativa de vagas de emprego, aproximando empresas e trabalhadores.\n• Estimular a contratação de jovens pela iniciativa privada com foco no primeiro emprego.\n• Ampliar a plataforma estadual de oportunidades proﬁssionais, conectando pessoas\nqualiﬁcadas pelos programas do Governo às empresas que buscam mão de obra,\nampliando as oportunidades de emprego e renda.\n• Implantar o Programa Primeira Oportunidade nas Usinas da Paz, voltado para jovens de\n16 a 29 anos, com preparação proﬁssional, inglês e encaminhamento a estágio.\n• Desenvolver novos ciclos de capacitação com apoio do Sebrae e outras entidades para\nestimular projetos viáveis economicamente, nas Usinas da Paz.\n• Estimular e apoiar a implantação de fontes renováveis, contribuindo para o desenvolvimento\neconômico, a sustentabilidade e a melhoria da qualidade de vida da população.\n• Trabalhar para ampliar e melhorar a infraestrutura energética, articulando ações com os\nórgãos competentes e o setor privado para ampliar a oferta de energia de qualidade em\ntodas as regiões.\n• Consolidar a política estadual de gás natural como vetor da transição energética no Pará.\nO foco é expandir a infraestrutura de distribuição e comercialização de gás canalizado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n43"
+          },
+          {
+            "id": "a-infraestrutura-e-a-base-do-desenvolvimento-economico-e-da-integracao-r",
+            "titulo": "A infraestrutura é a base do desenvolvimento econômico e da integração regional. Investir",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "A infraestrutura é a base do desenvolvimento econômico e da integração regional. Investir\nem rodovias, hidrovias, portos, aeroportos e sistemas logísticos é criar as condições\nnecessárias para gerar empregos, atrair investimentos, fortalecer a produção e melhorar\na qualidade de vida da população. Nosso compromisso é continuar construindo um Pará\ncada vez mais conectado, competitivo e preparado para crescer.\nNos últimos anos, o Estado realizou investimentos históricos em infraestrutura, ampliando\na malha viária, fortalecendo a integração entre os municípios e melhorando as condições\npara o escoamento da produção e o deslocamento das pessoas. Agora, o desaﬁo é\nconsolidar esses avanços, ampliando a capacidade logística do Pará e aproveitando sua\nposição estratégica como porta de entrada da Amazônia para o Brasil e o mundo.\nVamos fortalecer uma infraestrutura moderna, eﬁciente e sustentável, capaz de impulsionar\no desenvolvimento das diferentes regiões do estado. Seguiremos investindo na expansão e\nmodernização da malha rodoviária, hidroviária, portuária e aeroportuária, reduzindo custos\nlogísticos, ampliando a competitividade da economia e criando novas oportunidades para\na indústria, o agronegócio, a bioeconomia, o comércio e os demais setores produtivos.\nA integração do território continuará sendo uma prioridade. Vamos aproximar regiões,\nfortalecer a economia dos municípios e ampliar a capacidade do Pará de atrair investimentos\ne gerar oportunidades. Investir em infraestrutura é preparar o estado para o futuro e garantir\nque o desenvolvimento chegue a todas as regiões, promovendo crescimento econômico,\ninclusão e qualidade de vida para os paraenses.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n44"
+          },
+          {
+            "id": "principais-realizacoes-8",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Pavimentação, restauração e duplicação de mais de 3 mil quilômetros de rodovias\nestratégicas, fortalecendo a integração regional, o escoamento da produção, a segurança\nviária e o desenvolvimento econômico.\n• Construção da Nova Ponte de Outeiro, na região Guajará.\n• Implantação da Ponte do Rio Fresco, na região Araguaia.\n• Construção de mais de 750 pontes, ampliando a integração entre municípios e\ncomunidades.\n• Reconstrução e modernização dos Aeródromos de Salinópolis e São Félix do Xingu,\nampliando a conectividade regional, o turismo e o acesso aos serviços públicos.\n• Modernização da infraestrutura portuária com a construção, reconstrução e/ou\nampliação de 33 Terminais Hidroviários, fortalecendo a integração dos municípios, turismo,\ndesenvolvimento econômico e a mobilidade da população ribeirinha.\n• Melhoria da mobilidade, da segurança viária e do escoamento da produção em todas as\nregiões do Estado.\n\nCOMO VAMOS AVANÇAR\n• Construir a Avenida da Integração (Av. Liberdade II), ligando a Alça Viária (PA-483) em\nMarituba à Castanhal.\n• Requaliﬁcar a BR-316, entre Marituba e o entroncamento com a PA-404, em Benevides,\nmelhorando a fluidez, a drenagem, os acessos, às paradas de transporte coletivo e a\nsegurança de motoristas e pedestres.\n• Pavimentar, requaliﬁcar e duplicar 2 mil km de rodovias estaduais.\n• Construir e concluir novas pontes para ampliar a integração regional e reduzir distâncias.\n• Fortalecer a política permanente de pavimentação, restauração, duplicação e manutenção\ndas rodovias estaduais.\n• Melhorar o transporte aquaviário construindo estratégia de padronização para o transporte\n• Requaliﬁcação dos aeroportos de Breves, Soure e Capanema.\n• Reconstruir aeródromos municipais para ampliar a conectividade regional.\n• Atuar junto ao Governo Federal para viabilizar novos investimentos na infraestrutura\nrodoviária, hidroviária, aeroportuária e ferroviária federal do Pará, melhorando as conexões\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n45"
+          },
+          {
+            "id": "entre-as-regioes-a-mobilidade-de-pessoas-e-o-transporte-da-producao-para",
+            "titulo": "entre as regiões, a mobilidade de pessoas e o transporte da produção paraense.",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "entre as regiões, a mobilidade de pessoas e o transporte da produção paraense.\n• Apoiar a integração dos modais rodoviário, ferroviário, hidroviário e aeroportuário.\n• Fortalecer o apoio aos municípios para a recuperação e manutenção de estradas vicinais\ne pontes, garantindo melhores condições de acesso às comunidades rurais e escoamento\nda produção.\n• Implantar novos e modernizar terminais hidroviários em municípios estratégicos e ampliar\na infraestrutura de apoio ao transporte de passageiros e cargas, fortalecendo a integração\nregional, o turismo e a logística.\n• Concluir os terminais hidroviários de Breves, Salvaterra, Senador José Porfírio e Mocajuba.\n• Modernizar a sinalização vertical e horizontal da malha rodoviária estadual, incorporando\ndispositivos de segurança viária e soluções inteligentes.\n• Promover estudos técnicos sobre a Estadualização de rodovias estratégicas, em\narticulação com os órgãos competentes, visando fortalecer a integração regional e a\nlogística do Estado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n46"
+          },
+          {
+            "id": "o-turismo-e-uma-das-grandes-oportunidades-para-impulsionar-o-desenvolvim",
+            "titulo": "O turismo é uma das grandes oportunidades para impulsionar o desenvolvimento do",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "O turismo é uma das grandes oportunidades para impulsionar o desenvolvimento do\nPará, gerar empregos, movimentar a economia e valorizar a identidade do nosso povo.\nNosso compromisso é consolidar o estado como um dos principais destinos turísticos\ndo Brasil e da Amazônia, transformando nossas riquezas naturais, culturais, históricas e\ngastronômicas em oportunidades de trabalho, renda e desenvolvimento para todas as\nregiões.\nO Pará vive um novo momento no cenário nacional e internacional. Os investimentos\nrealizados nos últimos anos, aliados à projeção conquistada com grandes eventos e ao\nfortalecimento da imagem do estado, abriram novas perspectivas para o turismo. O desaﬁo\nagora é aproveitar esse legado para ampliar o fluxo de visitantes, fortalecer os destinos\nparaenses e transformar o turismo em um vetor permanente de crescimento econômico.\nVamos investir na qualiﬁcação dos serviços turísticos, na promoção dos destinos, na\nvalorização da gastronomia, da cultura e das experiências ligadas à natureza, fortalecendo\nsegmentos como o turismo de lazer, negócios, eventos, ecoturismo, turismo de base\ncomunitária e turismo religioso. Também promoveremos a integração entre os municípios,\nampliando roteiros e estimulando o desenvolvimento das economias locais.\nFortalecer o turismo é gerar oportunidades, valorizar nossa identidade e levar\ndesenvolvimento para todas as regiões do Pará. Esse continuará sendo o compromisso\npermanente do nosso governo: fazer do turismo uma força para criar empregos, ampliar a\nrenda e mostrar ao Brasil e ao mundo tudo o que o Pará tem de melhor.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n47"
+          },
+          {
+            "id": "principais-realizacoes-9",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Realização da COP30 em Belém, em novembro de 2025.\n• Realização da Cúpula dos Líderes com a presença de 57 chefes de Estado e de governo.\n• Realização dos Diálogos Amazônicos e Cúpula da Amazônia, com 27 mil participantes.\n• Recebimento do prêmio de Melhor Experiência de Turismo Gastronômico do Brasil.\n• Reconhecimento Inclusão de Belém do Pará, no Ranking Global, como uma das melhores\ncidades do mundo para o turismo gastronômico, sendo a única cidade brasileira.\n• Consolidação de Alter-do-chão, Marajó e Belém como destino turístico, ampliando a\nvisibilidade do estado no mercado nacional e internacional.\n• Construção do Centro de Convenções de Santarém.\n• Crescimento de 90% nas operações internacionais em Belém, com atualmente oferta de\n38 voos internacionais semanais para Lisboa, Miami, Bogotá, Caiena e Paramaribo.\n• Ampliação na oferta de voos regionais em Salinópolis, Itaituba, Porto Trombetas, Breves,\nMonte Dourado, Almeirim, Juruti, Monte Alegre, Óbidos, Oriximiná, Tucuruí e Paragominas\nintegrando novas regiões turísticas e de negócios.\n• Recorde de visitantes em 2025 com mais de 1.574.766 turistas, crescimento de 440% em\nrelação a 2024, o maior salto já registrado.\n• A atividade movimentou mais de R$1,1 bilhão e gerou mais de 76 mil ocupações indiretas\ne induzidas em alimentação, hospedagem e transporte.\n• Certiﬁcação de 9.270 alunos pelo Programa Qualiﬁcatur, em cursos de hospitalidade,\nidiomas, gastronomia, guiamento e gestão de negócios turísticos.\n• Incremento de empresas no Cadastur, hoje com 3.845 empresas e prestadores de\nserviços turísticos.\n• Ampliação para 95 municípios no Mapa do Turismo Brasileiro, nas 12 regiões de integração.\n• Ampliação da recepção do quantitativo de navios de cruzeiro no estado.\n• Reformulação da marca Visit Pará e lançamento de plataforma digital própria.\n• Conquista de 4 prêmios Braztoa de Sustentabilidade em 2025.\n• Apoio recorrente a eventos turísticos e culturais em municípios de diferentes regiões\ndo interior paraense, ao longo de todo o ciclo, fortalecendo o fluxo turístico e a economia\nlocal nessas regiões.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n48"
+          },
+          {
+            "id": "como-vamos-avancar-2",
+            "titulo": "COMO VAMOS AVANÇAR",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "COMO VAMOS AVANÇAR\n• Intensiﬁcar a Estratégia Global de Promoção do Pará Pós-COP30, convertendo a projeção\ninternacional em fluxo permanente de visitantes, consolidando a marca “Pará Porta de\nEntrada da Amazônia”.\n• Fortalecer a política permanente de atração de turistas.\n• Consolidar a Plataforma Oﬁcial de Promoção do Destino.\n• Instituir o Programa Embaixadores do Pará, mobilizando lideranças acadêmicas,\nempresariais e institucionais na captação de eventos nacionais e internacionais.\n• Criar o Calendário Estratégico Estadual de Eventos, organizando a agenda dos principais\neventos públicos e privados do Estado.\n• Fortalecer a promoção do Pará e ampliar o acesso aos destinos turísticos, com a\nparticipação do Estado em feiras e eventos de divulgação turística com foco em mercados\nainda não consolidados, incluindo rodadas de negócios e ações promocionais\n• Potencializar as festividades tradicionais do Pará para ampliar a atração turística nacional\ne internacional e as feiras agropecuárias, contemplando todas as regiões do Estado.\n• Consolidar o Turismo Religioso como programa permanente de atração de visitantes,\nfomentando a construção de mais dois Santuários Nossa Senhora Perpétuo Socorro e\nNossa Senhora de Nazaré.\n• Estruturar uma plataforma estadual de captação e promoção de eventos, com governança\ntripartite entre o Governo do Estado, o setor privado e entidades representativas.\n• Concluir o Centro de Convenções de Castanhal.\n• Expandir as frequências de voos internacionais, e abrir novas rotas nacionais e regionais.\n• Estruturar o Estado como polo de cruzeiros marítimos e fluviais, integrando o Porto de\nOuteiro à rota amazônica de Belém, Santarém e Alter do Chão.\n• Transformar o patrimônio natural do Pará em um dos principais produtos de turismo\necológico e de experiência da Amazônia.\n• Estruturar Circuitos Turísticos integrando ilhas e rios, praias fluviais, o turismo rural e de\nbalneários.\n• Criar as Rotas de Origem do Pará promovendo roteiros turísticos integrados baseados\nem produtos com Indicação Geográﬁca e forte identidade regional.\n• Interiorizar os Roteiros e Experiências Turísticas do Pará.\n• Consolidar o Pará como o principal roteiro de Pesca Esportiva Sustentável, interiorizando\na atividade, criando o Circuito Paraense de Torneios de Pesca.\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n49"
+          },
+          {
+            "id": "potencializar-o-turismo-de-base-comunitaria-projetando-os-saberes-a-cult",
+            "titulo": "• Potencializar o turismo de base comunitária projetando os saberes, a cultura e o modo",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "• Potencializar o turismo de base comunitária projetando os saberes, a cultura e o modo\nde vida das comunidades paraenses para o mundo.\n• Criar o Programa Experiências Pará, promovendo microempreendedores de gastronomia\nde origem, vivências ribeirinhas, cultura popular e artesanato, com experiências publicadas\nno primeiro ciclo em plataformas digitais de comercialização.\n• Intensiﬁcar a divulgação da gastronomia paraense como a principal marca turística do\nEstado, ampliando a geração de renda, emprego e orgulho da nossa identidade.\n• Expandir o QUALIFICATUR para a formação continuada de trabalhadores, empreendedores\ne gestores turísticos em todas as regiões do Estado.\n• Qualiﬁcar o trade turístico nacional e internacional no conhecimento técnico do portfólio de\nprodutos e roteiros do Pará, ampliando a precisão e o alcance da comercialização do destino\nnos mercados de origem dos visitantes.\n• Ampliar a articulação entre o Estado, as instituições de ensino, o Visitors Bureau e as entidades\nrepresentativas do setor na condução da política turística regional.\n• Atrair a instalação de novos empreendimentos turísticos privados nas regiões com vocação\nturística.\n• Modernizar a Polícia Turística e a unidade especializada da Segurança Pública para\natendimento, orientação e proteção do visitante nos principais destinos e eventos do Estado.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n50"
+          },
+          {
+            "id": "a-cultura-e-um-dos-maiores-patrimonios-do-para-e-uma-importante-forca-pa",
+            "titulo": "A cultura é um dos maiores patrimônios do Pará e uma importante força para o",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "A cultura é um dos maiores patrimônios do Pará e uma importante força para o\ndesenvolvimento econômico, a geração de oportunidades e o fortalecimento da nossa\nidentidade. Nosso compromisso é valorizar a diversidade cultural paraense, preservar\nnossa história e transformar a criatividade do nosso povo em emprego, renda e inclusão\nsocial.\nO Pará vive um momento de grande visibilidade nacional e internacional, resultado da\nriqueza de suas manifestações culturais, da força de seus artistas e do reconhecimento\nde sua identidade amazônica. O desaﬁo agora é ampliar esse protagonismo, fortalecendo\na economia criativa como um dos motores do desenvolvimento regional e da valorização\nda cultura paraense.\nVamos incentivar a produção cultural, preservar o patrimônio material e imaterial, apoiar\nartistas, mestres da cultura popular, produtores, coletivos e empreendedores criativos,\nampliando o acesso à cultura e fortalecendo as cadeias produtivas dos setores cultural\ne criativo. Também promoveremos a inovação, a proﬁssionalização e a abertura de novos\nmercados, estimulando atividades que transformam talento, conhecimento e tradição em\noportunidades para milhares de paraenses.\nValorizar a cultura é fortalecer a nossa identidade e impulsionar o desenvolvimento\ndo estado. Esse continuará sendo o compromisso permanente do nosso governo:\nfazer da cultura e da economia criativa instrumentos de cidadania, geração de renda e\ndesenvolvimento sustentável para todas as regiões do Pará.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n51"
+          },
+          {
+            "id": "principais-realizacoes-10",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Entrega da 1ª etapa do Parque da Cidade, espaço projetado para promover integração\nsocial, atividades culturais, práticas de lazer e valorização ambiental.\n• Implantação do Complexo Porto Futuro II, consolidado como um dos mais relevantes\nprojetos de revitalização urbana, inovação e dinamização turística de Belém.\n• Restauração do Palacete Facciola, abrigando a nova sede do Departamento de Patrimônio\nHistórico, Artístico e Cultural (DPHAC) e do Museu da Imagem e do Som.\n• Construção do Museu das Amazônias.\n• Reforma do Museu do Marajó, localizado no município de Cachoeira do Arari.\n• Revitalização do Cemitério Nossa Senhora da Soledade Belém, transformando em um\nparque urbano.\n• Revitalização do Memorial da Cabanagem.\n• Reconhecimento do Theatro da Paz como Patrimônio Mundial da Unesco.\n• Incentivo ao setor cultural por meio dos editais Preamar.\n• Criação da Escola de Empreendedorismo Criativo.\n\nCOMO VAMOS AVANÇAR\n• Implantar a 2ª fase do Parque da Cidade.\n• Expandir o Porto Futuro II, ampliando sua vocação como complexo cultural e turístico.\n• Criar o Programa Pará Criativo com formação proﬁssional, apoio técnico a empreendedores\nna sua formalização e criação de linha de crédito para ﬁnanciamento de projetos.\n• Concluir o Tribódromo em Juruti.\n• Implantar novos equipamentos culturais e valorização das comunidades tradicionais.\n• Ampliar os editais de cultura estimulando a produção e difusão cultural, interiorizando no\nestado.\n• Atualizar a Lei Estadual de Incentivo à Cultura (SEMEAR) a nova realidade da reforma\ntributária brasileira.\n• Criar linha de crédito Pará em Tela para aquisição de equipamentos por produtoras,\nestúdios, editoras, escolas de arte e empresas de eventos.\n• Construir Centros Culturais para fomento da cultura nos territórios.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n52"
+          },
+          {
+            "id": "pro-ssionalizar-formalizar-e-capitalizar-a-cadeia-produtiva-da-cultura-e",
+            "titulo": "• Proﬁssionalizar, formalizar e capitalizar a cadeia produtiva da cultura e da economia",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "• Proﬁssionalizar, formalizar e capitalizar a cadeia produtiva da cultura e da economia\ncriativa.\n• Integrar a economia criativa e a bioeconomia.\n• Preservar patrimônio material e imaterial, memória e o turismo cultural.\n• Intensiﬁcar o Programa Cultura Itinerante que levar a cultura para o interior do estado.\n• Criar centros de fomento à cultura alimentar amazônica que integram gastronomia, manejo\nsustentável, agricultura familiar, ribeirinhos e comunidades tradicionais, com cozinhasescola, laboratórios de processamento e conexão direta com o mercado turístico.\n• Criar o Sistema Estadual Cultural – Festas e Festivais, com criação de circuitos/rotas\nculturais regionais, fortalecendo grandes eventos culturais, religiosos e manifestações\npopulares, ampliando a promoção nacional e internacional.\n• Incentivar a produção audiovisual em todas as regiões do estado.\n• Incentivar o empreendedorismo, inovação e geração de emprego e renda.\n• Incentivar a economia criativa apoiando artistas, artesãos, músicos e produtores.\n• Desenvolver ações de incentivo à leitura e acesso à informação e conhecimento.\n• Fortalecer as parcerias municipais para promoção da cultura local.\n• Apoiar a tradicionalidade da cultura do estado com seus mestres e mestras, grupos e\ncomunidades responsáveis pela transmissão de saberes culturais do Pará.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n53"
+          },
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0-5",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n54"
+          },
+          {
+            "id": "pilar-3",
+            "titulo": "PILAR 3",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "PILAR 3\n\nPREPARAR O FUTURO\nConstruir um estado moderno, inovador,\nsustentável para as próximas gerações.\n\nPreparar o futuro é garantir que o Pará esteja pronto para enfrentar os desaﬁos e\naproveitar as oportunidades das próximas décadas. Em um mundo marcado por rápidas\ntransformações tecnológicas, mudanças climáticas e novas formas de produzir e governar,\no Estado precisa ser capaz de inovar, planejar e agir com responsabilidade para assegurar\num desenvolvimento duradouro.\nEste pilar reúne as políticas que fortalecerão a capacidade do Pará de liderar uma nova\nagenda de desenvolvimento sustentável, baseada no conhecimento, na inovação, na\npreservação dos recursos naturais e em uma gestão pública cada vez mais moderna,\neﬁciente e transparente. O objetivo é preparar o estado para crescer de forma sustentável,\nampliar sua competitividade e oferecer respostas mais ágeis e inteligentes às necessidades\nda sociedade.\nPreparar o futuro é investir hoje nas escolhas que garantirão mais oportunidades para as\npróximas gerações. É construir um Estado inovador, sustentável e bem governado, capaz\nde transformar desaﬁos em desenvolvimento e assegurar que o Pará continue avançando\ncom responsabilidade, competitividade e visão de longo prazo.\nÁreas que compõem este pilar: Ciência, Tecnologia e Inovação; Clima e Meio Ambiente;\ne, Governança e Gestão Inovadora.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n55"
+          },
+          {
+            "id": "a-ciencia-a-tecnologia-e-a-inovacao-serao-pilares-estrategicos-para-cons",
+            "titulo": "A ciência, a tecnologia e a inovação serão pilares estratégicos para construir um Pará",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "A ciência, a tecnologia e a inovação serão pilares estratégicos para construir um Pará\nmais moderno, competitivo e preparado para os desaﬁos do futuro. Nosso compromisso\né fortalecer um ambiente capaz de transformar conhecimento em desenvolvimento,\nimpulsionando soluções que aumentem a produtividade, melhorem os serviços públicos e\nampliem as oportunidades para a população.\nO Pará reúne um enorme potencial cientíﬁco, tecnológico e inovador, impulsionado pela\nriqueza da Amazônia, pela força de suas instituições de ensino e pesquisa e pela criatividade\ndo seu povo. O desaﬁo agora é aproximar a produção do conhecimento das necessidades\ndasociedade e dos setores produtivos, estimulando a inovação como instrumento de\ndesenvolvimento econômico, inclusão social e sustentabilidade.\nVamos fortalecer a pesquisa cientíﬁca, ampliar a transformação digital, incentivar o\nempreendedorismo inovador, apoiar startups, modernizar os ambientes de inovação\ne ampliar a cooperação entre universidades, centros de pesquisa, governo e iniciativa\nprivada. Também promoveremos a formação de talentos, preparando nossos jovens para\nas proﬁssões do futuro e consolidando um ecossistema de inovação capaz de gerar novas\noportunidades para todas as regiões do estado.\nInvestir em ciência, tecnologia e inovação é preparar o Pará para liderar a economia\ndo conhecimento e aproveitar as oportunidades da nova economia. Esse continuará\nsendo o compromisso permanente do nosso governo: transformar conhecimento em\ndesenvolvimento, inovação em oportunidades e tecnologia em mais qualidade de vida\npara os paraenses.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n56"
+          },
+          {
+            "id": "principais-realizacoes-11",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Criação do Programa Startup Pará, apoiando startups, empresas inovadoras, pesquisa\naplicada e novos negócios de base tecnológica.\n• Promoção de eventos cientíﬁcos, tecnológicos e ações de divulgação da ciência em\ntodas as regiões do Estado.\n• Ampliação da inclusão digital, do acesso à internet e da implantação de tecnologias nas\ninstituições públicas.\n• Desenvolvimento de projetos voltados à bioeconomia, transformação digital,\nempreendedorismo, inovação e sustentabilidade.\n• Ampliação da transformação digital do Estado e dos serviços digitais voltados diretamente\nao cidadão.\n• Expansão da infraestrutura estadual de conectividade, elevando a malha de ﬁbra óptica.\n• Ampliação da capacidade de internet fortalecendo a disponibilidade dos serviços\npúblicos digitais.\n• Modernização na segurança digital do Estado.\n• Ampliação da formação em Ciência, Tecnologia e Inovação, alcançando mais de 22\nmil pessoas em 2025 e mais de 9,9 mil somente no primeiro semestre de 2026, com o\nPrograma Pará Proﬁssional.\n\nCOMO VAMOS AVANÇAR\n• Implantar o Centro de Excelência em Inteligência Artiﬁcial.\n• Proporcionar capacitação gratuita aos jovens em robótica, programação, eletrônica, e\nnovas tecnologias, preparando-os para as proﬁssões do futuro.\n• Implantação do Programa Pará mais Conectado destinado a expandir a infraestrutura de\ntelecomunicações e acesso à internet de alta capacidade.\n• Ampliar o Programa Startup Pará, conectando startups, universidades e pesquisadores\naos desaﬁos do Governo para criar soluções tecnológicas que melhorem os serviços\npúblicos.\n• Expandir a transformação digital, a inclusão tecnológica e a conectividade em todas as\nregiões do Estado.\n• Consolidar o Pará como referência em ciência, tecnologia e inovação na Amazônia.\n• Ampliar o apoio à pesquisa cientíﬁca, ao empreendedorismo inovador e às startups\n• Fortalecer os ambientes de inovação, incubadoras, parques tecnológicos e parcerias\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n57"
+          },
+          {
+            "id": "entre-governo-universidades-e-setor-produtivo",
+            "titulo": "entre governo, universidades e setor produtivo.",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "entre governo, universidades e setor produtivo.\n• Incentivar soluções tecnológicas voltadas à bioeconomia, sustentabilidade, serviços\npúblicos e desenvolvimento regional.\n• Modernizar o Parque de Ciência e Tecnologia Guamá, para fomentar o desenvolvimento\nde novos produtos de biotecnologia.\n• Implantar infraestrutura para certiﬁcação tecnológica dos produtos desenvolvidos no\nPará, fortalecendo a competitividade da produção regional.\n• Ampliar a transformação digital para que mais serviços públicos possam ser acessados\nde forma simples, segura e digital pela população.\n• Expandir e modernizar as infovias estaduais.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n58"
+          },
+          {
+            "id": "o-futuro-do-para-esta-diretamente-ligado-a-sua-capacidade-de-conciliar-d",
+            "titulo": "O futuro do Pará está diretamente ligado à sua capacidade de conciliar desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "O futuro do Pará está diretamente ligado à sua capacidade de conciliar desenvolvimento\neconômico, proteção ambiental e qualidade de vida. Nosso compromisso é consolidar um\nmodelo de crescimento que valorize os ativos ambientais do estado, enfrente os desaﬁos\ndas mudanças climáticas e transforme a riqueza da Amazônia em oportunidades para as\natuais e futuras gerações.\nO Pará ocupa uma posição estratégica na agenda climática mundial. Com a maior floresta\ntropical do planeta, uma das maiores biodiversidades do mundo e enorme potencial para a\nbioeconomia, o estado tem a responsabilidade e a oportunidade de liderar um novo modelo\nde desenvolvimento sustentável. O desaﬁo é transformar essa liderança em benefícios\nconcretos para a população, gerando emprego, renda, inovação e desenvolvimento com\nresponsabilidade ambiental.\nVamos fortalecer as políticas de conservação da biodiversidade, de adaptação e resiliência\nàs mudanças climáticas, de recuperação de áreas degradadas e de uso sustentável\ndos recursos naturais. Também ampliaremos o incentivo à bioeconomia, à economia de\nbaixo carbono e às soluções baseadas na natureza, promovendo o desenvolvimento das\ncomunidades, valorizando os povos tradicionais e consolidando o Pará como referência\ninternacional em sustentabilidade.\nCuidar do clima e do meio ambiente é proteger nosso maior patrimônio e preparar o\nestado para os desaﬁos do futuro. Esse continuará sendo o compromisso permanente do\nnosso governo: construir um Pará cada vez mais sustentável, resiliente e protagonista da\nnova economia verde, gerando desenvolvimento, oportunidades e qualidade de vida para\ntoda a população.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n59"
+          },
+          {
+            "id": "principais-realizacoes-12",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• Atuação na redução do desmatamento com redução de 61% e consolidação de 4 anos\nconsecutivos de redução, fortalecendo a meta estadual de neutralidade de carbono.\n• Criação do Programa Estadual de Prevenção e Combate às Queimadas e Incêndios\nFlorestais, com redução de 67% dos focos de incêndio.\n• Implantação de Brigada de Combate a Incêndios, atualmente, com 11 bases distribuídas\nde forma estratégica em áreas prioritárias.\n• Realização do Fórum Mundial de Bioeconomia.\n• Implantação do Plano Estadual de Bioeconomia (PlanBio) que fortaleceu cadeias\nprodutivas sustentáveis, com 125 iniciativas, beneﬁciando mais de 400 mil pessoas e cerca\nde 5,5 mil empreendimentos.\n• Implantação do Programa Inova Sociobio voltado ao apoio de povos indígenas,\nquilombolas, comunidades tradicionais e agricultores familiares, apoiando famílias por\nmeio de assistência técnica, equipamentos e fortalecimento das cadeias produtivas da\nsociobiodiversidade.\n• Implantação do Parque de Bioeconomia e Inovação da Amazônia, sendo o único parque\ntecnológico do mundo, dedicado à bioeconomia florestal.\n• Lançamento do Vale Bioamazônico que busca atrair investimentos, talentos e inovação\npara consolidar o Pará como referência internacional em bioeconomia e biotecnologia.\n• Construção do Sistema Jurisdicional de REDD+, realizando 29 Consultas Livres, Prévias e\nInformadas (CLPI), para garantir a participação ativa de povos indígenas e comunidades\ntradicionais na formulação da política climática.\n• Emissão de 26.637 títulos fundiários, incluindo títulos rurais, títulos coletivos para\ncomunidades quilombolas, concessões de uso e regularizações urbanas, beneﬁciando\naproximadamente 30 mil famílias.\n• Implantação do Programa Regulariza Pará que promoveu a maior regularização ambiental\ne fundiária de imóveis rurais no estado, com emissão de 50 mil documentos de terra,\nabrangendo 2 milhões de hectares regularizados.\n• Ampliação do Cadastro Ambiental Rural (CAR) atingindo 86,54% de cobertura do território\ncadastrável, fortalecendo a segurança jurídica e ambiental.\n• Regulamentação do Plano Estadual de Recuperação da Vegetação Nativa do Pará por\nmeio do Decreto Estadual nº 3.552/2023.\n• Fortalecimento da Agricultura familiar com ações de assistência técnica, extensão\nrural, acesso ao crédito e apoio à comercialização, integrando agricultores familiares e\nprodutores da sociobiodiversidade a programas públicos como o Programa de Aquisição\nde Alimentos (PAA) e o Programa Nacional de Alimentação Escolar (PNAE).\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n60"
+          },
+          {
+            "id": "estruturacao-e-operacao-do-cheque-pecuaria",
+            "titulo": "• Estruturação e operação do Cheque Pecuária.",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "• Estruturação e operação do Cheque Pecuária.\n• Implantação dos Núcleos de Atendimento aos Produtores e Criadores como estrutura\npermanente de atendimento aos produtores rurais, em Novo Repartimento, Altamira e São\nFélix do Xingu.\n• Celebração de contratos ativos de concessão florestal em 1.498.000 ha de áreas para\nManejo de Produtos Madeireiros e não Madeireiros.\n• Criação do Parque Ambiental Árvore Gigante da Amazônia que protege 560 mil ha em\nAlmeirim.\n• Entrega de Unidades de Monitoramento de Desembarque de Pescado, em Itupiranga,\nBreu Branco e Novo Repartimento.\n• Criada a Cota de Proteção Ambiental (CPA) regulamentada por meio do decreto nº\n4.613/2025.\n\nCOMO VAMOS AVANÇAR\n• Modernizar o licenciamento ambiental, com novo sistema digital, prazos deﬁnidos e\natendimento no interior, para licenciar mais rápido sem perder segurança.\n• Acelerar a regularização ambiental rural, usando o novo sistema estadual de CAR para\ndestravar a análise dos cadastros e dar segurança jurídica ao produtor.\n• Intensiﬁcar o combate às queimadas e incêndios florestais, com novas bases ﬁxas,\nbrigadas treinadas e equipamento nas regiões de maior risco.\n• Instituir o Plano Estadual de Adaptação Climática, protegendo ribeirinhos, agricultores\nfamiliares, povos indígenas e comunidades tradicionais dos efeitos da seca e da cheia.\n• Implementar o mercado de carbono, com a entrada dos primeiros recursos do programa\nestadual de REDD+ e sua destinação a quem conserva a floresta.\n• Intensiﬁcar o Parque de Bioeconomia como polo de pesquisa, inovação e indústria,\nagregando valor ao açaí, ao cacau, à castanha e aos demais produtos paraenses.\n• Expandir o Cheque Pecuária, apoiando o pecuarista a recuperar pastagem degradada e\nproduzir mais na área já aberta.\n• Implementar o Pagamento por Serviços Ambientais (PSA), remunerando as famílias que\nprotegem mata, nascentes e biodiversidade.\n• Combater o desmatamento ilegal, com ﬁscalização inteligente e responsabilização de\nquem derruba e de quem ﬁnancia, em defesa de quem produz dentro da lei.\n• Apoiar a implantação de polos regionais de aterros sanitários em parceria com o setor\nprivado, atendendo os municípios de forma consorciada e destinando corretamente cerca\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n61"
+          },
+          {
+            "id": "de-70-do-lixo-urbano-do-estado",
+            "titulo": "de 70% do lixo urbano do Estado.",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "de 70% do lixo urbano do Estado.\n• Consolidar o manejo florestal sustentável nas florestas públicas do Pará, gerando\nemprego e renda com a floresta em pé.\n• Ampliar a recuperação florestal nas áreas sob regime de concessão, recuperando solo,\nágua e paisagem.\n• Ampliar a regularização fundiária rural e urbana, dando segurança à família no campo e\nna cidade.\n• Fortalecer a capacidade dos municípios de prevenir e responder aos eventos climáticos\nextremos, protegendo vidas, moradias e serviços essenciais.\n• Combater as práticas criminosas no agronegócio.\n• Descentralizar o ITERPA.\n• Revisar o Zoneamento Ecológico Econômico do Pará.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n62"
+          },
+          {
+            "id": "uma-gestao-publica-moderna-e-ciente-e-inovadora-e-a-base-para-transforma",
+            "titulo": "Uma gestão pública moderna, eﬁciente e inovadora é a base para transformar boas ideias",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "Uma gestão pública moderna, eﬁciente e inovadora é a base para transformar boas ideias\nem resultados concretos para a população. Nosso compromisso é fortalecer um Estado\ncada vez mais inteligente, transparente e orientado por resultados, capaz de responder\ncom agilidade aos desaﬁos da sociedade e de oferecer serviços públicos de excelência\nem todas as regiões do Pará.\nNos últimos anos, o Pará consolidou uma gestão baseada no planejamento, na\nresponsabilidade ﬁscal e na capacidade de executar grandes investimentos, tornandose referência nacional em equilíbrio das contas públicas e na atração de investimentos.\nO desaﬁo agora é avançar ainda mais, incorporando inovação, transformação digital e\ninteligência na gestão pública para ampliar a eﬁciência do Estado e melhorar a vida das\npessoas.\nVamos fortalecer a cultura do planejamento de longo prazo, da gestão baseada em\nevidências e da inovação na administração pública, ampliando a transformação digital,\nsimpliﬁcando processos, modernizando os serviços públicos e utilizando tecnologia e\ninteligência de dados para qualiﬁcar a tomada de decisões. Também seguiremos valorizando\nos servidores públicos, fortalecendo a governança, a integridade, a transparência e a\ncooperação entre Estado, municípios e sociedade.\nCada recurso público deve gerar mais resultados para a população. Por isso, continuaremos\npromovendo uma gestão comprometida com a qualidade do gasto público, a eﬁciência\nadministrativa e a melhoria contínua das políticas públicas, assegurando que os\ninvestimentos se transformem em serviços de qualidade e desenvolvimento para todas\nas regiões do estado.\nGovernar bem é cuidar das pessoas, criar oportunidades e preparar o futuro. Esse\ncontinuará sendo o compromisso permanente do nosso governo: construir um Estado\ncada vez mais moderno, inovador, eﬁciente e transparente, capaz de entregar resultados e\nmelhorar a vida de todos os paraenses.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n63"
+          },
+          {
+            "id": "principais-realizacoes-13",
+            "titulo": "PRINCIPAIS REALIZAÇÕES",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "PRINCIPAIS REALIZAÇÕES\n• O Pará está entre os 4 estados que melhor investem no Brasil, segundo o Ranking de\nCompetitividade.\n• O Pará está entre os estados com menor taxa de endividamento do Brasil, segundo o\nTesouro Nacional.\n• O Pará está entre os 10 melhores estados em Solidez Fiscal, segundo o Ranking de\nCompetitividade.\n• O Pará é o 9º estado do Brasil em Eﬁciência da Máquina Pública, segundo o Ranking de\nCompetitividade.\n• Realização de 27 Concursos Públicos com mais de 19 mil servidores nomeados.\n• Elaboração do Plano Estratégico de Longo Prazo “Pará 2050”, deﬁnindo metas estruturantes\npara o desenvolvimento socioeconômico, ambiental e tecnológico sustentável do Estado.\n• Implantação do Centro Administrativo do Estado (CEADE) que representou um marco na\nmodernização da gestão pública, reunindo diversos órgãos em um único complexo para\npromover mais integração, eﬁciência e melhores serviços à população.\n• Criação do Centro Regional de Governo de Parauapebas com a descentralização dos\nserviços públicos estaduais.\n• Implantação do novo Sistema Financeiro e de Planejamento (Siaﬁ) do Estado.\n• Utilização do Processo Administrativo Eletrônico (PAE), modernizando a tramitação de\ndocumentos e processos administrativos, com eliminação do uso de papel, maior agilidade,\nsegurança, transparência e eﬁciência na gestão pública.\n• Expansão da conectividade dos órgãos públicos, fortalecendo a rede de comunicação\nde dados que atende escolas, hospitais, unidades de segurança, Usinas da Paz e demais\nequipamentos públicos estaduais;\n• Modernização da infraestrutura tecnológica do Estado, com ampliação dos Data Centers,\nda Rede Estadual de Telecomunicações e dos sistemas corporativos que atendem a\nadministração pública.\n• Ampliação dos pontos públicos de acesso gratuito à internet.\n• Implantação do Plano Estratégico de Transformação Digital do Estado, ampliando os\nserviços públicos digitais.\n• Expansão da cobertura 5G em Belém.\n• Fortalecimento do Portal da Transparência, ampliando a divulgação de informações sobre\nreceitas, despesas, contratos, convênios, licitações, servidores, diárias, transferências de\nrecursos e execução orçamentária, facilitando o acompanhamento da aplicação dos\nrecursos públicos pela sociedade.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n64"
+          },
+          {
+            "id": "modernizacao-do-servico-de-informacao-ao-cidadao-sic-ampliando-os-canais",
+            "titulo": "• Modernização do Serviço de Informação ao Cidadão (SIC), ampliando os canais",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "• Modernização do Serviço de Informação ao Cidadão (SIC), ampliando os canais\npresenciais e digitais para solicitação de informações públicas, acompanhamento dos\npedidos e apresentação de recursos, em conformidade com a Lei de Acesso à Informação.\n• Implantação do Programa Qualiﬁca Servidor que incentiva a atualização e qualiﬁcação\nproﬁssional do servidor público.\n• Ampliação da presença do Banpará em todos os 144 municípios.\n• Construção e Reconstrução de 9 Estações Cidadania.\n• Isenção de IPVA para motos de até 200 cilindradas e carros elétricos de até R$ 150mil.\n\nCOMO VAMOS AVANÇAR\n• Implantar o Programa Bem estar do Servidor.\n• Instituir a Política Estadual de Inteligência Artiﬁcial a ﬁm de regular o uso da inteligência\nartiﬁcial na administração pública estadual, com princípios de ética, transparência e\nproteção de dados.\n• Lançar o Programa IA para Todos, com formação em inteligência artiﬁcial para os\nservidores públicos.\n• Ampliar o Centro Administrativo do Estado (CEADE).\n• Intensiﬁcar e acelerar a execução dos projetos prioritários, deﬁnidos pela governadora,\ngarantindo resultados concretos para a população.\n• Criar o Programa Pará Inteligente, integrando as bases de dados do Estado para uma\ngestão pública orientada por evidências e em tempo real.\n• Criar o Laboratório de Inovação do Estado, dedicado a testar soluções digitais para os\ndesaﬁos da gestão pública.\n• Valorizar o servidor público, com modernização da legislação de pessoal, novos concursos\ne capacitação em inteligência artiﬁcial, liderança pública e inovação, ampliando o uso de IA na\nautomação de processos mecânicos para que o servidor se dedique às funções técnicas e\nestratégicas de sua área.\n• Mapear o perﬁl dos servidores estaduais, com um censo permanente de gestão de pessoas,\norientando políticas de saúde e equidade no serviço público.\n• Aperfeiçoar e integrar os sistemas de gestão, orçamentário e ﬁnanceiro.\n• Intensiﬁcar a política de segurança cibernética para proteger as infraestruturas digitais do\nEstado.\n• Modernizar as instâncias de negociação coletiva e canais de interlocução com servidores e\nsindicatos, garantindo a pactuação transparente de metas e valorização das carreiras públicas.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n65"
+          },
+          {
+            "id": "promover-a-modernizacao-da-infraestrutura-e-a-e-ciencia-dos-servicos-pub",
+            "titulo": "• Promover a modernização da infraestrutura e a eﬁciência dos serviços públicos estaduais por",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "• Promover a modernização da infraestrutura e a eﬁciência dos serviços públicos estaduais por\nmeio da atração de investimentos privados via Parcerias com a iniciativa privada, garantindo o\nrespeito à sustentabilidade amazônica e a inclusão social.\n• Regular o uso da Inteligência Artiﬁcial na Administração Pública Estadual, com princípios\nde ética, transparência e proteção de dados.\n• Realizar concursos públicos priorizando Polícia Civil e Polícia Cientíﬁca do Estado do Pará.\n• Fortalecer a governança das compras governamentais, priorizando, nos limites da\nlegislação, produtos paraenses e fornecedores locais, especialmente pequenos produtores,\nagricultores familiares, cooperativas e micro e pequenas empresas.\n• Fortalecer a transparência pública, a Ouvidoria e a Corregedoria, ampliando o controle, a\nintegridade e o acesso da população às informações.\n• Construção e Reconstrução de Estações Cidadania.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n66"
+          },
+          {
+            "id": "um-com-promisso",
+            "titulo": "UM COM PROMISSO",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "UM COM PROMISSO\nCOM O FUTURO DO PARÁ\nEste Plano de Governo representa um compromisso com o presente e, sobretudo, com o\nfuturo do Pará. Ele nasce da convicção de que tudo o que conquistamos até aqui precisa\nser mantido, fortalecido e transformado em novas oportunidades para a nossa população.\nO Pará avançou muito nos últimos anos. Superou desaﬁos, recuperou sua capacidade de\ninvestir, ampliou serviços públicos, realizou grandes obras, atraiu investimentos e voltou a\nacreditar na sua própria força. Agora, temos a responsabilidade de iniciar uma nova etapa:\nfazer mais, chegar mais longe e garantir que cada avanço seja percebido na vida das\npessoas, em todos os municípios e regiões do estado.\nÉ com esse propósito que apresentamos um plano organizado a partir de três grandes\ncompromissos: Cuidar das Pessoas, Desenvolver o Pará e Preparar o Futuro. Três pilares\nque se complementam e traduzem a nossa visão de um estado que protege sua população,\nimpulsiona sua economia e se prepara para as transformações das próximas décadas.\nQueremos um Pará onde a saúde esteja presente quando as pessoas mais precisarem;\nonde as famílias possam viver com segurança e as mulheres tenham proteção, respeito\ne autonomia; onde nossas crianças e jovens encontrem na educação oportunidades\npara transformar suas vidas; e onde quem mais precisa encontre um Estado presente,\nacolhedor e capaz de garantir direitos.\nQueremos um Pará que cresça cada vez mais, atraia investimentos, fortaleça quem\nproduz e empreende e, principalmente, gere empregos e renda para o nosso povo.\nUm desenvolvimento que valorize as vocações de cada região, integre os municípios e\ntransforme nossas riquezas naturais, nossa cultura, nossa criatividade e nossa capacidade\nprodutiva em prosperidade para os paraenses.\nE queremos preparar o Pará para o futuro. Um estado que invista em ciência, tecnologia e\ninovação, lidere uma agenda de desenvolvimento sustentável na Amazônia e tenha uma\ngestão pública moderna, eﬁciente e responsável. Cada recurso público precisa ser bem\naplicado e retornar para a população em serviços, investimentos e melhores condições\nde vida.\nNada disso será construído sozinho. A parceria com os municípios continuará sendo\nfundamental para fazer as políticas públicas chegarem aonde as pessoas vivem. Vamos\ngovernar ouvindo, dialogando e trabalhando ao lado dos prefeitos, das comunidades,\ndo setor produtivo, das universidades, das organizações sociais e, principalmente, da\npopulação paraense.\nTemos grandes desaﬁos pela frente, mas também nunca tivemos tantas oportunidades.\nO Pará conhece sua força, reconhece o caminho que já percorreu e está preparado para\nseguir avançando.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n67"
+          },
+          {
+            "id": "este-plano-de-governo-e-mais-do-que-um-conjunto-de-propostas-para-os-pro",
+            "titulo": "Este Plano de Governo é mais do que um conjunto de propostas para os próximos quatro",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "Este Plano de Governo é mais do que um conjunto de propostas para os próximos quatro\nanos. É um compromisso com cada paraense e com as próximas gerações: continuar\ntransformando o estado com trabalho, responsabilidade, diálogo e capacidade de realizar.\nUm compromisso de fazer o desenvolvimento chegar cada vez mais longe e de construir\num Pará que cuide das pessoas, gere oportunidades e esteja preparado para o futuro.\nSeguiremos juntos, com conﬁança na nossa gente e na força do nosso estado, construindo\num Pará cada vez mais unido, desenvolvido e preparado para realizar todo o seu potencial.\nO Pará tem futuro. O Pará tem força. E juntos vamos continuar fazendo essa história\navançar.\n\nP L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n68"
+          },
+          {
+            "id": "p-l-a-n-o-d-e-g-ov-e-r-n-o-2-0-2-7-2-0-3-0-6",
+            "titulo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "P L A N O D E G OV E R N O 2 0 2 7-2 0 3 0\n\nO PA R Á TA J U N TO\n\n69"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "351b56fd7ea84e82d59f74938a16f6c31afcac118fe317bfdf073c8b944e110d"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "77dc2fc7b454344bb10f58a18495bab7873f6646d0c67887ab48b5e7c6b4cf86"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7878afdfeaea72fbbab56c614e351fadfb12e557d6f615483a67fe3417fa951f"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d305d205dfcff6ca0b473666c18ee4b6b46dc1eb1beb1c15477d26d3b7cfe763"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "9112bcfa01c585d7f93cd32d6510aa9a98a3d31978491cccf7cde5d87a472bc3"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "4a5cc32cff3ce5ffa0cb8aee6239e9b2e242ae518acb2b3cd4b5593ce683b5cc"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "926867a089b5e8a015f3e866e686caa4c8971fc738f17abeba0f95acd04de01a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "7a728265960aa379c6bb20b9d639c77826308b4135c80e0d7caf9dc3f5c5b2df"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "3bb86636ff24be2dc5ea5687348cc9c153c46cfc0145afc3e3c348b03ac26591"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "26af124990d94b3c38261bc5912abce4cf180c85640324dd5dbd3f2afbf5bd3c"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "b274d72329711e0d9cccfa214387e49cf8a5d1897b1bba7efce69e8391278024"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "6dc20e4cf6ddf16fdd1fff58997c5ed842fad276c55225a5ba20aa8ded0a50ec"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "118b0931800fc86a8290344e285f952376eaedba0937ff90b4823b017b3ae82e"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a3d22bb9e5c0d45890f21546171837d75a86f3f234a870c0f658461939c37212"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "10ac900934275334f6713051d694c354c10fc6646b6f83c94b790b8666dc7018"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "711396e22bfd298e065c71db50f7452e673a2cad29dc8afc107d98ade3422413"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "734e54b6abbaad674602e18df09ef6048e5ba04580c7f6f4f95f1554020bd90d"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "8bed63bac2249b2c072eb7c8d5eb5fa2304c7eacc0a7f3257724719e68bccfc1"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "bba200074e2708a825537570a9b11a624e47751de75d7b7691bb7fd0a7b401d6"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "4b3ffe287fe102d64aa7cb24cffd11983d4ebae7975d9988f7e06c51394cb6b6"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "866bc49771d1771735ee92901ee9468b564a93631f453fb07079126ae18ac8ff"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "600fbf04009098d4f44f6de15e61ac9b1d7c31ad60109fe18d01a89b34ff782a"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "e43a46b9c558c3b2fbe830ee0fc0a1477d14172b75d380ef848c7e79f339464a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "f40df5d3e37d181f3ff509972e651692f0d159b2c93d05bf7eb1245594bc191f"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "f9d1d8dea370169cf8aed0f01eef3d49a0ba1366083ba4e84c12375f86931b79"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "ef6eac6e5c5588239ba3476eda3d4f9ac58418ffae5e07444eace2019f884620"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "19bc6ab2f562b20a49e10b15ccc1d42da426f7629908665156369fde2743b59c"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "5544a12e682fe11fe042f69ef17ad467c6cfc87ba8e04d53829fa99977f2439a"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "62197f6de3b6c4b58a00451215c8f0076b9341c4de72d96bb4f21d3fad8b8f3b"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "fc8a744ad9a60e8f019025cc60beb6e363408c8d1ecd55cfb06362f0772df3d0"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "8259706328a7d921444af7757c6da2cc94d21b774f022736999c87c0b82c05ef"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e2556acde32599f701cf32e370c386a9387e30a30363fdca386b35723fb1fe45"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "82b20061534a797587c3c64c4d33ba189e155aecf864fd50db74ecf991b675a7"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "c6434b77bfc1fb1c4abcf98063276cde9867c3b3426b9e3e8a9f9e492d522c17"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "3ba74377ed8a99dc2a45bd8e0e860f4003009f453fe7353317fea8ea361e8a4c"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "882257c4fe569dc202211c7870ce1a36aeaf2bdbe6a98718948b40e24038e6c8"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "f3b7d8d3323899690e7b2d99bdcd553cb282015814bf46dd1156cb9ef9c43e74"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "1dadee7c9991be7f7266c80a6347000565249a779fbd2a49819e9771de2a5d72"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "d6c44e3b243b3f5c975b87fe51c083eb2457801359f24f06e18e553e7537913a"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "9dda36cdd924c8f8b40385ac9cb8d24052a79fe34e1cce9245426895c81bb7b5"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "62a850c08246f654d95bc1becf3d6f5c315cec3d3b2038a6f56944b142fa6b9a"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "5e21fa18ad59487b1484f0fb35bb420453eac4d356d92a86e647bab87d9dc11f"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "38d6935e1554e4313b87a476f9365c223db5fd3c9b832db806a7ce797e483c8f"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "9e67cb97fdb52d0b4bb9d10e9d63b81557133984f55d064d90cee7d5b608c138"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "a28ebdff495f0d9813f8229cd2d99ed1e16d1eaf919a00f66f9cf3c97ba843a8"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "7e3c9d1be4b8f8f7ef478ce3f52f3cd30debe5c5ed6de6263a981ac4fb669e82"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "2b421a4f3305a5de2d8e5a1d04582d392d9bf583755095faec0307108229bf3c"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "5804d991ecb3329de1eed94e57774dedae9119dd824f55126a89e7368153e14c"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "3061442fe965d7946661d535e19208905bada2a3f766dc3f8cd45bbe1963c705"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "f561801b8aed6716d6c6e8f66d94d48ef935a3ca212c11cb42afd74e7e37510e"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "2bae7e89c32ff07a79bf9477525bcdd002444f55df7ce1e39d4da1b1d28dffd5"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "844c115bd81ffce51f3d5c6ea82fc928c2bf90c4e346219ac9803f29db2775e2"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "73e2a301f9f8ea7c5268051179660154c09d621d81ea4030d4e4523095f6e608"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "01d782f9d89a15debf5ce713ab0ba1cf06f85aebb8a9b7b19c6a539858e1c3c6"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "9cdf74213a64d2dbf29bead18fa3aeb1eed36b6ff757f08e17c92b1b0cae8137"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "0d20b2e19a29be03c44a9efea7846ca6b8c9259c5d4c815320615146676ea8e8"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "33c5358289ab97c2be9164502c8fb87836fcce538f8fe15f73b0dd4a451f8ed6"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "fc09df2f84d1d9d03f87df7346770dbc325ec68b089351d06ef90c201fece5b2"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "4165b671a7c23570361d4bb7abe628861b04e79141b73044d26c017a3b667653"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "a4f43c3fc7ef1186b0f00c5e86f3646a98a39046ec1898319ab74c76c52f1a11"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "e32b5e28807ac725d9dcb61e5d224bc62d5fd9a184edc7900685a617452aa4eb"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "7f95eb55a01c0b8b17347f8bb0b6fffe3352de5b2789deba6823955c3029fd15"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "53cbf20e6014f08787e58f9ff2bbd2739baca074b121f60262177505afd9e53e"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "d36bf630f91a962d600c3f006d211e47edaa061eb286f43644e39b136bc8b4df"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "e162317e35832be66cc31ebd3f1a8e3bdab85265e930550c1a5787cf3e065756"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "21bafb676f3b87569878ae7b2983463ebdca5bb853cc7292e862b59ad2fdf684"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "a6cbf95c79602a8a7cdedc7e7cac46838d2cdc1447d9cd665d558f24ff8666ba"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "647166b2c42d4d23f97952ce5b59b9a1baa54752546f66c602607a9d1755a404"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "f5223713b8c2d14db4edc10020828cd6e0c2a9de049dafc89308fd2d8bbb333d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano apresenta uma visão estratégica para o desenvolvimento do Pará no período de 2027 a 2030. O documento prevê fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada. O plano propõe fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil. O documento planeja expandir totens e câmeras de videomonitoramento com reconhecimento facial. O plano propõe expandir as Delegacias Especializadas de Atendimento à Mulher, com funcionamento de 24 horas. O documento prevê impulsionar a inovação e a bioeconomia paraense. O plano propõe pavimentar, requalificar e duplicar 2 mil km de rodovias estaduais. O documento prevê implementar o mercado de carbono, com recursos do programa estadual de REDD+.",
+    "frases": [
+      {
+        "texto": "O plano apresenta uma visão estratégica para o desenvolvimento do Pará no período de 2027 a 2030.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 6,
+            "trecho": "Este Plano de Governo apresenta uma visão estratégica para o desenvolvimento do Pará no período de 2027 a 2030."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 9,
+            "trecho": "Vamos fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada e capaz de responder às necessidades da população."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 22,
+            "trecho": "Fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil."
+          }
+        ]
+      },
+      {
+        "texto": "O documento planeja expandir totens e câmeras de videomonitoramento com reconhecimento facial.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 16,
+            "trecho": "Expandir totens e câmeras de videomonitoramento com reconhecimento facial, placa de veículos e interligar com os bancos de dados de criminosos e de pessoas desaparecidas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe expandir as Delegacias Especializadas de Atendimento à Mulher, com funcionamento de 24 horas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 27,
+            "trecho": "Expandir as quantidades de Delegacias Especializadas de Atendimento à Mulher (DEAM), com funcionamento 24 horas nas regiões de integração."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê impulsionar a inovação e a bioeconomia paraense.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 42,
+            "trecho": "Impulsionar a Inovação e a Bioeconomia Paraense."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe pavimentar, requalificar e duplicar 2 mil km de rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 45,
+            "trecho": "Pavimentar, requalificar e duplicar 2 mil km de rodovias estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê implementar o mercado de carbono, com recursos do programa estadual de REDD+.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 61,
+            "trecho": "Implementar o mercado de carbono, com a entrada dos primeiros recursos do programa estadual de REDD+ e sua destinação a quem conserva a floresta."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "O plano prevê fortalecer o SUS, organizando a rede a partir da Atenção Primária integrada aos serviços de Média e Alta Complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 9,
+            "trecho": "Vamos fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada e capaz de responder às necessidades da população."
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O plano propõe fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 22,
+            "trecho": "Fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O plano prevê expandir totens e câmeras de videomonitoramento com reconhecimento facial.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 16,
+            "trecho": "Expandir totens e câmeras de videomonitoramento com reconhecimento facial, placa de veículos e interligar com os bancos de dados de criminosos e de pessoas desaparecidas."
+          }
+        ]
+      },
+      {
+        "id": "politicas-para-mulheres",
+        "titulo": "Políticas para as mulheres",
+        "descricao": "O plano propõe expandir as Delegacias Especializadas de Atendimento à Mulher, com funcionamento de 24 horas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 27,
+            "trecho": "Expandir as quantidades de Delegacias Especializadas de Atendimento à Mulher (DEAM), com funcionamento 24 horas nas regiões de integração."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-economico",
+        "titulo": "Desenvolvimento econômico",
+        "descricao": "O plano prevê impulsionar a inovação e a bioeconomia paraense.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 42,
+            "trecho": "Impulsionar a Inovação e a Bioeconomia Paraense."
+          }
+        ]
+      },
+      {
+        "id": "clima-meio-ambiente",
+        "titulo": "Clima e meio ambiente",
+        "descricao": "O plano prevê implementar o mercado de carbono, com recursos do programa estadual de REDD+.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551598:01",
+            "pagina": 61,
+            "trecho": "Implementar o mercado de carbono, com a entrada dos primeiros recursos do programa estadual de REDD+ e sua destinação a quem conserva a floresta."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:35:45.005Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T12:40:55.070Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação, incluindo o período de 2027 a 2030."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de 2027 a 2030 está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do documento sem elogio, crítica, promoção ou extrapolação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única caracterização geral do plano, sem misturar propostas distintas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa o mesmo documento informado e não há indício de desvio da chave eleitoral indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:1:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação: plano, visão estratégica, desenvolvimento do Pará e período."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta descrita, com redação equivalente e ainda acrescenta detalhe adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta do documento de forma descritiva, sem adjetivação promocional ou juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, a organização da rede de saúde a partir da Atenção Primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e é compatível com a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:2:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação, inclusive integração com Média e Alta Complexidade e rede regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência repete literalmente a proposta mencionada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta do plano, sem juízo de valor ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta única e coerente dentro da área de educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e não há sinal de divergência de identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:3:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente fortalecer, ampliar, escolas de tempo integral, projeto de vida, tutoria e protagonismo juvenil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a afirmação e traz detalhes adicionais além do recorte afirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma proposta coerente de videomonitoramento na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento indicado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:4:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação: expansão de totens e câmeras com reconhecimento facial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de expansão das DEAM com funcionamento 24 horas, com detalhe adicional sobre as regiões de integração."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade temporal de 24 horas está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de política para atendimento à mulher."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde exatamente ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:5:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação: expansão das delegacias especializadas e funcionamento 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta afirmada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do documento de forma descritiva, sem valoração."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta coerente no mesmo eixo de desenvolvimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:6:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente impulsionar a inovação e a bioeconomia paraense."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a afirmação, inclusive a quantidade mencionada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 2 mil km está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única proposta coerente sobre infraestrutura rodoviária."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:7:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação, inclusive a quantidade de 2 mil km."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a implementação do mercado de carbono com recursos do programa estadual de REDD+, acrescentando detalhes sobre a entrada e destinação desses recursos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta do documento, sem linguagem elogiosa, crítica ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma proposta única e coerente na área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:frase:8:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação: implementar o mercado de carbono e vinculá-lo aos recursos do programa estadual de REDD+."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta fortalecer o SUS a partir da Atenção Primária integrada à Média e Alta Complexidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do plano sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única política coerente de organização da rede de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:saude:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação sobre SUS, Atenção Primária e integração com Média e Alta Complexidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém valoração promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única proposta coerente de educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:educacao:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de expansão de totens e câmeras com reconhecimento facial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de forma neutra, sem elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se concentra em uma única proposta coerente de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:seguranca-publica:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais da afirmação sobre expansão de videomonitoramento com reconhecimento facial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a expansão das DEAM com funcionamento 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "O funcionamento 24 horas está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente dentro do tema de políticas para as mulheres."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:politicas-para-mulheres:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta afirmada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não traz juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta coerente no mesmo eixo de desenvolvimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:desenvolvimento-economico:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a implementação do mercado de carbono associada aos recursos do programa estadual de REDD+."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento de forma descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente no eixo climático e ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551598:tema:clima-meio-ambiente:documentos:PA:140002551598:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação sobre mercado de carbono e recursos do programa estadual de REDD+."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PA:140002551598",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PA:140002551598:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "3feb4edbe2b82e1fecf48ac9c3474d97bfd5de8f193b764d50d3859f7a6ca09f",
+    "extractedTextSha256": "e9fecba6ade1b95629a8f9517c626c9f8732758a40311fb2667a8b2237844a6b",
+    "documentCount": 1,
+    "documentSetSha256": "7d853d6911355791e2d3fde96985ccbdd9449b55daf2c9224402aa21f4cac0d8",
+    "contentSha256": "701e5ead46c3e2ddf78540ef69748f7699052ae7eb85b13498cbaead8f3f5d32"
+  }
+}

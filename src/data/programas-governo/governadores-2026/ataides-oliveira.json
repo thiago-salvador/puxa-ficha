@@ -1,0 +1,1137 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002548412",
+    "slug": "ataides-oliveira",
+    "nomeUrna": "ATAIDES DE OLIVEIRA",
+    "partido": "NOVO",
+    "arquivoNome": "2026TO270002548412_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002548412_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002548412:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002548412_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002548412_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "8e41a0158c92bbeb9a694df21f5009a1dee4349b4be5ee4b09eb91dcd3f3c7c3",
+        "extractedTextSha256": "f29b00ce93457017b8dea1519e2798f3a91d2ca5e2515f91dfe0a61968619bbc",
+        "paginas": 32,
+        "secoes": [
+          {
+            "id": "plano-estrategico-de-governo-2027",
+            "titulo": "PLANO ESTRATÉGICO DE GOVERNO 2027–",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO ESTRATÉGICO DE GOVERNO 2027–\n2030\nPROJETO NOVO TOCANTINS\nPROPOSTAS DEFENDIDAS – CANDIDATURA AO GOVERNO DO\nTOCANTINS\n\nEleições 2026 | Página 1"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Plano Estratégico de Governo 2027–2030 – Projeto NOVO Tocantins consolida, em\nlinguagem analítica, os capítulos e compromissos desenvolvidos ao longo do processo de\nelaboração. O documento organiza o diagnóstico dos principais problemas do Estado, define uma\nforma de governar e estabelece prioridades para as áreas essenciais.\nA proposta parte de uma tese central: o Tocantins possui recursos, potencial produtivo,\nlocalização estratégica e capacidade humana para avançar. O desafio é transformar essas\ncondições em resultados concretos por meio de planejamento, responsabilidade fiscal, gestão\nprofissional, transparência e coragem para enfrentar desperdícios, privilégios e estruturas que\nnão entregam serviços públicos compatíveis com as necessidades da população.\nO plano não pretende substituir os instrumentos legais de planejamento, como o Plano\nPlurianual, a Lei de Diretrizes Orçamentárias e a Lei Orçamentária Anual. Sua função é orientar\nessas peças, estabelecer prioridades e oferecer à sociedade uma referência para acompanhar a\nexecução do governo.\n\nMissão\nPromover o desenvolvimento do Tocantins por meio de uma gestão pública eficiente, ética,\ntransparente e responsável, transformando recursos públicos em oportunidades, serviços de\nqualidade e melhoria concreta da vida das pessoas.\n\nVisão\nConstruir um Tocantins reconhecido pela qualidade da gestão pública, pelo equilíbrio fiscal,\npela segurança jurídica, pelo desenvolvimento econômico e pela capacidade de oferecer serviços\npúblicos dignos em todas as regiões.\n\nValores\n•\n•\n•\n•\n•\n•\n•\n•\n\nHonestidade e integridade pública.\nResponsabilidade fiscal e respeito ao contribuinte.\nEficiência administrativa e gestão por resultados.\nTransparência e prestação de contas.\nValorização do mérito e dos servidores públicos.\nSegurança jurídica e respeito aos contratos.\nInovação, liberdade econômica e desenvolvimento sustentável.\nCentralidade do cidadão nas decisões públicas.\n\nEleições 2026 | Página 2"
+          },
+          {
+            "id": "capitulo-1-diagnostico-estrategico-do-tocantins",
+            "titulo": "CAPÍTULO 1 – DIAGNÓSTICO ESTRATÉGICO DO TOCANTINS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 1 – DIAGNÓSTICO ESTRATÉGICO DO TOCANTINS\nPotencial elevado, serviços públicos insuficientes e necessidade de mudança de\ngestão\nUma política pública consistente começa pelo reconhecimento dos problemas. O Tocantins\napresenta vantagens econômicas e territoriais importantes, mas ainda convive com serviços\npúblicos sobrecarregados, desigualdades regionais, baixa capacidade de execução e uma\nestrutura administrativa que nem sempre transforma arrecadação em resultados.\nO diagnóstico apresentado neste capítulo não busca apenas enumerar dificuldades. Seu\nobjetivo é identificar causas estruturais: fragmentação da gestão, descontinuidade de políticas,\nexcesso de cargos e estruturas, baixa integração de dados, planejamento insuficiente,\ndependência de soluções emergenciais e ausência de metas públicas capazes de orientar e\ncobrar o desempenho do governo.\n\n1.1 Potencial do Estado\nO Tocantins ocupa posição estratégica entre diferentes regiões do país, possui vocação\nagropecuária, potencial logístico, recursos naturais, disponibilidade territorial e cidades com\ncapacidade de se consolidar como polos regionais. Essas condições favorecem a produção de\nalimentos, a agroindústria, a logística, o comércio, os serviços, o turismo e a geração de energia.\nO problema não é a ausência de oportunidades. O desafio é construir um ambiente\ninstitucional que permita transformar potencial em investimentos, empregos, renda e arrecadação\nsustentável.\n\n1.2 Principais desafios\n•\n•\n•\n•\n•\n•\n•\n\nSaúde com filas para consultas, exames e cirurgias, concentração de serviços e sobrecarga\ndas unidades de referência.\nSegurança pública com déficit de efetivo, necessidade de ampliar inteligência, investigação,\nperícia e presença territorial.\nEducação com necessidade de elevar aprendizagem, reduzir evasão, valorizar profissionais\ne conectar a escola ao futuro dos jovens.\nEconomia dependente da produção primária, com baixa agregação de valor e necessidade\nde industrialização.\nInfraestrutura rodoviária, logística, digital, energética e de saneamento ainda insuficiente para\no ritmo de crescimento desejado.\nAdministração pública fragmentada, com sobreposição de estruturas, burocracia,\ndesperdícios e baixa cultura de monitoramento.\nDesigualdades regionais e dificuldade de acesso a serviços públicos fora dos principais\ncentros.\n\n1.3 Os três problemas estruturais\nO plano identifica três fatores que atravessam todas as áreas: corrupção, política de favores\ne má gestão. A corrupção desvia recursos e destrói a confiança. A política de favores substitui\n\nEleições 2026 | Página 3"
+          },
+          {
+            "id": "criterios-tecnicos-por-interesses-particulares-a-ma-gestao-desperdica-re",
+            "titulo": "critérios técnicos por interesses particulares. A má gestão desperdiça recursos mesmo quando",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "critérios técnicos por interesses particulares. A má gestão desperdiça recursos mesmo quando\nnão há desvio, por falta de planejamento, controle e capacidade de execução.\nEnfrentar esses fatores exige mais do que discursos. É necessário alterar processos,\nfortalecer controles, profissionalizar equipes, divulgar resultados e responsabilizar gestores pelo\ncumprimento de metas.\n\n1.4 Direção estratégica\n1. Reorganizar a administração estadual para que cada órgão tenha missão clara, metas e\nresponsabilidades definidas.\n2. Priorizar saúde, educação, segurança e infraestrutura, assegurando que a gestão fiscal\nsustente os serviços essenciais.\n3. Fortalecer a iniciativa privada, a industrialização e a geração de empregos, reduzindo\nbarreiras burocráticas.\n4. Regionalizar serviços e investimentos, aproximando o Estado dos 139 municípios.\n5. Implantar transparência ativa, indicadores públicos e avaliação permanente.\n\n1.5 Resultado esperado\nAo final do mandato, o Tocantins deverá possuir uma administração mais enxuta, integrada\ne previsível; serviços públicos com metas mensuráveis; maior capacidade de investimento;\nambiente econômico mais competitivo; e mecanismos claros para que a sociedade acompanhe\no cumprimento dos compromissos.\n\nEleições 2026 | Página 4"
+          },
+          {
+            "id": "capitulo-2-modelo-de-governo",
+            "titulo": "CAPÍTULO 2 – MODELO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 2 – MODELO DE GOVERNO\nPlanejar, executar, medir, corrigir e prestar contas\nO modelo de governo é o elo entre propostas e resultados. Sem método, até boas ideias se\nperdem em burocracia, descontinuidade e improvisação. A administração será organizada para\ntransformar prioridades políticas em planos de trabalho, orçamento, responsáveis, prazos e\nindicadores.\nA gestão será orientada pelo princípio de que o Estado existe para servir ao cidadão. Isso\nsignifica simplificar procedimentos, reduzir o tempo de resposta, integrar secretarias,\nprofissionalizar decisões e avaliar o impacto real de cada programa.\n\n2.1 Governança estratégica\nSerá instituído um núcleo central de governança responsável por acompanhar as prioridades\ndo governo, integrar secretarias e identificar obstáculos de execução. As reuniões de\nmonitoramento não se limitarão à apresentação de atividades; deverão analisar metas, prazos,\nriscos e soluções.\nCada secretário assumirá compromissos formais de desempenho. Projetos estratégicos\nterão responsável definido, cronograma, estimativa de custo, fonte de recursos, indicadores e\nrelatório periódico.\n\n2.2 Gestão por resultados\n•\n•\n•\n•\n•\n\nMetas anuais para cada secretaria e órgão.\nIndicadores de qualidade, produtividade, custo e satisfação do cidadão.\nPainel público de acompanhamento das prioridades.\nRevisão periódica de programas que não apresentem resultados.\nPrestação de contas baseada em entregas, e não apenas em despesas executadas.\n\n2.3 Planejamento e orçamento\nO orçamento deverá refletir as prioridades do plano. Programas sem aderência às metas\nserão revistos, enquanto ações com alto impacto social e econômico receberão prioridade. O\nplanejamento físico e financeiro será integrado para evitar obras iniciadas sem recursos,\ncontratos mal dimensionados e projetos que não chegam à população.\nA elaboração do PPA 2028–2031 será uma etapa decisiva para converter este plano em\nprogramas, metas e indicadores legais.\n\n2.4 Participação social\nO diálogo com municípios, servidores, setor produtivo, universidades e organizações sociais\nserá incorporado ao processo de planejamento. A participação não substituirá a responsabilidade\ndo governo de decidir, mas permitirá decisões mais informadas e políticas mais aderentes às\nrealidades regionais.\n\nEleições 2026 | Página 5"
+          },
+          {
+            "id": "2-5-compromissos-do-modelo",
+            "titulo": "2.5 Compromissos do modelo",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "2.5 Compromissos do modelo\n•\n•\n•\n•\n•\n\nSecretarias com objetivos claros e estrutura compatível com suas atribuições.\nDecisões baseadas em dados e avaliação de impacto.\nCoordenação central das prioridades.\nCorreção rápida de atrasos e desvios.\nTransparência permanente dos resultados.\n\nEleições 2026 | Página 6"
+          },
+          {
+            "id": "capitulo-3",
+            "titulo": "CAPÍTULO 3 –",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 3 –\nADMINISTRATIVA\n\nRESPONSABILIDADE\n\nFISCAL\n\nE\n\nREFORMA\n\nReduzir desperdícios, reorganizar a máquina e recuperar capacidade de investimento\nA responsabilidade fiscal é condição para que o governo cumpra compromissos sociais. Um\nEstado que perde controle sobre despesas, contratos e folha de pessoal reduz sua capacidade\nde investir, atrasa fornecedores e compromete serviços essenciais.\nA reforma administrativa proposta não será apenas uma redução nominal de secretarias.\nSerá uma revisão de funções, processos, contratos, cargos e formas de atendimento. A meta\nanunciada de reduzir a estrutura para aproximadamente 18 secretarias representa uma direção:\nmenos fragmentação e maior capacidade de coordenação.\n\n3.1 Diagnóstico fiscal e administrativo\nNos primeiros meses, o governo realizará diagnóstico da situação financeira, da folha, dos\ncontratos, das obras, das dívidas, dos restos a pagar e das obrigações previdenciárias. O objetivo\nserá conhecer a realidade antes de assumir novos compromissos e identificar despesas que\npodem ser eliminadas ou renegociadas.\nA revisão administrativa deverá mapear sobreposições, estruturas sem entrega mensurável,\nexcesso de cargos comissionados e processos que podem ser digitalizados.\n\n3.2 Diretrizes da reforma\n•\n•\n•\n•\n•\n•\n\nRedução e reorganização das secretarias, preservando áreas essenciais.\nRevisão de cargos comissionados e funções de confiança.\nCentralização de atividades-meio, como compras, patrimônio, tecnologia e gestão de\ncontratos.\nFortalecimento das carreiras técnicas e valorização do mérito.\nConcursos públicos planejados para substituir vínculos precários em áreas essenciais.\nRevisão de contratos terceirizados e despesas continuadas.\n\n3.3 Controle da folha\nA política de pessoal observará o limite legal e buscará manter a despesa com pessoal em\npatamar compatível com a capacidade financeira do Estado. A meta política de aproximar a folha\nde até 49% da receita corrente líquida deverá ser perseguida com planejamento, sem medidas\nimprovisadas que prejudiquem serviços ou direitos.\nConcursos serão realizados de forma vinculada a estudos de necessidade, impacto financeiro\ne substituição gradual de contratações temporárias.\n\n3.4 Compras, contratos e obras\n•\n•\n•\n\nCompras eletrônicas e maior competição entre fornecedores.\nBanco de preços e análise de custos.\nGestores e fiscais de contratos capacitados.\nEleições 2026 | Página 7"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\nInventário de obras paralisadas e critérios transparentes para retomada.\nProibição de iniciar obras sem projeto, licenças, orçamento e fonte de recursos.\n\n3.5 Resultado esperado\nA reforma deverá liberar recursos para saúde, educação, segurança e infraestrutura, reduzir\ntempo de decisão, melhorar a qualidade dos contratos e restabelecer a capacidade de\ninvestimento do Estado.\n\nEleições 2026 | Página 8"
+          },
+          {
+            "id": "capitulo-4-governo-digital-transparencia-e-integridade",
+            "titulo": "CAPÍTULO 4 – GOVERNO DIGITAL, TRANSPARÊNCIA E INTEGRIDADE",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 4 – GOVERNO DIGITAL, TRANSPARÊNCIA E INTEGRIDADE\nServiços simples, dados integrados e prevenção da corrupção\nA transformação digital não se resume a converter formulários em arquivos eletrônicos. Ela\nexige redesenhar serviços, eliminar exigências desnecessárias e permitir que o cidadão resolva\ndemandas sem deslocamentos, filas ou repetição de documentos.\nTransparência e integridade serão tratadas como elementos de gestão. Quanto mais claros\nforem os processos, contratos, indicadores e responsáveis, menor será o espaço para decisões\narbitrárias, desperdício e corrupção.\n\n4.1 Plataforma única de serviços\nO governo buscará reunir serviços estaduais em uma plataforma única, com identidade\ndigital, acompanhamento de solicitações e integração entre órgãos. O cidadão não deverá\napresentar ao Estado informações que o próprio Estado já possui, salvo quando houver exigência\nlegal ou necessidade de atualização.\n\n4.2 Dados para gestão\n•\n•\n•\n•\n•\n\nIntegração de bases de saúde, educação, segurança, fazenda, pessoal e patrimônio.\nPainéis de acompanhamento em tempo real para gestores.\nPolítica de qualidade e proteção de dados.\nUso de análise de dados para identificar filas, desperdícios e riscos.\nPublicação de indicadores em formato acessível.\n\n4.3 Transparência ativa\nO Portal da Transparência será ampliado para apresentar contratos, aditivos, execução de\nobras, filas reguladas, metas, indicadores, despesas e resultados. A informação deverá ser\ncompreensível ao cidadão, não apenas tecnicamente disponível.\nRelatórios periódicos de desempenho mostrarão o que foi planejado, o que foi executado,\nquais obstáculos ocorreram e quais providências foram adotadas.\n\n4.4 Integridade\n•\n•\n•\n•\n•\n•\n\nPrograma de integridade em todas as secretarias.\nMapeamento de riscos de fraude e corrupção.\nFortalecimento da Controladoria e das auditorias internas.\nProteção institucional para denúncias de boa-fé.\nRevisão de processos de contratação vulneráveis.\nResponsabilização administrativa de agentes e empresas quando houver irregularidades.\n\n4.5 Modernização do Detran\nO Detran será tratado como serviço ao cidadão, e não como fonte de burocracia. A proposta\ninclui revisão de terceirizações, simplificação dos procedimentos digitais, eliminação de\n\nEleições 2026 | Página 9"
+          },
+          {
+            "id": "cobrancas-sem-justificativa-operacional-e-avaliacao-da-taxa-de-licenciam",
+            "titulo": "cobranças sem justificativa operacional e avaliação da taxa de licenciamento, considerando que",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "cobranças sem justificativa operacional e avaliação da taxa de licenciamento, considerando que\no documento passou a ser eletrônico.\nA revisão deverá preservar a segurança do trânsito e a sustentabilidade financeira dos\nserviços, ao mesmo tempo em que reduz custos e deslocamentos para o usuário.\n\nEleições 2026 | Página 10"
+          },
+          {
+            "id": "capitulo-5-saude",
+            "titulo": "CAPÍTULO 5 – SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 5 – SAÚDE\nRegionalizar, ampliar capacidade e reduzir filas\nA saúde será prioridade de governo. O problema não é apenas a falta de recursos; é a\ndificuldade de transformar orçamento em atendimento no tempo adequado. Filas, deslocamentos,\nsobrecarga do Hospital Geral de Palmas, falta de especialistas, contratos terceirizados e gestão\nfragmentada exigem uma estratégia integrada.\nO plano propõe fortalecer hospitais regionais, ampliar média e alta complexidade e organizar\na rede de forma que o cidadão seja atendido o mais próximo possível de sua residência.\n\n5.1 Regionalização\nOs hospitais regionais de Dianópolis, Paraíso, Porto Nacional, Gurupi e Augustinópolis serão\nprogressivamente fortalecidos para ampliar sua capacidade de média e alta complexidade. A\nestratégia busca desconcentrar atendimentos, reduzir viagens e diminuir a sobrecarga da capital.\nA expansão deverá considerar perfil epidemiológico, população de referência, disponibilidade\nde profissionais, infraestrutura e sustentabilidade dos serviços.\n\n5.2 Rede hospitalar\n•\n•\n•\n•\n•\n\nModernização de equipamentos e instalações.\nAmpliação de leitos, UTIs e salas cirúrgicas conforme diagnóstico regional.\nProtocolos de gestão de leitos e alta hospitalar.\nManutenção preventiva de equipamentos.\nMetas de produtividade, qualidade e segurança do paciente.\n\n5.3 Filas\nSerá realizado um censo das filas de consultas, exames, cirurgias e tratamentos. Cadastros\nduplicados, desatualizados ou sem indicação clínica serão revisados. A ordem de atendimento\nseguirá critérios técnicos e transparentes, com acompanhamento pelo paciente.\nMutirões poderão ser utilizados para reduzir passivos, mas a solução permanente será o\naumento da capacidade regular e a melhoria da regulação.\n\n5.4 Contratos e terceirizações\nContratos de UTIs, exames, cirurgias e serviços hospitalares serão avaliados quanto a custo,\nentrega, qualidade e necessidade. O Estado poderá rescindir ou remodelar contratos que não\napresentem resultado adequado, sempre com segurança assistencial e jurídica.\nO objetivo é garantir que a terceirização seja instrumento complementar e não substitua a\ncapacidade de gestão do Estado.\n\n5.5 Profissionais e concursos\n•\n•\n\nConcursos planejados para áreas críticas.\nSubstituição gradual de vínculos temporários quando houver necessidade permanente.\nEleições 2026 | Página 11"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n\nFormação continuada e protocolos clínicos.\nGestão de escalas e produtividade.\nMelhoria das condições de trabalho e segurança dos profissionais.\n\n5.6 Tecnologia e atenção primária\nTelemedicina, prontuário eletrônico, integração de exames e regulação digital serão\nampliados. Em parceria com municípios, o Estado apoiará a atenção primária, pois a prevenção\ne o acompanhamento de doenças crônicas reduzem internações e melhoram a qualidade de vida.\n\n5.7 Metas e indicadores\n•\n•\n•\n•\n•\n•\n\nTempo médio para consultas, exames e cirurgias.\nTaxa de ocupação e permanência hospitalar.\nNúmero de procedimentos realizados por região.\nTaxa de cancelamento de cirurgias.\nSatisfação dos usuários e segurança do paciente.\nPercentual de serviços regionalizados.\n\nEleições 2026 | Página 12"
+          },
+          {
+            "id": "capitulo-6-seguranca-publica",
+            "titulo": "CAPÍTULO 6 – SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 6 – SEGURANÇA PÚBLICA\nPresença do Estado, inteligência e valorização das forças\nA extensão territorial, as rodovias, as áreas rurais e a atuação de organizações criminosas\nexigem uma política própria para o Tocantins. A segurança não será conduzida apenas por\noperações pontuais, mas por planejamento, inteligência, integração e presença permanente.\nO plano prevê expansão dos efetivos de forma responsável, concursos públicos,\nmodernização de equipamentos, fortalecimento da investigação e ampliação da presença da\nPolícia Civil nos municípios.\n\n6.1 Efetivos e presença territorial\nA meta política anunciada de ampliar significativamente os efetivos — incluindo até 5 mil\nnovos policiais militares e 2 mil policiais civis ao longo do planejamento — deverá ser executada\nem etapas, conforme estudos de impacto, formação e capacidade orçamentária.\nA prioridade será ocupar vagas existentes, substituir déficits críticos e ampliar a presença nos\nmunicípios, com atenção especial às delegacias, ao policiamento ostensivo e às áreas rurais.\n\n6.2 Polícia Civil e investigação\n•\n•\n•\n•\n•\n\nFortalecer delegacias e unidades regionais.\nAmpliar equipes de investigação e inteligência.\nModernizar sistemas de inquérito e gestão de provas.\nPriorizar crimes violentos, organizações criminosas, corrupção e crimes patrimoniais.\nMelhorar a taxa de esclarecimento de crimes.\n\n6.3 Polícia Militar\n•\n•\n•\n•\n•\n\nRecomposição do efetivo operacional.\nPlanejamento do policiamento por dados de criminalidade.\nEquipamentos, comunicação e viaturas adequados.\nTreinamento continuado e protocolos de atuação.\nPoliciamento comunitário e aproximação com a sociedade.\n\n6.4 Polícia Científica, Penal e Bombeiros\nA perícia será fortalecida porque investigações dependem de provas técnicas. A Polícia Penal\nreceberá estrutura e capacitação para segurança das unidades e prevenção da atuação de\nfacções. O Corpo de Bombeiros terá planejamento de expansão, defesa civil e resposta a\nincêndios e emergências.\n\n6.5 Inteligência e tecnologia\n•\n•\n•\n•\n\nCentro integrado de inteligência.\nVideomonitoramento e leitura de placas em corredores estratégicos.\nGeorreferenciamento de ocorrências.\nCompartilhamento de informações entre forças.\nEleições 2026 | Página 13"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAnálise de vínculos financeiros e patrimoniais do crime organizado.\n\n6.6 Indicadores\n•\n•\n•\n•\n•\n•\n\nTaxas de homicídio, roubo e violência contra a mulher.\nTempo de resposta às ocorrências.\nTaxa de esclarecimento de crimes prioritários.\nNúmero de municípios com presença operacional.\nDisponibilidade de viaturas e equipamentos.\nPercepção de segurança da população.\n\nEleições 2026 | Página 14"
+          },
+          {
+            "id": "capitulo-7-educacao",
+            "titulo": "CAPÍTULO 7 – EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 7 – EDUCAÇÃO\nAprendizagem, valorização profissional e preparação para o futuro\nA educação será avaliada pelo que os estudantes aprendem e pelas oportunidades que\nconseguem construir. O acesso à escola é fundamental, mas insuficiente se não houver\nalfabetização, aprendizagem, permanência e conexão com o ensino superior, a formação\nprofissional e o mercado de trabalho.\nA estratégia combina recuperação da aprendizagem, valorização dos profissionais, gestão\nescolar, educação profissional e tecnologia.\n\n7.1 Alfabetização e aprendizagem\nO governo estabelecerá metas de alfabetização na idade adequada e programas de\nrecomposição para estudantes com defasagem. Avaliações diagnósticas orientarão intervenções,\nformação docente e materiais de apoio.\nAs escolas com maiores dificuldades receberão acompanhamento intensivo, sem punição\nautomática, mas com apoio técnico e responsabilização pela execução dos planos de melhoria.\n\n7.2 Ensino médio\n•\n•\n•\n•\n•\n\nRedução da evasão e busca ativa de estudantes.\nOrientação de projetos de vida.\nPreparação para exames, ensino superior e mercado de trabalho.\nFortalecimento de competências em matemática, língua portuguesa, ciência e tecnologia.\nParcerias para estágios e formação profissional.\n\n7.3 Educação profissional\nOs cursos técnicos serão alinhados às vocações regionais: agroindústria, logística, comércio,\ntecnologia, energia, turismo, saúde e serviços. A expansão deve considerar demanda real do\nmercado e empregabilidade, evitando cursos desconectados das oportunidades locais.\n\n7.4 Profissionais da educação\n•\n•\n•\n•\n•\n\nFormação continuada vinculada às necessidades de aprendizagem.\nValorização da carreira e do mérito.\nRedução de burocracia para professores e gestores.\nAmbiente escolar seguro.\nGestão profissional das escolas.\n\n7.5 Infraestrutura e tecnologia\nSerá feito diagnóstico físico das escolas, com prioridade para segurança, climatização,\nconectividade, laboratórios, bibliotecas, acessibilidade e manutenção. A tecnologia será utilizada\ncomo apoio ao professor, e não como substituição da relação pedagógica.\n\nEleições 2026 | Página 15"
+          },
+          {
+            "id": "7-6-indicadores",
+            "titulo": "7.6 Indicadores",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "7.6 Indicadores\n•\n•\n•\n•\n•\n•\n•\n\nAlfabetização na idade adequada.\nDesempenho em avaliações.\nTaxas de aprovação, abandono e conclusão.\nFrequência escolar.\nMatrículas e conclusão na educação profissional.\nParticipação de professores em formação.\nCondições de infraestrutura escolar.\n\nEleições 2026 | Página 16"
+          },
+          {
+            "id": "capitulo-8-desenvolvimento",
+            "titulo": "CAPÍTULO 8 – DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 8 – DESENVOLVIMENTO\nCOMÉRCIO E SERVIÇOS\n\nECONÔMICO,\n\nINDÚSTRIA,\n\nEmprego, investimento e agregação de valor\nO desenvolvimento econômico sustentável é a base para ampliar renda, reduzir dependência\nde transferências e financiar serviços públicos. O Tocantins precisa produzir mais valor dentro de\nseu território, industrializando matérias-primas e fortalecendo comércio, serviços, logística e\ninovação.\nO papel do governo será criar ambiente favorável: segurança jurídica, infraestrutura,\nlicenciamento eficiente, tributação competitiva, qualificação profissional e atendimento\ncoordenado ao investidor.\n\n8.1 Ambiente de negócios\n•\n•\n•\n•\n•\n\nRevisão de licenças e procedimentos.\nPrazos claros para decisões administrativas.\nServiços digitais para empresas.\nConsulta prévia integrada.\nAplicação de análise de risco para simplificar atividades de baixo impacto.\n\n8.2 Atração de investimentos\nSerá estruturada uma política permanente de atração de empresas, com carteira de projetos,\náreas disponíveis, infraestrutura, incentivos, mão de obra e cadeias produtivas. O\nacompanhamento não terminará no anúncio: haverá apoio à implantação e solução de\nobstáculos.\nOs incentivos fiscais deverão ser condicionados a investimentos, empregos, prazo,\ntransparência e avaliação de resultados.\n\n8.3 Industrialização\nA prioridade será agregar valor à produção agropecuária, mineral, florestal e energética. O\nEstado buscará atrair frigoríficos, indústrias de alimentos, processamento de grãos, laticínios,\npescado, insumos, equipamentos, centros de distribuição e empresas de tecnologia.\nA industrialização também exige energia confiável, logística, qualificação e segurança\njurídica.\n\n8.4 Tributação e competitividade\nA proposta de reduzir a carga sobre energia elétrica, internet e combustíveis deverá ser\nconstruída com estudos de impacto, transição e medidas de compensação. O objetivo é tornar o\nEstado mais competitivo sem comprometer serviços essenciais.\nA simplificação tributária, o atendimento ao contribuinte e a redução de litígios serão\nprioridades.\n\nEleições 2026 | Página 17"
+          },
+          {
+            "id": "8-5-micro-e-pequenas-empresas",
+            "titulo": "8.5 Micro e pequenas empresas",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "8.5 Micro e pequenas empresas\n•\n•\n•\n•\n•\n\nCompras governamentais com participação de negócios locais.\nCapacitação e acesso a crédito.\nAmbiente digital para abertura e regularização.\nApoio à inovação e ao comércio eletrônico.\nRedução de burocracias.\n\n8.6 Indicadores\n•\n•\n•\n•\n•\n•\n•\n\nEmpregos formais criados.\nInvestimentos privados implantados.\nTempo de abertura e licenciamento.\nParticipação da indústria na economia.\nExportações e agregação de valor.\nSobrevivência de empresas.\nRenda média do trabalhador.\n\nEleições 2026 | Página 18"
+          },
+          {
+            "id": "capitulo-9-agricultura-pecuaria-e-agroindustria",
+            "titulo": "CAPÍTULO 9 – AGRICULTURA, PECUÁRIA E AGROINDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 9 – AGRICULTURA, PECUÁRIA E AGROINDÚSTRIA\nProduzir, industrializar e desenvolver o interior\nO agronegócio é uma das maiores forças econômicas do Tocantins. O próximo passo é\nampliar produtividade, sustentabilidade e agregação de valor. O crescimento da produção deve\ngerar agroindústrias, empregos, arrecadação e desenvolvimento para os municípios.\nO plano integra grandes produtores, agricultura familiar, cooperativas, pesquisa, defesa\nagropecuária, infraestrutura, regularização fundiária e mercados.\n\n9.1 Produtividade e inovação\n•\n•\n•\n•\n•\n\nAgricultura de precisão e manejo eficiente.\nPesquisa aplicada e transferência de tecnologia.\nRecuperação de pastagens.\nMelhoria genética e produtividade pecuária.\nUso responsável de água e solo.\n\n9.2 Agricultura familiar\nA agricultura familiar receberá assistência técnica, apoio à organização, comercialização e\nacesso a programas de compras públicas. O objetivo é aumentar renda e produtividade, e não\nlimitar a política à distribuição de insumos sem acompanhamento.\n\n9.3 Defesa agropecuária\nA sanidade animal e vegetal é patrimônio econômico. O Estado fortalecerá vigilância,\nlaboratórios, fiscalização, educação sanitária e resposta rápida a riscos, em diálogo com\nprodutores e órgãos federais.\n\n9.4 Irrigação e recursos hídricos\nProjetos de irrigação serão avaliados por viabilidade técnica, disponibilidade hídrica, impacto\nambiental e retorno econômico. A segurança jurídica das outorgas e licenças será essencial para\natrair investimentos e evitar conflitos.\n\n9.5 Agroindustrialização\n•\n•\n•\n•\n•\n\nProcessamento de grãos, carnes, leite, pescado, frutas e fibras.\nCooperativas e plantas de pequeno e médio porte.\nInspeção sanitária eficiente.\nParques e distritos agroindustriais.\nLogística e armazenamento.\n\n9.6 Regularização fundiária\nA regularização será tratada como instrumento de segurança jurídica, acesso ao crédito e\nordenamento territorial. Processos deverão ser digitalizados, transparentes e integrados com\ncadastros ambientais e fundiários.\nEleições 2026 | Página 19"
+          },
+          {
+            "id": "9-7-indicadores",
+            "titulo": "9.7 Indicadores",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "9.7 Indicadores\n•\n•\n•\n•\n•\n•\n•\n\nProdutividade agrícola e pecuária.\nCapacidade de armazenagem.\nEmpregos na agroindústria.\nValor agregado da produção.\nProdutores atendidos por assistência técnica.\nRegularizações concluídas.\nIndicadores sanitários.\n\nEleições 2026 | Página 20"
+          },
+          {
+            "id": "capitulo-10",
+            "titulo": "CAPÍTULO 10",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 10\nSANEAMENTO\n\n–\n\nINFRAESTRUTURA,\n\nLOGÍSTICA,\n\nENERGIA\n\nE\n\nIntegrar regiões e reduzir custos de produção e de vida\nA infraestrutura conecta pessoas, mercados e serviços públicos. Rodovias ruins elevam\npreços, reduzem competitividade e dificultam acesso à saúde e à educação. Falhas de energia,\nsaneamento e conectividade limitam investimentos e qualidade de vida.\nO governo deverá priorizar manutenção, conclusão de obras e projetos com impacto regional,\nevitando a dispersão de recursos em obras sem planejamento.\n\n10.1 Rodovias\nSerá criado um programa permanente de conservação, com inventário da malha,\nclassificação do estado das vias e prioridades técnicas. A manutenção preventiva reduz custos e\nevita reconstruções mais caras.\nObras novas serão priorizadas por fluxo, segurança, produção, acesso a serviços e\nintegração regional.\n\n10.2 Logística multimodal\n•\n•\n•\n•\n•\n\nArticulação com Ferrovia Norte-Sul.\nMelhoria de acessos rodoviários a terminais.\nEstudos de plataformas logísticas.\nIntegração com aeroportos e corredores de exportação.\nPlanejamento para aproveitamento responsável de hidrovias quando viável.\n\n10.3 Energia\nO Estado atuará junto à regulação e à concessionária para melhorar qualidade, expansão e\natendimento. A disponibilidade de energia deverá orientar polos industriais, projetos de irrigação\ne novos empreendimentos.\nA política de redução da carga tributária sobre energia será vinculada à responsabilidade\nfiscal e à competitividade.\n\n10.4 Saneamento\nO governo apoiará municípios e prestadores na expansão de água, esgoto, resíduos sólidos\ne drenagem. Saneamento será tratado como política de saúde, ambiente e desenvolvimento\nurbano.\n\n10.5 Conectividade\n•\n•\n•\n•\n\nInternet de qualidade em escolas, hospitais e unidades públicas.\nExpansão em áreas rurais e regiões desatendidas.\nInfraestrutura para serviços digitais.\nParcerias para redes de alta capacidade.\nEleições 2026 | Página 21"
+          },
+          {
+            "id": "10-6-obras-publicas",
+            "titulo": "10.6 Obras públicas",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "10.6 Obras públicas\n•\n•\n•\n•\n•\n\nInventário de obras paralisadas.\nCritérios de retomada por impacto e viabilidade.\nProjetos executivos antes da contratação.\nTransparência física e financeira.\nManutenção dos ativos existentes.\n\n10.7 Indicadores\n•\n•\n•\n•\n•\n•\n•\n\nQuilômetros conservados e recuperados.\nÍndice de condição das rodovias.\nObras concluídas.\nCobertura de água e esgoto.\nQualidade e continuidade da energia.\nCobertura de conectividade.\nRedução de custos logísticos.\n\nEleições 2026 | Página 22"
+          },
+          {
+            "id": "capitulo-11-desenvolvimento-social-habitacao-e-inclusao",
+            "titulo": "CAPÍTULO 11 – DESENVOLVIMENTO SOCIAL, HABITAÇÃO E INCLUSÃO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 11 – DESENVOLVIMENTO SOCIAL, HABITAÇÃO E INCLUSÃO\nProteção para quem precisa e autonomia para quem pode avançar\nA política social deverá proteger famílias vulneráveis e, ao mesmo tempo, criar condições\npara autonomia. Assistência sem integração com educação, saúde, qualificação e trabalho tende\na administrar a vulnerabilidade, em vez de superá-la.\nO plano propõe coordenação entre políticas, fortalecimento dos municípios e atendimento\nprioritário a crianças, mulheres, idosos, pessoas com deficiência, juventude e comunidades\nvulneráveis.\n\n11.1 Assistência social\n•\n•\n•\n•\n•\n\nFortalecimento da rede de proteção.\nIntegração de cadastros e serviços.\nAtendimento a famílias em risco.\nCapacitação das equipes municipais.\nAcompanhamento de resultados.\n\n11.2 Inclusão produtiva\nProgramas de qualificação serão vinculados a oportunidades reais de trabalho,\nempreendedorismo e cadeias produtivas regionais. A política deverá acompanhar o beneficiário\naté sua inserção, evitando cursos sem conexão com o mercado.\n\n11.3 Habitação\nO déficit habitacional será enfrentado por parcerias com União, municípios, setor privado e\ninstituições financeiras. A política não se limitará à construção de unidades: incluirá regularização\nfundiária, infraestrutura, saneamento, mobilidade e equipamentos públicos.\nA experiência anterior de viabilização de moradias populares será utilizada como referência\nde capacidade de articulação.\n\n11.4 Mulheres\n•\n•\n•\n•\n•\n\nPrevenção e enfrentamento da violência.\nRede de atendimento e proteção.\nQualificação e autonomia econômica.\nSaúde integral.\nParticipação nas decisões públicas.\n\n11.5 Juventude\nA juventude será tratada como protagonista. Educação profissional, primeiro emprego,\nempreendedorismo, esporte, cultura, tecnologia e participação política comporão uma agenda\nintegrada.\n\nEleições 2026 | Página 23"
+          },
+          {
+            "id": "11-6-pessoa-idosa-e-pessoas-com-deficiencia",
+            "titulo": "11.6 Pessoa idosa e pessoas com deficiência",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "11.6 Pessoa idosa e pessoas com deficiência\n•\n•\n•\n•\n•\n\nAcessibilidade física e digital.\nSaúde e atendimento especializado.\nInclusão no trabalho e na educação.\nProteção contra violência e abandono.\nEnvelhecimento ativo e convivência comunitária.\n\n11.7 Povos indígenas e comunidades tradicionais\nAs políticas respeitarão identidade, direitos, consulta e especificidades territoriais, com\natenção à saúde, educação, proteção ambiental e desenvolvimento sustentável. O Estado atuará\nde forma cooperativa com órgãos federais e lideranças.\n\n11.8 Indicadores\n•\n•\n•\n•\n•\n•\n\nFamílias acompanhadas e desligadas por autonomia.\nBeneficiários inseridos no trabalho.\nMoradias entregues e regularizadas.\nCobertura de serviços socioassistenciais.\nAcessibilidade das unidades públicas.\nAtendimentos a vítimas de violência.\n\nEleições 2026 | Página 24"
+          },
+          {
+            "id": "capitulo-12-meio-ambiente-recursos-hidricos-turismo",
+            "titulo": "CAPÍTULO 12 – MEIO AMBIENTE, RECURSOS HÍDRICOS, TURISMO,",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 12 – MEIO AMBIENTE, RECURSOS HÍDRICOS, TURISMO,\nCULTURA E ESPORTE\nPreservar, valorizar e transformar patrimônio em oportunidades\nO patrimônio ambiental e cultural do Tocantins deve ser protegido e utilizado de forma\nresponsável para gerar desenvolvimento. Meio ambiente e produção não serão tratados como\nadversários: o objetivo é segurança jurídica, licenciamento eficiente, prevenção de danos e\nvalorização dos ativos naturais.\nTurismo, cultura e esporte também são políticas econômicas e sociais. Quando planejados,\ngeram empregos, identidade, saúde e inclusão.\n\n12.1 Gestão ambiental\n•\n•\n•\n•\n•\n\nLicenciamento com prazos, critérios técnicos e análise de risco.\nMonitoramento e fiscalização inteligente.\nPrevenção e combate a incêndios.\nRecuperação de nascentes e áreas prioritárias.\nEducação ambiental e produção sustentável.\n\n12.2 Recursos hídricos\nA gestão da água será baseada em bacias, dados e participação dos usuários.\nAbastecimento humano, produção, energia e preservação deverão ser conciliados por\nplanejamento, outorga e monitoramento.\n\n12.3 Turismo\nJalapão, Cantão, Ilha do Bananal, rios, lagos, serras, turismo religioso, cultural e de eventos\nformam uma carteira diversificada. O desafio é combinar promoção, infraestrutura, qualificação,\nsegurança e preservação.\nO governo apoiará rotas regionais, calendário de eventos e integração entre destinos.\n\n12.4 Cultura\n•\n•\n•\n•\n•\n\nValorização de artistas e manifestações regionais.\nPreservação do patrimônio histórico.\nEditais transparentes.\nFormação cultural e economia criativa.\nDescentralização das ações.\n\n12.5 Esporte\nO esporte será integrado à educação, saúde e prevenção social. A prioridade será o esporte\nde base, comunitário e escolar, sem excluir apoio transparente a atletas de rendimento.\n\nEleições 2026 | Página 25"
+          },
+          {
+            "id": "12-6-indicadores",
+            "titulo": "12.6 Indicadores",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "12.6 Indicadores\n•\n•\n•\n•\n•\n•\n\nTempo de licenciamento e cumprimento de condicionantes.\nÁreas recuperadas e incêndios combatidos.\nFluxo turístico e empregos do setor.\nProjetos culturais apoiados.\nParticipação em atividades esportivas.\nReceita e permanência média dos visitantes.\n\nEleições 2026 | Página 26"
+          },
+          {
+            "id": "capitulo-13-plano-dos-100-primeiros-dias",
+            "titulo": "CAPÍTULO 13 – PLANO DOS 100 PRIMEIROS DIAS",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 13 – PLANO DOS 100 PRIMEIROS DIAS\nOrganizar o governo e iniciar as prioridades\nOs primeiros 100 dias serão utilizados para assumir controle da administração, conhecer a\nrealidade financeira, definir responsabilidades e iniciar medidas que não dependam de longos\nciclos de contratação.\nO período não será usado como justificativa para inércia. Diagnóstico e execução ocorrerão\nsimultaneamente.\n\n13.1 Governança\n•\n•\n•\n•\n•\n\nInstalação do núcleo de governança.\nMetas iniciais para secretarias.\nCalendário de monitoramento.\nPainel de projetos prioritários.\nRevisão da estrutura administrativa.\n\n13.2 Finanças e contratos\n•\n•\n•\n•\n•\n\nDiagnóstico fiscal e da folha.\nInventário de contratos.\nLevantamento de obras paralisadas.\nPlano de redução de desperdícios.\nRevisão de despesas continuadas.\n\n13.3 Saúde\n•\n•\n•\n•\n•\n\nCenso das filas.\nDiagnóstico de leitos, UTIs, equipamentos e escalas.\nPlano de regionalização.\nRevisão dos contratos críticos.\nComitê de gestão da saúde.\n\n13.4 Segurança e educação\n•\n•\n•\n•\n•\n\nDiagnóstico de efetivos, viaturas e unidades.\nPlano de concursos e formação.\nMapeamento da aprendizagem e infraestrutura escolar.\nPlano de alfabetização e recuperação.\nDefinição das prioridades tecnológicas.\n\n13.5 Economia e serviços ao cidadão\n•\n•\n•\n•\n\nAgenda com setor produtivo.\nRevisão de licenças e burocracias.\nInício da modernização do Detran.\nPlano de atração de investimentos.\nEleições 2026 | Página 27"
+          },
+          {
+            "id": "pagina-28",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAmpliação do Portal da Transparência.\n\n13.6 Entregas esperadas\nAo final dos 100 dias, o governo deverá possuir diagnóstico confiável, estrutura reorganizada\nem andamento, prioridades orçamentárias definidas, painéis de acompanhamento, planos\nsetoriais iniciais e primeiras medidas de simplificação e transparência implementadas.\n\nEleições 2026 | Página 28"
+          },
+          {
+            "id": "capitulo-14-plano-de-metas-2027-2030",
+            "titulo": "CAPÍTULO 14 – PLANO DE METAS 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 14 – PLANO DE METAS 2027–2030\nCompromissos mensuráveis para o mandato\nO plano de metas traduz as diretrizes em resultados que possam ser acompanhados. Os\nvalores de linha de base e metas numéricas definitivas serão estabelecidos após auditoria inicial\ne incorporados ao PPA e aos planos setoriais.\nA ausência de dados confiáveis não será usada para evitar metas. Onde não houver\ninformação adequada, o primeiro compromisso será construir a linha de base.\n\n14.1 Saúde\n•\n•\n•\n•\n•\n\nReduzir tempos médios de espera.\nAmpliar procedimentos regionalizados.\nMelhorar ocupação e giro de leitos.\nExpandir prontuário e regulação digitais.\nAumentar satisfação dos usuários.\n\n14.2 Segurança\n•\n•\n•\n•\n•\n\nReduzir crimes violentos.\nAmpliar taxa de esclarecimento.\nDiminuir tempo de resposta.\nRecompor efetivos conforme planejamento.\nExpandir inteligência e tecnologia.\n\n14.3 Educação\n•\n•\n•\n•\n•\n\nElevar alfabetização e aprendizagem.\nReduzir evasão.\nAmpliar educação profissional.\nMelhorar infraestrutura.\nFortalecer formação docente.\n\n14.4 Economia e agricultura\n•\n•\n•\n•\n•\n\nGerar empregos formais.\nAtrair investimentos.\nAmpliar industrialização.\nReduzir tempo de licenciamento.\nAumentar agregação de valor no campo.\n\n14.5 Infraestrutura e social\n•\n•\n•\n•\n\nMelhorar a condição das rodovias.\nConcluir obras prioritárias.\nAmpliar saneamento e conectividade.\nExpandir habitação e regularização.\nEleições 2026 | Página 29"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAumentar inclusão produtiva.\n\n14.6 Gestão\n•\n•\n•\n•\n•\n\nReduzir estruturas e burocracias.\nAmpliar serviços digitais.\nManter equilíbrio fiscal.\nPublicar indicadores.\nRevisar programas por desempenho.\n\n14.7 Prestação de contas\nO governo publicará relatórios periódicos com metas, resultados, justificativas e providências.\nO acompanhamento será utilizado para corrigir políticas, e não apenas para comunicação.\n\nEleições 2026 | Página 30"
+          },
+          {
+            "id": "capitulo-15",
+            "titulo": "CAPÍTULO 15 –",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 15 –\nTOCANTINENSES\n\nCONCLUSÃO\n\nE\n\nCOMPROMISSO\n\nCOM\n\nOS\n\nPlanejamento, coragem e resultados\nEste plano apresenta uma forma de governar baseada em responsabilidade, gestão e\nrespeito ao cidadão. O Tocantins não precisa escolher entre crescimento econômico e políticas\nsociais, nem entre austeridade e investimento. Precisa de uma administração que elimine\ndesperdícios, priorize serviços essenciais e crie condições para que a sociedade produza,\ntrabalhe e prospere.\nAs propostas serão executadas dentro das competências legais, da responsabilidade fiscal\ne dos instrumentos de planejamento. Metas poderão ser ajustadas diante de dados novos, mas\nos princípios permanecerão: honestidade, eficiência, transparência, segurança jurídica e foco em\nresultados.\n\n15.1 Compromisso final\nComprometemo-nos a respeitar cada centavo pago pelo contribuinte; enfrentar corrupção,\nprivilégios e desperdícios; valorizar servidores que entregam resultados; fortalecer a saúde\nregional, a segurança, a educação e a infraestrutura; estimular o empreendedorismo; e prestar\ncontas à sociedade.\nO governo será medido pela mudança concreta percebida nas filas, nas escolas, nas ruas,\nnas estradas, na abertura de empresas, no atendimento ao cidadão e nas oportunidades\ndisponíveis às famílias.\n\n15.2 Lema\nPlanejamento • Eficiência • Integridade • Resultados\nGovernar é transformar recursos públicos em resultados para as pessoas.\n\nEleições 2026 | Página 31"
+          },
+          {
+            "id": "declaracao-de-integridade-do-documento",
+            "titulo": "DECLARAÇÃO DE INTEGRIDADE DO DOCUMENTO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "DECLARAÇÃO DE INTEGRIDADE DO DOCUMENTO\nEste documento consolida as propostas defendidas para o Governo do Estado do Tocantins\nno período 2027–2030. Sua execução observará a Constituição Federal, a Constituição do\nEstado do Tocantins, a legislação eleitoral, fiscal, orçamentária e administrativa, bem como as\ncompetências dos Poderes e dos entes federativos. Metas quantitativas que dependam de linha\nde base, disponibilidade orçamentária, estudos técnicos, licenciamento, contratação ou\ncooperação institucional serão detalhadas nos instrumentos oficiais de planejamento e\norçamento.\n\nPalmas – Tocantins, 03 de agosto de 2026\n\nde forma\nATAIDES DE Assinado\ndigital por ATAIDES DE\nOLIVEIRA:14 OLIVEIRA:14721929153\nDados: 2026.08.06\n721929153 03:43:49 -03'00'\n\nATAÍDES DE OLIVEIRA\nCandidato ao Governo do Estado do Tocantins\n\nROSILÉIA DIAS CARNEIRO\nCandidata a Vice-Governadora do Estado do Tocantins\n\nEleições 2026 | Página 32"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "7431dadf8a41794e17c8be6b1b01d3d4a26cbd645b1a7d69727db699fbefaf13"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7a27b86a3eec135332f943e82c4b187bad1a783b4fac8c2d61480782edc5650f"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0c8bcec0b2c7b88c06ef398d74512d630961325b20397fa5e7e6441ac016b24a"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "1df1e35b2f6f3f103cc58b6c3a608e600db259b6244375d4c067feae99be0110"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "296f24b65ce585d6a1a3d81cb674151e7cd3bd7ba0fb9b36ddd9beaaf1f0fef1"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "44ad83b281b5c1f5876f801202d8617236ae5a1cecd506df099158a16afd6645"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "f3190e293b688dd6b8753defbf496ccb96bdcad45528de6ed1062d128cfa5898"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "1c4f79be7b7e51d06f327d7847a09674243a72568cca77019362aa14fac431b8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "f328d094d7dde1571f5f012ab901eb2e52957e76ef30fb1b661472a6c0d78e7c"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "338ac0a9402397a738c56075a19a8c0af9453064b5c14afe13f61f95a40d87d9"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "7e72b7dd3727c3ee4f74f2536027d23a306960809a4d7edf9943d51891980609"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "3293a9aa9719ce565c6f6aefa8dee48d7e864c85faf7e2faeef7c519680b6cd9"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "6bd2159c269fdd64320d481933bb04a62d06f2280c7f991d6f5c0d2d89d5eb8c"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "da27a34d139af39854b9580592a4725a4583bd73ad5dc27c113bd274a4ae993f"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "43489ac278814161585ac98c2bec0531cfb60f9caa3885335701cf2829913681"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "ecc559f09eaf013292b74fe2a17d5ae9487f60a169af14efe57823efcb82296c"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "c8d38c795d713d8f1f89cdfb71c7ccb5b7a4350bdba0b9b0d1f474dfde7b0f1b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "66d226be67968d0d1c090dacd12ba7e03572003c8964a70283005970d1ac1324"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "32ed35d3726f2d959554375748a2f30c52cbc79e29e2130970c182906504f6ee"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "a08011e91015a1844a30456fc6b2928b6b62533e6dba1d7299a5ae114b6d2fcf"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "a0272002425ca1d2a1420f242ac2b9e06db16804b450ae56b359f3e2b25abae1"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7c62ecd4b4eb2b670dd3dca660740e384c6d3492a4549bd9fa5baf568a74cbda"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "27d1e0226f6729abb3c582b385ea0f80e64123d1de37a727fcadf6e69af0b5f4"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "db8a40b47e0b56dde8cf095c345007347ab86ccbec0c3aef29a9f9e44537a12f"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "19c8d3d65ee9fb0ab1a4b1bd795f9303d195204d4e7889e1f02dc1c042c6a477"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "5d4425af42626c94d6808e64b34bfb4ee83c167a10ff41f9ebde8406f9129220"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "f78f44f7403771cb6f23181b9e629a0ab685c04cfd777e2a97ef6921fadf592a"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "2f945132dc8c9b26a4be2d86974979b166026e004b94424692f9cebf3740462f"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "0a0cf0b6b5496a12498311cc1a6c8010f111dff7262bf1de8cb0cc6059ebad0b"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f4d8c6d5259443b169767e7b1d14c69c05f2e8c66c0432b869c7ac46224c0d44"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "2ce6de49c49b09ef45e91853f61c7f6984028bf860736f9fb03ce5992016607f"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "60ec2ac20798be01e222ef4e60a650c5d58c7692b8787acba8b7827f6eedc80d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Plano Estratégico de Governo 2027–2030, denominado Projeto NOVO Tocantins, organiza o diagnóstico dos principais problemas do Estado e estabelece prioridades para as áreas essenciais. O modelo de governo prevê a instituição de um núcleo central de governança responsável por acompanhar as prioridades do governo e integrar secretarias. Na administração estadual, o plano propõe uma reforma administrativa com redução e reorganização das secretarias. Na saúde, o plano propõe fortalecer os hospitais regionais para ampliar a capacidade de média e alta complexidade. Na segurança pública, o plano prevê a expansão dos efetivos de forma responsável. Na educação, o governo estabelecerá metas de alfabetização na idade adequada e programas de recomposição para estudantes com defasagem. No desenvolvimento econômico, o plano propõe agregar valor à produção agropecuária por meio da industrialização. Na infraestrutura, o plano prevê um programa permanente de conservação rodoviária.",
+    "frases": [
+      {
+        "texto": "O Plano Estratégico de Governo 2027–2030, denominado Projeto NOVO Tocantins, organiza o diagnóstico dos principais problemas do Estado e estabelece prioridades para as áreas essenciais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 2,
+            "trecho": "O Plano Estratégico de Governo 2027–2030 – Projeto NOVO Tocantins consolida, em\nlinguagem analítica, os capítulos e compromissos desenvolvidos ao longo do processo de\nelaboração. O documento organiza o diagnóstico dos principais problemas do Estado, define uma\nforma de governar e estabelece prioridades para as áreas essenciais."
+          }
+        ]
+      },
+      {
+        "texto": "O modelo de governo prevê a instituição de um núcleo central de governança responsável por acompanhar as prioridades do governo e integrar secretarias.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 5,
+            "trecho": "Será instituído um núcleo central de governança responsável por acompanhar as prioridades\ndo governo, integrar secretarias e identificar obstáculos de execução."
+          }
+        ]
+      },
+      {
+        "texto": "Na administração estadual, o plano propõe uma reforma administrativa com redução e reorganização das secretarias.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 7,
+            "trecho": "Redução e reorganização das secretarias, preservando áreas essenciais."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano propõe fortalecer os hospitais regionais para ampliar a capacidade de média e alta complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 11,
+            "trecho": "Os hospitais regionais de Dianópolis, Paraíso, Porto Nacional, Gurupi e Augustinópolis serão\nprogressivamente fortalecidos para ampliar sua capacidade de média e alta complexidade. A\nestratégia busca desconcentrar atendimentos, reduzir viagens e diminuir a sobrecarga da capital."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o plano prevê a expansão dos efetivos de forma responsável.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 13,
+            "trecho": "O plano prevê expansão dos efetivos de forma responsável, concursos públicos,\nmodernização de equipamentos, fortalecimento da investigação e ampliação da presença da\nPolícia Civil nos municípios."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o governo estabelecerá metas de alfabetização na idade adequada e programas de recomposição para estudantes com defasagem.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 15,
+            "trecho": "O governo estabelecerá metas de alfabetização na idade adequada e programas de\nrecomposição para estudantes com defasagem."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, o plano propõe agregar valor à produção agropecuária por meio da industrialização.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 17,
+            "trecho": "A prioridade será agregar valor à produção agropecuária, mineral, florestal e energética."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o plano prevê um programa permanente de conservação rodoviária.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 21,
+            "trecho": "Será criado um programa permanente de conservação, com inventário da malha,\nclassificação do estado das vias e prioridades técnicas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governanca-e-gestao-por-resultados",
+        "titulo": "Governança e gestão por resultados",
+        "descricao": "Instituição de núcleo central de governança responsável por acompanhar as prioridades do governo e integrar secretarias, com painel público de acompanhamento das prioridades.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 5,
+            "trecho": "Será instituído um núcleo central de governança responsável por acompanhar as prioridades\ndo governo, integrar secretarias e identificar obstáculos de execução."
+          },
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 5,
+            "trecho": "Painel público de acompanhamento das prioridades."
+          }
+        ]
+      },
+      {
+        "id": "responsabilidade-fiscal-e-reforma-administrativa",
+        "titulo": "Responsabilidade fiscal e reforma administrativa",
+        "descricao": "Reforma administrativa com redução e reorganização das secretarias e revisão de cargos comissionados.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 7,
+            "trecho": "Redução e reorganização das secretarias, preservando áreas essenciais."
+          },
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 7,
+            "trecho": "Revisão de cargos comissionados e funções de confiança."
+          }
+        ]
+      },
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Saúde regionalizada",
+        "descricao": "Fortalecimento progressivo dos hospitais regionais para ampliar a capacidade de média e alta complexidade e desconcentrar atendimentos da capital.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 11,
+            "trecho": "Os hospitais regionais de Dianópolis, Paraíso, Porto Nacional, Gurupi e Augustinópolis serão\nprogressivamente fortalecidos para ampliar sua capacidade de média e alta complexidade. A\nestratégia busca desconcentrar atendimentos, reduzir viagens e diminuir a sobrecarga da capital."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Expansão dos efetivos de forma responsável, com concursos públicos e fortalecimento da investigação.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 13,
+            "trecho": "O plano prevê expansão dos efetivos de forma responsável, concursos públicos,\nmodernização de equipamentos, fortalecimento da investigação e ampliação da presença da\nPolícia Civil nos municípios."
+          }
+        ]
+      },
+      {
+        "id": "educacao-e-alfabetizacao",
+        "titulo": "Educação e alfabetização",
+        "descricao": "Metas de alfabetização na idade adequada e programas de recomposição para estudantes com defasagem.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 15,
+            "trecho": "O governo estabelecerá metas de alfabetização na idade adequada e programas de\nrecomposição para estudantes com defasagem."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-economico-e-industrializacao",
+        "titulo": "Desenvolvimento econômico e industrialização",
+        "descricao": "Agregação de valor à produção agropecuária, mineral, florestal e energética como prioridade de industrialização.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002548412:01",
+            "pagina": 17,
+            "trecho": "A prioridade será agregar valor à produção agropecuária, mineral, florestal e energética."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T14:17:08.959Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T14:22:40.878Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada identifica o Plano Estratégico de Governo 2027–2030 como Projeto NOVO Tocantins e afirma literalmente que o documento organiza o diagnóstico dos principais problemas do Estado e estabelece prioridades para áreas essenciais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "O único recorte numérico relevante é 2027–2030, e ele aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do documento sem elogio, crítica ou promoção adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única descrição coerente do papel geral do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento informado e não há divergência de chave eleitoral ou documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:1:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem o nome do plano, o período e as duas cláusulas materiais sobre diagnóstico e prioridades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a instituição do núcleo central de governança com essas atribuições."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase descreve a proposta do documento sem linguagem promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta coerente de governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência usa o mesmo documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:2:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a instituição do núcleo e as atribuições mencionadas na claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "No contexto da página citada, a evidência integra as diretrizes da reforma administrativa e sustenta a redução e reorganização das secretarias."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação relata a proposta sem adjetivação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A claim trata de uma única proposta coerente de reforma administrativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:3:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da claim, redução e reorganização das secretarias, dentro da reforma administrativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente o fortalecimento dos hospitais regionais para ampliar a capacidade de média e alta complexidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação permanece descritiva do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A claim trata de uma única proposta coerente de regionalização da saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e evidência correspondem à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:4:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o fortalecimento dos hospitais regionais e a finalidade de ampliar média e alta complexidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a expansão dos efetivos de forma responsável."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não traz números, percentuais ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A afirmação descreve a proposta do plano sem elogio externo ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A claim se mantém em uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento da candidatura indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:5:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da expansão responsável dos efetivos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente ambas as partes da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não contém números, percentuais, quantidades ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos citados pertencem à mesma proposta coerente de alfabetização e recomposição da aprendizagem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento da identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:6:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as duas cláusulas materiais da claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada, na seção de industrialização, sustenta que agregar valor à produção agropecuária é prioridade nesse eixo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem acrescentar juízo promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A claim permanece em uma única área coerente, industrialização e agregação de valor da produção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:7:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre a agregação de valor à produção agropecuária no eixo de industrialização, sem faltar cláusula material da claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência, na seção de rodovias, sustenta a criação de um programa permanente de conservação rodoviária."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não traz números, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do documento e não promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "A claim trata de uma única proposta coerente de infraestrutura rodoviária."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:frase:8:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o programa permanente de conservação no âmbito rodoviário."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "As duas evidências sustentam diretamente o núcleo central de governança e o painel público de acompanhamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não contém números ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do documento sem tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem à mesma área coerente de governança e gestão por resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:governanca-e-gestao-por-resultados:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais da claim temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam diretamente a redução e reorganização das secretarias e a revisão de cargos comissionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não traz números, prazos ou percentuais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem linguagem elogiosa ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem à mesma área coerente de reforma administrativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências usam o documento informado para a mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:responsabilidade-fiscal-e-reforma-administrativa:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem integralmente as duas cláusulas materiais da claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente o fortalecimento progressivo, a ampliação de média e alta complexidade e a desconcentração dos atendimentos da capital."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não contém números, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase resume o conteúdo programático sem elogio ou crítica adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos compõem uma única proposta coerente de saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:saude-regionalizada:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da claim temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta as três cláusulas da claim, expansão responsável, concursos públicos e fortalecimento da investigação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não apresenta números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação resume o documento sem linguagem promocional externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem a uma única área coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento indicado da mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:seguranca-publica:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da claim temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente as duas partes da claim temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não contém números, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do conteúdo programático."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem à mesma proposta coerente de aprendizagem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:educacao-e-alfabetizacao:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais da claim temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a agregação de valor às quatro frentes produtivas, e a página a situa na seção de industrialização."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:numeros",
+        "verdict": "yes",
+        "reason": "A claim não contém números, percentuais ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta econômica sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos compõem uma única área coerente de industrialização e agregação de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado para a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002548412:tema:desenvolvimento-economico-e-industrializacao:documentos:TO:270002548412:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as cláusulas materiais da claim temática."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002548412",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002548412:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "8e41a0158c92bbeb9a694df21f5009a1dee4349b4be5ee4b09eb91dcd3f3c7c3",
+    "extractedTextSha256": "f29b00ce93457017b8dea1519e2798f3a91d2ca5e2515f91dfe0a61968619bbc",
+    "documentCount": 1,
+    "documentSetSha256": "5aa552ff37b8556541b5992bc3c5180ae563ad407d21f0a63f74d2176001305f",
+    "contentSha256": "935cffb9e67f964b4152520037602bceed3ad51ff4eac0f2c6735df04a46a653"
+  }
+}

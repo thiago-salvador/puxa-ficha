@@ -1,0 +1,778 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002550421",
+    "slug": "gustavo-henrique",
+    "nomeUrna": "GUSTAVO PELO PIAUÍ OU GUSTAVO",
+    "partido": "AVANTE",
+    "arquivoNome": "2026PI180002550421_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002550421_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002550421:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002550421_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002550421_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "3c1f64b905ff12b19d0182ff11124d6b4a263b51268edb2aaa762af258c25d00",
+        "extractedTextSha256": "5a524ece640068365616ff50d3e5a4de4bf644103b068b113e5bce30fe968702",
+        "paginas": 10,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nGUSTAVO COM O POVO PELO PIAUÍ — 2027–\n2030\nValorizar pessoas. Desenvolver o Piauí.\n\nApresentação\nO Piauí precisa avançar para uma nova etapa de desenvolvimento. Uma etapa em que\ncrescimento econômico, modernização administrativa, infraestrutura, educação, saúde e\nsegurança caminhem ao lado da valorização das pessoas.\nO nosso projeto parte de uma convicção: o Estado existe para servir ao cidadão.\nNão basta construir prédios se faltam profissionais valorizados para fazer os serviços\nfuncionarem. Não basta pavimentar estradas se elas não estiverem integradas a uma\nestratégia de produção, logística e desenvolvimento regional. Não basta produzir\nenergia se não utilizarmos nossas potencialidades para atrair indústrias, tecnologia,\nempregos e renda.\nDa mesma maneira, não podemos aceitar um Piauí dividido entre regiões que prosperam\ne municípios que permanecem dependentes quase exclusivamente das transferências\ngovernamentais.\nO Plano de Governo Gustavo com o Povo pelo Piauí propõe uma administração\nbaseada em gestão técnica, responsabilidade fiscal, desenvolvimento sustentável,\nindustrialização, municipalismo, valorização profissional e compromisso público com\nresultados.\nNosso princípio será simples:\nplanejar antes de gastar, valorizar antes de cobrar e medir para saber se o governo\nrealmente entregou aquilo que prometeu.\n\n1. COMPROMISSO COM O PLANO\nDE GOVERNO\nO Plano de Governo não será tratado apenas como documento exigido durante o\nprocesso eleitoral.\nPretende-se estabelecer um compromisso público de execução das propostas\napresentadas à população."
+          },
+          {
+            "id": "as-metas-serao-classificadas-em-tres-grupos",
+            "titulo": "As metas serão classificadas em três grupos:",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "As metas serão classificadas em três grupos:\nExecução direta: medidas que dependam predominantemente de decisão administrativa\ndo Poder Executivo.\nExecução compartilhada: propostas que dependam de aprovação legislativa, União,\nmunicípios, financiamento, parcerias ou outros órgãos.\nExecução condicionada: medidas sujeitas a decisões judiciais, limitações\nconstitucionais, fiscais, ambientais ou circunstâncias supervenientes.\nEssa diferenciação é fundamental para que responsabilidade política não seja\nconfundida com promessa impossível.\nO governo deverá publicar periodicamente o andamento das metas, permitindo que a\npopulação saiba o que foi realizado, o que está em execução, o que sofreu atraso e por\nquê.\n\n2. GESTÃO TÉCNICA E EFICIÊNCIA\nA gestão técnica será ampliada para áreas estratégicas da administração.\nSaúde, Educação e Segurança Pública continuarão entre as prioridades, mas o conceito\nserá estendido gradativamente a áreas como infraestrutura, desenvolvimento econômico,\nesporte, meio ambiente, justiça e tecnologia.\n\nPropostas\n1. Implantar metas anuais de desempenho para secretarias e órgãos.\n2. Estabelecer indicadores públicos de resultados.\n3. Realizar diagnóstico da estrutura administrativa estadual.\n4. Eliminar estruturas redundantes sempre que tecnicamente recomendável.\n5. Implantar programa permanente de avaliação das políticas públicas.\n6. Fortalecer planejamento de médio e longo prazo.\n7. Digitalizar e simplificar serviços estaduais.\n8. Criar painel público para acompanhamento do Plano de Governo.\n9. Estabelecer critérios predominantemente técnicos para funções estratégicas.\n10. Ampliar interoperabilidade dos bancos de dados estaduais.\n\n3. SERVIDOR PÚBLICO:\nVALORIZAÇÃO E ISONOMIA\nO Estado não funciona sem pessoas."
+          },
+          {
+            "id": "sera-realizado-diagnostico-remuneratorio-das-carreiras-publicas-estaduai",
+            "titulo": "Será realizado diagnóstico remuneratório das carreiras públicas estaduais para",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Será realizado diagnóstico remuneratório das carreiras públicas estaduais para\nidentificar distorções entre profissionais que desempenham atividades iguais ou\nequivalentes.\nA proposta não é produzir equiparações automáticas incompatíveis com a Constituição,\nmas construir, dentro dos limites jurídicos e fiscais, uma política progressiva de redução\ndas desigualdades remuneratórias injustificadas.\n\nDiretrizes\n11. Elaborar mapa remuneratório do Estado.\n12. Identificar distorções entre funções equivalentes.\n13. Construir política gradual de valorização das carreiras.\n14. Estabelecer mesas permanentes de negociação.\n15. Desenvolver programa de qualificação continuada.\n16. Buscar recomposição inflacionária acompanhada, quando fiscalmente possível,\nde ganho real.\n17. Melhorar saúde e segurança ocupacional.\n18. Criar programa de reconhecimento de boas práticas no serviço público.\n\n4. EDUCAÇÃO: VALORIZAR QUEM\nENSINA\nEducação não se faz apenas com concreto.\nPrédios, climatização, laboratórios, equipamentos e tecnologia são indispensáveis, mas\nnenhum deles substitui professores e demais profissionais da educação.\nA valorização deverá alcançar do agente de portaria ao professor doutor.\nO Piauí precisa também antecipar um problema nacional: a redução da atratividade da\ncarreira docente. Se os jovens não enxergarem perspectivas profissionais e\nremuneratórias, teremos dificuldades crescentes para formar professores.\n\nPropostas\n19. Elaborar política plurianual de valorização dos profissionais da educação.\n20. Construir planejamento para ganho real das carreiras, condicionado à capacidade\nfiscal.\n21. Fortalecer formação continuada.\n22. Ampliar escolas de tempo integral onde houver demanda e viabilidade.\n23. Melhorar infraestrutura, climatização, laboratórios e conectividade.\n24. Desenvolver programa específico para atratividade da carreira docente.\n25. Estabelecer políticas de prevenção à violência escolar.\n26. Fortalecer educação profissional integrada às vocações regionais.\n27. Aproximar escolas técnicas do setor produtivo."
+          },
+          {
+            "id": "28-fortalecer-a-uespi",
+            "titulo": "28. Fortalecer a UESPI.",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "28. Fortalecer a UESPI.\n29. Construir política específica de valorização dos profissionais da Universidade.\n30. Estimular pesquisa aplicada e extensão.\n31. Aproximar UESPI, municípios e cadeias produtivas.\n32. Valorizar titulação acadêmica de especialistas, mestres e doutores.\n\n5. SAÚDE MAIS PERTO DAS\nPESSOAS\nO objetivo será reduzir a excessiva dependência de Teresina para procedimentos que\npossam ser realizados regionalmente.\n\nPropostas\n33. Fortalecer hospitais regionais.\n34. Organizar redes regionais de especialidades.\n35. Ampliar telemedicina.\n36. Integrar informações entre Estado e municípios.\n37. Criar indicadores de tempo de espera.\n38. Fortalecer diagnóstico precoce.\n39. Desenvolver programa para redução das filas de cirurgias eletivas.\n40. Valorizar profissionais da saúde.\n41. Melhorar regulação estadual.\n42. Fortalecer políticas de saúde preventiva.\n\n6. SEGURANÇA PÚBLICA COM\nCOMANDO TÉCNICO\nSerá preservado um princípio defendido desde 2022: segurança pública precisa ser\nconduzida tecnicamente.\n\nPropostas\n43. Fortalecer inteligência policial e integração de dados.\n44. Realizar planejamento permanente de recomposição dos efetivos.\n45. Valorizar profissionalmente policiais e demais agentes.\n46. Ampliar formação e aperfeiçoamento.\n47. Fortalecer investigação criminal.\n48. Integrar Estado, municípios e União em políticas preventivas.\n49. Expandir tecnologia aplicada à segurança dentro dos limites legais.\n50. Melhorar infraestrutura das unidades policiais.\n51. Fortalecer políticas de proteção às mulheres."
+          },
+          {
+            "id": "52-desenvolver-politicas-especificas-para-reducao-da-violencia-juvenil",
+            "titulo": "52. Desenvolver políticas específicas para redução da violência juvenil.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "52. Desenvolver políticas específicas para redução da violência juvenil.\n\n7. DESENVOLVIMENTO\nECONÔMICO SUSTENTÁVEL\nAqui estará uma das grandes marcas do novo projeto.\nO Piauí não pode limitar sua estratégia econômica a produzir matérias-primas.\nPrecisamos produzir, transformar e agregar valor dentro do Estado.\n\nPropostas\n53. Elaborar mapa industrial e produtivo atualizado do Piauí.\n54. Criar política estadual de industrialização sustentável.\n55. Atrair indústrias vinculadas às matérias-primas produzidas no Estado.\n56. Fortalecer agroindústria.\n57. Estimular processamento de alimentos.\n58. Desenvolver cadeias industriais ligadas à carnaúba.\n59. Desenvolver aproveitamento econômico sustentável do babaçu.\n60. Fortalecer cadeia do mel e derivados.\n61. Incentivar processamento local da produção agrícola.\n62. Criar política de atração de investimentos baseada em emprego, renda e\ninovação.\n63. Simplificar processos administrativos para empreendedores.\n64. Apoiar micro e pequenas empresas.\n65. Incentivar economia digital e empresas tecnológicas.\n66. Criar programas de qualificação alinhados às empresas que pretendam instalarse no Estado.\nA próxima etapa precisa ser transformar crescimento localizado em\ndesenvolvimento estadual integrado.\n\n8. ENERGIA, INDÚSTRIA E\nECONOMIA VERDE\nO Piauí possui uma oportunidade estratégica na transição energética.\nA proposta será utilizar energia renovável não somente como produto, mas como\ninstrumento para atração industrial.\n67. Estimular instalação de indústrias intensivas em energia limpa."
+          },
+          {
+            "id": "68-desenvolver-cadeia-local-de-fornecedores-do-setor-energetico",
+            "titulo": "68. Desenvolver cadeia local de fornecedores do setor energético.",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "68. Desenvolver cadeia local de fornecedores do setor energético.\n69. Apoiar pesquisa relacionada às energias renováveis.\n70. Estimular formação profissional especializada.\n71. Integrar novos empreendimentos à economia dos municípios onde forem\ninstalados.\n72. Exigir responsabilidade socioambiental nos incentivos estaduais.\n\n9. INFRAESTRUTURA QUE PRODUZ\nDESENVOLVIMENTO\nUma estrada não termina quando o asfalto termina.\nEla precisa conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.\n\nPropostas\n73. Elaborar Plano Estadual de Infraestrutura e Logística.\n74. Identificar corredores estratégicos de produção.\n75. Implantar programa permanente de manutenção rodoviária.\n76. Priorizar ligações entre municípios e cidades-polo.\n77. Melhorar acessos às regiões produtoras.\n78. Buscar soluções ferroviárias tecnicamente e economicamente viáveis.\n79. Melhorar infraestrutura logística relacionada ao litoral.\n80. Ampliar conectividade digital.\n81. Integrar expansão energética ao planejamento industrial.\n82. Recuperar e ampliar sistemas hídricos estratégicos.\n83. Investir em pontes e passagens necessárias à integração regional.\n\n10. GOVERNO DOS 224 MUNICÍPIOS\nEste será outro princípio central:\nprefeito não precisa ser aliado do governador para seu município ser respeitado\npelo Estado.\nA cooperação institucional deverá superar diferenças partidárias.\n\nPropostas\n84. Criar programa permanente Estado–Municípios.\n85. Elaborar diagnóstico econômico dos 224 municípios.\n86. Trabalhar planejamento por territórios.\n87. Criar carteira estadual de projetos municipais."
+          },
+          {
+            "id": "88-oferecer-apoio-tecnico-para-pequenos-municipios-elaborarem-projetos",
+            "titulo": "88. Oferecer apoio técnico para pequenos municípios elaborarem projetos.",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "88. Oferecer apoio técnico para pequenos municípios elaborarem projetos.\n89. Auxiliar prefeituras na captação de recursos.\n90. Integrar políticas estaduais e municipais de infraestrutura.\n91. Desenvolver consórcios regionais quando proporcionarem economia e\neficiência.\n92. Estabelecer critérios públicos para distribuição de investimentos.\nO trabalho de identificação das vocações dos 224 municípios já oferece uma base\ntécnica que poderá ser aproveitada e ampliada.\n\n11. AGRICULTURA FAMILIAR E\nDESENVOLVIMENTO RURAL\nNão queremos apenas aumentar a produção.\nQueremos aumentar a renda do produtor.\n93. Fortalecer assistência técnica.\n94. Apoiar regularização fundiária.\n95. Incentivar cooperativismo.\n96. Desenvolver pequenas agroindústrias.\n97. Melhorar armazenamento e beneficiamento.\n98. Ampliar acesso a mercados.\n99. Integrar agricultura familiar às compras governamentais.\n100.\nApoiar segurança hídrica.\n101.\nEstimular tecnologias adaptadas ao semiárido.\n102.\nIntegrar produção rural, indústria e logística.\n\n12. ÁGUA, SANEAMENTO E MEIO\nAMBIENTE\nDesenvolvimento sustentável não será slogan.\nSerá critério de planejamento.\n103.\n104.\n105.\n106.\n107.\n108.\n109.\n\nElaborar política integrada de segurança hídrica.\nRecuperar açudes estratégicos.\nAmpliar sistemas de abastecimento.\nApoiar municípios na universalização do saneamento.\nFortalecer gestão de resíduos sólidos.\nProteger mananciais.\nFortalecer unidades de conservação."
+          },
+          {
+            "id": "110",
+            "titulo": "110.",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "110.\n111.\n\nCriar instrumentos de adaptação às mudanças climáticas.\nCompatibilizar licenciamento eficiente com proteção ambiental.\n\n13. TURISMO, CULTURA E\nECONOMIA CRIATIVA\nO turismo deverá ser tratado como atividade econômica.\n112.\n113.\n114.\n115.\n116.\n117.\n118.\n119.\n120.\n\nEstruturar rotas turísticas regionais.\nFortalecer Serra da Capivara e entorno.\nDesenvolver o potencial turístico do litoral.\nFortalecer turismo religioso.\nValorizar patrimônio histórico.\nApoiar calendário estadual de eventos.\nCapacitar trabalhadores do turismo.\nIntegrar gastronomia e artesanato às rotas.\nIncentivar economia criativa.\n\n14. CIÊNCIA, TECNOLOGIA E NOVA\nECONOMIA\n121.\nAproximar universidades e empresas.\n122.\nCriar programas estaduais de pesquisa aplicada.\n123.\nApoiar startups.\n124.\nIncentivar parques e ambientes de inovação.\n125.\nExpandir formação tecnológica no interior.\n126.\nUtilizar inteligência artificial para melhorar serviços públicos,\nobservados os direitos dos cidadãos.\n127.\nCriar desafios públicos de inovação para problemas do Estado.\n128.\nEstimular tecnologia aplicada ao agronegócio e agricultura familiar.\n\n15. ESPORTE, JUVENTUDE E\nINCLUSÃO\n129.\n130.\n131.\n132.\n\nRecuperar equipamentos esportivos.\nFortalecer esporte escolar.\nCriar programas regionais de iniciação esportiva.\nUtilizar esporte como política de inclusão."
+          },
+          {
+            "id": "133",
+            "titulo": "133.",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "133.\n134.\n135.\n\nApoiar formação de atletas.\nEstabelecer gestão técnica também para políticas esportivas.\nIntegrar esporte, educação e prevenção social.\n\nMETAS DOS PRIMEIROS 100 DIAS\nNos primeiros cem dias, a prioridade não será anunciar dezenas de obras. Será\norganizar o Estado para cumprir aquilo que foi prometido.\nO governo deverá iniciar o diagnóstico remuneratório dos servidores; auditoria\nadministrativa e de programas; levantamento das condições dos hospitais regionais;\ndiagnóstico da segurança pública; levantamento das rodovias estaduais; mapa dos\nprojetos paralisados; atualização das vocações econômicas municipais; estruturação da\ncarteira de investimentos; implantação do painel público do Plano de Governo e\ninstalação da mesa permanente Estado–Municípios.\n\nMETA DO PRIMEIRO ANO\nAté o final do primeiro ano, deverão estar apresentados os planos plurianuais de:\nvalorização do servidor; educação; industrialização sustentável; logística e\ninfraestrutura; segurança hídrica; segurança pública; saúde regionalizada e\ndesenvolvimento econômico dos territórios.\nNão significa que todos os problemas estarão solucionados em doze meses. Significa\nque cada problema estratégico terá diagnóstico, solução proposta, orçamento\nestimado, cronograma e responsável pela execução.\n\nCOMPROMISSO PARA OS QUATRO\nANOS\nAo final do governo, cada uma das propostas deverá receber uma classificação pública:\nCUMPRIDA — EM EXECUÇÃO — PARCIALMENTE CUMPRIDA — NÃO\nCUMPRIDA.\nE, nas duas últimas situações, o governo terá obrigação política de explicar o motivo.\n\nO COMPROMISSO DE GUSTAVO"
+          },
+          {
+            "id": "a-mensagem-final-do-plano-pode-ser-mais-pessoal",
+            "titulo": "A mensagem final do plano pode ser mais pessoal:",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "A mensagem final do plano pode ser mais pessoal:\n“Não apresentarei ao Piauí um catálogo de promessas. Apresentarei\ncompromissos. Alguns poderão ser realizados rapidamente; outros exigirão quatro\nanos; outros dependerão da Assembleia Legislativa, da União, dos municípios, da\nJustiça ou da situação financeira que encontrarmos. O que não admitiremos é que\numa promessa simplesmente desapareça depois da eleição. O cidadão terá o direito\nde saber o que fizemos, o que não conseguimos fazer e por quê.”\n\nGUSTAVO COM O POVO PELO PIAUÍ\nValorizar pessoas. Produzir oportunidades. Desenvolver o Piauí."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "afadded95ac87533de9569449b8b18cb167914eb0d720731f4ac6c418cc3f033"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "29265a577b015b1223de44eae9ade527074c691a2ccc77525a21d29ca81fb91b"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "76c41afa6e696ae158d4b13c77ca3ccf1a5192a51efab7e02b2256cca3fca8ca"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "04ae17adc7c160874711e5e67b23fd17a8dd26edc58700b11bf112031c5e8a7a"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "8da1a70c61f28dc0f488efb9d775db45e35ad5780192329e72b372bc7a30e5f1"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "9d3d70a52464f5a383b11c02847cbcc8ad1066f2b8f574d6b7fa55475b76725d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "cf5346e4e3d4c0f225fed46fe146c86ca9e138e7eb60e2c8bb7bd2a050f56e83"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ada1a794ed0b33da09819e18f6c1a995be5ac99dadb3b38dca7ab39dfe32fe8e"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "372390ecd7954e5b428da09825b0026427e73d1449010ba0c2f28ea5ba2beba3"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e7dd9782ad0ea68dd7e87198eb2eb94830964324971f5f64ac25978457f6f245"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê publicar periodicamente o andamento das metas para informar o que foi realizado, o que está em execução, o que sofreu atraso e por quê. Na gestão administrativa, o programa propõe digitalizar e simplificar serviços estaduais como medida de organização da prestação pública. Na educação, propõe fortalecer a formação continuada dos profissionais da área dentro do eixo de valorização de quem ensina. Na saúde, prevê fortalecer hospitais regionais para ampliar a realização regional de procedimentos e reduzir a dependência de Teresina. Na segurança pública, prevê fortalecer a inteligência policial e a integração de dados como parte de uma condução técnica do setor. No desenvolvimento econômico, propõe criar política estadual de industrialização sustentável vinculada à transformação de matérias-primas dentro do Estado. Na infraestrutura, planeja elaborar Plano Estadual de Infraestrutura e Logística para conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.",
+    "frases": [
+      {
+        "texto": "O programa prevê publicar periodicamente o andamento das metas para informar o que foi realizado, o que está em execução, o que sofreu atraso e por quê.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 2,
+            "trecho": "O governo deverá publicar periodicamente o andamento das metas, permitindo que a população saiba o que foi realizado, o que está em execução, o que sofreu atraso e por quê."
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão administrativa, o programa propõe digitalizar e simplificar serviços estaduais como medida de organização da prestação pública.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 2,
+            "trecho": "7. Digitalizar e simplificar serviços estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe fortalecer a formação continuada dos profissionais da área dentro do eixo de valorização de quem ensina.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 3,
+            "trecho": "21. Fortalecer formação continuada."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê fortalecer hospitais regionais para ampliar a realização regional de procedimentos e reduzir a dependência de Teresina.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 4,
+            "trecho": "O objetivo será reduzir a excessiva dependência de Teresina para procedimentos que possam ser realizados regionalmente.\n\nPropostas\n33. Fortalecer hospitais regionais."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, prevê fortalecer a inteligência policial e a integração de dados como parte de uma condução técnica do setor.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 4,
+            "trecho": "43. Fortalecer inteligência policial e integração de dados."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, propõe criar política estadual de industrialização sustentável vinculada à transformação de matérias-primas dentro do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 5,
+            "trecho": "O Piauí não pode limitar sua estratégia econômica a produzir matérias-primas.\nPrecisamos produzir, transformar e agregar valor dentro do Estado.\n\nPropostas\n53. Elaborar mapa industrial e produtivo atualizado do Piauí.\n54. Criar política estadual de industrialização sustentável."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, planeja elaborar Plano Estadual de Infraestrutura e Logística para conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 6,
+            "trecho": "Uma estrada não termina quando o asfalto termina.\nEla precisa conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.\n\nPropostas\n73. Elaborar Plano Estadual de Infraestrutura e Logística."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-publica",
+        "titulo": "Gestão pública",
+        "descricao": "O programa propõe digitalizar e simplificar serviços estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 2,
+            "trecho": "7. Digitalizar e simplificar serviços estaduais."
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O programa prevê fortalecer a formação continuada na educação.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 3,
+            "trecho": "21. Fortalecer formação continuada."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "O programa propõe fortalecer hospitais regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 4,
+            "trecho": "33. Fortalecer hospitais regionais."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O programa propõe fortalecer a inteligência policial e a integração de dados.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 4,
+            "trecho": "43. Fortalecer inteligência policial e integração de dados."
+          }
+        ]
+      },
+      {
+        "id": "industrializacao-sustentavel",
+        "titulo": "Industrialização sustentável",
+        "descricao": "O programa propõe criar política estadual de industrialização sustentável.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002550421:01",
+            "pagina": 5,
+            "trecho": "54. Criar política estadual de industrialização sustentável."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:44:04.171Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:46:13.606Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:1:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Item 7 confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência de chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:2:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Item 21 sob título 'Valorizar quem ensina' confirma."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:3:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma objetivo e proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:4:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 4 contém item 43 sob título 'Segurança Pública com Comando Técnico'."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (segurança)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:5:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho conecta a proposta 54 ao contexto de transformação de matérias-primas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (desenvolvimento econômico)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:6:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente o texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (infraestrutura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:frase:7:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:gestao-publica:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:educacao:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:saude-regional:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:seguranca-publica:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002550421:tema:industrializacao-sustentavel:documentos:PI:180002550421:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002550421",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002550421:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 24669,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2662,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22620,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20754,
+          "output_tokens_details": {
+            "thinking_tokens": 1185
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22620,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20754,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22620,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22620
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.31572140000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "3c1f64b905ff12b19d0182ff11124d6b4a263b51268edb2aaa762af258c25d00",
+    "extractedTextSha256": "5a524ece640068365616ff50d3e5a4de4bf644103b068b113e5bce30fe968702",
+    "documentCount": 1,
+    "documentSetSha256": "812adbe74305f0f8948634b67b9f76c58740e54cc97a42d768b9a966b41db672",
+    "contentSha256": "49ffb989e508d996c9d6815960750039835f25021cb337694e9cc083d442fc09"
+  }
+}

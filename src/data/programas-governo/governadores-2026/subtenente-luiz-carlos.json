@@ -1,0 +1,763 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002546368",
+    "slug": "subtenente-luiz-carlos",
+    "nomeUrna": "SUBTENENTE LUIZ CARLOS",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026TO270002546368_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002546368_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002546368:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002546368_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002546368_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "9bad6ccc0ed2763fe4d4d3844c5ae833547cd399f86f0655a9c80368df66b995",
+        "extractedTextSha256": "6b64eca9ee6781bc2495164e8fee295c28b2781b27de6bc0b08646a8de27eca1",
+        "paginas": 6,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\nGovernador: Luiz Carlos Ferreira da Silva.\n\nVice governador: Jair Medeiros\n\nPartido Democrata 35"
+          },
+          {
+            "id": "ao-cidadao-tocantinense",
+            "titulo": "Ao cidadão Tocantinense",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Ao cidadão Tocantinense\n Na qualidade de candidato ao Governo do Estado do Tocantins,\nescolhido em um processo democrático do partido Democrata (35)\nReconheço que foi Deus o todo poderoso que nos colocou nesta\ncaminhada, iremos construir uma candidatura forte e estratégica\nvoltada para os interesses da sociedade. Nosso governo obedecerá\nprimeiramente a orientação de Deus (O Senhor é meu pastor e nada\nme faltará salmos 23).\nSaúde\n Modernizar sistema de saúde, substituindo equipamentos médicos\nvelhos e sem manutenção que comprometa a saúde dos pacientes.\n Valorizar e oferecer capacitação contínua aos profissionais da\nsaúde.\n Detectar falhas no atendimento de regulação para consultas e\nexames complexos e corrigir imediatamente.\n Realização de concurso anualmente com objetivo preencher as\nvagas ociosas.\n\nDesenvolvimento Econômico\n Transparecia dos Gastos Público.\n Criar cem mil empregos, através do programa jovem aprendiz com\nparcerias com setor privado.\n Reduzir imposto das empresas que contratarem acima de dez\npessoas.\n Apoiar o turismo, comércio, agricultura e indústrias, através de\nincentivo fiscal.\n Fornecer apoio técnico e financeiro aos municípios."
+          },
+          {
+            "id": "atrair-grandes-empresas-de-mineracao-com-foco-na-extracao-de",
+            "titulo": " Atrair grandes empresas de mineração com foco na extração de",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": " Atrair grandes empresas de mineração com foco na extração de\nnossos recursos minerais com o consentimento da Agência\nNacional de mineração (ANM). Além das licenças emitidas pelo\nórgão Estadual e Federal.\n Construção de malha ferroviária, fundamental para escoamento dos\nminérios extraídos.\n Construir Vale do ferro, aço e cilício, mega projetos logísticos de\nextração de minérios.\n\nSegurança Pública\n Criar um sistema único de segurança pública para combater o crime\norganizado, compartilhar informações e realizar operações em\nconjunto: polícia Militar, polícia Civil, polícia Penal e Guarda\nmunicipal.\n Modernização das Polícia Civil e Militar.\n Parceria com os municípios reforçado o combate à violência urbana.\n Concurso público 300 (trezentas) vagas para Delegado de Polícia.\n Concurso público 2.000(Duas mil) polícia Militar.\n Curso de Tenente, para os Sub Tenentes, 800 (oitocentos) vagas.\n Curso de Tenente para Sub Tenentes corpo de Bombeiros, 450\n(quatrocentos e cinquenta) vagas.\n Reestruturar a carreira dos policiais Penal.\n Rever as aposentadorias dos policiais civil, militares e polícias Penal\ne corrigir as injustiças.\n Convocar policiais Militares da reserva remunerada, através do\nprograma admissão especial,1.000 (mil) vagas com direito a uma\npromoção idade até 68 anos de idade.\n Renovar a frota de veículos, das policias Militar, Civil e Penal."
+          },
+          {
+            "id": "implantar-policiamento-permanente-fronteira-segura",
+            "titulo": " Implantar policiamento permanente fronteira segura.",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": " Implantar policiamento permanente fronteira segura.\n Fortalecer os colégios Militares.\n Valorizar os profissionais da segurança pública.\n Reestruturar carreira da polícia Militar, acabar com graduação de\nsoldado, segundo Tenente, com isto valoriza o profissional da\nsegurança pública.\n Fortalecer o convênio polícia militar e Poder Judiciário através do\nprograma Justiça móvel de Trânsito.\n\nInfraestrutura\n Fortalecer parcerias com investimento privado para financiamento e\nexcursões de obras no setor energético, saneamento e transporte.\n Implantar saneamento básico cem por cento em todas cidades até\ntrinta mil habitantes.\n Recapeamento asfáltica sobre pavimento desgastado nas rodovias\nde todo Tocantins.\n Substituir todas as pontes de madeira que ainda existem no estado,\npor ponte de concreto.\n Ampliar as ciclovias com boa sinalização.\n Pavimentação asfáltica para zonas rurais com objetivo de melhorar\nas estradas vicinais, facilitando o escoamento da produção agrícola.\n\nEducação\n Valorização dos profissionais da educação.\n Modernizar as bibliotecas das escolas públicas.\n Incentivar atividades físicas nas escolas.\n Ampliar escolas de tempo integral."
+          },
+          {
+            "id": "promover-a-conscientizacao-e-socializacao-dos-discentes-docentes",
+            "titulo": " Promover a conscientização e socialização dos discentes, docentes",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": " Promover a conscientização e socialização dos discentes, docentes\ne pais no espaço escolar, desenvolvendo pensamentos críticos o\nrespeito às diferenças valorizando a singularidade de cada ser\nhumano.\n Fortalecer Proerd (Programa Educacional de Resistência às Drogas\ne à Violência) desenvolvido pela polícia militar nas escolas.\n Oferecer uma refeição de qualidade com alimentos frescos,\ngarantindo a segurança e a higiene no preparo, e atender as\nnecessidades nutricional dos alunos.\n Distribuição gratuita de materiais didáticos nas escolas pública.\n\nSistema Prisional\n Criar presídio de segurança máxima.\n Reforçar segurança em todos os presídios do Estado.\n Construir celas individuais, evitar rebeliões, impedir comunicação\nentre líderes de facções criminosas.\n Monitoramento através de câmera com objetivo de antecipar\nqualquer tipo de anormalidade em tempo real.\n\nCultura e Esporte\n Apoiar artista local.\n Incentivo as manifestações culturais, em todos os municípios do\nEstado do Tocantins.\n Reforma das quadras e ginásio com objetivo de inclusão social de\njovens carentes através do esporte.\n Organizar competições esportivas, com distribuição gratuita de\nmateriais esportivos."
+          },
+          {
+            "id": "meio-ambiente",
+            "titulo": "Meio Ambiente",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Meio Ambiente\n Reduzir o desmatamento ilegal e incentivar o uso sustentável dos\nrecursos naturais.\n Reforçar fiscalização ambiental na ilha do Bananal, em apoio ao\nIbama e ministério público Federal, com objetivo de combater\ndegradação ambiental e arrendamento ilegal de terras indígenas e\nunidades de conservação ambiental.\n Fortalecer Corpo de Bombeiros no combate às queimadas.\n Incentivar a plantar mudas nativas da região, através do programa\nTocantins verde.\n\nConsiderações Finais\n Agradeço a Deus, todo poderoso, pela oportunidade de identificar\nas falhas nos serviços públicos, dando sabedoria para resolver\ntodos obstáculos, mostrando que é possível governar com\nhonestidade, valorizando os cidadãos tocantinenses oferecendo\nserviço público de qualidade e complexidade essenciais para\nsobrevivência humano."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "16b4f724cfda8998fe36a33da28eba656e71a36709fe3eb040925f451c194865"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "8f2a086c6737a4ad7eadf41e35a0bc49ef82b10cbb0d5e224806c181b4e2cf45"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "d3af5d8418149d544fc06c26b3c3434c3a8eef58087cb042052cb4c3c489ac52"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "fd1ca4b689650f3c5eb1a22678c35ec6bc3f1cc9213f4dc08232b0744bce0882"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "093a092e62be8d5bf735555e3e437aa546ca0799de907a7832bc6967deddeeac"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ef7544c79616ae78e6a2dd2faa738d649866707299d2e9f29163d3338d1301fc"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta as propostas da candidatura de Luiz Carlos Ferreira da Silva ao governo do Tocantins pelo partido Democrata. Na saúde, o plano propõe a modernização do sistema, com a substituição de equipamentos médicos antigos. Na economia, propõe criar cem mil empregos por meio do programa jovem aprendiz em parceria com o setor privado. Para a mineração, planeja atrair grandes empresas do setor para a extração de recursos minerais. Na segurança pública, propõe criar um sistema único para combater o crime organizado. Na infraestrutura, prevê implantar saneamento básico cem por cento em todas as cidades até trinta mil habitantes. Na educação, o plano prevê ampliar as escolas de tempo integral. Para o sistema prisional, propõe criar presídio de segurança máxima. No meio ambiente, planeja reduzir o desmatamento ilegal. Essas propostas compõem o conjunto de diretrizes do plano de governo.",
+    "frases": [
+      {
+        "texto": "Na saúde, o plano propõe a modernização do sistema, com a substituição de equipamentos médicos antigos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 2,
+            "trecho": "Modernizar sistema de saúde, substituindo equipamentos médicos velhos e sem manutenção que comprometa a saúde dos pacientes."
+          }
+        ]
+      },
+      {
+        "texto": "Na economia, propõe criar cem mil empregos por meio do programa jovem aprendiz em parceria com o setor privado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 2,
+            "trecho": "Criar cem mil empregos, através do programa jovem aprendiz com parcerias com setor privado."
+          }
+        ]
+      },
+      {
+        "texto": "Para a mineração, planeja atrair grandes empresas do setor para a extração de recursos minerais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 3,
+            "trecho": "Atrair grandes empresas de mineração com foco na extração de nossos recursos minerais com o consentimento da Agência Nacional de mineração (ANM)."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, propõe criar um sistema único para combater o crime organizado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 3,
+            "trecho": "Criar um sistema único de segurança pública para combater o crime organizado, compartilhar informações e realizar operações em conjunto: polícia Militar, polícia Civil, polícia Penal e Guarda municipal."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, prevê implantar saneamento básico cem por cento em todas as cidades até trinta mil habitantes.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 4,
+            "trecho": "Implantar saneamento básico cem por cento em todas cidades até trinta mil habitantes."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano prevê ampliar as escolas de tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 4,
+            "trecho": "Ampliar escolas de tempo integral."
+          }
+        ]
+      },
+      {
+        "texto": "Para o sistema prisional, propõe criar presídio de segurança máxima.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 5,
+            "trecho": "Criar presídio de segurança máxima."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, planeja reduzir o desmatamento ilegal.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 6,
+            "trecho": "Reduzir o desmatamento ilegal e incentivar o uso sustentável dos recursos naturais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Modernização do sistema de saúde com substituição de equipamentos médicos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 2,
+            "trecho": "Modernizar sistema de saúde, substituindo equipamentos médicos velhos e sem manutenção que comprometa a saúde dos pacientes."
+          }
+        ]
+      },
+      {
+        "id": "geracao-de-empregos",
+        "titulo": "Geração de empregos",
+        "descricao": "Criação de cem mil empregos por meio do programa jovem aprendiz em parceria com o setor privado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 2,
+            "trecho": "Criar cem mil empregos, através do programa jovem aprendiz com parcerias com setor privado."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Criação de um sistema único de segurança pública para combater o crime organizado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 3,
+            "trecho": "Criar um sistema único de segurança pública para combater o crime organizado, compartilhar informações e realizar operações em conjunto: polícia Militar, polícia Civil, polícia Penal e Guarda municipal."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-basico",
+        "titulo": "Saneamento básico",
+        "descricao": "Implantação de saneamento básico cem por cento nas cidades até trinta mil habitantes.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 4,
+            "trecho": "Implantar saneamento básico cem por cento em todas cidades até trinta mil habitantes."
+          }
+        ]
+      },
+      {
+        "id": "educacao-tempo-integral",
+        "titulo": "Educação em tempo integral",
+        "descricao": "Ampliação das escolas de tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 4,
+            "trecho": "Ampliar escolas de tempo integral."
+          }
+        ]
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "Meio ambiente",
+        "descricao": "Redução do desmatamento ilegal no estado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002546368:01",
+            "pagina": 6,
+            "trecho": "Reduzir o desmatamento ilegal e incentivar o uso sustentável dos recursos naturais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T14:06:20.742Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T14:11:10.486Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a afirmação sobre modernização do sistema de saúde com substituição de equipamentos médicos antigos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza indevida ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:1:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, modernização do sistema de saúde e substituição de equipamentos médicos antigos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação de cem mil empregos por meio do programa jovem aprendiz em parceria com o setor privado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de cem mil empregos está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona elogio, crítica, promoção ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta única e coerente de geração de empregos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência correspondem à mesma chave eleitoral e ao documento citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:2:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, quantidade, programa jovem aprendiz e parceria com o setor privado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de atrair grandes empresas de mineração para a extração de recursos minerais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de modo descritivo, sem valoração ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de mineração."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao mesmo documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:3:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, atração de grandes empresas do setor e foco na extração de recursos minerais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação de um sistema único de segurança pública para combater o crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento, sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:4:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, criação do sistema único e finalidade de combater o crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a implantação de saneamento básico cem por cento nas cidades até trinta mil habitantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de cem por cento e o recorte de cidades até trinta mil habitantes estão literalmente sustentados pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e apenas descreve a proposta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:5:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação, saneamento básico, cem por cento, todas as cidades e limite de trinta mil habitantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação das escolas de tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência correspondem à mesma chave eleitoral e ao mesmo documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:6:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação, ampliar escolas de tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação de presídio de segurança máxima."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente no sistema prisional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:7:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a redução do desmatamento ilegal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e apenas descreve a proposta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:frase:8:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula material da afirmação, redução do desmatamento ilegal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a modernização do sistema de saúde com substituição de equipamentos médicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saude:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, modernização do sistema e substituição de equipamentos médicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação de cem mil empregos por meio do programa jovem aprendiz em parceria com o setor privado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de cem mil empregos está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de geração de empregos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:geracao-de-empregos:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, quantidade, programa jovem aprendiz e parceria com o setor privado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação de um sistema único de segurança pública para combater o crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:seguranca-publica:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, criação do sistema único e combate ao crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a implantação de saneamento básico cem por cento nas cidades até trinta mil habitantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de cem por cento e o limite de trinta mil habitantes estão literalmente sustentados pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:saneamento-basico:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação, saneamento básico, cem por cento e recorte de cidades até trinta mil habitantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação das escolas de tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:educacao-tempo-integral:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a redução do desmatamento ilegal no contexto do plano estadual referido pelo documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:identidade",
+        "verdict": "yes",
+        "reason": "A claim e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002546368:tema:meio-ambiente:documentos:TO:270002546368:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula material da afirmação, redução do desmatamento ilegal, no contexto do plano estadual citado."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002546368",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002546368:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "9bad6ccc0ed2763fe4d4d3844c5ae833547cd399f86f0655a9c80368df66b995",
+    "extractedTextSha256": "6b64eca9ee6781bc2495164e8fee295c28b2781b27de6bc0b08646a8de27eca1",
+    "documentCount": 1,
+    "documentSetSha256": "c58ccc3733f633f9043f47e13ab640b8427e0d13b726e44547a6f945d11288e6",
+    "contentSha256": "21f7a0238bae410660afe508dc3e45e569bc7e843a956622f88e341515df684c"
+  }
+}

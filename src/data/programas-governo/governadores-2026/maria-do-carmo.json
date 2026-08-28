@@ -1,0 +1,860 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002541626",
+    "slug": "maria-do-carmo",
+    "nomeUrna": "PROFESSORA MARIA DO CARMO",
+    "partido": "PL",
+    "arquivoNome": "2026AM40002541626_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002541626_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002541626:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002541626_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002541626_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "067216d950fb6a35b0e45bfd8a426d0fb191e63e35bb82a2466ae7823c3c383b",
+        "extractedTextSha256": "596b156a14dc08e1d07c7bc3cdc147538c6e7da1833eda62d7fcfccf11dfa372",
+        "paginas": 9,
+        "secoes": [
+          {
+            "id": "plano-de",
+            "titulo": "Plano de",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de\nGoverno"
+          },
+          {
+            "id": "cuidar-desde-os",
+            "titulo": "Cuidar desde os",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar desde os\nprimeiros anos de vida\nApoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas\ne na orientação às famílias sobre saúde, alimentação e desenvolvimento\ninfantil.\n\nGarantir que toda\nescola do interior funcione\nAssegurar professor em sala, merenda, transporte escolar seguro e as\ncondições essenciais para o aprendizado.\n\nTransformar o ensino médio\nem porta de entrada para o trabalho\nOferecer cursos técnicos e profissionalizantes gratuitos, conectados às\noportunidades reais de emprego no Amazonas.\n\nEnsinar melhor, incluir\ntodos e respeitar culturas\nPriorizar a alfabetização na idade certa, reconhecer escolas e profissionais que\nentreguem resultados, ampliar o atendimento a estudantes com deficiência\ne autismo e fortalecer a educação escolar indígena.\n\nDestravar quem\nquer empreender\nIntegrar todos municípios do Amazonas à RedeSim, ampliar a aplicação da Lei\nde Liberdade Econômica, simplificar o licenciamento de atividades de baixo\nrisco e reduzir prazos com digitalização e análise simultânea dos processos.\n\n2"
+          },
+          {
+            "id": "melhorar-a-qualificacao-dos",
+            "titulo": "Melhorar a qualificação dos",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Melhorar a qualificação dos\namazonenses para o mercado\nde trabalho\nIntegrar CETAM, Sistema S, universidades, SUFRAMA, empresas e\norganizações parceiras para oferecer formação técnica, bolsas em profissões\ncom falta de trabalhadores, primeiro emprego, idiomas e competências\ndigitais.\n\nAtrair investimentos e levar\nprodutos a novos mercados\nFortalecer a porta de entrada para investidores e exportadores, ampliar a\ninteligência comercial, estruturar corredores regionais e captar recursos\nnacionais e internacionais para projetos estratégicos do Amazonas.\n\nTransformar o Amazonas\nem um destino global\nRevisar o planejamento do turismo estadual, ampliar a conectividade,\ncertificar o ecoturismo, viabilizar concessões, fortalecer o Festival de\nParintins e promover internacionalmente o estado.\n\nRequalificar orlas fluviais\ncomo espaço de lazer e cultura\nRecuperar orlas degradadas ou atingidas por erosão nas sedes municipais\ndo interior, integrando contenção de terras caídas, praças, quiosques\npara pequenos empreendedores e áreas de convivência, exercício físico\ne expressões culturais, transformando o rio também em espaço de lazer\nseguro para a população.\n\n3"
+          },
+          {
+            "id": "tornar-a-cultura-amazonense-um",
+            "titulo": "Tornar a cultura amazonense um",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Tornar a cultura amazonense um\nfator de desenvolvimento social e\neconômico\nUtilizar a cultura amazonense, motivo de orgulho do nosso povo,\ncomo propulsora do desenvolvimento social e econômico, apoiando as\ncomunidades e artistas do Festival de Parintins, ampliando o investimento\nnas festas dos bois-bumbás, ampliando o acesso da população ao Teatro\nAmazonas por meio de programação local e financiando projetos culturais\nque formem nossos jovens em uma educação cidadã.\n\nTransformar assistência em autonomia\nConectar famílias beneficiárias de programas sociais à qualificação, ao\nemprego e ao empreendedorismo, com acompanhamento individualizado,\nencaminhamento a vagas, microcrédito, formalização simplificada e apoio a\ncooperativas e trabalhadores informais.\n\nAcolher com dignidade\ne reconstruir caminhos\nGarantir a integração dos programas da assistência social para a população\nem situação de rua e pessoas com dependência química ao sistema de\nsaúde, além de organizar o acolhimento e a inserção profissional dos\nimigrantes.\n\nAmpliar o acesso ao esporte\nApoiar a prática esportiva em escolas, bairros comunidades, recuperando\ne requalificando estruturas já existentes e fortalecendo parcerias com\nmunicípios, federações, clubes, universidades e organizações locais.\n\n4"
+          },
+          {
+            "id": "garantir-moradia-digna-e",
+            "titulo": "Garantir moradia digna e",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Garantir moradia digna e\npromover a regularização\ndas propriedades\nFocalizar a construção e o financiamento de moradias populares em áreas\ncom infraestrutura e próximas da oferta de trabalho, oferecer aluguel\nsocial temporário e acelerar a regularização de imóveis em ocupações\nconsolidadas.\n\nProteger quem mais precisa\nElevar o Auxílio Estadual Permanente para R$ 300,00, fortalecer a proteção\nde mulheres, crianças, idosos, pessoas com deficiência, povos indígenas e\ncomunidades tradicionais.\n\nConectar o interior e\nmanter os rios navegáveis\nTrabalhar com a União na dragagem e sinalização dos grandes rios,\nconservar os trechos estaduais, melhorar as estradas e defender a conclusão\nda BR-319, reduzindo o tempo e o custo dos deslocamentos.\n\nLevar saneamento\ndigno a todo amazonense\nAmpliar o acesso à água tratada e a coleta e tratamento de esgoto,\ntrabalhar para encerrar os lixões, promover consórcios regionais, e avançar\ncom a logística reversa e a reciclagem.\n\nLevar o Governo do\nAmazonas aos 62 municípios\nExpandir a conectividade por fibra e satélite e construir subsedes em São\nGabriel da Cachoeira, Tefé, Tabatinga, Humaitá, Itacoatiara e Eirunepé, com\nbalcões de atendimento nos demais municípios.\n5"
+          },
+          {
+            "id": "valorizar-o-servidor-e",
+            "titulo": "Valorizar o servidor e",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Valorizar o servidor e\nprofissionalizar a gestão\nReconhecer o desempenho, fortalecer a capacitação e as carreiras,\nselecionar chefias por critérios técnicos, reduzir cargos comissionados sem\nfunção definida.\n\nFortalecer a presença e a\ninteligência policial no interior\nLevar câmeras integradas, análise de dados e centros regionais de\ninteligência aos municípios, ampliando a capacidade de prevenção,\ninvestigação e resposta das forças de segurança.\n\nDelegacias 24h\nGarantir o funcionamento das delegacias, ampliando os seus horários de\nfuncionamento e o volume de delegacias 24h, com ampliação do efetivo\npolicial para atender a demanda.\n\nCombater o crime organizado\nnas fronteiras e nos presídios\nInstalar uma base fluvial permanente no Alto Rio Negro e solicitar\na transferência de lideranças de facções para unidades do Sistema\nPenitenciário Federal.\n\nValorizar os profissionais\nda segurança pública\nMelhorar as condições de trabalho, formação continuada e o suporte aos\npoliciais que atuam na capital e no interior.\n\n6"
+          },
+          {
+            "id": "reforcar-a-protecao-a",
+            "titulo": "Reforçar a Proteção à",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Reforçar a Proteção à\nMulher em todo o Amazonas\nGarantir presença policial especializada e resposta ágil às mulheres em\nsituação de violência em todos os municípios do estado, capital e interior.\n\nPrevenir a violência nos\nbairros mais vulneráveis\nIntegrar policiamento comunitário e ações de oportunidade para jovens\nem risco nos territórios com maior concentração de homicídio e violência\ndoméstica, com apoio de tecnologia de monitoramento para identificar\nquem já comete crime e evitar reincidência.\n\nLevar atenção à saúde\nbásica a todo o interior\nAmpliar as equipes de saúde fluvial e ribeirinha e a telessaúde, priorizando\nos municípios ainda sem cobertura e requalificar as estruturas já existentes.\n\nRegionalizar o\natendimento hospitalar\nConstruir hospitais regionais em São Gabriel da Cachoeira, Tefé, Tabatinga,\nHumaitá, Itacoatiara e Eirunepé, para receber leitos de UTI, consultas com\nespecialistas e atendimentos de média e alta complexidade, reduzindo\ntransferências para Manaus e aproximando o atendimento de quem vive no\ninterior.\n\nCuidar da Saúde da\nMulher Amazonense\nFortalecer o cuidado integral à mulher no Amazonas, reduzindo o tempo\nentre diagnóstico e tratamento de doenças graves como o câncer de colo\ndo útero.\n7"
+          },
+          {
+            "id": "fortalecer-a-saude-indigena",
+            "titulo": "Fortalecer a saúde indígena",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Fortalecer a saúde indígena\nFormar profissionais para atendimento intercultural e organizar a logística\nde medicamentos e transporte, respeitando a língua e a cultura de cada\npovo.\n\nFazer o dinheiro público render mais\nVincular recursos à entrega de resultados concretos, encerrar fundos\ne programas que não funcionem, revisar gastos correntes e ampliar a\ntransparência sobre contas públicas.\n\nReduzir o peso do\nEstado sobre quem produz\nBuscar o equilíbrio fiscal sem a necessidade de aumentar impostos,\npreparar o Amazonas para a reforma tributária, simplificar os serviços da\nSEFAZ e ampliar a regularização fiscal com tratamento diferenciado para\nquem paga em dia.\n\nGarantir as aposentadorias\ncom responsabilidade\nPlanejar e regularizar o financiamento da previdência de servidores\ne militares, auditar benefícios e folha de pagamento e evitar que\ndesequilíbrios sejam transferidos às próximas gerações.\n\nProduzir mais e melhor\nAmpliar a assistência técnica à produção rural, pesqueira e aquícola,\naproximar pesquisa e produtores, fortalecer cooperativas e melhorar o\nescoamento e o acesso aos mercados, respeitando as vocações de cada\nregião.\n\n8"
+          },
+          {
+            "id": "proteger-quem-produz",
+            "titulo": "Proteger quem produz",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Proteger quem produz\nIntegrar a regularização fundiária, ambiental e sanitária, ampliar o\ngeorreferenciamento, facilitar o crédito e combater grilagem, fraudes,\nsobreposições e títulos irregulares, protegendo o produtor de boa-fé.\n\nModernizar o licenciamento ambiental\npara destravar o Amazonas\nAdequar os procedimentos do estado à nova Lei Geral do Licenciamento\nAmbiental, com prazos definidos, matriz de risco por porte e potencial\npoluidor e ritos simplificados para as atividades de menor impacto,\ndestravando setores estratégicos como a mineração legal e fortalecendo a\nfiscalização da recuperação de áreas degradadas.\n\nAgregar valor à produção da floresta\nImpulsionar o mercado de carbono, apoiar patentes, rastreabilidade e\ncertificações e atrair empresas para processar matérias-primas amazônicas\nno próprio estado, gerando renda, novos postos de trabalho e novos\nmercados.\n\nCombater o desmatamento\ne proteger o território\nUsar satélites, drones e análise de dados contra desmatamento e\nqueimadas para estruturar a proteção da fauna e revisar unidades de\nconservação e zoneamento para que funcionem de fato.\n\nAmpliar a Conectividade\nno Interior do Amazonas\nLevar internet a mais municípios e comunidades do interior, combinando\nsatélite e fibra óptica de forma inteligente.\n\n9"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "808283d187752a8cafab00db874cfe925ef2d2ff27f404a3f1705fe280c15f63"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "8843782c1d92034ee167432dca3776d3cfcc7e4f38cd56227af2617561017976"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7786b790aea919544cde90ce24a6dbfc1ee203463073c4a940337c097eab0314"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "a5dd1b18af5ec59a2f65b78f710c4a40e3cfab9004cd2ef10711ee658b25493e"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "b70f1fc0f58d8d90e189c02f067484a05bbc66a6d89589fafcd2024647441486"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "f9c01256cfd9423a2d6b0c5720c5e4d928a583473a036a4a629da29a1743ebcc"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "f5805a268266aedae33cb459232bbf7cb397094a188f675fccaaa51ae1d1f738"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "650ac5cc27701d53dc6ef3fa8223dc4c0c400df3f19330014c6eb48c1ef6b0e9"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "6e397c67fe2c94e7b3346911652efdbd3cd7160653ef0a755c2ed828e22ed174"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas. O documento propõe assegurar professor em sala, merenda e transporte escolar seguro nas escolas do interior. O texto planeja oferecer cursos técnicos e profissionalizantes gratuitos no ensino médio, conectados às oportunidades de emprego no Amazonas. O plano propõe integrar CETAM, Sistema S e universidades na oferta de formação técnica. O documento propõe construir hospitais regionais no interior com leitos de UTI e consultas com especialistas. Na segurança pública, o documento prevê ampliar o volume de delegacias com funcionamento de 24 horas. O texto planeja levar internet a mais municípios e comunidades do interior combinando satélite e fibra óptica. O plano prevê usar satélites, drones e análise de dados contra o desmatamento e as queimadas.",
+    "frases": [
+      {
+        "texto": "O plano prevê apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe assegurar professor em sala, merenda e transporte escolar seguro nas escolas do interior.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Assegurar professor em sala, merenda, transporte escolar seguro e as\ncondições essenciais para o aprendizado."
+          }
+        ]
+      },
+      {
+        "texto": "O texto planeja oferecer cursos técnicos e profissionalizantes gratuitos no ensino médio, conectados às oportunidades de emprego no Amazonas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Transformar o ensino médio\nem porta de entrada para o trabalho\nOferecer cursos técnicos e profissionalizantes gratuitos, conectados às\noportunidades reais de emprego no Amazonas."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe integrar CETAM, Sistema S e universidades na oferta de formação técnica.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 3,
+            "trecho": "Integrar CETAM, Sistema S, universidades, SUFRAMA, empresas e\norganizações parceiras para oferecer formação técnica"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe construir hospitais regionais no interior com leitos de UTI e consultas com especialistas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 7,
+            "trecho": "Construir hospitais regionais em São Gabriel da Cachoeira, Tefé, Tabatinga,\nHumaitá, Itacoatiara e Eirunepé, para receber leitos de UTI, consultas com\nespecialistas"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o documento prevê ampliar o volume de delegacias com funcionamento de 24 horas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 6,
+            "trecho": "Garantir o funcionamento das delegacias, ampliando os seus horários de\nfuncionamento e o volume de delegacias 24h"
+          }
+        ]
+      },
+      {
+        "texto": "O texto planeja levar internet a mais municípios e comunidades do interior combinando satélite e fibra óptica.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Levar internet a mais municípios e comunidades do interior, combinando\nsatélite e fibra óptica"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê usar satélites, drones e análise de dados contra o desmatamento e as queimadas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Usar satélites, drones e análise de dados contra desmatamento e\nqueimadas"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "Propostas para creches, funcionamento das escolas do interior, ensino médio profissionalizante.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Assegurar professor em sala, merenda, transporte escolar seguro e as\ncondições essenciais para o aprendizado."
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Oferecer cursos técnicos e profissionalizantes gratuitos, conectados às\noportunidades reais de emprego no Amazonas."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-economico",
+        "titulo": "Desenvolvimento econômico",
+        "descricao": "Simplificação para empreender, qualificação profissional, atração de investimentos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 2,
+            "trecho": "Integrar todos municípios do Amazonas à RedeSim"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 3,
+            "trecho": "Integrar CETAM, Sistema S, universidades, SUFRAMA, empresas e\norganizações parceiras para oferecer formação técnica"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 3,
+            "trecho": "Fortalecer a porta de entrada para investidores e exportadores"
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Atenção básica no interior, hospitais regionais, saúde indígena.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 7,
+            "trecho": "Ampliar as equipes de saúde fluvial e ribeirinha e a telessaúde, priorizando\nos municípios ainda sem cobertura"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 7,
+            "trecho": "Construir hospitais regionais em São Gabriel da Cachoeira, Tefé, Tabatinga,\nHumaitá, Itacoatiara e Eirunepé"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 8,
+            "trecho": "Formar profissionais para atendimento intercultural"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Delegacias com horário ampliado, inteligência policial no interior, base fluvial no Alto Rio Negro.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 6,
+            "trecho": "Garantir o funcionamento das delegacias, ampliando os seus horários de\nfuncionamento e o volume de delegacias 24h"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 6,
+            "trecho": "Levar câmeras integradas, análise de dados e centros regionais de\ninteligência aos municípios"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 6,
+            "trecho": "Instalar uma base fluvial permanente no Alto Rio Negro"
+          }
+        ]
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "Meio ambiente",
+        "descricao": "Combate ao desmatamento, licenciamento ambiental, mercado de carbono.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Usar satélites, drones e análise de dados contra desmatamento e\nqueimadas"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Adequar os procedimentos do estado à nova Lei Geral do Licenciamento\nAmbiental"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Impulsionar o mercado de carbono"
+          }
+        ]
+      },
+      {
+        "id": "conectividade",
+        "titulo": "Conectividade",
+        "descricao": "Expansão da internet por fibra e satélite nos municípios e comunidades do interior.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 5,
+            "trecho": "Expandir a conectividade por fibra e satélite"
+          },
+          {
+            "documentoId": "AM:40002541626:01",
+            "pagina": 9,
+            "trecho": "Levar internet a mais municípios e comunidades do interior, combinando\nsatélite e fibra óptica"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T05:49:16.461Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T05:54:51.929Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de apoiar os municípios na ampliação de vagas em creches e pré-escolas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente, ligada à expansão de vagas na educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento AM:40002541626:01 e é compatível com a identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:1:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho citado sustenta professor em sala, merenda e transporte escolar seguro, e a página citada enquadra a proposta nas escolas do interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e não adiciona juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos citados compõem uma mesma proposta coerente sobre o funcionamento das escolas do interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência vem do documento informado e permanece na mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:2:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "Os itens materiais da afirmação são cobertos pelo trecho e pelo contexto da página citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a oferta de cursos técnicos e profissionalizantes gratuitos, vinculados ao ensino médio e às oportunidades de emprego no Amazonas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação descreve uma única proposta coerente sobre ensino médio profissionalizante."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:3:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência cita literalmente CETAM, Sistema S e universidades na oferta de formação técnica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase descreve a proposta de modo neutro, sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, a formação técnica por integração institucional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento indicado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:4:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os elementos materiais presentes na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta a construção de hospitais regionais em municípios do interior, com leitos de UTI e consultas com especialistas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogios, críticas ou reforço promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de regionalização hospitalar no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:5:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação de forma integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ampliação do volume de delegacias 24h, no contexto da segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "O único número presente, 24 horas, está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A afirmação descreve a medida sem adotar tom elogioso, crítico ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A frase trata de uma única proposta coerente sobre delegacias 24h."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:6:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente a ampliação de delegacias com funcionamento de 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de expandir internet no interior com satélite e fibra óptica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase é descritiva e neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de conectividade no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e mantém a mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:7:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todos os componentes materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o uso de satélites, drones e análise de dados contra desmatamento e queimadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém louvor, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de combate ambiental com tecnologia."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e na mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:frase:8:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho cobre integralmente os elementos materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam os três eixos resumidos na afirmação: creches, funcionamento das escolas do interior e ensino médio profissionalizante."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas resume propostas do documento, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne propostas de uma área coerente, educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:educacao:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais resumidas na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam simplificação para empreender, qualificação profissional e medidas de atração de investimentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase resume o conteúdo do documento sem elogio, crítica ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação agrega propostas de uma área coerente, desenvolvimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:desenvolvimento-economico:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais resumidas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam atenção básica no interior, hospitais regionais e ações ligadas à saúde indígena."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é um resumo temático neutro, sem valoração."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne propostas de uma área coerente, saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:saude:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem as três cláusulas materiais da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam os três eixos resumidos: delegacias com horário ampliado, inteligência policial no interior e base fluvial no Alto Rio Negro."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números específicos além de conceito de horário ampliado, sem quantificação adicional a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém valoração."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação agrega propostas de uma área coerente, segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:seguranca-publica:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais resumidas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam combate ao desmatamento, licenciamento ambiental e mercado de carbono."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume propostas sem elogios, críticas ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne propostas de uma área coerente, meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:meio-ambiente:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais da afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam a expansão da conectividade e especificam fibra e satélite nos municípios e comunidades do interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do documento de modo neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, conectividade."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002541626:tema:conectividade:documentos:AM:40002541626:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem integralmente os elementos materiais da afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002541626",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002541626:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "067216d950fb6a35b0e45bfd8a426d0fb191e63e35bb82a2466ae7823c3c383b",
+    "extractedTextSha256": "596b156a14dc08e1d07c7bc3cdc147538c6e7da1833eda62d7fcfccf11dfa372",
+    "documentCount": 1,
+    "documentSetSha256": "40a0374e1ed769781f9d5a87400c788b85a1aaad7181bd360c12ea87157e6913",
+    "contentSha256": "bbacadbad93397943d555774e93669d8fa7da9b879c1d52e73cdffc1e97679a6"
+  }
+}

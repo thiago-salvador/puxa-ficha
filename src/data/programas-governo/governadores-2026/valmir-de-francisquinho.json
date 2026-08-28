@@ -1,0 +1,1368 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SE",
+    "sqCandidato": "260002532010",
+    "slug": "valmir-de-francisquinho",
+    "nomeUrna": "VALMIR DE FRANCISQUINHO",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": "2026SE260002532010_01.pdf",
+    "arquivoNoPacote": "SE/2026SE260002532010_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SE:260002532010:01",
+      "fonte": {
+        "arquivoNome": "2026SE260002532010_01.pdf",
+        "arquivoNoPacote": "SE/2026SE260002532010_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "40c280b2c631b82cee1f801aab364533bdc5b980c3608edc0bc5b3af0f3e8fd4",
+        "extractedTextSha256": "a7087020c33dd4ba90ed628fa22d8c00ed13b8f6ebecbec1d6615570021e23ae",
+        "paginas": 55,
+        "secoes": [
+          {
+            "id": "programa-de",
+            "titulo": "PROGRAMA DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PROGRAMA DE\nGOVERNO\nPARA O ESTADO DE SERGIPE\n2027 - 2030\nVALMIR GOVERNADOR\nPRISCILA VICE\nCOLIGAÇÃO MUDA SERGIPE COM A FORÇA DO POVO\nREPUBLICANOS, AVANTE"
+          },
+          {
+            "id": "quem-e-valmir-de-francisquinho",
+            "titulo": "QUEM É VALMIR DE FRANCISQUINHO?",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "QUEM É VALMIR DE FRANCISQUINHO?\nValmir dos Santos Costa, conhecido em todo o Estado de Sergipe como Valmir de\nFrancisquinho, nasceu em 3 de dezembro de 1968, no município de Itabaiana, localizado a\ncerca de 58 quilômetros da capital, Aracaju. Filho de uma família humilde, tem orgulho de\nsuas origens agrestinas e de sua identidade como sergipano e itabaianense. Sua terra natal,\nsituada na região Agreste de Sergipe, possui população estimada em mais de 110 mil\nhabitantes e é reconhecida nacionalmente como a Capital Nacional dos Caminhoneiros, título\noficializado pela Lei Federal nº 13.044/2014.\nAs raízes familiares de Valmir estão fincadas no povoado Pé do Veado, onde aprendeu,\ndesde cedo, o valor do trabalho, da honestidade, da simplicidade e da solidariedade. Filho de\nFrancisco Paes da Costa, o saudoso Francisquinho dos Porcos, fez questão de eternizar a\nmemória do pai na própria identidade política, tornando-se conhecido em todo o estado como\nValmir de Francisquinho. Mais do que um nome, essa alcunha representa o vínculo com sua\nhistória, sua família e suas origens. Ainda criança, começou a trabalhar na tradicional feira de\nItabaiana, vendendo picolés e transportando compras em carrinhos para os fregueses. Essas\nexperiências contribuíram para formar sua personalidade e fortalecer sua compreensão das\ndificuldades enfrentadas pelos trabalhadores e pelas famílias de menor renda.\nIniciou os estudos na Escola Maria Esteves Leite e, posteriormente, destacou-se no\nmovimento estudantil, sendo eleito presidente do grêmio do Colégio Estadual Murilo Braga.\nProsseguiu sua formação acadêmica até concluir o curso de Direito, tornando-se bacharel.\nFoi, entretanto, na vida pública que encontrou sua principal vocação. Convencido de que a\npolítica é um instrumento de transformação social, iniciou sua trajetória eletiva sendo\nescolhido cinco vezes vereador de Itabaiana e três vezes prefeito de Itabaiana, sempre\nampliando sua votação a cada eleição.\nEm 2012, incentivado por familiares, amigos e lideranças locais, lançou-se candidato à\nPrefeitura de Itabaiana, sendo eleito com 27.435 votos, correspondentes a 53,57% dos votos\nválidos. Em 1º de janeiro de 2013, assumiu a administração municipal, iniciando uma gestão\nvoltada para investimentos em infraestrutura urbana e rural, saúde, educação, mobilidade,\ndesenvolvimento econômico e fortalecimento dos serviços públicos. Ao final do primeiro\nmandato, sua administração registrava elevados índices de aprovação em pesquisas de\nopinião. Em 2016, foi reeleito com votação histórica para o município: 35.559 votos,\nequivalentes a 63,5% dos votos válidos, alcançando uma das maiores diferenças\nproporcionais da história política sergipana entre o primeiro e o segundo colocados.\nDurante sua trajetória política, consolidou-se como uma das principais lideranças do Estado.\nEm 2018, seu filho, Talysson Barbosa Costa, foi eleito deputado estadual com a maior\nvotação de Sergipe. Em 2020, apoiou a candidatura de Adailton Rezende de Sousa à\nPrefeitura de Itabaiana, que saiu vitorioso nas urnas. Em 2022, Ícaro Barbosa Costa foi eleito\ndeputado federal, enquanto Marcos Oliveira conquistou uma vaga na Assembleia Legislativa.\nNa eleição para o Governo de Sergipe em 2022, Valmir de Francisquinho participou da\ndisputa estadual e recebeu aproximadamente meio milhão de votos. Posteriormente, em\nrazão de decisões da Justiça Eleitoral relacionadas ao registro de sua candidatura, esses\nvotos foram anulados, episódio que marcou o debate político sergipano naquele pleito.\nEm 2024, retornou à Prefeitura de Itabaiana ao ser eleito para um terceiro mandato. Na\nmesma eleição, seu grupo político também venceu a disputa pela Prefeitura de Areia Branca\ncom a eleição de Talysson Costa, ampliando sua influência política na região Agreste."
+          },
+          {
+            "id": "no-ano-de-2026-exercendo-o-cargo-de-prefeito-de-itabaiana-valmir-de-fran",
+            "titulo": "No ano de 2026, exercendo o cargo de prefeito de Itabaiana, Valmir de Francisquinho decidiu",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "No ano de 2026, exercendo o cargo de prefeito de Itabaiana, Valmir de Francisquinho decidiu\nrenunciar ao mandato para disputar o Governo do Estado de Sergipe pelo Partido\nRepublicanos. Sua candidatura é apresentada com a proposta de ampliar para todo o Estado\na experiência administrativa desenvolvida em Itabaiana, priorizando a geração de empregos,\no fortalecimento da economia, investimentos em infraestrutura, a melhoria dos serviços\npúblicos, o diálogo com os servidores estaduais, a segurança pública, a educação e a saúde.\nEntre os temas centrais defendidos por sua candidatura estão também a segurança hídrica,\no desenvolvimento regional e a política de saneamento básico. Valmir manifesta posição\ncrítica em relação ao modelo de concessão dos serviços anteriormente prestados pela DESO,\ndefendendo que o abastecimento de água constitui um patrimônio estratégico dos sergipanos\ne que sua gestão deve assegurar qualidade, universalização e tarifas justas para a população.\nCom mais de três décadas de atuação política, Valmir de Francisquinho apresenta-se ao\neleitorado sergipano como candidato ao Governo do Estado nas eleições de 2026, propondo\num projeto voltado ao desenvolvimento econômico, à eficiência administrativa e à melhoria\nda qualidade de vida da população de Sergipe."
+          },
+          {
+            "id": "mensagem-de-valmir-de-francisquinho",
+            "titulo": "MENSAGEM DE VALMIR DE FRANCISQUINHO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "MENSAGEM DE VALMIR DE FRANCISQUINHO\nSergipe é um estado de enorme potencial econômico, social, cultural e humano. Nosso povo\né reconhecido por sua capacidade de trabalho, criatividade, espírito empreendedor e pela\nesperança de construir um futuro cada vez melhor. No entanto, ainda convivemos com\ndesafios históricos que afetam diretamente a qualidade de vida da população, especialmente\nnas áreas da saúde, educação, segurança pública, saneamento básico, infraestrutura,\ngeração de emprego e renda, habitação, desenvolvimento social, meio ambiente, cultura,\nsegurança alimentar, direitos humanos e promoção da cidadania.\nEsses desafios exigem planejamento, responsabilidade, diálogo permanente e uma gestão\npública eficiente, capaz de transformar recursos em resultados concretos para a população.\nÉ com essa convicção que apresentamos este Programa de Governo, construído de forma\ndemocrática e participativa, a partir da contribuição de técnicos, especialistas, lideranças\ncomunitárias, representantes dos diversos segmentos da sociedade civil, movimentos\nsociais, setor produtivo, instituições públicas e privadas, além de milhares de sergipanos que\nacreditam na construção coletiva de um novo projeto para o nosso Estado.\nDurante as convenções partidárias, o Partido Republicanos homologou a candidatura de\nValmir dos Santos Costa – Valmir de Francisquinho ao cargo de Governador do Estado de\nSergipe nas eleições de 2026. A candidatura representa o compromisso de apresentar aos\nsergipanos uma proposta de governo fundamentada na eficiência administrativa, na\nresponsabilidade fiscal, na valorização das pessoas e no desenvolvimento sustentável.\nEste Programa de Governo nasce do compromisso de enfrentar os principais desafios de\nSergipe por meio de políticas públicas estruturantes, capazes de ampliar as oportunidades\npara todos os cidadãos. Entre as prioridades estão a melhoria da qualidade da educação, o\nfortalecimento da saúde pública, a ampliação da segurança, o incentivo à geração de\nemprego e renda, a modernização da infraestrutura, o fortalecimento da agricultura, da\nindústria, do comércio e do turismo, além da promoção da inclusão social, da igualdade de\noportunidades e da proteção dos direitos de todos os sergipanos.\nA gestão também buscará fortalecer o diálogo permanente com os servidores públicos, os\nmunicípios, os poderes constituídos, o setor produtivo, as universidades e a sociedade civil\norganizada, reconhecendo que os melhores resultados são alcançados quando o governo\nescuta a população e constrói soluções de forma compartilhada.\nDa mesma forma, temas estratégicos para o futuro de Sergipe, como a segurança hídrica, o\nabastecimento de água, o saneamento, a transição energética, a inovação, a sustentabilidade\nambiental e o desenvolvimento regional, receberão atenção especial, considerando sua\nimportância para a qualidade de vida da população e para a competitividade da economia\nsergipana.\nEste Programa de Governo não deve ser compreendido como um documento encerrado em\nsi mesmo. Ao contrário, representa o ponto de partida de uma gestão aberta ao diálogo, ao\naperfeiçoamento contínuo e à participação popular. Ao longo dos quatro anos de governo,\nserão mantidos canais permanentes de escuta da sociedade para avaliar resultados,"
+          },
+          {
+            "id": "estabelecer-prioridades-e-aperfeicoar-as-politicas-publicas-assegurando",
+            "titulo": "estabelecer prioridades e aperfeiçoar as políticas públicas, assegurando uma administração",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "estabelecer prioridades e aperfeiçoar as políticas públicas, assegurando uma administração\ndemocrática, transparente e comprometida com o interesse coletivo.\nMais do que cumprir uma exigência da legislação eleitoral, este Programa de Governo\nsimboliza um compromisso público com cada cidadão sergipano. É um pacto baseado na\nética, na honestidade, na transparência, no planejamento, na responsabilidade com os\nrecursos públicos e na convicção de que governar significa servir às pessoas.\nCom fé em Deus, respeito ao povo e dedicação ao trabalho, coloco minha experiência\nadministrativa, minha história de vida e meu compromisso com Sergipe à disposição dos\nsergipanos para construirmos, juntos, um estado mais desenvolvido, mais justo, mais\ncompetitivo e com oportunidades para todos.\nValmir dos Santos Costa\nCandidato ao Governo do Estado de Sergipe – Eleições 2026"
+          },
+          {
+            "id": "mensagem-de-priscila-felizola",
+            "titulo": "MENSAGEM DE PRISCILA FELIZOLA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "MENSAGEM DE PRISCILA FELIZOLA\nAcredito que uma sociedade se torna mais forte e desenvolvida quando as mulheres têm\noportunidades reais de liderar e transformar a realidade ao seu redor. Por isso, este Programa\nde Governo reafirma o compromisso de construir um Sergipe onde cada mulher possa\nexercer plenamente seu potencial, seja na vida pública, no empreendedorismo, na educação,\nno campo ou em qualquer espaço de decisão.\nA presença feminina na política representa muito mais do que ocupar cargos. Penso que\nsignifica ampliar o olhar sobre os desafios da sociedade, fortalecer o diálogo e garantir que\nas políticas públicas reflitam as necessidades de toda a população do nosso Estado.\nCada conquista feminina abre caminhos para outras mulheres, fortalece lares, impulsiona\ncomunidades e contribui para o desenvolvimento de toda a sociedade.\nSeguiremos trabalhando para que mais mulheres ocupem espaços de liderança,\nempreendam, realizem seus projetos de vida e sejam protagonistas da construção de um\nSergipe mais justo, inovador e cheio de oportunidades para todos.\nEste Programa de Governo reconhece que investir nas mulheres é investir no futuro de\nSergipe. Por isso, carrego comigo uma convicção que resume esse compromisso e que\ninspira nossa caminhada:"
+          },
+          {
+            "id": "programa-de-2",
+            "titulo": "PROGRAMA DE",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "ocr",
+            "conteudo": "PROGRAMA DE\nGOVERNO\nPARA O ESTADO DE SERGIPE\n2027 - 2030\n**\nSUMÁRIO\nQuem é Valmir de Francisquinho?..\n...02\nMensagens..\n...04\n1. Introdução...\n...08\n2. Panorama do Estado de Sergipe\n..10\n3. Diretrizes Estratégicas para o Desenvolvimento de Sergipe.....\n....12\n3.1 Gente: Desafios Econômicos, Geração de Emprego e Inserção Social...\n....12\n3.2 Saúde Humanizada e Eficiente...\n...15\n3.3 Educação para o Futuro e Inovação Tecnológica....\n..20\n3.4 Segurança Pública e Cultura de Paz...\n.27\n3.5 Responsabilidade Fiscal e Modernização da Gestão Pública...\n.32\n3.6 Infraestrutura, Desenvolvimento Regional e Transição Energética.\n.38\n3.7 Agricultura, Pecuária e Segurança Alimentar...\n..46\n3.8 Mulheres, Juventude, Diversidade e Inclusão Social...\n..51\n3.9 Sergipe Empreendedor e Inclusivo.....\n.55\n3.10 Cultura, Turismo e Identidade Sergipana.\n..60\n4. Considerações Finais...\n..67"
+          },
+          {
+            "id": "1-introducao",
+            "titulo": "1. INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "1. INTRODUÇÃO\nO Estado de Sergipe vive um momento decisivo de sua história. As profundas transformações\neconômicas, sociais, tecnológicas, ambientais e institucionais do século XXI impõem novos\ndesafios e, ao mesmo tempo, abrem oportunidades para a construção de um modelo de\ndesenvolvimento mais moderno, sustentável e inclusivo. Nesse novo cenário, governar exige\nplanejamento, responsabilidade, inovação, capacidade de gestão e, sobretudo, compromisso\npermanente com as pessoas.\nÉ com esse propósito que apresentamos o Programa de Governo de Valmir de\nFrancisquinho e Priscila Felizola, candidatos ao Governo e à Vice-Governadoria do Estado\nde Sergipe nas eleições de 2026. Este documento representa um compromisso público com\na construção de um Estado mais eficiente, transparente, inovador e presente em todas as\nregiões sergipanas, capaz de promover desenvolvimento econômico com justiça social,\nresponsabilidade fiscal, sustentabilidade ambiental e melhoria da qualidade de vida da\npopulação.\nNosso compromisso é implementar uma gestão moderna, baseada na eficiência\nadministrativa, na boa aplicação dos recursos públicos, na valorização dos servidores, na\ntransformação digital dos serviços públicos e no fortalecimento do diálogo institucional.\nAcreditamos que o desenvolvimento de Sergipe depende da atuação integrada entre o\nGoverno do Estado, os municípios, a União, a iniciativa privada, as universidades, os setores\nprodutivos e a sociedade civil organizada, consolidando uma ampla rede de cooperação em\nfavor do interesse público.\nReconhecemos que Sergipe ainda enfrenta importantes desafios relacionados à geração de\nemprego e renda, à saúde pública, à educação, à segurança, à infraestrutura, ao saneamento\nbásico, ao desenvolvimento regional, à habitação, à sustentabilidade ambiental, à inclusão\nsocial e à redução das desigualdades. Superar esses desafios exige visão estratégica,\nplanejamento de longo prazo, responsabilidade na gestão fiscal, capacidade de execução e\npermanente diálogo com a população.\nNossa concepção de governo parte de um princípio fundamental: o Estado existe para\nservir às pessoas. Todas as políticas públicas devem estar orientadas para melhorar a vida\nda população, ampliar oportunidades, garantir direitos e promover desenvolvimento humano.\nPor essa razão, adotamos a diretriz GENTE como eixo estruturante deste Programa de\nGoverno, reconhecendo que o verdadeiro sucesso de uma administração pública se mede\npela capacidade de transformar positivamente a vida dos cidadãos.\nTambém acreditamos que uma gestão eficiente precisa estar próxima da realidade da\npopulação. Governar exige ouvir, dialogar e conhecer as diferentes necessidades de cada\nregião do Estado. A presença permanente nos municípios, nas comunidades, nos setores\nprodutivos e junto às instituições permitirá construir políticas públicas mais eficazes,\nrespeitando as vocações regionais e promovendo um desenvolvimento equilibrado em todo\no território sergipano.\nCom esse propósito, o Programa de Governo está estruturado em dez Diretrizes\nEstratégicas, que organizam as prioridades da futura administração estadual e orientam a\nformulação das políticas públicas para os próximos quatro anos:\n1. Gente: Desafios Econômicos, Geração de Emprego e Inserção Social;\n2. Saúde Humanizada e Eficiente;"
+          },
+          {
+            "id": "3-educacao-para-o-futuro-e-inovacao-tecnologica",
+            "titulo": "3. Educação para o Futuro e Inovação Tecnológica;",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "3. Educação para o Futuro e Inovação Tecnológica;\n4. Segurança Pública e Cultura de Paz;\n5. Responsabilidade Fiscal e Modernização da Gestão Pública;\n6. Infraestrutura, Desenvolvimento Regional e Transição Energética;\n7. Agricultura, Pecuária e Segurança Alimentar;\n8. Mulheres, Juventude, Diversidade e Inclusão Social;\n9. Sergipe Empreendedor e Inclusivo;\n10. Cultura, Turismo e Identidade Sergipana.\nCada uma dessas diretrizes reúne objetivos estratégicos, programas, ações e compromissos\nelaborados a partir de estudos técnicos, diagnóstico da realidade sergipana e contribuições\nda sociedade. Mais do que um conjunto de propostas, este Programa de Governo representa\num instrumento de planejamento, orientado por metas, resultados e pela busca permanente\nda eficiência na gestão pública.\nTrata-se de um documento vivo, que acompanhará a dinâmica da sociedade e será\ncontinuamente aperfeiçoado ao longo da gestão, preservando os princípios da transparência,\nda participação social, da inovação e da avaliação permanente das políticas públicas. A\nprincipal marca deste Governo será a proximidade com a população. Queremos fortalecer\numa relação de confiança entre o Estado e os cidadãos, tornando a administração pública\nmais acessível, eficiente e presente no cotidiano das pessoas. Acreditamos que as melhores\nsoluções surgem da combinação entre conhecimento técnico, diálogo permanente,\nparticipação popular e compromisso com resultados.\nNosso objetivo é inaugurar um novo ciclo de desenvolvimento para Sergipe, baseado no\ncrescimento econômico sustentável, na geração de oportunidades, na valorização dos\nmunicípios, na modernização da gestão pública, no fortalecimento da cidadania e na redução\ndas desigualdades sociais e regionais.\nMais do que administrar o presente, queremos preparar Sergipe para o futuro. Um futuro em\nque o Estado seja reconhecido pela eficiência de suas instituições, pela força de sua\neconomia, pela qualidade dos serviços públicos e, principalmente, pela valorização de sua\nmaior riqueza: o povo sergipano.\nEste Programa de Governo é, acima de tudo, um compromisso com um Sergipe mais\npróspero, mais justo, mais inovador e mais humano. Um Estado que acredita na força da sua\ngente, respeita sua história, valoriza suas potencialidades e trabalha para construir um futuro\nde oportunidades, dignidade e esperança para todos os sergipanos."
+          },
+          {
+            "id": "2-panorama-do-estado-de-sergipe",
+            "titulo": "2 – PANORAMA DO ESTADO DE SERGIPE",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "2 – PANORAMA DO ESTADO DE SERGIPE\nLocalizado na Região Nordeste do Brasil, o Estado de Sergipe possui uma posição\nestratégica no território nacional, destacando-se pela diversidade de suas paisagens naturais,\nriqueza cultural, potencial econômico e importância geopolítica regional. Mesmo sendo a\nmenor unidade federativa do país em extensão territorial, Sergipe apresenta significativa\nrelevância econômica, social e ambiental, reunindo características que o tornam um território\npromissor para o desenvolvimento sustentável e integrado.\nDo ponto de vista natural, Sergipe possui uma grande diversidade de ambientes geográficos,\nabrangendo áreas litorâneas, planícies costeiras, tabuleiros, agreste e sertão semiárido. O\nestado é marcado pela presença de importantes bacias hidrográficas, especialmente os rios\nSão Francisco, Sergipe, Vaza-Barris, Japaratuba e Real, que desempenham papel\nfundamental no abastecimento humano, na agricultura, na geração de energia e no equilíbrio\nambiental. O litoral sergipano, com suas praias, manguezais, dunas, lagoas e estuários,\nrepresenta importante patrimônio natural e potencial para o turismo sustentável.\nNo interior do estado, destacam-se as áreas de caatinga e agreste, fundamentais para a\nprodução agropecuária e para a manutenção das atividades econômicas regionais. Apesar\ndas limitações climáticas impostas pela irregularidade das chuvas em algumas regiões,\nSergipe possui elevado potencial agrícola, especialmente na produção de milho, mandioca,\nlaranja, coco, cana-de-açúcar e horticultura, além da forte presença da pecuária leiteira e da\nagricultura familiar, atividades essenciais para a geração de renda e segurança alimentar.\nSob o aspecto demográfico e social, Sergipe possui uma população marcada pela diversidade\ncultural, pelas tradições populares e pela forte identidade regional. A população encontra-se\nmajoritariamente concentrada nos centros urbanos, especialmente na Região Metropolitana\nde Aracaju, embora os municípios do interior desempenhem papel estratégico na dinâmica\neconômica estadual. O estado apresenta avanços modestos nas áreas de educação, saúde\ne infraestrutura, mas ainda convive com desafios históricos relacionados à desigualdade\nsocial, à geração de empregos, à qualificação profissional, ao déficit habitacional e à\nampliação dos serviços públicos de qualidade.\nA juventude sergipana representa uma das maiores forças para a transformação social e\neconômica do estado, exigindo políticas públicas voltadas à educação, inovação tecnológica,\nempreendedorismo e inclusão produtiva. Ao mesmo tempo, torna-se fundamental fortalecer\nprogramas sociais, ampliar o acesso à saúde, combater a pobreza e garantir melhores\ncondições de vida para as populações mais vulneráveis, tanto nas áreas urbanas quanto\nrurais.\nNo campo econômico, Sergipe apresenta uma economia diversificada, baseada nos setores\nde serviços, comércio, indústria, agropecuária e exploração mineral. O estado possui\ndestaque histórico na produção de petróleo e gás natural, atividades que contribuíram\nsignificativamente para o desenvolvimento industrial e energético regional. Além disso,\nSergipe possui importantes reservas minerais, incluindo calcário, potássio, petróleo, gás\nnatural, argila e outros recursos utilizados na construção civil, fertilizantes e atividades\nindustriais.\nA exploração do potássio coloca Sergipe em posição estratégica para o fortalecimento da\nprodução nacional de fertilizantes, especialmente diante da crescente demanda do\nagronegócio brasileiro. Da mesma forma, o setor energético apresenta elevado potencial de\nexpansão, incluindo investimentos em energias renováveis, como energia solar e eólica,"
+          },
+          {
+            "id": "capazes-de-promover-desenvolvimento-sustentavel-geracao-de-empregos-e-in",
+            "titulo": "capazes de promover desenvolvimento sustentável, geração de empregos e interiorização do",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "capazes de promover desenvolvimento sustentável, geração de empregos e interiorização do\ncrescimento econômico.\nO turismo também desponta como atividade estratégica para o desenvolvimento estadual,\nimpulsionado pelas belezas naturais, patrimônio histórico, manifestações culturais,\ngastronomia e potencial do turismo religioso, ecológico e de eventos. Municípios históricos,\náreas litorâneas e regiões do sertão possuem capacidade para ampliar a atividade turística\nde forma integrada e sustentável.\nDiante desse cenário, Sergipe reúne condições favoráveis para construir um novo ciclo de\ndesenvolvimento baseado na inovação, sustentabilidade, inclusão social e fortalecimento das\npotencialidades regionais. O grande desafio para os próximos anos será transformar as\nriquezas naturais, humanas e econômicas do estado em oportunidades concretas de\ncrescimento, geração de renda, redução das desigualdades e melhoria da qualidade de vida\nda população sergipana. Este Programa de Governo parte do reconhecimento dessas\npotencialidades e desafios, assumindo o compromisso de promover políticas públicas\nmodernas, eficientes e integradas, capazes de preparar Sergipe para um futuro mais justo,\ncompetitivo e sustentável."
+          },
+          {
+            "id": "3-diretrizes-estrategicas-para-o-desenvolvimento-de-sergipe",
+            "titulo": "3. DIRETRIZES ESTRATÉGICAS PARA O DESENVOLVIMENTO DE SERGIPE",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "3. DIRETRIZES ESTRATÉGICAS PARA O DESENVOLVIMENTO DE SERGIPE\n3.1 Gente: Desafios Econômicos, Geração de Emprego e Inserção Social\nO Programa de Governo tem início pela diretriz GENTE, porque reconhece que as pessoas\nconstituem o centro de todas as políticas públicas e da ação do Estado. O desenvolvimento\neconômico somente alcança seu verdadeiro propósito quando promove dignidade, reduz\ndesigualdades, amplia oportunidades e melhora, de forma concreta, a qualidade de vida da\npopulação. Esta diretriz foi construída a partir da escuta da sociedade, por meio de visitas\naos municípios, reuniões com lideranças políticas e comunitárias, encontros com\nrepresentantes dos diversos setores produtivos, instituições e organizações da sociedade\ncivil, além do diálogo permanente com a população sergipana. Ouvimos diferentes vozes para\ncompreender os desafios e identificar soluções capazes de transformar a realidade do\nEstado.\nMais do que um conjunto de promessas, este Programa de Governo representa um\ncompromisso com o planejamento, a responsabilidade administrativa e a execução de\npolíticas públicas orientadas por resultados. O planejamento é o instrumento que permite\ndefinir prioridades, utilizar os recursos públicos com eficiência, antecipar desafios e aproveitar\nas oportunidades para promover o desenvolvimento sustentável de Sergipe. O maior desafio\neconômico do Estado consiste em criar condições para ampliar a geração de empregos,\naumentar a renda das famílias, estimular o empreendedorismo, fortalecer a produção regional\ne promover a inclusão produtiva da população. Crescimento econômico e desenvolvimento\nsocial devem caminhar juntos, assegurando oportunidades para todos os sergipanos.\nNesse contexto, a economia solidária assume papel estratégico como instrumento de\ndesenvolvimento inclusivo. Baseada nos princípios da cooperação, da autogestão, da\nsolidariedade e da sustentabilidade, ela fortalece iniciativas coletivas de produção,\ncomercialização, prestação de serviços, consumo e finanças solidárias, promovendo\nautonomia econômica, inclusão social e redução das desigualdades. Ao lado da economia\nsolidária, o Governo promoverá uma política de desenvolvimento econômico regionalizado,\nestimulando investimentos, inovação, competitividade e valorização das potencialidades de\ncada território sergipano, sempre com responsabilidade social e ambiental.\nObjetivos Estratégicos\n●\n●\n●\n●\n●\n●\n●\n\nPromover a geração de emprego, renda e inclusão produtiva em todas as regiões do\nEstado;\nFortalecer a economia solidária como política pública permanente;\nIncentivar o empreendedorismo, a inovação e a economia criativa;\nReduzir as desigualdades regionais por meio do desenvolvimento territorial;\nAmpliar a qualificação profissional alinhada às demandas do mercado de trabalho;\nAtrair investimentos privados com segurança jurídica, estabilidade institucional e\nambiente favorável aos negócios;\nValorizar os pequenos empreendedores, agricultores familiares, pescadores\nartesanais, cooperativas e comunidades tradicionais."
+          },
+          {
+            "id": "programas-acoes-e-compromissos",
+            "titulo": "Programas, Ações e Compromissos:",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Programas, Ações e Compromissos:\nEconomia Solidária e Inclusão Produtiva\n●\n●\n●\n●\n\n●\n\n●\n\nFortalecer os empreendimentos de economia solidária, ampliando sua capacidade\nde produção, comercialização, gestão e acesso aos mercados;\nIncentivar a participação de mulheres, jovens e grupos em situação de\nvulnerabilidade nos empreendimentos econômicos solidários;\nImplantar linhas específicas de crédito, financiamento e fundos públicos voltados ao\nfortalecimento da economia solidária;\nCriar uma Rede Estadual de Assistência Técnica para apoiar cooperativas,\nassociações e empreendimentos solidários na elaboração de planos de negócios,\nestudos de mercado e acesso às políticas públicas;\nImplantar um Programa Estadual de Turismo Solidário, integrando comunidades\ntradicionais, agricultura familiar, artesanato, gastronomia regional e turismo de base\ncomunitária;\nExpandir espaços permanentes de comercialização, como centrais de economia\nsolidária, feiras regionais, mercados públicos, lojas colaborativas e plataformas\ndigitais de vendas.\n\nDesenvolvimento Econômico Regional\n●\n●\n●\n●\n●\n●\n\nImplantar uma política estadual de desenvolvimento regional, considerando as\nvocações econômicas de cada território;\nCriar programas permanentes de incentivo à instalação de indústrias, centros\nlogísticos, empresas inovadoras e parques tecnológicos;\nAtrair investimentos nacionais e internacionais mediante segurança jurídica,\nsimplificação administrativa e estabilidade institucional;\nFortalecer micro, pequenas e médias empresas por meio da desburocratização,\nacesso ao crédito, inovação e incentivos estratégicos;\nIncentivar o empreendedorismo jovem, feminino e social, ampliando oportunidades\npara novos negócios;\nDesenvolver programas de qualificação profissional alinhados às demandas do\nmercado, à transformação digital e às novas tecnologias.\n\nFortalecimento das Cadeias Produtivas\n●\n\n●\n\n●\n●\n\nIncentivar os Arranjos Produtivos Locais (APLs), fortalecendo setores estratégicos\ncomo agricultura, comércio, mineração, turismo, citricultura, confecções, economia\ncriativa e serviços;\nAmpliar a Assistência Técnica e Extensão Rural (ATER) para agricultores familiares\ne povos tradicionais, incluindo pescadores artesanais, marisqueiras, catadoras de\nmangaba, quilombolas, indígenas e comunidades ribeirinhas;\nImplantar infraestrutura de armazenamento, beneficiamento, transporte e\ncomercialização para fortalecer a produção rural e pesqueira;\nEstimular a criação e o fortalecimento de cooperativas de produção,\ncomercialização, crédito e prestação de serviços."
+          },
+          {
+            "id": "qualificacao-e-inclusao-social",
+            "titulo": "Qualificação e Inclusão Social",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Qualificação e Inclusão Social\n●\n●\n●\n\nIntegrar as políticas de emprego, assistência social, educação profissional e\ndesenvolvimento econômico;\nEstabelecer parcerias com universidades, institutos federais, Sistema S e setor\nprodutivo para ampliar a formação técnica e profissional;\nDesenvolver programas voltados à inserção produtiva de jovens, mulheres, pessoas\ncom deficiência e trabalhadores em situação de vulnerabilidade social.\n\nO desenvolvimento de Sergipe exige uma economia dinâmica, inovadora e socialmente\ninclusiva. A geração de riqueza deve estar acompanhada da distribuição de oportunidades,\nda valorização do trabalho e da redução das desigualdades. É essa visão que orienta esta\ndiretriz: colocar as pessoas no centro das decisões, fortalecer a economia, promover o\ndesenvolvimento regional e construir um Estado mais competitivo, sustentável e justo para\ntodos os sergipanos.\n3.2 Saúde Humanizada e Eficiente\nGarantir uma saúde pública de qualidade, acessível, eficiente e humanizada constitui um dos\nmaiores compromissos deste Programa de Governo. A saúde é um direito fundamental\nassegurado pela Constituição Federal e exige um Estado presente, capaz de oferecer\natendimento digno, resolutivo e tempestivo em todas as regiões sergipanas.\nNosso compromisso é construir uma rede estadual de saúde moderna, regionalizada,\nintegrada e orientada pelas necessidades das pessoas. Isso significa fortalecer a Atenção\nPrimária, ampliar a capacidade da média e alta complexidade, reduzir desigualdades\nregionais, valorizar os profissionais de saúde e utilizar a inovação tecnológica para garantir\nmaior eficiência, transparência e qualidade dos serviços públicos.\nA saúde será tratada como política de Estado, baseada na prevenção, promoção da\nqualidade de vida, cuidado integral e gestão responsável dos recursos públicos.\nDiagnóstico\nApesar dos avanços conquistados pelo Sistema Único de Saúde (SUS), Sergipe enfrenta\nimportantes desafios estruturais que comprometem a qualidade da assistência prestada à\npopulação. Entre os principais problemas identificados destacam-se:\n●\n\n●\n\n●\n\n●\n\ndesabastecimento recorrente de medicamentos especializados e de alto custo no\nCentro de Atenção à Saúde de Sergipe (CASE), comprometendo o tratamento de\npacientes transplantados, oncológicos e portadores de doenças raras;\nsuperlotação das unidades hospitalares estaduais, especialmente do Hospital de\nUrgências de Sergipe (HUSE), associada à insuficiência de leitos, equipamentos,\ninsumos e profissionais especializados;\nconcentração da assistência de média e alta complexidade na capital, obrigando\nmilhares de pacientes do interior a longos deslocamentos e dificultando o acesso\naos serviços especializados;\nfragilidade da rede de atenção psicossocial, com insuficiência de equipes, baixa\noferta de leitos de retaguarda e crescimento expressivo dos casos de depressão,\nansiedade, automutilação e suicídio;"
+          },
+          {
+            "id": "pagina-15",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "●\n\n●\n●\n●\n\nlongas filas para consultas especializadas, exames e cirurgias eletivas,\nespecialmente nas áreas de cardiologia, ortopedia, neurocirurgia, oncologia e\nginecologia de alta complexidade;\nnecessidade de reorganização da Rede Materno-Infantil para reduzir a mortalidade\nmaterna e infantil e garantir atendimento humanizado às gestantes;\ninsuficiente integração entre Atenção Primária, serviços especializados e hospitais,\ndificultando a continuidade do cuidado e reduzindo a resolutividade do sistema;\nacelerado processo de envelhecimento da população, exigindo novas políticas\npúblicas voltadas ao cuidado integral da pessoa idosa e ao enfrentamento das\ndoenças crônicas.\n\nEsses desafios exigem planejamento, regionalização da assistência, fortalecimento da gestão\ne investimentos permanentes para tornar a saúde pública mais eficiente, humanizada e\nacessível.\nObjetivos Estratégicos\nO Governo buscará:\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nfortalecer a Atenção Primária como coordenadora das Redes de Atenção à Saúde;\nampliar o acesso da população aos serviços especializados;\ndescentralizar a assistência hospitalar para todas as regiões do Estado;\nreduzir filas de consultas, exames e cirurgias;\nmodernizar a gestão do SUS por meio da transformação digital;\ngarantir abastecimento contínuo de medicamentos e insumos;\nfortalecer a Rede de Atenção Psicossocial;\nreorganizar a Rede Materno-Infantil;\nampliar a assistência à população idosa;\nvalorizar os profissionais da saúde;\nconsolidar uma gestão baseada em indicadores, transparência e resultados.\n\nCompromissos de Governo\n1. Fortalecimento da Atenção Primária\n●\n●\n●\n●\n●\n●\n\nRetomar o cofinanciamento estadual da Atenção Primária vinculado ao alcance de\nmetas;\nImplantar o Programa de Planificação da Atenção à Saúde (PAS);\nFortalecer o apoio institucional às Regiões de Saúde;\nImplantar linhas de cuidado integradas entre Atenção Primária, Média e Alta\nComplexidade;\nCapacitar permanentemente as equipes de saúde;\nQualificar o acolhimento em saúde mental e violência doméstica."
+          },
+          {
+            "id": "2-regionalizacao-e-descentralizacao-da-rede-hospitalar",
+            "titulo": "2. Regionalização e Descentralização da Rede Hospitalar",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "2. Regionalização e Descentralização da Rede Hospitalar\n●\n●\n●\n●\n●\n\n●\n●\n\nReestruturar a Rede Hospitalar Estadual, transformando o Hospital da Polícia Militar\n(HPM) em Hospital do Servidor Público e Militar do Estado de Sergipe;\nConstruir um Hospital Geral na Região Metropolitana de Aracaju;\nAmpliar a capacidade dos Hospitais Regionais, inclusive com a estruturação para\nrealização de serviços de hemodiálise;\nExpandir leitos clínicos e de UTI;\nImplantar o Hospital de Clínicas de Sergipe como unidade de referência regional,\ndestinada à prestação de assistência integral e humanizada à população, com foco\nna média e alta complexidade, reduzindo as filas de cirurgias e exames\nespecializados e fortalecendo o SUS;\nImplantar novos serviços especializados no interior;\nFortalecer a utilização da telemedicina.\n\n3. Média e Alta Complexidade\n●\n●\n●\n●\n●\n\nReorganizar a rede de cardiologia de alta complexidade;\nReduzir as filas de cirurgias eletivas;\nAmpliar os serviços de neurocirurgia, ortopedia, oncologia e hemodinâmica;\nFortalecer a rede de transplantes;\nAperfeiçoar o Tratamento Fora do Domicílio (TFD).\n\n4. Saúde Mental\n●\n●\n●\n●\n●\n\nFortalecer a Rede de Atenção Psicossocial (RAPS);\nImplantar alas psiquiátricas em hospitais gerais;\nExpandir ações de prevenção ao suicídio;\nAmpliar a articulação entre Estado e municípios;\nDesenvolver programas voltados à saúde mental de crianças, adolescentes,\ntrabalhadores e idosos.\n\n5. Saúde da Mulher, da Criança e da Pessoa Idosa\n●\n●\n●\n●\n●\n●\n\nReestruturar a Rede Materno-Infantil;\nImplantar a estratificação de risco da gestação;\nGarantir a vinculação prévia da gestante à maternidade de referência;\nAmpliar Centros de Parto Normal;\nFortalecer políticas de prevenção dos cânceres femininos, endometriose, climatério\ne violência contra a mulher;\nInstituir uma Linha Estadual de Cuidado da Pessoa Idosa, com diagnóstico precoce,\nreabilitação e atenção integral às doenças crônicas.\n\n6. Inclusão e Equidade\n●\n●\n●\n\nFortalecer a assistência às Pessoas com Deficiência;\nImplantar Centros Especializados de Reabilitação no interior;\nAmpliar a oferta de órteses, próteses e meios auxiliares de locomoção;"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n●\n\nApoiar os Centros de Atendimento à Pessoa Neurodivergente;\nFortalecer a Política Estadual de Saúde Integral da População Negra;\nConstrução de 10 Centros de Equoterapia, sendo 5 na Grande Aracaju e 5 nas\ncidades-pólo regionais do Estado;\nConsolidar políticas de atenção integral à população LGBTQIAPN+.\n\n7. Assistência Farmacêutica\n●\n●\n●\n●\n\nModernizar a logística estadual de medicamentos;\nGarantir abastecimento permanente de medicamentos especializados;\nImplantar planos de contingência para medicamentos estratégicos;\nAperfeiçoar o controle de estoques e da distribuição.\n\n8. Valorização dos Profissionais\n●\n●\n●\n●\n●\n\nImplantar programas permanentes de qualificação;\nCriar plano de carreira para especialistas no interior;\nExpandir programas de residência médica e multiprofissional;\nMelhorar as condições de trabalho das equipes de saúde;\nValorizar fisioterapeutas, terapeutas ocupacionais e demais categorias profissionais.\n\n9. Transformação Digital da Saúde\n●\n●\n●\n●\n●\n●\n\nImplantar prontuário eletrônico único em toda a rede estadual;\nCriar o Aplicativo Estadual da Saúde;\nExpandir a telemedicina;\nUtilizar inteligência artificial para apoio à regulação e ao diagnóstico;\nModernizar equipamentos e sistemas de informação;\nImplantar painéis eletrônicos para monitoramento dos indicadores de saúde.\n\n10. Gestão, Governança e Eficiência\n●\n●\n●\n●\n●\n●\n●\n●\n\nFortalecer a regionalização do SUS;\nModernizar a regulação estadual;\nImplantar a Política Estadual de Economia da Saúde;\nFortalecer a contratualização com hospitais filantrópicos;\nReestruturar o IPES Saúde;\nRedesenhar o SAMU 192 Sergipe;\nImplantar gestão baseada em indicadores de desempenho;\nAmpliar a participação social na formulação e avaliação das políticas públicas de\nsaúde."
+          },
+          {
+            "id": "nosso-compromisso",
+            "titulo": "Nosso Compromisso",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Nosso Compromisso\nNosso governo trabalhará para construir um sistema de saúde mais humano, regionalizado,\nmoderno e resolutivo. O cidadão será colocado no centro das políticas públicas, garantindo\nacesso oportuno aos serviços, redução das desigualdades regionais, valorização dos\nprofissionais, fortalecimento do Sistema Único de Saúde e uso responsável dos recursos\npúblicos.\nA saúde deixará de ser marcada por filas, improvisos e desigualdades para tornar-se uma\npolítica pública eficiente, integrada e orientada pela promoção da vida, assegurando mais\nqualidade, dignidade e bem-estar para todos os sergipanos.\n\n3.3 Educação para o Futuro e Inovação Tecnológica\nA educação é o principal instrumento de transformação social, desenvolvimento econômico\ne fortalecimento da cidadania. Nenhuma nação alcançou elevados níveis de prosperidade,\ninovação e justiça social sem realizar investimentos permanentes na formação de seu capital\nhumano. Por essa razão, o Governo de Sergipe colocará a educação no centro da estratégia\nde desenvolvimento estadual, compreendendo-a como política estruturante capaz de\nimpulsionar o crescimento econômico, reduzir desigualdades e preparar as novas gerações\npara os desafios do século XXI.\nVivemos uma profunda transformação impulsionada pela economia do conhecimento, pela\ninteligência artificial, pela digitalização dos processos produtivos, pela automação, pela\nciência e pelas novas tecnologias. Nesse cenário, educar significa muito mais do que garantir\nmatrícula e permanência na escola. Significa formar cidadãos críticos, criativos, éticos,\nempreendedores e preparados para aprender continuamente ao longo da vida.\nSergipe possui enorme potencial humano, mas ainda enfrenta desafios relacionados à\naprendizagem, à permanência escolar, à alfabetização, à qualificação dos profissionais da\neducação, à infraestrutura das escolas e ao acesso às tecnologias digitais. Superar esses\ndesafios exige planejamento estratégico, investimentos permanentes e uma gestão\neducacional orientada por evidências, inovação e resultados.\nNosso compromisso é construir um sistema educacional moderno, inclusivo, democrático e\nconectado com as demandas da sociedade contemporânea. A educação pública estadual\ndeverá promover a formação integral dos estudantes, desenvolvendo competências\ncientíficas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando\ncrianças, adolescentes, jovens e adultos para o exercício da cidadania e para um mercado\nde trabalho cada vez mais exigente e tecnológico. Essa transformação exige escolas bem\nestruturadas, conectadas digitalmente, equipadas com laboratórios de ciências, informática,\nrobótica e inovação, bibliotecas físicas e digitais, ambientes de aprendizagem colaborativa e\nrecursos tecnológicos que favoreçam novas metodologias pedagógicas. A valorização dos\nprofissionais da educação constitui um dos pilares desta proposta. O Governo promoverá\npolíticas permanentes de formação inicial e continuada, aperfeiçoamento profissional,\nqualificação em nível de especialização, mestrado e doutorado, além de estimular práticas\npedagógicas inovadoras, liderança escolar e gestão baseada em resultados, sempre\nrespeitando a autonomia pedagógica, a participação da comunidade escolar e a valorização\nda carreira docente."
+          },
+          {
+            "id": "a-educacao-sera-tambem-um-instrumento-de-inclusao-social-o-governo-forta",
+            "titulo": "A educação será também um instrumento de inclusão social. O Governo fortalecerá políticas",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "A educação será também um instrumento de inclusão social. O Governo fortalecerá políticas\nde permanência estudantil, combate à evasão escolar, alfabetização na idade certa,\neducação em tempo integral, atendimento educacional especializado, transporte escolar,\nalimentação escolar de qualidade, assistência estudantil e apoio psicossocial aos estudantes\ne aos profissionais da educação. Ao lado da educação, a ciência, a tecnologia e a inovação\nconstituirão pilares estratégicos para o desenvolvimento sustentável de Sergipe. O\nfortalecimento da pesquisa científica, da inovação tecnológica e da transformação digital\npermitirá ampliar a competitividade do Estado, estimular o empreendedorismo, gerar\nempregos qualificados e promover maior eficiência na gestão pública. Mais do que investir\nem escolas, equipamentos e tecnologia, este Programa de Governo propõe investir nas\npessoas. O conhecimento continuará sendo o maior patrimônio de Sergipe e o principal\ncaminho para construir uma sociedade mais desenvolvida, competitiva, inclusiva e\nsocialmente justa. É com essa visão que esta Diretriz apresenta os objetivos estratégicos,\nprogramas, ações e compromissos que orientarão a política estadual de Educação, Ciência,\nTecnologia e Inovação durante os próximos quatro anos.\nObjetivos Estratégicos\n●\n●\n●\n●\n●\n●\n●\n●\n\nUniversalizar o acesso à educação básica com qualidade social;\nElevar os indicadores de aprendizagem e reduzir as desigualdades educacionais\nentre os territórios sergipanos;\nValorizar os profissionais da educação mediante formação continuada, condições\nadequadas de trabalho e aperfeiçoamento da carreira;\nExpandir a educação integral e a educação profissional articulada às demandas do\ndesenvolvimento regional;\nPromover a transformação digital da educação pública estadual;\nFortalecer a pesquisa científica, a inovação tecnológica e o empreendedorismo de\nbase tecnológica;\nConsolidar Sergipe como referência regional em ciência, tecnologia e inovação;\nIntegrar educação, desenvolvimento econômico e inclusão social como eixos\nestruturantes da política pública estadual.\n\nEixos Estruturantes\nA política estadual de Educação para o Futuro e Inovação Tecnológica será organizada em\nseis grandes eixos:\nI – Educação Básica de Qualidade\nDa Educação Infantil ao Ensino Médio, com foco na aprendizagem, alfabetização,\npermanência escolar e melhoria dos indicadores educacionais.\nII – Valorização dos Profissionais da Educação\nFormação inicial e continuada, recomposição salarial, concursos públicos, liderança escolar\ne fortalecimento da gestão democrática.\nIII – Inclusão, Permanência e Equidade\nAssistência estudantil, educação especial inclusiva, transporte escolar, alimentação escolar\ne apoio psicossocial aos estudantes.\nIV – Infraestrutura, Tecnologia e Educação Digital"
+          },
+          {
+            "id": "escolas-inteligentes-conectividade-laboratorios-bibliotecas-digitais-rob",
+            "titulo": "Escolas inteligentes, conectividade, laboratórios, bibliotecas digitais, robótica, inteligência",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Escolas inteligentes, conectividade, laboratórios, bibliotecas digitais, robótica, inteligência\nartificial e inovação pedagógica.\nV – Ciência, Tecnologia e Inovação\nFortalecimento da pesquisa científica, da FAPITEC, das universidades, das startups, dos\nparques tecnológicos e da economia do conhecimento.\nVI – Governança e Cooperação Federativa\nIntegração permanente entre Estado, municípios, Governo Federal, universidades, setor\nprodutivo e sociedade civil para a construção de políticas públicas educacionais\nsustentáveis.\nA partir desses eixos estruturantes serão desenvolvidos os programas, projetos e ações que\ncompõem esta Diretriz Estratégica, orientando uma política educacional moderna, inclusiva,\ninovadora e comprometida com a formação das futuras gerações de sergipanos.\nPortanto, é compromisso do Programa de Governo, em parceria com a União e os\nmunicípios:\n1) Articular com os municípios ações para garantir a universalização da Educação Infantil na\npré-escola para as crianças de 04 (quatro) e 05 (cinco) anos de idade e ampliar a oferta de\nEducação Infantil em creches;\n2) Universalizar o ensino fundamental de 9 (nove) anos para toda a população de 6 (seis) a\n14 (quatorze) anos e garantir que pelo menos 95% (noventa e cinco por cento) dos alunos\nconcluam essa etapa na idade recomendada;\n3) Universalizar o atendimento escolar para toda a população de 15 (quinze) a 17\n(dezessete) anos e elevar a taxa líquida de matrículas no ensino médio;\n4) Universalizar, para a população de 4 (quatro) a 17 (dezessete) anos com deficiência,\ntranstornos globais do desenvolvimento e altas habilidades ou superdotação, o acesso à\neducação básica e ao atendimento educacional especializado, preferencialmente na rede\nregular de ensino, com a garantia de sistema educacional inclusivo, de salas de recursos\nmultifuncionais, classes, escolas ou serviços especializados, públicos ou conveniados.\n5) Alfabetizar todas as crianças, no máximo, até o final do 3º (terceiro) ano do Ensino\nFundamental;\n6) Ampliar a oferta de educação em tempo integral;\n7) Fomentar a qualidade da educação básica em todas as etapas e modalidades, com\nmelhoria do fluxo escolar e da aprendizagem de modo a atingir as médias nacionais para o\nIDEB;\n8) Elevar a taxa de alfabetização da população com 15 (quinze) anos ou mais;\n9) Fortalecer e aperfeiçoar o Programa de Transferência de Recursos Financeiros\nDiretamente às Escolas Públicas Estaduais (PROFIN);\n10) Oferecer, no mínimo, 25% (vinte e cinco por cento) das matrículas da educação de\njovens e adultos, no ensino fundamental e médio, de forma integrada à educação\nprofissional;\n11) Ampliar a efetivação da gestão democrática da educação, associada a critérios técnicos\nde mérito e desempenho e à consulta pública à comunidade escolar, no âmbito das escolas\npúblicas;\n12) Fortalecer o Programa de Alfabetização na Idade Certa (PAIC) e o Programa Alfabetizar\npra Valer em todas as regiões do estado;"
+          },
+          {
+            "id": "13-criar-centros-de-linguas-estrangeiras-em-todo-o-estado-para-que-os-es",
+            "titulo": "13) Criar Centros de Línguas Estrangeiras em todo o estado, para que os estudantes da",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "13) Criar Centros de Línguas Estrangeiras em todo o estado, para que os estudantes da\nescola pública possam aprofundar seus conhecimentos em outros idiomas, como inglês e\nespanhol;\n14) Buscar a valorização dos profissionais da educação com recomposição salarial\nutilizando como referência o Piso Nacional dos Professores e a qualificação permanente\ndos professores da rede estadual;\n15) Colaborar com os municípios para elaboração e adequação dos Planos Municipais aos\nPlanos Estadual e Nacional de Educação;\n16) Melhorar e ampliar o serviço de transporte escolar, avançando no gerenciamento dos\nprojetos e programas relacionados ao financiamento, renovação da frota e aquisição de\nônibus escolares;\n17) Desenvolver políticas de incentivos aos estudantes do ensino médio, inclusive na\nmodalidade EJA e profissional com foco na redução do abandono e evasão escolar,\ngarantindo a conclusão do ciclo da educação básica;\n18) Fortalecer as ações do projeto PRÉ Vestibular com o objetivo de elevar o desempenho\nacadêmico e incentivar a participação dos estudantes do ensino médio no Exame Nacional\ndo Ensino Médio (ENEM), possibilitando o acesso ao ensino superior;\n19) Expandir e aperfeiçoar a infraestrutura e a rede de internet nas unidades escolares, com\no objetivo de implementar tecnologias educacionais voltadas à ampliação do conhecimento,\nvinculando essa iniciativa à formação continuada dos professores em tecnologias digitais;\n20) Estabelecer parcerias com Instituições de Ensino Superior (IES) e com o Sistema S,\nvisando promover o acesso de professores e gestores escolares a cursos de\naperfeiçoamento, extensão e pós-graduação (especialização, mestrado e doutorado), em\nserviço, principalmente para capacitação a respeito da gestão de recursos públicos;\n21) Instituir, por lei, o Prêmio Pacto pela Educação para os profissionais da escola,\nconsiderando o desempenho acadêmico dos alunos, os resultados de aprendizagem na\nunidade de ensino e no Exame Nacional do Ensino Médio, bem como a atuação dos\nprofessores que se destacarem em projetos e programas;\n22) Articular com a Secretaria de Saúde o aperfeiçoamento da oferta de serviços de\npsicologia, fonoaudiologia, psiquiatria e outras especialidades, para melhorar a assistência\nà saúde física, mental e emocional dos professores e demais profissionais em todas as\nregiões;\n23) Realizar concurso público para professores e para o pessoal do Quadro TécnicoAdministrativo da Educação;\n24) Apoiar a expansão do Atendimento Educacional Especializado aos estudantes públicoalvo da Educação Especial, com foco no acesso à educação de qualidade, no Programa\nEscola Acessível, nas salas de recursos multifuncionais, no Benefício de Prestação\nContinuada (BPC) na Escola e no Transporte Escolar Acessível;\n25) Desenvolver estratégias para implementar e efetivar o Plano Estadual da Primeira\nInfância;\n26) Desenvolver estratégias para implementar e fortalecer o Plano Decenal e a Política\nEstadual dos Direitos da Criança e do Adolescente, com ações voltadas à erradicação do\ntrabalho infantil, ao enfrentamento da violência sexual contra crianças e adolescentes e a\noutras políticas essenciais, como as destinadas às crianças em situação de rua;\n27) Apoiar técnica e operacionalmente os municípios na manutenção dos serviços de\nacolhimento institucional de crianças e adolescentes;"
+          },
+          {
+            "id": "28-fortalecer-o-programa-nacional-de-alimentacao-escolar-pnae-criando-es",
+            "titulo": "28) Fortalecer o Programa Nacional de Alimentação Escolar (PNAE), criando estratégias",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "28) Fortalecer o Programa Nacional de Alimentação Escolar (PNAE), criando estratégias\npara ampliar a aquisição de produtos da agricultura familiar além do índice previsto na Lei\nnº 11.947, de 16 de junho de 2009;\n29) Dialogar com os municípios para ampliar o número de creches e pré-escolas, permitindo\nàs mães tempo livre para o trabalho;\n30) Qualificar o processo de escolha dos gestores escolares a partir de um programa de\ncertificação;\n31) Criar/aperfeiçoar o Programa de Intercâmbio Internacional do Ensino Médio da rede\npública;\n32) Implementar, no sistema educacional do Estado de Sergipe, o acesso livre e gratuito às\ntecnologias da informação e comunicação;\n33) Consolidar, no estado, a política de apoio estudantil, tendo como referência as\ndemandas dos estudantes do ensino médio e superior;\n34) Reformar, ampliar, modernizar e garantir uma política de funcionamento, acesso e\nvalorização da biblioteca pública;\n35) Criar bibliotecas digitais acessíveis a todos os alunos e professores;\n36) Estimular, com o uso de recursos públicos, a formação continuada de professores e\ntécnicos para ampliar as possibilidades de educação profissional;\n37) Estabelecer parcerias com universidades para contribuir com a formação e capacitação\ndos profissionais da educação que trabalham com alunos com necessidades educacionais\nespeciais;\n38) Realizar concursos públicos para tradutores e intérpretes de Libras (Língua Brasileira de\nSinais), com o objetivo de atender todos os alunos com deficiência matriculados na rede\npública de ensino;\n39) Modernizar os processos administrativos e pedagógicos, utilizando programas de\nacompanhamento e monitoramento do planejamento escolar e fortalecendo a parceria com\nprofessores, alunos, pais, Conselho de Classe, Conselho Tutelar e Ministério Público;\n40) Implantar escolas com infraestrutura moderna, internet de alta velocidade e ambientes\ntecnológicos;\n41) Criar programas estaduais de inovação, robótica, inteligência artificial e educação\ndigital;\n42) Fortalecer e aperfeiçoar o Programa Estudante Monitor em Sergipe;\n43) Fortalecer e aperfeiçoar o Programa Saúde na Escola (PSE) em Sergipe, em parceria\ncom a Secretaria de Saúde, nos âmbitos estadual e municipal;\n44) Criar o Programa Ponte para o Futuro – Permanência Universitária: todos os estudantes\nde baixa renda oriundos da escola pública que alcançarem 560 pontos no ENEM e\ningressarem em uma universidade receberão uma bolsa durante seis meses, paga a partir\ndo primeiro dia de aula;\n45) Criar o Centro de Formação de Professores do Estado de Sergipe, com o objetivo de\ndesenvolver ações de ensino e aprendizagem, pesquisa, formação continuada de\nprofessores da rede pública de educação básica, grupos de estudo, exposições de\ntrabalhos, oficinas, seminários, simpósios, conferências, palestras, atividades de artes\nvisuais, dança, literatura, música e teatro, mostras estudantis de artes, projetos de\nintervenção municipal e cadernos ou revistas para divulgação dos trabalhos e atividades\ndesenvolvidos pelo centro."
+          },
+          {
+            "id": "3-3-1-inovacao-tecnologica",
+            "titulo": "3.3.1 Inovação Tecnológica",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "3.3.1 Inovação Tecnológica\n●\n●\n\n●\n\n●\n\n●\n\n●\n\n●\n\nAmpliar e melhorar a distribuição dos recursos do FUNTEC, buscando fortalecer o\nsistema estadual de ciência, tecnologia e inovação (CT&I);\nAmpliar as ações de fomento à pesquisa e à inovação por meio da Fundação de\nApoio à Pesquisa e à Inovação Tecnológica do Estado de Sergipe (Fapitec/SE),\ncriando linhas de financiamento para áreas estratégicas, como energias renováveis,\nagroindústria, tecnologias sociais, saúde, desenvolvimento sustentável, educação,\nsegurança pública e tecnologias do futuro;\nInserir a área de inovação em uma secretaria, como a Secretaria de\nDesenvolvimento Econômico e Inovação, disseminando metodologias e resultados\nrelacionados à inovação, à simplificação, à gestão de processos e à modelagem\norganizacional e contribuindo para a promoção da cultura de inovação no Estado;\nCriar um programa de apoio à interação entre governo, IES e empresas, integrando\nações para inserir produtos e processos inovadores no mercado sergipano e\ncompartilhar os riscos financeiros da inovação entre empresas e governo. Estimular\na participação do setor empresarial em PD&I para simplificar processos e serviços\ngovernamentais e ampliar o desenvolvimento tecnológico em parceria com as IES;\nAssociar inovação, sustentabilidade e tecnologia por meio da criação de um\nPrograma Integrado de soluções inovadoras para Sergipe nas áreas de saneamento\nbásico, tratamento de esgoto, tecnologia da informação, fruticultura irrigada\ninteligente, comércio, transporte e créditos de carbono. A iniciativa poderá posicionar\nSergipe como pioneiro na estruturação e comercialização de créditos de carbono no\nBrasil e em outros países;\nEstimular a criação de Centros de Inovação e a articulação de uma rede sergipana\nde inovação, fortalecendo a cultura empreendedora e o ecossistema inovador do\nestado para a contratação de startups com custos menores para a administração\npública, gerando benefícios para o governo e fortalecendo o empreendedorismo;\nEstimular o desenvolvimento de ecossistemas de inovação para induzir empresas e\nprodutos de base tecnológica, como startups e spin-offs.\n\n3.4 Segurança Pública e Cultura de Paz\nConstruir um Sergipe mais seguro, justo e socialmente desenvolvido exige uma política\npública de segurança moderna, eficiente e comprometida com a proteção da vida. A\nsegurança pública constitui um direito fundamental da população e um dever do Estado,\ndevendo ser exercida com planejamento, inteligência, integração institucional, valorização\ndos profissionais e respeito aos direitos humanos.\nNosso Governo compreende que a segurança pública vai além do enfrentamento à\ncriminalidade. Ela depende da presença permanente do Estado, da prevenção da violência,\nda inclusão social, do fortalecimento das comunidades e da construção de uma verdadeira\ncultura de paz.\nPor essa razão, adotaremos uma política integrada que combine repressão qualificada ao\ncrime organizado com ações permanentes de prevenção, cidadania e promoção de\noportunidades para crianças, adolescentes e jovens, articulando segurança pública com\neducação, assistência social, cultura, esporte, geração de emprego e desenvolvimento\nregional."
+          },
+          {
+            "id": "nosso-compromisso-e-construir-um-sistema-estadual-de-seguranca-publica-b",
+            "titulo": "Nosso compromisso é construir um sistema estadual de segurança pública baseado na",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Nosso compromisso é construir um sistema estadual de segurança pública baseado na\ninteligência, na tecnologia, na gestão por resultados, na valorização dos servidores e na\ncooperação permanente entre Estado, municípios, sistema de justiça e sociedade civil.\nDiagnóstico\nSergipe enfrenta importantes desafios na área da segurança pública, decorrentes das\ntransformações da criminalidade e das novas formas de violência presentes nas cidades e no\nmeio rural. Entre os principais problemas identificados destacam-se:\n●\n●\n●\n●\n●\n●\n●\n●\n\nexpansão das organizações criminosas e do tráfico de drogas;\ncrescimento dos crimes patrimoniais, dos crimes cibernéticos e das fraudes\neletrônicas;\nelevados índices de violência contra as mulheres e outros grupos vulneráveis;\nnecessidade de fortalecimento da inteligência policial e da integração entre as forças\nde segurança;\nconcentração de estruturas especializadas na capital, dificultando o atendimento às\nregiões do interior;\nnecessidade de modernização tecnológica das polícias, da Polícia Científica e do\nsistema prisional;\ncarência de investimentos permanentes na valorização profissional, formação\ncontinuada, saúde física e mental dos servidores da segurança pública;\nnecessidade de fortalecer políticas preventivas voltadas à juventude e aos territórios\nsocialmente vulneráveis.\n\nEnfrentar esses desafios exige planejamento estratégico, inovação tecnológica, integração\ninstitucional e gestão orientada por resultados.\nObjetivos Estratégicos\nO Governo buscará:\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nreduzir os índices de violência e criminalidade;\nfortalecer o combate ao crime organizado;\nampliar a capacidade investigativa das forças de segurança;\nmodernizar a infraestrutura tecnológica da segurança pública;\nfortalecer a segurança no interior do Estado;\npromover políticas permanentes de prevenção da violência;\nconsolidar uma cultura de paz e respeito aos direitos humanos;\nvalorizar os profissionais da segurança pública;\nfortalecer a participação social e a transparência da gestão.\n\nCompromissos de Governo\n1. Governança e Gestão Integrada\n●\n●\n●\n\nInstituir o Comitê Estadual de Gestão Integrada da Segurança Pública, coordenado\npelo Governador;\nImplantar gestão baseada em indicadores e metas estratégicas;\nCriar o Painel Sergipe Seguro para divulgação permanente dos indicadores de\nsegurança pública;"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nFortalecer a integração entre Estado, municípios e instituições do sistema de justiça.\n\n2. Inteligência, Tecnologia e Inovação\n●\n●\n●\n\n●\n●\n\nImplantar o Programa Sergipe Inteligente para modernização tecnológica da\nsegurança pública;\nImplantar a Muralha Digital Sergipana com câmeras inteligentes, leitura automática\nde placas, inteligência artificial e monitoramento por drones;\nCriar a Central Integrada Estadual de Segurança, reunindo Polícia Civil, Polícia\nMilitar, Corpo de Bombeiros Militar, Polícia Científica, Polícia Penal, Guardas\nMunicipais e SAMU;\nIntegrar os bancos de dados dos órgãos estaduais para fortalecer as investigações\npoliciais;\nExpandir o videomonitoramento inteligente em todas as regiões do Estado.\n\n3. Fortalecimento das Forças de Segurança\n●\n●\n●\n●\n●\n\nModernizar equipamentos, armamentos, viaturas e sistemas de comunicação;\nAmpliar o efetivo das forças de segurança conforme planejamento estratégico;\nFortalecer a inteligência policial;\nAmpliar a capacidade operacional da Polícia Civil, da Polícia Militar, do Corpo de\nBombeiros Militar, da Polícia Científica e da Polícia Penal;\nImplantar programas permanentes de capacitação profissional.\n\n4. Polícia Científica e Investigação Criminal\n●\n●\n●\n●\n\nDescentralizar os serviços periciais;\nImplantar unidades regionais do Instituto de Criminalística, do Instituto Médico-Legal\ne do Instituto de Identificação;\nModernizar laboratórios de balística, DNA, biologia forense, documentoscopia,\nquímica forense e perícia digital;\nCriar laboratório estadual especializado em investigação digital e crimes\ncibernéticos.\n\n5. Segurança Territorial e Regionalização\n●\n●\n●\n●\n●\n●\n\nAmpliar a presença das forças policiais em todas as regiões do Estado;\nFortalecer delegacias regionais, municipais e distritais;\nImplantar bases móveis de policiamento;\nExpandir o policiamento rural;\nCriar comando especializado de policiamento de divisas;\nImplantar a Cidade da Segurança do Sertão, integrando serviços policiais, perícia e\nmonitoramento regional.\n\n6. Sistema Prisional e Ressocialização\n●\n●\n\nModernizar o sistema penitenciário estadual;\nFortalecer a inteligência penitenciária;"
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n\nImplantar bloqueadores tecnológicos de telefonia celular nas unidades prisionais;\nAmpliar programas de escolarização, qualificação profissional e trabalho para\npessoas privadas de liberdade;\nDesenvolver políticas permanentes de reinserção social dos egressos do sistema\nprisional.\n\n7. Proteção das Mulheres e dos Grupos Vulneráveis\n●\n●\n●\n●\n\nImplantar o Programa Mulher Protegida para prevenção e enfrentamento da\nviolência contra a mulher;\nFortalecer a rede de atendimento às vítimas;\nAmpliar políticas de prevenção da violência doméstica;\nDesenvolver ações específicas voltadas à proteção de crianças, adolescentes,\nidosos, pessoas com deficiência e população LGBTQIA+.\n\n8. Segurança Digital\n●\n●\n●\n\nImplantar a Delegacia Digital para registro remoto de ocorrências;\nCriar unidade especializada em inteligência cibernética;\nFortalecer o combate às fraudes eletrônicas, aos crimes virtuais e aos delitos\nfinanceiros praticados no ambiente digital.\n\n9. Segurança Aérea e Atendimento de Emergência\n●\n●\n●\n●\n\nConstruir sede própria para o Grupamento Tático Aéreo;\nAdquirir aeronave multimissão para operações policiais, aeromédicas e de defesa\ncivil;\nImplantar áreas de pouso em unidades estratégicas;\nIntegrar permanentemente as operações do Grupamento Tático Aéreo ao SAMU e\nao Corpo de Bombeiros Militar.\n\n10. Valorização dos Profissionais\n●\n●\n●\n●\n●\n\nPromover formação continuada de todos os profissionais da segurança pública;\nDebater a recomposição remuneratória e a regulamentação do adicional de\npericulosidade;\nImplantar programa permanente de saúde mental e apoio psicossocial aos\nservidores;\nCriar programa habitacional específico para profissionais das forças de segurança;\nMelhorar continuamente as condições de trabalho, infraestrutura e equipamentos.\n\n11. Cultura de Paz e Prevenção da Violência\n●\n●\n●\n\nImplantar programas permanentes de prevenção à violência nas escolas e\ncomunidades;\nIntegrar ações entre segurança pública, educação, assistência social, esporte e\ncultura;\nDesenvolver programas voltados à juventude em territórios vulneráveis;"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n\nFortalecer projetos de mediação de conflitos, justiça restaurativa e convivência\ncidadã;\nIncentivar campanhas permanentes de promoção da cultura de paz e respeito aos\ndireitos humanos.\n\nNosso Compromisso\nNosso Governo promoverá uma política de segurança pública baseada na inteligência, na\nprevenção, na integração institucional e na valorização da vida. Atuaremos para fortalecer as\nforças de segurança, combater o crime organizado, proteger as pessoas mais vulneráveis e\nampliar a presença do Estado em todas as regiões sergipanas.\nA construção de uma cultura de paz exige um Estado forte, instituições eficientes e uma\nsociedade comprometida com a cidadania, o diálogo e o respeito às diferenças. Nosso\ncompromisso é fazer de Sergipe um estado mais seguro, mais humano e preparado para\nenfrentar os desafios do presente e do futuro, assegurando tranquilidade, justiça e qualidade\nde vida para toda a população.\n3.5 Responsabilidade Fiscal e Modernização da Gestão Pública\nA construção de um Estado moderno, eficiente e socialmente justo exige uma gestão pública\nresponsável, transparente e comprometida com a boa aplicação dos recursos públicos. Em\num contexto de profundas transformações econômicas, sociais e tecnológicas, Sergipe\nprecisa fortalecer sua capacidade institucional para planejar, investir, executar e avaliar\npolíticas públicas com eficiência, garantindo resultados concretos para a população.\nNosso Governo parte de uma convicção fundamental: responsabilidade fiscal e\ndesenvolvimento social caminham juntos. O equilíbrio das contas públicas não é um fim em\nsi mesmo, mas uma condição indispensável para ampliar a capacidade de investimento do\nEstado, assegurar a continuidade das políticas públicas e garantir segurança jurídica,\nconfiança institucional e estabilidade econômica.\nAo longo dos próximos quatro anos, implantaremos um novo modelo de governança pública,\nbaseado em planejamento estratégico, gestão por resultados, inovação tecnológica,\ntransparência, integridade, participação social e avaliação permanente do desempenho das\npolíticas públicas. O objetivo é tornar Sergipe um Estado mais eficiente, menos burocrático e\nmais próximo do cidadão.\nA modernização administrativa será conduzida por meio da transformação digital da máquina\npública, da integração entre os órgãos governamentais, da simplificação de processos, da\nredução de custos operacionais e da utilização intensiva de tecnologias da informação,\ninteligência de dados e automação de serviços. O cidadão deverá encontrar um governo\nacessível, ágil e capaz de responder rapidamente às suas demandas.\nO fortalecimento da gestão pública também passa pela valorização dos servidores.\nInvestiremos na formação continuada, na modernização das carreiras, na melhoria dos\nambientes de trabalho e na adoção de mecanismos de avaliação institucional que estimulem\na inovação, a eficiência e a cultura de resultados, sempre respeitando os princípios da\nadministração pública.\nA sustentabilidade fiscal será tratada como política permanente de Estado. Buscaremos\nampliar a arrecadação por meio do crescimento econômico, da modernização da"
+          },
+          {
+            "id": "administracao-tributaria-do-combate-a-sonegacao-e-da-ampliacao-da-formal",
+            "titulo": "administração tributária, do combate à sonegação e da ampliação da formalização da",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "administração tributária, do combate à sonegação e da ampliação da formalização da\natividade econômica, evitando o aumento da carga tributária e promovendo justiça fiscal.\nDa mesma forma, aperfeiçoaremos a gestão das despesas públicas, promovendo a revisão\npermanente dos gastos, a racionalização administrativa, a avaliação periódica dos programas\ngovernamentais e o fortalecimento do planejamento orçamentário de médio e longo prazo,\nassegurando maior eficiência na utilização dos recursos públicos.\nTambém fortaleceremos os mecanismos de transparência, controle interno, controle social e\nparticipação cidadã, ampliando o acesso às informações públicas e consolidando uma cultura\nde integridade, ética e responsabilidade na administração estadual.\nNosso compromisso é construir um Estado financeiramente equilibrado, administrativamente\nmoderno e institucionalmente forte, capaz de promover o desenvolvimento econômico,\nampliar investimentos estratégicos e oferecer serviços públicos de qualidade para toda a\npopulação sergipana.\n\nObjetivos Estratégicos\n●\n●\n●\n●\n●\n●\n●\n●\n\nGarantir o equilíbrio fiscal e a sustentabilidade das finanças públicas.\nModernizar a administração pública estadual por meio da transformação digital.\nImplantar um modelo de gestão orientado por resultados e avaliação permanente.\nFortalecer a governança institucional, a transparência e o controle social.\nValorizar os servidores públicos e qualificar a gestão de pessoas.\nAmpliar a eficiência da arrecadação sem aumento da carga tributária.\nReduzir desperdícios e elevar a qualidade do gasto público.\nFortalecer a capacidade de investimento do Estado e reduzir a dependência de\noperações de crédito.\n\nEixos Estruturantes\nI – Responsabilidade Fiscal e Sustentabilidade Financeira\nO Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal,\nplanejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando\ncapacidade permanente de investimento.\nII – Gestão por Resultados e Governança Pública\nSerá implantado um modelo de gestão baseado em planejamento estratégico, indicadores\nde desempenho, monitoramento permanente e avaliação das políticas públicas,\nfortalecendo a cultura da eficiência e da prestação de contas.\nIII – Transformação Digital do Estado\nA administração estadual será modernizada por meio da digitalização dos serviços públicos,\nintegração dos sistemas governamentais, utilização de inteligência artificial, análise de\ndados, automação de processos e ampliação do Governo Digital.\nIV – Gestão de Pessoas e Valorização dos Servidores\nOs servidores públicos serão valorizados mediante políticas permanentes de capacitação,\ndesenvolvimento profissional, inovação, melhoria das condições de trabalho e\nfortalecimento das carreiras, reconhecendo seu papel estratégico para a qualidade dos\nserviços públicos.\nV – Transparência, Integridade e Participação Social"
+          },
+          {
+            "id": "serao-fortalecidos-os-mecanismos-de-transparencia-controle-interno-audit",
+            "titulo": "Serão fortalecidos os mecanismos de transparência, controle interno, auditoria, participação",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Serão fortalecidos os mecanismos de transparência, controle interno, auditoria, participação\ncidadã, governo aberto e prevenção à corrupção, consolidando uma administração ética e\nresponsável.\nProgramas, Ações e Compromissos\nPara consolidar um novo modelo de gestão pública em Sergipe, o Governo assumirá os\nseguintes compromissos:\n●\n●\n●\n●\n●\n●\n●\n\n●\n\n●\n\n●\n\n●\n●\n\n●\n●\n\n●\n\nGarantir o equilíbrio das contas públicas por meio de planejamento financeiro\nresponsável e gestão eficiente dos recursos estaduais;\nImplantar um sistema estadual de gestão por resultados, com metas, indicadores de\ndesempenho e monitoramento permanente das políticas públicas;\nModernizar integralmente os processos administrativos por meio da digitalização dos\nserviços públicos e da integração dos sistemas governamentais;\nImplantar o Programa Governo Digital, ampliando o acesso da população aos\nserviços públicos eletrônicos e reduzindo a burocracia administrativa;\nFortalecer a transparência pública, ampliando os instrumentos de controle social,\ndados abertos e prestação de contas à sociedade;\nValorizar os servidores públicos mediante programas permanentes de capacitação,\ndesenvolvimento profissional e modernização da gestão de pessoas;\nRevisar periodicamente os incentivos fiscais, avaliando sua efetividade na geração\nde empregos, investimentos e arrecadação, preservando apenas aqueles que\napresentem resultados econômicos e sociais relevantes;\nRevisar todos os contratos administrativos e concessões, racionalizar despesas\ncorrentes, centralizar compras públicas estratégicas e eliminar desperdícios,\naumentando a eficiência do gasto público;\nInstituir um sistema permanente de avaliação de programas governamentais,\nutilizando indicadores de impacto, eficiência e qualidade dos serviços prestados à\npopulação;\nModernizar a administração tributária estadual mediante inteligência fiscal,\ncruzamento eletrônico de informações, fiscalização orientada por risco e tecnologias\nde análise de dados;\nImplantar um Programa Estadual de Combate à Sonegação Fiscal, utilizando\nrecursos tecnológicos e integração entre os órgãos de fiscalização;\nDesenvolver políticas de incentivo à formalização da atividade econômica,\nsimplificando procedimentos tributários, digitalizando licenciamentos, ampliando o\nmicrocrédito produtivo e fortalecendo os pequenos negócios;\nRealizar auditoria técnica da situação fiscal, patrimonial e financeira do Estado,\npermitindo maior transparência e planejamento das ações governamentais;\nImplementar uma Reforma Administrativa orientada por cinco princípios:\nracionalização das estruturas organizacionais, integração entre secretarias, gestão\nbaseada em resultados, transformação digital e regionalização das políticas\npúblicas;\nInstituir uma Regra Estadual de Sustentabilidade Fiscal, com metas de controle da\ndívida pública, limites para expansão das despesas correntes e avaliação\nsistemática da qualidade dos investimentos financiados por operações de crédito;"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "●\n\n●\n\n●\n\n●\n\n●\n\n●\n\n●\n\n●\n\n●\n\n●\n\nFortalecer a capacidade de investimento do Estado por meio do crescimento\nsustentável da arrecadação, da melhoria da eficiência fiscal e da redução da\ndependência de empréstimos;\nPriorizar operações de crédito exclusivamente para investimentos estruturantes,\ncapazes de ampliar a competitividade, a infraestrutura e o desenvolvimento\neconômico do Estado;\nAmpliar o uso de Parcerias Público-Privadas (PPPs) e concessões, observados o\ninteresse público, a segurança jurídica, a transparência e a sustentabilidade fiscal,\npara viabilizar projetos estratégicos de infraestrutura e serviços públicos;\nImplantar um sistema estadual de planejamento financeiro de longo prazo,\nintegrando Plano Plurianual, Lei de Diretrizes Orçamentárias, Lei Orçamentária\nAnual e indicadores de desempenho, assegurando maior previsibilidade,\nestabilidade e eficiência na gestão pública;\nConcentrar a gestão da Dívida Ativa do Estado na PGE/SE, viabilizando a\nintegração das informações e das cobranças, inclusive extrajudiciais, dos créditos\nestaduais. Atualmente, a ausência dessa concentração gera retrabalho, limita a\ninteração entre PGE/SE e SEFAZ e provoca perdas significativas para o Estado.\nAlém disso, a gestão centralizada poderá impulsionar a cobrança extrajudicial de\ndébitos que não são cobrados judicialmente, contribuindo para o aumento da\narrecadação tributária;\nImplantar um novo Sistema de Gestão Processual, em substituição ao atual SGP,\nque funciona de maneira deficitária e insegura, especialmente no controle dos\nprazos processuais. A implantação também exigirá a contratação de técnicos de\ninformática, para que o setor de TI da PGE/SE funcione adequadamente e ofereça o\nsuporte necessário;\nInvestir na capacitação de pessoal, com a realização de cursos de treinamento.\nAtualmente, não existe programa de formação continuada na PGE/SE. Criar a\nEscola Superior da Advocacia Pública, com cursos permanentes para procuradores\ndo Estado e pessoal de apoio, nos moldes das escolas da magistratura e do\nMinistério Público, que oferecem treinamento contínuo, inclusive como critério de\npromoção na carreira;\nInvestir em tecnologia e implementar inteligência artificial na gestão dos processos.\nAvaliar a aquisição de uma solução pronta, sem prejuízo da continuidade do projeto\npróprio denominado “TOBIAS”, que ainda não foi implementado e não tem previsão\nde funcionamento. As soluções disponíveis no mercado poderão atender às\nnecessidades da PGE enquanto o sistema próprio é aperfeiçoado. Uma solução\nprópria também é relevante para reduzir a dependência tecnológica e assegurar a\nadequada proteção de dados;\nAperfeiçoar as rotinas administrativas mediante a introdução de mecanismos de\nconsensualidade nos processos. Atualmente, não existe projeto permanente de\npromoção da consensualidade administrativa, diferentemente do que ocorre no\nâmbito federal, com a Advocacia-Geral da União (AGU), e em outros estados. A\niniciativa permitirá avançar nessa frente e reduzir a judicialização excessiva;\nCriar o cargo de analista e realizar concurso público para o preenchimento das\nvagas. Atualmente, a PGE/SE não conta com carreira-meio nem com o cargo de\nassessor de procurador. A assessoria é exercida por servidores comissionados ou"
+          },
+          {
+            "id": "pagina-31",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "●\n\n●\n\ncedidos de outros setores da administração pública, em situação precária e de difícil\nprofissionalização. A medida permitirá profissionalizar a função de assessor e\nreforçar a impessoalidade administrativa;\nConferir autonomia à PGE/SE para a lotação de servidores comissionados.\nAtualmente, todos os servidores comissionados que trabalham na instituição estão\nlotados na Casa Civil, situação que limita a autonomia do Procurador-Geral do\nEstado;\nCriar uma Contadoria na PGE/SE, com a nomeação de peritos contadores para\nauxiliar nos cálculos judiciais. Atualmente, há déficit de contadores lotados na\ninstituição. Muitas demandas envolvem valores em ações de cumprimento de\nsentença e embargos à execução. A análise técnica adequada dos cálculos pode\nreduzir significativamente os valores a serem honrados pela Fazenda Pública. A\nmedida contribuirá para a economicidade dos recursos públicos.\n\nEsta Diretriz representa o compromisso de construir uma administração pública moderna,\ninovadora e orientada para resultados. Um governo que alia responsabilidade fiscal à\ncapacidade de investir, valorizando os servidores, fortalecendo as instituições e promovendo\numa gestão transparente, eficiente e comprometida com o desenvolvimento sustentável e\ncom a melhoria da qualidade de vida de todos os sergipanos.\n\n3.6 Infraestrutura, Desenvolvimento Regional e Transição Energética\nA infraestrutura constitui um dos principais pilares do desenvolvimento econômico e da\npromoção da qualidade de vida. Rodovias, portos, aeroportos, ferrovias, sistemas de\nmobilidade, saneamento, infraestrutura hídrica, conectividade digital e planejamento urbano\nformam a base necessária para ampliar a competitividade, reduzir desigualdades regionais e\ncriar oportunidades para toda a população.\nNosso Governo promoverá uma política integrada de infraestrutura e desenvolvimento\nregional, articulando investimentos públicos e privados para fortalecer a logística, estimular a\ninteriorização do crescimento econômico e garantir melhores condições de mobilidade,\nacessibilidade e bem-estar para os sergipanos.\nSergipe possui posição geográfica privilegiada, vocação logística e potencial para consolidarse como importante centro regional de produção, distribuição e exportação. Para isso, será\nnecessário ampliar a capacidade da infraestrutura estadual, modernizar os sistemas de\ntransporte, fortalecer a integração entre os diferentes modais e apoiar projetos estruturantes\ncapazes de impulsionar a economia e melhorar a qualidade de vida.\nO desenvolvimento regional será conduzido de forma equilibrada, respeitando as vocações\neconômicas de cada território e promovendo investimentos estratégicos nas áreas de\ninfraestrutura, mineração, turismo, agricultura, indústria, inovação, economia do\nconhecimento e logística.\nNosso Governo compreende que desenvolvimento econômico e preservação ambiental não\nsão objetivos opostos, mas dimensões complementares de uma mesma estratégia de futuro.\nCrescer de forma sustentável significa gerar emprego e renda, ampliar a competitividade das\nempresas, atrair investimentos, reduzir desigualdades regionais e preservar o patrimônio"
+          },
+          {
+            "id": "ambiental-para-as-atuais-e-futuras-geracoes-a-transicao-energetica-repre",
+            "titulo": "ambiental para as atuais e futuras gerações. A transição energética representa uma das",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "ambiental para as atuais e futuras gerações. A transição energética representa uma das\nmaiores oportunidades econômicas do século XXI. Sergipe possui vocação para consolidarse como referência nacional na produção de energia solar, eólica, gás natural, hidrogênio de\nbaixo carbono e outras fontes renováveis, aproveitando suas vantagens competitivas para\nestimular novos investimentos, fortalecer a indústria, ampliar a inovação tecnológica e criar\nempregos qualificados.\nTodas as ações serão orientadas pelo planejamento territorial, responsabilidade fiscal,\nsustentabilidade ambiental, inovação tecnológica, transparência e participação social,\nassegurando que os investimentos públicos gerem resultados concretos para a população.\nDiagnóstico\nSergipe dispõe de localização estratégica e importantes ativos econômicos, mas enfrenta\ndesafios estruturais que limitam seu potencial de desenvolvimento. Entre os principais\ndesafios destacam-se:\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nnecessidade de modernização da infraestrutura logística estadual;\nconclusão e ampliação de rodovias estruturantes;\nbaixa integração entre os modais rodoviário, ferroviário, portuário e aeroportuário;\nnecessidade de fortalecer a infraestrutura portuária para ampliar a competitividade\ndas exportações;\nconcentração do desenvolvimento econômico em determinadas regiões;\nnecessidade de ampliar investimentos em saneamento, mobilidade urbana e\ninfraestrutura hídrica;\nnecessidade de fortalecer a infraestrutura tecnológica e digital;\ndesafios relacionados ao transporte público regional e metropolitano;\nnecessidade de promover maior integração entre planejamento territorial,\ndesenvolvimento econômico e qualidade de vida;\ndesafios relacionados ao licenciamento ambiental, à gestão territorial e à segurança\njurídica dos investimentos;\nnecessidade de ampliar a infraestrutura de saneamento e gestão de resíduos\nsólidos;\nvulnerabilidade crescente aos efeitos das mudanças climáticas e da escassez\nhídrica;\nnecessidade de fortalecer a conservação da Mata Atlântica, da Caatinga, das áreas\ncosteiras e dos recursos hídricos.\n\nObjetivos Estratégicos\nO Governo buscará:\n●\n●\n●\n●\n●\n●\n●\n●\n\nintegrar o território sergipano por meio de infraestrutura moderna e eficiente;\nampliar a competitividade logística do Estado;\nfortalecer o desenvolvimento regional equilibrado ambientalmente;\nestimular novos investimentos produtivos;\nmelhorar a mobilidade urbana e regional;\nampliar a infraestrutura hídrica e urbana;\nfortalecer a conectividade digital;\npromover desenvolvimento territorial equilibrado;"
+          },
+          {
+            "id": "pagina-33",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n●\n●\n●\n\nelevar a qualidade de vida da população;\nconsolidar Sergipe como referência nacional na transição energética;\nfortalecer a economia verde e a inovação tecnológica;\nproteger os recursos naturais e ampliar a segurança hídrica;\nfortalecer a adaptação às mudanças climáticas;\nintegrar desenvolvimento econômico e responsabilidade ambiental.\n\nCompromissos de Governo\n1. Planejamento Territorial e Desenvolvimento Regional\n●\n●\n●\n●\n●\n\nElaborar/revisar o Plano Estadual de Desenvolvimento Regional;\nImplantar o Mapa de Oportunidades de Sergipe, identificando vocações econômicas\ne prioridades de investimento;\nInteriorizar investimentos públicos e privados conforme as potencialidades de cada\nterritório;\nDesenvolver políticas específicas para o Alto Sertão, Médio Sertão, Agreste, CentroSul, Leste, Baixo São Francisco e Litoral;\nFortalecer polos regionais de desenvolvimento econômico e inovação.\n\n2. Logística e Infraestrutura Estratégica\n●\n●\n●\n●\n●\n●\n\nModernizar a infraestrutura logística estadual;\nIntegrar rodovias, ferrovias, portos e aeroportos;\nApoiar a modernização e ampliação do Terminal Marítimo Inácio Barbosa;\nDefender a implantação de infraestrutura portuária especializada para cargas\nminerais, industriais e energéticas;\nApoiar a integração ferroviária de Sergipe à malha nacional;\nAmpliar a infraestrutura de armazenagem e distribuição logística.\n\n3. Rodovias e Mobilidade Regional\n●\n●\n●\n●\n●\n●\n●\n\nImplantar o Programa Estadual Permanente de Conservação Rodoviária;\nRecuperar todas as rodovias estaduais em condições precárias;\nConcluir obras rodoviárias paralisadas;\nPavimentar rodovias estaduais estratégicas;\nDuplicar corredores rodoviários prioritários conforme estudos técnicos;\nImplantar o Programa Pontes Seguras para inspeção, manutenção preventiva e\nmodernização das obras;\nMelhorar acessos municipais e ligações entre comunidades rurais e centros\nurbanos.\n\n4. Mobilidade Metropolitana e Transporte Público\n●\n●\n●\n●\n\nCoordenar, em parceria com os municípios, a modernização do transporte\nmetropolitano;\nRealizar nova licitação do transporte intermunicipal;\nImplantar bilhetagem eletrônica integrada;\nDesenvolver aplicativo único do transporte público estadual;"
+          },
+          {
+            "id": "pagina-34",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n\nImplantar tarifa social para usuários de baixa renda;\nFortalecer linhas regionais de transporte coletivo;\nElaborar estudos para implantação de sistema multimodal na Região Metropolitana\nde Aracaju, integrando ônibus, VLT, bicicletas e transporte hidroviário.\n\n5. Infraestrutura Urbana e Qualidade de Vida\n●\n●\n●\n●\n●\n●\n●\n\nExpandir o saneamento básico e a infraestrutura urbana nos municípios;\nUrbanizar bairros em parceria com os municípios e construir novas moradias;\nAmpliar e estimular a regularização fundiária dos imóveis urbanos;\nApoiar programas de drenagem urbana e prevenção de alagamentos;\nIncentivar projetos de urbanização sustentável;\nApoiar municípios na elaboração de instrumentos modernos de planejamento\nurbano;\nAmpliar a acessibilidade e a infraestrutura para pedestres e ciclistas.\n\n6. Desenvolvimento Logístico, Industrial e Mineral\n●\n●\n●\n●\n●\n●\n\nImplantar o Plano Estadual de Desenvolvimento Mineral Sustentável;\nDesenvolver o Programa Sergipe Mineral 2035;\nEstruturar o Corredor Logístico Mineral;\nAtrair investimentos industriais para agregação de valor à produção mineral.\nApoiar projetos estratégicos nas cadeias de petróleo, gás natural, fertilizantes,\ncimento e indústria de transformação;\nFortalecer a infraestrutura necessária para novos empreendimentos industriais.\n\n7. Turismo e Desenvolvimento Territorial\n●\n●\n●\n●\n●\n●\n\nEstruturar o Programa Sergipe Destino;\nFortalecer o turismo regional integrado;\nIncentivar investimentos em infraestrutura turística;\nValorizar o litoral, o Rio São Francisco e os polos culturais do Estado;\nDesenvolver rotas temáticas de turismo histórico, religioso, gastronômico, ecológico\ne de aventura;\nApoiar novos empreendimentos turísticos sustentáveis.\n\n8. Infraestrutura Hídrica e Produção Rural\n●\n●\n●\n●\n●\n\nModernizar os perímetros irrigados;\nAmpliar a infraestrutura de abastecimento de água para produção e consumo\nhumano;\nIncentivar tecnologias de irrigação eficiente;\nApoiar sistemas produtivos voltados à agricultura familiar;\nImplantar programas integrados de produção sustentável e segurança alimentar."
+          },
+          {
+            "id": "9-mobilidade-inteligente-e-seguranca-viaria",
+            "titulo": "9. Mobilidade Inteligente e Segurança Viária",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "9. Mobilidade Inteligente e Segurança Viária\n●\n●\n●\n●\n●\n●\n\nModernizar o DETRAN;\nExpandir o videomonitoramento das rodovias estaduais;\nImplantar sinalização inteligente e dispositivos modernos de segurança viária;\nIntensificar ações permanentes de educação para o trânsito;\nAmpliar programas de inclusão para obtenção da CNH;\nAperfeiçoar a fiscalização eletrônica e a gestão digital do trânsito.\n\n10. Infraestrutura Digital e Governo Inteligente\n●\n●\n●\n●\n●\n\nFortalecer a Empresa de Tecnologia do Estado como centro de serviços digitais;\nIntegrar sistemas governamentais em ambiente único de dados;\nExpandir a conectividade digital para órgãos públicos e municípios;\nImplantar uma Central Integrada de Operações para monitoramento de\nemergências, mobilidade, defesa civil e infraestrutura;\nUtilizar inteligência de dados para planejamento, manutenção e monitoramento das\nobras públicas.\n\n11. Desenvolvimento Econômico e Ambiente de Negócios\n●\n●\n●\n●\n●\n●\n\nRealizar auditoria das finanças estaduais para ampliar a eficiência da gestão pública\ne a capacidade de investimento;\nRevisar os incentivos fiscais, assegurando transparência, responsabilidade fiscal e\nefetividade econômica;\nImplantar programa permanente de combate à sonegação por meio de inteligência\nfiscal e modernização tecnológica;\nElaborar plano integrado de atração de investimentos nacionais e internacionais;\nPriorizar setores estratégicos como petróleo, gás natural, fertilizantes, turismo,\neconomia da cultura, tecnologia, indústria de transformação e economia verde;\nEstimular a agregação de valor à produção estadual e a diversificação da matriz\nprodutiva.\n\n12. Transição Energética\n●\n●\n\n●\n●\n●\n●\n●\n\nIncentivar investimentos em energia solar, eólica, biomassa, gás natural e hidrogênio\nde baixo carbono;\nImplantar o Programa Sergipe Eletromobilidade por meio de concessões públicas\nem parceria com a iniciativa privada, tornando Sergipe atrativo para investimentos\nna rede estadual de eletropostos e estimulando a transição energética;\nAtrair empreendimentos voltados às energias renováveis;\nEstimular a pesquisa e o desenvolvimento de tecnologias limpas;\nCriar política de incentivo fiscal progressivo para veículos 100% elétricos e híbridos.\nApoiar a substituição gradual da frota pública e do transporte coletivo por veículos de\nenergia limpa;\nFortalecer a cadeia produtiva do gás natural como vetor da transição energética."
+          },
+          {
+            "id": "13-meio-ambiente-e-conservacao",
+            "titulo": "13. Meio Ambiente e Conservação",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "13. Meio Ambiente e Conservação\n●\n●\n●\n●\n●\n●\n●\n\nModernizar o sistema estadual de licenciamento ambiental, garantindo segurança\njurídica, transparência e eficiência;\nFortalecer a governança ambiental e a participação social;\nRecuperar áreas degradadas e ampliar programas de reflorestamento;\nFortalecer os viveiros estaduais e os programas de arborização;\nImplantar corredores ecológicos;\nAmpliar e estruturar as Unidades de Conservação estaduais;\nApoiar a conservação da Mata Atlântica, da Caatinga e dos ecossistemas costeiros.\n\n14. Recursos Hídricos e Segurança Hídrica\n●\n●\n●\n●\n●\n●\n●\n\nElaborar o Plano Estadual de Segurança Hídrica;\nImplantar sistema permanente de monitoramento da qualidade da água;\nFortalecer os Comitês de Bacias Hidrográficas;\nIncentivar sistemas de captação, armazenamento e reuso da água;\nApoiar projetos de dessalinização em regiões com escassez hídrica;\nRevitalizar os rios Sergipe, Vaza-Barris, Piauí, Real e São Francisco;\nFortalecer o controle das outorgas de uso da água.\n\n15. Saneamento e Economia Circular\n●\n●\n●\n●\n●\n●\n●\n\nApoiar os municípios na universalização do saneamento básico;\nImplantar programa estadual de gestão integrada de resíduos sólidos;\nApoiar a implantação de aterros sanitários regionalizados;\nIncentivar consórcios intermunicipais para destinação adequada dos resíduos;\nImplantar ecopontos e fortalecer a coleta seletiva;\nIntegrar cooperativas de catadores às políticas públicas;\nDesenvolver programas de logística reversa e economia circular.\n\n16. Mudanças Climáticas\n●\n●\n●\n●\n●\n●\n\nElaborar e implementar o Plano Estadual de Mudanças Climáticas;\nCriar o Sistema Estadual de Monitoramento Climático e Gestão de Riscos;\nMapear áreas vulneráveis a desastres naturais;\nImplantar políticas permanentes de adaptação climática;\nIncentivar práticas agropecuárias resilientes;\nIntegrar planejamento urbano e prevenção de riscos ambientais.\n\n17. Turismo Sustentável e Patrimônio Natural\n●\n●\n●\n\nElaborar plano estratégico de desenvolvimento sustentável do litoral sergipano.\nApoiar a concessão de serviços de uso público no Parque Nacional da Serra de\nItabaiana;\nFortalecer o ecoturismo no Monumento Natural Grota do Angico e no Rio São\nFrancisco;"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nIntegrar turismo, cultura e conservação ambiental como vetores do desenvolvimento\nregional.\n\n18. Educação Ambiental e Inovação\n●\n●\n●\n●\n●\n●\n\nImplantar Centros Regionais de Educação Ambiental;\nDesenvolver campanhas permanentes de conscientização ambiental;\nImplantar o Projeto Barco-Escola para educação ambiental;\nIncentivar viveiros educacionais nas escolas;\nEstimular o protagonismo juvenil em projetos de sustentabilidade;\nIntegrar universidades, centros de pesquisa e setor produtivo na inovação ambiental.\n\n19. Qualificação Profissional para a Nova Economia\n●\n●\n●\n●\n\nImplantar programa estadual de qualificação profissional voltado às demandas da\ntransição energética;\nPriorizar formação em energias renováveis, gás natural, tecnologia, indústria de\ntransformação, turismo, economia criativa e economia verde;\nIncentivar programas de empreendedorismo sustentável;\nFortalecer parcerias com universidades, institutos tecnológicos e setor produtivo.\n\nProjetos Estruturantes Prioritários\nEntre os principais projetos estratégicos do Governo destacam-se:\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nArticulação para conclusão da duplicação da BR-101 em Sergipe;\narticulação para a duplicação da BR-235 entre Aracaju e Itabaiana;\nduplicação da SE-240 no eixo Barra dos Coqueiros–Santo Amaro–Maruim;\nintegração ferroviária ao Terminal Marítimo Inácio Barbosa;\nimplantação do Corredor Logístico Mineral;\ncriação do Centro Regional de Desenvolvimento do Leite e Derivados em Nossa\nSenhora da Glória;\nimplantação do Programa Sergipe Destino;\nfortalecimento da infraestrutura portuária e aeroportuária;\ncriação da Rede Estadual de Usinas de Asfalto;\nimplantação do Programa Sergipe Produtivo;\nexpansão da infraestrutura digital e logística em todas as regiões do Estado.\n\nNosso Compromisso\nNosso Governo transformará a infraestrutura em instrumento de desenvolvimento econômico,\nintegração territorial e promoção da qualidade de vida. Com planejamento estratégico,\nresponsabilidade fiscal, inovação tecnológica e parcerias institucionais, construiremos um\nSergipe mais conectado, competitivo e preparado para os desafios do futuro, baseado na\ninovação, na sustentabilidade e na geração de oportunidades. Transformaremos as\npotencialidades econômicas e ambientais do Estado em motores de crescimento, emprego e\nrenda, conciliando responsabilidade fiscal, proteção dos recursos naturais e inclusão social."
+          },
+          {
+            "id": "a-interiorizacao-dos-investimentos-a-modernizacao-da-logistica-a-ampliac",
+            "titulo": "A interiorização dos investimentos, a modernização da logística, a ampliação da mobilidade",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "A interiorização dos investimentos, a modernização da logística, a ampliação da mobilidade\ne o fortalecimento da infraestrutura urbana e regional permitirão reduzir desigualdades, gerar\nempregos, atrair novos empreendimentos e oferecer melhores condições de vida para toda a\npopulação sergipana.\n3.7 Agricultura, Pecuária e Segurança Alimentar\nO desenvolvimento de Sergipe passa, necessariamente, pelo fortalecimento do campo. A\nagricultura, a pecuária, a pesca, a aquicultura e o agronegócio representam setores\nestratégicos para a geração de emprego, renda, produção de alimentos, preservação\nambiental e desenvolvimento regional. Valorizar quem produz significa fortalecer a economia,\ngarantir segurança alimentar, reduzir desigualdades e promover qualidade de vida para\nmilhares de famílias sergipanas.\nEm um cenário marcado pelas mudanças climáticas, pela crescente demanda mundial por\nalimentos, pela transformação tecnológica da produção agropecuária e pelas novas\nexigências dos mercados consumidores, Sergipe precisa construir uma política estadual\nmoderna, inovadora e sustentável, capaz de aumentar a produtividade, agregar valor à\nprodução, ampliar a competitividade e assegurar oportunidades para pequenos, médios e\ngrandes produtores rurais.\nO Governo promoverá uma política integrada de desenvolvimento rural baseada na inovação\ntecnológica, na sustentabilidade ambiental, na segurança hídrica, na assistência técnica, na\npesquisa agropecuária e no fortalecimento das cadeias produtivas. O objetivo será\ntransformar Sergipe em referência regional em agricultura sustentável, pecuária moderna,\nagroindústria, produção de alimentos e desenvolvimento territorial.\nA agricultura familiar ocupará posição estratégica nesse novo modelo de desenvolvimento.\nResponsável por parcela significativa da produção de alimentos consumidos pelos\nsergipanos, ela receberá apoio permanente por meio da ampliação da assistência técnica, do\nacesso ao crédito, da regularização fundiária, da mecanização agrícola, da irrigação, da\ncomercialização, do cooperativismo, da inovação tecnológica e das compras institucionais.\nAo mesmo tempo, o Governo fortalecerá o agronegócio sergipano, estimulando\ninvestimentos, ampliando a infraestrutura logística, promovendo a modernização tecnológica\ndas propriedades rurais e incentivando a agregação de valor por meio da\nagroindustrialização, da certificação de produtos, da inovação e da abertura de novos\nmercados.\nNa pecuária, as ações estarão voltadas ao melhoramento genético, ao fortalecimento da\ndefesa sanitária, à ampliação da produtividade, à modernização das cadeias do leite e da\ncarne, ao incentivo ao uso de tecnologias sustentáveis e à melhoria da qualidade dos\nprodutos de origem animal.\nA pesca artesanal e a aquicultura também serão fortalecidas como atividades estratégicas\npara o desenvolvimento econômico das regiões costeiras e ribeirinhas, por meio de\nassistência técnica, infraestrutura adequada, inovação produtiva, beneficiamento,\ncomercialização e gestão sustentável dos recursos pesqueiros.\nA segurança alimentar será tratada como política pública permanente. O Governo\ndesenvolverá ações integradas para ampliar a produção de alimentos saudáveis, fortalecer\nos sistemas de abastecimento, reduzir o desperdício, incentivar práticas agroecológicas e\ngarantir o acesso da população à alimentação adequada e de qualidade."
+          },
+          {
+            "id": "a-convivencia-com-o-semiarido-sera-outro-eixo-prioritario-desta-politica",
+            "titulo": "A convivência com o semiárido será outro eixo prioritário desta política. Serão ampliados",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "A convivência com o semiárido será outro eixo prioritário desta política. Serão ampliados\ninvestimentos em infraestrutura hídrica, recuperação de barragens e reservatórios, irrigação\neficiente, aproveitamento de águas pluviais, produção de forragens, energias renováveis\naplicadas ao campo e tecnologias adaptadas às condições climáticas do sertão sergipano.\nMais do que produzir alimentos, queremos construir um campo mais moderno, competitivo,\nsustentável e socialmente inclusivo. Um campo capaz de gerar riqueza, preservar o meio\nambiente, fortalecer os municípios e oferecer oportunidades para que os jovens permaneçam\nno meio rural com qualidade de vida, inovação e perspectivas de futuro.\nObjetivos Estratégicos\n●\n●\n●\n●\n●\n●\n●\n●\n\nFortalecer a agricultura familiar, o agronegócio, a pesca e a aquicultura como\nmotores do desenvolvimento econômico estadual;\nGarantir segurança alimentar e nutricional para toda a população sergipana.\nModernizar a produção agropecuária por meio da inovação tecnológica e da\npesquisa científica;\nAmpliar a competitividade das cadeias produtivas estaduais;\nPromover a convivência sustentável com o semiárido;\nFortalecer a agroindustrialização e agregar valor à produção rural;\nGerar emprego, renda e oportunidades no campo;\nConsolidar Sergipe como referência em produção sustentável e inovação\nagropecuária.\n\nEixos Estruturantes\nI – Agricultura Familiar e Desenvolvimento Rural\nFortalecimento da assistência técnica, extensão rural, regularização fundiária, mecanização\nagrícola, crédito rural, irrigação, cooperativismo, comercialização e inclusão produtiva.\nII – Agropecuária Competitiva e Sustentável\nModernização da produção, melhoramento genético, inovação tecnológica, defesa\nagropecuária, agregação de valor, certificação e abertura de novos mercados.\nIII – Segurança Alimentar e Nutricional\nAmpliação da produção de alimentos saudáveis, fortalecimento dos mercados institucionais,\nabastecimento alimentar, combate ao desperdício e incentivo à agroecologia.\nIV – Segurança Hídrica e Convivência com o Semiárido\nRecuperação de barragens, irrigação eficiente, uso racional da água, produção de\nforragens, armazenamento hídrico e energias renováveis aplicadas ao meio rural.\nV – Pesca, Aquicultura e Economia do Mar\nFortalecimento da pesca artesanal, carcinicultura, piscicultura, infraestrutura pesqueira,\nbeneficiamento, assistência técnica e comercialização.\nVI – Ciência, Tecnologia e Inovação no Campo\nDigitalização dos serviços agropecuários, agricultura de precisão, pesquisa aplicada,\nbioeconomia, inteligência artificial, energias renováveis e fortalecimento da inovação rural.\nProgramas, Ações e Compromissos\nO Governo implementará um conjunto de políticas públicas estruturantes voltadas à\nmodernização e ao fortalecimento do setor agropecuário sergipano, entre as quais se\ndestacam:"
+          },
+          {
+            "id": "pagina-40",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "●\n\n●\n\n●\n\n●\n●\n●\n●\n●\n●\n●\n\n●\n\n●\n\n●\n●\n●\n●\n●\n●\n\nFortalecer a agricultura familiar com assistência técnica permanente, acesso ao\ncrédito, mecanização agrícola, regularização fundiária e ampliação das compras\ninstitucionais;\nImplantar o Programa Mais Palma para o Sertão, ampliando a produção de palma\nforrageira, a recuperação de barragens, a irrigação eficiente e a produção\nestratégica de alimentos para os rebanhos;\nImplantar o Programa Irriga Mais Sergipe, ampliando a agricultura irrigada como\nestratégia para aumentar a produtividade, reduzir os impactos das mudanças\nclimáticas e promover o uso sustentável dos recursos hídricos;\nCriar o Seguro Agrícola Estadual, reduzindo os riscos decorrentes das\nadversidades climáticas;\nImplantar a Agência Estadual de Defesa Agropecuária, fortalecendo a sanidade\nanimal e vegetal, a inspeção agroindustrial e a fiscalização de insumos;\nReestruturar a EMDAGRO como instituição de excelência em assistência técnica,\nextensão rural, inovação e desenvolvimento territorial;\nRealizar concurso público, capacitação permanente dos servidores, modernização\ntecnológica e renovação da estrutura operacional da SEAGRI e da EMDAGRO;\nDigitalizar integralmente os serviços agropecuários, simplificando o atendimento ao\nprodutor rural;\nImplantar a Rede Estadual de Agroindústrias, ampliando o Serviço de Inspeção\nEstadual, incentivando pequenas agroindústrias e agregando valor à produção rural;\nFortalecer a cadeia produtiva do leite por meio da modernização genética, irrigação\nde forragens, melhoria das queijarias, fortalecimento do laboratório de qualidade do\nleite e criação da Câmara Setorial Permanente do Leite;\nRegionalizar os frigoríficos estaduais, ampliando a capacidade de processamento da\nprodução pecuária para realizar o abate, a refrigeração imediata da carne e o\narmazenamento sob controle de temperatura;\nTransformar o Centro de Treinamento de Boquim em Centro de Referência da\nCitricultura Sergipana, com foco em pesquisa, biofábrica, produção de mudas\ncertificadas e combate às pragas;\nImplantar programas permanentes de incentivo à agroecologia, agricultura orgânica,\nagricultura urbana e periurbana e produção sustentável;\nFortalecer cooperativas, associações rurais e organizações da economia solidária;\nImplantar o Plano Estadual de Aquicultura, fortalecendo a piscicultura, carcinicultura\ne pesca artesanal;\nCriar o Programa Estadual de Modernização das Feiras Livres, promovendo\ninfraestrutura, higiene, acessibilidade e valorização dos produtores locais;\nIncentivar o uso de energias renováveis, agricultura de precisão, tecnologias digitais\ne inteligência artificial aplicadas ao campo;\nImplantar o programa Sergipe Sustentável – Autossuficiência Alimentar,\nutilizando o Sisteminha Embrapa como política pública permanente para fortalecer\na segurança alimentar, a produção familiar e a geração de renda das famílias em\nsituação de vulnerabilidade.\n\nEsta diretriz representa o compromisso de construir um novo modelo de desenvolvimento\nrural para Sergipe, baseado na inovação, na sustentabilidade, na valorização do produtor, na"
+          },
+          {
+            "id": "seguranca-alimentar-e-na-geracao-de-oportunidades-um-campo-forte-signifi",
+            "titulo": "segurança alimentar e na geração de oportunidades. Um campo forte significa uma economia",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "segurança alimentar e na geração de oportunidades. Um campo forte significa uma economia\nmais dinâmica, municípios mais desenvolvidos e melhor qualidade de vida para todos os\nsergipanos.\n3.8 Mulheres, Juventude, Diversidade e Inclusão Social\nO desenvolvimento de Sergipe passa necessariamente pela construção de uma sociedade\nmais justa, inclusiva e comprometida com a promoção da dignidade humana. Ainda persistem\nno Estado desafios históricos relacionados às desigualdades sociais, à violência, à\ndiscriminação, à exclusão econômica, ao adoecimento emocional e às dificuldades de acesso\nàs políticas públicas por parte de mulheres, jovens, crianças neurodivergentes, famílias\natípicas e demais grupos em situação de vulnerabilidade.\nAs mulheres continuam enfrentando elevados índices de violência doméstica, desigualdade\nsalarial, sobrecarga decorrente do trabalho de cuidado e dificuldades de acesso à saúde\nespecializada. Os jovens convivem com barreiras à educação, à qualificação profissional e\nao primeiro emprego, fatores que ampliam a evasão escolar, a violência e a exclusão social.\nAo mesmo tempo, cresce a demanda por políticas públicas voltadas às pessoas\nneurodivergentes e às famílias atípicas. O Censo Demográfico de 2022 identificou\naproximadamente 2,4 milhões de brasileiros diagnosticados com Transtorno do Espectro\nAutista (TEA), evidenciando a necessidade de ampliar o diagnóstico precoce, o atendimento\nmultiprofissional e o apoio permanente às famílias.\nTambém merecem atenção as populações LGBTQIAPN+, especialmente mulheres trans e\ntravestis, que ainda enfrentam elevados índices de violência, discriminação, desemprego e\nexclusão dos serviços públicos, exigindo ações efetivas de proteção, cidadania e inclusão.\nNa área da saúde mental, o crescimento dos casos de ansiedade e depressão,\nparticularmente entre mulheres e jovens, reforça a necessidade de políticas integradas que\npromovam cuidado, prevenção e acolhimento psicossocial.\nNosso Governo assumirá o compromisso de fortalecer políticas públicas permanentes,\nintersetoriais e humanizadas, promovendo inclusão social, igualdade de oportunidades,\nproteção integral dos direitos humanos, autonomia econômica, saúde, educação,\nempregabilidade e cidadania para todos os sergipanos.\nSubeixo 1 - Políticas para as Mulheres\nA construção de uma sociedade mais justa passa pelo fortalecimento das políticas públicas\nvoltadas às mulheres. Em Sergipe, muitas ainda enfrentam obstáculos relacionados à\nviolência de gênero, desigualdade econômica, dificuldades de acesso aos serviços\nespecializados de saúde, saúde mental e autonomia financeira. Nosso Governo desenvolverá\numa política estadual integrada de promoção dos direitos das mulheres, baseada na\nprevenção, proteção, cuidado integral, inclusão produtiva e valorização da autonomia\nfeminina.\nPrograma Mais Mulher – Programa Estadual de Atenção Integral à Mulher\nPrograma destinado a ampliar o acesso à saúde integral da mulher, fortalecendo a atenção\nespecializada, a prevenção, a saúde mental, a assistência materna e a proteção social."
+          },
+          {
+            "id": "principais-acoes",
+            "titulo": "Principais ações",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nampliar os atendimentos ginecológicos e exames preventivos;\nfortalecer a saúde materna, o pré-natal, o parto e o pós-parto;\nimplantar Núcleos de Saúde Mental da Mulher em todas as regiões do Estado;\ngarantir atendimento psicológico e psiquiátrico especializado;\ninteriorizar os serviços especializados de saúde da mulher;\ndesenvolver campanhas permanentes de prevenção da violência doméstica,\nansiedade e depressão;\nfortalecer a rede estadual de proteção às mulheres em situação de violência;\npromover ações de bem-estar, autoestima e qualidade de vida;\nqualificar permanentemente os profissionais da rede estadual de atendimento.\n\nPrograma Cuidar Mulher – Atenção Integral à Mulher com Câncer\nPrograma destinado a garantir diagnóstico precoce, tratamento humanizado e assistência\nintegral às mulheres acometidas por câncer.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nampliar a realização de mamografias e exames preventivos;\nimplantar Centros Regionais de Atenção Oncológica da Mulher;\ncriar unidades móveis para rastreamento e prevenção;\ngarantir atendimento multiprofissional integrado;\noferecer acompanhamento psicológico às pacientes e familiares;\nfortalecer a assistência social durante o tratamento;\nimplantar auxílio para transporte e deslocamento das pacientes;\nfortalecer programas de hospedagem para pacientes do interior;\nqualificar continuamente as equipes da oncologia.\n\nProjeto Recomeçar Mulher\nPrograma de ressocialização destinado às mulheres privadas de liberdade e egressas do\nsistema prisional, promovendo autonomia econômica, reconstrução de vínculos familiares e\nredução da reincidência criminal.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n●\n\nqualificação profissional e empreendedorismo nas unidades prisionais;\nimplantação de oficinas de geração de renda;\nincentivo à formação de cooperativas femininas;\nacesso ao microcrédito para empreendedoras e egressas;\nassistência psicológica e social;\nparcerias com empresas para reinserção no mercado de trabalho;\nfortalecimento das equipes técnicas responsáveis pelo acompanhamento.\n\nSubeixo 2 - Diversidade, Direitos Humanos e Cidadania\nUma sociedade democrática exige o respeito à diversidade e o combate permanente a todas\nas formas de preconceito, discriminação e violência."
+          },
+          {
+            "id": "nosso-governo-promovera-politicas-publicas-voltadas-a-protecao-da-popula",
+            "titulo": "Nosso Governo promoverá políticas públicas voltadas à proteção da população",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Nosso Governo promoverá políticas públicas voltadas à proteção da população\nLGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde,\ncidadania e respeito à dignidade humana.\nPrograma Sergipe Acolhe\nPrograma estadual destinado à proteção, inclusão social e promoção dos direitos das\npessoas LGBTQIAPN+, com atenção especial às mulheres trans e travestis.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n●\n\ndesenvolver programas de qualificação profissional e empregabilidade;\nimplantar ambulatórios especializados de atendimento multidisciplinar;\ngarantir atendimento humanizado no SUS, respeitando o nome social;\nimplantar casas de acolhimento temporário para pessoas em situação de\nvulnerabilidade;\ncapacitar profissionais da saúde, educação, segurança pública e assistência social;\ndesenvolver campanhas permanentes de combate à discriminação;\nfortalecer políticas de cidadania, inclusão e proteção social.\n\nSubeixo 3 - Infância, Família e Desenvolvimento Infantil\nInvestir na primeira infância significa investir no futuro de Sergipe. Nosso Governo fortalecerá\numa rede estadual de proteção ao desenvolvimento infantil, ampliando o acesso ao\ndiagnóstico precoce, às terapias especializadas, às creches de qualidade e ao apoio\npermanente às famílias atípicas.\nCentro Regional de Desenvolvimento Infantil (CRDI)\nPrograma destinado ao atendimento multiprofissional de crianças com transtornos do\nneurodesenvolvimento e ao acolhimento integral das famílias.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n\nimplantar Centros Regionais de Desenvolvimento Infantil em todas as regiões do\nEstado;\ngarantir atendimento com psicólogos, terapeutas ocupacionais, fisioterapeutas,\nfonoaudiólogos, psicopedagogos e assistentes sociais;\nimplantar salas sensoriais e espaços de estimulação precoce;\nfortalecer a inclusão escolar;\ncapacitar professores e profissionais da educação;\noferecer acolhimento psicológico às famílias;\ndesenvolver cursos e oficinas para mães e cuidadores;\ncriar programas de geração de renda para famílias atípicas;\ninteriorizar os serviços especializados;\nvalorizar permanentemente os profissionais da rede.\n\nPrograma Infância Segura"
+          },
+          {
+            "id": "programa-voltado-a-expansao-da-educacao-infantil-em-tempo-integral-e-ao",
+            "titulo": "Programa voltado à expansão da educação infantil em tempo integral e ao fortalecimento do",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Programa voltado à expansão da educação infantil em tempo integral e ao fortalecimento do\ndesenvolvimento integral das crianças.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n\nampliar a oferta de creches em tempo integral;\ndesenvolver atividades culturais, esportivas e de musicalização;\ngarantir alimentação saudável e acompanhamento nutricional;\npromover atividades de desenvolvimento cognitivo, emocional e motor;\nfortalecer a participação das famílias no ambiente escolar;\nvalorizar os profissionais da educação infantil.\n\nSubeixo 4 - Juventude, Oportunidades e Protagonismo\nA juventude representa o maior patrimônio para o futuro de Sergipe. Entretanto, milhares de\njovens ainda convivem com dificuldades de acesso à educação, qualificação profissional,\ncultura, esporte, emprego e inclusão produtiva.\nNosso Governo desenvolverá políticas integradas para ampliar oportunidades, reduzir a\nvulnerabilidade social e fortalecer o protagonismo juvenil.\nProjeto Horizonte – Programa Estadual de Cidadania e Reinserção Juvenil\nPrograma destinado ao fortalecimento da cidadania, educação, qualificação profissional e\nreinserção social de adolescentes em cumprimento de medidas socioeducativas.\nPrincipais ações\n●\n●\n●\n●\n●\n●\n●\n●\n\nimplantar cursos profissionalizantes e empreendedorismo juvenil;\ngarantir acompanhamento psicológico, social e familiar;\nampliar atividades esportivas, culturais, musicais e educativas;\nfortalecer programas de Primeiro Emprego e Jovem Aprendiz;\ndesenvolver ações de prevenção à violência e à reincidência;\nimplantar programas de construção de projeto de vida, cidadania e autoestima;\nfortalecer a articulação com escolas, empresas e organizações da sociedade civil;\nvalorizar os profissionais do sistema socioeducativo por meio de capacitação\npermanente e melhores condições de trabalho.\n\n3.9 Sergipe Empreendedor e Inclusivo\nO desenvolvimento econômico sustentável constitui um dos pilares para a promoção da\njustiça social, da redução das desigualdades regionais e da melhoria da qualidade de vida da\npopulação sergipana. Neste contexto, o Governo do Estado atuará de forma integrada com\nos municípios, o setor produtivo, as instituições de ensino, o Sistema S e a sociedade civil\norganizada para fortalecer o ambiente de negócios, ampliar a geração de emprego e renda,\nestimular o empreendedorismo, incentivar a inovação e promover o desenvolvimento regional\nequilibrado.\nAs ações deste eixo estratégico serão desenvolvidas de forma regionalizada, respeitando as\nvocações econômicas dos 75 municípios sergipanos e buscando ampliar as oportunidades"
+          },
+          {
+            "id": "para-trabalhadores-empreendedores-micro-e-pequenas-empresas-cooperativas",
+            "titulo": "para trabalhadores, empreendedores, micro e pequenas empresas, cooperativas e",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "para trabalhadores, empreendedores, micro e pequenas empresas, cooperativas e\nprodutores locais. A implementação dos eixos estratégicos observará os princípios da\nlegalidade, eficiência, transparência, regionalização e gestão por resultados.\nO acompanhamento das ações será realizado por meio de indicadores de desempenho,\nmonitoramento periódico e integração entre os órgãos da administração pública estadual,\nvisando assegurar a efetividade das políticas públicas e a melhoria contínua dos resultados.\nAo longo do mandato, este eixo estratégico buscará:\n• fortalecer o ambiente de negócios em Sergipe;\n• ampliar as oportunidades de emprego e geração de renda;\n• estimular o empreendedorismo em todas as regiões do Estado;\n• promover o desenvolvimento econômico regionalizado;\n• ampliar a qualificação profissional;\n• incentivar a inovação e a transformação digital;\n• fortalecer a economia criativa;\n• promover a inclusão produtiva de mulheres, jovens e públicos vulneráveis;\n• fortalecer a sustentabilidade e a economia circular;\n• consolidar políticas públicas integradas de desenvolvimento econômico para os 75\nmunicípios sergipanos.\nObjetivo Estratégico\nPromover o desenvolvimento econômico sustentável de Sergipe, fortalecendo o\nempreendedorismo, ampliando as oportunidades de trabalho e geração de renda,\nincentivando a inovação, qualificando a mão de obra e reduzindo as desigualdades\neconômicas e territoriais entre os municípios sergipanos.\nPROGRAMAS ESTRUTURANTES\nPrograma 1 – Sergipe Empreendedor nos 75 Municípios\nPromover a melhoria do ambiente de negócios por meio da modernização administrativa, da\nsimplificação dos processos de abertura de empresas e da integração dos serviços públicos\nestaduais e municipais, observando os princípios da Lei de Liberdade Econômica.\nEntre as principais ações destacam-se:\n• fortalecimento da rede parceira;\n• integração dos processos de licenciamento ambiental e sanitário em ambiente\ndigital;\n• modernização dos procedimentos administrativos;\n• implementação do selo “Jucese Digital Social”, destinado ao incentivo à formalização\nde novos empreendedores.\nPrograma 2 – Conecta Sergipe 75\nPromover a expansão da infraestrutura digital do Estado, ampliando o acesso à internet de\nalta velocidade nos municípios sergipanos. Serão priorizadas ações voltadas para:"
+          },
+          {
+            "id": "pagina-46",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n•\n•\n\nexpansão da cobertura 5G;\nampliação da rede estadual de fibra óptica;\ndisponibilização de internet em espaços públicos;\nincentivo à inclusão digital;\nfortalecimento do empreendedorismo digital.\n\nPrograma 3 – Plataforma Sergipe Trabalha\nFortalecer a integração entre trabalhadores, empregadores, empreendedores e instituições\nde qualificação profissional por meio de plataforma estadual de intermediação de mão de\nobra. O programa contemplará:\n• cadastro de trabalhadores;\n• divulgação de oportunidades de emprego;\n• contratação de serviços locais;\n• cursos profissionalizantes;\n• trilhas de capacitação empreendedora.\nPrograma 4 – Mulher Empreendedora Sergipana\nPromover a autonomia econômica das mulheres por meio de políticas públicas de\nempreendedorismo, capacitação, acesso ao crédito, assistência técnica e fortalecimento de\nredes de apoio, guiado pelos Objetivos de Desenvolvimento Sustentável (ODS) da ONU,\nespecialmente o ODS 5 (Igualdade de Gênero) e o ODS 8 (Trabalho Decente e Crescimento\nEconômico). Serão incentivadas iniciativas voltadas à formação empreendedora, ao\nfortalecimento das cooperativas femininas e à ampliação da participação das mulheres na\natividade econômica.\nPrograma 5 – Desenvolvimento Regional e Distritos Econômicos\nPromover o desenvolvimento regional mediante o fortalecimento das vocações econômicas\nde cada território sergipano. Serão observadas as potencialidades produtivas do Alto\nSertão, Médio Sertão, Agreste Central, Centro-Sul, Leste Sergipano, Grande Aracaju e\nBaixo São Francisco, estimulando a diversificação econômica e a geração de\noportunidades.\nPrograma 6 – Centros Regionais de Apoio ao Empreendedor\nImplantar e fortalecer centros regionais destinados ao atendimento permanente dos\nempreendedores, oferecendo serviços de consultoria, gestão empresarial, orientação\nfinanceira, acesso ao crédito, marketing e capacitação.\n\nPrograma 7 – Qualifica Sergipe 75"
+          },
+          {
+            "id": "ampliar-a-qualificacao-profissional-da-populacao-sergipana-considerando",
+            "titulo": "Ampliar a qualificação profissional da população sergipana, considerando as necessidades",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Ampliar a qualificação profissional da população sergipana, considerando as necessidades\ndos diferentes setores produtivos e as especificidades de cada região do Estado.\nPrograma 8 – Sergipe Inovador\nFortalecer o ecossistema estadual de inovação mediante incentivo às incubadoras,\nlaboratórios de inovação, espaços colaborativos e apoio às iniciativas tecnológicas.\nPrograma 9 – Interiorização da Economia Criativa\nValorizar a cultura, o artesanato, a gastronomia, o turismo, o audiovisual, a música e demais\natividades da economia criativa como instrumentos de desenvolvimento econômico e\ngeração de renda. O programa contemplará:\n• Criar espaços físicos e digitais para a inovação colaborativa;\n• Estimular a economia de rede;\n• Implementar uma plataforma digital unificada e um selo de origem que rastreiem,\ncertifiquem e promovam o artesanato e a gastronomia sergipanos;\n• Criar hubs culturais e distritos criativos, formando polos geográficos de\ndesenvolvimento criativo;\n• Implantar laboratórios criativos urbanos para capacitar jovens em produção musical,\nedição de vídeo, design gráfico e mídias sociais;\n• Criar uma linha de crédito específica.\nPrograma 10 – Oportunidade para Todos\nPromover a inclusão produtiva da juventude, das pessoas com deficiência, dos inscritos no\nCadastro Único e das comunidades em situação de vulnerabilidade, mediante qualificação\nprofissional e incentivo ao empreendedorismo.\nPrograma 11 – Empreende Sergipe\nAmpliar o acesso às políticas públicas de empreendedorismo em bairros, comunidades\nrurais e povoados, por meio de unidades móveis de atendimento, feiras de negócios e\nações itinerantes de inovação.\nPrograma 12 – Juventude Empreendedora e Tecnológica\nEstimular o empreendedorismo juvenil mediante capacitação em tecnologia, programação,\ninteligência artificial, marketing digital, robótica e preparação para o primeiro emprego.\nPrograma 13 – Observatório Sergipano do Emprego e da Renda\nInstituir mecanismo permanente de monitoramento das políticas públicas voltadas ao\nemprego, ao empreendedorismo e ao desenvolvimento econômico, por meio da produção\nperiódica de indicadores e relatórios de desempenho.\nPrograma 14 – Rede Sergipana de Empreendedorismo Integrado"
+          },
+          {
+            "id": "promover-a-integracao-das-politicas-publicas-estaduais-de-empreendedoris",
+            "titulo": "Promover a integração das políticas públicas estaduais de empreendedorismo com as áreas",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Promover a integração das políticas públicas estaduais de empreendedorismo com as áreas\nde educação, saúde e políticas para as mulheres, fortalecendo ações intersetoriais voltadas\nao desenvolvimento humano e econômico.\nPrograma 15 – Sistema S Parceiro do Desenvolvimento\nFortalecer a cooperação entre o Governo do Estado e as instituições do Sistema S para\nampliar a oferta de qualificação profissional, empreendedorismo e formação técnica em\ntodas as regiões de Sergipe.\nPrograma 16 – Sergipe Circular – Sustentabilidade, Reciclagem e Inclusão Produtiva\nPromover políticas públicas voltadas à economia circular, à gestão sustentável dos resíduos\nsólidos, ao fortalecimento das cooperativas de reciclagem, à valorização dos catadores e à\ngeração de trabalho e renda, mediante atuação integrada entre Estado, municípios e\nsociedade.\n3.10 Cultura, Turismo e Identidade Sergipana\nA cultura, o turismo e a valorização da identidade sergipana constituem pilares estratégicos\npara impulsionar o desenvolvimento econômico, social e humano de Sergipe. Além de\nexpressarem a memória, a história e a diversidade cultural do nosso povo, esses setores\npossuem elevado potencial para gerar emprego, renda, inovação, empreendedorismo,\ninclusão social e desenvolvimento regional.\nO Estado de Sergipe reúne um patrimônio cultural, histórico, ambiental e humano singular.\nDa riqueza das manifestações populares às tradições religiosas, do patrimônio arquitetônico\nàs belezas naturais, da gastronomia regional ao artesanato, das festas populares à\ncriatividade de seus artistas e produtores culturais, o Estado possui condições de consolidarse como um dos principais destinos turísticos e culturais do Nordeste.\nA cultura será compreendida como política pública essencial, instrumento de cidadania,\neducação, inclusão social e desenvolvimento econômico. O Governo do Estado fortalecerá\nartistas, produtores culturais, mestres da cultura popular, grupos folclóricos, comunidades\ntradicionais, artesãos e empreendedores da economia criativa, ampliando oportunidades de\nprodução, circulação e acesso aos bens culturais em todas as regiões sergipanas.\nA valorização da identidade sergipana ocupará posição central nas estratégias de\ndesenvolvimento do Estado, promovendo a preservação da memória, do patrimônio histórico\ne das tradições populares, estimulando o orgulho de pertencimento e fortalecendo a\ndiversidade cultural presente nos territórios sergipanos.\nAs políticas públicas também priorizarão a interiorização da cultura e do turismo, incentivando\ncircuitos regionais, fortalecendo os municípios como protagonistas do desenvolvimento\nterritorial e promovendo novas oportunidades de geração de emprego e renda por meio do\nempreendedorismo cultural, do turismo sustentável e da economia criativa. Nosso\ncompromisso é transformar Sergipe em um Estado criativo, inovador e competitivo, onde\ncultura, turismo, patrimônio histórico e identidade regional caminhem juntos como"
+          },
+          {
+            "id": "instrumentos-permanentes-de-desenvolvimento-sustentavel-inclusao-social",
+            "titulo": "instrumentos permanentes de desenvolvimento sustentável, inclusão social e melhoria da",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "instrumentos permanentes de desenvolvimento sustentável, inclusão social e melhoria da\nqualidade de vida da população.\nEixo 1 - Desenvolvimento do Turismo\nPrograma Destino Sergipe 2035\nInstituir uma política estadual integrada de desenvolvimento turístico, posicionando Sergipe\nentre os principais destinos turísticos do Brasil, por meio da integração entre infraestrutura,\npromoção nacional e internacional, qualificação profissional, inovação e atração de\ninvestimentos.\nPrincipais ações\n●\n●\n●\n●\n●\n\nelaborar o Plano Estratégico Estadual de Turismo 2035;\nfortalecer a promoção turística nacional e internacional;\natrair investimentos privados para o setor;\nintegrar turismo, cultura, meio ambiente e desenvolvimento regional;\nampliar a competitividade dos destinos turísticos sergipanos.\n\nPrograma Rotas Integradas do Turismo Sergipano\nEstruturar grandes roteiros turísticos estaduais, promovendo\npermanência do visitante e fortalecimento das economias locais.\n\nintegração\n\nRotas prioritárias\n●\n●\n●\n●\n●\n●\n●\n●\n\nRota do Cangaço e da História do Sertão;\nRota das Praias e dos Cânions;\nRota da Fé e do Turismo Religioso;\nRota da Gastronomia Sergipana;\nRota do Artesanato e Cultura Popular;\nRota do São João Sergipano;\nRota do Rio São Francisco;\nRota do Ecoturismo e Turismo de Aventura.\n\nPlano Estadual de Infraestrutura Turística\nModernizar a infraestrutura turística estadual mediante investimentos em:\n●\n●\n●\n●\n●\n●\n●\n\nacessibilidade;\nurbanização turística;\nsinalização inteligente;\niluminação pública;\nrecuperação de centros históricos;\norlas, mirantes e equipamentos turísticos;\nmobilidade e integração regional.\n\nregional,"
+          },
+          {
+            "id": "programa-aeroporto-e-turismo-regional",
+            "titulo": "Programa Aeroporto e Turismo Regional",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Programa Aeroporto e Turismo Regional\nAmpliar a conectividade aérea de Sergipe mediante articulação com companhias aéreas,\nGoverno Federal e setor privado para:\n●\n●\n●\n●\n\nampliar a malha aérea;\nincentivar novos voos nacionais;\nfortalecer o turismo regional;\nintegrar Sergipe aos principais mercados emissores de turistas.\n\nPrograma Sergipe Internacional\nPromover a internacionalização do turismo sergipano por meio de acordos institucionais,\nparticipação em feiras internacionais, promoção digital e fortalecimento do turismo de\nexperiência.\nEixo 2 - Cultura, Patrimônio e Identidade Sergipana\nPrograma Patrimônio Vivo Sergipano\nValorizar mestres da cultura popular, grupos folclóricos, artistas tradicionais e\nmanifestações culturais que constituem o patrimônio imaterial do Estado.\nRede Sergipana de Museus e Centros de Memória\nModernizar museus, memoriais e equipamentos culturais com novas tecnologias,\nexperiências imersivas, ações educativas e fortalecimento da educação patrimonial.\nPrograma Revitalizar Sergipe\nRecuperar centros históricos, mercados públicos, espaços culturais e imóveis de valor\nhistórico, integrando preservação do patrimônio, turismo, gastronomia e economia criativa.\nPrograma Cultura em Todo Lugar\nInteriorizar as políticas culturais mediante apoio permanente aos municípios para realização\nde:\n●\n●\n●\n●\n●\n\nfestivais culturais;\nfeiras literárias;\nmostras artísticas;\napresentações de música, teatro e dança;\ncirculação de artistas locais."
+          },
+          {
+            "id": "festival-internacional-de-cultura-e-turismo-de-sergipe",
+            "titulo": "Festival Internacional de Cultura e Turismo de Sergipe",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "Festival Internacional de Cultura e Turismo de Sergipe\nInstituir um grande evento anual destinado à promoção da cultura, gastronomia, música,\nnegócios e turismo, fortalecendo Sergipe no cenário nacional e internacional.\nEixo 3 - Economia Criativa e Empreendedorismo Cultural\nPrograma Sergipe Criativo\nFortalecer a economia criativa por meio do incentivo aos setores de:\n●\n●\n●\n●\n●\n●\n●\n●\n\nmúsica;\naudiovisual;\ndesign;\nmoda;\ngastronomia;\nartesanato;\nprodução cultural;\ninovação artística.\n\nPrograma Artesanato que Gera Renda\nFortalecer as cadeias produtivas do artesanato mediante:\n●\n●\n●\n●\n●\n\nqualificação profissional;\nacesso ao comércio eletrônico;\nparticipação em feiras nacionais e internacionais;\nincentivo às exportações;\ncertificação de origem dos produtos.\n\nPolo Sergipano de Cinema e Audiovisual\nInstituir política estadual de incentivo à produção audiovisual, documentários, cinema,\nanimação, festivais e atração de produções nacionais.\nPrograma Juventude Criativa\nEstimular jovens empreendedores nos segmentos de:\n●\n●\n●\n●\n●\n●\n●\n\naudiovisual;\nmúsica;\ngames;\ndesign;\nprodução digital;\nstartups culturais;\nempreendedorismo criativo.\n\nFundo Estadual de Cultura e Turismo\nAmpliar os mecanismos de financiamento destinados a:\n●\n●\n●\n\nprojetos culturais;\npatrimônio histórico;\nfestivais;"
+          },
+          {
+            "id": "pagina-52",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "●\n●\n●\n\naudiovisual;\neconomia criativa;\nempreendedorismo turístico.\n\nEixo 4 - Qualificação, Governança e Inovação\nEscola Estadual de Turismo, Gastronomia e Economia Criativa\nImplantar centro permanente de formação profissional voltado às áreas de:\n●\n●\n●\n●\n●\n●\n●\n●\n\nhotelaria;\ngastronomia;\nguia de turismo;\nidiomas;\ngestão cultural;\norganização de eventos;\nmarketing digital;\nempreendedorismo.\n\nSergipe Digital Turístico\nCriar plataforma estadual integrada com:\n●\n●\n●\n●\n●\n●\n●\n\ninteligência artificial;\nmapas interativos;\ncalendário cultural;\nroteiros personalizados;\nreservas;\ninformações multilíngues;\npromoção digital dos destinos.\n\nPrograma Cidade Turística Inteligente\nModernizar os principais destinos turísticos mediante:\n●\n●\n●\n●\n●\n●\n\ninternet pública;\nsinalização digital;\naplicativos turísticos;\nmonitoramento inteligente;\nsegurança eletrônica;\nintegração tecnológica dos serviços.\n\nObservatório do Turismo e da Economia Criativa\nCriar centro permanente de inteligência para monitoramento de indicadores, planejamento\nestratégico e avaliação das políticas públicas.\nComitê Estadual de Governança do Turismo\nInstituir instância permanente de governança integrada reunindo Governo do Estado,\nmunicípios, setor privado, universidades, Sistema S e sociedade civil organizada."
+          },
+          {
+            "id": "eixo-5-turismo-regional-sustentabilidade-e-inclusao",
+            "titulo": "Eixo 5 - Turismo Regional, Sustentabilidade e Inclusão",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 5 - Turismo Regional, Sustentabilidade e Inclusão\nPrograma Turismo Sustentável do Rio São Francisco\nPromover o desenvolvimento integrado do turismo náutico, ecológico, esportivo, cultural e\ngastronômico nas regiões banhadas pelo Rio São Francisco, conciliando geração de renda,\npreservação ambiental e valorização das comunidades tradicionais.\nPrograma São João de Sergipe – O Melhor do Nordeste\nTransformar o ciclo junino em política permanente de desenvolvimento econômico,\nfortalecendo artistas, quadrilhas juninas, municípios e circuitos culturais.\nPrograma Sergipe Gastronômico\nValorizar a gastronomia regional como patrimônio cultural e ativo econômico, promovendo\nfestivais, roteiros gastronômicos e integração com a agricultura familiar.\nPrograma Turismo de Base Comunitária\nCriar roteiros turísticos envolvendo comunidades quilombolas, ribeirinhas, indígenas e\ndemais comunidades tradicionais, promovendo inclusão produtiva, preservação ambiental e\nvalorização cultural.\nPrograma Capacita Turismo\nEm parceria com o Sebrae, Senac, Sesi, universidades, institutos federais e prefeituras,\noferecer programas permanentes de capacitação para trabalhadores, empreendedores e\ncomunidades locais, contemplando:\n●\n●\n●\n●\n●\n●\n●\n\nhospitalidade e atendimento ao turista;\nidiomas;\nformação de guias locais;\ngastronomia regional;\nartesanato;\nmarketing digital;\ngestão de pequenos negócios turísticos.\n\nPrograma Turismo para Todos\nPromover políticas de inclusão produtiva voltadas à inserção de mulheres, jovens e pessoas\nem situação de vulnerabilidade nas cadeias produtivas do turismo, ampliando oportunidades\nde emprego, empreendedorismo e geração de renda.\nPrograma Parcerias para o Desenvolvimento do Turismo\nEstabelecer parcerias estratégicas com operadoras de turismo, agências de viagens, meios\nde hospedagem, empresas de transporte, restaurantes, agricultores familiares, artesãos,\ncooperativas e associações culturais para fortalecer a cadeia produtiva do turismo, ampliar\na oferta de produtos e serviços, consolidar roteiros integrados e promover Sergipe como\ndestino competitivo nos mercados nacional e internacional."
+          },
+          {
+            "id": "4-consideracoes-finais",
+            "titulo": "4. CONSIDERAÇÕES FINAIS",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "4. CONSIDERAÇÕES FINAIS\nO presente Programa de Governo representa muito mais do que o cumprimento de uma\nexigência prevista na legislação eleitoral. Ele expressa um compromisso público com o povo\nsergipano e apresenta uma visão estratégica para construir um Estado mais desenvolvido,\njusto, eficiente, sustentável e preparado para os desafios do presente e do futuro.\nAs dez Diretrizes Estratégicas que estruturam este Programa de Governo refletem uma visão\nintegrada de desenvolvimento, reconhecendo que os desafios do Estado exigem políticas\npúblicas articuladas, planejamento de longo prazo, responsabilidade na aplicação dos\nrecursos públicos e permanente capacidade de inovação. As áreas de desenvolvimento\neconômico, geração de emprego, saúde, educação, segurança pública, infraestrutura,\nagricultura, sustentabilidade, inclusão social, empreendedorismo, cultura, turismo e\nmodernização da gestão pública não podem ser tratadas de forma isolada, mas como\npolíticas complementares voltadas à promoção da qualidade de vida da população sergipana.\nNossa concepção de governo parte de um princípio fundamental: as pessoas são o centro\ndas políticas públicas. Cada ação proposta neste Programa foi concebida para ampliar\noportunidades, reduzir desigualdades, fortalecer a cidadania, estimular o desenvolvimento\nregional e garantir que o crescimento econômico produza benefícios concretos para todos os\nsergipanos.\nGovernar Sergipe exigirá responsabilidade fiscal, eficiência administrativa, transparência,\ndiálogo permanente e compromisso com resultados. Por essa razão, adotaremos um modelo\nde gestão pública baseado em planejamento estratégico, monitoramento contínuo das\npolíticas públicas, inovação tecnológica, transformação digital, participação popular e\nfortalecimento das instituições democráticas.\nNosso Governo manterá uma relação permanente de cooperação com os municípios, com o\nGoverno Federal, com a Assembleia Legislativa, com o Poder Judiciário, com os órgãos de\ncontrole, com as universidades, com o setor produtivo, com os movimentos sociais e com\ntodas as instituições comprometidas com o desenvolvimento do Estado. Acreditamos que os\ngrandes desafios de Sergipe somente poderão ser superados por meio da construção de\nparcerias sólidas, do respeito institucional e da cooperação entre os diversos atores da\nsociedade. Também reafirmamos o compromisso com uma gestão pública ética, transparente\ne orientada pelo interesse coletivo. O fortalecimento da governança pública, da participação\nsocial, da inovação democrática e do controle social será permanente, assegurando que a\npopulação acompanhe, participe e avalie as ações do Governo, consolidando uma\nadministração cada vez mais aberta, acessível e comprometida com a boa aplicação dos\nrecursos públicos.\nReconhecemos que este Programa de Governo não se encerra nas páginas deste\ndocumento. Ao contrário, ele constitui o ponto de partida de um processo permanente de\nplanejamento, diálogo, avaliação e aperfeiçoamento das políticas públicas. Governar exige\ncapacidade de ouvir, corrigir rumos, incorporar novas ideias e adaptar estratégias às\ntransformações da realidade social, econômica e ambiental."
+          },
+          {
+            "id": "assumimos-o-compromisso-de-governar-com-responsabilidade-simplicidade-tr",
+            "titulo": "Assumimos o compromisso de governar com responsabilidade, simplicidade, transparência,",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "Assumimos o compromisso de governar com responsabilidade, simplicidade, transparência,\ndiálogo e trabalho. Um governo presente em todas as regiões do Estado, que respeita as\ndiferenças, valoriza as pessoas, fortalece os municípios e promove políticas públicas capazes\nde transformar desafios em oportunidades e sonhos em realizações.\nCom fé em Deus, confiança no povo sergipano e absoluto compromisso com o interesse\npúblico, apresentamos este Programa de Governo como um pacto de esperança,\ndesenvolvimento e transformação para Sergipe."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "9f61f46b59f02c37a11c676187d6ba2545998eeef4e368fdd30229590e8201b0"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "2228473bc9f24a07cc70267f8a96b50b566d12a4382545af311d03b18c75bebe"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "4d8d8da72674e3fbf13e027d25fb6ceb96bfcd48b18b8206114a63b965e1e1dc"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d5fd9bc19f4cab36c7d569a336b60c969b1cc65cbc75c4426637656b38957f47"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "7f51696129749e2ef669283eec72b0596d07dff3f19317d6b0a7a83241e9508c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "182b54fbe9dc114a0c4c7d8d8c891db4eea4e8256e6466d8801fc593673e650c"
+          },
+          {
+            "pagina": 7,
+            "origem": "ocr",
+            "textSha256": "851dc1021f6d908b9d88a487e815a381036dbab4109e7f2412d8dc3a32b42c6e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "56b9365b573b2012ed911952a234c9177fa6a617c75354b6c44b4eb5d340a5b3"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "f29b7cbaf003d86f8a34273e13208f90f2663b7124aa71b8e4279395af547100"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "9487720d22b9d8f3f0fa1f97d56892dc86e49cd02273754f4c1de93c9db7d775"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "c591eb75f01be1e4ba284ab642f8df399ecb10ce780e351e53ccc1fb41e7c0bf"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "1f65a854196a291eb5a04c0074f8e73d0f9ef503946b827d7517b8f78327076b"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "a29f691f10c2c8a0d200df782de7f6381cfccd31723eacad5ed58a74f3936098"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "662db332481ae611ed07b9b7ea72fa5b0f8ea693632c0eceaaf367c2813b2061"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "2eebb22e1b835fce876b0a2224c7c241498eed3279aced3274d290719f37c9f1"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "9809704ac0f8f1077ac90a0668caa3a6249caf703d2f30c866623731688bb182"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "d79e12e28165cf172625fa73c6a0e8b12125556171b63029dcbee0f9f1788b53"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "4c4193d284e2537f2f1b5080105e2622fdeb453b3522ddac2688bfbed0c7e107"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "f5e216043770ece156131ea89dd6afaebeafd6b782e05f7833e7f841b0335fa1"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "318133d9134f7bc4ce1f472cd5156b679ac840e0e6533cb52dbb11d8c2943e78"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "014a047f782f9ab75c6e9211a40ac56140e2ded1d4b12a4388d9a31de2c73b51"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "89c57206fdf6b8b20ca371f3862fba25f94f307dc409dd96947cbdc478c72068"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "caf935fcea70dec1e556c0a03e6a36043b3e29a68ea8f67a101703983d4b452b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "9fd4de828a1fff6ba0759a97def075caf1c0b9c91b8abb1d9dfe8e3cd3651891"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "482c6bd25875689ddef93dd8704227be356bfee937653f9aa040daa51a14f060"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "83f9c64623e1763871be0fff95a6be045ae4c0bdfda11ed769b8c13506f0857d"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "1198a8d597980d9bfff30c2400696f62f986584a9e2ec65290f24b37d63e78b4"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "90cb711c34db3c35270eccb1562fc940876de3ca6f5a473ee23aaa63ba698779"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "449e0266534d3cb1d4a5a231f0998c6ddeb78520e1db385d9894983314e886f4"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "3c4aef5be57f2968684f7ea0ef3dee15855f8d226e8e5ff9f702c56a99882fb6"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "03e6abf789529aaf3fc8def9bf1773ad49a70e14a039ca555333d952a384067d"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "c2bc9bc9b0f1999abd7ea92c7122c55d0a31e85d5848eee440cea08f0eb7fe50"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "5542c8075dc744b84dc60f62b875605ec190d49ad31cb3e8c4b7f8b2dc9f42eb"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "1c94d488cd9ef9577ceab07138fd2aa88387811d0a2033e8cfd02064f57e9f5d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "0dd23a7107bb18b46775e3a5beede007a9ade0f31c734153d1bbd155743ff7cf"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "a913598fd153f86a20a33ef70b7e8823b6b433d1043c27e8fd90f427e0936700"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "3c36eb210dcb85718837fbb8d86f05823f10878a616f2a31a9dc2541847c09cf"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "93c6415d45e78a583e0a8b7f924ed766e71f3360d10955e0ba1e9510399a964b"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "c15471b723f2969fb487b13bb1dcd9342e8695ec0335a2e7d8eb513d821df598"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "003c838eaabc8d4f63231323f4fbef441a2bec35ccd73316b895551a2462e7c8"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "6f23f60bfdd244170470971d46979ebc160418ff802252ebc8db58cf90a7ca10"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "ad3f58d0775b89fdbe3c499799dd1c267e60fd1e2ca60c014b1ea4c64b335f71"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "c105f085d24f7aaa1d8160d631e697313a57883ef1d374d372e0cf1e7a90bc2b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "a0a93c5a745dd2af1588bb48f1dafdaa13816d17a0b22663988ed654bbda3b10"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "c8486dde5af216eff6cc2d5d01a3455584014511432ba883038484d50df26e61"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "2a58d8399d9b95fb1ae4626180978c3bfde581da0e563c14bdfe9d291352e85a"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "b75de0ddcac115ecc8c1f681a00d59b176883c3ad4c8b6d4867d3bd07357ed48"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "12878540610ad112fd7d3b2860d670cac4e32ca9c2034a6236318b06ddeb6c6a"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "0aca600216a0d166e65488b2fbd22a4fc29da4f08c159681b46eff318133ca91"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "af11316e763b7f20a61b7e857792d979ec553da7e852eb9289b696077b97226b"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "eedd017d5c9ec32f0a5644a4832cf152a5f3b5404b5c9a7dcb3f2591772c04cd"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "e193fbb3fb4c0a373720fda3a63f4a4aff99976f6c7780f5657ad9539df00619"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "dc8643de7796ee8feaea035a28cbd0b2c7fa994096aadfb75208e4dc6f2efebf"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "f7c96cf85615babc51b2b0bb009caac67331872634713cfcbd12c607310ad4b3"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "6b758e734445ccb4faae26efb40c73ad080a5209a85faab3db7bf988aa8104a4"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Governo promoverá uma política de desenvolvimento econômico regionalizado, estimulando investimentos, inovação, competitividade e valorização das potencialidades de cada território sergipano, sempre com responsabilidade social e ambiental. A saúde será tratada como política de Estado, baseada na prevenção, promoção da qualidade de vida, cuidado integral e gestão responsável dos recursos públicos. A educação pública estadual deverá promover a formação integral dos estudantes, desenvolvendo competências científicas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando crianças, adolescentes, jovens e adultos para o exercício da cidadania. O Governo promoverá políticas públicas voltadas à proteção da população LGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde, cidadania e respeito à dignidade humana. O Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal, planejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando capacidade permanente de investimento. O Governo buscará ampliar a infraestrutura hídrica e urbana.",
+    "frases": [
+      {
+        "texto": "O Governo promoverá uma política de desenvolvimento econômico regionalizado, estimulando investimentos, inovação, competitividade e valorização das potencialidades de cada território sergipano, sempre com responsabilidade social e ambiental.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 12,
+            "trecho": "Ao lado da economia solidária, o Governo promoverá uma política de desenvolvimento econômico regionalizado, estimulando investimentos, inovação, competitividade e valorização das potencialidades de cada território sergipano, sempre com responsabilidade social e ambiental."
+          }
+        ]
+      },
+      {
+        "texto": "A saúde será tratada como política de Estado, baseada na prevenção, promoção da qualidade de vida, cuidado integral e gestão responsável dos recursos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 14,
+            "trecho": "A saúde será tratada como política de Estado, baseada na prevenção, promoção da qualidade de vida, cuidado integral e gestão responsável dos recursos públicos."
+          }
+        ]
+      },
+      {
+        "texto": "A educação pública estadual deverá promover a formação integral dos estudantes, desenvolvendo competências científicas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando crianças, adolescentes, jovens e adultos para o exercício da cidadania.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 18,
+            "trecho": "A educação pública estadual deverá promover a formação integral dos estudantes, desenvolvendo competências científicas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando crianças, adolescentes, jovens e adultos para o exercício da cidadania e para um mercado de trabalho cada vez mais exigente e tecnológico."
+          }
+        ]
+      },
+      {
+        "texto": "O Governo promoverá políticas públicas voltadas à proteção da população LGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde, cidadania e respeito à dignidade humana.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 43,
+            "trecho": "Nosso Governo promoverá políticas públicas voltadas à proteção da população LGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde, cidadania e respeito à dignidade humana."
+          }
+        ]
+      },
+      {
+        "texto": "O Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal, planejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando capacidade permanente de investimento.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 28,
+            "trecho": "O Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal, planejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando capacidade permanente de investimento."
+          }
+        ]
+      },
+      {
+        "texto": "O Governo buscará ampliar a infraestrutura hídrica e urbana.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 32,
+            "trecho": "ampliar a infraestrutura hídrica e urbana;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "Política de desenvolvimento econômico regionalizado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 12,
+            "trecho": "política de desenvolvimento econômico regionalizado"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Saúde como política de Estado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 14,
+            "trecho": "A saúde será tratada como política de Estado"
+          }
+        ]
+      },
+      {
+        "id": "educacao-estadual",
+        "titulo": "Educação estadual",
+        "descricao": "Formação integral dos estudantes.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 18,
+            "trecho": "A educação pública estadual deverá promover a formação integral dos estudantes"
+          }
+        ]
+      },
+      {
+        "id": "protecao-lgbtqiapn",
+        "titulo": "Proteção LGBTQIAPN+",
+        "descricao": "Proteção da população LGBTQIAPN+.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 43,
+            "trecho": "políticas públicas voltadas à proteção da população LGBTQIAPN+"
+          }
+        ]
+      },
+      {
+        "id": "responsabilidade-fiscal",
+        "titulo": "Responsabilidade fiscal",
+        "descricao": "Controle das contas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002532010:01",
+            "pagina": 28,
+            "trecho": "O Governo manterá rígido controle das contas públicas"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:29:11.483Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:31:19.247Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números, prazos ou quantidades na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre desenvolvimento regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:1:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:2:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Afirmação é subconjunto textual literal da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:3:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (proteção LGBTQIAPN+)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:4:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (responsabilidade fiscal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:5:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal está listado sob 'O Governo buscará' na página."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta específica de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:frase:6:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula curta da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal presente na página 12."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área temática coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:desenvolvimento-regional:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal presente na página 14."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:saude-publica:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal presente na página 18."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:educacao-estadual:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal presente na página 43."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:protecao-lgbtqiapn:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única do resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal presente na página 28."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (responsabilidade fiscal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002532010:tema:responsabilidade-fiscal:documentos:SE:260002532010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única do resumo."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SE:260002532010",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SE:260002532010:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 50872,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1959,
+          "reasoning_output_tokens": 820
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25813,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20521,
+          "output_tokens_details": {
+            "thinking_tokens": 775
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25813,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20521,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25813,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25813
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.32822840000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "40c280b2c631b82cee1f801aab364533bdc5b980c3608edc0bc5b3af0f3e8fd4",
+    "extractedTextSha256": "a7087020c33dd4ba90ed628fa22d8c00ed13b8f6ebecbec1d6615570021e23ae",
+    "documentCount": 1,
+    "documentSetSha256": "4de9a892733fdb6bb4df32fe8c5a8ecebd98915e3a2dd318966c1d6949fff446",
+    "contentSha256": "a564a6618230ce1185b0f7e58db6a1d14879b2aa816083f273621421b787ac12"
+  }
+}

@@ -1,0 +1,1030 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002551001",
+    "slug": "joao-rodrigues",
+    "nomeUrna": "JOÃO RODRIGUES",
+    "partido": "PSD",
+    "arquivoNome": "2026SC240002551001_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002551001_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002551001:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002551001_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002551001_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "536e88944a4fee46d92874517ef1a00b80a9b74c77a7c28ba85320e8a49b5dc9",
+        "extractedTextSha256": "a08749f0375a2630c704b06a7166f5335eb2ba8f289764aa941ed45c06abf566",
+        "paginas": 25,
+        "secoes": [
+          {
+            "id": "estado-de-santa-catarina",
+            "titulo": "ESTADO DE SANTA CATARINA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "ESTADO DE SANTA CATARINA\n\nJOÃO RODRIGUES\nGOVERNADOR\n\nCARLOS CHIODINI\nVICE-GOVERNADOR\n\nCOLIGAÇÃO SANTA CATARINA ACIMA DE TUDO\nPSD • MDB • UNIÃO PROGRESSISTA (PP-UB)\n\nPLANO DE GOVERNO\nGESTÃO 2027 – 2030\n\nAusteridade • Responsabilidade • Modernização • Inclusão Social\n\nPágina 1 de 25"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n1. Fundamentos do Plano de Governo 2027–2030 ................................................................ 3\n1.1 Visão Estratégica e Capacidade de Investimento ..................................................................... 3\n\n2. Plano Estrutural de Governo – Gestão Pública .................................................................. 5\n2.1 Gestão Pública Eficiente, Transparente e Inovadora ................................................................ 5\n2.2 Adequação da Estrutura Organizacional da Administração à Realidade .................................. 6\n2.3 Preservar e Aumentar a Capacidade de Investimento do Estado............................................. 6\n\n3. Segurança Pública.............................................................................................................. 8\n3.1 Investimentos e Planejamento para a Segurança Pública ........................................................ 8\n\n4. Saúde ............................................................................................................................... 12\n4.1 Planejamento e Investimentos em Saúde ............................................................................... 12\n\n5. Educação e Desenvolvimento Humano............................................................................ 15\n5.1 Educação Básica e Ensino Médio ........................................................................................... 15\n5.2 Ensino Superior e Qualificação ............................................................................................... 16\n5.3 Educação Especial .................................................................................................................. 16\n5.4 Esporte e Lazer ....................................................................................................................... 16\n5.5 Cultura ..................................................................................................................................... 16\n\n6. Agricultura e Desenvolvimento Econômico ...................................................................... 17\n6.1 Ações Inovadoras que Modernizam a Produção..................................................................... 17\n6.2 Ações Voltadas às Cadeias Produtivas Consolidadas ............................................................ 18\n6.3 Pesquisa, Extensão, Defesa e Infraestrutura Rural ................................................................ 18\n\n7. Infraestrutura, Mobilidade, Logística e Desenvolvimento Sustentável ............................. 20\n7.1 Investimentos na Malha Rodoviária ........................................................................................ 20\n7.2 Investimentos nos Portos e Aeroportos................................................................................... 20\n7.3 Investimentos em Mobilidade Urbana ..................................................................................... 20\n7.4 Recursos Hídricos e Saneamento Básico ............................................................................... 20\n\n8. Desenvolvimento e Reinserção Social ............................................................................. 22\n9. Gestão Integrada e Inovadora .......................................................................................... 23\n10. Desenvolvimento Regional e Cidades ............................................................................ 24\nCompromisso Final ............................................................................................................... 25\n\nPágina 2 de 25"
+          },
+          {
+            "id": "1-fundamentos-do-plano-de-governo-2027-2030",
+            "titulo": "1. FUNDAMENTOS DO PLANO DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1. FUNDAMENTOS DO PLANO DE GOVERNO 2027–2030\nA Coligação “Santa Catarina Acima de Tudo”, integrada pelo PSD, MDB e União Progressista\n(PP-UB), por meio de seus candidatos a Governador, João Rodrigues, e a Vice-Governador,\nCarlos Chiodini, apresenta o presente Plano de Governo para o quadriênio 2027–2030.\nEste documento foi sistematizado com base em premissas fundamentais que orientarão toda a\ngestão pública estadual:\n•\n\nAusteridade, responsabilidade e otimização dos recursos públicos;\n\n•\n\nGestão profissional e transparente;\n\n•\n\nModernização, desburocratização e entrega de serviços públicos de qualidade em todas\nas áreas de atuação do Estado;\n\n•\n\nInclusão social, sustentabilidade, respeito ao meio ambiente e inovação tecnológica.\n\nSanta Catarina possui uma trajetória de protagonismo econômico e social construída pelo\ndinamismo e pela diversificação de seu setor produtivo, bem como pelo esforço coletivo de sua\npopulação. No entanto, a ausência de uma agenda estratégica clara que oriente o futuro do\nEstado coloca em risco essa competitividade conquistada ao longo de décadas.\nO presente Plano de Governo responde a esse desafio com uma visão de longo prazo,\narticulando investimentos, modernização da máquina pública e proteção social, de modo a\ngarantir que Santa Catarina continue sendo referência nacional de desenvolvimento sustentável\ne qualidade de vida.\n\n1.1 Visão Estratégica e Capacidade de Investimento\nPara financiar a agenda de investimentos proposta, o Governo utilizará recursos provenientes de\nquatro fontes principais:\n•\n\n(a) recursos próprios do Estado;\n\n•\n\n(b) recursos alocados junto à União;\n\n•\n\n(c) financiamentos obtidos junto a instituições de crédito; e\n\n•\n\n(d) parcerias com a iniciativa privada, por meio de Parcerias Público-Privadas (PPPs) ou\nconcessões de serviços públicos, sempre que esses arranjos se mostrarem vantajosos\npara o interesse público.\n\nA destinação de recursos do Orçamento do Estado para o Plano de Investimentos será alcançada\nmediante a adoção de uma política fiscal austera, com controle rigoroso das despesas de custeio,\nassegurando-se, no mínimo, 15% da Receita Corrente Líquida (RCL) para investimentos.\n\nPágina 3 de 25"
+          },
+          {
+            "id": "considerando-o-comportamento-recente-da-receita-corrente-liquida-que-pas",
+            "titulo": "Considerando o comportamento recente da Receita Corrente Líquida — que passou de",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Considerando o comportamento recente da Receita Corrente Líquida — que passou de\nR$ 41,002 bilhões em 2023 para R$ 50,791 bilhões em 2025, com estimativa de R$ 55,000\nbilhões para 2026 —, é possível projetar a seguinte evolução ao longo do quadriênio 2027–2030:\nAno\n\nRCL Projetada\n\n15% para Investimentos\n\n2027\n\nR$ 60,00 bilhões\n\nR$ 9,00 bilhões\n\n2028\n\nR$ 65,00 bilhões\n\nR$ 9,75 bilhões\n\n2029\n\nR$ 70,00 bilhões\n\nR$ 10,50 bilhões\n\n2030\n\nR$ 75,00 bilhões\n\nR$ 11,25 bilhões\n\nTOTAL\n\n—\n\nR$ 40,50 bilhões\n\nTem-se, portanto, que a soma dos recursos do Tesouro estadual que poderão ser destinados ao\nPlano de Investimentos no período 2027–2030 alcança R$ 40,5 bilhões. Esse montante será\ncomplementado por recursos federais, financiamentos e parcerias privadas, ampliando\nsignificativamente a capacidade de transformação da infraestrutura e dos serviços públicos\ncatarinenses.\nA política fiscal austera não significará corte indiscriminado de gastos, mas sim a qualificação\npermanente das despesas, a eliminação de desperdícios e a priorização absoluta das áreas que\nimpactam diretamente a qualidade de vida da população: segurança, saúde, educação,\ninfraestrutura e desenvolvimento econômico.\nA responsabilidade fiscal é também um compromisso intergeracional. Governar com austeridade\nsignifica preservar a capacidade do Estado de investir no futuro, evitando o endividamento\nexcessivo e a transferência de encargos para as próximas gerações. Santa Catarina merece um\ngoverno que trate o dinheiro público com o mesmo rigor com que o cidadão trata o orçamento de\nsua família.\nNesse sentido, a projeção de R$ 40,5 bilhões de recursos próprios para investimento no\nquadriênio representa uma base sólida, que será potencializada pela articulação inteligente com\na União e com a iniciativa privada. O Governo não se limitará a administrar a escassez: buscará\nativamente a ampliação das fontes de financiamento, sempre com transparência e com avaliação\nrigorosa da vantagem para o interesse público.\nA visão estratégica que orienta este Plano de Governo reconhece que Santa Catarina não pode\nse acomodar. O protagonismo econômico e social conquistado pelas gerações anteriores precisa\nser renovado e ampliado. Isso exige planejamento de longo prazo, disciplina na execução e\ncoragem para tomar decisões difíceis quando necessário. É exatamente esse o espírito que\npermeia todas as propostas apresentadas neste documento.\n\nPágina 4 de 25"
+          },
+          {
+            "id": "2-plano-estrutural-de-governo-gestao-publica",
+            "titulo": "2. PLANO ESTRUTURAL DE GOVERNO – GESTÃO PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "2. PLANO ESTRUTURAL DE GOVERNO – GESTÃO PÚBLICA\nA qualidade da gestão pública é o alicerce sobre o qual se constroem todas as demais políticas.\nSem uma administração eficiente, transparente e inovadora, mesmo os melhores programas\nsetoriais tendem a perder efetividade. Por essa razão, o Governo João Rodrigues / Carlos\nChiodini terá como prioridade absoluta a modernização da máquina pública estadual.\nA experiência de gestões anteriores, tanto no âmbito estadual quanto municipal, demonstra que\na diferença entre o sucesso e o fracasso de políticas públicas reside, em grande medida, na\nqualidade da gestão. Processos bem desenhados, servidores capacitados, uso inteligente da\ntecnologia e foco permanente no cidadão são ingredientes indispensáveis para a entrega de\nresultados.\nO cidadão catarinense não pode continuar enfrentando filas desnecessárias, exigências\nburocráticas excessivas e falta de informação sobre os serviços a que tem direito. A\nadministração pública do século XXI deve ser ágil, digital, transparente e centrada nas pessoas.\nEsse é o padrão de excelência que o Governo se compromete a alcançar.\n\n2.1 Gestão Pública Eficiente, Transparente e Inovadora\nO compromisso com a eficiência administrativa se traduzirá em ações concretas de\naperfeiçoamento contínuo. A gestão governamental será aprimorada em todas as suas áreas de\natuação, com foco na melhoria da eficiência e da eficácia dos serviços prestados à população\ncatarinense.\nA administração pública será blindada contra as investidas da corrupção e das práticas não\nrepublicanas, mediante a adoção de mecanismos de controle rigorosos e eficientes. A\ntransparência será elevada a princípio norteador de todas as decisões, com publicidade ampla\nde contratos, convênios, nomeações e resultados de políticas públicas.\nA inovação tecnológica ocupará lugar central, tanto na prestação dos serviços quanto na medição\ndos resultados e na avaliação da qualidade do que é entregue ao cidadão. Os órgãos da\nAdministração Direta e as entidades da Administração Indireta serão imersos nos avanços\ntecnológicos contemporâneos, com especial atenção à digitalização dos serviços e ao emprego\nresponsável da Inteligência Artificial.\nA otimização dos recursos financeiros, de pessoal e de infraestrutura será permanente, sempre\ncom o objetivo de potencializar os resultados dos serviços públicos. A administração será\ntransparente, acessível e focada no atendimento das pessoas, colocando o cidadão no centro de\ntodas as decisões.\n\nPágina 5 de 25"
+          },
+          {
+            "id": "principais-acoes",
+            "titulo": "Principais ações:",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações:\n•\n\nAperfeiçoar a gestão governamental em todas as áreas, elevando a eficiência e a\neficácia dos serviços;\n\n•\n\nImplantar mecanismos rigorosos de controle interno e externo para prevenir e combater\na corrupção;\n\n•\n\nDigitalizar progressivamente os serviços públicos, reduzindo filas e burocracia;\n\n•\n\nUtilizar Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade\ndas respostas ao cidadão;\n\n•\n\nImplantar sistemas de medição de resultados e de avaliação da satisfação do usuário;\n\n•\n\nPromover a transparência ativa, com portais de fácil acesso e linguagem clara;\n\n•\n\nCapacitar permanentemente os servidores públicos para o uso de novas tecnologias e\nmetodologias de gestão.\n\n2.2 Adequação da Estrutura Organizacional da Administração à Realidade\nA máquina pública precisa ser dimensionada de acordo com as necessidades reais da sociedade\ne com a capacidade financeira do Estado. Estruturas ociosas ou improdutivas consomem\nrecursos que poderiam ser direcionados a serviços essenciais. Por isso, será realizada uma\nrevisão criteriosa do tamanho e da organização da administração estadual.\nA redistribuição de competências buscará eliminar superposições de ações e conflitos de decisão\nque hoje prejudicam a prestação dos serviços. As estruturas já consolidadas e que demonstram\nbom desempenho serão otimizadas e adequadas às demandas da realidade contemporânea.\n\nPrincipais ações:\n•\n\nRever o tamanho da máquina pública, eliminando estruturas ociosas e improdutivas;\n\n•\n\nRedistribuir competências para corrigir superposições e conflitos de decisão;\n\n•\n\nOtimizar o desempenho das estruturas existentes e consolidadas;\n\n•\n\nAdequar as demandas organizacionais à realidade atual do Estado e da sociedade.\n\n2.3 Preservar e Aumentar a Capacidade de Investimento do Estado\nA capacidade de investir é condição indispensável para a transformação do Estado. Sem\ninvestimentos em infraestrutura, tecnologia, saúde e educação, o desenvolvimento fica\ncomprometido. Por isso, o Governo fortalecerá os mecanismos de arrecadação e qualificará\npermanentemente os gastos públicos.\n\nPágina 6 de 25"
+          },
+          {
+            "id": "a-secretaria-da-fazenda-recebera-investimentos-prioritarios-em-recursos",
+            "titulo": "A Secretaria da Fazenda receberá investimentos prioritários em recursos tecnológicos, humanos",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A Secretaria da Fazenda receberá investimentos prioritários em recursos tecnológicos, humanos\ne estruturais, de modo a tornar a arrecadação mais eficiente, justa e menos onerosa para o\ncontribuinte. Paralelamente, será mantido rigoroso controle das despesas de custeio, com\nauditoria permanente dos contratos e avaliação sistemática dos custos dos serviços e dos\ninvestimentos.\n\nPrincipais ações:\n•\n\nFortalecer os mecanismos e processos de arrecadação, com investimentos em\ntecnologia, pessoal e infraestrutura da Fazenda;\n\n•\n\nQualificar os gastos públicos, com controle rigoroso das despesas de custeio;\n\n•\n\nImplantar prática permanente de auditoria nos contratos;\n\n•\n\nAvaliar sistematicamente os custos dos serviços e dos investimentos;\n\n•\n\nBuscar permanentemente a eficiência alocativa dos recursos públicos.\n\nPágina 7 de 25"
+          },
+          {
+            "id": "3-seguranca-publica",
+            "titulo": "3. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "3. SEGURANÇA PÚBLICA\nNão há dúvida de que um dos maiores desafios enfrentados pelos estados brasileiros é o\naumento da criminalidade, que constantemente ameaça a vida e o patrimônio de todos os\ncidadãos, tanto nos grandes centros urbanos quanto no campo.\nApesar de historicamente Santa Catarina não possuir índices elevados de violência em\ncomparação com muitos outros estados da Federação, é imprescindível que sejam mantidas e\ndesenvolvidas políticas públicas eficientes e enérgicas de combate a todo tipo de crime,\nprincipalmente àqueles associados às facções criminosas e à ocupação territorial pelo tráfico de\ndrogas.\nO Governo de Santa Catarina precisa estar sempre vigilante e preparado para garantir a\nsegurança de todos que vivem no Estado. Para tanto, será necessário realizar substanciais\ninvestimentos em tecnologia, aquisição de armamento e equipamentos de ponta, a fim de melhor\nequipar as forças policiais, tornando Santa Catarina cada vez mais segura e referência para todo\no país.\nA segurança pública será uma das prioridades centrais do Governo, com comando forte, polícias\nqualificadas e valorizadas, presença constante em todo o território estadual e foco absoluto na\nproteção das famílias catarinenses.\n\n3.1 Investimentos e Planejamento para a Segurança Pública\nO planejamento da segurança pública combinará investimentos massivos em tecnologia com a\nvalorização dos profissionais, a integração das forças e o combate inteligente ao crime\norganizado. A seguir, apresentam-se as principais linhas de ação:\n\nTecnologia e Equipamentos\n•\n\nInvestir na aquisição de tecnologias aplicadas à segurança pública;\n\n•\n\nImplantar barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para\nidentificar e interceptar criminosos, veículos e mercadorias ilegais, combatendo o tráfico\nde armas e de drogas;\n\n•\n\nAperfeiçoar o programa de videomonitoramento, ampliando o número de câmeras com\ntecnologia de reconhecimento facial, leitura de placas de veículos, inteligência artificial e\nalertas em tempo real, instaladas em pontos estratégicos do Estado, constituindo a\n“Muralha Digital Catarinense”;\n\n•\n\nAdquirir drones para monitoramento ostensivo de áreas e para apoio em intervenções\npoliciais complexas;\n\nPágina 8 de 25"
+          },
+          {
+            "id": "pagina-9",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nExpandir o uso de moto-viaturas, especialmente nos grandes centros urbanos;\n\n•\n\nFornecer melhores equipamentos e condições de trabalho adequadas aos profissionais\nda segurança;\n\n•\n\nFornecer melhor estrutura e equipamentos para a Polícia Científica e a perícia forense,\npromovendo maior eficiência e agilidade na coleta de provas e no auxílio à elucidação\nde crimes.\n\nInteligência e Integração\n•\n\nPriorizar, fortalecer e integrar as atividades de inteligência na segurança pública e no\nsistema prisional, com aquisição de equipamentos de alta tecnologia e desenvolvimento\nde ações estratégicas;\n\n•\n\nDesenvolver programas estratégicos de compartilhamento de informações com diversos\nentes da Federação, incluindo o Governo Federal, visando impedir e combater a\ninstalação de células de facções criminosas vindas de outros estados;\n\n•\n\nCom base nas informações obtidas pelos setores de inteligência, realizar operações\npoliciais regulares com o objetivo de desmantelar e sufocar o crime organizado;\n\n•\n\nAprimorar a força-tarefa do GAECO, respeitando sempre a sua independência e a\ncompetência do Ministério Público Estadual, com enfoque especial no combate aos\nilícitos praticados contra a administração pública e o erário;\n\n•\n\nBuscar maior cooperação entre Polícia Militar, Polícia Civil, Polícia Científica, Corpo de\nBombeiros, municípios e parceiros estratégicos.\n\nValorização e Efetivo\n•\n\nAumentar o efetivo por meio da convocação voluntária de policiais da reserva\nfisicamente aptos para atuarem em áreas estratégicas;\n\n•\n\nNomear os aprovados em concursos já realizados e publicar novos editais;\n\n•\n\nInvestir em cursos de formação e treinamento para os profissionais de segurança,\nincluindo acompanhamento psicológico quando necessário;\n\n•\n\nValorizar continuamente as carreiras da segurança pública;\n\n•\n\nAprimorar os mecanismos de transparência dos indicadores criminais e operacionais.\n\nProteção a Grupos Vulneráveis e Temas Específicos\n•\n\nInstrumentalizar ações para a prevenção e repressão de crimes contra a mulher,\nviolência doméstica e feminicídios, melhor aparelhando as Delegacias de Proteção à\n\nPágina 9 de 25"
+          },
+          {
+            "id": "mulher-com-a-adocao-de-medidas-de-amparo-as-vitimas-tais-como-a-implanta",
+            "titulo": "Mulher, com a adoção de medidas de amparo às vítimas, tais como a implantação de",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Mulher, com a adoção de medidas de amparo às vítimas, tais como a implantação de\ncasas de acolhimento e o fornecimento de acompanhamento psicológico;\n•\n\nAperfeiçoar a estrutura da Polícia Militar Ambiental, fornecendo tecnologia e\nequipamentos com o objetivo de vigiar, fiscalizar e reprimir crimes cometidos contra o\nmeio ambiente no território catarinense;\n\n•\n\nEquipar as delegacias específicas e propiciar capacitação permanente para o combate\naos crimes cibernéticos — fraudes, golpes, extorsões, crimes contra a honra,\ndisseminação de ódio e outros — cometidos em ambiente virtual ou por meio de\naplicativos de mensagem;\n\n•\n\nEm conjunto com os municípios, criar políticas públicas para resolver a problemática de\nmoradores de rua, mediante projetos de recuperação de usuários de drogas,\nrecolhimento em albergues, assistência e concessão de oportunidades de trabalho;\n\n•\n\nCombater com veemência toda forma de violência no campo, colocando todo o aparato\npolicial de prontidão para garantir a dignidade e a segurança do produtor rural\ncatarinense;\n\n•\n\nIncentivar políticas públicas e a criação de redes não governamentais voltadas ao\nenfrentamento da violência contra criança, adolescente, mulher, idoso, indígena e\nminorias;\n\n•\n\nAmpliar o policiamento comunitário por meio de mecanismos de participação da\nsociedade civil.\n\nCorpo de Bombeiros e Prevenção\n•\n\nIntensificar a capacitação técnica dos Bombeiros, fornecendo viaturas e equipamentos\nespecíficos para combate a incêndio, atendimento pré-hospitalar e resgate;\n\n•\n\nDesenvolver programas sociais de prevenção a sinistros.\n\nO combate ao crime será orientado por indicadores, direcionando recursos e capacidades para\nreduzir significativamente todas as formas de violência e as taxas de mortalidade relacionadas,\nrestituindo a normalidade à vida cotidiana dos catarinenses.\nA segurança pública moderna não se resume a repressão. Ela combina prevenção, inteligência,\npresença ostensiva, valorização profissional e integração entre as instituições. O Governo atuará\nem todas essas frentes de forma simultânea e coordenada, sem privilegiar uma em detrimento\ndas outras.\nA proteção das famílias catarinenses é inegociável. Seja no meio urbano ou no rural, seja contra\no crime organizado, a violência doméstica, os crimes cibernéticos ou os crimes ambientais, o\n\nPágina 10 de 25"
+          },
+          {
+            "id": "estado-estara-presente-e-preparado-santa-catarina-deve-continuar-sendo-r",
+            "titulo": "Estado estará presente e preparado. Santa Catarina deve continuar sendo referência nacional",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Estado estará presente e preparado. Santa Catarina deve continuar sendo referência nacional\nde segurança e qualidade de vida, e o Governo fará tudo o que estiver ao seu alcance para\nconsolidar e ampliar essa condição.\nA implantação da “Muralha Digital Catarinense”, o reforço das barreiras de fronteira, a integração\ndas forças de inteligência e o investimento massivo em tecnologia e em gente formam o conjunto\nde medidas que permitirão ao Estado antecipar-se às ameaças e responder com rapidez e\neficácia. Segurança não é favor: é direito do cidadão e dever do poder público.\n\nPágina 11 de 25"
+          },
+          {
+            "id": "4-saude",
+            "titulo": "4. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "4. SAÚDE\nO livre e rápido acesso à saúde para todos os catarinenses será prioridade do Governo. É\nfundamental conceber um modelo que propicie atendimento médico com capilaridade suficiente\npara abranger todas as regiões e municípios do Estado, sem a necessidade de deslocamentos\nlongos para cidades de maior porte.\nA rede hospitalar própria do Estado é antiga — construída majoritariamente nas décadas de 1960\ne 1970, quando Santa Catarina tinha cerca de 3 milhões de habitantes — e encontra-se, em\nmuitos casos, sucateada e obsoleta, necessitando de reformas e melhorias urgentes. A\nsuperlotação e a precariedade dos serviços de saúde persistem, apesar dos esforços diários dos\nservidores para manter a regularidade do atendimento.\nÉ inviável reformar hospitais com pacientes internados e em pleno atendimento. A solução passa\npela construção de novos equipamentos hospitalares, transferência do atendimento para as\nestruturas novas e reforma das estruturas antigas para funcionamento como pronto-atendimento\ne hospital-dia, nos quais o paciente é atendido e recebe alta no mesmo dia ou no dia seguinte.\nA população de Santa Catarina estimada para 2026 é de aproximadamente 8,3 milhões de\nhabitantes — quase três vezes a população da década de 1970. Por isso, uma das soluções\nestruturantes para o Estado é a construção de novos hospitais para o atendimento da população\nnas diversas regiões, o que contribuirá para a erradicação da chamada “ambulanciaterapia”.\n\n4.1 Planejamento e Investimentos em Saúde\nO Governo elaborará o Plano de Investimentos em Saúde no Estado, com detalhamento regional,\nincrementado pelos recursos decorrentes da PEC da Saúde. As ações serão orientadas pelos\nseguintes eixos:\n\nAtenção Básica e Prevenção\n•\n\nEstruturar e qualificar as equipes municipais de Atenção Básica para prevenção,\ndetecção e tratamento oportuno das Doenças Crônicas Não Transmissíveis (DCNTs);\n\n•\n\nIntensificar ações de vigilância e prevenção de doenças transmissíveis, melhorando as\ncondições tecnológicas para diagnóstico precoce e controle;\n\n•\n\nFomentar a capacitação dos profissionais de saúde em todas as regiões, elevando a\nefetividade e a resolubilidade;\n\n•\n\nFomentar a integração das secretarias municipais de saúde;\n\n•\n\nAmpliar o alcance da telemedicina e das vídeo-consultas;\n\nPágina 12 de 25"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar política estadual de qualificação da atenção à mulher e à criança, fortalecendo\neducação permanente, serviços e rede de atenção ao pré-natal, parto e recém-nascido,\nalém de instrumentos de monitoramento e avaliação;\n\n•\n\nEstimular e realizar ações educativas de vida saudável nas áreas de alimentação,\natividade física e tabagismo;\n\n•\n\nImplementar ações voltadas ao diagnóstico e cuidado da saúde mental e à prevenção\ndo uso de álcool e outras drogas;\n\n•\n\nAumentar o número de médicos no interior.\n\nAtenção Especializada e Hospitalar\n•\n\nCriar Força-Tarefa Médica para zerar as filas de espera de cirurgias, por meio de\nconvênios com serviços de residências cirúrgicas em múltiplas especialidades;\n\n•\n\nAumentar o número de salas cirúrgicas nos hospitais existentes, ativando e adequando\nunidades em localizações estratégicas;\n\n•\n\nLevar os centros de referência de média e alta complexidade a números suficientes e\ncom distribuição adequada, diminuindo distâncias para as demandas regionais;\n\n•\n\nAumentar o número de centros de diagnóstico em localizações estratégicas e ampliar os\njá existentes;\n\n•\n\nIncentivar a criação de residência médica nas especialidades;\n\n•\n\nLevar os leitos hospitalares, especialmente de UTI, aos números recomendados pela\nOrganização Mundial da Saúde;\n\n•\n\nPropiciar condições para que hospitais de pequeno e médio porte realizem novos e mais\nexames e cirurgias, tornando-os gradualmente autossustentáveis e reduzindo sua\ndependência de recursos estaduais.\n\nGestão e Qualidade\n•\n\nPriorizar a nomeação de gestores qualificados;\n\n•\n\nImplantar protocolos para padronização das ações;\n\n•\n\nAdequar as estruturas de urgência e emergência com melhorias de espaços físicos,\nequipamentos e equipes qualificadas para acolhimento digno dos pacientes;\n\n•\n\nImplantar ferramentas de gestão para corrigir deficiências e desperdícios;\n\n•\n\nGarantir condições adequadas de trabalho aos profissionais da saúde;\n\n•\n\nImplementar políticas de capacitação continuada;\n\nPágina 13 de 25"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nPromover campanhas de conscientização e orientação de combate a doenças\ninfectocontagiosas.\n\nA saúde será tratada como direito fundamental e prioridade absoluta de governo. O cidadão\ncatarinense não pode continuar enfrentando longas filas, deslocamentos excessivos e\nprecariedade de atendimento. O Plano de Governo assume o compromisso de transformar essa\nrealidade com planejamento, investimento e gestão profissional.\nA construção de novos hospitais regionais, a ampliação de leitos de UTI, o aumento do número\nde salas cirúrgicas e a criação da Força-Tarefa Médica para zerar as filas de cirurgias são\nmedidas concretas que impactarão diretamente a vida de milhares de famílias. A telemedicina e\nas vídeo-consultas reduzirão deslocamentos desnecessários e ampliarão o acesso em regiões\nmais distantes dos grandes centros.\nA atenção básica será fortalecida como porta de entrada prioritária do sistema, com equipes\nqualificadas para prevenção, detecção precoce e tratamento de doenças crônicas. A saúde da\nmulher e da criança receberá atenção especial, com qualificação da rede de pré-natal, parto e\ncuidado ao recém-nascido. A saúde mental e a prevenção ao uso de álcool e outras drogas\ntambém serão priorizadas, reconhecendo a dimensão epidemiológica desses desafios.\nNenhum esforço de investimento em estrutura física será suficiente se não vier acompanhado de\ngestão qualificada, de profissionais valorizados e de protocolos padronizados. Por isso, a\nnomeação de gestores competentes, a capacitação continuada das equipes e a implantação de\nferramentas de gestão para eliminar desperdícios e deficiências são partes integrantes e\ninseparáveis deste Plano de Governo.\n\nPágina 14 de 25"
+          },
+          {
+            "id": "5-educacao-e-desenvolvimento-humano",
+            "titulo": "5. EDUCAÇÃO E DESENVOLVIMENTO HUMANO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "5. EDUCAÇÃO E DESENVOLVIMENTO HUMANO\nA educação é o principal instrumento de transformação social e de desenvolvimento humano.\nUm Estado que investe consistentemente em educação de qualidade prepara cidadãos mais\ncapazes, mais produtivos e mais conscientes de seus direitos e deveres. O compromisso do\nGoverno João Rodrigues / Carlos Chiodini com a educação catarinense é pleno e inegociável.\n\n5.1 Educação Básica e Ensino Médio\nA prioridade será a educação em tempo integral, com a implementação de atividades no\ncontraturno por meio de oficinas de interpretação e leitura de textos, reforçando a formação em\nMatemática, Português e Inglês. O ensino médio na rede pública estadual será universalizado,\ngarantindo que nenhum jovem catarinense fique sem acesso a essa etapa fundamental de\nformação.\nOs municípios receberão apoio por meio de parcerias para garantir o acesso, a permanência e o\naproveitamento escolar em todas as modalidades da educação básica. Será assegurado apoio\nfinanceiro aos municípios para ampliação da rede de creches, visando atender a primeira infância\ne suprir a demanda de cada região.\nA valorização dos profissionais da educação será assegurada por meio de remuneração e\ncondições de trabalho condizentes com a responsabilidade social que desempenham. O\nPrograma Universidade Gratuita será aperfeiçoado e ajustado para ampliar oportunidades de\nacesso ao ensino superior. Investimentos na rede física da educação adequarão as escolas às\nnecessidades de vagas em todo o território catarinense.\n\nPrincipais ações:\n•\n\nPriorizar a educação em tempo integral, com atividades de reforço em Matemática,\nPortuguês e Inglês no contraturno;\n\n•\n\nUniversalizar o ensino médio na rede pública estadual;\n\n•\n\nApoiar os municípios para garantir acesso, permanência e aproveitamento escolar;\n\n•\n\nApoiar financeiramente a ampliação da rede de creches para a primeira infância;\n\n•\n\nAssegurar valorização dos profissionais da educação com remuneração e condições de\ntrabalho adequadas;\n\n•\n\nAperfeiçoar e ajustar o Programa Universidade Gratuita;\n\n•\n\nInvestir na rede física da educação, adequando-a à demanda por vagas em todo o\nEstado.\n\nPágina 15 de 25"
+          },
+          {
+            "id": "5-2-ensino-superior-e-qualificacao",
+            "titulo": "5.2 Ensino Superior e Qualificação",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "5.2 Ensino Superior e Qualificação\nA Universidade do Estado de Santa Catarina (UDESC) será resgatada como instituição oficial do\nensino superior estadual, com alocação dos recursos necessários à sua expansão, à pesquisa e\nao seu fortalecimento no contexto do desenvolvimento do Estado. A UDESC deve ocupar o lugar\nde destaque que lhe cabe na formação de profissionais qualificados e na geração de\nconhecimento aplicado às vocações regionais de Santa Catarina.\n\n5.3 Educação Especial\nO Governo compartilhará recursos financeiros com os municípios para fortalecer a atuação\ndestes nas parcerias com as APAEs e no atendimento de pessoas com necessidades especiais.\nNenhuma criança ou adolescente com deficiência deve ficar sem o atendimento educacional\nadequado às suas especificidades.\n\n5.4 Esporte e Lazer\nO acesso ao esporte e ao lazer será ampliado, contribuindo para um estilo de vida saudável da\npopulação catarinense. Os municípios receberão apoio financeiro para aquisição de\nequipamentos e instalação de estruturas destinadas à prática esportiva e ao lazer. O esporte é\nferramenta de inclusão social, de prevenção à violência e de promoção da saúde.\n\n5.5 Cultura\nO desenvolvimento da cultura e das artes será implementado com valorização da produção\nartística e cultural de Santa Catarina. Serão incentivadas a produção artística e cultural, o\nreconhecimento, a promoção e a proteção do patrimônio, da diversidade e das identidades\nculturais do Estado. O acesso à cultura será ampliado para todos os catarinenses, reconhecendo\na cultura como direito e como fator de desenvolvimento humano.\nA educação, o esporte, o lazer e a cultura formam um conjunto indissociável de políticas de\ndesenvolvimento humano. Uma criança que frequenta a escola em tempo integral, que tem\nacesso a atividades esportivas e culturais e que conta com profissionais valorizados e motivados\ntem chances muito maiores de construir um futuro digno e de contribuir para o progresso de\nSanta Catarina. Esse é o horizonte que orienta todas as propostas deste capítulo.\nO resgate da UDESC como instituição oficial de ensino superior do Estado, com recursos\nadequados para expansão, pesquisa e extensão, reforça o compromisso com a formação de\nprofissionais de excelência e com a geração de conhecimento aplicado às necessidades e\nvocações regionais. A universidade estadual deve ser um motor de desenvolvimento e de\ninclusão social.\n\nPágina 16 de 25"
+          },
+          {
+            "id": "6-agricultura-e-desenvolvimento-economico",
+            "titulo": "6. AGRICULTURA E DESENVOLVIMENTO ECONÔMICO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "6. AGRICULTURA E DESENVOLVIMENTO ECONÔMICO\nO agronegócio é um dos pilares da economia catarinense e da geração de emprego e renda no\ninterior do Estado. As propostas para o setor agropecuário estão organizadas em três eixos\nprincipais:\n•\n\nAções inovadoras que modernizam a produção para fortalecer a competitividade e\nexpandir as cadeias produtivas do agronegócio;\n\n•\n\nAções voltadas às cadeias produtivas da agropecuária já consolidadas no mercado\ninterno e externo, que necessitam de apoio para enfrentar novos desafios, ameaças e\naproveitar novas oportunidades;\n\n•\n\nAções voltadas ao redesenho e à melhoria da eficiência e eficácia da pesquisa\nagropecuária, da extensão rural, da defesa agropecuária, da infraestrutura rural e do\nfomento às atividades produtivas mantidas pelo Governo catarinense.\n\n6.1 Ações Inovadoras que Modernizam a Produção\nA modernização das cadeias produtivas é condição para que Santa Catarina continue competitiva\nnos mercados nacional e internacional. O Governo impulsará a transformação da produção de\nleite em uma cadeia eficiente e competitiva para a exportação de lácteos, nos mesmos moldes\njá alcançados pelas cadeias de suínos e frangos.\nSerão realizados investimentos para a produção de leite a pasto, pastagens, silagem, feno e\nequipamentos de manejo, ordenha e conservação do leite.\nSerá estruturado um programa de incentivo à produção de carne bovina, com tecnologia de ponta\ne sistemas intensivos para suprir o déficit de carne destinado ao abastecimento do mercado\ninterno e gerar excedentes para exportação de carne de qualidade.\nSerá implantado programa de incentivo à produção de hortifrutigranjeiros (frutas, legumes,\nhortaliças e tubérculos), com sistema de acesso organizado ao mercado, para suprir o grande\ndéficit de abastecimento existente no Estado.\nA pesca oceânica e lacustre, a maricultura e a piscicultura de água doce serão organizadas e\nfortalecidas, com incentivos para compra de equipamentos, industrialização e gestão da\nprodução.\nO sistema cooperativista do Estado será fortalecido, e serão estabelecidas parcerias com a\nagroindústria para melhoria do sistema viário de acesso às propriedades rurais, principalmente\nàs que se dedicam à produção de suínos, aves e leite.\n\nPágina 17 de 25"
+          },
+          {
+            "id": "principais-acoes-2",
+            "titulo": "Principais ações:",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações:\n•\n\nInovação e modernização da cadeia produtiva do leite, com foco em exportação de\nlácteos;\n\n•\n\nInvestimentos em produção de leite a pasto, pastagens, silagem, feno e equipamentos;\n\n•\n\nPrograma de incentivo à produção de carne bovina com tecnologia de ponta;\n\n•\n\nPrograma de incentivo à produção de hortifrutigranjeiros com acesso organizado ao\nmercado;\n\n•\n\nOrganização e fortalecimento da pesca, maricultura e piscicultura;\n\n•\n\nFortalecimento do cooperativismo e parcerias para melhoria do acesso viário às\npropriedades.\n\n6.2 Ações Voltadas às Cadeias Produtivas Consolidadas\nAs cadeias de suínos e aves são referências nacionais e internacionais. Manter sua\nsustentabilidade e competitividade exige enfrentar o déficit de milho e aperfeiçoar continuamente\nos programas de sanidade e bem-estar animal. O Governo fortalecerá os serviços de defesa\nsanitária e aumentará o percentual de produtos certificados para atender às demandas do\nmercado.\nSerá implementado programa de conformidade do desempenho ambiental da produção animal\ncatarinense, com ênfase no manejo e tratamento adequado dos dejetos e na preservação da\nbiodiversidade. A sustentabilidade ambiental não é apenas exigência de mercado, mas\ncompromisso com as futuras gerações de catarinenses.\n\n6.3 Pesquisa, Extensão, Defesa e Infraestrutura Rural\nA pesquisa agropecuária e a extensão rural receberão apoio prioritário. Serão alocados recursos\ne implementadas parcerias para financiar investimentos e infraestrutura pública no meio rural,\nincluindo rede de energia elétrica trifásica, estradas e pontes para tráfego de veículos pesados,\ninternet e telefonia no meio rural e construção de habitações rurais.\nUm robusto programa de captação, armazenagem e uso de água na agricultura será\nimplementado, tanto para abastecer as propriedades rurais e desenvolver a piscicultura quanto\npara irrigação. A água é recurso estratégico, e sua gestão inteligente é condição de\ncompetitividade e de resiliência frente às mudanças climáticas.\nO produtor rural catarinense é um dos pilares da economia e da identidade do Estado. Garantir\na ele segurança no campo, acesso a tecnologia, infraestrutura viária adequada, energia trifásica,\ninternet e assistência técnica de qualidade é dever de qualquer governo comprometido com o\n\nPágina 18 de 25"
+          },
+          {
+            "id": "desenvolvimento-as-propostas-deste-capitulo-respondem-a-esse-dever-de-fo",
+            "titulo": "desenvolvimento. As propostas deste capítulo respondem a esse dever de forma concreta e",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "desenvolvimento. As propostas deste capítulo respondem a esse dever de forma concreta e\nprioritária.\nA modernização da cadeia do leite, o incentivo à produção de carne bovina de qualidade, o\nfortalecimento da horticultura e da pesca, a solução do déficit de milho e o avanço na\nconformidade ambiental da produção animal são medidas que, em conjunto, consolidarão Santa\nCatarina como referência nacional e internacional de agronegócio sustentável e competitivo.\n\nPágina 19 de 25"
+          },
+          {
+            "id": "7-infraestrutura-mobilidade-logistica-e",
+            "titulo": "7. INFRAESTRUTURA, MOBILIDADE, LOGÍSTICA E",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "7. INFRAESTRUTURA, MOBILIDADE, LOGÍSTICA E\nDESENVOLVIMENTO SUSTENTÁVEL\nSegundo estudos desenvolvidos pela Federação das Indústrias de Santa Catarina (FIESC), o\nEstado precisa investir R$ 57 bilhões em infraestrutura de transportes entre 2026 e 2029. Parte\nsubstancial desses recursos deverá vir da iniciativa privada, por meio de parcerias públicoprivadas e concessões, sempre que se mostrarem vantajosas para o interesse público. Outra\nfonte a ser mobilizada é o orçamento da União, em parceria com o Estado de Santa Catarina.\nConforme demonstrado na projeção da capacidade de investimento com recursos próprios, o\nTesouro estadual dispõe, para o quadriênio 2027–2030, de R$ 40,5 bilhões para investimento\nem todas as áreas da administração. Por isso, a articulação com a iniciativa privada e com a\nUnião será essencial para viabilizar os investimentos necessários em infraestrutura.\n\n7.1 Investimentos na Malha Rodoviária\nOs investimentos no sistema viário serão concentrados no destravamento dos gargalos que\ndificultam o trânsito e no aumento da capacidade de carga, por meio de intervenções de\nduplicação, implantação de terceiras faixas e manutenção cuidadosa das estruturas existentes.\nUma malha rodoviária eficiente é condição para a competitividade da indústria, do agronegócio\ne do turismo catarinenses.\n\n7.2 Investimentos nos Portos e Aeroportos\nA modernização e a eficiência dos portos e aeroportos receberão atenção especial. Santa\nCatarina possui vocação portuária e precisa de infraestrutura moderna para escoar sua produção\ne atrair novos investimentos. A eficiência logística reduz custos e aumenta a competitividade das\nempresas instaladas no Estado.\n\n7.3 Investimentos em Mobilidade Urbana\nRecursos serão programados para investimento em mobilidade urbana, em parcerias com os\nmunicípios e/ou arranjos metropolitanos nas principais cidades de Santa Catarina. A mobilidade\nurbana de qualidade impacta diretamente a qualidade de vida, a produtividade e o meio ambiente.\n\n7.4 Recursos Hídricos e Saneamento Básico\nSerão estruturados programas de proteção dos mananciais que alimentam o sistema hídrico do\nEstado, para assegurar água potável destinada ao abastecimento humano. O investimento na\nuniversalização do abastecimento de água potável e do esgotamento sanitário é compromisso\nde civilidade e de saúde pública.\n\nPágina 20 de 25"
+          },
+          {
+            "id": "o-sistema-de-defesa-civil-e-de-protecao-do-cidadao-no-enfrentamento-aos",
+            "titulo": "O sistema de defesa civil e de proteção do cidadão no enfrentamento aos desafios climáticos",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "O sistema de defesa civil e de proteção do cidadão no enfrentamento aos desafios climáticos\nextremos será fortalecido. As mudanças climáticas já impactam Santa Catarina com chuvas\nintensas, estiagens e outros eventos extremos. A preparação e a resposta rápida são deveres do\npoder público.\nA infraestrutura de transportes é a espinha dorsal da competitividade econômica. Duplicações,\nterceiras faixas, manutenção adequada, modernização de portos e aeroportos e investimentos\nem mobilidade urbana formam um conjunto de ações que reduz custos logísticos, atrai\ninvestimentos e melhora a qualidade de vida das pessoas. O Governo trabalhará de forma\narticulada com a União e com a iniciativa privada para viabilizar o volume de recursos necessário.\nA universalização do saneamento básico e a proteção dos mananciais são compromissos de\nsaúde pública e de dignidade. Água potável e esgotamento sanitário não podem ser privilégio de\npoucos: devem ser realidade para todos os catarinenses. O Governo atuará com determinação\npara avançar nessa direção, em parceria com os municípios e com os prestadores de serviço.\n\nPágina 21 de 25"
+          },
+          {
+            "id": "8-desenvolvimento-e-reinsercao-social",
+            "titulo": "8. DESENVOLVIMENTO E REINSERÇÃO SOCIAL",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "8. DESENVOLVIMENTO E REINSERÇÃO SOCIAL\nO desenvolvimento econômico só é pleno quando acompanhado de inclusão e proteção social.\nO Governo ampliará e fortalecerá a rede de assistência e promoção social, com atenção especial\nao atendimento dos idosos e das pessoas em situação de maior vulnerabilidade.\nO empreendedorismo, a pequena e a microempresa e os polos de produção e desenvolvimento\ntecnológico serão fortalecidos. A atração de investimentos estratégicos para geração de\nempregos e dinamização da economia do Estado será perseguida de forma permanente e\nprofissional.\nA reinserção social de pessoas em situação de rua, de egressos do sistema prisional e de\nusuários de substâncias psicoativas fará parte de uma política integrada, que combine\nassistência, qualificação profissional e oportunidades reais de trabalho e renda.\nO desenvolvimento econômico e a inclusão social não são agendas opostas: são faces da\nmesma moeda. Um Estado que gera empregos, fortalece o empreendedorismo e atrai\ninvestimentos cria as condições materiais para que as políticas de assistência social sejam mais\neficazes e menos dependentes de transferências permanentes. O Governo trabalhará as duas\ndimensões de forma integrada e complementar.\nOs idosos e as pessoas em situação de maior vulnerabilidade receberão atenção especial da\nrede de assistência e promoção social. A dignidade da pessoa humana é princípio constitucional\ne compromisso ético deste Governo. Nenhuma política de desenvolvimento estará completa se\ndeixar para trás os que mais precisam de proteção e de oportunidades.\n\nPrincipais eixos:\n•\n\nFortalecer o empreendedorismo, a pequena e microempresa e os polos de produção e\ndesenvolvimento tecnológico;\n\n•\n\nAtrair investimentos estratégicos para geração de empregos e dinamização da\neconomia do Estado;\n\n•\n\nAmpliar e fortalecer a rede de assistência e promoção social, com atenção especial aos\nidosos e às pessoas em maior vulnerabilidade;\n\n•\n\nDesenvolver programas de reinserção social integrados à qualificação profissional e à\ngeração de oportunidades.\n\nPágina 22 de 25"
+          },
+          {
+            "id": "9-gestao-integrada-e-inovadora",
+            "titulo": "9. GESTÃO INTEGRADA E INOVADORA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "9. GESTÃO INTEGRADA E INOVADORA\nA gestão pública do século XXI exige integração entre áreas, uso intensivo de dados e foco\npermanente em resultados. O Governo João Rodrigues / Carlos Chiodini adotará modelo de\ngestão integrada e inovadora, no qual as secretarias e órgãos estaduais atuarão de forma\ncoordenada, compartilhando informações e alinhando esforços em torno de objetivos comuns.\nA inovação tecnológica não será restrita à digitalização de serviços, mas alcançará a forma de\ngovernar: indicadores em tempo real, avaliação contínua de políticas públicas, correção de rumos\nbaseada em evidências e participação qualificada da sociedade civil.\nA desburocratização será perseguida de forma sistemática. Cada procedimento, cada exigência\ne cada formulário serão avaliados sob a ótica da necessidade real e do impacto sobre o cidadão\ne sobre a atividade econômica. O Estado deve facilitar a vida das pessoas e das empresas, não\ncomplicá-la.\nA gestão integrada permite que as políticas setoriais se reforcem mutuamente. Segurança,\nsaúde, educação, infraestrutura e desenvolvimento econômico não são compartimentos isolados:\ninteragem e se potencializam quando bem coordenadas. O modelo de gestão deste Governo\nserá desenhado para maximizar essas sinergias e para evitar a dispersão de esforços e recursos.\nA valorização do servidor público é condição para a qualidade da gestão. Servidores capacitados,\nmotivados e reconhecidos entregam melhores resultados. O Governo investirá em capacitação\npermanente, em condições de trabalho adequadas e em mecanismos de reconhecimento por\nmérito e por resultados alcançados.\n\nCompromissos de gestão:\n•\n\nGestão por resultados, com metas claras e monitoramento permanente;\n\n•\n\nIntegração entre secretarias e órgãos, eliminando ilhas de atuação isolada;\n\n•\n\nUso intensivo de dados e de inteligência artificial para apoiar decisões;\n\n•\n\nDesburocratização contínua de processos e serviços;\n\n•\n\nTransparência ativa e prestação de contas periódica à sociedade;\n\n•\n\nValorização e capacitação permanente do servidor público.\n\nPágina 23 de 25"
+          },
+          {
+            "id": "10-desenvolvimento-regional-e-cidades",
+            "titulo": "10. DESENVOLVIMENTO REGIONAL E CIDADES",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "10. DESENVOLVIMENTO REGIONAL E CIDADES\nSanta Catarina é um Estado de múltiplas realidades regionais. O desenvolvimento equilibrado\nexige políticas que reconheçam as vocações e as necessidades específicas de cada região.\nO Governo trabalhará em estreita parceria com os municípios e com os arranjos regionais e\nmetropolitanos, respeitando a autonomia municipal e potencializando as capacidades locais. O\ndesenvolvimento das cidades passa por infraestrutura adequada, mobilidade, saneamento,\nhabitação, equipamentos públicos de qualidade e geração de oportunidades de trabalho e renda.\nA política de desenvolvimento regional buscará reduzir desigualdades internas, fortalecer as\neconomias locais e garantir que todos os catarinenses, independentemente da região em que\nvivem, tenham acesso a serviços públicos de qualidade e a oportunidades de progresso.\nO desenvolvimento regional equilibrado fortalece a coesão social e a competitividade do Estado\ncomo um todo. Regiões dinâmicas e regiões que ainda precisam de impulso especial devem\nreceber atenção adequada às suas realidades. O Governo não adotará uma visão única e\ncentralizada: trabalhará com sensibilidade territorial e com abertura ao diálogo com as lideranças\nregionais e municipais.\n\nDiretrizes:\n•\n\nReconhecer e potencializar as vocações produtivas de cada região;\n\n•\n\nReduzir desigualdades regionais por meio de investimentos estratégicos;\n\n•\n\nFortalecer a cooperação entre Estado e municípios;\n\n•\n\nApoiar arranjos metropolitanos e regionais de desenvolvimento;\n\n•\n\nGarantir infraestrutura e serviços públicos de qualidade em todo o território.\n\nPágina 24 de 25"
+          },
+          {
+            "id": "compromisso-final",
+            "titulo": "COMPROMISSO FINAL",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO FINAL\nO Plano de Governo da Coligação “Santa Catarina Acima de Tudo” é um compromisso público\ncom a melhoria da qualidade de vida do povo catarinense.\nJoão Rodrigues e Carlos Chiodini assumem perante a sociedade catarinense o dever de governar\ncom austeridade, responsabilidade, transparência e foco absoluto no interesse público. Cada real\ninvestido, cada política implementada e cada decisão tomada terá como norte a construção de\num Santa Catarina mais seguro, mais saudável, mais educado, mais competitivo e mais justo.\nO futuro de Santa Catarina será construído com trabalho sério, gestão profissional e respeito ao\ncidadão. É esse o compromisso que apresentamos ao povo catarinense.\nEste Plano de Governo é mais do que um conjunto de propostas: é uma declaração de princípios\ne um roteiro de ação. Ele será acompanhado, monitorado e ajustado ao longo da gestão, com\ntransparência e com prestação de contas periódica à sociedade. O povo catarinense tem o direito\nde saber o que está sendo feito, quanto está sendo investido e quais resultados estão sendo\nalcançados.\nCom austeridade, responsabilidade, modernização e inclusão social, Santa Catarina avançará\nainda mais. O Governo João Rodrigues e Carlos Chiodini está pronto para esse desafio e conta\ncom o apoio e a fiscalização de todos os catarinenses para transformar este Plano em realidade.\nCada proposta apresentada neste documento foi pensada a partir das necessidades reais da\npopulação e das vocações do Estado. Da segurança pública à saúde, da educação à\ninfraestrutura, da agricultura ao desenvolvimento regional, o objetivo é único: melhorar a\nqualidade de vida de todos os catarinenses, em todas as regiões, com justiça e eficiência.\nO trabalho começa no primeiro dia de governo. Não haverá tempo a perder. A equipe de transição\npreparará a implementação das ações prioritárias, e a sociedade será permanentemente\ninformada sobre o andamento das políticas e dos investimentos. Transparência e resultado são\nas palavras de ordem.\n\nSanta Catarina Acima de Tudo!\nJoão Rodrigues\nCandidato a Governador\n\nCarlos Chiodini\nCandidato a Vice-Governador\n\nPágina 25 de 25"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b44d3f10b494648ca7a2767c1bd3cff0e602fc7770e1e6bbebf4fdb50d9e09a0"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "2291d9793f3a87dda11c3c1964765a3ec67c582757c8b40bc030a9d4f117dc26"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0b724dee0ed7e5f5bfa2a272ed85d36c6d561bc08159193cf83b2292b92ec0df"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c4891a3f9396b6e276730274b98ad2a87b911ecd95526e9f713878dbe49de97f"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "94da1ab1242a89291ab549467950cc1301f887f3f8749c487ba1e9635732b119"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "e8ece7612f6f880f7dc1740b7320469ae79f29f8fd48f9d5d8489083a21ceb7d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "6b29c6141142a9266bb35eb1ceeb8971bc02fdb73ab536915158b6c153b8d56a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "43db83107793905c109fcdc67f575f2add5a7b3cabb923e6eb1d28a5ea1b5892"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "afbc82e6b854b46b5bade687799ebb11986654943d18b05e0f06742405269cf0"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "7bd68be1b60dc3b1b288c0348d42bb46b072f84925bdad6c920153344dfe6270"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "54e266188c0d1dfb0b1c904c99ad309ff2ddac90d81fe3c38d6150dd99daf3f7"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "af71f69f2c552ff90d472895851a6bed4bf9cbee1750b791afb003ec2cbb161c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "6ee257f033dc51fd3dd22ecfd40da821098f5b80e79cdb7f448aedbd621dec1d"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "d1e06a36627b6b0b688e36de1c4cba131c8a0e023da6bdee58786c183070bb55"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "44be3216ecf66146212a208276856032d3dd5f9a2f9f23605ef05ad6b6fda488"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "fd3612624a7930aa89b107766be4c7f99cd8fc4415d47f7ba96d0c2025010d50"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "78655f034d2d3cbc35f72a56d03a95ff626c306abf312a2a53d09cccd057adb0"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "865339ef6868d3ac84abfee142bde911404a47435428b8c5f0b02894e92293eb"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "2004ff6e9e2462020b2a5e5aa959eb768969f8eb44b941a750146ba16b404191"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "23346db825c28ec5643ef8689054fa8c33e2f04eab9d0b711e6ded7bb7a36237"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "f667eb0fe2b794dae1d10d3d265b29e029771b98f250e0c57d3bfc60275cc37b"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "bc76abd9cc91707e9abd075faf9a21a9854569e583b3d7cf305318aeb36821a6"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "f8a7942cecdb0898d6ac0205815bbea485e3203f1bc7d11af4f10e348c1b9db9"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "82b5ee2660d0330d841068ef48ffefbfcd5029c348ba71e7d9ad4d1644692bb3"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "b3cc3cb27415446fe8e88d2b1cc20fa88c1ef30a37ec0291152eeaed66c82be7"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a digitalização progressiva dos serviços públicos, com redução de filas e burocracia, mediante diretriz de modernização administrativa. O documento propõe o uso de Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão. Na segurança pública, o plano prevê a implantação de barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais. Na saúde, o plano prevê ampliar o alcance da telemedicina e das vídeo-consultas. Na educação básica, o plano prioriza a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno. Em recursos hídricos, o plano prevê programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano. Na assistência social, o plano prevê ampliar e fortalecer a rede de assistência e promoção social, com atenção especial aos idosos e às pessoas em maior vulnerabilidade.",
+    "frases": [
+      {
+        "texto": "O plano prevê a digitalização progressiva dos serviços públicos, com redução de filas e burocracia, mediante diretriz de modernização administrativa.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 6,
+            "trecho": "Digitalizar progressivamente os serviços públicos, reduzindo filas e burocracia;"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe o uso de Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 6,
+            "trecho": "Utilizar Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o plano prevê a implantação de barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 8,
+            "trecho": "Implantar barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais, combatendo o tráfico de armas e de drogas;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano prevê ampliar o alcance da telemedicina e das vídeo-consultas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 12,
+            "trecho": "Ampliar o alcance da telemedicina e das vídeo-consultas;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação básica, o plano prioriza a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 15,
+            "trecho": "Priorizar a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno;"
+          }
+        ]
+      },
+      {
+        "texto": "Em recursos hídricos, o plano prevê programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 20,
+            "trecho": "Serão estruturados programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano."
+          }
+        ]
+      },
+      {
+        "texto": "Na assistência social, o plano prevê ampliar e fortalecer a rede de assistência e promoção social, com atenção especial aos idosos e às pessoas em maior vulnerabilidade.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 22,
+            "trecho": "Ampliar e fortalecer a rede de assistência e promoção social, com atenção especial aos idosos e às pessoas em maior vulnerabilidade;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "servicos-publicos-digitais",
+        "titulo": "Serviços públicos digitais",
+        "descricao": "Digitalização progressiva dos serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 6,
+            "trecho": "Digitalizar progressivamente os serviços públicos, reduzindo filas e burocracia;"
+          }
+        ]
+      },
+      {
+        "id": "inteligencia-artificial",
+        "titulo": "Inteligência Artificial",
+        "descricao": "Uso de Inteligência Artificial para melhorar respostas ao cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 6,
+            "trecho": "Utilizar Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão;"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-de-fronteiras",
+        "titulo": "Segurança de fronteiras",
+        "descricao": "Implantação de barreiras de segurança nas fronteiras estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 8,
+            "trecho": "Implantar barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais, combatendo o tráfico de armas e de drogas;"
+          }
+        ]
+      },
+      {
+        "id": "telemedicina",
+        "titulo": "Telemedicina",
+        "descricao": "Ampliação do alcance da telemedicina.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 12,
+            "trecho": "Ampliar o alcance da telemedicina e das vídeo-consultas;"
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Priorização da educação em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 15,
+            "trecho": "Priorizar a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno;"
+          }
+        ]
+      },
+      {
+        "id": "protecao-de-mananciais",
+        "titulo": "Proteção de mananciais",
+        "descricao": "Proteção dos mananciais do sistema hídrico estadual.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002551001:01",
+            "pagina": 20,
+            "trecho": "Serão estruturados programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:17:45.242Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:20:00.440Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma digitalização progressiva com redução de filas e burocracia."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número é citado na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de digitalização administrativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:1:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todos os elementos da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente sobre IA."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:2:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números presentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem adjetivação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança fronteiriça."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:3:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:4:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta coerente sobre educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:5:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre mananciais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:6:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal exata."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre assistência social."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:frase:7:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:servicos-publicos-digitais:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema resumido."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:inteligencia-artificial:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:seguranca-de-fronteiras:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:telemedicina:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:educacao-integral:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Neutro."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002551001:tema:protecao-de-mananciais:documentos:SC:240002551001:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002551001",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002551001:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 32339,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3270,
+          "reasoning_output_tokens": 1960
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27100,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22343,
+          "output_tokens_details": {
+            "thinking_tokens": 141
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27100,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22343,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27100,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27100
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.35283839999999994
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "536e88944a4fee46d92874517ef1a00b80a9b74c77a7c28ba85320e8a49b5dc9",
+    "extractedTextSha256": "a08749f0375a2630c704b06a7166f5335eb2ba8f289764aa941ed45c06abf566",
+    "documentCount": 1,
+    "documentSetSha256": "1f113acc693233279e4d312a822102ba1e2ec8694b1124564567379775eaf19a",
+    "contentSha256": "813d630ebf5fc93fcf8918c25caa71fc1a52645d8c01480a85795063eb22cc37"
+  }
+}

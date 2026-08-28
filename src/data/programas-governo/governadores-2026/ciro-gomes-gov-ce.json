@@ -1,0 +1,1200 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002531351",
+    "slug": "ciro-gomes-gov-ce",
+    "nomeUrna": "CIRO GOMES",
+    "partido": "PSDB",
+    "arquivoNome": "2026CE60002531351_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002531351_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002531351:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002531351_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002531351_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d598aabb624172d31a5ab963fed02285fa6fb4660c8953d9fd0d16578b3ad7eb",
+        "extractedTextSha256": "e2294385ce2e03ceda702690edd238d45ab191d634b919288f4b630a2abb1488",
+        "paginas": 40,
+        "secoes": [
+          {
+            "id": "linhas-gerais-do",
+            "titulo": "LINHAS GERAIS DO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "LINHAS GERAIS DO\n\nPrograma de\nGoverno de\nCiro Gomes,\n\nDO PSDB, AO GOVERNO\nDO CEARÁ EM 2026.\n\nV E R S ÃO P R E L I M I N A R S U J E I TA A CO R R EÇ Õ E S E CO M P L E M E N TOS"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nSUMÁRIO\n\nEixos Estratégicos\n01\n\nPromover o Desenvolvimento\nHumano e a Qualidade de Vida\n\n02\n\nFortalecer a Inclusão, a\nAssistência e a Cidadania\n\n03\n\nImpulsionar o Desenvolvimento\nEconômico Sustentável\n\n04\n\nAvançar a Infraestrutura, as\nCidades e a Conectividade\n\n05\n\nInvestir na Segurança Pública\ne na Justiça Social\n\n06\n\nAssegurar a Governança, a\nGestão e a Eficiência Fiscal"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-2",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nPrograma de Governo\nde Ciro Gomes\nEste documento é resultado de um amplo processo de escuta e\nparticipação popular, que já percorreu diversas regiões do Estado,\nouvindo cidadãos, lideranças e representantes dos mais variados\nsegmentos da sociedade. Em cada encontro, foram colhidas\npropostas alinhadas às demandas e às particularidades de cada\nrealidade regional.\nA partir dessas contribuições, será consolidado o Programa de\nGoverno definitivo, com o qual o candidato Ciro Gomes pretende\nrecolocar o Ceará na rota do crescimento, promover um novo ciclo\nde desenvolvimento econômico e social e escrever uma nova história\npara o nosso Estado, com segurança e esperança.\nEste documento apresenta as diretrizes gerais do programa\nde governo. Sua versão definitiva continua sendo elaborada\ne aprimorada por meio de ampla consulta aos mais diversos\nsegmentos da sociedade. Portanto, o conteúdo aqui reunido não\nesgota todos os temas relevantes, alguns dos quais ainda serão\nincorporados ou detalhados."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-3",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO Ceará precisa\nvoltar a crescer\nDurante décadas, o Ceará foi referência nacional em planejamento,\ninovação na gestão pública e capacidade de atrair investimentos.\nEra um Estado que inspirava outras unidades da Federação, liderava\ndebates sobre educação, gestão fiscal e desenvolvimento regional e\nprojetava um futuro de oportunidades.\nNos últimos anos, entretanto, essa trajetória perdeu força. O Estado\ndeixou de apresentar um projeto claro de desenvolvimento e substituiu\no planejamento estratégico por ações pontuais e de curto prazo. A\ncapacidade de atrair investimentos diminuiu, o ambiente de negócios\ntornou-se menos competitivo e setores importantes da economia\nperderam dinamismo. O Ceará deixou de ser protagonista e passou a\nadministrar problemas, em vez de construir soluções para o futuro.\n\nA violência tornou-se um dos maiores obstáculos ao desenvolvimento.\nFacções criminosas ampliaram sua presença territorial, comerciantes\npassaram a conviver com extorsões, comunidades inteiras perderam\nsua liberdade e milhares de famílias vivem sob o medo permanente.\nEm muitas localidades, o poder público deixou de exercer plenamente\nsua autoridade, comprometendo não apenas a segurança da\npopulação, mas também o desenvolvimento econômico e social.\n\nNa saúde, a população enfrenta filas intermináveis para consultas,\nexames e cirurgias. Na educação, apesar dos avanços acumulados\nao longo de décadas, surgem novos desafios relacionados\nà aprendizagem, à permanência dos alunos e à qualificação\nprofissional. Na infraestrutura, obras estratégicas seguem em ritmo\nlento ou permanecem sem conclusão. Enquanto isso, o interior\ncontinua convivendo com profundas desigualdades em relação às\noportunidades de emprego, renda e acesso aos serviços públicos."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-4",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO resultado é um Ceará que perdeu parte do protagonismo\nconquistado ao longo de sua história. Um Estado antes reconhecido\npor sua capacidade de inovar, planejar e realizar hoje transmite à\npopulação uma sensação de estagnação e falta de perspectivas.\nQuando a estrutura do governo cresce mais do que a economia,\na burocracia avança mais rapidamente do que os investimentos\ne o gasto público deixa de produzir resultados concretos, o\ndesenvolvimento perde força."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-5",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO Ceará que queremos\nSe o Ceará de hoje perdeu parte do seu protagonismo, o Ceará\nque queremos é aquele que voltará a liderar seu próprio destino.\nDepois de anos em que o Estado deixou de crescer no ritmo que sua\npopulação merece, chegou o momento de iniciar um novo ciclo de\ndesenvolvimento. Um ciclo baseado na eficiência da gestão pública,\nna geração de oportunidades, na segurança da população, na melhoria\ndos serviços públicos e na valorização do potencial de cada região do\nCeará.\nEste projeto nasce da escuta da população cearense. Foi construído\nde forma participativa, por meio de encontros realizados em\ntodas as regiões do Estado e de canais digitais de participação\npopular. Cidadãos, especialistas, sindicatos, organizações não\ngovernamentais, empresários, servidores públicos, entidades\nrepresentativas e lideranças dos mais diversos segmentos\napresentaram propostas, preocupações e demandas. O resultado\né um plano de governo elaborado a muitas mãos, que traduz as\naspirações e as necessidades reais de quem vive o Ceará todos os\ndias.\nO Ceará que queremos é um Estado que volte a crescer de forma\nconsistente, sustentável e planejada. Um Estado que recupere sua\ncapacidade de atrair investimentos, fortaleça sua infraestrutura,\nestimule a inovação, valorize o empreendedorismo e gere empregos\nde qualidade para sua população. Queremos um ambiente econômico\ncapaz de oferecer oportunidades aos jovens, incentivar quem deseja\nproduzir e criar condições para que as empresas permaneçam,\ncresçam e invistam no Ceará.\nQueremos um Ceará onde o desenvolvimento alcance todas\nas regiões. Um Estado que reduza as desigualdades regionais,\nfortaleça as vocações econômicas de cada território e amplie\no acesso da população aos serviços públicos, à infraestrutura,\nà conectividade e às oportunidades de crescimento. O\ndesenvolvimento do Ceará precisa ser compartilhado, para que\nnenhuma região fique para trás."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-6",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nQueremos também um Estado moderno, eficiente, responsável e\nfiscalmente equilibrado. A administração pública deve voltar a ser\num instrumento de transformação da sociedade, orientada pelo\nplanejamento, pela transparência e pela busca permanente de\nresultados. Defendemos uma gestão comprometida com o princípio de\n“menos gastos com a máquina pública e mais recursos para investir\nnas pessoas”, reduzindo estruturas administrativas desnecessárias,\neliminando desperdícios, simplificando a burocracia e direcionando\nos recursos públicos para aquilo que efetivamente melhora a vida da\npopulação. Um Estado eficiente não é aquele que gasta mais, mas\naquele que entrega mais.\nO Ceará que queremos também é um Estado que cuide das\npessoas. Queremos fortalecer a saúde pública, reduzindo filas para\nconsultas, exames e cirurgias, ampliar a qualidade da educação em\ntodos os níveis, promover inclusão social, valorizar a cidadania e\ngarantir que as políticas públicas alcancem quem mais precisa. O\ndesenvolvimento só será verdadeiro se for acompanhado da melhoria\nda qualidade de vida da população.\nQueremos, igualmente, devolver aos cearenses o direito de viver em\nsegurança. Segurança para trabalhar, estudar, empreender, circular\npelas cidades e utilizar os espaços públicos sem medo. Um Estado\nque recupere sua autoridade em todo o território, enfrente o crime\norganizado com inteligência e integração entre as instituições e\ngaranta ao cidadão aquilo que é sua maior liberdade: viver em paz.\n\nAcima de tudo, queremos que o Ceará volte a ser reconhecido pelo\nplanejamento, pela capacidade de inovar e pela eficiência de sua\ngestão. Um Estado que inspire confiança, atraia investimentos, gere\noportunidades e devolva aos cearenses o orgulho de viver em uma\nterra que volta a olhar para o futuro com esperança.\nMais do que um conjunto de propostas, o Ceará que queremos\nrepresenta um compromisso com uma nova forma de governar: um\ngoverno que planeja antes de agir, estabelece prioridades, administra\ncom responsabilidade, presta contas à sociedade e coloca o\ninteresse público acima dos interesses políticos."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-7",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXOS\nESTRATÉGICOS"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-8",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 01\n\nPromover o\nDesenvolvimento Humano\ne a Qualidade de Vida\nSaúde – Educação – Ciência, Tecnologia e Educação Superior\nO desenvolvimento de uma sociedade depende, fundamentalmente,\nda capacidade do Estado de formar pessoas, produzir conhecimento\ne assegurar qualidade de vida à população. Saúde e educação\nsão direitos fundamentais e constituem os principais instrumentos\nde promoção da igualdade de oportunidades, redução das\ndesigualdades, desenvolvimento humano e justiça social. Da\nmesma forma, a ciência, a tecnologia e a educação superior\npassaram a desempenhar papel estratégico na competitividade das\neconomias modernas, impulsionando a inovação, a produtividade, a\ntransformação digital e a geração de riqueza. Um Estado que pretende\nliderar o desenvolvimento do Brasil precisa integrar essas políticas em\numa única estratégia voltada para o futuro.\n\nO Ceará construiu, ao longo das últimas décadas, experiências\nreconhecidas nacional e internacionalmente. A implantação dos\nAgentes Comunitários de Saúde, em 1987, revolucionou a atenção\nprimária no Brasil, tornou-se referência para a criação do Programa\nSaúde da Família e contribuiu decisivamente para a redução da\nmortalidade infantil. Mais tarde, a implantação dos hospitais regionais,\ndas policlínicas e dos Centros de Especialidades Odontológicas,\norganizados por meio dos consórcios públicos de saúde, buscou\ndescentralizar a assistência especializada. No entanto, parte\nsignificativa da população do interior ainda precisa se deslocar para\nFortaleza em busca de serviços de média e alta complexidade.\n\nNa educação, o Ceará tornou-se referência nacional ao construir\num modelo baseado no regime de colaboração entre Estado e\nmunicípios, na alfabetização na idade certa, no fortalecimento"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-9",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ndagestão escolar e na avaliação permanente da aprendizagem.\nOs resultados alcançados colocaram o Estado entre os melhores\ndesempenhos do país na educação básica, especialmente nos\nanos iniciais e finais do ensino fundamental. Nos últimos anos,\nentretanto, esse protagonismo perdeu força diante dos novos desafios\neducacionais.\nEmbora os indicadores de aprendizagem permaneçam satisfatórios,\nsurgiram novos desafios relacionados à permanência dos estudantes,\nà redução das desigualdades de aprendizagem, ao fortalecimento\ndo ensino médio, à formação para o mundo do trabalho e ao\ndesenvolvimento de competências compatíveis com a economia\ndigital. A expansão das escolas de tempo integral representa um\navanço importante, mas precisa ser acompanhada pela melhoria\ncontínua da qualidade do ensino, pela valorização dos profissionais\nda educação e pela atualização das práticas pedagógicas. O Ceará\nmantém posição de destaque no Índice de Desenvolvimento da\nEducação Básica (Ideb) e em outros indicadores da educação básica.\nO novo desafio é transformar esse desempenho em maior inserção\ndos jovens no ensino superior, na pesquisa, na inovação e no mercado\nde trabalho qualificado.\nA ciência, a tecnologia e a inovação passaram a representar fatores\ndecisivos para o desenvolvimento econômico contemporâneo.\nEntretanto, o potencial científico das universidades cearenses ainda\napresenta reduzida integração com os setores produtivos, limitando\na transformação do conhecimento em inovação, novos negócios e\ndesenvolvimento tecnológico. O fortalecimento das universidades\nestaduais, dos institutos tecnológicos, dos parques tecnológicos,\ndas incubadoras de empresas e das agências de fomento constitui\ncondição essencial para consolidar uma economia baseada no\nconhecimento.\nA educação superior também enfrenta novos desafios. A ampliação\ndo acesso precisa ser acompanhada pela melhoria da qualidade\nacadêmica, da pesquisa científica, da internacionalização, da\ninovação e da aproximação entre universidades, setor produtivo e\npoder público. O Ceará dispõe de instituições públicas de excelência,\nmas necessita ampliar sua capacidade de formar"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-10",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nprofissionais em áreas estratégicas, estimular a permanência dos\nestudantes e fortalecer a produção científica voltada à solução dos\nproblemas do próprio Estado.\nAnalisar a implantação de Centros de Ciências e Descobrimento,\nvoltados à difusão da ciência, da tecnologia, da inovação e da cultura\ncientífica. Esses espaços deverão aproximar crianças, jovens,\nfamílias e comunidades do conhecimento, estimulando a criatividade,\no pensamento crítico e a formação de talentos. Também poderão\ncontribuir para enfrentar os desafios do desenvolvimento sustentável,\nfortalecendo a capacidade do Ceará de produzir soluções inovadoras\npara os problemas do presente e do futuro.\n\nAs transformações tecnológicas em curso — inteligência artificial,\nbiotecnologia, medicina personalizada, saúde digital, ciência de\ndados, automação e economia do conhecimento — estão redefinindo\nprofundamente a organização dos sistemas de saúde e educação\nem todo o mundo. A utilização intensiva de tecnologia, telemedicina,\nprontuário eletrônico integrado, plataformas digitais de aprendizagem,\nlaboratórios de inovação, pesquisa aplicada e inteligência de dados\ntornou-se elemento indispensável para ampliar a eficiência dos\nserviços públicos e preparar as novas gerações para uma economia\ncada vez mais baseada no conhecimento.\n\nApesar desses avanços, observa-se um processo de perda inequívoca\nde dinamismo em áreas estratégicas. Na saúde, a expansão da rede\nfísica não foi acompanhada, em muitos casos, pelo fortalecimento\nda gestão regional, da capacidade operacional dos equipamentos\ne da integração entre atenção primária, assistência especializada\ne hospitais de alta complexidade. Persistem filas para consultas\nespecializadas, exames e procedimentos cirúrgicos, dificuldades\nde acesso em determinadas regiões, insuficiência de profissionais\nem áreas específicas e necessidade de modernização da gestão\nhospitalar. O envelhecimento da população, o aumento das doenças\ncrônicas, os problemas relacionados à saúde mental e o crescimento\nda demanda por atendimento especializado impõem novos desafios\nao Sistema Único de Saúde."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-11",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nNa saúde, fortaleceremos a regionalização do Sistema Único de\nSaúde, consolidando a integração entre atenção primária, policlínicas,\nhospitais regionais e hospitais de alta complexidade, reduzindo filas de\nconsultas, exames e cirurgias por meio de uma gestão orientada por\nresultados, ampliação da oferta assistencial e utilização intensiva de\ntecnologias digitais.\nModernizaremos a gestão hospitalar e a atenção especializada, com\ncritérios técnicos e valorização do mérito. Implantaremos sistemas\nintegrados de regulação, telemedicina, prontuário\neletrônico estadual, inteligência de dados e monitoramento\npermanente da qualidade assistencial, assegurando maior\neficiência, transparência e capacidade de resolução da rede\npública de saúde.\nNa educação, iniciaremos uma nova geração de políticas\npúblicas, preservando os avanços conquistados pelo regime de\ncolaboração, fortalecendo a alfabetização, ampliando a qualidade da\naprendizagem, consolidando o ensino em tempo integral, valorizando\nos profissionais da educação e preparando os estudantes para os\ndesafios da economia digital, da inovação e do empreendedorismo.\nTambém será assegurada atenção especial aos estudantes\nneurodivergentes.\nFortaleceremos o ensino médio integrado à formação técnica e\nprofissional, ampliando oportunidades de qualificação, inserção\nprodutiva e acesso ao ensino superior, especialmente para os jovens\ndo interior do Estado.\nA ciência, a tecnologia e a inovação passarão a ocupar posição\nestratégica no desenvolvimento do Ceará, fortalecendo universidades,\ninstitutos de pesquisa, parques tecnológicos, incubadoras, startups e\ncentros de inovação, estimulando a pesquisa aplicada, a transferência\nde tecnologia e a aproximação entre academia, setor produtivo e\nadministração pública."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-12",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAs universidades estaduais serão valorizadas como patrimônio\ncientífico do Ceará, com investimentos em infraestrutura, pesquisa,\ninternacionalização, pós-graduação, inovação e formação de recursos\nhumanos altamente qualificados, ampliando sua contribuição para o\ndesenvolvimento econômico, social e tecnológico do Estado.\n\nPromoveremos uma ampla transformação digital dos sistemas de\nsaúde e educação, utilizando inteligência artificial, análise de dados\ne plataformas digitais para aprimorar a gestão, ampliar o acesso aos\nserviços públicos, melhorar a aprendizagem e fortalecer a tomada de\ndecisões baseada em evidências.\nNosso governo promoverá uma nova etapa de desenvolvimento\ndessas políticas públicas, integrando saúde, educação, ciência,\ntecnologia e educação superior como eixos estruturantes do\ndesenvolvimento humano e econômico do Ceará.\nO Ceará que queremos é um Estado que cuida das pessoas desde\na primeira infância até a formação profissional e científica, que\ntransforma conhecimento em desenvolvimento e que compreende\nque saúde, educação, ciência e inovação não representam apenas\npolíticas sociais, mas os principais investimentos para construir um\nfuturo mais próspero, competitivo e justo para todos os cearenses."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-13",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 02\n\nFortalecera Inclusão, a\nAssistência e a Cidadania\nTrabalho e Ação Social – Proteção Social – Cultura – Esporte\ne Juventude\nO desenvolvimento de uma sociedade não pode ser medido apenas\npelo crescimento da economia, mas também pela capacidade do\nEstado de proteger os mais vulneráveis, reduzir desigualdades,\nampliar oportunidades e garantir o pleno exercício da cidadania. A\nConstituição Federal de 1988 reconhece a assistência social como\ndireito do cidadão e dever do Estado, integrando-a à seguridade\nsocial, ao lado da saúde e da previdência. Mais do que uma política\nde proteção, trata-se de instrumento permanente de promoção\nda dignidade humana, fortalecimento das famílias e garantia de\ndireitos. Sua efetividade depende da integração com as políticas de\nsaúde, educação, habitação, trabalho, segurança pública, cultura e\ndesenvolvimento econômico.\nAs profundas transformações sociais dos últimos anos ampliaram\na complexidade das vulnerabilidades e evidenciaram os limites do\natual modelo de proteção social. O crescimento da população em\nsituação de rua, o avanço da dependência química, as demandas\ndecorrentes do envelhecimento da população, a violência doméstica,\nas dificuldades enfrentadas pelas pessoas com deficiência,\nas desigualdades raciais e territoriais e as diversas formas de\ndiscriminação demonstram que o Estado precisa evoluir de um\nmodelo predominantemente reativo para uma política capaz de\nprevenir vulnerabilidades e promover autonomia.\nGrande parte dessas dificuldades decorre da fragmentação das\npolíticas públicas. Assistência social, saúde, educação, habitação,\ntrabalho e segurança pública ainda funcionam, muitas vezes, de\nforma isolada, reduzindo a efetividade das ações governamentais e\ndificultando a superação das causas estruturais da exclusão social."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-14",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO resultado é que o Estado frequentemente atua apenas quando a\nvulnerabilidade já se transformou em violência, abandono, ruptura\ndos vínculos familiares ou extrema pobreza.\nA condição da população em situação de rua expressa com clareza\nesse desafio. Fortaleza figura entre as capitais brasileiras com\nmaior número de pessoas vivendo nessa condição, consequência\nda combinação entre pobreza extrema, desemprego, dependência\nquímica, transtornos mentais e rompimento dos vínculos familiares.\nDa mesma forma, o consumo crescente de crack, cocaína, álcool e\nnovas drogas sintéticas deixou de representar apenas um problema\nde saúde para tornar-se um fenômeno social que compromete\nfamílias, comunidades e a própria segurança pública, exigindo\npolíticas permanentes de prevenção, tratamento e reinserção social.\n\nO envelhecimento da população cearense também impõe novos\ndesafios à proteção social. Cresce o número de idosos em situação\nde abandono, negligência e violência patrimonial, enquanto milhares\nde pessoas com deficiência ainda enfrentam dificuldades de\nacessibilidade, inclusão produtiva e acesso aos serviços públicos.\nAs mulheres continuam sendo as principais vítimas da violência\nde gênero, doméstica e familiar, frequentemente agravada pela\ndependência econômica e pela ausência de redes de proteção\ncapazes de assegurar autonomia e acolhimento. Ao mesmo tempo, a\npopulação negra, as comunidades quilombolas, os povos originários, a\npopulação LGBTQIA+ e outros grupos historicamente vulnerabilizados\nainda convivem com barreiras que limitam o acesso a direitos,\noportunidades e políticas públicas.\n\nA juventude cearense também enfrenta desafios relacionados à\ninclusão produtiva, ao acesso ao esporte, à cultura e às oportunidades\nde desenvolvimento. Em muitos territórios socialmente vulneráveis,\na ausência dessas oportunidades amplia o risco de evasão escolar\ne de aliciamento pelo crime organizado. O esporte, por sua vez,\npermanece como uma ferramenta ainda insuficientemente explorada\nna promoção da saúde, da cidadania, da convivência comunitária e da\nprevenção da violência, especialmente entre crianças e adolescentes."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-15",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nParalelamente, a cultura afirma-se como elemento estratégico\npara a construção da cidadania e da identidade do povo cearense.\nOs recursos destinados ao setor não foram acompanhados pelo\nfortalecimento da capacidade administrativa de sua gestão, gerando\natrasos na execução dos editais, excesso de burocracia e dificuldades\nde acesso para artistas independentes, mestres da cultura popular e\nprodutores culturais das periferias e do interior.\nAs transformações demográficas, sociais e tecnológicas indicam que\na política de inclusão social precisará ser cada vez mais integrada,\npreventiva e orientada por resultados. O fortalecimento das famílias, a\nproteção dos grupos vulneráveis, a promoção dos direitos humanos,\na valorização da diversidade, a economia criativa e a integração\nentre assistência social, educação, saúde, cultura e qualificação\nprofissional constituem tendências que vêm orientando os sistemas\nde proteção social mais eficientes na contemporaneidade.\n\nNesse contexto, nosso governo implantará uma política estadual\nde inclusão, assistência e cidadania baseada na integração das\npolíticas públicas. Fortaleceremos o Sistema Único de Assistência\nSocial (Suas) como eixo estruturador da proteção social,\nampliaremos o cofinanciamento estadual, regionalizaremos os\nserviços especializados, valorizaremos os trabalhadores da área\ne implantaremos um modelo de gestão orientado por indicadores,\ninteligência territorial e avaliação permanente de resultados.\nFortaleceremos a proteção às famílias por meio do apoio à ampliação\ne à qualificação dos CRAS, dos CAPS, dos CREAS, dos Centros\nPOP e dos demais equipamentos da seguridade social, assegurando\natendimento humanizado, atuação preventiva e acompanhamento\ncontinuado das famílias em situação de vulnerabilidade.\n\nImplantaremos uma política permanente de atenção à população\nem situação de rua, em parceria com os municípios, o Poder\nJudiciário, o Ministério Público, fundações, organizações religiosas,\ncomunidades terapêuticas e entidades da sociedade civil. As ações\narticularão acolhimento, tratamento da dependência química, acesso\nà documentação, qualificação"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-16",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nprofissional, moradia e reconstrução dos vínculos familiares e\ncomunitários, com o objetivo de promover a efetiva reinserção\nsocial.\nReestruturaremos a política estadual de prevenção e enfrentamento à\ndrogadição, integrando assistência social, saúde, educação, esporte,\ncultura e segurança pública, com foco na prevenção entre crianças\ne jovens, fortalecimento da rede de tratamento, apoio às famílias e\nreinserção social dos dependentes químicos.\n\nAmpliaremos a rede de proteção às mulheres, fortalecendo os\nserviços de acolhimento e apoio psicossocial, a qualificação\nprofissional e a promoção da autonomia econômica. Também\nconsolidaremos políticas permanentes de proteção às pessoas\nidosas, às pessoas com deficiência, à população negra, aos povos\noriginários, às comunidades quilombolas, à população LGBTQIA+\ne aos demais grupos em situação de vulnerabilidade, assegurando\nrespeito à diversidade, combate à discriminação e igualdade de\noportunidades.\nA infância, a adolescência e a juventude ocuparão posição estratégica\nnas políticas de inclusão, fortalecendo programas de convivência\ncomunitária, prevenção da evasão escolar, proteção contra todas\nas formas de violência, qualificação profissional e ampliação do\nacesso ao esporte, à cultura e ao lazer como instrumentos de\ndesenvolvimento humano, cidadania e prevenção da violência.\n\nA cultura será fortalecida como política de desenvolvimento humano,\nidentidade e economia criativa, por meio de um choque de gestão que\nmodernize os processos administrativos, reduza a burocracia, agilize\na execução dos editais, fortaleça os sistemas municipais de cultura,\ndemocratize o acesso aos mecanismos de financiamento, assegure\nmaior sustentabilidade financeira ao setor e integre cultura, educação,\nturismo, ciência e inovação como instrumentos de geração de renda,\nvalorização da identidade cearense e inclusão social."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-17",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO Ceará que queremos é um Estado que protege sem paternalismo,\npromove oportunidades com responsabilidade e coloca as pessoas\nno centro das políticas públicas. Um Estado que compreende que\na inclusão social não se limita à transferência de renda, mas se\nrealiza pela garantia de direitos, pelo fortalecimento das famílias, pela\nvalorização da diversidade, pelo acesso à cultura, ao esporte e às\noportunidades de desenvolvimento, criando condições para que cada\ncearense possa construir seu próprio projeto de vida com autonomia,\ndignidade e cidadania."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-18",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 03\n\nImpulsionar o\nDesenvolvimento\nEconômico Sustentável\nDesenvolvimento Econômico – Turismo – Desenvolvimento\nAgrário – Meio Ambiente – Recursos Hídricos\nO desenvolvimento econômico constitui o principal instrumento\nde transformação social de um povo. É por meio da expansão\nda atividade produtiva, da geração de emprego e renda,\ndo fortalecimento do empreendedorismo e do aumento da\ncompetitividade que o Estado cria condições para reduzir\ndesigualdades, ampliar oportunidades e melhorar a qualidade\nde vida da população. No Ceará, entretanto, o desenvolvimento\nprecisa estar associado ao uso sustentável dos recursos naturais,\nà convivência inteligente com o semiárido e ao aproveitamento das\npotencialidades regionais, integrando desenvolvimento econômico,\nturismo, agricultura, meio ambiente e segurança hídrica em uma única\nestratégia de crescimento sustentável.\nO Ceará reúne condições excepcionais para liderar um novo ciclo de\ndesenvolvimento. Sua localização geográfica privilegiada, próxima\naos mercados europeu, norte-americano e africano; o Complexo\nIndustrial e Portuário do Pecém e o Porto do Mucuripe; a Transnordestina; as integrações de bacias; a Zona de Processamento de Exportação (ZPE); a liderança nacional na geração de energia eólica e solar; o potencial para produção de hidrogênio verde; a vocação turística\nreconhecida internacionalmente; a riqueza ambiental; e a capacidade\nempreendedora de seu povo colocam o Estado em posição estratégica para atrair investimentos e ampliar sua participação na economia\nnacional e internacional.\nNossa costa, com seus 573 km de litoral, tem na economia do mar\numa fronteira estratégica de desenvolvimento. Integraremos as\nvocações consolidadas (pesca, aquicultura e turismo costeiro) às\nnovas oportunidades da transição energética, investindo em"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-19",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ninfraestrutura portuária, qualificação profissional e ordenamento\nsustentável da zona costeira, para que a economia azul gere\nemprego e renda sem comprometer os ecossistemas marinhos e as\ncomunidades tradicionais.\nEntretanto, esse potencial permanece subaproveitado. Na última\ndécada, o Ceará perdeu dinamismo em setores importantes da\neconomia, reduziu sua competitividade relativa na disputa por\nnovos investimentos e manteve profundas desigualdades entre a\nRegião Metropolitana de Fortaleza e as demais regiões do Estado.\nA concentração da atividade econômica, a elevada informalidade\nno mercado de trabalho, a baixa produtividade de parte das cadeias\nprodutivas, as deficiências da infraestrutura logística, a reduzida\ncapacidade de inovação empresarial e a ausência de planejamento\neconômico de longo prazo limitaram a transformação do crescimento\nem desenvolvimento regional equilibrado.\nNo campo, os desafios permanecem igualmente significativos.\nEmbora o agronegócio e a agricultura familiar sejam responsáveis\npor parcela importante da produção de alimentos, da ocupação do\nterritório e da geração de renda no interior, muitos produtores ainda\nenfrentam dificuldades de acesso ao crédito, à assistência técnica,\nà inovação tecnológica, aos mercados consumidores e à agregação\nde valor de sua produção. A recorrência das secas, associada às\nmudanças climáticas, amplia a vulnerabilidade da atividade agrícola\ne reforça a necessidade de uma política permanente de convivência\ncom o semiárido baseada em eficiência hídrica, inovação e\nsustentabilidade.\nO turismo, uma das principais vocações econômicas do Ceará,\ntambém apresenta potencial muito superior ao atualmente explorado.\nO Estado consolidou-se como referência nacional no turismo de sol\ne praia, mas ainda aproveita de forma limitada suas oportunidades\nno turismo religioso, cultural, histórico, gastronômico, ecológico,\nesportivo, de aventura, de negócios e de eventos. Diversas regiões\npossuem atrativos capazes de impulsionar o desenvolvimento local,\nmas continuam carecendo de infraestrutura, promoção integrada,\nqualificação profissional e maior articulação entre Estado, municípios\ne iniciativa privada."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-20",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nNos últimos anos, a iniciativa privada cearense abriu caminhos que o\npoder público ainda não soube acompanhar. Mesmo sem uma política\ngovernamental estruturada, empreendedores atraíram para o Ceará\nprojetos com grande potencial de transformação, como a montagem\nde veículos e a instalação de data centers, capazes de inaugurar\nnovas cadeias produtivas. Essas oportunidades exigem do governo\nvisão estratégica e apoio ativo. É necessário transformar iniciativas\nisoladas em uma política de desenvolvimento, oferecendo segurança\njurídica, infraestrutura, energia competitiva e qualificação profissional\npara que essas cadeias se consolidem no Ceará e multipliquem\nempregos e renda.\nOs desafios ambientais também se tornaram mais complexos. As\nmudanças climáticas intensificam eventos extremos, aumentam\na pressão sobre os recursos naturais, comprometem a produção\nagrícola e elevam os riscos para a segurança hídrica das cidades. A\ndesertificação de áreas do semiárido, a degradação de nascentes, o\navanço do desmatamento ilegal, a ocupação inadequada de áreas\nambientalmente sensíveis e a gestão insuficiente dos resíduos sólidos\nexigem políticas públicas cada vez mais integradas. Ao mesmo\ntempo, cresce mundialmente a demanda por uma economia de baixo\ncarbono, criando oportunidades para estados capazes de conciliar\npreservação ambiental com desenvolvimento econômico.\n\nA segurança hídrica continuará sendo uma das questões estratégicas\npara o futuro do Ceará. A experiência acumulada pelo Estado na\nconstrução de açudes, adutoras, canais e sistemas de abastecimento\nrepresenta importante patrimônio institucional, mas os novos desafios\nexigem investimentos permanentes em gestão integrada das bacias\nhidrográficas, ampliação da oferta e manutenção dos sistemas de\nprodução e distribuição de água, reuso, dessalinização, eficiência\ndos sistemas de distribuição, preservação das áreas de recarga e\nadaptação às mudanças climáticas. Garantir água para consumo\nhumano, produção agrícola, atividade industrial e expansão urbana\ncontinuará sendo condição indispensável para o desenvolvimento\nsustentável."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-21",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAs transformações econômicas em curso no mundo representam\numa oportunidade histórica para o Ceará. A transição energética,\na economia digital, a indústria de baixo carbono, a bioeconomia, a\neconomia do conhecimento e a crescente demanda internacional por\nenergias renováveis criam um ambiente favorável para que o Estado\nassuma posição de liderança nacional na atração de investimentos\nsustentáveis. Entretanto, essa oportunidade exige planejamento,\nsegurança jurídica, ambiente favorável aos negócios, infraestrutura\ncompetitiva, qualificação da mão de obra e capacidade institucional\npara transformar investimentos em desenvolvimento regional.\n\nNosso governo promoverá uma nova estratégia de desenvolvimento\nbaseada no planejamento de longo prazo, na integração das\npolíticas públicas e na valorização das vocações econômicas de\ncada região do Ceará. O Estado retomará seu papel de indutor do\ndesenvolvimento, articulando investimentos públicos e privados,\nfortalecendo o ambiente de negócios, estimulando a inovação,\nampliando a competitividade das empresas cearenses e promovendo\num crescimento econômico capaz de gerar emprego, renda e\nredução das desigualdades regionais.\n\nConsolidaremos o Complexo Industrial e Portuário do Pecém\ncomo um dos principais polos logísticos, industriais, energéticos e\nexportadores da América Latina, ampliando a utilização da Zona de\nProcessamento de Exportação, atraindo novos empreendimentos\nindustriais e fortalecendo a inserção internacional da economia\ncearense.\nFortaleceremos o desenvolvimento do interior do Estado,\nestimulando a diversificação das cadeias produtivas, a instalação\nde novos polos industriais e tecnológicos, a interiorização dos\ninvestimentos, a economia criativa, os arranjos produtivos locais\ne o empreendedorismo, reduzindo as desigualdades econômicas\nentre as diferentes regiões cearenses.\n\nO desenvolvimento agrário será tratado como política estratégica de\ninclusão produtiva, fortalecendo simultaneamente o agronegócio e a\nagricultura familiar por meio da ampliação do"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-22",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ncrédito rural, da assistência técnica, da pesquisa agropecuária, da\ninovação tecnológica, da mecanização, da irrigação eficiente, do\ncooperativismo, da agroindustrialização e do acesso aos mercados\nnacional e internacional.\nO turismo passará a ser desenvolvido como política permanente\nde desenvolvimento regional, integrando infraestrutura, promoção\nnacional e internacional, qualificação profissional, inovação e\nvalorização das identidades culturais de cada território. O Governo\nestimulará a expansão do turismo religioso, histórico, cultural,\ngastronômico, ecológico, esportivo, de aventura, de eventos e de\nnegócios, promovendo maior distribuição dos fluxos turísticos por\ntodo o Estado.\nA política ambiental será orientada pelo princípio do desenvolvimento\nsustentável, conciliando crescimento econômico, conservação dos\nrecursos naturais e adaptação às mudanças climáticas. O Governo\nfortalecerá a recuperação de áreas degradadas, a proteção das bacias\nhidrográficas, o combate à desertificação, a ampliação da cobertura\nvegetal, a gestão integrada dos resíduos sólidos, a educação ambiental\ne os instrumentos de licenciamento ambiental com maior eficiência,\nagilidade, segurança jurídica e responsabilidade técnica. A proteção e\no bem-estar animal também integrarão a política ambiental do Estado.\nImplantaremos uma política estadual permanente, articulada com os\nmunicípios, universidades, organizações da sociedade civil e protetores\nindependentes. Ampliaremos os programas de castração, vacinação,\natendimento veterinário e adoção responsável, com prioridade para\nfamílias de baixa renda e animais em situação de abandono. Fortaleceremos a fiscalização e o combate aos maustratos, apoiaremos\na estruturação dos órgãos municipais e promoveremos ações educativas sobre guarda responsável. Também desenvolveremos políticas\nde proteção à fauna silvestre e de prevenção ao tráfico de animais,\nreconhecendo que cuidar dos animais é uma responsabilidade pública\nrelacionada à saúde, ao meio ambiente e à construção de uma sociedade mais humana."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-23",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nA segurança hídrica continuará sendo prioridade estratégica\ndo Estado, com investimentos permanentes na ampliação e\nrecuperação da infraestrutura de açudagem, abastecimento,\nintegração dos sistemas hídricos, modernização da gestão dos\nrecursos hídricos, reuso da água, dessalinização, redução de\nperdas, preservação dos mananciais e fortalecimento da convivência\nsustentável com o semiárido.\nO Ceará reúne todas as condições para voltar a liderar o\ndesenvolvimento do Nordeste. O que falta não é potencial, mas\ndireção estratégica, capacidade de planejamento e eficiência na\nexecução das políticas públicas. O Ceará que queremos é um\nEstado competitivo, inovador e ambientalmente responsável; um\nEstado que transforma suas riquezas naturais, sua capacidade\nempreendedora e sua localização privilegiada em oportunidades\npara toda a população, promovendo crescimento econômico\nsustentável, desenvolvimento regional equilibrado e melhoria\npermanente da qualidade de vida dos cearenses."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-24",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 04\n\nAvançar a Infraestrutura, as\nCidades e a Conectividade\nInfraestrutura – Desenvolvimento Urbano\n\nA infraestrutura constitui um dos principais alicerces do\ndesenvolvimento econômico e social. É por meio de uma rede\neficiente de transportes, saneamento, habitação, mobilidade\nurbana, conectividade digital e equipamentos públicos que o Estado\npromove a integração regional, amplia sua competitividade, atrai\ninvestimentos, gera empregos e melhora a qualidade de vida da\npopulação. Da mesma forma, o desenvolvimento urbano exige\nplanejamento capaz de assegurar cidades mais organizadas,\nsustentáveis, inclusivas e resilientes, reduzindo desigualdades\nterritoriais e garantindo acesso universal aos serviços essenciais.\nO Ceará construiu, ao longo das últimas décadas, importantes ativos\nestruturantes que o colocam em posição privilegiada no cenário\nnacional: o Complexo Industrial e Portuário do Pecém, a malha\nrodoviária estadual, a infraestrutura aeroportuária, a capacidade de\ngeração de energias renováveis e uma das maiores redes de cabos\nsubmarinos de fibra óptica da América Latina. Esse patrimônio,\nentretanto, não foi acompanhado por uma estratégia integrada de\ndesenvolvimento territorial capaz de transformar os investimentos em\nmaior competitividade econômica e melhor qualidade de vida para\ntoda a população.\nPersistem profundas desigualdades entre a Região Metropolitana de\nFortaleza e o interior do Estado quanto à qualidade da infraestrutura\ndisponível. Muitas rodovias apresentam elevados níveis de\ndeterioração, comprometendo a segurança viária, aumentando\nos custos logísticos e dificultando o escoamento da produção. A\nintegração entre rodovias, ferrovias, portos e aeroportos permanece\naquém do potencial econômico do Ceará, limitando a eficiência\nda cadeia logística e reduzindo a capacidade de atração de novos\ninvestimentos."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-25",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAs cidades cearenses também enfrentam desafios crescentes\ndecorrentes da rápida urbanização. O déficit habitacional, a expansão\ndesordenada das áreas urbanas, a ocupação de áreas de risco, a\ninsuficiência dos sistemas de drenagem, os problemas de mobilidade,\na baixa cobertura de saneamento básico em diversos municípios\ne a limitada capacidade de planejamento urbano comprometem a\nqualidade de vida da população e aumentam a vulnerabilidade diante\ndas mudanças climáticas. Os eventos extremos, cada vez mais\nfrequentes, exigem cidades preparadas para prevenir enchentes,\nproteger áreas ambientalmente sensíveis e adaptar sua infraestrutura\naos novos desafios impostos pelo clima.\nOutro fator determinante para o desenvolvimento contemporâneo é\na conectividade digital. Embora o Ceará possua posição estratégica\nna infraestrutura internacional de telecomunicações, ainda persistem\ndesigualdades importantes no acesso à internet de qualidade, especialmente em municípios do interior e em áreas rurais. A exclusão digital limita o acesso à educação, à saúde, à segurança e demais serviços\npúblicos, ao empreendedorismo e às novas oportunidades da economia do conhecimento, tornando a expansão da conectividade uma\npolítica essencial para a inclusão social e o desenvolvimento regional.\n\nAs tendências mundiais apontam para um novo paradigma de\ninfraestrutura baseado na sustentabilidade, na inovação tecnológica\ne na integração entre planejamento urbano, logística e transformação\ndigital. As cidades inteligentes, a mobilidade de baixa emissão\nde carbono, a digitalização dos serviços públicos, a utilização\nde tecnologias para gestão urbana, a infraestrutura resiliente às\nmudanças climáticas e os investimentos em logística integrada\npassaram a constituir fatores decisivos para a competitividade das\nregiões. Estados que conseguirem combinar infraestrutura moderna,\neficiência regulatória e planejamento de longo prazo estarão mais\npreparados para atrair investimentos, gerar empregos e elevar sua\nprodutividade.\nO Ceará reúne todas as condições para liderar esse novo ciclo\nde desenvolvimento. Sua posição geográfica estratégica, sua\ncapacidade logística, sua infraestrutura energética, seu potencial\ntecnológico e sua experiência em grandes obras estruturantes"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-26",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nrepresentam vantagens competitivas que precisam ser plenamente\naproveitadas por meio de um planejamento de Estado, integrado e\norientado para resultados.\nNosso governo implantará uma política estadual de infraestrutura e\ndesenvolvimento urbano baseada no planejamento estratégico de\nlongo prazo, na integração regional e na eficiência da gestão pública,\nassegurando continuidade aos investimentos estruturantes e maior\nequilíbrio entre as diversas regiões do Estado.\n\nPromoveremos uma gestão eficiente das obras públicas, baseada em\nplanejamento, critérios técnicos e transparência. Os projetos serão\nexecutados com rigor no cumprimento de prazos e orçamentos,\nfortalecendo o controle social, evitando desperdícios e prevenindo\na corrupção. Como prioridade imediata, concluiremos as obras\nparalisadas e os projetos estratégicos que se arrastam há anos sem\nentrega definitiva.\nPromoveremos a modernização da infraestrutura logística\ncearense, ampliando a integração entre rodovias, ferrovias, portos\ne aeroportos, fortalecendo o Complexo Industrial e Portuário do\nPecém como principal plataforma logística do Brasil e consolidando\ncorredores de desenvolvimento capazes de impulsionar a atividade\neconômica em todas as regiões do Ceará.\n\nExecutaremos um amplo programa de recuperação, conservação\ne ampliação da malha rodoviária estadual, priorizando a segurança\nviária, a redução dos custos de transporte e a melhoria do acesso\naos municípios, aos polos produtivos e às regiões de maior potencial\neconômico e turístico.\nFortaleceremos o desenvolvimento urbano por meio do apoio técnico\ne financeiro aos municípios, estimulando a elaboração de planos\ndiretores atualizados, a regularização fundiária, a expansão da\nhabitação de interesse social, a requalificação dos espaços públicos\ne a implantação de infraestrutura urbana capaz de promover cidades\nmais organizadas, acessíveis, sustentáveis e resilientes."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-27",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAmpliaremos os investimentos em mobilidade urbana, priorizando a\nintegração dos diferentes modais de transporte, a modernização do\ntransporte coletivo, a acessibilidade universal, a mobilidade ativa e\nsoluções tecnológicas que reduzam congestionamentos, aumentem a\nsegurança e melhorem a qualidade dos deslocamentos da população.\n\nAceleraremos a universalização do saneamento básico, expandindo\nos sistemas de abastecimento de água, coleta e tratamento\nde esgoto, drenagem urbana e manejo adequado de resíduos\nsólidos, reconhecendo que saneamento representa uma das mais\nimportantes políticas públicas de saúde, preservação ambiental e\ndesenvolvimento humano. As obras de expansão das redes em vias\npúblicas serão executadas com respeito às pessoas que vivem e\ntrabalham nessas ruas, com planejamento que minimize transtornos,\nprazos claros e comunicação prévia aos moradores. Assumimos o\ncompromisso de que toda via afetada por obras de saneamento será\nintegralmente recuperada e entregue em estado igual ou melhor do\nque se encontrava antes da intervenção.\n\nO Ceará que queremos é um Estado conectado, integrado e\npreparado para o futuro. Um Estado que compreende a infraestrutura\nnão apenas como um conjunto de obras, mas como instrumento\nde desenvolvimento, inclusão social e competitividade. Investir em\ninfraestrutura e desenvolvimento urbano significa criar oportunidades,\nreduzir desigualdades regionais, fortalecer a economia, melhorar a\nqualidade de vida da população e construir cidades mais humanas,\neficientes e sustentáveis para as próximas gerações."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-28",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 05\n\nInvestir na Segurança\nPública e na Justiça Social\nSegurança Pública – Administração Penitenciária\n\nEnquanto o Brasil iniciou um processo gradual de redução dos\nhomicídios a partir de 2020, o Ceará permaneceu na contramão da\ntendência nacional.\nHoje, o Estado enfrenta:\n• domínio territorial de facções\n• expulsão de famílias\n• imposição de regras e toques de recolher controle clandestino\ne extorsão de serviços e atividades econômicas recrutamento\ne ameaça de crianças e jovens\n• infiltração do crime organizado na política e nas instituições\n• substituição da autoridade do Estado pelo poder armado\n\nA crise da segurança pública transformou-se, portanto, em uma\ncrise de soberania estatal.\nAs mortes violentas que ocorrem diariamente no Ceará não podem\nser tratadas como parte da rotina. A brutalidade dessas tragédias\nexige do poder público e da sociedade uma reação firme contra\na normalização da violência, que ameaça a dignidade humana e\na coesão social. Não basta atribuir o problema a uma tendência\nnacional: é dever do governo estadual reconhecer a gravidade da\nrealidade cearense, assumir sua responsabilidade e oferecer uma\nresposta efetiva à população, sobretudo àqueles que não dispõem de\nsegurança particular ou de outros meios privados de proteção."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-29",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nO valor da vida deve ser sempre celebrado e protegido. Não podemos\naceitar essa catástrofe humana como algo natural, inevitável ou sem\nsolução. Cabe ao Estado tratar cada vida perdida com seriedade,\ninvestigar cada crime e impedir que a violência seja incorporada ao\ncotidiano dos cearenses.\nOs sinais da inquietação provocada pela violência estão por toda\nparte. Moradores são expulsos de suas casas e comunidades inteiras\nvivem sob ameaça. Comerciantes e trabalhadores são submetidos\na extorsões; motoristas de aplicativo evitam determinadas áreas;\nmotociclistas são obrigados a retirar o capacete ao entrar em territórios\ndominados por criminosos; policiais escondem sua identificação\nquando estão fora de serviço; estudantes evitam escolas situadas em\náreas controladas por facções rivais às de seus bairros; jovens alteram\na própria aparência por medo de represálias; festas noturnas encurtam\nseus horários, enquanto eventos matinais passam a ser preferidos.\n\nSão comportamentos típicos de uma sociedade amedrontada.\nVivemos, assim, um paradoxo inquietante. Enquanto o governo\ncomemora a queda de determinados índices de criminalidade, o\ncomportamento das pessoas revela outra realidade: a de cidades\nonde sair para trabalhar, estudar ou celebrar exige cautela, e voltar\npara casa gera apreensão. A segurança pública não pode ser avaliada\napenas pelas estatísticas de homicídios, mas também pela liberdade\ndas pessoas de viver sem medo.\nAcreditamos, porém, que essa realidade pode ser transformada.\nA crise da segurança pública não é um destino inevitável, mas o\nresultado de escolhas políticas equivocadas, da falta de comando e da\nausência de continuidade nas políticas públicas. Com planejamento,\nliderança, integração das instituições e decisão política, é possível\ndevolver o Ceará aos cearenses.\nNosso governo terá como prioridade absoluta restabelecer a\nautoridade do Estado em todo o território cearense. A segurança\npública será acompanhada diretamente pelo governador, com\nmetas claras, avaliação permanente e cobrança de resultados. Não\naceitaremos que facções criminosas imponham regras, controlem\ncomunidades ou substituam o poder público."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-30",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAs forças estaduais de segurança serão fortalecidas, valorizadas\ne integradas, com melhores condições de trabalho, equipamentos\nmodernos, formação permanente, inteligência policial e tecnologia\npara prevenir, investigar e reprimir o crime com eficiência.\nAmpliaremos e qualificaremos os efetivos da Polícia Militar, da\nPolícia Civil, da Polícia Científica e da Polícia Penal, respeitando\ne valorizando os profissionais que arriscam a vida para proteger a\npopulação.\nConstruiremos uma rede estadual integrada de segurança,\nconectando câmeras públicas e privadas, sistemas de\nreconhecimento e identificação, bases de dados, centrais de\nmonitoramento e informações produzidas pelas diferentes forças\npoliciais. Essa estrutura permitirá acompanhar a circulação de\ncriminosos, veículos roubados, armas e cargas ilícitas, auxiliando a\nprevenção dos crimes e tornando mais rápida e precisa a atuação\npolicial.\nA inteligência será fortalecida em duas dimensões complementares.\nA primeira será a inteligência profissional, com agentes\nespecializados, tecnologia, análise de dados, investigação financeira\ne cooperação com instituições nacionais e internacionais. A segunda\nserá a inteligência comunitária, baseada no diálogo permanente e\nseguro com moradores, lideranças locais e demais pessoas que\nconhecem a realidade dos territórios. O Estado voltará a ouvir as\ncomunidades e garantirá canais protegidos para o recebimento de\ninformações.\nAo mesmo tempo, ampliaremos a presença permanente das\npolícias nas ruas, nos bairros, nas comunidades, nos distritos e\nnos municípios. Implantaremos delegacias em todos os municípios\ncearenses e fortaleceremos as estruturas regionais de investigação,\npara que o cidadão não precise percorrer longas distâncias em\nbusca de atendimento. Segurança pública não se faz apenas com\nmais efetivo, mas também com presença territorial, gestão eficiente,\nvalorização profissional, metas claras e cobrança permanente por\nresultados.\nA política de segurança do Ceará será voltada prioritariamente para\na proteção da população, e não apenas para a realização de prisões.\nSegurança pública deve ser medida pela liberdade docidadão de"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-31",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ntrabalhar, estudar, empreender, circular pelas cidades e utilizar\nos espaços públicos sem medo. A prisão dos criminosos será\nconsequência da presença permanente das forças de segurança,\nda eficiência da investigação e do fortalecimento da autoridade do\nEstado.\nAdotaremos uma estratégia capaz de distinguir os diferentes níveis\nde envolvimento com o crime organizado. Os líderes, financiadores\ne criminosos responsáveis por homicídios, extorsões, expulsões\nde famílias e domínio territorial serão identificados por meio de\ninteligência, investigação financeira e produção qualificada de provas.\nSerão capturados, responsabilizados e isolados em unidades de\nalta segurança, sem condições de continuar transmitindo ordens de\ndentro dos presídios.\nParalelamente, crianças e jovens ameaçados, recrutados pelas\nfacções ou envolvidos em delitos de menor gravidade terão uma porta\nde saída. Em diálogo com suas famílias e comunidades, o Estado\noferecerá proteção, educação, qualificação profissional, esporte,\ncultura e oportunidades de trabalho. O objetivo será retirar poder de\nrecrutamento das organizações criminosas e impedir que uma nova\ngeração seja condenada à violência.\nCombateremos também a estrutura financeira do crime organizado.\nFortaleceremos as unidades especializadas no rastreamento de\ndinheiro, lavagem de recursos, patrimônio ilícito, empresas de fachada\ne redes de financiamento das facções. A ação policial não se limitará\naos executores dos crimes: alcançará os financiadores, os líderes e\ntodos aqueles que lucram com a violência.\nPromoveremos uma profunda modernização do sistema penitenciário.\nAmpliaremos as vagas, aperfeiçoaremos a gestão das unidades e\nadotaremos mecanismos rigorosos para impedir o acesso de presos\nperigosos a celulares e outros meios de comunicação. As lideranças\ncriminosas serão mantidas em estabelecimentos de alta segurança,\ncom isolamento efetivo e controle permanente, para que os presídios\ndeixem de funcionar como centros de comando das facções."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-32",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAs famílias expulsas de suas casas receberão proteção do Estado.\nO poder público atuará para prender os responsáveis, recuperar os\nterritórios e criar condições seguras para que essas famílias possam\nretornar aos seus lares. A polícia não pode ser chamada apenas\npara acompanhar a mudança de uma família ameaçada; deve ter\ncondições de garantir sua permanência, sua liberdade e seu direito à\nmoradia.\nAmpliaremos ainda a proteção às mulheres, criando mais\nDelegacias de Defesa da Mulher, fortalecendo as unidades\nexistentes e expandindo a Patrulha Maria da Penha. Integraremos\nmedidas protetivas, monitoramento de agressores, botões de\nemergência, acolhimento e abrigos regionais, para agir antes que a\nameaça se transforme em feminicídio.\nCombateremos com rigor a infiltração do crime organizado\nna política e no Estado, protegendo as instituições públicas\nda influência das facções, fortalecendo os órgãos de controle\ne inteligência e rompendo vínculos entre agentes públicos e\norganizações criminosas. Não haverá proteção política nem\ntratamento privilegiado para quem colaborar com o crime. O\npoder no Ceará deve emanar exclusivamente do povo, jamais\nda criminalidade.\nEsse novo modelo será fundamentado em cinco pilares:"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-33",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\n1. Proteção ao cidadão: priorizar a vida, a liberdade, a segurança\n\ne a qualidade de vida da população, e não apenas os indicadores\nestatísticos.\n\n2. Presença territorial: garantir atuação permanente e visível do\n\nEstado em todos os bairros, comunidades, distritos e municípios.\n\n3. Integração total: promover a atuação coordenada entre as forças\nde segurança, o sistema penitenciário, os órgãos de Justiça, as\nguardas municipais e os serviços públicos essenciais.\n4. Políticas de Estado: implantar programas permanentes,\nplanejados para resistir às mudanças de governo.\n\n5. Gestão por resultados: estabelecer metas claras,\n\nmonitoramento contínuo e prestação de contas à sociedade.\n\nTambém promoveremos uma profunda reestruturação da investigação\ncriminal. Não é admissível que a maioria dos homicídios permaneça\nsem autoria identificada. Segundo o Instituto Sou da Paz, apenas\n27% dos homicídios registrados no Ceará são esclarecidos, o que\ncoloca o Estado entre os piores desempenhos do país na elucidação\ndesses crimes. Esse cenário alimenta a impunidade, fortalece as\norganizações criminosas e estimula novos delitos.\nNosso compromisso será inverter essa lógica. Investiremos no\nfortalecimento da Polícia Civil, da Polícia Científica e da inteligência\npolicial, ampliaremos a integração entre os órgãos de segurança e\nintensificaremos o uso de tecnologias de investigação, análise de\ndados e produção de provas. Cada homicídio será tratado como\nprioridade, porque cada vida perdida representa uma família destruída\ne impõe ao Estado o dever de identificar os responsáveis e levá-los à\nJustiça.\nSuperaremos a cultura do “empurra-empurra”, na qual um Poder\ntransfere responsabilidades para outro enquanto a população\npermanece refém da violência. O governo estadual assumirá\nplenamente sua responsabilidade constitucional, buscará a"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-34",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ncooperação dos demais Poderes e das instituições e estabelecerá\nmecanismos permanentes de acompanhamento, cobrança e\nprestação de contas.\nO Ceará que queremos recuperará a autoridade do Estado em todo\no território, enfraquecerá o crime organizado, protegerá a vida e\nrestabelecerá a confiança da população nas instituições. Nosso\ncompromisso é devolver aos cearenses aquilo que lhes foi retirado\nao longo dos últimos anos: o direito de morar em sua própria casa,\ntrabalhar, estudar, circular livremente e viver em paz, com segurança e\nesperança no futuro."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-35",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nEIXO 06\n\nAssegurar a Governança, a\nGestão e a Eficiência Fiscal\nFazenda – Planejamento e Gestão – Controladoria e Ouvidoria – Procuradoria-Geral\n\nNenhuma política pública é sustentável sem um Estado eficiente,\nequilibrado financeiramente e capaz de planejar o futuro. Educação,\nsaúde, segurança pública, infraestrutura e desenvolvimento\neconômico dependem diretamente da qualidade da gestão, da\nresponsabilidade fiscal, da capacidade de arrecadação, da eficiência\ndo gasto público e da segurança jurídica proporcionada pelas\ninstituições do Estado. Modernizar a administração pública não\nconstitui um fim em si mesmo, mas a condição indispensável para\nque o governo entregue melhores serviços à população, amplie sua\ncapacidade de investimento e promova o desenvolvimento econômico\ne social do Ceará.\nNo final da década de 1990, o Ceará tornou-se referência nacional\nem planejamento governamental, responsabilidade fiscal e\ncapacidade de gestão. O equilíbrio das contas públicas permitiu\nampliar investimentos, atrair financiamentos internacionais, executar\ngrandes obras estruturantes e consolidar políticas públicas que\ntransformaram a realidade do Estado. Nos últimos anos, entretanto,\nsinais importantes de deterioração passaram a comprometer essa\ntrajetória.\nOs indicadores fiscais demonstram uma redução progressiva da\ncapacidade financeira do Estado. O resultado primário, historicamente\npositivo, tornou-se deficitário e as projeções oficiais indicam\nagravamento desse quadro nos próximos exercícios. Paralelamente,\nobserva-se um crescimento expressivo das operações de crédito,\nacompanhado pelo aumento do serviço da dívida, que passou a\nconsumir volume de recursos superior aos investimentos públicos\nrealizados. Esse cenário reduz a capacidadedo Estado de investir"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-36",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nem infraestrutura, educação, saúde e segurança pública,\ncomprometendo a construção de políticas estruturantes para o\nfuturo.\nO Ceará paga caro pelo loteamento político de cargos públicos.\nFunções estratégicas do Estado passaram a ser ocupadas sem\ncritérios técnicos, como moeda de troca política, por pessoas que nem\nsempre reúnem a qualificação necessária para as responsabilidades\nassumidas. O resultado se manifesta na perda de eficiência, no\natraso das obras, na piora dos serviços e no aumento dos custos\nadministrativos. A desvalorização dos servidores de carreira e a\nausência de critérios técnicos para cargos estratégicos comprometem\na capacidade de gestão do Estado e a qualidade dos serviços\nprestados à população.\nOutro fator de preocupação é o crescimento acelerado do déficit\nprevidenciário. As projeções oficiais indicam expansão contínua\ndas despesas previdenciárias nos próximos anos, impondo pressão\ncrescente sobre o Tesouro Estadual e reduzindo o espaço fiscal para\nnovos investimentos. Sem planejamento de longo prazo e medidas\nde sustentabilidade financeira, o desequilíbrio previdenciário tende a\ncomprometer parcela significativa do orçamento público, restringindo\na capacidade de atuação do Estado.\n\nOs reflexos desse enfraquecimento da capacidade estatal já podem\nser observados nos indicadores sociais. O Ceará passou a ocupar\numa das últimas posições do país em rendimento domiciliar per\ncapita, apresentando a terceira menor renda média entre os estados\nbrasileiros e a segunda menor do Nordeste. Ao mesmo tempo,\nembora a pobreza tenha diminuído em todo o país nos últimos anos,\no Ceará foi o estado nordestino que apresentou a menor redução\nproporcional desse indicador, revelando dificuldades para transformar\ncrescimento econômico em melhoria efetiva das condições de vida\nda população. Esses dados evidenciam que responsabilidade fiscal e\ndesenvolvimento social não são objetivos conflitantes; ao contrário,\nconstituem dimensões complementares de uma mesma estratégia de\ngoverno."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-37",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nAo mesmo tempo, as transformações tecnológicas vêm alterando\nprofundamente a forma como os governos planejam, executam\ne avaliam suas políticas públicas. Inteligência artificial, análise\nde grandes bases de dados, transformação digital, integração de\nsistemas, governo orientado por evidências, monitoramento em\ntempo real, simplificação administrativa e prestação digital de\nserviços passaram a representar os principais instrumentos de\nmodernização do setor público. Estados que conseguem incorporar\nessas ferramentas tornam-se mais eficientes, reduzem custos\nadministrativos, fortalecem a transparência, combatem desperdícios e\noferecem serviços de melhor qualidade ao cidadão.\nEsse novo cenário exige uma profunda modernização da\nadministração estadual. O governo deve abandonar estruturas\nexcessivamente burocráticas e fragmentadas para adotar um\nmodelo de gestão orientado por resultados, no qual planejamento,\norçamento, execução, controle e avaliação funcionem de maneira\nintegrada. O foco da administração pública deve deixar de ser\napenas o cumprimento de procedimentos para concentrar-se na\ngeração de resultados concretos para a sociedade.\n\nNosso governo promoverá uma ampla reforma da gestão pública\nestadual, fortalecendo a capacidade de planejamento estratégico,\nrestabelecendo o equilíbrio das contas públicas e recuperando\na capacidade de investimento do Estado. A política fiscal será\nconduzida com responsabilidade, transparência e compromisso\nsocial, assegurando equilíbrio entre arrecadação, controle das\ndespesas, sustentabilidade da dívida pública e ampliação dos\ninvestimentos necessários ao desenvolvimento do Ceará.\n\nO planejamento governamental voltará a ocupar posição central\nna administração estadual, integrando plano de governo, Plano\nPlurianual, orçamento, monitoramento e avaliação permanente das\npolíticas públicas, com metas objetivas, indicadores de desempenho\ne acompanhamento sistemático da execução dos programas\nestratégicos."
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-38",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\nA Secretaria da Fazenda será fortalecida como instrumento de\nmodernização da administração tributária. Promoveremos a\nsimplificação fiscal, o combate à sonegação, a utilização intensiva\nde inteligência de dados, a ampliação da conformidade tributária e\na melhoria do ambiente de negócios, assegurando maior eficiência\narrecadatória sem aumento da carga tributária.\nA Secretaria do Planejamento e Gestão liderará a transformação\ndigital do Estado, modernizando processos administrativos,\nreduzindo burocracias, integrando bases de dados, ampliando a\ndigitalização dos serviços públicos e utilizando inteligência artificial\npara apoiar decisões governamentais, racionalizar despesas e\naumentar a eficiência da máquina pública.\nA Controladoria e Ouvidoria Geral do Estado será fortalecida\ncomo órgão estratégico de integridade pública, ampliando\nauditorias preventivas, gestão de riscos, programas de compliance,\ntransparência ativa, controle interno e participação social,\nconsolidando uma cultura permanente de prevenção e combate da\ncorrupção e de avaliação da qualidade dos serviços públicos.\n\nA Procuradoria-Geral do Estado será valorizada como instituição\nessencial à segurança jurídica das políticas públicas, fortalecendo sua\natuação preventiva, reduzindo a litigiosidade, ampliando mecanismos\nde conciliação e mediação, protegendo o patrimônio público e\noferecendo suporte jurídico qualificado às decisões estratégicas do\ngoverno.\nTambém promoveremos uma profunda racionalização da estrutura\nadministrativa. Reduziremos o número de secretarias, eliminaremos\nsobreposições de competências, simplificaremos níveis hierárquicos\ne reorganizaremos a administração estadual em torno de grandes\náreas estratégicas. Com isso, aumentaremos a eficiência da gestão,\nreduziremos custos administrativos e direcionaremos os recursos\neconomizados para investimentos e para a melhoria dos serviços\npúblicos.\nA valorização dos servidores públicos será elemento central\ndesse processo de modernização. Investiremos em formação\ncontinuada, gestão por competências, avaliação de"
+          },
+          {
+            "id": "programa-de-governo-ciro-gomes-2026-39",
+            "titulo": "PROGRAMA DE GOVERNO CIRO GOMES -2026",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO CIRO GOMES -2026\n\ndesempenho, inovação e valorização do mérito, criando um\nambiente institucional que estimule a excelência, a produtividade\ne o compromisso com os resultados entregues à população.\nProfissionalizaremos a gestão pública, colocando as pessoas certas\nnos lugares certos e fortalecendo as bases de um Estado eficiente.\n\nImplantaremos um programa estruturado para tornar o Ceará\nreferência nacional em equidade de gênero na gestão pública, com\nmetas progressivas de participação feminina nos cargos de direção\ne nas funções estratégicas do estado. Garantiremos igualdade\nde oportunidades no acesso, na progressão e na remuneração\ndas servidoras públicas, com transparência e monitoramento por\nindicadores.\nO Ceará que queremos é um Estado moderno, eficiente e\nfiscalmente responsável. Um Estado que planeja antes de gastar,\nque mede resultados antes de anunciar programas, que utiliza\na tecnologia para servir melhor ao cidadão e que administra\nos recursos públicos com o mesmo zelo que cada família\ncearense dedica ao seu orçamento. Recuperar a capacidade\nde planejamento, fortalecer a gestão pública e restabelecer o\nequilíbrio fiscal não constituem apenas objetivos administrativos:\nrepresentam a condição indispensável para que o Ceará\nvolte a crescer, reduza as desigualdades e ofereça melhores\noportunidades para todos os cearenses."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ddaec0b53856d9bdfff820efb8b1136fdc7651e5f219cff494969b4c63bb8842"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "4544e907f5909b449f744ae682f944a34eea62c90fa86f568c2a71ac152eb6c9"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0f09c68b221983f5e503a7c55b617c0fdb47fe722611ed11a9fdbee5ca52ce8b"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b1c7f05d6d3fad1e52e63de45269b1c0e1ac0afb98a6cad95e83c02c8307e85c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "387d718201e6b3057b7c714c16bc1a68e99f1f291e052e1e4e2f30300b1c7b9e"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "167129a4a4f51812087d62e36d51969ccf47342c6083bad033811d1501dcef82"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b51bcfc78da1253044707f5349108e7f1343229bc958bd42e5a1e97492f0c2f9"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "57f1b810ce84cf759db78d27ec6c202b234283de6956a7c188ba0bb75ec7e9b2"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "7125bdee9506d66f34fcade7e81c7a69bf6c97b1bac36f6a3c1b038e6938935a"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "bbc43723aa9e6b6ca7d751a5badb8d09114625382764c2493bdcfde50252d2b6"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "efff61b2fe02d23ea7906efee3ef85311dbb4348c9d4035c8954d6050fec1002"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "129cae8a5eb88813f9367d4adda2ab02e1fa0148925ae9db409f354507624b7f"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "53b1bd293e0373c15f259b39dcacf2322e4679df3e8bd64ff90b9b20651e8252"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "ec4159373e934492e6e01e84ca449d034376593b56bb1f78ed2d6734b2fdec94"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "62669a847f21adff73b95570f8c3da7c89bc02fd73c3972d8162dcb10bc94560"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "b4e0df81c34d15ee40623f6d5c71903dffb1cc32398a69d4d52c1fbf356a9c1d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "01f6110f52a78ff374a2c767f41961d15e23eb2b19de524ca561fccacbca4994"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "e4e436a91e78effda871333dd8532d044b17fc8fcb55556bd7757da966019fd1"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "48318ba621f0709f64d53b9a35f36d7ba9f600e7707e8fcd50ba7927543bd19b"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "b3a0bf1be9ae4786bb5a346d5413f436aa21733ba718c3dc020972013bf0098b"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "5207ba201d52e317a486610aae9daa93308aaf1ae045851c9331e0584615c6e1"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "fd6bdbfa0fa1ce8c4060d7a6c264097d687061553d050d9e4bc0cab8feef755e"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d4e49f7a181e62cb510b1bde61c0bd823404dc873b178abd118551c5dccd9524"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "8153d463154c77af1e3b7bb48ed1760a22bfc091897f0fe6a72b1c00935f4e50"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "d7b320abdbfa57d940617cd108758c2a0be162c2ac77af0316283015ea8ad202"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "6d8628ccf808567ff0d3be60805a85a5699f3d6f9f34600141f9518800810d80"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "b0852baeca1ebd16652ef7b5dfcfa51d436d80e5e4f23f3dda2c835cdc418ba2"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "eb54ace4ccb71c67172e1fce9ed03bf07ebfcd3d6de3dd65e48824036a755dd0"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "564601e1b7619f29c02640c5176bd352eb482df19da80777879ef66055a7a74c"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "0e955d93197572bf7d651f9fec165494763feed97e52f1298f46e26c5af970f9"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "ea172f497d4c48b435298f5cbe5a1276c1611e761f045486d28d9e2b67bcb20f"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "1b389ffc8294400274f70f4b1b0b30677ee75d23dfb0df0b22eea0250356b487"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "87745772fa461305a74460534df212d4ce54e3770079a78f36dbf79a4a18c7bd"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "aa86623b76cadcbc7fa628b54cbaf67f50de4689d39255ec6733e4585e455411"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "c6282f898e3bc53baf54b8aca27797358133a71cdc526eb622cc63449d932368"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "54e35a5e205f705c7da255247cc5a68a1157cabad29bdecbf4f429d90cee30c0"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "a045451c89070ebacfce45746f7ee2bac231cac11f505dc9fdb7587b4fad161c"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "e42b838f0360ab2418b86e4082309f56d000efa22fd078af24575f95bccf9e0c"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "0bda19c00f7e6aab48dc288bb74c5e7eb5e0807ed462f933212ab6161e5bb15d"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "d8d78d9e72394a7818cb2e1f01a538aad8ef51c41edaa57320a95f563db68bd8"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta diretrizes gerais para um programa de governo, cuja versão definitiva continua sendo elaborada por meio de consulta a segmentos da sociedade. Na saúde, o programa prevê fortalecer a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade. Na educação, propõe uma nova geração de políticas públicas, fortalecendo a alfabetização, ampliando a qualidade da aprendizagem e consolidando o ensino em tempo integral. Na inclusão social, prevê fortalecer o Sistema Único de Assistência Social como eixo estruturador da proteção social, regionalizando os serviços especializados. No desenvolvimento econômico, propõe fortalecer o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas. Na segurança pública, prevê construir uma rede estadual integrada de segurança, conectando câmeras públicas e privadas, sistemas de reconhecimento e identificação, bases de dados, centrais de monitoramento e informações produzidas pelas diferentes forças policiais.",
+    "frases": [
+      {
+        "texto": "O documento apresenta diretrizes gerais para um programa de governo, cuja versão definitiva continua sendo elaborada por meio de consulta a segmentos da sociedade.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 3,
+            "trecho": "Este documento apresenta as diretrizes gerais do programa de governo. Sua versão definitiva continua sendo elaborada e aprimorada por meio de ampla consulta aos mais diversos segmentos da sociedade."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê fortalecer a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 12,
+            "trecho": "Na saúde, fortaleceremos a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe uma nova geração de políticas públicas, fortalecendo a alfabetização, ampliando a qualidade da aprendizagem e consolidando o ensino em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 12,
+            "trecho": "Na educação, iniciaremos uma nova geração de políticas públicas, preservando os avanços conquistados pelo regime de colaboração, fortalecendo a alfabetização, ampliando a qualidade da aprendizagem, consolidando o ensino em tempo integral"
+          }
+        ]
+      },
+      {
+        "texto": "Na inclusão social, prevê fortalecer o Sistema Único de Assistência Social como eixo estruturador da proteção social, regionalizando os serviços especializados.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 16,
+            "trecho": "Fortaleceremos o Sistema Único de Assistência Social (Suas) como eixo estruturador da proteção social, ampliaremos o cofinanciamento estadual, regionalizaremos os serviços especializados"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, propõe fortalecer o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 22,
+            "trecho": "Fortaleceremos o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, prevê construir uma rede estadual integrada de segurança, conectando câmeras públicas e privadas, sistemas de reconhecimento e identificação, bases de dados, centrais de monitoramento e informações produzidas pelas diferentes forças policiais.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 31,
+            "trecho": "Construiremos uma rede estadual integrada de segurança, conectando câmeras públicas e privadas, sistemas de reconhecimento e identificação, bases de dados, centrais de monitoramento e informações produzidas pelas diferentes forças policiais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "diretrizes-gerais",
+        "titulo": "Diretrizes gerais",
+        "descricao": "Apresentação das diretrizes gerais do programa.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 3,
+            "trecho": "Este documento apresenta as diretrizes gerais do programa de governo."
+          }
+        ]
+      },
+      {
+        "id": "regionalizacao-da-saude",
+        "titulo": "Regionalização da saúde",
+        "descricao": "Integração da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 12,
+            "trecho": "Na saúde, fortaleceremos a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade"
+          }
+        ]
+      },
+      {
+        "id": "educacao-em-tempo-integral",
+        "titulo": "Educação em tempo integral",
+        "descricao": "Consolidação do ensino em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 12,
+            "trecho": "consolidando o ensino em tempo integral"
+          }
+        ]
+      },
+      {
+        "id": "assistencia-social",
+        "titulo": "Assistência social",
+        "descricao": "Fortalecimento do Sistema Único de Assistência Social.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 16,
+            "trecho": "Fortaleceremos o Sistema Único de Assistência Social (Suas) como eixo estruturador da proteção social"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-do-interior",
+        "titulo": "Desenvolvimento do interior",
+        "descricao": "Diversificação das cadeias produtivas no interior.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 22,
+            "trecho": "Fortaleceremos o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-integrada",
+        "titulo": "Segurança integrada",
+        "descricao": "Construção de uma rede estadual integrada de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002531351:01",
+            "pagina": 31,
+            "trecho": "Construiremos uma rede estadual integrada de segurança"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:04:12.465Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:06:26.310Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho corresponde integralmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: apresentação do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:1:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:2:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com o trecho, apenas resumindo cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:3:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "As cláusulas citadas na afirmação estão todas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente: inclusão social."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:4:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas citadas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente: desenvolvimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:5:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas citadas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:frase:6:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:diretrizes-gerais:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:regionalizacao-da-saude:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal corresponde à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:educacao-em-tempo-integral:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:assistencia-social:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:desenvolvimento-do-interior:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002531351:tema:seguranca-integrada:documentos:CE:60002531351:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002531351",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002531351:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 36193,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2884,
+          "reasoning_output_tokens": 1633
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24425,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22234,
+          "output_tokens_details": {
+            "thinking_tokens": 802
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24425,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22234,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24425,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24425
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3385364
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "d598aabb624172d31a5ab963fed02285fa6fb4660c8953d9fd0d16578b3ad7eb",
+    "extractedTextSha256": "e2294385ce2e03ceda702690edd238d45ab191d634b919288f4b630a2abb1488",
+    "documentCount": 1,
+    "documentSetSha256": "19658ad8700751f52da189f87cb614ca09c52fdcb0a9bef0ef564d9ba13c72af",
+    "contentSha256": "36f2a7746cc74bdd02545f681b4dbf6de5ec15eba6dd966ba05e37b699026b3b"
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002546757",
+    "slug": "roberio-paulino",
+    "nomeUrna": "PROFESSOR ROBERIO PAULINO",
+    "partido": "PSOL",
+    "arquivoNome": "2026RN200002546757_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002546757_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002546757:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002546757_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002546757_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "615d47611274d44ec0ccb6ee800e47ca99a9882d8b0470c5530d31b2a6e83fd9",
+        "extractedTextSha256": "d2ab50881e8bd6922ef707c37509518b2d410efdd1d746244c8a43f7e0a9ace0",
+        "paginas": 14,
+        "secoes": [
+          {
+            "id": "programa-inicial-da-candidatura-do-professor",
+            "titulo": "PROGRAMA INICIAL DA CANDIDATURA DO PROFESSOR",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA INICIAL DA CANDIDATURA DO PROFESSOR\nROBÉRIO PAULINO – PSOL – AO GOVERNO DO RIO GRANDE DO\nNORTE, PARA O PERÍODO 2027 A 2030\nEste texto é apenas uma síntese inicial das discussões que nossa candidatura tem\nrealizado com dezenas de especialistas de diversas áreas, acadêmicos de diversas\nuniversidades públicas e privadas e associações profissionais, sobre os diferentes temas\nabordados em nosso programa, que abordam os principais problemas e desafios do Rio\nGrande do Norte.\n\nBREVE DIAGNÓSTICO\n\nO Rio Grande do Norte é um estado de enorme potencial econômico, social, científico,\nintelectual, pela disposição, enorme inteligência e valor de seu povo. No entanto,\ncontinua a ser um dos estados mais atrasados dentro da Federação. Tem suas\npotencialidades travadas por uma elite política atrasada, com mentalidade ainda dos\ntempos coloniais, sem visão arrojada de desenvolvimento econômico e social, que\npensa exclusivamente em seus interesses particulares mesquinhos, sem colocar o povo\ne o estado em primeiro lugar.\nNossos indicadores sociais ainda são sofríveis, como o baixíssimo IDEB, especialmente\nno ensino médio, o mais baixo do país, uma alta taxa de analfabetismo, renda média\nmuito limitada, rede de saúde deficiente.\nVivemos um processo de desindustrialização há algumas décadas, sem que existam\npolíticas arrojadas para reverter tal dinâmica. Hoje, importamos a maior parte dos\nprodutos industriais que consumimos, que poderiam ser muito bem produzidos aqui.\nNesse aspecto, somos um estado ingênuo.\nNossa infraestrutura é precária e ainda não temos um porto de calado e porte suficiente\npara possibilitar uma elevação substancial de nossas exportações. A malha viária é\nprecária, sendo que a principal rodovia entre nossas duas maiores cidades ainda não é\nduplicada, como ocorre aqui ao lado, na Paraíba, um sério gargalo econômico.\nNosso semiárido vive um rápido e perigoso processo de desertificação, sem que as elites\npolíticas sequer tenham noção dele e muito menos políticas para enfrentá-lo, como\ntambém da grave crise ambiental que afeta o planeta."
+          },
+          {
+            "id": "nossas-propostas-iniciais",
+            "titulo": "NOSSAS PROPOSTAS INICIAIS",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "NOSSAS PROPOSTAS INICIAIS\n\nI UMA REVOLUÇÃO NA QUALIDADE DA EDUCAÇÃO\n\nA - META HISTÓRICA: ERRADICAR O ANALFABETISMO EM 2 ANOS, COMO SUPERAR\nTAMBÉM O ANALFABETIMO FUNCIONAL\nO Rio Grande do Norte segue com um alto índice de analfabetismo formal, de 9,3%\n(IBGE, JUN, 2026), um indicador vergonhoso e inaceitável. Uma em cada 11 adultos\nsegue sem saber ler e escrever, em plena era da INTERNET e das redes sociais. Isso é um\natestado de imenso atraso de uma sociedade e de incompetência e de falta de visão de\nnossas elites. Os países que deram uma arrancada em seu desenvolvimento durante o\nSéculo XX tomaram como primeira medida erradicar o analfabetismo, um dever de casa\nbásico que não fizemos.\nNós propomos erradicar essa chaga social nos dois primeiros anos de nosso governo,\ncom um grande mutirão, que envolva milhares de educadores, estudantes e voluntários,\nque irão às periferias das cidades nos fins de semana, ministrando aulas gratuitas nas\nescolas públicas federais, estaduais e municipais. Essa grande Política Pública exigirá\numa grande cooperação interinstitucional entre o governo estadual, os governos\nmunicipais, o governo federal, universidades públicas e privadas e outras organizações\nsociais.\nMas não basta ensinar a ler e decodificar palavras. É preciso ensinar nosso povo a\ncompreender, saber interpretar, refletir sobre o que se lê. Por isso, a educação pública\nprecisa também ensinar o pensamento crítico, a interpretação de textos, a boa escrita,\na resolução de problemas, a educação financeira, a cultura digital.\n\nB - ELEVAR A PORCENTAGEM DE ESCOLAS COM EDUCAÇÃO INTEGRAL PARA UM\nMÍNIMO DE 50% EM 4 ANOS\nO Rio Grande do Norte segue com um dos mais baixos IDEB do país, de 5,3, na faixa do\n1º ao 5º ano, e 4.1 do 6º ao 9º ano. No ensino médio, tem a nota mais baixa do país, 3.2,\numa vergonha para o estado. Entre outros fatores, isso também se deve ao grande\natraso do estado na implantação de ESCOLAS EM TEMPO INTEGRAL. Enquanto o Piauí\njá tem 100% de escolas estaduais no formato integral, o Ceará 58%, Pernambuco 63%,\no Rio Grande do Norte tem apenas 13,3% em toda rede pública e 36% na rede estadual,\nsendo um dos estados mais atrasados do país nesse quesito, demonstrando grande\nincompreensão dos vários governos nas últimas décadas para a importância da\neducação. Mesmo existindo críticas ao que se considera educação integral naqueles 3\nestados, sem dúvida a adoção desse formato de educação em período estendido\nmelhorou muito os indicadores da educação onde o modelo foi implantado."
+          },
+          {
+            "id": "partindo-dessas-experiencias-nosso-programa-preve-elevar-a-pelo-menos-50",
+            "titulo": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a\nporcentagem de escolas da rede estadual com essa modalidade e incentivar e apoiar as\nprefeituras a também adotarem tal modelo. O ideal seria chegar a um índice bem mais\nelevado que 50%, como nos estados acima citados, mas considerando a situação fiscal\ndo estado, avaliamos que essa porcentagem é o possível em um primeiro governo, o\nque já seria um enorme avanço, dinâmica que pode ser acelerada em um próximo\nmandato,\n\nO QUE MUDARIA. UM EXEMPLO DE COMO FUNCIONARIA\nPela manhã o aluno cursaria o currículo regular. Já à tarde teria esporte, música, cinema,\nteatro, robótica, programação, inteligência artificial, iniciação científica, oficinas de\naudiovisual, educação ambiental, cooperativismo, educação política e cidadania, línguas\nestrangeiras, etc.\nTudo isso guiado por equipes multiprofissionais: toda escola integral deveria possuir\npsicólogo, assistente social, orientador e enfermeiro de referência.\nAlimentação: três refeições completas produzidas com alimentos da agricultura familiar,\no que impulsionaria a economia das cidades de nosso interior.\nBiblioteca viva: aberta e em funcionamento para toda a comunidade.\nEvidentemente, essa inovação da elevação da educação em tempo integral exigiria a\nconstrução de novas escolas ou a construção de novas instalações nas escolas atuais,\natravés de Um Plano Estadual de Obras Públicas, voltado também para a construção de\nnovas salas de aula, refeitórios, laboratórios, quadras cobertas, auditórios, bibliotecas,\netc. Sem infraestrutura não existe educação integral. Esse plano também daria enorme\nimpulso à economia.\n\nC - VALORIZAÇÃO SALARIAL E PROFISSIONAL DOS EDUCADORES\nA qualidade da educação pública depende, antes de tudo, da valorização salarial,\nprofissional, intelectual, da motivação de seus professores. Nenhum sistema\neducacional é capaz de superar suas desigualdades quando trata a formação docente\ncomo um processo burocrático, baseado em cursos rápidos, treinamentos padronizados\ne acúmulo de certificados. O professor não pode ser reduzido a mero reprodutor\nmecânico e desestimulado de conteúdos ou de plataformas digitais; ele deve ser\nreconhecido e motivado como intelectual, pesquisador e protagonista da construção do\nconhecimento, de uma nova sociedade e de uma nova mulher e de um novo homem.\nNosso governo promoverá uma verdadeira revolução na formação e motivação dos\nprofissionais da educação, compreendendo que a aprendizagem é um processo\npermanente e que o Estado tem a responsabilidade de garantir as condições para que\ncada professor continue estudando, pesquisando, produzindo conhecimento e"
+          },
+          {
+            "id": "inovando-em-sua-pratica-pedagogica-essa-politica-estara-organizada-sobre",
+            "titulo": "inovando em sua prática pedagógica. Essa política estará organizada sobre cinco",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "inovando em sua prática pedagógica. Essa política estará organizada sobre cinco\ngrandes pilares.\n\nFormação continuada como política de Estado\nA formação dos professores deixará de depender de iniciativas pontuais ou de\nprogramas descontínuos. Será instituído um Programa Estadual Permanente de\nFormação Docente, articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN,\no IFRN e outras instituições públicas e privadas de ensino superior.\nCada professor terá direito a um plano de desenvolvimento profissional ao longo da\ncarreira, com oferta permanente de cursos de especialização, mestrado profissional,\nmestrado acadêmico, doutorado, intercâmbios e projetos de pesquisa vinculados às\nnecessidades da escola pública potiguar. A formação não será pensada apenas para\nsuprir lacunas imediatas, mas para ampliar o repertório científico, cultural e pedagógico\ndos educadores.\n\nO professor na era da Inteligência Artificial\nVivemos uma transformação tecnológica comparável à Revolução Industrial. A\nInteligência Artificial modificará profundamente a produção do conhecimento, o mundo\ndo trabalho e as formas de ensinar e aprender. A escola pública não pode assistir a essa\ntransformação como espectadora.\nNosso governo garantirá que todos os professores da rede estadual recebam formação\naprofundada em Inteligência Artificial e cultura digital, não para substituir sua prática\npedagógica, mas para fortalecê-la. A formação contemplará temas como fundamentos\nda Inteligência Artificial, uso pedagógico de ferramentas de IA generativa, produção de\nmateriais didáticos com apoio da IA, ética, direitos autorais e proteção de dados,\ncombate à desinformação e ao uso manipulador das tecnologias, pensamento\ncomputacional e programação e metodologias inovadoras para aprendizagem\npersonalizada.\nMais do que aprender a utilizar novas ferramentas, os professores serão preparados\npara compreender criticamente os impactos sociais, econômicos, políticos e culturais da\nInteligência Artificial, formando estudantes capazes de utilizar essas novas tecnologias,\nnão com dependência, mas com autonomia, responsabilidade e criatividade.\n\nLicença para estudar: investir em quem educa\nUma das maiores barreiras para a qualificação docente é a impossibilidade de conciliar\ntrabalho e formação acadêmica. Por isso, ampliaremos significativamente as políticas de\nafastamento remunerado para especialização, mestrado, doutorado e pós-doutorado."
+          },
+          {
+            "id": "estudar-deixara-de-ser-um-privilegio-de-poucos-para-tornar-se-um-direito",
+            "titulo": "Estudar deixará de ser um privilégio de poucos para tornar-se um direito de toda a",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Estudar deixará de ser um privilégio de poucos para tornar-se um direito de toda a\ncarreira docente. Também criaremos bolsas estaduais de pesquisa educacional para\nprofessores da rede pública, incentivando que desenvolvam investigações sobre\nalfabetização, inclusão, permanência escolar, inovação pedagógica e aprendizagem,\nsempre em diálogo com as universidades públicas.\n\nA escola como espaço de produção de conhecimento\nDefendemos uma mudança profunda na concepção da profissão docente. O professor\nnão deve apenas aplicar conhecimentos produzidos por outros; deve produzir\nconhecimento sobre sua própria prática. Cada escola será estimulada a constituir grupos\npermanentes de estudo, pesquisa e inovação pedagógica, com tempo garantido na\njornada de trabalho para planejamento coletivo, leitura, produção científica e\ndesenvolvimento de projetos interdisciplinares.\nA experiência acumulada pelos professores da rede estadual deve deixar de permanecer\nrestrita às salas de aula e passar a integrar um patrimônio público de conhecimento\npedagógico, compartilhado entre todas as escolas do Estado.\n\nFormação humanista, científica e interdisciplinar\nA escola do século XXI exige educadores capazes de dialogar com diferentes áreas do\nconhecimento. A formação continuada contemplará não apenas aspectos didáticos, mas\ntambém temas estratégicos para o desenvolvimento da educação potiguar, como\nalfabetização e letramento, educação inclusiva, saúde mental e desenvolvimento\nsocioemocional, metodologias interdisciplinares, mudanças climáticas e educação\nambiental, direitos humanos, relações étnico-raciais, cultura popular potiguar, ciência,\ntecnologia e inovação, educação midiática e pensamento crítico e argumentação.\nA interdisciplinaridade será compreendida como um princípio organizador da prática\npedagógica, favorecendo a construção de projetos que articulem ciência, cultura,\ntecnologia, arte e participação social.\n\nUm novo pacto pela valorização intelectual dos professores\nNosso compromisso é fazer do Rio Grande do Norte uma referência nacional na\nformação docente. Queremos que cada professor da rede estadual tenha acesso às\nmelhores oportunidades de qualificação, pesquisa e inovação, fortalecendo sua\nautonomia intelectual e sua capacidade de transformar a escola pública.\nAcreditamos que não existe educação de excelência sem professores valorizados, nem\ndesenvolvimento econômico e social sem uma escola capaz de formar cidadãos críticos,\ncriativos e cientificamente preparados. Investir na formação dos educadores não é uma\ndespesa: é a mais estratégica política de desenvolvimento que um Estado pode realizar."
+          },
+          {
+            "id": "d-a-uern-como-alavanca-essencial-do-desenvolvimento",
+            "titulo": "D – A UERN COMO ALAVANCA ESSENCIAL DO DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "D – A UERN COMO ALAVANCA ESSENCIAL DO DESENVOLVIMENTO\nUma universidade sob controle estatal pode ser uma alavanca fundamental, decisiva,\npara a aceleração do desenvolvimento do estado e da sua população. Mas para isso é\nnecessário afastar o fantasma da privatização e fortalecer a UERN, com algumas\nmedidas:\n- Aumento progressivo e sustentado do orçamento;\n- Expansão dos campi e das vagas, com forte arborização e climatização;\n- Planejamento plurianual;\n- Interiorização da pesquisa;\n- Criar novos polos tecnológicos ligados à UERN;\n- Laboratórios em parceria com indústria, agricultura, energias renováveis, saúde\npública e tecnologia;\nO atual Plano de Desenvolvimento Institucional da UERN já estabelece metas para\nfortalecimento do ensino, pesquisa e extensão, podendo servir como referência para\numa política estadual mais robusta.\n\nII – SAÚDE DE QUALIDADE: PRIORIDADE TOTAL À PREVENÇÃO, À REGIONALIZAÇÃO E\nÀ ATENÇÃO BÁSICA\n\nMODELO DE ATENÇÃO E DIREITO À SAÚDE\nAos 36 anos da sua regulamentação e enfrentando adversidades de toda ordem, o\nSistema Único de Saúde – SUS - se afirmou definitivamente perante os brasileiros e o\nmundo como a maior conquista social e política no nosso país. Desde então, tem sido o\npilar basilar e contribuído definitivamente para o avanço e melhoria da qualidade de\nvida da população, sendo, sem a menor sombra de dúvidas, a política mais includente e\ndemocrática que dispomos.\nApesar disso, tem sido diuturnamente desafiado, vitimado que é por um histórico e\npermanente desfinanciamento, uma majoritária e prioritária privatização das ações e\nserviços, uma força de trabalho precarizada e desvalorizada, uma gestão clientelista e\nfisiologista e de um equivocado modelo de atenção especializado, privatista, médicocentrado, hospitalocêntrico e predominantemente curativista.\nSem efetivas políticas intersetoriais, com ações de promoção da saúde e de prevenção\nde doenças de limitado alcance e com uma atenção primária inconclusa e sem a\nresolutividade necessária, o Sistema sofre as agruras de uma crescente demanda por\nserviços especializados e de alto custo predominantemente realizados pelo setor"
+          },
+          {
+            "id": "privado-contratado-e-um-custo-financeiro-cada-vez-mais-impagavel-insupor",
+            "titulo": "privado contratado, e um custo financeiro cada vez mais impagável, insuportável e",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "privado contratado, e um custo financeiro cada vez mais impagável, insuportável e\ninviável.\nDessa maneira, alguns caminhos precisam ser identificados e trilhados, tendo claro que\na atenção primária devidamente organizada e estruturada, de responsabilidade direta\ndos municípios, deve ser o fio condutor para que nosso objetivo seja alcançado. Assim\npropomos ações e políticas indutoras através do apoio e participação do governo federal\npara:\n- Estruturação da rede de serviços em todos os municípios, de forma regionalizada e\nhierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de\ncada localidade adstrita.\n- Disponibilização de uma equipe mínima de trabalhadores da saúde para cada unidade\nde serviço, que a princípio poderia ser composta por Assistente Social, Dentista,\nEnfermeiro, Farmacêutico e Médico, além dos correspondentes técnicos, podendo essa\ncomposição ser ampliada de acordo com a realidade local.\n- Unidades de referência no atendimento de hipertensão e diabetes, contando também\ncom nutricionistas e psicólogos, organizadas de forma regionalizada, e serviços de\nimagem, radiografia, ultrassonografia, tomografia computadorizada e ressonância\nmagnética, essenciais para o acesso e diagnóstico. O mesmo deve acontecer com o\nestabelecimento de Policlínicas com especialistas das diversas profissões com a\nfinalidade de atender às demandas provenientes de todas as áreas.\n- Fortalecimento da Estratégia de Saúde da Família e do trabalho dos Agentes\nComunitários de Saúde e de Combate às Endemias, com a aperfeiçoamento da formação\ne das normas e regras de atendimento à população.\n- Estabelecer Políticas de prevenção de doenças e de promoção da saúde através de\nações conjuntas com as áreas de educação, segurança, trânsito e outras.\n- Ampliar o Programa Farmácia Popular através de convênios e parcerias com municípios\nde todo o país, utilizando a rede pública municipal de serviços estabelecida e\npromovendo dessa forma uma capilarização necessária para a ampliação do acesso à\nassistência farmacêutica qualificada com profissionais treinados e aptos para tal fim.\n- Os Centros de Atenção Psicossocial com a força de trabalho necessária devem ser\nprioridade absoluta de acordo com a realidade e necessidade dos municípios em relação\nà saúde mental. O mesmo deve acontecer no que diz respeito à saúde bucal com a\nestruturação dos Centros de Especialidades Odontológicas.\n- É certo que a mudança do equivocado Modelo de Atenção do SUS não será efetivada\napenas com as políticas que estamos propondo para a Atenção Primária. Outras ações\na serem desenvolvidas de forma concomitante são fundamentais para, de fato, termos\na inversão/mudança do Modelo de Atenção confirmada e o SUS consolidado.\n- A implantação da Carreira Única e Interfederativa para todos os trabalhadores do SUS\nsuperando assim a precarização e as carências da força de trabalho; a ampliação da rede"
+          },
+          {
+            "id": "propria-publica-de-modo-a-diminuir-a-dependencia-que-temos-da-financeira",
+            "titulo": "própria/pública de modo a diminuir a dependência que temos da financeiramente",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "própria/pública de modo a diminuir a dependência que temos da financeiramente\nonerosa e insustentável rede privada contratada; contratualização direta entre os\nserviços e os correspondentes níveis de gestão, assim como a profissionalização da\ngestão e da gerência da rede, como medidas essenciais para superar os limites e as\ndificuldades administrativas que hoje são enfrentadas.\n- Por fim, no que se refere aos repasses realizados pelo Ministério da Saúde, respeitada\na autonomia dos entes federados e os repasses fundo a fundo, é necessária uma\nmudança estruturante no atual modelo de financiamento, estabelecendo a substituição\ndo pagamento de procedimentos realizados pela definição de recursos de acordo com\nas reais necessidades de cada local, e definindo contrapartidas de municípios e estados\nem relação à contratação da força de trabalho, sem precarização, e da organização e\ngestão da rede de serviços, sem processos de terceirização.\n\nGESTÃO E FINANCIAMENTO DO SUS\nPara além do desfinanciamento histórico que tem sido a regra, os serviços públicos nas\ntrês esferas de governo do SUS têm sido vítimas de um modelo equivocado de\nfinanciamento, do violento processo de privatização e terceirização da sua gerência e da\nforça de trabalho, da falta de autonomia administrativa e financeira e de uma absurda\ningerência política e partidária com critérios eminentemente clientelistas, fisiologistas e\npatrimonialistas, que comprometem diretamente sua eficácia e resolutividade.\nA entrega da gerência de serviços públicos a Organizações Sociais, Serviços Sociais\nAutônomos e a congêneres na forma de “parceiros privados”, fez com que o SUS fosse\ntomado de assalto por interesses privados geralmente com relação direta com grupos\npolíticos que praticam à exaustão a privatização do Estado através do clientelismo e do\npatrimonialismo em suas formas mais variadas, rústicas e elaboradas.\nGeridos por pessoas indicadas por critérios meramente políticos, sem perfil gerencial\nadequado de um lado, e de outro, sem autonomia administrativa e financeira para\natender seus preceitos e obrigações legais, nossos serviços são presas fáceis das\nacusações de ineficiência e incompetência, utilizados em profusão como argumento\npara justificar sua entrega a empresas privadas.\nTrabalhadores contratados e remunerados de forma precária, em grande parte das\nvezes por indicação de políticos e sem a devida formação, tornam a relação de trabalho\num instrumento de terror e de frequentes assédios morais, com repercussões negativas\ndiretas na qualidade do serviço prestado.\nPor fim um financiamento já insuficiente é destinado prioritariamente para os\nprocedimentos especializados e de alto custo, majoritariamente realizados pelo setor\nprivado contratado, comprometendo sobremaneira a atenção primária, sempre\nsubfinanciada. Ao mesmo tempo estimula e potencializa fraudes e os casos de\ncorrupção, tornando-o definitivamente insustentável política e economicamente."
+          },
+          {
+            "id": "diante-desse-quadro-que-inviabiliza-quaisquer-possibilidades-reais-de-co",
+            "titulo": "Diante desse quadro que inviabiliza quaisquer possibilidades reais de consolidar o SUS",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Diante desse quadro que inviabiliza quaisquer possibilidades reais de consolidar o SUS\nuniversal e integral conforme preconizado na Constituição Federal e na sua Lei Orgânica,\npropomos o debate das propostas a seguir:\n- Um Projeto de Lei estabelecendo a contratualização direta entre os serviços e os\ncorrespondentes níveis de gestão, com o estabelecimento de metas e deveres, com\nConselho Gestor para acompanhar sua execução (dos contratos de gestão) e\npromovendo autonomia administrativa e financeira a esses serviços. Essa é a alternativa\nconcreta às propostas de entrega dos nossos serviços para empresas privadas ou\nintermediários das mais variadas matizes.\n- Projeto de Lei propondo a Profissionalização da gestão do Sistema e da Gerência dos\nServiços a partir da obediência a critérios técnicos previamente definidos, de modo a\npriorizar e estimular nossos próprios quadros e impedindo, dessa forma, a\ncomprometedora ingerência política e partidária no Sistema.\n- Ampliar de forma paulatina e sustentada o financiamento, alterando a sua lógica\npriorizando a Atenção Primária e a Rede própria especializada, e substituindo o\npagamento de procedimentos realizados pela destinação de recursos de acordo com a\nrealidade e as necessidades de cada região adstrita e previamente definida.\n- Temos hoje uma lógica perversa em que os bilhões de reais repassados religiosa e\nperiodicamente pelo Ministério da Saúde têm sido usados para financiar e até estimular\na privatização do SUS e a precarização da força de trabalho em todo o país. O Ministério\nda Saúde, num sentido inverso, deve ser indutor do combate à privatização do SUS e da\nprecarização da contratação e da remuneração da força de trabalho. Propomos que na\ndefinição das próximas políticas e no financiamento da construção e estruturação de\nserviços, sejam adotados como contrapartidas dos municípios e estados, a\ncontratualização direta, profissionalização da gestão e contratação dos trabalhadores\natravés de concurso público, nos serviços contemplados ou não com os recursos\nrepassados.\n- Pela complexidade que encerra e no entendimento de que as diferentes áreas se\nconectam diretamente entre si, as dificuldades do SUS devem ser enfrentadas sob várias\nóticas. Por isso a necessidade premente de aprovarmos e implantarmos a Carreira Única\ne Interfederativa para todos os trabalhadores do SUS, conforme proposta aprovada na\nComissão criada pela Secretaria de Gestão do Trabalho e da Educação na Saúde do\nMinistério da Saúde.\n\nIII – OTIMIZAÇÃO DO SERVIÇO PÚBLICO E FORTE VALORIZAÇÃO E RESPEITO AOS\nSERVIDORES PÚBLICOS. CONVOCAÇÃO IMEDIATA DOS CONCURSADOS\n\nEm um país e em um estado de grande parte da população pobre, os serviços públicos\nde educação, saúde e outros setores cumprem um papel essencial para o"
+          },
+          {
+            "id": "desenvolvimento-humano-e-social-a-maior-parte-da-populacao-brasileira-e",
+            "titulo": "desenvolvimento humano e social. A maior parte da população brasileira e potiguar não",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "desenvolvimento humano e social. A maior parte da população brasileira e potiguar não\npode pagar escola privada ou convênio médico, por exemplo, precisando, portanto, dos\nserviços públicos de boa qualidade. E a garantia de um bom serviço público, na\neducação, na saúde e demais setores, depende de servidores bem remunerados,\ncapacitados e motivados, para atenderem bem a população.\nA exemplo do que faremos para os professores, nosso governo buscará valorizar ao\nmáximo todas as categorias de servidoras e servidores públicos, tanto salarialmente\ncomo no aspecto da qualificação permanente e promoção. Nosso compromisso será\nconvocar todos os concursados que aguardam ser chamados já no primeiro ano de\ngoverno. Existem, obviamente, os limites orçamentários, mas a orientação de governo\nserá essa. Nos comprometemos também a nunca judicializar ou reprimir uma greve ou\nmanifestação de trabalhadores, como ocorreu no governo atual.\n\nIV - INDUSTRIALIZAÇÃO ACELERADA DO ESTADO: PRODUZIR AQUI TUDO QUE SEJA POSSÍVEL\n\nNão há futuro sem indústria forte. Todo o Ocidente, o Brasil e o Rio Grande do Norte também,\nviveram um processo de desindustrialização nas últimas décadas, um grande equívoco. As\nindústrias que sumiram por aqui reapareceram na Ásia, particularmente na China. Hoje,\nimportamos grande parte do que consumimos daquele país. Basta ir ao Alecrim ou a uma loja\nde departamentos para constatar o que dizemos aqui.\nIsso foi fruto da orientação econômica e ideológica neoliberal, totalmente equivocada, de\ndestruir a capacidade do Estado de planejar e alavancar o desenvolvimento. Nossas economias\nestão se voltando essencialmente para o setor de serviços. Mas sem uma indústria forte, não há\nfuturo para um país ou um estado da federação. É isso que os próprios EUA e a Europa estão\npercebendo, depois do erro que cometeram, pelo que estão tentando trazer de volta muitas\nindústrias e empregos que exportaram para a Ásia.\nNo Rio Grande do Norte, essa questão é agravada. Basta entrar em um supermercado aqui para\npercebermos que a maior parte dos produtos industrializados que consumimos vêm de outros\nestados, até mesmo produtos básicos, que exigem pouca tecnologia para sua fabricação, e que\npoderiam muito bem ser manufaturados aqui, gerando empregos, renda e riqueza no próprio\nestado. Não tem sentido importar a maior parte de sabonete, shampoo, água sanitária,\ndetergente, desinfetante, pão de queijo, muçarela, remédios básicos. Temos tecnologia e\npoderíamos produzir aqui mesmo motos elétricas, notebooks. Bastaria querer.\nEm função desse diagnóstico, nosso governo fará um Grande Plano Estadual de Industrialização\npor um Processo de Substituição de Importações, identificando rigorosamente centenas de\nprodutos hoje importados, mas que possam ser produzidos aqui, com mão de obra local,\ngerando milhares de empregos. Esse foi o caminho de industrialização da Coréia do Sul, por\nexemplo. Começaram fabricando roupas; hoje têm uma SAMSUNG, uma LG, uma Hyundai. A\nChina aprendeu com o Japão e a Coréia do Sul e seguiu o mesmo caminho, hoje exportando para\nnós os carros da BYD.\nJá no início de nosso governo, vamos identificar rigorosamente todos os produtos hoje\nimportados, mas que possam ser fabricados aqui, dando apoio aos empreendedores locais,"
+          },
+          {
+            "id": "especialmente-aos-jovens-vamos-promover-viagens-a-asia-particularmente-a",
+            "titulo": "especialmente aos jovens. Vamos promover viagens à Ásia, particularmente à China. Podemos",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "especialmente aos jovens. Vamos promover viagens à Ásia, particularmente à China. Podemos\ntambém trazer de outros estados trabalhadores qualificados e especialistas, que possam nos\najudar nesse processo. E o estado deve também facilitar instalação física dessas novas empresas,\ncom Centros Industriais Modulares. Precisamos mudar a visão equivocada de que\ndesenvolvimento se faz apenas esperando atrair empresas de fora para o estado. A experiência\nda Ásia não é essa; o caminho é construir nossas próprias empresas, ainda que seja partindo do\nzero. Isso é possível e se mostrou factível nos países asiáticos nas décadas recentes. Também é\npossível aqui. Essas empresas não precisam estar apenas na Grande Natal, mas em todo estado,\ndentro de uma visão de interiorização do desenvolvimento.\n\nV - UM OUSADO PROGRAMA DE HABITAÇÃO POPULAR. CONSTRUIR 50.000 NOVAS\nRESIDÊNCIAS POPULARES EM 4 ANOS\n\nTeremos como prioridade as pessoas que vivem em condições de vulnerabilidade social, em\náreas de risco, fundos de vale, encostas de rios ou que estejam correndo risco de vida, no caso,\nperigo de desabamento. Nossas metas contemplam:\n- Reurbanização de favelas, para garantir direitos básicos aos moradores/as.\n- Casas do Idoso: para garantir que no final da vida o/a idoso/a de baixa renda possa ter a sua\ndignidade e direitos sociais respeitados.\n- Construção de moradias populares à base de mutirões, com projeto, acompanhamento e mãode-obra contratadas ou fornecidas pelo Estado. Aos finais de semana, mutirão com toda a\npopulação envolvida e beneficiadas pelo projeto, barateando a obra e construindo casas de\nqualidade para a população.\n- Trabalhar sempre em parceria e com orientação dos critérios sociais do projeto federal \"Minha\nCasa, Minha Vida\".\n- Avançar nos critérios sociais, sempre ouvindo e discutindo com os Movimentos Sociais as novas\npráticas para dar acesso à moradia popular.\n- Colocar todos os prédios públicos abandonados nos centros das cidades à disposição para\najudar a resolver a demanda por moradia popular, sempre em diálogo com a população e os\nmovimentos organizados.\n- Implantação da Secretaria da Habitação, com autonomia para viabilizar os projetos.\n\nVI - DIVULGAR COM MUITA FORÇA E ALAVANCAR O TURISMO, DOBRANDO A RECEITA EM\nOITO ANOS\n\nO turismo representa uma das maiores vocações econômicas do Rio Grande do Norte. Nosso\nestado reúne praias, serras, patrimônio histórico, cultura, gastronomia, esportes, religiosidade\ne riquezas naturais capazes de impulsionar o desenvolvimento sustentável. Mas ainda divulga\nmuito pouco seu turismo no Brasil e no mundo. Precisamos mudar substancialmente esse\nquadro, sermos mais ousados."
+          },
+          {
+            "id": "este-plano-propoe-transformar-o-turismo-em-uma-politica-permanente-de-es",
+            "titulo": "Este plano propõe transformar o turismo em uma política permanente de Estado, promovendo",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Este plano propõe transformar o turismo em uma política permanente de Estado, promovendo\nemprego, renda, preservação ambiental e desenvolvimento regional, beneficiando todas as\nregiões potiguares. Introdução O Rio Grande do Norte consolidou-se como destino turístico\nnacional graças às suas belezas naturais, mas ainda concentra grande parte da atividade\neconômica em poucos municípios. Nosso compromisso é ampliar essa vocação, integrar o litoral\nao interior, fortalecer a infraestrutura, qualificar profissionais, incentivar investimentos e\ntransformar o turismo em um instrumento de desenvolvimento econômico e social para todo o\npovo potiguar. Para isso, propomos:\n- Forte Promoção/Divulgação Nacional e Internacional do nosso turismo, ampliando a presença\ndo Rio Grande do Norte nos maiores e novos mercados emissores de turistas, como a Ásia.\nIntensificar campanhas promocionais, enviando profissionais para todos os continentes para\ndivulgar nosso turismo, nossas belezas. Participar das principais feiras nacionais e internacionais.\nFirmar parcerias com companhias aéreas e operadores turísticos. Desenvolver estratégias\npermanentes de marketing digital.\n- Modernizar e integrar a infraestrutura turística estadual.\n- Recuperar e ampliar rodovias de acesso aos principais destinos turísticos.\n- Implantar sinalização turística bilíngue.\n- Fortalecer a conectividade aérea nacional e internacional.\n- Apoiar a modernização dos aeroportos regionais.\n- Implantar centros de atendimento ao turista nos principais polos.\n- Distribuir o desenvolvimento turístico por todas as regiões do estado.\n- Consolidar as rotas Costa das Dunas, Costa das Falésias, Sertão Histórico, Serras Potiguares e\nTurismo Religioso.\n- Valorizar o Geoparque Seridó como destino internacional.\n- Incentivar o turismo histórico de Mossoró e o turismo religioso do Seridó.\n- Integrar municípios em roteiros permanentes.\n- Turismo Cultural e Patrimonial: Valorizar a identidade cultural potiguar. Restaurar patrimônios\nhistóricos. Apoiar museus, centros culturais e memoriais. Criar calendário estadual de eventos\nculturais. Incentivar festivais de música, gastronomia, folclore e artes.\n- Turismo Sustentável. Conciliar crescimento econômico e preservação ambiental. Fortalecer\nunidades de conservação. Incentivar ecoturismo e geoturismo. Ampliar ações de saneamento\nem áreas turísticas. Combater ocupações irregulares em áreas ambientalmente sensíveis.\n- Turismo de Eventos e Negócios. Reduzir a sazonalidade do turismo. Incentivar congressos,\nfeiras e eventos científicos. Fortalecer os centros de convenções. Apoiar eventos esportivos e\nculturais de alcance nacional e internacional.\n- Qualificação Profissional. Formar mão de obra qualificada para o setor. Expandir cursos de\nhotelaria, gastronomia e turismo. Oferecer capacitação em idiomas. Qualificar melhor guias\nturísticos e pequenos empreendedores. Incentivar a economia criativa e o artesanato."
+          },
+          {
+            "id": "seguranca-e-hospitalidade-tornar-o-rio-grande-do-norte-referencia-em-aco",
+            "titulo": "- Segurança e Hospitalidade. Tornar o Rio Grande do Norte referência em acolhimento ao",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "- Segurança e Hospitalidade. Tornar o Rio Grande do Norte referência em acolhimento ao\nvisitante. Reforçar o policiamento turístico. Implantar sistemas de monitoramento nos\nprincipais destinos. Melhorar muito os serviços de acolhimento e informação ao turista, já na\nchegada.\nMetas Estratégicas. Dobrar o fluxo turístico ao longo da próxima década. Duplicar a receita\ngerada pelo turismo em oito anos. Gerar milhares de novos empregos diretos e indiretos.\nAmpliar significativamente a participação do interior na atividade turística. Consolidar o Rio\nGrande do Norte como referência nacional em turismo sustentável. Fortalecer o turismo como\num dos principais motores do desenvolvimento econômico estadual e geração de milhares de\nempregos.\nConsiderações Finais sobre o turismo\nO turismo será tratado como uma prioridade absoluta de Estado, articulando forte divulgação\nno Brasil e no mundo, infraestrutura, preservação ambiental, cultura, inovação, qualificação\nprofissional e desenvolvimento regional. Nosso compromisso é transformar o Rio Grande do\nNorte em um destino competitivo durante todo o ano, não somente no verão ou férias de julho,\ngerando oportunidades, reduzindo desigualdades regionais e promovendo rápido crescimento\neconômico sustentável para toda a população potiguar. Nosso slogan será: \"Rio Grande do\nNorte: o Brasil começou e começa aqui. Um destino para o mundo.\"\n\nVI –PLANTIO DE 5 MILHÕES DE ÁRVORES EM 4 ANOS EM NOSSO SEMIÁRIDO, PARA REVERTER\nA DESERTIFICAÇÃO. EDUCAÇÃO AMBIENTAL INTENSIVA NAS ESCOLAS, REPARTIÇÕES\nPÚBLICAS E UNIVERSIDADES\n\nO planeta vive uma gravíssima crise ambiental, da qual poucos têm verdadeira noção. A\ntemperatura média do planeta vem subindo rapidamente para os padrões milenares. Os polos\ne geleiras derretem. O nível do mar vem se elevando 0,5 cm por ano, sem que a maior parte da\nhumanidade sequer perceba. O fenômeno El Nino está aí para atestar a gravidade da crise\nambiental. E isso não é castigo de Deus, mas antes de tudo resultado da ação humana, antrópica,\nsob o sistema capitalista.\nO problema ambiental é uma questão essencial para o futuro de todos os seres vivos do planeta\ne também da humanidade, das próximas gerações. O capitalismo, em sua sede de lucros a\nqualquer custo, está literalmente destruindo nossa casa comum. E não temos outra. Os países\ncapitalistas mais ricos não têm cumprido sequer os tímidos compromissos e metas do Acordo\nde Paris. A COP de Belém, em 2025, por sua vez, foi pouco efetiva, sendo mais um palco para\nbelos discursos, mas sem efeitos práticos.\nNosso semiárido nordestino e nosso sertão potiguar vivem um rápido e perigoso processo de\ndesertificação, sem que haja quaisquer políticas públicas para mitigar ou reverter o processo.\nInfelizmente, a medíocre elite política do estado sequer tem noção da gravidade do problema e\nnada faz para enfrentar esse processo.\nNosso governo será diferente: a questão ambiental será uma prioridade absoluta. O grave\nproblema ambiental exige urgência. É preciso sair dos discursos vazios, do terreno apenas da"
+          },
+          {
+            "id": "analise-e-producao-de-textos-da-realizacao-de-encontros-e-mais-encontros",
+            "titulo": "análise e produção de textos, da realização de encontros e mais encontros que resultam em",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "análise e produção de textos, da realização de encontros e mais encontros que resultam em\nmuito pouco de prático, de efetivo, para enfrentar a crise ambiental.\nPrimeiramente é importante realizar uma forte campanha de educação de nosso povo sobre a\ngravidade da crise ambiental e sobre medidas que podem ser adotadas. Isso deve começar pela\nforte EDUCAÇÃO AMBIENTAL NAS ESCOLAS E UNIVERSIDADES, por nossas crianças e jovens, que\npor sua vez educarão as suas famílias.\nFaz-se necessário fazer a todos refletirem se o nível de consumo atual, especialmente de nossas\nclasses ricas e média alta, é mesmo necessário e sustentável. Tudo indica que não. As\norientações dos maiores especialistas do mundo no tema é que é preciso REDUZIR O CONSUMO,\nREUTILIZAR, RECICLAR.\nOutra questão é dar uma atenção especial ao TRATAMENTO CORRETO DO LIXO e dos demais\nresíduos, de nosso esgoto. Grande parte do plástico produzido pela humanidade está indo parar\nno fundo dos rios e dos mares. O Fórum de Davos avaliou que, já em 2050, deve haver uma\nmassa maior de plástico nos mares do que de peixes. O Rio Grande do Norte está muito atrasado\nna porcentagem do lixo e dos resíduos que trata e recicla. Por isso, a orientação de nosso\ngoverno será AMPLIAR RAPIDAMENTE A COLETA SELETIVA, AS USINAS DE TRATAMENTO DE\nRESÍDUOS EXISTENTES E CONSTRUIR NOVAS. A reciclagem pode nos gerar inclusive novas\nreceitas e milhares de novos empregos. Vamos observar, estudar atentamente, o que os países\ndo norte da Europa e o Japão estão fazendo nesse campo, com muito sucesso, enviando equipes\npara aprender.\nOutra questão central será incentivar a MUDANÇA DA MATRIZ DE TRANSPORTE. Hoje, em\nfunção da péssima qualidade do transporte público, vem crescendo assustadoramente a frota\nde carros e de motos em todo mundo, no Brasil e no Rio Grande do Norte também. O transporte\nindividual é mais prático, mais rápido, mais confortável, mas seu crescimento é insustentável\npara o planeta e só vem agravando a crise ambiental. Por isso, em parceria com as prefeituras,\nteremos como orientação INCENTIVAR O TRANSPORTE COLETIVO, especialmente na Grande\nNatal, de preferência com veículos elétricos.\nPara enfrentar o rápido processo de desertificação, nosso compromisso é PRODUZIR E PLANTAR\nINICIALMENTE 5 MILHÕES DE ÁRVORES EM NOSSO SERTÃO, em 4 anos, com prioridade ao\nSeridó. Isso é possível e muito barato. Para viabilizar essa meta inicial, a orientação será\nINSTALAR VIVEIROS EM TODAS AS ESCOLAS E REPARTICÕES PÚBLICAS ESTADUAIS, incentivando\nas prefeituras a fazerem o mesmo. As mudas serão de espécies nativas, mas resistentes ao nosso\nclima, como juazeiros e umbuzeiros, e frutíferas. O plantio ocorrerá em regime de agroflorestas,\nsegundo orientação de especialistas. Essa grande operação contribuirá para mitigar a grave crise\nambiental, tentar reverter o processo de desertificação e ao mesmo tempo construir uma\npoderosa agroindústria no estado, gerando milhares de novos empregos e receita. Isto é\npossível e é barato. Basta ter visão e decisão."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "33d359389db3ab676560ce12e5a3b2832efcf98910993bc7256397930b488fd6"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "db12a3c9eea25dfc7c1064aa53897adc667e8877e08e7f11553af2ba8deb6fc5"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "73a74b765e37299c98630da7e8e0b5b97123d7300946e7d30bc4d6313c826572"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "de5ece763a9e42371a731b051bf047bf6c19b7d417b2ffe7ef935a3f4d6e5be4"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "fd991be99ded67c8c8dd85768014cb40e616e02943edfae9d5fac856e31d0d94"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ea948ca1cd12b66ae154afe5e5f07ac3226eefc46a84397c328a3e442b1bf8a9"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "27754ca22f6a51b0c4bb5c2cd3d2d3e599f013f3ac78cae24c171aabcea12e30"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "2f5ffcf9f0bc358397d2e8967960129368e05a105a091df9e9ef730be4909d44"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "2a2e904c7de0b3f86ebbe4a59717803ea5a2a798bef46ec351856c424f0c8dfa"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "5ea25fbf804fc745d6efc7c72a0cd64b3539a40703aa7ba26e253f7bfd243c32"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "cc13cfbbdfb2e94fb1bff4f0b34691d668a35991d344f68675c21ed61b540419"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "8d8ce35b9c5b626f4ca017ab03ba7a6ec611d0ee6504dd7fdad5ee6fc92924dc"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "cd4c33feaee53ada3eacd05c17db41078b6b15ebcbc6888ed55b89505ce430dc"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "e19cb083e307e0e87a4b0a8fb47c7d3840a11c30012aa506e60e4eb38b59510c"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe erradicar o analfabetismo nos dois primeiros anos do governo por meio de um grande mutirão com aulas gratuitas nas escolas públicas. Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade. Na formação docente, será instituído um Programa Estadual Permanente de Formação Docente articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior. Para a UERN, o programa prevê aumento progressivo e sustentado do orçamento como medida de fortalecimento institucional. Na saúde, propõe a estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita. Na indústria, o governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando produtos hoje importados que possam ser produzidos aqui.",
+    "frases": [
+      {
+        "texto": "O programa propõe erradicar o analfabetismo nos dois primeiros anos do governo por meio de um grande mutirão com aulas gratuitas nas escolas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 2,
+            "trecho": "Nós propomos erradicar essa chaga social nos dois primeiros anos de nosso governo, com um grande mutirão, que envolva milhares de educadores, estudantes e voluntários, que irão às periferias das cidades nos fins de semana, ministrando aulas gratuitas nas escolas públicas federais, estaduais e municipais."
+          }
+        ]
+      },
+      {
+        "texto": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 3,
+            "trecho": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade e incentivar e apoiar as prefeituras a também adotarem tal modelo."
+          }
+        ]
+      },
+      {
+        "texto": "Na formação docente, será instituído um Programa Estadual Permanente de Formação Docente articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 4,
+            "trecho": "Será instituído um Programa Estadual Permanente de Formação Docente, articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior."
+          }
+        ]
+      },
+      {
+        "texto": "Para a UERN, o programa prevê aumento progressivo e sustentado do orçamento como medida de fortalecimento institucional.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 6,
+            "trecho": "Aumento progressivo e sustentado do orçamento;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe a estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 7,
+            "trecho": "Estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita."
+          }
+        ]
+      },
+      {
+        "texto": "Na indústria, o governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando produtos hoje importados que possam ser produzidos aqui.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 10,
+            "trecho": "Em função desse diagnóstico, nosso governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando rigorosamente centenas de produtos hoje importados, mas que possam ser produzidos aqui, com mão de obra local, gerando milhares de empregos."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "alfabetizacao",
+        "titulo": "Alfabetização",
+        "descricao": "Erradicação do analfabetismo por meio de aulas gratuitas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 2,
+            "trecho": "Nós propomos erradicar essa chaga social nos dois primeiros anos de nosso governo, com um grande mutirão, que envolva milhares de educadores, estudantes e voluntários, que irão às periferias das cidades nos fins de semana, ministrando aulas gratuitas nas escolas públicas federais, estaduais e municipais."
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Elevação da proporção de escolas estaduais com educação integral.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 3,
+            "trecho": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade"
+          }
+        ]
+      },
+      {
+        "id": "formacao-docente",
+        "titulo": "Formação docente",
+        "descricao": "Criação de um programa permanente de formação docente.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 4,
+            "trecho": "Será instituído um Programa Estadual Permanente de Formação Docente, articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior."
+          }
+        ]
+      },
+      {
+        "id": "fortalecimento-uern",
+        "titulo": "Fortalecimento da UERN",
+        "descricao": "Aumento progressivo e sustentado do orçamento da UERN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 6,
+            "trecho": "Aumento progressivo e sustentado do orçamento;"
+          }
+        ]
+      },
+      {
+        "id": "rede-regionalizada-de-saude",
+        "titulo": "Rede regionalizada de saúde",
+        "descricao": "Estruturação regionalizada e hierarquizada dos serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 7,
+            "trecho": "Estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita."
+          }
+        ]
+      },
+      {
+        "id": "industrializacao",
+        "titulo": "Industrialização",
+        "descricao": "Criação de um plano estadual de substituição de importações.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546757:01",
+            "pagina": 10,
+            "trecho": "Em função desse diagnóstico, nosso governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando rigorosamente centenas de produtos hoje importados, mas que possam ser produzidos aqui, com mão de obra local, gerando milhares de empregos."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:37:51.615Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:40:18.068Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de dois anos citado é literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:1:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é reprodução literal da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual de 50% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra, apenas reproduz o texto do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta sobre educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:2:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é cópia literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre formação docente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:3:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho aparece sob a seção de fortalecimento da UERN."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre a UERN."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:4:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho é cópia literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:5:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não cita números específicos, condizente com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre industrialização."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:frase:6:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:alfabetizacao:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:educacao-integral:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:formacao-docente:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:fortalecimento-uern:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:rede-regionalizada-de-saude:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo condiz com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546757:tema:industrializacao:documentos:RN:200002546757:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a proposta essencial."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002546757",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002546757:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 28863,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3489,
+          "reasoning_output_tokens": 2026
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28923,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23672,
+          "output_tokens_details": {
+            "thinking_tokens": 576
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28923,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23672,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28923,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28923
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3751974
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "615d47611274d44ec0ccb6ee800e47ca99a9882d8b0470c5530d31b2a6e83fd9",
+    "extractedTextSha256": "d2ab50881e8bd6922ef707c37509518b2d410efdd1d746244c8a43f7e0a9ace0",
+    "documentCount": 1,
+    "documentSetSha256": "ff502f17cabcba68123c260c640e82df63dfff1c69663801e27fce2b54bcd133",
+    "contentSha256": "fd5cb1221a2cb1d7280bf7b5a6b4b921ea3161bb9a9e278999ccc3c312757e92"
+  }
+}

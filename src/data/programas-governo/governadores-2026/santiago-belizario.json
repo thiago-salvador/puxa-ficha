@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002549995",
+    "slug": "santiago-belizario",
+    "nomeUrna": "SANTIAGO BELIZÁRIO",
+    "partido": "UP",
+    "arquivoNome": "2026PI180002549995_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002549995_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002549995:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002549995_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002549995_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "a74f339992f35acd1bcc984d265b14280495990aa621b31165703332a8bb6e47",
+        "extractedTextSha256": "f774ffd91459885f9934fe7148f65ee7294b7ad4ac0a65f54d74d04ea99bddf3",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "80-propostas-da-unidade-popular-para-transformar-o-piaui",
+            "titulo": "80 PROPOSTAS DA UNIDADE POPULAR PARA TRANSFORMAR O PIAUÍ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "80 PROPOSTAS DA UNIDADE POPULAR PARA TRANSFORMAR O PIAUÍ\nINTRODUÇÃO\nApós séculos de espoliação e exploração dos recursos naturais e do povo\npiauiense, com sucessivos governos mantendo e defendendo essa estrutura de\nexploração, temos um estado que apresenta as marcas dessas contradições.\nNa Educação, ainda somos o 2º estado do nordeste em analfabetismo\n(13,1%), 200 escolas não possuem água potável e aproximadamente 44 escolas\nnão têm energia elétrica, sendo ainda que mais da metade das escolas estaduais\nnão possuem quadras esportivas (56,5%) e nem biblioteca (68,1%). A rede ainda\nenfrenta a falta crônica de professores de Língua Portuguesa, Matemática, Física e\nQuímica, e os atuais trabalhadores da educação sofrem com a desvalorização dos\nsalários e das carreiras.\n​\nNa saúde temos a realidade da superlotação crônica, falta de infraestrutura e\num déficit severo de médicos. A resposta apresentada pelo governo de Rafael\nFonteles (PT), a privatização, já se apresenta como uma solução fracassada (como\nsempre denunciamos). O Tribunal de Contas do Estado do Piauí tem apontado\ndiversos problemas graves na atuação das Organizações Sociais da Saúde como:\ndesvio de dinheiro público, falta de transparência, fraude nas licitações etc.\n​\nNa política habitacional somos um dos estados mais atrasados do nordeste,\no déficit habitacional é de 130 mil moradias. O Piauí ocupa assim o segundo lugar\nno déficit habitacional no nordeste. Se mantém milhares de imóveis e terras que\nnão cumprem função social a serviço da especulação imobiliária, mantendo os\nvalores dos alugueis nas alturas, fazendo com que o piauiense comprometa 30% da\nsua renda com o aluguel.\nA vida das mulheres piauienses é marcada pela violência e a falta de\npolíticas públicas de proteção e combate a essa violência. Em 2025 foram 37 casos\nde feminicídio e a Casa da Mulher Brasileira da capital realizou 21.058\natendimentos, e mesmo nessa realidade apenas 3% dos municípios no estado\npossuem algum aparelho de proteção às mulheres (como delegacias\nespecializadas, casas de acolhimento, etc).\nSão conhecidos os casos de empresas públicas privatizadas, que se tornam\ngrandes fontes de reclamações pelos maus serviços prestados, péssimo\natendimento ao público e altas tarifas, como é as empresas de telefonia privatizadas\nnos anos 1990, que só entre 1998 e 2003 aumentaram as tarifas em 30% acima da\ninflação, fazendo o povo brasileiro pagar pela telefonia mais cara do mundo. ​O\ngovernador do Piauí, Rafael Fonteles (PT), privatizou a AGESPISA. Transformou"
+          },
+          {
+            "id": "agua-um-bem-essencial-para-a-vida-humana-em-mercadoria-alem-da-pessima",
+            "titulo": "água, um bem essencial para a vida humana, em mercadoria. Além da péssima",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "água, um bem essencial para a vida humana, em mercadoria. Além da péssima\nprestação do serviço, o trabalhador e a trabalhadora passaram a pagar um preço\nexorbitante nas contas de água e apesar das altas taxas, falta água em boa parte\ndo interior do Piauí. ​Achando pouco, o governador ainda demitiu 220 trabalhadores\ne trabalhadoras da AGESPISA, todos acima de 60 anos, que dificilmente serão\nreaproveitados no mercado de trabalho. Chega de Privatização! Pela reestatização\nda AGESPISA!\nÉ hora de por fim às oligarquias políticas que administram a exploração\ncapitalista e implementam um projeto de morte contra os trabalhadores. Enquanto\nas famílias do Piauí vivem endividadas, tendo que usar o cartão de crédito para\npagar a cesta básica, esses parasitas tramam para enriquecer ainda mais.\nTransformam a política piauiense em seus balcões de negócio e ​querem colocar\ntoda a família para sugar o dinheiro do povo. Temos que acabar com a farra desses\ncorruptos! É hora de colocar os trabalhadores nos espaços de poder, construindo\num programa popular e socialista.\nSomos a terra de Mandu Ladino, de Militana, de Esperança Garcia, da\nBatalha do Jenipapo, de Clóvis Moura, de Nego Bispo, de Cacica Maria Francisca,\nde Dona Deusa (Delza), que se coloram em luta para transformar de forma profunda\na realidade que viviam. E para honrar esse legado de um povo que nunca se calou\nfrente a exploração e a violência e que sempre se colocou em movimento, a\nUnidade Popular (UP) apresenta à população piauiense o seguinte Programa de\nGoverno Popular:\nECONOMIA E TRABALHO PARA O POVO\n1. Realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e\nprivados para eliminar irregularidades e renegociar dívidas que só servem para\nsangrar os recursos públicos e enriquecer bancos e especuladores do sistema\nfinanceiro;\n2. Auditoria e anulação da privatização da AGESPISA;\n3. Redução imediata das tarifas de água e esgoto;\n4. Criação de um Banco Estadual para fortalecer a capacidade de investimento\npúblico em infraestrutura, a exemplo do extinto Banco do Estado do Piauí (BEP);\n5. Revisão da política de isenções fiscais às grandes empresas e auditoria dos\ngrandes devedores de impostos para que estes quitarem integralmente suas\nobrigações;\n6. Criação de frentes emergenciais de trabalho para acabar com o desemprego e\nampliar as obras públicas de primeira necessidade para a população, como\nsaneamento e urbanização;"
+          },
+          {
+            "id": "7-retomada-da-empresa-de-obras-publicas-do-estado-do-piaui-criada-em-197",
+            "titulo": "7.Retomada da Empresa de Obras Públicas do Estado do Piauí, criada em 1979,",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "7.Retomada da Empresa de Obras Públicas do Estado do Piauí, criada em 1979,\ntornando-a vetor central do setor de construção civil do estado;\n8. Fim da Parceria Público–Privada na CEASA (Central de Abastecimento do\nPiauí);\n9. Gestão democrática do Estado, com eleição para todos os órgãos de direção e\nestatais pelos trabalhadores, acabando com as indicações eleitoreiras;\n10. Defender no plano nacional a Petrobrás 100% Estatal;\n11. Apoio à economia popular e aos pequenos comerciantes, especialmente nas\ncomunidades e bairros pobres, com crédito popular fornecido por um banco estatal\nestadual;\n12. Política de Crédito Estatal para micro e pequenos empresários;\n13. Garantia de renda mínima para a população com um programa social estadual\nque utilize o Sistema Único de Assistência Social como forma de acompanhar e\napoiar famílias em situação de miséria;\n14. Fim da perseguição aos camelôs e trabalhadores ambulantes;\n15. Ampliação imediata da rede de restaurantes populares;\nSEGURANÇA PÚBLICA\n16. Reestruturação das polícias Civil e Militar dentro dos limites do atual marco\nconstitucional;\n17. Mudança nos critérios de seleção e treinamento de novos policiais, com enfoque\nnos direitos humanos, não letalidade, antirracismo e feminismo;\n18. Acabar com as operações policiais violentas nas comunidades, substituindo-as\npor ações de inteligência em todo o estado, com forte fiscalização e controle das\narmas e munições em controle do governo estadual;\n19. Atrelar o atendimento de requisitos de direitos humanos e sociais à progressão\nnas carreiras policiais, desestimulando a valorização da truculência policial;\n20. Reformulação do Conselho Estadual de Segurança Pública, garantindo maior\nparticipação popular e a criação das assembleias populares dedicadas à Segurança\nPública, assegurando integração real com as comunidades e os territórios;\n21. Transformar as penitenciárias e cadeias em Unidades de Reeducação Popular.\nSerão centros para a formação, acompanhamento psicossocial e profissionalização\nde pessoas em conflito com a lei;\n22. Buscar parcerias e convênios com empresas, associações de bairro e ONGs\npara viabilizar a ressocialização real das pessoas em conflito com a lei. O governo\ndo estado dará atenção e oportunidades de emprego para todos/as os\ncondenados/as que se destacarem nos processos formativos das Unidades de\nEducação Popular;\n23. Ampliação dos investimentos na infraestrutura do sistema socioeducativo no\nPiauí, para superar as crises crônicas de estrutura, segurança e pessoal, garantindo\nde fato as medidas socioeducativas e integradoras previstas no ECA;\n24. Trabalhar junto às Polícia Federal e Rodoviária Federal para investigar,\nperseguir e prender os verdadeiros criminosos de alta periculosidade do Piauí. Eles"
+          },
+          {
+            "id": "nao-sao-moradores-de-comunidade-mas-pessoas-com-cargos-publicos",
+            "titulo": "não são moradores de comunidade, mas pessoas com cargos públicos,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "não são moradores de comunidade, mas pessoas com cargos públicos,\nempresários, políticos e policiais corruptos que se escondem atrás de privilégios e\nde negócios de fachada;\n25. Formar rede de casas-abrigo para mulheres em situação de violência e\nvulnerabilidade, oferecendo apoio multiprofissional às vítimas de violência\ndoméstica, violência sexual, violência obstétrica e assédio moral, fortalecendo a\nrede de apoio junto às organizações feministas;\n26. Enfrentamento direto e diário às milícias. Afastamento imediato de qualquer\nservidor da segurança que tenha suspeita de ligação com milícias;\nSAÚDE PÚBLICA\n27. Retomada da administração direta da saúde pública pelo Estado, encerrando e\nauditando os contratos com as OSS (Organizações Sociais de Saúde);\n28. Realização de concursos públicos para saúde e recomposição de orçamento\npara a área;\n29. Criação de entidade pública de pesquisa e produção de vacinas e\nmedicamentos, articulada com as instituições de Ciência, Tecnologia e Inovação\nestabelecidas no Estado;\n30. Criação de Laboratório Farmacêutico do Estado do Piauí para a produção de\nremédios a baixo custo para a população;\n31. Valorização profissional: garantir aumentos anuais a todos os servidores da\nsaúde, plano de cargos e carreiras para os servidores, fim dos contratos\nterceirizados para atividades-meio, com contratação direta também de pessoal para\náreas de limpeza, segurança, maqueiros etc.\n32. Criação de uma rede de apoio à saúde mental para a população, ampliando a\ncapacidade de atendimento dos CAPS (Centro de Atenção Psicossocial),\ndisponibilizando equipes de profissionais da área para visitar as instituições de\nensino públicas e realizando campanhas permanentes sobre o tema;\n33. Universalização do saneamento básico em todo o estado para diminuir os\níndices de doenças evitáveis, que ainda se proliferam devido à falta de tratamento\nde água e esgoto;\n34. Garantia de atendimento primário e Saúde da Família em todas as cidades;\n35. Intervir junto ao Governo Federal para garantir a abertura de todos os leitos da\nrede federal de hospitais, exigindo concursos públicos federais para atender a\ndemanda de pessoal;\nEDUCAÇÃO\n36. Defesa da educação pública, gratuita, laica e de qualidade;\n37. Garantir o livre acesso dos estudantes da rede pública de educação às escolas\ntécnicas e a Universidade Estadual do Piauí com ampliação da rede;\n38. Erradicar o Analfabestismo no Piauí até 2030;"
+          },
+          {
+            "id": "39-concurso-publico-imediato-para-a-uespi-para-acabar-com-a-carencia-cro",
+            "titulo": "39. Concurso Público imediato para a UESPI, para acabar com a carência crônica",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "39. Concurso Público imediato para a UESPI, para acabar com a carência crônica\nde professores que afeta cerca de 300 disciplinas por semestre;\n40. Fim do programa de escolas cívico-militares e Desmilitarização de qualquer\nescola da rede estadual que esteja funcionando nesse modelo;\n41. Criar um observatório da política educacional piauiense para acompanhar as\nofensivas do capital e desenvolver estratégias de defesa da educação pública.\nNesse sentido, propomos acabar com os investimentos públicos em fundações e\noutras instituições privadas. O dinheiro público deve ir para a educação pública!\n42. Aprovação de um Novo Plano de Cargos, Carreiras e Salários (PCCS) da\neducação no Piauí, garantindo de fato valorização profissional para os trabalhadores\nda educação;\n43. Instituir a Política Estadual de Auxílio-permanência Estudantil tanto para\nestudantes da educação básica como do ensino superior. Construção de\nalojamentos estudantis nas proximidades das escolas técnicas e universidades\nestaduais;\n44. Ampliação dos investimentos em infraestrutura das escolas estaduais;\n45. Revisar a política de alimentação escolar, priorizando produtores locais da\nagricultura familiar, garantindo alimentos de qualidade e livres de agrotóxicos para a\ncomunidade escolar e fomentando a economia local, com a inclusão de opções\nvegetarianas;\n46. Manutenção obrigatória das 12 disciplinas (Artes, Educação Física, Língua\nPortuguesa, Língua Estrangeira, Biologia, Física, Química, Matemática, Filosofia,\nGeografia, História e Sociologia) na grade curricular das instituições que ofertam o\nensino médio e suas modalidades. Revogação da aplicação do Novo Ensino Médio\nno Piauí;\n47. Avançar no processo de interiorização da Universidade Estadual do Piauí,\ngarantindo assim a democratização do ensino superior, da pesquisa e extensão\npara toda a população do estado;\n48. Reverter o fechamento sistemático de turmas e escolas que ofertam o ensino\nnoturno. Manutenção, em todas as escolas, de turmas para atendimento da classe\ntrabalhadora, bem como a manutenção da Educação de Jovens e Adultos (EJA).\n49. Instituir uma política de abono de ponto para as/os profissionais da educação\nem atividades de formação continuada;\n50. Instituir convênios entre a Secretaria Estadual de Educação e as Instituições\nPúblicas de Ensino do Estado do Piauí para a promoção de atividades de formação\ncontinuada gratuitas para as/os profissionais da educação;\n51. Instituir convênios entre a Secretaria Estadual de Educação e as Instituições\nPúblicas de Ensino do Estado do Piauí para a garantia de reserva de vagas para\nas/os profissionais da educação nos Programas de Pós-Graduação Stricto Sensu;\nHABITAÇÃO, MOBILIDADE URBANA E DIREITO À CIDADE"
+          },
+          {
+            "id": "52-garantir-a-gestao-democratica-e-o-controle-social-da-cidade-como-form",
+            "titulo": "52. Garantir a gestão democrática e o controle social da cidade como formas de",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "52. Garantir a gestão democrática e o controle social da cidade como formas de\nplanejar, produzir e governar coletivamente o espaço urbano. Criação e promoção\ndo Conselho Estadual das Cidades;\n53. Promover uma profunda Reforma Urbana que democratize o espaço das\ncidades. Garantir que imóveis e terrenos desocupados sejam destinados à\neliminação do déficit habitacional. Fim dos despejos;\n54. Investir na construção de casas populares por meio de cooperativas de\ntrabalhadores e mutirões. O Governo do Estado deve parar de dar dinheiro para\ngrandes empreiteiras e oferecer capacitação técnica, por meio de convênios com\nentidades profissionais e instituições de ensino, para que o próprio povo construa\nsuas residências. As unidades habitacionais também podem ser projetadas de\nmaneira sustentável, utilizando tecnologias já comprovadas, como tijolo ecológico e\nenergia solar;\n55. Realizar a regularização fundiária de unidades habitacionais em favelas,\nocupações e bairros populares para garantir o direito humano à moradia, assim\ncomo um programa de apoio e financiamento de reformas nas casas;\n56. Ampliar vagas em creches em tempo integral, para garantir que todas as\ncrianças tenham seu direito à educação respeitado e para que as mães consigam\nestudar e trabalhar.\n57. Redução das passagens e implementação da Política de Bilhete Único\nIntermodal e Intermunicipal;\n58. Implementar o passe-livre intermunicipal para os estudantes de todas as séries\ne etapas do ensino, inclusive de instituições de ensino superior públicas;\n59. Ampliar a malha ferroviária e metroviária por meio das frentes emergenciais de\ntrabalho;\nCULTURA E JUVENTUDE\n60. Criação da Agência Estadual do Primeiro Emprego, com banco de dados de\nempregos específicos para a juventude, especialmente para juventude periférica.\nÊnfase nos setores mais promissores da economia piauiense;\n61. Promoção de política voltada para prevenção de gravidez na adolescência e\nproteção para as jovens mães, através do estabelecimento de políticas de\npermanência para as mães nas escolas e universidades públicas;\n62. Valorização da cultura de favela e periférica! Reconhecimento do Funk, Rap e\ndemais produções culturais das periferias como patrimônio imaterial. Garantia do\ndireito à livre expressão dessas manifestações culturais. Implementação de uma\npolítica de fomento à cultura de favela, através da divulgação de editais e da\ngarantia da utilização e expansão dos aparelhos culturais;\n63. Defesa da vida da Juventude Negra! Pelo fim da violência policial nas favelas e\nperiferias. Implementação imediata de câmeras nos uniformes dos policiais e fim\ndas operações policiais nas favelas;\n64. Pela promoção da prática esportiva entre a juventude! Fomento a federações e\nligas esportivas. Melhorias da infraestrutura nas escolas, praças públicas, e"
+          },
+          {
+            "id": "ciclovias-apoio-as-entidades-estudantis-e-atleticas-universitarias-para",
+            "titulo": "ciclovias. Apoio às entidades estudantis e atléticas universitárias para realização de",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "ciclovias. Apoio às entidades estudantis e atléticas universitárias para realização de\njogos estudantis no estado;\n65. Ampliação da representação da sociedade civil no Conselho Estadual da\nJuventude. Mudança de caráter do conselho, que terá caráter deliberativo e servirá\nde apoio para criação de políticas públicas para a juventude;\n66. Criação do Fundo Estadual de Juventude do Estado do Piauí;\n67. Apoio a pré-vestibulares populares através de incentivos fiscais, auxílio para\nalocação de espaços e doação de materiais;\n68. Realização de parcerias com as universidades públicas e privadas e escolas\ntécnicas para a realização de um grande programa de estágios no serviço público\nestadual através da reserva de vagas nesse setor;\nDIREITOS HUMANOS\n69. Unificar todas as políticas públicas relacionadas aos Direitos Humanos em uma\nSecretaria com foco único, hoje a pasta é compartilhada com a pasta de assistência\nsocial e trabalho, na Secretaria de Estado de Assistência Social, Trabalho e Direitos\nHumanos (SASC) que congrega 5 superintendências;\n70. Assegurar a liberdade religiosa, especialmente a promoção do respeito às\nreligiões de matriz afro-brasileira (candomblé e umbanda). Ter como prioridade o\nenfrentamento por parte do governo dos crimes de intolerância religiosa contra\nessas religiões;\n71. Combater o racismo e punir os racistas será uma das prioridades do governo,\ntanto dentro das instituições do estado como na sociedade em geral;\n72. Efetivar as Leis 10.639/2003 e 11.645/08, que asseguram o ensino de História e\nCultura Africana, Afro-brasileira e Indígena em todas as escolas da rede estadual;\n73. Criar casas-abrigo para membros da comunidade LGBTIA+ vítimas de exclusão\nfamiliar, seja por processo de violência física ou psicológica, de modo que não\nfiquem desamparados e contem com apoio multiprofissional. Assegurar o uso do\nnome social em todos os formulários, protocolos e demais atos no âmbito da\nadministração estadual para pessoas transgênero e não binárias;\n74. Ter como centro no atendimento à população LGBTIA+ a formação educacional\ne profissional e o combate à pobreza e miséria, em especial à população trans,\ngarantindo acesso a empregos de qualidade;\n75. Organizar a acessibilidade em todos os espaços públicos e cobrar o\ncumprimento das diretrizes nos espaços privados, no sentido de garantir o pleno\nacesso das pessoas com deficiência à cidade;\n76. Promover a educação inclusiva como parte do sistema de educação do estado,\ncom a inserção de pessoas com deficiência nas turmas regulares da educação\nbásica e superior;\n77. Facilitar o ingresso da mulher ao mercado de trabalho, garantindo acesso à\neducação e capacitação profissional gratuita;\n78. Garantir o debate de gênero nas escolas voltado ao combate ao machismo.\nAmpliação e efetivo funcionamento da rede de enfrentamento à violência contra a"
+          },
+          {
+            "id": "mulher-com-mais-equipamentos-de-atendimento-e-acolhimento-das-vitimas-pa",
+            "titulo": "mulher com mais equipamentos de atendimento e acolhimento das vítimas. Para a",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "mulher com mais equipamentos de atendimento e acolhimento das vítimas. Para a\nimplementação dessas propostas é importante que o estado promova parcerias com\nos movimentos sociais;\n79. Ter no enfrentamento a violência obstétrica uma das prioridades da política de\nsaúde das pessoas grávidas;\n80. Implementação de todas as medidas e recomendações previstas no Relatório\nFinal da Comissão Nacional da Verdade, documento da alçada do poder público\nestadual;"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "9114c0f69451c4d2da8884386671c88c4c323d2e949004cc2bb02c94361e9ecf"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7f3626ec75bde0355a2cd7be100b2cf5464baa322361f60dd14555a984b5a0ee"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0bae8e0b9d2099c93557b4cb27c9e79945485b7fc16588a59958ddd75c229044"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "cc111a7fee2b731a2d2c2b5a06d5492be64db28bea4cf4bdaf83dd9ca6536444"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ba32a18ee940caf7961d4cae05d852bba9ea2319a7369edffedff9b5926b9d1a"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c53858e65934faaa063d9cd309f2c844c1452eed726f0669884d3f04d664c1ad"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "d5ae5dbe89f695f49eeec6b1ba67bba75f3a7a61d4e0e25341b325a98d2af51c"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0b89512f9293233143c7446dd7e5a37f9d364d213c420313a46cc228b4196bd7"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados para eliminar irregularidades e renegociar dívidas. O documento propõe a criação de um Banco Estadual para fortalecer a capacidade de investimento público em infraestrutura, a exemplo do extinto Banco do Estado do Piauí. Na saúde pública, o programa prevê a retomada da administração direta pelo Estado, encerrando e auditando os contratos com as Organizações Sociais de Saúde. O texto prevê a garantia de atendimento primário e Saúde da Família em todas as cidades. Na educação, o programa defende a educação pública, gratuita, laica e de qualidade. Na política habitacional, propõe investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões. O programa prevê a criação do Fundo Estadual de Juventude do Estado do Piauí.",
+    "frases": [
+      {
+        "texto": "O programa prevê realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados para eliminar irregularidades e renegociar dívidas.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 2,
+            "trecho": "Realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados para eliminar irregularidades e renegociar dívidas"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a criação de um Banco Estadual para fortalecer a capacidade de investimento público em infraestrutura, a exemplo do extinto Banco do Estado do Piauí.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 2,
+            "trecho": "Criação de um Banco Estadual para fortalecer a capacidade de investimento público em infraestrutura, a exemplo do extinto Banco do Estado do Piauí"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, o programa prevê a retomada da administração direta pelo Estado, encerrando e auditando os contratos com as Organizações Sociais de Saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 4,
+            "trecho": "Retomada da administração direta da saúde pública pelo Estado, encerrando e auditando os contratos com as OSS (Organizações Sociais de Saúde)"
+          }
+        ]
+      },
+      {
+        "texto": "O texto prevê a garantia de atendimento primário e Saúde da Família em todas as cidades.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 4,
+            "trecho": "Garantia de atendimento primário e Saúde da Família em todas as cidades"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa defende a educação pública, gratuita, laica e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 4,
+            "trecho": "Defesa da educação pública, gratuita, laica e de qualidade"
+          }
+        ]
+      },
+      {
+        "texto": "Na política habitacional, propõe investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 6,
+            "trecho": "Investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a criação do Fundo Estadual de Juventude do Estado do Piauí.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 7,
+            "trecho": "Criação do Fundo Estadual de Juventude do Estado do Piauí"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "divida-publica",
+        "titulo": "Dívida pública",
+        "descricao": "O eixo econômico prevê auditoria da dívida pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 2,
+            "trecho": "Realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "O eixo de saúde prevê a retomada da administração direta pelo Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 4,
+            "trecho": "Retomada da administração direta da saúde pública pelo Estado"
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "O eixo educacional defende a educação pública, gratuita, laica e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 4,
+            "trecho": "Defesa da educação pública, gratuita, laica e de qualidade"
+          }
+        ]
+      },
+      {
+        "id": "habitacao-popular",
+        "titulo": "Habitação popular",
+        "descricao": "O eixo habitacional prevê a construção de casas populares por cooperativas de trabalhadores.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 6,
+            "trecho": "Investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões"
+          }
+        ]
+      },
+      {
+        "id": "juventude",
+        "titulo": "Juventude",
+        "descricao": "O eixo de juventude prevê um fundo estadual específico.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549995:01",
+            "pagina": 7,
+            "trecho": "Criação do Fundo Estadual de Juventude do Estado do Piauí"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:47:10.453Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:49:09.043Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: auditoria da dívida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:1:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números relevantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente: criação de banco estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:2:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde à afirmação, OSS = Organizações Sociais de Saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: saúde/OSS."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:3:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: atenção primária de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:4:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:5:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:6:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: juventude."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:frase:7:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte direto do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: dívida pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:divida-publica:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte direto do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:saude-publica:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:educacao-publica:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte direto do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:habitacao-popular:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:suporte",
+        "verdict": "yes",
+        "reason": "Suporte direto do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: juventude."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549995:tema:juventude:documentos:PI:180002549995:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral do resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002549995",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002549995:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25595,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2517,
+          "reasoning_output_tokens": 1375
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22603,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19487,
+          "output_tokens_details": {
+            "thinking_tokens": 463
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22603,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19487,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22603,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22603
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3033154
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "a74f339992f35acd1bcc984d265b14280495990aa621b31165703332a8bb6e47",
+    "extractedTextSha256": "f774ffd91459885f9934fe7148f65ee7294b7ad4ac0a65f54d74d04ea99bddf3",
+    "documentCount": 1,
+    "documentSetSha256": "199ada6962e7438b57e81111d6158ca24dde124c62fefa772891d855853707c4",
+    "contentSha256": "9ce20e91bed2f6b9ede9838d9e9b6bfef596c9245f381915cc1bbb1654bb2a3e"
+  }
+}

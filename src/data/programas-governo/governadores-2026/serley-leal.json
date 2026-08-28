@@ -1,0 +1,1833 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002533729",
+    "slug": "serley-leal",
+    "nomeUrna": "SERLEY LEAL",
+    "partido": "UP",
+    "arquivoNome": "2026CE60002533729_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002533729_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002533729:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002533729_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002533729_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "245dcb42335d6c5e45172e817535b20fb66cab7f7761c96d7ecc9533e64cdd1a",
+        "extractedTextSha256": "72cbda09375abf897581f9f3f038316e436ccfd22a4a9d50f92a509874989d8f",
+        "paginas": 85,
+        "secoes": [
+          {
+            "id": "unidade-popular-pelo-socialismo-ceara",
+            "titulo": "Unidade Popular pelo Socialismo Ceará",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Unidade Popular pelo Socialismo Ceará\n\nLUTAR PRA\n\nAVANÇAR ,\n\nCEARA\n\nO CEARA\nNAS MÃOS DO\n\nPOVO!\nPOVO!\n\n1"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n\n2\n\nApresentação…………………………………………………………………………......................03\n1.Desenvolvimento Econômico..………………………….……………...............05\n2.Segurança Pública………………………………………..………….…….………...........17\n3.Educação………….………………………………………………………….…..…..................24\n4.Moradia..…………………………………..…………………………….……….…....................35\n5.Saúde..…………………………………..………………..………………………….....................40\n6.Cultura……………………………..…..……………………………………………....................48\n7.Étnico Racial……………………..……………..……………………..…………................…55\n8.LGBTTIA+………………………………………………………..………………......................58\n9.PCDs...……………………...….…………………..………………………………......................60\n10.Transporte……….…………………………………………………….………….....................65\n11.Esporte…………………………………………………………………….……….......................69\n12.Meio Ambiente ……………………………………………..…..…………………..............72\n13.Mulheres……………………………...………………………………………….....................…78"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO:",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO:\n\n3\n\nO Ceará é um estado forjado na resistência do seu povo. Desde\nas lutas abolicionistas que ecoaram nos quilombos e nas ruas de\nFortaleza, passando pela bravura dos vaqueiros e camponeses\nque enfrentaram a seca e a exploração latifundiária, até os\ntrabalhadores e trabalhadoras que construíram as greves\noperárias do século XX e os movimentos populares que\nderrubaram ditaduras e conquistaram a democracia, nossa\nhistória é marcada por lutadores e lutadoras que nunca se\ncurvaram. Homens e mulheres como os mártires da\nConfederação do Equador, as lideranças indígenas e\nquilombolas que defendem a terra até hoje, os sindicalistas,\nestudantes, camponeses sem terra, mulheres negras, povos\noriginários e periferias que organizaram ocupações, marchas e\nrebeliões contra a fome, a violência e a injustiça.\nEssas tradições de luta popular não são apenas memória: são\no combustível para o presente. Vivemos sob o sistema\ncapitalista que concentra riqueza nas mãos de poucos, explora o\ntrabalho, destrói o meio ambiente, mantém a maioria negra e\npobre em condições de vulnerabilidade, e usa o Estado para\nproteger privilégios. No Ceará, isso se manifesta na\ndesigualdade brutal entre Fortaleza e o interior, na precariedade\ndo serviço público para beneficiar os bilionários, na violência que\nceifa principalmente a juventude negra, na disputa por terras\nindígenas e quilombolas, e na submissão da economia aos\ninteresses de grandes empreendimentos que não resolvem os\nproblemas do nosso povo."
+          },
+          {
+            "id": "4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "4\n\nNão basta administrar melhor o capitalismo. É preciso\ntransformá-lo. Construir o socialismo no Ceará significa colocar\no povo no centro das decisões: democratizar a terra, garantir\neducação e saúde de qualidade para todos, valorizar o trabalho,\nproteger o meio ambiente com justiça social, promover a\nsoberania popular e combater todas as formas de opressão —\nde classe, raça, gênero e território. Significa um governo que\nnão tema confrontar os poderosos, que fortaleça os\nmovimentos sociais como sujeitos políticos, que invista\nmaciçamente em políticas públicas universalistas e que avance\nna organização da economia para servir às necessidades\nhumanas, não ao lucro.\nNossa candidatura popular de esquerda nasce dessa tradição\nde luta e da urgência de um projeto socialista para o Ceará. Não\nprometemos soluções fáceis ou conciliações impossíveis.\nPropomos um caminho de acumulação de forças, de\norganização popular e de transformação profunda. Porque o\nfuturo que sonhamos — com a classe trabalhadora no poder —\nsó será construído pela luta organizada do nosso povo.\nVamos juntos!"
+          },
+          {
+            "id": "1-desenvolvimento",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n5\n\nA economia do Ceará é uma das que mais crescem no Brasil\natualmente. O aumento do Produto Interno Bruto (PIB) anual\nfrequentemente supera a média nacional1. O estado ocupa a\nterceira posição entre as economias do Nordeste brasileiro. Com\n9.268.836 habitantes, o Ceará está na 8ª posição entre as\nunidades da Federação mais populosas do Brasil. Em seu\nterritório, diversas atividades produtivas são desenvolvidas em\ndiferentes sub-regiões do território, apesar da Grande Fortaleza\nabrigar boa parte delas, empregando formalmente cerca de 1,5\nmilhão de pessoas.\nO setor de serviços é o principal motor da economia cearense,\nimpulsionado principalmente por atividades relacionadas aos\nsetores de turismo, comércio atacadista e varejista e hub\nlogístico e tecnológico.\nA indústria cearense tem crescido nas áreas de alta tecnologia e\nde energia, como siderurgia e metalurgia - a Companhia\nSiderúrgica do Pecém (CSP) é responsável por mais de 50%\ndas exportações industriais do estado. Os primeiros projetos de\nenergia eólica e solar foram desenvolvidos no Ceará.\nAtualmente, o hub de Hidrogênio Verde atrai bilhões em\ninvestimentos internacionais. Tradicionais no estado, o setor\ntêxtil ainda é presente e o ramo calçadista é um dos maiores do\npaís."
+          },
+          {
+            "id": "1-desenvolvimento-2",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n6\n\nQuanto ao setor agropecuário, o estado é destaque na\nfruticultura de exportação, vendendo principalmente melão,\nmanga e melancia para o mercado internacional. O Ceará é\ntambém o maior produtor de castanha de cajú e de camarão do\nBrasil, além de ter uma produção relevante de tilápia. Ainda que\nnão representem individualmente parte significativa do PIB\nestadual, o Ceará produz cana-de-açúcar, mandioca, feijão,\narroz, milho, algodão, e muitos outros produtos básicos para a\npopulação. Temos vários recursos naturais em nosso território,\ncomo ferro, urânio, fosfato2, granito, quartzito, calcário, sal\nmarinho, petróleo, magnésio e gás natural.\nÉ nítido o crescimento econômico do nosso estado, mas os\nresultados da produção chegam em migalhas aos que precisam\nvender a própria força de trabalho para sobreviver. Segundo\ndados do IBGE, em média, a renda per capita no estado foi de\nR$1.390,00 em 2025. Com isso, o Ceará ocupa a 26ª posição\n(penúltimo lugar) entre as 27 unidades da Federação. Não\nbastasse o trabalhador e a trabalhadora cearenses receberem\nbaixos salários, estamos entre os brasileiros mais mal\nremunerados do país."
+          },
+          {
+            "id": "1-desenvolvimento-3",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n7\n\nTal cenário se agrava pelo Ceará ter as maiores taxas de\ninformalidade do Brasil, geralmente oscilando entre 48% e 52%\nda população ocupada. Isso significa que, para cada dez\ntrabalhadores, cerca de cinco não possuem carteira assinada ou\nregistro de CNPJ (como MEI). Além de não contarem com\ndireitos como FGTS, abono salarial e seguridade social, os\ninformais têm renda média 40% a 50% menor do que a do\ntrabalhador formal, o que contribui muito para a baixa renda per\ncapita constatada ao observar o mercado de trabalho como um\ntodo. Diante da tamanha dificuldade, não é surpresa que boa\nparte da população recorra às políticas de assistência social.\nSegundo dados de abril de 2026, mais de 1,3 milhão de famílias\nestão contempladas pelo Bolsa Família no Ceará.\nDeixando de lado o povo trabalhador, sobre uma parcela da\npopulação muito pequena, que, por mais absurdo que pareça,\ndetém a maior parte da riqueza gerada no Ceará, os números\nsão escandalosos: em 2023, a renda obtida por 1% da população\nmais rica no Ceará foi, em média, 34,4 vezes mais que a obtida\npelos 50% mais pobres. Esse pequeno grupo de endinheirados\nconcentra mais de 20% da renda total do Estado, com\nrendimentos anuais que superam R$570 mil."
+          },
+          {
+            "id": "1-desenvolvimento-4",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n8\n\nPor que temos cadeias econômicas, diversidade produtiva,\nriquezas naturais, e mesmo assim temos tantas pessoas\ndesempregadas e/ou em situação de pobreza no nosso estado?\nPor que milhões de pessoas sofrem com falta de moradia digna,\ncom alimentação restrita e insuficiente para ter boa saúde, com\nlimitado acesso a serviços médicos? Essa realidade é imposta\npela sociedade que hoje ordena nossas vidas: a sociedade\ncapitalista, onde o lucro em detrimento da dignidade humana é\na lógica fundamental. Todo o funcionamento da economia visa\natender interesses de um punhado de pessoas já muito ricas, e\nnão para satisfazer o conjunto da população, em especial, os\ntrabalhadores, verdadeiros responsáveis pela geração da\nimensa riqueza no Ceará.\nQUAL\nENFRENTA A\n\nMODELO\nDE\nDESENVOLVIMENTO\nDESIGUALDADE SOCIAL?\n\nHá décadas, os governos estaduais no Ceará imprimem\ncaracterísticas do chamado desenvolvimento regional\nendógeno, que disserta sobre vocações locais autônomas com\npotencial para exportação, oferta de crédito para pequenos e\nmédios negócios, incentivos para grandes grupos econômicos\ninternacionais e rigor no equilíbrio das contas públicas."
+          },
+          {
+            "id": "1-desenvolvimento-5",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n9\n\nSem o floreio das narrativas, vê-se que toda essa lógica não\npassa pelo combate às desigualdades. As políticas desenhadas\na partir de tal modelo tendem a aumentar a dependência de\ngrandes capitais globais, endividam pequenas empresas e tiram\ndos entes públicos a direção das ações de desenvolvimento.\nAlém disso, não existe das grandes empresas, incentivadas sem\nestratégia social transformadora, o menor interesse no\ndesenvolvimento de cadeias de valor agregado no território\ncearense e menos ainda no atendimento de demandas básicas\nda população cearense. Na busca por super lucros, desprezam\nfomento à infraestrutura, melhores condições de trabalho e\ninvestimentos tecnológicos que transbordem para todo o\nterritório. Quando há menção à instalação produtiva sofisticada,\nos empregos de melhor remuneração são disponibilizados a\nnão-residentes, abusam da contratação de trabalhadores\nterceirizados e os impactos ambientais são absolutamente\ndestrutivos. O modelo de desenvolvimento do Ceará tem sido\nsimplesmente a lógica capitalista em pleno funcionamento nos\nterritórios periféricos.\nAlguns projetos demonstram tal descasamento com os\ninteresses da população. A empresa Fraport, para construir um\nCentro Logístico na região do aeroporto, em Fortaleza,\ndesmatou uma área de pouco mais de 60 hectares, um crime\nambiental descomunal. Em poucos meses, casas próximas ao"
+          },
+          {
+            "id": "1-desenvolvimento-6",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n10\n\nlocal sofreram com alagamentos que causaram grandes\nprejuízos às famílias.\nTambém no Ceará, no município de Caucaia, o projeto do maior\nData Center do mundo promete consumir diariamente a mesma\nquantidade de energia que 2,2 milhões de brasileiros. A escassez\nhídrica é uma realidade antiga no Estado, os próprios entes\ngovernamentais reconhecem, mas a licença ambiental por parte\ndo Governo foi emitida autorizando o uso de um volume d’água\nmaior que do solicitado pela própria empresa responsável pelo\nprojeto. Além disso, o Data Center está sendo construído em\nterritório indígena do povo Anacé, que serão os principais\nprejudicados caso esse projeto venha a se efetivar,\nconfigurando mais um ataque a um povo historicamente\noprimido.\nA atração de investimentos privados tem se dado sem\ncontrapartidas ao Ceará. A competição entre Estados por\ninstalações produtivas em seus territórios provocou o uso\nindiscriminado de incentivos fiscais. Foram amplamente\nutilizados para impulsionar a economia cearense, mas nunca\nforam capazes de substituir as políticas estruturais de\ndesenvolvimento. Vale lembrar que é comum que hoje os\nempréstimos tomados para financiar a pauta econômica do\nEstado venham de grandes bancos privados e internacionais,\ncomo o Banco Mundial. Não foi à toa que os governos"
+          },
+          {
+            "id": "1-desenvolvimento-7",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n11\n\nprivatizaram o Banco Estadual do Ceará, impondo ao Estado o\nendividamento a juros de mercado, muitas vezes em moeda\nestrangeira.\nEm suma, nos últimos anos os governos do Ceará prepararam o\nterreno para o grande capital se instalar e se reproduzir,\ncontando com expressivos incentivos fiscais e carta branca para\nexplorar mais intensamente a força de trabalho cearense. A\nverdade é que as ações governamentais, que não exigiam\ncontrapartidas das grandes empresas beneficiadas pelos\nincentivos, transferiram recursos públicos à iniciativa privada.\nNão bastasse isso, a dinamização da economia ficou a cargo de\ndecisões privadas, com suas “vocações, potencialidades e\nautonomia”, enfraquecendo a coordenação estatal capaz de\npromover os efeitos de encadeamento desejáveis para o\nterritório e para a população.\nÉ PRECISO OUTRO MODELO DE DESENVOLVIMENTO\nSabemos que o crescimento econômico é fundamental para\nimpulsionar processos de desenvolvimento e que a\nindustrialização permite padrões de crescimento estruturais.\nAcontece que o orçamento estadual é insuficiente para os\ngrandes projetos estatais necessários, comparado a outros\nEstados mais dinâmicos e favorecidos pelo circuito de"
+          },
+          {
+            "id": "1-desenvolvimento-8",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n12\n\nacumulação do grande capital. É preciso registrar ainda que o\nGoverno Estadual não tem participação nas diretrizes das\npolíticas macroeconômicas, que influenciam diretamente as\ndecisões públicas e privadas dos agentes econômicos. Logo, o\nCeará, assim como os Estados subnacionais em geral, é incapaz\nde suprir a ausência de financiamento e de agências de\ndesenvolvimento estruturadas a partir de uma estratégia\nnacional.\nA Unidade Popular defende um modelo de desenvolvimento\nque se mobilize a partir das necessidades da população. Em\nnível federal, as políticas econômicas não podem mais privilegiar\nos centros mais dinâmicos do país, o que tem reforçado a\nconcentração de tal dinamismo no Sudeste. Enquanto\nmonopólios e grandes consórcios tiverem liberdade para se\ninstalarem em qualquer lugar do país, os estados travarão\nguerras para atração de empresas, rebaixando condições e\ndeixando o poder econômico numa oportunista posição de\nbarganha.\nPor tudo isso, mais que uma política que trate seriamente as\nquestões produtivas locais, evidenciamos a necessidade de\neleger nosso programa para a presidência do Brasil, através da\ncandidatura de Samara Martins, para a verdadeira\ntransformação econômica que o Ceará precisa."
+          },
+          {
+            "id": "1-desenvolvimento-9",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E FINANÇAS\nPÚBLICAS\n\n13\n\nA estrutura tributária, que hoje pesa na esfera do consumo,\ndeve aumentar a incidência nas grandes rendas e patrimônios. O\nEstado nacional, soberano monetariamente, deve garantir linhas\nde financiamento aos Estados subnacionais que fomentem o\ncrescimento econômico com distribuição de renda. Um\nGoverno comprometido com sua população garantirá que os\nresultados do trabalho não serão apropriados pelas elites\ndominantes, priorizando assim o atendimento das demandas\ndas massas em detrimento do lucro privado.\nA criatividade, a valorização da diversidade cultural e regional,\nas necessidades de nossa população e o esforço para edificar a\nsoberania e a autossuficiência nacional devem guiar os\ninvestimentos no Ceará.\nPor isso, propomos:"
+          },
+          {
+            "id": "1-desenvolvimento-10",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E\nFINANÇAS PÚBLICAS\n1.\n\nElaboração das peças orçamentárias (PPA, LDO e LOA)\njunto à população através de audiências de orçamento\nparticipativo. Aprovação efetiva submetida à população\nvia referendo;\n\n2. Atuar em fóruns e frentes de governadores por novas\n\nregras fiscais constitucionais, que permitam o\nfinanciamento de projetos estruturantes e que\nautorizem déficit público em ações robustas de\ncombate à pobreza;\n3. Prestar assistência aos municípios em assuntos de rotina\n\nda gestão pública;\n4. Taxação das grandes propriedades agrícolas, comerciais\n\ne industriais do Estado. Tributação progressiva;\n5. Criação de Estatal Eólica do Ceará;\n6. Criação/Ampliação\n\ndo imposto anual da renda\ndiferencial imobiliária, para imóveis beneficiados na\ncidade por obras realizadas pelo poder público em\nqualquer âmbito (taxa de 2% do valor);\n\n7. Criação do Banco Estadual de Fomento e Estímulo à\n\nEconomia Popular;\n\n14"
+          },
+          {
+            "id": "1-desenvolvimento-11",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E\nFINANÇAS PÚBLICAS\n8. Criação da Empresa Estadual de Moradia Popular;\n9. Criação da Empresa Estadual de Turismo Sustentável;\n10. Criação do Instituto Estadual de Fomento à Inovação\n\nTecnológica;\n11. Incentivar a criação do Programa CEARÁ do Futuro,\n\ncom o objetivo de atrair projetos de tecnologia limpa,\ncriando cooperativas nesse campo;\n12. Estabelecer parcerias com as instituições de ensino\nvisando articular investimentos públicos no setor de\nTecnologia de Informação;\n13. Conceder bolsas integrais ou parciais de estudos para\n\nestudantes egressos do ensino médio da rede pública,\ncom objetivo de incentivar o desenvolvimento de\ncarreiras em cursos de Tecnologia;\n14. Acabar com as terceirizações dentro do setor público.\n\nCriar 100 mil frentes de trabalho em diversas ações de\ninfraestrutura;\n15. Alcançar universalização do saneamento básico;\n16. Incentivar a instalação de indústrias de tecnologia limpa\n\ne reciclagem;\n17. Fortalecimento de medidas preventivas, regulatórias e\n\nde monitoramento para garantir a devida proteção ao\nmeio ambiente diante de projetos de infraestrutura;\n\n15"
+          },
+          {
+            "id": "1-desenvolvimento-12",
+            "titulo": "1. DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "1. DESENVOLVIMENTO\nECONÔMICO E\nFINANÇAS PÚBLICAS\n18. Criar o Observatório de Desenvolvimento e Emprego;\n19. Realizar parceria com a Petrobrás e Cegás para a\n\nprodução de gás a partir de aterros sanitários;\n\n20. Estimular a pesca com a criação/ampliação do Programa\n\nEstadual da Pesca, centralizando ações e ajudando na\ncaptação de investimentos;\n21. Ampliar\n\ne qualificar o Programa de Capacitação\nProfissional;\n\n22. Criar\n\nPrograma Estadual de Cooperativismo com\nassessoria financeira, advocatícia e comercial. Conceder\ncrédito de baixo custo;\n\n23. Unificar as ações cooperativas do Estado;\n24.Criar programa de unificação das FEIRAS LIVRES,\n\najudando os feirantes quanto à compra e ao crédito para\nestruturação e manuseio dos alimentos;\n25.Ampliar a FEIRA DA ECONOMIA SOLIDÁRIA reunindo\n\nações em todos as cidades do Estado do Ceará;\n26. Criar a Companhia Cearense de Transporte para\n\nestímulo de novos negócios na área rodoviária.\n\n16"
+          },
+          {
+            "id": "2-seguranca-publica",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n\n17\n\nEm 2024, o Ceará registrou uma taxa de 34,3 homicídios por\n100 mil habitantes, a quinta maior do país (acima da média\nnacional de 20,1). Segundo o Atlas da Violência (2026), o estado\nteve quatro das cinco cidades mais violentas do Brasil\n(municípios com mais de 100 mil habitantes): Maranguape\n(87,2/100 mil, a pior do país), Maracanaú (74,1), Itapipoca (74) e\nCaucaia (72,9). Isso não é acidente — é o resultado de anos de\nomissão e políticas ineficazes.\nDe acordo com dados consolidados pela SSPDS-CE, em 2025,\no estado teve 3.021 Crimes Violentos Letais e Intencionais\n(CVLI), com redução de 7,7% em relação a 2024 (3.272), mas\nainda é um massacre diário. A taxa permaneceu altíssima (cerca\nde 32,6/100 mil em alguns dados), mais que o dobro da média\nnacional. Em 2026, há quedas no quadrimestre (37,2% em\nCVLI), mas isso não apaga a tragédia acumulada: milhares de\nvidas perdidas enquanto o poder público celebra \"melhoras\" que\nmal “arranham” o problema estrutural.\nEm sete anos (2019-2025), o estado acumulou 1.094 mortes\npor intervenção policial, com crescimento de 47,1% na letalidade.\nDoze municípios concentram mais da metade das vítimas, sem\nque isso resulte em resolução do problema da violência pública.\nFamílias cearenses enterram filhos e irmãos enquanto o governo\ndivulga boletins otimistas.\nMais de 51% dos homicídios em 2024 atingiram crianças e\njovens de 0 a 29 anos. Em 2025, 11,62% dos CVLI envolveram\njovens de 10 a 19 anos (321 casos, 88% meninos, maioria com\narmas de fogo)."
+          },
+          {
+            "id": "2-seguranca-publica-2",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n\n18\n\nEm 2024, o Ceará registrou uma taxa de 34,3 homicídios por\n100 mil habitantes, a quinta maior do país (acima da média\nnacional de 20,1). Segundo o Atlas da Violência (2026), o estado\nteve quatro das cinco cidades mais violentas do Brasil\n(municípios com mais de 100 mil habitantes): Maranguape\n(87,2/100 mil, a pior do país), Maracanaú (74,1), Itapipoca (74) e\nCaucaia (72,9). Isso não é acidente — é o resultado de anos de\nomissão e políticas ineficazes.\nDe acordo com dados consolidados pela SSPDS-CE, em 2025,\no estado teve 3.021 Crimes Violentos Letais e Intencionais\n(CVLI), com redução de 7,7% em relação a 2024 (3.272), mas\nainda é um massacre diário. A taxa permaneceu altíssima (cerca\nde 32,6/100 mil em alguns dados), mais que o dobro da média\nnacional. Em 2026, há quedas no quadrimestre (37,2% em\nCVLI), mas isso não apaga a tragédia acumulada: milhares de\nvidas perdidas enquanto o poder público celebra \"melhoras\" que\nmal “arranham” o problema estrutural.\nEm sete anos (2019-2025), o estado acumulou 1.094 mortes\npor intervenção policial, com crescimento de 47,1% na letalidade.\nDoze municípios concentram mais da metade das vítimas, sem\nque isso resulte em resolução do problema da violência pública.\nFamílias cearenses enterram filhos e irmãos enquanto o governo\ndivulga boletins otimistas.\nMais de 51% dos homicídios em 2024 atingiram crianças e\njovens de 0 a 29 anos. Em 2025, 11,62% dos CVLI envolveram\njovens de 10 a 19 anos (321 casos, 88% meninos, maioria com\narmas de fogo). A taxa de homicídios para jovens de 15-29 anos"
+          },
+          {
+            "id": "2-seguranca-publica-3",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n\n19\n\nfoi de 77,6/100 mil em 2024, consolidando o estado na quinta\npior posição do ranking nacional de letalidade juvenil (Atlas da\nviolência, 2026). A maioria das vítimas é negra, com\nsubnotificação racial escandalosa. Isso é um extermínio da\njuventude periférica. Enquanto o Estado investe bilhões em\nsegurança ostensiva (R$4,3 bilhões em 2023, contra míseros\nR$603 milhões em assistência social), as raízes sociais da\nviolência — pobreza, falta de oportunidades — são ignoradas. O\nresultado: periferias transformadas em campos de batalha.\nNesse contexto, avançam as facções. O Ceará é palco de uma\nguerra entre grandes facções nacionais, que controlam\nterritórios, expulsam famílias de suas casas, impõem \"regras\" e\nexecutam rivais com crueldade. Desde 2015-2016, esses grupos\nse consolidaram no sistema prisional e nas ruas, com ataques\ncoordenados, extorsões e domínio do tráfico. Operações\npoliciais prendem \"líderes\", mas o problema persiste: facções\nmandam de dentro dos presídios, corrompem agentes e\naterrorizam comunidades. É inaceitável que o crime organizado\ndite as regras em bairros de Fortaleza e interior, enquanto a\npopulação vive refém.\nAlém disso, policiais são presos por receber propina para\nproteger o tráfico. Facções mantêm conexões com agentes\nestatais e econômicos. Ao mesmo tempo, a letalidade policial\nexplode: 200 mortes por intervenção policial em um ano, o\nmaior em seis anos, com alta proporção de vítimas sem raça/cor\ninformada, segundo o relatório Pele Alvo: crônicas de dor e luta."
+          },
+          {
+            "id": "2-seguranca-publica-4",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n\n20\n\nIsso revela um ciclo perverso: violência do Estado contra o\npovo, e que não resolve o crime organizado e gera mais\ndesconfiança e retaliações.\nPor fim, roubos e furtos ainda assolam o dia a dia, com quedas\nrecentes que não escondem o terror diário nas ruas. A\nimpunidade reina, com facções operando abertamente e o\nsistema de justiça lento. O modelo atual — mais viaturas e\ntiroteios — falha em prevenir e ressocializar.\nEsta é a dura realidade do Ceará: um estado, mas marcado por\nsangue, medo e desigualdade. As estatísticas não mentem — o\npovo cearense merece muito mais que promessas e números\nmaquiados. É urgente desmantelar as redes de corrupção,\ninvestir seriamente em prevenção social, reformar a segurança\ncom transparência e direitos humanos e acabar com a omissão\nque permite que facções e maus policiais destruam gerações\ninteiras. Chega de denúncias vazias: a população não aguenta\nmais!\nNesse sentido, propomos:"
+          },
+          {
+            "id": "2-seguranca-publica-5",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n1.\n\nReduzir o uso da força letal por meio de protocolos\nclaros, câmeras corporais (com transparência e auditoria\nindependente) e punição efetiva de abusos. Proibir\nabordagem ostensiva em escolas, festas e eventos\ncomunitários sem justificativa grave. Priorizar mandados\njudiciais.\n\n2. Inteligência contra o crime organizado: Desmantelar\n\nfinanças das facções (lavagem de dinheiro, tráfico de\narmas) via integração federal-estadual, em vez da lógica\nde \"guerra\" que só desloca o problema.\n3. Melhoria obrigatória no registro de raça/cor em todas as\n\nocorrências policiais\ninstitucional.\n\npara\n\ncombater\n\no\n\nracismo\n\n4. Expandir justiça restaurativa e socioeducação para\n\njovens infratores (medidas em meio aberto com\nacompanhamento intensivo) em integração com\nSecretaria de Educação, Cultura e Esporte.\n5. Criar Conselho Estadual de Segurança Cidadã com 50%\n\nde representantes da sociedade civil (movimentos\nnegros, favelas, direitos humanos) para fiscalizar e\npropor políticas.\n6. Contribuir com as discussões à nível Federal sobre\n\ndesmilitarização das Polícias.\n7. Construção de uma equipe de trabalho com os\n\nsecretários e representantes das áreas de direitos\nhumanos, com responsabilidades específicas no âmbito\nda juventude e dos direitos das mulheres, bem como da\n\n21"
+          },
+          {
+            "id": "2-seguranca-publica-6",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\nárea de habitação e cultura, representantes da\nsociedade civil, entidades representativas e movimentos\norganizados para pensar coletivamente um plano de\nação dentro dos princípios da participação popular para\nser iniciado ainda no primeiro ano de gestão nível\nFederal sobre a desmilitarização das Polícias Estaduais.\n8. Atuação efetiva com a equipe de desenvolvimento\n\neconômico e assistência social com o intuito de\npromover a geração de empregos e cursos\nprofissionalizantes para a população nas áreas mais\nvulneráveis economicamente e com altos índices de\ncriminalidade;\n\n9. Compromisso\n\ncom a não criminalização dos\nmovimentos sociais e entidades de classe, o combate ao\nracismo, ao machismo e a LGBTTIA+fobia nas\ncorporações e nas suas ações frente a população;\n\n10. Criação da Justiça Comunitária em parceria com a\n\nJustiça Estadual para resolução de problemas simples\nque evitem encarceramento de pessoas;\n11. Estabelecer o Programa “Ceará Egresso”, focado em\n\nreintegração pós-Prisional, para combater a reincidência\ne o recrutamento realizado por facções criminosas nas\ncadeias,\ngarantindo\nqualificação,\nemprego,\nacompanhamento psicológico e moradia;\n\n22"
+          },
+          {
+            "id": "2-seguranca-publica-7",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\n12. Garantir que 100% das pessoas privadas de liberdade\n\nanalfabetas sejam alfabetizados em 1 ano e todos\ntenham acesso a ensino fundamental/médio + cursos\nprofissionalizantes (ex.: construção civil, informática,\nagricultura).\n13. Incentivos\n\nfiscais para empresas que contratam\negressos + cooperativas de trabalho fora do sistema\nprisional com remuneração digna.\n\n14. Programa “da Rua para Casa”. O primeiro passo para a\n\nressocialização de pessoas dependentes químicos e em\nsituação de rua é dá-los abrigo, portanto devem ser\ncriadas 8.000 vagas de moradia assistida em 3 anos\n(apartamentos ou residências coletivas em bairros com\nboa infraestrutura). Prioridade para usuários de\ncrack/cocaína e álcool em situação de rua crônica, com\nequipe de campo fazendo abordagem multidisciplinar\n(psicólogo, assistente social, enfermeiro) com visitas\nsemanais + auxílio financeiro temporário para\nalimentação e transporte. Essa é uma medida\nfundamental para resgatar vidas e tornar nossas ruas\nmais seguras, respeitando a integridade física e a\ndignidade da pessoa humana. O programa deve contar\ncom Sistema de registro unificado (anonimizado) para\nacompanhar desfechos (moradia, emprego, saúde, etc).\n\n23"
+          },
+          {
+            "id": "3-educacao",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n\n24\n\nO Ceará conta com 7.622 escolas, sendo 5.932 delas públicas e\n1.690 privadas. As instituições particulares operam\nmajoritariamente na zona urbana, enquanto a cobertura rural,\nindígena e quilombola são exclusivamente públicos.\nA maior parte dos estudantes cearenses depende do ensino\npúblico, estando 81% deles matriculados nas Escolas do Estado\nou Município nas etapas do ensino fundamental e ensino médio,\nsendo o ensino privado predominante apenas no ensino infantil,\nque conta com um quarto do total de matrículas. No acesso ao\nensino superior a situação é a mesma, predominando as\ninstituições pagas que concentram no Brasil aproximadamente\n80% das matrículas e 57% abandonam as universidades\ncearenses.. Ou seja, o povo cearense tem o ensino superior\npúblico negado. Isso demonstra o déficit gravíssimo no\ninvestimento em creches que penaliza, especialmente, as mães\ntrabalhadoras.\nEm relação à cor/raça, 80,7% dos alunos do Ceará se\nidentificam como pretos ou pardos e apenas 18,4% se\nidentificam como brancos. No que diz respeito ao gênero, 50,5%\ndos discentes se identificam como homens, enquanto 49,5% se\nidentificam como mulheres.\nNo que diz respeito aos professores, 85,2% dos professores\ntêm formação no ensino superior em cursos de licenciatura, com\n8% sem formação superior e 3% com formação superior diversa\nda disciplina ensinada. Em relação ao vínculo empregatício com\no Estado, 60% dos docentes mantêm contratos temporários\ncontra 40% de efetivos concursados."
+          },
+          {
+            "id": "3-educacao-2",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n\n25\n\nA situação dos professores temporários no Ceará é de descaso\ne precarização. Apesar de cumprirem as mesmas funções que\nos efetivos, têm salários inferiores, não recebem o 1/3 de férias,\nseus contratos duram apenas 11 meses, e, a cada ano, a\ninstabilidade em se manterem nas escolas aumenta. São\ntrabalhadores que diariamente se vêem em situação de\ndemissão sem justificativa e/ou aviso prévio.\nSobre a estrutura das escolas o Ceará avançou bastante na\núltima década, mas ainda encontramos diversos problemas\nestruturais nas escolas. Pela primeira vez na História mais da\nmetade das escolas estaduais cearenses são de ensino integral\ne 97% têm acesso à internet, contudo 14% das instituições de\nensino públicas não têm acesso a serviço de coleta de lixo,\nsomente 34% estão conectadas a rede de esgoto e 21% não\ntem acesso a água tratada.\nEm relação às universidades estaduais, sofrem com a\ndesvalorização e falta de investimento. O descumprimento do\nart.224 da Constituição Estadual, que institucionaliza o repasse\nde 5% da renda líquida de impostos do estado para o ensino\nsuperior, reflete na defasagem salarial de servidores e déficit\nalarmante de professores. Em 2024, chegou a quase 400\ndisciplinas em que os estudantes estavam impossibilitados de se\nmatricularem. Essa dívida histórica do estado também impacta\npara permanência de estudantes que se deparam com bolsas\ninsuficientes, carência de residência universitária e campi que\nnão possuem alimentação para os alunos.\nNa UECE há queixas crônicas de infraestrutura nos campi de\nFortaleza (Fátima e Itaperi) e unidades do interior, déficit"
+          },
+          {
+            "id": "3-educacao-3",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n\n26\n\ndocente histórico (482 em um censo recente) e questões com\ncotas e acesso de alunos da rede pública. Na URCA (foco no\nCariri), problemas em cursos como Medicina (falta de\nprofessores efetivos, laboratórios e rede hospitalar adequada),\nestrutura sucateada em centros de artes e outros campi, queixas\nde temporários excessivos e rede elétrica instável. Na UVA, ao\nnorte do estado), expansão física com novos campi em Acaraú e\nCamocim (investimentos de cerca de R$26 milhões), mas\nproblemas com Restaurante Universitário (rescisões por\nqualidade e inadimplência), laboratórios (desabamentos\nparciais) e atrasos em reformas antigas.\nA acessibilidade é também um grave problema nas nossas\nescolas, com apenas 40% delas disponibilizando banheiros\nadaptados para pessoas com deficiência e apenas 37% contam\ncom salas de atendimento especializado. Em relação ao apoio\npedagógico, 40% das escolas públicas cearenses não possuem\nbibliotecas e 15% não contam com laboratórios.\nUm dado que merece atenção é o crescimento da população\nindígena constatado pelo censo de 2022. É necessário o\nfortalecimento das Escolas Indígenas e de programas para\nalfabetização da faixa etária acima de 55 anos deste grupo. 64%\ndas Pessoas indígenas entre 55 e 64 anos sabem ler e escrever,\nmas o número mais preocupante é o de que apenas 50% das\npessoas indígenas acima de 65 anos são alfabetizadas.\nNesse sentido, propomos:"
+          },
+          {
+            "id": "27",
+            "titulo": "27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "27\n\n3. EDUCAÇÃO\n1.\n\nEducação pública e gratuita para todos e em todos os\nníveis. Fim do lucro na educação; garantia de livre\nacesso do povo as universidades e/ou cursos técnicos\nprofissionalizantes.\n\n2. Chega de escolas precarizadas! Reforma imediata da\n\nestrutura escolar: salas de aula, banheiros, quadras,\nabertura de laboratórios em todas as escolas e garantia\nde aulas práticas. Climatização das salas de aula das\nescolas estaduais, com prioridade aos municípios com\ntemperaturas mais altas.\n3. Equiparação salarial dos professores independente do\n\ntipo de vínculo empregatício com o estado.\n4. Garantia de contratação dos professores temporários a\n\npartir da CLT, com todos os direitos previstos.\n5. Programa emergencial de saneamento das escolas com\n\nobjetivo de alcançar 100% das escolas do Estado ligadas\na redes de esgoto até 2030.\n6. Universalização das salas de atendimento especializado\n\ne banheiros com acessibilidade nas escolas públicas do\nEstado, buscando parcerias com os municípios para que\nbusquem essa meta também em suas redes.\n7. Incentivo à construção de novas creches em todos os\n\nmunicípios do Estado, contemplando de\nprioritária os municípios com maior dificuldade.\n\nforma"
+          },
+          {
+            "id": "3-educacao-4",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n8. Ampliação dos Programas de combate ao racismo na\n\nescola. Entendendo que boa parte dos alunos da rede\npública se identificam como negros ou pardos, é\nfundamental a plena aplicação da lei 10.639 que exige o\nensino de História da África e afro-brasileira, assim como\na conscientização para a importância do combate ao\npreconceito racial.\n9. Valorização\n\nda educação artística: Contratação e\nconcurso para professores de artes com especialização\nem teatro, artes visuais, literatura e música para\ndiversificar a oferta de ensino de artes na escola.\n\n10. Eleição para diretores escolares com mandatos de três\n\nanos, podendo se candidatar qualquer professor efetivo\ne funcionário estável. O diretor escolar eleito poderá ser\nremovido do cargo apenas por crime administrativo ou\npor abaixo assinado do corpo escolar. O Governador,\nem caso de retirada do diretor do cargo, deverá\njustificar, no ato publicado em diário oficial, a justificativa\nda ação.\n11. Retirar as empresas terceirizadas da administração das\n\nescolas e do planejamento da formação continuada dos\nprofessores.\n12. Incentivos fiscais para os Municípios fomentem eleições\n\nnas escolas para o cargo de diretor e para que Escolas\nformem grêmios estudantis de fato atuantes.\n\n28"
+          },
+          {
+            "id": "3-educacao-5",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n13. Parte do investimento para a educação estadual ser\n\ndecidido, anualmente, pelas próprias comunidades\nescolares através do orçamento participativo, sendo sua\ndestinação proposta e aprovada pelos próprios\neducadores, alunos e funcionários das escolas.\n14. Formação continuada de fóruns por área. Seriam eleitos\npor região professores com mestrado e/ou doutorado\nnas diferentes disciplinas. Os docentes eleitos por\nregião teriam assento no Fórum de Formação\nContinuada que terá como objetivo elaborar as\ndiretrizes e parâmetros da formação continuada dos\nprofessores do Estado pelos próximos dois anos. Para\nque sejam capazes de acompanhar a implementação\npor região, os integrantes do fórum terão liberação da\nsala de aula pelo período correspondente ao mandato.\n15. Fortalecimento da formação continuada de professores\n\nde História e Parcerias com os Departamentos de\nTurismo, História, Geografia, Pedagogia e Ciências\nSociais da Universidade Regional do Cariri, Universidade\nEstadual do Ceará e Universidade Estadual do Vale do\nAcaraú para elaboração dos cursos de formação\ncontinuada, assim como para a elaboração de um plano\nde valorização de patrimônio material e imaterial\nGeografia na História e conhecimento espacial do\nEstado do Ceará, o que incluirá cursos semanais de dois\nmeses, planejamentos acompanhados e reformulação\ndo material didático, para que seja mais amplo e inclua\nelementos mais críticos e menos monumentalistas.\n\n29"
+          },
+          {
+            "id": "3-educacao-6",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n16. Parcerias com os departamentos de psicologia das\n\nUniversidades em operação no Estado para fornecer\nem curto prazo atendimento psicológico nas Escolas\nPúblicas Estaduais.\n17. Construir, em médio prazo, um programa de assistência\n\npsicológica para professores e alunos consistente, com\nprofissionais concursados e lotados nas instituições\nescolares, nos termos da lei 13.935/2019.\n18. Café\n\nda manhã na escola. Que as crianças e\nadolescentes, ao chegarem à escola pela manhã,\ntenham acesso a mais uma refeição escolar, para iniciar\no dia bem alimentadas e com energia para a jornada\ndiária de estudo.\n\n19. Recomposição\n\norçamentária das Universidades\nEstaduais com garantia de construção de campus para\ntodos os cursos.\n\n20.Recomposição salarial para os Técnicos administrativos\n\nem Educação (TAEs) das universidade estaduais.\n21. Realização de concursos para elevar o quadro efetivo de\n\nprofessores do Estado.\n22. Criação do programa de alfabetização indígena para\n\nerradicar o analfabetismo nessa parcela da população\nem todas as faixas etárias.\n\n30"
+          },
+          {
+            "id": "31",
+            "titulo": "31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "31\n\n3. EDUCAÇÃO\n23. Fortalecimento da educação indígena, com construção\n\nde novas escolas, reformas das escolas existentes,\nconstrução de escolas indígenas também na zona\nurbana e concurso para novos professores indígenas.\n24.Fortalecimento da educação quilombola, com reforma\n\ndas escolas existentes\nprofessores quilombolas.\n\ne\n\nconcurso\n\npara\n\nnovos\n\n25.Programa de proteção a pessoas LGBTTIA+ nas escolas,\n\ncom campanhas de conscientização e formação de\nprogramas de acolhimento para o público nas\ninstituições de ensino públicas do Ceará.\n26. Educação sexual nas escolas para ensinar as crianças até\n\n12 anos a se proteger de agressores e adolescentes a\npartir dos 15 anos sobre os riscos das IST’s e da gravidez\nna adolescência.\n27. Permanência das três modalidades de escola estadual:\nProfissionalizante, Integral e Regular, de forma a garantir\no acesso democrático às diferentes realidades e\ninteresses dos estudantes cearenses.\n28.Diminuição da jornada de 40 para 30 horas semanais,\n\nsem diminuição dos salários.\n29. Fim do vestibular a nível estadual. Livre acesso do povo\n\na universidade pública e gratuita.\n30.Cumprimento da lei constitucional estadual de 5% da\n\nrenda líquida de impostos do estado para o ensino\nsuperior."
+          },
+          {
+            "id": "3-educacao-7",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n\n32\n\nSaúde mental dos professores\nCom o avanço do capitalismo, também nas relações em nível de\nEstado, a categoria docente em nosso país tem sido uma das\nprimeiras mais fortemente atingidas pelo adoecimento mental.\nAlém disso, ao se levar em conta apenas a perspectiva biológica\ndo conceito saúde doença gera-se uma subnotificação dos\ncasos e em consequência da busca pelo tratamento adequado a\nessa problemática.\nOs profissionais da educação têm apresentado, cada dia mais,\nqueixas de estresse, ansiedade, depressão, fadiga do trabalho e\nesgotamento físico e mental advindos do excesso de atividades\nque a profissão lhes impõe. A realidade do sistema de educação\npúblico em nossa cidade é preocupante e adoecedora a toda a\ncomunidade escolar, contudo, há um estigma social pesando em\ncima dos docentes, que são historicamente responsabilizados\ndiretamente pelo fracasso da instituição escolar, especialmente,\nno âmbito público e nos níveis básicos da educação.\nPara Marques e Firkowski (2013), as condições de trabalho as\nquais o professor está submetido desgastam a sua capacidade\nlaboral tanto física (uso da voz, trabalhar em local inadequado)\nquanto psíquica (pressão com prazos a cumprir, desqualificação\ndo trabalho), e em contrapartida, esta categoria também não\nconsegue fazer o processo de reprodução, ou seja, manutenção\nda sua força de trabalho, com atividades de descanso e lazer,\npois além de encontrar em casa mais trabalho, como a lida\ndoméstica e familiar, é uma prática em nosso país, os docentes\nlevarem trabalho da escola para concluírem em casa"
+          },
+          {
+            "id": "3-educacao-8",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n\n33\n\nSaúde mental dos professores\n(como correção de provas, elaboração de aulas entre outros).\nA Organização Internacional do Trabalho (OIT) reconhece a\nprofissão docente como importante para a reprodução de\nnovos profissionais ao mercado capitalista, contudo, o que se\napresenta a esta categoria é, cada dia mais, a retirada de seus\ndireitos trabalhistas, o arrocho salarial, altas jornadas de trabalho,\na imposição de relações de trabalho cada vez mais hierárquicas,\no não apoio por partes dos Estados na formação continuada,\natravés da recusa de afastamento remunerado aos professores\nque investem em pós-graduação e pesquisa. O quadro\napresentado tem apontado um desejo de abandono da\nprofissão por parte desses profissionais, além do desestímulo\ncom a prática pedagógica dentro das escolas. O que, entre\ntantos fatores também relevantes, interfere diretamente na\ndinâmica de toda a comunidade escolar.\nPor isso, é necessário que o Estado intervenha profunda e\nefetivamente nessa situação. É responsabilidade do Estado,\ncomo empregador desses profissionais, garantir melhores\ncondições de trabalho e saúde ao grupo, priorizando também o\ntratamento àqueles que se encontram em processo de\nadoecimento, e a prevenção aos demais docentes.\nNesse sentido, propomos:"
+          },
+          {
+            "id": "3-educacao-9",
+            "titulo": "3. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "3. EDUCAÇÃO\n1.\n\nGarantir na carga horária de trabalho tempo para os\ndocentes realizarem acompanhamento psicológico,\natravés do ISSEC, para todos os professores da rede\nque solicitarem esse recurso.\n\n2. Valorização de toda a categoria garantindo apoio e\n\nafastamento remunerado em caso de licença saúde ou\npara formação continuada.\n3. Ampliação do tempo de planejamento escolar na carga\n\nhorária do docente.\n4. Promoção de ações permanentes educativas na escola\n\na respeito de saúde mental para toda a comunidade\nescolar.\n5. Garantir profissionais de psicologia nas escolas da rede.\n\n34"
+          },
+          {
+            "id": "4-moradia",
+            "titulo": "4. MORADIA",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "4. MORADIA\n\n35\n\nA renda de 90% das famílias cearenses é inferior a R$ 2.000\nreais mensais, enquanto o valor dos aluguéis aumenta\nconsideravelmente nas principais cidades do estado, seguindo\ntendência nacional, fruto da especulação imobiliária, o que torna\no valor dos aluguéis a principal causa do déficit habitacional no\nCeará, que é de 227 mil unidades deficitárias. Boa parte do\ndéficit habitacional no Estado concentra-se em Fortaleza\n(54,6%) e é fruto do alto ônus com aluguéis, que afeta 140 mil\nfamílias, das quais 124.321 vivem na Capital.\nA especulação imobiliária mantém diversos imóveis parados\npara gerar alta artificial dos preços através da retração forçada\nda oferta. Este cenário gera contradições gritantes, como o fato\nde termos 586 mil imóveis vagos no Ceará, número suficiente\npara zerar o déficit habitacional duas vezes no Estado.\nO déficit por coabitação é maior no Ceará (25,26%) do que a\nmédia nacional (20,80%). Essa situação é definida por núcleos\nfamiliares que são obrigados a conviver no mesmo imóvel, como\ncasais recém-casados que, sem conseguir pagar os valores\naltíssimos de aluguel, vão morar na casa dos sogros.\nO caso mais gritante, contudo, é o das famílias chefiadas por\nmulheres, que constituem 42,5% das que sofrem com o ônus do\naluguel.\nO alto valor dos aluguéis é, portanto, no Estado do Ceará, a\nprincipal causa do Déficit habitacional. A responsabilidade por\neste problema recai sobre a especulação imobiliária, que tem\nelevado o custo de vida nos maiores municípios, com mais de\n30% das rendas das famílias destinadas ao pagamento do\naluguel."
+          },
+          {
+            "id": "4-moradia-2",
+            "titulo": "4. MORADIA",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "4. MORADIA\nNesse sentido, propomos:\n1.\n\nCriação da Empresa Estadual de Moradia Popular\n\n2. Criar/Ampliar\n\no Conselho Estadual de Habitação,\ndando-lhe estrutura e capacidade de avaliação, consulta\ne deliberação sobre as políticas públicas de moradia;\ngarantindo representantes dos movimentos populares\nligados à questão habitacional no município;\n\n3. Criar uma política habitacional integrada com os\n\nmovimentos sociais. As habitações populares garantam\naos locais mobilidade urbana, iluminação pública, acesso\nà saúde e à educação, lazer, cultura e que a legalização\nde posse, a chave seja prioritariamente entregue às\nmulheres\n4. Produzir novos circuitos urbanos que articulem trabalho,\n\nmoradia e mobilidade para reverter tanto a\nconcentração territorial dos postos de trabalho quanto a\ndispersão dos locais de moradia em espaços\nurbanamente precários e afastados das áreas com\ninfraestrutura urbana consolidada;\n5. Delimitar novas zonas de especial interesse social para\n\nassentamentos habitacionais de população de baixa\nrenda em áreas das cidades com infraestrutura urbana\nconsolidada, priorizando do centro da cidade;\n\n36"
+          },
+          {
+            "id": "4-moradia-3",
+            "titulo": "4. MORADIA",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "4. MORADIA\n6. Implementar\n\nnovos programas de habitação de\ninteresse social para garantir acesso à moradia\nadequada aos segmentos populacionais de renda\nfamiliar mensal de até 3 salários mínimos, por meio da\naquisição de imóveis para fins habitacionais e da\nrealização de obras e serviços voltados à modificação\nde uso e ocupação de imóveis que resultem em lotes\nurbanizados ou unidades habitacionais;\n\n7. Redirecionar os programas de habitação popular, dando\n\nincentivos fiscais para as construtoras, para áreas com\ninfraestrutura urbana consolidada, bem como garantir\nmaior provisão de serviços públicos aos projetos já\nconcluídos e entregues em áreas desprovidas de\ninfraestrutura, priorizando as pessoas que estejam\ninseridas no déficit habitacional;\n8. Promover\n\na\n\nregularização fundiária de favelas,\nloteamentos e ocupações consolidadas de forma\nintegral,\n\n9. Criar um programa municipal de assistência técnica para\n\na requalificação urbana das favelas, loteamentos,\nassentamentos rurais, comunidades tradicionais e\nocupações consolidadas em parceria com as\nUniversidades públicas;\n\n37"
+          },
+          {
+            "id": "4-moradia-4",
+            "titulo": "4. MORADIA",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "4. MORADIA\n10. Fazer valer o Estatuto das Cidades: desapropriar\n\nimóveis sem função social! A Lei nº 10.257/2001,\nconhecida como Estatuto das Cidades, prevê que\nprédios sem função social sejam desapropriados. Nos\nesforçaremos para cumprir a lei, mapeando no Estado\ndo Ceará prédios sem função e, a partir daí, elaborar um\nbanco de moradia, visando doar o prédio ou terreno\ndesapropriado para moradia popular de forma gratuita.\nGarantir a implementação do IPTU progressivo sobre\nimóveis sem função social;\n11. Entrega de terras públicas para construção de moradia\n\npopular. Utilizar os terrenos de propriedade do poder\npúblico do Estado para a construção de habitações\npopulares, acelerando o processo de resolução do\ndéficit habitacional.\n12. Apoio a ocupações, repressão às invasões. Entendemos\n\ncomo legítimas ocupações de terras sem função social\nvisando chamar a atenção do poder público. O governo,\nde caráter popular, será próximo desses processos,\ndando assistência para os assentados ao mesmo tempo\nem que procura dar celeridade à doação do terreno,\nassim como a construção das casas e construção de\nequipamentos públicos. Por outro lado, invasões serão\nexemplarmente punidas com multas e embargos\nprevistos em lei. Entendemos invasão como construção\nilegal, com fins de lucro, em terras públicas, assim como\ngrilagem e outras formas de fraude fundiária.\n\n38"
+          },
+          {
+            "id": "4-moradia-5",
+            "titulo": "4. MORADIA",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "4. MORADIA\n13. Combate à gentrificação. Dar prioridade para moradia\n\npopular nas doações de terrenos próximos à Prefeitura.\nFazer uso do direito à Preempção para adquirir prédios,\nterrenos e casas nos bairros mais centrais e entregar\nestas estruturas para famílias sem teto, enfrentando a\ntendência de afastar para locais mais distantes os\nbeneficiados por programas de habitação. O objetivo é\nbaixar os preços de aluguéis e de compra e venda de\nimóveis nas regiões mais valorizadas da cidade\n\n39"
+          },
+          {
+            "id": "5-saude",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n\n40\n\nO sistema de saúde pública do Ceará apresenta um quadro\ncontraditório: expansão da infraestrutura hospitalar e\nregionalização em paralelo a fragilidades crônicas na Atenção\nPrimária à Saúde (APS), desigualdades regionais e instalação de\nmodelos de gestão privatizantes, como as Parcerias PúblicoPrivadas (PPPs). Apesar dos esforços de interiorização, os\nproblemas persistem e revelam limitações estruturais de\nfinanciamento, governança e priorização do cuidado integral.\nO Ceará conta com 391 hospitais (dados do Cadastro Nacional\nde Estabelecimentos de Saúde de junho de 2025), sendo a rede\nestadual gerenciada pela Sesa composta por cerca de 13\nunidades principais, com concentração em Fortaleza e expansão\nde hospitais regionais (Cariri, Norte, Sertão Central, Vale do\nJaguaribe). Esses investimentos ampliaram o acesso à média e\nalta complexidade no interior. No entanto, essa expansão\nfrequentemente ocorre sem o fortalecimento proporcional da\nAtenção Primária, gerando sobrecarga hospitalar e baixa\nresolutividade na base do sistema.\nA Atenção Primária em Saúde (APS) é responsável por resolver\ncerca de 80% dos problemas de saúde, mas enfrenta sérios\nentraves no Ceará:\nCobertura insuficiente e desigual: Embora haja crescimento\nno número de equipes de Saúde da Família (ESF), a cobertura\nefetiva varia significativamente entre regiões, com lacunas no\ninterior e em periferias urbanas. Muitos municípios não alcançam\nparâmetros ideais de vínculo populacional (2.000 a 2.750\npessoas por equipe), resultando em percentual relevante da"
+          },
+          {
+            "id": "5-saude-2",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n\n41\n\npopulação sem acompanhamento longitudinal.\nBaixa resolutividade e sobrecarga: As equipes lidam com alta\ndemanda, rotatividade de profissionais e infraestrutura precária,\ncomprometendo a prevenção e promoção da saúde.\nIndicadores críticos: Taxas de abandono vacinal elevadas\n(histórico de coberturas abaixo da meta de 90-95% para várias\nimunizações), controle insuficiente de condições crônicas\n(hipertensão, diabetes) e dificuldade de fixação de médicos\nagravam o quadro. Esses problemas contribuem para o\n“inchaço” de UPAs e hospitais com demandas que deveriam ser\nresolvidas na base de forma preventiva. Padrões observados em\nanálises do Nordeste e do Brasil indicam que 20% a 40% das\ninternações hospitalares no SUS entre 2014 e 2025 poderiam ter\nsido evitadas com investimentos na atenção básica (Santos, J. A.\nM., Silva, C. V. dos S., Menezes, E. D. de J., Gaedke, M. Ângela,\nSantos, A. A. P. dos, & Capucho, H. C. (2026). Internações por\ncondições sensíveis à atenção primária na região nordeste do\nBrasil, 2015-2024. Revista DCS, 23(89), e5199).\nPara solucionar problemas de investimento, o Governo do\nEstado tem investido em Parcerias Público Privadas (PPPs). O\nCeará foi pioneiro na legislação (2004), mas os resultados são\nlimitados e controversos. O principal exemplo é o Hospital\nRegional Metropolitano em Fortaleza (HRM), com contrato\nassinado em 2014 (cerca de R$2,46 bilhões por 25 anos) para\nconstrução, equipamentos e serviços não assistenciais.\nO modelo de PPPs, contudo, é problemático por:"
+          },
+          {
+            "id": "42",
+            "titulo": "42",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "42\n\n5. SAÚDE\n\nEncarecimento e Riscos ao Erário: As PPPs transferem\nrecursos públicos de forma parcelada e garantida ao privado,\nmuitas vezes com custos finais superiores ao modelo direto.\nEstudos nacionais apontam que, apesar de promessas de\neficiência, os contratos geram despesas elevadas de\ncontraprestação e dificuldades de fiscalização. Ao concentrar\nrecursos em grandes hospitais, as PPPs reforçam o viés\nhospitalocêntrico, sem impacto proporcional na redução de\nproblemas resolvíveis na base do sistema. Milhões de reais\nanualmente são direcionados a internações por infecções\nrespiratórias/gastrointestinais,\ncomplicações\nde\nhipertensão/diabetes e condições vacináveis — problemas que\numa APS fortalecida conseguiria prevenir ou tratar\nambulatorialmente com custo muito menor.\nPrecarização e Mercantilização: Ao transferir gestão (mesmo\nque parcial), há riscos de priorização de resultados financeiros\nem detrimento da integralidade do cuidado, vitimando a\npopulação que mais precisa e gerando um ciclo vicioso de fraca\natenção básica\nmais internações por causas evitáveis\nmaior pressão hospitalar\njustificativa para novos\ninvestimentos em alta complexidade e PPPs.\nFalta de Transparência e Governança: Complexidade\ncontratual cria dificuldades para a transparência, resultando em\ndenúncias recorrentes de sobrepreços, aditivos e fraca\nparticipação social. No Ceará, o foco em PPPs hospitalares não\ncompensou as lacunas na APS, reforçando a crítica de que o\nmodelo privilegia emergência e urgência em detrimento da\nassistência integral e preventiva.\n\n→\n\n→\n\n→"
+          },
+          {
+            "id": "5-saude-3",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n\n43\n\nO Ceará apresenta, portanto, diversos problemas no setor,\nsendo os principais: Falta de uma política pública de saúde\npreventiva efetiva, sucateamento da atenção básica,\ndesigualdade regional e gradual privatização da gestão dos\nhospitais e estabelecimentos públicos.\nEsse cenário beneficia apenas aos bilionários das redes de\nsaúde privada e da indústria farmacêutica, que lucram com\ncontratos polpudos irrigados com dinheiro público e demanda\ncada vez maior por remédios e tratamentos que poderiam ter\nsido evitados na base.\nNesse sentido propomos:"
+          },
+          {
+            "id": "5-saude-4",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n1.\n\nCriar a coordenadoria de promoção da saúde na gestão\nadministrativa da Secretaria Estadual de Saúde.\n\n2. Fim das parcerias público-privadas com planos de\n\nsaúde e fundações privadas. A redução dos custos com\nsaúde virão não da venda dos hospitais, mas da\nmudança da concepção de investimento, que deve cada\nvez mais ser orientada para a saúde preventiva,\ngarantindo que a maior parte das ocorrências sejam\nresolvidas na atenção primária, desafogando hospitais e\nleitos, garantindo melhor destino aos investimentos e\nmelhorando consideravelmente a qualidade de vida dos\ntrabalhadores e trabalhadoras,\n3. Em conjunto com a Secretaria de Educação, articular a\n\ncriação de projetos permanentes, transversais, nas\nescolas da rede sobre promoção da saúde.\n4. Criar\n\nconselhos\nde\nSaúde,\ncomposto\npor\nrepresentações de associações de bairros, movimentos\npopulares, movimentos sociais, entidades estudantis,\nsindicatos, para debater e encaminhar ações sobre\nsaúde, em especial nas campanhas preventivas e\natendimento primário. Cada conselho se encarregará de\ncriar núcleos por bairros.\n\n5. Ultrapassar 95% a cobertura vacinal no Estado.\n\n44"
+          },
+          {
+            "id": "5-saude-5",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n6. Ampliar a rede de saúde da família, com equipes com\n\nsuporte profissional e insumos para atender,\nprincipalmente, famílias com histórico de diabetes,\nhipertensão arterial e cardiopatias, com foco em reduzir\nem 25-35% as internações por causas evitáveis.\n7. Expansão dos concursos públicos para a área da saúde,\n\ngarantindo a entrada de milhares de novos funcionários\nestáveis.\n8. Fortalecer\n\na parceria com Universidades Públicas\nEstaduais e Federais para elaboração e implementação\nde políticas de saúde preventiva nos municípios\ncearenses, através do desenvolvimento de orientações\nteóricas dos determinantes de saúde e doença; prática\nda pesquisa ajustada à realidade local; educação\npermanente em saúde; integração entre o serviço e o\nensino; análise crítica dos serviços e aprendizagem ativa.\n\n9. Investir na valorização das Agentes Comunitárias de\n\nSaúde, que são a linha de frente no acompanhamento\nda saúde familiar e da implementação de uma política\nde saúde preventiva.\n10. Garantir\n\nque pelo menos 40-50% dos recursos\nestaduais de saúde sejam direcionados à atenção\nbásica, com contrapartida municipal.\n\n11. Atualizar planos regionais de saúde com participação\n\npopular, priorizando equidade entre interior e capital.\n\n45"
+          },
+          {
+            "id": "5-saude-6",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\n12. Ampliar e implementar políticas de redução de danos\n\npara as pessoas com problemas de abuso de\nsubstâncias, assim como a garantia de emprego e renda\n13. Garantir o acesso a medicações psiquiátricas modernas\n\nde forma gratuita pelo SUS, substituindo as medicações\nantigas que trazem uma miríade de efeitos colaterais\nindesejados.\n14. Implementar “3ª turno” para as UBS do estado. Ou seja,\n\ngarantir que tenha atendimento noturno e aos fins de\nsemanas nos postos de saúde.\n15. Ampliação do Planejamento Familiar: a UBS junto com\n\nassociações de bairro, escolas, CRAS realizarem\npalestras, orientações, seminários para ensinar/orientar\nsobre o uso de métodos contraceptivos.\n16. Ampliação do Planejamento Familiar: a UBS junto com\n\nassociações de bairro, escolas, CRAS realizarem\npalestras, orientações, seminários para ensinar/orientar\nsobre o uso de métodos contraceptivos.\n17. Criação de academias de musculação públicas, tendo\n\nem vista o eixo de saúde preventiva para combater as\nincidências de obesidade, diabetes tipo 2 e osteoporose\nem grandes grupos populacionais.\n18. Expandir CAPS-AD (Centros de Atenção Psicossocial\n\nÁlcool e Drogas) para todos os municípios acima de 50\nmil habitantes + unidades móveis no interior, com\nTratamento multidisciplinar gratuito:\n\n46"
+          },
+          {
+            "id": "5-saude-7",
+            "titulo": "5. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "5. SAÚDE\npsicoterapia, psiquiatria, grupos terapêuticos, medicina\nintegrativa e suporte social (moradia, emprego).\n19. CAPS-AD de Portas Abertas: Ampliar horários, incluindo\n\nnoturno e fins de semana, com leitos de acolhimento\nbreve (até 30 dias).\n20. Fiscalizar comunidades terapêuticas, para garantir que\n\nestas cumpram de forma adequada e humanizada o\ntrabalho de tratamento aos pacientes que as buscam.\n\n47"
+          },
+          {
+            "id": "6-cultura",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n\n48\n\nO orçamento do Governo do Estado do Ceará para a cultura foi\nde R$285.107.322.00, o que equivale a menos de 1% do\norçamento. Investimentos federais complementam esse\nmontante, com aportes de R$137 milhões da Lei Aldir Blanc,\nficando com o Estado R$71 milhões e o restante sendo\ndirecionado aos municípios; Conta também com recursos da Lei\nPaulo Gustavo que totalizam R$177,8 milhões.\nAs principais ações de fomento do Governo do Estado são o\nPacto pela Cultura, voltado ao fortalecimento do sistema\nestadual de cultura; Fundo a Fundo Cultura, que repassa\nrecursos diretamente para os municípios; Programa Ceará\nCriativo, voltado à difusão e circulação de arte cearense;\nSistema Estadual de Espaços Cênicos e Teatros para apoio de\nespaços independentes de produção teatral e o Sistema\nEstadual de Espaços Cênicos e Teatros e os Laboratórios de\nCriação do Porto Iracema das Artes, cujo objetivo é a formação\nartística.\nO audiovisual vem recebendo maior atenção do Governo do\nEstado, com quase todo o recurso da Lei Paulo Gustavo\ninvestido na área; artes cênicas e música totalizam 2,3 milhões\nem investimentos; patrimônio cultural e museus estão também\nentre os maiores investimentos, com destaque para a\nrevitalização do Farol do Mucuripe, que recebeu R$ 2,9 milhões;\no programa Ceará Criativo recebeu R$ 2 milhões; Escolas de\nformação artística contaram com investimentos de R$ 10\nmilhões e literatura e arte popular contaram com diversos editais\nde fomento, voltados principalmente à leitura, cordel e\nmanifestações tradicionais."
+          },
+          {
+            "id": "6-cultura-2",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n\n49\n\nAtravés desses números podemos perceber que o Ceará somase aos outros Estados do País com o baixo financiamento da\ncultura e à falta de atenção à difusão e estruturação de\nestratégias permanentes de acesso. O Estado tem poucas salas\nde cinema, concentradas principalmente na região\nmetropolitana de Fortaleza e de caráter comercial. O programa\nCinema da Cidade do Governo do Estado chega a apenas seis\ncidades (Aquiraz, Canindé, Cedro, Crateús, Itaitinga e Tauá),\nficando a maior parte do Estado descoberta.\nOs livros também são de difícil acesso, com poucas bibliotecas\npúblicas, falta de campanhas de difusão da produção local e\nsucateamento das salas de multimeios das Escolas Públicas\nEstaduais, em um contexto de encarecimento e fechamento\nacelerado de livrarias nos centros comerciais das cidades.\nNesse sentido propomos:"
+          },
+          {
+            "id": "6-cultura-3",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n1.\n\nRealização de plenárias regulares (mensais ou\nquinzenais) sobre o papel da arte e da cultura como eixo\nformador da sociedade, em praças, escolas e demais\nespaços.\n\n2. Criação de espaços de formação artística em bairros\n\npopulares, e descentralização das ações artísticas e\nculturais dos grandes centros;\n3. Articulação com movimentos culturais organizados e\n\nmovimentos sociais na busca por integrar pautas e\nfortalecer ações;\n4. Realizar eleição do Secretário de Cultura entre os atores\n\nculturais do Estado;\n5. Realizar o Congresso Estadual da Cultura Popular para\n\ndefinição de prioridades;\n6. Atingir 2% do orçamento destinados a Cultura como\n\npiso;\n7. Construção\n\nde uma Editora Pública, voltada à\npublicação de autores locais, com estratégia de difusão\ne divulgação.;\n\n8 Realizar anualmente festivais do livro nas principais\n\ncidades das três regiões metropolitanas do Estado,\nabrindo espaço para escritores e escritoras locais.\n9. Realizar festivais de teatro anualmente nas principais\n\ncidades das três regiões metropolitanas do Estado, dos\nquais participarão apenas artistas regionais.\n\n50"
+          },
+          {
+            "id": "6-cultura-4",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n10. Criar fundo estadual de financiamento da cultura\n\nindígena, voltado à estruturação de projetos de fomento\ne difusão da produção artística e cultural dos povos\nindígenas cearenses;\n11. Fundar programa de Produtores Culturais públicos Os\n\neditais voltados para o campo cultural são inacessíveis,\nexcessivamente burocráticos e acabam por excluir os\nartistas que vivem em regiões mais vulneráveis do\nEstado, que possuem dificuldades na captação de\nrecursos e, muitas vezes, sequer ficam informados dos\neditais abertos. Com o objetivo de caminhar rumo à\ndemocratização da captação de recursos públicos\npropomos a criação de um quadro de servidores da\nSecretaria de Cultura voltados a atender os pontos de\ncultura e coletivos informar sobre a abertura de editais,\noferecendo auxílio e assistência no que for necessário\npara possibilitar que os grupos daquele espaço possam\nconcorrer.\n12. Estabelecer\n\ncotas de trabalhos de literatura e\nquadrinhos de artistas contemporâneos cearenses nas\nbibliotecas escolares, públicas e comunitárias. A\nSecretaria de Cultura abrirá um programa de incentivo a\nalocação de obras de literatos e quadrinistas\ncontemporâneos locais nas bibliotecas dos municípios e\ndas Escolas. Livros, graphic novels, fanzines, etc., todos\nos suportes serão abraçados.\n\n51"
+          },
+          {
+            "id": "6-cultura-5",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n13. Mapear e tombar como patrimônio cultural espaços\n\nrelevantes para as tradições de matriz africana no Ceará.\nFazer, junto das comunidades de povos de terreiro do\nEstado, o mapeamento dos locais históricos para as\nreligiosidades de umbanda e candomblé. Tombando\nesses locais como patrimônio histórico do município e\nprotegendo-os de acordo com a legislação vigente.\n14. Instituição de um Sistema Estadual de Bibliotecas\n\nPúblicas (SMBP) e implementação do Plano Estadual do\nLivro e da Leitura (PML)\n15. Que a gestão da Biblioteca Pública seja feita pela\n\nSECULT e pela comunidade, pois a Ação Social é mais\ncondizente com os propósitos de uma Biblioteca\nPública;\n16. Destinação de verba direta para a constituição de\n\nacervo, para que não se dependa exclusivamente de\ndoações e de editais, dando à biblioteca a liberdade de\ncompor um acervo relevante a partir das sugestões das\npessoas que a frequentam e por meio do mapeamento\nde necessidades de informação e leitura mensuradas\npor estudos de comunidade;\n17. Efetivação da Lei nº 12.244/2010, conhecida como Lei\n\nda Universalização das Bibliotecas Escolares, que exige\na implementação de bibliotecas em todas as escolas\npúblicas e privadas, com presença de bibliotecários. A\nimplementação dessa lei tem sido burlada,\n\n52"
+          },
+          {
+            "id": "6-cultura-6",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\ncom as escolas criando “Salas de Leitura” ou “Centro de\nMultimeios”, como forma de não contratar o\nbibliotecário. Esses espaços têm sido ocupados por\nprofessores readaptados que, embora desenvolvam\ntrabalhos importantes nesses ambientes, não têm a\nformação técnica adequada para gerir estes espaços.\n18. Garantir funcionamento das Bibliotecas Públicas no\n\nperíodo da noite e nos finais de semana. O\nfuncionamento das Bibliotecas Públicas apenas no\nperíodo comercial afasta o público adulto e trabalhador\nde seu ambiente;\n19. Garantir que as Bibliotecas contém com equipe mínima,\n\npor meio de concurso público, composta por:\nBibliotecário(a), Auxiliar de biblioteca, Monitor(a) Infantil,\nOficineiro(a), Contador(a) de histórias e Produtor(a)\nCultural;\n20.Incentivo para que os municípios construam Sistemas\n\nMunicipais de Bibliotecas Públicas, com as Biblioteca\nPública centrais atuando como coordenadoras e\nconstrução de Bibliotecas Setoriais atuando nos bairros,\ncada uma com autonomia para compor seu acervo e\natividades a partir dos interesses de cada comunidade\n\n53"
+          },
+          {
+            "id": "6-cultura-7",
+            "titulo": "6. CULTURA",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "6. CULTURA\n21. Construção de salas de cinema públicas em todos os\n\nMunicípios, com estrutura flexível à quantidade de\nhabitantes. Estas salas terão valor de entrada simbólico,\nvoltado apenas ao auxílio da manutenção do sistema.\n22. Clubes de Cinema nas Escolas: Oficinas de apreciação\n\ncinematográfica e produção audiovisual para jovens\n(parceria SEDUC).\n\n54"
+          },
+          {
+            "id": "7-etnico-racial",
+            "titulo": "7. ETNICO-RACIAL",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "7. ETNICO-RACIAL\n\n55\n\nO Ceará é marcado por uma forte presença da população\nnegra, que representa cerca de 71,5% de seus habitantes,\ndivididos entre 64,7% de pardos e 6,8% de pretos. Apesar de ser\na “Terra da Luz”, os avanços que houveram para as políticas\npúblicas voltadas para essa população, como a Casa da\nIgualdade Racial, política de cotas, criminalização do racismo, etc\nsão reflexos de anos de luta. Mesmo sendo a maioria\ndemograficamente, possuem um rendimento domiciliar que\nchega a ser quase a metade do recebido por pessoas brancas,\nalém de menores índices de escolaridade (a taxa de\nanalfabetismo chega a 13%) e uma alta vulnerabilidade à\nviolência letal, que atinge proporcionalmente mais a juventude\nnegra, sendo 7 em cada 10 mortes.\nEm relação aos povos originários, o Ceará conta com 140 etnias\nindígenas reconhecidas. No entanto, sofrem com a disputa\nconstante pela regularização dos territórios tradicionais e a\npreservação ambiental. No Ceará vemos a luta do povo Anacé\ncontra o recente processo de regularização e entrega de terras\npara a construção de Data Centers.\nA presença de povos quilombolas no Ceará também possui\nforte expressão, desmitificando a ideia de que não houve\nescravidão em solo cearense. O Ceará possui 23.955 pessoas\nquilombolas distribuídas em 68 municípios cearenses. As\nprincipais dificuldades se concentram na disputa pela terra, com\napenas 15 territórios com algum tipo de delimitação formal.\nNeste sentido propomos:"
+          },
+          {
+            "id": "7-etnico-racial-2",
+            "titulo": "7. ETNICO-RACIAL",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "7. ETNICO-RACIAL\n1.\n\nAmpliação obrigatória de cotas raciais em todos os\nníveis (técnico, superior e pós-graduação) com metas\nvinculantes por campus e curso, incluindo bônus de\npermanência\n(moradia\nestudantil,\nalimentação,\ntransporte e material didático gratuito para cotistas);\n\n2. Currículo obrigatório de história da África e da diáspora\n\nafricana em todas as escolas públicas, com formação\ncontinuada de professores.\n3. Política de reparação para famílias de vítimas de\n\nviolência letal (indenização civil rápida + prioridade em\nprogramas habitacionais e de geração de emprego\npúblico).\n4. Programas de prevenção territorial em periferias, com\n\nênfase em assistência social, saúde mental e cultura,\nintegrados ao SUS (Política Nacional de Saúde Integral\nda População Negra).\n5. Fortalecer a Secretaria dos Povos Indígenas (Sepin) e o\n\nIdace com recursos e equipes dedicadas. Cumprir e\nexpandir acordos de cooperação com a Funai para\ndemarcação física e homologação de todos os\nterritórios pendentes. Criar um fundo estadual para\naquisição de terras em conflito e mediação de disputas.\n6. Integrar planos de manejo territorial indígena com\n\npolíticas de conservação (água, biodiversidade),\ncombatendo a seca com investimentos em\ninfraestrutura básica (água potável, energia) prioritária\n\n56"
+          },
+          {
+            "id": "7-etnico-racial-3",
+            "titulo": "7. ETNICO-RACIAL",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "7. ETNICO-RACIAL\npara aldeias;\n7. Proibir empreendimentos que comprometam recursos\n\nhídricos de terras tradicionais;\n8. Garantir infraestrutura (água, saneamento, energia,\n\nestradas) e inclusão em programas de saúde, educação\ne assistência com recorte quilombola. Fortalecer a\nparticipação nos conselhos e conferências estaduais.\nCriar linhas de apoio cultural e de preservação de\nsaberes tradicionais;\n9. Alocar recursos específicos no PPA com metas raciais e\n\nétnicas claras, auditáveis anualmente. Criar um\nObservatório Estadual de Equidade Racial e Étnica com\ndados desagregados (raça/cor, etnia) em todos os\nsistemas governamentais (saúde, educação, segurança,\nfundiário).\n10. Fortalecer conselhos e fóruns com movimentos negros,\n\nindígenas e quilombolas na formulação, execução e\navaliação de políticas. Realizar conferências estaduais\nperiódicas.\n\n57"
+          },
+          {
+            "id": "8-lgbttia",
+            "titulo": "8. LGBTTIA+",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "8. LGBTTIA+\n\n58\n\nNo Estado do Ceará, 81 mil pessoas se declaram LGBTTIA+, o\nque equivale a 1,2% da população. Nos últimos anos, graças à\nluta do próprio movimento LGBTTIA+, diversos direitos foram\nconquistados como o casamento civil, criminalização da\nLGBTTIA+fobia, nome social, entre outros, contudo diversos\ndesafios permanecem.\nApesar da redução de 43% nos assassinatos de pessoas\nLGBTTIA+ no Ceará em 2025, os casos de LGBTTIA+fobia\ncresceram 10%, o que indica que a discriminação é ainda uma\ncruel realidade enfrentada por essa comunidade ao mesmo\ntempo em que a estrutura para acolhimento dessas pessoas é\nescassa, com apenas sete centros especializados em todo o\nestado.\nNacionalmente, a evasão de pessoas LGBTTIA+ do ambiente\nescolar é relevante, com 60% do público declarando não se\nsentir seguro no ambiente escolar e 90% alegando já terem\nsofrido alguma forma de agressão na escola e a evasão entre\npessoas trans e travestis atinge 73%. É necessário analisar como\nesses números aparecem no Estado do Ceará, mas não temos\nrazões para acreditar que seja diferente.\nQuando nos voltamos para as pessoas trans a situação é ainda\npior, pois o Estado conta com apenas um ambulatório\nespecializado, o Sertrans, no Hospital Universitário do Ceará\n(HUC) e somente 25% das mulheres trans e travestis possuem\nvínculo empregatício formal.\nNesse sentido propomos:"
+          },
+          {
+            "id": "59",
+            "titulo": "59",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "59\n\n8. LGBTTIA+\n1.\n\nGarantir que o novo Plano Estadual de Educação\npreveja o combate à LGBTTIA+fobia, respeito à\ndiversidade em seus artigos, sem qualquer referência ao\ntermo pseudocientífico “Ideologia de gênero”;\n\n2. Universalização de casas de referência para pessoas\n\nLGBTTIA+ em todo o Estado.\n3. Garantir\n\nnas\nprincipais\ncidades\nespecializados para pessoas trans.\n\nambulatórios\n\n4. Parceria com as Secretarias de Saúde municipais para,\n\npor meio dos agentes de saúde, fazer busca ativa das\npessoas LGBTTIA+s e acompanhar sua saúde mental,\nsexual e reprodutiva;\n5. Capacitação de todos os profissionais da saúde para o\n\natendimento das pessoas LGBTTIA+ e suas demandas\nespecíficas de Saúde;\n6. Facilitação do acesso à transição gratuita e assistida\n\npelo SUS para pessoas trans e travestis;\n7. Garantia de proteção e redução de danos para pessoas\n\ntrans e travestis em situação de prostituição\n8. Projetos de formação continuada contra LGBTTIA+fobia\n\ne atendimento ao público voltado às pessoas LGBTTIA+\npara servidores públicos e municipais;\n9. Mutirão\n\nde combate à violência contra pessoas\nLGBTTIA+, especialmente trans e travestis que se\nencontram em situação de prostituição."
+          },
+          {
+            "id": "9-pcds",
+            "titulo": "9. PCDS",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "9. PCDS\n\n60\n\nSegundo o censo realizado pelo IBGE em 2022, o Ceará conta\ncom uma população de 766 mil pessoas com deficiência,\nrepresentando 8,9% da população com dois anos ou mais de\nidade. Esse percentual é o terceiro maior do país e está acima da\nmédia nacional.\nO governo federal, porém, não tem interesse em garantir o\nbásico para essa população. Ao invés de ampliar medidas de\nacessibilidade e benefícios, o governo anunciou um “pente-fino”\nnos cadastros do Benefício de Prestação Continuada (BPC).\nSegundo dados do Governo do Estado, cerca de 280 mil\npessoas com deficiência recebiam o benefício. No quesito da\nempregabilidade, apesar da Lei 8213/91 garantir vagas para\nPCDs em empresas com mais de cem funcionários, pouco mais\nde duas mil pessoas com deficiência estão empregadas no\nestado. Com isso, mais da metade da população com deficiência\nnão possui uma renda fixa no Ceará.\nPara piorar, o acesso à educação é muito limitado. No país, 21,3%\nda população com deficiência com mais de quinze anos de\nidade é analfabeta. Além disso, mais de 20% na faixa entre 15 e\n17 anos não frequenta a escola. Acima dos 25 anos, 7,4% das\npessoas com deficiência concluíram o ensino superior; 17,8%, o\nensino médio; e 11,8% apenas o ensino fundamental, dados que\nsão reflexo da falta de acessibilidade dessas instituições, pois as\npolíticas existentes, como o AEE - Atendimento Educacional\nEspecializado -, que deveriam tornar às escolas de ensino\nfundamental, médio e EJA acessíveis para crianças, jovens e\nadultos, são escassas e com pouco investimento. De acordo\ncom dados do Censo Escolar de 2025, havia 146.784"
+          },
+          {
+            "id": "9-pcds-2",
+            "titulo": "9. PCDS",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "9. PCDS\n\n61\n\nmatriculados na Educação Especial no estado, o que mesmo\nparecendo ser um grande número, mascara a precarização e\nsobrecarga que ocorrem nessas escolas, nos profissionais da\neducação e dos alunos.\nNo artigo “Os Desafios da Atuação de Professores do\nAtendimento Educacional Especializado” (SANTOS, R. D. dos,\n2024), as dificuldades dos professores da rede pública do AEE\nsão similares aos dos professores regulares “angústias com a\nformação, remuneração inadequada, excesso de estudantes\npara um único professor acompanhar, cultura escolar e a\nausência de estratégias de fortalecimento da parceria entre\nprofessores, família e gestão, etc”, mas com um agravante\n“Muitos professores relatam que sua formação não foi\nsuficientemente abrangente para prepará-los para as demandas\nda inclusão”. Assim, sem preparo, um único professor tem que\nlidar com estudantes com diversas deficiências e/ou transtornos\ndiferentes, sem material adaptado, sem apoio e sem formação.\nAlém disso, a maioria das instituições de ensino - até mesmo as\nuniversidades - de cultura, de esporte e de lazer, não contam\ncom estrutura adequada: falta de pisos táteis, rampas de\nacessibilidade funcionais, elevadores, provas adaptadas (com\nfonte maior em braile, etc) ou até mesmo piso nivelado.\nSem acesso à educação devida, empregos estáveis ou\nbenefícios, como a população PCD do Ceará irá viver? É preciso\ngarantir que os direitos já conquistados e avançar ainda mais. As\npessoas com deficiência do nosso estado merecem viver. Com\nisso propomos:"
+          },
+          {
+            "id": "9-pcds-3",
+            "titulo": "9. PCDS",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "9. PCDS\n1.Ampliação do BPC e fim de qualquer “pente-fino” que\n\nameace o benefício dos cearenses que o recebem.\n2.Criação de canais de atendimento acessíveis no INSS\n\npara PCDs;\n3.Criação de um observatório estadual do trabalho para\n\nPCDs, com fiscalização rigorosa do cumprimento da Lei\n8.213/91 (cotas de 2% a 5% para empresas com mais de\n100 funcionários);\n4.Instituição de incentivos fiscais para empresas que\n\nsuperarem as cotas legais e garantirem condições\nefetivas de acessibilidade no ambiente laboral.\n5.Criação\n\nde cursos técnicos e profissionalizantes\ngratuitos, com material adaptado (braille, Libras, fonte\nampliada) e estrutura acessível, em parceria com o\nSistema S (SENAI, SENAC, SESC) e Institutos Federais.\n\n6.Bolsa de estudos e auxílio-transporte para pessoas com\n\ndeficiência em processo de qualificação;\n7.Contratação imediata de profissionais especializados\n\nem educação especial para a rede pública, com carga\nhorária adequada e remuneração justa;\n8.Formação contínua obrigatória para professores do AEE\n\ne da educação regular, com carga horária específica\nsobre inclusão, deficiências múltiplas, transtornos\nglobais do desenvolvimento e altas habilidades;\n\n62"
+          },
+          {
+            "id": "63",
+            "titulo": "63",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "63\n\n9. PCDS\n9.Garantia de que cada professor do AEE atenda um\n\nnúmero compatível de alunos, com apoio de monitores\ne profissionais de apoio escolar;\n10.Plano estadual de conscientização sobre pessoas com\n\ndeficiência nas escolas, para diminuir a ignorância,\ninimizade e o bullying contra às crianças e jovens com\ndeficiência;\n11.Plano estadual de adequação arquitetônica de todas as\nescolas públicas: rampas, pisos táteis, elevadores,\nbanheiros adaptados, sinalização tátil e visual;\n12.Garantia de provas adaptadas (braille, fonte ampliada,\n\nLibras) em todos os níveis de ensino, incluindo\nvestibulares e concursos públicos;\n13.Implementação de tecnologia assistiva nas escolas:\n\nsoftwares de leitura de tela, equipamentos de ampliação\nde texto e materiais didáticos acessíveis;\n14.Programa estadual de alfabetização de adultos com\n\ndeficiência, com foco nos 21,3% de analfabetos com\nmais de 15 anos;\n15.Criação de turmas de EJA com estrutura e metodologia\n\nadaptadas às\ndeficiência.\n16.Distribuição\n\nnecessidades\n\ndas\n\npessoas\n\ncom\n\ngratuita\nde\nórteses,\npróteses,\nmedicamentos e fraldas geriátricas, com regularidade e\nsem interrupções."
+          },
+          {
+            "id": "9-pcds-4",
+            "titulo": "9. PCDS",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "9. PCDS\n17.Ampliação dos setores de atendimento às pessoas com\n\ndeficiência na saúde pública, especialmente no que se\nrefere à contratação de profissionais que atuem na área,\ncom objetivo de diminuir as filas por diagnósticos e\ntratamentos adequados.\n18.Destinação\n\nde percentual mínimo do orçamento\nestadual para políticas de acessibilidade, educação\ninclusiva e benefícios para PCDs.\n\n64"
+          },
+          {
+            "id": "10-transporte",
+            "titulo": "10. TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "10. TRANSPORTE\n\n65\n\nUm dos maiores desafios para uma gestão pública é a oferta de\ntransporte e seu acesso com qualidade para a população. Para\nexecutar planos de transporte coletivo é necessário pensar o\nacesso à cidade e mobilidade urbana, a ocupação do território e\nos diferentes modais de transporte.\nO Ceará é um dos mais ricos e importantes estados da\nFederação, e por isso, conta com uma alta demanda de\nlocomoção. Seguindo a Lei 12.587/12, referente à Política\nNacional de Mobilidade Urbana, devemos considerar\nprimeiramente o art.5 “acessibilidade universal”, “equidade no\nuso do espaço público de circulação, vias e logradouros”. A partir\ndaí, é necessário apontar que todas as intervenções nas ruas e\navenidas precisam estar alinhadas ao que essa política orienta.\nHoje em nossa cidade, é comum lidarmos com um trânsito\nbastante caótico mesmo que tenha sofrido mudanças nos\núltimos anos. Mas devemos nos perguntar se essas mudanças\nforam realizadas no intuito de dar fluidez ao tráfego pensando\nem todos os atores da sociedade e se de fato os fortalezenses\nforam ouvidos para sugerirem propostas de resolução viável.\nEm primeiro lugar na formulação de propostas sobre\ntransporte, vamos aqui pensar em alguns pontos: transporte\ncoletivo (oferta, custo e qualidade/rapidez), modais, acesso a\ncidade.\nPropagandeada durante muito tempo por ser a mais barata do\npaís e integrada, a passagem de ônibus em Fortaleza tem\nsofrido reajustes crescentes e não está ligada à melhoria de\nserviço. Na tentativa de universalizar a utilização do"
+          },
+          {
+            "id": "10-transporte-2",
+            "titulo": "10. TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "10. TRANSPORTE\n\n66\n\nBilhete Único, a gestão RC (PDT)* só conseguiu ver a expansão\ndo sistema de BU quando associou o mesmo às carteiras de\nestudante. Além disso, os ônibus não estão integrados com o\nmetrô de Fortaleza e desde o início da implantação, os coletivos\nvêm sofrendo mudanças com a demissão de centenas de\ntrabalhadores cobradores.\nPara garantir de fato o direito de ir e vir, é urgente a implantação\ndo Passe – Livre para estudantes e desempregados e a redução\ndo preço da passagem associado a melhoria no transporte\ncoletivo nas principais cidades. Além disso, é preciso uma\nredução drástica dos preços das passagens dos ônibus\nintermunicipais, aumentando a oferta de várias linhas. É preciso\nestatizar esse importante setor da economia cearense.\nNesse sentido propomos:"
+          },
+          {
+            "id": "10-transporte-3",
+            "titulo": "10. TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "10. TRANSPORTE\n1. O aumento da malha metroviária, integrada aos ônibus;\n2. Expansão do VLT do Cariri até o município de Missão\n\nVelha;\n3. Expansão do VLT na região Norte;\n4. Redução da tarifa de transporte público garantindo que\n\no gasto com transporte não ultrapasse 5% do salário\nmínimo. Realizar ações que garantam esse valor do\ntransporte;\n5. Criação\n\nde uma empresa pública municipal de\ntransporte. Objetivo: Oferecer um serviço de qualidade\ne com preço módico a toda população, a garantia do\ndireito de ir e vir está acima do lucro, reduzindo a\nnecessidade do uso de carros particulares diminuindo a\nemissão de gás carbônico e a poluição na cidade, além\nda geração de empregos a partir de concursos públicos;\n\n6. Passe livre para os estudantes e desempregados\n\ndurante toda a semana, incluindo os domingos e\nferiados. Objetivo: Garantir o acesso dos estudantes à\neducação e ao lazer. Facilitar a vida do trabalhador\ndesempregado na sua busca por emprego. Sem salário,\no direito de ir e vir do trabalhador está prejudicado. É\nnecessário permitir a sua movimentação na busca por\nemprego;\n\n67"
+          },
+          {
+            "id": "10-transporte-4",
+            "titulo": "10. TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "10. TRANSPORTE\n7.Criação, melhorias e ampliações de terminais de\n\ntransporte coletivos para integração dos diferentes\nserviços. Objetivo: Facilitar a circulação na cidade\ngastando menos, aproveitando a geografia e\ninterligando ônibus, metrôs e trens.\n8.Elaborar um aplicativo estadual de transporte onde\n\nmotoristas de carro e moto possam se cadastrar para\ntrabalhar, ficando com 95% do valor da corrida, sendo a\ntaxa de serviço de 5% apenas para a manutenção do\nsistema.\n9.Ampliação\n\ndo programa “Bicicleta Popular”, com\nreforma dos principais centros urbanos do estado para\npossibilitar melhor deslocamento de ciclistas (exemplo:\nmais ciclofaixas e ciclovias).\n\n68"
+          },
+          {
+            "id": "11-esporte",
+            "titulo": "11. ESPORTE",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "11. ESPORTE\n\n69\n\nA ludicidade constitui uma grande ferramenta para o\ndesenvolvimento do bem estar físico, psíquico e social. Desde\ntempos remotos, a humanidade criou diversas brincadeiras e\njogos que servem como espaço de socialização. Com o advento\ndo capitalismo, boa parte dessa rica produção cultural popular\npassa a ser mercantilizada e traz fortes traços ideológicos para\nmanutenção das classes dominantes. Atualmente, há a chamada\nindústria do lazer, que gera trilhões de reais de lucros aos donos\ndessa rede de entretenimento.\nO Estado do Ceará possui na sua estrutura administrativa uma\nsecretaria de esporte e lazer e a política de lazer gira em torno\ndos serviços da indústria do turismo (bares, restaurantes, casas\nde shows, principalmente), que, muitas vezes, acabam\nreproduzindo a lógica do lazer passivo, voltado ao consumo de\nbebidas alcóolicas, prostituição e tráfico de drogas. É\nnecessário, de imediato, mudar essa concepção.\nO déficit na democratização do esporte e a falta de amplas\ncampanhas de incentivo à prática do exercício físico tem\nresultado nos péssimos números do Estado em mortes por\ndoenças cardiovasculares, que vitimaram nos últimos dez anos\n154.500 pessoas, com a A 1ª Região de Saúde (Fortaleza)\nconcentrando cerca de 40% dos óbitos, seguida por Cariri e\nSobral.\nA democratização da prática do exercício físico e do esporte é\nimprescindível para a elaboração de um programa de saúde\npreventiva em nosso município, assim como possibilitará lazer\npara a população de forma gratuita e de fácil acesso.\nPara combater esse cenário, propomos:"
+          },
+          {
+            "id": "11-esporte-2",
+            "titulo": "11. ESPORTE",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "11. ESPORTE\n1.Criar o Bicicleta Popular, projeto do Governo do estado\n\nque disponibiliza bicicletas gratuitas nas principais\ncidades, incentivando a população a usar mais esse\nveículo tanto para melhoria da saúde quanto facilitar a\nmobilidade pela cidade;\n2.Investir em formação dos novos atletas, através de\n\ncriação de escolinhas das mais diversas modalidades\nesportivas, dando maior visibilidade aos bairros mais\npobres das principais cidades do Estado\n3.Desenvolver um programa de esporte na praça, que\n\npossa alcançar todos os públicos, em especial as\npessoas da terceira idade. Esse programa deve ser\ndesenvolvido em parceria com a Secretaria de Saúde e\nos cursos de educação física das universidades públicas;\n4.Semana do esporte contra a depressão: Projeto que\n\nconsiste em divulgar e propagar as práticas esportivas,\nde lazer e saúde nas escolas;\n5.Garantir a universalização das areninhas com enfoque\n\nmultidisciplinar e poliesportivo;\n6.Aumentar o orçamento da Secretaria de Esporte e\n\nLazer; diminuir gastos com publicidade, cortar\npatrocínios aos clubes profissionais de futebol, visto que\nessa não é a prioridade da gestão estadual;\n7.Promover concurso público para o quadro de servidores\n\ntécnico- administrativos da secretaria de esporte e lazer;\n\n70"
+          },
+          {
+            "id": "11-esporte-3",
+            "titulo": "11. ESPORTE",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "11. ESPORTE\n8.Elaborar\n\num programa de combate às doenças\ncardiovasculares em parceria com a Secretaria de\nSaúde, com ações práticas e metas a serem alcançadas;\n\n9.Reforma de todos os equipamentos administrados pela\n\nsecretaria de esporte e lazer;\n10.Escolas\n\ncomo\npolos\nesportivos:\nModernizar\nequipamentos escolares e abri-los à comunidade fora\ndo horário letivo, com gestão compartilhada (direção\nescolar + associação de pais + secretaria municipal);\n\n11.Criação da Universidade Estadual do Esporte, com\n\nprograma idealizado junto de corpo discente da UFC,\nUECE, URCA e UVA (do curso de Educação Física),\nvoltado para formação e profissionalização de atletas,\npreparadores físicos e demais trabalhadores do esporte;\n12.Reformar e construir quadras poliesportivas nas escolas\n\ne praças nos bairros mais periféricos;\n13.Retomar o projeto “2º tempo” para que os alunos no\n\ncontraturno da escola tenham acesso ao esporte e lazer\ndentro da escola.\n\n71"
+          },
+          {
+            "id": "12-meio-ambiente",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\n\n72\n\nO Ceará é o campeão nacional de desmatamento de restinga\nna Mata Atlântica. Entre 2019 e 2024, o estado concentrou 65%\nde toda a perda nacional desse ecossistema frágil. Só entre\n2023 e 2024, foram 345 hectares destruídos — 76% do total\nregistrado no bioma. (Relatório “Restinga sob pressão – Análise\nda supressão da vegetação costeira da Mata Atlântica no litoral\ndo Ceará”).\nNo semiárido cearense, a Caatinga, um dos biomas mais ricos e\nameaçados do Brasil, sofre com ciclos de seca intensificados\npela ação humana. Desmatamento, queimadas criminosas,\npastoreio excessivo e agricultura inadequada aceleram a\ndesertificação. Milhares de famílias rurais são abandonadas à\nprópria sorte, enquanto grandes projetos e latifúndios garantem\nseus privilégios hídricos.\nAs mudanças climáticas agravam tudo: temperaturas mais altas,\nchuvas cada vez mais irregulares e rios que secam. O modelo de\ndesenvolvimento baseado em monoculturas e exploração\npredatória ameaça seriamente nossos biomas.\nNo interior se destacam os ataques à chapada do Araripe e a\nextração de urânio em Santa Quitéria como grandes ameaças ao\nmeio ambiente no Estado.\nNa Chapada do Araripe, na região do Cariri, em poucos anos\nmilhares de hectares da foram arrasados. Entre os dados mais\nalarmantes, registros apontam 3.950 hectares desmatados em\ncurto intervalo, com mais de 93% sem qualquer autorização\nlegal. Na Área de Proteção Ambiental (APA) da Chapada do\nAraripe, o agronegócio avança sem freios:"
+          },
+          {
+            "id": "12-meio-ambiente-2",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\n\n73\n\nmais de 5.900 hectares foram perdidos em um único ano\nrecente, com mais de 300 hectares de Caatinga e Cerrado\nderrubados em uma única ação para plantar soja e milho\ndestinados à ração animal.\nO principal agressor é o modelo predatório dos latifundiários do\nagronegócio. Empresas e produtores derrubam vegetação\nnativa para expandir monoculturas, muitas vezes com conivência\nou autorizações questionáveis de governos estaduais. Isso não é\n“desenvolvimento”: é crime ambiental organizado que\ncompromete a biodiversidade, acelera a desertificação e\nameaça a segurança hídrica de toda a região do Cariri.\nEm Santa Quitéria, no Norte do Estado, sob o pretexto de\n“desenvolvimento econômico”, “energia limpa” e produção de\nfertilizantes, um consórcio privado (incluindo a Galvani e a INB –\nIndústrias Nucleares do Brasil) pretende transformar uma região\nagrícola e de comunidades tradicionais em um canteiro de riscos\nradioativos irreversíveis, pois a mineração ameaça esgotar o\nprincipal açude da região e contaminar as fontes de água com\nresíduos radioativos e fosfatados. Em um estado marcado por\nsecas crônicas e escassez hídrica, priorizar uma atividade que\nexige volumes enormes de água é criminoso.A isso se somam o\naumento da poluição e dos crimes ambientais.\nMais de 6.200 crimes ambientais foram registrados no Ceará\nentre 2019 e 2024. Em 2024, a Semace aplicou multas de mais\nde R$22 milhões — números que, embora expressivos, parecem\ninsignificantes diante da impunidade reinante."
+          },
+          {
+            "id": "12-meio-ambiente-3",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\n\n74\n\nRios contaminados por esgoto, resíduos industriais e\nagrotóxicos. Praias transformadas em depósitos de lixo.\nFortaleza e outras capitais convivem com o legado de lixões a\ncéu aberto. A poluição atmosférica por queimadas e veículos\nagrava problemas respiratórios, especialmente entre os mais\npobres. Comunidades tradicionais, quilombolas e indígenas são\nas primeiras a sofrer os impactos, enquanto os lucros vão para\npoucos.\nNesse sentido, propomos:"
+          },
+          {
+            "id": "12-meio-ambiente-4",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\n1.Demarcação e Fortalecimento Real de Unidades de\n\nConservação: Transformar a APA da Chapada do\nAraripe em instrumento efetivo de proteção, com veto\ntotal a novos desmatamentos e expansão do\nagronegócio. Realizar desapropriação de terras\nimprodutivas nas áreas de alta biodiversidade para\nreforma agrária agroecológica;\n2.Auditoria e Revogação de Licenças Ilegais: Criar uma\n\ncomissão independente (com participação de\nmovimentos sociais, universidades e comunidades) para\nanular licenças ambientais concedidas irregularmente.\nPunir com expropriação e criminalização os grandes\ndesmatadores e grileiros;\n3.Programa massivo de reflorestamento e recuperação\n\nde nascentes, gerido por cooperativas camponesas e\npovos tradicionais, com remuneração digna;\n4.Cercar e proteger áreas degradadas para permitir o\n\nrebrote espontâneo da vegetação nativa (mais barata e\neficaz em muitos casos);\n5.Integrar árvores nativas da Caatinga com cultivos\n\nagrícolas e criação de animais de forma sustentável,\ngerando renda para famílias rurais enquanto recupera o\nsolo;\n6.Arquivamento Definitivo e Transição Energética Justa:\n\nCancelar imediatamente o Projeto Santa Quitéria.\nUrânio não é solução — é risco radioativo e dependência\n\n75"
+          },
+          {
+            "id": "12-meio-ambiente-5",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\ne dependência tecnológica. Investir os recursos\nprevistos em energias renováveis descentralizadas\n(solar, eólica comunitária) sob controle público e\npopular.\n7.Proibir qualquer atividade mineradora que ameace\n\naquíferos e açudes. Implementar um plano estadual de\ngestão democrática da água, com prioridade ao\nconsumo humano e à agricultura familiar, e não ao\nagronegócio;\n8.Avançar na desapropriação de latifúndios improdutivos\n\ne destinar terras para assentamentos agroecológicos.\nProibir desmatamento em áreas de Caatinga e restinga,\ncom incentivo forte à produção de alimentos saudáveis\npara o mercado interno;\n9.Fortalecer\n\nórgãos ambientais com orçamento e\nautonomia, mas subordinados a conselhos populares\ncom veto das comunidades. Criar polícia ambiental civil\ne mecanismos de denúncia ágeis e protegidos;\n\n10.Incluir\n\neducação ambiental crítica nas escolas e\nfortalecer universidades públicas para pesquisas\nindependentes, rompendo com a influência do capital\nnas avaliações de impacto;\n\n11.Implementar a concessão de terras públicas no interior e\n\nlatifúndios com terras improdutivas para o planejamento\nestadual de Reforma Agrária;\n\n76"
+          },
+          {
+            "id": "12-meio-ambiente-6",
+            "titulo": "12. MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 77,
+            "paginaFinal": 77,
+            "origem": "pdftotext",
+            "conteudo": "12. MEIO AMBIENTE\n12. Reforçar áreas de proteção ambiental, com foco na\n\npreservação e revitalização de rios e florestas.\n\n77"
+          },
+          {
+            "id": "13-mulheres",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 78,
+            "paginaFinal": 78,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n\n78\n\nA violência contra a mulher no Ceará é alarmante. Segundo a\nnota técnica do Fórum Brasileiro de Segurança Pública, somos o\nquarto estado brasileiro com maior crescimento de feminicídios.\nDe acordo com o levantamento da Superintendência de\nPesquisa e Estratégia de Segurança Pública (Supesp), os\nfeminicídios cresceram 46,15% entre janeiro e maio de 2026,\nquando comparados com igual período do ano passado. Tratase da maior marca do período desde 2018.\nAlém disso, os casos de violência contra a mulher subiram 4,1%\nno Ceará. Apenas de janeiro a abril, foram registrados 8.512\ncasos desse tipo no estado. A subnotificação é uma realidade\npara esse tipo de crime, nesse sentido os números podem estar\nsubestimados em pelo menos 10 vezes mais do que os\napresentados. Trata-se, portanto, de uma experiência de vida de\nmedo e insegurança para qualquer mulher cearense.\nPrecisamos construir um Estado no qual as mulheres possam\nviver seguras nas ruas e dentro de casa. O Governo tem a\nresponsabilidade maior sobre a vida de seu povo, deve garantir\njustiça social, acolhimento e gerar oportunidades na promoção\nde uma vida digna para as mulheres.\nA realidade das mulheres no nosso país demonstra que, mesmo\ntrabalhando fora de casa, elas ainda são responsáveis por\ngrande parte das tarefas domésticas, dos cuidados com os\nfilhos e, muitas vezes, dos idosos. De acordo com os dados\ndivulgados por estudo da Organização Internacional do Trabalho\n(OIT), em parceria com o Ministério do Desenvolvimento e\nAssistência Social, Família e Combate à Fome (MDS), em 2025,"
+          },
+          {
+            "id": "13-mulheres-2",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 79,
+            "paginaFinal": 79,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n\n79\n\nas mulheres realizam 9,8 horas por semana de serviços\ndomésticos a mais que os homens, o cenário piora gravemente\nquando se trata das mulheres negras, que trabalham 22,4 horas\na mais que os homens.\nConciliar os horários de trabalho com as demandas dos filhos e\nda casa torna-se um grande desafio, principalmente, em um\ncontexto cultural que poucos homens dividem essas tarefas\ncom suas companheiras, e, além disso, mais de 11 milhões de\nmães solo chefiam suas famílias, sem qualquer tipo de rede de\napoio (IBGE).\nOs dados da Organização Internacional do Trabalho – OIT\nmostram que a participação feminina no trabalho informal\nsupera a masculina em muitos dos países em desenvolvimento.\nIsso quer dizer que a força de trabalho feminina está nos postos\nde emprego com mais vulnerabilidade, a exemplo das faxineiras\ne diaristas.\nO Brasil é o país com a maior população de empregados\ndomésticos do mundo, são sete milhões de pessoas, em sua\nmaioria de mulheres, negras e de baixa escolaridade, 35% sendo\ndiaristas, sem contrato de trabalho, muitas vezes privadas dos\nseus direitos trabalhistas, como férias, 13º salário e pagamento\nde hora extra, situação essa que só se agravou nos últimos anos,\né o que afirma os dados do IBGE. As mulheres também estão na\nlinha de frente na proteção à saúde. No Brasil, cerca de 85% das\nenfermeiras são mulheres. Além das jornadas exaustivas, elas\nainda são obrigadas a trabalhar com a escassez de\nequipamentos de proteção, sem os quais acabam por colocar\nem risco à própria saúde e a de seus familiares."
+          },
+          {
+            "id": "13-mulheres-3",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 80,
+            "paginaFinal": 80,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n\n80\n\nPor isso, precisamos ter um governo do estado que acolha\ntodas as mulheres, das jovens às idosas, as mulheres portadoras\nde deficiência, as mulheres negras, as pobres e as mulheres\ntrans. Vamos dialogar com essas mulheres, entender suas\nnecessidades, atuando em conjunto com outras secretarias\n(saúde, educação, habitação, segurança pública) para que os\nnossos objetivos comuns sejam alcançados, ou seja, a promoção\nda igualdade entre mulheres e homens.\nPor isso, a Unidade Popular conclama as mulheres a lutarem\npelos seus direitos, por igualdade e contra essa epidemia de\nfeminicídios e outras formas de violência.\nNesse sentido, propomos:"
+          },
+          {
+            "id": "13-mulheres-4",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 81,
+            "paginaFinal": 81,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n1.. Fortalecer a presença das mulheres nas diversas etapas\n\ndos processos de democracia participativa. Nossa\ngestão vai ser paritária nas Pastas do Executivo; cargos\nde direção em secretarias, autarquias entre outros.\nPromovendo a igualdade de direitos e a promoção de\nmulheres nas decisões políticas do Ceará;\n2.. Ampliar e garantir o acesso à justiça e à assistência\n\njurídica gratuita às mulheres em situação de violência e\nsuas demandas, também com os filhos, com a\nampliação da Assistência Jurídica em parceria com as\nuniversidades e escritórios modelos de advocacia;\n3. Gerar renda (Parceria com escolas profissionalizantes\n\npara oferecer cursos e oficinas gratuitos de qualificação\nprofissional para mulheres vítimas de violência e em\nsituação de vulnerabilidade social);\n4. Priorizar a intermediação de mão-de-obra feminina nas\n\nações do Sistema Nacional de Emprego – SINE/ CE;\ncriar cursos para mulheres em situação de\nvulnerabilidade social, incluindo as portadoras de\ndeficiências, como trabalhos manuais, artesanais,\nmecânicas, carpintarias, tecnologias da informação e\ncomunicação com organização de pequenas empresas\nque absorvam essa mão de obra;\n\n81"
+          },
+          {
+            "id": "13-mulheres-5",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 82,
+            "paginaFinal": 82,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n5. Garantir delegacias especiais para as mulheres que\n\nfuncionem 24 horas, qualificando os profissionais da\nárea de segurança pública para realizar os atendimentos\ncom a perspectiva humanizada com as vítimas;\n6. Enfrentar\n\nà exploração sexual de Crianças e\nAdolescentes com o trabalho transversal com várias\nsecretarias articuladas a outros órgãos competentes\ncomo conselho tutelar, Ordem dos Advogados do Brasil\ne as defensorias públicas;\n\n7. Garantir a proteção do mercado de trabalho para a\n\nmulher, mediante incentivos específicos nos termos da\nlei; bem como proibir a diferença de salários, de\nexercício de funções e de critério de admissão por\nmotivo de gênero, maternidade, idade, cor, orientação\nsexual ou estado civil;\n8. Desenvolver\n\namplas campanhas publicitárias e\ninstitucionais junto à sociedade para divulgação das leis\nde proteção à mulher, especialmente dos direitos das\ntrabalhadoras. Dessa maneira, desenvolver ações e\nprogramas permanentes de combate à discriminação de\nmulheres negras, trans, indígenas, ciganas, imigrantes e\nde pessoas com deficiência no mercado de trabalho;\n\n9. Incentivar o combate ao trabalho análogo à escravidão\n\ncom ênfase nas mulheres, especialmente as negras;\n\n82"
+          },
+          {
+            "id": "13-mulheres-6",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 83,
+            "paginaFinal": 83,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n10. Estabelecer que todos os SERVIDORES PÚBLICOS\n\nESTADUAIS ao tomarem posse em suas funções,\nindependentemente\ndos\ncargos,\ndeverão,\nobrigatoriamente, realizar CURSO DE FORMAÇÃO DE\nIGUALDADE DE GÊNERO de no mínimo, 24 horas,\nantes da sua definitiva lotação;\n11. Definir que, para fins de quaisquer utilização de\n\nbenefícios fiscais, acesso a programas sociais, acesso a\ncrédito subsidiado, utilização de espaços públicos,\naprovação em licitações, as empresas com mais de 50\nfuncionários deverão garantir treinamento mínimo anual\nde 24 horas de CURSO DE FORMAÇÃO DE\nIGUALDADE DE GÊNERO para todos seus funcionários;\n12. Assegurar que toda e qualquer empresa conveniada ou\n\ncontratada pelos órgãos públicos deverá apresentar,\npara fins de continuidade dos contratos firmados,\ndocumentos\ncomprobatórios\nde\nCURSO\nDE\nFORMAÇÃO DE IGUALDADE DE GÊNERO realizado\npor entidade pública ou privada de no mínimo, 24 horas\nanuais;\n13. Criar o SELO DE IGUALDADE DE GÊNERO nos órgãos\n\npúblicos e privados com exigências formais e ações\nconcretas que avancem na luta contra o machismo e o\npatriarcado;\n\n83"
+          },
+          {
+            "id": "13-mulheres-7",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 84,
+            "paginaFinal": 84,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n14. Incluir nas POLÍTICAS ESTADUAIS DE COMBATE Á\n\nVIOLÊNCIA, junto ao CONSELHO ESTADUAL DE\nMULHERES, a construção de um CONGRESSO\nESTADUAL PELOS DIREITOS E IGUALDADE DE\nGÊNERO com participação dos movimentos sociais\npara criar o ESTATUTO DA IGUALDADE como forma de\ncarta orientadora para mobilização da sociedade;\n15. Criar o PROGRAMA DE BRIGADISTA DA IGUALDADE\n\nfinanciado pelo governo estadual para ações\npermanentes nos bairros populares para impulsionar a\nconscientização;\n16. Ceder\n\nespaços públicos para CENTROS DE\nFORMAÇÃO E ACOLHIMENTO às mulheres como\nespaço livre, organizado pelos movimentos sociais de\nluta das mulheres;\n\n17. Ampliar as CASAS ABRIGO e de PASSAGEM para\n\nvítimas de violência doméstica, desburocratizando o\nacesso. Se necessário, realizar convênios com entidades\nsem fins lucrativos;\n18. Garantir\n\nAssistência financeira para mulheres em\nsituação de vulnerabilidade, vítimas de violência\ndoméstica, de até 12 meses;\n\n19. Garantir em todas as instituições, públicas e privadas,\n\nCOMISSÕES INTERNAS DE COMBATE A VIOLÊNCIA\nDE GÊNERO com eleição e garantia de estabilidade\npara as eleitas, de no mínimo, 2 anos;\n\n84"
+          },
+          {
+            "id": "13-mulheres-8",
+            "titulo": "13. MULHERES",
+            "nivel": 1,
+            "paginaInicial": 85,
+            "paginaFinal": 85,
+            "origem": "pdftotext",
+            "conteudo": "13. MULHERES\n20. Construir lavanderias e restaurantes públicos, com\n\nprioridade às regiões mais vulneráveis do estado, a fim\nde que mulheres e meninas possam se desvencilhar do\ntrabalho de cuidados com as famílias;\n21. Exoneração de servidores públicos que forem, após\n\nprocesso administrativo, condenados por violências a\nmeninas e mulheres.\n\n85"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "0a2c7cf67f6614ec9d2af882d312d62fc5fd6ad4accd3230d181e37e20a55a74"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7744165125e307bc10ebb4f61308f6ba78f5aca1fefd04cfa9fe5270c374a7c8"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "4e1bab3ee159dc27691dd755464400a6d00e32f904334f94a05fc29df2be5dc9"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c7ac08514efa38a0838ca8bf196e371e365e74e4df34e245ca977bc2388d88d2"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "21b3623ee03e9870d3fb9d39fe5edfdd66a2e84e8599732b652ab0602c11167c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "f684879c436ec8bfdaf7d57b2e1bf909ff2801e510ff507b89e29755e28b59a5"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "733eaf5dd550abf17370f7946e560e6eb624eca1e5a4b448a89bd062b3866831"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "9a18a185a5c2a8c06da3d97eac953698b68093c3c18b581c6f3aed6c2c8d1e52"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "eebd918f89619ff932275d0838779b2a13718b8ef92bb384a8430b5ab33c9530"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "a772f209741d47da4ed13ca33cbe8446d30ebc3458ce0b5007a48554001d529e"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "7fed6894bc403b83f04700708b911e86e2d07dc83367430454b165cd214de13f"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "8554c0a71d37938e59911452061861573355944cf555030226b92b526b6f0fc8"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "41d1c940254ea41ffeb0838af9119928059145f79de3979c5efd41a5a26fbe1b"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "ab950e5efa113a2fcf47e2e085677388217f934ee67e03c56646910af70a1d97"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "34437353ea82b4376ef69101ea534884f8d9a8b44a0bc654cabec304ca5b0c2c"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "b8d0d0036dd8232a23c9d7ce29afac499fe2cfa8fe609b8e27ba809ba0c50d84"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "7f56e0be4ec32d680adbe679a37e83661013e16daf30ff59b0019bf6794b11e8"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "b522c7bd8b00b3fd33c0043cb8d580486c91ea55a556bfe52a075d1354afe8dd"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "fb1deed0f9679f54ca1f0e54ae87276f58dd79cf3d97274c885e23b6489a0a96"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "cae5f5df519fd9098c7c83a97dfdf678876481ba1a4ed6a4167988edf2c0f7fe"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "c159039ed4a57ead320ea41d5be1cf9e2cf8006eee8cb23f4f18cd8b08c6f308"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "3e635d94e14eef16c7bbc4f5f7818868b3312a7d266b9cfd2866775f3dd44d44"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "7a7dfcd16d9734ddecfbf5faf1379881fadc44b008b3230da1222812d55cba7b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "a9bce12c304a3b3a63bed36f94194522e8f835cba3e9f635332f4d6ce1834084"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "6468f827c7dbe6e668f7c9ebca73ef7c30f4c33575d33588d51633c14cc0a7b8"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "268029c29d37bb1076682cedf1795ebc4388cd551e0c88bb8574d346153cd442"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "bc2677d372a4fee163d8117e6125691a03f35711c1b24bed6b60ebaf43c78be5"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "3f775657d1498c6b17fe9e0efe08803d3508c624727bad4c9dd0141a091fc2de"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "b7a36e29fd7fbe2e8055fcc4175458004361168178db79360e3efdde597b6407"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "3805f7e56560eccd6f5b31dde154edbf0f4747c65ca7bae421cf660a243a37e7"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "785c8accfb9ce01e42d609beb94fd6219271ccb8f0db81e24d660fc374353296"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "21603d73d6b8aad8e79dfeb9b31ead7e31b3455b805509a2024f5cc974531891"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "0743537293310de587549d2184c55395c937359cea1720f771fbb723c60eca20"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "96560be92679b8876dd6378a6fde90e64ba4a15b5f77c6975ae8900d17b40710"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "316eb04989475b26a1bb8f89c05bd8c791e4526c0cb07010359b9747e0b9ef05"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "5c46f9e5d646e7580fb7f43179e98d4775ac2292a5f0691acc38d35a9dab4972"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "a12e665dd6734d286c40ad58b4d40735cb6ac9af163b098eb9a656ab4b739b8d"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "669518ca3bb919909c20f2dfab3f7228f8c2485c904f45b0220577c738464396"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "df9f5062ff059a52fcca4861f4c59b8bfad71e75f05094535a9b4704600d7bc9"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "270e66323f27db83d374759d68831061ea7fcc98a1e9c0c4de50d3980b9c78b4"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "cab676e9a569b39d94c23b64efae01c03143d0e4126538470a3143200156fc2b"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "2a174c908e93731e72babfb5570cc895605735197e06c64b27fc4c88f3332035"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "2e93f07890d3dc5c7790ad277b795991c43706fe4b37e41b06a70d3e946cfd04"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "fc74f7033229c6795901116a3d8645e5e57b4c0f7d60a417f7a2c467a43ef069"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "b918598813256245fb4484935502dd6a6dcffdf45d9ac6f34c5725057584e8aa"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "02e74d59482564194d859334ba511d31495ec2fe74eeb05a953d8dea406df2a6"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "06a3ac1f19931eaada3ba0cee45389f2b69dba1e5e7525d8d771a03e6e065a86"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "b8e231555a73b29f2d9c7552e4616081064053d34da9bdf744a0cd51f2ba3a28"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "91655c9aef4d41b0efdccc8e408c9e37bc457fcf3f01c132d3a05b38bdbeee6a"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "7bbd652a2ef09835dff8a48b95fc5a2a0ba5a45db504533d3569ae85c2d1af64"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "755d067de169ca68ee6485655afb93be9c68fd983730804d097a1ef1624c7e73"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "5fb1ed0a154ffee65bd134d6f64253edd4c3be1fc3b5b9b7e307061616260de0"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "ac0dc68469043600fd278bb4ae5cda32b5d4d87cf5cd3c7b9b9342b6344525ff"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "0c50129f381559597965016aa19fca69ba72e300e84712afef77f0ca44bae355"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "06b893b6196f84f55e8f0f328ea99502717b4551340be33c9d88b0c8945d742e"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "bea98864ce723b2b55787ed4a47c3c4d6f4edf4c6892f935bca3df4586a5434a"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "2041226ad2081217fe7c4454434802df35900c2fec7fefb3a86d70b17f7bcaa3"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "961756f31bd82ddca767b112af88e938953a7f5a74e60879244b37d6caba9fa5"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "d4a81b28dccb511e6602a3fc724a41b1b90ebdc07704d7e49e269bc01758e0ae"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "8bd4fecd99b592be19162f2abe0be2b173be5e950a4ee514b63d4fb8b79b3197"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "377d74632fbb03185c6e0d79d9126ac5955bdd1b9f4a43f6b4cded813ac877c5"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "66d9bd5b345526b8dbdb961e671a74d90832f0f4efb0f844eaca7aa6be8f0296"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "c93dee57b6dd801aa36a436faa10064137ec0cc0fbb980c2ef9945572ffee018"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "5a1d9a0faf02984e6d50a30295aa2c59ecb6d035820c7933b6d8a6fcb8bcf5e7"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "f101db10c00a7771a0f9ffbe06cf85e49f93c021ad290fef31cbcf3ecd197d79"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "1712554a58e4129a556235cd7bfb129a2c06e66237a15058bee4d29b414ba67c"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "590fc5f85b9cf2668c89ffce0a240db628402edee09bc95e20d20737a8b17061"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "72c56e15df13a0d542c3a90cab8a4a6758751cb7963a0468bf2a6be515c81b10"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "7b513d2fc74029808f399cbd1630331bf0f91d4d4e6071ca8668ec383b627508"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "cb3944810d2a6381445978ef8d3552f09e15f1e1e354a74498a82fce0ec0835b"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "c64d5063f731150668682c7a7d7a89068139c5a8d25d8fb2e7eca4da8b5401dc"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "c693419e64d155633a37c1ac09b31c3014c0e7808faaad32c39d724da3286c8a"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "188642fd0418376d08bb9fa5ccc94db658ab918d486a881b97dc0a6929548ea6"
+          },
+          {
+            "pagina": 74,
+            "origem": "pdftotext",
+            "textSha256": "d28293dcccbe07a700bf1c3351152b518894755ff815a3ec7cb3d91368892b15"
+          },
+          {
+            "pagina": 75,
+            "origem": "pdftotext",
+            "textSha256": "1311d6b0bfd9a58fa99833d4e84e2e0c1def25ddf37dec13cc6171965297722a"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "37c76c1541ba5b0c4696554f2b2c3c1bd6a4a6d548f4b15ac17c68e1b704acbd"
+          },
+          {
+            "pagina": 77,
+            "origem": "pdftotext",
+            "textSha256": "6de3c97c87991b0d15d35213fc226884f5db0b4e8d38599ec1ca3e830504c110"
+          },
+          {
+            "pagina": 78,
+            "origem": "pdftotext",
+            "textSha256": "bcc5d42ce96a0d3217bb875131d1dfd9cfc3ceb44fdd03ffd5dc99ae7db3f378"
+          },
+          {
+            "pagina": 79,
+            "origem": "pdftotext",
+            "textSha256": "45e13a690821392ba59cd09aa74effccf3b9469c02ca29bac5b5160161ef4add"
+          },
+          {
+            "pagina": 80,
+            "origem": "pdftotext",
+            "textSha256": "09687724ba6c77cb096ae7207fa374d8ea52c9526a3ecbf0370cca300ec2c1d3"
+          },
+          {
+            "pagina": 81,
+            "origem": "pdftotext",
+            "textSha256": "4428609517defd42ca1f49ffd54abc9761b80cbfe77385746dc9e319ccd057b6"
+          },
+          {
+            "pagina": 82,
+            "origem": "pdftotext",
+            "textSha256": "17a65a75d5fc7634042deeb8aa5c7939bd2dddb00b3610fa7253bb81d44e2ea1"
+          },
+          {
+            "pagina": 83,
+            "origem": "pdftotext",
+            "textSha256": "3536b838b391221c29a98dffdb76f926e121c9ff6883f489804b3ac945bca927"
+          },
+          {
+            "pagina": 84,
+            "origem": "pdftotext",
+            "textSha256": "ecf22f195916b65573ae7101695456f43bd07d0a3966d1eab0131799facf380e"
+          },
+          {
+            "pagina": 85,
+            "origem": "pdftotext",
+            "textSha256": "5e7017e4c7566303382a8a3fec9b9b8e63f40e3f7f4f0fa2b9e0fb1daba1cba7"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Educação pública e gratuita para todos e em todos os níveis. Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas. Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030. Expandir CAPS-AD para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito: psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego). Criação de canais de atendimento acessíveis no INSS para PCDs. O aumento da malha metroviária, integrada aos ônibus. Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados. O programa prevê ações nas áreas de educação pública, estrutura escolar, saneamento, saúde mental, acessibilidade e transporte coletivo.",
+    "frases": [
+      {
+        "texto": "Educação pública e gratuita para todos e em todos os níveis.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Educação pública e gratuita para todos e em todos os níveis."
+          }
+        ]
+      },
+      {
+        "texto": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas."
+          }
+        ]
+      },
+      {
+        "texto": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030."
+          }
+        ]
+      },
+      {
+        "texto": "Expandir CAPS-AD para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito: psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego).",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 46,
+            "trecho": "Expandir CAPS-AD (Centros de Atenção Psicossocial Álcool e Drogas) para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito:"
+          },
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 47,
+            "trecho": "psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego)."
+          }
+        ]
+      },
+      {
+        "texto": "Criação de canais de atendimento acessíveis no INSS para PCDs.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 62,
+            "trecho": "Criação de canais de atendimento acessíveis no INSS para PCDs;"
+          }
+        ]
+      },
+      {
+        "texto": "O aumento da malha metroviária, integrada aos ônibus.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 67,
+            "trecho": "O aumento da malha metroviária, integrada aos ônibus;"
+          }
+        ]
+      },
+      {
+        "texto": "Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 67,
+            "trecho": "Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "A proposta prevê educação pública e gratuita em todos os níveis.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Educação pública e gratuita para todos e em todos os níveis."
+          }
+        ]
+      },
+      {
+        "id": "estrutura-escolar",
+        "titulo": "Estrutura escolar",
+        "descricao": "A proposta prevê reforma da estrutura das escolas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-escolar",
+        "titulo": "Saneamento escolar",
+        "descricao": "A proposta prevê a ligação das escolas estaduais às redes de esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 27,
+            "trecho": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030."
+          }
+        ]
+      },
+      {
+        "id": "saude-mental",
+        "titulo": "Saúde mental",
+        "descricao": "A proposta prevê a expansão dos CAPS-AD.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 46,
+            "trecho": "Expandir CAPS-AD (Centros de Atenção Psicossocial Álcool e Drogas) para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito:"
+          }
+        ]
+      },
+      {
+        "id": "acessibilidade",
+        "titulo": "Acessibilidade",
+        "descricao": "A proposta prevê canais acessíveis de atendimento no INSS para pessoas com deficiência.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 62,
+            "trecho": "Criação de canais de atendimento acessíveis no INSS para PCDs;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna",
+    "generatedAt": "2026-08-28T13:48:12.340Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T13:50:22.143Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal do documento sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (estrutura escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Números 100% e 2030 literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta (saneamento escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trechos combinados das páginas 46 e 47 sustentam integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Número '50 mil habitantes' literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (expansão do CAPS-AD)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidências das duas páginas cobrem todas as cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (educação pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (estrutura escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números explícitos na afirmação (100% e 2030 omitidos, mas não contraditos)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (saneamento escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números explícitos na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (saúde mental/CAPS-AD)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (acessibilidade para PCDs)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do tema."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002533729",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002533729:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 46429,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1964,
+          "reasoning_output_tokens": 730
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22034,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21311,
+          "output_tokens_details": {
+            "thinking_tokens": 561
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22034,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21311,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22034,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22034
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.31862240000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "245dcb42335d6c5e45172e817535b20fb66cab7f7761c96d7ecc9533e64cdd1a",
+    "extractedTextSha256": "72cbda09375abf897581f9f3f038316e436ccfd22a4a9d50f92a509874989d8f",
+    "documentCount": 1,
+    "documentSetSha256": "1d949eb72d770044416b0bf9b5e359fb2017ef20e9519ff23421d059c9e0b385",
+    "contentSha256": "90b6162a305c7ce846aa460fe99f07adede67e447b03f6503137c2c60d5adac1"
+  }
+}

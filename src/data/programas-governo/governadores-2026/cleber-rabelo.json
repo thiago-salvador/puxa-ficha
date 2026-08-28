@@ -1,0 +1,1244 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PA",
+    "sqCandidato": "140002538631",
+    "slug": "cleber-rabelo",
+    "nomeUrna": "CLEBER RABELO",
+    "partido": "PSTU",
+    "arquivoNome": "2026PA140002538631_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002538631_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PA:140002538631:01",
+      "fonte": {
+        "arquivoNome": "2026PA140002538631_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002538631_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "5d33c3d22959b0ef2443f4b37c6af475e33356ec5a620f76a5ef00b4c16954fe",
+        "extractedTextSha256": "13ad2a199b1bce12cbcd56c0dd3cec5d3481bc81ddf9975e057622c3371680ad",
+        "paginas": 40,
+        "secoes": [
+          {
+            "id": "por-um-para-da-classe-trabalhadora-e-dos-povos-da",
+            "titulo": "POR UM PARÁ DA CLASSE TRABALHADORA E DOS POVOS DA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "POR UM PARÁ DA CLASSE TRABALHADORA E DOS POVOS DA\nAMAZÔNIA: ROMPER AS ENGRENAGENS CAPITALISTAS!\nO Pará é um dos estados mais ricos do Brasil, e tem 80% de sua extensão coberta pelo\nbioma amazônico. Apesar da riqueza, a grande maioria da população vive em condições\nprecárias, sem acesso aos serviços públicos de qualidade, com salários muito baixos ou\nsem empregos, com uma juventude sem perspectiva de futuro.\nExiste um verdadeiro fosso social separando os bilionários dos trabalhadores e\ndo povo pobre. Enquanto a burguesia e seus governos comemoram os grandes índices\nda economia, o estado continua campeão dos piores índices nacionais nos mais diversos\nparâmetros sociais.\nEm 2025 a economia paraense teve um crescimento de 4,51%, superando\nexpressivamente a média brasileira de 2,29%. O PIB estadual foi impulsionado pelo setor\nagropecuário (11,13%) e a construção civil, que registrou uma impressionante expansão\nde 71,28%, embalada pela COP 30; já as exportações somaram US$ 24,23 bilhões.\nAs desigualdades sociais e econômicas são brutais porque toda essa riqueza é\ndesviada para grandes empresas e bancos, que estão bilionários, enquanto aqueles que\na produzem e protegem nossos biomas vivem sob precarização, violência e insegurança.\nAlém dessa riqueza ser apropriada pelos poderosos, ela é construída às custas da\ndestruição da floresta, dos rios, dos povos originários e ribeirinhos. Desmatamento,\nincêndios, contaminação dos rios e igarapés com mercúrio, trabalho análogo à\nescravidão são a marca registrada da acumulação capitalista no Pará.\nO clã Barbalho historicamente governa o estado para as mineradoras e o\nagronegócio, sendo ele mesmo latifundiário de terras griladas. Por isso, apesar de\nvender para o mundo a imagem de governador ecológico durante a COP 30, Helder\nBarbalho é um dos principais responsáveis pela destruição da floresta amazônica e do\npovo que nela vive, deixando a máscara cair quando vibrou entusiasticamente pela\naprovação do “Projeto de Lei da Devastação”, ao lado de ruralistas e políticos locais.\nAcompanhou a votação na mesa de Hugo Motta, presidente da Câmara dos Deputados,\nque agradeceu seu empenho pela aprovação do projeto que reduz os limites da Floresta\nNacional do Jamanxim em 486 mil hectares para viabilizar a Ferrogrão e beneficiar o\nagronegócio. Foi um “negócio de família” com Priante sendo o relator na Câmara e Jader\nBarbalho o relator no senado, ambos do MDB e com relação de tio e sobrinho.\nHelder é aliado de Lula, que também governa em prol do grande agronegócio.\nLula autorizou a exploração de petróleo na Margem Equatorial, e não vetou o projeto do\nMarco Temporal, aprovado na Câmara. Vem avançando no projeto de privatização das\nhidrovias do rio Tapajós, ameaçando povos indígenas, ribeirinhos e comunidades\ntradicionais.\nComo parte da Frente Ampla do governo Lula-Alckimin, Helder tem atendido os\ncapitalistas aplicando a mesma cartilha neoliberal. Para atender o setor do agronegócio\ntem facilitado a entrega de terras do estado do Pará, que avança sobre os territórios\nindígenas, ribeirinhos, quilombolas e de camponeses, sem contar os grandes\ninvestimentos financiado pelos bilhões do Plano Safra o que se combina com o aumento\ndo desmatamento.\nHelder tem atendido o agronegócio e a mineração também com diversos\nempreendimentos e obras, sem consulta livre prévia e informada, desconsiderando as\npopulações que vivem no território em favor do lucro capitalista. Além disso, fundou a\n1"
+          },
+          {
+            "id": "delegacia-do-agronegocio-chamada-deleagro-para-defender-a-propriedade-pr",
+            "titulo": "Delegacia do agronegócio, chamada Deleagro, para defender a propriedade privada do",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Delegacia do agronegócio, chamada Deleagro, para defender a propriedade privada do\nagro, dos grileiros e latifundiários, favorecendo ainda mais a criminalização dos\nmovimentos sociais e perseguição de suas lideranças. A política de ataque à educação\nindígena, quilombola e dos povos tradicionais, sem infraestrutura e com déficit de\nprofissionais, foi uma marca de seu governo.\nPor sua vez, o bolsonarismo no Brasil e no Estado não esconde o que deseja:\ndestruir de vez a floresta, liberar agrotóxicos proibidos e acabar com os povos\noriginários. E na cidade, seus representantes defendem a destruição física do povo pobre\nda periferia através da violência policial. Além de defender um governo nacional em total\nsubmissão ao imperialismo de Trump, alentando o desejo de receber o apoio para um\ngolpe militar no país, projeto que continua tão vivo quanto Bolsonaro e o bolsonarismo.\nJá a esquerda da ordem se encontra cada vez mais enrolada em sua política de\nacender uma vela a Deus e outra ao Diabo. É o caso de alguns setores do PSOL, que se\ncolocam contra o arcabouço fiscal, a favor do fim da 6×1 e da redução da jornada, contra\nas privatizações e pelo controle estatal dos nossos recursos naturais, mas vão chamar o\nvoto em Lula no primeiro turno. Dizem ser contra a política de Lula, mas reforçam a\nconfiança no governo do PT em frente ampla com a burguesia e setores do imperialismo,\nsempre em nome de um suposto combate ao bolsonarismo e a extrema direita. Na\nverdade, com essa política nem enfrentam a direita coerentemente e nem lutam de\nverdade pela pauta que dizem defender. São apenas úteis para blindar um governo\ncapitalista, mantendo os trabalhadores reféns do projeto burguês de conciliação de\nclasses.\nPara mudar de verdade a vida do povo trabalhador, nestas eleições o PSTU\napresenta candidaturas alternativas, antissistema e socialistas ao governo federal, aos\ngovernos estaduais e ao parlamento pelo Brasil a fora. Com um programa para romper\nas engrenagens capitalistas, disputaremos a consciência da classe trabalhadora e dos\npovos originários e oprimidos. Com Hertz Dias à presidência e Vanessa Portugal à vice,\nno Pará apresentamos Cleber Rabelo e Well Macedo ao governo do estado, para\nrompermos com o ciclo de falsas alternativas burguesas que vem levando o país à\ndecadência e à barbárie, sendo a única forma de apontar no horizonte uma saída de fato\npara a classe trabalhadora e a população mais pobre e oprimida.\nApresentaremos um programa para as principais necessidades dos trabalhadores\ne o povo pobre, fazendo um chamado à que eles façam da luta por seus direitos e uma\nvida minimamente digna, uma luta contra o capital, a burguesia e seus governos, uma\nluta pelo poder.\nPROGRAMA\n1. TRABALHO, EMPREGO E RENDA\nEnquanto cria apenas 10 mil postos de trabalho formal neste ano, o Pará amarga o\nsegundo maior índice de informalidade do país, com cerca de 56, 5% de trabalhadores\natuando nas condições precárias do trabalho informal. Com renda abaixo da média\nregional, o estado concentra alguns dos piores indicadores do mercado de trabalho\nnacional, segundo o IBGE. A taxa anual de desemprego é a maior da região norte, com\numa taxa de desocupação em torno de 8,7% na primeira metade de 2025 e chegando ao\nfinal com 6,7%, com Belém representando a maior parte dessas médias. As pesquisas\nmostram, também, a subutilização da força de trabalho (quem trabalha menos horas do\n2"
+          },
+          {
+            "id": "que-gostaria-e-quem-esta-disponivel-para-trabalhar-mas-nao-buscou-empreg",
+            "titulo": "que gostaria e quem está disponível para trabalhar, mas não buscou emprego",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "que gostaria e quem está disponível para trabalhar, mas não buscou emprego\nativamente). No Pará, essa taxa chegou a 21,7% no primeiro trimestre de 2026, acima\nda média nacional de 14,3% e da própria Região Norte, de 17,9.\nQuanto a renda dos trabalhadores paraenses, também é desfavorável. O\nrendimento médio no estado foi de R$ 2.528 no primeiro trimestre de 2026, levemente\ninferior ao observado no último trimestre de 2025 (R$ 2.609), valor inferior à média da\nRegião Norte (R$ 2.849) e bem abaixo da média nacional (R$ 3.722). O Pará foi o único\nestado da região Norte a não registrar crescimento de renda na comparação entre os\nprimeiros trimestres de 2025 e 2026, sendo que de 2023 até hoje o rendimento médio\nacumulou alta de apenas 7,5%.\nEm um estado com 8,7 milhões de pessoas, sendo que só na capital são cerca de\n1,4 milhão, em 2025 apenas 1,5 milhão de trabalhadores possuem registro formal\n(incluindo funcionários públicos). Enquanto o percentual de paraenses sem nenhum\nvínculo formal de trabalho é de 2 milhões de pessoas, mais de 19 pontos acima da média\nnacional de 37,3% e acima também da Região Norte, onde o índice foi de 50,9%. E\ndesses, 37% trabalham na superexploração da escala 6X1.\nOs setores que se destacam no mundo do trabalho no Pará são Agronegócio e\nServiços, responsáveis pelo crescimento da renda média dos trabalhadores no estado. O\nsetor de Infraestrutura e Concessões vem despontando com Grandes obras e concessões\nrodoviárias, como a Rota do Pará. Outro setor que se mantém em destaque é a\nMineração, principalmente em Parauapebas, Marabá e Canaã dos Carajás.\nA indústria no Pará representa apenas 25% do PIB estadual, porém, centrada em\nsua maioria na extração de minério, com baixíssimo valor de transformação. Cerca de\n10% são de transformação, mas 7,4% são de alimentos e bebidas e apenas 3,5% são da\nmetalurgia.\n—Fim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem\ndemissões;\n— Redução da jornada de trabalho para 36hs, sem redução dos salários e sem\nflexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego);\n— Aumento de 100% no salário-mínimo, rumo ao salário-mínimo calculado pelo DIEESE;\n— Bolsa equivalente a um salário-mínimo para trabalhadores desempregados enquanto\nnão houver pleno emprego\n— Plano estadual de obras públicas voltado à geração de empregos, com infraestrutura\nambiental;\n— Revogação da Reforma Trabalhista;\n— Revogação da Reforma da Previdência;\n— Com relação às plataformas de aplicativos:\na) Reconhecimento do vínculo empregatício;\nb) Garantia de todos os direitos: previdência, férias, 13º, descanso remunerado, seguro\ncontra acidentes, licença-maternidade proteção social efetiva;\nc) Regulamentação sem direitos é fraude! Não ao PLP 152 que legaliza a precarização!\nd) Contra jornadas exaustivas! Piso salarial para carga horária mínima logada de 36 horas\ne remuneração mínima por corrida/entrega ou serviço prestado para jornadas menores\nque 36 horas;\ne) Fiscalização pública das condições de trabalho nas plataformas digitais. Contra as\npunições arbitrárias!\n3"
+          },
+          {
+            "id": "2-seguranca-publica",
+            "titulo": "2. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA\nA segurança pública no Brasil é determinada pela Constituição Federal de 1988 como\ndireito a ser garantido pelo Estado a todos os cidadãos brasileiros e estrangeiros aqui\nresidentes. Mas hoje, em nosso país tudo o que os brasileiros e aqueles que aqui moram\nnão têm é segurança.\nTodas as pesquisas de opinião mostram que a principal preocupação da\npopulação brasileira é com segurança, ou a falta dela, e sua principal consequência, a\nviolência generalizada. Aproveitando-se dessa situação, a extrema direita avança em sua\npauta reacionária, como a diminuição da maioridade penal de 18 para 16 anos, já\naprovada na Comissão de Constituição e Justiça do Senado, promete medidas\nsemelhantes às de Bukele em El Salvador com a construção de megas prisões para\nduplicar o encarceramento em massa da população pobre e negra, ao mesmo tempo\nque pede à Trump intervenção em nosso país através da denominação das facções do\nnarcotráfico como organizações terroristas. Apoia declaradamente a medida na\nVenezuela, inclusive solicitando ação semelhante no Brasil, e solicitação que faça o\nmesmo no Brasil.\nO Pará sempre foi um dos estados mais violentos da nação. Seja na criminalidade\nda cidade, seja no histórico derramamento de sangue na luta pela terra no campo, ele\nsempre encabeçou as estatísticas nesse quesito. Os anos de pico da violência letal no\nPará neste século ocorreram entre 2016 e 2018, culminando em 2018 com cerca de\n4.720 mortes violentas intencionais (MVI). Em 2018 estava em primeiro lugar no rank da\nviolência letal, com a cidade de Ananindeua sendo considerada a cidade mais violenta e\nperigosa do Brasil e uma das dez mais violentas do mundo.\nApesar de a partir de 2019 ter ocorrido uma diminuição dessas mortes violentas,\ncom 3.554 mortes e em 2022 3.031, o que se observa é a continuidade de um número\nmuito alto de assassinatos no estado do Pará. Em 2023 foram 2.676, o que corresponde\na 46,8% do total da Região Norte (5.715) e 5,7% do país (46.328).\nEnquanto o Boletim de Segurança Paraense de 2025 festeja esse dado como o\nmenor da série histórica, a violência com morte no estado continua alta com o estado\nocupando o 7º lugar nacional em 2023, e com certeza quem sofre com essas perdas é o\npovo pobre negro e periférico da região.\nQuanto ao perfil das vítimas, o Anuário Brasileiro de Segurança Pública 20202024 revela que no Pará de 2021 a 2023 as vítimas foram majoritariamente do sexo\nmasculino (cerca de 92%), negros, com variações de 60,9% (2021), 85,35% (2022) e\n19,02% (2023) e com faixa etária de 18 a 34 anos (58%), de cor preta ou parda, com baixa\nescolaridade. Hoje essa faixa etária está ainda mais jovem, com jovens entre 12 e 29\nanos sendo as principais vítimas.\nO Anuário de 2026 com os dados de 2025 traz dados semelhantes, sendo que a\nviolência contra a mulher só piora. O feminicídio aumentou em 4% no país, com1.571\nvítimas e a região norte sendo campeã. No Pará, o aumento foi de 21 % (63 casos). As\ntentativas de feminicídio também continuaram a crescer em 2025 no país inteiro. Foram\n4.189 mulheres sobreviventes, um aumento de 5,9% em relação a 2024, ou seja, para\ncada feminicídio consumado registrado no país em 2025 houve quase três tentativas.\nViolência de gênero\nA violência que mais cresce no estado é contra a mulher:\n4"
+          },
+          {
+            "id": "violencia-domestica-lesao-corporal-o-para-teve-aumento-de-620-casos-entr",
+            "titulo": "— Violência doméstica (lesão corporal): o Pará teve aumento de 620 casos. Entre o",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "— Violência doméstica (lesão corporal): o Pará teve aumento de 620 casos. Entre o\nperíodo de 2019-2023, enquanto o Brasil teve uma diminuição de 8.989 casos deste tipo\nde violência, o estado registrou crescimento de 5.173 casos, cerca de 49%, registrando\n57 casos de feminicídio em 2023. Esse número representou um aumento em relação aos\nanos anteriores (54 casos em 2022). Liderou o número absoluto de mortes por esse\ncrime na região da Amazônia Legal. Em 2024 houve uma queda de 12,28%, 50 casos, o\nque é insignificante. Já em março de 2026, foi registrado um aumento de 76% nos\nregistros gerais de violência contra a mulher no estado.\n— Violência sexual: entre os dez municípios do Pará com maior número de vítimas de\nviolência sexual, Belém está na primeira colocação. Em 2023, foram registrados 1.618\ncasos de violência sexual na capital. Além de Belém, as cidades de Santarém, Altamira e\nda região dos Carajás estão entre aquelas com os maiores índices (245).\nUm dado chocante da violência sexual no Pará é o da faixa etária: em 2023 a\nmaioria dos casos foi na faixa de 10 -14 anos de idade (1.651 casos), seguida das faixas\nde 15 a 19 (652) e 5 a 9 anos (645). Entre 2019 e 2023 essa violência aumentou para\ntodas as idades, em 51, 88%. A análise da violência sexual por cor/raça aponta que mais\nde 85% das vítimas são de cor/raça preta. Em 2019, estas corresponderam a 85,88% do\ntotal e em 2023 o registro foi de 87,15%.\nQuanto ao sexo, a grande maioria dos casos foram cometidos contra pessoas do\nsexo feminino, 89,82% (2019) e 91,81% (2023). Crianças e adolescentes são as principais\nvítimas, correspondendo a 83% do total em 2023, sendo que entre 2019 e 2023, a idade\nficou entre 0 e 17 anos.\nUma das maiores violências sexuais contra mulher e vulneráveis, o estupro, só\ntem aumentado no Pará. Em 2019 o número de vítimas foi de 3.591, já em 2023 foram\nregistradas 5.559 vítimas, um crescimento de 1.968. Em 2024, o Ligue 180 registrou um\nsalto de 56,8% a mais, o que coloca o Pará acima do índice nacional nesse tipo de crime.\nAs mulheres são mais acometidas por estupro do que os homens. Em 2023 o sexo\nfeminino representou 90,41% das vítimas e o masculino 8,71%, sendo que em 99% dos\ncasos o abusador é homem. Padrastos, tios e pais são os principais abusadores.\nHomicídios\nO Brasil, historicamente, é campeão de homicídios na América do Sul e possui uma das\nmais altas taxas mundiais. E o Pará sempre figura com um dos maiores índices no Brasil.\nEntre 2017 e 2018 a taxa de mortes violentas no Pará foi de quatro mil. Apesar de a partir\nde 2019 se ver uma queda geral nos índices pelo estado, como em Belém e Ananindeua\n(campeões no período anterior), alguns municípios importantes no cenário estadual,\ncomo Santarém, Paragominas e Redenção, tiveram aumento. Pessoas de cor parda\nlideram os índices de homicídios, sendo 83,8% dos casos em 2023.\nSegundo o Atlas da Violência 2026, o Pará tem 10 municípios entre os mais\nviolentos do Brasil. Marituba destaca-se como o mais violento do estado, integrando o\nranking nacional com uma taxa de 55,5 mortes violentas para cada 100 mil habitantes.\nAltamira é o segundo lugar mais violento do Brasil.\nOutras cidades figuram com altos índices de violência, como Marabá e Itaituba,\ne cidades pequenas como Cumaru do Norte, Floresta do Araguaia e Mocajuba também\napresentam taxas alarmantes, impulsionadas principalmente por conflitos agrários e\natividades de garimpo. O Instituto de Pesquisa Econômica Aplicada (Ipea) divulgou dados\nsemelhantes.\n5"
+          },
+          {
+            "id": "especialistas-em-seguranca-publica-explicam-que-mesmo-que-a-taxa-geral-d",
+            "titulo": "Especialistas em segurança pública explicam que mesmo que a taxa geral de",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Especialistas em segurança pública explicam que mesmo que a taxa geral de\nhomicídios tenha caído no Pará em relação a 20218-2019, quando atingiu os maiores\nníveis do Brasil, o estado segue estratégico para diversas dinâmicas criminais, como\ntráfico de drogas e conflitos agrários, com cada município tendo suas causas próprias\npara o aumento da violência. Marituba e Belém teriam relevantes marcas de conflitos\nenvolvendo disputa de territórios por parte de facções, principalmente. Itaituba, Cumaru\ndo Norte, dentre outras, a violência já se expressa em forte conflitos agrários, com\ngrilagem e invasões de terra.\nO Atlas mostra que do ponto de vista nacional, as maiores taxas de homicídios\nforam observadas no Amapá, Bahia, Pernambuco, Alagoas e Ceará. A concentração da\nviolência está claramente no Nordeste, com 17 dos 20 municípios mais violentos estando\nnessa região. Já as 20 cidades menos violentas, com mais de 100 mil habitantes, estão\nconcentradas apenas nas regiões Sul e Sudeste.\nViolência no Campo\nÉ no campo que se concentram os mais altos índices de violência letal do estado. A\nComissão Pastoral da Terra (CPT) também apresentou seus dados sobre violência no\nPará, recentemente. O estado aparece como segundo com maior índice de conflitos no\ncampo no Brasil, atrás apenas do Maranhão.\nDentre muitos dados, o Relatório destaca: aumento de assassinatos, onde o\nnúmero de mortes em decorrência de disputas agrárias dobrou de 13 para 26\nassassinatos registrados em um ano; volume de conflitos, com notificações de 179\nocorrências formais de disputas envolvendo terra, água ou trabalho escravo; impacto\nnas famílias, onde mais de 25 mil famílias sofrem diretamente as consequências da\nviolência rural no estado.\nUm dado em destaque é o número de conflitos por água, onde o Pará é líder\nnacional, registrando 21 disputas severas pelo acesso e uso da água. As principais causas\ndesse tipo de combate são majoritariamente a contaminação ou barramento de rios\nprovocados pela mineração ilegal, grandes mineradoras e avanço do garimpo,\nmostrando uma dinâmica entre violência no campo e destruição do meio ambiente.\nAs mortes e ameaças concentram-se principalmente nas regiões Sul e Sudeste do\nPará, com a maior parte das agressões, expulsões e episódios de pistolagem sendo\nprotagonizada por grileiros, fazendeiros e madeireiros ilegais contra povos indígenas,\nquilombolas e posseiros. Foi esta realidade que recebeu a COP 30 na Amazônia, que não\nserviu em nada para mudar esse quadro.\nTrês anos antes, o Relatório da Comissão Arns intitulado “Pará – Sem Justiça não\nHá Paz”, já detalhava a grave situação de violência, ameaças e impunidade que afeta a\nzona rural e os povos tradicionais do estado. Esse relatório foi elaborado após uma\nexpedição dos direitos humanos realizada entre 16 e 20 de abril de 2023 pelas regiões\nsul e sudeste do Pará, na qual os membros da comissão visitaram municípios críticos\ncomo Marabá, Anapu, Eldorado do Carajás e Altamira, coletando depoimentos de mais\nde 100 agricultores, indígenas, quilombolas e defensores públicos.\nA comissão identificou um cenário generalizado de terror, onde trabalhadores\nrurais têm casas incendiadas e destruídas por tratores. Observaram indícios de ações\ncoordenadas por milícias rurais financiadas para expulsar camponeses e uma imunidade\ncrônica dos criminosos, com a falta de punição para crimes agrários históricos\nalimentando novos episódios violentos.\n6"
+          },
+          {
+            "id": "no-dia-1-de-junho-de-2023-esse-relatorio-foi-entre-ao-ministro-da-justic",
+            "titulo": "No dia 1º de junho de 2023 esse Relatório foi entre ao Ministro da Justiça, à época",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "No dia 1º de junho de 2023 esse Relatório foi entre ao Ministro da Justiça, à época\nFlávio Dino, com recomendações como execução urgente de uma operação integrada de\nsegurança pública focada no sul e sudeste do Pará para desarmar conflitos; maior\nceleridade nas investigações de assassinatos e ameaças contra lideranças populares no\ncampo e força-tarefa federal para assegurar a permanência e a proteção de\ncomunidades tradicionais sob risco iminente. Como vimos, pelos dados do relatório da\nCPT em 2025, nada mudou de lá para cá.\n— Combater o crime organizado, as máfias, as milícias, facções e demais organizações\ncriminosas por meio da investigação, inteligência e desarticulação de seus negócios,\natingindo patrimônio, fontes de financiamento e suas relações com agentes públicos,\npolíticos, empresários e, especialmente, com o sistema financeiro;\n— Descriminalização das drogas e revogação da Lei de Drogas, para efetivamente\ncombater e acabar com o narcotráfico, juntamente com políticas públicas de prevenção,\ntratamento e redução de danos;\n— Punição exemplar para tortura, execuções, desaparecimentos forçados, chacinas e\ndemais crimes praticados na cidade e no campo, para os agentes e comandantes\nmilitares e civis;\n— Desmilitarização da PM, outras polícias e guardas municipais, com a unificação das\npolícias em uma única instituição de caráter civil, com eleição de comandantes e\ndelegados pela população e mandatos revogáveis;\n— Direito de organização e sindicalização dos policiais;\n— Incentivar a população a se auto-organizar para garantir sua própria segurança, seja\ndiante do crime organizado e da criminalidade em geral, seja diante da violência do\nEstado através de suas polícias;\n— A organização da autodefesa dos trabalhadores deve combinar-se com o chamado\naos policiais e aos demais integrantes da base das instituições armadas do Estado para\nque se unam aos trabalhadores e defendam suas reivindicações.\n3. SANEAMENTO BÁSICO\nÁgua é direito, não mercadoria\nO acesso à água potável e ao saneamento básico é um direito humano\nreconhecido internacionalmente e um dever do Estado brasileiro, estando diretamente\nrelacionado à dignidade da pessoa humana, à saúde pública, à redução das\ndesigualdades sociais e à proteção ambiental. No Estado do Pará, milhões de pessoas\nainda convivem com abastecimento irregular, interrupções frequentes no fornecimento\nde água, baixa cobertura de esgotamento sanitário e tarifas que comprometem\nsignificativamente o orçamento das famílias trabalhadoras, especialmente nas periferias\nurbanas, nas comunidades rurais e entre as populações ribeirinhas da Amazônia,\nproblemas aprofundados após a privatização da Companhia de Saneamento do Pará\n(COSANPA) por Helder Barbalho.\nPartimos do entendimento de que a água e o saneamento não podem ser\ntratados como mercadorias submetidas à lógica do mercado, devendo ser organizados\ncomo políticas públicas orientadas pelo interesse coletivo, pela universalização do\nacesso e pela garantia dos direitos sociais previstos na Constituição Federal.\n\n7"
+          },
+          {
+            "id": "os-dados-mais-recentes-do-sistema-nacional-de-informacoes-em-saneamento",
+            "titulo": "Os dados mais recentes do Sistema Nacional de Informações em Saneamento",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Os dados mais recentes do Sistema Nacional de Informações em Saneamento\nBásico (SINISA 2024), utilizados pelo Ranking do Saneamento 2026 do Instituto Trata\nBrasil e da GO Associados, revelam que a situação do saneamento no Pará é\nsignificativamente mais crítica do que a média nacional. Enquanto o Brasil apresenta\n84,1% de atendimento da população com rede de abastecimento de água, no Pará esse\níndice é de apenas 51,6%, o que significa que quase metade da população paraense\nainda não possui acesso regular à água tratada. A desigualdade torna-se ainda mais\nevidente no esgotamento sanitário: somente 19,1% da população do estado é atendida\npor rede coletora de esgoto, muito abaixo dos 56,7% registrados nacionalmente,\nevidenciando um quadro de profunda vulnerabilidade socioambiental e de insuficiência\nhistórica de investimentos em infraestrutura sanitária.\nO estudo do Instituto Trata Brasil demonstra que a universalização do\nsaneamento exige um esforço extraordinário de investimento. Segundo a estimativa\nbaseada na revisão do PLANSAB, o Brasil ainda necessita de aproximadamente R$ 429,7\nbilhões para universalizar os serviços até 2033, o que corresponde a um investimento\nmédio anual de R$ 47,7 bilhões, ou cerca de R$ 225 por habitante por ano. Esses valores\nindicam que a expansão do saneamento requer planejamento público de longo prazo,\ncoordenação federativa e prioridade orçamentária.\nPara o Pará, o estudo traz o fato de que Parauapebas passou a integrar o Ranking\ndos 100 municípios mais populosos do Brasil em razão das atualizações populacionais\ndo IBGE. A inclusão de mais um município paraense entre os 100 maiores do país reforça\na necessidade de políticas estatais capazes de atender não apenas a Região\nMetropolitana de Belém, mas também os polos de crescimento do interior amazônico,\nonde a expansão urbana ocorre em ritmo acelerado e frequentemente sem a\ncorrespondente expansão da infraestrutura de saneamento.\nNo contexto amazônico, em que os corpos hídricos são parte central da vida\neconômica, cultural e ambiental das comunidades, a ausência de esgotamento sanitário\nproduz impactos ainda mais profundos sobre a saúde pública e os ecossistemas. Em\nBelém, por exemplo, moradores da Vila da Barca convivem com o despejo de esgoto no\nrio e com o acúmulo de entulhos provenientes das obras preparatórias da COP30,\nsituação que evidencia como grandes intervenções urbanas podem reproduzir\ndesigualdades socioambientais e agravar a contaminação de igarapés e áreas de várzea\nocupadas por populações vulneráveis.\nNos últimos anos, a privatização da COSANPA foi apresentada como solução para\nampliar investimentos e melhorar a qualidade dos serviços. No entanto, o que se\nconcretizou foi o aumento das tarifas, dificuldades de atendimento, persistência de\nproblemas operacionais e ausência de transparência quanto às metas, aos contratos e\naos investimentos realizados. A elevação dos custos sem a correspondente melhoria da\nprestação do serviço tornou-se um dos principais elementos do debate público sobre o\nsaneamento no estado, vide a crise observada na maioria dos bairros da região\nmetropolitana de Belém.\nA crítica que fazemos ao modelo privatizado não se limita à mudança da natureza\njurídica da gestão, pois o problema central está na lógica econômica que passou a\norientar um serviço público essencial. Quando o objetivo predominante da\nconcessionária é o retorno financeiro, os investimentos tendem a se concentrar nas\náreas mais rentáveis, enquanto periferias urbanas, comunidades rurais e municípios do\ninterior permanecem com estrutura insuficiente e sem prioridade na expansão e\n8"
+          },
+          {
+            "id": "modernizacao-da-infraestrutura-a-aguas-do-para-pertencente-ao-grupo-aege",
+            "titulo": "modernização da infraestrutura. A Águas do Pará, pertencente ao grupo Aegea e",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "modernização da infraestrutura. A Águas do Pará, pertencente ao grupo Aegea e\nresponsável pela distribuição de água e pelo esgotamento sanitário após a concessão\ndos serviços da COSANPA, registrou receita líquida de R$ 94,1 milhões apenas no\nprimeiro trimestre de 2026.\nHá, portanto, grande distância entre a realidade atual e as metas estabelecidas\npelo Novo Marco Legal do Saneamento, que prevê cobertura de 99% da população com\nágua potável, 90% com coleta de esgoto e 80% de tratamento do esgoto até 2033.\nA partir desses dados oficiais, nosso projeto propõe uma mudança de rumo para\no saneamento básico no Estado do Pará, que esteja fundamentada na própria\nConstituição, mas principalmente nos princípios sociais e democráticos construídos nas\nlutas dos trabalhadores e do povo pobre, que reconhecem a água e o saneamento como\ndireitos essenciais à vida, à saúde e à dignidade humana. A universalização deve ser\ncompreendida não apenas como expansão física da rede, mas como garantia de acesso\ncontínuo, regular, seguro e de qualidade em todo o território paraense, incluindo áreas\nurbanas periféricas, comunidades rurais, populações ribeirinhas e municípios\nhistoricamente negligenciados pelos investimentos públicos.\nDefendemos uma política tarifária que em primeiro lugar garanta água gratuita\npara famílias desempregadas e aquelas que sobrevivem dos programas sociais evitando\nque o custo desse bem essencial comprometa a subsistência dessa população que vive\nno topo da vulnerabilidade material, com a criação da Tarifa Social Amazônica. Quanto\nas camadas populares da classe trabalhadora, defendemos uma Além disso, a tarifa deve\nrefletir apenas o custo real da prestação do serviço público, sem a incorporação de\nmargens destinadas à distribuição de lucros privados.\nA transparência deve orientar a gestão do sistema de saneamento, tornando\npúblicos e auditáveis todos os contratos, metas, indicadores de qualidade, receitas,\ncustos e investimentos. O controle social deve assegurar que trabalhadores do\nsaneamento, usuários do sistema e representantes da sociedade participem das\ndecisões estratégicas sobre investimentos, qualidade do atendimento e fiscalização.\nMas para garantir essas metas e universalizar o saneamento, é necessário\nreestatizar a COSANPA, com a retomada do controle público integral do sistema de\nsaneamento do Estado do Pará, conduzida por meio de um processo financeiramente\nauditado, operacionalmente planejado e socialmente transparente. Propomos revisar os\ncontratos de concessão e avaliar eventual descumprimento de metas e obrigações\ncontratuais.\nA retomada do controle público não significaria o retorno a um modelo\nburocrático tradicional, mas sim a construção de uma gestão pública moderna, técnica\ne democrática, com a criação de um Conselho de Administração Popular composto por\nrepresentantes dos trabalhadores, dos usuários, dos municípios e do governo estadual,\ngarantindo participação efetiva da sociedade nas decisões estratégicas da companhia.\nOs cargos técnicos estratégicos devem ser ocupados por profissionais com\nexperiência comprovada no setor, selecionados com base em critérios de competência,\ntransparência e prestação de contas, reduzindo a influência de indicações políticas e\nfortalecendo a carreira. A valorização dos trabalhadores do saneamento constitui eixo\nfundamental para a reconstrução da COSANPA. Seus profissionais acumulam\nconhecimento técnico indispensável à operação, manutenção e expansão do sistema de\nabastecimento de água e esgotamento sanitário.\n\n9"
+          },
+          {
+            "id": "o-objetivo-e-reorganizar-o-saneamento-como-instrumento-de-desenvolviment",
+            "titulo": "O objetivo é reorganizar o saneamento como instrumento de desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "O objetivo é reorganizar o saneamento como instrumento de desenvolvimento\nsocial, proteção ambiental e promoção da cidadania, reafirmando um princípio\nfundamental para o futuro do Pará: água é direito, não mercadoria.\nEsta proposta defende:\n— A reestatização da COSANPA com a universalização do saneamento básico no\nPará;\n— Tarifa zero para famílias desempregadas e aquelas cadastradas em programas\nsociais;\n— Para a classe trabalhadora, tarifa proporcional aos salários com uma política\nde descontos progressivos;\n— Nãos aos cortes de água por inadimplência. Água é vida!\n— Prioridade para medidas urgentes de saneamento básico em comunidades\nrurais, ribeirinhas e periferias urbanas;\n— Realização de concursos públicos para recomposição do quadro funcional e\nabsorção dos funcionários de empresas terceirizadas com os mesmos direitos e salários\n4. MORADIA\nMoradia para o povo trabalhador e direito à cidade\nA moradia é um direito social garantido pela Constituição Federal, como outros, fica\napenas no papel. Centenas de milhares de famílias paraenses permanece com esse\ndireito negado. A crise habitacional se expressa na falta de casas, na precariedade das\nmoradias, na ausência de saneamento básico, no crescimento das ocupações urbanas,\nna expansão das áreas de risco e na dificuldade de acesso à terra urbana.\nSegundo a Fundação João Pinheiro, instituição responsável pelos estudos oficiais\nutilizados pelo governo federal, o problema habitacional brasileiro não se resume ao\ndéficit de moradias. Ele inclui também a inadequação habitacional, caracterizada pela\nausência de infraestrutura, falta de abastecimento de água e esgotamento sanitário,\nmoradias precárias, adensamento excessivo e insegurança da posse. É essa metodologia\nque orienta as políticas nacionais de habitação e a distribuição dos investimentos do\nprograma Minha Casa, Minha Vida.\nNo Pará, a crise da moradia assume características ainda mais profundas. O\ncrescimento desordenado das periferias da Região Metropolitana de Belém, a existência\nde milhares de famílias vivendo em palafitas e áreas alagáveis, a precariedade\nhabitacional das comunidades ribeirinhas, indígenas e quilombolas, os conflitos\nfundiários urbanos e rurais e a forte especulação imobiliária demonstram que o\nproblema não é a falta de espaço, mas a concentração da terra e da riqueza nas mãos de\npoucos.\nEnquanto milhares de imóveis permanecem vazios aguardando valorização\nimobiliária, milhares de famílias sobrevivem sem acesso à moradia digna. Os sucessivos\ngovernos transformaram a política habitacional em um grande negócio para\nconstrutoras e incorporadoras, destinando recursos públicos para financiar o mercado\nimobiliário, ao invés de garantir o direito constitucional à habitação.\nO PSTU defende uma política habitacional construída para atender às\nnecessidades da população trabalhadora e não aos interesses do mercado.\nMoradia é direito, não mercadoria\n10"
+          },
+          {
+            "id": "defendemos-a-moradia-como-um-direito-universal-isso-significa-construir",
+            "titulo": "Defendemos a moradia como um direito universal. Isso significa construir um amplo",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Defendemos a moradia como um direito universal. Isso significa construir um amplo\nprograma estadual de habitação pública, garantindo moradias dignas para as famílias\ntrabalhadoras, especialmente aquelas que vivem em situação de vulnerabilidade social,\nem ocupações, áreas de risco ou sem acesso à terra urbana.\nDefendemos o fim das remoções arbitrárias. Nenhuma família poderá ser\ndespejada sem uma solução habitacional definitiva construída em diálogo com a\ncomunidade.\nDinheiro público para habitação pública\nDefendemos que os investimentos em habitação sejam destinados prioritariamente à\nprodução de moradias públicas e à urbanização das comunidades populares, rompendo\ncom a lógica que transforma o direito à moradia em fonte de lucro para grandes\nconstrutoras e especuladores imobiliários.\nTodo investimento público na política habitacional deverá ser transparente e\nacompanhado pela população.\nUm grande plano de obras públicas\nA crise habitacional somente será enfrentada através de um grande plano estadual de\nobras públicas. Esse plano deverá integrar: construção de moradias populares;\nurbanização das periferias; pavimentação de ruas; drenagem urbana; abastecimento de\nágua; coleta e tratamento de esgoto; iluminação pública; equipamentos comunitários;\nescolas, creches e unidades de saúde; geração de milhares de empregos com carteira\nassinada.\nAlém de enfrentar o déficit habitacional, esse programa impulsionará a economia,\ngerando trabalho e renda para milhares de trabalhadores da construção civil.\nReforma urbana e combate à especulação imobiliária\nA cidade deve cumprir sua função social e não de território de especulação\nimobiliária.\nDefendemos:\n— Desapropriação dos grandes imóveis urbanos abandonados e sem função social;\n— Utilização desses imóveis para programas de habitação popular;\n— Combate à especulação imobiliária;\n— Utilização das áreas públicas prioritariamente para políticas sociais.\nNão é aceitável que milhares de imóveis permaneçam vazios enquanto milhares de\nfamílias vivem sem moradia.\nUrbanização das ocupações populares\nGrande parte da população trabalhadora conquistou seu direito à moradia através das\nocupações urbanas. Essas comunidades não devem ser criminalizadas.\nDefendemos:\n\n11"
+          },
+          {
+            "id": "urbanizacao-das-ocupacoes-consolidadas",
+            "titulo": "— Urbanização das ocupações consolidadas;",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "— Urbanização das ocupações consolidadas;\n— Regularização fundiária gratuita para famílias de baixa renda;\n— Implantação de infraestrutura completa;\n— Construção de equipamentos públicos;\n— Garantia da permanência das famílias nos territórios onde construíram suas vidas.\nAssistência técnica pública\nToda família trabalhadora deve ter acesso gratuito a arquitetos e engenheiros para\nconstrução, reforma e ampliação de suas moradias. Defendemos a implementação\nintegral da Lei Federal nº 11.888/2008, garantindo assistência técnica pública e gratuita\npara as famílias de baixa renda.\nMoradia para as mulheres\nAs mulheres, especialmente aquelas que chefiam famílias, são as mais afetadas pela\ncrise habitacional.\nNosso programa estabelece prioridade para: mulheres chefes de família; mulheres\nvítimas de violência doméstica; famílias monoparentais; integração entre política\nhabitacional, creches, escolas e unidades de saúde.\nGarantir moradia também significa garantir autonomia e proteção para milhares de\nmulheres.\nMoradia para a população negra\nAs periferias brasileiras são majoritariamente negras e historicamente sofreram com o\nabandono do poder público.\nDefendemos investimentos prioritários nas periferias urbanas, combate ao racismo\nurbano, participação das comunidades na definição dos projetos de urbanização e\nprioridade para famílias negras nos programas habitacionais.\nPovos indígenas\nOs povos indígenas possuem formas próprias de ocupação do território que devem ser\nrespeitadas. Defendemos: garantia integral dos territórios tradicionais; nenhuma\nremoção de comunidades indígenas; construção das políticas habitacionais em diálogo\ncom os próprios povos; respeito às formas tradicionais de moradia.\nComunidades quilombolas\nDefendemos: titulação imediata dos territórios quilombolas; investimentos em\ninfraestrutura; acesso à água, energia e saneamento; políticas habitacionais que\nrespeitem a organização comunitária e cultural.\nPopulações ribeirinhas\nA realidade amazônica exige políticas específicas. Defendemos: programas de melhoria\nhabitacional adaptados às áreas de várzea; construção de moradias adequadas às\ncondições ambientais da Amazônia; transporte hidroviário integrado aos serviços\npúblicos; abastecimento de água e saneamento para as comunidades ribeirinhas.\n12"
+          },
+          {
+            "id": "populacao-lgbti",
+            "titulo": "População LGBTI+",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "População LGBTI+\nMuitas pessoas LGBTI+ são expulsas de casa ou vivem em situação de extrema\nvulnerabilidade. Nosso governo estabelecerá prioridade para essa população nos\nprogramas habitacionais, especialmente para pessoas em situação de rua, vítimas de\nviolência ou discriminação familiar. Nenhuma política pública poderá admitir qualquer\nforma de discriminação.\nPessoas com deficiência e idosos\nToda política habitacional deverá garantir acessibilidade universal. Defendemos:\nconstrução de moradias acessíveis; adaptação das residências existentes; prioridade\npara famílias com pessoas com deficiência e idosos.\nSaneamento básico: parte do direito à moradia\nNão existe moradia digna sem saneamento. O PSTU defende um amplo programa\npúblico de universalização do abastecimento de água, coleta e tratamento de esgoto,\ndrenagem urbana e manejo adequado dos resíduos sólidos.\nParticipação popular\nA política habitacional não pode ser definida por empreiteiras ou grandes\nincorporadoras. Defendemos a criação de conselhos populares de habitação, com\nparticipação dos movimentos de moradia, sindicatos, associações comunitárias e\nentidades populares, garantindo controle social sobre os recursos públicos e sobre os\nprojetos urbanos.\n5. CAMPO E MEIO AMBIENTE\nEm defesa do meio ambiente, dos povos e populações tradicionais e contra os\nmegaempreendimentos que devastam o Pará e a Amazônia\nO Pará é um estado rico com seus povos, florestas e rios, porém com muitas\ncontradições. O avanço do agronegócio, da mineração e das grandes obras de\ninfraestrutura, amplia o desmatamento e a destruição do bioma Amazônico, que cobre\na maior porção do Pará.\nA recente política articulada pelo governador Hélder Barbalho (MDB) e aprovada\npelo Senado para a redução da Floresta Nacional (Flona) do Jamanxim, no Pará, uma\nárea protegida de aproximadamente 1,3 milhão de hectares, e transformação em Área\nde Proteção Ambiental (APA), flexibiliza regras de conservação, dificulta multas\nambientais, facilita a exploração mineral e a implantação da Ferrogrão.\nO governo apresenta os grandes projetos econômicos como símbolo de\ndesenvolvimento, modernização ou sustentabilidade, porém escondem graves impactos\nambientais e sociais e vêm sendo decididos sem que a população trabalhadora, os povos\nindígenas, quilombolas, ribeirinhos, pescadores artesanais e demais comunidades\ntradicionais tenham poder real de decisão sobre o futuro de seus territórios. Além da\nexpulsão de suas terras, ampliando os conflitos agrários e fundiários.\nPara defender a Amazônia é preciso suspensão de grandes projetos econômicos\nque ameaçam os territórios, os rios e a floresta amazônica, e enfrentar os interesses das\ngrandes empresas do agronegócio, da mineração, do petróleo e do mercado financeiro.\n\n13"
+          },
+          {
+            "id": "o-ultimo-relatorio-de-conflitos-no-campo-brasil-publicado-pela-comissao",
+            "titulo": "O último Relatório de Conflitos no Campo Brasil, publicado pela Comissão Pastoral da",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "O último Relatório de Conflitos no Campo Brasil, publicado pela Comissão Pastoral da\nTerra (CPT)1 sobre os dados da violência no campo, entre 2024 e 2025, aponta que houve\no dobro de assassinatos relacionados aos conflitos agrários no país, ocorrendo na\nAmazônia mais de 60% destes conflitos.\nO relatório ainda destaca que 75% foram por disputa da terra, mas somente 6%\npor ocupação ou retomada de terra por pequenos agricultores e povos originários, 10%\nsão por conflitos trabalhistas e 9% conflitos por água.\nSem reforma agrária o Brasil segue com grande concentração fundiária. No\núltimo censo agropecuário divulgado pelo IBGE2, apontava que 81% dos\nestabelecimentos agropecuários no país tinham até 50 hectares, ocupando uma área\ntotal de 12% do território, enquanto, 0,3% de estabelecimentos acima de 2.500 hectares,\nchegavam a ocupar 32,8% da área total dos estabelecimentos agropecuários do país.\nA concentração fundiária e a violência no campo são acompanhadas pela perda\nde vegetação. Segundo os dados do Mapbiomas3, 97% da perda de vegetação está\nassociada à expansão agropecuária, nos últimos 7 anos, sendo nas áreas de garimpo 99%\ndas áreas desmatadas estão na Amazônia, com maior concentração no Pará.\nDiante de um quadro desastroso que está levando ao colapso ambiental e a crise\nclimática, são destinados bilhões para este mesmo agronegócio que desmata e avança\nsobre as terras das unidades de conservação, indígenas e de povos tradicionais. Em 2025,\nfoi anunciado R$ 508,59bilhões para incentivar o agronegócio, enquanto a agricultura\nfamiliar receberá menos de 90 bilhões, ou seja, um punhado de produtores fica com\ntodo recurso, destinado pelo governo.\nPara defender a Amazônia é preciso enfrentar o agronegócio, a mineração e os\ngovernos de plantão, vida deve estar acima do lucro. Por isso, o PSTU destaca as ameaças\nao Pará e Amazônia:\n— Construção da Ferrogrão que é uma ferrovia projetada para ligar o norte de Mato\nGrosso aos portos de Miritituba, no Pará, que atravessa territórios indígenas,\nimpactando e poderá ampliar o desmatamento indireto, a grilagem de terras, a\nespeculação fundiária e a pressão do agronegócio sobre unidades de conservação e\nterritórios indígenas;\n— As dragagens dos rios e a transformação do Tapajós em uma grande hidrovia para o\ntransporte de commodities, já foi questionada pelos povos indígenas, especialmente os\nMunduruku, que irão arcar com todo impacto e risco apontados pela alteração da\ndinâmica natural dos sedimentos, a destruição de bancos de areia e praias, os impactos\nsobre áreas de reprodução dos peixes, a ameaça à pesca artesanal e à segurança\nalimentar das comunidades e o risco de remobilização do mercúrio depositado no fundo\ndo rio;\n— O derrocamento do Pedral do Lourenço, no rio Tocantins, que pretende remover e\nfragmentar formações rochosas para permitir a navegação de grandes embarcações\ncomerciais durante todo o ano. Pescadores, ribeirinhos, cientistas e movimentos sociais\nalertam que os pedrais são habitats fundamentais para peixes, quelônios e outras\nespécies. Além de impactar a segurança alimentar das comunidades;\n1\n\nhttps://cptnacional.org.br/caderno/conflitos-no-campo-brasil-2025/\nhttps://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/29724-atlas-doespaco-rural-retrata-diversidade-e-desigualdade-do-campo-brasileiro\n3\nhttps://brasil.mapbiomas.org/2026/05/27/desmatamento-no-brasil-fica-abaixo-de-1-milhao-de-hectaresem-2025/\n2\n\n14"
+          },
+          {
+            "id": "o-projeto-de-mineracao-de-ouro-da-belo-sun-na-volta-grande-do-xingu-em-q",
+            "titulo": "— O projeto de mineração de ouro da Belo Sun, na Volta Grande do Xingu, em que",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "— O projeto de mineração de ouro da Belo Sun, na Volta Grande do Xingu, em que\nmulheres indígenas estiveram à frente da luta contra essa nova ameaça¸ com uso de\nsubstâncias tóxicas no beneficiamento do ouro, à barragem de rejeitos, ao consumo de\nágua e aos possíveis impactos sobre a pesca e a segurança alimentar das comunidades\nna região que já sofre os impactos provocados pela Usina de Belo Monte;\n— A nova fronteira de exploração de petróleo na Bacia da Foz do Amazonas e na\nMargem Equatorial, é uma contradição entre o discurso de combate às mudanças\nclimáticas. Especialista apontam os potenciais impactos sobre o sistema recifal\namazônico, os manguezais, a biodiversidade marinha e a pesca artesanal;\n— O Sistema Jurisdicional de REDD+ do governo Pará, baseado na comercialização de\ncréditos relacionados à redução das emissões por desmatamento, na prática coloca a\nfloresta é a venda no mercado financeiro. É preciso garantir os territórios, os direitos dos\npovos indígenas, quilombolas, ribeirinhos e extrativistas que protegem a floresta há\nséculos;\n— A concessão para “restauração florestal” da Unidade de Recuperação Triunfo do\nXingu, que significa a entrega da proteção ambiental para uma empresa privada, por\nquatro décadas, a gestão de uma área pública degradada, com exploração econômica\nassociada, inclusive por meio de créditos de carbono. Queremos a restauração da\nfloresta sob o controle público, dos trabalhadores, dos cientistas, das universidades e,\nprincipalmente das comunidades da região. Também preocupa a forte ameaça da\nredução e transformação da Floresta Nacional do Jamanxim e da transformação em APA.\nNeste sentido, o PSTU se coloca em defesa dos povos indígenas, quilombolas,\npopulações e comunidades tradicionais, exigindo reforma agrária efetiva sob o controle\ndos trabalhadores, com a demarcação de terras indígenas e titulação dos territórios\nquilombolas, não ao marco temporal. Entendemos que o direito de Consulta Livre, Prévia\ne Informada, garantida na Convenção 169 da OIT, deve respeitar a decisão dos povos\nquando os projetos ameaçam seus modos de vida, seus territórios e sua existência.\nExigimos também o fortalecimento das políticas de segurança e proteção as\nlideranças ameaçadas. Fim da criminalização dos movimentos sociais. Não aceitaremos\nque lideranças ameaçadas sejam obrigadas a abandonar seus territórios para sobreviver.\nPor isso, a criação da DELEAGRO, Delegacia do Agronegócio, é preocupante, pois não foi\ndebatido com os principais setores, inclusive com as lideranças ameaçadas pelo\nagronegócio. Entende-se que a segurança pública deve estar a serviço da proteção da\nvida e dos direitos das populações do campo, e não da defesa dos interesses do\nlatifúndio e da criminalização dos movimentos sociais. Defendemos uma política de\nsegurança comprometida com os direitos humanos, a mediação dos conflitos e a\nproteção das comunidades, rompendo com a lógica de repressão que historicamente\nfavorece os grandes proprietários de terra.\nPara defender o Pará e a Amazônia temos que defender seu povo e um modelo\neconômico que atenda suas necessidades e não o lucro do capital. Por isso, defendemos:\n— Suspensão dos sete megaprojetos e realização de estudos independentes sobre seus\nimpactos sociais, ambientais e climáticos, com participação e poder de decisão das\npopulações atingidas;\n— Respeito integral à consulta prévia, livre e informada dos povos indígenas,\nquilombolas e comunidades tradicionais, de acordo com a Convenção 169 da\n\n15"
+          },
+          {
+            "id": "organizacao-internacional-do-trabalho-oit-e-os-protocolos-autonomos-de-c",
+            "titulo": "Organização Internacional do Trabalho (OIT) e os protocolos autônomos de consulta de",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Organização Internacional do Trabalho (OIT) e os protocolos autônomos de consulta de\ncada povo;\n— Demarcação imediata das terras indígenas, titulação dos territórios quilombolas e\nregularização dos territórios das comunidades tradicionais;\n— Combate ao garimpo ilegal, à grilagem, à exploração ilegal de madeira e às redes\neconômicas e financeiras que financiam e lucram com esses crimes;\n— Exigir do governo federal a reestatização da mineração e dos setores estratégicos da\neconomia, sob controle dos trabalhadores e da população, com planejamento ambiental\ne social da produção;\n— Expropriação, sem indenização, das grandes empresas responsáveis por crimes\nambientais graves e reincidentes;\n— Reforma agrária, sob o controle dos trabalhadores e povos da floresta. Apoio\nfinanceiro e técnico à agricultura familiar, à agroecologia e à produção de alimentos para\na população, em oposição à expansão da monocultura para exportação;\n— Criação de um grande plano público de recuperação de áreas degradadas, nascentes,\nmatas ciliares e bacias hidrográficas, realizado diretamente pelo Estado, pelas\nuniversidades públicas, institutos de pesquisa e comunidades locais, com geração de\nemprego e renda;\n— Fortalecimento dos órgãos públicos estaduais: Universidade do Estado do Pará\n(UEPA), Secretaria de Estado de Ciência, Tecnologia e Educação Superior, Profissional e\nTecnológica (Sectet), Secretaria de Desenvolvimento de Agricultura e Pesca do Pará\n(Sedap), Instituto de desenvolvimento Florestal e da Biodiversidade (Ideflor-Bio),\nInstituto de Terras do Pará (Iterpa), Agência de Defesa Agropecuária do Estado do Pará\n(Adepará), Secretaria de Meio Ambiente e Sustentabilidade (Semas), Empresa de\nAssistência Técnica e Extensão Rural do Estado do Pará (Emater), com concursos\npúblicos, orçamento e independência diante das grandes empresas;\n— Proteção dos rios amazônicos e proibição de intervenções que ameacem a\nreprodução dos peixes, a pesca artesanal, a qualidade da água e a sobrevivência das\npopulações\nribeirinhas;\n— Apoiar projetos de transição energética planejada, com redução progressiva da\ndependência dos combustíveis fósseis e investimento público em fontes renováveis, sem\nprivatização dos territórios e sem transferir os custos da transição para os trabalhadores\ne comunidades tradicionais;\n— Garantia de emprego, direitos e alternativas econômicas aos trabalhadores\natualmente empregados em atividades ambientalmente destrutivas, para que a\ntransição ecológica não seja feita às custas do desemprego;\n— Criação de conselhos populares e territoriais com poder efetivo de fiscalização e\ndecisão, compostos por trabalhadores, povos indígenas, quilombolas, ribeirinhos,\npescadores, movimentos sociais, universidades e pesquisadores.\n6. COMBATE ÀS OPRESSÕES\nRomper as engrenagens do capitalismo para acabar com o racismo, o machismo, a\nLGBTIfobia, a xenofobia e demais formas de preconceito\nO capitalismo utiliza as opressões para explorar ainda mais os setores da classe\ntrabalhadora. O machismo, o racismo, a LGBTIfobia, a xenofobia e as demais formas de\npreconceito e opressão, além de dividir a classe trabalhadora são instrumentalizadas\n16"
+          },
+          {
+            "id": "para-aumentar-ainda-mais-os-lucros-do-capital-significam-para-esses-seto",
+            "titulo": "para aumentar ainda mais os lucros do capital. Significam para esses setores uma brutal",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "para aumentar ainda mais os lucros do capital. Significam para esses setores uma brutal\nviolência diária por parte do aparato do estado capitalista contra os segmentos\nhistoricamente oprimidos. Defendemos o combate a toda forma de opressão.\nA mulher e o machismo\nNo Pará, a população de mulheres é 50,1% do total de habitantes do estado, segundo o\nCenso do IBGE de 2022. Essa mudança demográfica é histórica, porque hoje as mulheres\nse tornaram a maioria da população paraense. 79,8% da população é negra (Pretos e\nPardos), segundo dados da PNAD Contínua sistematizados pelo Observatório Brasileiro\ndas Desigualdades, as mulheres negras continuam ocupando a base da pirâmide social.\nAs mulheres enfrentam uma escalada de feminicídios, sendo a mulher negra, a principal\nvítima. A sobrecarga do trabalho doméstico e a desigualdade salarial são outros dois\nfatores enfrentados pelas mulheres.\nSegundo dados do próprio governo e da imprensa, o Pará tem níveis alarmantes\nde violência doméstica, amargando uma média diária de 25 mulheres agredidas. Mesmo\no governo anunciando uma queda nos índices de feminicídios e lesões corporais (cerca\nde 12%, menor que a média nacional de 14%), a violência contra a mulher continua\ntendo o Pará como um dos seus maiores representantes. As últimas pesquisas\ndemonstram que 32% das mulheres paraenses já sofreram algum tipo de violência\ndoméstica/familiar por parte de homens, sendo que 18% sofreram essa violência\nrecentemente.\nOutras pesquisas mostram que entre 2018-2022, a taxa de violência física contra\nmulher teve um crescimento de 114% no Pará. Entre 2024 e 2025, houve um aumento\nde 76%, registrando a maior alta entre os estados monitorados pela Rede de\nObservatórios da Segurança em 2026. No mesmo período, a violência sexual (como\nestupro) disparou 167,4%, sendo que 62,8% das vítimas tinham entre 0 e 17 anos. Em\nnúmeros absolutos, o estado contabilizou 138 mortes de mulheres (feminicídios,\nhomicídios e transfeminicídios).\nApesar do governo registrar quedas relevantes nos índices de crimes letais em\ngeral, a violência específica de gênero só tem aumentado. De 2025 até agora, os registros\nde violência contra a mulher (estupros, ameaças e feminicídios) saltaram de 388 para\n683, aumento de 76%. Apenas na violência sexual, houve uma alta de 167,4% nos\nregistros, principalmente nos municípios de Marabá e Parauapebas.\nNo caso do Pará, pesquisas tem relacionado os crimes de violência contra a\nmulher com os casos de crimes ambientais. As cidades de Marabá, com 67 casos e\nParauapebas com 66, lideram o número de vítimas de violência contra mulheres no\nestado, ao mesmo tempo que figuram como áreas críticas de expansão de atividades\nextrativas e do garimpo ilegal. A mineração clandestina em regiões próximas à Floresta\nNacional de Carajás, com grande circulação masculina, além da degradação ambiental é\ncampeã de violência contra mulheres e adolescentes, como a exploração sexual, o tráfico\nhumano e a violência permanente contra mulheres e adolescentes.\nOs dados mostram que nesses territórios, violência ambiental e a violência de\ngênero caminham juntas. Exemplos trágicos dessa realidade são os feminicídios das\nquebradeiras de coco babaçu Antônia Ferreira dos Santos, de 53 anos, e Marly Viana\nBarroso, de 71 anos, assassinadas em 3 de novembro de 2025, no município de Novo\nRepartimento, sudeste do Pará, cujos corpos apresentavam marcas de extrema violência\n\n17"
+          },
+          {
+            "id": "e-crueldade-para-o-conselho-nacional-das-populacoes-extrativistas-cns-el",
+            "titulo": "e crueldade. Para o Conselho Nacional das Populações Extrativistas (CNS), elas foram",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "e crueldade. Para o Conselho Nacional das Populações Extrativistas (CNS), elas foram\nassassinadas por defender a floresta.\nO Pará lidera o índice de assassinatos de mulheres líderes de pautas\nsocioambiental. Segundo a Comissão Pastoral da Terra (CPT), em 2024 ocorreram 68\nameaças de morte, oito tentativas de assassinato e três assassinatos no estado contra\nmulheres do campo.\nNegros e Negras\nA juventude negra é vítima do encarceramento em massa, da violência policial e da\nausência de perspectivas, sendo empurrada para o trabalho precário, para o tráfico ou\npara a morte precoce.\nSegundo dados oficiais, a violência contra pessoas negras no Pará é altíssima, por\nmeio da letalidade policial e a violência armada nas periferias, sendo as maiores vítimas\nde homicídios e abusos do estado. Em 2025 o Pará registrou 632 mortes por intervenção\npolicial, sendo que 93,3% das vítimas foram pessoas negras. A violência armada na\nGrande Belém revela que cerca de 66% das vítimas de violência armada fatal eram\nnegras. Além disso, são centenas de casos anuais registrados de injúria racial e crimes\nde racismo.\nVidas LGBTI+ importam\nO estado do Pará enfrenta taxas historicamente altas de violência e vulnerabilidade\ncontra a população LGBTI+, especialmente pessoas trans e travestis. A região é\nconsiderada uma das mais perigosas do país para esse grupo, com números alarmantes\nde ameaças, agressões físicas e crimes letais registrados ao longo dos anos. Apesar de\nque atos de homofobia e transfobia sejam enquadrados como crime de racismo (Lei nº\n7.716/1989), o que permite a responsabilização penal dos agressores. Historicamente, a\nviolência é agravada por fatores como a exclusão social, falta de oportunidades e altos\níndices de transfobia internalizada na sociedade.\nDados de 2023 registram o estado como o mais violento do Norte e em 4º lugar\nno ranking nacional, com os municípios de Canaã dos Carajás, Castanhal, Parauapebas e\nTucuruí tendo os piores índices. A violência se expressa em homicídios, suicídios,\nviolações de direitos humanos e tentativas de homicídio. A maioria das vítimas são\nidentificadas como trabalhadoras sexuais, devido às dificuldades de acesso aos estudos,\nmercado de trabalho e novas oportunidades. Pesquisadores afirmam que os dados\nalarmantes vêm ao lado da omissão do estado frente aos casos, que costuma culpabilizar\na própria vítima pelo seu assassinato. A cada 32 horas, uma pessoa LGBTI+ é morta de\nforma violenta no Brasil. No Pará as taxas de homicídios nesse segmento estão sempre\nacima da média nacional, sendo que dos 100 assassinatos registrados Brasil em 2023,\n6% foram no Pará.\nA população LGBTI+ sofre com a discriminação, a violência e a exclusão do\nmercado de trabalho, sobretudo as pessoas trans que são, por conta disso, jogadas, em\nparticular as mulheres trans, para a prostituição. No capitalismo, suas existências são\nnegadas diariamente.\nA extrema direita bolsonarista no Pará segue perseguindo os setores oprimidos.\nSão os promotores ideológicos dessa violência opressora. Enquanto isso, o MDB de\nHelder, um aliado do governo federal no estado, sanciona lei que limita acesso de\npessoas trans a banheiros em templos religiosos, escolas confessionais e instituições\n\n18"
+          },
+          {
+            "id": "mantidas-por-grupos-religiosos-um-verdadeiro-retrocesso-aos-direitos-da",
+            "titulo": "mantidas por grupos religiosos, um verdadeiro retrocesso aos direitos da população",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "mantidas por grupos religiosos, um verdadeiro retrocesso aos direitos da população\ntrans.\nEm defesa dos povos indígenas e quilombolas\nO grande Agronegócio nas mãos das multinacionais capitalistas persegue os povos\nindígenas e quilombolas não garantindo saúde, educação, emprego, condições básicas e\ndignas. O Pará possui a 6ª maior população indígena do Brasil, segundo o Censo do IBGE\nde 2022. Eles representam 1% da população estadual, distribuídos em mais de 55 etnias\ne 77 terras indígenas. Do total, 41.819 vivem em territórios demarcados e 39.155 em\náreas urbanas. Na capital, Belém, 0,16% da população se autodeclara indígena.\nJá a população quilombola no Pará, é a quarta maior do Brasil, com 135.033 pessoas\nautodeclaradas. O Pará é o primeiro do país, em número de territórios delimitados (87\náreas oficiais), segundo dados do IBGE. Belém concentra cerca de 1.361 pessoas\nquilombolas.\nTanto os povos indígenas quanto os quilombolas enfrentam desafios estruturais\nhistóricos por conta da sanha de lucro dos Capitalistas. O número de lideranças\nenvolvidas em conflitos de terra por questões fundiárias e disputas, é grande e é\nmarcado por violência.\nNenhum imigrante é ilegal\nO Pará possui uma população de aproximadamente 6.101 imigrantes internacionais,\nsegundo os dados do Censo Demográfico do IBGE. Os venezuelanos e colombianos são\nos principais grupos, com forte presença também de refugiados e indígenas da etnia\nWarao.\nO PSTU defende:\n— Reparações, Já! Emprego, Moradia e Renda para as Mulheres, a População Negra e\nLGBTI +;\n— Política integrada de Creches no Estado para as Mulheres Trabalhadoras;\n— Pela criminalização da LGBTIfobia. Revogação da Lei que limita o acesso das Pessoas\nTrans aos banheiros em templos religiosos, escolas confessionais e instituições mantidas\npor grupos religiosos por critérios biológicos. Garantia do Nome Social a todos. Garantir\nque a população trans tenha acesso à saúde;\n— Pela aplicação e ampliação da Lei Maria da Penha. Pela ampliação do número de\nDelegacias Especializadas de Atendimento à Mulher (DEAMs) no Estado;\n— Pelo fim do genocídio da juventude negra e do Racismo. Contra a violência policial e\no crime organizado. Pela desmilitarização da Polícia Militar, por uma força de segurança\núnica, civil, controlada diretamente pelos trabalhadores.\n— Descriminalização das drogas, combate às milícias, facções e repressão. Autoorganização e autodefesa da classe trabalhadora, comunidades e periferias;\n— Pelo direito ao reconhecimento jurídico com visto definitivo aos imigrantes e fim do\npreconceito contra haitianos, venezuelanos, cubanos e demais estrangeiros;\n— Ampliação das Campanhas Estaduais contra o Capacitismo (Preconceito contra\npessoas com deficiência), focadas na rede de ensino e na promoção de autonomia e\ngarantia de direitos das Pessoas com Deficiência (PCDs);\n— Demarcação e Titulação das terras indígenas e quilombolas no estado.\n\n19"
+          },
+          {
+            "id": "7-juventude",
+            "titulo": "7. JUVENTUDE",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "7. JUVENTUDE\nAs engrenagens do capitalismo aprisionam a juventude do Pará. É necessário rebeldia\npara ser livre!\nO estado Pará tem uma população de jovens (entre 15 e 29 anos) de aproximadamente\n2.395.000 pessoas. O que dá cerca de 26% do total de habitantes do estado\ncompartilhando um mesmo desafio geracional. Mas esse desafio é vivido de maneiras\ndiferentes, os filhos dos ricos crescem em um sistema onde as engrenagens capitalistas\nservem para manter seus privilégios, enquanto os filhos da classe trabalhadora sentemse em uma prisão.\nO sentimento de prisão da juventude acontece quando não há controle sobre o\nfuturo, uma sensação de não ter saída, a angústia em ver o avanço da destruição da\nAmazônia, ameaçando o equilíbrio climático do planeta e a possibilidade de um futuro\nmelhor.\nAntes a promessa era que bastava estudar para ter uma vida melhor, mas falta\nemprego para os jovens que estão concluindo o ensino médio e mesmo para os que\nconseguem ter acesso ao ensino superior, o desemprego atinge com particular força a\njuventude.\nOs filhos da classe trabalhadora sempre enfrentam um desafio geracional,\nporque a história de todas as sociedades até hoje existentes é a história das lutas de\nclasses, é preciso enfrentar o capitalismo e ter rebeldia para construir outra sociedade\npossível, agora no presente e não para um futuro distante. Chega de prisão capitalista,\nlutar por um mundo socialista para ter direito ao futuro! Por isso as propostas do PSTU\npara a juventude são revolucionárias!\nCondições para a juventude ter perspectivas de vida\nÉ difícil conseguir emprego sem experiência, e quando o jovem consegue os níveis de\nexploração são brutais, precarização nas condições de trabalho, salário de fome e\nassédio moral são comuns. Faltam estágios e incentivos para o desenvolvimento técnico\ne intelectual da juventude. Nossas reivindicações não se realizam de forma isolada, ao\nserem levadas à lutam, entram em choque com os interesses que organizam a sociedade\ne economia. Por isso defendemos como medidas imediatas e democráticas para o\npresente:\n— Fim da escala 6x1 sem redução de salários e direitos, sem pejotização e sem\ndemissões;\n— É preciso ter um programa do estado que ofereça treinamento para os mais diversos\nsetores produtivos, com estágio remunerado no valor de um salário-mínimo e garantia\nde inserção no mercado de trabalho para todos os jovens;\n— Fim do assédio moral e qualquer forma de preconceito no ambiente de trabalho, a\njuventude que produz riqueza precisa ter seus direitos garantidos. É preciso existir canais\nde comunicação efetivos para denúncia e ações de prevenção desse comportamento no\nambiente de trabalho;\nTambém é direito fundamental da juventude o acesso à uma educação de qualidade, e\npara isso é preciso mudar radicalmente a realidade do Pará.\n\n20"
+          },
+          {
+            "id": "educacao-ciencia-e-tecnologia-de-qualidade-sao-direitos-fundamentais-da",
+            "titulo": "Educação, ciência e tecnologia de qualidade são direitos fundamentais da juventude",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Educação, ciência e tecnologia de qualidade são direitos fundamentais da juventude\nO principal índice da qualidade da educação básica no Brasil é o Ideb (Índice de\nDesenvolvimento da Educação Básica), e o estado Pará tinha um dos piores resultados\nnesse quesito, ocupava o penúltimo lugar no Brasil. Embora tenha saltado da 26ª para a\n6ª posição no último Ideb, isso não refletiu melhoria real na qualidade de ensino, o\navanço foi alvo de questionamentos por especialistas e entidades da educação\ndenunciam consequência de uma política de aprovação automática adotada pelo\nEstado.\nResolver os problemas da educação básica é importante, porque a precarização\nda educação faz parte de uma lógica, que busca condenar a classe trabalhadora a ser\neducada para servir e a classe burguesa para liderar, isso é parte das engrenagens do\ncapitalismo.\nO estado do Pará possui todo um ecossistema de ciência e tecnologia, com um\npotencial enorme de desenvolvimento, mas os investimentos são insuficientes e sua\nlógica é voltada para atender os interesses do capitalismo na nossa região, não visa\natender a necessidade de fato da população, por isso nossas propostas são:\n— Defesa de uma educação pública de qualidade socialmente referenciada com\nmerenda escolar de qualidade, professores valorizados e infraestrutura adequada;\n— Construção e modernização das escolas técnicas estaduais, com forte política de\npermanência estudantil;\n— A Caravana da Ciência e Tecnologia que acontece de forma itinerante deve ser\npermanentes, todas as escolas estaduais devem ter estrutura adequada para o incentivo\nao desenvolvimento científico e social;\n— Fortalecimento da Universidade Estadual, mais investimentos e expansão da\nuniversidade, com valorização dos trabalhadores da educação e ampliação das políticas\nde assistência estudantil;\n— O Parque de Ciência e Tecnologia Guamá deve estar voltado a construção da\nsoberania tecnológica da região.\nUma questão importante quando falamos de permanência estudantil é a dificuldade de\nacesso ao transporte, isso afeta a vida de todos os estudantes da capital e principalmente\ndo interior.\nDireito à cidade e à mobilidade para os jovens pobres\nAs empresas de ônibus recebem isenção de impostos, enquanto oferecem um péssimo\nserviço à população, transporte sucateado e precário. O Estado do Pará também tem\nhidrovias que são explorados comercialmente por empresas que se importam apenas\ncom o próprio lucro, para um estudante do interior vir estudar na capital ele precisa\nenfrentar uma burocracia enorme para garantir seu direito à meia passagem, seja no\ntransporte rodoviário ou hidroviário a dificuldade é semelhante. Por isso é importante\ndefender:\n— Passe Livre estudantil, a mobilidade urbana é um direito que ´precisa ser garantido\nde graça aos estudantes!\n— Reestatização das empresas de transporte, sob controle dos trabalhadores para\natender a necessidade da população;\n21"
+          },
+          {
+            "id": "por-uma-maior-integracao-entre-o-transpor-te-hidroviario-e-rodoviario-co",
+            "titulo": "— Por uma maior integração entre o transpor te hidroviário e rodoviário, com",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "— Por uma maior integração entre o transpor te hidroviário e rodoviário, com\npreocupação ambiental e social.\nOs desafios enfrentados pelos estudantes do interior são específicos, por isso é\nimportante defender também um programa para o campo.\nJuventude do campo: o interior do Pará no centro da discussão\nEmbora existam leis e programas que prometam desenvolver o campo, no Pará o crédito\nrural e outras políticas de incentivo seguem financiando, na prática, o desmatamento e\na degradação das florestas. O modelo de exploração favorece aos grandes\nempreendimentos enquanto a população sofre com péssimos serviços de transporte,\ninfraestrutura, incentivo de produção agrícola e educação.\nAs engrenagens do sistema capitalista no interior do estado movem interesses\ninternacionais, as riquezas da região amazônica são exploradas por empresas\nestrangeiras e nacionais, enquanto a maior parte da população vive em condições de\npobreza e miséria, povos tradicionais são expulsos de suas terras e a violência cresce ano\napós ano com o desenvolvimento capitalista da região. Por isso defendemos para a\njuventude do campo:\n— Educação específica para o campo, é preciso valorizar os saberes tradicionais dos\npovos amazônicos, respeitar a cultura e o modo de vida, com ensino público de\nqualidade e com condições de permanência;\n— Investimentos em infraestrutura para garantir acesso à internet e espaços de leitura\npara os jovens do interior;\n— A extração de riqueza da nossa floresta precisa estar sob controle dos trabalhadores\ne à serviço do desenvolvimento social da região. O modo de exploração econômica na\nAmazônia é o de extrair riqueza a qualquer custo, sem se importar com os impactos\nambientais e sociais, por isso um dos resultados desse modelo é o aumento da violência\nna região o para isso é fundamental debater um tópico específico.\nA juventude e o direto à vida\nUma pesquisa de opinião feita recentemente pela Genial/Quaest apontou que 29% dos\nentrevistados enxergavam a questão da criminalidade como o maior problema do Brasil.\nEssa percepção é sentida em todo o estado, e podemos afirmar que os jovens são as\nprincipais vítimas dessa violência, nas periferias essa realidade é sentida com mais\nintensidade onde os jovens são alvos tanto da violência policial quanto do recrutamento\ndo tráfico para vida sem perspectivas, a realidade é que se não houver oportunidades e\npolíticas públicas efetivas a juventude não terá direito à vida. Por isso:\n— Fim do genocídio da juventude negra, a violência policial deve acabar! Pelo fim da\nPolícia Militar, e a criação de uma força de segurança pública civil e comunitária\ncontrolada pela população;\n— É preciso dar oportunidade para os jovens das periferias, o estado precisa oferecer\natividades extracurriculares, com ensino de música, práticas de esportes e atividade\nligadas à arte;\n\n22"
+          },
+          {
+            "id": "a-violencia-precisa-ser-combatida-com-prevencao-o-trafico-de-drogas-e-a",
+            "titulo": "— A violência precisa ser combatida com prevenção, o tráfico de drogas e a",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "— A violência precisa ser combatida com prevenção, o tráfico de drogas e a\ncriminalidade não começa na periferia, e sim nas fronteiras. Combater o crime é\npromover a asfixia financeira dos criminosos, com inteligência e políticas efetivas.\nÉ importante denunciar que a maior parte dos jovens mortos nas operações policiais\ntem uma característica especifica, são pessoas negras e pardas. O combate ao racismo\nnão pode ser secundário, ele é parte importante e deve ser considerado em todo o\nprograma, mas também tem especificidades.\nIgualdade e combate às opressões para a libertação da juventude\nNão existe capitalismo sem LGBTIfobia, racismo e machismo, sem perseguição e ataque\naos indígenas e refugiados. A luta contra as opressões necessita ser retomada pela classe\noperária e os trabalhadores pobres de conjunto (homens e mulheres, negros, brancos e\nindígenas, LGBTIs e cis-héteros…). Só unindo essa primeira à luta de morte contra o\nsistema econômico e social que as gera, o capitalismo, é que criaremos uma sociedade\nverdadeiramente livre de qualquer exploração e opressão.\nInfelizmente essa sociedade adoecida registra número aterrorizantes de violência\nà mulher, pessoas LGBTI+ e agressões racistas. Na juventude o impacto emocional do\npreconceito é profundo, enquanto o estado não tiver uma política consciente de\nvalorização da diversidade e combate à todo e qualquer tipo de opressão, seguiremos\ndivididos e explorados. Nossas propostas são:\n— Delegacias especializadas com funcionamento em tempo integral e fácil acesso para\nas mulheres e pessoas que sofrem opressões;\n— Incentivo a diversidade nos órgãos do estado e na sociedade, sem oportunidade não\nhá como acabar com o ciclo de preconceito;\n— Palestras e ações educativas nas escolas e espaços públicos para o respeito à\ndiversidade.\nMas além de defender a vida e garantir nossa existência é preciso ter acesso a cultura e\nlazer, que também é parte importante do programa.\nCultura, esporte e lazer para a juventude periférica do Pará\nA cultura é um bem comum, todo jovem deve ter o direito ao lazer e a cultura. Isso é\numa necessidade muitas vezes negada para os filhos da classe trabalhadora porque a\nmercantilização artística coloca o lucro acima do acesso. É preciso mudar essa lógica,\nromper com as engrenagens capitalistas e garantir aos trabalhadores:\n— Espaços culturais de apoio e incentivo a manifestações populares e de contracultura,\ncomo o hip-hop e saraus, combatendo a repressão policial a eventos culturais locais;\n— Fim da mercantilização da arte e que a gestão da produção cultural seja feita pelos\npróprios trabalhadores;\n— Defesa do fim de políticas de renúncia fiscal para grandes empresas e\nredirecionamento de recursos públicos para o fomento à produção artística local e\ncomunitária;\n— Garantia de equipamentos públicos de lazer e cultura descentralizados nas favelas e\nbairros periféricos, hoje negligenciados pelo Estado capitalista;\n23"
+          },
+          {
+            "id": "construcao-e-manutencao-de-quadras-poliesportivas-para-a-pratica-de-espo",
+            "titulo": "— Construção e manutenção de quadras poliesportivas para a prática de esportes pelos",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "— Construção e manutenção de quadras poliesportivas para a prática de esportes pelos\njovens com organização de campeonatos e desenvolvimento de talentos.\n8. EDUCAÇÃO SUPERIOR ESTADUAL PÚBLICA - UEPA\nO movimento docente da Universidade Estadual do Pará (UEPA) tem lutado por questões\nfundamentais como carreira, salário, progressão, saúde do/da trabalhador/ra e contra o\nassédio moral e sexual.\nO Plano de Cargos, Carreira e Remuneração (PCCR) da UEPA, fundada em 18 maio\nde 1993, só foi concedido muito recentemente. Após longo período de luta, em 20 de\njaneiro de 2026 o texto final foi aprovado pelo Conselho Universitário (CONSUN). Os\ndocentes continuam cobrando que a Secretaria de Administração (SEPLAD) faça um\nestudo do impacto financeiro do PCCR, o qual visa garantir o volume necessário de\nrecursos humanos para a efetivação do tripé universitário Ensino, Pesquisa e Extensão e\npara o crescimento e consolidação dos cursos de graduação e de pós-graduação, além\nde garantir a expansão da Universidade com qualidade.\nJá o PCCS (Plano de Cargos, Carreira e Salários) quando aprovado em 2006,\nreajustou os salários corroídos pela inflação, valorizando a remuneração docente.\nPorém, o último reajuste, em 2023, não foi mais capaz sequer de corrigir a inflação\noficial, do IPCA. E hoje a categoria tem que lutar pela atualização do valor do vencimento\nbásico para docentes em início de carreira em regime de tempo integral (40h), conforme\no atual Plano de Carreira; pela recomposição salarial a todos os docentes ativos e inativos\n(aposentados); reivindicam 20% de reajuste imediato, para recuperar as perdas\ninflacionárias e garantir aumento real à categoria.\nOutra luta por direitos básicos travada pelos docentes de UEPA é com relação a\nProgressão na carreira, denunciando recentemente (2º semestre de 2025) a defasagem\nde vagas para a efetivação da Progressão Vertical para a classe de Adjunto, um direito de\ntodo docente com o título de Doutor; exigem que a Gestão Superior divulgue a lista\ndos docentes que aguardam a progressão para a Classe Adjunto até a atualização do\nPCCR, que contemplaria essa demanda, ser aprovada.\nAlém disso, ainda têm que lutar pela Adoção do Piso Salarial Profissional\nNacional para os profissionais do Magistério Público da Educação Básica (PSPNM) como\nreferência para o vencimento base. Desde 2015, o governo do estado deixou de adotar o\nvalor do piso salarial nacional do magistério como referência para o reajuste salarial dos\ndocentes da UEPA. E isso se deu em virtude do não pagamento do piso aos docentes da\neducação básica. O governo de Helder Barbalho quebrou o acordo da greve de 2012,\nrepassando o pagamento do piso à educação básica e deixando de adotar essa referência\npara os docentes da UEPA. Isso ocasionou uma discrepância e falta de isonomia no\nsalário base do magistério do estado, e por isso a reivindicação que seja adotado\ncomo referência do piso gerador da malha salarial, com 50% de seu valor sendo o piso do\nDocente Auxiliar I com 20 horas semanais.\nA dedicação exclusiva como regime de trabalho de docentes do ensino superior\né condição imprescindível para garantir que a Instituição tenha condições de\ndesenvolver pesquisa de qualidade e programas de pós-graduação relevantes e bem\nclassificados pelas Agências fomentadoras de pesquisa. No entanto, a UEPA, uma das\nmais importantes universidades estaduais da Amazônia está longe dessa realidade.\n\n24"
+          },
+          {
+            "id": "uma-das-reivindicacoes-docentes-e-exatamente-a-valorizacao-do-regime-de",
+            "titulo": "Uma das reivindicações docentes é exatamente a valorização do regime de",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Uma das reivindicações docentes é exatamente a valorização do regime de\nDedicação Exclusiva, pois conforme dados oficiais, da Diretoria de Gestão de Pessoas da\nUEPA, o total de docentes que pertencem ao Regime de Trabalho em Tempo Integral\ncom Dedicação Exclusiva corresponde a 321 docentes, o que equivale a apenas 29,3%\ndo total de 1.097 docentes efetivos da instituição. 70,7% dos docentes efetivos da UEPA\nnão atuam exclusivamente na instituição, destinando parte significativa de seu tempo a\noutros vínculos empregatícios, o que fragiliza o desenvolvimento qualificado da\npesquisa e da pós-graduação, e contribui para a sobrecarga do trabalho docente. O mais\ngrave é que uma resolução do CONSUN (nº 3677/2021) além de ser baseado em\ninscrições para o cargo, permite que avaliações possam retirar o Regime de Dedicação\nExclusiva dos poucos docentes que ingressaram nesse regime por meio de concurso\ninterno.\nO movimento docente reivindica a revogação dessa Resolução e a edição de uma\nnova resolução que estabeleça um fluxo progressivo de ampliação do quadro de\ndocentes em TIDE, com incremento anual mínimo correspondente a 10% do total de\ndocentes efetivos da instituição, assegurando a expansão estrutural da Dedicação\nExclusiva (DE). O que possibilitaria, no prazo de até cinco anos, o alcance de no mínimo\n60% do quadro docente em regime TIDE, ou a superação desse patamar. Na verdade,\na reivindicação mais coerente e necessário é que o TIDE, enquanto um tipo de regime de\ntrabalho, deva ser garantido em um tipo de concurso exclusivo para esse regime, como\nocorre nas Instituições Federais de Ensino (IFE), além, claro, por solicitação de mudança\nde regime de 20 ou 40 horas sem DE para 40 horas com DE, quando o docente atingir os\ncritérios para tal.\nQuanto a saúde docente, a categoria, na UEPA, ainda reivindica que sejam\ncumpridas as Normas Regulamentadoras (NR) da Segurança e da Medicina do Trabalho\nprevistas na Consolidação das Leis do Trabalho (CLT) e garantidas constitucionalmente,\nna garantia do Adicional de Insalubridade e do Adicional de Periculosidade, cujos\nprocedimentos de solicitação são burocráticos e dificultam o acesso ao benefício para o\nprofessor q u e estiver lotado nas condições indicadas, de forma automática, bem\ncomo o pagamento dos retroativos aos pedidos concedidos.\nO combate ao assédio moral e sexual é uma das demandas do movimento\ndocente na UEPA, onde está presente com nas mais diversas instituições do serviço\npúblico. O assédio moral no processo de lotação é um dos mais recorrentes na UEPA,\ncom o sindicato recebendo constantes denúncias dos docentes de violações no processo\nde lotação na extrapolação de carga horária. Formação continuada, cumprimento da\nResolução CONSUN/UEPA nº 3904/2022 que trata sobre as Normas e Procedimentos a\nserem adotados em casos de Assédio Moral, Sexual e Atitudes Discriminatórias, no\nâmbito da UEPA, além de sua ampla divulgação, com um canal de denúncias da\nOuvidoria acessível a toda a comunidade acadêmica.\nOutro direito básico do docente, como de qualquer outro trabalhador, a\naposentadoria, também é motivo de luta e reinvidicações na UEPA, uma vez que o\nprocesso é extermamente burocrtata e demorado, muitas vezes com docentes já\nafastados/as para este fim vivendo uma longa espera. A exigência é a deburocratização\ne agilidade nos procedimentos.\nNo que diz respeito às liberdades democráticas, a UEPA apresenta graves atrasos:\nainda é uma reinvindicação que na composição do CONSUN haja representatividade de\nclasse das categorias de docente e de técnico-administrativo, enquanto nas federais as\n25"
+          },
+          {
+            "id": "tres-categorias-docentes-tecnicos-administrativos-e-discentes-tem-repres",
+            "titulo": "três categorias, docentes, técnicos-administrativos e discentes tem representatividade",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "três categorias, docentes, técnicos-administrativos e discentes tem representatividade\nno CONSUN, no Conselho Administrativo (CONSAD) e no Conselho de Ensino e Pesquisa\n(CONSEP).\nAs eleições para Reitor, apesar de garantir a participação de Docentes, Discentes e\nServidores, ainda é desigual no peso do voto de cada categoria e ainda submetida à\nantidemocrática Lista Tríplice, cuja escolha fica na mão do Governador.\nComo defesa da democracia nessa universidade, o movimento docente está\ndefendendo o Congresso Estatuinte que atualize de forma ampla e democrática o\nestatuto e regimento da UEPA, e assim impeça o conselho universitário de tomar\nmedidas arbitrárias que ferem o estatuto e o plano de carreira, o que tem ocorrido na\natual situação.\n— Por um orçamento compatível com o PCCR, que garanta Ensino, Pesquisa e Extenção\nde qualidade na UEPA, novos cursos de graduação, pós-graduação de qualidade e a\nexpansão sustentada da universidade;\n— Ajuste imediato de 20% nos salários para corrigir as perdas inflacionárias, com\naumento real dos salários;\n— Divulgação imediata da lista de Docentes que aguardam progressão para a Classe\nAdjunta. Pela transparência na progressão da carreira dos docentes da UEPA!\n— Helder quebrou o acordo da greve de 2012 e não paga o Piso Salarial Nacional dos\ndocentes da UEPA. Isso é um ataque aos salários da categoria! Adoção imediata do Piso\nProfissional Nacional aos docentes. Que 50% desse valor seja referência dompiso de um\nprofessor em início de carreira, Auxiliar I com 20h semanais. Pagamento de valores\nretroativos das perdas desde 2012;\n— Concurso exclusivo para o regime de Trabalho Integral com Dedicação Exclusiva,\ngarantindo a qualidade da atividade docente e o fim da sobrecarga de trabalho em\noutras Instituições;\n— Fim da Resolução do CONSUN (3677/2021), que além de inscrever professores para\nconcorrerem ao regime de dedicação exclusiva, permite que avaliações retirem o regime\nde quem já conseguiu por concurso interno;\n— Pagamento automático dos adicionais de Insalubridade e periculosidade aos docentes\nque trabalham em condições indicadas para tal, com pagamento retroativo aos pedidos\nconcedidos;\n— Abaixo o assédio moral e sexual;\n— Abaixo o assédio moral nas lotações que extrapolam a carga horária do docente;\n— Pela desburocratização do processo de Aposentadoria docente;\n— Pela imediata representação de classe das três categorias no CONSUN, CONSAD (Adm)\ne CONSEP (pesquisa);\n— Eleições universais para Reitor. Fim da antidemocrática Lista Tríplice\n— Por um Congresso Constituinte que atualize de forma ampla e democrática o Estatuto\ne Regimento da UEPA.\n9. EDUCAÇÃO\nGarantir educação pública, laica, democrática e de qualidade para a classe\ntrabalhadora\n\n26"
+          },
+          {
+            "id": "um-dos-piores-indices-da-educacao-paraense-e-o-abandona-escolar-apesar-d",
+            "titulo": "Um dos piores índices da educação paraense é o abandona escolar. Apesar da ampliação",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Um dos piores índices da educação paraense é o abandona escolar. Apesar da ampliação\ndo número de matrículas, milhares de estudantes deixam escola antes de concluir o\nensino médio. Essa situação é acompanhada pela precarização do ensino, com\nprofessores e trabalhadores técnicos recebendo baixos salários e exercendo suas\nprofissões em condições precárias de trabalho. Somado a uma gestão escolar\nantidemocrática, onde as comunidades escolares têm pouca participação nas decisões\nsobre os rumos da educação.\nQuando para estudantes do campo, das ilhas, das comunidades ribeirinhas,\nquilombolas e dos povos indígenas, a realidade é ainda mais dura: dificuldades de\nacesso, falta de infraestrutura, ausência de profissionais e desrespeito às suas\nespecificidades culturais e linguísticas.\nRessaltamos que os problemas da educação não decorrem da falta de esforço de\nprofessores, técnicos, estudantes ou famílias, mas sim da opção dos sucessivos governos\npor limitar os investimentos públicos, submeter a escola à lógica das metas e indicadores\ne abrir espaço para a privatização de serviços educacionais.\nO PSTU defende uma educação pública gratuita, laica, democrática, inclusiva,\ncientífica e socialmente referenciada, voltada para a emancipação da classe trabalhadora\ne para o desenvolvimento do povo paraense.\nValorização dos trabalhadores da educação\nNão existe política educacional de verdade sem a valorização de seus profissionais. Por\nisso, defendemos:\n— Garantia do pagamento integral do Piso Salarial Nacional do Magistério para todos os\nprofissionais da educação básica;\n— Incorporação do piso à carreira, impedindo que seja tratado apenas como vencimento\ninicial;\n— Recuperação das perdas salariais acumuladas;\n— Realização de concursos públicos para suprir a carência de profissionais;\n— Fim da política de contratação precária e valorização dos servidores efetivos;\n— Cumprimento da jornada com um terço destinado às atividades extraclasse, conforme\ndetermina a Lei nº 11.738/2008;\n— Formação continuada garantida pelo Estado e realizada em horário de trabalho;\n— Melhoria das condições de trabalho, reduzindo a sobrecarga e garantindo estrutura\nadequada nas escolas.\nGestão democrática da escola pública\nA gestão democrática como princípio da educação pública é um direito constitucional.\nPorém, a comunidade escolar continua afastada das decisões mais importantes.\nDefendemos:\n— Eleição direta para diretores das escolas estaduais;\n— Mandatos revogáveis pela comunidade escolar;\n— Fortalecimento dos conselhos escolares com poder deliberativo;\n— Participação efetiva de professores, estudantes, trabalhadores da educação, pais e\nresponsáveis na elaboração do projeto pedagógico e na definição das prioridades\norçamentárias;\n27"
+          },
+          {
+            "id": "transparencia-na-aplicacao-dos-recursos-publicos",
+            "titulo": "— Transparência na aplicação dos recursos públicos.",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "— Transparência na aplicação dos recursos públicos.\nCombate ao racismo e valorização da história do povo brasileiro\nA escola pública não pode ser um espaço de reprodução das opressões. Ao contrário,\ndeve ser um espaço de combate às todas as formas de discriminação e contribuir para\nenfrentar o racismo existente na sociedade brasileira.\nO governo estadual deve cumprir integralmente a Lei nº 10.639/2003, que\ntornou obrigatório o ensino de História e Cultura Afro-Brasileira, e a Lei nº 11.645/2008,\nque ampliou essa obrigatoriedade para incluir a História e Cultura dos Povos Indígenas.\nDefendemos:\n— Formação permanente dos profissionais da educação;\n— Produção e aquisição de materiais didáticos adequados;\n— Valorização das culturas afro-amazônicas e indígenas do Pará;\n— Combate ao racismo nas escolas;\n— Fortalecimento das ações de educação antirracista durante todo o ano letivo.\nEducação Escolar Indígena\nOs povos indígenas têm direito constitucional a uma educação específica, diferenciada,\nintercultural, comunitária e bilíngue.\nNosso programa defende:\n— Garantia de todas as reivindicações apresentadas pelos próprios povos indígenas;\nrespeito à autonomia das comunidades na construção dos projetos pedagógicos;\n— Contratação e valorização de professores indígenas;\n— Produção de material didático nas línguas originárias;\n— Construção e manutenção das escolas indígenas com infraestrutura adequada;\n— Transporte escolar que respeite as características dos territórios;\n— Alimentação escolar adequada às culturas alimentares dos povos indígenas;\n— Participação das organizações indígenas em todas as decisões sobre a política\nestadual de educação.\nEducação do campo, das águas e das florestas\nO Pará possui uma das maiores diversidades territoriais do país. A política educacional\nprecisa responder às necessidades dessa realidade.\nDefendemos:\n— Fortalecimento da educação do campo;\n— Ampliação da educação ribeirinha;\n— Garantia da educação quilombola;\n— Transporte escolar seguro e adequado às condições de cada região;\n— Escolas próximas das comunidades, evitando deslocamentos excessivos dos\nestudantes.\nPermanência dos estudantes\nGarantir matrícula não basta, é necessário assegurar que os jovens permaneçam na\nescola.\n28"
+          },
+          {
+            "id": "defendemos",
+            "titulo": "Defendemos:",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Defendemos:\n— Ampliação da assistência estudantil;\n— Alimentação escolar de qualidade;\n— Transporte escolar universal;\n— Acesso gratuito à internet;\n— Bibliotecas em todas as escolas;\n— Laboratórios de informática, ciências e artes;\n— Atendimento psicológico e serviço social na rede estadual.\n— Infraestrutura para todas as escolas.\nToda escola pública deve oferecer condições dignas de ensino.\nPropomos:\n— Recuperação e reforma das escolas estaduais;\n— Climatização das salas de aula;\n— Acessibilidade plena para pessoas com deficiência;\n— Laboratórios e bibliotecas em todas as unidades;\n— Quadras esportivas cobertas;\n— Manutenção permanente da infraestrutura escolar.\nCiência, cultura e esporte\nA escola pública deve formar cidadãos críticos e garantir acesso ao conhecimento\nproduzido pela humanidade.\nDefendemos:\n— Fortalecimento do ensino técnico público;\n— Ampliação da educação profissional integrada ao ensino médio;\n— Valorização da produção científica;\n— Incentivo às artes, à cultura amazônica e às manifestações populares;\n— Fortalecimento das bibliotecas escolares;\n— Incentivo às práticas esportivas e culturais.\nMais investimento na educação pública\nA educação não pode ser tratada como gasto, mas como investimento social.\nDefendemos:\n— Ampliação dos investimentos públicos na educação estadual;\n— Utilização dos recursos públicos exclusivamente na rede pública de ensino;\n— Transparência total na aplicação dos recursos da educação;\n— Fim da privatização e da terceirização de atividades permanentes da rede estadual;\n— Defesa do financiamento público suficiente para garantir ensino de qualidade em todo\no Pará.\nPor uma educação a serviço da classe trabalhadora\nO PSTU defende uma educação pública que forme cidadãos críticos, conscientes e\ncapazes de compreender e transformar a sociedade. Uma escola comprometida com a\n29"
+          },
+          {
+            "id": "producao-cientifica-a-valorizacao-da-diversidade-o-combate-as-opressoes",
+            "titulo": "produção científica, a valorização da diversidade, o combate às opressões e a",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "produção científica, a valorização da diversidade, o combate às opressões e a\nemancipação da classe trabalhadora.\nNosso compromisso é construir uma educação democrática, laica, inclusiva e de\nqualidade, colocando os interesses do povo trabalhador acima dos interesses do\nmercado e da lógica do lucro.\n10. SÁUDE\nPor uma saúde 100% pública, estatal, gratuito e de qualidade\nA saúde é um direito fundamental e não uma mercadoria. A população paraense\nenfrenta diariamente longas filas por consultas, exames e cirurgias, falta de\nmedicamentos, carência de profissionais, unidades sem estrutura adequada e crescente\nprivatização dos serviços públicos.\nOs trabalhadores da saúde convivem com baixos salários, vínculos precários, jornadas\nexaustivas, adoecimento físico e mental e falta de reconhecimento profissional.\nEssa realidade não resulta da falta de recursos, mas de uma escolha política dos\nsucessivos governos, que destinam bilhões de reais para grandes empresas, bancos e\ngrupos privados enquanto reduzem investimentos na rede pública e ampliam\nterceirizações, organizações sociais e contratos precários.\nO PSTU defende um sistema de saúde totalmente público, estatal, gratuito, universal e\nde qualidade, financiado pelo Estado e administrado com participação dos trabalhadores\ne da população.\nDefesa incondicional do SUS\nO SUS é uma das maiores conquistas da classe trabalhadora brasileira e precisa ser\nfortalecido.\nDefendemos:\n— Fortalecimento do Sistema Único de Saúde como sistema universal;\n— Atendimento integral, gratuito e de qualidade;\n— Fim das privatizações, terceirizações, OSs, OSCIPs e PPPs na saúde;\n— Dinheiro público exclusivamente para a saúde pública;\n— Ampliação do financiamento estadual para o SUS;\n—Transparência na aplicação dos recursos públicos.\nValorização dos trabalhadores da saúde\nNão existe saúde pública de qualidade sem trabalhadores valorizados. Nosso programa\nincorpora as principais reivindicações apresentadas pelos servidores da saúde do Pará.\nDefendemos:\nPlano de Cargos, Carreiras e Remuneração\n— Implementação imediata do PCCR;\n30"
+          },
+          {
+            "id": "atualizacao-das-tabelas-salariais",
+            "titulo": "— Atualização das tabelas salariais;",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "— Atualização das tabelas salariais;\n— Progressão automática por tempo de serviço e qualificação;\n—Valorização dos profissionais de nível técnico, superior e especialistas;\n—Correção das distorções salariais históricas.\nConcurso público\n— Concurso público como regra permanente;\n— Fim da política de contratação temporária como forma de substituir servidores\nefetivos;\n— Substituição gradual dos contratos precários por servidores concursados;\nrespeito à ordem de classificação dos concursos públicos.\nSalários\n—Piso salarial digno para todas as categorias da saúde;\n— Reajuste anual com reposição integral da inflação e ganho real;\n— Pagamento correto da insalubridade;\n— Valorização das diferentes categorias profissionais.\nCondições de trabalho\n— Redução da sobrecarga de trabalho;\n— Jornadas regulamentadas;\n— Pagamento correto dos plantões e horas extras;\n— Fornecimento permanente de medicamentos, equipamentos e insumos;\n— Política estadual de saúde mental para os trabalhadores da saúde.\nDireitos dos servidores\n— Combate ao assédio moral;\n— Fim das perseguições políticas;\n— Pagamento correto de diárias e adicionais;\n— Criação de ouvidoria independente para denúncias.\nFormação permanente\n— Programas públicos de qualificação;\n— Incentivo à especialização;\n— Fortalecimento das parcerias com universidades públicas.\nGestão democrática\n— Fortalecimento dos Conselhos de Saúde;\n— Participação efetiva dos trabalhadores nas decisões;\n— Transparência na gestão da saúde pública.\nFortalecimento da rede pública\nDefendemos:\n— Ampliação da Atenção Primária em Saúde;\n— Fortalecimento da Estratégia Saúde da Família;\n— Expansão da rede estadual de hospitais públicos;\n— Fortalecimento dos hospitais regionais;\n31"
+          },
+          {
+            "id": "ampliacao-da-assistencia-farmaceutica",
+            "titulo": "— Ampliação da assistência farmacêutica;",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "— Ampliação da assistência farmacêutica;\n— Redução das filas por consultas, exames e cirurgias;\n— Ampliação dos serviços de urgência e emergência.\nSaúde das mulheres\nAs mulheres enfrentam desigualdades históricas no acesso aos serviços de saúde e\nmaior carga de trabalho doméstico e de cuidados.\nDefendemos:\n— Fortalecimento da atenção integral à saúde da mulher;\n— Ampliação do pré-natal e do parto humanizado;\n— Combate à mortalidade materna;\n— Ampliação do acesso aos métodos contraceptivos;\n— Garantia do atendimento às vítimas de violência sexual conforme previsto na\nlegislação;\n— Ampliação dos serviços de prevenção e tratamento dos cânceres de mama e colo do\nútero;\n— Atendimento especializado às mulheres em situação de violência.\nSaúde da população negra\nO racismo também produz desigualdades em saúde.\nDefendemos:\n— Implementação integral da Política Nacional de Saúde Integral da População Negra;\n— Combate ao racismo institucional no SUS;\n— Ampliação do diagnóstico e tratamento da doença falciforme;\n— Formação permanente das equipes sobre saúde da população negra;\nprodução de indicadores raciais para orientar as políticas públicas.\nSaúde das crianças e adolescentes\nDefendemos:\n— Fortalecimento da atenção básica;\n— Ampliação da cobertura vacinal;\n— Combate à desnutrição infantil;\n— Ampliação da pediatria e das especialidades;\n— Fortalecimento da saúde mental infantojuvenil;\n— Garantia de atendimento integral às crianças com deficiência.\nSaúde dos povos indígenas\nOs povos indígenas devem participar da construção das políticas que lhes dizem\nrespeito.\nDefendemos:\n— Respeito à autonomia dos povos indígenas;\n— Fortalecimento dos Distritos Sanitários Especiais Indígenas (DSEIs);\n— Ampliação das equipes multiprofissionais;\n— Contratação de profissionais indígenas;\n32"
+          },
+          {
+            "id": "valorizacao-da-medicina-tradicional",
+            "titulo": "— Valorização da medicina tradicional;",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "— Valorização da medicina tradicional;\n— Transporte sanitário adequado;\n— Garantia de atendimento em todos os territórios indígenas.\nSaúde das comunidades quilombolas e ribeirinhas\nA desigualdade territorial é uma das marcas do Pará.\nDefendemos:\n— Ampliação das unidades básicas nas comunidades;\n— Equipes permanentes de saúde;\n— Transporte sanitário fluvial;\n— Fortalecimento das ações de vigilância em saúde;\n— Acesso à água potável e saneamento como política de prevenção;\n— Respeito às especificidades culturais dessas populações.\nSaúde da população LGBTI+\nToda pessoa deve ser atendida com respeito e dignidade.\nDefendemos:\n— Implementação da Política Nacional de Saúde Integral LGBT;\n— Combate à discriminação nas unidades de saúde;\n— Formação permanente das equipes;\n— Ampliação do acesso ao processo transexualizador pelo SUS;\n— Fortalecimento da prevenção e do cuidado em saúde mental;\n— Garantia do uso do nome social em toda a rede estadual.\nSaúde mental\nDefendemos:\n— Fortalecimento da Rede de Atenção Psicossocial;\n— Ampliação dos CAPS;\n— Combate à lógica manicomial;\n— Atendimento territorializado;\n— Integração da saúde mental à atenção básica;\n— Políticas específicas de prevenção ao suicídio e ao uso abusivo de álcool e outras\ndrogas.\nPessoas com deficiência e idosos\nDefendemos:\n— Ampliação dos centros de reabilitação;\n— Acesso universal às tecnologias assistivas;\n— Atendimento especializado para pessoas com deficiência;\n— Fortalecimento da atenção à saúde da pessoa idosa;\n— Garantia de medicamentos e acompanhamento contínuo.\nSaúde do trabalhador\n33"
+          },
+          {
+            "id": "o-estado-deve-cuidar-tambem-de-quem-produz-a-riqueza-da-sociedade",
+            "titulo": "O Estado deve cuidar também de quem produz a riqueza da sociedade.",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "O Estado deve cuidar também de quem produz a riqueza da sociedade.\nDefendemos:\n— Fortalecimento da vigilância em saúde do trabalhador;\n— Ampliação dos CERESTs;\n— Combate aos acidentes de trabalho;\n— Fiscalização rigorosa das condições de trabalho;\n— Notificação obrigatória das doenças relacionadas ao trabalho;\n— Integração das políticas de saúde e segurança do trabalho.\nPor uma saúde pública a serviço da classe trabalhadora\nO PSTU defende um sistema de saúde organizado para atender às necessidades da\npopulação trabalhadora e não aos interesses dos grandes grupos econômicos da saúde.\nNossa proposta é fortalecer um SUS totalmente público, estatal, gratuito, universal e\ndemocrático, financiado com recursos públicos e administrado com ampla participação\ndos trabalhadores e da população. A saúde é um direito de todos e um dever do Estado.\nNenhum paraense deve ter sua vida condicionada à capacidade de pagar por\natendimento médico.\n11. POR UMA CULTURA INDEPENDENTE E REVOLUCIONÁRIA NO PARÁ\n“Ela virá, a revolução, e trará ao povo não só direito ao pão, mas também à poesia”\n(L. Trotsky\nA arte existe desde que a humanidade existe e teve diferentes papéis e dimensões ao\nlongo da história, mas em qualquer sociedade humana a arte sempre foi uma dimensão\nfundamental para permitir aos seres humanos reconhecer-se, humanizar-se e criar os\nlaços comunitários e de identidade que toda sociedade desenvolve a partir das relações\nde produção que a caracterizam.\nHoje, ainda vivemos numa sociedade capitalista, uma sociedade dividida em\nclasses sociais distintas e antagônicas. Um mundo dividido entre explorados e\nexploradores, entre opressores e oprimidos. A arte e a cultura que brota dessa sociedade\ntraz em si as contradições insolúveis desse sistema socioeconômico, as lutas ideológicas\nque a permeiam, as esperanças e as lutas dos explorados, mas também as ideias e a\nvisão burguesa de mundo da classe dominante.\nNessa sociedade, dividida em classes, o conhecimento científico e cultural não é\ntratado como um bem comum a todos. A arte entra no circuito da acumulação\ncapitalista, se apresenta como mercadoria, se deforma para servir aos interesses de\ngrandes grupos capitalistas, que buscam suprimir a diversidade artística e direcionar a\narte para um produto de massas, padronizado, acrítico, mais facilmente comercializável.\nO Pará é um dos lugares de maior riqueza cultural do mundo. Em seu território convivem\ncentenas de povos, tradições, saberes e manifestações que atravessam séculos de\nhistória.\nA cultura paraense é construída pelos povos indígenas, quilombolas, ribeirinhos,\npescadores, agricultores, trabalhadores urbanos, artistas populares, mestres e mestras\nda cultura, comunidades tradicionais, juventudes das periferias e todos aqueles que\nfazem da Amazônia um espaço vivo de criação e resistência.\nPorém, essa riqueza cultural convive com profundas desigualdades. Enquanto\ngrandes empresas lucram com a exploração comercial da cultura e do turismo, milhares\n34"
+          },
+          {
+            "id": "de-artistas-produtores-tecnicos-artesaos-e-trabalhadores-da-cultura-vive",
+            "titulo": "de artistas, produtores, técnicos, artesãos e trabalhadores da cultura vivem da",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "de artistas, produtores, técnicos, artesãos e trabalhadores da cultura vivem da\ninformalidade, da ausência de direitos trabalhistas e da dependência de editais cada vez\nmais escassos. Em muitas regiões do Pará não há teatro, biblioteca pública funcionando,\nmuseu, cinema ou centro cultural. A produção artística do interior permanece\ninvisibilizada diante da concentração dos investimentos em poucos municípios.\nPara o PSTU, a cultura não pode ser tratada como mercadoria nem como\nprivilégio de quem pode pagar. Ela é um direito social, um patrimônio coletivo e uma\nforma de expressão da classe trabalhadora e dos povos do Pará. Também não pode servir\napenas como instrumento de marketing para governos ou como oportunidade de\nnegócios para grandes empresas patrocinadoras. A cultura deve estar a serviço da\nemancipação humana, da liberdade de criação e da preservação da memória dos povos.\nCombatemos a lógica da mercantilização da cultura, que transforma artistas em\nprodutos, manifestações populares em atrações turísticas descontextualizadas e\npatrimônios culturais em mercadorias destinadas ao consumo. Defendemos políticas\npúblicas permanentes que garantam condições para que trabalhadores e trabalhadoras\nda cultura possam produzir, pesquisar, ensinar e viver de seu trabalho com dignidade,\nsem depender dos interesses do mercado ou da boa vontade dos governos de plantão.\nNosso compromisso é fortalecer o papel do Estado no financiamento da cultura,\nassegurando recursos públicos estáveis, transparentes e distribuídos de forma\ndemocrática. Os editais e programas de incentivo precisam alcançar todo o território\nparaense, rompendo com a concentração histórica dos investimentos na capital e\ngarantindo acesso aos municípios do Marajó, Baixo Amazonas, Xingu, Tapajós, Carajás,\nAraguaia, Tocantins, Guamá, Rio Caeté e demais regiões de integração do estado.\nDefendemos uma revolução no Programa Semear, com ampliação e a\ndemocratização de todas as políticas estaduais de fomento, com critérios transparentes\ne participação efetiva dos trabalhadores da cultura, das universidades, dos movimentos\nsociais, dos povos indígenas, quilombolas, ribeirinhos, povos da floresta e demais\ncomunidades tradicionais na definição das políticas culturais. Sem redução de impostos\nàs empresas, ao contrário, elas deverão pagar um imposto mensal destinado à Cultura.\nTambém defendemos o fortalecimento dos equipamentos públicos de cultura. O\nPará precisa ampliar sua rede de bibliotecas, museus, teatros, centros culturais, escolas\nde arte, arquivos públicos e espaços de memória, levando esses equipamentos para o\ninterior do estado e garantindo acesso gratuito à população.\nA Fundação Cultural do Pará, a Fundação Carlos Gomes e a Funtelpa devem ser\nfortalecidas como instituições públicas voltadas ao interesse da população. Seus\ntrabalhadores precisam ser valorizados por meio de concursos públicos, planos de\ncarreira, salários dignos, melhores condições de trabalho e autonomia para desenvolver\npolíticas públicas permanentes.\nA Funtelpa, em especial, deve cumprir um papel estratégico na difusão da\nprodução artística e cultural de todas as regiões do Pará, garantindo espaço para as\nexpressões populares, comunitárias e independentes. Para o PSTU, a democratização da\ncultura também passa pela democratização da comunicação. Não basta produzir cultura;\né preciso garantir que ela circule. Por isso defendemos uma comunicação pública\nindependente dos governos, comprometida com a pluralidade de vozes e com a\nvalorização da produção cultural paraense, ao lado do fortalecimento das rádios\ncomunitárias, mídias populares e coletivos de comunicação das periferias e dos povos\nda floresta.\n35"
+          },
+          {
+            "id": "nosso-programa-tambem-reconhece-os-saberes-tradicionais-como-parte",
+            "titulo": "Nosso programa também reconhece os saberes tradicionais como parte",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Nosso programa também reconhece os saberes tradicionais como parte\nfundamental do patrimônio cultural do Pará. É preciso proteger e valorizar os\nconhecimentos dos povos indígenas, quilombolas, ribeirinhos, extrativistas, pescadores\nartesanais e agricultores familiares, respeitando seus territórios, suas formas de\norganização e sua autonomia. Não há política cultural sem defesa da Amazônia e dos\npovos que historicamente a preservam.\nA cultura deve caminhar junto com a educação pública. Defendemos a ampliação\ndo ensino de música, teatro, dança, literatura, artes visuais e audiovisual nas escolas\npúblicas, bem como políticas de incentivo à leitura, fortalecimento das bibliotecas e\napoio às editoras independentes, escritores, grupos de pesquisa e coletivos culturais.\nPor fim, afirmamos que a cultura não é um gasto: é um investimento na formação\nhumana, na memória coletiva, na identidade dos povos e na construção de uma\nsociedade democrática. Lutamos para que a riqueza produzida pelos trabalhadores seja\ncolocada a serviço da maioria da população, financiando políticas públicas permanentes\npara a cultura, e não os privilégios dos grandes empresários.\nDefender a cultura é defender os trabalhadores que a produzem. A arte, a\nmemória e a criação humana não podem estar submetidas ao lucro. Esse é o\ncompromisso do PSTU com a construção de um Pará em que a cultura seja um direito de\ntodos e todas, e não um privilégio de poucos. Não à mercantilização: cultura para o povo,\nnão para o lucro!\n— Mais recursos: Aumento e regularidade nos repasses de verbas públicas por meio de\nleis de incentivo estadual e federal;\n— Descentralização: Levar o dinheiro da cultura para além da Região Metropolitana de\nBelém, atendendo os municípios do interior do estado;\n— Espaços públicos: Reforma e abertura de teatros, centros culturais e locais de ensaio\nnas periferias e no interior;\n— Mais apoio ao Sistema Estadual de Cultura do Pará;\n— Valorização dos Trabalhadores de Cultura e apoio aos Mestres de Cultura.\n— Criação de um Fundo de Cultura Estadual para os Artistas;\n— Vale Cultura Pará: Trabalhadores com cartão magnético para a compra de ingressos\nde cinema, teatro, shows, livros e CDs.\n12. TURISMO\nO Pará reúne um dos maiores patrimônios naturais, históricos e culturais do planeta. A\nAmazônia, a Ilha do Marajó, o arquipélago do Marajó, Alter do Chão, o rio Tapajós, o rio\nAmazonas, o patrimônio histórico de Belém, a gastronomia amazônica, as manifestações\nculturais, o Círio de Nazaré, os povos indígenas, quilombolas, ribeirinhos e as diversas\nexpressões culturais fazem do estado um dos principais destinos turísticos brasileiros.\nNos últimos anos, o turismo paraense registrou crescimento no número de visitantes e\nna movimentação econômica. Segundo dados da Secretaria de Estado de Turismo\n(Setur), em parceria com o Dieese, o Pará recebeu mais de 1,57 milhão de turistas em\n2025, movimentando mais de R$ 1,1 bilhão na economia estadual.\n\n36"
+          },
+          {
+            "id": "o-turismo-e-um-importante-instrumento-de-geracao-de-emprego-renda",
+            "titulo": "O turismo é um importante instrumento de geração de emprego, renda,",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "O turismo é um importante instrumento de geração de emprego, renda,\ndesenvolvimento regional e inclusão social. Porém, a riqueza produzida pelo turismo\npermanece concentrada em grandes grupos econômicos. Boa parte dos trabalhadores\ndo setor enfrenta baixos salários, informalidade, terceirização, jornadas exaustivas e\nausência de direitos trabalhistas. Muitas comunidades tradicionais sofrem com a\nespeculação imobiliária, a privatização de áreas públicas e os impactos ambientais\nprovocados por empreendimentos turísticos.\nO PSTU defende um modelo de turismo comprometido com a preservação ambiental, a\nvalorização da cultura popular, o respeito aos povos da Amazônia e a geração de trabalho\ndigno para a população.\nTurismo para desenvolver o Pará, não para enriquecer grandes grupos econômicos\nO turismo deve servir ao desenvolvimento social, e não apenas ao lucro de grandes redes\nhoteleiras, empresas de transporte ou grupos imobiliários.\nDefendemos:\n— Planejamento público e democrático da política estadual de turismo;\n— Fortalecimento da gestão pública do turismo;\n— Participação das comunidades locais na definição das políticas públicas;\n— Transparência na aplicação dos recursos destinados ao setor.\nTrabalho digno no turismo\nO crescimento do turismo deve significar melhoria nas condições de vida dos\ntrabalhadores.\nDefendemos:\n— Combate à terceirização e à precarização do trabalho no setor;\n— Fiscalização rigorosa das relações de trabalho;\n— Valorização salarial;\n— Qualificação profissional gratuita;\n— Incentivo à organização sindical dos trabalhadores do turismo;\n—Combate ao trabalho infantil e à exploração sexual de crianças e adolescentes\nassociada ao turismo.\nTurismo comunitário\nO turismo comunitário deve ser prioridade no Pará.\nDefendemos:\n—Incentivo às iniciativas de turismo comunitário administradas pelas próprias\ncomunidades;\n— Apoio técnico e financeiro às cooperativas locais;\n—Prioridade para empreendimentos comunitários em programas públicos de\nfinanciamento.\nPovos indígenas\nOs povos indígenas não podem ser tratados como atrações turísticas.\n37"
+          },
+          {
+            "id": "defendemos-2",
+            "titulo": "Defendemos:",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Defendemos:\n— Respeito integral à autonomia dos povos indígenas;\n— Consulta livre, prévia e informada para qualquer atividade turística em seus\nterritórios;\n— Apoio às iniciativas de turismo de base comunitária organizadas pelos próprios povos\nindígenas;\n— Proibição da exploração turística sem autorização das comunidades.\nQuilombolas\nDefendemos:\n— Fortalecimento do turismo comunitário quilombola;\n— Valorização da memória, da cultura e dos modos de vida tradicionais;\n— Investimentos públicos em infraestrutura construída com participação das\ncomunidades;\n— Garantia da posse definitiva dos territórios quilombolas.\nRibeirinhos\nAs populações ribeirinhas são protagonistas da identidade amazônica.\nDefendemos:\n— Fortalecimento do turismo fluvial de base comunitária;\n— Melhoria da infraestrutura hidroviária;\n— Apoio à produção artesanal e gastronômica das comunidades;\n— Investimentos públicos em saneamento, energia e transporte.\nCultura como eixo do turismo\nO patrimônio cultural do Pará deve permanecer sob controle da população.\nDefendemos:\n— Valorização das manifestações populares;\n— Fortalecimento dos festivais culturais;\n— Incentivo às festas tradicionais;\n— Proteção do patrimônio histórico;\n— Integração entre turismo e política cultural;\n— Apoio permanente aos artistas populares.\nTurismo e meio ambiente\nA Amazônia não pode ser transformada em mercadoria.\nDefendemos:\n— Preservação dos ecossistemas amazônicos;\n— Combate ao desmatamento;\n— Combate ao garimpo ilegal;\n— Combate à mineração predatória em áreas turísticas;\n— Fiscalização ambiental permanente;\n— Recuperação de áreas degradadas.\n38"
+          },
+          {
+            "id": "infraestrutura-para-o-turismo",
+            "titulo": "Infraestrutura para o turismo",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Infraestrutura para o turismo\nDefendemos investimentos públicos em:\n— Aeroportos regionais;\n— Portos e terminais hidroviários;\n— Transporte fluvial;\n— Rodovias seguras;\n— Sinalização turística;\n— Saneamento básico;\n— Acessibilidade para pessoas com deficiência;\n— Internet pública em áreas turísticas.\nTurismo acessível\nToda pessoa tem direito ao lazer.\nDefendemos:\n— Acessibilidade universal nos equipamentos turísticos públicos;\n— Incentivo ao turismo social;\n— Programas de férias e lazer para trabalhadores, estudantes e idosos;\n— Fortalecimento do turismo interno.\nMulheres\nAs mulheres representam grande parte da força de trabalho do turismo.\nDefendemos:\n— Igualdade salarial;\n— Combate ao assédio sexual;\n— Proteção às trabalhadoras informais;\n— Políticas específicas para mulheres empreendedoras da economia solidária.\nPopulação negra\nO turismo deve valorizar a história da população negra na formação do Pará.\nDefendemos:\n— Fortalecimento dos roteiros de turismo afro-amazônico;\n— Preservação dos sítios históricos;\n— Valorização das tradições afro-religiosas;\n— Combate ao racismo no setor turístico.\nPopulação LGBTI+\nO turismo deve ser um espaço livre de discriminação.\nDefendemos:\n— Combate à LGBTIfobia;\n— Qualificação dos profissionais do setor;\n— Respeito ao nome social;\n39"
+          },
+          {
+            "id": "politicas-de-promocao-da-diversidade",
+            "titulo": "— Políticas de promoção da diversidade.",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "— Políticas de promoção da diversidade.\nCiência, educação e turismo\nAs universidades públicas devem participar da construção da política estadual de\nturismo.\nDefendemos:\n— Fortalecimento das pesquisas sobre turismo sustentável;\n— Formação profissional em parceria com universidades públicas;\n— Produção de conhecimento voltado às necessidades da Amazônia.\n\n40"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "1226b3f69929ed577d482d04e6c924f6fbc2f05209c00d6d9c62805a5414d119"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c9c232444e748e7b2137833759394300dad9a0c819054ddeaa5c9e4f8d22639e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "8dff6e7bde270053927a910658630badbff45bcd67e4ebe8a6a2f4af758cede4"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "bcec7bbff8488c01e34a76ecbee9893e7a7ae61963f9e866f4786aecb98519bd"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "93344cc2bc472b89ba2cc58622e9f8567baf6c24a9c064d802696891aa835058"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "4ae34ab06c9f579b5dfde14779ddbdf1c0f6edbb227f59e07b092ed5ef727ca7"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "efb6d76fd63ac594b8421a2d5c2845d2efb1c34e850ef18c8c6cf99c82e39fda"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "23cc898ba3df42fdaddccee105f9ac93f973b871b0cd44a9dd2ea7550d3ee766"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "d4042703f3d27a00863f2035a137f0b767a6f91225cfccb59e500c38b6d221db"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "2dc6e5fa20f0f04b57e18c1ffe27e7d94ead30daa2f8d85f2bdf1af36a3afa66"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9f111dbaec215c05771e1f807da0774e1378d839e61bcf81be729eb091772d49"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "ef60e37c3b4c456b33d7a38dc7241362bea8d01fb335617a49d82e6d48696400"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "d05439791c3c5a556eefeb046772c2f15c0d8307e6a378e169cd5a8df90b58f9"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "320d980cd09d85b634d2d0e5908e1e944d21b3896615e8151b9826a36388fc55"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "9988ab4d61748885b58471cd58a61eaa7b7b3fcdee2e3bad41998320fed025ac"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "baa253a7b0e17b26448a4de07e836e3d94aaa0ab5f428902555ff433c85585b3"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "68da88af7eb9ae86b22f968dfdc55c8c6bf3d5a458baa951899abe199b0978b7"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "ce02e31d7cdc6259f63d6cac8baf230725e26aa70b8378cc4a44de467f7ff0f6"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "0fd033661312b5a27226a642de775993440a9762c0165bce8a4a9dffcb9097de"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "d1f3b7c6c30b6b455cdcaa2ed98ecf325d92c1dfc4e851ad6ecd7e86f2dd9978"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "5e03125b6a18a17b6aba97cbb5bfe5d6df002a6cf776f87c4f3023513431770c"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "c2e648b8b817e9d7136f99518b08f54a053790dad3030b9c3f543cdb94269584"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d67b14814e9caa713e56bdb57473db62019e1effa6523acc67463be6ceeb8420"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "674b40b0f4c3096cbeb461d41d440a4804bcebf2f07d2879915e87c8b55ddb52"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "606ba8e2ef209c780477f2b730d512187058ced288add061db87e5b4c1a5334d"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "8b513904c378faa41ec50c6015f24963960d4af6741dc2c958b97c1716015022"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "1f201aa5bdf71587576464cbeea81496816f00823fcd11225698b2a1d9cb8e1b"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "3682dccb16051f318ea5a6408e848a3e35a8c3b456bb4f380445afc231c753f6"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "b1b1e1146fde907b92824955be2f2f19e10a1349c597b1ad5e2d52827233e745"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "a46f86756b3efed3ee82169405bcb98687ff83a7e2bafd74564c4df7d2aba634"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "266ce888fa828dd2442c693b2476fe1d3e9bade6069bc9f03aae06461cdd2694"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "8507f330fabc8cffcb523ee994a7f7860a3aea1745e55493b5e5e76966e7de07"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "9c37277632bbef1e3bdb3e458751b30075c7a20e76ea44c50797aa762c653a09"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "80732aa82eec76cad07b2eff8090db821f73c5c771ef5451c7dddadd4fcd585d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "3c76f066f4a33517ef758b1cc2306c90f068ba23d93ac23c2cd6c11832c82a08"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "d5d12cb590dfde90957bba9e309a1f3e417fba022fad620929a23fe31cc371bd"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "acfa3ea341e7e431cda450d7569b942ec5bfc7c05007ba83615ed22a48039ec7"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "c3565d8cc6c7087e6505866ff2aee0313675f7700a3b855e389b698d9288a52b"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "c065287ec131931ffe27247bc718b6cb781de4abd39a05874e1d8bd512550033"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "2448cd6e8f10d8d26b816a2d6777da592b0f490d3da2695b4a2db4056538116b"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe o fim da escala 6×1 sem redução de salários e de direitos. O plano prevê a redução da jornada de trabalho para 36 horas sem redução de salários. Na segurança pública, o programa propõe a desmilitarização da PM com a unificação das polícias em uma única instituição de caráter civil. O programa propõe a reestatização da COSANPA com a retomada do controle público do saneamento. O plano prevê água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais. Na moradia, o plano propõe a construção de moradias públicas para as famílias trabalhadoras. O plano prevê a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica. O programa propõe o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
+    "frases": [
+      {
+        "texto": "O programa propõe o fim da escala 6×1 sem redução de salários e de direitos.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 3,
+            "trecho": "Fim da escala 6×1 sem redução de salários e direitos"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a redução da jornada de trabalho para 36 horas sem redução de salários.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 3,
+            "trecho": "Redução da jornada de trabalho para 36hs, sem redução dos salários"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o programa propõe a desmilitarização da PM com a unificação das polícias em uma única instituição de caráter civil.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 7,
+            "trecho": "Desmilitarização da PM, outras polícias e guardas municipais, com a unificação das\npolícias em uma única instituição de caráter civil"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a reestatização da COSANPA com a retomada do controle público do saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 9,
+            "trecho": "reestatizar a COSANPA, com a retomada do controle público integral do sistema de\nsaneamento do Estado do Pará"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 9,
+            "trecho": "garanta água gratuita\npara famílias desempregadas e aquelas que sobrevivem dos programas sociais"
+          }
+        ]
+      },
+      {
+        "texto": "Na moradia, o plano propõe a construção de moradias públicas para as famílias trabalhadoras.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 11,
+            "trecho": "construir um amplo\nprograma estadual de habitação pública, garantindo moradias dignas para as famílias\ntrabalhadoras"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 13,
+            "trecho": "suspensão de grandes projetos econômicos\nque ameaçam os territórios, os rios e a floresta amazônica"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 27,
+            "trecho": "Garantia do pagamento integral do Piso Salarial Nacional do Magistério para todos os\nprofissionais da educação básica"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "trabalho-e-renda",
+        "titulo": "Trabalho, emprego e renda",
+        "descricao": "Conjunto de propostas do programa para trabalho, emprego e renda, como o fim da escala 6×1 sem redução de salários.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 3,
+            "trecho": "Fim da escala 6×1 sem redução de salários e direitos"
+          },
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 3,
+            "trecho": "Redução da jornada de trabalho para 36hs, sem redução dos salários"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Proposta de desmilitarização da PM, com unificação das polícias em uma instituição de caráter civil.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 7,
+            "trecho": "Desmilitarização da PM, outras polícias e guardas municipais, com a unificação das\npolícias em uma única instituição de caráter civil"
+          }
+        ]
+      },
+      {
+        "id": "saneamento-publico",
+        "titulo": "Saneamento básico",
+        "descricao": "Proposta de reestatização da COSANPA, com retomada do controle público do saneamento no estado.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 9,
+            "trecho": "reestatizar a COSANPA, com a retomada do controle público integral do sistema de\nsaneamento do Estado do Pará"
+          }
+        ]
+      },
+      {
+        "id": "moradia",
+        "titulo": "Moradia",
+        "descricao": "Proposta de construção de moradias públicas para as famílias trabalhadoras, por meio de programa estadual de habitação.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 11,
+            "trecho": "construir um amplo\nprograma estadual de habitação pública, garantindo moradias dignas para as famílias\ntrabalhadoras"
+          }
+        ]
+      },
+      {
+        "id": "amazonia-e-meio-ambiente",
+        "titulo": "Amazônia e meio ambiente",
+        "descricao": "Proposta de suspensão de grandes projetos econômicos que ameaçam os territórios, os rios e a floresta amazônica.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 13,
+            "trecho": "suspensão de grandes projetos econômicos\nque ameaçam os territórios, os rios e a floresta amazônica"
+          }
+        ]
+      },
+      {
+        "id": "educacao-basica",
+        "titulo": "Educação básica",
+        "descricao": "Proposta de pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002538631:01",
+            "pagina": 27,
+            "trecho": "Garantia do pagamento integral do Piso Salarial Nacional do Magistério para todos os\nprofissionais da educação básica"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:03:39.015Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T12:08:40.890Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta de fim da escala 6×1 sem redução de salários e direitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "O número presente na afirmação, 6×1, aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza indevida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e é compatível com a mesma chave eleitoral indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação: fim da escala 6×1 e preservação de salários e direitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a redução da jornada para 36 horas sem redução dos salários."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 36 horas aparece literalmente na evidência, ainda que abreviado como 36hs."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a redução para 36 horas e a manutenção dos salários."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência contém a desmilitarização da PM e a unificação das polícias em instituição civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta sem tom promocional ou crítico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta coerente de reorganização policial na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as cláusulas materiais da afirmação: desmilitarização da PM e unificação das polícias em instituição civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a reestatização da COSANPA e a retomada do controle público do saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a reestatização da COSANPA e a retomada do controle público do saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem juízo valorativo adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta tarifária coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação sobre gratuidade e público beneficiário."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de habitação pública voltada às famílias trabalhadoras."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, quantidades, prazos ou percentuais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta avaliação elogiosa ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, habitação pública para famílias trabalhadoras."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a proposta de habitação pública e seu público-alvo material, as famílias trabalhadoras."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem acrescentar adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a suspensão e os três alvos materiais citados: territórios, rios e floresta amazônica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre remuneração na educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o pagamento integral do piso e o grupo mencionado, os profissionais da educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências mostram propostas da área de trabalho e renda, incluindo explicitamente o fim da escala 6×1 sem redução de salários."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 6×1 citado na afirmação aparece literalmente nas evidências."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é classificatória e descritiva, sem elogio, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma área temática única e coerente, trabalho, emprego e renda."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem o enquadramento temático e o exemplo material citado, o fim da escala 6×1 sem redução de salários."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de desmilitarização da PM e de unificação das polícias em instituição civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta na área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área temática coerente, segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre os elementos materiais da afirmação: desmilitarização da PM e unificação em instituição civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a reestatização da COSANPA e a retomada do controle público do saneamento estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a reestatização da COSANPA e a retomada do controle público do saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o programa estadual de habitação pública voltado a moradias para famílias trabalhadoras."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de forma descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área temática coerente, moradia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o programa estadual de habitação pública e a destinação às famílias trabalhadoras."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta de suspensão dos grandes projetos econômicos com esses impactos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, quantidades, percentuais ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é classificatória e descritiva, sem adjetivação promocional ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área temática coerente, Amazônia e meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a suspensão e os três elementos materiais citados: territórios, rios e floresta amazônica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de forma neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área temática coerente, educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta e o grupo beneficiário mencionados na afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PA:140002538631",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PA:140002538631:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "5d33c3d22959b0ef2443f4b37c6af475e33356ec5a620f76a5ef00b4c16954fe",
+    "extractedTextSha256": "13ad2a199b1bce12cbcd56c0dd3cec5d3481bc81ddf9975e057622c3371680ad",
+    "documentCount": 1,
+    "documentSetSha256": "55f939026054994f860c769ac5d6f2b5d06aed7f25f8889bc03f4986e242b965",
+    "contentSha256": "d4adeb77d16e5f9a91a6840486861d83d4cb42665411d23dfdf74a0d2ba57612"
+  }
+}

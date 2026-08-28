@@ -1,0 +1,1814 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "BA",
+    "sqCandidato": "50002536314",
+    "slug": "jeronimo",
+    "nomeUrna": "JERÔNIMO RODRIGUES",
+    "partido": "PT",
+    "arquivoNome": "2026BA50002536314_01.pdf",
+    "arquivoNoPacote": "BA/2026BA50002536314_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "BA:50002536314:01",
+      "fonte": {
+        "arquivoNome": "2026BA50002536314_01.pdf",
+        "arquivoNoPacote": "BA/2026BA50002536314_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "7b375b5a8de16221d3352593321a5dc673401d03796fac28dc1a0caf9eda656b",
+        "extractedTextSha256": "c1615f49883255bab5fca805a2fe2b6feb850f99752a2bca93f51090491f0231",
+        "paginas": 84,
+        "secoes": [
+          {
+            "id": "programa",
+            "titulo": "PROGRAMA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA\n\nDE GOVERNO\nPARTICIPATIVO\nA Bahia que avança,\ncuida e transforma."
+          },
+          {
+            "id": "coligacao-mais-bahia-mais-brasil",
+            "titulo": "COLIGAÇÃO MAIS BAHIA, MAIS BRASIL",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO MAIS BAHIA, MAIS BRASIL\n\nFederação Brasil da Esperança (PT - PCdoB - PV) - PSB - MDB - PSD - AVANTE - PDT"
+          },
+          {
+            "id": "a-bahia",
+            "titulo": "A BAHIA",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A BAHIA\nMUDOU\nE VAI\nMUDAR\nMAIS"
+          },
+          {
+            "id": "queremos-partilhar-o-pao",
+            "titulo": "Queremos partilhar o pão,",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Queremos partilhar o pão,\nos sonhos e o futuro!\nJerônimo Rodrigues"
+          },
+          {
+            "id": "carta-ao-povo-da-bahia",
+            "titulo": "CARTA AO POVO DA BAHIA",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "CARTA AO POVO DA BAHIA\nNos últimos anos, caminhamos juntos e vimos a Bahia se transformar, crescer. Um projeto que deu certo não pode parar. E eu quero seguir em frente ao lado de cada baiana e baiano.\nUma transformação de verdade não se mede apenas pelo que se\nergue. Ela se revela na vida das pessoas: na escola que abre novos caminhos, no atendimento que chega mais perto, no trabalho que traz\ndignidade, no tempo dedicado à família e na esperança de quem passa\na enxergar um futuro melhor.\nQuem quer governar precisa dividir três coisas com o seu povo: o\npão, a luta e os sonhos. E precisa saber unir o que se ergue e o que se\nsente. Porque uma estrada sem cuidado é só asfalto, e cuidado sem estrada é só uma palavra. A Bahia merece os dois: a obra que firma o chão\ne a alma que toca quem caminha sobre ele.\nDividir o pão é garantir que ninguém passe fome, que toda mesa tenha alimento, que o trabalho, do catador ao professor, do agricultor ao\nmotorista de aplicativo, seja digno. É fazer da economia instrumento de\nvida, não de mero acúmulo. É saúde acessível, é cuidado para crianças,\nidosos, pessoas com deficiência, mães atípicas, para a população em\nsituação de rua. É renda distribuída com justiça.\nDividir os sonhos é garantir educação de qualidade em toda escola, cultura viva em todo território, primeiro emprego para a juventude,\ntecnologia e inovação como ponte para o amanhã. É acreditar que cada\njovem baiano merece sonhar grande e ter nas mãos os instrumentos\npara realizar o que sonha."
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "Página 6",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Dividir o futuro é proteger nossos biomas e construir com sustentabilidade, é transição energética justa, é convivência com o Semiárido. É\nenfrentar o racismo estrutural, proteger as mulheres, combater o feminicídio, respeitar toda fé e toda forma de existir. É a segurança pública\nque determina a paz entre nós e que valoriza a vida, a modernização do\nEstado com transparência e participação popular. O futuro se constrói\ncom o povo, de forma parceira e cooperativa.\nÉ por isso que desenvolvimento e cuidado precisam caminhar juntos. O que é concreto e o que não se vê. O que se constrói e o que\nse sente. A infraestrutura que transforma o território e a atenção que\ntransforma a vida.\nEm tudo o que vou fazer, há o que se ergue: hospitais, escolas de\ntempo integral, o VLT, estradas e pontes, a energia que chega ao sertão. E há o que se sente: o cuidado, a reparação, a esperança, o pertencimento. Um governo que só constrói esquece quem vai usar. Um\ngoverno que só sonha não firma o chão. Eu quero continuar fazendo os\ndois. É nessa junção que a Bahia avança.\nNada disso se faz sozinho. Grandes transformações nascem da parceria, do diálogo e da capacidade de unir esforços em torno de um propósito comum. A relação entre o nosso governo, movimentos sociais,\nempresários, prefeitos e prefeitas, vereadores, parlamentares estaduais,\nfederais e o presidente Lula mostra a força de quem trabalha lado a\nlado, com confiança e compromisso, para transformar recursos, projetos e sonhos em benefícios concretos para a nossa gente. É nessa parceria, construída com respeito, responsabilidade e cumplicidade, que os\ngrandes sonhos deixam de ser promessa e passam a fazer parte da vida\ndas pessoas.\nE existe um princípio que precisa estar presente em todo esse caminho: a democracia. É ela que garante que o povo tenha voz, que as\ndiferenças possam conviver, que governos possam ser cobrados e que"
+          },
+          {
+            "id": "pagina-7",
+            "titulo": "Página 7",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "as decisões sobre o futuro sejam construídas com participação. Defender a democracia é defender a possibilidade de cada pessoa ser ouvida,\nrespeitada e reconhecida como parte da construção do lugar onde vive.\nUma Bahia mais desenvolvida precisa ser também uma Bahia mais\nhumana, que amplia a liberdade, a dignidade e a esperança. Governar\ncom amor é tratar cada pessoa como sujeito de direitos, nunca como\nnúmero. É isso que me move. A Bahia mudou e vai avançar ainda mais:\ncom obra e alma, com pão partilhado, sonhos compartilhados e um futuro construído com esperança.\nQuero uma Bahia livre! Uma Bahia que nos orgulha e nos garante\nacolhimento!\nEsse é o nosso compromisso. Vamos seguir avançando!\n\nJerônimo Rodrigues"
+          },
+          {
+            "id": "sumario",
+            "titulo": "Sumário",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Sumário\nAPRESENTAÇÃO\nBAHIA DO CUIDADO\n1 TEMAS TRANSVERSAIS PRIORITÁRIOS\n\n10\n15\n19\n\n1.1\n\nSUSTENTABILIDADE AMBIENTAL\n\n21\n\n1.2\n\nTECNOLOGIA E INOVAÇÃO\n\n22\n\n1.3\n\nIGUALDADE RACIAL\n\n24\n\n1.4\n\nJUVENTUDE\n\n25\n\n1.5\n\nMULHERES\n\n26\n\n2 DESENVOLVIMENTO ECONÔMICO COM\nSUSTENTABILIDADE, EQUIDADE E JUSTIÇA\n\n29\n\n2.1\n\nINDÚSTRIA, MINERAÇÃO, COMÉRCIO E SERVIÇOS\n\n33\n\n2.2\n\nINFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\n\n34\n\n2.3\n\nINFRAESTRUTURA SOCIAL\n\n37\n\n2.4\n\nTRABALHO, GERAÇÃO DE EMPREGO E RENDA\n\n39\n\n2.5\n\nSANEAMENTO E INFRAESTRUTURA HÍDRICA\n\n40\n\n2.6\n\nDESENVOLVIMENTO DA PESCA\n\n43\n\n2.7\n\nCONVIVÊNCIA COM O SEMIÁRIDO\n\n44\n\n2.8\n\nDESENVOLVIMENTO DO AGRONEGÓCIO\n\n46\n\n2.9\n\nDESENVOLVIMENTO RURAL\n\n46\n\n2.10 TURISMO\n\n49"
+          },
+          {
+            "id": "3-desenvolvimento-social-e-garantias-de-direitos",
+            "titulo": "3 DESENVOLVIMENTO SOCIAL E GARANTIAS DE DIREITOS",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "3 DESENVOLVIMENTO SOCIAL E GARANTIAS DE DIREITOS\n\n53\n\n3.1\n\nSAÚDE\n\n57\n\n3.2\n\nEDUCAÇÃO\n\n62\n\n3.3\n\nASSISTÊNCIA SOCIAL\n\n65\n\n3.4\n\nESPORTES\n\n66\n\n3.5\n\nSEGURANÇA ALIMENTAR E NUTRICIONAL E\nENFRENTAMENTO À FOME E À POBREZA\n\n66\n\n3.6\n\nCULTURA\n\n67\n\n3.7\n\nSEGURANÇA PÚBLICA E PREVENÇÃO À VIOLÊNCIA\n\n68\n\n3.8\n\nHABITAÇÃO\n\n70\n\n3.9\n\nCIDADANIA E DIREITOS HUMANOS\n\n70\n\n3.10 POPULAÇÃO LGBTQIAPN+\n\n71\n\n3.11\n\nCRIANÇA E ADOLESCENTE\n\n71\n\n3.12\n\nPOPULAÇÃO IDOSA\n\n72\n\n3.13 INDÍGENAS, POVOS E COMUNIDADES TRADICIONAIS\n\n73\n\n3.14 CUIDADO E REDUÇÃO DE DANOS\n\n74\n\n3.15 POPULAÇÃO EM SITUAÇÃO DE RUA\n\n75\n\n3.16 DIREITOS DOS ANIMAIS\n\n75\n\n4 GOVERNANÇA DEMOCRÁTICA, COM INTEGRAÇÃO\nE EFETIVIDADE DAS POLÍTICAS PÚBLICAS\n\n77\n\n4.1\n\nTERRITORIALIDADE E DESENVOLVIMENTO\n\n79\n\n4.2\n\nCAPACIDADE DE GOVERNO E GESTÃO DE PESSOAS\n\n80\n\n4.3\n\nCOMPRAS PÚBLICAS\n\n80\n\n4.4\n\nRELAÇÕES INTERNACIONAIS\n\n80"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nDesde 2007, a Bahia escolheu um novo jeito de governar. A Bahia\navançou e vai se transformar ainda mais com um modelo que deixou\npara trás a lógica de um Estado distante para construir políticas públicas ao lado da população. Mais do que realizar investimentos e entregar obras, esse projeto transformou a forma de promover o desenvolvimento, colocando as pessoas no centro das decisões, valorizando\nos Territórios de Identidade e fortalecendo a participação social como\ninstrumento para reduzir desigualdades, ampliar direitos e promover\njustiça social.\nFoi com Jaques Wagner que a Bahia iniciou uma profunda transformação na forma de planejar e executar políticas públicas. O Estado passou a investir com planejamento, ampliar sua presença nos territórios e\nconstruir um modelo de desenvolvimento baseado na inclusão social e\nna participação popular.\nNos governos de Rui Costa, essa trajetória foi consolidada com o\nfortalecimento da capacidade de gestão, a ampliação dos investimentos estratégicos e uma cultura de eficiência e execução. O Estado fortaleceu a sua capacidade de transformar as necessidades da população\nem resultados concretos.\nNo primeiro mandato de Jerônimo Rodrigues, essa trajetória foi\nreafirmada por uma gestão que fez da promoção da dignidade humana o seu principal compromisso. Um governo marcado pelo combate\nà fome, enfrentamento à pobreza e pelo fortalecimento da proteção\nsocial. Mais do que executar obras ou entregar equipamentos públicos,\na gestão reafirmou que cada escola inaugurada, hospital, policlínica, estrada, sistema de abastecimento, centro de assistência ou equipamento\nentregue só cumpre sua missão quando melhora a vida das pessoas.\n\n10"
+          },
+          {
+            "id": "essa-e-a-essencia-que-orientara-o-proximo-ciclo-de-gestao-uma-politica",
+            "titulo": "Essa é a essência que orientará o próximo ciclo de gestão: uma política",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Essa é a essência que orientará o próximo ciclo de gestão: uma política\nintegrada no cuidado, que acolhe, protege, assiste, cuida de quem cuida, amplia oportunidades e fortalece a dignidade das pessoas.\nPara além de uma continuidade de governos, esse percurso representa a consolidação de um projeto comprometido com a democracia,\na justiça social, a sustentabilidade e a valorização de cada baiano e baiana. É nesse contexto que se insere o Programa de Governo Participativo\n(PGP) 2026, consolidado como um instrumento permanente de planejamento democrático, baseado na escuta da população e na construção\ncoletiva das políticas públicas.\nA elaboração deste Programa mobilizou um amplo processo participativo em todas as regiões da Bahia, com 187 encontros entre plenárias\nterritoriais, agendas setoriais, escutas livres e atividades colaborativas,\ncom participação de mais de 200 mil pessoas. Esse processo também\nfoi construído a partir de encontros e do recebimento de documentos e\ncontribuições das federações do agronegócio, da indústria, do comércio, dos serviços, dos transportes e da logística, além de associações\nprofissionais e técnicas, como as vinculadas à agricultura familiar. Como\ninovação desta edição, o PGP Digital ampliou os canais de participação\npor meio de ferramentas tecnológicas, permitindo que mais baianos\ne baianas contribuíssem diretamente para a construção do programa.\nAo longo desse processo, foram registradas milhares de propostas, que\nforam analisadas e sistematizadas e incorporadas a este documento.\nA construção do PGP reafirma a convicção de que as melhores políticas públicas nascem do diálogo entre governo e sociedade. Ao integrar conhecimento técnico, participação popular e planejamento estratégico, o programa fortalece a atuação do Estado, valoriza os Territórios\nde Identidade e contribui para um desenvolvimento capaz de enfrentar\ndesigualdades, ampliar oportunidades e melhorar a vida da população.\n\n11"
+          },
+          {
+            "id": "a-parceria-entre-a-bahia-e-o-governo-federal-e-um-dos-pilares-desse",
+            "titulo": "A parceria entre a Bahia e o Governo Federal é um dos pilares desse",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "A parceria entre a Bahia e o Governo Federal é um dos pilares desse\nprojeto. Ao lado do presidente Luiz Inácio Lula da Silva, o Estado seguirá fortalecendo o pacto federativo e as relações com prefeitos, vereadores, deputados e senadores, ampliando investimentos e implementando políticas voltadas ao desenvolvimento regional, à inclusão social, à\nsustentabilidade e à garantia de direitos, reafirmando que o crescimento econômico só produz transformações duradouras quando melhora\nconcretamente a vida das pessoas.\nEste Programa de Governo Participativo reúne os princípios, as diretrizes e os compromissos que orientarão o próximo ciclo de gestão.\nOrganizado em quatro grandes eixos: Desenvolvimento Econômico;\nDesenvolvimento Social e Garantia de Direitos; Governança Democrática; e Temas Transversais Prioritários, o documento apresenta um projeto integrado para uma Bahia mais justa, sustentável, inovadora e preparada para o futuro, mantendo o cuidado com as pessoas como princípio\nque orienta a ação do Estado.\n\n12"
+          },
+          {
+            "id": "13",
+            "titulo": "13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "13"
+          },
+          {
+            "id": "bahia-do",
+            "titulo": "BAHIA DO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "BAHIA DO\n\nCUIDADO\n14"
+          },
+          {
+            "id": "bahia-do-cuidado",
+            "titulo": "BAHIA DO CUIDADO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "BAHIA DO CUIDADO\nA Bahia reconhece que cuidar é um ato político. O cuidado enquanto ação e\ntrabalho essencial para sustentar a vida, na saúde, na educação, na segurança pública, no meio ambiente, na economia e na sociedade, é um direito universal e uma\nresponsabilidade compartilhada entre Estado, famílias, setor privado e comunidade.\nA oferta e o acesso a práticas de cuidado ocorrem de forma desigual, sobrecarregando as mulheres, principalmente as negras. O tempo dedicado ao cuidado da família,\ndas crianças, dos idosos, das pessoas com deficiência é invisibilizado e desprestigiado. Essas dificuldades, associadas a outras vulnerabilidades como raça, renda, locais\nde moradia, dentre outras, intensificam ainda mais as desigualdades.\nO processo do cuidado, que, além do âmbito domiciliar, é compartilhado comunitariamente, precisa também ser corresponsabilizado pelo Estado. Instituir a Política Estadual de Cuidados é assumir o nosso compromisso público para garantir\nserviços, apoio real e mais tempo e oportunidade para as mulheres, as crianças e\nos idosos. Neste sentido, apresentamos linhas estruturantes para promover a corresponsabilização social e de gênero, garantindo suporte tanto para quem recebe\no cuidado quanto para quem cuida, seja no âmbito familiar, seja na valorização das\ntrabalhadoras remuneradas do cuidado. O cuidado das pessoas em vulnerabilidade\ne em situação de rua e com uso problemático de álcool e outras drogas se dará por\nmeio do acolhimento e proteção, sem julgamentos e exclusão.\nTransformar essa realidade exige ações concretas e compromisso orçamentário.\nPara garantir que o cuidado deixe de ser uma prática invisível e passe a ser um direito conquistado, a Política Estadual de Cuidados será inicialmente constituída das\nseguintes propostas.\n\n15"
+          },
+          {
+            "id": "politicas-para-quem-necessita-de-cuidados-e",
+            "titulo": "Políticas para quem necessita de cuidados e",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Políticas para quem necessita de cuidados e\npara quem cuida de forma não remunerada\nExpansão do acesso a creches e educação infantil\n Garantir, em cooperação com os governos federal e municipais, a ampliação\nda infraestrutura com o aumento das vagas em creches e escolas de educação infantil, de tempo integral, priorizando territórios de maior vulnerabilidade social e horários compatíveis com a rotina de trabalho das mães.\n Utilizar o Cadúnico como critério de priorização das vagas, para alcançar as\ncrianças e as famílias mais vulneráveis.\n\nCuidado para Idosos, Pessoas com Deficiência e\nPopulação em Situação de Rua\n Qualificar e integrar a oferta de serviços de cuidado nos equipamentos públicos já atuantes no território baiano (Saúde, Assistência Social e Educação).\n Apoiar a estruturação de unidades de acolhimento dia e serviços de convivência para pessoas idosas e pessoas com deficiência, integrando atendimento interdisciplinar e o suporte às famílias.\n Apoiar as mães e cuidadoras de pessoas com autismo e com deficiência, combinando apoio psicossocial, orientação jurídica e ações de proteção social.\n Apoiar os serviços de atenção domiciliar para idosos e pessoas com deficiência, coordenados pelos municípios, com equipes multiprofissionais e cuidadores itinerantes.\n Instituir, na política de cuidado e redução de danos, um compromisso específico voltado às mulheres em situação de vulnerabilidade e uso problemático\nde substâncias que considere a maternidade e a prevenção à violência doméstica e sexual.\n\n16"
+          },
+          {
+            "id": "promocao-do-trabalho-decente-para-quem-cuida",
+            "titulo": "Promoção do Trabalho Decente para quem Cuida",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Promoção do Trabalho Decente para quem Cuida\n Implantar programa de qualificação profissional para cuidadoras e trabalhadoras domésticas com bolsa-formação e em parceria com universidades, institutos federais, sistema S e Sebrae.\n Apoiar ações que promovam o trabalho decente para os serviços de cuidado\ndoméstico com o objetivo de melhorar as condições da empregabilidade.\n Criar cadastro e certificação estadual de cuidadoras/es com registro oficial\npara valorização da ocupação e de contratações.\n Regulamentar condições especiais de trabalho e adequação de jornada para\nservidoras e servidores públicos estaduais que sejam responsáveis pelo cuidado contínuo de familiares.\n Apoiar ações que promovam a permanência de estudantes que são mães e\ncuidadoras nas universidades estaduais, com a implantação de espaços infantis, creches universitárias e auxílios de permanência acadêmica.\n Fomentar parcerias com o setor produtivo e órgãos públicos para adoção de\npolíticas de conciliação entre trabalho e família.\n\nGovernança e Gestão\n Instituir e regulamentar a Política Estadual de Cuidados como marco normativo e intersetorial, garantindo sua governança, comitê gestor e mecanismos\nde controle social.\n Implantar o Sistema de Informação e Monitoramento do Cuidado na Bahia,\naprimorando dados administrativos, fomentando pesquisas para subsidiar o\ndiagnóstico e a gestão contínua da política e a formação sobre a agenda dos\ncuidados para trabalhadoras e trabalhadores dos serviços estatais.\n\n17"
+          },
+          {
+            "id": "temas-transversais",
+            "titulo": "TEMAS TRANSVERSAIS",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "TEMAS TRANSVERSAIS\n\nPRIORITÁRIOS"
+          },
+          {
+            "id": "1-temas-transversais-prioritarios",
+            "titulo": "1 TEMAS TRANSVERSAIS PRIORITÁRIOS",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "1 TEMAS TRANSVERSAIS PRIORITÁRIOS\nOs desafios do presente exigem um Estado cada vez mais preparado para integrar políticas públicas, inovar e responder às transformações sociais, econômicas,\ntecnológicas e ambientais que impactam a vida das pessoas. Por isso, este Programa\nde Governo adota a transversalidade como princípio de atuação, compreendendo\nque agendas como sustentabilidade, ciência, tecnologia, inovação, igualdade racial,\ndireitos das mulheres e protagonismo das juventudes devem orientar o planejamento, a execução e a avaliação das ações governamentais. Construída a partir do diálogo com a sociedade, por meio do Programa de Governo Participativo, das contribuições dos 27 Territórios de Identidade e da ferramenta PGP Digital, essa visão\nreafirma a democracia participativa como base de um desenvolvimento que amplia\noportunidades, valoriza a diversidade e coloca o cuidado com as pessoas no centro\nda ação do Estado.\nA emergência climática reforça a necessidade de conciliar desenvolvimento econômico, preservação ambiental e qualidade de vida. A Bahia reúne condições para\nliderar um novo modelo de desenvolvimento sustentável no Brasil, ampliando a produção de energias renováveis, protegendo seus biomas, fortalecendo a segurança\nhídrica e impulsionando uma economia de baixo carbono. Esse caminho exige políticas de adaptação e resiliência, valorização da sociobiodiversidade, incentivo à produção sustentável e uma transição energética justa, capaz de gerar emprego, renda\ne benefícios para as comunidades.\nA promoção da igualdade é parte essencial desse projeto. Incorporar as perspectivas de gênero, raça, geração e etnia às políticas públicas significa reconhecer\ndiferentes realidades, enfrentar desigualdades históricas e garantir que todas as pessoas tenham acesso a direitos e oportunidades. Promover a igualdade racial também\né reafirmar o compromisso com a justiça social e o enfrentamento ao feminicídio, ao\n\n19"
+          },
+          {
+            "id": "racismo-valorizando-a-contribuicao-da-populacao-negra-dos-povos-indigena",
+            "titulo": "racismo, valorizando a contribuição da população negra, dos povos indígenas, das",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "racismo, valorizando a contribuição da população negra, dos povos indígenas, das\ncomunidades quilombolas e dos demais povos e comunidades tradicionais para a\nidentidade da Bahia.\nCuidar das mulheres significa garantir acolhimento, proteção, autonomia e direitos em todas as fases da vida. Esse compromisso se concretiza em uma rede integrada de políticas que envolve saúde integral, planejamento reprodutivo, pré-natal, parto humanizado, prevenção de doenças e enfrentamento à violência, além da\nampliação da Rede de Proteção às Mulheres, com as Delegacias Especializadas de\nAtendimento à Mulher (DEAMs), os Centros de Referência de Atendimento à Mulher\n(CRAMs), as Casas da Mulher Brasileira e o Pelotão Maria da Penha. Também passa\npela ampliação das oportunidades de educação, qualificação profissional, trabalho,\ngeração de renda, empreendedorismo e participação nos espaços de decisão, para\nque nenhuma mulher fique para trás.\nA juventude representa uma das maiores forças para o futuro da Bahia. Ampliar o acesso à educação, à qualificação profissional, ao ensino superior, à cultura,\nao esporte, à inovação, ao empreendedorismo e à inclusão digital significa criar\ncondições para que jovens de todas as regiões construam seus projetos de vida e\nparticipem ativamente do desenvolvimento do estado. Fortalecer o protagonismo\ndas juventudes é investir em uma Bahia mais criativa, democrática e preparada\npara os desafios do futuro.\nA ciência, a tecnologia e a inovação consolidaram-se como instrumentos estratégicos para transformar conhecimento em soluções para a sociedade. Entre 2023\ne 2025, a Bahia fortaleceu o marco legal estadual de ciência, tecnologia e inovação,\nrealizou a V Conferência Estadual de Ciência, Tecnologia e Inovação, com cerca de\n3 mil participantes dos 27 Territórios de Identidade, e criou os programas PopCiência Bahia e PopCiência Jovem que promovem a popularização científica, pesquisa\naplicada e fortalecimento das universidades, instituições de pesquisa e ambientes\nde inovação.\nNos próximos anos, será fundamental ampliar os investimentos em pesquisa,\ntransformação digital e formação de talentos. A inteligência artificial deverá ser in-\n\n20"
+          },
+          {
+            "id": "corporada-de-forma-etica-responsavel-e-centrada-nas-pessoas-contribuindo",
+            "titulo": "corporada de forma ética, responsável e centrada nas pessoas, contribuindo para",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "corporada de forma ética, responsável e centrada nas pessoas, contribuindo para\nqualificar o planejamento público e os serviços em áreas como saúde, educação,\nsegurança, agricultura, geração de renda, meio ambiente, política de cuidados e inovação, fortalecendo o currículo escolar no nível médio e na educação superior. Ao\nmesmo tempo, expandir a conectividade e as competências digitais será essencial\npara democratizar o acesso às oportunidades da economia do conhecimento.\nConsolidar essas agendas significa fortalecer uma forma de governar baseada\nna integração das políticas públicas, na inovação, na participação social e no cuidado\ncom as pessoas. É esse caminho que permitirá à Bahia enfrentar os desafios do presente, reduzir desigualdades, ampliar oportunidades e seguir construindo um desenvolvimento sustentável, democrático e inclusivo em todos os territórios.\n\n1.1 SUSTENTABILIDADE AMBIENTAL\nGestão Ambiental e Ecológica\n Estruturar a política estadual de mercado de créditos de carbono para certificar áreas privadas e áreas públicas que forem recuperadas, utilizando os\nrecursos obtidos para os projetos e programas de transformação ecológica\ndo Estado.\n Ampliar as ações de educação ambiental, reflorestamento, arborização urbana com espécies nativas, bem como revitalizar parques urbanos e lagoas.\n Intensificar a fiscalização ambiental para o combate ao desmatamento e\nàs queimadas, bem como fortalecer a gestão e apoiar a gestão ambiental\nmunicipal.\n Ampliar o sistema de monitoramento de mananciais superficiais e fortalecer\nprograma de redução de perdas em sistemas de abastecimento de água.\n\n21"
+          },
+          {
+            "id": "gestao-de-riscos-desastres-e-recursos-hidricos",
+            "titulo": "Gestão de Riscos, Desastres e Recursos Hídricos",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Gestão de Riscos, Desastres e Recursos Hídricos\n Implantar o serviço estadual de Gerenciamento de Riscos e Desastres, estrutura permanente para integrar monitoramento, previsão, alerta, comunicação\nde risco e coordenação operacional.\n Ampliar as ações prévias de enfrentamento aos efeitos das secas e estiagens\ncom o monitoramento de bacias, reservatórios, sistemas de abastecimento\ne águas subterrâneas, além do cadastro georreferenciado de poços e outros\nsistemas de abastecimento de água, em tempo de subsidiar o enfrentamento\naos efeitos do El Niño ou de outros riscos.\n Aperfeiçoar o rito de concessão das outorgas de água, incluindo mecanismos\ndinâmicos de alocação das vazões, pactuados nos comitês de bacia e em consonância com as oscilações do regime hídrico.\n\n1.2 TECNOLOGIA E INOVAÇÃO\nPesquisa Aplicada, Ecossistemas de Inovação e\nDesenvolvimento Territorial\n Estruturar política estadual de Economia Azul que contemple todas as águas,\ne não apenas o litoral marítimo, com sistema de dados e pesquisa aplicada,\nformação profissional especializada, infraestrutura, apoio a tecnologias para a\npesca artesanal, a mariscagem e a sociobiodiversidade aquática.\n Desenvolver soluções de CT&I para a sustentabilidade e a resiliência climática,\nimplantando energia renovável em comunidades rurais remotas e equipamentos públicos, apoiando Comunidades Energéticas de Autoconsumo Coletivo e\na bioenergia, desenvolvendo agricultura digital, saneamento inteligente e monitoramento ambiental.\n\n22"
+          },
+          {
+            "id": "desenvolver-instrumentos-de-pesquisa-tecnologia-e-inovacao-adequados-aos",
+            "titulo": " Desenvolver instrumentos de pesquisa, tecnologia e inovação adequados aos",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": " Desenvolver instrumentos de pesquisa, tecnologia e inovação adequados aos\nprocessos produtivos da economia de baixa intensidade em carbono em todas\nas cadeias da transformação ecológica, tais como, produtos químicos e combustíveis verdes, minerais críticos, terras raras, energias renováveis (eólica, solar, biomassa etc.), eficiência energética, agroindustrialização, economia circular\netc., fomentando parcerias entre governo, universidades e setor produtivo.\n\nConectividade e Infraestrutura Digital Soberana\n Ampliar o programa estadual de conectividade, incluindo o fortalecimento do\nConecta Bahia com Wi-Fi livre em locais públicos.\n Construir uma rede estrutural de alta capacidade, consolidando e ampliando\na Rede de Infovias e a fibra óptica para todas as regiões do estado.\n Construir capacidade computacional soberana, modernizando data centers,\nestruturando ambiente de computação de alto desempenho para pesquisa e\nIA de interesse público, preferencialmente em cooperação com o Consórcio\nNordeste e o Governo Federal, e instituindo política de migração gradual para\nsoftware livre na administração pública.\n Estruturar política estadual de cibersegurança e proteção de dados, implantando centro de monitoramento e resposta a incidentes, gestão de riscos,\ncontrole de acesso, cópias de segurança e planos de continuidade, fortalecendo a conformidade com a Lei Geral de Proteção de Dados (LGPD) e capacitando servidores em segurança da informação.\n\nGoverno Digital, Serviços Públicos e Inovação Aberta\n Instituir a Política Estadual de Governo Digital, com padrões de interoperabilidade e arquitetura tecnológica comuns, diretrizes de governança de dados\ne de Inteligência Artificial, Índice Baiano de Maturidade Digital, laboratórios\nde inovação nas secretarias, formação contínua dos servidores em compe-\n\n23"
+          },
+          {
+            "id": "tencias-digitais-e-plataforma-compartilhada-de-governo-digital-oferecida",
+            "titulo": "tências digitais e plataforma compartilhada de governo digital oferecida aos",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "tências digitais e plataforma compartilhada de governo digital oferecida aos\nmunicípios.\n Implantar uma rede estadual de dados, integrando as bases estaduais de\nforma interoperável e segura, além de instituir uma política estadual de dados\nabertos e painel estadual de transparência e desempenho, personalizando a\ninteração governo/cidadãos, incluindo a proatividade na prestação de serviços públicos com o uso de tecnologias acessíveis e design responsivo.\n Aperfeiçoar o padrão de atendimento do SAC, promovendo acessibilidade,\ninclusão e excelência na prestação de serviços, de forma a garantir atendimento eficiente, humanizado e equitativo para toda a população.\n\n1.3 IGUALDADE RACIAL\nGestão da Política, Trabalho e Empreendedorismo Negro\n Fortalecer a interiorização da política estadual de promoção da igualdade racial, fortalecendo a atuação regionalizada.\n Ampliar as ações de formação, qualificação e capacitação profissional, com\nfoco na inclusão produtiva, na geração de renda e na inserção da população\nnegra no mercado de trabalho.\n\nSegurança Pública e Justiça Racial\n Expandir o plano estadual de redução da letalidade policial.\n Ampliar os investimentos no Programa Bahia Pela Paz, assegurando o fomento a políticas e projetos nas várias secretarias integrantes do Programa nos\nterritórios vulnerabilizados pelas violências, com vistas ao estabelecimento de\numa agenda de paz com equidade racial.\n\n24"
+          },
+          {
+            "id": "fortalecer-as-acoes-da-delegacia-especializada-de-combate-ao-racismo-e-a",
+            "titulo": " Fortalecer as ações da Delegacia Especializada de Combate ao Racismo e à",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": " Fortalecer as ações da Delegacia Especializada de Combate ao Racismo e à\nIntolerância Religiosa (DECRIN) para os territórios de identidade, qualificando o enfrentamento aos crimes de racismo, intolerância religiosa e LGBTfobia\nno estado.\n\nSaúde, Educação e Cultura Antirracistas\n Fortalecer o Centro Estadual de Referência no Atendimento a Pessoas com\nDoenças Falciformes Rilza Valentim, ampliando sua capacidade de atendimento, estrutura, equipe multiprofissional e oferta de serviços especializados.\n Fortalecer a integração curricular da história e cultura afro-brasileira e africana\nnas escolas públicas e particulares da Bahia, instituindo programa de formação\ninicial e continuada de professores, gestores e demais profissionais da educação e com a produção e distribuição de materiais didáticos antirracistas.\n Expandir o Programa Capoeira nas Escolas, ampliando sua presença na rede\npública de ensino como instrumento de valorização da cultura afro-brasileira,\neducação antirracista e promoção da cidadania.\n Ampliar o Programa Qualifica Capoeira, garantindo oferta de formação, qualificação e certificação para mestres, contramestres, professores, professoras,\ninstrutores, e demais agentes da capoeira em todas as regiões do estado.\n\n1.4 JUVENTUDE\n Ampliar a oferta de educação superior nos territórios, em parceria com os\nmunicípios e com o governo federal.\n Ampliar o apoio aos Projetos Profissionais dos Jovens das Escolas Famílias\nAgrícolas (EFAs) e a sucessão intergeracional por parte da juventude rural,\ncom acesso a terra, água e recursos.\n\n25"
+          },
+          {
+            "id": "universalizar-a-oferta-de-escolas-de-tempo-integral-em-toda-a-rede-estad",
+            "titulo": " Universalizar a oferta de escolas de tempo integral em toda a rede estadual",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": " Universalizar a oferta de escolas de tempo integral em toda a rede estadual\nde ensino.\n Fortalecer as ações de formação técnico-profissionalizante em todos os territórios de identidade de modo a diversificar as oportunidades de trabalho,\nemprego e renda.\n Ampliar a atuação dos Coletivos Bahia pela Paz, serviços de atenção psicossocial e garantia de direitos voltados para crianças, adolescentes e jovens em\nsituação de vulnerabilidade para a violência letal e suas famílias.\n\n1.5 MULHERES\nEnfrentamento à Violência contra as Mulheres\n Promover ações estruturantes de enfrentamento ao feminicídio e às demais\nviolências contra as mulheres e meninas, garantindo o acesso aos serviços de\nacompanhamento e cuidado humanizado.\n Ampliar a rede de proteção às mulheres por meio da implantação e do fortalecimento de Casas Abrigo, Núcleos Especiais de Atendimento às Mulheres\n(NEAMs) e Centros de Referência de Atendimento à Mulher, garantindo acolhimento humanizado, proteção, atendimento psicossocial, orientação jurídica e acesso à rede de serviços.\n Fortalecer os programas de responsabilização, educação e reeducação de\nautores de violência contra as mulheres, em articulação com o Sistema de\nJustiça e a rede de proteção, promovendo a mudança de comportamentos, a\nprevenção da reincidência e a construção de relações baseadas no respeito,\nna igualdade de gênero e na não violência.\n Ampliar a rede especializada de proteção à mulher, incluindo mais Delegacias\nEspecializadas de Atendimento à Mulher (DEAMs) funcionando 24h, Ronda e\nPelotão Maria da Penha e Salas lilás.\n\n26"
+          },
+          {
+            "id": "autonomia-economica-direito-ao-territorio-e",
+            "titulo": "Autonomia Econômica, Direito ao Território e",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Autonomia Econômica, Direito ao Território e\nInclusão Socioprodutiva\n Ampliar os programas de capacitação e qualificação para o trabalho decente\ne autonomia financeira das mulheres, com parceria público-privada, certificação (selo lilás) e reserva de cotas, promovendo inserção no mercado de\ntrabalho e a comercialização dos produtos por elas produzidos.\n Promover ações intersetoriais e articuladas de acolhimento, qualificação profissional, inserção econômica e social e garantia de direitos para as mulheres\nem cumprimento de pena no sistema prisional e para as egressas, assegurando suporte psicossocial e oportunidades de autonomia.\n\nSaúde, Direitos Reprodutivos e Cultura Igualitária\n Criar programa de enfrentamento à violência obstétrica, com protocolo de\nprevenção e humanização do parto, reestruturando as casas de parto humanizado com equipe multidisciplinar e cuidados no puerpério.\n Promover iniciativas culturais, artísticas e curriculares com protagonismo das\nmulheres em sua diversidade.\n\n27"
+          },
+          {
+            "id": "desenvolvimento",
+            "titulo": "DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO\n\nECONÔMICO"
+          },
+          {
+            "id": "2-desenvolvimento-economico",
+            "titulo": "2 DESENVOLVIMENTO ECONÔMICO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "2 DESENVOLVIMENTO ECONÔMICO\nCOM SUSTENTABILIDADE,\nEQUIDADE E JUSTIÇA\n\nO desenvolvimento econômico da Bahia resulta de uma estratégia que articula\ncrescimento, sustentabilidade, inovação, inclusão produtiva e justiça social. Mais do\nque ampliar indicadores, esse formato transforma as potencialidades do estado em\noportunidades para a população, fortalece a capacidade produtiva, reduz desigualdades e promove um desenvolvimento equilibrado entre os territórios. Os avanços\ndos últimos anos criaram bases para um novo ciclo de crescimento, mas os desafios\nhistóricos exigem ampliar a competitividade e consolidar um modelo capaz de gerar\noportunidades em todas as regiões. Para isso, a atuação integrada do Estado, em\nparceria com o Governo Federal, municípios, setor produtivo, universidades, instituições de pesquisa e sociedade civil reafirma que desenvolvimento econômico também é uma política de cuidado: cuidar das pessoas por meio do trabalho, da renda,\nda inclusão e da sustentabilidade.\nOs resultados comprovam essa trajetória. Entre 2023 e 2025, a Bahia acumulou\ncrescimento econômico de 8,08%, com expansão de 2,28% em 2023, 2,87% em\n2024 e 2,73% em 2025. Os dados de 2024 e 2025 são provenientes das estimativas\ntrimestrais da Superintendência de Estudos Econômicos e Sociais da Bahia (SEI),\nelaboradas sob metodologia e acompanhamento do IBGE. Em 2025, a economia\nbaiana cresceu acima da média nacional (2,43%), demonstrando dinamismo e capacidade de reação em um cenário desafiador.\nEsse desempenho é resultado do planejamento de longo prazo, do equilíbrio\nfiscal, da segurança jurídica e da ampliação dos investimentos públicos e privados.\n\n29"
+          },
+          {
+            "id": "a-gestao-responsavel-das-financas-publicas-fortalece-a-capacidade-de-inv",
+            "titulo": "A gestão responsável das finanças públicas fortalece a capacidade de investimento",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "A gestão responsável das finanças públicas fortalece a capacidade de investimento\ndo Estado e viabiliza projetos estruturantes que impulsionam a atividade econômica, a interiorização do desenvolvimento e a competitividade da economia baiana.\nA diversificação da estrutura produtiva permanece como eixo dessa estratégia.\nA expansão da indústria, da agroindústria, do comércio, dos serviços, da economia\ncriativa, do turismo, da economia do mar e das atividades intensivas em conhecimento, aliada à neoindustrialização e à agregação de valor às cadeias produtivas,\namplia a geração de riqueza, trabalho e renda, enquanto a valorização das vocações\ndos Territórios de Identidade fortalece a integração regional.\nO agronegócio consolidou-se como um dos principais vetores da economia\nbaiana. Entre 2012 e 2025, o PIB do setor passou de R$40,3 bilhões para R$118,4\nbilhões, maior valor da série histórica, mantendo participação superior a 20% do\nPIB estadual e alcançando 24,5% em 2024. O agro é uma força imprescindível para\no desenvolvimento da Bahia, movimentando cadeias produtivas, gerando emprego\ne renda, ampliando as exportações e fortalecendo os territórios. Esse desempenho\ncaminha ao lado do fortalecimento da agricultura familiar, da assistência técnica, da\nirrigação, da infraestrutura hídrica, da pesquisa agropecuária e da inovação tecnológica, ampliando a produção de alimentos, a segurança alimentar, a geração de renda\ne a permanência das famílias no campo, além de fortalecer a convivência do Semiárido com as mudanças climáticas.\nO dinamismo da economia também se refletiu no mercado de trabalho. A Bahia\nalcançou uma taxa de desemprego de 8,7%, a menor da história, com 6,5 milhões\nde pessoas trabalhando e cerca de 300 mil novos empregos formais gerados desde\n2023. A geração de emprego e renda segue como prioridade, apoiada por políticas\nde qualificação profissional, empreendedorismo, pequenos negócios, cooperativismo, economia solidária e ampliação do acesso ao crédito, à assistência técnica, à\ninovação e aos mercados.\nOs reflexos aparecem também nos indicadores sociais. Segundo a PNAD Contínua/IBGE, com elaboração da SEI, o Índice de Gini do rendimento domiciliar per\ncapita caiu de 0,490, em 2023, para 0,481, em 2024, alcançando o menor nível de\n\n30"
+          },
+          {
+            "id": "pagina-31",
+            "titulo": "Página 31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "desigualdade de renda da série histórica e demonstrando que crescimento econômico, valorização do trabalho e inclusão produtiva caminham juntos.\nA infraestrutura permanece como um dos principais pilares desse desenvolvimento. Investimentos em logística, transportes, segurança hídrica, saneamento,\nenergia, conectividade digital e mobilidade fortalecem a integração entre os territórios, reduzem custos, aumentam a competitividade e atraem novos investimentos.\nProjetos como a FIOL, o Porto Sul, a ampliação da malha rodoviária, a modernização\ndos aeroportos e o fortalecimento da infraestrutura digital consolidam a Bahia como\npolo logístico e produtivo.\nNesse contexto, a Ponte Salvador–Ilha de Itaparica destaca-se como uma das\nmaiores obras de infraestrutura do país e simboliza um novo ciclo de desenvolvimento. Com potencial para redefinir a logística estadual e integrar Salvador, o Recôncavo, o Baixo Sul e o Sul da Bahia, o empreendimento impulsiona investimentos em\nturismo, comércio, indústria e serviços. O início oficial das obras, com a presença do\npresidente Lula, reafirma a cooperação entre os governos federal e estadual.\nSomam-se a esse conjunto o VLT de Salvador, a expansão do metrô até o Campo\nGrande, a BA-649 (Rodovia Gabriela), a nova Rodoviária de Salvador e os investimentos permanentes na malha rodoviária estadual, aproximando territórios e ampliando o acesso da população aos serviços públicos.\nA transição energética coloca a Bahia em posição de destaque na economia de\nbaixo carbono. O estado é líder nacional na geração de energia eólica, responsável\npor 37% da produção do país, e vem ampliando sua participação na geração de\nenergia limpa. A expansão das fontes eólica e solar, do hidrogênio verde, dos combustíveis sustentáveis de aviação (SAF), da bioeconomia e das tecnologias de descarbonização abre novas oportunidades de investimentos, fortalece a economia e\ncria cadeias produtivas e empregos qualificados, ao mesmo tempo em que contribui\npara a preservação ambiental e para o desenvolvimento das comunidades.\nA Bahia reúne condições para consolidar-se como um dos principais polos da\nnova industrialização brasileira. A atração da BYD, com a criação de mais de 5 mil\nempregos diretos, reforça essa capacidade e demonstra o potencial do estado de\n\n31"
+          },
+          {
+            "id": "captar-grandes-empreendimentos-gerar-oportunidades-e-integrar-a-bahia-as",
+            "titulo": "captar grandes empreendimentos, gerar oportunidades e integrar a Bahia às novas",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "captar grandes empreendimentos, gerar oportunidades e integrar a Bahia às novas\ncadeias industriais e tecnológicas. A combinação entre infraestrutura logística, matriz\nenergética renovável, capacidade científica, inovação tecnológica e diversidade produtiva cria um ambiente favorável à implantação de empreendimentos inovadores\ne à agregação de valor à produção estadual. Nesse processo, o fortalecimento da\nFapesb, da Bahiafarma, das universidades públicas, dos institutos de pesquisa, dos\nparques tecnológicos, das startups e dos ambientes de inovação amplia a capacidade científica do estado, enquanto a transformação digital, a inteligência artificial,\na conectividade e a pesquisa aplicada modernizam a economia e preparam a Bahia\npara a economia do conhecimento.\nO desenvolvimento rural segue estratégico para a economia baiana. O fortalecimento da agricultura familiar, da agropecuária, da agroindustrialização e das cadeias produtivas do campo amplia a produção de alimentos, gera emprego e renda\ne impulsiona os territórios rurais. A expansão da assistência técnica, do crédito, da\ninfraestrutura hídrica, da irrigação, da pesquisa agropecuária e da inovação tecnológica eleva a produtividade e fortalece a capacidade de enfrentar os desafios climáticos. Ao mesmo tempo, cooperativismo, economia solidária, associações e pequenos\nnegócios ampliam a inclusão produtiva e valorizam o trabalho.\nA internacionalização da economia baiana avança com a articulação entre o Governo do Estado, a ApexBrasil, a FIEB e o Sebrae, ampliando as oportunidades para\nque o setor produtivo conquiste novos mercados e atraia investimentos. A implantação do escritório da ApexBrasil na Bahia, em cooperação técnica com a Bahiainveste,\nfortalece essa estratégia e demonstra o compromisso com o desenvolvimento do\nestado, aproximando empresas de parceiros e investidores e ampliando a competitividade baiana no cenário internacional.\nA parceria entre o Governo da Bahia e o Governo Federal fortalece projetos estruturantes em todo o estado. Os investimentos do Novo PAC, do Minha Casa, Minha\nVida, dos financiamentos do BNDES e de outras iniciativas estratégicas impulsionam\nobras de infraestrutura, logística, habitação, mobilidade, saneamento, abastecimen-\n\n32"
+          },
+          {
+            "id": "to-de-agua-educacao-saude-e-desenvolvimento-regional-reafirmando-a-coope",
+            "titulo": "to de água, educação, saúde e desenvolvimento regional, reafirmando a cooperação",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "to de água, educação, saúde e desenvolvimento regional, reafirmando a cooperação\nfederativa como instrumento de transformação.\nDar continuidade a essa estratégia significa consolidar um modelo de desenvolvimento que integra planejamento, responsabilidade fiscal, inovação, infraestrutura,\nfortalecimento da produção, valorização do trabalho, sustentabilidade ambiental e\ninclusão social. Significa ampliar oportunidades para mulheres, juventudes, povos\nindígenas, comunidades quilombolas, agricultores familiares, trabalhadores urbanos\ne rurais, além de micro e pequenos empreendedores. Os avanços conquistados formam uma base sólida para um novo ciclo, que exigirá aprofundar investimentos,\nacelerar projetos estruturantes e fortalecer uma economia capaz de gerar emprego,\nrenda e oportunidades, consolidando uma Bahia inovadora, sustentável, competitiva\ne preparada para exercer protagonismo no desenvolvimento do Brasil.\n\n2.1 INDÚSTRIA, MINERAÇÃO, COMÉRCIO E SERVIÇOS\n Instituir programa de interiorização industrial, com incentivos diferenciados,\napoio à implantação de novos distritos e parques industriais nos territórios\nde identidade, incluindo linhas de crédito para pequenas e médias indústrias.\n Estruturar a política estadual para a inserção soberana da Bahia nas cadeias\nde valor de terras raras e minerais críticos, priorizando o beneficiamento e a\nagregação de valor, não apenas a extração e exportação de matéria-prima\nbruta, em território baiano, com participação do Estado na definição de prioridades de uso e destinação da produção.\n Potencializar o complexo industrial da reciclagem e da logística reversa, estimulando a criação de cadeias produtivas a partir do reaproveitamento de\nresíduos sólidos urbanos e industriais.\n Estruturar plataforma estadual permanente de promoção comercial e apoio à\nexportação, com atenção especial ao acesso de micro e pequenas empresas\na financiamento e garantias, ampliando o calendário de missões comerciais\n\n33"
+          },
+          {
+            "id": "setoriais-e-alinhando-a-promocao-das-exportacoes-baianas-a-estrategia-de",
+            "titulo": "setoriais e alinhando a promoção das exportações baianas à estratégia de",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "setoriais e alinhando a promoção das exportações baianas à estratégia de\ninserção soberana da Bahia em cadeias globais de valor.\n Atualizar o marco legal estadual de alienação e concessão de áreas nos distritos industriais, incluindo a conclusão do georreferenciamento das áreas industriais do Estado, recuperação e modernização da infraestrutura física dos\ndistritos existentes, bem como a adoção de medidas para prevenção de crimes patrimoniais nessas áreas.\n Fomentar a inserção de MPEs baianas em plataformas de comércio eletrônico, com capacitação em gestão digital, logística e meios de pagamento, ampliando mercados e reduzindo a dependência de intermediários.\n Fortalecer o comércio local e o setor de serviços, com qualificação empresarial, apoio à infraestrutura comercial dos municípios e desburocratização da\nabertura de empresas, com tratamento simplificado ao MEI e aos pequenos\nnegócios.\n Fortalecer o Desenbahia como agente de fomento às cadeias produtivas,\ncom linhas de financiamento competitivas e desburocratizadas, ampliando\no acesso de produtores e empresas ao crédito para modernização, inovação,\ninfraestrutura, aquisição de máquinas, equipamentos e tecnologias, eficiência\nenergética e expansão da capacidade produtiva.\n\n2.2 INFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\nEnergia e Transição Energética\n Articular e viabilizar junto ao Governo Federal a conclusão de 6.000 km de\nlinhas de transmissão da rede básica 230/500 kV para escoamento da geração de energia elétrica proveniente de fontes renováveis e suprimento de\nenergia a novas cargas.\n\n34"
+          },
+          {
+            "id": "pagina-35",
+            "titulo": "Página 35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": " Ampliar o sistema de transmissão e subtransmissão para atender ao potencial incremental de carga na região Oeste da Bahia.\n Ampliar o acesso a redes de distribuição de energia elétrica trifásica para fins\nde atividades produtivas a propriedades rurais da agricultura familiar e ampliar a eletrificação rural.\n Implantar novas estações rádio-base para o acesso à telefonia móvel celular\nem novas localidades no Estado da Bahia.\n Incentivar a implantação de plantas industriais para a produção de hidrogênio de baixo carbono, SAF, HVO e etanol no âmbito estadual, intensivas em\nenergia de base renovável.\n Fomentar a adoção de uma matriz energética mais limpa para o segmento\nautomotivo, nas principais rodovias do estado, principalmente para veículos\npesados, através da implementação de corredores sustentáveis com infraestrutura para abastecimento de veículos com gás natural e biometano.\n Articular com os setores produtivos implantação de programas de eficiência\ne transição energética a fim de ampliar a substituição de combustíveis com\nmaior cadeia de carbono pelo gás natural e biometano, proporcionando menores emissões de gases de efeito estufa e outros poluentes.\n\nRodovias Estaduais e Federal\n Pavimentar e recuperar 4.000 quilômetros de extensão de rodovias baianas\nem todos os territórios de identidade.\n Pavimentar, recuperar estradas vicinais e acessos rodoviários para assentamentos, comunidades rurais e territórios tradicionais.\n Articular e viabilizar junto ao Governo Federal as seguintes intervenções:\n BR-020 | Riachão das Neves (Entr. BR-135) Santa Rita de Cássia – Mansidão – Buritirama – Campo Alegre de Lourdes – divisa com o Piauí – Pavimentação.\n\n35"
+          },
+          {
+            "id": "br-101-feira-de-santana-santo-antonio-de-jesus-itabuna-eunapolis",
+            "titulo": " BR-101 | Feira de Santana – Santo Antônio de Jesus – Itabuna – Eunápolis –",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": " BR-101 | Feira de Santana – Santo Antônio de Jesus – Itabuna – Eunápolis –\nTeixeira de Freitas – divisa com o Espírito Santo — Duplicação e Anel viário\nentre BR-101 e BA-290, em Teixeira de Freitas — Obra de arte / contorno.\n BR-101 / BR-116 / BR-324 | Via Metropolitana Norte de Feira de Santana\n(BR-101 ao trevo BR-324/BR-116) — Implantação.\n BR-110 | Integração BA-210/BR-110 em Paulo Afonso, com segunda ponte e anel viário — Obra de arte e duplicação de acesso.\n BR-122 | Juazeiro (Junco) – Ourolândia – América Dourada (BA-052) / rota\nJuazeiro – Campo Formoso — Pavimentação.\n BR-242 | Entroncamento BR-116 (Paraguaçu) – Castro Alves – Santo Antônio de Jesus – Nazaré – Ponte do Funil — Duplicação (Sistema Viário Oeste\n– Ponte Salvador/Itaparica).\n BR-030 | Boa Nova – Dário Meira – Aurelino Leal — Pavimentação.\n BR-330 | Jequié – Iramaia (62 km) — Pavimentação.\n BR-349 | Divisa Bahia/Sergipe – Itapicuru – Olindina — Pavimentação/Restauração.\n\nMobilidade Urbana\n Concluir a implantação do Tramo IV da Linha 1 do Sistema Metroviário Salvador-Lauro de Freitas, trecho entre a Estação da Lapa e o Campo Grande.\n Avançar na expansão da rede do Veículo Leve sobre Trilhos (VLT) de Salvador,\nalcançando novas áreas da cidade.\n Viabilizar a construção do VLT Camaçari – Alagoinhas, em parceria com o Governo Federal.\n\nLogística\n Avançar na execução da construção da Ponte Salvador–Ilha de Itaparica, um\nestratégico projeto de infraestrutura e logística que redefinirá a integração\n\n36"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "Página 37",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "entre a Região Metropolitana de Salvador, o Recôncavo e o Baixo Sul, beneficiando cerca de 250 municípios e impulsionando investimentos em turismo,\ncomércio, indústria e serviços.\n Articular junto ao Governo Federal a construção do novo aeroporto do Médio\nRio de Contas/Vale do Jiquiriçá e a ampliação e modernização do aeroporto\nde Irecê.\n Articular e viabilizar junto ao Governo Federal a ampliação das obras da Ferrovia de Integração Oeste-Leste (FIOL) I, II e Porto Sul.\n Articular e viabilizar junto ao Governo Federal o acompanhamento dos investimentos na VLI/Ferrovia Centro-Atlântica (FCA) para recuperação, modernização e ampliação da malha ferroviária baiana.\n Implantar um Parque Logístico no Centro Industrial de Aratu (CIA/Norte),\nincluindo o fortalecimento da competitividade dos portos da Baía de Todos\nos Santos, redução de gargalos de acessos rodoviários, ampliação da conectividade ferroviária, infraestrutura retroportuária e ampliação da eficiência operacional.\n\n2.3 INFRAESTRUTURA SOCIAL\n Aprimorar o programa de prevenção de desastres, ampliando ações e projetos de drenagem e macrodrenagem em áreas sujeitas a inundações, além\nde obras de contenção de encostas em áreas de risco em todo o estado da\nBahia.\n Reformar e requalificar os Centros Sociais Urbanos (CSU), garantindo infraestrutura, equipe técnica e programação permanente de cursos profissionalizantes e atividades para todas as faixas etárias.\n\n37"
+          },
+          {
+            "id": "38",
+            "titulo": "38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "38"
+          },
+          {
+            "id": "2-4-trabalho-geracao-de-emprego-e-renda",
+            "titulo": "2.4 TRABALHO, GERAÇÃO DE EMPREGO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "2.4 TRABALHO, GERAÇÃO DE EMPREGO E RENDA\nTrabalho Decente dentre os Assalariados Formais\n Fortalecer ações de intermediação de mão de obra, documentação, seguro-desemprego, Credibahia e Assessoramento Técnico para Empreendimentos\nSolidários a distritos isolados e comunidades rurais.\n Ampliar a oferta territorializada de cursos técnicos e de qualificação profissional, de acordo com as demandas locais, com participação social na definição\nde vagas, currículos e localização, garantindo atenção a mulheres, jovens e\npopulação negra.\n Ampliar a cobertura geográfica dos programas Qualifica Bahia e Trilha para\nperiferias e zonas rurais dos 27 Territórios de Identidade.\n\nTrabalho Decente por Conta Própria\n Fortalecer a cadeia produtiva do artesanato da Bahia ampliando os espaços de\ncomercialização, as feiras e os festivais com foco em povos e comunidades tradicionais, ampliando os espaços de atendimento aos artesãos na rede Sinebahia.\n Ampliar a oferta de cursos voltados à transição digital (programação, análise de\ndados, inteligência artificial e automação).\n Ampliar o alcance da Assistência Técnica e Extensão Urbana (ATEURB), por meio\ndo Programa Vida Melhor Urbano, com apoio técnico, qualificação, inclusão digital, acesso ao crédito, fomento produtivo, comercialização e inserção em mercados institucionais, fortalecendo a economia popular, solidária, o cooperativismo\ne o associativismo.\n Cooperar com o Governo Federal e Municípios na implantação de infraestrutura\nde retaguarda para motoristas de aplicativos, incluindo a construção de espaços\nadequados para alimentação, hidratação, higiene pessoal e descanso.\n\n39"
+          },
+          {
+            "id": "economia-solidaria",
+            "titulo": "Economia Solidária",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Economia Solidária\n Implantar ações para formação jurídica e contábil para empreendimentos econômicos solidários e da agricultura familiar, oferecendo capacitação permanente sobre formalização de associações, cooperativas e empreendimentos, regularização fiscal e tributária, elaboração de estatutos e prestação de contas.\n Ampliar a cobertura dos Centros Públicos de Economia Solidária (CESOL) de\nmodo a atender os Territórios de Identidade ainda não alcançados pelo serviço.\n\n2.5 SANEAMENTO E INFRAESTRUTURA HÍDRICA\nMais Saneamento para Todos\n Promover, incentivar e executar ações estruturantes, articuladas com o marco regulatório do saneamento, gerando novas oportunidades de desenvolvimento econômico, fortalecimento da segurança hídrica, proteção do clima e\npromoção da saúde pública.\n Requalificar e expandir a cobertura das Centrais Associativas de Abastecimento de Água no meio rural, potencializando a sustentabilidade destas iniciativas por meio de transferência de tecnologia operacional e ampliação da capacidade gerencial autogestionária, incluindo o fortalecimento das Centrais de\nAssociações Comunitárias existentes: Jacobina, Caetité e Seabra, bem como\no apoio à implantação de novas iniciativas correlatas.\n Apoiar a elaboração de Planos Municipais de Saneamento Básico e a execução de ações estruturantes.\n Ampliar as condições de saneamento da população rural, por meio da oferta\nde água para consumo humano e implantação de soluções sanitárias, incluindo a Adutora da Água Doce - Rio Carinhanha.\n\n40"
+          },
+          {
+            "id": "esgotamento-sanitario",
+            "titulo": "Esgotamento Sanitário",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Esgotamento Sanitário\n Implantar novos Sistemas de Esgotamento Sanitário e ampliar sistemas existentes, incluindo:\n SES Lauro de Freitas – 1ª Etapa\n Expansão do SES Salvador - Bacias de Trobogy, Cambunas e Águas Claras\n Ampliação SES Sr. do Bonfim – 2ª Etapa\n Ampliação SES Jequié\n Implantação do SES Irecê – 1ª Etapa\n Implantação do SES Iaçu\n Implantação do SES Ruy Barbosa – 1ª Etapa\n Implantação do SES Riachão do Jacuípe\n Implantação do SES Caldas do Jorro – Município de Tucano\n Implantação do SES Conceição do Coité\n Ampliação do SES Caravelas – Localidades Ponta de Areia e Barra de Caravelas\n Ampliação da Estação Elevatória de Esgoto do Lobato – Salvador\n Implantação do SES Brejolândia\n Ampliação do SES Vitória da Conquista\n Adensamento dos SES da RMS (Simões Filho, Salvador e Lauro de Freitas)\n Implantar soluções locais com biodigestores e manutenção dedicada (Saneamento sobre Rodas) em Áreas Rurais e Periurbanas.\n\nSistemas de Abastecimento de Água\n Ampliar os Sistemas de Abastecimento de Água (SAA) e Sistemas Integrados\nde Abastecimento de Água (SIAA), incluindo:\n Ampliação do SAA Jequié (Sistemas Criciúma e Rio de Contas)\n Ampliação do SAA Simões Filho – 2ª Etapa (adução de água tratada, reservação e distribuição)\n\n41"
+          },
+          {
+            "id": "ampliacao-do-saa-praia-do-forte-municipio-de-mata-de-sao-joao",
+            "titulo": " Ampliação do SAA Praia do Forte Município de Mata de São João",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": " Ampliação do SAA Praia do Forte Município de Mata de São João\n Implantação de Tratamento de Lodo (ETL) da ETA Principal do SIAA Salvador – RMS\n 2ª Etapa da Ampliação do SIAA Vitória da Conquista- Belo Campo\n 3ª Etapa da Ampliação do SIAA Feira de Santana (Sistema adutor e produtor)\n Ampliação do SAA Nazaré\n Extensão e Substituição de Rede Distribuidora e Implantação de Novas\nRedes para Retirada de Redes Sob Imóveis – Salvador (Região Pirajá e\nSubúrbio);\n Incentivar o reúso de efluentes tratados e o aproveitamento de águas pluviais, promovendo a economia circular da água.\n Ampliar a revitalização e despoluição de rios e bacias hidrográficas, com\nreflorestamento de margens e controle do assoreamento.\n\nImplantação de Barragens\n Implantar novas barragens, incluindo:\n Angelin e Rio das Pedras - Bacia do Itapicuru-Açu;\n Sazonais do Rio Utinga;\n Espanta Gado - Sub Bacia do Itapicuru-Açu;\n Enxu do Gavião - Bacia do Rio Gavião;\n Jaguaripe - Bacia do rio Jaguaripe;\n Itanhém - Bacia do Rio Itanhém;\n Rio Bonito - Sub Bacia do Rio Utinga.\n\nResíduos Sólidos\n Potencializar a Logística Reversa para que os fabricantes, importadores, distribuidores e comerciantes remunerem adequadamente as cooperativas e as-\n\n42"
+          },
+          {
+            "id": "pagina-43",
+            "titulo": "Página 43",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "sociações de catadores e catadoras de materiais recicláveis pela coleta e destinação final adequada das embalagens e demais resíduos reaproveitáveis.\n Fortalecer a inclusão das cooperativas de catadores nos grandes eventos promovidos em espaços públicos, assegurando contratação, remuneração pelos\nserviços prestados, infraestrutura adequada e condições dignas de trabalho.\n Apoiar os consórcios municipais na modelagem e contratação das parcerias\npúblico-privadas para gestão integrada de resíduos sólidos em âmbito territorial, incluindo eventuais aportes para infraestrutura (aterros sanitários e\nlogística), com inclusão socioprodutiva dos catadores e garantia de investimentos em coleta seletiva.\n\n2.6 DESENVOLVIMENTO DA PESCA\n Fomentar ações de prospecção pesqueira e pesca experimental, com foco no\nuso de novas tecnologias de captura, no mapeamento de áreas exploráveis e\nna avaliação de recursos pesqueiros alternativos, fortalecendo a cadeia produtiva, incentivando o comércio e ampliando as relações de negócios com a\nagricultura familiar e o acesso às compras públicas.\n Ampliar e qualificar a fiscalização das atividades pesqueiras predatórias e ilegais, com prioridade para a Baía de Todos os Santos e demais áreas de maior\npressão sobre os estoques pesqueiros e espécies ameaçadas.\n Fortalecer o planejamento e o zoneamento ecológico-econômico da Zona\nCosteira estadual, incorporando os territórios e áreas de pesca artesanal, e\narticular com os órgãos federais, municípios e usuários do espaço marinho\nmedidas de compatibilização entre pesca artesanal, pesca industrial, aquicultura, navegação, turismo náutico e demais usos.\n Articular universidades estaduais, institutos de pesquisa e organizações do\nsetor em agenda comum de ciência e tecnologia pesqueira.\n\n43"
+          },
+          {
+            "id": "aprimorar-a-infraestrutura-de-desembarque-beneficiamento-e-cadeia-de-fri",
+            "titulo": " Aprimorar a infraestrutura de desembarque, beneficiamento e cadeia de frio,",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": " Aprimorar a infraestrutura de desembarque, beneficiamento e cadeia de frio,\nincluindo terminais pesqueiros, entrepostos, fábricas de gelo e câmaras frigoríficas.\n Prevenir e controlar a introdução de espécies exóticas invasoras, através da\nimplementação de ações de Detecção Precoce e Resposta Rápida.\n\n2.7 CONVIVÊNCIA COM O SEMIÁRIDO\nSegurança Hídrica e Acesso à Água\n Ampliar a capacidade de armazenamento de água para consumo humano, bem\ncomo de tecnologias de armazenamento de segunda água destinadas à produção de alimentos e dessedentação animal.\n Fortalecer a infraestrutura hídrica e as iniciativas de restauração ambiental nos\nmunicípios suscetíveis à desertificação (Abaré, Chorrochó, Macururé, Rodelas e\nCuraçá), bem como desenvolver medidas preventivas nas localidades em situação de maior vulnerabilidade.\n\nProdução Sustentável e Conservação da Caatinga e do Cerrado\n Fortalecer os sistemas produtivos da agricultura familiar, com atenção à caprinovinocultura, à genética animal adaptada, à produção e conservação de forragens, ao manejo sustentável das pastagens e às estratégias territoriais de preparação para os períodos de estiagem, com base na transição agroecológica.\n Proteger o Cerrado baiano, com atenção ao Oeste da Bahia e às áreas de Caatinga, priorizando nascentes, veredas, áreas de recarga hídrica, corredores ecológicos e remanescentes de vegetação nativa.\n\n44"
+          },
+          {
+            "id": "45",
+            "titulo": "45",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "45"
+          },
+          {
+            "id": "2-8-desenvolvimento-do-agronegocio",
+            "titulo": "2.8 DESENVOLVIMENTO DO AGRONEGÓCIO",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "2.8 DESENVOLVIMENTO DO AGRONEGÓCIO\n Fortalecer as cadeias produtivas estratégicas do agronegócio baiano, tais\ncomo a produção de grãos, algodão, pecuária de corte, pecuária leiteira, fruticultura irrigada, borracha natural, cacau, sisal, café, caprinos e ovinos, avicultura, silvicultura, agroindústrias regionais e demais cadeias com vocação\nterritorial, reconhecendo a diversidade econômica, territorial e ambiental do\nEstado.\n Articular linhas de crédito específicas para adaptação climática, proteção produtiva e recuperação da capacidade econômica dos produtores rurais, incluindo condições adequadas, trâmite simplificado e finalidade preventiva, financiando irrigação eficiente, poços, reservatórios, armazenamento de água,\nconservação de solo, aquisição de equipamentos, formação de estoques de\nforragem, energias renováveis e tecnologias de resiliência produtiva.\n Atrair investimentos e fortalecer agroindústrias como estratégia para agregar valor à produção agropecuária baiana, incluindo apoio ao beneficiamento,\nprocessamento, industrialização, certificação, rastreabilidade, qualidade, modernização de unidades produtivas, ampliação de crédito para agroindústrias\ne fortalecimento de cadeias exportadoras.\n Fortalecer iniciativas de regularização fundiária e segurança jurídica relacionadas às propriedades rurais no estado.\n\n2.9 DESENVOLVIMENTO RURAL\n Fortalecer a Assistência Técnica e Extensão Rural, ampliando o atendimento\nàs famílias agricultoras, povos e comunidades tradicionais, assentamentos, juventude rural, mulheres agricultoras e organizações produtivas.\n Fomentar o desenvolvimento rural por meio de parcerias com os municípios\ne Sistema S.\n\n46"
+          },
+          {
+            "id": "ampliar-a-regularizacao-fundiaria-da-agricultura-familiar-na-bahia-inclu",
+            "titulo": " Ampliar a regularização fundiária da agricultura familiar na Bahia, incluindo",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": " Ampliar a regularização fundiária da agricultura familiar na Bahia, incluindo\na integração dos processos de regularização ambiental e territorialização do\nacesso ao Programa Nacional de Crédito Fundiário.\n Fomentar as principais cadeias produtivas da agricultura familiar baiana, a\nexemplo da cacauicultura, caprinovinocultura, mandiocultura, cafeicultura, sisal, apicultura, dentre outras, incluindo novas iniciativas de fortalecimento da\nbase de produção.\n Fortalecer a estratégia estadual de agroindustrialização, certificação e comercialização da agricultura familiar, com recuperação de agroindústrias e equipamentos públicos subutilizados, regularização sanitária, ampliação dos investimentos em rotulagem, selos, bem como a implantação de equipamentos\nregionais de abate e beneficiamento dos rebanhos.\n Ampliar a certificação orgânica com apoio aos Organismos Participativos de\nAvaliação da Conformidade, certificações internacionais, promoção dos mercados territoriais, feiras e apoio para acesso aos mercados institucionais.\n Potencializar a Política Estadual de Agroecologia e Produção Orgânica, ofertando ATER agroecológica, formação territorial, valorização dos saberes populares, fomento a unidades produtivas agroecológicas, sementes crioulas,\nviveiros, mudas, biofábricas, armazenamento de grãos e sementes, recuperação de áreas degradadas, recaatingamento e restauração produtiva.\n Fortalecer a política estadual de educação do campo com a requalificação dos\ncursos técnicos em consonância com o contexto e especificidades territoriais,\nampliação das iniciativas baseadas na pedagogia da alternância, intensificação das estratégias de educomunicação e formação para a participação qualificada e incidência nos espaços institucionais de formulação e controle de\npolíticas públicas.\n Desenvolver iniciativas que ampliem o acesso dos agricultores familiares a\nanálises de solo, de modo a que possam adotar as devidas medidas corretivas\ne obter os respectivos ganhos de produtividade em suas propriedades.\n Fomentar a expansão de projetos de irrigação para a agricultura familiar.\n\n47"
+          },
+          {
+            "id": "48",
+            "titulo": "48",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "48"
+          },
+          {
+            "id": "2-10-turismo",
+            "titulo": "2.10 TURISMO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "2.10 TURISMO\n Articular com o governo federal a ampliação da malha aérea, incluindo a prospecção de novos voos regionais, nacionais e internacionais, fortalecendo a\nconectividade nas 13 zonas turísticas do estado (Baía de Todos-os-Santos,\nCaminhos do Jiquiriçá, Caminhos do Oeste, Caminhos do Sertão, Caminhos\ndo Sudoeste, Chapada Diamantina, Costa das Baleias, Costa do Cacau, Costa\ndo Dendê, Costa do Descobrimento, Costa dos Coqueiros, Lagos e Cânions\ndo São Francisco e Vale do São Francisco).\n Fortalecer o turismo náutico como eixo estratégico de desenvolvimento da\nBahia, valorizando o potencial da Baía de Todos-os-Santos, da Baía de Camamu, da Baía do Iguape, Aratu e demais destinos náuticos, consolidando\na Bahia como referência nacional e internacional em turismo de experiência\nnáutica.\n Desenvolver o turismo de base comunitária, rural, étnico, quilombola, indígena e religioso, com qualificação das comunidades, valorização dos saberes e\nculturas locais e apoio à infraestrutura e aos serviços turísticos.\n Fortalecer o turismo de eventos e negócios para ampliar, de forma territorializada, a captação de feiras, eventos, encontros literários, convenções corporativas e encontros científicos.\n Fortalecer a qualificação profissional e empresarial para o turismo, contemplando capacitações específicas como condução de embarcações, manutenção naval, turismo de mergulho, esportes náuticos e segurança da navegação,\nampliando as oportunidades de emprego, empreendedorismo e qualificação\ndos serviços turísticos.\n Fortalecer a política de promoção do destino Bahia por meio de uma estratégia integrada de divulgação dos seus destinos nos mercados regional, nacional e internacional.\n Fortalecer e apoiar as instâncias de governança do turismo nas 13 zonas turísticas da Bahia, ampliando a articulação entre os governos municipais, federal\n\n49"
+          },
+          {
+            "id": "e-os-setores-produtivos-incentivando-a-criacao-de-consorcios-intermunici",
+            "titulo": "e os setores produtivos, incentivando a criação de consórcios intermunicipais",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "e os setores produtivos, incentivando a criação de consórcios intermunicipais\nde turismo e entidades representativas, promovendo a gestão compartilhada, a integração regional, o planejamento estratégico, a captação de recursos\ne a execução de projetos estruturantes, fortalecendo a regionalização e o desenvolvimento sustentável do turismo baiano.\n Fomentar a segmentação turística e a diversificação da oferta da Bahia, estruturando e ampliando novos produtos e experiências nos diferentes segmentos turísticos, a exemplo do turismo religioso, turismo em unidades de\nconservação e trilhas de longo curso, esportes, aventura, gastronomia, vaquejada, entre outros.\n Fortalecer a segurança pública para o turismo, ampliando o atendimento especializado ao turista em áreas de hotéis, pousadas e demais empreendimentos turísticos, com reforço do policiamento e integração com o setor.\n\n50"
+          },
+          {
+            "id": "51",
+            "titulo": "51",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "51"
+          },
+          {
+            "id": "desenvolvimento-2",
+            "titulo": "DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO\n\nSOCIAL\n52"
+          },
+          {
+            "id": "3-desenvolvimento-social-e",
+            "titulo": "3 DESENVOLVIMENTO SOCIAL E",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "3 DESENVOLVIMENTO SOCIAL E\nGARANTIAS DE DIREITOS\n\nO desenvolvimento social da Bahia é fruto de um projeto que coloca as pessoas\nno centro das decisões e compreende que governar é cuidar: cuidar por meio de\ndireitos, oportunidades, proteção e da presença do Estado onde a população mais\nprecisa. Nos últimos anos, a atuação integrada entre Governo do Estado e Governo\nFederal ampliou investimentos, fortaleceu redes de atendimento e levou políticas\npúblicas aos diferentes territórios, reduzindo desigualdades e ampliando a cidadania.\nNa saúde, esse compromisso se traduz no fortalecimento do Sistema Único de\nSaúde (SUS), tendo a regionalização como estratégia para garantir atendimento de\nqualidade em todas as regiões. Na gestão de Jerônimo Rodrigues, a Bahia ampliou\nem quase 6 mil o número de leitos e entregou 15 novos hospitais, além de maternidades, unidades de oncologia, policlínicas regionais e outros equipamentos especializados. Esse conjunto de investimentos ampliou a oferta de serviços de média e alta\ncomplexidade e descentralizou o acesso à saúde em todo o estado.\nEntre 2023 e 2026, a saúde avançou com 751 mil cirurgias eletivas, mais de 10\nmilhões de atendimentos nas policlínicas regionais e a entrega de 2.050 veículos\npara a rede, incluindo 1.336 ambulâncias. A modernização tecnológica, a saúde digital, o fortalecimento da regulação e a universalização regional do SAMU tornaram\no atendimento mais ágil, eficiente e humanizado. Esse movimento continuará com\na ampliação do cuidado especializado, da reabilitação e da atenção às pessoas com\ndeficiência e ao envelhecimento da população.\nO suporte à atenção primária permanece como a base desse modelo de cuidado, garantindo prevenção, diagnóstico precoce e acompanhamento contínuo.\nA parceria entre o Governo da Bahia e o Governo Federal inaugurou um novo ciclo de\n\n53"
+          },
+          {
+            "id": "investimentos-na-saude-publica-a-implantacao-em-camacari-da-primeira-pol",
+            "titulo": "investimentos na saúde pública. A implantação, em Camaçari, da primeira Policlínica",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "investimentos na saúde pública. A implantação, em Camaçari, da primeira Policlínica\ndo Novo PAC Saúde do país simboliza esse novo momento ao ampliar o atendimento especializado, especialmente para crianças, pessoas em processo de reabilitação,\npacientes com feridas complexas e vítimas de violência, fortalecendo uma rede de\ncuidado integral, regionalizada e humanizada.\nTambém avançam as políticas de saúde mental e de atenção às populações em\nsituação de maior vulnerabilidade. O Corra pro Abraço, baseado no acolhimento, na\nredução de danos e na garantia de direitos, beneficiou 88.136 pessoas desde sua\nimplantação, em 2013, até março de 2026. A continuidade dessas ações fortalecerá\no cuidado em liberdade, consolidando uma política pública comprometida com a\ndignidade e o cuidado.\nNa educação, a escola pública é entendida como espaço de formação, cidadania\ne transformação. Os avanços na aprendizagem já apresentam resultados concretos:\na Bahia foi o estado que mais avançou em alfabetização no Brasil, passando de 36%\npara 55% o percentual de crianças alfabetizadas na idade certa em apenas um ano.\nEsse resultado se soma aos avanços registrados no IDEB e reflete investimentos\ncontínuos na aprendizagem, na infraestrutura e na valorização da rede estadual. Em\n2025, a rede contabilizou cerca de 700 mil matrículas ativas em 1.725 unidades escolares. A expansão da alimentação escolar e da educação em tempo integral, com 770\nescolas entregues, além de programas voltados à ciência, inovação, esporte, cultura\ne educação ambiental, amplia as oportunidades para crianças, adolescentes e jovens.\nProgramas como Mais Futuro, Partiu Estágio e Primeiro Emprego aproximam a\neducação do mundo do trabalho. Já a Educação Profissional e Tecnológica ofertou,\nem 2025, 200 mil vagas em todos os municípios, com matrículas em 573 unidades\nde ensino e 124.743 estudantes distribuídos em 48 cursos técnicos, consolidando a\nBahia como o segundo estado do país em matrículas presenciais nessa modalidade.\nA assistência social segue como uma das principais redes de proteção às famílias.\nO fortalecimento do SUAS, com a expansão dos CRAS e CREAS, amplia o acolhimento em todo o estado. Integradas ao Bahia Sem Fome e às políticas de segurança ali-\n\n54"
+          },
+          {
+            "id": "mentar-essas-acoes-enfrentam-a-pobreza-fortalecem-a-agricultura-familiar",
+            "titulo": "mentar, essas ações enfrentam a pobreza, fortalecem a agricultura familiar, ampliam",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "mentar, essas ações enfrentam a pobreza, fortalecem a agricultura familiar, ampliam\na geração de renda e reafirmam o compromisso de que ninguém fique para trás.\nOs resultados aparecem nos indicadores. Segundo a PNAD Contínua/IBGE,\ncompilada pelo Instituto Jones dos Santos Neves (IJSN), a Bahia registrou, em 2024,\no menor percentual de pessoas em extrema pobreza da série histórica, com 5,8%.\nEntre 2023 e 2025, a insegurança alimentar grave caiu 58%, passando de 12,9%\npara 5,4%, resultado de ações como assistência alimentar, cozinhas comunitárias e\nsolidárias, Programa Bolsa Presença, aquisição de alimentos da agricultura familiar e\niniciativas de inclusão produtiva. Esse conjunto de políticas também contribuiu para\na saída do Brasil do Mapa da Fome da ONU, resultado da atuação articulada entre\nUnião, estados e municípios.\nA promoção dos direitos segue como compromisso permanente do Estado. Políticas voltadas à igualdade racial, às mulheres, às juventudes, à população LGBTQIAPN+, às pessoas com deficiência, aos povos indígenas, às comunidades quilombolas e aos povos tradicionais enfrentam desigualdades históricas e fortalecem uma\nBahia mais inclusiva, democrática e diversa.\nA inclusão digital, por meio do Conecta Bahia, amplia o acesso gratuito à internet em\nespaços públicos e aproxima estudantes, trabalhadores e comunidades das oportunidades da economia digital, colocando a tecnologia cada vez mais a serviço das pessoas.\nNa cultura, os investimentos das leis Paulo Gustavo e Aldir Blanc ampliaram o\napoio a artistas, coletivos e manifestações culturais em todos os Territórios de Identidade. A recuperação de equipamentos como o Teatro Castro Alves fortalece a economia criativa e preserva a identidade baiana. Ao mesmo tempo, as escolas de tempo\nintegral, dotadas de teatros e espaços culturais, ampliam as oportunidades para que\ndiferentes manifestações artísticas circulem pelo interior e façam parte da formação\nde crianças e jovens. O esporte e o lazer completam essa estratégia como instrumentos de inclusão, convivência e desenvolvimento das juventudes.\nNa habitação e na infraestrutura social, a parceria entre Estado e União amplia\nações de moradia digna, regularização fundiária, urbanização, saneamento e redução do déficit habitacional por meio de iniciativas como o Minha Casa, Minha Vida.\n\n55"
+          },
+          {
+            "id": "pagina-56",
+            "titulo": "Página 56",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "Também avançam obras de contenção de encostas, drenagem e prevenção de riscos, protegendo vidas diante das mudanças climáticas.\nA segurança hídrica permanece como prioridade, com investimentos em abastecimento, barragens, adutoras e políticas de convivência com o Semiárido. Segundo\na PNAD/IBGE, os domicílios atendidos pela rede geral de água passaram de 77,5%,\nem 2006, para 86,1%, em 2024. Nas áreas urbanas, a cobertura alcançou 96,3%; nas\nrurais, passou de 34,5% para 51,2%, ampliando em 16,7 pontos percentuais o atendimento à população do campo.\nNos últimos 20 anos, a Bahia executou 24.425,36 quilômetros de intervenções\nna rede estadual de rodovias, sendo 12.640,86 quilômetros de restauração, 8.223,83\nquilômetros de pavimentação e 3.560,67 quilômetros de recuperação. Entre 2023 e\n2026, foram realizados 8.100 quilômetros de intervenções, aproximando territórios,\nfacilitando deslocamentos e ampliando o acesso da população aos serviços públicos.\nNa segurança pública, a modernização das forças de segurança, o uso de tecnologia, a inteligência policial e a valorização dos profissionais ampliaram a capacidade de resposta do Estado. Na gestão de Jerônimo Rodrigues, foram contratados\nmais de 11 mil policiais, peritos e bombeiros, elevando em cerca de 30% o efetivo\nem relação a 20 anos atrás. Também foram inauguradas 273 delegacias e batalhões\ne incorporados 6.600 veículos, 20 mil coletes à prova de bala, novos helicópteros\ne 250 drones, fortalecendo a estrutura das forças de segurança em toda a Bahia.\nOs resultados também aparecem na redução da violência letal: as mortes violentas\ncaíram 13% em 2025 e mais de 20% no primeiro semestre de 2026, chegando a\nquase 30% de redução em Salvador.\nA democracia participativa segue como uma marca da gestão pública baiana.\nO PPA Participativo, o Programa de Governo Participativo (PGP), as conferências, os\nconselhos e outros espaços de diálogo aproximam o Estado dos Territórios de Identidade e fortalecem a construção coletiva das políticas públicas.\nOs avanços demonstram que o desenvolvimento social depende de planejamento, capacidade de investimento, participação popular e cooperação entre os entes federativos. Os desafios dos próximos anos passam por ampliar esse cuidado,\n\n56"
+          },
+          {
+            "id": "fortalecer-politicas-publicas-cada-vez-mais-integradas-e-inovadoras-e-ga",
+            "titulo": "fortalecer políticas públicas cada vez mais integradas e inovadoras e garantir que",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "fortalecer políticas públicas cada vez mais integradas e inovadoras e garantir que\nseus resultados continuem chegando a todos os territórios, assegurando mais direitos, oportunidades e qualidade de vida para a população baiana.\n\n3.1 SAÚDE\nRegionalização, Regulação e Gestão do SUS\n Instituir um novo modelo de regionalização da saúde na Bahia, com a revisão\ndo Plano Diretor de Regionalização, com redefinição das regiões e macrorregiões de saúde a partir dos fluxos atuais dos usuários, da capacidade instalada, dos tempos de deslocamento e dos vazios assistenciais, em diálogo com\nos Territórios de Identidade.\n Fortalecer o sistema estadual de Regulação, com ênfase na regionalização a\npartir do mapeamento da oferta hospitalar e ambulatorial, apoiando municípios com cofinanciamentos para melhoria da atenção primária e de oferta de\nserviços de parto e nascimento, além da parceria para construção de unidades de saúde.\n\nRede Estadual de Saúde Digital e Telessaúde\n Implantar o Programa Saúde na Palma das Mãos como a principal estratégia\nde transformação digital do SUS no Estado, colocando os serviços de saúde\nao alcance do cidadão por meio de uma plataforma digital integrada, incluindo informações sobre a regulação ambulatorial e de urgência e emergência.\n Implantar a Policlínica Digital Bahia, com ampliação da oferta de teleconsultas à atenção especializada em serviços prioritários.\n Ampliar as ofertas de telessaúde, com tele interconsulta nas unidades básicas\nde saúde, hospitais, unidades de emergência e policlínicas.\n\n57"
+          },
+          {
+            "id": "pagina-58",
+            "titulo": "Página 58",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": " Implantar o telemonitoramento de pacientes com doenças crônicas, gestantes de alto risco, pacientes oncológicos e pessoas em cuidados pós-alta hospitalar.\n\nAtenção Primária\n Consolidar a Atenção Primária à Saúde como ordenadora da rede e coordenadora do cuidado, com expansão da rede, construindo, em cooperação com\no governo federal e municípios, 450 novas UBS, sendo 39 UBS Indígenas,\nfortalecendo a estratégia de Saúde da Família, incentivando a ampliação da\ncobertura populacional dos agentes comunitários de saúde (ACS) para atendimento para quilombos e população rural.\n\nAtenção Especializada, Urgência e Alta Complexidade\nAmbulatorial\n Expandir as Policlínicas Regionais de Saúde com a implantação de seis novas\nunidades (Remanso, Seabra, Ipirá, Itapetinga, Barra e Ibotirama) e fortalecendo a regionalização, aproximando os serviços especializados da população.\n\nHospitalar\n Implantar 5 novos hospitais e maternidades estaduais (Jacobina, Itapetinga,\nValença, Amargosa e Serrinha) e federal (Paulo Afonso) e incentivar a expansão da rede municipal em parceria com os municípios, governo federal e instituições filantrópicas nos territórios da Bahia.\n Ampliar ofertas de atendimento hospitalar nos territórios do Recôncavo e Bacia do Paramirim, com serviços de média e alta complexidade.\n Expandir, qualificar e reformar unidades hospitalares de abrangência regional\ne macrorregional: Hospital Geral do Estado, Hospital Clériston Andrade, Hos-\n\n58"
+          },
+          {
+            "id": "pital-de-base-de-vitoria-da-conquista-hospital-regional-de-santo-antonio",
+            "titulo": "pital de Base de Vitória da Conquista, Hospital Regional de Santo Antônio de",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "pital de Base de Vitória da Conquista, Hospital Regional de Santo Antônio de\nJesus, Hospital do Oeste e Hospital Regional de Guanambi.\n Apoiar a gestão municipal na implantação e manutenção de hospitais, maternidades, unidades de pronto atendimento e serviços de estabilização.\n Implantar o Serviço Estadual de Cirurgia Robótica no Hospital Geral Roberto\nSantos, consolidando a unidade como centro de referência estadual para procedimentos cirúrgicos de alta complexidade em cooperação com o Governo\nFederal.\n Implantar a linha de cuidado de urologia de alta complexidade, com incorporação de tecnologias minimamente invasivas, ampliando o acesso ao tratamento de doenças urológicas.\n Expandir e fortalecer a Hemorrede Pública de forma regionalizada, ampliando\na cobertura e a capacidade instalada dos serviços de hematologia e hemoterapia e garantindo acesso oportuno, seguro e equitativo a sangue, hemocomponentes e hemoderivados, com a construção de 2 hemocentros regionais\n(Irecê e Ilhéus).\n\nRede de Cuidados à Pessoa com Deficiência\n Expandir a atenção especializada em reabilitação, com a aquisição de equipamentos e construção de 20 novos Centros Especializados em Reabilitação (CER) e ampliação do acesso às Órteses, Próteses e Materiais Especiais\n(OPME) em regiões estratégicas da Bahia.\n Implantar o Centro de Referência Estadual de cuidado às pessoas com deficiência em Salvador, para expandir o acesso aos serviços mais especializados,\ncom novas tecnologias e parcerias com universidades e instituições de pesquisa.\n Implantar Serviços Regionais de Reabilitação no âmbito das Policlínicas Regionais, ampliando o acesso à atenção integral às pessoas com demandas de\nreabilitação, de forma integrada à Rede de atenção.\n\n59"
+          },
+          {
+            "id": "implementar-as-diretrizes-de-cuidado-para-a-populacao-com-transtorno-do",
+            "titulo": " Implementar as diretrizes de cuidado para a população com Transtorno do",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": " Implementar as diretrizes de cuidado para a população com Transtorno do\nEspectro Autista, considerando as especificidades a serem atendidas em\ncada nível de atenção e serviço, estruturando diretrizes, protocolos e guias de\norientação para o cuidado às pessoas com deficiência e com TEA para além\nda reabilitação, em todos os serviços da rede.\n Fortalecer a rede de serviços domiciliares, em cooperação com os municípios\ne governo federal, que atendam idosos e pessoas com deficiências com equipes multiprofissionais.\n\nRede de Atenção Psicossocial\n Expandir a rede de saúde mental com a construção de 38 novos Centros de\nAtenção Psicossocial e 4 Unidades de Acolhimento, em cooperação com os\nmunicípios.\n Apoiar a ampliação dos Serviços de Residência Terapêutica em cidades estratégicas.\n Ampliar a oferta de leitos de saúde mental em hospitais gerais nas nove macrorregiões de saúde, fortalecendo o cuidado em liberdade.\n Fortalecer a rede de atenção à saúde qualificando os profissionais da Rede de\nUrgência e Emergência para o manejo das crises em saúde mental..\n\nCondições Crônicas e Oncologia\n Ampliar a capacidade diagnóstica em oncologia, com a implantação do serviço de cintilografia no CICAN, a expansão regionalizada da medicina nuclear e\na implantação de equipamentos PET-CT nas Unidades de Assistência de Alta\nComplexidade em Oncologia (UNACONs) do Hospital Regional de Juazeiro e\ndo Hospital do Oeste, em Barreiras.\n Expandir a Rede Estadual de Hemodinâmica, com a implantação de novos\nserviços em regiões estratégicas garantindo maior cobertura para urgências\n\n60"
+          },
+          {
+            "id": "cardiovasculares-doencas-cerebrovasculares-e-procedimentos-eletivos-de",
+            "titulo": "cardiovasculares, doenças cerebrovasculares e procedimentos eletivos de",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "cardiovasculares, doenças cerebrovasculares e procedimentos eletivos de\nalta complexidade.\n Implantar rede de Hemodiálise Ambulatorial ampliando a oferta pública\nde terapia renal substitutiva e reduzindo a dependência da rede privada\ncontratualizada.\n Fortalecer a atenção às doenças vasculares e à prevenção de lesões nos pés\nde pessoas com diabetes, implantando linha de cuidado integrada e regionalizada entre a Atenção Primária, à atenção especializada, os serviços hospitalares e a reabilitação, com foco na prevenção, no diagnóstico precoce, no\ntratamento oportuno e na redução de amputações evitáveis.\n\nSaúde da Mulher, Materna e Infantil\n Implantar ações, em parceria com municípios, governo federal e entidades\nfilantrópicas, para diagnóstico e tratamento clínico e cirúrgico da endometriose em regiões estratégicas da Bahia.\n Qualificar a saúde materno-infantil, ampliando o acesso ao pré-natal e a partos seguros apoiando os municípios e instituições filantrópicas.\n\nVigilância em Saúde, Equidade e Ações Intersetoriais\n Ampliar a cobertura vacinal em todas as regiões de saúde, em cooperação\ncom os municípios e governo federal, para manter a erradicação das doenças.\n Fortalecer a vigilância laboratorial, com a implantação e estruturação de 5\nnovas unidades de forma regionalizada ampliando a capacidade diagnóstica\ndo SUS e reduzindo o tempo de resposta às emergências em saúde pública.\n\n61"
+          },
+          {
+            "id": "assistencia-farmaceutica-e-complexo-industrial-da-saude",
+            "titulo": "Assistência Farmacêutica e Complexo Industrial da Saúde",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "Assistência Farmacêutica e Complexo Industrial da Saúde\n Fortalecer e reestruturar a Bahiafarma como instituição estratégica do Complexo Econômico-Industrial da Saúde, ampliando a produção pública de medicamentos, insumos estratégicos e tecnologias em saúde.\n Expandir oferta de medicamentos do Componente Especializado, em ambientes mais acessíveis, acolhedores, seguros e tecnologicamente estruturados.\n\n3.2 EDUCAÇÃO\nFortalecimento da Educação Básica, Permanência\ne Trajetórias Escolares\n Garantir, em cooperação com os governos federal e municipais, a ampliação\nda infraestrutura com o aumento das vagas em creches e escolas de educação infantil, de tempo integral, priorizando territórios de maior vulnerabilidade social.\n Universalizar, em todas as escolas estaduais, o ensino de tempo integral.\n Ampliar a requalificação da infraestrutura escolar da rede de ensino estadual.\n Instituir o Selo Município Alfabetizador Bahia, apoiando a elaboração dos Planos Municipais de Alfabetização, formação permanente de alfabetizadores,\navaliação e acompanhamento das aprendizagens, estratégias de recomposição e assistência técnica diferenciada aos municípios com maiores desafios.\n Fortalecer a Gestão da Aprendizagem instituída na rede como política permanente, com avaliações periódicas, recomposição contínua das aprendizagens,\natualização dos Cadernos de Recomposição, fortalecimento dos Planos de\nIntervenção Pedagógica e aprimoramento do Sistema de Gestão da Aprendizagem.\n\n62"
+          },
+          {
+            "id": "pagina-63",
+            "titulo": "Página 63",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": " Instituir o Aprender Mais Bahia como uma política permanente de recomposição das aprendizagens na Rede Estadual de Ensino, articulando e fortalecendo programas já existentes, com prioridade para os estudantes que ingressam nos anos finais do Ensino Fundamental e no 1º ano do Ensino Médio.\n Fortalecer políticas públicas destinadas a assegurar o acesso, a permanência,\na aprendizagem e a conclusão da educação básica, garantindo oferta com\nqualidade social, inclusão e equidade.\n Fortalecer a política estadual de alfabetização e elevação da escolaridade, em\nregime de colaboração, contemplando todas as modalidades e diversidades\neducacionais, incluindo a Educação do Campo, a Educação Escolar Quilombola, a Educação Escolar Indígena, a Educação Inclusiva e a Educação de\nJovens e Adultos.\n Expandir a Educação de Jovens e Adultos integrada à Educação Profissional\ne Tecnológica (EJA/EPT), ampliando sua oferta nas unidades escolares da\nrede estadual, nas unidades prisionais e nas Comunidades de Atendimento\nSocioeducativo (CASE), e articulando a formação às potencialidades econômicas, culturais e produtivas dos Territórios de Identidade.\n Fortalecer o Programa Bolsa Presença para os estudantes matriculados na\neducação em tempo integral e instituir mecanismos de participação da comunidade escolar, qualificando o monitoramento da permanência, da aprendizagem e do desempenho estudantil.\n Fortalecer o Atendimento Pedagógico Hospitalar e Domiciliar (APHD) e o\nEnsino por Intermediação Tecnológica (EMITec), ampliando sua cobertura,\nqualificando as equipes pedagógicas e assegurando a continuidade das trajetórias escolares dos estudantes.\n Fortalecer a expansão e a qualificação da oferta do Ensino Médio Integral\ne da Educação Profissional e Tecnológica na Rede Estadual, assegurando a\nprofissionalização como opção formativa para os estudantes e promovendo\nitinerários educacionais articulados com a educação superior e o mundo do\ntrabalho.\n\n63"
+          },
+          {
+            "id": "fortalecer-o-programa-estadual-de-transporte-escolar-adotando-modelo",
+            "titulo": " Fortalecer o Programa Estadual de Transporte Escolar, adotando modelo",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": " Fortalecer o Programa Estadual de Transporte Escolar, adotando modelo\norientado pelos princípios da equidade, inclusão e justiça social, assegurando\ncondições adequadas de acesso, permanência e sucesso escolar para todos\nos estudantes.\n\nEnsino Superior\n Ampliar a oferta de ensino superior com a implantação de novos campi das universidades estaduais e articular com a União a implantação de novas Universidades e Institutos Federais no interior da Bahia.\n Fortalecer programas de iniciação à docência, estágios supervisionados e práticas\nformativas nas escolas públicas, assegurando acompanhamento conjunto entre\nprofessores da Educação Básica e docentes das instituições de Educação Superior.\n Ampliar a cooperação entre universidades, escolas e comunidades para o desenvolvimento de projetos de extensão voltados à alfabetização, cultura, ciência, tecnologia, meio ambiente, direitos humanos, saúde escolar e valorização dos conhecimentos locais.\n\nInclusão, Diversidade e Equidade\n Implantar política estadual transversal de promoção da convivência democrática e da cultura de paz, fortalecendo a mediação de conflitos, a justiça\nrestaurativa, o enfrentamento ao racismo e à LGBTfobia, o combate à violência de gênero, ao bullying, ao cyberbullying e ao capacitismo no ambiente\nescolar.\n Fortalecer o Atendimento Educacional Especializado (AEE), qualificando profissionais e assegurando atendimento compatível com as necessidades das\npessoas com deficiência, com Transtorno do Espectro Autista (TEA) e com\naltas habilidades ou superdotação.\n\n64"
+          },
+          {
+            "id": "educomunicacao",
+            "titulo": "Educomunicação",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "Educomunicação\n Garantir a interiorização da atuação da TVE e da Rádio Educadora FM como\nforma de assegurar aos cidadãos conteúdos produzidos sobre o estado em\nseus diversos territórios.\n Oferecer aos cidadãos informações que combatam notícias falsas (fake news)\natravés de ações na internet, rádio, televisão, escolas e em parceria com instituições da sociedade.\n\n3.3 ASSISTÊNCIA SOCIAL\n Fortalecer o apoio aos municípios e outras estratégias de territorialização do\nSUAS.\n Estimular, em parceria com o governo federal e municípios, a qualificação da\nProteção Social Básica e da Proteção Social Especial, fortalecendo o SUAS\nBahia e alcançando as populações rurais, povos e comunidades tradicionais\ne os territórios mais vulneráveis.\n Desenvolver um pacto pela proteção da Primeira Infância com ações integradas entre o SUAS, o SUS, o SISAN, os Direitos Humanos, a Cultura e a Educação, fortalecendo a proteção integral às gestantes, às crianças de 0 a 6 anos\ne às suas famílias.\n Ampliar o atendimento especializado às famílias e indivíduos em situação de\nviolação de direitos, através do fortalecimento da Proteção Social Especial de\nMédia Complexidade.\n Prover educação permanente para trabalhadores/as, gestores/as e conselheiros/as do SUAS, estabelecendo parcerias para desenvolvimento de formações continuadas com universidades e a realização de estudos com institutos\nde pesquisas.\n\n65"
+          },
+          {
+            "id": "pagina-66",
+            "titulo": "Página 66",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": " Qualificar a gestão da informação e do conhecimento no SUAS da Bahia, incorporando inovação, conectividade, inteligência artificial, automação e serviços digitais, aprimorando o atendimento à população e o apoio à gestão\nmunicipal.\n\n3.4 ESPORTES\n Fortalecer as ações de incentivo ao esporte utilizando a infraestrutura esportiva existente nas escolas estaduais.\n Apoiar a estruturação das associações e os consórcios municipais na execução de políticas públicas de esporte.\n Apoiar a organização de um eventos de competições esportivas e paradesportivas em diferentes cidades do estado, movimentando a economia local e\ndando visibilidade a atletas.\n Apoiar as federações esportivas para criação de polos de treinamento em\nregiões estratégicas do estado, conectando a base (escolas e associações) ao\nalto rendimento.\n\n3.5 SEGURANÇA ALIMENTAR E NUTRICIONAL E\nENFRENTAMENTO À FOME E À POBREZA\n Fortalecer e consolidar o Sistema Estadual de Segurança Alimentar e Nutricional (SISAN), estimulando a adesão dos municípios ainda não integrados e\noferecendo apoio institucional para que os municípios já aderidos cumpram\nsuas prerrogativas e permaneçam no sistema.\n Ampliar oferta de assistência alimentar, em parceria com municípios e instituições, com o fortalecimento das Cozinhas Comunitárias, Solidárias e Municipais, Bancos de Alimentos, Bancos de Sementes Crioulas, Hortas Urbanas e\n\n66"
+          },
+          {
+            "id": "periurbanas-quintais-produtivos-padarias-comunitarias-tecnologias-sociai",
+            "titulo": "Periurbanas, Quintais Produtivos, Padarias Comunitárias, Tecnologias Sociais",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "Periurbanas, Quintais Produtivos, Padarias Comunitárias, Tecnologias Sociais\nde Acesso a água, Feiras Locais e Territoriais e Unidades de Reaproveitamento de Alimentos.\n\n3.6 CULTURA\nAcesso, Formação e Programas Estruturantes\n Implantar o Programa Cultura para Todos, ampliando o acesso à cultura por\nmeio de ações integradas de formação de público, mediação cultural e valorização das políticas identitárias, fortalecimento de bibliotecas, museus, espaços culturais e iniciativas comunitárias em todos os territórios.\n Fortalecer os instrumentos de fomento às entidades apoiadas pelo Programa\nOuro Negro, ampliando a segurança jurídica e a promoção das manifestações afro-brasileiras como patrimônio, identidade e vetor de desenvolvimento, com ações para o Carnaval e iniciativas permanentes ao longo do ano.\n Fortalecer e institucionalizar o Infracultura Bahia, promovendo a requalificação, modernização, acessibilidade, restauro e segurança dos equipamentos\nculturais públicos estaduais, incluindo teatros, museus, bibliotecas, centros de\ncultura, cinemas, arquivos, centros de memória e demais espaços culturais.\n Consolidar a Bahia Filmes como empresa pública do audiovisual, promovendo os territórios da Bahia como destino de produções audiovisuais internacionais, como filmes, séries e conteúdo para plataformas de streaming, com\narticulação de incentivos, infraestrutura de apoio e facilitação de licenciamento para atrair filmagens estrangeiras e gerar renda, emprego e visibilidade internacional para o Estado, além da valorização de toda cadeia do audiovisual\ndesenvolvido nos territórios.\n\n67"
+          },
+          {
+            "id": "politicas-estaduais-e-setoriais-de-cultura",
+            "titulo": "Políticas Estaduais e Setoriais de Cultura",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "Políticas Estaduais e Setoriais de Cultura\n Instituir a Política Estadual de Economia Criativa como estratégia permanente de desenvolvimento territorial, com foco na governança colaborativa, inteligência de dados e fortalecimento dos ecossistemas culturais e criativos,\npromovendo inovação, empreendedorismo, formação, produção, circulação,\nconsumo cultural e geração de trabalho e renda.\n Institucionalizar o Programa Estadual de Promoção das Culturas Populares,\ncom o objetivo de fortalecer, proteger, valorizar e difundir a diversidade das\nmanifestações culturais populares da Bahia, por meio de editais, premiações,\nconvênios e demais instrumentos voltados à pesquisa, publicações, produções\naudiovisuais, formação, intercâmbio, circulação e realização de encontros.\n Ampliar o fomento a Bandas Marciais e Fanfarras, incluindo a atualização do\ncadastro estadual, apoio à aquisição de instrumentos, transporte e alimentação dos integrantes.\n\n3.7 SEGURANÇA PÚBLICA E PREVENÇÃO À VIOLÊNCIA\nPrevenção, Proteção e Enfrentamento à Criminalidade\n Fortalecer e ampliar as ações do Programa Bahia pela Paz, articulando e integrando ações policiais com ações de garantia de direitos e cidadania, ampliando a atuação dos Coletivos Bahia pela Paz.\n Ampliar as políticas de proteção aos grupos vulnerabilizados, com aperfeiçoamento do atendimento e fortalecimento das unidades especializadas.\n Fortalecer as atividades de Polícia Judiciária e Criminalista, ampliando a resolutividade dos inquéritos policiais e o Policiamento Ostensivo, com foco nas\náreas críticas, visando à redução das Mortes Violentas Intencionais (MVI).\n\n68"
+          },
+          {
+            "id": "intensificar-o-enfrentamento-as-organizacoes-criminosas-por-meio-de-acoe",
+            "titulo": " Intensificar o enfrentamento às organizações criminosas por meio de ações",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": " Intensificar o enfrentamento às organizações criminosas por meio de ações\nintegradas das forças estaduais e da cooperação com a União, com foco na\ninvestigação patrimonial, na recuperação de ativos e no combate à lavagem\nde dinheiro e aos mercados ilícitos, em especial os decorrentes dos crimes de\ntráfico de drogas e de armas.\n\nInteligência, Tecnologia e Inovação\n Consolidar o Policiamento Orientado pela Inteligência como estratégia de\nplanejamento, execução e avaliação das ações de segurança pública, implantando uma Plataforma Estadual Integrada de Dados e Inteligência que qualifique a presença policial, amplie a coordenação entre as instituições, acelere\ndecisões e aumente a efetividade das ações.\n Ampliar o uso de tecnologias aplicadas à Segurança Pública e à Defesa Civil,\nexpandindo as câmeras corporais, o videomonitoramento inteligente, o reconhecimento facial, a leitura automática de placas e a integração de câmeras\npúblicas e privadas, de modo a ampliar a capacidade de prevenção, investigação e resposta do Estado, assegurando o respeito à legalidade e a proteção\ndos profissionais.\n Ampliar a assistência jurídica às pessoas privadas de liberdade, articulada a\nprogramas de educação e qualificação profissional.\n\nGestão, Estrutura e Valorização Profissional\n Ampliar o Programa de Melhoria da Rede Física, com construção, reforma e\nmodernização de unidades da Segurança Pública, melhorando as condições\nde trabalho e o atendimento à população.\n Consolidar a Escola de Governo da Segurança Pública como espaço permanente de capacitação, aperfeiçoamento, pesquisa, inovação e produção de\nconhecimento.\n\n69"
+          },
+          {
+            "id": "fortalecer-o-servico-de-acolhimento-e-atendimento-biopsicossocial-para-o",
+            "titulo": " Fortalecer o serviço de acolhimento e atendimento biopsicossocial para os",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": " Fortalecer o serviço de acolhimento e atendimento biopsicossocial para os\nprofissionais da Segurança Pública, fortalecendo os programas de saúde física e mental, qualidade de vida e valorização profissional.\n Ampliar e qualificar o sistema penitenciário, reduzindo o déficit de vagas, humanizando o acolhimento às famílias e fortalecendo as políticas de ressocialização e de atenção aos egressos.\n Fortalecer a cooperação entre o Estado e os municípios no âmbito do Sistema\nÚnico de Segurança Pública (SUSP), ampliando o compartilhamento técnico\nde informações e vídeo monitoramento, o planejamento integrado.\n Apoiar os municípios nas ações de segurança pública, com foco na iluminação\npública, na prevenção social da violência, no ordenamento urbano e na atuação das Guardas Municipais.\n Fortalecer a execução do plano de atuação qualificada de agentes do estado\n(PQuali) e as corregedorias de polícia.\n\n3.8 HABITAÇÃO\n Expandir, em parceria com o governo federal, o Minha Casa Minha Vida\n(MCMV) com transparência na seleção e agilidade na entrega das unidades.\n Ampliar a habitação rural e para comunidades originárias e tradicionais, fortalecendo o MCMV Rural e Entidade e viabilizando os convênios de habitação\n\n3.9 CIDADANIA E DIREITOS HUMANOS\n Ampliar o acesso à documentação e aos serviços de cidadania por meio de\nunidades itinerantes do SAC e do Balcão Gov.br.\n Incentivar a população baiana a emitir a Carteira de Identidade Nacional\n(CIN), por meio da ampliação dos pontos de atendimento, ações itinerantes\n\n70"
+          },
+          {
+            "id": "e-campanhas-de-mobilizacao-facilitando-o-acesso-a-documentacao-e-aos-ser",
+            "titulo": "e campanhas de mobilização, facilitando o acesso à documentação e aos serviços públicos.",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "e campanhas de mobilização, facilitando o acesso à documentação e aos serviços públicos.\n Consolidar e qualificar o fluxo estadual de atendimento às pessoas resgatadas\ndo trabalho análogo ao escravo, qualificando a resposta entre o resgate e o\nacolhimento, incluindo as ações de assistência social, saúde, educação, documentação civil e qualificação profissional, acompanhamento das trajetórias\napós o resgate, bem como a atuação preventiva nas cadeias produtivas de\nmaior incidência no Estado.\n\n3.10 POPULAÇÃO LGBTQIAPN+\n Fortalecer o CPDD, garantindo a continuidade dos serviços, a regionalização\ndo atendimento, a ampliação das equipes multiprofissionais e a articulação\ncom as redes de proteção, saúde e assistência social.\n Fortalecer a política estadual de enfrentamento à violência contra a população LGBTQIAPN+, ampliando a integração entre segurança pública, justiça\ne assistência social, com protocolo unificado de atendimento, capacitação\npermanente das forças de segurança, fortalecimento da investigação dos\ncrimes em delegacias especializadas e ampliação da rede de proteção.\n\n3.11 CRIANÇA E ADOLESCENTE\nPrevenção e Enfrentamento às Violências\n Ampliar a proteção e prevenção às violências contra crianças e adolescentes\ncom base nos dados dos canais de denúncia (Ouvidorias e Disque 100).\n Fortalecer a rede de proteção às crianças e aos adolescentes vítimas ou testemunhas de violência, qualificando os serviços ofertados pelo Centro Estadual\nde Atendimento Integrado (Proteja).\n\n71"
+          },
+          {
+            "id": "fortalecer-o-servico-realizado-pelas-delegacias-especializadas-dercas-e",
+            "titulo": " Fortalecer o serviço realizado pelas Delegacias Especializadas (DERCAS e",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": " Fortalecer o serviço realizado pelas Delegacias Especializadas (DERCAS e\nDAIs), Varas da Infância e da Juventude, Varas de Crimes contra Crianças\ne Adolescentes e Núcleos da Defensoria Pública nos municípios com maior\nincidência de violência.\n Estabelecer ações de prevenção contra as violências praticadas contra crianças\ne adolescentes no ambiente virtual, com base nos parâmetros do ECA Digital.\n\nSistema Socioeducativo, Convivência e Inclusão\n Fortalecer atendimento socioeducativo, ampliando a regionalização da oferta\ne garantindo maior proximidade do atendimento aos adolescentes em cumprimento de medidas socioeducativas.\n Ampliar a oferta de atendimento integrado a adolescentes em conflito com a\nlei, fortalecendo a articulação intersetorial e garantindo maior acesso e cobertura da rede de atendimento.\n Criar programa de oferta de oportunidades e de restabelecimento de vínculos sociais, comunitários e familiares para os adolescentes e jovens que encerram o cumprimento das medidas do sistema socioeducativo.\n\n3.12 POPULAÇÃO IDOSA\n Apoiar os municípios no fortalecimento das Instituições de Longa Permanência para Idosos (ILPIs) públicas e filantrópicas.\n Apoiar a estruturação de unidades de acolhimento dia e serviços de convivência para pessoas idosas e pessoas com deficiência, integrando atendimento interdisciplinar e o suporte às famílias.\n Realizar mutirões de acesso ao BPC e demais benefícios, incluindo campanhas de prevenção a golpes financeiros.\n\n72"
+          },
+          {
+            "id": "pagina-73",
+            "titulo": "Página 73",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": " Ampliar e qualificar a atenção especializada regionalizada, por meio do Telessaúde, à saúde da pessoa idosa, fortalecendo o Centro de Referência Estadual de Atenção à Saúde do Idoso (CREASI).\n Fortalecer a educação permanente dos profissionais da rede de cuidados\nsobre envelhecimento, demências, funcionalidade e cuidado integral..\n\n3.13 INDÍGENAS, POVOS E COMUNIDADES TRADICIONAIS\nPovos Indígenas\n Qualificar o atendimento de saúde aos povos indígenas, incluindo a construção e entrega de 39 Unidades Básicas de Saúde Indígena (UBSI) adaptadas\nde acordo com as respectivas etnias.\n Ampliar a proteção dos territórios e das comunidades indígenas, fortalecendo,\nde forma articulada entre segurança pública, justiça e direitos humanos, os\nmecanismos de proteção às lideranças ameaçadas.\n\nComunidades de Fundo e Fecho de Pasto\n Ampliar a regularização fundiária coletiva dos territórios de fundo e fecho de\npasto incidentes em terras devolutas estaduais, fortalecendo os instrumentos\nde concessão de uso coletivo.\n\nQuilombolas\n Promover a regularização ambiental das comunidades quilombolas (CEFIR),\ncom reconhecimento das formas coletivas de posse e uso da terra, apoio técnico às associações comunitárias e articulação com as instituições financeiras\npara redução dos entraves que hoje limitam o acesso ao crédito.\n\n73"
+          },
+          {
+            "id": "povos-e-comunidades-tradicionais",
+            "titulo": "Povos e Comunidades Tradicionais",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "pdftotext",
+            "conteudo": "Povos e Comunidades Tradicionais\n Assegurar aos pescadores e pescadoras artesanais e às marisqueiras o acesso\nao Registro Geral da Atividade Pesqueira e ao seguro-defeso, com apoio à\ndocumentação e ao reconhecimento profissional.\n Fortalecer a infraestrutura de produção, beneficiamento e comercialização\ncom certificação sanitária e de origem dos produtos dos PCTs, ampliando a\ninserção qualificada destes produtos nos mercados institucionais e privados.\n Aprimorar o acesso, aos povos ciganos e itinerantes, à documentação civil, à\nsaúde, à educação e aos benefícios socioassistenciais, incluindo áreas de pouso, acampamento e enfrentamento à discriminação institucional.\n\n3.14 CUIDADO E REDUÇÃO DE DANOS\nPolítica Estadual, Governança e Produção de Conhecimento\n Criar a Política Estadual de Cuidado e Redução de Danos, estabelecendo diretrizes, serviços e responsabilidades para a atenção às pessoas que usam\nálcool e outras drogas.\n Assegurar, na Política Estadual de Cuidado e Redução de Danos, uma linha\nespecífica voltada às mulheres em situação de vulnerabilidade e uso problemático de substâncias, que considere a perspectiva de gênero, a maternidade\ne a prevenção à violência doméstica e sexual.\n\nRede de Cuidado, Equipamentos e Ações Territoriais\n Ampliar a atuação do Programa Corra pro Abraço nos municípios baianos,\nfortalecendo as ações de cuidado, inclusão social, redução de danos e garantia de direitos.\n\n74"
+          },
+          {
+            "id": "pagina-75",
+            "titulo": "Página 75",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "pdftotext",
+            "conteudo": " Implantar Unidades Móveis de Cuidado e Redução de Danos no estado, ampliando o alcance da atenção às populações e territórios de difícil acesso.\n Fortalecer e expandir as tecnologias e ações de cuidado e redução de danos\nem festas populares.\n Desenvolver ações de prevenção, cuidado e redução de danos nas escolas da\nrede estadual de ensino.\n\n3.15 POPULAÇÃO EM SITUAÇÃO DE RUA\n Promover a inclusão produtiva e qualificação profissional, intermediação\nde mão de obra, economia solidária, empreendedorismo, cooperativismo\ne incentivos à contratação, articulada com as políticas de assistência social,\ndesenvolvimento econômico e trabalho.\n Realizar ações de qualificação dos profissionais das maternidades para aprimorar o atendimento a gestantes e puérperas em situação de rua.\n Implementar, em parceria com os municípios, novas tecnologias sociais de\nacesso à água potável, banhos, sanitários e insumos de higiene pessoal,\npromovendo saúde, dignidade humana e prevenção de doenças.\n Fortalecer o enfrentamento à violência contra a população em situação de\nrua, através de campanhas e monitoramento de denúncias, articulados com\na Defensoria Pública da Bahia (DPE), o Ministério Público, o Poder Judiciário\ne órgãos de controle.\n\n3.16 DIREITOS DOS ANIMAIS\n Apoiar ações municipais de proteção e bem-estar animal, fortalecendo e ampliando iniciativas de castração, vacinação, identificação e adoção responsável.\n\n75"
+          },
+          {
+            "id": "governanca",
+            "titulo": "GOVERNANÇA",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNANÇA\nDEMOCRÁTICA\n76"
+          },
+          {
+            "id": "4-governanca-democratica",
+            "titulo": "4 GOVERNANÇA DEMOCRÁTICA,",
+            "nivel": 1,
+            "paginaInicial": 77,
+            "paginaFinal": 77,
+            "origem": "pdftotext",
+            "conteudo": "4 GOVERNANÇA DEMOCRÁTICA,\n\nCOM INTEGRAÇÃO E EFETIVIDADE\nDAS POLÍTICAS PÚBLICAS\n\nConstruir uma Bahia mais justa, desenvolvida e integrada exige planejamento,\ncapacidade de gestão e compromisso permanente com as pessoas e os territórios.\nÉ essa visão que orienta a atuação do Estado, articulando investimentos, inovação,\nparticipação social e cooperação federativa para ampliar oportunidades em todas as\nregiões. Mais do que executar programas e obras, trata-se de consolidar um modelo\nde desenvolvimento que reduza desigualdades, amplie direitos e faça com que os\nbenefícios do crescimento cheguem a toda a população. A Bahia mudou ao fortalecer o diálogo entre governo e sociedade, valorizando os territórios e reafirmando\nque governar é construir soluções de forma coletiva.\nEssa trajetória tem como base o planejamento de longo prazo, a modernização\nda gestão pública e a presença cada vez mais efetiva do Estado em todo o território\nbaiano. O fortalecimento da capacidade institucional, aliado ao equilíbrio fiscal e à\nboa gestão dos recursos públicos, amplia a capacidade de investimento, garante a\nexecução de obras estruturantes, melhora os serviços públicos e cria condições para\nenfrentar os desafios do presente e do futuro.\nA organização das políticas públicas a partir dos Territórios de Identidade continua sendo um diferencial da Bahia. Esse modelo permite reconhecer as características de cada região, orientar investimentos de forma mais equilibrada e fortalecer a\ninteriorização de ações nas áreas de saúde, educação, ciência, cultura, infraestrutura,\nmobilidade e conectividade, valorizando também a convivência com o Semiárido e\nas potencialidades locais.\n\n77"
+          },
+          {
+            "id": "a-cooperacao-entre-o-governo-da-bahia-os-municipios-e-o-governo-federal",
+            "titulo": "A cooperação entre o Governo da Bahia, os municípios e o Governo Federal tem",
+            "nivel": 1,
+            "paginaInicial": 78,
+            "paginaFinal": 78,
+            "origem": "pdftotext",
+            "conteudo": "A cooperação entre o Governo da Bahia, os municípios e o Governo Federal tem\nampliado a capacidade de investimento e fortalecido instrumentos como os consórcios\npúblicos interfederativos, que contribuíram para regionalizar serviços especializados de\nsaúde e ampliar a execução de políticas estruturantes. O aprofundamento dessa cooperação seguirá sendo essencial para enfrentar os desafios do desenvolvimento estadual.\nA transformação digital também vem qualificando a gestão pública. A integração\nde sistemas, a modernização dos processos administrativos e o uso de tecnologias\ne inteligência de dados tornam os serviços mais acessíveis, ágeis e transparentes. O\ndesafio agora é acelerar essa agenda, utilizando a inovação como instrumento de\neficiência, inclusão e melhoria da qualidade dos serviços públicos.\nValorizar as servidoras e os servidores públicos permanece como condição para\nfortalecer a capacidade de governo. Concursos públicos, formação continuada, modernização das carreiras e valorização profissional qualificam a administração pública\ne ampliam a capacidade de formular, executar e aperfeiçoar políticas públicas.\nA ciência, a tecnologia e a inovação também ocupam papel estratégico nesse\nprocesso. O fortalecimento das universidades, instituições de pesquisa e parcerias\nvoltadas à produção do conhecimento impulsiona a inovação, qualifica a tomada de\ndecisões e contribui para um desenvolvimento mais sustentável e competitivo.\nEsse projeto se sustenta, sobretudo, na participação social. O Programa de Governo Participativo (PGP), o PPA Participativo, as conferências, os conselhos e outros\nespaços de diálogo aproximam o Estado da população e fortalecem a construção\ncoletiva das políticas públicas, incorporando as contribuições dos Territórios de Identidade e reafirmando o compromisso com a igualdade racial, a equidade de gênero,\na valorização das juventudes, dos povos indígenas, das comunidades quilombolas,\ndos povos tradicionais e da diversidade que caracteriza a Bahia.\nOs resultados mostram que a Bahia avançou porque escolheu fortalecer a democracia, o planejamento e a cooperação como instrumentos de transformação. O próximo\npasso é aprofundar esse caminho, consolidando uma gestão cada vez mais inovadora,\ntransparente e eficiente, capaz de transformar crescimento em mais direitos, oportunidades, qualidade de vida e desenvolvimento para todos os territórios do estado.\n\n78"
+          },
+          {
+            "id": "4-1-territorialidade-e-desenvolvimento",
+            "titulo": "4.1 TERRITORIALIDADE E DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 79,
+            "paginaFinal": 79,
+            "origem": "pdftotext",
+            "conteudo": "4.1 TERRITORIALIDADE E DESENVOLVIMENTO\n Aprimorar a gestão estratégica com foco nos instrumentos de planejamento\ngovernamental, integrando as dimensões sistêmica, setorial e territorial de\ngovernança, com fortalecimento do monitoramento e da avaliação, com vistas a resultados públicos consistentes para a sociedade.\n Fortalecer o desenvolvimento territorial integrado, priorizando investimentos\nque guardem consonância com os Planos Territoriais de Desenvolvimento\nSustentável e Solidário, bem como fomentando iniciativas de convergência\nintersetorial de políticas públicas nos territórios.\n Fortalecer a governança territorial, fomentando a participação, o planejamento e o exercício do controle social por parte dos Colegiados Territoriais de\nDesenvolvimento Sustentável (CODETER).\n Ampliar os processos formativos junto aos CODETER e integrantes de organizações da sociedade civil que integram a dinâmica de governança territorial,\nincluindo conteúdos relacionados à gestão social, políticas públicas e educomunicação com fomento aos núcleos locais e territoriais de produção e disseminação de conteúdos autóctones.\n\nConsórcios Públicos Interestadual, Interfederativo e Municipais\n Potencializar a articulação Interestadual no âmbito do Consórcio Nordeste para\nefetivação de soluções integradas em áreas estratégicas a exemplo de saúde\n(compra conjunta de equipamentos e insumos), Segurança Pública (coordenação de ações de inteligência), Segurança Alimentar e Desenvolvimento Rural.\n Intensificar o apoio aos consórcios intermunicipais, multifinalitários e interfederativos de saúde, incluindo o desenvolvimento de soluções integradas para\nos problemas territoriais, a exemplo de gestão integrada de Resíduos Sólidos,\nDesenvolvimento Rural (incluindo a oferta de ATER, regularização fundiária,\nmanutenção de estradas vicinais) e de gestão de equipamentos de saúde.\n\n79"
+          },
+          {
+            "id": "4-2-capacidade-de-governo-e-gestao-de-pessoas",
+            "titulo": "4.2 CAPACIDADE DE GOVERNO E GESTÃO DE PESSOAS",
+            "nivel": 1,
+            "paginaInicial": 80,
+            "paginaFinal": 80,
+            "origem": "pdftotext",
+            "conteudo": "4.2 CAPACIDADE DE GOVERNO E GESTÃO DE PESSOAS\n Fortalecer o Planserv, ampliando a cobertura assistencial, qualificando a gestão\ndos custos e incorporando tecnologias para garantir atendimento mais ágil, eficiente e de qualidade aos beneficiários.\n Prover áreas estratégicas do governo com recomposição do quadro funcional\nde servidores.\n Fortalecer a política de saúde ocupacional do Poder Executivo, mediante o desenvolvimento de ações integradas de prevenção, vigilância, promoção da saúde e melhoria das condições de trabalho, visando ao bem-estar dos servidores\ne aprimoramento da prestação dos serviços públicos.\n Promover a valorização e a qualificação permanente dos servidores públicos,\nfortalecendo o compromisso com o atendimento digno, acolhedor, ágil e resolutivo, assegurando à população serviços de qualidade e uma relação cada vez\nmais próxima e respeitosa com o poder público.\n\n4.3 COMPRAS PÚBLICAS\n Promover a modernização tecnológica da plataforma de compras públicas.\n Usar as compras públicas como instrumento de desenvolvimento regional,\npriorizando fornecedores locais, mulheres empreendedoras, agricultura familiar e economia solidária, com transparência e metas de participação.\n\n4.4 RELAÇÕES INTERNACIONAIS\n Coordenar a agenda internacional baiana com o Consórcio Nordeste e com os\nentes federais responsáveis pela promoção comercial e diplomacia econômica,\nampliando o poder de negociação da Bahia em negociações internacionais.\n\n80"
+          },
+          {
+            "id": "pagina-81",
+            "titulo": "Página 81",
+            "nivel": 1,
+            "paginaInicial": 81,
+            "paginaFinal": 81,
+            "origem": "pdftotext",
+            "conteudo": " Direcionar parte da estratégia de promoção comercial e de atração de investimentos para os territórios de identidade com menor diversificação de renda.\n Estabelecer canal de apoio técnico à internacionalização de municípios e consórcios públicos baianos, com capacitação em paradiplomacia.\n Ampliar a participação da Bahia em redes e fóruns de governos subnacionais,\ncomo instrumento de captação de financiamento climático e de tecnologia.\n Consolidar o portfólio estadual de oportunidades de investimento, com interlocução direta e continuada com fundos soberanos e agências de crédito à\nexportação.\n\n81"
+          },
+          {
+            "id": "um-governo-que-so-constroi-esquece",
+            "titulo": "Um governo que só constrói esquece",
+            "nivel": 1,
+            "paginaInicial": 82,
+            "paginaFinal": 82,
+            "origem": "pdftotext",
+            "conteudo": "Um governo que só constrói esquece\nquem vai usar. Um governo que só sonha\nnão firma o chão. Eu quero continuar\nfazendo os dois. É nessa junção que\nA BAHIA E O BRASIL AVANÇAM.\n\n82"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 83,
+            "paginaFinal": 83,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "84",
+            "titulo": "84",
+            "nivel": 1,
+            "paginaInicial": 84,
+            "paginaFinal": 84,
+            "origem": "pdftotext",
+            "conteudo": "84"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "f1d263c0f72f5105f5624cd6ac65fa0db512eaf0b9ff043522253d515db0103b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "0dc96bdee65a252eefe26249cba144a558092c45d48c170650a198bcd709c6a9"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "2e7b47efdc0d23bdbc0345ec51c43cd8ba0c0abac864085e5961141d57cea964"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "4fd71eafd3edb4d1209403eec265c201635049dae4604d12cfcebd7b7661ae0d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "d1aa55ad9b927211906e9f697eee0af144071b5a4a5c648920e8118dbc37da02"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "8c7927de87503ed84e643fca6514086d41d5a2acac820e21b9dd45bd1e4b9b70"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "45cff32b7542989300cf734cc2bce3a3a4cbe25ad21fcc2d02c8a717ff344022"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "8f778318a91a4d48e411eef7cb857b42de0de7532f03f12f225fb83905a6e3c4"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "58bb9f2bcd07a8ab485453509bf20f40899e03e8a1bdb53d2c412ed78c219a08"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "cb75a75c7f302c328dd9627fe30cec39559dfda20a0a16bc238a255144a11aee"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "a0febd6aa54af222c57c6a378b23bde9ea9926db4b92814a3915eecb6c703fc7"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "82e92cc4d140fa9b14b7b9ca627397cd1acc22b97c4295918559a6e8e5812d20"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "7982b57aeab0c8e7afab907a804947aa2f37dc90e7e7f4cd453e3d28fd3d13af"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "bab1fc415f6762e2fcac8eead913d1dd274a4db948fbee36de16808ddf30bdae"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "cc3620ba5d3636bf88afcc973b6817461b5855c90d08f81e8acef483093e20a8"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "4ef0ac8529222da79f9a95ba72c5ed1182cc7ed67e5b8991ad4a5913b6cc5fdb"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "3d90ddb4fa43764cf70a094f62b749bcb7d4e7d1f1cd9dccb9bf645f23450dc2"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "242f209a8cd50b5175aabb298e2fa7b09c3d5f9fb0119d57f56b6525a38a17e3"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "b880c97c30e266e519c990998834ca05ba78ed6661c233c4c578374254734c23"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "822cc8069840d7638c2618a4f9b6cb2e55df9d86ef853295d7d6b0e0667e761f"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "a1bba478745c87230c056e6abffbc22c403bdbfc4229f7e6e91d8926a5786c5e"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "352e76cd9b4ba1253b4ea57faa847bde1be0a9497015d0f90a2acc0f7226bfbd"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "6bf0d77fb43e182c0a27c8882f970c74460e0a102949dad178e728e2aec34f17"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9a744249e738c343e69e0f3e76551219a09ccef6f81927def391b963e815dce8"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "3f721c61167fa6fed4f1c300f448e75d06684d4412cd04ed56900da7f7f2ad98"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "f4f0d6fbc9851f30eb62fc09823862d97527dc76331a0031bc7cc58ee462b5ae"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "c11a4a0e29b9c98a338811ed98d69108ebf0708eb8a8128ff9e2d878d73a2197"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "e5f99b468943f604a95c1b79cf50fefd9d0b0cee1907ab56835619bbb8848bb9"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "eade581872ebc390083249b61bfc2fc8a7f9a79bd38f9dac7c93186ecd2ffe41"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "77c1103019d6d5594133b0a25bc219089a41c2c34a0e26eae2ccbf65b95c285e"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "2b4ac1625ffea622a58c77c49c0d1e0d33d53b6c6871ef28db0fc7f51d06ad17"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "02fd6a5f4dcc003eed889ce6e93382c98d2694fcc74e90570747bbb0cafa539f"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "f69c8e2afff4f181f7e84c79e2e13eb2908f9d916e90dd4e37137c073bb33e4a"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "544a83a0d9dea1c5053f303e3a756ecf34d26acf7985278786d6c4f9aabab7c1"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "3d00f1c8088b81e1c6d4ff6329a770426a240ff710f7ff254e5caa7f1c393c6f"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "e4e58068e6a508864ed11ea2e4be608c4f7272a9dfbfe9de51c6cb314e334587"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "aea92132c4cbeb263e6ac2bf6c183b5d81737f179f21efdc5863739672f0f470"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "d85a5fd3199d9b390c4c9ce492803bb8f9d778dcd5002d9abc59cbdcd43882e8"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "c1a5c39d9728e3d19dd448b33da5ed6a12ca01e342721f6b267c825e80ba6042"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "a2957333a828dfd61725e12db830eea008adb1ace1519dfb22e3e6e720f96f03"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "db504b51ba43393ed27b89788dc8e13304bc230f61065c230adeb72282521500"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "ee8f91d11bf8d9672b03f862ba0c9ad1427d0e19b01788ac26c8a9d9b6ecc829"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "4d070dd5e977cb5bd74da254c0c6ef1a6beacc7c8f6da1067da7a1ecc59a3a2c"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "811786ad1ae74adfdd20dd0372abaaebc6246e343aebd01da0bfc4c02bf0106c"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "cad6eea5cabf57fc48e4045009b388168d4c97a9aed3225e89c23118ddb8ea68"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "30fee1e010244fd6989cc24fc20d6ca235a56603393e1a1df35a705a1d2f7759"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "c1466e05c97b63aad6c0fd6944d83c4c188aa15d509a5e520a0c57b395e523a0"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "d50cf1efea66dd4d61313beb8c634ff9403aaab783334c23ed2727778dbe53f8"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "031b4af5197ec30a926f48cf40e11a7dbc470048a21e4003b7a3c07c5dab1baa"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "a0e3e44758bf7cb0bd8aa0bebfee70f8aad551aec1b5498a8e2a292acdfedaa8"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "4b83f17feec164dc3795e7361cd60739313933c98a1d570a1f123c10976364b1"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "c27b96e9fb47977970816a270ef42dae7ddbc83db2afabac2e1140fd12e84a17"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "453cff4ab1a6ffdbc9cb113647aa5bf72f4bd098ad20b0081892d2a72258611d"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "29b9648676ef2d1220a14f7de79b212423ee0714ffd02b012501d090e6462811"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "6112dc19d47217ad493609d15c6b6a52ca3a353057a2d066440674cf630d9e9f"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "dbb4dc423d3a26b8f38b259af515f30df999f66f944525c2ef413423042c9dda"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "f976e30c57cca30bad210f5f120e5dd2a2565e850f99868324d019e4d0b10f45"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "4165c7c6a27f456f9a86067730ae672b965036f50a1e85cac4cfb791d2b4082d"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "83eb53419ae8215dcc9eb821f730852654c06480cc5f2c98c19cf3f38382f5f7"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "37518dd48b9360865fda0454fa3ad0fa3534cde41287c773f26dee4b79901996"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "7e7ed2c8ff417c98d847c5f2ddfc20529ca4d15b76776715f36b69c0234c0b94"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "7bda5d17d694d877a2caa6f579db00dcb1e1d988b51567a07e1b5e3f89c17ca2"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "217070805458fd4c33197ba6c0bfd414d380597aa2aa42d8b85d70d50cf23c10"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "a8a85768d764fbe2da2a1ce2d45054e2b6b9cee55ca18ebc9a2f47d7712b71a1"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "bd6d941433ff24783deb48ce84e4d2f9ce289d61dafda4a3c0c2c2ba236a1151"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "f17411d251da7325a06f6917458f4dac5f2df363b4e971f8cf92c67495c583ec"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "241734106a777534e7f43b8223810bc1a7f202c3ce3086ad2b9680aca16f9727"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "a5e085d7344a962591d622efe9b1ae23ad59ba3e90cb61989c4411580f811f46"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "7fc2253047107f29324e715c18ddb40d45181abb7cac869cfd741fc64fcefeda"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "0eb39efe7260c21ae57edc7534815e23edf7661b37c3ff44c72048eee6070507"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "14d777b7cc09a3ec0a21a98d7b2c5ae437bc3141a482861952facf47c111af3d"
+          },
+          {
+            "pagina": 74,
+            "origem": "pdftotext",
+            "textSha256": "8a9966a1b3ded2bff7dc0b64745c99135da0667e7ab8afa04ce2a68e7fd3fe6f"
+          },
+          {
+            "pagina": 75,
+            "origem": "pdftotext",
+            "textSha256": "bf12160f4220b8a7e09c6c45730624301a79786de3fedc06652982c3f65188f2"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "3b0d6695b68f11ddd3bbbbe0751a56c47eedd2b2a4ac2c909600f23be199e551"
+          },
+          {
+            "pagina": 77,
+            "origem": "pdftotext",
+            "textSha256": "a6640851cb20cf530e052ab9ee50bfaea7e17208d824ad8a4930b0b3481bbb91"
+          },
+          {
+            "pagina": 78,
+            "origem": "pdftotext",
+            "textSha256": "1c04761de9e532b7a657b85f3a622ba00f300ee54dbd1f5b325edee19b1caf4a"
+          },
+          {
+            "pagina": 79,
+            "origem": "pdftotext",
+            "textSha256": "a63f3102a4455be83275257afe27764c889ef6b26f3762e462d15afef96c53bc"
+          },
+          {
+            "pagina": 80,
+            "origem": "pdftotext",
+            "textSha256": "299ffc68ef41fb0abc3b7dcda7ae6432316d89bc8dd04773ac3ca29c28a4c11f"
+          },
+          {
+            "pagina": 81,
+            "origem": "pdftotext",
+            "textSha256": "a550b7ac6b0fe8646111af02f7fcb6da508f8a844753fa73e2f9c683e8bc8b68"
+          },
+          {
+            "pagina": 82,
+            "origem": "pdftotext",
+            "textSha256": "f696ffec54a1caa8d6a79f6e599397031d2099b4d3429cd7e1e64794463987b0"
+          },
+          {
+            "pagina": 83,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 84,
+            "origem": "pdftotext",
+            "textSha256": "44c8031cb036a7350d8b9b8603af662a4b9cdbd2f96e8d5de5af435c9c35da69"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa organiza suas diretrizes em quatro eixos: Desenvolvimento Econômico, Desenvolvimento Social e Garantia de Direitos, Governança Democrática, além de Temas Transversais Prioritários. A agenda ambiental prevê ampliar a produção de energias renováveis, proteger biomas, fortalecer a segurança hídrica, impulsionar uma economia de baixo carbono. Na área digital, propõe ampliar o programa estadual de conectividade, incluindo o fortalecimento do Conecta Bahia com Wi-Fi livre em locais públicos. Na saúde, planeja implantar o Programa Saúde na Palma das Mãos como estratégia de transformação digital do SUS no Estado. Para a educação básica, prevê universalizar, em todas as escolas estaduais, o ensino de tempo integral. No desenvolvimento territorial, propõe fortalecer a governança territorial, fomentando a participação, o planejamento, o exercício do controle social por parte dos CODETER. O programa também prevê promover a modernização tecnológica da plataforma de compras públicas.",
+    "frases": [
+      {
+        "texto": "O programa organiza suas diretrizes em quatro eixos: Desenvolvimento Econômico, Desenvolvimento Social e Garantia de Direitos, Governança Democrática, além de Temas Transversais Prioritários.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 12,
+            "trecho": "Organizado em quatro grandes eixos: Desenvolvimento Econômico;\nDesenvolvimento Social e Garantia de Direitos; Governança Democrática; e Temas Transversais Prioritários"
+          }
+        ]
+      },
+      {
+        "texto": "A agenda ambiental prevê ampliar a produção de energias renováveis, proteger biomas, fortalecer a segurança hídrica, impulsionar uma economia de baixo carbono.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 19,
+            "trecho": "ampliando a produção de energias renováveis, protegendo seus biomas, fortalecendo a segurança\nhídrica e impulsionando uma economia de baixo carbono"
+          }
+        ]
+      },
+      {
+        "texto": "Na área digital, propõe ampliar o programa estadual de conectividade, incluindo o fortalecimento do Conecta Bahia com Wi-Fi livre em locais públicos.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 23,
+            "trecho": "Ampliar o programa estadual de conectividade, incluindo o fortalecimento do\nConecta Bahia com Wi-Fi livre em locais públicos."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, planeja implantar o Programa Saúde na Palma das Mãos como estratégia de transformação digital do SUS no Estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 57,
+            "trecho": "Implantar o Programa Saúde na Palma das Mãos como a principal estratégia\nde transformação digital do SUS no Estado"
+          }
+        ]
+      },
+      {
+        "texto": "Para a educação básica, prevê universalizar, em todas as escolas estaduais, o ensino de tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 62,
+            "trecho": "Universalizar, em todas as escolas estaduais, o ensino de tempo integral."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento territorial, propõe fortalecer a governança territorial, fomentando a participação, o planejamento, o exercício do controle social por parte dos CODETER.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 79,
+            "trecho": "Fortalecer a governança territorial, fomentando a participação, o planejamento e o exercício do controle social por parte dos Colegiados Territoriais de\nDesenvolvimento Sustentável (CODETER)."
+          }
+        ]
+      },
+      {
+        "texto": "O programa também prevê promover a modernização tecnológica da plataforma de compras públicas.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 80,
+            "trecho": "Promover a modernização tecnológica da plataforma de compras públicas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "eixos-do-programa",
+        "titulo": "Eixos do programa",
+        "descricao": "Organização das diretrizes em quatro eixos.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 12,
+            "trecho": "Organizado em quatro grandes eixos: Desenvolvimento Econômico;\nDesenvolvimento Social e Garantia de Direitos; Governança Democrática; e Temas Transversais Prioritários"
+          }
+        ]
+      },
+      {
+        "id": "sustentabilidade-ambiental",
+        "titulo": "Sustentabilidade ambiental",
+        "descricao": "Diretrizes para energias renováveis, biomas, segurança hídrica, economia de baixo carbono.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 19,
+            "trecho": "ampliando a produção de energias renováveis, protegendo seus biomas, fortalecendo a segurança\nhídrica e impulsionando uma economia de baixo carbono"
+          }
+        ]
+      },
+      {
+        "id": "conectividade-digital",
+        "titulo": "Conectividade digital",
+        "descricao": "Ampliação do programa estadual de conectividade.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 23,
+            "trecho": "Ampliar o programa estadual de conectividade, incluindo o fortalecimento do\nConecta Bahia com Wi-Fi livre em locais públicos."
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Implantação de plataforma digital integrada para serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 57,
+            "trecho": "Implantar o Programa Saúde na Palma das Mãos como a principal estratégia\nde transformação digital do SUS no Estado"
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Universalização do ensino de tempo integral nas escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002536314:01",
+            "pagina": 62,
+            "trecho": "Universalizar, em todas as escolas estaduais, o ensino de tempo integral."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna",
+    "generatedAt": "2026-08-28T13:48:28.998Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T13:50:43.809Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência lista exatamente os mesmos quatro eixos citados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 'quatro' eixos está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação meramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tópico coerente: a estrutura geral do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:1:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todos os quatro eixos citados na afirmação estão cobertos pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente os quatro pontos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: sustentabilidade ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:2:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente: conectividade digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:3:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:4:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:5:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre desenvolvimento territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:6:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre compras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:frase:7:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a organização em quatro eixos."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 'quatro' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tópico coerente sobre a estrutura do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:eixos-do-programa:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula única da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta os temas citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente: sustentabilidade ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:sustentabilidade-ambiental:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas citadas estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:conectividade-digital:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula única da afirmação está coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência menciona plataforma digital integrada como parte do Programa Saúde na Palma das Mãos, sustentando a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:saude-digital:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002536314:tema:educacao-integral:documentos:BA:50002536314:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula única da afirmação está coberta pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:BA:50002536314",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "BA:50002536314:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 46750,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1448,
+          "reasoning_output_tokens": 225
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24601,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21914,
+          "output_tokens_details": {
+            "thinking_tokens": 662
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24601,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21914,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24601,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24601
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3366314
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "7b375b5a8de16221d3352593321a5dc673401d03796fac28dc1a0caf9eda656b",
+    "extractedTextSha256": "c1615f49883255bab5fca805a2fe2b6feb850f99752a2bca93f51090491f0231",
+    "documentCount": 1,
+    "documentSetSha256": "51253090b40a72c27220362d377818f0487b5df2b63dace97f86777d453cfb7d",
+    "contentSha256": "88eebdc6b308452e49d6c0896adba5a6b771ec2d9ac045b0aeaf056735cff81d"
+  }
+}

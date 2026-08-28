@@ -1,0 +1,1354 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RJ",
+    "sqCandidato": "190002542887",
+    "slug": "douglas-ruas",
+    "nomeUrna": "DOUGLAS RUAS",
+    "partido": "PL",
+    "arquivoNome": "2026RJ190002542887_01.pdf",
+    "arquivoNoPacote": "RJ/2026RJ190002542887_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RJ:190002542887:01",
+      "fonte": {
+        "arquivoNome": "2026RJ190002542887_01.pdf",
+        "arquivoNoPacote": "RJ/2026RJ190002542887_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "8e50ed1bb2ee5cfd935c2d3492eeb0b66a426b008e1ea2a88da83cd8a4b5ea58",
+        "extractedTextSha256": "7ae755cf1875ff43ea0fbf72ec7529640e31b4595060bcbc18625e6046cb146b",
+        "paginas": 51,
+        "secoes": [
+          {
+            "id": "plano-do",
+            "titulo": "Plano do",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano do\n\nRio Real\n2027-2030"
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-2",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 2",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 2\n\nCarta de\nCompromisso\nApresento nosso Plano de Governo\ncom a convicção de que o Rio de Janeiro\nprecisa recuperar a ordem, a confiança\ne a capacidade de transformar decisões\nem resultados.\nNosso estado tem força econômica,\nvocações regionais e uma população\nque trabalha, empreende e sustenta suas\nfamílias. Mas esse potencial é limitado\npela insegurança, pela burocracia e pelo\ndesperdício de recursos.\nConstruí minha trajetória pública\nunindo planejamento, gestão e execução,\napresento-me ao povo fluminense com\ncoragem para renovar a política,\ncapacidade técnica para governar e\ncompromisso com resultados concretos.\nA segurança pública será a prioridade\ncentral do nosso governo.\nNão aceitaremos que criminosos controlem\nterritórios e retirem das famílias o direito\nde viver em paz. Vamos restabelecer\na autoridade do Estado com inteligência,\nintegração entre as forças de segurança,\nvalorização dos profissionais, tecnologia\ne presença permanente: onde o Estado\nentrar, ele permanecerá.\nSem segurança, não existe liberdade\npara trabalhar, estudar e empreender,\nnem investimento e emprego.\nDevolver tranquilidade às famílias será\no primeiro passo para reconstruir\no Rio de Janeiro.\nAs políticas para as mulheres serão\num compromisso permanente\ne transversal, presentes na segurança,\n\nna saúde, na educação e em todas\nas decisões do governo.\nSeremos firmes na defesa da ordem\ne da lei, responsáveis com o dinheiro\npúblico, contra a corrupção e parceiros\nde quem trabalha, produz, investe\ne gera empregos. O desenvolvimento\nnão ficará concentrado na capital:\nvamos aproximar o governo das\nprefeituras, fortalecer as economias\nregionais e criar oportunidades para\nque as pessoas prosperem nas\ncidades onde moram.\nComo governador, comandarei\npessoalmente as principais prioridades,\ncom metas, prazos, responsáveis e\ntransparência. O cidadão saberá o que\nestá sendo feito, quanto custa e quais\nresultados estão sendo alcançados.\nMeu compromisso é governar com\nseriedade e coragem, respeitar as famílias,\nvalorizar as mulheres, apoiar quem\ntrabalha, desenvolver todas as regiões\ne enfrentar o crime sem hesitação."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-3",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 3",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 3\n\nSumário\n\n02\n\n04\n\nCarta de\nCompromisso\n\nIntrodução\n\n05\n\n06\n\nApresentação\ndos Eixos\n\nEixo 01\nRio seguro\n\n16\n\n27\n\nEixo 02\nRio que cuida\n\nEixo 03\nRio próspero\n\n39\n\n51\n\nEixo 04\nRio que avança\n\nConsiderações\nFinais"
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-4",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 4",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 4\n\nIntrodução\nEste Plano de Governo traduz nossos\ncompromissos em uma estrutura de ação\norganizada em quatro eixos estratégicos\nintegrados, sustentados por um modelo\npermanente de governança e resultados.\nNas páginas seguintes, cada eixo apresenta\no diagnóstico da sua área, as diretrizes\nde atuação e os compromissos assumidos\ncom a população fluminense.\n\nAs políticas para as mulheres aparecem\ncomo tema transversal de todo o\ngoverno, presente na segurança, na\nsaúde, na educação, na economia e em\ntodas as decisões. Para dar visibilidade\na esse compromisso, as propostas voltadas\nàs mulheres aparecem, como gesto\nsimbólico, destacadas na cor roxa ao longo\nde todo o documento.\n\nO eixo Rio Seguro enfrentará o crime\norganizado e restabelecerá a ordem\ne a paz às famílias; Rio que Cuida\naproximará os serviços públicos da\npopulação e garantirá o funcionamento;\nRio Próspero apoiará quem trabalha,\nproduz e investe em todas as regiões.\nE o eixo Rio que Avança fortalecerá\na infraestrutura e o planejamento,\ne a capacidade de prevenção e resposta.\n\nNa execução, as diferentes áreas\ndo governo atuarão de forma integrada,\nevitando sobreposições, desperdícios\ne ações desconectadas, e os resultados\nserão acompanhados por região,\npermitindo identificar desigualdades,\ncorrigir falhas e direcionar investimentos\npara os locais que mais necessitam\nda atuação do Estado.\n\nA construção deste Plano parte do\nterritório, reconhecendo que a Região\nMetropolitana, a Baixada Fluminense,\no Leste Metropolitano, o Norte e Noroeste,\nas Baixadas Litorâneas, a Região Serrana,\no Médio Paraíba, o Centro-Sul e a Costa\nVerde possuem desafios e vocações\npróprias. Foi a partir dessas realidades\nque as propostas foram formuladas,\ncom um compromisso que as atravessa,\no municipalismo. É no município que a vida\nacontece, e o governo estadual será\nparceiro permanente das prefeituras,\nrespeitando a autonomia local e somando\nesforços para que as políticas públicas\ncheguem de fato à ponta, onde o cidadão\nvive.\n\nPor fim, este é um documento\nem construção. O Plano nasce aberto\nao diálogo, sujeito a revisões, a partir\nda construção coletiva, ao aperfeiçoamento\ne à incorporação de novas contribuições,\nporque governar bem começa por\nouvir a sociedade fluminense e transformar\nsua luta em propostas."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-5",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 5",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 5\n\nApresentação\ndos Eixos\nMUNICÍPIOS\nTransversal\nEstado parceiro dos 92 municípios,\ncom escuta ativa, cooperação técnica e\nsoluções adaptadas à realidade local.\n\nEIXO 2\nRio\nPróspero\nApoiar quem trabalha,\nproduz e investe.\n\nEIXO 1\nRio Seguro\nEIXO 4\nRio\nque Cuida\n\nBase que sustenta\ne permite o avanço\nde todos os eixos\n\nEIXO 4\nRio\nque Avança\n\nCuidar das pessoas\ncom serviços públicos\neficientes.\n\nConstruir a infraestrutura\ne o planejamento que\nsustentam o futuro.\n\nMULHERES\nTransversal\nIgualdade, proteção e autonomia\ndas mulheres em todas as políticas\ne em todos os eixos de governo."
+          },
+          {
+            "id": "eixo-1",
+            "titulo": "Eixo 1",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 1\n\nPlano do Rio Real 2027 - 2030 | 6\n\nRio\nSeguro\nO Rio Seguro é o eixo estruturante do Plano e a primeira\nresponsabilidade do governo. Seu objetivo será restabelecer\na ordem pública, recuperar os territórios hoje dominados pelo crime,\nproteger as famílias e assegurar que cada cidadão possa trabalhar,\nestudar, empreender, circular e viver sem medo em qualquer\nregião do estado.\nPara isso, o eixo detalha como o enfrentamento ao crime organizado\ncombinará inteligência, integração operacional entre as forças\nde segurança, planejamento territorial, tecnologia e valorização\ndos profissionais que atuam na ponta. As ações não serão isoladas,\ne a presença do poder público será permanente e contínua\nnos territórios."
+          },
+          {
+            "id": "eixo-1-2",
+            "titulo": "Eixo 1",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 1\nRio Seguro\nO Rio de Janeiro vive uma crise\nde soberania territorial. Facções e milícias\nmultiplicaram seu domínio nas últimas\nduas décadas e hoje mandam em bairros\ne comunidades inteiras, decidindo onde\no cidadão de bem pode ir, que comércio\npode abrir e a que horas o trabalhador\ndeve se recolher. Barricadas fecham ruas,\nescolas suspendem aulas, ambulâncias\nnão entram e o morador vive sob um\ntoque de recolher que nenhuma lei\nescreveu. Milhões de fluminenses acordam\ntodos os dias sob a bandeira do crime\ne não sob a bandeira do Estado.\nE o crime mudou. Aprendeu a matar\nmenos e a extrair mais, virou empresa.\nHoje, a maior parte do dinheiro das\norganizações criminosas não vem\ndo tráfico, mas do pedágio cobrado\nsobre o gás, o transporte, a internet,\no imóvel e o comércio de quem trabalha\nhonestamente. Enquanto isso, o assalto\nao trabalhador, o roubo de veículos\ne o golpe pela internet explodiram,\ne boa parte dos crimes fica sem resposta,\na impunidade virou combustível\nda violência. Fuzis de guerra cruzam\nas fronteiras e o litoral sem controle\ne chegam às nossas ruas. De dentro\ndos presídios superlotados, onde quase\nninguém trabalha ou estuda, as facções\nseguem dando ordens, recrutando\njovens e comandando o crime lá fora.\nE há uma face dessa crise que entra\npela porta de casa, todos os dias, mulheres\nfluminenses são agredidas, ameaçadas\ne mortas por quem deveria protegê-las,\ne esperam dias por uma medida protetiva\nque deveria sair na hora. A maioria\ndessas tragédias é anunciada.\n\nPlano do Rio Real 2027 - 2030 | 7\n\nO Estado chega tarde. Não se vence o\ncrime organizado com operações isoladas,\nque entram, confrontam e vão embora,\nesse modelo já provou que fracassa.\nO Estado sai e o crime volta. Vencemos\ncom um método permanente, aplicado\nnessa ordem e sem interrupção: gestão,\ninteligência, tecnologia, asfixia financeira\ne presença ostensiva.\nPrimeiro, a inteligência aponta onde\no crime está e de onde vem o seu\ndinheiro. Depois, o cerco financeiro seca\no caixa e o Escudo Fluminense fecha\nas rotas de armas e drogas. Só então\na força entra planejada, integrada e sem\naviso prévio. E, quando entra, fica com\npoliciamento permanente, câmeras,\nescola de qualidade e a presença visível\ndo Estado, para que o território retomado\nnunca mais volte para o crime. Dentro\ndos presídios, a mesma lógica: disciplina,\nisolamento das lideranças e trabalho\nobrigatório para qualquer benefício.\nNada disso funciona sem quem\nexecuta. Por isso, o policial será protegido,\nvalorizado e cobrado por resultado,\ncomando técnico no lugar de indicação\npolítica, meta pública no lugar de improviso.\nE, em todas as frentes, uma prioridade\npermanente: a proteção da mulher\ne da família fluminense."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-8",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 8",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 8\n\nCompromissos\nESCUDO FLUMINENSE\n\nO Rio vai deixar\nde ser rota fácil\npara o crime.\n\nTolerância zero à circulação de armas,\ndrogas e o tráfico de animais silvestres.\nPor terra, mar e ar, todas as forças\nde segurança numa só estratégia,\ncom tecnologia de ponta.\n\n• \u0007Câmeras de leitura de placas\ne reconhecimento facial nas principais\nvias do Estado.\n\n• \u0007Recuperação de grupamentos\nespecializados para o controle da Baía\nde Guanabara.\n\n• \u0007Drones em patrulhamento contínuo\ne scanners de carga nas rodovias e nas\nsaídas de portos e aeroportos.\n\n•\u0007I\u0007ntegração com os centros de comando\ndos municípios.\n\n• \u0007Blitzes integradas e multiagência\npara apreender fuzis, drogas e capturar\nprocurados."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-9",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 9",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 9\n\nCompromissos\nCERCO FINANCEIRO\n\nBandido\nnão vai ficar rico\nno Rio de Janeiro.\nCada real\nrecuperado volta\npara a segurança\ndo cidadão.\n\nO crime quebra quando o dinheiro\nacaba. Vamos atacar onde mais dói:\no bolso das organizações criminosas.\n\n• \u0007Reforço das equipes que investigam\na lavagem de dinheiro e as empresas\nde fachada das milícias.\n\n• \u0007Bloqueio das fontes de renda do crime:\nextorsão, gás, transporte clandestino,\ninternet ilegal.\n\n• I\u0007ntegração permanente entre polícias,\ninteligência financeira, Receita Federal\ne Ministério Público.\n\n• \u0007Recuperação ágil de bens: imóvel tomado\nde bandido vira equipamento público."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-10",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 10",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 10\n\nCompromissos\nLINHA DURA\n\nCadeia é\nlugar de ordem,\ndisciplina e\ntrabalho, não\nde escritório\ndo crime.\n• \u0007Reclassificar: todo preso avaliado\npor periculosidade e vínculo com facção,\no nível sobe ou desce pelo\ncomportamento.\n• \u0007Separar e isolar: separar e afastar\nlideranças do convívio comum e aplicar\no Regime Disciplinar Diferenciado,\nquando houver decisão judicial.\n\nA cadeia deixa de ser sede de facção\ne volta a ser instrumento do Estado.\nQuatro passos, sem exceção.\n\n• \u0007Construir novos presídios em parceria\ncom a iniciativa privada, incluindo\numa unidade de regime disciplinar mais\nrigorosa do que qualquer referência\nexistente.\n• \u0007Trabalhar e qualificar: benefício só\ncom trabalho e rompimento com a facção\ndentro dos presídios, com parte\nda remuneração ressarcindo as vítimas\ne o Estado."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-11",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 11",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 11\n\nCompromissos\nRETOMADA DO ESTADO\n\nO morador\nde comunidades\ne áreas dominadas\ntem o mesmo\ndireito à presença\ndo Estado.\nAs câmeras\ndo tráfico serão\nsubstituídas\npelas câmeras\nda polícia.\n• \u0007Policiamento adaptado à realidade\nde cada comunidade com patrulhamento\ncontínuo e monitoramento integrado.\n• \u0007Barricada é a declaração de posse\ndo bandido sobre a rua do trabalhador.\nEquipes móveis, com calendário\npermanente, farão a desobstrução\ncontínua das vias priorizando entornos\nde escolas, hospitais e eixos de ônibus.\n\nOnde o crime mandava. Aqui,\nagora, a retomada segue um método\npermanente e integrado.\n\n• \u0007Escolas estaduais transformadas\nem complexos de cidadania com ensino\nem tempo integral, qualificação\nprofissional à noite, biblioteca, esporte\ne lazer.\n• I\u0007móveis tomados do crime convertidos\nem equipamentos públicos para\na comunidade.\n• \u0007Remoção das marcas das facções\ne requalificação dos espaços públicos."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-12",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 12",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 12\n\nCompromissos\nMAPA ÚNICO\nDE MANCHAS CRIMINAIS\n\nO crime\ntem endereço.\nA polícia\nvai estar nele.\n• \u0007\u0007Seleção de microterritórios de maior\nincidência para policiamento ostensivo\nnos horários de pico.\n• \u0007Revisão e estabelecimento de novas\nmetas e indicadores de manchas criminais\ndefinidos pelo Sistema Integrado de\nIndicadores Estratégicos de Criminalidade.\n• I\u0007ntegração formal das bases de dados\nda PMERJ, PCERJ e sistema penitenciário\nno Sistema Integrado de Dados\nda Segurança.\n\nInteligência territorial como base\nde toda a operação. O Sistema Estadual\nde Monitoramento Estratégico entrega.\n\n• \u0007Novo Segurança Presente com bases\ndefinidas pelo mapa de pontos quentes.\n• \u0007Policiamento organizado por quadrantes,\ncom foco nos horários de maior\nincidência criminal."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-13",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 13\n\nCompromissos\nRIO POR ELAS: SEGURANÇA\nE RESPEITO\n\nMedida protetiva\nnão pode ser\nno papel. Tem\nque ser presença,\nmonitoramento\ne resposta.\n• \u0007Alerta de proximidade: quando\no agressor violar o limite de afastamento\nfixado pela justiça, a tornozeleira\neletrônica emitirá um alerta sonoro\ne acionará simultaneamente a vítima\ne as forças de segurança.\n• \u0007Propor e defender uma decisão rápida\ne visita policial frequente ao agressor\nenquanto a proteção não for deferida.\n• \u0007Novas unidades das delegacias\nda mulher, com atendimento 24 horas\ne presença no interior do Estado.\n• \u0007Patrulha Maria da Penha em todas\nas regiões fluminenses.\n\nProteger a mulher é proteger\na família fluminense.\n\n• \u0007Conscientização permanente:\nampliação das campanhas para prevenir\ne conscientizar sobre as várias formas\nde violência contra mulher.\n• \u0007Acolhimento fora da delegacia, apoio\njurídico e psicológico, capacitação\ne auxílio de transição, além de abrigos\nsigilosos para mulheres ameaçadas."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-14",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 14",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 14\n\nCompromissos\nGESTÃO INTEGRADA POR RESULTADOS\n\nComando\ntécnico.\nMeta pública.\nResultado\ncobrado.\n• \u0007Comandantes de batalhão, delegados\ntitulares e diretores de presídio indicados\npor critério técnico, com compromisso\nassinado por resultados.\n• \u0007Monitoramento e articulação mensal\nde metas através do Gabinete Integrado\nde Segurança e Território (GIST),\ncom coordenação direta do Governador.\n\nO modelo que sustenta todos\nos demais programas.\n\n• \u0007Mérito para quem entrega. Respaldo\npara quem age certo. Punição dura para\nquem desonra a farda."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-15",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 15",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 15\n\nCompromissos\nPOLÍCIA FORTE, POLICIAL VALORIZADO\n\nQuem veste\na farda e protege\no cidadão\nfluminense terá\nmais respeito,\nmais efetivo,\nmais preparo\ne mais cuidado.\n\nEfetivo ampliado, investigação\nde ponta, formação conjunta das forças\ne uma política permanente de cuidado\ncom o policial e a policial fluminense.\n\n• \u0007Ampliação do efetivo por meio de novos\nconcursos dimensionados pela demanda\nregional e convocação de concursados,\nlevando mais policiais às ruas\ne às delegacias.\n\n• \u0007Saúde Integral do Policial: Policlínica\nda Polícia Civil interiorizada, Hospital da PM\nreestruturado, rede de saúde mental\ncom prevenção ao suicídio e protocolo\npós-eventos de estresse extremo.\n\n• \u0007Modernização da investigação\ncom reestruturação de delegacias\nde homicídios e o fortalecimento\ndas delegacias especializadas com\nequipes técnicas e meta de elucidação\ne atenção à política estadual contra\no crime cibernético.\n\n• \u0007Farda Feminina: Apoio psicossocial\ne jurídico sigiloso, maternidade protegida,\nprevenção ao assédio e estímulo\nà participação feminina no comando.\n\n• \u0007Complexo Integrado de Perícia: reunindo\nem um único espaço o Instituto Médico\nLegal (IML), o Instituto de Criminalística\n(ICCE), o Instituto de Identificação\nFélix Pacheco (IIFP) e o Instituto\nde Genética Forense (IPPGF).\n\n• \u0007Valorização integral do policial no\ncumprimento do dever com carreira\nrevisada e bonificação para quem entrega\nresultado, defesa jurídica da primeira\nhora ao fim do processo."
+          },
+          {
+            "id": "eixo-2",
+            "titulo": "Eixo 2",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 2\n\nPlano do Rio Real 2027 - 2030 | 16\n\nRio\nque Cuida\nO Rio que Cuida reúne as políticas que mais impactam na vida\ndas pessoas: saúde, educação, políticas sociais e proteção\ndas famílias. É o eixo que transforma o Estado em presença efetiva\nno dia a dia, garantindo serviços públicos que funcionam com\nqualidade, agilidade e respeito.\nPor isso, a presença do governo será medida pela capacidade\nde fazer os serviços funcionarem, com saúde mais rápida e digna,\neducação de qualidade e políticas sociais eficientes, com\natendimento digno. Estes serão os compromissos permanentes\ndo eixo, sempre com foco nas pessoas, e não na burocracia."
+          },
+          {
+            "id": "eixo-2-2",
+            "titulo": "Eixo 2",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 2\nRio que Cuida\nO cidadão fluminense percebe o aumento\nsignificativo e a demora das filas de regulação,\nano após ano, a queda na qualidade da\neducação, colocando o Rio de Janeiro como\num dos piores estados na qualidade\nda educação nacional, e grande déficit\nhabitacional com famílias sem moradia segura\ne sem meios de conquistar a sua propriedade.\nEspera meses por uma consulta, depois\npelo exame, depois pelo resultado, depois\npela cirurgia. A família com uma criança\ncom autismo espera anos por um diagnóstico\ne sai de porta em porta sem orientação.\nE o morador do interior ainda paga um\npedágio a mais: horas de estrada até a capital\npara resolver o que deveria estar perto de casa.\nNa escola a criança que não aprende\na ler no tempo certo carrega a defasagem\naté chegar ao ensino médio. Todos os anos,\njovens em idade de construir futuro\nabandonam a sala de aula para trabalhar\nou, pior, viram alvo do crime organizado.\nDentro de muitas unidades, professores\nsão desrespeitados e agredidos, alunos sofrem\nbullying, o calor esvazia a sala e a merenda\nnão sustenta o dia de estudo. Sem ordem,\nnão há aprendizado.\nFora da escola e do hospital, a insegurança\ncontinua. As famílias e os servidores\nfluminenses que cuidam da população\natravessam horas de deslocamento porque\nnão conseguem morar perto de onde\ntrabalham. Encostas ocupadas há décadas\nseguem sem prevenção, à espera da\npróxima tragédia.\nA resposta não é um Estado maior. É um Estado\nque funciona. Um Estado que não substitui\na família, os municípios nem a iniciativa\n\nPlano do Rio Real 2027 - 2030 | 17\n\nprivada, mas coordena, apoia e cobra resultado\nde quem executa. O método é o mesmo que\nsustenta todo este plano de governo, aplicado\nnessa ordem: primeiro a gestão e os dados,\npara saber onde está o problema e quem\nresponde por ele; depois a regionalização,\npara levar o serviço até onde o cidadão vive;\nem seguida a parceria com o setor privado\ne o repasse condicionado a metas, para\ntransformar dinheiro público em entrega.\nNa saúde, isso significa reduzir filas com\nprontuário digital, acompanhamento em tempo\nreal, mutirões permanentes e centros regionais\nque reúnem consulta, exame, diagnóstico\ne encaminhamento no mesmo lugar.\nNa educação, significa melhorar a qualidade\ndo aprendizado, com apoio aos municípios\nna alfabetização na idade certa, recuperação\nde quem ficou para trás, ensino técnico\ndentro da escola e valorização dos professores\ne diretores que entregam resultado.\nNa habitação, significa facilitar o financiamento\nda casa própria para quem serve à população.\nNas políticas sociais, significa priorizar quem\nrealmente precisa e construir sempre a porta\nde saída: capacitação e trabalho.\nTrês prioridades atravessam todas essas\nfrentes. A mulher fluminense terá atendimento\nde saúde adequado em cada etapa de sua vida,\nalém de proteção contra a violência, e o apoio\na sua autonomia. A pessoa com espectro\nautista e neurodivergências e sua família\ndeixarão de esperar sozinhas por um Estado\nque nunca chega. E os municípios, sobretudo\nos do interior, terão no governo estadual\num coordenador presente, com apoio técnico,\nrepasse justo e cobrança de resultado."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-18",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 18",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 18\n\nCompromissos\nFILA CURTA, CIRURGIA RÁPIDA\n\nUma nova\norganização da\nsaúde para\natender mais,\nesperar menos\ne salvar vidas.\n\nA fila vira compromisso com prazo\ne transparência. Uma política única para\nas duas pontas da espera: a consulta\ncom o exame e a cirurgia.\n\n• \u0007CIAME - Centro Integrado de Atenção\nMédica e Exames de baixa e média\ncomplexidade em cada região do Estado:\no especialista e o exame no mesmo\nlugar e no mesmo dia, com carretas\nde exames vinculadas rodando\nos municípios mais distantes.\n\n• \u0007Mutirão permanente das cirurgias eletivas\nque mais travam, com centro cirúrgico\nfuncionando à noite e no fim de semana,\ncircuito rápido que reúne avaliação,\nexames e cirurgia e também através\nda contratação da rede privada para\ndar celeridade.\n\n• \u0007Criação de Hospitais de Alta Resolução\npara atendimento de complexidade\nalta com avaliação, exame, diagnóstico\ne cirurgia resolvidos numa só ida,\nem unidades modernas, digitalizadas\ne humanizadas.\n\n• \u0007Central estadual unificada de regulação\ndigital, com prontuário eletrônico único\naberto aos municípios e fila organizada\npela gravidade de cada caso."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-19",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 19",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 19\n\nCompromissos\nSAÚDE PERTO DE CASA\n\nSaúde de\nqualidade onde\nas pessoas vivem.\n• \u0007Apoio e custeio aos hospitais do interior\ncom metas assumidas por cada unidade\ne ranking público de desempenho.\n• \u0007Hospitais regionais de referência\nfortalecidos, com pactuação\nde atendimento por região, fiscalização\ndo giro de leitos e prioridade para\no reaproveitamento de unidades\nexistentes.\n• \u0007Novo Instituto Estadual de Oncologia\nna capital e fortalecimento\nda oncologia nas regiões do interior,\nencurtando o tempo entre o diagnóstico\ne o início do tratamento.\n\nRegionalizar é governar para todo\no Estado. A rede será organizada por\nregião, com repasse condicionado\na metas, aproveitamento das estruturas\nexistentes e prestação de contas\nà população.\n• \u0007Transporte sanitário eletivo integrado\nà regulação estadual, para que nenhum\npaciente perca consulta, exame\nou tratamento por falta de condução.\n• \u0007Atração e fixação de especialistas\nno interior, com incentivos e concursos\ndirecionados e qualificação da atenção\nbásica dos municípios com repasse\nvinculado a metas de saúde."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-20",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 20",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 20\n\nCompromissos\nSAÚDE INTEGRAL DA MULHER\n\nNenhuma mulher\ndeve enfrentar\nsozinha a dor,\na espera ou\na insegurança:\no RJ terá uma\nrede preparada\npara cuidar\nda mulher em\ntodas as fases\nda vida.\n• \u0007Nova maternidade de referência para\ngestações de risco na região\nmetropolitana mais desassistida\ne contratação de leitos no interior.\n• \u0007Centros de Saúde da Mulher em\ntodas as regiões com rastreamento\ndo câncer de mama e de colo de útero,\nginecologia especializada, endometriose,\nclimatério e acolhimento à vítima\nde violência, com carretas da mulher\nlevando mamografia e exames ao interior.\n\nGarantia de que toda mulher fluminense\ntenha acesso a prevenção, diagnóstico\ne tratamento no tempo certo, em todas\nas fases da vida.\n\n• \u0007Todos Contra o HPV com vacinação\nde meninas e mulheres, rastreamento\nativo e tratamento rápido, com a meta\nde fazer o Estado do Rio referência\nna erradicação do câncer de colo\nde útero.\n• \u0007Apoio à maternidade no trabalho\ncom estímulo às salas de amamentação\ne selo de reconhecimento às empresas\nque apoiam a mãe trabalhadora."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-21",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 21",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 21\n\nCompromissos\nATENÇÃO À PESSOA COM\nESPECTRO AUTISTA\n\nAutismo exige\ncuidado, respeito\ne rede: nenhuma\nfamília ficará\nsozinha nessa\njornada.\n• \u0007Polos regionais de alta complexidade\nreunindo num só lugar o diagnóstico,\nas intervenções terapêuticas e a\norientação e capacitação às famílias.\n• \u0007Carretas de apoio ao diagnóstico levando\na avaliação especializada aos municípios\ndo interior.\n• \u0007Capacitação dos profissionais de saúde\ne de educação, incluindo professores\ne monitores escolares, com apoio a cada\nprefeitura.\n• \u0007Espaços sensoriais nos prédios públicos\npara garantir atendimento acessível,\nacolhedor e adequado às necessidades\nde pessoas neurodivergentes.\n\nO Governo do Estado vai assumir\na coordenação dessa rede junto aos\nmunicípios, garantindo atendimento\nem todo o território.\n\n• \u0007Escola Inclusiva com plano educacional\nindividualizado, salas de recursos, tutores\nespecializados e formação de professores\ne gestores, em articulação permanente\nentre escola, família e saúde, para garantir\ndesenvolvimento e autonomia.\n• \u0007Apoio às mães atípicas, com\nacolhimento psicológico, qualificação\nprofissional, e orientação às famílias,\nintegrados aos polos regionais\nde atendimento."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-22",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 22",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 22\n\nCompromissos\nAPRENDIZAGEM NOTA 10\n\nDa alfabetização à\nprofissionalização:\numa educação\nque prepara para\na vida e que tem\ncompromisso com\na aprendizagem.\n• \u0007Alfabetização na idade certa em regime\nde colaboração com os municípios,\ncom apoio técnico, avaliação da leitura,\ncapacitação de professores e gestores\ne investimento condicionado ao\ncumprimento de metas de aprendizagem,\nquem se compromete e entrega tem\no apoio garantido.\n• \u0007Ninguém Fica Para Atrás: diagnóstico\nde todo aluno na entrada do ensino médio,\nreforço intensivo em português e\nmatemática no contraturno para quem\nestá atrasado, combinando Educação\nde Jovens e Adultos - EJA e formação\nprofissional para o adulto que precisa\nvoltar a estudar.\n\nO jovem precisa sair do ensino médio\nsabendo ler, escrever, calcular e\ncom uma profissão à vista. A rede será\ngerada por resultado, do primeiro ano\nde alfabetização à porta da universidade.\n\n• \u0007Gestão por resultados e valorização\nde quem ensina: premiação para escolas\ne bonificação de professores. Mentoria\ne aproximação dos alunos da rede\ncom as universidades públicas.\n• \u0007Estrutura digna e escola aberta: climatização, internet de qualidade, quadras,\nbibliotecas, merenda reforçada e cursos\nrápidos abertos às famílias, transformando\na escola em equipamento das famílias.\n• \u0007Ensino técnico com cursos definidos pelas\ndemandas reais do mercado em cada\nregião, parceria com empresas, rede de\nestágios e acompanhamento dos alunos\nformados, para transformar ensino técnico\nem emprego, renda e oportunidade."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-23",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 23",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 23\n\nCompromissos\nAPRENDIZAGEM NOTA 10\n• \u0007Ensino superior como motor de\noportunidades, com apoio à permanência\nde estudantes de baixa renda nas\nuniversidades estaduais, modernização\nde laboratórios e conectividade, ampliação\nde vagas de ensino a distância e\nprogramas de iniciação científica\nque aproximem o aluno da rede pública\nda carreira universitária.\n\n• \u0007Universidade parceira do governo,\ncom convênios entre as universidades\nestaduais e as secretarias para pesquisa\naplicada em educação, saúde,\nsegurança, mobilidade e gestão pública,\ntransformando conhecimento em solução\npara o cidadão."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-24",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 24",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 24\n\nCompromissos\nESCOLA PROTEGIDA\n\nA escola vai voltar\na ser lugar de\nordem, respeito\ne futuro.\n• \u0007Segurança no entorno e no interior\ndas unidades: policiamento nas\nimediações, integrado aos centros\nde comando e à patrulha escolar,\ncom mediação de conflitos e\nenfrentamento firme ao bullying\ne às agressões contra alunas\ne professoras.\n• \u0007Escolas cívico-militares: o militar\nda reserva responde pela disciplina e pela\nordem, a gestão pedagógica permanece\ncivil e cada unidade assume metas\nde desempenho com neutralidade\npolítico-partidária como princípio\ninegociável de toda a rede.\n• \u0007Vem Pra Aula: alerta precoce de evasão\npela frequência e pelas notas, busca ativa\nde cada estudante em risco e caminhos\nflexíveis de conclusão para quem precisa\ntrabalhar.\n\nNão se aprende com medo. Proteger alunos e professores é condição do aprendizado, dentro da escola, no entorno e na\nvida de cada estudante.\n\n• \u0007Escola Para Elas: equipes capacitadas\npara reconhecer e encaminhar casos\nde violência, com profissionais de\nreferência nas regionais e canal para\nas famílias; permanência escolar de mães\nadolescentes com acompanhamento\npedagógico; e dignidade menstrual\ncom distribuição de absorventes em\ntoda a rede estadual.\n• \u0007Do Teu Lado nas escolas: currículo\nsocioemocional e plantões de\natendimento psicossocial com equipes\nespecializadas, integração com as\nfamílias e telessaúde quando necessário,\ncom atenção especial a meninas,\nmães e mulheres."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-25",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 25\n\nCompromissos\nPROPRIEDADE GARANTIDA E SEGURA\n\nMoradia\né patrimônio,\nsegurança\ne liberdade.\n• \u0007Prevenção de riscos geológicos: sistema\nestadual integrado de monitoramento\ne resposta com os municípios, base\nunificada de informações habitacionais\ne de risco, continuidade das tecnologias\nde contenção de encostas, em especial\nna Região Serrana e Costa Verde.\n• \u0007Regularização fundiária: título da casa\nprópria para quem já mora nela, por meio\nda integração entre Estado, Municípios\ne cartórios para acelerar os processos\ne de mutirões anuais de documentação\nem todas as regiões, com prioridade\npara mulheres chefes de família.\n\nA propriedade é um dos mais poderosos\ninstrumentos de mobilidade social.\nA política habitacional será integrada.\n\n• \u0007Produção habitacional: ampliar a oferta\nde moradias dignas, com prioridade para\nfamílias de baixa renda, servidores de\nsegurança, em regiões com maior déficit\nhabitacional, em parceria com municípios\ne iniciativa privada.\n• \u0007Financiamento facilitado da casa própria\npara os servidores públicos estaduais.\n• \u0007Vilas da Longevidade: moradia assistida,\nadaptada, segura e integrada a serviços\nde saúde, convivência e assistência\npara idosos com baixa renda, em parceria\ncom municípios e iniciativa privada."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-26",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 26",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 26\n\nCompromissos\nPOLÍTICAS SOCIAIS E AUTONOMIA\n\nCuidar de\nquem precisa,\nreconstruir\ncaminhos\ne devolver\ndignidade pelo\ntrabalho.\n• \u0007Fortalecimento da gestão municipal\ncom apoio técnico às prefeituras,\nexpansão da rede de atendimento com\ngestão orientada por dados e cobrança\nde resultado.\n• \u0007Enfrentamento à dependência química:\nampliação e credenciamento de\ncomunidades terapêuticas com vistoria\ntécnica, equipe mínima especializada\ne regulação de vagas integrada à rede\nde saúde.\n• \u0007Estímulo para supermercados\ne indústrias realizarem doação de\nalimentos excedentes ao Banco de\nAlimentos estadual com o Estado atuando\nna certificação e logística de distribuição.\n\nO Estado vai coordenar e fortalecer\nos municípios, com dados, metas\ne cofinanciamento responsável,\npriorizando quem realmente precisa\ne devolvendo autonomia, nunca\ncriando dependência permanente.\n\n• \u0007Envelhecer com dignidade com\no Estado fortalecendo a rede de proteção\ncontra violência e abandono de idosos,\nampliando canais de denúncia e\nintegração com serviços de proteção\ne de saúde.\n• \u0007Atendimento respeitoso, proteção\ncontra violência e oportunidades reais\nde inclusão pelo estudo, qualificação\ne trabalho para pessoas com deficiência,\njovens vulneráveis e mulheres chefes\nde família."
+          },
+          {
+            "id": "eixo-3",
+            "titulo": "Eixo 3",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 3\n\nPlano do Rio Real 2027 - 2030 | 27\n\nRio\nPróspero\nO Rio de Janeiro precisa voltar a ser um estado onde seja\nmais fácil trabalhar, produzir, empreender e investir. A redução\nde burocracias, o apoio aos pequenos negócios, a atração\nde investimentos e o fortalecimento das vocações produtivas\nde todas as regiões serão abordados neste eixo.\nEssas vocações se traduzem em ativos que devem ser valorizados\nem cada região, como indústria, energia, petróleo e gás, agricultura,\nturismo, economia do mar, logística, comércio, serviços, inovação,\ncultura e produção de alimentos. Para isso é necessário trabalhar\nem parceria com os municípios, o setor produtivo, as universidades,\nas instituições de ensino técnico e a iniciativa privada, construindo\nprojetos regionais, melhorando a infraestrutura, qualificando\ntrabalhadores e gerando empregos próximos de onde\nas pessoas vivem."
+          },
+          {
+            "id": "eixo-3-2",
+            "titulo": "Eixo 3",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 3\nRio Próspero\nO Rio de Janeiro reúne alguns dos ativos\neconômicos mais valiosos do Brasil:\nliderança nacional na produção de petróleo,\ninfraestrutura portuária estratégica,\nuniversidades de excelência, centros\nde pesquisa, vocação turística\ninternacional, força cultural reconhecida\ne um dos principais polos de economia\ncriativa do país. Ainda assim, milhões\nde fluminenses convivem com\ndesemprego, baixa renda e poucas\noportunidades. O desafio não é falta\nde potencial, mas transformá-lo\nem investimento, emprego e prosperidade\nem todas as regiões do estado.\nDurante décadas, a economia fluminense\npermaneceu dependente de poucos\nmotores de crescimento. Petróleo, royalties\ne grandes projetos impulsionaram regiões\nespecíficas, mas não produziram um\ndesenvolvimento diversificado e distribuído.\nParte do interior permaneceu distante\ndas cadeias produtivas, da infraestrutura\ne da inovação, enquanto empresas\nenfrentam dificuldades para investir\ne crescer e milhares de trabalhadores\nseguem afastados das oportunidades\nda nova economia. Esse cenário também\nlimita o potencial econômico das mulheres,\nque ainda enfrentam barreiras para\nacessar crédito, tecnologia, qualificação\ne posições de liderança.\nA economia do século XXI é impulsionada\npelo conhecimento, pela inovação,\npela transformação digital, pela economia\ncriativa, pelo turismo, pela logística,\npela energia e pela bioeconomia. O Rio\nreúne todas as condições para liderar esse\nnovo ciclo, mas ainda convive com excesso\nde burocracia, insegurança para investir\n\nPlano do Rio Real 2027 - 2030 | 28\n\ne baixa integração entre governo,\nmunicípios, universidades e setor produtivo.\nMais do que esperar um grande\ninvestimento isolado, o Rio precisa criar\num ambiente capaz de atrair investimentos\ncontinuamente, fortalecer empresas,\nestimular o empreendedorismo e gerar\noportunidades em todas as regiões.\nIsso exige um Estado que assegure\nsegurança jurídica, reduza burocracia,\nqualifique trabalhadores, invista\nem infraestrutura e atue como parceiro\nde quem produz.\nNossa proposta é uma nova política\nde desenvolvimento econômico baseada\nna cooperação entre Estado, municípios,\niniciativa privada, universidades e setor\nprodutivo. O Governo atuará como\nfacilitador do desenvolvimento, removendo\nobstáculos, coordenando políticas públicas\ne fortalecendo a competitividade.\nO desenvolvimento econômico será\ntransversal a todo o Plano de Governo:\na segurança cria confiança para investir;\na educação forma os trabalhadores\nda nova economia; a infraestrutura reduz\ncustos; e a transformação digital aumenta\na produtividade. Assim, o crescimento\npassa a orientar toda a atuação do Estado,\nem parceria com quem empreende,\nproduz e gera empregos."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-29",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 29",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 29\n\nCompromissos\nINVESTE AQUI\n\nMenos burocracia,\nmais empresas.\n• \u0007Balcão único estadual de atração\ne retenção de investimentos, reunindo\nem fluxo digital a AgeRio, CODIN, SEFAZ,\nINEA e JUCERJA, e demais órgãos\nestratégicos, para reduzir burocracia,\ndar previsibilidade e acelerar decisões.\n• \u0007Simplificação da legislação de incentivos\nfiscais, com regras claras, contrapartidas\nobjetivas de geração de emprego\ne mecanismos de devolução quando\nas metas pactuadas não forem cumpridas.\n• \u0007Carteira pública de PPPs e concessões,\npermitindo que investidores conheçam\ncom antecedência os projetos\ndisponíveis, as prioridades do Estado\ne as oportunidades de parceria.\n\nUma porta única de entrada para\no investidor: o balcão vai reunir num só\nfluxo digital todos os órgãos relevantes,\ncom um gerente de conta por projeto\ne prazos garantidos por etapa.\n\n• \u0007Distritos produtivos e áreas econômicas\nprioritárias com infraestrutura de\nqualidade, energia, telecomunicações,\nsaneamento, logística, segurança\ne conexão com a mão de obra local.\n• \u0007Licenciamento integrado, digital\ne com prazos máximos, para setores\nestratégicos, respeitadas as competências\nlegais e sem abrir mão do rigor ambiental\ne regulatório.\n• \u0007Marcos regulatórios claros e estáveis,\ngarantindo segurança jurídica para quem\ninveste, previsibilidade para quem\nempreende e cobrança de resultado para\nquem recebe apoio do Estado."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-30",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 30",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 30\n\nCompromissos\nTODO O RIO CRESCENDO\n\nBraço regional\ndo Estado para\ndestravar projetos,\ncaptar recursos\ne apoiar vocações\nlocais. Todo o Rio\ncrescendo junto.\n• \u0007Escritórios Regionais de Desenvolvimento,\num em cada uma das 8 regiões do\nestado, preferencialmente aproveitando\nestruturas existentes, para apoiar\nprefeituras na formulação de projetos,\ncaptação de recursos, licenciamento,\nparcerias e atração de investimentos.\n• \u0007Pactos regionais e municipais de\ndesenvolvimento, com metas públicas,\ncontrapartidas claras, órgão responsável,\ngestor designado e acompanhamento\nperiódico dos resultados.\n\nO desenvolvimento do Rio precisa\nchegar a todas as regiões, respeitando\na vocação produtiva de cada\nterritório e apoiando os municípios\nna transformação de projetos em\ninvestimento, emprego e renda.\n\n• \u0007Planos regionais de desenvolvimento,\nelaborados para as 8 regiões do estado,\ncom foco nas vocações econômicas\nlocais, como indústria, agro, turismo,\nlogística, economia do mar, tecnologia,\nenergia, serviços e economia criativa.\n• \u0007Fortalecimento dos polos regionais\nde desenvolvimento, apoiando cadeias\nprodutivas já existentes em cada região,\ncom acesso a crédito, qualificação,\ninovação, infraestrutura e mercado."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-31",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 31\n\nCompromissos\nRJ INTEGRADO\n\nConectar o\nRio para reduzir\ncustos, atrair\ninvestimentos e\ngerar empregos.\n• \u0007Estradas para produzir, com recuperação\nde estradas vicinais e trechos estaduais\nestratégicos para o escoamento\nda produção rural, o acesso a polos\nindustriais, o turismo e a ligação entre\ncidades do interior.\n• \u0007Gás, energia e segurança energética,\ncom expansão do gás canalizado\npara a indústria do interior por meio\nda concessão estadual e ações\ncoordenadas com concessionárias,\nagências reguladoras e segurança\npública para reduzir perdas não\ntécnicas de energia, combater ligações\nclandestinas e proteger a rede.\n\nModernizar a infraestrutura econômica\ndo Rio de Janeiro, integrando rodovias,\nferrovias, portos, aeroportos, energia,\ngás e conectividade digital para reduzir\ncustos de produção, melhorar a logística,\nfortalecer o interior e ampliar\na competitividade das empresas.\n\n• \u0007Conectividade para o desenvolvimento,\nacelerando a expansão da internet rápida\ne do 5G em parceria com operadoras\ne municípios, apoiando a simplificação\ndo licenciamento de antenas, uso\nde infraestrutura pública e prioridade\npara cidades, distritos produtivos, escolas,\nunidades de saúde e áreas rurais com\nmenor cobertura.\n• \u0007Diversificação econômica do Norte\nFluminense, com estratégia ativa para\natrair tecnologia, data centers,\nagronegócio, serviços especializados\ne novas cadeias produtivas para Macaé,\nCampos, Rio das Ostras e região,\nreduzindo a dependência exclusiva\ndo ciclo do petróleo."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-32",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 32",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 32\n\nCompromissos\nRJ INTEGRADO\n• \u0007Distritos produtivos conectados\ne seguros, com acesso viário, energia,\ntelecomunicações, internet, saneamento,\niluminação, videomonitoramento,\nleitura de placas e integração com\nas forças de segurança para proteger\ntrabalhadores, empresas, cargas\ne investimentos.\n• \u0007Qualificação para a nova infraestrutura\nprodutiva, formando trabalhadores pela\nFAETEC, SENAI e setor produtivo em áreas\ncomo logística, operação de plataformas,\nautomação, elétrica offshore, inspeção\nde solda, manutenção industrial,\ntecnologia e serviços especializados.\n\n• I\u0007ndústria, energia e serviços de\nengenharia, usando instrumentos como\nICMS, FUNDES, concessões e parcerias\nprivadas com responsabilidade fiscal,\ncontrapartida de emprego, segurança\njurídica e licenciamento ágil para atrair\nrefino leve, indústria naval, serviços\nde engenharia, tecnologia e novos\ninvestimentos."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-33",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 33",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 33\n\nCompromissos\nDA SERRA AO MAR\n\nTurismo,\nEconomia do Mar,\nBioeconomia\ne Economia\nCircular.\n• \u0007Estruturação de 8 regiões turísticas\nintegradas, com rotas que conectem\nlitoral, serra, campo, gastronomia, cultura,\nnatureza e eventos, ampliando o fluxo\nde visitantes para além da capital.\n• \u0007Qualificação da mão de obra local para\no turismo, em parceria com entidades\nde ensino e setor privado, formando\ntrabalhadores para hotelaria, gastronomia,\neventos, receptivo, guias, serviços\nnáuticos e ecoturismo.\n• I\u0007mplantação do Circuito Prosperidade,\ncom revitalização de orlas, parques,\nlagoas e espaços públicos vocacionados\npara sediar competições esportivas,\nfestivais e grandes eventos, em parceria\ncom municípios e iniciativa privada,\ntransformando o esporte em vetor\npermanente de turismo, desenvolvimento\nregional e geração de receitas.\n\nTransformar as riquezas naturais\ndo Rio em desenvolvimento, emprego\ne oportunidades. O Rio de Janeiro\ntem no litoral, nas serras, no campo\ne na biodiversidade uma vantagem\ncompetitiva que ainda pode gerar\nmuito mais renda, turismo, inovação\ne desenvolvimento regional.\nO Governo do Estado vai organizar\nesse potencial em parceria com\nmunicípios, setor privado, instituições\nde pesquisa e empreendedores locais.\n• \u0007Criação do Calendário Estadual de\nTurismo, Esportes e Grandes Eventos,\nintegrando competições de corrida,\nciclismo, triathlon, mountain bike, esportes\nnáuticos e esportes de praia, além\nde festivais culturais, gastronômicos\ne eventos regionais, distribuindo o fluxo\nturístico ao longo de todo o ano, atraindo\npatrocínio e investimento da iniciativa\nprivada, fortalecendo as economias locais\ne promovendo o desenvolvimento\ntambém para os municípios do interior.\n• \u0007Disponibilização de crédito da AgeRio\npara pequenos negócios de turismo,\napoiando pousadas, restaurantes, guias,\nprodutores locais, artesãos, operadores\nde turismo e empreendedores ligados\nà economia regional."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-34",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 34",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 34\n\nCompromissos\nDA SERRA AO MAR\n• \u0007Parque RJ interior: criar uma rede estadual\nde espaços públicos multifuncionais\npreparados para receber exposições,\nfeiras, eventos, esporte, turismo e lazer,\nfortalecendo a economia local e gerando\noportunidades durante todo o ano.\n• \u0007Modernização das Unidades de\nConservação estaduais com potencial\nturístico, com infraestrutura de visitação,\ntrilhas, sinalização, segurança, concessões\ne parcerias para ecoturismo, gerando\nreceita, preservação e emprego local.\n• \u0007Fortalecimento da economia do mar,\ncom apoio ao turismo náutico,\ninfraestrutura costeira, serviços marítimos,\npesca, aquicultura e atividades\nprodutivas ligadas ao litoral fluminense.\n• \u0007Apoio à modernização da infraestrutura\nnáutica e naval, especialmente na\nCosta Verde e nas regiões com vocação\nmarítima, estimulando manutenção\nde embarcações, serviços náuticos,\nturismo e empregos qualificados.\n\n• \u0007Desenvolvimento de cadeias\nde bioeconomia, em parceria com\ninstituições de pesquisa, universidades\ne setor privado, voltadas a cosméticos,\nfármacos, alimentos funcionais e\nprodutos de maior valor agregado a partir\nda biodiversidade fluminense.\n• \u0007Transformação de conservação\nem oportunidade, atraindo investimento\nprivado, pesquisa, inovação e turismo\nresponsável para que o patrimônio natural\ndo Rio gere desenvolvimento sem abrir\nmão da preservação."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-35",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 35\n\nCompromissos\nRIO CRIATIVO\n\nA cultura inspira,\na criatividade\nempreende e\na inovação gera\ndesenvolvimento.\n\nFazer da criatividade um\nativo econômico do Rio de Janeiro,\nfortalecendo os setores culturais\ne criativos, atraindo investimentos\ne ampliando oportunidades de trabalho\ne geração de renda para os fluminenses.\n\n• I\u0007mplantação de um programa estadual\nde atração de produções audiovisuais,\nlimitado por teto orçamentário, critérios\ntécnicos, transparência e contrapartidas\nobrigatórias de gasto local, contratação\nde profissionais fluminenses e\nmovimentação da economia no estado.\n\n• \u0007Criação de trilhas de formação técnica,\nem parceria com instituições de ensino,\npara profissões da economia criativa,\nconectando jovens a vagas em\naudiovisual, games, moda, design, eventos,\nprodução cultural, comunicação digital\ne tecnologia.\n\n• \u0007Apoio a estúdios, startups e empresas\nde games, com acesso a crédito, hubs\nde inovação, conexão com investidores,\nqualificação técnica e integração\ncom universidades e o setor privado.\n\n• \u0007Promoção da exportação de conteúdo\ncriativo fluminense, com rodadas\nde negócios, participação em feiras\nnacionais e internacionais, acordos de\ndistribuição e conexão com plataformas,\nprodutoras e compradores globais.\n\n• \u0007Fortalecimento dos polos de moda\ne design (confecção da Serrana e da\nMetropolitana) com acesso a mercado,\nfeiras, capacitação, crédito e apoio\nà comercialização.\n• \u0007Criação de um calendário estadual\nde música e eventos em parceria com\nmunicípios e iniciativa privada."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-36",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 36",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 36\n\nCompromissos\nEMPREENDE RJ\n\nQuem quer\ntrabalhar,\nempreender e\ncrescer merece\noportunidades,\ncrédito e um\nEstado que facilite\no seu caminho.\n\nFortalecer quem gera emprego\ne renda, ampliando o acesso ao crédito,\nà qualificação profissional e às\noportunidades de trabalho. A política\nintegrará empreendedorismo,\nprimeiro emprego, autonomia\neconômica das mulheres e apoio\naos trabalhadores autônomos,\naproximando a formação profissional\ndas demandas do mercado, estimulando\na criação e o crescimento dos pequenos\nnegócios em todas as regiões.\n\n• \u0007RJ na Pista: crédito para aquisição\nou renovação de veículos de trabalho\ne conversão para GNV, benefícios de\ntributos para motos de até 180 cilindradas,\nincentivos tributários para MEIs e\nmutirões de formalização.\n\n• \u0007Ampliação da qualificação\nprofissional em parceria com Sistema S,\nuniversidades e setor produtivo,\npreparando trabalhadores para as\nvocações econômicas de cada região\ne para as profissões da economia digital.\n\n• \u0007Pontos de apoio seguros para quem\ntrabalha nas ruas, com iluminação,\nvideomonitoramento, estrutura básica,\nintegração com o policiamento territorial\ne monitoramento de áreas críticas\npara motoristas, entregadores\ne trabalhadores autônomos.\n\n• I\u0007mplantação do programa Meu Primeiro\nEmprego, aproximando jovens\ndo mercado de trabalho por meio\nda aprendizagem técnica, incentivos\nà contratação, formação em tecnologia\ne criação de hubs regionais de inovação\ne empreendedorismo."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-37",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 37",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 37\n\nCompromissos\nEMPREENDE RJ\n• \u0007Promoção da autonomia econômica\ndas mulheres, ampliando o acesso\nao crédito, à qualificação, ao\nempreendedorismo, apoiando desde\nas pequenas empreendedoras que\niniciam seus negócios até empresas\nlideradas por mulheres em fase\nde expansão, e fortalecendo, em\nparceria com os municípios, a rede\nde cuidados para ampliar sua\nparticipação no mercado de trabalho.\n\n• \u0007Apoio à criação e o fortalecimento\nde cooperativas, associações produtivas\ne pequenos negócios em todas as regiões\ndo estado, estimulando a geração de\nemprego, renda e desenvolvimento local."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-38",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 38\n\nCompromissos\nAGRO GRANDE\n\nO campo forte\ngera alimento,\nemprego, renda\ne desenvolvimento\npara todo o\nRio de Janeiro.\n\nFortalecer o campo com inovação,\nassistência técnica, crédito e acesso\na mercados, tornando o agro fluminense\nmais competitivo, sustentável e capaz\nde gerar renda em todas as regiões\ndo estado.\n\n• \u0007Facilitação do acesso dos produtores\nàs linhas de crédito rural, aos programas\nde compras públicas e aos instrumentos\nde regularização ambiental, para que\no agricultor produza mais, venda melhor\ne tenha segurança para investir.\n\n• \u0007Conexão do produtor ao mercado,\ncom apoio a feiras regionais, circuitos\ncurtos de comercialização, venda para\nsupermercados, hotéis, restaurantes,\nescolas e programas públicos\nde alimentação.\n\n• \u0007Modernização e fortalecimento\nda EMATER-RJ, com assistência técnica\nvoltada à produtividade, conservação,\nregularização no campo e acesso\na crédito, priorizando Norte, Noroeste\ne Região Serrana.\n\n• \u0007Criação de selos de origem e qualidade\npara produtos fluminenses, valorizando\na produção regional, os orgânicos,\nos agroecológicos e os produtos\nde identidade territorial, especialmente\nda Região Serrana.\n\n• \u0007Estímulo às práticas produtivas\nsustentáveis, com tecnologia,\nconservação do solo, recuperação\nde áreas degradadas e uso eficiente\nda água, sem penalizar quem produz.\n\n• \u0007Apoio à implantação de agroindústrias\nno interior, agregando valor à produção\nlocal, gerando empregos e ampliando\na renda dos produtores e municípios."
+          },
+          {
+            "id": "eixo-4",
+            "titulo": "Eixo 4",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 4\n\nPlano do Rio Real 2027 - 2030 | 39\n\nRio\nque Avança\nReunimos aqui as políticas de infraestrutura, mobilidade e meio\nambiente necessárias para conectar as regiões, reduzir riscos\ne criar condições permanentes para o desenvolvimento do Estado,\norganizando investimentos estruturantes, integração logística,\nprevenção de desastres e proteção responsável dos recursos\nnaturais.\nPreparar o Rio de Janeiro significa enfrentar os problemas\nde hoje e evitar que se repitam amanhã, com obras planejadas,\nmelhor circulação de pessoas e mercadorias, proteção aos\nmunicípios expostos a enchentes e deslizamentos e infraestrutura\nque chegue também ao interior, construindo um estado mais\nconectado, resiliente e preparado para novos ciclos de\ndesenvolvimento."
+          },
+          {
+            "id": "eixo-4-2",
+            "titulo": "Eixo 4",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 4\nRio que Avança\nO Rio de Janeiro precisa retomar\no planejamento de longo prazo para\npreparar seu futuro. Nas últimas décadas,\na infraestrutura estadual sofreu com\ndescontinuidade de investimentos,\nobras paralisadas, fiscalização insuficiente\ndas concessões e baixa coordenação\nentre Estado e municípios, comprometendo\na qualidade de vida e a competitividade\nda economia.\nOs impactos aparecem no cotidiano.\nO transporte público ainda é caro, lento\ne pouco integrado, obrigando muitos\ntrabalhadores a pagar mais de uma tarifa\npara concluir seus deslocamentos.\nRodovias em condições inadequadas\ndificultam a circulação de pessoas\ne mercadorias, sobretudo no interior,\nelevando custos para a produção, o turismo\ne os serviços. A mobilidade tornou-se\num fator decisivo para o desenvolvimento.\nO Estado também precisa fortalecer\nsua capacidade de regular e fiscalizar os\nserviços concedidos, garantindo\ninvestimentos, qualidade e cumprimento\ndos contratos. Quando a fiscalização\nfalha, o cidadão sente na ponta,\ncom a entrega de serviços abaixo\ndo esperado. Na área ambiental,\no desafio é conciliar prevenção\nde desastres, saneamento, recuperação\ndos recursos naturais, proteção animal,\neficiência energética e desenvolvimento\nsustentável, apoiando tecnicamente\nos municípios diante dos eventos climáticos\ncada vez mais frequentes.\n\nPlano do Rio Real 2027 - 2030 | 40\n\nO próximo governo tratará a infraestrutura\ncomo política estratégica para conectar\nregiões, proteger vidas e impulsionar\no desenvolvimento. O Estado atuará como\nplanejador, coordenador e fiscalizador,\nem parceria com os municípios\ne a iniciativa privada, priorizando\na integração dos transportes,\na modernização das concessões,\na prevenção de desastres, a gestão\nambiental e a ampliação da capacidade\nda infraestrutura existente.\nHá também uma dimensão social\nimportante. As mulheres, principais\nusuárias do transporte coletivo,\nmuitas vezes realizam deslocamentos\nentre trabalho, escola dos filhos, serviços\nde saúde e cuidados familiares.\nUm sistema de transporte mais integrado,\neficiente e bem fiscalizado reduz custos,\neconomiza tempo e melhora a qualidade\nde vida das famílias fluminenses."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-41",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 41",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 41\n\nCompromissos\nESTADO PARCEIRO DAS CIDADES\n\nVamos governar\npara as cidades,\ntransformando\nnecessidade real\nem projeto viável.\n\nO Estado será parceiro técnico\ndos municípios para transformar\ndemandas reais em projetos viáveis,\nobras executadas e entregas concretas.\nNosso governo vai ajudar as cidades\na tirar do papel soluções em\ninfraestrutura, saneamento, drenagem,\nencostas, vias, e equipamentos públicos.\n\n• \u0007Balcão Estadual de Projetos Municipais,\ncom canal direto para que prefeituras\napresentem demandas prioritárias\ne recebam resposta técnica em prazo\ndefinido.\n\n• \u0007Modelagem de financiamento e parcerias,\ncom uso de recursos estaduais, federais,\noperações de crédito, concessões,\nPPPs e cooperação com a iniciativa\nprivada quando houver viabilidade.\n\n• \u0007Carteira estadual de projetos\nestruturantes, organizada por região,\nimpacto social, viabilidade técnica,\nalcance econômico e capacidade\nde execução.\n\n• \u0007Critérios técnicos e transparentes\nde seleção, priorizando risco à vida,\nimpacto regional, redução\nde desigualdades territoriais,\ndesenvolvimento econômico\ne capacidade de entrega.\n\n• \u0007Apoio técnico aos municípios, através\nde Escritórios Regionais, especialmente\naos que têm menor estrutura\nadministrativa, para elaboração\nde estudos, projetos básicos, projetos\nexecutivos, licenciamento, orçamento\ne documentação."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-42",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 42",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 42\n\nCompromissos\nESTADO PARCEIRO DAS CIDADES\n• \u0007Plataforma pública de acompanhamento,\ncom status de cada projeto,\netapa de execução, prazo, investimento\nprevisto, município beneficiado\ne responsável técnico.\n\n• \u0007Ampliar a participação mínima de\nmulheres na força de trabalho das obras\npúblicas estaduais, promovendo\nqualificação profissional, fiscalização\ndo cumprimento da medida e estímulo\npara que obras executadas em parceria\ncom os municípios também ampliem\nas oportunidades de inserção feminina\nna construção civil."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-43",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 43",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 43\n\nCompromissos\nNOVOS CORREDORES DE MOBILIDADE\n\nBaixada e Leste\nMetropolitano têm\nos maiores tempos\nde deslocamento\ndo estado. Isso\ntem solução. E vai\ncomeçar agora.\n• \u0007Estudar conexões da Via Light, ligando\na Via Light à Linha Vermelha, à Avenida\nBrasil e à Via Dutra, com foco em\ndesafogar o principal eixo Rio-São Paulo\ne melhorar o deslocamento de quem\nmora na Baixada.\n• \u0007Novo corredor viário de alta capacidade\nda Baixada Fluminense conectando\nDuque de Caxias, Belford Roxo, Nilópolis,\nMesquita e São João de Meriti,\ncom faixa exclusiva, estações acessíveis\ne requalificação urbana no entorno.\n• \u0007Acompanhar a finalização do projeto\nda Linha 3 do metrô e realizar a captação\nde recursos para sua implementação.\n\nFalta transporte de alta capacidade\njustamente onde a população\nmais precisa. O governo vai planejar,\nestruturar e viabilizar corredores\ncapazes de reduzir tempo de viagem,\norganizar o transporte intermunicipal\ne melhorar a integração com os\ndemais modais.\n\n• \u0007Melhor aproveitamento da rede já\nexistente, com mais eficiência, menor\ntempo de deslocamento e melhor uso\ndos investimentos públicos.\n• \u0007Ampliação e expansão de faixas exclusivas\ne prioridade operacional, garantindo\nmais velocidade, previsibilidade e\nregularidade ao transporte coletivo nos\nprincipais corredores metropolitanos.\n• \u0007Reordenação das linhas de ônibus\nintermunicipais, com função alimentadora\ndos corredores existentes e redução\nde sobreposições desnecessárias."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-44",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 44",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 44\n\nCompromissos\nBILHETE ÚNICO\n\nUma rede\nintegrada para\naproximar\ntodas as regiões\ndo Estado.\n\nO transporte no Rio ainda cobra caro\nde quem mais precisa se deslocar.\nMuitos trabalhadores usam mais\nde um modal para chegar ao emprego,\nà escola, ao médico ou aos serviços\npúblicos, pagando várias vezes por\numa única jornada. O Estado vai liderar\na integração do sistema, com\nresponsabilidade fiscal, tecnologia,\ntransparência e foco no passageiro.\n\n• \u0007Revisão e modernização da bilhetagem\núnica estadual, com integração\nprogressiva entre metrô, trem, barcas,\nBRT e ônibus intermunicipais.\n\n• \u0007Expansão gradual da integração tarifária\npara os principais polos regionais, fazendo\nda mobilidade integrada uma política para\ntodo o Estado do Rio de Janeiro.\n\n• I\u0007ntegração tarifária com responsabilidade\nfiscal, critérios técnicos, sustentabilidade\nfinanceira e tarifa social focalizada\npara a população de baixa renda.\n\n• I\u0007senção para viagens de cuidado nos\nsistemas estaduais, permitindo combinar\nônibus intermunicipais, trens, metrô\ne barcas para mulheres de baixa renda\nresponsáveis por crianças, idosos\nou pessoas com deficiência.\n\n• \u0007Plataforma digital de mobilidade, com\ninformações em tempo real sobre rotas,\nhorários, conexões, tempo de espera\ne condições dos serviços."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-45",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 45",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 45\n\nCompromissos\nRODOVIAS RJ\n\nEstrada sem\nburaco não é obra.\nÉ gestão. E o\nEstado vai voltar\na gerir.\n• \u0007Segurança viária, com mapeamento\ndos pontos mais perigosos e intervenções\nem sinalização, pavimento, iluminação\ne fiscalização.\n• \u0007Patrulhas regionais permanentes,\ncom atuação preventiva nos trechos\ncríticos e apoio à redução de acidentes.\n• \u0007Estradas para Produzir, com recuperação\ne ampliação de rodovias estratégicas\npara o agro, a indústria, a logística\ne o turismo do interior.\n• \u0007Pontes e travessias prioritárias,\nespecialmente em trechos que isolam\ncomunidades, dificultam o escoamento\nda produção e prejudicam o acesso\na serviços públicos.\n\nRodovia em boas condições não é favor:\né dever de gestão. A malha estadual\nprecisa ser tratada como infraestrutura essencial para salvar vidas, reduzir\ncustos, conectar municípios, fortalecer o\nagro, a indústria, o turismo e melhorar a\ncirculação de pessoas e mercadorias em\ntodas as regiões do Estado.\n\n• \u0007Reequipamento do DER-RJ, com\nmáquinas, equipes, tecnologia e sistemas\nmodernos de gestão da malha estadual\ne fortalecimento das operações de\nmanutenção das rodovias.\n• \u0007Concessões inteligentes, com novos\ncontratos baseados em manutenção\npermanente, iluminação, atendimento\nemergencial, câmeras e leitura\nde placas para tornar nossas estradas\nmais seguras."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-46",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 46",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 46\n\nCompromissos\nCONCESSÕES: SERVIÇOS\nQUE FUNCIONAM\n\nQuem assinou\no contrato vai\ncumprir. O Estado\nvai medir, publicar\ne punir quem\nfalha.\n\nConceder um serviço público não significa transferir a responsabilidade do Estado para terceiros. Trem, metrô, barcas,\nvans, ônibus intermunicipais, rodovias\ne saneamento precisam ter fiscalização\npermanente e cobrança efetiva. Toda\nconcessão terá contrapartidas obrigatórias: investimento, qualidade, pontualidade, expansão dos serviços e respeito\nao cidadão.\n\n• \u0007Cobrança das obrigações contratuais\ndas barcas, especialmente pontualidade,\nregularidade das travessias e redução\ndos cancelamentos que prejudicam\no Leste Metropolitano, com modernização\ndos terminais aquaviários, incluindo\nacessibilidade, iluminação, organização\noperacional e videomonitoramento.\n\n• \u0007Fortalecimento do monitoramento\ndas concessionárias de saneamento para\nassegurar o cumprimento integral\ndas metas contratuais, com prioridade\nà universalização dos serviços, à redução\ndas perdas de água por meio\ndo acompanhamento permanente\ndos índices de distribuição e da exigência\nde investimentos corretivos,\nà expansão das redes de coleta\ne tratamento de esgoto, especialmente\nem áreas e municípios com maior\ndéficit de cobertura e à despoluição\ndos principais corpos hídricos do Estado,\ndo controle dos lançamentos irregulares\ne da divulgação transparente dos\nresultados ambientais.\n\n• \u0007Fortalecimento da fiscalização dos\nserviços de transporte público estadual,\nabrangendo trens, metrô, ônibus e vans\nintermunicipais, com monitoramento\npermanente de indicadores de\ndesempenho, como pontualidade,\nregularidade, velocidade operacional\ne qualidade do atendimento, transparência\npor meio de painel aberto ao cidadão,\ncobrança do cumprimento das obrigações assumidas, renovação da frota,\nmodernização da infraestrutura\ne aplicação efetiva de penalidades\nquando cabíveis."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-47",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 47",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 47\n\nCompromissos\nCONCESSÕES: SERVIÇOS\nQUE FUNCIONAM\n• \u0007Revisão do modelo de prestação\ndo serviço de distribuição de\ngás canalizado para o próximo ciclo,\naproveitando o potencial energético\ndo Estado para ampliar a infraestrutura\ne a rede de distribuição, expandir\no atendimento aos municípios, estimular\no uso do gás natural nos setores\nprodutivos e na mobilidade, modernizar\nos sistemas de distribuição e assegurar\nmecanismos efetivos de fiscalização\ne cumprimento das obrigações.\n• \u0007Estações e terminais seguros e acessíveis\ncomo obrigação das concessionárias,\ncom iluminação, câmeras, comunicação\nde emergência, funcionamento garantido\nde elevadores e rampas, e atendimento\ncapacitado e prioritário a mulheres,\npassageiras com crianças, idosos\ne pessoas com deficiência, com\nintervenções prioritárias nos pontos\nde maior insegurança.\n\n• I\u0007mplementação de protocolo único\nde prevenção e atendimento à violência\ncontra a mulher em trens, metrô, barcas,\nônibus intermunicipais e terminais\nestaduais. O protocolo incluirá avisos\nvisíveis nos veículos, estações, terminais\ne banheiros (inclusive os banheiros\ndos ônibus intermunicipais), informando\ncomo a passageira pode pedir ajuda\nde forma rápida e discreta, por telefone,\ncanal digital ou diretamente ao motorista\ne à equipe operacional, além de\nprocedimentos claros para acolhimento,\nregistro da ocorrência, acionamento\nda segurança e encaminhamento\nà rede de proteção. Motoristas, agentes,\nequipes operacionais e profissionais\nde segurança receberão capacitação\nespecífica para esse atendimento."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-48",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 48",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 48\n\nCompromissos\nPROTEÇÃO CONTRA TRAGÉDIAS\n\nAntes da chuva,\no plano. Antes\nda tragédia,\no Estado presente.\n\nO Estado do Rio convive com enchentes,\ndeslizamentos e perdas que poderiam\nser reduzidas com planejamento,\nprevenção e resposta rápida. O Estado\nvai mudar a lógica da reação\npara a prevenção, usando tecnologia,\ninteligência de risco, defesa civil\nfortalecida e apoio técnico\naos municípios.\n\n• \u0007Cronograma anual de limpeza\ne desobstrução de canais, com\nmapeamento das áreas prioritárias,\nequipes permanentes e resultados\npublicados para acompanhamento\nda população.\n\n• \u0007Monitoramento de encostas e áreas\nvulneráveis, com uso de tecnologia,\nfiscalização em parceria com os\nmunicípios e apoio técnico às prefeituras,\ncom atuação coordenada antes que\no risco se transforme em tragédia.\n\n• \u0007Parques alagáveis e soluções baseadas\nna natureza, especialmente em áreas\nde maiores riscos socioambientais, com\nsistemas capazes de reter água da chuva,\nrecuperar várzeas e mangues e reduzir\npontos recorrentes de alagamento.\n\n• \u0007Resposta rápida a desastres climáticos,\ncom estrutura estadual permanente\npara apoiar imediatamente os municípios\nem casos de enchentes, deslizamentos\ne eventos extremos, mobilizando equipes,\nmáquinas, equipamentos e assistência\nemergencial.\n\n• \u0007Fortalecimento do CEMADEN-RJ,\ncomo centro estadual de inteligência\nde riscos, com alertas antecipados\nintegrados ao celular do morador,\nespecialmente na Região Serrana, Costa\nVerde e demais áreas críticas.\n• \u0007Defesa civil comunitária, com núcleos\nde proteção nas comunidades de maior\nrisco, capacitação de lideranças locais\ne comunicação simples, direta e acessível."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-49",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 49",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 49\n\nCompromissos\nRJ VERDE PRODUTIVO\n\nCuidar do\nmeio ambiente\né cuidar da saúde,\nda cidade,\ndos animais\ne da economia.\nO RJ Verde\nProdutivo é gestão\nambiental com\nresponsabilidade.\n• \u0007Mercado de ativos ambientais, com\napoio técnico para que produtores rurais,\nmunicípios e comunidades possam\nacessar projetos de restauração,\ncompensação ambiental e créditos\nde carbono, gerando renda a partir da\nconservação.\n• \u0007Proteção animal: ampliação da política\nestadual de proteção e bem-estar\nanimal, com castração gratuita, unidades\nmóveis em parceria com os municípios\ne atendimento prioritário nas regiões mais\ncarentes, aliada à criação de um banco\nde adoção responsável e de uma rede\nde apoio aos cuidadores, bem como ao\naperfeiçoamento da qualidade do\natendimento nas delegacias para os casos\nde maus-tratos contra animais.\n\nMeio ambiente não pode ser tratado\napenas como obrigação burocrática.\nO Estado vai unir proteção ambiental,\nsaúde pública, economia circular,\ninovação e geração de valor.\nA agenda ambiental será uma política\nde gestão: lixo tratado, áreas degradadas\nrecuperadas, animal protegido, energia\nmais barata, parques qualificados\ne natureza transformada em ativo\npara o desenvolvimento sustentável.\n\n• \u0007Encerramento dos lixões ativos, por meio\nde consórcios intermunicipais, apoiando\nmunicípios que não conseguem resolver\nsozinhos a destinação adequada dos\nresíduos.\n• \u0007Fortalecimento das cooperativas\nde catadores, com equipamentos, crédito,\ncapacitação para transformar resíduo\nem renda e implantação de ecopontos.\n• \u0007Cooperação técnica com municípios,\npara projetos de eficiência energética,\nrecuperação ambiental, zeladoria\nde espaços públicos, gestão de resíduos\ne proteção de áreas verdes."
+          },
+          {
+            "id": "plano-do-rio-real-2027-2030-50",
+            "titulo": "Plano do Rio Real 2027 - 2030 | 50",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Plano do Rio Real 2027 - 2030 | 50\n\nCompromissos\nRJ VERDE PRODUTIVO\n• \u0007Rede Parque RJ, com apoio\naos municípios para transformar áreas\ndegradadas em parques, praças\ne espaços de esporte, lazer e convivência,\ncom iluminação LED, acessibilidade,\ninclusão e videomonitoramento.\n\n• \u0007RJ Solar: com instalação de painéis\nsolares em prédios públicos estaduais,\ncomo escolas, hospitais, batalhões\ne secretarias, reduzindo gastos\ncom energia e liberando recursos para\noutros investimentos.\n\n• \u0007Proteção da fauna silvestre,\ncom ampliação dos centros de triagem\ne reabilitação e combate ao tráfico\nde animais com inteligência, fiscalização\ne integração com a segurança pública.\n\n• \u0007Transição energética: incentivo\nà expansão das energias renováveis,\nespecialmente da energia eólica,\nda energia solar fotovoltaica e da geração\ndistribuída, aproveitando o potencial\ndo litoral fluminense para impulsionar\no desenvolvimento sustentável, ampliar\na eficiência e diversificar a matriz\nenergética na indústria, nas empresas\ne nas residências."
+          },
+          {
+            "id": "consideracoes",
+            "titulo": "Considerações",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "Considerações\nFinais\nUm plano de governo não pode ser\napenas um documento cheio de promessas. Precisa dialogar com a vida real:\ncom a mãe que enfrenta condução lotada\ne quer voltar para casa em segurança;\ncom o pai que trabalha todos os dias e quer\nver o filho longe do crime; com o jovem\nque busca oportunidades; com o\ncomerciante que quer trabalhar sem medo;\ncom as famílias que esperam uma consulta,\numa escola melhor, uma rua iluminada\ne uma cidade mais organizada.\nFoi olhando para essa realidade que\nconstruímos este plano. E é dessa realidade\nque eu venho. São Gonçalo, minha cidade,\nme ensinou os desafios vividos diariamente\npelos fluminenses: transporte difícil, falta\nde oportunidades, violência, infraestrutura\nprecária e serviços públicos que\nnem sempre funcionam como deveriam.\nMinhas raízes me lembram que governar\nnão é falar de longe. É conhecer a fila,\na rua esburacada, o ônibus demorado,\no medo da família, a escola que precisa\nde ordem, o posto de saúde que precisa\nfuncionar. Aprendi com a minha família\nque palavra dada precisa ser cumprida,\nque responsabilidade vem antes de\nvaidade e que ninguém constrói nada\nsozinho.\nEste plano nasce desse compromisso:\nfazer o Estado funcionar para as pessoas.\nUm Estado que enfrente o crime, cuide\nda saúde, melhore a educação, apoie\nas mulheres, amplie a inclusão das\npessoas com autismo, valorize quem\ntrabalha e gere oportunidades em todas\nas regiões. Queremos um Rio mais\npróspero, onde empreender seja\n\nPlano do Rio Real 2027 - 2030 | 51\n\nincentivado, o interior tenha protagonismo\ne cada região desenvolva sua vocação.\nTambém queremos preparar o Estado para\no futuro, com transporte integrado,\ninfraestrutura de qualidade, prevenção\nde tragédias, responsabilidade ambiental\ne uma parceria permanente com\nos municípios, porque é na cidade que\na vida acontece.\nEste documento reúne prioridades\ne compromissos, mas continuará sendo\naperfeiçoado. Permanecerei nas ruas,\nouvindo a população e incorporando\nnovas ideias que contribuam para melhorar\na vida dos fluminenses.\nAgradeço a todos que contribuíram\npara a construção deste plano. Cada\nconversa ajudou a transformar problemas\nreais em propostas concretas. Este não é\num plano de promessas fáceis, mas\num compromisso de trabalho, construído\ncom respeito, presença e seriedade.\nO Rio de Janeiro que queremos construir\ncomeça nas nossas cidades, nas nossas\nfamílias e na confiança de que dias\nmelhores são possíveis. Esse é o meu\ncompromisso com o povo fluminense\ne com o futuro do nosso Estado."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "90236b68f7576958463ec76751b29fe74b425730a9d09e9b478aefaad9adb2fe"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "771172c4613551792fcb058e73ac0d9559dea92557cd39452156a8643a657761"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "dbea633c80423903281809f88bd1414a1f2b709c701a3849bf3c23d504b78c32"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2c78cfb38c6c00305555e5345cc68c22f35eb831caf56819129565b77b60e4c5"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "95fc36073bb1863acface52684671637bf40d388b05e67d654ff1129a81351de"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "564ae894cee29730d22e21209b1fe1a76d9a7c5ba602e696ad813ed354519ae1"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "3ba470478f4911ce922b4d7d943409cbce6c2df1f9e3d01b3a9846ffebe77b7e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "5db483ce0c26238aa589d687f13f2e1df54854971437ee8031bdf8f4fb08f4c5"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "ca7c11062de7bdf1616daf7415f6ffd1df22259acd6d3e3848ec8d7a78cf5f23"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "7a5d5b22c74829e73cff3608e33f9f1164fe18547d7521079a21e639e907f800"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4c4ae4a5442479389508486d0dd3d931df7621e1ebb483070c7940b753a9f43e"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "d03d83c3a076755b36f9c3b9684765a8b3d52ce924102e87c7b39ae405c265aa"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "f40b2e06136d115c7d0309b32a9abb9faf554ad2ccbadfb2be591d966f055089"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "b5607129b91209938cb27ff493fb0abf7fcd8c338d498fbd9e37b3651188ce4c"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d0a04e8ac7ee94d60afca99aa49dda9a1bc660508ff01a40ac4df1f30ee11029"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "97ec975e40b3fac97ddc33c87609a0c5820c23bcf905e5936ba94079e0356998"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "d8c3ae5601948febc3cdc7e376eb2f4393b6e44b9840d73722238480695e981e"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "dbe0f77240a2f25cbd3dbf5edb43320ceaa529ded98d2182ef3e2a182e7b5b72"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "c0169487ee3bbf66713631e1d1789d98f489ba117864a4e95c6bcc929daf0b9f"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "a497f36ba557ea736ce8af0937d4e94635bd11ba8588b15a4d25635e00970f82"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "103b6856689d9d3a035fcf1690d3c6be34ee9e2b6b47462f6ad5b78ca580d8d4"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "f4e469fea4102e2a9290b8457b562285ea980709a1380327e73dd53b8d9e5c51"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "5aa7b13a27201d1b2da015a22164f6b20e4891ae511bd2cb88e462cc08f013fb"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "0200a8530ee3535b051ebac7767e09e251bcd7d9816fd838a0a483e9e6cd1c67"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "97e472f0912e3f3218ea3a328712d7a14ce2c1b6ac05d29f0bb4a9169c3a42f6"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "f28ed68648d2a891dbd0776c0f819e71a3c0f348695a8b451beecc7d1826191e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "a04893a884a5d7ebfd19b9877865d26461c0a6480edef13ceddc413970174d27"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "a0a4f26627f3f4bcbc94c112ab50bcbc00df498af6f78bfc0ce1563a92541a60"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "313e8efe259fe5c1c64c3424ff0eb0c6d912db68eddc11f33ec044bb7b0e72e8"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "53bdc62b3e5a0e529293a755e0f7e97dfd7cf5ea4b4fe51922d3e6894fe2981b"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "19c634de7ff5c397a8fd342b782d11086d90c81d95ef61479fb456b2c2ab4060"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e52778d4df7de6c719d4fc01312258c7e037587f8e7d4427cdc9b7d58731d5c6"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "c4636c916198870addedc649e4d2dee7e1e4c57634275317fef6a06061c3b007"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "4cfb753675cd1d069e1f0812cbe5f7f8d1293f19aeb08e38a60ccd95380e106a"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "8d942f671f85d29f6e1dca68d3ef43037bb48b9930f93c612a099469a88c08be"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "531561649183a312b084c21e9a7470d710e5079915f562ef8e8f3e002ff2e198"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "042ef4b094d402690787de01a0023fdce4aa6a3636514fb8005866788f9eccce"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "309140a3c5961e9e3e2d8a24534f8d200c0273acb0c8423168697ccd76694b90"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "9b7a0b3066742b8f4bfe894ea6636ba467dbce5518879c66b532aa3df7f98fd3"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "c5d0e794792b761f9ac7e6c5d5acc7f2531b0426dffcd7b2a29168416683e96d"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "f6b896bbfa1414be276e3c70bfc334c512a027c13db1111bb550e8b4c808a090"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "987388dfc3685ad9ce8fba81dc127dfd4d1b2da9914058aa50a5ae7e7e74e0d0"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "a3e371a47e5df9816de607f91d07764932ef5b584c9430e7a2efffcd9cb17521"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "52e19f038b4a366723ff558075616324fbcd5805d7fe05fad95fb982f63ed3ad"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "6e6878bdc1a2668cdf840bd2cb8342e456c28a6b0fe669503ee2fa30bd19eda1"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "5f94d32164103a814f1208dee845aca23535b3c0dcbceafca11e135126d2b077"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "18647040b3dd488e7ca534e01629b42ab4527667fe10ffc498dd704718927a6e"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "5a01bec34a40371ac618d618e380d42d4953451a46e1c7fe68fdd29e5a773001"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "522c7a994f66bd327d1a9729756096928accb949ccff5617b8a007857708fae5"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "c55b52f7db3b0047e25c7af88c78184fd33fc9001f9799aa9bfab68c5d653d5b"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "dcb0c09411d1b5b51ac59b83e1c82e8513beb8095397fa358d7b801dd2df98f6"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê uma central estadual unificada de regulação digital, com prontuário eletrônico único aberto aos municípios. O plano prevê polos regionais de alta complexidade para diagnóstico, intervenções terapêuticas, orientação e capacitação às famílias. O plano prevê alfabetização na idade certa em regime de colaboração com os municípios, com apoio técnico, avaliação da leitura, capacitação de professores e gestores. O plano prevê escritórios regionais de desenvolvimento, um em cada uma das 8 regiões do estado, para apoiar prefeituras na formulação de projetos. O plano prevê a revisão e modernização da bilhetagem única estadual, com integração progressiva entre metrô, trem, barcas, BRT e ônibus intermunicipais. O plano prevê o monitoramento de encostas e áreas vulneráveis, com uso de tecnologia, fiscalização em parceria com os municípios e apoio técnico às prefeituras.",
+    "frases": [
+      {
+        "texto": "O plano prevê uma central estadual unificada de regulação digital, com prontuário eletrônico único aberto aos municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 18,
+            "trecho": "Central estadual unificada de regulação\ndigital, com prontuário eletrônico único\naberto aos municípios e fila organizada\npela gravidade de cada caso."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê polos regionais de alta complexidade para diagnóstico, intervenções terapêuticas, orientação e capacitação às famílias.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 21,
+            "trecho": "Polos regionais de alta complexidade\nreunindo num só lugar o diagnóstico,\nas intervenções terapêuticas e a\norientação e capacitação às famílias."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê alfabetização na idade certa em regime de colaboração com os municípios, com apoio técnico, avaliação da leitura, capacitação de professores e gestores.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 22,
+            "trecho": "Alfabetização na idade certa em regime\nde colaboração com os municípios,\ncom apoio técnico, avaliação da leitura,\ncapacitação de professores e gestores"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê escritórios regionais de desenvolvimento, um em cada uma das 8 regiões do estado, para apoiar prefeituras na formulação de projetos.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 30,
+            "trecho": "Escritórios Regionais de Desenvolvimento,\num em cada uma das 8 regiões do\nestado, preferencialmente aproveitando\nestruturas existentes, para apoiar\nprefeituras na formulação de projetos"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a revisão e modernização da bilhetagem única estadual, com integração progressiva entre metrô, trem, barcas, BRT e ônibus intermunicipais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 44,
+            "trecho": "Revisão e modernização da bilhetagem\núnica estadual, com integração\nprogressiva entre metrô, trem, barcas,\nBRT e ônibus intermunicipais."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê o monitoramento de encostas e áreas vulneráveis, com uso de tecnologia, fiscalização em parceria com os municípios e apoio técnico às prefeituras.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 48,
+            "trecho": "Monitoramento de encostas e áreas\nvulneráveis, com uso de tecnologia,\nfiscalização em parceria com os\nmunicípios e apoio técnico às prefeituras"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "regulacao-digital-saude",
+        "titulo": "Regulação digital da saúde",
+        "descricao": "Organização digital da regulação estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 18,
+            "trecho": "Central estadual unificada de regulação\ndigital, com prontuário eletrônico único\naberto aos municípios e fila organizada\npela gravidade de cada caso."
+          }
+        ]
+      },
+      {
+        "id": "atendimento-autismo",
+        "titulo": "Atendimento à pessoa autista",
+        "descricao": "Rede regional de diagnóstico do autismo.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 21,
+            "trecho": "Polos regionais de alta complexidade\nreunindo num só lugar o diagnóstico,\nas intervenções terapêuticas e a\norientação e capacitação às famílias."
+          }
+        ]
+      },
+      {
+        "id": "alfabetizacao-na-idade-certa",
+        "titulo": "Alfabetização na idade certa",
+        "descricao": "Apoio estadual à alfabetização municipal.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 22,
+            "trecho": "Alfabetização na idade certa em regime\nde colaboração com os municípios,\ncom apoio técnico, avaliação da leitura,\ncapacitação de professores e gestores"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "Apoio técnico regional às prefeituras.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 30,
+            "trecho": "Escritórios Regionais de Desenvolvimento,\num em cada uma das 8 regiões do\nestado, preferencialmente aproveitando\nestruturas existentes, para apoiar\nprefeituras na formulação de projetos"
+          }
+        ]
+      },
+      {
+        "id": "bilhetagem-estadual",
+        "titulo": "Bilhetagem estadual",
+        "descricao": "Integração progressiva do transporte estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 44,
+            "trecho": "Revisão e modernização da bilhetagem\núnica estadual, com integração\nprogressiva entre metrô, trem, barcas,\nBRT e ônibus intermunicipais."
+          }
+        ]
+      },
+      {
+        "id": "monitoramento-de-encostas",
+        "titulo": "Monitoramento de encostas",
+        "descricao": "Monitoramento tecnológico de áreas vulneráveis.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002542887:01",
+            "pagina": 48,
+            "trecho": "Monitoramento de encostas e áreas\nvulneráveis, com uso de tecnologia,\nfiscalização em parceria com os\nmunicípios e apoio técnico às prefeituras"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:48:06.217Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:50:31.227Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:1:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:2:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:3:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Número de 8 regiões literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:4:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:5:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:frase:6:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo genérico sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:regulacao-digital-saude:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Rede regional de diagnóstico corresponde aos polos regionais citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:atendimento-autismo:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim (diagnóstico regional) coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:alfabetizacao-na-idade-certa:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:desenvolvimento-regional:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:bilhetagem-estadual:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002542887:tema:monitoramento-de-encostas:documentos:RJ:190002542887:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do claim coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RJ:190002542887",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RJ:190002542887:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 39480,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2758,
+          "reasoning_output_tokens": 1436
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25336,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23341,
+          "output_tokens_details": {
+            "thinking_tokens": 1025
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25336,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23341,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25336,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25336
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3545774
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "8e50ed1bb2ee5cfd935c2d3492eeb0b66a426b008e1ea2a88da83cd8a4b5ea58",
+    "extractedTextSha256": "7ae755cf1875ff43ea0fbf72ec7529640e31b4595060bcbc18625e6046cb146b",
+    "documentCount": 1,
+    "documentSetSha256": "68a8ddd260d61517e8f1eaa1e451588493b0edb7a9afecbf283a89ca8025c8fa",
+    "contentSha256": "be604ee8149a45f30afece69326e08b049c974eeb0f901be198d3f2536988132"
+  }
+}

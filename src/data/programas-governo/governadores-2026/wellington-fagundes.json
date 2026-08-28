@@ -1,0 +1,1394 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MT",
+    "sqCandidato": "110002551737",
+    "slug": "wellington-fagundes",
+    "nomeUrna": "WELLINGTON FAGUNDES",
+    "partido": "PL",
+    "arquivoNome": "2026MT110002551737_01.pdf",
+    "arquivoNoPacote": "MT/2026MT110002551737_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MT:110002551737:01",
+      "fonte": {
+        "arquivoNome": "2026MT110002551737_01.pdf",
+        "arquivoNoPacote": "MT/2026MT110002551737_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "2224b04d7501d27b9b0965e3f07d27aa7498d0dd1a4d59e0fe5937d19b85e584",
+        "extractedTextSha256": "db08ff8c81021234c78daa15075ccac1fc3e0849ca387a3abaac2896013f0b7c",
+        "paginas": 57,
+        "secoes": [
+          {
+            "id": "plano-de",
+            "titulo": "PLANO DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE\nGOVERNO\nWELLINGTON FAGUNDES\n\n2027-2030"
+          },
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO 2027 – 2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027 – 2030\nWELLINGTON FAGUNDES\nA FORÇA QUE MOVE O BRASIL E CUIDA DA NOSSA GENTE\nMato Grosso transformou desafios em conquistas. Com trabalho, coragem e espírito empreendedor,\nconstruímos uma das economias mais fortes do país. Alimentamos o Brasil e o mundo, geramos riqueza,\nabrimos caminhos e mostramos que quem acredita, produz e não desiste, vai mais longe.\nMas chegou a hora de dar um passo maior.\nO Brasil conhece a força de Mato Grosso. Agora, cada mato-grossense precisa sentir essa força\nna própria vida: no atendimento de saúde que chega a tempo, na escola que prepara nossos jovens,\nna estrada que aproxima as cidades, na segurança que protege as famílias, no emprego que oferece\nfuturo, na infraestrutura que distribui nossas riquezas e no serviço público que respeita o cidadão.\nO desafio não é apenas continuar crescendo. É transformar crescimento em qualidade de vida.\nÉ fazer a riqueza chegar à casa das pessoas. É garantir que nenhum município seja esquecido\ne que nenhuma família seja deixada para trás.\nQuero liderar um governo com três compromissos inegociáveis: responsabilidade com o dinheiro\npúblico, coragem para tomar decisões e presença onde o cidadão mais precisa.\nVamos governar com metas, prazos e cobrança de resultados. Cada real arrecadado terá destino,\nprioridade e prestação de contas. O Estado não será espaço de improviso, desperdício ou acomodação.\nCargos estratégicos serão ocupados por pessoas preparadas, e os servidores de carreira serão\ncapacitados e respeitados. Porque um governo só funciona quando quem trabalha também\né reconhecido e valorizado.\nSeremos parceiros de quem produz, empreende e gera emprego. Vamos simplificar processos, reduzir\nburocracias, garantir segurança jurídica e criar condições para que pequenos, médios e grandes\nnegócios prosperem. Mato Grosso continuará forte no campo, mas avançará também na indústria,\nna tecnologia, na inovação, no turismo e na economia criativa. Produzir mais, agregar valor\ne gerar oportunidades em todas as regiões.\nVamos enfrentar nossas dificuldades históricas. Estradas melhores, integração ferroviária, hidroviária\ne aeroportuária, energia estável e internet de qualidade não são privilégios: são condições para\no desenvolvimento. Um Estado moderno precisa conectar pessoas, municípios, escolas, hospitais e empresas.\nNa segurança, haverá firmeza, inteligência e presença. Quem trabalha, produz e cria seus filhos tem\no direito de viver em paz. Vamos valorizar nossas forças, fortalecer a investigação, combater o crime\norganizado e proteger as cidades, o campo e as nossas fronteiras.\nNa saúde, vamos trocar a espera pela resposta. Fortalecer hospitais regionais, ampliar consultas, exames,\ncirurgias e implantar a telemedicina. Na educação, vamos garantir aprendizagem de verdade, valorizar\nprofessores e preparar nossos jovens para a vida, para o trabalho e para o futuro.\nE nenhuma mulher ficará sem proteção. Enfrentar a violência, acolher as vítimas e garantir condições\npara o recomeço será prioridade permanente do governo.\nFarei um governo descentralizado. Uma gestão municipalista, presente nos 142 municípios, ouvindo\nprefeitos, lideranças e, principalmente, a população. Não governaremos apenas do Palácio Paiaguás.\nGovernaremos nas estradas, nos bairros, nas escolas, nos hospitais, no campo e nas cidades.\n02"
+          },
+          {
+            "id": "onde-houver-um-problema-havera-solucao-onde-houver-uma-oportunidade-have",
+            "titulo": "Onde houver um problema, haverá solução. Onde houver uma oportunidade, haverá parceria.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Onde houver um problema, haverá solução. Onde houver uma oportunidade, haverá parceria.\nO governo não precisa escolher entre o desenvolvimento econômico e o cuidado com as pessoas.\nVamos fazer os dois. Liberdade para produzir. Responsabilidade para governar. Segurança para viver.\nOportunidade para crescer.\nNão prometo o impossível. Assumo uma missão: construir um governo à altura da grandeza de Mato\nGrosso e da dignidade da nossa gente.\nSomos mais que um Estado que sustenta o Brasil. Somos o futuro dessa nação.\nÉ hora de transformar força em riqueza, oportunidade em crescimento e uma vida melhor para todos.\nMato Grosso está pronto para avançar. Eu estou pronto para liderar. E, juntos, vamos construir o Estado\nque o nosso povo merece.\n\nWellington Fagundes\nCandidato a Governador de Mato Grosso\n\n03"
+          },
+          {
+            "id": "indice",
+            "titulo": "ÍNDICE",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "ÍNDICE\n\n04\n\nGESTÃO PÚBLICA E GOVERNANÇA\n• um estado que planeja, entrega e presta contas\n• governadoria\n• controle interno e procuradoria\n• comunicação\n\n06\n07\n07\n07\n08\n\nPLANEJAMENTO, ORÇAMENTO E GESTÃO\n• planejar com informações, executar com responsabilidade\n\n09\n10\n\nFAZENDA\n• equilíbrio fiscal para investir, produzir e crescer\n\n11\n12\n\nSEGURANÇA PÚBLICA E JUSTIÇA\n• firmeza contra o crime, proteção para as famílias\n• segurança\n• crime organizado\n• governança estratégica e gestão por resultados\n• segurança rural inteligente\n• capacidade investigativa e pericial do estado\n• modernização, infraestrutura e proximidade policial\n• proteção dos biomas, defesa civil e resposta a emergências\n• justiça\n\n13\n14\n14\n14\n14\n14\n15\n15\n15\n16\n\nPROTEÇÃO À MULHER\n• nenhuma mulher sem proteção\n• governança, integração e política estadual para as mulheres\n• violência contra a mulher\n• autonomia econômica, cuidado e recomeço\n\n17\n18\n18\n18\n19\n\nSAÚDE\n• saúde perto de casa, gestão que salva vidas\n• assistência à saúde\n• logística e infraestrutura\n• combate à hanseníase\n• gestão da saúde\n• educação em saúde\n\n20\n21\n22\n22\n22\n22\n23\n\nEDUCAÇÃO\n• aprender mais, crescer com valores e oportunidades\n• valorização e desenvolvimento dos profissionais\n• educação para o futuro\n• educação que acolhe, inclui e caminha com as famílias\n• infraestrutura, inovação e ambiente escolar\n\n24\n25\n25\n25\n26\n26\n\nESPORTE E LAZER\n• esporte que forma, protege e transforma\n\n28\n29\n\nINFRAESTRUTURA\n• infraestrutura que integra e move o desenvolvimento\n• transporte rodoviário\n• transporte ferroviário\n• transporte hidroviário\n• transporte aeroviário\n• infraestrutura elétrica\n• conectividade\n\n30\n31\n31\n32\n32\n32\n32\n33\n\nCIÊNCIA E TECNOLOGIA\n• conhecimento que gera oportunidades e desenvolvimento\n• capital humano e talentos\n• inovação e competitividade empresarial\n• tecnologia para o desenvolvimento regional e social\n• governança e infraestrutura digital\n\n34\n35\n35\n35\n35\n36"
+          },
+          {
+            "id": "economia",
+            "titulo": "ECONOMIA",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "ECONOMIA\n• crescer mais, agregar valor e gerar empregos\n• desenvolvimento econômico\n• agronegócio\n• agricultura familiar\n• indústria e comércio\n• economia solidária\n• juventude\n• inteligência econômica\n\n37\n38\n39\n40\n40\n40\n40\n40\n41\n\nTURISMO\n• experiências únicas, desenvolvimento em todas as regiões\n• infraestrutura turística\n• segmentos estratégicos\n\n42\n43\n43\n43\n\nCULTURA\n• cultura que preserva identidade e movimenta a economia\n• infraestrutura e fomento cultural\n• formação e economia criativa\n\n44\n45\n45\n45\n\nCIDADES E DESENVOLVIMENTO URBANO\n• cidades organizadas, serviços próximos e qualidade de vida\n• planejamento, gestão e capacitação municipal\n• habitação e regularização fundiária\n• infraestrutura urbana e qualificação de espaços\n• mobilidade e integração regional\n• saneamento básico e sustentabilidade\n\n46\n47\n47\n47\n48\n48\n48\n\nBEM-ESTAR SOCIAL\n• proteger famílias, criar oportunidades e restaurar autonomia\n• desenvolvimento social\n• políticas para o idoso\n• oportunidade para todos\n• cidadania e justiça\n• minorias\n\n50\n51\n51\n51\n52\n52\n52\n\nMEIO AMBIENTE\n• proteger riquezas e gerar desenvolvimento sustentável\n• regularização, licenciamento e fiscalização inteligente\n• economia verde e transição energética\n• segurança hídrica e proteção de ecossistemas\n• pantanal, cerrado e amazônia mato-grossense\n• adaptação climática e resiliência urbana\n\n54\n55\n55\n55\n55\n56\n56\n\n05"
+          },
+          {
+            "id": "gestao",
+            "titulo": "GESTÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "GESTÃO\nPÚBLICA\nE GOVERNANÇA\n\n06"
+          },
+          {
+            "id": "um-estado-que-planeja",
+            "titulo": "UM ESTADO QUE PLANEJA,",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "UM ESTADO QUE PLANEJA,\nENTREGA\nE PRESTA CONTAS\nMato Grosso precisa de uma administração pública que transforme orçamento, estrutura e tecnologia\nem resultados concretos. A boa gestão não se mede apenas pelo equilíbrio das contas,\nmas pela capacidade de entregar serviços mais rápidos, acessíveis e eficientes em todas as regiões.\nNosso compromisso é construir um governo presente, participativo e municipalista, que escute as regiões,\napoie as prefeituras e preste contas do que realiza. Governança será o método para fazer o Estado\nfuncionar melhor, gastar com responsabilidade e entregar mais.\n\n•\n\nGOVERNADORIA\n\nGoverno Presente\nAproximar o gabinete do governo da realidade de todos os municípios do Estado, por meio de visitas\nperiódicas com o objetivo de ouvir sugestões, críticas e demandas da população.\nOrçamento participativo\nPromover a participação direta da população na formulação do orçamento do Estado.\nGestão Participativa\nFortalecer a Governança Participativa por meio da criação de canais permanentes de escuta,\ndiálogo e cooperação do Governo Regional Integrado.\nGoverno Regional Integrado\nDescentralizar a gestão estadual por meio da integração de representantes regionais ao processo\nde formulação e execução das políticas públicas.\n\n•\n\nCONTROLE INTERNO E PROCURADORIA\n\nPortal de Transparência\nAprimorar o Portal da Transparência, garantindo acesso simples, direto e facilitado às informações públicas.\nGerir conflitos de interesses\nInstituir o sistema estadual de gestão e prevenção de conflitos de interesses para a alta administração\npública de Mato Grosso.\nOuvidoria Integrada Regional\nIncrementar o funcionamento da Ouvidoria, para transformá-la em canal eficiente\ne desburocratizado para as manifestações populares.\nControle de efetividade\nFortalecer a atuação do Controle Interno na avaliação da efetividade das políticas públicas.\nProcuradoria Digital e Acessível ao Cidadão\nAperfeiçoar as ferramentas digitais da Procuradoria Geral do Estado, ampliando o acesso\ndo cidadão aos serviços prestados.\n\n07"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nCOMUNICAÇÃO\n\nInformação Acessível\nCriar uma curadoria de conteúdo que transforme os relatórios técnicos em ilustrações explicativas\npara redes sociais com o objetivo de fomentar o uso de linguagem simples na comunicação do Estado.\nVitrine de Talentos e Destinos\nUtilizar os canais oficiais do Estado e parcerias com produtores de conteúdo para divulgar os pontos\nturísticos de Mato Grosso.\n\n08"
+          },
+          {
+            "id": "planejamento",
+            "titulo": "PLANEJAMENTO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANEJAMENTO\n\nORÇAMENTO\n\nE GESTÃO\n\n09"
+          },
+          {
+            "id": "planejar-com-informacoes",
+            "titulo": "PLANEJAR COM INFORMAÇÕES,",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANEJAR COM INFORMAÇÕES,\nEXECUTAR COM\nRESPONSABILIDADE\nO planejamento estadual precisa deixar de ser uma etapa formal e assumir o papel de orientar decisões,\ninvestimentos e entregas. Metas claras, prioridades definidas e informações confiáveis são indispensáveis\npara que o orçamento produza resultados concretos.\nNosso compromisso é transformar o planejamento em ferramenta efetiva de gestão, integrando\norçamento, monitoramento e transparência para que cada decisão seja orientada por prioridades\nclaras e dados confiáveis, garantindo que Mato Grosso entregue serviços públicos de qualidade\nà população, com responsabilidade fiscal e eficiência administrativa.\nMetas de Resultado\nViabilizar a pactuação de metas de resultados por meio de contrato de gestão com os secretários\nde estado.\nMT inteligente: Centro de Pesquisa\nAmpliar o centro de pesquisa, estatística, avaliação e governo para eliminar a fragmentação\nentre secretarias.\nGovernança, Estratégia e Riscos\nMonitorar projetos estruturantes e antecipar riscos fiscais, jurídicos e operacionais.\nCritérios para Cargos em Comissão e Função de Confiança\nEstabelecer critérios de escolaridade, experiência profissional e probidade\npara os cargos em comissão e funções de confiança da administração.\nRede de dados do Serviço Público\nImplantar rede de dados de alta velocidade, de uso privativo do governo estadual.\n\nRegularização da RGA\nRegularizar a Revisão Geral Anual (RGA), estabelecendo cronograma de quitação\ndo passivo acumulado.\nGoverno Digital e Rede de Cidadania Integrada\nDisponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas.\n\nCentral de Serviços Compartilhados e Racionalização\nRacionalizar a aquisição e gestão de serviços de suporte à administração.\n\nContratos Focados no Usuário\nImplementar um modelo de fiscalização baseado em indicadores de qualidade percebida,\nde maneira a captar a satisfação da população com os serviços disponibilizados.\n\nPresença Regionalizada\nDescentralizar a fiscalização em parceria com municípios\n\n10"
+          },
+          {
+            "id": "fazenda",
+            "titulo": "FAZENDA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "FAZENDA\n\n11"
+          },
+          {
+            "id": "equilibrio-fiscal",
+            "titulo": "EQUILÍBRIO FISCAL",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "EQUILÍBRIO FISCAL\nPARA INVESTIR,\nPRODUZIR E CRESCER\nUma política fiscal competente e responsável deve proteger o equilíbrio das contas públicas\nsem transformar o contribuinte em adversário do Estado. Arrecadar com eficiência, combater\nfraudes e simplificar obrigações são caminhos para fortalecer as receitas sem elevar impostos.\nNosso compromisso na área da Fazenda é manter o equilíbrio das contas públicas para ampliar\na capacidade de investimento do Estado, sem aumentar a carga tributária.\nVamos modernizar a administração tributária, simplificar a relação entre Estado\ne contribuinte, fortalecer a gestão fiscal e apoiar os municípios, transformando responsabilidade\nfiscal, eficiência e transparência em desenvolvimento, geração de oportunidades\ne melhores serviços para a população.\n\nMonitoramento de Incentivos Fiscais\nImplementar sistema de monitoramento de resultados dos incentivos fiscais\nconcedidos pelo Estado.\n\nPrograma \"Fisco Amigo\"\nImplementar um modelo de conformidade tributária que premie o bom pagador\ncom maior agilidade na liberação de certidões, redução de multas isoladas\ne prioridade no atendimento.\n\nSefaz Digital\nModernizar a infraestrutura tecnológica da Secretaria de Fazenda com o uso\nde inteligência artificial para detecção de fraudes e oferta de canais de autorregularização\naos contribuintes.\n\nGestão Fiscal Equilibrada\nAdotar política austera de responsabilidade fiscal, com sistema de projeções\nde receitas orçamentárias atrelado à arrecadação tributária do Estado.\n\nICMS Personalizado e Digital\nSimplificar as obrigações acessórias para micro e pequenas empresas,\nconvertendo 100% dos processos tributários para o formato digital.\n\nPacto Municipalista: Fortalecimento das Finanças Locais\nCriar o Programa de Apoio à Gestão Fiscal Municipal para transferir tecnologia\ne capacitação técnica às prefeituras na gestão de receitas próprias\ne na fiscalização compartilhada.\n\n12"
+          },
+          {
+            "id": "seguranca",
+            "titulo": "SEGURANÇA",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA\n\nPÚBLICA\n\nE JUSTIÇA\n\n13"
+          },
+          {
+            "id": "firmeza-contra-o-crime",
+            "titulo": "FIRMEZA CONTRA O CRIME,",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "FIRMEZA CONTRA O CRIME,\nPROTEÇÃO PARA\nAS FAMÍLIAS\nMato Grosso enfrenta o avanço das facções, crimes de fronteira, violência urbana e rural\ne graves ameaças à vida e ao patrimônio. A segurança pública precisa ser tratada como\npolítica permanente de Estado, com autoridade, presença territorial e resposta rápida.\nNosso compromisso é garantir ordem, liberdade e tranquilidade para as famílias, com metas,\ncobrança de resultados e presença efetiva do Estado em todas as regiões. Quem trabalha\ne produz precisa ter o direito de viver em paz.\n\n•\n\nCRIME ORGANIZADO\n\nPrograma Estadual de Combate ao Crime Organizado\nEstruturar programa estadual integrado de enfrentamento ao crime organizado.\n\nAmpliação da presença do Estado na Fronteira\nFortalecer a presença do Estado na fronteira com a Bolívia por meio da ampliação\nde efetivo, modernização de equipamentos, uso intensivo de tecnologia, busca\nde recursos federais para investimentos e expansão das bases do Gefron.\n\nRegularização fundiária e Governança na Fronteira\nAvançar na regularização fundiária e na governança territorial.\n\n•\n\nGOVERNANÇA ESTRATÉGICA E GESTÃO POR RESULTADOS\n\nPolítica MT Seguro\nInstituir a Política de Gestão por Resultados denominada MT Seguro como modelo\nestadual permanente de gestão por resultados na segurança pública.\n\nValorização dos Profissionais da Segurança Pública, Sistema Penitenciário e Sócioeducativo\nInstituir política permanente de valorização dos profissionais da Segurança Pública, com especial\natenção à saúde mental dos servidores\n\n•\n\nSEGURANÇA RURAL INTELIGENTE\n\nPolítica Estadual Permanente de Proteção ao Campo\nInstituir política estadual de segurança rural.\n\nMapeamento Inteligente das Propriedades e Rotas Produtivas\nImplantar sistema estadual de georreferenciamento das propriedades rurais, estradas\nvicinais e pontos críticos.\n\nExpansão do Policiamento Ostensivo no Campo\nAmpliar e estruturar o patrulhamento rural.\n\nVideomonitoramento e Sensoriamento no Campo\nIncentivar a instalação de sistemas de videomonitoramento, drones e sensores em áreas\nestratégicas, integrados a centrais de comando e controle da Segurança Pública.\n\n14"
+          },
+          {
+            "id": "participacao-comunitaria-na-seguranca-do-campo",
+            "titulo": "Participação Comunitária na Segurança do Campo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Participação Comunitária na Segurança do Campo\nEstabelecer rede estadual de cooperação entre produtores rurais, sindicatos\ne forças de segurança, com canais diretos de comunicação e compartilhamento\nde inteligência.\n\n•\n\nCAPACIDADE INVESTIGATIVA E PERICIAL DO ESTADO\n\nTecnologia e Análise Criminal\nModernizar os equipamentos operacionais e a infraestrutura tecnológica\ndas instituições de segurança.\nInvestigação Financeira\nFortalecer a investigação criminal qualificada com ênfase na inteligência financeira\ne no rastreio de ativos ilícitos.\nPerícia e Prova Digital\nExpandir as capacidades de perícia digital e fortalecer a cadeia de custódia\nda prova técnico-científica em todas as regiões do Estado.\nInteroperabilidade de Sistemas\nPromover a interoperabilidade plena entre os sistemas institucionais de segurança\ne justiça para eliminar o isolamento de dados entre os órgãos.\n\n•\n\nMODERNIZAÇÃO, INFRAESTRUTURA E PROXIMIDADE POLICIAL\n\nModernização Tecnológica e da Infraestrutura\nPromover a modernização integrada das forças de segurança.\nEscolas Militares\nExpandir a rede de escolas militares e programas de educação cidadã.\nReestruturação da Polícia Comunitária\nReestruturar e modernizar a Polícia Comunitária.\nVideomonitoramento\nExpandir a rede de videomonitoramento para todos os municípios de Mato Grosso.\n\n•\n\nPROTEÇÃO DOS BIOMAS, DEFESA CIVIL E RESPOSTA A EMERGÊNCIAS\n\nGestão Integrada de Riscos Ambientais e Emergências\nReestruturar e fortalecer o Corpo de Bombeiros Militar como instituição de referência estadual.\nBombeiro Militar no Interior\nExpandir a presença do Corpo de Bombeiros para municípios estratégicos que ainda\nnão possuem unidades operacionais.\nModernização da Frota de Salvamento\nRenovar e padronizar a frota de viaturas de resgate e combate a incêndio com veículos\nequipados com tecnologia de ponta e adequados à logística das estradas de Mato Grosso.\nPrograma Bombeiro nas Escolas\nInstituir o programa de capacitação em primeiros socorros e prevenção de acidentes\nnas escolas do estado de Mato Grosso.\n\n15"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nJUSTIÇA\n\nMato Grosso construiu e ampliou presídios. Apenas construir novas unidades não resolve o problema.\nO crescimento da criminalidade e da população carcerária continua pressionando o sistema.\nA falta de planejamento faz o sistema operar superlotado com mais de 15 mil presos.\nConstruir presídios sem inteligência e sem gestão de fluxo é desperdício do dinheiro do contribuinte.\nCapacitação e Fortalecimento do Sistema Penitenciário\nImplementar programa permanente de capacitação dos profissionais do sistema\npenitenciário e socioeducativo.\nRessocialização pelo Trabalho\nImplementar política integrada de ressocialização no sistema prisional.\nInfraestrutura e Vagas Penitenciárias\nModernizar a infraestrutura e regionalizar o sistema penitenciário e socioeducativo.\nTecnologia e Controle Prisional\nAdotar tecnologias avançadas de segurança, como scanners corporais, bloqueadores\nde comunicação e sistemas antidrones, para fortalecer o controle interno das unidades prisionais.\nGestão por Dados e Reintegração\nImplantar a gestão por resultados e o uso de inteligência de dados na classificação\nprisional e no monitoramento eletrônico para orientar decisões estratégicas.\n\n16"
+          },
+          {
+            "id": "protecao",
+            "titulo": "PROTEÇÃO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROTEÇÃO\n\nÀ MULHER\n\n17"
+          },
+          {
+            "id": "nenhuma",
+            "titulo": "NENHUMA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "NENHUMA\nMULHER\nSEM PROTEÇÃO\nMato Grosso convive com índices inaceitáveis de violência contra a mulher e feminicídio.\nEssa realidade revela falhas na prevenção, no acompanhamento das medidas protetivas, na integração\nda rede e na capacidade de resposta do Estado antes que a violência alcance seu desfecho mais grave.\nNosso compromisso é organizar uma política estadual forte, integrada aos municípios e capaz de agir\nantes, durante e depois da violência.\n\n•\n\nGOVERNANÇA, INTEGRAÇÃO E POLÍTICA ESTADUAL PARA AS MULHERES\n\nSecretaria da Mulher\nCriar uma Secretaria voltada a políticas de proteção às mulheres, com coordenação própria, orçamento\ndefinido e em articulação com as demais Secretarias e entes de proteção às mulheres dos demais Poderes.\nFortalecimento da Rede Municipal de Políticas para Mulheres\nApoiar os municípios na criação, ampliação e fortalecimento de organismos municipais\nde políticas para mulheres.\n\nParticipação Social e Controle Democrático\nFortalecer o Conselho Estadual dos Direitos da Mulher, as conferências estaduais\ne regionais de políticas para mulheres e os canais de escuta qualificada.\n\n•\n\nVIOLÊNCIA CONTRA A MULHER\n\nPrevenção e Enfrentamento da Violência Contra a Mulher\nInstitucionalizar uma política permanente de prevenção e enfrentamento da violência\ncontra a mulher, com foco na redução do feminicídio, interrupção de ciclos reiterados\nde violência, proteção das vítimas e responsabilização dos agressores.\nPrevenção Primária e Transformação Cultural nas Escolas\nCoordenar, em articulação com a Secretaria de Educação, programas educativos permanentes\nvoltados à prevenção da violência contra a mulher.\nResponsabilização e Mudança de Comportamento dos Agressores\nEstruturar programa baseado em evidências voltado à responsabilização e reeducação\nde autores de violência doméstica.\n\nProteção às Vítimas e Gestão de Risco\nImplantar modelo estadual de avaliação de risco e acompanhamento de mulheres em situação\nde maior vulnerabilidade.\n\nAcolhimento Integrado à Mulher Vítima de Violência\nExpandir a presença de unidades nacionais e regionais de atendimento integrado\nnos principais polos de Mato Grosso.\nSalas Lilás e Atendimento Humanizado\nCoordenar a implantação de Salas Lilás em unidades periciais, hospitais regionais\ne serviços estratégicos do interior.\n\n18"
+          },
+          {
+            "id": "formacao-de-multiplicadores-comunitarios",
+            "titulo": "Formação de Multiplicadores Comunitários",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Formação de Multiplicadores Comunitários\nImplantar programa de formação de lideranças comunitárias, agentes públicos, educadores,\nprofissionais de saúde, conselheiros tutelares, lideranças religiosas, lideranças rurais e representantes\nde organizações sociais.\n\n•\n\nAUTONOMIA ECONÔMICA, CUIDADO E RECOMEÇO\n\nAutonomia Econômica da Mulher com Proteção Integral\nCriar programa estadual de autonomia econômica para mulheres, especialmente aquelas em situação\nde violência, vulnerabilidade social ou chefia solo de família.\n\nApoio ao Cuidado e Expansão da Rede de Creches\nCoordenar a expansão da oferta de creches públicas, comunitárias e conveniadas, em regiões de maior\nvulnerabilidade.\n\nRecomeço com Trabalho e Proteção\nInstituir programa de recomeço para mulheres acolhidas com apoio intensivo à empregabilidade\ne inserção protegida no mercado de trabalho.\n\nMulher Rural Forte\nImplantar programa que ofereça às mulheres do campo capacitação técnica, acesso a crédito,\nassistência produtiva, apoio à comercialização, inclusão em compras públicas e ações de prevenção\nà violência doméstica.\n\n19"
+          },
+          {
+            "id": "saude",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\n\n20"
+          },
+          {
+            "id": "saude-perto",
+            "titulo": "SAÚDE PERTO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE PERTO\nDE CASA, GESTÃO\nQUE SALVA VIDAS\nA saúde pública precisa funcionar para o paciente, com atendimento oportuno, cuidado humano\ne presença regional. Filas, cirurgias adiadas, falta de medicamentos e longos deslocamentos demonstram\nque recursos e estruturas ainda não se convertem plenamente em acesso e resolutividade.\nNosso compromisso é construir uma saúde mais eficiente, transparente e próxima, que trate cada\ncidadão como pessoa e aplique cada recurso com responsabilidade. O resultado esperado é simples:\natendimento mais rápido, seguro e digno em todas as regiões.\n\n•\n\nASSISTÊNCIA À SAÚDE\n\nSaúde Materno-Infantil\nInstituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância.\n\nDoenças Crônicas\nEstabelecer linhas de cuidado permanente para pacientes crônicos, bem como fortalecer\nos programas de vacinação, combate ao tabagismo e saúde bucal.\n\nSaúde Mental e Rede de Atenção Psicossocial\nPromover a modernização do atendimento aos pacientes com transtornos mentais, Transtorno\ndo Espectro Autista (TEA) e dependência química.\n\nSaúde do Idoso\nCriar Centros de Atenção aos Idosos focados na longevidade ativa, qualidade de vida e gestão\nde múltiplas comorbidades.\n\nCombate à Obesidade\nLançar programa transversal de redução da obesidade, integrando Saúde,\nEducação, Esporte e Lazer.\nCentros de Reabilitação\nRegionalizar centros de reabilitação para pacientes com sequelas neurológicas, ortopédicas\ne reumatológicas.\n\nRede Estadual de Transplantes\nImplantar programa estadual de transplantes, estruturando um centro de excelência\nno Hospital Central e criando incentivos aos hospitais privados e filantrópicos\npara a ampliação dos serviços.\n\nAgilidade nas Cirurgias Eletivas e Exames Diagnósticos\nAmpliar o acesso a exames diagnósticos e cirurgias eletivas, melhorando a eficiência\nda rede pública utilizando a ociosidade da rede privada.\n\nAmpliação da Disponibilidade de Leitos Hospitalares\nViabilizar medidas que promovam a desospitalização, quando indicado, por meio da implantação\ne ampliação dos serviços de home care.\n\n21"
+          },
+          {
+            "id": "saude-animal",
+            "titulo": "Saúde Animal",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Saúde Animal\nApoiar os municípios na realização de atendimento médico veterinário destinado\na animais de estimação da população de baixa renda.\n\nSaúde do Homem\nAmpliar o acesso masculino a consultas, exames e ações de promoção da saúde,\n\nCuidado com os Povos Originários\nOrganizar fluxos de regulação e ampliar o acesso da população indígena e quilombola aos serviços na\nrede estadual de saúde, com acesso a consultas, exames, internações e tratamentos.\nSaúde e Reabilitação\nAmpliar o acesso da população com deficiência a serviços de saúde, reabilitação, órteses e próteses.\n\n•\n\nLOGÍSTICA E INFRAESTRUTURA\n\nDistribuição de Medicamentos de Uso Contínuo\nPromover a distribuição responsável e contínua de medicamentos aos pacientes que dependem\nde doses frequentes.\n\nDispensação Individualizada de Medicamentos\nAdotar as medidas necessárias para viabilizar a dispensação individualizada de medicamentos\nem todas as unidades de saúde do Estado.\n\nTecnologia da informação\nProver a Secretaria de Saúde de informações gerenciais acerca de todas as etapas de operação,\ndo registro da escala de trabalho à dispensação de medicamentos e materiais hospitalares.\n\n•\n\nCOMBATE À HANSENÍASE\n\nDiagnóstico Precoce e Busca Ativa\nCapacitar as equipes da Atenção Primária para realizar o diagnóstico precoce da doença, realizando\nbusca ativa de pessoas próximas às já diagnosticadas.\n\nTratamento Integral e Reabilitação Cirúrgica\nViabilizar a disponibilidade dos medicamentos e garantir acesso a cirurgias de descompressão neural.\n\n•\n\nGESTÃO DA SAÚDE\n\nDimensionamento dos Recursos Humanos\nPromover a valorização dos profissionais da saúde e o dimensionamento da força de trabalho,\nem conformidade com as normativas do Ministério da Saúde.\n\nAumento do Faturamento da Saúde\nPromover a habilitação e homologação de todos os serviços disponibilizados pela Secretaria de Saúde\nde maneira a garantir o recebimento de recursos do Governo Federal pelos serviços prestados.\n\nRegulação\nImplantar Sistema de Regulação unificado e integrado com os municípios para a totalidade\ndas demandas existentes.\n\n22"
+          },
+          {
+            "id": "saude-na-ponta-do-dedo",
+            "titulo": "Saúde na Ponta do Dedo",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Saúde na Ponta do Dedo\nImplementar a digitalização da rede de saúde por meio da criação de aplicativo, integrando\nprontuários, documentos médicos, histórico clínico e resultados, com uso de Inteligência Artificial.\n\nMarcação de consultas e exames pelo celular\nDisponibilizar aplicativo que permita a marcação ágil de consultas e exames,\ncom confirmação automática.\nTeleconsultas\nImplantar sistema informatizado que seja capaz de encaminhar o paciente para uma consulta feita\npor meio remoto, quando cabível, permitindo, que o médico solicite pareceres de especialistas\natravés de interconsulta.\n\nDigitalização de Exames de Imagem\nAdotar as medidas necessárias à digitalização dos exames de imagem e promover a interligação\nem rede desses equipamentos.\nCentral de Laudagem\nImplantar uma central de laudagem na qual especialistas farão a análise de exames, retornando\nos resultados aos profissionais de saúde e pacientes, reduzindo o tempo e o custo dos serviços.\n\n•\n\nEDUCAÇÃO EM SAÚDE\n\nHospitais Universitários\nFomentar a implantação de hospitais universitários em Sinop e Rondonópolis.\n\nReestruturação da Escola de Saúde Pública\nReestruturar a Escola de Saúde Pública para atuar fortemente na educação continuada\ne no treinamento de servidores.\n\n23"
+          },
+          {
+            "id": "educacao",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\n\n24"
+          },
+          {
+            "id": "aprender-mais-crescer",
+            "titulo": "APRENDER MAIS, CRESCER",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "APRENDER MAIS, CRESCER\nCOM VALORES\nE OPORTUNIDADES\nA educação é ambiente de formação e o caminho mais seguro para ampliar oportunidades,\nfortalecer as famílias e preparar Mato Grosso para o futuro. A escola precisa entregar aprendizagem\nreal, segurança, disciplina, acolhimento e formação para a vida e para o trabalho.\nNosso compromisso é aproximar Estado, municípios e famílias para garantir que cada estudante\naprenda, permaneça na escola e encontre caminhos concretos para construir seu futuro\ncom conhecimento, valores e autonomia.\n\n•\n\nVALORIZAÇÃO E DESENVOLVIMENTO DOS PROFISSIONAIS\n\nValorização dos Profissionais da Educação\nValorizar os profissionais da educação por meio da realização de concursos públicos, do aumento\nda segurança nas escolas, da formação dos professores e demais educadores.\n\nFormação Continuada e Pós-graduação\nInstituir política permanente de formação com oferta de bolsas para especializações e mestrados.\n\nFormação Docente Baseada em Evidências\nOferecer formação continuada aos profissionais da educação com foco em alfabetização, raciocínio\nlógico e matemático, ciências humanas e sociais, bem como o exercício da cidadania.\n\nReestruturação do CEFAPRO\nReabilitar os Centros de Formação e Atualização dos Profissionais da Educação Básica (CEFAPRO)\ne ampliar a oferta de formação em parceria com instituições acadêmicas, qualificando o suporte\ntécnico-pedagógico nos polos regionais.\n\nAutonomia Pedagógica dos Professores\nDevolver ao docente a autonomia na seleção de ferramentas e conteúdos didáticos.\n\nMobilidade de Talentos\nCriar processos transparentes e periódicos de remoção para os servidores da educação, com critérios\njustos e regras claras.\n\nGestão Qualificada de Professores Temporários\nValorizar e organizar a atuação dos professores temporários, garantindo formação adequada, integração\nàs diretrizes da rede estadual e melhores condições de trabalho.\n\n•\n\nEDUCAÇÃO PARA O FUTURO\n\nPrograma MT na Idade Certa\nInstituir programa de cooperação com os municípios para alfabetização e letramento matemático\nna idade certa.\n\nFortalecimento da Prática em Matemática e Leitura\nImplantar laboratórios de matemática e ampliar o uso pedagógico das bibliotecas escolares.\n\nAvaliação e Gestão por Resultados\nAperfeiçoar, em conjunto com os professores, as avaliações contínuas da aprendizagem dos estudantes\ncom metas preestabelecidas para o Índice de Desenvolvimento da Educação Básica (IDEB).\n25"
+          },
+          {
+            "id": "educacao-com-inteligencia-artificial",
+            "titulo": "Educação com Inteligência Artificial",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Educação com Inteligência Artificial\nPromover o uso responsável de tecnologia e inteligência artificial nas escolas estaduais,\npreparando educadores, gestores e estudantes para utilizar novas tecnologias.\nImplantação de Escolas Cívico-Militares e Vocacionadas\nRealizar consultas públicas para implantação de modelos vocacionados e cívico-militares nas regionais.\n\n•\n\nEDUCAÇÃO QUE ACOLHE, INCLUI E CAMINHA COM AS FAMÍLIAS\n\nPolítica Estadual de Educação Inclusiva\nInstituir política estruturada para pessoas com deficiência e transtornos psicossociais\nintegrando educação, saúde e assistência social.\n\nIdentificação Precoce e Atendimento Individualizado\nImplantar protocolos de triagem e Planos Educacionais Individualizados (PEI) em todas as unidades.\n\nFormação e Equipes Multidisciplinares\nAmpliar o quadro de psicólogos, psicopedagogos, assistentes sociais e assistentes de sala nas escolas.\n\nAcessibilidade e Recursos Especializados\nGarantir infraestrutura física acessível e salas de recursos multifuncionais.\n\nCultura Inclusiva e Bem-Estar Escolar\nPromover ações de combate ao estigma e suporte à saúde mental da comunidade escolar, fortalecendo\no vínculo entre escola e família.\n\nEquidade Territorial na Educação\nGarantir educação de qualidade em todas as regiões de Mato Grosso.\n\n•\n\nINFRAESTRUTURA, INOVAÇÃO E AMBIENTE ESCOLAR\n\nEducação em Tempo Integral\nAmpliar a educação em tempo integral na rede estadual, com planejamento regional e prioridade\npara municípios e escolas com maiores desafios de aprendizagem, permanência e vulnerabilidade social.\n\nPlano de Modernização da Infraestrutura Escolar\nExecutar plano de melhoria física com climatização, saneamento básico e espaços para esporte e cultura.\n\nUniversalização da Conectividade Escolar\nAmpliar o acesso à internet de alta velocidade nas escolas, com conexão estável, segura e adequada\nao uso pedagógico.\n\nMaterial Didático Híbrido e Acessível\nDisponibilizar material didático digital e físico de forma concomitante com acesso a dispositivos\nconectados.\n\nSegurança Alimentar no Ambiente Escolar\nFortalecer a política de alimentação escolar com qualidade nutricional e produtos da agricultura\nfamiliar local.\n\nPolítica Integrada de Segurança Escolar\nImplantar uma Política Integrada de Segurança e Convivência Escolar, com prevenção\nà violência, segurança patrimonial, protocolos de identificação e resposta a situações de risco.\n\n26"
+          },
+          {
+            "id": "educacao-escolar-dos-povos-originarios",
+            "titulo": "Educação Escolar dos Povos Originários",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Educação Escolar dos Povos Originários\nFortalecer a educação escolar indígena e quilombola.\nEducação Antirracista\nFortalecer a educação antirracista na rede estadual.\n\n27"
+          },
+          {
+            "id": "esporte",
+            "titulo": "ESPORTE",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "ESPORTE\n\nE LAZER\n\n28"
+          },
+          {
+            "id": "esporte-que-forma",
+            "titulo": "ESPORTE QUE FORMA,",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "ESPORTE QUE FORMA,\nPROTEGE\nE TRANSFORMA\nO esporte e o lazer são instrumentos de saúde, convivência, disciplina e desenvolvimento humano.\nQuando integrados à educação e às políticas sociais, ajudam a prevenir violência, fortalecer\nvínculos e ampliar oportunidades para crianças, jovens, adultos e idosos.\nNosso compromisso é democratizar o acesso ao esporte e ao lazer, transformar espaços públicos\nem ambientes de convivência e criar caminhos para que talentos de todas as regiões possam se desenvolver.\n\nPlano Estadual de Infraestrutura Esportiva e Lazer Integrado\nImplantar programa de expansão, recuperação e modernização da infraestrutura esportiva e de lazer.\n\nRede Integrada dos Jogos Escolares e Esporte Educacional\nFortalecer os Jogos Escolares e Estudantis mediante a institucionalização de calendário permanente,\nintegração das atividades ao currículo pedagógico, oferta de treinamento no contraturno e valorização\ndo Bolsa Atleta Estadual.\n\nEsporte como Política de Prevenção à Violência\nImplementar projetos esportivos permanentes em áreas de vulnerabilidade social voltados à juventude,\narticulados com as políticas de segurança pública e assistência social.\n\nIntegração entre Esporte, Saúde e Bem-Estar\nInstituir o esporte como eixo transversal da saúde pública por meio de parcerias com Unidades Básicas\nde Saúde (UBS) e Centro de Atenção Psicossocial (CAPS).\n\nPrograma Estadual de Inclusão e Paradesporto\nConsolidar a política de inclusão esportiva expandindo os eventos e os Centros de Referência\nParalímpicos para o interior do Estado.\nSistema Estadual de Alto Rendimento e Formação de Atletas\nEstruturar sistema de alto rendimento com a criação de centro de treinamento, integrando apoio técnico\nmultidisciplinar e o aperfeiçoamento, ampliação e democratização do acesso ao programa de incentivo\nfinanceiro ao atleta.\n\n29"
+          },
+          {
+            "id": "infraestrutura",
+            "titulo": "INFRAESTRUTURA",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA\n\n30"
+          },
+          {
+            "id": "infraestrutura-2",
+            "titulo": "INFRAESTRUTURA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "INFRAESTRUTURA\nQUE INTEGRA E MOVE\nO DESENVOLVIMENTO\nMato Grosso produz em grande escala, mas ainda enfrenta distâncias, custos logísticos e desigualdades\nde acesso que limitam o desenvolvimento. Infraestrutura é condição para escoar a produção, aproximar\nserviços, salvar vidas e integrar as regiões.\nNosso compromisso é planejar obras com qualidade, prioridade e integração regional, garantindo\nmanutenção, segurança e retorno econômico e social. Infraestrutura será tratada como investimento\npara reduzir distâncias e ampliar oportunidades.\n\n•\n\nTRANSPORTE RODOVIÁRIO\n\nPavimentação de Rodovias\nAmpliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo\ndo transporte da produção, dar mais segurança nas estradas e garantir que o cidadão do interior\npossa estudar, trabalhar, acessar saúde e escoar sua produção com mais dignidade.\n\nCorredor Leste - Oeste\nArticular a estadualização e pavimentar a BR 242, de Santiago do Norte a Gaúcha do Norte, e pavimentar\na MT 457, de Gaúcha do Norte à MT 020, por meio de pactuação federativa e destinação de recursos.\nEstradas bem Projetadas\nEstabelecer padrões adequados compatíveis com o tráfego e as cargas praticadas\nno Estado do Mato Grosso.\n\nSubstituição de Pontes de Madeira\nElaborar programa de substituição de pontes de madeira por concreto, com cronograma por criticidade,\nvolume de tráfego e estado de conservação, priorizando as estruturas em situação mais crítica\ne de maior importância logística.\n\nImplantação de Aduelas\nElaborar programa de implantação de aduelas onde couber, com critérios técnicos de drenagem,\ncapacidade hidráulica e viabilidade por trecho.\n\nManutenção de Pontes\nElaborar programa de manutenção de pontes, além de limpeza e recomposição de sistemas\nde drenagem.\n\nFortalecimento dos Consórcios e Associações Intermunicipais de Infraestrutura\nIncentivar a formação de Consórcios e Associações que envolvam a produção, o comércio e a indústria\nna gestão de trechos rodoviários de interesse.\n\nImplantação de Anéis Viários em Polos Regionais\nConstruir contornos rodoviários em cidades com tráfego pesado intenso.\n\nModernização do Sistema de Pesagem e Fiscalização\nInstalar balanças dinâmicas e sistemas de monitoramento eletrônico em pontos estratégicos, orientando\no projeto de novas estradas e garantindo a longevidade da malha asfáltica estadual.\n\nSegurança Viária e Sinalização Inteligente\nRevitalizar a sinalização vertical e horizontal com materiais de alta refletividade.\n\n31"
+          },
+          {
+            "id": "estradas-turisticas-com-padrao-de-excelencia",
+            "titulo": "Estradas Turísticas com Padrão de Excelência",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Estradas Turísticas com Padrão de Excelência\nGarantir padrão de qualidade nos acessos aos pontos turísticos de Mato Grosso.\n\n•\n\nTRANSPORTE FERROVIÁRIO\n\nFerrovia de Integração do Centro-Oeste (FICO)\nArticular a celeridade nas obras da FICO para conectar o Vale do Araguaia (Água Boa – MT)\nà malha nacional.\nFerrovia do Grão (FERROGRÃO)\nArticular o início das obras da Ferrovia do Grão ligando Miritituba - PA a Sinop – MT.\nConsolidação da Ferrovia Estadual Vicente Vuolo\nFiscalizar e apoiar a execução da primeira ferrovia estadual ligando Rondonópolis a Lucas do Rio Verde\ne Cuiabá.\nImplantação de Terminais Intermodais de Carga\nIncentivar a criação de portos secos e terminais de transbordo em cidades estratégicas.\n\n•\n\nTRANSPORTE HIDROVIÁRIO\n\nViabilização da Hidrovia Paraguai-Paraná\nPromover estudos de licenciamento e dragagem sustentável no Rio Paraguai, buscando consolidar\nCáceres como um porto exportador estratégico para os países do Mercosul.\nModernização da Infraestrutura de Apoio Náutico\nInvestir em rampas públicas e sinalização náutica em rios com vocação turística.\n\n•\n\nTRANSPORTE AEROVIÁRIO\n\nPrograma de Regionalização da Aviação Civil\nReformar e equipar aeroportos em polos regionais.\nPolítica Estadual de Subvenção de Assentos\nManter e aprimorar a política de redução de ICMS sobre combustível de aviação para empresas\nque aumentarem a disponibilidade de voos regionais, buscando baratear passagens e aumentar\na frequência de voos no interior.\nModernização do Aeroporto Marechal Rondon (Hub Regional)\nArticular a ampliação do terminal e da área de cargas, objetivando transformar Cuiabá em\num centro de distribuição logística aérea para o Centro-Oeste, bem como voos regulares para o exterior.\n\n•\n\nINFRAESTRUTURA ELÉTRICA\n\nPrograma MT Energia Limpa e Renovável\nConceder incentivos tributários para a instalação de parques solares e usinas de biomassa.\nEnergia Trifásica no Campo\nDar continuidade e ampliar o programa de expansão da rede trifásica de energia elétrica para regiões\nrurais e turísticas.\n\n32"
+          },
+          {
+            "id": "fomento-a-micro-e-pequenas-centrais-hidreletricas-sustentaveis",
+            "titulo": "Fomento a Micro e Pequenas Centrais Hidrelétricas Sustentáveis",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Fomento a Micro e Pequenas Centrais Hidrelétricas Sustentáveis\nDar celeridade ao licenciamento ambiental de micro e pequenas hidrelétricas sustentáveis\ncom baixo impacto.\nEficiência Energética em Prédios Públicos\nInstalar painéis fotovoltaicos em prédios públicos.\n\n•\n\nCONECTIVIDADE\n\nInfovia Estadual de Fibra Óptica\nAproveitar as faixas de domínio de rodovias e ferrovias para a passagem de cabos de dados,\npretendendo baratear o custo da internet para os municípios para atrair empresas de tecnologia.\nExpansão da Telefonia Móvel em Rodovias\nIncentivar operadoras a cobrir pontos cegos em estradas estaduais.\n\n33"
+          },
+          {
+            "id": "ciencia",
+            "titulo": "CIÊNCIA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "CIÊNCIA\n\nE TECNOLOGIA\n\n34"
+          },
+          {
+            "id": "conhecimento-que-gera",
+            "titulo": "CONHECIMENTO QUE GERA",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "CONHECIMENTO QUE GERA\nOPORTUNIDADES\nE DESENVOLVIMENTO\nCiência, tecnologia e inovação são essenciais para gerar conhecimento, aumentar as oportunidades,\ndiversificar a economia e preparar Mato Grosso para as transformações do trabalho.\nO Estado precisa converter conhecimento em soluções aplicadas aos desafios das pessoas,\ndas organizações e do setor produtivo.\nNosso compromisso é formar profissionais para a nova economia e modernizar a Administração Pública\ncom dados, automação e inteligência artificial. Tecnologia será instrumento de competitividade,\neficiência e melhoria da vida das pessoas.\n\n•\n\nCAPITAL HUMANO E TALENTOS\n\nCiência na Escola\nFomentar a iniciação científica no ensino básico.\n\nTecnologia e IA no Currículo Escolar\nIncluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional\nna educação básica.\n\nFormação em IA e Tecnologias para Servidores\nInstituir cursos técnicos profissionalizantes em inteligência artificial para os servidores públicos estaduais,\nespecialmente os educadores.\n\n•\n\nINOVAÇÃO E COMPETITIVIDADE EMPRESARIAL\n\nPesquisa Aplicada e Inovação\nInstituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência\nde tecnologia.\n\nEmpresas Mais Competitivas\nEstimular startups, pequenas empresas e indústrias à inovação, aceleração de negócios e simplificação\nregulatória.\n\n•\n\nTECNOLOGIA PARA O DESENVOLVIMENTO REGIONAL E SOCIAL\n\nTecnologia para Qualidade de Vida\nFomentar o desenvolvimento de soluções tecnológicas voltadas às necessidades da população nas áreas\nde saúde, educação, segurança, mobilidade, acessibilidade e inclusão produtiva.\n\nDesenvolvimento Tecnológico em Todas as Regiões\nExpandir a presença de centros de inovação, laboratórios e programas tecnológicos para o interior\ndo Estado.\n\nCentro de Inovação no Pantanal\nConsolidar centro de inovação, pesquisa e extensão ambiental no Pantanal.\n\n35"
+          },
+          {
+            "id": "pagina-36",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nGOVERNANÇA E INFRAESTRUTURA DIGITAL\n\nGoverno Moderno e Inovador\nImplantar uma gestão integrada da política estadual de ciência, tecnologia e inovação,\ncom planejamento, metas, transparência e avaliação permanente dos resultados.\n\nFortalecimento da FAPEMAT\nFortalecer a Fundação de Amparo à Pesquisa do Estado de Mato Grosso (FAPEMAT) como instrumento\ncentral de desenvolvimento.\n\nUniversalizar o Acesso à Internet\nUniversalizar o acesso à internet em todo o Estado e fomentar o desenvolvimento econômico\nnas regiões mais afastadas de Mato Grosso.\n\n36"
+          },
+          {
+            "id": "economia-2",
+            "titulo": "ECONOMIA",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "ECONOMIA\n\n37"
+          },
+          {
+            "id": "crescer-mais",
+            "titulo": "CRESCER MAIS,",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "CRESCER MAIS,\nAGREGAR VALOR\nE GERAR EMPREGOS\nMato Grosso possui uma das economias mais dinâmicas do país, mas precisa transformar sua indústria primária\npromovendo maior diversificação, industrialização e circulação de riqueza dentro do Estado. Vamos garantir que\no crescimento se traduza em oportunidades e renda em todas as regiões do Estado.\nNosso compromisso é construir um ambiente econômico livre, competitivo e favorável ao trabalho.\n\n•\n\nDESENVOLVIMENTO ECONÔMICO\n\nDesburocratização do Ambiente de Negócios\nPromover a desburocratização do ambiente de negócios por meio da simplificação de procedimentos administrativos, da melhoria\ndos processos de licenciamento e da maior integração entre os órgãos estaduais responsáveis pela análise de projetos.\n\nAtração de Investimentos\nImplementar política estadual estruturada de promoção de investimentos e competitividade voltada à atração\nde empreendimentos nacionais e internacionais.\n\nInvestimentos em Startups de Tecnologia\nCriar programa estadual de investimentos em startups de base tecnológica.\n\nDesenvolvimento Regional Produtivo\nImplementar política de desenvolvimento regional voltada às vocações econômicas de cada macrorregião.\n\nFinanciamento ao Desenvolvimento Econômico\nAprimorar os instrumentos estaduais de fomento, crédito e garantias para empreendimentos produtivos.\n\nZPE de Cáceres\nArticular junto ao Governo Federal a celeridade na aprovação dos projetos de instalação de empresas\nno Conselho Nacional de ZPEs (CZPE), promovendo a ocupação dos lotes industriais, a atração\nde indústrias-âncora e a integração logística do complexo.\nCentral Unificada de Atendimento à Pessoa Jurídica\nImplementar política estadual de promoção comercial e estímulo às exportações das empresas mato-grossenses.\nQualificação da Mão de Obra\nEstruturar programa integrado de fixação e qualificação profissional alinhado às vocações econômicas de cada região.\n\nHabitação para Trabalhadores\nPotencializar o programa habitacional estadual por meio da ampliação de subsídios, faixas de renda atendidas\ne parcerias com o setor produtivo.\n\nFormação de pessoas para a Nova Economia\nAmpliar a oferta de escolas técnicas e cursos profissionalizantes voltados à tecnologia, abrangendo setores\nprodutivos estratégicos impulsionando o desenvolvimento econômico e social do Estado.\n\n•\n\nAGRONEGÓCIO\n\nDefesa Sanitária, Animal e Vegetal\nModernizar a política de defesa sanitária com investimentos em estrutura laboratorial, equipamentos\ne procedimentos de vigilância.\n\n38"
+          },
+          {
+            "id": "programa-de-pavimentacao-de-estradas-vicinais",
+            "titulo": "Programa de Pavimentação de Estradas Vicinais",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Pavimentação de Estradas Vicinais\nDestinar recursos para a pavimentação e manutenção de rodovias estaduais e acessos municipais.\nPlano Estadual de Irrigação Sustentável\nAproveitar de forma responsável o potencial hídrico de Mato Grosso para ampliar a geração de energia\ndestinada à irrigação.\nConectividade Rural e Moderna\nExpandir a cobertura de internet de alta velocidade em todas as áreas produtivas.\nValorização da Origem Mato-Grossense\nEstruturar estratégia estadual de diferenciação da produção mato-grossense.\nRegularização do CAR e Licenciamento\nInstituir força-tarefa permanente para acelerar a análise e aprovação do Cadastro Ambiental Rural (CAR)\ne das licenças ambientais para empreendimentos agroindustriais.\nPecuária Sustentável no Pantanal\nFomentar modelo de fazenda sustentável no Pantanal que integre pecuária e conservação ambiental\ne ampliar a competitividade da produção mato-grossense nos mercados nacional e internacional.\n\n•\n\nAGRICULTURA FAMILIAR\n\nIrrigação para a Agricultura Familiar\nEstruturar um programa estadual de irrigação e desenvolvimento rural para a agricultura familiar, com foco nas\nregiões de menor dinamismo econômico e nos municípios com alta incidência de pobreza.\nCapacitação para Acesso a Financiamento\nCapacitar agricultores familiares para a obtenção de financiamento, em especial por meio do Pronaf.\nAgricultura Familiar Forte\nInstituir programa destinado à capacitação técnica de produtores, difusão de tecnologias sociais\ne diversificação da produção agrícola.\nMecanização e Tecnologia na Agricultura Familiar\nAmpliar o acesso dos agricultores familiares à mecanização, implementos e agricultura de precisão,\ncom uso compartilhado de máquinas por meio de parcerias com municípios e cooperativas.\nJuventude no Campo\nCriar ações de sucessão rural e empreendedorismo jovem no campo.\nFortalecimento da Assistência Técnica Rural\nFortalecer a EMPAER, ampliando sua capacidade técnica, tecnológica e operacional, para oferecer\nassistência continuada aos pequenos e médios produtores.\nAgroindústria Familiar\nCriar programa integrado de crédito, assistência técnica e regularização sanitária e ambiental para apoiar\na instalação e modernização de agroindústrias familiares.\n\n39"
+          },
+          {
+            "id": "apoio-a-elaboracao-dos-planos-municipais-de-agricultura-familiar",
+            "titulo": "Apoio à elaboração dos Planos Municipais de Agricultura Familiar",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Apoio à elaboração dos Planos Municipais de Agricultura Familiar\nApoiar a elaboração dos planos municipais de agricultura familiar.\nPesca Profissional Sustentável\nReavaliar as restrições impostas à pesca profissional em Mato Grosso, substituindo proibições generalizadas por\npolítica baseada em estudos técnicos.\n\n•\n\nINDÚSTRIA E COMÉRCIO\n\nINDÚSTRIA\nCrédito, Modernização e Industrialização Regional\nCriar linhas de crédito estaduais com juros competitivos para modernização do parque industrial\ne aquisição de máquinas e equipamentos.\nCrédito e Desburocratização para a Construção Civil\nDisponibilizar linhas de crédito estadual com taxas subsidiadas para construtoras de pequeno e médio porte,\nvoltadas à produção de habitação de interesse social.\nBiocombustíveis Avançados\nPosicionar Mato Grosso como polo atrator de investimentos em biocombustíveis avançados.\nCOMÉRCIO\nCrédito para Pequenos Negócios\nConceder linhas de crédito e ampliar o acesso a microcrédito para modernização de estabelecimentos\ncomerciais e de serviços.\nDigitalização dos Pequenos Negócios\nFomentar a transformação digital dos pequenos e médios negócios por meio de capacitação em ferramentas\nde comércio eletrônico, marketing digital, gestão e produtividade, consultorias especializadas e estímulo\nà integração entre canais físicos e virtuais.\n\n•\n\nECONOMIA SOLIDÁRIA\n\nNovos Caminhos\nDesenvolver programa multissetorial de educação e geração de emprego e renda para jovens em situação de risco\nsocial, oferecendo capacitação profissional, suporte psicossocial e mediação para o mercado de trabalho.\nInclusão Produtiva e Geração de Renda\nDesenvolver política estruturada de qualificação profissional e empreendedorismo.\nEconomia Circular e Reciclagem Comunitária\nDesenvolver política estadual de economia circular com incentivo à reciclagem comunitária\ne apoio técnico e financeiro a cooperativas de catadores.\nProdução Sustentável nas Comunidades Quilombolas\nApoiar o desenvolvimento de atividades produtivas sustentáveis em terras quilombolas.\n\n•\n\nJUVENTUDE\n\nPrimeiro Emprego Jovem\nCriar política estadual de inserção profissional de jovens.\nJovem Aprendiz\nFomentar a inserção de jovens em programas de aprendizagem profissional por meio de parcerias com\no setor produtivo e instituições de formação profissional.\n40"
+          },
+          {
+            "id": "jovens-empreendedores",
+            "titulo": "Jovens Empreendedores",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Jovens Empreendedores\nEstimular o empreendedorismo de jovens.\nQualificação Jovem para o Trabalho\nEstruturar programa estadual de qualificação profissional de jovens, alinhado às demandas do setor produtivo do\nagronegócio, da indústria, do comércio, dos serviços e da área tecnológica.\nPrimeiro Emprego Jovem\nCriar política estadual de inserção profissional de jovens.\nOportunidades para Juventude\nAmpliar as oportunidades de inserção social e produtiva dos jovens em situação de vulnerabilidade.\n\n•\n\nAPOIO ÀS CADEIAS PRODUTIVAS\n\nFornecedores Locais\nFomentar a implantação de indústrias fornecedoras e empresas prestadoras de serviços destinados\nàs cadeias produtivas consolidadas.\nParques Tecnológicos\nConsolidar o parque tecnológico da Baixada Cuiabana e apoiar a implantação de novos parques, cada\num com vocação distinta, por meio de parcerias com universidades, centros de pesquisa e o setor produtivo,\noferta de infraestrutura compartilhada e estímulo à inovação aberta.\n\n41"
+          },
+          {
+            "id": "turismo",
+            "titulo": "TURISMO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO\n\n42"
+          },
+          {
+            "id": "experiencias-unicas",
+            "titulo": "EXPERIÊNCIAS ÚNICAS,",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "EXPERIÊNCIAS ÚNICAS,\nDESENVOLVIMENTO\nEM TODAS AS REGIÕES\nMato Grosso reúne Pantanal, Cerrado, Amazônia, rios, cultura, gastronomia e paisagens capazes de consolidar\no Estado como destino nacional e internacional. Esse potencial, porém, ainda é limitado por infraestrutura\ninsuficiente, pouca integração entre destinos e baixa permanência do visitante.\nNosso compromisso é transformar o turismo em vetor permanente de desenvolvimento regional, com planejamento, segurança\ne sustentabilidade, fazendo com que as riquezas de Mato Grosso gerem oportunidades para quem vive no Estado.\n\n•\n\nINFRAESTRUTURA TURÍSTICA\n\nInfraestrutura Turística\nGarantir infraestrutura adequada de saneamento básico, energia elétrica e telecomunicações nas cidades-destino.\n\nSegurança Turística\nPromover a proteção dos turistas que visitam o Estado por meio da capacitação e do aumento\ndo efetivo policial nas regiões de interesse turístico.\n\nSazonalidade Turística\nCriar programas que identifiquem e promovam o desenvolvimento de atrativos turísticos\ncapazes de reduzir os efeitos da sazonalidade do turismo.\n\nCrédito para Pequenos Empreendimentos Turísticos\nDisponibilizar linha de crédito estadual específica para micro e pequenos empreendimentos turísticos.\n\nPromoção Turística\nEstruturar programa permanente de promoção e inteligência turística por meio de campanhas publicitárias,\npresença em feiras, material promocional, marketing digital e plataforma unificada.\n\nFormação profissional para o Turismo\nPromover a qualificação profissional para o setor turístico por meio de parcerias com instituições de formação e o setor privado.\n\n•\n\nSEGMENTOS ESTRATÉGICOS\n\nSegmentos do Turismo\nIncentivar a criação de atrações turísticas em diversos segmentos, como turismo de negócios, histórico,\nreligioso, gastronômico e cultural, dentre outros, objetivando estimular o crescimento do setor.\n\nTurismo de Negócios\nConsolidar o turismo de negócios e eventos por meio de programa de atração e acolhimento\nde visitantes corporativos, especialmente do agronegócio.\n\nObservação da Fauna Silvestre\nConsolidar o produto turístico de observação de fauna silvestre por meio do desenvolvimento de infraestrutura\nde visitação, capacitação de guias especializados e promoção internacional, posicionando o Pantanal\nmato-grossense como destino mundial de safári de vida selvagem.\n\nPesca Esportiva\nInstituir programa estadual de fomento à pesca esportiva por meio da articulação entre órgãos estaduais\ne prefeituras, investimento em infraestrutura de acesso e divulgação nacional e internacional, estimulando\na prática responsável com incentivo ao modelo de pesque e solte, objetivando ampliar o fluxo de visitantes,\ngerar renda para comunidades locais e assegurar a conservação dos recursos pesqueiros.\n43"
+          },
+          {
+            "id": "cultura",
+            "titulo": "CULTURA",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "CULTURA\n\n44"
+          },
+          {
+            "id": "cultura-que-preserva",
+            "titulo": "CULTURA QUE PRESERVA",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "CULTURA QUE PRESERVA\nIDENTIDADE E MOVIMENTA\nA ECONOMIA\nA cultura de Mato Grosso expressa a história, a diversidade regional e o modo de vida de seu povo.\nPreservar esse patrimônio e ampliar o acesso à produção cultural fortalece identidade, pertencimento\ne qualidade de vida.\nNosso compromisso é valorizar os talentos mato-grossenses, proteger a memória e transformar cultura\nem desenvolvimento, garantindo que todas as regiões possam produzir, acessar\ne compartilhar sua identidade.\n\n•\n\nINFRAESTRUTURA E FOMENTO CULTURAL\n\nFomento à Produção Cultural\nFortalecer o financiamento da cultura por meio de editais regulares, transparentes e regionalizados.\n\nInfraestrutura e Materiais Culturais para os Municípios\nConstruir, modernizar e revitalizar bibliotecas, teatros, cinemas e centros culturais nos polos do interior.\n\nCultura em Parques, Praças e Espaços Públicos\nEstimular a realização de atividades culturais gratuitas em parques, praças e áreas públicas.\n\nPatrimônio, Bibliotecas e Museus Vivos\nPromover a conservação do patrimônio histórico do Estado e transformar bibliotecas e museus públicos\nem espaços ativos de leitura, formação e convivência.\n\n•\n\nFORMAÇÃO E ECONOMIA CRIATIVA\n\nEscola Pública Estadual de Artes\nCriar a escola pública estadual de artes para a formação gratuita e continuada em música,\ndança, teatro, artes visuais e audiovisual.\n\nEconomia Criativa\nFomentar os setores econômicos que têm a diversidade cultural mato-grossense como insumo produtivo\npor meio da criação de linhas de microcrédito subsidiadas, assistência técnica para formalização\ne comercialização e qualificação profissional.\n\nFormação e Cultura Digital\nArticular com universidades e instituições culturais a oferta de cursos, oficinas e residências artísticas\nvoltadas à cadeia criativa.\n\nInfraestrutura e Materiais Culturais para os Municípios\nConstruir, modernizar e revitalizar bibliotecas, teatros, cinemas e centros culturais nos polos do interior,\ncom investimentos em acervo e digitalização de coleções, articulado a programa estadual de aquisição\ne distribuição de materiais culturais aos municípios por meio de editais e convênios.\n\nEstímulo à Produção Literária Mato-grossense\nValorizar a produção intelectual mato-grossense por meio da aquisição e distribuição de livros de autores\nlocais para as bibliotecas das escolas estaduais.\nApoio a Bandas e Fanfarras\nApoiar bandas e fanfarras nas escolas públicas estaduais por meio da destinação de recursos para\naquisição de instrumentos, fomento a competições interescolares e capacitação de instrutores musicais.\n45"
+          },
+          {
+            "id": "cidades",
+            "titulo": "CIDADES",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "CIDADES\nE DESENVOLVIMENTO\nURBANO\n\n46"
+          },
+          {
+            "id": "cidades-organizadas",
+            "titulo": "CIDADES ORGANIZADAS,",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "CIDADES ORGANIZADAS,\nSERVIÇOS PRÓXIMOS\nE QUALIDADE DE VIDA\nMato Grosso precisa transformar crescimento econômico e populacional em cidades mais organizadas,\nseguras e preparadas para o futuro. Muitos municípios se expandiram sem estrutura técnica suficiente\npara planejar o território, acompanhar obras e responder às novas demandas urbanas.\nNosso compromisso é apoiar cidades inteligentes, humanas e resilientes, utilizando governança,\ntecnologia e planejamento para aproximar serviços, melhorar a qualidade de vida e transformar\ncrescimento em desenvolvimento urbano responsável.\n\n•\n\nPLANEJAMENTO, GESTÃO E CAPACITAÇÃO MUNICIPAL\n\nPlanejar para Crescer\nApoiar os municípios na elaboração e atualização de instrumentos de planejamento urbano, como planos\ndiretores e de mobilidade.\n\nIDH Mais Humano\nDestinar investimentos públicos aos municípios mato-grossenses de mais baixo IDH, integrando educação\nbásica com formação técnica e profissionalizante, atenção primária à saúde e geração de renda.\n\nMunicípios com Projetos\nOferecer assistência técnica, modelos simplificados, capacitação e orientação para que os municípios,\nespecialmente os pequenos e médios, consigam estruturar projetos viáveis, bem instruídos e aptos\nà captação de recursos e sua execução.\n\nCapacita Municípios\nPromover a formação e qualificação técnica de servidores municipais nas áreas de planejamento,\nengenharia e gestão territorial.\n\nGestão Inteligente do Território\nCriar um sistema estadual de informações urbanas e territoriais com dados georreferenciados sobre\nexpansão urbana e uso do solo.\n\nCidades Digitais de Mato Grosso\nModernizar a gestão municipal por meio da implantação de infraestrutura tecnológica e digitalização\nde serviços públicos.\n\n•\n\nHABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA\n\nFETHAB para Moradia e Desenvolvimento Urbano\nRetomar a aplicação dos recursos do FETHAB em políticas habitacionais, priorizando a construção de\nmoradias, a urbanização de áreas residenciais e o apoio aos municípios na redução do déficit habitacional.\n\nAgência Estadual de Governança das Cidades\nEstruturar uma instância permanente de articulação e apoio técnico para auxiliar os municípios\nmato-grossenses na elaboração de projetos e captação de recursos.\n\n47"
+          },
+          {
+            "id": "implantar-um-laboratorio-de-cidades",
+            "titulo": "Implantar um Laboratório de Cidades",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Implantar um Laboratório de Cidades\nCriar um ambiente de inovação, tecnologia e soluções urbanas para apoiar os municípios no uso\nde dados, integração de sistemas, governo digital, mapas urbanos, monitoramento de obras, melhoria\nde processos e atendimento mais eficiente ao cidadão.\nApoiar os municípios na adaptação à reforma tributária\nPrestar apoio técnico, em parceria com a Fazenda, para que os municípios avaliem os impactos\nda reforma tributária em suas receitas.\n\nUrbanização de Assentamentos Precários\nPromover a requalificação urbana de áreas de ocupação irregular por meio de obras de infraestrutura\nbásica, pavimentação e iluminação.\n\n•\n\nINFRAESTRUTURA URBANA E QUALIFICAÇÃO DE ESPAÇOS\n\nCidades em Desenvolvimento\nApoiar os municípios na execução de projetos de infraestrutura urbana e revitalização de espaços públicos\ncom foco em drenagem pluvial e pavimentação de vias, especialmente das cidades com relevância\nturística, histórica ou comercial.\nParques e Espaços Públicos\nIncentivar a implantação e revitalização de parques urbanos e praças nos municípios.\n\nArborização Urbana e Conforto Térmico\nInstituir programa de apoio financeiro e técnico para arborização intensiva de vias públicas e criação\nde “corredores verdes”.\n\nSegurança Urbana e Iluminação Pública\nIncentivar programa voltado à modernização da iluminação pública integrada a sistemas de monitoramento.\n\n•\n\nMOBILIDADE E INTEGRAÇÃO REGIONAL\n\nMobilidade Urbana MT\nApoiar os municípios na melhoria da circulação urbana.\n\nMato Grosso Integrado\nFortalecer a articulação regional entre municípios para soluções compartilhadas em mobilidade,\nsaneamento e planejamento territorial.\nAcessibilidade Urbana\nApoiar os municípios na eliminação de barreiras urbanísticas e arquitetônicas.\n\n•\n\nSANEAMENTO BÁSICO E SUSTENTABILIDADE\n\nSaneamento Universal e Participativo\nEstruturar política estadual integrada de saneamento básico.\n\nÁgua e Esgoto\nPromover ações voltadas à ampliação do abastecimento de água e da coleta e tratamento de esgoto.\n\n48"
+          },
+          {
+            "id": "residuos-solidos-e-economia-circular",
+            "titulo": "Resíduos Sólidos e Economia Circular",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "Resíduos Sólidos e Economia Circular\nPromover políticas de coleta, tratamento e destinação ambientalmente adequada dos resíduos sólidos,\nincentivando a reciclagem, a valorização de materiais reaproveitáveis, o fortalecimento das cooperativas\nde catadores e a adoção dos princípios da economia circular.\n\nDrenagem e Resiliência Urbana\nApoiar os municípios na execução de projetos de micro e macrodrenagem, contenção de erosões,\nrecuperação de áreas degradadas e manejo de águas pluviais.\n\nSaneamento Rural\nApoiar soluções simplificadas de abastecimento de água e tratamento de esgoto em comunidades rurais,\nassentamentos e localidades isoladas.\nSegurança Hídrica\nFortalecer ações de proteção e recuperação de mananciais, rios e córregos, monitoramento da qualidade\nda água e planejamento dos recursos hídricos, ampliando a capacidade dos municípios mato-grossenses\nde enfrentar períodos de estiagem, eventos climáticos extremos e processos de degradação ambiental.\n\nPacto Municipalista do Saneamento\nInstituir o Pacto Municipalista do Saneamento com apoio técnico permanente às prefeituras\nna elaboração de projetos, formação de servidores e acesso a mecanismos de financiamento.\n\nEficiência, Transparência e Modernização dos Serviços\nImplantar plataforma para integrar indicadores, contratos, investimentos e metas do setor, promovendo\na modernização dos serviços.\n\nTarifa Social do Saneamento\nImplementar políticas de tarifa social e mecanismos de equalização que ampliem o acesso da população\nvulnerável aos serviços de saneamento básico.\n\n49"
+          },
+          {
+            "id": "bem-estar",
+            "titulo": "BEM-ESTAR",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "BEM-ESTAR\n\nSOCIAL\n\n50"
+          },
+          {
+            "id": "proteger-familias",
+            "titulo": "PROTEGER FAMÍLIAS,",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PROTEGER FAMÍLIAS,\nCRIAR OPORTUNIDADES\nE RESTAURAR AUTONOMIA\nO desenvolvimento de Mato Grosso precisa alcançar a vida concreta das famílias. A política social deve\nproteger quem enfrenta vulnerabilidade, sem criar dependência permanente, articulando acolhimento,\nresponsabilidade, trabalho e caminhos para a autonomia.\nNosso compromisso é construir uma rede responsável, eficiente e orientada por resultados, que valorize\na família, proteja a dignidade e transforme assistência em oportunidade, cidadania e independência.\n\n•\n\nDESENVOLVIMENTO SOCIAL\n\nMato Grosso Sem Fome\nReestruturar e ampliar política estadual de segurança alimentar.\n\nJuventude com Futuro\nImplantar política integrada de desenvolvimento infantojuvenil com atividades socioeducativas\ndesportivas e culturais no contraturno escolar.\n\nFamília Forte e Produtiva\nFortalecer as famílias em situação de vulnerabilidade por meio de acompanhamento social integrado\nàs políticas de saúde, educação e assistência social.\n\nProteção e fortalecimento das famílias\nCriar uma política estadual de apoio às famílias, com atendimento integrado, orientação parental,\nprevenção ao abandono, fortalecimento de vínculos e proteção de crianças, idosos e pessoas\ncom deficiência.\n\nCombate às drogas e recuperação de dependentes\nAmpliar a prevenção ao uso de drogas e apoiar tratamentos baseados em evidências, comunidades\nterapêuticas regularmente fiscalizadas, reinserção familiar e formação profissional.\n\nSuperação da Situação de Rua\nApoiar os municípios na prevenção e superação da situação de rua.\n\nMato Grosso Solidário\nInstituir política estadual de fortalecimento das organizações da sociedade civil, promoção\ndo voluntariado e ampliação da participação comunitária na execução de iniciativas de interesse público.\n\n•\n\nPOLÍTICAS PARA O IDOSO\n\nApoio a Cuidadores Familiares\nImplantar serviços de apoio aos cuidadores familiares de idosos e pessoas com dependência.\n\nCentros-Dia Regionais\nApoiar, em cooperação com os municípios, a criação de Centros-Dia Regionais para acolhimento\ndiurno de idosos.\nLares para Idosos\nAmpliar a rede de Instituições de Longa Permanência para Idosos por meio de parcerias com entidades\nfilantrópicas, organizações religiosas e iniciativa privada.\n\n51"
+          },
+          {
+            "id": "formacao-estadual-de-cuidadores",
+            "titulo": "Formação Estadual de Cuidadores",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Formação Estadual de Cuidadores\nImplantar, em parceria com instituições de ensino técnico e superior e serviços sociais autônomos,\ncursos de formação de cuidadores de pessoas idosas destinados a formar profissionais\npara o atendimento seguro e humanizado.\n\nAcolhimento de Idosos sem Moradia\nConstruir espaços adequados para acolhimento de idosos em situação de vulnerabilidade,\nque não possuem moradia ou suporte familiar.\n\nInclusão Produtiva 50+\nCriar programa de incentivo à contratação de pessoas com mais de 50 anos.\n\nProteção à Pessoa Idosa\nFortalecer a rede de proteção contra violência à pessoa idosa.\n\nReabilitação Geriátrica\nExpandir os serviços de reabilitação geriátrica, incluindo atendimento especializado a idosos com câncer,\npor meio de parcerias com municípios, hospitais filantrópicos e instituições especializadas.\n\n•\n\nOPORTUNIDADE PARA TODOS\n\nEmpreendedorismo Inclusivo\nCriar linha de crédito específica com acesso facilitado e capacitação gerencial para empreendedores\ncom deficiência, fomentando negócios, autonomia financeira e geração de renda.\n\nMT Produtivo\nImplementar programa estadual de inclusão produtiva priorizando jovens e moradores de periferias,\npara romper o ciclo de exclusão econômica e ampliar a geração de renda.\n\n•\n\nCIDADANIA E JUSTIÇA\n\nTrabalho Prisional e Qualificação\nImplantar sistema permanente de monitoramento das unidades prisionais com ampliação do trabalho\nprisional e da qualificação profissional do preso.\n\nPrevenção de Conflitos e Proteção das Famílias\nImplantar ações de mediação comunitária para prevenção e resolução de conflitos familiares,\nescolares e de vizinhança.\nRede Estadual de Mediação Comunitária e Acesso a Direitos\nInstituir rede estadual de mediação comunitária e acesso a direitos em parceria com os municípios,\nórgãos do sistema de justiça e instituições de ensino.\n\n•\n\nMINORIAS SOCIAIS\n\nInclusão da Pessoa com Deficiência\nPromover a inserção da pessoa com deficiência no mercado de trabalho.\nProteção contra Violência e Discriminação\nFortalecer a política estadual de enfrentamento à violência e discriminação contra a população\nLGBTQIA+.\nInserção Produtiva e Geração de Renda\nPromover a inclusão econômica da população LGBTQIA+.\n52"
+          },
+          {
+            "id": "interiorizacao-das-politicas-de-protecao",
+            "titulo": "Interiorização das Políticas de Proteção",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "Interiorização das Políticas de Proteção\nExpandir as políticas de proteção dos direitos e de enfrentamento à discriminação para os municípios\ndo interior.\nMediação de Conflitos Fundiários\nInstituir canal permanente de diálogo e mediação entre os povos originários, o setor produtivo\ne os órgãos públicos envolvidos na regularização territorial.\nSegurança e Cidadania\nReduzir a exposição da população negra à violência.\nPrevenção à Violência Juvenil\nFortalecer as políticas de prevenção à violência contra a juventude.\nFortalecimento de Vínculos Familiares\nApoiar ações de fortalecimento dos vínculos familiares e comunitários de jovens em situação de risco.\n\n53"
+          },
+          {
+            "id": "meio-ambiente",
+            "titulo": "MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "MEIO AMBIENTE\n\n54"
+          },
+          {
+            "id": "proteger-riquezas",
+            "titulo": "PROTEGER RIQUEZAS",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "PROTEGER RIQUEZAS\nE GERAR DESENVOLVIMENTO\nSUSTENTÁVEL\nMato Grosso precisa conciliar produção, conservação ambiental e segurança jurídica com equilíbrio e eficiência.\nRegularização e licenciamento não podem permanecer como fontes de incerteza para quem produz\ncorretamente nem deixar de coibir danos ambientais.\nNosso compromisso é uma gestão ambiental técnica, moderna e transparente, que proteja os recursos naturais,\nrespeite a propriedade e dê segurança a quem produz dentro da lei, transformando\nresponsabilidade ambiental em vantagem competitiva.\n\n•\n\nREGULARIZAÇÃO, LICENCIAMENTO E FISCALIZAÇÃO INTELIGENTE\n\nPrograma Regulariza Mato Grosso\nLançar programa estadual de regularização ambiental em massa com mutirões técnicos regionais,\ngeoprocessamento de alta precisão e sistema digital integrado ao Cadastro Ambiental Rural (CAR).\n\nLicenciamento Ambiental Inteligente\nMigrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco,\ndigitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados\ngeoespaciais.\n\nGeoprocessamento e Auditoria Ambiental\nInstituir programa permanente de monitoramento por satélite de alta resolução e auditoria ambiental baseada\nem evidências, substituindo a fiscalização presencial reativa por inteligência territorial proativa em tempo real.\n\nDescentralização Municipal da Gestão Ambiental\nEstruturar política de apoio técnico e sistemas compartilhados aos municípios para descentralização\nresponsável do licenciamento local de baixo impacto.\nCombate ao Garimpo Ilegal\nImplementar programa estadual de combate ao garimpo ilegal, com fiscalização intensiva, repressão ao crime\norganizado e proteção dos territórios indígenas.\n\n•\n\nECONOMIA VERDE E TRANSIÇÃO ENERGÉTICA\n\nHub de Bioeconomia e Economia Verde\nCriar núcleo estadual para conectar os diversos atores da cadeia da bioeconomia.\n\nMercado de Carbono e Ativo Ambiental\nEstruturar o Estado como plataforma de acesso a mercados de carbono.\n\nEconomia Verde, Bioenergia e Inovação\nAmpliar a geração de energia sustentável no Estado para posicionar Mato Grosso como protagonista\nda transição energética nacional.\n\nCapacitação e Inovação na Bioeconomia\nFomentar a formação de empreendedores, pesquisadores e técnicos em bioeconomia.\nSelo de Conformidade e Sustentabilidade MT\nCriar certificação ambiental estadual, em parceria com a Secretaria do Meio Ambiente, para propriedades que\ncumprem rigorosos padrões de preservação, regularização fundiária e boas práticas agropecuárias.\n\n55"
+          },
+          {
+            "id": "pagina-56",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nSEGURANÇA HÍDRICA E PROTEÇÃO DE ECOSSISTEMAS\n\nProteção da Fauna e dos Ecossistemas\nCriar o primeiro Hospital Veterinário Público do Estado.\nNascentes de Mato Grosso\nCriar programa estadual de recuperação de nascentes e matas ciliares.\n\nMonitoramento Integrado de Bacias Hidrográficas\nDesenvolver sistema estadual de monitoramento de recursos hídricos com uso de geoprocessamento,\nsensoriamento remoto e inteligência analítica.\nSegurança Hídrica para Comunidades Rurais e Tradicionais\nFomentar a implantação de estruturas de captação e tratamento de água para comunidades\nrurais vulneráveis.\n\nPesquisa para Inovação Sustentável\nFomentar a pesquisa e o desenvolvimento em programas de ciência e tecnologia aplicados\nao meio ambiente transformando desafios ambientais em oportunidades de desenvolvimento\nsustentável, gerando empregos qualificados para a economia mato-grossense.\n\nMonitoramento Ambiental Inteligente\nDesenvolver centro estadual de inteligência ambiental, integrando dados de satélites, drones\ne inteligência artificial para detectar desmatamento, alterações nos biomas e focos de incêndio\nem tempo real.\n\n•\n\nPANTANAL, CERRADO E AMAZÔNIA MATO-GROSSENSE\n\nPolítica AMAR - Proteção e Resgate da Fauna em Desastres\nImplementar política estruturada de atendimento, resgate e reabilitação de animais afetados\npor incêndios e desastres, em consonância com a Lei Federal nº 15.355/2026 (Política AMAR),\nde autoria de Wellington Fagundes, articulando o Hospital Veterinário Público, as bases de resgate\ne as brigadas regionais em protocolo integrado de resposta, preservando a biodiversidade\ne o equilíbrio dos ecossistemas.\nPrograma Pantanal Sustentável 2030\nDesenvolver programa integrado de execução do Estatuto do Pantanal (Lei nº 15.228/2025, de autoria\nde Wellington Fagundes) com foco na restauração de área degradada, cobertura do bioma por\nmonitoramento em tempo real, certificação de propriedades e harmonização entre produção e conservação.\nPantanal inteligente: preservação e combate ao fogo\nCriar sistema integrado de prevenção de riscos ambientais composto por satélites, drones, inteligência\nartificial, sensores ambientais, brigadas locais e centros de comando, com a adoção de protocolos\nunificados do Corpo de Bombeiros e Defesa Civil.\nEducação Ambiental e Prevenção nas Comunidades\nImplementar campanhas educativas contínuas voltadas a produtores rurais, escolas e comunidades locais\nformando cidadãos conscientes e multiplicadores de práticas sustentáveis em todo o Estado.\n\n•\n\nADAPTAÇÃO CLIMÁTICA E RESILIÊNCIA URBANA\n\nSistema Estadual de Resiliência Climática\nApoiar os municípios na elaboração de planos de prevenção e resposta a secas, enchentes, queimadas\ne ondas de calor, para proteger a população, a produção e os serviços essenciais.\n56"
+          },
+          {
+            "id": "saude-climatica-e-protecao-a-populacao-vulneravel",
+            "titulo": "Saúde Climática e Proteção à População Vulnerável",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "Saúde Climática e Proteção à População Vulnerável\nImplantar política de saúde climática com protocolos específicos para ondas de calor e doenças\nrespiratórias associadas a queimadas, com prioridade para populações vulneráveis, idosos e crianças.\nCidades Resilientes\nDesenvolver programas de drenagem urbana, arborização adaptativa e contenção de enchentes\ncom apoio técnico e financeiro aos municípios adaptando-os às condições climáticas emergentes.\n\nSALVE, TERRA DE AMOR, TERRA D’OURO\nQUE SONHARA MOREIRA CABRAL!\nCHOVA O CÉU DOS SEUS DONS O TESOURO\nSOBRE TI, BELA TERRA NATAL!\n\n57"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "2e0fafe59c32f5c517925d227ee32937092591d5d6e27fc0a276851e24597dc6"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "e1e4346b5f535824fff2fbf8589a658c76f133df788880d7a431edb44298eb24"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0bff24576ffdcd20a25374cd5739fc1a405e94a76e2dbbc66d7de2e9b3af5a63"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "eb78518c640396a793ec6e63a1bf06eb6d5423ea09c5dbd6621a937da7dfc4a6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "98e4e6d26e56c6e3be2011553c8684129677e36b925aad2ca41d4faa005334aa"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c8b438db839d1f105999572cd649f3ebace5e863a68f83c25129b4d7098b19ad"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "311f3ec94d0b23fbc81415af33108c2f81e239870e162787730ebd76b9cac6de"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "fbe203c61546724f625d0f5a29d0f0dbe6f858bf6a9091023ac256c1581cf650"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "ad3867ec1a98bf201346615bed6c084ff27448affc09c57dc6dffa2e07a19a50"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "aefd80fad4f130a53762f8b2017c7be75221df1d9be062bb9420224c8885260e"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6d289bfec021d1400e95aea8b759a81ab94791f1df52e484e08c3f30e00d0839"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "901607acd115bbcf95b967d553284a95eeff050e84dd4afcdfd3b62471c40aba"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "5b5879dd9b67c68a1652ce522f5c8d4d702513243796b7d20c23f9d95703bf92"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "53a493783122c6b039c8399cd4367e92b21c08d52b4930a02afd35b014023553"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "882272d914c151993cbce02b4cb58489af903ad6688589829d22e221a2799fb6"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "18688903a8675eeacdd53670e082d8235c3535617be9d89bf732b3bb04c2cd1d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "1c4235e316545ddcb1eb370f33b35ebee6e87dcbc7c107bd7570aa91f7fadd86"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "fd6a509bf27ec43d055bc5c47954dd228eb64d64139792dd15438a703d063aec"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "652c55b7f2cfeb212c74763015e92c7ef773e51066760fbcc44625e76c4ee296"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "2b6c353a183fe7a1ababb64ee0db2eac97bff73c9e6c7eb70cfeb8c84b695966"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "7f024dfa64efa61a3a18605e466759ff7a50c1059a954f0663b0c0e0948c62b7"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "fb5c8a20cb1118102d708ef6f358045aa37a40fa783a9cea3c404d16acd41ccb"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "b2ae9de6a7f9e84a9a0d893eb38673a397cfe592523ae7f9291ca3e8f259b8ff"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "c44dc08eca015e0eab73be4ad238ce111872c3ad08032c11eeb1b9217123ea94"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "51238e95b5d58db82a6df64bf7ea24afe18f8ca67e7af84676f524ace2ecb4f6"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "a3af8100403eb58219f196a7914483c35fcb2406b7b0142aa7f827eba7f5fc0e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "9aa3c28fea28f74df995443e30867285ed16978ba5410935ca4ec2138b8e1836"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "7bc937decb2ab9537668b69ecc0e26ab8a090964cf9deac6ee8a8bef1e80d5fd"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "a0adfbd18552da1f32c9328e4a9f5943029a96616e0ec3bc80bc8e6d25111104"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "8138b6bb61e5753cf779fbe4eeb73b64b1a292920e6a2108dd8addfa6874a67f"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "d38c230df374fc661dfa5a619d79b769b9594bab614c70041dbd75b5345168bf"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "71a5351f3167cb879752afa0a99e9d60595ec7759f9bead7fc6832308e141aa7"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "97ca174c1e23eefed82d62bdcca143d32246528c025e993f4ef56dfbdd872155"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "85dc4eec8971450303f81cb95912943b0e35988faddfb44de6af1968f0d459cb"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "fa91dc004a7bf04be8b2da4f9112b1c59a3990120df5f2a7dfbfa76c7c142384"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "a76f1a8872c0be29f64ca36fc165d61a50f697d58c1886ef6cffad06db32c44b"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "39b8aaa2781f1d9f5f6d33b15b5458ed3d9e01c45a45669462849dbf381056f7"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "3bd946d610808ab5d8b8be70b0aa0e57dc71e6acb1d34b88140f932315553664"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "2073be1043066fbfe1de3e447ffca7eb8a06ffa99eec4d68f27c35e157445768"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "e9302cf938c60adf996e92f03c69d654c409f1540d6618fffd264162bb0c57b4"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "2cdc6080d6b2df32af419cfd7f8fcb1723266c353ba12d79fa71f614eaccb75b"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "9f166051377bab860b494987d34061e0e5b12ca3108f25ac7ebacf87fe3b8f9f"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "5a795908310bcfc7855ec8fb3099d2ec9115ff69ca6df2bd347defe0e3b9df40"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "ec77f9eae4e9f23ae12983264a3eec994981220f8dac9ed3f3326ac4db76b859"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "f2613d7d5425da461e2a0f840dc73a0319942b59f0d1b0250905332fc689894c"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "d779e02b0976cb365ad641a013f5f232b4f590d2dd05f8fee8fa02e0d35f350a"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "10d9864b9441bd33725455265ecd0b6db0cbe4594d1bb643cad8c495dec63edc"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "b43fbaaaaa5b799a11367b1a5d32cecf7426b425c36c7e3418eec44b5582eb94"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "7c1757f1fa95ae17c94b02187f8af7c8cd78a035f6fe8d16acea782c51f6d234"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "caec0714d6eefb19b45485abda35c3b21ed8685afdd91d99ca5777f0a7f9901c"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "39f4cd29844accffbb9aa870a466bbd120cb7908c2939dcc8f16ee697d714655"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "a649b2037d5513a3d9fd61e18a90e18b054aa906b3f314aa83b87b67dbd235af"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "d6800bf47501ff7c4e28cff3ef0001cf5fa66d4c2188035316f13ce838fc001c"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "f602695f480479755bffb1c68061e6a0b6040b56e17e5a251baaf3aff95ce272"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "aac25aea980acd36f1fb572e718c08e671a342692ab35c46d7e3f613a35f5d53"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "0caf47fa38523947c6207dc2e10ade11e213a4b590e69ff2b3741d6ba799670b"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "1c35fa2798ba617dd0f19212b7d50d01478915f1931b6b5daf98d7572ce19c6a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a participação direta da população na formulação do orçamento do Estado. Propõe disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas. Planeja instituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância. Propõe incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica. Prevê ampliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo do transporte da produção. Planeja instituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência de tecnologia. Propõe migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais.",
+    "frases": [
+      {
+        "texto": "O programa prevê a participação direta da população na formulação do orçamento do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 7,
+            "trecho": "Promover a participação direta da população na formulação do orçamento do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 10,
+            "trecho": "Disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas."
+          }
+        ]
+      },
+      {
+        "texto": "Planeja instituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 21,
+            "trecho": "Instituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 35,
+            "trecho": "Incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê ampliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo do transporte da produção.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 31,
+            "trecho": "Ampliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo do transporte da produção"
+          }
+        ]
+      },
+      {
+        "texto": "Planeja instituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência de tecnologia.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 35,
+            "trecho": "Instituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência de tecnologia."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 55,
+            "trecho": "Migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "orcamento-participativo",
+        "titulo": "Orçamento participativo",
+        "descricao": "O programa prevê participação direta da população na formulação do orçamento estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 7,
+            "trecho": "Promover a participação direta da população na formulação do orçamento do Estado."
+          }
+        ]
+      },
+      {
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "O programa propõe prestação digital de serviços públicos por aplicativos ou videochamadas.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 10,
+            "trecho": "Disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas."
+          }
+        ]
+      },
+      {
+        "id": "educacao-tecnologica",
+        "titulo": "Educação tecnológica",
+        "descricao": "O programa propõe conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 35,
+            "trecho": "Incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica."
+          }
+        ]
+      },
+      {
+        "id": "licenciamento-ambiental",
+        "titulo": "Licenciamento ambiental",
+        "descricao": "O programa propõe licenciamento baseado em gestão por risco, digitalização, trilhas por impacto e análise de dados geoespaciais.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551737:01",
+            "pagina": 55,
+            "trecho": "Migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
+    "generatedAt": "2026-08-28T14:26:12.273Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:28:10.501Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:1:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:2:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:3:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:4:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:5:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:6:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (licenciamento ambiental)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:frase:7:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação sobre o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:orcamento-participativo:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação sobre o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:servicos-digitais:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação sobre o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:educacao-tecnologica:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação sobre o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551737:tema:licenciamento-ambiental:documentos:MT:110002551737:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MT:110002551737",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MT:110002551737:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna@codex-cli-v4",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 38953,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1334,
+          "reasoning_output_tokens": 248
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23927,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19380,
+          "output_tokens_details": {
+            "thinking_tokens": 303
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23927,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19380,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23927,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23927
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3081034
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "2224b04d7501d27b9b0965e3f07d27aa7498d0dd1a4d59e0fe5937d19b85e584",
+    "extractedTextSha256": "db08ff8c81021234c78daa15075ccac1fc3e0849ca387a3abaac2896013f0b7c",
+    "documentCount": 1,
+    "documentSetSha256": "209fbf18b60a6138fae75397df778a827bf51006bd2af66f056fa8ef6f79baf1",
+    "contentSha256": "4e98492e3e234f50ccb1845aebc92b3a699f9fa282e6152fe2943193d7d566ae"
+  }
+}

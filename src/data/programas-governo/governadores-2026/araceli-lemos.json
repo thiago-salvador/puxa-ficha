@@ -1,0 +1,1017 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PA",
+    "sqCandidato": "140002542386",
+    "slug": "araceli-lemos",
+    "nomeUrna": "ARACELI",
+    "partido": "PSOL",
+    "arquivoNome": "2026PA140002542386_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002542386_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PA:140002542386:01",
+      "fonte": {
+        "arquivoNome": "2026PA140002542386_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002542386_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0bd6598fc5116dc93055b6a00867a1072b7af36fce4841273acd4913a96ba86a",
+        "extractedTextSha256": "4c6236478745d3b273e4d9ac219679ecec2ed35f7e590c38bb733cc9b692803c",
+        "paginas": 22,
+        "secoes": [
+          {
+            "id": "plataforma-de-governo",
+            "titulo": "Plataforma de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plataforma de Governo\n\nAraceli governadora 50\n\nAra do Pará. Ara pra cuidar\n\nFEDERAÇÃO PSOL-REDE\n\n2026"
+          },
+          {
+            "id": "1-introducao",
+            "titulo": "1 - Introdução",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1 - Introdução\n\nCarta Aberta ao Povo do Pará\n\nAntes de qualquer coisa, eu quero dizer de quem é o palanque de minha campanha.\nEle é da professora que saiu de casa às cinco da manhã para chegar na escola.\nÉ do trabalhador da obra, do mototáxi, do barco.\nÉ da mulher que vende no Ver-o-Peso desde que era menina.\nÉ do rapaz que passou no vestibular e não tinha como pagar a passagem pra ir à aula.\nÉ da mãe que tá esperando um exame há dois anos.\nEste palanque é de vocês. Eu só vim aqui pra falar o que vocês já disseram pra mim, de\nBelém a Santarém, de Marabá a Bragança, de Altamira a Breves, quando percorri o estado\npara acolher e ser acolhida por pessoas que seguem sendo números, estatísticas e, de dois\nem dois anos, títulos eleitorais.\nE o que eu ouvi foi sempre a mesma coisa, com sotaques diferentes:\n“Eu já não acredito mais.”\nPois é. É exatamente por isso que eu estou aqui.\nDE ONDE EU VENHO\nEu não cheguei na política por convite.\nEu cheguei porque eu vi situações que queria e quero mudar.\nMinha mãe criou oito filhos dando aula. Dava aula na escola de manhã, dava aula\nparticular à tarde, e ainda me alfabetizou dentro de casa, na mesa da cozinha, com o\ncaderno em cima da toalha de plástico.\nMeu pai trabalhou na Cosan pá. Levava água para casa dos outros. E teve dia que faltou\nágua na nossa.\nEu estudei em escola pública. Eu dei aula em escola pública. Eu fui professora de História\n— e quem dá aula de História aprende uma coisa cedo: nada do que tá aí caiu do céu.\nAlguém decidiu.\nDepois eu fui para o sindicato. Não porque era bonito. Porque era necessário.\nE depois eu fui para a Assembleia Legislativa. E na Alega eu recebi uma carteirinha\nescrito assim: “Deputado Araceli.”\nDeputado."
+          },
+          {
+            "id": "eu-nao-briguei-por-causa-da-carteirinha-eu-briguei-porque-quando-o-estad",
+            "titulo": "Eu não briguei por causa da carteirinha. Eu briguei porque quando o Estado não sabe nem",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Eu não briguei por causa da carteirinha. Eu briguei porque quando o Estado não sabe nem\nescrever o nome de uma mulher direito, ele também não sabe protegê-la.\nEssa é a minha escola. Não é a faculdade. É a vida.\nO DIAGNÓSTICO\nAgora eu quero falar uma coisa séria com vocês. Sem rodeio.\nTem gente que diz que o Pará é pobre.\nO Pará não é pobre.\nO Pará exporta minério para o mundo inteiro. O Pará alimenta o mundo. O Pará tem\nriqueza que não acaba mais.\nO nosso estado gera riqueza todo santo dia. Sai daqui em navio, sai em caminhão, sai em\ncontêiner.\nSó que o resultado dessa riqueza quando volta, volta muito pouco. E não volta pra todo\nmundo.\nEntão não me venham dizer que falta dinheiro para ter água na torneira. Que falta dinheiro\npara marcar um exame e garantir o leito. Que falta dinheiro para pagar direito o servidor.\nNão falta dinheiro. Falta decisão. Falta escolha.\nDinheiro público é escolha. Toda vez que alguém diz “não tem verba”, o que essa pessoa\ntá dizendo de verdade é: “eu escolhi gastar em outra coisa”.\nE aí eu pergunto para vocês, olhando no olho:\nAlguém já foi consultado sobre essas escolhas?\nTenho certeza de que todo mundo dirá em uma só voz: não!\nPois então. Isso vai mudar.\nA COERÊNCIA\nJá me perguntaram muitas vezes porque eu não tomei o caminho mais fácil.\nEu estava no meio do segundo mandato. Ia me reeleger tranquila. E eu saí.\nSaí porque tinha uma escolha na minha frente: ou eu ficava com o mandato garantido, ou\neu ficava com o que eu acreditava.\nEu fiquei com o que eu acreditava.\nEu não conto isso como sofrimento. Eu conto como currículo.\nPorque é isso que vocês precisam saber sobre quem pede o voto de vocês: o que essa\npessoa faz quando ficar calada é mais confortável, quando dizer “sim, senhor” pode\ngarantir acesso ao andar de cima."
+          },
+          {
+            "id": "relembrando-minha-caminhada-que-e-minha-eu-sei-mas-e-de-tanta-gente-semp",
+            "titulo": "Relembrando minha caminhada, que é minha, eu sei, mas é de tanta gente, sempre me",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Relembrando minha caminhada, que é minha, eu sei, mas é de tanta gente, sempre me\nvêm à cabeça os versos que abrem aquela música de Chico Buarque, imortalizada na voz\nde Maria Bethânia:\n“Sonhar mais um sonho impossível\nLutar quando é fácil ceder\nVencer o inimigo invencível\nNegar quando a regra é vender”\n\nEu, e tantas outras e tantos outros, lutamos quando era mais fácil ceder e enfrentamos de\ncabeça erguida os inimigos que se imaginavam invencíveis.\nAqui, nesta terra que já sangrou em tantas revoltas e revoluções populares, como as\nguerras dos Tupinambá ou na Cabanagem, a regra é resistir e jamais se entregar.\nPois bem, minha história se conecta com esses passos que vêm de tão longe.\nE eu vou dizer mais: eu não devo nada a ninguém. Não tenho padrinho. Não tenho dono.\nNão tenho empresa esperando fatura no fim do mês.\nQuem não deve favor, governa livre.\nEU NÃO ANDO SÓ\nSó que tem uma coisa que eu preciso dizer, e eu quero dizer olhando nos olhos de cada\ncidadã e cidadã deste estado:\nEu não ando só.\nNinguém governa um estado do tamanho do Pará sozinha. Quem diz que governa sozinho\nestá mentindo, ou está se achando.\nEu tenho ao meu lado a companheira professora e lutadora social Fátima Santana, que\naceitou entrar nessa comigo na condição de vice sabendo exatamente o tamanho da briga.\nEu tenho comigo uma dupla com muita história de lutas e resistências: a assistente social\nGizelle Freitas e educador Marcelino Conti, que toparam entrar na batalha por uma vaga\nno Senado, porque lutam pelo justo e pelo certo, e não optaram pelo caminho mais\ntranquilo e conveniente.\nE eu tenho uma chapa inteira de gente que não veio em busca de benefício pessoal. Veio\nbuscar mudança.\nE tem mais.\nJunto comigo, tem gente que colou cartaz na madrugada em campanha que a gente\nperdeu."
+          },
+          {
+            "id": "tem-gente-que-rachou-a-gasolina-para-chegar-de-maraba-de-santarem-de-aba",
+            "titulo": "Tem gente que rachou a gasolina para chegar de Marabá, de Santarém, de Abaetetuba,",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Tem gente que rachou a gasolina para chegar de Marabá, de Santarém, de Abaetetuba,\nsuperando todas as dificuldades para plantar as sementes de um projeto político\nverdadeiramente transformador.\nTem gente que administra grupo de WhatsApp desmentindo mentira sobre nós até de\nmadrugada, de graça, cansada, e ninguém nunca agradeceu.\nTem militante do PSOL e da REDE que passou anos sendo chamado de sonhador, de\nradical, de perdedor.\nPois eu vou dizer uma coisa para vocês.\nVocês são a nossa máquina.\nOs outros têm prefeito, têm verba, têm empresário, têm gráfica, têm horário. Nós temos\nvocês.\nE eu já vi essa conta virar. Eu já vi um punhado de gente teimosa mudar a história desse\nestado quando ninguém apostava um centavo.\nA nossa federação não é um acordo de gabinete. É um encontro de duas trajetórias que\nnunca abaixaram a cabeça, e que agora estão andando juntas.\nEntão quando alguém disser que a gente é pouco, respondam assim: pouco é quem precisa\ncomprar apoio.\nNós somos poucos no dinheiro e muitos e muitas na rua.\n\nO QUE NÓS VAMOS FAZER\nAgora, esperança sem plano é conversa. Então vamos ao plano.\nPrimeiro: água.\nÁgua em todas as torneiras. E o dia todo.\nNós vamos rever a privatização da Cosanpa e construir uma nova empresa pública de\nsaneamento — serviço de qualidade e preço justo. E vamos investir pesado em esgoto:\nnas cidades, e nas comunidades rurais e ribeirinhas com os sistemas que funcionam para\naquelas realidades.\nÁgua não é mercadoria. Água é saúde. Água é vida.\nSegundo: saúde com prazo.\nChega de fila sem fim. No nosso governo, prazo máximo de sessenta dias para exame e\nprocedimento especializado.\nTratamento de câncer no interior — porque paraense do interior não pode ter que vender\na geladeira para fazer quimioterapia em Belém."
+          },
+          {
+            "id": "prioridade-absoluta-no-combate-a-mortalidade-materna-e-infantil-nenhuma",
+            "titulo": "Prioridade absoluta no combate à mortalidade materna e infantil. Nenhuma mulher deve",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Prioridade absoluta no combate à mortalidade materna e infantil. Nenhuma mulher deve\nmorrer parindo no estado mais rico da Amazônia.\nE rede de atendimento integral para as pessoas com autismo e outras neurodivergências,\ndescentralizada, em todas as regiões. Porque mãe atípica no Pará hoje tá sozinha. E não\nvai mais ficar.\nTerceiro: quem trabalha tem que viver.\nSalário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese.\nDinheiro no bolso do trabalhador é comércio girando na esquina.\nTarifa zero no transporte coletivo urbano, em parceria com o governo federal. E atenção\nao transporte municipal e ao aquaviário — porque no Pará estrada também é rio.\nRevisão das privatizações das rodovias paraenses e fim imediato dos pedágios. Estrada\ndo Pará é do povo do Pará.\nEscala 5 por 2, por decreto, pra todo trabalhador terceirizado da administração estadual.\nDescanso não é privilégio.\nE a agricultura familiar como prioridade nas compras públicas — pra baratear a cesta\nbásica e fazer o dinheiro do Estado ficar aqui, na mão de quem planta.\nQuarto: servidor público.\nReajuste imediato pra zerar as perdas. Recomposição anual garantida. Negociação\ncoletiva de verdade, como manda a Convenção 151 da OIT. E concurso público, porque\no Estado precisa de gente efetiva, não de gente insegura.\nQuem cuida do povo precisa ser cuidado também.\nQuinto: tolerância zero à violência contra as mulheres.\nDelegacia especializada em todos os municípios do Pará. Funcionando 24 horas. Não é\ndas oito às duas. É 24 horas.\nPrograma permanente de prevenção nas escolas estaduais.\nCumprimento prioritário das medidas protetivas — porque decisão judicial que não é\ncumprida não protege ninguém.\nE crédito para mulher que sai de uma relação violenta, pra ela ter renda própria. Porque\nmulher que tem seu dinheiro não fica presa por dependência.\nIsso não é pauta de mulher. Isso é pauta de família inteira.\nSexto: educação e cultura.\nEducação integral implantada de verdade. Escola reformada, com condição de o aluno\nentrar e de o aluno ficar."
+          },
+          {
+            "id": "a-uepa-fortalecida-e-presente-em-cada-uma-das-seis-mesorregioes-com-orca",
+            "titulo": "A UEPA fortalecida e presente em cada uma das seis mesorregiões, com orçamento",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A UEPA fortalecida e presente em cada uma das seis mesorregiões, com orçamento\nvinculado — ensino, pesquisa e extensão no interior, não só na capital.\nE no mínimo 3% da receita do Estado para a cultura. Descentralizada. Chegando no\nmestre de carimbó, na quadrilha, no grupo de teatro, no produtor de tecnobrega, no\nartesão. Cultura não é sobra de orçamento.\nSétimo: segurança cidadã.\nPolícia presente onde o crime tá, nos centros e no interior, com atenção aos rios e às\ncomunidades isoladas. E, junto, o Estado presente todo dia: esporte, lazer, cultura e\nformação profissional pra juventude.\nPorque aonde o Estado não chega com escola, chega a bandidagem. E a gente sabe muito\nbem o que é isso.\nOitavo: Amazônia de pé, e trabalho aqui dentro.\nDesmatamento zero e combate implacável às atividades ilegais que ameaçam os\nterritórios.\nApoio de verdade à bioeconomia, ao turismo de base comunitária, à economia dos povos\nindígenas, ribeirinhos e quilombolas.\nE licença mineral condicionada: quer explorar o minério do Pará? Beneficia aqui. Com\nmão de obra paraense.\nChega de mandar nossa riqueza embora em pedra bruta e receber de volta o buraco.\nE agora eu quero falar de uma coisa que eu guardei pro fim de propósito.\nVIDA MAIS 60.\nEu quero falar com quem tem sessenta anos ou mais.\nVocês construíram esse estado.\nVocês levantaram parede, deram aula, criaram filho, remaram, plantaram, venderam,\nlimparam, cuidaram.\nE aí, um dia, o Estado brasileiro descobriu uma palavra para vocês: “idoso”. “Idosa”.\nE com essa palavra veio um jeito de tratar. Fila. Espera. Balcão. Aquele tom de voz mais\nalto, como se a pessoa tivesse ficado criança de novo.\nEu conheço bem isso. Minha mãe alfabetizou oito filhos na mesa da cozinha. Deu aula a\nvida inteira. E depois de tudo isso, ela virou “mais uma na fila”.\nEu penso nela toda vez que eu vejo uma senhora sentada num banco de posto de saúde\ndesde as cinco da manhã.\nEntão o nosso governo vai ter um programa com nome, com endereço e com data pra\ncomeçar. Ele se chama VIDA MAIS 60."
+          },
+          {
+            "id": "e-eu-vou-dizer-o-que-e-sem-enfeite",
+            "titulo": "E eu vou dizer o que é, sem enfeite.",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "E eu vou dizer o que é, sem enfeite.\nPrimeiro: Centro de Referência Integral à Pessoa Idosa. Em todas as mesorregiões do\nPará.\nE eu quero que fique claro o que isso é, porque as pessoas ouvem e pensam em asilo.\nNão é asilo.\nÉ um lugar onde tem geriatra de verdade — não é o clínico correndo em dez minutos, é\ngeriatra. Tem terapia ocupacional. Tem nutricionista, porque comer direito depois dos\nsessenta é remédio. Tem psicólogo, porque a solidão adoece e ninguém fala disso. E tem\neducação física, com professor, todo dia.\nAula de caminhada. Aula de alongamento. Musculação leve com acompanhamento.\nDança.\nPorque eu não quero paraense de sessenta anos sentado esperando a morte chegar. Eu\nquero paraense de sessenta, de setenta, de oitenta anos dançando carimbó.\nEnvelhecer não é doença. Envelhecer é a vitória de quem sobreviveu a tudo isso que está\naí.\nNosso trabalho não é cuidar do fim da vida de quem já passou dos 60. É garantir a melhor\nparte dela.\nSegundo: voz.\nNão adianta ter o centro se ninguém pergunta o que precisa dentro dele.\nPor isso nós vamos trabalhar junto com cada prefeitura pra que todo município do Pará\ntenha um Conselho Municipal da Pessoa Idosa. Criado, instalado e funcionando de\nverdade — reunindo, com ata, com orçamento, com poder de cobrar.\nConselho que só existe no papel é desrespeito educado.\nEu não vou ficar aqui prometendo que vocês vão ter uma velhice fácil. Ninguém pode\nprometer isso.\nO que eu posso prometer é que vocês não vão envelhecer sozinhos, e não vão envelhecer\nsendo tratados como estorvo.\nIsso é o VIDA MAIS 60.\nE anota o nome, porque nós vamos cobrar de mim também.\nDE ONDE VEM O DINHEIRO\nAí alguém pergunta, com razão: “Ara, e como é que paga isso?”\nÓtima pergunta. Eu tenho resposta.\nPrimeiro: cobrando os débitos fiscais das grandes empresas. Principalmente do setor\nmineral e do agronegócio. Tem devedor bilionário no Pará dormindo tranquilo enquanto"
+          },
+          {
+            "id": "o-trabalhador-tem-o-imposto-descontado-antes-de-receber-ou-quando-compra",
+            "titulo": "o trabalhador tem o imposto descontado antes de receber ou quando compra um quilo de",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "o trabalhador tem o imposto descontado antes de receber ou quando compra um quilo de\nfeijão no comércio da esquina.\nCom esse dinheiro nós criamos um fundo. E esse fundo financia educação, inovação e\ngeração de renda — com prioridade para mulheres chefes de família, jovens de 16 a 34\nanos e as comunidades tradicionais e periféricas.\nSegundo: revisando os incentivos fiscais. Com transparência e controle social. Toda\nrenúncia fiscal deste Estado vai ser aberta, item por item. Quem ganha benefício vai ter\nque mostrar quantos empregos gerou.\nTerceiro: auditando as obras. Toda obra com suspeita de superfaturamento vai ser\nauditada, e quem desviou vai responder na forma da lei.\nE quarto, o mais importante: o povo decide.\nNós vamos criar um processo permanente de participação social, em cada município e em\ncada macrorregião, para definir o orçamento do Estado e o plano plurianual.\nO orçamento vai deixar de ser segredo de gabinete.\nO povo decide, e o governo faz.\nBRASIL E PARÁ, LULA E ARA\nEu quero falar do Brasil por um instante.\nAlgumas pessoas dizem que nas eleições só interessa a realidade local. A cidade, a rua\nque se mora. Que temas nacionais não são importantes.\nIsso é um enorme engano.\nPara o Pará ser transformado de verdade e se tornar um verdadeiro abrigo para seu povo,\no Brasil não pode retroceder. De jeito algum, pois isso seria cair num abismo de\nintolerância e ataques aos direitos sociais tão duramente conquistados.\nDesde a eleição de Lula, nas eleições de 2022, o Brasil voltou a ter comida na mesa.\nVoltou a ter salário valendo alguma coisa. Voltou a ser respeitado no mundo. Isso não caiu\ndo céu também. Isso foi escolha de governo.\nE foi feito por um homem que a vida inteira ouviu que não ia dar conta. Que não tinha\ndiploma. Que não tinha jeito.\nEu conheço bem essa história. Ela se parece com a minha.\nO que o Lula fez no Brasil, é isso que eu quero fazer aqui: inverter a prioridade. Colocar\nquem sempre foi o último em primeiro.\nLula do Brasil. Ara do Pará.\nNão é slogan. É o mesmo projeto, descendo o rio.\nO CHAMADO"
+          },
+          {
+            "id": "eu-nao-vim-prometer-milagre-milagre-e-outro-departamento",
+            "titulo": "Eu não vim prometer milagre. Milagre é outro departamento.",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Eu não vim prometer milagre. Milagre é outro departamento.\nEu vim aqui assumir compromisso.\nE compromisso de verdade tem nome, tem prazo e tem gente atrás para cobrar.\nReparem onde termina o nosso programa de governo.\nA última proposta, a que fecha tudo, é a que garante que a pessoa idosa tenha voz em cada\nmunicípio do Pará.\nQuer dizer que o nosso programa termina exatamente onde ele devia terminar: no respeito\na quem começou tudo.\nE é isso que eu peço que vocês levem dessa mensagem.\nNão é aplauso. Aplauso acaba quando a luz apaga.\nO que eu peço é conversa. Conversa na tua rua, no teu grupo, no teu trabalho, na tua\nigreja, no teu barco, na fila do banco.\nUma conversa por dia. Todo dia. Até outubro.\nPorque nós não temos máquina. Não temos e jamais aceitaríamos que um único centavo\ndo recurso público fosse utilizado para desequilibrar a disputa. Isso tem nome: é abuso\ndo poder político e econômico. Numa palavra: é crime e mancha qualquer eleição.\nPor isso, não temos empresário pagando campanhas tão milionárias que representam um\nsoco na cara do povo que trabalha todos os dias para alimentar sua família honestamente.\nNão temos máquina, repito. Nós temos gente. E gente falando com gente ainda é a coisa\nmais forte que existe nesse estado.\nEu sei que muita gente neste estado gigante que se decepcionou. Muita gente já votou\ncom esperança e recebeu de volta o silêncio.\nEu não vou pedir para vocês esquecerem isso. Eu vou pedir outra coisa.\nEu vou pedir para vocês arriscarem acreditar mais uma vez.\nPorque desistir também é uma escolha. E é a escolha que eles esperam da gente.\nMeu pai levou água para casa dos outros a vida inteira.\nEu quero levar água, escola, hospital e dignidade para a casa de todo mundo.\nE eu não vou fazer isso sozinha. Eu vou fazer com vocês.\n\nARA DO PARÁ.\nARA PRA CUIDAR."
+          },
+          {
+            "id": "e-possivel-voltar-a-acreditar",
+            "titulo": "É possível voltar a acreditar!",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "É possível voltar a acreditar!\n\nAraceli Lemos\nCandidata a governadora - 50"
+          },
+          {
+            "id": "2-apresentacao",
+            "titulo": "2 – Apresentação",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "2 – Apresentação\n\nNossa plataforma está estruturada em 50 propostas que se articulam e se servem de\nalicerce ao projeto de mudanças que a candidatura de Araceli governadora representa.\nNão se trata de um programa completo, pronto e acabado.\nAntes, é uma Plataforma sintética, que aponta caminhos e desenha horizontes a\nconquistar.\nEste programa não é fruto de trabalho solitário. Decorre da confluência de vontades,\npropósitos, dores e resistências recolhidas ao longo de vários meses em que realizamos o\nprojeto Caravanas de Sol a Sol, ouvindo a nossa gente.\nForam dezenas de encontros, em todas as regiões do Pará, para realizar um ato simples e\nindispensável: ouvir, com respeito e sensibilidade.\nO texto a seguir, portanto, não pretende esgotar o enorme manancial de propostas, em\ncada um das inúmeras políticas públicas que precisam estar a serviço de todo o povo\nparaense.\nÉ um projeto aberto e coletivo. E como tal se submete ao crivo do debate franco e\ndemocrático durante esta campanha eleitoral."
+          },
+          {
+            "id": "3-proposta-estrategica-de-governo-para-o-enfrentamento-da-crise-climatic",
+            "titulo": "3 – Proposta Estratégica de Governo para o enfrentamento da crise climática",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "3 – Proposta Estratégica de Governo para o enfrentamento da crise climática\n\nO Estado do Pará possui a vocação natural para liderar a agenda climática global,\nespecialmente no contexto pós COP30. Essa agenda deve proteger o meio ambiente da\nAmazônia paraense, a fauna e as pessoas, especialmente nos centros urbanos, que\nenfrentam desafios diários com enchentes, ilhas de calor e eventos climáticos extremos.\n\nNossa visão estratégica integra a conservação da Amazônia à adaptação e mitigação nas\ncidades, estabelecendo as Soluções Baseadas na Natureza (SbN) como eixo central do\nplanejamento urbano e a Justiça Climática como princípio inegociável da gestão pública.\nPara liderar essa transformação, propomos uma governança forte, inovadora e transversal.\n\nGovernança e Liderança Institucional\nA agenda climática deve ser o centro do planejamento de Estado. Para isso, propomos\numa reestruturação institucional que garanta transversalidade e capacidade de execução.\n\n3.1. Criação da Secretaria de Estado de Mudanças Climáticas (SECLIMA)\nPara que a pauta climática não seja apenas um apêndice das políticas ambientais\ntradicionais, criaremos a Secretaria de Estado de Mudanças Climáticas.\nA SECLIMA terá a missão de coordenar a Política Estadual de Justiça Climática, atuando\ndiretamente na captação de fundos nacionais e internacionais, como o Fundo Amazônia,\no Fundo Clima e recursos do mercado de carbono. A secretaria terá status de órgão de\nplanejamento estratégico, liderando a transição ecológica justa e integrando de forma\ncompulsória as políticas de infraestrutura, habitação, defesa civil e meio ambiente. De\nforma inovadora, a SECLIMA terá a prerrogativa de avaliar e emitir pareceres sobre\ngrandes obras públicas, garantindo que incorporem análises de risco climático e critérios\nde resiliência.\n\n3.2. Política Estadual de Justiça Climática e Adaptação\nInstituiremos um marco legal robusto para garantir que os investimentos públicos em\nadaptação priorizem as populações mais vulneráveis. Esta política será materializada\natravés do Plano Estadual de Justiça Climática e Adaptação, focado na redução das\ndesigualdades socioambientais. O Governo do Estado fornecerá suporte técnico e"
+          },
+          {
+            "id": "financeiro-continuo-para-que-os-144-municipios-paraenses-elaborem-e-exec",
+            "titulo": "financeiro contínuo para que os 144 municípios paraenses elaborem e executem seus",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "financeiro contínuo para que os 144 municípios paraenses elaborem e executem seus\npróprios Planos Locais de Ação Climática, com ênfase na prevenção de desastres.\n\nCidades Resilientes e Soluções Baseadas na Natureza (SbN)\nAs cidades paraenses, com destaque para a Região Metropolitana de Belém e os grandes\npolos regionais, necessitam de adaptação urgente. O modelo de infraestrutura cinza\nmostrou seu esgotamento; a resposta do nosso governo será a implantação massiva de\ninfraestrutura verde e azul.\n\n3.3. Programa Pará Resiliente: Cidades Esponjas e Infraestrutura Verde\nEste programa é destinado a transformar a morfologia urbana das cidades paraenses,\nampliando drasticamente a capacidade de absorção de águas pluviais e mitigando as ilhas\nde calor.\n•\n\nSoluções Baseadas na Natureza (SbN): Promoveremos a substituição progressiva\nda drenagem tradicional por infraestrutura verde. Isso inclui a implantação de\njardins de chuva, biovaletas, pavimentos permeáveis.\n\n•\n\nUrbanização Climática de Periferias: Executaremos intervenções estruturais em\náreas de baixada e encostas. Combinaremos a contenção de riscos com a criação\nde parques lineares inundáveis, a recuperação das margens de igarapés urbanos e\na regeneração de áreas degradadas, transformando áreas de risco em espaços de\nconvivência e segurança.\n\n•\n\nCorredores Ecológicos Urbanos: Lançaremos um amplo programa de arborização\nurbana em parceria com municípios, utilizando exclusivamente espécies nativas\nda Amazônia, com o objetivo de reduzir a temperatura local, melhorar a qualidade\ndo ar e promover o bem-estar da população.\n\n3.4. Política Estadual das Águas e Segurança Hídrica\nNossa política será orientada pela gestão integrada e pela proteção rigorosa dos rios e\nnascentes amazônicos, essenciais para a vida e frequentemente ameaçados por grandes\nprojetos e poluição.\n•\n\nRecuperação de Igarapés e Bacias:\n\n•\n\nPartiremos de uma Política estadual de saneamento e tratamento de esgoto, em\nparceria com o Governo Federal, com financiamento de bancos internacionais. A\npartir desse passo, implementaremos um plano estadual de despoluição e\nrevitalização de rios e nascentes urbanas. O objetivo é transformá-los em ativos"
+          },
+          {
+            "id": "de-lazer-corredores-de-mobilidade-hidrovias-urbanas-limpas-e-garantidore",
+            "titulo": "de lazer, corredores de mobilidade (hidrovias urbanas limpas) e garantidores da",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "de lazer, corredores de mobilidade (hidrovias urbanas limpas) e garantidores da\nsegurança hídrica do estado frente a cenários de secas extremas e inundações.\n\nTransição Ecológica e Economia de Baixo Carbono\n3.5. Programa de Transição Ecológica Justa\nPromoveremos uma transformação profunda no modelo de desenvolvimento do Pará,\ngarantindo que a riqueza gerada pela nossa biodiversidade permaneça no estado e\nbeneficie diretamente sua população.\n•\n\nBioeconomia e Floresta em Pé: Fomentaremos massivamente a inovação\ntecnológica, a agroecologia e os Sistemas Agroflorestais (SAFs). O Estado\napoiará a agregação de valor às cadeias produtivas locais, como açaí, cacau e óleos\nessenciais, estimulando fortemente a economia circular.\n\n•\n\nMitigação e Descarbonização Urbana e industrial: Lideraremos a transição\nenergética nas cidades paraenses, em parceria com os municípios. Isso envolverá\no apoio à eletrificação do transporte público metropolitano, o fomento à instalação\nde painéis de energia solar em projetos de habitação de interesse social e a\nimplementação de rigorosos padrões de eficiência energética.\n\n•\n\nDescarbonização das Atividades de Alto Impacto: Implementaremos uma agenda\nestadual de descarbonização da mineração, da indústria, da produção de cimento,\ndo setor de transportes e de outras atividades de alto impacto ambiental. O Estado\nestabelecerá metas progressivas de redução de emissões, incentivará a eficiência\nenergética, a eletrificação de equipamentos, o uso de energias renováveis, a\nsubstituição de combustíveis fósseis e a adoção de tecnologias de baixo carbono.\nNovos empreendimentos deverão apresentar planos de transição climática,\nenquanto as empresas em operação serão estimuladas a reduzir emissões,\nrecuperar áreas degradadas e ampliar a circularidade de materiais. A política\ndeverá combinar fiscalização, transparência, crédito verde e incentivos\neconômicos, garantindo a proteção dos trabalhadores, das comunidades e dos\nterritórios indígenas, quilombolas e tradicionais."
+          },
+          {
+            "id": "4-plataforma-de-governo-sao-50-propostas-e-o-numero-e-50",
+            "titulo": "4 - Plataforma de Governo: “São 50 propostas. E o número é 50”",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "4 - Plataforma de Governo: “São 50 propostas. E o número é 50”\n\n1 - REVISÃO DA PRIVATIZAÇÃO DA COSANPA. UMA NOVA COMPANHIA DE ÁGUA E\nESGOTO QUE OFEREÇA SERVIÇO DE QUALIDADE, COM PREÇO JUSTO\n2 - INVESTIR PESADAMENTE NA IMPLANTAÇÃO E EXTENSÃO DAS REDES DE ÁGUA E COLETA\nE TRATAMENTO DE ESGOTO, NAS CIDADES E, UTILIZANDO SISTEMAS ALTERNATIVOS, NAS\nCOMUNIDADES RURAIS E RIBEIRINHAS.\n\n3- REAJUSTE IMEDIATO DOS SALÁRIOS – COM O OBJETIVO DE ZERAR AS\nPERDAS\n\n–\n\nE\n\nVALORIZAR\n\nAS\n\nCARREIRAS,\n\nASSEGURANDO-SE\n\nA\n\nRECOMPOSIÇÃO ANUAL DOS VENCIMENTOS E A NEGOCIAÇÃO COLETIVA\n(CONVENÇÃO 151 DA OIT)\n4 - GARANTIA DA REALIZAÇÃO DE CONCURSOS PÚBLICOS PARA SUPRIR AS NECESSIDADES DE\nPESSOAL, COM PRIORIDADE PARA AS ÁREAS DA EDUCAÇÃO, SAÚDE, CULTURA E\nASSISTÊNCIA, E CUMPRIMENTO EFETIVO DA RESERVA DE VAGAS PARA PESSOAS NEGRAS,\nINDÍGENAS E COM DEFICIÊNCIA EM TODOS OS CERTAMES ESTADUAIS, COM BANCA DE\nHETEROIDENTIFICAÇÃO, COMISSÃO DE VERIFICAÇÃO E PUBLICAÇÃO ANUAL DO RESULTADO\nDAS COTAS.\n\n5- SALÁRIO-MÍNIMO REGIONAL DE R$ 2.200, CONFORME CÁLCULO DO\nDIEESE, COM VISTAS AO AUMENTO DO PODER DE COMPRA DA POPULAÇÃO\nE CRESCIMENTO DO COMÉRCIO DE BENS E SERVIÇOS;\n6 - APOIO AOS TRABALHADORES PLATAFORMIZADOS, COM A CRIAÇÃO DE\nPONTOS DE APOIO NOS CENTROS URBANOS, LINHAS DE CRÉDITO PARA\nAQUISIÇÃO DE VEÍCULOS, COM JUROS BAIXOS E CRIAÇÃO DE APLICATIVO\nDE TRANSPORTE DE PASSAGEIROS, COM GERENCIAMENTO PÚBLICO, QUE\nOFEREÇA CONDIÇÕES DIGNAS E JUSTAS;\n7- IMPLANTAÇÃO DA TARIFA ZERO NO TRANSPORTE COLETIVO URBANO,\nEM PARCERIA COM O GOVERNO FEDERAL;"
+          },
+          {
+            "id": "8-estabelecimento-imediato-da-escala-5-x-2-para-os-empregados",
+            "titulo": "8 - ESTABELECIMENTO IMEDIATO DA ESCALA 5 X 2 PARA OS EMPREGADOS",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "8 - ESTABELECIMENTO IMEDIATO DA ESCALA 5 X 2 PARA OS EMPREGADOS\nTERCEIRIZADOS\n\nDA\n\nADMINISTRAÇÃO\n\nESTADUAL,\n\nSEM\n\nREDUÇÃO\n\nSALARIAL, TAL QUAL O REALIZADO PELO GOVERNO FEDERAL;\n9 - INCENTIVO À AGRICULTURA FAMILIAR, COMO PRIORIDADE NAS\nCOMPRAS PÚBLICAS, PARA BARATEAR A CESTA BÁSICA;\n10 - IMPLANTAÇÃO DE UM PLANO DE DESENVOLVIMENTO TERRITORIAL\nPARA O ARQUIPÉLAGO DE MARAJÓ, PARA ACABAR COM A FOME E OS\nPÉSSIMOS INDICADORES SOCIAIS QUE MARCAM ESSA REGIÃO PARAENSE;\n11 -\n\nPRAZO LIMITE DE ATÉ 60 DIAS PARA O ACESSO A EXAMES E\n\nPROCEDIMENTOS ;\n12 - FORTALECIMENTO E INTERIORIZAÇÃO DO TRATAMENTO ONCOLÓGICO\n13 - COMBATE PRIORITÁRIO À MORTALIDADE MATERNO-INFANTIL\n14 -\n\nAMPLIAÇÃO E DESCENTRALIZAÇÃO DA REDE ESTADUAL DE DIAGNÓSTICO,\n\nATENDIMENTO E REABILITAÇÃO PARA PESSOAS COM DEFICIÊNCIA FÍSICA, INTELECTUAL,\nAUDITIVA E VISUAL E PARA PESSOAS COM TEA E OUTRAS NEURODIVERGÊNCIAS, EM TODAS\nAS REGIÕES DO ESTADO, COM META DE FIM DA FILA DE ESPERA POR DIAGNÓSTICO.\n\n15 - DESMATAMENTO ZERO E COMBATE IMPLACÁVEL ÀS ATIVIDADES\nILEGAIS QUE AMEAÇAM OS TERRITÓRIOS;\n16 – COMBATE AO GARIMPO ILEGAL E A TODAS AS ATIVIDADES\nPREDATÓRIAS QUE CONTAMINAM RIOS E DEMAIS CURSOS D’ÁGUA,\nCAUSANDO GRAVES RISCOS À SAÚDE DAS POPULAÇÕES ORIGINÁRIAS E\nTRADICIONAIS EM NOSSO TERRITÓRIO.\n17 - APOIO EFETIVO À BIOECONOMIA, AO TURISMO DE BASE COMUNITÁRIA\nE\n\nÀS\n\nATIVIDADES\n\nTRADICIONAIS,\n\nECONÓMICAS\n\nESPECIALMENTE\n\nAS\n\nGERIDAS\n\nPELAS\n\nINDÍGENAS,\n\nPOPULAÇÕES\n\nRIBEIRINHAS\n\nE\n\nQUILOMBOLAS;\n18 - CONDICIONAR A CONCESSÃO OU RENOVAÇÃO DOS LICENCIAMENTOS\nDAS ATIVIDADES MINERAIS À VERTICALIZAÇÃO NO PRÓPRIO ESTADO E\nUTILIZAÇÃO DE MÃO DE OBRA LOCAL;"
+          },
+          {
+            "id": "19-plena-garantia-da-consulta-previa-livre-e-informada",
+            "titulo": "19 - PLENA GARANTIA DA CONSULTA PRÉVIA, LIVRE E INFORMADA,",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "19 - PLENA GARANTIA DA CONSULTA PRÉVIA, LIVRE E INFORMADA,\nCONFORME ESTABELECIDO PELA CONVENÇÃO 169 DA OIT;\n20 - CRIAÇÃO DA SECRETARIA DE ESTADO DE IGUALDADE RACIAL, COM ORÇAMENTO\nPRÓPRIO E PARTICIPAÇÃO NAS DECISÕES DE SAÚDE, EDUCAÇÃO, SEGURANÇA E TRABALHO,\nE ELABORAÇÃO DO PLANO ESTADUAL DE ENFRENTAMENTO AO RACISMO NO PRIMEIRO ANO\nDE GOVERNO, CONSTRUÍDO COM O MOVIMENTO NEGRO, AS COMUNIDADES QUILOMBOLAS E\nAS COMUNIDADES TRADICIONAIS DE MATRIZ AFRICANA DO PARÁ.\n\n21 - QUALIFICAÇÃO OBRIGATÓRIA DE DELEGADOS, ESCRIVÃES, PERITOS E AGENTES DAS\nPOLÍCIAS ESTADUAIS PARA O REGISTRO E A TIPIFICAÇÃO CORRETA DOS CRIMES DE RACISMO,\nADOTANDO COMO REFERÊNCIA O PROTOCOLO PARA JULGAMENTO COM PERSPECTIVA\n\nRACIAL DO CONSELHO NACIONAL DE JUSTIÇA, COM PUBLICAÇÃO ANUAL DOS REGISTROS\nPOR TIPO PENAL\n\n22 - APLICAÇÃO EFETIVA DAS LEIS 10.639/2003 E 11.645/2008 EM TODA A REDE ESTADUAL\nDE ENSINO, COM FORMAÇÃO CONTINUADA DOS PROFESSORES, PRODUÇÃO DE MATERIAL\nDIDÁTICO SOBRE HISTÓRIA E CULTURA AFRO-BRASILEIRA, AFRICANA, INDÍGENA E\nAMAZÔNIDA, E PRESENÇA DOS MESTRES DE SABERES TRADICIONAIS DO PARÁ DENTRO DAS\nESCOLAS.\n\n23 - CRIAÇÃO DE CENTROS ESTADUAIS DE REFERÊNCIA E ACOLHIMENTO À POPULAÇÃO\nLGBTQIAP+, COM ATENDIMENTO JURÍDICO, PSICOLÓGICO E ASSISTENCIAL, COMEÇANDO\nPOR BELÉM, SANTARÉM E MARABÁ, INCLUINDO CASA DE PASSAGEM PARA ADOLESCENTES\nE JOVENS EXPULSOS DE CASA.\n\n24 - IMPLANTAÇÃO DE AMBULATÓRIO DE ATENÇÃO INTEGRAL À SAÚDE DE PESSOAS TRANS\nE\n\nTRAVESTIS\n\nNA\n\nREDE\n\nESTADUAL,\n\nCOM\n\nACOMPANHAMENTO\n\nHORMONAL\n\nE\n\nENCAMINHAMENTO AO PROCESSO TRANSEXUALIZADOR DO SUS, E GARANTIA DO USO DO\nNOME SOCIAL EM TODA A ADMINISTRAÇÃO ESTADUAL, NA REDE DE SAÚDE E NA REDE DE\nENSINO, POR DECRETO NOS PRIMEIROS TRINTA DIAS DE GOVERNO.\n\n25 - CRIAÇÃO DE NÚCLEO ESPECIALIZADO EM CRIMES DE ÓDIO NA POLÍCIA CIVIL DO PARÁ\nE INCLUSÃO OBRIGATÓRIA DO CAMPO DE MOTIVAÇÃO POR RAÇA, ORIENTAÇÃO SEXUAL E\nIDENTIDADE DE GÊNERO EM TODO BOLETIM DE OCORRÊNCIA DO ESTADO, COM PUBLICAÇÃO\nTRIMESTRAL DOS DADOS."
+          },
+          {
+            "id": "26-plano-estadual-de-acessibilidade-com-meta-de-100-das-escolas-estaduai",
+            "titulo": "26 - PLANO ESTADUAL DE ACESSIBILIDADE, COM META DE 100% DAS ESCOLAS ESTADUAIS,",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "26 - PLANO ESTADUAL DE ACESSIBILIDADE, COM META DE 100% DAS ESCOLAS ESTADUAIS,\nUNIDADES DE SAÚDE E PRÉDIOS PÚBLICOS DO ESTADO ACESSÍVEIS, CRONOGRAMA ANUAL\nPÚBLICO POR REGIÃO E AUDITORIA PERMANENTE COM PARTICIPAÇÃO DE PESSOAS COM\nDEFICIÊNCIA, EM CUMPRIMENTO À LEI BRASILEIRA DE INCLUSÃO.\n\n27 - PASSE LIVRE ESTADUAL PARA PESSOAS COM DEFICIÊNCIA E SEU ACOMPANHANTE NO\nTRANSPORTE\n\nINTERMUNICIPAL\n\nRODOVIÁRIO\n\nE\n\nAQUAVIÁRIO,\n\nCOM\n\nEXIGÊNCIA\n\nDE\n\nACESSIBILIDADE NAS EMBARCAÇÕES E NOS TERMINAIS E FISCALIZAÇÃO EFETIVA DO\nCUMPRIMENTO.\n\n28 - REVISÃO, COM TRANSPARÊNCIA E CONTROLE SOCIAL, DA POLÍTICA DE\nINCENTIVO FISCAL E DE QUALQUER NATUREZA AOS PROJETOS DE\nMINERAÇÃO, PRODUÇÃO DE ENERGIA, LOGÍSTICA, AGROPECUÁRIOS E DE\nQUALQUER NATUREZA CAPAZES DE PROVOCAR IMPACTOS RELEVANTES.\n29 - INSTALAÇÃO DE DELEGACIAS ESPECIALIZADAS DE PROTEÇÃO ÀS\nMULHERES, INCLUSIVE MULHERES TRANS E TRAVESTIS, EM TODOS OS\nMUNICÍPIOS,\n\nGARANTINDO\n\nFUNCIONAMENTO\n\n24\n\nHORAS,\n\nALÉM\n\nDA\n\nGARANTIA DA UTILIZAÇÃO DAS FERRAMENTAS TECNOLÓGICAS PARA\nAMPLIAR A REDE DE PROTEÇÃO ÀS MULHERES, INCLUSIVE COM EFETIVOS\nMOBILIZADOS A PARTIR DE DENÚNCIAS FEITAS POR MEIO DIGITAL E\nINSTANTÂNEO.\n30 - IMPLANTAR UM PROGRAMA DE PREVENÇÃO À TODAS AS FORMAS DE\nVIOLÊNCIA CONTRA A MULHER, COM FOCO NAS ESCOLAS ESTADUAIS E\nDEMAIS ESTABELECIMENTOS PÚBLICOS EM TODO O ESTADO, DE FORMA\nPERMANENTE;\n31 - CUMPRIMENTO PRIORITÁRIO DAS MEDIDAS PROTETIVAS E DOS\nMANDADOS CONTRA OS AGRESSORES DE MULHERES, GARANTINDO A\nAPLICAÇÃO RIGOROSA E EFETIVA DA LEGISLAÇÃO PENAL;\n32 - AUDITORIA DE TODAS AS OBRAS OU PROGRAMAS COM SUSPEITA DE\nSUPERFATURAMENTO E DESVIO DE RECURSOS PÚBLICOS, VISANDO\nIDENTIFICAR OS RESPONSÁVEIS PELOS ATOS CRIMINOSOS PARA QUE\nPAGUEM POR SEUS ATOS, NOS TERMOS DA LEI;"
+          },
+          {
+            "id": "33-revisao-de-todos-as-privatizacoes-de-rodovias-paraenses-com",
+            "titulo": "33 - REVISÃO DE TODOS AS PRIVATIZAÇÕES DE RODOVIAS PARAENSES, COM",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "33 - REVISÃO DE TODOS AS PRIVATIZAÇÕES DE RODOVIAS PARAENSES, COM\nA RETOMADA DO CONTROLE ESTATAL E IMEDIATO FIM DOS PEDÁGIOS;\n34 - CRIAÇÃO DE UM AMPLO E PERMANENTE PROCESSO DE PARTICIPAÇÃO SOCIAL, EM CADA\nMUNICÍPIO E EM TODAS AS REGIÕES DE INTEGRAÇÃO, PARA A DEFINIÇÃO DA PROPOSTA DE\nLEI ORÇAMENTÁRIA E DO PLANO PLURIANUAL, COM PUBLICAÇÃO DE TODOS OS DADOS\nPRODUZIDOS PELO ESTADO DESAGREGADOS POR RAÇA, COR, SEXO, IDENTIDADE DE GÊNERO\nE\n\nDEFICIÊNCIA,\n\nEM\n\nFORMATO ABERTO, ALÉM\n\nDE\n\nINSTITUIR\n\nCOMISSÕES DE\n\nFISCALIZAÇÃO DE TODAS AS OBRAS, SERVIÇOS E PROGRAMAS ESTADUAIS;\n35 - COMBATE SEM TRÉGUAS AO CRIME ORGANIZADO, EM PARCERIA COM O GOVERNO FEDERAL,\nPARA INVESTIGAR E ASFIXIAR O FINANCIAMENTO ILEGAL E A LAVAGEM DE DINHEIRO QUE\nABASTECEM AS FACÇÕES CRIMINOSAS E AS MILÍCIAS, VISANDO DESARTICULÁ-LAS E IMPEDIR\nQUE SIGAM IMPONDO SEU CONTROLE VIOLENTO SOBRE COMUNIDADES;\n\n36 - CRIAÇÃO DE POLÍTICA DE REDUÇÃO DA LETALIDADE POLICIAL, COM O INVESTIMENTO\nEM\n\nTECNOLOGIAS\n\nDE\n\nMONITORAMENTO,\n\nINTELIGÊNCIA\n\nPOLICIAL,\n\nPROTOCOLOS\n\nCRITERIOSOS DE USO DA FORÇA E MECANISMOS INDEPENDENTES DE FISCALIZAÇÃO E DA\nINSTALAÇÃO DE CÂMERAS CORPORAIS EM 100% DO EFETIVO, ALÉM DO ENFRENTAMENTO\nDA DESIGUALDADE RACIAL, COM META DE REDUÇÃO E PUBLICAÇÃO DOS DADOS POR RAÇA\nE COR.\n\n37 - IMPLEMENTAÇÃO DE UMA POLÍTICA INTEGRADA QUE ASSEGURE A PRESENÇA\nPERMANENTE DO ESTADO ATRAVÉS DE UM AMPLO PROGRAMA BASEADO NA SEGURANÇA\nCOMUNITÁRIA E NA OFERTA DE ESPORTE, LAZER, CULTURA E FORMAÇÃO PROFISSIONAL PARA\nA JUVENTUDE.\n\n38 - CRIAÇÃO DE UM AMPLO PROGRAMA DE EMPREGABILIDADE PARA A JUVENTUDE, COM O\nFORNECIMENTO DE BOLSA E ACESSO A CURSOS DE FORMAÇÃO PROFISSIONAL E DE CRIAÇÃO\nDE EMPREENDIMENTOS POPULARES, COM O DEVIDO RECORTE RACIAL NA DEFINIÇÃO DAS\nPRIORIDADES DE ACESSO A ESTA POLÍTICA PÚBLICA, E IMPLEMENTAR O PROGRAMA “MEU\nPRIMEIRO ESTÁGIO” EM PARCERIA COM O SISTEMA S E AS INSTITUIÇÕES DE ENSINO\n\nSUPERIOR EM ATUAÇÃO NO ESTADO;\n39 - POLÍTICA ESTADUAL DE TRABALHO E RENDA PARA PESSOAS TRANS, TRAVESTIS E NÃOBINÁRIAS, COM LINHA DE CRÉDITO PARA EMPREENDIMENTOS, PRIORIDADE NOS PROGRAMAS"
+          },
+          {
+            "id": "estaduais",
+            "titulo": "ESTADUAIS",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "ESTADUAIS\n\nDE\n\nQUALIFICAÇÃO\n\nPROFISSIONAL\n\nE\n\nINCENTIVO\n\nÀS\n\nEMPRESAS\n\nQUE\n\nCONTRATAREM.\n\n40 - AMPLIAÇÃO, REFORMA E MODERNIZAÇÃO DOS EQUIPAMENTOS CULTURAIS DO ESTADO\nA PARTIR DA INDICAÇÃO DO\n\nCULTURAIS,\n\nTRABALHADORES,\n\nCONSELHO ESTADUAL DE CULTURA, MOVIMENTOS\nPRODUTORES\n\nE\n\nFAZEDORES\n\nDE\n\nCULTURA\n\nE\n\nIMPLEMENTAÇÃO DE POLÍTICA DE VALORIZAÇÃO DOS TRABALHADORES, PRODUTORES E\nFAZEDORES DE CULTURA.\n41 - UNIVERSALIZAR O ACESSO À EDUCAÇÃO INFANTIL, POR MEIO DA AMPLIAÇÃO DA\nCOOPERAÇÃO TÉCNICA E FINANCEIRA COM OS MUNICÍPIOS, GARANTINDO A CONSTRUÇÃO,\nAMPLIAÇÃO E ADEQUAÇÃO DE CRECHES E PRÉ-ESCOLAS.\n\n42 - FORTALECER A EDUCAÇÃO PROFISSIONAL NOS TERRITÓRIOS DO CAMPO, DAS ÁGUAS E\nDAS FLORESTAS, INTEGRANDO O SISTEMA MODULAR DE ENSINO E OUTRAS ESTRATÉGIAS DE\nOFERTA ÀS ESPECIFICIDADES DAS POPULAÇÕES RURAIS, RIBEIRINHAS, QUILOMBOLAS,\nINDÍGENAS E EXTRATIVISTAS;\n\n43 – ESTABELECER QUE EM TODA CONTRUÇÃO, REFORMA OU AMPLIAÇÃO\nDE PRÉDIOS DA REDE ESTADUAL, SERÃO ASSEGURADAS EFETIVAS\nCONDIÇÕES DE ACESSIBILIDADE.\n44 - FORTALECER E EXPANDIR A UNIVERSIDADE DO ESTADO DO PARÁ (UEPA), AMPLIANDO\nSUA PRESENÇA NO INTERIOR DO ESTADO, EXPANDINDO A OFERTA DE CURSOS E VAGAS\nPRESENCIAIS, GARANTINDO INFRAESTRUTURA MODERNA, LABORATÓRIOS, BIBLIOTECAS,\nHOSPITAIS DE ENSINO E CONDIÇÕES ADEQUADAS PARA O DESENVOLVIMENTO DO ENSINO, DA\nPESQUISA E DA EXTENSÃO.\n\n45 - EDUCAÇÃO INCLUSIVA GARANTIDA NA REDE ESTADUAL, COM PROFESSOR DE APOIO E\nPROFISSIONAL DE APOIO ESCOLAR ASSEGURADOS, PRESENÇA DE INTÉRPRETE DE LIBRAS,\nSALAS DE RECURSOS MULTIFUNCIONAIS, E VALORIZAÇÃO E FORMAÇÃO CONTINUADA DOS\nPROFISSIONAIS DA EDUCAÇÃO ESPECIAL.\n\n46 -\n\nCUMPRIMENTO EFETIVO E IMEDIATO DO PISO NACIONAL DO\n\nMAGISTÉRIO;\n47 - GARANTIR O MÍNIMO DE 3% DA RECEITA ESTADUAL PARA A\nMANUTENÇÃO E INVESTIMENTO EM CULTURA, ASSEGURANDO EFETIVA\nDESCENTRALIZAÇÃO DAS AÇÕES E INVESTIMENTOS CULTURAIS;"
+          },
+          {
+            "id": "48-valorizacao-dos-saberes-tradicionais-e-incentivo-da",
+            "titulo": "48 - VALORIZAÇÃO DOS SABERES TRADICIONAIS E INCENTIVO DA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "48 - VALORIZAÇÃO DOS SABERES TRADICIONAIS E INCENTIVO DA\nECONOMIA CIRCULAR COM BASE NA PRODUÇÃO CULTURAL PARAENSE;\n49- TRANSFORMAÇÃO EFETIVA DO SISTEMA CULTURA (TV, RÁDIO E PORTAL) EM UMA\nEMPRESA PÚBLICA DE COMUNICAÇÃO, COM PARTICIPAÇÃO DA SOCIEDADE CIVIL NOS SEUS\nCONSELHOS, NOTADAMENTE NO QUE DEFINE A PROGRAMAÇÃO E ATIVIDADES JUNTO À\nPOPULAÇÃO.\n\n50 - CRIAÇÃO DE CENTROS DE REFERÊNCIA INTEGRAL AO IDOSO (CRI) EM TODAS AS\nREGIÕES, COM A OFERTA DE SERVIÇOS DE EDUCAÇÃO FÍSICA, GERIATRIA, TERAPIA\nOCUPACIONAL, NUTRIÇÃO E\n\nPSICOLOGIA, ENTRE OUTRAS ESSENCIAIS AO PLENO\n\nATENDIMENTO DA PESSOA IDOSA, ASSIM COMO O INCENTIVO, EM COOPERAÇÃO COM OS\nMUNICÍPIOS, PARA A CRIAÇÃO E FUNCIONAMENTO REGULAR DOS CONSELHOS MUNICIPAIS\nDA PESSOA IDOSA."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "4830cfa4661ee931e2d207daa3dd60c0b8831974432ee8656a1259cff048126c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "a9fdda6786b7377f693d4184563c684751b237fbbea90fc189eb7c467d37729e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7f5dc177bfd14303010523ce919b0f7ec243eea35a0e6b30b2b9cf43fe66370d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "5e1a5983b9a7433c8a101511ed4ef6b71fd7d7376de01ff068514c87cb61e5ec"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "b388b94d47f2078671f137cc281d7bdb570c6b389af1547c8a6925b5b5b3cace"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "f09dcc1a95acec8ea2a296033394fd171d853d195f9a15d9cbb9a8dcabe9e5d3"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "c832838be432c498865aa84c66a492a238e1f47783daf818e98ca589d24d7220"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "975e49641764856bfa4e50fce5a2a2c95b684f56a5e75c46b6a0689231d171ef"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "466f19623d1533b3912a0cc466d285532d76e24bbc00d57de9cbacdacb23655d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f25891e2b12387136e3685c1791856588b60258114a499eea01e291e00aed115"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "624e446f596122b445b5fda0e221cb7b1807781422c1aab878c36dde6449077c"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "5a631c2973202192a9a2f32ec5d2f4da2a8c4e1bf8eadb65a7b4d2645e5eb940"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "009c166e990b3e318fc705cd8ca365b949d22c728075a9ff9b30f8338a57c340"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1279e2a10ba9ee6c08b982a038755981ae9df6723b8fa534e034a6116e84f69d"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "368a7feb5ba89fb4eec17571a4a04bf517f184db1b27737849cf525e579270e4"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "f7469acfe55f26b4509584196a8cd0de15fd13a6cae51b68dbe9fc6ad3feef91"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "5ce1c034298be7d695ca346a457fe9ddd2bb8d8b41bc98f9924009b38a4fb9e1"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "23f262b27a3f10366620e572ade03df37960f009c3988388553bc1bd47909478"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "14d2449a82a4e353913f21a925cf072d3fffb72020bb3a571682cbcc3aa642a8"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "afbe16ac1b7097871dc06f5cc360f03ed1b9fd3df52b98cc8407e98ac6bc454e"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "3a2ae300f02c0a5dea32e354bb384e4b175e551b671aba7f711e8374bcc8001e"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "34b77c837b3c1d963c7cc36f64995a86feb39669661d59ec71103309cf44c024"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa de governo da candidatura de Araceli Lemos, da Federação PSOL-REDE, ao governo do Pará, prevê a revisão da privatização da Cosanpa, com a construção de uma nova empresa pública de saneamento. Na saúde, o plano propõe prazo máximo de sessenta dias para exames e procedimentos especializados. A plataforma propõe salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese. O programa inclui a implantação de tarifa zero no transporte coletivo urbano, em parceria com o governo federal. Na agenda climática, o plano prevê a criação da Secretaria de Estado de Mudanças Climáticas, com a missão de coordenar a política estadual de justiça climática. O programa estabelece o desmatamento zero. A plataforma prevê a instalação de delegacias especializadas para as mulheres em todos os municípios, com funcionamento de 24 horas. Para a população idosa, o plano propõe a criação de centros de referência integral em todas as regiões do estado.",
+    "frases": [
+      {
+        "texto": "O programa de governo da candidatura de Araceli Lemos, da Federação PSOL-REDE, ao governo do Pará, prevê a revisão da privatização da Cosanpa, com a construção de uma nova empresa pública de saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 5,
+            "trecho": "Nós vamos rever a privatização da Cosanpa e construir uma nova empresa pública de saneamento"
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 1,
+            "trecho": "Plataforma de Governo Araceli governadora 50 Ara do Pará. Ara pra cuidar FEDERAÇÃO PSOL-REDE 2026"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano propõe prazo máximo de sessenta dias para exames e procedimentos especializados.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 5,
+            "trecho": "No nosso governo, prazo máximo de sessenta dias para exame e procedimento especializado."
+          }
+        ]
+      },
+      {
+        "texto": "A plataforma propõe salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese."
+          }
+        ]
+      },
+      {
+        "texto": "O programa inclui a implantação de tarifa zero no transporte coletivo urbano, em parceria com o governo federal.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Tarifa zero no transporte coletivo urbano, em parceria com o governo federal."
+          }
+        ]
+      },
+      {
+        "texto": "Na agenda climática, o plano prevê a criação da Secretaria de Estado de Mudanças Climáticas, com a missão de coordenar a política estadual de justiça climática.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 13,
+            "trecho": "criaremos a Secretaria de Estado de Mudanças Climáticas."
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 13,
+            "trecho": "A SECLIMA terá a missão de coordenar a Política Estadual de Justiça Climática"
+          }
+        ]
+      },
+      {
+        "texto": "O programa estabelece o desmatamento zero.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 7,
+            "trecho": "Desmatamento zero e combate implacável às atividades ilegais que ameaçam os territórios."
+          }
+        ]
+      },
+      {
+        "texto": "A plataforma prevê a instalação de delegacias especializadas para as mulheres em todos os municípios, com funcionamento de 24 horas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Quinto: tolerância zero à violência contra as mulheres."
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Delegacia especializada em todos os municípios do Pará. Funcionando 24 horas."
+          }
+        ]
+      },
+      {
+        "texto": "Para a população idosa, o plano propõe a criação de centros de referência integral em todas as regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 22,
+            "trecho": "CRIAÇÃO DE CENTROS DE REFERÊNCIA INTEGRAL AO IDOSO (CRI) EM TODAS AS REGIÕES"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saneamento-publico",
+        "titulo": "Revisão da privatização da Cosanpa",
+        "descricao": "O programa prevê a revisão da privatização da Cosanpa, com a constituição de uma nova companhia pública de água e esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 5,
+            "trecho": "Nós vamos rever a privatização da Cosanpa e construir uma nova empresa pública de saneamento"
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 16,
+            "trecho": "REVISÃO DA PRIVATIZAÇÃO DA COSANPA. UMA NOVA COMPANHIA DE ÁGUA E ESGOTO QUE OFEREÇA SERVIÇO DE QUALIDADE, COM PREÇO JUSTO"
+          }
+        ]
+      },
+      {
+        "id": "prazo-na-saude",
+        "titulo": "Prazo para exames e procedimentos",
+        "descricao": "O plano propõe prazo máximo de sessenta dias para exames e procedimentos especializados.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 5,
+            "trecho": "No nosso governo, prazo máximo de sessenta dias para exame e procedimento especializado."
+          }
+        ]
+      },
+      {
+        "id": "salario-minimo-regional",
+        "titulo": "Salário-mínimo regional",
+        "descricao": "A plataforma propõe salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese."
+          }
+        ]
+      },
+      {
+        "id": "secretaria-de-clima",
+        "titulo": "Secretaria de Estado de Mudanças Climáticas",
+        "descricao": "O plano prevê a criação da Secretaria de Estado de Mudanças Climáticas, com a missão de coordenar a política estadual de justiça climática.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 13,
+            "trecho": "criaremos a Secretaria de Estado de Mudanças Climáticas."
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 13,
+            "trecho": "A SECLIMA terá a missão de coordenar a Política Estadual de Justiça Climática"
+          }
+        ]
+      },
+      {
+        "id": "delegacias-da-mulher",
+        "titulo": "Delegacias especializadas para mulheres",
+        "descricao": "A plataforma prevê a instalação de delegacias especializadas para as mulheres em todos os municípios, com funcionamento de 24 horas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Quinto: tolerância zero à violência contra as mulheres."
+          },
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 6,
+            "trecho": "Delegacia especializada em todos os municípios do Pará. Funcionando 24 horas."
+          }
+        ]
+      },
+      {
+        "id": "desmatamento-zero",
+        "titulo": "Desmatamento zero",
+        "descricao": "O programa estabelece o desmatamento zero.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002542386:01",
+            "pagina": 7,
+            "trecho": "Desmatamento zero e combate implacável às atividades ilegais que ameaçam os territórios."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:15:00.110Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T12:20:23.593Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A página 5 sustenta integralmente a revisão da privatização da Cosanpa e a construção de nova empresa pública de saneamento, e a página 1 identifica a candidatura e a federação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e a identificação do documento sem elogio, crítica, promoção ou certeza além do que o texto afirma."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de saneamento público, com duas partes diretamente conectadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento PA:140002542386:01, e a página 1 identifica a candidatura de Araceli ao governo do Pará pela Federação PSOL-REDE."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:1:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem a identidade da candidatura e todas as cláusulas materiais da proposta sobre Cosanpa e nova empresa pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a existência de prazo máximo de sessenta dias para exame e procedimento especializado na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de sessenta dias está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta e o prazo, sem tom elogioso, crítico ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre prazo de atendimento especializado em saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:2:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o tema saúde, o prazo e os exames e procedimentos especializados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de salário-mínimo regional de dois mil e duzentos reais conforme o Dieese."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "O valor de dois mil e duzentos reais está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não adiciona elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre salário-mínimo regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:3:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta, o valor e a referência ao Dieese."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação de tarifa zero no transporte coletivo urbano em parceria com o governo federal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta, sem carga valorativa ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de transporte urbano."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:4:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a implantação da tarifa zero, o modal urbano e a parceria com o governo federal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam a criação da secretaria e sua missão de coordenar a política estadual de justiça climática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve institucionalmente a proposta, sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta institucional coerente, com criação do órgão e definição de sua missão."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:5:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem a criação da secretaria e a missão apontada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a diretriz de desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única diretriz coerente sobre desmatamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:6:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula material da afirmação, desmatamento zero, está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência combina o contexto de proteção às mulheres com a previsão de delegacia especializada em todos os municípios e funcionamento de 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade abrangente de todos os municípios e o funcionamento de 24 horas estão literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem acrescentar juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de atendimento policial especializado para mulheres."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:7:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem o público referido, a presença em todos os municípios e o funcionamento de 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação de centros de referência integral ao idoso em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades específicas além da abrangência total, que está sustentada por em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente voltada à população idosa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:frase:8:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação dos centros, o público idoso e a abrangência em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam a revisão da privatização da Cosanpa e a criação de nova companhia pública de água e esgoto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente de saneamento público."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:saneamento-publico:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem integralmente a revisão da privatização e a nova companhia pública de água e esgoto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o prazo máximo de sessenta dias para exame e procedimento especializado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de sessenta dias está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre prazo em saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:prazo-na-saude:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o prazo, o tipo de atendimento e a área material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta e o valor indicado conforme o Dieese."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "O valor de dois mil e duzentos reais está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não agrega juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre salário-mínimo regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:salario-minimo-regional:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a proposta, o valor e a referência ao Dieese."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam a criação da secretaria e a missão indicada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta institucional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:secretaria-de-clima:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem integralmente a criação da secretaria e sua missão."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências combinadas sustentam delegacias especializadas para mulheres em todos os municípios, com funcionamento de 24 horas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "Todos os municípios e 24 horas estão literalmente sustentados pelas evidências."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não agrega juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de proteção às mulheres."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:delegacias-da-mulher:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem o público feminino, a abrangência territorial e o funcionamento contínuo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a diretriz de desmatamento zero."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única diretriz coerente sobre desmatamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002542386:tema:desmatamento-zero:documentos:PA:140002542386:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula material da afirmação, desmatamento zero, está integralmente coberta pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PA:140002542386",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PA:140002542386:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "0bd6598fc5116dc93055b6a00867a1072b7af36fce4841273acd4913a96ba86a",
+    "extractedTextSha256": "4c6236478745d3b273e4d9ac219679ecec2ed35f7e590c38bb733cc9b692803c",
+    "documentCount": 1,
+    "documentSetSha256": "d4cea20ed332806e3086f6f8fc39a2b3f6d631e1da11f7d2883d04c61e63882b",
+    "contentSha256": "8ad86d0c7ac92e6e7be81115b8c2cd8bd41b3e4be182b4240bbe9bd9e80e9221"
+  }
+}

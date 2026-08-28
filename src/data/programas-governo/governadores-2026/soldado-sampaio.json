@@ -1,0 +1,1524 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RR",
+    "sqCandidato": "230002551571",
+    "slug": "soldado-sampaio",
+    "nomeUrna": "SOLDADO SAMPAIO",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": "2026RR230002551571_01.pdf",
+    "arquivoNoPacote": "RR/2026RR230002551571_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RR:230002551571:01",
+      "fonte": {
+        "arquivoNome": "2026RR230002551571_01.pdf",
+        "arquivoNoPacote": "RR/2026RR230002551571_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "88182c074ac156ceb9defcbbf4c6af623125298ed2160109c20fd68ed50c9f6b",
+        "extractedTextSha256": "a4435282238d2ad8b6c1fdf2f0f651123d3fd14a560d8da3728c1e221b79ce82",
+        "paginas": 60,
+        "secoes": [
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nPLANO DE GOVERNO\nSoldado Sampaio Governador\nEleição 2026 – Estado de Roraima\n\n10\n10 EIXOS PARA RECONSTRUIR RORAIMA\n\nBoa Vista – Roraima – Brasil\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 1 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-2",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nApresentação\nEste Plano de Governo é um compromisso público com o povo de\nRoraima. Ele organiza, em dez eixos, as prioridades de um governo que\nassumirá uma missão singular: transformar um estado que,\nhistoricamente, foi abandonado pelos governantes. O povo tem pressa.\nEm 100 dias, o governador Soldado Sampaio já fez mais do que muitos\ngovernos levaram anos para fazer. A saúde foi o foco principal neste\ncurto período de gestão. Os resultados já começam a aparecer. Na\nsegurança, na educação, na agricultura familiar, novos concursos\npúblicos, fortalecimento da indústria, recomposição salarial e reajuste\npara servidores da Caer. Inauguração da Sala Lilás, para atendimento\nespecializado e humanizado às mulheres vítimas de violência, asfalto\nnovo em várias regiões do Estado, Cesta da Família entregue na\nresidência dos beneficiários, modernização da Polícia Militar, ampliação\ndas ações de regularização fundiária, reforma das escolas militarizadas,\ninauguração da primeira escola de educação profissional, criação da\nSecretaria da Família, Primeira Infância e Comunidade, lançamento do\nnovo Complexo da Saúde na Zona Oeste, início do plano para reativação\ndo Mafir e muitas outras entregas que já começam a fazer a diferença na\nvida dos roraimenses.\nTrata-se, portanto, de um plano com duas dimensões inseparáveis. A\nprimeira é a das entregas imediatas, aquilo que se pode e se deve fazer\nem um mandato curto, com foco no que mais aflige a população: filas de\nsaúde, filas por vagas e deficiências na rede de ensino, segurança nas\nruas, abastecimento de água, dignidade das famílias mais pobres e\nmodernização do atendimento ao cidadão. A segunda é a dimensão\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 2 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-3",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nestruturante, o conjunto de marcos legais, planos plurianuais, concursos\npúblicos e infraestrutura. Ações que marcam o início de uma profunda\ntransformação do Estado, lançando as bases para um ambicioso Plano\nde Desenvolvimento que será detalhado no decorrer da campanha\neleitoral.\nO número 10, identidade eleitoral do candidato, deu nome à arquitetura\ndo plano: dez eixos temáticos, articulados entre si, que organizam\ncontribuições recebidas de secretarias, órgãos e lideranças do Estado,\nsomadas a um diagnóstico sobre indicadores nos quais Roraima precisa\navançar com urgência. O resultado é um documento ao mesmo tempo\nrealista no horizonte temporal e ambicioso na visão de futuro.\nRoraima precisa de um governo que cuide do agora. Nosso povo tem\npressa. Em 100 dias, reorganizamos a saúde, a assistência social e\ndevolvemos a dignidade e a esperança às pessoas. Estamos\npreparando o terreno, plantando sementes para um futuro fértil, de\nprosperidade e desenvolvimento para todo o nosso povo.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 3 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-4",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nVisão, Missão e Princípios\nVisão\nUm Roraima organizado, seguro e justo, em que cada cidadão, da capital\nao interior, das vicinais às comunidades indígenas, tenha acesso aos\nserviços públicos de que precisa e a oportunidades reais de viver com\ndignidade e prosperar.\nMissão\nOrganizar o Estado, com responsabilidade fiscal, transparência e foco em\nresultados, aproximando o poder público das pessoas. Estamos lançando\nas bases para um grande Plano de Desenvolvimento, construído com a\nsociedade, que vai colocar nosso Estado em um patamar jamais\nalcançado.\nPrincípios\n• Legalidade e impessoalidade. Decisões fundamentadas em lei,\nsem favorecimentos e sem distinção de origem, raça, sexo, cor,\nidade, credo ou convicção.\n• Transparência. Informação pública é a regra; o sigilo, a exceção e\nsempre motivado nos termos da lei .\n• Responsabilidade fiscal. Equilíbrio das contas, observância da LRF\ne da LDO, sem criação de despesa obrigatória de caráter\ncontinuado fora dos limites legais.\n• Interiorização. O Estado precisa chegar com presença física e\ndigital aos 15 municípios, e não se concentrar somente na capital.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 4 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-5",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Gestão baseada em evidências. Decisões orientadas por dados,\ncom indicadores públicos e metas verificáveis.\n• Participação social. Escuta ativa de servidores, prefeituras,\nconselhos, associações e sociedade civil organizada.\n• Sustentabilidade. Desenvolvimento econômico em todas as\nregiões do Estado, respeitando a vocação amazônica do Estado e\nprotegendo seus recursos para as próximas gerações.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 5 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-6",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nDiagnóstico Geral\nRoraima é, ao mesmo tempo, um Estado de potencialidades\nextraordinárias e de gargalos crônicos. É o menor Estado da Federação\nem população, com 15 municípios, fronteira internacional ativa,\npresença marcante de povos indígenas e uma economia em\ntransformação, marcada pela expansão do agronegócio, do comércio\nfronteiriço e dos serviços. Ao mesmo tempo, persistem desafios\nestruturais que travam o desenvolvimento e penalizam o cidadão\ncomum.\nOnde o Estado precisa avançar\nO diagnóstico que orienta este Plano combina contribuições técnicas das\nsecretarias e órgãos do Estado, escuta de lideranças setoriais e análise\nde indicadores oficiais. Entre os pontos que demandam intervenção\nprioritária, destacam-se:\n• Saúde: superlotação dos serviços na capital, precariedade nos\nequipamentos e atendimentos no interior. Baixa resolutividade\nregional, filas para consultas e cirurgias eletivas, indicadores de\nmortalidade infantil e cobertura vacinal muito abaixo do\nrecomendável pelo Ministério da Saúde.\n• Segurança pública: necessidade de fortalecer o trabalho de\ninteligência para combater o crime organizado, ampliar\ncampanhas e blitz educativas no trânsito para reduzir acidentes e\nmortes no trânsito e intensificar o enfrentamento à violência\ncontra a mulher e ao feminicídio.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 6 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-7",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Educação: precariedade na estrutura física das escolas, com piora\nsignificativa nas comunidades indígenas, baixa qualidade de\nensino e aprendizagem, com índices abaixo da meta prevista no\nIDEB, déficit de vagas na educação infantil, o que demanda forte\narticulação com as redes municipais.\n• Gestão e transparência: necessidade de modernizar e aperfeiçoar\nos sistemas contábeis, fiscais e orçamentários do governo,\nampliar a oferta de serviços públicos digitais e elevar o índice de\ntransparência.\n• Ciência, tecnologia e inovação: ecossistema de CT&I ainda\nincipiente, com necessidade de marco legal estadual e ampliação\nda atuação da FAPER como fomentadora de pesquisa científica.\n• Família e assistência social: famílias em situação de\nvulnerabilidade demandam ações articuladas de fortalecimento\ndos vínculos, primeira infância e geração de renda, principalmente\npara famílias atípicas e de idosos.\n• Tributação e renda: carga tributária estadual pesa sobre\ntrabalhadores que dependem da motocicleta para trabalhar e\nsobre famílias em processos sucessórios.\n• Agro, pesca e desenvolvimento rural: passivo de regularização\nfundiária e ambiental em agrovilas, chácaras e núcleos urbanos;\nATER pública demanda instrumentalização tecnológica e\nestrutural; ausência de legislação estadual de agroindústrias de\nprodutos de origem vegetal e de adesão ao SISBI-POV; mais de\n12.000 pescadores artesanais convivem com gargalos de\ninfraestrutura, comercialização e acesso a direitos\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 7 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-8",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nprevidenciários. Assistência técnica, crédito e escoamento da\nprodução de pequenos e médios agricultores.\n● Infraestrutura, saneamento e meio ambiente: apesar da elevada\ncobertura alcançada pela CAER na capital e no interior, persistem\nreclamações dos usuários em relação à qualidade da água e à\nregularidade do abastecimento. Desafios de manutenção,\nmodernização e expansão dos sistemas, perdas elevadas de água\npotável, lixões em operação em municípios do Estado e baixa\ncobertura de coleta seletiva e reciclagem.\n\nEsses pontos não esgotam o diagnóstico, mas iluminam o caminho. Os\ndez eixos a seguir convertem esse diagnóstico em compromissos, com\nentregas distribuídas entre o que pode ser feito de imediato, o que pode\nser estruturado dentro do atual mandato e o que fica como legado para\no ciclo 2027–2030.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 8 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-9",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEstrutura dos 10 Eixos\nO plano se organiza em dez eixos temáticos, na seguinte sequência:\nEixo 1. Segurança Pública, Defesa Social e Proteção da Vida\nEixo 2. Saúde Mais Perto das Pessoas\nEixo 3. Educação que Valoriza, Inclui e Prepara o Futuro\nEixo 4. Família, Primeira Infância, Mulheres e Assistência Social\nEixo 5. Roraima + Campo: Desenvolvimento Rural, Pesca e Agricultura\nFamiliar\nEixo 6. Infraestrutura, Saneamento e Meio Ambiente\nEixo 7. Desenvolvimento Econômico, Emprego, Renda e Tributação\nJusta\nEixo 8. Gestão Pública Moderna, Digital e Transparente\nEixo 9. Ciência, Tecnologia, Inovação e Educação Profissionalizante\nEixo 10. Cultura, Esporte, Juventude, Turismo e Comunicação Pública\nCada eixo segue uma estrutura padronizada: apresentação, diagnóstico\nsetorial, objetivos, diretrizes e subeixos, entregas distribuídas no tempo\ne indicadores de acompanhamento. A padronização facilita a leitura, a\ncomparação entre áreas e o monitoramento público das metas.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 9 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-10",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 1 — Segurança Pública, Defesa Social e Proteção da Vida\nSegurança não é só pena: é presença do Estado, é inteligência\npolicial, é bombeiro chegando rápido, é mulher e criança protegida,\né trânsito respeitado. É o primeiro contato entre o governo e quem\nvive em Roraima.\nApresentação\nEm um Estado de fronteira, com áreas urbanas em expansão acelerada\ne vastos territórios rurais e indígenas, segurança pública e defesa social\nprecisam ser tratadas como política integrada, articulando polícias,\nCorpo de Bombeiros, Defesa Civil, sistema socioeducativo, DETRAN,\nórgãos de inteligência e a rede de proteção à mulher e à infância.\nDiagnóstico\nO Corpo de Bombeiros Militar de Roraima atravessa o cinquentenário\ncom efetivo defasado, necessidade de unidades novas e ausência de\nequipamento essencial para o combate a incêndios em edificações\nverticalizadas, em expansão na capital. Na Polícia Civil, indicadores como\nmortes a esclarecer, avanço do crime organizado, mortalidade no\ntrânsito, violência sexual e feminicídio apontam para a necessidade de\nreforço de inteligência, prevenção e proximidade. A Defesa Civil, por sua\nvez, convive com o desafio anual das queimadas amazônicas, com forte\nimpacto sobre o interior e as comunidades indígenas.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 10 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-11",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nPropostas\n• Recompor o efetivo das forças de segurança e do Corpo de\nBombeiros.\n• Reduzir o tempo-resposta a emergências, especialmente no\ninterior.\n• Intensificar o enfrentamento à violência contra mulheres, crianças\ne adolescentes.\n• Construção da mais uma Delegacia da Mulher em Rorainópolis.\n• Reduzir mortes a esclarecer por meio de inteligência policial\nqualificada.\n• Reduzir a mortalidade no trânsito com prevenção, fiscalização e\neducação.\n• Fortalecer a defesa civil e a prevenção a incêndios florestais.\n• Combater o crime organizado e as facções criminosas.\nDiretrizes e Subeixos\n1.1. Reforço da capacidade de resposta do CBMRR\nConcurso público para aproximadamente 300 vagas, em execução,\nampliando e recompondo o efetivo da corporação, com reflexos diretos\nsobre o combate a incêndio, salvamento, atendimento pré-hospitalar e\ndefesa civil, tanto na capital quanto no interior.\n1.2. Bombeiro Presente: capilaridade operacional\nExpansão da rede de unidades operacionais com a entrega das UBM de\nBaliza, Bonfim, Caracaraí, Pacaraima, Distrito Industrial e da Unidade de\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 11 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-12",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nBusca e Salvamento de Boa Vista, ampliando a cobertura territorial e\nreduzindo o tempo-resposta às emergências.\n1.3. Roraima Mais Seguro Vertical\nAquisição da primeira Auto Escada Mecânica do Estado, modernização\nhistórica do CBMRR, com capacitação especializada das guarnições para\noperações em edificações verticalizadas, em sintonia com o crescimento\nurbano de Roraima.\n1.4. Fortalecimento da Polícia Militar de Roraima\nRealização\n\nde\n\nestudos\n\ntécnicos,\n\njurídicos,\n\nadministrativos\n\ne\n\norçamentários para recomposição gradual do efetivo da Polícia Militar\nde Roraima, com anúncio e elaboração do edital de concurso público\npara aproximadamente 600 vagas, observadas as limitações legais,\nfiscais e orçamentárias aplicáveis ao último ano de mandato, visando\nfortalecer o policiamento ostensivo, ampliar a presença do Estado nos\nmunicípios e melhorar a capacidade operacional da segurança pública\nem todo o território roraimense.\nEstudos para atualização da tabela de subsídios dos militares de\nRoraima.\n1.5. Inteligência Policial e Redução de Mortes a Esclarecer\nFortalecimento da Polícia Civil com investimento em inteligência, perícia,\ntecnologia de investigação e integração de bancos de dados, com meta\nexplícita de reduzir o percentual de mortes violentas sem autoria\nidentificada, a atuação das facções criminosas e o tráfico de\nentorpecentes..\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 12 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-13",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n1.6. Roraima pela Vida das Mulheres e das Crianças\nAtuação integrada entre Polícia Civil, Polícia Militar, Ministério Público,\nDefensoria Pública e rede socioassistencial para inibir e responsabilizar\nautores de violência sexual e feminicídio, com atendimento humanizado\nàs vítimas, fortalecimento da DEAM de Boa Vista, implantação da\nDelegacia da Mulher em Rorainópolis, ampliação da Ronda Maria da\nPenha em todos os municípios. Articula-se com o Eixo 4 (Programa\nProtege Roraima).\n1.7. Trânsito Seguro\nPrograma estadual de redução da mortalidade no trânsito, com\nampliação de campanhas educativas, blitz integradas com a Polícia\nMilitar e o DETRAN, atenção especial a motociclistas e foco em rodovias\ncríticas.\n1.8. Defesa Civil e Verão sem Fogo\nArticulação do Plano de Prevenção e Combate ao Desmatamento e\nQueimadas (PPCDQ/RR) com o Comitê de Queimadas e a Operação\nVerão Sem Fogo, em apoio a produtores rurais, agricultores familiares e\ncomunidades indígenas, prevenindo os efeitos do El Niño e dos eventos\nclimáticos extremos.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 13 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-14",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante\n\nLegado (bases para\n2027–2030)\n\n• Edital do concurso\ndo CBMRR 300\nvagas) lançado.\n\n• Entrega das UBM\nde Baliza, Bonfim,\nCaracaraí, Pacaraima,\nDistrito Industrial e\nBusca e Salvamento\n(Boa Vista).\n\n• Recomposição\nestrutural do efetivo\ndas forças de\nsegurança, com\ncronograma\nplurianual de\nincorporação da\nPMRR até 2030.\n\n• Estudos técnicos e\nanúncio do edital de\nconcurso da PMRR\n(aprox. 600 vagas).\n\n• Aquisição da\nprimeira Auto Escada\n• Operação Verão\nSem Fogo deflagrada, Mecânica do CBMRR.\ncom comitê\n• Início da\nintegrado.\nincorporação dos\nnovos policiais\n• Patrulhamento\nmilitares aprovados\nreforçado e blitz\nno concurso.\neducativas\nintensificadas.\n• Cronograma de\nconvocação do\ncadastro de reserva\ndo concurso da\nPolícia Civil\n\n• Fortalecimento da\nDEAM e Ronda Maria\nda Penha.\n\n• Plano Estadual de\nInteligência\nintegrado.\n• Plano Estadual de\nSegurança no\nTrânsito 2027–2030.\n• Implantação de\numa Delegacia da\nMulher em\nRorainópolis.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 14 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-15",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 2 — Saúde Mais Perto das Pessoas\nRedução drástica das filas de cirurgias e exames. Menos distância.\nMais acesso. Mais saúde. Saúde no interior. Médicos,\nequipamentos. Cuidar melhor: interiorizar e organizar o sistema\npara que cada região do Estado ofereça atendimento de baixa e\nmédia complexidades perto de quem precisa.\nApresentação\nA saúde pública é, ao mesmo tempo, o serviço de maior expectativa\npopular e o de maior complexidade de gestão. O diagnóstico mostra que\na superlotação da capital decorre da concentração excessiva de serviços\nem Boa Vista e da baixa capacidade resolutiva da estrutura hoje\nexistente no interior. A regionalização é a estratégia central para\nreorganizar o sistema, reduzindo deslocamentos, filas e sobrecarga\nhospitalar, em diálogo permanente com as redes municipais, com o DSEI\nYanomami, com o DSEI Leste e com a estrutura federal presente no\nEstado.\nÉ preciso uma presença mais efetiva do Estado nas áreas indígenas, dada\na ausência do Governo Federal. Infelizmente o que está sendo feito ainda\nestá longe de representar um alívio para os povos indígenas. É preciso\nimplantar um amplo plano estadual de emergência para atacar de vez\nesse problema. Não é possível aceitar mais a situação que nossos\nindígenas estão vivendo.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 15 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-16",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nDiagnóstico\nPersistem indicadores que pressionam por resposta imediata:\nmortalidade na primeira infância, cobertura vacinal abaixo do desejado\ne filas de exames e cirurgias eletivas. Em paralelo, há potencial\nsubutilizado\n\nde\n\ntelemedicina,\n\ndéficit\n\nde\n\ntransporte\n\nsanitário\n\nregionalizado e carência de unidades especializadas de média\ncomplexidade no interior.\nPropostas\n• Implantar a regionalização da saúde em quatro regiões sanitárias.\n• Reduzir filas de consultas, exames e cirurgias eletivas.\n• Ampliar a cobertura vacinal em parceria com as redes municipais.\n• Reduzir a mortalidade materno-infantil.\n• Ampliar o acesso a especialistas por meio de telemedicina.\n• Garantir transparência por meio de painel público de indicadores.\n• Construção de uma unidade CAPD em Rorainópolis.\n• Construção de uma Unidade de Pronto Atendimento em\nRorainópolis.\n• Instalação de um equipamento para ecoterapia em Rorainópolis.\n• Saúde da Mulher\n◦ Carreta do Acolhimento rodando em todo o estado, com\nexames da saúde da mulher como mamografia, papanicolau\ne ultrassonografia.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 16 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-17",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n◦ Implantar mais um Centro de Referência da Saúde da\nMulher em Boa Vista, no Complexo de Saúde da Zona Oeste\nDr. Alceste Madeira.\n◦ Saúde materna com acompanhamento das gestantes e\nprevenção à mortalidade infantil, incentivando o pré-natal\nnas unidades básicas de saúde.\nDiretrizes e Subeixos\n2.1. Regionalização da Rede\nDivisão do Estado em quatro Regiões de Saúde:\n• Região Metropolitana — alta complexidade, trauma,\nneurocirurgia, oncologia e UTIs especializadas.\n• Região Sul — especialidades regionais, exames de média e alta\ncomplexidades e pequenas e médias cirurgias.\n• Região Norte — atenção especializada regional, teleassistência e\napoio remoto.\n• Região Indígena e Áreas Remotas — saúde itinerante,\ntelemedicina, unidades móveis e integração SESAI/Estado.\n2.2. Nova Central Estadual de Regulação\nFila única estadual, classificação por risco, prontuário integrado,\nagendamento digital e monitoramento em tempo real, eliminando filas\ninvisíveis, reduzindo perdas de consultas e garantindo prioridade clínica\nreal.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 17 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-18",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n2.3. Atenção Básica Forte\nApoiar a ampliação da Estratégia Saúde da Família, ampliação do prénatal e acompanhamento sistemático de hipertensos e diabéticos,\nreduzindo internações evitáveis e desafogando hospitais.\n2.4. Policlínicas Regionais\nImplantação de centros especializados regionais em cardiologia,\nendocrinologia, ortopedia, ginecologia e pediatria especializada, com\nestrutura complementar de ultrassonografia, tomografia, fisioterapia e\npequenas cirurgias eletivas.\n2.5. Transporte Sanitário Regionalizado\nRede estadual de transporte para pacientes regulados, com vans e/ou\nmicro-ônibus, ambulâncias regionais, apoio ao TFD e rotas fixas para\nconsultas e exames, reduzindo abandono de tratamento e custos para as\nfamílias.\n2.6. Telemedicina e Saúde Digital\nRede estadual conectando municípios e especialistas em cardiologia,\nneurologia, psiquiatria, dermatologia e pediatria, com redução de\nremoções desnecessárias e acesso rápido ao especialista.\n2.7. Roraima Pelas Crianças: Cobertura Vacinal e Mortalidade Infantil\nPrograma estadual articulado com as 15 secretarias municipais de saúde,\ncom o DSEI e com comunidades indígenas, para ampliar a cobertura\nvacinal de rotina, reforçar campanhas e reduzir a mortalidade na\ninfância, com prioridade para os primeiros 1.000 dias de vida (em\nsintonia com o Eixo 4).\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 18 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-19",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n2.8. Redução das Filas\nPrograma estadual de mutirões permanentes para cirurgias eletivas,\nexames represados e consultas especializadas, com contratualização\ninteligente, metas por produção e acompanhamento público das filas.\n2.9. Rede Materno-Infantil e Casa da Gestante\nAmpliação de leitos neonatais, qualificação obstétrica, fortalecimento do\nMétodo Canguru, apoio à Casa da Gestante e regionalização do pré-natal\nde alto risco.\n2.10. Valorização dos Profissionais e Gestão com Transparência\nEducação permanente, incentivo à fixação no interior, qualificação\ntécnica e melhoria das condições de trabalho, com painel público de\nindicadores, metas hospitalares e monitoramento contínuo da\nprodutividade.\nRegionalização do próximo concurso público para a saúde.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 19 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-20",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n• Mapeamento e\ndefinição das 4\nRegiões de Saúde.\n• Mutirão estadual\nde cirurgias eletivas e\nexames.\n• Campanha de\ncobertura vacinal\narticulada com\nmunicípios e DSEI.\n\nEstruturante\n\nLegado (bases para\n2027–2030)\n\n• Implantação da\nCentral Estadual de\nRegulação com fila\núnica digital.\n\n• Consolidação das\nRegiões de Saúde\ncom policlínicas em\noperação.\n\n• Estruturação inicial\ndas policlínicas\nregionais.\n\n• Painel público de\nindicadores em\nregime pleno.\n\n• Expansão da rede\nde telemedicina.\n\n• Plano Estadual\nMaterno-Infantil\n2027–2030.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 20 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-21",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 3 — Educação que Valoriza, Inclui e Prepara o Futuro\nEducação que valoriza pessoas, respeita realidades e prepara o\nfuturo. Da creche ao Ensino Superior, da escola indígena à escola\nprofissionalizante, do professor à família, o Estado precisa estar do\nlado de quem ensina e de quem aprende.\nApresentação\nA educação é, simultaneamente, direito fundamental, instrumento de\nmobilidade social e infraestrutura do desenvolvimento. Em Roraima, a\npolítica educacional convive com a diversidade de territórios — urbano,\nrural, ribeirinho, indígena — e com a necessidade de articulação\npermanente entre rede estadual e redes municipais. O presente eixo\ncombina o plano da Secretaria de Estado da Educação e Desporto com\nos indicadores que demandam intervenção e com as propostas\nlegislativas prioritárias incorporadas a este plano.\nDiagnóstico\nA taxa de atendimento na educação infantil demanda forte parceria com\nas redes municipais; a frequência líquida no ensino fundamental precisa\nser elevada; o ENEM e o acesso às universidades requerem políticas\nespecíficas de preparação; e as escolas, sobretudo no interior e em\ncomunidades indígenas, demandam recuperação e revitalização da\nestrutura física, ampliação do quadro de professores e qualificação dos\ndocentes.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 21 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-22",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nPropostas\n• Valorizar os profissionais da educação, formação continuada dos\nprofessores e modernização da gestão escolar.\n• Fortalecer a educação indígena com respeito à diversidade\ncultural.\n• Construção, recuperação e revitalização das escolas, com\nmerenda de qualidade e segurança. Na capital, interior e nas\náreas indígenas.\n• Ampliar o atendimento na educação infantil em parceria com os\nmunicípios.\n• Elevar a frequência líquida no ensino fundamental.\n• Preparar estudantes para ENEM, vestibulares e mercado de\ntrabalho.\n• Implantar o Cartão Uniforme Escolar para compra do fardamento\nno comércio local.\n• Renovação da frota e ampliação dos trechos atendidos pelo\ntransporte escolar.\nDiretrizes e Subeixos\n3.1. Valorização dos Profissionais e Infraestrutura\nApreciação dos pagamentos das progressões e revisão das promoções\nfuncionais; incentivo ao atendimento psicossocial e bem-estar;\ndesburocratização com definição de prazos para atos administrativos\ninternos; recuperação e revitalização das escolas das sedes e indígenas;\ncontrole de acesso nas escolas.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 22 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-23",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n3.2. Educação Indígena\nFormação de professores e lideranças indígenas; novas vias de\natendimento do transporte escolar; construção, reforma e revitalização\ndas escolas indígenas; ampliação do quadro de professores indígenas,\ninclusive com componentes on-line pela Rede de Inovação para a\nEducação Híbrida (RIEH); valorização da cultura e da língua materna;\nmerenda regionalizada.\n3.3. Gestão Escolar e Qualidade do Ensino e da Aprendizagem\nFormação continuada em gestão e coordenação escolar; modernização\nda estrutura de gestão; fomento e fortalecimento das Associações de\nPais e Mestres (APMs); merenda escolar de qualidade e atrativa, com\nvalorização da agricultura familiar; fomento aos grêmios estudantis;\neducação empreendedora.\n3.4. Cartão Uniforme Escolar\nEstruturação de política pública de apoio à aquisição de uniforme\nescolar, mediante realização de estudos técnicos, diagnóstico da\ndemanda da rede pública estadual, análise de viabilidade jurídica,\norçamentária e operacional, definição de critérios de atendimento,\nmecanismos de controle e modelo de execução futura. A iniciativa busca\nsubsidiar a formulação de uma ação pública voltada à promoção da\ndignidade dos estudantes, à redução de desigualdades visíveis no\nambiente escolar, ao apoio às famílias e ao estímulo à economia local,\nespecialmente ao comércio de confecção e ao setor têxtil, observadas as\nnormas eleitorais, fiscais e administrativas aplicáveis.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 23 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-24",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n3.5. Preparação para ENEM e Acesso ao Ensino Superior\nPrograma estadual de preparação para o ENEM, parcerias com\nuniversidades, fortalecimento da educação técnica e profissionalizante e\nlaboratórios maker e de robótica nas escolas.\n3.6. Educação Infantil em Parceria com os Municípios\nPacto estadual com as 15 prefeituras para estimular o atendimento na\nprimeira infância, com apoio técnico e articulação com o Programa Colo\nde Mãe e demais ações do Eixo 4.\n3.7. Permanência e Frequência no Ensino Fundamental\nEstratégia integrada de busca ativa de estudantes fora da escola,\nfortalecimento do Programa Cesta da Família e da assistência social,\narticulação com Conselhos Tutelares e os pais, além de ações específicas\nvoltadas a comunidades indígenas e rurais.\n3.8. Educação Financeira nas Escolas\nInclusão, em parceria com as escolas do ensino médio e instituições\nparceiras, de oficinas e cursos de finanças pessoais, com vistas a prevenir\no endividamento juvenil e enfrentar a inadimplência.\n3.9. Tecnologia e Inovação no Aprender\nPlataformas digitais de aprendizagem; monitoramento em tempo real\ndos indicadores de aprendizagem; uso de tecnologia para gestão escolar;\nparcerias com universidades e setor produtivo para ampliação da\neducação técnica e profissionalizante (em sintonia com o Eixo 9).\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 24 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-25",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante (no\nmandato\nsuplementar)\n\nLegado (bases para\n2027–2030)\n\n• Plano de\nconstrução e\nrevitalização das\nescolas das sedes e\nindígenas com\ncronograma público.\n\n•Estruturação de\npolítica pública de\napoio à aquisição de\nuniforme escolar\n\n• Plano Estadual de\nEducação 2027–2030\natualizado.\n\n• Pagamento de\nprogressões/\npromoções.\n• Início das oficinas\nde educação\nfinanceira no ensino\nmédio.\n\n• Pacto Estadual da\nEducação Infantil\ncom os 15\nmunicípios.\n• Ampliação dos\nlaboratórios maker e\nrobótica.\n\n• Rede estruturada\nde educação técnica\nprofissionalizante.\n• Plataformas digitais\nde aprendizagem em\nregime pleno.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 25 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-26",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 4 — Família, Primeira Infância, Mulheres e Assistência Social\nA família é o primeiro abraço do Estado. Da gestação à juventude,\ndo enxoval do bebê à cesta da família, do CRAS ao acolhimento, o\ngoverno precisa estar do lado de quem cuida e de quem é cuidado,\ndos mais vulneráveis. Uma atenção especial às mulheres\nroraimenses. Infelizmente, aquela que cuida, muitas vezes, é\nviolentada dentro de casa, violada nos seus direitos básicos.\nApresentação\nEste eixo reconhece a centralidade da família, conforme assegurado pelo\nart. 226 da Constituição Federal e pelo art. 171 da Constituição Estadual,\ne organiza um conjunto articulado de políticas de assistência social,\nsegurança alimentar, primeira infância e proteção a crianças e\nadolescentes.\nDiagnóstico\nPersistem famílias em situação de insegurança alimentar, especialmente\nnos municípios mais distantes e em comunidades indígenas. A primeira\ninfância demanda fortalecimento intersetorial. Crianças e adolescentes\nnecessitam de uma rede de proteção mais robusta para prevenção e\nenfrentamento da violência. Os trabalhadores do SUAS pleiteiam a\nimplantação do PCCR e a realização de concurso público.\nPropostas\n• Fortalecer a família como base da sociedade.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 26 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-27",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Reduzir a insegurança alimentar e nutricional das famílias\nvulneráveis.\n• Garantir, em apoio aos municípios, cuidado integral à primeira\ninfância, da gestação aos 6 anos.\n• Prevenir e enfrentar a violência contra crianças e adolescentes.\n• Políticas de enfrentamento à violência contra a mulher, saúde e\nprogramas de emancipação feminina nas áreas de produção rural,\npequenos negócios, primeiro emprego, requalificação\nprofissional, empreendedorismo feminino e inclusão digital.\nPolíticas de inclusão para as mulheres da pesca, ribeirinhas e\nindígenas.\n• Valorizar os trabalhadores do SUAS com PCCR e concurso público.\n• Promover inclusão produtiva de jovens e geração de renda.\nDiretrizes e Subeixos\n4.1. Criação da Secretaria da Família, Primeira Infância e Comunidade\nA Criação da Secretaria de Estado da Família foi o primeiro passo para a\narticulação, coordenação e fomento de políticas de valorização e\nfortalecimento da família, em especial das famílias do interior e da zona\nrural.\n4.2. Programa Família Forte\nAcompanhamento de famílias em situação de risco, com metas de\npermanência escolar e geração de renda.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 27 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-28",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n4.3. Programa Primeiros Mil Dias e Colo de Mãe\nApoio à gestante e ao desenvolvimento na primeira infância, com\nacompanhamento social, visitas domiciliares, entrega de enxoval para\nrecém-nascidos, apoio financeiro à alimentação complementar de bebês\nem fase de introdução alimentar e fortalecimento das estratégias\nintersetoriais de desenvolvimento infantil. Articulação com saúde (Eixo\n2) e educação (Eixo 3).\n4.4. Programa Protege Roraima\nPrevenção e enfrentamento da violência contra crianças e adolescentes,\ncom caravanas itinerantes, oficinas educativas, capacitações técnicas,\ncampanhas de conscientização e atendimento às famílias nos 15\nmunicípios, fortalecendo a rede e o Sistema de Garantia de Direitos.\n4.5. Programa Recomeço\nApoio à reinserção familiar e comunitária de pessoas em recuperação da\ndependência química, com parcerias com organizações da sociedade civil\nmediante chamamento público.\n4.6. Programa Cesta da Família\nReforço no atendimento nos 15 municípios a famílias em extrema\npobreza, pobreza ou baixa renda, com cesta física e cartão alimentação,\nconforme a Lei Estadual nº 2.205/2025.\nAmpliação do valor do benefício para R$ 400,00.\n4.7. Criação do Espaço de Acolhimento da Mulher Roraimense\nUm espaço para atendimento multidisciplinar às mulheres. Uma sede\nem Boa Vista e três sedes no interior. Estruturada em cinco áreas:\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 28 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-29",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n● Saúde – exames preventivos, cuidados durante a gravidez,\nsaúde mental e reprodutiva.\n● Acolhimento – creche, apoio às mães solo e mães atípicas.\n● Combate à violência contra a mulher – rede de atendimento,\ncasa de acolhimento, atendimento psicológico e jurídico e\nacompanhamento às vítimas.\n● Produtoras rurais – crédito rural, assistência técnica,\ncooperativismo feminino, apoio à comercialização.\n● Empreendedorismo – microcrédito, capacitação profissional,\nprimeiro emprego, pequenas empreendedoras, inclusão\ndigital.\n● 50+ - requalificação profissional, empregabilidade,\nempreendedorismo 50+, saúde 50+\n4.8. Programa Emprega Jovem RR\nQualificação profissional, inclusão produtiva e primeira experiência de\ntrabalho para jovens entre 16 e 20 anos inscritos no CadÚnico,\nvinculados à rede pública de ensino, com mentoria profissional e\nrecrutamento via SINE-RR.\n4.9. Programa Artesanato Roraimense\nFortalecimento do artesanato como instrumento de geração de renda,\ninclusão produtiva e valorização cultural, com participação em feiras\nestaduais, nacionais e internacionais, capacitação, assessoria técnica e\napoio à comercialização, beneficiando artesãos, povos indígenas,\ncomunidades tradicionais, clubes de mães e associações.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 29 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-30",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n4.10. Programa Parceiro Social\nCredenciamento e repasse transparente de recursos a organizações\nexecutoras, mediante chamamento público, na forma da Lei Federal nº\n13.019/2014.\n4.11. Valorização dos Trabalhadores do SUAS\nImplantação do PCCR dos trabalhadores do SUAS, realização de concurso\npúblico, reestruturação administrativa da SETRABES, modernização do\norganograma institucional e fortalecimento técnico e operacional.\nEntregas no tempo\nImediato\n\nEstruturante\n\n• Continuidade do\nPrograma Cesta da\nFamília\n\n• Estruturação plena\ndo Família Forte,\nPrimeiros Mil Dias,\nRecomeço e Parceiro\nSocial.\n\n• Caravanas do\nPrograma Protege\nRoraima em\nmunicípios\nprioritários.\n\n• Concurso público\nda SETRABES.\n• Expansão do\nEmprega Jovem RR e\ndo Artesanato\nRoraimense.\n\nLegado (bases para\n2027–2030)\n• PCCR dos\ntrabalhadores do\nSUAS implantado.\n• Plano Estadual pela\nPrimeira Infância\n(PEPI) atualizado.\n• Criação do Espaço\nde Acolhimento da\nMulher Roraimense.\n\n• Cartão do Cesta da\nFamília, no valor de\nR$ 400,00\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 30 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-31",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 5 — Roraima + Campo: Desenvolvimento Rural, Pesca e\nAgricultura Familiar\nUm campo mais produtivo, mais inclusivo, mais participativo, mais\ninovador, mais legalizado, mais protetivo, mais sustentável e mais\ncompetitivo. É no campo, nas vicinais, nas vilas e nos rios que se\nconstrói parte do futuro de Roraima.\nApresentação\nRoraima + Campo é o programa unificado deste plano para o ambiente\nrural e periurbano, em consonância com o Eixo do Desenvolvimento\nSustentável do Plano Estadual de Desenvolvimento Sustentável —\nRORAIMA 2030, instituído pela Lei nº 1.825/2023. Soma-se a ele o Plano\nda Pesca Artesanal, reconhecendo a importância dos rios, dos\npescadores e das comunidades ribeirinhas para a identidade e a\neconomia roraimense.\nDiagnóstico\nO campo roraimense convive com a necessidade de regularização\nfundiária e ambiental, IATER fortalecido, agroindustrialização e adesão\nao SISBI-POV. A pesca artesanal, com mais de 12.000 pescadores diretos\ne indiretos, enfrenta entraves de infraestrutura, comercialização, acesso\na direitos previdenciários e demanda por escuta institucional\npermanente.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 31 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-32",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nPropostas\n• Garantir segurança jurídica da terra e ambiental às famílias rurais\ne periurbanas.\n• Fortalecer cadeias produtivas e a agroindustrialização.\n• Aproximar o IATER dos agricultores familiares.\n• Reconhecer e organizar a pesca artesanal como política de Estado.\n• Valorizar mulheres da pesca, ribeirinhas e indígenas.\n• Assistência técnica, regularização fundiária, crédito para\nprodução, melhoria da infraestrutura das vicinais.\nDiretrizes e Subeixos\n5.1. Segurança Jurídica e Ambiental\n• Promover a regularização fundiária de agrovilas, chácaras, vilas e\nnúcleos urbanos, com foco no fortalecimento da agricultura\nfamiliar e na implementação da Regularização Fundiária Urbana e\nPeriurbana (REURB).\n• Realizar o georreferenciamento do perímetro das áreas de\ninteresse social destinadas à agricultura familiar.\n• Ampliar atendimento do CAR para regularização ambiental, com\nmaior rapidez na liberação do licenciamento, desburocratizando\nos processos de análise e outorga d'água.\n• Efetivar a reposição florestal já regulamentada, para regularização\nambiental de áreas produtivas.\n• Instrumentalizar o Sistema de Informação Geográfica e Gestão\nAmbiental de Roraima (SIGGARR) como ferramenta de comando e\ncontrole ambiental.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 32 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-33",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Crédito para irrigação e pequenas agroindústrias.\n5.2. Fortalecimento Produtivo e Agroindustrialização\n• Prevenir os efeitos do El Niño com ações efetivas do PPCDQ/RR,\nem conjunto com o Comitê de Queimadas e a Operação Verão\nsem Fogo.\n• Regulamentar e ampliar o abate de pequenos abatedouros em\nmunicípios e vilas do interior, garantindo segurança sanitária.\n• Aprovar legislação de agroindústrias de produtos de origem\nvegetal, com adesão do Estado ao SISBI-POV e acesso a mercados\nnacionais.\n5.3. Assistência Técnica e Apoio Social\nInstrumentalização tecnológica e estrutural do IATERR, garantindo o\ntécnico mais perto e presente nas Unidades de Produção Familiar, com\nestímulo à inclusão socioprodutiva, qualificação profissional e\norganização produtiva dos agricultores.\n5.4. Pesca Artesanal e Aquicultura\n• Demarcação do território pesqueiro, com garantia de acesso aos\nrios para os pescadores artesanais.\n• Plano de manejo para a pesca artesanal em áreas de conservação\nestadual.\n• Levantamento da carga pesqueira dos rios de Roraima.\n• Abordagem humanizada por parte dos órgãos de fiscalização\nestadual.\n• Construção de locais de beneficiamento e processamento do\npescado.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 33 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-34",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Programas de compra institucional do pescado para a merenda\nescolar e restaurantes populares.\n• Avaliação para criação da Secretaria Estadual da Pesca Artesanal e\nAquicultura ou de coordenação específica com status equivalente.\n• Construção de fábricas de gelo.\n5.5. Direitos Sociais e Crédito Rural e Pesqueiro\n• Apoio aos pescadores para acesso a aposentadorias, saláriomaternidade, auxílio-doença e pensão por morte.\n• Política específica para Mulheres da Pesca, incluindo saúde da\npescadora e kit de prevenção do câncer de pele.\n• Acesso a microcrédito para construção de peixarias e aquisição de\napetrechos de pesca.\n5.6. Assistência e Capacitação para Pescadores\n• Capacitação em boas práticas de manipulação e beneficiamento\ndo pescado.\n• Cursos de entalhe de malhadeira, fabricação de canoas e conserto\nde motores rabeta e de popa.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 34 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-35",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante\n\nLegado (bases para\n2027–2030)\n\n• Conselho Estadual\nda Pesca Artesanal\nconstituído.\n\n• Lei estadual de\nagroindústrias de\nprodutos de origem\nvegetal e adesão ao\nSISBI-POV.\n\n• Roraima + Campo\nconsolidado como\npolítica de Estado.\n\n• Mutirão de\nregularização\nfundiária e ambiental • Estruturação do\nem municípios-piloto. IATERR nos\nterritórios\nprioritários.\n\n• Programa de\ncompra institucional\ndo pescado para\nmerenda escolar.\n\n• Eventual criação de\nestrutura específica\npara pesca artesanal\ne aquicultura.\n• Cadeia de\nagroindustrialização\nestruturada em\nparceria com\nmunicípios.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 35 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-36",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 6 — Infraestrutura, Saneamento e Meio Ambiente\nÁgua que chega na torneira, esgoto que não escorre na rua, lixo que\nnão vira lixão, energia limpa e estradas que conectam: a\ninfraestrutura é o chão sobre o qual se constrói a cidadania.\nApresentação\nEste eixo organiza propostas relacionadas a saneamento básico, gestão\nde resíduos sólidos e meio ambiente, em consonância com o Novo Marco\nLegal do Saneamento Básico (Lei nº 14.026/2020) e as metas de\nuniversalização até 2033. Apesar do elevado nível de cobertura já\nalcançado pela CAER, persistem desafios de manutenção, qualificação,\nampliação e enfrentamento das perdas de água, bem como gargalos de\ngestão de resíduos nos municípios.\nDiagnóstico\nNo interior, a CAER alcança cerca de 98% de cobertura de abastecimento\nde água potável e 78% de esgotamento sanitário; em Boa Vista, os\níndices atingem 99,1% e 98%, respectivamente. Apesar deste cenário,\nainda persiste, em muitos municípios, reclamações, por parte da\npopulação, em relação à falta d’água e à qualidade ofertada. O desafio\nse desloca da universalização para a manutenção, modernização e\nexpansão contínua. Em paralelo, o diagnóstico aponta a persistência de\nlixões e baixa cobertura de coleta seletiva, além de elevadas perdas de\nágua potável.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 36 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-37",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nPropostas\n• Ampliar e modernizar os sistemas de abastecimento de água e\nesgotamento sanitário no interior.\n• Reduzir perdas de água potável.\n• Encerrar lixões e implantar destinação ambientalmente adequada\nde resíduos.\n• Ampliar a coleta seletiva e a reciclagem em todo o Estado.\n• Articular obras estruturantes em parceria com a União,\nmunicípios e bancos públicos.\nDiretrizes e Subeixos\n6.1. Roraima Água para Todos\nPrograma estadual de ampliação e modernização da infraestrutura de\nsaneamento, com foco no interior, atendendo às 14 sedes municipais e\na aproximadamente 40 vilas e comunidades, com média de 500\nhabitantes cada. Promove segurança hídrica, confiabilidade dos sistemas\ne melhoria das condições sanitárias.\n6.2. Sistemas de Água e Esgoto no Interior\nEstruturação de projetos para ampliação dos sistemas de abastecimento\nde água e esgotamento sanitário, visando subsidiar futuras intervenções\nem poços tubulares, sistemas de bombeamento, reservatórios, redes de\ndistribuição, ligações domiciliares, Estações de Tratamento de Água —\nETA, redes coletoras, estações elevatórias, emissários e Estações de\nTratamento de Esgoto — ETE nos municípios prioritários do Estado.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 37 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-38",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n6.3. Redução de Perdas de Água\nPrograma estadual de combate às perdas físicas e comerciais de água,\ncom modernização de redes, macromedição, micromedição, setorização\ne fiscalização, em parceria com a CAER.\n6.4. Roraima Sem Lixão\nApoio técnico, jurídico e operacional aos municípios para encerramento\ndos lixões e implantação de soluções regionais e consorciadas de\ndestinação final, com captação de recursos federais e linhas de\nfinanciamento.\n6.5. Reciclar é Cuidar\nCampanhas estaduais de reciclagem e incentivo à coleta seletiva em\ntodos os 15 municípios, com apoio a catadores e cooperativas, parcerias\ncom escolas (Eixo 3) e órgãos públicos, e educação ambiental.\n6.6. Articulação e Captação\nAtuação articulada com a Secretaria Estadual de Convênios e Captação\nde Recursos (SECONV) e com o Sistema Estadual de Captação (SECAP),\ncom prospecção de editais federais, fundos constitucionais, bancos\npúblicos federais, bancos multilaterais e fundos climáticos para\nestruturar projetos bancáveis em infraestrutura, saneamento e meio\nambiente.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 38 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-39",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante (no\nmandato\nsuplementar)\n\nLegado (bases para\n2027–2030)\n\n• Diagnóstico\nestadual dos lixões\ncom plano de ação\npor município.\n\n• Estruturação de\nprojetos para\nampliação dos\nsistemas das novas\nETAs e ETEs nos\nmunicípios\nprioritários.\n\n• Universalização do\nsaneamento na linha\ndo Marco Legal (até\n2033).\n\n• Lançamento das\ncampanhas estaduais\nde coleta seletiva e\nreciclagem.\n\n• Rede consorciada\nregional de\ntratamento de\nresíduos sólidos.\n\n• Implantação do\n• Carteira de projetos plano estadual de\n• Redes municipais\nredução de perdas de de coleta seletiva\nbancáveis em\nágua.\nsaneamento\nconsolidadas.\nestruturada pela\n• Programa de apoio\nSECONV.\ntécnico aos\nmunicípios para\nencerramento de\nlixões.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 39 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-40",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 7 — Desenvolvimento Econômico, Emprego, Renda e Tributação\nJusta\nQuem trabalha não pode ser punido pelo Estado. Quem empreende\nprecisa do governo do seu lado. Quem herda não pode ser vítima de\nburocracia. Roraima precisa de uma economia que gere\noportunidade onde a pessoa vive.\nApresentação\nEste eixo combina três dimensões inseparáveis: o estímulo à economia\nprodutiva, a justiça tributária para o cidadão trabalhador e o aumento\nda capacidade de investimento do Estado por meio da captação de\nrecursos externos ao tesouro estadual. Aliado a estas ações, este Plano\nde Governo prevê o lançamento de um grande Plano de\nDesenvolvimento Econômico, estruturado a partir da vocação mineral do\nEstado e do lançamento do edital de licitação, que incluiu os blocos da\nBacia Sedimentar do Tacutu, para pesquisa e exploração de petróleo e\ngás natural. Importante destacar, ainda, a abertura de uma imensa\njanela de oportunidades, a partir do crescimento exponencial da Guiana,\nque vem ocorrendo desde a descoberta de mais de 11 bilhões de barris\nde petróleo bruto no mar de Essequibo, a partir de 2015. Este Plano de\nGoverno prevê um amplo esforço diplomático para a conclusão da\nestrada Lethen-Linden e a oficialização do Acordo Internacional de\nTransportes com o país vizinho.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 40 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-41",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nDiagnóstico\nA economia roraimense apresenta vocações claras — terras raras,\nagronegócio, comércio fronteiriço, agroindústria, turismo, setor de\nserviços — mas convive com baixa capacidade de investimento próprio,\nrestrições fiscais e uma carga tributária que pesa.\nPropostas\n• Lançamento do maior Plano de Desenvolvimento da história de\nRoraima. Oportunidades como a exploração de petróleo, as terras\nraras, o crescimento econômico da Guiana, entre outras ações\ncomplementares, irão transformar o Estado em uma terra de\noportunidades, a nova fronteira de desenvolvimento do Brasil.\nEssa realidade irá mudar completamente o cenário atual de atraso\ndo Estado em relação às outras unidades da federação, levando\nemprego, renda e oportunidades para toda a população.\n• Aliviar a carga tributária sobre os trabalhadores e famílias.\n• Multiplicar a capacidade de investimento do Estado por meio da\ncaptação estruturada de recursos.\n• Estimular emprego, renda e empreendedorismo.\n• Fortalecer o microcrédito e a inclusão produtiva.\nDiretrizes e Subeixos\n7.1. Isenção do IPVA para Motocicletas de até 160 cilindradas\nEncaminhamento de projeto de lei à Assembleia Legislativa para\nconcessão de isenção do IPVA às motocicletas de até 160 cilindradas,\nreconhecendo o papel social da motocicleta como ferramenta de\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 41 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-42",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\ntrabalho de motoboys, motofretistas, mototaxistas, profissionais\nautônomos e trabalhadores de baixa renda. A medida será calibrada para\npreservar o equilíbrio fiscal e respeitar a Lei de Responsabilidade Fiscal.\n7.2. ITCMD Mais Justo — Implementação da Lei\nImplementação efetiva da legislação estadual já aprovada que concede\ndesconto de 10% no pagamento à vista do ITCMD - Imposto sobre\nTransmissão Causa Mortis e Doação e autoriza o parcelamento em até\n36 vezes, com regulamentação, adequação dos sistemas da Secretaria da\nFazenda, comunicação ampla aos contribuintes e simplificação dos\nprocedimentos de habilitação ao benefício. A medida dá previsibilidade\nàs famílias em processos sucessórios, reduz o estoque de inventários\nparalisados por dificuldade de pagamento e amplia a arrecadação por\nadesão.\n7.3. Sistema Estadual de Captação — SECAP\nEstruturação plena, no âmbito da Secretaria Estadual de Convênios e\nCaptação de Recursos (SECONV), do Sistema Estadual de Captação —\nSECAP, com cinco etapas: prospecção, estruturação, captação, execução\ne prestação de contas. O objetivo é multiplicar a capacidade de\ninvestimento do Estado por meio de transferências voluntárias da União,\nfundos constitucionais e setoriais, bancos públicos federais, bancos\nmultilaterais, cooperação internacional e fundos climáticos e\nambientais.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 42 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-43",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n7.4. Emprega Jovem RR e Inclusão Produtiva\nContinuidade e expansão do Programa Emprega Jovem RR (Eixo 4),\narticulado com o SINE-RR e com as escolas, garantindo qualificação,\nprimeira experiência e mentoria.\n7.5. Microcrédito e Apoio ao MEI\nLinhas de microcrédito orientado a pescadores, agricultores familiares,\nartesãos,\n\nmicroempreendedores\n\nindividuais\n\ne\n\nmulheres\n\nempreendedoras, com apoio à formalização e à educação financeira (em\nsintonia com o Eixo 3).\n7.6. Casa do Produtor Digital\nEspaços físicos e digitais de apoio ao pequeno produtor rural,\noferecendo emissão de documentos rurais, apoio ao crédito, capacitação\ntecnológica, marketplace estadual do produtor, inclusão financeira e\nacesso a programas governamentais (articulado com os Eixos 5 e 8).\n7.7. Consulta Popular\nImplantação de processo estruturado de consulta à população, com\nescuta ativa da sociedade na definição de parcelas do orçamento\nestadual, fortalecendo o vínculo entre planejamento e execução (em\nsintonia com o Eixo 8).\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 43 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-44",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante (no\nmandato\nsuplementar)\n\n• Envio à ALE-RR do\nPL de isenção de IPVA\npara motocicletas até\n160 cc.\n\n• Carteira de projetos\nbancáveis em\nexecução nas áreas\nprioritárias.\n\n• Aumento\nsustentado da\narrecadação por\nadesão (ITCMD).\n\n• Regulamentação e\noperacionalização da\nLei Estadual do\nITCMD (desconto de\n10% à vista e\nparcelamento em até\n36x).\n\n• Programa de\nmicrocrédito\narticulado com\npescadores, artesãos\ne MEIs.\n\n• Plano Plurianual\n2027–2030 alinhado\na uma estratégia\nrobusta de captação.\n\n• SECAP estruturada\ne em operação.\n\nLegado (bases para\n2027–2030)\n\n• Consulta popular\ninstitucionalizada.\n\n• Casa do Produtor\nDigital em operação\n• Lançamento do\nem municípios-piloto. maior Plano de\nDesenvolvimento da\nhistória de Roraima.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 44 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-45",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 8 — Gestão Pública Moderna, Digital e Transparente\nO governo precisa caber na mão do cidadão. Serviços 100% no\ncelular, transparência na ponta do dedo, contas em ordem, decisões\nbaseadas em dados. Esse é o Estado do nosso tempo.\nApresentação\nModernizar o Estado é tornar a vida do cidadão mais simples e o governo\nmais eficiente. Este eixo organiza a transformação digital dos serviços do\nEstado, a transparência ativa, a integridade contábil-fiscal e a\nmodernização administrativa, com base no Plano Estratégico de\nTransformação Digital 2027–2030, na Lei Estadual nº 1.826/2023, no\nPDTIC da SEGOD e na Lei Federal de Governo Digital.\nDiagnóstico\nOs indicadores apontam a necessidade de elevar o índice de\ntransparência, aperfeiçoar os sistemas contábeis, fiscais e orçamentários\ne ampliar a oferta de serviços públicos digitais. Persistem fragilidades de\nconectividade no interior, baixa integração de sistemas e necessidade de\nadequação plena à LGPD.\nPropostas\n• Aproximar o cidadão dos serviços públicos por meio do digital.\nSaúde, educação, segurança, Detran, Secretaria da Fazenda,\nAssistência Social, serviços voltados à proteção das mulheres, aos\njovens, ao setor produtivo, aos idosos e demais extratos sociais.\nTudo na palma da mão do cidadão.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 45 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-46",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Elevar o índice de transparência e a qualidade das informações\npúblicas.\n• Modernizar a gestão contábil, fiscal e orçamentária do Estado.\n• Levar conectividade ao interior, às escolas e aos órgãos públicos.\n• Promover a inclusão digital da população.\nDiretrizes e Subeixos\n8.1. Governo Digital Centrado no Cidadão\nCriação e consolidação do Portal Único de Serviços do Estado de\nRoraima, reunindo serviços de saúde, educação, assistência social,\nsegurança, documentos, agendamentos, protocolos e atendimento\ndigital, com vistas a reduzir burocracia, diminuir filas, ampliar\nacessibilidade e permitir atendimento digital integrado.\n8.2. Poupa Tempo Roraima\nImplantação do Poupa Tempo Roraima, inspirado em modelo\nconsagrado em outros Estados, com centrais modernas que reúnam\nemissão de documentos, DETRAN, serviços sociais, educação, saúde,\nJunta Comercial, balcão de empregos e atendimento digital assistido,\ncom agendamento online, aplicativo único do cidadão, totens de\nautoatendimento e acompanhamento por celular.\n8.3. Internet para o interior\nMaior programa estadual de conectividade pública da história de\nRoraima, levando internet a municípios, vilas, comunidades, escolas,\npostos de saúde e órgãos públicos por meio de backbone estadual, fibra\nóptica, rádio digital e satélite para regiões isoladas.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 46 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-47",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n8.4. Projeto Praça Digital\nInternet Wi-Fi gratuita em praças, áreas turísticas, terminais, parques,\ncentros culturais e prédios públicos, ampliando a inclusão digital,\ndemocratizando o acesso à informação e fortalecendo o turismo e o\ncomércio local.\n8.5. Integração de Sistemas e Dados\nEstruturação da governança digital do Estado, com estudos técnicos para\nintegração de sistemas, interoperabilidade de dados, cadastro unificado\ndo cidadão, barramento estadual de APIs e painéis estratégicos de\ngestão, fortalecendo a atuação da SEGOD como órgão articulador da\ntransformação digital e da modernização da administração pública\nestadual.\n8.6. Infraestrutura, Datacenter e Segurança da Informação\nModernização\n\nda\n\nhiperconvergente,\n\ninfraestrutura\nnuvem\n\nhíbrida,\n\ntecnológica,\nbackup\n\ncom\ne\n\nambiente\n\ncontingência,\n\nmonitoramento 24 horas, autenticação multifator, conformidade com a\nLGPD e gestão de riscos cibernéticos.\n8.7. Roraima em Dados\nPlataforma com painéis estratégicos para saúde, educação, segurança,\nassistência social, arrecadação e planejamento, sustentando decisões\norientadas por evidências e ampliando a transparência ativa.\n8.8. Transparência e Qualidade da Informação Contábil e Fiscal\nPrograma estadual de elevação do índice de transparência, com revisão\nintegral do Portal da Transparência, aperfeiçoamento dos sistemas\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 47 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-48",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\ncontábeis, fiscais e orçamentários, atendimento rigoroso aos prazos do\nSICONFI e a integração com órgãos de controle.\n8.9. Sucesso do Planejamento Orçamentário e Orçamento\nParticipativo\nImplantação de instrumentos para elevar o índice de sucesso do\nplanejamento orçamentário, com monitoramento periódico da\nexecução, e instituição da Consulta Popular (em sintonia com o Eixo 7).\nEntregas no tempo\nImediato\n\nEstruturante\n\nLegado (bases para\n2027–2030)\n\n• Plano de elevação\ndo índice de\ntransparência\npublicado.\n\n• Sistema Único de\nServiços Digitais em\noperação inicial.\n\n• Plano Estratégico\nde Transformação\nDigital 2027–2030\nem plena execução.\n\n• Início das primeiras\nunidades do Poupa\nTempo Roraima.\n• Mapeamento da\nconectividade nos 15\nmunicípios.\n\n• Praça Digital em\nimplantação nos\n• Roraima em Dados\nprimeiros municípios. consolidado.\n• Integração inicial\nde sistemas e\ncadastro único do\ncidadão.\n\n• Rede estadual de\nconectividade pública\nestruturada.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 48 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-49",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 9 — Ciência, Tecnologia, Inovação e Educação Profissionalizante\nSem ciência, não há futuro. Sem tecnologia, não há produtividade.\nSem inovação, não há competitividade. Sem qualificação, não há\nemprego digno.\nApresentação\nEste eixo aposta na FAPER, em uma legislação moderna de CT&I e na\nqualificação profissional articulada com a juventude e o setor produtivo.\nDiagnóstico\nRoraima ainda carece de um marco legal estadual de CT&I e de um\necossistema consolidado de inovação. A FAPER tem potencial para se\nconsolidar como motor de fomento à pesquisa, e o ensino técnico e\nprofissionalizante demanda articulação permanente com universidades\ne setor produtivo.\nPropostas\n• Aprovar o marco legal de CT&I de Roraima.\n• Ampliar a atuação da FAPER como fomentadora de pesquisa\ncientífica.\n• Articular educação técnica e profissionalizante com setor\nprodutivo.\n• Capacitar a juventude para o mercado de trabalho.\n• Qualificar continuamente os servidores estaduais.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 49 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-50",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nDiretrizes e Subeixos\n9.1. Marco Legal de CT&I de Roraima\nEnvio à ALE-RR do projeto de lei do marco legal de Ciência, Tecnologia e\nInovação de Roraima, fomentando o ecossistema estadual, promovendo\na cultura inovadora e possibilitando incubação e aceleração de startups,\ncom soluções tecnológicas para produtividade e competitividade\nempresarial.\n9.2. FAPER Forte\nAmpliação da atuação da Fundação de Amparo à Pesquisa do Estado de\nRoraima (FAPER) como fomentadora de pesquisas científicas, com\neditais regulares, bolsas de iniciação científica, mestrado, doutorado e\nfomento à pesquisa aplicada nas vocações amazônicas, na fronteira\nagropecuária, na saúde, na educação e na bioeconomia.\n9.3. CapacitaRR\nCursos\n\nextracurriculares\n\ngratuitos,\n\noficinas\n\nprofissionalizantes,\n\ncapacitações itinerantes e trilhas de aprendizagem em tecnologia,\ninovação e empreendedorismo, com parcerias com instituições públicas,\nprivadas e educacionais, e uso de escolas, centros comunitários,\nlaboratórios e espaços públicos.\n9.4. Jovem Servidor\nPrimeira experiência profissional para estudantes do ensino médio da\nrede pública estadual, com bolsa-auxílio, atuação em secretarias,\nautarquias, fundações e empresas públicas no contraturno escolar,\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 50 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-51",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\ncertificação e duração de 6 meses, com possibilidade de renovação ou\nparticipação por até 1 ano.\n9.5. Escola Digital Roraima\nConectividade escolar, laboratórios tecnológicos, robótica, ensino\nhíbrido e inteligência artificial educacional, articulado com o Eixo 3 e com\no Eixo 8.\n9.6. Universidade Digital do Servidor\nCapacitação contínua dos servidores estaduais em governo digital,\nsegurança da informação, inteligência artificial e transformação digital.\n9.7. Parcerias com Universidades e Setor Produtivo\nAmpliação da educação técnica e profissionalizante por meio de\nparcerias com universidades estaduais e federais, institutos federais e o\nsetor produtivo, com foco em vocações regionais, como a agricultura,\npecuária e agora, terras raras e petróleo.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 51 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-52",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante\n\nLegado (bases para\n2027–2030)\n\n• Envio do PL do\nMarco Legal de CT&I\nà ALE-RR.\n\n• Marco Legal de\nCT&I aprovado e\nregulamentado.\n\n• Sistema Estadual de\nCT&I plenamente\noperacional.\n\n• Edital inicial da\nFAPER sob a nova\ndiretriz.\n\n• Expansão da Escola\nDigital Roraima.\n\n• FAPER consolidada\ncomo referência\nregional.\n\n• Primeiras turmas\ndo CapacitaRR e do\nJovem Servidor sob a\nnova gestão.\n\n• Universidade\nDigital do Servidor\nem operação.\n\n• Rede de educação\ntécnica e\nprofissionalizante\nestruturada.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 52 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-53",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEixo 10 — Cultura, Esporte, Juventude, Turismo e Comunicação\nPública\nQuando o povo dança, joga, canta, viaja, escuta e participa, o\nEstado cumpre seu papel. Cultura, esporte e juventude não são luxo:\nsão identidade, economia, saúde e cidadania.\nApresentação\nEste eixo reúne políticas de cultura, turismo, esporte, juventude, lazer e\ncomunicação pública. São áreas que dialogam diretamente com a\nidentidade roraimense, com a economia criativa, com a saúde da\npopulação e com a aproximação do Estado em relação ao cidadão\ncomum.\nDiagnóstico\nRoraima possui um calendário cultural em consolidação, com destaque\npara o São João no Parque Anauá, reconhecido como o maior São João\ndo Norte do Brasil. O esporte amador e a juventude demandam\nprogramas itinerantes, presença no interior e protagonismo feminino e\nindígena. A comunicação pública, ancorada na Rádio Roraima, exige\nmodernização tecnológica e integração à Rede Nacional de Comunicação\nPública.\nPropostas\n• Fortalecer a cultura e o turismo como vetores de identidade e\nrenda.\n• Ampliar o acesso ao esporte e ao lazer em todo o Estado.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 53 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-54",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Aproximar o governo da juventude por meio de ações itinerantes.\n• Modernizar a comunicação pública estadual.\n• Estruturar o etnoturismo, o turismo de natureza e a pesca\nesportiva como vocações turísticas estratégicas do Estado.\n• Lançamento de um Plano de Desenvolvimento do Turismo para\nprofissionalizar e apoiar as iniciativas atuais e novos\nempreendimentos como, por exemplo, na Serra do Tepequém.\nDiretrizes e Subeixos\n10.1. São João no Parque Anauá e Réveillon no Parque Anauá\nFortalecimento e ampliação do São João no Parque Anauá, consolidado\ncomo o maior São João do Norte do Brasil, promovendo cultura, turismo,\ngeração de emprego, renda e valorização das tradições populares de\nRoraima. Realização do Réveillon no Parque Anauá, com atrações\nculturais, musicais e turísticas, fortalecendo o calendário oficial de\neventos e valorizando os artistas locais.\n10.2. Acesso Cultural e Editais de Incentivo\nCriação de ação itinerante para oportunizar novos talentos a\napresentarem sua arte e seus projetos em todos os municípios.\nAmpliação e fortalecimento dos editais da Lei de Incentivo à Cultura e da\nPNAB, garantindo apoio aos fazedores de cultura, incentivo à produção\nartística e democratização do acesso aos recursos culturais.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 54 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-55",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n10.3. EXPOFERR, Agrodesenvolvimento e Fortalecimento da Produção\nRegional\nFortalecimento da EXPOFERR como espaço de promoção da cultura, do\nagronegócio, do empreendedorismo, do turismo e da identidade\nroraimense, incentivo às manifestações culturais regionais, ampliação da\nparticipação de produtores, empreendedores e fazedores de cultura,\nestimulando geração de renda, inclusão produtiva e fortalecimento da\neconomia criativa em todo o Estado.\n10.4. Etnoturismo, Turismo de Natureza e Pesca Esportiva\nFortalecimento do etnoturismo, do turismo de natureza e da pesca\nesportiva como instrumentos de desenvolvimento sustentável, geração\nde emprego, valorização cultural e fortalecimento da economia regional,\ncom apoio à estruturação de roteiros turísticos, capacitação de\ncomunidades locais, valorização das culturas indígenas e tradicionais,\nincentivo à pesca esportiva responsável e promoção das potencialidades\nturísticas de Roraima em articulação com municípios, setor produtivo e\ncomunidades tradicionais.\n10.5. Roraima em Movimento: Esporte, Juventude e Cidadania\nPrograma esportivo estadual estruturado em onze frentes:\n• Esporte Perto do Povo. Festivais, FanFest comunitário e\natividades recreativas.\n• Futebol Amador Forte. Projeto Futebol Amador com equipes\nmasculinas e femininas.\n• Roraima Amador. Intermunicipal de Futebol Amador.\n• Nossas Raízes em Campo. Jogos Indígenas de Futebol de Campo.\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 55 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-56",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\n• Mulheres no Esporte, Roraima Mais Forte. Ampliação da\nparticipação feminina.\n• Novas Modalidades, Novas Oportunidades. Boxe, handebol de\nareia e oficinas diversas.\n• Servidor em Movimento, Governo Integrado. Torneio\nIntersecretarias.\n• Formar quem Forma Campeões. Capacitação de professores,\ntécnicos, árbitros e gestores.\n• ProEsporte. Workshop e estímulo a parcerias para projetos\nesportivos sustentáveis.\n• Gestão Participativa. Construção da política esportiva com escuta\ne participação.\n• Planejamento Hoje, Esporte Forte Amanhã. Calendário esportivo\n2027 e anos subsequentes, organizado.\n10.6. Caravana da Juventude\nAção itinerante para levar serviços, oficinas, atendimentos, escuta ativa\ne políticas públicas diretamente aos jovens de todo o Estado, com fóruns,\nrodas\n\nde\n\nconversa,\n\noficinas\n\nde\n\ncapacitação\n\nprofissional\n\ne\n\nempreendedorismo, orientação profissional, atendimentos sociais,\nações de saúde mental e cidadania, e atividades esportivas, culturais e\nrecreativas.\n10.7. Rádio Roraima — Modernização, Expansão e Integração\nNacional\nAcompanhamento ágil dos trâmites regulatórios junto ao Ministério das\nComunicações e à Anatel para emissão da Licença de Operação em FM;\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 56 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-57",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\naquisição e instalação de transmissores homologados; operação inicial\nem simulcast (AM e FM); manutenção e modernização preventiva do\nparque AM, estratégico para comunidades isoladas, vicinais, áreas\nagrícolas e territórios indígenas; consolidação dos estúdios de Rádio\nVisual com câmeras robóticas e sistemas de corte automatizado por voz;\nestruturação do núcleo de mídias sociais e portal de notícias integrado.\n10.8. Cooperação com a EBC e Sistema de Comunicação Pública\nAdoção de Termo de Cooperação Técnica com a Empresa Brasileira de\nComunicação (EBC), com a Rádio Roraima integrando oficialmente a\nRede Nacional de Comunicação Pública (RNCP), com intercâmbio\nbidirecional de conteúdo, capacitação profissional e projeção de\nRoraima no debate nacional.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 57 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-58",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nEntregas no tempo\nImediato\n\nEstruturante\n\n• São João no Parque\nAnauá 2026\nampliado.\n\n• Roraima em\nMovimento\nimplantado nas onze\nfrentes.\n\n• EXPOFERR 2026\nvalorizando ainda\nmais os artistas locais\ne a economia\ncriativa.\n• Caravana da\nJuventude em\ncirculação pelos\nmunicípios.\n• Lançamento dos\neditais culturais\n(PNAB e Lei de\nIncentivo).\n\nLegado (bases para\n2027–2030)\n• Calendário\nesportivo 2027\norganizado e\ndivulgado.\n\n• Réveillon no Parque • Roraima\nAnauá realizado.\nposicionado nacional\ne internacionalmente\n• Roteiros piloto de\ncomo destino de\netnoturismo e\netnoturismo,\nturismo de natureza\nturismo.de natureza\nestruturados em\ne pesca esportiva.\narticulação com\nmunicípios e\ncomunidades.\n• Calendário de\npesca esportiva\norganizado e\ndivulgado.\n• Início da operação\nem simulcast da\nRádio Roraima\n(AM/FM).\n\n• Lançamento do\nPlano de\nDesenvolvimento do\nTurismo RR\n• Rede Roraima de\nRádio Pública em\nexpansão.\n• Plano cultural e\nturístico 2027–2030\natualizado.\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 58 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-59",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nConsiderações Finais\nEste Plano de Governo é uma carta de compromissos. Não é um catálogo\nde promessas. Conforme aqui colocado, o Plano de Desenvolvimento\nque será implantado a partir de primeiro de janeiro lançará as bases para\num novo tempo jamais visto no nosso Estado. Crescimento exponencial\nda Guiana, a exploração de petróleo, as terras raras, o investimento\nmaciço no agronegócio e na agricultura familiar. A partir desse cenário,\nimpulsionado pelo linhão de energia já finalizado, empresas aqui se\ninstalarão. No caso das terras raras, será realizada uma forte política de\natração de investimentos. Indústrias de ponta da economia criativa,\ncomo Google, Meta, Tesla, Oracle, entre outras, investem em locais ricos\nem minerais como as terras raras. Abre-se uma janela de oportunidades\npara nossa juventude entrar de cabeça na indústria da tecnologia e\ninovação, na indústria de games, na cultura digital, inteligência artificial\ne centenas de outras áreas. Esse novo cenário irá transformar\nprofundamente a economia do nosso Estado, trazendo riqueza e\nprosperidade para todos.\nMuito já foi feito em 100 dias. Mas isto é só o começo. Contas em ordem,\ngoverno presente, escuta ativa, transparência, gestão profissional,\natenção redobrada às famílias, às crianças, às mulheres, aos jovens, aos\npescadores, aos agricultores familiares, aos servidores públicos e às\ncomunidades\n\nindígenas.\n\nVamos\n\nencaminhar\n\nprojetos\n\nde\n\nlei\n\nestruturantes — isenção do IPVA das motocicletas até 160 cilindradas,\nmarco legal de CT&I — implementar políticas já aprovadas, como o\nITCMD mais justo, e implantar políticas com efeitos duradouros, como o\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 59 de 60"
+          },
+          {
+            "id": "plano-de-governo-soldado-sampaio-10-eixos-para-reconstruir-roraima-60",
+            "titulo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Soldado Sampaio | 10 Eixos para Reconstruir Roraima\n\nCartão Uniforme Escolar, a regionalização da saúde, o Poupa Tempo\nRoraima e o Roraima Água para Todos.\nA coligação Roraima Segue em Frente assume, com este documento, o\ncompromisso de execução transparente e fiscalmente responsável, com\nprestação de contas periódica à sociedade roraimense. Cada eixo tem\nindicadores; cada compromisso terá responsáveis; cada entrega terá\nprazo. Esse é o pacto.\n\nEm Roraima, governar é cuidar. Cuidar da nossa gente, das contas,\ndas instituições e do futuro. É para isso que apresentamos este\nplano e pedimos a confiança do povo. Soldado Sampaio e Shéridan,\njuntos, pra cuidar das pessoas.\n\nBoa Vista – Roraima, agosto de 2026.\nSoldado Sampaio Governador, Shéridan Vice-governadora — 10\n\nColigação Soldado Sampaio Governador | Roraima 2026 | Página 60 de 60"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "43767f248bac951d33fd098a015873d3950272301f6b526844a404992dc1d8ba"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "69aab9dd7eb235063441b8fd9287f03b11aa932fecf1451e02bdd54d64208b4d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "92aa26787ee1d91cfe49e0c12b21512ce31e781151fea7a36252a2e9128676c8"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d591813c0c30bbad4b844af9b41651526e4b19ef66e86ca87ec98b1fc6cf42b9"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e1a745609b685ec08eb8ffa8b5a9d74250c4275776554f2c14a360e85debfd21"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "89af99785be9e7cc42818556ea4902bff4bcf05adf6c967d3fd79fdb72974bfb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "490d9e8f53afdb5e4fe22eeb8cf8535dc8aecfc79cd0ba33f88646cc8afeec16"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "85a097646867012a5f10983eb577ef76787eb82c82d71cbd0fa8d60cd06f062e"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "534cfd9af8205b095a438e1635673ecc075aee91c753a5b551d6ab69c7b641db"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "893a1c05c08f34411234bb7454d3672823a84410b6168607749a4f5e6f7530d2"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4d5ddcbd2f1e534a49da21ffc13bafe7c65ea54c188c1843b8b1b29154b08783"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a28db7ad52e89ffc141d8280091ab7f84968f06c4b28f1199502d54520d6680a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "434b51524e85d3b5be8af3074079b649ade3e87e5bdce920b308f39454c23b77"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1fdfc89de68b22f767708e9612108d78c20a3cf9942cbe3caec2648c14a1e28d"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "9683c5e87787c33201df30804aa3f15e35d2ad47784f08f2162574f41c4c16da"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "d2246d076e2db2c38571d68b30ad36fb8c474711cb4092b3af13f5b7185219f4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "f10649bde05428fa6aa6e98562fb5a05f846e8f9d06034228bfeccd27a777eb7"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "95b66ffefdc5dc75ac363901d12502fee2dbeafac7e439953311d90e248d8779"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "07c52ff0975c16bd7b4c638b5b3786db08fc1969022109d6b0426be4ab1dafbc"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "5267b7127808738c316d93364ebb19227a9586debce9d69886a9a1b3c636aa47"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9523c03fe216c17d32df1dd4dd89d6eef68e7ec3cb5f43468bab16c9b2c85396"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "5048a79f3550ee07088116c0f5c9072a3c07e1c4ae87302bed4a3acbe5cb594c"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "0ba373350ed08cfd43013da46c9f82b65cab6ce8cd12bb4cfd0755b89a8ce194"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "9664df3d87c7a04ecde54ef65f8168ce544cfb61fbfdd378fd237a66d674204c"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "59ce8a77069ba187f88416c8532cfe880a05db2079f6eeb1405bdb77699e06cc"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "bc1093998acaf8dfbf597ba2ff5e4e1f75b66fbb8f85eecbb2b03935b20a099b"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "cf86a3f505f0570ded1d8911dc1fa7b2cf71ad62a7d5502f9ac702c79c45a4df"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "ef642701ca1c2dded5960aff89b09369e49f7e995f113ffbf798d8edab544e7c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "8ef9d3af1c8b69622b6fda85434f41de511f8bfb27a12347798d3a64c3190757"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "42f98cd497776041b5e8ab8416287da130f5de9a20f4345abd7da6b8a75c4b1f"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c764bb75e05f6261e680f3deec58656b50ff9f840d2c64e544c8952dc17a3bfc"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e4ebc9c8a11a027f0515a0bfefaa42962c44b8ae0d7c13461384828d120e6ff5"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "7792fa578a0d534cc00f5f55f7fbd5d0442ba3658dd90e0c324f73ff8dfadf30"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "141450cde67d268bcc5855586ef8a2f9c7c4571df424429a3fedd54f17c4033c"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "7a1cc315b4d26c2dd20a921a282d04f90fc3d81e7e8fba88d77a6fc610a7c4c6"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "0c69c7aeb112457ab527638d093cc8cd6488374bd550908a7fefb83585628546"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "1faa587033addac8a5a2358719357068fb8dfde831755174df3684db428a0cd7"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "b7fb1ce55a95bdec808f3daf21b9f61218432ea778cbbfd78887457dc847f66c"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "869f7cc708557b935c2724cae545db21d834216c8d7f1ca37065121359d21f0a"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "acab7ac3ac9ac9c61183c25269cd955afa35a2883f85961663f5ee23ad4a7105"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "9165de6bdc3f6d943b647288fcee844773a8d51a46a7014818ade357e05647ae"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "619364a1ba210f767ecf81da48abc08f11a8f1a1c096d1d132e337c254e44ecc"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "bf541d4e9e9cda303ca6b1c551903a1cff2911d6b26f79d29e0f484ee3f516c0"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "be505ca73ea45a7f6072ac8985e167c4cabf3a312ea992f430fc23369f2eec00"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "56d6230913405b50f6c71bae66dc6dedb70fc8a2c8fc0b4ae88cc5869850e7df"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "e33a1e6e9ecd9548949e7e4df3faf3989178be6aaceca3052ef6c60749c98275"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "ebccc1244c412b3124f3a4fb4d41e1b55bb1f20244fe08faa0f25f24f338394a"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "973282871613e8bf6c9157f08f5f322f56ec3831060b4211b0152195e360282a"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "4017d7ca7b9f654f8e46c3f79b945d63c109b27cbb97b4628466535fd2812c0d"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "9ad388b9c094fd7d30b818d5f74ea692ab51cf3dfab1c2f4441bb0f306739863"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "c41e86e2283a8264e8bdca9b92992bafc5f8a3efefcbe6c8faa6dad4f4d96e1b"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "e14754fbaf900f155c8822d9df18c9d8b24f011b833290e61da8168c4114835a"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "067a8e0a6eb807b6c9baa06dba50870b0af79d9131454fcad1f2ba5bd90aa8f3"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "3d18a0295dd06837f59c60082a8c8c3fc8e4076be10f96cda6e3c5d716e3ba18"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "614722e6eb6284f579fce2ab562885e40e4afeef8e83354fae4c93acd7901b75"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "6ede4ff335b2d8be184cd8b8b06b58c62b4e68fe90f76e1eadd3e9631aec1a7e"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "0ae66d28e4358cedcbed639f1aedeb2af5967fd798c6b4859f502b18580129d0"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "5b52bd688b5ad4520789a4190267aeb28f577134c0814a5b0aa151e7b6806c5b"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "0c9594beb9b457cf9eb62bc70b953f212888bb157bb03659c28c4fe7b7ec75b3"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "539aba237b016471054c53f3cab278841fc46f12b815fbc6f119386db1738c1b"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Plano de Governo apresentado pela coligação de Soldado Sampaio para o Estado de Roraima organiza as prioridades em dez eixos temáticos. Na saúde, o documento propõe implantar a regionalização da saúde em quatro regiões sanitárias do Estado. Na educação, prevê implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local. Na assistência social, planeja reforçar o atendimento do Programa Cesta da Família nos 15 municípios. No desenvolvimento rural, propõe promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos. No saneamento, prevê ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior do Estado. Na tributação, propõe encaminhar projeto de lei para isenção do IPVA de motocicletas de até 160 cilindradas. Na gestão pública, planeja criar e consolidar o Portal Único de Serviços do Estado de Roraima.",
+    "frases": [
+      {
+        "texto": "O Plano de Governo apresentado pela coligação de Soldado Sampaio para o Estado de Roraima organiza as prioridades em dez eixos temáticos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 9,
+            "trecho": "O plano se organiza em dez eixos temáticos, na seguinte sequência:"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o documento propõe implantar a regionalização da saúde em quatro regiões sanitárias do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 16,
+            "trecho": "Implantar a regionalização da saúde em quatro regiões sanitárias."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 22,
+            "trecho": "Implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local."
+          }
+        ]
+      },
+      {
+        "texto": "Na assistência social, planeja reforçar o atendimento do Programa Cesta da Família nos 15 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 28,
+            "trecho": "Reforço no atendimento nos 15 municípios a famílias em extrema pobreza, pobreza ou baixa renda, com cesta física e cartão alimentação, conforme a Lei Estadual nº 2.205/2025."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento rural, propõe promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 32,
+            "trecho": "Promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos, com foco no fortalecimento da agricultura familiar e na implementação da Regularização Fundiária Urbana e Periurbana (REURB)."
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, prevê ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 37,
+            "trecho": "Ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior."
+          }
+        ]
+      },
+      {
+        "texto": "Na tributação, propõe encaminhar projeto de lei para isenção do IPVA de motocicletas de até 160 cilindradas.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 41,
+            "trecho": "Encaminhamento de projeto de lei à Assembleia Legislativa para concessão de isenção do IPVA às motocicletas de até 160 cilindradas"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, planeja criar e consolidar o Portal Único de Serviços do Estado de Roraima.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 46,
+            "trecho": "Criação e consolidação do Portal Único de Serviços do Estado de Roraima"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "organizacao-do-plano",
+        "titulo": "Plano organizado em dez eixos",
+        "descricao": "O documento estrutura as prioridades de governo em dez eixos temáticos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 9,
+            "trecho": "O plano se organiza em dez eixos temáticos, na seguinte sequência:"
+          }
+        ]
+      },
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Regionalização da saúde",
+        "descricao": "O plano propõe dividir o atendimento de saúde em quatro regiões sanitárias.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 16,
+            "trecho": "Implantar a regionalização da saúde em quatro regiões sanitárias."
+          }
+        ]
+      },
+      {
+        "id": "cartao-uniforme-escolar",
+        "titulo": "Cartão Uniforme Escolar",
+        "descricao": "A proposta prevê apoio à compra do uniforme escolar no comércio local.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 22,
+            "trecho": "Implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local."
+          }
+        ]
+      },
+      {
+        "id": "regularizacao-fundiaria-rural",
+        "titulo": "Regularização fundiária no campo",
+        "descricao": "O plano propõe regularizar áreas ocupadas por famílias rurais e periurbanas.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 32,
+            "trecho": "Promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos, com foco no fortalecimento da agricultura familiar e na implementação da Regularização Fundiária Urbana e Periurbana (REURB)."
+          },
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 32,
+            "trecho": "Garantir segurança jurídica da terra e ambiental às famílias rurais e periurbanas."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-no-interior",
+        "titulo": "Água e esgoto no interior",
+        "descricao": "A proposta prevê ampliar e modernizar os sistemas de saneamento nos municípios do interior.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 37,
+            "trecho": "Ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior."
+          }
+        ]
+      },
+      {
+        "id": "governo-digital",
+        "titulo": "Portal único de serviços digitais",
+        "descricao": "O plano propõe reunir os serviços públicos estaduais em um portal único digital.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002551571:01",
+            "pagina": 46,
+            "trecho": "Criação e consolidação do Portal Único de Serviços do Estado de Roraima, reunindo serviços de saúde, educação, assistência social, segurança, documentos, agendamentos, protocolos e atendimento digital"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T13:10:13.770Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T13:15:28.439Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma literalmente que o plano se organiza em dez eixos temáticos, sustentando integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "O número dez aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não traz elogio, crítica, promoção ou certeza excessiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único aspecto coerente, a organização do plano em eixos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral informados no item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:1:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a cláusula material inteira, de que o plano está organizado em dez eixos temáticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz a proposta de implantar a regionalização da saúde em quatro regiões sanitárias."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "O número quatro aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento e corresponde à mesma identidade eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:2:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta e a quantidade indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação do Cartão Uniforme Escolar para compra do fardamento no comércio local."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta, sem tom promocional ou crítico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma chave eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:3:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada situa o trecho no Programa Cesta da Família e a evidência sustenta o reforço do atendimento nos 15 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 15 municípios aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é informativa e não valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de assistência social."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "O documento e a chave eleitoral coincidem com os informados no item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:4:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre o programa, a ação de reforço e o alcance nos 15 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma proposta coerente de regularização fundiária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:5:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a ampliação e modernização dos sistemas de água e esgoto no interior, que a página situa no Estado de Roraima."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única frente coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:6:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ação material de ampliar e modernizar os sistemas no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o encaminhamento de projeto de lei para isenção do IPVA de motocicletas de até 160 cilindradas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "O limite de 160 cilindradas aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta tributária."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única medida tributária coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado para a mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:7:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o ato proposto e o recorte de motocicletas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação e consolidação do Portal Único de Serviços do Estado de Roraima."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de gestão pública digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:frase:8:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a afirmação apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma literalmente que o plano se organiza em dez eixos temáticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "O número dez está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A formulação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único tema, a organização do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:organizacao-do-plano:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a estruturação em dez eixos temáticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A proposta de regionalização em quatro regiões sanitárias sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "O número quatro está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta da área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saude-regionalizada:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a regionalização da saúde em quatro regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a proposta de viabilizar a compra do uniforme no comércio local por meio do cartão."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:cartao-uniforme-escolar:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a compra do uniforme no comércio local como núcleo material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "Em conjunto, as evidências sustentam a regularização fundiária voltada a áreas ligadas a famílias rurais e periurbanas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece dentro de uma área coerente, regularização fundiária para famílias rurais e periurbanas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "As duas evidências pertencem ao mesmo documento e à mesma identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:regularizacao-fundiaria-rural:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "Em conjunto, as evidências cobrem a regularização fundiária e o vínculo com famílias rurais e periurbanas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a ampliação e modernização dos sistemas de água e esgoto no interior, e a página citada detalha foco nas sedes municipais e comunidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no mesmo documento e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:saneamento-no-interior:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a proposta de ampliar e modernizar os sistemas de saneamento no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta explicitamente a reunião de serviços públicos estaduais em um portal único digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, então a dimensão numérica está atendida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é informativa e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de governo digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002551571:tema:governo-digital:documentos:RR:230002551571:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a ideia de concentrar serviços públicos estaduais em um portal único digital."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RR:230002551571",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RR:230002551571:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "88182c074ac156ceb9defcbbf4c6af623125298ed2160109c20fd68ed50c9f6b",
+    "extractedTextSha256": "a4435282238d2ad8b6c1fdf2f0f651123d3fd14a560d8da3728c1e221b79ce82",
+    "documentCount": 1,
+    "documentSetSha256": "df29b8801a4fc2a062e24e51adbe12d48c9a0000d5b6ed2399e440400a27c2fe",
+    "contentSha256": "9d26204350bac01feef6b10e77efcb9c5d58921b19d1553dc284c4b789415f89"
+  }
+}

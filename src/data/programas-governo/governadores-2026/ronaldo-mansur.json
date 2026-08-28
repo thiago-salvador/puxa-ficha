@@ -1,0 +1,1056 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "BA",
+    "sqCandidato": "50002532269",
+    "slug": "ronaldo-mansur",
+    "nomeUrna": "RONALDO MANSUR",
+    "partido": "PSOL",
+    "arquivoNome": "2026BA50002532269_01.pdf",
+    "arquivoNoPacote": "BA/2026BA50002532269_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "BA:50002532269:01",
+      "fonte": {
+        "arquivoNome": "2026BA50002532269_01.pdf",
+        "arquivoNoPacote": "BA/2026BA50002532269_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e7d8f6e6443895074d827bd626cb00a158f93d7d1ede48b80f0c4dc8c0eab337",
+        "extractedTextSha256": "4212b548e1a0e69303f1f62cf13e0b5100884637d7c63d2ed03e83daf0e7284f",
+        "paginas": 24,
+        "secoes": [
+          {
+            "id": "diretrizes-para-o-programa-psol-para-governar-a-bahia",
+            "titulo": "Diretrizes para o Programa PSOL para governar a Bahia",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Diretrizes para o Programa PSOL para governar a Bahia\nCompanheiras e companheiros,\nApresentamos à sociedade baiana o esforço de nossa comissão programática para elaborar um conjunto de\nideias que se constituirão como substrato para a elaboração do nosso programa de governo. Como não poderia\ndeixar de ser, o documento apresenta formulações próprias à nossa tradição de luta e fornece pistas sobre ser\nesquerda nesta nova quadra mundial.\nConforma, desta maneira, os elementos de um projeto político que dialoga com a nossa história, com o possível\ncenário nacional de reeleição de Luís Inácio Lula da Silva e com o complexo cenário mundial. A partir de um\ndiagnóstico dos anos carlistas e da experiência de quase 20 anos da coligação encabeçada pelo PT, se propõe\na superar os limites desses governos tendo como horizonte uma Bahia para todos e todas os/as baianos/as onde\no desenvolvimento econômico possa ser entendido como sustentável e inclusivo.\nCompartilhamos com vocês, assim, nossos valores, sonhos e a vontade de viver novas experiências.\nBahia, julho de 2026\n\nCarta a população baiana\nAo longo da nossa trajetória a população baiana é capaz de empreender uma série de iniciativas que marcaram\népoca no Brasil. Mesmo sendo muitas delas derrotadas ou com o povo, delas não se beneficiando, registramos\no inconformismo popular e democrático e mostramos que sempre que as causas políticas e sociais conseguem\npenetrar na aparente crosta de indiferença e de apatia da nossa população, são capazes de despertar energias\ndesconhecidas por quem não está sintonizado com a alma popular, negra, cabocla, aborígene, democrática e\nanti-opressão de nosso povo.\nFoi desta maneira que nossa ancestralidade indígena pôde resistir contra a invasão de suas terras, que a\nafro-baianidade achou forças para lutar contra a escravização, o extermínio físico e o genocídio cultural, que\nas/os imigrantes que para aqui vieram não se conformaram com o autoritarismo metropolitano, que a classe\ntrabalhadora, pequenos/as proprietários/as, agricultores/as, lutaram durante séculos contra o racismo e a\nexploração, que as mulheres lutaram contra a opressão, contando-se as dezenas, as revoltas que promoveram\ndurante a Colônia, o Império e a República na Bahia, por autonomia, democracia e por melhores dias.\nNão é possível entender a Independência, a farsa abolicionista e a República sem passar pela Conjuração\nBaiana, pela luta que culminou no 2 de julho, pelos Malês e pela Sabinada. Sempre quando as elites não\nlevavam em conta as nossas demandas e reivindicações, o povo baiano se levantou, a exemplo de Canudos\nque, no limiar da própria República, travou a luta do “fim do mundo” cantada por Vargas Llosa."
+          },
+          {
+            "id": "hoje-vai-longe-o-tempo-em-que-a-bahia-ocupava-posicao-determinante-em-no",
+            "titulo": "Hoje vai longe o tempo em que a Bahia ocupava posição determinante em nosso país e possuía a maior parte",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Hoje vai longe o tempo em que a Bahia ocupava posição determinante em nosso país e possuía a maior parte\ndo petróleo nacional. Nossa região foi reduzida à condição de área mais pobre do país com parte de seu\nterritório submetida a baixos índices de desenvolvimento humano. Sofremos com a desindustrialização e com\na concorrência predominantemente voltada para compras fora da Bahia. Aprofundou-se a nossa divisão entre\nas classes rica, pobre e remediada. Nos tornamos mais insensíveis ao sofrimento de nossos/as conterrâneos/as\ne permeáveis ao consumismo desenfreado.\nNosso estado não tem mais condição de adotar baixos níveis de crescimento econômico ou escolher governos\nconservadores cujo sentido é não ter o povo como prioridade. A existência de seres humanos à margem do\nconsumo, dos serviços públicos e submetidos permanentemente a violência é uma ameaça a toda população\nbaiana. O fim desta situação não é somente uma exigência de ordem ética, humanitária e socialista, mas um\nimperativo econômico para o nosso desenvolvimento. A falta de enfrentamento desta situação desloca a Bahia\ndo lugar que merece na economia e política nacional.\nNestas eleições nos dirigimos aos 75% dos/as baianos/as dispostos a vencer o neofascismo no Brasil. Trazemos\nboas notícias. Nossa geração está vendo o início de uma nova ordem mundial. A Guerra da Ucrânia e o\ngenocídio em Gaza pelas forças de Israel, aceleraram tendências internacionais vigentes há décadas. A China,\na Rússia, o Irã e países do Sul buscam uma menor dependência do imperialismo e estão formando um núcleo\nque pode ser decisivo para a mudança da economia internacional. Está na pauta o fim da era do dólar, a\nconstituição de um sistema de pagamentos alternativos como o PIX, a Rota da Seda, novas estruturas logísticas\ne de energia, entre outras. A situação abre fresta importante para o Brasil e a Bahia atuarem internacionalmente.\nE da mesma forma as eleições prometem derrotar a extrema direita.\nMas nem tudo são flores. As eleições para presidente ainda não estão ganhas por Luís Inácio Lula da Silva e\nvai rolar muita água debaixo da ponte. Uma orientação central para nosso esforço de mudança é que a opção\npelo progressismo a nível nacional precisa ser adotada também a nível estadual. A vitória de Lula deve ser\nacompanhada pela eleição de governadores/as e de deputados/as no campo progressista. Ou alguém acredita\nque se ACM Neto e João Roma???? forem eleitos podem ajudar o presidente Luís Inácio Lula da Silva a\nreconstruir o Brasil?\n\nDerrotar o carlismo e a extrema direita no Brasil e na Bahia\nO carlismo governa a Bahia há mais de cinquenta anos, com o hiato de quase 20 anos do PT. Assim foi com o\navô, seus/as alunos/as, e seu neto. Em todos esses momentos essa corrente se atribuiu a tarefa de modernização\nconservadora da Bahia. Sob ACM ocorre um modelo da construção industrial do Polo Petroquímico e do CIA\nno entorno de Salvador, esvaziando lavouras e municípios e multiplicando a violência no estado. Inicia-se a\nnegociação da dívida do Estado onerando quase 1/5 da arrecadação estadual.\nDurante os governos carlistas ocorrem o fim dos bancos estaduais - com a falência do Banco Econômico, a\nabsorção do BANEB pelo BRADESCO, e a substituição do poderoso DESENBANCO pelo pálido\nDESENBAHIA e será desestruturada a indústria de calçados e entregue ao capital do Sul/Sudeste.\nAs eleições de 2026 na Bahia mostram alguns palanques, como o da candidatura do PT e do PSOL-REDE. Em\nnosso palanque, além de denunciar o carlismo e a extrema direita, expresso nas candidaturas apoiadas por ACM\nNeto e João Roma, criticamos os limites da tentativa empreendida pelo PT e coligados/as de trazer melhores\ndias para o nosso estado. Consideramos que os 4 anos do governo Jerônimo Rodrigues, revelaram-se\ndecepcionantes. É óbvio que se ressentem das condições políticas adversas, no entanto isto não justifica uma\nmédia do PIB irrisória.\nA Bahia aparece em 3° lugar no país em violência contra as mulheres, sendo o mais violento do Nordeste em\nnúmero de feminicídios e o segundo com maior número de mortes da população LGBTQIAPN+. O estado tem\n90,9% de pessoas ocupadas, estando desocupadas 9,1% (3° no ranking nacional), o rendimento médio das\npessoas ocupadas é de apenas R$2.199,00. O estado possui o maior número absoluto de pessoas em situação\nde pobreza extrema no Brasil e a renda domiciliar per capita é significativamente menor que a média do país.\nA polícia do governador está no pódio do ranking nacional de letalidade das forças policiais ocupando o 2°\nlugar, com 40,6 mortes por 100 mil habitantes, 5x maior que a média nacional, sendo o perfil da maioria\nesmagadora das vítimas, pessoas negras."
+          },
+          {
+            "id": "jeronimo-rodrigues-governa-com-posicoes-mais-proximas-do-centro-politico",
+            "titulo": "Jerônimo Rodrigues governa com posições mais próximas do centro político, mais para liberal do que de",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Jerônimo Rodrigues governa com posições mais próximas do centro político, mais para liberal do que de\ntinturas sociais. Na Segurança Pública, ignora a crise, negando a realidade e as críticas feitas à sua gestão. Na\nEducação, apesar de dizer que é um setor prioritário de sua gestão, colocou a Bahia em último lugar no\naprendizado de português e matemática no ensino médio (IDEB agosto 2024). Pesquisa QUAEST de\nfevereiro/25 indicou que sua gestão tem a pior avaliação na geração de emprego e renda. A Bahia lida com\nproblemas sociais como fome e miséria, desemprego e evasão escolar, além da alta criminalidade, e completa\ninação do governo estadual com ausência de medidas efetivas de combate a essas mazelas.\nO PSOL e a REDE convocam a população baiana para encerrar o ciclo petista que não trouxe nem\ndesenvolvimento nem inclusão sustentável e a romper com a polarização reinante que continua beneficiando o\n“andar de cima” da nossa sociedade distribuindo ao povo apenas migalhas que caem da mesa.\nPropomos uma nova abordagem para a economia baiana. Herdamos um enorme endividamento, que sempre\nignorou a inclusão social e o diálogo com os movimentos sociais. O governo de Rui Costa não conseguiu atrair\ninvestimentos significativos para a Bahia nem utilizou as potencialidades de formas econômicas alternativas.\nSeus anos foram de perdas para o funcionalismo público, de crescimento pífio do PIB estadual, e de ampliação\nde toda sorte de alianças conservadoras mantendo o que de pior há na política baiana, a exemplo da família\ncorrupta de Geddel.\nNosso governo propõe superar esses modelos para o bem da Bahia. Considera que é preciso romper com o\nacordo de pagamento da dívida estadual com a União, feito pelos carlistas com FHC e mantido por Lula, que\najuda a engessar a intervenção do Estado local evitando que tenha os recursos necessários para investimentos\neconômicos e sociais. Reorientar as transações locais para o fortalecimento do mercado interno, seja inter áreas,\nseja entre os estados do Nordeste ou preenchendo espaços de relação com as regiões Norte e Centro Oeste.\nPretendemos abrir um novo campo de relação com a África e com o Norte/Centro da área do Pacífico na\nAmérica do Sul.\nAlicerçar energias capazes de alavancar o desenvolvimento sustentável utilizando redes de permutas, economia\nsolidária, cooperativas, experiências de bancos populares, e outros instrumentos de gestão e planejamento\ncontemplando a multiplicação das relações entre campo e cidade. Criar zonas e aglomerações comerciais e\nindustriais. Estimular novos eixos de desenvolvimento aproveitando as potencialidades econômicas regionais.\nInvestir na atração de novas empresas para o estado após avaliação dos benefícios que a implantação trará para\na nossa população. Propomos enfrentar a disputa dos lobbies turísticos através da articulação de um pool no\nNordeste. Agilizar o estímulo das alternativas ferroviária, fluvial e metroviária assim como sua logística. A\ncriação de um Conselho de Desenvolvimento e Sustentabilidade da Bahia com uma nova política compartilhada\ncom a participação da classe empresarial e trabalhadora e sociedade civil.\nAo lado de reorientar as transações econômicas, nosso governo terá atenção especial para a incorporação da\nsociedade civil no fazer político. Buscaremos a recuperação do poder de decisão do Estado deslocando esse\npapel das corporações. Incorporar a população nas decisões políticas construindo um PROGRAMA\nDEMOCRÁTICO E POPULAR que organize conselhos para tomar decisões fulcrais de Estado, que\ncompartilhe orçamentos, consultas, aprofunde a experiência dos territórios dos congressos das cidades, entre\noutras. Inaugurar formas de consulta direta à população, incluindo projetos populares e plebiscitos. Coerentes\ncom a política de permear o Estado à participação popular, definiremos projetos de forma a contemplar o maior\nnúmero possível de segmentos da base de atuação. Estimularemos os conselhos, as consultas populares, as\nadministrações regionais e as organizações associativas.\nRever o marketing utilizado pelo Estado que passa uma imagem equivocada do povo baiano, o que acaba\nincentivando o turismo sexual. Promover um planejamento estadual efetivo que oriente investimentos de longo\nprazo, o redirecionamento do crescimento predatório das nossas cidades, com o apoio ao transporte, o controle\ndo uso do solo, os níveis de poluição sonora e ambiental, o emprego, a educação e a saúde.\nA necessidade da reparação social\nO estado baiano deve se desculpar por sua histórica atuação anti-indígena, machista, discriminadora e\nescravista. A trajetória baiana mostra um contencioso com povos originários e africanos até hoje não reparados.\nMilhões de integrantes de nossas populações originais e imigrantes africanos foram submetidos a tratamento\nindigno, escravizados, humilhados, explorados e assassinados. Muitos dos nossos antepassados desapareceram\nvítimas de genocídio. Outros tiveram tomado as suas terras."
+          },
+          {
+            "id": "nosso-governo-reconhecera-a-divida-com-estas-populacoes-e-as-reparara-at",
+            "titulo": "Nosso governo reconhecerá a dívida com estas populações e as reparará através de políticas públicas",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo reconhecerá a dívida com estas populações e as reparará através de políticas públicas\ntransversais que beneficiem os seus descendentes, seja contribuindo para a recuperação da sua autoestima,\nlegalizando as terras, garantindo apoio às nações nativas assim como das comunidades descendentes de\nquilombos. Criará espaços de cidadania para a participação de setores representativos da sociedade e de\nconfissões religiosas, para tratar de questões como: qualidade de vida, violência contra a mulher, extermínio\ndo povo negro, desmilitarização das polícias, passe livre para estudantes e desempregados, pedágios abusivos,\nentre outros.\nA preocupação essencial do PSOL e REDE será com a educação e a saúde. As experiências educacionais que\nestimulamos serão críticas e trabalharão de forma interdisciplinar a convivência entre os diversos grupos sociais\ne comunitários estimulando o seu diálogo e priorizando as suas experiências, buscando dar visibilidade às suas\nidentidades, ancestralidades e ao seu modo de ser, sentir e pensar. Na saúde será estimulado o cuidado com\ntoda a população e a dimensão solidária com sua situação, crescimento e destino, neste sentido buscaremos a\nformação de equipes interdisciplinares englobando profissionais de saúde, previdência, assistência, qualidade\nde vida – com ênfase na Terceira Idade, hábitos sanitários e de higiene. A atuação nestas áreas se dará de forma\na contemplar outros olhares de saúde e educação encontrados nas comunidades tradicionais e nas experiências\nholísticas.\nEstimulamos o apoio a pessoas em situação de risco social e à participação política e orçamentária das\ncomunidades nas soluções gerais e setoriais. Respeitamos as diferenças religiosas, raciais, de gênero, etárias,\ne de opção sexual. Garantimos ampla liberdade de circulação de ideias, de expressão, de reunião, e organização\nsocial e política. Adotaremos novas relações com as técnicas e as tecnologias e garantimos o acesso a todas as\nformas de tratamento de saúde, técnicas e aprendizado.\nPromoveremos uma nova articulação cidade-campo tratando os diversos atores, inclusive o agronegócio, sem\nprivilégios. Teremos como foco de atuação no campo a promoção do desenvolvimento sustentável, a\nmassificação, doação e legalização da posse da terra, a garantia de apoio técnico, a comoditização de produtos\nagroindustriais, a integração de cadeias produtivas, a organização de cooperativas, o cumprimento a legislação\ntrabalhista, a instalação de empreendimentos empresariais a partir dos benefícios que realmente trouxer as\npopulações.\nDefenderemos o patrimônio socioambiental e energético do estado. A defesa das nossas baías, matas, rios e\nflorestas, subsolo, formas de energia e de qualidade de vida. Nosso patrimônio arqueológico, arquitetônico,\nsociocultural, ambiental e religioso, a partir da diretriz de valorização cultural.\nAdotaremos o princípio republicano de independência dos poderes. Cumpriremos as atribuições próprias ao\npoder executivo, não interferindo no Legislativo e no Judiciário. Estaremos ao lado da modernização desses\npoderes prevendo seu controle externo, sua profissionalização e o fim do nepotismo e da corrupção.\nIncentivando mecanismos de ampliação das funções de mediação e arbitragem judiciais. Adotaremos a\nexecução dos orçamentos públicos de forma orientada pela garantia do emprego nos bairros e municípios.\nDefendemos o fim urgente do analfabetismo e do trabalho escravo. A cobertura integral do estado dos\nprogramas de saúde da comunidade e da família. O apoio aos órgãos de fiscalização da legislação social,\nsanitária, ambiental e das relações de trabalho. O pagamento dos índices de inflação aos trabalhadores públicos\ncom recuperação negociada das suas perdas salariais e a reestruturação de suas carreiras tornando-as mais\ninteressantes e criativas. A valorização da atividade policial, a integração das polícias e um novo Estatuto do\nPolicial Militar. Exigimos contrapartidas trabalhistas e institucionais das empresas que recebem benefícios do\nEstado. Apoiaremos a efetivação da escala 6x1 para a classe trabalhadora.\nCriaremos um fórum urbano permanente que capte as tendências urbanas do Século XXI. Defendemos planejar\no crescimento das cidades e das articulações com o seu entorno pois a sua falta contribui para o crescimento\ndesordenado e predatório que deixa as cidades entregues aos efeitos danosos das chuvas, da economia e da\nsazonalidade. As principais cidades do estado sofrem com problemas de trânsito, com o crescimento vertical e\nhorizontal descontrolado, num predatório “construa-onde-puder” urbano, de falta de mobilidade urbana.\nAplicam uma “gestão palaciana” ao arrepio das necessidades populares com decisões centradas no capital\nimobiliário, tem, assim, seu patrimônio mobiliário, paisagístico e arquitetônico ameaçado. Ampliaremos as\nobras do Metrô de Salvador e abriremos uma investigação dos desmandos que a"
+          },
+          {
+            "id": "marcaram-assim-como-discutiremos-o-contrato-estabelecido-com-a-arena-fon",
+            "titulo": "marcaram, assim como discutiremos o contrato estabelecido com a Arena Fonte Nova lesivo ao estado e a",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "marcaram, assim como discutiremos o contrato estabelecido com a Arena Fonte Nova lesivo ao estado e a\nconstrução da Ponte Salvador-Itaparica.\nConsideramos que as possibilidades abertas pela Constituição federal de 1988 à gestão não foram utilizadas\nplenamente ao longo dessas duas décadas. Assim organizamos especialistas em orçamento, analistas e técnicos\nconstitucionais que subsidiarão os municípios baianos na captação de recursos públicos e privados. Poremos,\nassim, um fim na discriminação dos municípios atendendo aos pleitos independente da opção política de seus\nprefeitos e vereança. Estimulamos a execução de pequenas obras com a contratação da própria comunidade,\ncomo forma de renda, além de novos roteiros turísticos.\nBahia - julho de 2026\nRonaldo Mansur e Meire Reis\n\nOs eixos do nosso programa de governo\nNossos compromissos: desenvolvimento sustentável, segurança pública, saúde, educação, agricultura e fome,\nreorientação de prioridades, participação popular\nSuperar a estagnação econômica e a falta de desenvolvimento sustentável\nA Bahia apesar de possuir um terço da indústria instalada no Nordeste está numa situação periférica em relação\nà indústria nacional. A política industrial levada a efeito pelo estado tem experimentado oscilações. Após\napostar no setor de forma concentrada na RMS ao longo de meio século entre o final dos anos 40 e dos anos 80\nos carlistas apostaram em uma “Era do turismo e dos serviços”. Somente em meados dessa década volta a haver\nestímulo ao setor industrial com a criação de programas ditos de apoio à indústria e atração de novos\nempreendimentos no setor através da entrada de cabeça do Estado baiano na Guerra Fiscal.\nNo entanto, pelo próprio critério preferido pelo grupo carlista, a comparação dos índices estadual e nacional\ndo PIB, é evidente a estagnação da economia baiana. O índice, após cair na primeira metade da década de 90,\nterminou-a no mesmo lugar em que estava em 1990, ou seja, representando 4,4% do PIB nacional. Somado a\noutros indicadores pode-se perceber a falta de desenvolvimento sustentável.\nDe um lado Salvador continua a ser o grande centro-administrativo-financeiro e comercial, de serviços, lazer e\nporto. Juntos com os demais municípios da RMS detinha há alguns anos 64% da renda industrial do Estado.\nNo entanto, tem seu próprio entorno bastante diferenciado. Apenas cinco municípios (Salvador, Camaçari,\nSimões Filho, Candeias e São Francisco do Conde) somados a Feira de Santana detém 65% das exportações e\n38% do produto estadual. As nossas exportações têm como principais parceiros a Europa, os EUA e o\nMERCOSUL, os mesmos do país, pouco utilizando as suas particularidades. Desta forma a África quase não\naparece nos boletins de exportação, sendo o comércio com os demais países da América Latina semelhante ao\nque é exportado para o Paraguai.\nA política estadual de tecnologia registra a recente criação da Secretaria de Estado, tem nível de investimento\nnão correspondente às necessidades do desenvolvimento não entendendo como sua área de abrangência as\ninovações técnicas agregadas pelo nosso povo em sua atividade econômica cotidiana. Iniciando os anos 1990\ncom índice negativo de seu PIB em função do ajuste econômico obteve crescimento vegetativo nos anos\nposteriores para experimentar um pulo em 1994 (6,7%). No ano seguinte teria brusca queda (1,8) voltando a\n“crescer” na sequência (1996 3,9 e 1997 4,5).\nNo início do novo milênio o estado manteve as oscilações no PIB embora em níveis diferentes fazendo a\npropaganda do governo preferir comparações com o também péssimo desempenho federal. Em 2000 seus\níndices acompanharam os tímidos resultados do final da década anterior (3,9%) para desabar nos três anos\nposteriores (2001, 2002 e 2003 2,8%). Em 2004 o PIB baiano deu um fantástico pulo, a exemplo do que\nsucedeu dez anos antes (9,9) , despencando de novo para menos da metade em 2005(4,8). Esses números\nmostram que a Bahia até hoje não conseguiu recuperar sua economia mediante o brutal ajuste a que foi\nsubmetida."
+          },
+          {
+            "id": "a-situacao-regional-e-bastante-desigual-apresentando-atualmente-o-fenome",
+            "titulo": "A situação regional é bastante desigual, apresentando atualmente o fenômeno da migração temporária em",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "A situação regional é bastante desigual, apresentando atualmente o fenômeno da migração temporária em\nperíodos sazonais de expansão em outros estados, influência de fenômenos econômicos gerados em outros\nestados, o estado depende essencialmente do transporte rodoviário. Desta forma conjuga pouca capacidade de\nintervenção em fatores fulcrais para o seu desenvolvimento e tem sido prejudicado pelo envelhecimento sem\nmanutenção da nossa malha rodoviária.\nA disputa que se verifica entre os governos federal e estadual agravou substancialmente os investimentos e a\nsituação das vias levando a existência de pontos literalmente intransitáveis, a acidentes e ao encarecimento da\ncirculação de mercadorias. Para piorar a situação o governo Lula, com a aquiescência dos governadores de\nplantão transferiu, através da MP 82, 14.500 km de rodovias para os diversos estados da federação entregandoas para manutenção e obras dos governos estaduais.\nA Bahia dispõe hoje de uma rede de cidades que se constituem em espinha dorsal do território baiano e que\nconcentram importantes fluxos econômicos sendo lideranças políticas do processo de desenvolvimento\nregional e bases indispensáveis ao desenvolvimento estadual. No entanto, as regiões permanecem\ndesarticuladas e não integradas ao desenvolvimento do estado. Nosso governo terá eixos de desenvolvimento\nque contemplem o estado em sua globalidade fugindo das políticas adotadas pelo andar de cima que sempre\ntendem a concentrar os recursos de formas a priorizar grupos, setores, eleitores e cidades de seu interesse.\nNosso planejamento abarcará todo o estado, seja as áreas do litoral ampliado, das extremidades do território no\nOeste e no Norte baiano, as localizadas no centro do estado, constituídas por atividades de baixa densidade\neconômica e/ou por atividades quase que de subsistência. Pretendemos ampliar as ligações da Bahia com o\nSudeste e o Nordeste. No entanto, o estado apresenta até hoje o fenômeno da migração temporária em períodos\nsazonais de expansão em outros estados, influência de fenômenos econômicos gerados em outros estados, ainda\ndepende essencialmente do transporte rodoviário tem assim pouca capacidade de intervenção em fatores\nfulcrais para o seu desenvolvimento e é prejudicado pelo envelhecimento sem manutenção da nossa malha\nrodoviária.\nEntre as cidades que articulam o estado aparece com destaque positivo Feira de Santana e outras da área do\nSão Francisco, ficando o destaque negativo para as da área central do estado formada pela maioria do território\nda Chapada Diamantina, do Nordeste, e de parte do Sudoeste. Feira de Santana é a segunda maior cidade da\nBahia. Situada no entroncamento rodoviário de acesso a Salvador é passagem praticamente obrigatória de quem\nse dirige à capital e ao Nordeste, sendo centro destacado de circulação de mercadorias e apoio às populações.\nConta ainda com o Centro Industrial de Subaé, embora longe de viver seus melhores dias.\nA área do São Francisco, particularmente a do Baixo e Médio, apresenta dinâmica expressiva. Barreiras tornouse a quinta população do Estado. Região de cerrado, centro de comercialização, de processamento de grãos e\ncom disponibilidade de terras, tem se beneficiado da dinâmica do agronegócio do Oeste brasileiro. Desde os\nanos 70 outra cidade da área, Juazeiro, antigo centro comercial e de serviços, dinamizou especialidades\nhortifrutigranjeiras. Sua localização estratégica entre a Bahia e Pernambuco, no leito do Rio São Francisco, lhe\npermite contato com estados diferentes e atrair migrações.\nA agroindústria de Luiz Eduardo Magalhães, cidade construída da noite para o dia, mostra que é possível retirar\nas nossas áreas rurais da pobreza quando interessa às elites políticas. Guanambi busca voltar a seus grandes\ndias quando ostentava a liderança da cultura algodoeira através da maior integração das relações com a região\ninfluenciada por Minas Gerais. Ilhéus e Itabuna, mesmo abalados com a crise do cacau, mantiveram\nimportância econômica e a condição de pólos agro-industriais. Itabuna continua vocacionada para um comércio\nde grande dinamismo. Já Ilhéus conta com um polo de informática e tem se especializado no turismo.\nNo extremo sul está localizado um pólo de celulose, constituído de grandes empresas modernas, em Mucuri,\nTeixeira de Freitas e Eunápolis numa área que se situa na passagem para o Sudeste e que ainda conta com o\ndinamismo turístico de Porto Seguro nas altas temporadas. No caminho do Extremo Sul, beneficiando-se de\nsua proximidade com Salvador, o polo da Mata Atlântica, tenta conciliar a preservação das suas riquezas\nnaturais com o turismo e a exploração de óleos.\nNão podemos deixar de nos referir na configuração do estado os polos turísticos da Chapada Diamantina e do\nLitoral Norte que vem encaminhando políticas de atração de visitantes e novos moradores como forma de"
+          },
+          {
+            "id": "recuperar-os-antigos-dias-e-como-alternativa-de-crescimento-ao-polo-agro",
+            "titulo": "recuperar os antigos dias e como alternativa de crescimento; ao polo agropecuário de Conquista e Jequié,",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "recuperar os antigos dias e como alternativa de crescimento; ao polo agropecuário de Conquista e Jequié,\ncentros de atendimento regional, e que, após a BR 116, ligaram a região ao Sudeste; ao polo pastoril de Jacobina\ngrande produtor de leite e com os maiores rebanhos de gado do estado; ao pólo energético de Paulo Afonso\nque fornece energia para o Nordeste; ao polo de fumo e cana de Santo Antônio de Jesus e Cruz das almas,\nparticularmente após a implantação da BR 101; ao pólo fruticultor e madeireiro que marca presença na área\nde Alagoinhas; e ao polo do feijão pela sua articulação dinâmica com toda a microrregião de Irecê.\nOs eixos de desenvolvimento são instrumentos de uma estratégia de concentração de recursos e ações para\nocasionar resultados. Devem ser articuladas com procedimentos que incentivem mudanças sócio-culturais e\nmobilização política concretas a nível regional, sexual, étnico e sócio-ambiental. Afinal, refletem um\ndiagnóstico sobre os espaços de atividade competitiva e dinâmica da economia baiana e precisam ter a\nperspectiva de irradiação espacial do desenvolvimento econômico e humano intentado. As projeções\nconstituem também uma aposta que exige constante revisão.\nAs cidades, no entanto, não podem ser absolutizadas em uma estratégia de desenvolvimento. Os dados do\nCenso 2000 do IBGE confirmam que 1/5 da população do país vive no campo e na Bahia esta condição aumenta\nface à baixa dinâmica agrícola de áreas expressivas do estado além da tendência de muitos municípios não\nintegrarem suas áreas rurais. Os eixos de desenvolvimento devem contemplar o estado em sua globalidade\nfugindo das políticas adotadas pelas elites dominantes que sempre tendem a concentrar os recursos de formas\na priorizar grupos, setores, eleitores e cidades de seu interesse.\nAssim estes abarcam todo o estado, seja nas áreas do litoral ampliado, áreas das extremidades do território no\nOeste e no Norte baiano e áreas localizadas no centro do estado constituídas por atividades de baixa densidade\neconômica e/ou por atividades quase que de subsistência. Os eixos devem também expressar as principais\nligações da Bahia com o Sudeste e o Nordeste que pretendemos ampliar. Aquelas passam atualmente de forma\nfísica pelas extremidades do nosso território através de via rodoviária (no caso do Sudeste) e também pelo Rio\nSão Francisco (no caso do Nordeste).\nÉ necessário um novo modelo para a economia baiana. O Estado baiano “saneou-se” durante o ajuste fiscal,\nisto é, abriu mão de várias prerrogativas e instrumentos de gestão para a instância federal. Onera seus cofres\ncom o pagamento da dívida com a União. Descontando-se os repasses, o custeio da máquina, as despesas\nfinanceiras, o que é oriundo de convênios e de outras fontes, os investimentos através receitas próprias são\nirrisórios. Assim o estado tem sido incapaz de colocar em prática prioridades ou de prover funções que já\nexecutava em outras épocas, a exemplo de apoiar os pequenos e médios empresários, de garantir de forma\nsatisfatórias os direitos constitucionais de saúde e educação, de promover a segurança pública, e de melhorar a\nvida e o trabalho dos cidadãos.\nO modelo econômico inaugurado com o retorno de ACM ao governo no início dos anos 90 precisa ser superado.\nPara isso há que romper com o acordo de pagamento da dívida estadual com a União que ajuda a engessar a\nintervenção do Estado local. As tarefas de um novo modelo devem ser: a) a moratória negociada da dívida com\na União para garantir os recursos necessários para investimentos econômicos e sociais; b) reorientar as\ntransações locais para o fortalecimento do mercado interno, seja inter-áreas, seja entre os estados do Nordeste\nou preenchendo espaços de relação com as regiões Norte e Centro Oeste; c)abrir um novo campo de relação\ncom a África e com o Norte / Centro da área do Pacífico da América do Sul, particularmente com Venezuela e\nColômbia; d)ao invés de voltar-se para alguns grupos, cidade ou setor iremos estabelecer um “quadrado\nmágico” com energias capazes de alavancar nosso desenvolvimento de forma integral utilizando o mercado,\nredes de permutas, economia solidária e agricultura familiar contemplando: a multiplicação das relações entre\ncampo e cidade; a constituição de um pool turístico do Nordeste; o investimento no setor de transporte\nparticularmente com o estímulo das alternativas ferroviária, fluvial e metroviária; a revitalização e criação de\nzonas comerciais e industriais com incentivos fiscais.\nHá uma fresta mundial que possibilita o avanço do Brasil e dos estados. O mundo caminha para uma economia\nbipolar tendo de um lado o Ocidente e do outro, os BRICs e vários países do Sul. Os estados podem se\naproveitar desta fresta, particularmente rompendo com o atrelamento com os EUA.\nInvestiremos num Orçamento Participativo de forma a contemplar o maior número possível de segmentos da\nbase de sua atuação. Os conselhos serão quadripartites com a participação (minoritária) de membros do"
+          },
+          {
+            "id": "estado-de-organizacoes-empresariais-de-organizacoes-populares-e-de-traba",
+            "titulo": "Estado, de organizações empresariais, de organizações populares e de trabalhadores, de organizações",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Estado, de organizações empresariais, de organizações populares e de trabalhadores, de organizações\nindependentes/fiscais.\nOs mandamentos que orientarão as suas ações de governo serão: participação, democracia, desenvolvimento,\ncomunidade, família, solidariedade, meio ambiente, pluralidade e criatividade. O nosso governo estimulará as\nformas criativas de fazer e o respeito às ideias e comportamentos diferentes, buscando resgatar os saberes locais\ne levantar a autoestima valorizando os grupos sociais e as tradições que construíram a nossa civilização. As\nexperiências educacionais que estimulamos serão críticas e trabalharão de forma interdisciplinar a convivência\nentre os diversos grupos sociais e comunitários estimulando o seu diálogo e priorizando as suas experiências,\nbuscando dar visibilidade às suas identidades, ancestralidades e ao seu modo de ser, sentir e pensar.\nO programa está orientado pela construção de uma nova síntese política através do diálogo com as tradições\npopulares. Pensar nossa realidade como realmente somos. Ao invés de procurarmos os elementos de mudança\nfora do país a partir de modelos e tipologias desenraizadas, importadas de outras realidades.\nA retomada do crescimento, dos empregos e da renda e a estabilidade de preços serão tarefas prioritárias para\ngarantir segurança aos investimentos que interessam ao estado. No entanto, também é preciso combater o uso\npredatório dos recursos naturais e estimular atividades econômicas com menor impacto ecológico. Mobilizar o\nmercado interno com potencial de produção e consumo em massa, os gastos sociais e investimento público e a\ninfraestrutura econômica, ter um novo regime fiscal que disponha de credibilidade, reconhecer a importância\ndo investimento social e uma estrutura tributária mais simples e progressiva.\nPropostas:\nQueremos uma reforma tributária justa, construída na perspectiva do desenvolvimento, que simplifique tributos\ne que os pobres paguem menos e os ricos paguem mais. Desenvolver mecanismos que transfiram renda das\ncamadas mais altas para as mais baixas. É tarefa prioritária combater a inflação e enfrentar a carestia, em\nparticular a dos alimentos, combustíveis e eletricidade. Estimular uma política de abastecimento, de estoques\nreguladores e de apoio à produção de alimentos, aos pequenos agricultores e à agricultura orgânica. A Bahia\nprecisa de uma nova política de preços dos combustíveis e do gás e a Bahia, pode colaborar com isso reduzindo\nos impostos que incidam sobre eles. É preciso modernizar a estrutura produtiva, o fortalecimento da produção\nagropecuária e estímulo a projetos inovadores. Promover a industrialização de amplos e novos setores, reduzir\no custo do crédito e estimular a ciência e a tecnologia.\nSegurança pública\nPara o PSOL e a REDE os conflitos sociais que vemos todos os dias são inerentes à estrutura capitalista, racista\ne machista que se sustenta através da manutenção da desigualdade entre as classes e as pessoas. Isto não se\ntrata de uma normalização da violência, mas de entender os equívocos das interpretações punitivistas que\nfrequentam corações e mentes. Não será a repressão, o encarceramento, a privatização da segurança ou a\natuação das Forças Armadas que trará a paz como por encanto na nossa sociedade cada vez mais precarizada\ne despossuída. No entanto, entendem que a redução da desigualdade e a efetivação de políticas públicas de\nsegurança são tarefas fundamentais para garantir os direitos humanos e a dignidade.\nPropomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam\nsacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade, mas vendo como objetivo\nda segurança pública assegurar direito de todos e todas a uma vida digna e cidadã que o Estado brasileiro\nhistoricamente se negou a prover. Neste sentido, a eleição de Bolsonaro reforçou a lógica predatória da\nsegurança pública, ampliando medo e insegurança, cenário agravado pela desregulamentação do controle de\narmas e munições, retrocesso na ampliação das competências da Justiça Militar, a autonomização dos policiais,\nentre outros.\nO debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em\nprevenção. Décadas de proibição não tiveram nenhum impacto na redução da demanda ou da oferta e\ncontinuam aumentando os danos causados em decorrência do abuso de certas substâncias. A “guerra às\ndrogas”, a pretexto de se proteger a saúde pública, por meio da criminalização de substâncias e do controle"
+          },
+          {
+            "id": "militarizado-tem-justificado-a-alta-letalidade-policial-e-o-lucro-desenf",
+            "titulo": "militarizado tem justificado a alta letalidade policial e o lucro desenfreado do comércio de drogas sem controle",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "militarizado tem justificado a alta letalidade policial e o lucro desenfreado do comércio de drogas sem controle\nou cobrança de impostos, incrementando negócios do tráfico de armas e da segurança privada.\nFaz-se urgente superar a herança da doutrina do “inimigo interno”, desprovido dos direitos, que sofre um\nmassacre cotidiano contra jovens, negros e pobres em territórios favelados. Defendemos a desmilitarização,\num modelo de polícia de caráter civil, com controle interno e externo, de ciclo completo com plano de cargos\ne carreiras, com ingresso único, carreira única, com plena garantia de direitos trabalhistas e fundamentado na\nproteção à vida e na promoção da dignidade humana.\nAs periferias sofrem grande intervenção do Estado, mas quase que exclusivamente por políticas de controle,\nvigilância e repressão. Assim, ocorre o “controle” dos corpos indesejáveis nas áreas consideradas nobres\nprincipalmente nos finais de semana. O sistema de segurança pública brasileiro foi construído de forma alheia\na mecanismos de controle e participação popular, o que só piorou com o crescimento do bolsonarismo e das\nbancadas conservadoras. A lógica da guerra precisa ser superada.\nEntendemos que somente um profissional consciente de seus direitos e deveres poderá reconhecer e garantir\ndireitos da população, que é o que se espera de um agente de segurança em uma política distante do paradigma\ndo combate armado. Para isso é preciso investir na reestruturação da doutrina e da carreira capacitando os\nprofissionais de segurança em conhecimentos teóricos, técnicos e práticos que impulsionam as mudanças no\ncampo dos direitos.\nPropostas\n1. Investimento em políticas sociais de prevenção do delito com políticas de educação, saúde, trabalho e\nrenda, moradia e lazer, tendo como público-alvo jovens das periferias que se encontram em situação de\nvulnerabilidade social, com o devido recorte de gênero, raça e etnia; 2. Fortalecimento das Centrais de\nPenas alternativas e das Defensorias Públicas Estaduais, que devem ter autonomia financeira com\nrecursos semelhantes aos do Ministério Público; 3. Efetivação da doutrina da proteção integral no\nsistema socioeducativo para garantir o direito ao futuro dos jovens em conflito com a lei, e defesa da\nmanutenção da maioridade penal aos 18 anos; 4. Garantia dos direitos humanos da população prisional,\ncom especificidades para as mulheres e população LGBTI, e ampliação das garantias penais; 5.\nProibição de superlotação prisional, criação de mecanismos de participação popular e fortalecimento\ndos Conselhos da Comunidade; 6. Vedação das privatizações de presídios e de projetos de parceria\npúblico-privada e da gestão compartilhada de penitenciárias; 7. Fortalecimento dos mecanismos de\ncombate à tortura; 8. Fortalecimento de políticas e programas de reinserção e apoio a egressos e egressas\ndo sistema penitenciário; 9. Regulamentação do uso medicinal de substâncias consideradas ilícitas, em\nespecial do direito individual ao uso (e ao cultivo) terapêutico da cannabis; 10.Regulamentação do\ncultivo da cannabis medicinal pelas associações de pacientes e familiares e garantia de fornecimento\nde medicamentos a base de cannabis pelo SUS a quem precisa; 11.Reconhecimento do direito\nindividual ao uso (e ao cultivo) recreativo da cannabis; 12.Garantir o investimento em políticas públicas\nde saúde e assistência; 13.Ampliar os Centros de Atenção Psicossocial (CAPS) e fortalecer a Rede de\nAtenção Psicossocial (RAPS); 14.Aprimoramento do controle externo das atividades policiais;\n15.Fortalecimento de Ouvidorias, Corregedorias externas e instalação das controladorias gerais\n(integradas); 16.Ampliação da participação da sociedade civil nos Conselhos de Segurança Pública, na\nformação das polícias e sobretudo na militar, regulações sobre o trabalho diário da Polícia Civil, hoje\nbasicamente norteado pela inquisitorialidade do inquérito; 17.Capacitação e treinamento contínuo das\npolícias, especialmente em direitos humanos; 18.Adoção de protocolos transparentes para operações\ne câmaras para todos os policiais em operação de rua;\n19.Criação de uma política pública integrada de apoio psicológico e indenização às vítimas da violência\nde Estado, por meio da criação de programas sociais e clínicas multidisciplinares de reparação\npsicossocial; 20.Eliminação efetiva dos chamados autos de resistência e comunicação imediata da\nocorrência de crime aos órgãos periciais; 21.Previsão legal de órgãos de peritagem independentes;\n22.Investigação autônoma do Ministério Público sobre mortes perpetradas por agentes de estado, com\npriorização de casos envolvendo crianças e adolescentes.\nO modelo baiano de segurança pública fracassou. É um modelo que não dá resultado. Ao contrário, tem sido\nalvo de críticas dos mais diversos setores sociais. Então, a insistência desse modelo mostra também um governo\nquase refém de uma política alinhada com os conservadores. O que nós precisamos fazer é: primeiro"
+          },
+          {
+            "id": "e-fazer-uma-inversao-da-opcao-politica-de-fortalecer-o-confronto-prioriz",
+            "titulo": "é fazer uma inversão da opção política de fortalecer o confronto, priorizando a ação da Polícia Militar e a",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "é fazer uma inversão da opção política de fortalecer o confronto, priorizando a ação da Polícia Militar e a\nmilitarização da segurança pública como um todo. É preciso, imediatamente, fazer um giro para priorizar a\ninvestigação como instrumento principal de enfrentamento à violência ao crime. Como elemento de médio e\nlongo prazo, numa perspectiva de gestão, é necessário investir em inclusão social.\nA violência é um produto da exclusão social, da vulnerabilidade e do abandono das pessoas, da falta de acesso\naos bens, da dignidade da vida humana. Então, nesse sentido, deve-se enfrentar o problema na sua raiz. Pensar\nem uma política de inclusão social, uma gestão que foque no bem-estar social, na garantia da renda, do acesso\namplo e pleno a educação, de valorização do salário-mínimo, a exemplo da proposta de um salário-mínimo\nregional como forma de colocar o salário-mínimo na Bahia acima do salário-mínimo nacional. Isto tem\nresultados tanto na melhoria da renda da população como na oxigenação da economia local, com o fomento no\ncomércio e dos serviços. Implementação de uma política de segurança pública com valorização da vida, atenção\nàs vítimas priorizando a investigação e a proteção, combate ao feminicídio e a agressão à população\nLGBTQIAP+.\nSegurança integrada nacionalmente envolvendo tecnologia, enfrentamento do crime organizado e das milícias\ne apoio a populações vulnerabilizadas pela criminalidade. Modernização das instituições de segurança, das\ncarreiras policiais e aprimoramento das relações com a Justiça. A valorização do profissional de segurança\npública será um princípio orientador através da implementação de canais de diálogo com os profissionais,\nprogramas psicossociais, e garantia do respeito das suas identidades. A Bahia e o Brasil precisam de uma nova\npolítica sobre drogas, focada na prevenção, tratamento e assistência ao usuário. Deve-se mesmo experimentar\na liberação de algumas substâncias menos danosas e substituir a belicidade por estratégias de desarticulação\ndas organizações criminosas, com o fortalecimento da investigação e da inteligência. Buscaremos a melhoria\nda qualificação técnica dos policiais, mudanças nos processos de seleção e na padronização dos procedimentos,\nalém da defesa dos direitos humanos dos policiais.\nEducação como direito de todos e todas\nO princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como\num direito e um dever do Estado. Defendemos a valorização da escola como espaço de reelaboração de\nconhecimentos socialmente úteis. Em quaisquer dos seus níveis e etapas, o processo educativo deve favorecer\nque os educandos possam ler e compreender os mundos físico e social para que possam agir para\nmodificá-los em benefício de todos. São princípios deste programa:\nPor uma educação democrática: para que os trabalhadores atuem mais diretamente na construção de uma\nsociedade justa, igualitária, livre e fraterna, é preciso que a democracia esteja institucionalmente consolidada,\nassociada a um processo de contínua ampliação, de modo a favorecer a inserção, na vida política, de atores\nsociais, até então excluídos, e a educação tem papel importante nesses processos.\nPela valorização dos profissionais da Educação: garantir, em todas as redes públicas de educação básica, no\nmínimo, o efetivo cumprimento da lei do piso salarial nacional para o magistério e inclusão dos demais\nprofissionais em educação na mesma, associado a planos de cargos e carreiras e política de formação.\nPela garantia dos recursos necessários para a educação: É preciso superar a lógica da destinação apenas de\nrecursos possíveis para a educação, orientando os orçamentos pelos recursos necessários para a garantia de\numa educação de qualidade. O Estado deve cumprir o papel de financiar a educação pública.\nA educação é peça essencial num processo de inclusão e de garantia da dignidade. É preciso combater o\nanalfabetismo. Basta dar uma olhada nas gestões carlistas nesses cinqüenta anos para perceber que desdenham\nda educação. No final do ano passado fecharam mais de quarenta escolas de educação de jovens e adultos em\nSalvador. E o EJA é o que se tem de essencial em políticas de combate ao analfabetismo, por onde o adulto e\no jovem que não tiveram acesso no tempo regular retornem à escola. Fechar a escola é condenar essas pessoas\nao analfabetismo, é dizer para quem não está na escola que continue sem vir para escola. A justificativa de que\nnão completou a turma, que tem poucos alunos, é absurda, porque na verdade o que o estado precisa fazer é\npromover uma política de estímulo, de convencimento das pessoas para voltar para escola, para vir para escola,\npara se matricular. Dar condições para que as pessoas venham, pensar em uma bolsa que possa substituir a\nnecessidade do trabalho ou do transporte. Assim, a política educacional é chave no combate ao analfabetismo."
+          },
+          {
+            "id": "o-que-acm-neto-implementou-na-educacao-da-capital-nao-deu-certo-ao-contr",
+            "titulo": "O que ACM Neto implementou na educação da capital não deu certo. Ao contrário, o carlismo é responsável",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "O que ACM Neto implementou na educação da capital não deu certo. Ao contrário, o carlismo é responsável\npor esse quadro de abandono e de exclusão que a nossa população vive. Suas políticas vêm sendo engendradas\nhá mais de cinquenta anos na Bahia. Eles são responsáveis por esse desenho social da Bahia da exclusão, da\nfalta de acesso à terra. Não há dúvida que o PT falhou, mas principalmente na necessidade de buscar resolver\nos problemas de garantia e inclusão. Nesse sentido, a volta do carlismo é uma alternativa pior pois vê como\nnecessário beneficiar pequenos grupos políticos em detrimento da inclusão da maioria vulnerável da população.\nO PSOL e a REDE vêm a esta eleição apresentar uma alternativa popular, que retome as esperanças de\ncombater a desigualdade, sem sucumbir às velhas oligarquias que não têm compromisso com o povo.\nPropostas\n1.Ampliar as vagas em creches e criar programas de creches noturnas; 2.Universalizar o atendimento na\npré-escola, no ensino fundamental e no ensino médio, com atenção especial às escolas do campo, às escolas\nquilombolas e às escolas diferenciadas indígenas; 3.Matricular na EJA todos que dela necessitam; 4.Ampliar\nas vagas na educação profissional e tecnológica; 5.Aumentar as vagas no ensino superior, tanto na graduação,\nquanto na pós-graduação; 6.Instalar processos de escolhas de diretores das escolas, a partir de consultas feitas\ncom a participação da comunidade escolar; 7. Instalar instâncias colegiadas, escolhidas através de consultas às\ncomunidades escolares, que terão a função de definição das políticas de cada unidade escolar; 8. Formular\npolíticas públicas dos sistemas municipais, estaduais, distrital e federal de educação a partir de processos\nconferências, com ampla participação das comunidades escolares; pela autonomia financeira, administrativa e\nde gestão das instituições públicas de ensino em todos os níveis.\nReverter o sucateamento da saúde pública\nO PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal,\ndescentralizado e intersetorial. O partido se pauta historicamente por alternativas coerentes e objetivas como\nprojeto para o país, sob a soberania dos interesses das classes trabalhadoras, tendo como centro a luta e\nconstrução por um SUS maior, 100% público, estatal, descentralizado e intersetorial.\nConsideramos que os processos geradores das condições de vida e dos fenômenos inerentes à saúde, ao\nbem-estar e adoecimento das populações, são determinados e condicionados social, territorial e\neconomicamente. Assim, a Saúde é resultante dos processos que impactam o dia a dia de cada trabalhadora e\ntrabalhador: as condições de moradia (favelas, ocupações, aldeias, quilombos); o sistema de transporte; a\nviolência cotidiana; as condições e direitos trabalhistas; o acesso à educação e seus padrões de qualidade; as\nimplicações estruturais de desigualdade relativas à raça, cor, gênero, orientação sexual, identidade de gênero,\nentre outros.\nA identificação e o enfrentamento de cada um desses elementos são fundamentais para garantir condições\nmínimas e dignas de vida para toda população, mas precisam ser permanentemente entendidos e articulados\ncomo partes dinâmicas de uma totalidade social concreta, que se materializa no modo de produção capitalista.\nÉ só pela reafirmação permanente da luta pelo direito à saúde e sob a compreensão ampliada do processo de\nprodução social da vida que devemos orientar as políticas que definem as práticas sanitárias e o sistema que as\norganiza. O SUS é um legado das lutas pela construção de um sistema de saúde público e ampliado, articulado\ncom a busca das mudanças estruturais que superem a sociedade capitalista, produtora de adoecimento e malestar, sintetizado na consigna “Saúde, Democracia e Socialismo”.\nA luta pela vida e pela saúde neste momento assume ainda mais e múltiplos sentidos: fortalecer o SUS, reverter\na estrutura social e econômica capitalista que suga a vida dos trabalhadores, conter a covid-19 e deter Bolsonaro.\nNão seremos capazes de salvar vidas se negligenciarmos qualquer um desses necessários desafios para a luta\nsocialista.\nA política de assistência social compõe o tripé da seguridade social, concepção inaugurada na Constituição\nFederal de 1988, regulamentada pela Lei Orgânica da Assistência Social (Lei 8.742/93), mas estabelecida\nsomente em 2011, sendo, portanto, a política da seguridade social mais tardiamente organizada, devido a vários\nfatores. Dentre eles, é sabido que a área da assistência social historicamente foi utilizada como meio de ações\npopulistas sem efetivamente atuar contra os impactos da miséria e desigualdade social."
+          },
+          {
+            "id": "ao-longo-dos-anos-a-classe-trabalhadora-construiu-o-sistema-unico-de-ass",
+            "titulo": "Ao longo dos anos, a classe trabalhadora construiu o Sistema Único de Assistência Social (Suas)",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Ao longo dos anos, a classe trabalhadora construiu o Sistema Único de Assistência Social (Suas)\nmantendo-se a luta por seu financiamento e gestão. Na perspectiva do controle democrático, além dos\nConselhos Municipais, Estaduais e Nacional da Assistência Social, estão organizados os Fóruns de\nTrabalhadores do Suas, nas três instâncias.\nCom estes pontos básicos, é fundamental a divulgação do conhecimento da trajetória de construção da política\nde assistência social como um dos mecanismos de enfrentamento às expressões da questão social que atingem\nestruturalmente e conjunturalmente os mais explorados, mas podendo recair contra o conjunto de trabalhadores.\nHistoricamente, reivindica-se 5% do orçamento público para a assistência social. É evidente que para todos\nque vivem em miséria os recursos e benefícios socioassistenciais geram impactos inegáveis, mas cabe refinar\na defesa quanto aos mecanismos que avancem em questões como renda básica, garantias para famílias\nresponsáveis por pessoas com deficiência ou doenças impeditivas de autonomia, fomentar o protagonismo\npolítico dos usuários, investir em outra lógica do acesso a políticas e do chamado “exercício de cidadania”.\nO obsceno aumento de milionários brasileiros apenas reforça a urgência de aprofundar o entendimento da\npolítica de assistência social, revisar as propostas existentes em outras experiências (ainda que seja nos marcos\ncapitalistas) para ter uma ação formativa e propositiva articulada aos trabalhadores e, quiçá, usuários. As\npolíticas sociais são expressões do próprio estado capitalista, sabemos, mas podem ter momentos de respiro\npara a velha toupeira ter uma atuação, sem ilusões, mas de modo crítico e com um horizonte minimamente\ndemocrático.\nTrabalharemos para que todo o povo baiano tenha direito ao menos a três refeições por dia. Pela extensão do\nPrograma Bolsa Família assim como aos programas sociais federais. Fortaleceremos a educação de qualidade,\na educação básica, articuladas com a União e os municípios. Apoiaremos a saúde, particularmente a pública.\n\nPropomos:\n1.Concretizar uma Vigilância em Saúde participativa com reconhecimento de saberes do cotidiano de\npopulações vulnerabilizadas, originárias, tradicionais, do campo, água e florestas; para respostas rápidas pelo\npoder público no qual o povo é protagonista da transformação; 2.Expandir a Atenção Básica como organizadora\nda rede, instituindo equipes multiprofissionais segundo necessidades de saúde territoriais (Saúde da Família,\nSaúde Bucal, Saúde Mental, Saúde do Trabalhador, Consultório na/de Rua, entre outros);3. Efetivar o SUAS\ncom a gestão plena e direta, portanto, com a estatização da política de assistência social; 4. Garantir 5% do\norçamento público federal para a efetivação do SUAS; 5. Realizar concursos públicos e investimento real nas\ncondições de trabalho e estruturação dos serviços socioassistenciais; 6. Atuar para transformar os conselhos\nnacionais, municipais e estaduais de Assistência Social em Comitês Populares de Mobilização e Participação\nna Assistência Social (Compas), com real caráter deliberativo e autônomo para definir o montante e uso do\nfundo público destinado à assistência social em cada esfera de governo; 7. Garantir a qualidade dos serviços\nnos diferentes territórios, considerando aspectos socioculturais e ambientais; 8. Defender que o Programa Bolsa\nFamília seja transformado em política pública de Renda Básica de Cidadania Universal; 9. Revogar a Reforma\nda Previdência implementada pelo governo Bolsonaro;\n10. É preciso proteger as crianças e a infância, garantir-lhes o direito ao brincar. Assegurando saúde,\nalimentação, educação e bem-estar na primeira infância, a criança e ao adolescente, garantindo perspectivas,\ncombatendo a exploração do trabalho infantil, a violência, a exploração sexual e todas as formas de\npreconceitos e discriminações; 11. Garantir políticas que assegurem os direitos dos idosos com envelhecimento\nsaudável, com a ampliação e fortalecimento dos serviços.\nTerra, comida, soberania alimentar, uma proposta de fortalecimento da agricultura baiana\nNosso compromisso é colocar o povo no orçamento, apoiar a proteção social a todas as formas de ocupação,\ndar atenção aos que trabalham por conta própria, domésticos, teletrabalho. Realizar amplo diálogo com as\nrepresentações sindicais, promover solução dos conflitos e direito à greve. Apoio às políticas assistenciais e\nprevidenciárias assim como aos pequenos municípios."
+          },
+          {
+            "id": "a-fome-e-um-fenomeno-que-atravessou-a-historia-do-brasil-desde-o-periodo",
+            "titulo": "A fome é um fenômeno que atravessou a história do Brasil desde o período da colonização. Ela é um dos",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "A fome é um fenômeno que atravessou a história do Brasil desde o período da colonização. Ela é um dos\nprodutos das relações econômicas, políticas e sociais que produzem a desigualdade e a miséria, sendo, portanto,\num fenômeno estrutural. Ela é corporificada, generificada, racializada e territorializada. É um fenômeno que\nconstitui parte essencial da história de vida de muitas brasileiras e brasileiros. E por isso é também algo que ao\nmesmo tempo une e distingue nossa população.\nNo entanto, a fome enquanto fenômeno de natureza múltipla nunca foi totalmente erradicada.\nBolsonaro em seu primeiro dia de governo, extinguiu o Conselho Nacional de Segurança Alimentar (Consea,),\nque promovia diálogo intersetorial e com a sociedade civil e foi muito importante para o desenvolvimento de\npolíticas públicas de segurança alimentar e nutricional. Também podemos citar o Programa de Aquisição de\nAlimentos (PAA), que teve orçamento reduzido, os estoques da Companhia Nacional de Abastecimento\n(Conab), que hoje são irrisórios ou o Programa Cisternas, paralisado por falta de verbas. Por isso, os níveis de\ninsegurança alimentar e fome no país aumentaram antes da pandemia, como mostrou a Pesquisa de Orçamentos\nFamiliares (POF) feita pelo IBGE em 2018.\nPrecisamos criar oportunidades que assegurem crédito facilitado, assistência técnica e, em gestão, acesso à\ntecnologia, prioridades em compras públicas e superação de burocracia. Estimular a economia solidária e o\nempreendedorismo social, que têm potencial de inclusão e geração de renda. Construir políticas de\ncooperativismo, de facilidade de acesso a mercados.\nEstamos comprometidos com a soberania alimentar, por meio de um novo modelo de ocupação, com estímulo\nà reforma agrária e agroecológica, incluindo a produção e consumo de alimentos saudáveis. O fortalecimento\nda produção agrícola, da agricultura familiar, da agricultura tradicional e da agricultura em geral. Erradicar a\nfome através da reforma agrária e políticas de abastecimento alimentar.\nApoiamos o projeto Luiz Inácio Lula da Silva de reconstrução do Brasil que criará condições de libertar a\nBahia da fome, de minorar o custo de vida, o desemprego, as desigualdades e o endividamento das famílias,\npara pôr fim a dilapidação do patrimônio do país. De superação da crise social, da precarização industrial, do\nnegacionismo, do isolamento do Brasil e de nossas conquistas civilizatórias, tendo como estratégia o\nfortalecimento do Estado.\nPropostas:\n1.Construção e financiamento de cozinhas comunitárias populares autogeridas. As cozinhas que estão em\noperação, construídas pela sociedade civil, deverão ser financiadas para melhoria de equipamentos, pagamento\ndas trabalhadoras e trabalhadores e fornecimento de alimentos; 2.Manutenção e ampliação dos programas de\ndistribuição de cestas de alimentos nutricionalmente adequadas que respeitem os hábitos alimentares dos\nbeneficiários, com prioridade para as famílias que ainda não acessaram programas de transferência de renda\ne/ou cuja renda per capita seja inferior a 1 salário mínimo; 3.Criação de um programa de distribuição de gás\npara as famílias de baixa renda. Gratuito para aquelas cuja renda per capita seja inferior a 1 salário mínimo e\nsubsidiado para aquelas cuja renda seja de até 2 salários; 4. Ampliação e implementação dos projetos de pias,\nbebedouros e banheiros públicos em toda área dos municípios, não apenas nas áreas comerciais e centrais; 5.\nProgramas de fomento para a capacitação e formalização de organizações de assistência social e alimentar e de\nagricultura urbana para que possam participar de editais. A partir desse programa, estimular a implantação de\nhortas, pomares e quintais urbanos que priorizem práticas agroecológicas e participação popular através de\nfinanciamento público; 6.Ampliação da compra pública direta da agricultura familiar e camponesa, de povos\nindígenas, quilombolas e demais povos e comunidades tradicionais produtoras ou extrativistas de alimentos;\n7.Transferir isenção fiscal, subsídios e outros benefícios concedidos aos agrotóxicos e alimentos ultra\nprocessados para os produtos produzidos pela agricultura familiar, preferencialmente orgânicos e\nagroecológicos, voltados à alimentação adequada e sustentável; 8. Apoio à produção de pesquisas sobre cultura\nalimentar, autodeterminação alimentar e situação da fome na Bahia para subsidiar políticas públicas. Fortalecer\na agenda de pesquisa em alimentação, nutrição e segurança alimentar e nutricional, estabelecendo linhas de\nfomento com recursos interministeriais e editais construídos com a participação social, apoiando projetos que\nconsiderem as múltiplas realidades das situações alimentares do país e apoio a grupos emergentes; 9.\nInvestimento público em mercados urbanos, sobretudo próximos às periferias das cidades, para a\ncomercialização de alimentos produzidos localmente e advindos da agricultura familiar das áreas rurais e\nperiurbanas com preços subsidiados aos produtos in natura e minimamente processados."
+          },
+          {
+            "id": "reorientacao-de-prioridades",
+            "titulo": "Reorientação de prioridades",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Reorientação de prioridades\nAssumimos o compromisso com a humanização do governo com prioridade aos que mais sofrem com a crise,\na fome, o alto custo de vida, aqueles que perderam o emprego, o lar e a vida em família. Seja com a reorientação\ndas políticas governamentais, o respeito aos direitos dos servidores públicos, a assistência aos agricultores, a\nigualdade dos cidadãos, a independência dos poderes.\nO nosso compromisso é com a modernização da sociedade, com o progresso, com os avanços técnicos, com o\ndesenvolvimento econômico, subordina-se a estabilidade social e política, ao desempenho de nossas indústrias,\na justiça tributária, a transparência dos orçamentos públicos. A reorientação das prioridades governamentais\ntem como fator nevrálgico os investimentos sociais como parte da retomada do crescimento econômico. Neste\nsentido assumimos a justiça social com a inclusão de direitos, como o trabalho, o emprego, a segurança\nalimentar para combater a desigualdade e a concentração de renda.\n\nOs compromissos do governo PSOL-REDE\n\n1- Uma nova política urbana\n\nNossas cidades permanecem cindidas entre ricos e pobres, entre os quais equilibram-se expressivos setores\nde remediados. Na maior parte das vezes trata-se de duas cidades, com dois modos de vida, permeadas pela\ninclusão e exclusão e organizadas com diferentes níveis de pressão sobre o poder público. No entanto, espalhase velozmente em todos os lugares, a racionalidade do capital onde as melhorias atendem cada vez mais as\nlógicas do lucro. O Poder Público tem se constituído como criador privilegiado da escassez. Vinculado\nestruturalmente aos interesses do “andar de cima” da sociedade tem seus planos de governo, suas instituições,\no emprego de recursos, suas prioridades, discurso e operacionalização vinculados a ele. Assim, os territórios\nonde uma parte pequena da população reside ou tem negócios são geridos não apenas através da política e da\ncomunicação, mas pelas vias socioculturais e da economia. As cidades são especializadas de forma a que os\nmais elevados padrões de serviços, os espaços mais valorizados, as instituições mais reconhecidas e os órgãos\nda condução política e econômica se localizam perto do 1% da população. Controla-se assim a interpretação\ndo passado, a ação sobre o presente e a prefiguração do futuro.\n2- Reorientação das transações econômicas\n\nDefendemos a reorientação das transações locais para o fortalecimento do mercado interno, seja Inter áreas,\nseja entre os estados do Nordeste ou preenchendo espaços de relação com as regiões Norte e Centro Oeste.\nPretende dinamizar o campo de relações da nossa economia e cultura com a África e com o Norte / Centro da\nárea do Pacífico da América do Sul, particularmente com Venezuela, Bolívia e Equador e Cuba, que articulam\numa linha de desenvolvimento integrado no continente. Ao invés de voltar-se para alguns grupos, cidade ou\nsetor como tem sido comuns ao sistema capitalista e seus representantes, pretende estimular energias capazes\nde alavancar nosso desenvolvimento de forma integral utilizando o mercado, redes de permutas, economia\nsolidária e outros instrumentos de gestão e planejamento contemplando: a multiplicação das relações entre\ncampo e cidade; a constituição de um pool turístico do Nordeste; o investimento no setor de transporte\nparticularmente com o estímulo das alternativas ferroviária, fluvial e metroviária; a revitalização e criação de\nzonas comerciais e industriais com incentivos fiscais.\nNo que diz respeito ao turismo há sem dúvida a multiplicação de hotéis e pousadas, a construção de aeroportos\ne equipamentos, a multiplicação de eventos e roteiros. No entanto, nem tudo são rosas no setor. O Complexo\nde Sauípe vive em crise permanente. O setor turístico sofre com a instabilidade do câmbio, com a reestruturação\nprodutiva que “enxugou” os custos operacionais e aumentou a concorrência internacional. Boa parte das\ndecisões sobre o setor não passam do papel para os pequenos e médios negociantes. Há ainda falta de\narticulação da região Nordeste de forma a potencializar os recursos investidos. A região poderia disputar o\nprimeiro lugar na entrada de turistas estrangeiros no país, no entanto todos os estados concorrem praticamente\nnas mesmas áreas de atração que registram a restrição da visita de muitos apenas ao Sudeste. Até as nossas\nprincipais festas: o Carnaval e o São João sofrem com a colonização interna e com a sua"
+          },
+          {
+            "id": "adequacao-aos-negocios-em-sacrificio-dos-aspectos-culturais-e-criativos",
+            "titulo": "adequação aos negócios em sacrifício dos aspectos culturais e criativos. Neste sentido, o “marketing agressivo”",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "adequação aos negócios em sacrifício dos aspectos culturais e criativos. Neste sentido, o “marketing agressivo”\nda BAHIATURSA tem sido acusado de homogeneizador, de passar uma imagem equivocada do povo baiano,\ne de incentivar a exploração sexual. É preciso diversificar o turismo levando em conta os novos perfis de renda\nda população brasileira, de visitantes estrangeiros e a nova realidade do mercado turístico.\n3- Um Estado capaz de planejar e que tenha uma postura ativa em relação à União.\n\nAs transformações produtivas levadas a efeito nas últimas décadas maximizaram a internacionalização das\natividades econômicas promovendo a sua desterritorialização e deslocando para o âmbito do sistema financeiro\ne das grandes corporações a responsabilidade pelas principais decisões das sociedades. A velocidade do\nprocesso reforça extraordinariamente a exclusão, desumanização e perda de identidades dando a esses\nproblemas caráter estrutural. Será preciso apoiar-se em outras tendências, entre as quais a aglutinação de\nespaços com os quais a Bahia guarda relações socioculturais comuns na América Latina, África e países onde\ntemos imigrantes, para viabilizar um projeto de construção de uma sociedade solidária. Buscaremos nas\nparticularidades do nosso povo a força para ultrapassarmos os obstáculos deste período histórico, alcançando\noutro sentido de universalidade para a qual o estado tanto contribuiu em outros momentos.\nMove-nos a ideia de que enquanto não superarmos soluções burocratizadas copiadas das adotadas nos países\ncentrais e em realidades do Sudeste será difícil avançar. O Estado baiano não pode ter uma postura passiva\nem relação à União. Seja quem for o governo federal deve encontrar projetos de interesse do estado, a\nreivindicação da moratória negociada da dívida com a União desonerando o Estado para a promoção dos\ninvestimentos necessários. A conquista de um planejamento estadual efetivo, capaz de orientar os\ninvestimentos de longo prazo, de redirecionar nossas cidades, ao qual sejam subordinados o transporte, a\nexpansão imobiliária, o controle do uso do solo e dos níveis de poluição sonora e ambiental. A busca de um\nconsenso amplo pelo desenvolvimento com justiça social.\nCriaremos um Conselho de Desenvolvimento Solidário, Sustentável, Comunitário, Ambiental e Holístico a\nquem caberá a definição das suas diretrizes gerais, um processo de Planejamento Intersetorial e Interdisciplinar.\nCoerente com a política de permear o Estado à participação popular definirá projetos de forma a contemplar o\nmaior número possível de segmentos da base de sua atuação. Os conselhos serão quadripartites com a\nparticipação (minoritária) de membros do Estado, de organizações empresariais, de organizações populares e\nde trabalhadores, de organizações independentes/fiscais. O estado tem se movido dentro de estreitos limites\nlegais sofrendo os repasses casuísticos de recursos federais, tendo a obrigação de apresentar superávits\nprimários mediante as imposições daquela instância sobre as dívidas herdadas e renegociadas algumas vezes\nna última década. Particularmente hostil ao tesouro estadual são as recomendações do Programa de\nReestruturação e Ajuste Fiscal de 1998 celebrado no governo de César Borges.\n4 - Reparação social\nRonaldo Mansur e Meire Reis consideram que a trajetória baiana mostra um contencioso com povos originários\ne africanos até hoje não reparados. Milhões de integrantes de nossas populações originais e imigrantes africanos\nforam submetidos a tratamento indigno, escravizados, humilhados, explorados e assassinados. Vários destes\npovos e comunidades desapareceram vítimas de genocídio. Outros tiveram tomado as suas terras. O estado\nbaiano deve se desculpar por sua histórica atuação anti-indígena, machista, discriminadora e escravista. Sob o\nnosso governo o estado baiano reconhecerá a dívida para com estas populações e repará-las através de políticas\npúblicas transversais que beneficiem os seus descendentes seja contribuindo para a recuperação da sua\nautoestima, a legalização das terras, o apoio às nações nativas assim como das comunidades descendentes de\nquilombos.\n5 - Uma perspectiva cidadã\nNosso programa deverá estar orientado pela construção de uma nova síntese política através do diálogo com\nas tradições populares da Bahia. Se dirige a todos os cidadãos comprometidos com a democracia, a\nsolidariedade social, o anti autoritarismo, adeptos do pluralismo e da crítica como instrumento permanente de\nmudança e desprovidos de preconceito, em uma palavra, anticapitalistas, a participar de um movimento\nprogressista e reformador em torno das idéias que permitirão enfrentar problemas do estado sempre adiados\ncolocando-o na senda do desenvolvimento sustentável com justiça social. Tem como eixo central uma nova\ncultura política, cidadã, onde os representantes políticos não escondam a sua opinião e discutam com a"
+          },
+          {
+            "id": "populacao-o-sistema-e-modelo-economico-em-curso-orientados-pela-toleranc",
+            "titulo": "população o sistema e modelo econômico em curso, orientados pela tolerância sócio espiritual e cultural e dos",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "população o sistema e modelo econômico em curso, orientados pela tolerância sócio espiritual e cultural e dos\ndireitos humanos, pela pluralidade étnica, sexual, pela proteção e assistência do Estado e da sociedade, pela\ndemocracia direta, combate implacável à corrupção e tráfico de influência, pela real independência dos poderes,\ne pela democracia direta.\nMas não basta uma proposta programática se a operacionalização for devedora da velha cultura política\nbrasileira. Na Bahia é vigente uma cultura política autoritária que tem raízes históricas e percorrem o\nimaginário de todos os atores políticos. Uma cultura política individualista e personalista de amplo consenso\nentre os representantes políticos da sociedade. O modo de fazer política caciquista e arrogante que verificamos\nna Bahia tem antecedentes. Trata-se de uma forma de relação entre o “andar de cima” e o restante da sociedade\nmediada pelo Estado construída historicamente e que resistiu a diversos regimes.\nDesta maneira é que se mantém a clientela, os modos autoritários de decisão de cima para baixo, o tratamento\nda “coisa pública” através do patrimonialismo, a falta de transparência das instituições, o atrelamento do\nLegislativo e do Judiciário ao Executivo, e a política de privilégios e de nepotismo, todos em detrimento da\npopulação. O mandato de Ronaldo Mansur e Meire Reis se orienta pelo rompimento com essa cultura política\ntradicional. Não utilizará nem deixará utilizar a máquina pública em benefício pessoal ou coletivo dos seus\nintegrantes e aliados. Permeia os órgãos, empresas e instituições estatais com a participação democrática e\npopular.\n6-A imprescindível necessidade do cuidar e educar\nTeremos preocupação essencial com a educação e a saúde. Com o fortalecimento das experiências educacionais\ndo nosso estado. Com o cuidado com o EJA, do ensino médio e profissionalizante. Não será permitida a venda\nde espaços escolares para fazer caixa do governo. O diálogo e a valorização dos trabalhadores da educação\nserão cuidados permanentes, além de sua formação continuada. Na saúde será estimulada a formação de\nequipes interdisciplinares englobando profissionais de saúde, previdência e assistência, a valorização dos\nprofissionais da saúde, a qualidade de vida das pessoas, a atenção à Terceira Idade, serão avaliados as\nestratégias de gestão do fluxo de pacientes. A Secretaria de Saúde contemplará outros olhares de saúde\nencontrados nas comunidades tradicionais e nas experiências holísticas.\n7 -O pluralismo e a restauração do público nas relações sociopolíticas\n\nO mandato de Ronaldo Mansur e Meire Reis defende uma democracia real, capaz de propiciar uma ampla\ndiscussão sobre os caminhos que devem seguir a nossa sociedade que historicamente professou os padrões\nconsumistas da sociedade ocidental capitalista que tem sido incapaz de promover o desenvolvimento\nsustentável. Isso implica no respeito e compreensão das diferenças religiosas, raciais, de gênero, etárias, e de\nopção sexual. Na garantia da liberdade de circulação de ideias, de expressão, de reunião, e organização social\ne política. Na adoção de novas relações com a técnica e a tecnologia garantindo o acesso a todas as formas de\ntratamento de saúde, técnicas e aprendizado. Na abertura a diversidade regional e a outras formas de\norganização política. No respeito à diversidade religiosa e no republicanismo que deve orientar os espaços\npúblicos.\n8 - Defesa do patrimônio socioambiental e energético do estado\n\nO mandato de Ronaldo Mansur e Meire Reis tem compromisso com a defesa das nossas baías, matas, rios e\nflorestas, subsolo, formas de energia e de qualidade de vida é mais que uma exigência socioambiental e de\nsoberania, mas também estratégica em territórios que têm cada vez mais seus recursos dilapidados pelo capital.\nDevemos proteger nosso patrimônio arqueológico, arquitetônico, sociocultural, ambiental e religioso. A\nquestão cultural deverá se colocar no centro programático de um novo projeto político.\n9 - Reforma agrária.\n\nO mandato apoiará a luta histórica para garantir uma profunda reestruturação fundiária em nosso estado\npromovendo uma nova articulação cidade-campo, peça central na promoção do desenvolvimento sustentável,\na massificação, doação e legalização da posse da terra, garantir o apoio técnico, na comoditização de produtos\nagroindustriais, na integração de cadeias produtivas e na organização de cooperativas. Isso implica numa nova\nrelação com o segmento do agronegócio que deve ser tratado pelo Estado sem privilégios em relação a outros\nsegmentos agrícolas, a exemplo de financiamentos e do cumprimento a legislação"
+          },
+          {
+            "id": "trabalhista-e-desestimulando-se-a-utilizacao-de-grandes-extensoes-de-ter",
+            "titulo": "trabalhista, e desestimulando-se a utilização de grandes extensões de terra para a produção agrícola, e",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "trabalhista, e desestimulando-se a utilização de grandes extensões de terra para a produção agrícola, e\nexaminado à luz dos benefícios que realmente trouxer para as populações.\n10 - Independência dos poderes, com justiça e fim da impunidade.\n\nO mandato de Ronaldo Mansur e Meire Reis cumprirá as atribuições republicanas próprias ao poder executivo,\nnão interferindo no Legislativo e no Judiciário. Apoiará a atuação do Ministério Público, da DRT, dos conselhos\nambientais e outros órgãos fiscalizadores. Estará ao lado da modernização desses poderes que preveja seu\ncontrole externo, o fim do nepotismo e da corrupção, a sua profissionalização. Incentivará mecanismos de\nampliação de funções de mediação e arbitragem judiciais e de segurança nas comunidades.\n11 - Prioridade na classe trabalhadora .\n\nO governo de Ronaldo Mansur e Meire Reis adotará a execução dos orçamentos públicos orientada pela\ngarantia do emprego local. A prioridade das verbas e do orçamento para a saúde e educação públicas. O urgente\nfim do analfabetismo e do trabalho escravo. A cobertura integral do estado dos programas de saúde da\ncomunidade e da família. O apoio aos órgãos de fiscalização da legislação social, sanitária, ambiental e das\nrelações de trabalho. O pagamento dos índices de inflação aos trabalhadores públicos com recuperação\nnegociada das suas perdas salariais e a reestruturação de suas carreiras tornando-as mais interessantes e\ncriativas. A valorização da atividade policial, a integração das polícias e a abertura de discussão do Estatuto do\nPolicial Militar. A exigência de contrapartidas trabalhistas e institucionais das empresas que recebem\nbenefícios do Estado.\n12 - Combate às desigualdades regionais.\n\nA Bahia dispõe hoje de uma rede de cidades que se constituem em espinha dorsal do território baiano e que\nconcentram importantes fluxos econômicos sendo lideranças políticas do processo de desenvolvimento\nregional e bases indispensáveis ao desenvolvimento estadual. No entanto, as regiões permanecem\ndesarticuladas e não integradas ao desenvolvimento do estado. Os eixos de desenvolvimento devem contemplar\no estado em sua globalidade fugindo das políticas adotadas pelas elites dominantes que sempre tendem a\nconcentrar os recursos de formas a priorizar grupos, setores, eleitores e cidades de seu interesse. Assim estes\nabarcarão todo o estado, seja nas áreas do litoral ampliado, áreas das extremidades do território no Oeste e no\nNorte baiano e áreas localizadas no centro do estado constituídas por atividades de baixa densidade econômica\ne/ou por atividades quase que de subsistência. Os eixos devem também expressar as principais ligações da\nBahia com o Sudeste e o Nordeste que pretendemos ampliar. Aquelas passam atualmente de forma física pelas\nextremidades do nosso território através de via rodoviária (no caso do Sudeste) e pelo Rio São Francisco (no\ncaso do Nordeste). No entanto, o estado apresenta até hoje o fenômeno da migração temporária em períodos\nsazonais de expansão em outros estados, influência de fenômenos econômicos gerados em outros estados, o\nestado depende essencialmente do transporte rodoviário. Desta forma conjuga pouca capacidade de intervenção\nem fatores fulcrais para o seu desenvolvimento e tem sido prejudicado pelo envelhecimento sem manutenção\nda nossa malha rodoviária. A disputa que se verifica entre os governos federal e estadual agravou\nsubstancialmente os investimentos e a situação das vias levando a existência de pontos literalmente\nintransitáveis, a acidentes e ao encarecimento da circulação de mercadorias.\n13. Descriminalização do aborto\nA garantia de direitos sexuais e direitos reprodutivos, além de política de saúde pública, visa a prevenção de\nabortos inseguros e ilegais, tratando o tema como direito fundamental de pessoas subalternizadas pela condição\nde pobreza e raça, dando autonomia para decidir sobre seus corpos com a garantia de dignidade. Na sua maioria,\nsão mulheres negras e em condição de desigualdade extrema as maiores vítimas letais de procedimentos\nprecários recorridos em situações de desamparo.\nA centralidade da questão racial no Brasil pauta nossa concepção de justiça reprodutiva para além da escolha\nde gestar. A partir da noção de justiça reprodutiva, apontamos também a urgência de reorientar um sistema\ncriminal que oprime quem precisa e quer interromper uma gestação, e assegurar o direito à maternidade\ndesejada e digna, livre de violência obstétrica e mortalidade ou esterilização forçada e eugenista de mulheres\nracializadas e pessoas com deficiência.\nO avanço da dignidade e autonomia salarial das mulheres passa por uma reforma na concepção da lógica dos\ncuidados, seja na distribuição de tarefas familiares e de reprodução da vida, seja na participação do Estado"
+          },
+          {
+            "id": "atraves-de-politicas-publicas-que-permitam-a-mulheres-sobretudo-maes-ded",
+            "titulo": "através de políticas públicas que permitam a mulheres, sobretudo mães, dedicarem tempo ao lazer e à formação",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "através de políticas públicas que permitam a mulheres, sobretudo mães, dedicarem tempo ao lazer e à formação\neducacional e profissional. Mulheres representam hoje 52% do eleitorado brasileiro, mas ainda são minoria\nentre as eleitas: nunca chegam a 20%. Além do processo de exclusão histórica, ao ocuparmos esses espaços\nsomos marcadas pela violência política de gênero, em especial as mulheres negras e trans. Mandatas feministas\nsão fundamentais para o avanço na representatividade institucional.\nA Bahia não pode continuar um dos estados onde as mulheres são mais discriminadas e submetidas à violência.\nO Estado deve assegurar a proteção da dignidade humana das mulheres e ter políticas públicas eficientes para\ngarantir suas vidas, equidade de direitos, salários iguais aos homens e estímulo à promoção feminina na ciência,\nna educação, na cultura, na representação política e gestão pública. É preciso investir na proteção das vítimas\ne suas famílias e assegurar que não haja impunidade para desestimular as agressões, fortalecer o SUS para que\nas mulheres tenham acesso à prevenção de doenças.\nPor isso, propomos:\n1. Educação sexual em unidades escolares e de saúde básica, incluindo regiões rurais e comunidades\ntradicionais, abordando a prevenção à violência sexual, doméstica e de gravidezes precoces ou indesejadas.\nSaúde reprodutiva para além da lógica materno infantil e assegurando a escolha ou abstenção do uso de\ncontraceptivos; 2.Dignidade menstrual para pessoas em vulnerabilidade social; 3.Acesso a contraceptivos e\naborto legal pelo SUS; 4.Aborto legal e seguro; 5.Universalizar o acesso a creches públicas e inclusão de\nperíodo noturno de cuidados infantis em zonas urbanas e rurais; 6.Criação de restaurantes comunitários geridos\npor cooperativas locais com unidade campo-cidade como medida emergencial de enfrentamento à fome e\ngeração de renda; 7.Criar o Programa de Reconhecimento de Tempo de Serviço por Trabalhos de Cuidado, em\nque os períodos dedicados ao cuidados doméstico sejam contabilizados para aposentadoria, sendo aptas a\nreclamar os benefícios pessoas responsáveis pela manutenção dos cuidados com a casa da família e\nresponsáveis pelos cuidados com as crianças, pessoas com deficiência e dependentes por condição de saúde e\nmães beneficiárias de programas assistenciais parentais; 8.Centros de referências de atendimento à mulher em\ntodas as cidades, a fim de assegurar o acesso das mulheres ao serviço; 9.Casas de acolhimento provisório para\nmulheres em situação de violência que não estejam em risco iminente de morte mas necessitem de residência\ntemporária e rápida resolução para o seu caso; 10.Patrulhas Maria da Penha com a utilização de viaturas e\nequipes das guardas municipais na realização de visitas residenciais periódicas às mulheres em situação de\nviolência doméstica; 11.Delegacias Especializadas no Atendimento à Mulher (Deam) 24 horas por dia e 7 dias\npor semana; 12.Capacitação permanente sobre diversidade de gênero e raça às equipes da rede de\nenfrentamento à violência contra as mulheres; 13.Ações de caráter preventivo, no campo da educação, e\ncriação de programas de responsabilização e reflexão para homens autuados por crimes de violência contra a\nmulher, com o objetivo de diminuir os níveis de reincidência e produzir masculinidades calcadas no respeito e\nna não-violência; 14.Criar espaços de referência para atendimento, acolhimento e reinserção no mercado de\ntrabalho de mulheres egressas do sistema prisional e suas famílias; 15.Garantir o cumprimento das cotas de\nmulheres candidatas, com tempo de rádio, televisão e financiamento;\n16.Reforma política para implementar a paridade na representação parlamentar e a avaliação das proporções\nde representação social a partir da realização de um censo demográfico que leve em conta também\ncaracterísticas étnicas; 17.Implementação universal de cotas de 30% nas mesas diretoras e comissões\nlegislativas.\n14. Vidas negras importam:\nO racismo é um dos alicerces da exploração e da opressão no Brasil, reafirmamos o compromisso estratégico\ndo Psol com a luta antirracista e nos colocamos como instrumento útil para dar visibilidade às reivindicações e\npautas do movimento negro. É preciso implementar políticas públicas de promoção da igualdade racial e de\ncombate ao racismo institucional, o enfrentamento da pobreza, das desigualdades, a realização de ações\nafirmativas para a população negra em várias áreas, reverter o genocídio e a perseguição que grassa junto à\njuventude negra, combater a violência policial contra os povos e comunidades tradicionais de matriz africana\ne de terreiro. Assegura cotas sociais e raciais na educação superior e nos concursos públicos.\nPropomos:"
+          },
+          {
+            "id": "1-a-garantia-do-direito-a-creche-essencial-as-criancas-e-as-maes-trabalh",
+            "titulo": "1. A garantia do direito à creche, essencial às crianças e às mães trabalhadoras; 2. Garantia do direito e",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "1. A garantia do direito à creche, essencial às crianças e às mães trabalhadoras; 2. Garantia do direito e\npreservação da infância negra, que permita que meninas negras e meninos negros tenham o direito de ser\ncrianças; combate a todo e qualquer processo de uso de estereótipos, criminalização, sexualização e exploração\ndo trabalho infantil; Enfrentamento às tentativas de redução da maioridade penal; Defesa contundente do\nEstatuto dos Direitos da Criança e do Adolescente; 3. A luta pela manutenção da vida de negras e negros e a\nbusca pela liberdade efetiva dos nossos corpos, o que inclui assegurar direitos sexuais e reprodutivos e não\nexposição livre do racismo institucionalizado e da violência obstétrica; 4. A efetivação do direito à saúde, com\na manutenção e aperfeiçoamento do Sistema Único de Saúde (SUS), considerando as especificidades da saúde\nda população negra, conforme definido no Estatuto da Igualdade Racial e estabelecido pela Política Nacional\nde Saúde Integral da População Negra, com aplicação dos recursos necessários, combate ao racismo\ninstitucional e investimento na promoção dos saberes das comunidades de terreiro, de práticas de cuidado e\nautocuidado, no acesso às tecnologias em saúde, na prevenção e promoção da saúde e ambiente saudável, com\natenção especial à saúde mental; 5. A preservação, proteção, certificação e titulação, como garantias de\npropriedade e reconhecimento coletivos dos territórios quilombolas, assegurando recursos orçamentários para\na elevação da qualidade de vida nesses quilombos e comunidades tradicionais de matrizes africanas; a proteção\ndo patrimônio genético de comunidades quilombolas e tradicionais; além da difusão dos modos de vidas\ncomunitários e ancestrais reconhecidos como patrimônio por suas práticas e saberes; 6. A garantia do direito\nde consulta prévia, livre e informada às comunidades quilombolas, dos rios, das florestas e de terreiro, de\nacordo com a Convenção 169 da Organização Internacional do Trabalho (OIT), a respeito de todas as medidas\nlegislativas e administrativas que afetem direta ou indiretamente seus direitos, sobretudo aquelas relacionadas\na grandes empreendimentos que afetam seus territórios e modos de vida; 7. O direito à educação pública,\ngratuita, laica e de qualidade, em todos os níveis de ensino, com continuidade das leis de cotas e outras políticas\nde ação afirmativa voltadas ao acesso e à permanência de estudantes negras e negros nas universidades,\ninstituições de ensino básico, técnico e tecnológico, concursos públicos, sistema de justiça e sua extensão a\nprogramas de pós-graduação, estágios, residências, concursos docentes e bolsas de iniciação científica,\nmestrado, doutorado, pós-doutorado e a outras formas de acesso aos processos de pesquisa e desenvolvimento;\n8. A efetivação e o monitoramento, desde a educação infantil, do cumprimento do artigo 26A da Lei de\nDiretrizes e Bases da Educação Nacional, da Resolução 01/2004 do Conselho Nacional de Educação e das\nDiretrizes Nacionais Curriculares para o ensino de História e Cultura Africana e Afro-Brasileira e para a\nEducação das Relações Étnico-Raciais, que tornaram obrigatório, em todos os níveis de ensino, o estudo da\nhistória e cultura africana e afro-brasileira, a partir da Lei 10.639/2003; 9. A garantia da oferta de educação\nescolar quilombola, respeitando-se as diretrizes específicas já estabelecidas e as realidades dessas\ncomunidades; 10. A oferta de educação de jovens e adultos a pessoas negras, tanto para a alfabetização de toda\na população, como na promoção da escolarização alternativa ao ensino regular, que atenda às demandas\nespecíficas das diferentes fases da vida de negras e negros; 11. A cobrança da coleta, análise, publicação e\ndisseminação de dados estatísticos confiáveis em níveis local, regional e nacional sobre a população negra,\nbaseadas no princípio da autodeclaração; a defesa do Censo 2020, incluindo a dotação orçamentária adequada\npara sua realização, sem cortes relacionados à produção de indicadores fundamentais à elaboração de políticas\nsociais, de ações afirmativas e eliminação das desigualdades étnico/raciais; 12. A criação de uma nova\npolítica/lei nacional de drogas que regule e descriminalize o uso e comércio de drogas no Brasil, estabelecendo\npolíticas econômicas de reparação para pessoas, famílias e territórios atingidos pela guerra às drogas e\ninvestindo em estratégias de cuidados tal qual as políticas de redução de danos; 13. O fim da militarização das\npolíticas de segurança pública em nossas comunidades, para que se coíba o uso da violência racial que tem\nproduzido altos índices de homicídios contra a população negra; a promoção de políticas de segurança pública\nbaseadas em Direitos Humanos; 14. O fim do encarceramento em massa, das torturas, violações e mortes\npromovidas em presídios, delegacias, casas de detenção e centros de cumprimento de medidas socioeducativas;\nalém da fiscalização, e prevenção, rumo a um projeto anti punitivista e ao fim das prisões; 15. A erradicação\ndo racismo ambiental com promoção de políticas que garantam o acesso universal das populações urbanas e\nrurais à moradia digna, à cidade, à terra, à água potável, ao saneamento básico; bem como a promoção da\nsoberania alimentar e o acesso à alimentação saudável, adequada e com qualidade, livre de agrotóxicos e\ntransgênicos, a defesa dos bens comuns e proteção contra a mercantilização dos recursos naturais – inclusive\nas águas e às florestas; 16. A garantia do princípio constitucional de liberdade de crença e proteção aos locais\nsagrados das religiões de matriz africana; a adoção de medidas eficientes de combate à intolerância religiosa\ne ao racismo religioso;\n17. A participação efetiva de pessoas negras com trajetória junto a movimentos negros, comprometidas com a\nluta antirracista e com a defesa dos direitos humanos e da democracia na vida pública, incluindo a"
+          },
+          {
+            "id": "necessidade-de-representacao-equanime-na-politica-institucional-18-o-est",
+            "titulo": "necessidade de representação equânime na política institucional; 18. O estímulo à candidaturas negras do",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "necessidade de representação equânime na política institucional; 18. O estímulo à candidaturas negras do\ncampo progressista, com vistas a disputa real de poder, bem como forma de praticar, em momentos eleitorais,\no exercício da elevação da consciência da população negra sobre a importância do voto negro e da superação\nda desigualdade de representação política no Congresso Nacional, nas Assembleias Legislativas, Câmaras de\nVereadores e nos Executivos de todas instâncias; 19. A democratização e regulamentação da mídia; o\nfortalecimento da mídia negra, periférica e popular, encaminhamento e monitoramento das denúncias de\npublicação, circulação ou difusão, por qualquer forma e/ou meio de comunicação, inclusive a internet, de\nqualquer material racista ou racialmente discriminatório, incluindo abordagens e imagens que exponham, como\nexpresso no Estatuto da Igualdade Racial (Lei 12.288/2010), às pessoas e grupos ao ódio e ao desprezo e à\nintolerância por motivos fundados na religiosidade de matrizes africanas; 20. A erradicação do racismo\ninstitucional em todas as instâncias do sistema de justiça; 21. A defesa da livre manifestação e atuação dos\nmovimentos sociais e a proteção de defensoras e defensores de direitos humanos.\n15. Direito à identidade e a inclusão de pessoas LGBTQIAPN+\nO preconceito contra pessoas LGBTQIAPN+ começa na infância e na adolescência, contribuindo para a evasão\nescolar. Pessoas trans são as principais vítimas dos crimes de ódio, constituem o grupo mais vulnerabilizado à\nepidemia de HIV/Aids, são estigmatizadas e também sofrem a exclusão e a discriminação no acesso à educação,\nà saúde, ao emprego e à moradia.\n\nA LGBTfobia está a serviço do lucro e da manutenção do desemprego estrutural. Diversas empresas não\ncontratam pessoas LGBTQIAPN+ e é comum que, quando se assumem, jovens LGBTQIAPN+ sejam vítimas\nda expulsão de seus lares. Muitos locatários se recusam a firmar contrato com LGBTQIAPN+. E para quem\nnão pode pagar ou cumprir as exigências, especialmente pessoas trans, o destino é viver na rua.\nNão haverá democracia na Bahia enquanto baianos continuam sendo agredidos por sua orientação sexual.\nBuscamos garantir os direitos, o combate à discriminação e o respeito à cidadania LGBTQIAP+ em suas\ndiferentes formas de manifestação, assim como garantir o direito a saúde integral desta população, a inclusão e\npermanência na educação e no mercado de trabalho e o reconhecimento das suas identidades.\nAlém de ser um dos países que mais mata pessoas LGBTQIAPN+ no mundo, a violência contra a comunidade,\nsomada às experiências de racismo estrutural, expõe as pessoas LGBTQIAPN+ a uma das polícias mais\nassassinas e violentas do mundo.\nDiante deste cenário, propomos:\n1.Diálogo com as LGBTQIAPN+, para elaboração e controle social de políticas públicas; 2.Prevenir a\ndiscriminação e o preconceito contra as pessoas trans na infância e adolescência, na educação e na mídia;\n3.Acolhimento, moradia e inclusão social para as pessoas trans expulsas de casa e/ou em situação de rua;\n4.Prevenir e enfrentar o bullying e a violência LGBTfóbica e promover respeito e valorização da diversidade,\ncom material de formação contra o preconceito, sobre diversidade de gênero e sexualidade para a preparação\nde educadores e estudantes; 5.Uso de nome social nas escolas e banheiros adequados à identidade de gênero\nauto percebida; 6.Programa nacional de prevenção do abandono escolar e de reinserção no sistema educativo,\nem todos os níveis; ações afirmativas para o acesso e permanência nas Instituições de Ensino Superior; 7.\nProgramas de assistência social, orientação e formação técnica e profissional; campanhas de valorização do\nemprego trans; 8. Inclusão, na legislação trabalhista, de normas contra a discriminação e o assédio moral\nLGBTfóbico nas empresas e no setor público; 9. Cotas no serviço público para travestis e pessoas trans; cotas\nde diversidade sexual e de gênero em empresas; 10. Produzir dados sobre pessoas LGBTQIAPN+ em situação\nde rua e articular as políticas de assistência social e habitação, com unidades de acolhimento e políticas\nafirmativas para habitação popular; 11. Capacitação e o treinamento das polícias e forças de segurança, a\nrespeito da diversidade sexual; 12.Inclusão da motivação de discriminação por identidade de gênero e\norientação sexual nos protocolos de atendimentos da Segurança Pública, com produção de estatísticas regionais\ne federais.\n16. Juventude\nInterromper o genocídio da juventude negra, pelo direito à vida, justiça climática e promoção de empregos para\ngarantir o presente, investir em educação, cultura e tecnologia para garantir nosso direito ao futuro!"
+          },
+          {
+            "id": "somos-a-maior-geracao-de-jovens-do-brasil-com-cerca-de-50-milhoes-de-pes",
+            "titulo": "Somos a maior geração de jovens do Brasil, com cerca de 50 milhões de pessoas entre os 15 e 29 anos,",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Somos a maior geração de jovens do Brasil, com cerca de 50 milhões de pessoas entre os 15 e 29 anos,\ntotalizando um quarto da população. Os jovens negros e pardos representam a maioria da juventude. De acordo\ncom dados da Pesquisa Nacional por Amostra de Domicílios (PNAD) 2019, 46,8% dos brasileiros se declaram\ncomo pardos, 9,4% como pretos, 42,7% como brancos e 1,1% como amarelos ou indígenas. Sabemos que a\nforma como um país trata a sua juventude hoje define como será esse país no amanhã e, diante das políticas do\ngoverno Bolsonaro, vemos cada vez mais uma geração marcada pelo medo, frustração, genocídio e trabalho\nprecarizado. Para conquistarmos o direito ao futuro, precisamos reconquistar o direito à vida, recuperar o meioambiente, promover empregos para garantir o presente e investir em educação, cultura e tecnologia para\nvoltarmos a sonhar.\nVivemos no mundo uma ofensiva contra os direitos das juventudes e dos trabalhadores e trabalhadoras. Para\ndar respostas à crise econômica originada nos bancos e no centro global, o capitalismo reinventa as formas de\nexploração contra as maiorias para salvar os super-ricos. Essa etapa do neoliberalismo impõe sobre as agendas\ndos governos a necessidade de aplicar reformas que ameaçam os nossos direitos e o futuro da nossa geração.\nO governo Bolsonaro aprofundou um reordenamento ultraliberal do Estado brasileiro, gestado a partir da crise\neconômica e do golpe institucional, ainda que para isso tenha se erguido em um marketing antisistêmico - e contraditoriamente apoiado em ideias anti-ciência, do fundamentalismo religioso, patriarcal,\nLGBTfóbico e supremacista branco. Bolsonaro é inimigo da juventude. Em seu governo, cortou da educação,\nincentivou as catástrofes ambientais, censurou as produções culturais, institucionalizou o genocídio em curso\ncontra jovens pobres e pretos.\nNossa juventude merece respeito, garantia de emprego, segurança, alimentação e perspectiva. Pretendemos\ngarantir na Bahia novas e mais oportunidades para a juventude, com acesso à educação e à cultura e geração\nde empregos de qualidade, além do direito à vida com dignidade e aos sonhos.\nPropomos:\n1. Que todos os estudantes tenham acesso a moradia, alimentação, transporte, apoio social, didático e\npsicológico - independente da família ter condições para tal - é essencial para a efetivação da política de cotas\ne democratização da universidade. Devemos apontar para 3,5 bilhões para o Programa Nacional de Assistência\nEstudantil (PNAES) e a transformação do decreto em política de Estado através de Lei; 2. Ampliação do acesso\ncom transição planejada das vagas criadas pelo PROUNI e o FIES para as universidades públicas: O PROUNI\ne o FIES foram programas responsáveis pela ampliação da entrada de estudantes de baixa renda no Ensino\nSuperior. No entanto, também teve como consequência a formação de grandes tubarões do ensino, que aplicam\no projeto de mercantilização. É necessário planejar uma transição das vagas criadas pelos dois programas em\nnovas vagas no ensino superior público, defendendo que todos os estudantes que já integram os programas ou\nvenham a integrar no período de transição, tenham o direito de terminar seus cursos assegurado que os jovens\ntenham condições de permanecer ou regressar às suas terras originais, e serem assim contemplados pelos\nprogramas, projetos e ações para a juventude.\n17. Apoiar as instituições do Estado voltadas para os indígenas existentes na Bahia\n1. Criar mecanismos específicos de proteção a indígenas defensores de direitos humanos, com recursos\nfinanceiros e estrutura administrativa condizente; 2. Atuar transversalmente para promover a assistência\nintegral à saúde indígena e à educação bilíngue, respeitando as especificidades culturais e sociais dos povos\nindígenas; 3. Proteger os direitos e os territórios dos povos indígenas, quilombolas e populações\ntradicionais assegurando a posse de suas terras e impedindo atividades predatórias, assegurar-lhes cidadania\ne valorização de sua cultura e conhecimentos tradicionais.\n18. Agenda ambiental\n1. Propor medidas legislativas e administrativas que estabeleçam mecanismos de rastreabilidade de produtos,\nem respeito à devida diligência, para garantir que não sejam resultantes de conflitos territoriais, explorações\nilegais de terras indígenas e áreas ilegalmente degradadas; 2.Reconhecer a contribuição dos povos\nindígenas, quilombolas e comunidades tradicionais na preservação da biodiversidade brasileira, criando\nmecanismos de reconhecimento pelo serviço ambiental prestado e incentivando iniciativas"
+          },
+          {
+            "id": "indigenas-como-as-brigadas-indigenas-anti-incendio-3-especial-atencao-am",
+            "titulo": "indígenas, como as brigadas indígenas anti-incêndio; 3.Especial atenção ambiental, as mudanças",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "indígenas, como as brigadas indígenas anti-incêndio; 3.Especial atenção ambiental, as mudanças\nclimáticas, cuidando de nossas riquezas naturais assim como com a produção e consumo responsável. 4.\nApoiar sistemas alimentares saudáveis e avanço na transição ecológica e energética, assim como a\nconservação, e o uso sustentável da biodiversidade dos biomas do estado. 5. Combate a milícias, grilagem\ne a qualquer organização que aja ao arrepio da lei, assim como ao desmatamento ilegal pugnando pela\nrecomposição das áreas degradadas e pelo reflorestamento dos biomas.\n19. Cultura e fortalecimento de identidades\nAinda que a cultura jamais tenha ocupado um espaço central no debate político, não se pode ignorar que ela\nrepresenta um campo em que o capitalismo contemporâneo exerce, cada vez mais e com maior voracidade, sua\nação predatória.\nUma que reconhece seu valor civilizacional e sua capacidade de emancipação humana. Nesta perspectiva a\ncultura constitui um direito básico, da mesma forma que a saúde, a educação ou a moradia, pois constrói a\nidentidade de um povo, o emancipa, aguça os sentidos, aprimora e amplia a compreensão de mundo e de nós\nmesmos. Arte e cultura são práticas sociais que permitem a representação e a fabricação do mundo. Por isso,\nem todos os tempos há quem tente domesticá-las, transformando bens simbólicos em produtos que se compram\ne vendem, incluídos na lógica da competitividade e da meritocracia. Esta corresponde à segunda concepção de\ncultura, gestada, parida e sustentada pelo capitalismo.\nCom o início da construção do Sistema Nacional de Cultura (SNC) a partir de 2005, estados e cidades dos mais\ndiversos tamanhos e vocações culturais começaram a implantação dos seus Sistemas de Cultura, pensando a\ntríade: Conselhos, Planos e Fundos de Cultura. Foi na construção coletiva e popular, que esse modelo\nsistemático começou a ser implantado e hoje é reivindicado pelos Movimentos de Cultura de todo Brasil como\npolítica de cultura estruturante.\nO PSOL e a REDE têm compromisso com a cultura, a diversidade da sociedade, o combate a todas as formas\nde violência, opressão e discriminações, assim como a dignidade humana de todas as os/as baianos/as. A\ncultura é essencial para a reconstrução e desenvolvimento do país. É preciso ampliar a ação das instituições\nculturais e do sistema estadual de cultura assim como sua articulação nacional. Propomos políticas de direitos\nao esporte e ao lazer e o seu fomento como inserção na agenda estadual. Fortalecer a gestão pública do sistema\nesportivo e o fortalecimento de um Sistema Nacional.\nPor isso, propomos:\n1. Orçamento compatível com a importância social da Cultura. Garantia de 1,5% do orçamento do estado para\na cultura, conforme sugerido pela UNESCO; 2.Editais, leis, programas e fundos, com mecanismos de\ndescentralização territorial e ações afirmativas, dotação orçamentária própria, comissões julgadoras plurais\ne democráticas (com participação da sociedade civil organizada) e busca ativa nas inscrições, apoio técnico\npara a participação dos interessados e desburocratização; 3.Transparência, controle e participação social\nefetivo da população na criação e gestão das políticas culturais; 4. Participação ativa dos trabalhadores\nculturais no aconselhamento das políticas públicas da cultura.\n20. Gestão pública do esporte e lazer:\n1. A recuperação da gestão pública do Esporte e Lazer requer um conjunto de medidas; 2.Reforçar o\nfinanciamento público direto para o esporte e lazer; 3.Destinar os gastos orçamentários exclusivamente\npara a garantia do esporte e lazer como direito, nos programas de fomento à vivência esportiva com fins\neducacionais e de participação; 4.Concentrar a renúncia fiscal em projetos inclusivos e\nparticipativos;5.Destinar os recursos extra orçamentários de empresas estatais para a garantia do esporte e\nlazer como direito e para a iniciação e para a excelência esportivas; 6.Exigir contrapartidas sociais dos\nrecursos públicos e renúncias fiscais dos clubes com o estabelecimento de ingressos sociais, acessíveis à\npopulação de baixa renda.\n21. Reforma urbana:"
+          },
+          {
+            "id": "se-ha-um-acordo-sobre-colocar-o-povo-no-centro-das-decisoes-sobre-politi",
+            "titulo": "Se há um acordo sobre colocar o povo no centro das decisões sobre políticas e orçamento, grande parte desse",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Se há um acordo sobre colocar o povo no centro das decisões sobre políticas e orçamento, grande parte desse\ndesafio está em investir na política urbana. Este desafio apresenta três urgências. A primeira, enfrentar a lógica\nde desigualdades e violências urbanas, das quais nossas cidades são o mais perfeito retrato. As precariedades\nsob as quais vivem as trabalhadoras e trabalhadores, mulheres, a população negra, juventude, crianças, idosos,\npessoas com deficiência, população LGBTQIAPN+ e indígenas precisam ser enfrentadas prioritariamente.\nÉ fundamental afirmar que “quando a cidade for boa para as mulheres negras, ela será boa para todo mundo”.\nÉ dessa premissa que partimos para pensar uma reforma urbana no país, invertendo a lógica histórica das\ncidades brasileiras, considerando que as periferias urbanas são, majoritariamente, femininas, negras e\nindígenas. Essa mudança se faz com garantia de orçamento. O Poder público deve recuperar a capacidade de\nfazer políticas e construir parcerias com organizações populares para enfrentar a questão urbana. A extinção\ndo Ministério das Cidades, o fim do orçamento para habitação de interesse social nos últimos dois anos, a\nabertura para privatização dos serviços básicos (saneamento, setor elétrico, combustíveis) são símbolos do\ndesmonte da política urbana no governo Bolsonaro.\nCriar um grande programa de investimento em urbanização das periferias e favelas (envolvendo água, esgoto,\nmobilidade, áreas verdes, habitação, regularização fundiária, produção habitacional, controle de riscos\nambientais, entre outros.) e de construção de redes de equipamentos sociais de qualidade, de educação, creches,\nsaúde, cultura, lazer e esporte. Esse programa deve focar na construção de planos populares como ferramentas\nde planejamento com alianças entre universidades, organizações sociais e atores comunitários e ter sua\nimplementação a partir de parcerias público-populares, envolvendo diversos entes federados e entidades\npopulares. A intervenção urgente na periferia é para a garantia de direitos. É com política e não polícia e\nmilitarização. Que esses investimentos apontem para cidades com justiça climática, no enfrentamento ao\nracismo ambiental e ao processo de violação de direitos das populações negras e indígenas.\nPromover produção habitacional por autogestão e relação com movimentos e organizações populares, a ser\ndesenvolvida em terrenos ou edifícios públicos da União e em terrenos privados abandonados, que serão\ndesapropriados por descumprirem a função social da propriedade. Fortalecer e ampliar a oferta de assessoria\ntécnica para habitação de interesse social, a constituição de um parque habitacional público, desenvolver\nprogramas de locação social e produção de moradias bem localizadas e em áreas centrais. Desenvolver um\nprograma de regularização e garantia da manutenção das comunidades tradicionais nos terrenos da União\nocupados por indígenas, quilombolas, caiçaras, seringueiros, extrativistas, agricultores familiares das várzeas,\nnas áreas urbanas e periurbanas.\nPor isso, propomos:\n1.Ampla reforma urbana que garanta o direito à cidade e combata desigualdades territoriais apoiando a\ninfraestrutura, o transporte público, a habitação e o saneamento básico. Um programa massivo de acesso à\nmoradia, com mecanismos de financiamento acessível; 2. Ampliar o planejamento dos espaços e equipamentos\npúblicos seguros e voltados para as necessidades dessas populações; 3.Construir uma perspectiva de\nmobilidade como direito, com uma política tarifária que permita o acesso aos serviços, mas também pense sua\nmodelagem; 4.Universalizar o acesso à infraestrutura urbana e a articulação das demais políticas públicas nos\nterritórios, em diálogo com demandas desses segmentos; 5.Promover a posse segura da terra e da habitação\npriorizando esses setores; 6.Fortalecimento de organizações populares voltadas para produzir soluções e de\nespaços de participação.\n22. Mobilidade urbana como direito social\nInverter a lógica perversa de mobilidade baseada no roubo do espaço público, do tempo de vida e dos\nrecursos da maior parte da população, resultante da falência da concepção, modelo de financiamento e gestão\ndos transportes coletivos. A mobilidade urbana é um direito social e portanto, precisa ser concebida como um\nsistema pensado para eliminar as barreiras econômicas, territoriais, de tempo, de iniquidade de raça e gênero,\ndentre outras, articulando projetos de macro e micro acessibilidade. Isso exige superar os privilégios do\nautomóvel individual e pensar a transição tecnológica para substituição dos combustíveis fósseis. É necessário\nque a integração de modais com capilaridade nos territórios seja realizada através de transporte público coletivo\nde qualidade e gratuito e prover condições seguras para emprego dos meios de mobilidade ativa, em\nconsonância com as demandas e necessidades das mulheres. Um Brasil inclusivo e acessível, com"
+          },
+          {
+            "id": "respeito-as-pessoas-com-deficiencia-garantindo-lhes-o-acesso-a-saude-a-e",
+            "titulo": "respeito às pessoas com deficiência, garantindo-lhes o acesso à saúde, à educação, à cultura e ao esporte, e ao",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "respeito às pessoas com deficiência, garantindo-lhes o acesso à saúde, à educação, à cultura e ao esporte, e ao\nmundo do trabalho. Romper as barreiras do capacitismo e assegurar a todos os baianos oportunidades e\nautonomia.\nAlém disso nosso governo terá o objetivo de:\n23. Afirmar os direitos dos animais seja por meio de campanhas educativas como pelo o apoio a iniciativas\nque tenham eficácia no cuidado animal.\n24. Defender uma política de prevenção e combate à corrupção e transparência do Estado fortalecendo o\nMinistério Público e outros órgãos assim como carreiras de auditoria e fiscalização, garantindo o cumprimento\nda Lei de Acesso à Informação. Faremos o diálogo permanente com o Judiciário respeitando a sua\nindependência e pugnando para o aperfeiçoamento dos níveis do sistema de justiça. É dever do Estado\nuniversalizar o acesso à internet de qualidade, garantindo a democratização de seu uso por toda a população,\nespecialmente na rede pública.\n25. Atuar para que na Bahia o livre exercício da atividade profissional do jornalismo seja considerada segura,\nonde a violência e a intimidação contra jornalistas, meios de comunicação, comunicadores seja coibida e\npunida.\n26. Fortalecer a atuação mineral e energética na Bahia estimulando o compromisso com a proteção ao meio\nambiente, direitos dos trabalhadores e respeito às comunidades locais. Assim como é preciso garantir a\nmodernização e a ampliação da logística de transporte com um programa de investimentos públicos. O\ninvestimento privado será parte importante estimulado por meio de créditos e garantias. Vamos assegurar uma\npolítica pública para as águas do estado visando sua utilização racional e sustentável e garantir o direito à água\ne ao saneamento, reconhecendo as responsabilidades do Estado na universalização dos serviços. É\nimprescindível garantir a segurança energética do país, com ampliação da oferta de energia, aprofundando a\ndiversificação da matriz e expansão de fontes renováveis a preços compatíveis com a realidade.\n27. Oposição à privatização da EMBASA, dos Correios e de outros serviços públicos estratégicos.\nRecuperação de programas como Luz para Todos, fortalecimento dos bancos públicos em sua missão de\nfomento ao desenvolvimento econômico. Prestigiar os segmentos da Ciência, Tecnologia e Inovação como\nindispensáveis para nosso estado ser efetivamente desenvolvido. Para tal, é necessário fomentar o\ndesenvolvimento científico e tecnológico articulados pela Secretaria de Ciência e Tecnologia, assim como\nassegurar a pesquisa e enfrentar o desafio da transformação tecnológica, além de estimular a transformação\ndigital assegurando internet de qualidade em todo território.\n28. Retomar a indústria do turismo, fonte de geração de empregos, por meio da valorização da cultura, do\npatrimônio histórico e do ecoturismo. Estimular investimentos em infraestrutura turística, qualificação dos\ntrabalhadores e das empresas do segmento. Combater as desigualdades regionais, fortalecendo o\ndesenvolvimento das regiões e estimulando experiências de cooperação e organização territorial.\n29. Defender os direitos civis, as liberdades individuais, como a liberdade religiosa e o combate à intolerância,\no enfrentamento do ódio, da violência, da discriminação e da exclusão e em defesa da nossa democracia.\nRetomar o diálogo com os movimentos sociais, populares e organizações da sociedade civil compreendendo a\nsua importância para o povo baiano. Retomar o processo participativo de construção de políticas públicas com\ntodas as instâncias de participação social, aprimorando sua composição e sua institucionalidade. Retomar as\nparcerias com entidades da sociedade civil para a execução de políticas públicas."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "406438d93816fc179a93eda37178dea1db59b843b5cf700ae5032fd440bb5c87"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "9a2714e1364fd067f2ec567f24e4c918bf88530a6d768773442f46e0894a79d7"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "b005d151c7f1eb67e0f44e8ea20038a039523c6e04d0835ae1bda87db316a155"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "190e172d848663885a2ec489ca1933eba48008a2e8d5c88baa0112ad9d94930a"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "09d09da86f2fe100c72c54c1a7a9a988d50e7fd070d8fda7a6ac8a4cd96eecb1"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "52af81b7232bd200dd0cf574bf9f98c8e86d20a2a37b6a8ca1e26d1257e281c6"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "ac6a6334fc9b6a28e272f2eae36ca4aa1cc08e10b0fdfe77ee6adef8d2b500da"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0c51b53d0636bb7c7a2ccda13199a083d7260a7eda451027b5c03fcd1c325575"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e19b42250b5bee4ba580e745636825c077c17aa224effdbad0fbb5f738ebf57e"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "62a2dbc1e8ad68f9c30255fc57aa9efaeaad75f7d0727f39a4c06be27a20fc74"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "0a971e20cc49049efdd61fa681b914ba682247517119db76f2006b619df1680b"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "51bcd8c0baadfa4c06ffd6a9e7c80aaa9b285a2f2fcb2ed733eb57f2d50e1938"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "6d7d6588b4fe548901fd2ec7be769a0a7b9e461e3eca631c0288aaf52c31de11"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1d8bd3e9d6638a428ab93c7ddb3568c4a09d9e3c726359cffb2d17b593708c66"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c47c43a3888cdfe4436b3334e1ca894ad1fc0ec4e074b8d12bddb21ec9ed1595"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "304200f7f95185a7ee632a9497e55dea67de298df83fe72c5b7f4204fa3af09e"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "bbc560984df1646d8551139a10d68e6c0300fe1c1129bfccc251822bc98fc1cc"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "ce3ed858e7509a05929bcaeba701a675387f41f9472cf3ac8162051e9bfbcc8b"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "6b91509097eccc837146c9387f45a5c6a22a76c495ec8c46e456d71910d449dc"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "d0fc16230aaad3d7919ad5cfbbdededd38bcd9d0bb1a21e969c8012eb31cae83"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "fbcab9236a18fcf6a75a30b05d20bae8d3b6a2d596924fb311b3468f29fb6ea0"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "54d0860bfcce30c24edd2805321a75e91921f81b67c72e7eb8c3fbe49108448f"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "1f3cf9a3dad10bad069168854f21affa0cc75049017d3c43c7fbf6451369234a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "bd45291ce44d8be44a2838b1f626c7daacbf5d5e1834e5d768d9d64d627d12d6"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe uma nova abordagem para a economia baiana. O nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade. Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade. O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado. O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial. Defenderemos o patrimônio socioambiental e energético do estado. Criar zonas e aglomerações comerciais e industriais. O debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em prevenção.",
+    "frases": [
+      {
+        "texto": "O programa propõe uma nova abordagem para a economia baiana.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 3,
+            "trecho": "Propomos uma nova abordagem para a economia baiana."
+          }
+        ]
+      },
+      {
+        "texto": "O nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 6,
+            "trecho": "Nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade"
+          }
+        ]
+      },
+      {
+        "texto": "Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 8,
+            "trecho": "Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade"
+          }
+        ]
+      },
+      {
+        "texto": "O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 10,
+            "trecho": "O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado"
+          }
+        ]
+      },
+      {
+        "texto": "O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 11,
+            "trecho": "O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial"
+          }
+        ]
+      },
+      {
+        "texto": "Defenderemos o patrimônio socioambiental e energético do estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 4,
+            "trecho": "Defenderemos o patrimônio socioambiental e energético do estado."
+          }
+        ]
+      },
+      {
+        "texto": "Criar zonas e aglomerações comerciais e industriais.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 3,
+            "trecho": "Criar zonas e aglomerações comerciais e industriais."
+          }
+        ]
+      },
+      {
+        "texto": "O debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em prevenção.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 8,
+            "trecho": "O debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em prevenção."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "economia-baiana",
+        "titulo": "Economia baiana",
+        "descricao": "O programa propõe uma nova abordagem para a economia baiana.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 3,
+            "trecho": "Propomos uma nova abordagem para a economia baiana."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "O programa planeja eixos de desenvolvimento para o estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 6,
+            "trecho": "Nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-cidada",
+        "titulo": "Segurança cidadã",
+        "descricao": "O programa propõe um modelo de segurança cidadã.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 8,
+            "trecho": "Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade"
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "O programa trata a educação como direito e dever do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 10,
+            "trecho": "O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "O programa defende a ampliação do Sistema Único de Saúde.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 11,
+            "trecho": "O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial"
+          }
+        ]
+      },
+      {
+        "id": "patrimonio-socioambiental",
+        "titulo": "Patrimônio socioambiental",
+        "descricao": "O programa defende o patrimônio socioambiental e energético do estado.",
+        "evidencias": [
+          {
+            "documentoId": "BA:50002532269:01",
+            "pagina": 4,
+            "trecho": "Defenderemos o patrimônio socioambiental e energético do estado."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:18:14.159Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:20:37.533Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve o documento sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: economia."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:1:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho quase idêntico sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente: desenvolvimento regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:2:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve a proposta sem inserir juízo próprio do redator."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança cidadã."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:3:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:4:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da posição do partido."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área: saúde/SUS."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:5:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:6:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de área econômica."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:7:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da posição."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente: política de drogas."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:frase:8:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: economia."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:economia-baiana:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação (paráfrase próxima)."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente: desenvolvimento regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:desenvolvimento-regional:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:seguranca-cidada:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:educacao-publica:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:saude-publica:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:BA:50002532269:tema:patrimonio-socioambiental:documentos:BA:50002532269:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:BA:50002532269",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "BA:50002532269:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 45132,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2813,
+          "reasoning_output_tokens": 1542
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 32901,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23530,
+          "output_tokens_details": {
+            "thinking_tokens": 846
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 32901,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23530,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 32901,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 32901
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3921524
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "e7d8f6e6443895074d827bd626cb00a158f93d7d1ede48b80f0c4dc8c0eab337",
+    "extractedTextSha256": "4212b548e1a0e69303f1f62cf13e0b5100884637d7c63d2ed03e83daf0e7284f",
+    "documentCount": 1,
+    "documentSetSha256": "8154d881d14dfae4a66e76ee5099efc8f9a0231e38c64342523f8dd4b24a44f6",
+    "contentSha256": "c1bca6af0a9c0321ccecd89a9e4bc3bd16257738142402c57b35d6a36c6a64ea"
+  }
+}

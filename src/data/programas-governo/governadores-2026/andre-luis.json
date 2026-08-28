@@ -1,0 +1,1282 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MA",
+    "sqCandidato": "100002544076",
+    "slug": "andre-luis",
+    "nomeUrna": "ANDRÉ LUIS",
+    "partido": "MISSÃO",
+    "arquivoNome": "2026MA100002544076_01.pdf",
+    "arquivoNoPacote": "MA/2026MA100002544076_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MA:100002544076:01",
+      "fonte": {
+        "arquivoNome": "2026MA100002544076_01.pdf",
+        "arquivoNoPacote": "MA/2026MA100002544076_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d844ecd625694b6eaa614e6958a94f6bb8aa6ecdfef4621d470d0f26cb346103",
+        "extractedTextSha256": "9f6ce33370d3028abac514c5379638fdab32f0dddf6578f902a56bb9dd36e814",
+        "paginas": 46,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nESTADO DO\nMARANHÃO\nMoralizar e industrializar\no Maranhão\n\nANDRÉ LUÍS\nGOVERNADOR\n\nPROF. CADU AGUIAR\nVICE-GOVERNADOR\n\nPA R T I D O M I S S ÃO\nM A R A N H ÃO · 2 0 2 6"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nAPRESENTAÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3\nPREFÁCIO — A ANATOMIA DO ATRASO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4\nINTRODUÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6\nO MARANHÃO EM NÚMEROS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7\n\nPARTE I A BASE MATERIAL\nI\n\nO PORTO E O BURACO INFRAESTRUTURA, LOGÍSTICA E MOBILIDADE ....................................................... 10\n\nII\n\nÁGUA É DIGNIDADE SANEAMENTO E RECURSOS HÍDRICOS ...................................................................... 14\n\nIII\n\nRIQUEZA QUE NÃO PODE QUEIMAR MEIO AMBIENTE E BEM-ESTAR ANIMAL ........................................... 16\n\nPARTE II A RIQUEZA QUE FICA\nIV\n\nENERGIA É RIQUEZA MATRIZ ENERGÉTICA ............................................................................................. 20\n\nV\n\n365 DIAS DE MARANHÃO TURISMO E DESENVOLVIMENTO REGIONAL ....................................................... 22\n\nVI\n\nÁGUA, TÉCNICA E MERCADO AGRICULTURA E AGROINDÚSTRIA ............................................................. 24\n\nVII\n\nCIÊNCIA QUE RESOLVE CIÊNCIA, TECNOLOGIA E INOVAÇÃO ................................................................... 27\n\nVIII\n\nMORALIZAR E INDUSTRIALIZAR ECONOMIA, EMPREGO E RENDA ........................................................... 30\n\nPARTE III O POVO MARANHENSE\nIX\n\nSAÚDE PARA UM MARANHÃO INTEIRO SAÚDE PÚBLICA ...................................................................... 34\n\nX\n\nSISMA SEGURANÇA PÚBLICA .................................................................................................................... 37\n\nXI\n\nAPRENDER DE VERDADE EDUCAÇÃO ................................................................................................... 40\n\nAGENDA INTEGRADA — OS PRIMEIROS 100 DIAS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44\nSISTEMA DE ACOMPANHAMENTO E INDICADORES . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45\nFONTES OFICIAIS CONSOLIDADAS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n2"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\n\nVAMOS JUNTOS MORALIZAR E\nINDUSTRIALIZAR O MARANHÃO\nUma mensagem de André Luís, candidato a Governador do Estado do Maranhão\n\nS\n\nou André Luís, tenho 41 anos, sou casado, pai de dois jovens maravilhosos e membro da Primeira Igreja Batista de São\nLuís.\nMinha história começou na periferia de São Paulo e, desde os 14 anos, luto diariamente para construir uma vida digna,\nvencer desafios e conquistar meus objetivos por meio do esforço e da dedicação. Ao lado da minha esposa, minha companheira\ndesde a juventude, construímos nossa família e conseguimos, juntos, ascender socialmente através do trabalho, da fé e da determinação.\nSou empresário do ramo da construção civil. Ingressei na graduação em engenharia civil e, após quatro anos de curso,\nmergulhei na minha empresa de confecção, multiplicando meu negócio, e larguei o curso antes da formação. Sou alguém que\nconhece de perto as dificuldades enfrentadas pelo cidadão, que entende a luta de quem acorda cedo, trabalha duro e sonha com\noportunidades reais para sua família e para as pessoas ao seu redor.\nColoco meu nome à disposição para disputar o governo do nosso estado pelo Partido Missão porque acredito que podemos\nconstruir uma realidade diferente: nosso estado está dominado por uma classe política oligarca que se acostumou com 57% da\npopulação vivendo na pobreza.\nQuero contribuir para fortalecer a integridade na gestão pública, ampliar oportunidades e enfrentar os desafios que impedem\nnosso crescimento, com o Livro Amarelo como um guia prático, juntando forças para construir um Maranhão grande novamente.\n\nVamos juntos moralizar e industrializar o Maranhão.\nANDRÉ LUÍS — Governador\nPROF. CADU AGUIAR — Vice-Governador\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n3"
+          },
+          {
+            "id": "prefacio",
+            "titulo": "PREFÁCIO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PREFÁCIO\n\nA ANATOMIA DO ATRASO\nO diagnóstico da raiz e o desafio da reconstrução do Maranhão\n\nP\n\nropor um Plano de Governo para o Maranhão exige diagnosticar a raiz de nossas chagas sociais. Este documento é um\nmanifesto de ruptura contra um modelo de dominação secular que transformou o Estado em um arquipélago de feudos\npolíticos, sustentado pelo compadrio e pela captura de recursos públicos.\n1. A ESTRUTURA POLÍTICO-SOCIAL\n\nO paradoxo da riqueza e da miséria\nO Maranhão vive sob uma contradição estrutural. Politicamente, transitou do controle de uma oligarquia tradicional para uma\n“policentralidade oligárquica”, em que diferentes clãs dominam porções específicas do território. Socialmente, há um abismo:\nenquanto o Estado possui eixos logísticos, portos bilionários e um agronegócio pujante, a base da população sofre com\nsubdesenvolvimento crônico. A dependência do funcionalismo municipal e de programas de renda cria o ambiente perfeito para\no voto de cabresto e a submissão econômica.\n2 . R A D I O G R A F I A T E R R I TO R I A L\n\nCinco macrorregiões, cinco conjuntos de gargalos\nPara eficiência pública, o estado divide-se nas 5 macrorregiões do IBGE, cujas mesorregiões compartilham três graves\ndificuldades estruturais cada uma:\n• Norte Maranhense (Grande São Luís, Baixada, Itapecuru, Rosário): saneamento e água críticos na Baixada; isolamento\nlogístico regional; saturação da alta complexidade médica na capital.\n• Oeste Maranhense (Gurupi, Pindaré, Imperatriz): conflitos agrários e desmatamento; estradas secundárias precárias para\nescoamento; baixíssima industrialização local da madeira e da carne.\n• Centro Maranhense (Alto Mearim, Grajaú, Presidente Dutra): dependência extrema de agricultura de subsistência; escassez de\nhospitais regionais de média complexidade; vulnerabilidade hídrica cíclica.\n• Leste Maranhense (Caxias, Chapadinha, Codó): baixíssimos índices de IDH nos Cocais; desemprego juvenil em massa; forte\nconcentração de terras produtivas subutilizadas.\n• Sul Maranhense (Porto Franco, Gerais de Balsas): gargalos logísticos na malha viária do agronegócio; abismo social entre o\nPIB dos grãos e as periferias; falta de energia trifásica no campo profundo.\n3 . O M E CA N I S M O D O C O M PA D R I O\n\nO exemplo prático de Turilândia\nO pacto de poder opera em uma pirâmide de favores mútuos: deputados enviam emendas; governador e secretários liberam\nverbas; prefeitos canalizam recursos e garantem currais eleitorais; vereadores e laranjas blindam e operam o esquema.\nO caso investigado pelo Gaeco no município de Turilândia expõe de forma cirúrgica essa engrenagem:\n• Núcleo político-familiar: o grupo liderado por Paulo Curió captava emendas parlamentares em troca de apoio político futuro.\nPara blindagem, cooptou secretarias estratégicas e a Câmara Municipal, com 8 de 11 vereadores indiciados por receber propina.\n• Núcleo empresarial e de fachada: o dinheiro público era escoado via licitações simuladas para empresas de fachada e aliados.\nA ex-vice-prefeita controlava o Posto Turi, que abocanhou R$ 17,2 milhões em contratos. O dinheiro girava por operadores\nocultos e firmas fantasmas como Luminer Serviços, Climatech Refrigeração, SP Freitas Júnior, JEC Empreendimentos e\nPotencial Empreendimentos, sem qualquer prestação real de serviço.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n4"
+          },
+          {
+            "id": "prefacio-2",
+            "titulo": "PREFÁCIO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PREFÁCIO\n\n4 . O M A PA D O A PA D R I N H A M E N TO R E G I O N A L I Z A D O\n\nO território loteado como trincheira eleitoral\nTodo o Maranhão está loteado por grupos de influência que usam as regiões como trincheiras eleitorais:\n• Norte e Lençóis: controlados por clãs que disputam o Palácio dos Leões e o controle logístico e imobiliário da capital.\n• Vale do Pindaré e Baixada: dominados por dinastias familiares que herdam prefeituras e usam emendas para “asfalto eleitoral”.\n• Oeste e Tocantina: hegemonizados pelo lobby empresarial de bens de consumo, agropecuária e serviços privados de saúde conveniados.\n• Sul Maranhense: ditado pelas demandas estruturais do grande agronegócio e por corporações que financiam bancadas inteiras\nde deputados.\n5 . T R Ê S D É CA DA S D E P R O M I S C U I DA D E\n\nA simbiose entre a iniciativa privada e o Estado\nNos últimos trinta anos, a corrupção institucionalizou-se através da simbiose com setores do empresariado, baseada em três\npilares principais:\n• Cartel de empreiteiras: construtoras financiam campanhas majoritárias em troca do controle da SINFRA, gerando rodovias\nestaduais eternamente inacabadas que exigem contratos emergenciais cíclicos.\n• Terceirização da saúde: Organizações Sociais e empresas gerenciam UPAs e hospitais regionais, servindo como duto para\ndesvio de verbas e inchaço de folhas de pagamento com parentes de políticos.\n• Renúncias fiscais seletivas: isenções arbitrárias de ICMS concedidas a grandes indústrias e distribuidoras parceiras de caixas\nde campanha, desidratando o orçamento da educação e do saneamento.\n\nO PROPÓSITO DESTE PLANO\nRomper com essa engrenagem de compadrio não é um ato meramente administrativo; é uma libertação\nsocial. Este Plano de Governo propõe a digitalização radical de licitações, auditoria independente na\nsaúde, descentralização econômica regional e o fim do loteamento de secretarias. O Maranhão\npertence, por direito e riqueza, ao povo maranhense.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n5"
+          },
+          {
+            "id": "introducao",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\n\nUM PLANO QUE PODE SER COBRADO\nO que é esta edição do Plano de Governo do Maranhão — e como lê-la\nS O B R E E S TA V E R SÃO\n\nEste documento constitui a versão executiva e consolidada do Plano de Governo do Maranhão para as eleições de 2026, reunindo os\nprincipais diagnósticos, compromissos, programas, metas e propostas do projeto estadual de André Luís e do Prof. Cadu Aguiar. O\nconteúdo é integralmente derivado do plano estadual: nenhuma proposta foi criada, suprimida ou alterada em seu sentido nesta\nconsolidação editorial. As 173 propostas do plano estão preservadas e reorganizadas em 11 capítulos numerados, seguidos da agenda\nde 100 dias, do sistema de acompanhamento e das fontes oficiais.\n\nO\n\nPartido Missão firmou o compromisso de apresentar planos de governo que possam ser lidos, discutidos e cobrados. Esta\nedição maranhense segue a mesma lógica editorial do Livro Amarelo nacional — diagnóstico honesto antes da proposta,\nnúmero com fonte, meta com prazo — aplicada integralmente à realidade do Maranhão.\nO plano se organiza em torno de quatro exigências que valem para todas as propostas. A primeira é o diagnóstico honesto:\ntoda proposta parte de um problema real, demonstrado por dados públicos e conhecimento territorial, e não de slogan. A\nsegunda é a viabilidade fiscal: nenhuma promessa é feita sem considerar orçamento disponível, despesa permanente e fonte de\nfinanciamento — por isso o documento diz, com todas as letras, quando algo depende de estudo, de lei ou de capacidade de pagamento.\nA terceira exigência é a execução clara: cada proposta indica o que será feito, como funciona, quem é responsável e em\nquanto tempo. A quarta é a transparência: metas, indicadores e responsáveis publicados, para que qualquer cidadão possa\nverificar se a ação começou, quanto custou e o que entregou.\nO Maranhão não é tratado neste plano como território homogêneo. A Baixada não é o Cerrado do Sul; a Grande Ilha não é a\nTocantina; o município de pequeno porte não tem a mesma capacidade administrativa da capital. Por isso as propostas indicam\nabrangência — estadual, regionalizada, por etapas, por polos ou em cooperação com os municípios — e as competências\nfederativas são explicitadas: o Estado executa o que é estadual, articula o que é federal e coopera no que é municipal.\nPor fim, uma advertência de método que percorre todo o documento: o sucesso de um governo não se mede pelo dinheiro\ngasto, pelo número de obras iniciadas ou pela quantidade de programas criados. Mede-se pelo funcionamento efetivo das\npolíticas — e é assim que este plano pede para ser julgado.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n6"
+          },
+          {
+            "id": "diagnostico-integrado",
+            "titulo": "DIAGNÓSTICO INTEGRADO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "DIAGNÓSTICO INTEGRADO\n\nO MARANHÃO EM NÚMEROS\nA linha de base do Estado: o ponto de partida contra o qual todas as metas deste plano deverão ser medidas.\nCONTEXTO GERAL\n\n7.018.211\n\nR$ 38 bi\n\n15,0% › 12,2%\n\nhabitantes em 2025, distribuídos em 217\nmunicípios e cerca de 329.651 km² (IBGE)\n\norçamento estadual de 2026; nota A na\nCAPAG pela primeira vez (Tesouro Nacional)\n\nextrema pobreza entre 2022 e 2023: cerca\nde 567 mil pessoas saíram da pobreza em\num ano, mas os índices seguem entre os\npiores do país\n\n6,8% × 58,7%\n\n36,8 mi t\n\n86%\n\ndesocupação em 2025, a menor da série,\nconvivendo com informalidade de 58,7% —\na maior do Brasil\n\nrecorde do Porto do Itaqui em 2025; 2º\nmaior exportador do Nordeste, com US$\n2,5 bi no 1º semestre de 2025\n\nda pauta exportadora concentrada em soja,\nalumina/alumínio e celulose\n\n65.566\n\n88 de 217\n\n61%\n\noperações do Pronaf no ciclo 2024/2025,\ncom mais de R$ 1 bilhão contratado (BNB)\n\nmunicípios alcançados pelo Procaf, que\nexecutou R$ 8,5 milhões em 2024\n\ndéficit de armazenagem frente à produção\nde soja e milho\n\n340 mil\n\n~93%\n\n13.436\n\npescadores registrados (58% mulheres); 50\nmil t na pesca e 32 mil t na aquicultura em\n2024\n\nda extração nacional de amêndoa de babaçu\n\ntítulos entregues pelo ITERMA e ~280 mil\nhectares arrecadados em 2024\n\n19\n\n2.129\n\n~36%\n\nRegiões de Saúde organizam o SUS estadual\n\nmortes violentas intencionais em 2024 —\ntaxa de 30,4/100 mil, acima dos 27,1 de\n2023 (FBSP)\n\ndos homicídios de 2023 foram esclarecidos\nno Brasil até o fim de 2024 (Instituto Sou\nda Paz)\n\nE CON OMIA E TRABALHO\n\n4 de 5\ndos municípios de menor PIB por habitante\ndo Brasil estão no Maranhão\n\nCAMPO, PESCA E EXTRATIVISMO\n\nSAÚDE E SEGURAN ÇA\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n7"
+          },
+          {
+            "id": "diagnostico-integrado-2",
+            "titulo": "DIAGNÓSTICO INTEGRADO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "DIAGNÓSTICO INTEGRADO\n\nE DUCAÇÃO\n\n56% › 69%\nalfabetização na idade certa entre 2023 e\n2025: do 23º ao 10º lugar nacional\n\n5,1 · 4,3 · 3,7\nIdeb 2023 nos anos iniciais, anos finais e\nensino médio — recorde estadual, mas\nabaixo da média nacional\n\n4,9% › 3,4%\nabandono no ensino médio; ~595 mil adultos ainda não sabem ler e escrever\n\n84,8%\ndas escolas com internet: 97,5% urbanas\ncontra 78,9% rurais; 88% das matrículas de\nensino médio sob gestão estadual\n\nC IÊN CIA E TECN OLOGIA\n\nR$ 63 mi\n\nR$ 10 mi\n\nNota máxima\n\ndestinados pela FAPEMA em bolsas e auxílios em 2025, somando 4.317 bolsas\n\nmaior edital da história da Fundação: 71\nprojetos em 16 municípios\n\nUFMA em Políticas Públicas (CAPES) e\nUEMA na excelência nacional em Ciências\nAgrárias — mas com base estreita e\nconcentrada na capital\n\nL I N H A D E BA S E\n\nTodos os números desta seção constituem a linha de base do plano. Os indicadores serão reauditados no primeiro ano de governo e\npublicados em painel público, de modo que a evolução possa ser acompanhada pela população, ano a ano, por região e por município.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n8"
+          },
+          {
+            "id": "parte-i",
+            "titulo": "PARTE I",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PARTE I\n\nA BASE MATERIAL\nSem estrada, sem água, sem coleta e sem energia não existe desenvolvimento — existe apenas\ndiscurso. Esta parte trata da infraestrutura física que sustenta todo o resto.\n\nI\n\nINFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\n\nII\n\nSANEAMENTO E RECURSOS HÍDRICOS\n\nIII\n\nMEIO AMBIENTE E BEM-ESTAR ANIMAL"
+          },
+          {
+            "id": "capitulo-i",
+            "titulo": "CAPÍTULO I",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO I\n\nINFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\n\nO PORTO E O BURACO\nReduzir a distância entre o potencial logístico do Maranhão e a estrada que isola, encarece e mata.\nO PROBLEMA EM NÚMEROS\n\nR$ 5,32 bi\n\n489\n\n98,1%\n\ncusto estimado da recuperação da malha rodoviária estadual avaliada — passivo que\nnão se resolve em um mandato\n\npontos críticos na malha, com sobrecusto\noperacional de 46,4%\n\nda malha é pista simples; 64,7% das curvas\nperigosas não têm sinalização\n\n106 mortes\n\n36,84 mi t\n\n588 mil\n\nem rodovias federais no Maranhão apenas\nno 1º semestre de 2025; nas estaduais não\nhá sequer estatística consolidada\n\nrecorde histórico do Porto do Itaqui em\n2025 — a vantagem logística existe; o\nacesso terrestre é o gargalo\n\nusuários/dia é o potencial dos 53 km de\ntransporte de média e alta capacidade da\nGrande Ilha, hoje inexistente\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nObras à Vista\n\nManutenção por desempenho\n\npainel público de obras no ar em 100 dias, com ficha de cada\ncontrato, empresa, valor, cronograma e atraso justificado\n\no Estado deixa de agir só quando a estrada já está destruída: contratos\nremunerados pelo padrão efetivamente mantido\n\n100% inventariado\n\nBilhete metropolitano\n\nmalha rodoviária e pontes estaduais inventariadas e hierarquizadas\npublicamente em 12 meses\n\nintegração tarifária da Grande Ilha operando dentro do mandato, com\ngovernança instalada em 100 dias\n\nO PROBLEMA\n\nO\n\nMaranhão combina uma vantagem logística rara com uma das piores malhas rodoviárias do país. De um lado, o Porto do\nItaqui em recorde histórico, a Estrada de Ferro Carajás e a Ferrovia Norte-Sul integradas em Açailândia, a proximidade\ncom a Europa e os Estados Unidos. De outro, estradas que isolam comunidades, encarecem a produção e ceifam vidas. É essa\ndistância entre o potencial e a realidade que este capítulo pretende reduzir.\nA recuperação da malha avaliada exigiria R$ 5,32 bilhões. Nenhum governo honesto promete resolver isso em quatro anos.\nPor isso o plano trabalha com recuperação por etapas, critérios públicos de priorização e, sobretudo, manutenção permanente —\nporque o Estado hoje só age quando a estrada já está destruída, pagando o preço mais caro.\nO problema não é apenas de dinheiro; é de método. O Maranhão decide obras caso a caso, sem carteira pública de projetos\nnem critérios publicados. Não existe inventário das pontes estaduais nem programa de inspeção: o colapso da ponte JK na\nBR-226, em dezembro de 2024, com vítimas fatais, mostrou o custo humano de estruturas sem inspeção. E a chuva desfaz em\nmeses o que se constrói em anos, porque se pavimenta sem drenagem e se abandona a manutenção — só em 2025 a má\nqualidade do pavimento desperdiçou 66,9 milhões de litros de diesel e emitiu 174 mil toneladas de gases de efeito estufa.\nNa mobilidade, São Luís, São José de Ribamar, Paço do Lumiar e Raposa funcionam como uma cidade só, mas quem cruza\na fronteira paga duas passagens. As promessas históricas de VLT e BRT nunca saíram do papel porque começaram pelo\nanúncio, e não pelo estudo.\n\nO capítulo respeita rigorosamente as competências federativas: o Estado executa o que é estadual,\narticula e coopera no que é federal (BRs) e atua em parceria com os municípios no que é municipal.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n10"
+          },
+          {
+            "id": "capitulo-i-infraestrutura-logistica-e-mobilidade",
+            "titulo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — PLANEJAMENTO, GOVERNANÇA E TRANSPARÊNCIA\n1 Plano Estadual de Infraestrutura e Integração Logística Plano de longo prazo (10 a 20 anos) com carteira pública de\nprojetos classificada por estágio de maturidade, critérios técnicos publicados de priorização, revisão anual e consulta pública,\nintegrado ao PPA e ao orçamento. Comitê gestor (SINFRA, SEPLAN, SEFAZ) inventaria todos os projetos e obras — inclusive\nparalisadas — e publica os critérios. METAS-CHAVE Plano publicado em até 12 meses; 100% dos projetos inventariados; 100% dos\n\nnovos investimentos relevantes dentro da carteira a partir do 2º ano; redução das obras paralisadas.\n2 Obras à Vista — painel público de obras Painel público com ficha completa de cada obra estadual: critério de seleção,\ncontrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa e seção específica para obras paralisadas.\nFicha-padrão para todas as obras, atualização mensal obrigatória, dados abertos para download e canal de denúncia com resposta\nobrigatória. METAS-CHAVE Painel no ar em 100 dias; 100% das obras publicadas em 12 meses; atualização mensal cumprida em 95%+\n\ndas fichas.\nEIXO 2 — RODOVIAS ESTADUAIS, MANUTENÇÃO E SEGURANÇA VIÁRIA\n\nMaranhão Rodoviário e Maranhão Sem Buraco Política única e permanente de recuperação e manutenção: inventário\ngeorreferenciado, inspeção periódica, conservação rotineira, restauração, drenagem, sinalização e contratos de manutenção por\ndesempenho, remunerados pelo padrão efetivamente mantido. Inventário e hierarquização pública no 1º ano, com critérios\npublicados. Trechos indicados prioritariamente: MA-006, MA-008, MA-014, MA-034, MA-106, MA-138, MA-201 a 204 e\nEstrada do Quebra-Pote. A população participa por aplicativo e telefone, com verificação técnica e prazo de resposta. METAS3\n\nCHAVE Malha 100% inventariada em 12 meses; percentual em condição boa/ótima crescendo ano a ano; redução dos pontos críticos.\n\n4 Programa Estadual de Segurança Viária Observatório público de sinistros (Detran + policiamento + Saúde), tratamento\npor engenharia dos pontos de concentração de acidentes, fiscalização orientada por dados com critérios publicados, educação\ncontinuada com foco em motociclistas e metas alinhadas ao PNATRANS. METAS-CHAVE Observatório e mapa estadual publicados\n\nem 12 meses; redução progressiva e mensurada das mortes; 100% das intervenções com auditoria de segurança viária.\nEIXO 3 — CORREDORES LOGÍSTICOS E INTEGRAÇÃO PRODUTIVA\n5 Corredores Logísticos do Maranhão Rede estadual de corredores logísticos: matriz origem-destino das cargas,\nclassificação (exportação, abastecimento interno, insumos) e recuperação por etapas, incluindo terceiras faixas, acessos a terminais\ne contornos urbanos. Regiões avaliadas prioritariamente: Balsas, Tasso Fragoso, Grajaú, Fortaleza dos Nogueiras e Porto Franco\n— com análise estendida à Tocantina, Centro, Cocais, Médio Mearim, Baixada e litoral. Tempo e custo de deslocamento medidos\ne publicados anualmente. METAS-CHAVE Matriz origem-destino e rede publicadas em 12 meses; corredores prioritários com projeto e\n\nexecução iniciada no mandato; redução mensurada do tempo de percurso.\n6 Estradas Vicinais e Acessos Produtivos A produção da agricultura familiar percorre vicinais municipais intransitáveis\nna chuva: produção se perde, transporte escolar para, comunidades ficam isoladas — e municípios pequenos não têm máquinas\nnem projetos. Programa estadual de apoio: patrulhas mecanizadas regionais, projeto-padrão de bueiros e pequenas pontes,\nrevestimento primário com drenagem obrigatória e convênios com critérios públicos e contrapartida municipal de conservação.\nMETAS-CHAVE Critérios e cadastro publicados no 1º ano; vicinais tratadas transitáveis no período chuvoso seguinte; rotas de transporte\n\nescolar sem interrupção.\nEIXO 4 — MOBILIDADE METROPOLITANA E TRANSPORTE COLETIVO\n\nUpaon-Açu Integrada — governança e mobilidade da Grande Ilha Governança metropolitana com os 4 municípios,\npesquisa origem-destino, plano metropolitano atualizado, bilhete metropolitano com câmara de compensação, terminais\nintegrados, corredores prioritários de ônibus, ciclomobilidade e acessibilidade obrigatórias. METAS-CHAVE Governança instalada\n7\n\nem 100 dias; pesquisa OD no 1º ano; integração tarifária operando dentro do mandato.\n\nMaranhão sobre Trilhos — média e alta capacidade Comparação pública de todas as alternativas (VLT, BRT, corredores exclusivos, ônibus elétricos, aquaviário, soluções combinadas), corredor a corredor, escolhendo a de maior benefício social e\nmenor custo total. O ENMU (46 km de BRT/VLT + 7 km de corredores, até R$ 5,4 bilhões) é referência de partida, não decisão de\nmodal. METAS-CHAVE Diagnóstico de Imperatriz no 1º ano; estudos e decisão pública por corredor até o 3º ano; projeto executivo da\n8\n\nprimeira etapa viável até o fim do mandato. Nenhum compromisso sem demonstração de capacidade fiscal.\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n11"
+          },
+          {
+            "id": "capitulo-i-infraestrutura-logistica-e-mobilidade-2",
+            "titulo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE\n\nTransporte Intermunicipal e Aquaviário O transporte que liga os 217 municípios — ônibus, travessias e os ferryboats\nSão Luís–Cujupe — convive com frota envelhecida, informalidade, terminais precários e fiscalização insuficiente. Reestruturação\nda regulação e da qualidade: padrões públicos de serviço para o ferry (com auditoria técnica e contratual), metas de renovação de\nfrota em todas as delegações, segurança das travessias menores com a Capitania dos Portos, requalificação de terminais e combate\nao transporte clandestino. METAS-CHAVE Diagnóstico e cadastro públicos em 12 meses; padrões do ferry publicados no 1º ano com\n9\n\nmonitoramento mensal; idade média da frota e reclamações em queda.\nEIXO 5 — PONTES, ACESSOS E INTEGRAÇÃO REGIONAL\n10 Maranhão Integrado — eliminar isolamentos regionais Mapeamento público dos pontos de isolamento em todo o\nEstado (chamada pública permanente), hierarquização por critérios publicados — população, tempo de deslocamento, acesso a\nescola e saúde, produção, custo e risco ambiental — e execução por etapas de pontes e acessos, com estudo hidrológico obrigatório\ne consulta prévia em territórios tradicionais. Prioridade indicativa: Baixada Maranhense, litoral ocidental, Médio Mearim, Vale do\nPindaré e Baixo Parnaíba. METAS-CHAVE Inventário e carteira publicados em 12 meses; primeiras ligações entregues no mandato;\n\nredução medida do tempo de deslocamento.\n11 Novas Ligações da Ilha — estudos de viabilidade Conjunto completo de estudos técnicos para 4 ligações candidatas:\nParque Pindorama–Residencial Paraíso; Beira-Mar–Prainha (Vila Nova); Quebra-Pote–Mato Grosso (zona rural de São Luís);\nUnicamping–Boa Viagem (São José de Ribamar). Cada uma recebe parecer conclusivo público — viável, viável com\ncondicionantes, inviável ou superada por alternativa melhor — precedido de audiência pública. METAS-CHAVE Estudos contratados\n\nno 1º ano; pareceres públicos das 4 ligações até o 3º ano; projeto executivo para todas as aprovadas.\n12 Pontes Seguras — inspeção e manutenção Ciclo permanente: inventário georreferenciado de 100% das estruturas,\ninspeção normatizada, classificação pública de risco, recuperação por ordem de risco, manutenção preventiva e controle de excesso\nde peso. METAS-CHAVE 100% das pontes inventariadas em 12 meses; toda estrutura de risco alto com intervenção ou interdição\n\ncontrolada no ciclo seguinte; eliminação progressiva das interdições não programadas.\nEIXO 6 — INFRAESTRUTURA TURÍSTICA\n13 Estradas do Turismo Os acessos aos principais destinos — Lençóis (Patrimônio Mundial UNESCO 2024), Delta,\nChapada das Mesas, Alcântara — são precários; a MA-106, eixo de Alcântara, é a 2ª pior ligação do Brasil. Recuperação e\nqualificação dos acessos estaduais aos destinos prioritários — pavimento com drenagem, acostamentos, segurança viária e\nsinalização turística — sempre condicionadas à capacidade de carga ambiental de cada destino: a estrada que destrói o atrativo\ndestrói o próprio turismo. METAS-CHAVE Hierarquização SINFRA+SETUR publicada no 1º ano; avaliações de capacidade de carga\n\nconcluídas para 100% dos destinos frágeis antes de qualquer ampliação; obras iniciadas no mandato.\nEIXO 7 — PORTOS, FERROVIAS E INTEGRAÇÃO INTERMODAL\n14 Infraestrutura que Barateia — acessos ao complexo portuário O Itaqui cresce em ritmo recorde, mas o acesso\nterrestre é o gargalo: filas de caminhões, tráfego pesado disputando vias urbanas, primeira e última milha caras. Política de redução\ndo custo logístico: medição pública dos tempos e custos de acesso, melhoria das vias estaduais do entorno, rotas de carga e janelas\nhorárias pactuadas, áreas de apoio ao caminhoneiro, agendamento digital de caminhões e qualificação profissional em logística.\nMesa permanente com EMAP, Prefeitura, operadores e ferrovias. METAS-CHAVE Linha de base publicada no 1º ano; redução mensu‐\n\nrada do tempo de acesso; 100% do agendamento digitalizado; fila e estadia média em queda.\n\nRede de Plataformas Logísticas A riqueza que cruza o Maranhão — minério, grãos, combustíveis — em grande parte\nnão para no Maranhão. Rede de plataformas logísticas em polos estratégicos — indicativamente Grande Ilha, Açailândia, Porto\nFranco e Imperatriz — estruturadas prioritariamente com investimento privado (concessão ou parceria). Ao Estado cabe organizar:\nterra regularizada, diretriz urbanística, licenciamento prévio e conexão viária. Nenhuma plataforma será anunciada sem demanda\ndemonstrada. METAS-CHAVE Estudo locacional publicado no 1º ano; primeiros editais e plataformas contratadas no mandato; 100% dos\n15\n\ncontratos com metas públicas de desempenho.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n12"
+          },
+          {
+            "id": "capitulo-i-infraestrutura-logistica-e-mobilidade-3",
+            "titulo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO I INFRAESTRUTURA , LOGÍSTICA E MOBILIDADE\n\nEIXO 8 — ARTICULAÇÃO PARA A INFRAESTRUTURA FEDERAL\n16 Pacto Maranhense pela Infraestrutura Federal (BRs) BR-010, 135, 222, 226, 230, 316 e 402 têm trechos críticos e\nobras em ritmos desiguais, sem acompanhamento estadual público; a BR-135 segue como única via de acesso rodoviário à capital\ne ao porto — uma vulnerabilidade estratégica. Escritório permanente de acompanhamento das obras federais; painel público com o\nestágio real de cada intervenção do DNIT; agenda anual pactuada com o Ministério dos Transportes, com atas públicas;\ncofinanciamento de projetos; apoio fundiário e ambiental — incluindo suporte respeitoso ao diálogo com comunidades\nquilombolas no eixo da BR-135; e avaliação caso a caso de delegação de trechos, apenas quando sustentável. METAS-CHAVE Qua‐\n\ndro oficial completo publicado no 1º ano; 100% das intervenções federais com estágio e responsável publicados trimestralmente; condição\ndas BRs acompanhada ano a ano pela Pesquisa CNT.\nEIXO 9 — INFRAESTRUTURA SUSTENTÁVEL E RESILIENTE\n\nInfraestrutura Resiliente — drenagem e adaptação climática Resiliência climática em todo o ciclo: mapa público\nde vulnerabilidade da malha, padrões técnicos obrigatórios de drenagem (caderno regionalizado — a Baixada não é o Cerrado do\nSul), correção por etapas dos pontos de interrupção recorrente, manutenção de drenagem medida nos contratos e integração com a\nDefesa Civil. METAS-CHAVE Mapa e caderno técnico publicados no 1º ano; 100% dos novos contratos com padrões de resiliência;\n17\n\nredução contínua dos dias de interdição por evento climático.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n13"
+          },
+          {
+            "id": "capitulo-ii",
+            "titulo": "CAPÍTULO II",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO II\n\nSANEAMENTO E RECURSOS HÍDRICOS\n\nÁGUA É DIGNIDADE\nUniversalizar água e esgoto em cooperação com os municípios, começando por quem tem menos.\nO PROBLEMA EM NÚMEROS\n\n3,8%\n\n217\n\n100 dias\n\ndos domicílios maranhenses não possuíam\nbanheiro ou sanitário (Censo 2022/IBGE)\n— um dos piores índices do país\n\nmunicípios são os titulares constitucionais\ndos serviços: nenhuma política estadual\navança sem cooperação\n\nprazo para consolidar o diagnóstico completo por município e publicá-lo em painel\npúblico\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nMaranhão Saneado\n\nÁgua Maranhense\n\nuniversalização com prioridade aos municípios e territórios de piores\nindicadores de água e esgoto\n\nsegurança hídrica para comunidades rurais, ribeirinhas, insulares e\nisoladas, com operação e manutenção definidas antes da obra\n\nDrenagem e Resiliência\nprevenção de alagamentos e erosões com soluções baseadas na\nnatureza e alerta integrado à Defesa Civil\n\nO PROBLEMA\n\nÁ\n\ngua e esgoto são condições básicas de dignidade, saúde e desenvolvimento. Segundo o Censo 2022 (IBGE), 3,8% dos\ndomicílios maranhenses não possuíam banheiro ou sanitário — um dos piores índices do país.\nA dificuldade não é apenas de investimento: é de arranjo institucional. Os titulares constitucionais dos serviços são os\nmunicípios, e boa parte deles não tem equipe técnica, projeto nem capacidade de captação. O Estado, por sua vez,\nhistoricamente atuou por obras avulsas, sem mapa de prioridade e sem responsável definido pela operação depois da\ninauguração — razão pela qual sistemas entregues param de funcionar.\nPor isso este capítulo atua sempre em cooperação com os municípios e articula a União no que lhe cabe. O acompanhamento\nse dá pelos sistemas oficiais SINISA e Sisagua, sem criação de estruturas paralelas. O diagnóstico completo por município será\nconsolidado nos primeiros 100 dias e publicado em painel público.\n\nCada sistema implantado terá responsável definido pela operação, treinamento, insumos programados\ne monitoramento de qualidade. Obra sem operação é desperdício, não é política pública.\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nPROGRAMAS DO CAPÍTULO\n1 Maranhão Saneado Programa Estadual de Universalização do Saneamento, com prioridade aos municípios e territórios de\npiores indicadores de água e esgoto. Mapa estadual de vulnerabilidade sanitária cruzando saneamento, saúde e infraestrutura;\ntermos de cooperação com municípios prioritários; assistência técnica e cofinanciamento para ampliação de redes e soluções\ndescentralizadas (fossas sépticas, filtros) onde a rede não for viável no curto prazo. Acompanhamento pelos sistemas oficiais\nSINISA e Sisagua, sem estruturas paralelas. METAS-CHAVE Mapa concluído no 1º ano; termos de cooperação com prioritários já no 1º\n\nano; cobertura ampliada progressivamente com resultados anuais por município.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n14"
+          },
+          {
+            "id": "capitulo-ii-saneamento-e-recursos-hidricos",
+            "titulo": "CAPÍTULO II SANEAMENTO E RECURSOS HÍDRICOS",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO II SANEAMENTO E RECURSOS HÍDRICOS\n\nÁgua Maranhense Segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas\na cada território: sistemas simplificados, cisternas, captação de chuva e tratamento comunitário. Mapeamento das comunidades\nsem acesso seguro no 1º ano; cada sistema com responsável definido pela operação, treinamento, insumos programados (como\ncloro) e monitoramento de qualidade integrado ao Sisagua. Proteção de nascentes e mananciais incluída. Protocolos de consulta\nrespeitados em territórios indígenas e quilombolas. METAS-CHAVE Mapeamento concluído no 1º ano; ampliação progressiva de\n2\n\nsistemas implantados e operando regularmente.\n3 Drenagem e Resiliência Hídrica Prevenção de alagamentos e erosões por planejamento, assistência técnica, projetos de\nmacrodrenagem regionais e cofinanciamento de intervenções prioritárias — em cooperação com os municípios, titulares da\ndrenagem urbana. Diagnóstico estadual de áreas críticas no 1º ano; planos municipais de drenagem com assistência técnica;\nsoluções baseadas na natureza (áreas de retenção, recuperação de canais e várzeas); sistemas de alerta integrados à Defesa Civil;\nobras condicionadas ao licenciamento ambiental. Atenção especial à Baixada Maranhense. METAS-CHAVE Diagnóstico e termos de\n\ncooperação no 1º ano; execução gradual e regionalizada das intervenções ao longo do mandato.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n15"
+          },
+          {
+            "id": "capitulo-iii",
+            "titulo": "CAPÍTULO III",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO III\n\nMEIO AMBIENTE E BEM-ESTAR ANIMAL\n\nRIQUEZA QUE NÃO PODE QUEIMAR\nResíduos, água, biodiversidade, clima e bem-estar animal em uma política ambiental que mede resultado, e\nnão anúncio.\nO PROBLEMA EM NÚMEROS\n\n69,8%\n\n218.298 ha\n\n−34,3%\n\ncobertura de coleta de lixo — a menor do\npaís (Censo 2022/IBGE), ainda que com o\nmaior avanço do Brasil na década\n\ndesmatados em 2024: liderança nacional em\n2023 e 2024 (MapBiomas — RAD 2024)\n\nqueda do desmatamento em 2024 sobre\n2023 — o avanço existe, mas parte de um\npatamar inaceitável\n\n10 programas\norganizados em 9 eixos, de resíduos sólidos\na bem-estar animal\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nLixo Zero Maranhão\n\nRefloresta Maranhão\n\nconsórcios regionais, centrais de triagem, apoio a catadores e\ncronograma pactuado de eliminação de lixões até o 2º ano\n\nmetas medidas em hectares recuperados e taxa de sobrevivência após\n2 e 3 anos — não em mudas entregues\n\nMaranhão Protege\n\nPainel de fiscalização\n\nrede regional de acolhimento e saúde animal, com policlínicas\nveterinárias e critérios públicos de entrada e saída\n\nmultas aplicadas e efetivamente cobradas, desmatamento e queimadas\npublicados de forma acessível\n\nO PROBLEMA\n\nO\n\nMaranhão reúne uma das maiores riquezas ambientais do Brasil — Amazônia, Cerrado, um extenso litoral e uma rede de\nrios, manguezais e estuários de grande relevância ecológica e econômica. O diagnóstico, porém, é duro e honesto: menor\ncobertura de coleta de lixo do país (69,8%) e liderança nacional em desmatamento em 2023 e 2024 — ainda que com o maior\navanço em coleta do Brasil na década e queda de 34,3% no desmatamento em 2024.\nA raiz do problema é estrutural. Municípios pequenos não conseguem, isoladamente, operar destinação adequada de\nresíduos; a fiscalização ambiental é concentrada e sem cobertura regional; os inventários de biodiversidade existem, mas estão\ndispersos entre instituições; e a resposta a riscos climáticos é fragmentada entre órgãos que não compartilham dados. No bemestar animal, o Estado atua por pressão pontual, sem rede permanente e sem reconhecer o custeio que uma política dessas exige.\nA resposta deste capítulo é sistêmica: 10 programas em 9 eixos, do resíduo à responsabilização, sempre aproveitando\nestruturas existentes em vez de duplicá-las.\n\nDiferencial do Refloresta Maranhão: metas medidas em hectares recuperados e taxa de sobrevivência\napós 2 e 3 anos — não apenas em mudas entregues.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n16"
+          },
+          {
+            "id": "capitulo-iii-meio-ambiente-e-bem-estar-animal",
+            "titulo": "CAPÍTULO III MEIO AMBIENTE E BEM-ESTAR ANIMAL",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO III MEIO AMBIENTE E BEM-ESTAR ANIMAL\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO — RESÍDUOS E ECONOMIA CIRCULAR\n4 Lixo Zero Maranhão Gestão integrada de resíduos sólidos: consórcios públicos regionais, centrais de triagem e ecopontos\ncofinanciados, apoio a cooperativas de catadores, coleta seletiva por território e cronograma regional de eliminação de lixões\npactuado com os municípios. METAS-CHAVE Mapeamento de lixões e coleta seletiva no 1º ano; cronograma de eliminação de lixões\n\npactuado até o 2º ano; cobertura de coleta ampliada progressivamente.\n5 Pneu Circular Maranhão Programa específico para pneus inservíveis, sujeitos a sistema federal próprio de logística\nreversa. O Estado atua como fiscalizador, articulador e indutor — a obrigação e o custeio da logística reversa são do setor privado\n(fabricantes, importadores, distribuidores e comerciantes). METAS-CHAVE Mapeamento de descarte e adesão ao sistema nacional no\n\n1º ano; ampliação de pontos de recebimento e de cooperativas e empresas de reciclagem apoiadas.\nEIXO — COOPERAÇÃO MUNICIPAL E CLIMA\n6 Cidades Sustentáveis e Pacto Maranhão Verde Sistema único de cooperação e reconhecimento ambiental municipal,\ncom pontuação pública por indicadores (saneamento, resíduos, arborização, recursos hídricos, biodiversidade e gestão). A\nmetodologia valoriza também a evolução e a capacidade fiscal de cada município — territórios menores são reconhecidos pelo\nesforço, não só pelo resultado absoluto. METAS-CHAVE Metodologia publicada e adesão aberta nos primeiros 100 dias; primeira\n\nclassificação divulgada no 1º ano.\n7 Sistema Maranhense de Prevenção e Adaptação Climática Integração do monitoramento e da resposta a riscos\nclimáticos (Meio Ambiente, Defesa Civil, Saúde, Agricultura e Infraestrutura), aproveitando as estruturas existentes, sem\nduplicação. Mapas de risco, planos de adaptação municipais e sistemas de alerta, com prioridade à Baixada e ao litoral. METASCHAVE Mapeamento das estruturas e desenho do sistema integrado no 1º ano; ampliação progressiva de planos municipais e alertas.\n\nEIXO — ÁGUAS, BIODIVERSIDADE E RECUPERAÇÃO\n8 Maranhão Azul Proteção dos ecossistemas aquáticos e costeiros: rede de monitoramento contínuo da qualidade da água,\nrecuperação de matas ciliares e manguezais com viveiros e mão de obra local, combate ao descarte irregular e fiscalização\nintegrada por bacia hidrográfica e zona costeira (litoral ocidental, Golfão, Lençóis, Baixada). METAS-CHAVE Mapeamento de baci‐\n\nas e áreas prioritárias no 1º ano; rede de monitoramento e áreas de recuperação implantadas progressivamente, com resultados públicos em\nlinguagem acessível.\n\nMaranhão Biodiverso Sistema estadual de proteção da biodiversidade: consolidação em plataforma única dos inventários\njá produzidos por instituições de pesquisa e ICMBio, corredores ecológicos entre áreas prioritárias, fiscalização baseada em dados\ne pesquisa em parceria com universidades. Políticas diferenciadas para Amazônia, Cerrado e Sistema Costeiro-Marinho. METAS9\n\nCHAVE Inventários consolidados no 1º ano; corredores ecológicos prioritários apoiados ao longo do mandato.\n\nRefloresta Maranhão Resposta à liderança nacional em desmatamento em 2024 (218.298 hectares, MapBiomas), mesmo\ncom queda de 34,3% sobre 2023. Recuperação de áreas degradadas e reflorestamento: viveiros regionais de nativas, recuperação\nde nascentes e matas ciliares, parcerias com produtores em regularização ambiental, escolas e empresas. METAS-CHAVE Diagnós10\n\ntico do passivo de APPs (via CAR) e linha de base no 1º ano; recuperação progressiva com sobrevivência monitorada após 2 e 3 anos.\nEIXO — BEM-ESTAR ANIMAL\n\nMaranhão Protege e Rede Regional de Saúde Animal Rede regionalizada de acolhimento e saúde animal: Casas de\nPassagem para animais em situação de rua ou risco (com critérios de entrada e saída, capacidade máxima e prazo de permanência)\ne policlínicas veterinárias regionais, com protocolos distintos para pequenos animais e animais de grande porte. Apoio\ncondicionado a soluções municipais de destinação adequada de animais mortos, mediante estudo prévio. METAS-CHAVE Diagnós11\n\ntico regional no 1º ano; primeiras Casas de Passagem e policlínicas no mandato. O custeio permanente (equipes, insumos) é reconhecido\nexpressamente, com ampliação vinculada à capacidade fiscal.\n12 Rede Maranhão Animal Fortalecimento das ONGs e protetores independentes: cadastro estadual com critérios claros,\nfóruns regionais permanentes, capacitação técnica em manejo e resgate — e qualquer apoio financeiro exclusivamente via\nchamamento público, nos termos da legislação federal. METAS-CHAVE Cadastro aberto e primeiros fóruns nos primeiros 100 dias e ao\n\nlongo do 1º ano; prestação de contas pública de todo recurso repassado.\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n17"
+          },
+          {
+            "id": "capitulo-iii-meio-ambiente-e-bem-estar-animal-2",
+            "titulo": "CAPÍTULO III MEIO AMBIENTE E BEM-ESTAR ANIMAL",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO III MEIO AMBIENTE E BEM-ESTAR ANIMAL\n\nEIXO — FISCALIZAÇÃO E RESPONSABILIZAÇÃO\n13 Fiscalização, Controle e Reparação Ambiental Dois componentes claramente separados: (1) SEMA — autos de infração, multas, embargos, monitoramento com dados e tecnologia, e cobrança de reparação; (2) DEMA/Polícia Civil —\ninvestigação criminal, inteligência e perícia, fortalecida e regionalizada mediante concurso público condicionado a lei específica de\norganização e carreira e à disponibilidade orçamentária. METAS-CHAVE Diagnóstico de capacidade no 1º ano; cobertura regional\n\nampliada progressivamente; painel público com multas aplicadas e cobradas e evolução do desmatamento e das queimadas.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n18"
+          },
+          {
+            "id": "parte-ii",
+            "titulo": "PARTE II",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PARTE II\n\nA RIQUEZA QUE FICA\nO Maranhão produz riqueza que atravessa o seu território sem se transformar nele. Esta parte\ntrata de energia, turismo, campo, ciência e economia como uma única política de retenção de\nvalor.\n\nIV\n\nMATRIZ ENERGÉTICA\n\nV\n\nTURISMO E DESENVOLVIMENTO REGIONAL\n\nVI\n\nAGRICULTURA E AGROINDÚSTRIA\n\nVII\n\nCIÊNCIA, TECNOLOGIA E INOVAÇÃO\n\nVIII\n\nECONOMIA, EMPREGO E RENDA"
+          },
+          {
+            "id": "capitulo-iv",
+            "titulo": "CAPÍTULO IV",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO IV\n\nMATRIZ ENERGÉTICA\n\nENERGIA É RIQUEZA\nDo babaçu ao vento: o Maranhão não será apenas o lugar onde se produz energia — será onde se pesquisa,\nse transforma e se vende energia.\nO PROBLEMA EM NÚMEROS\n\n~93%\n\n100%\n\n10 anos\n\nda extração nacional de amêndoa de babaçu\nestá no Maranhão — e a associação histórica com a pobreza segue de pé\n\ndos insumos de biomassa das empresas incentivadas deverão vir de pequenos produtores, agricultores familiares e quebradeiras\nde coco maranhenses\n\né o horizonte da meta: tornar o Estado a\nmaior referência brasileira em geração de\nenergia por biomassa\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nBabaçu Energia\n\nSol do Maranhão\n\natração industrial somada à profissionalização da cadeia: do\nsubemprego ao empreendedorismo, da matéria-prima à energia\n\nprédios públicos, escolas e hospitais como usinas — e a economia na\nconta de luz reinvestida na expansão do próprio programa\n\nVento para o Maranhão\n\nResíduo Zero, Energia Nova\n\nnão basta a hélice girar aqui: é preciso fabricar aqui o que faz a hélice\ngirar\n\nAtlas Energético dos Resíduos: o que hoje polui poderá abastecer o\nEstado\n\nO PROBLEMA\n\nO\n\nMaranhão não pode continuar olhando para energia apenas como uma despesa. Energia é riqueza. O Estado reúne\nbiomassa em escala, sol, vento e resíduos orgânicos em abundância — e, ainda assim, exporta potencial e importa\ntecnologia, emprego e valor agregado.\nO caso do babaçu é o mais eloquente: o Maranhão responde por cerca de 93% da extração nacional de amêndoa, e essa\nliderança nunca se converteu em renda para quem trabalha na cadeia. A quebradeira de coco continua vendendo matéria-prima\nbruta, sem poder de negociação, sem acesso a mercado e sem escala.\nA visão deste capítulo é direta: energia limpa, indústria, emprego e dinheiro para o Maranhão. Isso exige política agressiva\nde atração de indústrias de biomassa, hidrogênio verde e outras fontes limpas, com incentivos fiscais, infraestrutura e parcerias\npúblico-privadas — mas com uma contrapartida central e inegociável: as empresas incentivadas deverão adquirir 100% dos\ninsumos de biomassa de pequenos produtores, agricultores familiares e quebradeiras de coco maranhenses, criando mercado,\nrenda e previsibilidade para quem vive do babaçu.\n\nO Maranhão não pode ser apenas o lugar onde a hélice gira. Precisa fabricar aquilo que faz a hélice girar.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n20"
+          },
+          {
+            "id": "capitulo-iv-matriz-energetica",
+            "titulo": "CAPÍTULO IV MATRIZ ENERGÉTICA",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO IV MATRIZ ENERGÉTICA\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nPROGRAMAS DO CAPÍTULO\n1 Babaçu Energia — a nova economia do Maranhão Transformar o Estado, em 10 anos, na maior referência brasileira\nem geração de energia por biomassa — e romper a associação histórica entre babaçu e pobreza. Duas frentes: (1) atração de\nempresas e indústrias nacionais e internacionais de energia, biocombustíveis e bioeconomia, com incentivos, áreas industriais e\ninfraestrutura; (2) qualificação e profissionalização da cadeia — capacitação em gestão, cooperativismo, empreendedorismo,\ntecnologia, segurança do trabalho, beneficiamento e comercialização, transformando o trabalhador do babaçu em\nmicroempreendedor capaz de negociar a própria produção. METAS-CHAVE Síntese: do subemprego ao empreendedorismo; da matéria-\n\nprima à energia. O Maranhão atrairá a indústria, mas a riqueza permanecerá também nas mãos do maranhense.\n2 Sol do Maranhão Expansão da geração solar fotovoltaica: prédios públicos estaduais, escolas e hospitais transformados em\nusinas de energia limpa; geração distribuída incentivada para pequenos produtores, agricultores familiares, cooperativas e empreendedores. METAS-CHAVE Mecanismo: a economia gerada na conta de luz é reinvestida na expansão do próprio programa. Meta:\n\nreferência nacional em energia solar pública e geração distribuída.\n3 Vento para o Maranhão Transformar o Estado em polo da indústria eólica — atraindo fabricantes de torres, estruturas,\nequipamentos elétricos e componentes, além de centros de manutenção e engenharia, com formação de técnicos especializados.\nMETAS-CHAVE Síntese: o Maranhão não pode ser apenas o lugar onde a hélice gira; precisa fabricar aquilo que faz a hélice girar.\n\n4 Resíduo Zero, Energia Nova Transformar resíduos urbanos, agropecuários e agroindustriais em ativos energéticos: apoio\na unidades de biogás e biometano a partir de aterros, resíduos da agropecuária, abatedouros, agroindústria, esgoto e lodo. METASCHAVE Instrumento: Atlas Energético dos Resíduos do Maranhão — mapeamento de onde existe matéria orgânica suficiente para gerar\n\nenergia. O que hoje polui poderá abastecer o Estado.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n21"
+          },
+          {
+            "id": "capitulo-v",
+            "titulo": "CAPÍTULO V",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO V\n\nTURISMO E DESENVOLVIMENTO REGIONAL\n\n365 DIAS DE MARANHÃO\nO turismo tratado como política de desenvolvimento econômico: o turista precisa chegar, permanecer,\ncircular e gastar dentro das comunidades.\nO PROBLEMA EM NÚMEROS\n\n2024\n\n2ª pior\n\n365\n\nano em que os Lençóis Maranhenses foram\nreconhecidos como Patrimônio Mundial\npela UNESCO\n\na MA-106, eixo de acesso a Alcântara, é a\nsegunda pior ligação rodoviária do Brasil\n\ndias: o calendário integrado substitui a\nlógica de alta e baixa temporada\n\n5 programas\nque rompem com a ideia de que o Maranhão tem apenas alguns destinos vendáveis\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nMaranhão à Beira D’Água\no Estado cria a infraestrutura ribeirinha; a comunidade cria a\neconomia. Pilotos em Turilândia e São José de Ribamar\n\nMaranhão 365\nroteiros temáticos com indução cruzada: quem vem aos Lençóis é\nlevado a conhecer outros destinos\n\nMaranhão de Aventura\n\nMaranhão de Portas Abertas\n\nselo estadual de segurança e qualidade — a trilha e a cachoeira viram\nprofissão e renda\n\npousada familiar, guia, barqueiro, artesão e restaurante local como\nproduto turístico\n\nO PROBLEMA\n\nO\n\nMaranhão não vai receber turistas. O Maranhão vai transformar o turismo em riqueza para o maranhense. Durante muito\ntempo o Estado foi vendido como se tivesse apenas alguns destinos — e o resultado foi uma economia turística\nconcentrada, sazonal e de baixa retenção de renda.\nO turista chega, fica pouco, conhece um único atrativo e gasta fora da comunidade. Enquanto isso, o pescador, o agricultor\nfamiliar, o artesão e o pequeno empreendedor permanecem à margem da cadeia que se forma no seu próprio território. Some-se\na isso o acesso precário aos destinos prioritários — a MA-106, eixo de Alcântara, é a segunda pior ligação do Brasil — e o\nquadro se fecha.\nA tese deste capítulo é que o turismo deve ser tratado como política de desenvolvimento econômico, e não como promoção\ninstitucional. O turista precisa chegar, permanecer mais tempo, conhecer mais municípios e gastar dentro das comunidades.\n\nO turista não pode apenas olhar o Maranhão. Precisa ouvir, sentir e comer o Maranhão.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n22"
+          },
+          {
+            "id": "capitulo-v-turismo-e-desenvolvimento-regional",
+            "titulo": "CAPÍTULO V TURISMO E DESENVOLVIMENTO REGIONAL",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO V TURISMO E DESENVOLVIMENTO REGIONAL\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nPROGRAMAS DO CAPÍTULO\n1 Maranhão à Beira D’Água Valorização das áreas ribeirinhas: cais turísticos, áreas de convivência, espaços gastronômicos e\nlazer nas margens dos rios, respeitando as características de cada município. Municípios-piloto: Turilândia e São José de Ribamar.\nO Estado cria a infraestrutura; o povo da cidade cria a economia. Restaurantes e empreendimentos estimulados a comprar da\ncadeia local: peixe do pescador, farinha do agricultor, mariscos da região. Em Turilândia, turismo náutico e passeios de barco; em\nRibamar, integração água-gastronomia-proximidade para a Grande Ilha.\n2 Maranhão 365 Calendário integrado de experiências para transformar cada época do ano em oportunidade turística:\nLençóis, Chapada das Mesas, Delta das Américas, Reentrâncias, Amazônia Maranhense, litoral, cidades históricas, bumba meu\nboi, tambor de crioula, reggae e gastronomia. Roteiros temáticos e campanhas por período do ano, com indução cruzada: quem\nvem aos Lençóis é incentivado a conhecer outros destinos; quem vem ao São João encontra roteiros culturais e gastronômicos. METAS-CHAVE O Maranhão não terá alta temporada — terá 365 dias de turismo.\n\nMaranhão de Aventura Incentivo ao turismo de aventura e ecoturismo: trilhas, rapel, canyoning, canoagem, cicloturismo,\nobservação de aves e esportes de natureza, com estruturação de roteiros e capacitação de guias e operadores. METAS-CHAVE Dife3\n\nrencial: selo estadual de segurança e qualidade para o turismo de aventura. A cachoeira, o rio e a trilha não serão apenas beleza — serão\nprofissão e renda.\n4 Maranhão Sabor e Cultura Gastronomia e cultura como atração turística: rotas gastronômicas e culturais regionais\nconectando turismo e produção local — arroz de cuxá, caranguejo, camarão, juçara, buriti, bacuri, produtos da agricultura familiar\n— e valorização do bumba meu boi, tambor de crioula, cacuriá, reggae e produção artesanal.\n\nMaranhão de Portas Abertas Turismo de base local: capacitação, apoio técnico e incentivo para pousadas familiares,\nguias, barqueiros, pescadores, artesãos, agricultores e restaurantes locais — produtos turísticos construídos pela própria comunidade. METAS-CHAVE Instrumento: plataforma estadual de divulgação dos pequenos negócios turísticos e roteiros locais. Quem vive no lugar\n5\n\nprecisa ganhar dinheiro com quem visita o lugar.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n23"
+          },
+          {
+            "id": "capitulo-vi",
+            "titulo": "CAPÍTULO VI",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VI\n\nAGRICULTURA E AGROINDÚSTRIA\n\nÁGUA, TÉCNICA E MERCADO\nÁgua para produzir, técnica para crescer, mercado para vender e segurança para investir. 10 eixos · 16\npropostas.\nO PROBLEMA EM NÚMEROS\n\n65.566\n\n88 de 217\n\n61%\n\noperações do Pronaf no ciclo 2024/2025,\ncom mais de R$ 1 bilhão contratado (BNB)\n\nmunicípios alcançados pelo Procaf, que\nexecutou R$ 8,5 milhões em 2024\n\ndéficit de armazenagem frente à produção\nde soja e milho\n\n340 mil\n\n13.436\n\npescadores registrados (58% mulheres); 50\nmil t na pesca e 32 mil t na aquicultura\n(2024)\n\ntítulos entregues pelo ITERMA e ~280 mil\nhectares arrecadados em 2024\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nMaranhão Produtivo\n\nMaranhão com Água\n\nexpandir as compras públicas (Procaf, PNAE, PAA) dos atuais 88\nmunicípios para novos territórios\n\ninventário completo dos sistemas existentes nos 100 dias e verificação\nde funcionamento após 12 e 24 meses\n\nMaranhão que Financia\n\nTerra Regular\n\nRota do Crédito Rural com Observatório do Crédito nos 100 dias e\nvedação expressa a indicação política\n\nregularização fundiária como processo completo: do reconhecimento\nao registro em cartório\n\nO PROBLEMA\n\nO\n\ncampo maranhense convive com um paradoxo: há crédito contratado em volume relevante — 65.566 operações do Pronaf\ne mais de R$ 1 bilhão no ciclo 2024/2025 —, mas o acesso é desigual, a assistência técnica não chega e o produto não\nencontra caminho até o mercado. O Procaf, principal instrumento estadual de compras da agricultura familiar, executou R$ 8,5\nmilhões em 2024 e alcançou apenas 88 dos 217 municípios.\nA infraestrutura acompanha o mesmo padrão. O déficit de armazenagem chega a 61% frente à produção de soja e milho; a\nmalha vicinal é intransitável na chuva; a irrigação é escassa e mal distribuída. Na pesca, mais de 340 mil pescadores registrados\n— 58% deles mulheres — operam sem cadeia de frio, sem sanidade adequada e com fragilidade cadastral que compromete até\no acesso ao seguro-defeso.\nSome-se a isso a insegurança jurídica sobre a terra. O ITERMA entregou 13.436 títulos e arrecadou cerca de 280 mil\nhectares em 2024, mas a regularização segue incompleta: reconhecer não é medir, medir não é titular, titular não é registrar.\nSem registro em cartório e integração ambiental, o produtor não acessa crédito nem investe.\nA resposta é integrada, não setorial: 16 propostas organizadas em 10 eixos que tratam assistência técnica, cooperativismo,\nagroindustrialização, mercado, logística, água, defesa sanitária, crédito, regularização e extrativismo como partes de uma\nmesma política.\n\nCessão de veículo é a última alternativa. A hierarquia da logística rural é: serviço compartilhado →\nfinanciamento → cessão temporária → aquisição — e com inventário do patrimônio já distribuído.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n24"
+          },
+          {
+            "id": "capitulo-vi-agricultura-e-agroindustria",
+            "titulo": "CAPÍTULO VI AGRICULTURA E AGROINDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VI AGRICULTURA E AGROINDÚSTRIA\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — ASSISTÊNCIA TÉCNICA, PESQUISA E INOVAÇÃO\n1.1 AGERP Presente Reestruturar e regionalizar a assistência técnica (ATER), com atendimento em três níveis — orientação\nbásica, acompanhamento continuado e projetos especializados —, metas por região e priorização dos territórios de menor cobertura.\n\nPlataforma Agroclimática do Maranhão Sistema público de informações de clima, solo e aptidão agrícola por região e\nmunicípio. METAS-CHAVE Primeira versão pública no 1º ano, com integração futura a alertas climáticos.\n1.2\n\nEIXO 2 — AGRICULTURA FAMILIAR E COOPERATIVISMO\n2.1 Maranhão Produtivo Expandir as compras públicas (Procaf, PNAE, PAA) dos atuais 88 municípios para novos\nmunicípios, com apoio à documentação dos fornecedores e ponte com o mercado privado.\n2.2 Maranhão Cooperativo Fortalecer cooperativas e associações com capacitação em gestão, regularização, apoio contábil e\njurídico e integração a compras públicas e crédito.\n\nEIXO 3 — AGROINDUSTRIALIZAÇÃO E AGREGAÇÃO DE VALOR\n\nMaranhão Agroindustrial Estimular a transformação local da produção: marco de incentivos de ICMS adequado à\ndecisão do STF, licenciamento moderno (Simplifica Maranhão) e apoio técnico às agroindústrias.\n3.1\n\nEIXO 4 — MERCADO, COMERCIALIZAÇÃO E COMPRAS PÚBLICAS\n4.1\n\nMaranhão Conecta Integrar plataformas de comercialização já existentes, públicas e privadas, sem criar sistemas duplica‐\n\ndos.\n4.2 Maranhão de Origem Apoiar indicações geográficas junto ao INPI (por exemplo, a tiquira) e consolidar selos estaduais\nde origem e da agricultura familiar, conectados ao SENAF.\n\nEIXO 5 — INFRAESTRUTURA, ARMAZENAGEM E LOGÍSTICA RURAL\n5.1 Maranhão Escoa Mapear a malha vicinal nos primeiros 100 dias, priorizar investimentos por critério técnico público e\nampliar a armazenagem regionalizada com modelo de gestão definido antes de cada obra.\n\nLogística Rural Compartilhada Política única com hierarquia de soluções: serviço logístico compartilhado →\nfinanciamento → cessão temporária → aquisição. A cessão de veículo é a última alternativa, e haverá inventário do patrimônio já\ndistribuído.\n5.2\n\nEIXO 6 — ÁGUA, IRRIGAÇÃO E ADAPTAÇÃO CLIMÁTICA\n6.1\n\nMaranhão com Água Quatro frentes: água para viver, água para produzir, irrigação eficiente e gestão de risco climático.\n\nMETAS-CHAVE Inventário completo dos sistemas existentes nos 100 dias e verificação de funcionamento após 12 e 24 meses.\n\nEIXO 7 — DEFESA SANITÁRIA, INSPEÇÃO E QUALIDADE\n\nAGED Forte e Presente Diagnóstico completo da defesa agropecuária nos 100 dias, reorganização de equipes, defesa\nanimal e vegetal com igual prioridade e fiscalização integrada nas divisas com o Piauí, o Pará e o Tocantins.\n7.1\n\n7.2 Agroindústria Regular Ampliar o SUSAF/MA — comércio intermunicipal com selo de qualidade — e criar jornada\núnica de regularização da agroindústria familiar, preparando a integração nacional (SISBI-POA).\n\nEIXO 8 — CRÉDITO, SEGURO E FINANCIAMENTO PRODUTIVO\n8.1 Maranhão que Financia Rota do Crédito Rural: serviço público de preparação, orientação e encaminhamento aos bancos\n(CAF, projeto técnico, linha adequada), com Observatório do Crédito nos 100 dias e vedação a indicação política.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n25"
+          },
+          {
+            "id": "capitulo-vi-agricultura-e-agroindustria-2",
+            "titulo": "CAPÍTULO VI AGRICULTURA E AGROINDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VI AGRICULTURA E AGROINDÚSTRIA\n\nMaranhão Seguro no Campo Mutirões de adesão ao Garantia-Safra (R$ 1.200 por inscrição), orientação sobre Proagro\ne seguro rural subvencionado, e Central de Gestão de Riscos integrada ao monitoramento climático.\n8.2\n\nEIXO 9 — REGULARIZAÇÃO, SUSTENTABILIDADE E SEGURANÇA JURÍDICA\n9.1 Terra Regular Regularização fundiária como processo completo: reconhecimento, medição, titulação, registro em cartório\ne integração ambiental; combate à grilagem e tratamento respeitoso a territórios tradicionais.\n9.2 Campo Sustentável e Seguro Mutirões gratuitos de CAR (até 4 módulos fiscais), adesão ao PRA/MA e readequação da\nlei de zoneamento do Bioma Amazônico à decisão do STF.\n\nEIXO 10 — PESCA, AQUICULTURA E EXTRATIVISMO SUSTENTÁVEL\n10.1 Maranhão dos Peixes Mutirões cadastrais (RGP e seguro-defeso), beneficiamento com sanidade, cadeia de frio,\nfortalecimento de colônias e ações específicas para pescadoras e marisqueiras.\n\nRiqueza dos Babaçuais Beneficiamento (óleo, leite, farinha, carvão, artesanato), acesso garantido aos babaçuais (leis\nde Babaçu Livre), efetivação da Lei 12.037/2023 e integração às compras públicas e à política de preços mínimos da sociobiodiversidade.\n10.2\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n26"
+          },
+          {
+            "id": "capitulo-vii",
+            "titulo": "CAPÍTULO VII",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VII\n\nCIÊNCIA, TECNOLOGIA E INOVAÇÃO\n\nCIÊNCIA QUE RESOLVE\nTransformar conhecimento em soluções, empregos e oportunidades para todas as regiões. 10 eixos · 13\npropostas.\nO PROBLEMA EM NÚMEROS\n\nR$ 63 mi\n\nR$ 10 mi\n\nNota máxima\n\ndestinados pela FAPEMA em bolsas e auxílios em 2025, somando 4.317 bolsas\n\nmaior edital da história da Fundação: 71\nprojetos em 16 municípios\n\nUFMA com avaliação máxima da CAPES\nem Políticas Públicas; UEMA na excelência\nnacional em Ciências Agrárias\n\nBase estreita\na produção científica segue concentrada na\ncapital — o interior participa pouco e fixa\nmenos\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nMaranhão Inova\nfomento orientado por missões públicas: saúde, bioeconomia, água,\nclima e agricultura, com seleção por mérito\n\nBio Maranhão\nbioeconomia com autorização legal (SisGen), consentimento das\ncomunidades e repartição de benefícios\n\nRede de Laboratórios\n\nIA que apoia, não decide\n\ninventário do que já existe e plataforma de reserva: construir só o que\nrealmente faltar\n\npolítica de inteligência artificial responsável — a máquina apoia\ndecisões, nunca decide sozinha\n\nO PROBLEMA\n\nO\n\nMaranhão tem ativos científicos reais. A FAPEMA destinou mais de R$ 63 milhões em bolsas e auxílios em 2025,\nsomando 4.317 bolsas, e lançou o maior edital de sua história — R$ 10 milhões para 71 projetos em 16 municípios. A\nUFMA obteve nota máxima da CAPES em Políticas Públicas e a UEMA figura na excelência nacional em Ciências Agrárias.\nO problema é que essa base é estreita e concentrada na capital. A pesquisa raramente é orientada pelos problemas concretos\ndo Estado; a propriedade intelectual gerada nas universidades não chega ao mercado; os laboratórios existem, mas ninguém sabe\nquais são, onde estão e como usá-los; e o pesquisador formado aqui frequentemente é fixado em outro estado.\nHá ainda uma questão de justiça: a bioeconomia maranhense se apoia no conhecimento de quebradeiras, indígenas,\nquilombolas e extrativistas, que historicamente não participaram dos benefícios. Este capítulo trata isso como condição de\nlegalidade, e não como gesto de boa vontade.\n\nPolítica de IA responsável: a inteligência artificial apoia decisões públicas, nunca decide sozinha. E toda\ntransparência do fomento responde a quatro perguntas: qual projeto recebeu, quanto, por quê e o que\nproduziu.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n27"
+          },
+          {
+            "id": "capitulo-vii-ciencia-tecnologia-e-inovacao",
+            "titulo": "CAPÍTULO VII CIÊNCIA , TECNOLOGIA E INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VII CIÊNCIA , TECNOLOGIA E INOVAÇÃO\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — PESQUISA ORIENTADA POR MISSÕES PÚBLICAS\nP1 Maranhão Inova — Ciência para os Problemas do Estado Orientar parte do fomento às missões prioritárias (saúde,\nbioeconomia, água, clima, agricultura), com chamadas por estágio de maturidade e seleção por mérito.\n\nEIXO 2 — PROPRIEDADE INTELECTUAL E TRANSFERÊNCIA\nP2 Proteção e Transferência do Conhecimento Fortalecer núcleos de inovação das universidades, com regras justas de\ntitularidade e repartição, e a Arena Bio como ponte sigilosa entre pesquisadores e empresas — proteção antes da exposição.\n\nEIXO 3 — BIOECONOMIA COM REPARTIÇÃO DE BENEFÍCIOS\n\nBio Maranhão Bioeconomia sempre com autorização legal de acesso (SisGen), consentimento das comunidades e\nrepartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas; valor agregado dentro do Estado.\nP3\n\nEIXO 4 — CIÊNCIA PARA A SAÚDE\n\nCiência para a Saúde Maranhense Pesquisa voltada aos maiores problemas do SUS estadual — hanseníase, tuberculose e sífilis —, com prioridades definidas junto à SES e foco em diagnóstico, prevenção e soluções de baixo custo.\nP4\n\nEIXO 5 — FORMAÇÃO E FIXAÇÃO DE TALENTOS\nP5 Jovem Cientista Maranhense Iniciação científica nas escolas estaduais, com formação de professores, feiras, olimpíadas\ne bolsas, priorizando o interior e as escolas rurais.\nP6 Formação, Pós-Graduação e Fixação Mais bolsas, apoio a programas no interior e linhas de fixação e atração de\npesquisadores — inclusive maranhenses formados fora —, com equidade de gênero.\n\nEIXO 6 — EMPREENDEDORISMO CIENTÍFICO\n\nCientista Empreendedor Leque de caminhos — licenciar, abrir empresa, firmar parceria ou transferir — aproveitando\nCentelha, MaraInTech e incubadoras. Empreender é opção, não imposição.\nP7\n\nEIXO 7 — INFRAESTRUTURA E REDES DE PESQUISA\nP8 Rede de Laboratórios Compartilhados Inventário do que existe, plataforma de reserva, manutenção e regras de\ncompartilhamento com prioridade ao interior; construir só o que realmente faltar.\n\nEIXO 8 — CONHECIMENTO DO TERRITÓRIO\nP9 Observatório Científico do Maranhão Integrar bases existentes (IMESC, IBGE, universidades), mapear lacunas,\nfinanciar pesquisas sobre o território e abrir os dados.\n\nEIXO 9 — DADOS, COMPUTAÇÃO E INTELIGÊNCIA ARTIFICIAL\nP10 Dados, Computação e IA para Políticas Públicas Dados abertos e seguros, computação científica por cooperação e\npolítica de IA responsável: apoia decisões, nunca decide sozinha.\n\nConectividade e Inclusão Digital no Interior Levar internet de qualidade a escolas, universidades e polos do interior,\nem parceria com a rede acadêmica e programas federais.\nP11\n\nEIXO 10 — GOVERNANÇA, INTEGRIDADE E TRANSPARÊNCIA\nP12 Compras Públicas de Inovação Usar encomenda tecnológica e contrato de solução inovadora, já previstos em lei, para\ncontratar o que o mercado ainda não tem.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n28"
+          },
+          {
+            "id": "capitulo-vii-ciencia-tecnologia-e-inovacao-2",
+            "titulo": "CAPÍTULO VII CIÊNCIA , TECNOLOGIA E INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VII CIÊNCIA , TECNOLOGIA E INOVAÇÃO\n\nIntegridade Científica e Transparência do Fomento Ética, combate ao plágio, gestão de conflitos de interesse,\nproteção a denunciantes e transparência plena: qual projeto recebeu, quanto, por quê e o que produziu.\nP13\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n29"
+          },
+          {
+            "id": "capitulo-viii",
+            "titulo": "CAPÍTULO VIII",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VIII\n\nECONOMIA, EMPREGO E RENDA\n\nMORALIZAR E INDUSTRIALIZAR\nMoralizar para cuidar. Industrializar para prosperar. 10 eixos · 23 propostas.\nO PROBLEMA EM NÚMEROS\n\nR$ 38 bi\n\n58,7%\n\n86%\n\norçamento estadual de 2026 e nota A na\nCAPAG pela primeira vez (Tesouro Nacional)\n\ntaxa de informalidade — a maior do Brasil\n— convivendo com desocupação de 6,8%\nem 2025, a menor da série\n\nda pauta de exportação concentrada em\nsoja, alumina/alumínio e celulose, apesar do\n2º lugar exportador do Nordeste\n\n4 de 5\n\n12,2%\n\ndos municípios de menor PIB por habitante\ndo Brasil estão no Maranhão\n\nextrema pobreza em 2023, ante 15,0% em\n2022 — ~567 mil pessoas saíram da pobreza em um ano, mas os índices seguem entre\nos piores do país\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nNota A mantida\n\nCentral do Investidor\n\ncompromisso de preservar a classificação A na CAPAG durante todo\no mandato, com crédito usado só para investimento estruturante\n\nporta única com gerente de projeto e comitê com poder de destravamento, operando nos primeiros 100 dias\n\nMaranhão que Transforma\n\nCompra Maranhão\n\n5 a 8 cadeias prioritárias por critérios públicos, com avaliação bienal\ne substituição das que não entregarem\n\nusar o poder de compra de R$ 38 bilhões/ano a favor das MPEs, das\nregiões e da agricultura familiar\n\nO PROBLEMA\n\nO\n\nMaranhão apresenta hoje uma combinação que exige leitura honesta. Há avanços fiscais reais — orçamento de cerca de\nR$ 38 bilhões em 2026 e nota A na CAPAG pela primeira vez — e a desocupação caiu a 6,8% em 2025, a menor da\nsérie. Mas a informalidade atinge 58,7%, a maior do Brasil: existe ocupação, e não existe trabalho protegido.\nA estrutura produtiva explica o descompasso. O Porto do Itaqui bateu recorde e o Estado é o 2º maior exportador do\nNordeste (US$ 2,5 bilhões no 1º semestre de 2025), mas cerca de 86% da pauta se concentra em soja, alumina/alumínio e\ncelulose — commodities que atravessam o território sem se transformar nele. Quatro dos cinco municípios de menor PIB por\nhabitante do Brasil estão no Maranhão.\nA pobreza recuou, mas de um patamar inaceitável: a extrema pobreza caiu de 15,0% (2022) para 12,2% (2023), com cerca de\n567 mil pessoas saindo da pobreza em um ano — e os índices seguem entre os piores do país. Enquanto isso, o Estado convive\ncom renúncias fiscais nunca avaliadas individualmente e com um ambiente de negócios que trata o pequeno empreendedor\ncomo suspeito.\nEste capítulo responde com 23 propostas em 10 eixos, que vão do equilíbrio fiscal ao poder de compra do Estado, passando\npor desburocratização, qualificação, industrialização, crédito e avaliação de incentivos.\n\nDecisão de crédito sempre técnica, nunca política. O Estado avaliza e prepara o tomador; quem decide\no empréstimo é o banco.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n30"
+          },
+          {
+            "id": "capitulo-viii-economia-emprego-e-renda",
+            "titulo": "CAPÍTULO VIII ECONOMIA , EMPREGO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VIII ECONOMIA , EMPREGO E RENDA\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — EQUILÍBRIO FISCAL E CAPACIDADE DE INVESTIMENTO\n1.1 Sustentabilidade Fiscal Metas anuais de poupança corrente e investimento na LDO e no PPA, memória de cálculo\npública de toda economia anunciada e crédito da nota A usado só para investimento estruturante. METAS-CHAVE Compromisso:\n\nmanter a nota A na CAPAG durante todo o mandato.\n\nEficiência do Gasto Social Preservar os pisos de Saúde e Educação e fazer cada real render mais: custos unitários (por\naluno, leito, procedimento) publicados e maiores contratos revisados até o 2º ano.\n1.2\n\n1.3 Sistema Integrado de Desenvolvimento Econômico Em vez de fusão apressada de secretarias: conselho, comitê\nexecutivo, central única do investidor e revisão organizacional de 180 dias. A agricultura familiar mantém orçamento e equipe\npróprios em qualquer cenário.\n\nEIXO 2 — AMBIENTE DE NEGÓCIOS E DESBUROCRATIZAÇÃO\n\nEmpresa Maranhense Digital Abertura automática de empresas de baixo risco via Redesim, fluxo 100% digital\nJUCEMA mais inscrição estadual e estudo público das taxas, incluída a hipótese de isenção para o MEI.\n2.1\n\n2.2 Licenciamento por Risco Tabela única de risco entre órgãos, prazos máximos publicados por licença, aprovação tácita\nnas hipóteses legais e fiscalização orientadora — orienta antes de punir —, sem reduzir proteção nos casos de alto risco.\n\nEIXO 3 — EMPREGO FORMAL, QUALIFICAÇÃO E PRODUTIVIDADE\n3.1 Rede Estadual de Emprego e Primeiro Emprego SINE reestruturado e trilha do primeiro emprego: orientação, curso\nvinculado a vaga real, aprendizagem e acompanhamento de 12 meses. METAS-CHAVE Colocações verificadas no Caged.\n\nQualifica Maranhão Inverter a lógica: primeiro mapear a demanda real por região e setor, depois contratar a formação.\nInstituições com melhor inserção ganham escala.\n3.2\n\n3.3 Maranhão Digital Produtivo Polos de formação digital no interior e nas periferias (marketing, programação, IA,\nconteúdo), cada turma vinculada a uma saída concreta; expansão só após avaliação do piloto.\n\nEIXO 4 — MICRO, PEQUENOS NEGÓCIOS E COOPERATIVAS\n4.1 Mil Talentos do Maranhão Microcrédito produtivo orientado operado por quem sabe emprestar (BNB, cooperativas),\ncom aval do Fundo Garante Maranhão e capacitação obrigatória; decisão de crédito sempre técnica, nunca política.\n4.2 Coopera Maranhão Profissionalização de cooperativas com o Sescoop, incubação, rodadas de negócio e mutirões\nitinerantes de formalização com acompanhamento de 12 meses.\n\nEIXO 5 — INDUSTRIALIZAÇÃO E VERTICALIZAÇÃO\n\nMaranhão que Transforma Selecionar de 5 a 8 cadeias prioritárias por critérios públicos e montar plano por cadeia\n(âncora, crédito, incentivo condicionado, infraestrutura, qualificação). METAS-CHAVE Avaliação bienal com substituição de cadeias\n5.1\n\nsem desempenho.\n5.2 Distritos Industriais Requalificar distritos existentes e implantar condomínios industriais no interior com fundiário\nresolvido, infraestrutura e licenciamento prévio por área; lotes por edital com cláusula de reversão.\n\nFeito no Maranhão Inspeção sanitária proporcional ao risco e ao porte, unidades coletivas de beneficiamento, selo\nestadual e demanda garantida via compras públicas. METAS-CHAVE Mínimo legal de 30% da agricultura familiar na merenda\n5.3\n\nefetivamente cumprido.\nEIXO 6 — ATRAÇÃO DE INVESTIMENTOS E COMÉRCIO EXTERIOR\n6.1 Central do Investidor Porta única: protocolo, gerente de projeto, mapa de pendências e comitê com poder de destravamento. METAS-CHAVE Operando nos primeiros 100 dias.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n31"
+          },
+          {
+            "id": "capitulo-viii-economia-emprego-e-renda-2",
+            "titulo": "CAPÍTULO VIII ECONOMIA , EMPREGO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO VIII ECONOMIA , EMPREGO E RENDA\n\nMaranhão Exportador Adensar a retroárea do Itaqui como plataforma industrial e logística e levar MPEs do zero ao\nprimeiro embarque, pela trilha Exporta MA, com ApexBrasil e Sebrae.\n6.2\n\nEIXO 7 — DESENVOLVIMENTO REGIONAL E INTERIORIZAÇÃO\n7.1 Maranhão das Regiões Estratégia própria por região de planejamento (diagnóstico, carteira de projetos, metas), fóruns\nregionais semestrais e apoio a arranjos produtivos locais por edital.\n7.2 Economia que Nasce Pacote integrado para municípios dependentes da administração pública: merenda local,\nformalização, microcrédito, beneficiamento, conectividade e agente de desenvolvimento; municípios-alvo definidos por critério\ntécnico público.\n\nEIXO 8 — INOVAÇÃO, TECNOLOGIA E ECONOMIA DIGITAL\n\nTecnologia que Chega Extensão tecnológica para pequenos negócios — o “ATER digital”: diagnóstico, implantação\nassistida de duas a três soluções e acompanhamento de 6 meses.\n8.1\n\n8.2 Maranhão Inova (Startups) Trilha contínua da ideação ao mercado, hubs regionais e compra pública de inovação: o\nEstado como primeiro cliente, não eterno subsidiador.\n\nEIXO 9 — CRÉDITO, GARANTIAS E FINANCIAMENTO\n9.1 Garante Maranhão Fundo garantidor estadual que avaliza micro e pequenos tomadores, com garantia sempre parcial e\ndecisão de crédito nos bancos. METAS-CHAVE Estudo do modelo em 180 dias, lei no 1º ano e primeiras operações no 2º ano.\n\nCapta Maranhão “Fábrica estadual de projetos” para captar mais recursos do FNE, BNDES, Basa, Sudene e Finep, com\nmetas anuais públicas por região e apoio aos municípios sem equipe técnica.\n9.2\n\nEIXO 10 — INCENTIVOS FISCAIS ORIENTADOS POR RESULTADOS\n10.1 Avaliação e Modernização dos Incentivos Avaliar cada incentivo individualmente (renúncia, empregos reais, custo\npor emprego) e decidir caso a caso; sem corte linear e sem quebra de contratos. Novos incentivos só com metas e cláusula de desempenho. METAS-CHAVE 100% do estoque avaliado até o fim do mandato.\n\nCompra Maranhão Usar o poder de compra do Estado (R$ 38 bilhões por ano): cotas para MPEs, margens de\npreferência, lotes regionais, compra da agricultura familiar e pagamento pontual ao pequeno fornecedor.\n10.2\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n32"
+          },
+          {
+            "id": "parte-iii",
+            "titulo": "PARTE III",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PARTE III\n\nO POVO MARANHENSE\nSaúde, segurança e educação são as três frentes em que o Estado é julgado todos os dias pela\npopulação. Esta parte trata do serviço público que chega — ou não chega — à porta de cada família.\n\nIX\n\nSAÚDE PÚBLICA\n\nX\n\nSEGURANÇA PÚBLICA\n\nXI\n\nEDUCAÇÃO"
+          },
+          {
+            "id": "capitulo-ix",
+            "titulo": "CAPÍTULO IX",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO IX\n\nSAÚDE PÚBLICA\n\nSAÚDE PARA UM MARANHÃO INTEIRO\nAtenção primária forte, fila por prioridade clínica e 19 regiões de saúde que efetivamente resolvem. 9 eixos ·\n22 propostas.\nO PROBLEMA EM NÚMEROS\n\n19\n\n3,8%\n\n3 doenças\n\nRegiões de Saúde organizam o SUS estadual — hoje sem equipe executiva regional\nnem painel público de filas e capacidade\n\ndos domicílios sem banheiro ou sanitário\n(Censo 2022/IBGE): saneamento é causa\ndireta de adoecimento evitável\n\ntuberculose, hanseníase e sífilis: linhas de\ncuidado que o Estado ainda mede pela notificação, e não pela cura\n\n22 propostas\norganizadas em 9 eixos, da prevenção à\nvalorização de quem cuida\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nNa fila, quem mais precisa, primeiro\n\nSUS com Prazo Garantido\n\nfila por prioridade clínica e risco, com protocolos públicos e\ninformação da posição ao paciente\n\n“relógio assistencial” que não reinicia nas transferências e obrigação\nde buscar alternativa antes do vencimento\n\nMaranhão Tempo é Vida\n\nMeu Prontuário, Minha História\n\nrede de resposta rápida para infarto, AVC, sepse, trauma e emergência\nobstétrica, com acionamento único\n\nprontuário eletrônico estadual integrado à RNDS/SUS Digital, com\ncontrole de acesso, logs e auditoria\n\nO PROBLEMA\n\nA\n\nrede estadual de saúde do Maranhão está organizada em 19 Regiões de Saúde. No papel, é uma rede; na prática, funciona\ncomo um conjunto de unidades que não se comunicam. Falta equipe executiva regional, falta painel público de filas e\ncapacidade, falta cofinanciamento vinculado a metas — e o paciente paga essa desorganização com tempo.\nA fila é o sintoma mais visível. Hoje ela não é ordenada por prioridade clínica e risco; os cadastros não são revisados, as\nvagas não são reaproveitadas e o cidadão não sabe qual é a sua posição nem qual prazo esperar. Nas transferências entre\nserviços, o “relógio” do atendimento reinicia, e a espera real desaparece das estatísticas.\nNa ponta da prevenção, o quadro é igualmente estrutural: a Atenção Primária não tem cofinanciamento estadual permanente\ncom critérios redistributivos, há vazios assistenciais em regiões inteiras e a água consumida em territórios prioritários não é\nmonitorada com regularidade — 3,8% dos domicílios maranhenses sequer possuem banheiro ou sanitário. Tuberculose,\nhanseníase e sífilis seguem sendo tratadas como problema de notificação, e não de cura.\nSomam-se a isso a gestão de unidades sem critério técnico — historicamente uma porta de entrada para o loteamento\npolítico — e a ausência de dimensionamento da força de trabalho, com plantões sem transparência de valores e sem política de\nfixação no interior.\n\nFoco na cura, não só na notificação: plano individual, tratamento acompanhado, busca ativa com sigilo\ne apoio social — transporte e alimentação — para quem precisa concluir o tratamento.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n34"
+          },
+          {
+            "id": "capitulo-ix-saude-publica",
+            "titulo": "CAPÍTULO IX SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO IX SAÚDE PÚBLICA\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — PREVENÇÃO E ATENÇÃO PRIMÁRIA\nP1 Fortalecimento da APS Cofinanciamento estadual permanente da Saúde da Família com critérios redistributivos,\nexpansão faseada nos vazios assistenciais, reforma de UBS, exames básicos e teleconsultoria.\nP2 Saúde em Cada Gole Vigilância e tratamento da água nos territórios prioritários: monitoramento regular, cloração,\nhipoclorito orientado e divulgação acessível dos resultados. METAS-CHAVE Meta de reduzir doenças diarreicas em menores de 5 anos.\n\nComplexos Integrados de Saúde e Cidadania Pilotos reunindo saúde, educação, esporte e assistência num só\nequipamento, com custeio definido antes de cada obra e avaliação antes de expandir.\nP3\n\nEIXO 2 — VIGILÂNCIA E UMA SÓ SAÚDE\nP4 Fortalecimento da Vigilância Integrar os seis componentes (epidemiológico, sanitário, ambiental, laboratorial, do\ntrabalhador e de emergências), fortalecer LACEN e CIEVS e executar estratégia anual de recuperação vacinal.\nP5 Uma Só Saúde Núcleo permanente articulando saúde humana, animal, ambiente, saneamento e agricultura, com planos\nconjuntos para zoonoses e arboviroses.\n\nEIXO 3 — ACESSO, REGULAÇÃO E DIAGNÓSTICO\n\nNa Fila, Quem Mais Precisa, Primeiro Filas por prioridade clínica e risco, protocolos públicos, revisão de cadastros,\nreaproveitamento de vagas e informação da posição ao paciente.\nP6\n\nP7 SUS com Prazo Garantido Prazos de gestão por prioridade clínica, “relógio assistencial” que não reinicia nas\ntransferências e obrigação de buscar alternativa antes do vencimento.\nP8 Especialista na Palma da Mão Plataforma estadual de acesso regulado a especialistas: telessaúde, teleconsultoria, linhas\nmultiprofissionais e consulta de status pelo cidadão.\n\nRede Integrada de Diagnóstico Fluxo digital único do pedido ao laudo, laboratórios públicos fortalecidos, capacidade\ncomplementar credenciada com metas, validação eletrônica e auditoria de pagamentos.\nP9\n\nEIXO 4 — URGÊNCIA, HOSPITAIS E REDE REGIONAL\n\nMaranhão Tempo é Vida Rede de resposta rápida para infarto, AVC, sepse, trauma e emergência obstétrica: referências\nclassificadas, acionamento único (regulação, transporte e hospital) e “Relógio da Vida” medindo cada etapa.\nP10\n\nP11 Cirurgia 24 Horas Censo nominal da fila cirúrgica, operação extraordinária de redução e ampliação de turnos apenas\nonde houver equipe, UTI, sangue e pós-operatório seguros.\nP12 Hospital do Povo Maranhense Nova unidade estadual de urgência e emergência na Região Metropolitana, condicionada a estudo independente de demanda, localização técnica e modelo de gestão definido antes da obra.\n\nRegião de Saúde que Resolve Cada uma das 19 regiões como rede integrada: equipe executiva regional, painel de filas\ne capacidade, e cofinanciamento vinculado a metas.\nP13\n\nEIXO 5 — SAÚDE DIGITAL\nP14 Meu Prontuário, Minha História Prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo\nclínica, controle de acesso, logs, auditoria e atendimento assistido a quem não usa meios digitais.\n\nEIXO 6 — MATERNO-INFANTIL E LINHAS PRIORITÁRIAS\nP15 Clínica da Gestante e do Bebê Referência estadual para gestação de alto risco articulada às regiões e à Atenção\nPrimária, com teleapoio, regulação e plano de cuidado compartilhado.\n\nTratar para Curar Foco na cura, e não só na notificação, de tuberculose, hanseníase e sífilis: plano individual, tratamento\nacompanhado, busca ativa com sigilo e apoio social (transporte, alimentação).\nP16\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n35"
+          },
+          {
+            "id": "capitulo-ix-saude-publica-2",
+            "titulo": "CAPÍTULO IX SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO IX SAÚDE PÚBLICA\n\nSaúde Mental do Maranhense Regionalizar a RAPS: qualificar CAPS (incluindo AD e infantojuvenil), apoio matricial\nà Atenção Primária, leitos em hospitais gerais e programa estadual de prevenção do suicídio.\nP17\n\nEIXO 7 — ASSISTÊNCIA FARMACÊUTICA\nP18 Remédio da Terra Protocolo estadual para produtos à base de canabidiol regularizados pela Anvisa, limitado a\nindicações com evidência, com prescrição especializada e farmacovigilância. METAS-CHAVE Comparativo público entre custo e judi‐\n\ncialização.\n\nSaúde sem Prejuízo Provisão direta e regular de medicamentos, painel público de desabastecimento por unidade e\nressarcimento apenas excepcional, limitado e auditado.\nP19\n\nEIXO 8 — GESTÃO PROFISSIONAL E TRABALHADORES\n\nGestão Profissional das Unidades Dirigentes selecionados por competência com plano de gestão, contrato de metas,\navaliação periódica com direito de defesa e autonomia técnica protegida.\nP20\n\nP21 Valorização de Quem Cuida Dimensionamento da força de trabalho, plataforma transparente de plantões e valores,\nprogramas de fixação no interior, residências ampliadas e saúde ocupacional.\n\nEIXO 9 — SAÚDE E BEM-ESTAR ANIMAL\nP22 Policlínicas Veterinárias Unidades regionais piloto para famílias vulneráveis (CadÚnico) e animais resgatados,\nintegradas à vigilância de zoonoses, com expansão condicionada à avaliação.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n36"
+          },
+          {
+            "id": "capitulo-x",
+            "titulo": "CAPÍTULO X",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO X\n\nSEGURANÇA PÚBLICA\n\nSISMA\nSistema Integrado de Segurança do Maranhão: inteligência, elucidação e presença permanente do Estado no\nterritório. 10 eixos · 24 propostas.\nO PROBLEMA EM NÚMEROS\n\n2.129\n\n30,4 › 27,1\n\n~36%\n\nmortes violentas intencionais em 2024 —\ntaxa de 30,4 por 100 mil habitantes (FBSP,\nAnuário 2025)\n\na taxa de 2024 é superior à de 2023: a curva\nvoltou a subir\n\ndos homicídios de 2023 foram esclarecidos\nno Brasil até o fim de 2024 (Instituto Sou\nda Paz)\n\nSem indicador\no Maranhão não publica indicador oficial\npróprio de esclarecimento de homicídios\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nSISMA\n\nIndicador de elucidação\n\ndireção estratégica comum com metas e dados compartilhados, sem\nunificar instituições nem retirar autonomia técnica\n\ncriar e publicar o indicador oficial de esclarecimento de homicídios\ndo Maranhão\n\nInteligência Financeira\n\nRetomar e permanecer\n\ndescapitalizar as facções rastreando e recuperando patrimônio, em\nvez de prender só no varejo\n\noperações de retomada territorial seguidas da entrada dos serviços\npúblicos — e não apenas da polícia\n\nO PROBLEMA\n\nO\n\nMaranhão registrou 2.129 mortes violentas intencionais em 2024, uma taxa de 30,4 por 100 mil habitantes, acima dos\n27,1 de 2023 (Fórum Brasileiro de Segurança Pública). A curva não está caindo — está subindo.\nAo mesmo tempo, o Estado não sabe dizer quantos desses crimes são resolvidos. No Brasil, apenas cerca de 36% dos\nhomicídios de 2023 haviam sido esclarecidos até o fim de 2024 (Instituto Sou da Paz); o Maranhão sequer publica indicador\noficial próprio de elucidação. Sem essa medida, não há política de investigação: há reação a manchetes.\nO território é a segunda dimensão do problema. Facções exercem controle territorial em áreas onde o Estado entra\nepisodicamente e sai em seguida, deixando a população exposta à retaliação. A resposta convencional — prender no varejo —\nnão descapitaliza a organização, que continua operando a partir do cárcere.\nHá, por fim, um problema de instituição. As forças não compartilham dados, a perícia carece de autonomia e estrutura, o\ninterior é desassistido e o profissional de segurança adoece sem rede de apoio. O SISMA responde a isso com direção\nestratégica comum, metas e dados compartilhados — sem unificar instituições nem retirar autonomia técnica.\n\nReconhecimento facial em massa não será adotado. Videomonitoramento com regras de privacidade,\nacesso auditado e inteligência artificial apenas como apoio — nunca como decisão automática sobre\npessoas.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n37"
+          },
+          {
+            "id": "capitulo-x-seguranca-publica",
+            "titulo": "CAPÍTULO X SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO X SEGURANÇA PÚBLICA\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — PREVENÇÃO, PROXIMIDADE E PROTEÇÃO TERRITORIAL\nP1 Policiamento de Proximidade Pontos de atendimento nos bairros, com piloto em São Luís e Imperatriz, registro de\nocorrências de menor gravidade no território e TCO lavrado pela PM, com respaldo do STF.\nP2 Prevenção Social da Violência na Juventude Programa intersetorial que chega antes da violência (escola, formação,\nesporte, cultura, emprego, saúde mental), começando pela Região Tocantina, com proteção especial aos ameaçados de morte.\n\nCooperação Municipal e Urbanismo Preventivo Integração voluntária de guardas municipais, câmeras e requalificação de áreas de risco, com iluminação e praças.\nP3\n\nEIXO 2 — FACÇÕES E CRIME ORGANIZADO\nP4 Operações Integradas de Retomada Territorial Retomar territórios dominados por facções com inteligência e\nlegalidade — e permanecer, levando serviços públicos após a retomada; câmeras corporais e controle.\nP5 Inteligência Financeira Capacidade estadual de rastrear e recuperar o patrimônio do crime organizado, com Receita,\nMinistério Público e Justiça: descapitalizar as facções em vez de prender só no varejo.\n\nEIXO 3 — INVESTIGAÇÃO, PERÍCIA E ELUCIDAÇÃO\n\nElucidação de Homicídios Criar e publicar o indicador oficial de esclarecimento do Maranhão, fortalecer delegacias de\nhomicídios e a perícia, com forças-tarefa e cadeia de custódia.\nP6\n\nP7\n\nPerícia Oficial com Autonomia Laboratórios, centrais de custódia e independência técnica: laudo rápido e prova íntegra.\n\nP8 Pessoas Desaparecidas Protocolo de busca imediata, sem espera, banco integrado e exame genético cruzando\ndesaparecidos com corpos não identificados.\n\nEIXO 4 — INTELIGÊNCIA, TECNOLOGIA E DADOS\nP9 CIICO Centro integrado de inteligência e controle operacional: dados das forças integrados, 190 e despacho mais ágeis, hot\nspots — com finalidade definida, acesso auditado e IA apenas como apoio.\nP10\n\nVideomonitoramento com Salvaguardas Integração de câmeras com regras de privacidade e leitura de placas. ME‐\n\nTAS-CHAVE Reconhecimento facial em massa não será adotado.\n\nDrones Patrulhamento de pontos críticos, apoio a operações e busca e salvamento, com legalidade, cadeia de custódia e\nsem vigilância da vida privada.\nP11\n\nEIXO 5 — ATENDIMENTO AO CIDADÃO\nP12 Delegacia Online de Nova Geração Registro com autenticação Gov.br, videochamada para casos selecionados, fluxo\nacolhedor para violência doméstica e atendimento presencial garantido a quem não tem acesso digital.\n\nEIXO 6 — INTERIOR E REGIONALIZAÇÃO\nP13 Centros Integrados Regionais Planejamento e operações conjuntas nos polos (Imperatriz, São Luís), com perícia\navançada regional; comando unificado só em incidentes críticos.\n\nSegurança no Campo e Rodovias Policiamento especializado contra roubo de carga e furto rural, em cooperação com\na PRF, com atenção às comunidades tradicionais.\nP14\n\nEIXO 7 — SISTEMA PENITENCIÁRIO\n\nInteligência Penitenciária Integrada Romper o comando do crime a partir do cárcere: informação prisional articulada\ncom as forças de rua e enfrentamento à comunicação ilícita.\nP15\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n38"
+          },
+          {
+            "id": "capitulo-x-seguranca-publica-2",
+            "titulo": "CAPÍTULO X SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO X SEGURANÇA PÚBLICA\n\nMonitoramento Eletrônico Legal Cada alerta de tornozeleira verificado e comunicado à Justiça, com prioridade à\nproteção das vítimas de violência doméstica.\nP16\n\nP17 Reintegração e Reincidência Trabalho e estudo na prisão com remição, apoio na saída (documentos, emprego, saúde)\ne enfrentamento da superlotação com a Justiça.\n\nEIXO 8 — VALORIZAÇÃO DOS PROFISSIONAIS\nP18 Saúde Biopsicossocial Rede permanente de saúde mental para policiais, agentes penais e bombeiros — e suas famílias\n—, com atendimento no interior, protocolo pós-confronto e prevenção do suicídio.\n\nDefesa Jurídica Institucional Orientação jurídica imediata nas ocorrências e defesa institucional para atos regulares da\nfunção.\nP19\n\nP20 Regime Adicional de Serviço (RAS) Jornada extra voluntária e remunerada nos pontos críticos, com limite de horas e\ndescanso obrigatório.\nP21 Carreiras por Mérito e Formação Integrada Promoção por mérito, experientes na ponta operacional e academias\nformando as forças em conjunto, com direitos humanos e uso correto da força.\n\nEIXO 9 — GOVERNANÇA E CONTROLE\nP22 SISMA — Reorganização e Governança Direção estratégica comum com metas e dados compartilhados, sem unificar\ninstituições nem retirar autonomia técnica.\n\nControle, Integridade e Uso da Força Corregedorias e ouvidorias independentes, câmeras corporais, protocolo de uso\nda força e publicação dos indicadores de letalidade e de vitimização policial.\nP23\n\nEIXO 10 — BOMBEIROS E DEFESA CIVIL\nP24 Resposta a Emergências Ampliar os bombeiros no interior, defesa civil que previne e alerta antes do desastre e drones\npara busca e salvamento.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n39"
+          },
+          {
+            "id": "capitulo-xi",
+            "titulo": "CAPÍTULO XI",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO XI\n\nEDUCAÇÃO\n\nAPRENDER DE VERDADE\nAprender de verdade, em todo o Maranhão — com dados auditados, professor em sala e prioridade a quem\nmais precisa. 10 eixos · 36 propostas.\nO PROBLEMA EM NÚMEROS\n\n56% › 69%\n\n3,7\n\n595 mil\n\nalfabetização na idade certa entre 2023 e\n2025: o Estado saltou do 23º para o 10º\nlugar nacional\n\nIdeb 2023 do ensino médio — recorde estadual, mas ainda abaixo da média nacional\n(anos iniciais 5,1; finais 4,3)\n\nadultos ainda não sabem ler e escrever; o\nabandono no ensino médio caiu de 4,9%\npara 3,4%\n\n84,8%\n\n88%\n\ndas escolas com internet — 97,5% nas\nurbanas contra 78,9% nas rurais\n\ndas matrículas de ensino médio estão sob\ngestão estadual: a responsabilidade é direta\n\nA RESPOSTA DA MISSÃO MARANHÃO\n\nNenhuma Turma Sem Professor\n\nPadrão Mínimo de Dignidade\n\nBanco Estadual de Substituição com acionamento em 72h e trava de\nhonestidade contra a interinidade permanente\n\nágua, banheiro, energia, acessibilidade, climatização, cozinha e\ninternet em toda escola estadual\n\nMerenda Digna\n\nPacto Maranhense pela Educação\n\nmínimo de 45% da agricultura familiar cumprido e nenhuma escola\nsem merenda por mais de 5 dias úteis sem solução\n\nlei estadual com a Undime, enviada nos primeiros 100 dias, criando\ncolaboração que atravessa eleições\n\nO PROBLEMA\n\nA\n\neducação maranhense apresenta o avanço mais expressivo do plano e, ao mesmo tempo, a maior dívida. A alfabetização\nna idade certa saltou de 56% (2023) para 69% (2025), levando o Estado do 23º ao 10º lugar nacional. O abandono no\nensino médio caiu de 4,9% para 3,4%. O Ideb 2023 registrou recorde estadual no ensino médio, com 3,7 — ainda abaixo da\nmédia nacional.\nMas cerca de 595 mil adultos ainda não sabem ler e escrever, e a desigualdade territorial é gritante: 84,8% das escolas têm\ninternet, sendo 97,5% nas urbanas contra 78,9% nas rurais. Como 88% das matrículas de ensino médio estão sob gestão\nestadual, não há a quem transferir a responsabilidade.\nOs gargalos são conhecidos e raramente enfrentados de frente: turmas sem professor por semestres inteiros, dados escolares\nsem trilha de auditoria, expansão de tempo integral sem alimentação, transporte e quadro completo, itinerários formativos que\nexistem no catálogo mas não na escola, e colaboração com os municípios que muda a cada eleição.\nEste capítulo assume compromissos transversais explícitos: verdade nos dados, com linha de base auditada no 1º ano;\nprioridade a quem mais precisa; nenhum valor prometido sem estudo fiscal e lei; proteção reforçada de dados de menores, com\na regra de que nenhuma tecnologia decide automaticamente sobre estudantes; participação de professores e comunidades;\ncolaboração pactuada com municípios; e continuidade do que funciona — Pacto pela Aprendizagem, SEAMA e IEMA.\n\nRegra de ouro da gestão escolar: padroniza-se a administração, jamais a sala de aula.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n40"
+          },
+          {
+            "id": "capitulo-xi-educacao",
+            "titulo": "CAPÍTULO XI EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO XI EDUCAÇÃO\n\nP R O P O S TA S E S O LU Ç Õ E S DA M I S SÃO\nEIXO 1 — ALFABETIZAÇÃO, APRENDIZAGEM E RECOMPOSIÇÃO\nP1 Pacto pela Alfabetização na Idade Certa Consolidar e interiorizar: formação de alfabetizadores, material por criança,\navaliação de fluência duas vezes por ano com devolutiva em 60 dias e assessoria intensiva onde os resultados são mais baixos.\nP2 Continuidade Pedagógica Mapa estadual de aprendizagem por bimestre e regra clara: todo estudante transferido faz\navaliação de acolhimento em 15 dias e recebe plano de nivelamento.\n\nRecomposição Contínua Diagnóstico em março (SEAMA) e resposta imediata: grupos temporários de reforço por\nhabilidade, sem rotular nem esperar a reprovação.\nP3\n\nP4 SEAMA Fortalecido Devolutiva em 60 dias, dia letivo de planejamento por dados, auditoria independente e vedação em\nnorma ao uso punitivo: não reprova aluno, não ranqueia sem contexto, não pune professor.\n\nEIXO 2 — ENSINO MÉDIO, TEMPO INTEGRAL E PROJETO DE VIDA\nP5 Tempo Integral com Responsabilidade Expandir começando pela maior evasão, com checklist obrigatório antes da\nconversão: alimentação, transporte, climatização e quadro completo de professores.\n\nNovo Ensino Médio de Verdade Catálogo com padrão de qualidade — itinerário só existe com professor, conteúdo e\nmaterial —, redes regionais garantindo ao menos duas opções reais e projeto de vida da 1ª à 3ª série.\nP6\n\nP7 Acolhimento na Entrada do Ensino Médio Protocolo de transição do 9º ano: tutores veteranos, diagnóstico e reforço\nantes da primeira prova, contato com a família em 24 horas a qualquer sinal de risco.\n\nEIXO 3 — EDUCAÇÃO PROFISSIONAL, CIÊNCIA E TRABALHO\nP8 Cursos Técnicos com Emprego de Verdade Curso só abre com demanda comprovada, estágio garantido, laboratório e\nprofessor definidos; todo curso medido pelo emprego dos egressos em painel público.\n\nMapa Único da Educação Profissional Comitê SEDUC + IEMA + IFMA + Sistema S e portal único da oferta técnica\npor cidade e curso.\nP9\n\nP10 Ciência na Escola Olimpíadas com inscrição institucional, transporte e hospedagem garantidos, feira estadual\nregionalizada e bolsas de iniciação científica júnior (FAPEMA).\n\nEIXO 4 — PROFESSORES\nP11 Nenhuma Turma Sem Professor Banco Estadual de Substituição: acionamento em 72 horas, remuneração justa e trava\nde honestidade — vaga provisória por mais de um semestre entra no plano de nomeação definitiva.\nP12 Professor Efetivo Onde a Rede Mais Precisa Lotação regional clara no edital, adicional de fixação, itinerantes\nefetivos, segunda licenciatura e bolsas para formar professores de exatas no interior.\n\nValorização de Verdade Formação que pontua na carreira, piso e um terço de hora-atividade auditados em painel,\nprogressões em dia ou com cronograma público, e programa de saúde do trabalhador da educação.\nP13\n\nEIXO 5 — GESTÃO ESCOLAR, INTEGRIDADE E AVALIAÇÃO\nP14 Manual de Gestão Escolar Processos administrativos padronizados e protocolos de proteção. Regra de ouro: padronizase a administração, jamais a sala de aula.\nP15 Diretores Preparados Escola de Gestão: certificação, plano de gestão defendido publicamente e escolha da comunidade\nescolar; mentoria e avaliação com direito de defesa.\n\nDados que Merecem Confiança Trilha de auditoria em todo lançamento, verificação anual independente por sorteio\ncom o TCE e canal protegido de denúncia.\nP16\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n41"
+          },
+          {
+            "id": "capitulo-xi-educacao-2",
+            "titulo": "CAPÍTULO XI EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO XI EDUCAÇÃO\n\nReconhecimento Coletivo das Escolas Bonificação por escola, alcançando todos os profissionais, medida pelo\navanço da escola sobre ela mesma e comparando contextos semelhantes; sem bônus por medalha individual e sem punição. Escola\nbonificada apadrinha escola em dificuldade.\nP17\n\nP18 Escolas Militares Nem fechar, nem expandir: custo por aluno publicado, regimentos adequados ao ECA e avaliação\nindependente descontando o efeito da seleção. METAS-CHAVE Nenhuma escola civil transformada em militar neste mandato.\n\nEIXO 6 — PERMANÊNCIA, BUSCA ATIVA E PROTEÇÃO\n\nAlerta Precoce e Busca Ativa Frequência digital com alerta: análise humana em 48 horas, primeira resposta em 7 dias\ne acompanhamento de 6 meses do estudante reintegrado; conectado à plataforma Busca Ativa Escolar (UNICEF).\nP19\n\nP20 Psicólogos e Assistentes Sociais Cumprir a Lei 13.935/2019 com núcleos regionais concursados — desenho sustentável, não promessa de um profissional por escola —, com mais horas onde há mais vulnerabilidade.\nP21 Saúde na Escola Triagem anual (visão, audição, nutrição, vacinação), sala de primeiros cuidados e brigadistas nas\nescolas de tempo integral (Lei Lucas) e UBS de referência para cada escola.\n\nA Escola que Encaminha Protocolo único: a escola identifica, a rede de proteção responde em prazos pactuados e a\nescola é informada do desfecho.\nP22\n\nEIXO 7 — INCLUSÃO, EQUIDADE E DIVERSIDADE TERRITORIAL\n\nInclusão de Verdade Censo da educação especial, plano educacional individual por estudante, apoio sem exigência de\nlaudo, acessibilidade como prioridade de obra e norma construída com a Defensoria e o Ministério Público para estancar a judicialização.\nP23\n\nEducação Indígena e Quilombola Escola da comunidade: consulta prévia (Convenção 169 da OIT), licenciaturas\ninterculturais, concursos por território, currículo e merenda com a cultura local.\nP24\n\nEducação do Campo Nesta ordem: escola e transporte dignos no campo, com nenhuma escola rural fechada sem estudo\npúblico e alternativa real; apoio às Escolas Família Agrícola e à pedagogia da alternância; residência estudantil apenas como\núltimo recurso, voluntária e com marco de proteção prévio.\nP25\n\nEJA e Noturno Alfabetização de adultos com turmas comunitárias, EJA modular integrada à formação profissional, busca\nativa via CRAS, sindicatos e igrejas, e regra imediata: nenhum turno noturno fecha sem estudo e alternativa.\nP26\n\nEIXO 8 — INFRAESTRUTURA, TRANSPORTE, ALIMENTAÇÃO E CONECTIVIDADE\n\nPadrão Mínimo de Dignidade Escolar Água, banheiros, energia, acessibilidade, climatização, cozinha e internet em\ntoda escola estadual; vistoria completa no 1º ano e fila de obras por necessidade, não por padrinho político.\nP27\n\nP28 Internet de Verdade Fechar a última milha, com as rurais primeiro, banda por aluno e Wi-Fi nas salas, energia solar\nonde a rede não chega, satélite onde a fibra não alcança, e comitê de proteção de dados aprovando cada sistema.\nP29 Transporte Escolar Seguro Censo de rotas por terra e por água, embarcações escolares de verdade, vistoria semestral\nobrigatória e painel público; se o município não puder executar, o Estado assume a rota.\n\nMerenda Digna Cardápios regionais elaborados por nutricionistas, mínimo de 45% da agricultura familiar cumprido e\nmutirões para habilitar fornecedores locais. METAS-CHAVE Nenhuma escola sem merenda por mais de 5 dias úteis sem solução.\nP30\n\nEIXO 9 — ESPORTE, CULTURA E PROTAGONISMO JUVENIL\nP31 Esporte para Todos Professor e material em toda a rede, quadra como prioridade de obra e apoio total às delegações dos\nJEMs e ParaJEMs; competir é sempre voluntário.\nP32 Arte, Cultura Popular e Voz Estudantil Mestres da cultura popular — bumba meu boi, tambor de crioula — remunerados por bolsa nas escolas, festival estudantil regionalizado e grêmio livre em toda escola de ensino médio.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n42"
+          },
+          {
+            "id": "capitulo-xi-educacao-3",
+            "titulo": "CAPÍTULO XI EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO XI EDUCAÇÃO\n\nBolsa Talento Maranhão Complemento estadual ao Pé-de-Meia, nunca duplicação: poupança-educação premiando a\nevolução do estudante sobre ele mesmo, com prioridade ao CadÚnico. METAS-CHAVE Valores definidos apenas mediante estudo\nP33\n\nfiscal e lei.\nEIXO 10 — REGIME DE COLABORAÇÃO COM OS MUNICÍPIOS\nP34 Pacto Maranhense pela Educação Lei estadual, construída com a Undime, criando comissão permanente paritária e\ntermos de colaboração que atravessam eleições. METAS-CHAVE Lei enviada nos primeiros 100 dias.\n\nApoio de Verdade aos Municípios Cardápio público de apoio — formação, avaliação, engenharia de projetos para\ncaptar FNDE, transporte —, com porta única regional e filas 100% públicas.\nP35\n\nP36 ICMS Educacional Justo Avaliar antes de mexer: avaliação independente publicada na íntegra, memória de cálculo\naberta, canal de contestação e transição para que nenhum município sofra perda abrupta.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n43"
+          },
+          {
+            "id": "agenda-integrada",
+            "titulo": "AGENDA INTEGRADA",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "AGENDA INTEGRADA\n\nOS PRIMEIROS 100 DIAS\nTodos os capítulos convergem em um mesmo padrão de partida: diagnósticos estruturantes iniciados nos\nprimeiros 100 dias, concluídos no primeiro ano e publicados em painéis públicos, que passam a orientar\ntoda a priorização.\n\nO\n\ns primeiros 100 dias de governo serão dedicados à organização das bases institucionais, técnicas e operacionais que\norientarão toda a gestão. O foco será a realização de diagnósticos abrangentes, a consolidação de indicadores auditáveis e\na implantação de instrumentos de governança capazes de garantir planejamento, transparência e monitoramento permanente das\npolíticas públicas.\nINFRAESTRUTURA Estruturação do planejamento estadual, transparência das obras públicas, levantamento das condições da\nmalha rodoviária, recuperação emergencial de trechos críticos, avaliação da segurança viária e das travessias, além da articulação\nlogística envolvendo portos e rodovias federais.\nSANEAMENTO Construção de uma base de informações sobre vulnerabilidade sanitária, acesso à água potável e áreas críticas\nde drenagem, permitindo orientar investimentos e estabelecer prioridades de atendimento.\n\nAmplo processo de mapeamento territorial e institucional, contemplando resíduos sólidos, biodiversidade,\nrecursos hídricos, mudanças climáticas, recuperação ambiental, proteção costeira, bem-estar animal e fortalecimento da\ncapacidade de fiscalização.\nMEIO AMBIENTE\n\nEstruturação das políticas com foco na atração de investimentos em fontes renováveis e na implantação\nde projetos-piloto voltados ao desenvolvimento do potencial turístico regional.\nENERGIA E TURISMO\n\nGESTÃO E ECONOMIA Diagnóstico fiscal e econômico do Estado, acompanhado da implantação de mecanismos de governança\npara investimentos, simplificação do ambiente de negócios e definição das cadeias produtivas prioritárias para geração de emprego\ne renda.\nAGRICULTURA E AGROINDÚSTRIA Planos estratégicos voltados à assistência técnica, infraestrutura rural, abastecimento,\ncrédito, regularização fundiária, defesa agropecuária e fortalecimento das cadeias produtivas, com metas, responsáveis e\nindicadores definidos.\nSAÚDE Diagnóstico da rede assistencial, da atenção primária, das filas de atendimento, da capacidade hospitalar, da assistência\nfarmacêutica e da força de trabalho, além da implantação da governança do prontuário eletrônico integrado e do fortalecimento da\nvigilância em saúde.\nSEGURANÇA PÚBLICA Estabelecimento de uma linha de base dos principais indicadores de criminalidade e desempenho\noperacional, acompanhada da implantação de sistemas integrados de gestão e de projetos-piloto voltados ao policiamento de proximidade.\n\nConsolidação dos diagnósticos sobre aprendizagem, infraestrutura, matrículas e recursos humanos, com medidas\npara garantir a oferta educacional, fortalecer a gestão democrática das escolas e aperfeiçoar o regime de colaboração entre Estado e\nmunicípios.\nEDUCAÇÃO\n\nEstruturação da governança das políticas públicas do setor, com definição das\nprioridades estratégicas do Estado e levantamento da infraestrutura científica e tecnológica disponível, criando as bases para o\nfortalecimento da inovação e da pesquisa aplicada ao desenvolvimento do Maranhão.\nCIÊNCIA, TECNOLOGIA E INOVAÇÃO\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n44"
+          },
+          {
+            "id": "transparencia-e-controle",
+            "titulo": "TRANSPARÊNCIA E CONTROLE",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "TRANSPARÊNCIA E CONTROLE\n\nSISTEMA DE ACOMPANHAMENTO E\nINDICADORES\nTrês níveis de indicador, aplicados em todas as áreas do plano.\nT RÊS NÍVEIS DE INDICADOR\n\nEXECUÇÃO\n\nRESULTADO\n\nIMPACTO\n\nO que o governo está fazendo: planos publicados, equipes em campo, obras, adesões.\n\nO que mudou no serviço: tempo de espera,\nacesso a crédito, água funcionando, colocações no Caged, taxa de elucidação.\n\nO que mudou na vida das pessoas: renda,\naprendizagem, redução da violência, permanência na escola e no campo.\n\nI N S T R U M E N TO S P E R M A N E N T E S\n\n• Painéis públicos por eixo, região e município, com dados pessoais protegidos.\n• Publicação de contratos, convênios e valores no Portal da Transparência.\n• Prestação de contas periódica de entidades e municípios parceiros; relatórios ao Tribunal de Contas do Estado e aos conselhos.\n• Ouvidorias e canais de denúncia; avaliações independentes publicadas na íntegra, “doa a quem doer”.\n\nRegra-síntese: o sucesso não é medido pelo dinheiro gasto, mas pelo funcionamento efetivo das políticas.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n45"
+          },
+          {
+            "id": "referencias",
+            "titulo": "REFERÊNCIAS",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "REFERÊNCIAS\n\nFONTES OFICIAIS CONSOLIDADAS\nToda informação quantitativa deste plano é atribuída a fonte pública identificável.\nESTATÍSTICA , ECONOMIA E FINANÇAS PÚBLICAS\n\nIBGE — PNAD Contínua, Síntese de Indicadores Sociais, PIB dos Municípios, Cidades e Estados, Censo Demográfico 2022 (domicílios e\ncoleta de lixo). Tesouro Nacional — CAPAG 2025. MDIC — Comex Stat. FIEMA — indústria de alimentos, 2022. EMAP e Ministério de\nPortos e Aeroportos — Porto do Itaqui, 2025.\nEDUCAÇÃO\n\nInep/MEC — Ideb, Censo Escolar, Indicador Criança Alfabetizada, Saeb. MEC — Pé-de-Meia, Escolas Conectadas, Portaria 82/2026.\nMinistério das Comunicações — painel ENEC. UNICEF — Busca Ativa Escolar.\nCAMPO, PESCA E EXTRATIVISMO\n\nBanco do Nordeste — Pronaf 2024/2025. MDA — Plano Safra e Garantia-Safra. MDS — Programa Cisternas. MTE — seguro-defeso. MAPA\n— SUASA, SISBI-POA e seguro rural.\nSEGURANÇA PÚBLICA\n\nFórum Brasileiro de Segurança Pública — Anuário 2025. Instituto Sou da Paz — “Onde Mora a Impunidade?”, 2025.\nINFRAESTRUTURA E LOGÍSTICA\n\nPesquisa CNT de Rodovias 2025 (Confederação Nacional do Transporte). Polícia Rodoviária Federal — 1º semestre de 2025. DNIT — obras\nfederais, 2025. ENMU — BNDES e Ministério das Cidades.\nSANEAMENTO, ÁGUA E MEIO AMBIENTE\n\nSINISA (Ministério das Cidades); Sisagua (Ministério da Saúde); ANA; CAEMA; Cemaden; INMET. MapBiomas — RAD 2024\n(desmatamento). UNESCO — Lençóis Maranhenses, 2024.\nGOVERNO DO ESTADO E INSTITUIÇÕES\n\nGoverno do Maranhão — SEPA, SAF/Procaf, SEMA, ITERMA, AGED, SINFRA, SES, SEDUC, SEDEL, FAPEMA e IMESC. STF — Código\nFlorestal e zoneamento do Bioma Amazônico.\nMARCOS LEGAIS CITADOS\n\n• Leis estaduais: 7.734/2002, 10.086/2014, 10.327/2015, 11.166/2019, 11.903/2023, 11.969/2023, 12.037/2023 e 6.272/1995.\n• Leis federais: 8.080/1990 e 8.142/1990 (SUS); LC 141/2012; 13.675/2018 (SUSP); 7.210/1984 (Execução Penal); 13.709/2018 (LGPD);\n14.133/2021 (Licitações); 13.935/2019 (psicólogos e assistentes sociais na educação).\n• Saneamento e resíduos: Leis 11.445/2007 e 14.026/2020; Lei 12.305/2010; Resolução CONAMA 416/2009.\n• Ambiental e territorial: Lei 12.651/2012 (Código Florestal); Lei 9.605/1998 (crimes ambientais); Lei 12.608/2012 (Defesa Civil); Estatuto\nda Metrópole; Código de Trânsito Brasileiro.\n• Terceiro setor e povos tradicionais: Lei 13.019/2014 (OSCs); Convenção 169 da OIT.\n• Decretos: 7.508/2011 e 39.040/2024.\n\nN OTA E D I TO R I A L\n\nEsta é a versão executiva e consolidada do Plano de Governo do Maranhão para as eleições de 2026. Todo o conteúdo —\ndiagnósticos, programas, mecanismos, metas, prazos e condicionantes jurídicas e fiscais — foi extraído integralmente do plano\nestadual de André Luís e do Prof. Cadu Aguiar. Nenhuma proposta foi criada, suprimida ou alterada em seu sentido; nenhum dado,\nmeta ou fonte foi acrescentado. A consolidação limitou-se à reorganização editorial, à numeração dos capítulos e à síntese de\nestruturas repetidas.\n\nPLANO DE GOVERNO ·MARANHÃO ·MISSÃO 2026\n\n46"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "7545a53483933b0a9fe11761628dc2702f783a962ed016a484ff38b18b9047a9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "53da7f133946c526c1b94eca7734a2f01a606685c865d626cce7d5c88c7f8b91"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "871578d2f4e77eae81b879435c3472a9c8f60ee98e804591ae32efa808452f24"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "53fb4c20c366d6dfda66f8fa13a1731ef948fc1adb8265e7ae07660a25819990"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c02ef2ad12fda38fcf24bed6c0d7384d905c22ee1b998a5f8889db3db5707f0d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "a66024adf203f170fafb518ddc1f5d9ba79c3fb735b9b585691839b4bcaa4b22"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "628af5852fc7ea733e1e24b205936b0e2c39b57548f02b7b6415df5953662261"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a672ddba2208079bc7a51f50f46f93bc2d64e3a6b24dbcf27a296966977cb9e5"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "7e2ebaf6847ce137463b5edf4bbc5dbfaa8c821ae0a80a67a158e779cd025a7f"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f78cc9ce39246e3f9351c1e73ead343eeeb324ca7b716c868efd7a3fc739794a"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "f487be1ccbd9aae20e88d68d6cc9120687b3d923ba6e971af8e8267d2ede9a6c"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "939219c0ff3886fad856af22c9db5635f4ac12dc31060096257e62a4e18fab42"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "b136b7da5762a1c7f8d2f25b99a99e5c9ebab1564f487d37fb45d06d297c820a"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "974a5d542882fb5cd9e38c3b3ab689903411c424f7a8254e4ffbcf9af71bd331"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "3ef6ad2b0acfe203dffdd40e4128048562722465e621e2d21b09962f86b865c2"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "9c33519986db808252d793c2088e167740fe23bfc7814382ae9767e7f3207e0d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "7d705c16d9ced7eb34cb953ae7f6fa2b625addc894537e5919504eac0a05e782"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "3bdaef7279007a7802296ccbaf31c87c50ca6a628de2ced7b01243d3a2d58aae"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "e25442cbc2db991e5e33cdab8218ca6b23d70c29f6f1ddf680d7949b2d6321cb"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "e93d1ae4d3d13bb5656f2cb93e416e61c703ec7f2778ce149d08b88baa2ea7de"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "4d9211c94dee0025a35cbe50d19de7520e820750527bb0f35eaa6afbdfeaa8a5"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7f5374c678854ae79a3aaa0bd30fde01935a699c96095fa585782825a76e121d"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "4fb62d1325f4b0a695e06fad59f4b807063f3dc1789ace63970a29441b32026d"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "13c8e4236190548c41b8940a9e55f85e66882e20370f14c6d3fce6976fd70d2c"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9f074070e28e98428daddc1e0c77e1a22f980e206f6b86497c6e67f2963de541"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "315ac2deeda2937a7131e8b04a73ba4d966923ee9bf6e6157d0939ba739a3421"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "e2cb383036e28fd1aeec30e745f3b0c1cbea1eb90ad027222e8f30b471403d2b"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "8298605b62f7f4d0737584972e0bd56afd76b9adda6349471627062df9657d61"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "dd750257ad97febac76d59128263aae2c319f97ff5d10eae9240a031432218a5"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "22a77bdc26e05721248b2ae18a4a4d0b35c88deb9a6514f45bc1f68bd620088b"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "6c1f1070e8852838d1250d55567c72b5464ded3eee722318c654b83765b2a9f1"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "03b83175064cfb6720a036cbab0bca14a5334da8a910bad3ab5ffa5362ee7da8"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "635018345973788367b1a949b1f601d844a5feab5a775e014b61b084753eec3d"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "7a8997e1bb48019335dca975a8d18c3dcb48265e9adb36e16c4cb09199d231b2"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "f75a756cf19001b9fad64a7ae822e265eac82d69a99651ee82ed1dd768686692"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "f8746f8d5be164a673dd7cf94bd36c99d2b677ca3dd442140acdad361015e38f"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "35f33cfca50ce0c93d9a240a3eb52891ad48d7bcfa26b2334f22e58ae296937b"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "faf933a1a79248376c236d9cccecfb50f90fc50f5aca9c0ac2e84ec3d4e4b549"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "c4152eb23054aee32455ed4f5d460a4ee46c7b8cb04ae2377279a0d6408a81ff"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "48d7a70e9a5fbd9055ed182f4c9d2131a5a8a81b92c3a4dfc123d5d897f36e04"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "65a8e2adc296e293ce84da64039944e6ca41d5e1dd98d982f1aacdaa80c6c4a0"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "a3029daea19cea439f7232c7cca582e4589a0e15f2e48372b78839398c20ce12"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "34dd22ee51e920196977cc7476660f4de2bef595b4527b0841eeaa5fdbe4bd17"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "81498b652b2b6360ce0bb4ab7a4b1294f139104ff0aa04383e2f88964733d120"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "ec3beac07ec8bc968cf6edb43be475e4d85b1b0e462d5ba20fc7a509810cb49a"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "5beb7ea12329facd90a71c1b80bb76f51bf184c2737c46acdb8761f2065861d4"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê um painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa. O programa Maranhão Saneado prioriza municípios e territórios de piores indicadores de água e esgoto. O plano prevê segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território. A proposta Bio Maranhão prevê bioeconomia com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas. O plano prevê prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria. A proposta Elucidação de Homicídios prevê criar e publicar o indicador oficial de esclarecimento do Maranhão. O plano prevê trilha do primeiro emprego com orientação, curso vinculado a vaga real, aprendizagem e acompanhamento de 12 meses.",
+    "frases": [
+      {
+        "texto": "O plano prevê um painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 11,
+            "trecho": "Painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa e seção específica para obras paralisadas."
+          }
+        ]
+      },
+      {
+        "texto": "O programa Maranhão Saneado prioriza municípios e territórios de piores indicadores de água e esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 14,
+            "trecho": "Programa Estadual de Universalização do Saneamento, com prioridade aos municípios e territórios de piores indicadores de água e esgoto."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 15,
+            "trecho": "Água Maranhense Segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território: sistemas simplificados, cisternas, captação de chuva e tratamento comunitário."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta Bio Maranhão prevê bioeconomia com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 28,
+            "trecho": "Bio Maranhão Bioeconomia sempre com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas; valor agregado dentro do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 35,
+            "trecho": "P14 Meu Prontuário, Minha História Prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria e atendimento assistido a quem não usa meios digitais."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta Elucidação de Homicídios prevê criar e publicar o indicador oficial de esclarecimento do Maranhão.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 38,
+            "trecho": "Elucidação de Homicídios Criar e publicar o indicador oficial de esclarecimento do Maranhão, fortalecer delegacias de homicídios e a perícia, com forças-tarefa e cadeia de custódia."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê trilha do primeiro emprego com orientação, curso vinculado a vaga real, aprendizagem e acompanhamento de 12 meses.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 31,
+            "trecho": "Rede Estadual de Emprego e Primeiro Emprego SINE reestruturado e trilha do primeiro emprego: orientação, curso vinculado a vaga real, aprendizagem e acompanhamento de 12 meses."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "transparencia-de-obras",
+        "titulo": "Transparência de obras",
+        "descricao": "Publicação de informações sobre obras estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 11,
+            "trecho": "Painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa e seção específica para obras paralisadas."
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Prioridade territorial para água e esgoto.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 14,
+            "trecho": "Programa Estadual de Universalização do Saneamento, com prioridade aos municípios e territórios de piores indicadores de água e esgoto."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-hidrica",
+        "titulo": "Segurança hídrica",
+        "descricao": "Acesso seguro à água em comunidades isoladas.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 15,
+            "trecho": "Água Maranhense Segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território: sistemas simplificados, cisternas, captação de chuva e tratamento comunitário."
+          }
+        ]
+      },
+      {
+        "id": "bioeconomia",
+        "titulo": "Bioeconomia",
+        "descricao": "Repartição de benefícios no uso da biodiversidade.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 28,
+            "trecho": "Bio Maranhão Bioeconomia sempre com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas; valor agregado dentro do Estado."
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Integração estadual de prontuários eletrônicos.",
+        "evidencias": [
+          {
+            "documentoId": "MA:100002544076:01",
+            "pagina": 35,
+            "trecho": "P14 Meu Prontuário, Minha História Prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria e atendimento assistido a quem não usa meios digitais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T14:52:31.604Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T14:54:47.285Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente os elementos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (transparência de obras)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:1:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas citadas estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:2:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:3:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:4:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:5:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:6:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula citada está coberta (claim não menciona demais itens)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "12 meses citados literalmente confere."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:frase:7:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático suportado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:transparencia-de-obras:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo suportado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saneamento:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo suportado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:seguranca-hidrica:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo suportado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:bioeconomia:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo suportado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MA:100002544076:tema:saude-digital:documentos:MA:100002544076:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MA:100002544076",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MA:100002544076:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 50201,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2814,
+          "reasoning_output_tokens": 1394
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 32680,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22468,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 32680,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22468,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 32680,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 32680
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3806454
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "d844ecd625694b6eaa614e6958a94f6bb8aa6ecdfef4621d470d0f26cb346103",
+    "extractedTextSha256": "9f6ce33370d3028abac514c5379638fdab32f0dddf6578f902a56bb9dd36e814",
+    "documentCount": 1,
+    "documentSetSha256": "29f5a9287b174f2ed391fe2e14dac2b6b29c17bfbd22db7f74a9b180676fc5eb",
+    "contentSha256": "2860436d6e41920cfb1d76f62f2f90123dab238757bf2ed4736af1b8d7986f8a"
+  }
+}

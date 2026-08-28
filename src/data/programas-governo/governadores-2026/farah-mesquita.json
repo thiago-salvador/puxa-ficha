@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RR",
+    "sqCandidato": "230002549294",
+    "slug": "farah-mesquita",
+    "nomeUrna": "FARAH MESQUITA",
+    "partido": "SOLIDARIEDADE",
+    "arquivoNome": "2026RR230002549294_01.pdf",
+    "arquivoNoPacote": "RR/2026RR230002549294_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RR:230002549294:01",
+      "fonte": {
+        "arquivoNome": "2026RR230002549294_01.pdf",
+        "arquivoNoPacote": "RR/2026RR230002549294_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "09fc3c344948de9a25943f79f9d6b93e216048ca4231163164df45783edd8808",
+        "extractedTextSha256": "bc3c6ed264ef63f0723737156ce228c6a9f3805ef735d7c17546d0c03f783003",
+        "paginas": 17,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nENDIREITA RORAIMA\n\nFARAH MESQUITA\nGovernador de Roraima\nSolidariedade — 77\n\n2026"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nSumário\nCarta ao Povo de Roraima\nQuem é Farah Mesquita\nNossa Visão para Roraima\nNossos Valores\nEixo 1 — Desenvolvimento Econômico e Geração de Empregos\nEixo 2 — Saúde para Todos\nEixo 3 — Educação que Transforma\nEixo 4 — Segurança Pública Forte\nEixo 5 — Agricultura, Produção e Desenvolvimento Rural\nEixo 6 — Infraestrutura e Mobilidade\nEixo 7 — Desenvolvimento Sustentável, Mineração e Meio Ambiente\nEixo 8 — Desenvolvimento Social e Qualidade de Vida\nEixo 9 — Governo Digital, Transparência e Modernização\nEixo 10 — Municípios Fortes, Cultura, Turismo e Esporte\nOs Primeiros 100 Dias\nCompromisso Final\n\nPágina 2 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-2",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nCarta ao Povo de Roraima\nRoraimense,\nEscrevo esta carta com o coração cheio de gratidão e de responsabilidade. Gratidão por mais de\nvinte anos de caminhada ao lado do nosso povo, nas comunidades, nos bairros, nas associações de\nmoradores e nas ruas de cada um dos nossos municípios. Responsabilidade porque sei o tamanho\ndo desafio que temos pela frente e o quanto Roraima merece um governo que escute, que trabalhe\ne que entregue resultados.\nAo longo da minha trajetória pública, aprendi que governar não é sobre discursos, mas sobre\npresença. É estar ao lado das famílias quando a saúde falha, quando a escola precisa de reforma,\nquando a estrada impede o escoamento da produção do pequeno agricultor. É ouvir antes de\ndecidir e prestar contas depois de agir.\nEste Plano de Governo não nasceu de gabinete fechado. Ele é fruto de conversas com lideranças\ncomunitárias, produtores rurais, profissionais de saúde e educação, empresários, jovens e idosos\nde todas as regiões do nosso Estado. Cada eixo apresentado nas páginas seguintes representa um\ncompromisso concreto, construído com quem vive a realidade de Roraima todos os dias.\nConvido você a conhecer nossa visão, nossos valores e nossas propostas. Mais do que um\ndocumento, este é um pacto de trabalho entre nós. Um pacto pela geração de empregos, por uma\nsaúde que funcione, por uma educação que transforme, por segurança para as famílias, por\nrespeito a quem produz no campo, por infraestrutura digna e por um governo transparente,\nmoderno e próximo do cidadão.\nCom fé, trabalho e a força do nosso povo, vamos construir juntos um novo tempo para Roraima.\nFarah Mesquita\nCandidato a Governador de Roraima — Solidariedade 77\n\nPágina 3 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-3",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nQuem é Farah Mesquita\nFarah Mesquita construiu sua trajetória pública a partir do trabalho comunitário, com mais de vinte\nanos de experiência dedicados à administração pública e à representação popular. Sua história é\nmarcada pela proximidade com as comunidades e pelo compromisso com uma política feita de\nforma próxima das pessoas.\n\nTrajetória\n● Mais de 20 anos de experiência na administração pública, atuando em diferentes níveis de\ngoverno.\n● Liderança comunitária reconhecida, com atuação direta na organização de bairros e\nassociações de moradores.\n● Fundador da Federação das Associações de Moradores, articulando demandas populares\njunto ao poder público.\n● Experiência acumulada em governos estaduais, na Assembleia Legislativa e na Câmara dos\nDeputados, o que proporciona visão ampla dos desafios e das soluções para Roraima.\n\nUm compromisso com o povo\nEssa trajetória diversa — do trabalho de base nas comunidades à experiência legislativa e executiva\n— deu a Farah Mesquita uma compreensão completa dos desafios de Roraima, das necessidades\nmais urgentes do interior às demandas de modernização da capital. É essa experiência que\nsustenta o presente Plano de Governo: um projeto construído com realismo, escuta e compromisso\ncom resultados concretos para a população.\n\"Minha trajetória sempre foi ao lado das pessoas. É essa proximidade que vou levar para o\ngoverno do nosso Estado.\" — Farah Mesquita\n\nPágina 4 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-4",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nNossa Visão para Roraima\nQueremos construir um Estado que gere oportunidades reais de trabalho e renda, que cuide das\npessoas em todas as fases da vida, que valorize quem produz e trabalha, que respeite o dinheiro\npúblico como bem de todos, que fortaleça os municípios como parceiros de desenvolvimento, e\nque prepare Roraima para os desafios e as oportunidades do futuro.\nEssa visão se traduz em um governo presente em todas as regiões do Estado, que planeja com\nresponsabilidade fiscal, que executa com transparência e que mede seus resultados pela melhoria\nconcreta na vida de cada roraimense.\n\nNossos Valores\n● Honestidade: compromisso inegociável com a verdade e com a ética na gestão pública.\n● Transparência: prestação de contas clara e acessível a toda a população.\n● Trabalho: dedicação e presença constante na solução dos problemas do Estado.\n● Fé: respeito às crenças e valores que fortalecem as famílias roraimenses.\n● Desenvolvimento: compromisso com o crescimento sustentável e duradouro de Roraima.\n● Respeito às pessoas: cada cidadão tratado com dignidade, independentemente de sua\ncondição.\n● Gestão eficiente: uso responsável e planejado dos recursos públicos.\n● Participação popular: governo construído com a escuta ativa da população.\n\nPágina 5 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-5",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nOs 10 Eixos do Plano\nO Plano de Governo \"Roraima para Todos\" está organizado em dez grandes eixos temáticos, que\njuntos formam uma visão integrada de desenvolvimento para o Estado. Cada eixo apresenta um\nobjetivo central e um conjunto de propostas concretas, construídas a partir do diálogo com a\npopulação e com especialistas de cada área.\n\nEixo 1 — Desenvolvimento Econômico e Geração de Empregos\nObjetivo: Fazer Roraima crescer, atrair investimentos e criar oportunidades reais de trabalho e\nrenda para as famílias roraimenses.\nRoraima vive um momento estratégico. Localizado na fronteira norte do Brasil, com acesso direto\nao Caribe e à América do Sul pela BR-174, o Estado tem vocação natural para se tornar um polo\nlogístico, comercial e industrial. Nos últimos anos, no entanto, essa vocação não foi aproveitada\npor falta de planejamento, de infraestrutura e de uma política de atração de investimentos\nconsistente. O nosso governo vai tratar o desenvolvimento econômico como prioridade de Estado,\ncom metas claras, parcerias com o setor produtivo e uma gestão que reduza a burocracia para\nquem quer empreender e gerar empregos.\n\nPropostas\n● Programa Emprega Roraima: central estadual de intermediação de mão de obra, integrada\na cursos técnicos e qualificação profissional, conectando trabalhador e empresa em tempo\nreal.\n● Zona de Livre Comércio e Investimento: revisão e ampliação dos incentivos fiscais para\natrair indústrias, distribuidoras e centros de logística para o Estado.\n● Roraima Empreendedor: linha de microcrédito estadual com juros reduzidos para pequenos\nnegócios, MEIs e cooperativas.\n● Desburocratização: simplificação da abertura e regularização de empresas, com prazo\nmáximo de resposta do Estado para alvarás e licenças.\n● Polo de Economia Digital: incentivo a startups, provedores de internet e empresas de\ntecnologia, com isenção de impostos estaduais nos primeiros anos de operação.\n● Roraima Exporta: apoio técnico e logístico a produtores e indústrias locais para acesso a\nmercados internacionais, aproveitando a fronteira com a Venezuela e a Guiana.\n\nPágina 6 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-6",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nNosso compromisso é transformar a posição geográfica de Roraima em vantagem econômica\nconcreta, gerando emprego, renda e oportunidades para quem vive e constrói o Estado todos os\ndias.\n\nEixo 2 — Saúde para Todos\nObjetivo: Garantir atendimento digno, rápido e humanizado a toda a população roraimense, do\ninterior à capital.\nA saúde pública é a maior urgência sentida pela população de Roraima. Filas longas, falta de\nespecialistas, unidades sucateadas e a dificuldade de acesso nos municípios do interior mostram\nque o sistema precisa de uma reestruturação profunda. Nosso governo vai colocar o paciente no\ncentro da política de saúde, com gestão eficiente, tecnologia a favor do atendimento e valorização\nde quem trabalha na ponta: médicos, enfermeiros, técnicos e agentes de saúde.\n\nPropostas\n● Mutirão Permanente de Consultas e Cirurgias: força-tarefa estadual para reduzir as filas de\nespera em especialidades críticas, com metas trimestrais de redução.\n● Rede de Telemedicina: atendimento remoto para municípios distantes, ligando o interior a\nespecialistas da capital em tempo real.\n● Modernização dos Hospitais Regionais: reforma, equipamento e ampliação de leitos nas\nunidades de referência do interior.\n● Central Estadual de Regulação de Leitos: sistema informatizado para acompanhar em\ntempo real a disponibilidade de leitos e evitar peregrinação de pacientes.\n● Plano de Carreira e Valorização dos Profissionais de Saúde: concursos regulares,\ncapacitação continuada e melhoria das condições de trabalho.\n● Saúde da Mulher e da Criança: ampliação do pré-natal, da rede de pediatria e de programas\nde prevenção ao câncer de mama e colo de útero.\n● Saúde Mental: expansão dos Centros de Atenção Psicossocial (CAPS) e programas de\nprevenção ao suicídio e à dependência química.\nSaúde não pode ser privilégio de quem pode pagar. Nosso compromisso é com um sistema público que\nfuncione, que respeite o tempo e a dignidade de cada roraimense.\n\nPágina 7 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-7",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 3 — Educação que Transforma\nObjetivo: Preparar as crianças e os jovens de Roraima para o futuro, com ensino de qualidade,\ninfraestrutura moderna e valorização dos professores.\nA educação é o principal caminho para reduzir desigualdades e abrir oportunidades reais de futuro\npara as novas gerações. Roraima precisa de escolas modernas, conectadas e seguras, de um ensino\ntécnico e profissionalizante forte, que prepare os jovens para o mercado de trabalho, e de\nprofessores valorizados, bem remunerados e com condições dignas de ensinar.\n\nPropostas\n● Roraima Conectada: internet de qualidade em 100% das escolas estaduais, inclusive nas\ncomunidades mais distantes.\n● Escola em Tempo Integral: ampliação progressiva da jornada ampliada, com atividades\nesportivas, culturais e de reforço escolar.\n● Rede Técnica Estadual: expansão de cursos técnicos integrados ao ensino médio, alinhados\nàs vocações econômicas de cada região do Estado.\n● Valorização do Magistério: plano de carreira, piso salarial em dia e programas de formação\ncontinuada para professores.\n● Roraima Alfabetiza: programa focado em garantir que toda criança esteja alfabetizada na\nidade certa.\n● Volta do Ensino Moral e Cívico: reintrodução da disciplina na grade curricular da rede\nestadual, com foco em cidadania, ética, respeito às instituições, valorização da família e\namor à pátria, preparando os estudantes para o exercício consciente da cidadania.\n● Educação Indígena e Ribeirinha: respeito e fortalecimento das escolas diferenciadas, com\nmaterial didático adequado à realidade local.\n● Infraestrutura Escolar: reforma e construção de escolas, quadras poliesportivas e\nbibliotecas em todos os municípios.\nInvestir em educação é investir no futuro de Roraima. Nosso governo vai garantir que cada criança e cada\njovem tenha acesso a um ensino que realmente transforme sua vida.\n\nPágina 8 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-8",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 4 — Segurança Pública Forte\nObjetivo: Proteger as famílias roraimenses e fortalecer o combate ao crime, com investimento em\ntecnologia, inteligência e valorização das forças de segurança.\nA segurança pública é condição essencial para o desenvolvimento de qualquer Estado. Roraima,\npor sua posição de fronteira, enfrenta desafios específicos relacionados ao crime organizado, ao\ncontrabando e à criminalidade transnacional. Nosso governo vai investir em inteligência, tecnologia\ne integração entre as forças de segurança, sem deixar de valorizar quem está na linha de frente\ntodos os dias.\n\nPropostas\n● Roraima Seguro: ampliação da videomonitoramento inteligente nas principais cidades e\nrodovias do Estado.\n● Integração das Polícias: central única de comando e controle, unindo Polícia Civil, Militar e\nCorpo de Bombeiros em tempo real.\n● Fortalecimento da Fronteira: reforço da presença estadual em parceria com as forças\nfederais no combate ao contrabando e ao crime organizado.\n● Valorização Policial: reajuste salarial, plano de carreira e melhoria de equipamentos e\nviaturas.\n● Polícia Comunitária: aproximação das forças de segurança com bairros e comunidades para\nprevenção do crime.\n● Combate à Violência Doméstica: delegacias especializadas e rede de apoio a mulheres em\nsituação de violência em todos os municípios.\nSegurança pública eficiente é um direito de toda família roraimense. Nosso compromisso é proteger vidas\ncom planejamento, tecnologia e respeito a quem trabalha pela segurança do Estado.\n\nPágina 9 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-9",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 5 — Agricultura, Produção e Desenvolvimento Rural\nObjetivo: Fortalecer quem produz no campo, garantindo condições de trabalho, crédito e\ninfraestrutura para o pequeno, médio e grande produtor rural.\nA economia rural é uma das principais vocações de Roraima. O Estado tem terras férteis, clima\nfavorável e potencial para se tornar referência em produção agropecuária na região Norte. Para\nisso, é preciso resolver problemas históricos como a regularização fundiária, a falta de assistência\ntécnica e as estradas vicinais em más condições, que dificultam o escoamento da produção.\n\nPropostas\n● Regularização Fundiária: força-tarefa estadual para dar segurança jurídica a produtores e\ncomunidades rurais.\n● Roraima Produtivo: assistência técnica gratuita e continuada para pequenos e médios\nprodutores.\n● Crédito Rural Facilitado: linha de crédito estadual com juros acessíveis para investimento\nem maquinário e insumos.\n● Recuperação das Vicinais: plano permanente de manutenção das estradas que ligam o\ncampo aos centros de distribuição.\n● Roraima Agroindustrial: incentivo à instalação de agroindústrias que agreguem valor à\nprodução local.\n● Apoio à Agricultura Familiar: compras públicas de alimentos da agricultura familiar para\nmerenda escolar e programas sociais.\nQuem produz no campo sustenta a economia e a mesa de todos os roraimenses. Nosso governo vai dar as\ncondições necessárias para que o produtor rural prospere.\n\nPágina 10 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-10",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 6 — Infraestrutura e Mobilidade\nObjetivo: Melhorar a qualidade de vida da população e impulsionar o desenvolvimento econômico\ncom obras estruturantes em todo o Estado.\nInfraestrutura é a base para o desenvolvimento. Rodovias em más condições, falta de\npavimentação urbana e saneamento básico insuficiente atrasam o crescimento de Roraima e\nprejudicam diretamente a vida das famílias. Nosso governo vai priorizar obras estruturantes, com\nplanejamento técnico e transparência na execução.\n\nPropostas\n● Plano Estadual de Recuperação de Rodovias: recuperação e manutenção contínua das\nprincipais rodovias estaduais.\n● Roraima Pavimenta: programa de pavimentação urbana nos bairros e municípios ainda sem\nasfalto.\n● Pontes e Vicinais: construção e manutenção de pontes estratégicas para o escoamento da\nprodução rural.\n● Saneamento Básico Universal: ampliação da rede de água tratada e esgoto em parceria\ncom os municípios.\n● Mobilidade Urbana: modernização do transporte público e melhoria da sinalização e\nacessibilidade nas cidades.\nInfraestrutura de qualidade significa mais segurança, mais economia e mais qualidade de vida para todos os\nroraimenses.\n\nPágina 11 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-11",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 7 — Desenvolvimento Sustentável, Mineração e Meio Ambiente\nObjetivo: Aproveitar as riquezas naturais de Roraima de forma responsável, gerando renda com\nrespeito ao meio ambiente.\nRoraima possui uma das maiores riquezas ambientais do Brasil, com grande potencial para\nbioeconomia, turismo ecológico e uso responsável dos recursos minerais. Nosso governo defende o\ndesenvolvimento sustentável como caminho para gerar renda sem comprometer o futuro das\npróximas gerações.\n\nPropostas\n● Roraima Bioeconomia: incentivo a cadeias produtivas sustentáveis, como frutas nativas,\nóleos vegetais e produtos florestais.\n● Turismo Ecológico: estruturação de roteiros turísticos no Monte Roraima, Serra do\nTepequém e demais atrativos naturais do Estado.\n● Mineração Legal e Responsável: apoio à regularização da atividade mineral dentro da\nlegislação vigente, com fiscalização rigorosa.\n● Garimpo Legal: programa estadual para regularizar a atividade garimpeira dentro da\nlegislação vigente, oferecendo assistência técnica, ambiental e jurídica ao pequeno\ngarimpeiro, com rastreabilidade da produção, recolhimento correto de tributos e redução\nda informalidade e dos danos ambientais causados pela atividade clandestina.\n● Energias Renováveis: incentivo à geração de energia solar e outras fontes limpas, reduzindo\na dependência energética do Estado.\n● Proteção Ambiental: fortalecimento da fiscalização contra desmatamento ilegal e\nqueimadas.\nDesenvolvimento e sustentabilidade caminham juntos. Nosso compromisso é fazer de Roraima um exemplo\nde uso responsável de suas riquezas naturais.\n\nPágina 12 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-12",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 8 — Desenvolvimento Social e Qualidade de Vida\nObjetivo: Cuidar das pessoas e reduzir as desigualdades sociais em todas as regiões de Roraima.\nUm governo justo é aquele que não deixa ninguém para trás. Idosos, pessoas com deficiência,\ncrianças, mulheres e jovens em situação de vulnerabilidade precisam de políticas públicas efetivas,\nque ofereçam dignidade e oportunidade real de melhoria de vida.\n\nPropostas\n● Rede de Proteção ao Idoso: ampliação de centros de convivência e programas de atenção à\nsaúde do idoso.\n● Roraima Inclusiva: políticas de acessibilidade e inclusão produtiva para pessoas com\ndeficiência.\n● Proteção à Infância: fortalecimento dos conselhos tutelares e programas de combate ao\ntrabalho infantil e à violência contra crianças.\n● Roraima Mulher: rede de apoio e capacitação profissional para mulheres, com foco em\nautonomia econômica.\n● Juventude em Ação: programas de primeiro emprego, cultura e esporte voltados para os\njovens do Estado.\nReduzir desigualdades é compromisso permanente do nosso governo. Cuidar das pessoas é a base de um\nEstado mais justo.\n\nPágina 13 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-13",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 9 — Governo Digital, Transparência e Modernização\nObjetivo: Oferecer um governo mais eficiente, moderno e próximo do cidadão.\nA modernização da gestão pública é essencial para garantir mais eficiência, menos burocracia e\nmais transparência no uso do dinheiro público. Nosso governo vai usar tecnologia para aproximar o\nEstado do cidadão e dar mais controle à população sobre os gastos públicos.\n\nPropostas\n● Portal da Transparência Modernizado: divulgação em tempo real de gastos, contratos e\nlicitações do governo estadual.\n● Roraima Digital: digitalização de serviços públicos, reduzindo filas e deslocamentos\ndesnecessários.\n● Inteligência Artificial na Gestão: uso de tecnologia para otimizar processos, prever\ndemandas e reduzir custos operacionais.\n● Desburocratização Total: simplificação de processos internos e redução de exigências\ndesnecessárias para o cidadão e o empresário.\n● Controle Social: canais permanentes de participação popular na fiscalização dos gastos\npúblicos.\nUm governo moderno é um governo que presta contas, que é transparente e que trata o dinheiro público\ncom o respeito que ele merece.\n\nPágina 14 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-14",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nEixo 10 — Municípios Fortes, Cultura, Turismo e Esporte\nObjetivo: Desenvolver todas as regiões do Estado, valorizando a cultura, o turismo e o esporte\nroraimense.\nRoraima é diversa, e cada município tem sua própria identidade, potencial e desafios. Nosso\ngoverno vai fortalecer a parceria com as prefeituras, valorizar as tradições culturais do Estado e\ninvestir no esporte como ferramenta de transformação social.\n\nPropostas\n● Parceria Estado-Municípios: programa permanente de apoio técnico e financeiro às\nprefeituras, respeitando a autonomia municipal.\n● Roraima Cultural: apoio a festivais, eventos e manifestações culturais em todas as regiões\ndo Estado.\n● Roraima Turístico: estruturação de roteiros e infraestrutura turística, com foco na geração\nde renda local.\n● Esporte para Todos: ampliação de núcleos esportivos e apoio a atletas roraimenses de base\ne de alto rendimento.\n● Valorização das Tradições: preservação e incentivo às manifestações culturais indígenas e\nregionais de Roraima.\nUm Estado forte se constrói com municípios fortes. Nosso compromisso é caminhar lado a lado com cada\nprefeitura e valorizar a identidade de cada região de Roraima.\n\nPágina 15 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-15",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nOs Primeiros 100 Dias\nOs primeiros cem dias de governo serão decisivos para dar o tom da nossa gestão: planejamento,\ntransparência e ação rápida sobre as urgências mais sentidas pela população. Nesse período inicial,\nvamos priorizar diagnóstico, medidas emergenciais e a estruturação das bases para as\ntransformações previstas em todos os eixos deste plano.\n● Diagnóstico Completo da Administração Estadual: levantamento detalhado da situação\nfiscal, de pessoal e de infraestrutura de cada secretaria, com publicação dos resultados à\npopulação.\n● Lançamento do Programa Emprega Roraima: estruturação inicial da plataforma de\nintermediação de emprego e qualificação profissional.\n● Mutirão para Redução de Filas na Saúde: início imediato das ações emergenciais para\nreduzir a espera por consultas e cirurgias eletivas.\n● Plano Estadual de Recuperação de Rodovias: apresentação do cronograma de obras\nprioritárias nas principais rodovias estaduais.\n● Portal da Transparência Modernizado: implantação da nova plataforma digital de\nacompanhamento de gastos públicos.\n● Programa Permanente de Apoio aos Municípios: criação do canal direto entre o governo\nestadual e as prefeituras para cooperação técnica e financeira.\n● Gabinete Itinerante: agenda de visitas do governo a todas as regiões do Estado para ouvir\ndiretamente a população.\n\nPágina 16 de 17"
+          },
+          {
+            "id": "plano-de-governo-farah-mesquita-2026-16",
+            "titulo": "Plano de Governo — Farah Mesquita 2026",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo — Farah Mesquita 2026\n\nCompromisso Final\nEste Plano de Governo representa um compromisso com cada roraimense. Nosso objetivo é\nconstruir um Estado mais justo, moderno e preparado para o futuro, sempre com diálogo,\nresponsabilidade e respeito ao dinheiro público.\nSabemos que os desafios são grandes, mas também sabemos que Roraima tem tudo para se tornar\num exemplo de desenvolvimento na região Norte do Brasil. Com trabalho, união e planejamento,\nfaremos de Roraima um Estado de oportunidades para todos.\nContamos com você — cidadão, produtor, empresário, servidor público, jovem, idoso, mãe, pai —\npara construir, junto com o nosso governo, o futuro que Roraima merece.\n\nFarah Mesquita\nGovernador de Roraima\nSolidariedade — 77\n\nPágina 17 de 17"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ffd7e96efcd7a223c4307f161d9e2a73197bd96a989db821a6ad95c62fb5e777"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "0e38c1b483618fe55eb5847af2242b557a03ab9b0403c2f0a9f2d19ef28e1190"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "505e01b8f06f92ee28b530242a95cdd2da089c76216ec12ad49f7e18889705aa"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d8f3c7e7493cda443e960077afa280855c10562ee7efbcd0090ec67e83865b4d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "25fb283b18edc5979b29262b40d9791aec75fc2d36d50d0dd3d2d2dc02164ffd"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "3f7aecdd3f38ffb4c5cce7197db2a4427ea44f067b1cb26f4c4c55be786b2bfb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "6cef1d8c59b11d63a3d0b566baad53814cb041645a2dc412b5d74558949a2f48"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0538b702e609c1b4ba79ab714de4c3f49bf2aeaae4e6704c26b0cbd16964c654"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "4945e0b21e85f3df714a6405e46f619e61e9d73ee0950d7b54499a969c8a05a4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c0baf409e034be558e539a51c22428a8b5aad991fc3aa7dd77eeac338ff54082"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2fc316b0a238051f15d5f297574335c6b2b073d59fd3f0a34426307f6d546424"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "f8397da3f5bc29d804fb65c3900f2e623b59f38378cec146534cfe4955ae7685"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "a1d1c3290a6c55c8cae76c349b96f24068ec34b73aeeb74571aa97a9fc195874"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "41356adea6d77db8ea7669497cbc64ae96f11ab1f0d8e44c953f529aa77170aa"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "0f81501813f1106a7626638f32588d00bfae2be13ec664b634504249cea97d8b"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "8e49ffb562bd2066bb8a8e3871331893894e03cb003e49fedb645b37062fa3de"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "9b3f3f500d326958962ec0a0c443aade22229523253829eda390031133a45bd3"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano de governo de Farah Mesquita, candidato ao governo de Roraima pelo Solidariedade, organiza as propostas em dez eixos temáticos. No desenvolvimento econômico, prevê o programa Emprega Roraima, central estadual de intermediação de mão de obra integrada a cursos técnicos e qualificação profissional. Na saúde, propõe mutirão permanente de consultas e cirurgias para reduzir as filas de espera em especialidades críticas. Na educação, planeja garantir que toda criança esteja alfabetizada na idade certa por meio do programa Roraima Alfabetiza. Na segurança pública, prevê central única de comando e controle unindo Polícia Civil, Militar e Corpo de Bombeiros. No desenvolvimento rural, propõe força-tarefa estadual de regularização fundiária para dar segurança jurídica a produtores e comunidades rurais. Na infraestrutura, planeja recuperação e manutenção contínua das principais rodovias estaduais. Na gestão pública, prevê portal da transparência com divulgação em tempo real de gastos, contratos e licitações do governo estadual.",
+    "frases": [
+      {
+        "texto": "O plano de governo de Farah Mesquita, candidato ao governo de Roraima pelo Solidariedade, organiza as propostas em dez eixos temáticos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 6,
+            "trecho": "O Plano de Governo \"Roraima para Todos\" está organizado em dez grandes eixos temáticos"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 3,
+            "trecho": "Farah Mesquita\nCandidato a Governador de Roraima — Solidariedade 77"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, prevê o programa Emprega Roraima, central estadual de intermediação de mão de obra integrada a cursos técnicos e qualificação profissional.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 6,
+            "trecho": "Programa Emprega Roraima: central estadual de intermediação de mão de obra, integrada\na cursos técnicos e qualificação profissional"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe mutirão permanente de consultas e cirurgias para reduzir as filas de espera em especialidades críticas.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 7,
+            "trecho": "Mutirão Permanente de Consultas e Cirurgias: força-tarefa estadual para reduzir as filas de\nespera em especialidades críticas"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, planeja garantir que toda criança esteja alfabetizada na idade certa por meio do programa Roraima Alfabetiza.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 8,
+            "trecho": "Roraima Alfabetiza: programa focado em garantir que toda criança esteja alfabetizada na\nidade certa."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, prevê central única de comando e controle unindo Polícia Civil, Militar e Corpo de Bombeiros.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 9,
+            "trecho": "Integração das Polícias: central única de comando e controle, unindo Polícia Civil, Militar e\nCorpo de Bombeiros"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento rural, propõe força-tarefa estadual de regularização fundiária para dar segurança jurídica a produtores e comunidades rurais.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 10,
+            "trecho": "Regularização Fundiária: força-tarefa estadual para dar segurança jurídica a produtores e\ncomunidades rurais."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, planeja recuperação e manutenção contínua das principais rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 11,
+            "trecho": "Plano Estadual de Recuperação de Rodovias: recuperação e manutenção contínua das\nprincipais rodovias estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, prevê portal da transparência com divulgação em tempo real de gastos, contratos e licitações do governo estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 14,
+            "trecho": "Portal da Transparência Modernizado: divulgação em tempo real de gastos, contratos e\nlicitações do governo estadual."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "desenvolvimento-economico-emprego",
+        "titulo": "Desenvolvimento econômico e geração de empregos",
+        "descricao": "Propostas para atrair investimentos e criar oportunidades de trabalho, incluindo central estadual de intermediação de mão de obra integrada à qualificação profissional.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 6,
+            "trecho": "Eixo 1 — Desenvolvimento Econômico e Geração de Empregos"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 6,
+            "trecho": "Programa Emprega Roraima: central estadual de intermediação de mão de obra, integrada\na cursos técnicos e qualificação profissional"
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Propostas de reestruturação do atendimento de saúde, incluindo mutirão para reduzir filas de espera por consultas e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 7,
+            "trecho": "Eixo 2 — Saúde para Todos"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 7,
+            "trecho": "Mutirão Permanente de Consultas e Cirurgias: força-tarefa estadual para reduzir as filas de\nespera em especialidades críticas"
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "Propostas para a rede estadual de ensino, incluindo programa de alfabetização de crianças na idade certa.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 8,
+            "trecho": "Eixo 3 — Educação que Transforma"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 8,
+            "trecho": "Roraima Alfabetiza: programa focado em garantir que toda criança esteja alfabetizada na\nidade certa."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Propostas para as forças de segurança, incluindo central única de comando e controle reunindo Polícia Civil, Militar e Corpo de Bombeiros.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 9,
+            "trecho": "Eixo 4 — Segurança Pública Forte"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 9,
+            "trecho": "Integração das Polícias: central única de comando e controle, unindo Polícia Civil, Militar e\nCorpo de Bombeiros"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-rural",
+        "titulo": "Agricultura e desenvolvimento rural",
+        "descricao": "Propostas para a produção rural, incluindo força-tarefa de regularização fundiária para produtores e comunidades rurais.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 10,
+            "trecho": "Eixo 5 — Agricultura, Produção e Desenvolvimento Rural"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 10,
+            "trecho": "Regularização Fundiária: força-tarefa estadual para dar segurança jurídica a produtores e\ncomunidades rurais."
+          }
+        ]
+      },
+      {
+        "id": "governo-digital-transparencia",
+        "titulo": "Governo digital e transparência",
+        "descricao": "Propostas de modernização da gestão pública, incluindo portal de transparência com divulgação de gastos, contratos e licitações em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 14,
+            "trecho": "Eixo 9 — Governo Digital, Transparência e Modernização"
+          },
+          {
+            "documentoId": "RR:230002549294:01",
+            "pagina": 14,
+            "trecho": "Portal da Transparência Modernizado: divulgação em tempo real de gastos, contratos e\nlicitações do governo estadual."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
+    "generatedAt": "2026-08-27T12:55:03.234Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-27T13:06:13.503Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam integralmente a autoria do plano por Farah Mesquita, sua candidatura pelo Solidariedade e a organização em dez eixos temáticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "O único número material da afirmação, dez eixos temáticos, está literalmente sustentado na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o documento e a candidatura, sem elogio, crítica ou linguagem promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único ponto coerente: a estrutura do plano de governo desse candidato."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado e identificam Farah Mesquita como candidato ao governo de Roraima nessa chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:1:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem todas as cláusulas materiais: candidato, cargo, partido e organização do plano em dez eixos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta e ela está no eixo de desenvolvimento econômico da página citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem adjetivação valorativa ou tom promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente dentro de uma mesma área."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado dessa mesma chave eleitoral e à proposta nele contida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:2:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o nome do programa, sua função de intermediação de mão de obra e a integração com cursos técnicos e qualificação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de mutirão permanente de consultas e cirurgias para reduzir filas em especialidades críticas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números nem quantidades a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não acrescenta louvor, crítica ou certeza promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente da área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A proposta está no documento informado da mesma chave eleitoral indicada no item."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:3:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais: área, mutirão permanente, consultas e cirurgias e objetivo de reduzir filas em especialidades críticas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o programa Roraima Alfabetiza e o objetivo de alfabetização na idade certa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, quantidades ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas resume a proposta educacional, sem tom opinativo ou promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente da área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado dessa mesma candidatura ao governo de Roraima."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:4:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o programa mencionado e seu objetivo material de alfabetização de toda criança na idade certa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta de central única de comando e controle com essas corporações."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta, sem elogio, reprovação ou tom assertivo indevido."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única proposta coerente da área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento indicado para essa mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:5:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a área, o tipo de estrutura e os três órgãos mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de regularização fundiária com esse objetivo e público."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números, percentuais, prazos ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e neutra quanto à proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente do eixo rural."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência integra o documento informado da mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:6:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ação proposta, seu caráter estadual e o público beneficiado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a proposta de recuperação e manutenção contínua das principais rodovias estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de forma neutra, sem qualificação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação resume uma única proposta coerente de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado dessa candidatura ao governo de Roraima."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:7:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente recuperação, manutenção contínua e o foco nas principais rodovias estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de portal de transparência com divulgação em tempo real desses itens."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não traz números ou quantidades a conferir."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é meramente descritiva da proposta, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de gestão pública e transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:frase:8:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais: portal, transparência, tempo real, gastos, contratos e licitações."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta o tema de desenvolvimento econômico e geração de empregos e a proposta específica de intermediação de mão de obra integrada à qualificação; o objetivo do eixo também fala em atrair investimentos e criar oportunidades de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação temática não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo do eixo e da proposta sem elogio, crítica ou promessa adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma área temática coerente, desenvolvimento econômico e emprego."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado dessa mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-economico-emprego:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem o tema do eixo, o objetivo de gerar trabalho e a proposta específica mencionada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada traz o eixo de saúde, afirma que o sistema precisa de reestruturação profunda e apresenta o mutirão para reduzir filas de consultas e cirurgias."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos ou percentuais específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva do conteúdo do eixo e da proposta, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:saude:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem a área de saúde, a necessidade de reestruturação e a proposta específica de mutirão para reduzir filas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada trata da rede estadual de ensino no eixo de educação e sustenta a proposta do programa de alfabetização na idade certa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais ou prazos materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta de modo neutro, sem adjetivação valorativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma única área coerente, educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado dessa mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:educacao:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem a área educacional da rede estadual e a proposta específica de alfabetização na idade certa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta o tema de segurança pública e a proposta específica de central única reunindo esses órgãos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não apresenta números, percentuais ou quantidades a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o tema e a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação se mantém em uma área temática única e coerente, segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma candidatura."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:seguranca-publica:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem a área temática e a proposta específica descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta o tema de agricultura e desenvolvimento rural e a proposta de regularização fundiária para produtores e comunidades rurais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números ou prazos específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é apenas descritiva do eixo e da proposta, sem juízo valorativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma área temática única e coerente, agricultura e desenvolvimento rural."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado da mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:desenvolvimento-rural:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem o tema de produção rural e a proposta específica de regularização fundiária para os grupos mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta o eixo de governo digital e transparência, fala em modernização da gestão pública e traz a proposta de portal com divulgação em tempo real."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais ou quantidades específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o eixo e a proposta de modo neutro, sem promoção ou reprovação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente, governo digital e transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:identidade",
+        "verdict": "yes",
+        "reason": "As evidências pertencem ao documento informado dessa mesma candidatura ao governo de Roraima."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002549294:tema:governo-digital-transparencia:documentos:RR:230002549294:01:cobertura",
+        "verdict": "yes",
+        "reason": "As páginas citadas cobrem a modernização da gestão pública no eixo e a proposta específica de portal com divulgação em tempo real dos itens listados."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RR:230002549294",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RR:230002549294:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "Alibaba Qwen",
+        "version": "qwen-code-cli-0.21.12",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI GPT",
+        "version": "codex-cli-gpt-5.4",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 2
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "09fc3c344948de9a25943f79f9d6b93e216048ca4231163164df45783edd8808",
+    "extractedTextSha256": "bc3c6ed264ef63f0723737156ce228c6a9f3805ef735d7c17546d0c03f783003",
+    "documentCount": 1,
+    "documentSetSha256": "292fa03e272fafc5d72203bdb586cb30625d6dd5fb05fa621522e0e81fb6a033",
+    "contentSha256": "9243bcc07a9fa4aac69a9e7fb23a585a10e138023b00bd1cbf6050c3f3356ca9"
+  }
+}

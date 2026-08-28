@@ -1,0 +1,862 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002547874",
+    "slug": "indira-xavier",
+    "nomeUrna": "INDIRA XAVIER",
+    "partido": "UP",
+    "arquivoNome": "2026MG130002547874_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002547874_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002547874:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002547874_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002547874_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "acda21b3e76cdda7b09d20f8dd37a3ad595f155757003a89327a0617c17c57dd",
+        "extractedTextSha256": "864198496b6ab807eaab294e140a0e6a546542fe7755a16f90f46d2c20eaaffb",
+        "paginas": 16,
+        "secoes": [
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-up-para-minas-gerais",
+            "titulo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO (UP) PARA MINAS GERAIS.",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO (UP) PARA MINAS GERAIS.\n\nA Unidade Popular (UP), o partido revolucioná rio e antifascista do Brasil, legalmente\nexistente a partir de dezembro de 2019, vai disputar as eleiçõ es gerais de 2026, em todos os\ncargos.\nImportante mostrar, de início, nosso ponto de vista de participaçã o nas eleiçõ es e qual vai ser\no comportamento de nossos candidatos eleitos.\nA UP é composta por vá rios movimentos como o Movimento de Luta nos Bairros, Vilas e\nFavelas (MLB), o Movimento de Mulheres Olga Benario, o coletivo sindical Movimento Luta\nde Classes (MLC), o movimento estudantil Correnteza, dos estudantes secundaristas, o\nMovimento Rebele-se e da juventude, Uniã o da Juventude Rebeliã o (UJR). Logo, é composta\nde movimentos populares e de trabalhadores de grande atuaçã o nas suas respectivas á reas.\nDaí saíram nossas e nossos candidatos que sã o expressã o das lutas e dos movimentos que\nconstroem a UP.\nEm um contexto em que 24,2% da populaçã o se encontra em insegurança alimentar (nã o\ntêm acesso adequado a alimentaçã o) e destes, 6,48 milhõ es passam fome todo dia,\ndependendo de doaçõ es ou catando comida nos lixos, o resultado da divisã o de classes no\nsistema capitalista se evidencia, uma vez que poucos acumulam imensas riquezas, enquanto\na maioria da populaçã o encontra-se na miséria, ou à beira da miséria. Fica muito claro, entã o,\nque os trabalhadores e o povo brasileiro, no geral, precisam de um partido revolucioná rio.\nPor isso, a UP nã o tem o objetivo de apenas possuir candidatos para atuaçã o parlamentar,\nou governamental, de maneira que possa dizer: temos tantos deputados, governadores, ou\npresidente, que fiquem só em seus gabinetes, longe das ruas de onde vieram. A atuação\ndesses eleitos deve ser revolucionária, em conjunto aos movimentos dos\ntrabalhadores e que amplie a participação popular. Queremos ter governadores (as),\nsenadores (as) e deputados (as) que venham das periferias, que pisem no chã o das\nocupaçõ es, que atendam as reivindicaçõ es dos trabalhadores, que estimulem a construçã o de\ncasas populares pelos pró prios moradores, que ouçam os movimentos sindicais."
+          },
+          {
+            "id": "dessa-maneira-este-programa-e-fruto-de-debates-e-discusso-es-de-centenas",
+            "titulo": "Dessa maneira, este programa é fruto de debates e discussõ es de centenas de companheiros",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Dessa maneira, este programa é fruto de debates e discussõ es de centenas de companheiros\ne companheiras, filiados e aliados com propostas para o governo de Minas Gerais e outros\ncargos, para ser amplamente discutido e divulgado, junto à populaçã o, nas praças, ruas,\navenidas, becos, vielas, zonas rurais e em todos os rincõ es do estado.\nAvaliamos que o atual governo de Minas Gerais está entregue aos bilioná rios, que atuam para\nretirar direitos dos trabalhadores. Por isso, as mineradoras, o agronegó cio e os banqueiros\ngovernam Minas Gerais, empobrecendo a populaçã o de um dos estados mais ricos da\nfederaçã o.\nA ló gica que sequestra as riquezas de Minas Gerais e entrega para os banqueiros, ou seja,\ncredores de uma dívida pú blica é a que faz privatizar a COPASA e fazer o povo mineiro ficar\nsem á gua por dias nas grandes regiõ es do estado. Ao passo que as mineradoras utilizam a\ná gua como força motriz para levar os minérios no maior mineroduto do mundo, de\nConceiçã o do Mato Dentro ao Porto de Açu (RJ).\nO atual governo permanece com a política de arrocho salarial para os servidores pú blicos.\nNã o paga o piso da educaçã o, precariza os salá rios e equipamentos na saú de. Até mesmo os\nservidores da segurança pú blica, pauta tã o falada por vá rios grupos reacioná rios, sã o\nmaltratados nesse atual governo.\nPara manter os privilégios das grandes mineradoras, do agronegó cio e a farra dos\nempresá rios, o Estado de Minas Gerais abriu mã o de arrecadar R$ 19,4 bilhõ es de reais com\nisençõ es fiscais para mais de 4 mil empresas em 2025, além dos mais de 408 bilhõ es de\nreais, valor acumulado a partir de 1996 e aplicando as correçõ es inflacioná rias, que seriam\ndo povo mineiro com a compensaçã o de perdas da Lei Kandir, responsável por isentar a\narrecadaçã o do Imposto sobre Circulaçã o de Mercadorias e Serviços para as mineradoras e o\nagronegó cio.\nCom tal arrecadaçã o, seria possível aumentar o financiamento da educaçã o e saú de, que\nforam profundamente atacados nas ú ltimas gestõ es, como a privatizaçã o de 95 escolas\nestaduais, além da tentativa da militarizaçã o de mais de 700 escolas, que novamente\nderrubado pelo TJMG,"
+          },
+          {
+            "id": "zema-mateus-simo-es-e-a-assembleia-legislativa-trairam-o-povo-mineiro-ap",
+            "titulo": "Zema, Mateus Simõ es e a Assembleia Legislativa traíram o povo mineiro aprovando a adesã o",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Zema, Mateus Simõ es e a Assembleia Legislativa traíram o povo mineiro aprovando a adesã o\ndo Estado do PROPAG (Programa de Pleno Pagamento de Dívidas dos Estados) imposto pelo\nGoverno Federal e alinhado com as políticas neoliberais. O Programa nada mais é do que\numa reformulaçã o do antigo Regime de Recuperaçã o Fiscal de Temer e Bolsonaro, que obriga\no estado a refinanciar uma dívida ilegítima com a Uniã o, já paga 3 vezes, segundo estudo\nfeito pela Auditoria Cidadã\n\nda Dívida, tirando recursos do orçamento pú blico,\n\nimpossibilitando o aumento dos salá rios, a realizaçã o de concursos e estrangulando os\ninvestimentos em á reas sociais. Ainda usaram dessa tal dívida como desculpa para vender a\nCopasa.\nMulheres trabalhadoras no poder!\n\nAs mulheres seguem sendo a maioria dos mineiros. Segundo dados do Censo 2022, dos 20,5\nmilhõ es de pessoas, 51,02% sã o mulheres. Nesse sentido, é ló gico dizer que é necessá rio o\ninvestimento em políticas que sejam voltadas para o grupo que representa a maior parcela\npopulacional do estado, mas mesmo sendo um fato inegável, nã o é o que os governos de\nMinas Gerais das ú ltimas décadas têm feito. A influência do capital privado, principalmente\ndas mineradoras, fala mais alto ao ouvido dos governadores.\nNo Brasil, as mulheres ganham 21,3% a menos que os homens, até quando sã o comparados\ntrabalhadores do mesmo perfil de escolaridade, idade e categoria de educaçã o (Dados G1,\nabril de 2026). O fator racial também segue como um dos maiores desafios no diagnó stico\nnacional. Por exemplo, mulheres negras ganham, em média, R$2.864,39 enquanto mulheres\nnã o negras recebem R$4.661,06, ou seja, 38% a mais. Em Minas Gerais, mulheres negras\nganham, em média, R$2.704,82, e mulheres nã o negras recebem R$3.917,12. Uma diferença\nde 30,9%. Esses sã o os dados oficiais, mas, ao mesmo tempo, sabemos que grande parte das\nmineiras estã o relegadas ao trabalho informal, a escala 6x1, dependendo de comissõ es, sã o\ndonas de casa, mã e solo e arrimo de família, entã o mesmo que cheguem a ganhar os valores\nda pesquisa precisam sustentar a casa sozinhas, tendo que pagar aluguéis inflacionados pela\nespeculaçã o imobiliá ria e uma cesta bá sica de R$765."
+          },
+          {
+            "id": "os-indices-de-desemprego-tambem-escancaram-a-desigualdade-o-observato-ri",
+            "titulo": "Os índices de desemprego também escancaram a desigualdade. O observató rio de trabalho",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Os índices de desemprego também escancaram a desigualdade. O observató rio de trabalho\nem Minas Gerais aponta que a aná lise por gênero, idade, instruçã o e cor/raça revela\ndisparidades significativas. Na aná lise por gênero, as mulheres têm taxas de desocupaçã o\nmais elevadas (5,9%) que os homens (4,3%). Além de ser fruto da recessã o econô mica, esses\nindicadores refletem a dupla, por vezes tripla, jornada de trabalho da mulher. Socialmente, a\nresponsabilidade de criaçã o dos filhos e do trabalho doméstico é designada, na imensa\nmaioria das vezes, à s mulheres. Quando engravidam ou têm filhos pequenos enfrentam\ndificuldades de encontrar trabalho e permanecer empregadas.\nAlgumas das políticas pú blicas fundamentais que asseguram renda e permanência das\nmulheres no mercado sã o: creches e escolas para seus filhos, transporte pú blico adequado e\nseguro, moradia, etc. Isto é, só será possível um combate realmente eficiente ao desemprego\nde nossa populaçã o, sobretudo a feminino, junto a um intenso fortalecimento de instituiçõ es\npú blicas e ampliaçã o de direitos bá sicos.\nEm 2025, mais de 50 mil mulheres sofreram violência doméstica, dados esses que\naumentaram 33% só no 1° semestre de 2026. O estado com mais municípios do Brasil conta\ncom apenas 70 delegacias da mulher, insuficientes para as 853 cidades, assim como tem só\n10 casas para receber as mulheres vítimas de violência de todas as regiõ es. Mesmo com o\ntrabalho incansável de movimentos sociais, como o Movimento de Mulheres Olga Benario,\nainda é insuficiente para toda a demanda. É gritante o descaso do poder pú blico com o\ncombate à violência contra a mulher, as estruturas estatais existentes nã o comportam um\ncombate efetivo, que possibilite à vítima a saída desse ciclo. E outras redes, nã o estatais, nã o\ntêm verba o suficiente para isso. É de suma urgência a destinaçã o de orçamento específico e\nque seja capaz garantir vida digna para as mulheres, oferecendo além dos mecanismos\njurídicos, apoio bem preparado de assistentes sociais, para que o trato nã o seja apenas no\nfazer denú ncia/medida protetiva.\nO cená rio da violência contra mulheres trans no Brasil nã o é apenas alarmante; é o reflexo\nbrutal da omissã o e do descaso governamental."
+          },
+          {
+            "id": "no-topo-do-ranking-nacional-de-transfeminicidios-segundo-a-associaca-o-n",
+            "titulo": "No topo do ranking nacional de transfeminicídios, segundo a Associaçã o Nacional de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "No topo do ranking nacional de transfeminicídios, segundo a Associaçã o Nacional de\nTravestis e Transexuais (ANTRA), Ceará e Minas Gerais lideram as estatísticas de sangue,\nconsolidando-se como os estados mais letais do país em nú meros absolutos. Também\nsegundo a instituiçã o, em 2025 ocorreram 8 mortes violentas de travestis no estado. Por trá s\ndesses dados, há uma farsa institucionalizada: o chamado “mito da queda numérica”.\nQualquer reduçã o comemorada nos indicadores oficiais nã o passa de uma ilusã o mascarada\npela subnotificação crô nica. O que assistimos, na verdade, é o desmonte e o\nenfraquecimento deliberado das políticas pú blicas de identificaçã o e checagem dessas\nmortes violentas. O estado falha em proteger e, depois, falha em registrar, promovendo um\nverdadeiro apagamento institucional da identidade das vítimas.\nÉ inadmissível a falta de interesse real e concreto dos governantes em criar mecanismos\npara, no mínimo, frear essa barbá rie. A recusa em capacitar ó rgã os de segurança para\nregistrar corretamente o gênero dessas mulheres nos boletins de ocorrência é uma escolha\npolítica que invisibiliza o problema. Sem dados confiáveis, nã o há políticas de proteçã o\neficientes. O silêncio do Estado diante do transfeminicídio é, por si só , uma forma de\nviolência que perpetua a impunidade e condena uma populaçã o inteira à margem da justiça.\nEnquanto o lucro for a prioridade em detrimento da vida, os trabalhadores, as crianças, os\njovens e as mulheres viverã o esperando a morte, seja por bala, por fome, por desastre\nambiental ou doenças pelas quais há humanidade já tem cura.\nA histó ria da sociedade é a histó ria da luta de classes, e em Minas Gerais nã o poderia ser\ndiferente. Todas as conquistas da populaçã o mineira, como o estabelecimento das\nAssessorias Técnicas Independentes (ATIs) para a reparaçã o integral dos atingidos pelo\nrompimento da barragem de Brumadinho, a reconduçã o de diretores arbitrariamente\nexonerados de escolas, ampliaçã o do funcionamento da delegacia da mulher, citando apenas\nalgumas, foram fruto de intensa mobilizaçã o dos movimentos de base. Nã o estivemos à parte\ndesses processos; organizamos trabalhadoras e trabalhadores, pais e mã es, estudantes,\npessoas pretas, indígenas, quilombolas, moradores de ocupaçõ es, sindicalistas e LGBTIA + na"
+          },
+          {
+            "id": "luta-por-nossos-direitos-ocupamos-as-ruas-as-instituico-es-as-mesas-de-n",
+            "titulo": "luta por nossos direitos. Ocupamos as ruas, as instituiçõ es, as mesas de negociaçã o e outros",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "luta por nossos direitos. Ocupamos as ruas, as instituiçõ es, as mesas de negociaçã o e outros\nó rgã os estatais; participamos da organizaçã o de redes de solidariedade. Acreditamos e\ndefendemos a construçã o do poder popular com as bases, porque só assim teremos o fim das\nopressõ es que nos atingem. Apenas na luta engajada e constante pode-se conquistar e\ngarantir direitos. A Unidade Popular é um partido político de esquerda revolucioná ria do\nBrasil, é temos esses anseios, combates, debates e experiências também para o campo\ninstitucional.\nEste programa é a forma de ampliar as nossas lutas, propondo medidas reais que\ntransformarã o a vida da classe trabalhadora, das mulheres e de todo o povo de Minas Gerais.\nO que só será possível através de uma ampla participaçã o popular, que avance na construçã o\nde uma nova ordem econô mica, o socialismo, capaz de solucionar definitivamente os\nprincipais problemas vividos pelo povo.\n\nPara isso defendemos:\n\nTrabalho e vida digna para todos!\n• Lutar junto ao povo pelo fim da escala 6x1, com reduçã o da Jornada de Trabalho de 6\nhoras diá rias para todos os trabalhadores e trabalhadoras;\n• Lutar junto ao povo pelo aumento de 100% do Salá rio Mínimo;\n• Garantir geraçã o de emprego a partir das frentes emergenciais de trabalho — obras de\ninfraestrutura, sobretudo nas periferias, de saneamento, calçamento de ruas,\nconstruçã o de postos de saú de, escolas, espaços de lazer e esporte, praças, etc., devem\nser realizadas majoritariamente sem as grandes empreiteiras, com ampla mobilizaçã o\nde técnicos das universidades e do povo trabalhador. Estes projetos serã o baseados em\nmutirõ es remunerados e trabalho comunitá rio, envolvendo as pessoas do pró prio\nbairro ou regiã o para resolver os problemas estruturais locais, diferenciando-se\nprofundamente do trabalho precarizado e sem direitos;"
+          },
+          {
+            "id": "em-articulaca-o-junto-ao-governo-federal-desenvolver-atraves-das-centrai",
+            "titulo": "• Em articulaçã o junto ao Governo Federal desenvolver através das Centrais de",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "• Em articulaçã o junto ao Governo Federal desenvolver através das Centrais de\nAbastecimento de Minas Gerais (CeasaMinas) e da Companhia Nacional de\nAbastecimento (CONAB) estoques de alimentos para regulaçã o dos preços e\nabastecimento da populaçã o em situaçã o de vulnerabilidade ou atingida por\ndesastres ambientais, como o de Juiz de Fora;\n• Criaçã o de um programa de incentivo ao fortalecimento e desenvolvimento das hortas\npopulares, fortalecimento da política de agroecologia e da agricultura familiar urbana e\nperiurbana — criaçã o de infraestrutura estadual para escoamento da produçã o e\nestabelecimento de feiras populares permanentes, garantindo acesso equitativo à\nproduçã o para toda a populaçã o;\n• Regulamentaçã o dos Trabalhadores de Aplicativo. Leis que garantam o cumprimento\ndo vínculo empregatício. Para isso devemos trabalhar pela revogaçã o das Leis da\nReforma Trabalhista e da Terceirizaçã o;\n• Combater firmemente o trabalho escravo. Nã o tem como falar no enfrentamento do\ntrabalho escravo se nã o houver atuaçã o conjunta de governos federal, estadual e\nmunicipal;\n• Garantia do pagamento do Piso Salarial e do plano de carreiras de todas as categorias\nde funcioná rios do estado, ativos e aposentados;\n• Cobrança rigorosa das dívidas ativas de impostos dos grandes bancos e empresas;\nElaboraçã o de um projeto de lei que, em ú ltima instâ ncia, retire o alvará dos\nsonegadores;\n• Garantia de aprovaçã o de lei que destine 30% das vagas em concursos pú blicos aos\nnegros, indígenas, PCDs e pessoas trans.\nEconomia e orçamento público sob controle do Povo Mineiro\n• Lutar pelo Fim da Lei Kandir, com a compensaçã o de perdas para o orçamento estatal\natravés da suspensã o do pagamento e amortizaçã o retroativa da suposta dívida\npú blica do estado com a Uniã o;"
+          },
+          {
+            "id": "fortalecimento-das-estatais-mineiras-cemig-codemig-prodemge-mgs-entre",
+            "titulo": "• Fortalecimento das Estatais Mineiras (CEMIG, CODEMIG, PRODEMGE, MGS, entre",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "• Fortalecimento das Estatais Mineiras (CEMIG, CODEMIG, PRODEMGE, MGS, entre\noutras) e do Serviço Pú blico em Geral. Reestatizaçã o imediata da COPASA;\n•\n\nTaxar grandes empresas estrangeiras para garantir a permanência dos lucros em\nnosso estado. Fim das remessas de lucros para o estrangeiro;\n\n• Realizar uma reforma tributá ria que preveja a taxaçã o das grandes fortunas e a\nimplementaçã o de impostos progressivos.\n• Criaçã o e fortalecimento das indú strias de energias renováveis, semicondutores,\ncatá lise e fá rmacos;\n• Auditoria Cidadã das Dívidas Pú blicas para comprovar que o endividamento é um\nmecanismo de roubo dos recursos do povo;\n• Revogaçã o do acordo do PROPAG, paralisaçã o dos pagamentos e lutar pela anulaçã o\nda dívida ilegítima do Estado com a Uniã o;\n• Assegurar a participaçã o popular no Orçamento, com a criaçã o de conselhos\ndeliberativos que versem sobre a prioridade de investimos no estado;\n• Defendemos o fim do Arcabouço Fiscal que impede o investimento para as á reas\nsociais, como educaçã o e saú de, para priorizar o pagamento da dívida pú blica;\nEm defesa da vida das mulheres\n• Aumento do nú mero de delegacias especializadas para o atendimento à mulher vítima\nde violência; as cerca de 70 existentes nã o contemplam um estado com mais de 800\nmunicípios;\n• Expansã o de canais pú blicos para denú ncia e encaminhamentos, como o exemplo do\naplicativo Salve Maria em Uberlâ ndia;\n• Expansã o da Rede Estadual de Enfrentamento à Violência contra a mulher: garantir\nmais casas-abrigo pelo estado, políticas de transferência de renda para mulheres\nvítimas de violência, auxílio jurídico, atendimento contínuo por assistentes sociais,\natendimento psicoló gico, políticas de aluguel social;\n•\n\nPolíticas de fortalecimento à educaçã o bá sica infantil: aumento do nú mero de\ncreches pú blicas, sobretudo em regiõ es periféricas, e cobrando o cumprimento da"
+          },
+          {
+            "id": "legislaca-o-que-preve-creches-em-empresas-privadas-proporcionalmente-ao",
+            "titulo": "legislaçã o que prevê creches em empresas privadas, proporcionalmente ao nú mero de",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "legislaçã o que prevê creches em empresas privadas, proporcionalmente ao nú mero de\nfuncioná rias;\n• Em defesa do parto humanizado e das maternidades pú blicas; pelo aumento da\nlicença maternidade e paternidade;\n• Criar o Programa Gestaçã o Digna para mulheres grávidas que assegure assistência\npsicossocial, acesso a direitos e renda;\n• Contra a pobreza menstrual: distribuiçã o gratuita de absorventes higiênicos em\nescolas, centros de saú de, centros regionais de assistência social e presídios;\n•\n\nPelo fim da transfobia: por mais abrigos para a populaçã o trans, por garantia de\natendimento pelo nome social e/ou retificaçã o de documentos, por tratamento\nhumanizado de homens trans em consultas ginecoló gicas e obstétricas;\n\n• Erradicaçã o do analfabetismo na populaçã o feminina do estado, através de parcerias\ncom as Instituiçõ es de Ensino Pú blicas Estaduais e Federais, com busca ativa e\natuaçã o territorial;\n• Por políticas de geraçã o de renda e emprego para mulheres negras, quilombolas,\nPCDs e indígenas e em situaçã o de vulnerabilidade social;\n• Criar uma rede de referência para pessoas LGBTQIA+, envolvendo iniciativas da\nsociedade civil e ó rgã os governamentais para a formaçã o profissional e o combate a\nviolência a membros dessa comunidade.\nRomper as cadeias de exploração minerária!\n• Suspender toda a mineraçã o no estado e rever os contratos com as mineradoras.\n• Imediata puniçã o das mineradoras responsáveis pelos crimes cometidos na bacia do\nRio Doce e Rio Paraopeba;\n• A reparaçã o integral e o reassentamento das comunidades atingidas pelos crimes na\nbacia do Rio Doce e Rio Paraopeba;\n• A garantia do direito a Assessoria Técnica Independente para as comunidades que\nvivem com barragens de rejeitos da mineraçã o; Garantia do Cumprimento da"
+          },
+          {
+            "id": "convenca-o-169-da-oit-sobre-consulta-previa-livre-e-informada-a-s-comuni",
+            "titulo": "Convençã o 169 da OIT sobre consulta prévia, livre e informada à s comunidades",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Convençã o 169 da OIT sobre consulta prévia, livre e informada à s comunidades\nindígenas e tradicionais;\n• Assegurar a estatizaçã o de toda a cadeia extrativista em Minas Gerais; como a do Lítio\ne das Terras Raras, através da criaçã o de uma empresa pú blica. Lutar pela\nreestatizaçã o da Vale sob o controle dos trabalhadores da empresa em parceria com\nas comunidades que residem pró ximas à s á reas exploradas;\n• A revogaçã o da Lei no 21.972 e seus decretos. Criaçã o de leis que regulamentem a\nquestã o priorizando a necessidade das populaçõ es atingidas. Elaboraçã o e efetivaçã o\nde uma política pú blica, no â mbito estadual, para o monitoramento e fiscalizaçã o de\nbarragens, nã o mais permitindo o “automonitoramento” que é feito pelas pró prias\nmineradoras que contratam uma consultoria de sua preferência;\n• Tornar obrigató rio o uso de tecnologias mais eficientes para o processo de extraçã o e\nbeneficiamento de minério. Isso será determinado pelo poder pú blico. Fim das\nbarragens por alteamento;\n• Combater a corrupçã o no setor minerá rio através do fortalecimento dos ó rgã os\nambientais e da ampliaçã o da participaçã o da sociedade civil; e defender o\nfortalecimento dos Comitês de Bacias Hidrográ ficas;\n• A criaçã o de Conselhos Populares da Mineraçã o nos territó rios mineradores, de\ncará ter deliberativo, no qual a atividade mineral seja orientada pelos interesses das\ncomunidades, com ampla participaçã o da populaçã o local e dos trabalhadores da\nmineraçã o;\n• Criar fundos de incentivo a diversificaçã o da matriz econô mica nos territó rios\nhistoricamente explorados pela mineraçã o, visando reduzir a dependência econô mica\ndos mesmos a indú stria mineral, como, por exemplo, promovendo o fortalecimento da\nagricultura familiar, economia solidá ria e agroecologia;\n• Aumentar a porcentagem da CFEM e criar Conselhos Populares nos municípios para\nfiscalizaçã o e monitoramento dos recursos da CFEM, garantido, obrigatoriamente,"
+          },
+          {
+            "id": "repasses-a-sau-de-educaca-o-e-moradia-para-as-minas-com-grande-lucro-dev",
+            "titulo": "repasses à saú de, educaçã o e moradia. Para as minas com grande lucro, deverá haver",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "repasses à saú de, educaçã o e moradia. Para as minas com grande lucro, deverá haver\nacréscimos na CFEM; Criar um Conselho de fiscalizaçã o das condiçõ es de saú de e\nsegurança dos trabalhadores da mineraçã o vinculado ao Sistema Ú nico de Saú de;\n• Desapropriaçã o dos ativos das grandes empresas mineradoras locais, nacionais e\nmultinacionais, passando tais ativos à administraçã o direta dos trabalhadores e do\nestado;\n• Retomar as terras pelos povos indígenas, quilombolas e demais comunidades\ntradicionais. Garantia do controle desses povos sobre as terras já demarcadas (com\nexpulsã o dos invasores) e retomada de terras nã o demarcadas;\n• Reconhecer a natureza como ser de direito;\n• Mapear e fortalecer iniciativas comunitá rias de comércio e renda, de forma que eles\ntenham acesso a conhecimento técnico e bases materiais.\nEm defesa dos serviços públicos!\n• Fortalecimento do Sistema Ú nico de Saú de através de investimentos na á rea;\n• Garantir, através da Secretaria de Direitos Humanos e Combate ao Racismo, medidas\nefetivas de combate a intolerâ ncia à s religiõ es de matriz africana. Garantir a efetividade\nda liberdade religiosa, o combate ao racismo e respeito à s religiõ es de matrizes\nafricanas;\n• Promoçã o da saú de da populaçã o negra; Garantir mais acesso e melhor tratamento da\npopulaçã o negra à saú de pú blica, impedindo a discriminaçã o racial e promovendo\nigualdade no acesso;\n• Fim das Parcerias Pú blico-Privadas (PPPs) na saú de, incluindo fundaçõ es e\norganizaçõ es sociais;\n• Fortalecimento da atençã o primá ria em saú de a partir do apoio técnico e maiores\ninvestimentos de recursos financeiros, que competem ao estado;\n• Realizaçã o de concursos para garantir que todos os profissionais da saú de sejam do\nquadro efetivo dos servidores pú blicos;"
+          },
+          {
+            "id": "garantia-do-funcionamento-da-sau-de-pu-blica-em-todos-o-estado-abrangend",
+            "titulo": "• Garantia do funcionamento da saú de pú blica em todos o estado abrangendo povos",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "• Garantia do funcionamento da saú de pú blica em todos o estado abrangendo povos\nindígenas, quilombolas, zonas rurais e á reas urbanas;\n• Criar ambulató rios especializados para pessoas LGBTQIA+ nos principais hospitais do\nestado;\n• Fortalecimento da Fundaçã o Ezequiel Dias. Investir em Ciência e Tecnologia Popular\npara formar um povo verdadeiramente soberano!\n• O policial deve ser um servidor civil, sem subordinaçã o à hiperverticalizaçã o de\nrelaçõ es funcionais e sociais imposta pelos regulamentos e leis militares; Retirar a\npolícia ostensiva (PM) de rua do regime administrativo militar. Para isso defendemos\na modificaçã o do Art. 144, § 5º da Constituiçã o e retirar a posiçã o da polícia militar\ncomo \"força auxiliar e reserva do Exército\". O poder de polícia do estado nã o pode ter\ndois comandos, precisa estar unicamente subordinada ao governo estadual, sem\nvínculo com a Inspetoria Geral das Polícias Militares, ó rgã o do Exército;\nCampo e Cidade a Serviço do Povo e com Mobilidade sob Controle Popular!\n• Reforma Urbana e Agrá ria em cará ter imediato;\n• Reconhecimento e urbanizaçã o de todas as Ocupaçõ es Urbanas em nosso estado;\n• Auxiliar a coletivizaçã o e industrializaçã o do campo. Automaçã o da indú stria e\ntecnologia da informaçã o;\n• Reconhecimento e titulaçã o de todas as Ocupaçõ es Rurais e assentamentos;\n• Reformulaçã o arquitetô nica e de saneamento dos aglomerados populacionais e das\ncidades;\n• Criaçã o de uma empresa pú blica estadual de transporte que abarque os modais\nrodoviá rio e ferroviá rio, com utilizaçã o imediata das linhas ferroviá rias já construídas\ne futura expansã o;\n• Fortalecer o Departamento de Estrada e Rodagem de Minas Gerais, aumentando o\nnú mero de funcioná rios e aumentando o investimento para a manutençã o das\nrodovias estaduais;"
+          },
+          {
+            "id": "revisa-o-das-concesso-es-da-gesta-o-de-estradas-estaduais-a-empresas-pri",
+            "titulo": "• Revisã o das concessõ es da gestã o de estradas estaduais a empresas privadas. Com",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "• Revisã o das concessõ es da gestã o de estradas estaduais a empresas privadas. Com\nimediata reduçã o e congelamento dos preços dos pedá gios e aumento do valor de\ndestinaçã o obrigató ria a melhoria, ampliaçã o e manutençã o das rodovias;\n• Promover um estudo logístico sobre as conexõ es rodoviá rias e ferroviá rias entre as\ncidades de Minas, em especial entre as regiõ es. Para a criaçã o e ampliaçã o da\nmobilidade da populaçã o entre as regiõ es do estado;\n• Retorno do SUBÚ RBIO – Trem Urbano de passageiro em toda Regiã o Metropolitana\nde Belo Horizonte e estatizaçã o do transporte urbano coletivo;\n\nDefender a educação e o futuro da nossa juventude!\n• Ampliar a rede de escolas estaduais, com atençã o principal em á reas rurais, terras\nindígenas e quilombolas;\n• Recompor e ampliar o orçamento da Fundaçã o de Amparo à Pesquisa do Estado de\nMinas Gerais (FAPEMIG), prevendo alocaçã o de recursos específicos para projetos de\npesquisa e extensã o da UEMG e da Unimontes;\n• Monitorar e consolidar a aplicaçã o do Plano Estadual de Educaçã o (Lei estadual nº\n12.197/2018);\n• Elaborar o Plano Estadual de Assistência Estudantil que envolva a rede bá sica e o\nensino superior;\n• Fim do processo de privatizaçã o das escolas das redes estaduais praticadas pelo\ngoverno Zema e Simõ es, assim como a reestatizaçã o das escolas já leiloadas;\n• Cumprir a Lei do Piso Nacional da Educaçã o. Minas Gerais nã o cumpre o Piso\nConstitucional, pagando um dos salá rios mais baixos aos trabalhadores e\ntrabalhadoras em educaçã o do Brasil;\n• Concurso Pú blico para os trabalhadores em Educaçã o realizado em cará ter imediato,\na fim de extinguir postos vacantes de profissionais em toda a rede pú blica de Minas\nGerais;"
+          },
+          {
+            "id": "desenvolver-canais-de-dia-logo-entre-o-estado-de-minas-gerais-e-as-unive",
+            "titulo": "• Desenvolver canais de diá logo entre o estado de Minas Gerais e as Universidades e",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "• Desenvolver canais de diá logo entre o estado de Minas Gerais e as Universidades e\nInstitutos Federais para a promoçã o da ciência e elaboraçã o de projetos conjuntos\nentre o estado e as instituiçõ es de ensino;\n• Implementar o passe livre estudantil para os estudantes mineiros;\n• Programa de Ensino Técnico na rede estadual, integrando os estudantes do ensino\nmédio à profissõ es existentes na Empresa Pú blicas do Estado, como Cemig,\nProdemge, MGS, CODEMIG entre outras;\n• Fortalecimento da Universidade Estadual de Minas Gerais – UEMG e da Universidade\nEstadual de Montes Claros – UNIMONTES. Garantido concurso pú blico para\ntrabalhadores, ampliaçã o estrutural e abertura de vagas nas instituiçõ es;\n• Fortalecimento da UTRAMIG. Ampliando relaçõ es com as escolas da rede estadual;\n• Fim do processo de militarizaçã o e municipalizaçã o das escolas;\n• Revogaçã o do Novo Ensino Médio que precariza o ensino e o trabalho dos professores\ne professoras;\n• Promover campanhas de inclusã o e respeito a diversidade no estado de Minas Gerais,\nprincipalmente nas escolas estaduais;\n• Implementar cotas para pessoas trans e travestis na graduaçã o da UNIMONTES;\n• Criar o Programa “Bora Juventude\" que construirá junto aos municípios centros de\nconvivência nas á reas pobres, bairros periféricos e favelas do estado, para a promoçã o\nde cursos de formaçã o, realizaçã o de atividades culturais e prá ticas esportivas, além\ndo fortalecimento do programa Fica Vivo;\n• Desenvolver campanhas de combate a violência e o assédio dentro das escolas, bem\ncomo a contrataçã o de profissionais para apoiar estudantes e professoras vítimas e\ncapacitar os trabalhadores em educaçã o para que auxiliem também na prevençã o;\ndesenvolver parcerias com movimentos e instituiçõ es da sociedade civil que já atuam\nnesse combate;\n• Criar o Programa Emprego Jovem, que utilizará da ciência de Treinamento\nDesenvolvimento e Educaçã o (TD&E) para identificar competências globais dos\njovens, mapear os problemas existentes atualmente para a empregabilidade da"
+          },
+          {
+            "id": "juventude-e-a-partir-disso-desenvolver-cursos-de-formaca-o-profissional",
+            "titulo": "juventude, e a partir disso, desenvolver cursos de formaçã o profissional e orientaçã o",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "juventude, e a partir disso, desenvolver cursos de formaçã o profissional e orientaçã o\nde carreira para jovens mineiros;\n• Reestruturar o Programa Transformar, vinculado a Secretaria de Estado de\nAgricultura, Pecuá ria e Abastecimento de Minas Gerais, a partir da Emater-MG,\nvisando a formaçã o cidadã , crítica e profissional de jovens rurais e implementaçã o de\nprojetos produtivos com geraçã o de renda, com valorizaçã o da cultura local, sem\ncomprometimento dos recursos naturais;\n• Promover campanhas de prevençã o ao suicídio nã o só em setembro, mas o ano todo;\n• Promover campanhas sobre a importâ ncia do uso de preservativos nã o só para o\ncombate a gravidez na juventude, como também para a prevençã o geral de Infecçõ es\nSexualmente Transmissíveis (ISTs);\n• Tratar o uso de drogas como questã o de saú de pú blica, nã o como questã o de polícia,\npromovendo cursos de formaçã o para a Polícia Militar sobre o tema e, para a\njuventude, desenvolver campanhas estaduais sobre os malefícios do uso de drogas;\n• Desenvolver campanhas sobre a valorizaçã o do esporte como agente fundamental\npara assegurar a saú de mental.\n\nOusar, valorizar nossa cultura e nossa história\n• Manter o Memorial dos Direitos Humanos, antiga sede do DOPS e DOI-CODI de Minas\nGerais, sobre controle e gestã o popular e com investimento pú blico para revitalizaçã o\ne manutençã o do espaço, sem que haja qualquer prejuízo para as características\nhistó ricas, sociais e arquitetô nicas do local;\n• Promover editais específicos para eventos culturais idealizados por jovens para\njovens;\n• Desenvolver, a partir da Secretaria de Estado de Cultura e Turismo, eventos culturais\nvoltados a juventude nas diversas regiõ es do estado mineiro; Incentivar iniciativas\nculturais dissidentes;"
+          },
+          {
+            "id": "criar-politica-estadual-de-incentivo-ao-acesso-a-cultura-para-populaca-o",
+            "titulo": "• Criar política estadual de incentivo ao acesso à cultura para populaçã o, como reduçã o",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "• Criar política estadual de incentivo ao acesso à cultura para populaçã o, como reduçã o\ndos preços em eventos culturais organizados pelo estado;\n• Garantir Políticas de Incentivo à Cultura com escolas pú blicas de artes e destinaçã o de\norçamento específico para atividades culturais;\n• Preservaçã o e ampliaçã o do reconhecimento dos Patrimô nios Histó ricos e Culturais\ndo nosso povo mineiro."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ed7a8553628e81a663ab42d7165a39e2015128a76aa0fa103ae83b22fa7da992"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "130d2d3dd3c1b09f99b475b989e17628e4bb7acadda351f71681d2043f03be70"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "36acf5ae8dbc54aa4bf6354075d793023d267c4450936d36366a4ed5b94853a3"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0637a73252ca5c9c38fb1c833021661f5c348da90451bc16a8be02366c867ea7"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e2034dccb6ef936ef51868e82819259484ff9f137fcc4d3739db5456f0578a48"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "86758f22c7bc1bbb59c849a8a5502973a1ea16618a696f1173a49fa9ea3b91b7"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "912a72af6cbe5d2aaa2dc0f548e101600639467ea233ff5ff0e4603a9118b146"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "68c1078281d010fc7523b63f9ffc359710a27ad55b8035f3814070594112af08"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "3e0c13871331e07f254fa44f34f273b0d6533d3c31d6005044e107aecdc41daa"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "3bed17ffe0d63cdde389f2b19c8f745a208eb727dfc3af1999da4fe8dd6e25bd"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "098d94bb6636b5e88a075d6a7643115d8c9b36e71a7dd98dd45304d636ac96a5"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "02493977c6375b91201cb661b11350c5ceaf1bef5502832c1152bf5b38d421b6"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "73be065ee0c944f90482f73343c7d57a0c016ddac0d1f0c054fd8169c62a6534"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "247156ef9747daa9f6f15c2e6d028460cdb1de7f02848f15dcb523697830aeae"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "a9a83681a90c2050b75e7a2613c30cd40e9bb1533e03612c4822258262d53cfc"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "93d7f5538579e81463f0b0db92b367089e3937f80a5b07f1386e2cc2ac6277e5"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a seguinte medida: Assegurar a participaçã o popular no Orçamento, com a criaçã o de conselhos deliberativos que versem sobre a prioridade de investimos no estado. O programa prevê reduçã o da Jornada de Trabalho de 6 horas diá rias para todos os trabalhadores e trabalhadoras. O programa prevê estoques de alimentos para regulaçã o dos preços e abastecimento da populaçã o em situaçã o de vulnerabilidade. O programa prevê mais casas-abrigo pelo estado para mulheres vítimas de violência. O programa prevê uma política pú blica estadual para o monitoramento e fiscalizaçã o de barragens. O programa prevê a criaçã o de uma empresa pú blica estadual de transporte. O programa prevê ampliar a rede de escolas estaduais, com atençã o principal em á reas rurais, terras indígenas e quilombolas.",
+    "frases": [
+      {
+        "texto": "O programa prevê a seguinte medida: Assegurar a participaçã o popular no Orçamento, com a criaçã o de conselhos deliberativos que versem sobre a prioridade de investimos no estado.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 8,
+            "trecho": "Assegurar a participaçã o popular no Orçamento, com a criaçã o de conselhos deliberativos que versem sobre a prioridade de investimos no estado;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê reduçã o da Jornada de Trabalho de 6 horas diá rias para todos os trabalhadores e trabalhadoras.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 6,
+            "trecho": "reduçã o da Jornada de Trabalho de 6\nhoras diá rias para todos os trabalhadores e trabalhadoras;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê estoques de alimentos para regulaçã o dos preços e abastecimento da populaçã o em situaçã o de vulnerabilidade.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 7,
+            "trecho": "estoques de alimentos para regulaçã o dos preços e\nabastecimento da populaçã o em situaçã o de vulnerabilidade"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê mais casas-abrigo pelo estado para mulheres vítimas de violência.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 8,
+            "trecho": "Expansã o da Rede Estadual de Enfrentamento à Violência contra a mulher: garantir\nmais casas-abrigo pelo estado"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê uma política pú blica estadual para o monitoramento e fiscalizaçã o de barragens.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 10,
+            "trecho": "Elaboraçã o e efetivaçã o de uma política pú blica, no â mbito estadual, para o monitoramento e fiscalizaçã o de barragens"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a criaçã o de uma empresa pú blica estadual de transporte.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 12,
+            "trecho": "Criaçã o de uma empresa pú blica estadual de transporte que abarque os modais\nrodoviá rio e ferroviá rio"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê ampliar a rede de escolas estaduais, com atençã o principal em á reas rurais, terras indígenas e quilombolas.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 13,
+            "trecho": "Ampliar a rede de escolas estaduais, com atençã o principal em á reas rurais, terras\nindígenas e quilombolas;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "participacao-orcamentaria",
+        "titulo": "Participação orçamentária",
+        "descricao": "Participação popular na definição de prioridades orçamentárias.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 8,
+            "trecho": "Assegurar a participaçã o popular no Orçamento, com a criaçã o de conselhos deliberativos que versem sobre a prioridade de investimos no estado;"
+          }
+        ]
+      },
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Redução da jornada diária de trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 6,
+            "trecho": "reduçã o da Jornada de Trabalho de 6\nhoras diá rias para todos os trabalhadores e trabalhadoras;"
+          }
+        ]
+      },
+      {
+        "id": "abastecimento-alimentar",
+        "titulo": "Abastecimento alimentar",
+        "descricao": "Estoques de alimentos para regulação de preços.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 7,
+            "trecho": "estoques de alimentos para regulaçã o dos preços e\nabastecimento da populaçã o em situaçã o de vulnerabilidade"
+          }
+        ]
+      },
+      {
+        "id": "protecao-contra-violencia",
+        "titulo": "Proteção contra violência",
+        "descricao": "Casas-abrigo estaduais para mulheres vítimas de violência.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 8,
+            "trecho": "Expansã o da Rede Estadual de Enfrentamento à Violência contra a mulher: garantir\nmais casas-abrigo pelo estado"
+          }
+        ]
+      },
+      {
+        "id": "monitoramento-de-barragens",
+        "titulo": "Monitoramento de barragens",
+        "descricao": "Política pública estadual para fiscalização de barragens.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002547874:01",
+            "pagina": 10,
+            "trecho": "Elaboraçã o e efetivaçã o de uma política pú blica, no â mbito estadual, para o monitoramento e fiscalizaçã o de barragens"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:29:53.361Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:32:01.592Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a medida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:1:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 6 horas confere com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente sobre jornada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:2:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:3:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:4:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:5:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:6:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:frase:7:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e sintética."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:participacao-orcamentaria:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Resumo não usa números, não contradiz."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:jornada-de-trabalho:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:abastecimento-alimentar:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:protecao-contra-violencia:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002547874:tema:monitoramento-de-barragens:documentos:MG:130002547874:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002547874",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002547874:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 29283,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3466,
+          "reasoning_output_tokens": 2213
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24784,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20909,
+          "output_tokens_details": {
+            "thinking_tokens": 434
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24784,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20909,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24784,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24784
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3282124
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "acda21b3e76cdda7b09d20f8dd37a3ad595f155757003a89327a0617c17c57dd",
+    "extractedTextSha256": "864198496b6ab807eaab294e140a0e6a546542fe7755a16f90f46d2c20eaaffb",
+    "documentCount": 1,
+    "documentSetSha256": "c1374a71a6292b9b7755ce1e11c67b1aa1c9ad58bbed1eeee22802b3ddb00e66",
+    "contentSha256": "c4029cf0fa2d01452c7dd22d00ffa5252c33a6777b140d9e06d79907e0106016"
+  }
+}

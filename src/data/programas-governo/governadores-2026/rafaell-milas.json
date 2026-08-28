@@ -1,0 +1,850 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MT",
+    "sqCandidato": "110002543953",
+    "slug": "rafaell-milas",
+    "nomeUrna": "RAFAELL MILAS",
+    "partido": "MISSÃO",
+    "arquivoNome": "2026MT110002543953_01.pdf",
+    "arquivoNoPacote": "MT/2026MT110002543953_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MT:110002543953:01",
+      "fonte": {
+        "arquivoNome": "2026MT110002543953_01.pdf",
+        "arquivoNoPacote": "MT/2026MT110002543953_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "5dd8b959382c59d9d04f5d3334ea99601e54c2889c3da117ed2609d9d14a454b",
+        "extractedTextSha256": "ae638b927afd3284e666d422efe652180fbf1d01e349bdd77586757d2340b9bd",
+        "paginas": 15,
+        "secoes": [
+          {
+            "id": "plano-de-governo-rafaell-milas",
+            "titulo": "Plano de Governo Rafaell Milas",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo Rafaell Milas\nINTRODUÇÃO E DIRETRIZES MACROESTRUTURAIS\nEste documento constitui o Plano de Governo oficial de Rafaell Milas para o Estado de Mato\nGrosso durante o quadriênio 2027–2030. Elaborado por meio de um esforço multidisciplinar,\neste plano afasta-se do modelo tradicional de promessas genéricas e manifestos\nideológicos. Sua fundamentação assenta-se na técnica administrativa, na responsabilidade\nfiscal, na segurança jurídica e na eficiência operacional, utilizando dados consolidados de\nórgãos oficiais.\nO objetivo central é consolidar Mato Grosso como o principal polo logístico e agroindustrial\nda América do Sul, convertendo a pujança econômica do setor primário em\ndesenvolvimento estrutural, segurança pública integral, saúde responsiva e educação\nvoltada para a nova economia global.\nPara subsidiar o acompanhamento e a governança de todas as metas estipuladas neste\ndocumento, o Poder Executivo adotará o Painel de Governança Integrada e Desempenho\nFiscal (PGID), uma plataforma digital centralizada de monitoramento de indicadores.\n\nEIXO 1 — REVOLUÇÃO LOGÍSTICA (O CORAÇÃO DO\nPROJETO)\n1. Diagnóstico\nMato Grosso é o maior produtor nacional de grãos, superando 100 milhões de toneladas\nanuais (IBGE/IMEA). Contudo, o escoamento da produção é historicamente sobrecarregado\npelo modal rodoviário, gerando o chamado \"Custo Mato Grosso\". Segundo dados da ANTT\ne do DNIT, mais de 65% da produção trafega por rodovias como a BR-163 e a BR-364,\ncujos trechos não duplicados elevam o frete em até 35% quando comparados à média dos\npreços de frete de países da OCDE. O modal ferroviário, operado pela Malha Norte (Rumo),\nconcentra-se no terminal de Rondonópolis, deixando as regiões Médio-Norte e Norte\ndependentes de eixos rodoviários saturados. As hidrovias dos rios Paraguai e Teles Pires\napresentam gargalos operacionais e trechos com restrições severas de calado em períodos\nde estiagem, conforme relatórios da Agência Nacional de Transportes Aquaviários\n(ANTAQ).\n\n2. Problema\nAssimetria na matriz de transportes, caracterizada por extrema dependência do modal\nrodoviário, obsolescência e saturação de eixos de escoamento federais e estaduais, e\nsubutilização crônica do potencial ferroviário e hidroviário, limitando a competitividade\ninternacional das exportações estaduais.\n\n3. Objetivo\nTransformar a matriz logística de Mato Grosso, ampliando a participação dos modais\nferroviário e hidroviário por meio da integração intermodal e da atração de capital privado,\nreduzindo o custo logístico médio por tonelada transportada."
+          },
+          {
+            "id": "4-propostas",
+            "titulo": "4. Propostas",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "4. Propostas\n●​ Apoio Institucional à Ferrogrão (EF-170): Atuação político-diplomática e técnica\njunto ao Governo Federal, ao Supremo Tribunal Federal (STF) e ao Ministério dos\nTransportes para destravar o licenciamento ambiental do traçado de 933 km entre\nSinop (MT) e Miritituba (PA).\n●​ Expansão da Malha Ferroviária Estadual: Fomento e segurança jurídica para a\ncontinuidade das obras da primeira ferrovia estadual autorizada, interligando\nRondonópolis, Cuiabá, Nova Mutum e Lucas do Rio Verde, sob o regime de\nautorização (Lei Estadual nº 11.487/2021).\n●​ Integração Norte–Centro–Oeste–Sul: Articulação com a ANTT para coordenar a\nconexão física e operacional entre a Ferrovia de Integração Centro-Oeste (FICO)\ne a Malha Norte, unificando os corredores de escoamento de grãos e insumos.\n●​ Transporte Regional de Passageiros: Realização de estudos de viabilidade\ntécnica, econômica e ambiental (EVTEA) para a implementação de linhas\nferroviárias de média velocidade dedicadas ao transporte de passageiros.\n●​ Desenvolvimento de Hidrovias Sustentáveis: Dragagem de manutenção,\nbalizamento e sinalização da Hidrovia do Rio Paraguai (trecho Cáceres–Corumbá) e\nestudos de viabilidade ambiental para o aproveitamento do Rio Teles Pires,\ngarantindo navegabilidade contínua respeitando a legislação ambiental vigente.\n●​ Implantação de Centros Intermodais e Portos Secos: Estruturação de Zonas de\nProcessamento de Exportação (ZPE) e portos secos conectados aos novos\nterminais ferroviários de Lucas do Rio Verde e Nova Mutum.\n●​ Concessão de Rodovias Estaduais (MTs): Transferência de lotes rodoviários\ncríticos para a iniciativa privada, com foco em duplicações, construção de terceiras\nfaixas e pontes de concreto nas rodovias de integração (MT-242, MT-320 e MT-130).\n●​ Infraestrutura Digital nos Corredores Logísticos: Obrigatoriedade, via editais de\nconcessão rodoviária, da instalação de rede de fibra óptica e cobertura de internet\nmóvel 4G/5G em toda a extensão das rodovias concedidas.\n\n5. Execução\nA coordenação das ações ficará a cargo da Secretaria de Estado de Infraestrutura e\nLogística (SINFRA-MT), em parceria com a Secretaria de Estado de Desenvolvimento\nEconômico (SEDEC-MT) e a Agência Estadual de Regulação dos Serviços Públicos\nDelegados (AGER-MT).\n●​ Meses 1 a 12: Adequação Normativa e Atração de Investimentos​\nRevisão do marco regulatório estadual de concessões e PPPs. Lançamento dos\nroadshows nacionais e internacionais para apresentação da carteira de projetos\nferroviários e rodoviários de Mato Grosso.\n●​ Meses 13 a 24: Licenciamento Ambiental e Modelagem Financeira​\nEmissão, pela SEMA-MT, das licenças prévias e de instalação dos eixos rodoviários\nestaduais. Conclusão dos estudos de modelagem financeira das concessões dos\nrios e portos secos.\n●​ Meses 25 a 48: Execução de Obras e Implantação Tecnológica​\nInício das duplicações das MTs concedidas, instalação física da conectividade digital\nnos corredores e entrega dos primeiros 150 km de trilhos da ferrovia estadual."
+          },
+          {
+            "id": "6-financiamento",
+            "titulo": "6. Financiamento",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "6. Financiamento\nOs investimentos estruturais serão viabilizados via capital privado por meio de contratos de\nconcessão comum e Parcerias Público-Privadas (PPPs). Recursos do Fundo de Transporte\ne Habitação (FETHAB) serão vinculados exclusivamente à manutenção de rodovias não\nconcedidas e contraprestações públicas de PPPs. Para projetos de integração regional,\nbuscar-se-á financiamento de longo prazo junto ao BNDES, Banco Mundial e Banco\nInteramericano de Desenvolvimento (BID).\n\n7. Indicadores\n●​ Custo médio do frete rodoviário por tonelada/quilômetro (R$/t-km).\n●​ Percentual de modais de alta capacidade (ferroviário/hidroviário) na matriz de\ntransportes do Estado.\n●​ Quilômetros de rodovias estaduais duplicadas e pavimentadas.\n●​ Índice de Conectividade Digital das Rodovias (ICDR).\n\n8. Metas para quatro anos\n●​ Ampliar em 250 km a malha ferroviária estadual em efetiva operação ou implantação\navançada.\n●​ Garantir a duplicação de 400 km de rodovias estaduais estratégicas por meio de\nconcessões.\n●​ Elevar a capacidade operacional da Hidrovia do Rio Paraguai em 20% através de\nintervenções de sinalização e dragagem homologadas.\n●​ Assegurar 100% de cobertura de internet móvel nos eixos rodoviários concedidos.\n\nEIXO 2 — INDUSTRIALIZAÇÃO DE VERDADE\n1. Diagnóstico\nMato Grosso destaca-se como exportador de commodities brutas (soja em grão, milho e\nalgodão em pluma). Dados do Ministério do Desenvolvimento, Indústria, Comércio e\nServiços (MDIC) e da Secretaria de Estado de Desenvolvimento Econômico (SEDEC-MT)\napontam que menos de 20% de tudo que é produzido no Estado passa por processos\ninternos de transformação industrial. Embora o setor de etanol de milho tenha apresentado\ncrescimento expressivo nos últimos anos, a cadeia de fertilizantes depende em mais de\n85% de importações. A morosidade no licenciamento ambiental conduzido pela Secretaria\nde Estado de Meio Ambiente de Mato Grosso (SEMA-MT) e a burocracia tributária na\nSEFAZ-MT atuam como barreiras de entrada para novos complexos industriais de grande\nporte.\n\n2. Problema\nBaixo nível de verticalização da produção primária, resultando na exportação de baixo valor\nagregado, perda de arrecadação potencial e vulnerabilidade econômica a choques de\npreços internacionais de commodities não processadas.\n\n3. Objetivo"
+          },
+          {
+            "id": "verticalizar-as-cadeias-produtivas-agropecuarias-de-mato-grosso-expandin",
+            "titulo": "Verticalizar as cadeias produtivas agropecuárias de Mato Grosso, expandindo a capacidade",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Verticalizar as cadeias produtivas agropecuárias de Mato Grosso, expandindo a capacidade\nde processamento local, simplificando os processos regulatórios e assegurando\nprevisibilidade jurídica para a instalação de novos distritos industriais.\n\n4. Propostas\n●​ Estímulo à Agroindústria de Valor Agregado: Fomento à instalação de indústrias\nde fiação de algodão, processamento avançado de couro e refino de óleos vegetais.\n●​ Plano Estadual de Fertilizantes e Nutrição Vegetal: Atração de indústrias de\ninsumos químicos e biológicos para reduzir a dependência externa de NPK\n(Nitrogênio, Fósforo e Potássio).\n●​ Modernização do Setor de Proteína Animal: Incentivos à diversificação e\nexpansão de plantas frigoríficas de bovinos, suínos e aves, focando no atendimento\na mercados externos de alto padrão sanitário.\n●​ Complexo da Madeira Legalizada: Incentivo ao polo de silvicultura e indústrias de\nbase florestal sustentável nas regiões Norte e Noroeste, vinculando o crédito à\ncertificação de origem do manejo florestal.\n●​ Criação de Zonas de Desenvolvimento Industrial (ZDIs): Estruturação de polos\nindustriais dotados de infraestrutura energética, logística e tributária simplificada.\n●​ Digitalização e Unificação do Licenciamento Ambiental: Reestruturação do\nSistema Integrado de Monitoramento e Licenciamento Ambiental (SIMLAM) da\nSEMA-MT, com implantação de inteligência artificial para análise automatizada de\nprocessos de baixo risco.\n●​ Segurança Jurídica Tributária: Unificação de normas de incentivos fiscais\n(PRODEIC), garantindo estabilidade nas regras por dez anos e eliminando revisões\nretroativas discricionárias.\n\n5. Execução\nA implementação será liderada pela SEDEC-MT, em atuação conjunta com a SEMA-MT,\nSEFAZ-MT e em parceria com a Federação das Indústrias do Estado de Mato Grosso\n(FIEMT).\nFase do\nProjeto\n\nAção Governamental\n\nÓrgãos Envolvidos\n\nFase I\n\nAutomatização do Licenciamento e\nEstabilização Normativa\n\nSEMA-MT,\nSEFAZ-MT\n\nFase II\n\nImplantação das ZDIs e Atração de Fábricas\nde Insumos\n\nSEDEC-MT,\nSINFRA-MT"
+          },
+          {
+            "id": "fase-iii",
+            "titulo": "Fase III",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Fase III\n\nConsolidação dos Polos Industriais\n\nSEDEC-MT,\nAGER-MT\n\n6. Financiamento\nUtilização de linhas de crédito direcionadas do Fundo Constitucional de Financiamento do\nCentro-Oeste (FCO) e captação junto ao BNDES e agências multilaterais para infraestrutura\nbásica das ZDIs. Os incentivos fiscais do PRODEIC serão condicionados estritamente à\ngeração de empregos qualificados e inovação tecnológica local.\n\n7. Indicadores\n●​\n●​\n●​\n●​\n\nÍndice de Verticalização da Produção Agrícola (IVPA).\nTempo médio para concessão de Licença de Instalação (LI) industrial pela SEMA.\nParticipação do setor industrial no PIB total do Estado (IBGE).\nVolume de produção de industrializados.\n\n8. Metas para quatro anos\n●​ Elevar de 20% para 32% o percentual de grãos industrializados dentro do território\nde Mato Grosso.\n●​ Reduzir o tempo médio de abertura e licenciamento ambiental de indústrias de\nmédio risco para menos de 30 dias.\n●​ Viabilizar a instalação de pelo menos três plantas de larga escala produtoras de\nfertilizantes ou corretivos de solo de alta eficiência no Estado.\n\nEIXO 3 — SEGURANÇA PÚBLICA\n1. Diagnóstico\nMato Grosso possui uma faixa de fronteira internacional de aproximadamente 980 km com a\nBolívia, tornando o Estado uma rota de trânsito internacional de entorpecentes e\ncontrabando. Conforme dados do Fórum Brasileiro de Segurança Pública e da Secretaria\nEstadual de Segurança Pública SESP-MT, a interiorização de facções criminosas elevou os\níndices de homicídios em municípios periféricos e gerou novas modalidades de crimes\npatrimoniais rurais (o \"novo cangaço\" e roubo de defensivos agrícolas). Embora o Grupo\nEspecial de Fronteira (GEFRON) possua alto índice de apreensões, o efetivo global das\npolícias Civil e Militar apresenta defasagem frente ao crescimento populacional acentuado\ndo Estado. O sistema prisional opera com sobrecarga e baixa taxa de ressocialização por\nmeio do trabalho.\n\n2. Problema\nVulnerabilidade da faixa de fronteira, expansão territorial de organizações criminosas com\nreflexos no ambiente rural e urbano, e ineficiência na custódia e isolamento de lideranças\ncriminosas.\n\n3. Objetivo"
+          },
+          {
+            "id": "assegurar-o-controle-territorial-e-das-fronteiras-estaduais-desarticular",
+            "titulo": "Assegurar o controle territorial e das fronteiras estaduais, desarticular as finanças do crime",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Assegurar o controle territorial e das fronteiras estaduais, desarticular as finanças do crime\norganizado e reestruturar o sistema penitenciário por meio do isolamento penal rígido e do\ntrabalho obrigatório para reinserção e custeio do sistema.\n\n4. Propostas\n●​ Fortalecimento do GEFRON e Monitoramento Tecnológico: Ampliação do\ncontingente operacional na fronteira com suporte de drones de longa distância\n(UAVs) com sensores termais e imageamento por satélite de alta resolução.\n●​ Operação \"Tormenta do Cerrado\": Força-tarefa integrada permanente entre\nPolícia Militar, Polícia Civil, Polícia Penal e Corpo de Bombeiros para combate a\ncrimes ambientais organizados, grilagem de terras públicas e privadas e a\ndesarticulação de bases logísticas do tráfico de drogas.\n●​ Modernização Institucional e Valorização da Polícia Penal: Implementação de\nprograma focado na reestruturação e fortalecimento da Polícia Penal de Mato\nGrosso, mediante o aperfeiçoamento dos planos de carreira alinhados a critérios\nmeritocráticos e de avaliação por desempenho. A medida prevê o aporte contínuo\nem inteligência penitenciária, a modernização de equipamentos de proteção\nindividual e táticos, e a expansão da capacitação técnico-operacional por meio da\nEscola de Administração Penitenciária (EAP). O objetivo é consolidar a instituição\ncomo peça estratégica e integrada no subsistema de segurança pública, otimizando\no fluxo de informações com a SESP-MT e garantindo máxima eficiência no controle,\nna custódia e na governança do sistema prisional estadual.\n●​ \"Inferno Pantaneiro\" – Criação do Presídio de Segurança Máxima Estadual:\nConstrução de uma unidade prisional de segurança máxima de competência\nestadual, operada sob rígidos protocolos de controle e custódia da Polícia Penal,\ndotada de bloqueio absoluto de comunicação, scanner corporal tridimensional e\ncelas individuais.\n●​ Isolamento Rígido de Lideranças Criminosas: Transferência imediata e\nmanutenção de chefes de facções criminosas em Regime Disciplinar Diferenciado\n(RDD) estadual, com escolta tática e monitoramento estrito executados pela Polícia\nPenal, inviabilizando a comunicação externa.\n●​ Emprego de Mão de Obra Prisional em Obras Públicas: Implementação de\nconvênios, em conformidade com o artigo 28 da Lei de Execução Penal (LEP), para\no uso da força de trabalho de reeducandos no desenvolvimento do estado, sob a\ncoordenação, fiscalização e escolta da Polícia Penal.\n●​ Proteção Institucional e Jurídica aos Policiais: Estruturação de uma assessoria\njurídica especializada na SESP-MT para defesa de agentes de segurança,\ncompreendendo as Polícias Militar, Civil, Penal e Científica, que atuem em legítimo\nexercício da função pública, assegurando total retaguarda institucional e jurídica.\n●​ Criação do Núcleo de Combate Financeiro ao Crime Organizado: Unidade de\ninteligência altamente integrada entre a Polícia Civil (por meio do Laboratório de\nTecnologia contra Lavagem de Dinheiro - LAB-LD), o setor de inteligência da Polícia\nPenal e a SEFAZ-MT para identificação, bloqueio e confisco de bens e ativos de\nfacções, com a reversão imediata desses recursos para o reaparelhamento das\nforças de segurança.\n●​ Modernização da Polícia Científica: Aporte tecnológico em equipamentos de\nanálise balística automatizada, identificação de DNA e perícia digital forense para"
+          },
+          {
+            "id": "elevar-a-robustez-das-provas-processuais-e-subsidiar-o-trabalho-investig",
+            "titulo": "elevar a robustez das provas processuais e subsidiar o trabalho investigativo e",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "elevar a robustez das provas processuais e subsidiar o trabalho investigativo e\noperacional das polícias.\nEstrutura de Inteligência Integrada (SESP-MT):\n●​ Fronteira: GEFRON integrado com Drones e Satélites enviando dados\npara a Central Integrada (CICC).\n●​ Urbano/Rural: PM, PC e PP atuando com ferramentas de\nReconhecimento Facial e OCR.\n●​ Inteligência Financeira: Operações conjuntas entre LAB-LD e SEFAZ\npara desarticulação e bloqueio de ativos.\n\n5. Execução\nA execução competirá à Secretaria de Estado de Segurança Pública (SESP-MT), ao\nComando Geral da PM-MT da PC-MT e dá PP-MT, à Diretoria da Polícia Científica e à\nSecretaria de Estado de Infraestrutura (SINFRA) nas frentes de uso de mão de obra\nprisional.\n●​ Nota de Competência: As ações de fiscalização internacional e patrulhamento de\nfronteira seca serão coordenadas com a Polícia Federal e as Forças Armadas, nos\ntermos do art. 144 da Constituição Federal. Medidas penais restritivas seguirão as\ndiretrizes do Poder Judiciário e do Ministério Público do Estado de Mato Grosso\n(MPE-MT).\n\n6. Financiamento\nFundo Estadual de Segurança Pública (FESP), repasses do Fundo Nacional de Segurança\nPública e recursos obtidos via leilão de bens confiscados do narcotráfico e lavagem de\ndinheiro, vinculados por lei para reequipamento policial.\n\n7. Indicadores\n●​\n●​\n●​\n●​\n\nTaxa de homicídios dolosos por 100 mil habitantes (SESP-MT/FBSP).\nVolume financeiro de ativos bloqueados de organizações criminosas.\nPercentual de detentos efetivamente inseridos em postos de trabalho.\nTempo de resposta a ocorrências de crimes de alta complexidade no meio rural.\n\n8. Metas para quatro anos\n●​ Reduzir em 55% a taxa de crimes violentos letais intencionais (CVLI) nas\nmacrorregiões prioritárias.\n●​ Alcançar a marca de 80% da população carcerária condenada exercendo atividade\nlaboral produtiva.\n●​ Cobrir 100% dos municípios polo do Estado com sistemas de monitoramento por\nreconhecimento facial e leitura de placas (OCR).\n\nEIXO 4 — EDUCAÇÃO E DISCIPLINA\n1. Diagnóstico"
+          },
+          {
+            "id": "os-dados-do-indice-de-desenvolvimento-da-educacao-basica-ideb-apontam-qu",
+            "titulo": "Os dados do Índice de Desenvolvimento da Educação Básica (IDEB) apontam que Mato",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Os dados do Índice de Desenvolvimento da Educação Básica (IDEB) apontam que Mato\nGrosso, embora apresente evolução nos anos iniciais do Ensino Fundamental, enfrenta\nestagnação crônica nos anos finais e no Ensino Médio. A evasão escolar no Ensino Médio\natinge índices alarmantes em regiões de forte expansão agrícola, onde o mercado de\ntrabalho atrai o jovem precocemente. Há um descompasso estrutural entre as matrizes\ncurriculares oferecidas e as demandas por competências técnicas exigidas pelas novas\nindústrias agroindustriais e tecnológicas do Estado, como programação, operação de\nmaquinário de alta precisão e análise de dados.\n\n2. Problema\nInadequação do modelo pedagógico tradicional do Ensino Médio frente às exigências do\nmercado produtor moderno, resultando em desinteresse discente, evasão escolar e\nescassez de mão de obra técnica qualificada local.\n\n3. Objetivo\nElevar a qualidade do ensino público estadual combinando disciplina, modernização\ncurricular tecnológica e expansão de escolas de tempo integral integradas ao ensino técnico\nprofissionalizante.\n\n4. Propostas\n●​ Expansão Qualificada do Modelo Cívico-Militar: Ampliação do número de Escolas\nEstaduais da Polícia Militar Tiradentes e do Corpo de Bombeiros Dom Pedro II, com\nfoco em regiões de alta vulnerabilidade social, garantindo gestão administrativa\ndisciplinar rigorosa e autonomia pedagógica docente.\n●​ Universalizar o ensino técnico profissionalizante: Integrando o Ensino Médio e a\nEducação Profissional por meio de convênios com o SENAI, SENAR e demais\ninstituições de excelência, oferecendo formação técnica no contraturno escolar\nalinhada às vocações econômicas de cada região de Mato Grosso, respeitando a\nlegislação educacional vigente.\n●​ Programa \"Mato Grosso Tech\": Inclusão obrigatória de disciplinas de programação\nde computadores, robótica aplicada, inteligência artificial e introdução à ciência de\ndados na grade das escolas estaduais de tempo integral.\n●​ Fluência Global (Inglês Avançado): Implementação de metodologia de imersão\nlinguística na língua inglesa voltada para negócios e tecnologia nas turmas de\nEnsino Médio, visando preparar o corpo discente para o mercado internacionalizado.\n●​ Avaliação de Desempenho e Meritocracia: Aperfeiçoamento do Sistema de\nAvaliação da Educação Básica de Mato Grosso (SAEB-MT) para mensurar o\ndesempenho por escola e por aluno. Criação de bônus financeiro anual por\nprodutividade pedagógica para equipes escolares que atingirem as metas do IDEB.\n●​ Formação Continuada Docente Centrada em Evidências: Reestruturação dos\ncentros de formação de professores da SEDUC-MT, focando em metodologias ativas\nde ensino e no uso pedagógico de ferramentas digitais, eliminando capacitações de\ncaráter puramente teórico-ideológico.\n\n5. Execução"
+          },
+          {
+            "id": "secretaria-de-estado-de-educacao-seduc-mt-em-regime-de-cooperacao-mutua",
+            "titulo": "Secretaria de Estado de Educação (SEDUC-MT), em regime de cooperação mútua com os",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Secretaria de Estado de Educação (SEDUC-MT), em regime de cooperação mútua com os\nmunicípios (regime de colaboração) e parcerias firmadas via convênios com o Sistema S\n(FIEMT/FAMATO).\n\n6. Financiamento\nRecursos vinculados do FUNDEB, quotas estaduais do Salário-Educação e direcionamento\nde recursos do orçamento próprio do Estado para investimentos in loco em infraestrutura\ntecnológica e laboratórios de robótica, observando estritamente os limites mínimos\nconstitucionais de 25%.\n\n7. Indicadores\n●​ Nota média do IDEB do Ensino Médio da rede pública estadual.\n●​ Taxa de abandono e evasão escolar no Ensino Médio.\n●​ Percentual de alunos do Ensino Médio matriculados concomitantemente no ensino\ntécnico.\n●​ Índice de proficiência em língua inglesa e competências digitais aferido por exames\npadronizados estaduais.\n\n8. Metas para quatro anos\n●​ Posicionar Mato Grosso entre os 5 melhores estados do Brasil no ranking do IDEB\npara o Ensino Médio.\n●​ Dobrar a oferta de vagas em escolas cívico-militares e de tempo integral na rede\npública estadual.\n●​ Garantir que 50% dos formandos do Ensino Médio concluam a escola com\ncertificação técnica profissionalizante homologada.\n\nEIXO 5 — CORTE DE PRIVILÉGIOS\n1. Diagnóstico\nEmbora Mato Grosso apresente equilíbrio orçamentário recente, persistem distorções na\nestrutura administrativa e no custeio da máquina pública. Auditorias do Tribunal de Contas\ndo Estado (TCE-MT) e relatórios de transparência demonstram a existência de excesso de\ncargos de provimento em comissão (indicações políticas) em detrimento de funções\ntécnicas ocupadas por servidores de carreira. Adicionalmente, sistemas legados de\ncompras governamentais dispersos resultam em assimetria de preços contratados e baixa\ntransparência na concessão de regimes especiais e isenções tributárias casuísticas\nocorridas em décadas passadas.\n\n2. Problema\nExistência de nichos de ineficiência e desperdício de recursos públicos decorrentes do\nexcesso de cargos comissionados, falta de padronização nas compras públicas e\nnecessidade de transparência radical nos atos administrativos.\n\n3. Objetivo"
+          },
+          {
+            "id": "enxugar-a-estrutura-administrativa-do-estado-eliminar-despesas-superflua",
+            "titulo": "Enxugar a estrutura administrativa do Estado, eliminar despesas supérfluas, profissionalizar",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Enxugar a estrutura administrativa do Estado, eliminar despesas supérfluas, profissionalizar\na gestão pública por meio da meritocracia e implementar transparência em tempo real sobre\ntodo e qualquer centavo gasto pelo erário.\n\n4. Propostas\n●​ Redução Estrutural de Cargos Políticos: Corte linear de 30% dos cargos em\ncomissão de livre nomeação na administração direta e indireta, convertendo funções\nessenciais em chefias preenchidas exclusivamente por critérios de mérito por\nservidores efetivos.\n●​ Portal de Transparência 2.0 (Tempo Real): Evolução da plataforma de\ntransparência do Estado para disponibilizar dados abertos legíveis por máquina,\ndetalhando em tempo real notas fiscais eletrônicas de compras governamentais,\ndiárias e remunerações nominais.\n●​ Auditoria Permanente da Folha de Pagamento e Benefícios: Implantação de\nrotinas contínuas de cruzamento de dados pela Controladoria-Geral do Estado\n(CGE-MT) para identificar e suprimir pagamentos cumulativos indevidos, respeitando\nrigorosamente os limites constitucionais e as decisões judiciais pregressas\ntransitadas em julgado.\n●​ Central de Compras Inteligentes: Centralização dos pregões eletrônicos e\ncompras do Estado sob um sistema baseado em tabelas de preços de referência\nmáxima, utilizando compras em escala para forçar a redução dos valores\nhomologados.\n●​ Avaliação Sistemática de Políticas Públicas: Criação do Comitê de Avaliação de\nGastos Públicos para mensurar a relação custo-benefício de todos os programas\nestaduais, extinguindo ações governamentais que não apresentem impacto social\nmensurável por indicadores.\n●​ Desmaterialização e Governo 100% Digital: Transição completa para o processo\nadministrativo eletrônico, eliminando o uso de papel físico em todas as secretarias e\nautarquias do Estado, gerando economia em insumos e arquivamento.\n\n5. Execução\nA liderança do projeto caberá à Secretaria de Estado de Planejamento e Gestão\n(SEPLAG-MT) e à Controladoria-Geral do Estado (CGE-MT), mediante decretos de\nreestruturação organizacional e projetos de lei de reforma administrativa encaminhados à\nAssembleia Legislativa de Mato Grosso (ALMT).\n\n6. Financiamento\nEsta dimensão não demanda novos recursos; pelo contrário, trata-se de uma política\ngeradora de superávit operacional e liberação de espaço fiscal para investimentos. A\neconomia gerada pela supressão de cargos e eficiência nas compras será integralmente\ndestinada para investimentos finalísticos em saúde, segurança e educação.\n\n7. Indicadores\n●​ Relação percentual entre despesa com cargos comissionados e receita corrente\nlíquida.\n●​ Índice de digitalização dos serviços públicos estaduais."
+          },
+          {
+            "id": "economia-real-gerada-por-revisoes-contratuais-e-pregoes-unificados",
+            "titulo": "●​ Economia real gerada por revisões contratuais e pregões unificados.",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "●​ Economia real gerada por revisões contratuais e pregões unificados.\n●​ Volume de processos físicos tramitados na administração estadual (meta tendendo a\nzero).\n\n8. Metas para quatro anos\n●​ Reduzir o gasto total com cargos comissionados de natureza estritamente política\nem 40%.\n●​ Alcançar a digitalização de 100% dos serviços públicos estaduais demandados pelo\ncidadão e empresas (Padrão Poupatempo Digital).\n●​ Rever e repactuar contratos continuados gerando uma economia mínima acumulada\nde R$ 300 milhões ao longo do período.\n\nEIXO 6 — RESPONSABILIDADE FISCAL\n1. Diagnóstico\nMato Grosso possui uma situação fiscal controlada, enquadrando-se nos limites da Lei de\nResponsabilidade Fiscal (LRF) quanto à despesa com pessoal. No entanto, o histórico de\ndependência da volatilidade das receitas atreladas ao agronegócio exige mecanismos de\nproteção macroeconômica rígidos. A Emenda Constitucional Estadual do Teto de Gastos\n(vinculada aos critérios federais) necessita de calibração técnica constante para não\nengessar a capacidade de investimento público em infraestrutura (SINFRA-MT). Conforme\ndados do Tesouro Nacional, o Estado precisa preservar sua nota de Capacidade de\nPagamento (CAPAG A) para garantir acesso a créditos de baixo custo destinados a grandes\ninvestimentos de longo prazo.\n\n2. Problema\nExposição da receita pública estadual a ciclos econômicos de preços internacionais de\ncommodities e necessidade de otimização alocativa das despesas correntes para maximizar\na capacidade interna de investimentos com recursos próprios.\n\n3. Objetivo\nFixar o princípio do Déficit Zero, estabilizar o crescimento das despesas correntes abaixo do\ncrescimento das receitas e consolidar a excelência fiscal de Mato Grosso (Manutenção da\nCAPAG A).\n\n4. Propostas\n●​ Adoção das Práticas do Livro Amarelo de Gestão Fiscal: Implementação\nrigorosa do manual de eficiência de gastos, que veda a criação de despesas\ncontinuadas sem a correspondente receita permanente ou extinção de despesa\nequivalente.\n●​ Manutenção Rígida e Aperfeiçoamento do Teto de Gastos: Controle estrito das\ndespesas correntes, impedindo o crescimento real desordenado da máquina\nadministrativa acima dos índices oficiais de inflação (IPCA).\n●​ Implementação do Orçamento por Desempenho: Condicionamento da liberação\nde cotas orçamentárias trimestrais às secretarias de Estado ao cumprimento de"
+          },
+          {
+            "id": "metas-fisicas-de-entrega-de-servicos-publicos-estabelecidas-no-ppa-plano",
+            "titulo": "metas físicas de entrega de serviços públicos estabelecidas no PPA (Plano",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "metas físicas de entrega de serviços públicos estabelecidas no PPA (Plano\nPlurianual).\n●​ Blindagem e Otimização do FETHAB: Destinação legal exclusiva dos recursos\narrecadados pelo Fundo de Transporte e Habitação (FETHAB) para obras de\ninfraestrutura, vedando seu uso para pagamento de folha de salários, encargos ou\ncusteio da máquina administrativa geral.\n●​ Modernização da Fiscalização Tributária Digital: Utilização de técnicas de Data\nAnalytics e cruzamento de notas fiscais eletrônicas de trânsito pela SEFAZ-MT para\ncombater a sonegação fiscal no comércio interestadual, sem elevação de alíquotas\ntributárias.\n●​ Fundo de Estabilização Fiscal e Macroeconômica: Criação de um colchão\nfinanceiro anticíclico com percentual dos superávits fiscais anuais, visando garantir a\ncontinuidade de investimentos em períodos de queda internacional de preços\nagrícolas.\n\n5. Execução\nA condução técnica caberá privativamente à Secretaria de Estado de Fazenda (SEFAZ-MT)\ne à Secretaria de Estado de Planejamento e Gestão (SEPLAG-MT).\n\n6. Financiamento\nA sustentabilidade fiscal é o meio de autofinanciamento do Estado. A governança rigorosa\nassegura a Mato Grosso menor custo de captação de recursos junto a consórcios bancários\ninternacionais de desenvolvimento, como o Banco Mundial, o BID e o KFW alemão.\n\n7. Indicadores\n●​\n●​\n●​\n●​\n\nResultado Primário e Nominal anual do Estado (Tesouro Nacional).\nRelação percentual entre Despesa Corrente e Receita Corrente Líquida (RCL).\nRating de Capacidade de Pagamento (CAPAG) emitido pela STN.\nPercentual da RCL destinado a Investimentos Públicos Reais.\n\n8. Metas para quatro anos\n●​ Manter o equilíbrio fiscal contínuo sob a diretriz de Déficit Zero em todos os anos do\nmandato.\n●​ Assegurar a manutenção ininterrupta da classificação CAPAG A junto ao Tesouro\nNacional.\n●​ Garantir que a taxa anual de investimento público real se mantenha em patamar\nigual ou superior a 15% da Receita Corrente Líquida.\n\nEIXO 7 — SAÚDE COM GESTÃO\n1. Diagnóstico\nO sistema de saúde pública em Mato Grosso, estruturado de forma descentralizada pelo\nSUS, padece de gargalos crônicos na regulação do acesso a consultas especializadas,\nexames de alta complexidade e cirurgias eletivas. Relatórios do DATASUS e auditorias do\nTribunal de Contas indicam assimetria regional: enquanto a Baixada Cuiabana e o Sul do\nEstado concentram a maior complexidade hospitalar, pacientes das macrorregiões do"
+          },
+          {
+            "id": "araguaia-e-do-norte-enfrentam-longos-deslocamentos-terrestres-para-obter",
+            "titulo": "Araguaia e do Norte enfrentam longos deslocamentos terrestres para obter atendimento",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Araguaia e do Norte enfrentam longos deslocamentos terrestres para obter atendimento\nespecializado. O sistema de controle de filas (SISREG) carece de visibilidade externa,\nalimentando a percepção de falta de transparência e abrindo margem para a judicialização\nexcessiva da saúde.\n\n2. Problema\nFalta de transparência em tempo real e lentidão regulatória na gestão das filas por\nprocedimentos especializados, associadas à infraestrutura hospitalar descentralizada\ninsuficiente e ineficiência operacional na gestão das unidades regionais.\n\n3. Objetivo\nInstituir a transparência absoluta no sistema de regulação de vagas, otimizar a operação\ndos Hospitais Regionais por meio de contratos de gestão orientados a resultados e\naprimorar a logística de transporte de pacientes de média e alta complexidade.\n\n4. Propostas\n●​ Implantação da Fila Única Estadual Digital: Unificação das demandas de\nregulação do SUS em Mato Grosso em uma plataforma digital aberta de consulta\npública. O cidadão poderá verificar sua posição exata na fila, o tempo estimado de\nespera e os critérios de prioridade clínica adotados (Protocolo de Manchester).\n●​ Fortalecimento e Modernização dos Hospitais Regionais: Ampliação da\ncapacidade resolutiva das unidades hospitalares existentes (Sinop, Sorriso,\nCáceres, Rondonópolis, Alta Floresta, Barra do Garças) com a contratualização de\nnovas especialidades médicas de alta demanda.\n●​ Contratos de Gestão por Desempenho e Resultados: Transição do modelo de\nrepasse fixo para modelos de eficiência em saúde nas parcerias com Organizações\nSociais de Saúde (OSS) ou fundações públicas. O repasse financeiro estadual\npassará a ser condicionado ao cumprimento de metas de produtividade (exames\nrealizados, cirurgias efetuadas e redução da taxa de infecção hospitalar).\n●​ Consórcios Regionais de Saúde Intermunicipais: Apoio financeiro e técnico\nestruturado aos consórcios intermunicipais para realização de mutirões\nregionalizados de exames especializados (Ressonâncias, Tomografias,\nEndoscopias) nos municípios polos, evitando deslocamentos desnecessários para a\ncapital.\n●​ Logística e Transporte Inteligente de Pacientes: Criação de centrais de frotas\nregionais integradas com ambulâncias e micro-ônibus sanitários rastreados por\nsatélite e agendamento eletrônico, além da consolidação do SAMU Aero-médico\nestadual para transferências de emergência de alta complexidade.\n●​ Telessaúde e Telediagnóstico Especializado: Implementação de postos de\ntelemedicina em postos de saúde de municípios de pequeno porte, permitindo que\nclínicos gerais consultem especialistas (cardiologistas, neurologistas, oncologistas)\ndos grandes centros hospitalares em tempo real.\nFluxo do Sistema de Fila Única:\nPaciente Triado (SUS) -> Inserção no Sistema Unificado (Web/App) ->\nClassificação de Risco por Critério Clínico -> Consulta Pública Online (Posição"
+          },
+          {
+            "id": "tempo-estimado-encaminhamento-automatizado-para-hospital-regional",
+            "titulo": "+ Tempo Estimado) -> Encaminhamento Automatizado para Hospital Regional",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "+ Tempo Estimado) -> Encaminhamento Automatizado para Hospital Regional\nou Consórcio Local.\n\n5. Execução\nA execução ficará a cargo da Secretaria de Estado de Saúde (SES-MT), em articulação\ndireta com as Secretarias Municipais de Saúde, o Conselho de Secretarias Municipais de\nSaúde (COSEMS-MT) e a Controladoria-Geral do Estado para fiscalização dos contratos de\ngestão.\n\n6. Financiamento\nRecursos provenientes do Orçamento Geral do Estado destinados à Saúde (mínimo\nconstitucional de 12%), complementados por repasses do Fundo Nacional de Saúde\n(FNS/SUS) e emendas parlamentares direcionadas a investimentos estruturais em\nequipamentos de alta tecnologia.\n\n7. Indicadores\n●​\n●​\n●​\n●​\n\nTempo médio de espera na fila de regulação para cirurgias eletivas prioritárias.\nTaxa de ocupação e resolutividade dos leitos de UTI nos Hospitais Regionais.\nÍndice de satisfação do usuário do sistema estadual de saúde (ouvidorias).\nCusto por procedimento realizado sob o regime de contrato de desempenho.\n\n8. Metas para quatro anos\n●​ Reduzir o tempo médio de espera para exames diagnósticos de alta complexidade\nem 45%.\n●​ Garantir a disponibilização pública da consulta à Fila Única Digital para 100% dos\nprocedimentos regulados em até 180 dias do início da gestão.\n●​ Zerar o déficit de cobertura do SAMU Aero-médico nas macrorregiões Norte e\nAraguaia."
+          },
+          {
+            "id": "consideracoes-finais-o-compromisso-com-o",
+            "titulo": "CONSIDERAÇÕES FINAIS: O COMPROMISSO COM O",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "CONSIDERAÇÕES FINAIS: O COMPROMISSO COM O\nFUTURO DE MATO GROSSO\nA elaboração destas Diretrizes Estratégicas de Governo para o quadriênio 2027–2030\nconsolida um novo paradigma para a gestão pública do Estado de Mato Grosso. Este\ndocumento afasta-se definitivamente da tradição de promessas eleitorais voluntaristas e\nagendas puramente retóricas para estabelecer um roteiro operacional maduro,\nfundamentado na racionalidade econômica, na segurança jurídica e na centralidade dos\nserviços prestados ao cidadão.\n\nA Integração Estratégica como Vetor de Desenvolvimento\nO sucesso das políticas públicas propostas não reside na execução isolada de seus\ncomponentes, mas na sinergia intrínseca entre os eixos estruturantes. A Revolução\nLogística e a Industrialização de Verdade atuam como o motor econômico do Estado,\ngerando o adensamento de valor necessário para expandir a competitividade\nmato-grossense e atrair investimentos globais.\nEsse incremento de eficiência e dinamismo econômico provê a sustentabilidade financeira\nindispensável para o financiamento robusto e contínuo da Saúde com Gestão, da\nSegurança Pública de controle territorial estrito e de uma Educação voltada à formação\ntécnica, disciplinar e tecnológica das futuras gerações.\n\nA Governança Inegociável da Máquina Pública\nO alicerce que confere viabilidade a todo este ecossistema de metas é o binômio composto\npela Responsabilidade Fiscal e pelo Corte de Privilégios. Sob a diretriz inflexível do Déficit\nZero e o cumprimento das balizas rigorosas de gestão, o Estado de Mato Grosso assume o\ncompromisso ético e técnico de gastar menos com a sua própria manutenção para investir\nmais na atividade-fim.\nA transição definitiva para um governo 100% digital, a transparência radical em tempo real e\na redução de cargos políticos de livre nomeação sinalizam uma ruptura clara com o modelo\nburocrático tradicional, pavimentando o caminho para uma administração pública pautada\nestritamente pela meritocracia, avaliação de desempenho e governança baseada em\nindicadores mensuráveis.\n\nO FUTURO É GLORIOSO!\nEste plano de governo apresenta ao cidadão, ao servidor público e às forças produtivas um\ncontrato de previsibilidade. Menos burocracia, mais eficiência. Menos privilégios, mais\ntransparência. Diante dos desafios complexos que se impõem para o próximo quadriênio, o\nPoder Executivo apresenta-se tecnicamente preparado, financeiramente responsável e\ninstitucionalmente comprometido em liderar o Estado de Mato Grosso rumo a um patamar\nsuperior de desenvolvimento e modernidade administrativa."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "d4839e478624c1380294f225cba99efc167b67f366e7199a6cc6ebb8ab999bae"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "60b49f31591f393385875f94e9261e7cda6ff5b30cd45054b6106332b5829572"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e0a74dd9fa87f375c8226bd7fcc5236f7e0b1bdf2b71d0ebe46c54cfea814a9d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d97e3ec7ac5178bf13021402a28a040d25cf167bb019895e767f14052103fc13"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "aee49c42f73a8396ba13bf7ae194fa138f6a34ed8cf4ff825c2fa58bea2f962e"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "2ccefff42c7fe1474f2354a381f2c7e1b188e770126f96648245d9d893757612"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "26553a01259fcf1bed3b9d9a4be249b160b6a8357e064afd88839472adae2a4e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "d9e9b0958809f5002d3dced52c71d85386673ea51b96e02ecbf47c1601e60baf"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "bcf41601f8d169a1f0a6187753ae103a657b6218546fb754bb006731fd1baa6e"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "85e8e01abd602b45f2d1fe63d69c71ebbf149bf75138251b41f9c5e323f80f06"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2639a233ff252451b2b2991f2697ef64d8abe5a79e6f6e8f8084d9bf7492fe37"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "ac680ef488a7ab41942290d2b17e73442b3ff40dca7db6c4fee565ceb7ed8828"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "02b2b892a45727f767596cd6ca965f8ceadce543952e99f388ac263d099a2801"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "cf1ee95156a145ec79b481cec371e1e7bb802a2fa825536463774bbe887eeb87"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c94ad9b1e78f2bd4776dccf493286dcea5ea3b3e51f1f427e239cf3e876c9814"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a transformação da matriz logística de Mato Grosso com ampliação dos modais ferroviário e hidroviário por meio da integração intermodal. Na industrialização, propõe-se a criação de Zonas de Desenvolvimento Industrial dotadas de infraestrutura energética, logística e tributária simplificada. Para segurança pública, prevê o fortalecimento do GEFRON com drones de longa distância, sensores termais e imageamento por satélite. Na educação, planeja universalizar o ensino técnico profissionalizante por convênios com o SENAI, SENAR e demais instituições. Na administração, propõe a evolução do Portal de Transparência para disponibilizar dados abertos legíveis por máquina em tempo real. Na saúde, prevê uma Fila Única Estadual Digital com consulta pública da posição do cidadão, do tempo estimado de espera e dos critérios de prioridade clínica.",
+    "frases": [
+      {
+        "texto": "O plano prevê a transformação da matriz logística de Mato Grosso com ampliação dos modais ferroviário e hidroviário por meio da integração intermodal.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 1,
+            "trecho": "Transformar a matriz logística de Mato Grosso, ampliando a participação dos modais ferroviário e hidroviário por meio da integração intermodal"
+          }
+        ]
+      },
+      {
+        "texto": "Na industrialização, propõe-se a criação de Zonas de Desenvolvimento Industrial dotadas de infraestrutura energética, logística e tributária simplificada.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 4,
+            "trecho": "Criação de Zonas de Desenvolvimento Industrial (ZDIs): Estruturação de polos industriais dotados de infraestrutura energética, logística e tributária simplificada."
+          }
+        ]
+      },
+      {
+        "texto": "Para segurança pública, prevê o fortalecimento do GEFRON com drones de longa distância, sensores termais e imageamento por satélite.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 6,
+            "trecho": "Fortalecimento do GEFRON e Monitoramento Tecnológico: Ampliação do contingente operacional na fronteira com suporte de drones de longa distância (UAVs) com sensores termais e imageamento por satélite de alta resolução."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, planeja universalizar o ensino técnico profissionalizante por convênios com o SENAI, SENAR e demais instituições.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 8,
+            "trecho": "Universalizar o ensino técnico profissionalizante: Integrando o Ensino Médio e a Educação Profissional por meio de convênios com o SENAI, SENAR e demais instituições de excelência"
+          }
+        ]
+      },
+      {
+        "texto": "Na administração, propõe a evolução do Portal de Transparência para disponibilizar dados abertos legíveis por máquina em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 10,
+            "trecho": "Portal de Transparência 2.0 (Tempo Real): Evolução da plataforma de transparência do Estado para disponibilizar dados abertos legíveis por máquina"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê uma Fila Única Estadual Digital com consulta pública da posição do cidadão, do tempo estimado de espera e dos critérios de prioridade clínica.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 13,
+            "trecho": "Implantação da Fila Única Estadual Digital: Unificação das demandas de regulação do SUS em Mato Grosso em uma plataforma digital aberta de consulta pública. O cidadão poderá verificar sua posição exata na fila, o tempo estimado de espera e os critérios de prioridade clínica adotados"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "transporte-logistico",
+        "titulo": "Transporte logístico",
+        "descricao": "Integração de modais ferroviário e hidroviário na matriz logística estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 1,
+            "trecho": "Transformar a matriz logística de Mato Grosso, ampliando a participação dos modais ferroviário e hidroviário por meio da integração intermodal"
+          }
+        ]
+      },
+      {
+        "id": "zonas-industriais",
+        "titulo": "Zonas industriais",
+        "descricao": "Estruturação de polos industriais com infraestrutura energética, logística e tributária simplificada.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 4,
+            "trecho": "Criação de Zonas de Desenvolvimento Industrial (ZDIs): Estruturação de polos industriais dotados de infraestrutura energética, logística e tributária simplificada."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-fronteiras",
+        "titulo": "Segurança fronteiriça",
+        "descricao": "Fortalecimento do GEFRON por meio de monitoramento tecnológico.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 6,
+            "trecho": "Fortalecimento do GEFRON e Monitoramento Tecnológico: Ampliação do contingente operacional na fronteira com suporte de drones de longa distância (UAVs) com sensores termais e imageamento por satélite de alta resolução."
+          }
+        ]
+      },
+      {
+        "id": "ensino-tecnico",
+        "titulo": "Ensino técnico",
+        "descricao": "Integração do ensino médio à educação profissional por convênios institucionais.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 8,
+            "trecho": "Universalizar o ensino técnico profissionalizante: Integrando o Ensino Médio e a Educação Profissional por meio de convênios com o SENAI, SENAR e demais instituições de excelência"
+          }
+        ]
+      },
+      {
+        "id": "transparencia-publica",
+        "titulo": "Transparência pública",
+        "descricao": "Disponibilização de dados governamentais abertos em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 10,
+            "trecho": "Portal de Transparência 2.0 (Tempo Real): Evolução da plataforma de transparência do Estado para disponibilizar dados abertos legíveis por máquina"
+          }
+        ]
+      },
+      {
+        "id": "fila-estadual",
+        "titulo": "Fila estadual",
+        "descricao": "Consulta pública da regulação de procedimentos do SUS por plataforma digital.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002543953:01",
+            "pagina": 13,
+            "trecho": "Implantação da Fila Única Estadual Digital: Unificação das demandas de regulação do SUS em Mato Grosso em uma plataforma digital aberta de consulta pública."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T15:34:01.439Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T15:36:18.346Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: logística."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:1:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:2:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre GEFRON."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:3:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:4:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a afirmação, incluindo o aspecto 'tempo real' pelo nome do item."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números materiais na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:5:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:frase:6:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de logística."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transporte-logistico:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema resumido."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de zonas industriais."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:zonas-industriais:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente sobre segurança fronteiriça."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:seguranca-fronteiras:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de ensino técnico."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:ensino-tecnico:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta o tema, incluindo o aspecto tempo real pelo nome da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:transparencia-publica:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente sobre a fila do SUS."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002543953:tema:fila-estadual:documentos:MT:110002543953:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa do tema."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MT:110002543953",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MT:110002543953:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 30314,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2221,
+          "reasoning_output_tokens": 893
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28285,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22671,
+          "output_tokens_details": {
+            "thinking_tokens": 326
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28285,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22671,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28285,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28285
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36207839999999997
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T18:01:09Z",
+    "sourceSha256": "5dd8b959382c59d9d04f5d3334ea99601e54c2889c3da117ed2609d9d14a454b",
+    "extractedTextSha256": "ae638b927afd3284e666d422efe652180fbf1d01e349bdd77586757d2340b9bd",
+    "documentCount": 1,
+    "documentSetSha256": "138cb2b297d2a2347420c3b12a1fdb3be009e3cbd566d166b096715d3930acf4",
+    "contentSha256": "81f20fd7d9f1ec726eef5068fce69de15378d90bb2ce6005872f168b245066c1"
+  }
+}
