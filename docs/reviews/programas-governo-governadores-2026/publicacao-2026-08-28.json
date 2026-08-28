@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:35:45.824Z",
+  "reviewedAt": "2026-08-28T23:40:32.069Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 137,
-    "human_review_required": 7
+    "approved": 138,
+    "human_review_required": 6
   },
   "items": [
     {
@@ -1991,14 +1991,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PR:160002548010",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PR",
       "slug": "samuel-de-mattos",
       "sqCandidato": "160002548010",
       "nomeUrna": "SAMUEL DE MATTOS",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PR:160002549553",
