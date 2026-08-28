@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T20:00:00Z",
+  "reviewedAt": "2026-08-28T20:05:40Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 121,
-    "human_review_required": 23
+    "approved": 123,
+    "human_review_required": 21
   },
   "items": [
     {
@@ -1562,14 +1562,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002544544",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "TO",
       "slug": "vicentinho-junior",
       "sqCandidato": "270002544544",
       "nomeUrna": "VICENTINHO JÚNIOR",
       "partido": "PSDB",
       "sourceState": "em_revisao",
-      "reason": "vicentinho-junior: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002539187",
@@ -1683,14 +1683,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002549557",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MG",
       "slug": "gabriel-azevedo",
       "sqCandidato": "130002549557",
       "nomeUrna": "GABRIEL",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "gabriel-azevedo: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002552308",

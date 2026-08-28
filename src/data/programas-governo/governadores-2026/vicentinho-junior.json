@@ -1,0 +1,1144 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002544544",
+    "slug": "vicentinho-junior",
+    "nomeUrna": "VICENTINHO JÚNIOR",
+    "partido": "PSDB",
+    "arquivoNome": "2026TO270002544544_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002544544_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002544544:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002544544_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002544544_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "60cfd10f7f71f2bffb914b85924f0d7471322ea91fa2ba7e033cc2a73d08f255",
+        "extractedTextSha256": "73292769d9095c0e7346bfe1830dea9dcb3517ec974939b8fa8c3f2b17b8dc87",
+        "paginas": 36,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE GOVERNO\n2027/2030\nVICENTINHO JÚNIOR\nE AMELIO CAYRES\nVicentinhoJr. Amélio\nGOVERNADOR\nVICE-GOVERNADOR"
+          },
+          {
+            "id": "uma-conversa-com-os-tocantinenses",
+            "titulo": "UMA CONVERSA COM OS TOCANTINENSES",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "UMA CONVERSA COM OS TOCANTINENSES\nO Tocantins é um Estado de gente trabalhadora, empreendedora e que nunca teve medo\nde construir o próprio futuro. Somos uma terra jovem, cheia de potencial, que cresce todos\nos dias graças à força de quem acorda cedo, produz, estuda, empreende e acredita que dias\nmelhores sempre são possíveis.\nFoi ouvindo essas pessoas, caminhando pelos municípios e conhecendo de perto as\nnecessidades de cada região que nasceu este Plano de Governo.\nMais do que um conjunto de propostas, este documento representa um compromisso.\nUm compromisso de governar com responsabilidade, planejamento, transparência e, acima\nde tudo, respeito às pessoas.\nAcredito que um governo precisa estar presente onde a população mais precisa. Precisa\ncuidar da saúde, investir na educação, fortalecer a segurança pública, apoiar quem produz,\ngerar oportunidades para a juventude, proteger nossas mulheres, valorizar os idosos, garantir\ninclusão às pessoas com deficiência e criar condições para que cada município possa crescer\nde acordo com sua vocação.\nTambém acredito que desenvolvimento não acontece por acaso. Ele exige coragem\npara tomar decisões, diálogo permanente, responsabilidade com os recursos públicos e\ncapacidade de transformar boas ideias em resultados concretos.\nO Tocantins tem todas as condições para se tornar referência nacional em\ndesenvolvimento, inovação, produção, sustentabilidade e qualidade de vida. Temos\nlocalização estratégica, riquezas naturais, um agronegócio forte, potencial turístico, um povo\ntrabalhador e uma juventude preparada para construir uma nova história. Nosso desafio agora\né transformar esse potencial em oportunidades para todos.\nQuero um Estado que invista nas pessoas sem deixar de cuidar das contas públicas.\nUm Estado que incentive quem empreende, fortaleça os municípios, valorize os servidores\npúblicos, utilize a tecnologia para facilitar a vida do cidadão e faça da eficiência uma marca\nda gestão.\nEste Plano reúne mais de 260 propostas construídas com responsabilidade, ouvindo\nespecialistas, lideranças e cidadãos de todas as regiões. Cada uma delas foi pensada para\nenfrentar problemas reais e preparar o Tocantins para os próximos anos.\nTenho convicção de que o futuro não se espera. O futuro se constrói com trabalho,\nplanejamento e coragem para fazer diferente.\nConvido você a conhecer este Plano de Governo e a fazer parte dessa caminhada.\nPorque o futuro do Tocantins será construído por todos nós. Vamos seguir em frente, com\nresponsabilidade, união e muito trabalho.\n\nVicentinho Junior - Governador 45"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n\nEIXO 1: ACESSIBILIDADE E INCLUSÃO ............................................................................................................ 04\nEIXO 2: AGENDA MUNICIPALISTA .................................................................................................................... 05\nEIXO 3: AGRONEGÓCIO 5.0 ............................................................................................................................... 06\nEIXO 4: CULTURA, ESPORTE E BEM-ESTAR ................................................................................................... 07\nEIXO 5: DESENVOLVIMENTO REGIONAL INTEGRADO ............................................................................... 08\nEIXO 6: ECONOMIA VERDE E DESCARBONIZAÇÃO ................................................................................... 09\nEIXO 7: EDUCAÇÃO ................................................................................................................................................ 11\nEIXO 8: FAZENDA PÚBLICA ................................................................................................................................. 12\nEIXO 9: POVOS INDÍGENAS ................................................................................................................................ 14\nEIXO 10: INDÚSTRIA .............................................................................................................................................. 16\nEIXO 11: MINERAÇÃO ............................................................................................................................................. 17\nEIXO 12: OPORTUNIDADES DE DESENVOLVIMENTO ECONÔMICO E SOCIAL DO TOCANTINS .......\n.................................................................................................................................................................................... 18\nEIXO 13: PARCERIAS E TERCEIRO SETOR (Pacto de Cooperação) ........................................................... 19\nEIXO 14: PLENO EMPREGO .................................................................................................................................... 20\nEIXO 15: PRESTAÇÃO DE SERVIÇOS ESTATAIS ................................................................................................. 21\nEIXO 16: PROTEÇÃO E PROMOÇÃO DA MULHER .......................................................................................... 22\nEIXO 17: PROTEÇÃO E PROMOÇÃO DA PESSOA IDOSA .............................................................................. 23\nEIXO 18: SAÚDE PÚBLICA ....................................................................................................................................... 24\nEIXO 19: SEGURANÇA JURÍDICA .......................................................................................................................... 25\nEIXO 20: SEGURANÇA PÚBLICA .......................................................................................................................... 26\nEIXO 21: SERVIDORES PÚBLICOS ........................................................................................................................ 27\nEIXO 22: TECNOLOGIA - ESTADO DIGITAL ....................................................................................................... 28\nEIXO 24: TRABALHO ................................................................................................................................................ 30\nEIXO 25: ESPORTE E LAZER ................................................................................................................................... 31\nEIXO 26: DIVERSIDADE ........................................................................................................................................... 32\nEIXO 27: DEFESA E BEM-ESTAR ANIMAL .......................................................................................................... 33\nEIXO 28: DESENVOLVIMENTO DAS RODOVIAS ESTADUAIS ..................................................................... 34"
+          },
+          {
+            "id": "1-eixos-tematicos",
+            "titulo": "1. EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "1. EIXOS TEMÁTICOS\nEIXO 1: ACESSIBILIDADE E INCLUSÃO\nFoco: Autonomia e Direitos da Pessoa com Deficiência (PcD).\n001. Calçada Legal e Acessível\nAção: Programa de financiamento e padronização de calçadas em perímetros escolares e\nhospitalares, com piso tátil e rampas normatizadas.\nResultado Esperado: Autonomia de locomoção para cadeirantes e deficientes visuais nas escolas\ntocantinenses.\n002. Transporte Intermunicipal Adaptado\nAção: Fiscalização via ATR para garantir que a frota de ônibus intermunicipais possua elevadores\noperacionais.\nResultado Esperado: Direito de ir e vir garantido no território estadual.\n003. Programa Estadual Equoterapia\nAção: Programas Estaduais com a rede pública e privada para implementar a Equoterapia em todas\nas Regiões do Estado do Tocantins.\nResultado Esperado: Atender crianças PcD.\n004. Turismo Acessível - Tocantins para Todos\nAção: Instalação de passarelas adaptadas e aquisição de cadeiras de rodas anfíbias para os\nprincipais fervedouros, cachoeiras e praias do Tocantins.\nResultado Esperado: Inclusão de PcD no mercado de lazer e ecoturismo.\n005. Criação de rede de unidades da Casa TEA (CETEA)\nAção: Construir, ou alugar espaços para implantação das Casas TEA (Transtorno do Espectro Autista).\nResultado Esperado: Oferecer suporte para as mães e jovens.\n006. Residência Adaptada (Pró-Moradia PcD)\nAção: Reserva de 10% das unidades habitacionais de programas estaduais para PcD, com planta\ntotalmente adaptada de fábrica.\nResultado Esperado: Dignidade habitacional e redução de custos com reformas posteriores.\n007. Festival de Arte e Esporte Inclusivo\nAção: Evento anual multidisciplinar para promover talentos PcD em artes visuais, música e\nparatletismo.\nResultado Esperado: Visibilidade social e promoção dos talentos PcD.\n008. Educação Especial Inclusiva Fortalecida\nAção: Contratação e formação contínua de professores auxiliares e mediadores para alunos com\nTEA (Transtorno do Espectro Autista) e outras deficiências na rede estadual.\nResultado Esperado: Redução da evasão escolar e aprendizado efetivo.\n009. Tecnologia Assistiva no Campo"
+          },
+          {
+            "id": "acao-credito-subsidiado-via-fomento-tocantins-para-aquisicao-de-proteses",
+            "titulo": "Ação: Crédito subsidiado via Fomento Tocantins para aquisição de próteses e equipamentos",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Crédito subsidiado via Fomento Tocantins para aquisição de próteses e equipamentos\nadaptados para produtores rurais com deficiência.\nResultado Esperado: Manutenção da capacidade produtiva da pessoa do campo.\n010. Órgão Central de Políticas PcD\nAção: Criação de um órgão estadual central das Políticas de Acessibilidade e inclusão com\norçamento e financeiro próprio.\nResultado Esperado: Monitoramento transversal de todas as metas de acessibilidade do governo.\n\nEIXO 2: AGENDA MUNICIPALISTA\nFoco: Fortalecimento institucional, economia de escala e apoio técnico aos Municípios.\n011. Escritório Estadual de Projetos (Fábrica de Projetos)\nAção: Criar um Escritório Cooperativo na Secretaria de Planejamento para elaborar projetos de\nengenharia e arquitetura gratuitamente para municípios pequenos.\nResultado Esperado: Destravamento de verbas federais (Emendas/Ministérios) e projetos\ninternacionais que exigem projetos técnicos.\n012. Central de Compras Compartilhada\nAção: Estado realiza Atas de Registro de Preços (ARP) e permite adesão para municípios comprarem\ninsumos (remédios, asfalto, etc) com preço de atacado.\nResultado Esperado: Economia aos cofres municipais.\n013. Programa Receita Municipal Eficiente\nAção: Fornecer tecnologia de georreferenciamento para municípios atualizarem cadastro imobiliário\n(IPTU) e o seu Código Tributário.\nResultado Esperado: Aumento da arrecadação própria dos municípios sem aumentar alíquotas,\ncriando condições para os municípios financiem suas áreas de saúde, educação, etc.\n014. Patrulha Mecanizada Regionalizada\nAção: Financiar Pátios de Máquinas Regionais geridos por Consórcios Intermunicipais para\nmanutenção de estradas vicinais.\nResultado Esperado: Estradas rurais transitáveis o ano todo e manutenção eficiente do maquinário.\n015. Kit Regularização Fundiária Urbana (REURB Municipal)\nAção: Equipe estadual volante de topografia e jurídico para apoiar municípios na entrega de títulos\nurbanos.\nResultado Esperado: Dignidade para o cidadão e desenvolvimento urbano e rural do Município e do\nEstado.\n016. Cofinanciamento do Transporte Sanitário Eletivo\nAção: Repasse fundo a fundo para custear transporte de pacientes, condicionado à regulação\nestadual.\nResultado Esperado: Alívio financeiro para secretarias municipais e fim das viagens perdidas.\n017. Programa Cidade Digital Simplificada\nAção: Estado licencia sistema de gestão (ERP) em nuvem e cede gratuitamente para municípios que"
+          },
+          {
+            "id": "tiverem-interesse",
+            "titulo": "tiverem interesse.",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "tiverem interesse.\nResultado Esperado: Padronização de dados, transparência e economia para Prefeituras.\n018. Incubadora de Consórcios Públicos\nAção: Unidade da Seplan para suporte jurídico na criação e gestão de consórcios intermunicipais\n(Lixo, Iluminação).\nResultado Esperado: Segurança jurídica para cooperação regional.\n019. Pavimentação Urbana Mão na Massa\nAção: Estado fornece massa asfáltica (CBUQ) e Prefeituras entram com maquinário e mão de obra\npara aplicar.\nResultado Esperado: Ruas asfaltadas com custo menor.\n020. Selo Município Empreendedor\nAção: Premiação para municípios que integrarem sistemas à REDESIM, e/ou trazendo inovações para\na abertura de empresas (em 24h).\nResultado Esperado: Ambiente de negócios desburocratizado em todo o estado.\n\nEIXO 3: AGRONEGÓCIO 5.0\nFoco: Industrialização, Cooperativismo e Bioinsumos.\n021. Programa Armazém para Todos (Condomínios de Silos)\nAção: Incentivar a construção de Condomínios de Armazenagem (silos coletivos) via linha de crédito\ndo FNO, permitindo que pequenos produtores estoquem sua produção.\nResultado Esperado: Aumento da margem de lucro do produtor local e redução das filas de\ncaminhões na safra.\n022. Revolução do Etanol de Milho e DDG Ação: Atrair e licenciar plantas de etanol de milho.\nResultado Esperado: Criação de um ciclo virtuoso: produção de energia e ração de alta proteína\n(DDG) no mesmo local.\n023. Polo Nacional de Bioinsumos (On-Farm)\nAção: Criar o Marco Legal da Produção On-Farm de bioinsumos com assistência técnica da Unitins e\nUFT.\nResultado Esperado: Redução do custo de produção e menor impacto ambiental.\n024. Choque de Cooperativismo\nAção: Programa Coopera Tocantins: isenção fiscal temporária para grandes cooperativas instalarem\nfiliais industriais no Tocantins.\nResultado Esperado: Acesso à tecnologia de ponta e crédito barato para o produtor tocantinense.\n025. Carne Carbono Neutro (Certificação)\nAção: Subsídio técnico para implantar sistemas ILPF em pastagens degradadas, certificando a carne\ncom selo sustentável.\nResultado Esperado: Acesso a mercados que pagam mais pela carne certificada.\n026. Cinturão do Algodão (Adensamento Têxtil)"
+          },
+          {
+            "id": "acao-incentivar-a-instalacao-de-fiacoes-e-tecelagens-proximas-aos-polos",
+            "titulo": "Ação: Incentivar a instalação de fiações e tecelagens próximas aos polos produtores. Resultado",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Incentivar a instalação de fiações e tecelagens próximas aos polos produtores. Resultado\nEsperado: Verticalização da cadeia: do capulho à roupa pronta.\n027. Seguro Rural Paramétrico (Anti-Seca)\nAção: O Estado do Tocantins irá subsidiar o preço do seguro safra como o Seguro Parametrizado,\npagamento automático com comprovação via acompanhamento via satélite em caso de evento\ndanoso da natureza.\nResultado Esperado: Segurança financeira para o agricultor investir em tecnologia.\n028. Silvicultura Estratégica\nAção: Fomentar o plantio de Eucalipto e Seringueira em terras arenosas visando a indústria de\ncelulose.\nResultado Esperado: Uso econômico de terras marginais e atração de indústrias.\n029. Defesa Sanitária de Fronteira\nAção: Acompanhamento sanitário das fronteiras e monitoramento rigoroso de pragas com drones.\nResultado Esperado: Garantia de exportação para mercados exigentes como União Europeia, Japão e\npadrões de certificação halal.\n030. Irrigação Inteligente\nAção: Apoiar a construção de barramentos coletivos licenciados para reservar água da chuva e usar\nna irrigação aumentando a produção.\nResultado Esperado: Safra garantida de arroz/semente e segurança alimentar no Tocantins.\n\nEIXO 4: CULTURA, ESPORTE E BEM-ESTAR\nFoco: Economia Criativa, Identidade e Qualidade de Vida Urbana.\n031. Indústria das Festas Juninas\nAção: Financiar galpões permanentes de confecção de figurinos no Tocantins, gerando emprego o\nano todo.\nResultado Esperado: Transformar a festa junina no maior produto turístico cultural do Norte.\n032. Tocantins FilmCommission (Cash Rebate)\nAção: Oferecer devolução de impostos para produções audiovisuais que filmarem no Tocantins\ncontratando técnicos locais.\nResultado Esperado: Divulgação turística global e formação de mão de obra local.\n033. Construção de arenas de esporte olímpicos e paraolímpicos nos municípios do Tocantins com\no modelo BTS de financiamento\nAção: Construir arena de esporte modernas para esportes olímpicos e paraolímpicos nos municípios\ndo Tocantins com recursos conseguidos via fundos BTS\nResultado Esperado: incentivar o esporte em diversas modalidades e propiciar condições para\ndesenvolvimento de competições esportivas no Tocantins.\n034. Design do Capim Dourado\nAção: Parceria com designers renomados para capacitar artesãs de Mateiros e Ponte Alta, criando\ncoleções de alto valor."
+          },
+          {
+            "id": "resultado-esperado-fomentar-a-producao-e-comercializacao-do-artesanato-d",
+            "titulo": "Resultado Esperado: Fomentar a produção e comercialização do artesanato de Capim Dourado em",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Resultado Esperado: Fomentar a produção e comercialização do artesanato de Capim Dourado em\nmercados nacionais e internacionais.\n035. Bibliotecas Parque\nAção: Transformar bibliotecas em centros atuais com estúdios de gravação e espaços makers para\njovens.\nResultado Esperado: Incentivo a jovens criadores de conteúdo e apoio juvenil através do acesso à\ncultura.\n036. Gastronomia Raiz\nAção: Criar certificação Sabor Tocantins para restaurantes e feiras que servem pratos típicos com\nqualidade.\nResultado Esperado: Valorização da culinária local e segurança alimentar.\n037. Bolsa Atleta\nAção: Patrocínio direto para jovens, atletas PcD e talentos dos esportes que se destacam\nnacionalmente.\nResultado Esperado: Formação de exemplos locais, regionais e resgate social.\n038. Complexos Esportivos de Areia\nAção: Instalar complexos públicos de Futevôlei/Beach Tennis iluminados em cidades Tocantinenses.\nResultado Esperado: Saúde preventiva e socialização noturna saudável.\n039. Incentivo à Rota da Fé e Folclore e preservação de bens históricos\nAção: Apoio logístico para romarias e festas tradicionais, além da preservação de bens históricos,\npatrimônio imaterial, fortalecimento das culturas indígenas e quilombolas.\nResultado Esperado: Fortalecimento cultural e geração de renda para cidades históricas e\nfortalecimento da tradição.\n040. Lei de Incentivo\nAção: Fortalecimento de leis de incentivo e patrimônio cultural, apoio aos artistas locais\nindependentes, grupos audiovisuais, artesãos, músicos, entre outros gêneros. Simplificar a Lei do\nMecenato e procedimentos de incentivo permitindo destino direto de tributos de empresas para\nprojetos no Tocantins.\nResultado Esperado: Fortalecimento da cultura regional.\n\nEIXO 5: DESENVOLVIMENTO REGIONAL INTEGRADO\nFoco: Logística de Fronteira, Bioeconomia e Saúde.\n041. Zona de Desenvolvimento Especial (ZDE)\nAção: Criar regime fiscal especifico para indústrias nos municípios nas divisas do Tocantins.\nResultado Esperado: Evitar a saída de empresas outros estados e gerar empregos locais.\n042. Revitalização do Projeto Sampaio\nAção: Concessão, por procedimentos próprios, dos lotes irrigados com foco em produção de ciclo\ncurto para exportação.\nResultado Esperado: Transformar centro de produção agricultável."
+          },
+          {
+            "id": "043-complexo-hospitalar-de-augustinopolis",
+            "titulo": "043. Complexo Hospitalar de Augustinópolis",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "043. Complexo Hospitalar de Augustinópolis\nAção: Transformar o Hospital Regional em alta complexidade integrado com referências de\ntecnologia e exames.\nResultado Esperado: aumento de atendimento da região especializado em saúde.\n044. Cadeia Industrial do Babaçu\nAção: Financiar indústrias de processamento de óleo, sabão e etc, geridas por cooperativas e\narranjos produtivos de Quebradeiras de Coco.\nResultado Esperado: Agregar valor ao produto e multiplicar a renda das mulheres.\n045. Polo Logístico da Ponte de Xambioá\nAção: Criar Distrito Fiscal, Industrial e Logístico na cabeceira da nova ponte focado em serviços para\ninterestaduais.\nResultado Esperado: Promover o fluxo de cargas da BR-153, a prestação de serviços e a regularidade\nfiscal da região.\n046. Universidade do Bico\nAção: Fortalecer a Unitins em Augustinópolis como referência em Medicina Tropical, Agronomia e\nEngenharia.\nResultado Esperado: Fixação de médicos, engenheiros e agrônomos na região.\n047. Rota Turística Encontro das Águas\nAção: Estruturar turismo de pesca/praias em Esperantina e Araguatins com capacitação local.\nResultado Esperado: Economia voltada para o turismo e atividade profissional profissionalizada.\n048. Batalhão de Divisas\nAção: Instalar Batalhão da PM na fronteira focado na prevenção e combate do tráfico e roubo de\ncargas.\nResultado Esperado: Implementação da Segurança Pública no norte do Estado do Tocantins.\n049. Regularização Fundiária Rural\nAção: Força-tarefa para resolver conflitos agrários históricos no Bico. Resultado Esperado: Fim da\ninsegurança jurídica e acesso ao crédito rural.\n050. Conectividade Total nas Escolas\nAção: Prioridade absoluta na instalação de internet de alta velocidade nas escolas dos 25\nmunicípios do Bico.\nResultado Esperado: Redução da desigualdade educacional.\n\nEIXO 6: ECONOMIA VERDE E DESCARBONIZAÇÃO\nFoco: Elevação do ativo ambiental.\n061. Programa Produtor de Água\nAção: Compensação por Serviços Ambientais (PSA) a produtores que recuperarem nascentes nas\nbacias críticas.\nResultado Esperado: Segurança hídrica para o Agro e renda extra para o produtor."
+          },
+          {
+            "id": "062-icms-ecologico-4-0",
+            "titulo": "062. ICMS Ecológico 4.0",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "062. ICMS Ecológico 4.0\nAção: Reformular o repasse pontuando a qualidade da gestão (combate a incêndios/fim dos lixões).\nResultado Esperado: municípios engajados na pauta ambiental compensados por incentivo\nfinanceiro.\n063. Agroflorestas em Escala\nAção: Crédito para converter pastagens degradadas no Tocantins em SAFs, arranjos produtivos,\ncooperativas e etc. (Cacau, Açaí, pequi, jaca, etc).\nResultado Esperado: Recuperação do solo e renda aos produtores.\n064. Expansão do Turismo no Tocantins\nAção: Implantar Voucher Digital Único no Jalapão e Serras Gerais para controle e promoção do\nacesso.\nResultado Esperado: Promoção e proteção ambiental e também a profissionalização do turismo.\n065. Bolsa Reciclagem\nAção: Promover, por meio do uso da Lei do Lixo, as associações e outros arranjos produtivos de\ncatadores por tonelada de resíduo enviada do aterro.\nResultado Esperado: Aumento da reciclagem e oportunidade de promoção da dignidade para\ncatadores.\n066. Selo Carne Baixo Carbono\nAção: Implantação, com ouvidoria ativa do setor produtivo, de protocolo integrado de\nrastreabilidade para certificar carne de pastos bem manejados.\nResultado Esperado: Implementação de protocolos de melhoria da produção do Tocantins. Atuando\npreventivamente contra embargos e acesso a mercados premium.\n067. Bioindústria do Cerrado\nAção: Financiar, por meio de programas públicos, a implantação e expansão de indústrias de\nprocessamento de superalimentos (açaí, baru, pequi, jaca, etc.).\nResultado Esperado: Valorização do setor produtivo, promovendo a industrialização do Tocantins e\ngerando oportunidades para os cidadãos.\n068. Crédito de Carbono: acesso a mercados globais\nAção: Realizar alinhamento do projeto de crédito de carbono com o empresariado, produtor,\ncomunidades envolvidas para realizar um projeto referência nacional e internacional sobre crédito\nde carbono.\nResultado Esperado: acesso a recursos nacionais e internacionais que garantam recursos\ncompartilhados com comunidades envolvidas.\n069. Energia Solar Social\nAção: Instalar, por meio de arranjos produtivos, usinas comunitárias em bairros de baixa renda para\nabater conta de luz, por meio de PPPs.\nResultado Esperado: Redução da pobreza energética.\n070. Consórcios de Resíduos Sólidos\nAção: Financiar projetos de consórcios em parceria com a Associação dos Municípios Tocantinenses\npara construção de aterros regionais e usinas de triagem.\nResultado Esperado: Erradicação dos lixões a céu aberto."
+          },
+          {
+            "id": "eixo-7-educacao",
+            "titulo": "EIXO 7: EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7: EDUCAÇÃO\nFoco: Interiorização, valorização do Professor(a) e Excelência.\n071. Alfabetização na Idade Certa\nAção: Capacitação focada nos municípios com pior IDH e maiores índices de evasão escolar.\nResultado Esperado: Erradicação do analfabetismo funcional.\n072. Ensino Fundamental Técnico Profissionalizante Ação: Uso de tecnologias aplicado ao\nagronegócio.\nResultado Esperado: Redução do êxodo rural.\n073. Tocantins para o Mundo\nAção: Enviar estudantes a cada semestre, com nota mínima de 8, para intercâmbio, para núcleos\ntecnológicos nas Américas, Europa e Ásia, mediante processo seletivo.\nResultado Esperado: Motivar os estudantes e também criar oportunidades de emprego e renda para\nos estudantes do Tocantins.\n074. Professor Conectado\nAção: Capacitação presencial, por meio de tecnologia, como forma permanente no uso de\nnotebooks e novas tecnologias em parceria com a Google e premiação em dinheiro por bons\nresultados.\nResultado Esperado: Formação permanente e incentivo a inclusão digital.\n075. Busca Ativa Inteligente por estudantes\nAção: Implantação de protocolos automatizados no sistema eletrônico após faltas não justificadas\ndo aluno.\nResultado Esperado: Proteção social e redução da evasão escolar.\n076. Merenda escolar de qualidade com base na Agricultura Familiar\nAção: Chamada pública com atenção especial para assentamentos locais.\nResultado Esperado: Alimentação saudável e renda local.\n077. Programa de merenda escolar durante as férias\nAção: Implantação de programa permanente de alimentação escolar para estudantes durante o\nperíodo de férias por meio de recursos estaduais.\nResultado Esperado: Promoção de segurança alimentar, combate a fome, diminuição das\ndesigualdades e promoção de processos de ensino e aprendizado durante o período de férias\nescolares.\n078. Construção de 50 escolas em tempo integral com centros de tecnologia digital\nAção: Construir 50 novas escolas em tempo integral, com centros de tecnologia digital, utilizando o\nmodelo de Fundos BTS.\nResultado Esperado: Melhoria na qualidade do ensino\n079. Promoção de integração digital de Excelência em escolas rurais\nAção: Instalar antenas via satélite de baixar orbita nas escolas rurais sem fibra.\nResultado Esperado: Democratização do acesso à internet e a ferramentas de tecnologia de"
+          },
+          {
+            "id": "educacao-avancadas",
+            "titulo": "educação avançadas.",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "educação avançadas.\n080. Bolsa Permanência (bolsa estudantil aumentado)\nAção: Complemento financeira para alunos no programa estadual em 50% no TO.\nResultado Esperado: Redução da evasão por vulnerabilidade econômica e social no Tocantins\n\nEIXO 8: FAZENDA PÚBLICA\nFoco: Economia, Sefaz 5.0, pessoas, tecnologia e excelência\n081. Força-Tarefa Transição 2033\nAção: Criar equipe capacitada para calcular e auditar a Receita Média do Estado (2024-2028) para a\nReforma Tributária.\nResultado Esperado: Garantia do repasse federal futuro, evitando perdas bilionárias.\n082. Gestão Estratégica do Fundo de Desenvolvimento Regional (FDR)\nAção: Regulamentar uso do FDR para suprir necessidades de fomento empresarial no Tocantins.\nResultado Esperado: Substituição da renúncia fiscal por investimento em competitividade.\n083. Programa Confia Tocantins\nAção: Classificar contribuintes (A, B, C) oferecendo Canal Verde para bons pagadores.\nResultado Esperado: Incentivo à regularização fiscal.\n084. Sefaz 5.0: Auditoria em Tempo Real\nAção: Utilizar estrutura de processamento já instalada para processar 100% das NF-e e transações\nem tempo real.\nResultado Esperado: Resposta mais rápida ao contribuinte e aumento espontâneo da arrecadação.\n085. Novo Código Tributário Estadual Digital\nAção: Atualizar legislação para capturar receitas da nova economia (streaming, betting).\nResultado Esperado: Modernização da base e justiça tributária.\n086. Avanço na regularidade fiscal – Implantação do Comitê Interinstitucional de Recuperação de\nCréditos\nAção: Atuação do CIRA e aplicação de algoritmo e IA seguindo o modelo nacional. Resultado\nEsperado: Estancamento de fraudes no escoamento de grãos e gado.\n087. Monetização de Créditos Acumulados\nAção: Regulamentar a utilização de créditos fiscais para empresários compensarem créditos de\nICMS para devedores, mediante lei específica.\nResultado Esperado: Liquidez para o setor produtivo e novos investimentos.\n088. Educação Fiscal Cidadã – TO Legal\nAção: Reformular programa de sorteios destinando parte dos tributos estaduais para aplicação\nmensal.\nResultado Esperado: Cidadão exigindo regularidade na compra de bens ou na prestação de serviços.\n089. Revisão Geral de Gastos (Spending Review)"
+          },
+          {
+            "id": "acao-comite-permanente-para-analisar-qualidade-despesas-que-nao-geram-re",
+            "titulo": "Ação: Comitê permanente para analisar qualidade despesas que não geram retorno social por meio",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Comitê permanente para analisar qualidade despesas que não geram retorno social por meio\nde uma matriz de alocação de efetividade algorítmica.\nResultado Esperado: Aumento da capacidade de investimento sem aumentar impostos.\n090. Tributação Inteligente da Mineração\nAção: Fiscalização da Mineração com drones volumétricos em parceira com a Agência Nacional de\nMineração e com o Serviço Geológico do Brasil.\nResultado Esperado: Parceria para a regularização e faturamento empresarial e aumento da receita.\n091. Programa Tocantins Logística Fast\nAção: Regime especial de fiscalização para e-commerce na BR-153 e Ferrovia.\nResultado Esperado: Transformar Tocantins em centro de distribuição do Norte/Nordeste.\n092. Programa de Compliance Tributário Orientativo e Educação Fiscal\nAção: Instituir ciclos contínuos de capacitação para servidores da Fazenda em metodologias de\nauditoria orientativa e elaborar manuais práticos e workshops de autorregularização direcionados a\ncontadores e empresários locais.\nResultado Esperado: Fortalecer a cultura interna de arrecadação, priorizando a orientação preventiva\nem detrimento da autuação primária, o que reduz o contencioso administrativo e judicial e eleva o\ncumprimento voluntário das obrigações fiscais.\n093. Desburocratização e Automação do ITCD\nAção: Estabelecer parâmetros de cálculo e avaliação patrimonial estritamente objetivos para\no lançamento do ITCD, visando diminuir em 90% o fluxo de processos manuais e burocráticos\nmediante declaração automatizada.\nResultado Esperado: Garantir a celeridade na regularização de sucessões e doações, reduzir o tempo\nde espera do cidadão, acelerar o ingresso de receitas e otimizar a\nmáquina pública, liberando a força de trabalho da fiscalização para demandas de maior\ncomplexidade.\n094. Programa Estadual de Nota Fiscal Premiada\nAção: Reformular programa de sorteios destinando parte dos tributos estaduais para aplicação\nmensal.\nResultado Esperado: Cidadão exigindo regularidade na compra de bens ou na prestação de serviços.\n095. Fortalecimento e Renovação da Administração Tributária\nAção: Realizar concurso público para o provimento de cargos de Auditor Fiscal da Receita Estadual,\nvisando suprir a necessidade de servidores e modernizar o perfil técnico do fisco.\nResultado Esperado: Renovar o quadro de auditores para garantir a capacidade operacional,\ninvestigativa e tecnológica do Estado frente aos complexos desafios da Reforma Tributária,\notimizando o combate à sonegação e promovendo o aumento sustentável da arrecadação.\n096. Modernização e Liquidação do Passivo do Conselho de Contribuintes\nAção: Julgar, por critérios de Justiça Fiscal, o estoque histórico de processos do Conselho de\nContribuintes até o final ano fiscal, promovendo a digitalização integral dos procedimentos fiscais\ne a adaptação do rito processual administrativo ao novo modelo do Imposto sobre Bens e Serviços\n(IBS).\nResultado Esperado: Zerar o contencioso represado para destravar créditos tributários retidos,\ngarantindo o devido processo tecnológico aos cidadãos e empresas, e preparando a estrutura"
+          },
+          {
+            "id": "juridica-e-institucional-do-estado-para-a-transicao-estrutural-imposta-p",
+            "titulo": "jurídica e institucional do Estado para a transição estrutural imposta pela Emenda Constitucional no",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "jurídica e institucional do Estado para a transição estrutural imposta pela Emenda Constitucional no\n132/2023.\n097. Concessão Digital de Benefícios Fiscais (TARE 100% digital)\nAção: Digitalizar e virtualizar integralmente os processos administrativos de concessão\nde benefícios fiscais, consubstanciados nos Termos de Acordo de Regime Especial (TARE),\nimplementando um fluxo procedimental 100% eletrônico e integrado.\nResultado Esperado: Eliminar o passivo burocrático e físico, garantindo celeridade, rastreabilidade e\nsegurança jurídica na atração de novos investimentos. A medida assegura, ainda, o devido processo\ntecnológico e a transparência governamental na gestão das renúncias fiscais.\n098 Conselho Consultivo Empresarial-Fisco de Fomento Econômico\nAção: Instituir um conselho consultivo com composição paritária entre representantes do setor\nprodutivo e servidores da Secretaria da Fazenda (SEFAZ), estabelecendo um calendário de encontros\nbimestrais focados no debate sobre as regulamentações da Reforma Tributária e na formulação\nconjunta de propostas para a melhoria do ambiente fiscal tocantinense.\nResultado Esperado: Consolidar um modelo de governança colaborativa e segurança jurídica,\nalinhando as estratégias do Estado e do empresariado para mitigar os impactos da transição para\no IBS (EC 132/2023). A iniciativa visa reduzir a litigiosidade, aumentar a transparência e assegurar a\ncompetitividade necessária para a atração e retenção de investimentos.\n099. Simplificação e Redução do Litígio Administrativo Fiscal\nAção: Implementar a simplificação, virtualização e digitalização integral dos ritos processuais\ntributários, promovendo a transição para um modelo de “Estado-Plataforma”, com a meta objetiva\nde diminuir o volume de novos e atuais litígios administrativos fiscais.\nResultado Esperado: Desafogar o contencioso do Estado e reduzir os custos de conformidade para\no setor produtivo, assegurando sempre o devido processo tecnológico ao contribuinte. O ambiente\nprocessual digitalizado promove maior celeridade, eficiência institucional e segurança jurídica na\nresolução de conflitos.\n100. Integração Tecnológica para o Split Payment do IBS\nAção: Desenvolver e integrar os sistemas de processamento da SEFAZ à plataforma do futuro\nComitê Gestor do IBS, preparando a infraestrutura do Estado-Plataforma para a liquidação financeira\nsimultânea (split payment) nas transações comerciais eletrônicas.\nResultado Esperado: Assegurar a arrecadação em tempo real do novo IVA estadual no momento\nda transação, zerar a evasão e a inadimplência e proteger o fluxo de caixa do Estado durante o\ncomplexo período de transição tributária estipulado pela EC 132/2023.\n\nEIXO 9: POVOS INDÍGENAS\nFoco: Reconhecimento, proteção e desenvolvimento.\n101. Observatório Estadual de Dados Socio-territoriais Indígenas\nAção: Instituir uma plataforma de inteligência de dados e geoprocessamento, cruzando indicadores\nsocioeconômicos, climáticos (focos de calor e secas) e epidemiológicos das comunidades indígenas\ndo Tocantins.\nResultado Esperado: Garantir que a alocação de recursos governamentais e a execução de políticas\npúblicas sejam pautadas em evidências empíricas e métricas precisas, permitindo a atuação"
+          },
+          {
+            "id": "preditiva-do-estado-na-mitigacao-de-vulnerabilidades-e-promovendo-maior",
+            "titulo": "preditiva do Estado na mitigação de vulnerabilidades e promovendo maior efetividade alocativa.",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "preditiva do Estado na mitigação de vulnerabilidades e promovendo maior efetividade alocativa.\n102. Educação Escolar Indígena, Bilíngue e Intercultural\nAção: Construir e reformar escolas nas aldeias com arquitetura adequada, garantir merenda escolar\nregionalizada e criar editais para a formação de professores indígenas e produção de material\ndidático nas línguas nativas.\nResultado Esperado: A educação consolidada como uma ferramenta de fortalecimento cultural,\ngarantindo a permanência dos alunos e a preservação linguística.\n103. Governança, Direitos Territoriais e Consulta Prévia\nAção: Institucionalizar a obrigatoriedade de aplicação dos Protocolos de Consulta Autônomos de\ncada povo antes da aprovação de qualquer grande obra de infraestrutura (estradas, hidrelétricas,\nferrovias) ou mineração que afete seus territórios.\nResultado Esperado: Prevenir conflitos socioambientais e respeitar de forma contínua e rigorosa os\ntratados internacionais dos quais o Brasil é signatário.\n104. Sustentabilidade e Pagamento por Serviços Ambientais (PSA)\nAção: Inserir os povos indígenas de forma direta nos mecanismos de financiamento climático (como\no Fundo Amazônia e créditos de carbono), garantindo que os recursos cheguem às aldeias para\nprojetos de gestão territorial e vigilância.\nResultado Esperado: Acesso direto aos recursos gerados pela preservação ambiental por parte das\ncomunidades, reconhecendo que os indígenas são os maiores guardiões das florestas.\n105. Proteção a Lideranças e Defensores dos Direitos Humanos\nAção: Reformular e dotar de orçamento real o Programa de Proteção aos Defensores de Direitos\nHumanos, com medidas de segurança adaptadas à realidade rural e florestal (comunicação via\nsatélite, patrulhamento preventivo).\nResultado Esperado: Proteção à vida e garantia de segurança.\n106. Conectividade e Inclusão Digital nas Aldeias\nAção: Levar internet banda larga (via satélite) e energia limpa (painéis solares) para as aldeias,\nfacilitando o acesso a serviços públicos, educação à distância, vigilância territorial e escoamento de\nprodução.\nResultado Esperado: Consolidação da conectividade como ferramenta vital de sobrevivência, acesso\na direitos e articulação para os povos originários.\n107. Saúde Indígena Integral e Cuidados Tradicionais\nAção: Reestruturar o atendimento nas aldeias com a construção de Unidades Básicas de Saúde\nIndígena, garantindo logística de suprimentos regulares e integrando o atendimento técnico do SUS\naos saberes da medicina tradicional dos povos originários.\nResultado Esperado: Promoção do bem-estar e diminuição sensível das remoções médicas para os\ncentros urbanos, reduzindo o choque cultural e a vulnerabilidade dos pacientes.\n108. Inclusão Produtiva e Bioeconomia Indígena\nAção: Implementar fomento governamental direcionado ao associativismo, cooperativismo e\narranjos produtivos indígenas, oferecendo linhas de crédito simplificadas e apoio técnico para o\nmanejo da socio-biodiversidade, garantindo a conexão direta da produção agrícola às compras\ninstitucionais.\nResultado Esperado: Autonomia financeira das comunidades por meio da geração de renda"
+          },
+          {
+            "id": "estruturada-alinhada-diretamente-a-preservacao-ambiental-e-ao-modo-de-vi",
+            "titulo": "estruturada, alinhada diretamente à preservação ambiental e ao modo de vida tradicional.",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "estruturada, alinhada diretamente à preservação ambiental e ao modo de vida tradicional.\n109. Saneamento Básico e Segurança Hídrica nas Aldeias\nAção: Desenvolver e instalar sistemas adequados de captação, tratamento e distribuição de\nágua potável, associados a soluções ecológicas de esgotamento sanitário que respeitem as\ncaracterísticas geográficas de cada território indígena.\nResultado Esperado: Universalização de água potável, erradicação de doenças causadas por\nveiculação hídrica ou contaminação ambiental, promovendo a saúde preventiva.\n110. Soberania Alimentar e Fortalecimento da Agricultura Tradicional\nAção: Viabilizar a criação de bancos de sementes tradicionais e fornecer insumos e maquinários\nde baixo impacto para potencializar a agricultura familiar indígena de subsistência, respeitando os\nciclos da natureza local.\nResultado Esperado: Prevenção da desnutrição infantil nas aldeias e manutenção contínua do\npatrimônio genético das culturas tradicionais.\n111. Fomento Institucional e Adequação Jurídica de Organizações Indígenas\nAção: Prestar assessoria técnica e institucional contínua para a formalização e adequação das\nassociações indígenas ao Marco Regulatório das Organizações da Sociedade Civil (MROSC),\ncapacitando lideranças locais para elaboração de projetos e prestação de contas.\nResultado Esperado: Fortalecer a representatividade jurídica e a governança das comunidades,\ngarantindo a segurança institucional necessária para que as associações captem e executem\nrecursos diretos de fundos nacionais e internacionais de maneira independente e em total\nconformidade.\n\nEIXO 10: INDÚSTRIA\nFoco: Fomento a Economia, parcerias e Transformação.\n112. Proindústria Verde 4.0\nAção: Reformular incentivos, à luz da Reforma Tributária, criando Bônus Socioambiental para quem\nprocessa matéria-prima no Tocantins.\nResultado Esperado: Atração de indústrias comprometidas com valor local.\n113. Revitalização dos Distritos Industriais\nAção: Plano emergencial de infraestrutura, com realização de ouvidoria ativa, nos parques\nindustriais e comerciais do Tocantins.\nResultado Esperado: Parques prontos para receber e expandir atividades empresariais.\n114. Polo Têxtil do Oeste\nAção: Incentivar a implementação e expansão de industrias têxtis no Tocantins.\nResultado Esperado: Criação de uma nova cadeia da produtiva e geração de emprego, sobretudo,\nfeminino no Tocantins.\n115. Indústria de Curtumes Especiais\nAção: Fomentar indústria de curtumes de couro no Tocantins.\nResultado Esperado: Produção de produtos de alto valor agregado."
+          },
+          {
+            "id": "116-polo-moveleiro-de-madeira-plantada",
+            "titulo": "116. Polo Moveleiro de Madeira Plantada",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "116. Polo Moveleiro de Madeira Plantada\nAção: Atrair fábricas de móveis para o Tocantins usando madeira de reflorestamento local.\nResultado Esperado: Redução do preço final de produtos e geração de empregos.\n117. Indústria de Pet Food\nAção: Incentivar a criação e expansão fábricas de ração animal no Tocantins aproveitando\nsubprodutos de agroindustriais e a produção local, atentando aos padrões contemporâneos de\nproteção e promoção animal.\nResultado Esperado: Inserção em mercado com alto crescimento no cenário nacional e interacional.\n118. Agroindústria de Conservas\nAção: Instalar unidades de processamento de frutas nos polos do Tocantins.\nResultado Esperado: Redução das perdas pós-colheita, visando o aproveitamento das safras\nregionais e incremento da renda do pequeno produtor.\n119. Hub de Manutenção Industrial\nAção: Atrair oficinas de máquinas e equipamentos para o Tocantins, promovendo o setor de serviços\npara o Estado, por meio de melhoria nas infraestruturas e incentivos fiscais próprios.\nResultado Esperado: Qualificação de mão de obra especializada e eficiência de prevenção na\nmanutenção de máquinas e equipamentos.\n120. Indústria de Componentes Solares\nAção: Negociar a implementação de linhas de montagem de estruturas solares com fabricantes\nnacionais e internacionais.\nResultado Esperado: Tocantins como fabricante de tecnologia solar.\n121. Programa de Encadeamento Produtivo\nAção: Estabelecer que indústrias incentivadas comprem insumos de empresas locais.\nResultado Esperado: Crescimento das pequenas empresas locais.\n\nEIXO 11: MINERAÇÃO\nFoco: Formalização e Agregação de Valor.\n122. Programa “Cooperativismo Mineral 4.0”\nAção: Fomentar cooperativas regionais fortes para gestão ambiental e de títulos minerário.\nResultado Esperado: Formalização massiva e aumento da arrecadação.\n123. Pesquisa aerofísica com o SGB em todo o Tocantins\nAção: Realizar parceria com o Serviço Geológico do Brasil para pesquisa aerofísica em todo o\nTocantins em uma escola de 1/100 e em seguida de 1/25.\nResultado Esperado: Mineração sustentável e atração de empresas.\n125. Escola de Lapidação e Design\nAção: Criar Escolas de Lapidação em Cristalândia e Monte do Carmo, sobretudo, para mulheres, para\nque possam criar uma linha alterativa de renda.\nResultado Esperado: Multiplicar o valor do minério exportado."
+          },
+          {
+            "id": "126-po-de-rocha-remineralizadores",
+            "titulo": "126. Pó de Rocha (Remineralizadores)",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "126. Pó de Rocha (Remineralizadores)\nAção: Financiar, via linha de financiamento da CFEM britadores para transformar sobras de pedreiras\nem adubo natural.\nResultado Esperado: Novo produto para o minerador e insumo barato para o agro.\n127. Balcão de Comercialização Mineral\nAção: Criar Hub certificado pelo Estado para venda direta a compradores finais, mediante ações a\nMineratins e Secretaria de Industria e Comércio.\nResultado Esperado: Preço justo e fim da evasão fiscal.\n128. Geologia Social\nAção: Parceria com SGB para sondagens públicas em áreas de mineração no Tocantins. Resultado\nEsperado: Aumento da produtividade e redução de impacto ambiental.\n129. Licenciamento Ambiental Simplificado\nAção: Apoiar a instauração de via rápida para extração de areia/argila de pequeno porte no\nTocantins.\nResultado Esperado: Incentivo a indústria, geração de empregos e da construção civil no Tocantins.\n130. Mineração de Argila e Cerâmica no Tocantins\nAção: Incentivar polos cerâmicos no Tocantins.\nResultado Esperado: Autossuficiência em tijolos e telhas.\n131. Fundo Estadual de Mineração do Tocantins\nAção: Criar um fundo estadual para desenvolvimento mineral com recursos públicos oriundos da\nCFEM e da destinação do tesouro estadual, para pesquisa e produção de minerais críticos e terras\nraras.\nResultado Esperado: Desenvolvimento do setor minerário no Tocantins, gerando emprego e renda.\n132. Mulheres na Mineração\nAção: Criar escolas de lapidação de joias e semijóias como forma de gerar renda para mulheres\nResultado Esperado: Melhorar a renda e qualidade de vida das mulheres.\n\nEIXO 12: OPORTUNIDADES DE DESENVOLVIMENTO ECONÔMICO E SOCIAL DO\nTOCANTINS\nFoco: Logística e oportunidade.\n133. Hub de Hidrogênio Verde.\nAção: Estudo de viabilidade próximo à UHE no Tocantins. Resultado Esperado: Inserção na nova\nmatriz energética.\n134. Verticalização da indústria do Calcário Ação: Polos de verticalização de calcário.\nResultado Esperado: Venda de insumo de alto valor, gerando renda e oportunidades no Tocantins.\n135. PPPs de Saneamento\nAção: Leilão com arranjos produtivos próprios em blocos regionais pela Tocantins Parcerias.\nResultado Esperado: Universalização do serviço."
+          },
+          {
+            "id": "136-piscicultura-em-grandes-lagos",
+            "titulo": "136. Piscicultura em Grandes Lagos",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "136. Piscicultura em Grandes Lagos\nAção: Licenciamento simplificado para piscicultura em lagos no Tocantins. Resultado Esperado:\nMaior exportador de peixe de cultivo.\n137. Nova ZPE\nAção: Focar ZPE em carne, grãos e minérios para comércio interno, região do MATOPIBA e\nexportação.\nResultado Esperado: Desenvolvimento econômico e social do Tocantins.\n138. Turismo Pesca e Solte\nAção: Fiscalização da Cota Zero e promoção internacional. Resultado Esperado: Atração de turistas\nde alta renda.\n139. Crédito de Carbono\nAção: Cadastro na plataforma jurisdicional Tocantins Carbono, após ajuste prévio com as\ncomunidades envolvidas e o Setor Produtivo.\nResultado Esperado: Renda extra para o produtor que promove a conservação.\n140. Logística Multimodal\nAção: Porto Seco ao lado do pátio da Ferrovia.\nResultado Esperado: Redução do valor frete e desenvolvimento econômico e social do Tocantins.\n141. Fruticultura Irrigada\nAção: Vitrine para investidores nos Projetos Manuel Alves e São João. Resultado Esperado: Alta\nempregabilidade e produção por hectare.\n142. Atração de Fintechs\nAção: AgroFintech Day conectando o produtor local, Instituições de Ensino Superior e produtores.\nResultado Esperado: aumento do número de empregos e da qualidade da empregabilidade\n\nEIXO 13: PARCERIAS E TERCEIRO SETOR (Pacto de Cooperação)\nFoco: Desoneração da Administração Pública e ampliação do alcance social.\n143. Voucher Profissionalizante (Sistema S)\nAção: O Estado fomenta vagas no Sistema S para cursos técnicos, profissionalizantes, focados em\ntecnologia e certificação técnica.\nResultado Esperado: Qualificação de jovens sem necessidade de construir novas escolas técnicas.\n144. Contratos de Gestão compartilhada com OSs na Saúde\nAção: Construção de centros de atendimentos pelas Organizações Sociais de referência nacional e\ninternacional, com metas rígidas de satisfação do usuário.\nResultado Esperado: Fim da falta de insumos, atendimento por profissionais qualificados e redução\ndo custo por leito.\n145. Parceria com as entidades associativas para melhoria expansão habitacional\nAção: realização de parcerias com entidades associativas para realização e expansão de programas\nde moradias públicas."
+          },
+          {
+            "id": "resultado-esperado-realizacao-de-parcerias-com-entidades-sociais-para-ca",
+            "titulo": "Resultado Esperado: realização de parcerias com entidades sociais para captação de programas",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Resultado Esperado: realização de parcerias com entidades sociais para captação de programas\nsociais de financiamento de moradias populares.\n145. Marco Regulatório das Organizações da Sociedade Civil (MROSC) Estadual\nAção: Regulamentação simplificada da Lei 13.019 no Tocantins para facilitar repasses a ONGs que\ncuidam de crianças e idosos.\nResultado Esperado: Segurança jurídica para as entidades parceiras e transparência nos repasses.\n146. Selo Empresa Solidária (Renúncia Reversa)\nAção: Empresas que adotarem a reforma de uma praça ou escola recebem pontuação e\nsimplificação de processos na Jucetins.\nResultado Esperado: Manutenção do patrimônio público com investimento direto do setor privado.\n147. Banco de Projetos do Terceiro Setor\nAção: Criação de uma vitrine digital de projetos de ONGs certificados pelo Estado para que\nempresas usem o incentivo fiscal (Lei Rouanet/Esporte) localmente.\nResultado Esperado: Retenção do imposto que seria enviado ao Governo Federal para aplicação no\nTocantins.\n148. PPP de Conectividade Rural\nAção: Parceria com provedores locais para levar fibra óptica aos distritos mais distantes em troca de\nuso de torres e faixas de domínio das rodovias (TOs).\nResultado Esperado: Internet no interior do Tocantins.\n149. Incubadora de Cooperativas (Sistema OCB/TO)\nAção: Convênio para que o Sistema OCB gerencie a formalização de cooperativas de mineração e\nagricultura familiar.\nResultado Esperado: Gestão profissional e acesso a mercados globais para o pequeno produtor.\n150. Parceria com as Igrejas\nAção: Realizar projetos sociais e apoiar as ações das Igrejas no Tocantins.\nResultado Esperado: Realizar parceiras com as Igrejas para realização de projetos sociais\n151. Escritório de Parcerias Estratégicas (EPE)\nAção: Unidade técnica vinculada à Secretaria de Economia para modelar PPPs de pequeno e médio\nvulto para os municípios.\nResultado Esperado: Prefeituras pequenas conseguindo parcerias para lixo e iluminação pública.\n\nEIXO 14: PLENO EMPREGO\nFoco: Industrialização e prestação de serviços\n152. Meta Pleno Emprego no Tocantins\nAção: Monitoramento mensal com metas específicas para regionais do SINE.\nResultado Esperado: Estabilidade econômica das famílias.\n153. Industrialização da Proteína\nAção: Condicionar incentivos à manutenção de turnos extras no Tocantins.\nResultado Esperado: Postos industriais e sem trabalhos sem sazonalidade."
+          },
+          {
+            "id": "154-desoneracao-jovem",
+            "titulo": "154. Desoneração Jovem",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "154. Desoneração Jovem\nAção: Focar no setor de Comércio e Serviços do Tocantins.\nResultado Esperado: Inserção precoce do jovem no mercado.\n155. Polo Logístico de Araguaína\nAção: Doação de terrenos na BR-153 com infraestrutura para centros de distribuição. Resultado\nEsperado: Geração massiva de empregos no Tocantins.\n156. Oportunidade de emprego temporário para jovens em vagas de estágio e\nvagas de estudantes recém-formados\nAção: Oportunidade de emprego e experiência profissional para estudantes e recém-formados.\nResultado Esperado: Oportunidade de emprego e aprendizagem para os jovens tocantinenses\n157. Construção Civil Industrializada\nAção: Exigir pré-moldados em obras de escolas estaduais.\nResultado Esperado: Aumento da produtividade e qualificação.\n158. Turismo de Negócios\nAção: Versões regionais da Agrotins em outras regiões do Tocantins buscando desenvolver novas\ntecnologias no Tocantins.\nResultado Esperado: Incentivo a tecnologia no interior do Tocantins e ocupação hoteleira durante a\nsemana.\n159. Fertilizantes e Remineralizadores\nAção: Mapeamento geológico do Tocantins em parceria com o SGB para atrair investidores.\nResultado Esperado: autonomia do Tocantins na produção de insumos.\n160. Emprego Local em Obras realizadas com fundos BTS Ação: Cláusula em editais definindo mão\nde obra local.\nResultado Esperado: Investimento girando a economia local.\n161. Mutirões de Empregabilidade\nAção: Focar cidades com grandes obras em andamento. Resultado Esperado: Redução do tempo de\nrecolocação.\n\nEIXO 15: PRESTAÇÃO DE SERVIÇOS ESTATAIS\nFoco: Logística e Digitalização.\n162. Distrito de Serviços e Inovação\nAção: Incentivos fiscais, via Conselho de Desenvolvimento Social, para atrair TI e Call Centers para\náreas centrais do Tocantins.\nResultado Esperado: Retenção de talentos e ocupação de prédios ociosos.\n163. Digitaliza TO – App Único\nAção: Mutirões para digitalizar pequenos prestadores de serviço e cadastrá-los em marketplaces.\nResultado Esperado: Aumento de faturamento do empresariado e formalização da relação tributária."
+          },
+          {
+            "id": "164-escola-de-hospitalidade",
+            "titulo": "164. Escola de Hospitalidade",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "164. Escola de Hospitalidade\nAção: Centro de excelência com o Senac focado em Experiência do Cliente.\nResultado Esperado: Profissionalização do turismo estadual.\n165. Lei da Liberdade Econômica Estadual\nAção: Dispensar alvarás para atividades de baixo risco.\nResultado Esperado: Fim da espera para abrir pequenas empresas.\n166. Polo de Manutenção de Aeronaves/Máquinas\nAção: Incentivar oficinas especializadas próximas aos polos produtivos.\nResultado Esperado: Potencializar prestação de serviços de manutenção localmente.\n167. Serviços de Saúde Especializado Privados\nAção: Fomentar complexos médicos privados de alta tecnologia no Tocantins para cirurgias eletivas\ne estéticas.\nResultado Esperado: Serviços médicos especializados e empregos qualificados.\n168. Crédito Serviço Forte\nAção: Linha de crédito, via Fomento, para reforma e equipamentos de prestadores de serviço.\nResultado Esperado: Modernização e produtividade.\n169. Cooperativas de Trabalho\nAção: Incentivar cooperativas de profissionais liberais para reduzir custos.\nResultado Esperado: Competitividade para autônomos, desenvolvimento e oportunidades.\n170. Central de Compras Governamentais\nAção: Priorizar microempresas locais para serviços de manutenção e limpeza. Resultado Esperado:\nCusteio da máquina irrigando a economia local.\n\nEIXO 16: PROTEÇÃO E PROMOÇÃO DA MULHER\nFoco: Combate à violência e independência.\n171. Programa Aluguel Social Mulher\nAção: Auxílio financeiro temporário para vítimas de violência doméstica saírem de casa.\nResultado Esperado: Rompimento do ciclo da violência.\n172. Crédito Mulher\nAção: Microcrédito exclusivo para mulheres empreendedoras, quebradeiras, artesãs, com juro zero\nvia Agencia de Fomento.\nResultado Esperado: Emancipação econômica.\n173. Casas da Mulher Tocantinense Regionalizadas\nAção: Centros integrados (Delegacia/Apoio) no Tocantins.\nResultado Esperado: Atendimento humanizado no interior do Tocantins.\n174. Ronda Maria da Penha Rural\nAção: Patrulha 4x4 especializada para assentamentos e quilombos.\nResultado Esperado: Proteção da mulher no campo."
+          },
+          {
+            "id": "175-protocolo-nao-e-nao-tocantins",
+            "titulo": "175. Protocolo Não é Não Tocantins",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "175. Protocolo Não é Não Tocantins\nAção: Capacitação em bares, hotéis e Instituições de Ensino Superior, para agir em casos de assédio.\nResultado Esperado: Lazer seguro e turismo responsável.\n176. Programa Elas na Tech\nAção: Reservar vagas de cursos de tecnologia estaduais para mulheres e centros de criação de\nFintechs.\nResultado Esperado: Redução do gap de gênero em TI.\n177. Apoio a mulheres mães de filhos(as) PcD\nAção: Apoio financeiro, por meio de programa social, institucional e profissional a mães que cuidam\nde filhos(as) PcD, proteção especial a mulheres e meninas PcD.\nResultado Esperado: Proteção social e promoção de políticas de cuidados.\n178. Selo Empresa Amiga da Mulher\nAção: Prioridade em licitações para empresas com creches ou que contratem vítimas de violência.\nResultado Esperado: Engajamento do setor privado.\n179. Unidade Móvel de Saúde da Mulher\nAção: Carretas com mamografia rodando o Estado do Tocantins.\nResultado Esperado: Diagnóstico precoce salvando vidas.\n180. Apoio aos Órfãos do Feminicídio e Suicídio\nAção: Assistência financeira, mediante cartão social própria e psicológica para filhos de vítimas de\nfeminicídio.\nResultado Esperado: Proteção social integral.\n\nEIXO 17: PROTEÇÃO E PROMOÇÃO DA PESSOA IDOSA\nFoco: Envelhecimento ativo, saúde e moradia.\n181. Programa Condomínio da Melhor Idade\nAção: Construir vilas adaptadas para idosos em cidades do Tocantins.\nResultado Esperado: Moradia digna evitando institucionalização.\n182. Segurança Digital Idoso Conectado\nAção: Mutirões para ensinar uso seguro do smartphone e evitar golpes financeiros. Resultado\nEsperado: Proteção da idosos contra fraudes.\n183. Centro-Dia de Referência\nAção: Unidades de convivência diurna para idosos em polos regionais na busca pela qualidade de\nvida.\nResultado Esperado: Suporte à família economicamente ativa.\n184. Programa Sorriso\nAção: Odontomóvel focado em para a Terceira idade no interior.\nResultado Esperado: Resgate da autoestima e nutrição."
+          },
+          {
+            "id": "185-turismo-melhor-idade",
+            "titulo": "185. Turismo Melhor Idade",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "185. Turismo Melhor Idade\nAção: Pacotes incentivados para idosos na baixa temporada.\nResultado Esperado: Envelhecimento ativo e ocupação hoteleira.\n186. Guardiões da Memória\nAção: Bolsa para idosos ensinarem cultura local em escolas de tempo integral, por meio de parceria\ncom a Universidade dos Idosos.\nResultado Esperado: Valorização social do idoso.\n187. Combate a violência contra os idosos\nAção: Fortalecimento dos centros de referência, campanhas de proteção à pessoa idosa e ampliação\nda assistência social, e criação de canal prioritário na Delegacia Virtual para denúncias financeiras e\npatrimoniais.\nResultado Esperado: Garantia de segurança para pessoa idosa.\n188. Ampliação da atenção geriátrica\nAção: Campanhas de prevenção de doenças crônicas, capacitação de cuidadores com curso técnico\ngratuito para familiares de idosos acamados, com propósito de garantir o cuidado continuado.\nResultado Esperado: Qualidade do cuidado domiciliar.\n189. Academia da Longevidade\nAção: Academias ao ar livre com foco em equilíbrio para prevenção de quedas. Resultado Esperado:\nPrevenção de fraturas.\n190. Blitz do Respeito\nAção: Ação Educativa e Fiscalização de acessibilidade e prioridade em bancos e transporte.\nResultado Esperado: Dignidade no atendimento.\n\nEIXO 18: SAÚDE PÚBLICA\nFoco: Fim da ambulancioterapia.\n191. Alta e média complexidade Regionalizada\nAção: Credenciar hemodinâmica em Araguaína.\nResultado Esperado: Fim das viagens para a capital.\n192. Fila Zero (Corujão)\nAção: Contratar hospitais privados à noite para zerar eletivas.\nResultado Esperado: Eliminação do passivo.\n193. Telemedicina Especializada\nAção: Dermatologia e Cardiologia via teleconsulta nos postos.\nResultado Esperado: Diagnóstico rápido.\n194. Descentralizar média complexidade para os Municípios\nAção: Pactuar recursos para que os Municípios financiem ações de saúde de média complexidade.\nResultado Esperado: Tratamento perto de casa."
+          },
+          {
+            "id": "195-farmacia-cidada-digital",
+            "titulo": "195. Farmácia Cidadã Digital",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "195. Farmácia Cidadã Digital\nAção: App integrado com estoque das Farmácias Municipais e estaduais.\nResultado Esperado: Controle real de estoque e apoio para manutenção de estoques de\nmedicamentos necessários.\n196. UTI Aérea e Fluvial\nAção: Base em Palmas e lancha no Cantão.\nEsperado: Equidade no acesso.\n197. Atenção Primária Premiada\nAção: Prêmio Município Saudável em dinheiro sobre prevenção em saúde pública. Resultado\nEsperado: Foco na prevenção.\n198. Ampliação do atendimento em saúde mental\nAção: Fortalecimento da rede de atendimento psicológico e psiquiátrico, ampliando o acesso aos\nserviços especializados, com campanhas de prevenção ao suicídio.\nResultado Esperado: Redução das filas e maior acesso ao cuidado em saúde mental.\n199. Construção de 5 novos hospitais regionais com fundos BTS\nAção: Construir cinco novos hospitais, dois regionais e dois especializados implantando serviços de\nqualidade para os Tocantinenses, utilizando o modelo de fundos privados BTS.\nResultado Esperado: Melhorar a qualidade de vida do tocantinense e ampliar a estrutura da saúde\npública, com mais três hospitais regionais e dois centros especializados.\n200. Pacto pela qualidade da Saúde no Tocantins\nAção: Promover a integração das Secretárias de Saúde estadual e municipal em prol da qualidade\ndo atendimento da saúde pública e fortalecimento do SUS em todo o Tocantins.\nResultado Esperado: Atendimento humanizado, eficiente e o estabelecimento de parcerias que\nelevem a qualidade da saúde tocantinense.\n\nEIXO 19: SEGURANÇA JURÍDICA\nFoco: Prevenção e Agilidade.\n201. Conselho de Segurança Jurídica\nAção: Reuniões bimestrais lideradas pela Casa Civil, Secretária de Economia, PGE. CGE, entidades\nrepresentativas e empresariado.\nResultado Esperado: Confiança do investidor.\n\n202. Agência Reguladora Forte (ATR)\nAção: Fortalecimento para corpo técnico próprio e investimento em tecnologia. Resultado Esperado:\nTarifas justas.\n203. Licenciamento Ambiental Ágil e Seguro\nAção: Sistema digital autodeclaratório para baixo risco.\nResultado Esperado: Destravamento de investimentos."
+          },
+          {
+            "id": "204-matriz-de-risco-em-contratos",
+            "titulo": "204. Matriz de Risco em Contratos",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "204. Matriz de Risco em Contratos\nAção: Central de Licitações padronizando editais.\nResultado Esperado: Redução de aditivos.\n205. Regularização Fundiária Ação: Mutirão de títulos.\nResultado Esperado: Acesso ao crédito bancário com a mudança de posse para a propriedade.\n206. Gestão Pública Preventiva\nAção: Controladoria e PGE analisando editais acima de R$ 10 milhões.\nResultado Esperado: Políticas sem judicialização.\n207. Compliance Tributário\nAção: Sistema Malha Fiscal avisando erro antes da multa.\nResultado Esperado: Melhoria da relação Contribuinte-Fisco.\n208. Estabilidade Regulatória\nAção: Novo Código Tributário Digital do Tocantins com garantia de transição com segurança jurídica.\nResultado Esperado: Credibilidade de mercado.\n209. Utilização de Arbitragem\nAção: Cláusula de arbitragem em concessões.\nResultado Esperado: Solução célere de conflitos.\n210. Transparência Ativa\nAção: Portal de Obras georreferenciado em tempo real em todas as obras com recursos estaduais.\nResultado Esperado: Controle público e social efetivo.\n\nEIXO 20: SEGURANÇA PÚBLICA\nFoco: Fronteiras e Rural.\n201. Cinturão de Segurança\nAção: Priorizar pontes e balsas no Estado do Tocantins.\nResultado Esperado: Blindagem do Tocantins para Segurança Pública.\n202. Patrulha Rural Georreferenciada\nAção: Placa com QR Code na porteira de propriedade cadastradas.\nResultado Esperado: Resposta rápida no campo.\n203. Centro Forense do Tocantins\nAção: Sistema ABIS para rastreio de armas.\nResultado Esperado: Resolução de crimes graves.\n204. Proteção, capacitação e valorização das forças de segurança\nAção: Atuação do Estado para a proteção dos agentes de segurança pública, com valorização\nprofissional, salários compatíveis com as carreiras, realização de cursos de capacitação constante e\numa política de Estado de Segurança Pública de referência.\nResultado Esperado: Priorização da Segurança Pública, com estruturas, equipamento,"
+          },
+          {
+            "id": "principalmente-valorizacao-dos-agentes-de-seguranca",
+            "titulo": "principalmente valorização dos agentes de segurança.",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "principalmente valorização dos agentes de segurança.\n205. Botão do Pânico (Mulher)\nAção: App integrado ao GPS da viatura.\nResultado Esperado: Proteção efetiva à mulher, aumentando a implementação de sistemas e\nfiscalização constante.\n206. Habite Seguro TO\nAção: Terrenos doados para associações de agentes de segurança pública.\nResultado Esperado: Dignidade para o policial, agentes e a sua família.\n207. CICC Integrado\nAção: Sala de Situação no Palácio Araguaia.\nResultado Esperado: Fim das ilhas de comunicação.\n208. Presídios Industriais com uso de modelagem BTS\nAção: Construção de Presídios com recursos privados, modelo BTS, integrando atividades produtivas\npara gerar a ressocialização do apendo e renda para ele e a sua família.\nResultado Esperado: Ressocialização, integração de mercado.\n209. Bombeiros Ambientais\nAção: Base avançadas nos locais de maior incidência de incêndios.\nResultado Esperado: Proteção do bioma.\n210. Delegacia Virtual 4.0\nAção: com IA para triagem.\nResultado Esperado: Menos burocracia policial.\n\nEIXO 21: SERVIDORES PÚBLICOS\nFoco: Valorização Técnica e Saúde.\n211. PCCs Valorizado\nAção: Revisão das leis de todos os servidores públicos, seus planos de cargos e salários, buscando\na valorização em comparação com os índices nacionais, envolvendo todos os agentes públicos,\niniciando pelo Quadro Geral.\nResultado Esperado: Cultura de promoção, incentivo e proteção aos servidores.\n212. Unicet de Ponta\nAção: Convênio com Universidades e Institutos de Alta referência para os servidores.\nResultado Esperado: Servidores mais qualificados e atualizados para atender as suas tarefas e ao\npúblico.\n213. Saúde Mental\nAção: Plantão psicológico online, 24 horas, para Segurança e Saúde.\nResultado Esperado: Redução do absenteísmo.\n214. Teletrabalho Incentivado"
+          },
+          {
+            "id": "acao-meta-de-50-do-administrativo-em-home-office-com-auditoria-das-metas",
+            "titulo": "Ação: Meta de 50% do administrativo em home office com auditoria das metas de trabalho.",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Meta de 50% do administrativo em home office com auditoria das metas de trabalho.\nResultado Esperado: Economia de custeio e aumento da produtividade.\n215. Prêmio Estadual de Eficiência e Inovação na Administração Pública\nAção: Prêmio Inovação e Eficiência na Administração Pública com premiação em dinheiro e bônus.\nResultado Esperado: Incentivo para economia.\n216. Plano Servir Regionalizado\nAção: Credenciamento ativo de unidades de saúde em todas as regiões do Tocantins e centros\nespecializados\nResultado Esperado: Atendimento digno no interior.\n217. Concursos Previsíveis, com calendário antecipado\nAção: Estudos Técnicos estabelecendo calendários de concursos públicos e fluxos de contratos\ntemporários.\nResultado Esperado: Profissionalização e valorização contínua.\n218. Licença Capacitação\nAção: Prioridade de liberação para servidores que se proponham a escrever para trabalhos\nacadêmicos que estabeleçam melhorias na Administração e Economia do Tocantins.\nResultado Esperado: Solução de problemas reais.\n219. Inclusão de Servidores PcD\nAção: Mapeamento de acessibilidade em todos os órgãos da Administração Pública. Resultado\nEsperado: Dignidade, cultura de cuidado e motivação no trabalho.\n220. Gestão Cidadã\nAção: Canal de denúncia anônima para assédio moral.\nResultado Esperado: Retenção de talentos.\n\nEIXO 22: TECNOLOGIA - ESTADO DIGITAL\nFoco: Conectividade onde o Setor produtivo precisa.\n221. Parque Tecnológico AgroTech\nAção: Instalação física dentro do parque da Agrotins.\nResultado Esperado: Tecnologia local aumentando produtividade.\n222. Governo Sem Papel\nAção: Cronograma de recolhimento de impressoras nas secretarias, com (exceção de saúde e\neducação desde que justificado em suas atividades finalísticas).\nResultado Esperado: Economia e agilidade.\n223. Conectividade Rural (5G)\nAção: Priorizar eixos de escoamento.\nResultado Esperado: Agricultura de precisão habilitada.\n224. Identidade Digital Única"
+          },
+          {
+            "id": "acao-integracao-com-base-do-igeprev-e-detran-to",
+            "titulo": "Ação: Integração com base do Igeprev e Detran-TO.",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Integração com base do Igeprev e Detran-TO.\nResultado Esperado: Fim de fraudes em benefícios.\n225. Videomonitoramento com IA\nAção: Pórticos com LPR nas divisas de Estreito (MA) e Talismã (GO), câmeras e equipamento de\nvideomonitoramento.\nResultado Esperado: Inibição criminal e recuperação de veículos.\n226. Telemedicina Rural\nAção: Projeto piloto nas aldeias da Ilha do Bananal.\nResultado Esperado: Acesso democrático a especialistas.\n227. Educação Criadora (Maker)\nAção: Início pelas Escolas de Tempo Integral de Palmas e Araguaína.\nResultado Esperado: Preparação para Indústria 4.0.\n228. Big Data Fiscal\nAção: Utilizar supercomputadores existentes e software da Sefaz Virtual.\nEsperado: Combate à sonegação digital com a supervisão humana.\n229. Sandbox Regulatório\nAção: Aplicação e regulamentação da Lei de Inovação e Startups no Tocantins.\nResultado Esperado: Atualização rápida.\n230. Cibersegurança (SOC)\nAção: Parceria com a UFT para formar analistas.\nResultado Esperado: Proteção de dados do cidadão.\nEIXO 23: TECNOLOGIA APLICADA\nFoco: Solução tecnológica em outros problemas reais do Tocantins.\n231. Agricultura 5.0\nAção: Antenas em Pedro Afonso (soja) e Lagoa da Confusão (arroz).\nResultado Esperado: Viabilização de máquinas autônomas.\n232. Realização de hackathon na área de tecnologia em prol da Administração Pública com\npremiação em dinheiro\nAção: Realizar eventos regionais e estaduais com hackathon com temas ligados a Administração\nPública com premiação em dinheiro\nResultado Esperado: Motivar a formação tecnológica, resolver problemas complexos e também\ntestar sandboxes.\n233. Blockchain Fundiário\nAção: Projeto piloto no Intertins.\nResultado Esperado: Segurança jurídica absoluta.\n234. Águas Inteligentes\nAção: Monitoramento da bacia do Rio Araguaia, Rio Formoso e Rio Tocantins por meio de novas"
+          },
+          {
+            "id": "tecnologias",
+            "titulo": "tecnologias.",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "tecnologias.\nResultado Esperado: Prevenção de conflitos hídricos.\n235. Infraestrutura Digital\nAção: Modelagem da nova rede digital do Estado do Tocantins. Resultado Esperado: estrutura digital\ne funcional para todo o Tocantins.\nDimensão: ODS 9\n236. Bioacústica Ambiental\nAção: Sensores avançados nos parques estaduais.\nEsperado: Combate ao desmatamento ilegal.\n237. Turismo Imersivo (VR)\nAção: Óculos VR nos estandes do Tocantins em todas as atividades turísticas nacionais e\ninternacionais.\nResultado Esperado: Atração de turistas estrangeiros.\n238. EdTechGamificada\nAção: Criar jogos Desbravadores do Tocantins na componente curricular de História. Resultado\nEsperado: Fortalecimento da Identidade regional.\n239. Telemonitoramento de Pacientes Crônicos\nAção: Idosos de Palmas (piloto).\nResultado Esperado: Prevenção de internações.\n240. Centralização de Dados (IA)\nAção: Painel de BI no gabinete do Governador.\nResultado Esperado: Decisão baseada em evidência.\n\nEIXO 24: TRABALHO\nFoco: Juventude e vocação regional.\n241. Programa Primeiro Passo Tech\nAção: Ofertar bolsas de qualificação utilizando laboratórios da Instituições de Ensino Público e\nPrivadas do Tocantins.\nResultado Esperado: Redução do desemprego juvenil.\n242. Qualificação para Energia Solar\nAção: Centros de treinamento locais polo do Tocantins.\nResultado Esperado: Massa salarial ficando com tocantinenses.\n243. Certificação de Competências Rurais\nAção: Ação continua da Ruraltins com os produtores e mutirões do Ruraltins nas feiras regionais\npara certificar in loco.\nResultado Esperado: Aumento da renda média no campo.\n244. Inclusão Produtiva Feminina"
+          },
+          {
+            "id": "acao-credito-via-fomento-orientado-para-quebradeiras-de-coco-e-artesas",
+            "titulo": "Ação: Crédito via Fomento orientado para Quebradeiras de Coco e artesãs.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Ação: Crédito via Fomento orientado para Quebradeiras de Coco e artesãs.\nResultado Esperado: Autonomia financeira.\n245. Escola do Trabalhador 4.0\nAção: Carretas do Sistema S em cidades turísticas antes da temporada.\nResultado Esperado: Melhoria no atendimento turístico.\n246. Redução da Informalidade (MEI)\nAção: Automatizar isenção de taxas estaduais na Jucetins.\nResultado Esperado: Formalização massiva de MEIs.\n247. Saúde e Segurança Rural\nAção: Campanhas itinerantes no MATOPIBA e Ilha do Bananal.\nResultado Esperado: Redução de custos do SUS.\n248. Teletrabalho Regulamentado\nAção: Criar selo Tocantins Digital com descontos na hotelaria.\nResultado Esperado: Aumento do consumo interno.\n249. Bilinguismo para o Turismo\nAção: Curso focado em vocabulário de ecoturismo e pesca.\nResultado Esperado: Profissionalização do receptivo.\n250. Observatório do Pleno Emprego\nAção: SINE Inteligente filtrando dados do CAGED por microrregião.\nResultado Esperado: Cursos ofertados onde há demanda real.\n\nEIXO 25: ESPORTE E LAZER\nFoco: Ocupação social e saúde coletiva.\n251. Escolinhas de Iniciação Esportiva Talentos do Tocantins\nAção: Convênio com municípios para contratação de profissionais de Educação Física para\nescolinhas de futebol, vôlei e basquete no contraturno escolar.\nResultado Esperado: Redução da vulnerabilidade social e identificação de atletas de alto\nrendimento.\n252. Complexos de Esporte de Areia Verão o Ano Todo\nAção: Instalação de quadras de futevôlei e beach tennis com iluminação de LED em bairros\nperiféricos.\nResultado Esperado: Democratização de esportes em ascensão e ocupação noturna segura.\n253. Programa Estádio Domingos Santos revitalizado e ampliado com centro gastronômico\nAção: Retomar o Estado Domingo Santos, revitaliza-lo com recursos do BNDS, para realização de\njogos locais, nacionais e internacionais e agregar um centro gastronômico para gerar emprego e\nrenda.\nResultado Esperado: Incentivar o esporte e o turismo esportivo no Tocantins"
+          },
+          {
+            "id": "254-jogos-estudantis-do-tocantins-jets-revitalizados",
+            "titulo": "254. Jogos Estudantis do Tocantins (JETs) Revitalizados",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "254. Jogos Estudantis do Tocantins (JETs) Revitalizados\nAção: Regionalização das etapas eliminatórias com custeio total de transporte e alimentação.\nResultado Esperado: Integração regional e fomento ao espírito de equipe.\n255. Paradesporto de Inclusão\nAção: Criação de núcleos de treinamento para atletas com deficiência (PCD) em Palmas, Araguaína e\nGurupi.\nResultado Esperado: Medalhas em competições nacionais e resgate da autoestima.\n256. Recuperação de Campos de Várzea e Praças Esportivas\nAção: Reforma de gramados, iluminação e vestiários de campos comunitários no interior.\nResultado Esperado: Fortalecimento do lazer comunitário e economia local.\n257. Bolsa Atleta Estadual Rumo ao Pódio\nAção: Auxílio financeiro mensal para atletas que lideram rankings nacionais. Resultado Esperado:\nEvitar a migração de talentos para outros estados.\n258. Circuito Tocantinense de Esportes Radicais\nAção: Estruturar provas de Mountain Bike, Trail Run e Canoagem no Tocantins. Resultado Esperado:\nUnir esporte ao turismo de natureza.\n259. Vilas Olímpicas de Pequeno Porte\nAção: Construção de centros poliesportivos simplificados em municípios.\nResultado Esperado: Presença do Estado através do esporte em áreas críticas.\n260. Festival de Jogos Indígenas do Tocantins\nAção: Apoio institucional e logístico para a realização anual de competições entre as etnias Krahô,\nXerente, Karajá, e as demais.\nResultado Esperado: Preservação da cultura ancestral e integração étnica.\n\nEIXO 26: DIVERSIDADE\nFoco: Inclusão, cidadania, redução das desigualdades e garantia de direitos para grupos\nhistoricamente vulnerabilizados.\n261. Combate à violência\nAção: Fortalecimento das delegacias especializadas, capacitação das forças de segurança, melhoria\nna produção de estatísticas oficiais e ampliação dos mecanismos de proteção e acolhimento às\nvítimas.\nResultado Esperado: Redução dos casos de violência e discriminação, ampliação da segurança e\nda proteção às vítimas, melhoria da resposta do poder público e fortalecimento da prevenção e do\nenfrentamento aos crimes motivados por preconceito.\n262. Saúde integral\nAção: Ampliação do acesso aos serviços de saúde integral para a população LGBTQIA+, observadas\nas diretrizes do SUS, fortalecimento do atendimento psicológico especializado, prevenção e\ndiagnóstico de ISTs e desenvolvimento de ações específicas de cuidado e acompanhamento da\npopulação trans."
+          },
+          {
+            "id": "resultado-esperado-ampliacao-do-acesso-a-saude-reducao-das-barreiras-e-d",
+            "titulo": "Resultado Esperado: Ampliação do acesso à saúde, redução das barreiras e da discriminação",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Resultado Esperado: Ampliação do acesso à saúde, redução das barreiras e da discriminação\nnos serviços, fortalecimento da prevenção e promoção da saúde e garantia de atendimento\nhumanizado, qualificado e adequado às necessidades da população LGBTQIAPN+.\n263. Educação, respeito e permanência escolar\nAção: Desenvolvimento de ações de prevenção e combate ao bullying, à violência e à discriminação\nno ambiente escolar, capacitação dos profissionais da educação, respeito ao nome social conforme\na legislação vigente e adoção de estratégias para prevenção e redução da evasão escolar.\nResultado Esperado: Construção de ambientes escolares mais seguros e acolhedores, redução\ndos casos de bullying e discriminação, fortalecimento do respeito e da convivência e aumento da\npermanência dos estudantes na escola.\n264. Trabalho, renda e oportunidades\nAção: Criação e fortalecimento de programas de empregabilidade, qualificação profissional,\nempreendedorismo e geração de renda voltados à população LGBTQIA+, com atenção especial às\npessoas trans, além do incentivo à inclusão no mercado de trabalho e da articulação com o setor\nprodutivo para ampliação das oportunidades profissionais.\nResultado Esperado: Ampliação do acesso ao emprego e à renda, aumento da qualificação\nprofissional, redução das barreiras de entrada no mercado de trabalho e fortalecimento da\nautonomia econômica e social.\n265. Fortalecimento e integração das políticas públicas\nAção: Estruturação e integração das políticas públicas destinadas à promoção e proteção dos\ndireitos da população LGBTQIA+, articulando diferentes áreas do Governo do Estado e os municípios,\nfortalecendo serviços e centros de referência e cidadania, aprimorando os mecanismos de proteção\ne estabelecendo instrumentos de acompanhamento e avaliação das ações desenvolvidas.\nResultado Esperado: Maior integração e efetividade das políticas públicas, ampliação da rede de\natendimento e proteção, fortalecimento da atuação conjunta entre Estado e municípios e melhoria\nda capacidade do poder público de prevenir violações de direitos e atender a população LGBTQIA+.\n\nEIXO 27: DEFESA E BEM-ESTAR ANIMAL\nFoco: Promover o bem-estar e a proteção animal, com ações de saúde, controle populacional,\ncombate aos maus-tratos e preservação da fauna.\n266. Controle populacional\nAção: Ampliação da castração gratuita, identificação por microchip e campanhas de guarda\nresponsável.\nResultado Esperado: Redução do abandono e controle da população de animais em situação de rua.\n267. Combate aos maus-tratos\nAção: Fortalecimento da fiscalização, das denúncias e da investigação de crimes contra animais,\naplicação efetiva das leis.\nResultado Esperado: Redução dos maus-tratos e maior proteção aos animais.\n268. Atendimento veterinário\nAção: Ampliação do acesso a atendimento veterinário, castrações, urgências e medicamentos, em\nparceria com municípios e instituições."
+          },
+          {
+            "id": "resultado-esperado-mais-acesso-aos-cuidados-veterinarios-e-fortaleciment",
+            "titulo": "Resultado Esperado: Mais acesso aos cuidados veterinários e fortalecimento da saúde e do bemestar animal.",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Resultado Esperado: Mais acesso aos cuidados veterinários e fortalecimento da saúde e do bemestar animal.\n269. Animais comunitários e protetores\nAção: Apoio à alimentação, abrigo e suas regulamentações, vacinação e castração de animais\ncomunitários, com fortalecimento dos protetores independentes.\nResultado Esperado: Redução do abandono e fortalecimento da rede de proteção animal.\n270. Proteção da fauna silvestre\nAção: Reforço ao combate ao tráfico de animais, resgate e reabilitação da fauna e preservação dos\nhabitats.\nResultado Esperado: Maior proteção da fauna silvestre e da biodiversidade do Tocantins.\n\nEIXO 28: DESENVOLVIMENTO DAS RODOVIAS ESTADUAIS\n271. Expansão Rodoviária via Fundo de Desenvolvimento Regional (FDR)\nAção: Aplicação estratégica dos recursos provenientes do FDR para a pavimentação e duplicação\nde eixos rodoviários prioritários que conectam as regiões produtoras aos corredores logísticos\nnacionais (como a Ferrovia Norte-Sul).\nResultado Esperado: Aumento substancial da malha viária pavimentada, reduzindo o custo-Brasil no\nEstado e ampliando a atração de investimentos privados.\n272. Captação Estratégica de Financiamento Nacional e Internacional\nAção: Estruturação de projetos técnicos executivos e modelagem jurídica para buscar recursos\njunto a bancos de fomento nacionais (BNDES) e agências multilaterais (BIRD, BID) focados em\nmobilidade.\nResultado Esperado: Diversificação das fontes de custeio para a manutenção e expansão contínua\ndas rodovias, retirando a pressão exclusiva sobre o Tesouro Estadual.\n273. Matriz de Efetividade Viária (Controle de Gastos)\nAção: Aplicação de uma matriz de controle de gastos digital para auditar, monitorar e garantir a\ntransparência na execução dos contratos de obras de pavimentação, conservação e reparo.\nResultado Esperado: Maximização do retorno social de cada real investido, redução de aditivos\ncontratuais desnecessários e fim das paralisações de obras rodoviárias.\n274. Vinculação Compensatória para Infraestrutura (CFEM)\nAção: Destinação prioritária das receitas provenientes dos royalties da mineração (CFEM) para a\nrecuperação e asfaltamento de rodovias estaduais e acessos nos municípios produtores (polos de\ncalcário, ouro e gemas).\nResultado Esperado: Autonomia logística e melhoria imediata no escoamento de insumos e\nminérios, compensando o desgaste da malha viária causado pelo trânsito pesado.\n275. Programa de Concessões e Parcerias (PPPs)\nAção: Modelagem jurídica transparente para a concessão de trechos rodoviários de alto tráfego ao\nsetor privado, prevendo a duplicação, serviços de socorro e manutenção constante sob rigorosa\nregulação.\nResultado Esperado: Elevação do nível de serviço viário com segurança jurídica, atraindo capital\nprivado e garantindo rodovias seguras sem onerar o orçamento público."
+          },
+          {
+            "id": "276-rodovias-verdes-e-adaptacao-climatica-esg",
+            "titulo": "276. Rodovias Verdes e Adaptação Climática (ESG)",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "276. Rodovias Verdes e Adaptação Climática (ESG)\nAção: Implementação de corredores ecológicos, passagens de fauna e uso de novas tecnologias de\nengenharia civil para drenagem profunda, adequando a rede viária às intensas chuvas regionais.\nResultado Esperado: Prevenção contra o isolamento de municípios por rompimento de pistas no\nperíodo chuvoso e redução drástica do atropelamento de animais silvestres no Cerrado e Amazônia.\n277. Pavimentação para o Turismo e Integração Regional\nAção: Asfaltamento de estradas vicinais e rodovias de acesso aos grandes polos turísticos do\nTocantins (como o Jalapão, Cantão e Serras Gerais), integrando essas vias à malha principal.\nResultado Esperado: Fomento à economia do turismo, geração de emprego local e garantia de\nacesso rápido e seguro aos visitantes o ano inteiro.\n278. Transformação Digital e Rodovias Inteligentes\nAção: Implantação de sistemas de fiscalização e pesagem de caminhões em movimento (WIM Weigh in Motion) e estudo para adoção de pedágio sem cancela (Free Flow) nos trechos concedidos.\nResultado Esperado: Prevenção da deterioração prematura do asfalto pelo sobrepeso de cargas e\nredução do tempo de viagem e formação de filas para os motoristas.\n279. Programa “Via Segura” (Prevenção de Acidentes)\nAção: Readequação geométrica contínua de trechos críticos (curvas perigosas), instalação de\nsinalização luminosa em entroncamentos e campanhas estaduais de educação no trânsito.\nResultado Esperado: Diminuição significativa dos índices de acidentes com lesões e vítimas fatais\nnas estradas do Tocantins, desafogando o sistema de saúde estadual.\n280. Integração e Manutenção Preventiva Continuada\nAção: Criação de um fundo ou consórcio logístico estadual, intermunicipal e/ou com entidades\nrepresentativas focado em microrrevestimento asfáltico e tapa-buracos preventivos antes do início\nda estação chuvosa.\nResultado Esperado: Aumento da vida útil do pavimento já existente, reduzindo os custos\nexponenciais de reconstrução de vias degradadas pela falta de manutenção."
+          },
+          {
+            "id": "pra-cima",
+            "titulo": "PRA CIMA",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "ocr",
+            "conteudo": "PRA CIMA\nTOCANTNS\nVicentinhoJr. Amélio\nGOVERNADOR\nVICE-GOVERNADOR\nPLANO DE GOVERNO - 2027/2030"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "a6a6485050fb42dc37680e0230485f1798a22f684e47e63fe51909451c1d3927"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d3048d3fb77684e56a5b6321ef5a31953d10a1334c79d117d5c22c640c9a590b"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "8833cb53fadec965ec341b9067a6d9c883045bc36cb4dd88d16e2784c517a662"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "36f072bda69e7ab5254b677afb25b05cb10cef154c01b747c8d8a74afcf3d6c9"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "4a72ce12738dee081001cc99ca77b40721236683888b8614e9e62fe3564de845"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ccd0d7506b17c30f4c680fa57e91b1105fe6aebfb4c4967add5bab383147972e"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "6e042e43f8e7255134dbcc03e1e684201e06006d1a7eb66602f9acbc1f184451"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "19b87a8d22c5f01f37a3539583b10f940816575b77d79850e8313ddbb7d11d2a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e4e7cb954b2cdf67c2db89ec6626b1cd6491607b9e4c147e36b110dac55c8f61"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "6a1fa94888854c976b4cae45562055bb66bbd966c3ff2bf896b94b63814e9da7"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "0436430abeac7b5b6e12be4df5e1fda268d03b29c7e16626502930f9ca2cb647"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "0037b516719896ff27d0216ed42fc7cfc44aa0a5d6ce583a2b07302e3f86d83c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "b964a0fafe66576af42d727715929d2874aa50758f56d5cd53e3b9215114a4d1"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "0a5ce6b59a57df45d349e853423e5eacf939358b8cfbaed40ee198a4646256af"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "b1a36bd7c97cd22f1ddb7e30c2d3ada5baf92a60ef450d249baa3cb6053fd67b"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e8ada4149a3c7842dc89a9a8b9e2a20a3aa1269e38cacccba1b19449f7337e2a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "566fffc26be450b46079b8409953987cdd1d0618b5a51a56e9317f89de695ce8"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "b15d3ee467d039fabe386475c865a0a316bec6336bfbfafd64af7ccff5c18b1c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "da025a43c557378eff552b5154595b524ce72bc0df55c1151a639c3b096873b5"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "ebaabb0ba8d05052e180af8cf76538fc450ee7b1adc431eadb6d397d1fec7c36"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "36e5911c4745229846c943c9ca9be8d268559a1df13710a1a2a85d15315e2eb3"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "2a1b422119a19e0ec92f0582adf2944c3071aa0029304156fce1cf4dfe17edab"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "8c3503f0c5e42f25a090731d490b262238753c5e8157c04ad14e9da872007523"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "c249fd4a99a9346c0c4a382e5cbe02600d8a9bb5a54d3d9ce11da6fa337c7702"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "3ef584f0628dff6e00b6160ef9f573fb5f685262a81c7909ea543a1a3f33384c"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "f3b7d9922a3969752166b1eab5d7cc688f76074afb9878850984c240c7768524"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "61dff19804fb9cbf87d89034dce9be513b03b6b0f822e9eafa05c1f4a92f51b9"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "57d4143b739a9cf8c0782534248d8d2f1761d02350fca7a22d537e12ba15ac8c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "9d06945c6f80b377e19ef06ec1c72cf3623ac3e1d01797fe347fa8365682f221"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "90111b3c95cdf82433f1b7da85a635527325da71bf846c5d1aa1bab6c465b3b0"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "3bc2de3fe7ab4a06875431cf11560db7b20f4ba74798dae9c1fe7498a1beba02"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "6ecdd763eaf5e8cba2bcaf851c8ccfacbde1135cddeb84ac97e2f2882577adfb"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "71f85c0637fa7ae99da687f88fe82ff881b139051b552e69f2f6e96eeb0789e4"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "3ca8200d5eea10792c2ff40fd9ae9afc4608bd229af5bf0266481c9ea57ff7a3"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "ef58ff44d778c179073dc9a86f1daf6bfc0de7fc33481a9e9ca995cd87ce4d5d"
+          },
+          {
+            "pagina": 36,
+            "origem": "ocr",
+            "textSha256": "64f8e0771181806906e3135541972511ce5b83f900ed87be3cae4f1eb09166d6"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê construir 50 novas escolas em tempo integral, com centros de tecnologia digital, utilizando o modelo de Fundos BTS. Na educação rural, propõe instalar antenas via satélite de baixar orbita nas escolas rurais sem fibra, segundo o documento. Na saúde regional, planeja credenciar hemodinâmica em Araguaína, com o resultado esperado de encerrar viagens para a capital. Para a proteção da mulher, prevê auxílio financeiro temporário para vítimas de violência doméstica saírem de casa, associado ao Programa Aluguel Social Mulher. Na política ambiental, propõe compensação por serviços ambientais a produtores que recuperarem nascentes nas bacias críticas, por meio do Programa Produtor de Água. Na transparência administrativa, planeja um Portal de Obras georreferenciado em tempo real, abrangendo todas as obras com recursos estaduais.",
+    "frases": [
+      {
+        "texto": "O programa prevê construir 50 novas escolas em tempo integral, com centros de tecnologia digital, utilizando o modelo de Fundos BTS.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 11,
+            "trecho": "Construir 50 novas escolas em tempo integral, com centros de tecnologia digital, utilizando o modelo de Fundos BTS."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação rural, propõe instalar antenas via satélite de baixar orbita nas escolas rurais sem fibra, segundo o documento.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 11,
+            "trecho": "Instalar antenas via satélite de baixar orbita nas escolas rurais sem fibra."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde regional, planeja credenciar hemodinâmica em Araguaína, com o resultado esperado de encerrar viagens para a capital.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 24,
+            "trecho": "Credenciar hemodinâmica em Araguaína.\nResultado Esperado: Fim das viagens para a capital."
+          }
+        ]
+      },
+      {
+        "texto": "Para a proteção da mulher, prevê auxílio financeiro temporário para vítimas de violência doméstica saírem de casa, associado ao Programa Aluguel Social Mulher.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 22,
+            "trecho": "171. Programa Aluguel Social Mulher\nAção: Auxílio financeiro temporário para vítimas de violência doméstica saírem de casa."
+          }
+        ]
+      },
+      {
+        "texto": "Na política ambiental, propõe compensação por serviços ambientais a produtores que recuperarem nascentes nas bacias críticas, por meio do Programa Produtor de Água.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 9,
+            "trecho": "061. Programa Produtor de Água\nAção: Compensação por Serviços Ambientais (PSA) a produtores que recuperarem nascentes nas bacias críticas."
+          }
+        ]
+      },
+      {
+        "texto": "Na transparência administrativa, planeja um Portal de Obras georreferenciado em tempo real, abrangendo todas as obras com recursos estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 26,
+            "trecho": "Portal de Obras georreferenciado em tempo real em todas as obras com recursos estaduais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Construção de escolas em tempo integral com centros de tecnologia digital.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 11,
+            "trecho": "Construir 50 novas escolas em tempo integral, com centros de tecnologia digital, utilizando o modelo de Fundos BTS."
+          }
+        ]
+      },
+      {
+        "id": "conectividade-rural",
+        "titulo": "Conectividade rural",
+        "descricao": "Instalação de antenas via satélite em escolas rurais sem fibra.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 11,
+            "trecho": "Instalar antenas via satélite de baixar orbita nas escolas rurais sem fibra."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Credenciamento de hemodinâmica em Araguaína.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 24,
+            "trecho": "Credenciar hemodinâmica em Araguaína."
+          }
+        ]
+      },
+      {
+        "id": "protecao-da-mulher",
+        "titulo": "Proteção da mulher",
+        "descricao": "Auxílio temporário para vítimas de violência doméstica.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 22,
+            "trecho": "Auxílio financeiro temporário para vítimas de violência doméstica saírem de casa."
+          }
+        ]
+      },
+      {
+        "id": "produtor-de-agua",
+        "titulo": "Produtor de Água",
+        "descricao": "Compensação ambiental para recuperação de nascentes.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 9,
+            "trecho": "Compensação por Serviços Ambientais (PSA) a produtores que recuperarem nascentes nas bacias críticas."
+          }
+        ]
+      },
+      {
+        "id": "transparencia-de-obras",
+        "titulo": "Transparência de obras",
+        "descricao": "Portal georreferenciado para acompanhamento de obras estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002544544:01",
+            "pagina": 26,
+            "trecho": "Portal de Obras georreferenciado em tempo real em todas as obras com recursos estaduais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:57:42.251Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:59:48.150Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 50 está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:1:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta coerente de conectividade rural."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:2:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Ação e resultado esperado batem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:3:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente o programa e ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "O número '171' é apenas identificador de item, não é dado numérico da política; não há quantidades a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:4:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente o programa e ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há dados numéricos a verificar na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta ambiental coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:5:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta coerente de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:frase:6:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Resumo não cita números; nada a contradizer."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:educacao-integral:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas do resumo estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:conectividade-rural:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas do resumo cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:saude-regional:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do resumo coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:protecao-da-mulher:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do resumo coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:produtor-de-agua:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do resumo coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel da ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:mistura",
+        "verdict": "yes",
+        "reason": "Área temática única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002544544:tema:transparencia-de-obras:documentos:TO:270002544544:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única do resumo coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002544544",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002544544:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 39478,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2564,
+          "reasoning_output_tokens": 1428
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23476,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20389,
+          "output_tokens_details": {
+            "thinking_tokens": 569
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23476,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20389,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23476,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23476
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3161294
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:05:40Z",
+    "sourceSha256": "60cfd10f7f71f2bffb914b85924f0d7471322ea91fa2ba7e033cc2a73d08f255",
+    "extractedTextSha256": "73292769d9095c0e7346bfe1830dea9dcb3517ec974939b8fa8c3f2b17b8dc87",
+    "documentCount": 1,
+    "documentSetSha256": "c9e5ba1479f9fc16f112b141a2fc3987d039fd5955e68967fe943eb7e2bb687b",
+    "contentSha256": "d6157db6ed78b5b4dc06cca679a8ed54b1b7c6575f461ecea878c82308b4031a"
+  }
+}
