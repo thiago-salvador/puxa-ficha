@@ -3,6 +3,7 @@ import { sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 import { parse } from "csv-parse/sync"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"]
 
@@ -48,9 +49,7 @@ interface CapagRow {
 }
 
 function normalizeKey(key: string): string {
-  return key
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(key)
     .trim()
     .toLowerCase()
     .replace(/\s+/g, "_")
