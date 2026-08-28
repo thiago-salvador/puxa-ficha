@@ -1,0 +1,1436 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SP",
+    "sqCandidato": "250002536915",
+    "slug": "vera-lucia",
+    "nomeUrna": "VERA LÚCIA",
+    "partido": "PSTU",
+    "arquivoNome": "2026SP250002536915_01.pdf",
+    "arquivoNoPacote": "SP/2026SP250002536915_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SP:250002536915:01",
+      "fonte": {
+        "arquivoNome": "2026SP250002536915_01.pdf",
+        "arquivoNoPacote": "SP/2026SP250002536915_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "25d1d5ee8b4bcc79806c1a04b3973b3bf27b23c124a5ecc880affc826009f924",
+        "extractedTextSha256": "73f4779451f4ee56fad29ef565ce361535b6ecbd1e6fd9107d9dedecd85e8ebd",
+        "paginas": 54,
+        "secoes": [
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n1"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-2",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nVera Lúcia Pereira da Silva Salgado,\nVera, é natural de Inajá, cidade localizada no Sertão de Pernambucano. Tem\n54 anos, é casada, tem duas filhas e uma neta. É formada em Ciência Sociais pela\nUniversidade Federal de Sergipe (UFS). Quando menina, seus pais mudaram para\nPaulo Afonso, no Sertão da Bahia, em busca de melhores condições de vida e de\ngarantia de educação aos filhos. Depois, mudaram para Aracaju, capital de Sergipe, cidade onde Vera cresceu, estudou, trabalhou e iniciou sua militância política.\nDesde muito nova Vera precisou trabalhar. Foi datilografa faxineira e garçonete.\nAos 19 anos de idade, passou a trabalhar em uma indústria de calçados, período\nem que virou ativista do movimento sindical. Após uma forte greve na categoria,\nda qual se destacou como dirigente, ao lado de outras mulheres operárias, entrou para a diretoria do sindicato e depois\npara a direção da federação nacional da categoria. Foi\ndirigente da CUT Sergipe. Em 2004, rompe com esta\ncentral sindical e ajuda a fundar a Central Sindical e\nPopular (CSP) – Conlutas. Ao entrar no movimento\nsindical, Vera também passou a militar no PT. Mas\nem 1992 rompe com este partido, que já trilhava um\ncaminho de adaptação à ordem burguesa, e se junta\nao movimento de construção do PSTU, fundado\nno ano de 1994. Em Sergipe, Vera foi candidata à\ndeputada federal, a governadora e a prefeita de\nAracaju. Em 2018, foi candidata à presidência da República e teve como vice o professor\nHertz Dias, do Maranhão. Juntos, formaram\na primeira chapa 100% negra a disputar à\npresidência do Brasil. Em 2020, Vera foi a\nprimeira mulher negra a disputar à prefeitura de São Paulo (SP), cidade onde mora\natualmente. Em 2022, Vera disputou a\npresidência da República formando\na primeira chapa negraindígena\nao lado de Künã Yporã Tremembé\n(Raquel Tremembé), da etnia Tremembé, do Maranhão.\n\n3"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-3",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nRenata França\nAo lado de Vera Lúcia, Renata França compõe a chapa do PSTU como candidata a vice-governadora de São Paulo. Operária, militante socialista e ativista\ndo movimento pelo fim da escala 6x1, Renata coloca sua candidatura a serviço da\nluta da classe trabalhadora contra a precarização do trabalho, a\nretirada de direitos e o avanço da exploração. Sua trajetória\ntambém é marcada pela defesa dos direitos das mulheres\ne da população LGBTI+, reafirmando o compromisso da\nchapa com um projeto construído ao lado de quem vive\ndo próprio trabalho, pela superação da exploração e das\nopressões e pela construção de uma sociedade socialista.\n\n4"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-4",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nINDICE\nUm programa socialista para derrotar\nTarcísio, enfrentar os super-ricos e\nretomar São Paulo para os trabalhadores\n\nA CRISE DE SÃO PAULO E O\nESGOTAMENTO DO SISTEMA DOS RICOS\n\nCONTRA A EXTREMA DIREITA E A\nCONCILIAÇÃO DE CLASSES\n\nO QUE SÃO PAULO PRECISA?\nDEMOCRACIA DOS TRABALHADORES\nE ENFRENTAMENTO AO PODER DOS\nRICOS\nCOMO MUDAR SÃO PAULO:\nMOBILIZAÇÃO E GOVERNO SOCIALISTA\nDOS TRABALHADORES\n\n7\n11\n19\n27\n43\n47\n5"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-5",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nUm programa socialista para\nderrotar Tarcísio, enfrentar\nos super-ricos e retomar São\nPaulo para os trabalhadores\n\n7"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-6",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n8"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-7",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nPor um governo socialista dos trabalhadores e do\npovo pobre em São Paulo\nO PSTU apresenta uma candidatura socialista e revolucionária ao governo\nde São Paulo para colocar nesta eleição uma alternativa de poder da classe trabalhadora e do povo pobre. Não disputamos apenas a troca de governantes ou\numa gestão menos cruel da crise capitalista. Defendemos que é preciso romper\ncom o sistema, que concentra a riqueza produzida por quem trabalha nas mãos\nde banqueiros, multinacionais, grandes empresários e do agronegócio.\nSão Paulo foi transformado em uma plataforma de negócios para concessionárias, bancos, fundos de investimento e multinacionais. Nossa candidatura\napresenta o caminho oposto: retomar o patrimônio, os serviços públicos e as\ndecisões sobre o estado para as mãos de quem trabalha. “Retomar São Paulo\npara os trabalhadores” será o eixo de um plano geral de desprivatização.\nTarcísio representa o bolsonarismo em São Paulo. A frente ampla com Haddad, por sua vez, não oferece uma saída porque aceita governar dentro dos\nlimites impostos pelos mesmos interesses que sustentam as privatizações, a\ndívida pública e a precarização. Nenhum desses setores enfrenta o poder econômico que organiza São Paulo para o lucro de poucos.\nÉ para apresentar um projeto oposto a esses que o PSTU lança a candidatura de Vera ao governo de São Paulo. Operária da indústria calçadista, mulher\nnegra, nordestina, cientista social e militante socialista, Vera Lúcia representa\numa candidatura construída ao lado dos trabalhadores, da juventude, das\nmulheres, da população negra, dos movimentos populares e de todos aqueles\nque acreditam que outro projeto de estado é necessário.\nEste programa não reúne apenas propostas para uma campanha eleitoral.\nApresenta um projeto para São Paulo construído a partir da realidade vivida\npela população trabalhadora, da experiência das lutas sociais e da convicção de\nque a enorme riqueza produzida neste estado deve estar a serviço da maioria, e\nnão dos interesses de uma pequena elite econômica. São Paulo possui recursos,\nconhecimento, capacidade produtiva e um povo trabalhador capaz de construir\num estado mais justo e desenvolvido. O problema de São Paulo nunca foi a falta\n\n9"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-8",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nde riqueza. O verdadeiro desafio é decidir a serviço de quem essa riqueza será\ncolocada.\nParticipamos das eleições sem alimentar a ilusão de que a transformação\nsocialista virá das urnas. Apresentamos candidaturas para dar voz às lutas,\ndenunciar os interesses que os grandes partidos escondem, ajudar a organizar\ntrabalhadores e trabalhadoras e construir uma alternativa socialista que combata a extrema direita e seja independente dos governos de conciliação. Cada\nvoto em nosso programa deve servir ao fortalecimento das greves, ocupações e\nmovimentos populares.\nNossos mandatos, se eleitos, estarão subordinados às decisões coletivas e\nreceberão salário equivalente ao de uma trabalhadora qualificada. Defendemos que a riqueza, a infraestrutura, a tecnologia e as decisões sobre o estado\npassem para as mãos de quem trabalha. Este programa é uma proposta de\nindependência de classe, mobilização e ruptura: por um governo socialista dos\ntrabalhadores e do povo pobre, baseado na democracia direta e na auto-organização popular.\n\n10"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-9",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n01\n\nA CRISE DE SÃO PAULO\nE O ESGOTAMENTO DO\nSISTEMA DOS RICOS\n\n11"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-10",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n12"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-11",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nUm estado rico para poucos\nEmbora São Paulo concentre riqueza, indústria, tecnologia e infraestrutura, a maioria esmagadora de sua população vive sob profunda precarização,\nenfrentando baixos salários, transporte caótico, violência crônica e falta de\nmoradia. Esse contraste escancara que, enquanto os serviços públicos estão\ncompletamente sucateados, o estado é responsável por concentrar aproximadamente 1/3 do PIB brasileiro tendo apenas 1/5 da população nacional.\nCaso fosse um país autônomo, São Paulo figuraria como a 21ª maior economia do mundo, com um PIB de US$ 603,4 bilhões que supera o da Argentina.\nContudo, esse abismo social revela que a opulência paulista serve exclusivamente aos ricos; afinal, ao mesmo tempo em que o povo amarga com baixos\nsalários e informalidade, a capital paulista ascendeu para a 12ª posição no circuito das maiores capitais de luxo do planeta.\nEssa contradição interna é fruto direto da decadência do capitalismo nacional. Sofrendo uma desindustrialização relativa profunda, o modelo econômico\natual substituiu a antiga base fabril de alta tecnologia por setores de menor\nvalor agregado. Setores históricos e estratégicos, como o automotivo, o metalúrgico (-29,22%) e o eletroeletrônico (-55,11%), perderam espaço para o avanço\nda indústria química (+54,33%), de alimentos e do agronegócio (+94,76%).\nEmbora o avanço do agronegócio paulista produza lucros recordes, essa\nriqueza permanece concentrada nas mãos de grandes proprietários, bancos\ne corporações multinacionais. A dimensão desse poder econômico pode ser\nobservada na JBS: sua receita global de 2025, convertida em reais, superou o\norçamento total do Estado de São Paulo para 2026. Não se trata, portanto, de\nfalta de riqueza, mas de seu controle por empresas que organizam a produção\nsegundo os interesses do mercado mundial e da exportação.\nEssa dependência combina desindustrialização relativa, financeirização e\nexpansão de formas precárias de trabalho. Em vez de investir na diversificação\nprodutiva e na criação de empregos estáveis, o capital avança sobre a logística,\na terceirização, as plataformas e os aplicativos, transferindo custos e riscos aos\ntrabalhadores. Assim, a redução da taxa oficial de desemprego não significa o\nfim da precarização: milhões continuam submetidos à informalidade, à ins-\n\n13"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-12",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ntabilidade, a baixos salários e à ausência de proteção social. Esse modelo de\nexploração caminha junto com a concentração fundiária, o uso intensivo de\nagrotóxicos, a destruição de mananciais e a expansão predatória sobre o território paulista.\nCajamar sintetiza esse novo modelo. Apresentada pela própria prefeitura\ncomo a “Disney dos galpões”, a cidade teve expansão acelerada dos centros\nlogísticos e crescimento superior a 900% dos empregos ligados a galpões. Mas\na cidade é organizada prioritariamente para a circulação de mercadorias das\nmultinacionais, com pressão sobre moradia, trânsito, água, áreas verdes e serviços públicos. Parte dos empregos é terceirizada, marcada por metas intensas,\nalta rotatividade e salários baixos. A riqueza atravessa Cajamar em caminhões\ne plataformas, enquanto as necessidades de quem mora e trabalha no município ficam em segundo plano.\n\nSão Paulo como laboratório neoliberal\nPara garantir esse cenário de privilégios, sucessivos governos transformaram o estado em um verdadeiro laboratório neoliberal, aplicando privatizações e Parcerias Público-Privadas (PPPs) que dilapidam o patrimônio público e\nentregam à iniciativa privada infraestruturas prontas, inteiramente custeadas\npelo imposto do trabalhador. O caso do transporte metroferroviário expõe perfeitamente essa lógica: linhas da CPTM e do Metrô foram concedidas a consórcios como o Grupo CCR, que acumula taxas de lucro astronômicas enquanto\nsubmete a população a tarifas altas e serviços precarizados. Enquanto isso, o\nEstado segue drenando recursos públicos através de subsídios bilionários para\nblindar o lucro desses empresários.\nEssa sangria dos cofres públicos repete-se de forma contínua por meio da\nterceirização, que desvia bilhões de reais para empresas privadas, e do endividamento público de R$ 250 bilhões, cujo pagamento de juros e amortizações\nalimenta diretamente o capital especulativo dos bancos. Ao sufocar o orçamento para remunerar o mercado financeiro, essa política estrangula os investimentos sociais básicos. Como resultado, as verbas proporcionais para saúde,\neducação e transporte caem seguidamente e as despesas com o funcionalismo\npúblico sofrem reduções severas.\n\n14"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-13",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nQuem fica com o orçamento de São Paulo?\nSão Paulo terá em 2026 um orçamento de R$ 382,3 bilhões, contra R$ 372,45\nbilhões em 2025. O aumento de cerca de 2,6% é apenas nominal e corresponde,\ndescontada a inflação, a uma queda real próxima de 1,7%. A questão decisiva\nnão é apenas quanto o Estado arrecada, mas quem define as prioridades e\nquem se apropria da riqueza produzida.\nA distribuição das verbas evidencia essas escolhas. Para 2026, a Secretaria\nde Desenvolvimento Urbano e Habitação fica com R$ 2,2 bilhões, queda nominal de 28,8% em relação a 2025. A Secretaria de Meio Ambiente, Infraestrutura\ne Logística perde 18,5% e passa a contar com R$ 8,9 bilhões. A Secretaria de\nPolíticas para as Mulheres recebe apenas R$ 30,6 milhões, redução de 15,46%,\njustamente quando a violência contra as mulheres exige ampliação da rede de\nproteção. Enquanto isso, a Casa Civil tem aumento nominal de 71,9% e a Controladoria Geral do Estado, de 61,8%.\nEssa lógica não começou agora. Entre 2013 e 2021, a arrecadação estadual\ncresceu 55%, inclusive atravessando períodos de crise. Mesmo assim, caiu proporcionalmente a parcela destinada a áreas essenciais. Em 2021, cerca de R$\n20 bilhões foram direcionados a atividades terceirizadas e valor semelhante\nao pagamento de juros e amortizações da dívida. A dívida paulista terminou\naquele ano em torno de R$ 250 bilhões, apesar dos pagamentos contínuos.\nEntre 2025 e 2026, o orçamento estadual da saúde passou de R$ 36,4 bilhões\npara R$ 37,9 bilhões, crescimento nominal de 4,1%, enquanto a verba da Secretaria da Educação aumentou de R$ 32,8 bilhões para R$ 33,3 bilhões, apenas\n1,5%. Como o orçamento total do Estado cresceu 2,6%, a educação perdeu participação relativa, passando de aproximadamente 8,81% para 8,71% do total.\nDescontada a inflação, o aumento anunciado representa redução real na educação e quase estagnação na saúde. Isso demonstra que o crescimento nominal\ndas verbas não garante a ampliação dos serviços públicos nem a valorização de\nseus trabalhadores.\nAlém disso, o valor global destinado à saúde não revela quem controla e executa os serviços. Em 2026, R$ 9,25 bilhões, aproximadamente 24,4% do orçamento da área, estão reservados a unidades gerenciadas por Organizações\nSociais de Saúde, entidades privadas mesmo quando formalmente constituídas sem fins lucrativos. Outros R$ 8,40 bilhões financiam unidades contratadas ou conveniadas, reunindo diferentes tipos de prestadores. A privatização,\n\n15"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-14",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nportanto, não ocorre somente pela venda de hospitais: avança silenciosamente\nquando hospitais estaduais passam a depender de trabalhadores contratados\npelas OSSs, transferindo para entidades privadas a gestão, a contratação da\nforça de trabalho e uma parcela crescente dos recursos públicos. A divisão de\nresponsabilidades no SUS tampouco pode servir de desculpa para a omissão\nestadual. Ainda que UBSs, equipes de Saúde da Família e grande parte dos\nCAPS sejam administrados pelos municípios, cabe ao Estado organizar e financiar a rede regional, manter hospitais e serviços especializados, apoiar técnica\ne financeiramente as prefeituras e garantir que o acesso a consultas, exames e\ntratamentos não dependa do município onde a pessoa vive.\nEsse mecanismo combina arrocho nos serviços públicos, transferência de\nrecursos para empresas terceirizadas, concessões e parcerias público-privadas\ne prioridade ao sistema da dívida. O resultado é conhecido por quem depende\ndo Estado: escolas e hospitais sobrecarregados, falta de moradia popular,\ntransporte caro e precário, abandono das políticas ambientais e uma rede insuficiente de proteção às mulheres.\nNão aceitamos a chantagem de que faltam recursos para atender às necessidades da maioria. Há recursos; eles estão submetidos às prioridades dos grandes empresários, bancos, concessionárias e fundos de investimento.\n\nBarbárie capitalista: superexploração, feminicídio e genocídio negro\nEssa decadência econômica cobra seu preço diretamente na segurança e na\nvida de quem vive do trabalho. Em um contexto de crise, o capitalismo amplia\na exploração recorrendo ao racismo, ao machismo e à xenofobia para rebaixar salários e intensificar a superexploração da força de trabalho. As mulheres seguem recebendo, em média, cerca de R$ 1.000 a menos que os homens,\nmesmo exercendo atividades de igual valor, evidenciando que sua força de trabalho continua sendo sistematicamente desvalorizada. Ultrapassando a esfera\neconômica e alimentando uma cultura misógina violenta, que se escancara no\naumento alarmante dos índices de feminicídio no estado. Apenas nos cinco\nprimeiros meses de 2026, foram registrados mais de 154 mil casos de violência\ndoméstica, uma média superior a mil mulheres agredidas por dia, e 124 feminicídios, um aumento de cerca de 16% em relação ao mesmo período de 2025.\nA população negra não é um setor à margem de São Paulo: é parte decisiva\n\n16"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-15",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nda classe trabalhadora que constrói e mantém o estado. Pretos e pardos representam aproximadamente 41% dos paulistas, cerca de 18 milhões de pessoas, e\nestão desproporcionalmente concentrados nos empregos terceirizados e precários, nas periferias sem saneamento, entre as vítimas da violência policial e\nnas escolas e serviços públicos mais sucateados. O racismo rebaixa salários e\namplia a exploração.\nA mesma lógica explora e divide os trabalhadores imigrantes e refugiados\nque ajudam a produzir a riqueza paulista. Bolivianos, haitianos, venezuelanos,\nsenegaleses, guineenses, latino-americanos e asiáticos enfrentam informalidade, barreiras linguísticas, xenofobia e, em setores como confecção, construção, logística e trabalho doméstico, condições degradantes ou análogas à\nescravidão.\nDiante de salários de fome e do encarecimento do custo de vida, a classe\ntrabalhadora é obrigada a recorrer ao cartão de crédito, ao cheque especial e\na empréstimos consignados apenas para comprar comida, pagar o aluguel e\nsobreviver. Muitos caem na armadilha das Bets. O endividamento das famílias\noperárias transformou-se em um mecanismo permanente de espoliação, onde\nos juros abusivos cobrados pelos grandes bancos funcionam como um verdadeiro pedágio sobre o suor do trabalhador. A vida da população é sequestrada\npela inadimplência e pelo medo do desemprego, enriquecendo a mesma minoria de banqueiros que lucra com a dívida pública do Estado.\nEsse cenário de barbárie social faz com que o sucateamento do Estado caminhe de mãos dadas com o avanço da criminalidade urbana. O crime organizado expandiu sua influência territorial e econômica a ponto de se fundir às\ninstituições oficiais, operando seus esquemas financeiros diretamente nos\nescritórios luxuosos da Faria Lima. Diante disso, a militarização das periferias patrocinada pelo Estado não desenha uma solução para o problema social;\npelo contrário, ela atua como um braço repressivo de contenção que resulta no\ngenocídio do povo negro e periférico.\n\n17"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-16",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n18"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-17",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n02\n\nCONTRA A EXTREMA\nDIREITA E A CONCILIAÇÃO\nDE CLASSES\n\n19"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-18",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n20"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-19",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nO Governo Tarcísio, o bolsonarismo em São Paulo\nO governo de Tarcísio de Freitas consolidou-se como a principal expressão e a vanguarda do bolsonarismo no estado de São Paulo, representando\num projeto político de extrema direita nitidamente ultraliberal, repressivo e\nsubordinado aos interesses do grande capital financeiro. Sob a falsa roupagem\nde uma gestão técnica e desenvolvimentista, essa administração combina de\nforma agressiva a privatização em massa do patrimônio público, a destruição\nsistemática dos serviços essenciais e ataques frontais aos direitos históricos da\nclasse trabalhadora. Longe de ser uma alternativa de modernização, o governo\npaulista atua como um comitê de negócios para multinacionais e grandes bancos, aprofundando o rebaixamento das condições de vida do povo para garantir\na maximização do lucro privado.\n\nO desmonte dos serviços públicos e a entrega do patrimônio\nEssa ofensiva neoliberal tem como alvo prioritário a educação pública, alvo\nhistórico do bolsonarismo. Através de cortes orçamentários asfixiantes, da tentativa contínua de redução das verbas e da imposição de plataformas digitais\ncontroladas por empresas privadas de tecnologia, o governo tenta desmontar o\nensino público. A desestruturação prepara o terreno para a mercantilização da\neducação, precarizando o trabalho dos profissionais do setor e empurrando a\njuventude operária para fora das escolas e universidades públicas.\nParalelamente, o patrimônio estratégico construído por gerações de trabalhadores vem sendo entregue ao setor privado. A privatização criminosa da\nSabesp transformou o acesso à água, um bem vital e um direito humano fundamental, em uma mercadoria geradora de dividendos para fundos abutres\ninternacionais. Esse processo repete o fiasco histórico vivido pela população\ncom a privatização da Enel, cuja lógica de lucro máximo e demissões em massa\nresultou em apagões crônicos, insegurança e completo descaso com o consumidor. O avanço da entrega de setores fundamentais estende-se ao transporte\ncom os leilões das linhas da CPTM e do Metrô, estrangulando o orçamento estadual por meio de subsídios garantidos enquanto o usuário sofre as consequências de um sistema perigoso e ineficiente.\n\n21"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-20",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nA privatização da Sabesp não ameaça apenas a tarifa. Ela subordina o planejamento hídrico, a manutenção, o saneamento periférico, a segurança das\nobras e o quadro técnico à remuneração dos acionistas. Em um estado sujeito\na secas, ondas de calor e chuvas extremas, reduzir equipes próprias e fragmentar serviços aumenta a vulnerabilidade.\nO desmonte também ocorre pelo esvaziamento e envelhecimento dos quadros públicos sem reposição planejada. Servidores experientes se aposentam,\no conhecimento acumulado se perde e cargos permanentes são substituídos\npor contratos temporários, comissionados ou terceirizados. O resultado é\nsobrecarga, adoecimento, filas e descontinuidade. O próprio Estado não\npublica de forma simples um retrato consolidado da idade, das aposentadorias previstas e das vagas por carreira, o que dificulta o planejamento e favorece a substituição silenciosa do serviço público pela iniciativa privada.\nHospitais, escolas, universidades e demais serviços privatizados dependem de milhares de trabalhadores contratados por Organizações Sociais e\nempresas terceirizadas. Eles não são responsáveis pelo modelo e não podem\nperder emprego, salário e direitos quando os serviços forem reestatizados.\nNas universidades estaduais se consolidou a dominação da iniciativa\nprivada, com seus institutos e agências de inovação, que se apropriam do\nconhecimento produzido, patenteando pesquisas e abocanhando a pesquisa pública. Além da terceirização da limpeza, segurança e bandejões, os\nhospitais concretizam parcerias público-privadas, assegurando lucro aos\nempresários com o dinheiro público. Frente a falta de orçamento, a USP, por\nexemplo, estabeleceu um “teto de gastos”, os parâmetros de sustentabilidade,\nque impede novos investimentos na permanência, condicionando qualquer\ninvestimento à redução de gastos com pessoal. Os servidores técnico-administrativos e os docentes são sobrecarregados, com disciplinas e departamentos ameaçados de fechar, enquanto os editais para a iniciativa privada não\nparam de se multiplicar.\nA USP, tida como a melhor universidade da América Latina, condena os\nestudantes a situações precárias na moradia estudantil, o CRUSP, com falta\nde água, energia e superlotação. Hoje, a maioria dos campi da UNESP não\ntem sequer moradia. Os bandejões, nas três estaduais, quando existem, o que\né incomum nos interiores, são todos terceirizados, colocando as trabalhadoras na 6x1 enquanto para os alunos serve comida podre e cacos de vidro. As\n\n22"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-21",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nbolsas permanência são insuficientes, e mesmo com a greve o reajuste não as\nfaz sequer chegar perto do salário mínimo paulista.\n\nRepressão estatal e o genocídio negro\nO governo bolsonarista de Tarcísio fortalece o braço repressivo do Estado\ncomo ferramenta de contenção social. Essa engrenagem de violência ganhou\ncentralidade absoluta sob a gestão de Guilherme Derrite na Secretaria de Segurança Pública, cuja atuação personifica a face mais cruel e ideológica do projeto\nde extrema direita em São Paulo. Sob o pretexto do combate à criminalidade,\na cartilha implementada por Derrite promoveu um endurecimento sem precedentes da violência policial, convertendo as periferias em palcos de operações\nsanguinárias de ocupação militar.\nEssa política de segurança de extrema direita não desarma o crime organizado, como nos escandalos de corrupção do Banco Master, que envolvem\ndiretamente o PCC e a Faria Lima, coração dos setor especulativo e financeiro,\nmas promove ativamente o aprofundamento do genocídio da população negra\ne periférica. Blindando os verdadeiros articuladores do tráfico e das milícias\nque operam nos bairros nobres e nos centros financeiros. A militarização e a\nviolência institucional dão o tom de uma gestão que trata os problemas sociais\ne a miséria gerada pelo próprio capitalismo como casos de polícia.\n\nA crise de moradia e a privatização do centro da capital\nO direito à moradia digna foi transformado em mais um balcão de negócios\npara a especulação imobiliária, uma lógica que atingiu o seu ápice com o leilão\nna Bolsa de Valores (B3) da Parceria Público-Privada (PPP) para a construção\nda nova Sede Administrativa do Estado no centro da capital. Disfarçado sob\no discurso de “modernização” e “revitalização”, esse projeto de mais de R$ 3\nbilhões, que prevê repasses mensais de até R$ 76 milhões por 30 anos aos barões\ndo cimento e a multinacionais estrangeiras, como a espanhola Acciona, serve\nunicamente para reestruturar o território segundo os interesses do mercado\ncorporativo, abandonando prédios públicos e desativando infraestruturas históricas de transporte coletivo, como o Terminal Princesa Isabel.\nO método do governo bolsonarista para o centro de São Paulo repete o conhecido roteiro neoliberal: primeiro promove-se o sucateamento e o abandono\ndeliberado da região; em seguida, criminaliza-se e estigmatiza-se a pobreza\n\n23"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-22",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nde cortiços, ocupações e da “Cracolândia”; usa-se o aparato policial comandado\npor Derrite para desabar com tratores e repressão sobre comunidades como a\nFavela do Moinho; por fim, cria-se as condições para a entrega ao capital.\nNo caso dos Campos Elíseos, cerca de 900 famílias estão sendo sumariamente removidas sem diálogo efetivo, enquanto o governo atropela conselhos\ngestores e retira a obrigatoriedade de moradia popular nas Zonas Especiais de\nInteresse Social (ZEIS). Ao elitizar as áreas históricas da cidade e empurrar a\nclasse trabalhadora cada vez mais longe de seus empregos, Tarcísio de Freitas\nprova que, sob o capitalismo, o solo urbano é tratado puramente como mercadoria para engorda dos lucros de uma minoria bilionária.\n\nHaddad e a Frente Ampla: a conciliação com os ricos\nnão derrota a extrema direita\nA atual candidatura de Fernando Haddad ao governo de São Paulo sintetiza\nos limites estruturais de uma esquerda que abdicou de enfrentar os ricos para\nse converter em gerente da ordem capitalista. Essa postura não é reflexo de\numa trajetória inteiramente marcada pelo respeito estrito aos limites da ordem\nfiscal e pelo diálogo harmonioso com os grandes banqueiros. Como prefeito da\ncapital paulista, Haddad abriu as portas da cidade para as PPPs e evitou enfrentar a máfia do transporte e da especulação imobiliária; mais tarde, à frente do\nMinistério da Fazenda, transformou-se no fiador do mercado financeiro ao\nblindar o pagamento de juros aos banqueiros internacionais e desenhar o Novo\nArcabouço Fiscal, uma medida que impõe um teto asfixiante aos investimentos\nsociais em áreas vitais como saúde, transporte e educação.\nComo ministro da Fazenda, Haddad também defendeu o Plano Safra empresarial de R$ 516,2 bilhões em 2025/2026 e de R$ 525,1 bilhões em 2026/2027,\napresentado como instrumento de produção, exportação e controle de preços.\nA agricultura familiar continuou recebendo uma fração muito menor. Em São\nPaulo, essa prioridade fortalece usineiros, frigoríficos, exportadores, bancos\ne grandes proprietários, enquanto faltam terra, assistência técnica, incentivo\npúblico e infraestrutura para pequenos produtores e assentamentos.\nTendo deixado o ministério sob os aplausos do mercado, Haddad apresenta\nagora uma plataforma eleitoral que traz essa mesma lógica de submissão para\no estado de São Paulo. Em sua campanha atual, longe de propor uma ruptura\ncom os barões da Faria Lima ou a reversão radical das privatizações da Sabesp\n\n24"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-23",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ne do Metrô, seu projeto busca o selo de aprovação do agronegócio e dos grandes\nempresários através de acenos ao centro e da promessa de uma governabilidade “responsável”. Ao prometer combater o crime organizado olhando apenas\npara as “estruturas de poder superiores”, enquanto aceita a lógica do mercado\nfinanceiro que drena o orçamento estadual, a postulação do PT demonstra que\no partido busca apenas gerenciar as engrenagens do capitalismo com uma roupagem progressista.\nA composição para o Senado confirma que a chamada frente ampla não\nrepresenta uma alternativa política independente para os trabalhadores.\nSimone Tebet e Marina Silva são apresentadas para ocupar as duas vagas paulistas na chapa que apoia Lula. Tebet tem sua trajetória vinculada ao MDB e\nà defesa dos grandes proprietários rurais. Marina, apesar de sua imagem\nambientalista, integrou um governo que manteve os privilégios do agronegócio, destinou centenas de bilhões de reais à agricultura empresarial, preservou\na dependência dos combustíveis fósseis e não rompeu com o poder das mineradoras, bancos e multinacionais.\nDerrotar a extrema direita exige unidade nas ruas para defender as liberdades democráticas, mas também completa independência política diante da\nfrente ampla. Os trabalhadores precisam construir suas próprias candidaturas e um programa socialista, sem apoiar representantes da conciliação com o\ncapital.\nEssa política de conciliação esvazia as demandas históricas e urgentes da\nnossa classe, enfraquece a resistência operária e demonstra que é impossível\nderrotar a extrema direita aliando-se aos mesmos bilionários que financiam o\nprojeto ultraliberal.\n\nA relação direta entre o reformismo e a ascensão da extrema direita\nEssa insistência na conciliação de classes e na submissão à responsabilidade\nfiscal é, precisamente, o combustível que choca o ovo da serpente da extrema\ndireita de Tarcísio de Freitas e Guilherme Derrite. A extrema direita não cresce\nno vácuo; ela se alimenta da miséria e de uma crise social profunda, marcada\npelo colapso dos serviços públicos e pelo desespero da periferia. Quando a candidatura do reformismo se recusa a romper com as regras do jogo burguês e\npropõe administrar essa crise sem confiscar os lucros dos bilionários, ela falha\nem oferecer uma saída real e imediata para a vida do povo pobre.\n\n25"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-24",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nO resultado imediato dessa paralisia institucional é uma imensa frustração\ne desilusão na classe trabalhadora. Setores como o PSOL, agravam esse cenário\nao abrirem mão de sua independência para se diluírem na campanha de Haddad. Ao rebaixar as expectativas da classe e impedir a sua organização independente, a conciliação de classes desarma ideologicamente os trabalhadores\ne pavimenta o caminho para a consolidação de projetos ultraliberais e sanguinários em São Paulo.\n\nIndependência de classe e alternativa socialista\nPara romper com essa engrenagem de exploração e violência, o PSTU afirma\nque a única saída para a classe trabalhadora é a construção de uma alternativa\nsocialista baseada na independência política dos trabalhadores. Não podemos\ndepositar nenhuma confiança em governos de coalizão com a burguesia e nem\naceitar o rebaixamento de nossas pautas em nome de alianças eleitorais. A derrota de Tarcísio, de Derrite e dos barões da Faria Lima não virá por meio de\nacordos de bastidores nas instituições do Estado, mas sim através da organização independente, da auto-organização nas periferias e da mobilização direta\nnas ruas, fábricas, escolas e transportes.\nA construção de um futuro digno exige a ruptura imediata com os interesses\ndos banqueiros, a suspensão do pagamento da dívida pública e a reversão de\ntodas as privatizações que entregaram a Sabesp, a Enel e o transporte metroferroviário aos parasitas do capital. Defendemos um governo socialista dos\ntrabalhadores e do povo pobre, assentado sobre conselhos e assembleias populares onde quem de fato produz toda a riqueza do estado de São Paulo decida\ndemocraticamente os rumos da economia e da sociedade. Somente arrancando\no poder econômico e político das mãos da minoria bilionária será possível colocar o solo urbano, a tecnologia e a infraestrutura a serviço das necessidades\nhumanas e dar um fim à barbárie capitalista.\n\n26"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-25",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n03\n\nO QUE SÃO PAULO PRECISA?\n\n27"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-26",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n28"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-27",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nPara reverter o cenário de decadência e recolonização que submete o estado\nde São Paulo aos barões da Faria Lima, o PSTU apresenta um programa socialista para a classe trabalhadora. A riqueza para financiar esses direitos existe\nem abundância sob o solo paulista, mas hoje ela serve unicamente para engordar os lucros de uma minoria parasita. A aplicação de cada uma destas medidas\nexige o enfrentamento aberto contra os grandes bilionários de São Paulo.\nO governo socialista adotará imediatamente todas as medidas de competência estadual e colocará o peso político de São Paulo a serviço da mobilização\nnacional por medidas como o fim da escala 6x1, o direito ao aborto legal realizado pelo SUS a critério da pessoa gestante e a estatização dos setores estratégicos da economia privatizados ao longo das ultimas décadas (como petróleo,\nsiderurgia, energia eletrica e outros). Nosso governo será um ponto de apoio\npara essas e outras lutas da classe trabalhadora brasileira e dos setores populares.\n\nPrimeiras medidas para retomar São Paulo para os\ntrabalhadores\nNo primeiro dia de governo, convocaremos a classe trabalhadora, a juventude e os setores populares a governarem São Paulo por meio da construção de\nConselhos Populares nos locais de trabalho, estudo e moradia. Esses conselhos\nparticiparão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões\ndo estado. Nosso objetivo é substituir o poder dos grandes grupos econômicos\npelo poder democrático dos trabalhadores e do povo pobre.\nComo ponto de partida para esse processo, apresentamos cinco medidas\npara o primeiro ano de governo. Elas expressam as primeiras iniciativas de um\ngoverno socialista para colocar a riqueza de São Paulo a serviço da maioria da\npopulação e só poderão ser aplicadas enfrentando os interesses dos banqueiros, dos grandes empresários, das concessionárias e dos especuladores que\nhoje controlam a economia e as instituições do estado.\n1. Reestatização dos serviços estratégicos: iniciar imediatamente a\nreestatização do Metrô, da CPTM e dos demais serviços essenciais,\nsuspendendo as privatizações e colocando sua gestão sob controle dos\n\n29"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-28",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ntrabalhadores e usuários.\n2. Reconstrução da educação pública: revogar a militarização e as\nescolas cívico-militares, acabar com a plataformização do ensino e\nretirar as fundações empresariais da definição das políticas educacionais.\n3. Tarifa Zero e transporte público estatal: implantar a Tarifa Zero por\nmeio de um sistema de transporte público, integrado, reestatizado\ne administrado em função das necessidades da população, e não do\nlucro privado.\n4. Enfrentamento ao feminicídio e à violência contra as mulheres:\ncriar uma rede estadual de proteção com casas-abrigo, centros de\natendimento e Delegacias da Mulher 24 horas em todas as regiões do\nestado.\n5. Moradia digna e despejo zero: implementar um plano estadual de\nhabitação popular baseado na desapropriação de imóveis vazios para\nmoradia, na suspensão dos despejos e na regularização das ocupações\npopulares.\n\nReestatizações e fim da sangria neoliberal.\nRetomar São Paulo para os trabalhadores.\n⬤ Como primeira medida de governo, editaremos um decreto emergencial para iniciar a retomada do controle público sobre o Metrô\ne a CPTM. O decreto determinará auditoria integral dos contratos,\nsuspensão de novas privatizações, divulgação de subsídios, lucros e\ndescumprimentos, preparação da intervenção nas concessões que\ncoloquem o serviço em risco e apresentação imediata das medidas\nlegais necessárias à reestatização.\n⬤ Será criado um Plano Geral de Desprivatização para retomar o\ntransporte, a água, o saneamento, a energia e os demais serviços\nestratégicos. A gestão será transferida para empresas públicas, sob\ncontrole dos trabalhadores e usuários, sem indenização aos grandes\ngrupos econômicos responsáveis pela deterioração dos serviços e pela\napropriação do patrimônio público.\n⬤ Fim definitivo de todas as Parcerias Público-Privadas (PPPs),\nconcessões e terceirizações na saúde, na educação e na infraestrutura\n\n30"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-29",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nestadual.\n⬤ Reestatizar para reduzir tarifas, melhorar os serviços e colocar\na riqueza a serviço da população: todas as desprivatizações terão\ncomo objetivo reduzir ou eliminar tarifas, ampliar os investimentos,\nuniversalizar o acesso, melhorar a qualidade dos serviços públicos\ne impedir que o dinheiro do povo continue sendo transformado em\nlucro para grandes grupos privados.\n\nEmprego, salário, direitos e impostos\nFim da precarização\n⬤ Fim imediato da escala 6x1 e redução da jornada de trabalho para\n36 horas semanais, sem qualquer redução de direitos ou salários. Trabalhar menos para que todos trabalhem e tenham direito à vida além\ndo trabalho. No serviço público de São Paulo, como exemplo, nenhum\ntrabalhador ou prestador de serviço trabalha em jornada 6x1 ou mais\nque 36 horas semanais.\n⬤ Proibição absoluta das terceirizações em todas as atividades do\nserviço público estadual, com a efetivação e incorporação imediata\nde todos os trabalhadores terceirizados com igualdade de salários e\ndireitos.\n⬤ Garantia de direitos aos trabalhadores de aplicativos: remuneração mínima por hora trabalhada, transparência dos algoritmos,\ndireito de defesa contra bloqueios, seguro contra acidentes custeado\npelas plataformas, contribuição patronal para a Previdência, criação\nde pontos públicos de descanso e medidas de proteção contra a violência.\n⬤ Criação de uma plataforma pública estadual de transporte e\nentregas, administrada pelos trabalhadores, oferecendo tarifas acessíveis à população, condições dignas de trabalho e um modelo alternativo às plataformas privadas voltado ao interesse público, e não ao\nlucro dos grandes grupos econômicos.\n⬤ Direitos para os trabalhadores rurais: fiscalização permanente\ndas condições de trabalho, combate ao trabalho análogo à escravidão,\nterceirizações e formas precárias de contratação, garantindo emprego\ncom carteira assinada, salários dignos, moradia, transporte e acesso\n\n31"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-30",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\naos direitos trabalhistas.\n⬤ Criação de centros estaduais de referência para imigrantes e\nrefugiados, com documentação, atendimento jurídico, tradução,\nsaúde, assistência, formação e proteção contra exploração laboral.\n\nPlano estadual de empregos públicos e obras ecológicas\n⬤ Implementação de um plano massivo de obras públicas estatais\nfocado na universalização do saneamento básico, construção de\nhospitais, creches, escolas, expansão da malha ferroviária e obras\necológicas de drenagem urbana contra enchentes.\n⬤ Bolsa-auxílio de um salário mínimo para todos os desempregados do estado de São Paulo, financiada pela taxação progressiva dos\ngrandes grupos econômicos paulistas.\n\nPolítica industrial soberana\n⬤ Defesa da Embraer e da Avibras por meio de sua imediata estatização sob controle operário, garantindo a autonomia tecnológica\ne militar contra a entrega ao capital estrangeiro.\n⬤ Criação de um polo estadual de tecnologia, semicondutores\ne inteligência artificial 100% público, vinculado às universidades\nestaduais.\n\nTributação estadual\n⬤ Anulação imediata das dívidas de consumo essencial (comida,\nágua, luz e medicamentos) das famílias trabalhadoras desempregadas ou que recebem até dois salários mínimos, sem qualquer punição nos órgãos de proteção ao crédito.\n⬤ Reduzir os impostos indiretos que pesam sobre alimentos, gás,\nenergia e consumo popular, eliminando os privilégios fiscais concedidos aos grandes empresários e fazendo com que os grandes bancos, multinacionais, latifundiários e bilionários arquem com o custo\ndo funcionamento do Estado.\n⬤ Pequenos negócios, cooperativas e produtores familiares terão\ncrédito público e tratamento tributário favorecido.\n⬤ Grandes empresas que recebam recursos públicos e ameacem\n\n32"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-31",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nfechar, demitir ou deslocalizar sua produção terão suas contas abertas à fiscalização pública e poderão ser estatizadas sob controle dos\ntrabalhadores.\n\nServiços públicos e infraestrutura coletiva\nSaúde pública 100% estatal\n⬤ Fim das Organizações Sociais e reestatização dos hospitais e serviços privatizados, com gestão pública direta e controle dos trabalhadores e usuários.\n⬤ Plano regional de concursos para medicina, enfermagem, psicologia, assistência social, fisioterapia, farmácia, odontologia, reabilitação e demais áreas da saúde.\n⬤ Levantamento estadual das necessidades de saúde de cada região,\ncom participação dos trabalhadores, usuários, universidades públicas, conselhos de saúde e movimentos populares.\n⬤ Construção e ampliação de hospitais, ambulatórios de especialidades, centros de diagnóstico, serviços de reabilitação e leitos públicos nas regiões com maior déficit.\n⬤ Criação de um plano estadual de redução das filas, com divulgação pública do número de pacientes, tempo de espera, especialidade,\nprocedimento e região.\n⬤ Retomada da gestão direta, pública e transparente da CROSS\n(Central de Regulação de Ofertas de Serviços de Saúde) e implantação de um sistema público e unificado de regulação, impedindo\nfavorecimentos, clientelismo e interferência política na distribuição\ndas vagas.\n⬤ Apoio técnico e financeiro do Estado aos municípios para ampliar\nUBSs, equipes de Saúde da Família, CAPS, residências terapêuticas,\nsaúde bucal e vacinação.\n⬤ Defesa da saúde mental, com ampliação do cuidado em liberdade\ne integração entre CAPS, hospitais gerais, atenção básica, assistência\nsocial e moradia. Nenhuma verba para as unidades terapêuticas.\n⬤ Fim imediato de todos os repasses às comunidades terapêuticas,\ncom investimento nos Centros de Atenção Psicossocial (CAPS), dentro da rede do SUS, locais esses que demandam a presença de profis-\n\n33"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-32",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nsionais capacitados e estarão à serviço dos conselhos populares\n⬤ Fortalecimento da FURP (Fundação Para Remédio Popular) e do\nInstituto Butantan para ampliar a produção pública de medicamentos, vacinas, soros e insumos destinados ao SUS.\n\nEducação pública\n⬤ Revogação imediata do projeto de militarização e das escolas cívico-militares, combatendo legislações de controle ideológico reacionário como o “Escola Sem Partido”.\n⬤ Fim da plataformização do ensino e proibição que fundações\nempresariais ditem as políticas curriculares da juventude trabalhadora.\n⬤ Revogação da PEC de Tarcísio e da ALESP que reduziu o investimento obrigatório em educação, restabelecendo a aplicação mínima\nde 30% da receita de impostos na educação pública estadual.\n⬤ Destinação de verba pública exclusivamente para a educação\npública, com contratação massiva de professores, ampliação de vagas\nem creches e expansão das bolsas de permanência estudantil na USP,\nUnicamp e Unesp.\n⬤ Nenhum professor sem emprego, nenhum estudante sem escola:\nfim do fechamento de salas e turmas, garantia do ensino noturno e\nda EJA, realização de concursos públicos e garantia de professores\nem todas as disciplinas, assegurando o direito ao trabalho docente e o\ndireito de todos à educação pública.\n⬤ Valorização dos profissionais da educação, com melhores salários\ne plano de carreiras, inclusive dos profissionais não docentes e de\napoio nas escolas.\n⬤ Diminuição de alunos por sala de aula, com maior suporte aos\nestudantes com necessidades especiais, de inclusão pedagógica e\nmais profissionais da educação especializados.\n⬤ Plano estadual de permanência na escola e combate à evasão\nescolar: garantir que nenhum estudante abandone os estudos por trabalhar, por falta de renda ou de acesso à escola, assegurando políticas\nde permanência, transporte, alimentação, apoio pedagógico e psicossocial e fortalecimento do ensino noturno e da EJA.\n\n34"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-33",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n⬤ Concurso e formação de professores de educação especial, cuidadores, intérpretes de Libras, psicólogos e assistentes sociais, garantindo atendimento aos estudantes com deficiência sem segregação.\n⬤ Pleno apoio à implementação da Lei 15.326/26 no enquadramento\ndos profissionais da educação na educação infantil. E fim das terceirizações e rede conveniada, ampliando a contratação por concurso\npúblico.\n⬤ Por permanência estudantil, bolsa-permanência, bandejão e\nmoradia: assegurar aumento do repasse de verbas para as universidades paulistas e sua aplicação na ampliação das políticas de permanência estudantil.\n⬤ Reestatização dos bandejões privatizados: para por fim às terceirizações que entregam comida de péssima qualidade e condenam as\ntrabalhadoras à precarização.\n⬤ Bolsa-permanência igual ao salário mínimo paulista: para poder\narcar com o “preço” da universidade, de viver na capital ou interior,\naumentar as bolsas para R$1.874,36 e reajuste conforme inflação.\n⬤ Por democracia nas universidades: fim da proporção 70-15-15\n(participação de 70% dos docentes, 15% dos técnicos administrativos e\n15% dos estudantes nas consultas das universidades), por voto direto\npara reitor e em todos os colegiados.\n⬤ Contratação sem concurso público dos terceirizados das universidades: para que os trabalhadores que já realizam os trabalhos de\nlimpeza, segurança e alimentação tenham seu vínculo com as universidades reconhecido e seus direitos assegurados.\n⬤ Fim dos convênios e patentes privadas: para que o conhecimento\nproduzido seja revertido aos trabalhadores e de posse pública.\n\nTransporte coletivo e tarifa zero real\n⬤ Implementação da Tarifa Zero universal no transporte público\npaulista, não como subsídio para enriquecer cartéis de ônibus privados, mas sustentada por um sistema de transporte unificado e 100%\nestatal.\n⬤ Expansão massiva das linhas de metrô e trens públicos, priorizando o transporte ferroviário de passageiros e cargas em detrimento\n\n35"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-34",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ndo transporte individual poluente.\n\nRodovias\n⬤ Cancelamento das concessões das rodovias estaduais e reestatização da malha rodoviária, sem indenização aos grandes grupos\neconômicos.\n⬤ Fim de todos os pedágios, incluindo o sistema Free Flow, garantindo o direito de circulação sem cobrança de tarifas. Anulação das\ndívidas e multas pelo Free Flow.\n⬤ Prioridade aos investimentos em ferrovias e transporte coletivo,\nreduzindo a dependência do transporte rodoviário e garantindo\nmobilidade pública, integrada e de qualidade.\n\nSegurança pública para o povo trabalhador\nFim da violência de Estado e do genocídio negro\n⬤ Combate à violência policial e ao genocídio da população negra\ne periférica, com investigação independente e punição exemplar de\ntodos os agentes envolvidos em assassinatos, chacinas, torturas e\ndesaparecimentos.\n⬤ Uso obrigatório de câmeras corporais em todas as forças de segurança, com armazenamento e fiscalização controlados de forma independente pelas comunidades e movimentos sociais.\n⬤ Extinção da Polícia Militar e unificação das forças de segurança\nem uma polícia civil única, garantindo o direito de sindicalização aos\npoliciais e a eleição direta e revogabilidade de delegados e comandos.\n\nEnfrentamento ao crime de gravata e ao crime organizado\n⬤ Combate ao crime organizado pelo topo: criação de uma força\nestadual especializada para investigar e desarticular as estruturas\nfinanceiras do crime organizado, atingindo a lavagem de dinheiro,\nempresas, bancos, contratos públicos e agentes estatais envolvidos.\n⬤ Quem lucra com o tráfico está na Faria Lima: imposição do controle absoluto das movimentações financeiras de grandes valores e a\nexpropriação imediata de todos os bens e grandes quantias sem origem legal comprovada.\n\n36"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-35",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n⬤ Proteção dos bairros e regiões populares: implantação de um\nplano estadual de prevenção à violência nas periferias, com iluminação pública, transporte noturno, proteção a testemunhas, acolhimento às vítimas e criação de pontos seguros para motoristas de\naplicativo e entregadores.\n⬤ Garantia do direito de auto-organização das comunidades da\nperiferia para defenderem seus territórios da violência do tráfico, das\nmilícias e do próprio braço repressivo estatal.\n⬤ Descriminalização do consumo de drogas, tratando a adicção\ncomo uma questão de saúde pública, com tratamento médico, psicológico e preventivo gratuito pelo SUS.\n\nCombate às opressões\nMulheres trabalhadoras: contra o machismo e o feminicídio\n⬤ Basta de feminicídio e violência! Criação de uma rede estadual\nmassiva de casas-abrigo, centros de amparo e Delegacias da Mulher\n24 horas em todas as regiões, com recursos garantidos sob controle\ndas próprias trabalhadoras.\n⬤ Garantia de licença integral remunerada e estabilidade no\nemprego para mulheres vítimas de violência doméstica.\n⬤ Combate à dupla jornada por meio da socialização do trabalho\ndoméstico, construindo lavanderias públicas, restaurantes populares\ne creches públicas gratuitas em tempo integral em todos os bairros\nproletários.\n⬤ Garantia de salário igual para trabalho igual,\n⬤ Direito ao aborto legal, seguro e gratuito pelo SUS, garantindo a\neducação sexual para decidir e contraceptivos para não engravidar.\n\nDireitos LGBTs: Contra a discriminação e o desemprego\n⬤ A aplicação de uma política estadual severa de combate à LGBTfobia, com punição agravada quando cometida por agentes do Estado,\nalém da criação de casas estaduais de acolhimento para vítimas de\nviolência.\n⬤ Políticas de emprego, qualificação pública e cotas trans nas universidades estaduais e concursos públicos.\n\n37"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-36",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n⬤ Direito ao nome social sem burocracia e atendimento integral\nde saúde especializada para pessoas trans pelo SUS, assegurando o\ndireito à terapia hormonal e cirurgia de redesignação sem humilhações.\n\nNegros e Negras: Reparação histórica e luta anticapitalista\n⬤ Adoção de uma verdadeira política de reparação que combine\ndemandas históricas com o combate à superexploração do trabalhador negro atual, maioria nos postos precarizados e terceirizados.\n⬤ Demarcação e homologação imediata de todas as terras indígenas\ne titulação das terras quilombolas no estado de São Paulo.\n⬤ Expropriação, sem qualquer indenização, de todas as fazendas\ndo agronegócio paulista envolvidas em invasões, violência fundiária,\ncrimes ambientais ou exploração de trabalho análogo à escravidão.\n⬤ Taxação progressiva e expropriação das grandes fortunas de\nfamílias herdeiras do escravismo paulista, direcionando esses recursos para o financiamento da agricultura familiar, indígena e quilombola.\n⬤ Implementação obrigatória e efetiva em toda a rede pública estadual da Lei 10.639/03 e o ensino da história e cultura afro-brasileira e\nafricana, que ressalta a importância da cultura negra na formação da\nsociedade brasileira.\n\nCidade, moradia e meio ambiente\nMoradia popular e o direito à cidade\n⬤ A reversão imediata da privatização e da venda do centro de São\nPaulo aos bilionários, suspendendo todas as Parcerias Público-Privadas (PPPs) da habitação e as remoções violentas executadas pela\nCDHU em bairros como os Campos Elíseos e na Favela do Moinho.\n⬤ Implementação de um plano massivo de habitação popular, promovendo a desapropriação e expropriação de imóveis vazios e prédios\nabandonados nas mãos de grandes especuladores e construtoras para\ntransformá-los em moradia operária.\n⬤ Suspensão imediata do despejo dos Queixadas, desapropriação do\nterreno para interesse social, regularização fundiária e urbanização\n\n38"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-37",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nsob controle dos moradores.\n⬤ Garantia de que ocupar é um direito enquanto morar for um\nprivilégio, decretando o fim imediato de todos os despejos, o congelamento do preço dos aluguéis e a regularização fundiária das ocupações periféricas.\n\nCombate às enchentes e enfrentamento à crise climática\n⬤ A execução imediata de obras estatais de macrodrenagem, contenção de encostas nas áreas de risco periféricas e reflorestamento\nurbano, proibindo a especulação imobiliária e as construções prediais\npredatórias em zonas de mananciais.\n⬤ Responsabilização criminal e confisco dos bens de grandes\nempreiteiras, mineradoras e indústrias responsáveis por crimes\nambientais no estado, estatizando os recursos hídricos privatizados.\n⬤ Criação de um plano estadual vinculante de adaptação climática\npor bacia e região, com sistema público de alertas, abrigos, arborização das periferias, recuperação de várzeas, nascentes e matas ciliares\ne protocolos de proteção para a população em eventos extremos.\n⬤ Execução de um programa público de despoluição do Tietê, do\nPinheiros e de seus afluentes, com coleta e tratamento integral do\nesgoto, recuperação de nascentes e matas ciliares, monitoramento\npúblico de cada lançamento industrial e doméstico e responsabilização dos grandes poluidores.\n\nSoberania alimentar e combate à fome\n⬤ Superação do modelo destrutivo do agronegócio agroexportador,\nredirecionando o crédito público, os subsídios, a assistência técnica, a\npesquisa e as compras governamentais para a agricultura familiar, as\ncooperativas e a agroecologia, incentivando a produção de alimentos\nsaudáveis para abastecer a população paulista, o que exige o enfrentamento organizado dos agricultores familiares e trabalhadores rurais\nao latifúndio e ao capital agroindustrial que controlam o Estado.\n⬤ Proibição das aplicações de agrotóxicos por via aérea (drone ou\navião) e dos agrotóxicos altamente perigosos, direcionados pelas\ngrandes empresas ao mercado brasileiro apesar de seus graves impac-\n\n39"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-38",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ntos à saúde e ao meio ambiente.\n⬤ Fortalecer a pesquisa e a assistência técnica públicas para a agricultura familiar, com realização de concursos, retomada da extensão\nrural, incorporação das estruturas de pesquisa das grandes corporações ao patrimônio público e desenvolvimento de tecnologias voltadas\nà agricultura familiar, à agroecologia e à produção de alimentos, rompendo a dependência das multinacionais do agronegócio.\n⬤ Estatização das grandes redes e cadeias estratégicas de distribuição de alimentos, tabelando os preços da cesta básica para garantir\ncomida barata aos trabalhadores e assegurando a distribuição gratuita de alimentos para famílias desempregadas.\n⬤ Crédito subsidiado e compras públicas para a agricultura familiar, assentamentos, cooperativas de trabalhadores e transição agroecológica.\n⬤ Criação de uma rede massiva de restaurantes populares em todas\nas periferias e a garantia de que 100% da merenda escolar das escolas\nestaduais seja fornecida diretamente pela produção camponesa e\nfamiliar.\n\nJuventude e cultura\nJuventude trabalhadora com direito ao futuro\n⬤ Garantia do primeiro emprego com plenos direitos trabalhistas\nassegurado pelo Estado para toda a juventude, reduzindo a jornada\nde trabalho para abrir novos postos formais e combater a escravidão\ndos aplicativos.\n⬤ Garantia de passe livre universal, intermunicipal e irrestrito (ônibus, trem e metrô) para estudantes e jovens trabalhadores em todo o\nestado de São Paulo.\n⬤ Fim imediato de qualquer repressão policial contra as ocupações estudantis e manifestações da juventude em defesa do ensino\npúblico.\n\nCultura popular contra a barbárie\n⬤ Ampliação massiva das verbas públicas destinadas à cultura, descentralizando os recursos hoje concentrados nos circuitos da elite e\n\n40"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-39",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nconstruindo centros culturais públicos autogeridos pela comunidade\nnas periferias.\n⬤ Financiamento público direto para coletivos de cultura popular,\nsaraus, hip-hop, teatro de rua e manifestações periféricas, garantindo a total liberdade de expressão e a defesa intransigente da arte\ncontra a censura ideológica e o moralismo da extrema direita.\n\nDefesa da soberania econômica e internacionalismo\nAs Terras Raras e a tecnologia são nossas\n⬤ Criação de uma empresa estatal paulista para a pesquisa, extração e refino de terras raras e minerais estratégicos sob controle dos\ntrabalhadores, proibindo a entrega dessas riquezas geológicas aos\nmonopólios estrangeiros imperialistas.\n⬤ Todas as infraestruturas de dados e tecnologias devem estar sob\ncontrole público, revogando contratos de hospedagem de informações sensíveis em nuvens de transnacionais e desenvolvendo softwares livres e inteligências artificiais nacionais.\n\nSão Paulo ao lado da Palestina: Ruptura com o Estado de Israel\n⬤ Denunciamos a vergonhosa relação política, econômica e ideológica mantida pelo governador Tarcísio de Freitas com o Estado sionista de Israel.\n⬤ São Paulo deve se colocar firmemente na primeira linha de apoio\nao povo palestino. Exigimos a suspensão e a ruptura imediata de\ntodos os acordos militares, tecnológicos e de segurança pública firmados pelo governo de São Paulo com Israel\n⬤ Cancelamento imediato de todos os contratos de compra de\narmas, equipamentos de vigilância e tecnologias de espionagem\nproduzidos pelas empresas sionistas que testam suas ferramentas\nde morte promovendo o genocídio na Faixa de Gaza. Nossos policiais não serão treinados pela doutrina militar que massacra o povo\npalestino para aplicar esse mesmo modelo de eliminação nas favelas e\nperiferias paulistas.\n\n41"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-40",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n42"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-41",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n04\n\nDEMOCRACIA DOS\nTRABALHADORES E\nENFRENTAMENTO AO\nPODER DOS RICOS\n\n43"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-42",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n44"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-43",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nContra o poder dos banqueiros e a espoliação\nfinanceira\nA justificativa de que falta dinheiro no orçamento de São Paulo deixa de fazer\nsentido quando olhamos para onde o recurso público realmente está indo: o\nbolso dos grandes banqueiros e investidores. A dívida do estado, que girava em\ntorno de R$ 250 bilhões em 2021, funciona como um sistema que tira a riqueza\ngerada por quem trabalha e a entrega aos donos do dinheiro na forma de juros\naltos. Sob essa justificativa, os governos cortam investimentos e sucateiam serviços essenciais como a saúde e a educação. Enquanto essa transferência de\nrecursos para o mercado financeiro não for interrompida, não haverá dinheiro\npara garantir condições dignas de vida para a população. Para mudar essa realidade, é necessário enfrentar o poder dos bancos com as seguintes medidas:\n⬤ Suspensão imediata do pagamento da dívida pública do estado\nde São Paulo aos grandes investidores, banqueiros e especuladores\nnacionais e internacionais, retendo esses bilhões para o financiamento dos serviços públicos e do plano de obras estatais;\n⬤ Instalação de uma ampla Auditoria Operária e Cidadã da Dívida\nEstadual, controlada pelos sindicatos e movimentos sociais, para\ninvestigar, expor e anular as fraudes e desvios cometidos pelo mercado financeiro contra o patrimônio do povo trabalhador;\n⬤ Tributação fortemente progressiva sobre os lucros empresariais\ne dividendos das corporações bilionárias e multinacionais, combinada à taxação e confisco das grandes fortunas acumuladas no topo\nda pirâmide pelas famílias herdeiras da exploração paulista;\n⬤ Criação de um banco público estadual e de um sistema público de\ncrédito, financiados com recursos recuperados das privatizações, da\nrevisão dos benefícios fiscais e da auditoria da dívida, para sustentar\nhabitação, transporte, agricultura familiar e reindustrialização.\n\n45"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-44",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nDemocratização real e a construção do poder dos trabalhadores\nA chamada “democracia” existente em São Paulo é um regime antidemocrático e inimigo do povo, cuja institucionalidade está desenhada para preservar o\npoder de uma minoria que representa apenas 0,8% da população. O Congresso\nNacional, a Assembleia Legislativa (ALESP) e o Judiciário aplicam uma justiça\nde classe dura contra os pobres e complacente com os militares golpistas e os\ngrandes empresários. O PSTU afirma que as liberdades democráticas devem\nser defendidas contra a extrema direita, mas não para preservar a ordem dos\nricos, e sim para ampliar as condições de mobilização independente da classe:\n⬤ Fim imediato de todos os privilégios, supersalários e mordomias\ndo Judiciário, do Ministério Público e do alto funcionalismo público\npaulista, impondo um teto salarial estrito submetido à fiscalização\ncoletiva;\n⬤ Instituição da revogabilidade de todos os mandatos políticos a\nqualquer momento, assegurando que os deputados estaduais, prefeitos, governadores ou diretores possam ser destituídos pela base caso\ntraiam as deliberações operárias;\n⬤ Redução do salário de parlamentares e secretários estaduais, que\npassarão a receber um vencimento igual ao de uma professora ou de\num operário da rede pública de São Paulo;\n⬤ Criação de Conselhos Populares Deliberativos e comissões de\nbase nos locais de trabalho, estudo e moradia, funcionando como\nórgãos centrais de poder político;\n⬤ Orçamento estadual inteiramente planejado e decidido por\nassembleias populares de base, garantindo que a destinação da\nriqueza produzida em São Paulo seja definida soberanamente por\nquem trabalha.\n\n46"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-45",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n05\n\nCOMO MUDAR SÃO\nPAULO: MOBILIZAÇÃO E\nGOVERNO SOCIALISTA DOS\nTRABALHADORES\n\n47"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-46",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\n48"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-47",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nNenhuma mudança virá da aliança com os\ncapitalistas\nA história e as lutas recentes no estado de São Paulo demonstram que é uma\nilusão acreditar que a vida da população vai melhorar através de acordos ou de\nalianças eleitorais com os poderosos. Os grandes banqueiros, as empreiteiras,\nas multinacionais, os barões do agronegócio e os fundos de investimento que\nlucram com as privatizações não vão abrir mão de seus lucros e privilégios de\nforma pacífica ou por meio de debates parlamentares. Toda vez que a classe\ntrabalhadora exige direitos básicos, esses setores respondem com demissões,\ncorte de investimentos, campanhas de mentiras na grande mídia e violência\npolicial comandada pelo Estado. Tentar governar sem mexer na propriedade\ndos bilionários, como faz a política de conciliação de classes, apenas desarma\nos trabalhadores e mantém a engrenagem capitalista moendo as famílias operárias nas periferias.\n\nA classe trabalhadora mobilizada precisa governar São Paulo\nA força necessária para mudar os rumos de São Paulo não está nas urnas do\nsistema, mas na ação direta e na capacidade de organização que a nossa classe\ndemonstra todos os dias nas lutas concretas. O verdadeiro poder de transformação aparece na força das greves dos metroviários, ferroviários e servidores\npúblicos, nas ocupações de terra e de moradia no centro e nas periferias, nas\nlutas da juventude em defesa das escolas e universidades estaduais, e na linha\nde frente das mulheres trabalhadoras contra a violência e a exploração. A massiva mobilização popular contra a escala 6x1 unificou diferentes categorias e\nescancarou o esgotamento desse modelo que exige o esvaziamento da vida em\nnome do lucro privado.\nA resistência da Ocupação dos Queixadas, em Cajamar, expressa essa força.\nEnquanto a cidade reserva terras e infraestrutura para grandes galpões logísticos, famílias trabalhadoras são ameaçadas de remoção e recebem como alternativa um auxílio temporário que não garante moradia definitiva. A luta pela\ndesapropriação do terreno, pela regularização e pela permanência das famílias\n\n49"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-48",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\ndemonstra que ocupar e organizar é o caminho para enfrentar a especulação.\nO exemplo histórico e de resistência dos operários da Avibras, que enfrentam há anos a ameaça de entrega da tecnologia nacional ao capital estrangeiro,\naponta o caminho: a defesa dos empregos e da soberania só se sustenta com a\nmobilização independente, com piquetes, assembleias de base e com o enfrentamento aberto contra a patronal. Da mesma forma, a solidariedade de classe\ne a auto-organização espontânea que o povo pobre constrói para sobreviver aos\nalagamentos, incêndios em favelas e à violência nas comunidades provam que\na classe trabalhadora é a única força social capaz de gerir e planejar a vida coletiva de forma racional e solidária.\n\nA democracia dos ricos\nPara que a classe trabalhadora possa governar, é preciso primeiro romper\ncom a ilusão de que a mudança real virá por meio das eleições controladas pelos\nricos. O processo eleitoral na democracia burguesa é uma engrenagem feita\npara garantir que, não importa quem ganhe, os interesses dos grandes empresários e banqueiros continuem intocados.\nOs partidos da esquerda tradicional e do reformismo tentam convencer os\ntrabalhadores de que basta apertar um botão na urna a cada dois ou quatro\nanos para resolver problemas estruturais como a fome, a falta de moradia e o\ndesemprego. Essa política de passividade desarma a nossa classe, pois esconde\no fato de que o verdadeiro poder não está nas salas do parlamento ou nos tribunais, mas na propriedade das grandes empresas e nos escritórios da Faria\nLima. Chamar esse sistema de “democracia” é uma farsa: trata-se de uma ditadura dos ricos, onde a maioria trabalha e uma minoria privilegiada decide o\nfuturo de todos. Por isso, a disputa eleitoral para os revolucionários serve como\nespaço de denúncia e agitação; a verdadeira força para derrubar os privilégios\nda burguesia só pode ser construída organizando as lutas de base nas ruas e\nnos locais de trabalho.\n\nUm governo dos trabalhadores e do povo pobre\nPara dar um fim definitivo à decadência econômica e à barbárie social, é\npreciso que aqueles que produzem toda a imensa riqueza do estado assumam\no controle político e arranquem o poder das mãos dos capitalistas. Propomos\na construção de um governo socialista dos trabalhadores e do povo pobre, que\n\n50"
+          },
+          {
+            "id": "programa-eleitoral-estadual-sao-paulo-2026-49",
+            "titulo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA ELEITORAL ESTADUAL – SÃO PAULO 2026\n\nnão busque gerenciar o Estado burguês, mas romper radicalmente com as\namarras do sistema capitalista. Esse governo reorganizará toda a economia de\nSão Paulo, colocando o solo urbano, as fábricas e a infraestrutura a serviço das\nnecessidades humanas e do bem-estar social, e não da especulação financeira.\nAssentado sobre a mais ampla democracia operária e popular, onde as decisões orçamentárias e políticas sejam planejadas diretamente por conselhos\nde trabalhadores de base nos bairros e locais de emprego, esse governo será o\nembrião de uma nova sociedade. Diante da crise climática, do desemprego e da\nviolência institucional, o socialismo é a única saída real, urgente e necessária\npara o estado de São Paulo e para o Brasil.\n\n51"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-3",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-4",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "vera-16",
+            "titulo": "VERA 16",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "ocr",
+            "conteudo": "VERA 16\nGOVERNADORA\nVICE: RENATA FRANÇA"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "248d26b4e6667dbe489844947d6e27a7ac395f8abe67ad6d02aa8467cfc48d06"
+          },
+          {
+            "pagina": 2,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "25b16caa963365dfe3adcd6ec2287e7a1abcb39b2e3fd133464620f7ab20861f"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "837a7d9a48a71eb9bf875225d525977b78916524345a4917986697aa37654d36"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "17f1d2538529acdf6556ac56bb054851997ecd3082a48f6e5dd0ce6d1c7b870e"
+          },
+          {
+            "pagina": 6,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "135584d950e8d3a427f3b33689ed4eb1e483ef3f32a0691a40c67a00358c7f48"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "48c1790742c63551ece24d3bee2d8a05dfc683f48c441034e4b4374d94dacac4"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "0e43f6d49c241820ba8adebe61ea4dfbaa8481ec862c8c6e9b46e3121ab06218"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "5d42a5b12b7bc17879d21642e9309822b9c2045f8d204bb5f1189d1c0f2399ee"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "5eeecd9eaa17318d8bb20368c49b5ccd07625978bec7a5beb03ff0da811bbd67"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "68f7a8a5ce2e8a9418a3a1311f680cb7c0a012fe424cea89b0bba6fc6f1caca6"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "83afbb6a954c31946f3438e9af9621b42a0caaae7cad54084c10081b8847f6a8"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "c27a70a799a8249b1d77979da0b87065f2cc2664f4b7c137c6b9f7278831e113"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "300c493a4b0cefc1b2b6e2d04b72b1a3598774a2f523fb1652c0fa2dd10684cd"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "cde001ff0c9803c969f40970cfdd2a6f06a04927b721107430fb1846c898d075"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "6b5a34aeab578cee8a1632108702af83224d6a581225efe635be064a977ecf29"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "c188bc4e71a6467e89a20a54e05b11479fb6c124f0ffa07dcea1471b41265b0c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "98d20b8f27cd02a40ecdcd637f0232620746c4e1703c8931ac527483ca35b41f"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "473fd63952d81f2249a1e96fcb147cf7651d6bd22edf8c5a36374b2f25294571"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "f1792d40605ce502edb4ea60adde23f801a523599ffcd7f4bf79c2a928965bb5"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "051b8ca4dbedd6d4bb57fbd18e8ac0707b98214c707e8c27543f95ff84b17de8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "399c085280795bdf0b5049e3d13d8cd20218f0042804a34f09b2b2ce012ba608"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "8813509399006a77d3394bbd4b6914119a9dc63beee9f9fa13af87f4dcdaa2d1"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "e7c6cac81b7c8bab9b959fb4f7a34663f27ec96a31da1eb7949e4b42ac709b5a"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "6535b6e9fe7fdb533890a054af95766f82194c922c7aef1dee965b5dd54806f3"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "f582e7b4597d2f915e51cc398a092ec8611abb1b736217da4c0386dd062e37a7"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "037af86f4a414350d91f5996e965b5d81065b6627a0e3d4bc19b735cf93f0786"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "88416694c43a5fd0d6db6d11c16a6025f93a427f16bb7608e88ad73b5a685762"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "cc809ba230f801b75ed21b47c0873e4a3b00c69f15494a8d0246ab5408d7c650"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "90178f35ce86093e9790b24863615cbee93eccc398b10d0eb5d43e5a65dc06b7"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "a82fbbe415ca9b2e2830a1181133ec02b7b832ff99e29db95f24e101fdf10830"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "3f620a6b76c9ef86f2353e65ed407811da164a438f569cdde099a46e40173a14"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "718cd97d78fa8df4d38aee93ccc12f8e5e8763eccc342be4d967b7b0c2867047"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "4a372e7f9bc20d7731ee4ad812708e68f0b672dc77c94192735de5ee797e0ca7"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "6381bfa53bbc86c221c85470de56882667102390e18aed77df442cafa4069138"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "f955221156bf7153e116a3815f6f49e62806048b7cee8c00fa12f3a63186136e"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "c1094760f1d25be9db9e0d4d5645ed4b2f3f1301fe3639f818079b3ecd768539"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "f5a439d669b858eb1b2f266e9a3a7f613a64108213623ebf18ae34276efc11ef"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "950c10c7c23bf57dfe1d178274172550a52f91cd02873c327cc586435d69ef0d"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "6b901d28e77d28146d32576acf60cdf22c810d78671c731efbdcc5e2be990fc5"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "c6f245018709926454f59ce2362867dd5174bd381371ceffc620911018920372"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "697b7772a4e0aeea8a649d32ebe7fe090426b88d505de2da4309296c4ad99a2f"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "09cc5650c90b6502074981aaa31a991e52694898d807c1104ef87e02f9117163"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "c7fe6eae8b15f946536af1c78a30628b032839be87a758a457d0fa0ea6b4fa69"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "2de5dd038731be6ca2b32466fc322553bb5c1072a1f5d97e2192505a10ed5f2f"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "56f5b2efd7018b7501a2153de1928349af6183f478128a21354e469ec7651850"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "54333f7fcee62b252927362621085ff41e06beb1263f2b468864a8637a9b9f28"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "55c19e66ed23152ddf546f303d2033ae9e0578c085d5416687ba305184b31d6d"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "bb159116f49803a076e78ba11aeb8ae1451dc07d6ef75f3218da47806bc3fa9a"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "6f3eedd0b99f6b7ffc5486ea990772a80dff2219022ce21712606d65152894cb"
+          },
+          {
+            "pagina": 52,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 53,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 54,
+            "origem": "ocr",
+            "textSha256": "daf5dc1177e3743564c2e13049137d6bd61371eae32040d238a4b804de0f72a8"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a construção de Conselhos Populares nos locais de trabalho, estudo e moradia. Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado. O programa prevê iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais. O programa prevê implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população. O programa prevê criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado. O programa prevê implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia. O programa prevê a criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais.",
+    "frases": [
+      {
+        "texto": "O programa prevê a construção de Conselhos Populares nos locais de trabalho, estudo e moradia.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 29,
+            "trecho": "No primeiro dia de governo, convocaremos a classe trabalhadora, a juventude e os setores populares a governarem São Paulo por meio da construção de Conselhos Populares nos locais de trabalho, estudo e moradia."
+          }
+        ]
+      },
+      {
+        "texto": "Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 29,
+            "trecho": "Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 29,
+            "trecho": "1. Reestatização dos serviços estratégicos: iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais,"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "3. Tarifa Zero e transporte público estatal: implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população, e não do lucro privado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "4. Enfrentamento ao feminicídio e à violência contra as mulheres: criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "5. Moradia digna e despejo zero: implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia, na suspensão dos despejos e na regularização das ocupações populares."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 32,
+            "trecho": "Criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "conselhos-populares",
+        "titulo": "Conselhos Populares",
+        "descricao": "Participação dos conselhos na organização das decisões estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 29,
+            "trecho": "Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado."
+          }
+        ]
+      },
+      {
+        "id": "reestatizacao-servicos",
+        "titulo": "Reestatização de serviços",
+        "descricao": "Reestatização de serviços essenciais sob controle público.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 29,
+            "trecho": "1. Reestatização dos serviços estratégicos: iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais,"
+          }
+        ]
+      },
+      {
+        "id": "tarifa-zero",
+        "titulo": "Tarifa Zero",
+        "descricao": "Implantação de transporte público integrado, reestatizado e sem tarifa.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "3. Tarifa Zero e transporte público estatal: implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população, e não do lucro privado."
+          }
+        ]
+      },
+      {
+        "id": "protecao-mulheres",
+        "titulo": "Proteção às mulheres",
+        "descricao": "Criação de uma rede estadual de proteção contra a violência às mulheres.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "4. Enfrentamento ao feminicídio e à violência contra as mulheres: criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado."
+          }
+        ]
+      },
+      {
+        "id": "habitacao-popular",
+        "titulo": "Habitação popular",
+        "descricao": "Implementação de plano estadual de habitação baseado em imóveis vazios.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 30,
+            "trecho": "5. Moradia digna e despejo zero: implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia, na suspensão dos despejos e na regularização das ocupações populares."
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-publica",
+        "titulo": "Tecnologia pública",
+        "descricao": "Criação de polo público estadual ligado às universidades estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002536915:01",
+            "pagina": 32,
+            "trecho": "Criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T20:05:17.636Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T20:07:44.298Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:1:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:2:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:3:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirma literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem termo elogioso adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:4:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas cláusulas materiais citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "'24 horas' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: proteção às mulheres."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:5:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:6:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula citada coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "'100%' literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: tecnologia pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:frase:7:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:conselhos-populares:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula principal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:reestatizacao-servicos:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tarifa-zero:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:protecao-mulheres:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:habitacao-popular:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo consistente com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação (resumo omite '100%')."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002536915:tema:tecnologia-publica:documentos:SP:250002536915:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula, embora omita semicondutores/IA especificamente no rótulo."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SP:250002536915",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SP:250002536915:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36882,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2477,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25098,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24017,
+          "output_tokens_details": {
+            "thinking_tokens": 431
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25098,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24017,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25098,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25098
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36029239999999996
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:08:52Z",
+    "sourceSha256": "25d1d5ee8b4bcc79806c1a04b3973b3bf27b23c124a5ecc880affc826009f924",
+    "extractedTextSha256": "73f4779451f4ee56fad29ef565ce361535b6ecbd1e6fd9107d9dedecd85e8ebd",
+    "documentCount": 1,
+    "documentSetSha256": "f13b36bbbd5e922221a8c4a902382c184a83481af5d95d6a177af5e9aea30634",
+    "contentSha256": "0126ff5f34cc41bb703fddd95027b1c5b7da518131c92af692d8e92950f6decb"
+  }
+}

@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T20:05:40Z",
+  "reviewedAt": "2026-08-28T20:08:52Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 123,
-    "human_review_required": 21
+    "approved": 125,
+    "human_review_required": 19
   },
   "items": [
     {
@@ -1738,14 +1738,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002546802",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MG",
       "slug": "rafael-duda",
       "sqCandidato": "130002546802",
       "nomeUrna": "RAFAEL DUDA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "rafael-duda: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002544122",
@@ -1914,14 +1914,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SP:250002536915",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SP",
       "slug": "vera-lucia",
       "sqCandidato": "250002536915",
       "nomeUrna": "VERA LÚCIA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SP:250002544912",
