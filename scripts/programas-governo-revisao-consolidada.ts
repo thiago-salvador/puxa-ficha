@@ -47,15 +47,15 @@ async function lerRegistrosDaOnda(diretorioOndas: string, onda: OndaDefinicao): 
     let ufDir: string
     try {
       ufDir = path.join(diretorioOndas, onda.regiao, uf)
-      await readdir(ufDir)
+      const arquivosNoDiretorio = await readdir(ufDir)
+      ufsPresentes.push(uf)
+      const arquivos = arquivosNoDiretorio.filter((arquivo) => arquivo.endsWith(".json")).sort()
+      for (const arquivo of arquivos) {
+        registros.push(JSON.parse(await readFile(path.join(ufDir, arquivo), "utf8")) as ProgramaGovernoRevisaoRegistro)
+      }
     } catch {
       continue
     }
-    const arquivos = (await readdir(ufDir)).filter((arquivo) => arquivo.endsWith(".json")).sort()
-    for (const arquivo of arquivos) {
-      registros.push(JSON.parse(await readFile(path.join(ufDir, arquivo), "utf8")) as ProgramaGovernoRevisaoRegistro)
-    }
-    if (arquivos.length > 0 || (await readdir(ufDir)).length >= 0) ufsPresentes.push(uf)
   }
   return { registros, ufsPresentes }
 }
@@ -119,7 +119,6 @@ export async function gerarRevisaoConsolidada(
         }
       }
     }
-    if (registros.length === 0) continue
     const dirRegional = path.join(destinoRaiz, onda.regiao)
     await mkdir(dirRegional, { recursive: true })
     await writeFile(

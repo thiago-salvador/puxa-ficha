@@ -125,6 +125,12 @@ test("familias GLM e DeepSeek sao distintas entre si e de OpenAI Luna", () => {
   museDeepSeek.judge.version = "deepseek-v4-flash"
   assert.doesNotThrow(() => createProgramaGovernoModelAdapters(museDeepSeek))
 
+  const openAiMuse = config()
+  openAiMuse.generator.name = "OpenAI Muse"
+  openAiMuse.generator.version = "muse-spark-1.2"
+  openAiMuse.judge.name = "OpenAI GPT"
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(openAiMuse))
+
   // Declarar Luna com versao Muse deve falhar (versao inconsistente)
   const lunaMuseVersao = config()
   lunaMuseVersao.generator.name = "OpenAI Luna"
@@ -217,6 +223,30 @@ test("preserva uso genérico de runners fora do OpenCode", async () => {
     documentos: [],
   })
   assert.deepEqual(result.metadata.uso, { input_tokens: 18, output_tokens: 3, cost_usd: 0.01 })
+})
+
+test("fatos fora do recorte acionam tentativa corretiva", async () => {
+  const source = config()
+  source.generator.maxAttempts = 2
+  let chamadas = 0
+  const adapters = createProgramaGovernoModelAdapters(source, async () => {
+    chamadas += 1
+    return {
+      stdout: JSON.stringify({
+        fatos: [{
+          texto: "Proposta literal.",
+          evidencias: [{ documentoId: "doc-1", pagina: chamadas === 1 ? 99 : 1, trecho: "Trecho literal." }],
+        }],
+      }),
+      stderr: "",
+    }
+  })
+  const resultado = await adapters.extrairFatosPassagem!({
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    documentos: [{ documentoId: "doc-1", paginas: [{ pagina: 1, origem: "fixture", texto: "Trecho literal." }] }],
+  })
+  assert.equal(resultado.metadata.attempts, 2)
+  assert.equal(resultado.output.length, 1)
 })
 
 console.log("PROGRAMAS_MODELS_PASS")

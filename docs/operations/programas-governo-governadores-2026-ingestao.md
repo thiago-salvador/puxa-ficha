@@ -23,11 +23,11 @@ Os quatro argumentos de escopo e arquivos são obrigatórios:
 
 `--models-config` é necessário para candidaturas extraíveis. Ausências podem ser materializadas sem modelos.
 
-`--cache-dir` é opcional e define onde ficam os checkpoints por passagem da geração multipassagem; sem ele o padrão é `<output-dir>/.cache-passagens`. Cada chave de checkpoint deriva de identidade completa do candidato, hashes dos documentos, versão do prompt, modelo e planejador multipassagem, índice e hash da passagem. Passagem concluída nunca é reenviada ao modelo: a mesma execução ou uma retomada reutilizam o checkpoint e apenas a passagem pendente (ou sintese pendente) consome chamada nova.
+`--cache-dir` é opcional e define onde ficam os checkpoints por passagem da geração multipassagem; sem ele o padrão é `<output-dir>/.cache-passagens`. Cada chave de checkpoint deriva de identidade completa do candidato, hashes dos documentos, versão do prompt, modelo e planejador multipassagem, índice e hash da passagem. Passagem concluída nunca é reenviada ao modelo: a mesma execução ou uma retomada reutilizam o checkpoint e apenas a passagem pendente (ou síntese pendente) consome chamada nova.
 
 ## Geração em lote e multipassagem
 
-Quando o texto total do candidato excede `180_000` bytes UTF-8 (orçamento sobre envelope final serializado, margem segura abaixo de 200_000, UTF-8), o importador não envia tudo numa única chamada. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo esse limite, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
+Quando o envelope final serializado do candidato excede `180_000` bytes UTF-8, o importador não envia tudo numa única chamada. Esse é o limite conservador do planejador multipassagem. O runner aplica uma guarda independente e rejeita qualquer envelope a partir de `190_000` bytes. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo o limite do planejador, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
 
 Orçamento de chamadas, registrado no registro via `ingestao.modelos.geracaoMultipassagem` e agregado no manifesto:
 

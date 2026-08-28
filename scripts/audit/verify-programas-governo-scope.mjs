@@ -20,6 +20,7 @@ const EXACT = new Set([
   "scripts/audit/verify-programas-governo-scope.mjs",
   "scripts/data/programas-governo-presidencia-2026-fontes.json",
   "scripts/data/programas-governo-governadores-2026-wave-consolidado.mjs",
+  "scripts/data/programas-governo-governadores-2026/run-codex-transporte.mjs",
   "scripts/generate-programa-pdfs.mjs",
   "scripts/lib/ocr-programa-governo.swift",
   "scripts/lib/programas-governo-extracao.ts",

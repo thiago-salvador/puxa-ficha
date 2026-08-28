@@ -135,6 +135,7 @@ export type ProgramaGovernoGovIngestionRecord = Omit<ProgramaGovernoRegistro, "j
         chamadasSintese: number
         retriesSintese: number
         fingerprint: string
+        promptVersoes: { fatosPassagem: string; sinteseFatos: string }
       }
     }
     eval: null | { completo: boolean; blockers: number; dimensoes: readonly string[] }
@@ -173,7 +174,7 @@ export type ProgramaGovernoGovIngestionAdapters = {
   extractPdf(bytes: Buffer, filename: string): Promise<ProgramaGovernoExtracaoRastreavel>
   ensureDir(path: string): Promise<void>
   writeText(path: string, value: string): Promise<void>
-  rename?(from: string, to: string): Promise<void>
+  rename(from: string, to: string): Promise<void>
   now(): string
 }
 
@@ -316,31 +317,28 @@ function estimarPassagens(
   limite: number,
   identityKey: string,
 ): { multipassagem: boolean; passagens: number; bytesEntrada: number } {
-  const paginasPorDocumento = documentos.map((documento) => {
-    const porPagina = documento.paginas > 0
-      ? Math.max(1, Math.floor(documento.textoExtraidoBytes / documento.paginas))
-      : 1
-    return Array.from({ length: documento.paginas }, () => "x".repeat(porPagina))
-  })
-  const entrada = documentos.map((documento, indice) => ({
+  const entradaEstrutural = documentos.map((documento, indice) => ({
     documentoId: `${indice}`,
-    paginas: paginasPorDocumento[indice].map((texto, pagina) => ({ pagina: pagina + 1, origem: "planejamento", texto })),
+    paginas: Array.from({ length: documento.paginas }, (_, pagina) => ({ pagina: pagina + 1, origem: "planejamento", texto: "" })),
   }))
-  const inputCompleto = { identityKey, documentos: entrada }
-  const bytesEntrada = medirEnvelopeBytes(
+  const bytesEstruturais = medirEnvelopeBytes(
     PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
     PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
-    inputCompleto,
+    { identityKey, documentos: entradaEstrutural },
   )
+  const bytesTexto = documentos.reduce((total, documento) => total + Math.max(0, documento.textoExtraidoBytes), 0)
+  const bytesEntrada = bytesEstruturais + bytesTexto
   if (documentos.length === 0 || bytesEntrada < limite) {
     return { multipassagem: false, passagens: 1, bytesEntrada }
   }
-  const passagens = planejarProgramaGovernoPassagens(entrada, {
-    limiteBytes: limite,
-    instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
-    schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
-    criarInput: (docs) => ({ identityKey, documentos: docs }),
-  }).length
+  const custoFixoPorEnvelope = medirEnvelopeBytes(
+    PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    { identityKey, documentos: [] },
+  )
+  const capacidadeUtil = Math.max(1, limite - custoFixoPorEnvelope)
+  const bytesDistribuiveis = Math.max(1, bytesEntrada - custoFixoPorEnvelope)
+  const passagens = Math.max(2, Math.ceil(bytesDistribuiveis / capacidadeUtil))
   return { multipassagem: true, passagens, bytesEntrada }
 }
 
@@ -599,6 +597,7 @@ export type ProgramaGovernoMultipassagemMetrics = {
   chamadasSintese: number
   retriesSintese: number
   fingerprint: string
+  promptVersoes: { fatosPassagem: string; sinteseFatos: string }
 }
 
 async function mapearComConcorrencia<TItem, TResult>(
@@ -656,7 +655,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   modelos: ProgramaGovernoModelAdapters
   adapters: ProgramaGovernoGovIngestionAdapters
   limiteBytes: number
-}): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics }> {
+}): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics; metadata: { promptVersion: string } }> {
   const { identityKey, extracted, modelos, adapters } = params
   const extrairFatos = modelos.extrairFatosPassagem
   const sintetizarDeFatos = modelos.sintetizarDeFatos
@@ -687,6 +686,10 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       version: modelos.generator.version,
       promptVersion: params.promptVersion,
     }),
+    promptVersoes: {
+      fatosPassagem: `${params.promptVersion}/fatos-passagem`,
+      sinteseFatos: `${params.promptVersion}/sintese-fatos`,
+    },
   }
 
   async function chaveCacheDaPassagem(plano: ReturnType<typeof planejarProgramaGovernoPassagens>[number]): Promise<{ chave: string; caminho: string }> {
@@ -714,6 +717,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       if (
         cru && typeof cru === "object"
         && (cru as Record<string, unknown>).chaveCache === chave
+        && (cru as Record<string, unknown>).promptVersion === metrics.promptVersoes.fatosPassagem
         && Array.isArray((cru as Record<string, unknown>).fatos)
         && ((cru as Record<string, unknown>).fatos as unknown[]).length > 0
       ) {
@@ -731,6 +735,9 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       // cache miss ou corrompido: reexecuta apenas esta passagem
     }
     const resultado = await extrairFatos.call(modelos, { identityKey, documentos: plano.documentos })
+    if (resultado.metadata.promptVersion !== metrics.promptVersoes.fatosPassagem) {
+      throw new Error(`multipassagem: prompt de fatos stale ${resultado.metadata.promptVersion}`)
+    }
     metrics.chamadasGeracao += resultado.metadata.attempts
     if (resultado.metadata.attempts > 1) metrics.retriesPassagem += 1
     if (resultado.output.length === 0) {
@@ -743,12 +750,12 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       indice: plano.indice,
       hashPassagem: calcularFingerprintProgramaGovernoPassagens([plano]),
       modelo: `${modelos.generator.name}@${modelos.generator.version}`,
-      promptVersion: params.promptVersion,
+      promptVersion: resultado.metadata.promptVersion,
       fatos: resultado.output,
     }, null, 2)}\n`
     const temporario = `${caminho}.tmp-${process.pid}`
     await adapters.writeText(temporario, registro)
-    await (adapters.rename ? adapters.rename(temporario, caminho) : Promise.resolve())
+    await adapters.rename(temporario, caminho)
   })
 
   const fatosLiterais = filtrarFatosLiterais(
@@ -759,11 +766,15 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
     throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
   }
   const sintese = await sintetizarDeFatos.call(modelos, { identityKey, fatos: fatosLiterais })
+  if (sintese.metadata.promptVersion !== metrics.promptVersoes.sinteseFatos) {
+    throw new Error(`multipassagem: prompt de sintese stale ${sintese.metadata.promptVersion}`)
+  }
   metrics.chamadasSintese += sintese.metadata.attempts
   if (sintese.metadata.attempts > 1) metrics.retriesSintese += 1
   return {
     output: sintese.output,
     metrics,
+    metadata: { promptVersion: sintese.metadata.promptVersion },
   }
 }
 
@@ -851,7 +862,7 @@ async function extrairDocumentoComCache(
   await adapters.ensureDir(extractCacheDir)
   const temporario = `${caminhoCache}.tmp-${process.pid}`
   await adapters.writeText(temporario, JSON.stringify(extracao))
-  await (adapters.rename ? adapters.rename(temporario, caminhoCache) : Promise.resolve())
+  await adapters.rename(temporario, caminhoCache)
   return { extracao, cacheHit: false }
 }
 
@@ -901,7 +912,7 @@ async function gravarFase(
   await adapters.ensureDir(faseDir)
   const temporario = `${destino}.tmp-${process.pid}`
   await adapters.writeText(temporario, registro)
-  await (adapters.rename ? adapters.rename(temporario, destino) : Promise.resolve())
+  await adapters.rename(temporario, destino)
 }
 
 async function ingestCandidate(

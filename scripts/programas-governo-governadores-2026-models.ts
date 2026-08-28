@@ -358,9 +358,8 @@ function modelFamily(name: string): string {
   const tokens = raw.split(/[\s/:@-]+/u).filter(Boolean)
   // Apenas gpt-5.6-luna é OpenAI no escopo deste pipeline; Muse nao é Luna nem OpenAI
   if (raw.includes("gpt-5.6-luna")) return "openai"
+  if (raw.includes("muse")) return "muse"
   if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9])(?:\d.*)?$/u.test(token))) {
-    // Evitar que "muse" ou "luna" isolados caiam aqui; ja tratado acima para gpt-5.6-luna especifico
-    if (raw.includes("muse")) return tokens[0]
     return "openai"
   }
   if (tokens.some((token) => /^(?:anthropic|claude)$/u.test(token))) return "anthropic"
@@ -701,9 +700,16 @@ export function createProgramaGovernoModelAdapters(
         PROGRAMA_GOVERNO_FATOS_SCHEMA,
         PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
         { identityKey: input.identityKey, documentos: input.documentos },
-        (value) => validarFatosBrutos(value).filter((fato) => fato.evidencias.every((evidencia) =>
-          evidencia.documentoId && porDocumento.get(evidencia.documentoId)?.some((pagina) => pagina.pagina === evidencia.pagina)
-        )),
+        (value) => {
+          const fatosBrutos = validarFatosBrutos(value)
+          const fatosValidos = fatosBrutos.filter((fato) => fato.evidencias.every((evidencia) =>
+            evidencia.documentoId && porDocumento.get(evidencia.documentoId)?.some((pagina) => pagina.pagina === evidencia.pagina)
+          ))
+          if (fatosBrutos.length > 0 && fatosValidos.length === 0) {
+            throw new Error("fatos-passagem: todas as evidencias ficaram fora do recorte solicitado")
+          }
+          return fatosValidos
+        },
         runner,
       )
     },

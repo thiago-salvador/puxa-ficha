@@ -120,13 +120,17 @@ export async function adquirirLeaseExecucao(runDir, options = {}) {
       const idadeMs = (() => {
         try { return now() - statSync(travaAquisicao).mtimeMs } catch { return 0 }
       })()
-      const pidAusente = travaAnterior?.hostname === hostname && !pidAtivo(Number(travaAnterior?.pid))
-      if (idadeMs <= timeoutMs || !pidAusente) throw new Error("lease ativa: aquisicao concorrente")
+      const legivel = travaAnterior && typeof travaAnterior === "object"
+      const pidAtivoLocal = legivel && travaAnterior.hostname === hostname && pidAtivo(Number(travaAnterior.pid))
+      const lockValidoRemoto = legivel && travaAnterior.hostname !== hostname
+      if (idadeMs <= timeoutMs || pidAtivoLocal || lockValidoRemoto) {
+        throw new Error(`lease ativa: aquisicao concorrente em ${travaAquisicao}`)
+      }
       await rm(travaAquisicao, { force: true })
       try {
         await writeFile(travaAquisicao, `${JSON.stringify({ executionId, pid, hostname })}\n`, { flag: "wx" })
       } catch {
-        throw new Error("lease ativa: corrida ao recuperar trava de aquisicao stale")
+        throw new Error(`lease ativa: corrida ao recuperar trava de aquisicao stale em ${travaAquisicao}`)
       }
     } else throw error
   }
@@ -235,7 +239,7 @@ export function eErroCota(texto) {
   return PADRAO_COTA.test(String(texto ?? ""))
 }
 
-function familiaDoModelo(nome) {
+export function familiaDoModelo(nome) {
   const raw = String(nome ?? "").trim().toLocaleLowerCase("pt-BR")
   if (raw.includes("gpt-5.6-luna")) return "openai"
   const tokens = raw.split(/[\s/:@-]+/u).filter(Boolean)
@@ -271,7 +275,9 @@ export function fingerprintPipelineConfig(config) {
 
 export function slotsDeItem(item) {
   if (!item.multipassagem) return 1
-  return Math.min(PASSAGENS_CONCORRENCIA_INTERNA, Math.max(1, item.passagensPlanejadas))
+  const planejadas = Number(item.passagensPlanejadas)
+  const normalizadas = Number.isFinite(planejadas) ? Math.floor(planejadas) : 1
+  return Math.min(PASSAGENS_CONCORRENCIA_INTERNA, Math.max(1, normalizadas))
 }
 
 export function classificarRegistro(registro) {
@@ -735,7 +741,7 @@ export async function executarBatch(params) {
     ...(params.leaseOptions ?? {}),
   })
   try {
-    return await executarBatchSobLease({ ...params, filaPath: filaCaminho, executionId })
+    return await executarBatchSobLease({ ...params, filaPath: filaCaminho, itens, executionId })
   } finally {
     await liberarLeaseExecucao(lease)
     await marcarProgressFinal(params.runDir, executionId)
@@ -756,10 +762,7 @@ export async function arquivarRegistrosParciais(runDir, item, pipelineAnterior =
 }
 
 async function executarBatchSobLease(params) {
-  const { runDir, inventoryPath, workDir, archiveDir, modelsConfig, maxMinutos = 480, pollMs = 2_000, spawnFn = spawn, node24Resolver = resolverNode24, qwenExtraArgs = "", codexExtraArgs = "", filaPath } = params
-  const filaCaminho = filaPath ?? path.join(runDir, "fila", "fila.ndjson")
-  if (!existsSync(filaCaminho)) throw new Error("fila ausente: rode o modo plan primeiro")
-  const itens = (await readFile(filaCaminho, "utf8")).trim().split("\n").filter(Boolean).map((linha) => JSON.parse(linha))
+  const { runDir, inventoryPath, workDir, archiveDir, modelsConfig, maxMinutos = 480, pollMs = 2_000, spawnFn = spawn, node24Resolver = resolverNode24, qwenExtraArgs = "", codexExtraArgs = "", itens } = params
   const node24 = await node24Resolver(runDir)
   await mkdir(path.join(runDir, "logs"), { recursive: true })
   const executionId = params.executionId
@@ -772,14 +775,21 @@ async function executarBatchSobLease(params) {
   let familiaAtual = null
   let modeloAtual = null
   let pipelineAtual = null
-  try {
-    if (modelsConfig && existsSync(modelsConfig)) {
+  if (modelsConfig) {
+    try {
+      if (!existsSync(modelsConfig)) throw new Error("arquivo ausente")
       const cfg = JSON.parse(await readFile(modelsConfig, "utf8"))
+      if (!cfg?.generator?.name || !(cfg.generator?.version ?? cfg.generator?.name)) {
+        throw new Error("generator.name/version ausente")
+      }
       familiaAtual = familiaDoModelo(cfg.generator?.name ?? "")
       modeloAtual = cfg.generator?.version ?? cfg.generator?.name ?? null
       pipelineAtual = fingerprintPipelineConfig(cfg)
+      if (!familiaAtual || !modeloAtual || !pipelineAtual) throw new Error("identidade do pipeline incompleta")
+    } catch (error) {
+      throw new Error(`models-config invalido em ${modelsConfig}: ${error instanceof Error ? error.message : String(error)}`)
     }
-  } catch {}
+  }
   const inicio = Date.now()
   const limiteWall = maxMinutos * MS_MINUTO
 
@@ -1217,6 +1227,7 @@ export async function consolidarBatch({ runDir, norteOndasDir }) {
     const esperada = `${item.uf}:${item.sqCandidato}`
     if (identidade !== esperada) throw new Error(`mistura de candidato: ${identidade} != ${esperada}`)
     if (registro.ingestao?.identityKey !== item.chave) throw new Error(`mistura de identityKey: ${registro.ingestao?.identityKey} != ${item.chave}`)
+    if (registro.estado === "aprovado") throw new Error(`registro aprovado proibido: ${item.chave}`)
     if (regiaoDaUf(item.uf) !== item.regiao || item.regiao === "norte") throw new Error(`regiao divergente para ${item.chave}: ${item.regiao}`)
     const destinoUf = path.join(ondasDir, item.regiao, item.uf)
     await mkdir(destinoUf, { recursive: true })

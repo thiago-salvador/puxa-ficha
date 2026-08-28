@@ -29,6 +29,7 @@ export declare function adquirirLeaseExecucao(runDir: string, options?: {
 export declare function liberarLeaseExecucao(lease: LeaseExecucao | null | undefined): Promise<void>
 
 export declare function eErroCota(texto: unknown): boolean
+export declare function familiaDoModelo(nome: string): string
 export declare function regiaoDaUf(uf: string): string | null
 export declare function slotsDeItem(item: { multipassagem: boolean; passagensPlanejadas?: number }): number
 export declare function classificarRegistro(registro: unknown): { estado: "complete" | "blocked" | "retryable_error"; motivo: string }

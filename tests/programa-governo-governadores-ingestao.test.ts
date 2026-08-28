@@ -21,6 +21,7 @@ import {
   PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
   PROGRAMA_GOVERNO_FATOS_SCHEMA,
   PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
   PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS,
   type ProgramaGovernoModelProcessRunner,
   type ProgramaGovernoModelsConfig,
@@ -573,10 +574,15 @@ test("multipassagem retomavel: cache evita re-chamada e retries por passagem fic
     schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
     criarInput: (documentos) => ({ identityKey: item.chave, documentos }),
   }).length
+  assert.ok(planosEsperados > 1, `fixture deve exercitar multipassagem, recebeu ${planosEsperados} passagem`)
   assert.equal(metricasPrimeira.passagens, planosEsperados)
   assert.equal(metricasPrimeira.passagensCacheadas, 0)
   assert.equal(chamadasFatosPassagem, planosEsperados + 1)
   assert.equal(metricasPrimeira.retriesPassagem, 1)
+  assert.deepEqual(metricasPrimeira.promptVersoes, {
+    fatosPassagem: `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/fatos-passagem`,
+    sinteseFatos: `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fatos`,
+  })
 
   // Segunda execucao: zero chamadas novas de passagem; tudo vem do cache.
   const chamadasAntesDaSegunda = chamadasFatosPassagem

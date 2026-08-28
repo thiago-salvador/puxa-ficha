@@ -65,6 +65,13 @@ function identidadeDeCandidato(candidato) {
 
 async function main() {
   const falhas = []
+  const relatarFalhas = () => {
+    if (falhas.length === 0) return false
+    console.error(`ONDA_CONSOLIDADO_FAIL falhas=${falhas.length}`)
+    console.error(falhas.map((mensagem) => `FALHA ${mensagem}`).join("\n"))
+    process.exitCode = 1
+    return true
+  }
   const ondasDir = argumento("ondas-dir")
   const inventoryPath = argumento("inventory")
   const regiaoFiltro = argumento("regiao")
@@ -76,11 +83,13 @@ async function main() {
   }
   if (!REGIOES[regiaoFiltro ?? "norte"] && regiaoFiltro !== undefined) {
     falha(falhas, `--regiao invalida: ${regiaoFiltro}`)
+    relatarFalhas()
     return
   }
   const inventory = JSON.parse(await readFile(inventoryPath, "utf8"))
   if (inventory?.escopo?.ano !== 2026 || inventory?.escopo?.cargo !== "GOVERNADOR") {
     falha(falhas, "inventario fora do escopo 2026:GOVERNADOR")
+    relatarFalhas()
     return
   }
   const ufsAlvo = regiaoFiltro ? REGIOES[regiaoFiltro] : Object.values(REGIOES).flat()
@@ -136,13 +145,12 @@ async function main() {
       const candidato = candidatosPorIdentidade.get(identidade)
 
       if (registro.version !== 1) falha(falhas, `${uf} ${identidade}: version=${JSON.stringify(registro.version)} != 1`)
-      if (!ESTADOS_VALIDOS.has(registro.estado)) {
-        falha(falhas, `${uf} ${identidade}: estado editorial invalido "${String(registro.estado)}"`)
-        continue
-      }
       if (registro.estado === "aprovado") {
         aprovadosUf += 1
         falha(falhas, `${uf} ${identidade}: registro APROVADO nao deveria existir nesta etapa`)
+      } else if (!ESTADOS_VALIDOS.has(registro.estado)) {
+        falha(falhas, `${uf} ${identidade}: estado editorial invalido "${String(registro.estado)}"`)
+        continue
       }
       if (fonte.cargo !== "GOVERNADOR" || fonte.ano !== 2026 || fonte.uf !== uf) {
         falha(falhas, `${uf} ${identidade}: cabecalho de fonte divergente (ano/cargo/UF)`)
@@ -258,12 +266,7 @@ async function main() {
     if (!ufsNoInventario.has(uf)) falha(falhas, `inventario: UF ${uf} sem candidaturas declaradas`)
   }
 
-  if (falhas.length > 0) {
-    console.error(`ONDA_CONSOLIDADO_FAIL falhas=${falhas.length}`)
-    console.error(falhas.map((mensagem) => `FALHA ${mensagem}`).join("\n"))
-    process.exitCode = 1
-    return
-  }
+  if (relatarFalhas()) return
   console.log(JSON.stringify({
     resultado: "ONDAS_CONSOLIDADO_PASS",
     regiao: regiaoFiltro ?? "todas",

@@ -1,7 +1,6 @@
 import assert from "node:assert/strict"
 import { spawn } from "node:child_process"
 import { chmod, mkdtemp, rm, writeFile } from "node:fs/promises"
-import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 import test, { after, before } from "node:test"
@@ -32,10 +31,11 @@ const RUNNER_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-gov
 const RUNNER_DEEPSEEK = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-opencode-deepseek.mjs", import.meta.url))
 const RUNNER_GLM = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-glm.mjs", import.meta.url))
 const DIR_RUNNERS = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url))
+const DIR_REPO = fileURLToPath(new URL("../", import.meta.url))
 let DIR_FIXTURES = ""
 
 before(async () => {
-  DIR_FIXTURES = await mkdtemp(join(tmpdir(), "pf-programa-governo-runners-"))
+  DIR_FIXTURES = await mkdtemp(join(DIR_REPO, ".tmp-pf-programa-governo-runners-"))
 })
 
 after(async () => {
@@ -82,6 +82,16 @@ test("runner do judge codex extrai mensagem final do stream ndjson e devolve obj
   )
   assert.equal(resultado.code, 0, resultado.stderr)
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: false })
+})
+
+test("runner Codex rejeita NDJSON sem mensagem final", async () => {
+  const fakeCli = fixturePath("pf-fake-codex-sem-mensagem.mjs")
+  const eventoFake = `${JSON.stringify({ type: "turn.completed", usage: { input_tokens: 2 } })}\n`
+  await writeFile(fakeCli, `#!/usr/bin/env node\nprocess.stdin.resume(); process.stdout.write(${JSON.stringify(eventoFake)})\n`)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(RUNNER_CODEX, { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000" }, ENVELOPE)
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /sem mensagem final/)
 })
 
 test("runner do generator Luna usa Codex limpo, modelo explícito e telemetria", async () => {
@@ -202,6 +212,21 @@ test("runner opencode luna converte resposta do go em JSON valido", async () => 
   )
   assert.equal(resultado.code, 0, resultado.stderr)
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
+})
+
+test("runner opencode falha quando telemetria configurada não pode ser gravada", async () => {
+  const fakeGo = fixturePath("pf-fake-opencode-telemetria.mjs")
+  const bloqueio = fixturePath("arquivo-no-lugar-do-diretorio")
+  await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'gpt-5.6-luna', formato:'responses', uso:{}, texto:'{\"ok\": true}'}))\n")
+  await writeFile(bloqueio, "bloqueio")
+  await chmod(fakeGo, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_LUNA,
+    { PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "15000", PF_MODEL_TELEMETRY_PATH: join(bloqueio, "tentativas.ndjson") },
+    ENVELOPE,
+  )
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /EEXIST|ENOTDIR|not a directory/iu)
 })
 
 test("runner opencode deepseek converte resposta do go em JSON valido", async () => {

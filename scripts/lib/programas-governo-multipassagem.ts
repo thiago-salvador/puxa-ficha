@@ -335,7 +335,5 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
   }
   for (const frase of frases as unknown[]) verificarEvidencia(frase, "frases[]")
   for (const tema of temas as unknown[]) verificarEvidencia(tema, "temas[]")
-  const fatosUsados = new Map<string, number>()
-  for (const id of cobertura) fatosUsados.set(id, (fatosUsados.get(id) ?? 0) + 1)
   if (cobertura.size === 0) throw new Error("multipassagem: nenhum fato referenciado")
 }

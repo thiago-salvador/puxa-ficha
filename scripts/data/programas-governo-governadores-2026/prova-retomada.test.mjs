@@ -5,43 +5,48 @@
 import { readFile } from "node:fs/promises"
 import { existsSync } from "node:fs"
 import path from "node:path"
-import { classificarRegistro, fingerprintPipelineConfig, lerRegistro, reconciliarParaRetomada, validarCachesRetomada } from "./batch-driver.mjs"
+import { classificarRegistro, familiaDoModelo, fingerprintPipelineConfig, lerRegistro, reconciliarParaRetomada, validarCachesRetomada } from "./batch-driver.mjs"
 
-const runDir = process.argv[2]
+const argumento = (nome) => process.argv.find((item) => item.startsWith(`--${nome}=`))?.slice(nome.length + 3)
+const posicional = process.argv.slice(2).find((item) => !item.startsWith("--"))
+const runDir = argumento("run-dir") ?? posicional
 if (!runDir) {
-  console.error("uso: node prova-retomada.test.mjs <runDir>")
+  console.error("uso: node prova-retomada.test.mjs <runDir>|--run-dir=<dir> [--work-dir=<dir>] [--models-config=<json>]")
   process.exit(2)
 }
-const workDir = path.resolve(runDir, "../..")
+// Compatibilidade: execuções históricas mantêm runDir dois níveis abaixo do workDir.
+const workDir = argumento("work-dir") ?? path.resolve(runDir, "../..")
 if (existsSync(path.join(runDir, "execution-lease.json"))) {
   console.error("FALHA: prova de retomada exige batch parado, mas existe lease ativa")
   process.exit(1)
 }
 
 // Detecta familia atual (Luna) para reconciliacao por familia
-let familiaAtual = "openai"
+let familiaAtual = null
 let modeloAtual = null
 let pipelineAtual = null
 try {
-  const cfgPath = process.argv[3] ?? [
+  const cfgPath = argumento("models-config") ?? [
     path.join(workDir, "models-config-restante-codex-luna.json"),
     path.join(workDir, "models-config-restante-luna.json"),
   ].find((caminho) => existsSync(caminho))
-  if (existsSync(cfgPath)) {
-    const cfg = JSON.parse(await readFile(cfgPath, "utf8"))
-    const nome = cfg.generator?.name ?? ""
-    familiaAtual = nome.toLowerCase().includes("luna") ? "openai" : nome.toLowerCase().includes("deepseek") ? "deepseek" : nome.toLowerCase().includes("glm") ? "glm" : "openai"
-    modeloAtual = cfg.generator?.version ?? cfg.generator?.name ?? null
-    pipelineAtual = fingerprintPipelineConfig(cfg)
-  }
-} catch {}
+  if (!cfgPath || !existsSync(cfgPath)) throw new Error("models-config nao encontrado")
+  const cfg = JSON.parse(await readFile(cfgPath, "utf8"))
+  if (!cfg?.generator?.name || !(cfg.generator?.version ?? cfg.generator?.name)) throw new Error("generator.name/version ausente")
+  familiaAtual = familiaDoModelo(cfg.generator.name)
+  modeloAtual = cfg.generator.version ?? cfg.generator.name
+  pipelineAtual = fingerprintPipelineConfig(cfg)
+} catch (error) {
+  console.error(`FALHA: configuracao de modelos invalida: ${error instanceof Error ? error.message : String(error)}`)
+  process.exit(1)
+}
 
 const filaRaw = (await readFile(path.join(runDir, "fila", "fila.ndjson"), "utf8")).trim()
 const fila = filaRaw ? filaRaw.split("\n").filter(Boolean).map((l) => JSON.parse(l)) : []
 
 let totalAprovado = 0
 let norteNaFila = 0
-const estadosContados = { complete: 0, blocked: 0, pending: 0, retryable: 0, generator_pending: 0, other: 0 }
+const estadosContados = { complete: 0, blocked: 0, pending: 0, retryable: 0, other: 0 }
 const bloqueadosLista = []
 const agendaveisLista = []
 const porChave = new Map()
@@ -59,7 +64,7 @@ for (const item of fila) {
   } catch {}
 
   // Usa funcao pura do driver para reconciliacao
-  const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual, pipelineAtual })
+  const reconciliado = reconciliarParaRetomada({ item, registro, estadoAnterior, familiaAtual, modeloAtual, pipelineAtual })
 
   // Contagem a partir de dados, sem hardcode de strings (exceto chaves conhecidas para validacao)
   let estado = reconciliado.estado
@@ -110,14 +115,6 @@ if (totalReconciliado !== fila.length || estadosContados.other !== 0) {
   console.error(`FALHA: checkpoint nao fecha a fila (${totalReconciliado}/${fila.length}, other=${estadosContados.other})`)
   process.exit(1)
 }
-if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending !== undefined) {
-  // apos normalizacao deve ser 0; se ainda houver, falhar
-  if ((estadosContados.generator_pending ?? 0) !== 0) {
-    console.error(`FALHA: generator_pending fantasma ${estadosContados.generator_pending} != 0`)
-    process.exit(1)
-  }
-}
-
 const progress = JSON.parse(await readFile(path.join(runDir, "progress.json"), "utf8"))
 const esperadoPeloCheckpoint = {
   complete: progress.concluidos,

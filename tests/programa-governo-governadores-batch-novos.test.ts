@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { spawnSync } from "node:child_process"
 import { EventEmitter } from "node:events"
 import { existsSync } from "node:fs"
 import { chmod, mkdir, mkdtemp, readFile, rm, utimes, writeFile } from "node:fs/promises"
@@ -19,6 +20,7 @@ import {
 
 const DRIVER_URL = new URL("../scripts/data/programas-governo-governadores-2026/batch-driver.mjs", import.meta.url)
 const RUNNERS_DIR = new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url)
+const WAVE_CONSOLIDADO = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026-wave-consolidado.mjs", import.meta.url))
 
 type DriverModule = typeof import("../scripts/data/programas-governo-governadores-2026/batch-driver.mjs")
 
@@ -34,6 +36,15 @@ async function withTempDir<T>(prefix: string, fn: (dir: string) => Promise<T>): 
     await rm(dir, { recursive: true, force: true })
   }
 }
+
+test("gate consolidado falha com região inválida em vez de sair silenciosamente", async () => {
+  await withTempDir("pf-wave-gate-", async (root) => {
+    const resultado = spawnSync(process.execPath, [WAVE_CONSOLIDADO, `--ondas-dir=${root}`, `--inventory=${path.join(root, "ausente.json")}`, "--regiao=invalida"], { encoding: "utf8" })
+    assert.notEqual(resultado.status, 0)
+    assert.match(resultado.stderr, /ONDA_CONSOLIDADO_FAIL/)
+    assert.match(resultado.stderr, /regiao invalida/)
+  })
+})
 
 function paginaTexto(planos: Array<{ documentos: Array<{ paginas: Array<{ texto: string }> }> }>): string {
   return planos.flatMap((plano) => plano.documentos.flatMap((doc) => doc.paginas.map((pagina) => pagina.texto))).join("")
@@ -149,7 +160,11 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
       pollMs: 1,
     }
     const primeira = d.executarBatch(params)
-    await new Promise((resolve) => setTimeout(resolve, 20))
+    const leasePath = path.join(runDir, "execution-lease.json")
+    for (let tentativa = 0; tentativa < 100 && !existsSync(leasePath); tentativa += 1) {
+      await new Promise((resolve) => setTimeout(resolve, 2))
+    }
+    assert.equal(existsSync(leasePath), true, "primeira execução deve adquirir a lease")
     await assert.rejects(d.executarBatch(params), /lease.*ativa|execucao.*ativa/iu)
     await primeira
     assert.equal(spawns, 1)
@@ -158,6 +173,13 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
     assert.match(progressFinal.finishedAt, /^\d{4}-\d{2}-\d{2}T/u)
     assert.equal(progressFinal.pid, process.pid)
     assert.equal(progressFinal.lease, "released")
+
+    const modelsInvalidos = path.join(root, "models-invalidos.json")
+    await writeFile(modelsInvalidos, "{invalido")
+    await assert.rejects(
+      d.executarBatch({ ...params, modelsConfig: modelsInvalidos }),
+      /models-config invalido/,
+    )
 
     const staleDir = path.join(root, "stale-run")
     await mkdir(staleDir)
@@ -168,7 +190,7 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
       startedAt: "2026-08-27T00:00:00.000Z",
       heartbeat: "2026-08-27T00:00:00.000Z",
     }))
-    const opcoesLease = { now: () => Date.parse("2026-08-28T00:00:00.000Z"), timeoutMs: 1_000, pidAtivo: () => false }
+    const opcoesLease = { now: () => Date.parse("2026-08-28T00:00:00.000Z"), timeoutMs: 1_000, heartbeatMs: 5, pidAtivo: () => false }
     const aquisicoes = await Promise.allSettled([
       d.adquirirLeaseExecucao(staleDir, opcoesLease),
       d.adquirirLeaseExecucao(staleDir, opcoesLease),
@@ -185,9 +207,24 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
     await utimes(acquirePath, antiga, antiga)
     const recuperada = await d.adquirirLeaseExecucao(orphanDir, opcoesLease)
     await d.liberarLeaseExecucao(recuperada)
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise((resolve) => setTimeout(resolve, 15))
     assert.equal(existsSync(path.join(orphanDir, "execution-lease.json")), false, "heartbeat não pode recriar lease liberada")
+
+    const corrompidaDir = path.join(root, "corrupt-acquire")
+    await mkdir(corrompidaDir)
+    const corrompidaPath = path.join(corrompidaDir, "execution-lease.acquire")
+    await writeFile(corrompidaPath, "{invalido")
+    await utimes(corrompidaPath, antiga, antiga)
+    const recuperadaCorrompida = await d.adquirirLeaseExecucao(corrompidaDir, opcoesLease)
+    await d.liberarLeaseExecucao(recuperadaCorrompida)
   })
+})
+
+test("slots multipassagem sempre ficam finitos e dentro do semáforo", async () => {
+  const d = await driver()
+  assert.equal(d.slotsDeItem({ multipassagem: true }), 1)
+  assert.equal(d.slotsDeItem({ multipassagem: true, passagensPlanejadas: Number.NaN }), 1)
+  assert.equal(d.slotsDeItem({ multipassagem: true, passagensPlanejadas: 99 }), 3)
 })
 
 test("ambiente do batch preserva controles necessários e remove segredos do host", async () => {
@@ -257,6 +294,20 @@ test("checkpoint após crash preserva última família e separa família planeja
   assert.equal(retomada.familiaDaUltimaTentativa, "glm")
   assert.equal(retomada.modeloDaUltimaTentativa, "glm-5.3")
   assert.equal(retomada.familiaPlanejada, "openai")
+
+  const outraCandidatura = d.reconciliarParaRetomada({
+    item: { chave: "2026:GOVERNADOR:MA:100000000002" },
+    registro: {
+      estado: "perfil_local_ausente",
+      fonte: { ano: 2026, cargo: "GOVERNADOR", uf: "MA", sqCandidato: "100000000003" },
+      ingestao: { identityKey: "2026:GOVERNADOR:MA:100000000003" },
+    },
+    estadoAnterior: null,
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+  })
+  assert.equal(outraCandidatura.estado, "retryable_error")
+  assert.match(outraCandidatura.motivo, /outra candidatura/)
 })
 
 test("retomada após hard stop ainda executa a segunda tentativa pendente", async () => {
@@ -380,7 +431,7 @@ test("gate resolve command mais args e rejeita o mesmo runner real", () => {
     generator: { name: "OpenAI Luna", version: "gpt-5.6-luna", command: process.execPath, args: [runner], timeoutMs: 1_000, maxAttempts: 1 },
     judge: { name: "DeepSeek", version: "deepseek-v4-flash", command: process.execPath, args: [runner], timeoutMs: 1_000, maxAttempts: 1 },
   }
-  assert.throws(() => createProgramaGovernoModelAdapters(config), /mesmo runner|runner real|familias diferentes/iu)
+  assert.throws(() => createProgramaGovernoModelAdapters(config), /mesmo runner|runner real/iu)
 })
 
 test("runner elimina grupo que ignora SIGTERM e remove o temporário", async () => {

@@ -190,7 +190,9 @@ function registrarTelemetria(config, inicio, resultado, erro) {
   try {
     mkdirSync(dirname(destino), { recursive: true })
     appendFileSync(destino, `${JSON.stringify(row)}\n`, "utf8")
-  } catch {}
+  } catch (erroTelemetria) {
+    if (!erro) throw erroTelemetria
+  }
 }
 
 export async function executarOpenCodeRunner(config) {

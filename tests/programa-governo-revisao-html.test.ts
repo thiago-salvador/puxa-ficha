@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
+import { existsSync } from "node:fs"
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises"
-import { tmpdir } from "node:os"
 import path from "node:path"
 import test from "node:test"
 
@@ -106,7 +106,7 @@ test("eval incompleto permanece rotulado como bloqueado", () => {
 })
 
 test("cobertura exata compara identidades e recusa duplicata com omissão na mesma UF", async () => {
-  const raiz = await mkdtemp(path.join(tmpdir(), "pf-revisao-identidades-"))
+  const raiz = await mkdtemp(path.join(process.cwd(), ".tmp-pf-revisao-identidades-"))
   try {
     const ondas = path.join(raiz, "ondas")
     const destino = path.join(raiz, "review")
@@ -129,6 +129,9 @@ test("cobertura exata compara identidades e recusa duplicata com omissão na mes
     const resultado = await gerarRevisaoConsolidada(ondas, destino, { inventarioPath: inventario })
     assert.equal(resultado.coberturaExata, false)
     assert.match(resultado.pendenciasCobertura.join("\n"), /faltantes=1, extras=0, duplicadas=1/)
+    for (const regiao of ["norte", "nordeste", "centro-oeste", "sudeste", "sul"]) {
+      assert.equal(existsSync(path.join(destino, regiao, "review.html")), true, `link regional ${regiao} deve existir mesmo vazio`)
+    }
   } finally {
     await rm(raiz, { recursive: true, force: true })
   }

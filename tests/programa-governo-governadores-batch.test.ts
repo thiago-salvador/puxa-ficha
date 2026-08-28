@@ -591,6 +591,11 @@ async function testeBatch(opcoes: {
 }): Promise<{ runDir: string; resultado: Awaited<ReturnType<typeof executarBatch>>; disparos: string[]; maximosConcorrentes: { candidatos: number; slots: number; multipassagem: number } }> {
   const runDir = opcoes.runDirFixo ?? (await dirTemporario())
   await criarFilaFixture(runDir, opcoes.itens)
+  const modelsConfig = path.join(runDir, "models.json")
+  await writeFile(modelsConfig, JSON.stringify({
+    generator: { name: "OpenAI Luna", version: "gpt-5.6-luna", command: "node", args: ["run-generator-codex-luna.mjs"] },
+    judge: { name: "Anthropic Claude", version: "sonnet", command: "node", args: ["run-judge-claude.mjs"] },
+  }))
   let emVooCandidatos = 0
   let emVooSlots = 0
   let emVooMultipassagem = 0
@@ -661,7 +666,7 @@ async function testeBatch(opcoes: {
     runDir,
     inventoryPath: "/inventory.json",
     workDir: runDir,
-    modelsConfig: "/models.json",
+    modelsConfig,
     archiveDir: "/archives",
     pollMs: opcoes.pollMs ?? 20,
     spawnFn: spawnFn as unknown as Parameters<typeof executarBatch>[0]["spawnFn"],
@@ -807,6 +812,12 @@ test("consolidarBatch copia registros para a arvore regional correta e recusa mi
   )
   await assert.rejects(() => consolidarBatch({ runDir: runDirMistura }), /mistura de candidato/)
 
+  const registroAprovadoPath = path.join(runDir, "candidatos", itens[0].chaveCacheDir as string, "registros", "BA", "consolida-1.json")
+  const registroAprovado = JSON.parse(await readFile(registroAprovadoPath, "utf8")) as Record<string, unknown>
+  await writeFile(registroAprovadoPath, `${JSON.stringify({ ...registroAprovado, estado: "aprovado" })}\n`)
+  await assert.rejects(() => consolidarBatch({ runDir }), /registro aprovado proibido/)
+  await writeFile(registroAprovadoPath, `${JSON.stringify({ ...registroAprovado, estado: "em_revisao" })}\n`)
+
   const norteOndasDir = path.join(runDir, "norte-origem")
   await mkdir(path.join(norteOndasDir, "AC"), { recursive: true })
   const registroNorte = {
@@ -850,5 +861,3 @@ test("validarFilaContraInventario recusa falta, excesso, UF norte e chave duplic
   )
   await rm(dir, { recursive: true, force: true })
 })
-
-test("BATCH_DRIVER_PASS", () => assert.ok(true))
