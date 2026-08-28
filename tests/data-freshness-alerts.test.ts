@@ -186,7 +186,16 @@ test("issue destacada é criada, atualizada e fechada sem executar conteúdo do 
       env: baseEnv,
     })
     assert.equal(update.status, 0, update.stderr)
-    assert.match(update.stdout, /atualizar issue #321 e comentar nova ocorrência/)
+    assert.match(update.stdout, /atualizar issue #321 e comentar alteração da ocorrência/)
+
+    const fingerprint = update.stdout.match(/fingerprint: ([a-f0-9]{64})/)?.[1]
+    assert.ok(fingerprint)
+    const unchanged = spawnSync("bash", [...baseArgs, "--existing=321", `--existing-fingerprint=${fingerprint}`], {
+      encoding: "utf8",
+      env: baseEnv,
+    })
+    assert.equal(unchanged.status, 0, unchanged.stderr)
+    assert.match(unchanged.stdout, /sem novo comentário; ocorrência não mudou/)
 
     const close = spawnSync("bash", [
       "scripts/audit/sync-data-freshness-issue.sh",

@@ -1,4 +1,9 @@
-export type FreshnessStatus = "fresh" | "stale" | "source_error" | "review_required"
+export type FreshnessStatus =
+  | "fresh"
+  | "stale"
+  | "source_error"
+  | "review_required"
+  | "technical_debt"
 
 export type RefreshMode = "scheduled" | "manual" | "versioned_review" | "disabled"
 

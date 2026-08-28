@@ -32,18 +32,34 @@ WITH candidacies AS (
   ) AS record
   FROM public.chapas_2026 ch
   LEFT JOIN public.candidatos vice ON vice.id = ch.vice_candidato_id
+), collection_runs AS (
+  SELECT fonte, execucao, max(executado_em) AS checked_at
+  FROM public.coleta_log_ultima
+  GROUP BY fonte, execucao
+), latest_collection_runs AS (
+  SELECT DISTINCT ON (fonte) fonte, execucao, checked_at
+  FROM collection_runs
+  ORDER BY fonte, checked_at DESC, execucao DESC NULLS LAST
 ), evidence AS (
   SELECT jsonb_build_object(
-    'source_id', fonte,
-    'checked_at', max(executado_em),
+    'source_id', latest.fonte,
+    'checked_at', max(log.executado_em),
     'source_error', CASE
-      WHEN count(*) FILTER (WHERE resultado <> 'erro') = 0 THEN 'todas as tentativas mais recentes falharam'
+      WHEN count(*) FILTER (WHERE log.resultado = 'erro') > 0
+        THEN format('%s erro(s) na execução mais recente', count(*) FILTER (WHERE log.resultado = 'erro'))
       ELSE NULL
     END,
-    'review_required', bool_or(resultado IN ('erro', 'indeterminado'))
+    'review_required', false,
+    'error_count', count(*) FILTER (WHERE log.resultado = 'erro'),
+    'debt_count', count(*) FILTER (WHERE log.resultado = 'indeterminado'),
+    'total_count', count(*),
+    'execution_id', latest.execucao
   ) AS item
-  FROM public.coleta_log_ultima
-  GROUP BY fonte
+  FROM latest_collection_runs latest
+  JOIN public.coleta_log_ultima log
+    ON log.fonte = latest.fonte
+   AND log.execucao IS NOT DISTINCT FROM latest.execucao
+  GROUP BY latest.fonte, latest.execucao
 )
 SELECT jsonb_build_object(
   'generated_at', now(),

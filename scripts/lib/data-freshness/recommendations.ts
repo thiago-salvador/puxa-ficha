@@ -8,7 +8,7 @@ import type {
 
 export interface DataFreshnessRecommendation {
   code: string
-  priority: "critical" | "high"
+  priority: "critical" | "high" | "medium"
   title: string
   action: string
   evidence: string[]
@@ -64,11 +64,26 @@ function cappedEvidence(values: string[], total: number): string[] {
   return unique
 }
 
+function sourceEvidenceLabel(
+  item: SourceFreshnessResult,
+  sourceById: Map<string, FreshnessSource>,
+): string {
+  const label = sourceById.get(item.source_id)?.label ?? item.source_id
+  const details: string[] = []
+  if ((item.error_count ?? 0) > 0) details.push(`${item.error_count} erro(s)`)
+  if ((item.debt_count ?? 0) > 0) details.push(`${item.debt_count} pendência(s)`)
+  if ((item.missing_source_ids?.length ?? 0) > 0) {
+    details.push(`sem evidência: ${item.missing_source_ids?.join(", ")}`)
+  }
+  return details.length > 0 ? `${label} (${details.join("; ")})` : label
+}
+
 export function buildDataFreshnessRecommendations(input: RecommendationInput): DataFreshnessRecommendation[] {
   const recommendations: DataFreshnessRecommendation[] = []
   const sourceById = new Map(input.registry.map((source) => [source.source_id, source]))
   const sourceErrors = input.freshness.filter((item) => item.status === "source_error")
   const sourceReviews = input.freshness.filter((item) => item.status === "review_required")
+  const technicalDebt = input.freshness.filter((item) => item.status === "technical_debt")
   const blockingStale = input.freshness.filter((item) =>
     item.status === "stale" && sourceById.get(item.source_id)?.stale_policy === "review_required")
   const warningStale = input.freshness.filter((item) =>
@@ -82,7 +97,7 @@ export function buildDataFreshnessRecommendations(input: RecommendationInput): D
       priority: "critical",
       title: "Fonte necessária indisponível ou inválida",
       action: "Não corrigir o catálogo com dados incompletos. Confirmar a disponibilidade da fonte oficial e reexecutar a auditoria.",
-      evidence: sourceErrors.map((item) => sourceById.get(item.source_id)?.label ?? item.source_id),
+      evidence: sourceErrors.map((item) => sourceEvidenceLabel(item, sourceById)),
     })
   }
 
@@ -92,7 +107,17 @@ export function buildDataFreshnessRecommendations(input: RecommendationInput): D
       priority: "high",
       title: "Fontes exigem revisão humana",
       action: "Abrir a evidência de coleta, validar o conteúdo e liberar uma nova publicação somente depois da conferência.",
-      evidence: sourceReviews.map((item) => sourceById.get(item.source_id)?.label ?? item.source_id),
+      evidence: sourceReviews.map((item) => sourceEvidenceLabel(item, sourceById)),
+    })
+  }
+
+  if (technicalDebt.length > 0) {
+    recommendations.push({
+      code: "technical_debt",
+      priority: "medium",
+      title: "Dívidas de coleta conhecidas, sem incidente atual",
+      action: "Tratar no backlog da fonte e manter a limitação explícita. Estes itens não bloqueiam a auditoria enquanto não houver falha nova ou divergência de candidatura.",
+      evidence: technicalDebt.map((item) => sourceEvidenceLabel(item, sourceById)),
     })
   }
 
@@ -150,7 +175,7 @@ export function recommendationsMarkdown(recommendations: DataFreshnessRecommenda
     return "## Próximas ações recomendadas\n\nNenhuma ação corretiva necessária nesta rodada.\n"
   }
   const sections = recommendations.map((recommendation) => {
-    const icon = recommendation.priority === "critical" ? "🚨" : "⚠️"
+    const icon = recommendation.priority === "critical" ? "🚨" : recommendation.priority === "high" ? "⚠️" : "🔧"
     const evidence = recommendation.evidence.map((item) => `- ${compact(item)}`).join("\n")
     return `### ${icon} ${recommendation.title}\n\n` +
       `- Prioridade: **${recommendation.priority}**\n` +
