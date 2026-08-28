@@ -44,6 +44,8 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.equal(diff.candidacies.published_count, universe.published.length)
     assert.match(summary, new RegExp(`Candidaturas oficiais: ${universe.official.length}`))
     assert.match(summary, /Estado: \*\*ok\*\*/)
+    assert.match(summary, /Próximas ações recomendadas/)
+    assert.match(summary, /Nenhuma ação corretiva necessária/)
   } finally {
     rmSync(work, { recursive: true, force: true })
   }
@@ -78,6 +80,7 @@ test("falha das duas superfícies oficiais ainda preserva os quatro artefatos", 
     const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"))
     assert.equal(diff.status, "source_error")
     assert.equal(diff.candidacies, null)
+    assert.match(readFileSync(join(out, "summary.md"), "utf8"), /Não corrigir o catálogo com dados incompletos/)
     assert.doesNotMatch(result.stderr, /sem_mudanca/i)
   } finally {
     rmSync(work, { recursive: true, force: true })

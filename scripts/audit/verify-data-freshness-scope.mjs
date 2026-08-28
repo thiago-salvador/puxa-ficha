@@ -18,10 +18,10 @@ const allowed = [
   /^\.github\/workflows\/data-freshness-audit\.yml$/,
   /^docs\/operations\/data-freshness-workflow\/(EVAL|GATES|PLAN)\.md$/,
   /^package\.json$/,
-  /^scripts\/audit\/(audit-data-freshness\.ts|data-freshness-snapshot\.sql|verify-data-freshness-scope\.mjs)$/,
+  /^scripts\/audit\/(audit-data-freshness\.ts|data-freshness-snapshot\.sql|sync-data-freshness-issue\.sh|verify-data-freshness-scope\.mjs)$/,
   /^scripts\/data\/data-freshness-sources\.json$/,
-  /^scripts\/lib\/data-freshness\/(candidaturas|registry|tse-source|types)\.ts$/,
-  /^tests\/data-freshness-(artifacts|candidaturas|fail-closed|golden|registry|workflow)\.test\.ts$/,
+  /^scripts\/lib\/data-freshness\/(candidaturas|recommendations|registry|tse-source|types)\.ts$/,
+  /^tests\/data-freshness-(alerts|artifacts|candidaturas|fail-closed|golden|registry|workflow)\.test\.ts$/,
   /^tests\/fixtures\/data-freshness\/cases\.jsonl$/,
 ]
 const outside = files.filter((file) => !allowed.some((pattern) => pattern.test(file)))

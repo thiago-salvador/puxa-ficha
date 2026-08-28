@@ -73,3 +73,33 @@ jobs:
           set -euo pipefail
           echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2
           exit 1
+
+  notificar:
+    name: Criar ou encerrar alerta acionável
+    needs: auditar
+    if: always() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Recuperar evidências da auditoria
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: data-freshness-${{ github.run_id }}
+          path: reports/data-freshness/
+      - name: Sincronizar incidente destacado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/audit/sync-data-freshness-issue.sh \
+            '${{ needs.auditar.result }}' \
+            '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}' \
+            reports/data-freshness/summary.md \
+            thiago-salvador
