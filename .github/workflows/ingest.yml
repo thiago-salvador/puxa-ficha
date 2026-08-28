@@ -119,13 +119,23 @@ jobs:
           npx tsx scripts/ingest-all.ts $SAFE $FLAGS
 
   ingest-tse:
-    name: TSE CSV
+    name: TSE CSV (${{ matrix.shard }})
     runs-on: ubuntu-latest
-    # A execução completa percorre 12 eleições (2002-2024) e a primeira prova
-    # em produção atingiu exatamente o limite anterior de 60 min. Mantemos
-    # margem equivalente ao job REST sem esconder cancelamento como ausência.
+    # O lote único chegou a 2018 em 90 min. Os anos não compartilham escrita:
+    # patrimônio e financiamento usam candidato + ano, então os três recortes
+    # podem rodar em paralelo e continuam agrupados pelo mesmo GITHUB_RUN_ID.
     timeout-minutes: 90
     if: contains(github.event.inputs.sources, 'tse')
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shard: "2002-2012"
+            years: "2002,2004,2006,2008,2010,2012"
+          - shard: "2014-2018"
+            years: "2014,2016,2018"
+          - shard: "2020-2024"
+            years: "2020,2022,2024"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -138,13 +148,17 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: data/tse
-          key: tse-downloads-${{ runner.os }}-v1
+          key: tse-downloads-${{ runner.os }}-v1-${{ matrix.shard }}
+          restore-keys: |
+            tse-downloads-${{ runner.os }}-v1-${{ matrix.shard }}
+            tse-downloads-${{ runner.os }}-v1
       - run: npm ci
       - name: Ingestão TSE
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           PF_KEEP_TSE_DOWNLOADS: "1"
+          PF_TSE_ANOS: ${{ matrix.years }}
         run: npx tsx scripts/ingest-all.ts tse
 
   ingest-news:

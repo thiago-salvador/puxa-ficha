@@ -25,7 +25,7 @@ test("TSE ingest CLI exposes an explicit dry-run flag", () => {
 test("TSE ingest inclui 2002 a 2008 e valida toda identidade por SQ, ano e UF", () => {
   assert.match(
     source,
-    /DEFAULT_ANOS = \[2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024\]/,
+    /DEFAULT_TSE_ANOS = \[\s*2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024,?\s*\]/,
   )
   assert.match(source, /financiamentoReceitaIdentity\(row, ano, identidade\.uf\)/)
   assert.match(source, /financiamentoReceitaIdentityKey/)

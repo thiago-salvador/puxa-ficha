@@ -33,8 +33,34 @@ import {
 import { downloadToFile } from "./download-to-file"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
-const DEFAULT_ANOS = [2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024]
+export const DEFAULT_TSE_ANOS = [
+  2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024,
+]
 const KEEP_TSE_DOWNLOADS = process.env.PF_KEEP_TSE_DOWNLOADS === "1"
+
+/**
+ * Recorte explícito usado pelos shards do workflow. Ausente ou vazio preserva
+ * o lote completo; valores declarados falham fechado para ano estranho,
+ * repetido ou item vazio, evitando cobertura aparentemente completa e incorreta.
+ */
+export function parseTseYearsEnv(value: string | undefined): number[] {
+  if (value === undefined || value.trim() === "") return [...DEFAULT_TSE_ANOS]
+
+  const rawYears = value.split(",").map((year) => year.trim())
+  if (rawYears.length === 0 || rawYears.some((year) => year === "")) {
+    throw new Error("PF_TSE_ANOS deve listar anos separados por virgula")
+  }
+
+  const years = rawYears.map((year) => Number(year))
+  if (years.some((year) => !Number.isInteger(year) || !DEFAULT_TSE_ANOS.includes(year))) {
+    throw new Error(`PF_TSE_ANOS contem ano invalido: ${value}`)
+  }
+  if (new Set(years).size !== years.length) {
+    throw new Error(`PF_TSE_ANOS contem ano repetido: ${value}`)
+  }
+
+  return years
+}
 
 function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<string> | null): string[] {
   return [
@@ -883,7 +909,7 @@ export type IngestTseOptions = {
 }
 
 export async function ingestTSE(
-  anos: number[] = DEFAULT_ANOS,
+  anos: number[] = [...DEFAULT_TSE_ANOS],
   options: IngestTseOptions = {}
 ): Promise<IngestResult[]> {
   const candidatos = await loadCandidatosPublicos()
@@ -1135,7 +1161,7 @@ function parseIngestTseCli(): { anos: number[]; options: IngestTseOptions } {
           )
         : null
   return {
-    anos: anos.length > 0 ? anos : DEFAULT_ANOS,
+    anos: anos.length > 0 ? anos : [...DEFAULT_TSE_ANOS],
     options: {
       skipPatrimonio,
       patrimonioSlugAllowlist: patrimonioAllow,

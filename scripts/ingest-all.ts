@@ -1,6 +1,6 @@
 import { ingestCamara } from "./lib/ingest-camara"
 import { ingestSenado } from "./lib/ingest-senado"
-import { ingestTSE } from "./lib/ingest-tse"
+import { ingestTSE, parseTseYearsEnv } from "./lib/ingest-tse"
 import { ingestTransparencia } from "./lib/ingest-transparencia"
 import { enrichWikipedia } from "./lib/enrich-wikipedia"
 import { ingestTCU } from "./lib/ingest-tcu"
@@ -55,6 +55,7 @@ type IngestTask = {
 
 const cli = parseIngestCliOptions(process.argv.slice(2))
 const sources = parseSources(cli.sourceArgs)
+const tseYears = parseTseYearsEnv(process.env.PF_TSE_ANOS)
 
 function parseSources(input: string[]): IngestSource[] {
   const selected = input.length > 0 ? input : [...VALID_SOURCES]
@@ -103,7 +104,12 @@ const INGEST_TASKS: IngestTask[] = [
       candidateTimeoutMs: cli.senadoCandidateTimeoutMs,
     }),
   },
-  { source: "tse", heading: "--- TSE (CSV) ---", failureLabel: "TSE", run: ingestTSE },
+  {
+    source: "tse",
+    heading: `--- TSE (CSV: ${tseYears.join(", ")}) ---`,
+    failureLabel: "TSE",
+    run: () => ingestTSE(tseYears),
+  },
   {
     source: "transparencia",
     heading: "--- Portal da Transparencia ---",
