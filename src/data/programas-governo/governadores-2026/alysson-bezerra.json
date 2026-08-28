@@ -1,0 +1,1262 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002535255",
+    "slug": "alysson-bezerra",
+    "nomeUrna": "ALLYSON",
+    "partido": "UNIÃO",
+    "arquivoNome": "2026RN200002535255_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002535255_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002535255:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002535255_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002535255_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e288e9c5d5372c6648f41a29058d8eab2474763af486e6e59d8f7aa4d1cde9b5",
+        "extractedTextSha256": "7b059b1ba961634d2c47086e5a30d573a633e0f2cfd2819b92a4f235b8da0756",
+        "paginas": 44,
+        "secoes": [
+          {
+            "id": "rio-grande-do-norte",
+            "titulo": "RIO GRANDE DO NORTE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "RIO GRANDE DO NORTE\nPROGRAMADE\nGOVERNO\nESPERANÇA E FUTURO\nUM PLANO CONSTRUÍDO COM O POVO.\nUM FUTURO CONSTRUÍDO PARA TODOS.\n167 PROPOSTAS PRA TRANSFORMAR O RN\nALLYSON\nGOVERNADOR\nVICE HERMANO"
+          },
+          {
+            "id": "rn",
+            "titulo": "RN",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "RN\n\nO RIO GRANDE DO NORTE QUE TEMOS E PODEMOS CONSTRUIR\n\nO Rio Grande do No te possui vocações econômicas e sociais que o colocam em posição privilegiada\npara liderar um novo ciclo de desenvolvimento no Nordeste. A força do agronegócio adaptado ao\nsemiá ido, a produção de petróleo e gás, o potencial das energias renováveis, a mineração, a\neconomia do sal, do mar, o tu ismo, a economia c iativa e a qualidade de suas instituições de ensino e\npesquisa fo mam uma base sólida para impulsionar a prosperidade do Estado.\nTransfo mar esse potencial em desenvolvimento, porém, exige mais do que investimentos. Exige um\nEstado capaz de planejar, coordenar, executar e avaliar políticas públicas com eficiência. O Rio\nGrande do No te precisa superar um quadro de fo te pressão fiscal e de se viços que ainda não\nrespondem, na velocidade necessária, às necessidades da população.\nOs dados oficiais ajudam a dimensionar o desafio. No fechamento de 2025, o Rio Grande do No te\napresentou o segundo pior saldo do país em disponibilidade líquida de caixa de recursos não\nvinculados, com R$ 2,85 bilhões negativos após a insc ição de restos a pagar. Considerando também\nos recursos vinculados, o saldo negativo superou R$ 3,1 bilhões. Na educação, o Ideb acende outro\nalerta: temos o ensino médio com pior desempenho do Brasil.\nO Estado precisa organizar as contas para proteger se viços, respeitar se vidores e fo necedores e\nrecuperar a capacidade de investir. Precisa enfrentar a baixa aprendizagem, reduzir filas na saúde,\nmelhorar hospitais, to nar as estradas mais seguras e c iar opo tunidades para quem quer trabalhar e\nproduzir.\nNossa visão é a de um gove no facilitador do desenvolvimento, que assegure segurança ju ídica,\nestabilidade institucional e se viços públicos de qualidade. Um gove no que reduza burocracias\ndesnecessárias, fo taleça o ambiente de negócios, utilize tecnologias digitais e estabeleça relações\ntransparentes com cidadãos, empresas, instituições e municípios.\nDesenvolvimento econômico e desenvolvimento social são objetivos complementares. O crescimento\ndeve ampliar trabalho, renda e empreendedo ismo; a melho ia dos se viços públicos deve pe mitir que\ntodos os potiguares pa ticipem desse processo. O futuro precisa alcançar todas as regiões do\nRio Grande do No te.\n\nMais do que executar obras, queremos fo talecer instituições, c iar opo tunidades e const uir\nconfiança entre Estado, sociedade e iniciativa p ivada. Nosso objetivo é inaugurar um novo ciclo de\ndesenvolvimento sustentável, baseado em gestão qualificada, inovação, responsabilidade fiscal e\ncompromisso permanente com as pessoas.\n\n2"
+          },
+          {
+            "id": "um-plano-construido-ouvindo-as-pessoas",
+            "titulo": "UM PLANO CONSTRUÍDO OUVINDO AS PESSOAS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "UM PLANO CONSTRUÍDO OUVINDO AS PESSOAS\n\nRN\n\nDo projeto 167 Razões RN às propostas para\ntransformar o Estado\n\nEste Programa de Gove no não nasceu dentro de um gabinete. Ele foi const uído nas uas, nas\ncomunidades, nas feiras, nas escolas, nos hospitais, nas entidades e nos encontros realizados em\ntodas as regiões do Rio Grande do Norte.\nCom o projeto 167 Razões RN, Allyson perco reu os 167 municípios potiguares. Em cada cidade, ouviu\nmoradores, ag icultores, comerciantes, trabalhadores, estudantes, professores, profissionais de saúde\ne\n\nsegurança,\n\nse vidores,\n\nempreendedores,\n\nmulheres,\n\npessoas\n\ncom\n\ndeficiência,\n\nlideranças\n\ncomunitárias e gestores. Essa caminhada deu rosto aos problemas e revelou vocações e\noportunidades que nem sempre aparecem nos relató ios oficiais.\nA Caravana Desenvolve RN aprofundou a escuta regional e aproximou o debate das instituições.\nO processo incluiu diálogo com a Federação das Indúst ias do Estado do Rio Grande do No te (FIERN),\na Federação do Comércio de Bens, Se viços e Tu ismo do Estado do Rio Grande do No te\n(Fecomércio RN), a Federação da Ag icultura, Pecuá ia e Pesca do Estado do Rio Grande do No te\n(FAERN), Câmaras de Di igentes Lojistas (CDLs), FETRONOR (Federação das Empresas de Transpo te\nde Passageiros do Nordeste) universidades, entidades profissionais, setores produtivos e organizações\nsociais. Cada cont ibuição ajudou a ampliar o diagnóstico sobre desenvolvimento, emprego,\ninfraest utura, educação, saúde, segurança, inclusão, cultura, espo te e mode nização do Estado.\nOuvir não foi uma fo malidade. Foi o método de const ução deste plano. As demandas populares,\ninstitucionais e técnicas foram analisadas considerando as competências do Gove no do Estado, as\ndiferenças entre os te itó ios, a capacidade de execução e o impacto esperado na vida das pessoas.\nO resultado é um plano público completo, organizado por áreas e fo mado por propostas capazes de\no ientar programas, projetos e entregas. Ele combina o que foi ouvido em cada município, as\nexpe iências que deram resultado em Mossoró, cont ibuições das instituições e uma leitura\nresponsável dos desafios do Estado.\nEste é um plano com cheiro de povo e responsabilidade de gove no. Um plano const uído no olho no\nolho, pe to de quem vive os problemas e também conhece as soluções. Um plano para cuidar do\npresente, preparar o futuro e fazer o Rio Grande do No te avançar sem deixar nenhuma região e\nnenhuma pessoa para trás.\n\n3"
+          },
+          {
+            "id": "um-plano-vivo-com-direcao-e-responsabilidade",
+            "titulo": "UM PLANO VIVO, COM DIREÇÃO E RESPONSABILIDADE",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "ocr",
+            "conteudo": "UM PLANO VIVO, COM DIREÇÃO E RESPONSABILIDADE\nRN\nDiagnosticar, priorizar, executar, avaliar e melhorar\nEste Programa de Governo estabelece uma direção clara, mas não será um documento congelado. Ele\nserá aprimorado à medida que o governo avançar, novos dados forem conhecidos, projetos\namadurecerem e o povo continuar participando. Melhorar o plano significará transformar diretrizes em\nsoluções cada vez mais viáveis, mensuráveis e próximas da realidade.\nA primeira medida será uma Radiografia Geral do Rio Grande do Norte. O novo governo levantará a\nsituação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas,\nestradas, filas e capacidade de atendimento. Esse diagnóstico permitirá distinguir urgências, projetos\nque podem avançar rapidamente e medidas que exigem estudos, recursos e pactuação.\nAs propostas serão incorporadas ao planejamento e ao orçamento com implantação gradual e\nresponsabilidade fiscal. Recursos estaduais serão combinados com transferências federais, emendas,\nfinanciamentos, consórcios, concessões e parcerias, sempre com análise de custo, risco, benefício\npúblico e capacidade de manutenção.\n• Governo Itinerante, as escutas regionais, os conselhos, as universidades, o setor produtivo e as\norganizações sociais continuarão contribuindo durante o mandato. Relatórios periódicos permitirão\nrevisar metas, corrigir políticas que não produzam resultado e ampliar aquelas que melhorarem a vida\ndas pessoas.\nAssim, o plano une firmeza de propósito e capacidade de aprender. O compromisso permanece:\norganizar a casa, cuidar das pessoas, proteger as famílias, valorizar os servidores, fortalecer os\nmunicípios, destravar o desenvolvimento e preparar o Rio Grande do Norte para o futuro.\nO desenvolvimento será tratado como um projeto de todo o Estado. Energia, data centers, indústria,\nagricultura, turismo, ciência e economia criativa deverão gerar mais trabalho, renda e conhecimento,\nenquanto saúde, educação, segurança e inclusão transformarão crescimento em qualidade de vida.\nServidor valorizado, municípios fortalecidos, mulheres protegidas, pessoas com deficiência incluídas,\nambiente seguro para investir e politicas avaliadas formarão a base de um novo jeito de governar:\nresponsável com o dinheiro público, moderno na gestão e humano no cuidado com as pessoas."
+          },
+          {
+            "id": "pilares",
+            "titulo": "PILARES",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "ocr",
+            "conteudo": "PILARES\nRN\nPilares integrados\nCAPÍTULO\nÁREA\n01\nGoverno, Gestão, Finanças e Servidores\n02\nDesenvolvimento Econômico, Trabalho e Ambiente de Negocios\n03\nSaúde\n04\nEducação, Ciência, Tecnologia e Inovação\n05\nSegurança com Integração e Presença do Estado\n06\nInfraestrutura, Recursos Hídricos, Meio Ambiente e Mobilidade\n07\nDesenvolvimento Regional e Agricultura\n08\nTurismo, Eventos e Experiências Potiguares\n09\nInclusão e Acessibilidade\n10\nMulheres, Cuidado e Proteção Social\n11\nCultura, Esporte e Juventude"
+          },
+          {
+            "id": "principios-de-governo",
+            "titulo": "PRINCÍPIOS DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "ocr",
+            "conteudo": "PRINCÍPIOS DE GOVERNO\nRN\nCritérios permanentes para decidir, executar e\nprestar contas\nGESTÃO ORIENTADA PARA RESULTADOS\nTRANSPARÊNCIA E PARTICIPAÇÃO\nPrioridades, responsáveis e acompanhamento\nInformação acessível, integridade, controle e\npara transformar planejamento em entregas\nescuta permanente da sociedade.\nverificáveis.\nRESPONSABILIDADE FISCAL\nMUNICIPALISMO\nEquilíbrio das contas, previsibilidade e qualidade\nCooperação com os 167 municípios e soluções\ndo gasto para proteger serviços e recuperar\nregionais próximas da realidade de cada\ninvestimentos.\nterritório.\nDESENVOLVIMENTO E TRABALHO\nCONHECIMENTO E INOVAÇÃO\nAmbiente favorável a quem produz, inovação,\nTecnologia, ciência, universidades e educação\nindustrialização e oportunidades em todas as\nprofissional conectadas aos desafios do Estado.\nregiões.\nSUSTENTABILIDADE\nINCLUSÃO E QUALIDADE DE VIDA\nCrescimento com proteção dos recursos\nServiços públicos que cuidem das pessoas e\nnaturais, segurança hídrica e adaptação\nampliem direitos, autonomia e oportunidades.\nclimática."
+          },
+          {
+            "id": "capitulo-01",
+            "titulo": "CAPÍTULO 01",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 01\n\nGove no,\nGestão,\nFinanças\ne Se vidores\nPropostas para transformar\no Rio Grande do Norte\n\n7"
+          },
+          {
+            "id": "001",
+            "titulo": "001",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "ocr",
+            "conteudo": "001\nRADIOGRAFIA GERAL DO RIO\nFORMAÇÃO, SAÚDE E INOVAÇÃO\nGRANDE DO NORTE\n005\nNO SERVIÇO PÚBLICO\nRealizar, como primeira medida do governo,\nInvestir em capacitação, lideranças, saúde\ndiagnóstico completo das contas, contratos,\nocupacional, segurança, acessibilidade e\ndividas, obras, patrimônio, hospitais, escolas,\ninovação, aproximando competências e equipes\nestradas e filas dos serviços. Os resultados\ndas prioridades de cada região e melhorando a\norientarão prioridades e serão apresentados à\nqualidade do atendimento ao cidadão.\npopulação com transparência.\n006\nGOVERNO DIGITAL E PERTO DO\n002\nEQUILÍBRIO DAS CONTAS E\nPOVO\nPROTEÇÃO DOS SERVIÇOS\nIntegrar os serviços estaduais em portal e\nImplantar estratégia fiscal para recuperar\naplicativo acessíveis, com acompanhamento das\nliquidez, regularidade das obrigações e\nsolicitações, linguagem simples e atendimento\ncapacidade de investimento, protegendo saúde,\npresencial para quem precisar. Processos\neducação, segurança, assistência e os serviços\neletrônicos reduzirão papel, deslocamentos e\nque chegam diretamente à população.\ndemora.\n003\nPREVIDÊNCIA SUSTENTÁVEL E\nTRANSPARÊNCIA, INTEGRIDADE E\nDIREITOS PRESERVADOS\n007\nPARTICIPAÇÃO\nAperfeiçoar a governança previdenciária e\nAmpliar informações públicas sobre orçamento,\nconstruir, com transparencia e dialogo, soluções\nobras, compras, contratos e resultados,\njuridicamente seguras para reduzir o déficit,\nfortalecer ouvidorias, consultas e controle\npreservar direitos e assegurar o pagamento dos\ninterno e facilitar a participação da sociedade\nbenefícios no presente e no futuro.\nnas decisões de maior impacto.\n004\nSERVIDOR RESPEITADO E\n008\nPLANEJAMENTO QUE\nVALORIZADO\nACOMPANHA E ENTREGA\nManter diálogo permanente, garantir\nIntegrar planejamento, orçamento e execução,\nprevisibilidade no pagamento, reconhecer\norganizar uma carteira pública de prioridades e\nmérito, melhorar condições de trabalho e\nacompanhar projetos por etapas, responsáveis e\nenvolver os servidores na construção das\nresultados, diferenciando anúncio, estudo,\nsoluções, sem tratar quem presta o serviço\nlicença, contratação, execução e entrega.\npúblico como problema."
+          },
+          {
+            "id": "013",
+            "titulo": "013",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "013\n\nPLANEJAMENTO REGIONAL E\nVISÃO DE FUTURO\n\nOrganizar políticas e investimentos pelas regiões\ndo Estado, reconhecer necessidades e vocações\nte itoriais e consolidar uma visão estratégica de\nlongo prazo para infraest utura, serviços\npúblicos e desenvolvimento.\n\n014\n\nINTELIGÊNCIA ARTIFICIAL A\nSERVIÇO DO POVO\n\nUtilizar dados e novas tecnologias para melhorar\nserviços e apoiar decisões, com proteção das\ninformações, segurança digital, supe visão\nhumana e transparência nas aplicações de maior\nimpacto.\n\n011\n\nCONSÓRCIOS MUNICIPAIS E\nSOLUÇÕES REGIONAIS\n\nApoiar consórcios entre municípios para\ncompartilhar est uturas, equipes e serviços em\nsaúde, resíduos, infraest utura, assistência\ntécnica e outras áreas nas quais a cooperação\nregional amplie resultados e reduza custos.\n\n015\n\nAVALIAÇÃO E APERFEIÇOAMENTO\nPERMANENTE\n\nC iar painéis e avaliações periódicas para medir\nresultados, co rigir umos e aprimorar este\nPrograma de Governo ao longo do mandato,\nexplicando publicamente mudanças, p io idades\ne obstáculos.\n\nPACTOS COM OS 167 MUNICÍPIOS\n012\n\nSimplificar convênios, oferecer apoio técnico e\nconst uir compromissos ter ito iais com\nresponsabilidades, fontes de recursos, metas e\nprestação de contas, respeitando a autonomia\nmunicipal.\n\n9"
+          },
+          {
+            "id": "016",
+            "titulo": "016",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "016\n\nSECRETARIA DE PROGRAMAS E\nPROJETOS ESTRATÉGICOS\n\nC iar uma secreta ia dedicada a est uturar a\ncaptação de recursos federais e multilaterais,\ndesenvolver grandes projetos estratégicos e\nacelerar a execução de investimentos, obras e\nações para o povo do Rio Grande do Norte.\n\n017\n\nDIÁLOGO COM O PODER JUDICIÁRIO\nE OS ÓRGÃOS DE CONTROLE\n\nManter diálogo institucional permanente,\nrespeitoso e transparente com o Poder\nJudiciário, o Ministério Público, a Defensoria\nPública, os tribunais de contas e os demais\nórgãos de controle, respeitando a autonomia e\nas competências de cada instituição e\nconst uindo soluções para ap imorar políticas,\nprevenir conflitos e dar segurança às decisões\npúblicas.\n\n10"
+          },
+          {
+            "id": "capitulo-02",
+            "titulo": "CAPÍTULO 02",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 02\n\nDesenvolvimento\nEconômico,\nTrabalho e\nAmbiente de\nNegócios\nPropostas para transformar\no Rio Grande do Norte\n\n11"
+          },
+          {
+            "id": "mutirao-tecnico-do-idema",
+            "titulo": "MUTIRÃO TÉCNICO DO IDEMA",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "MUTIRÃO TÉCNICO DO IDEMA\n018\n\n023\n\nRealizar força-tarefa para organizar processos\nambientais, co rigir pendências e reduzir prazos\nde análise, com fila transparente e c ité ios bem\ndefinidos.\n\n019\n\nRN SEM BUROCRACIA PARA QUEM\nPRODUZ\n\nSimplificar abertura, regula ização e expansão\nde empresas, revisar exigências desnecessárias,\nintegrar sistemas e dar mais previsibilidade aos\nempreendedores, preservando controle,\ntransparência e segurança ju ídica.\n\n020\n\nATENDIMENTO INTEGRADO AO\nINVESTIDOR\n\nC iar uma po ta única para orientar projetos\nsobre localização, infraest utura, licenciamento,\nincentivos, qualificação, fo necedores e\nfinanciamento, acompanhando os investimentos\ndesde a prospecção até a operação.\n\n021\n\nCARTEIRA REGIONAL DE\nOPORTUNIDADES\n\nMapear áreas, vocações, projetos e\noportunidades em todas as regiões, preparando\ninformações confiáveis para atração de\ninvestimentos e conectando empresas às\npotencialidades do interior e da Região\nMetropolitana.\n\n022\n\nRN HUB DE TECNOLOGIA E\nINTELIGÊNCIA ARTIFICIAL\n\nTERRAS RARAS E MINERAÇÃO\nESTRATÉGICA\n\nMapear o potencial de minerais estratégicos e\nterras raras, apoiar pesquisa, beneficiamento\nresponsável e fo mação profissional e atrair\ninvestimentos que agreguem valor no RN, com\nsegurança ambiental, diálogo com as\ncomunidades e fo necedores locais.\n\n024\n\nRN POTÊNCIA ENERGÉTICA E\nINDUSTRIAL\n\nTransfo mar a liderança em energia renovável\nem indústria, inovação e empregos, articulando\ngeração, transmissão, armazenamento,\nfo necedores, fo mação profissional e atração\nde empreendimentos que agreguem valor no\nEstado.\n\n025\n\nPETRÓLEO, GÁS, SAL, MINERAÇÃO\nE ECONOMIA DO MAR\n\nFortalecer cadeias tradicionais e emergentes\ncom tecnologia, segurança ambiental,\nqualificação, fornecedores locais e maior\ntransfo mação da produção potiguar, ampliando\nempregos, renda e arrecadação nas regiões\nprodutoras.\n\n026\n\nTRANSIÇÃO ENERGÉTICA\nRESPONSÁVEL\n\nApoiar eólica em terra e no mar, energia solar,\narmazenamento, hidrogênio de baixa emissão e\ncombustíveis sustentáveis, licenciamento,\nsegurança híd ica e benefícios concretos para\ntrabalhadores e comunidades.\n\nPreparar áreas adequadas, energia renovável,\ntransmissão, fibra óptica, licenciamento\ncoordenado e segurança ju ídica para atrair data\ncenters, computação em nuvem e inteligência\na tificial, transformando o potencial energético\ndo Estado em investimentos de alto valor.\n\n12"
+          },
+          {
+            "id": "027",
+            "titulo": "027",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "027\n\nINFRAESTRUTURA PARA\nPRODUZIR E EXPORTAR\n\nQualificar distritos produtivos, energia, água,\ngás, saneamento, acessos e conectividade e\nbuscar viabilizar projetos logísticos que\nampliem a competitividade das empresas\npotiguares.\n\n032\n\nDesenvolver fornecedores potiguares, estimular\nagregação de valor, qualidade, certificação,\nexportação e internacionalização e aperfeiçoar\nincentivos econômicos com foco em empregos e\ndesenvolvimento regional.\n\nPEQUENOS NEGÓCIOS FORTES\n028\n\n033\n\nOferecer orientação, fo malização, capacitação,\ntransfo mação digital e acesso a mercados para\nmicroempreendedores, microempresas,\ncooperativas e empresas de pequeno porte em\ntodas as regiões.\n\nFORNECEDORES LOCAIS E NOVOS\nMERCADOS\n\nPROMOÇÃO ATIVA DO RIO\nGRANDE DO NORTE\n\nRealizar prospecção de empresas e fundos,\nmissões o ientadas por cadeias estratégicas e\ncooperação com entidades empresariais,\ndistinguindo investimentos anunciados,\ncontratados, em implantação e efetivamente\noperacionais.\n\nCRÉDITO E COMPRAS PÚBLICAS\n029\n034\n\nArticular microcrédito e financiamento produtivo\ncom o ientação financeira e ampliar a\nparticipação de pequenos negócios,\ncooperativas e produtores locais nas compras\ngovernamentais.\n\n030\n\nAproveitar a concessão do Aeroporto\nInternacional de São Gonçalo do Amarante como\nhub de cargas, modernizar o Porto de Natal e\nintegrar corredores logísticos para ampliar o\nescoamento da produção potiguar.\n\nQUALIFICAÇÃO PARA O\nTRABALHO\n035\n\nFirmar pactos com empresas, municípios, UERN,\nUFRN, UFERSA, IFRN e Sistema S para ofertar\nfo mação ligada às cadeias produtivas e às\nnovas ocupações, acompanhando a inserção\nprofissional.\n\n031\n\nINOVAÇÃO, STARTUPS E\nPRODUTIVIDADE\n\nPORTO, AEROPORTO E\nCORREDORES INTERMODAIS\n\nARTESANATO POTIGUAR: RENDA E\nIDENTIDADE\n\nFo talecer associações, qualificação, design,\ncrédito, ce tificação, feiras, comercialização\ndigital e acesso a mercados, ampliando a\npresença do artesanato potiguar nas compras\npúblicas, nos destinos turísticos e nos eventos\nregionais.\n\nConectar pesquisa, laboratórios, incubadoras,\nuniversidades, parques tecnológicos e\nempresas, apoiar pesquisa aplicada e difundir\nautomação, inteligência de dados, comércio\neletrônico e outras tecnologias entre negócios\npotiguares.\n\n13"
+          },
+          {
+            "id": "capitulo-03",
+            "titulo": "CAPÍTULO 03",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 03\n\nSaúde\n\nPropostas para transformar\no Rio Grande do Norte\n\n14"
+          },
+          {
+            "id": "saude-que-funciona",
+            "titulo": "SAÚDE QUE FUNCIONA",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE QUE FUNCIONA\n036\n\nUTI PEDIÁTRICA REGIONAL\n041\n\nEstabelecer programa estadual permanente para\nreduzir o tempo de espera por consultas,\nexames e ci urgias.\n\nImplantar gradualmente leitos e referências de\nterapia intensiva pediátrica em pontos\nestratégicos da rede, reduzindo deslocamentos\nem situações críticas.\n\nCAUSA ANIMAL\n037\n042\n\nApoiar municípios e consórcios na política de\nproteção e bem-estar animal, ampliando\ncastração, vacinação anti rábica,\nmicrochipagem, feiras de adoção responsável e\ncombate aos maus-tratos. Integrar vigilância em\nsaúde, educação ambiental, entidades de\nproteção e atendimento veteriná io público ou\nconveniado, com prio idade para animais em\nsituação de abandono, famílias vulneráveis e\náreas com maior risco de zoonoses.\n\n038\n\nPROGRAMA PERMANENTE DE\nCIRURGIAS ELETIVAS\n\nAmpliar ci urgias, consultas e exames com\nplanejamento contínuo, financiamento previsível.\n\nSAÚDE PERTO DE CASA\n\nHOSPITAIS REGIONAIS MAIS\nFORTES\n\nFo talecer o papel de cada hospital, modernizar\nequipamentos e est uturas, assegurar\nmanutenção, medicamentos e equipes com foco\nna qualidade, produtividade e segurança do\npaciente.\n\n043\n\nWALFREDO GURGEL MAIS\nRESOLUTIVO\n\nExecutar plano de requalificação do Complexo\nHospitalar Monsenhor Walfredo Gurgel,\nfortalecendo urgência, trauma, alta\ncomplexidade, gestão de leitos e integração com\na regulação e os hospitais regionais.\n\n044\n\nREDE HOSPITALAR NA ZONA\nNORTE FORTALECIDA\n\n039\n\nRegionalizar consultas, exames, tratamentos e\nci urgias.\n\n040\n\nFo talecer e ampliar os se viços hospitalares da\nZona No te, organizar o Hospital Dr. José Pedro\nBeze ra (Hospital Santa Cata ina) e o Hospital\nPediát ico Ma ia Alice Fe nandes para reduzir a\nsobrecarga das demais po tas de urgência.\n\nCONSÓRCIOS REGIONAIS DE\nSAÚDE\n045\n\nApoiar consórcios intermunicipais para\ncompa tilhar serviços especializados,\nequipamentos, transporte sanitá io e de\nurgência, com responsabilidades pactuadas no\nSUS e regulação transparente.\n\nPOLICLÍNICAS E\nESPECIALIDADES\n\nFo talecer policlínicas e se viços regionais,\nampliar especialidades com maior demanda e\nlaudos remotos para reduzir espera e viagens\ndesnecessárias.\n\n15"
+          },
+          {
+            "id": "046",
+            "titulo": "046",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "046\n\nURGÊNCIA E EMERGÊNCIA\nREGIONALIZADA\n\nIntegrar hospitais, SAMU, unidades de pronto\natendimento, transporte sanitário e regulação,\naprimorando tempos de resposta, referências\nregionais e continuidade do cuidado após a alta.\n\n050\n\nSAÚDE MENTAL, ENVELHECIMENTO\nE CUIDADO HUMANIZADO\n\nFo talecer atenção psicossocial, prevenção do\nsuicídio, reabilitação, cuidado às doenças\ncrônicas, atenção à pessoa idosa e aos\ncuidadores e melhores condições de trabalho\npara os profissionais da saúde.\n\nREDE MATERNO-INFANTIL\n047\n051\n\nFo talecer pré-natal, gestação de alto isco,\nparto seguro, cuidado neonatal e primeira\ninfância, consolidando as referências mate noinfantis com as demais regiões.\n\n048\n\nRASTREABILIDADE E CONTROLE DA\nASSISTÊNCIA FARMACÊUTICA\n\nImplantar sistema de gestão e rastreabilidade de\nmedicamentos e insumos, combatendo\ndesabastecimento e desperdício e dando\ntransparência ao gasto em saúde.\n\nATENÇÃO PRIMÁRIA, VACINAÇÃO\nE VIGILÂNCIA\n\nCooperar com os municípios para qualificar a\natenção básica, ampliar vacinação e prevenção,\nintegrar vigilância, laboratórios e resposta a\nsu tos e fortalecer o acompanhamento de\nc ianças e pessoas com doenças crônicas.\n\nSAÚDE POTIGUAR DIGITAL\n049\n\nIntegrar prontuário, regulação, laborató io,\nfa mácia e gestão hospitalar, com proteção de\ndados, segurança digital e uso da tecnologia\npara apoiar profissionais e melhorar a\nexperiência do paciente.\n\n16"
+          },
+          {
+            "id": "capitulo-04",
+            "titulo": "CAPÍTULO 04",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 04\n\nEducação,\nCiência,\nTecnologia\ne Inovação\n\nPropostas para transformar\no Rio Grande do Norte\n\n17"
+          },
+          {
+            "id": "052",
+            "titulo": "052",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "052\n\nMATERIAL ESCOLAR COMPLETO E\nFARDAMENTO NOVO\n\nFornecer kit de material escolar e fardamento\nnovo aos estudantes da rede estadual, além de\ntênis, mochila e moletom.\n\nESCOLA RENOVADA\n053\n\nImplantar programa permanente de refo mas e\nmanutenção, p iorizando est utura, água,\nenergia, banheiros, acessibilidade, segurança,\nbibliotecas, laboratórios, cozinhas, quadras e\nespaços de convivência.\n\nRN ENSINO MÉDIO DO FUTURO\n054\n\nTransformar o ensino médio da rede estadual em\numa referência de qualidade, inovação e\nopo tunidades, elevando os níveis de\naprendizagem, fortalecendo a recomposição das\naprendizagens, ampliando o uso de tecnologias\neducacionais, promovendo o protagonismo\njuvenil e conectando a formação escolar ao\nensino supe ior, à educação profissional e ao\nmundo do trabalho.\n\n055\n\nPACTO POTIGUAR PELA\nAPRENDIZAGEM\n\nTALENTOS DO RN\n056\n\nInstituir o Programa Talentos do RN, promovendo\no desenvolvimento das potencialidades dos\nestudantes nas áreas do espo te, das a tes, da\ncultura, da música, da dança, do teatro, da\nciência e da tecnologia, por meio de atividades\nno contratu no escolar, festivais, competições,\nmostras culturais, bolsas de incentivo e\nparcerias com instituições públicas e p ivadas.\n\n057\n\nPAE RN — PROGRAMA DE APOIO\nAO ESTUDANTE RN\n\nC iar bolsa mensal para estudantes de baixa\nrenda da rede estadual, vinculada à mat ícula, à\nfrequência, ao bom compo tamento, à vacinação\ne à pe manência, ajudando a combater abandono\ne garantindo condições para continuar os estudos.\n\nRN SEM EVASÃO\n058\n\nInstituir uma estratégia estadual de\nenfrentamento ao abandono escolar, com\nsistemas de alerta precoce, busca ativa,\nacompanhamento das trajetórias escolares,\nfo talecimento da EJA e ações intersetoriais para\nassegurar a permanência dos estudantes.\n\nCRIAÇÃO DE ATELIÊS INCLUSIVOS\nInstituir uma política pe manente de cooperação\nentre o Governo do Estado e os municípios para\nfortalecer a qualidade da Educação Básica em\ntodo o Rio Grande do Norte, promovendo\nassistência técnica, formação continuada de\nprofessores e gestores, acompanhamento\npedagógico, avaliação da aprendizagem,\nprodução de materiais didáticos, inovação\neducacional, transfo mação digital,\nrecomposição das aprendizagens e\ndisseminação de boas práticas, consolidando um\nregime de colaboração baseado em evidências,\nequidade e compromisso com a melhoria dos\nresultados educacionais.\n\n059\n\nC iar espaços de fo mação continuada para a\nconst ução de recursos de acessibilidade,\nmateriais pedagógicos acessíveis e tecnologia\nassistiva destinados a estudantes com\ndeficiência e Transtorno do Espectro Autista\n(TEA), além de ambientes que favoreçam a troca\nde experiências e o planejamento coletivo de\npráticas pedagógicas.\n\n18"
+          },
+          {
+            "id": "do-rn-para-o-mundo",
+            "titulo": "DO RN PARA O MUNDO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "DO RN PARA O MUNDO\n060\n\nMISSÃO ENEM\n064\n\nOferecer fo mação em idiomas e intercâmbio\ninte nacional para estudantes da rede estadual,\ncom seleção pública, c ité ios acadêmicos e\nsocioeconômicos, distribuição regional,\npreparação e acompanhamento antes e depois\nda experiência.\n\nCLIMATIZAÇÃO DAS ESCOLAS\n061\n\nCriar um programa de climatização para as\nescolas estaduais, garantindo mais conforto para\nalunos e professores em todo o estado.\n\nTransfo mar a preparação dos estudantes da\nrede estadual para o Exame Nacional do Ensino\nMédio (ENEM), por meio da ofe ta de um\nprograma pe manente de reforço da\naprendizagem, com aulões regionais, cursinhos\npreparatórios gratuitos, plataformas digitais,\nsimulados periódicos, o ientação de ca reira,\npreparação para redação, acompanhamento\npedagógico e ações voltadas ao ingresso nas\nuniversidades públicas, institutos federais e\nprogramas de acesso ao ensino superior.\n\n065\n\n062\n\nPROFESSORES E GESTORES\nVALORIZADOS\n\nGarantir o cumprimento do plano de cargos e\ncarreira, progressões em dia e cump imento\ndo piso sala ial nacional.\n\n063\n\nUERN PARA O DESENVOLVIMENTO\nDO RN\n\nConsolidar a UERN como universidade pública\nestratégica para o desenvolvimento do Rio\nGrande do No te, fo talecendo sua autonomia,\nsua est utura multicampi, a produção científica, a\ninovação, a fo mação de profissionais e a\ninteração com os municípios e os setores\nprodutivos.\n\nEDUCAÇÃO PROFISSIONAL\nREGIONAL\n\nJOVENS CIENTISTAS DO RN\n066\n\nConsolidar a rede de escolas técnicas, assegurar\nequipes, laboratórios e custeio e alinhar cursos\nàs vocações regionais, em cooperação com\nIFRN, Sistema S, universidades, municípios e\nempresas.\n\nInstituir o Programa Jovens Cientistas do RN,\npromovendo a cultura científica, a inovação e o\npensamento investigativo nas escolas da rede\nestadual, por meio do incentivo à iniciação\ncientífica, às feiras de ciências, às olimpíadas do\nconhecimento, aos clubes de ciências e\nrobótica, aos laboratórios maker e ao\ndesenvolvimento de projetos de pesquisa\nvoltados à solução de desafios sociais,\nambientais e tecnológicos do Rio Grande do\nNorte.\n\n19"
+          },
+          {
+            "id": "intercambio-cultural",
+            "titulo": "INTERCÂMBIO CULTURAL",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "INTERCÂMBIO CULTURAL\n067\n\n070\n\nProporcionar aos estudantes intercâmbios em\ncidades brasileiras, com o objetivo de ampliar o\naprendizado, fomentar a troca cultural, expandir\nos conhecimentos sobre diferentes regiões do\nPaís e estimular a cultura do estudo nas escolas\nestaduais.\n\nPRIMEIROS PASSOS RN\n\nPOLÍTICA ESTADUAL DE BEM-ESTAR\nE CULTURA DE PAZ NAS ESCOLAS\n\nInstituir uma política pública pe manente voltada\nà promoção do bem-estar da comunidade\nescolar, integrando saúde mental, cultura de paz,\neducação antirracista, equidade, inclusão,\ndireitos humanos, prevenção às violências,\nmediação de conflitos, práticas restaurativas e\na ticulação com as políticas de saúde,\nassistência social e proteção integral.\n\n068\n\nESCOLA DIGITAL RN\nInstituir o Programa Primeiros Passos RN,\nfortalecendo a Educação Infantil como base do\ndesenvolvimento humano e da aprendizagem ao\nlongo da vida, por meio do apoio técnico e\nfinanceiro aos municípios, da ampliação da\nqualidade do atendimento às crianças de 0 a 5\nanos, da fo mação continuada dos profissionais\nda educação, da qualificação dos ambientes de\naprendizagem, da promoção de práticas\npedagógicas inovadoras e da integração entre\neducação, saúde, assistência social e proteção à\nprimeira infância.\n\nALIMENTAÇÃO ESCOLAR\n069\n\nFortalecer a alimentação escolar como política\npública de segurança alimentar e nut icional,\npromoção da saúde, permanência escolar e\nmelhoria da aprendizagem. O programa garantirá\nrefeições saudáveis e adequadas às\nnecessidades dos estudantes, incentivará a\naquisição de alimentos da agricultura familiar, a\nmode nização das cozinhas escolares e a\neducação alimentar e nut icional.\n\n071\n\nModernizar a infraest utura tecnológica das\nescolas estaduais, ampliando conectividade,\nlaboratórios, inteligência artificial educacional,\nplatafo mas digitais e competências digitais de\nestudantes e professores.\n\nPRÊMIO RN MAIS IDEB\n072\n\nInstituir o Prêmio RN Mais IDEB, no âmbito da\nRede Pública Estadual de Ensino, como fo ma de\nreconhecimento e incentivo às escolas,\ndiretores, supervisores, professores e\nestudantes que se destacarem no Sistema de\nAvaliação da Educação Básica (SAEB).\n\nFORMAÇÃO CONTINUADA\n073\n\nInstituir uma política pe manente de fo mação\ncontinuada dos profissionais da educação,\narticulada às universidades, aos institutos\nfederais e às melhores evidências educacionais,\npromovendo inovação pedagógica, liderança\nescolar e desenvolvimento profissional.\n\n20"
+          },
+          {
+            "id": "capitulo-05",
+            "titulo": "CAPÍTULO 05",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 05\n\nSegurança\ncom Integração\ne Presença\ndo Estado\nPropostas para transformar\no Rio Grande do Norte\n\n21"
+          },
+          {
+            "id": "rn-com-seguranca-e-paz",
+            "titulo": "RN COM SEGURANÇA E PAZ",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "RN COM SEGURANÇA E PAZ\n074\n\n079\n\nIntegrar Polícia Militar, Polícia Civil, Polícia\nCientífica, Corpo de Bombeiros, Polícia Penal,\nGuardas Municipais, forças de segurança\nnacional e demais órgãos em planejamento\npe manente, com responsabilidades, prio idades\nte itoriais e avaliação de resultados.\n\nCOMBATE AO CRIME\nORGANIZADO\n\nIntegrar inteligência, investigação pat imonial,\ncombate à lavagem de dinheiro e recuperação\nde ativos em cooperação com órgãos estaduais\ne federais e o sistema de Justiça.\n\n080\n\nSEGURANÇA RURAL E PROTEÇÃO\nDAS DIVISAS\n\nPOLÍCIA NAS RUAS\n075\n\nPlanejar policiamento, delegacias, investigação e\npe ícia confo me a realidade de bairros, cidades,\náreas urais, corredores econômicos e divisas,\nampliando a presença da polícia na capital e\ninterior.\n\n076\n\nINTELIGÊNCIA, COMANDO E\nRESPOSTA RÁPIDA\n\nIntegrar dados, comunicação e centros de\ncomando para apoiar operações e crises, reduzir\no tempo de atendimento e melhorar a\ncoordenação entre as instituições.\n\nReforçar presença e fiscalização em rodovias,\nrotas estratégicas e áreas urais, enfrentando\nroubo de cargas, abigeato e c imes contra\natividades econômicas e o pat imônio ambiental.\n\nPROTEÇÃO ÀS MULHERES\n081\n\nFortalecer e integrar Pat ulha Maria da Penha,\ninvestigação, perícia e rede de atendimento,\naprimorar avaliação de isco e acompanhamento\nde medidas protetivas e fo talecer se viços\nespecializados em todas as regiões.\n\n082\n\nPREVENÇÃO PARA CRIANÇAS E\nJOVENS\n\nTECNOLOGIA PARA PROTEGER\n077\n\nImplantar videomonitoramento, reconhecimento\nfacial, drones e fe ramentas analíticas com\nfinalidade definida, proteção de dados,\nsupervisão humana e avaliação pe manente dos\nresultados.\n\n078\n\nINVESTIGAÇÃO E ELUCIDAÇÃO DE\nCRIMES\n\nFo talecer a Polícia Civil, os plantões e as\nunidades regionais, modernizar a investigação e\npriorizar homicídios, feminicídios, latrocínios,\nroubos e outros crimes que mais ameaçam a\npopulação.\n\nArticular escola, família, espo te, cultura, saúde\ne assistência para prevenir violências, evasão e\nrec utamento pelo crime, com policiamento de\nproximidade e oportunidades nas comunidades.\n\n083\n\nPROTEÇÃO ÀS PESSOAS\nVULNERÁVEIS\n\nQualificar acolhimento e investigação de\nviolências contra crianças, pessoas idosas,\npessoas com deficiência e outros g upos\nsujeitos a agressões e discriminação\n\n22"
+          },
+          {
+            "id": "policia-cientifica-mais-forte",
+            "titulo": "POLÍCIA CIENTÍFICA MAIS FORTE",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "POLÍCIA CIENTÍFICA MAIS FORTE\n084\n\n087\n\nInte io izar pe ícia, modernizar unidades,\nlaboratórios e equipamentos, reduzir prazos de\nlaudos e ampliar genética, balística, toxicologia,\nperícia ambiental e forense digital.\n\n085\n\nPlano de ca reira forte, além de fo mação,\nequipamentos, saúde ocupacional, apoio\npsicossocial e condições de trabalho,\nprotegendo quem protege a população e\nfortalecendo o profissionalismo das instituições.\n\nBOMBEIROS E DEFESA CIVIL\nPREPARADOS\n088\n\nRegionalizar se viços, modernizar viaturas e\nequipamentos, melhorar combate a incêndios,\nsalvamentos e resposta a emergências e apoiar\nmunicípios em mapas de isco, alertas e planos\nde contingência.\n\nSISTEMA PRISIONAL SEGURO\n\nVALORIZAÇÃO DOS\nPROFISSIONAIS DA SEGURANÇA\n\nCULTURA DE PREVENÇÃO E DE\nPAZ\n\nEstimular programas permanentes de educação\npara a cidadania, mediação de conflitos, cultura\nde paz, prevenção ao uso de drogas e\nfortalecimento dos vínculos comunitários, em\nparceria com escolas, universidades,\norganizações da sociedade civil e municípios.\n\n086\n\nFo talecer segurança, inteligência e controle das\nunidades, impedir o comando de crimes a partir\nde presídios e c iar mecanismos pra reduzir\na reincidência.\n\n23"
+          },
+          {
+            "id": "capitulo-06",
+            "titulo": "CAPÍTULO 06",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 06\n\nInfraest utura,\nRecursos\nHíd icos,\nMeio Ambiente\ne Mobilidade\nPropostas para transformar\no Rio Grande do Norte\n\n24"
+          },
+          {
+            "id": "estradas-estaduais",
+            "titulo": "ESTRADAS ESTADUAIS",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "ESTRADAS ESTADUAIS\n089\n\n094\n\nExecutar plano permanente de recuperação e\nconse vação das rodovias estaduais, com\nc itérios de segurança, tráfego, produção e\nacesso a serviços, além de sinalização,\ndrenagem e manutenção preventiva.\n\nAtuar com a Prefeitura de Natal, CAERN, órgãos\nambientais, universidades e instituições de\ncontrole para implantar a drenagem necessária,\ncorrigir impactos e devolver dignidade ao\np incipal ca tão-postal do Rio Grande do Norte.\n\nBR-304 E RODOVIAS FEDERAIS\n090\n\n095\n\nCooperar com a União para avançar nas\nduplicações, eliminar pontos críticos e melhorar\nos corredores que conectam grandes cidades, o\ninte ior, áreas produtivas, hospitais, escolas e\ndestinos turísticos.\n\n091\n\nDUPLICAÇÃO E QUALIFICAÇÃO DO\nACESSO À PRAIA DA PIPA\n\nPreparar e executar a duplicação e qualificação\nda RN-003 entre Goianinha, Tibau do Sul e o\nacesso à Praia da Pipa, com drenagem,\nsinalização, travessias seguras e soluções para\nos pontos críticos.\n\nPORTOS E LOGÍSTICA DO RN\n\nSALVAR A PRAIA DE PONTA\nNEGRA\n\nMOBILIDADE METROPOLITANA E\nREGIONAL\n\nFo talecer transporte inte urbano, integração\noperacional e de informações, acessibilidade,\nmobilidade ativa e segurança viá ia, buscando\nreduzir tempo de viagem, mortes e lesões no\ntrânsito.\n\nRN COM ÁGUA\n096\n\nPlanejar a segurança híd ica por bacias e\nregiões e organizar o uso das águas da\ntransposição do São Francisco com qualidade.\n\n097\n\nADUTORAS, BARRAGENS E\nSISTEMAS INTEGRADOS\n\n092\n\nModernizar o Porto de Natal e o Terminal\nSalineiro de Areia Branca e elaborar estudos\npara est uturar novos terminais, integrando\nportos, rodovias, fe rovias, aeropo to e áreas\nprodutivas para reduzir custos e ampliar\nexpo tações, com segurança ambiental e\nparticipação da iniciativa privada.\n\nTERCEIRA PONTE DE NATAL\n093\n\nConst uir a terceira ponte sobre o Rio Potengi,\ncom estudos, alte nativas de traçado,\nlicenciamento, financiamento e integração\nmetropolitana para melhorar o acesso à Zona\nNorte.\n\nConcluir, ampliar e manter infraest utura hídrica,\nreduzir perdas, diversificar fontes com\nsegurança e fortalecer governança das águas,\ninspeção de barragens, const ução de açudes e\npe furação de poços.\n\nSANEAMENTO PARA TODOS\n098\n\nAcelerar a expansão de água e esgotamento\nsanitário com planejamento e cooperação entre\nEstado, União e municípios, respeitando as\nmetas nacionais.\n\n25"
+          },
+          {
+            "id": "099",
+            "titulo": "099",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "099\n\nCONSÓRCIOS DE RESÍDUOS E\nECONOMIA CIRCULAR\n\nApoiar soluções regionais para coleta seletiva,\nreciclagem, destinação adequada e\nence ramento dos lixões, fortalecendo\ncooperativas de catadores e aproveitamento\neconômico dos resíduos.\n\n100\n\nDRENAGEM E CIDADES\nPREPARADAS\n\nApoiar municípios em drenagem sustentável,\nprevenção de enchentes, erosão e outros riscos\nclimáticos, arbo ização, confo to térmico e\nrecuperação de áreas vulneráveis.\n\n101\n\nCONECTIVIDADE EM TODO O\nTERRITÓRIO\n\nAmpliar infraest utura digital e conexão de\nqualidade em cidades, comunidades urais,\nescolas, hospitais, praças, equipamentos\npúblicos e áreas produtivas.\n\nBANCO DE PROJETOS\n104\n\nPreparar projetos com estudos, custos,\ncronogramas, licenças e fontes de recursos,\np iorizando manutenção, segurança, impacto\nregional e transparência na execução e na\nfiscalização.\n\n105\n\nPLANO PARA DESTRAVAR OBRAS\nPARADAS\n\nRealizar uma radiografia das obras paradas,\nidentificar entraves técnicos, financeiros,\nju ídicos e ambientais e instituir uma força-tarefa\npara retomar, reprogramar ou concluir os\nprojetos viáveis, com prio idades, cronogramas e\nprestação de contas à população.\n\n106\n\nNOVAS ESTRADAS PARA\nINTEGRAR O RN\n\nPlanejar, const uir e asfaltar novas ligações\nrodoviá ias que conectem municípios, reduzam\ndistâncias, fo taleçam o desenvolvimento regional\n\nFERROVIAS DO RN\n102\n\ne garantam mais segurança e mobilidade para a\npopulação.\n\nFo talecer a infraest utura fe roviá ia do\nRio Grande do No te, ampliando a integração\nlogística do Estado com os p incipais co redores\nnacionais de transpo te e desenvolvimento.\n\n103\n\nAEROPORTOS E AERÓDROMOS\nREGIONAIS\n\n107\n\nDESSALINIZAÇÃO E FONTES\nALTERNATIVAS DE\nABASTECIMENTO\n\nAmpliar sistemas de dessalinização, captação de\náguas pluviais, aproveitamento de águas\nsubte râneas e outras soluções tecnológicas\npara garantir abastecimento às comunidades\nurais e regiões com maior vulnerabilidade\nhídrica.\n\nFortalecer o Aeropo to Internacional de São\nGonçalo do Amarante e apoiar a requalificação\nde aeroportos e aeródromos regionais,\nampliando segurança, conectividade, turismo,\nserviços e transporte de cargas.\n\n26"
+          },
+          {
+            "id": "108",
+            "titulo": "108",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "108\n\nPLANO DIRETOR DA REGIÃO\nMETROPOLITANA\n\nElaborar, atualizar e executar o Plano de\nDesenvolvimento Urbano Integrado da Região\nMetropolitana, articulando Estado e municípios\nem mobilidade, uso do solo, habitação,\nsaneamento, desenvolvimento econômico,\nproteção ambiental e serviços comuns, com\nmetas e responsabilidades pactuadas.\n\n109\n\nSISTEMAS INTELIGENTES DE\nMOBILIDADE\n\nIncorporar tecnologias digitais, inteligência\nartificial, sensores, plataformas de info mação\nem tempo real e integração de dados para apoiar\no planejamento, a operação e o monitoramento\nda mobilidade urbana e metropolitana.\n\n27"
+          },
+          {
+            "id": "capitulo-07",
+            "titulo": "CAPÍTULO 07",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 07\n\nDesenvolvimento\nRegional e\nAg icultura\nPropostas para transformar\no Rio Grande do Norte\n\n28"
+          },
+          {
+            "id": "110",
+            "titulo": "110",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "110\n\nAGENDAS DE DESENVOLVIMENTO\nPARA CADA REGIÃO\n\nConst uir agendas ter ito iais com municípios,\nsetores produtivos, universidades e\ncomunidades, reconhecendo prio idades,\nvocações e projetos capazes de gerar trabalho e\nrenda.\n\n111\n\nARRANJOS PRODUTIVOS E\nVOCAÇÕES LOCAIS\n\nFortalecer cadeias de f uticultura, carcinicultura,\npecuária, leite, cap inovinocultura, apicultura,\nconfecções, sal, mineração, pesca, aquicultura,\nagroindúst ia, artesanato e outras atividades\nconfo me cada ter itó io.\n\n112\n\nASSISTÊNCIA TÉCNICA E\nINOVAÇÃO NO CAMPO\n\nCom a EMATER, fortalecer a assistência técnica\natravés de parcerias com entidades\ngovernamentais e não governamentais,\naproximar a pesquisa e os produtores, difundir\ntecnologias adaptadas ao semiárido, gestão,\nconectividade e informações sobre clima e\nmercados.\n\n113\n\n115\n\nAvançar em cadastro, titulação e regula ização\nde imóveis urais, articulando documentação,\ncrédito, assistência técnica, proteção ambiental\ne segurança ju ídica.\n\n116\n\nCONVIVÊNCIA PRODUTIVA COM O\nSEMIÁRIDO\n\nCom a EMPARN, incentivar técnicas de\nconvivência hídrica e tecnologias adaptadas ao\nsemiárido, bem como a manutenção de\nbarragens e açudes; fomentar técnicas de\nconservação de solos e o uso de sementes e\nplantas adaptadas ao semiárido; apoiar a\nprodução de forragem animal; incentivar\nproduções agroecológicas e a diversificação\nprodutiva para reduzir iscos e fo talecer a\nresiliência diante das secas.\n\n117\n\nPECUÁRIA ADAPTADA E DEFESA\nAGROPECUÁRIA\n\nCom o IDIARN, fortalecer ações para garantir a\nsanidade animal e vegetal e a rastreabilidade de\nprodutos de o igem animal e vegetal, ampliando\nprodutividade, qualidade e acesso a mercados.\n\nCOOPERATIVAS, ASSOCIAÇÕES E\nCRÉDITO\n118\n\nFo talecer gove nança, gestão e comercialização\ndas organizações produtivas e integrar crédito,\ngarantias, seguro e orientação financeira às\nnecessidades dos agricultores, pescadores e\nprodutores urais.\n\nREGULARIZAÇÃO FUNDIÁRIA E\nACESSO A DIREITOS\n\nPESCA, AQUICULTURA E\nECONOMIA PESQUEIRA\n\nApoiar regula ização, assistência, infraest utura,\nbeneficiamento, conse vação, segurança do\ntrabalho e comercialização, com\nsustentabilidade e respeito às comunidades\npesqueiras.\n\nMULHERES E JOVENS DO CAMPO\n114\n\nPromover a autonomia econômica das mulheres\ne jovens urais, formação, sucessão familiar,\nempreendedorismo e opo tunidade para\nampliação de atividades econômicas nas\ncomunidades de origem.\n\n29"
+          },
+          {
+            "id": "119",
+            "titulo": "119",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "119\n\nAGROINDÚSTRIAS E PRODUTOS\nPOTIGUARES\n\nApoiar agroindúst ias familiares e regionais,\nampliar inspeção, equivalência sanitária,\ncertificação, indicação geográfica e marcas\ncoletivas para agregar valor à produção. Apoiar\nos consórcios intermunicipais de inspeção de\nprodutos de origem animal e vegetal.\n\n120\n\nCOMPRAS PÚBLICAS E NOVOS\nMERCADOS\n\nAmpliar compras da agricultura familiar,\norganizar logística e canais de comercialização e\nconectar produtores a supermercados,\nrestaurantes, hotéis, feiras, mercados\ninstitucionais e expo tação.\n\n30"
+          },
+          {
+            "id": "capitulo-08",
+            "titulo": "CAPÍTULO 08",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 08\n\nTu ismo,\nEventos e\nExpe iências\nPotiguares\nPropostas para transformar\no Rio Grande do Norte\n\n31"
+          },
+          {
+            "id": "rotas-turisticas-do-rn",
+            "titulo": "ROTAS TURÍSTICAS DO RN",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "ROTAS TURÍSTICAS DO RN\n121\n\n125\n\nEst uturar e promover rotas integradas que\nconectem litoral, se ras, se tão, fé, cultura,\ngastronomia, aventura e comunidades\n\n122\n\nTURISMO DE EVENTOS E\nCALENDÁRIO REGIONAL\n\nOrganizar calendá io anual de eventos, apoiar\nfeiras, festivais e encontros com impacto\nturístico e econômico e distribuir a promoção\nentre litoral, serras e demais regiões.\n\nDESTINOS E EXPERIÊNCIAS\nPOTIGUARES\n\nTURISMO POTENTE\n126\n\nIntegrar turismo de sol, praia, serras, natureza,\naventura, fé, eventos, negócios, gastronomia e\ncomunidades, com acesso, sinalização,\nqualificação, calendário, acessibilidade e\ncomercialização conjunta dos destinos.\n\n123\n\nPARNAMIRIM: MEMÓRIA DA\nAVIAÇÃO E DESTINO TURÍSTICO\n\nP iorizar projetos para o Geoparque Seridó\n(Geoparque Mundial da UNESCO), Costa das\nDunas, Costa Branca, serras e demais regiões\ncom potencial comprovado, conectando turismo\ncultural, religioso, ural, de natureza, aventura,\nsol e mar, negócios e eventos, com acesso,\nsinalização, acessibilidade, segurança e se viços\nbásicos.\n\nEst uturar, com o município e instituições\nparceiras, um programa turístico para posicionar\nPa namirim como destino nacional da história da\naviação e da Segunda Guerra Mundial,\nvalorizando o antigo Parnami im Field, a Base\nAérea, o pat imônio local e roteiros integrados ao\nMuseu da Rampa, em Natal.\n\n124\n\nECOTURISMO E TURISMO DE\nNATUREZA\n\nEst uturar produtos e roteiros de ecoturismo em\nunidades de conservação, se ras, litoral,\nCaatinga, geoparques e comunidades, com\nvisitação responsável, guias qualificados,\nsegurança, acessibilidade, proteção ambiental e\ngeração de renda local.\n\n32"
+          },
+          {
+            "id": "capitulo-09",
+            "titulo": "CAPÍTULO 09",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 09\n\nInclusão,\nacessibilidade\ne respeito\nPropostas para transformar\no Rio Grande do Norte\n\n33"
+          },
+          {
+            "id": "127",
+            "titulo": "127",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "127\n\nPOVOS E COMUNIDADES\nTRADICIONAIS\n\nDesenvolver ações integradas para fortalecer\ncomunidades quilombolas, indígenas, pesqueiras\nartesanais e demais povos e comunidades\ntradicionais, respeitando suas identidades\nculturais e ampliando inclusão produtiva, acesso\nàs políticas públicas e desenvolvimento\nsustentável.\n\n131\n\nGarantir acessibilidade, atendimento educacional\nespecializado, intérpretes de Libras, profissionais\nde apoio, fo mação continuada das equipes, apoio\nàs famílias e recursos pedagógicos e tecnológicos\npara assegurar a pe manência e a aprendizagem\ndos estudantes com deficiência e autismo\n\n132\n128\n\nINCLUSÃO NA PRAIA\n\nC iar um programa estadual de acesso inclusivo\nàs praias do Rio Grande do No te, com banho\nassistido, equipamentos adaptados, equipes\ncapacitadas e pontos acessíveis ao longo do\nlitoral, garantindo às pessoas com deficiência\nlazer, segurança, autonomia e dignidade.\n\nRN ACOLHE TEA\n\nCriar Centros Estaduais de Referência em\nAutismo e uma rede articulada aos municípios,\nreunindo avaliação especializada, intervenção\nem tempo oportuno, cuidado multiprofissional,\ncapacitação, apoio às famílias, teleconsulto ia e\npesquisa.\n\nCAMINHOS DA ACESSIBILIDADE\n130\n\nIdentificar prédios, escolas, hospitais,\nequipamentos, transportes, sites e se viços\nestaduais, projetar e executar plano progressivo\nde remoção de barreiras com pa ticipação das\npessoas com deficiência.\n\nTRABALHO E\nEMPREENDEDORISMO INCLUSIVOS\n\nConectar qualificação, SINE-RN, empresas,\ncrédito e apoio aos pequenos negócios para\nampliar contratação, renda e autonomia das\npessoas com deficiência, com acompanhamento\napós a inserção.\n\n133\n\n129\n\nEDUCAÇÃO QUE INCLUI\n\nMOBILIDADE PARA TODOS\n\nQualificar pontos, terminais, veículos, travessias,\ncalçadas e informações de transporte, apoiando\nmunicípios na implantação de rotas acessíveis e\nsoluções de mobilidade inclusiva.\n\n134\n\nCULTURA, LAZER E TURISMO\nACESSÍVEIS\n\nGarantir acessibilidade em eventos, equipamentos\ne produções culturais, espo tivas e tu ísticas do\nEstado, apoiar recursos de comunicação acessível\ne fo talecer a iniciação, o treinamento, as\ncompetições e o apoio a atletas e paratletas, em\na ticulação com escolas, municípios, clubes e\nuniversidades.\n\n135\n\nREDE DE APOIO ÀS MÃES\nATÍPICAS\n\nC iar uma rede estadual de acolhimento,\no ientação e apoio psicossocial às mães atípicas\ne demais cuidadores de pessoas com deficiência\ne autismo, a ticulando saúde, assistência social,\neducação e municípios, com atendimento\nmultiprofissional, g upos de apoio e o ientação\nsobre direitos.\n\n34"
+          },
+          {
+            "id": "136",
+            "titulo": "136",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "136\n\nPROGRAMA ESTADUAL DE\nÓRTESES, PRÓTESES E\nTECNOLOGIA ASSISTIVA\n\nC iar o Programa Estadual de Ó teses, Próteses\ne Tecnologia Assistiva para ampliar o acesso a\ncadeiras de rodas, cadeiras de banho, ó teses,\npróteses, andadores, e outros equipamentos\nindispensáveis à autonomia, mobilidade e\nqualidade de vida das pessoas com deficiência.\n\n137\n\nRESPEITO, IGUALDADE E COMBATE\nAO PRECONCEITO\n\nPrevenir e enfrentar disc iminação, violência e\nc imes motivados por preconceito, qualificar o\natendimento público e integrar assistência, saúde,\neducação, segurança e justiça para garantir\nproteção e acesso a direitos a todas as pessoas,\nsem distinção de o igem, condição, crença, raça,\nidade, sexo ou gênero.\n\n35"
+          },
+          {
+            "id": "capitulo-10",
+            "titulo": "CAPÍTULO 10",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 10\n\nMulheres,\nCuidado e\nProteção Social\nPropostas para transformar\no Rio Grande do Norte\n\n36"
+          },
+          {
+            "id": "rn-por-elas",
+            "titulo": "RN POR ELAS",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "RN POR ELAS\n138\n\n143\n\nIntegrar saúde, segurança, assistência,\neducação, trabalho e empreendedorismo em\numa política estadual para ampliar proteção,\nautonomia, renda e oportunidades para as\nmulheres em todas as regiões.\n\n139\n\nSAÚDE DA MULHER PERTO DE\nCASA\n\nAmpliar prevenção, exames, diagnóstico e\ncuidado integral por meio da rede regional e de\nações móveis em bairros e comunidades, com\natenção ao câncer de mama e colo do útero,\nsaúde mental e doenças crônicas.\n\n140\n\nMATERNIDADE SEGURA E\nCUIDADO NEONATAL\n\nFo talecer pré-natal, gestação de alto isco,\nmaternidades, transporte sanitário e cuidado\nneonatal, com vinculação antecipada da\ngestante à referência e acolhimento humanizado.\n\nAUTONOMIA ECONÔMICA DAS\nMULHERES\n\nQualificação, inte mediação de emprego,\nempreendedo ismo, crédito orientado e redes de\ncomercialização para mulheres, especialmente\nresponsáveis por famílias.\n\n144\n\nMULHERES DO CAMPO, DAS ÁGUAS\nE DAS COMUNIDADES\n\nAmpliar acesso a assistência técnica, crédito,\ntitula idade, equipamentos, mercados e proteção\nsocial para mulheres urais, pescadoras, a tesãs\ne integrantes de povos e comunidades\ntradicionais.\n\n145\n\nCUIDADO E OPORTUNIDADE PARA\nAS MÃES\n\nArticular p imeira infância, creches municipais,\nassistência, saúde e qualificação para reduzir\nbarreiras que afastam mães do trabalho, dos\nestudos e do empreendedorismo.\n\nRN PRIMEIRA INFÂNCIA\n141\n\nPROTEÇÃO ÀS MULHERES E\nENFRENTAMENTO AO FEMINICÍDIO\n\nIntegrar Pat ulha Maria da Penha, investigação,\nperícia e rede de atendimento, aprimorar\navaliação de risco e acompanhamento de\nmedidas protetivas e fo talecer se viços\nespecializados em todas as regiões.\n\n146\n\nIntegrar saúde, educação, assistência, cultura e\nproteção desde a gestação até os seis anos,\napoiar famílias e municípios e prio izar\ndesenvolvimento infantil, alimentação e\nprevenção de violências.\n\nSUAS FORTE NOS 167 MUNICÍPIOS\nACOLHIMENTO E DIGNIDADE\n\n147\n\n142\n\nQualificar delegacias, saúde, assistência e\nacolhimento para garantir escuta protegida,\ncomunicação acessível, orientação ju ídica e\nacompanhamento continuado às mulheres em\nsituação de violência.\n\nAssegurar cofinanciamento estadual regular,\napoio técnico, fo mação continuada e\nfortalecimento da gestão do trabalho, da\nvigilância socioassistencial e dos se viços de\nproteção social, ampliando a capacidade de\natendimento dos 167 municípios.\n\n37"
+          },
+          {
+            "id": "148",
+            "titulo": "148",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "148\n\nCOMBATE À FOME E SEGURANÇA\nALIMENTAR\n\nFo talecer restaurantes populares, cozinhas\ncomunitárias, bancos de alimentos, Programa do\nLeite e busca ativa das famílias em maior\nvulnerabilidade.\n\nPROTEÇÃO AO LONGO DA VIDA\n151\n\nFo talecer redes de atendimento para crianças,\nadolescentes, pessoas idosas e famílias em\nsituação de vulnerabilidade, com acolhimento,\nconvivência familiar e comunitá ia e acesso a\ndireitos.\n\nRN CASA DIGNA\n149\n\nCOMUNIDADES POTIGUARES\n152\n\nApoiar habitação, melhoria de moradias e\nurbanização em parceria com União e\nmunicípios, p io izando famílias vulneráveis,\nPCDs, mulheres responsáveis pelo domicílio e\náreas com risco.\n\nFo talecer organizações locais, lideranças,\niniciativas sociais, espaços de convivência,\nbibliotecas e projetos comunitá ios como polos\nde cidadania, fo mação e oportunidades.\n\nCIDADE LEGAL RN\n150\n\nAmpliar regularização fundiá ia urbana,\ndocumentação, cadastro e segurança da posse,\nintegrando habitação, infraest utura, serviços e\nplanejamento dos te itó ios.\n\n38"
+          },
+          {
+            "id": "capitulo-11",
+            "titulo": "CAPÍTULO 11",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 11\n\nCultura,\nEsporte e\nJuventude\n\nPropostas para transformar\no Rio Grande do Norte\n\n39"
+          },
+          {
+            "id": "153",
+            "titulo": "153",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "153\n\nCULTURA PRESENTE EM TODAS\nAS REGIÕES\n\nFo talecer o Sistema Estadual de Cultura, a\nFundação José Augusto, editais e financiamento,\ninte iorizar circulação e formação e ampliar o\nacesso às diferentes linguagens artísticas.\n\n154\n\nRN CRIATIVO\n158\n\nApoiar música, audiovisual, design, moda,\nliteratura, games, artesanato, gastronomia e\nprodução digital com formação, crédito,\nincubação, espaços de trabalho e acesso a\nmercados.\n\nAPOIO A INICIATIVAS E EVENTOS\nCULTURAIS\n159\n\nCriar editais públicos e descentralizados de apoio\na festivais, feiras, apresentações, encontros e\niniciativas culturais, com c ité ios transparentes,\ndiversidade regional e pa ticipação de\nprodutores locais.\n\n155\n\nSÃO JOÃO E TRADIÇÕES\nPOPULARES MAIS FORTES\n\nValorizar g upos de quadrilhas, a raiás, bandas,\ng upos populares, artesanato, gastronomia e\nfestejos juninos, apoiando calendá ios regionais\nque movimentem turismo, cultura e renda.\n\nIntegrar festivais, equipamentos, pat imônio,\ngastronomia e a tistas em agendas regionais\npermanentes conectadas às escolas e ao\nturismo.\n\n160\n\n161\n\nReconhecer e apoiar eventos, circuitos religiosos\ne outras manifestações culturais de fé.\n\n157\n\nPATRIMÔNIO, MEMÓRIA E\nIDENTIDADE POTIGUAR\n\nEQUIPAMENTOS CULTURAIS\nVIVOS\n\nRequalificar teatros, casas de cultura, museus,\nbibliotecas e espaços comunitários, garantindo\nacessibilidade, segurança, manutenção e\nprogramação regular.\n\nCULTURA DE FÉ\n156\n\nCIRCUITOS DA CULTURA\nPOTIGUAR\n\nESPORTE EDUCACIONAL E\nCOMUNITÁRIO\n\nOferecer iniciação e prática continuada em\nescolas, bairros e comunidades urais,\nintegrando esporte à saúde, pe manência\nescolar, convivência e prevenção da violência.\n\nATLETAS E COMPETIÇÕES\nProteger patrimônio material e imaterial,\narquivos, museus, mestres, saberes, a tesanato\ne expressões que formam a identidade cultural\ndo Rio Grande do Norte.\n\n162\n\nEst uturar apoio por crité ios públicos para\natletas e paratletas, fo mação de técnicos e\nárbitros, jogos escolares, pa ticipação em\ncompetições e calendá ios estaduais.\n\n40"
+          },
+          {
+            "id": "163",
+            "titulo": "163",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "163\n\nEVENTOS ESPORTIVOS NAS\nREGIÕES\n\nApoiar competições e eventos que movimentem\ncomunidades e economia local, valo izando\nmodalidades ligadas às vocações dos te itó ios\ne deixando legado para os equipamentos e\nprojetos sociais.\n\nJOVEM DO FUTURO RN\n\n166\n\nJUVENTUDE EMPREENDEDORA E\nCONECTADA\n\nApoiar inovação, economia criativa, pequenos\nnegócios, startups juvenis, inclusão digital,\nmicrocrédito e redes de mentoria em todas as\nregiões.\n\n167\n\nJUVENTUDE COM VOZ E\nPROTEÇÃO\n\n164\n\nC iar qualificação profissional com bolsa mensal,\nseleção pública e cursos ligados às\noportunidades regionais, vinculando o benefício\nà matrícula, frequência e conclusão da\nformação.\n\n165\n\nAmpliar cultura, esporte, saúde mental,\nprevenção de violências e pa ticipação juvenil,\nfortalecendo conselhos, volunta iado e\nlideranças comunitá ias.\n\nPRIMEIRO EMPREGO E\nAPRENDIZAGEM\n\nIntegrar escola, ensino técnico, SINE-RN e\nempresas para ampliar estágio, aprendizagem\nprofissional, primeiro emprego e\nacompanhamento dos jovens após a inserção.\n\n41"
+          },
+          {
+            "id": "esperanca-e-trabalho-pra-mudar-o-rn",
+            "titulo": "ESPERANÇA E TRABALHO PRA MUDAR O RN",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "ESPERANÇA E TRABALHO PRA MUDAR O RN\n\nRN\n\nConclusão\n\nTodo plano de gove no fala do futuro. Este nasce também de uma expe iência concreta.\nAllyson sabe que gove nar é escolher p io idades, fo mar uma boa equipe, cuidar bem\ndo dinheiro público, enfrentar problemas e transfo mar decisão em resultado. É essa\nexpe iência, adqui ida como prefeito aprovado por mais de 86% da população, que dá\nsegurança ao projeto que agora se apresenta ao Rio Grande do No te.\nQuando assumiu a Prefeitura da segunda maior cidade do Estado, encontrou dívidas,\natrasos e uma população que havia perdido confiança no poder público. Com\nplanejamento, trabalho e coragem, reorganizou a gestão, recuperou a capacidade de\ninvestir e aproximou a Prefeitura das pessoas. Essa expe iência é a prova de que dá\npara fazer e de que a mudança não é um salto no escuro quando vem acompanhada de\nentrega e resultado.\nEssa caminhada ensinou Allyson que transfo mação nenhuma acontece de longe. Por\nisso, perco reu os 167 municípios, entrou nas feiras, conversou com quem produz e\nouviu se vidores, estudantes, empresá ios, mulheres, idosos, jovens e famílias.\nEncontrou um RN que sofre com se viços que não funcionam como deve iam, mas que\nnão perdeu a força nem a vontade de seguir em frente.\nFoi dessa escuta que nasceram estas 167 propostas. Elas traduzem um jeito de\ngove nar: pé no chão para compreender a realidade, manga a regaçada para trabalhar e\ncoragem para destravar o Estado. Um gove no presente, na estrada, que olha nos\nolhos, presta contas e melhora ao lado da população.\nHá muito a organizar. As contas exigem responsabilidade; a saúde precisa chegar mais\npe to; as obras precisam andar; e a educação e a economia precisam ab ir\noportunidades. A p imeira medida será conhecer a verdade de cada área e definir\np ioridades.\nÉ nisso que mora a esperança deste plano: na c iança que encontrará uma escola\nmelhor; na mãe que terá atendimento para o filho; no jovem que poderá const uir a vida\nsem deixar sua te ra; no ag icultor que terá apoio para produzir; no se vidor que será\nrespeitado; na pessoa com deficiência que encontrará inclusão e respeito; no idoso que\nterá acolhimento e atenção; e em cada pessoa que deseja ser vista, incluída e\nprotegida.\nAllyson representa o encontro do novo com a expe iência. A juventude de quem tem\nenergia para perco rer o Estado inteiro e a matu idade de quem já tomou decisões e\n\n42"
+          },
+          {
+            "id": "entregou-resultados-um-lider-de-pe-no-chao-e-sonho-alto-que-acredita-que",
+            "titulo": "entregou resultados. Um líder de pé no chão e sonho alto, que acredita que o Rio",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "entregou resultados. Um líder de pé no chão e sonho alto, que acredita que o Rio\nGrande do Norte pode muito mais.\nEste plano é um convite para o RN voltar a acreditar em si mesmo. São 167 propostas,\n167 municípios e uma missão: unir o Estado, cuidar das pessoas e const uir um futuro\nque chegue a todos. Com expe iência para fazer, coragem para mudar e esperança\npara seguir em frente.\n\n43"
+          },
+          {
+            "id": "federacao-uniao-progressista-uniao-brasil-pp-psd-mdb-republicanos",
+            "titulo": "Federação União Progressista (União Brasil/PP) / PSD / MDB / Republicanos",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Federação União Progressista (União Brasil/PP) / PSD / MDB / Republicanos\nFederação Renovação Solidá ia (PRD/Solida iedade) / Avante"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "2b821822f5cb59d1fc754d1d30e5edc90be25ab8ecf52804c3aa2524c8b26707"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "853854e9435f84366cdbd62bcf6df52d7d5b7523ad1d4f77099d366ac3b45995"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "76f8527e02e30425ec31f76c633f1e56b9eb3e2b6b36413487b037a5de07424c"
+          },
+          {
+            "pagina": 4,
+            "origem": "ocr",
+            "textSha256": "d52bfc29682a198609f98b9d47db2122ef6cb7bce514c1ce24b0186f6e7fd662"
+          },
+          {
+            "pagina": 5,
+            "origem": "ocr",
+            "textSha256": "b3c093a3346b3fa0ade6d86436ff1bcb6257ff53172e709d4c3625085d938a33"
+          },
+          {
+            "pagina": 6,
+            "origem": "ocr",
+            "textSha256": "5af8c6e550a4ab5103a3649bd69c7c933e1d734fab1b5d48ba24df0774b4953f"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "995b70a9ff7190961f0ca0fb6ea3aca868e9f461de8d7ec5653d25dd43caa153"
+          },
+          {
+            "pagina": 8,
+            "origem": "ocr",
+            "textSha256": "b0c3a63cc5d11e35f46c21b875148ea8f248a07a6fa50efd4e322c88c33b728e"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "492e711c96d1bb49bf64a016bbbdb1cfc84f5a5be143537706a6d32c70247201"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "174a02b01985130c328a2b9b984d154205a0e15e5bbfdb47e6956e6f83f03686"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "81392a8758e509af490c4b3fb347f2c73fff7f6b929908170d76923f0a579e47"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "afbeb0d8606710480322eda1561604a3929c024943d1a4f8a962bba63454f31a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "01d39197b05e6bef1f771bd77616e5e323c1ec7eb906ba3baf66b81326e7447c"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "ce67175b34c811239cc13a9c4a90925044de3b908ad259d80bc81e3587c42ac7"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "5c178d35c9c64b2bb57eef11dae36e0e5cd1d11b255c70a144948b80d2160c0a"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "bb8c36b2038e50721b61be51d7d9c165395ed65b2672f895a6bb3da8535e5f87"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "4519839d26b80527b750319ce29577d42584e87c3b119d4cbf99a0be46331a1a"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "21870b0751738a2458ef6803dc58f9ea84b384a717ec6435c2aab0c7c724cca6"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "c727e0accf996968619ae6715efc90c5278aad7fd1eec032d4e7763035886ea0"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "bac205646bface1741f0c0018a65e92645814498f770286768b299b9b912834d"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "49dd378d1791643cc4daabcd3b53c8a54a961dd8762e947b57c609d501d1d223"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "184153507a41545a7acd5991ec8dcd8cc045b0a5cd606b5fc0a5c2ee27ac22ad"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "193508a3fb736289c69341a3a5fc80f0eff3b5b86abfa7351505cdc386252f41"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "358ca40867517af974da418783be4b5bb096bca99ae902a3653f7675ff77d7f4"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "be58f57e14cd2a2d37d97145020853ef314aa42e3bedcf5a82e1bcb855559f58"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "dad49d81e07d4c91ca2496c38202a6d37d435b09d32e6feb130e9deb9cbef61e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "5e073bc35dda4db558a6a7b596d34e3e03a253a1e7b8a06a963e461adf285e34"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "22918df35fd11bbd790e4c28acb2ec318c8d98464b300307445e44bb67956a17"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "3558ef4cb3f615237d7983e35a441b58e9e6d3f9e30dcb40ec5fd3b9cfcf1e24"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f2d8343b8077fe76157787239e13d029e8b1589f17c87d151b60e07be0bd4205"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4f3b73f63ef62e40f7928a07a96416f4c7e280634aedb385fe0bc81720ce453d"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "63031272cabc851e41d0599261e802d0d568420eaaf2566c18d6c8d7b0b444a2"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "ffc2d4bb9109b9c66c77c54e4dc513f8ad93897fc399e3ad627a52cb865f953a"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "bebdb5747a060e891f165300eff254a594309cba838225ada7e5a180379b5b20"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "7a99db341a31280afaff8690c33c3119fb22efec19f89923c6ca9236007e3df1"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "372c75f7b3e208706f80aca10e23dc18c7a38b2f73987a4a0ebac4c535167b05"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "6477da5f93f4888827330b0cf4013f7359496a51c5d3aa82d598874d003945d5"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "f4e3ece50bca5ab6ea1147e663524f115b8a3522b7dbff699a8c6ab54cca5856"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "e7556072ee3eac01a0c2a8d11ca25ba5972fdfa8d03bfa50dc2ba08e0eab260f"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "b3da6ab62c4a30081aed7b6c2a4dc45e8091567a152a07df19d9251db03c538a"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "23650c351020f684dbf3e8a77c2a48c2d82540a9f906cf94825ac3644991e32d"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "ce477963f65b0ca79cab8e04121a027898544f354105921065287f1bfa5ce1e7"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "5ef6fe0586e97c962545641d28aec1baa371f702dd19127d56d4839ad0646f7a"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "d3b65d7031ed720e52d3a0b20815071f09d5be8bf7e76be12913844da6867440"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "A proposta prevê uma Radiografia Geral do Rio Grande do Norte como primeira medida, com levantamento da situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento. Planeja combinar recursos estaduais com transferências federais, emendas, financiamentos, consórcios, concessões e parcerias, considerando custo, risco, benefício público e capacidade de manutenção. Propõe criar uma secretaria dedicada a estruturar a captação de recursos federais e multilaterais, desenvolver projetos estratégicos e acelerar investimentos, obras e ações. Prevê preparar áreas, energia renovável, transmissão, fibra óptica e licenciamento coordenado para atrair data centers, computação em nuvem e inteligência artificial. Estabelece programa estadual permanente para reduzir o tempo de espera por consultas, exames e cirurgias. Propõe bolsa mensal para estudantes de baixa renda da rede estadual, vinculada à matrícula, frequência, bom comportamento, vacinação e permanência. Planeja integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento permanente.",
+    "frases": [
+      {
+        "texto": "A proposta prevê uma Radiografia Geral do Rio Grande do Norte como primeira medida, com levantamento da situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 4,
+            "trecho": "A primeira medida será uma Radiografia Geral do Rio Grande do Norte. O novo governo levantará a situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento."
+          }
+        ]
+      },
+      {
+        "texto": "Planeja combinar recursos estaduais com transferências federais, emendas, financiamentos, consórcios, concessões e parcerias, considerando custo, risco, benefício público e capacidade de manutenção.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 4,
+            "trecho": "Recursos estaduais serão combinados com transferências federais, emendas, financiamentos, consórcios, concessões e parcerias, sempre com análise de custo, risco, benefício público e capacidade de manutenção."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe criar uma secretaria dedicada a estruturar a captação de recursos federais e multilaterais, desenvolver projetos estratégicos e acelerar investimentos, obras e ações.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 10,
+            "trecho": "C iar uma secreta ia dedicada a est uturar a captação de recursos federais e multilaterais, desenvolver grandes projetos estratégicos e acelerar a execução de investimentos, obras e ações para o povo do Rio Grande do Norte."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê preparar áreas, energia renovável, transmissão, fibra óptica e licenciamento coordenado para atrair data centers, computação em nuvem e inteligência artificial.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 12,
+            "trecho": "Preparar áreas adequadas, energia renovável, transmissão, fibra óptica, licenciamento coordenado e segurança ju ídica para atrair data centers, computação em nuvem e inteligência a tificial, transformando o potencial energético do Estado em investimentos de alto valor."
+          }
+        ]
+      },
+      {
+        "texto": "Estabelece programa estadual permanente para reduzir o tempo de espera por consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 15,
+            "trecho": "Estabelecer programa estadual permanente para reduzir o tempo de espera por consultas, exames e ci urgias."
+          }
+        ]
+      },
+      {
+        "texto": "Propõe bolsa mensal para estudantes de baixa renda da rede estadual, vinculada à matrícula, frequência, bom comportamento, vacinação e permanência.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 18,
+            "trecho": "C iar bolsa mensal para estudantes de baixa renda da rede estadual, vinculada à mat ícula, à frequência, ao bom compo tamento, à vacinação e à pe manência, ajudando a combater abandono e garantindo condições para continuar os estudos."
+          }
+        ]
+      },
+      {
+        "texto": "Planeja integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento permanente.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 22,
+            "trecho": "Integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento pe manente, com responsabilidades, prio idades te itoriais e avaliação de resultados."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "diagnostico-estadual",
+        "titulo": "Diagnóstico estadual",
+        "descricao": "A proposta prevê uma Radiografia Geral do Rio Grande do Norte como primeira medida.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 4,
+            "trecho": "A primeira medida será uma Radiografia Geral do Rio Grande do Norte. O novo governo levantará a situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento."
+          }
+        ]
+      },
+      {
+        "id": "captacao-de-recursos",
+        "titulo": "Captação de recursos",
+        "descricao": "Propõe criar uma secretaria dedicada a estruturar a captação de recursos federais e multilaterais.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 10,
+            "trecho": "C iar uma secreta ia dedicada a est uturar a captação de recursos federais e multilaterais, desenvolver grandes projetos estratégicos e acelerar a execução de investimentos, obras e ações para o povo do Rio Grande do Norte."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-tecnologica",
+        "titulo": "Infraestrutura tecnológica",
+        "descricao": "Prevê preparar condições para atrair data centers, computação em nuvem e inteligência artificial.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 12,
+            "trecho": "Preparar áreas adequadas, energia renovável, transmissão, fibra óptica, licenciamento coordenado e segurança ju ídica para atrair data centers, computação em nuvem e inteligência a tificial, transformando o potencial energético do Estado em investimentos de alto valor."
+          }
+        ]
+      },
+      {
+        "id": "atendimento-em-saude",
+        "titulo": "Atendimento em saúde",
+        "descricao": "Estabelece medida para reduzir o tempo de espera por consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 15,
+            "trecho": "Estabelecer programa estadual permanente para reduzir o tempo de espera por consultas, exames e ci urgias."
+          }
+        ]
+      },
+      {
+        "id": "integracao-da-seguranca",
+        "titulo": "Integração da segurança",
+        "descricao": "Planeja integrar forças de segurança nacional e demais órgãos em planejamento permanente.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002535255:01",
+            "pagina": 22,
+            "trecho": "Integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento pe manente, com responsabilidades, prio idades te itoriais e avaliação de resultados."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:50:22.859Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:52:53.508Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde integralmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:1:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente de financiamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:2:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Corresponde ao trecho (com ruído de OCR)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:3:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de infraestrutura tecnológica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:4:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:5:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com o trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:6:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência com trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de integração de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:frase:7:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:diagnostico-estadual:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:captacao-de-recursos:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:infraestrutura-tecnologica:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:atendimento-em-saude:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002535255:tema:integracao-da-seguranca:documentos:RN:200002535255:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002535255",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002535255:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29687,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24505,
+          "output_tokens_details": {
+            "thinking_tokens": 314
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29687,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24505,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29687,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29687
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3871944
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "c01a4a0d67e6d451bdf7d43f5052e5c380fe9acdf0befe0ecf64fee647cfa515",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:54:18.355Z",
+    "sourceSha256": "e288e9c5d5372c6648f41a29058d8eab2474763af486e6e59d8f7aa4d1cde9b5",
+    "extractedTextSha256": "7b059b1ba961634d2c47086e5a30d573a633e0f2cfd2819b92a4f235b8da0756",
+    "documentCount": 1,
+    "documentSetSha256": "37218e2e5d651d33a8f07c0a752477d5469e5858a26495126612d8511ecbe4d6",
+    "contentSha256": "1ff767d297f232cb1cc9f448bef94e8fc5a3971e63025378aabfb7263f8e5ef0"
+  }
+}

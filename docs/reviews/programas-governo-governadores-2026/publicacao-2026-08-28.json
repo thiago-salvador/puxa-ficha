@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:47:43.035Z",
+  "reviewedAt": "2026-08-28T23:54:18.355Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 142,
-    "human_review_required": 2
+    "approved": 143,
+    "human_review_required": 1
   },
   "items": [
     {
@@ -979,14 +979,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002535255",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "alysson-bezerra",
       "sqCandidato": "200002535255",
       "nomeUrna": "ALLYSON",
       "partido": "UNIÃO",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002547826",
