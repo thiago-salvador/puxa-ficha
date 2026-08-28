@@ -44,6 +44,27 @@ function summary(themeIds = ["saude", "educacao", "seguranca", "economia"]): unk
   }
 }
 
+function generatorInput(pageText = "Trecho oficial.") {
+  return {
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    documentos: [{
+      documentoId: "PI:180002549920:01",
+      paginas: [{ pagina: 1, origem: "pdftotext", texto: pageText }],
+    }],
+  }
+}
+
+function summaryWithEvidence(trecho: string): unknown {
+  const output = JSON.parse(JSON.stringify(summary())) as {
+    frases: Array<{ evidencias: Array<{ trecho: string }> }>
+    temas: Array<{ evidencias: Array<{ trecho: string }> }>
+  }
+  for (const item of [...output.frases, ...output.temas]) {
+    for (const itemEvidence of item.evidencias) itemEvidence.trecho = trecho
+  }
+  return output
+}
+
 test("recusa tentativas fracionárias e aliases da mesma família", () => {
   const invalidAttempts = config()
   invalidAttempts.generator.maxAttempts = 1.5 as 1
@@ -69,7 +90,7 @@ test("generator retenta quando resumo viola limite mecânico e informa o erro", 
       stderr: "",
     }
   })
-  const result = await adapters.generate({ identityKey: "2026:GOVERNADOR:PI:180002549920", documentos: [] })
+  const result = await adapters.generate(generatorInput())
   assert.equal(result.metadata.attempts, 2)
   assert.match(entradas[1], /resposta anterior falhou.*2 palavras/iu)
 })
@@ -175,7 +196,7 @@ test("recusa IDs de tema duplicados", async () => {
     stderr: "",
   }))
   await assert.rejects(
-    adapters.generate({ identityKey: "2026:GOVERNADOR:PI:180002549920", documentos: [] }),
+    adapters.generate(generatorInput()),
     /id duplicado/,
   )
 })
@@ -191,10 +212,7 @@ test("usa cópia congelada da configuração depois da criação", async () => {
   source.generator.name = "mutated-name"
   source.generator.maxAttempts = 2
 
-  const result = await adapters.generate({
-    identityKey: "2026:GOVERNADOR:PI:180002549920",
-    documentos: [],
-  })
+  const result = await adapters.generate(generatorInput())
   assert.deepEqual(commands, ["generator-command"])
   assert.equal(result.metadata.name, "OpenAI GPT-5")
   assert.ok(Object.isFrozen(adapters.generator))
@@ -206,10 +224,7 @@ test("preserva wrapper.uso na metadata do modelo", async () => {
     stdout: JSON.stringify(summary()),
     stderr: `PF_OPENCODE_USAGE=${JSON.stringify({ input_tokens: 12, output_tokens: 5, cost_usd: 0.02 })}\n`,
   }))
-  const result = await adapters.generate({
-    identityKey: "2026:GOVERNADOR:PI:180002549920",
-    documentos: [],
-  })
+  const result = await adapters.generate(generatorInput())
   assert.deepEqual(result.metadata.uso, { input_tokens: 12, output_tokens: 5, cost_usd: 0.02 })
 })
 
@@ -218,11 +233,59 @@ test("preserva uso genérico de runners fora do OpenCode", async () => {
     stdout: JSON.stringify(summary()),
     stderr: `PF_MODEL_USAGE=${JSON.stringify({ input_tokens: 18, output_tokens: 3, cost_usd: 0.01 })}\n`,
   }))
-  const result = await adapters.generate({
-    identityKey: "2026:GOVERNADOR:PI:180002549920",
-    documentos: [],
-  })
+  const result = await adapters.generate(generatorInput())
   assert.deepEqual(result.metadata.uso, { input_tokens: 18, output_tokens: 3, cost_usd: 0.01 })
+})
+
+test("compara evidência com NFKC, whitespace e lowercase pt-BR", async () => {
+  const adapters = createProgramaGovernoModelAdapters(config(), async () => ({
+    stdout: JSON.stringify(summaryWithEvidence("Ｔｒｅｃｈｏ　Ｏｆｉｃｉａｌ．")),
+    stderr: "",
+  }))
+
+  const result = await adapters.generate(generatorInput("TRECHO   OFICIAL."))
+
+  assert.equal(result.metadata.attempts, 1)
+})
+
+test("valida evidência literal antes de encerrar e tenta novamente com feedback", async () => {
+  const source = config()
+  source.generator.maxAttempts = 2
+  const requests: string[] = []
+  let attempt = 0
+  const adapters = createProgramaGovernoModelAdapters(source, async (_command, _args, input) => {
+    requests.push(input)
+    attempt += 1
+    return {
+      stdout: JSON.stringify(attempt === 1
+        ? summaryWithEvidence("Trecho divergente.")
+        : summary()),
+      stderr: "",
+    }
+  })
+
+  const result = await adapters.generate(generatorInput())
+
+  assert.equal(requests.length, 2)
+  assert.equal(result.metadata.attempts, 2)
+  const retry = JSON.parse(requests[1]) as { instructions: string }
+  assert.match(retry.instructions, /evidencia\[0\]/)
+})
+
+test("falha depois de maxAttempts quando a evidência continua divergente", async () => {
+  const source = config()
+  source.generator.maxAttempts = 2
+  const requests: string[] = []
+  const adapters = createProgramaGovernoModelAdapters(source, async (_command, _args, input) => {
+    requests.push(input)
+    return { stdout: JSON.stringify(summaryWithEvidence("Trecho divergente.")), stderr: "" }
+  })
+
+  await assert.rejects(
+    adapters.generate(generatorInput()),
+    /falhou apos 2 tentativa\(s\): evidencia\[0\]/,
+  )
+  assert.equal(requests.length, 2)
 })
 
 test("fatos fora do recorte acionam tentativa corretiva", async () => {
