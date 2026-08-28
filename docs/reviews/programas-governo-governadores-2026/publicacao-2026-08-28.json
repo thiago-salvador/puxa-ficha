@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T18:01:09Z",
+  "reviewedAt": "2026-08-28T19:12:05Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 107,
-    "human_review_required": 37
+    "approved": 108,
+    "human_review_required": 36
   },
   "items": [
     {
@@ -110,14 +110,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:DF:70002535930",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "DF",
       "slug": "robson-raymundo",
       "sqCandidato": "70002535930",
       "nomeUrna": "PROFESSOR ROBSON",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "robson-raymundo: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:DF:70002537111",
