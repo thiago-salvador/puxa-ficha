@@ -2,8 +2,8 @@
   "_comentario": "Autoriza o schema de quarentena e a substituição atômica do snapshot oficial de chapas pelo pacote TSE gerado em 27/08/2026. Reaproveita 44 fichas por nome civil exato, cria somente Rico Pinheiro e Well Macedo e mantém combinações ambíguas fora da view pública.",
   "recorte": "chapas-tse-20260827",
   "migrations": [
-    "20260828020500_chapas_2026_quarentena_schema.sql",
-    "20260828020600_chapas_2026_tse_20260827.sql"
+    "20260828025028_chapas_2026_quarentena_schema.sql",
+    "20260828025037_chapas_2026_tse_20260827.sql"
   ],
   "fonte": "TSE Dados Abertos candidatos 2026, consulta_cand_2026.zip, SHA-256 eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27, Last-Modified Thu, 27 Aug 2026 15:35:38 GMT.",
   "coorte": [
