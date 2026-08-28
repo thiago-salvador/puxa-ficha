@@ -50,9 +50,18 @@ find_existing_issue() {
 }
 
 ensure_label() {
-  if gh api "repos/${repo}/labels/${label}" >/dev/null 2>&1; then
+  local probe
+  probe="$(mktemp)"
+  if gh api --include "repos/${repo}/labels/${label}" >"$probe" 2>&1; then
+    rm -f "$probe"
     return
   fi
+  if ! grep -Eq '(^HTTP/[0-9.]+ 404([[:space:]]|$)|\(HTTP 404\))' "$probe"; then
+    cat "$probe" >&2
+    rm -f "$probe"
+    return 1
+  fi
+  rm -f "$probe"
   jq -n \
     --arg name "$label" \
     --arg color "B60205" \

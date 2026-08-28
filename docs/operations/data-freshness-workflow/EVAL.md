@@ -16,6 +16,6 @@ Tipo: automacao
 | 10 | O roteamento usa scripts, testes e GitHub Actions existentes, com fixtures offline para o gate determinístico e rede oficial apenas no job recorrente. | code: `npm run test:data-freshness:workflow` | routing |
 | 11 | Falha ou revisão pendente cria ou atualiza uma issue vermelha atribuída a `thiago-salvador`, comenta recorrências e permanece aberta; uma auditoria saudável comenta a recuperação e fecha o incidente. | code: `npm run test:data-freshness:alerts && npm run test:data-freshness:workflow` | outcome |
 
-Gate: Done somente com 100% PASS registrado, evidência por critério e nenhuma alteração remota.
+Gate: Done somente com 100% PASS registrado, evidência por critério e nenhuma alteração remota além da issue deduplicada autorizada no critério 11.
 
 Custo esperado: uma worktree, zero dependências novas, uma suíte direcionada e os gates globais já existentes. Golden set: `tests/fixtures/data-freshness/cases.jsonl`.

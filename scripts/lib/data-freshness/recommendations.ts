@@ -69,10 +69,12 @@ export function buildDataFreshnessRecommendations(input: RecommendationInput): D
   const sourceById = new Map(input.registry.map((source) => [source.source_id, source]))
   const sourceErrors = input.freshness.filter((item) => item.status === "source_error")
   const sourceReviews = input.freshness.filter((item) => item.status === "review_required")
-  const blockingStale = input.freshness.filter((item) => {
-    const source = sourceById.get(item.source_id)
-    return item.status === "stale" && source?.stale_policy === "review_required"
-  })
+  const blockingStale = input.freshness.filter((item) =>
+    item.status === "stale" && sourceById.get(item.source_id)?.stale_policy === "review_required")
+  const warningStale = input.freshness.filter((item) =>
+    item.status === "stale" && sourceById.get(item.source_id)?.stale_policy === "show_with_warning")
+  const suppressedStale = input.freshness.filter((item) =>
+    item.status === "stale" && sourceById.get(item.source_id)?.stale_policy === "suppress_negative_claims")
 
   if (sourceErrors.length > 0) {
     recommendations.push({
@@ -101,6 +103,26 @@ export function buildDataFreshnessRecommendations(input: RecommendationInput): D
       title: "Coletas obrigatórias estão vencidas",
       action: "Reexecutar os coletores indicados e confirmar a nova data de evidência antes de confiar nos dados publicados.",
       evidence: blockingStale.map((item) => sourceById.get(item.source_id)?.label ?? item.source_id),
+    })
+  }
+
+  if (warningStale.length > 0) {
+    recommendations.push({
+      code: "stale_warning",
+      priority: "high",
+      title: "Fontes públicas estão vencidas e exigem aviso",
+      action: "Reexecutar os coletores indicados. Até a atualização ser confirmada, manter visível o aviso de desatualização e a data da última evidência.",
+      evidence: warningStale.map((item) => sourceById.get(item.source_id)?.label ?? item.source_id),
+    })
+  }
+
+  if (suppressedStale.length > 0) {
+    recommendations.push({
+      code: "stale_suppressed_claims",
+      priority: "high",
+      title: "Fontes vencidas bloqueiam alegações negativas",
+      action: "Reexecutar os coletores indicados. Até a atualização ser confirmada, continuar ocultando alegações negativas dependentes dessas fontes.",
+      evidence: suppressedStale.map((item) => sourceById.get(item.source_id)?.label ?? item.source_id),
     })
   }
 

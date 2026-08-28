@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
-import { existsSync, mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
@@ -74,15 +74,24 @@ test("recomenda uma ação concreta para fonte, SLA e cada divergência de candi
   const registry = [
     source("tse-current", "Candidaturas TSE", "review_required"),
     source("coleta-gastos", "Gastos parlamentares", "review_required"),
+    source("coleta-avisada", "Fonte com aviso", "show_with_warning"),
+    source("coleta-supressao", "Fonte com supressão", "suppress_negative_claims"),
   ]
   const recommendations = buildDataFreshnessRecommendations({
     comparison,
-    freshness: [freshness("tse-current", "source_error"), freshness("coleta-gastos", "stale")],
+    freshness: [
+      freshness("tse-current", "source_error"),
+      freshness("coleta-gastos", "stale"),
+      freshness("coleta-avisada", "stale"),
+      freshness("coleta-supressao", "stale"),
+    ],
     registry,
   })
   assert.deepEqual(recommendations.map((item) => item.code), [
     "source_error",
     "blocking_stale",
+    "stale_warning",
+    "stale_suppressed_claims",
     "inclusion",
     "removal",
     "replacement",
@@ -95,6 +104,53 @@ test("recomenda uma ação concreta para fonte, SLA e cada divergência de candi
   assert.match(markdown, /Não apagar automaticamente/)
   assert.match(markdown, /SQ_CANDIDATO/)
   assert.match(markdown, /PESSOA 5/)
+  assert.match(markdown, /manter visível o aviso de desatualização/)
+  assert.match(markdown, /continuar ocultando alegações negativas/)
+})
+
+test("falha ao consultar o label é propagada sem tentar criá-lo", () => {
+  const work = mkdtempSync(join(tmpdir(), "data-freshness-alert-gh-"))
+  try {
+    const bin = join(work, "bin")
+    const log = join(work, "gh.log")
+    const mockGh = join(bin, "gh")
+    const summary = join(work, "summary.md")
+    writeFileSync(summary, "## Próximas ações recomendadas\n")
+    mkdirSync(bin)
+    writeFileSync(mockGh, `#!/usr/bin/env bash
+printf '%s\\n' "$*" >> "$GH_LOG"
+if [[ "$*" == *"issues?state=open"* ]]; then
+  printf '[]'
+  exit 0
+fi
+if [[ "$*" == *"labels/alerta-dados"* ]]; then
+  printf 'gh: authentication failed (HTTP 401)\\n' >&2
+  exit 1
+fi
+printf 'chamada inesperada: %s\\n' "$*" >&2
+exit 99
+`)
+    chmodSync(mockGh, 0o755)
+    const result = spawnSync("bash", [
+      "scripts/audit/sync-data-freshness-issue.sh",
+      "failure",
+      "https://github.com/thiago-salvador/puxa-ficha/actions/runs/123",
+      summary,
+    ], {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GITHUB_REPOSITORY: "thiago-salvador/puxa-ficha",
+        GH_LOG: log,
+        PATH: `${bin}:${process.env.PATH}`,
+      },
+    })
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /HTTP 401/)
+    assert.doesNotMatch(readFileSync(log, "utf8"), /--method POST/)
+  } finally {
+    rmSync(work, { recursive: true, force: true })
+  }
 })
 
 test("issue destacada é criada, atualizada e fechada sem executar conteúdo do resumo", () => {

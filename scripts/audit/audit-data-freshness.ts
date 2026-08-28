@@ -197,12 +197,8 @@ async function main(): Promise<void> {
       freshness.filter((item) => item.status === status).length,
     ]),
   )
-  const sourceNeedsReview = freshness.some((item) => {
-    const config = registry.find((entry) => entry.source_id === item.source_id)
-    return item.status === "source_error" ||
-      item.status === "review_required" ||
-      (item.status === "stale" && config?.stale_policy === "review_required")
-  })
+  const sourceNeedsReview = freshness.some((item) =>
+    item.status === "source_error" || item.status === "review_required" || item.status === "stale")
   const overall = comparison.status === "review_required" || sourceNeedsReview ? "review_required" : "ok"
   const recommendations = buildDataFreshnessRecommendations({ comparison, freshness, registry })
 
