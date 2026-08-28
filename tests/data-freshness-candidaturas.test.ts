@@ -60,6 +60,17 @@ test("classifica inclusão, remoção, substituição, situação, identidade e 
   assert.equal(result.status, "review_required")
 })
 
+test("ficha própria é obrigatória para titular, mas não para vice", () => {
+  const official = [
+    record("1", "GOVERNADOR", { sq_coligacao: "A" }),
+    record("2", "VICE GOVERNADOR", { sq_coligacao: "A" }),
+  ]
+  const published = official.map((item) => ({ ...item, perfil_slug: null }))
+  const result = compareCandidacies(official, published)
+  assert.equal(result.counts.missing_profile, 1)
+  assert.equal(result.changes.find((change) => change.kind === "missing_profile")?.official?.cargo, "GOVERNADOR")
+})
+
 test("parser do ZIP oficial limita o universo aos quatro cargos e ao primeiro turno", async () => {
   const work = mkdtempSync(join(tmpdir(), "tse-source-test-"))
   try {
@@ -75,9 +86,9 @@ test("parser do ZIP oficial limita o universo aos quatro cargos e ao primeiro tu
     const contents = [
       header,
       row("PRESIDENTE", "1", "1"),
-      row("VICE PRESIDENTE", "1", "2"),
+      row("VICE-PRESIDENTE", "1", "2"),
       row("GOVERNADOR", "1", "3"),
-      row("VICE GOVERNADOR", "1", "4"),
+      row("VICE-GOVERNADOR", "1", "4"),
       row("SENADOR", "1", "5"),
       row("GOVERNADOR", "2", "6"),
     ].join("\n")

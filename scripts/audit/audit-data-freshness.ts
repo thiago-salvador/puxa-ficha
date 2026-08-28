@@ -99,6 +99,7 @@ async function main(): Promise<void> {
   const generatedAt = options.now.toISOString()
   const published = readPublished(options.published)
   const registry = loadFreshnessRegistry()
+  const monitoredRegistry = registry.filter((entry) => entry.refresh_mode !== "disabled")
   let official: CandidacyRecord[] = []
   let source: Record<string, unknown>
 
@@ -138,7 +139,7 @@ async function main(): Promise<void> {
     const attempts = error instanceof OfficialSourceError ? error.attempts : []
     const message = error instanceof Error ? error.message : String(error)
     source = { status: "source_error", checked_at: generatedAt, error: message, attempts }
-    const freshness = registry.map((entry) =>
+    const freshness = monitoredRegistry.map((entry) =>
       evaluateSourceFreshness(
         entry,
         entry.source_id === "tse-current"
@@ -182,7 +183,7 @@ async function main(): Promise<void> {
   }
 
   const comparison = compareCandidacies(official, published.records, generatedAt)
-  const freshness = registry.map((entry) =>
+  const freshness = monitoredRegistry.map((entry) =>
     evaluateSourceFreshness(
       entry,
       entry.source_id === "tse-current"
