@@ -64,6 +64,14 @@ async function main() {
     `INPUT=${JSON.stringify(envelope.input)}`,
   ].join("\n")
 
+  // Orcamento de bytes sobre envelope final serializado (UTF-8), com margem segura abaixo de 200k
+  const envelopeBytes = Buffer.byteLength(JSON.stringify(envelope), "utf8")
+  const promptBytes = Buffer.byteLength(promptFinal, "utf8")
+  const LIMITE_ENVELOPE = 190_000
+  if (envelopeBytes > LIMITE_ENVELOPE || promptBytes > LIMITE_ENVELOPE) {
+    throw new Error(`envelope excede limite 200k (envelope ${envelopeBytes} bytes, prompt ${promptBytes} bytes); deve ser particionado via multipassagem`)
+  }
+
   const dirTmp = mkdtempSync(join(tmpdir(), "pf-glm-"))
   const arquivoTmp = join(dirTmp, "prompt.txt")
   writeFileSync(arquivoTmp, promptFinal, "utf8")
@@ -71,6 +79,9 @@ async function main() {
   let child = null
   let settled = false
   let timer = null
+  const forwardSignal = (sig) => { if (child && !settled) { try { child.kill(sig) } catch {} } }
+  process.on("SIGTERM", () => forwardSignal("SIGTERM"))
+  process.on("SIGINT", () => forwardSignal("SIGINT"))
   const cleanup = () => {
     try { rmSync(dirTmp, { recursive: true, force: true }) } catch {}
   }

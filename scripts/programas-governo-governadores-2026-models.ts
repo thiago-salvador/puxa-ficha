@@ -14,7 +14,7 @@ export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-gover
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS = 2
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_OUTPUT_BYTES = 8 * 1024 * 1024
 export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION = "multipassagem-v2" as const
-export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES = 380_000
+export const PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES = 180_000
 
 const GENERATOR_INSTRUCTIONS = [
   "Produza um resumo factual e neutro do programa oficial, com 120 a 180 palavras, 6 a 8 frases materiais e 4 a 6 temas.",

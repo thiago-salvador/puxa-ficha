@@ -66,6 +66,14 @@ async function main() {
     `INPUT=${JSON.stringify(envelope.input)}`,
   ].join("\n")
 
+  // Orcamento de bytes sobre envelope final serializado (UTF-8), com margem segura abaixo de 200k
+  const envelopeBytes = Buffer.byteLength(JSON.stringify(envelope), "utf8")
+  const promptBytes = Buffer.byteLength(promptFinal, "utf8")
+  const LIMITE_ENVELOPE = 190_000
+  if (envelopeBytes > LIMITE_ENVELOPE || promptBytes > LIMITE_ENVELOPE) {
+    throw new Error(`envelope excede limite 200k (envelope ${envelopeBytes} bytes, prompt ${promptBytes} bytes); deve ser particionado via multipassagem`)
+  }
+
   // Arquivo temporario seguro para envelope grande via --arquivo
   const dirTmp = mkdtempSync(join(tmpdir(), "pf-luna-"))
   const arquivoTmp = join(dirTmp, "prompt.txt")
@@ -74,6 +82,9 @@ async function main() {
   let child = null
   let settled = false
   let timer = null
+  const forwardSignal = (sig) => { if (child && !settled) { try { child.kill(sig) } catch {} } }
+  process.on("SIGTERM", () => forwardSignal("SIGTERM"))
+  process.on("SIGINT", () => forwardSignal("SIGINT"))
   const cleanup = () => {
     try { rmSync(dirTmp, { recursive: true, force: true }) } catch {}
   }
@@ -139,11 +150,15 @@ async function main() {
   } finally {
     if (child && !settled) {
       try { child.kill("SIGTERM") } catch {}
-      // Aguarda encerramento para evitar Promise dupla resolucao
+      // Aguarda encerramento com grace period, escala para SIGKILL
       await new Promise((r) => {
         if (!child) return r()
-        child.on("close", r)
-        setTimeout(r, 2000)
+        let killed = false
+        const grace = setTimeout(() => {
+          if (!killed) { try { child.kill("SIGKILL") } catch {} }
+        }, 2000)
+        child.on("close", () => { killed = true; clearTimeout(grace); r() })
+        setTimeout(() => { clearTimeout(grace); r() }, 4000)
       }).catch(() => {})
     }
     cleanup()

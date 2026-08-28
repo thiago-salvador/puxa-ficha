@@ -27,7 +27,7 @@ Os quatro argumentos de escopo e arquivos são obrigatórios:
 
 ## Geração em lote e multipassagem
 
-Quando o texto total do candidato excede `380_000` bytes UTF-8, o importador não envia tudo numa única chamada. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo esse limite, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
+Quando o texto total do candidato excede `180_000` bytes UTF-8 (orçamento sobre envelope final serializado, margem segura abaixo de 200_000, UTF-8), o importador não envia tudo numa única chamada. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo esse limite, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
 
 Orçamento de chamadas, registrado no registro via `ingestao.modelos.geracaoMultipassagem` e agregado no manifesto:
 
@@ -36,7 +36,7 @@ Orçamento de chamadas, registrado no registro via `ingestao.modelos.geracaoMult
 - nenhuma repetição integral de candidato dentro de uma execução;
 - falha persistente de passagem bloqueia o candidato em `em_revisao` com erro explícito mantendo checkpoints; a retomada executa só o que falta.
 
-O manifesto também inclui a soma real de chamadas internas por etapa e a versão de Node usada pelo processo.
+O manifesto inclui chamadas por etapa e versão de Node; `progress.json` registra `executionId`, `startedAt`, `metricsOffset`, `familiaAtual` e, quando encerrado, `finishedAt` e `pid/lease` – antes disso esses campos não existem.
 
 ## Contrato dos modelos
 
@@ -102,11 +102,11 @@ O fingerprint humano cobre identidade completa, incluindo nome de urna e partido
 O processamento de muitas candidaturas usa o driver `scripts/data/programas-governo-governadores-2026/batch-driver.mjs`, executado com o binário Node 24 resolvido uma única vez. O driver nunca chama modelo: apenas orquestra processos do CLI canônico, um processo por candidato.
 
 - `plan` deriva a fila NDJSON do inventário com `--plan-only`, valida contagens por UF contra o inventário (fail-closed), exclui as UFs de uma onda já concluída e ordena por custo estimado decrescente, calculado a partir de páginas e passagens planejadas.
-- `run` consome a fila com rampa de concorrência 2, 4 e 6 por disparos, semáforo global de seis processos geradores e no máximo dois candidatos multipassagem simultâneos. Cada item grava `estado.json` atomicamente (`pending`, `extracting`, `generator_pending`, `generator_complete`, `judge_pending`, `complete`, `blocked`, `retryable_error`), o que permite retomada sem repetir candidato concluído.
+- `run` consome a fila com rampa de concorrência 3 (inicial) → 4 após 3 conclusões da execução atual (nunca usando 47 históricos), semáforo global de seis slots geradores e no máximo dois candidatos multipassagem simultâneos; throughput e ETA consideram apenas a execução atual. Cada item grava `estado.json` atomicamente (`pending`, `extracting`, `generator_pending`, `generator_complete`, `judge_pending`, `complete`, `blocked`, `retryable_error`), o que permite retomada sem repetir candidato concluído.
 - Duas falhas consecutivas de cota ou autenticação param o driver com checkpoints preservados; o mesmo vale para taxa de erro técnico acima de 5% e para o limite de wall time. A parada escreve `parada.json` com as unidades pendentes.
 - As extrações são cacheadas por SHA-256 do PDF, método e versão do extrator; as passagens multipassagem usam o cache compartilhado de passagens. Retries repetem somente a unidade que falhou.
 - `consolidar` copia os registros para a árvore regional (`ondas/<regiao>/<UF>/`) verificando identidade e recusa mistura de candidato.
-- `PF_QWEN_EXTRA_ARGS` e `PF_CODEX_EXTRA_ARGS` permitem argumentos extras aos CLIs de modelo, como `--safe-mode` no Qwen, que evita carregar MCP servers em chamadas batch.
+- `PF_OPENCODE_GO` aponta para o cliente canônico (`opencode-go.mjs`); `PF_OPENCODE_TIMEOUT_MS` controla timeout interno (< externo). Runners Luna (`gpt-5.6-luna` responses) e DeepSeek (`deepseek-v4-flash` chat) usam esse cliente com temp file `--arquivo` e orçamento de envelope <190k; GLM (`glm-5.3`) exige `--api chat` explícito por ainda ser desconhecido na tabela.
 
 ## Teste hermético
 

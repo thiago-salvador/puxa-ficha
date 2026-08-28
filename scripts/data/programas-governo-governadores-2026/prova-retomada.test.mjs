@@ -96,8 +96,8 @@ if (fila.length !== 155) { console.error(`FALHA: total fila ${fila.length} != 15
 if (norteNaFila !== 0) { console.error("FALHA: Norte presente na fila"); process.exit(1) }
 if (totalAprovado !== 0) { console.error("FALHA: existe registro aprovado"); process.exit(1) }
 
-// 47 complete, 4 blocked, 98 pending, 6 retryable, 104 agendaveis, 0 generator_pending fantasma
-const esperado = { complete: 47, blocked: 4, pending: 98, retryable: 6 }
+// 47 complete, 2 blocked (MT), 98 pending, 8 retryable, 106 agendaveis, 0 generator_pending fantasma
+const esperado = { complete: 47, blocked: 2, pending: 98, retryable: 8 }
 for (const [k, v] of Object.entries(esperado)) {
   if (estadosContados[k] !== v) {
     console.error(`FALHA: ${k} ${estadosContados[k]} != ${v} (esperado apos normalizacao 104 agendaveis)`)
@@ -112,7 +112,7 @@ if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending
     process.exit(1)
   }
 }
-if (agendaveisLista.length !== 104) {
+if (agendaveisLista.length !== 106) {
   console.error(`FALHA: agendaveis ${agendaveisLista.length} != 104`)
   process.exit(1)
 }
@@ -159,4 +159,4 @@ for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
   if (!existsSync(path.join(dir, "registros"))) { console.error(`FALHA: registros ausentes ${hash}`); process.exit(1) }
 }
 
-console.log("RETOMADA_OK total=155 complete=47 blocked=4 pending=98 retryable=6 agendaveis=104 norte=0 qwen=2 aprovado=0")
+console.log("RETOMADA_OK total=155 complete=47 blocked=2 pending=98 retryable=8 agendaveis=106 norte=0 qwen=2 aprovado=0")

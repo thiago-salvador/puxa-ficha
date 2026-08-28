@@ -35,7 +35,7 @@ export type ProgramaGovernoMultiPassagemResultado = {
   fingerprint: string
 }
 
-export const PROGRAMA_GOVERNO_MULTIPASSAGEM_LIMITE_PADRAO_BYTES = 300_000
+export const PROGRAMA_GOVERNO_MULTIPASSAGEM_LIMITE_PADRAO_BYTES = 180_000
 
 function bytesTexto(value: string): number {
   return Buffer.byteLength(value, "utf8")
