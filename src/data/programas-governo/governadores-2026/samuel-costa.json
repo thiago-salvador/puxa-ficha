@@ -1,0 +1,888 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RO",
+    "sqCandidato": "220002550927",
+    "slug": "samuel-costa",
+    "nomeUrna": "SAMUEL COSTA",
+    "partido": "PSB",
+    "arquivoNome": "2026RO220002550927_01.pdf",
+    "arquivoNoPacote": "RO/2026RO220002550927_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RO:220002550927:01",
+      "fonte": {
+        "arquivoNome": "2026RO220002550927_01.pdf",
+        "arquivoNoPacote": "RO/2026RO220002550927_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "beb29a0fd236841e596c4466116fde554bfed9bcaa2eed14a09a59519a28a9f5",
+        "extractedTextSha256": "a334792fb2a81105b0f9d2391ef3c5b3d40a3b2ef1532da3f7504bbb1b449957",
+        "paginas": 12,
+        "secoes": [
+          {
+            "id": "programa-de-governo",
+            "titulo": "Programa de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo\n\nSAMUEL\nCOSTA\nMENEZES - Candidato\nao cargo de Governador\nANDERSON\nSOUZA\nMACHADO - Candidato\nao\ncargo\nde\nVice-Governador\n\n1"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Estado de Rondônia é o território onde nossa população vive,\ntrabalha, produz, cria suas famílias e desenvolve suas potencialidades e seus\ntalentos. Para que a cidadania plena seja uma realidade em todos os 52\nmunicípios, distritos e comunidades, o povo precisa de bens e serviços\npúblicos de excelência, que dependem diretamente da atuação firme, sensível\ne planejada do Poder Público Estadual nas áreas da Saúde, Educação,\nSegurança, Cultura, Esporte, Lazer e Infraestrutura.​\n​\nUm dos resultados mais graves da desigualdade e da exclusão social\nem Rondônia é a situação de vulnerabilidade e pobreza de uma parcela\nsignificativa de nossa população, que vive com renda incompatível com as\nnecessidades básicas da vida humana. Não se pode aceitar que em um estado\npróspero, forte e gerador de riquezas como o nosso, ainda existam pessoas\nvivendo em condições subumanas, sem água tratada, sem atendimento médico\ndigno e sem perspectivas de futuro.​\n​\nÉ obrigação da sociedade e, em especial, do Governo do Estado\ntransformar essa realidade e assegurar condições dignas de vida a todos os\nrondonienses, por essa razão, a inclusão social deve abranger os aspectos\nsociais, econômicos, urbanos, rurais e políticos em cada canto do nosso\nterritório.\nA JUSTIFICATIVA:\nCabe ao Governo do Estado garantir permanentemente o acesso ao\natendimento integral para todos que procuram a rede pública de Saúde,\noferecendo serviços descentralizados, de qualidade e com um tratamento\nhumano, digno e respeitoso. Da mesma forma, compete ao Estado assegurar,\nna Educação pública, o acesso universal à ciência, à tecnologia, às artes, à\nfilosofia e ao pensamento crítico, contribuindo para que os futuros cidadãos\ndesenvolvam suas habilidades e potencialidades, garantindo a permanência e\no êxito do aluno na escola.​\n​\nNossa terra deve ser acolhedora: é nela que convivemos com nossas\nfamílias, nossos amigos e nossos vizinhos e, é em Rondônia que,\nindependentemente de onde tenhamos nascido, sejam os filhos da terra ou\naqueles que vieram de todos os cantos do Brasil para construí-la, nos sentimos\naceitos e parte integrante de sua identidade, atuando como construtores e\nparticipantes ativos de seu desenvolvimento.​\n​\nQueremos e vamos construir um estado verdadeiramente inclusivo, que\nassegure acesso às políticas públicas para todos os seus moradores, sem\ndistinção, porque um governo estadual que se preza, respeita e valoriza as\ncaracterísticas do ser humano, suas escolhas e suas diferenças e em sua\ntotalidade de diversidade (de raça, de gênero, de geração, de orientação\nreligiosa, de orientação sexual e de condições físicas ou mentais). Rondônia\ndeve ser o espaço que propicie as oportunidades e os meios para que cada\ncidadão seja o que sonha e o que suas habilidades permitam ser.\n2"
+          },
+          {
+            "id": "planejamento-e-participacao-cidada",
+            "titulo": "PLANEJAMENTO E PARTICIPAÇÃO CIDADÃ",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANEJAMENTO E PARTICIPAÇÃO CIDADÃ\nÉ preciso compreender que o Estado de Rondônia não pode mais ser\nadministrado de forma amadora, pois o porte de suas demandas exige um\ncriterioso planejamento estratégico e territorial, com um Plano de\nDesenvolvimento Estadual bem cuidado, fundamentado em metas\ndesafiadoras, acompanhado por um grupo gestor focado no cumprimento do\nque foi estabelecido e alimentado pela participação direta da sociedade nas\ntomadas de decisão.​\n​\nA Participação Cidadã é fundamental na nossa concepção de\nadministração pública. Ela será incorporada ao dia a dia da gestão estadual,\nnão apenas como uma diretriz simbólica, mas como marca e método de\ntrabalho.​\n​\nPara tanto, serão fortalecidos e criados os Conselhos Estaduais e\nRegionais de Políticas Públicas, garantindo ampla participação popular,\nintegração com os clamores das comunidades e o efetivo exercício do controle\nsocial sobre as ações do gestor público, conforme determina a Constituição.​\n​\nEsse processo exige uma prática pedagógica da democracia ativa,\npermitindo às camadas populares, historicamente afastadas dos centros\ndecisórios, o acesso direto às deliberações sobre os rumos do estado. Nosso\ncompromisso é abrir canais efetivos de escuta e deliberação, estimulando os\nvalores de solidariedade, justiça, união, respeito ao outro, tolerância e\ndisponibilidade à mudança como pilares de uma ética pública universal.​\n​\nEntendemos que a participação popular caminha lado a lado com a\nmodernização administrativa e a reforma das estruturas do Estado no plano\nregional. Todo o Governo Estadual se empenhará na constante melhoria da\nprodutividade e da eficiência dos serviços, buscando de forma participativa um\nmodelo baseado em programas de Gestão de Qualidade do Serviço Público.\nPara isso, implementaremos iniciativas focadas em:\n●​ Agilizar e qualificar o atendimento ao cidadão em todas as\nmacrorregiões;\n●​ Descentralizar os postos de informação e serviços estaduais;\n●​ Disseminar o uso da Tecnologia da Informação, da digitalização e da\ninternet como meio transparente de interação com os munícipes e\ntrabalhadores.\nPara realizar toda essa transformação, o cumprimento rigoroso da Lei e\na busca diligente da probidade serão os pontos norteadores de cada ação\ngovernamental. O Estado atuará com rigor inflexível contra qualquer forma de\ncorrupção, promovendo total transparência nos processos licitatórios para\nassegurar a ampla concorrência e a economicidade dos recursos públicos.\n\n3"
+          },
+          {
+            "id": "a-gestao-sera-permanentemente-marcada-pelo-distico-honestidade",
+            "titulo": "A gestão será permanentemente marcada pelo dístico: HONESTIDADE",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "A gestão será permanentemente marcada pelo dístico: HONESTIDADE\nE EFICIÊNCIA.​\n​\nNosso compromisso é realizar uma administração pública transparente,\neficiente, proativa e democrática, capaz de incorporar efetivamente a\nparticipação da população de Rondônia, permitindo maior controle social e\nentregando serviços públicos humanos e modernos. Sendo:\n●​ Reconstrução e Modernização da Saúde pública: Foco absoluto na\nampliação de leitos de emergência e UTI, construção do Novo Hospital\nJoão Paulo II em quatro anos, descentralização regional dos exames e\natendimento humanizado.\n●​ Valorização de Quem Protege e Serve: Garantia de valorização salarial,\nreajustes nos auxílios, qualificação continuada, programas de\npós-graduação e abertura de concursos públicos para a Segurança\nPública e demais áreas estratégicas do estado.\n●​ Educação em Tempo Integral e Universidade Estadual: Implantação de\n100 escolas estaduais em tempo integral, criação da Universidade\nEstadual de Rondônia (com 80% das vagas reservadas para alunos da\nrede pública local) e bolsa permanência para combate à evasão escolar.\n●​ Desenvolvimento\nEconômico\nJusto\ne\nAgricultura\nFamiliar:\nDesburocratização\ndo\nambiente\nde\nnegócios,\napoio\naos\nmicroempreendedores, fortalecimento da produção rural, manutenção\ncontínua de estradas vicinais e incentivo à industrialização sustentável.\n●​ Presença do Estado nos Distritos e Calha dos Rios: Levar o Governo de\nforma itinerante e permanente aos distritos e populações ribeirinhas do\nAlto, Médio e Baixo Madeira e do interior.\n●​ Fomento Continuado à Cultura, Esporte e Lazer: Reconhecimento da\ncultura como geradora de emprego e renda (assegurando repasses ao\nFEDEC-RO e verbas federais) e promoção do esporte comunitário para\na saúde mental e cidadania.\n\n4"
+          },
+          {
+            "id": "esboco-plano-de-governo-psb",
+            "titulo": "ESBOÇO PLANO DE GOVERNO PSB",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "ESBOÇO PLANO DE GOVERNO PSB\nPROPOSTAS DE AÇÃO\n\nEIXO 1: SAÚDE PÚBLICA E SAÚDE MENTAL\n1. SAÚDE PÚBLICA\nPROPOSTA EMBLEMÁTICA: NOVO HOSPITAL JOÃO PAULO II\nUm novo hospital de urgência, emergência e trauma para Rondônia em 4 anos.\nA. Compromisso e Justificativa\nRondônia não pode mais submeter sua população a uma estrutura hospitalar\nultrapassada e incompatível com o crescimento do estado. O Governo do\nEstado assumirá o compromisso de criar e entregar o Novo Hospital João\nPaulo II, em Porto Velho, reaproveitando e adaptando a estrutura federal\nlocalizada na BR-364 (sentido Campo Sales, antiga área destinada à Polícia\nRodoviária Federal).\nB. Modelo de Execução e Eixos de Ação\n●​ Transferência do Patrimônio (Ano 1): Articulação imediata com o\nGoverno Federal, Ministério da Saúde e Ministério da Justiça e\nSegurança Pública para cessão ou doação definitiva da área ao Estado.\n●​ Grupo Técnico Interdisciplinar: Formado por servidores efetivos\n(engenheiros, arquitetos, especialistas em engenharia clínica, instalações\nhospitalares e vigilância sanitária) para elaboração do projeto executivo e\nplanta hospitalar dentro das normas da ANVISA e ABNT.\n●​ Reforma, Adaptação e Modernização: Reestruturação física com redes\nde gases medicinais, elétrica hospitalar, centro cirúrgico moderno, UTIs\nadulto e pediátrica, pronto-socorro climatizado, ala especializada em\ntrauma, centro de diagnóstico por imagem, laboratório e banco de\nsangue.\n●​ Dimensionamento de Pessoal e Equipamentos: Aquisição de\ntecnologia\nmédica\nde\nmédia\ne\nalta\ncomplexidade\ne\ncontratação/dimensionamento de médicos, enfermeiros, técnicos,\nfisioterapeutas e apoio administrativo.\n●​ Integração à Rede Estadual: Articulação direta com SAMU, Corpo de\nBombeiros, UPAs e Hospitais Regionais do interior para descentralizar e\nagilizar a regulação de leitos.\nC. Cronograma de Execução (4 Anos)\n●​ 1º Ano (Transferir e Planejar): Transferência legal, projetos técnicos,\nlicenças e edital da obra.\n●​ 2º\nAno\n(Reformar e Equipar): Obras civis, instalações\nelétricas/hidráulicas e cerca de 50% de execução física.\n●​ 3º Ano (Concluir a Infraestrutura): Conclusão das obras civis (100%),\n\n5"
+          },
+          {
+            "id": "testes-operacionais-instalacao-de-equipamentos-e-treinamento-de",
+            "titulo": "testes operacionais, instalação de equipamentos e treinamento de",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "testes operacionais, instalação de equipamentos e treinamento de\npessoal.\n●​ 4º Ano (Inaugurar e Colocar em Funcionamento): Inauguração e início\ndo funcionamento pleno do Novo Hospital João Paulo II.\nD. Fontes de Financiamento\nCombinação de recursos do Tesouro Estadual, Fundo Estadual de Saúde,\nMinistério da Saúde, Fundo Nacional de Saúde, operações de crédito e\nEmendas da Bancada Federal de Rondônia.\nDIRETRIZES COMPLEMENTARES DA SAÚDE\n●​ Fortalecimento e Descentralização dos Hospitais Regionais:\nAmpliação da capacidade operacional dos hospitais estaduais nas\nmacrorregiões do interior (Cacoal, Ji-Paraná, Vilhena, Guajará-Mirim,\nBuritis e São Francisco do Guaporé), reduzindo a necessidade de\ndeslocamento de pacientes para a capital.\n●​ Mutirões de Consultas, Exames e Cirurgias Eletivas: Criar o programa\nestadual Zerar Filas, combinando credenciamento da rede complementar\ne utilização da estrutura própria nos finais de semana para reduzir o\ntempo de espera no Sistema Único de Saúde (SUS).\n●​ Telemedicina e Diagnóstico Digital: Implementar a rede estadual de\ntelemedicina para permitir que médicos especialistas orientem\ndiagnósticos e atendimentos em municípios remotos e distritos.\n2. SAÚDE MENTAL\nPROPOSTA PRINCIPAL: REDE ESTADUAL DE ATENÇÃO À SAÚDE\nMENTAL E PREVENÇÃO AO SUICÍDIO\nAssistência humanizada, ampliação de leitos e combate direto ao adoecimento\npsíquico.\nA. Diagnóstico e Justificativa\nOs dados epidemiológicos e sociais revelam um avanço crítico do adoecimento\nmental em Rondônia, impactando a juventude, os trabalhadores e as famílias.\nO aumento das licenças médicas por depressão e ansiedade e os índices de\nautomutilação exigem que a Saúde Mental seja tratada como prioridade\nabsoluta de saúde pública.\nB. Ações Estruturantes\n●​ Fortalecimento e Expansão da Rede CAPS: Apoio técnico e\ncofinanciamento estadual aos municípios para ampliação dos Centros de\nAtenção Psicossocial (CAPS II, CAPS III 24h e CAPS Infanto-Juvenil CAPSi), garantindo atendimento multiprofissional contínuo.\n●​ Implantação de Leitos de Saúde Mental em Hospitais Gerais: Criar\nalas e leitos psiquiátricos específicos em hospitais regionais estaduais\npara acolhimento de crises graves, evitando a internação em ambientes\nestigmatizantes ou inadequados.\n\n6"
+          },
+          {
+            "id": "programa-mente-saudavel-nas-escolas-e-no-trabalho-equipes",
+            "titulo": "●​ Programa \"Mente Saudável nas Escolas e no Trabalho\": Equipes",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "●​ Programa \"Mente Saudável nas Escolas e no Trabalho\": Equipes\nitinerantes de psicólogos e assistentes sociais atuando em parceria com a\nrede estadual de ensino e órgãos públicos para identificação precoce de\nsintomas de sofrimento psíquico, depressão, burnout e ideação suicida.\n●​ Linha de Cuidado e Acolhimento 24h: Articulação com o Centro de\nValorização da Vida (CVV - 188) e criação de canal estadual de\nacolhimento psicológico remoto emergencial.\n●​ Valorização do Trabalho em Saúde Mental: Capacitação contínua para\nprofissionais da atenção primária e urgência reconhecerem sinais de\nsofrimento mental e realizarem os encaminhamentos adequados dentro\nda rede.\n\nEIXO 2: EDUCAÇÃO E DESENVOLVIMENTO UNIVERSITÁRIO\n1. UNIVERSIDADE ESTADUAL DE RONDÔNIA E QUALIFICAÇÃO DE\nSERVIDORES\nA. Criação da Universidade Estadual de Rondônia\n●​ Acesso Prioritário à Juventude Local: Implementação da Universidade\nEstadual de Rondônia, estruturada com foco nas vocações regionais,\ngarantindo no mínimo 80% das vagas para estudantes oriundos da\nrede pública de ensino de Rondônia.\n●​ Cursos Estratégicos: Graduações voltadas ao desenvolvimento\neconômico, ciência, tecnologia, meio ambiente, licenciatura, saúde e\nprodução agrícola sustentável.\nB. Programa Estadual de Bolsas de Mestrado e Doutorado\n●​ 1ª Fase (Educação): Oferta de bolsas de pós-graduação stricto sensu\n(Mestrado e Doutorado) por meio de convênios com os Institutos Federais\n(IFRO) e a Universidade Federal de Rondônia (UNIR), atendendo\ninicialmente os trabalhadores e trabalhadoras da educação estadual.\n●​ 2ª Fase (Servidores Gerais): Expansão do programa de pós-graduação\npara os demais servidores estatutários do estado como política de\nvalorização e modernização do serviço público.\n2. 100 ESCOLAS EM TEMPO INTEGRAL E COMBATE À EVASÃO\nESCOLAR\nA. Escolas Climatizadas, Bilíngues e de Tempo Integral\nMeta: Criar e entregar 100 escolas estaduais em tempo integral,\nclimatizadas e bilíngues nos 4 anos de governo, garantindo matriz curricular\nfortalecida com ciências, tecnologia, artes e esportes.\nB. Força-Tarefa e Auxílio Estadual de Permanência Escolar\n●​ Combate Direto à Evasão: Implantação de uma força-tarefa de busca\nativa escolar para identificar jovens fora da sala de aula e atuar junto às\n\n7"
+          },
+          {
+            "id": "suas-familias",
+            "titulo": "suas famílias.",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "suas famílias.\n●​ Incentivo Financeiro Complementar: Criar programa estadual\ncomplementar de apoio financeiro à permanência escolar (articulado com\nos programas federais como o Pé-de-Meia e Bolsa Família), garantindo\ncomplementação estadual de no mínimo 50% sobre o valor pago\npelo Governo Federal, condicionado à frequência e aproveitamento\nescolar.\nC. Diretrizes Complementares\n●​ Infraestrutura Escolar e Tecnologia: Garantir conectividade de alta\nvelocidade, laboratórios de informática funcionais, bibliotecas atualizadas\ne reforma das estruturas físicas das escolas de todas as regiões.\n●​ Uso Ético e Orientado da Tecnologia: Implementação de diretrizes\npedagógicas para o uso responsável de dispositivos digitais e redes\nsociais no ambiente escolar, focando na mediação educativa e na\nproteção da infância e juventude.\n\nEIXO 3: SEGURANÇA PÚBLICA E VALORIZAÇÃO DOS SERVIDORES\n1. SEGURANÇA PÚBLICA E PROTEÇÃO SOCIAL\nPROPOSTA PRINCIPAL: VALORIZAÇÃO IMEDIATA DAS FORÇAS DE\nSEGURANÇA\nA. Gratificação Permanente de Atividade-Fim\nCriação de uma gratificação permanente no valor de 1 (um) salário mínimo,\nconcedida a título de verba indenizatória, para todos os trabalhadores e\ntrabalhadoras da segurança pública que atuam diretamente na atividade-fim\n(Policiais Militares, Policiais Civis, Policiais Penais, Bombeiros Militares e\nSocioeducadores).\nB. Aumento dos Auxílios de Assistência Básica\n●​ Aumento de 100% no Auxílio-Alimentação: Dobrar a verba destinada à\nalimentação dos profissionais em serviço.\n●​ Aumento de 100% no Auxílio-Saúde: Ampliação direta do apoio médico\ne hospitalar aos profissionais de segurança.\nPROPOSTA PRINCIPAL: RECOMPOSIÇÃO E EXPANSÃO DO EFETIVO\n(2.000 NOVOS SERVIDORES)\nRealizar os concursos públicos e iniciar a convocação de 2.000 novos\nprofissionais para as forças de segurança (PM, PC, Polícia Penal, Bombeiros\ne Socioeducativo) até o final do segundo ano de governo, com distribuição\nbaseada em estudo técnico de déficit regional e criminalidade.\nPROPOSTA PRINCIPAL: CARREIRAS ESTRATÉGICAS (300 OFICIAIS,\nDELEGADOS E PERITOS)\n\n8"
+          },
+          {
+            "id": "abrir-concurso-publico-para-300-novos-servidores-das-carreiras-estrategi",
+            "titulo": "Abrir concurso público para 300 novos servidores das carreiras estratégicas",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Abrir concurso público para 300 novos servidores das carreiras estratégicas\n(Oficiais da PM e CBM, Delegados da PC e Peritos Criminais) e iniciar as\nconvocações nos dois primeiros anos de governo para reforçar comando,\ninvestigação e inteligência.\nDIRETRIZES COMPLEMENTARES DA SEGURANÇA PÚBLICA\n●​ Policiamento Comunitário e Escolar: Rondas ostensivas comunitárias\ne proteção escolar em parceria com municípios.\n●​ Inteligência e Tecnologia: Cercamento digital nas fronteiras,\nreconhecimento facial e unificação de bancos de dados.\n●​ Saúde Mental na Segurança: Programa Estadual de Apoio Psicológico e\nTerapêutico contínuo para prevenção do desgaste profissional e apoio à\nsaúde mental dos agentes.\n2. VALORIZAÇÃO DOS SERVIDORES PÚBLICOS E MODERNIZAÇÃO DO\nESTADO\n●​ Mesa Permanente de Negociação: Diálogo contínuo com entidades de\nclasse para revisão de PCCS, data-base e condições de trabalho.\n●​ Concursos Públicos Periódicos: Substituição gradativa da precarização\ntemporária por quadros efetivos.\n●​ Programa de Pós-Graduação Estendido: Extensão das bolsas de\nMestrado e Doutorado a todas as carreiras estatutárias do Estado.\n\nEIXO 4: ECONOMIA, TRABALHO, RENDA E TECNOLOGIA\n1. ECONOMIA, TRABALHO E RENDA\n●​ Estímulo à Mão de Obra Local: Condicionar concessão e renovação de\nincentivos fiscais estaduais à comprovação de no mínimo 80% de\ncontratação de trabalhadores locais.\n●​ Redução da Burocracia e Microcrédito: Desburocratização para MEIs,\nMEs e EPPs, aliada a linhas de crédito subsidiado para pequenos\nempreendedores e cooperativas.\n●​ Mapeamento de Vocações Econômicas Regionais: Levantamento\ntécnico das potencialidades das microrregiões de Rondônia para atrair\ninvestimentos e incentivar a industrialização sustentável com agregação\nde valor aos produtos locais.\n●​ Preferência nas Compras Públicas: Regulamentação de margem de\npreferência em licitações para empresas sediadas no estado.\n2. TECNOLOGIA E INOVAÇÃO\n●​ Rondônia Digital: Expansão da fibra óptica e internet de alta velocidade\nem escolas, hospitais e órgãos públicos de todos os 52 municípios e\ndistritos.\n●​ Governo 100% Digital e Transparente: Unificação e digitalização dos\nserviços estaduais em aplicativo móvel e portal único, garantindo\ntransparência de dados.\n\n9"
+          },
+          {
+            "id": "ecossistema-de-startups-e-bioeconomia-fomento-a-startups-locais",
+            "titulo": "●​ Ecossistema de Startups e Bioeconomia: Fomento a startups locais",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "●​ Ecossistema de Startups e Bioeconomia: Fomento a startups locais\nfocadas em biotecnologia da Amazônia, agritechs, energia renovável e\nsustentabilidade.\n\nEIXO 5: DESENVOLVIMENTO SOCIAL, DIREITOS HUMANOS E INCLUSÃO\n1. DESENVOLVIMENTO SOCIAL E SEGURANÇA ALIMENTAR\n●​ Fortalecimento dos CRAS/CREAS: Cofinanciamento estadual ampliado\npara assistência social nos municípios.\n●​ Cozinhas Comunitárias e Restaurantes Populares: Implantação de\nrede de alimentação saudável a preços acessíveis para combate à fome.\n●​ Atenção à População em Situação de Rua e Dependência Química:\nCentros de acolhimento, reintegração social e atendimento humanizado\nem saúde mental e dependência.\n2. MULHERES E COMBATE À VIOLÊNCIA DE GÊNERO\n●​ Rede de Proteção e DEACMs 24h: Estruturação multidisciplinar das\nDelegacias da Mulher, expansão das Casas Abrigo e fortalecimento da\nPatrulha Maria da Penha.\n●​ Autonomia Econômica: Microcrédito prioritário e qualificação\nprofissional para mulheres chefes de família.\n3. CRIANÇA, ADOLESCENTE, PCD E NEUROATÍPICOS\n●​ Combate à Exploração e Jovem Aprendiz Rondoniense: Apoio aos\nConselhos Tutelares, combate ao abuso infantil e programas de primeiro\nemprego para adolescentes vulneráveis.\n●​ Linha de Cuidado ao Autismo (TEA): Criação de Centros Regionais de\nAtendimento ao Neuroatípico, desburocratização da CIPTEA e formação\ncontinuada na rede de ensino.\n●​ Acessibilidade Universal: Adaptação dos prédios estaduais à NBR 9050\ne incentivo à inserção de PCDs no mercado de trabalho.\n4. HABITAÇÃO E POLÍTICA URBANA\n●​ REURB Estadual: Mutirões de regularização fundiária urbana gratuita\npara famílias de baixa renda.\n●​ Minha Casa, Minha Terra Rondoniense: Parceria com o governo federal\npara loteamentos urbanizados e provisão habitacional.\n\nEIXO 6: AGRICULTURA FAMILIAR, MEIO AMBIENTE E INFRAESTRUTURA\n1. AGRICULTURA FAMILIAR E DESENVOLVIMENTO RURAL\n●​ EMATER-RO Fortalecida: Modernização técnica para atendimento no\ncampo, incentivo à agroecologia, cacau, café, leite e hortifrúti.\n●​ Programa \"Estradas da Produção\": Manutenção contínua de estradas\n\n10"
+          },
+          {
+            "id": "vicinais-e-pontes-em-parceria-com-municipios",
+            "titulo": "vicinais e pontes em parceria com municípios.",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "vicinais e pontes em parceria com municípios.\n●​ Garantia de Mercado: Ampliação das compras estaduais via PAA e\nPNAE.\n2. MEIO AMBIENTE E TRANSIÇÃO ECOLÓGICA\n●​ Combate ao Desmatamento Ilegal e Queimadas: Geoprocessamento\nem tempo real, inteligência ambiental e fortalecimento das brigadas de\ncombate a incêndios.\n●​ Bioeconomia e Reciclagem: Valorização do açaí, castanha e óleos\nessenciais, com apoio técnico e financeiro às cooperativas de catadores.\n3. MOBILIDADE, INFRAESTRUTURA E COMUNIDADES RIBEIRINHAS\n●​ Rodovias Estaduais (ROs) Conservadas: Recuperação e sinalização\nda malha viária estadual.\n●​ Presença do Estado no Alto, Médio e Baixo Madeira: Governo\nItinerante periódico, transporte fluvial escolar e de produção, e\nuniversalização de energia limpa e água tratada nos distritos.\n\nEIXO 7: CULTURA, ESPORTE, LAZER, TURISMO E PARTICIPAÇÃO\nCIDADÃ\n1. CULTURA E PATRIMÔNIO HISTÓRICO\n●​ Garantia de Recursos para o FEDEC-RO e PNAB: Repasse\ntransparente e descentralizado dos fundos estaduais e federais de cultura\npara os 52 municípios.\n●​ Pontos de Cultura e Patrimônio: Implantação de Pontos de Cultura nas\nperiferias/interior e restauração do patrimônio histórico (como a EFMM e\nmuseus).\no​ Além disso, enquanto governo estadual, nos comprometemos em\natender e nos dedicar para executar em totalidade todos os\npontos defendidos e assinados na carta do Conselho Estadual de\nPolíticas Culturais do Estado de Rondônia.\n2. ESPORTE, LAZER E TURISMO\n●​ Esporte Comunitário e Escola Aberta: Atividades físicas guiadas em\npraças e abertura das escolas no fim de semana para esportes, dança e\nlazer.\n●​ Incentivo ao Atleta de Alto Rendimento e Paralímpico: Bolsa Atleta\nEstadual e revitalização do JOER.\n●​ Ecoturismo e Rota Gastronômica: Promoção das belezas naturais,\nqualificação hoteleira e valorização dos insumos locais.\n3. PARTICIPAÇÃO CIDADÃ E TRANSPARÊNCIA\n●​ Orçamento Participativo Estadual: Plenárias regionais para definição\ndas prioridades do orçamento com participação popular.\n●​ Gestão Transparente e Proba: Fortalecimento das ouvidorias, licitações\n11"
+          },
+          {
+            "id": "100-transparentes-e-controle-social-efetivo",
+            "titulo": "100% transparentes e controle social efetivo.",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "100% transparentes e controle social efetivo.\nQualificar quem educa. Valorizar quem serve. Proteger quem cuida. Criar\noportunidades para quem estuda e produz.\n\n12"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b524457ccd242ce18da5b7414372e843d86955c7e6d0bc27cb5961b73212c40f"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "69f79f1c5c3f54c0bd7a5edb27d89cb7b2922a08e7642cc34e8da604d38cc1cf"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "9896674d7ccff7917095a27e1b8ed324e5b39e6fb9c7ec4caf7c4202e19dbd5c"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0816e0f657912931dc23c8bb5cc54fbbe255464bdf6131b5ba46a60c75368ebe"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "b304d060afd9a1ff8622176a6f291acd62f5d1acf193850bc8f464186ca2096c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c751a7349efe0771b59a90acbbbd49eb6bfc92f12bbe8ed8dba2f30ee68f7c9e"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "5fef1764f52d687b0a8ac6e3eb4bf6f2cadf6b746a8bbc4e0af57b65132f71d0"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "8d1d89f3f44340a2368278b8b83ed889327539077396b08482873bbeefe55886"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "925d765a58e70215fd77c6a36962d894aa158e62adbc6d4f4c25462f308f2a09"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "1778713c98d1389f463c6af8de235c81a54293af085e024b71abde9549e25d76"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9a7854ee5ade7da4daf94e3850c2921bc3f7c52ac5724a9c881bd47fa7214808"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "8188bbec73b146f3d51542492fe12d4e1c7df7002279e712cb824c454ea838fd"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê planejamento estratégico territorial para orientar a administração estadual, com participação direta da sociedade nas tomadas de decisão. Na saúde pública, propõe um novo hospital de urgência, emergência e trauma em Porto Velho, integrado à rede estadual para regular leitos. Na educação superior, propõe a criação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais, priorizando estudantes da rede pública local. Na educação básica, planeja escolas estaduais em tempo integral, climatizadas e bilíngues, com matriz curricular fortalecida por ciências, tecnologia, artes e esportes. Na segurança pública, prevê concursos para novos profissionais das forças de segurança, com distribuição regional definida por estudo técnico. Na economia, propõe redução da burocracia para MEIs, MEs e EPPs, conforme a diretriz de apoio a pequenos negócios. Na agricultura familiar, prevê manutenção contínua de estradas vicinais, com pontes em parceria com municípios. Na cultura, propõe repasse transparente e descentralizado dos fundos estaduais e federais para os 52 municípios.",
+    "frases": [
+      {
+        "texto": "O programa prevê planejamento estratégico territorial para orientar a administração estadual, com participação direta da sociedade nas tomadas de decisão.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 3,
+            "trecho": "criterioso planejamento estratégico e territorial, com um Plano de Desenvolvimento Estadual bem cuidado, fundamentado em metas"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, propõe um novo hospital de urgência, emergência e trauma em Porto Velho, integrado à rede estadual para regular leitos.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 5,
+            "trecho": "Um novo hospital de urgência, emergência e trauma para Rondônia em 4 anos."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação superior, propõe a criação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais, priorizando estudantes da rede pública local.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 7,
+            "trecho": "Implementação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação básica, planeja escolas estaduais em tempo integral, climatizadas e bilíngues, com matriz curricular fortalecida por ciências, tecnologia, artes e esportes.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 7,
+            "trecho": "Criar e entregar 100 escolas estaduais em tempo integral, climatizadas e bilíngues nos 4 anos de governo, garantindo matriz curricular fortalecida com ciências, tecnologia, artes e esportes."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, prevê concursos para novos profissionais das forças de segurança, com distribuição regional definida por estudo técnico.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 8,
+            "trecho": "Realizar os concursos públicos e iniciar a convocação de 2.000 novos profissionais para as forças de segurança"
+          }
+        ]
+      },
+      {
+        "texto": "Na economia, propõe redução da burocracia para MEIs, MEs e EPPs, conforme a diretriz de apoio a pequenos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 9,
+            "trecho": "Desburocratização para MEIs, MEs e EPPs"
+          }
+        ]
+      },
+      {
+        "texto": "Na agricultura familiar, prevê manutenção contínua de estradas vicinais, com pontes em parceria com municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 11,
+            "trecho": "vicinais e pontes em parceria com municípios."
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, propõe repasse transparente e descentralizado dos fundos estaduais e federais para os 52 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 11,
+            "trecho": "Repasse transparente e descentralizado dos fundos estaduais e federais de cultura para os 52 municípios."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-publico",
+        "titulo": "Planejamento público",
+        "descricao": "O programa prevê planejamento estratégico territorial com participação social nas decisões administrativas.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 3,
+            "trecho": "criterioso planejamento estratégico e territorial, com um Plano de Desenvolvimento Estadual bem cuidado"
+          }
+        ]
+      },
+      {
+        "id": "saude-hospitalar",
+        "titulo": "Saúde hospitalar",
+        "descricao": "O programa propõe um novo hospital de urgência, emergência e trauma em Porto Velho.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 5,
+            "trecho": "Um novo hospital de urgência, emergência e trauma para Rondônia em 4 anos."
+          }
+        ]
+      },
+      {
+        "id": "universidade-estadual",
+        "titulo": "Universidade estadual",
+        "descricao": "O programa propõe a criação da Universidade Estadual de Rondônia com foco nas vocações regionais.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 7,
+            "trecho": "Implementação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais"
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "O programa planeja escolas estaduais em tempo integral, climatizadas e bilíngues.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 7,
+            "trecho": "Criar e entregar 100 escolas estaduais em tempo integral, climatizadas e bilíngues nos 4 anos de governo"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O programa prevê concursos para novos profissionais das forças de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 8,
+            "trecho": "Realizar os concursos públicos e iniciar a convocação de 2.000 novos profissionais para as forças de segurança"
+          }
+        ]
+      },
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "O programa prevê manutenção de estradas vicinais com parceria municipal.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002550927:01",
+            "pagina": 11,
+            "trecho": "vicinais e pontes em parceria com municípios."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:54:03.889Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:56:45.437Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 3 confirma planejamento estratégico e territorial e participação direta da sociedade nas tomadas de decisão."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: planejamento e participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:1:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página cobre tanto o planejamento quanto a participação social citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 5 confirma hospital em Porto Velho e integração à rede estadual para regulação de leitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não cita números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema: saúde/hospital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:2:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página cobre localizaç��o, tipo de hospital e integração à rede."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 7 confirma criação, foco regional e prioridade a 80% de vagas para rede pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema: universidade estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:3:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página cobre criação, foco regional e prioridade estudantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Texto integral confirma todos os elementos da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não menciona números específicos, apenas descreve o tipo de escola."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: educação básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:4:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 8 confirma concursos e distribuição baseada em estudo técnico."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não cita números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:5:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre concursos e critério de distribuição regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 9 confirma desburocratização para MEIs, MEs e EPPs."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema: apoio a pequenos negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:6:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 11 confirma manutenção de estradas vicinais e pontes em parceria com municípios no contexto de agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: infraestrutura rural."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:7:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Número de 52 municípios está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema: repasse de fundos culturais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:frase:8:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 3 confirma o planejamento estratégico territorial e participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: planejamento público."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:planejamento-publico:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página cobre planejamento e participação social."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 5 confirma novo hospital em Porto Velho."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: saúde hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:saude-hospitalar:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: universidade estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:universidade-estadual:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não cita números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:educacao-integral:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não cita números; consistente com evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:seguranca-publica:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema: infraestrutura rural."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002550927:tema:agricultura-familiar:documentos:RO:220002550927:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a proposta na íntegra."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RO:220002550927",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RO:220002550927:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25951,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3517,
+          "reasoning_output_tokens": 2190
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28451,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 25404,
+          "output_tokens_details": {
+            "thinking_tokens": 1963
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28451,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 25404,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28451,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28451
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3901834
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:00:00Z",
+    "sourceSha256": "beb29a0fd236841e596c4466116fde554bfed9bcaa2eed14a09a59519a28a9f5",
+    "extractedTextSha256": "a334792fb2a81105b0f9d2391ef3c5b3d40a3b2ef1532da3f7504bbb1b449957",
+    "documentCount": 1,
+    "documentSetSha256": "928fb1f1e1b445650ba22a88f1d8c682bb2bc26946e49c2ddd7a38a5d9cd71c1",
+    "contentSha256": "51b9a406fdfae5f5092a9c961d6d25e68842062352c7a49783ad4b87518db8a4"
+  }
+}
