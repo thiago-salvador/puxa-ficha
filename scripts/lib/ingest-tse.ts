@@ -29,6 +29,7 @@ import {
   financiamentoReceitaIdentityKey,
   historicalCandidateRowMatches,
   normalizeFinanciamentoReceitaRow,
+  resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { downloadToFile } from "./download-to-file"
 
@@ -606,6 +607,14 @@ async function processFinanciamento(
   const aggregated = new Map<string, FinData>()
   // Dedup: mesma receita pode aparecer em CSV _BR e _UF; SQ_RECEITA e unico por linha TSE.
   const seenReceipts = new Set<string>()
+  const legacyIdentityTargetsByUf = new Map<string, SqCandidateIdentity[]>()
+  for (const identity of sqMap.values()) {
+    const uf = identity.uf?.trim().toUpperCase()
+    if (!uf) continue
+    const targets = legacyIdentityTargetsByUf.get(uf) ?? []
+    targets.push(identity)
+    legacyIdentityTargetsByUf.set(uf, targets)
+  }
 
   log(
     "tse",
@@ -616,6 +625,15 @@ async function processFinanciamento(
     await parseCSV(csvPath, (raw) => {
       const row = normalizeFinanciamentoReceitaRow(raw)
       if (!row.SG_UF_CANDIDATURA && ufFromPath) row.SG_UF_CANDIDATURA = ufFromPath
+      if (!row.SQ_CANDIDATO?.trim()) {
+        const legacyTargets = legacyIdentityTargetsByUf.get(
+          row.SG_UF_CANDIDATURA?.trim().toUpperCase() ?? "",
+        ) ?? []
+        const legacyIdentity = resolveLegacyReceiptSqIdentity(row, ano, legacyTargets)
+        if (!legacyIdentity) return
+        row.SQ_CANDIDATO = legacyIdentity.sqCandidato
+        row.SG_UF_CANDIDATURA = legacyIdentity.uf
+      }
       const identidadeDaLinha = financiamentoReceitaIdentity(row, ano)
       const sq = identidadeDaLinha.sqCandidato
 

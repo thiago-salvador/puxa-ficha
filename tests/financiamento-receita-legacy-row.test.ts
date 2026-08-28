@@ -5,6 +5,7 @@ import {
   financiamentoReceitaIdentity,
   historicalCandidateRowMatches,
   normalizeFinanciamentoReceitaRow,
+  resolveLegacyReceiptSqIdentity,
 } from "../scripts/lib/financiamento-receita-legacy-row"
 
 test("normalizeFinanciamentoReceitaRow: mapeia cabeçalhos PT 2012 para chaves do ingest", () => {
@@ -154,5 +155,56 @@ test("SQ repetido só escolhe a UF cuja linha oficial confirma o nome", () => {
     historicalCandidateRowMatches({ NM_CANDIDATO: "ROBERTO BELAS NOGUEIRA" }, daciolo),
     false,
     "SQ 14144 da BA não pode ser atribuído ao Daciolo do RJ",
+  )
+})
+
+test("receita 2004 sem SQ cruza nome exato e UF com identidade oficial unica", () => {
+  const identities = [
+    {
+      sqCandidato: "40001234",
+      uf: "RJ",
+      candidato: {
+        nome_completo: "Benevenuto Daciolo Fonseca dos Santos",
+        nome_urna: "Cabo Daciolo",
+      },
+    },
+    {
+      sqCandidato: "26000999",
+      uf: "SE",
+      candidato: { nome_completo: "Outra Pessoa", nome_urna: "Outra" },
+    },
+  ]
+
+  assert.deepEqual(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "BENEVENUTO DACIOLO FONSECA DOS SANTOS", SG_UF_CANDIDATURA: "RJ" },
+      2004,
+      identities,
+    ),
+    { sqCandidato: "40001234", uf: "RJ" },
+  )
+  assert.equal(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "CANDIDATO FORA DO UNIVERSO", SG_UF_CANDIDATURA: "RJ" },
+      2004,
+      identities,
+    ),
+    undefined,
+  )
+})
+
+test("receita legada falha fechado quando nome e UF apontam para mais de um SQ", () => {
+  const candidato = { nome_completo: "Nome Repetido", nome_urna: "Nome Repetido" }
+  assert.throws(
+    () =>
+      resolveLegacyReceiptSqIdentity(
+        { NO_CAND: "NOME REPETIDO", SG_UF_CANDIDATURA: "MT" },
+        2004,
+        [
+          { sqCandidato: "1", uf: "MT", candidato },
+          { sqCandidato: "2", uf: "MT", candidato },
+        ],
+      ),
+    /identidade legada ambigua/,
   )
 })
