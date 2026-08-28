@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:41:05Z",
+  "reviewedAt": "2026-08-28T19:46:34Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 116,
-    "human_review_required": 28
+    "approved": 118,
+    "human_review_required": 26
   },
   "items": [
     {
@@ -1188,14 +1188,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002536086",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AM",
       "slug": "david-almeida",
       "sqCandidato": "40002536086",
       "nomeUrna": "DAVID ALMEIDA",
       "partido": "AVANTE",
       "sourceState": "em_revisao",
-      "reason": "david-almeida: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002535267",
@@ -1386,14 +1386,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002536806",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "adailton-furia",
       "sqCandidato": "220002536806",
       "nomeUrna": "ADAILTON FURIA",
       "partido": "PSD",
       "sourceState": "em_revisao",
-      "reason": "adailton-furia: Eval tem 10 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542185",
