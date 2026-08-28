@@ -75,6 +75,7 @@ export type ProgramaGovernoModelMetadata = {
 
 export type ProgramaGovernoGeneratorInput = {
   identityKey: string
+  repairGuidance?: string
   documentos: Array<{
     documentoId: string
     paginas: Array<{ pagina: number; origem: string; texto: string }>
@@ -120,12 +121,20 @@ export type ProgramaGovernoModelAdapters = {
   }>
   extrairFatosPassagem?(input: {
     identityKey: string
+    repairGuidance?: string
     documentos: ProgramaGovernoDocumentoEntradaMultipassagem[]
   }): Promise<{ output: ProgramaGovernoFato[]; metadata: ProgramaGovernoModelMetadata }>
   sintetizarDeFatos?(input: {
     identityKey: string
+    repairGuidance?: string
     fatos: ProgramaGovernoFato[]
   }): Promise<{ output: ProgramaGovernoResumo; metadata: ProgramaGovernoModelMetadata }>
+}
+
+function instructionsWithRepairGuidance(instructions: string, repairGuidance?: string): string {
+  const guidance = repairGuidance?.trim()
+  if (!guidance) return instructions
+  return `${instructions}\nOrientação de reparo aprovada pelo revisor humano: ${guidance}`
 }
 
 export const PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS = [
@@ -707,7 +716,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
         PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
-        PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS, input.repairGuidance),
         input,
         (value) => validateGeneratorOutput(value, input),
         runner,
@@ -730,7 +739,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/fatos-passagem`,
         PROGRAMA_GOVERNO_FATOS_SCHEMA,
-        PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS, input.repairGuidance),
         { identityKey: input.identityKey, documentos: input.documentos },
         (value) => {
           const fatosBrutos = validarFatosBrutos(value)
@@ -751,7 +760,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fatos`,
         PROGRAMA_GOVERNO_SINTESE_FATOS_SCHEMA,
-        PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS,
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS, input.repairGuidance),
         { identityKey: input.identityKey, FATOS: input.fatos },
         (value) => normalizarSinteseFatos(value, input.fatos),
         runner,

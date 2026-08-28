@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-08-28",
+  "source": "docs/reviews/programas-governo-governadores-2026/recomendacoes-duvidas-reais.html",
+  "cases": [
+    {
+      "uf": "AC",
+      "slug": "mailza-assis",
+      "sqCandidato": "10002544107",
+      "nomeUrna": "MAILZA ASSIS",
+      "partido": "PP",
+      "strategy": "fatos",
+      "guidance": "Para qualquer claim sobre pequenos produtores, use um trecho literal contínuo que cubra a cláusula completa. Se esse trecho não existir nos fatos validados, retire pequenos produtores do claim."
+    },
+    {
+      "uf": "AC",
+      "slug": "thor-dantas",
+      "sqCandidato": "10002550719",
+      "nomeUrna": "THOR DANTAS",
+      "partido": "PSB",
+      "strategy": "fatos",
+      "guidance": "Extraia primeiro fatos atômicos com documento, página e trecho literal completo. Só sintetize claims integralmente cobertos por esses fatos e descarte qualquer formulação sem evidência literal válida."
+    },
+    {
+      "uf": "AM",
+      "slug": "gilberto-vasconcelos",
+      "sqCandidato": "40002535267",
+      "nomeUrna": "GILBERTO VASCONCELOS",
+      "partido": "PSTU",
+      "strategy": "fatos",
+      "guidance": "Preserve o verbo usado pela fonte. Se a fonte disser combater o desmatamento, use combater, nunca bloquear nem outro verbo que aumente a intensidade da proposta."
+    },
+    {
+      "uf": "ES",
+      "slug": "helder-salomao",
+      "sqCandidato": "80002551833",
+      "nomeUrna": "HELDER SALOMÃO",
+      "partido": "PT",
+      "strategy": "fatos",
+      "guidance": "Mantenha transição sustentável somente com evidência literal completa. Exclua qualquer integração em saúde se não houver trecho direto que sustente integralmente essa cláusula."
+    },
+    {
+      "uf": "GO",
+      "slug": "daniel-vilela",
+      "sqCandidato": "90002540993",
+      "nomeUrna": "DANIEL VILELA",
+      "partido": "MDB",
+      "strategy": "fatos",
+      "guidance": "Construa a síntese exclusivamente a partir de fatos atômicos validados por documento e página. Não reutilize a síntese anterior e descarte qualquer fato cujo trecho não seja literal e contínuo."
+    },
+    {
+      "uf": "MS",
+      "slug": "lucien-rezende",
+      "sqCandidato": "120002532257",
+      "nomeUrna": "LUCIEN REZENDE",
+      "partido": "PSOL",
+      "strategy": "fatos",
+      "guidance": "Se um claim mencionar regiões de fronteira, a evidência deve ser um trecho literal contínuo que inclua essa condição territorial completa. Caso contrário, retire a condição do claim."
+    },
+    {
+      "uf": "MT",
+      "slug": "otaviano-pivetta",
+      "sqCandidato": "110002551480",
+      "nomeUrna": "OTAVIANO PIVETTA",
+      "partido": "REPUBLICANOS",
+      "strategy": "fatos",
+      "guidance": "Extraia fatos por página antes da síntese. Use somente fatos com trecho literal contínuo validado e não reaproveite a geração anterior."
+    },
+    {
+      "uf": "PB",
+      "slug": "efraim-filho",
+      "sqCandidato": "150002538692",
+      "nomeUrna": "EFRAIM FILHO",
+      "partido": "PL",
+      "strategy": "fatos",
+      "guidance": "Remova paráfrases que ampliem a fonte. Reconstrua cada claim a partir de trecho literal completo e inclua evidência da página 6 apenas quando ela sustentar integralmente a afirmação."
+    },
+    {
+      "uf": "PB",
+      "slug": "lucas-ribeiro",
+      "sqCandidato": "150002551789",
+      "nomeUrna": "LUCAS RIBEIRO",
+      "partido": "PP",
+      "strategy": "fatos",
+      "guidance": "Não atribua finalidade à transformação digital se a fonte não a declarar. Mantenha somente a medida administrativa explicitamente descrita no trecho literal."
+    },
+    {
+      "uf": "PI",
+      "slug": "geraldo-carvalho",
+      "sqCandidato": "180002537422",
+      "nomeUrna": "GERALDO CARVALHO",
+      "partido": "PSTU",
+      "strategy": "fatos",
+      "guidance": "Separe os claims por página, inclusive páginas 7 e 9 quando usadas. Cada cláusula deve ser julgável contra seu próprio trecho literal, sem importar exigências de outra parte da seção."
+    },
+    {
+      "uf": "PR",
+      "slug": "samuel-de-mattos",
+      "sqCandidato": "160002548010",
+      "nomeUrna": "SAMUEL DE MATTOS",
+      "partido": "PSTU",
+      "strategy": "fatos",
+      "guidance": "Não reutilize a resposta anterior. Extraia fatos atômicos com evidência literal e sintetize somente os fatos que passarem integralmente pela validação de documento, página e trecho."
+    },
+    {
+      "uf": "RN",
+      "slug": "alysson-bezerra",
+      "sqCandidato": "200002535255",
+      "nomeUrna": "ALLYSON",
+      "partido": "UNIÃO",
+      "strategy": "fatos",
+      "guidance": "Use somente fatos atômicos com evidências literais validadas. Bloqueie da síntese qualquer formulação que não referencie diretamente um fato completo."
+    },
+    {
+      "uf": "RO",
+      "slug": "hildon-chaves",
+      "sqCandidato": "220002542916",
+      "nomeUrna": "HILDON CHAVES",
+      "partido": "UNIÃO",
+      "strategy": "fatos",
+      "guidance": "Use linguagem estritamente descritiva, sem expressões promocionais como levar oportunidades. Divida saúde em claims menores e dê a cada um sua própria evidência literal completa."
+    },
+    {
+      "uf": "RO",
+      "slug": "marcos-rogerio",
+      "sqCandidato": "220002541939",
+      "nomeUrna": "MARCOS ROGÉRIO",
+      "partido": "PL",
+      "strategy": "fatos",
+      "guidance": "Para fila de saúde e programa de pavimentação, capture sentenças literais completas. Se o trecho disponível cobrir apenas parte, reduza o claim exatamente ao fragmento sustentado."
+    },
+    {
+      "uf": "RO",
+      "slug": "pedro-abib",
+      "sqCandidato": "220002551251",
+      "nomeUrna": "PEDRO ABIB",
+      "partido": "MDB",
+      "strategy": "fatos",
+      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Só sintetize depois de validar literalmente cada documento, página e trecho."
+    },
+    {
+      "uf": "RS",
+      "slug": "priscila-voigt",
+      "sqCandidato": "210002533355",
+      "nomeUrna": "PRISCILA VOIGT",
+      "partido": "UP",
+      "strategy": "fatos",
+      "guidance": "Separe contratação direta, tarifas e atividades do SUS em claims distintos. Exija um trecho literal completo e específico para cada cláusula e remova qualquer uma sem suporte próprio."
+    },
+    {
+      "uf": "SP",
+      "slug": "vivian-mendes",
+      "sqCandidato": "250002544912",
+      "nomeUrna": "VIVIAN MENDES",
+      "partido": "UP",
+      "strategy": "fatos",
+      "guidance": "Descarte a síntese anterior. Reconstrua tudo com um claim por cláusula, fatos atômicos e spans literais completos; não combine os oito pontos nem os dois temas em formulações amplas."
+    }
+  ]
+}

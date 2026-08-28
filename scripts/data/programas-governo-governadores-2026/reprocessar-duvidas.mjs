@@ -77,13 +77,31 @@ export function validateCases(value) {
     const uf = String(candidate.uf ?? "").trim().toUpperCase()
     const slug = String(candidate.slug ?? "").trim()
     const sqCandidato = String(candidate.sqCandidato ?? "").trim()
+    const strategy = candidate.strategy === undefined ? undefined : String(candidate.strategy).trim()
+    const guidance = candidate.guidance === undefined ? undefined : String(candidate.guidance).trim()
     if (!UF.test(uf) || !SAFE_SLUG.test(slug) || !SQ.test(sqCandidato)) {
       throw new Error(`cases[${index}] exige uf, slug e sqCandidato validos`)
+    }
+    if (strategy !== undefined && strategy !== "fatos") {
+      throw new Error(`cases[${index}].strategy deve ser fatos`)
+    }
+    if (guidance !== undefined && (
+      guidance.length === 0
+      || guidance.length > 2_000
+      || /[\u0000-\u001f\u007f]/u.test(guidance)
+    )) {
+      throw new Error(`cases[${index}].guidance invalida`)
     }
     const key = `${uf}:${sqCandidato}:${slug}`
     if (seen.has(key)) throw new Error(`cases duplicado: ${key}`)
     seen.add(key)
-    return { uf, slug, sqCandidato }
+    return {
+      uf,
+      slug,
+      sqCandidato,
+      ...(strategy ? { strategy } : {}),
+      ...(guidance ? { guidance } : {}),
+    }
   })
 }
 
@@ -248,6 +266,8 @@ function childArguments(options, candidate, output) {
   if (options.cacheDir) args.push(`--cache-dir=${options.cacheDir}`)
   if (options.extractCacheDir) args.push(`--extract-cache-dir=${options.extractCacheDir}`)
   if (options.faseDir) args.push(`--fase-dir=${options.faseDir}`)
+  if (candidate.strategy === "fatos") args.push("--force-fatos")
+  if (candidate.guidance) args.push(`--repair-guidance=${candidate.guidance}`)
   return args
 }
 
