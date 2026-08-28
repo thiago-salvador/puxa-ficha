@@ -11,7 +11,7 @@ A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`. O `SQ_
 Executar com Node 24:
 
 ```bash
-npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json'
+npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
 ```
 
 Os quatro argumentos de escopo e arquivos são obrigatórios:
@@ -22,6 +22,21 @@ Os quatro argumentos de escopo e arquivos são obrigatórios:
 - `--output-dir`: destino isolado dos registros e do `manifesto-ingestao.json`.
 
 `--models-config` é necessário para candidaturas extraíveis. Ausências podem ser materializadas sem modelos.
+
+`--cache-dir` é opcional e define onde ficam os checkpoints por passagem da geração multipassagem; sem ele o padrão é `<output-dir>/.cache-passagens`. Cada chave de checkpoint deriva de identidade completa do candidato, hashes dos documentos, versão do prompt, modelo e planejador multipassagem, índice e hash da passagem. Passagem concluída nunca é reenviada ao modelo: a mesma execução ou uma retomada reutilizam o checkpoint e apenas a passagem pendente (ou síntese pendente) consome chamada nova.
+
+## Geração em lote e multipassagem
+
+Quando o envelope final serializado do candidato excede `180_000` bytes UTF-8, o importador não envia tudo numa única chamada. Esse é o limite conservador do planejador multipassagem. O runner aplica uma guarda independente e rejeita qualquer envelope a partir de `190_000` bytes. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo o limite do planejador, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
+
+Orçamento de chamadas, registrado no registro via `ingestao.modelos.geracaoMultipassagem` e agregado no manifesto:
+
+- uma chamada inicial por passagem e, no máximo, uma repetição só da passagem que falhou;
+- uma síntese por candidato e, no máximo, uma repetição só da síntese;
+- nenhuma repetição integral de candidato dentro de uma execução;
+- falha persistente de passagem bloqueia o candidato em `em_revisao` com erro explícito mantendo checkpoints; a retomada executa só o que falta.
+
+O manifesto inclui chamadas por etapa e versão de Node; `progress.json` registra `executionId`, `startedAt`, `metricsOffset`, `familiaAtual` e, quando encerrado, `finishedAt` e `pid/lease` – antes disso esses campos não existem.
 
 ## Contrato dos modelos
 
@@ -50,9 +65,9 @@ O arquivo de configuração contém comandos externos explícitos:
 
 Generator e judge devem pertencer a famílias diferentes. Cada comando recebe no `stdin` um JSON com `schema`, `promptVersion` e `input`, e devolve somente o objeto JSON pedido no `stdout`. O adapter limita timeout, resposta a 8 MiB e tentativas a duas. Nome, versão, prompt e número de tentativas ficam registrados no artefato.
 
-As versões esperadas de prompt são definidas uma única vez pelo cargo e compartilhadas por ingestão, auditoria e aprovação. Para governador, o contrato exige `programa-governo-governadores-generator-v1` e `programa-governo-governadores-judge-v1`. O caminho presidencial mantém as versões legadas.
+As versões esperadas de prompt são definidas uma única vez pelo cargo e compartilhadas por ingestão, auditoria e aprovação. Para governador, o contrato exige `programa-governo-governadores-generator-v1` e `programa-governo-governadores-judge-v2`. O caminho presidencial mantém as versões legadas. A revisão v2 do judge acrescenta o texto da afirmação (`claimTexto`) em cada item, sem o qual não é possível avaliar suporte, números, neutralidade, mistura ou cobertura.
 
-O generator deve produzir resumo, frases, temas e evidências com `documentoId`, página e trecho literal. O judge usa `scripts/prompts/programa-governo-governadores-judge-v1.schema.json` e devolve uma avaliação para cada claim em cada uma das seis dimensões: suporte, números, neutralidade, mistura, identidade e cobertura. Os vínculos de documento, página e evidência devem ser cópias exatas da entrada. ID ausente, extra, duplicado ou vínculo alterado falha fechado.
+O generator deve produzir resumo, frases, temas e evidências com `documentoId`, página e trecho literal. O judge usa `scripts/prompts/programa-governo-governadores-judge-v2.schema.json` e devolve uma avaliação para cada claim em cada uma das seis dimensões: suporte, números, neutralidade, mistura, identidade e cobertura. Os vínculos de documento, página e evidência devem ser cópias exatas da entrada. ID ausente, extra, duplicado ou vínculo alterado falha fechado.
 
 ## Integridade e extração
 
@@ -81,6 +96,17 @@ O batch sempre materializa os registros e o manifesto antes de avaliar o resulta
 O stage e o approval operam em dry-run por padrão. `--apply` é obrigatório para substituir registros. Na aplicação, cada arquivo existente é copiado para o diretório de backup antes da troca; depois da troca, o JSON é relido, validado contra o contrato e comparado ao conteúdo preparado. O recibo só é escrito após todos os readbacks passarem. `--backup-dir` e `--receipt` permitem escolher destinos fora do diretório de registros; sem eles, cada comando usa um destino local isolado e datado.
 
 O fingerprint humano cobre identidade completa, incluindo nome de urna e partido, fonte completa, conjunto ordenado de documentos, hashes, extrações, resumo e metadados separados de generator e judge. Qualquer mudança torna a decisão stale. Nenhuma das duas etapas cria uma decisão humana automaticamente.
+
+## Driver de batch nacional
+
+O processamento de muitas candidaturas usa o driver `scripts/data/programas-governo-governadores-2026/batch-driver.mjs`, executado com o binário Node 24 resolvido uma única vez. O driver nunca chama modelo: apenas orquestra processos do CLI canônico, um processo por candidato.
+
+- `plan` deriva a fila NDJSON do inventário com `--plan-only`, valida contagens por UF contra o inventário (fail-closed), exclui as UFs de uma onda já concluída e ordena por custo estimado decrescente, calculado a partir de páginas e passagens planejadas.
+- `run` consome a fila com rampa de concorrência 3 (inicial) → 4 após 3 conclusões da execução atual (nunca usando 47 históricos), semáforo global de seis slots geradores e no máximo dois candidatos multipassagem simultâneos; throughput e ETA consideram apenas a execução atual. Cada item grava `estado.json` atomicamente (`pending`, `extracting`, `generator_pending`, `generator_complete`, `judge_pending`, `complete`, `blocked`, `retryable_error`), o que permite retomada sem repetir candidato concluído.
+- Duas falhas consecutivas de cota ou autenticação param o driver com checkpoints preservados; o mesmo vale para taxa de erro técnico acima de 5% e para o limite de wall time. A parada escreve `parada.json` com as unidades pendentes.
+- As extrações são cacheadas por SHA-256 do PDF, método e versão do extrator; as passagens multipassagem usam o cache compartilhado de passagens. Retries repetem somente a unidade que falhou.
+- `consolidar` copia os registros para a árvore regional (`ondas/<regiao>/<UF>/`) verificando identidade e recusa mistura de candidato.
+- `PF_OPENCODE_GO` aponta para o cliente canônico (`opencode-go.mjs`); `PF_OPENCODE_TIMEOUT_MS` controla timeout interno (< externo). Runners Luna (`gpt-5.6-luna` responses) e DeepSeek (`deepseek-v4-flash` chat) usam esse cliente com temp file `--arquivo` e orçamento de envelope <190k; GLM (`glm-5.3`) exige `--api chat` explícito por ainda ser desconhecido na tabela.
 
 ## Teste hermético
 

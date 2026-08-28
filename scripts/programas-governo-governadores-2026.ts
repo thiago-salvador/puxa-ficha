@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto"
 import { execFile } from "node:child_process"
-import { mkdir, readFile, writeFile } from "node:fs/promises"
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import { basename, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { promisify } from "node:util"
@@ -13,8 +13,23 @@ import {
   type ProgramaGovernoExtracaoRastreavel,
 } from "./lib/programas-governo-extracao"
 import {
+  calcularFingerprintProgramaGovernoPassagens,
+  coletarFatosProgramaGovernoPassagens,
+  envelopeExcedeLimite,
+  filtrarFatosLiterais,
+  medirEnvelopeBytes,
+  planejarProgramaGovernoPassagens,
+  type ProgramaGovernoFato,
+} from "./lib/programas-governo-multipassagem"
+import {
   createProgramaGovernoModelAdapters,
+  PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+  PROGRAMA_GOVERNO_FATOS_SCHEMA,
   PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
+  PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
+  PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
   type ProgramaGovernoGeneratorInput,
   type ProgramaGovernoJudgeItem,
   type ProgramaGovernoModelAdapters,
@@ -49,6 +64,7 @@ export type ProgramaGovernoGovInventoryCandidate = {
   nomeCompleto: string
   nomeUrna: string
   partido: string
+  numero?: string
   slug: string | null
   perfilEstado: string
   identidadeEstado: string
@@ -69,6 +85,8 @@ export type ProgramaGovernoGovInventoryDocument = {
   bytes: number
   sha256: string
   paginas: number
+  textoExtraidoBytes?: number
+  textoExtraidoCaracteres?: number
   textoEstado: "extraivel" | "requer_ocr"
   candidaturaAtual: boolean
 }
@@ -107,6 +125,18 @@ export type ProgramaGovernoGovIngestionRecord = Omit<ProgramaGovernoRegistro, "j
     modelos: null | {
       generator: { name: string; version: string; promptVersion: string; attempts: number }
       judge: { name: string; version: string; promptVersion: string; attempts: number }
+      geracaoMultipassagem?: {
+        planejador: string
+        limiteBytes: number
+        passagens: number
+        passagensCacheadas: number
+        chamadasGeracao: number
+        retriesPassagem: number
+        chamadasSintese: number
+        retriesSintese: number
+        fingerprint: string
+        promptVersoes: { fatosPassagem: string; sinteseFatos: string }
+      }
     }
     eval: null | { completo: boolean; blockers: number; dimensoes: readonly string[] }
   }
@@ -129,6 +159,12 @@ export type ProgramaGovernoGovCliOptions = {
   archiveDir: string
   outputDir: string
   modelsConfigPath?: string
+  cachePassagensDir?: string
+  multipassagemLimiteBytes?: number
+  sqCandidato?: string
+  planOnly?: boolean
+  faseDir?: string
+  extractCacheDir?: string
 }
 
 export type ProgramaGovernoGovIngestionAdapters = {
@@ -138,6 +174,7 @@ export type ProgramaGovernoGovIngestionAdapters = {
   extractPdf(bytes: Buffer, filename: string): Promise<ProgramaGovernoExtracaoRastreavel>
   ensureDir(path: string): Promise<void>
   writeText(path: string, value: string): Promise<void>
+  rename(from: string, to: string): Promise<void>
   now(): string
 }
 
@@ -163,6 +200,7 @@ const defaultAdapters: ProgramaGovernoGovIngestionAdapters = {
   },
   ensureDir: (path) => mkdir(path, { recursive: true }).then(() => undefined),
   writeText: (path, value) => writeFile(path, value, "utf8"),
+  rename: (from, to) => rename(from, to),
   now: () => new Date().toISOString(),
 }
 
@@ -184,12 +222,21 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
   }
   const ufs = [...new Set(ufsValue.split(",").map((uf) => uf.trim().toLocaleUpperCase("pt-BR")).filter(Boolean))]
   if (ufs.length === 0 || ufs.some((uf) => !UF_PATTERN.test(uf))) throw new Error("--ufs contem UF invalida")
+  const sqCandidato = valueArg(argv, "--sq-candidato")
+  if (sqCandidato !== undefined && !/^\d{11,12}$/u.test(sqCandidato.trim())) {
+    throw new Error("--sq-candidato deve ser o SQ_CANDIDATO oficial de 11 ou 12 digitos")
+  }
   return {
     ufs: ufs.sort(),
     inventoryPath: resolve(inventoryPath),
     archiveDir: resolve(archiveDir),
     outputDir: resolve(outputDir),
+    ...(sqCandidato !== undefined ? { sqCandidato: sqCandidato.trim() } : {}),
+    ...(argv.includes("--plan-only") ? { planOnly: true } : {}),
     ...(valueArg(argv, "--models-config") ? { modelsConfigPath: resolve(valueArg(argv, "--models-config")!) } : {}),
+    ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
+    ...(valueArg(argv, "--fase-dir") ? { faseDir: resolve(valueArg(argv, "--fase-dir")!) } : {}),
+    ...(valueArg(argv, "--extract-cache-dir") ? { extractCacheDir: resolve(valueArg(argv, "--extract-cache-dir")!) } : {}),
   }
 }
 
@@ -231,6 +278,131 @@ function assertInventoryScope(inventory: ProgramaGovernoGovInventory, requestedU
     }
   }
   for (const uf of requestedUfs) if (!candidateUfs.has(uf)) throw new Error(`UF ${uf} sem candidaturas no inventario`)
+}
+
+export type ProgramaGovernoGovFilaDocumento = {
+  documentoId: string
+  sha256: string
+  bytes: number
+  paginas: number
+  textoExtraidoBytes: number
+  textoEstado: string
+}
+
+export type ProgramaGovernoGovFilaItem = {
+  chave: string
+  uf: string
+  sqCandidato: string
+  slug: string | null
+  nomeCompleto: string
+  nomeUrna: string
+  partido: string
+  numero: string
+  fonteEstado: string
+  perfilEstado: string
+  identidadeEstado: string
+  documentos: ProgramaGovernoGovFilaDocumento[]
+  totalPaginas: number
+  bytesTextoExtraidos: number
+  bytesEntradaEstimados: number
+  multipassagem: boolean
+  passagensPlanejadas: number
+  chaveCacheDir: string
+  usaModelos: boolean
+  custoEstimado: number
+}
+
+function estimarPassagens(
+  documentos: readonly { paginas: number; textoExtraidoBytes: number }[],
+  limite: number,
+  identityKey: string,
+): { multipassagem: boolean; passagens: number; bytesEntrada: number } {
+  const entradaEstrutural = documentos.map((documento, indice) => ({
+    documentoId: `${indice}`,
+    paginas: Array.from({ length: documento.paginas }, (_, pagina) => ({ pagina: pagina + 1, origem: "planejamento", texto: "" })),
+  }))
+  const bytesEstruturais = medirEnvelopeBytes(
+    PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+    PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
+    { identityKey, documentos: entradaEstrutural },
+  )
+  const bytesTexto = documentos.reduce((total, documento) => total + Math.max(0, documento.textoExtraidoBytes), 0)
+  const bytesEntrada = bytesEstruturais + bytesTexto
+  if (documentos.length === 0 || bytesEntrada < limite) {
+    return { multipassagem: false, passagens: 1, bytesEntrada }
+  }
+  const custoFixoPorEnvelope = medirEnvelopeBytes(
+    PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    { identityKey, documentos: [] },
+  )
+  const capacidadeUtil = Math.max(1, limite - custoFixoPorEnvelope)
+  const bytesDistribuiveis = Math.max(1, bytesEntrada - custoFixoPorEnvelope)
+  const passagens = Math.max(2, Math.ceil(bytesDistribuiveis / capacidadeUtil))
+  return { multipassagem: true, passagens, bytesEntrada }
+}
+
+export function planejarFilaProgramaGovernoGovernadores(
+  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes">,
+  inventory: ProgramaGovernoGovInventory,
+): ProgramaGovernoGovFilaItem[] {
+  assertInventoryScope(inventory, options.ufs)
+  const documentsById = new Map(inventory.documentos.map((documento) => [documento.id, documento]))
+  const limite = options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES
+  let candidates = inventory.candidaturas
+    .filter(({ uf }) => options.ufs.includes(uf))
+    .sort((a, b) => a.chave.localeCompare(b.chave, "pt-BR"))
+  if (options.sqCandidato !== undefined) {
+    const achados = candidates.filter(({ sqCandidato }) => sqCandidato === options.sqCandidato)
+    if (achados.length !== 1) {
+      throw new Error(`--sq-candidato ${options.sqCandidato}: ${achados.length} correspondencia(s) nas UFs solicitadas; esperado exatamente 1`)
+    }
+    candidates = achados
+  }
+  return candidates.map((candidate) => {
+    const documentos = candidate.documentoIds.map((id) => {
+      const documento = documentsById.get(id)
+      if (!documento) throw new Error(`${candidate.chave}: documento ${id} ausente do inventario`)
+      return {
+        documentoId: documento.id,
+        sha256: documento.sha256,
+        bytes: documento.bytes,
+        paginas: documento.paginas,
+        textoExtraidoBytes: documento.textoExtraidoBytes
+          ?? Math.max(documento.bytes * 4, documento.paginas * 4_000),
+        textoEstado: documento.textoEstado,
+      }
+    })
+    const totalPaginas = documentos.reduce((acumulado, documento) => acumulado + documento.paginas, 0)
+    const bytesTextoExtraidos = documentos.reduce((acumulado, documento) => acumulado + documento.textoExtraidoBytes, 0)
+    const estimativa = estimarPassagens(documentos, limite, candidate.chave)
+    const usaModelos = candidate.fonteEstado === "documento_oficial_encontrado"
+      && candidate.identidadeEstado === "confirmada"
+      && candidate.perfilEstado === "vinculado"
+      && candidate.slug !== null
+    return {
+      chave: candidate.chave,
+      uf: candidate.uf,
+      sqCandidato: candidate.sqCandidato,
+      slug: candidate.slug,
+      nomeCompleto: candidate.nomeCompleto,
+      nomeUrna: candidate.nomeUrna,
+      partido: candidate.partido,
+      numero: candidate.numero ?? "",
+      fonteEstado: candidate.fonteEstado,
+      perfilEstado: candidate.perfilEstado,
+      identidadeEstado: candidate.identidadeEstado,
+      documentos,
+      totalPaginas,
+      bytesTextoExtraidos,
+      bytesEntradaEstimados: estimativa.bytesEntrada,
+      multipassagem: estimativa.multipassagem,
+      passagensPlanejadas: estimativa.passagens,
+      chaveCacheDir: createHash("sha256").update(candidate.chave).digest("hex").slice(0, 16),
+      usaModelos,
+      custoEstimado: Number((estimativa.passagens + totalPaginas / 300).toFixed(3)),
+    }
+  })
 }
 
 function assertSequentialDocuments(
@@ -383,10 +555,12 @@ function judgeItems(
   const claims = [
     ...summary.frases.map((sentence, index) => ({
       claimId: `frase:${index + 1}`,
+      claimTexto: sentence.texto,
       evidencias: sentence.evidencias.map((item, evidenceIndex) => requiredEvidence(item, `frase:${index + 1}:${evidenceIndex}`)),
     })),
     ...summary.temas.map((theme) => ({
       claimId: `tema:${theme.id}`,
+      claimTexto: `${theme.titulo}: ${theme.descricao}`,
       evidencias: theme.evidencias.map((item, evidenceIndex) => requiredEvidence(item, `tema:${theme.id}:${evidenceIndex}`)),
     })),
   ]
@@ -398,6 +572,7 @@ function judgeItems(
       dimension,
       identityKey,
       documentoIds,
+      claimTexto: claim.claimTexto,
       evidencias: claim.evidencias,
     }))
   })
@@ -410,6 +585,199 @@ function citedPages(items: readonly ProgramaGovernoJudgeItem[], documents: reado
     .map((section) => ({ documentoId: document.documentoId, pagina: section.paginaInicial, texto: section.conteudo })))
 }
 
+const PROGRAMA_GOVERNO_PASSAGENS_CONCORRENCIA = 3
+
+export type ProgramaGovernoMultipassagemMetrics = {
+  planejador: string
+  limiteBytes: number
+  passagens: number
+  passagensCacheadas: number
+  chamadasGeracao: number
+  retriesPassagem: number
+  chamadasSintese: number
+  retriesSintese: number
+  fingerprint: string
+  promptVersoes: { fatosPassagem: string; sinteseFatos: string }
+}
+
+async function mapearComConcorrencia<TItem, TResult>(
+  itens: readonly TItem[],
+  limite: number,
+  tarefa: (item: TItem, indice: number) => Promise<TResult>,
+): Promise<TResult[]> {
+  const resultados = new Array<TResult>(itens.length)
+  let proximoIndice = 0
+  let primeiraFalha: unknown = null
+  const worker = async (): Promise<void> => {
+    while (proximoIndice < itens.length && primeiraFalha === null) {
+      const indice = proximoIndice
+      proximoIndice += 1
+      try {
+        resultados[indice] = await tarefa(itens[indice]!, indice)
+      } catch (error) {
+        primeiraFalha ??= error
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.max(1, Math.min(limite, itens.length)) }, worker))
+  if (primeiraFalha !== null) throw primeiraFalha
+  return resultados
+}
+
+function entradaMultipassagem(extracted: readonly ProgramaGovernoDocumento[]) {
+  return extracted.map((documento) => ({
+    documentoId: documento.documentoId,
+    paginas: documento.extracao.secoes.map((secao) => ({
+      pagina: secao.paginaInicial,
+      origem: secao.origem,
+      texto: secao.conteudo,
+    })),
+  }))
+}
+
+export function validarFatosCacheadosProgramaGoverno(
+  fatos: unknown,
+  documentos: Parameters<typeof filtrarFatosLiterais>[1],
+): ProgramaGovernoFato[] | null {
+  if (!Array.isArray(fatos) || fatos.length === 0) return null
+  const fatosValidados = filtrarFatosLiterais(fatos as ProgramaGovernoFato[], documentos)
+  return fatosValidados.length === fatos.length ? fatosValidados : null
+}
+
+async function gerarResumoProgramaGovernoMultipassagem(params: {
+  identityKey: string
+  nomeUrna: string
+  partido: string
+  documentosHashes: readonly string[]
+  extracted: readonly ProgramaGovernoDocumento[]
+  promptVersion: string
+  cacheDir: string
+  modelos: ProgramaGovernoModelAdapters
+  adapters: ProgramaGovernoGovIngestionAdapters
+  limiteBytes: number
+}): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics; metadata: { promptVersion: string } }> {
+  const { identityKey, extracted, modelos, adapters } = params
+  const extrairFatos = modelos.extrairFatosPassagem
+  const sintetizarDeFatos = modelos.sintetizarDeFatos
+  if (!extrairFatos || !sintetizarDeFatos) {
+    throw new Error("multipassagem: configuracao do generator nao suporta extrairFatosPassagem/sintetizarDeFatos")
+  }
+  const limiteBytes = params.limiteBytes
+  const documentosEntrada = entradaMultipassagem(extracted)
+  const planos = planejarProgramaGovernoPassagens(documentosEntrada, {
+    limiteBytes,
+    instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
+    schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
+    criarInput: (docs) => ({ identityKey, documentos: docs }),
+  })
+  const subDiretorio = resolve(params.cacheDir, createHash("sha256").update(identityKey).digest("hex").slice(0, 16))
+  await adapters.ensureDir(subDiretorio)
+  const metrics: ProgramaGovernoMultipassagemMetrics = {
+    planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
+    limiteBytes,
+    passagens: planos.length,
+    passagensCacheadas: 0,
+    chamadasGeracao: 0,
+    retriesPassagem: 0,
+    chamadasSintese: 0,
+    retriesSintese: 0,
+    fingerprint: calcularFingerprintProgramaGovernoPassagens(planos, {
+      name: modelos.generator.name,
+      version: modelos.generator.version,
+      promptVersion: params.promptVersion,
+    }),
+    promptVersoes: {
+      fatosPassagem: `${params.promptVersion}/fatos-passagem`,
+      sinteseFatos: `${params.promptVersion}/sintese-fatos`,
+    },
+  }
+
+  async function chaveCacheDaPassagem(plano: ReturnType<typeof planejarProgramaGovernoPassagens>[number]): Promise<{ chave: string; caminho: string }> {
+    const hashPassagem = calcularFingerprintProgramaGovernoPassagens([plano])
+    const chave = sha256(JSON.stringify({
+      identityKey,
+      nomeUrna: params.nomeUrna,
+      partido: params.partido,
+      documentosHashes: params.documentosHashes,
+      modelo: { name: modelos.generator.name, version: modelos.generator.version },
+      promptVersion: params.promptVersion,
+      planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
+      limiteBytes,
+      indice: plano.indice,
+      hashPassagem,
+    }))
+    return { chave, caminho: resolve(subDiretorio, `${chave}.json`) }
+  }
+
+  const porPassagem = new Map<number, ProgramaGovernoFato[]>()
+  await mapearComConcorrencia(planos, PROGRAMA_GOVERNO_PASSAGENS_CONCORRENCIA, async (plano) => {
+    const { chave, caminho } = await chaveCacheDaPassagem(plano)
+    try {
+      const cru = JSON.parse(await adapters.readText(caminho)) as unknown
+      if (
+        cru && typeof cru === "object"
+        && (cru as Record<string, unknown>).chaveCache === chave
+        && (cru as Record<string, unknown>).promptVersion === metrics.promptVersoes.fatosPassagem
+        && Array.isArray((cru as Record<string, unknown>).fatos)
+        && ((cru as Record<string, unknown>).fatos as unknown[]).length > 0
+      ) {
+        const fatosValidados = validarFatosCacheadosProgramaGoverno(
+          (cru as { fatos: ProgramaGovernoFato[] }).fatos,
+          plano.documentos,
+        )
+        if (fatosValidados) {
+          porPassagem.set(plano.indice, fatosValidados)
+          metrics.passagensCacheadas += 1
+          return
+        }
+      }
+    } catch {
+      // cache miss ou corrompido: reexecuta apenas esta passagem
+    }
+    const resultado = await extrairFatos.call(modelos, { identityKey, documentos: plano.documentos })
+    if (resultado.metadata.promptVersion !== metrics.promptVersoes.fatosPassagem) {
+      throw new Error(`multipassagem: prompt de fatos stale ${resultado.metadata.promptVersion}`)
+    }
+    metrics.chamadasGeracao += resultado.metadata.attempts
+    if (resultado.metadata.attempts > 1) metrics.retriesPassagem += 1
+    if (resultado.output.length === 0) {
+      throw new Error(`multipassagem: passagem ${plano.indice + 1}/${planos.length} nao produziu fato literal`)
+    }
+    porPassagem.set(plano.indice, resultado.output)
+    const registro = `${JSON.stringify({
+      chaveCache: chave,
+      identityKey,
+      indice: plano.indice,
+      hashPassagem: calcularFingerprintProgramaGovernoPassagens([plano]),
+      modelo: `${modelos.generator.name}@${modelos.generator.version}`,
+      promptVersion: resultado.metadata.promptVersion,
+      fatos: resultado.output,
+    }, null, 2)}\n`
+    const temporario = `${caminho}.tmp-${process.pid}`
+    await adapters.writeText(temporario, registro)
+    await adapters.rename(temporario, caminho)
+  })
+
+  const fatosLiterais = filtrarFatosLiterais(
+    coletarFatosProgramaGovernoPassagens(porPassagem, planos),
+    documentosEntrada,
+  )
+  if (fatosLiterais.length === 0) {
+    throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
+  }
+  const sintese = await sintetizarDeFatos.call(modelos, { identityKey, fatos: fatosLiterais })
+  if (sintese.metadata.promptVersion !== metrics.promptVersoes.sinteseFatos) {
+    throw new Error(`multipassagem: prompt de sintese stale ${sintese.metadata.promptVersion}`)
+  }
+  metrics.chamadasSintese += sintese.metadata.attempts
+  if (sintese.metadata.attempts > 1) metrics.retriesSintese += 1
+  return {
+    output: sintese.output,
+    metrics,
+    metadata: { promptVersion: sintese.metadata.promptVersion },
+  }
+}
+
 function assertJudgeCoverage(expected: readonly ProgramaGovernoJudgeItem[], actual: Awaited<ReturnType<ProgramaGovernoModelAdapters["judgeClaims"]>>["output"]): void {
   if (actual.avaliacoes.length !== expected.length) throw new Error("judge: cobertura incompleta das seis dimensoes")
   const byId = new Map(actual.avaliacoes.map((item) => [item.id, item]))
@@ -417,7 +785,7 @@ function assertJudgeCoverage(expected: readonly ProgramaGovernoJudgeItem[], actu
   for (const item of expected) {
     const evaluated = byId.get(item.id)
     if (!evaluated) throw new Error(`judge: id ausente ${item.id}`)
-    for (const key of ["claimId", "dimension", "identityKey"] as const) {
+    for (const key of ["claimId", "dimension", "identityKey", "claimTexto"] as const) {
       if (evaluated[key] !== item[key]) throw new Error(`judge: ${key} divergente em ${item.id}`)
     }
     if (
@@ -465,6 +833,39 @@ function terminalRecord(
   }
 }
 
+async function extrairDocumentoComCache(
+  document: ProgramaGovernoGovInventoryDocument,
+  bytes: Buffer,
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  extractCacheDir: string | undefined,
+): Promise<{ extracao: ProgramaGovernoExtracaoRastreavel; cacheHit: boolean }> {
+  if (!extractCacheDir) {
+    return { extracao: await adapters.extractPdf(bytes, document.arquivoNome), cacheHit: false }
+  }
+  const chaveCache = `${document.sha256}:${PROGRAMA_GOVERNO_EXTRACTION_METHOD}:${PROGRAMA_GOVERNO_EXTRACTION_VERSION}`
+  const caminhoCache = resolve(extractCacheDir, `${sha256(chaveCache)}.json`)
+  try {
+    const cru = JSON.parse(await adapters.readText(caminhoCache)) as unknown
+    const valido = !!cru
+      && typeof cru === "object"
+      && (cru as Record<string, unknown>).sourceSha256 === document.sha256
+      && (cru as Record<string, unknown>).paginas === document.paginas
+      && Array.isArray((cru as Record<string, unknown>).pageMap)
+      && ((cru as Record<string, unknown>).pageMap as unknown[]).length === document.paginas
+      && Array.isArray((cru as Record<string, unknown>).secoes)
+      && typeof (cru as Record<string, unknown>).extractedTextSha256 === "string"
+    if (valido) return { extracao: cru as ProgramaGovernoExtracaoRastreavel, cacheHit: true }
+  } catch {
+    // cache ausente ou corrompido: extrai e grava uma unica vez
+  }
+  const extracao = await adapters.extractPdf(bytes, document.arquivoNome)
+  await adapters.ensureDir(extractCacheDir)
+  const temporario = `${caminhoCache}.tmp-${process.pid}`
+  await adapters.writeText(temporario, JSON.stringify(extracao))
+  await adapters.rename(temporario, caminhoCache)
+  return { extracao, cacheHit: false }
+}
+
 async function extractDocuments(
   candidate: ProgramaGovernoGovInventoryCandidate,
   inventory: ProgramaGovernoGovInventory,
@@ -473,26 +874,45 @@ async function extractDocuments(
   archiveDir: string,
   archiveBytes: Buffer,
   adapters: ProgramaGovernoGovIngestionAdapters,
-): Promise<ProgramaGovernoDocumento[]> {
+  extractCacheDir?: string,
+): Promise<{ documentos: ProgramaGovernoDocumento[]; cacheHits: number }> {
   const archivePath = resolve(archiveDir, packageInfo.arquivoNome)
   const extracted: ProgramaGovernoDocumento[] = []
+  let cacheHits = 0
   const identity = sourceFor(candidate, inventory, packageInfo, documents[0])
   for (const [index, document] of documents.entries()) {
     const bytes = await adapters.extractArchiveEntry(archivePath, document.arquivoNoPacote)
     if (bytes.length !== document.bytes || sha256(bytes) !== document.sha256) {
       throw new Error(`${document.id}: PDF diverge em bytes ou hash`)
     }
-    const extraction = await adapters.extractPdf(bytes, document.arquivoNome)
-    assertPageSafeExtraction(document, extraction)
+    const { extracao, cacheHit } = await extrairDocumentoComCache(document, bytes, adapters, extractCacheDir)
+    if (cacheHit) cacheHits += 1
+    assertPageSafeExtraction(document, extracao)
     const value = {
       documentoId: document.id,
       fonte: documentSource(document, inventory),
-      extracao: extraction,
+      extracao,
     }
     assertProgramaGovernoDocumento(value, identity, index + 1, `documentos[${index}]`)
     extracted.push(value)
   }
-  return extracted
+  return { documentos: extracted, cacheHits }
+}
+
+async function gravarFase(
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  faseDir: string | undefined,
+  candidate: ProgramaGovernoGovInventoryCandidate,
+  fase: "extracao.concluida" | "gerador.iniciado" | "gerador.concluido" | "julgamento.iniciado",
+  conteudo: Record<string, unknown> = {},
+): Promise<void> {
+  if (!faseDir) return
+  const destino = resolve(faseDir, `${candidate.uf}-${candidate.sqCandidato}.${fase}.json`)
+  const registro = JSON.stringify({ identityKey: candidate.chave, fase, em: adapters.now(), ...conteudo })
+  await adapters.ensureDir(faseDir)
+  const temporario = `${destino}.tmp-${process.pid}`
+  await adapters.writeText(temporario, registro)
+  await adapters.rename(temporario, destino)
 }
 
 async function ingestCandidate(
@@ -504,6 +924,10 @@ async function ingestCandidate(
   loadArchive: () => Promise<Buffer>,
   models: ProgramaGovernoModelAdapters | null,
   adapters: ProgramaGovernoGovIngestionAdapters,
+  passagensCacheDir: string,
+  multipassagemLimiteBytes: number,
+  faseDir?: string,
+  extractCacheDir?: string,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
   const profileMissing = candidate.perfilEstado !== "vinculado" || candidate.slug === null
   if (candidate.fonteEstado !== "documento_oficial_encontrado" || documents.length === 0) {
@@ -516,9 +940,17 @@ async function ingestCandidate(
   const source = sourceFor(candidate, inventory, packageInfo, documents[0]) as ProgramaGovernoFonte
   assertProgramaGovernoFonte(source, `fonte.${candidate.chave}`)
   let extracted: ProgramaGovernoDocumento[]
+  let cacheHits = 0
   try {
     const archiveBytes = await loadArchive()
-    extracted = await extractDocuments(candidate, inventory, documents, packageInfo, archiveDir, archiveBytes, adapters)
+    const resultadoExtracao = await extractDocuments(candidate, inventory, documents, packageInfo, archiveDir, archiveBytes, adapters, extractCacheDir)
+    extracted = resultadoExtracao.documentos
+    cacheHits = resultadoExtracao.cacheHits
+    await gravarFase(adapters, faseDir, candidate, "extracao.concluida", {
+      documentos: documents.map(({ id }) => id),
+      cacheHits,
+      total: documents.length,
+    })
     if (candidate.identidadeEstado !== "confirmada") {
       return terminalRecord("falha_de_extracao", candidate, inventory, source, "identidade oficial ambigua", "extracao", extracted)
     }
@@ -540,11 +972,52 @@ async function ingestCandidate(
   try {
     if (!models) throw new Error("configuracao de generator e judge ausente")
     const expectedPrompts = programaGovernoExpectedPromptVersions(source)
-    const generated = await models.generate(generatorInput(candidate.chave, extracted))
-    if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
-      throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+    const entradaCompleta = generatorInput(candidate.chave, extracted)
+    await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
+    let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
+    let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
+    if (envelopeExcedeLimite(
+      PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+      PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
+      entradaCompleta,
+      multipassagemLimiteBytes,
+    )) {
+      const multipass = await gerarResumoProgramaGovernoMultipassagem({
+        identityKey: candidate.chave,
+        nomeUrna: candidate.nomeUrna,
+        partido: candidate.partido,
+        documentosHashes: documents.map(({ sha256 }) => sha256),
+        extracted,
+        promptVersion: expectedPrompts.generatorPromptVersion,
+        cacheDir: passagensCacheDir,
+        modelos: models,
+        adapters,
+        limiteBytes: multipassagemLimiteBytes,
+      })
+      generated = {
+        output: multipass.output,
+        metadata: {
+          name: models.generator.name,
+          version: models.generator.version,
+          promptVersion: expectedPrompts.generatorPromptVersion,
+          attempts: Math.min(2, multipass.metrics.retriesPassagem + multipass.metrics.retriesSintese + 1),
+        },
+      }
+      metricasMultipassagem = multipass.metrics
+    } else {
+      generated = await models.generate(entradaCompleta)
+      if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
+        throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+      }
     }
     assertLiteralEvidence(generated.output, extracted)
+    await gravarFase(adapters, faseDir, candidate, "gerador.concluido", {
+      multipassagem: metricasMultipassagem ? metricasMultipassagem.passagens > 1 : false,
+      passagens: metricasMultipassagem?.passagens ?? 1,
+      chamadasGeracao: metricasMultipassagem
+        ? metricasMultipassagem.chamadasGeracao + metricasMultipassagem.chamadasSintese
+        : generated.metadata.attempts,
+    })
     const draft: ProgramaGovernoRegistro = {
       version: 1,
       estado: "em_revisao",
@@ -559,6 +1032,7 @@ async function ingestCandidate(
     }
     assertProgramaGovernoRegistro(draft)
     const claims = judgeItems(candidate.chave, generated.output)
+    await gravarFase(adapters, faseDir, candidate, "julgamento.iniciado")
     const judged = await models.judgeClaims({ claims, paginasCitadas: citedPages(claims, extracted) })
     if (judged.metadata.promptVersion !== expectedPrompts.judgePromptVersion) {
       throw new Error(`judge prompt stale: ${judged.metadata.promptVersion}`)
@@ -582,7 +1056,11 @@ async function ingestCandidate(
           evalCompleto ? "concluida" : "modelos",
           evalCompleto ? null : `Eval bloqueado por ${blockers} veredito(s) no/unknown`,
         ),
-        modelos: { generator: generated.metadata, judge: judged.metadata },
+        modelos: {
+          generator: generated.metadata,
+          judge: judged.metadata,
+          ...(metricasMultipassagem ? { geracaoMultipassagem: metricasMultipassagem } : {}),
+        },
         eval: {
           completo: evalCompleto,
           blockers,
@@ -617,9 +1095,16 @@ export async function ingestProgramaGovernoGovernadores(
   const adapters = { ...defaultAdapters, ...dependencies.adapters }
   const inventory = parseInventory(await adapters.readText(options.inventoryPath))
   assertInventoryScope(inventory, options.ufs)
-  const candidates = inventory.candidaturas
+  let candidates = inventory.candidaturas
     .filter(({ uf }) => options.ufs.includes(uf))
     .sort((a, b) => a.chave.localeCompare(b.chave, "pt-BR"))
+  if (options.sqCandidato !== undefined) {
+    const achados = candidates.filter(({ sqCandidato }) => sqCandidato === options.sqCandidato)
+    if (achados.length !== 1) {
+      throw new Error(`--sq-candidato ${options.sqCandidato}: ${achados.length} correspondencia(s) nas UFs solicitadas; esperado exatamente 1`)
+    }
+    candidates = achados
+  }
   const documentsById = new Map<string, ProgramaGovernoGovInventoryDocument>()
   for (const document of inventory.documentos) {
     if (documentsById.has(document.id)) throw new Error(`${document.id}: documento duplicado no inventario`)
@@ -677,6 +1162,10 @@ export async function ingestProgramaGovernoGovernadores(
       () => loadArchive(packageInfo),
       dependencies.models ?? null,
       adapters,
+      options.cachePassagensDir ? resolve(options.cachePassagensDir) : resolve(options.outputDir, ".cache-passagens"),
+      options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
+      options.faseDir ? resolve(options.faseDir) : undefined,
+      options.extractCacheDir ? resolve(options.extractCacheDir) : undefined,
     )
     const ufDir = resolve(options.outputDir, candidate.uf)
     await adapters.ensureDir(ufDir)
@@ -702,10 +1191,37 @@ export async function ingestProgramaGovernoGovernadores(
         }]
       : []
   })
+  const geracaoMultipassagem = records.reduce((acumulado, record) => {
+    const metricas = record.ingestao.modelos?.geracaoMultipassagem
+    if (!metricas) return acumulado
+    return {
+      candidaturasComMultipassagem: acumulado.candidaturasComMultipassagem + 1,
+      passagens: acumulado.passagens + metricas.passagens,
+      passagensCacheadas: acumulado.passagensCacheadas + metricas.passagensCacheadas,
+      chamadasGeracao: acumulado.chamadasGeracao + metricas.chamadasGeracao,
+      retriesPassagem: acumulado.retriesPassagem + metricas.retriesPassagem,
+      chamadasSintese: acumulado.chamadasSintese + metricas.chamadasSintese,
+      retriesSintese: acumulado.retriesSintese + metricas.retriesSintese,
+    }
+  }, {
+    candidaturasComMultipassagem: 0,
+    passagens: 0,
+    passagensCacheadas: 0,
+    chamadasGeracao: 0,
+    retriesPassagem: 0,
+    chamadasSintese: 0,
+    retriesSintese: 0,
+  })
   const result = { ufs: [...options.ufs], records, counts, blockers }
   await adapters.writeText(
     resolve(options.outputDir, "manifesto-ingestao.json"),
-    `${JSON.stringify({ ufs: result.ufs, counts, blockers }, null, 2)}\n`,
+    `${JSON.stringify({
+      ufs: result.ufs,
+      counts,
+      blockers,
+      nodeVersion: process.versions.node,
+      geracaoMultipassagem,
+    }, null, 2)}\n`,
   )
   return result
 }
@@ -719,6 +1235,13 @@ export async function runProgramaGovernoGovernadoresCli(
 ): Promise<ProgramaGovernoGovIngestionResult> {
   if (Number(process.versions.node.split(".")[0]) !== 24) throw new Error(`Node 24 obrigatorio; atual ${process.versions.node}`)
   const options = parseProgramaGovernoGovernadoresArgs(argv)
+  if (options.planOnly) {
+    const adapters = { ...defaultAdapters, ...dependencies.adapters }
+    const inventory = parseInventory(await adapters.readText(options.inventoryPath))
+    const itens = planejarFilaProgramaGovernoGovernadores(options, inventory)
+    for (const item of itens) console.log(JSON.stringify(item))
+    return { ufs: options.ufs, records: [], counts: { em_revisao: 0, perfil_local_ausente: 0, sem_documento_oficial: 0, falha_de_extracao: 0 }, blockers: [] }
+  }
   let models = dependencies.models
   if (models === undefined && options.modelsConfigPath) {
     const adapters = { ...defaultAdapters, ...dependencies.adapters }
