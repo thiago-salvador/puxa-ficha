@@ -1,0 +1,1568 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "ES",
+    "sqCandidato": "80002551833",
+    "slug": "helder-salomao",
+    "nomeUrna": "HELDER SALOMÃO",
+    "partido": "PT",
+    "arquivoNome": "2026ES80002551833_01.pdf",
+    "arquivoNoPacote": "ES/2026ES80002551833_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "ES:80002551833:01",
+      "fonte": {
+        "arquivoNome": "2026ES80002551833_01.pdf",
+        "arquivoNoPacote": "ES/2026ES80002551833_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d25cb154f8de6276c82f504c81ca3b0ec7f6925625a53788ba1bf77c4d628989",
+        "extractedTextSha256": "7aafb9f82d0f7b1a40ebb37f43da78df4328587dd1999d6259ecc3c4cefaefc3",
+        "paginas": 63,
+        "secoes": [
+          {
+            "id": "1",
+            "titulo": "1",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "1"
+          },
+          {
+            "id": "carta-ao",
+            "titulo": "CARTA AO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "CARTA AO\nPOVO CAPIXABA\nO Espírito Santo vive o esgotamento de um longo ciclo econômico, social\ne político iniciado nos anos 1960. A superação parcial da dependência\nagrícola, a expansão do comércio exterior, a industrialização incompleta\ne os incentivos fiscais produziram crescimento, mas também renda\nconcentrada, urbanização acelerada, desigualdades regionais e novas\nformas de exclusão.\nA reforma tributária, o fim gradual dos incentivos fiscais até 2033, a\nreconfiguração do comércio internacional, a precarização do trabalho e\nos impactos da inteligência artificial, impõem ao Estado a necessidade\nde se reinventar. O futuro governo deverá assumir papel ativo no\nplanejamento, na coordenação dos investimentos, na redução das\ndesigualdades e na criação de novas bases produtivas, tecnológicas,\nculturais e ambientais.\nEsse novo ciclo deve enfrentar cinco desafios centrais: superar o modelo\nextrativista, exportador e concentrador; acompanhar as novas tecnologias\nsem subordinação aos monopólios digitais; reduzir desigualdades\nsociais, econômicas, regionais e ambientais; democratizar a gestão dos\nterritórios e das políticas públicas; e construir a infraestrutura necessária\nao desenvolvimento.\nPara isso, é preciso dar um salto de qualidade: elaborar um Programa\nde Governo comprometido com o desenvolvimento sustentável, que\nenvolva, além do setor produtivo, os trabalhadores, os excluídos da vida\npública, a democratização das decisões com respeito às diversidades.\nConhecimento, inovação e solidariedade devem ser a base de outra\neconomia, capaz de distribuir melhor seus bens e produzir uma vida\ncomum mais justa.\nO que fazer?\nPrimeiro, planejar e controlar democraticamente o território. A história\ncapixaba foi marcada pela exploração predatória da Mata Atlântica, do\nlitoral, das montanhas e das localizações estratégicas. Hoje, a expansão\nimobiliária, logística e portuária continua reorganizando o espaço\nsegundo interesses privados.\n2"
+          },
+          {
+            "id": "cabe-ao-estado-coordenar-municipios-e-regioes-criar-consorcios-de",
+            "titulo": "Cabe ao Estado coordenar municípios e regiões, criar consórcios de",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Cabe ao Estado coordenar municípios e regiões, criar consórcios de\ntransporte, urbanismo e logística, transformar a gestão metropolitana\nem processo compartilhado e implantar um plano estadual de mobilidade\nque valorize o transporte público, a mobilidade urbana, a circulação de\ncargas e a proteção dos ambientes naturais.\nSegundo, mudar a economia. Transformar o Espírito Santo exige superar\na dependência do capital financeiro e das commodities e gerar atividades\nde alto valor agregado, capazes de absorver jovens com formação\ntécnica e superior. A produção de riqueza deve estar vinculada à redução\ndas desigualdades, à qualificação profissional, à pesquisa aplicada e à\npreservação dos recursos naturais e culturais.\nTerceiro, fortalecer cultura, arte e invenção. Reinventar sentidos, ampliar\ncapacidades humanas e tecnológicas e apoiar iniciativas produtivas e\nculturais comuns, são tarefas decisivas dos movimentos progressistas.\nEducação, ciência, arte e inovação devem compor uma política pública\npermanente, orientada pela emancipação social.\nQuarto, reduzir a desigualdade social. Criar oportunidades, garantir\ndireitos, trabalho, renda justa e combater as discriminações e a violência.\nDefender os direitos humanos e o direito à vida, sem preconceitos,\ninjustiças e exclusão social.\nTambém, não podemos permitir que projetos autoritários, em suas\nformas culturais, simbólicas, políticas e econômicas, se instalem em\nnosso Estado. Nas famílias, nas escolas, no trabalho, nas instituições e\nnas ruas, a luta democrática deve restaurar um ambiente seguro, justo\ne plural, oferecendo esperança concreta à população. Esta é uma tarefa\npara todos.\nO Plano de Governo que ora apresentamos, é resultado de um processo\nde construção coletiva que teve início em 2025 e envolveu lideranças\npopulares, representantes de segmentos sociais, empresariais,\nespecialistas e integrantes de instituições e entidades da sociedade\ncivil. O documento completo está disponível para consultas no site www.\ndivulgacandcontas.tse.jus.br.\nSeis princípios orientaram esse processo: participação popular;\ndesenvolvimento com justiça social; sustentabilidade ambiental; vida\ndigna de paz; transparência e ética; e valorização dos municípios.\nA participação popular está associada ao fortalecimento dos mecanismos\nde controle democrático das políticas públicas. O desenvolvimento com\njustiça social propõe conciliar crescimento econômico com redução\ndas desigualdades sociais e regionais. A sustentabilidade ambiental\ncontempla o enfrentamento aos efeitos das mudanças climáticas. O\nprincípio da vida digna de paz está relacionado à segurança cidadã e ao\nrespeito aos direitos humanos.\n3"
+          },
+          {
+            "id": "ja-a-transparencia-e-a-etica-sao-colocadas-como-bases-de-uma-gestao",
+            "titulo": "Já a transparência e a ética são colocadas como bases de uma gestão",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Já a transparência e a ética são colocadas como bases de uma gestão\neficiente, voltada ao interesse coletivo. E a valorização dos municípios\nparte da compreensão de que a cooperação entre o Estado e os poderes\nlocais precisa respeitar as características e as necessidades de cada\nregião capixaba.\nUm projeto de desenvolvimento para todos.\nO compromisso com o equilíbrio das contas públicas, será combinado\ncom a ampliação dos investimentos sociais. Além da nota “A” no Tesouro\nNacional, o Espírito Santo precisa alcançar nota “A” nas políticas\npúblicas. Por isso, nossas prioridades serão a redução das desigualdades\ne a implementação de projetos estruturantes para interiorizar o\ndesenvolvimento com apoio prioritário aos pequenos negócios, a fim de\ngarantir um futuro melhor para todo o povo capixaba.\nO novo ciclo de desenvolvimento econômico e social, que terá início em\n2027, precisa ser conduzido por uma liderança política com capacidade\nde diálogo, articulação e equilíbrio para estabelecer parcerias com o\ngoverno federal, os municípios, os poderes constituídos e, sobretudo,\ncom as forças vivas da sociedade.\nAssim, a Federação Brasil da Esperança (PT, PCdoB e PV), se dirige ao\npovo capixaba para apresentar este Plano de Governo, que representa\nos nossos compromissos com a sociedade.\nConvidamos todas as mulheres e homens do território capixaba para\ntrabalharmos juntos para que o futuro do Espírito Santo seja democrático,\nparticipativo, sustentável, inclusivo, seguro, inovador e inteligente.\nO Futuro do Espírito Santo é a gente que faz!\nHelder Salomão e Valdirene Bernadino.\n\n4"
+          },
+          {
+            "id": "eixo-1",
+            "titulo": "EIXO 1",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1\nGESTÃO PÚBLICA\nE CONTROLE SOCIAL\n5"
+          },
+          {
+            "id": "a-implantacao-e-o-aprimoramento-de-politicas-publicas-que",
+            "titulo": "A implantação e o aprimoramento de políticas públicas que",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "A implantação e o aprimoramento de políticas públicas que\npossibilitem o avanço e a democratização do Espírito Santo dependem,\nobrigatoriamente, do fortalecimento da sua máquina pública, que\ndeverá ser colocada a serviço dos cidadãos para que seja assegurado\num atendimento de qualidade, eficaz e com responsabilidade fiscal. É\nessencial reafirmar a visão de que a gestão pública não é um fim em si\nmesma, mas o instrumento fundamental para o acesso e a garantia\nde direitos, a promoção da justiça social e para o desenvolvimento de\nforma sustentável.\nNeste contexto, será necessária a valorização do serviço público,\nque no Estado tem cerca de 92 mil servidores(as) entre ativos(as) e\naposentados(as), com a promoção de concursos públicos, revisão de\nplanos de carreira, recomposição salarial e formação continuada.\nÉ fundamental, ainda, fortalecer a democracia e o controle social, com\no avanço do debate popular do Orçamento e a garantia do pleno\nfuncionamento dos conselhos de políticas públicas e outros fóruns\nque possibilitam a participação cidadã, assim como o investimento\nem mecanismos e ferramentas que promovam a transparência das\nações governamentais.\nA modernização inclusiva, que utiliza a tecnologia para aproximar o\ncidadão da gestão estadual, é uma diretriz estratégica central. É dever\ndo Estado garantir serviços públicos ágeis e transparentes, além\nde aprimorar as condições de trabalho dos servidores. Para isso, a\ninovação e a inclusão digital devem funcionar como vetores essenciais\nde igualdade social. Nosso projeto visa transformar o Espírito Santo no\nEstado mais inteligente do Brasil.\nPara que possam dar suporte eficaz ao desenvolvimento de políticas\npúblicas de Estado, os organismos de planejamento do governo devem\nser fortalecidos, com estrutura e investimentos.\nEste é o compromisso que assumimos: realizar uma gestão\npública eficiente, democrática e voltada para as pessoas, com\nresponsabilidade fiscal, gestão orçamentária eficaz e justiça social\nem todo o território capixaba.\nCOMPROMISSOS\n䬌 Realizar estudos e projetos visando modernizar e estruturar os\nplanos de cargos e carreiras do funcionalismo estadual, a partir de\nescuta e debate com as entidades representativas dos servidores.\n䬌 Elaborar plano para recomposição e valorização de pessoal para\nevitar a evasão de profissionais nas diversas áreas do Estado.\n\n6"
+          },
+          {
+            "id": "instituir-o-saber-servir-plano-estadual-de-capacitacao-integral",
+            "titulo": "䬌 Instituir o “Saber Servir” — Plano Estadual de Capacitação Integral",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Instituir o “Saber Servir” — Plano Estadual de Capacitação Integral\ne Continuada (PCAP), visando aperfeiçoar a política de capacitação\ndos servidores do Poder Executivo estadual, focado na inovação da\ngestão, formação continuada e atendimento humanizado ao cidadão,\nsob coordenação da Escola de Serviço Público do Espírito Santo\n(ESESP).\n䬌 Fortalecer o programa de saúde e segurança do servidor, com foco\nnas condições de trabalho, ambientes insalubres e acolhimento em\nsaúde mental do servidor.\n䬌 Criar a Mesa Permanente de Negociação Coletiva, com representação\ndas entidades sindicais, para diálogo contínuo sobre condições de\ntrabalho e recomposição de perdas salariais, observando os limites\norçamentários e financeiros do Estado.\n䬌 Instituir o “Conta Aberta” — Programa Estadual de Participação\nCidadã, integrando e sistematizando os canais de participação já\nexistentes (portal do orçamento, audiências públicas, conselhos,\nE-Ouv).\n䬌 Expandir o Governo Digital como canal de informação e participação,\nenfrentando a exclusão e a desigualdade territorial de conectividade.\n䬌 Criar o Observatório Estadual de Dados, com dados integrados para\nsubsidiar a elaboração e gestão das políticas públicas.\n䬌 Reestruturar o Incaper, IDAF e IEMA e demais órgãos de pesquisa,\nassistência técnica e fiscalização ambiental.\n䬌 Manter o Banestes e a Cesan como empresas públicas estratégicos\npara o desenvolvimento econômico e social do Estado.\n\n7"
+          },
+          {
+            "id": "eixo-2",
+            "titulo": "EIXO 2",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2\nAGRICULTURA\nE MEIO AMBIENTE\n8"
+          },
+          {
+            "id": "milhares-de-familias-que-residem-no-espirito-santo-vivem-e-sobrevivem",
+            "titulo": "Milhares de famílias que residem no Espírito Santo, vivem e sobrevivem",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Milhares de famílias que residem no Espírito Santo, vivem e sobrevivem\nou dependem da produção agrícola. São esses produtos que alimentam\na população capixaba e contribuem para a economia do Estado.\nO Instituto de Defesa Agropecuária e Florestal do Espírito Santo (IDAF)\njá mapeou 133 mil produtores da agricultura familiar em nosso território,\ndemonstrando sua magnitude e complexidade. Os dados do Censo 2017,\ndo Instituto Brasileiro de Geografia e Estatística (IBGE), afirmam que no\nEspírito Santo tem de 108 a 130 mil estabelecimentos rurais, sendo 75\n% desses estabelecimentos da agricultura familiar.\nOutro dado importante é que o Espírito Santo tem 95 assentamentos\nda reforma agrária e desses, 23 assentamentos não são terras públicas\nfederais, mas, sim terras públicas estaduais.\nEntre esse público rural, existem várias formas de organicidade da\npopulação trabalhadora que estão nas associações de trabalhadores\nrurais, na organização sindical e no cooperativismo.\nNa agricultura, um tema que deve ser abordado de forma transversal é\na educação do campo, que não deve ser tratada somente no âmbito do\neixo da educação. Duas situações aqui merecem atenção: a primeira é o\nmodelo da educação e a segunda são as escolas rurais.\nNo que tange ao modelo educacional, devemos fortalecer a educação do\ncampo e no campo, com pedagogia apropriada, qual seja, a PEDAGOGIA\nDA ALTERNÂNCIA implementando as diretrizes da educação do campo\naprovadas em dezembro de 2022 pelo Conselho Estadual de Educação\n(CEE). Sobre as escolas rurais, é não permitir que haja fechamento e,\nonde houver viabilidade, reabrir as que foram fechadas.\nA agricultura familiar, que responde por mais de 70% dos alimentos que\nchegam à mesa dos capixabas, precisa de água para essa produção.\nEntretanto, as pesquisas apontam que num futuro já presente, teremos\nescassez de água e, dentro de 20 anos, teremos falta de água potável\nnos grandes centros urbanos e na malha rural. Isso mostra que preservar\ne produzir água é essencial e urgente.\nDiversos estudos demonstram que o Brasil é um dos maiores\nconsumidores de agrotóxicos para a produção de alimentos, dentre\nos quais uma grande maioria é proibida nos países europeus (7 dos 10\nagrotóxicos mais vendidos no Brasil são proibidos na União Europeia)\ne em outros continentes. Não é novidade que além de contaminar os\nalimentos, a saúde do trabalhador, os agrotóxicos contaminam também\nos rios lagos, as lagoas e todo lençol freático.\nÉ sabido que essa comercialização dos agrotóxicos e agroquímicos é\njustamente para alimentar os grandes monocultivos, seja de café, cana,\neucalipto, pedra de boi (pedra negócio).\n9"
+          },
+          {
+            "id": "essa-realidade-exige-um-governo-comprometido-com-a-valorizacao",
+            "titulo": "Essa realidade exige um governo comprometido com a valorização",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Essa realidade exige um governo comprometido com a valorização\ndo agricultor familiar, com a garantia de acesso à terra como direito\nfundamental e com a promoção de um modelo de desenvolvimento que\nrespeite os limites ecológicos do planeta. A sustentabilidade ambiental\né a base sobre a qual qualquer desenvolvimento verdadeiro se constrói.\nO Espírito Santo enfrenta desafios profundos em ambas as frentes. No\ncampo, o acesso à terra segue restrito; o crédito rural com juros acessíveis\né insuficiente; a infraestrutura para escoamento da produção é precária;\ne a juventude rural abandona o campo pela falta de perspectivas e de\num programa que dialogue com a sucessão rural. As áreas suscetíveis\nà desertificação avançam no Norte do Estado, comprometendo a\nprodução, o meio ambiente e a qualidade de vida das comunidades.\nA tragédia histórica do Rio Doce, ocorrida com o crime de rompimento\nda barragem de Fundão, em Mariana-MG, e a degradação das lagoas\ncosteiras ilustram como o modelo de desenvolvimento adotado nas\núltimas décadas privilegiou o lucro sobre a vida. Simultaneamente,\nos órgãos ambientais estaduais foram desmontados, enfraquecidos\ne esvaziados de recursos, perdendo sua capacidade de educação\nambiental, planejamento, monitoramento e fiscalização. A legislação\nestadual, por meio da Lei Complementar nº 1.073/2023, exemplifica esse\nprocesso de destruição institucional.\nReafirmamos o nosso compromisso com os atingidos e atingidas no\nEspírito Santo, adotando todas as providências necessárias para que\no processo de reparação aos danos ambientais, sociais, econômicos\ne de saúde causados pelo crime da Vale, Samarco e BHP Billinton,\ncom o rompimento da barragem de Fundão em Mariana, MG, ocorra\nde maneira justa.\nEstruturas como a do Instituto Capixaba de Pesquisa, Assistência Técnica\ne Extensão Rural (Incaper), responsável pela pesquisa, pela extensão\nrural e, principalmente, pela assistência técnica aos produtores, e o\nIDAF, responsável pela execução da política cartográfica e agrária das\nterras públicas e pela defesa sanitária das atividades agropecuárias\ne florestais no Espírito Santo, tiveram seus orçamentos severamente\ncomprometidos, com destaque para o Incaper.\nO orçamento total da Secretaria de Estado de Agricultura, Abastecimento,\nAquicultura e Pesca do Espírito Santo (SEAG) para 2026 é de 375 milhões\nde reais, distribuídos entre SEAG (177 milhões), IDAF (96,1 milhões),\nINCAPER (73,3 milhões) e Centrais de Abastecimento do Espírito Santo\n(CEASA) (28,8 milhões), demonstrando que há recursos, mas não\ndirecionados estrategicamente para o fortalecimento da agricultura\nfamiliar e de sua sustentabilidade.\nÉ importante alertar para o fato de o Espírito Santo ter um dos maiores\nfundos soberanos da Federação, mas ao visitá-lo, não se encontra\n10"
+          },
+          {
+            "id": "nenhuma-acao-pratica-que-va-ao-encontro-dos-anseios-da-agricultura",
+            "titulo": "nenhuma ação prática que vá ao encontro dos anseios da agricultura,",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "nenhuma ação prática que vá ao encontro dos anseios da agricultura,\nque responde por quase 17% da população espírito-santense.\nO próximo governo estadual precisa colocar a agricultura familiar e a\nsustentabilidade ambiental no centro de suas prioridades. Isso significa\nfortalecer os órgãos ambientais do Estado, restaurar sua capacidade\nde escuta, informação, formação e ação, e reafirmar que preservação\nambiental e desenvolvimento econômico são objetivos complementares.\nPara isso, o órgão responsável pela fiscalização deve fazer cumprir a lei,\nmas buscar também o viés da formação e informação aos potenciais\nvioladores antes da sua aplicação.\nSignifica implementar o Programa Estadual de Agroecologia como política\nestruturante, reconhecendo que a transição para práticas sustentáveis\né tanto um direito dos agricultores quanto uma necessidade planetária.\nSignifica apoiar a reforma agrária, garantir segurança jurídica na terra,\nexpandir o crédito rural acessível e investir em infraestrutura que permita\naos pequenos produtores escoar sua produção com dignidade.\nNosso projeto para o governo estadual se alinha com a agenda nacional\nde sustentabilidade e desenvolvimento inclusivo. Prioriza a educação\nambiental, a conservação da biodiversidade e das unidades de\nconservação e investe em inovação verde e bioeconomia.\nReconhece os direitos dos povos tradicionais, das comunidades\npesqueiras e dos agricultores familiares como sujeitos de direitos,\nnão como obstáculos ao desenvolvimento. Propõe recuperar a\nBacia do Rio Doce e restaurar as lagoas, combater o desmatamento\nilegal e implementar a justiça socioambiental para as comunidades\nhistoricamente prejudicadas pelo modelo de exploração em curso.\nOs compromissos deste eixo buscam transformar o Espírito Santo\nem referência de agricultura familiar, agroecologia e sustentabilidade\nambiental. É o caminho para garantir renda justa para quem produz,\noportunidades para a juventude rural, preservação dos recursos\nnaturais e um futuro viável para as próximas gerações no campo e nas\ncidades capixabas.\nCOMPROMISSOS\n䬌 Desenvolver ações voltadas ao fortalecimento da Agricultura Familiar\nem todos os municípios capixabas como estratégia de promoção do\ndesenvolvimento do interior capixaba.\n䬌 Instituir o “Raiz Capixaba” - Programa Estadual de Moradia\nCamponesa, garantindo o direito à moradia digna no campo, nas\ncomunidades pesqueiras e tradicionais, em parceria com o Governo\nFederal.\n11"
+          },
+          {
+            "id": "ampliar-o-funsaf-fundo-social-de-apoio-a-agricultura-familiar",
+            "titulo": "䬌 Ampliar o FUNSAF - Fundo Social de Apoio à Agricultura Familiar",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Ampliar o FUNSAF - Fundo Social de Apoio à Agricultura Familiar\ncom recursos do Orçamento Geral do Estado (OGE), priorizando\nprojetos coletivos e o acesso de pescadores, indígenas e povos de\ncomunidades tradicionais.\n䬌 Revisar e adequar o Programa Estadual de Agroecologia como política\nestadual estruturante.\n䬌 Viabilizar o acesso à terra e a segurança jurídica no campo, com\nregularização fundiária de territórios tradicionais em parceria com\nórgãos federais, e quando for o caso, aplicar a resolução 169 da\nOrganização Internacional do Trabalho (OIT).\n䬌 Garantir a infraestrutura rural dando aos produtores as condições de\nproduzir e reproduzir no campo.\n䬌 Buscar abertura de novos mercados para a agricultura familiar\ncamponesa e pesqueira.\n䬌 Reestruturar o Incaper com recursos financeiros e humanos.\n䬌 Implementar a diretriz da educação do campo como forma de propiciar\nao campo uma educação apropriada, reconhecendo a Pedagogia da\nAlternância como a pedagogia adequada para a educação camponesa.\n䬌 Implementar o Cadastro Ambiental Rural de Povos e Comunidades\nTradicionais (CAR-Quilombola), operacionalizado pelo IDAF, para\nproteção territorial e acesso a políticas públicas e crédito.\n䬌 Aperfeiçoar o funcionamento do Sistema Estadual de Meio\nAmbiente, com revisão da Lei Complementar nº 1.073/2023, visando\no fortalecimento e integração dos órgãos ambientais (Instituto\nEstadual de Meio Ambiente (IEMA), Agência Estadual de Recursos\nHídricos (AGERH) e IDAF), na perspectiva da superação dos gargalos\nexistentes e dos desafios operacionais (dificuldades na regularização\nambiental e déficit de pessoal, além de conflitos de competências)\nque precisam ser resolvidos.\n䬌 Implantar política estadual de fortalecimento da infraestrutura hídrica\nno meio rural, aprimorando e integrando os programas já existentes\n(como o Projeto Barraginhas) contra estiagem e intrusão salina.\n䬌 Intensificar a implementação do Plano Estadual de Adaptação\nàs Mudanças Climáticas, com foco nas áreas de risco e nas áreas\nagrícolas sujeitas à desertificação.\n䬌 Aperfeiçoar a integração entre os órgãos ambientais para as ações\nde combate ao desmatamento ilegal, intensificando a fiscalização\npor satélite e drones.\n12"
+          },
+          {
+            "id": "fortalecer-o-sistema-estadual-de-unidades-de-conservacao-siseuc",
+            "titulo": "䬌 Fortalecer o Sistema Estadual de Unidades de Conservação (SISEUC)",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer o Sistema Estadual de Unidades de Conservação (SISEUC)\ne realizar estudos para ampliar e criar novas unidades de conservação,\nbem como implantar e implementar corredores ecológicos.\n䬌 Revisar a Política Estadual de Recursos Hídricos com participação e\ncontrole social.\n䬌 Ampliar os incentivos aos agricultores que preservam as nascentes\ne produzem água, acompanhando as políticas estaduais de recursos\nhídricos como o FUNDAGUA/Programa de Pagamento dos Serviços\nAmbientais.\n䬌 Instituir o Conselho Estadual da Bacia do Rio Doce.\n䬌 Revisar, em conjunto com os atingidos e as atingidas e suas\nrepresentações, o papel e o funcionamento da Secretaria de Estado\nde Recuperação do Rio Doce (SERD).\n䬌 Estreitar a colaboração com os órgãos do Governo Federal responsáveis\nda implementação das ações e programas da repactuação do Acordo\nao longo da Bacia do Doce.\n䬌 Ampliar e fortalecer a política de proteção e bem-estar animal, em\nparceria com os municípios e demais órgãos públicos das diferentes\nesferas governamentais, iniciativa privada, instituições de ensino\nsuperior e ONGs que atuam nessa área.\n\n13"
+          },
+          {
+            "id": "eixo-3",
+            "titulo": "EIXO 3",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3\nSAÚDE, ASSISTÊNCIA\nE PROTEÇÃO SOCIAL\n14"
+          },
+          {
+            "id": "a-saude-e-um-direito-de-todos-a-assistencia-social-e-direito-de-quem",
+            "titulo": "A saúde é um direito de todos. A assistência social é direito de quem",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "A saúde é um direito de todos. A assistência social é direito de quem\nvive em situação de vulnerabilidade. A proteção social é o compromisso\ndo Estado em garantir a dignidade e a segurança de seus cidadãos.\nEsses direitos, consagrados na Constituição Federal, não podem ser\nnegligenciados. Precisam estar no centro das prioridades de um governo\nque se coloca ao lado das pessoas. Um Estado que não garante saúde e\nproteção social falha em sua responsabilidade mais fundamental.\nNo Espírito Santo, a situação é preocupante e exige ação imediata.\nMilhares de capixabas vivem sem acesso adequado à saúde. Muitas\nUnidades Básicas de Saúde (UBS) ainda funcionam com precariedades\nde infraestrutura e de pessoal. A capacidade de leitos hospitalares e de\nprontos-socorros é insuficiente para a demanda clínica e emergencial.\nO acesso a especialistas é limitado, e a fila reprimida de atendimentos\nespecializados se prolonga. A atenção primária carece de investimento\nrobusto, e serviços de Serviço de Atendimento Móvel de Urgência\n(SAMU), UBS e Unidade de Pronto Atendimento (UPA) operam com\ndificuldades estruturais.\nA escassez de recursos humanos agrava o quadro. Faltam médicos\nclínicos e especialistas, dentistas, nutricionistas, assistentes sociais e\nagentes de saúde. As regiões interioranas têm dificuldade para atrair\ne reter profissionais, o que sobrecarrega os generalistas. As taxas de\ngravidez na adolescência e a incidência de infecções sexualmente\ntransmissíveis na faixa etária escolar revelam a urgência de programas\natualizados e acessíveis aos jovens, já que a capilaridade dos programas\nnacionais nos municípios menores é limitada.\nOs dados orçamentários confirmam o problema. Apesar dos\ninvestimentos em Saúde serem em um patamar superior ao determinado\npela Constituição, constata-se que isso não tem garantido sua eficácia,\no que confirma nossa avaliação: obedecer a aplicação do mínimo\nconstitucional de 12% do orçamento é fundamental, e eventualmente,\numa aplicação superior a esse percentual, pode ser necessário.\nEntretanto, só isso não é suficiente: é necessária uma gestão eficiente\ne humanizada. A política de terceirização dos serviços implantada pelo\natual governo agrava ainda mais esse quadro que, se por um lado pode\ntrazer agilidade, por outro, traz também a ameaça ao controle público,\nprecariza vínculos e abre espaço para o desvio de finalidade.\nNa área da Assistência Social, constata-se que o funcionamento do\nSistema Único de Assistência Social (SUAS) no Espírito Santo, mesmo\nimplantado em todos os municípios, apresenta graves deficiências.\nO atendimento não comporta a demanda crescente. Os Centros de\nReferência Especializados em Assistência Social (CREAS) não alcançam\ntodas as mulheres vítimas de violência, pessoas em situação de rua não\ntêm acesso garantido à moradia, idosos e pessoas com deficiência\ncarecem de atendimento integral e famílias em vulnerabilidade têm\ndificuldade para acessar a transferência de renda. A política está\n15"
+          },
+          {
+            "id": "fragmentada-revelando-um-estado-que-abdica-de-cuidar-de-quem",
+            "titulo": "fragmentada, revelando um Estado que abdica de cuidar de quem",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "fragmentada, revelando um Estado que abdica de cuidar de quem\nmais precisa.\nO próximo governo precisa enfrentar esse quadro, fortalecendo o SUAS\ncomo política de Estado permanente e as parcerias com os municípios,\ngarantindo profissionais nos territórios desassistidos e assegurando\natenção específica às populações negras, quilombolas, indígenas e\ncomunidades tradicionais. Na assistência social, a transferência de\nrenda precisa ser direito garantido, com participação social fortalecida\ne sem interferência política nos atendimentos.\nOs compromissos desse eixo buscam avançar em um sistema de\nsaúde, assistência e proteção social que funcione de fato para todos os\ncapixabas. Um sistema capaz de transformar a vida de quem mais sofre\ne de reafirmar que o cuidado com a vida é o centro da ação do Estado.\nCOMPROMISSOS\n䬌 Atuar em parceria com os municípios para a execução de reformas,\nampliações e modernizações de UBS e UPAs.\n䬌 Qualificar o atendimento garantindo cofinanciamento para o SAMU,\npara a atenção primária e para a média complexidade.\n䬌 Ampliar o atendimento especializado, via SUS, garantindo maior\noferta de consultas e exames especializados.\n䬌 Fortalecer o Programa Agora Tem Especialistas com foco na Saúde\nda Mulher, em parceria com o Governo Federal, ampliando a oferta de\nconsultas e exames, integrando-o aos fluxos das redes de atenção,\nespecialmente no interior do Estado.\n䬌 Intensificar a parceria com os hospitais filantrópicos ampliando a\ncontratualização com base em indicadores, incluindo os de satisfação\ndo usuário.\n䬌 Intensificar a realização de auditorias e fiscalização dos contratos\nem vigência com Organizações Sociais garantindo transparência e\nqualidade na prestação dos serviços.\n䬌 Promover, em parcerias com os municípios, programas de prevenção\ncomo vacinação, pré-natal, sedentarismo, tabagismo, alcoolismo,\nuso de drogas e outros com metodologia ajustada às necessidades e\nrealidades regionais.\n䬌 Incentivar e fortalecer junto aos municípios o programa “Saúde nas\nEscolas” com palestras, atendimentos, acompanhamento em saúde,\nvacinação e cuidados. Criar espaços formativos de Educação Popular\nem Saúde.\n16"
+          },
+          {
+            "id": "implementar-a-rede-de-atencao-a-oncologia-de-forma-regionalizada",
+            "titulo": "䬌 Implementar a rede de atenção a oncologia de forma regionalizada.",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Implementar a rede de atenção a oncologia de forma regionalizada.\n䬌 Fortalecer os Consórcios Intermunicipais de Saúde.\n䬌 Ativar os mecanismos de transparência e participação social com\nConselhos Estadual, Municipais e Locais fortes, Ouvidoria Ativa e\nPortal de Transparência da Saúde.\n䬌 Concluir as obras dos hospitais que estão em andamento e em\nparceria com os municípios, reformar, ampliar e modernizar as UBS e\nUPAs, equipando-as em conformidade com os parâmetros do Ministério\nda Saúde.\n䬌 Atuar junto ao Governo Federal na formalização de parceria para\npesquisa e tecnologia em saúde, assegurando titularidade pública\ndas tecnologias desenvolvidas, com vistas à criação do Instituto\nde Tecnologia e Patentes em Saúde no ES, projeto estratégico de\ngeração de empregos qualificados e atração de investimentos,\nalinhado à retomada nacional da soberania tecnológica do Sistema\núnico de Saúde (SUS).\n䬌 Revisitar os programas de formação e educação permanentes dos\ntrabalhadores da saúde em temas relativos aos direitos da pessoa\nnegra e povos tradicionais.\n䬌 Implementar e consolidar a Política Nacional de Saúde Integral da\nPopulação Negra (Portaria 992/2009 do Ministério da Saúde).\n䬌 Fortalecer as ações de atenção à saúde integral da população\nnegra e povos tradicionais com estratégias de saúde para famílias\nquilombolas, ciganos, pomeranos e indígenas, valorizando os saberes\ntradicionais de matriz africana e povos tradicionais.\n䬌 Implementar a rede de atenção a oncologia de forma regionalizada.\n䬌 Modernizar e ampliar a utilização de plataforma e aplicativos públicos\ncom uso de inteligência artificial.\n䬌 Estruturar e fortalecer a rede de saúde para enfrentamento de\neventos decorrentes da alteração climática incluindo o desastre/\ncrime de Mariana, o El Niño e outros.\n䬌 Fortalecer o sistema de vigilância em Saúde, contribuindo para\nestruturação municipal com previsão de cofinanciamento.\n䬌 Estruturar a rede de saúde mental, incluindo a construção de Centro\nde Atenção Psicossocial (CAPS).\n䬌 Estimular a ampliação das equipes de saúde bucal na estratégia de\n17"
+          },
+          {
+            "id": "saude-da-familia-criando-centros-de-especialidades-odontologicas",
+            "titulo": "saúde da família criando centros de especialidades odontológicas",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "saúde da família criando centros de especialidades odontológicas\ncom laboratório de próteses.\n䬌 Fortalecer a atenção domiciliar articulada com o programa de atenção\nao idoso.\n䬌 Fortalecer a luta antimanicomial por meio do diálogo com a sociedade\ncivil, buscando atender às suas demandas na implementação da Lei\nPaulo Delgado (Lei 10.216/2001), que visa eliminar os manicômios e\nassemelhados.\n䬌 Implementar política estadual de atenção à saúde da população\nLGBTQIA+, com atendimento especializado.\n䬌 Reestruturar a Política Estadual de Transferência de Renda (Bolsa\nCapixaba) na perspectiva da garantia de direitos.\n䬌 Ampliar e qualificar a rede de proteção socioassistencial (CRAS,\nCREAS e acolhimento institucional) em todo o estado, considerando\na necessidade nos territórios de povos tradicionais e originários e\nmulheres vítimas de violência.\n䬌 Aumentar gradativamente o orçamento estadual destinado ao Fundo\nEstadual de Assistência Social (FEAS) e à Secretaria de Estado de\nTrabalho, Assistência e Desenvolvimento Social (SETADES) para\nfortalecer a política de assistência social, hoje sem dotação própria\npara pautas como a população em situação de rua.\n䬌 Potencializar a Política Estadual de Segurança Alimentar e Nutricional\nde acordo com as diretrizes da Câmara Intersecretarial de Segurança\nAlimentar e Nutricional (CAISAN) e ampliar o Programa de Compra\nDireta de Alimentos (PCDA).\n䬌 Ampliar o Serviço de Proteção Social no Domicílio para Pessoas com\nDeficiência e Pessoas Idosas nos Centros de Referência em Assistência\nSocial (CRAS) e nos CREAS, visando prevenir o isolamento, promover\na autonomia e atuar nas situações de violações de direitos.\n䬌 Criar sistema informatizado e unificado (Estado e municípios), SUAS\nDIGITAL, para a gestão da assistência social estadual, otimizando\ne agilizando o atendimento às famílias e indivíduos em situação de\nvulnerabilidade.\n\n18"
+          },
+          {
+            "id": "eixo-4",
+            "titulo": "EIXO 4",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4\nEDUCAÇÃO, CIÊNCIA\nE TECNOLOGIA\n19"
+          },
+          {
+            "id": "a-constituicao-federal-de-1988-atribui-a-educacao-o-papel-de-promover",
+            "titulo": "A Constituição Federal de 1988 atribui à educação o papel de promover",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "A Constituição Federal de 1988 atribui à educação o papel de promover\no pleno desenvolvimento da pessoa, de prepará-la para o exercício da\ncidadania e de qualificá-la para o trabalho. Educar, portanto, é abrir caminhos\ne sustentar projetos de desenvolvimento que se pretendam justos.\nNo Espírito Santo, a rede estadual de ensino público é composta por mais\nde 370 escolas, atende a mais de 180 mil alunos, segundo o Censo Escolar,\ne conta com cerca de 21 mil servidores. É uma organização educacional\nde grande porte, mas que ainda enfrenta desafios estruturais que afetam\nprejudicialmente a população estudantil que depende integralmente da\neducação pública.\nA desigualdade educacional entre classes sociais persiste. Alunos da\nrede pública têm menos acesso à preparação adequada. O modelo\natual, focado excessivamente em aprovação automática, reforça\ndesigualdades em vez de reduzi-las, e muitos estudantes progridem\nde séries sem domínio real dos conteúdos. A educação foi reduzida\na números: Índice de Desenvolvimento da Educação Básico (IDEB),\ntaxas de aprovação e metas estatísticas tornaram-se fim em si\nmesmos. A escola virou produtora de indicadores, não espaço de\nformação crítica e emancipadora.\nOs professores foram responsabilizados individualmente por problemas\nestruturais do sistema. Enfrentam excesso de burocracia com\npreenchimento constante de relatórios, retirando o precioso tempo\ndo planejamento ensino-aprendizagem, além de turmas numerosas,\nplano desvalorizado e descumprimento do piso salarial profissional\nna sua integralidade.\nA infraestrutura está precária em muitas regiões. As escolas carecem\nde condições mínimas de funcionamento. As novas tecnologias não\nchegam às comunidades mais pobres. A educação indígena, quilombola,\ndo campo e de jovens e adultos carece de políticas específicas.\nDiante desse quadro, é preciso reafirmar que qualidade educacional exige\ninvestimento robusto em profissionais da educação. Os professores são\no pilar sobre o qual se constrói qualidade. Valorizar a carreira, com planos\nestruturados, piso salarial adequado, formação continuada e condições\nde trabalho dignas, é o ponto de partida.\nMas os desafios não se encerram na educação formal, novos desafios\nsurgem a cada dia com os avanços da ciência e da tecnologia no mundo\nmoderno, pois exigem respostas eficazes e investimento contínuo do\ngoverno. É preciso investir na infraestrutura científica, tecnológica e\nde inovação em todas as unidades escolares nas diversas regiões do\nEspírito Santo com o objetivo de proporcionar uma formação profissional\nque amplie as oportunidades de empregos qualificados.\n\n20"
+          },
+          {
+            "id": "a-educacao-exige-aprendizagem-real-nao-numeros-artificiais-necessita",
+            "titulo": "A educação exige aprendizagem real, não números artificiais. Necessita",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "A educação exige aprendizagem real, não números artificiais. Necessita\nde gestão democrática, com eleição direta de diretores e conselhos\nescolares fortalecidos. Requer infraestrutura adequada, conectividade\nuniversal e acesso equitativo à tecnologia. Demanda respeito às\nmodalidades educacionais em suas especificidades: educação\nespecial, educação do campo, indígena, quilombola e educação de\njovens e adultos. Integra-se ao projeto de desenvolvimento regional\nsustentável, articulando educação básica, educação profissional e\nensino superior público.\nUm governo comprometido com a educação pública e com os avanços\nem ciência e tecnologia estabelece regime efetivo de colaboração\ncom municípios, sem transferências unilaterais de responsabilidades.\nRealiza concursos públicos periódicos com redução progressiva\nde contratos temporários. Cria instrumentos de interiorização do\nconhecimento. Integra educação ao desenvolvimento econômico\nregional inclusivo e sustentável.\nOs compromissos a seguir buscam transformar a educação pública\ne o acesso à formação em ciência, tecnologia e inovação em direito\nplenamente exercido, capaz de transformar vidas e construir um novo\nfuturo para o Espírito Santo.\nCOMPROMISSOS\n䬌 Avaliar e atualizar o sistema de gestão democrática e participativa,\ngarantindo a escolha dos gestores e a integração escola-famíliacomunidade.\n䬌 Garantir o cumprimento integral e atualizado do piso salarial\nnacional, com plano de carreira estruturado e política permanente de\nvalorização profissional.\n䬌 Reduzir a burocracia escolar, simplificando processos e assegurando\ngestão eficiente e focada na aprendizagem.\n䬌 Intensificar a aplicação da política permanente de formação\ncontinuada dos profissionais de educação por meio de parcerias com\nESESP, Universidade Federal do Espírito Santo (Ufes), Instituto Federal\ndo Espírito Santo (Ifes) e outras instituições, de forma democrática\ne participativa com o fortalecimento do FÓRUM ESTADUAL\nPERMANENTE DE APOIO A FORMAÇÃO DOCENTE – FEPAD. E nesse\nprocesso, garantir licenças para qualificação desses profissionais\nem programas de Pós-Graduação de Mestrado e Doutorado.\n䬌 Criar política estadual de cuidado com a saúde mental dos\nprofissionais, com apoio psicossocial, prevenção ao adoecimento e\nvalorização do bem-estar do docente.\n21"
+          },
+          {
+            "id": "fortalecer-o-programa-estadual-preparatorio-para-enem-e-vestibulares",
+            "titulo": "䬌 Fortalecer o programa estadual preparatório para Enem e vestibulares,",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer o programa estadual preparatório para Enem e vestibulares,\nampliando o acesso à universidade pública e técnica e incentivar a\ncriação e o fortalecimento de cursinhos populares preparatórios para\no ingresso nas universidades e Institutos Federais.\n䬌 Fortalecer a implementação de políticas estaduais de permanência\nestudantil (apoio socioeconômico, assistência estudantil e inclusão\ndigital) para reduzir a evasão escolar.\n䬌 Fortalecer a educação inclusiva em toda a rede estadual assegurando\nacessibilidade física, pedagógica e tecnológica.\n䬌 Fortalecer as escolas do campo, quilombolas e Escolas Família\nAgrícola, com educação contextualizada e inclusiva.\n䬌 Fortalecer os programas de apoio à educação nos assentamentos,\nincluindo a construção e reforma de escolas.\n䬌 Fortalecer a parceria com o Movimento de Educação Promocional do\nEspírito Santo (MEPES) e apoiar a rede de Escolas Família Agrícola e\noutras que adotam a Pedagogia da Alternância.\n䬌 Garantir a implementação de políticas de equidade racial, inclusão\nsocial e respeito à diversidade, com formação docente, materiais\nacessíveis e cumprimento da legislação.\n䬌 Fortalecer a educação ambiental de forma transversal no currículo\ndas escolas estaduais, assegurando inclusão nos Projeto Político\nPedagógico (PPP).\n䬌 Revisar as atuais diretrizes curriculares de sustentabilidade nas\nescolas e sua eficácia, discutindo a reimplantação do Programa\nEscolas Sustentáveis.\n䬌 Articular, com o Governo Federal, a expansão do Ifes, ampliando os\npolos técnicos regionais de acordo com a vocação local.\n䬌 Fortalecer a oferta de bolsas para Jovens Talentos na educação\nbásica.\n䬌 Fortalecer a implantação de laboratórios maker e de programação\nnas escolas estaduais.\n䬌 Criar Grupo de Trabalho a ser constituído no âmbito do governo,\ncom a participação da sociedade, que realizará estudos sobre a\nnecessidade da criação de uma Universidade Estadual.\n䬌 Expandir feiras de ciência, olimpíadas de ciência e clubes de robótica.\n\n22"
+          },
+          {
+            "id": "expandir-e-qualificar-a-politica-de-educacao-integral-em-tempo",
+            "titulo": "䬌 Expandir e qualificar a política de EDUCAÇÃO INTEGRAL EM TEMPO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Expandir e qualificar a política de EDUCAÇÃO INTEGRAL EM TEMPO\nINTEGRAL, viabilizando recursos para garantir o aumento da jornada,\nseja com foco na equidade (direcionamento de recursos, priorizando\nestudantes em situação de vulnerabilidade socioeconômica e\nnas populações negras, indígenas, quilombolas e do campo);\nfinanciamento (com base no que prevê o aumento gradual consonante\nao Plano Nacional de Educação (PNE)); valorização profissional com\ngarantia de condições de trabalho adequadas e de tempo remunerado\nreservado para a formação continuada e para o planejamento dos\nprofessores; infraestrutura – adequação e construção de novas\nunidades escolares que atendam qualitativamente aos estudantes e\nprofissionais para esta oferta educacional.\n\n23"
+          },
+          {
+            "id": "eixo-5",
+            "titulo": "EIXO 5",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5\nCULTURA, TURISMO\nE ESPORTE\n24"
+          },
+          {
+            "id": "turismo-cultura-e-esporte-sao-politicas-publicas-imprescindiveis-para",
+            "titulo": "Turismo, cultura e esporte são políticas públicas imprescindíveis para",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Turismo, cultura e esporte são políticas públicas imprescindíveis para\no esforço de construção da paz social, geração de oportunidades,\nreconstrução democrática e desenvolvimento do Espírito Santo que\nqueremos. Através da qualificação, expansão e criação de novas políticas\nculturais, esportivas e de turismo, vamos gerar novas oportunidades,\npotencializar processos criativos, inserir jovens em atividades\nesportivas e ampliar o turismo como fonte de lazer, conhecimento e\ninvestimento dinamizando a economia, desenvolvendo espaços comuns\nde convivência e aprimorando as relações sociais com base em valores\ncivilizacionais e democráticos.\nNa cultura, é necessário retomar o papel do Estado de formulador\ne executor da política cultural. Adotar políticas destinadas ao\nfortalecimento de atividades, à valorização dos seus produtores e\ndos seus espaços de realização, à interlocução e debates com os\nrepresentantes dos movimentos culturais, garantindo a participação\nsocial e a democratização da gestão. Para tanto, é imprescindível\nconsolidar a estrutura institucional do órgão gestor, a Secretaria de\nEstado da Cultura.\nNosso compromisso é ampliar a participação efetiva e permanente\ndos movimentos culturais organizados, por meio do conselho e outras\ninstâncias; garantir recursos para a circulação da produção cultural;\ntransformar os espaços culturais em multiplicadores de ativos culturais;\nformar artistas, produtores e gestores culturais; construir programas\ne projetos que contribuam para a formação de público e salvaguardar\nnosso patrimônio cultural material e imaterial fomentando as ações de\npreservação da memória, história e tradições.\nO financiamento da cultura por meio dos editais será aperfeiçoado para\nque haja mais transparência e democratização do acesso dos projetos\nda cultura popular a recursos públicos. Além disso, será fundamental\no Espírito Santo estar inserido na discussão e na implementação do\nSistema Nacional de Cultura com fomento direto à cultura capixaba, em\nparceria com o Governo Federal, municípios e iniciativa privada.\nO fomento ao turismo é, sem nenhuma dúvida, um dos desafios\nprioritários para minimizar o impacto da reforma tributária no Espírito\nSanto. Atrativos como nossas montanhas e suas paisagens, gastronomia,\ncultura, artesanato e nosso belo litoral, se dotados de investimentos,\ninfraestrutura, incentivos e capacitação de pessoas, poderão estimular a\neconomia estadual, gerar empregos e renda, atrair novos investimentos\ne consolidar um modelo de desenvolvimento sustentável.\nO desenvolvimento que queremos construir coletivamente tem no turismo\num dos eixos estratégicos mais importantes. Entretanto, reafirmamos o\ncompromisso com a preservação dos recursos naturais e o apoio ao turismo\nde base comunitária que conserve culturas e costumes nos territórios.\n\n25"
+          },
+          {
+            "id": "vamos-resgatar-a-funcao-social-do-esporte-buscando-ampliar-o-acesso",
+            "titulo": "Vamos resgatar a função social do esporte buscando ampliar o acesso",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Vamos resgatar a função social do esporte buscando ampliar o acesso\ndesde a infância e em todos os cantos do território capixaba, com os\nmunicípios, iniciativas próprias, parceria com projetos sociais, clubes\ne comunidades. Promover e incentivar a participação de todos os\ncapixabas, desde a criança até a terceira idade, em atividades esportivas\ne em conformidade com os três eixos definidos pela Política Nacional de\nEsportes: esporte de formação; esporte para a vida toda e o esporte de\nalto rendimento.\nOs compromissos que seguem valorizam nossa diversidade cultural e\nestimulam atividades criativas, esportivas e de turismo para criar mais\noportunidades de vida e trabalho, gerar riqueza econômica, estimular\nnovos talentos e fortalecer identidades coletivas. Investir nessas\náreas significa investir na criatividade, na diversidade, na vontade e\nno potencial inovador de nossa gente rumo a uma sociedade de paz,\nharmonia, respeito e preservação da vida.\nCOMPROMISSOS\n䬌 Consolidar a estrutura institucional da Secretaria de Estado da Cultura\ncomo órgão formulador e executor de política cultural, com recursos\ngarantidos para a circulação da produção cultural.\n䬌 Desenvolver estudos para substituir o modelo de financiamento da\nLei de Incentivo à Cultura Capixaba (LICC), considerando a reforma\ntributária. Além do financiamento, o novo modelo deverá garantir a\ndemocratização da distribuição e evitar a centralização de recursos\nnos grandes centros urbanos.\n䬌 Ampliar e fortalecer os Territórios Rurais da Cultura, os Pontos\ne Pontões de Cultura e os novos polos de cultura no interior do\nEspírito Santo.\n䬌 Desenvolver estudos visando a criação do Instituto Cultural do Espírito\nSanto e do Centro Cultural de Referência para Equidade Racial em um\núnico equipamento, preservando as especificidades de cada função.\n䬌 Fortalecer as políticas de cultura negra, quilombola e de povos\ntradicionais por meio da proteção da capoeira como patrimônio\nimaterial (art. 216 da Constituição Federal), do plano de salvaguarda\nde manifestações afro-brasileiras em parceria com o Instituto do\nPatrimônio Histórico e Artístico Nacional (Iphan) e programa de\nreconhecimento aos mestres e mestras das culturas tradicionais.\n䬌 Garantir que todas as ações voltadas ao turismo tenham como\nprioridade absoluta a preservação dos recursos naturais e o\nfortalecimento do turismo de base Comunitária.\n\n26"
+          },
+          {
+            "id": "priorizar-e-acelerar-a-reforma-do-centro-de-convencoes-de-carapina",
+            "titulo": "䬌 Priorizar e acelerar a reforma do Centro de Convenções de Carapina,",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Priorizar e acelerar a reforma do Centro de Convenções de Carapina,\npreparando-o para a realização de eventos nacionais e internacionais.\n䬌 Fortalecer o Programa de Regionalização do Turismo (Instâncias de\nGovernança Regional e Conselho Estadual de Turismo) e o Programa\nFederal de Facilitação de Crédito ao Turismo.\n䬌 Fortalecer uma rede de equipamentos turísticos no Espírito\nSanto, criando incentivo ao deslocamento e rotas que conectem\nestrategicamente vários equipamentos turísticos e culturais e da\neconomia criativa capixaba.\n䬌 Criar novos roteiros turísticos dos quilombos (Viva Quilombo) e\npromover o afroturismo e o turismo rural e de base comunitária.\n䬌 Incentivar a realização de grandes eventos no Espírito Santo como\ninstrumento de fortalecimento do turismo e da economia local.\n䬌 Incentivar a expansão de voos charter, para gerar aumento do fluxo\nde visitantes e o fortalecimento da economia do turismo em todas as\nregiões do estado.\n䬌 Ampliar a participação do Espírito Santo em feiras e eventos nacionais\ne internacionais de turismo.\n䬌 Buscar parcerias para a implementar marinas públicas para fortalecer\no turismo náutico.\n䬌 Fortalecer a realização da Famtour e Press, com estratégias para\npromover os atrativos turísticos.\n䬌 Buscar parcerias que viabilizem a infraestrutura necessária para\ntrazer de volta ao Espírito Santo as rotas regulares de grandes navios\nde cruzeiro atracando nos portos capixabas.\n䬌 Promover a revitalização do Centro de Vitória em parceria com o\nmunicípio, para fins turísticos e culturais.\n䬌 Incentivar a oferta hoteleira e diversificar os produtos turísticos para\naumentar a competitividade do Estado como destino turístico.\n䬌 Revisar e implementar o Plano Estadual do Esporte (PEEL), com suas\n72 metas e 63 projetos já formulados, garantindo monitoramento\ncontínuo, participação social e cumprimento do cronograma decenal\njá pactuado.\n䬌 Fortalecer o Programa Estadual de Bolsa-Atleta e implementar\nprogramas de paradesporto (esporte adaptado).\n䬌 Criar o projeto “Espírito Santo de Todos os Esportes”, garantindo\ncontinuidade esportiva para atletas de 18 a 20 anos oriundos dos\njogos escolares (JEES).\n27"
+          },
+          {
+            "id": "valorizar-e-fortalecer-as-modalidades-esportivas-voltadas-para",
+            "titulo": "䬌 Valorizar e fortalecer as modalidades esportivas voltadas para",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Valorizar e fortalecer as modalidades esportivas voltadas para\npessoas 60+.\n\n28"
+          },
+          {
+            "id": "eixo-6",
+            "titulo": "EIXO 6",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6\nMOBILIDADE URBANA,\nINFRAESTRUTURA,\nHABITAÇÃO\nE SANEAMENTO\n\n29"
+          },
+          {
+            "id": "a-constituicao-federal-de-1988-consagra-dentre-os-direitos-sociais-a",
+            "titulo": "A Constituição Federal de 1988 consagra, dentre os direitos sociais, a",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "A Constituição Federal de 1988 consagra, dentre os direitos sociais, a\nmoradia, o transporte e o saneamento. O direito à cidade, entendido\ncomo o direito de não exclusão da sociedade urbana e de acesso aos seus\nbenefícios, exige a promoção de políticas que universalizem, a oferta de\nmoradia digna e de possibilidade de deslocamentos dos cidadãos, com\nampliação do transporte público de alta capacidade que garanta o direito\nde ir e vir com qualidade, velocidade e segurança.\nEssas políticas, no âmbito do governo estadual, devem buscar promover\na qualidade de vida das pessoas de forma inclusiva e sustentável e reduzir\nos desníveis nos atuais indicadores de desenvolvimento humano.\nO próximo governo terá o desafio de qualificar a gestão do sistema de\ntransportes na Grande Vitória, pois nos últimos 20 anos as gestões\nestaduais trataram esse tema como política de governo e não como\npolítica de Estado. Os estudos realizados foram descontinuados e\ninsuficientes para produzir as informações estratégicas necessárias para\na construção de um Plano Integrado de Mobilidade Metropolitana.\nA elaboração desse plano precisa ser retomada no início do próximo\ngoverno e deve envolver atores da sociedade tais como especialistas,\nparlamentares federais e estaduais, municípios, empresários,\nrepresentantes dos trabalhadores e organizações sociais de usuários do\ntransporte coletivo.\nPor se tratar de um projeto de longo prazo, os estudos, projetos de\nengenharia, licenciamento, estruturação financeira, captação de\nrecursos e contratação das obras precisam ser priorizados para que a\nsua implantação seja possível ao longo das próximas décadas.\nNão se trata de um projeto para ser executado em apenas um governo.\nMas é preciso dar, agora, um passo à frente para que daqui a duas\ndécadas não estejamos com o mesmo diagnóstico de hoje. Na prática,\natualmente, não existe um projeto estratégico integrado que possa ser\nexecutado no curto prazo.\nIsso ocorreu porque neste último ciclo, os governantes desenvolveram\nprojetos pontuais que não tiveram continuidade. Podemos citar como\nexemplo o BRT; o túnel sob a Baía de Vitória, ligando Vitória a Vila Velha;\ne a Quarta Ponte, ligando Cariacica à Vitória. Projetos estruturantes que\nforam descontinuados.\nNesse período, foram investidos cerca de R$ 60 milhões para desenvolver\nprojetos que nunca saíram do papel porque foram abandonados pelo\ngovernante seguinte. A descontinuidade nesta área foi a marca do último\nciclo político no Espírito Santo.\nPortanto, é necessário aprofundar o estudo do BNDES, que considerou\na viabilidade da implantação de corredores de BRT, além de transporte\n30"
+          },
+          {
+            "id": "publico-de-alta-capacidade-tipo-vlt-ou-similares-a-elaboracao-do-plano",
+            "titulo": "público de alta capacidade, tipo VLT ou similares. A elaboração do Plano",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "público de alta capacidade, tipo VLT ou similares. A elaboração do Plano\nde Mobilidade Metropolitana, com integração de modais, é fundamental\ne precisa começar no início do próximo governo para ser implantado nas\npróximas décadas.\nDa mesma forma, o novo marco nacional do saneamento exige medidas\nurgentes para alcançar as metas qualitativas e quantitativas nele\nestabelecidas, sendo necessária uma revisão dos mecanismos adotados\npara sua gestão, que privilegiam o lucro de parceiros privados inseridos\nna prestação desses serviços.\nO direito de viver nas cidades também diz respeito ao direito à moradia.\nPortanto, é necessário e urgente reduzir o déficit habitacional no Espírito\nSanto, que atinge cerca de 123.855 famílias, correspondendo a 20,47%\ndas famílias capixabas (IJSN/Censo 2022), e garantir moradia digna\npara todos. Só com a implementação de políticas efetivas de oferta\nde novas unidades habitacionais e ações de qualificação e inserção de\náreas ocupadas na malha urbana, dotada de adequada infraestrutura\nde serviços, será possível eliminar as segregações ainda existentes e\nreduzir os custos da habitação para amplos setores da sociedade que\nhoje concorrem com grupos especulativos que se beneficiam desse\nmercado.\nOs compromissos que aqui assumimos buscam dar concretude ao\nnosso entendimento de como garantir, em conjunto com a sociedade\norganizada e instituições, o direito à cidade para todos os cidadãos e\ncidadãs capixabas.\nCOMPROMISSOS\n䬌 Criar Comitê de Mobilidade Urbana com governo estadual, instituições\nde ensino e pesquisa, municípios e sociedade civil, para planejar,\nprojetar e monitorar a execução de soluções de mobilidade urbana.\n䬌 Retomar os estudos que tratam da defesa dos interesses públicos e\nque requalifiquem o espaço urbano, melhorando a circulação, com\nfoco na melhoria da eficiência do sistema de transporte coletivo.\n䬌 Aprofundar o estudo do Banco Nacional do Desenvolvimento\n(BNDES), que considerou a viabilidade da implantação de projetos de\ncorredores de BRT, além de transporte público de alta capacidade,\ntipo VLT ou similares para serem implantados nas próximas décadas.\n䬌 Desenvolver o Plano Integrado de Mobilidade Metropolitano, com\na participação de especialistas, empresários, trabalhadores e\nsociedade organizada.\n䬌 Realizar estudos técnicos para constituir fontes extra tarifárias de\n31"
+          },
+          {
+            "id": "financiamento-do-transporte-coletivo-em-conformidade-com-o-novo",
+            "titulo": "financiamento do transporte coletivo, em conformidade com o novo",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "financiamento do transporte coletivo, em conformidade com o novo\nmarco legal (Lei 15.432/2026) avaliando a viabilidade da implantação\nda Tarifa Zero, alinhados aos estudos em curso no âmbito do Governo\nFederal e o Ministério Público de Contas (MPContas) do Espírito Santo.\n䬌 Instituir o Programa Capixaba de Transição Energética no Transporte\nPúblico com o objetivo de corrigir a rota da transição do transporte\nno Espírito Santo, que fortalece o individual e o privado sem a\nconsolidação de uma estratégia pública de transição no transporte\ncoletivo.\n䬌 Criar programas e ações educativas visando a redução da violência\nno trânsito.\n䬌 Apoiar a implantação de unidades habitacionais populares em parceria\ncom movimentos e entidades sociais que lutam pelo direito à moradia,\nbem como com financiamento do Programa Minha Casa, Minha Vida,\ndo Governo Federal.\n䬌 Revisar o Programa Habitacional do Estado (PHSES) como facilitador\nde construção e melhorias em moradias, com subsídio para aquisição\nde material e oferta de formação de mão de obra.\n䬌 Fortalecer o saneamento público de qualidade por meio da Cesan\ne demais operadoras, e ampliar os mecanismos que garantam a\nsegurança hídrica para o abastecimento humano e a produção\nagropecuária, principalmente para os pequenos e médios produtores\nrurais.\n䬌 Avançar no cumprimento das metas do Plano Nacional de Saneamento,\nampliando a oferta de serviços em todo o estado, tendo como\nprioridade a zona rural.\n䬌 Garantir ações de contenção e drenagem para prevenção e controle\nde enchentes, alagamentos e inundações.\n䬌 Fortalecer, valorizar e ampliar os recursos financeiros e humanos\npara garantir presença e atuação da Defesa Civil Estadual, bem como\napoiar estruturação das defesas nos municípios.\n䬌 Fortalecer, valorizar e ampliar os recursos financeiros e humanos\npara garantir presença e atuação da Defesa Civil Estadual,\nbem como apoiar estruturação das defesas nos municípios.\n\n32"
+          },
+          {
+            "id": "eixo-7",
+            "titulo": "EIXO 7",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7\nJUVENTUDES\n33"
+          },
+          {
+            "id": "a-construcao-de-um-do-brasil-soberano-democratico-e-justo-tem-nas",
+            "titulo": "A construção de um do Brasil soberano, democrático e justo, tem nas",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "A construção de um do Brasil soberano, democrático e justo, tem nas\njuventudes uma de suas forças motrizes e o desenvolvimento do Espírito\nSanto será construído em consonância com esse projeto nacional.\nA implementação de políticas transversais assegura a todos e todas\no direito à vida com dignidade e liberdade e coloca a igualdade de\noportunidades no centro da ação do Estado. Desta forma, se enfrenta\nas desigualdades e são criadas condições concretas de formação,\nqualificação e ingresso no mundo do trabalho, preparando as novas\ngerações para as transformações tecnológicas que redefinem o trabalho.\nÉ a juventude negra que concentra os maiores índices de desemprego,\nevasão escolar e exposição à violência. Em sintonia com o Plano\nNacional Juventude Negra Viva, nosso compromisso é com a redução\nda mortalidade juvenil negra e a ampliação do acesso dos jovens pretos\ne pardos à educação, à qualificação e ao trabalho digno.\nÉ fundamental dar atenção especial às juventudes capixabas das periferias\ne do interior, rurais, das águas, LGBTQIA+, estudantes e trabalhadoras,\ncom a articulação do trabalho e renda e ampliação do acesso à educação,\nesporte, cultura, lazer como direitos sociais fundamentais.\nNossos compromissos apontam para o fortalecimento das políticas\npara as juventudes, protagonistas da sociedade, sujeitos de direitos,\ncidadania e com oportunidades iguais.\nCOMPROMISSOS\n䬌 Instituir o Sistema Estadual para Juventudes do Espírito Santo\nprevisto no Plano Estadual de Políticas para Juventudes, mas não\nimplementado.\n䬌 Fortalecer o Conselho Estadual de Juventudes.\n䬌 Revisar e atualizar o Plano Estadual de Políticas para Juventudes.\n䬌 Institucionalizar os Centros de Referência das Juventudes (CRJs)\ncomo política permanente de Estado.\n䬌 Aprofundar a implementação do Plano Juventude Negra Viva em\nsintonia com as diretrizes federais de enfrentamento ao racismo\nestrutural e à violência letal contra jovens negros.\n䬌 Potencializar os programas de fortalecimento do sistema\nsocioeducativo e de reinserção social dos jovens atendidos pelo\nInstituto de Atendimento Socioeducativo do Espírito Santo (IASES).\n䬌 Criar o Programa Juventude Tech Capixaba, com incubadoras\npúblicas de inovação jovem integradas aos Centros de Referências\ndas Juventudes (CRJs), universidades e Institutos Federais.\n\n34"
+          },
+          {
+            "id": "criar-o-programa-juventude-viva-bem-de-promocao-da-saude-mental",
+            "titulo": "䬌 Criar o Programa Juventude Viva Bem, de promoção da saúde mental",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Criar o Programa Juventude Viva Bem, de promoção da saúde mental\ne do bem-estar das juventudes.\n䬌 Realizar estudos para revisar e integrar os diversos programas\nexistentes, visando instituir a Política Estadual de Acolhimento\nIntegral da Juventude LGBTQIA+.\n\n35"
+          },
+          {
+            "id": "eixo-8",
+            "titulo": "EIXO 8",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 8\nRESPEITO ÀS\nDIVERSIDADES,\nCOMBATE ÀS\nDESIGUALDADES E\nJUSTIÇA SOCIAL\n36"
+          },
+          {
+            "id": "no-espirito-santo-o-acesso-a-direitos-e-servicos-publicos-varia-conforme",
+            "titulo": "No Espírito Santo, o acesso a direitos e serviços públicos varia conforme",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "No Espírito Santo, o acesso a direitos e serviços públicos varia conforme\no gênero, a cor da pele, a idade, a deficiência e o lugar onde a pessoa\nvive. Mulheres ameaçadas e comunidades inteiras seguem distantes\ndos equipamentos públicos. Este eixo busca reduzir essas distâncias\ne enfrentar as desigualdades que separam o direito reconhecido na\nConstituição da realidade concreta.\nA violência contra as mulheres permanece grave. Em 2024, o Espírito\nSanto esteve entre os 11 estados em que os casos de feminicídio\ncresceram, segundo o Fórum Brasileiro de Segurança Pública. No\ninterior e nas áreas rurais, faltam delegacias da mulher, casas-abrigo e\natendimento integrado. E boa parte das agressões acontecem dentro de\ncasa, o que torna o acolhimento e a resposta rápida definidores de vida\nou morte. À violência soma-se a desigualdade econômica: mulheres\nganham menos, têm menos acesso a crédito e carregam sozinhas o\ncuidado da família.\nDiante deste lastimável quadro de deterioração da integridade de toda\nordem em relação as mulheres, destacamos que o Pacto Nacional\nContra o Feminicídio, lançado pelo Governo Lula, é, até o momento,\na melhor estratégia para o enfrentamento dessa vergonhosa marca\nna sociedade brasileira. Pacto que contou com a adesão do atual\ngoverno. E nós, no governo, em parceria com os diversos movimentos\nde mulheres, vamos construir a dinâmica e um cronograma para as\netapas de sua implementação.\nO Espírito Santo é um estado majoritariamente negro. Cerca de 60% da\npopulação se declara preta ou parda (IBGE, Censo 2022). Essa maioria,\nporém, não se reflete nos espaços de poder, na renda nem na segurança.\nO racismo estrutural aparece na violência policial, no encarceramento\nem massa da juventude negra e no acesso desigual à saúde, à educação\ne ao trabalho. No Norte do Estado, comunidades quilombolas do Sapê\ndo Norte, em municípios como Conceição da Barra e São Mateus,\nseguem à espera da titulação de suas terras e de serviços públicos\nque respeitem seu modo de vida.\nA exclusão também marca outros grupos. Pessoas LGBTQIAPN+\nenfrentam discriminação, evasão escolar e violência, muitas vezes sem\nnenhuma rede de acolhimento perto de casa. A população idosa cresce\nem ritmo acelerado: a idade mediana do capixaba subiu de 29 para\n36 anos em pouco mais de uma década (IBGE), e com ela aumenta a\ndemanda por cuidado, saúde e proteção contra o abandono. Pessoas\ncom deficiência ainda esbarram em calçadas intransitáveis, prédios sem\nacesso, transporte inadequado e na Lei de Cotas que não se cumpre.\nFamílias de crianças neurodivergentes procuram diagnóstico e apoio\nque o poder público raramente oferece.\nDiante disso, o caminho é construir políticas permanentes. Interiorizar\na proteção à mulher, com delegacias, casas-abrigo e atendimento\n37"
+          },
+          {
+            "id": "integrado-em-todas-as-regioes-criar-a-estrutura-estadual-de-equidade",
+            "titulo": "integrado em todas as regiões, criar a estrutura estadual de equidade",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "integrado em todas as regiões, criar a estrutura estadual de equidade\nracial e cumprir o Estatuto da Igualdade Racial; criar novos espaços de\nacolhimento para a população LGBTQIAPN+; garantir envelhecimento\ndigno e atenção integral à pessoa idosa; e tornar a acessibilidade regra,\ne não exceção, para as pessoas com deficiência.\nAfirmamos que no nosso governo praticaremos a transversalidade das\npolíticas e suas ações, com permanente diálogo interno, visando a\nintegração e compromissos de todos os setores do governo, com os\nresultados para o bem-estar da sociedade.\nOs compromissos apresentados neste Programa fortalecem o respeito\nàs diversidades para reduzir desigualdades e promover a justiça social\nem nosso Estado.\nCOMPROMISSOS\n䬌 Fortalecer a estrutura da Secretaria de Políticas Públicas para as\nMulheres e o sistema de monitoramento por indicadores de violência\ne empregabilidade feminina.\n䬌 Ampliar a quantidade de Casas de Apoio à Mulher no interior, a rede\nde casas-abrigo regionais e o número de Casas da Mulher Brasileira,\nem parceria com o Governo Federal.\n䬌 Ampliar o atendimento integrado (psicológico, social e jurídico) nos\nCentros Regionais de Atendimento à Mulher, com protocolos regionais\nentre polícia, assistência social e saúde.\n䬌 Ampliar a linha de crédito e microcrédito para mulheres\nempreendedoras (Programa Crédito Mulher), priorizando mulheres\nvulneráveis e vítimas de violência.\n䬌 Elaborar programa de acolhimento emergencial para mulheres e\nfilhos em situação de violência, com auxílio financeiro emergencial\ntemporário para romper com o agressor.\n䬌 Propor aperfeiçoamento legal para fortalecer critérios de proteção às\nmulheres e prevenção de violência nos espaços públicos.\n䬌 Criar Projeto de Lei Estadual impedindo que condenados por violência\ndoméstica, feminicídio, estupro, assédio ou importunação sexual\nassumam cargos públicos estaduais, com exigência de certidão\nnegativa específica.\n䬌 Formar forças de segurança e capacitar profissionais de saúde,\neducação e assistência social para aplicação da Lei Maria da Penha e\nidentificação precoce da violência.\n38"
+          },
+          {
+            "id": "aprofundar-na-implementacao-de-programas-de-reeducacao-para",
+            "titulo": "䬌 Aprofundar na implementação de programas de reeducação para",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Aprofundar na implementação de programas de reeducação para\nhomens autores de violência e desenvolver plano articulado nos\nmunicípios com eixos para homens, mulheres e jovens.\n䬌 Promover campanhas estaduais contínuas de prevenção e inserir no\ncurrículo escolar conteúdos sobre respeito, igualdade e combate à\nviolência e ao machismo.\n䬌 Promover os programas estaduais de qualificação profissional de\nmulheres e intensificar as parcerias com empresas locais para\ncontratação de mulheres capacitadas.\n䬌 Atuar em parceria com os municípios para ampliar serviços e\nequipamentos de apoio às mulheres (creches, restaurantes populares,\nlavanderias e hortas).\n䬌 Defender a aprovação e a implementação do que está previsto na\nPEC 27/2024, que é a inclusão na Constituição Federal da igualdade\nracial e instituir o Fundo de Reparação Econômica e de Promoção da\nIgualdade Racial.\n䬌 Realizar estudo visando transformar o Plano Estadual para a Equidade\nRacial (Plaesper) (Decreto 6.060-R) em Lei Estadual, regulamentando\no Estatuto da Igualdade Racial no Espírito Santo, com cotas, saúde\nintegral da população negra e titularização das terras quilombolas.\n䬌 Implementar o Programa Estadual de Enfrentamento ao Racismo\nInstitucional (PCRI), transversal e em parceria com o Governo Federal\ne municípios.\n䬌 Implementar efetivamente o Plano para Equidades Racial do Estado do\nEspírito Santo com suas políticas intersetoriais de enfrentamento ao\nracismo estrutural, eliminação da violência policial contra segmentos\nétnicos vulneráveis e coibição do encarceramento em massa, com\ngestão integrada entre secretarias.\n䬌 Fortalecer a formação para gestores públicos sobre equidade racial\ne intolerância religiosa, e promover campanhas de comunicação do\ngoverno para denúncia de racismo.\n䬌 Desenvolver, em parceria com Banco Nacional de Desenvolvimento\n(BNDES), Banco do Brasil (BB), Banco de Desenvolvimento do Espírito\nSanto (BANDES), Caixa Econômica Federal (CAIXA), Serviço Brasileiro\nde Apoio às Micro e Pequenas Empresas (SEBRAE), Banco do Estado do\nEspírito Santo (Banestes) e outros, programas de empreendedorismo\nétnico-racial e economia solidária, com ênfase na juventude negra,\nmulheres negras e comunidades tradicionais.\n\n39"
+          },
+          {
+            "id": "fortalecer-o-programa-aquilomba-brasil-assegurando-documentacao",
+            "titulo": "䬌 Fortalecer o Programa Aquilomba Brasil, assegurando documentação",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer o Programa Aquilomba Brasil, assegurando documentação\nbásica, saúde, educação diferenciada e combate à violência nas\ncomunidades quilombolas.\n䬌 Implantar Casas de Acolhimento para pessoas LGBTQIAPN+\nem situação de vulnerabilidade, com moradia temporária, apoio\npsicossocial e orientação jurídica.\n䬌 Garantir o acesso da população negra a sua história e origem no\ncurrículo escolar (LDB) e monitorar a aplicação do ProERER (Decreto\n5.389-R/2023) e das Diretrizes Curriculares para Educação das\nRelações Étnico-Raciais/Pneerq.\n䬌 Garantir o pleno acesso à cidadania das pessoas LGBTQIAPN+,\npor meio de políticas públicas eficazes, formuladas, fiscalizadas e\navaliadas permanentemente pelo Conselho Estadual (CELGBT+ES) e\ndesenvolvidas por uma estrutura (gerência) fortalecida no âmbito da\nSecretaria Estadual de Direitos Humanos (SEDH).\n䬌 Implementar programa de formação permanente nas escolas estaduais\nsobre respeito às diferenças, e direitos humanos, com protocolos\ncontra bullying e discriminação.\n䬌 Garantir atendimento prioritário, multiprofissional e humanizado às\npessoas LGBTQIAPN+ no SUS.\n䬌 Fortalecer a implementação da Política Nacional da Pessoa Idosa e\ndo Estatuto da Pessoa Idosa, em parceria com o Governo Federal e\nos municípios.\n䬌 Promover o envelhecimento ativo e saudável, com atendimento\nintegral pelo SUS, acesso prioritário a medicamentos, vacinação e\nreabilitação, e programas de longevidade.\n䬌 Criar Programa Viver Bem de prevenção e enfrentamento a violência,\nabandono e negligência contra idosos.\n䬌 Ampliar ações que fortaleçam a criação de oportunidades de\nempregabilidade da população idosa.\n䬌 Agilizar na implementação do Estatuto da Pessoa com Deficiência e o\nPlano Novo Viver sem Limite.\n䬌 Assegurar reabilitação funcional com atenção integral pelo SUS e\nadequação dos equipamentos públicos com materiais adaptados para\na inclusão social.\n䬌 Promover acessibilidade em transportes, calçadas, prédios públicos\ne espaços de cultura e lazer, com praças sensoriais para pessoas\nneurodivergentes.\n40"
+          },
+          {
+            "id": "ampliar-a-oferta-de-tecnologias-assistivas-comunicacao-e-recursos",
+            "titulo": "䬌 Ampliar a oferta de tecnologias assistivas, comunicação e recursos",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Ampliar a oferta de tecnologias assistivas, comunicação e recursos\nde acessibilidade digital.\n䬌 Estruturar rede estadual de atenção integral às pessoas\nneurodivergentes, garantindo diagnóstico, acompanhamento e apoio\nàs necessidades das famílias.\n\n41"
+          },
+          {
+            "id": "eixo-9",
+            "titulo": "EIXO 9",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 9\nSEGURANÇA PÚBLICA\nE DIREITOS HUMANOS\n42"
+          },
+          {
+            "id": "para-a-maioria-da-populacao-capixaba-a-seguranca-nao-se-mede-em",
+            "titulo": "Para a maioria da população capixaba, a segurança não se mede em",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Para a maioria da população capixaba, a segurança não se mede em\nestatística. Ela se traduz em algo simples: poder sair de casa, trabalhar,\nse divertir e voltar em paz. As mortes e o medo se concentram justamente\nonde o Estado se ausentou, nos territórios sem serviço público e sem\noportunidade para as pessoas. Enfrentar essa realidade pede mais do\nque repressão. Pede um Estado atuante, inteligente e comprometido\ncom a vida e com as famílias capixabas.\nO Espírito Santo, que já figurou entre os estados mais violentos do país,\ntem reduzido o número de homicídios: de 977 assassinatos em 2023,\npara 852, em 2024 e para 796, em 2025. Mas o número que cai não conta\ntudo. As facções seguem disputando à bala o controle de territórios e de\npontos de venda de drogas em várias regiões do Espírito Santo, trazendo\npânico à população.\nO modelo de combate à violência atual aposta fortemente no confronto\nviolento e na tecnologia, sem o direcionamento adequado e eficaz, e não\nataca na mesma medida a base financeira que sustenta as organizações\nnem as causas que empurram o jovem vulnerável para o crime. Reduzir\nhomicídios é necessário, mas não basta. É preciso preservar vidas sem\ntrocar uma violência por outra e garantir que a queda dos índices chegue,\ncom a mesma força, a todos os territórios e a todas as juventudes,\nsobretudo à juventude negra e periférica, que segue como principal\nvítima da violência letal.\nTrês princípios podem organizar essa virada e conectar o Espírito Santo\nao projeto nacional de segurança: a valorização da vida, o antirracismo\ne a participação social. Medir o resultado da política pela morte que se\nevita, e não só pela prisão que se contabiliza. Enfrentar todos os dias o\nracismo que decide quem morre e quem é encarcerado: a população negra\nperiférica. Inserir a população, os movimentos sociais e trabalhadores\nda segurança na formulação e no controle permanente da política de\nsegurança e nos abusos por ela cometidos.\nGarantir e proteger os direitos humanos, referenciados nos valores\ne princípios da universalidade, transversalidade, interdependência e\nintersetorialidade, tendo como centralidade a pessoa humana e a defesa\nda vida, da liberdade e da dignidade de todas as pessoas.\nEsse é o sentido da segurança pública cidadã e da garantia dos direitos\nhumanos que orienta o governo Lula e que nos orientará. No plano\nfederal, a área foi reorganizada como política coordenada nacionalmente,\nem torno da preservação da vida, da integração entre as forças e do\nenfrentamento ao crime organizado pela sua base financeira. A PEC\nda Segurança Pública, enviada pelo governo federal e aprovada pela\nCâmara dos Deputados em março de 2026, constitucionaliza o Sistema\nÚnico de Segurança Pública e firma um princípio direto: o crime hoje é\ninterestadual e transnacional, e nenhum estado o enfrenta sozinho. Cabe\nà União coordenar e financiar; cabe aos estados executar, sem abrir mão\nde sua autonomia.\n43"
+          },
+          {
+            "id": "o-espirito-santo-deve-assumir-esse-modelo-como-prioridade-na-luta",
+            "titulo": "O Espírito Santo deve assumir esse modelo como prioridade na luta",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "O Espírito Santo deve assumir esse modelo como prioridade na luta\ncontra as violências. Nele, a “segurança pública cidadã” significa ocupar\nos territórios com direitos de cidadania antes de ocupá-los com viaturas;\ntratar o uso problemático de drogas como questão de saúde; mirar o\npoder econômico do tráfico, os caminhos do dinheiro sujo, as rotas das\ndrogas e armas, as reais grandes lideranças do crime, que estão nas\náreas nobres das cidades, não apenas os pequenos vendedores ilegais\ndo varejo nas periferias.\nAcima de tudo, é sustentar a redução da criminalidade já conquistada,\natacando aquilo que o confronto, sozinho, não resolve, pois, nosso povo\nquer de fato menos roubo, menos tiroteio, menos violência doméstica e\nmaior presença de um Estado que proteja, de acordo com a lei.\nNosso governo primará por política de segurança pública fazendo uso\nrigoroso da força quando a situação exigir, cumprindo protocolos e\nrespeitando os direitos humanos.\nA segurança pública que defendemos será guiada, ao mesmo tempo,\npela proteção dos direitos humanos, pela valorização das forças de\nsegurança e pela efetividade da Justiça. Não há contradição entre\ngarantir dignidade humana e combater o crime com firmeza. O Estado\ndeve prevenir a violência, proteger as vítimas, valorizar seus profissionais\nde segurança e assegurar que todo crime seja enfrentado com o rigor da\nlei, sem impunidade e sem brechas que favoreçam a reincidência.\nOutro desafio dos nossos tempos é garantir e fortalecer a segurança\nviária no Espírito Santo, com fiscalização efetiva da legislação de\ntrânsito e prevenção de acidentes, educação para o trânsito e proteção\nintegral às vítimas de sinistros e seus familiares, garantindo resposta\nágil, assistência adequada e responsabilização de condutores que\nviolem a lei.\nDesde já assumimos o compromisso de incorporar e implementar as\ntarefas e ações de competência do governo estadual contidas no Sistema\nÚnico de Segurança Pública (SUSP), em fase de discussão e aprovação\nno Congresso Nacional, por meio da Secretaria de Estado da Segurança\nPública e Defesa Social.\nNossos compromissos organizam esse eixo em frentes articuladas para\no enfrentamento da violência e a garantia dos direitos da pessoa humana,\nsomando forças com o esforço federal e preservando a autonomia da\nesfera estadual para sua implantação.\n\n44"
+          },
+          {
+            "id": "compromissos",
+            "titulo": "COMPROMISSOS",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSOS\nPREVENÇÃO SOCIAL, OCUPAÇÃO DOS TERRITÓRIOS E POLÍTICAS\nTRANSVERSAIS\n䬌 Incorporar e implementar as tarefas de competência estadual\nprevistas no Sistema Único de Segurança Pública (SUSP), por meio\nda Secretaria de Segurança Pública e Defesa Social.\n䬌 Aperfeiçoar, integrar e implementar de forma eficaz a Política Estadual\nde Prevenção à Violência como política de Estado, revisando a\nlegislação e atualizando-a, se necessário, com ampliação das fontes\nde financiamento de caráter permanente.\n䬌 Garantir, nos territórios de maior risco, oferta permanente de\nesporte, cultura, formação profissional e políticas de cuidado, com\nequipamentos abertos à noite e nos fins de semana.\n䬌 Articular segurança e educação no combate à evasão escolar, principal\nporta de entrada para a violência, com busca ativa e ampliação da\nescola em tempo integral.\n䬌 Fortalecer as políticas de segurança para mulheres, crianças e\nadolescentes, população negra, LGBTQIAP+ e minorias, com ações\ncomo:\na) Expandir e qualificar o atendimento das Delegacias de Defesa da\nMulher em todas as regiões do estado.\nb) Criar a Delegacia Especializada de Combate ao Racismo para atuar\nenfrentamento das violências cotidianas de cunho racista.\nc) Criar a Delegacia Especializada para a proteção da população\nLGBTQIA+ para atender os crimes de homofobia e transfobia.\nd) Criar o Comitê de Prevenção de Homicídios de Adolescentes como\numa política de Estado, em compromisso com a defesa da vida do\nadolescente.\n䬌 Ampliar o videomonitoramento por câmeras nas unidades prisionais\ne socioeducativas com o acompanhamento permanente de agentes\ndevidamente qualificados.\n\n45"
+          },
+          {
+            "id": "valorizacao-e-inteligencia-das-forcas-de-seguranca",
+            "titulo": "VALORIZAÇÃO E INTELIGÊNCIA DAS FORÇAS DE SEGURANÇA",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "VALORIZAÇÃO E INTELIGÊNCIA DAS FORÇAS DE SEGURANÇA\n䬌 Fortalecer e aperfeiçoar a política de valorização das carreiras da\nPolícia Militar, Civil, Penal, Científica e do Corpo de Bombeiros.\n䬌 Fortalecer o Programa de Saúde Mental para assistir os policiais do\ninício ao fim da carreira, coordenado por profissionais sem vínculos\ncom as corporações.\n䬌 Fortalecer a Polícia Científica com modernização de laboratórios e\nredução do tempo das perícias.\n䬌 Fortalecer a capacidade de investigação da Polícia Civil com mais\ndelegados, investigadores, tecnologia e laboratórios, elevando as\ntaxas de elucidação de homicídios e de crimes patrimoniais.\n䬌 Fortalecer a Delegacia Especializada de Repressão aos Crimes\nCibernéticos (DRCC) da Polícia Civil, dotando os policiais de\ncapacitação permanente e tecnologia para combater e rastrear\ncrimes digitais de várias naturezas.\n䬌 Reformular a formação policial a partir de uma matriz estadual\nunificada, com forte conteúdo em direitos humanos, mediação de\nconflitos, uso proporcional da força e abordagem antirracista, voltada\nao policiamento cidadão.\na) Criar a disciplina sobre Racismo Estrutural nas escolas de formação\ndas polícias e adotar novos Protocolos Operacionais Padrão de\nabordagem, com o fim de garantir a atuação democrática e cidadã\nda polícia, reduzindo as consequências negativas da replicação do\nracismo estrutural na ação policial.\n䬌 Investir de forma estruturante em inteligência policial, com integração\nde bancos de dados, análise criminal e tecnologia, direcionando\na ação policial para as estruturas do crime e das principais\nlideranças, e não apenas para o varejo, nos territórios vulneráveis.\nESTRANGULAMENTO\nFINANCEIRO\nDAS\nENFRENTAMENTO AO CRIME ORGANIZADO\n\nFACÇÕES\n\nE\n\n䬌 Intensificar as ações da Força Tarefa Permanente de Enfrentamento\nàs Organizações Criminosas, mirando a base financeira do crime\norganizado, não apenas o varejo.\n䬌 Estruturar uma política estadual de controle de armas de fogo e\nmunições em parceria com o Governo Federal e a Polícia Federal,\ncom rastreamento de armas apreendidas, perícia balística integrada\ne enfrentamento ao desvio de munição.\n46"
+          },
+          {
+            "id": "fortalecer-nucleos-de-inteligencia-financeira-em-articulacao-com-o",
+            "titulo": "䬌 Fortalecer núcleos de inteligência financeira em articulação com o",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer núcleos de inteligência financeira em articulação com o\nCOAF, a Receita Federal e o Ministério Público, atacando a lavagem\nde dinheiro e o patrimônio das organizações criminosas.\n䬌 Estruturar uma política estadual de controle de armas de fogo e\nmunições em parceria com o Governo Federal e a Polícia Federal,\ncom rastreamento de armas apreendidas, perícia balística integrada\ne enfrentamento ao desvio de munição.\n䬌 Reforçar a fiscalização das rotas de tráfico em rodovias, portos e\ndivisas, principais vetores de entrada de drogas e armas, com\ninteligência integrada às forças federais.\n䬌 Enfrentar facções e milícias desmontando seu domínio territorial e\norganização financeira, impedindo que ocupem o lugar do Estado\nnas comunidades mais vulneráveis.\n䬌 Fortalecer a estratégia estadual de combate ao roubo e furto de\ncelulares, com integração às operadoras, bloqueio ágil de aparelhos\ne ataque às cadeias de receptação, a exemplo do que o Governo\nFederal tem feito.\n䬌 Enfrentar o roubo e o furto de veículos, motocicletas e bicicletas\nelétricas pela descapitalização dos desmanches e da receptação,\ncom inteligência, fiscalização e repressão sobre o comércio de peças.\nCONTROLE SOCIAL, TRANSPARÊNCIA E USO PROPORCIONAL\nDA FORÇA\n䬌 Criar a Ouvidoria Externa de Segurança Pública e Defesa Social com\nautonomia e independência administrativa e financeira, como órgão\nde controle social da atividade policial e de monitoramento da defesa\ndos direitos humanos.\n䬌 Criar a Ouvidoria Externa de Segurança Pública e Defesa Social com\nautonomia e independência administrativa e financeira, como órgão\nde controle social da atividade policial e de monitoramento da defesa\ndos direitos humanos.\n䬌 Implantar câmeras corporais em todos os profissionais da Segurança\n(policiais penais e polícias, civis e militares) com gravação contínua e\ngestão transparente das imagens.\n䬌 Integrar o Sistema Estadual de Direitos Humanos ao Sistema Nacional\nconforme definido pela Conferência Nacional de Direitos Humanos.\n䬌 Adotar protocolo estadual de uso da força policial, alinhado ao\nDecreto nº 12.341/2024 com investigação rigorosa e independente\nde toda morte decorrente de intervenção policial, seja de civis ou de\nservidores públicos.\n\n47"
+          },
+          {
+            "id": "fortalecer-as-corregedorias-com-autonomia-estrutura-e-poder-real-de",
+            "titulo": "䬌 Fortalecer as corregedorias com autonomia, estrutura e poder real de",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer as corregedorias com autonomia, estrutura e poder real de\napuração, enfrentando desvios, abusos e a infiltração do crime nas\npróprias instituições.\n䬌 Firmar acordo com o MPE para aprofundamento e ampliação do\ncontrole externo das forças de segurança.\n䬌 Adotar o policiamento de proximidade como diretriz, com bases\ncomunitárias fixas e policiais que conhecem e são conhecidos\nno território.\n䬌 Instituir patrulhas e conselhos comunitários de segurança,\naproximando polícia e moradores na definição das prioridades locais\npara a segurança pública.\n䬌 Realizar estudos visando integrar os três observatórios existentes\n(Direitos Humanos, Segurança Pública e Segurança Cidadã) em um\nsó Observatório de Segurança Pública e Direitos Humanos.\n䬌 Ampliar o videomonitoramento integrado e inteligente, articulado\nentre Estado, municípios e guardas municipais, com uso responsável\ne respeito à privacidade.\nSISTEMA PRISIONAL E SOCIOEDUCATIVO VOLTADOS À REINSERÇÃO\n䬌 Fortalecer a fiscalização regular do cumprimento da execução penal,\nseparando presos provisórios de condenados e ampliando as penas\nalternativas para crimes de menor potencial ofensivo.\n䬌 Garantir educação, trabalho, saúde e assistência jurídica nas\nunidades prisionais com política de atenção ao egresso articulada ao\nEmprega 347, reduzindo a reincidência, destacando orientação para\norganização do trabalho através da Economia Solidária.\n䬌 Enfrentar o domínio das facções intramuros com inteligência, controle\ne melhoria das condições de custódia, e não com mais precariedade\nnos serviços.\n䬌 Assegurar o caráter pedagógico das medidas socioeducativas com\nretorno à escola, formação profissional e reinserção comunitária.\n䬌 Valorizar a carreira dos técnicos e agentes socioeducativos e dos\ndemais trabalhadores do sistema, oferecendo melhores condições\nde trabalho, capacitação técnica e recursos suficientes para o\ndesenvolvimento das suas atribuições.\n䬌 Implantar um sistema de videomonitoramento eletrônico eficiente em\ntodas as unidades prisionais do Estado.\n\n48"
+          },
+          {
+            "id": "seguranca-com-presenca-em-todo-o-estado",
+            "titulo": "SEGURANÇA COM PRESENÇA EM TODO O ESTADO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA COM PRESENÇA EM TODO O ESTADO\n䬌 Equilibrar a cobertura territorial garantindo efetivo policial, viaturas e\nestrutura no interior e na Região Metropolitana.\n䬌 Levar delegacias, perícia e atendimento especializado aos municípios\ndesassistidos, inclusive por equipes itinerantes.\n䬌 Ampliar o investimento nas Patrulhas Rurais para prevenção e\nresolução de crimes, tais como furtos, roubos, tráfico, homicídios e\nestupros.\n䬌 Ampliar sistemas de videomonitoramento tecnológico, qualificando\na ação sobre a violência contra territórios indígenas e quilombolas,\nacampamentos e assentamentos, pequenos produtores e contra\nsuas lideranças.\nGESTÃO POR RESULTADO E PACTO FEDERATIVO\n䬌 Retomar os Gabinetes de Gestão Integrada criados no âmbito do\nPrograma Nacional de Segurança Pública com Cidadania – PRONASCI,\npara integrar ações das agências de segurança nas esferas federal,\nestadual e municipal e as secretarias sociais, das gestões que sejam\nrelacionadas à prevenção das violências.\n䬌 Planejar a segurança com metas públicas e avaliação por resultados,\ntendo a preservação da vida como prioridade, e não a contagem de\nprisões ou de mortes.\n䬌 Estruturar uma Coordenadoria de Análise e Planejamento da\nSegurança Pública que será o órgão responsável por acompanhar\nas estatísticas criminais e monitorar o plano de metas da Segurança\nPública.\n䬌 Fortalecer os conselhos comunitários e o controle social na formulação\ne na fiscalização da política de segurança.\n䬌 Articular permanentemente as forças estaduais com a Polícia Federal,\na Polícia Rodoviária Federal e Guardas Municipais, com divisão de\nresponsabilidades e compartilhamento de inteligência, em sintonia\ncom a constitucionalização do SUSP.\n䬌 Articular programas de cooperação em segurança regional e\ntransnacional para atuar em conjunto com as polícias e os ministérios\npúblicos estaduais e federal, Interpol, Escritório das Nações Unidas\nsobre Drogas e Crime (UNODC), dentre outras agências multilaterais\ne nacionais de outros países, com vistas a combater e desbaratar\norganizações criminosas e terroristas internacionais.\n49"
+          },
+          {
+            "id": "combate-ao-feminicidio",
+            "titulo": "COMBATE AO FEMINICÍDIO",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "COMBATE AO FEMINICÍDIO\n䬌 Implementar o Pacto Estadual pelo Enfrentamento às Violências contra\na Mulher e Prevenção ao Feminicídio, realizando ações integradas\ncom o Governo Federal, em todo o Estado do Espírito Santo.\nDIREITOS HUMANOS\n䬌 Fortalecer o Sistema Estadual de Direitos Humanos integrando-o ao\nSistema Nacional conforme definido pela Conferência Nacional de\nDireitos Humanos.\n䬌 Fortalecer a Secretaria de Estado dos Direitos Humanos,\nestruturalmente, financeiramente e com protagonismo, para implantar\npolíticas efetivas para a garantia de direitos humanos.\n䬌 Atualizar o Programa Estadual de Direitos Humanos com participação\nda sociedade civil na sua elaboração.\n䬌 Atualizar o Plano Estadual de Educação em Direitos e reestruturar\nComitê Estadual de Educação em Direitos Humanos, com participação\nda sociedade civil na sua elaboração.\n䬌 Estruturar a Defensoria Pública Estadual com presença em todos os\nmunicípios para garantir acesso universal à Justiça a quem mais precisa.\n䬌 Fortalecer o Sistema Estadual de Erradicação da Tortura, integrado\nao Sistema Nacional, com a aplicação do marco legal que assegura a\nproteção e integridade humana.\n䬌 Adotar o protocolo facultativo de Istambul para supostos crimes\nde tortura visando garantir a qualidade e efetividade do primeiro\natendimento e a proteção da pessoa.\n䬌 Implementar o Sistema Nacional de Atendimentos Socioeducativo na\nsua integralidade.\n䬌 Fortalecer o Sistema Estadual de Proteção dos Direitos Humanos:\nPrograma de Proteção às Vítimas e Testemunhas Ameaçadas\n(PROVITA), Programa de Proteção a Crianças e Adolescentes\nAmeaçados de Morte (PPCAM) e Programa de Proteção ao Defensores\nde Direitos Humanos (PPDDH).\n䬌 Recriar a Rede Espírito-santense de Direitos Humanos.\n䬌 Fortalecer a Implementação das ações previstas no Plano Pena Justa\ncom a adoção de medidas para coibir a prática de torturas, tratamentos\ncruéis e degradantes à população carcerária ou em cumprimento de\nmedidas socioeducativas.\n\n50"
+          },
+          {
+            "id": "eixo-10",
+            "titulo": "EIXO 10",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 10\nDESENVOLVIMENTO\nECONÔMICO, REFORMA\nTRIBUTÁRIA, MICRO E\nPEQUENA EMPRESAS\n51"
+          },
+          {
+            "id": "o-esgotamento-do-projeto-politico-e-economico-que-hegemonizou-o",
+            "titulo": "O esgotamento do projeto político e econômico que hegemonizou o",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "O esgotamento do projeto político e econômico que hegemonizou o\nEstado nas últimas décadas se explica tanto pelas suas concepções,\nquanto pela incapacidade dos seus detentores de perceberem o\nalcance e as mudanças em curso, ou seja, a reforma tributária que\naltera profundamente a lógica competitiva baseada em incentivos\nfiscais; a transição energética que modifica progressivamente o papel\ndo petróleo; a digitalização que transforma empresas e profissões;\na inteligência artificial que modifica produtividade, trabalho e\nconhecimento; as mudanças climáticas que aumentam riscos\nterritoriais e as novas gerações que apresentam demandas sociais,\nculturais e profissionais distintas.\nEsta constatação traz consigo não apenas a confirmação do fim de um\nciclo, mas também oferece a oportunidade de serem reconfiguradas\nnovas políticas públicas e as suas relações com os negócios privados,\napontando para que o próximo ciclo do desenvolvimento capixaba seja\nconstruído em cima de um modelo, que possibilitará a um número muito\nmaior de capixabas participarem de sua construção e de seus benefícios.\nDiante disso, é necessária a revisão dos planos estaduais de\ndesenvolvimento em curso, com a retomada do protagonismo público,\nque contará com a participação democrática de todos os setores\neconômicos, trabalhadores e empresários, academia e juventudes, e\nque possibilite a sua ampla apropriação social, priorizando práticas\ne resultados que amenizem os impactos das emergências climáticas,\nda contaminação dos seres vivos, da redução das populações de\nespécies, bem como das crises de alimentos saudáveis, da água,\nda energia e da educação, buscando desacelerar as atividades que\npotencializem essas crises.\nA revisão dos planos de desenvolvimento deverá apontar os caminhos\nque permitam um processo de transição justo e seguro entre o modelo\natual e o novo modelo sustentável. Portanto, ainda haverá no nosso\ngoverno a continuidade de vários instrumentos que organizaram a\neconomia capixaba nos últimos 30 anos. Entretanto, seremos ágeis\nna construção dos novos meios que levarão, num período de cerca de\nduas décadas, o Espírito Santo e seu povo para um novo patamar de\ndesenvolvimento, compatível com os desafios do século 21. Para isso,\nutilizaremos, além do Orçamento Geral do Estado, parte significativa dos\nrecursos do Fundo Soberano, dos royalties do petróleo, de programas\ndo Governo Federal e de recursos internacionais.\nNeste período de transição entre os dois modelos de desenvolvimento,\nou seja, aqui e agora, a revisão dos planos também priorizará programas,\nprojetos e ações que visem a distribuição de forma socialmente justa\ndos ganhos e benefícios gerados; que possibilitem uma equilibrada\ndistribuição regional dos investimentos públicos e privados; garantam a\npreservação, manutenção e recuperação dos recursos naturais; inventem,\nsocializem e incorporem novas tecnologias, práticas e conhecimentos\n52"
+          },
+          {
+            "id": "em-produtos-materiais-e-imateriais-fortalecam-as-economias-de-base",
+            "titulo": "em produtos materiais e imateriais; fortaleçam as economias de base",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "em produtos materiais e imateriais; fortaleçam as economias de base\nlocal e tradicionais, mantendo o equilíbrio e intensificando a interação\nentre as produções de pequeno, médio e grande porte.\nE onde os geradores de emprego, renda e dinamização das economias\nlocais também serão prioridade deste novo governo, promovendo ações\nvoltadas para a ciência, tecnologia e inovação, além de incentivar as\npotencialidades de cada município com distribuição mais equilibrada\ndos investimentos.\nO novo ciclo capixaba deve aliar o crescimento econômico com o\ndesenvolvimento humano e social, a fim de que o futuro do Espírito\nSanto seja de prosperidade para todos os capixabas e nenhuma família\nfique para trás.\nApresentamos a seguir os nossos compromissos com o desenvolvimento\neconômico que prioriza o apoio aos pequenos negócios tradicionais,\nmas também aqueles potencialmente intensivos em conhecimento e\ninovação, que propicie melhor distribuição de renda à toda sociedade,\nreduza as desigualdades sociais e regionais e seja alavanca para a\nconstrução de uma sociedade livre, igualitária, justa e democrática.\nCOMPROMISSOS\nESTRATÉGIA AMPLA DE DESENVOLVIMENTO\nDESENVOLVIMENTO SOCIAL\n\nECONÔMICO\n\nE\n\n䬌 Criar o Conselho de Desenvolvimento Econômico Social Sustentável\ngarantindo a ampla participação da sociedade capixaba (segmento\nempresarial, trabalhadores, organizações sociais e territoriais), para\na formulação e construção do desenvolvimento capixaba a partir do\nconhecimento científico e dos saberes tradicionais, com o caráter de\nassessoramento permanente, reunindo-se periodicamente.\n䬌 Instituir o Comitê de Avaliação Estratégica dos Planos Estaduais\nde Desenvolvimento (Plano ES 500 Anos e Projeto DRS) e dos\nprogramas de incentivos com participação de municípios, setores\neconômicos, trabalhadores e o Comitê Gestor Estadual da Reforma\nTributária (a ser implantado).\n䬌 Promover o desenvolvimento Regional equilibrado e equitativo,\npara garantir a interiorização do desenvolvimento que assegure a\ndistribuição dos benefícios gerados por todo o território capixaba,\nfortalecendo o dinamismo econômico do interior e reduzindo as\ndisparidades históricas de renda e acesso a serviços públicos.\n\n53"
+          },
+          {
+            "id": "estrategia-de-adaptacao-a-reforma-tributaria",
+            "titulo": "ESTRATÉGIA DE ADAPTAÇÃO À REFORMA TRIBUTÁRIA",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "ESTRATÉGIA DE ADAPTAÇÃO À REFORMA TRIBUTÁRIA\n䬌 Instituir o Comitê Gestor Estadual da Reforma Tributária, que deverá\nelaborar a estratégia estadual para enfrentamento dos impactos da\nreforma tributária, garantindo segurança jurídica ao setor produtivo\ne coordenando a transição para o novo sistema tributário nacional.\n䬌 Gerir com transparência e controle social os fundos estaduais de\ncombate à pobreza e desenvolvimento regional criados no âmbito da\nreforma tributária.\n䬌 Implementar e ampliar o mecanismo de cashback do IBS para\nconsumidores de baixa renda inscritos no CadÚnico, mitigando os\nimpactos da reforma tributária sobre o consumo essencial.\n䬌 Capacitação e letramento digital fiscal através de uma plataforma\nestadual de qualificação da Secretaria da Fazenda do Espírito Santo\n(SEFAZ/ES) e com os principais conselhos de fiscalização profissional\ndo estado (OAB, CRM, CREA, CRC, CRECI, entre outros).\nESTRTÉGIA DE CONSOLIDADÇÃO DA ECONOMIA SOLIDÁRIA\n䬌 Rever a Política Estadual de Economia Popular e Solidária visando sua\natualização e integração ao Sistema Nacional de Economia Solidária.\n䬌 Fortalecer bancos comunitários de desenvolvimento, fundos rotativos\nsolidários e microcrédito produtivo orientado, garantindo acesso a\ntrabalhadores informais e empreendedores.\n䬌 Criar o Programa Capixaba de Incubadoras de Economia Solidária com\ninstalação de incubadoras e aceleradoras de negócios de impacto\nsocial em cada uma das microrregiões capixabas.\n䬌 Criar o Programa Capixaba de Turismo de Base Comunitária com apoio\na qualificação e fortalecimento dos pequenos negócios voltados para\no turismo local de base sustentável e comunitária.\n䬌 Criar o Plano Estadual de Comunicação e Incentivo à Economia\nSolidária, a fim de disseminar a prática da economia solidária com\ncampanhas educativas, campanhas de premiação e de visitas\ntécnicas a outros estados e exterior, buscando novas e avançadas\nexperiências em economia solidária\n䬌 Constituir comitês de apoio para incentivar e facilitar a instalação\nde empreendimentos solidários, prestando assistência técnica,\n54"
+          },
+          {
+            "id": "estimulando-feiras-estaduais-de-economia-solidaria-e-utilizando-as",
+            "titulo": "estimulando feiras estaduais de economia solidária e utilizando as",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "estimulando feiras estaduais de economia solidária e utilizando as\ncompras governamentais como indutora e integrada à política pública\nde incentivo.\nQUALIFICAÇÃO PROFISSIONAL E INSERÇÃO DE JOVENS NO\nMERCADO DE TRABALHO\n䬌 Expandir os programas de qualificação profissional através da\nconstituição de consórcios estratégicos (Senai, Senac, Ifes e Ufes),\ngarantindo bolsa-qualificação para desempregado(a)s, com foco na\ntransição digital, mitigação dos impactos da inteligência artificial e\natendimento às demandas socioeconômicas regionais.\n䬌 Ampliar e fortalecer os programas voltados à inserção de jovens no\nmercado de trabalho (Primeiro Emprego), criando formas de incentivo\ne de qualificação de jovens para que acessem o mercado de trabalho\ne de forma digna e com direitos respeitados.\n䬌 Criar centros periféricos de produção digital para impulsionar o\nempreendedorismo coletivo juvenil e a geração de valor local,\nconforme as metas de competitividade e novos mercados da\nestratégia digital. O foco reside em estruturar o cooperativismo de\nplataforma para conter a precarização laboral no ambiente virtual.\nSISTEMA CAPIXABA DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO\n䬌 Aprimorar o Sistema Estadual de Ciência e Tecnologia e Inovação\nintegrado e orientado para o desenvolvimento sustentável do\nEspírito Santo para transformar a economia capixaba por meio\ndo conhecimento, descentralizar oportunidades e responder aos\ndesafios climáticos e socioambientais do século XXI\n䬌 Aprimorar e ampliar programas estruturados de CT&I para a transição\nenergética, economia azul e bioeconomia visando apoiar pesquisas,\nstartups e projetos tecnológicos de alto impacto sustentável.\n䬌 Implantar a Política Estadual de Empreendedorismo Inovador,\npromovendo o uso de Ambientes Regulatórios Experimentais\n(sandboxes regulatórios), instrumentos de investimento e\ncontratações públicas para soluções inovadoras buscando a\nampliação da competitividade do ecossistema local.\n䬌 Implementar os Centros Regionais de Competência em IA para\njuventude e periferias com o objetivo de disseminar oportunidades\nde geração de renda para a população jovem e vulnerável utilizando\ne desenvolvendo ferramentas de IA e pequenos negócios focados\nem IA.\n55"
+          },
+          {
+            "id": "fortalecer-a-rede-de-polos-regionais-de-inovacao-intensificando-a",
+            "titulo": "䬌 Fortalecer a Rede de Polos Regionais de Inovação, intensificando a",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Fortalecer a Rede de Polos Regionais de Inovação, intensificando a\nintegração dos arranjos produtivos locais (APLs) à nova economia e\nfortalecendo matrizes econômicas estratégicas, com destaque para\na cafeicultura, rochas ornamentais, turismo e logística.\nECONOMIA VERDE, BIOECONOMIA E TRANSIÇÃO ENERGÉTICA\n䬌 Impulsionar a descarbonização das cadeias produtivas e a\ntransição energética justa, consolidando a economia verde como\nvetor de neoindustrialização, inovação tecnológica e ampliação da\ncompetitividade da economia estadual.\n䬌 Fortalecer a estratégia e a política estadual de NISA, negócios de\nimpacto socioambiental, com estratégias para financiamento de\npequenos negócios que tragam benefícios econômicos (geração de\nrenda) com preservação ambiental, fortalecendo a metodologia de\nsoluções baseadas na natureza.\n䬌 Instituir a Política Estadual da Economia Azul do Espírito Santo\n(PEEA-ES), instrumento de planejamento estratégico e governança\nintegrada do ordenamento territorial em âmbito estadual, voltado\nao desenvolvimento sustentável, à inovação, à justiça social e à\nsegurança climática das águas interiores, da zona costeira e do\nespaço marítimo, articulada com a Política Marítima Nacional de\nforma sistêmica, coordenada e associada com a União.\n䬌 Criar o Programa Capixaba de Bioeconomia focado na valorização\neconômica de resíduos e produtos de base biológica para a economia.\nDessa forma, os resíduos deixam de ser vistos como lixo e passam a\nser vistos como insumos para bioprodutos de valor agregado.\n䬌 Fortalecimento das associações de catadores e implementação de\nusinas de reaproveitamento e valorização de resíduos, com estratégia\nregional para geração de renda da economia circular.\nEMPREENDEDORISMO E DESBUROCRATIZAÇÃO\n䬌 Fortalecer e ampliar as Salas do Empreendedor para contribuir na\nabertura e gestão de novos pequenos negócios, em parceria com os\nmunicípios. Desburocratizar e simplificar o processo de abertura,\nformalização e funcionamento de micro e pequenas empresas,\ncriando salas do empreendedor em todas as regiões do Estado.\n\n56"
+          },
+          {
+            "id": "pequena-producao-agricola-e-agroturismo",
+            "titulo": "PEQUENA PRODUÇÃO AGRÍCOLA E AGROTURISMO",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "PEQUENA PRODUÇÃO AGRÍCOLA E AGROTURISMO\n䬌 Estimular a modernização e a expansão da pequena agroindústria\npor meio da transformação digital, integrando o produtor rural ao\ne-commerce e canais de comercialização direta para agregar valor à\nprodução e ampliar a geração de emprego e renda no campo.\n䬌 Implementar a Rede Capixaba de Agroturismo, instituindo rotas\nconsolidadas, conexão entre municípios e cooperação para\nfortalecimento regional do agroturismo.\nFORTALECIMENTO E RETOMADA DO PROTAGONISMO DA ADERES\n䬌 Redinamizar e fortalecer institucionalmente o papel, capilaridade e\nforça da ADERES, agindo no fomento ao cooperativismo de plataforma\ne logística solidária.\n䬌 Apoiar ações de produção e comercialização por meio de agentes de\ndesenvolvimento local.\n䬌 Formação de empreendedores que aproveitem as oportunidades\neconômicas em torno dos equipamentos turísticos e dos equipamentos\nculturais espalhados no Espírito Santo.\n䬌 Criar o programa de Geração de Valor e Novos Horizontes para o\nArtesanato capixaba com formação aos coletivos e associações\nregionais de artesanato, com foco em gestão da produção, valorização\neconômica, estabelecimento e valorização de marcas, registro\nde propriedade intelectual, uso de novas tecnologias, conquistas\nde novos mercados visando aumento da geração de renda para as\npessoas produtoras de artesanato no Espírito Santo. Consolidar\nestratégias regionais de consolidação do artesanato com agregação\nde valor aos produtos e às peças.\n䬌 Criação do Circuito e Selo “Sou Capixaba” de Artesanato, integrando\na produção artesanal diretamente ao território do artesão, ao turismo\ne à tecnologia, diferenciando o artesanato genuíno das réplicas\nindustriais.\n䬌 Articular a rede de educação profissional no ES para a oferta de cursos\ngratuitos de design, precificação, presença digital e embalagem para\nos artesãos.\n䬌 Incentivar projetos de transmissão do conhecimento tradicional\npara as gerações mais jovens, garantindo que técnicas ancestrais\nnão desapareçam, em especial, os conhecimentos tradicionais das\ncomunidades de pesca e ribeirinhas, na construção naval artesanal.\n57"
+          },
+          {
+            "id": "mapeamento-de-atelies-e-georreferenciamento-das-associacoes-de",
+            "titulo": "䬌 Mapeamento de ateliês e georreferenciamento das associações de",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "䬌 Mapeamento de ateliês e georreferenciamento das associações de\nartesãos ao longo das principais rotas turísticas do estado (Rota da\nCosta e da Imigração, Rota Quilombola, Rota dos Vales e do Café).\n䬌 Inclusão de conteúdos sobre artesanato local nos cursos de formação\nde técnicos em turismo e de paradas obrigatórias em oficinas de\nartesãos (como as Paneleiras de Goiabeiras ou artesãos de Alfredo\nChaves, Domingos Martins e territórios Quilombolas) nos pacotes\nturísticos locais.\n\n58"
+          },
+          {
+            "id": "eixo-11",
+            "titulo": "EIXO 11",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 11\nPETRÓLEO,\nLOGÍSTICA E PORTOS\n59"
+          },
+          {
+            "id": "poucos-estados-reunem-tantos-ativos-economicos-quanto-o-espirito",
+            "titulo": "Poucos estados reúnem tantos ativos econômicos quanto o Espírito",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "Poucos estados reúnem tantos ativos econômicos quanto o Espírito\nSanto. Daqui sai parte expressiva do petróleo e do gás produzidos no país,\ne por seus portos escoa a riqueza de boa parte do Sudeste e do CentroOeste. Essa posição estratégica deveria sustentar um desenvolvimento\nrobusto e distribuído por todo o território. No entanto, a má gestão desse\npotencial transformou a vantagem em vulnerabilidade. O desafio do\npróximo governo será fazer com que o petróleo, a logística e os portos\nvoltem a gerar emprego, renda e oportunidades para o povo capixaba.\nO quadro atual é de retração. Entre 2015 e 2021, o Espírito Santo perdeu\nquase metade de sua capacidade industrial, o pior desempenho do\npaís no período. A causa principal não foi a pandemia, mas a redução\ndos investimentos da Petrobras e a onda de desinvestimentos que se\nseguiu, com a privatização de campos produtores de gás. O resultado\naparece na infraestrutura ociosa: as duas plantas de processamento de\ngás do Estado, em Anchieta e Linhares, operam abaixo da capacidade ou\ncaminham para a hibernação, enquanto a fábrica de fertilizantes UFN-4,\nem Linhares, segue paralisada desde 2016.\nA dependência de um recurso finito agrava a fragilidade. Os royalties do\npetróleo, que somaram 2,17 bilhões de reais em 2021, caíram para 1,34\nbilhão em 2025, e em 2026 acumulavam apenas 444 milhões até abril.\nAinda assim, o Espírito Santo guarda uma base diversa que aponta\ncaminhos. Sua pauta exportadora vai além do minério de ferro, que lidera\ncom 27,8%, e do café verde, que responde por 15%. O Estado concentra\n78% das exportações brasileiras de rochas ornamentais e lidera o país\nem pimenta-do-reino, gengibre e mamão.\nA retomada dos investimentos em petróleo e gás, as descobertas em\náguas profundas como o poço Monai e as oportunidades da transição\nenergética podem inaugurar um novo ciclo de industrialização, desde\nque orientados por um projeto público de desenvolvimento.\nO próximo governo precisará tratar petróleo, energia, portos e logística\ncomo eixos estratégicos articulados. Cabe defender com firmeza os\nroyalties devidos ao Estado e destinar parte deles à educação, ciência,\ntecnologia e inovação, preparando a economia para o futuro póspetróleo.\nÉ preciso recuperar a coordenação pública sobre a infraestrutura\nportuária, investir nos acessos e nas rodovias estruturantes e formular\numa política integrada de portos, ferrovias, rodovias e aeroportos,\narticulada com o Governo Federal e com os estados vizinhos.\nOs compromissos deste eixo buscam transformar a vocação econômica\ncapixaba em desenvolvimento real e distribuído. Um desenvolvimento\nque gere emprego e renda, diversifique a economia, prepare o Espírito\nSanto para a transição energética e para o fim dos incentivos fiscais, até\no ano de 2033 e que pense o Estado para as próximas décadas.\n60"
+          },
+          {
+            "id": "nosso-projeto-e-capaz-de-converter-riqueza-em-qualidade-de-vida-e",
+            "titulo": "Nosso projeto é capaz de converter riqueza em qualidade de vida e",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "Nosso projeto é capaz de converter riqueza em qualidade de vida e\nsustentabilidade para todas as regiões do Estado.\nCOMPROMISSOS\n䬌 Instituir o Comitê Gestor de Desenvolvimento Portuário e Logístico,\nestabelecendo estrutura permanente de governança para o setor\nlogístico-portuário.\n䬌 Formular uma política estadual integrada para portos, aeroportos,\nferrovias e rodovias conectada à política industrial e de comércio\nexterior do Estado.\n䬌 Debater junto à sociedade sobre a intensificação do uso do Fundo\nSoberano Estadual como instrumento financeiro de suporte para\nplanejar a transição energética e a diversificação produtiva de médio\ne longo prazo.\n䬌 Melhorar e modernizar os acessos viários aos terminais portuários da\nGrande Vitória e de Aracruz.\n䬌 Buscar junto ao Governo Federal a construção da ROTA 4, para\nassegurar o escoamento e a disponibilização de gás natural ao Estado.\n䬌 Articular junto à União a instalação da Unidade de Fertilizantes\nNitrogenados (UFN-4) no município de Linhares.\n䬌 Defender junto ao Governo Federal a discussão sobre as privatizações\nem curso (Polo Norte Capixaba e Polo Espírito Santo Águas Profundas),\na fim de retomar os investimentos estatais paralisados.\n䬌 Cobrar e acompanhar a duplicação e modernização da BR-262 e o\ncumprimento do cronograma de duplicação da BR-101.\n䬌 Construir mecanismos permanentes de governança regional entre\nEspírito Santo, Minas Gerais e Goiás para otimizar os corredores\nlogísticos e ferroviários até os portos capixabas.\n䬌 Liderar o debate nacional pela repactuação dos royalties do petróleo\ne o aperfeiçoamento dos mecanismos de compensação federativa.\n䬌 Instituir uma estrutura de governança centralizada e tripartite (Estado,\nMunicípios e Iniciativa Privada) para gerenciar a Zona de Atividades\nLogísticas e Industriais do Espírito Santo, a ser constituída no âmbito\nda Secretaria do Desenvolvimento, com o objetivo de articulação\ne integração dos portos públicos (Vports), terminais privados\n(TUPs), empresas de exploração retroportuárias, concessionárias de\n61"
+          },
+          {
+            "id": "transportes-rodoviarios-e-ferroviarios-prefeituras-da-rmgv-e-orgaos",
+            "titulo": "transportes rodoviários e ferroviários, prefeituras da RMGV e órgãos",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "transportes rodoviários e ferroviários, prefeituras da RMGV e órgãos\nanuentes do comércio exterior e, em especial, a instituição do Plano\nDiretor Integrado para delimitar, reservar e proteger as áreas de\nexpansão industrial e logística de retroporto.\nCompromisso de Gestão e Responsabilidade Fiscal\nEste Programa assume publicamente que toda proposta com impacto\norçamentário recorrente terá curva de implementação escalonada ao\nlongo dos quatro anos de mandato — nenhum compromisso estrutural\nserá lançado de uma só vez no primeiro ano, de modo a preservar a\ncapacidade fiscal do governo para responder a emergências e a outras\nprioridades.\nO governo manterá e fortalecerá o Portal da Transparência, com\natualização em tempo real, e submeterá a execução deste Programa ao\nacompanhamento periódico dos conselhos de políticas públicas e da\nsociedade civil, por meio do “Conta Aberta” — Programa Estadual de\nParticipação Cidadã.\nEste Relatório Final do Programa de Governo, construído coletivamente\nentre novembro de 2025 e julho de 2026 em plenárias regionais,\nreuniões temáticas e escutas populares em todo o território capixaba,\nrepresenta os compromissos de todas as candidaturas da Frente Brasil\nda Esperança (PT-PCdoB-PV) com a sociedade capixaba.\n\n62"
+          },
+          {
+            "id": "63",
+            "titulo": "63",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "63"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "3233e15622c5bc7fe3414389b0ffeca4bc8b5defd60e254e7af8b8e7ab8ab946"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "a13a2e805da1bbff45b5dfcd3bccd38373a4982f2eff0287442ee382991563de"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "dd4e287fdce96b132fad1328ef8ca3a0955858c70bfa89b4f4235ed10d5a02a8"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "498e66b30d3715eca6b765f628763240af511db25bb3d79903a389024d88d20d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cbf30af5fb7ae646ce9103035ea8aee0bde0956302bc699599bb4c34a8e7db52"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b045d866af2e5eafcb5d3a83f0a21642278e72962c92cbe832b40d9842c2cdc5"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "278aa23e3fe91a1d211d6832160bed6ab18773e58222bf309ac18199987a6ed6"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "33962c39c4d287b4d42f111551d1fb9e87c31710e4f69cd5684a337d5f572e73"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e6801e17dd9b6e07e8f0998453e0bb6545600a0bbf3ade05808aa374f43a3f06"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "d693b575479a69dd09e5a58efcdcc63a6e8fedfd8635e67b1b71d6d27a863775"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "7ad46eec3df8afad3ea1cadf62526065ac3555202e91be5870fb9b620fd53176"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "632a5893c88053f59ad07e32b51db5dc1783397a20d7fa7be4a485891c731f34"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "948529904c3bd33e33827c310608f396823d5bf6d658768ec2c1e4cda1aee326"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "b924839589d73d2c4f9d1f5af3f708e8865c4e4617367c2137379570207fdfbc"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "93f253c7e2f7a0e8b421eb8475252d1d5f28378820165c0e3e060d7eaba67d87"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "25868e42c2de5ef029add923829f802e999cc7d14f6814b8c9b20c6b99e48137"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "9e06b7af0aa9371e4dd6a1df468f010714236db57c210c2543845fbef59890c2"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "00b293041d1ae68b6e2eb5d86241bc2cd2734db3e3db9650a19a07a284638401"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "ce69c4887c43366692c47498001edb54c7fccacd0dc37671c1a252f01622722b"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "31a153f89ca18c1a8db5200f70a6dfc1a6e549251e6ee194cb6f8180de7d447e"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "7a4bb523ef11ae565c032d2dde696211b4a816017244e6b743210eac2c0f3acb"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "53f4bb2e7a99dff3af2e10240228238162f55196aafbfab0d6e1c3a9260cf4b3"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "95c7c6a93161320c6333471bfc341f8c7e5b246092d07a9318aa05b657b3ec38"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9563b0f81da81f25bc114d24b61436ef17fdd9390a7b5c9d39ef36a9956df03e"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "b42b9d800f19171a7ebf21a41d644dd91a320f68dcc83e41a56fa29120535ab7"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "3576c4f18d93cbd6534629685425e1d2580d8615f8daa119d4479ab22bea9c33"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "debd1d601831e6e0b8ed1836bf92a56b31851515748aa567629c53d81cd27225"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "15f7f426a9be65db946252033dc8bad04904cad43b72d572b27485e5b37988c7"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "8c8240e9662d3e911242db81d25225e8f667006dff9ee99b3c86eee10d92331d"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c1b13f52a7826a8160cf125138391786bd6118638bd8e46a04675500556bbd4e"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "38f24ae645070f3579c0a9816e2af5db60c030c1fc2c277232feb4ef44659118"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "bbe98a53d495c2f26fc1e421df02998e1a726f76285d44b694ab85b0a98d1a53"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "ba3242c8a8695c1891c4e9e6fd4cdf74908755da7857ffc088c04c7104b43134"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "8a2c38e88af3b62194860d80d5994ed0ed19ecdf6c62b67911ed9852d232ada1"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "f8d43bd3168b3a3a647c993f491673f33d01c2d303eaa1903791c70608360bca"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "bb69f1047e0f58a849cfcf4ed8e4ab3230ef14dc4eeccb63a05acc3a4b1bb12d"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "7171d29dfadb27237254725557c2c885fc67832f8bb5df1042d3c63e6ed1e8cc"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "f835eb9b4b8d41ef3ebb414a68d450bcc728c6395de49dd72279e64a9941d8f8"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "2378c5c1869a4fa9be225ccdf33d67211cd505159849fcfcbde6ce505e62b224"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "3a36715e67e6b78da02d452202f7a26888daab98c5444c9525ada7c9f304b838"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "8a5dde0ba798f3f56b7789d35ecadc6ef5e1b8bcbef3b23feed95f3a2dc4408a"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "2093e02a0439b5025581a5d3a3c9a04b816bef89b946769c6380c307910d6df0"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "89c0cdea81f18f1cb528e7bd8068ac6d7a98c4c17c56ec1c3ad20dd1c21ba356"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "eb0a2d3c925a0d02e2a86a3566b3a6e3ff3a34866331432f631a6628c9ddb192"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "c25297c56ac669c3e5478e4f08ac7d6671001ed6a1fec851deb3e3e8c86c81cf"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "0a6e6f07383bcc758096b1f9e96d0c8064ec960b3fb3c99bc551ec25537b84c5"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "3593caf26dcd90918c4a92bee0c138d3731d58ac82f7049a1d45b61d28583da6"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "9abd36ab6eb56411a1bbfe247c809fdb9bcdfdf3c1a0a7ff0afcd0b09593c7e6"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "bcd9ab9e588e766e9a9b916dd5647ba3be139a308689fb2305bcaf08e0f1e2cd"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "731184f3267f55a17dcf4f4bdc75e76a9c4681e3229cac04a19aa00715a77fa9"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "1578cd81654f742e2796cc82fc34de33c72bf84c099f947e02458198cd4e0d9b"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "1a4dd22f0487f801a57b7162a0a5bebc9ca57e4a2f36726c0e161a744b978268"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "8584e5264fdee4266224be259e40091d55aa58ec326511422c1f0b6f6650639e"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "ddeabe0ff97457de2a31336ece0f94f88ebb78e6865a6f309ab7b321a46278b1"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "ecef6f02a090f7a7a9f7e55eb86814bf3206e24f3c4574f625ad4ed723ea07a5"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "81cffd185738dbb475dc41579a5816a0b3b0269c03d13096e5906e671412dfab"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "59e8de5bd0c572fa1cb9ae4cf426a6eff60d4762bfefe078b82b4ea65d040cec"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "10ec4247909c4f40cceeece9130c26b92be28a7fe967129c3f48f087c4fc773c"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "e911889b528c9b13dd4a9d48bcf1d95522742618e783891d1937862d9b8db4b1"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "9bef5897c69a57aea2906334b5543638582a199ed60c701c1513eee4b332daf7"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "a36ac49c72aff8b1eec6bc066313a7ad3811257c12f41a3752c00106711b2a6b"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "da4ea2a5506f2693eae190d9360a1f31793c98a1adade51d93533a6f520ace1c"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante. O programa prevê intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e áreas agrícolas sujeitas à desertificação. O programa prevê aperfeiçoar a integração entre órgãos ambientais para combater o desmatamento ilegal, intensificando a fiscalização por satélite e drones. O programa prevê fortalecer e integrar os órgãos ambientais estaduais. O programa prevê instituir uma política estadual de economia azul no Espírito Santo, instrumento de planejamento estratégico e governança integrada do ordenamento territorial estadual. O programa prevê criar o Programa Capixaba de Bioeconomia, focado na valorização econômica de resíduos e produtos de base biológica para a economia. O programa prevê impulsionar a descarbonização das cadeias produtivas e uma transição energética justa. O programa prevê instituir o Programa Capixaba de Transição Energética no Transporte Público.",
+    "frases": [
+      {
+        "texto": "O programa prevê revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e áreas agrícolas sujeitas à desertificação.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e nas áreas agrícolas sujeitas à desertificação."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê aperfeiçoar a integração entre órgãos ambientais para combater o desmatamento ilegal, intensificando a fiscalização por satélite e drones.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Aperfeiçoar a integração entre os órgãos ambientais para as ações de combate ao desmatamento ilegal, intensificando a fiscalização por satélite e drones."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê fortalecer e integrar os órgãos ambientais estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Aperfeiçoar o funcionamento do Sistema Estadual de Meio Ambiente, com revisão da Lei Complementar nº 1.073/2023, visando o fortalecimento e integração dos órgãos ambientais"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê instituir uma política estadual de economia azul no Espírito Santo, instrumento de planejamento estratégico e governança integrada do ordenamento territorial estadual.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 56,
+            "trecho": "Instituir a Política Estadual da Economia Azul do Espírito Santo (PEEA-ES), instrumento de planejamento estratégico e governança integrada do ordenamento territorial em âmbito estadual"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar o Programa Capixaba de Bioeconomia, focado na valorização econômica de resíduos e produtos de base biológica para a economia.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 56,
+            "trecho": "Criar o Programa Capixaba de Bioeconomia focado na valorização econômica de resíduos e produtos de base biológica para a economia."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê impulsionar a descarbonização das cadeias produtivas e uma transição energética justa.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 56,
+            "trecho": "Impulsionar a descarbonização das cadeias produtivas e a transição energética justa, consolidando a economia verde como vetor de neoindustrialização"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê instituir o Programa Capixaba de Transição Energética no Transporte Público.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 32,
+            "trecho": "Instituir o Programa Capixaba de Transição Energética no Transporte Público com o objetivo de corrigir a rota da transição do transporte no Espírito Santo"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "agroecologia",
+        "titulo": "Agroecologia",
+        "descricao": "Revisão e adequação do Programa Estadual de Agroecologia como política estadual estruturante.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante."
+          }
+        ]
+      },
+      {
+        "id": "adaptacao-climatica",
+        "titulo": "Adaptação climática",
+        "descricao": "Intensificação da implementação do plano estadual de adaptação às mudanças climáticas.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e nas áreas agrícolas sujeitas à desertificação."
+          }
+        ]
+      },
+      {
+        "id": "fiscalizacao-ambiental",
+        "titulo": "Fiscalização ambiental",
+        "descricao": "Integração entre órgãos ambientais e fiscalização por satélite e drones contra o desmatamento ilegal.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 12,
+            "trecho": "Aperfeiçoar a integração entre os órgãos ambientais para as ações de combate ao desmatamento ilegal, intensificando a fiscalização por satélite e drones."
+          }
+        ]
+      },
+      {
+        "id": "economia-azul",
+        "titulo": "Economia azul",
+        "descricao": "Instituição de uma política estadual de economia azul no Espírito Santo.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 56,
+            "trecho": "Instituir a Política Estadual da Economia Azul do Espírito Santo (PEEA-ES), instrumento de planejamento estratégico e governança integrada do ordenamento territorial em âmbito estadual"
+          }
+        ]
+      },
+      {
+        "id": "descarbonizacao",
+        "titulo": "Descarbonização",
+        "descricao": "Descarbonização das cadeias produtivas e transição energética justa.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002551833:01",
+            "pagina": 56,
+            "trecho": "Impulsionar a descarbonização das cadeias produtivas e a transição energética justa, consolidando a economia verde como vetor de neoindustrialização"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:21:01.334Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:23:21.749Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:1:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:2:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:3:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o fortalecimento e integração dos órgãos ambientais."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação em si não cita números; o número da lei citado na evidência não é reivindicado no claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:4:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:5:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:6:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (descarbonização/transição energética)."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:7:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre as cláusulas materiais citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:frase:8:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:agroecologia:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:adaptacao-climatica:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:fiscalizacao-ambiental:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:economia-azul:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002551833:tema:descarbonizacao:documentos:ES:80002551833:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:ES:80002551833",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "ES:80002551833:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24603,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23295,
+          "output_tokens_details": {
+            "thinking_tokens": 171
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24603,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23295,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24603,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24603
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3507594
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "a7a00a281df79f4edb644b0fb3d084e9d4b64480da9e98580fdb0419987f6ba1",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:24:46.422Z",
+    "sourceSha256": "d25cb154f8de6276c82f504c81ca3b0ec7f6925625a53788ba1bf77c4d628989",
+    "extractedTextSha256": "7aafb9f82d0f7b1a40ebb37f43da78df4328587dd1999d6259ecc3c4cefaefc3",
+    "documentCount": 1,
+    "documentSetSha256": "1a808077e14904876c467311c4e55dadf3f5037388921748e9ed785d1cbc018f",
+    "contentSha256": "210400b818be04376049aa9bb27a079a34e61f0c2e9f8cf02881495102c93aa5"
+  }
+}

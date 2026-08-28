@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:21:42.718Z",
+  "reviewedAt": "2026-08-28T23:24:46.422Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 129,
-    "human_review_required": 15
+    "approved": 131,
+    "human_review_required": 13
   },
   "items": [
     {
@@ -330,7 +330,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002551480",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MT",
       "slug": "otaviano-pivetta",
       "sqCandidato": "110002551480",
@@ -1206,7 +1206,7 @@
       "nomeUrna": "GILBERTO VASCONCELOS",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "gilberto-vasconcelos: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002550776",
@@ -1408,7 +1408,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "hildon-chaves",
       "sqCandidato": "220002542916",
@@ -1624,7 +1624,7 @@
       "nomeUrna": "HELDER SALOMÃO",
       "partido": "PT",
       "sourceState": "em_revisao",
-      "reason": "helder-salomao: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:ES:80002552172",
