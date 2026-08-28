@@ -23,6 +23,20 @@ const allowed = [
   /^scripts\/lib\/data-freshness\/(candidaturas|recommendations|registry|tse-source|types)\.ts$/,
   /^tests\/data-freshness-(alerts|artifacts|candidaturas|fail-closed|golden|registry|workflow)\.test\.ts$/,
   /^tests\/fixtures\/data-freshness\/cases\.jsonl$/,
+  /^data\/chapas-2026-tse-20260827\.json$/,
+  /^data\/tse-profile-links-20260827\.json$/,
+  /^scripts\/gerar-chapas-2026-20260827\.ts$/,
+  /^supabase\/migrations\/20260828020500_chapas_2026_quarentena_schema\.sql$/,
+  /^supabase\/migrations\/20260828020600_chapas_2026_tse_20260827\.sql$/,
+  /^supabase\/readback\/20260828020600_chapas_2026_tse_20260827\.readback\.sql$/,
+  /^supabase\/rollback\/20260828020600_chapas_2026_tse_20260827\.rollback\.sql$/,
+  /^tests\/chapas-2026-20260827\.test\.ts$/,
+  /^scripts\/audit\/allowlist-chapas-20260827\.json$/,
+  /^scripts\/audit\/falhas-replay-linear\.json$/,
+  /^scripts\/audit\/lib\/migrations-classificacao\.ts$/,
+  /^scripts\/audit\/recortes\.json$/,
+  /^tests\/candidatos-publico-view-contrato\.test\.ts$/,
+  /^tests\/migrations-classificacao\.test\.ts$/,
 ]
 const outside = files.filter((file) => !allowed.some((pattern) => pattern.test(file)))
 if (outside.length) throw new Error(`arquivos fora do escopo: ${outside.join(", ")}`)

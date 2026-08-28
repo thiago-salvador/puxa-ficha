@@ -30,6 +30,8 @@ test("auditoria permanece observacional e a escrita fica isolada no notificador"
 test("snapshot força leitura e auditoria preserva quatro artefatos", () => {
   assert.match(sql, /default_transaction_read_only\s*=\s*on/i)
   assert.doesNotMatch(sql, /\b(INSERT|UPDATE|DELETE|MERGE|CREATE|ALTER|DROP|TRUNCATE)\b/i)
+  assert.match(sql, /jsonb_agg\(DISTINCT record\)/i)
+  assert.doesNotMatch(sql, /identidade_status\s*<>\s*'duplicidade_oficial'/i)
   assert.match(workflow, /audit:data-freshness/)
   assert.match(workflow, /if:\s*always\(\)/)
   assert.match(workflow, /upload-artifact@[a-f0-9]{40}/)

@@ -368,6 +368,13 @@
       "ate": "20260825123000",
       "allowlist": "scripts/audit/allowlist-issue-96-link-check-20260825.json",
       "divida": null
+    },
+    {
+      "nome": "chapas-tse-20260827",
+      "desde": "20260828020500",
+      "ate": "20260828020600",
+      "allowlist": "scripts/audit/allowlist-chapas-20260827.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

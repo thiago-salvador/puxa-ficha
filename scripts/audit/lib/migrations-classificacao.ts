@@ -398,7 +398,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // transação (short-link, analytics, alertas). Classe schema (CREATE FUNCTION
   // + GRANT). MEDIDO no schema-gate local: aplicadas limpo 87, falhas 0, hash
   // f82a30bfc495c71fa56f123b93bdd2a77250d96bbb4a3abd7b9a7f0220a56566.
-  schemaReplayTamanho: 87,
+  // 87 -> 88 em 28/08/2026: o schema de quarentena expande somente os CHECKs
+  // de chapas_2026. A medição e o hash final pertencem ao schema-gate do PR.
+  schemaReplayTamanho: 88,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
