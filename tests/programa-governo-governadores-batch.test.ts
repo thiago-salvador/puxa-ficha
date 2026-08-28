@@ -26,6 +26,7 @@ import {
   ingestProgramaGovernoGovernadores,
   parseProgramaGovernoGovernadoresArgs,
   planejarFilaProgramaGovernoGovernadores,
+  validarFatosCacheadosProgramaGoverno,
   type ProgramaGovernoGovInventory,
   type ProgramaGovernoGovInventoryCandidate,
   type ProgramaGovernoGovInventoryDocument,
@@ -274,6 +275,13 @@ test("plan-only deriva fila do inventario com passagens planejadas e filtro por 
   assert.equal(itens.find((item) => item.uf === ufB)!.usaModelos, false)
   assert.equal(grande.chaveCacheDir, sha256(grande.chave).slice(0, 16))
 
+  const semMetrica = structuredClone(source)
+  delete semMetrica.documentos[0].textoExtraidoBytes
+  delete semMetrica.documentos[0].textoExtraidoCaracteres
+  semMetrica.documentos[0].bytes = 300_000
+  const conservador = planejarFilaProgramaGovernoGovernadores({ ufs: [ufA], sqCandidato: sq1 }, semMetrica)[0]
+  assert.equal(conservador.multipassagem, true, "metadata ausente deve usar estimativa conservadora")
+
   const soUm = planejarFilaProgramaGovernoGovernadores({ ufs: [ufA], sqCandidato: sq2 }, source)
   assert.equal(soUm.length, 1)
   assert.equal(soUm[0].sqCandidato, sq2)
@@ -281,6 +289,22 @@ test("plan-only deriva fila do inventario com passagens planejadas e filtro por 
     () => planejarFilaProgramaGovernoGovernadores({ ufs: [ufA], sqCandidato: "99999999999" }, source),
     /--sq-candidato/,
   )
+})
+
+test("cache de passagem só é reutilizado quando toda evidência continua literal", () => {
+  const documentos = [{
+    documentoId: "BA:10000000001:01",
+    paginas: [{ pagina: 1, origem: "teste", texto: "O governo ampliará a rede estadual de saúde." }],
+  }]
+  const fato = {
+    id: "fato-1",
+    texto: "Ampliará a rede estadual de saúde",
+    evidencias: [{ documentoId: "BA:10000000001:01", pagina: 1, trecho: "ampliará a rede estadual de saúde" }],
+  }
+  assert.equal(validarFatosCacheadosProgramaGoverno([fato], documentos)?.length, 1)
+  assert.equal(validarFatosCacheadosProgramaGoverno([
+    { ...fato, evidencias: [{ ...fato.evidencias[0], trecho: "promessa inexistente" }] },
+  ], documentos), null)
 })
 
 // ------------------------------------------------------ ingestao filtro ----
@@ -451,18 +475,24 @@ test("cache de extracao evita re-extracao para o mesmo hash e versao e re-extrai
 
 test("classificarRegistro separa completo, bloqueado e retryable", () => {
   assert.deepEqual(classificarRegistro(null), { estado: "retryable_error", motivo: "registro nao materializado" })
-  assert.equal(classificarRegistro({ estado: "perfil_local_ausente" }).estado, "complete")
-  assert.equal(classificarRegistro({ estado: "sem_documento_oficial" }).estado, "complete")
-  assert.equal(classificarRegistro({ estado: "falha_de_extracao", ingestao: { erro: "x" } }).estado, "blocked")
+  const base = {
+    version: 1,
+    fonte: { ano: 2026, cargo: "GOVERNADOR", uf: "BA", sqCandidato: "10000000001" },
+    ingestao: { identityKey: "2026:GOVERNADOR:BA:10000000001" },
+  }
+  assert.equal(classificarRegistro({ ...base, estado: "perfil_local_ausente" }).estado, "complete")
+  assert.equal(classificarRegistro({ ...base, estado: "sem_documento_oficial" }).estado, "complete")
+  assert.equal(classificarRegistro({ ...base, estado: "falha_de_extracao", ingestao: { ...base.ingestao, erro: "x" } }).estado, "blocked")
   assert.equal(
-    classificarRegistro({ estado: "em_revisao", julgamento: {}, ingestao: { eval: { completo: true } } }).estado,
+    classificarRegistro({ ...base, estado: "em_revisao", julgamento: {}, ingestao: { ...base.ingestao, eval: { completo: true } } }).estado,
     "complete",
   )
   assert.equal(
-    classificarRegistro({ estado: "em_revisao", julgamento: {}, ingestao: { eval: { completo: false, blockers: 3 } } }).estado,
+    classificarRegistro({ ...base, estado: "em_revisao", julgamento: {}, ingestao: { ...base.ingestao, eval: { completo: false, blockers: 3 } } }).estado,
     "blocked",
   )
-  assert.equal(classificarRegistro({ estado: "em_revisao", ingestao: { erro: "timeout" } }).estado, "retryable_error")
+  assert.equal(classificarRegistro({ ...base, estado: "em_revisao", ingestao: { ...base.ingestao, erro: "timeout" } }).estado, "retryable_error")
+  assert.equal(classificarRegistro({ estado: "sem_documento_oficial" }).estado, "retryable_error")
 })
 
 test("slots e regiao: multipassagem ocupa ate 3 slots e UFs norte nunca entram", () => {
@@ -776,6 +806,21 @@ test("consolidarBatch copia registros para a arvore regional correta e recusa mi
     })}\n`,
   )
   await assert.rejects(() => consolidarBatch({ runDir: runDirMistura }), /mistura de candidato/)
+
+  const norteOndasDir = path.join(runDir, "norte-origem")
+  await mkdir(path.join(norteOndasDir, "AC"), { recursive: true })
+  const registroNorte = {
+    version: 1,
+    estado: "aprovado",
+    fonte: { ano: 2026, cargo: "GOVERNADOR", uf: "AC", sqCandidato: "10000000004" },
+    ingestao: { identityKey: "2026:GOVERNADOR:AC:10000000004" },
+  }
+  const nortePath = path.join(norteOndasDir, "AC", "norte.json")
+  await writeFile(nortePath, `${JSON.stringify(registroNorte)}\n`)
+  await assert.rejects(() => consolidarBatch({ runDir, norteOndasDir }), /Norte aprovado proibido/)
+  await writeFile(nortePath, `${JSON.stringify({ ...registroNorte, estado: "perfil_local_ausente" })}\n`)
+  await consolidarBatch({ runDir, norteOndasDir })
+  assert.ok(existsSync(path.join(ondasDir, "norte", "AC", "norte.json")))
   await rm(runDir, { recursive: true, force: true })
   await rm(runDirMistura, { recursive: true, force: true })
 })

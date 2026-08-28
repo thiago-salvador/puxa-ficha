@@ -14,7 +14,7 @@ export declare const LEASE_TIMEOUT_MS: number
 export declare type LeaseExecucao = {
   caminho: string
   executionId: string
-  pararHeartbeat: () => void
+  pararHeartbeat: () => Promise<void>
 }
 
 export declare function adquirirLeaseExecucao(runDir: string, options?: {
@@ -34,10 +34,16 @@ export declare function slotsDeItem(item: { multipassagem: boolean; passagensPla
 export declare function classificarRegistro(registro: unknown): { estado: "complete" | "blocked" | "retryable_error"; motivo: string }
 export declare function reconciliarParaRetomada(params: {
   registro: unknown
-  estadoAnterior: { estado: string; tentativas?: number; familia?: string | null; familiaDaUltimaTentativa?: string | null; modeloDaUltimaTentativa?: string | null; familiaPlanejada?: string | null; executionId?: string; fase?: string; tentativa?: number; motivo?: string } | null
+  item?: { chave?: string } | null
+  estadoAnterior: { estado: string; tentativas?: number; familia?: string | null; familiaDaUltimaTentativa?: string | null; modeloDaUltimaTentativa?: string | null; familiaPlanejada?: string | null; modeloPlanejado?: string | null; pipelineDaUltimaTentativa?: string | null; pipelinePlanejada?: string | null; executionId?: string; fase?: string; tentativa?: number; motivo?: string } | null
   familiaAtual: string | null
   modeloAtual?: string | null
-}): { estado: "complete" | "blocked" | "retryable_error" | "pending"; motivo: string; tentativas: number; familia: string | null; familiaDaUltimaTentativa: string | null; modeloDaUltimaTentativa: string | null; familiaPlanejada: string | null; modeloPlanejado: string | null }
+  pipelineAtual?: string | null
+}): { estado: "complete" | "blocked" | "retryable_error" | "pending"; motivo: string; tentativas: number; familia: string | null; familiaDaUltimaTentativa: string | null; modeloDaUltimaTentativa: string | null; familiaPlanejada: string | null; modeloPlanejado: string | null; pipelineDaUltimaTentativa: string | null; pipelinePlanejada: string | null; reiniciarRegistro?: boolean }
+
+export declare function fingerprintPipelineConfig(config: Record<string, unknown>): string
+export declare function construirAmbienteBatch(ambiente: Record<string, string | undefined>, extras?: Record<string, string>): Record<string, string>
+export declare function arquivarRegistrosParciais(runDir: string, item: { chaveCacheDir: string }, pipelineAnterior?: string): Promise<string | null>
 
 export declare function escaladaPermitida(metricas: {
   errosCota: number

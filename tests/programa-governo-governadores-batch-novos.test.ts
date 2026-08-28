@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { EventEmitter } from "node:events"
 import { existsSync } from "node:fs"
-import { chmod, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises"
+import { chmod, mkdir, mkdtemp, readFile, rm, utimes, writeFile } from "node:fs/promises"
 import { hostname, tmpdir } from "node:os"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
@@ -127,7 +127,12 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
         await new Promise((resolve) => setTimeout(resolve, 80))
         const registroPath = path.join(runDir, "candidatos", item.chaveCacheDir, "registros", item.uf, `${item.slug}.json`)
         await mkdir(path.dirname(registroPath), { recursive: true })
-        await writeFile(registroPath, JSON.stringify({ estado: "perfil_local_ausente" }))
+        await writeFile(registroPath, JSON.stringify({
+          version: 1,
+          estado: "perfil_local_ausente",
+          fonte: { ano: 2026, cargo: "GOVERNADOR", uf: item.uf, sqCandidato: item.sqCandidato },
+          ingestao: { identityKey: item.chave },
+        }))
         child.emit("close", 0)
       })()
       return child
@@ -148,6 +153,11 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
     await assert.rejects(d.executarBatch(params), /lease.*ativa|execucao.*ativa/iu)
     await primeira
     assert.equal(spawns, 1)
+    assert.equal(existsSync(path.join(runDir, "execution-lease.json")), false)
+    const progressFinal = JSON.parse(await readFile(path.join(runDir, "progress.json"), "utf8"))
+    assert.match(progressFinal.finishedAt, /^\d{4}-\d{2}-\d{2}T/u)
+    assert.equal(progressFinal.pid, process.pid)
+    assert.equal(progressFinal.lease, "released")
 
     const staleDir = path.join(root, "stale-run")
     await mkdir(staleDir)
@@ -166,6 +176,35 @@ test("lease atômico permite somente uma execução e um spawn", async () => {
     const adquiridas = aquisicoes.filter((resultado): resultado is PromiseFulfilledResult<Awaited<ReturnType<typeof d.adquirirLeaseExecucao>>> => resultado.status === "fulfilled")
     assert.equal(adquiridas.length, 1)
     await d.liberarLeaseExecucao(adquiridas[0].value)
+
+    const orphanDir = path.join(root, "orphan-acquire")
+    await mkdir(orphanDir)
+    const acquirePath = path.join(orphanDir, "execution-lease.acquire")
+    await writeFile(acquirePath, JSON.stringify({ executionId: "orfao", pid: 999_999, hostname: hostname() }))
+    const antiga = new Date("2026-08-27T00:00:00.000Z")
+    await utimes(acquirePath, antiga, antiga)
+    const recuperada = await d.adquirirLeaseExecucao(orphanDir, opcoesLease)
+    await d.liberarLeaseExecucao(recuperada)
+    await new Promise((resolve) => setTimeout(resolve, 10))
+    assert.equal(existsSync(path.join(orphanDir, "execution-lease.json")), false, "heartbeat não pode recriar lease liberada")
+  })
+})
+
+test("ambiente do batch preserva controles necessários e remove segredos do host", async () => {
+  const d = await driver()
+  const filtrado = d.construirAmbienteBatch({
+    PATH: "/bin",
+    HOME: "/tmp/home",
+    PF_CODEX_CLI: "/bin/codex",
+    AWS_SECRET_ACCESS_KEY: "segredo",
+    OPENAI_API_KEY: "segredo",
+    SLACK_TOKEN: "segredo",
+  }, { PF_EXECUTION_ID: "exec-1" })
+  assert.deepEqual(filtrado, {
+    PATH: "/bin",
+    HOME: "/tmp/home",
+    PF_CODEX_CLI: "/bin/codex",
+    PF_EXECUTION_ID: "exec-1",
   })
 })
 
@@ -218,6 +257,101 @@ test("checkpoint após crash preserva última família e separa família planeja
   assert.equal(retomada.familiaDaUltimaTentativa, "glm")
   assert.equal(retomada.modeloDaUltimaTentativa, "glm-5.3")
   assert.equal(retomada.familiaPlanejada, "openai")
+})
+
+test("retomada após hard stop ainda executa a segunda tentativa pendente", async () => {
+  const d = await driver()
+  const estadoAnterior = {
+    estado: "retryable_error",
+    tentativas: 2,
+    familiaDaUltimaTentativa: "openai",
+    modeloDaUltimaTentativa: "gpt-5.6-luna",
+    executionId: "exec-interrompida",
+    fase: "falha",
+    tentativa: 1,
+  }
+
+  const semRegistro = d.reconciliarParaRetomada({
+    registro: null,
+    estadoAnterior,
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+  })
+  assert.equal(semRegistro.estado, "retryable_error")
+  assert.equal(semRegistro.tentativas, 2)
+
+  const comRegistroParcial = d.reconciliarParaRetomada({
+    registro: { estado: "em_revisao", ingestao: { erro: "judge interrompido antes do retry" } },
+    estadoAnterior,
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+  })
+  assert.equal(comRegistroParcial.estado, "retryable_error")
+  assert.equal(comRegistroParcial.tentativas, 2)
+
+  const tentativaEsgotada = d.reconciliarParaRetomada({
+    registro: { estado: "em_revisao", ingestao: { erro: "segunda tentativa também falhou" } },
+    estadoAnterior: { ...estadoAnterior, estado: "blocked", motivo: "falha tecnica apos 2 tentativas" },
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+  })
+  assert.equal(tentativaEsgotada.estado, "blocked")
+  assert.equal(tentativaEsgotada.tentativas, 2)
+})
+
+test("mudança comprovada de pipeline reabre só bloqueio técnico", async () => {
+  const d = await driver()
+  const base = {
+    tentativas: 2,
+    familiaDaUltimaTentativa: "openai",
+    modeloDaUltimaTentativa: "gpt-5.6-luna",
+    pipelineDaUltimaTentativa: "opencode-luna-deepseek",
+  }
+  const tecnico = d.reconciliarParaRetomada({
+    registro: { estado: "em_revisao", ingestao: { erro: "resumo invalido" } },
+    estadoAnterior: { ...base, estado: "blocked", motivo: "falha tecnica apos 2 tentativas: resumo invalido" },
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+    pipelineAtual: "codex-luna-claude",
+  })
+  assert.equal(tecnico.estado, "retryable_error")
+  assert.equal(tecnico.tentativas, 1)
+  assert.equal(tecnico.pipelinePlanejada, "codex-luna-claude")
+  assert.equal(tecnico.reiniciarRegistro, true)
+
+  const editorial = d.reconciliarParaRetomada({
+    registro: { estado: "bloqueado", julgamento: { bloqueios: 1 } },
+    estadoAnterior: { ...base, estado: "blocked", motivo: "vereditos nao-sim: 1" },
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+    pipelineAtual: "codex-luna-claude",
+  })
+  assert.equal(editorial.estado, "blocked")
+  assert.equal(editorial.tentativas, 2)
+
+  const mesmaPipeline = d.reconciliarParaRetomada({
+    registro: { estado: "em_revisao", ingestao: { erro: "resumo invalido" } },
+    estadoAnterior: { ...base, estado: "blocked", motivo: "falha tecnica apos 2 tentativas: resumo invalido" },
+    familiaAtual: "openai",
+    modeloAtual: "gpt-5.6-luna",
+    pipelineAtual: "opencode-luna-deepseek",
+  })
+  assert.equal(mesmaPipeline.estado, "blocked")
+})
+
+test("nova pipeline arquiva registro parcial sem apagar evidência anterior", async () => {
+  await withTempDir("pf-pipeline-archive-", async (runDir) => {
+    const d = await driver()
+    const item = { chaveCacheDir: "abc123", chave: "2026:GOVERNADOR:BA:50002536314" }
+    const registros = path.join(runDir, "candidatos", item.chaveCacheDir, "registros")
+    await mkdir(path.join(registros, "BA"), { recursive: true })
+    await writeFile(path.join(registros, "BA", "registro.json"), '{"estado":"em_revisao"}\n')
+    const arquivado = await d.arquivarRegistrosParciais(runDir, item, "pipeline-antiga")
+    assert.ok(arquivado)
+    assert.equal(existsSync(path.join(arquivado!, "BA", "registro.json")), true)
+    assert.equal(existsSync(path.join(registros, "BA", "registro.json")), false)
+    assert.equal(existsSync(registros), true)
+  })
 })
 
 test("telemetria registra tentativas de sucesso e falha com uso", async () => {

@@ -370,7 +370,8 @@ export function planejarFilaProgramaGovernoGovernadores(
         sha256: documento.sha256,
         bytes: documento.bytes,
         paginas: documento.paginas,
-        textoExtraidoBytes: documento.textoExtraidoBytes ?? 0,
+        textoExtraidoBytes: documento.textoExtraidoBytes
+          ?? Math.max(documento.bytes * 4, documento.paginas * 4_000),
         textoEstado: documento.textoEstado,
       }
     })
@@ -635,6 +636,15 @@ function entradaMultipassagem(extracted: readonly ProgramaGovernoDocumento[]) {
   }))
 }
 
+export function validarFatosCacheadosProgramaGoverno(
+  fatos: unknown,
+  documentos: Parameters<typeof filtrarFatosLiterais>[1],
+): ProgramaGovernoFato[] | null {
+  if (!Array.isArray(fatos) || fatos.length === 0) return null
+  const fatosValidados = filtrarFatosLiterais(fatos as ProgramaGovernoFato[], documentos)
+  return fatosValidados.length === fatos.length ? fatosValidados : null
+}
+
 async function gerarResumoProgramaGovernoMultipassagem(params: {
   identityKey: string
   nomeUrna: string
@@ -707,9 +717,15 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
         && Array.isArray((cru as Record<string, unknown>).fatos)
         && ((cru as Record<string, unknown>).fatos as unknown[]).length > 0
       ) {
-        porPassagem.set(plano.indice, (cru as { fatos: ProgramaGovernoFato[] }).fatos)
-        metrics.passagensCacheadas += 1
-        return
+        const fatosValidados = validarFatosCacheadosProgramaGoverno(
+          (cru as { fatos: ProgramaGovernoFato[] }).fatos,
+          plano.documentos,
+        )
+        if (fatosValidados) {
+          porPassagem.set(plano.indice, fatosValidados)
+          metrics.passagensCacheadas += 1
+          return
+        }
       }
     } catch {
       // cache miss ou corrompido: reexecuta apenas esta passagem

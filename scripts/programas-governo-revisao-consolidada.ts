@@ -32,7 +32,7 @@ const REGIAO_TITULO: Record<string, string> = {
 
 type InventarioMinimo = {
   escopo?: { ano?: number; cargo?: string }
-  candidaturas?: Array<{ uf: string }>
+  candidaturas?: Array<{ uf: string; chave: string }>
 }
 
 function argumento(nome: string): string | undefined {
@@ -60,16 +60,19 @@ async function lerRegistrosDaOnda(diretorioOndas: string, onda: OndaDefinicao): 
   return { registros, ufsPresentes }
 }
 
-async function esperadoPorRegiaoDoInventario(inventarioPath: string): Promise<Record<string, Record<string, number>>> {
+async function esperadoPorRegiaoDoInventario(inventarioPath: string): Promise<Record<string, Record<string, string[]>>> {
   const inventory = JSON.parse(await readFile(inventarioPath, "utf8")) as InventarioMinimo
   if (inventory?.escopo?.ano !== 2026 || inventory?.escopo?.cargo !== "GOVERNADOR" || !Array.isArray(inventory.candidaturas)) {
     throw new Error("inventario fora do escopo 2026:GOVERNADOR")
   }
-  const porRegiao: Record<string, Record<string, number>> = {}
+  const porRegiao: Record<string, Record<string, string[]>> = {}
   for (const onda of ONDAS) {
     porRegiao[onda.regiao] = {}
     for (const uf of onda.ufs) {
-      porRegiao[onda.regiao][uf] = inventory.candidaturas.filter(({ uf: candidaturaUf }) => candidaturaUf === uf).length
+      porRegiao[onda.regiao][uf] = inventory.candidaturas
+        .filter(({ uf: candidaturaUf }) => candidaturaUf === uf)
+        .map(({ chave }) => chave)
+        .sort()
     }
   }
   return porRegiao
@@ -99,11 +102,21 @@ export async function gerarRevisaoConsolidada(
     // Cobertura exata contra o inventario: cada UF presente com contagem exata.
     if (esperado) {
       for (const uf of onda.ufs) {
-        const esperadoUf = esperado[onda.regiao]?.[uf] ?? 0
-        if (esperadoUf === 0) continue
-        const presentes = registros.filter((registro) => registro.fonte.uf === uf).length
-        if (!ufsPresentes.includes(uf)) pendenciasCobertura.push(`${onda.regiao}/${uf}: sem diretório de resultados (esperadas ${esperadoUf} candidaturas)`)
-        else if (presentes !== esperadoUf) pendenciasCobertura.push(`${onda.regiao}/${uf}: ${presentes} registro(s); inventario espera ${esperadoUf}`)
+        const identidadesEsperadas = esperado[onda.regiao]?.[uf] ?? []
+        if (identidadesEsperadas.length === 0) continue
+        const identidadesPresentes = registros
+          .filter((registro) => registro.fonte.uf === uf)
+          .map((registro) => registro.ingestao?.identityKey ?? "")
+          .sort()
+        const conjuntoPresente = new Set(identidadesPresentes)
+        const faltantes = identidadesEsperadas.filter((chave) => !conjuntoPresente.has(chave))
+        const extras = [...conjuntoPresente].filter((chave) => !identidadesEsperadas.includes(chave))
+        const duplicadas = identidadesPresentes.filter((chave, indice) => chave === identidadesPresentes[indice - 1])
+        if (!ufsPresentes.includes(uf)) {
+          pendenciasCobertura.push(`${onda.regiao}/${uf}: sem diretório de resultados (esperadas ${identidadesEsperadas.length} candidaturas)`)
+        } else if (faltantes.length || extras.length || duplicadas.length) {
+          pendenciasCobertura.push(`${onda.regiao}/${uf}: identidades divergentes (faltantes=${faltantes.length}, extras=${extras.length}, duplicadas=${duplicadas.length})`)
+        }
       }
     }
     if (registros.length === 0) continue
@@ -119,7 +132,7 @@ export async function gerarRevisaoConsolidada(
     )
   }
   const totalEsperado = esperado
-    ? Object.entries(esperado).reduce((total, [, porUf]) => total + Object.values(porUf).reduce((subtotal, quantidade) => subtotal + quantidade, 0), 0)
+    ? Object.entries(esperado).reduce((total, [, porUf]) => total + Object.values(porUf).reduce((subtotal, identidades) => subtotal + identidades.length, 0), 0)
     : null
   const coberturaExata = esperado !== null && pendenciasCobertura.length === 0 && totalRegistros === totalEsperado
   const estadoTexto = esperado === null

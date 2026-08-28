@@ -1,11 +1,11 @@
 // Prova de retomada: reconcilia a fila usando a mesma logica pura do driver.
-// Valida: complete nao reexecuta, 104 agendaveis (98 pending +6 retryable), Norte 0,
-// Qwen+GPT 2 intactos, sem aprovado, extracoes e passagens reutilizaveis,
-// lista exata de bloqueados antes de qualquer spawn.
+// Valida o checkpoint atual, inclusive depois de execucoes parciais: complete
+// nao reexecuta, fila fecha em 155, Norte 0, Qwen+GPT 2 intactos, sem aprovado,
+// extracoes e passagens reutilizaveis e contagens iguais ao progress final.
 import { readFile } from "node:fs/promises"
 import { existsSync } from "node:fs"
 import path from "node:path"
-import { classificarRegistro, lerRegistro, reconciliarParaRetomada, validarCachesRetomada } from "./batch-driver.mjs"
+import { classificarRegistro, fingerprintPipelineConfig, lerRegistro, reconciliarParaRetomada, validarCachesRetomada } from "./batch-driver.mjs"
 
 const runDir = process.argv[2]
 if (!runDir) {
@@ -13,15 +13,26 @@ if (!runDir) {
   process.exit(2)
 }
 const workDir = path.resolve(runDir, "../..")
+if (existsSync(path.join(runDir, "execution-lease.json"))) {
+  console.error("FALHA: prova de retomada exige batch parado, mas existe lease ativa")
+  process.exit(1)
+}
 
 // Detecta familia atual (Luna) para reconciliacao por familia
 let familiaAtual = "openai"
+let modeloAtual = null
+let pipelineAtual = null
 try {
-  const cfgPath = path.join(workDir, "models-config-restante-luna.json")
+  const cfgPath = process.argv[3] ?? [
+    path.join(workDir, "models-config-restante-codex-luna.json"),
+    path.join(workDir, "models-config-restante-luna.json"),
+  ].find((caminho) => existsSync(caminho))
   if (existsSync(cfgPath)) {
     const cfg = JSON.parse(await readFile(cfgPath, "utf8"))
     const nome = cfg.generator?.name ?? ""
     familiaAtual = nome.toLowerCase().includes("luna") ? "openai" : nome.toLowerCase().includes("deepseek") ? "deepseek" : nome.toLowerCase().includes("glm") ? "glm" : "openai"
+    modeloAtual = cfg.generator?.version ?? cfg.generator?.name ?? null
+    pipelineAtual = fingerprintPipelineConfig(cfg)
   }
 } catch {}
 
@@ -48,7 +59,7 @@ for (const item of fila) {
   } catch {}
 
   // Usa funcao pura do driver para reconciliacao
-  const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual })
+  const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual, pipelineAtual })
 
   // Contagem a partir de dados, sem hardcode de strings (exceto chaves conhecidas para validacao)
   let estado = reconciliado.estado
@@ -94,14 +105,10 @@ if (fila.length !== 155) { console.error(`FALHA: total fila ${fila.length} != 15
 if (norteNaFila !== 0) { console.error("FALHA: Norte presente na fila"); process.exit(1) }
 if (totalAprovado !== 0) { console.error("FALHA: existe registro aprovado"); process.exit(1) }
 
-// 47 complete, 2 blocked (MT), 98 pending, 8 retryable, 106 agendaveis, 0 generator_pending fantasma
-const esperado = { complete: 47, blocked: 2, pending: 98, retryable: 8 }
-for (const [k, v] of Object.entries(esperado)) {
-  if (estadosContados[k] !== v) {
-    console.error(`FALHA: ${k} ${estadosContados[k]} != ${v} (esperado apos normalizacao 106 agendaveis)`)
-    console.error(`estados: ${JSON.stringify(estadosContados)}`)
-    process.exit(1)
-  }
+const totalReconciliado = estadosContados.complete + estadosContados.blocked + estadosContados.pending + estadosContados.retryable
+if (totalReconciliado !== fila.length || estadosContados.other !== 0) {
+  console.error(`FALHA: checkpoint nao fecha a fila (${totalReconciliado}/${fila.length}, other=${estadosContados.other})`)
+  process.exit(1)
 }
 if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending !== undefined) {
   // apos normalizacao deve ser 0; se ainda houver, falhar
@@ -110,8 +117,21 @@ if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending
     process.exit(1)
   }
 }
-if (agendaveisLista.length !== 106) {
-  console.error(`FALHA: agendaveis ${agendaveisLista.length} != 106`)
+
+const progress = JSON.parse(await readFile(path.join(runDir, "progress.json"), "utf8"))
+const esperadoPeloCheckpoint = {
+  complete: progress.concluidos,
+  blocked: progress.bloqueados,
+  agendaveis: progress.pendentes,
+}
+for (const [campo, atual] of [["complete", estadosContados.complete], ["blocked", estadosContados.blocked], ["agendaveis", agendaveisLista.length]]) {
+  if (atual !== esperadoPeloCheckpoint[campo]) {
+    console.error(`FALHA: ${campo} ${atual} != ${esperadoPeloCheckpoint[campo]} registrado no progress`)
+    process.exit(1)
+  }
+}
+if (progress.totalEsperado !== fila.length || progress.emVoo !== 0) {
+  console.error(`FALHA: progress final invalido total=${progress.totalEsperado} emVoo=${progress.emVoo}`)
   process.exit(1)
 }
 
@@ -148,4 +168,4 @@ for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
   if (!existsSync(path.join(dir, "registros"))) { console.error(`FALHA: registros ausentes ${hash}`); process.exit(1) }
 }
 
-console.log("RETOMADA_OK total=155 complete=47 blocked=2 pending=98 retryable=8 agendaveis=106 norte=0 qwen=2 aprovado=0")
+console.log(`RETOMADA_OK total=155 complete=${estadosContados.complete} blocked=${estadosContados.blocked} pending=${estadosContados.pending} retryable=${estadosContados.retryable} agendaveis=${agendaveisLista.length} norte=0 qwen=2 aprovado=0`)

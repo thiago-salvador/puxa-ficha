@@ -67,7 +67,7 @@ export function assertProgramaGovernoRevisaoSemAprovado(registros: readonly Prog
 }
 
 const ESTADO_ROTULO: Record<string, string> = {
-  em_revisao: "Em revisão (Eval completo)",
+  em_revisao: "Em revisão",
   perfil_local_ausente: "Perfil local ausente",
   sem_documento_oficial: "Sem documento oficial no TSE",
   falha_de_extracao: "Falha de extração",
@@ -138,7 +138,11 @@ function alertasSecao(registro: ProgramaGovernoRevisaoRegistro): string {
 
 function cartao(registro: ProgramaGovernoRevisaoRegistro, opcoes: ProgramaGovernoRevisaoOpcoes): string {
   const fonte = registro.fonte
-  const rotuloEstado = ESTADO_ROTULO[registro.estado] ?? escapeHtml(registro.estado)
+  const rotuloEstado = registro.estado === "em_revisao"
+    ? registro.ingestao?.eval?.completo
+      ? "Em revisão (Eval completo)"
+      : "Em revisão (Eval incompleto, bloqueado)"
+    : ESTADO_ROTULO[registro.estado] ?? escapeHtml(registro.estado)
   const resolvido = opcoes.resolverLinkTextoExtraido?.(registro) ?? null
   const linkTexto = fonte.slug && registro.documentos?.length
     ? (resolvido
@@ -169,7 +173,7 @@ export function renderizarProgramaGovernoRevisaoRegional(
     .map(([estado, total]) => `<li>${escapeHtml(ESTADO_ROTULO[estado] ?? estado)}: ${total}</li>`)
     .join("")
   const cartoes = registros.map((registro) => cartao(registro, opcoes)).join("\n")
-  return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(opcoes.titulo)}</title><style>
+  const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(opcoes.titulo)}</title><style>
 body{font:16px/1.55 system-ui,sans-serif;max-width:1020px;margin:auto;padding:24px;color:#17202a}
 header.cabecalho{position:sticky;top:0;background:#fff;border-bottom:2px solid #b91c1c;padding:12px 0}
 header.cabecalho strong{color:#b91c1c}
@@ -199,4 +203,5 @@ ${cartoes}
 <script>
 (function(){var input=document.getElementById('filtro-busca');if(!input)return;var artigos=Array.prototype.slice.call(document.querySelectorAll('section[data-lista-candidatos] article'));input.addEventListener('input',function(){var q=input.value.trim().toLowerCase();artigos.forEach(function(a){a.hidden=q&&!a.textContent.toLowerCase().includes(q)})})})()
 </script></body></html>`
+  return html.replace(/^[\t ]+$/gmu, "")
 }

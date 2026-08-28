@@ -28,12 +28,13 @@ function config(): ProgramaGovernoModelsConfig {
 
 function summary(themeIds = ["saude", "educacao", "seguranca", "economia"]): unknown {
   const evidence = [{ documentoId: "PI:180002549920:01", pagina: 1, trecho: "Trecho oficial." }]
+  const frases = Array.from({ length: 6 }, (_, index) => ({
+    texto: ["A", "proposta", String(index + 1), "prevê", "ação", "pública", "com", "metas", "definidas", "execução", "estadual", "acompanhamento", "periódico", "transparência", "administrativa", "e", "atendimento", "regional", "integrado", "contínuo."].join(" "),
+    evidencias: evidence,
+  }))
   return {
-    texto: "Frase um. Frase dois. Frase três. Frase quatro. Frase cinco. Frase seis.",
-    frases: Array.from({ length: 6 }, (_, index) => ({
-      texto: `Frase ${index + 1}.`,
-      evidencias: evidence,
-    })),
+    texto: frases.map(({ texto }) => texto).join(" "),
+    frases,
     temas: themeIds.map((id) => ({
       id,
       titulo: id,
@@ -52,6 +53,25 @@ test("recusa tentativas fracionárias e aliases da mesma família", () => {
   sameFamily.generator.name = "GPT-5.4"
   sameFamily.judge.name = "OpenAI o3"
   assert.throws(() => createProgramaGovernoModelAdapters(sameFamily), /familias diferentes/)
+})
+
+test("generator retenta quando resumo viola limite mecânico e informa o erro", async () => {
+  const source = config()
+  source.generator.maxAttempts = 2
+  let chamadas = 0
+  const entradas: string[] = []
+  const adapters = createProgramaGovernoModelAdapters(source, async (_command, _args, input) => {
+    chamadas += 1
+    entradas.push(input)
+    const valido = summary() as Record<string, unknown>
+    return {
+      stdout: JSON.stringify(chamadas === 1 ? { ...valido, texto: "resumo curto" } : valido),
+      stderr: "",
+    }
+  })
+  const result = await adapters.generate({ identityKey: "2026:GOVERNADOR:PI:180002549920", documentos: [] })
+  assert.equal(result.metadata.attempts, 2)
+  assert.match(entradas[1], /resposta anterior falhou.*2 palavras/iu)
 })
 
 test("familias GLM e DeepSeek sao distintas entre si e de OpenAI Luna", () => {
@@ -132,6 +152,15 @@ test("familias GLM e DeepSeek sao distintas entre si e de OpenAI Luna", () => {
   deepseekAmbosComando.judge.version = "deepseek-v4-flash"
   deepseekAmbosComando.judge.command = "node run-generator-opencode-deepseek.mjs"
   assert.throws(() => createProgramaGovernoModelAdapters(deepseekAmbosComando), /familias diferentes/)
+
+  const aliasFalsoNoCodex = config()
+  aliasFalsoNoCodex.generator.name = "OpenAI Luna"
+  aliasFalsoNoCodex.generator.version = "gpt-5.6-luna"
+  aliasFalsoNoCodex.generator.command = "node run-generator-codex-luna.mjs"
+  aliasFalsoNoCodex.judge.name = "DeepSeek"
+  aliasFalsoNoCodex.judge.version = "deepseek-v4-flash"
+  aliasFalsoNoCodex.judge.command = "node run-judge-codex.mjs"
+  assert.throws(() => createProgramaGovernoModelAdapters(aliasFalsoNoCodex), /runner da familia openai diverge/)
 })
 
 test("recusa IDs de tema duplicados", async () => {
@@ -176,6 +205,18 @@ test("preserva wrapper.uso na metadata do modelo", async () => {
     documentos: [],
   })
   assert.deepEqual(result.metadata.uso, { input_tokens: 12, output_tokens: 5, cost_usd: 0.02 })
+})
+
+test("preserva uso genérico de runners fora do OpenCode", async () => {
+  const adapters = createProgramaGovernoModelAdapters(config(), async () => ({
+    stdout: JSON.stringify(summary()),
+    stderr: `PF_MODEL_USAGE=${JSON.stringify({ input_tokens: 18, output_tokens: 3, cost_usd: 0.01 })}\n`,
+  }))
+  const result = await adapters.generate({
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    documentos: [],
+  })
+  assert.deepEqual(result.metadata.uso, { input_tokens: 18, output_tokens: 3, cost_usd: 0.01 })
 })
 
 console.log("PROGRAMAS_MODELS_PASS")

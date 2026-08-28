@@ -26,6 +26,8 @@ function rodarRunner(caminho: string, envExtra: Record<string, string>, payloadS
 
 const RUNNER_QWEN = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-qwen.mjs", import.meta.url))
 const RUNNER_CODEX = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-codex.mjs", import.meta.url))
+const RUNNER_CODEX_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-codex-luna.mjs", import.meta.url))
+const RUNNER_CLAUDE = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-claude.mjs", import.meta.url))
 const RUNNER_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-luna.mjs", import.meta.url))
 const RUNNER_DEEPSEEK = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-opencode-deepseek.mjs", import.meta.url))
 const RUNNER_GLM = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-glm.mjs", import.meta.url))
@@ -82,14 +84,101 @@ test("runner do judge codex extrai mensagem final do stream ndjson e devolve obj
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: false })
 })
 
-test("envelope invalido falha fechado nos runners qwen/codex", async () => {
+test("runner do generator Luna usa Codex limpo, modelo explícito e telemetria", async () => {
+  const fakeCli = fixturePath("pf-fake-codex-luna.mjs")
+  const script = `#!/usr/bin/env node
+const args=process.argv.slice(2)
+for (const esperado of ['--ephemeral','--ignore-user-config','--ignore-rules','gpt-5.6-luna','model_reasoning_effort="medium"']) {
+  if (!args.includes(esperado)) { console.error('arg ausente: '+esperado); process.exit(2) }
+}
+process.stdin.resume()
+process.stdout.write(${JSON.stringify([
+    JSON.stringify({ type: "item.completed", item: { type: "agent_message", text: '{"ok":true}' } }),
+    JSON.stringify({ type: "turn.completed", usage: { input_tokens: 21, output_tokens: 4 } }),
+    "",
+  ].join("\n"))})
+`
+  await writeFile(fakeCli, script)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_CODEX_LUNA,
+    { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000" },
+    ENVELOPE,
+  )
+  assert.equal(resultado.code, 0, resultado.stderr)
+  assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
+  assert.match(resultado.stderr, /PF_MODEL_USAGE=.*"input_tokens":21/u)
+})
+
+test("runner do judge Claude usa modo mínimo e devolve structured_output", async () => {
+  const fakeCli = fixturePath("pf-fake-claude-judge.mjs")
+  const script = `#!/usr/bin/env node
+const args=process.argv.slice(2)
+for (const esperado of ['--safe-mode','--no-session-persistence','--json-schema','sonnet']) {
+  if (!args.includes(esperado)) { console.error('arg ausente: '+esperado); process.exit(2) }
+}
+const schema=JSON.parse(args[args.indexOf('--json-schema')+1])
+if ('$schema' in schema) { console.error('meta-schema nao removido'); process.exit(3) }
+process.stdin.resume()
+process.stdout.write(JSON.stringify({structured_output:{ok:false},usage:{input_tokens:18,output_tokens:3},total_cost_usd:0.01}))
+`
+  await writeFile(fakeCli, script)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_CLAUDE,
+    { PF_CLAUDE_CLI: fakeCli, PF_CLAUDE_TIMEOUT_MS: "15000" },
+    JSON.stringify({ ...JSON.parse(ENVELOPE), schema: { ...JSON.parse(ENVELOPE).schema, $schema: 'https://json-schema.org/draft/2020-12/schema' } }),
+  )
+  assert.equal(resultado.code, 0, resultado.stderr)
+  assert.deepEqual(JSON.parse(resultado.stdout), { ok: false })
+  assert.match(resultado.stderr, /PF_MODEL_USAGE=.*"cost_usd":0\.01/u)
+})
+
+test("envelope invalido falha fechado nos runners qwen/codex/claude", async () => {
   const base = DIR_RUNNERS
-  for (const runner of ["run-generator-qwen.mjs", "run-judge-codex.mjs"]) {
+  for (const runner of ["run-generator-qwen.mjs", "run-judge-codex.mjs", "run-generator-codex-luna.mjs", "run-judge-claude.mjs"]) {
     const fakeCli = fixturePath(`pf-fake-nunca-chamado-${runner}`)
     await writeFile(fakeCli, "#!/usr/bin/env node\nconsole.error('NAO DEVE SER CHAMADO'); process.exit(1)\n")
     await chmod(fakeCli, 0o755)
     const resultado = await rodarRunner(base + runner, { PF_QWEN_CLI: fakeCli, PF_CODEX_CLI: fakeCli }, '{"foo":1}')
     assert.notEqual(resultado.code, 0)
+  }
+})
+
+test("runners Qwen, Codex e Claude rejeitam exit 7 mesmo com JSON valido", async () => {
+  const fakeCli = fixturePath("pf-fake-model-exit7.mjs")
+  await writeFile(fakeCli, `#!/usr/bin/env node
+process.stdin.resume()
+const isClaude=process.argv.includes('--safe-mode')
+process.stdout.write(isClaude
+  ? JSON.stringify({structured_output:{ok:true}})
+  : ${JSON.stringify(JSON.stringify({ type: "item.completed", item: { type: "agent_message", text: '{"ok":true}' } }) + "\n")})
+process.stderr.write('transport error')
+process.exit(7)
+`)
+  await chmod(fakeCli, 0o755)
+  for (const [runner, env] of [
+    [RUNNER_QWEN, { PF_QWEN_CLI: fakeCli, PF_QWEN_TIMEOUT_MS: "15000" }],
+    [RUNNER_CODEX_LUNA, { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000" }],
+    [RUNNER_CLAUDE, { PF_CLAUDE_CLI: fakeCli, PF_CLAUDE_TIMEOUT_MS: "15000" }],
+  ] as const) {
+    const resultado = await rodarRunner(runner, env, ENVELOPE)
+    assert.notEqual(resultado.code, 0, `runner ${runner} deveria falhar com exit 7`)
+    assert.match(resultado.stderr, /saiu com 7/u)
+  }
+})
+
+test("runners Qwen e Codex encerram por timeout com erro controlado", async () => {
+  const fakeCli = fixturePath("pf-fake-model-timeout.mjs")
+  await writeFile(fakeCli, "#!/usr/bin/env node\nprocess.on('SIGTERM',()=>process.exit(0)); process.stdin.resume(); setInterval(()=>{},1000)\n")
+  await chmod(fakeCli, 0o755)
+  for (const [runner, env] of [
+    [RUNNER_QWEN, { PF_QWEN_CLI: fakeCli, PF_QWEN_TIMEOUT_MS: "50" }],
+    [RUNNER_CODEX_LUNA, { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "50" }],
+  ] as const) {
+    const resultado = await rodarRunner(runner, env, ENVELOPE)
+    assert.notEqual(resultado.code, 0)
+    assert.match(resultado.stderr, /timeout apos 50ms/u)
   }
 })
 

@@ -369,7 +369,18 @@ function modelFamily(name: string): string {
   if (tokens.some((token) => /^(?:meta|llama)$/u.test(token))) return "meta"
   if (tokens.some((token) => /^(?:deepseek)$/u.test(token))) return "deepseek"
   if (tokens.some((token) => /^(?:glm|z\.?ai|zhipu|glmassistant)$/u.test(token))) return "glm"
+  if (tokens.some((token) => /^(?:qwen)$/u.test(token)) || (tokens.includes("alibaba") && raw.includes("qwen"))) return "qwen"
   return tokens[0]
+}
+
+function runnerFamily(config: ProgramaGovernoModelCommand): string | null {
+  const runner = runnerReal(config).toLocaleLowerCase("pt-BR")
+  if (runner.includes("run-generator-qwen")) return "qwen"
+  if (runner.includes("run-judge-claude")) return "anthropic"
+  if (runner.includes("run-judge-opencode-deepseek")) return "deepseek"
+  if (runner.includes("run-generator-opencode-glm")) return "glm"
+  if (runner.includes("run-generator-codex-luna") || runner.includes("run-judge-codex") || runner.includes("run-generator-opencode-luna")) return "openai"
+  return null
 }
 
 function assertCommand(config: ProgramaGovernoModelCommand, path: string): void {
@@ -401,6 +412,11 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   if (comandoLower.includes("luna") && !nomeLower.includes("luna")) throw new Error(`${path}.command: runner Luna exige nome Luna`)
   if (comandoLower.includes("deepseek") && !nomeLower.includes("deepseek")) throw new Error(`${path}.command: runner DeepSeek exige nome DeepSeek`)
   if (comandoLower.includes("glm") && !nomeLower.includes("glm")) throw new Error(`${path}.command: runner GLM exige nome GLM`)
+  const familiaRunner = runnerFamily(config)
+  const familiaDeclarada = modelFamily(config.name)
+  if (familiaRunner && familiaRunner !== familiaDeclarada) {
+    throw new Error(`${path}.command: runner da familia ${familiaRunner} diverge do nome ${config.name}`)
+  }
 }
 
 function runnerReal(config: ProgramaGovernoModelCommand): string {
@@ -411,10 +427,11 @@ function runnerReal(config: ProgramaGovernoModelCommand): string {
 }
 
 function usoDoStderr(stderr: string): Record<string, unknown> | undefined {
-  const prefixo = "PF_OPENCODE_USAGE="
-  const linha = stderr.split("\n").reverse().find((item) => item.startsWith(prefixo))
+  const prefixos = ["PF_MODEL_USAGE=", "PF_OPENCODE_USAGE="]
+  const linha = stderr.split("\n").reverse().find((item) => prefixos.some((prefixo) => item.startsWith(prefixo)))
   if (!linha) return undefined
   try {
+    const prefixo = prefixos.find((item) => linha.startsWith(item))!
     const value = JSON.parse(linha.slice(prefixo.length)) as unknown
     return isObject(value) ? value : undefined
   } catch {
@@ -467,21 +484,29 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
   if (new Set(normalizedThemes.map(({ id }) => id)).size !== normalizedThemes.length) {
     throw new Error("generator.temas: id duplicado")
   }
+  const texto = stringValue(value.texto, "generator.texto")
+  const palavras = texto.trim().split(/\s+/u).length
+  if (palavras < 120 || palavras > 180) {
+    throw new Error(`generator.texto: ${palavras} palavras; esperado entre 120 e 180`)
+  }
+  const normalizedPhrases = frases.map((item, index) => {
+    if (!isObject(item) || !Array.isArray(item.evidencias) || item.evidencias.length === 0) {
+      throw new Error(`generator.frases[${index}]: invalida`)
+    }
+    assertOnlyKeys(item, ["texto", "evidencias"], `generator.frases[${index}]`)
+    const fraseTexto = stringValue(item.texto, `generator.frases[${index}].texto`)
+    if (!texto.includes(fraseTexto)) throw new Error(`generator.frases[${index}]: texto nao aparece verbatim no resumo`)
+    return {
+      texto: fraseTexto,
+      evidencias: item.evidencias.map((itemEvidence, evidenceIndex) => evidence(
+        itemEvidence,
+        `generator.frases[${index}].evidencias[${evidenceIndex}]`,
+      )),
+    }
+  })
   return {
-    texto: stringValue(value.texto, "generator.texto"),
-    frases: frases.map((item, index) => {
-      if (!isObject(item) || !Array.isArray(item.evidencias) || item.evidencias.length === 0) {
-        throw new Error(`generator.frases[${index}]: invalida`)
-      }
-      assertOnlyKeys(item, ["texto", "evidencias"], `generator.frases[${index}]`)
-      return {
-        texto: stringValue(item.texto, `generator.frases[${index}].texto`),
-        evidencias: item.evidencias.map((itemEvidence, evidenceIndex) => evidence(
-          itemEvidence,
-          `generator.frases[${index}].evidencias[${evidenceIndex}]`,
-        )),
-      }
-    }),
+    texto,
+    frases: normalizedPhrases,
     temas: normalizedThemes,
   }
 }
@@ -601,10 +626,13 @@ async function runStructured<T>(
   let lastError = "falha desconhecida"
   for (let attempt = 1; attempt <= config.maxAttempts; attempt += 1) {
     try {
+      const instructionsForAttempt = attempt === 1
+        ? instructions
+        : `${instructions}\nA resposta anterior falhou na validacao: ${lastError}. Corrija exatamente esse problema e preserve todos os demais requisitos.`
       const result = await runner(
         config.command,
         config.args ?? [],
-        JSON.stringify({ schema, promptVersion, instructions, input }),
+        JSON.stringify({ schema, promptVersion, instructions: instructionsForAttempt, input }),
         config.timeoutMs,
       )
       const parsed = JSON.parse(result.stdout) as unknown

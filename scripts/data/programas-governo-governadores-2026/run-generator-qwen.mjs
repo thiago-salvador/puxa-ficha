@@ -9,7 +9,15 @@ import { spawn } from "node:child_process"
 const MODELO_CLI = process.env.PF_QWEN_CLI ?? "qwen"
 // Extra args via ambiente (ex.: PF_QWEN_EXTRA_ARGS="--safe-mode" para nao
 // carregar MCP servers em chamadas batch). Argumentos sem espacos internos.
-const MODELO_ARGS_BASE = ["--output-format", "json", ...(process.env.PF_QWEN_EXTRA_ARGS ?? "").split(" ").filter(Boolean), "-p", ""]
+const MODELO_ARGS_BASE = ["--safe-mode", "--output-format", "json", ...(process.env.PF_QWEN_EXTRA_ARGS ?? "").split(" ").filter(Boolean), "-p", ""]
+
+function sinalizarGrupo(child, signal) {
+  if (!child?.pid) return
+  if (process.platform !== "win32") {
+    try { process.kill(-child.pid, signal); return } catch {}
+  }
+  try { child.kill(signal) } catch {}
+}
 
 function lerStdin() {
   return new Promise((resolvePromise, rejectPromise) => {
@@ -24,19 +32,22 @@ function chamarQwen(promptTexto) {
   return new Promise((resolvePromise, rejectPromise) => {
     const child = spawn(MODELO_CLI, [...MODELO_ARGS_BASE, "-p", ""], {
       stdio: ["pipe", "pipe", "pipe"],
+      detached: process.platform !== "win32",
     })
     let stdout = ""
     let stderr = ""
     const timer = setTimeout(() => {
-      child.kill("SIGTERM")
-      reject(new Error(`qwen timeout apos ${TIMEOUT_MS}ms`))
+      sinalizarGrupo(child, "SIGTERM")
+      const forceTimer = setTimeout(() => sinalizarGrupo(child, "SIGKILL"), 2_000)
+      forceTimer.unref?.()
+      rejectPromise(new Error(`qwen timeout apos ${TIMEOUT_MS}ms`))
     }, TIMEOUT_MS)
     child.stdout.on("data", (chunk) => { stdout += chunk.toString() })
     child.stderr.on("data", (chunk) => { stderr += chunk.toString() })
     child.on("error", (error) => { clearTimeout(timer); rejectPromise(new Error(`qwen erro de processo: ${error.message}`)) })
     child.on("close", (code) => {
       clearTimeout(timer)
-      if (code === 0 || stdout.trim()) resolvePromise({ stdout, stderr })
+      if (code === 0) resolvePromise({ stdout, stderr })
       else rejectPromise(new Error(`qwen saiu com ${code}: ${stderr.slice(-500)}`))
     })
     child.stdin.end(promptTexto)

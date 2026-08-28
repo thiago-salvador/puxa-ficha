@@ -1,4 +1,7 @@
 import assert from "node:assert/strict"
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises"
+import { tmpdir } from "node:os"
+import path from "node:path"
 import test from "node:test"
 
 import {
@@ -6,6 +9,7 @@ import {
   renderizarProgramaGovernoRevisaoRegional,
   type ProgramaGovernoRevisaoRegistro,
 } from "../scripts/lib/programas-governo-revisao-html"
+import { gerarRevisaoConsolidada } from "../scripts/programas-governo-revisao-consolidada"
 
 function registro(estado: string, override: Partial<ProgramaGovernoRevisaoRegistro> = {}): ProgramaGovernoRevisaoRegistro {
   return {
@@ -49,6 +53,12 @@ const COMPLETO = registro("em_revisao", {
       { id: "k2:neutralidade", verdict: "unknown", reason: "parcial" },
     ],
   },
+  ingestao: {
+    identityKey: "2026:GOVERNADOR:AM:40002532272",
+    etapa: "concluida",
+    erro: null,
+    eval: { completo: true, blockers: 0, dimensoes: [] },
+  },
 })
 
 test("contagem por estado e rejeicao explicita de aprovados", () => {
@@ -78,4 +88,48 @@ test("html regional traz identidade, eval, bloqueios e garantia sem aprovado", (
   assert.match(html, /Este registro NÃO está aprovado/)
   assert.ok(!html.includes('data-estado="aprovado"'))
   assert.match(html, /Perfil local ausente/)
+  assert.match(html, /Em revisão \(Eval completo\)/)
+  assert.doesNotMatch(html, /^[\t ]+$/mu)
+})
+
+test("eval incompleto permanece rotulado como bloqueado", () => {
+  const incompleto = registro("em_revisao", {
+    ...COMPLETO,
+    ingestao: {
+      ...COMPLETO.ingestao!,
+      eval: { completo: false, blockers: 2, dimensoes: ["suporte"] },
+    },
+  })
+  const html = renderizarProgramaGovernoRevisaoRegional([incompleto], { titulo: "t", mensagemNadaAprovado: true })
+  assert.match(html, /Em revisão \(Eval incompleto, bloqueado\)/)
+  assert.match(html, /Eval incompleto: 2 veredito/)
+})
+
+test("cobertura exata compara identidades e recusa duplicata com omissão na mesma UF", async () => {
+  const raiz = await mkdtemp(path.join(tmpdir(), "pf-revisao-identidades-"))
+  try {
+    const ondas = path.join(raiz, "ondas")
+    const destino = path.join(raiz, "review")
+    const inventario = path.join(raiz, "inventario.json")
+    const ufDir = path.join(ondas, "nordeste", "BA")
+    await mkdir(ufDir, { recursive: true })
+    const duplicado = registro("perfil_local_ausente", {
+      fonte: { ...COMPLETO.fonte, uf: "BA", sqCandidato: "10000000001", slug: "duplicado" },
+      ingestao: { identityKey: "2026:GOVERNADOR:BA:10000000001", etapa: "ausencia", erro: null, eval: null },
+    })
+    await writeFile(path.join(ufDir, "a.json"), JSON.stringify(duplicado))
+    await writeFile(path.join(ufDir, "b.json"), JSON.stringify(duplicado))
+    await writeFile(inventario, JSON.stringify({
+      escopo: { ano: 2026, cargo: "GOVERNADOR" },
+      candidaturas: [
+        { uf: "BA", chave: "2026:GOVERNADOR:BA:10000000001" },
+        { uf: "BA", chave: "2026:GOVERNADOR:BA:10000000002" },
+      ],
+    }))
+    const resultado = await gerarRevisaoConsolidada(ondas, destino, { inventarioPath: inventario })
+    assert.equal(resultado.coberturaExata, false)
+    assert.match(resultado.pendenciasCobertura.join("\n"), /faltantes=1, extras=0, duplicadas=1/)
+  } finally {
+    await rm(raiz, { recursive: true, force: true })
+  }
 })

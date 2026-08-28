@@ -7,7 +7,8 @@
 import { spawn } from "node:child_process"
 
 const CODEX_BIN = process.env.PF_CODEX_CLI ?? "codex"
-const MODELO = process.env.PF_JUDGE_MODEL ?? "gpt-5.4"
+const MODELO = process.env.PF_CODEX_MODEL ?? process.env.PF_JUDGE_MODEL ?? "gpt-5.4"
+const REASONING_EFFORT = process.env.PF_CODEX_REASONING_EFFORT ?? "low"
 const TIMEOUT_MS = Number(process.env.PF_CODEX_TIMEOUT_MS ?? 900_000)
 
 function lerStdin() {
@@ -29,26 +30,37 @@ function chamarCodex(promptTexto) {
       "--json",
       "--skip-git-repo-check",
       "--sandbox", "read-only",
+      "--ephemeral",
+      "--ignore-user-config",
+      "--ignore-rules",
       "-m", MODELO,
-      "-c", 'model_reasoning_effort="low"',
+      "-c", `model_reasoning_effort="${REASONING_EFFORT}"`,
       "-c", 'shell_environment_policy.inherit=none',
-      "-c", 'features.web_search_request=false',
+      "-c", 'web_search="disabled"',
       ...extras,
       "-", // prompt via stdin
     ]
-    const child = spawn(CODEX_BIN, args, { stdio: ["pipe", "pipe", "pipe"] })
+    const child = spawn(CODEX_BIN, args, { stdio: ["pipe", "pipe", "pipe"], detached: process.platform !== "win32" })
     let stdout = ""
     let stderr = ""
     const timer = setTimeout(() => {
-      child.kill("SIGTERM")
-      reject(new Error(`codex timeout apos ${TIMEOUT_MS}ms`))
+      if (child.pid && process.platform !== "win32") {
+        try { process.kill(-child.pid, "SIGTERM") } catch { child.kill("SIGTERM") }
+      } else child.kill("SIGTERM")
+      const forceTimer = setTimeout(() => {
+        if (child.pid && process.platform !== "win32") {
+          try { process.kill(-child.pid, "SIGKILL") } catch { child.kill("SIGKILL") }
+        } else child.kill("SIGKILL")
+      }, 2_000)
+      forceTimer.unref?.()
+      rejectPromise(new Error(`codex timeout apos ${TIMEOUT_MS}ms`))
     }, TIMEOUT_MS)
     child.stdout.on("data", (chunk) => { stdout += chunk.toString() })
     child.stderr.on("data", (chunk) => { stderr += chunk.toString() })
     child.on("error", (error) => { clearTimeout(timer); rejectPromise(new Error(`codex erro de processo: ${error.message}`)) })
     child.on("close", (code) => {
       clearTimeout(timer)
-      if (stdout.trim()) resolvePromise({ stdout, stderr, code })
+      if (code === 0 && stdout.trim()) resolvePromise({ stdout, stderr, code })
       else rejectPromise(new Error(`codex saiu com ${code}: ${stderr.slice(-500)}`))
     })
     child.stdin.end(promptTexto)
@@ -58,9 +70,11 @@ function chamarCodex(promptTexto) {
 function extrairMensagemFinal(streamNdjsonOuTexto) {
   const linhas = streamNdjsonOuTexto.split("\n").filter(Boolean)
   let ultima = ""
+  let uso = null
   for (const linha of linhas) {
     try {
       const evento = JSON.parse(linha)
+      if (evento.type === "turn.completed" && evento.usage && typeof evento.usage === "object") uso = evento.usage
       const item = evento.item ?? evento
       const tipo = item.type ?? item.item_type
       if ((evento.type === "item.completed" && tipo === "agent_message") || tipo === "message") {
@@ -69,9 +83,9 @@ function extrairMensagemFinal(streamNdjsonOuTexto) {
       }
     } catch {}
   }
-  if (ultima.trim()) return ultima
+  if (ultima.trim()) return { mensagem: ultima, uso }
   // Fallback: o proprio stream pode ser texto puro quando sem --json.
-  return streamNdjsonOuTexto
+  return { mensagem: streamNdjsonOuTexto, uso }
 }
 
 function extrairJson(texto) {
@@ -118,8 +132,9 @@ async function main() {
   ].join("\n")
 
   const { stdout } = await chamarCodex(promptFinal)
-  const mensagem = extrairMensagemFinal(stdout)
+  const { mensagem, uso } = extrairMensagemFinal(stdout)
   const payload = extrairJson(mensagem)
+  if (uso) console.error(`PF_MODEL_USAGE=${JSON.stringify(uso)}`)
   process.stdout.write(JSON.stringify(payload))
 }
 

@@ -114,8 +114,21 @@ export async function adquirirLeaseExecucao(runDir, options = {}) {
   try {
     await writeFile(travaAquisicao, `${JSON.stringify({ executionId, pid, hostname })}\n`, { flag: "wx" })
   } catch (error) {
-    if (error?.code === "EEXIST") throw new Error("lease ativa: aquisicao concorrente")
-    throw error
+    if (error?.code === "EEXIST") {
+      let travaAnterior
+      try { travaAnterior = JSON.parse(await readFile(travaAquisicao, "utf8")) } catch {}
+      const idadeMs = (() => {
+        try { return now() - statSync(travaAquisicao).mtimeMs } catch { return 0 }
+      })()
+      const pidAusente = travaAnterior?.hostname === hostname && !pidAtivo(Number(travaAnterior?.pid))
+      if (idadeMs <= timeoutMs || !pidAusente) throw new Error("lease ativa: aquisicao concorrente")
+      await rm(travaAquisicao, { force: true })
+      try {
+        await writeFile(travaAquisicao, `${JSON.stringify({ executionId, pid, hostname })}\n`, { flag: "wx" })
+      } catch {
+        throw new Error("lease ativa: corrida ao recuperar trava de aquisicao stale")
+      }
+    } else throw error
   }
   try {
     try {
@@ -134,21 +147,53 @@ export async function adquirirLeaseExecucao(runDir, options = {}) {
   } finally {
     await rm(travaAquisicao, { force: true })
   }
+  let ativo = true
+  let heartbeatPendente = Promise.resolve()
   const timer = setInterval(() => {
-    const atualizado = { ...lease, heartbeat: new Date(now()).toISOString() }
-    void escreverAtomico(caminho, `${JSON.stringify(atualizado, null, 2)}\n`).then(() => { lease = atualizado }).catch(() => {})
+    heartbeatPendente = heartbeatPendente.then(async () => {
+      if (!ativo) return
+      const atualizado = { ...lease, heartbeat: new Date(now()).toISOString() }
+      await escreverAtomico(caminho, `${JSON.stringify(atualizado, null, 2)}\n`)
+      lease = atualizado
+    }).catch(() => {})
   }, heartbeatMs)
   timer.unref?.()
-  return { caminho, executionId, pararHeartbeat: () => clearInterval(timer) }
+  return {
+    caminho,
+    executionId,
+    pararHeartbeat: async () => {
+      ativo = false
+      clearInterval(timer)
+      await heartbeatPendente
+    },
+  }
 }
 
 export async function liberarLeaseExecucao(lease) {
-  lease?.pararHeartbeat?.()
+  await lease?.pararHeartbeat?.()
   if (!lease?.caminho) return
   try {
     const atual = JSON.parse(await readFile(lease.caminho, "utf8"))
     if (atual.executionId === lease.executionId) await rm(lease.caminho, { force: true })
   } catch {}
+}
+
+async function marcarProgressFinal(runDir, executionId) {
+  const progressPath = path.join(runDir, "progress.json")
+  try {
+    const progress = JSON.parse(await readFile(progressPath, "utf8"))
+    if (progress.executionId !== executionId) return
+    const finishedAt = new Date().toISOString()
+    await escreverAtomico(progressPath, `${JSON.stringify({
+      ...progress,
+      finishedAt,
+      pid: process.pid,
+      lease: "released",
+      atualizadoEm: finishedAt,
+    }, null, 2)}\n`)
+  } catch {
+    // Falha antes da primeira escrita de progress nao cria um snapshot enganoso.
+  }
 }
 
 export function criarContadoresExecucao(historicos = {}) {
@@ -208,6 +253,22 @@ export function regiaoDaUf(uf) {
   return par ? par[0] : null
 }
 
+export function fingerprintPipelineConfig(config) {
+  const papel = (nome) => {
+    const modelo = config?.[nome] ?? {}
+    return {
+      name: modelo.name ?? null,
+      version: modelo.version ?? null,
+      command: modelo.command ?? null,
+      args: Array.isArray(modelo.args) ? modelo.args : [],
+    }
+  }
+  return createHash("sha256")
+    .update(JSON.stringify({ revision: config?.revision ?? null, generator: papel("generator"), judge: papel("judge") }))
+    .digest("hex")
+    .slice(0, 16)
+}
+
 export function slotsDeItem(item) {
   if (!item.multipassagem) return 1
   return Math.min(PASSAGENS_CONCORRENCIA_INTERNA, Math.max(1, item.passagensPlanejadas))
@@ -216,6 +277,18 @@ export function slotsDeItem(item) {
 export function classificarRegistro(registro) {
   if (!registro || typeof registro !== "object") {
     return { estado: "retryable_error", motivo: "registro nao materializado" }
+  }
+  const sqCandidato = String(registro.fonte?.sqCandidato ?? "")
+  const identidadeEsperada = `2026:GOVERNADOR:${registro.fonte?.uf ?? ""}:${sqCandidato}`
+  if (
+    registro.version !== 1
+    || registro.fonte?.ano !== 2026
+    || registro.fonte?.cargo !== "GOVERNADOR"
+    || !regiaoDaUf(registro.fonte?.uf)
+    || !PADRAO_SQ.test(sqCandidato)
+    || registro.ingestao?.identityKey !== identidadeEsperada
+  ) {
+    return { estado: "retryable_error", motivo: "registro fora do contrato ou identidade divergente" }
   }
   if (registro.estado === "perfil_local_ausente" || registro.estado === "sem_documento_oficial") {
     return { estado: "complete", motivo: registro.estado }
@@ -262,22 +335,41 @@ export function definirProbeRecursos(fn) {
 // Recebe item, registro materializado e estado anterior (se houver) e devolve
 // o estado reconciliado para a proxima execucao, com contagem por familia.
 // Generator_pending sem lease vivo vira retryable (recuperavel).
-export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual = null }) {
+export function reconciliarParaRetomada({ registro, item = null, estadoAnterior, familiaAtual, modeloAtual = null, pipelineAtual = null }) {
   const familiaAnterior = estadoAnterior?.familiaDaUltimaTentativa ?? estadoAnterior?.familia ?? null
   const modeloAnterior = estadoAnterior?.modeloDaUltimaTentativa ?? null
+  const pipelineAnterior = estadoAnterior?.pipelineDaUltimaTentativa ?? (estadoAnterior?.executionId ? "legacy-sem-fingerprint" : null)
   const tentativaBase = estadoAnterior?.tentativas ?? 1
-  // Mudanca de familia reseta contador: tentativas GLM nao bloqueiam Luna
-  const tentativasEfetivas = familiaAnterior && familiaAtual && familiaAnterior !== familiaAtual ? 1 : tentativaBase
+  // Mudanca comprovada de familia ou pipeline reseta somente tentativas tecnicas.
+  const pipelineMudou = Boolean(pipelineAnterior && pipelineAtual && pipelineAnterior !== pipelineAtual)
+  const familiaMudou = Boolean(familiaAnterior && familiaAtual && familiaAnterior !== familiaAtual)
+  const tentativasEfetivas = familiaMudou || pipelineMudou ? 1 : tentativaBase
   const camposFamilia = {
     familia: familiaAnterior,
     familiaDaUltimaTentativa: familiaAnterior,
     modeloDaUltimaTentativa: modeloAnterior,
     familiaPlanejada: familiaAtual ?? estadoAnterior?.familiaPlanejada ?? null,
     modeloPlanejado: modeloAtual ?? estadoAnterior?.modeloPlanejado ?? null,
+    pipelineDaUltimaTentativa: pipelineAnterior,
+    pipelinePlanejada: pipelineAtual ?? estadoAnterior?.pipelinePlanejada ?? null,
+  }
+
+  // Um bloqueio gravado por finalizar() significa que a segunda tentativa ja
+  // terminou. Registro parcial nao pode reabrir esse estado na retomada.
+  if (estadoAnterior?.estado === "blocked") {
+    const bloqueioTecnico = /^falha tecnica apos \d+ tentativas:/iu.test(estadoAnterior.motivo ?? "")
+    if (pipelineMudou && bloqueioTecnico) {
+      return { estado: "retryable_error", motivo: `nova pipeline: ${estadoAnterior.motivo}`, tentativas: 1, reiniciarRegistro: true, ...camposFamilia }
+    }
+    return { estado: "blocked", motivo: estadoAnterior.motivo ?? "blocked", tentativas: tentativaBase, ...camposFamilia }
   }
 
   if (registro) {
     const classificacao = classificarRegistro(registro)
+    const identidadeEsperada = item?.chave ?? null
+    if (identidadeEsperada && registro.ingestao?.identityKey !== identidadeEsperada) {
+      return { estado: "retryable_error", motivo: "registro pertence a outra candidatura", tentativas: tentativasEfetivas, ...camposFamilia }
+    }
     // aprovado nunca deve existir; se existir, bloqueia para auditoria
     if (registro.estado === "aprovado") {
       return { estado: "blocked", motivo: "registro aprovado inesperado", tentativas: tentativasEfetivas, ...camposFamilia }
@@ -289,10 +381,10 @@ export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual
       return { estado: "blocked", motivo: classificacao.motivo, tentativas: tentativasEfetivas, ...camposFamilia }
     }
     // retryable_error
-    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+    if (tentativasEfetivas > MAX_TENTATIVAS_CANDIDATO) {
       return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${classificacao.motivo}`, tentativas: tentativasEfetivas, ...camposFamilia }
     }
-    return { estado: "retryable_error", motivo: classificacao.motivo, tentativas: tentativasEfetivas, ...camposFamilia }
+    return { estado: "retryable_error", motivo: classificacao.motivo, tentativas: tentativasEfetivas, reiniciarRegistro: pipelineMudou, ...camposFamilia }
   }
 
   // Sem registro: usa estado anterior se terminal
@@ -303,14 +395,14 @@ export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual
 
   // generator_pending sem processo/lease vivo -> recuperavel como retryable
   if (estadoAnterior?.estado === "generator_pending") {
-    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+    if (tentativasEfetivas > MAX_TENTATIVAS_CANDIDATO) {
       return { estado: "blocked", motivo: "generator_pending sem lease e limite de tentativas atingido", tentativas: tentativasEfetivas, ...camposFamilia }
     }
     return { estado: "retryable_error", motivo: "generator_pending recuperavel", tentativas: tentativasEfetivas, ...camposFamilia }
   }
 
   if (estadoAnterior?.estado === "retryable_error") {
-    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+    if (tentativasEfetivas > MAX_TENTATIVAS_CANDIDATO) {
       return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${estadoAnterior.motivo ?? ""}`, tentativas: tentativasEfetivas, ...camposFamilia }
     }
     return { estado: "retryable_error", motivo: estadoAnterior.motivo ?? "retryable", tentativas: tentativasEfetivas, ...camposFamilia }
@@ -342,6 +434,21 @@ export function concorrenciaAlvo({ conclusoes, concorrenciaAtual, metricas }) {
   if (!escaladaPermitida(metricas)) return Math.max(3, concorrenciaAtual - 1)
   if (concorrenciaAtual < 4) return 4
   return concorrenciaAtual
+}
+
+export function construirAmbienteBatch(ambiente, extras = {}) {
+  const chavesPermitidas = new Set([
+    "PATH", "HOME", "TMPDIR", "TEMP", "TMP", "LANG", "LC_ALL", "TZ", "TERM", "SHELL", "USER", "LOGNAME",
+    "CODEX_HOME", "CLAUDE_CONFIG_DIR",
+    "PF_QWEN_CLI", "PF_QWEN_TIMEOUT_MS", "PF_CODEX_CLI", "PF_CODEX_TIMEOUT_MS",
+    "PF_CODEX_REASONING_EFFORT", "PF_GENERATOR_MODEL", "PF_JUDGE_MODEL",
+    "PF_CLAUDE_CLI", "PF_CLAUDE_TIMEOUT_MS", "PF_CLAUDE_MODEL",
+    "PF_OPENCODE_GO", "PF_OPENCODE_TIMEOUT_MS", "PF_OPENCODE_TIMEOUT_PADDING_MS", "PF_OPENCODE_GRACE_MS",
+  ])
+  return {
+    ...Object.fromEntries(Object.entries(ambiente).filter(([chave, valor]) => chavesPermitidas.has(chave) && valor !== undefined)),
+    ...extras,
+  }
 }
 
 async function escreverAtomico(destino, conteudo) {
@@ -631,7 +738,21 @@ export async function executarBatch(params) {
     return await executarBatchSobLease({ ...params, filaPath: filaCaminho, executionId })
   } finally {
     await liberarLeaseExecucao(lease)
+    await marcarProgressFinal(params.runDir, executionId)
   }
+}
+
+export async function arquivarRegistrosParciais(runDir, item, pipelineAnterior = "pipeline-anterior") {
+  const candidatoDir = dirDoCandidato(runDir, item)
+  const origem = path.join(candidatoDir, "registros")
+  if (!existsSync(origem)) return null
+  const raizArquivo = path.join(candidatoDir, "registros-anteriores")
+  await mkdir(raizArquivo, { recursive: true })
+  const identificador = String(pipelineAnterior ?? "pipeline-anterior").replace(/[^a-z0-9_-]+/giu, "-").slice(0, 40)
+  const destino = path.join(raizArquivo, `${new Date().toISOString().replace(/[:.]/gu, "-")}-${identificador}-${randomUUID().slice(0, 8)}`)
+  await rename(origem, destino)
+  await mkdir(origem, { recursive: true })
+  return destino
 }
 
 async function executarBatchSobLease(params) {
@@ -650,11 +771,13 @@ async function executarBatchSobLease(params) {
   } catch {}
   let familiaAtual = null
   let modeloAtual = null
+  let pipelineAtual = null
   try {
     if (modelsConfig && existsSync(modelsConfig)) {
       const cfg = JSON.parse(await readFile(modelsConfig, "utf8"))
       familiaAtual = familiaDoModelo(cfg.generator?.name ?? "")
       modeloAtual = cfg.generator?.version ?? cfg.generator?.name ?? null
+      pipelineAtual = fingerprintPipelineConfig(cfg)
     }
   } catch {}
   const inicio = Date.now()
@@ -693,9 +816,13 @@ async function executarBatchSobLease(params) {
   // retomada: reconcilia cada item com registro/estado persistidos via funcao pura
   const historicos = { concluidos: 0, bloqueados: 0 }
   for (const item of itens) {
-    const registro = await lerRegistro(runDir, item)
+    let registro = await lerRegistro(runDir, item)
     const estadoAnterior = await lerEstadoArquivo(runDir, item)
-    const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual, modeloAtual })
+    const reconciliado = reconciliarParaRetomada({ registro, item, estadoAnterior, familiaAtual, modeloAtual, pipelineAtual })
+    if (reconciliado.reiniciarRegistro) {
+      await arquivarRegistrosParciais(runDir, item, reconciliado.pipelineDaUltimaTentativa)
+      registro = null
+    }
     const unidade = {
       item,
       estado: reconciliado.estado,
@@ -704,6 +831,8 @@ async function executarBatchSobLease(params) {
       modeloDaUltimaTentativa: reconciliado.modeloDaUltimaTentativa,
       familiaPlanejada: reconciliado.familiaPlanejada,
       modeloPlanejado: reconciliado.modeloPlanejado,
+      pipelineDaUltimaTentativa: reconciliado.pipelineDaUltimaTentativa,
+      pipelinePlanejada: reconciliado.pipelinePlanejada,
       slots: slotsDeItem(item),
       multipassagem: item.multipassagem,
       estadoObservado: null,
@@ -714,6 +843,7 @@ async function executarBatchSobLease(params) {
       || estadoAnterior.estado !== reconciliado.estado
       || estadoAnterior.tentativas !== reconciliado.tentativas
       || estadoAnterior.familiaPlanejada !== reconciliado.familiaPlanejada
+      || estadoAnterior.pipelinePlanejada !== reconciliado.pipelinePlanejada
     if (precisaGravar) {
       await gravarEstado(runDir, item, {
         estado: reconciliado.estado,
@@ -723,6 +853,8 @@ async function executarBatchSobLease(params) {
         modeloDaUltimaTentativa: reconciliado.modeloDaUltimaTentativa,
         familiaPlanejada: reconciliado.familiaPlanejada,
         modeloPlanejado: reconciliado.modeloPlanejado,
+        pipelineDaUltimaTentativa: reconciliado.pipelineDaUltimaTentativa,
+        pipelinePlanejada: reconciliado.pipelinePlanejada,
       })
     }
     // Validacao: complete deve ter registro valido; aprovado nunca
@@ -745,6 +877,7 @@ async function executarBatchSobLease(params) {
   contexto.metricsOffset = metricsOffset
   contexto.familiaAtual = familiaAtual
   contexto.modeloAtual = modeloAtual
+  contexto.pipelineAtual = pipelineAtual
   contexto.historicos = criarContadoresExecucao(historicos)
 
   while (!contexto.parada) {
@@ -827,6 +960,8 @@ async function disparar(contexto, unidade, inventoryPath) {
     modeloDaUltimaTentativa: contexto.modeloAtual,
     familiaPlanejada: contexto.familiaAtual,
     modeloPlanejado: contexto.modeloAtual,
+    pipelineDaUltimaTentativa: contexto.pipelineAtual,
+    pipelinePlanejada: contexto.pipelineAtual,
   })
   const args = [
     "--conditions", "react-server", "--import", "tsx", CLI,
@@ -847,8 +982,7 @@ async function disparar(contexto, unidade, inventoryPath) {
       const child = contexto.spawnFn(node24, args, {
         cwd: DIR_REPO,
         stdio: ["ignore", "pipe", "pipe"],
-        env: {
-          ...process.env,
+        env: construirAmbienteBatch(process.env, {
           ...(contexto.qwenExtraArgs ? { PF_QWEN_EXTRA_ARGS: contexto.qwenExtraArgs } : {}),
           ...(contexto.codexExtraArgs ? { PF_CODEX_EXTRA_ARGS: contexto.codexExtraArgs } : {}),
           PF_EXECUTION_ID: contexto.executionId,
@@ -857,7 +991,7 @@ async function disparar(contexto, unidade, inventoryPath) {
           PF_CANDIDATO_UF: item.uf,
           PF_CANDIDATO_REGIAO: item.regiao,
           PF_MODEL_TELEMETRY_PATH: path.join(contexto.runDir, "logs", "tentativas.ndjson"),
-        },
+        }),
       })
       child.stderr?.on("data", (c) => { stderr += c })
       child.on("close", (code) => resolver({ code: code ?? -1, stderr, inicioProcesso }))
@@ -1092,7 +1226,23 @@ export async function consolidarBatch({ runDir, norteOndasDir }) {
       await mkdir(path.join(destinoNorte, uf), { recursive: true })
       for (const arquivo of await readdir(origemUf)) {
         if (!arquivo.endsWith(".json")) continue
-        await copyFile(path.join(origemUf, arquivo), path.join(destinoNorte, uf, arquivo))
+        const origem = path.join(origemUf, arquivo)
+        const registro = JSON.parse(await readFile(origem, "utf8"))
+        const sqCandidato = String(registro.fonte?.sqCandidato ?? "")
+        const identidadeEsperada = `2026:GOVERNADOR:${uf}:${sqCandidato}`
+        if (
+          registro.fonte?.ano !== 2026
+          || registro.fonte?.cargo !== "GOVERNADOR"
+          || registro.fonte?.uf !== uf
+          || !PADRAO_SQ.test(sqCandidato)
+        ) {
+          throw new Error(`registro Norte fora do escopo em ${uf}/${arquivo}`)
+        }
+        if (registro.ingestao?.identityKey !== identidadeEsperada) {
+          throw new Error(`mistura de identityKey Norte: ${registro.ingestao?.identityKey} != ${identidadeEsperada}`)
+        }
+        if (registro.estado === "aprovado") throw new Error(`registro Norte aprovado proibido: ${identidadeEsperada}`)
+        await copyFile(origem, path.join(destinoNorte, uf, arquivo))
       }
     }
   }
