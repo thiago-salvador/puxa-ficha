@@ -44,6 +44,8 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.equal(diff.candidacies.published_count, universe.published.length)
     assert.match(summary, new RegExp(`Candidaturas oficiais: ${universe.official.length}`))
     assert.match(summary, /Estado: \*\*ok\*\*/)
+    assert.match(summary, /Próximas ações recomendadas/)
+    assert.match(summary, /Nenhuma ação corretiva necessária/)
   } finally {
     rmSync(work, { recursive: true, force: true })
   }
@@ -78,7 +80,47 @@ test("falha das duas superfícies oficiais ainda preserva os quatro artefatos", 
     const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"))
     assert.equal(diff.status, "source_error")
     assert.equal(diff.candidacies, null)
+    assert.match(readFileSync(join(out, "summary.md"), "utf8"), /Não corrigir o catálogo com dados incompletos/)
     assert.doesNotMatch(result.stderr, /sem_mudanca/i)
+  } finally {
+    rmSync(work, { recursive: true, force: true })
+  }
+})
+
+test("fonte vencida com aviso também aciona revisão e recomendação", () => {
+  const work = mkdtempSync(join(tmpdir(), "data-freshness-stale-warning-"))
+  try {
+    const now = "2026-08-27T12:00:00.000Z"
+    const records = officialRecordsFromVersionedSnapshot("data/chapas-2026-tse-20260815.json")
+      .map((record) => ({ ...record, perfil_slug: record.perfil_slug ?? `fixture-${record.sq_candidato}` }))
+    const collectionEvidence = loadFreshnessRegistry().flatMap((source) =>
+      source.collection_source_ids.map((sourceId) => ({
+        source_id: sourceId,
+        checked_at: source.source_id === "filiacao" ? "2020-01-01T00:00:00.000Z" : now,
+      })),
+    )
+    const published = join(work, "published.json")
+    const out = join(work, "out")
+    writeFileSync(published, JSON.stringify({ records, collection_evidence: collectionEvidence }))
+    const result = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${published}`,
+        "--official-snapshot=data/chapas-2026-tse-20260815.json",
+        `--out=${out}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    )
+    assert.equal(result.status, 1, result.stderr)
+    const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"))
+    const summary = readFileSync(join(out, "summary.md"), "utf8")
+    assert.equal(diff.status, "review_required")
+    assert.match(summary, /Fontes públicas estão vencidas e exigem aviso/)
+    assert.match(summary, /manter visível o aviso de desatualização/)
   } finally {
     rmSync(work, { recursive: true, force: true })
   }

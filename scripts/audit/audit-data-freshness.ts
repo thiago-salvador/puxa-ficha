@@ -9,6 +9,11 @@ import {
   type SourceEvidence,
 } from "../lib/data-freshness/registry"
 import {
+  buildDataFreshnessRecommendations,
+  recommendationsMarkdown,
+  type DataFreshnessRecommendation,
+} from "../lib/data-freshness/recommendations"
+import {
   downloadOfficialCandidacies,
   OfficialSourceError,
   officialRecordsFromVersionedSnapshot,
@@ -68,6 +73,7 @@ function summaryMarkdown(input: {
   publishedCount: number
   changeCounts: Record<string, number>
   freshnessCounts: Record<string, number>
+  recommendations: DataFreshnessRecommendation[]
   sourceError?: string
 }): string {
   const changes = Object.entries(input.changeCounts)
@@ -84,6 +90,7 @@ function summaryMarkdown(input: {
     (input.sourceError ? `- Erro da fonte: ${input.sourceError}\n` : "") +
     `\n## Diferenças de candidaturas\n\n| Classificação | Total |\n|---|---:|\n${changes}\n` +
     `\n## Atualidade por fonte\n\n| Estado | Total |\n|---|---:|\n${freshness}\n`
+    + `\n${recommendationsMarkdown(input.recommendations)}`
 }
 
 async function main(): Promise<void> {
@@ -146,6 +153,7 @@ async function main(): Promise<void> {
         freshness.filter((item) => item.status === status).length,
       ]),
     )
+    const recommendations = buildDataFreshnessRecommendations({ comparison: null, freshness, registry })
     writeJson(resolve(options.out, "source.json"), source)
     writeJson(resolve(options.out, "universe.json"), { generated_at: generatedAt, official: [], published: published.records })
     writeJson(resolve(options.out, "diff.json"), {
@@ -164,6 +172,7 @@ async function main(): Promise<void> {
         publishedCount: published.records.length,
         changeCounts: {},
         freshnessCounts,
+        recommendations,
         sourceError: message,
       }),
     )
@@ -188,13 +197,10 @@ async function main(): Promise<void> {
       freshness.filter((item) => item.status === status).length,
     ]),
   )
-  const sourceNeedsReview = freshness.some((item) => {
-    const config = registry.find((entry) => entry.source_id === item.source_id)
-    return item.status === "source_error" ||
-      item.status === "review_required" ||
-      (item.status === "stale" && config?.stale_policy === "review_required")
-  })
+  const sourceNeedsReview = freshness.some((item) =>
+    item.status === "source_error" || item.status === "review_required" || item.status === "stale")
   const overall = comparison.status === "review_required" || sourceNeedsReview ? "review_required" : "ok"
+  const recommendations = buildDataFreshnessRecommendations({ comparison, freshness, registry })
 
   writeJson(resolve(options.out, "source.json"), source)
   writeJson(resolve(options.out, "universe.json"), { generated_at: generatedAt, official, published: published.records })
@@ -213,6 +219,7 @@ async function main(): Promise<void> {
       publishedCount: published.records.length,
       changeCounts: comparison.counts,
       freshnessCounts,
+      recommendations,
     }),
   )
 
