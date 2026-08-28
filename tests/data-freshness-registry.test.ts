@@ -6,6 +6,7 @@ import {
   aggregateSourceEvidence,
   evaluateSourceFreshness,
   loadFreshnessRegistry,
+  selectLatestSourceEvidence,
 } from "../scripts/lib/data-freshness/registry"
 
 function methodologyIds(): string[] {
@@ -85,6 +86,10 @@ test("indeterminado e erro manual viram dívida; erro agendado continua bloquean
   }, now).status, "technical_debt")
   assert.equal(evaluateSourceFreshness(manual, {
     source_id: manual.source_id,
+    checked_at: null,
+  }, now).status, "technical_debt")
+  assert.equal(evaluateSourceFreshness(manual, {
+    source_id: manual.source_id,
     checked_at: now.toISOString(),
     source_error: "layout sem dados individuais",
     error_count: 1,
@@ -95,4 +100,28 @@ test("indeterminado e erro manual viram dívida; erro agendado continua bloquean
     source_error: "HTTP 500",
     error_count: 1,
   }, now).status, "source_error")
+})
+
+test("seleção executável substitui erro antigo e preserva erro atual", () => {
+  const oldError = {
+    source_id: "camara",
+    checked_at: "2026-08-27T10:00:00.000Z",
+    source_error: "HTTP 500",
+    error_count: 1,
+    execution_id: "legacy:old",
+  }
+  const recentSuccess = {
+    source_id: "camara",
+    checked_at: "2026-08-27T11:00:00.000Z",
+    error_count: 0,
+    execution_id: "gh:success",
+  }
+  assert.deepEqual(selectLatestSourceEvidence([oldError, recentSuccess]), [recentSuccess])
+
+  const currentError = {
+    ...oldError,
+    checked_at: "2026-08-27T12:00:00.000Z",
+    execution_id: "gh:failure",
+  }
+  assert.deepEqual(selectLatestSourceEvidence([recentSuccess, currentError]), [currentError])
 })

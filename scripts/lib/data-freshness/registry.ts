@@ -27,6 +27,29 @@ export function loadFreshnessRegistry(path = REGISTRY_PATH): FreshnessSource[] {
   return JSON.parse(readFileSync(path, "utf8")) as FreshnessSource[]
 }
 
+function evidenceOrder(item: SourceEvidence): [number, string] {
+  const parsed = item.checked_at ? Date.parse(item.checked_at) : Number.NEGATIVE_INFINITY
+  return [Number.isFinite(parsed) ? parsed : Number.NEGATIVE_INFINITY, item.execution_id ?? ""]
+}
+
+/** Mantém somente a execução mais recente de cada fonte, com desempate estável. */
+export function selectLatestSourceEvidence(allEvidence: SourceEvidence[]): SourceEvidence[] {
+  const latest = new Map<string, SourceEvidence>()
+  for (const item of allEvidence) {
+    const current = latest.get(item.source_id)
+    if (!current) {
+      latest.set(item.source_id, item)
+      continue
+    }
+    const [itemTime, itemExecution] = evidenceOrder(item)
+    const [currentTime, currentExecution] = evidenceOrder(current)
+    if (itemTime > currentTime || (itemTime === currentTime && itemExecution > currentExecution)) {
+      latest.set(item.source_id, item)
+    }
+  }
+  return [...latest.values()]
+}
+
 export function aggregateSourceEvidence(
   source: FreshnessSource,
   allEvidence: SourceEvidence[],
@@ -34,7 +57,7 @@ export function aggregateSourceEvidence(
   if (source.collection_source_ids.length === 0) {
     return { source_id: source.source_id, checked_at: null }
   }
-  const byId = new Map(allEvidence.map((item) => [item.source_id, item]))
+  const byId = new Map(selectLatestSourceEvidence(allEvidence).map((item) => [item.source_id, item]))
   const candidates = source.collection_source_ids.map((sourceId) => byId.get(sourceId))
   const complete = candidates.filter((item): item is SourceEvidence => Boolean(item))
   const missingSourceIds = source.collection_source_ids.filter((sourceId) => !byId.has(sourceId))

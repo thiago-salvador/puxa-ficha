@@ -153,6 +153,51 @@ exit 99
   }
 })
 
+test("falha ao ler a issue existente não permite PATCH nem POST", () => {
+  const work = mkdtempSync(join(tmpdir(), "data-freshness-alert-read-"))
+  try {
+    const bin = join(work, "bin")
+    const log = join(work, "gh.log")
+    const mockGh = join(bin, "gh")
+    const summary = join(work, "summary.md")
+    writeFileSync(summary, "## Próximas ações recomendadas\n")
+    mkdirSync(bin)
+    writeFileSync(mockGh, `#!/usr/bin/env bash
+printf '%s\\n' "$*" >> "$GH_LOG"
+if [[ "$*" == *"issues?state=open"* ]]; then
+  printf '[{"number":321,"body":"<!-- data-freshness-alert -->"}]'
+  exit 0
+fi
+if [[ "$*" == *"repos/thiago-salvador/puxa-ficha/issues/321 --jq"* ]]; then
+  printf 'gh: read failed (HTTP 503)\\n' >&2
+  exit 1
+fi
+printf 'chamada inesperada: %s\\n' "$*" >&2
+exit 99
+`)
+    chmodSync(mockGh, 0o755)
+    const result = spawnSync("bash", [
+      "scripts/audit/sync-data-freshness-issue.sh",
+      "failure",
+      "https://github.com/thiago-salvador/puxa-ficha/actions/runs/123",
+      summary,
+    ], {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GITHUB_REPOSITORY: "thiago-salvador/puxa-ficha",
+        GH_LOG: log,
+        PATH: `${bin}:${process.env.PATH}`,
+      },
+    })
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /HTTP 503/)
+    assert.doesNotMatch(readFileSync(log, "utf8"), /--method (PATCH|POST)/)
+  } finally {
+    rmSync(work, { recursive: true, force: true })
+  }
+})
+
 test("issue destacada é criada, atualizada e fechada sem executar conteúdo do resumo", () => {
   const work = mkdtempSync(join(tmpdir(), "data-freshness-alert-"))
   try {
