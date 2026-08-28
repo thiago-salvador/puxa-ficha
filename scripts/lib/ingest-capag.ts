@@ -6,10 +6,14 @@ import { parse } from "csv-parse/sync"
 
 const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"]
 
-// URLs alternativas para o CSV do CAPAG
+// Recursos oficiais do dataset `capag-estados`. O arquivo publicado em 2025
+// usa dados do ano-base 2024 e nao traz uma coluna de ano, por isso o fallback
+// faz parte da proveniencia do recurso, nao de uma inferencia por data atual.
 const CAPAG_CSV_URLS = [
-  "https://www.tesourotransparente.gov.br/ckan/dataset/f1c3a2fd-3aea-49e4-9a6e-d5c0e1c87c21/resource/f1c3a2fd-3aea-49e4-9a6e-d5c0e1c87c21/download/CAPAG_Estados.csv",
-  "https://www.tesourotransparente.gov.br/ckan/dataset/capacidade-de-pagamento-capag/resource/f1c3a2fd-3aea-49e4-9a6e-d5c0e1c87c21/download",
+  {
+    url: "https://www.tesourotransparente.gov.br/ckan/dataset/f04a675e-4e5a-4e88-98de-acc3e22bf778/resource/54788ba1-536c-456c-8520-32ebafd761e7/download/capagdosestados2025.csv",
+    anoBase: 2024,
+  },
 ]
 
 async function upsertIndicador(
@@ -44,7 +48,13 @@ interface CapagRow {
 }
 
 function normalizeKey(key: string): string {
-  return key.trim().toLowerCase().replace(/\s+/g, "_").replace(/[^a-z0-9_]/g, "")
+  return key
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "_")
+    .replace(/[^a-z0-9_]/g, "")
 }
 
 function findField(row: CapagRow, candidates: string[]): string | undefined {
@@ -55,21 +65,21 @@ function findField(row: CapagRow, candidates: string[]): string | undefined {
   return undefined
 }
 
-async function downloadCsv(): Promise<string | null> {
-  for (const url of CAPAG_CSV_URLS) {
+async function downloadCsv(): Promise<{ text: string; anoBase: number } | null> {
+  for (const resource of CAPAG_CSV_URLS) {
     try {
-      log("capag", `  Tentando: ${url}`)
-      const res = await fetch(url, {
+      log("capag", `  Tentando: ${resource.url}`)
+      const res = await fetch(resource.url, {
         headers: { "User-Agent": "PuxaFicha/1.0 (dados publicos)" },
       })
       if (!res.ok) {
-        warn("capag", `  HTTP ${res.status} para ${url}`)
+        warn("capag", `  HTTP ${res.status} para ${resource.url}`)
         continue
       }
       const text = await res.text()
       if (text.length > 100) {
         log("capag", `  CSV baixado: ${text.length} caracteres`)
-        return text
+        return { text, anoBase: resource.anoBase }
       }
     } catch (err) {
       warn("capag", `  Falha: ${err}`)
@@ -77,6 +87,38 @@ async function downloadCsv(): Promise<string | null> {
     await sleep(500)
   }
   return null
+}
+
+export interface CapagNormalizada {
+  uf: string
+  ano: number
+  nota: string | undefined
+  ind1: string | undefined
+  ind2: string | undefined
+  ind3: string | undefined
+}
+
+export function extrairCapagRow(row: CapagRow, anoBase: number): CapagNormalizada | null {
+  const uf = findField(row, ["uf", "sigla_uf", "estado", "sg_uf"])
+  const anoRaw = findField(row, ["ano", "competencia", "exercicio", "ano_competencia"])
+  const nota = findField(row, [
+    "nota",
+    "nota_capag",
+    "classificacao",
+    "classificacao_da_capag",
+    "rating",
+  ])
+  const ind1 = findField(row, ["indicador_1", "ind1", "ind_1", "endividamento"])
+  const ind2 = findField(row, ["indicador_2", "ind2", "ind_2", "poupanca"])
+  const ind3 = findField(row, ["indicador_3", "ind3", "ind_3", "liquidez"])
+
+  if (!uf) return null
+  const ufNorm = uf.trim().toUpperCase()
+  if (!ESTADOS.includes(ufNorm)) return null
+
+  const ano = anoRaw ? parseInt(anoRaw.replace(/\D/g, "").slice(0, 4)) : anoBase
+  if (isNaN(ano) || ano < 2010 || ano > 2030) return null
+  return { uf: ufNorm, ano, nota, ind1, ind2, ind3 }
 }
 
 // Nota CAPAG para valor numerico (para facilitar comparacoes)
@@ -100,14 +142,15 @@ export async function ingestCapag(): Promise<IngestResult[]> {
   const start = Date.now()
 
   try {
-    const csvText = await downloadCsv()
+    const downloaded = await downloadCsv()
 
-    if (!csvText) {
+    if (!downloaded) {
       warn("capag", "CSV indisponivel em todas as URLs (CKAN pode estar restrito). Pulando.")
       result.duration_ms = Date.now() - start
       results.push(result)
       return results
     }
+    const { text: csvText, anoBase } = downloaded
 
     // Detectar delimitador automaticamente
     const delimiter = csvText.includes(";") ? ";" : ","
@@ -132,21 +175,9 @@ export async function ingestCapag(): Promise<IngestResult[]> {
 
     for (const row of rows) {
       try {
-        // Tentar varios nomes de coluna possiveis
-        const uf = findField(row, ["uf", "sigla_uf", "estado", "sg_uf"])
-        const anoRaw = findField(row, ["ano", "competencia", "exercicio", "ano_competencia"])
-        const nota = findField(row, ["nota", "nota_capag", "classificacao", "rating"])
-        const ind1 = findField(row, ["indicador_1", "ind1", "ind_1", "endividamento"])
-        const ind2 = findField(row, ["indicador_2", "ind2", "ind_2", "poupanca"])
-        const ind3 = findField(row, ["indicador_3", "ind3", "ind_3", "liquidez"])
-
-        if (!uf || !anoRaw) continue
-
-        const ufNorm = uf.trim().toUpperCase()
-        if (!ESTADOS.includes(ufNorm)) continue
-
-        const ano = parseInt(anoRaw.replace(/\D/g, "").slice(0, 4))
-        if (isNaN(ano) || ano < 2010 || ano > 2030) continue
+        const normalized = extrairCapagRow(row, anoBase)
+        if (!normalized) continue
+        const { uf: ufNorm, ano, nota, ind1, ind2, ind3 } = normalized
 
         if (nota) {
           const notaNorm = nota.trim().toUpperCase()
