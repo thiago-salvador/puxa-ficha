@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T20:08:52Z",
+  "reviewedAt": "2026-08-28T20:17:16Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 125,
-    "human_review_required": 19
+    "approved": 127,
+    "human_review_required": 17
   },
   "items": [
     {
@@ -2134,14 +2134,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002537073",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SC",
       "slug": "jorginho-mello",
       "sqCandidato": "240002537073",
       "nomeUrna": "JORGINHO MELLO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "jorginho-mello: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002550544",
@@ -2156,14 +2156,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002544118",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SC",
       "slug": "marcelo-brigadeiro",
       "sqCandidato": "240002544118",
       "nomeUrna": "MARCELO BRIGADEIRO",
       "partido": "MISSÃO",
       "sourceState": "em_revisao",
-      "reason": "marcelo-brigadeiro: Eval tem 6 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002541913",
