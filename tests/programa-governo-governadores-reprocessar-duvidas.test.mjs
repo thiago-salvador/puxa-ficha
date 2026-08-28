@@ -8,7 +8,7 @@ import test from "node:test"
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url))
 const DRIVER = join(ROOT, "scripts/data/programas-governo-governadores-2026/reprocessar-duvidas.mjs")
-const NODE = process.env.CODEX_MCP_NODE_PATH || "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+const NODE = process.execPath
 
 async function fixture(cases, mode = "pass") {
   const root = await mkdtemp(join(tmpdir(), "pf-reprocessar-duvidas-"))
