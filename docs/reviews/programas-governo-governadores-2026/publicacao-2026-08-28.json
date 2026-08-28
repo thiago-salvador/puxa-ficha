@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:27:51.573Z",
+  "reviewedAt": "2026-08-28T23:31:22.478Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 133,
-    "human_review_required": 11
+    "approved": 135,
+    "human_review_required": 9
   },
   "items": [
     {
@@ -330,14 +330,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002551480",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MT",
       "slug": "otaviano-pivetta",
       "sqCandidato": "110002551480",
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002543953",
@@ -704,14 +704,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002538692",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "efraim-filho",
       "sqCandidato": "150002538692",
       "nomeUrna": "EFRAIM FILHO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "efraim-filho: Eval tem 6 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002551789",

@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PB",
+    "sqCandidato": "150002538692",
+    "slug": "efraim-filho",
+    "nomeUrna": "EFRAIM FILHO",
+    "partido": "PL",
+    "arquivoNome": "2026PB150002538692_01.pdf",
+    "arquivoNoPacote": "PB/2026PB150002538692_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PB:150002538692:01",
+      "fonte": {
+        "arquivoNome": "2026PB150002538692_01.pdf",
+        "arquivoNoPacote": "PB/2026PB150002538692_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b174121c5c89bd86c5cfa56be0a9a167975bc6dbc0d0ab2d2f1c8dd838028e56",
+        "extractedTextSha256": "f9f0dbe4aebb46feb7210741fe3a594b9b2ada842a7392bce54d327f63680e99",
+        "paginas": 19,
+        "secoes": [
+          {
+            "id": "partido-liberal-paraiba",
+            "titulo": "Partido Liberal - Paraíba",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Partido Liberal - Paraíba\n\nPLANO DE GOVERNO 2027–2030\nUm Novo Tempo para a Paraíba\n05 de agosto de 2026\n\nChapa Efraim Filho e Nayana Pontes\nEfraim Filho — Candidato a Governador da Paraíba\nNayana Pontes — Candidata a Vice-Governadora da Paraíba\n\nCARTA DE ABERTURA\nParaibanas e paraibanos,\nEscrevemos esta carta não para falar de uma campanha, mas do que vem depois dela: o futuro que\nqueremos construir juntos. Ao aceitar o desafio de governar a Paraíba, assumimos também o compromisso\nde apresentar, com clareza e honestidade, o que pretendemos fazer, e, mais importante, como pretendemos\nfazer.\nEste documento que você tem em mãos é um Plano de Governo, mas que vai além: é um Plano de Estado.\nEssa diferença não é apenas de nome: é de postura. Um Plano de Estado nasce da escuta, amadurece com\no tempo e permanece como referência para quem vier depois de nós. Foi com essa visão que organizamos\nas 25 áreas temáticas que estruturam este trabalho, cobrindo do Litoral ao Sertão, das grandes cidades aos\npequenos municípios.\nAcreditamos em uma Paraíba que se organiza para produzir, que conecta seu território, que cuida de sua\ngente e que protege quem mais precisa. Acreditamos em um Estado que respeita o dinheiro público, valoriza\nquem trabalha e abre portas para quem empreende. Mas acreditamos, acima de tudo, na maior força da\nParaíba: na capacidade do seu povo — acolhedor, trabalhador e resiliente.\nNão viemos prometer milagres. Viemos oferecer método, trabalho e transparência. Sabemos que mudança\nnão se anuncia — se constrói, todos os dias, com decisões responsáveis e resultados que chegam à vida real\ndas pessoas. Por isso, este plano não é um documento de gaveta: é um compromisso público, assumido\ndiante de cada paraibano, com metas claras e prestação de contas permanente.\nA Paraíba que sonhamos não é um ponto de chegada, mas um caminho. Um caminho que faremos com você,\nouvindo as ruas, as feiras, as escolas, os hospitais e as comunidades. Governar, para nós, é servir. E servir é\nestar perto. Nenhum Paraibano ficará invisível aos nossos olhos.\nConvidamos você a ler este Plano de Governo 2027–2030 como quem lê uma promessa que pretende ver\ncumprida. Que ele seja o começo de um tempo novo: de união, de esperança e de trabalho. Porque a Paraíba\npode mais, e nós vamos fazer, juntos.\n\nEfraim Filho\nCandidato a Governador\n\nNayana Pontes\nCandidata a Vice-Governadora"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nIntrodução\nPARTE I — GOVERNANÇA, ESTADO DIGITAL E INOVAÇÃO PÚBLICA\n1. Governança, Gestão Pública e Integridade\n2. Fazenda e Tributação\n3. Governo Digital, IA e Computação Soberana\n4. Inovação, Tecnologia e IA\nPARTE II — DESENVOLVIMENTO ECONÔMICO E TRABALHO\n5. Desenvolvimento Econômico\n6. Empreendedorismo e Ambiente de Negócios\n7. Agropecuária\n8. Turismo\n9. Cooperativismo\n10. Juventude, Qualificação Profissional e Empregabilidade\nPARTE III — INFRAESTRUTURA, ÁGUA E MEIO AMBIENTE\n11. Infraestrutura e Logística\n12. Rodovias\n13. Mobilidade Urbana\n14. Recursos Hídricos\n15. Esgotamento Sanitário\n16. Habitação\n17. Meio Ambiente, Energia e Sustentabilidade\nPARTE IV — DESENVOLVIMENTO HUMANO E PROTEÇÃO SOCIAL\n18. Educação\n19. Saúde\n20. Assistência Social\n21. Mulher, Infância, Juventude, Pessoas com Deficiência e Neurodesenvolvimento\n22. Cultura\n23. Esporte e Lazer\n24. Proteção e Bem-Estar Animal\nPARTE V — SEGURANÇA PÚBLICA / DEFESA CIVIL E ADMINISTRAÇÃO PENITENCIÁRIA\n25. Segurança Pública, Defesa Civil e Administração Penitenciária"
+          },
+          {
+            "id": "introducao",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\nA Paraíba chega a este momento com uma decisão importante diante de si: não se conformar com o que já\nconquistou, mas também não prometer o que não pode cumprir. Este Plano de Estado 2027–2030 nasce\ndesse equilíbrio, entre a esperança de quem quer mais e a responsabilidade de quem sabe que mudança se\nconstrói com método, trabalho e constância.\nAs páginas que seguem organizam essa visão em 25 áreas temáticas, distribuídas em cinco partes. Não se\ntrata de uma simples lista de promessas, mas, sim, de um caminho pensado com coerência: cada área tem\nseu lugar, cada parte conversa com a outra, e o conjunto forma a imagem de uma Paraíba que quer se\ndesenvolver sem deixar ninguém para trás.\nA lógica que orienta esta estrutura pode ser contada em poucas palavras. Primeiro, um Estado que se\norganiza — com governança sólida, finanças equilibradas e gestão pública moderna, apoiada na tecnologia\ne na inovação. Depois, um Estado que produz, que estimula o empreendedorismo, fortalece a agropecuária\ne os setores produtivos, e que gera trabalho e renda para a sua gente. Em seguida, um Estado que conecta\nseu território, com estradas, mobilidade, água, saneamento e moradia digna, do Litoral ao Sertão. Um Estado\nque cuida das pessoas, com educação, saúde, assistência social e políticas que valorizam cada fase da vida.\nE, por fim, um Estado que protege, com segurança pública e defesa civil à altura dos desafios do nosso\ntempo.\nEssa organização não foi feita por acaso. Ela nasceu da escuta, do diagnóstico e da experiência de quem\nconhece a Paraíba por dentro. Ao estruturar o plano em cinco partes, queremos oferecer ao leitor uma\nleitura clara e objetiva: quem procurar por um tema específico encontra com facilidade, enquanto quem\npercorre o documento por inteiro percebe que as propostas se conectam e se reforçam mutuamente.\nMais do que um conjunto de intenções, este é um compromisso público, com metas, caminhos e prestação\nde contas. É também um convite. Convidamos cada paraibano a conhecer este plano de Governo, a debatêlo e a cobrar sua realização, porque ele não pertence a um governo: pertence à Paraíba e ao futuro que\nqueremos construir juntos.\n\nPARTE I — GOVERNANÇA, ESTADO DIGITAL E INOVAÇÃO PÚBLICA\nTodo plano começa por uma pergunta simples: como o Estado vai se organizar para cumprir o que promete?\nEsta parte responde a essa pergunta. Ela reúne as bases que sustentam todas as demais políticas, a forma\ncomo o governo se estrutura, cuida do dinheiro público, digitaliza seus serviços e inova. Antes de produzir,\nconectar, cuidar e proteger, é preciso que o Estado funcione bem. É por isso que esta é a primeira parte do\nplano: um Estado que se organiza é a condição para tudo o que vem depois.\n\nSeção 1 — Governança, Gestão Pública e Integridade\nOnde estamos: O planejamento, o orçamento, a execução e o monitoramento ainda funcionam como ciclos\nseparados, que pouco conversam entre si. A capacidade de entregar resultados varia muito entre as regiões\ne os municípios, e ainda não há uma cultura consolidada de gestão por metas e transparência. O cenário\natual revela uma fragmentação administrativa que impede a otimização dos recursos públicos, resultando\nem políticas que, embora bem-intencionadas, perdem eficácia na ponta final do atendimento ao cidadão\nparaibano."
+          },
+          {
+            "id": "principais-desafios-a-falta-de-integracao-entre-o-que-se-planeja-e-o-que",
+            "titulo": "Principais desafios: A falta de integração entre o que se planeja e o que se executa; a ausência de metas",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Principais desafios: A falta de integração entre o que se planeja e o que se executa; a ausência de metas\npactuadas e apuradas publicamente; e a necessidade de um marco legal de integridade, que hoje não existe\ncomo política de Estado. O desafio central reside em romper com o modelo de gestão isolado das secretarias,\ncriando uma cultura de colaboração e de responsabilidade compartilhadas. Além disso, a resistência cultural\nà transparência ativa e ao controle social rigoroso demanda uma liderança política firme para implementar\nmudanças estruturais permanentes.\nCaminho proposto: Instituir um Centro de Governo capaz de conduzir o ciclo completo: do plano à entrega.\nAdotar gestão por resultados, com metas pactuadas, nominadas e apuradas publicamente. Estabelecer a\nintegridade por lei, com planos de integridade em todos os órgãos, transparência de segunda geração (dados\nque respondem às perguntas do cidadão) e controle social fortalecido. Esta proposta fundamenta-se na\nnecessidade de transformar a administração pública em uma máquina de entregas reais, onde cada servidor\ne gestor saiba exatamente qual é sua contribuição para o desenvolvimento do Estado.\nImplementação, monitoramento e revisão: As secretarias passarão a firmar contratos de gestão com metas\nclaras, avaliados periodicamente. Os indicadores serão públicos e acompanhados em painéis abertos,\npermitindo que a sociedade civil atue como fiscalizadora do progresso governamental. O planejamento será\nrevisado anualmente, incorporando lições aprendidas e correções de rota, sempre com escuta dos\nmunicípios. Este ciclo de melhoria contínua garante que o plano de governo não se torne obsoleto,\nadaptando-se às novas realidades e demandas da população ao longo dos quatro anos.\n\nSeção 2 — Fazenda e Tributação\nOnde estamos: O Estado tem uma gestão fiscal reconhecidamente sólida, mas a base de contribuintes é\nestreita: grande parte dos trabalhadores do setor privado ainda está fora da formalidade. A legislação\ntributária acumula décadas de mudanças e se tornou complexa demais, e a receita está concentrada em\npoucos municípios. Essa concentração gera uma dependência econômica perigosa e limita a capacidade de\ninvestimento em regiões mais remotas, perpetuando desigualdades regionais históricas que precisam ser\nenfrentadas com inteligência fiscal.\nPrincipais desafios: A evasão que pune quem paga em dia; a insegurança jurídica para quem investe; a\nnecessidade de preparar a máquina para a transição da reforma tributária nacional, que ocorrerá\nexatamente durante este mandato. O sistema atual sobrecarrega o bom contribuinte enquanto falha em\ncapturar a economia informal, criando uma concorrência desleal. Além disso, a burocracia excessiva para o\ncumprimento das obrigações acessórias consome tempo e recursos que as empresas poderiam utilizar para\nexpandir seus negócios e contratar mais paraibanos.\nCaminho proposto: Não aumentar imposto. Simplificar a legislação, unificar o atendimento ao contribuinte\nem um portal único e criar o cadastro positivo do contribuinte, premiando quem cumpre. Estimular a\nformalização, modernizar a administração tributária com inteligência e preparar uma transição tributária\nplanejada, com avaliação permanente dos incentivos fiscais. A visão é de um fisco que atua como parceiro\ndo desenvolvimento, facilitando a vida de quem quer produzir e sendo rigoroso apenas com a fraude\nestruturada, garantindo justiça fiscal para todos.\nImplementação, monitoramento e revisão: Um escritório de transição tributária conduzirá a adaptação à\nnova legislação nacional, garantindo que a Paraíba não perca competitividade. Os incentivos serão avaliados\npor resultados e revisados continuamente, assegurando que cada renúncia fiscal se reverta em empregos e\nrenda comprovados. A qualidade do gasto e a sustentabilidade fiscal serão acompanhadas por indicadores\npúblicos, revisados a cada ciclo orçamentário, mantendo o equilíbrio necessário para que o Estado continue\nhonrando seus compromissos e investindo no futuro."
+          },
+          {
+            "id": "secao-3-governo-digital-inteligencia-artificial-ia-e-computacao-soberana",
+            "titulo": "Seção 3 — Governo Digital, Inteligência Artificial(IA) e Computação Soberana",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Seção 3 — Governo Digital, Inteligência Artificial(IA) e Computação Soberana\nOnde estamos: A política de tecnologia do Estado está fragmentada entre vários órgãos, sem comando\núnico. Não há um catálogo público e confiável dos serviços digitais, nem uma política estadual que oriente\no uso de inteligência artificial no serviço público. A conectividade é desigual: a capital e as cidades médias\navançam, mas grande parte do interior ainda fica para trás. Essa exclusão digital impede que o cidadão do\ncampo acesse serviços básicos com a mesma facilidade de quem vive nos grandes centros, aprofundando o\nabismo social.\nPrincipais desafios: A soberania dos dados públicos; a ausência de regras para o uso responsável da\ninteligência artificial; e a dificuldade de levar conectividade e competências digitais a todos os municípios. O\nEstado lida com volumes massivos de informações sensíveis que precisam de proteção robusta contra\nataques cibernéticos. Além disso, a rápida evolução da IA exige que o governo estabeleça limites éticos\nclaros, evitando preconceitos e vieses algorítmicos e garantindo que a tecnologia seja uma ferramenta de\ninclusão, e não de exclusão ou vigilância indevida.\nCaminho proposto: Criar comando único para a política de tecnologia, implantar um data center estadual\ncom modelo de parceria entre Estado e universidades e adotar uma política de IA responsável, com avaliação\nde impacto, supervisão humana e direito de contestação de decisões automatizadas. Digitalizar\nintegralmente os serviços elegíveis e capacitar servidores e cidadãos em larga escala. O objetivo é\ntransformar a Paraíba em um estado \"digital por padrão\", onde o cidadão resolva sua vida pelo celular, mas\nsempre mantendo o acolhimento humano para quem ainda não domina as ferramentas digitais.\nImplementação, monitoramento e revisão: A plataforma única de serviços será implantada por etapas, com\nmetas anuais de digitalização e foco na experiência do usuário. A política de IA será revisada periodicamente,\nacompanhando a evolução da tecnologia e a regulamentação nacional, com auditoria e transparência. O\nmonitoramento incluirá índices de satisfação do cidadão e economia gerada pela desburocratização,\npermitindo ajustes rápidos na estratégia digital para garantir que ninguém seja deixado para trás na\ntransição tecnológica.\n\nSeção 4 — Inovação e Tecnologia\nOnde estamos: A inovação está concentrada em poucos municípios, enquanto o restante do Estado ainda\ncarece de ecossistemas locais. Muitos talentos formados aqui encontram oportunidades fora da Paraíba, e\na compra pública ainda não é usada como alavanca para o desenvolvimento tecnológico. Temos ilhas de\nexcelência acadêmica que muitas vezes não conseguem transbordar seu conhecimento para o setor\nprodutivo local, resultando em uma \"fuga de cérebros\" que empobrece o potencial criativo do nosso estado\na longo prazo.\nPrincipais desafios: Desconcentrar a inovação pelo território; conectar universidade, empresas e governo;\nreter talentos; e transformar a energia limpa do Estado em vantagem competitiva para atrair\nempreendimentos de tecnologia. O desafio é criar um ambiente onde o jovem paraibano veja futuro em\nempreender aqui, utilizando as vocações regionais — como o agronegócio no sertão ou a economia criativa\nno litoral — como base para soluções tecnológicas e inovadoras que possam ser exportadas para o mundo.\nCaminho proposto: Implantar polos regionais de inovação com vocação temática ligada à economia local;\nusar a compra pública de inovação com o Estado como primeiro cliente das startups paraibanas; conceder\nbolsas de formação tecnológica para jovens do interior e posicionar a energia limpa como credencial do novo\nparque tecnológico. Queremos que o Estado seja o indutor de um ecossistema vibrante, onde o risco de"
+          },
+          {
+            "id": "inovar-seja-compartilhado-e-o-sucesso-seja-celebrado-como-uma-conquista",
+            "titulo": "inovar seja compartilhado e o sucesso seja celebrado como uma conquista de toda a sociedade paraibana,",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "inovar seja compartilhado e o sucesso seja celebrado como uma conquista de toda a sociedade paraibana,\ngerando empregos de alta qualificação.\nImplementação, monitoramento e revisão: Os polos regionais serão ativados por fases, com participação\nativa de universidades e empresas locais. Indicadores de ecossistema — novos negócios, empregos de\ntecnologia, projetos financiados — serão acompanhados publicamente e o plano será revisado com os atores\nlocais a cada ciclo. Essa governança descentralizada permite que cada região dite o ritmo de sua própria\ninovação, garantindo que as soluções propostas sejam aderentes à realidade local e sustentáveis\neconomicamente.\n\nPARTE II — DESENVOLVIMENTO ECONÔMICO E TRABALHO\nUma Paraíba que produz é uma Paraíba que gera renda, emprego e dignidade. Esta parte apresenta a visão\neconômica do plano: primeiro a estratégia macro, que define o rumo do desenvolvimento; depois os setores\nprodutivos, que movem a economia do campo, das cidades e do litoral; e, ao final, as políticas de trabalho e\nqualificação, que fazem a ponte entre crescer e incluir. É assim que o Estado que se organiza se torna um\nEstado que produz e que reparte com sua gente os frutos desse crescimento.\n\nSeção 5 — Desenvolvimento Econômico\nOnde estamos: A Paraíba é um Estado com alguma renda, mas com produção insuficiente. A participação\nda economia paraibana no cenário nacional vem caindo, a indústria perdeu força ao longo da última década\ne o Estado ainda depende fortemente de transferências federais. Esse modelo de dependência limita nossa\nautonomia e nos torna vulneráveis a crises externas. Precisamos resgatar o orgulho da produção paraibana,\ntransformando nosso potencial logístico e energético em riqueza real que circule dentro das nossas\nfronteiras.\nPrincipais desafios: O alto custo de fazer negócios no Estado; a dependência logística de outros estados para\nexportar; a infraestrutura digital insuficiente e a baixa geração de empregos formais. O empresário\nparaibano enfrenta gargalos que vão desde a carga tributária complexa até a falta de estradas de qualidade\npara escoar sua produção. Além disso, a falta de uma marca forte da \"Paraíba\" no mercado externo dificulta\na atração de investimentos estrangeiros diretos que poderiam acelerar nossa industrialização.\nCaminho proposto: Reduzir o custo de fazer negócios, com liberdade econômica e competitividade\ntributária; reinserir a Paraíba no comércio internacional; reindustrializar com foco em novas vocações;\naproveitar a energia limpa como ativo econômico e desenvolver cada região a partir de suas potencialidades.\nA estratégia foca em nichos de alto valor agregado, como a tecnologia da informação, as energias renováveis\ne o agronegócio inteligente, criando distritos industriais modernos que ofereçam infraestrutura de ponta e\nsegurança jurídica para o investidor.\nImplementação, monitoramento e revisão: Um conjunto de programas será executado em fases anuais, da\nestruturação à escala. O crescimento da economia, a geração de empregos e a desconcentração regional\nserão acompanhados por indicadores públicos, com revisão periódica das prioridades. O monitoramento\nserá feito através de um conselho de desenvolvimento econômico que reunirá governo, academia e setor\nprodutivo, garantindo que as políticas públicas estejam alinhadas com as demandas reais do mercado e as\nnecessidades da população."
+          },
+          {
+            "id": "secao-6-empreendedorismo-e-ambiente-de-negocios",
+            "titulo": "Seção 6 — Empreendedorismo e Ambiente de Negócios",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Seção 6 — Empreendedorismo e Ambiente de Negócios\nOnde estamos: Abrir uma empresa ainda é mais difícil do que deveria, e a informalidade atinge parcela\nmuito grande dos trabalhadores, com peso ainda maior entre as mulheres. O acesso ao crédito é limitado, e\na atividade econômica se concentra em poucos centros urbanos. O pequeno empreendedor, que é quem\nmais gera empregos na Paraíba, muitas vezes se sente desamparado pelo Estado, enfrentando uma selva de\ntaxas e exigências que desencorajam a formalização e o crescimento do negócio.\nPrincipais desafios: Desburocratizar de verdade; ampliar o crédito para pequenos negócios; formalizar quem\nempreende; e levar oportunidades de negócio para o interior. O desafio é transformar o Estado de um\nfiscalizador punitivo em um orientador proativo. A falta de garantias reais impede que o\nmicroempreendedor acesse linhas de crédito bancário tradicionais, mantendo-o preso a um ciclo de baixa\nprodutividade e falta de investimento em inovação ou expansão física de sua atividade.\nCaminho proposto: Reduzir drasticamente o tempo e a burocracia para abrir e operar uma empresa; instalar\nestruturas de apoio ao empreendedor próximas das associações comerciais e das comunidades; criar um\nfundo de garantia para viabilizar crédito; dedicar um programa específico ao empreendedorismo feminino;\ne interiorizar o desenvolvimento por vocação. A ideia é criar o \"Poupatempo do Empreendedor\", onde tudo\nseja resolvido em um só lugar, de forma rápida e digital, permitindo que o cidadão foque no que sabe fazer:\ntrabalhar e gerar riqueza.\nImplementação, monitoramento e revisão: A rede de atendimento será implantada com os municípios e as\nentidades empresariais. Indicadores de abertura de empresas, formalização e acesso ao crédito serão\nmonitorados publicamente, e as ações serão ajustadas a cada ciclo com base nos resultados. A revisão do\nplano incluirá rodadas de escuta com micro e pequenos empresários para identificar novos gargalos e ajustar\nas políticas de incentivo, garantindo que o ambiente de negócios permaneça competitivo e acolhedor.\n\nSeção 7 — Agropecuária\nOnde estamos: O campo paraibano tem força e vocação reconhecidas, com cadeias produtivas em\nexpansão, mas enfrenta a realidade do semiárido: a vulnerabilidade hídrica limita a produção, a\nprodutividade ainda é baixa em muitas culturas e a agroindústria sofre com a informalidade. Apesar disso, o\nprodutor paraibano é um exemplo de resiliência, conseguindo resultados expressivos mesmo com pouco\napoio tecnológico. O potencial para a fruticultura irrigada e a pecuária de leite é imenso, mas ainda\nsubexplorado por falta de infraestrutura básica.\nPrincipais desafios: Garantir água para produzir; agregar valor no campo; regularizar a produção\nagroindustrial; e levar assistência técnica e crédito ao pequeno produtor. O maior inimigo do campo é a\nincerteza climática, que sem obras de infraestrutura hídrica, destrói investimentos de anos em poucos meses\nde seca. Além disso, a dificuldade de processar a produção dentro do Estado faz com que a Paraíba exporte\nmatéria-prima barata e importe produtos industrializados caros, perdendo a chance de gerar empregos na\nagroindústria local.\nCaminho proposto: Fortalecer a segurança hídrica produtiva, com planos permanentes de armazenamento\ne uso da água; estruturar as cadeias produtivas de maior potencial; impulsionar a agroindustrialização com\nregularização sanitária; modernizar a defesa agropecuária; e ampliar o acesso ao crédito rural. O foco será\nna \"Agroindústria 4.0\", levando tecnologia de precisão para o pequeno e médio produtor, garantindo que\nele possa competir em qualidade e preço no mercado nacional e internacional, fixando o homem no campo\ncom dignidade."
+          },
+          {
+            "id": "implementacao-monitoramento-e-revisao-cada-cadeia-produtiva-tera-um-plan",
+            "titulo": "Implementação, monitoramento e revisão: Cada cadeia produtiva terá um plano próprio, construído com",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Implementação, monitoramento e revisão: Cada cadeia produtiva terá um plano próprio, construído com\nos produtores. A produção, a produtividade e a renda no campo serão acompanhadas por indicadores\npúblicos e revisadas com as entidades do setor a cada ciclo. O monitoramento incluirá o acompanhamento\ndos níveis dos reservatórios e a eficácia da assistência técnica, permitindo intervenções rápidas em casos de\nquebra de safra ou crises sanitárias, protegendo o patrimônio do produtor paraibano.\n\nSeção 8 — Turismo\nOnde estamos: A Paraíba tem um potencial turístico reconhecido, do litoral ao sertão, mas a atividade ainda\né concentrada em poucos destinos, com gestão limitada e qualificação insuficiente da mão de obra. Temos\no ponto mais oriental das Américas, festas populares grandiosas e um patrimônio histórico riquíssimo, mas\nainda falhamos em vender essa experiência de forma integrada. O turista que chega a João Pessoa muitas\nvezes não sabe das belezas do Lajedo de Pai Mateus ou das trilhas do Brejo, perdendo a oportunidade de\nconhecer a Paraíba profunda.\nPrincipais desafios: Estruturar novos destinos, especialmente no interior; profissionalizar o setor; fortalecer\na marca Paraíba; e atrair investimento privado com responsabilidade fiscal. O desafio é criar infraestrutura\nde acesso e serviços de qualidade fora do eixo litorâneo. A falta de uma malha aérea regional e de sinalização\nturística eficiente dificulta o deslocamento do visitante. Além disso, o setor sofre com a sazonalidade,\nprecisando de um calendário de eventos que mantenha o fluxo de turistas durante todo o ano, gerando\nemprego estável.\nCaminho proposto: Tratar o turismo como Política de Estado, com gestão de excelência; expandir os destinos\nestruturados para o interior; qualificar trabalhadores do setor; e usar cada real público como alavanca para\natrair investimento privado, medindo o retorno de cada ação. A estratégia envolve a criação de \"Roteiros\nIntegrados\", unindo sol e mar com cultura e aventura, promovendo a Paraíba em feiras internacionais e\nincentivando a construção de novos hotéis e equipamentos de lazer através de parcerias público-privadas\ninteligentes.\nImplementação, monitoramento e revisão: O plano será executado em fases, da estruturação à\nconsolidação de escala. Indicadores de visitação, permanência e geração de emprego no setor serão\nacompanhados publicamente e revisados com o setor produtivo. O monitoramento será constante através\nde pesquisas de satisfação com os turistas e dados de ocupação hoteleira, permitindo que o Estado ajuste\nsuas campanhas de marketing e investimentos em infraestrutura de acordo com as tendências do mercado\nglobal de viagens.\n\nSeção 9 — Cooperativismo\nOnde estamos: O cooperativismo paraibano cresce e reúne milhares de famílias, mas o movimento é\ndesigual: grande parte da movimentação financeira se concentra em poucos setores, enquanto o\ncooperativismo do campo — o mais numeroso — ainda tem participação tímida. O modelo cooperativista é\na saída natural para o pequeno produtor ganhar escala e poder de negociação, mas ele ainda esbarra na\nfalta de profissionalização da gestão e na dificuldade de acesso a mercados institucionais e privados de maior\nporte.\nPrincipais desafios: Profissionalizar a gestão das cooperativas; ampliar o acesso a mercado; e enfrentar a\nsucessão no meio rural, para que o jovem encontre futuro no campo. O desafio é transformar a cooperativa\nem uma empresa eficiente, sem perder sua essência social. A falta de capital de giro e de infraestrutura de\narmazenamento e logística própria impede que as cooperativas paraibanas compitam em pé de igualdade\ncom grandes atravessadores, que acabam ficando com a maior parte do lucro da produção."
+          },
+          {
+            "id": "caminho-proposto-regulamentar-e-fortalecer-o-marco-legal-do-cooperativis",
+            "titulo": "Caminho proposto: Regulamentar e fortalecer o marco legal do cooperativismo; criar estrutura executiva",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Caminho proposto: Regulamentar e fortalecer o marco legal do cooperativismo; criar estrutura executiva\ndedicada; implantar centrais de processamento; lançar uma plataforma de comercialização da produção\ncooperativa; e estimular inovação, intercooperação e sucessão rural. Queremos que o Estado seja um\nparceiro das cooperativas, facilitando sua participação em compras governamentais e incentivando a criação\nde cooperativas de crédito e de energia, que podem reduzir drasticamente os custos de produção para seus\nassociados.\nImplementação, monitoramento e revisão: As metas de crescimento do número de associados e da\nmovimentação cooperativa serão acompanhadas publicamente. O plano será revisado com as cooperativas\ne a agricultura familiar a cada ciclo. O monitoramento incluirá a saúde financeira das cooperativas e o\nimpacto na renda das famílias associadas, garantindo que o apoio governamental resulte em fortalecimento\nreal do movimento e não apenas em subsídios temporários sem sustentabilidade a longo prazo.\n\nSeção 10 — Juventude, Qualificação Profissional e Empregabilidade\nOnde estamos: Grande parte dos jovens paraibanos está fora da escola e do trabalho ao mesmo tempo, e\nentre os que trabalham, a informalidade predomina. A oferta de qualificação gratuita é escassa e\nconcentrada nas grandes cidades. Esse cenário cria uma geração sem perspectiva, vulnerável à criminalidade\ne ao desânimo. O jovem do interior sente que precisa abandonar sua terra para ter uma chance, o que gera\num esvaziamento de talentos que poderiam estar transformando suas próprias comunidades com novas\nideias e energia.\nPrincipais desafios: A exigência de experiência prévia que trava o primeiro emprego; a falta de qualificação\nalinhada às oportunidades reais; e a migração de talentos para outros estados. O descompasso entre o que\nas escolas ensinam e o que as empresas precisam é evidente. Além disso, a falta de programas de mentoria\ne de incentivo ao empreendedorismo juvenil faz com que muitos talentos se percam na busca por\nsubempregos, sem nunca atingirem seu pleno potencial produtivo e criativo.\nCaminho proposto: Levar trilhas de formação profissional a todos os municípios, combinando competências\ntécnicas e comportamentais; ampliar a oferta online de qualificação; preparar os jovens para as ocupações\nemergentes; e criar um programa de primeiro emprego em parceria com as empresas. O foco será em áreas\ncomo programação, energias renováveis, turismo e agronegócio tecnológico, garantindo que o jovem saia\ndo curso com um certificado na mão e uma oportunidade real de trabalho ou de abrir seu próprio negócio.\nImplementação, monitoramento e revisão: As metas de certificação e de intermediação de oportunidades\nserão acompanhadas publicamente. O plano será revisado com o setor produtivo a cada ciclo, ajustando as\ntrilhas de formação às demandas reais do mercado. O monitoramento incluirá o acompanhamento da\ntrajetória dos egressos dos programas de qualificação, medindo quantos efetivamente entraram no mercado\nde trabalho formal ou iniciaram empreendimentos de sucesso, garantindo a eficácia do investimento\npúblico.\n\nPARTE III — INFRAESTRUTURA, ÁGUA E MEIO AMBIENTE\nNenhum plano chega ao cidadão sem um território que funcione. Esta parte trata da Paraíba física: as\nestradas e a logística que conectam a produção, a mobilidade que leva o trabalhador ao seu destino, a água\ne o saneamento que garantem saúde e dignidade, a casa que acolhe e o meio ambiente que sustenta a vida.\nAqui, o Estado que produz se torna um Estado que conecta - do Litoral ao Sertão, sem deixar nenhum\nmunicípio isolado."
+          },
+          {
+            "id": "secao-11-infraestrutura-e-logistica",
+            "titulo": "Seção 11 — Infraestrutura e Logística",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Seção 11 — Infraestrutura e Logística\nOnde estamos: A Paraíba possui ativos logísticos importantes — porto, aeroporto, malha rodoviária — mas\neles funcionam desconectados entre si. Boa parte do que o Estado exporta depende da logística de outros\nestados, e a falta de integração encarece e trava o escoamento da produção. O Porto de Cabedelo, embora\nestratégico, opera abaixo de sua capacidade por limitações de calado e infraestrutura de retroporto,\nenquanto nossos aeroportos ainda não exploram todo o potencial de carga aérea que uma economia\nmoderna exige.\nPrincipais desafios: A profundidade limitada do porto; a ausência de um corredor multimodal; a falta de\numa zona de processamento para exportação; e a necessidade de planejamento de longo prazo para ferrovia\ne porto de águas profundas. O desafio é pensar a logística não como obras isoladas, mas como um sistema\nintegrado que reduza o \"Custo Paraíba\". A burocracia alfandegária e a falta de armazéns alfandegados\ntambém são barreiras que impedem que nossas empresas acessem mercados globais com agilidade e custos\ncompetitivos.\nCaminho proposto: Construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro,\nferrovia; aprofundar o porto e ampliar a cabotagem; implantar a zona de processamento para exportação;\ne planejar, com visão de décadas, as grandes obras que destravarão o comércio exterior. A visão é\ntransformar a Paraíba em um hub logístico do Nordeste, aproveitando nossa posição geográfica privilegiada\npara atrair centros de distribuição e indústrias voltadas para a exportação, gerando empregos de qualidade\nem toda a cadeia logística.\nImplementação, monitoramento e revisão: O plano será executado por fases, com parcerias públicoprivadas e captação de recursos federais. Os indicadores de escoamento e de custo logístico serão\nacompanhados publicamente e revisados a cada ciclo. O monitoramento incluirá o tempo médio de\nmovimentação de cargas e o volume de exportações diretas pelo Estado, permitindo ajustes na estratégia\nde investimentos e na gestão dos ativos logísticos para garantir a máxima eficiência do sistema.\n\nSeção 12 — Rodovias\nOnde estamos: Parte considerável da malha rodoviária estadual está em condições ruins ou péssimas. O\nmodelo atual de manutenção, focado em correções emergenciais, é caro e não resolve o problema na raiz.\nEstradas esburacadas aumentam o custo do frete, causam acidentes e isolam comunidades inteiras,\nespecialmente durante o período de chuvas. A falta de acostamentos e de sinalização adequada em trechos\ncríticos compromete a segurança de motoristas e pedestres, afetando diretamente a economia e a vida das\npessoas.\nPrincipais desafios: A insegurança nas estradas; o isolamento de regiões produtivas; e a falta de um modelo\nde conservação que dure o ano inteiro. O desafio é superar a lógica do \"tapa-buraco\" e investir em\nreconstrução asfáltica de qualidade. Além disso, a expansão da malha para ligar distritos produtivos que hoje\ndependem de estradas de terra é fundamental para a interiorização do desenvolvimento. A gestão das\nrodovias também precisa lidar com o excesso de peso de veículos de carga, que acelera a degradação do\npavimento sem a devida fiscalização.\nCaminho proposto: Trocar a manutenção corretiva por contratos por desempenho, em que a empresa é\nremunerada pela qualidade da estrada entregue; priorizar as rodovias que ligam produção, serviços e\ncomunidades; e incorporar a segurança viária como critério central de gestão. Queremos estradas que\ndurem, com sinalização moderna e manutenção preventiva constante. O plano inclui a pavimentação de"
+          },
+          {
+            "id": "acessos-a-polos-turisticos-e-agricolas-garantindo-que-a-riqueza-produzid",
+            "titulo": "acessos a polos turísticos e agrícolas, garantindo que a riqueza produzida no interior chegue aos mercados",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "acessos a polos turísticos e agrícolas, garantindo que a riqueza produzida no interior chegue aos mercados\ncom rapidez e segurança.\nImplementação, monitoramento e revisão: A condição da malha será avaliada periodicamente por\nindicadores objetivos e públicos. Os contratos serão revistos com base no desempenho, e as prioridades\nserão ajustadas a cada ciclo com os municípios. O monitoramento contará com a participação dos usuários\natravés de canais digitais de denúncia e avaliação, permitindo que o Estado identifique trechos\nproblemáticos em tempo real e cobre das empresas responsáveis a imediata reparação, garantindo o valor\ndo investimento público.\n\nSeção 13 — Mobilidade Urbana\nOnde estamos: O transporte urbano está pressionado em grande parte das cidades paraibanas, com oferta\ndesigual entre regiões e dificuldade de acesso para quem mais depende do transporte coletivo. O\ncrescimento desordenado das cidades gerou gargalos de trânsito que consomem horas do dia do\ntrabalhador. O sistema de ônibus, em muitos casos, é antigo e ineficiente, e as alternativas de mobilidade\nativa, como ciclovias e calçadas acessíveis, ainda são exceção e não a regra no planejamento urbano das\nnossas maiores cidades.\nPrincipais desafios: Garantir transporte digno para quem trabalha e estuda; integrar os sistemas\nmetropolitanos; e priorizar o transporte coletivo sobre o individual. O desafio é criar um sistema que seja\nrápido, seguro e barato. A falta de integração tarifária entre diferentes modais e entre cidades vizinhas\nencarece o custo de vida. Além disso, a insegurança nas paradas de ônibus e a falta de informações em\ntempo real sobre os horários afastam o usuário, gerando um círculo vicioso de queda de passageiros e\naumento de tarifas.\nCaminho proposto: Estruturar a mobilidade como política de Estado, apoiando os municípios na elaboração\ne implementação de planos de mobilidade urbana, promovendo a integração dos sistemas e priorizando o\ntransporte coletivo, a acessibilidade e a segurança dos usuários. A estratégia foca na criação de corredores\nexclusivos, na renovação da frota para veículos menos poluentes e na implementação de bilhetagem única.\nQueremos cidades feitas para pessoas, com calçadas largas, ciclovias conectadas e um transporte público\nque seja a primeira escolha do cidadão pela sua eficiência e conforto.\nImplementação, monitoramento e revisão: Os planos de mobilidade serão construídos com os municípios\ne a sociedade. Indicadores de qualidade e acesso ao transporte serão acompanhados publicamente e\nrevisados a cada ciclo. O monitoramento incluirá o tempo médio de deslocamento e o índice de satisfação\ndo usuário, permitindo ajustes nas rotas e frequências. A revisão do plano considerará as novas tecnologias\nde mobilidade, como veículos elétricos e aplicativos de transporte compartilhado, integrando-os ao sistema\npúblico de forma harmoniosa.\n\nSeção 14 — Recursos Hídricos\nOnde estamos: A segurança hídrica é desigual na Paraíba: há regiões com reservatórios em situação crítica\ne municípios que ainda dependem, em grande medida, do carro-pipa. As perdas na distribuição de água são\nelevadas e comprometem o esforço de universalização. Embora a Transposição do Rio São Francisco seja\numa realidade, a infraestrutura de canais e adutoras para levar essa água até a torneira do cidadão e ao\ncampo do produtor ainda está incompleta, deixando muitas comunidades \"com sede diante do rio\".\nPrincipais desafios: A seca recorrente no semiárido; as perdas no sistema de distribuição; e a necessidade\nde levar água de qualidade a todas as regiões, do Litoral ao Sertão. O desafio é gerir a escassez com\ninteligência e tecnologia. A falta de manutenção em barragens e a poluição de mananciais urbanos reduzem"
+          },
+          {
+            "id": "a-disponibilidade-de-agua-potavel-alem-disso-o-conflito-de-uso-entre-o-c",
+            "titulo": "a disponibilidade de água potável. Além disso, o conflito de uso entre o consumo humano e a produção",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "a disponibilidade de água potável. Além disso, o conflito de uso entre o consumo humano e a produção\nagrícola exige uma governança forte e transparente para garantir que ninguém fique desassistido nos\nperíodos de estiagem prolongada.\nCaminho proposto: Executar obras estruturantes de garantia de água; superar a rotina do carro-pipa com\nsoluções permanentes; reduzir as perdas de distribuição; tratar e reutilizar a água; e governar os recursos\nhídricos com transparência e participação. O foco será na conclusão das adutoras, na recuperação de\nreservatórios e na implementação de sistemas de dessalinização e reuso de água para fins industriais e\nagrícolas, garantindo que a água potável seja prioridade absoluta para o consumo humano e a saúde pública.\nImplementação, monitoramento e revisão: Os indicadores de disponibilidade hídrica, perdas e atendimento\nserão acompanhados publicamente. O plano será revisado a cada ciclo, incorporando a realidade de cada\nregião e as previsões climáticas. O monitoramento contará com sensores de vazão e pressão em tempo real\npara identificar vazamentos e usos irregulares, permitindo uma gestão ágil e eficiente. A revisão do plano\nincluirá a atualização do Plano Estadual de Recursos Hídricos, garantindo a sustentabilidade do sistema para\nas próximas gerações.\n\nSeção 15 — Esgotamento Sanitário\nOnde estamos: Parte significativa da população paraibana ainda não dispõe de coleta de esgoto, e boa parte\ndo esgoto gerado no Estado não recebe tratamento. As doenças de veiculação hídrica ainda atingem\nmilhares de pessoas todos os anos, sobrecarregando o sistema de saúde. A falta de saneamento básico é\numa das maiores faces da desigualdade social na Paraíba, afetando principalmente as periferias das grandes\ncidades e as zonas rurais, onde o esgoto a céu aberto ainda é uma triste realidade que compromete a\ndignidade humana.\nPrincipais desafios: Universalizar a coleta e o tratamento; priorizar as cidades médias e pequenas, muitas\nvezes esquecidas; e garantir que o tratamento chegue às ligações domiciliares de fato, não apenas ao papel.\nO desafio é o alto custo das obras de saneamento, que são \"invisíveis\" aos olhos do eleitor, mas\nfundamentais para a vida. A fragmentação da gestão entre diferentes empresas e autarquias municipais\ndificulta a criação de uma estratégia estadual coesa e a atração de investimentos privados necessários para\natingir as metas do Marco Legal do Saneamento.\nCaminho proposto: Implantar uma rede estadual de esgotamento com prioridade aos municípios menores;\ntratar e devolver a água à natureza de forma segura; reutilizar o efluente tratado; e medir o que realmente\nimporta - as casas efetivamente conectadas à rede. A estratégia envolve a regionalização dos serviços para\nganhar escala e viabilidade econômica, além do uso de tecnologias simplificadas e descentralizadas para\ncomunidades rurais, garantindo que o saneamento chegue a todos, independentemente de onde vivam.\nImplementação, monitoramento e revisão: As metas de cobertura e tratamento serão acompanhadas por\nindicadores públicos e por contratos de parceria. O plano será revisado a cada ciclo com a agência reguladora\ne os municípios. O monitoramento incluirá a análise da qualidade da água dos rios e praias, medindo o\nimpacto real do tratamento de esgoto no meio ambiente. A revisão do plano ajustará os investimentos de\nacordo com o crescimento urbano e as novas demandas ambientais, garantindo a eficiência do sistema a\nlongo prazo.\n\nSeção 16 — Habitação\nOnde estamos: O déficit habitacional é relevante, com peso maior no interior e na zona rural. Muitas famílias\nvivem sem condições dignas de moradia, em áreas de risco ou em habitações precárias. A regularização\nfundiária ainda alcança poucos lares, deixando milhares de paraibanos sem a segurança jurídica da posse de"
+          },
+          {
+            "id": "sua-propria-casa-o-acesso-ao-financiamento-habitacional-e-dificil-para-a",
+            "titulo": "sua própria casa. O acesso ao financiamento habitacional é difícil para as famílias de baixa renda, que acabam",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "sua própria casa. O acesso ao financiamento habitacional é difícil para as famílias de baixa renda, que acabam\nempurradas para ocupações informais sem infraestrutura básica, perpetuando o ciclo da pobreza urbana.\nPrincipais desafios: Reduzir o déficit habitacional; levar moradia digna às populações rurais, tradicionais e\nvulneráveis; regularizar a propriedade; e preparar as moradias para os desafios do clima. O desafio é\nconstruir não apenas casas, mas bairros com infraestrutura, serviços e lazer. A falta de terrenos urbanizados\ne o alto custo da construção civil dificultam a execução de programas habitacionais de larga escala. Além\ndisso, a burocracia nos cartórios e prefeituras torna o processo de regularização fundiária lento e custoso\npara o cidadão comum.\nCaminho proposto: Construir casas dignas na cidade e no campo, com desenho adaptado a cada região;\nregularizar títulos urbanos em larga escala; garantir moradia com identidade para as populações tradicionais;\ne incorporar soluções climáticas às novas habitações. A estratégia foca na parceria com o governo federal e\nmunicípios, no uso de métodos construtivos mais rápidos e baratos, e na implementação de programas de\nautogestão e reforma habitacional, permitindo que as famílias melhorem suas casas com apoio técnico e\ncrédito facilitado.\nImplementação, monitoramento e revisão: O ciclo habitacional será executado com os municípios, o setor\nda construção e o governo federal. As metas de unidades entregues e títulos regularizados serão\nacompanhadas publicamente e revisadas a cada ciclo. O monitoramento incluirá o acompanhamento social\ndas famílias beneficiadas, garantindo que a nova moradia resulte em melhoria real da qualidade de vida. A\nrevisão do plano ajustará as tipologias habitacionais e as áreas de intervenção de acordo com as\nnecessidades demográficas e os riscos ambientais identificados.\n\nSeção 17 — Meio Ambiente, Energia e Sustentabilidade\nOnde estamos: A Paraíba é um dos Estados com maior potencial de energia limpa do país, com ventos\nconstantes e sol abundante. No entanto, boa parte dessa energia ainda sai do Estado sem gerar\ndesenvolvimento local significativo. O semiárido enfrenta risco crescente de desertificação devido ao uso\ninsustentável do solo e ao desmatamento da caatinga. O licenciamento ambiental, embora necessário para\na proteção da natureza, ainda é visto como um gargalo lento e burocrático que afasta investimentos\nsustentáveis que poderiam estar gerando renda e preservação ao mesmo tempo.\nPrincipais desafios: Consumir localmente a energia limpa gerada aqui; reverter a desertificação gerando\nrenda; acelerar o licenciamento com segurança; proteger os reservatórios; e conectar ciência, indústria e\nmercado de carbono. O desafio é equilibrar o desenvolvimento econômico com a preservação dos nossos\nbiomas únicos. A falta de fiscalização eficiente e de incentivos para a economia verde faz com que atividades\npredatórias ainda sejam lucrativas. Além disso, a adaptação às mudanças climáticas exige um planejamento\nque o Estado ainda está começando a estruturar.\nCaminho proposto: Fazer com que a energia limpa gerada na Paraíba abasteça a Paraíba, atraindo indústria\nverde e centros de dados; recaatingar o semiárido com inclusão produtiva; modernizar o licenciamento com\ninteligência; tratar o esgoto com a natureza; e abrir o acesso ao mercado de carbono para os pequenos\nprodutores. Queremos que a Paraíba seja referência em \"Economia Regenerativa\", onde a preservação da\nnatureza seja uma fonte de lucro para o produtor rural através de serviços ambientais e do uso sustentável\nda biodiversidade da caatinga e da mata atlântica.\nImplementação, monitoramento e revisão: A agenda será executada em horizontes de curto, médio e longo\nprazo, com indicadores ambientais e energéticos públicos. O plano será revisado a cada ciclo com os setores\nenvolvidos. O monitoramento contará com imagens de satélite e sensores de qualidade do ar e da água para"
+          },
+          {
+            "id": "identificar-crimes-ambientais-em-tempo-real-a-revisao-do-plano-incorpora",
+            "titulo": "identificar crimes ambientais em tempo real. A revisão do plano incorporará as novas metas globais de",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "identificar crimes ambientais em tempo real. A revisão do plano incorporará as novas metas globais de\ndescarbonização, garantindo que a Paraíba esteja na vanguarda da transição energética e da resiliência\nclimática, protegendo nosso patrimônio natural para o futuro.\n\nPARTE IV — DESENVOLVIMENTO HUMANO E PROTEÇÃO SOCIAL\nToda a estrutura do Estado só faz sentido se chegar à vida das pessoas. Esta parte reúne o coração do plano:\na educação que forma, a saúde que cuida, a assistência que protege, as políticas que valorizam cada fase da\nvida - e também a cultura, o esporte e o cuidado com os animais, que fazem a vida valer a pena. Aqui, o\nEstado que conecta o território se torna um Estado que cuida das pessoas, em todos os municípios e para\ntodas as famílias.\n\nSeção 18 — Educação\nOnde estamos: A Paraíba avançou no ensino em tempo integral e na redução do abandono escolar, mas o\naprendizado ainda está abaixo do desejado, especialmente em matemática e língua portuguesa. A distorção\nentre idade e série é elevada, refletindo anos de reprovações e evasão. A infraestrutura escolar é desigual:\nenquanto algumas escolas são modernas, outras ainda carecem de laboratórios, bibliotecas e espaços\nesportivos. Além disso, os profissionais da educação enfrentam condições de trabalho desgastantes, com\nsalários que precisam de valorização real e suporte à saúde mental.\nPrincipais desafios: Elevar a aprendizagem em todas as etapas; reduzir a distorção idade-série; levar\nconectividade e estrutura a todas as escolas; valorizar quem ensina; e integrar o ensino superior à rede\npública. O desafio é garantir que o aluno não apenas esteja na escola, mas que ele aprenda o que é\nnecessário para a vida e o trabalho. A falta de atratividade da carreira docente afasta jovens talentos do\nmagistério, e a desconexão entre o currículo escolar e as demandas do século XXI gera desinteresse nos\nestudantes, aumentando o risco de evasão no ensino médio.\nCaminho proposto: Focar a gestão em aprendizagem, com acompanhamento por escola; ampliar o tempo\nintegral com qualidade; climatizar, conectar e equipar todas as escolas; valorizar as carreiras da educação,\ncom atenção à saúde dos profissionais; e consolidar a rede de ensino superior como vetor de\ndesenvolvimento. A estratégia foca na alfabetização na idade certa, no fortalecimento do ensino técnico\nintegrado e na formação continuada dos professores. Queremos escolas que sejam centros de inovação e\ncidadania, onde cada jovem paraibano possa descobrir e desenvolver seus talentos plenamente.\nImplementação, monitoramento e revisão: As metas de aprendizagem serão acompanhadas por\nindicadores públicos, escola a escola, e revisadas a cada ciclo. A gestão por evidências orientará os ajustes,\ncom autonomia financeira crescente para as unidades escolares. O monitoramento incluirá avaliações\nperiódicas de desempenho dos alunos e pesquisas de clima escolar. A revisão do plano será feita em diálogo\nconstante com os conselhos de educação e entidades representativas, garantindo que a política educacional\nseja de Estado e não apenas de um governo passageiro.\n\nSeção 19 — Saúde\nOnde estamos: A atenção primária alcança grande parte da população, mas ainda resolve pouco: muitos\ncasos que poderiam ser atendidos na ponta acabam sobrecarregando as urgências dos hospitais. A\nmortalidade materna e infantil segue acima do aceitável em várias regiões. Os especialistas e os\nequipamentos de alta complexidade estão concentrados na capital e em Campina Grande, obrigando"
+          },
+          {
+            "id": "pacientes-do-interior-a-viagens-longas-e-cansativas-para-exames-simples",
+            "titulo": "pacientes do interior a viagens longas e cansativas para exames simples. Muitos municípios ainda não têm",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "pacientes do interior a viagens longas e cansativas para exames simples. Muitos municípios ainda não têm\nestrutura básica para estabilizar pacientes em emergências graves antes da transferência.\nPrincipais desafios: Fazer a atenção primária resolver de fato; reduzir o tempo de espera; levar especialistas\nao interior; cuidar da saúde mental e das doenças crônicas; e gerir a saúde por resultados. O desafio é\ndescentralizar o atendimento sem perder a qualidade. A falta de integração de dados entre os diferentes\nníveis de atenção gera desperdício de recursos e atraso no diagnóstico. Além disso, o aumento das doenças\nmentais e das condições crônicas, como diabetes e hipertensão, exige um modelo de cuidado contínuo que\no sistema atual, focado na doença aguda, ainda não consegue oferecer plenamente.\nCaminho proposto: Fortalecer a atenção primária com equipes resolutivas e cuidado digital; implantar uma\nrede de urgências e emergências com cobertura sertaneja; cuidar da mãe e da primeira infância; ampliar o\ncuidado em saúde mental; levar medicamentos e telemedicina/telessaúde a todos os municípios; e valorizar\nos profissionais da saúde. A estratégia foca na criação de Policlínicas Regionais, no fortalecimento dos\nhospitais do interior e no uso intensivo da tecnologia para aproximar o especialista do paciente, garantindo\nque o \"Cuidado Certo, no Tempo Certo, Perto de Casa\" seja uma realidade para todos.\nImplementação, monitoramento e revisão: O tempo de atendimento será tratado como medida central de\nqualidade. Os indicadores de mortalidade, resolução da atenção primária e acesso serão acompanhados\npublicamente, com revisão periódica do plano. O monitoramento contará com um prontuário eletrônico\núnico estadual, permitindo acompanhar a jornada do paciente e identificar gargalos nas filas de espera. A\nrevisão do plano ajustará a oferta de serviços de acordo com o perfil epidemiológico de cada região,\ngarantindo a eficiência e a humanização do atendimento em toda a rede pública.\n\nSeção 20 — Assistência Social\nOnde estamos: A proteção social existe, mas é desigual entre os territórios: muitas famílias ainda vivem em\nsituação de pobreza extrema, e a fome permanece como uma ferida aberta em parte do Estado,\nespecialmente no semiárido e nas periferias urbanas. A capacidade de proteção especial para crianças e\nidosos em situação de risco é concentrada e insuficiente. O sistema de assistência precisa de fortalecimento\ninstitucional e financeiro, pois muitas vezes as equipes trabalham no limite da capacidade, sem estrutura\nadequada para realizar o acompanhamento necessário para a superação da vulnerabilidade.\nPrincipais desafios: Garantir segurança alimentar com critérios claros e caminhos de saída; proteger\ncrianças, idosos e pessoas em situação de violência; chegar aos territórios mais distantes; e reconstruir a\ngovernança do sistema de assistência. O desafio é romper o ciclo da pobreza intergeracional. A falta de\nintegração entre as políticas de assistência, educação e emprego dificulta que as famílias beneficiárias de\nprogramas de transferência de renda consigam atingir a autonomia econômica. Além disso, o aumento da\npopulação em situação de rua e das novas formas de exclusão social demanda respostas rápidas e\ninovadoras.\nCaminho proposto: Combater a fome com política de Estado, com cadastro qualificado e porta de saída para\na autonomia; proteger a primeira infância; regionalizar a proteção especial; levar proteção aos povos\ntradicionais e às áreas de emergência climática; e fazer o sistema de assistência funcionar com vigilância e\ncofinanciamento. A estratégia foca no fortalecimento dos CRAS e CREAS, na criação de cozinhas comunitárias\ne bancos de alimentos, e na implementação de programas de transferência de renda estaduais que\ncomplementem o apoio federal, sempre vinculados a ações de qualificação e inclusão produtiva.\nImplementação, monitoramento e revisão: A vigilância socioassistencial orientará o acompanhamento das\nfamílias. Os indicadores de pobreza, insegurança alimentar e cobertura da rede serão públicos, com"
+          },
+          {
+            "id": "pactuacao-permanente-com-os-municipios-e-revisao-a-cada-ciclo-o-monitora",
+            "titulo": "pactuação permanente com os municípios e revisão a cada ciclo. O monitoramento incluirá o",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "pactuação permanente com os municípios e revisão a cada ciclo. O monitoramento incluirá o\nacompanhamento da evolução socioeconômica das famílias atendidas, medindo o impacto real das ações\nna redução da vulnerabilidade. A revisão do plano ajustará as prioridades de acordo com as novas demandas\nsociais e as crises emergenciais, garantindo que a rede de proteção seja ágil e eficaz.\n\nSeção 21 — Mulher, Infância, Juventude, Pessoas com Deficiência e\nNeurodesenvolvimento\nOnde estamos: A violência contra a mulher ainda cobra vidas e deixa marcas profundas em milhares de\nfamílias paraibanas todos os anos. A desigualdade de gênero no mercado de trabalho limita a autonomia\neconômica das mulheres, especialmente das mães solo. Crianças e jovens enfrentam riscos que vão desde a\ndesnutrição até a exploração. As pessoas com deficiência e com condições do neurodesenvolvimento, como\no autismo e a paralisia cerebral, ainda encontram barreiras imensas para acessar saúde, educação e lazer,\ndeixando as famílias, principalmente as mães cuidadoras, em uma situação de isolamento e sobrecarga\nextrema.\nPrincipais desafios: Proteger a vida das mulheres e garantir sua independência econômica; cuidar da\nprimeira infância; ampliar oportunidades para a juventude; e garantir inclusão e suporte às pessoas com\ndeficiência e suas famílias. O desafio é criar uma rede de cuidado que seja verdadeiramente inclusiva e\nacessível. A falta de centros especializados de atendimento ao neurodesenvolvimento no interior obriga as\nfamílias a deslocamentos exaustivos. Além disso, o preconceito e a falta de acessibilidade física e\ncomunicacional impedem a participação plena dessas pessoas na vida social e produtiva do Estado.\nCaminho proposto: Estruturar políticas integradas por eixo: mulheres, infância, juventude e inclusão, com\nprogramas próprios e metas claras: redução da violência, autonomia financeira das mulheres, proteção da\ninfância, qualificação dos jovens e inclusão plena das pessoas com deficiência, com atenção às condições do\nneurodesenvolvimento. A estratégia inclui a criação de Centros de Referência em Neurodesenvolvimento\nregionalizados, o fortalecimento das Delegacias da Mulher e das Casas Abrigo, e a implementação de cotas\ne incentivos para a contratação de jovens e pessoas com deficiência no serviço público e nas empresas\nparceiras.\nImplementação, monitoramento e revisão: A rede de proteção será integrada entre Estado e municípios,\ncom protocolos únicos de atendimento. Os indicadores de violência, inclusão escolar e acesso a terapias\nserão acompanhados publicamente, e o plano será revisado com os conselhos e as famílias a cada ciclo. O\nmonitoramento contará com a participação ativa das associações de pais e de mulheres, garantindo que as\npolíticas públicas respondam às necessidades reais. A revisão do plano ajustará as ações de acordo com os\navanços científicos e as demandas por novos serviços de suporte e inclusão.\n\nSeção 22 — Cultura\nOnde estamos: A Paraíba tem uma riqueza cultural reconhecida mundialmente — do forró ao cordel, do\nteatro ao cinema, do artesanato à gastronomia. Nossa cultura é nossa maior marca e uma economia criativa\npujante que já gera milhares de empregos. No entanto, a produção cultural ainda é muito concentrada na\ncapital e em Campina Grande, e muitos artistas do interior vivem na invisibilidade. O acesso ao fomento\npúblico ainda é burocrático e dependente de editais complexos que muitas vezes excluem os mestres da\ncultura popular e os pequenos produtores independentes. Nosso patrimônio histórico também sofre com a\nfalta de manutenção e uso sustentável.\nPrincipais desafios: Interiorizar o acesso à cultura; profissionalizar os trabalhadores do setor; preservar o\npatrimônio material e imaterial; e modernizar a gestão cultural. O desafio é transformar a cultura de um"
+          },
+          {
+            "id": "setor-de-eventos-em-um-setor-economico-estruturado-a-falta-de-espacos-cu",
+            "titulo": "setor de \"eventos\" em um setor econômico estruturado. A falta de espaços culturais adequados no interior,",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "setor de \"eventos\" em um setor econômico estruturado. A falta de espaços culturais adequados no interior,\ncomo teatros, cinemas e centros de artesanato, limita a circulação da produção e o acesso da população.\nAlém disso, a memória cultural paraibana corre o risco de se perder sem uma política agressiva de\ndigitalização e preservação dos nossos acervos e saberes tradicionais.\nCaminho proposto: Tratar a cultura como política de Estado; criar uma rede cultural itinerante que chegue\na todos os municípios; fortalecer o fomento à economia criativa; implantar um sistema integrado de gestão;\ne lançar um programa de identidade paraibana que una cultura, patrimônio e turismo. A estratégia foca na\ndescentralização dos recursos, no apoio à formação técnica de produtores e artistas, e na transformação de\nprédios históricos em centros de inovação cultural. Queremos que a cultura seja vista como um ativo\nestratégico para o desenvolvimento social e econômico, gerando orgulho e renda para o povo paraibano.\nImplementação, monitoramento e revisão: As metas de acesso, emprego cultural e preservação serão\nacompanhadas por indicadores públicos. O plano será revisado com os fazedores de cultura de todas as\nregiões a cada ciclo. O monitoramento incluirá o mapeamento da cadeia produtiva da cultura e o impacto\ndos festivais e editais na economia local. A revisão do plano ajustará as formas de fomento e as prioridades\nde preservação de acordo com as novas tendências da economia criativa e as demandas por democratização\ndo acesso aos bens culturais em todo o território estadual.\n\nSeção 23 — Esporte e Lazer\nOnde estamos: A prática esportiva na Paraíba ainda é muito concentrada nas grandes cidades e em clubes\nprivados, enquanto o sedentarismo cresce em todas as faixas etárias, aumentando os riscos de doenças\ncrônicas. Há uma clara desigualdade de gênero na atividade física: as meninas e mulheres se movimentam\nmenos por falta de espaços seguros e programas específicos. O esporte de alto rendimento, embora revele\ntalentos olímpicos e paralímpicos, ainda carece de um apoio estruturado e contínuo, dependendo muitas\nvezes apenas do esforço individual dos atletas e de suas famílias. O lazer público, especialmente no interior,\nresume-se a praças muitas vezes mal conservadas.\nPrincipais desafios: Levar esporte e lazer a todos os municípios; tratar a atividade física como política de\nsaúde; garantir equidade de gênero; e profissionalizar a gestão do esporte. O desafio é democratizar o acesso\nao esporte como direito social. A falta de infraestrutura esportiva nas escolas e comunidades impede que o\nesporte cumpra seu papel de inclusão social e prevenção à violência. Além disso, a falta de profissionais de\neducação física qualificados para atuar no esporte comunitário e no paradesporto limita o alcance das\npolíticas públicas de lazer e bem-estar.\nCaminho proposto: Universalizar o acesso ao esporte; integrar a atividade física à atenção primária à saúde;\nincentivar as meninas no esporte e estruturar o paradesporto permanente; ampliar o apoio aos talentos; e\nprofissionalizar a gestão com dados e captação de recursos. A estratégia inclui a construção de complexos\nesportivos regionais, o fortalecimento dos jogos escolares e a criação de programas de esporte nos bairros,\ncom foco na saúde do idoso e na inclusão de pessoas com deficiência. Queremos que o esporte seja uma\nferramenta de transformação de vidas e de promoção da saúde em toda a Paraíba.\nImplementação, monitoramento e revisão: Os indicadores de prática esportiva e inclusão serão\nacompanhados publicamente. O plano será revisado com atletas, federações e municípios a cada ciclo. O\nmonitoramento contará com o acompanhamento do desempenho dos atletas bolsistas e o impacto dos\nprogramas comunitários na redução de indicadores de doenças ligadas ao sedentarismo. A revisão do plano\najustará os investimentos em infraestrutura e fomento de acordo com as vocações esportivas de cada região\ne as novas demandas por modalidades emergentes e lazer ativo."
+          },
+          {
+            "id": "secao-24-protecao-e-bem-estar-animal",
+            "titulo": "Seção 24 — Proteção e Bem-Estar Animal",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Seção 24 — Proteção e Bem-Estar Animal\nOnde estamos: A Paraíba ainda não possui uma política estadual de proteção animal consolidada e\nabrangente. A superpopulação de animais abandonados nas ruas é uma realidade em quase todos os\nmunicípios, gerando riscos sanitários para a população e sofrimento para os animais. Os serviços públicos\nde atendimento veterinário gratuito são raros, e a responsabilidade pelo resgate e cuidado acaba recaindo\nquase inteiramente sobre protetores independentes e ONGs, que estão sobrecarregados e sem recursos. A\nfalta de educação para a guarda responsável e a impunidade em casos de maus-tratos ainda são problemas\ngraves que precisam ser enfrentados com urgência.\nPrincipais desafios: Instituir a política como política de Estado; ampliar a castração e o atendimento\nveterinário público; conhecer a realidade por dados; e fortalecer a rede de proteção com os municípios. O\ndesafio é integrar a proteção animal à agenda de saúde pública e meio ambiente. A falta de um censo animal\nimpede o planejamento de ações eficazes de controle populacional. Além disso, a resistência cultural à\ncastração e a falta de punição efetiva para o abandono dificultam a redução do número de animais nas ruas,\nperpetuando um ciclo de negligência e zoonoses.\nCaminho proposto: Instituir a política estadual de proteção e bem-estar animal; implantar programa amplo\nde castração; estruturar uma rede regionalizada de atendimento veterinário público; criar o registro e o\nobservatório do bem-estar animal; e atuar na lógica de saúde única, entendendo que cuidar dos animais\ntambém é cuidar das pessoas. A estratégia foca na parceria com clínicas privadas e universidades, no apoio\nfinanceiro e técnico às ONGs e na implementação de unidades móveis de castração (castramóveis) que\npercorram todo o Estado, priorizando as áreas de maior vulnerabilidade social e abandono.\nImplementação, monitoramento e revisão: O plano será executado em fases, com parcerias com\nuniversidades e municípios. Os indicadores de castração, atendimento e registro serão acompanhados\npublicamente, com revisão a cada ciclo. O monitoramento incluirá o acompanhamento das denúncias de\nmaus-tratos e a eficácia das campanhas de adoção e educação. A revisão do plano ajustará as metas de\ncontrole populacional e a oferta de serviços veterinários de acordo com os dados do observatório,\ngarantindo que a Paraíba se torne um estado referência em respeito e cuidado com a vida animal.\n\nPARTE V — SEGURANÇA PÚBLICA E DEFESA CIVIL\nDe nada adianta um Estado que organiza, produz, conecta e cuida, se as pessoas não se sentirem seguras\nem suas casas, ruas e comunidades. Esta parte trata da proteção da vida e do patrimônio, da valorização de\nquem protege e da capacidade de responder aos desastres que atingem o território. É a última parte, mas\nnão a menos importante: é a garantia de que tudo o que o plano propõe será construído sobre uma base de\npaz e segurança.\n\nSeção 25 — Segurança Pública e Defesa Civil\nOnde estamos: A Paraíba avançou na redução de alguns indicadores de violência letal, mas os crimes\npatrimoniais, o tráfico de drogas e a violência sexual ainda crescem em várias regiões. Há uma carência\nhistórica de efetivo em todas as forças de segurança: Polícia Militar, Civil, Bombeiros e Polícia Penal. O\nsistema prisional opera acima de sua capacidade, dificultando a ressocialização e facilitando a atuação de\nfacções. A defesa civil, embora atuante, ainda não alcança todos os municípios com a estrutura necessária\npara a prevenção de desastres naturais, como secas extremas ou inundações repentinas."
+          },
+          {
+            "id": "principais-desafios-valorizar-os-profissionais-de-seguranca-fortalecer-a",
+            "titulo": "Principais desafios: Valorizar os profissionais de segurança; fortalecer a inteligência e a investigação;",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Principais desafios: Valorizar os profissionais de segurança; fortalecer a inteligência e a investigação;\nmodernizar a infraestrutura; superar a superlotação com ressocialização; e estruturar a defesa civil para\nprevenir e responder a desastres. O desafio é integrar as forças e usar a tecnologia como multiplicadora de\nforças. A falta de equipamentos modernos, de viaturas adequadas e de suporte psicológico e legal para os\npoliciais compromete a eficiência do serviço. Além disso, a impunidade em crimes de \"colarinho branco\" e a\nfalta de oportunidades para egressos do sistema prisional alimentam o ciclo da criminalidade.\nCaminho proposto: Valorizar as carreiras da segurança, com atenção à saúde mental e às condições de\ntrabalho; ampliar o uso de inteligência e investigação para desarticular o crime organizado; regionalizar as\nunidades prisionais com foco em ressocialização e trabalho retirando-as das áreas urbanas; e implantar uma\nrede estadual de defesa civil, com bases regionais, alerta antecipado e prevenção no semiárido. A estratégia\nfoca na \"Polícia de Proximidade\", no fortalecimento da perícia criminal e no uso de videomonitoramento\ninteligente. Queremos uma segurança que proteja o cidadão respeitando os direitos humanos, e uma defesa\ncivil que salve vidas através da prevenção e da resposta rápida.\nImplementação, monitoramento e revisão: As metas de redução da violência e de fortalecimento da defesa\ncivil serão pactuadas com os municípios e acompanhadas por indicadores públicos. O plano será revisado a\ncada ciclo, com transparência total dos resultados. O monitoramento contará com estatísticas criminais\natualizadas em tempo real e auditorias externas da atividade policial. A revisão do plano ajustará as\nestratégias de policiamento e as áreas de risco da defesa civil de acordo com as manchas criminais e os\neventos climáticos, garantindo que a Paraíba seja um estado seguro para viver, trabalhar e investir.\n\nFECHAMENTO — COMPROMISSO FINAL\nEste plano termina como começou: com uma palavra que vale mais que promessas — compromisso.\nAssumimos o compromisso de governar a Paraíba com honestidade, método e proximidade. De ouvir antes\nde decidir e de explicar depois de agir. De tratar o dinheiro público com absoluto respeito e extrema\nresponsabilidade, de valorizar quem trabalha e de abrir portas para quem empreende. De cuidar de cada\ncriança, de cada jovem, de cada mulher, de cada pessoa com deficiência, de cada família que espera do\nEstado o que a vida sozinha não deu.\nSabemos que um plano é apenas papel se não houver quem o cumpra com seriedade. Por isso, não\nprometemos perfeição: prometemos presença. Presença nas estradas, nas escolas, nos hospitais, nas feiras,\nnas comunidades. Presença para cobrar e para prestar contas. E muito perto de quem mais precisa.\nEste Plano de Governo não pertence a nós. Pertence à Paraíba. E é por isso que ele não termina em 2030:\nele deixa raízes, políticas que permanecem, estruturas que resistem e uma forma de governar que coloca o\ninteresse público acima de tudo.\nConvidamos cada paraibana e cada paraibano a caminhar conosco neste novo tempo. Não como\nespectadores, mas como partícipes. Porque a Paraíba que queremos não será obra de dois nomes: será obra\nde um povo inteiro.\nA Paraíba pode mais. E nós vamos fazer, juntos.\nEfraim Filho\nCandidato a Governador\n\nNayana Pontes\nCandidata a Vice-Governadora\n\nJoão Pessoa, 05 de agosto de 2026"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "16bace86a83499bb95f08a4931fa0b2915ffc1cfb863bebd8cd8368f181246d6"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "0e2ae087fc09985c2c57f84be3f6d1452c6766634e75d3a91084b1bfd4a3668a"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "d7232504e4f48905730dd9e9e22a73616b1031c24683383ae4e59da72145255a"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "7b3d7b2ab995dda5233ad70ea88124cb030df0a777b3bd319ff7c38a7e83b17c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "606eab1bba0073f031541c7e9fed5cc99a3339c54a27ab1d5f0f4be519f251d5"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "00d83f8047296c58cace4fb9310ccaa224618fd5e9f11c0d04671e73772aad76"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "bfcc40e5fd2782291b1964dc209471d29ac23c499f38c24da4e47d36a4d5e40d"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f1b2e4a0217b204fc0e554a5b7038fabdb3d8c5134931a9fe9cde1af52b6de98"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "01a2db113d6eca0a6fd77e91c29aadf642be29bfccd5b74be50b02eee6ff1665"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "296bd02918bfe82fd653559fe46c88f0edf99a765f4f9fb69d51638da25172fc"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "24e98c52a5072add3ed549d3507bc7d04ab577539d5e93a590cf240bd34a96d4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "c01687b03b928a17bb4aa8b813e3d71a706fea02ac433b6de2ad12ca40c1a70f"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "d35be9d5699bbcffeead4b0c615b98d7210999e3e4d1d3bc8046c2b37a9f3838"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "7ce73c6927e1d99fdf00536dcabae505dd0cc41bdf107e0722cfa9317e2282a5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "73d1183e3e01e569d0369bae0103ef86bc76e7722394cd3b9c5aa538fef06961"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "9ce815a1f61bbd4650cbc0a63fff504a1f5bbb1b759709af7a4e8f399af2365d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "ab65111e656c59d93c483e9db144d7e4c608ca7a1b80822807ed02c0d521e186"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "2b49b3324d272d4a46a1cd2a238d53a45819f1f269e5e7f730bbcead9f228aa3"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "4ccb61285e9faf1830b0b883e96a69722b61e6d4e0f38772631a4bac83b635a1"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê instituir um Centro de Governo capaz de conduzir o ciclo completo, do plano à entrega. Também prevê não aumentar imposto. Na área de inteligência artificial, propõe adotar uma política responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas. A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário. O programa propõe implantar polos regionais de inovação com vocação temática ligada à economia local. Entre as medidas de crédito, está criar um fundo de garantia para viabilizar crédito. Na formação profissional, prevê levar trilhas de formação profissional a todos os municípios. Em infraestrutura, propõe construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia.",
+    "frases": [
+      {
+        "texto": "O programa prevê instituir um Centro de Governo capaz de conduzir o ciclo completo, do plano à entrega.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 4,
+            "trecho": "Caminho proposto: Instituir um Centro de Governo capaz de conduzir o ciclo completo: do plano à entrega."
+          }
+        ]
+      },
+      {
+        "texto": "Também prevê não aumentar imposto.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 4,
+            "trecho": "Caminho proposto: Não aumentar imposto."
+          }
+        ]
+      },
+      {
+        "texto": "Na área de inteligência artificial, propõe adotar uma política responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 5,
+            "trecho": "adotar uma política de IA responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas."
+          }
+        ]
+      },
+      {
+        "texto": "A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 5,
+            "trecho": "A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe implantar polos regionais de inovação com vocação temática ligada à economia local.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 5,
+            "trecho": "Caminho proposto: Implantar polos regionais de inovação com vocação temática ligada à economia local;"
+          }
+        ]
+      },
+      {
+        "texto": "Entre as medidas de crédito, está criar um fundo de garantia para viabilizar crédito.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 7,
+            "trecho": "criar um fundo de garantia para viabilizar crédito;"
+          }
+        ]
+      },
+      {
+        "texto": "Na formação profissional, prevê levar trilhas de formação profissional a todos os municípios.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 9,
+            "trecho": "Caminho proposto: Levar trilhas de formação profissional a todos os municípios, combinando competências técnicas e comportamentais;"
+          }
+        ]
+      },
+      {
+        "texto": "Em infraestrutura, propõe construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 10,
+            "trecho": "Caminho proposto: Construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-publica",
+        "titulo": "Gestão pública",
+        "descricao": "Instituição de um Centro de Governo para conduzir o ciclo completo, do plano à entrega.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 4,
+            "trecho": "Caminho proposto: Instituir um Centro de Governo capaz de conduzir o ciclo completo: do plano à entrega."
+          }
+        ]
+      },
+      {
+        "id": "politica-tributaria",
+        "titulo": "Política tributária",
+        "descricao": "Previsão de não aumentar imposto.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 4,
+            "trecho": "Caminho proposto: Não aumentar imposto."
+          }
+        ]
+      },
+      {
+        "id": "inteligencia-artificial",
+        "titulo": "Inteligência artificial",
+        "descricao": "Adoção de uma política de IA responsável com avaliação, supervisão e contestação.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 5,
+            "trecho": "adotar uma política de IA responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas."
+          }
+        ]
+      },
+      {
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "Implantação gradual de uma plataforma única de serviços, com metas anuais de digitalização.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 5,
+            "trecho": "A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura",
+        "titulo": "Infraestrutura",
+        "descricao": "Construção de um corredor multimodal integrando diferentes meios de transporte.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002538692:01",
+            "pagina": 10,
+            "trecho": "Caminho proposto: Construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:27:56.529Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:30:05.381Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:1:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:2:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (IA)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:3:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos além de 'anuais', consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de serviços digitais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:4:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre cláusulas materiais integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de inovação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:5:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Foco único em medida de crédito."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:6:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de formação profissional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:7:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:frase:8:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de gestão pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:gestao-publica:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única tributária."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:politica-tributaria:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de IA."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:inteligencia-artificial:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de serviços digitais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:servicos-digitais:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002538692:tema:infraestrutura:documentos:PB:150002538692:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PB:150002538692",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PB:150002538692:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27354,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21412,
+          "output_tokens_details": {
+            "thinking_tokens": 660
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27354,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21412,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27354,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27354
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3453484
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "ad97e46e725d4f8d586aadbc4d44db6701054e786ec177d78e24af82efc57cd1",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:31:22.478Z",
+    "sourceSha256": "b174121c5c89bd86c5cfa56be0a9a167975bc6dbc0d0ab2d2f1c8dd838028e56",
+    "extractedTextSha256": "f9f0dbe4aebb46feb7210741fe3a594b9b2ada842a7392bce54d327f63680e99",
+    "documentCount": 1,
+    "documentSetSha256": "dc78e3220a1d61b0808c35952caab66b17d1bc79023c25ca6b47c4cd96f1594c",
+    "contentSha256": "80724c35c77273b2c35b8e967af9f9a2314aa8fa8093ed327fead6d25fbdf067"
+  }
+}
