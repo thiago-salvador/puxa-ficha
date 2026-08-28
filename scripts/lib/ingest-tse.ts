@@ -62,6 +62,25 @@ export function parseTseYearsEnv(value: string | undefined): number[] {
   return years
 }
 
+/**
+ * O pacote de 2018 inclui arquivos auxiliares de doador originario junto das
+ * receitas principais. Eles descrevem a cadeia do recurso, mas nao carregam a
+ * identidade da candidatura e nao podem entrar na soma por SQ_CANDIDATO.
+ */
+export function isDoadorOriginarioReceiptSource(pathOrName: string): boolean {
+  return /doador[ _-]*originario/i.test(pathOrName)
+}
+
+/**
+ * Alguns CSVs historicos do proprio TSE usam U+00BF como marcador de lista ou
+ * separador. Normalizamos apenas esse caractere documentado para hifen e ainda
+ * submetemos o resultado ao guard geral de texto publico.
+ */
+export function sanitizeTseLegacyAssetText(value: string, context: string): string {
+  const normalized = value.replace(/\s*¿\s*/g, " - ").trim()
+  return sanitizePublicTextOrThrow(normalized, context)
+}
+
 function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<string> | null): string[] {
   return [
     ...new Set(
@@ -165,7 +184,13 @@ function collectReceitasCandidatoSourceFiles(rootDir: string): string[] {
       else if (d.isFile()) {
         const lower = d.name.toLowerCase()
         if (!(lower.endsWith(".csv") || lower.endsWith(".txt"))) continue
-        if (lower.includes("receita") && lower.includes("candidat")) results.push(p)
+        if (
+          lower.includes("receita") &&
+          lower.includes("candidat") &&
+          !isDoadorOriginarioReceiptSource(lower)
+        ) {
+          results.push(p)
+        }
       }
     }
   }
@@ -419,11 +444,11 @@ async function processPatrimonio(
         slug: cand.slug,
         sourceKey: csvPath,
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-        tipo: sanitizePublicTextOrThrow(
+        tipo: sanitizeTseLegacyAssetText(
           row.DS_TIPO_BEM_CANDIDATO,
           `bem-candidato:${cand.slug}:${ano}:${sq}:tipo`,
         ),
-        descricao: sanitizePublicTextOrThrow(
+        descricao: sanitizeTseLegacyAssetText(
           maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
           `bem-candidato:${cand.slug}:${ano}:${sq}:descricao`,
         ),
