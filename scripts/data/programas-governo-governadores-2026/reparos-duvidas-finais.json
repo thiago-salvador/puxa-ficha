@@ -109,7 +109,7 @@
       "nomeUrna": "ALLYSON",
       "partido": "UNIÃO",
       "strategy": "fatos",
-      "guidance": "Use somente fatos atômicos com evidências literais validadas. Bloqueie da síntese qualquer formulação que não referencie diretamente um fato completo."
+      "guidance": "Não use a palavra programas ao descrever captação de recursos se ela não estiver no trecho literal; prefira a formulação exata sobre captar recursos federais e estaduais. No claim de segurança, inclua forças de segurança nacional e demais órgãos ou descarte o claim. Cada tema e frase deve permanecer integralmente coberto pelo próprio trecho."
     },
     {
       "uf": "RO",
@@ -127,7 +127,7 @@
       "nomeUrna": "MARCOS ROGÉRIO",
       "partido": "PL",
       "strategy": "fatos",
-      "guidance": "Para fila de saúde e programa de pavimentação, capture sentenças literais completas. Se o trecho disponível cobrir apenas parte, reduza o claim exatamente ao fragmento sustentado."
+      "guidance": "Para fila de saúde e programa de pavimentação, capture sentenças literais completas. Se o trecho disponível cobrir apenas parte, reduza o claim exatamente ao fragmento sustentado. Não combine o objetivo educacional geral com a duração dos contratos do Programa Aprendiz do Futuro; trate-os como propostas separadas ou descarte uma delas."
     },
     {
       "uf": "RO",
