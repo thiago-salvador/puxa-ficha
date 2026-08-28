@@ -35,6 +35,7 @@ const allowed = [
   /^scripts\/audit\/falhas-replay-linear\.json$/,
   /^scripts\/audit\/lib\/migrations-classificacao\.ts$/,
   /^scripts\/audit\/recortes\.json$/,
+  /^scripts\/audit\/schema-replay-substituicoes\.json$/,
   /^tests\/candidatos-publico-view-contrato\.test\.ts$/,
   /^tests\/migrations-classificacao\.test\.ts$/,
 ]
