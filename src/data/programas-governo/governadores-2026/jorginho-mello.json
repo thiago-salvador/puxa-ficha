@@ -1,0 +1,946 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002537073",
+    "slug": "jorginho-mello",
+    "nomeUrna": "JORGINHO MELLO",
+    "partido": "PL",
+    "arquivoNome": "2026SC240002537073_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002537073_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002537073:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002537073_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002537073_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b0f019cb267a63ea88597b633e4d6182ddd05615eb71beb4fed73dec94e228af",
+        "extractedTextSha256": "465f13c3dd0ec6a3ddf7fb2f644767aeada4074f74378b15e44b4078b5a915cc",
+        "paginas": 22,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nADMINISTRAÇÃO PÚBLICA DO\nESTADO DE SANTA CATARINA\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "resultados-que-preparam-o-futuro",
+            "titulo": "RESULTADOS QUE PREPARAM O FUTURO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "RESULTADOS QUE PREPARAM O FUTURO\nSanta Catarina chega ao final deste ciclo de governo vivendo um dos períodos mais\nconsistentes de sua história recente.\nAo longo dos últimos quatro anos, o Estado consolidou um modelo de gestão\nbaseado em responsabilidade fiscal, planejamento, diálogo permanente com os\nmunicípios e compromisso com a entrega de resultados. Mais do que administrar\no presente, o objetivo foi criar as condições necessárias para que Santa Catarina\ncontinuasse crescendo de forma ordenada, reduzindo desigualdades regionais,\nampliando oportunidades e preparando-se para os desafios das próximas décadas.\nDesde o primeiro dia de governo, as decisões foram orientadas por uma convicção\nsimples: o cidadão espera que o poder público cumpra aquilo que se compromete\na fazer. Planejamento só tem valor quando se transforma em obras, programas,\nserviços e melhorias concretas na vida das pessoas.\nFoi com essa visão que o Estado reorganizou suas finanças, recuperou sua\ncapacidade de investimento, fortaleceu as parcerias com os municípios, retomou\nobras aguardadas há muitos anos, ampliou políticas públicas e implantou\niniciativas inéditas em praticamente todas as áreas da administração.\nOs resultados podem ser medidos em quilômetros de rodovias recuperadas,\nhospitais fortalecidos, escolas modernizadas, vagas criadas no ensino superior,\ninvestimentos em segurança pública, apoio aos municípios, expansão da\ninfraestrutura logística, crescimento econômico e melhoria da qualidade dos\nserviços públicos.\nMas os números contam apenas parte dessa história.\nPor trás de cada investimento existe uma família atendida, uma empresa que\nencontrou melhores condições para produzir, um estudante que chegou à\nuniversidade, um paciente que recebeu atendimento mais rápido, uma estrada que\naproximou comunidades, um agricultor que ganhou competitividade e um\nmunicípio que encontrou no Estado um parceiro para realizar projetos importantes.\nEsse conjunto de realizações permitiu alcançar um marco inédito: 100% dos\ncompromissos assumidos no Plano de Governo de 2023 foram concluídos ou\nencontram-se em execução. Mais do que uma meta administrativa, esse resultado\ndemonstra que planejamento, responsabilidade e capacidade de gestão podem\ncaminhar juntos.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "um-estado-que-recuperou-a-capacidade-de-realizar",
+            "titulo": "UM ESTADO QUE RECUPEROU A CAPACIDADE DE REALIZAR",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "UM ESTADO QUE RECUPEROU A CAPACIDADE DE REALIZAR\nExistem momentos em que a principal missão de um governo não é apenas\nadministrar bem, mas recuperar a capacidade de realizar. Foi esse o desafio\nenfrentado por Santa Catarina a partir de 2023.\nMais do que executar políticas públicas isoladas, tornou-se necessário\nrestabelecer a confiança na administração estadual, reorganizar prioridades,\nacelerar investimentos e devolver ao Estado o protagonismo na indução do\ncrescimento econômico.\nAo longo dos quatro anos seguintes, essa transformação aconteceu de forma\ngradual, consistente e abrangente.\nO equilíbrio das contas públicas permitiu ampliar investimentos sem comprometer\na responsabilidade fiscal. A aproximação com os municípios reduziu distâncias e\nacelerou soluções para demandas históricas. O fortalecimento da infraestrutura\ncriou condições para novos investimentos privados.\nEducação, saúde, segurança pública, assistência social e inovação passaram a\nreceber investimentos estruturantes capazes de produzir resultados duradouros.\nEssa visão integrada tornou possível desenvolver Santa Catarina como um único\nterritório, respeitando as características e vocações de cada região.\nO Oeste recebeu novos investimentos em infraestrutura e logística. O Planalto\nfortaleceu sua produção agroindustrial. O Litoral consolidou sua posição como\nprincipal corredor portuário do Sul do Brasil. O Vale do Itajaí ampliou sua\ncapacidade industrial. A Serra ganhou novas conexões rodoviárias. O Sul fortaleceu\nsua economia e sua infraestrutura hospitalar.\nNenhuma dessas transformações ocorreu isoladamente. Todas fazem parte de uma\nestratégia construída para preparar Santa Catarina para um novo ciclo de\ncrescimento. Um governo que procurou ampliar oportunidades e trabalhou para\nconstruir soluções permanentes. É justamente essa capacidade de execução que\nfundamenta as propostas apresentadas nas próximas páginas da primeira parte\ndeste Plano.\nAntes de apresentar novos compromissos, é importante conhecer alguns dos\nresultados que tornaram possível pensar ainda mais longe.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "coligacao-fe-no-trabalho-e-pe-na-tabua",
+            "titulo": "COLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "1-mais-de-71-mil-estudantes-no-curso-da-universidade-que",
+            "titulo": "1 Mais de 71 mil estudantes no curso da universidade que",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "1 Mais de 71 mil estudantes no curso da universidade que\nsonharam com o maior programa estadual de acesso ao\nensino superior do Brasil, o Universidade Gratuita\n\n2 Aumento em mais de 300% no número de alunos no\nensino técnico\n\n3 Maior programa de qualificação tecnológica do Estado,\no SCTEC alcançou 100% dos municípios com mais de\n106 mil inscrições em capacitações de tecnologia e\ninteligência artificial\n\n4 Primeiro Estado do País a garantir que 100% das 14.100\nsalas de aula da rede estadual de ensino tenham um\nar-condicionado\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "5-santa-catarina-bateu-recorde-historico-e-tornou-se-o",
+            "titulo": "5 Santa Catarina bateu recorde histórico e tornou-se o",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "5 Santa Catarina bateu recorde histórico e tornou-se o\nEstado que mais faz cirurgias eletivas no País\n\n6 Maior expansão de leitos de UTI de sua história, abrindo\nmais de 300 novas vagas\n\n7 Pioneirismo na criação de habilitações estaduais de alta\n\ncomplexidade na Saúde, ampliando o atendimento\ngratuito em áreas como cardiologia e ortopedia no\ninterior\n\n8 Maior iniciativa nacional de castração e proteção\n\nanimal, cobrindo 96% do território catarinense, com o\nPet Levado a Sério\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "9-avanco-aereo-inedito-ao-abrir-rotas-internacionais-diretas",
+            "titulo": "9 Avanço aéreo inédito ao abrir rotas internacionais diretas",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "9 Avanço aéreo inédito ao abrir rotas internacionais diretas\npara a Europa, América do Norte e América do Sul,\nconsolidando Santa Catarina como um hub internacional\n\n10 Mais de 1.000 quilômetros de estradas rurais produtivas\nem pavimentação no Estrada Boa Rural, dentro de um\ntotal de 2.500 km previstos para todos os 295\nmunicípios\n\n11 Maior investimento rodoviário da história catarinense,\ndestinando mais de R$ 5 bilhões para recuperar e\nmodernizar 3.500 km de rodovias com o Estrada Boa\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "12-estado-mais-seguro-do-pais-menores-niveis-historicos",
+            "titulo": "12 Estado Mais Seguro do País: menores níveis históricos",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "12 Estado Mais Seguro do País: menores níveis históricos\nde violência, com presos detidos até por câmeras de\nreconhecimento facial\n\n13 Investimento histórico na modernização com o\n\nprograma Administração Prisional Levada a Sério, com a\ncriação de mais de 9,5 mil novas vagas para presos\ntrabalharem\n\n14 Maior investimento já realizado por um Governo do Estado\n\nem 200 anos, com mais de R$ 18 bilhões investidos em\nSegurança Pública, Infraestrutura, Educação, Saúde e\ntodas as demais áreas da gestão estadual\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "15maior-obra-de-dragagem-portuaria-em-execucao-no-pais",
+            "titulo": "15Maior obra de dragagem portuária em execução no País,",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "15Maior obra de dragagem portuária em execução no País,\nem uma parceria entre setor público e privado\n\n16 Maior programa de desassoreamento de rios do Brasil,\ninvestindo R$ 267 milhões para limpar mais de 400 km e\nevitar enchentes\n\n17 Setor pesqueiro recebeu o maior pacote de investimentos\n\nda história do Estado, o Pescados SC, para modernizar e\nfortalecer a pesca artesanal, a piscicultura e a maricultura\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "18-incentivo-a-novas-fontes-de-energia-destravou-r-3-5",
+            "titulo": "18 Incentivo a novas fontes de energia destravou R$ 3,5",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "18 Incentivo a novas fontes de energia destravou R$ 3,5\nbilhões em investimentos privados e vai gerar até 20 mil\nempregos com o Energia Boa\n\n19 Construção de 5.740 moradias, alcançando a adesão\nhistórica de 83% dos municípios catarinenses na ação\ndo Casa Catarina\n\n20 Primeira redução de custos do Governo do Estado em\n\ndécadas, garantindo investimento maior que a exigência\nconstitucional em Saúde, Educação e Inovação\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "21-pronampe-sc-maior-programa-de-credito-subsidiado-da",
+            "titulo": "21 Pronampe SC: maior programa de crédito subsidiado da",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "21 Pronampe SC: maior programa de crédito subsidiado da\nhistória do estado já investiu mais de meio bilhão de reais\npara alavancar micro e pequenos negócios\n\n22\nQuatro anos de gestão\nsem nenhum aumento\nde impostos\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "introducao",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\nO Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030,\nfundamenta-se no compromisso de continuar a transformar intenções políticas em\nresultados concretos que elevem a qualidade de vida da população. A\nadministração pública catarinense pautar-se-á pela busca constante de eficiência\nno uso dos recursos, eficácia no alcance das metas e, fundamentalmente,\nefetividade no impacto social de suas ações.\nDestaca-se que o crescimento econômico se constitui em processo\nmultidimensional exigindo a integração de políticas fiscais, sociais, ambientais e\ninstitucionais para garantir a dignidade e as liberdades para todos os cidadãos.\nA modernização do Estado é uma exigência contemporânea para enfrentar os\ndesafios de um cenário globalizado e digital. O Estado de Santa Catarina\nconsolidará um modelo de gestão pública estratégica, descentralizada e\nparticipativa, onde o território seja reconhecido como espaço vivo de construção\nda cidadania.\nEste plano articula o fortalecimento das capacidades estatais com a inovação\ntecnológica e o compromisso ético, visando mitigar as discrepâncias regionais e\npromover o crescimento sob a ótica social e econômica.\nA governança pública será orientada pela transparência, assegurando que a\nmáquina estatal continue a operar com responsabilidade e respeito aos direitos\nfundamentais de todos os catarinenses.\nDestarte, o planejamento governamental deve ser compreendido como o alicerce\nda governança democrática. Para além do período das disputas eleitorais, o plano\nde governo consolida-se como um referencial técnico e político capaz de articular\nas demandas da sociedade civil com a capacidade de entrega do Estado.\nEste plano detalha como a formulação de políticas públicas sólidas depende de um\ndiagnóstico preciso da realidade regional, permitindo que as decisões\ngovernamentais sejam pautadas em evidências e voltadas para a solução de\nproblemas coletivos reais. A integração entre a visão política e a execução\nadministrativa é o fio condutor que une os diversos capítulos desta publicação.\nAdemais, a estrutura deste documento reflete a convicção de que o sucesso de\numa gestão pública está vinculado à qualidade de seus programas administrativos.\nEnquanto as políticas públicas definem as prioridades e os caminhos a serem\nseguidos, os programas administrativos representam a operacionalização\nnecessária para que as metas se transformem em serviços públicos de qualidade.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "introducao-2",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\nPor meio de uma coordenação institucional eficiente e da alocação racional de\nrecursos, o Estado de Santa Catarina busca consolidar um modelo de gestão que\nmaximize os resultados sociais sem comprometer o equilíbrio das contas públicas,\nrespeitando rigorosamente os preceitos da responsabilidade fiscal.\nA eficiência, eficácia e efetividade na Administração Pública, analisadas\namplamente nesta proposta, referem-se ao uso otimizado dos ativos públicos,\ngarantindo que cada investimento retorne em benefícios tangíveis para a\npopulação.\nJá a eficácia é tratada como o cumprimento estrito das metas estabelecidas,\nassegurando que o planejamento saia do papel e se materialize em infraestrutura,\nsegurança, saúde e educação.\nContudo, o objetivo supremo da gestão 2027/2030 é a efetividade, ou seja, a\ncapacidade de gerar transformações duradouras na vida dos cidadãos,\npromovendo a inclusão social e o fortalecimento da economia catarinense.\nAo apresentar este Plano de Governo, o Estado de Santa Catarina reafirma seu\ncompromisso com a excelência administrativa e com a construção de uma\nsociedade mais justa e desenvolvida. Esta leitura é indispensável para gestores,\nacadêmicos e cidadãos que desejam compreender os mecanismos que levarão o\nnosso estado a um novo patamar de progresso e eficiência no cenário nacional.\nUm plano de governo, em suma, é um grande guia, uma orientação geral sobre para\nonde vamos e de que maneira chegaremos a tudo aquilo que desejamos.\nO governo sempre ouvirá a sociedade, pois, embora saiba que deve estudar,\npreparar caminhos e definir muitos cenários, também entende que estar de mãos\nunidas com a sociedade, ouvindo suas necessidades, permitirá decisões mais\nassertivas ao longo do processo de execução.\nTambém o governo entende que nossa missão de liderar todas essas ações de\nforma positiva mostra que essa liderança busca levar o estado de Santa Catarina a\npatamares ainda maiores, sempre respeitando o povo que escolheu este destino\npara suas vidas.\nPor fim, o convite é para uma imersão na estratégia que norteará o Estado de Santa\nCatarina rumo a um futuro de entregas efetivas e valor público compartilhado.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "plano-de-governo-fe-no-trabalho-e-pe-na-tabua-2027-2030",
+            "titulo": "PLANO DE GOVERNO “FÉ NO TRABALHO E PÉ NA TÁBUA” - 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO “FÉ NO TRABALHO E PÉ NA TÁBUA” - 2027-2030\nGovernar é um exercício permanente de construção do futuro. Cada hospital\ninaugurado, cada rodovia recuperada, cada escola ampliada ou programa\nimplantado resolve demandas do presente, mas o que se espera é que crie as\ncondições para enfrentar os desafios que ainda estão por vir.\nÉ nesse ponto que este registro também se amplia. Se a primeira parte pontuou\numa trajetória de entregas e resultados, a partir de agora o foco se desloca para as\ngrandes transformações capazes de preparar Santa Catarina para as próximas\ndécadas. Não como uma ruptura do que está sendo construído, ao contrário. A\nproposta é melhorar e ampliar tudo o que já vem sendo feito, só que com a casa\narrumada, preparada para avançar em outras frentes. Uma consequência natural\nde um Estado que recuperou sua capacidade de planejar, investir e executar.\nAs páginas seguintes são, assim, um exercício de visão estratégica. A evolução,\nsabemos, não se mede apenas pelo que foi construído até aqui, mas pela\ncapacidade de entender e saber planejar o que ainda precisa ser feito para que\nSanta Catarina continue sendo o melhor Estado para se viver; uma referência para\no país e o mundo em qualidade de vida, inovação e competitividade.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "1-infraestrutura-logistica-e-mobilidade",
+            "titulo": "1. INFRAESTRUTURA, LOGÍSTICA E MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "1. INFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\nINTEGRAÇÃO CATARINENSE\nDiretriz Central: expandir a logística de transporte com foco em eficiência,\n\ndinamização das vocações regionais e escoamento acelerado da produção\nagroindustrial e industrial catarinense.\n\nCompromissos e ações de continuidade (+22):\n•Estrada Boa +22: Dar continuidade às obras de pavimentação, restauração\npesada e duplicação da malha viária estadual. Acelerar as obras da VIAMAR\n(corredor expresso paralelo à BR-101).\n•Fortalecimento do modal portuário: concluir os serviços de dragagem de\naprofundamento do canal da Baía da Babitonga e executar investimentos nos\nPortos de Imbituba e São Francisco do Sul, buscando a liderança de Santa Catarina\nna movimentação de contêineres do Brasil.\n•Consolidação do VOA+SC: perenizar o programa VOA+SC para viabilizar voos\nregionais diários conectando as cidades do interior à Capital.\n•Corredores Ferroviários e intermodais: acelerar a elaboração de projetos e\nlicenciamentos de ferrovias estaduais conectando as regiões catarinenses,\nviabilizando parcerias público-privadas para diversificar a matriz de transporte.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "2-seguranca-publica-gestao-penal-protecao-e-defesa-civil",
+            "titulo": "2. SEGURANÇA PÚBLICA, GESTÃO PENAL, PROTEÇÃO E DEFESA CIVIL",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "2. SEGURANÇA PÚBLICA, GESTÃO PENAL, PROTEÇÃO E DEFESA CIVIL\nPROTEGER A FAMÍLIA CATARINENSE\nDiretriz Central: manter Santa Catarina como o Estado mais seguro do Brasil por\n\nmeio do combate firme à criminalidade, inteligência policial, valorização das forças\nde segurança, trabalho prisional e prevenção estruturante de desastres naturais.\n\nCompromissos e ações de continuidade (+22):\n•Cerco eletrônico e inteligência total: expandir o Sistema Integrado de\nVideomonitoramento Inteligente com reconhecimento facial e leitura de placas\npara as maiores cidades catarinenses. Continuar a modernização tecnológica e\nrenovação de equipamentos da Polícia Militar, Polícia Civil, Polícia Científica,\nPolícia Penal e Corpo de Bombeiros Militar.\n•Valorização e recomposição do efetivo policial: dar continuidade aos concursos\npúblicos, garantindo efetivo qualificado, formação continuada e equipamentos de\nalta precisão (armamento moderno, viaturas blindadas, drones e suporte aéreo).\n•Gestão Penal produtiva: expandir o modelo de ressocialização pelo trabalho,\nelevando o número de encarcerados que trabalhem em parceria com indústrias e\nprefeituras, arcando com seus próprios custos e ressarcindo a sociedade.\n•Proteção e Defesa Civil: concluir a modernização das barragens do Alto Vale e\nexecutar as novas barragens de prevenção das cheias. Ampliar o desassoreamento\ncontínuo de rios, em obras diretas do Estado e em parceria com os municípios.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "3-saude-e-bem-estar",
+            "titulo": "3. SAÚDE E BEM-ESTAR",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "3. SAÚDE E BEM-ESTAR\nATENDIMENTO HUMANO, RÁPIDO E MAIS PERTO DE CASA\nDiretriz Central: garantir acesso universal, rápido e regionalizado à saúde de\n\nalta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios\ne as redes municipais.\n\nCompromissos e ações de continuidade (+22):\n•Fila Zero: fortalecer a Tabela Catarinense de Cirurgias e o Programa de\nValorização dos Hospitais Filantrópicos e Municipais, assegurando as condições\npara continuar a reduzir ainda mais o tempo de espera por exames e cirurgias\neletivas.\n•Expansão da Rede Hospitalar e UTIs: garantir o custeio dos mais de 300 novos\nleitos de UTI abertos na gestão e prosseguir com a expansão do sistema de Saúde\ncatarinense, com estruturas prontas para os próximos 10 anos.\n•Saúde Móvel e prevenção nos municípios: expandir a atuação das Carretas da\nSaúde da Mulher e da Família para realizar exames preventivos nas regiões de\ndifícil acesso.\n•Programa Casa Catarina +22: Ampliar a meta do programa de construção de\nhabitações populares com a adesão de 100% dos municípios, proporcionando teto\ne dignidade às famílias catarinenses de baixa renda.\n•Manutenção do cofinanciamento estadual para as políticas de Assistência Social\nnos municípios catarinenses para garantir a retomada da autonomia dos\nindivíduos.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "4-educacao-qualificacao-profissional-e-tecnologia",
+            "titulo": "4. EDUCAÇÃO, QUALIFICAÇÃO PROFISSIONAL E TECNOLOGIA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "4. EDUCAÇÃO, QUALIFICAÇÃO PROFISSIONAL E TECNOLOGIA\nPREPARANDO AS FUTURAS GERAÇÕES\nDiretriz Central: formar cidadãos preparados para os desafios do mercado de\n\ntrabalho contemporâneo, unindo valores da família, segurança escolar, tecnologia\nde ponta e gratuidade no ensino superior.\n\nCompromissos e ações de continuidade (+22):\n•Ampliar a educação em tempo integral nas escolas públicas estaduais\ncatarinenses.\n•Ampliar a educação profissional e tecnológica gratuita no Estado de SC de\nacordo com as vocações econômicas regionais fortalecendo, também, a rede de\nCentros de Educação Profissional e Tecnológica.\n•Manter e qualificar os programas Universidade Gratuita e FUMDESC.\n•Continuar o processo de revitalização da infraestrutura das escolas públicas\nestaduais.\n•Ampliar o número de professores efetivos da rede estadual de ensino.\n•Valorizar e qualificar os professores, gestores escolares e demais profissionais\ndo magistério superior.\n•Reforçar estratégias para a permanência dos estudantes no ensino médio.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "5-agro-pesca-meio-ambiente-e-o-crescimento-do-campo",
+            "titulo": "5. AGRO, PESCA, MEIO AMBIENTE E O CRESCIMENTO DO CAMPO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "5. AGRO, PESCA, MEIO AMBIENTE E O CRESCIMENTO DO CAMPO\nA FORÇA QUE ALIMENTA O BRASIL\nDiretriz Central: valorizar o homem e a mulher do campo, incentivar a sucessão\n\nfamiliar, modernizar a produção agropecuária e pesqueira e garantir segurança\nhídrica e ambiental sem sufocar quem produz.\n\nCompromissos e ações de continuidade (+22):\n•Estrada Boa Rural e infraestrutura no campo: dar continuidade à pavimentação\nasfáltica de estradas rurais de escoamento, garantindo energia de qualidade e\nconectividade.\n•Fortalecimento do Financia Agro SC e Água no Campo: expandir o crédito sem\njuros para perfuração de poços, instalação de cisternas, captação e tratamento de\nágua, protegendo os produtores de leite, grãos e carnes contra períodos de\nestiagem.\n•Campo Competitivo: investir na inovação tecnológica, resiliência climática,\nconservação de solo e competitividade da agricultura familiar catarinense.\n•Apoio à pesca e aquicultura: modernizar o Porto Pesqueiro de Laguna e manter\nas linhas de crédito para renovação de frotas e equipamentos para os maricultores\ne pescadores artesanais de SC.\n•Manter e ampliar o programa Mais Verde, que garante pagamentos por serviços\nambientais para produtores rurais que preservam as matas nativas de suas\npropriedades.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "6-liberdade-economica-gestao-eficiente-e-municipalismo",
+            "titulo": "6. LIBERDADE ECONÔMICA, GESTÃO EFICIENTE E MUNICIPALISMO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "6. LIBERDADE ECONÔMICA, GESTÃO EFICIENTE E MUNICIPALISMO\nESTADO LEVE E PARCEIRO DE QUEM PRODUZ\nDiretriz Central: manter o ambiente de negócios mais próspero e livre do Brasil,\n\npautado pelo respeito à propriedade privada, corte\ndesburocratização e parceria direta com os 295 municípios.\n\nde\n\nprivilégios,\n\nCompromissos e ações de continuidade (+22):\n•Pronampe SC ampliado: ampliar as linhas de crédito subsidiado para micro e\npequenas empresas, MEIs e agricultores, impulsionando a geração de emprego e\nrenda nos bairros e cidades do interior.\n•Municipalismo \"Pé na Tábua\": aperfeiçoar as transferências de recursos e\nconvênios simplificados com as 295 prefeituras catarinenses, garantindo\nautonomia aos prefeitos para realizar obras que a população precisa com rapidez.\n•Dar continuidade ao trabalho de integração entre o Governo do Estado e as\nprefeituras, discutindo presencialmente, em todas as regiões, as prioridades de\ncada município catarinense para os investimentos necessários ao atendimento da\npopulação.\n•Fortalecer a relação do Governo do Estado com o sistema municipalista,\nintegrando o planejamento regional das associações de municípios e utilizando os\nconsórcios públicos como executores de ações interfederativas.\n•Desburocratização e Governo Digital: eliminar exigências redundantes e\nburocráticas, simplificando a vida de quem deseja empreender, trabalhar e investir\nno Estado.\n\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "7-cultura-turismo-e-esporte",
+            "titulo": "7. CULTURA, TURISMO E ESPORTE",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "7. CULTURA, TURISMO E ESPORTE\nIDENTIDADES E VALORES QUE CONSTROEM O FUTURO DE TODOS CATARINENSES\nDiretriz Central: a cultura será tratada como um pilar estratégico da identidade\n\ne do crescimento regional, sustentando a coesão social e a economia criativa; o\nesporte é instrumento de inclusão social, saúde preventiva e formação em\ncidadania; a política de turismo explora as vocações naturais e culturais do Estado,\nconsolidando Santa Catarina como destino de excelência nas quatro estações.\n\nCompromissos e ações de continuidade (+22):\n•Manter a política pública de revelação de novos talentos artísticos por meio de\nprojetos culturais.\n•Aperfeiçoar os editais e mecanismos de incentivo à cultura catarinense.\n•Manter e ampliar o Programa de Incentivo ao Esporte, ampliando o apoio ao\nesporte de base e a valorização dos resultados de atletas de alto rendimento.\n•Consolidar Santa Catarina como referência nacional no paradesporto.\n•Fortalecer a movimentação turística orgânica em todas as regiões catarinenses\nnas quatro estações do ano.\n•Conexões aéreas: expandir novos voos internacionais diretos no Aeroporto\nHercílio Luz.\n\nSANTA CATARINA NÃO PODE PARAR.\nO TRABALHO CONTINUA:\n\nAGORA É +22!\nCOLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          },
+          {
+            "id": "coligacao-fe-no-trabalho-e-pe-na-tabua-2",
+            "titulo": "COLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "COLIGAÇÃO FÉ NO TRABALHO E PÉ NA TÁBUA"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "c70f9056b0eac4097de9e1d15eca152f134e6b2f06b0a14a643506ada87f4ebb"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "374624e5611c7e0c710fcca3a9e03f9dc5775e2a324eae0765ef9ddcae736979"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7802664d9be2fe7282cd3829cb3ed1a5647487eb7fabb4b51258fe0a1e8e716e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2c918adb55ae229cd1aa4a5f28b75c5134ab099dc9926607fd4be078fa7951ed"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "d2b8cf59cd8da2e71691bcdd55971b8becaa972f01f398cf0cae8dca158b38e8"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "09559b6e13034b1bce9db45d1b7022638be7431aaf71bc8d9f1f4d60951aa271"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "1049f7454b7c182455a303ae360a566bb1d32eb8f6922ab30874ac82d4e1ecfc"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "abd6b192eebd5ad43ca3ecdc5224b966b49b001dc4f3f34ce224808485d8e058"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "6955113c86ed2bb92277f0e1020ff1fb28e6f983740364e5eb6e13fccd502b20"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "a4caa4136e3a37b18977e5749688cf6ba5d1070f3bc53e3e306853997e29b163"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "22789dd5f8ef567fc9dc7ca3599b69c887af0fa68f4950fe4cefbd65e2d6868b"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "3549a60b0a005103f97eadbc83afb09a15acd8af988581845a685a3bd9a9ff6c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "622c55cbb51b83200c0f8eec3cf9e36110897bad67c5eaea98b4fadd6f2e6cf3"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "e9e433de810b63303198ac525d30d15c749fee9bdb81dbff98afe4eefd2f05df"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "74d9428cdca00633c3b991f47b4d1c17c6a06c7bf7e4eb386f404175345ba168"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "965d7d7c4592b40a0985624c5e2c39a0946e0563bf525b7ec40fa4a2210ded23"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "6a901164c584133c1e29882becfdd4c3e89a62e4e5fff670869a830f0eecd382"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "652d471ad96b621b94d4cd8a9204f58359d577509b03e911de9e6dd97ad12f84"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "a3a5544ce76159619d0851971b5d428d52099c41a2578c3cd5dfacf8b24579cb"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "fa5ff51a46f2fc5bb6996000a381b089c7309ca938ec5a99d6f19e82ffcfe5e4"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "78adea679e483fbaa5886e9fafdefbf3380301a58143f8ebe17cf3820a90b805"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "2c918adb55ae229cd1aa4a5f28b75c5134ab099dc9926607fd4be078fa7951ed"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030, fundamenta-se no compromisso de continuar a transformar intenções políticas em resultados concretos que elevem a qualidade de vida da população. A modernização do Estado é uma exigência contemporânea para enfrentar os desafios de um cenário globalizado e digital. A governança pública será orientada pela transparência, assegurando que a máquina estatal continue a operar com responsabilidade e respeito aos direitos fundamentais de todos os catarinenses. Diretriz Central: expandir a logística de transporte com foco em eficiência, dinamização das vocações regionais e escoamento acelerado da produção agroindustrial e industrial catarinense. Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de alta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios e as redes municipais. Ampliar a educação em tempo integral nas escolas públicas estaduais catarinenses. Campo Competitivo: investir na inovação tecnológica, resiliência climática, conservação de solo e competitividade da agricultura familiar catarinense.",
+    "frases": [
+      {
+        "texto": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030, fundamenta-se no compromisso de continuar a transformar intenções políticas em resultados concretos que elevem a qualidade de vida da população.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 12,
+            "trecho": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030,\nfundamenta-se no compromisso de continuar a transformar intenções políticas em\nresultados concretos que elevem a qualidade de vida da população."
+          }
+        ]
+      },
+      {
+        "texto": "A modernização do Estado é uma exigência contemporânea para enfrentar os desafios de um cenário globalizado e digital.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 12,
+            "trecho": "A modernização do Estado é uma exigência contemporânea para enfrentar os\ndesafios de um cenário globalizado e digital."
+          }
+        ]
+      },
+      {
+        "texto": "A governança pública será orientada pela transparência, assegurando que a máquina estatal continue a operar com responsabilidade e respeito aos direitos fundamentais de todos os catarinenses.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 12,
+            "trecho": "A governança pública será orientada pela transparência, assegurando que a\nmáquina estatal continue a operar com responsabilidade e respeito aos direitos\nfundamentais de todos os catarinenses."
+          }
+        ]
+      },
+      {
+        "texto": "Diretriz Central: expandir a logística de transporte com foco em eficiência, dinamização das vocações regionais e escoamento acelerado da produção agroindustrial e industrial catarinense.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 15,
+            "trecho": "Diretriz Central: expandir a logística de transporte com foco em eficiência,\n\ndinamização das vocações regionais e escoamento acelerado da produção\nagroindustrial e industrial catarinense."
+          }
+        ]
+      },
+      {
+        "texto": "Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de alta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios e as redes municipais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 17,
+            "trecho": "Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de\n\nalta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios\ne as redes municipais."
+          }
+        ]
+      },
+      {
+        "texto": "Ampliar a educação em tempo integral nas escolas públicas estaduais catarinenses.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 18,
+            "trecho": "•Ampliar a educação em tempo integral nas escolas públicas estaduais\ncatarinenses."
+          }
+        ]
+      },
+      {
+        "texto": "Campo Competitivo: investir na inovação tecnológica, resiliência climática, conservação de solo e competitividade da agricultura familiar catarinense.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 19,
+            "trecho": "•Campo Competitivo: investir na inovação tecnológica, resiliência climática,\nconservação de solo e competitividade da agricultura familiar catarinense."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-governamental",
+        "titulo": "Planejamento governamental",
+        "descricao": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030, fundamenta-se no compromisso de continuar a transformar intenções políticas em resultados concretos que elevem a qualidade de vida da população.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 12,
+            "trecho": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030,\nfundamenta-se no compromisso de continuar a transformar intenções políticas em\nresultados concretos que elevem a qualidade de vida da população."
+          }
+        ]
+      },
+      {
+        "id": "modernizacao-do-estado",
+        "titulo": "Modernização do Estado",
+        "descricao": "A modernização do Estado é uma exigência contemporânea para enfrentar os desafios de um cenário globalizado e digital.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 12,
+            "trecho": "A modernização do Estado é uma exigência contemporânea para enfrentar os\ndesafios de um cenário globalizado e digital."
+          }
+        ]
+      },
+      {
+        "id": "logistica-de-transporte",
+        "titulo": "Logística de transporte",
+        "descricao": "Diretriz Central: expandir a logística de transporte com foco em eficiência, dinamização das vocações regionais e escoamento acelerado da produção agroindustrial e industrial catarinense.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 15,
+            "trecho": "Diretriz Central: expandir a logística de transporte com foco em eficiência,\n\ndinamização das vocações regionais e escoamento acelerado da produção\nagroindustrial e industrial catarinense."
+          }
+        ]
+      },
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Saúde regionalizada",
+        "descricao": "Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de alta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios e as redes municipais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 17,
+            "trecho": "Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de\n\nalta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios\ne as redes municipais."
+          }
+        ]
+      },
+      {
+        "id": "educacao-em-tempo-integral",
+        "titulo": "Educação em tempo integral",
+        "descricao": "Ampliar a educação em tempo integral nas escolas públicas estaduais catarinenses.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002537073:01",
+            "pagina": 18,
+            "trecho": "•Ampliar a educação em tempo integral nas escolas públicas estaduais\ncatarinenses."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T20:11:13.850Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T20:13:37.942Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "O período 2027-2030 está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Reprodução direta do texto do documento, sem adição de juízo de valor externo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tema coerente: fundamento do plano de governo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documentoIds pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:1:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Reprodução direta do texto sem adição de elogio ou crítica externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:2:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Texto reproduzido do documento sem juízo adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: governança/transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:3:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a diretriz."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: infraestrutura e logística de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:4:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a diretriz."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:5:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente o compromisso."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Compromisso único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:6:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente o compromisso."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: agricultura."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:frase:7:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Período 2027-2030 literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: fundamento do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:planejamento-governamental:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: modernização do Estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:modernizacao-do-estado:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: logística de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:logistica-de-transporte:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:saude-regionalizada:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único: educação em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002537073:tema:educacao-em-tempo-integral:documentos:SC:240002537073:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002537073",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002537073:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25862,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2540,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25359,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23578,
+          "output_tokens_details": {
+            "thinking_tokens": 546
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25359,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23578,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25359,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25359
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3570784
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:17:16Z",
+    "sourceSha256": "b0f019cb267a63ea88597b633e4d6182ddd05615eb71beb4fed73dec94e228af",
+    "extractedTextSha256": "465f13c3dd0ec6a3ddf7fb2f644767aeada4074f74378b15e44b4078b5a915cc",
+    "documentCount": 1,
+    "documentSetSha256": "0acef24bb03d9f8c3bde7255e90c77b279704995b3066ca6d37b439e8f44249a",
+    "contentSha256": "0a8c7f7242f819d84c13f9e7b1fd2570dd7e66b7ed58bb03a6ded894f49f9573"
+  }
+}

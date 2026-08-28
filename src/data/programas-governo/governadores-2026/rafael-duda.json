@@ -1,0 +1,1326 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002546802",
+    "slug": "rafael-duda",
+    "nomeUrna": "RAFAEL DUDA",
+    "partido": "PSTU",
+    "arquivoNome": "2026MG130002546802_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002546802_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002546802:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002546802_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002546802_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d42aaa94224f405697744b1381fa85ea74639ce46e432b9171514494928ac58b",
+        "extractedTextSha256": "1e9905fbe81c9ffc9dbdaad1065d98e8b7a785fdba6ff1aa4b1b4ca39a63d063",
+        "paginas": 49,
+        "secoes": [
+          {
+            "id": "um-programa-socialista",
+            "titulo": "UM PROGRAMA SOCIALISTA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "UM PROGRAMA SOCIALISTA\nPARA MINAS GERAIS E O\nBRASIL!"
+          },
+          {
+            "id": "indice",
+            "titulo": "ÍNDICE",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "ÍNDICE\nSumário\nMINAS PRECISA DE UM PROJETO SOCIALISTA, OPERÁRIO E POPULAR...................................4\nINTRODUÇÃO...........................................................................................................................8\nAQUI O TREM PROSPERA...SERÁ MESMO?..............................................................................9\n1. Uma análise da participação de Minas Gerias no PIB nacional............................................10\n2. Uma análise do PIB de Minas Gerais.....................................................................................13\n3. Riquezas que saem do estado e riquezas que entram no estado: um raio-x das exportações\ne importações do estado de Minas Gerais................................................................................15\n4. Tornar-se cada vez mais dependente: esse é o projeto da burguesia mineira.....................20\n\nA SITUAÇÃO DA CLASSE TRABALHADORA NO ESTADO DE MINAS GERAIS............................24\n1. Massa informal e sem emprego............................................................................................24\n2. Barbárie para a classe trabalhadora......................................................................................27\n\nMINAS GERAIS: FINANÇAS PÚBLICAS E PIORA NOS SERVIÇOS..............................................32\n1. Uma análise das receitas de Minas Gerais............................................................................33\n\nUM PROGRAMA SOCIALISTA, OPERÁRIO E POPULAR PARA MINAS GERAIS.........................36"
+          },
+          {
+            "id": "minas-precisa-de-um-projeto-socialista-operario",
+            "titulo": "MINAS PRECISA DE UM PROJETO SOCIALISTA, OPERÁRIO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "MINAS PRECISA DE UM PROJETO SOCIALISTA, OPERÁRIO\nE POPULAR\nMinas Gerais atravessa um processo profundo e brutal de decadência econômica, social e\npolítica. Trata-se da aplicação de um projeto de longo prazo, baseado na desindustrialização e na\nreprimarização da economia, sustentado pelo saque direto das riquezas do Estado. Esse modelo\nespelha um passado colonial que nunca foi plenamente superado.\nO mundo passa por transformações profundas. Estados Unidos e China disputam a liderança\ntecnológica por meio da Indústria 4.0, da Inteligência Artificial e das novas cadeias produtivas\nglobais. Mais uma vez, o Brasil é empurrado para a condição subordinada de fornecedor de\nmatérias-primas.\nEm Minas Gerais, a expressão política desse projeto é o governo ultraliberal e de extremadireita de Romeu Zema. Ao longo dos últimos oito anos, todas as características mais nefastas\ndessa decadência foram aprofundadas: congelamento de investimentos sociais, paralisação de\nobras públicas, privatizações e precarização dos serviços essenciais. Ao mesmo tempo, consolidouse a total subserviência às mineradoras e ao agronegócio, sustentada por esquemas de corrupção\nescancarados.\nMinas Gerais: o paraíso dos bilionários\nEnquanto a população amarga jornadas extenuantes — muitas sob a escala 6x1 — baixos\nsalários, ônibus superlotados e a precarização da saúde e da educação, os mais ricos seguem\nacumulando privilégios.\nDas promessas feitas, Zema atendeu apenas às grandes empresas, como mineradoras,\nlocadoras de veículos e o agronegócio. Durante seu governo, as isenções fiscais cresceram 55%,\natingindo cerca de R$ 20 bilhões por ano, o equivalente a aproximadamente 20% de toda a\narrecadação estadual — valor superior, por exemplo, ao orçamento da educação pública.\nSe somarmos as isenções concedidas aos setores exportadores por meio da Lei Kandir, o total\nchega a R$ 53 bilhões anuais, com perdas acumuladas estimadas em R$ 408 bilhões — o dobro da\ndívida de Minas com a União.\nAo mesmo tempo, a dívida pública durante os anos de Zema praticamente dobrou de valor.\nSaiu de R$ 114,7 bilhões, e em novembro de 2025, foi estimada em cerca de R$ 201,1 bilhões.\nEnquanto isso, a população enfrenta o colapso dos investimentos em saúde, educação, segurança\npública e habitação. Os gastos sociais permanecem congelados, os salários dos trabalhadores\nestão defasados e o governo recorre a privatizações, PPPs, militarização das escolas e ataques à\nautonomia pedagógica para mascarar a falência completa de sua política social.\nAs mineradoras, a destruição ambiental e a corrupção\nAs relações promíscuas entre o governo Zema e as mineradoras ficaram expostas com a\nOperação Rejeito, que revelou esquemas de fraudes fiscais e licenciamentos ambientais\nfraudulentos, responsáveis por gerar lucros bilionários às empresas. Trata-se de um processo de\ncorrupção que atualmente tramita no STF, envolvendo parlamentares e altos cargos do governo.\nPara viabilizar esse modelo, Zema promoveu o desmonte sistemático da fiscalização\nambiental: assédio e ameaças às equipes técnicas; retirada da autonomia profissional; ausência de\nconcursos — realizados apenas duas vezes em toda a história do SISEMA —; falta de recursos para"
+          },
+          {
+            "id": "atividades-de-campo-e-profunda-defasagem-salarial-como-denuncia-o-sindse",
+            "titulo": "atividades de campo; e profunda defasagem salarial. Como denuncia o SINDSEMA, o abismo entre",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "atividades de campo; e profunda defasagem salarial. Como denuncia o SINDSEMA, o abismo entre\nos salários da fiscalização ambiental no Estado e aqueles pagos pelo setor privado é gigantesco.\nO desmonte da fiscalização, somado ao apoio de Zema ao chamado PL da Devastação, faz parte do\nmesmo projeto: entregar as riquezas de Minas às mineradoras, permitir a destruição ambiental, a\nexpulsão de comunidades e abrir caminho para novos crimes socioambientais, possivelmente em\nescala ainda maior do que Mariana e Brumadinho.\nMais recentemente, a exploração do lítio e das chamadas “terras raras” reforça essa\nsubserviência. No Vale do Jequitinhonha, o lítio é extraído com devastação ambiental, sem\nqualquer beneficiamento no país. A riqueza produzida escorre diretamente para o exterior,\nespecialmente para a China.\nÀ serviço da expansão da mineração a Vale financia o Rodoanel, que beneficia ela própria,\nque vai dividir cidades como Contagem e Betim ao meio, e levará a evacuação de comunidades,\ndestruição de patrimônios históricos, nascentes e compromete o abastecimento de água para a\nrepresa de Várzea das Flores.\nZema quer entregar a água e as riquezas de Minas\nCom o apoio da maioria da Assembleia Legislativa — incluindo partidos do chamado Bloco\nde Oposição — Zema conseguiu privatizar a COPASA. Na prática, isso significa entregar o controle\nestratégico da água a multinacionais predadoras de estatais, muitas delas fundos de investimento\ninteressados apenas em lucratividade e dividendos.\nZema também tentou privatizar a CEMIG, a GASMIG e a CODEMIG, mas foi obrigado a recuar\ndiante da resistência organizada da classe trabalhadora. O processo de privatização do Metrô de\nBH levou à cobrança de passagens mais caras, demissões, diminuição de horários e piora dos\nserviços.\nAo mesmo tempo, pedágios se espalham pelas estradas mineiras. Enquanto isenta\nbilionários de impostos, o governo transfere o custo da crise para a população, impondo mais\ntaxas e sobretaxas.\nA escalada da violência contra os oprimidos\nEm Minas Gerais, cresce a violência contra mulheres, negros e negras e a população\nLGBTQIA+. A ausência de políticas públicas transforma a vida dos oprimidos em uma luta\npermanente pela sobrevivência.\nAté o final de outubro deste ano, o Estado registrou uma média de um feminicídio a cada dois\ndias: 139 feminicídios consumados e 156 tentativas. Em 2024, foram 168 feminicídios e 248\ntentativas em todo o Estado.\nA violência contra a população LGBT também disparou: 363 ocorrências em 2019; 567 em\n2023, o maior número da série histórica; e 546 registros em 2024. Em 2025, até outubro, já eram\n543 ocorrências de LGBTQIAPN+fobia.\nSegundo o 19º Anuário Brasileiro de Segurança Pública, os casos de injúria racial cresceram\n152% em Minas Gerais. Em 2024, foram 1.835 registros — uma média de cinco denúncias diárias.\nEsses números desmentem a propaganda oficial. A violência não diminuiu; a maioria da população\nvive sob insegurança permanente, resultado direto da ausência de políticas públicas estaduais e da\ninsuficiência das políticas federais.\nMinas Gerais dos salários arrochados e do trabalho precarizado"
+          },
+          {
+            "id": "zema-comemora-a-geracao-de-empregos-mas-omite-a-realidade-mais-da-metade",
+            "titulo": "Zema comemora a geração de empregos, mas omite a realidade: mais da metade da força de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Zema comemora a geração de empregos, mas omite a realidade: mais da metade da força de\ntrabalho vive na informalidade ou em empregos precarizados, sem direitos trabalhistas e sociais.\nJornadas extenuantes, horas em transporte lotado e a imposição da escala 6x1 definem a vida de\nmilhões que trabalham apenas para engordar os lucros de um punhado de bilionários.\nAbaixo o sionismo e o genocídio palestino\nDurante o genocídio do povo palestino promovido pelo Estado de Israel, Zema não hesitou\nem se alinhar ao sionismo, demonstrando total insensibilidade ao massacre de crianças, mulheres\ne civis em Gaza.\nEssa posição não é casual. Ela se relaciona com interesses econômicos, como a presença do\ngrupo israelense Strauss — sócio da marca Três Corações, que controla cerca de 30% do mercado\nbrasileiro de café — e com a compra de armamentos israelenses pela Polícia Militar. Armas\ntestadas contra o povo palestino são utilizadas cotidianamente nas periferias mineiras.\nÉ preciso ir além da conciliação de classes\nO PT optou pela conciliação de classes em vez da mobilização popular. É necessário\nderrotar Zema e a extrema-direita, mas a conciliação com a burguesia pavimenta o caminho para\nseu fortalecimento.\nA privatização da COPASA foi viabilizada com o apoio de Tadeu Leite (MDB), aliado do governo\nLula, e com votos de PSD, PSB e PDT. O PT insiste em alianças com Rodrigo Pacheco e Alexandre\nKalil — representantes diretos da burguesia mineira. O PSOL, por sua vez, saudou a filiação de Kalil\nao PDT, ignorando o papel desse partido na privatização da água.\nUm projeto operário, popular e socialista para Minas Gerais\nVivemos a decomposição do capitalismo: a pandemia, com quase um milhão de mortos; os\ncrimes de Mariana e Brumadinho; o avanço do feminicídio, da LGBTfobia e do racismo. Mas\ntambém vivemos a prova da força da classe trabalhadora, que constrói tudo: cidades, máquinas,\ntransporte, alimentos.\nA riqueza é produzida por milhões, mas apropriada por poucos bilionários e multinacionais.\nChega de conciliação com os privilegiados de sempre. É hora de a classe trabalhadora\nassumir os rumos de Minas Gerais. É hora de romper com as engrenagens do sistema capitalista.\nPor isso apresentamos a candidatura do companheiro Rafael Duda, operário da mineração e\ndirigente sindical em Congonhas, ao Governo de Minas Gerais — uma candidatura que expressa a\nnecessidade de a classe trabalhadora governar o Estado.\nO estudo que se segue agora, serve de embasamento para as medidas que iremos\napresentar"
+          },
+          {
+            "id": "dossie-minas-gerais",
+            "titulo": "DOSSIÊ MINAS GERAIS",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "DOSSIÊ MINAS GERAIS\nGovernos Zema: Estado diferente, governo ineficiente\n\nApresentação\nElaborado pelo Instituto Latino Americano de Estudos Socioeconômicos (ILAESE) em parceria com\no PSTU (Partido Socialista dos Trabalhadores Unificado), sob coordenação de Ana Godoi.\nTodas as informações foram retiradas de relatórios oficiais devidamente indicados"
+          },
+          {
+            "id": "introducao",
+            "titulo": "INTRODUÇÃO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "INTRODUÇÃO\nDiferente da propaganda apresentada pela gestão do governo de Minas Gerais, o estado\npossui problemas estruturais importantes que afetam diretamente a vida da população do estado.\nNão por acaso, junto com o Rio de Janeiro e o Rio Grande do Sul, o estado figura na lista das\nmaiores dívidas, precisando negociar com o governo federal seu pagamento, impactando\ndiretamente nos recursos do estado. Por outro lado, recentemente, o governo Zema foi alvo de\ndenúncias envolvendo isenções fiscais que beneficiavam, grandes empresas incluindo aquela de\nsua própria família.\nAssim, para entendermos o cenário mineiro e para que possamos explicar tais fatos a partir\ndos interesses da classe trabalhadora, precisamos olhar para a estrutura de Minas, o papel o que\no estado possui na produção de riquezas nacional, bem como a situação da classe trabalhadora e a\nsaúde das finanças públicas. Só assim teremos um quadro que possibilite que respondamos\nperguntas importantes sobre a dívidas, a desindustrialização e as saídas para essa situação.\nPara tal, apresentamos um estudo que parte dos dados oficiais para construir um quadro\nde Minas Gerais."
+          },
+          {
+            "id": "aqui-o-trem-prospera-sera-mesmo",
+            "titulo": "AQUI O TREM PROSPERA...SERÁ MESMO?",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "AQUI O TREM PROSPERA...SERÁ MESMO?\nA análise da situação econômica de Minas Gerais exige que o estado seja compreendido\ncomo parte de um movimento mais amplo que redefiniu a posição do Brasil na economia mundial\nnas últimas décadas. As transformações observadas na economia mineira não podem ser\nexplicadas apenas por fatores locais ou pelas escolhas de governos estaduais. Elas se inserem em\num processo nacional de reorganização da estrutura produtiva, marcado pela alteração do papel\ndesempenhado pelo país na divisão internacional do trabalho. É apenas nesse contexto que se\ntorna possível compreender tanto o desempenho da economia mineira quanto os desafios\nenfrentados pelo estado.\nConforme discutido no Anuário Estatístico do Ilaese (2026), a economia brasileira passou\npor uma inflexão importante a partir dos anos 1990. Se, durante parte do século XX, o país\nconsolidou uma base industrial capaz de atender ao mercado interno e desempenhar um papel\nrelevante na produção manufatureira da América do Sul, nas décadas seguintes ocorreu um\nprocesso de desindustrialização relativa. Esse processo não significa o desaparecimento da\nindústria nem a redução do uso de tecnologia, mas a perda de participação dos setores da\nindústria de transformação — especialmente aqueles de maior intensidade tecnológica e maior\nvalor agregado — na composição da riqueza nacional. Ao mesmo tempo, ampliou-se o peso\nrelativo das atividades ligadas à produção de commodities, como a mineração, o petróleo e a\nagropecuária.\nEssa mudança também pode ser observada na inserção internacional do Brasil. A pauta de\nexportações tornou-se crescentemente concentrada em produtos primários, como petróleo bruto,\nsoja, minério de ferro, açúcar, carnes e celulose, enquanto produtos industriais de maior\ncomplexidade perderam espaço relativo. Em sentido inverso, cresceram as importações de\nmáquinas, equipamentos, componentes eletrônicos, produtos farmacêuticos e outros bens de\nelevada intensidade tecnológica. O resultado é um padrão de especialização em que o país\nexporta, cada vez mais, bens de menor valor agregado e depende crescentemente do mercado\nexterno para o fornecimento de tecnologias e produtos industriais mais complexos.\nEsse movimento de reprimarização da estrutura produtiva não elimina a importância da\nindústria, mas modifica sua composição e sua posição relativa na economia nacional. A expansão\ndos setores extrativos e agropecuários, impulsionada em grande medida pelas oscilações dos\npreços internacionais das commodities, amplia sua participação no Produto Interno Bruto e nas\nexportações, enquanto a indústria de transformação perde espaço relativo. Em diversos\nmomentos, o crescimento do PIB brasileiro passa a refletir mais a valorização dos produtos\nprimários no mercado internacional do que um efetivo aumento da capacidade produtiva do país,\nproduzindo uma dinâmica de crescimento fortemente condicionada às oscilações do mercado\ninternacional.\nÉ precisamente nesse cenário que Minas Gerais deve ser analisada. Por representar uma\nparcela significativa da economia nacional e possuir uma estrutura produtiva que reproduz, em\nlarga medida, a composição da economia brasileira, o estado constitui um caso privilegiado para\nobservar como essas transformações se materializam no plano regional. As mudanças verificadas\nna participação dos diferentes setores econômicos, no ritmo de crescimento e na composição da\nriqueza produzida em Minas Gerais não são fenômenos isolados, mas expressam localmente a\n\n8"
+          },
+          {
+            "id": "mesma-dinamica-de-desindustrializacao-relativa-e-de-fortalecimento-das-a",
+            "titulo": "mesma dinâmica de desindustrialização relativa e de fortalecimento das atividades ligadas às",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "mesma dinâmica de desindustrialização relativa e de fortalecimento das atividades ligadas às\ncommodities que caracteriza a economia brasileira.\nOs indicadores apresentados a seguir permitem examinar concretamente esse processo. A\nevolução do PIB mineiro, a participação dos diferentes setores na economia estadual e sua relação\ncom a estrutura produtiva nacional revelam como Minas Gerais participa das transformações\nrecentes da economia brasileira. Mais do que um retrato estatístico do estado, esses dados\noferecem elementos para compreender como um dos principais polos econômicos do país reflete,\nem sua própria estrutura produtiva, as mudanças que marcaram o novo ciclo de dominação pelo\nqual passa o Brasil.\n\nVimos que a crise das finanças públicas estaduais, tem razões específicas como a questão\nprevidenciária. No entanto, esse é apenas um sintoma de uma crise muito mais profunda e\nestrutural, que torna o Estado sensível a qualquer oscilação. Cabe, então, examinar mais de perto\na economia mineira em seu conjunto.\nA primeira particularidade importante do Estado de Minas Gerais é que se trata do único\nEstado que reflete aproximadamente a mesma divisão do trabalho existente no Brasil como um\ntodo. Enquanto alguns Estados se destacam pela produção agropecuária, como o Mato Grosso e o\nRio Grande do Sul, outros pela indústria de transformação, como São Paulo, Minas Gerais possui\nforça em praticamente todos os segmentos mais importantes: agropecuário, indústria de\ntransformação, extrativo mineral e energia. São esses setores que sustentam a administração\npública, que depende dos impostos, que sustentam o comércio que distribui as mercadorias\nproduzidas, bem como os serviços que dependem de uma classe trabalhadora numerosa apta a\nconsumi-los.\nApesar dessa semelhança, o estado de Minas Gerais tem uma particularidade importante:\no maior peso de setores voltados exclusivamente a exportação, como a mineração e a indústria\nsiderúrgica. Esses setores possuem menor valor agregado quando comparados com os setores de\nponta da indústria de transformação. Esta particularidade terá importantes consequências.\nPara uma análise inicial, passemos ao exame do PIB estadual.\n\n1. Uma análise da participação de Minas Gerias no PIB nacional\nPara começarmos a construir o quadro da situação estrutural do estado de Minas Gerias,\nanalisamos seu PIB.\nNo gráfico abaixo, apresentamos a evolução do PIB dos estados e do Brasil desde 2002.\n\n9"
+          },
+          {
+            "id": "evolucao-do-pib-dos-estados-entre-2002-e-2023-2002-base",
+            "titulo": "Evolução do PIB dos estados entre 2002 e 2023 (2002 base",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Evolução do PIB dos estados entre 2002 e 2023 (2002 base\n100)\nRio Grande do Sul\nRio de Janeiro\nBahia\nMinas Gerais\nRio Grande do Norte\nSão Paulo\nSergipe\nParaná\nPernambuco\nEspírito Santo\nBrasil\nSanta Catarina\nCeará\nAlagoas\nPará\nDistrito Federal\nParaíba\nGoiás\nAmazonas\nAmapá\nRondônia\nMaranhão\nPiauí\nMato Grosso do Sul\nAcre\nRoraima\nTocantins\nMato Grosso\n\n134,0\n140,4\n149,8\n150,9\n151,4\n152,5\n153,4\n154,6\n154,8\n157,6\n158,2\n165,2\n166,1\n166,4\n172,9\n176,3\n182,9\n185,5\n194,0\n194,5\n196,8\n202,8\n211,8\n212,8\n222,0\n251,6\n273,1\n287,5\n0,0\n\n50,0\n\n100,0\n\n150,0\n\n200,0\n\n250,0\n\n300,0\n\n350,0\n\nFonte: IBGE. Elaboração: ILAESE.\nComo podemos observar, a produção de riqueza no Brasil apresentou um crescimento de 58,2%\nentre os anos de 2002 e 2023. Por sua vez, Minas Gerais ficou entre o estados que menos\ncresceram nesses mais de 20 anos. Nesse período, ele perde apenas para o Rio Grande do Sul, que\nteve um aumento de 34% na sua produção de riqueza, Rio de Janeiro, que por sua vez cresceu\n40,4% e a Bahia, com 49,8% de aumento do PIB. Não por acaso, estão ai exatamente os estados\ncom os maiores problemas em suas finanças públicas.\nÉ interessante apontar que, muitos dos estados que apresentam maiores índices de\ncrescimento de seu PIB, como Mato Grosso, Mato Grosso do Sul e mesmo Goiás, tem uma forte\npresença do agronegócio em sua base produtiva. Obviamente não é a única explicação para os\n10"
+          },
+          {
+            "id": "percentuais-apresentados-mas-em-um-pais-marcado-pela-reprimarizacao-de-s",
+            "titulo": "percentuais apresentados, mas em um país marcado pela reprimarização de sua produção, esses",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "percentuais apresentados, mas em um país marcado pela reprimarização de sua produção, esses\napontamentos ajuda a construir uma dinâmica mais geral do movimento nacional.\nAnalisemos agora a dimensão dos setores da economia de Minas Gerias com o PIB do\nBrasil, ou seja, qual a proporção desses subsetores da economia de Minas Gerais na participação\ndo PIB nacional.\nMinas Gerais x Brasil\n\nExtrativa Mineral\nIndústria de transformação\nEnergia e água\nConstrução Civil\nAgropecuária\nTransporte e Comunicações\nComércio\nServiços\nInstituição Financeira\nAdministração Pública\n\n2002\n2004\n2006\n2008\n2010\n7,94% 10,36% 5,67% 7,56% 15,70%\n9,10% 10,03% 10,06% 10,93% 10,56%\n12,67% 15,04% 16,58% 17,68% 12,56%\n7,35% 7,12% 7,70% 8,02% 9,74%\n8,23% 9,89% 11,26% 10,13% 10,68%\n9,05% 8,46% 11,16% 11,04% 10,24%\n8,43% 8,70% 9,41% 8,79% 8,66%\n8,31% 8,72% 8,53% 8,50% 8,59%\n4,75% 5,49% 4,62% 4,57% 5,03%\n8,95% 8,63% 8,65% 8,87% 8,56%\n\n2012\n14,51%\n10,25%\n11,96%\n10,72%\n12,73%\n9,81%\n8,69%\n8,81%\n5,41%\n8,81%\n\n2014\n2016\n2018\n2020\n2022\n2023\n15,05% 12,54% 16,85% 15,35% 7,94% 8,20%\n10,02% 9,46% 10,26% 10,58% 11,64% 11,34%\n11,32% 9,71% 9,15% 9,17% 6,45% 7,69%\n10,63% 9,68% 9,99% 11,59% 12,15% 11,74%\n10,24% 10,83% 9,06% 9,20% 10,37% 9,48%\n8,98% 8,39% 9,46% 9,04% 9,51% 8,54%\n8,55% 8,29% 8,26% 8,65% 8,95% 8,64%\n8,65% 8,59% 8,61% 8,72% 8,87% 8,55%\n5,58% 5,32% 5,62% 5,90% 5,82% 5,67%\n8,80% 8,90% 8,92% 8,71% 8,63% 8,96%\n\nFonte: IBGE. Elaboração: ILAESE.\nOs dados acima revelam elementos importantes sobre a dinâmica do estado no cenário\nnacional. O equilibro dos setores comparados ao PIB nacional reafirma algo que já temos afirmado\nhá alguns anos: Minas Gerais é uma replica da dinâmica nacional. Proporcionalmente a população\ndo estado, ao longo da última década, representa aproximadamente 10% da população nacional.\nIsso implica dizer que o peso do estado na dinâmica social do Brasil é de aproximadamente 10%.\nSe observarmos atentamente a tabela, veremos que todos os setores da economia possuem um\npeso semelhante em sua participação do PIB, reforçando essa afirmação sobre o espelhamento de\nMinas da dinâmica nacional. Todos os setores participam com o mesmo peso e refletem o peso\nque Minas tem na economia nacional. Portanto, podemos afirma que, como o Brasil tem passado\npor um processo de desindustrialização relativa, no estado isso também terá impacto em seu\ndesenvolvimento.\nVemos um aumento da participação da indústria extrativa e da agropecuária no PIB do\nBrasil, passando de 7,94% a para 8,20% a primeira e 8,23% para 9,48% a segunda. É claro que\nobservamos ao longo do tempo oscilações no percentual de riqueza que cada setor representa\njustamente porque são setores que sofrem impacto direto do mercado internacional. Em sua\nmaioria, as empresas que constituem esses setores estão atreladas ao mercado internacional e\nsua arrecadação refletirá a oscilação dos preços no período. Não por acaso, no momento do boom\ndas commodities registramos picos no desempenho dos setores, como por exemplo, no período\nda pandemia de COVID-19, que tivemos a disparada dos preços no mercado internacional. Ou seja,\nsão aumentos percentuais que não refletem produção uma maior produção de riqueza.\nA indústria de transformação mineira no cenário nacional continua a ser relevante,\nmantendo aproximadamente 10% de participação no PIB nacional, ainda que, como veremos a\nseguir, apresente uma redução de seu peso no PIB do estado, perdendo espaço para a mineração\ne para a agropecuária. Mas Minas Gerais ainda segue sendo um polo industrial relevante no\ncenário nacional.\nUm ponto de destaque, é o setor bancário. Ainda que não aprofundemos a explicação de\ntal fenômeno, é importante observar como o peso das instituições financeiras é pequeno,\nrepresentando 5,67% do PIB nacional no ano de 2023. Acreditamos que isso se explica pela\nconcentração desse setor no estado de São Paulo, que hoje se configura como o polo financeiro\nbrasileiro. Inclusive as empresas do estado de Minas Gerias operam na BOVESPA e possuem seus\nativos em instituições presentes nesse estado.\n11"
+          },
+          {
+            "id": "2-uma-analise-do-pib-de-minas-gerais",
+            "titulo": "2. Uma análise do PIB de Minas Gerais",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "2. Uma análise do PIB de Minas Gerais\nCompreendemos o peso que a produção de Minas possui no cenário nacional. Vimos como\na produção do estado é um reflexo da produção nacional em termos proporcionais. É preciso\nagora destrinchar sua dinâmica interna, analisar o penso que cada setor possui na composição do\nPIB estadual para desvelarmos a dinâmica social interna do estado, capturando suas\nespecificidades.\nAssim, apresentamos agora a evolução percentual do PIB de Minas Gerais de 2002 até\n2023\n\nEvolução percentual do PIB de Minas Gerais entre 2002 e\n2023\n10,00%\n9,52%\n\n9,50%\n9,00%\n8,33%\n\n8,50%\n\n9,14% 9,15%\n8,97% 9,00%\n8,96% 9,04% 9,19% 8,94%\n8,88%\n8,82%\n8,78% 8,83%\n8,75%\n8,66%\n8,84% 8,62%\n8,78%\n8,69%\n8,68%\n\n8,39%\n\n8,00%\n\n20\n02\n20\n03\n20\n04\n20\n05\n20\n06\n20\n07\n20\n08\n20\n09\n20\n10\n20\n11\n20\n12\n20\n13\n20\n14\n20\n15\n20\n16\n20\n17\n20\n18\n20\n19\n20\n20\n20\n21\n20\n22\n20\n23\n\n7,50%\n\nFonte: IBGE. Elaboração: ILAESE.\n\nA curva do gráfico acima mostra a evolução percentual do PIB mineiro em relação ao PIB\nnacional. Percebemos que ao longo do tempo o peso do PIB do estado manteve-se próximo dos\n10%, reforçando o que dissemos sobre a proporção da economia de Minas Gerais no cenário\nnacional. Com já afirmamos, o PIB do estado cresceu pouco no período, o que podemos observar\nna pequena oscilação apresentada pelo gráfico. Em 2002, o PIB de Minas representava 8,33% do\nPIB nacional, enquanto em 2023 ele atingiu 8,88%.\nVai ficando cada vez mais claro o impacto das exportações e o atrelamento da economia ao\nmercado internacional no PIB de Minas Gerais. Analisemos agora os diversos subsetores que o\ncompõe a produção e distribuição da riqueza no estado.\n\n12"
+          },
+          {
+            "id": "2002",
+            "titulo": "2002",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "2002\n2004\n2006\n2008\n2010\n2012\n2014\n2016\n2018\n2020\n2022\n2023\nExtrativa Mineral\n1,92% 2,84% 2,22% 3,17% 5,66% 6,98% 6,12% 2,90% 5,04% 4,94% 4,72% 3,85%\nIndústria de transformação\n15,77% 19,88% 18,59% 19,81% 17,10% 13,61% 13,17% 13,37% 14,05% 14,33% 19,16% 19,18%\nEnergia e água\n5,16% 5,79% 5,97% 5,08% 3,82% 3,10% 2,34% 2,92% 2,91% 3,19% 1,70% 2,18%\nConstrução Civil\n5,68% 3,92% 3,73% 3,85% 6,60% 7,35% 7,18% 5,57% 4,51% 5,16% 4,46% 4,49%\nAgropecuária, extração vegetal 6,32% 7,36% 6,45% 6,01% 5,60% 6,60% 5,63% 6,94% 5,21% 6,65% 7,53% 7,29%\nTransporte e Comunicações\n3,98% 3,26% 4,29% 4,82% 4,75% 4,64% 4,50% 4,14% 4,65% 4,11% 3,32% 3,36%\nComércio\n7,80% 9,60% 11,70% 11,83% 11,81% 12,32% 12,74% 12,12% 12,00% 11,87% 12,49% 11,54%\nServiços\n31,22% 28,36% 27,66% 26,08% 25,87% 26,94% 28,55% 29,74% 29,92% 28,65% 27,48% 27,53%\nInstituição Financeira\n4,50% 3,99% 3,70% 3,26% 3,70% 3,63% 3,92% 4,73% 4,41% 4,46% 4,43% 4,74%\nAdministração Pública\n17,64% 15,02% 15,69% 16,09% 15,09% 14,83% 15,83% 17,58% 17,31% 16,63% 14,71% 15,85%\nMinas Gerais\n\nFonte: IBGE. Elaboração: ILAESE.\nMuitos elementos podem ser observados a partir da tabela acima. Ela apresenta a\nproporção dos setores dentro do PIB produzido no estado entre 2002 e 2023. Tanto a indústria\nextrativa quanto a agropecuária aumentaram seu espaço na economia de Minas Gerais. Apesar\ndas oscilações verificadas ao logo do tempo no setor mineral, devido a oscilação dos preços do\nmineiro no mercado internacional, como já apontamos, o que permitiu às empresas do setor\narrecadarem mais, vemos que em 2002 ela ocupava 1,92% do PIB passando para 3,85% em 2023.\nJá o setor agropecuário passou de 6,32% do PIB para 7,29%. Por outro lado, a indústria de\ntransformações vem perdendo espaço no PIB de Minas Gerais ao longo dos anos. É verdade que\nentre 2022 e 2023 apresentou um aumento significativo de sua presença na economia do estado,\nmas isso não significou aumento real de riqueza, mas mais uma vez é um reflexo dos preços no\nmercado internacional. Mesmo que nacionalmente a indústria de transformação de Minas segue\nmantendo seu peso e sua relevância proporcionalmente, vemos que ela apresenta retração\nperdendo espaço para outros setores, e podemos dizer que isso é resultado do processo de\nreprimarização da economia do estado.\nPodemos ainda apontar, partir da tabela acima, um dado relevante para a analise da\nsituação mais geral de Minas Gerais com consequências importantes. Se observarmos a evolução\nda administração pública, perceberemos que a uma redução do seu percentual ao longo do\ntempo, passando de 17,64% em 2002 para 15,85% em 2023. Diferente do discurso corrente que\nimpera no Brasil e Minas Gerais não exceção, temos uma redução da máquina do estado ao longo\ndo tempo, desmentido o argumento de estado inchado.\nVamos destacar o movimento de mudança desses setores chaves da economia,\napresentando os dados acima no movimento do gráfico abaixo\n\n13"
+          },
+          {
+            "id": "evolucao-percentual-da-agropecuaria-industria-extrativa-e-de",
+            "titulo": "Evolução percentual da agropecuaria, indústria extrativa e de",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Evolução percentual da agropecuaria, indústria extrativa e de\ntransformação no PIB de MInas Gerais\n40,00%\n35,00%\n30,00%\nAgropecuária, extração vegetal, caça e pesca\nIndústria de transformação\nExtrativa Mineral\n\n25,00%\n20,00%\n15,00%\n10,00%\n5,00%\n0,00%\n02 004 006 008 010 012 014 016 018 020 022\n20\n2\n2\n2\n2\n2\n2\n2\n2\n2\n2\n\nFonte: IBGE. Elaboração: ILAESE.\nVemos aqui o espaço que a indústria extrativa mineral passou a ocupar na base de\nprodução do estado. Percebemos o espaço alcançado pelo setor extrativo e também a ampliação\ndo setor agropecuário. O pico da curva em 2021, em todos o setores, é a confirmação do que já\nafirmamos, do auge dos preços das commodities no mercado internacional.\n\n3. Riquezas que saem do estado e riquezas que entram no estado: um\nraio-x das exportações e importações do estado de Minas Gerais\nAo fazermos a análise da produção de riqueza no estado de Minas Gerais, evidenciamos o\nimpacto das oscilações do mercado internacional no PIB do estado. Isso porque setores chaves da\neconomia mineira dependem do mercado externo, pois sua produção é voltada exclusivamente\npara a exportação. Assim, é fundamental que agora analisemos o movimento da balança\ncomercial e os impactos para a população de Minas Gerais. Além disso, os dados apresentados a\nseguir consolidam ainda mais a tese de reprimarização da economia do estado.\nComecemos com a balança comercial de Minas entre os anos de 1997 e 2025\n\n14"
+          },
+          {
+            "id": "fonte-dataviva",
+            "titulo": "Fonte: DataViva",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Fonte: DataViva\nA balança comercial de Minas Gerais opera há anos com saldo positivo. Como podemos ver\nno gráfico, ao longo do tempo as exportações ampliaram mais do que a importações, chegando a\num valor de 41,4 bilhões de dólares em 2025 enquanto que as importações no mesmo ano foram\nde 18,3 bilhões de dólares. As exportações, como podemos observar, foram impactadas\ndiretamente pelo aumento dos preços do mercado internacional, como já havíamos apontado a\npartir da analise do PIB. Assim, entre os anos de 2011 e 2013 e em 2021 e 2022 o valor das\nexportações subiram impactadas pelo preços, em especial do minério. Mas sem compreender\nqualitativamente a exportação e a importação de Minas Gerais, não compreenderemos o\nsignificado real dos valores mencionados.\nAssim, analisaremos as exportações de Minas no último ano.\n\nFonte: DataViva\n15"
+          },
+          {
+            "id": "as-exportacoes-em-minas-gerais-sao-lideradas-pelo-cafe-e-o-minerio-de-fe",
+            "titulo": "As exportações em Minas Gerais são lideradas pelo café e o minério de ferro como",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "As exportações em Minas Gerais são lideradas pelo café e o minério de ferro como\npodemos ver no quadro acima. O café representaram 26,7% das exportações do estado em 2025\nenquanto que o minério de ferro ocupou 23,3% das exportações. Logo em seguida temos o ouro,\nocupando 7,5% das exportações e 6% ferro ligas. Podemos ainda mencionar açúcar, soja e a carne\nbovina como produtos de destaque. Ou seja, pelo dados apresentados podemos concluir que o\nperfil das exportações do estado são produtos primários, oriundos das atividades minerárias e\nagropecuárias.\nPor sua vez, o estado importa uma cesta de produtos de mais valor agregado como nos\nmostra o quadro abaixo\n\nFonte: DataViva\nParte considerável das importações de produtos do estado estão diretamente relacionados\naos processos produtivos e a necessidade de alimentar a produção do estado, caso das máquinas\ne equipamentos além dos produtos químicos. Além disso, vemos o peso do setor de veículos, com\na importação de carros e caminhões, deixando claro que as importações do estado são\nqualitativamente superiores a exportação.\nMas se voltarmos no tempo, perceberemos que o perfil das exportações e das importações\ndo estado diferiam desse apresentado nos últimos anos. E compreender a natureza dessa\ntransformação e as estratégias da burguesia mineira possibilita desenharmos os rumos que o\nestado pode tomar no próximo período.\n\n16"
+          },
+          {
+            "id": "fonte-dataviva-2",
+            "titulo": "Fonte: DataViva",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Fonte: DataViva\nClaramente em 1997, as exportações de Minas Gerais eram mais diversificadas do que as\nexportações no último ano. Percebemos o peso que produtos com maior valor agregado possuíam\nno volume destinado ao mercado internacional. Nesse momento, a exportação de carros\nrepresentava 7,7% das exportações do estado, e os produtos oriundos da metalurgia como ferro\nligas, laminados e ferro fundido representavam 26,6% das exportações.\nAs importações por sua vez, no ano 1997, também possuíam maior diversidade\n\nFonte: DataViva\n17"
+          },
+          {
+            "id": "podemos-concluir-que-o-perfil-exportador-do-estado-de-minas-gerais-mudou",
+            "titulo": "Podemos concluir que o perfil exportador do estado de Minas Gerais mudou nas duas",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Podemos concluir que o perfil exportador do estado de Minas Gerais mudou nas duas\núltimas décadas. O espaço dos produtos primários se ampliou tornando-se a base produtiva\nprincipal do estado. Como parte de uma país dependente tecnologicamente, percebemos a\nnecessidade do estado de importar máquinas e equipamentos além de suprimentos que\nalimentem sua cadeia produtiva. A questão é que essa mudança de perfil acarreta consequências\nestruturais importantes. Os produtos primários, além de possuir baixo valor agregado, exigindo\numa ampliação significativa da produção para significar ganhos substanciais, não atende ao\nmercado interno, pois está integralmente voltado para o mercado externo.\nEssa evolução é compatível com um processo em que Minas Gerais preserva importantes\natividades industriais, mas passa a realizá-las com maior dependência de tecnologias, máquinas e\ninsumos importados, o que chamamos de desindustrialização relativa. Em vez de internalizar\netapas mais complexas das cadeias produtivas, o estado tende a especializar-se em atividades\nintensivas em recursos naturais e em etapas intermediárias da produção, importando parcela\ncrescente dos componentes de maior intensidade tecnológica. Assim, as mudanças observadas\nnas exportações e importações indica uma reconfiguração da estrutura produtiva em que\ncoexistem a permanência da base metalúrgica e mineral com o aprofundamento da dependência\nexterna em segmentos estratégicos da indústria e da tecnologia.\nPara deixar ainda mais claro esse movimento, apresentamos o fluxograma abaixo\n\nFonte: Anuário Estatístico do Ilaese 25/26.\nComo somos dependentes tecnologicamente de outros países, que nos fornecem\nmáquinas e equipamentos mais avançados para que possamos produzir para o mercado interno,\nimportamos produtos de maior valor agregado para suprir essas cadeias produtivas. Por outra\nlado, historicamente exportamos prioritariamente produtos primários ocupando esse espaço na\ndivisão internacional do trabalho. Porém, esse movimento, importar máquinas e equipamentos e\nexportar commodities, gera deficit na balança comercial. Para compensar, produzimos ainda mais\ncommodities para inverter essa curva e passarmos a ser superavitários.\nEsse é o processo de desindustrialização do estado brasileiro e que vemos ser reproduzido\nnos mesmo parâmetros no estado de Minas Gerais. Mantemos a balança comercial equilibrada\nexportando café e minério, enquanto dependemos de máquinas vindas de fora.\n\n18"
+          },
+          {
+            "id": "4-tornar-se-cada-vez-mais-dependente-esse-e-o-projeto-da-burguesia",
+            "titulo": "4. Tornar-se cada vez mais dependente: esse é o projeto da burguesia",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "4. Tornar-se cada vez mais dependente: esse é o projeto da burguesia\nmineira\nO processo de desindustrialização no estado de Minas tende a se aprofundar no próximo\nperíodo. Com os avanços tecnológicos e demanda cada vez maiores por chips e\nsuperprocessadores, a busca por determinados minerais tem colocado o estado no radar de\nempresas internacionais que querem explorar nosso território.\nNão por acaso, o estado de Minas Gerais apresentou em 2021 o Plano Estadual de\nMineração de Minas Gerais. O PEM-MG é um documento de planejamento elaborado pelo\nGoverno de Minas Gerais para orientar o desenvolvimento da mineração nas próximas duas\ndécadas. Foi elaborado sob coordenação da Secretaria de Estado de Desenvolvimento Econômico\n(SEDE) e financiado com recursos do Termo de Reparação de Brumadinho.\nComo já vimos, somos um dos maiores exportadores de minério de ferro mas ainda\npossuímos várias reservas de riquezas cobiçadas internacionalmente na atual corrida tecnológica.\nDe acordo com a Secretaria de Desenvolvimento do Estado, Minas Gerais reúne condições\ngeológicas para esse movimento. O Estado concentra 49% das reservas brasileiras mapeadas de\nlítio e de nióbio, 48% das reservas de terras raras e 72% das reservas de grafite. Elas apresentam\nteor mineral elevado em comparação com padrões internacionais, o que aumenta o interesse na\nampliação da exploração desses minerais.\nO nióbio talvez seja o mais conhecido da população por ter sido alvo, inclusive, de\npropostas eleitorais do governador Romeu Zema. Mineral que compõe o conjunto de minerais\ncríticos, é explorado exclusivamente em Araxá e ano passado a exportação do produto foi de 187\nmilhões de dólares.\n\n19"
+          },
+          {
+            "id": "fonte-dataviva-3",
+            "titulo": "Fonte: DataViva",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Fonte: DataViva\nVemos no gráfico como a demanda tem aumentado devido a utilização desse mineral na\ncomposição de equipamentos tecnológicos como as novas gerações de baterias.\nAlém do nióbio, lítio e grafite também são minerais que compões o grupo dos minerais\ncríticos presentes em solo mineiro. Nesse mesmo caminho o governo do estado lançou em 2023 o\nprograma Vale do Lítio, como parte do PEM-MG, com o objetivo de explorar a maior reserva\nnacional do minério na região do Vale do Jequitinhonha. O programa quer atrair investimentos\nestrangeiros para ampliar a produção local já existente. Em Salinas, no Vale do Jequitinhonha, o\ngrupo australiano PLS desenvolve o Projeto Colina, adquirido em 2025 juntamente com a Latin\nResources, que hoje se apresenta como a maior empresa exploradora de lítio no mundo.\nConjuntamente com o interesse crescente pelo lítio temos o grafite, já que, em volume, o\ngrafite constitui o principal componente das baterias de íons de lítio. Assim, a demanda por grafite\ntem aumentado em todo o mundo. A exportação de grafite no Brasil deu saltos no último período\ncomo podemos observar no gráfico abaixo.\n\n20"
+          },
+          {
+            "id": "fonte-dataviva-4",
+            "titulo": "Fonte: DataViva",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Fonte: DataViva\n\nEm 2025, o valor das exportações de grafite foram de 24 milhões de dólares. Minas Gerais\né o estado que concentra a maior parcela dessa exportação, com um percentual de 95,7%.\nJustamente por esse cenário, a empresa Graphcoa, na cidade de Jordânia, no nordeste mineiro,\ndesenvolve um projeto de mineração e processamento com capacidade prevista de 53 mil\ntoneladas anuais de concentrado de grafite, o que praticamente dobraria a capacidade produtiva\nbrasileira.\nNão apenas os minerais críticos são alvo da cobiça das empresas estrangeiras, mas hoje a\nbusca por elementos de terras raras tem levado a embates entre países internacionalmente.\nElementos de terras raras são um grupo exato de 17 elementos químicos (como neodímio e ítrio)\nusados em ímãs potentes e alta tecnologia. Como hoje cerca de 70% da produção de carbonato de\nterras raras e 91% do refino encontram-se sob controle da China, a busca por reduzir essa\ndependência tem gerado disputas em todo o mundo.\nPoços de Caldas abriga uma das maiores descobertas mundiais de terras raras em argila\niônica, chegando a ser comparada à importância que Carajás possui para o minério de ferro. Um\ndos fatores apontados como diferencial é o elevado teor mineral das jazidas: enquanto em Poços\nde Caldas seria possível obter aproximadamente 2,5 kg de óxidos de terras raras por tonelada de\nargila, a média chinesa seria de cerca de 700 gramas e a de Goiás aproximadamente 1 kg por\ntonelada.\nTemos já em curso dois projetos de exploração da região, todos levados a cabo por\nempresas australianas. O projeto Colossus, da Viridis Mining & Minerals, que prevê investimentos\nde aproximadamente US$ 400 milhões para processar 5 milhões de toneladas de argila por ano a\npartir de 2028, produzindo cerca de 16 mil toneladas anuais de carbonato de terras raras, volume\nequivalente a aproximadamente 4% da produção mundial. Já o Projeto Caldeira, da Meteoric\nResources, prevê investimentos de US$ 440 milhões, uma capacidade de processamento de 6\nmilhões de toneladas anuais e produção de 14 mil toneladas de óxidos de terras raras por ano. A\n21"
+          },
+          {
+            "id": "empresa-tambem-pretende-instalar-uma-unidade-industrial-para-separacao-d",
+            "titulo": "empresa também pretende instalar uma unidade industrial para separação de óxidos, apresentada",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "empresa também pretende instalar uma unidade industrial para separação de óxidos, apresentada\ncomo a primeira do Brasil.\nAlém das jazidas em argila iônica em Poços de Caldas, outro projeto tem sido desenvolvido\npela a empresa St. George, também australiana, em Araxá. Tal empreendimento centra-se na\nexploração de nióbio e terras raras em rochas monazíticas. Essas rochas possuem teor\nsignificativamente superior de terras raras — cerca de 10% do depósito mineral —, porém exigem\num processamento mais complexo, baseado em ácido sulfúrico, diferentemente da argila iônica,\ncujo beneficiamento seria mais simples. A empresa prevê investimentos de R$ 2 bilhões até 2029\npara instalar unidades de processamento de nióbio e terras raras.\nEsses serão o destino dos investimentos previstos pelo estado nos próximos anos\n\nFonte: Valor Econômico\nOu seja, não investiremos em desenvolvimento tecnológico, mas aprofundaremos a\nespecialização do estado em exportação mineral. A consequência será maior dependência, maior\ndesestruturação e claro, ampliação dos impactos ambientais que já devastam há décadas o\nestado. Ainda não nos recuperamos de Mariana e Brumadinho, mas o dinheiros da indenização da\nVale tem sido destinado aos projetos de ampliação da mineração, como vimos no PEM-MG\n\n22"
+          },
+          {
+            "id": "a-situacao-da-classe-trabalhadora-no-estado-de",
+            "titulo": "A SITUAÇÃO DA CLASSE TRABALHADORA NO ESTADO DE",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "A SITUAÇÃO DA CLASSE TRABALHADORA NO ESTADO DE\nMINAS GERAIS\nNo capítulo anterior, analisamos a economia mineira do ponto de vista da produção de\ncapital, da produção dos valores e sua distribuição estrutural entre os diversos setores. Cabe,\nagora, analisarmos o mesmo processo da perspectiva daqueles que produzem toda essa riqueza e\nsão, constantemente, roubados pelo processo capitalista de produção: os trabalhadores.\nComeçaremos pelo exame daqueles que ficam de fora do mercado formal de trabalho. A\nmassa de trabalhadores que não encontram lugar em uma estrutura produtiva cada vez mais\nmarcada por setores que acumulam muito capital em períodos de alta dos preços, sem produzir\num só emprego.\n\n1. Massa informal e sem emprego\nPara começarmos nossa análise, apresentamos os dados do perfil da população\ntrabalhadora de Minas Gerais a partir dos critérios do IBGE:\n\nPerfil da População de Minas Gerais (em mil trabalhadores)\n25.000\n20.151 20.274 20.393 20.507 20.618 20.725\n\n20.827 20.924 21.018 21.107 21.191 21.271 21.347 21.418\n\n20.000\n15.000\n\n10.095 10.403 10.588\n\n10.916 10.843\n\n9.618\n\n9.733\n\n9.734\n\n9.679\n\n9.580\n\n9.837\n\n9.967 10.185\n\n5.777\n\n5.919\n\n6.005\n\n5.971\n\n5.884\n\n5.857\n\n5.891\n\n5.871\n\n6.513\n\n6.113\n\n6.333\n\n6.244\n\n6.217\n\n6.470\n\n596\n\n657\n\n1.002\n\n1.210\n\n1.177\n\n1.076\n\n1.080\n\n1.323\n\n1.057\n\n640\n\n642\n\n490\n\n431\n\n10.000\n\n9.272\n\n5.000\n645\n\n0\n2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025\nTotal da População\nOcupadas\n\nFora da força de trabalho\nDesocupadas\n\nFonte: RAIS e CAGED, PDAD Continua, Boletim Anual da Previdência. Elaboração: ILAESE.\n\n23"
+          },
+          {
+            "id": "como-podemos-ver-ao-final-de-2025-minas-gerais-possuia-quase-11-milhoes",
+            "titulo": "Como podemos ver, ao final de 2025, Minas Gerais possuía quase 11 milhões de pessoas",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Como podemos ver, ao final de 2025, Minas Gerais possuía quase 11 milhões de pessoas\nocupadas, 431 mil pessoas desocupadas e 6.470 milhões de pessoas fora da força de trabalho, em\numa população de 21.418 milhões de pessoas.\nNo entanto, queremos apresentar, a partir daqui, uma metodologia diferente daquela\nadotada pelo IBGE. Isso porque o índice de desemprego que esse instituto mede leva em conta\napenas aqueles que estão a procura de emprego nas 4 semanas anteriores a pesquisa. Adotamos\numa metodologia desenvolvida pelo ILAESE que analisa a composição de toda a população com\nrelação à posição que ocupam no interior do processo produtivo. Os trabalhadores estão, aqui,\ndivididos em: trabalhadores formais assalariados, subempregados, sem emprego. Há ainda os que\nestão fora da força de trabalho (crianças e adolescentes) e aposentados. Na outra ponta, temos os\ntrabalhadores autônomos e grandes e pequenos proprietários. Nesse último caso, considera-se\napenas aqueles que possuem uma relação formal de trabalho (empresas com CNPJ), sendo os\ndemais classificados no subemprego.\nAo dividir dessa forma as classes sociais no estado, sua composição é muito distinta da que\napresentamos como resultado da metodologia do Ilaese. Vejamos:\n\nDistribuição da classe trabalhadora de Minas Gerais em\n2025\nFORA DA FORÇA DE TRABALHO\n\n17,15%\n\nAPOSENTADOS QUE NÃO TRABALHAM\n\n13,86%\n\nSEM EMPREGO\n\n18,36%\n\nSUBEMPREGADOS\n\n18,49%\n\nTRABALHO ASSALARIADO\n\n26,75%\n\nAUTÔNOMOS\nGRANDES E PEQUENOS PROPRIETÁRIOS\n\n3,54%\n1,84%\n\n0,00%\n\n10,00%\n\n20,00%\n\n30,00%\n\nFonte: RAIS e CAGED, PDAD Continua, Boletim Anual da Previdência. Elaboração: ILAESE.\n\n24"
+          },
+          {
+            "id": "populacao",
+            "titulo": "POPULAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "POPULAÇÃO\nGRANDES E PEQUENOS PROPRIETÁRIOS\nAUTÔNOMOS E TRABALHO PARA CONSUMO PRÓPRIO\nTRABALHO ASSALARIADO\nSUBEMPREGADOS\nSEM EMPREGO\nAPOSENTADOS QUE NÃO TRABALHAM\nFORA DA FORÇA DE TRABALHO\nGRANDES E PEQUENOS PROPRIETÁRIOS\nAUTÔNOMOS\nTRABALHO ASSALARIADO\nSUBEMPREGADOS\nSEM EMPREGO\nAPOSENTADOS QUE NÃO TRABALHAM\nFORA DA FORÇA DE TRABALHO\n\n2018\n20.827\n409\n1.443\n5.078\n3.966\n2.882\n3.157\n3.892\n1,96%\n6,93%\n24,38%\n19,04%\n13,84%\n15,16%\n18,69%\n\n2019\n20.924\n429\n1.528\n5.135\n4.039\n3.314\n2.692\n3.787\n2,05%\n7,30%\n24,54%\n19,30%\n15,84%\n12,87%\n18,10%\n\n2020\n21.018\n340\n598\n4.764\n3.572\n5.131\n2.703\n3.910\n1,62%\n2,85%\n22,67%\n16,99%\n24,41%\n12,86%\n18,60%\n\n2021\n21.107\n356\n689\n5.060\n3.991\n4.445\n2.724\n3.842\n1,69%\n3,26%\n23,97%\n18,91%\n21,06%\n12,90%\n18,20%\n\n2022\n21.191\n404\n1.424\n5.573\n3.760\n3.443\n2.772\n3.815\n1,91%\n6,72%\n26,30%\n17,74%\n16,25%\n13,08%\n18,00%\n\n2023\n21.271\n410\n636\n5.568\n3.974\n4.039\n2.848\n3.796\n1,93%\n2,99%\n26,18%\n18,68%\n18,99%\n13,39%\n17,85%\n\n2024\n21.347\n405\n726\n5.812\n3.973\n3.803\n2.905\n3.723\n1,90%\n3,40%\n27,23%\n18,61%\n17,81%\n13,61%\n17,44%\n\n2025\n21.418\n394\n759\n5.729\n3.960\n3.933\n2.969\n3.674\n1,84%\n3,54%\n26,75%\n18,49%\n18,36%\n13,86%\n17,15%\n\nFonte: RAIS e CAGED, PDAD Continua, Boletim Anual da Previdência. Elaboração: ILAESE.\n\nVemos, em primeiro lugar, que cerca de 37% da população do Estado encontra-se sem qualquer\nocupação formal ou no subemprego. O total de trabalhadores assalariados formais foi de apenas\n26,75% da população ao fim de 2025. Curiosamente, também se reduz a massa de grandes e\npequenos proprietários. A elevação dos trabalhadores autônomos nos últimos três anos, por seu\nturno, é maquiada por relações precárias de trabalho, pagos por peça ou por serviços oferecidos,\ncomo a UBER.\nO contraste entre as duas informações é fundamental em um momento em que o governo\ndo estado centrará fogo em elevar seus feitos e vender uma Minas Gerais muito melhor do que\naquela que existe na realidade.\nPara uma visão mais nítida do problema, apresentamos o percentual dos trabalhadores\nformais ao lado daqueles subempregados e sem emprego. Esses últimos correspondem a nada\nmais nada menos do que 57,94% da força de trabalho ativa no Estado, jogados para o exército\nindustrial de reserva.\n\nTrabalhadores e exército industrial de reserva em Minas Gerais em 2025\n\n28,87%\n42,06%\n\nTRABALHO ASSALARIADO\nSUBEMPREGADOS\nSEM EMPREGO\n\n29,07%\n\nFonte: RAIS e CAGED, PDAD Continua, Boletim Anual da Previdência. Elaboração: ILAESE.\n\n25"
+          },
+          {
+            "id": "esses-dados-tornam-claro-que-nao-e-possivel-resolver-o-problema-do-estad",
+            "titulo": "Esses dados tornam claro que não é possível resolver o problema do estado de Minas",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Esses dados tornam claro que não é possível resolver o problema do estado de Minas\nGerais unicamente com políticas públicas, mesmo se estas, supostamente, forem boas. É\nnecessário atacar a estrutura de propriedade que joga para foram da força de trabalho ativa quase\n60% da população do estado, condenadas a vagarem no mar do exército industrial de reserva, sem\nemprego e ocupação formal, sem garantias, segurança nem sequer de sua própria sobrevivência.\nO caminho é o contrário do que foi aplicado pelo governo Zema ao longo de 2 mandatos. É\npreciso não apenas manter as empresas públicas, mas retirá-las do mercado de ações: expropriálas. É preciso destinar o excedente produzido por empresas como as mineradoras e siderúrgicas,\nem recursos reaplicados no próprio Estado, associado a um plano nacional de desenvolvimento.\nApenas a classe trabalhadora pode assumir essa tarefa. Os empresários brasileiros estão muito\nsatisfeitos com a fatia do butim que lhes foi reservada, como indicado no capítulo anterior.\nObservando o perfil dos quase 4 milhões de pessoas na informalidade, ou subempregadas,\nvemos que quase 2 milhões delas trabalham por conta própria sem CNPJ como apresentado no\ngráfico abaixo. Aqui encontram-se, por exemplo, os trabalhadores de aplicativo como UBER e\nIFOOD. Essa setor juntos com os trabalhadores do setor privado sem carteira assinada\nrepresentam a maioria da informalidade no estado.\n\nPerfil da população subempregada em Minas Gerais\n(em mil trabalhadores)\n4.500\n4.0003.626\n\n3.676\n\n3.852\n\n3.966\n\n4.039\n\n3.991\n3.572\n\n3.500\n\n3.760\n\n3.974\n\n3.973\n\n3.960\n\n1.843\n\n3.000\n2.500\n2.0001.753\n\n1.731\n\n1.761\n\n1.843\n\n1.908\n\n1.5001.119\n\n1.172\n\n1.272\n\n1.260\n\n1.256\n\n1.140\n\n462\n\n464\n\n495\n\n514\n\n515\n\n429\n\n0\n2015\n\n2016\n\n2017\n\n2018\n\n2019\n\n2020\n\n1.000\n500\n\nPopulação ocupada informal\nTrabalhador doméstico Sem carteira de Trabalho Assinada\nConta própria Sem CNPJ\n\n1.672\n\n1.865\n\n1.815\n\n1.880\n\n1.321\n\n1.264\n\n1.374\n\n1.784\n1.448\n\n488\n\n462\n\n489\n\n511\n\n451\n\n2021\n\n2022\n\n2023\n\n2024\n\n2025\n\n1.444\n\nEmpregado Setor privado Sem carteira de Trabalho Assinada\nEmpregador Sem CNPJ\nTrabalhador familiar auxiliar\n\nFonte: RAIS e CAGED, PDAD Continua, Boletim Anual da Previdência. Elaboração: ILAESE.\n\n2. Barbárie para a classe trabalhadora\nO problema que acima esboçamos, torna-se mais evidente ainda do ponto de vista da\nremuneração. Vimos que houve um certo crescimento do emprego em Minas Gerais a partir de\n\n26"
+          },
+          {
+            "id": "2021-apos-a-grande-queda-verificada-no-ano-anterior-no-entanto-essa-recu",
+            "titulo": "2021, após a grande queda verificada no ano anterior. No entanto, essa recuperação não foi",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "2021, após a grande queda verificada no ano anterior. No entanto, essa recuperação não foi\nacompanhada da melhora da remuneração da classe trabalhadora do estado\nVejamos a remuneração média dos trabalhadores de Minas Gerais ao fim de 2025:\n\nComparação entre a remuneração média do Brasil e dos estados da federação\nDistrito Federal\nSão Paulo\nSanta Catarina\nRio de Janeiro\nParaná\nRio Grande do Sul\nMato Grosso\nGoiás\nMato Grosso do Sul\nBrasil\nEspírito Santo\nRondônia\nAmapá\nMinas Gerais\nRoraima\nTocantins\nAcre\nRio Grande do Norte\nSergipe\nAmazonas\nPernambuco\nParaíba\nPará\nAlagoas\nPiauí\nCeará\nBahia\nMaranhão\nR$ 0,00\n\nR$6.138,00\nR$4.283,00\nR$4.175,00\nR$4.123,00\nR$4.052,00\nR$3.890,00\nR$3.832,00\nR$3.632,00\nR$3.620,00\nR$3.555,00\nR$3.451,00\nR$3.448,00\nR$3.333,00\nR$3.300,00\nR$3.213,00\nR$3.074,00\nR$2.921,00\nR$2.747,00\nR$2.737,00\nR$2.677,00\nR$2.666,00\nR$2.536,00\nR$2.512,00\nR$2.460,00\nR$2.444,00\nR$2.377,00\nR$2.305,00\nR$2.093,00\nR$ 2.000,00\n\nR$ 4.000,00\n\nR$ 6.000,00\n\nR$ 8.000,00\n\nFonte: PNAD. Elaboração: ILAESE.\nMinas possui uma remuneração inferior a todos Estados da região sudeste e inferior até\nmesmo que estados mais frágeis estruturalmente, como Rondônia e o Espirito Santo. Está 7,17%\nabaixo da média nacional, que em 2025 foi 3.555 reais. Abaixo apresentamos a tabela coma\nevolução da média real das remunerações dos estados nos últimos 13 anos.\n\n27"
+          },
+          {
+            "id": "maranhao",
+            "titulo": "Maranhão",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Maranhão\nBahia\nCeará\nPiauí\nAlagoas\nPará\nParaíba\nPernambuco\nAmazonas\nSergipe\nRio Grande do Norte\nAcre\nTocantins\nRoraima\nMinas Gerais\nAmapá\nRondônia\nEspírito Santo\nBrasil\nMato Grosso do Sul\nGoiás\nMato Grosso\nRio Grande do Sul\nParaná\nRio de Janeiro\nSanta Catarina\nSão Paulo\nDistrito Federal\n\n2012\nR$ 1.612,00\nR$ 1.953,00\nR$ 2.003,00\nR$ 1.697,00\nR$ 1.850,00\nR$ 2.192,00\nR$ 1.819,00\nR$ 2.557,00\nR$ 2.624,00\nR$ 2.208,00\nR$ 2.068,00\nR$ 2.786,00\nR$ 2.428,00\nR$ 3.029,00\nR$ 2.634,00\nR$ 2.791,00\nR$ 2.507,00\nR$ 2.875,00\nR$ 3.025,00\nR$ 2.977,00\nR$ 2.976,00\nR$ 3.079,00\nR$ 3.255,00\nR$ 3.285,00\nR$ 3.178,00\nR$ 3.355,00\nR$ 3.961,00\nR$ 5.944,00\n\n2014\nR$ 1.647,00\nR$ 2.058,00\nR$ 2.073,00\nR$ 1.891,00\nR$ 2.156,00\nR$ 2.134,00\nR$ 2.132,00\nR$ 2.781,00\nR$ 2.685,00\nR$ 2.452,00\nR$ 2.161,00\nR$ 2.556,00\nR$ 2.514,00\nR$ 3.127,00\nR$ 2.817,00\nR$ 2.968,00\nR$ 2.595,00\nR$ 3.091,00\nR$ 3.189,00\nR$ 3.090,00\nR$ 3.122,00\nR$ 3.212,00\nR$ 3.381,00\nR$ 3.543,00\nR$ 3.435,00\nR$ 3.547,00\nR$ 4.202,00\nR$ 5.613,00\n\n2016\nR$ 1.664,00\nR$ 1.999,00\nR$ 2.023,00\nR$ 1.929,00\nR$ 2.048,00\nR$ 1.988,00\nR$ 2.169,00\nR$ 2.317,00\nR$ 2.282,00\nR$ 2.427,00\nR$ 2.329,00\nR$ 2.595,00\nR$ 2.580,00\nR$ 3.056,00\nR$ 2.657,00\nR$ 3.077,00\nR$ 2.487,00\nR$ 2.954,00\nR$ 3.102,00\nR$ 3.153,00\nR$ 2.927,00\nR$ 3.021,00\nR$ 3.375,00\nR$ 3.390,00\nR$ 3.432,00\nR$ 3.302,00\nR$ 4.130,00\nR$ 5.468,00\n\n2018\nR$ 1.910,00\nR$ 2.165,00\nR$ 2.170,00\nR$ 1.926,00\nR$ 2.272,00\nR$ 2.072,00\nR$ 2.259,00\nR$ 2.323,00\nR$ 2.301,00\nR$ 2.221,00\nR$ 2.247,00\nR$ 2.512,00\nR$ 2.594,00\nR$ 3.006,00\nR$ 2.691,00\nR$ 2.680,00\nR$ 2.747,00\nR$ 2.942,00\nR$ 3.173,00\nR$ 3.247,00\nR$ 2.969,00\nR$ 3.252,00\nR$ 3.376,00\nR$ 3.472,00\nR$ 3.611,00\nR$ 3.461,00\nR$ 4.144,00\nR$ 5.666,00\n\n2020\nR$ 1.846,00\nR$ 2.087,00\nR$ 2.244,00\nR$ 1.966,00\nR$ 2.126,00\nR$ 2.200,00\nR$ 2.581,00\nR$ 2.265,00\nR$ 2.448,00\nR$ 2.393,00\nR$ 2.388,00\nR$ 2.619,00\nR$ 2.571,00\nR$ 3.025,00\nR$ 2.812,00\nR$ 2.729,00\nR$ 2.564,00\nR$ 2.970,00\nR$ 3.278,00\nR$ 3.285,00\nR$ 2.913,00\nR$ 3.320,00\nR$ 3.482,00\nR$ 3.693,00\nR$ 4.135,00\nR$ 3.645,00\nR$ 4.216,00\nR$ 5.640,00\n\n2022\nR$ 1.913,00\nR$ 1.967,00\nR$ 1.980,00\nR$ 2.214,00\nR$ 2.048,00\nR$ 2.265,00\nR$ 2.166,00\nR$ 2.249,00\nR$ 2.433,00\nR$ 2.162,00\nR$ 2.351,00\nR$ 2.574,00\nR$ 2.812,00\nR$ 2.966,00\nR$ 2.805,00\nR$ 2.788,00\nR$ 2.930,00\nR$ 3.113,00\nR$ 3.153,00\nR$ 3.599,00\nR$ 3.119,00\nR$ 3.568,00\nR$ 3.544,00\nR$ 3.363,00\nR$ 3.796,00\nR$ 3.543,00\nR$ 3.902,00\nR$ 5.248,00\n\n2024\nR$ 2.113,00\nR$ 2.155,00\nR$ 2.207,00\nR$ 2.332,00\nR$ 2.369,00\nR$ 2.376,00\nR$ 2.442,00\nR$ 2.543,00\nR$ 2.486,00\nR$ 2.535,00\nR$ 2.583,00\nR$ 2.689,00\nR$ 2.944,00\nR$ 3.028,00\nR$ 3.012,00\nR$ 2.905,00\nR$ 3.148,00\nR$ 3.372,00\nR$ 3.383,00\nR$ 3.553,00\nR$ 3.426,00\nR$ 3.660,00\nR$ 3.768,00\nR$ 3.731,00\nR$ 3.837,00\nR$ 3.872,00\nR$ 4.222,00\nR$ 5.518,00\n\n2025\nR$ 2.093,00\nR$ 2.305,00\nR$ 2.377,00\nR$ 2.444,00\nR$ 2.460,00\nR$ 2.512,00\nR$ 2.536,00\nR$ 2.666,00\nR$ 2.677,00\nR$ 2.737,00\nR$ 2.747,00\nR$ 2.921,00\nR$ 3.074,00\nR$ 3.213,00\nR$ 3.300,00\nR$ 3.333,00\nR$ 3.448,00\nR$ 3.451,00\nR$ 3.555,00\nR$ 3.620,00\nR$ 3.632,00\nR$ 3.832,00\nR$ 3.890,00\nR$ 4.052,00\nR$ 4.123,00\nR$ 4.175,00\nR$ 4.283,00\nR$ 6.138,00\n\nFonte: PNAD. Elaboração: ILAESE.\nO fenômeno da desindustrialização relativa pode ser notado, igualmente, na análise da\ncomposição da massa de trabalhadores empregados por subsetor, indicada abaixo:\n2013\nExtrativa Mineral\nProd. Mineral não Metálico\nIndústria Metalúrgica\nIndústria Mecânica\nElétrico e Comunicação\nMaterial de Transporte\nMadeira e Mobiliário\nPapel e Gráfico\nBorracha, Fumo, Couros\nIndústria Química\nIndústria Têxtil\nIndústria Calçados\nAlimentos e Bebidas\nServiço Utilidade Pública\nConstrução Civil\nComércio Varejista\nComércio Atacadista\nInstituição Financeira\nAdm Técnica Profissional\nTransporte e Comunicações\nAloj Comunic\nMédicos Odontológicos Vet\nEnsino\nAdministração Pública\nAgricultura\nTotal\n\n2014\n\n2015\n\n2016\n\n2017\n\n2018\n\n2019\n\n2020\n\n2021\n\n2022\n\n2023\n\n2024\n\n2025\n\n65.708\n64.503\n60.108\n58.166\n59.069\n58.815\n62.798\n64.898\n63.587\n70.975\n73.642\n75.886\n78.433\n56.503\n57.008\n52.812\n49.079\n46.834\n46.656\n45.761\n46.839\n53.822\n52.813\n52.680\n52.808\n52.619\n126.586\n119.582\n105.797\n100.873\n101.652\n106.854\n110.139\n111.747\n106.732\n134.324\n136.637\n138.813\n138.381\n45.765\n45.726\n41.798\n37.708\n38.153\n40.227\n40.319\n43.475\n51.386\n53.657\n54.105\n55.926\n58.170\n30.342\n29.019\n24.778\n23.293\n23.337\n23.037\n24.571\n26.655\n25.615\n29.075\n29.519\n31.642\n32.643\n75.869\n68.224\n56.031\n46.917\n47.325\n46.347\n46.929\n48.003\n50.615\n52.920\n53.430\n59.125\n61.703\n49.562\n49.282\n43.903\n40.368\n40.351\n40.220\n39.690\n40.485\n43.898\n46.439\n45.927\n47.186\n48.228\n30.571\n30.432\n26.124\n24.572\n24.845\n24.658\n23.101\n22.571\n25.128\n24.941\n24.715\n25.492\n25.456\n28.135\n28.068\n25.768\n25.504\n24.707\n25.492\n25.395\n25.892\n28.990\n29.987\n30.397\n31.325\n30.153\n73.390\n75.151\n69.047\n68.222\n67.835\n71.134\n74.132\n79.189\n70.595\n87.194\n91.226\n96.676\n96.919\n113.313\n113.093\n99.716\n94.734\n93.530\n87.854\n87.235\n80.375\n101.885\n92.651\n88.854\n87.425\n87.145\n33.204\n32.629\n28.729\n31.230\n30.713\n30.252\n30.132\n25.642\n32.448\n30.646\n28.948\n28.889\n28.388\n188.627\n190.599\n193.533\n189.449\n199.211\n201.501\n208.189\n212.242\n197.333\n249.822\n259.877\n272.844\n277.979\n41.047\n44.161\n42.243\n40.659\n41.684\n42.941\n41.748\n42.141\n42.393\n41.594\n42.902\n41.902\n42.117\n341.421\n328.736\n271.665\n227.752\n218.895\n234.254\n249.787\n278.129\n259.670\n277.501\n338.630\n342.183\n332.046\n842.067\n855.793\n837.999\n815.757\n819.503\n814.284\n806.329\n777.465\n864.571\n858.532\n854.523\n866.215\n873.108\n153.757\n162.307\n157.065\n152.639\n147.965\n153.719\n161.413\n161.846\n173.894\n191.069\n209.585\n218.640\n222.896\n68.120\n69.751\n70.472\n68.907\n66.957\n68.754\n72.989\n69.853\n74.685\n79.257\n81.866\n82.789\n83.861\n503.741\n492.311\n464.343\n452.657\n465.629\n488.182\n523.454\n545.647\n510.265\n659.823\n713.476\n753.119\n778.310\n270.359\n273.428\n266.161\n255.622\n255.878\n258.171\n270.609\n267.758\n267.078\n299.815\n313.410\n326.570\n332.242\n396.677\n409.652\n404.239\n393.226\n389.552\n394.476\n396.075\n345.057\n419.095\n422.351\n435.305\n454.319\n462.282\n185.205\n194.325\n199.863\n200.917\n205.239\n216.363\n222.308\n235.445\n222.284\n267.789\n286.792\n302.576\n307.314\n180.878\n191.030\n191.031\n191.671\n186.675\n192.157\n189.510\n170.905\n194.842\n327.864\n391.640\n563.592\n614.618\n896.245\n889.911\n828.346\n779.916\n858.646\n839.120\n855.947\n846.967\n780.794\n798.838\n878.032\n842.292\n959.314\n259.988\n257.185\n259.545\n258.863\n256.734\n255.362\n247.465\n245.648\n274.061\n291.066\n293.752\n296.351\n300.966\n5.057.080 5.071.906 4.821.116 4.628.701 4.710.919 4.760.830 4.856.025 4.814.874 4.935.666 5.470.943 5.809.870 6.094.585 6.325.291\n\nFonte: RAIS. Elaboração: ILAESE.\n\n2025/2014\n21,60%\n-7,70%\n15,72%\n27,21%\n12,49%\n-9,56%\n-2,14%\n-16,35%\n7,43%\n28,97%\n-22,94%\n-13,00%\n45,84%\n-4,63%\n1,01%\n2,02%\n37,33%\n20,23%\n58,09%\n21,51%\n12,85%\n58,14%\n221,74%\n7,80%\n17,02%\n24,71%\n\n28"
+          },
+          {
+            "id": "pagina-29",
+            "titulo": "✔",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "✔\n✔\n✔\n\n✔\n\nEsses números nos permitem extrair as seguintes conclusões:\nMinas possui, ao fim de 2021, praticamente a mesma quantidade de trabalhadores formais\nverificados em 2014. Nesse período, a população do Estado cresceu 4,6%, o que equivale a\ndois milhões de pessoas.\nSetores de tecnologia de ponta, como elétrico e comunicação, possuem uma quantidade\nirrisória de trabalhadores empregados, apontando a debilidade da indústria de\ntransformação do Estado.\nA indústria de Material de Transporte, que engloba as montadoras de automóveis, a\nIndústria Têxtil, de Papel e Gráfico e Calçados foram as que mais retrocederam no período\ndo ponto de vista do emprego, reduzindo entre 2013 e 2025 em 9,56%, 22,94%, 16,36% e\n13% respectivamente. São justamente os setores que produzem produtos para o consumo\nfinal. É o fenômeno da desindustrialização relativa.\nÉ importante destacar um aspecto da classificação da RAIS hoje: desde o governo\nBolsonaro, alguns critérios na Rais foram sendo modificados e, permaneceram assim no\ngoverno Lula. Com isso, alguns dados apresentaram alterações significativas, dificultando\nsua comparação em série histórica. É o caso do item Ensino na tabela. O salto apresentado\nno número de trabalhadores classificados na educação reflete uma mudança de critério e\nnão o aumento real no número de posto de trabalho docente.]\nFonte: RAIS e Novo Caged. Elaboração: ILAESE.\n\nExtrativa Mineral\nProd. Mineral não Metálico\nIndústria Metalúrgica\nIndústria Mecânica\nElétrico e Comunic\nMaterial de Transporte\nMadeira e Mobiliário\nPapel e Gráfico\nBorracha, Fumo, Couros\nIndústria Química\nIndústria Têxtil\nIndústria Calçados\nAlimentos e Bebidas\nServiço Utilidade Pública\nConstrução Civil\nComércio Varejista\nComércio Atacadista\nInstituição Financeira\nAdm Técnica Profissional\nTransporte e Comunicações\nAlojamento\nMédicos Odontológicos Vet\nEnsino\nAdministração Pública\nAgricultura\n\n2011\n\n2012\n\n2013\n\n2014\n\n2015\n\n2016\n\n2017\n\n2018\n\n2019\n\n2020\n\nR$ 2.590\nR$ 1.264\nR$ 2.105\nR$ 2.006\nR$ 1.529\nR$ 2.097\nR$ 946\nR$ 1.466\nR$ 1.255\nR$ 1.563\nR$ 809\nR$ 711\nR$ 1.157\nR$ 3.112\nR$ 1.314\nR$ 886\nR$ 1.266\nR$ 3.468\nR$ 1.398\nR$ 1.382\nR$ 987\nR$ 1.347\nR$ 2.306\nR$ 2.104\nR$ 871\n\nR$ 2.988\nR$ 1.413\nR$ 2.251\nR$ 2.168\nR$ 1.684\nR$ 2.300\nR$ 1.071\nR$ 1.586\nR$ 1.413\nR$ 1.728\nR$ 882\nR$ 835\nR$ 1.298\nR$ 3.329\nR$ 1.480\nR$ 996\nR$ 1.403\nR$ 3.785\nR$ 1.501\nR$ 1.541\nR$ 1.098\nR$ 1.497\nR$ 2.439\nR$ 2.384\nR$ 1.006\n\nR$ 3.156\nR$ 1.554\nR$ 2.417\nR$ 2.260\nR$ 1.841\nR$ 2.482\nR$ 1.200\nR$ 1.671\nR$ 1.571\nR$ 1.935\nR$ 968\nR$ 951\nR$ 1.433\nR$ 3.484\nR$ 1.629\nR$ 1.090\nR$ 1.538\nR$ 4.043\nR$ 1.649\nR$ 1.669\nR$ 1.185\nR$ 1.653\nR$ 2.690\nR$ 2.553\nR$ 1.128\n\nR$ 3.480\nR$ 1.707\nR$ 2.627\nR$ 2.495\nR$ 1.996\nR$ 2.718\nR$ 1.320\nR$ 1.797\nR$ 1.716\nR$ 2.101\nR$ 1.051\nR$ 1.070\nR$ 1.524\nR$ 3.634\nR$ 1.700\nR$ 1.173\nR$ 1.687\nR$ 4.353\nR$ 1.795\nR$ 1.803\nR$ 1.273\nR$ 1.793\nR$ 2.937\nR$ 2.831\nR$ 1.218\n\nR$ 3.603\nR$ 1.865\nR$ 2.802\nR$ 2.608\nR$ 2.290\nR$ 3.021\nR$ 1.417\nR$ 1.957\nR$ 1.917\nR$ 2.294\nR$ 1.140\nR$ 1.192\nR$ 1.628\nR$ 4.094\nR$ 1.792\nR$ 1.260\nR$ 1.829\nR$ 4.922\nR$ 1.951\nR$ 1.948\nR$ 1.367\nR$ 1.922\nR$ 3.186\nR$ 3.229\nR$ 1.327\n\nR$ 3.674\nR$ 1.986\nR$ 2.952\nR$ 2.725\nR$ 2.412\nR$ 3.465\nR$ 1.536\nR$ 2.097\nR$ 2.076\nR$ 2.565\nR$ 1.249\nR$ 1.298\nR$ 1.765\nR$ 4.374\nR$ 1.903\nR$ 1.369\nR$ 1.988\nR$ 4.932\nR$ 2.091\nR$ 2.106\nR$ 1.497\nR$ 2.068\nR$ 3.377\nR$ 3.540\nR$ 1.459\n\nR$ 3.835\nR$ 2.056\nR$ 3.042\nR$ 2.832\nR$ 2.482\nR$ 3.575\nR$ 1.613\nR$ 2.159\nR$ 2.099\nR$ 2.697\nR$ 1.322\nR$ 1.398\nR$ 1.872\nR$ 4.334\nR$ 1.977\nR$ 1.449\nR$ 2.130\nR$ 5.290\nR$ 2.208\nR$ 2.223\nR$ 1.603\nR$ 2.197\nR$ 3.456\nR$ 3.646\nR$ 1.549\n\nR$ 3.853\nR$ 2.085\nR$ 3.059\nR$ 2.767\nR$ 2.554\nR$ 3.705\nR$ 1.652\nR$ 2.265\nR$ 2.118\nR$ 2.681\nR$ 1.355\nR$ 1.460\nR$ 1.895\nR$ 4.544\nR$ 2.010\nR$ 1.491\nR$ 2.151\nR$ 5.387\nR$ 2.266\nR$ 2.285\nR$ 1.646\nR$ 2.255\nR$ 3.511\nR$ 3.762\nR$ 1.596\n\nR$ 4.056\nR$ 2.141\nR$ 3.072\nR$ 2.679\nR$ 2.625\nR$ 3.614\nR$ 1.675\nR$ 2.319\nR$ 2.169\nR$ 2.739\nR$ 1.385\nR$ 1.489\nR$ 1.918\nR$ 4.532\nR$ 2.027\nR$ 1.522\nR$ 2.193\nR$ 5.483\nR$ 2.249\nR$ 2.230\nR$ 1.640\nR$ 2.304\nR$ 3.499\nR$ 3.861\nR$ 1.627\n\nR$ 4.298\nR$ 2.126\nR$ 3.676\nR$ 2.690\nR$ 2.494\nR$ 3.583\nR$ 1.637\nR$ 2.249\nR$ 2.111\nR$ 2.695\nR$ 1.319\nR$ 1.445\nR$ 1.954\nR$ 4.605\nR$ 2.031\nR$ 1.515\nR$ 2.242\nR$ 5.575\nR$ 2.255\nR$ 2.165\nR$ 1.569\nR$ 2.331\nR$ 3.062\nR$ 4.143\nR$ 1.705\n\n2021\n\n2022\n\n2023\n\n2024\n\n2025 2025/2018 Variação Real\n\nR$ 4.639 R$ 7.257 R$ 5.392 R$ 5.563 R$ 5.939\nR$ 2.334 R$ 2.733 R$ 2.753 R$ 2.913 R$ 3.066\nR$ 3.846 R$ 4.248 R$ 3.715 R$ 3.880 R$ 4.115\nR$ 2.928 R$ 3.579 R$ 3.462 R$ 3.623 R$ 3.816\nR$ 2.715 R$ 3.185 R$ 3.328 R$ 3.541 R$ 3.690\nR$ 3.836 R$ 4.566 R$ 4.414 R$ 4.641 R$ 4.758\nR$ 1.757 R$ 1.952 R$ 2.052 R$ 2.206 R$ 2.353\nR$ 2.546 R$ 2.875 R$ 2.916 R$ 3.080 R$ 3.237\nR$ 2.308 R$ 2.800 R$ 2.742 R$ 2.970 R$ 3.154\nR$ 2.886 R$ 3.623 R$ 3.458 R$ 3.672 R$ 3.935\nR$ 1.460 R$ 1.739 R$ 1.721 R$ 1.823 R$ 1.934\nR$ 1.577 R$ 1.808 R$ 1.933 R$ 2.102 R$ 2.262\nR$ 2.077 R$ 2.585 R$ 2.392 R$ 2.533 R$ 2.691\nR$ 4.658 R$ 6.007 R$ 5.339 R$ 5.671 R$ 6.043\nR$ 2.211 R$ 2.950 R$ 2.526 R$ 2.704 R$ 2.873\nR$ 1.638 R$ 2.060 R$ 1.904 R$ 2.039 R$ 2.170\nR$ 2.381 R$ 3.174 R$ 2.779 R$ 2.954 R$ 3.089\nR$ 5.833 R$ 13.651 R$ 6.576 R$ 6.859 R$ 7.143\nR$ 2.469 R$ 3.062 R$ 2.812 R$ 2.972 R$ 3.129\nR$ 2.371 R$ 2.924 R$ 2.787 R$ 2.964 R$ 3.146\nR$ 1.689 R$ 2.129 R$ 1.889 R$ 2.022 R$ 2.125\nR$ 2.469 R$ 3.454 R$ 2.762 R$ 3.055 R$ 2.991\nR$ 3.423 R$ 3.655 R$ 3.364 R$ 3.107 R$ 2.598\nR$ 4.138 R$ 4.631 R$ 4.450 R$ 5.294 R$ 5.411\nR$ 1.808 R$ 2.098 R$ 2.102 R$ 2.268 R$ 2.456\n\n54,16%\n47,02%\n34,53%\n37,93%\n44,46%\n28,41%\n42,48%\n42,96%\n48,95%\n46,78%\n42,74%\n54,96%\n42,03%\n32,98%\n42,92%\n45,56%\n43,61%\n32,58%\n38,12%\n37,67%\n29,14%\n32,64%\n-26,01%\n43,83%\n53,83%\n\n9,02%\n1,88%\n-10,60%\n-7,20%\n-0,67%\n-16,73%\n-2,65%\n-2,17%\n3,82%\n1,64%\n-2,39%\n9,83%\n-3,11%\n-12,15%\n-2,21%\n0,43%\n-1,53%\n-12,55%\n-7,01%\n-7,47%\n-16,00%\n-12,50%\n-71,14%\n-1,31%\n8,69%\n\nFonte: RAIS. Elaboração: ILAESE.\nSome-se a isso que a quase totalidade dos setores perderam parte expressiva de sua\nremuneração em função de vários mecanismos como: ausência de reajustes salariais na proporção\nda inflação, rotatividade do trabalho, adoção de modalidades precárias de trabalho como o\ntrabalho parcial e intermitente.\nServiços de utilidade pública (água e luz) foi um dos setores com maior perda percentual\nno período analisado, 12,15%. Parte dos ataques perpetrado pelo governo que levou a\nprivatização da COPASA.\n\n29"
+          },
+          {
+            "id": "vemos-abaixo-a-variacao-percentual-nos-setores-assalariados-de-minas-ger",
+            "titulo": "Vemos abaixo a variação percentual nos setores assalariados de Minas Gerais. Mesmo",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Vemos abaixo a variação percentual nos setores assalariados de Minas Gerais. Mesmo\naqueles que apresentaram um bom desempenho no último período, não representam na prática\nsalários melhores frente aos demais setores. São setores em que, mesmo havendo ganho salarial,\ndevidos a lutas recentes, ainda possuem um salário nominal reduzido, refletindo a realidade que\nestamos descrevendo.\n\nVariação percentual da média de remuneração dos subsetores da economia do estado de Minas Gerais\nAgricultura\nAdministração Pública\nMédicos Odontológicos Vet\nAlojamento\nTransporte e Comunicações\nAdm Técnica Profissional\nInstituição Financeira\nComércio Atacadista\nComércio Varejista\nConstrução Civil\nServiço Utilidade Pública\nAlimentos e Bebidas\nIndústria Calçados\nIndústria Têxtil\nIndústria Química\nBorracha, Fumo, Couros\nPapel e Gráfico\nMadeira e Mobiliário\nMaterial de Transporte\nElétrico e Comunic\nIndústria Mecânica\nIndústria Metalúrgica\nProd. Mineral não Metálico\nExtrativa Mineral\n-20,00%\n\n-15,00%\n\n-10,00%\n\n-5,00%\n\n8,69%\n-1,31%\n-12,50%\n-16,00%\n-7,47%\n-7,01%\n-12,55%\n-1,53%\n0,43%\n-2,21%\n-12,15%\n-3,11%\n9,83%\n-2,39%\n1,64%\n3,82%\n-2,17%\n-2,65%\n-16,73%\n-0,67%\n-7,20%\n-10,60%\n1,88%\n\n0,00%\n\n9,02%\n5,00%\n\n10,00%\n\n15,00%\n\nFonte: RAIS. Elaboração: ILAESE.\n\n30"
+          },
+          {
+            "id": "minas-gerais-financas-publicas-e-piora-nos",
+            "titulo": "MINAS GERAIS: FINANÇAS PÚBLICAS E PIORA NOS",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "MINAS GERAIS: FINANÇAS PÚBLICAS E PIORA NOS\nSERVIÇOS\nUm dos aspectos importantes de análise são as receitas do estado. Compreender a atual\nsituação financeira, associando-a a base produtiva, nos revelará a real situação econômica do\nestado de Minas Gerais. Principalmente porque ao longo da última década o debate sobre a crise\nfiscal do estado, que possui um dívida gigantesca, foi foco dos debates políticos, jornais e\nmovimentos sociais.\nAssim apresentamos agora a evolução das receitas de Minas Gerais. No ano de 2025, a\nreceita total do estado foi de aproximadamente 132,6 bilhões de reais, enquanto que a receita\ncorrente líquida foi de 111,7 bilhões de reais:\n\nReceitas do Estado (em reais)\n132.672.322.619\n123.589.989.411\n111.722.744.770\n110.708.350.193\n103.465.726.490\n93.740.098.258\n91.978.749.211\n\n128.995.497.417\n104.254.001.143\n91.753.963.517\n\n83.965.708.706\n\n82.432.561.596\n70.579.703.124\n\n73.347.436.267\n\n2015\n\n2016\n\n67.728.886.652\n53.760.256.240\n\n50.100.335.830\n\n43.307.597.994\n\n38.055.929.988\n\n2014\n\n56.345.444.788\n\n53.731.469.131\n\n47.644.235.436\n\n2017\n\n2018\n\n86.912.164.766\n76.568.309.384\n\n2019\n\n2020\n\nReceita total (em reais)\nReceita (Impostos+transferências) (em reais)\n\n2021\n\n2022\n\n2023\n\n2024\n\n2025\n\nReceita corrente líquida (em reais)\n\n✔ Receita Total: considera toda arrecadação do estado de Minas Gerais, independente da sua\n\norigem. Todas demais receitas correspondem a uma fração da receita total.\n✔ Receita Corrente Líquida (RCL): considera todas as entradas líquidas periódicas do estado.\nNão se considera, por exemplo, receitas oriundas de vendas do patrimônio ou qualquer\noutro tipo de receita extraordinária. Ela serve como base para o teto de despesas em\npessoal em base na Lei de Responsabilidade Fiscal.\n✔ Receita por Impostos e Transferências (RIT): considera apenas os tipos de entradas\nindicados diretamente em seu nome, ou seja, impostos e transferências, deixando de fora\n31"
+          },
+          {
+            "id": "as-taxas-contribuicoes-e-outros-tipos-de-receitas-e-esta-ultima-a-base-p",
+            "titulo": "as taxas,contribuições e outros tipos de receitas. É esta última a base para o cálculo dos",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "as taxas,contribuições e outros tipos de receitas. É esta última a base para o cálculo dos\npisos constitucionais da Educação (25%) e da Saúde (15%).\nSe observarmos bem, perceberemos que a RCL e a RIT cresceram, entre 2020 e 2025, em\num patamar superior a receita total. Enquanto a receita total cresceu 27,26%, índice abaixo da\ninflação do período, que foi de 33,14%, a RCL cresceu 58,29% e a RIT cresceu 74,37%. Podemos\nentão concluir que as receitas do estado cresceram e que Minas tem aumentado sua arredação,\npassado a ser um estado mais rico no período receita, graças a administração do Zema? Não\nmesmo! Como vemos, a receita total do estado teve um desempenho abaixo da inflação, ou seja,\nnão houve crescimento real. Isso não significa que Minas tenha adquirido 74% a mais de recursos\nlivres para gastar. Assim, precisamos entender o movimento das demais receitas para encontrar\nos movimentos reais que explicam os índices acima apresentados.\n\n1. Uma análise das receitas de Minas Gerais\nEntre os anos de 2015 e 2020, Minas Gerais apresentou um cenário cronico de deficit\norçamentário devido a dimensão que a dívida do estado possuía, atingido um percentual 203% das\nreceitas do estado. No entanto, vemos que a partir de 2021, o estado passa a ter superavit\norçamentário. O principal motivo para essa mudança nos fiscal diz respeito a negociação da dívida,\nque veremos em detalhes no próximo capítulo.\n\nReceitas, Despesas e Superávit (em milhões de reais)\n\n76.155\n85.119\n70.958\n75.513\n71.907\n\n19.914\n\n25.514\n\n88.624\n98.392\n\n132.672\n128.995\n123.590\n118.716\n131.564\n128.891\n110.708\n104.254 116.490 118.411\n99.548\n110.409\n107.108\n\n54.844\n63.172\n54.694\n40.563\n32.633\n46.051\n39.299\n32.443\n\n25.292\n20.263\n-349 91 222 81 190 624 299 567 151 2.076 -948-2.165\n-4.163\n-8.964\n\n-11.233\n\n-2.854 104\n\n2.226 299 5.1791.108\n\n2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025\n\nReceitas\n\nDespesas\n\nSuperávit/Déficit\n\nFonte: Diário Oficial de Minas Gerais e Tesouro Nacional. Elaboração: ILAESE.\n\n32"
+          },
+          {
+            "id": "esses-indices-parecem-comprovar-a-enorme-eficiencia-da-gestao-de-romeu-z",
+            "titulo": "Esses índices parecem comprovar a enorme eficiência da gestão de Romeu Zema em",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Esses índices parecem comprovar a enorme eficiência da gestão de Romeu Zema em\nresolver o problema fiscal de Minas. Afinal, desde 2013 o Estado apresenta deficits em seu\norçamento. Entre 2015 e 2019, esse deficit foi, quase sempre, superior à 8 bilhões de reais. Caiu,\nno entanto, para 2,8 bilhões em 2020 e, por fim, entre 2021 e 2025 temos superávit, chegando a 5\nbilhões em 2024.\n\nSUPERÁVIT E DÉFICIT orçamentário (em milhões de reais)\n10.000\n\n5.179\n\n5.000\n\n2.226\n\n2.076\n151\n\n104\n\n299\n\n1.108\n\n2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025\n\n-948\n\n-5.000\n\n-10.000\n\n-2.165\n-4.163\n\n-8.964\n\n-2.854\n\n-8.632\n-9.768\n-11.233\n\n-15.000\n\nSeria o fim da crise financeira no Estado de Minas Gerais?\nAbsolutamente não. Na Lei Orçamentária Anual (LOA) aprovada para 2022, parcialmente\naprovada por Zema, temos a previsão de deficit no orçamento público de 11,7 bilhões de reais.\nIsto é o maior deficit nominal já registrado pelo Estado em toda sua história. A LOA indica,\nportanto, que Zema vai terminar o mandato com um deficit recorde.\nEstes números não são resultado orgânico de medidas tomadas pelo governo estadual,\nmas são resultado das seguintes ações:\n1. Venda do patrimônio público;\n2. renegociação da dívida;\n3. elevação do preço dos combustíveis;\nEm resumo, embora o número seja verdadeiro, os dados até 2025 não correspondem, de\nmodo algum, a situação financeira orgânica do Estado.\nDestacamos agora alguns pontos dos detalhamentos das receitas do estado que nos\najudam a comprovar a tese que ora apresentamos\n\n33"
+          },
+          {
+            "id": "fonte-diario-oficial-de-minas-gerais-e-tesouro-nacional-elaboracao-ilaes",
+            "titulo": "Fonte: Diário Oficial de Minas Gerais e Tesouro Nacional. Elaboração: ILAESE/IA.",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Fonte: Diário Oficial de Minas Gerais e Tesouro Nacional. Elaboração: ILAESE/IA.\n\n34"
+          },
+          {
+            "id": "um-programa-socialista-operario-e-popular",
+            "titulo": "UM PROGRAMA SOCIALISTA, OPERÁRIO E POPULAR",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "UM PROGRAMA SOCIALISTA, OPERÁRIO E POPULAR\nPARA MINAS GERAIS\n\nDiante da realidade apresentada e dos desafios vivenciados pela classe trabalhadora de\nMinas Gerais, o PSTU propõe 16 medidas para a construção de uma alternativa para os\ntrabalhadores possam superara o capitalismo\nSão elas:\n\n1 . SOCIALISMO OU BARBÁRIE\nNós explicamos o mundo de forma diferente. Os sinais de barbárie crescentes no mundo,\ntanto a miséria dos trabalhadores como os ataques ao meio ambiente, são produtos da\ncontradição entre a produção socializada de riqueza e sua apropriação privada (e cada vez mais\nconcentrada), ou seja, são produtos do próprio capitalismo-imperialismo, e da dominação\neconômica e política das grandes empresas.\nUm exemplo é a relação entre a produção de alimentos e a fome. Enquanto a grande\nprodução de alimentos no campo brasileiro é dedicada à exportação, cresce na mesma medida a\nfome do povo e a degradação do meio ambiente.\nIsso porque no capitalismo, o desenvolvimento tecnológico e científico, o aumento da\nprodutividade e todos os avanços que a humanidade produz, não são utilizadas em benefício da\nmaioria, para fazerem as pessoas trabalharem menos e terem uma vida mais confortável, mas\npara aumentar a exploração e os ganhos dos capitalistas. O desemprego hoje é gigante, mas a\ntendência é piorar e muito.\nVem aí a indústria 4.0, a Inteligência Artificial, a internet das coisas, que nas mãos dos\ncapitalistas servirão para demitir trabalhadores, rebaixar os salários, ampliar as desigualdades, e\ndegradar cada vez o meio ambiente.\nEstá provado que, com o atual desenvolvimento das forças produtivas no mundo, seria\npossível haver emprego para todos, com bons salários, trabalhando 20 horas semanais (dados do\nILAESE). Mas isso só será possível expropriando as grandes empresas e planejando a produção\npara garantir as necessidades dos trabalhadores e do povo e o respeito ao meio ambiente, e não\nos lucros dos grandes empresários.\nContudo, para realizar essas tarefas é necessário que o poder político passe às mãos dos\ntrabalhadores, que os próprios trabalhadores governem o país, através da democracia direta de\nseus conselhos populares. Mas é ilusão achar que essa passagem se dará de forma pacífica, por\nmeio das eleições, os trabalhadores devem lutar por ele, só por meio de uma revolução será\npossível arrancar da burguesia o poder político que permitirá executar essas medidas.\nPara evitar a barbárie, portanto, o socialismo, com a expropriação das grandes empresas\nmultinacionais e nacionais. A continuidade do capitalismo tem como consequência a ampliação da\n35"
+          },
+          {
+            "id": "barbarie-tanto-na-situacao-material-dos-trabalhadores-como-na-destruicao",
+            "titulo": "barbárie, tanto na situação material dos trabalhadores como na destruição do meio ambiente. A",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "barbárie, tanto na situação material dos trabalhadores como na destruição do meio ambiente. A\ndisjuntiva Socialismo ou Barbárie nunca foi tão atual.\nPara avançar nesse sentido, defendemos a mobilização coletiva dos trabalhadores por um\nlado. E, junto com isso, um programa de ruptura com o capitalismo, em direção a uma revolução\nsocialista.\nEste programa procura materializar propostas que partem das questões mais sentidas\npelos trabalhadores de Minas Gerais nos diversos temas e fazem a ponte com a necessidade de\num governo dos trabalhadores.\nO PSTU defende e luta:\n• O combate imediato à fome e a miséria;\n• A defesa da soberania e da ruptura com o imperialismo;\n• O combate a todas as formas de opressões;\n• A defesa do meio ambiente;\n• Para defender os trabalhadores, atacar as propriedades das grandes empresas.\n\n2. POR UM PROJETO DE SOBERANIA A SERVIÇO DAS NECESSIDADES DOS\nTRABALHADORES\nO PSTU propõe:\n• Controle operário da produção e das riquezas através de Conselhos Populares:\nPropomos instaurar Conselhos Populares que passarão a governar o Estado, as principais\nempresas do Estado. Seriam compostos através de eleição direta pelos operários das maiores do\nEstado, como Vale, CSN, FIAT, Vallourec, Petrobrás/REGAP. Onde todos operários e operárias,\nindependente se com contrato direto ou terceirizado, elegeriam os representantes a cada 100\ntrabalhadores. Cada fábrica elegeria seu Conselho Popular que se reuniria com os Conselhos de\noutras empresas, e formariam um Conselho Popular Regional.\n• Estatização das mineradoras e estabelecer o controle operário e popular da mineração.\nReestatização da Vale, da CSN, reversão de todas as empresas privatizadas. Confisco das contas\nbancárias, dividendos, abertura das contas aos trabalhadores e a população trabalhadora.\n• Proibição da mineração nas Serras que abastecem de água a população da Grande BH.\n• Fortalecimento dos bancos de fomento estatais, como BDMG, no sentido de abrir crédito barato\naos pequenos e médios empresários. Uso dos dividendos da Vale, CSN, Regap, etc… nas mãos do\nEstado para formar caixa e abertura do crediário a juros baratos.\n• Criação de empresas estatais voltadas para desenvolvimento e produção nas áreas de alta\ntecnologia. Utilização de créditos oriundos dos dividendos retidos pelo Estado para esses\ninvestimentos.\n• Criação de Polos e cidades tecnológicas em cidades minerárias para substituir o atual modeloprimário-predatório para novas indústrias limpas e de alta tecnologia.\n• Criação de uma empresa estatal metal-mecânica para produção de veículos de transporte\ncoletivo, fundamentalmente para transporte ferroviário (metrô e trens de carga e passageiros);\n• Criação de universidades estaduais com objetivo de formar profissionais em diversas áreas da\nengenharia.\n\n36"
+          },
+          {
+            "id": "3-reverter-todas-privatizacoes-do-governo-zema-e-estatizar",
+            "titulo": "3. REVERTER TODAS PRIVATIZAÇÕES DO GOVERNO ZEMA E ESTATIZAR",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "3. REVERTER TODAS PRIVATIZAÇÕES DO GOVERNO ZEMA E ESTATIZAR\nAS EMPRESAS ESTRATÉGICAS\nO PSTU propõe:\n• Reverter todas as privatizações do governo de Romeu Zema, seja de empresas ou de\ninfraestrutura.\n• Estatizar ou reestatizar empresas chaves no Estado, com impacto direto sobre toda sua\npopulação, como aquelas responsáveis por energia, saneamento, água e esgoto.\n\n4. COMBATE AO DESEMPREGO E AO SUBEMPREGO\nO PSTU propõe:\n• Criação de empregos através de um plano de obras públicas necessárias, como saneamento\nbásico, postos de saúde, escolas a serem construídas por uma 100% pública e estatal, controlada\npelos trabalhadores;\nAlém disso, lutamos por:\n• Jornada diária de 6 horas (30 horas semanais), para todos. Isso permitiria a criação de outro\nturno de trabalho, empregando mais pessoas, dividindo entre todos do trabalho necessário ao\npaís;\n• Auxílio emergencial de um salário-mínimo para todos os trabalhadores desempregados como\nmedida transitória até que esse plano esteja empregando a todos. Esse auxílio emergencial pode\nservir como uma medida transitória, em direção ao pleno emprego.\n• Proibição da demissão imotivada e expropriação sem indenização das fábricas e empresas que\nreceberam isenções fiscais e demitirem;\n• Garantia por lei de estabilidade no emprego;\n• Defendemos o fim imediato da precarização do trabalho, com todos os trabalhadores com\ncarteira assinada, estabilidade no emprego, direito a férias, décimo terceiro e aposentadoria;\n• Para empregar a todos, é necessário um grande plano de obras públicas para construir casas\npopulares (e assim suprir o grande déficit habitacional), saneamento básico, hospitais, escolas,\ncreches, espaços culturais, estradas e metrôs;\n\n5. POR UM SISTEMA UNIVERSAL DE EDUCAÇÃO SOB CONTROLE DA\nPOPULAÇÃO\nO PSTU propõe:\n• Investir 30% do total da arrecadação em educação;\n• Reversão imediata do leilão das 95 escolas;\n• Pagamento do Piso Nacional do Magistério aos Trabalhadores em Educação sem distinção para a\njornada de trabalho vigente de 24 horas e trinta minutos;\n37"
+          },
+          {
+            "id": "plano-de-carreira-unico-dos-professores",
+            "titulo": "• Plano de carreira único dos professores;",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "• Plano de carreira único dos professores;\n• Universalizar a educação pública para todas as crianças e jovens e adultos. Ninguém fora da\nescola!;\n• Levantamento da demanda para construção de escolas;\n• Garantia de matrícula para todas as crianças nas escolas públicas;\n• Campanha e busca ativa das famílias para efetuarem as matrículas nas escolas regulares com\nprofissionais concursados;\n• Incentivar pesquisas com foco no desenvolvimento de novos métodos e técnicas pedagógicas,\nde materiais didáticos, de equipamentos e de recursos de tecnologia assistiva;\n• Formação continuada de professores em práticas pedagógicas inclusivas nas diferentes áreas\ncurriculares;\n• Salas de recursos de tecnologia assistiva, serviços de acessibilidade e do Atendimento\nEducacional Especializado em cada escola, garantindo o acesso ao currículo e o exercício da\nautonomia dos estudantes com deficiência;\n• Oficialização da Língua de Sinais Brasileira e a implementação da Educação Bilíngue tendo a\nLibras como língua de instrução, ensino, comunicação e interação;\n• Auditoria popular e independente para cancelamento do processo de privatização continuada da\neducação. Acabar com toda gestão privada das escolas, através das concessões administrativas\nPPPs (Parcerias Público-Privadas), OS’s (supostas “Organizações Sociais”) ou de Fundações\nPrivadas. Verbas públicas para a educação pública e nenhum tostão para os milionários donos das\nescolas privadas e fundações que lucram com a educação;\n• Fim da terceirização de forma a fazer uma transição com a manutenção dos atuais trabalhadores\nem educação e a inserção de concursados no lugar daqueles que forem se aposentando ou\ndaqueles que optarem por sair. Concurso com provas práticas para os cargos que exigem baixa\nescolaridade;\n• Descentralização da estrutura educacional, de forma a ampliar a gestão democrática, política e\nadministrativa, criando e fortalecendo os conselhos escolares;\n• Escolha do cargo de Secretário Estadual de Educação e diretores das Superintendências\nRegionais através de eleição feita pelos trabalhadores em educação;\n• Ampliação do acesso público de internet e garantia de instrumentos tecnológicos para\nestudantes e trabalhadores em educação (ex.: tablets, celulares, notebooks);\n• Ampliação das bibliotecas públicas em todo o Estado;\n• Pagamento do Piso Salarial Nacional;\n• Incentivo ao esporte amador e à retomada dos jogos escolares de várias modalidades nas\nescolas estaduais;\n• Ampliação das vagas no Ensino Técnico;\n• Redução de alunos por turma;\n• Por uma política de valorização e financiamento da cultura com construção de teatros e outras\niniciativas culturais nos bairros;\n• Que escolas de música e artes sejam incluídas no plano de obras públicas. Contratação de\nprofessores de arte e criação de espaço com equipamentos e infraestrutura para elas nas escolas;\n• Por uma campanha educativa nas escolas estaduais e na sociedade contra o machismo e as suas\nconsequências, como o estupro, feminicídios e agressões às mulheres;\n• Zerar o déficit de creches que existe no estado;\n• Contratação de todos os trabalhadores em educação por concurso público;\n• Equalização dos conteúdos nas grades curriculares;\n• Garantia do emprego para todas as ASBs com os mesmos direitos do cargo efetivo;\n38"
+          },
+          {
+            "id": "por-um-plano-de-cargos-carreiras-e-salarios-que-valorize-os-professores",
+            "titulo": "• Por um plano de cargos, carreiras e salários que valorize os professores;",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "• Por um plano de cargos, carreiras e salários que valorize os professores;\n• Garantia de merenda de qualidade para os alunos;\n• Fim dos sistemas de avaliação que só beneficiam empresas privadas e a meritocracia;\n• Integração das redes de proteção à criança e adolescente em vulnerabilidade social;\n• Aumento dos investimentos na UEMG e Unimontes. Contra a entrega da UEMG para a União!\n• Por uma Educação pública, gratuita e de qualidade;\n• Tempo de planejamento coletivo nas escolas;\nAlém disso, lutamos por:\n• Pela implementação do Plano Nacional de Educação Especial, imposto por meio de decreto\npresidencial-que retrocede na visão de uma educação inclusiva para todos;\n• A acessibilidade nas escolas que possa de fato incluir os estudantes e trabalhadores com\ndeficiência em educação;\n• Por recursos públicos exclusivamente para a educação pública;\n• Posicionamento contrário a projetos de retrocesso educacional como os defendidos pelas\nbancadas fundamentalistas ao tentarem impor a proibição de uma educação que garanta a\ndiversidade e pluralidade do ensino;\n• Por uma política de cuidado com a saúde de todos os trabalhadores em educação;\n• O direito à aposentadoria. Revogação da reforma da previdência e todos os ataques perpetrados\ncontra os trabalhadores;\n• Contra a privatização das universidades, em qualquer uma de suas funções: pesquisa, extensão e\neducação.\n• Contra o Novo Ensino Médio e a BNCC\n• Fim da municipalização das escolas estaduais.\n• Todos os estudantes nas escolas\n\n6. POR UM SISTEMA DE SAÚDE PÚBLICO, GRATUITO E DE QUALIDADE\nO PSTU propõe:\n• Acabar com o processo de privatização continuada da saúde. Acabar com toda gestão privada\nnos estabelecimentos de saúde, através das OS’s (supostas “Organizações Sociais”) e OSCIPs;\n• A estatização dos hospitais filantrópicos;\n• Valorização salarial e do Plano de carreira dos profissionais da saúde. Carga horária de 30h\nsemanais para todos os profissionais de saúde;\n• Aplicação do piso da enfermagem para todos os profissionais;\n• Extinção das comunidades terapêuticas, acompanhada de ampliação dos estabelecimentos\npúblicos de saúde mental (CAPS, CERSAMs, Residências Terapêuticas, Centros de Convivência)\ncom aumento de investimentos, baseados na reforma psiquiátrica antimanicomial. Contra a\ninternação compulsória;\n• Ampliação das políticas e investimento no combate às doenças crônicas;\n• Ampliação da política de saúde para os idosos;\n• Melhorias na estrutura da Rede Fhemig, com realização de concurso público e valorização dos\nprofissionais. Contra a privatização da Fhemig!\n\n39"
+          },
+          {
+            "id": "construcao-de-politica-de-saude-para-as-mulheres-mais-ampla-que-sua-saud",
+            "titulo": "• Construção de política de saúde para as mulheres mais ampla que sua saúde reprodutiva, que",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "• Construção de política de saúde para as mulheres mais ampla que sua saúde reprodutiva, que\nabarque especificidades das mulheres negras;\n• Implementação de Conselhos Populares, para que trabalhadores e usuários controlem a\nprestação dos serviços de saúde do Estado;\n• Fim da terceirização dos serviços de saúde;\n• Implementação de Assistência Farmacêutica de qualidade e com acesso real e qualificado aos\nmedicamentos. Pela ampliação do investimento na Farmácia de Minas.\n• Ampliação das unidades de urgência e emergência, assistência bucal;\n• Pela valorização da FUNED. Com investimento e valorização dos profissionais;\n• Contra o Regime de Recuperação Fiscal;\nAlém disso, lutamos por:\n• Pelo SUS 100% público, gratuito e de qualidade, com investimento real;\n• Pelo fim da gestão privada da saúde através EBSERH, Fundações Privadas, O.S, OSCIPs,\nComunidades terapêuticas, ou outras;\n• Por uma política de drogas, com a legalização e descriminalização, garantia de campanhas e\natendimento de saúde pelo Estado dos usuários e familiares;\n• Ampliação da Rede Física do SUS em Minas Gerais.\n\n7. ESTATIZAÇÃO SEM INDENIZAÇÃO DO TRANSPORTE E TARIFA ZERO\n\nO PSTU propõe:\n• O PSTU defende a estatização das empresas de ônibus e a construção de uma empresa única de\ntransportes urbanos, que integre ônibus, trens e metrôs sob controle dos funcionários e usuários\ndo sistema;\n• Prioridade ao transporte metroferroviário;\n• Fazer do transporte rodoviário um apêndice do transporte metroferroviário, ao contrário do que\nocorre hoje.\n\n40"
+          },
+          {
+            "id": "8-um-estado-forjado-na-escravidao-e-na-opressao-combate",
+            "titulo": "8. UM ESTADO FORJADO NA ESCRAVIDÃO E NA OPRESSÃO: COMBATE",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "8. UM ESTADO FORJADO NA ESCRAVIDÃO E NA OPRESSÃO: COMBATE\nAO RACISMO, AO MACHISMO, Á LGBTFOBIA, Á XENOFOBIA E Á\nEXPLORAÇÃO\n\nO PSTU propõe:\n• Uma política de criação de empregos na cidade que leve em conta as desigualdades oriundas das\nopressões conjugada com uma legislação que proíba a desigualdade salarial entre homens e\nmulheres;\n• Criação de lavanderias e ampliação dos restaurantes públicos para que o trabalho doméstico\nseja garantido pela cidade e não necessariamente pelas mulheres;\n• Educação sexual nas escolas, de forma laica, e que auxilie as mulheres e LGBTs compreenderem\nseu corpo e sua sexualidade;\n• Contraceptivos gratuitos nas Unidades Básicas de Saúde como DIU, pílula anticoncepcional,\npílula do dia seguinte, camisinha feminina e masculina, sem burocracia;\n• Ampliação das casas abrigo para acolhimento de mulheres vítimas de violência, incluindo política\nde atendimento às mulheres trans;\n• Recorte nas políticas habitacionais para a garantia de moradia em situação emergencial para\nmulheres vítimas de violência. Incluindo mulheres trans;\n• Criação de políticas específicas de saúde (ver programa saúde), emprego e renda para a\njuventude.\nAlém disso, lutamos por:\n• O capitalismo utiliza as opressões para explorar ainda mais os setores da classe trabalhadora.\nDesta forma, o racismo, o machismo e a lgbtfobia, além de dividir a classe, são instrumentalizados\npara aumentar os lucros do capital. Isso significa, para esses setores, uma brutal violência diária\npor parte da polícia. Defendemos o combate a toda forma de opressão. Pela aplicação e ampliação\nda Lei Maria da Penha, o fim do genocídio da juventude negra, regularização das terras\nquilombolas, garantia de direitos, papéis e fim do preconceito contra imigrantes haitianos,\nbolivianos, cubanos e outros e pela criminalização da LGBTfobia;\n• Uma política de valorização salarial para as mulheres negras que as coloque em pé de igualdade\nno mercado de trabalho.\n• Políticas públicas reais de combate a violência à mulher. A aplicação e ampliação da Lei Maria da\nPenha, com mais construções de Casas Abrigo, delegacias especializadas em violência à mulher,\nCentros Integrados de Atendimento à Mulher para atendimento social, psicológico, médico e\njurídico à mulher vítima de violência;\n• Pela preparação mais qualificada dos órgãos de segurança para atendimento à mulher\nviolentada;\n• Pela ampliação da capacidade de atendimento da capital e julgamento dos casos de violência\npelo Poder Judiciário.\n• Contra o genocídio da juventude negra;\n• Pelo fim dos autos de resistência;\n• Contra a redução da maioridade penal;\n• Pela titulação das terras quilombolas e indígenas;\n41"
+          },
+          {
+            "id": "contra-a-criminalizacao-dos-movimentos-sociais",
+            "titulo": "• Contra a criminalização dos movimentos sociais;",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "• Contra a criminalização dos movimentos sociais;\n• Pela real implementação das leis 10.639 e 11.645;\n• Pela legalização do aborto.\n\n9. NÃO PAGAMENTO DA DÍVIDA À UNIÃO E AOS BANCOS\nO PSTU propõe:\n• Defendemos a suspensão imediata do pagamento da dívida do Estado à União e, por meio dela,\naos banqueiros. A negociação não resolve o problema da população;\n• Uma auditoria, que, inclusive, possa apontar desvios e corrupção e fazer ressarcir e colocar na\ncadeia quem os praticou.\nAlém disso, lutamos por:\n• Revogar a chamada “Lei de Responsabilidade Fiscal” foi instituída em todo lugar a partir do\ngoverno FHC, como exigência dos EUA e do Banco Mundial;\n• Acabar com a Lei de Responsabilidade Fiscal e criar, em seu lugar, uma Lei de Responsabilidade\nSocial. A prioridade de um governo não pode ser um punhado de banqueiros e empresários\nbilionários. A prioridade tem que ser os trabalhadores e maioria do povo.\n\n10. VIRAR DO AVESSO A ESTRUTURA DE IMPOSTOS NO PAÍS E NO\nESTADO\n\nO PSTU propõe:\n• Fim da Lei Kandir e controle do comércio exterior: A Lei Kandir foi criada para conceder\nprivilégios a grandes empresas exportadoras, principalmente de minério e alimentos\ntransformados em “commodities”, enquanto encarecem os preços nos supermercados;\n• Fim das isenções fiscais as grandes empresas privadas, nacionais e internacionais;\n• Expropriação das empresas com dívidas acumuladas em impostos e benefícios aos seus\ntrabalhadores.\n\nAlém disso, lutamos por:\n\n42"
+          },
+          {
+            "id": "substituicao-dos-impostos-sobre-os-produtos-que-recai-sobre-a-massa-da-p",
+            "titulo": "• Substituição dos impostos sobre os produtos – que recai sobre a massa da população – por um",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "• Substituição dos impostos sobre os produtos – que recai sobre a massa da população – por um\nimposto sobre o lucro, dividendos, renda e propriedade fortemente progressivo.\n• Revisão completa dos royalties de todo setor extrativo. Um royalties que abarque toda fatia do\nlucro das mineradoras e demais indústrias extrativas que exceda o lucro bruto médio do mercado.\n• Defendemos a isenção do pagamento de imposto de renda para quem ganha até 10 saláriosmínimos (hoje é até 2,5). A partir daí se instituiria uma alíquota crescente de acordo com a renda\nindividual, com uma alíquota de 50% para os mais ricos.\n\n11. CONTRA A BARBÁRIE ECOLÓGICA\nO PSTU propõe:\n• COPASA seja 100% estatal;\n• Desenvolver políticas públicas sustentáveis que garantam o abastecimento público das águas em\nMinas Gerais, mesmo em períodos de estiagem hídrica;\n• Incentivar e valorizar inciativas populares que visam preservar e conservar as nascentes urbanas;\n• Incentivar as captações das águas das chuvas;\n• Exigir que as empresas privadas desenvolvam sistemas de recirculação das águas e captação das\náguas das chuvas;\n• Exigir que obras públicas e privadas favoreçam a infiltração das águas para que haja recarga\nhídrica dos lençóis freáticos;\n• Diferentemente do que aconteceu nos anos anteriores, que a população seja imediatamente\ninformada sobre a possibilidade de uma crise no abastecimento público das águas;\n• Cobrar medidas de racionamento, rodízio e tarifação das empresas privadas e não da população;\n• Desenvolver programas de educação ambiental que colaborem com a emancipação humana e\nnão somente reproduza uma economia de consumo que afeta somente a classe trabalhadora mais\npauperizada;\n• Por um política habitacional que apresente alternativas de moradia para a população localizada\nem áreas de risco, para que esta população tenha acesso ao tratamento do esgoto sanitário de\nqualidade.\n\nAlém disso, lutamos por:\n• Expropriar as madeireiras que queimam a Amazônia;\n• Prisão aos garimpeiros ilegais e grileiros;\n• Fortalecimento dos órgãos ambientais, com execução integral do orçamento, a contratação de\nequipes novas para ações de fiscalização e a elaboração de um plano real de contingência da\nperda de floresta;\n• Normas para redução da emissão de carbono, com a expropriação das empresas que as\nrompam;\n\n43"
+          },
+          {
+            "id": "fontes-limpas-de-energia-como-a-eolica-para-ampliar-a-geracao-de-energia",
+            "titulo": "• Fontes limpas de energia, como a eólica, para ampliar a geração de energia elétrica com",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "• Fontes limpas de energia, como a eólica, para ampliar a geração de energia elétrica com\npreservação ambiental e não com obras monstruosas como Belo Monte;\n• Demarcação das terras indígenas e quilombolas;\n• Aumento das áreas de preservação ambiental, com fortalecimento dos órgão públicos de\nfiscalização e incorporação da sociedade no controle dessas áreas;\n• Capitalismo não rima com meio ambiente! Só uma sociedade socialista, igualitária e sem\nexploradores poderá construir uma relação harmônica com o meio ambiente!\n\n12. NENHUMA FAMÍLIA SEM-TETO\nO PSTU propõe:\n• Dar a função de ser moradias populares a prédios, casarões e edificações que se encontram\ninutilizadas por um período maior que 2 anos. As prefeituras possuem um cadastro de\nacompanhamento destes imóveis e alguns deles foram alvos de ocupações. Estes imóveis devem\nser tomados pelas administrações municipais ou pela COHAB serem reformados para servirem\ncomo moradias ou espaços públicos, de cultura, educação e lazer. Estes imóveis devem ser de\npropriedade pública, dos municípios ou estado, e serem destinados ao aluguel social, por um\npreço justo, nunca superior a 1/4 da renda dos que necessitam; e sem nenhum custo para os que\nnão tem renda;\n• Desapropriação de terrenos abandonados há mais de 10 anos na cidade, para que sejam\nutilizados para moradia, reservas verdes ou para a construção de aparelhos públicos;\n• Criação de uma empresa estatal de obras para garantir a construção das moradias populares que\nfaltarem, a baixo custo, garantindo emprego, qualidade e atacando a especulação imobiliária;\nalém de garantir a universalização do saneamento básico;\n• Aplicação de um percentual fixo do orçamento estadual durante 10 anos em moradia tendo em\nvista zerar o déficit habitacional;\n• Controle dos preços dos aluguéis, limitado à média de recomposição salarial dos trabalhadores\nassalariados;\n• Implementação de um banco de terras a partir das propriedades estatais com impedimento da\nvenda ou concessão das mesmas para a iniciativa privada. Sendo obrigatoriamente destinadas a\nfinalidade social, construção de moradias ou aparelhos públicos de atendimento à comunidade.\nComplementação do banco com desapropriação de terras em situação irregular e que não\ncumprem seu papel social;\n• Regularização e urbanização das ocupações urbanas;\n• Criação de um recorte específico de moradias populares para mulheres vítimas de violência,\nincluindo mulheres trans;\n• Ampliação dos abrigos combinado com um programa de atendimento de moradias sociais às\npessoas em situação de rua;\n• Obrigatoriedade de implementação de projetos de captação de água das chuvas nos projetos\nimobiliários da cidade;\n44"
+          },
+          {
+            "id": "obrigatoriedade-e-subsidio-por-parte-do-estado-em-parceria-com-as-prefei",
+            "titulo": "• Obrigatoriedade e subsídio por parte do estado, em parceria com as prefeituras, para quem",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "• Obrigatoriedade e subsídio por parte do estado, em parceria com as prefeituras, para quem\nprecisa, de placas solares para os imóveis da cidade. (Determinação de prazo de alteração para as\nmoradias já construídas);\n• Ampliação das tarifas sociais de água e luz e regularização dos serviços nas diversas\ncomunidades urbanas e rurais;\n• Plano amplo de regularização fundiária que passe pela estrutura fundiária das moradias para\nalém da regularização das moradias;\n• Plano de remoção emergencial das famílias em áreas de risco.\nAlém disso, lutamos por:\n• Investimento de 6% do PIB nacional em moradia para solucionar o problema habitacional do\nBrasil em 12 anos. Parte do orçamento federal deve ser aplicado diretamente na habitação. Esta\ndeve ser tratada como uma questão social. De acordo com estudo da Fundação Getúlio Vargas\n(publicado em 2010) para acabar com o déficit habitacional no país deveria se investir pelo 6% do\nPIB durante 10 anos, o que significaria entregar 2 milhões de casas por ano durante 12 anos.\n• Além disso, o dinheiro precisa ser destinado à construção de moradias de acordo com a\nnecessidade da população e não ao interesse das construtoras.\n\n13. TODO APOIO A CRIAÇÃO CULTURAL\nO PSTU propõe:\n• Criação de conselhos populares de cultura em cada região de cada município;\n• Aumento dos recursos financeiros para a área cultural via não pagamento da dívida pública e\nexpropriação de grandes capitalistas do entretenimento;\n• Construção de equipamentos culturais necessários para garantir todas as condições de trabalho\ndos profissionais em arte e produção cultural;\n• Reconhecimento do trabalho em arte e produção cultural como de interesse público e\nconstrução de plano de carreira público;\n• Construção dos centros de referência em defesa das manifestações culturais de tradição para\nelaboração de programas a fim de extirpar os assédios da iniciativa privada sobre território e\npatrimônio cultural imaterial;\n• Fim imediato da política de “renúncia fiscal” realizada pelo Estado;\n• Desenvolver a ocupação e manutenção de espaços públicos tornando-os efetivamente\nequipamentos culturais para a produção, criação, discussão e fruição: praças, prédios\nabandonados e do patrimônio histórico;\n• Incentivar o controle dos trabalhadores da cultura sobre a produção artística e cultural em suas\nregiões, e para isso, a produção cultural deverá ser controlada e executada por conselhos\npopulares de cultura que reúnam os trabalhadores da cultura e os artistas de todo o Estado.\n• Realização periódica de Congressos Estaduais de Cultura constituídos por representantes eleitos\ndemocraticamente nos conselhos populares de cultura. Nos Congressos Estaduais de Cultura serão\nelaboradas as diretrizes de um programa estadual cujo objetivo seja transformar radicalmente o\nmodo como a cultura é produzida hoje no Estado.\n45"
+          },
+          {
+            "id": "concentracao-de-equipamentos-culturais-e-fomento-estatal-em-regioes-peri",
+            "titulo": "• Concentração de equipamentos culturais e fomento estatal em regiões periféricas do Estado",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "• Concentração de equipamentos culturais e fomento estatal em regiões periféricas do Estado\nassim como nas regiões periféricas de Belo Horizonte e região metropolitana. É necessário criar\nconselhos populares de cultura nas regiões periféricas da capital, com foco nos cinturões operários\nde Contagem e Betim.\n• Apoio e incentivo à ocupação dos espaços públicos urbanos por artistas de rua (palhaços,\nestátuas vivas, malabaristas, músicos), poetas e cordelistas. É necessário transformar as praças da\ncapital, da região metropolitana e de todo o Estado em espaços que garantam a livre ocupação\ndos artistas e trabalhadores da cultura.\n• Apoio e incentivo irrestrito ao hip hop militante que não será mais marginalizado, pois\nrepresenta a rebeldia da juventude e da classe trabalhadora negra. Os saraus poéticos e os\ndiversos slams de BH e da região metropolitana devem contar com apoio financeiro do Estado.\n• Apoio e incentivo à cultura LGBTQI+, pois ela representa a diversidade humana e está\nrelacionada a diversas manifestações artísticas, como a dança, o teatro, a música, o cinema, a\nfotografia, as artes performáticas, etc. Os grupos e shows de drag queens, as paradas LGBTQIA+ e\nas diversas manifestações culturais da comunidade lésbica, gay, bissexual, transgênero e queer\nserão incentivadas e apoiadas pelo Estado.\n• Apoio e financiamento de coletivos de artistas, que serão incentivados a se articular com os\nconselhos populares de cultura.\n• Apoio e financiamento dos blocos carnavalescos de rua em todo o Estado, pois mantêm a\ntradição de uma das mais democráticas manifestações culturais da classe trabalhadora brasileira.\nÉ necessário colocar um fim à exploração capitalista do carnaval de rua de BH e dos carnavais de\nrua nos demais municípios do Estado. É necessário dar autonomia aos blocos para que eles\nproduzam o carnaval diretamente, sem intermediários capitalistas.\n• Apoio e financiamento das diversas e riquíssimas manifestações da cultura popular e tradicional\nem Minas Gerais: grupos de capoeira, guardas de Congado, grupos de Folia de Reis, escolas de\nsamba, grupos circenses, grupos de cultura afro-brasileira, manifestações culturais dos povos\nmaxacali, xacriabá, pataxó, krenak, etc.\n• Apoio e financiamento para os festivais de arte e cultura espalhados pelo Estado e, sobretudo\npelo interior, como o Festivale, os diversos Festivais de Inverno, etc.\n• Aumento exponencial do orçamento para a área da cultura que será fixado no orçamento\nestadual a partir de ampla participação dos trabalhadores organizados em conselhos no processo\ndecisório.\n• Fim imediato da política de “renúncia fiscal” do Estado, que isenta empresas e o setor privado\npor meio de dedução de impostos. Os recursos orçamentários não serão desviados para o\nenriquecimento de “empresários da cultura” e para o “merchandising” de empresas e instituições\nfinanceiras. Quem irá custear a cultura no estado de Minas Gerais será a burguesia, sem nenhuma\ncontrapartida por parte dos impostos extraídos da classe trabalhadora.\n• Fomento à produção cultural no Estado em todos os setores: cinema, teatro, dança, artes\nplásticas, artes performáticas, música, circo, etc.\n• Incentivo à auto-organização dos artistas e trabalhadores da cultura em conselhos, comitês e\noutras formas organizativas que fortalecem os trabalhadores na luta de classes contra o capital e a\nindústria do entretenimento.\n• Construção de escolas de artes e ofícios em todo o Estado e manutenção das já existentes. É\nnecessário dar formação artística de qualidade para a juventude trabalhadora mineira.\n• Manutenção dos centros históricos mineiros e incentivo à ocupação popular desses espaços.\n• Ampliação da rede de equipamentos culturais, das casas de cultura, bibliotecas públicas e do\norçamento dessas unidades. Desenvolver a ocupação e a manutenção de espaços públicos,\n46"
+          },
+          {
+            "id": "tornando-os-efetivamente-equipamentos-culturais-para-producao-criacao-di",
+            "titulo": "tornando-os efetivamente equipamentos culturais para produção, criação, discussão e fruição:",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "tornando-os efetivamente equipamentos culturais para produção, criação, discussão e fruição:\npraças, prédios abandonados e patrimônio histórico.\n• Incentivo e financiamento de manifestações artísticas em ocupações de moradia.\n• Enfrentamento aos interesses especulativos imobiliários e comerciais que bloqueiam as\nmanifestações culturais. Expropriação dos prédios que há décadas não pagam IPTU e dos imóveis\ndesocupados que poderão se tornar centros culturais.\n• Expropriação de coleções de arte particulares (esculturas, quadros, tapeçaria, instrumentos\nmusicais, etc.) que hoje estão trancadas em mansões da burguesia para que sejam direcionadas\npara a exposição itinerante e socialização em fábricas, bairros operários, favelas e ocupações.\n• Transporte gratuito para equipamentos culturais aos finais de semana para possibilitar o máximo\nacesso da classe trabalhadora aos mesmos.\n• Extensão dos horários de funcionamento até as 22h dos museus, das bibliotecas e dos demais\nequipamentos culturais para que os trabalhadores possam acessá-los.\n• Livros para os trabalhadores por empréstimo nas principais estações de ônibus e metrô.\n• Defesa de uma arte internacionalista, independente e revolucionária.\n\n14. MINERAÇÃO: A FACE MAIS CRUEL DO CAPITALISMO EM\nDECADÊNCIA\n\nO PSTU propõe:\n• Prisão para os culpados pelos crimes da Vale em Mariana e Brumadinho! Indenização e\nreparação às famílias e comunidades destruídas!\n• Reassentamento e indenização aos moradores ameaçados pela Barragem Casa de Pedra em\nCongonhas! Os interesses da CSN não podem ser maiores que a vida do povo trabalhador!\n• Abaixo ao Complexo Minerário Serra do Taquaril (CMST)! Pelo tombamento da Serra do Curral!\n• Pela redução da jornada de trabalho para 30 h semanais e elevação os salários e PLR na\nmineração!\n• Pela elevação da Compensação Financeira pela Exploração Mineral (CFEM): 10% do Lucro Bruto\nda Mineração, Já!\n• Priorizar a riqueza mineral para um projeto de desenvolvimento do Brasil! Pela utilização dos\nlucros da mineração em pesquisa em novas fontes de energia e engenharia e tecnologias de\nmateriais que diminua as demandas de minerais na sociedade!\n• Pelo fortalecimento de polo industrial e tecnológico do Brasil! A indústria nacional deve ser\nestatal e controlada por Conselhos Populares!\n• Pela Estatização de toda mineração no Brasil sob o controle Operário e Popular! Criação dos\nConselhos Populares da Mineração para administrar as empresas e gerir a riqueza a serviço das\nnecessidades da classe trabalhadora e do país!\nREFORMA E REVOLUÇÃO AGRÁRIA SOB CONTROLE DOS TRABALHADORES, PARA GARANTIR\nCOMIDA BARATA PARA TODOS\n47"
+          },
+          {
+            "id": "o-pstu-defende",
+            "titulo": "O PSTU defende:",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "O PSTU defende:\n• Estatização do latifúndio e das multinacionais do agronegócio.\n• Reforma agrária sem indenização e apoio à agricultura familiar e ao pequeno produtor.\n• Estatização das grandes redes varejistas. A fim de garantir a distribuição dos produtos da cesta\nbásica a todo o país sem a margem de lucro que hoje vai para as multinacionais.\n• Financiamento da produção e ampla assistência técnica aos pequenos produtores.\n\n15. REFORMA E REVOLUÇÃO AGRÁRIA SOB CONTROLE DOS\nTRABALHADORES, PARA GARANTIR COMIDA BARATA PARA TODOS\nO PSTU defende:\n• Estatização do latifúndio e das multinacionais do agronegócio;\n• Reforma agrária sem indenização e apoio à agricultura familiar e ao pequeno produtor;\n• Estatização das grandes redes varejistas. A fim de garantir a distribuição dos produtos da cesta\nbásica a todo o país sem a margem de lucro que hoje vai para as multinacionais;\n• Financiamento da produção e ampla assistência técnica aos pequenos produtores.\n\n16. MINAS GERAIS E O BRASIL PRECISAM DE UMA REVOLUÇÃO\nSOCIALISTA\n\nNós defendemos com orgulho o socialismo. Sem romper com a dominação das grandes\nempresas nacionais e multinacionais, o país seguirá descendo ladeira abaixo na decadência em que\nestá. E os elementos de barbárie já presentes na fome do povo e na degradação do meio ambiente\nvão seguir se ampliando.\nPara mudar esta situação é necessário não apenas outras prioridades na administração, mas,\ntambém, uma reversão completa da propriedade das grandes empresas que aqui atuam. É\nnecessário que os trabalhadores coloquem as riquezas que produzem a serviço de suas\nnecessidades, em um sistema ambiental, econômico e socialmente planejado. Afora isso, todo\ndiscurso não passa de ilusão, não passa de tapar o sol com a peneira.\nUm verdadeiro governo socialista dos trabalhadores não poderá existir no mesmo estado\nburguês existente hoje. Por isso, defendemos uma revolução que leve a construção de um novo\n\n48"
+          },
+          {
+            "id": "estado-nesse-novo-estado-o-poder-deve-ser-exercido-pelos-proprios-trabal",
+            "titulo": "estado. Nesse novo estado, o poder deve ser exercido pelos próprios trabalhadores, com democracia",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "estado. Nesse novo estado, o poder deve ser exercido pelos próprios trabalhadores, com democracia\noperária através dos conselhos populares.\nIsso vai significar uma democracia da maioria, muito superior a ditadura do estado\ncapitalista em que vivemos, mesmo em regimes democráticos burgueses. Na democracia burguesa\nvotamos a cada dois anos, mas a vida não muda. Quem controla o país são as grandes empresas,\nseja qual for o governo. Não queremos o mesmo estado burguês com outra cara, não queremos essa\ndemocracia dos ricos.\nQueremos mudar esse estado, mudar a forma como a sociedade se organiza, queremos\numa democracia dos trabalhadores. Os trabalhadores somos os que constroem esse país, os que\nproduzimos toda a riqueza e fazemos o país funcionar com o nosso trabalho. Ninguém melhor que\nnós mesmos para governá-lo.\nRechaçamos a experiência burocrática do estalinismo, que transformou o poder operário\nsurgido da revolução de outubro de 1917 na Rússia em uma ditadura de uma burocracia contra o\npovo e acabou levando mais tarde a restauração do capitalismo. O stalinismo foi a contrarrevolução\nque destruiu a democracia operária na URSS. Para a propaganda imperialista, assim como para os\nPCs de todo o mundo, interessam muito dizer que socialismo e stalinismo é a mesma coisa. Mas são\nprocessos opostos: um está baseado na democracia operaria para defender os interesses de todo o\npovo trabalhador, outro em uma burocracia contrarrevolucionária para defender os interesses da\nprópria burocracia que acabou levando à restauração do capitalismo nos países onde governou.\nSó com um novo estado, uma democracia dos trabalhadores, nosso povo poderá viver em\numa sociedade que acabe com toda forma de exploração e opressão, onde os recursos naturais do\npaís e a riqueza produzidas sejam todas utilizadas para garantir vida digna a todas e todos, onde seja\nassegurada a preservação do meio ambiente. Uma sociedade que ponha fim em toda forma de\nopressão e discriminação, como o racismo, o machismo, a lgbtifobia, o capacitismo, a xenofobia etc.\nUma sociedade que respeite os direitos dos povos indígenas e das comunidades quilombolas e\npopulações tradicionais, assegurando demarcação, titulação e posse de suas terras e respeitando\nsua cultura e seu modo de vida. Uma sociedade que acabe com toda a violência contra os setores\nmais desprotegidos e que assegure a todas e todos não apenas condições materiais para uma vida\ndigna, mas também acesso ao conhecimento, à cultura, ao lazer e a toda liberdade necessária para\nsua realização plena como seres humanos. Deve haver ampla liberdade de organização para os\nsindicatos e partidos políticos da classe trabalhadora.\nSão os trabalhadores que devem governar, através de seus organismos. Seus\nrepresentantes devem ganhar a mesma coisa que um operário ou professor. Seus mandatos devem\nser revogáveis a qualquer momento. A experiência da Comuna de Paris e dos sete primeiros anos da\nrevolução russa deve ser resgatado.\nEntre o socialismo a barbárie, defendemos o socialismo. Levantamos essa bandeira com\norgulho. Ainda somos uma minoria. Mas queremos levar essas bandeiras e essas reflexões para o\nconjunto dos trabalhadores e jovens deste país.\n\n49"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "5b937b626190246e4e806becc04a9a8c1b4ce30f8cbc7ffbe583072854875a7f"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "8730d0039ab2f47165b5b4cbd3e883712773b18efb0bef6a70018e3ce9291dc2"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "951f80a58fa2a15be638fd7f4592cf83421624584da79ac4026c4b747f7e316a"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "fd6ea348137184a6d14f89049db5203e3d7bbb6d3430f536df04b0157d0e8e8b"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "a54721fcb5e85a46335c55090ddf7d151473296671bffdc65db2c1f8e297ca91"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "0bb4e450e64995e1a5e7e0e2f7929dbff9412aed326c148664582ddbb7da65cd"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "9cdf8b0967e7c3fe9d634dfef96ed1a8ca19e816aaf483eaecbade5eaa5f9a01"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "685ecdea5871e6c80493cbc8bfbedea21fb0f2f39f06d856310303f30aae6c5b"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "87560dfa99bf0caca07c6e4250750ffa801a570f1d4b5b3a94fffca23cb1ae5c"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "022a1bf71c7951d65cade6a4f030d29212f7a9c3b7479419b291ef060b97cb58"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "ed3d7b56ff2ac49a868d9e7a5a644723585f01a2321ec9a37952c2713ec5c905"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "6cd9a32df6cc4b66fff069a1f1038147fa96340d8ee1bde828e37ea0942a1873"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "e1a3020bd6c5d2867ffa4fcbfacfeec57df37f93286cea4970cdda49fe7dd727"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a03d8de05639c965cbed705e75c3582fd1f4953906fdfdf34d455610354d5f7b"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "bf4312f890eecae95412394d28f42646356f9cb974b99230e787fca45e5e5082"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "bb0dad24bc1c265bb9185db4e56cfef82b7b7e0e8597660743c05474e5c20b0f"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "a7ae31da5d7df1217f5ff8e23b06cc4c6ecb7b5a0d8a20b77e0f931f01a3a3b8"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "61c50d0ef921f8a506fa78734ceb8d25720edeb983dda247bf40fd0dd1426769"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "cff5e7629532ac8bc87a6ead1cf7d418d64e9940375b8d64a1497c441f44eea6"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "3a7f78f7a24c4441c8c1b47d8e68de4b327631434962652493ce2333b967af60"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "89472aa1b8534a3f50635f6b092a0730e7365d796f7a7e472f00a2560ee52a9d"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "b2fd6dae2ed1bed6aee3b22022918cb7ef2bec50d47d08ab87db396b8894a9e2"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d0a41a7845df79bf7657f361466bc09895f510da484267a229114cbfa484a082"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "92ba47d2cb0e0e34a3ca4966ff55aac631bd2edc5b195adc12502ecfab6f982a"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "a98f94fcd6aacee15e419e82ca9a555ded1d775d5b1a54fe4c3ef6cc1b7e3e93"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "89dad643029b59c1a8db62a694b5cc0ab46a1ad609993604680570bd862335f4"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "79dfddabece557957a51b1b02735a92922138c99d0c69243224cc70df254d62f"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "d45dc8edfb3b34c5bf1c61fa45a49d33644e2f96bd20a3450dc9dc660071b8c4"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "027698e4fbe4c1b17e2c51972162046c80a84feab249ec459231e704d31cbe88"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "7c603a1269ba9f7e85f8f63be5f1b03731c97b51395c36e94554641e5052069a"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "f9a806fd73f0734cf5765b075b2790aabf2b3c54e6950d3bf0da8467774530e4"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "f8039c91de5a4af1f14962e76b420d88fe2a9c64a216085077f5c1abe2cf5645"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "7e8e1bf62b17b74b41dab705ac56dc3df0ccaa069f10eab00d409542b6aa982f"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "a53e9d5b1822dc264d9069245e6e089338a08f83fef47de107d89b82e3ffca2d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "2e89d13c5dc0ace28275af3bac44908096be4e141faf82f84512fca8488895d6"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "1cdda68d4d3b20637df66bb3c0b855de2e84ad1008f49db8a1f184b83d83424c"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "f30d03a605cbfdae8632d7f2a82dd4e6bfdbea12705f2475eda8209a1f017289"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "ee5688fae53be104ee3ac8ff6371b0625f658da7f0534c469d1fe7ae1845eb02"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "13e639faa6eddadee75096cb0d81764478b363e881ec23f680c8d350be9b0b07"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "71052ef9a27a7d02748558aaff49aa06ddb8b8ff096b6adcb023e2ccab383993"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "77e7a7710aa6df690b293b0514e4491f0584b2853dda3b3809c263cfa7624d91"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "9766420112d0ccf2267c7b161227d524cbdd19d6ed58512e85ff08247019f3c8"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "6953fe0b956e35bef716dd4118d02c128f9a51e152900ac694976d77f5895f2f"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "5aceb928c8162bb3071e07e192abe0a39816e89586278bd33aa55f00e1fddfb1"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "b01c92462de95d41a2902585ad1b8631929cb18a1812b34bd29b590ef0c9a5ed"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "0a612fae28fc3456891605d649e6fa956a5b98b8962d9d649efa997ff3a48124"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "944594157a7571ba9b39a86fbe8e55d21ad6a9becd0fd57633d7c8b8cfdd604a"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "229e9c6b8687fa843b840feab87ed81baa961f4c6f66afd6860ecbb3337fe626"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "6a01cc3302cf9d2d8b8340636aa2ba0ebf581b8b8f89421a8eb9b22e32c7dffc"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê Conselhos Populares para governar o Estado e as principais empresas, conforme a proposta de controle operário da produção e das riquezas. No setor mineral, o programa propõe a estatização das mineradoras, incluindo a reestatização da Vale e da CSN sob controle operário e popular. Na administração pública, o documento propõe reverter todas as privatizações realizadas pelo governo de Romeu Zema, abrangendo empresas e infraestrutura. Para o trabalho, o programa propõe jornada diária de 6 horas para todos, com a criação de outro turno destinado à contratação de mais pessoas. Na educação pública, o documento propõe investir 30% do total da arrecadação, conforme a medida apresentada na seção sobre o sistema universal. Na saúde, o programa propõe acabar com a gestão privada nos estabelecimentos de saúde, conforme a seção dedicada ao sistema público, gratuito e de qualidade.",
+    "frases": [
+      {
+        "texto": "O programa prevê Conselhos Populares para governar o Estado e as principais empresas, conforme a proposta de controle operário da produção e das riquezas.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 36,
+            "trecho": "Propomos instaurar Conselhos Populares que passarão a governar o Estado, as principais empresas do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "No setor mineral, o programa propõe a estatização das mineradoras, incluindo a reestatização da Vale e da CSN sob controle operário e popular.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 36,
+            "trecho": "Estatização das mineradoras e estabelecer o controle operário e popular da mineração."
+          }
+        ]
+      },
+      {
+        "texto": "Na administração pública, o documento propõe reverter todas as privatizações realizadas pelo governo de Romeu Zema, abrangendo empresas e infraestrutura.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Reverter todas as privatizações do governo de Romeu Zema, seja de empresas ou de infraestrutura."
+          }
+        ]
+      },
+      {
+        "texto": "Para o trabalho, o programa propõe jornada diária de 6 horas para todos, com a criação de outro turno destinado à contratação de mais pessoas.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Jornada diária de 6 horas (30 horas semanais), para todos."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação pública, o documento propõe investir 30% do total da arrecadação, conforme a medida apresentada na seção sobre o sistema universal.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Investir 30% do total da arrecadação em educação;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa propõe acabar com a gestão privada nos estabelecimentos de saúde, conforme a seção dedicada ao sistema público, gratuito e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 39,
+            "trecho": "Acabar com o processo de privatização continuada da saúde. Acabar com toda gestão privada nos estabelecimentos de saúde, através das OS’s (supostas “Organizações Sociais”) e OSCIPs;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "conselhos-populares",
+        "titulo": "Conselhos Populares",
+        "descricao": "Governança estatal por Conselhos Populares.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 36,
+            "trecho": "Propomos instaurar Conselhos Populares que passarão a governar o Estado, as principais empresas do Estado."
+          }
+        ]
+      },
+      {
+        "id": "estatizacao-mineral",
+        "titulo": "Estatização mineral",
+        "descricao": "Estatização das mineradoras sob controle operário e popular.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 36,
+            "trecho": "Estatização das mineradoras e estabelecer o controle operário e popular da mineração."
+          }
+        ]
+      },
+      {
+        "id": "reversao-privatizacoes",
+        "titulo": "Reversão de privatizações",
+        "descricao": "Reversão das privatizações do governo de Romeu Zema.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Reverter todas as privatizações do governo de Romeu Zema, seja de empresas ou de infraestrutura."
+          }
+        ]
+      },
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Jornada diária de 6 horas para todos.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Jornada diária de 6 horas (30 horas semanais), para todos."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Investimento de 30% da arrecadação em educação.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 37,
+            "trecho": "Investir 30% do total da arrecadação em educação;"
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Fim da gestão privada nos estabelecimentos de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002546802:01",
+            "pagina": 39,
+            "trecho": "Acabar com o processo de privatização continuada da saúde. Acabar com toda gestão privada nos estabelecimentos de saúde, através das OS’s (supostas “Organizações Sociais”) e OSCIPs;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T20:04:49.581Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T20:07:02.709Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 36 traz literalmente a instauração de Conselhos Populares para governar o Estado e as empresas, no item intitulado 'Controle operário da produção e das riquezas através de Conselhos Populares'."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (Conselhos Populares)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidências pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:1:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre as cláusulas materiais da afirmação (governança estatal e empresarial, controle operário)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 36 traz a estatização das mineradoras com controle operário e popular, e menciona reestatização da Vale e CSN no mesmo item."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (setor mineral)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:2:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela página 36."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:3:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula (empresas e infraestrutura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 37 sustenta a jornada de 6h e a criação de outro turno para empregar mais pessoas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "O número '6 horas' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (jornada de trabalho)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:4:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela página 37."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho pertence à seção 'POR UM SISTEMA UNIVERSAL DE EDUCAÇÃO' e sustenta o percentual citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 30% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:5:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho pertence à seção 'POR UM SISTEMA DE SAÚDE PÚBLICO, GRATUITO E DE QUALIDADE' e sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:frase:6:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:conselhos-populares:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:estatizacao-mineral:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:reversao-privatizacoes:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 6 horas literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:jornada-de-trabalho:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 30% literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:educacao-publica:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:suporte",
+        "verdict": "yes",
+        "reason": "Sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:mistura",
+        "verdict": "yes",
+        "reason": "Única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002546802:tema:saude-publica:documentos:MG:130002546802:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002546802",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002546802:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 53543,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2990,
+          "reasoning_output_tokens": 1827
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21950,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21163,
+          "output_tokens_details": {
+            "thinking_tokens": 1281
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21950,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21163,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21950,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21950
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.31717740000000005
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:08:52Z",
+    "sourceSha256": "d42aaa94224f405697744b1381fa85ea74639ce46e432b9171514494928ac58b",
+    "extractedTextSha256": "1e9905fbe81c9ffc9dbdaad1065d98e8b7a785fdba6ff1aa4b1b4ca39a63d063",
+    "documentCount": 1,
+    "documentSetSha256": "c78bc349c53412bac7f0ff7e33b87915fcaae18ba611c6199857671c673c68f7",
+    "contentSha256": "857302bf5eba5dce352e296dfc9dcdda440193cc7782c4e51b105a61106d6aae"
+  }
+}

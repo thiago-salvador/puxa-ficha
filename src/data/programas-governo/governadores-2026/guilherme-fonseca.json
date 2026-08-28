@@ -1,0 +1,752 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PE",
+    "sqCandidato": "170002536575",
+    "slug": "guilherme-fonseca",
+    "nomeUrna": "GUILHERME FONSECA",
+    "partido": "PSTU",
+    "arquivoNome": "2026PE170002536575_01.pdf",
+    "arquivoNoPacote": "PE/2026PE170002536575_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PE:170002536575:01",
+      "fonte": {
+        "arquivoNome": "2026PE170002536575_01.pdf",
+        "arquivoNoPacote": "PE/2026PE170002536575_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ddad81bd495da44f7265519d745e4cb51133ea67256b9ef51e64d46fdc653f41",
+        "extractedTextSha256": "2e35176cbe3154fc19a2b17c27ec11cb90b3cab7d58b77e3c807899dfe4c1661",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "programa-de-governo-de-guilherme-fonseca-para-pernambuco",
+            "titulo": "PROGRAMA DE GOVERNO DE GUILHERME FONSECA PARA PERNAMBUCO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DE GUILHERME FONSECA PARA PERNAMBUCO\nTRABALHO E SALÁRIO PELO DIREITO À VIDA ALÉM DO TRABALHO\n* Salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE,\npara a garantia dos direitos básicos constitucionais: moradia, transporte, saúde, educação\ne lazer.\n*Plano estadual de obras públicas necessárias e ecológicas: universalização da rede de\nesgoto, hospitais, escolas, creches, infraestrutura e transporte para gerar empregos e\natender as necessidades sociais.\n* Fim da terceirização! Contratação dos trabalhadores terceirizados do estado para serem\nefetivos do estado, com salário e direitos iguais ao trabalhador efetivo. Incorporação\nimediata dos terceirizados nos serviços públicos e abertura de concursos públicos para\nnovas contratações.\n\nSAÚDE\n* Defesa do SUS público, universal, gratuito e 100% estatal\n* Fim da privatização e da gestão privada da saúde (OSs, fundações e PPPs)\n* Proibição da transferência de leitos públicos para planos privados\n* Ampliação do investimento público em saúde, com prioridade para atenção básica em\ntodo o Estado\n* Construção de hospitais de média e alta complexidade no interior para que haja uma\ntransição programada dos que não seja necessário o Tratamento Fora de Domicílio, os\nTFD’s.\n*Cuidado com a saúde mental. Ampliação do investimento público nos CAPS, no Serviço\nde Residências Terapêuticas e Centros de Convivência. Nenhum investimento público em\nComunidades Terapêuticas.\n* Contratação via concurso público e valorização dos trabalhadores da saúde\n* Produção pública de medicamentos e insumos estratégicos pelo LAFEPE\n* Expansão da rede pública de hospitais, UPA’s e unidades básicas\n*Redução da jornada de trabalho para 30h semanais para enfermeiros e psicólogos.\n\nEDUCAÇÃO\n* Nenhuma verba pública para os grandes empresários da educação!\n*Fim das Parcerias Público Privadas (PPPs), das terceirizações e da aquisição de materiais\ne serviços dessas empresas pelas redes públicas de ensino."
+          },
+          {
+            "id": "revogacao-das-propostas-curriculares-elaboradas-pelos-grandes-empresario",
+            "titulo": "*Revogação das propostas curriculares elaboradas pelos grandes empresários da",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "*Revogação das propostas curriculares elaboradas pelos grandes empresários da\neducação e fundações privadas (BNCC e Novo Ensino Médio). Por propostas curriculares\nelaboradas pelos trabalhadores da educação.\n- Não à militarização das escolas e a projetos de controle ideológico como \"Escola sem\npartido\"\n- Por um Ensino Laico e sem interferência das Igrejas. Não ao intervalo bíblico nas escolas\nestaduais.\n- Não à plataformização da educação! Por uma formação completa, crítica e científica nas\nescolas públicas.\n- Valorização dos profissionais da educação, com carreira e salários dignos\n- Ampliação de vagas em creches, escolas e da UPE via plano de obras públicas\n- Construção de Restaurante universitário nos Campi da UPE. Recomposição do quadro de\nDocentes e Técnicos Administrativos da UPE com reajuste salarial e plano de cargos e\ncarreira valorizado.\n- Garantia de permanência estudantil (transporte, alimentação, bolsas)\n- Investimento massivo na educação pública com a construção de Creches, escolas,\ncampi.\n* Produção de conhecimento voltada às necessidades sociais, e não ao mercado\n*Por um sistema único de educação para todas as crianças e adolescentes. Abaixo o\nabismo entre educação de ricos e pobres!\n\nCULTURA, ARTE, ESPORTES E LAZER\n*Cultura, Arte, Esportes e Lazer não são mercadoria, são direitos!\n* Fortalecimento e Valorização da Culta, da arte e dos artistas e profissionais da cultura\n* Fora a apropriação e publicidade das Bet’s dos espaços como Carnaval, São João,\nFestivais e Show. Eventos públicos não podem ser palco para empresas de apostas!\n* Pagamento do cachê de todos os artistas e profissionais\n* Garantia de construção de equipamentos culturais como Teatros, Cinema, Museus,\nConservatórios de música, artes plásticas\n* Concurso públicos para contratações de músicos, artistas plásticos, atores e guias e toda\nos profissionais dedicados a cultura e arte no Estado\n* Não a Privatização de parques e quadras esportivas\n* Construção de equipamentos públicos como Parques, quadras esportivas dentro do\nplano de obras do Estado\n* Contratação de profissionais das áreas de Educação Física para que tenham atuem nos\nparques e equipamento esportivos públicos."
+          },
+          {
+            "id": "as-creches-escolas-estaduais-devem-todo-o-dinheiro-publicos-necessario-p",
+            "titulo": "* As creches, escolas estaduais devem todo o dinheiro públicos necessário para que exista",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "* As creches, escolas estaduais devem todo o dinheiro públicos necessário para que exista\ninfraestrutura e profissionais para que a Cultura, Arte, Esportes e Lazer sejam parte do\ncurrículo e do desenvolvimento das crianças e adolescentes de PE\nMORADIA\n* Casa é para morar, não para lucrar: expropriação dos imóveis utilizados pela especulação\nimobiliária que todos os imóveis cumpram uma função social.\n* Fim dos despejos\n* Construção de moradias populares e infraestrutura por empresa pública de obras\n* Plano diretor com garantia de acesso a serviços e direitos\n* IPTU progressivo com isenção para baixa renda\n* Planejamento urbano decidido pelo povo organizado\n\nTRANSPORTE PÚBLICO\n*transporte público, estatal, de qualidade e voltado às necessidades da população, sob\ncontrole público e dos trabalhadores e não aos interesses das empresas.\n*Contra a privatização e estadualização do metrô do Recife, estatização das estradas que\ncobram pedágios, para cessar o aprofundamento da lógica mercantilista da mobilidade.\n* Tarifa zero no transporte público financiado através da taxação das grandes empresas.\n* Estatização dos sistemas de transporte urbano e reversão das concessões privadas.\n* Fim dos subsídios públicos às empresas privadas de transporte.\n* Ampliação e integração da rede (ônibus, metrô, trem).\n* Garantia de qualidade, manutenção adequada e ampliação do número de linhas\n* Redução do tempo de deslocamento da população trabalhadora.\n* Prioridade para transporte coletivo sobre o individual.\n* Condições dignas de trabalho para os trabalhadores do transporte e recontratação de\ntodos os cobradores demitidos, os motoristas não podem acumular as funções.\n\nAPOSENTADORIA\n*Reversão das Reformas da previdência aplicadas no estado de PE aos servidores\npúblicos.\n\nMEIO AMBIENTE"
+          },
+          {
+            "id": "e-preciso-enfrentar-o-agronegocio-e-os-governos-capitalistas-e-defender",
+            "titulo": "*É preciso enfrentar o agronegócio e os governos capitalistas e defender medidas visando",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "*É preciso enfrentar o agronegócio e os governos capitalistas e defender medidas visando\no fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da\nagroecologia e a aceleração da demarcação de terras indígenas e territórios quilombolas:\n*Fim dos créditos públicos e dos subsídios estatais ao agronegócio;\n*Recuperação das áreas desmatadas e dos biomas devastados pelo agronegócio;\n*Reparação e demarcação imediata das terras indígenas, titulação dos territórios\nquilombolas e proteção das comunidades tradicionais;\n*Reconhecimento e reparação das populações atingidas por crimes ambientais;\n*Garantia do direito à autodefesa de todas as comunidades e militantes que lutam em\ndefesa do meio ambiente, diante da violência patronal e estatal\n* Planos de prevenção contra os efeitos do aquecimento global tal como: -prevenção\ncontra enchentes - prevenção contra deslizamentos de áreas de risco que atinge as\nmoradias mais precárias\n*planos de emergência e defesa civil :alertas e evacuação, com participação comunitária\n* impedir que a ocupação do solo seja feita pela especulação imobiliária;\n* reflorestamento urbano;\n* defesas dos rios e recursos hídricos que foram privatizados\n* É preciso superar o modelo do agronegócio e construir formas de produção que respeitem\nos territórios, os povos e os limites ecológicos da Terra.\n*Garantia da soberania alimentar para acabar com a fome no estado de PE e produzir uma\nagricultura livre de agrotóxicos.\n\nTERRA PARA QUEM NELA VIVE E TRABALHA!\n*Terra a quem nela trabalha!\n*Por reforma agrária e por uma revolução na estrutura do campo brasileiro! Transferir o\ncontrole das terras para os trabalhadores rurais, transformando estruturalmente as\nrelações de propriedade, poder e produção no campo e pondo fim à exploração que\nenriquece bilionários.\n*Demarcação de terras indígenas e quilombolas.\n* Assentamentos com garantia de infraestrutura rural, como moradia, água, energia e\nestradas. Assistência técnica e garantia de comercialização, articulando o acesso à terra\ncom condições reais de permanência no campo.\n*Criação de redes locais de produção, voltadas à produção, comercialização e resistência,\ncapazes de enfrentar o agronegócio. Autonomia para quem produz alimentos e soberania\nalimentar."
+          },
+          {
+            "id": "credito-publico-direcionado-sem-intermediacao-privada-com-juros-baixos-c",
+            "titulo": "*Crédito público direcionado, sem intermediação privada, com juros baixos, combinado",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "*Crédito público direcionado, sem intermediação privada, com juros baixos, combinado\ncom subsídios ao pequeno produtor, incluindo isenção de impostos, seguro agrícola e\npolíticas que evitem endividamento.\n*Fortalecimento da organização coletiva, com cooperativas e associações condições de\nprodução que permitam aos pequenos produtores disputar não apenas a produção, mas\ntambém a circulação e a definição do que se produz, deslocando o centro de decisão hoje\nconcentrado no agronegócio para os próprios trabalhadores do campo.\n*Incentivo ao processamento da produção pelas próprias famílias e organizações\ncamponesas, agregando valor e gerando renda no campo.\n*Educação no campo, combate ao analfabetismo e valorização dos saberes locais.\n*Combate efetivo ao trabalho análogo à escravidão, com fiscalização rigorosa, punição\nexemplar aos responsáveis e expropriação das empresas onde essas práticas forem\nidentificadas, colocando-as sob controle dos trabalhadores.\n*Condições de trabalho seguras, com acesso a equipamentos de proteção e políticas de\nsaúde e segurança.\n\nSEGURANÇA PÚBLICA\n\n•\n\n•\n\n•\n•\n•\n\n•\n•\n\n•\n\nCombater o crime organizado, as máfias, facções e demais organizações\ncriminosas por meio da investigação, inteligência e desarticulação de seus\nnegócios, atingindo seu patrimônio, suas fontes de financiamento e suas relações\ncom agentes públicos, políticos, empresários e, especialmente, com o sistema\nfinanceiro, em vez de operações militares que vitimam principalmente a população\ntrabalhadora. Pois o crime organizado e o narcotráfico são empresas capitalistas\nilegais que mantêm relações com o sistema financeiro, setores do Estado e\nempresários.\nConfisco dos bens obtidos por atividades criminosas, punição dos agentes\npúblicos envolvidos com organizações criminosas e dissolução dos grupos e\nestruturas com milícias existentes no aparelho de Estado tais como os batalhões\nda morte.\nInvestigação e punição de corruptos e corruptores, com confisco dos bens obtidos\npor meio da corrupção.\nPolíticas públicas de prevenção, tratamento e redução de danos para usuários de\ndrogas.\nIncorporação de câmeras corporais para todos os agentes de segurança pública,\ncom gravação ininterrupta e armazenamento das imagens sob controle de órgãos\ncivis, garantindo acesso às gravações quando houver processo legal.\nFim da Justiça Militar.\nPunição exemplar para tortura, execuções, desaparecimentos forçados, chacinas\ne demais crimes praticados por agentes responsabilizando também comandantes\nmilitares e civis.\nDesmilitarização da Polícia Militar e reversão da dinâmica de militarização das\ndemais polícias e guardas municipais."
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\n•\n•\n\n•\n\n•\n\n•\n\n•\n\nUnificação das polícias em uma única instituição de caráter civil, com eleição de\ncomandantes e delegados pela população e mandatos revogáveis.\nDireito de organização e sindicalização dos policiais. Fim dos abusos e do\ndesrespeito que caracteriza o tratamento dos policiais dentro das instituições de\nsegurança pública, com controle popular.\nDireito e estímulo à organização da autodefesa.\nGarantir que as instituições de segurança pública atuem na segurança da\npopulação — e não no seu controle social — é parte da luta pelos direitos\ndemocráticos da população trabalhadora.\nGarantia do direito à auto-organização da população para garantir sua própria\nsegurança, seja diante do crime organizado e da criminalidade em geral, seja diante\nda violência do Estado através de suas polícias.\nA organização da autodefesa dos trabalhadores deve, sempre que possível,\ncombinar-se com o chamado aos policiais e aos demais integrantes da base das\ninstituições armadas do Estado para que se unam aos trabalhadores e defendam\nsuas reivindicações. Afinal, os responsáveis pelas mazelas impostas à classe\ntrabalhadora em nome do lucro dos grandes monopólios são os mesmos\nresponsáveis pelas condições de vida dos próprios policiais e de suas famílias.\nEsse é o caminho que nos permitirá atingir o objetivo estratégico que buscamos.\ninstituições.\nContra os esquadrões da morte e grupo de justiceiros organizados por agentes do\nEstado. Expulsão de todos os envolvidos das polícias, dissolução imediata desses\ngrupos, punição de todos os políticos envolvidos com as milícias e proibição de que\nqualquer agente do Estado envolvido com essas organizações volte a exercer cargo\npúblico.\nResponsabilização de bancos, fintechs e plataformas digitais pela adoção de\nmecanismos efetivos de prevenção às fraudes. E restituição imediata de valores\ndesviados em casos de fraude eletrônica. A digitalização dos serviços não pode\ntransferir à população os riscos das operações financeiras.\nDireito e estímulo à organização da autodefesa\nA luta para que as instituições de segurança pública atuem para garantir a\nsegurança da população — e não seu controle social — é parte da luta pelos\ndireitos democráticos da população trabalhadora. Mas ela não pode parar aí.\n• Desde já é preciso estimular a população a se auto-organizar para garantir sua\nprópria segurança, seja diante do crime organizado e da criminalidade em geral,\nseja diante da violência do Estado através de suas polícias.\n• A organização da autodefesa dos trabalhadores deve, sempre que possível,\ncombinar-se com o chamado aos policiais e aos demais integrantes da base das\ninstituições armadas do Estado para que se unam aos trabalhadores e defendam\nsuas reivindicações. Afinal, os responsáveis pelas mazelas impostas à classe\ntrabalhadora em nome do lucro dos grandes monopólios são os mesmos\nresponsáveis pelas condições de vida dos próprios policiais e de suas famílias.\nEsse é o caminho que nos permitirá atingir o objetivo estratégico que buscamos."
+          },
+          {
+            "id": "negros-e-negras",
+            "titulo": "NEGROS E NEGRAS",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "NEGROS E NEGRAS\n•\n•\n•\n•\n•\n•\n•\n\n•\n\nExpropriação imediata, sem indenização, de todas as fazendas do agronegócio que\natuam sobre territórios indígenas e quilombolas;\nTitulação já dos territórios quilombolas e demarcação das terras indígenas;\nFim das terceirizações. Salário igual para trabalho igual nos serviços públicos;\nExpropriação de todos os bilionários herdeiros de famílias escravocratas;\nDesmilitarização da PM e unificação das polícias sob controle dos trabalhadores;\nRevogação da Lei de Drogas e fim da privatização dos presídios.\nDesencarceramento em massa;\nVerba pública só para a educação pública. Implementação efetiva da Lei\n11.645/2008, com ensino de história e cultura afro-brasileira e indígena em toda\nrede de ensino.\nContra a proposta de intervalo bíblico nas escolas públicas de PE, o ensino deve\nser garantido de forma laica.\n\nMULHERES\n- Proteção real para as mulheres: delegacias especializadas 24h, casas-abrigo e rede de\natendimento conforme a demanda, com recursos garantidos pelo Estado e sob controle\ndas trabalhadoras e da população;\n- Punição efetiva aos agressores, com garantia de proteção às vítimas;\n- Campanhas massivas de combate à violência nas escolas, locais de trabalho e meios de\ncomunicação;\n- Organização de comissões de mulheres nos locais de trabalho, estudo e moradia para\nprevenir e enfrentar a violência;\n- Emprego, renda e moradia como condição concreta para romper ciclos de violência; - Por\nemprego, salário digno e direitos para as mulheres!\n- Salário igual para trabalho igual;\n- Combate à desigualdade salarial e à superexploração das mulheres, especialmente das\nmulheres negras;\n- Prioridade de acesso ao emprego e às políticas públicas para mulheres trabalhadoras, em\nespecial as mais precarizadas. Chega da dupla jornada! Pela socialização do trabalho\ndoméstico!\n- Creches e escolas públicas, gratuitas e em tempo integral para todas as crianças, como\ncondição para a independência das mulheres;\n- Restaurantes populares e lavanderias públicas em todos os bairros;\n- Ampliação dos serviços públicos de cuidado (idosos, pessoas com necessidades\nespeciais) retirando das mulheres essa sobrecarga;\n- Pelo direito ao corpo e à maternidade livre! - Educação sexual para decidir, contraceptivo\npara não engravidar, aborto legal e seguro para não morrer;"
+          },
+          {
+            "id": "prioridade-de-acesso-ao-emprego-renda-e-politicas-publicas-para-mulheres",
+            "titulo": "- Prioridade de acesso ao emprego, renda e políticas públicas para mulheres negras;",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "- Prioridade de acesso ao emprego, renda e políticas públicas para mulheres negras;\n\nLGBTI’s\n•\n•\n•\n\n•\n\n•\n•\n•\n\nVidas LGBTI+ importam: basta de violência e criminalização da LGBTfobia já!\nCasas-abrigo e proteção para vítimas de violência!\nDireito ao nome social, sem burocracia e sem taxas!\nInvestimento na saúde especializada para pessoas LGBTI+. Direito à terapia\nhormonal e à cirurgia de redesignação pelo SUS, com acompanhamento\nadequado. Políticas de prevenção de IST’s e tratamento para pessoas com HIV,\nespecialmente nas periferias.\nContra a patologização das identidades LGBTI+: não às “curas gays”! Educação\nsexual nas escolas e fim do financiamento de comunidades terapêuticas e\nmanicômios.\nPelo direito de existir, contra o apartheid trans! Trabalho, direitos, renda e dignidade!\nCotas trans na UPE e concursos públicos, rumo ao pleno emprego!\nPor banheiros multigênero em órgãos públicos e o direito de pessoas trans e não\nbinárias usarem o banheiro em que se sintam seguras.\nEmprego, qualificação profissional e políticas públicas para travestis e transexuais\nque queiram sair da prostituição.\n\nPOVOS INDIGENAS\n*Demarcação e regulamentação já de todas as terras indígenas.\n*Direito a reparações aos Povos Indígenas\n\nIMIGRANTES\n*Basta de Xenofobia e superexploração!\n*Direitos civis, trabalhistas e sociais.\n*A classe trabalhadora é uma só, seja brasileira, seja estrangeira."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "7190b9f416647cecb7b401e4bcef72361d098ed60fa0e1acf3338347ea986c08"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "e9cc510a628f69e455d24c42717b7665182d73d5ff6a7e8a58d47b939b7309cb"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "130c6c9d2de201f88c8d33b5d56e9d09d25f6bfb2651d99adc36adf80c40d242"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "4b2063aea9dc7a3745d9e420a0126c983687ac54d1272af8b594114accbeb7d7"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "02a2eae086dc616de2270e60627a51b90b8c99fec9d3db68595a68aa95599ed1"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "84b9dd9904ccc3a7ab67ff220b1db6998ff89fa56ae63bf3ecaa6db2c8ec581f"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "832a23e7de09ed6ede488f7859b3f2fef84729798d70d0d4d5b907a7517d4f51"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ed26a52a516394aa886f397b88033c3aba6f69ee38f99791685e6037f9acc21c"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE, para garantir direitos básicos constitucionais. Na saúde, propõe a defesa do SUS público, universal, gratuito e 100% estatal, com ampliação do investimento público na atenção básica. Na educação, prevê ampliação de vagas em creches, escolas e na UPE por meio de plano de obras públicas. Em moradia, propõe construção de moradias populares e infraestrutura por empresa pública de obras. No transporte público, prevê tarifa zero financiada por meio da taxação das grandes empresas, conforme a proposta apresentada. Na segurança pública, propõe incorporação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta, armazenamento das imagens sob controle de órgãos civis e acesso às gravações quando houver processo legal.",
+    "frases": [
+      {
+        "texto": "O programa prevê salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE, para garantir direitos básicos constitucionais.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 1,
+            "trecho": "* Salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE,\npara a garantia dos direitos básicos constitucionais: moradia, transporte, saúde, educação\ne lazer."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe a defesa do SUS público, universal, gratuito e 100% estatal, com ampliação do investimento público na atenção básica.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 1,
+            "trecho": "* Defesa do SUS público, universal, gratuito e 100% estatal\n* Fim da privatização e da gestão privada da saúde (OSs, fundações e PPPs)\n* Proibição da transferência de leitos públicos para planos privados\n* Ampliação do investimento público em saúde, com prioridade para atenção básica em\ntodo o Estado"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê ampliação de vagas em creches, escolas e na UPE por meio de plano de obras públicas.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 2,
+            "trecho": "- Ampliação de vagas em creches, escolas e da UPE via plano de obras públicas"
+          }
+        ]
+      },
+      {
+        "texto": "Em moradia, propõe construção de moradias populares e infraestrutura por empresa pública de obras.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 3,
+            "trecho": "* Construção de moradias populares e infraestrutura por empresa pública de obras"
+          }
+        ]
+      },
+      {
+        "texto": "No transporte público, prevê tarifa zero financiada por meio da taxação das grandes empresas, conforme a proposta apresentada.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 3,
+            "trecho": "* Tarifa zero no transporte público financiado através da taxação das grandes empresas."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, propõe incorporação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta, armazenamento das imagens sob controle de órgãos civis e acesso às gravações quando houver processo legal.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 5,
+            "trecho": "Incorporação de câmeras corporais para todos os agentes de segurança pública,\ncom gravação ininterrupta e armazenamento das imagens sob controle de órgãos\ncivis, garantindo acesso às gravações quando houver processo legal."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "salario-estadual",
+        "titulo": "Salário estadual",
+        "descricao": "Previsão de salário mínimo estadual calculado pelo DIEESE.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 1,
+            "trecho": "* Salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE,"
+          }
+        ]
+      },
+      {
+        "id": "sus-publico",
+        "titulo": "SUS público",
+        "descricao": "Defesa de um SUS público, universal, gratuito e estatal.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 1,
+            "trecho": "* Defesa do SUS público, universal, gratuito e 100% estatal"
+          }
+        ]
+      },
+      {
+        "id": "vagas-educacionais",
+        "titulo": "Vagas educacionais",
+        "descricao": "Ampliação de vagas em creches, escolas e na UPE.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 2,
+            "trecho": "- Ampliação de vagas em creches, escolas e da UPE via plano de obras públicas"
+          }
+        ]
+      },
+      {
+        "id": "moradias-populares",
+        "titulo": "Moradias populares",
+        "descricao": "Construção de moradias populares por empresa pública de obras.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 3,
+            "trecho": "* Construção de moradias populares e infraestrutura por empresa pública de obras"
+          }
+        ]
+      },
+      {
+        "id": "tarifa-zero",
+        "titulo": "Tarifa zero",
+        "descricao": "Financiamento da tarifa zero por taxação das grandes empresas.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 3,
+            "trecho": "* Tarifa zero no transporte público financiado através da taxação das grandes empresas."
+          }
+        ]
+      },
+      {
+        "id": "cameras-corporais",
+        "titulo": "Câmeras corporais",
+        "descricao": "Incorporação de câmeras corporais para agentes de segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002536575:01",
+            "pagina": 5,
+            "trecho": "Incorporação de câmeras corporais para todos os agentes de segurança pública,"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:22:27.951Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:24:36.812Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação, apenas menção ao DIEESE, que é literal na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:1:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Ambas as propostas citadas constam literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata coerentemente da área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:2:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "As duas cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:3:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de moradia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:4:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:5:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente e literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:frase:6:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:salario-estadual:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação (100% da evidência não é citado, mas 'estatal' é consistente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:sus-publico:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:vagas-educacionais:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:moradias-populares:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:tarifa-zero:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002536575:tema:cameras-corporais:documentos:PE:170002536575:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PE:170002536575",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PE:170002536575:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25290,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2006,
+          "reasoning_output_tokens": 802
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22979,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20842,
+          "output_tokens_details": {
+            "thinking_tokens": 505
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22979,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20842,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22979,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22979
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3185524
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:26:25Z",
+    "sourceSha256": "ddad81bd495da44f7265519d745e4cb51133ea67256b9ef51e64d46fdc653f41",
+    "extractedTextSha256": "2e35176cbe3154fc19a2b17c27ec11cb90b3cab7d58b77e3c807899dfe4c1661",
+    "documentCount": 1,
+    "documentSetSha256": "f2f6b126c8dcd24e33c356329ea952df55537a77a9ec838c6f9ea30e9a7de88b",
+    "contentSha256": "51e884828767fa1359a7d16a36666283fb0864e92024ea3fb649f78b18a8ea7a"
+  }
+}

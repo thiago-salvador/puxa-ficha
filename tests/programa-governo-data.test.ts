@@ -23,7 +23,7 @@ before(async () => {
 })
 const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
 const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-28.json") as {
-  items: Array<{ outcome: string }>
+  items: Array<{ outcome: string; slug: string | null }>
 }
 
 async function loadPresidentialCohort(): Promise<ProgramaGovernoRegistro[]> {
@@ -105,7 +105,9 @@ test("manifest publishes only governor records accepted by the canonical approva
   assert.equal(approved?.fonte.cargo, "GOVERNADOR")
   assert.equal(approved?.fonte.uf, "BA")
   assert.ok(approved?.documentos?.length)
-  assert.equal(programaModule.programasGoverno2026Manifesto.getBySlug("robson-raymundo"), null)
+  const unpublished = governorPublication.items.find(({ outcome, slug }) => outcome !== "approved" && slug)?.slug
+  assert.ok(unpublished)
+  assert.equal(programaModule.programasGoverno2026Manifesto.getBySlug(unpublished), null)
 })
 
 test("manifest lookup is lazy and validates the full identity only when loading", async () => {

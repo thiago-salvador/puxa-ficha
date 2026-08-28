@@ -456,6 +456,10 @@ function evidence(value: unknown, path: string): Required<ProgramaGovernoEvidenc
   return { documentoId, pagina: pagina as number, trecho: stringValue(value.trecho, `${path}.trecho`) }
 }
 
+function normalizeText(value: string): string {
+  return value.normalize("NFKC").replace(/\s+/gu, " ").trim().toLocaleLowerCase("pt-BR")
+}
+
 function validateSummary(value: unknown): ProgramaGovernoResumo {
   if (!isObject(value)) throw new Error("generator: objeto esperado")
   assertOnlyKeys(value, ["texto", "frases", "temas"], "generator")
@@ -508,6 +512,34 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
     frases: normalizedPhrases,
     temas: normalizedThemes,
   }
+}
+
+function assertLiteralEvidence(
+  summary: ProgramaGovernoResumo,
+  input: ProgramaGovernoGeneratorInput,
+): void {
+  const pages = new Map<string, string>()
+  for (const document of input.documentos) {
+    for (const page of document.paginas) {
+      pages.set(`${document.documentoId}:${page.pagina}`, normalizeText(page.texto))
+    }
+  }
+  const evidencias = [
+    ...summary.frases.flatMap((frase) => frase.evidencias),
+    ...summary.temas.flatMap((tema) => tema.evidencias),
+  ]
+  for (const [index, item] of evidencias.entries()) {
+    const page = pages.get(`${item.documentoId}:${item.pagina}`)
+    if (!page || !page.includes(normalizeText(item.trecho))) {
+      throw new Error(`evidencia[${index}]: documento, pagina ou trecho divergente`)
+    }
+  }
+}
+
+function validateGeneratorOutput(value: unknown, input: ProgramaGovernoGeneratorInput): ProgramaGovernoResumo {
+  const summary = validateSummary(value)
+  assertLiteralEvidence(summary, input)
+  return summary
 }
 
 function validateJudge(value: unknown): ProgramaGovernoJudgeOutput {
@@ -677,7 +709,7 @@ export function createProgramaGovernoModelAdapters(
         PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
         PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
         input,
-        validateSummary,
+        (value) => validateGeneratorOutput(value, input),
         runner,
       )
     },

@@ -1,0 +1,1702 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002536086",
+    "slug": "david-almeida",
+    "nomeUrna": "DAVID ALMEIDA",
+    "partido": "AVANTE",
+    "arquivoNome": "2026AM40002536086_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002536086_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002536086:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002536086_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002536086_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "00bb1ea88eb1ac2a1b909c89c357b286c28bbccdf3a066b7d436f709f79cdb63",
+        "extractedTextSha256": "a2eaf5fb48d06d9a639dfdfac54919195aaa44554adff6dc282ed0298ed5a4d3",
+        "paginas": 76,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE GOVERNO\nPRA CIMA, AMAZON S\nEnergia e Coragem para\no Amazonas Prosperar\nAVANTE\n2027\n2030\nDAVID\nGOVERI"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nS U M Á R I O\n1. INTRODUÇÃO\t\t\t\t\t\t\t\t\t\t\t\t\t4\n2. NOSSO COMPROMISSO COM O AMAZONAS\t\t\t\t\t\t\t\t\t5\n3. DIAGNÓSTICO DO ESTADO:\nANÁLISE SWOT DO AMAZONAS.\t\t\t\t\t\t\t\t\t\t\t8\n4. DADOS GERAIS DO ESTADO\n\n14\n\n5. DIRECIONAMENTO ESTRATÉGICO\n\n31\n\n6. EIXOS ESTRATÉGICOS\n\n33\n\nEIXO 1: GESTÃO PÚBLICA EFICIENTE\nE TRANSPARENTE \b\n\n35\n\nEIXO 2: DESENVOLVIMENTO ECONÔMICO\nSUSTENTÁVEL E INOVAÇÃO \b\n\n39\n\nEIXO 3: INFRAESTRUTURA E LOGÍSTICA\nPARA A INTEGRAÇÃO REGIONAL \b\n\n45\n\nEIXO 4: EDUCAÇÃO TRANSFORMADORA\t\b\n\n49\n\nEIXO 5: SAÚDE DESCENTRALIZADA E\nREGONALIZADA – “AVANÇA SAÚDE AMAZONAS”\n\n53\n\nEIXO 6: SEGURANÇA INTEGRADA\b\n\n57\n\nEIXO 7: DESENVOLVIMENTO SOCIAL,\nCIDADANIA E DIREITOS HUMANOS \b\n\n61\n\nEIXO 8: MEIO AMBIENTE, SUSTENTABILIDADE\nE TRANSIÇÃO CLIMÁTICA \b\n\n65\n\nEIXO 9: INTERIOR FORTE E SUSTENTÁVEL\b\n\n69\n\n7. O AMAZONAS DO FUTURO COMEÇA AGORA\b\n\n72\n\n\t\b\n\n3"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-2",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n1. INTRODUÇÃO\nO Amazonas chega a um momento decisivo de sua história. Em um cenário de profundas transformações econômicas,\nsociais, tecnológicas e ambientais, o Estado reúne condições únicas para inaugurar um novo ciclo de desenvolvimento,\ncapaz de transformar suas potencialidades em oportunidades concretas para toda a população. A dimensão territorial, a\nriqueza ambiental, a diversidade cultural e a força de seu povo constituem ativos estratégicos que posicionam o Amazonas\ncomo protagonista de um modelo de desenvolvimento sustentável para o Brasil e para o mundo.\nAo mesmo tempo, persistem desafios históricos que limitam o pleno aproveitamento dessas potencialidades. A concentração\nda atividade econômica na capital, as desigualdades entre Manaus e o interior, as limitações da infraestrutura logística,\nas dificuldades de acesso aos serviços públicos, os impactos das mudanças climáticas e a necessidade de promover\ninovações e ampliar as oportunidades de emprego e distribuir renda, exigem uma nova forma de planejar e governar. Mais\ndo que administrar demandas imediatas, é necessário construir soluções permanentes que preparem o Estado para as\npróximas décadas.\nÉ nesse contexto que nasce o Plano de Governo “Pra Cima, Amazonas”. Mais do que um lema, “Pra Cima, Amazonas”\nrepresenta uma visão de futuro baseada na confiança de que o Estado pode avançar sem deixar ninguém para trás. Significa\ncolocar o desenvolvimento a serviço das pessoas, fortalecer as potencialidades de cada região, aproximar o governo da\npopulação e promover uma transformação que alcance a capital, os municípios do interior, as comunidades ribeirinhas, os\npovos indígenas, os produtores rurais, os empreendedores, os trabalhadores e a juventude.\nEste Plano foi construído a partir de um diagnóstico técnico da realidade amazonense, fundamentado em indicadores\nsocioeconômicos, estudos setoriais e análise das principais tendências nacionais e internacionais. A partir desse\ndiagnóstico, foram definidos 9 (nove) eixos estratégicos, programas e ações orientados por evidências, responsabilidade\nfiscal, inovação, transparência e compromisso com resultados, reconhecendo que uma gestão pública eficiente depende\nde planejamento, boa governança e avaliação permanente das políticas públicas.\nNossa visão de governo parte da convicção de que desenvolvimento econômico, proteção ambiental e inclusão social\ncaminham juntos. A preservação da floresta deve gerar oportunidades para quem vive nela; a força da Zona Franca\nde Manaus deve impulsionar a inovação e ampliar a competitividade do Estado; o crescimento econômico precisa ser\nacompanhado da melhoria da educação, da saúde, da segurança pública, da infraestrutura, da geração de emprego e renda\ne da qualidade de vida em todos os municípios. O futuro do Amazonas será construído pela capacidade de integrar essas\nagendas em uma estratégia única de desenvolvimento.\nMais do que um Plano para os próximos quatro anos, este documento apresenta uma estratégia para fortalecer as\ncapacidades do Estado, promover o desenvolvimento em todas as regiões e ampliar as oportunidades para cada amazonense.\nPorque fazer o Amazonas avançar significa levar desenvolvimento ao interior, gerar prosperidade com sustentabilidade,\ncuidar das pessoas e construir um futuro em que todo o Estado siga, unido, pra cima.\n\n4"
+          },
+          {
+            "id": "pra-cima-amazonas",
+            "titulo": "PRA CIMA AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PRA CIMA AMAZONAS\n\nPLANO DE GOVERNO - 2027 • 2030\n\n2. NOSSO COMPROMISSO COM O AMAZONAS\nO Amazonas é um Estado rico, mas a grande maioria da população é pobre. Faz tanto tempo que as coisas são assim que\nmuitos até esquecem que esse não é nem pode ser o destino de um povo que habita um dos territórios mais ricos do planeta\nem todos os sentidos. A transformação do Amazonas num Estado mais próspero para a nossa população é necessária,\nurgente e possível.\nMe sinto totalmente preparado para conduzir esse processo transformador, tanto pela experiência de vida como pela\nexperiência política. Conheço de perto as dores dos mais carentes, dos que dependem dos serviços públicos e lutam pela\nsobrevivência diariamente. Essa foi a história da minha vida e é essa experiência que orienta a minha trajetória política\ndesde o início.\nFui deputado estadual por três mandatos, presidente da Assembléia Legislativa e governador interino do Amazonas. Depois,\nfui eleito duas vezes prefeito de Manaus e, durante cinco anos e três meses, provei que, quando se tem energia, coragem\ne determinação política, é possível fazer muito, mesmo com poucos recursos. Ao lado da minha equipe, construí um legado\nduradouro para as atuais e as futuras gerações de manauaras.\nÉ um legado que inclui grandes obras, como o Mirante Lúcia Almeida, o Píer 355, o Parque Gigantes da Floresta e o viaduto\nRei Pelé. Mas também a renovação da frota de ônibus, a modernização e o armamento da Guarda Municipal, a criação\ndo Passe Livre Estudantil, do Prato do Povo e das ecobarreiras, o aumento dos índices de saneamento básico e, muito\nespecialmente, os avanços conquistados pelas redes municipais de saúde e educação, hoje entre as melhores do Brasil.\nFiz tudo isso e muito mais com um orçamento quatro vezes menor do que o do Governo do Estado que, nesses quase oito\nanos, não realizou nenhuma grande obra na capital e muito menos no interior, deixou a saúde e a educação estaduais entre\nas piores do Brasil e se omitiu no combate à violência e às facções criminosas que hoje estão por toda a parte.\nDiante disso, tomei a decisão de me apresentar como candidato a governador, fiel que sou a um dos versos mais bonitos\ndo nosso Hino Nacional: “Verás que um filho teu não foge à luta”. Eu não fujo mesmo. O que fiz por Manaus, vou fazer pelo\nAmazonas. Quero e vou enfrentar os nossos grandes problemas baseado na convicção de que temos tudo para escrever\numa nova história, onde o acesso à segurança, ao trabalho e à uma educação e saúde de qualidade não seja um privilégio\nde poucos, mas um direito de todos.\nO Plano de Governo que coloco agora à apreciação e ao debate públicos indica os caminhos que pretendemos trilhar. Ele\ncontém propostas de curto, médio e longo prazo, elaboradas por técnicos experientes que me acompanham há tempos,\ne detalham o trabalho que vamos realizar caso o eleitor nos dê essa honra. Entre as nossas prioridades, adianto desde\njá, estão zerar a fila do SISREG e aparelhar os hospitais e prontos-socorros estaduais, dobrar o valor do Auxílio Estadual\nPermanente dos atuais R$ 150 para R$ 300 por mês, e ampliar a presença da Polícia Militar e incentivar a criação de\nGuardas Municipais armadas no interior.\nPortanto, mais que um conjunto de propostas, nosso Plano de Governo representa o compromisso que assumimos com a\ntransformação do Amazonas num Estado verdadeiramente próspero para todas as pessoas de bem que vivem e trabalham\nnessa terra abençoada por Deus.\n\nDAVID ALMEIDA\n5"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-3",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n6\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-4",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n7"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-5",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n3. ANÁLISE SWOT DO AMAZONAS.\nGovernar o Amazonas é gerenciar o paradoxo de estar no coração da maior riqueza ambiental do planeta e, ao mesmo\ntempo, enfrentar o desafio de conectar um território de dimensões continentais. Somos mais de 4 milhões de amazonenses\nespalhados por capitais, cidades-polo, comunidades ribeirinhas e terras indígenas. Formamos um mosaico humano único,\ncuja resiliência é testada diariamente pelas distâncias geográficas, pelos vazios logísticos e, cada vez mais, pelas severas\ntransformações climáticas que desafiam nossos rios.\nEste Plano de Governo nasce com a clareza de que o modelo de desenvolvimento do nosso Estado precisa evoluir. A pujança\ndo Polo Industrial de Manaus, que responde por quase 80% do nosso Produto Interno Bruto (PIB), consolida a capital\ncomo um dos motores econômicos do Brasil e garante a proteção da nossa floresta em pé. No entanto, o diagnóstico que\nse apresenta a nós exige coragem para encarar as assimetrias: a riqueza gerada na capital precisa se transformar em\ndignidade distribuída ao longo das calhas dos nossos rios.\nNão podemos mais aceitar um Amazonas dividido entre a modernidade tecnológica da capital e o isolamento crônico do\ninterior. O cidadão que vive no Alto Solimões, no Juruá ou no Purus não pode ter o acesso a direitos básicos mitigado pelo\ncusto da vazante ou pela falta de conectividade. Governar, para nós, é estender raízes de proteção que alcancem a todos.\nEssa ótica de integração e amparo é a espinha dorsal deste Plano. Inspirado em um modelo de gestão inovadora nossa\nestratégia governamental atuará na descentralização dos serviços públicos, na garantia da segurança alimentar, no\ncombate firme à criminalidade que ameaça nossas fronteiras fluviais e no impulsionamento da bioeconomia como a nova\nmatriz de emancipação do interior.\nAs crises climáticas recentes, marcadas por estiagens históricas que paralisaram o comércio e isolaram municípios,\ndeixaram um recado nítido: o futuro bate à porta e exige planejamento de longo prazo, governança baseada em dados e\nrespostas preventivas. Este documento não é apenas uma lista de promessas eleitorais; é um pacto de responsabilidade\nfiscal, inovação tecnológica e justiça social.\nConvidamos cada cidadão e cidadã a conhecer as propostas deste plano. Mais do que administrar as urgências do presente,\nassumimos o compromisso de projetar o Amazonas das próximas décadas. Um Estado economicamente forte, socialmente\njusto e ambientalmente soberano. Um Amazonas que orgulha seu povo e protege suas raízes.\nConstruir um diagnóstico para o Amazonas exige entender que governar o nosso Estado é gerenciar o paradoxo de ter a\nmaior riqueza ambiental do planeta e uma das economias mais concentradas do país, convivendo com vazios logísticos e\nisolamento social.\nPara subsidiar nosso Plano de Governo, consolidamos a Matriz SWOT cruzando os dados socioeconômicos, ambientais e\nde infraestrutura mais recentes do Estado (com referências atualizadas).\n\n8"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-6",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nCENÁRIO BASE: DADOS SOCIOECONÔMICOS.\n• O IDHM de 0,767 (Radar IDHM Pnud), mascara uma profunda desigualdade interna. Enquanto o IDHM da Região\nMetropolitana de Manaus foi para 0,786, o interior profundo (especialmente calhas rurais) ainda registra índices muito\nmenores. O Estado segue abaixo da média nacional, que é de 0,805\nOs principais dados que compõem o índice do Estado dividem-se em três pilares:\n• Educação: 0,692\n• Renda: 0,608\n• Longevidade (Expectativa de vida): 0,324 (variável que puxa a média estadual para baixo nos subíndices locais).\nDesigualdade Municipal: existe uma grande disparidade interna. Enquanto a capital, Manaus, possui um dos maiores\níndices (0,737), municípios do interior frequentemente registram níveis mais baixos, como Santa Isabel do Rio Negro\n(0,479) e Atalaia do Norte (0,450).\nQualidade de Vida Geral: em avaliações recentes de Progresso Social, que analisam necessidades humanas e oportunidades,\no Amazonas ocupa a 8ª pior qualidade de vida entre as 27 unidades federativas do país, pontuando abaixo da média nacional.\nA Força do PIB e a Concentração: o PIB do Estado gira em torno de R$ 161,79 bilhões (IBGE), respondendo por mais de\n25% da economia da Região Norte. No entanto, há uma centralização extrema: Manaus detém 78,9% de todo o PIB do\nEstado (6º maior PIB municipal do Brasil, atingindo R$ 127,6 bilhões). O interior (com exceção de Coari, pelo gás/petróleo,\ne Itacoatiara, pelo setor portuário/agro) divide o restante.\nO Motor Industrial: o Polo Industrial de Manaus (PIM) vive um momento forte de faturamento, superando marcas históricas\nrecentes, na casa dos R$ 167 bilhões nos acumulados anuais, gerando mais de 131 mil empregos diretos concentrados em\nBens de Informática e Duas Rodas.\n\nMATRIZ SWOT\nFORÇAS: (Ambiente Interno – Vantagens Atuais)\n• Modelo Zona Franca de Manaus (ZFM): segurança jurídica garantida pela Reforma Tributária e forte arrecadação fiscal,\nsustentando o caixa do Estado e gerando emprego de alta tecnologia na capital.\n• Preservação Florestal Ativa: o Amazonas preserva mais de 90% da sua cobertura florestal original, o que o coloca como\no maior “player” global de créditos de carbono e serviços ambientais do Brasil.\n• Matriz Energética e Extrativista: autossuficiência e geração de royalties através da produção de petróleo e gás natural\nem Coari (Província Petrolífera de Urucu).\n9"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-7",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n• Riqueza Cultural e Identitária: forte apelo cultural (como o Festival de Parintins) e a maior população indígena do país,\ngerando uma identidade única para o turismo e a economia criativa.\nFRAQUEZAS: (Ambiente Interno – Gargalos Estruturais)\n• Hipercentralização Econômica: dependência quase total do PIM e de Manaus. O interior sofre com a falta de indústrias e\nalternativas de emprego, dependendo excessivamente do funcionalismo público e de programas de transferência de renda.\n• Gargalo Logístico e de Transportes: dependência absoluta do modal hidroviário (lento e vulnerável à sazonalidade dos\nrios) e isolamento terrestre cronificado (impasses históricos na pavimentação da BR-319).\n• Defasagem em Saneamento e Conectividade: índices de tratamento de água e esgoto no interior e nas periferias da\ncapital ainda estão entre os mais baixos do país. Além disso, a internet via fibra óptica nos municípios distantes ainda é\ninstável e cara.\n• Logística de Saúde e Educação Complexa: o custo para levar insumos de saúde de alta complexidade ou merenda escolar\npara as comunidades ribeirinhas é até 5 vezes maior que a média nacional devido às distâncias.\nOPORTUNIDADES: (Ambiente Externo – Tendências de Mercado/Mundo)\n• Mercado Global de Créditos de Carbono: consolidação do mercado regulado de carbono. O Amazonas pode captar bilhões\nde fundos internacionais (como o Fundo Amazônia) para remunerar comunidades tradicionais.\n• Bioeconomia de Alto Valor: industrialização e beneficiamento de produtos da floresta (açaí, pirarucu, manejo de madeira,\nóleos essenciais e fitoterápicos) integrando o interior às cadeias globais.\n• Transição Energética e Mercado de Gás: uso do gás de Urucu e de novas descobertas na Bacia do Amazonas para baratear\na energia no interior (substituindo termelétricas a diesel) e atrair indústrias de fertilizantes.\n• Turismo de Experiência e Científico: demanda global crescente por ecoturismo de base comunitária, pesca esportiva e\nturismo científico internacional.\nAMEAÇAS: (Ambiente Externo – Riscos Fora de Controle)\n• Eventos Climáticos Extremos (estiagens recordes): O aumento da frequência de secas históricas severas (como as\nocorridas recentemente) paralisa a navegação dos rios, isola cidades inteiras, desabastece o Polo Industrial de insumos e\nencarece o frete.\n• Pressão do Desmatamento e Queimadas: avanço do arco do desmatamento na região sul do Estado (Lábrea, Apuí, Novo\nAripuanã), gerando pressão internacional e riscos de sanções econômicas a produtos locais.\n10"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-8",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n• Segurança Pública e Rotas do Tráfico: a imensidão das fronteiras fluviais com Colômbia e Peru torna as calhas dos rios\nSolimões e Negro vulneráveis às rotas internacionais do narcotráfico e à pirataria de rio, impactando a segurança das\ncomunidades ribeirinhas.\n• Vulnerabilidade Tecnológica da ZFM: mudanças tecnológicas globais que possam tornar obsoletos os produtos montados\nno PIM (como a transição rápida para veículos elétricos ou mudanças abruptas na legislação federal).\n\n11"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-9",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n12\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-10",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n13"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-11",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nPOPULAÇÃO\n• População Estimada (2025): 4.321.616 habitantes (Considera a contagem oficial recalculada pelo IBGE até julho de 2025).\n• Densidade Demográfica: 2,53 hab/km2 (O Amazonas possui a maior extensão territorial do país, o que resulta na menor\ndensidade demográfica de toda a Amazônia).\n• Ranking Nacional: é o 13º Estado mais populoso do Brasil e o 2º maior da Região Norte (atrás apenas do Pará).\n• Distribuição por Sexo: praticamente equivalente, sendo aproximadamente 49,7% de mulheres e 50,3% de homens.\n• População Indígena: o Amazonas concentra a maior população indígena do país, com forte presença de diversas etnias\n(como os Yanomami, Ticuna, entre outras), muitas vivendo em áreas isoladas ou em comunidades ribeirinhas.\n• Domicílios: o Estado se destaca por ter uma média elevada de moradores por residência. No distrito de Santa Rita (em São\nPaulo de Olivença), por exemplo, registra-se uma das maiores médias do país, com cerca de 6,3 moradores por domicílio\n(enquanto a média nacional gira em torno de 2,7).\n\nDESPESA PÚBLICA E DESEQUILÍBRIO FISCAL\nO primeiro grande desafio a ser enfrentado será promover o equilíbrio das contas públicas. Notadamente nos últimos anos,\nhouve um completo abandono de governança e gestão no Estado do Amazonas. Acúmulo de dívidas com fornecedores e\nprestadores de serviços, contratações sem licitações, dispensas de licitação injustificadas com valores estratosféricos,\ncrescimento exponencial dos precatórios judiciais, endividamento sem entregas à sociedade, falta de concursos públicos,\nservidores sem promoção, progressão ou mesmo correção monetária dos seus salários e graves denúncias de desvio de\ndinheiro público são realidades que permanecem na atual gestão. A seguir, alguns números comparativos do Amazonas em\n2018 e 2026 (previsto).\n\nFonte: https://sistemas.sefaz.am.gov.br/transparencia\n\n14"
+          },
+          {
+            "id": "pra-cima-amazonas-2",
+            "titulo": "PRA CIMA AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PRA CIMA AMAZONAS\n\nPLANO DE GOVERNO - 2027 • 2030\n\nOs números previstos para 2027 são ainda mais alarmantes. Serão mais de R$ 800 milhões em sentenças judiciais e R$\n1,5 bilhão projetados em DEA (Despesas de Exercícios Anteriores). Sequer existe controle na realização das despesas.\nPortanto, não se sabe ao certo a real dívida com fornecedores e prestadores de serviços.\nDez prestadores de serviços representam 25% dos custos contratuais. Os Contratos de Gestão consomem três bilhões do\norçamento anual. São exemplos os contratos de gestão hospitalar, administração prisional, AADC e AADESAM.\nA falta de gestão impactou até a previdência com aplicações indevidas do dinheiro do servidor público para o Banco Master.\nA Polícia Federal investiga o montante de R$ 390 milhões em aplicações suspeitas realizadas pela AmazonPrev. Auditoria\ndo Mistério da Previdência identificou cinco operações financeiras investigadas que totalizam R$ 261 milhões, sendo R$\n50 milhões realizadas com o Banco Master.\nA propósito, o prejuízo não se restringe aos servidores do Executivo, mas também da ALEAM, do TJAM, do TCE e do MPE.\nFato que demonstra a falta de compromisso técnico e ético com o dinheiro das aposentadorias e pensões dos servidores\npúblicos do Estado do Amazonas.\n\nECONOMIA\nApesar da desastrosa gestão do governo estadual, o Amazonas tem uma economia dinâmica e estratégica para o\ndesenvolvimento da Região Norte, sustentada por uma estrutura produtiva diversificada. Em 2025, o Produto Interno\nBruto (PIB) alcançou R$ 187,10 bilhões, com crescimento real de 4,41%, superando em 92% o desempenho do PIB brasileiro.\nNo primeiro trimestre de 2026, a economia manteve trajetória de expansão, registrando crescimento de 7,13% em valores\ncorrentes, com evolução em todos os setores da atividade econômica.\nProduto Interno Bruno (PIB) - 2025\n\nPIB 2025\n\nR$ 187,10\nBilhões\n\nCRESCIMENTO REAL DO PIB EM 2025\n\n4,41%\n\nSuperando em 92% o desempenho do PIB brasileiro.\n\nCRESCIMENTO NO 1º TRIMESTRE DE 2026\n\n7,13%\n\nEm valores correntes, com evolução\nem todos os setores da atividade econômica.\n\nA composição da economia estadual evidencia o protagonismo dos setores de Comércio e Serviços, responsáveis por 46%\ndo PIB, seguidos pela Indústria (32%), Impostos (17%) e agropecuária (4%). Embora possua menor participação relativa, a\nagropecuária apresentou o maior crescimento proporcional em 2025, com avanço de 11,61%, consolidando sua importância\npara a segurança alimentar, a geração de renda no interior e o fortalecimento de novas cadeias produtivas. O Amazonas\nocupa a 16ª posição no ranking nacional do PIB, representando 1,5% da economia brasileira, e detém o segundo maior PIB\nda Região Norte.\n15"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-12",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nDados de 2025\n\nComposição do PIB do Amazonas – 2025\n\nO desempenho econômico estadual está diretamente associado à força do Polo Industrial de Manaus (PIM), que registrou,\nem 2025, o maior faturamento de sua história, totalizando R$ 227,67 bilhões. O crescimento também se refletiu nas\nexportações, na geração de empregos, no número de estabelecimentos industriais em operação e na aprovação de novos\nprojetos, reforçando o papel do PIM como principal vetor da atividade econômica, da inovação industrial e da arrecadação\nestadual.\nApesar desse cenário favorável, o desenvolvimento econômico do Amazonas apresenta forte concentração territorial.\nManaus concentra 78% do PIB estadual, 93% da arrecadação do ICMS e do IPVA e 74% das transações via Pix, enquanto\ngrande parte dos municípios do interior permanece dependente de transferências constitucionais, repasses governamentais,\nprogramas sociais, economia de subsistência e do funcionalismo público municipal. Essa assimetria evidencia profundas\ndiferenças na capacidade de geração de riqueza e dinamização econômica entre a capital e as demais regiões do Estado.\nAo mesmo tempo, o interior do Amazonas reúne significativo potencial econômico ainda insuficientemente convertido em\ncadeias produtivas estruturadas, empreendimentos, empregos e renda local. A insuficiência de infraestrutura, logística,\nenergia e conectividade, aliada às dificuldades de acesso ao crédito, à assistência técnica, aos mercados consumidores e\naos desafios relacionados à regularização fundiária e ambiental, limita o aproveitamento das riquezas regionais e reduz a\ncompetitividade das atividades produtivas.\nNesse contexto, o principal desafio para o desenvolvimento econômico do Amazonas consiste em promover maior integração\nentre os diferentes territórios, estruturando de forma articulada todas as etapas do ciclo econômico, desde a regularização\ne o acesso aos fatores de produção até o beneficiamento, armazenamento, transporte, certificação e comercialização. A\nsuperação dessas limitações representa condição essencial para ampliar a geração de emprego, renda e oportunidades,\npromovendo um desenvolvimento mais equilibrado entre a capital e os municípios do interior.\n\n16"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-13",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nINFRAESTRUTURA E LOGÍSTICA\nA infraestrutura logística é um dos principais fatores para o desenvolvimento econômico e social do Amazonas. Em um\nEstado de dimensões continentais, onde rios, rodovias, aeroportos e portos desempenham papel estratégico na integração\nterritorial, as limitações da infraestrutura comprometem a mobilidade da população, elevam os custos de produção,\ndificultam o acesso aos serviços públicos e reduzem a competitividade da economia amazonense.\nO Amazonas permanece sem uma ligação rodoviária perene e confiável com o restante do país. A BR-319, principal\neixo terrestre entre Manaus e Porto Velho, ainda possui aproximadamente 400 quilômetros de seu trecho central sem\npavimentação. Durante o período chuvoso, esse segmento torna-se praticamente intransitável, isolando o Estado,\naumentando o custo do transporte de pessoas, insumos e mercadorias e reduzindo a competitividade das cadeias\nprodutivas. Ao mesmo tempo, a discussão sobre sua pavimentação exige soluções que conciliem integração logística com\na proteção ambiental e o controle do desmatamento.\nOs desafios também se refletem na malha rodoviária estadual. De acordo com o Relatório Sistema Rodoviário Estadual\ndo Amazonas (2024), das 34 rodovias que integram oficialmente a rede estadual, apenas 17 encontram-se totalmente\npavimentadas ou duplicadas, representando 50% da malha. Outras 2 rodovias (5,9%) possuem pavimentação parcial,\nenquanto 15 rodovias (44,1%) permanecem sem pavimentação. Esse cenário limita a integração entre os municípios,\ndificulta o escoamento da produção, amplia os custos logísticos e restringe o acesso da população aos serviços públicos\nessenciais.\nMalha Rodoviária Estadual (2024)\nEsse quadro se reflete nos indicadores nacionais. Segundo o Ranking de Competitividade dos Estados de 2025, elaborado\npelo Centro de Liderança Pública, o Amazonas ocupa a 27ª posição no indicador de qualidade das rodovias, ou seja, é\no pior Estado brasileiro nesse quesito, o que evidencia a necessidade de ampliar os investimentos em infraestrutura de\ntransporte e conectividade territorial.\n\nFonte: Sistema Rodoviário Estadual do Amazonas, SEINFRA, 2024\n\n17"
+          },
+          {
+            "id": "pra-cima-amazonas-3",
+            "titulo": "PRA CIMA AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PRA CIMA AMAZONAS\n\nPLANO DE GOVERNO - 2027 • 2030\n\nRanking de Competitividade dos Estados de 2025\n\n27ª\n\nPOSIÇÃO DO AMAZONAS\nno indicador de qualidade das rodovias\nFonte: Ranking de Competitividade dos Estados, Centro de Liderança Pública, 2025\n\nA infraestrutura hidroviária e aeroportuária também apresenta limitações importantes. As Instalações Portuárias Públicas\nde Pequeno Porte (IPIRs), fundamentais para a mobilidade e o abastecimento dos municípios do interior, operam, em sua\nmaioria, com infraestrutura precária, sem equipamentos adequados para carga e descarga, rampas compatíveis com a\nvariação do nível dos rios e terminais de passageiros com condições adequadas de atendimento. Na aviação regional,\napenas as principais sedes das calhas de rios dispõem de pistas capazes de receber aeronaves comerciais de médio porte,\nrestringindo a integração regional, o atendimento médico de urgência e o desenvolvimento do turismo.\nDiante desse cenário, o Amazonas precisa de uma estratégia integrada de infraestrutura e logística que fortaleça a\nconectividade entre a capital e o interior, amplie a integração regional, modernize rodovias, portos, aeroportos e sistemas\nde mobilidade urbana, promovendo maior competitividade econômica, redução das desigualdades territoriais e melhoria\nda qualidade de vida da população.\n\nEDUCAÇÃO\nA educação é o principal instrumento para reduzir desigualdades, promover o desenvolvimento humano e ampliar as\noportunidades para as futuras gerações. No Amazonas, entretanto, garantir uma educação pública de qualidade exige\nenfrentar desafios que vão muito além da sala de aula. As dimensões continentais do Estado, a dispersão populacional, a\ndiversidade cultural e as dificuldades logísticas tornam a oferta educacional uma das mais complexas do país, exigindo\nsoluções específicas para a realidade amazônica.\nEmbora importantes avanços tenham sido registrados nas últimas décadas, os indicadores educacionais demonstram que\no Amazonas ainda enfrenta dificuldades para alcançar os níveis de aprendizagem esperados. De acordo com o Índice de\nDesenvolvimento da Educação Básica (IDEB), a rede estadual de ensino, responsável pelo ensino Médio, ficou em 18º lugar\nno Brasil. Além disso, registrou o pior desempenho entre os 27 estados brasileiros na média das notas do Exame Nacional\ndo Ensino Médio (Enem), segundo o Ranking de Competitividade dos Estados 2025.\n18"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-14",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEntretanto, a realidade educacional amazonense não é homogênea. Manaus apresenta desempenho superior ao conjunto\ndo Estado e já supera as metas nacionais em parte da educação básica, evidenciando que é possível alcançar melhores\nresultados quando há planejamento e investimentos. Na gestão de David Almeida, a rede municipal de Manaus, responsável\npelo ensino fundamental, alcançou nota 6,2 no IDEB, superando tanto a média estadual (5,7) quanto a meta nacional (6,0).\nManaus ficou entre as 4 capitais com melhor desempenho na avaliação dos anos iniciais do IDEB 2023.\nÍndice de Desenvolvimento da Educação Básica (IDEB) 2023\n\nEsses resultados refletem os investimentos realizados pela Prefeitura de Manaus na modernização da infraestrutura\nescolar, na ampliação da educação infantil, na valorização dos profissionais da educação, na formação continuada, na\nmelhoria da gestão pedagógica, na alfabetização na idade certa, na inovação tecnológica e no acompanhamento permanente\nda aprendizagem. A experiência da capital demonstra que políticas públicas consistentes, associadas à gestão eficiente e\nao monitoramento de resultados, produzem avanços concretos na qualidade da educação.\n\n19"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-15",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nIDEB Manaus – Anos Iniciais (2023)\n\nFonte: IDEB2023\n\nA realidade é diferente no interior: grande parte dos municípios ainda enfrenta limitações estruturais que dificultam a\noferta de ensino de qualidade. Em milhares de comunidades rurais, ribeirinhas, indígenas e quilombolas, o deslocamento\naté a escola depende de longas viagens por rios e estradas, tornando o transporte escolar um componente essencial\npara garantir o direito à educação. Embora o Programa de Mediação Tecnológica tenha ampliado o acesso ao ensino em\nlocalidades remotas, muitas telessalas ainda enfrentam restrições de conectividade, infraestrutura e equipamentos,\nlimitando o pleno aproveitamento das tecnologias educacionais.\nOutro desafio consiste em oferecer uma educação que respeite a diversidade cultural e territorial do Amazonas. Um modelo\nuniforme não atende às diferentes realidades do Estado. É necessário fortalecer currículos contextualizados, valorizar\nos saberes dos povos indígenas, ribeirinhos e quilombolas, ampliar a educação inclusiva, modernizar as escolas, garantir\nalimentação escolar de qualidade, promover ambientes acolhedores e investir continuamente na formação e valorização\ndos profissionais da educação.\nO principal desafio para os próximos anos consiste em reduzir a distância existente entre os resultados obtidos pela rede\nmunicipal de Manaus e aqueles observados em grande parte dos municípios do interior, disseminando para todo o Estado\nas boas práticas de gestão educacional, os investimentos em infraestrutura física e digital, a valorização dos profissionais\ne as políticas de acompanhamento da aprendizagem que vêm produzindo resultados positivos na capital. Mais do que\nampliar o acesso, será necessário garantir permanência, aprendizagem e oportunidades, conectando a educação às\nvocações econômicas e sociais do Amazonas e preparando as novas gerações para os desafios do século XXI.\n\nSAÚDE\nO Amazonas enfrenta um dos maiores desafios sanitários do Brasil. Com aproximadamente 1,5 milhão de km2 de extensão\nterritorial e 61 municípios acessíveis predominantemente por rios, a oferta de serviços de saúde é condicionada pelas\ngrandes distâncias, pelo regime de cheias e secas e pelas limitações logísticas. Essa realidade torna o acesso à assistência\nmais complexo e exige soluções específicas para a realidade amazônica.\n20"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-16",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nO chamado “Custo Amazônia” amplia significativamente as despesas com a saúde pública. O transporte de pacientes em\nUTI aérea e o abastecimento de insumos essenciais, como oxigênio medicinal, podem custar até dez vezes mais do que em\nEstados com infraestrutura rodoviária integrada. Esse cenário demanda um modelo de saúde descentralizado, capaz de\nlevar os serviços até a população por meio da telemedicina, de barcos-hospitais e da inovação tecnológica.\nAs desigualdades na distribuição dos profissionais de saúde são um dos principais entraves para a regionalização da\nassistência. Manaus concentra 94% dos médicos do Estado, enquanto os 61 municípios do interior contam com apenas 6%\ndo total. Como consequência, a densidade médica no interior é de apenas 0,20 médico por mil habitantes, índice 15 vezes\ninferior ao da capital e 11 vezes menor que a média da Região Nordeste.\nDistribuição de Médicos no Estado\n\nO déficit de profissionais especializados também compromete a capacidade de atendimento. O Amazonas possui uma\ncarência estimada de 8.481 médicos para alcançar o padrão da Organização para a Cooperação e Desenvolvimento\nEconômico (OCDE), incluindo mais de 500 especialistas. A defasagem salarial, cerca de 30% inferior à média do Sudeste,\naliada à limitada infraestrutura diagnóstica dos hospitais do interior, dificulta a fixação de especialistas, mesmo quando\nhá incentivos financeiros.\nA concentração da estrutura assistencial reforça as desigualdades regionais. Praticamente 100% dos leitos de UTI, das\ncirurgias cardíacas, dos tratamentos oncológicos e dos exames de alta complexidade, como ressonância magnética\ne tomografia computadorizada avançada, estão localizados em Manaus. Como consequência, os municípios do interior\npermanecem altamente dependentes do Tratamento Fora de Domicílio (TFD).\nEssa concentração obriga o Estado a destinar parcelas expressivas do orçamento da saúde ao transporte aeromédico de\npacientes graves provenientes dos municípios mais distantes. Além do elevado custo operacional, essa dinâmica evidencia\n21"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-17",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\na necessidade de ampliar a capacidade resolutiva da rede hospitalar do interior, reduzindo deslocamentos e aproximando\nos serviços especializados da população.\nA fragmentação do SISREG entre Estado e capital dificulta a integração das informações, a rastreabilidade dos pacientes\ne a utilização de ferramentas de inteligência artificial para qualificar a regulação dos serviços, monitorar os atendimentos\ne melhorar a qualidade do serviço.\nO orçamento da Secretaria de Estado de Saúde previsto para 2026, de aproximadamente R$ 4,8 bilhões, demonstra a\nmagnitude dos recursos destinados à manutenção da rede estadual de saúde, mas os resultados não aparecem. Prova\ndisso é que nenhum hospital foi construído na capital e no interior, o pagamento de empresas terceirizadas e de seus\nfuncionários está atrasado, datas-base, promoções e progressões estão pendentes, faltam leitos e profissionais nas\nunidades estaduais, como hospitais e prontos-socorros, e a falta de transparência e a espera na fila de regulação do\nSISREG são tão gritantes que o sistema passou a ser chamado de “fila da morte”. Enfim, um caos total. Esse cenário\nreforça a necessidade de aprimorar a gestão, fortalecer a regionalização da assistência e ampliar o uso de tecnologias que\naumentem a eficiência da aplicação dos recursos públicos.\nDiante desse contexto, o Amazonas necessita de um novo modelo de saúde. Um bom exemplo do que pode ser feito é o\ntrabalho realizado pela gestão David Almeida que fez a saúde básica de Manaus ser eleita por sete vezes consecutiva a\nmelhor entre as capitais brasileiras, graças a valorização dos profissionais da área e a construção, reforma e ampliação de\n128 unidades. Agora, os desafios envolvem a ampliação da telemedicina, a implantação de hubs tecnológicos em saúde, a\nintegração dos sistemas de informação, o fortalecimento da assistência especializada no interior e a aplicação correta dos\nrecursos públicos para ampliar o acesso e garantir atendimento de qualidade em todas as regiões do Estado.\n\nSEGURANÇA\nIndicadores de Criminalidade e Redução de Homicídios\nSegundo o balanço consolidado de janeiro de 2026, o Amazonas registrou uma redução de 33% nos índices de homicídios\nao longo do ano de 2025, e, em Manaus, de 45%. Os números devem ser observados com cautela, pois os dados são\nfornecidos pela própria Secretaria de Segurança Pública do Governo do Estado. O fato é que a sensação de insegurança só\ncresce, assim como os relatos sobre a ocupação territorial de bairros do interior e da capital pelo crime organizado.\nDesafios de Fronteira e Facções Criminosas\nA Rota Solimões: o grande desafio estrutural da segurança pública no Amazonas é o controle da vasta extensão de\nfronteiras fluviais com o Peru e a Colômbia. A calha do Rio Solimões funciona como uma das principais rotas internacionais\nde escoamento de cocaína e skunk (supermaconha). O policiamento na região exige alta capacidade logística (lanchas\nblindadas, helicópteros e comunicação via satélite). O controle de portos clandestinos e a pirataria nos rios (“barrigasd’água”) continuam desafiando as forças estaduais e federais.\nO Avanço do Crime Organizado no Interior\nO fato de o Estado ocupar uma posição alta no ranking de violência nacional (6° posição) e liderar a letalidade contra povos\n22"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-18",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nindígenas reflete diretamente a interiorização das facções criminosas.\nAs rotas fluviais historicamente usadas para o comércio local transformaram-se em corredores disputados para o\nescoamento de ilícitos (como o narcotráfico vindo das fronteiras). Quando essas rotas colidem com territórios tradicionais\ne áreas preservadas, a violência explode no interior, longe dos olhos dos grandes centros urbanos.\nA Pressão sobre os Territórios Indígenas\nA liderança em mortes de indígenas não é um fato isolado; ela está intimamente ligada a crimes ambientais e econômicos:\n• Garimpo ilegal e extração de madeira: atraem grupos armados para dentro de terras demarcadas ou em processo de\ndemarcação.\n• Conflitos fundiários: a ausência ou a fragilidade da fiscalização regular cria zonas de ninguém, onde lideranças\ncomunitárias e povos originários se tornam alvos vulneráveis por defenderem suas terras.\nPosição no Ranking de Violência Geral\nO panorama nacional consolida o Amazonas em sexto (6°) lugar no ranking geral dos Estados mais violentos do Brasil em\ntermos de mortes violentas intencionais. Mesmo que a SSP/AM sustente que há reduções nas áreas urbanas e na capital, o\nEstado como um todo permanece com taxas de letalidade significativamente acima da média nacional. Esse posicionamento\né reflexo direto de problemas estruturais que persistem fora dos grandes centros, onde a ausência do poder público e o\ncontrole de rotas logísticas por grupos armados nas calhas dos rios mantêm os índices criminais agregados em patamares\nelevados.\n\nDESENVOLVIMENTO SOCIAL, CIDADANIA E DIREITOS HUMANOS\nO Amazonas enfrenta elevados níveis de vulnerabilidade social, marcados por desigualdades territoriais, dificuldades de\nacesso aos serviços públicos e desafios para a garantia da proteção social e da segurança alimentar. Segundo estimativas\ndo Ministério do Desenvolvimento e Assistência Social (MDS), em 2026 cerca de 53% da população estará em situação de\npobreza ou baixa renda.\nAs vulnerabilidades diferem entre os contextos urbano e rural. Nas cidades predominam problemas como precariedade\nhabitacional, informalidade do trabalho, baixa renda e acesso desigual aos serviços públicos. Já nas áreas rurais,\nribeirinhas, indígenas e de difícil acesso, as grandes distâncias, os elevados custos de deslocamento e as limitações de\ninfraestrutura dificultam o acesso contínuo às políticas públicas.\nCom população estimada em 4,32 milhões de habitantes, o Amazonas apresenta forte concentração do desenvolvimento\nem Manaus, que reúne mais da metade da população estadual, concentra empregos formais, infraestrutura, serviços\nespecializados e melhores indicadores socioeconômicos. Em contraste, municípios do interior apresentam menor\ndiversificação econômica, maior dependência da administração pública e dificuldades de acesso à educação, saúde,\n23"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-19",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nsaneamento e oportunidades de trabalho.\nA extensa dimensão territorial, a predominância do transporte fluvial e as dificuldades logísticas exigem políticas públicas\nregionalizadas e territorializadas. Nesse contexto, o Sistema Único de Assistência Social (SUAS) desempenha papel\nfundamental, mas enfrenta limitações relacionadas ao cofinanciamento, à infraestrutura, à qualificação das equipes e à\ncapacidade de atendimento nos municípios do interior.\nO Estado também enfrenta desafios na promoção dos direitos humanos, especialmente para povos indígenas, comunidades\ntradicionais, ribeirinhas, mulheres, pessoas idosas, pessoas com deficiência, crianças, adolescentes e demais grupos em\nsituação de vulnerabilidade, demandando políticas integradas, regionalizadas e intersetoriais.\nNa área da segurança alimentar e nutricional, apesar da riqueza ambiental do Estado, aproximadamente 43% dos domicílios\namazonenses convivem com algum grau de insegurança alimentar. Os principais fatores são as dificuldades logísticas, os\nelevados custos de abastecimento, a dispersão populacional e as limitações de acesso à água, saneamento e serviços\npúblicos, afetando principalmente populações do interior, indígenas, ribeirinhas e comunidades tradicionais.\nEntre os domicílios em insegurança alimentar, 59,6% apresentam insegurança leve, 19,2% insegurança moderada e 21,3%\nvivenciam insegurança alimentar grave, caracterizada pela ocorrência de fome.\nDiante desse cenário, fica evidente a necessidade de fortalecer as políticas de assistência social, segurança alimentar,\ngeração de renda, qualificação profissional, apoio à agricultura familiar, inclusão produtiva, cidadania e direitos humanos,\ncom ampliação da presença do Estado, regionalização dos serviços e integração entre as políticas públicas para reduzir as\ndesigualdades e garantir direitos à população amazonense.\n\n24"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-20",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nMEIO AMBIENTE\nMeio ambiente e mudanças climáticas são temas fortemente sensíveis ao Amazonas. Com aproximadamente 98% de seu\nterritório preservado (152.772.346 ha), sendo 93,4% de floresta (145.573.901 ha), nenhum outro Estado contribui mais\npara atingir as metas de emissão líquida de carbono.\nNão obstante, a preservação da floresta tem um significativo custo à população. Historicamente, as iniciativas de\nprovimento de serviços ao interior do Estado, de novos negócios, de geração de emprego e de distribuição de renda têm\nsido fracassadas. A floresta é preservada, mas os povos da floresta não são recompensados pelas suas contribuições\nambientais e climáticas.\n\nFonte: https://plataforma.brasil.mapbiomas.org\n\nDefinitivamente, a Amazônia precisa ser observada como um grande ativo ambiental com enorme potencial de produção\neconômica, geração de empregos e distribuição de renda. Oportunidades de investimentos em bioeconomia e receitas com\npagamentos de serviços ambientais, dentre os quais os créditos de carbono.\nEvolução da área de desmatamento: a partir de 2023, o Governo Federal intensificou ações de comando e controle que\nresultaram em significativa queda no desmatamento ilegal. O ano de 2026, dados até 30 de julho, registra a menor taxa de\ndesmatamento desde 2019 (6.854 ha).\n\n25"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-21",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nFonte: https://consulta.car.gov.br/\n\nCadastro Ambiental Rural (CAR): o Amazonas possui 95.114 imóveis rurais cadastrados, totalizando quase 117 milhões\nde hectares. Atualmente, outros 153.385 imóveis estão em processo de regularização ambiental (aproximadamente 153\nmilhões de hectares), dentre os quais 4.117 cadastrados concluídos, 79.037 cadastros em análise e 70.231 manifestações\nde interesse em aderir ao Programa de Regularização Ambiental (PRA). Apoiar especialmente os pequenos produtores\nrurais no CAR é fundamental para ampliar o acesso ao crédito, a agricultura familiar, o extrativismo, a segurança alimentar\ne a assistência técnica, gerando crescimento sustentável que preserva o meio-ambiente, distribui renda e interioriza o\ndesenvolvimento.\n\nAinda que estejamos avançando no CAR, os números do Amazonas são bastante inferiores aos registrados, por exemplo,\nnos Estados do Pará e Rondônia que possuem, respectivamente, 366 mil e 185 mil imóveis rurais cadastrados.\n\nHABITAÇÃO E SANEAMENTO BÁSICO\nHabitação\nO Amazonas possui 34,6% dos seus domicílios localizados em favelas e comunidades urbanas. Seu déficit habitacional está na\nordem de 870.926 mil unidades, um dos maiores índices do Brasil. Em Manaus, segundo dados da Fundação João Pinheiro, o\ndéficit habitacional é de 108.266 mil moradias.\nA gestão de David Almeida foi a que mais procurou reduzir esse déficit nos últimos anos. Várias obras habitacionais foram\niniciadas no seu governo, em parceria com o programa federal Minha Casa, Minha Vida. O conjunto Morar Melhor 13, 14 e 15\nfoi recentemente entregue, com 576 apartamentos, todos eles semimobiliados pela Prefeitura, uma iniciativa inédita no país.\nO Amazonas precisa transformar a pauta da moradia em política pública central de desenvolvimento social, econômico e\nambiental. Moradia digna significa segurança jurídica, proteção da família, geração de emprego, valorização urbana e cidadania.\nNosso compromisso será executar o maior programa habitacional e fundiário da história do Estado, integrando regularização\nfundiária, novas moradias, reassentamento humanizado, inclusão social e mediação comunitária.\n\n26"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-22",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nSANEAMENTO BÁSICO\nAbastecimento de Água:\nO diagnóstico do abastecimento de água no Estado do Amazonas evidencia uma forte desigualdade entre a capital e os\nmunicípios do interior. De acordo com dados do Sistema Nacional de Informações em Saneamento Básico (SINISA), Manaus\napresenta 97,13% de atendimento da população por rede de abastecimento de água, enquanto os 61 municípios do interior\nregistram cobertura média de 56,76%. Esse cenário demonstra que, embora a capital esteja próxima da universalização do\nserviço, grande parte da população do interior ainda não dispõe de acesso regular à rede de abastecimento.\nA prestação dos serviços de abastecimento de água no Amazonas é realizada por diferentes modelos de gestão. Em\nManaus, o serviço é operado pela concessionária Águas de Manaus, responsável pelo abastecimento da capital. No interior,\na Companhia de Saneamento do Amazonas (COSAMA) atua em 15 municípios, enquanto os demais são atendidos por\nServiços Autônomos de Água e Esgoto (SAAEs) ou diretamente pelas Prefeituras Municipais, por meio de suas secretarias\nou departamentos de saneamento. Essa diversidade de prestadores resulta em diferentes níveis de capacidade técnica,\noperacional e financeira para implantação, operação e expansão dos sistemas de abastecimento.\nOs indicadores do SINISA também revelam grande heterogeneidade entre os municípios do interior. Enquanto algumas\ncidades apresentam índices de atendimento mais altos, outras possuem cobertura bastante reduzida, inferior a 20% da\npopulação, evidenciando importantes desigualdades regionais.\nEsgotamento sanitário:\nO esgotamento sanitário permanece como um dos maiores desafios do saneamento básico no Estado do Amazonas,\napresentando índices de cobertura muito inferiores aos observados no abastecimento de água. Na capital, de acordo com\ndados do Sistema Nacional de Informações em Saneamento Básico (SINISA), Manaus possuía 32,35% de cobertura por\nrede coletora de esgoto na base de dados analisada. Entretanto, a cidade vem registrando avanços contínuos na expansão\nda infraestrutura. Conforme informações da concessionária Águas de Manaus, a cobertura da rede coletora de esgoto\natingiu aproximadamente 40% da população ao final de 2025, resultado dos investimentos realizados na ampliação das\nredes coletoras, estações elevatórias e sistemas de tratamento de esgoto.\nNo interior do Estado, o cenário é ainda mais desafiador. Considerando apenas os municípios que encaminharam\ninformações ao SINISA, a cobertura média da população atendida por rede coletora de esgoto é de aproximadamente\n29,35%, evidenciando que menos de um terço da população desses municípios possui acesso ao serviço. Entretanto, esse\npercentual deve ser interpretado com cautela, pois apenas um número reduzido de municípios informou seus indicadores\nao sistema, o que impede a elaboração de um diagnóstico abrangente da realidade do interior amazonense. A ausência\ndessas informações dificulta a identificação das regiões mais críticas, limita a comparação entre municípios e compromete\no acompanhamento das metas de universalização estabelecidas pelo Marco Legal do Saneamento Básico.\nColeta de Resíduos Sólidos:\nDe acordo com os dados de referência de 2024 do Sistema Nacional de Informações em Saneamento Básico (SINISA),\n27"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-23",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\na coleta de resíduos sólidos domiciliares apresenta cobertura significativamente superior aos demais componentes do\nsaneamento básico no Estado do Amazonas. Manaus registra cobertura de 98,81% da população, demonstrando que o\nserviço está praticamente universalizado na capital. Nos 56 municípios do interior que informaram dados ao SINISA, a\ncobertura média é de 66,88%, revelando que, embora a coleta esteja presente na maior parte das sedes municipais, ainda\nexiste uma parcela considerável da população sem atendimento regular, especialmente em áreas rurais, ribeirinhas e\ncomunidades de difícil acesso.\nO diagnóstico também evidencia uma expressiva desigualdade territorial na prestação do serviço. Enquanto alguns\nmunicípios alcançam níveis elevados de cobertura, próximos da universalização, outros apresentam índices bastante\nreduzidos, refletindo limitações operacionais, logísticas e financeiras. Em grande parte do interior, a coleta concentra-se\nnas áreas urbanas, sendo comum a inexistência ou a baixa frequência do serviço em comunidades rurais e localidades\nisoladas, onde fatores como grandes distâncias, dispersão populacional e dependência do transporte fluvial dificultam a\nexpansão da cobertura.\nPromover saneamento básico é um dos maiores desafios socioambientais que enfrentaremos nos próximos anos. Sozinhos,\nos municípios não conseguem avançar em projetos de abastecimento de água potável, coleta e tratamento de esgoto,\ngestão de resíduos sólidos e drenagem.\nAs soluções são complexas em face ao ciclo natural das águas (secas e cheias) agravado pelo aquecimento global.\nRequerem estratégias de captação de recursos para investimentos, apoio aos municípios e a participação da iniciativa\nprivada.\nNossas propostas enfatizam a promoção da saúde pública, a proteção das vidas terrestre e aquática, a preservação\ndos ecossistemas (rios, igarapés, florestas), a valorização dos conhecimentos tradicionais, as soluções inovadoras em\nbioeconomia, a pesquisa e a ciência, os povos ribeirinhos e as oportunidades de geração de emprego e distribuição de\nrenda.\n\nESPORTE\nO esporte é uma das mais importantes ferramentas de promoção da saúde, inclusão social, educação e desenvolvimento\nhumano. No Amazonas, entretanto, o setor ainda recebe investimentos insuficientes para atender às necessidades\nda população e ao enorme potencial esportivo existente em todas as regiões do Estado. Em 2025, foram destinados\naproximadamente R$ 84 milhões à função esporte, o que representa apenas 0,2% do orçamento estadual, percentual que\nse mantém praticamente inalterado ao longo dos últimos anos e evidencia a necessidade de fortalecer as políticas públicas\nvoltadas ao esporte e ao lazer.\nEssa realidade limita a expansão da infraestrutura esportiva, reduz as oportunidades de iniciação esportiva para crianças\ne jovens e dificulta a formação de atletas capazes de representar o Amazonas em competições nacionais e internacionais.\nAo mesmo tempo, impede que o esporte cumpra plenamente seu papel como instrumento de prevenção à violência,\npromoção da saúde e inclusão social, especialmente nas periferias urbanas e nas comunidades do interior.\n\n28"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-24",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nNosso governo promoverá uma nova política estadual para o esporte, baseada na ampliação dos investimentos, na\ndemocratização do acesso às práticas esportivas e na valorização dos talentos amazonenses. As ações estarão estruturadas\nem três eixos complementares: o desenvolvimento de atletas e paratletas desde a iniciação até o alto rendimento; a\nampliação e revitalização da infraestrutura esportiva, levando equipamentos de qualidade às comunidades urbanas, rurais\ne ribeirinhas; e o fortalecimento do esporte escolar, reconhecendo a escola como o principal espaço para a descoberta de\ntalentos e para a formação de cidadãos por meio do esporte.\nCom planejamento, investimentos e gestão eficiente, o esporte deixará de ocupar um papel secundário na agenda pública\npara se tornar um instrumento estratégico de desenvolvimento social, melhoria da qualidade de vida e geração de\noportunidades para a juventude amazonense.\n\nCULTURA E TURISMO\nO Amazonas possui um patrimônio cultural e natural singular, resultado da diversidade de seus povos, tradições,\nmanifestações artísticas, festivais, gastronomia e da maior floresta tropical do planeta. Esses ativos conferem ao Estado\nelevado potencial para consolidar a cultura e o turismo como vetores estratégicos de desenvolvimento econômico, geração\nde emprego, valorização da identidade regional e fortalecimento das economias locais. Entretanto, esse potencial ainda\nnão é plenamente aproveitado por meio de uma política estruturada, integrada e orientada para resultados.\nNo turismo, o Amazonas dispõe de extraordinárias vantagens competitivas. Os atrativos naturais e culturais, a hospitalidade\nda população, a diversidade da rede hoteleira e a reconhecida gastronomia regional constituem elementos estratégicos\npara consolidar o Estado como destino turístico. Na gestão de David Almeida, outros atrativos foram incorporados à essa\nmatriz, como o Mirante Lúcia Almeida, o Píer 355, o Parque Gigantes da Floresta. E, ainda este ano, será concluído o\nMirante Encontro das Águas, um projeto de Oscar Niemeyer, que criará um novo polo turístico na Zona Leste.\nContudo, esse potencial demanda uma estratégia capaz de estruturar uma matriz de desenvolvimento para o setor,\nfortalecendo sua contribuição para a economia estadual e ampliando sua capacidade de gerar emprego, renda e\noportunidades em todas as regiões.\nO fortalecimento dos festivais regionais, da produção artística local, da circulação cultural, da preservação do patrimônio e\nda estruturação de destinos turísticos deve ocorrer de forma articulada, transformando a diversidade cultural e ambiental\ndo Amazonas em oportunidades permanentes de desenvolvimento.\nA integração entre cultura e turismo representa uma estratégia capaz de fortalecer a identidade amazonense, dinamizar a\neconomia criativa, ampliar o fluxo de visitantes e distribuir de forma mais equilibrada os benefícios econômicos do setor. Para\nisso, será essencial adotar um planejamento orientado por objetivos estratégicos, governança, regionalização e resultados,\npermitindo que as potencialidades culturais e turísticas do Estado contribuam efetivamente para o desenvolvimento\nsustentável, tanto na capital quanto nos municípios do interior.\n\n29"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-25",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nINTERIOR DO ESTADO\nO Amazonas possui uma das maiores riquezas naturais do planeta. Sua biodiversidade, seus rios, suas florestas, seu\npotencial mineral e a força produtiva de seu povo oferecem condições únicas para impulsionar uma economia sustentável\ne gerar prosperidade em todas as regiões do Estado. No entanto, essa riqueza ainda não se traduz em desenvolvimento\nequilibrado para a população do interior.\nAtualmente, aproximadamente 94% da arrecadação estadual está concentrada em Manaus, enquanto apenas 6% são\ngerados pelos 61 municípios do interior. Essa realidade evidencia um modelo econômico excessivamente concentrado na\ncapital, que favorece a concentração de investimentos, empregos, renda e oportunidades, deixando grande parte do interior\ndependente de transferências governamentais, programas assistenciais e repasses públicos para sustentar sua economia.\nEssa dependência não decorre da falta de potencial econômico, mas da ausência histórica de políticas públicas capazes\nde transformar as vocações naturais de cada região em desenvolvimento sustentável. O interior amazonense possui\ncapacidade para produzir riqueza por meio da agricultura, do extrativismo vegetal e animal, da pesca, da piscicultura,\nda pecuária, do manejo florestal, da bioeconomia e da mineração responsável. Entretanto, enfrenta obstáculos como a\ndeficiência logística, a falta de infraestrutura para beneficiamento da produção, a baixa oferta de assistência técnica, as\ndificuldades de acesso ao crédito e à regularização fundiária, além da reduzida agregação de valor aos produtos regionais.\nEsse cenário torna-se ainda mais preocupante quando se observa que quase metade da população do Amazonas vive nos\nmunicípios do interior. Milhões de amazonenses convivem diariamente com limitações para produzir, empreender e acessar\noportunidades de crescimento econômico, mesmo vivendo em uma das regiões mais ricas do mundo em recursos naturais.\nÉ preciso romper com esse ciclo histórico de concentração econômica. O desenvolvimento do Amazonas somente será\ncompleto quando a riqueza produzida pela floresta, pelos rios e pelo subsolo também permanecer nos municípios, gerando\nemprego, renda, arrecadação e melhoria da qualidade de vida para quem vive no interior. O desafio não é apenas preservar\na floresta, mas fazer dela uma fonte permanente de prosperidade para a população.\nNosso compromisso é promover uma nova estratégia de desenvolvimento regional, baseada na bioeconomia, na inovação,\nna agregação de valor às cadeias produtivas, na industrialização regional, na infraestrutura logística e no fortalecimento\ndo empreendedorismo local. Vamos criar condições para que os municípios do interior deixem de ser apenas fornecedores\nde matérias-primas e passem a participar de forma efetiva da geração de riqueza do Estado.\nFortalecer o interior significa reduzir desigualdades, ampliar a autonomia econômica dos municípios, gerar oportunidades\npara as novas gerações e construir um Amazonas mais equilibrado, onde o desenvolvimento alcance todos os seus\nterritórios e beneficie toda a sua população.\n\n30"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-26",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n5. DIRECIONAMENTO ESTRATÉGICO PARA O PLANO DE GOVERNO\nOs desafios identificados ao longo do diagnóstico demonstram que o desenvolvimento do Amazonas exige mais do que ações\nisoladas ou respostas de curto prazo. As características territoriais, ambientais, sociais e econômicas do Estado impõem\na necessidade de um modelo de gestão capaz de integrar políticas públicas, otimizar recursos, fortalecer a capacidade\ninstitucional e promover resultados concretos para a população.\nNesse contexto, este Plano de Governo adota um direcionamento estratégico fundamentado no planejamento de longo\nprazo, na responsabilidade fiscal, na governança pública, na inovação e na gestão orientada por evidências. As prioridades\naqui estabelecidas refletem o compromisso de transformar os desafios históricos do Amazonas em oportunidades de\ndesenvolvimento sustentável, assegurando que o crescimento econômico esteja permanentemente associado à inclusão\nsocial, à preservação ambiental e à melhoria da qualidade de vida da população.\nO conceito “Pra Cima, Amazonas” sintetiza essa visão estratégica. Mais do que um lema, representa uma diretriz de governo\norientada para impulsionar o Estado em todas as suas dimensões: fortalecer a economia, ampliar oportunidades, reduzir\ndesigualdades regionais, modernizar a administração pública, valorizar as pessoas e promover um desenvolvimento que\nalcance tanto a capital quanto os municípios do interior.\nA estratégia de governo reconhece que a realidade amazonense exige soluções diferenciadas. Em um Estado marcado\npor grandes distâncias, predominância do transporte hidroviário, diversidade cultural e elevada sensibilidade ambiental,\nas políticas públicas precisam ser regionalizadas e adaptadas às diferentes realidades locais. Isso significa planejar\nconsiderando as especificidades de cada região, fortalecendo as vocações econômicas, ampliando a presença do Estado e\naproximando os serviços públicos da população.\nA implementação deste Plano será orientada pelos princípios da eficiência, da transparência, da inovação, da\nsustentabilidade, da participação social e da cooperação institucional. O Governo atuará de forma integrada com os\nmunicípios, a União, o setor produtivo, as instituições de ensino e pesquisa, os organismos internacionais e a sociedade\ncivil organizada, buscando ampliar investimentos, compartilhar responsabilidades e potencializar resultados.\nO desenvolvimento econômico continuará sendo um dos pilares centrais da estratégia governamental, sustentado pelo\nfortalecimento da Zona Franca de Manaus, pela diversificação da matriz econômica, pela expansão da bioeconomia, pela\ninovação tecnológica, pelo empreendedorismo, pela infraestrutura logística e pela valorização das potencialidades do\ninterior. Ao mesmo tempo, o crescimento deverá estar acompanhado da ampliação do acesso à saúde, educação, segurança\npública, saneamento, habitação, cultura, esporte e assistência social, assegurando que seus benefícios sejam distribuídos\nde forma mais equilibrada entre todas as regiões do Estado.\nA preservação da floresta e a adaptação às mudanças climáticas constituem elementos indissociáveis da estratégia\nde desenvolvimento. O Amazonas possui uma responsabilidade ambiental de dimensão global e, ao mesmo tempo, uma\noportunidade singular de liderar iniciativas relacionadas à bioeconomia, aos serviços ambientais, ao mercado de carbono,\nà pesquisa científica e às soluções baseadas na natureza. Transformar esse patrimônio em geração de emprego, renda e\noportunidades para quem vive na floresta representa um dos maiores desafios e, também, uma das maiores oportunidades\npara o futuro do Estado.\n31"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-27",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nPara garantir a efetividade das ações propostas, este Plano está estruturado em 9 (nove) eixos estratégicos integrados,\ndesdobrados em programas, projetos e ações orientados por metas, indicadores de desempenho e mecanismos\npermanentes de monitoramento e avaliação. Essa abordagem permitirá acompanhar a execução das políticas públicas,\navaliar seus resultados e promover ajustes sempre que necessário, fortalecendo a governança e a capacidade de entrega\nda administração estadual.\nMais do que um conjunto de compromissos para os próximos quatro anos, este Plano estabelece uma agenda de\ntransformação para o Amazonas. Seu propósito é construir um Estado mais competitivo, inovador, sustentável\ne socialmente justo, capaz de reduzir desigualdades, ampliar oportunidades e assegurar que o desenvolvimento\nalcance todas as regiões. Esse é o compromisso que orienta o “Pra Cima Amazonas”: fazer o Estado avançar com\nplanejamento, sustentabilidade, inovação e resultados, colocando as pessoas no centro das decisões e preparando\no Amazonas para os desafios e oportunidades do século XXI.\n\nPLANEJANDO O AMAZONAS\n“Se lhe pedirem para ser varredor de ruas, varra as ruas como Michelangelo pintava, como Beethoven compunha ou como\nShakespeare escrevia.”\nMartin Luther King\nPlanejar é definir prioridades, estabelecer objetivos claros, organizar recursos e orientar a ação do Estado para produzir\nresultados que transformem a vida das pessoas. Em um território com dimensões continentais, grande diversidade social,\ncultural e ambiental e desafios logísticos singulares, o planejamento deixa de ser um instrumento administrativo para\ntornar-se uma condição essencial para o desenvolvimento sustentável do Amazonas.\nA atuação do Governo será orientada por uma visão estratégica de curto, médio e longo prazo, capaz de integrar crescimento\neconômico, desenvolvimento humano, responsabilidade fiscal, proteção ambiental e fortalecimento institucional. Todas as\npolíticas públicas serão concebidas de forma articulada, buscando ampliar a eficiência da administração pública, eliminar\nsobreposições de ações, otimizar a aplicação dos recursos públicos e assegurar maior efetividade na entrega dos serviços\nà população.\nO planejamento governamental será fundamentado em diagnósticos técnicos, indicadores socioeconômicos, evidências\ncientíficas e processos permanentes de monitoramento e avaliação. A tomada de decisão será orientada por dados,\npermitindo identificar prioridades, acompanhar a execução das políticas públicas, corrigir desvios e avaliar os resultados\nalcançados. Essa abordagem fortalecerá a cultura da gestão por resultados, promovendo maior transparência, eficiência\ne responsabilidade na administração estadual.\nO “Pra Cima, Amazonas” adotará como estratégia o desenvolvimento com foco na integração das diferentes políticas\npúblicas. Governança, transparência, educação, saúde, infraestrutura, economia, emprego e renda, segurança, cultura\ne turismo, assistência social, cidadania, direitos humanos, meio ambiente, mudanças climáticas, ciência, tecnologia e\ninovação são áreas interdependentes que atuarão de forma coordenada para produzir impactos sustentáveis e duradouros.\n\n32"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-28",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n6. EIXOS ESTRATÉGICOS (PROGRAMAS, PROJETOS E AÇÕES)\nO desenvolvimento do Amazonas exige uma visão de futuro integrada, capaz de enfrentar os desafios históricos do Estado\ne, ao mesmo tempo, aproveitar suas potencialidades únicas. Um Estado com dimensões continentais, grande diversidade\ncultural, riqueza ambiental incomparável e realidades regionais distintas precisa de um planejamento estratégico que una\neficiência na gestão pública, desenvolvimento econômico, inclusão social e sustentabilidade.\nOs nove Eixos Estratégicos deste Plano de Governo representam os grandes compromissos para transformar a realidade\ndos amazonenses, organizando programas, projetos e ações que serão entregues à sociedade com foco em resultados\nconcretos. Cada eixo foi estruturado a partir das principais necessidades da população e das oportunidades de\ndesenvolvimento do Estado, considerando as características de cada região, município e comunidade.\nA proposta é construir um Amazonas mais conectado, eficiente e preparado para o futuro, com um governo moderno e\ntransparente, uma economia inovadora e sustentável, infraestrutura capaz de integrar pessoas e mercados, educação e\nsaúde de qualidade, segurança pública fortalecida, políticas sociais que garantam dignidade, proteção da floresta e um\ninterior com mais oportunidades.\nOs compromissos apresentados nos nove eixos estratégicos refletem uma visão de governo que coloca as pessoas no\ncentro das decisões e busca transformar potencialidades em resultados. É um projeto de desenvolvimento que combina\nresponsabilidade pública, valorização da nossa identidade amazônica e geração de oportunidades para que todos os\namazonenses possam participar da construção de um Estado mais próspero, justo e sustentável.\n\n33"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-29",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n34\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-30",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 1: GESTÃO PÚBLICA EFICIENTE E TRANSPARENTE\n“AMAZONAS CONECTADO”.\nA transformação do Amazonas exige uma gestão pública moderna, eficiente, transparente e orientada a resultados. Em\num Estado de dimensões continentais, marcado por grandes desafios logísticos e sociais, a administração pública deve\natuar como instrumento de desenvolvimento, promovendo a melhoria contínua dos serviços prestados à população, o uso\nresponsável dos recursos públicos e o fortalecimento da confiança entre governo e sociedade.\nO contexto atual da administração pública demanda a adoção permanente de práticas inovadoras, eficientes e transparentes.\nNo Amazonas, a busca pela melhoria da gestão pública requer a ampliação da transformação digital, o fortalecimento da\ngovernança, a simplificação dos serviços públicos e o aprimoramento dos mecanismos de participação cidadã, com foco\nna geração de resultados concretos para a população.\nNos desafios do futuro, nosso Governo atuará em três frentes estruturantes:\nI – Governança, Integridade e Gestão de Riscos: fortalecimento dos mecanismos de controle interno, expansão da cultura\nde integridade e implantação de modelos de gestão de riscos que permitam maior eficiência, prevenção de irregularidades\ne melhoria da tomada de decisões.\nII – Transformação Digital e Desburocratização: ampliação da digitalização dos serviços públicos, integração de sistemas\ngovernamentais e simplificação de processos administrativos, reduzindo custos, aumentando a produtividade e facilitando\no acesso do cidadão aos serviços do Estado.\nIII – Inteligência Fiscal e Sustentabilidade das Finanças Públicas: utilização de tecnologias avançadas para aperfeiçoar\na arrecadação estadual e monitorar os resultados socioeconômicos dos incentivos fiscais e assegurar o equilíbrio das\ncontas públicas.\nObjetivo Geral: transformar a gestão pública do Estado do Amazonas em um modelo de excelência, referência nacional e\ninternacional, integrando inovação digital, responsabilidade fiscal e transparência ativa, com o propósito de otimizar a\naplicação do dinheiro público e elevar a eficiência dos serviços prestados à população.\n“AMAZONAS CONECTADO”\nO Programa Amazonas Conectado será a principal iniciativa de modernização da administração estadual, promovendo a\nintegração entre governo e sociedade por meio da tecnologia, da inovação e da gestão orientada a resultados. O objetivo é\ntornar o Estado mais eficiente, acessível, transparente e preparado para responder às demandas da população, por meio\ndas seguintes ações:\n“Servidor que Inova” – Valorização do Servidor Público\n- Promover ações de valorização das carreiras públicas: revisar planos de carreira; unificar a data-base das diferentes\ncategorias; organizar promoções, progressões e o clube de benefícios ao servidor.\n35"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-31",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n- Criar o programa “Servidor Público 4.0”: modernização do setor público impulsionada pela transformação digital e\ndesenvolvimento de competências digitais e comportamentais, com foco no Cidadão.\n- Reestruturar a previdência do Estado do Amazonas: implementar um programa de governança e integridade na\nAmazonPrev; transparência e controle nos investimentos; profissionalização dos Conselhos Deliberativos e Fiscais, além\ndos Comitês de Investimentos; regras de controle rígidas nas decisões de aplicação dos recursos; excelência no programa\nPró-Gestão.\n“Descomplica” - Modernização e Eficiência da Gestão\n- Desenvolver o Programa de Parcerias de Investimentos do Amazonas (PPI/AM): promover a integração dos diversos\nórgãos e entidades públicas; realizar pesquisas e análise de dados sociais, econômicos e ambientais no Amazonas; celebrar\nparcerias institucionais com o Governo Federal e municípios; transparência e compartilhamento de dados e informações\nrelevantes para as decisões de investimentos; implantar a Sala Estadual do Investidor; elaborar a Carteira Estadual de\nOportunidades de Investimentos; desenvolver o Portal Amazonas de Negócios; criar o Instituto de Dados Estatísticos do\nAmazonas (IDE-AM).\n- Criar o Programa “e-Gov Amazonas”: promover a transformação digital; ampliar o uso de tecnologias digitais, inteligência\nartificial, integração de sistemas e análise de dados; revisar normas, simplificar processos, modernizar os serviços\npúblicos, reduzir burocracia e melhorar o atendimento ao cidadão.\n- Criar o Centro de Excelência em Automação: mapear e definir estratégias de uso de ferramentas ”low code / no code” para\nautomatizar rotinas operacionais; elaborar um programa de alfabetização digital; implementar ferramentas de chatbot nos\ncanais digitais de atendimento; incorporar tecnologia de IA generativa.\n“Fiscotech” – Modernização da Gestão das Receitas\n- Criar o Comitê Multidisciplinar de implantação e acompanhamento da Reforma Tributária e seus efeitos: acompanhamento\ntécnico e institucional de todas as etapas da implementação do novo sistema tributário, avaliando seus impactos sobre\na competitividade da Zona Franca de Manaus e atuando para garantir que as vantagens comparativas asseguradas ao\nmodelo sejam efetivamente preservadas durante todo o período de transição; criação do Fórum Estadual da Reforma\nTributária; revisar programa de Cidadania Fiscal com foco na reforma tributária.\n- Desenvolver o modelo de Fiscalização Baseada em Riscos: rating de contribuintes; priorizar ações de autorregularização;\nmonitoramento ativo de contribuintes; gestão de riscos do cadastro de contribuintes; inteligência artificial e robôs de\ntriagem para classificação automática do contencioso administrativo.\n- Aprimorar a Política de concessão de incentivos fiscais: política de concessão de incentivos fiscais com ênfase no\ndesenvolvimento da cadeia produtiva e investimentos em bioeconomia (fármacos, agroindústria, cosméticos, economia\ncircular, piscicultura); criação do painel de benefícios fiscais; sistema de avaliação periódica dos benefícios fiscais.\n- Implantar programa de conformidade tributária: criar o Portal de Conformidade Tributária; implantar medidas de\nsimplificações procedimentais para contribuintes com alto grau de conformidade; estabelecer fluxos diferenciados de\n36"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-32",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\natendimento e monitoramento para contribuintes classificados como “bons pagadores”; realizar campanhas de orientação\ne educação fiscal voltadas aos contribuintes com baixo risco, incentivando a regularidade e o uso de canais digitais; firmar\nparcerias com entidades empresariais e contábeis para disseminação das boas práticas e fortalecimento da cultura de\nconformidade.\n- Implantar método de solução de jurimetria: aplicar técnicas estatísticas e inteligência de dados ao contencioso fiscal,\npermitindo à Procuradoria tomar decisões mais estratégicas, previsíveis e orientadas por evidências; implantar sistema de\nrating de devedores, o portal de regularização do Amazonas e o painel de gestão da dívida ativa.\n“Valor Público” – Modernização da Gestão das Finanças\n- Estruturar o Comitê de Governança e Gestão Fiscal (CGF): criar o comitê técnico multidisciplinar; integrar o CGF ao Programa\nde Parcerias de Investimentos (PPI/AM); desenvolver o Observatório Econômico e Fiscal do Amazonas; desenvolver o\nsistema de gestão digital de precatórios e RPVs; realizar diagnóstico detalhado dos precatórios, identificando casos de\ncompensação possível com créditos tributários; avaliar estratégia de contratação de operação de crédito subsidiada para\npagamento dos precatórios com desconto; criar a Câmara de Conciliação de Precatórios, para mediação e compensação\nde dívidas cruzadas.\n- Implementar o método Spending Review: avaliar sistematicamente alocação e eficiência do gasto público, com o objetivo\nde identificar oportunidades de economia, redirecionamento de recursos e melhoria da qualidade do gasto; criar um\nbanco de dados integrado com informações fiscais, orçamentárias, sociais e cadastrais para apoiar análises preditivas e\navaliações de impacto; estabelecer ciclos regulares de revisão da despesa, vinculados ao planejamento orçamentário e ao\nMarco Fiscal de Médio Prazo.\n- Implantar os Novos Fundos de Desenvolvimento: instituir Comitê Gestor para implantação do Fundo Nacional de\nDesenvolvimento Regional (FNDR), do Fundo de Sustentabilidade e Diversificação Econômica da Amazônia e do Fundo de\nDesenvolvimento Sustentável dos Estados da Amazônia Ocidental e do Amapá.\n- Desenvolver o Novo Sistema de Compras Eletrônicas (Novo e-Compras.AM): processos integralmente digitais; documentos\ngerados eletronicamente com assinatura digital; matriz de riscos; inteligência fiscal; marketplace das compras públicas; IA\ngenerativa; Bolsa Eletrônica de Compras; avaliação de fornecedores e do nível de prestação de serviços; política de compras\npúblicas voltadas ao pequeno empresário; política de “compras verdes”; integração com bases fiscais e de inteligência da\nadministração tributária; mecanismos de detecção de simulação de concorrência; painéis de monitoramento de compras\npúblicas com alertas de risco, concentração de fornecedores e variações atípicas de preços\n“Olhar Ético” - Transparência, Integridade e Controle Social\n- Criar o aplicativo e portal integrado “Amazonas na Palma da Mão”: reunir em uma única plataforma digital os principais\nserviços públicos.\n- Desenvolver o Portal Amazonas de Dados Abertos: ferramenta web que permite o livre acesso, utilização, modificação e\ncompartilhamento de informações públicas, tendo como referência o Governo Federal.\n\n37"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-33",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n38\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-34",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 2: DESENVOLVIMENTO ECONÔMICO SUSTENTÁVEL E INOVAÇÃO “ACELERA AMAZONAS”\nO desenvolvimento econômico será uma das prioridades centrais do nosso Governo. Gerar empregos, ampliar a renda\ndas famílias, atrair investimentos, fortalecer quem já produz, estimular novos negócios e criar oportunidades em todas\nas regiões do Estado será o caminho para reduzir desigualdades, combater a pobreza e melhorar a qualidade de vida da\npopulação.\nO Amazonas reúne condições únicas para liderar um novo ciclo de desenvolvimento sustentável. Possui uma das maiores\nriquezas ambientais do planeta, uma base industrial consolidada, enorme potencial para bioeconomia, logística, turismo,\ninovação e comércio exterior, além de uma população empreendedora, trabalhadora e preparada para construir um futuro\nde mais prosperidade.\nNosso compromisso será transformar esse potencial em resultados concretos para a população.\nObjetivo Geral: impulsionar a transição do Amazonas para uma economia dinâmica, diversificada, competitiva e de baixo\ncarbono, consolidando o Estado como o principal polo de inovação tecnológica e sustentabilidade da Amazônia. “ACELERA\nAMAZONAS” integrará a cultura amazônica, os conhecimentos tradicionais, as riquezas naturais, a biodiversidade, a\neducação tecnológica, a ciência, a pesquisa, a inovação, o governo digital, a inteligência artificial, a robótica e a biotecnologia\npara produzir riquezas, gerar empregos qualificados, distribuir renda e promover a inclusão social, garantindo a proteção\ndo meio-ambiente, águas e floresta, como nosso maior ativo econômico.\nFortalecimento da Zona Franca de Manaus (ZFM)\nA Zona Franca de Manaus continuará sendo o principal motor da economia amazonense. Receberá atenção permanente,\npreservando a competitividade, impulsionando processos de inovação, atraindo novos investimentos, qualificando a mão\nde obra, diversificando o modelo econômico, garantindo a manutenção dos empregos e das vantagens comparativas\nasseguradas pela Constituição Federal e promovendo o desenvolvimento sustentável de todas as regiões do Amazonas.\nO Polo Industrial de Manaus é um patrimônio econômico consolidado. O futuro será o crescimento com transição energética,\nManufatura Verde e Tecnologia Assistiva. Assumiremos os compromissos que seguem:\n“ACELERA AMAZONAS”\nNossa proposta é construir uma economia forte, inovadora e sustentável. Vamos incentivar o empreendedorismo, fortalecer\nos setores produtivos, ampliar o acesso à tecnologia e apoiar iniciativas que gerem emprego e renda. Com planejamento,\ninovação e responsabilidade ambiental, construiremos um Estado mais competitivo, próspero e preparado para os desafios\ndo futuro.\nEmpreende Amazonas: Fortalecendo Negócios; Gerando Empregos.\n- Criar o Balcão Único do Empreendedor e do Investidor: canal integrado de atendimento para concentrar os principais\nserviços relacionados à abertura de empresas, licenciamento, incentivos, crédito, regularização e implantação de novos\n39"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-35",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nempreendimentos, com processos digitalizados, simplificando a relação entre o cidadão e o Governo.\n- Implantar o Crédito do Empreendedor Amazonense: através da AFEAM e recursos do FMPES, disponibilizar linhas de\ncrédito de financiamento com condições diferenciadas para micro, pequenas e médias empresas, profissionais autônomos,\nempreendedores individuais e negócios comunitários, acompanhadas de orientação técnica para ampliar as chances de\nsucesso dos empreendimentos, priorizando o empreendedorismo feminino e juvenil.\n- Apoiar o Distrito de Inovação do Largo de São Vicente: Governo do Amazonas e Prefeitura de Manaus atraindo empresas\nde tecnologia e inovação para o Centro de Manaus, incluindo soluções em governo digital com recursos públicos e privados.\n- Fortalecer a indústria naval regional: apoiar investimentos para ampliar e modernizar a indústria naval, fortalecendo a\ncadeia produtiva de embarcações destinadas ao transporte de passageiros, cargas, turismo e atividades produtivas, em\nManaus e no interior.\n- Impulsionar a economia criativa: desenvolver setores de audiovisual, design, moda, música, artesanato, jogos digitais e\nprodução cultural como instrumentos de geração de emprego, renda e valorização da identidade amazonense.\n- Implementar o sistema estadual de economia circular: reuso e reciclagem central de valorização de resíduos,\nempreendedorismo social, remanufatura e produção sustentável, promovendo inovação, redução de impactos ambientais\ne novos modelos de negócio.\n- Desenvolver um ecossistema de Startups Sociais: economia solidária, criação de moedas sociais (bancos comunitários) e\nserviços financeiros solidários, de natureza associativa e cooperativa, com apoio técnico e recursos do FMPES, circulando\ne distribuindo riquezas sobretudo em áreas isoladas.\nPrograma Zona Franca Forte.\n- Criar o Núcleo Estadual de Competitividade da Zona Franca de Manaus: acompanhamento da implementação da\nReforma Tributária; instituição da Mesa Permanente da Zona Franca de Manaus; monitoramento dos fatores que afetem\na competitividade do Polo Industrial; elaboração de estudos técnicos; coordenação das ações institucionais de defesa\ndo modelo; articulação das ações voltadas à atração de investimentos, expansão industrial e geração de empregos;\nimplantação do Observatório da Competitividade da Economia Amazonense.\n- Implantar o Programa Amazonas Fornecedor: fortalecimento das empresas amazonenses que podem integrar a cadeia\nde suprimentos do Polo Industrial de Manaus, aproximando indústria, bioeconomia e economia da floresta, ampliando a\nparticipação de fornecedores locais na produção industrial, estimulando novos negócios e aumentando a circulação de\nriqueza dentro do próprio Estado.\n- Realizar estudos para a criação do Distrito Industrial III: parceria com a Suframa e a Prefeitura de Manaus para a criação\nde uma nova área de instalação das indústrias a partir de um projeto que contemple infraestrutura viária, drenagem,\ncorredores ecológicos, tratamento de efluentes, gás natural, energia renovável, condomínios industriais, fornecimento de\nágua, central de valorização de resíduos industriais, mobilidade, segurança e outros, com compartilhamento de custos e\nresponsabilidades.\n40"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-36",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nBioeconomia: Aproveitamento Sustentável da Floresta com Geração de Emprego e Renda.\n- Elaborar o Plano Estadual de Diversificação Econômica: estratégia de longo prazo para identificar setores prioritários,\nestabelecer metas de diversificação, orientar os investimentos públicos e privados para novas atividades econômicas e\nestruturar carteiras específicas de oportunidades para cada região do Estado.\n- Implantar a Política Estadual de Bioeconomia: plano integrado para organizar as cadeias produtivas da sociobiodiversidade,\ndefinindo prioridades de investimento, ampliando o acesso ao crédito, criando linhas específicas de financiamento,\nintegrando instituições públicas e privadas e coordenando as ações estaduais voltadas ao desenvolvimento da bioeconomia,\nincluindo a certificação, rastreabilidade e valorização da origem dos produtos amazônicos.\nTalentos da Amazônia: Educação Para o Emprego e a Empregabilidade.\n- Elaborar o Plano Estadual de Formação para o Desenvolvimento Econômico: mapeamento permanente das necessidades\nde mão de obra dos setores produtivos, orientando a oferta de cursos e programas de qualificação conforme as demandas\nda economia amazonense e qualificando trabalhadores amazonenses para as novas demandas tecnológicas.\n- Criar o Programa Qualifica Interior: apoiar a sucessão produtiva no campo, estimulando a permanência dos jovens no\nmeio rural, oferecendo formação técnica, acesso à inovação, empreendedorismo e oportunidades para dar continuidade às\natividades produtivas familiares; capacitação profissional tecnológica dedicada aos municípios do interior conforme suas\nvocações econômicas.\n- Implantar o Programa Primeiro Emprego Amazonas: incentivos para contratações de jovens em seu primeiro emprego,\npriorizando pessoas com deficiência, promovendo parcerias com empresas, cooperativas e instituições de ensino para\nfacilitar sua inserção no mercado de trabalho.\n- Implantar o Observatório do Mercado de Trabalho: acompanhamento dos indicadores de emprego, renda, ocupações\ne demandas profissionais, permitindo ao Governo ajustar continuamente suas políticas de qualificação e geração de\noportunidades, sobretudo para pessoas com deficiência e profissionais 50+ e pessoas em situação de vulnerabilidade.\nAmazonas do Futuro: Mentes Criativas, Soluções Amazônicas.\n- Implantar a Estratégia Estadual de Inovação: política integrada para coordenar as ações de ciência, tecnologia e inovação,\nalinhando universidades, centros de pesquisa, setor produtivo e Governo em torno dos desafios e prioridades estratégicas\ndo desenvolvimento do Amazonas, fortalecendo os parques tecnológicos e ambientes de inovação; formar talentos para a\neconomia do conhecimento a partir de programas de capacitação em programação, inteligência artificial, ciência de dados,\nrobótica, biotecnologia, automação e outras competências alinhadas às profissões do futuro.\n- Apoiar as iniciativas de tecnologia verde (green tech): inovações focadas em sustentabilidade. São exemplos: energia\nrenovável, gestão de resíduos (economia circular), veículos elétricos, monitoramento ambiental e florestal (queimadas e\ndesmatamentos), agroecologia, edifícios verdes (Green Building) e biocombustíveis.\n\n41"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-37",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nAmazonas Global: Maior Presença do Amazonas nos Mercados Internacionais.\n- Criar a Política Estadual de Comércio Exterior: política permanente para coordenar as ações estaduais relacionadas às\nexportações, importações, promoção comercial, inteligência de mercado e internacionalização das empresas amazonenses.\nDestino Amazonas: Turismo, Gastronomia, Arte, Cultura e Economia Criativa.\n- Elaborar o Plano Estadual de Desenvolvimento do Turismo no Amazonas: estratégia de longo prazo para definir destinos\nprioritários, necessidades de infraestrutura, produtos turísticos, turismo de base comunitária, rede estadual de informações\nturísticas, qualificação profissional, conexão Manaus e interior, atração de grandes eventos nacionais e internacionais,\nfortalecimento da temporada de cruzeiros e estruturação de linhas de crédito com condições exclusivas para a ampliação\ne modernização dos serviços de turismo.\n- Fortalecer Manaus como principal porta de entrada da Amazônia: receptivo, informação turística, promoção, qualificação\n\n42"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-38",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\ndos serviços e conexão com os municípios do interior, valorizando o Centro Histórico, o Teatro Amazonas, o Rio Negro, a\ngastronomia, os eventos e manifestações culturais e os atrativos naturais da nossa capital.\n- Criar rotas integradas de turismo: roteiros que conectem diferentes municípios e experiências, tais como pesca esportiva\ne o turismo de natureza e aventura, ampliando o tempo de permanência dos visitantes e distribuindo os benefícios\neconômicos do turismo entre mais regiões do Estado, constituindo calendários e circuitos que permitam a circulação de\nartistas, espetáculos e produções em Manaus e nos municípios do interior.\n- Criar a Política Estadual de Gastronomia e Produtos Regionais: ações de valorização da culinária e produtos regionais,\nconectando cozinheiros, restaurantes, produtores rurais, pescadores, agroindústrias, mercados e empreendedores,\nfortalecendo eventos de promoção da culinária amazônica.\n- Apoiar as iniciativas de turismo religioso: devoção, história e a geografia única da floresta amazônica.\n\n43"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-39",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n44\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-40",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 3: INFRAESTRUTURA E LOGÍSTICA PARA A INTEGRAÇÃO REGIONAL “INTEGRA AMAZONAS”\nElaborar um plano de infraestrutura para o Amazonas exige romper com a lógica tradicional do resto do Brasil. Aqui,\nos rios são as rodovias, as distâncias são continentais e os impactos ambientais de qualquer obra geram repercussão\nglobal.\nPor isso, nossa meta é desenvolver e integrar o sistema logístico e de transportes do Estado por meio de um modelo\nde infraestrutura inovadora e adaptado à realidade geográfica e hidrográfica da região, visando superar as distâncias\ncontinentais, garantir a sustentabilidade ambiental de impacto global e elevar a competitividade econômica,\nconectando-o de forma eficiente ao restante do país e ao mercado internacional.\n“INTEGRA AMAZONAS”\nO Amazonas precisa de uma infraestrutura pensada para a sua realidade, onde rios, estradas, tecnologia e energia\nsejam caminhos de integração e desenvolvimento. O programa Integra Amazonas nasce para diminuir as distâncias,\nconectar municípios, fortalecer a economia e garantir que as oportunidades cheguem a todas as regiões do Estado.\nO futuro do Amazonas passa por conectar pessoas, territórios e oportunidades, transformando desafios geográficos\nem soluções inovadoras e sustentáveis.\nCaminhos do Amazonas: Integrando Regiões, Fortalecendo a Produção\n- Criar o Programa “SOS Rodovias do Amazonas”: conservação e manutenção da malha rodoviária estadual (rodovias,\nestradas, ramais, vicinais), fortalecendo o escoamento da produção rural; conclusão das obras do Anel Viário Leste de\nManaus e da Rodovia AM-010; recuperação e ampliação das rodovias de acesso a Itapiranga (AM-363), Silves (AM330), Novo Airão (AM-352) e Autazes (AM-254).\n- Atuar de forma integrada junto ao Governo Federal e demais instituições para apoiar a continuidade dos estudos,\nlicenciamentos e ações necessárias à recuperação e conclusão da BR-319.\n- Realizar estudos para uma modelagem de transporte fluvial que permita a logística reversa, aproximando a produção\ndos ribeirinhos aos mercados consumidores.\n- Realizar estudos para diversificação da matriz energética, preferencialmente renováveis (solar e biomassa), com foco\nnos municípios e comunidades isoladas.\n- Ampliar o acesso à internet de qualidade no interior do Amazonas, conectando tecnologia ao desenvolvimento\nsustentável.\n45"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-41",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n- Fortalecer a infraestrutura de apoio às cadeias produtivas regionais por meio da melhoria de estradas, portos,\nterminais e estruturas de armazenamento.\n- Estimular o uso de dados, geotecnologia e ferramentas digitais para planejamento, monitoramento e gestão\ninfraestrutura logística.\n- Realizar o alargamento da Avenida Torquato Tapajós no trecho entre a barreira e o viaduto de acesso ao aeroporto.\n- Construção do Complexo Viário da “Bola do Eldorado”.\nEm parceria com a Prefeitura de Manaus, realizar:\n- Interligação da Avenida Max Teixeira com a Avenida do Turismo.\n\n46"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-42",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n- Alargamento da Avenida Torquato Tapajós, com inclusão do Portal da Cidade.\n- Interligação do Parque Mosaico com Avenida do Turismo.\n- Interligação das avenidas Maneca Marques e Ephigênio Sales.\n- Alargamento da Avenida Desembargador João Machado.\n- Complexo Viário da rua do Fuxico.\n- Modernização do Centro Social Urbano do Parque 10.\n- Complexo Viário próximo ao Amazonas Shopping.\n\n47"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-43",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n48\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "pra-cima-amazonas-4",
+            "titulo": "PRA CIMA AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "PRA CIMA AMAZONAS\n\nPLANO DE GOVERNO - 2027 • 2030\n\nEIXO 4: EDUCAÇÃO TRANSFORMADORA\nTRANSFORMANDO REALIDADES”\n\n-\n\n“CONECTANDO\n\nFUTURO,\n\nNo Amazonas, educar é um ato de coragem e de superação. Um Estado com dimensões continentais e uma rica diversidade\ncultural não pode aceitar que a distância geográfica seja um fator de exclusão escolar.\nNosso compromisso é com uma educação pública que seja, ao mesmo tempo, inclusiva, moderna e contextualizada com a\nrealidade amazônica.\nNão estamos falando apenas de construir escolas, mas de transformar cada sala de aula, seja na capital, nas sedes\nmunicipais ou nas calhas dos nossos rios em um polo de oportunidades, inovação e dignidade para as nossas crianças e\njovens.\nObjetivo Geral: assumir o compromisso com uma educação transformadora que rompa com o histórico de exclusão\ngeográfica no Amazonas, unindo modernidade, respeito à diversidade cultural e inclusão digital para resgatar a dignidade\ne abrir portas de futuro para as crianças e jovens de todas as calhas de rios e municípios do nosso Estado.\n“CONECTANDO FUTURO, TRANSFORMANDO REALIDADES”\nA educação é o caminho mais poderoso para transformar vidas e construir um novo futuro para o Amazonas. Em um\nEstado de dimensões continentais, onde rios e distâncias ainda desafiam o acesso às oportunidades, nosso compromisso\né garantir que cada criança, jovem e educador tenha as condições necessárias para aprender, crescer e realizar seus\nsonhos, em qualquer município ou comunidade.\nVamos construir uma educação pública mais inclusiva, moderna e conectada com a realidade amazônica, unindo tecnologia,\nvalorização dos profissionais da educação, respeito às culturas indígenas, ribeirinhas e quilombolas, e novas oportunidades\nde formação para nossos jovens.\nConectar o futuro significa levar conhecimento, inovação e oportunidades para todas as salas de aula do Amazonas.\nTransformar realidades significa fortalecer a aprendizagem, apoiar estudantes, valorizar professores e garantir que a\nescola seja um espaço de acolhimento, desenvolvimento e preparação para os desafios do mundo.\nCom planejamento, diálogo e compromisso com a nossa gente, vamos construir uma educação que respeita nossas\ndiferenças, supera barreiras e abre caminhos para um Amazonas mais justo, preparado e cheio de oportunidades.\nNa educação, assumiremos compromissos com os seguintes Programas e Ações:\nAmazonas do Saber\n- Criar sequências didáticas estaduais para alfabetização, Língua Portuguesa, Matemática, Ciências e recomposição das\naprendizagens, respeitando as realidades indígenas, ribeirinhas, rurais e urbanas.\n\n49"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-44",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n- Disponibilizar plataforma educacional, com trilhas de estudo para estudantes e apoio prático aos professores e equipes\ngestoras e acompanhamento familiar.\n- Aprimorar as videoaulas destinadas à comunidade escolar através da TV aberta e canal do YouTube, com foco na\npreparação para o ENEM (SEDUC Play).\nVoz ativa\n- Criação de um espaço para desabafo e mediação com salas virtuais de escutas para os jovens, recebendo apoio de\nequipes multidisciplinares (psicólogos e assistentes sociais).\n- Disponibilizar ferramentas de debate para que os jovens dos municípios distantes participem das discussões de seu\ninteresse e do interesse de seu município (via satélite ou sistemas de mediação tecnológica).\nNavegando para o futuro\n- Fortalecer as parcerias com os municípios para o compartilhamento do transporte escolar, com rotas seguras e\nmodernizadas.\nProTec Integral\n- Promover a expansão gradual dos Centros de Educação em Tempo Integral (CETIs), e das Escolas de Tempo Integral\n(ETIs).\n- Integrar o Ensino Médio à formação técnica, em parceria com CETAM, UEA, Sistema S e setor produtivo, conectando o\ncurrículo escolar às vocações econômicas de cada calha de rio.\nEscola Digna e Conectada\n- Estabelecer plano de reforma e manutenção das escolas estaduais.\n- Ampliar a conectividade escolar, com internet, equipamentos, suporte técnico e melhoria dos ambientes de mediação\ntecnológica, integrando com o Programa Norte Conectado.\n- Garantir a merenda escolar de qualidade e regionalizada, valorizando produtos locais e a agricultura familiar.\n- Modernizar as escolas rurais e indígenas, garantindo condições para ensinar, aprender e permanecer.\nEducação para Todos\n- Instituir a Lei da gratuidade do transporte público aos estudantes da rede pública estadual como política pública\neducacional. Com a Lei, o direito à gratuidade do transporte público estará garantido aos estudantes da Seduc.\n\n50"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-45",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n- Ampliar o Atendimento Educacional Especializado (AEE), salas de recursos multifuncionais, acessibilidade física e digital,\nmateriais acessíveis e transporte adaptado, profissionais de apoio escolar e acessibilidade física e pedagógica em todas\nas calhas do Estado.\n- Criar o Projeto de Atendimento Educacional Especializado Itinerante.\n- Fortalecer a educação intercultural, indígena, quilombola e ribeirinha, por meio de currículos contextualizados, materiais\ndidáticos específicos, valorização dos saberes e culturas tradicionais, formação continuada de professores e respeito às\ncaracterísticas, identidades e modos de organização de cada comunidade.\nValoriza Educação\n- Estabelecer governança estadual da educação, com pactuação de metas por escola, município, etapa e território, e painel\npúblico de acompanhamento.\n- Fortalecer diretores e equipes gestoras, com formação em liderança, orçamento, gestão de pessoas e clima escolar.\n- Implementar ações de valorização dos servidores da educação, promovendo capacitação permanente, aperfeiçoamento\nda gestão de pessoas e fortalecimento das carreiras.\n\n51"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-46",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n52\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-47",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 5: SAÚDE DESCENTRALIZADA E REGONALIZADA – “AVANÇA SAÚDE\nAMAZONAS”\nPensar a saúde pública no Amazonas exige um olhar que compreenda a sua imensidão geográfica. Em um Estado onde os rios\nsão as estradas e as distâncias entre os municípios são medidas em dias de barco, estruturar um sistema de saúde eficiente\nnão é apenas um desafio de gestão, mas um imperativo de justiça social e inovação.\nO fortalecimento da saúde no Amazonas passa, obrigatoriamente, por descentralizar o atendimento, valorizar os profissionais\nna floresta e utilizar a tecnologia para encurtar distâncias.\nOs Quatro Pilares para uma Saúde Forte no Amazonas\nPara construir um sistema de saúde resiliente, resolutivo e humano, a estratégia deve se apoiar em quatro eixos fundamentais:\n1. Descentralização da saúde com a criação de Polos Regionais de Média e Alta Complexidade;\n2. Telessaúde e Inteligência Artificial na Floresta;\n3. Fortalecimento da Saúde Indígena e Ribeirinha (Sociobiodiversidade); e,\n4. Interiorização e Valorização dos Profissionais de Saúde.\n“No Amazonas, se o paciente não pode chegar ao hospital, o hospital por meio de um barco ou de uma tela de computador com\ninternet via satélite deve chegar ao paciente. Fortalecer a saúde é transformar isolamento em rede de cuidado integrado.”\nUM FUTURO DE RESILIÊNCIA SANITÁRIA.\nDesenvolver a saúde no Amazonas é também investir em ciência e pesquisa tropical. Instituições locais, em parceria com a\nFundação de Vigilância em Saúde (FVS-AM) e institutos de pesquisa, desempenham um papel vital no monitoramento de\nmudanças climáticas e seu impacto no surgimento de novas doenças.\nAo cruzar a conectividade digital com a infraestrutura hidroviária e o respeito à cultura local, o Amazonas tem a oportunidade\nde criar o modelo de saúde pública tropical mais eficiente e inovador do mundo: um sistema que protege a vida com a mesma\nforça com que a floresta protege a biodiversidade.\nDiretriz Geral: “Reestruturar de forma profunda o Sistema Único de Saúde (SUS) no Amazonas, superando o modelo de\ncentralização na capital e garantindo atendimento médico digno, rápido e de alta qualidade em todo o território estadual. O\nprograma “Avança Saúde Amazonas” une o fortalecimento da infraestrutura física hospitalar nos municípios polo à inovação\ndigital e tecnológica. A meta principal é salvar vidas e reduzir o sofrimento das populações do interior, assegurando que o cidadão\nencontre consultas Especializadas, exames complexos e cirurgias perto de sua casa, sem a necessidade de deslocamentos\nforçados e penosos para Manaus.\n\n53"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-48",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n“AVANÇA SAÚDE AMAZONAS”\nMais perto das pessoas, mais cuidado para todos.\nNo Amazonas, cuidar da saúde é compreender que nossas distâncias geográficas não podem ser um obstáculo ao acesso\nda população aos serviços de saúde. Nosso compromisso é fortalecer uma rede de atendimento mais próxima das pessoas,\nregionalizada, eficiente e preparada para responder às necessidades de cada município e de cada comunidade.\nO Avança Saúde Amazonas representa um novo modelo de gestão da saúde pública, baseado na descentralização dos serviços,\nna valorização dos profissionais, no fortalecimento da infraestrutura hospitalar, na inovação tecnológica e na ampliação do\nacesso à assistência especializada. Vamos trabalhar para aproximar o atendimento da população, reduzindo deslocamentos\ndesnecessários e fortalecendo a capacidade de resposta do SUS em todas as regiões do Estado.\nTambém vamos fortalecer ações em telessaúde, pesquisa, vigilância em saúde e políticas específicas para os povos indígenas,\nribeirinhos e comunidades tradicionais, respeitando as características e os desafios da região. Avançar na saúde é garantir\nque cada amazonense tenha acesso a um atendimento mais digno, humanizado e de qualidade, porque cuidar das pessoas é o\ncaminho para construir um Amazonas mais justo, saudável e com mais oportunidades para todos.\nNossos compromissos com a Saúde no Amazonas estarão centrados nos seguintes programas:\nCorujão da Saúde\n- O objetivo do Corujão da Saúde será zerar a fila da morte do SISREG. Para isso, duas medidas serão fundamentais: a\ncontratação de serviços da rede particular de saúde para oferecer exames, consultas e cirurgias durante as 24 horas do dia; e\na realização de mutirões para procedimentos voltados a atender a demanda reprimida.\n- Ao mesmo tempo, o Plano de Governo propõe modernizar e ampliar os hospitais, prontos-socorros e demais unidades da rede\nestadual de saúde na capital e do interior.\n- Regularizar o abastecimento de medicamentos e Produtos para Saúde (PPS), bem como normalizar os processos de marcação,\nrealização e entrega de resultados de exames.\nConecta + Saúde\n- Criar o Laboratório de Inovação em Saúde.\n- Expandir o Telessaúde em Manaus e no interior.\n- Definir protocolos únicos de encaminhamento, por especialidade e nível de complexidade, para reduzir filas.\n- Apoiar os municípios na modernização das USFs.\n\n54"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-49",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nSaúde + Perto\n- Implantar 9 polos regionais classificando-os em níveis de complexidade: Tabatinga, Tefé, Humaitá, Eirunepé, São Gabriel\nda Cachoeira, Parintins, Coari, Itacoatiara e Manaus, garantindo estruturas mínimas de redes de saúde para realização de\nreferência e contrarreferência.\n- Criar o Programa “Mais Hospitais”: ampliação da rede hospitalar da capital e do interior com foco na criança e na mulher. Em\nManaus, construção de um hospital e pronto socorro infantil e uma maternidade.\n- Fortalecer o programa de educação em saúde com a qualificação de gestores.\nSaúde que Valoriza\n- Implementar ações de valorização dos servidores da saúde, promovendo capacitação permanente, aperfeiçoamento da\ngestão de pessoas e fortalecimento das carreiras.\n- Criar Polos da Escola de Saúde Pública: formação continuada via telessaúde em parceria com academias de ensino.\n- Incentivar Residência Médica Estratégica: bolsas vinculadas a 3+ anos de atuação no interior com moradia subsidiada.\n- Estabelecer Painel de Bordo Integrado: monitoramento de indicadores com atualização semanal e acesso público.\nRaízes da Saúde - Rede de Atenção Integral as Zonas Ecológicas e Sociais\n- Fortalecer ações de Saúde Indígena: capacitação de agentes indígenas para atuação na capital e no interior de acordo com a\ndivisão de competências.\n- Estabelecer estratégias de Controle de Endemias: estratégias sazonais para malária, dengue e tuberculose por calha de rio.\n- Definir ações de Articulação Intersetorial: integração com políticas de saneamento, educação e segurança alimentar.\n- Criar o Programa “Amazonas Azul”: fortalecimento da Rede de Atenção Psicossocial para a população TEA.\nAliança pela Saúde\n- Desenvolver um ecossistema de Pesquisa e Cooperação Internacional: parcerias com instituições de pesquisa para inovação\nem doenças negligenciadas e aplicação imediata de descobertas em protocolos da rede estadual; Bolsas de Pesquisa apoiando\npesquisadores com atuação obrigatória no interior; intercâmbio internacional científico para captação de recursos e tecnologia\n- Estabelecer revisão das pactuações integradas e das redes de saúde com os municípios do Estado do Amazonas.\n- Estabelecer Vigilância Genômica: monitoramento contínuo de patógenos e impactos climáticos.\n- Criar um Centro de Inteligência em Saúde: integração de dados epidemiológicos em tempo real.\n55"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-50",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n56\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-51",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 6: SEGURANÇA INTEGRADA – “AMAZONAS SEGURO\nO Amazonas possui peculiaridades geográficas e sociais únicas: fronteiras internacionais extensas na floresta, rotas\nfluviais complexas (os que abastecem os ribeirinhos, são os mesmos rios que se tornaram rotas do crime organizado), e\numa capital que concentra mais de metade da população do Estado, convivendo com a desordem urbana e a pressão das\nfacções criminosas. Não existe segurança no Amazonas sem o controle das\nCalhas dos Rios.\nEnquanto Manaus sofre com a pressão do tráfico nos bairros, o interior sofre com a pirataria fluvial e o isolamento.\nSegurança no Amazonas não se faz apenas com viaturas; se faz com barcos, tecnologia de satélite, inteligência e, acima de\ntudo, presença do Estado onde o cidadão mais precisa.\nObjetivos Gerais: garantir a preservação da ordem pública, a segurança das pessoas e do patrimônio por meio de um\nmodelo integrado, inteligente e descentralizado. Nosso objetivo é reduzir os índices de criminalidade tanto nas grandes\náreas urbanas quanto nas cidades do interior, fortalecendo o policiamento de proximidade e expandindo estrategicamente\na tecnologia de monitoramento e inteligência para além da capital. Paralelamente, priorizaremos a valorização dos\nprofissionais da área, o combate ao crime organizado em todas as regiões e a prevenção social da violência, assegurando\nque a presença do Estado, a cidadania e a cultura de paz cheguem com a mesma eficiência a cada canto do nosso extenso\nterritório.\n“AMAZONAS SEGURO”\nO programa Amazonas Seguro propõe uma política de segurança pública moderna, integrada e preventiva, voltada ao\nenfrentamento do crime organizado, à proteção das nossas fronteiras, ao combate à pirataria fluvial, à valorização dos\nprofissionais da segurança e ao fortalecimento da inteligência policial. Nosso compromisso é ampliar a capacidade do\nEstado de prevenir a violência, combater a criminalidade e garantir mais tranquilidade para as famílias amazonenses.\nTambém vamos fortalecer a atuação conjunta com os municípios, investir em tecnologia, ampliar o monitoramento das\ncalhas dos rios, apoiar a modernização do sistema penitenciário e promover ações voltadas à proteção das mulheres,\ncrianças, adolescentes e das populações mais vulneráveis. A preservação do patrimônio ambiental e o combate aos crimes\nambientais também serão tratados como prioridades para proteger a floresta, os territórios e as comunidades tradicionais.\nPara que possamos ter uma Amazonas Seguro, iremos implantar os seguintes Programas/Projetos:\n“Município Forte; Amazonas Seguro”\n- Valorizar os servidores da segurança pública meio da capacitação continuada, qualificação técnica e tecnológica,\npromoção da saúde física e mental, melhoria das condições de trabalho, incentivo ao desenvolvimento profissional e\naperfeiçoamento das políticas de reconhecimento e valorização das carreiras.\n- Fortalecer a Polícia Militar, Polícia Civil e Bombeiros na capital e no interior do Estado e apoiar à criação, estruturação e\nformação de Guardas Municipais armadas nos municípios do interior.\n\n57"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-52",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n“Guardiões dos Rios”\n- Combater o crime organizado, o narcotráfico, o tráfico internacional de drogas e demais crimes transnacionais,\nintensificando o monitoramento e patrulhamento das calhas dos rios.\nPacto Pela Vida e Pela Paz\n- Fortalecer as delegacias e o sistema de perícia técnica do interior.\n- Intensificar o combate a crimes contra mulheres, crianças, adolescentes e populações vulneráveis.\n- Modernizar o Centro Estadual de Inteligência, integrando com os demais municípios, usando a tecnologia para ampliar a\ncapacidade de prevenção, investigação e resposta das forças de segurança.\n- Fortalecer e modernizar do Sistema Penitenciário Estadual.\n- Implementar programa integrado de prevenção e enfrentamento aos homicídios, com fortalecimento das forças de\nsegurança, ampliação do uso de tecnologias, inteligência, equipamentos e ações integradas de combate ao crime organizado\ne aos crimes ambientais.\n“Sentinela: Vizinhança Segura”\n- Instituir programa comunitários de monitoramento por câmeras ou redes de moradores e policiamento.\n- Realizar patrulhamento ostensivo, de natureza preventiva e repressiva, em datas, horários e locais de grande circulação\n\n58"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-53",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nde pessoas e que são suscetíveis a roubos, furtos de veículos e sequestros.\n- Fortalecer as ações integradas de fiscalização, em parceria com os órgãos do sistema de justiça e de controle (TJAM,\nMPE, DPE), para coibir práticas ilícitas em estabelecimentos comerciais, proteger crianças e adolescentes, garantir o\ncumprimento da legislação e promover a segurança, a ordem pública e o bem-estar da população.\n“Trânsito Seguro”\n- Instituir educação de trânsito nas escolas.\n- Fortalecer, em parceria com os municípios, as ações integradas de segurança viária, por meio da ampliação da fiscalização,\nda atuação do Batalhão de Trânsito, do uso de tecnologias de monitoramento e controle viário, e da intensificação de\noperações preventivas, visando reduzir acidentes, roubos, furtos e outras ocorrências nas vias públicas.\n- Promover ações integradas de educação e segurança no trânsito.\nPROTERRA – Programa de Proteção Territorial e Ambiental do Amazonas\n- Promover o fortalecimento da governança territorial e da proteção ambiental no Amazonas, mediante políticas públicas\nintegradas voltadas à prevenção, controle e repressão dos crimes ambientais e da ocupação irregular de terras públicas,\nassegurando a preservação dos recursos naturais, a segurança jurídica, a proteção das populações tradicionais e o\ndesenvolvimento sustentável da região.\n- Fortalecer a atuação do Estado na proteção do patrimônio ambiental e fundiário.\n\n59"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-54",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n60\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-55",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 7: DESENVOLVIMENTO SOCIAL, CIDADANIA E DIREITOS HUMANOS “AMAZONAS COM DIGNIDADE”\nNós vivemos no Estado mais rico do mundo em biodiversidade. Nossos rios sustentam o planeta, a nossa floresta é o centro\ndas atenções globais, e a nossa Zona Franca gera riquezas bilionárias. Mas a verdade que dói no peito é que essa riqueza\nnão chega na mesa do ribeirinho que passa o dia pescando, nem na mesa da mãe solo que vive nas palafitas da periferia\nde Manaus.\nO Amazonas não pode ser rico apenas nos mapas e nos discursos internacionais; ele tem que ser rico na vida do seu povo.\nNão existe preservação da floresta sem a proteção de quem vive nela.\nDurante muito tempo, governar o Amazonas foi olhar apenas para os grandes números. Mas o nosso governo escolhe olhar\npara as pessoas. O Amazonas com Dignidade será o maior pacto de resgate social da história da nossa terra.\nNós não vamos dar apenas o peixe, nós vamos dar as condições para o nosso povo pescar, navegar e crescer. Chega de ver\no interior esquecido, dependendo de favor político para conseguir uma balsa ou um tratamento de saúde. Chega de ver a\nperiferia de Manaus sem oportunidade.\nEsse programa é para a mãe que precisa alimentar o filho, para o jovem que quer abrir o seu próprio negócio na comunidade\ne para o produtor rural que quer ver o fruto do seu suor valorizado. Nós vamos governar de baixo para cima. Porque cuidar\ndo Amazonas é, antes de tudo, cuidar dos amazonenses.\nObjetivo Geral: Promover o desenvolvimento social com inclusão, equidade e garantia de direitos, por meio do fortalecimento\nda proteção social, da ampliação das oportunidades de geração de renda, do combate à pobreza e à insegurança alimentar,\nda promoção da cidadania e da defesa dos direitos humanos, assegurando acesso às políticas públicas para toda a\npopulação amazonense.\n“AMAZONAS COM DIGNIDADE”\nO Amazonas com Dignidade será um grande pacto pela inclusão social, pela proteção das famílias e pela promoção da\ncidadania. Vamos combater a insegurança alimentar, ampliar as oportunidades de trabalho e geração de renda, fortalecer\na assistência social, garantir acesso à documentação e aos direitos básicos, proteger mulheres, crianças, idosos, pessoas\ncom deficiência, povos indígenas e comunidades tradicionais, além de levar as políticas públicas às comunidades mais\ndistantes do nosso Estado.\nDESENVOLVIMENTO SOCIAL “Amazonas Produtivo e Sem Fome”\nDobrar o valor do Auxílio Estadual Permanente de R$ 150 para R$ 300 por mês. Além de garantir mais comida na mesa\nde quem precisa, essa medida colocará mais dinheiro em circulação, movimentará o comércio da capital e do interior e,\nconsequentemente, gerará mais emprego e renda para a nossa população.\n- Melhorar a autonomia econômica e ampliar a capacidade de inclusão produtiva de famílias em situação de vulnerabilidade,\ncom foco na segurança alimentar das famílias.\n61"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-56",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nASSISTÊNCIA SOCIAL “Amazonas que Protege E Cuida”\n- Criar plataforma unificada estadual de monitoramento do SUAS, promovendo a interiorização dos serviços\nsocioassistenciais e a superação das desigualdades territoriais no acesso às políticas públicas.\n- Promover a formação técnica qualificada de familiares e demais cuidadores para prevenção da negligência, violência e\ninstitucionalização precoce (foco em idosos e pessoas com deficiência).\n- Promover estudos para reduzir o déficit de vagas em instituições de longa permanência para pessoas idosas.\nCIDADANIA E DIREITOS HUMANOS “Amazonas por Elas”\n- Ampliar a rede de enfrentamento à violência contra a mulher e promover serviços especializados para a reeducação e\nreflexão de homens autores de violência.\n- Fortalecer a inserção da mulher no mercado de trabalho e elaborar uma política de incentivo à mulher empreendedora.\n“Cidadania Sem Fronteiras”\n- Ampliar os mutirões permanentes de cidadania em Manaus e no interior.\n- Promover educação em direitos humanos para contribuir para a promoção da dignidade de todas as pessoas e a redução\ndos indicadores de violência.\n“Raiz - Respeito, Apoio, Inclusão e Zelo Aos Povos Indígenas e Tradicionais”\n- Fortalecer as políticas públicas voltadas à promoção dos direitos, à salvaguarda do patrimônio cultural, à mediação\nde conflitos territoriais e à prevenção e ao enfrentamento da discriminação contra os povos indígenas e comunidades\ntradicionais.\n“Rede Mulher Segura Amazonas”\n- Concluir a construção da “Casa da Mulher” e ampliar as Delegacias Especializadas em Crimes Contra a Mulher (DECCM)\ne os Centros de Referência de Atendimento à Mulher (CRAM), integrando suporte jurídico e psicológico.\n“Amazonas Inclusivo”\n- Promover a inclusão social, da equidade e da garantia de direitos para grupos historicamente vulnerabilizados, por meio do\nfortalecimento de políticas públicas, da valorização da diversidade e do enfrentamento a todas as formas de discriminação\ne violência.\n- Buscar parcerias com entidades filantrópicas para a recuperação de dependentes químicos, com atenção especial aos\njovens em situação de vulnerabilidade social.\n- Adotar políticas de acolhimento para as pessoas em situação de rua e políticas inclusivas para pessoas neurodivergentes.\n\n62"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-57",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nHABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA “Casa Amazonense”\n- Instituir programa de regularização fundiária em imóveis urbanos.\n- Reforçar o Programa “Minha Casa Minha Vida” para ampliar construção de unidades habitacionais populares, com foco\nnas faixas 1 e 2, priorizando pessoas idosas, pessoas com deficiência, as mães solo, atípicas e chefes de família.\n- “Reforma da Minha Vida”: programa de reforma de casas inadequadas para moradia, priorizando pessoas idosas e\npessoas com deficiência.\nSANEAMENTO BÁSICO Trata Bem Amazonas\n- Apoiar municípios nas soluções técnicas e modelagem econômico-financeira em projetos de abastecimento de água\npotável, coleta e tratamento de esgoto e drenagem.\n- Organizar municípios em consórcios para soluções de erradicação dos lixões e apoio técnico na gestão de resíduos sólidos\n- Fomentar, através da AFEAM, associações/cooperativas de catadores e financiar projetos de reuso e reciclagem de\nmateriais e financiar, através da FAPEAM, projetos de pesquisa e inovação em soluções de gestão de resíduos sólidos.\nESPORTE E LAZER Programa Talentos da Floresta\n- Criação de centros de treinamento esportivo regionais nos municípios do interior, aproveitando as aptidões naturais da\njuventude amazonense em modalidades tais como atletismo, natação em águas abertas, canoagem, arco e flecha, futebol,\nesportes de tatame e outros.\n- Através do Bolsa Atleta Amazonense, ampliar os incentivos técnicos e financeiros para atletas e paratletas de alto\nrendimento que representam o Amazonas em competições nacionais e internacionais.\nInfraestrutura: “Esporte na Comunidade”\n- Construção e revitalização de quadras poliesportivas, complexos de lazer e campos de futebol de areia/grama sintética,\ncom ênfase nas periferias urbanas e comunidades rurais e ribeirinhas.\n- Compartilhar os espaços públicos esportivos aos programas de iniciação esportiva nas escolas.\n- Reestruturar os Jogos Estudantis do Amazonas (JEAS) e criar o programa de bonificação de profissionais de Educação\nFísica, das redes estadual e municipais, que desenvolvam ações e projetos de iniciação esportiva e formação de atletas de\nalto rendimento.\n\n63"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-58",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n64\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-59",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 8: MEIO AMBIENTE, SUSTENTABILIDADE E TRANSIÇÃO CLIMÁTICA “AMAZONAS, FLORESTA QUE SUSTENTA”\nO Amazonas não precisa escolher entre o progresso econômico e a floresta. O verdadeiro desenvolvimento ocorre quando\na tecnologia da capital se conecta aos conhecimentos tradicionais. Unido a eficiência do Polo Industrial à riqueza da\nbiodiversidade, o Estado pode liderar a geopolítica global da economia verde, gerando emprego, distribuindo renda e mantendo\na floresta viva.\nO Estado do Amazonas encontra-se no centro do debate global sobre as mudanças climáticas e a conservação ambiental. No\nentanto, o desafio do século XXI não se resume a isolar a floresta, mas sim consolidar um modelo de desenvolvimento que\nvaloriza a preservação da cobertura florestal.\nNão existe floresta em pé com o povo de joelhos. A melhor forma de proteger o meio ambiente no Amazonas é gerando riqueza\nsustentável para quem cuida da nossa terra.\nPara o Amazonas, o caminho para a prosperidade exige uma transição econômica baseada em quatro pilares indissociáveis:\nsustentabilidade ambiental, inclusão social, alta produtividade e transição climática.\n1. Sustentabilidade - Bioeconomia como Matriz do Futuro: sustentabilidade ambiental não é freio ao desenvolvimento, mas sim\na sua maior vantagem competitiva.\n2. Inclusão - Interior como elemento Central do Desenvolvimento: não existe economia sustentável com desigualdade extrema.\nA verdadeira riqueza do Amazonas está no seu povo e a inclusão econômica significar desenvolver as potencialidades\neconômicas da floresta, reduzindo as desigualdades entre a capital, Manaus, e os municípios do interior.\n3. Produtividade - Modernização e a Nova Indústria 4.0: produtividade significa eficiência. O Amazonas precisa produzir\nmais e melhor, otimizando os recursos da floresta e conectando a ciência, a pesquisa, a inovação, a tecnologia, a cultura, os\nconhecimentos tradicionais e o meio-ambiente.\n4. Mudanças Climáticas e Resiliência Amazônica - Transição Justa: as mudanças no clima afetam diretamente o direito de\nir e vir e a segurança alimentar dos amazonenses. Precisamos preparar o Estado para os extremos, protegendo a floresta e,\nsobretudo, os povos da floresta.\nNosso modelo de desenvolvimento sustentável é pautado nas riquezas da floresta, na exploração sustentável dos recursos\nnaturais, na preservação do meio-ambiente, na valorização dos povos da floresta e seus conhecimentos, no uso das tecnologias\na favor da biodiversidade, nas parcerias institucionais públicas e privadas, na pesquisa, na ciência, na educação e na proteção\nda flora, da fauna e das águas. Construir o Amazonas que, já lidera na preservação da floresta, à liderança em economia verde.\n“AMAZONAS, FLORESTA QUE SUSTENTA”\nA floresta amazônica não é apenas um patrimônio a ser protegido. Ela é fonte de inspiração, oportunidades, saberes,\ncultura, ciência, pesquisa, inovação e desenvolvimento sustentável. O Amazonas do futuro será aquele que transforma sua\nbiodiversidade em riqueza sustentável distribuída a todos os municípios, gerando oportunidades ao seu povo e enfrentando os\nefeitos do aquecimento global.\n65"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-60",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nAmazonas Verde: Floresta Legal.\n- Revisar e atualizar a Política Estadual de Meio Ambiente, estabelecendo novos dispositivos legais que reflitam a realidade e\ndemandas de nossas comunidades rurais e urbanas, considerando a rica biodiversidade e as aptidões de produção segundo\nnossos ecossistemas, com segurança ambiental e jurídica.\n- Elaborar e implantar o Zoneamento Econômico-Ecológico do Estado do Amazonas (ZEE), com participação da sociedade\ncivil organizada, incorporando uma matriz de potencialidades econômico-ecológicas que identifique vocações produtivas\nsustentáveis, oportunidades da bioeconomia e estratégias de conservação dos diferentes territórios.\n- Desburocratizar e simplificar os processos de licenciamento ambiental, com uso intensivo de recursos tecnológicos e\nmodernização das políticas ambientais e climáticas.\n- Organizar os incentivos públicos aos pagamentos por serviços ambientais, com transparência, cooperação técnica para\nelaboração de projetos e parcerias institucionais públicas e privadas.\n- Acelerar os projetos de carbono em Unidades de Conservação, incluindo o REED+, com escuta permanente às comunidades\ne ampla transparência.\n- Reforma, ampliação e recuperação do Parque Sumaúma (Gigantes da Floresta II).\n\n66"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-61",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nPlano Clima Amazonas: Resiliência e Futuro.\n- Estruturar e implantar a Política Estadual de Prevenção e Combate às Queimadas e Desmatamentos com ênfase em ações\npreventivas, educação ambiental, controle social e fiscalização com uso de recursos tecnológicos e inteligência artificial.\n- Implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual\nde modo a implementar práticas de eficiência energética, consumo responsável, reuso e reciclagem, reaproveitamento de\nrecursos naturais, uso de biocombustíveis e tecnologias e energia limpa e compras verdes.\n- Elaborar um Plano Estadual de Adaptação às Mudanças Climáticas com ações factíveis, efetivas e economicamente viáveis,\nincluindo a gestão de riscos de desastres, soluções baseadas na natureza, segurança hídrica e alimentar.\n- Apoiar tecnicamente os municípios na criação e estruturação das Secretarias Municipais, Fundos Municipais e Conselhos\nMunicipais de meio-Ambiente, que são requisitos mínimos para a captação de recursos.\nMeu Pet Amazonas\n- Instituir a política estadual de proteção aos animais promovendo a defesa, a proteção e o bem-estar dos animais, respeitando\na legislação vigente.\n- Apoiar municípios na estruturação do Programa Nacional de Proteção e Manejo Populacional Ético de Cães e Gatos.\n\n67"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-62",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\n68\n\nPRA CIMA AMAZONAS"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-63",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEIXO 9: INTERIOR FORTE E SUSTENTÁVEL – “PROSPERA AMAZONAS”.\nEstratégia de desenvolvimento para transformar as vocações naturais, culturais e produtivas do interior em oportunidades\nconcretas de crescimento econômico e melhoria da qualidade de vida. A iniciativa parte do princípio de que a maior riqueza\ndo Amazonas está em sua biodiversidade, em seus rios, em seus produtores e no conhecimento das populações que\nhistoricamente mantêm a floresta viva.\nA proposta é construir uma nova economia para o interior, baseada na bioeconomia, na inovação, na sustentabilidade e\nna agregação de valor aos produtos regionais. O Amazonas precisa superar o modelo de exportação de matéria-prima e\navançar para uma realidade em que agricultores, extrativistas, pescadores e empreendedores locais participem das etapas\nde beneficiamento, processamento e comercialização, aumentando sua renda e fortalecendo as cadeias produtivas.\nA estratégia estrutura políticas públicas para levar infraestrutura, crédito, assistência técnica, tecnologia e acesso aos\nmercados às comunidades, criando condições para que cada região desenvolva seu potencial, gere riqueza local e promova\num desenvolvimento sustentável, com respeito ao meio ambiente e valorização das pessoas que vivem no interior.\nObjetivo Geral: Transformar o potencial natural do interior do Amazonas em riqueza real para as comunidades locais,\ncombatendo a pobreza por meio da bioeconomia, da verticalização da produção (processamento local ou em polos reginais),\nda legalidade e da infraestrutura logística.\n“PROSPERA AMAZONAS”\nÉ o compromisso de transformar a riqueza que nasce da nossa floresta e dos nossos rios em prosperidade para o nosso\npovo. Durante muito tempo, o Amazonas produziu riquezas que saíram do Estado sem deixar o valor necessário para\nmelhorar a vida das famílias. Vamos mudar essa realidade: o amazonense precisa ganhar mais pelo que produz.\nNossa missão é fazer o desenvolvimento chegar a todos os municípios, fortalecendo quem trabalha no campo, na floresta e\nnos rios. Vamos incentivar o pequeno produtor, apoiar o empreendedor regional, estimular a industrialização dos produtos\namazônicos e criar oportunidades para que nossos jovens encontrem no interior caminhos de futuro.\nO verdadeiro desenvolvimento do Amazonas será aquele que mantém a floresta em pé, gera emprego, valoriza nossa\nidentidade e transforma nossas riquezas naturais em dignidade para as pessoas. O “Prospera Amazonas” é a construção\nde um novo ciclo: um Amazonas forte, sustentável e com oportunidades para todos.\nVamos trabalhar para que o produtor ganhe mais com seus produtos beneficiados.\nEXTRATIVISMO VEGETAL E AGRICULTURA – FLORESTA VIVA\nVozes da Floresta\n- Fortalecer as cadeias produtivas da sociobiodiversidade: ações estruturadas de apoio às comunidades produtoras,\nfortalecendo o cooperativismo e o associativismo, ampliando assistência técnica, beneficiamento e acesso ao mercado.\n69"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-64",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nSão exemplos de cadeias produtivas: castanha, açaí, cacau, guaraná, borracha, andiroba, copaíba, buriti, piaçava, mel,\nsementes, óleos vegetais e demais produtos da floresta.\n- Fortalecer a subvenção aos produtos da sociobiodiversidade: ampliação e o aperfeiçoamento das políticas de subvenção\npara produtos estratégicos da floresta, garantindo maior estabilidade de renda aos produtores e estimulando a manutenção\ndas atividades sustentáveis.\n- Criar a certificação “Origem do Amazonas” para abrir mercados internacionais de alto valor para a castanha, café, cacau,\naçaí e óleos da floresta.\n- Kits do Extrativista e Equipamentos de Apoio ao Pequeno Produtor: distribuição de equipamentos adequados e seguros\npara que o pequeno produtor possa desempenhar sua atividade tais como: motores rabeta, kits de manejo, kits de\nprodutores, barcos frigoríficos, fábricas de gelo e equipamentos de extração mineral regulamentada.\n- Fortalecimento da Produção Orgânica e Agroecológica, destinada a ampliar a produção de alimentos saudáveis, fortalecer\na agricultura familiar, promover a conservação ambiental e inserir os produtos amazônicos em mercados diferenciados.\n- Fortalecer cooperativas e associações de produção orgânica promovendo a participação dos produtores orgânicos nas\ncompras públicas estaduais.\n- Estruturar uma rede estadual de assistência técnica e extensão rural especializada em produção orgânica e agroecologia,\noferecendo apoio permanente às famílias produtoras durante todas as etapas produtiva, visando impulsionar uma prática\nprodutiva sustentável.\n- Atuar em conjunto com o Governo Federal, municípios e organismos internacionais para beneficiamento de óleos essenciais\n(ex.: copaíba e andiroba) e polpas (ex.: açaí e buriti) no interior do Amazonas.\nSementes da Amazônia\n- Criar bancos comunitários de sementes: produção, conservação e distribuição de sementes de qualidade, respeitando as\ncaracterísticas produtivas de cada território.\n- Apoio ao desenvolvimento da agricultura orgânica, com incentivos específicos para os produtores, como assistência\ntécnica especializada, insumos biológicos para o controle de pragas, incremento da adubação orgânica, certificação e\nampliação do acesso ao mercado consumidor.\nRibeirinhos do Amanhã.\n- Projeto com foco no Incentivo à Agricultura Familiar com técnicas sustentáveis, especialmente para o aproveitamento das\náreas de várzea para plantio de arroz, milho, mandioca, melancia e melão com técnicas que garantam maior produtividade\ne sustentabilidade.\n\n70"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-65",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\nEXTRATIVISMO ANIMAL, PECUÁRIA, PISCICULTURA E MANEJO FLORESTAL – RIOS DA RIQUEZA\nProspera Amazonas\n- Incentivar sistemas agroflorestais: modelos produtivos que integrem produção agrícola, recuperação ambiental e geração\nde renda, ampliando a sustentabilidade da agricultura familiar.\n- Criar o Crédito do Empreendedor, linhas de créditos e apoio técnico para fortalecer a economia da floresta e para os\npequenos negócios.\n- Incentivar à Piscicultura, Bovinocultura, Ovinocultura e avicultura e o manejo sustentável de pirarucu, jacaré e quelônios.\n- Fortalecer a Agência de Defesa Agropecuária (ADAF) para aprimorar os mecanismos de vacinação e controle dos rebanhos\ne animais de produção.\n- Criar um ambiente favorável para atrair indústrias de produção de ração às regiões com potencial para a piscicultura,\navicultura, ovinocultura e outras cadeias produtivas.\n- Fortalecer a comercialização de produtos regionais da agricultura familiar e dos pequenos produtores por meio da\nampliação das compras institucionais do Estado, priorizando associações e cooperativas, e do incentivo aos municípios\npara ampliar sua utilização na alimentação escolar e em outros programas públicos.\n- Implantar unidades comunitárias de beneficiamento: equipamentos comunitários para processamento de frutas,\nsementes, óleos vegetais e demais produtos florestais em regiões com capacidade produtiva consolidada.\n- Investir em pesquisas para novos produtos e processos biotecnológicos: implantar unidades demonstrativas de produção,\náreas de referência tecnológica para difusão de boas práticas agrícolas, manejo sustentável e aumento da produtividade.\nEXTRATIVISMO MINERAL – PRO-MINERAL\nMinera Amazonas\n- Criar Zonas de Interesse Mineral (ZIM) para delimitar as áreas com potencial mineral comprovada, fora das Unidades de\nConservação e Proteção Ambiental e fora de Terras Indígenas homologadas – “As Chamadas Terras Raras”.\n- Criar um ambiente favorável à atração de indústrias de beneficiamento mineral, incentivando a agregação de valor à\nprodução no próprio Amazonas, com a implantação de etapas de processamento e transformação dos recursos minerais no\nEstado, gerando empregos qualificados, ampliando a arrecadação e promovendo o desenvolvimento das cadeias produtivas\nlocais.\n- Firmar parcerias entre o Centro de Educação Tecnológica do Amazonas (CETAM), Instituto Federal de Educação, Ciência\ne Tecnologia do Amazonas (IFAM) e Universidades (UEA/UFAM) para treinar a juventude dos municípios mineradores em\ngeologia, operação de maquinário e gestão ambiental.\n\n71"
+          },
+          {
+            "id": "o-amazonas",
+            "titulo": "O AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "ocr",
+            "conteudo": "O AMAZONAS\nDO FUTURO\nCOMEÇA AGORA"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-66",
+            "titulo": "PLANO DE GOVERNO - 2027 • 2030",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO - 2027 • 2030\n\nPRA CIMA AMAZONAS\n\n7. MENSAGEM FINAL\nAo longo deste Plano de Governo, não apresentamos apenas números, metas ou projetos isolados. Apresentamos uma\nvisão de futuro. Uma resposta corajosa e realista para o tamanho dos desafios do nosso estado-continente.\nGovernar o Amazonas exige grandeza. Exige entender que a nossa maior riqueza não está apenas nas copas das nossas\nárvores ou nos bilhões gerados pelo nosso Distrito Industrial; a nossa maior riqueza está na força, na resiliência e na\ndignidade do povo amazonense.\nAssumimos aqui o compromisso inegociável de liderar um novo ciclo de desenvolvimento. Um modelo que prove, de uma vez\npor todas, que é possível caminhar para frente sem deixar ninguém para trás. Nós vamos consolidar um Amazonas que se\napoia em três pilares indissociáveis:\n• Crescimento Econômico forte, que interioriza o desenvolvimento, moderniza a nossa Zona Franca, desburocratiza a vida\nde quem empreende e gera emprego e renda da capital às calhas dos nossos rios.\n• Inclusão Social real, que resgata a dignidade das periferias de Manaus e das comunidades ribeirinhas e indígenas,\ngarantindo segurança pública de verdade, saúde eficiente, educação com protagonismo e comida na mesa de quem mais\nprecisa.\n• Proteção Ambiental estratégica e soberana, mostrando ao mundo que a floresta mais importante do planeta só ficará de pé\nse o povo que vive nela estiver com as necessidades básicas atendidas, integrado à bioeconomia e com orgulho da sua terra.\nNão aceitaremos mais a falsa escolha entre o progresso e a preservação, ou entre a capital e o interior. O Amazonas é um só.\nEste plano não é a promessa de um governo; é um pacto de esperança e reconstrução com cada cidadão. Vamos juntos, de\nmãos dadas, transformar o potencial do nosso Estado na realidade próspera e justa que o nosso povo merece.\nO futuro do Amazonas já começou. E ele pertence a todos os amazonenses.\n\nDAVID ALMEIDA\n\n73"
+          },
+          {
+            "id": "avante-7o",
+            "titulo": "AVANTE 7O",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "ocr",
+            "conteudo": "AVANTE 7O"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "pra-cima-amazonas-5",
+            "titulo": "PRA CIMA AMAZONAS",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "PRA CIMA AMAZONAS\n\nPLANO DE GOVERNO - 2027 • 2030\n\nO futuro do Amazonas\nserá construído com planejamento,\ndiálogo, união e muita coragem\npara transformar desafios\nem oportunidades e garantir\nqualidade de vida para todos\nos amazonenses, em cada canto\ndo nosso Estado.\n\n76"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "81131449d723233ca4f854bd839e0f5362fc5a45202ebb28968b4ba5e47cb95d"
+          },
+          {
+            "pagina": 2,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "c602b57eba59afabba99769f1cb1361394ba6546903e732027f194e668c4765e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "5ad41d40c36e9d34ad394e5a94dfd3fcf0d55d393e1b09fc42a87f6c80f396fc"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "70bc4324e63f57deabd21b03846d4cf0ac05f147120e33f27d74d3bd620402bf"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "add1ef0d13bf5ca39a7b0f9df311398d09dd6291cf669840fad9b83ca039ced6"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "681458ff9a0b5f46b080a837b5a72b2208acb54f02a846b3cc467385f722c357"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ed223ff24bbcacc77179e4001dd5f548a2a12a1df6e7533d073844535407acf6"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "79a45c6fc95e5fcb2180258f529c9dfe1c268d780dfeae7dce973801cb10a672"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "a4481ef334b0a00df7955699eaf7d9dd4665052f47aeed2e8e7b95ccd4516ffe"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4b58cad4fdeedb3fbc6fdcd21605bb27f0d1d5e7e68c570827fab28b567ae3a4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "4b6ff873b295d98f90a64eff5a670e07b880c46070bf4cde1d9382f39c78d4b5"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "f6979b33f2ddb25d5b2e7e1dbe7972b5fda254283af0204c098e244ab2f8e4d9"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "f732d2fa40506dc2bfd75835066e7822055b2006b3495b32d37fd69948149be0"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "5977b6a6cf066036c3ed73d31d912709c41fde0c1ace70399ea738f750e44f28"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "2a33ab14490be39b717b8ec52330ddcf25c4823357d126f1e3539fc0cf33c7f4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "19b3701fd9be5527248ad3154d4f4bb1745fbea95fac9b6f5fc8829f0ea64b92"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "82f8a93ce7e9774366344c97e938ecb100437d1feec5a40b945984105755273b"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "de654aaa185e17ddae29f5e86d08c20cc87ab857b9fa6734ba79cdbacf6dcd3c"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "48ce89501a7531f96e40d6d148e5955c851b4682226d1b6967ae97fc22c83ac8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "01ec3c04a0511488b3a328d34c2f8970b984400583c6953cfbc4f20eaba1439f"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "8b66dcbfa89e73fea666491d7644aa87bf3b5b25a6f40b482fdd0d89e7838ceb"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "aad496b0e1b6ae8f62dcc394379aa806936692071516506665eb435295e5093a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "acedb1f860254a005ab88aedcb12682a8ec7e98fd70164e46624575174f1c056"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "66291bae47023732690563464ef2d76a2ca266d16536027a876a512b01f881fb"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "7aa3c11ccf19e8fe92ba6b40b61f78de897142ba900e8ebc33e709ee56646545"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "bb0eb8bc5e9fe3db05bc0bfb5909a491c606dbbace6c222573ebb6929cc6e71d"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "330710c262ad5aa2bde2b49b0fcc8bca3a0ddc3d05265ceb64fd08eddb8326f5"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "7b75f9ff765fdecf62c9c7d9113739dea2aa26db39d4b6ee1e05d36bf1730c65"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "f7f41d4f582691341d2f4d435ac7ca513e5a9481fc5bd837d168537d8856f6d6"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4f59ec2648889bf133274e64060247621ac6d7c5054d484eb03d7e992289de50"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "d4f9c694eb341640bef417940e653d3334aa54c3f3149c097a9c440b9115600f"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "913727eb75c7135b20c1ad972f671c033bfafa4c2d83fa3a31059274b414fe6d"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "56e67670fef9803fa13bfe623ee016707ff99a22ffed0376cd36a58ee6f85d04"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "a61d216b284c4f9a18b75f426111df4c2faefd571736f5290fa6a75154d476fe"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "f49637e58dee5499357da22f202b55e57c6b7c1c9b4dfb88ebfa8da4a9dd2cf9"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "64eb82d31da059fb0f76d726ef97a8d724e5b624621cdc6bc6c4dd60c993530c"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "8f5c38d3d48c831b3b664834b04b2aaf613b2e323d7076afad736d88459bbd22"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "e08040f90dbf1fa22be64ab3b6eccb81bffbdc37d343de59e9c53df226ffe890"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "f883235bece8d46baf97abd376e9500547fb4d7e91b8ac8e4ebc0959ce883c49"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "6be175317ebe8bf1d1507beab3bad9a882121b4e84c94700e75fabb85dc33dd7"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "a25789ddf3cc0d9714baf3defa49f128ebcf8cffcfb532c9042338b63fa3bb25"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "92f37310b452dcffe3354d8f38354805e21cb44e7508d8da0da1fdccb139510c"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "430258a57f31d0ef2b8a21a6a40cd22d70484a7cc6f5e4d725c5b35e9a916006"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "e6f38abdd6361c323174a8b0a9d8fda0df780755bfdb3de80fdac12089b15e59"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "9c7a8c18335ac226a808b1486cfe9fab40e67ac973d4824715a5ef3dfc7fc065"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "6f99d898092164c7628a13777cb4ef04e27053f33f5c0f72951a8bed28044831"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "54e12ec5b555fb751b0e95cf200ab111d6a4ac81edbf90c8a10e96ce90179fc8"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "dabcf0cc6995637855fe929f16b1c257eceebbf46b32a487755f5bd369c9dc09"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "d793b3dce0bc04b05860b11331c29f23be20d831f3640826b28dd563d1b3da3e"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "c9ec319627580443f88accc382b3125965c59f453314527e37e6150b6674d5e3"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "1b0321e461035878ddd461b737999c50e87bf005c7c92885d1a66bb445d64125"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "02e0996e67e5ccca6019448cf9c1e7861a57c67c6662da6967ace9dbfb329496"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "d9da985d4fb4a77a8252a93d7bfe56c85cd0b0964f0583852cfa178171a30d64"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "a5f9a93f57acf9d16bd73ce5be69984719d56a1d9947fba158ca2e7f3bdae55d"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "d61819dbcb20e431f75d54af2377572729030a2d24884ecd5d1c9ef8ce29b0b1"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "b33f42bb59c6e3db1bd0a00e4036310e113a0864fc7e8148b1a1c8afc1fa291f"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "b5406dd56d519bfa635cab987339e51869a7452a10443c4434e8715db47187ed"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "93cacc6e9f14b4723e0c5681212457689dd1657ff57a0f4a1a4d08594aacbc7b"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "112cb8cf9b31e2ea4d3e5036cf17b632e6055b9c6513cb18b2bdc023f315d8f9"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "e7a5e4df8cfc5457e84d80f58adcc1cd05d74a4859f941aec808d110760d8140"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "ed8c26b771e7512b586256f8a929f9b831bb143ad09a5ba16eec5dfaefbb76b1"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "01320734c567ebaf7a6c24feb86833af0dd5a49704c37ddf941b7f708ba43d26"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "0ccae23e6f9e14e9d4775a3412bc5d8f97d48be66f062e93cd65f814a41833b1"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "618b678e5c428337465be22a5a868e703f7263d4f53dd11f11e79b9d7209e129"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "b35d079086f7f1d9bc527e608abf3f55702fbc670c289154fb1428e2621af57d"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "8c3a275d5a8b46e3efc349e569a41a93bd63d23f9b1ff4e4468dc14b6e5a81bc"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "bce0ad1e02283a56b9291df3a8c031c9dd4cf4fcad51557ee28d92615f510f1e"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "2a5878ea79a53eff93435051235ad0b810744a84d8ad92f948ec984076a71410"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "8eb2b99f637668dd7947679a674e09617aca01a75935a983ab540929c1d7ac02"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "16cd073539446a36aecda2500e221c134a761ae4778bc8d9f7ec1734fb74d911"
+          },
+          {
+            "pagina": 72,
+            "origem": "ocr",
+            "textSha256": "2147ac23b4d622ac6ef09880457c20853d3bf4a61312db849e870b4539b38d63"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "b297e38871470afd5938bfdc7ec779b1db38f61fa57fca6580542b8461dcddc7"
+          },
+          {
+            "pagina": 74,
+            "origem": "ocr",
+            "textSha256": "2584f5f611ad2b1c6a402bf78559409d2eb04db317771dfd1a023d87abb1419a"
+          },
+          {
+            "pagina": 75,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "590d13f547da616847887fd0c1c56d76b969ba3f153b72ac3026da31a1d6dbfd"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano apresenta o programa “Amazonas Conectado” como a principal iniciativa de modernização da administração estadual, associada à integração entre governo, sociedade, tecnologia e gestão orientada a resultados. Na infraestrutura, prevê ampliar o acesso à internet de qualidade no interior do Amazonas, relacionando conectividade ao desenvolvimento sustentável. Na saúde, propõe expandir o Telessaúde em Manaus e no interior, dentro de uma agenda de atendimento regionalizado. Na habitação, prevê instituir programa de regularização fundiária em imóveis urbanos, como ação do programa Casa Amazonense. Na economia, propõe elaborar o Plano Estadual de Diversificação Econômica, com orientação de investimentos para novas atividades regionais. No desenvolvimento regional, prevê fortalecer as cadeias produtivas da sociobiodiversidade, com apoio a comunidades produtoras, assistência técnica, beneficiamento e acesso ao mercado. Na agenda ambiental, planeja implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual, com práticas de eficiência energética, consumo responsável, reuso e reciclagem.",
+    "frases": [
+      {
+        "texto": "O plano apresenta o programa “Amazonas Conectado” como a principal iniciativa de modernização da administração estadual, associada à integração entre governo, sociedade, tecnologia e gestão orientada a resultados.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 35,
+            "trecho": "O Programa Amazonas Conectado será a principal iniciativa de modernização da administração estadual, promovendo a integração entre governo e sociedade por meio da tecnologia, da inovação e da gestão orientada a resultados."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, prevê ampliar o acesso à internet de qualidade no interior do Amazonas, relacionando conectividade ao desenvolvimento sustentável.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 45,
+            "trecho": "Ampliar o acesso à internet de qualidade no interior do Amazonas, conectando tecnologia ao desenvolvimento sustentável."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe expandir o Telessaúde em Manaus e no interior, dentro de uma agenda de atendimento regionalizado.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 54,
+            "trecho": "Expandir o Telessaúde em Manaus e no interior."
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, prevê instituir programa de regularização fundiária em imóveis urbanos, como ação do programa Casa Amazonense.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 63,
+            "trecho": "HABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA “Casa Amazonense”\n- Instituir programa de regularização fundiária em imóveis urbanos."
+          }
+        ]
+      },
+      {
+        "texto": "Na economia, propõe elaborar o Plano Estadual de Diversificação Econômica, com orientação de investimentos para novas atividades regionais.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 41,
+            "trecho": "Elaborar o Plano Estadual de Diversificação Econômica: estratégia de longo prazo para identificar setores prioritários, estabelecer metas de diversificação, orientar os investimentos públicos e privados para novas atividades econômicas"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento regional, prevê fortalecer as cadeias produtivas da sociobiodiversidade, com apoio a comunidades produtoras, assistência técnica, beneficiamento e acesso ao mercado.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 69,
+            "trecho": "Fortalecer as cadeias produtivas da sociobiodiversidade: ações estruturadas de apoio às comunidades produtoras, fortalecendo o cooperativismo e o associativismo, ampliando assistência técnica, beneficiamento e acesso ao mercado."
+          }
+        ]
+      },
+      {
+        "texto": "Na agenda ambiental, planeja implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual, com práticas de eficiência energética, consumo responsável, reuso e reciclagem.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 67,
+            "trecho": "Implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual de modo a implementar práticas de eficiência energética, consumo responsável, reuso e reciclagem"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-digital",
+        "titulo": "Gestão digital",
+        "descricao": "O programa Amazonas Conectado prevê modernização administrativa baseada em tecnologia, inovação e integração governamental.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 35,
+            "trecho": "O Programa Amazonas Conectado será a principal iniciativa de modernização da administração estadual, promovendo a integração entre governo e sociedade por meio da tecnologia, da inovação e da gestão orientada a resultados."
+          }
+        ]
+      },
+      {
+        "id": "conectividade-interior",
+        "titulo": "Conectividade do interior",
+        "descricao": "A proposta prevê ampliar o acesso à internet de qualidade no interior do Amazonas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 45,
+            "trecho": "Ampliar o acesso à internet de qualidade no interior do Amazonas, conectando tecnologia ao desenvolvimento sustentável."
+          }
+        ]
+      },
+      {
+        "id": "telessaude",
+        "titulo": "Telessaúde",
+        "descricao": "A proposta prevê expandir o Telessaúde em Manaus e no interior.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 54,
+            "trecho": "Expandir o Telessaúde em Manaus e no interior."
+          }
+        ]
+      },
+      {
+        "id": "regularizacao-fundiaria",
+        "titulo": "Regularização fundiária",
+        "descricao": "O programa Casa Amazonense prevê instituir regularização fundiária em imóveis urbanos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 63,
+            "trecho": "HABITAÇÃO E REGULARIZAÇÃO FUNDIÁRIA “Casa Amazonense”\n- Instituir programa de regularização fundiária em imóveis urbanos."
+          }
+        ]
+      },
+      {
+        "id": "bioeconomia",
+        "titulo": "Sociobiodiversidade",
+        "descricao": "A proposta prevê fortalecer cadeias produtivas da sociobiodiversidade.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002536086:01",
+            "pagina": 69,
+            "trecho": "Fortalecer as cadeias produtivas da sociobiodiversidade: ações estruturadas de apoio às comunidades produtoras, fortalecendo o cooperativismo e o associativismo, ampliando assistência técnica, beneficiamento e acesso ao mercado."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:39:54.396Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:42:06.502Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:1:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:2:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho e contexto da página 54 mencionam atendimento regionalizado e expansão do Telessaúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:3:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (habitação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:4:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (economia)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:5:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:6:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (ambiental)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:frase:7:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:gestao-digital:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:conectividade-interior:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:telessaude:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:regularizacao-fundiaria:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002536086:tema:bioeconomia:documentos:AM:40002536086:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002536086",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002536086:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 52249,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3848,
+          "reasoning_output_tokens": 2502
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28979,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22092,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28979,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22092,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28979,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28979
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.35863140000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:46:34Z",
+    "sourceSha256": "00bb1ea88eb1ac2a1b909c89c357b286c28bbccdf3a066b7d436f709f79cdb63",
+    "extractedTextSha256": "a2eaf5fb48d06d9a639dfdfac54919195aaa44554adff6dc282ed0298ed5a4d3",
+    "documentCount": 1,
+    "documentSetSha256": "8ead992622c289aed2d144718896500813f3db50422f7f999e9491df8646aa80",
+    "contentSha256": "c3d328933de50f2dbb5c23bfcf279fd59142aa39a7e110c2435ca132a1be5f4d"
+  }
+}

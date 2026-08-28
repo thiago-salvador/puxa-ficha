@@ -1,0 +1,762 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002546756",
+    "slug": "rodrigo-bolsonaro",
+    "nomeUrna": "RODRIGO BOLSONARO",
+    "partido": "AGIR",
+    "arquivoNome": "2026RN200002546756_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002546756_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002546756:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002546756_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002546756_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "816c9f3af3cdee39b896cff9e55a56368e26bfd05701386c998451044e03ab4c",
+        "extractedTextSha256": "f5319d36ccf0308e635b7966d899bad6950db004e98c928d26b7252bcf845643",
+        "paginas": 3,
+        "secoes": [
+          {
+            "id": "plano-de-governo-para-o-rio-grande-do-norte-rodrigo",
+            "titulo": "PLANO DE GOVERNO PARA O RIO GRANDE DO NORTE / RODRIGO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO PARA O RIO GRANDE DO NORTE / RODRIGO\nBOLSONARO\nDiretrizes Globais: Desenvolvimento, Segurança, Saúde e Excelência na\nEducação\nAPRESENTAÇÃO\nEste Plano de Governo foi criado com o compromisso da realidade atual do Rio\nGrande do Norte, a fim de proporcionar o desenvolvimento sustentável, a\nvalorização das pessoas e o fortalecimento dos serviços públicos, por meio de\nparcerias estratégicas, incentivos econômicos e investimento direto, focando\nem metas e diretrizes estruturadas em quatro eixos fundamentais.\n1. Saúde Pública\n\n\nInvestimento em Estrutura: Proposta de construção de laboratórios de\nanálises clínicas no estado em todas as regiões Polos.\n\n\n\nMedicamentos e Atendimento: Ampliar o sistema de entrega de\nmedicamentos de alto e baixo custo, e otimizar a fila para exames e\ncirurgias por meio de convênios com a iniciativa privada.\n\n\n\nConstrução de um Hospital: Metropolitano e por Polo com a\ncapacidade 2.000 leitos a com parceria privado.\n\n2. Desenvolvimento Econômico é Infraestrutura\n\n\nQueremos por direito a responsabilidade pela Ilha de Fernando de\nNoronha em parceria com a União;\n\n\n\nReativação do Aeroporto Augusto Severo para voos domésticos e o\nAeroporto Aluízio Alves para cargas;\n\n\n\nConstrução de 06 CIAS (Centro Industrial Avançado): Grande Natal,\nJoão Câmara, Mossoró, Caicó, Pau dos Ferros e Nova Cruz;\n\n\n\nRedução dos impostos para fábricas e indústrias;"
+          },
+          {
+            "id": "pagina-2",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "\n\nNovo Banco do RN voltado para o crescimento do RN;\n\n\n\nMais investimentos nos Parques Eólicos, Energia Solar e Terras Raras\nno RN;\n\n\n\nMais investimentos do estado na Fruticultura e pesca;\n\n\n\nConstrução da terceira ponte em Natal;\n\n\n\nReforma geral nas estradas RN e duplicação de RNs;\n\n\n\nConstrução de Porto Marítimo e parceria com setor privado;\n\n\n\nCooperativas e Agricultura: Criação de um programa para formar\ncooperativas voltadas à produção de hortifrutigranjeiros;\n\n\nGarantia de Compra: O Estado atuaria garantindo a compra de parte\ndessa produção agrícola, com o objetivo de gerar empregos no\ncampo e combater a fome e a desnutrição da população potiguar;\n\n Centro de apoio para os Motoristas, Taxistas e Aplicativos de moto ou\n\ncarro: Rodoviária e Aeroporto;\n Centro de apoio para os Motoristas de Caminhão nas BR 101 e 304.\n\n3. Segurança Pública\n\n\nDuas Penitenciárias máximas do RN;\n\n\n\nConcurso público: 10 mil policiais militares, 5 mil policiais civis, 2 mil\npoliciais penais;\n\n\n\nAquisição de novas viaturas, armamentos e materiais de última geração;\n\n\n\nConstrução de novos batalhões e delegacias com estrutura apropriada e\natualizada, além de reestruturar e reformar as antigas.\n\n4. Educação\n\n\nConstrução de novas escolas e reformas das antigas;\n\n\n\nAumento salarial de 10% para os professores a partir de março de 2027;\n\n\n\nAlimentação de Qualidade para crianças, jovens e adultos nas escolas\n(manhã, tarde e noite);\n\n\n\nEscolas Militar por polo idade dos 05 anos a 17 anos;"
+          },
+          {
+            "id": "pagina-3",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "\n\nOportunidade de emprego para profissionais recém-formados, tanto a\nnível técnico como superior, por processo seletivo e avaliação de\ncurrículo, em parceria com o setor privado."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "91c8b9a4ea413757a3eea15dfdb587cb4e88f3dbdce67db2c3363cd6b3083879"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "efa7e07de0977c25771e640f849b4852a1209c3c3ee149c1721fb77e7a0a669e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7ee3caedb9b7d672891f886bf3538c11200f4b1a11aafe67848ff14adf59c06e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos. Na saúde pública, o programa propõe ampliar o sistema de entrega de medicamentos de alto e baixo custo. Na infraestrutura, o programa prevê a construção da terceira ponte em Natal. No desenvolvimento rural, o programa propõe a criação de um programa para formar cooperativas voltadas à produção de hortifrutigranjeiros. Na segurança pública, o programa prevê duas Penitenciárias máximas do RN. Na educação, o programa prevê a construção de novas escolas. Na educação, o programa prevê alimentação de qualidade para crianças, jovens e adultos nas escolas nos períodos da manhã, tarde e noite. Na infraestrutura aeroportuária, o programa prevê a reativação do Aeroporto Augusto Severo para voos domésticos.",
+    "frases": [
+      {
+        "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 1,
+            "trecho": "Proposta de construção de laboratórios de\nanálises clínicas no estado em todas as regiões Polos."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, o programa propõe ampliar o sistema de entrega de medicamentos de alto e baixo custo.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 1,
+            "trecho": "Ampliar o sistema de entrega de\nmedicamentos de alto e baixo custo"
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o programa prevê a construção da terceira ponte em Natal.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Construção da terceira ponte em Natal;"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento rural, o programa propõe a criação de um programa para formar cooperativas voltadas à produção de hortifrutigranjeiros.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Criação de um programa para formar\ncooperativas voltadas à produção de hortifrutigranjeiros;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o programa prevê duas Penitenciárias máximas do RN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Duas Penitenciárias máximas do RN;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa prevê a construção de novas escolas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Construção de novas escolas"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa prevê alimentação de qualidade para crianças, jovens e adultos nas escolas nos períodos da manhã, tarde e noite.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Alimentação de Qualidade para crianças, jovens e adultos nas escolas\n(manhã, tarde e noite);"
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura aeroportuária, o programa prevê a reativação do Aeroporto Augusto Severo para voos domésticos.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 1,
+            "trecho": "Reativação do Aeroporto Augusto Severo para voos domésticos"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "laboratorios-clinicos",
+        "titulo": "Laboratórios clínicos",
+        "descricao": "Construção de laboratórios de análises clínicas nas regiões Polos.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 1,
+            "trecho": "Proposta de construção de laboratórios de\nanálises clínicas no estado em todas as regiões Polos."
+          }
+        ]
+      },
+      {
+        "id": "medicamentos",
+        "titulo": "Entrega de medicamentos",
+        "descricao": "Ampliação do sistema de entrega de medicamentos de alto e baixo custo.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 1,
+            "trecho": "Ampliar o sistema de entrega de\nmedicamentos de alto e baixo custo"
+          }
+        ]
+      },
+      {
+        "id": "terceira-ponte",
+        "titulo": "Terceira ponte",
+        "descricao": "Construção de uma terceira ponte em Natal.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Construção da terceira ponte em Natal;"
+          }
+        ]
+      },
+      {
+        "id": "cooperativas-rurais",
+        "titulo": "Cooperativas rurais",
+        "descricao": "Criação de programa para formar cooperativas de hortifrutigranjeiros.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Criação de um programa para formar\ncooperativas voltadas à produção de hortifrutigranjeiros;"
+          }
+        ]
+      },
+      {
+        "id": "penitenciarias",
+        "titulo": "Penitenciárias",
+        "descricao": "Previsão de duas Penitenciárias máximas no RN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Duas Penitenciárias máximas do RN;"
+          }
+        ]
+      },
+      {
+        "id": "novas-escolas",
+        "titulo": "Novas escolas",
+        "descricao": "Construção de novas escolas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Construção de novas escolas"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:30:30.904Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:32:41.178Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'terceira' corresponde ao texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'duas' confere com o texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números relevantes divergentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Número confere."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Número confere."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002546756",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002546756:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 20770,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3528,
+          "reasoning_output_tokens": 2387
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21576,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21594,
+          "output_tokens_details": {
+            "thinking_tokens": 492
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21576,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21594,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21576,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21576
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3195054
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:33:03Z",
+    "sourceSha256": "816c9f3af3cdee39b896cff9e55a56368e26bfd05701386c998451044e03ab4c",
+    "extractedTextSha256": "f5319d36ccf0308e635b7966d899bad6950db004e98c928d26b7252bcf845643",
+    "documentCount": 1,
+    "documentSetSha256": "d8108b57e0f2f1c2bfa58b6e01676e44045f9ea2cc4b185a8353bf9a81f28cfc",
+    "contentSha256": "6938270efd91e713e7b628692ef390d79bbc8b9c72954ae705d21c6443874364"
+  }
+}

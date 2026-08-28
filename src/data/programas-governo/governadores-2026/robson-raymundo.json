@@ -1,0 +1,708 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002535930",
+    "slug": "robson-raymundo",
+    "nomeUrna": "PROFESSOR ROBSON",
+    "partido": "PSTU",
+    "arquivoNome": "2026DF70002535930_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002535930_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002535930:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002535930_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002535930_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d7608df952d39d1fd5777dcd68e022932ed1187b3e88e0f9f6081998cbfbd4c1",
+        "extractedTextSha256": "9ccb93022e2dd9c13c95e7ad660e03b3e95e8e4ea8909d559d04676d16b0e70d",
+        "paginas": 5,
+        "secoes": [
+          {
+            "id": "por-um-brasil-e-um-df-soberano-e-socialista",
+            "titulo": "Por um Brasil e um DF Soberano e Socialista!",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Por um Brasil e um DF Soberano e Socialista!\nPor um Distrito Federal dos Trabalhadores e Trabalhadoras, contra os bilionários, o Governo\nIbaneis-Celina e o projeto da frente ampla de conciliação com a extrema-direita e o centrão.\n\nBrasília deve ser um patrimônio dos trabalhadores e trabalhadoras, não um balcão de\nnegócios para bilionários e empreiteiras.\nO Distrito Federal é a capital de um país rico, mas vive hoje uma desigualdade brutal. De um lado, o luxo do\npoder e os lucros exorbitantes do setor imobiliário, dos grandes comerciantes, dos empresários de transporte e\ndas multinacionais imperialistas; do outro, cidades-satélites abandonadas, filas intermináveis na saúde pública,\num transporte que humilha o trabalhador todos os dias, uma educação pública cada vez mais sucateada,\nsustentada por contratos de trabalho precários e uma crise na segurança pública.\nEssa realidade não é um acidente. O DF é governado contra os trabalhadores e trabalhadoras. A riqueza aqui\nproduzida é drenada para alimentar uma minoria de empresários e multinacionais, especuladores de terras,\npolíticos e empresas corruptas, que dilapidam as verbas e o patrimônio público, enquanto as famílias\ntrabalhadoras sofrem com o custo de vida e a precarização.\n\nO Governo Ibaneis e Celina Leão: O rosto da decadência e da privatização\nEsse cenário é o resultado da política neoliberal aplicada por todos os governos dos últimos 35 anos, Roriz\n(MDB), Cristovam (PT), Arruda (PSD), Agnelo (PT), Rollemberg (PSB) e Ibaneis-Celina(MDB-PP). Ao contrário\ndo que foi prometido por todos esses governos, as privatizações, concessões, terceirizações e PPP’s não\nlevaram à melhoria dos serviços públicos do DF. Essa política gerou mais desigualdade, escândalos de\ncorrupção, precarização dos serviços e das relações laborais no serviço público.\nA situação da saúde pública no DF é o melhor exemplo da decadência gerada pela política neoliberal, que se\naprofundou com o governo de Ibaneis-Celina. O IGES-DF não melhorou o serviço de saúde do DF e virou um\nfoco de corrupção e malversação dos recursos públicos. Em plena pandemia da COVID-19, toda a cúpula da\nSecretaria de Saúde foi presa, acusada de fraudar contratos de compras de vacinas e insumos para o\nenfrentamento da COVID-19.\nAo escândalo de corrupção na saúde do DF, se somam inúmeros outros, que é a marca principal do governo de\nIbaneis-Celina. Recentemente, explodiu mais um escândalo na secretaria de educação, envolvendo mais de R$\n40 milhões de desvio para alugar um espaço para funcionamento de uma escola na candangolândia, envolvendo\ninclusive o líder do governo na CLDF.\nMas, nenhum desses casos graves de corrupção se compara ao caso BRB-MASTER. Daniel Vorcaro,\nproprietário do Banco Master, realizou a maior fraude financeira da história do país, com a ajuda do BRB, que\npor orientação do governo Ibaneis-Celina tentou fazer uma transação de compra do Master para salvar o banco\nfalido e ajudar a encobrir parte das fraudes praticadas por Vorcaro. O prejuízo aos cofres do BRB e do GDF está\nna ordem de cerca de R$ 20 bilhões de reais.\nCelina Leão, sem nenhum pudor, que empurrar a conta da crise do BRB, criada pelas decisões de seu próprio\ngoverno, para a população do DF, através do acordo de empréstimo do FGC de R$ 6,6 bilhões de reais. Esse\nacordo vai impor um regime de restrição fiscal ao GDF que vai impedir a abertura de novos concursos públicos,\nreajuste salarial aos servidores públicos e restringir novos investimentos, enquanto o GDF não pagar toda a\ndívida com o FGC, que está prevista para ser quitada em 15 anos. O orçamento do DF está sequestrado para"
+          },
+          {
+            "id": "cumprir-esse-acordo-que-beneficia-os-grandes-bancos-do-pais-enquanto-a-p",
+            "titulo": "cumprir esse acordo, que beneficia os grandes bancos do país, enquanto a população do DF vai amargar um",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "cumprir esse acordo, que beneficia os grandes bancos do país, enquanto a população do DF vai amargar um\nprocesso ainda mais acelerado de precarização e ausência de serviços públicos essenciais.\nIbaneis e Celina Leão também estão marcados pelo papel que cumpriram na tentativa de golpe da\nextrema-direita bolsonarista, cujo ápice foi o episódio do 8 de janeiro, com a depredação do Congresso\nNacional, do STF e do Palácio do Planalto. A cumplicidade da cúpula da segurança pública do DF, indicada pelo\ngoverno Ibaneis-Celina, com a tentativa golpista foi determinante para os episódios lamentáveis que ocorreram\nem 8 de janeiro no DF.\nO governo de Ibaneis Rocha e sua sucessora direta, Celina Leão, representa a face mais cruel do sistema\ncapitalista. Eles aprofundaram a lógica de entregar o que é público para o lucro privado.\n1.​ A Farra das Privatizações: Sob o comando de Ibaneis e Celina, o GDF iniciou um desmonte histórico.\nAprofundou a privatização da saúde, através do IGES DF, privatizou a CEB e privatizou até mesmo a\nRodoviária do Plano Piloto. Eles querem vender tudo: do Banco de Brasília (BRB) aos serviços\nessenciais. O resultado dessa política é a piora na qualidade dos serviços públicos.\n2.​ O Escândalo do BRB e Banco Master: O caso recente envolvendo o BRB e as fraudes do Banco\nMaster desnudou a corrupção sistêmica. Enquanto faltam recursos para as escolas, hospitais e para\nassistência social, bilhões são movimentados em esquemas que beneficiam bancos e figuras políticas\ncomo Ciro Nogueira (presidente nacional do PP, partido da governadora Celina Leão) e Flávio Bolsonaro.\nA conta dessas fraudes não pode cair sobre o povo do DF!\n3.​ Colapso da Saúde, da Educação e da Assistência Social: Ibaneis e Celina herdaram e pioraram a\ncrise no IGESDF. O modelo de \"gestão por OSs\" é uma fábrica de corrupção que nega atendimento\nmédico básico nas UPAs e hospitais. Na educação, a militarização das escolas é um fracasso, que não\nsolucionou o problema da insegurança e violência no ambiente escolar e criou um monte de outros\nproblemas. Além disso, o GDF tem desrespeitado sistematicamente a garantia constitucional de repasse\nde 25% de suas receitas para educação. Ibaneis-Celina também operam um desmonte da assistência\nsocial, que se materializa nesse momento na destituição de 35% dos servidores da Casa-Abrigo para\nmulheres vítimas de violência, inviabilizando seu funcionamento, em um momento em que o feminicídio\ncresce no DF.\n4.​ A Extrema-Direita e o Bolsonarismo: Celina Leão tenta se pintar como \"renovação\", mas é a herdeira\ndo bolsonarismo mais reacionário. Defende a exploração e a política repressiva contra o povo pobre e a\njuventude negra das periferias, que sofre com os despejos, enquanto governa para os interesses dos\ngrandes empresários e multinacionais.\n\nNem a Extrema-Direita, nem a frente ampla de conciliação de classes.\nÉ preciso dizer a verdade: o projeto de \"frente ampla\" liderado pelo governo Lula não oferece uma saída real\npara o DF. A conciliação com o agronegócio, com os governos imperialistas, com os partidos do centrão e da\nextrema-direita serve apenas para manter as engrenagens do sistema capitalista funcionando. Não adianta\ntrocar os nomes se o modelo econômico continua sendo o de pagar juros da dívida aos bancos e manter o\narcabouço fiscal que corta dinheiro da saúde e educação.\nAs pré-candidaturas de Leando Grass (PT) e Ricardo Capelli (PSB), não representam uma ruptura real com a\npolítica neoliberal do governo Ibaneis-Celina. Tanto PT como o PSB já governaram o DF e o resultado foi\ndesastroso. Foi Agnelo (PT) que construiu o atual modelo de transporte público do DF, com a concessão aos\ngrandes empresários de transporte. Um modelo que onera os cofres públicos, não atende adequadamente a\npopulação e cobra uma tarifa elevada. Além do mais, foi no governo Agnelo que explodiu um dos maiores\nescândalos de corrupção do DF, envolvendo a reforma do estádio Mané Garrincha, que levou a uma sangria de\nquase R$ 2 Bilhões de reais de dinheiro público."
+          },
+          {
+            "id": "ja-o-iges-df-que-e-um-foco-de-corrupcao-e-ineficiencia-nos-servicos-de-s",
+            "titulo": "Já o IGES-DF, que é um foco de corrupção e ineficiência nos serviços de saúde ofertado à população, é a",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Já o IGES-DF, que é um foco de corrupção e ineficiência nos serviços de saúde ofertado à população, é a\ncontinuidade da política de Rollemberg (PSB), que criou o Instituto Hospital de Base.\nA estratégia do “mal menor” já mostrou seu limite. Ela desmobiliza a classe e abre caminho para que figuras\ncomo Celina Leão se apresentem como alternativa. Precisamos de uma candidatura que não tenha rabo preso\ncom empresário nenhum. Uma candidatura apoiada na auto organização da classe trabalhadora e a serviço de\num projeto de ruptura com o capital para construir um outro tipo de sociedade, que seja socialista.\n\nUm programa para atender as necessidades fundamentais dos\ntrabalhadores e trabalhadoras.\n1. Estatização e Passe Livre Já! Pelo direito à cidade!\n●​ Fim da máfia dos transportes e Tarifa Zero: Estatização total das empresas de ônibus e do metrô, sob\ncontrole dos trabalhadores e usuários.\n●​ Tarifa Zero: Transporte é um direito, não mercadoria. Chega de enriquecer os donos das empresas.\n●​ Revogação imediata da privatização da Rodoviária do Plano Piloto.\n●​ Criação de programa para fornecimento gratuito a PCD’s de veículos adaptados. carros, motos,\nbicicletas.\n\n2. Em Defesa dos Serviços e Servidores Públicos, Contra a Precarização e a Privatização\n●​ Fim do IGESDF: Saúde 100% pública e estatal. Concursos públicos para todas as áreas e fim das\nterceirizações que precarizam o trabalho.\n●​ Fim da violência obstétrica. Criação de um plano com metas claras para desenvolvimento do parto\nhumanizado em todos os hospitais do DF. Garantir sala de parto humanizado em todos os hospitais do\nDF.\n●​ Criação de um centro de saúde especializado para transexuais e travestis. Garantia de realização\nna rede pública de saúde, de forma desburocratizada, da cirurgia de redesignação sexual.\n●​ Educação Libertadora: Salário digno para os professores e profissionais da educação. Fim da\nmilitarização das escolas, ampliação e efetivação da gestão democrática das escolas. Abertura de novas\nturmas e escolas e redução do número de estudantes por turma. Garantir pelo menos 30% do orçamento\ndo DF para a educação pública. Fim de qualquer repasse de verbas públicas para a rede privada de\nensino.\n●​ Piso Salarial não inferior ao mínimo do DIEESE (R$ 7.164,94), para todos os servidores do GDF .\n●​ Redução da jornada de trabalho, para 30h semanais para os servidores do GDF, sem redução de\nsalário.\n●​ Democratizar a gestão pública, eleição de todos os secretários de estado, chefias e construção de um\nconselho gestor das empresas públicas, eleito pelos trabalhadores e organizações da classe\ntrabalhadora, com mandatos revogáveis.\n●​ Revogação da reforma da previdência de Ibaneis.\n●​ Garantir licença-paternidade de 6 meses aos servidores públicos do DF.\n●​ Garantir a implementação da pauta de reivindicações de todas as categorias de servidores do DF\n●​ Renegociação das dívidas dos servidores públicos com BRB, com prazos largos e juros zero,\nlimitado ao comprometimento de 10% dos salários dos servidores. Acabar com os mecanismos de\nsuperendividamento do BRB.\n●​ Incorporação e efetivação de todos os contratos temporários da educação, da saúde e dos demais\nórgãos do GDF para suprir a carência de profissionais nos serviços públicos."
+          },
+          {
+            "id": "criacao-de-uma-empresa-estatal-de-servicos-gerais-e-incorporacao-dos-tra",
+            "titulo": "●​ Criação de uma empresa estatal de serviços gerais e incorporação dos trabalhadores terceirizados à",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "●​ Criação de uma empresa estatal de serviços gerais e incorporação dos trabalhadores terceirizados à\nempresa pública, com estabilidade.\n●​ Reestatização da Neoenergia, já sem indenização.\n●​ Cotas raciais para todos os concursos públicos do DF, adotando o percentual de reserva de vagas\nigual ao censo da população negra do DF, que representa quase 60% da população.\n●​ Cota Trans para todos os concursos públicos do DF e para UnDF, e criação de programa de apoio\naos estudos, específico para pessoas trans e travestis.\n●​ Criar o hospital do Idoso e centros de acolhimento a pessoa idosa em todas as cidades do DF, um\nespaço para que idosos e idosas recebam atendimento médico, psicológico, terapêutico, realizem\natividades esportivas, artísticas e, assim, aliviar a sobrecarga das mulheres que absorvem a maior parte\ndo cuidado com as pessoas idosas.\n●​ Fim do Manicômio público do DF (Hospital São Vicente de Paulo), construção de novos CAPS em\ntodas as cidades do DF, rompimento de todos os convênios com as chamadas comunidades\nterapêuticas.\n●​ Criação de Centros de Atendimento a pessoas no TEA em todas as cidades satélites, com serviços\nmédicos, terapêuticos, com acesso a avaliações e laudos e acesso desburocratizado às medicações e\nmateriais de suporte.\n●​ Fim da PPP do Mané Garrincha, Centro de Convenções, gestão 100% estatal de todos equipamentos\npúblicos de cultura e lazer do DF.\n●​ Dobrar as verbas destinadas ao FAC-DF e construção de centro de apoio aos artistas, com cursos,\nconsultoria e assessoria direta para a construção dos projetos culturais para os editais.\n●​ Revogação da lei do silêncio em vigor, e construção de um novo marco legal que garanta o direito às\napresentações musicais nos bares e restaurantes do DF.\n\n3. Reforma Urbana, Combate à Especulação e preservação ambiental\n●​ Terra para quem mora: Regularização fundiária voltada para o interesse social, combatendo a grilagem\nde elite e a especulação das grandes construtoras (Terracap a serviço da classe trabalhadora).\n●​ Plano habitacional popular, construído de forma democrática, com os movimentos sociais:\nConstrução de moradias dignas para acabar com o déficit habitacional e as remoções violentas.\n●​ Expropriação, sem indenização, dos grandes grupos imobiliários e empreiteras, e utilização desse\npatrimônio a serviço da política de moradia popular.\n●​ Revogação do PDOT de 2026 e construção de um novo plano de ordenamento territorial a serviço da\nclasse trabalhadora.\n●​ Garantir prioritariamente a destinação dos recursos públicos para recuperação da bacia do\nDescoberto, que é a reserva hídrica mais ameaçada pela ação humana no DF.\n●​ Em defesa da Serrinha do Paranoá, fim dos empreendimentos imobiliários na região.\n●​ Revitalizar o SLU e garantir controle 100% estatal do manejo do lixo e dos resíduos sólidos do DF.\nUniversalizar a coleta seletiva. Construir fábrica estatal de reciclagem sob gestão e controle do SLU.\n●​ Política de plantio de árvores principalmente nas cidades satélites, para combater as zonas de calor\nintenso e garantir conforto climático à população das regiões periféricas.\n●​ Plano de obras públicas para garantir acessibilidade a PCD’s em todos os locais públicos do DF,\nconstrução de rampas, piso tátil, nivelamento, ampliação de calçadas, etc.\n\n4. Segurança Pública para a Vida, Não para a Morte\n●​ Fim da violência policial: Desmilitarização da PM e criação de uma segurança pública sob controle\ncomunitário.\n●​ Contra o racismo e o genocídio da juventude negra: Pelo fim da guerra às drogas, que serve apenas\ncomo desculpa para invadir periferias. Descriminalização e tratamento de saúde para dependentes."
+          },
+          {
+            "id": "organizar-uma-divisao-policial-especializada-na-protecao-de-mulheres-vit",
+            "titulo": "●​ Organizar uma divisão policial especializada na proteção de mulheres vítimas de ameaças.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "●​ Organizar uma divisão policial especializada na proteção de mulheres vítimas de ameaças.\nCompra de material de rastreamento (tornozeleiras eletrônicas, etc.) para efetivar o cumprimento das\nmedidas protetivas para as mulheres ameaçadas. E, programa para treinamento em autodefesa e\nfornecimento de armamento às mulheres que estejam amparadas por medidas protetivas.\n●​ Organizar a autodefesa das mulheres, instituir um programa gratuito de treinamento de autodefesa\npara mulheres em todo o DF\n\n5. Auditoria popular das Contas e do BRB\n●​ Expropriação dos bens dos envolvidos em fraudes bancárias e corrupção no GDF. O dinheiro roubado\ndeve voltar para a saúde e educação. Anulação do projeto de concessão de imóveis do GDF para\ncapitalização do BRB.\n●​ Suspensão do pagamento da dívida pública do DF aos grandes bancos.\n●​ Fim da política de isenção fiscal aos grandes empresários, que rende cerca de R$ 10 Bilhões de\nreais todos os anos aos capitalistas, auditoria popular de todas as isenções concedidas, investigação e\ncobrança de todas as isenções fiscais concedidas de maneira irregular e ilegal.\n●​ Cobrança da dívida ativa e expropriação dos bens de todos os grandes devedores do GDF,\nanulação do processo de securitização da dívida para o BTG.\n●​ Auditoria com participação popular de todo o orçamento do DF, e criação de conselho gestor do\norçamento público formado exclusivamente por organizações da classe trabalhadora, sindicatos e\nmovimentos sociais.\n●​ Revogação do acordo de empréstimo do GDF/BRB com o FGC, quem deve pagar o rombo do BRB\nsão os responsáveis pela fraude bilionária. Expropriação de todos os bens dos envolvidos e utilização\ndesses recursos e patrimônio para cobrir o rombo do BRB e reparar os danos aos trabalhadores e\ntrabalhadoras lesados.\n\nNão seremos libertos por decretos vindos de cima ou por alianças com nossos carrascos. O Brasil precisa de\numa revolução socialista que rompa com as engrenagens desse sistema capitalista que nos explora.\nNossa candidatura convoca cada trabalhador, cada trabalhadora, a juventude, as mulheres, o povo negro, a\ncomunidade LGBTQIAPN+ a construir uma alternativa independente da burguesia e revolucionária.\nPor um Brasil e um DF Soberano e Socialista!"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b04ed3befe9b392f625366a525b51acc6a1f0f8d154cab7cf0baab98770f4fae"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "3a1686384d66da8555e1571dd8e075d7c595085f002407b147c5f6ffdb3c87fe"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "4346430710efa42a9cc0f7f6618dc71ba74f97ed08901a123f15875e94aedc81"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "f8dec209712b9ff2337b47e99f144b8af7f97701527e5873c9909e83c581175c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "20bd1689308e88716f9de0145ab31f40644c5dab016e9dfae4a366150d3c8b5a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários, dentro de uma proposta de transporte público. Também propõe a criação de programa para fornecimento gratuito a PCD’s de veículos adaptados, incluindo carros, motos e bicicletas. Na saúde pública, prevê o fim do IGESDF, com saúde 100% pública e estatal. O documento propõe a criação de um centro de saúde especializado para transexuais e travestis. Na educação, propõe salário digno para os professores e profissionais da educação, conforme o eixo de educação libertadora. Na política habitacional, propõe um plano habitacional popular, construído de forma democrática com os movimentos sociais. Esse plano prevê a construção de moradias dignas para acabar com o déficit habitacional e as remoções violentas.",
+    "frases": [
+      {
+        "texto": "O programa prevê a estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários, dentro de uma proposta de transporte público.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários."
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe a criação de programa para fornecimento gratuito a PCD’s de veículos adaptados, incluindo carros, motos e bicicletas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Criação de programa para fornecimento gratuito a PCD’s de veículos adaptados. carros, motos, bicicletas."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, prevê o fim do IGESDF, com saúde 100% pública e estatal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Fim do IGESDF: Saúde 100% pública e estatal."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a criação de um centro de saúde especializado para transexuais e travestis.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Criação de um centro de saúde especializado para transexuais e travestis."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe salário digno para os professores e profissionais da educação, conforme o eixo de educação libertadora.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Educação Libertadora: Salário digno para os professores e profissionais da educação."
+          }
+        ]
+      },
+      {
+        "texto": "Na política habitacional, propõe um plano habitacional popular, construído de forma democrática com os movimentos sociais.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 4,
+            "trecho": "Plano habitacional popular, construído de forma democrática, com os movimentos sociais:"
+          }
+        ]
+      },
+      {
+        "texto": "Esse plano prevê a construção de moradias dignas para acabar com o déficit habitacional e as remoções violentas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 4,
+            "trecho": "Construção de moradias dignas para acabar com o déficit habitacional e as remoções violentas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "transporte-publico",
+        "titulo": "Transporte público",
+        "descricao": "Estatização das empresas de ônibus e do metrô sob controle de trabalhadores e usuários.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários."
+          }
+        ]
+      },
+      {
+        "id": "acessibilidade",
+        "titulo": "Acessibilidade",
+        "descricao": "Fornecimento gratuito de veículos adaptados para PCD’s.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Criação de programa para fornecimento gratuito a PCD’s de veículos adaptados. carros, motos, bicicletas."
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Fim do IGESDF com saúde pública e estatal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Fim do IGESDF: Saúde 100% pública e estatal."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Salário digno para professores e profissionais da educação.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 3,
+            "trecho": "Educação Libertadora: Salário digno para os professores e profissionais da educação."
+          }
+        ]
+      },
+      {
+        "id": "habitacao-popular",
+        "titulo": "Habitação popular",
+        "descricao": "Plano habitacional popular construído com participação dos movimentos sociais.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002535930:01",
+            "pagina": 4,
+            "trecho": "Plano habitacional popular, construído de forma democrática, com os movimentos sociais:"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:08:54.420Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:10:51.944Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente sobre transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:1:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:2:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:3:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:4:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:5:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:6:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:frase:7:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (transporte)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:transporte-publico:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:acessibilidade:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação (100% omitido mas não contradito)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:saude-publica:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:educacao-publica:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição factual sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (habitação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002535930:tema:habitacao-popular:documentos:DF:70002535930:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002535930",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002535930:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 25217,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2085,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 20721,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19388,
+          "output_tokens_details": {
+            "thinking_tokens": 480
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 20721,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19388,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 20721,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 20721
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2938004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:12:05Z",
+    "sourceSha256": "d7608df952d39d1fd5777dcd68e022932ed1187b3e88e0f9f6081998cbfbd4c1",
+    "extractedTextSha256": "9ccb93022e2dd9c13c95e7ad660e03b3e95e8e4ea8909d559d04676d16b0e70d",
+    "documentCount": 1,
+    "documentSetSha256": "cea7918527d29b125ddb8ec1cbc07c5a6d5199b12722ee40afa8521c626bc4d9",
+    "contentSha256": "41fb1a59d5db978caaf62c92fd44de4c9d81c83c6e1af48786f56da16e496f87"
+  }
+}

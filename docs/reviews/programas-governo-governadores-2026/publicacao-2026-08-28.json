@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T18:01:09Z",
+  "reviewedAt": "2026-08-28T20:17:16Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 107,
-    "human_review_required": 37
+    "approved": 127,
+    "human_review_required": 17
   },
   "items": [
     {
@@ -110,14 +110,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:DF:70002535930",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "DF",
       "slug": "robson-raymundo",
       "sqCandidato": "70002535930",
       "nomeUrna": "PROFESSOR ROBSON",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "robson-raymundo: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:DF:70002537111",
@@ -693,14 +693,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002544133",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "cicero-lucena",
       "sqCandidato": "150002544133",
       "nomeUrna": "CÍCERO LUCENA",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "cicero-lucena: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002538692",
@@ -726,14 +726,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002540204",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "yuri-ezequiel",
       "sqCandidato": "150002540204",
       "nomeUrna": "YURI EZEQUIEL",
       "partido": "UP",
       "sourceState": "em_revisao",
-      "reason": "yuri-ezequiel: Eval tem 3 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002537320",
@@ -770,14 +770,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002536575",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PE",
       "slug": "guilherme-fonseca",
       "sqCandidato": "170002536575",
       "nomeUrna": "GUILHERME FONSECA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002538097",
@@ -814,14 +814,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002537227",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PE",
       "slug": "raquel-lyra",
       "sqCandidato": "170002537227",
       "nomeUrna": "RAQUEL LYRA",
       "partido": "PSD",
       "sourceState": "em_revisao",
-      "reason": "raquel-lyra: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002548565",
@@ -1012,14 +1012,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002542481",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "dario-barbosa",
       "sqCandidato": "200002542481",
       "nomeUrna": "DÁRIO BARBOSA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "dario-barbosa: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002546757",
@@ -1034,14 +1034,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002546756",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "rodrigo-bolsonaro",
       "sqCandidato": "200002546756",
       "nomeUrna": "RODRIGO BOLSONARO",
       "partido": "AGIR",
       "sourceState": "em_revisao",
-      "reason": "rodrigo-bolsonaro: Eval tem 5 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SE:260002547415",
@@ -1122,14 +1122,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002533539",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "dr-luisinho",
       "sqCandidato": "10002533539",
       "nomeUrna": "DR.LUISINHO",
       "partido": "AGIR",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002549500",
@@ -1166,14 +1166,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002544015",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "tiao-bocalom",
       "sqCandidato": "10002544015",
       "nomeUrna": "TIÃO BOCALOM",
       "partido": "PSDB",
       "sourceState": "em_revisao",
-      "reason": "tiao-bocalom: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002551740",
@@ -1188,14 +1188,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002536086",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AM",
       "slug": "david-almeida",
       "sqCandidato": "40002536086",
       "nomeUrna": "DAVID ALMEIDA",
       "partido": "AVANTE",
       "sourceState": "em_revisao",
-      "reason": "david-almeida: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002535267",
@@ -1386,25 +1386,25 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002536806",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "adailton-furia",
       "sqCandidato": "220002536806",
       "nomeUrna": "ADAILTON FURIA",
       "partido": "PSD",
       "sourceState": "em_revisao",
-      "reason": "adailton-furia: Eval tem 10 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542185",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "expedito-netto",
       "sqCandidato": "220002542185",
       "nomeUrna": "EXPEDITO NETTO",
       "partido": "PT",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",
@@ -1441,14 +1441,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002550927",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "samuel-costa",
       "sqCandidato": "220002550927",
       "nomeUrna": "SAMUEL COSTA",
       "partido": "PSB",
       "sourceState": "em_revisao",
-      "reason": "samuel-costa: Eval tem 3 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RR:230002552060",
@@ -1518,14 +1518,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002550458",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "TO",
       "slug": "du-pereira",
       "sqCandidato": "270002550458",
       "nomeUrna": "DU PEREIRA",
       "partido": "DC",
       "sourceState": "em_revisao",
-      "reason": "du-pereira: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002544494",
@@ -1562,14 +1562,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002544544",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "TO",
       "slug": "vicentinho-junior",
       "sqCandidato": "270002544544",
       "nomeUrna": "VICENTINHO JÚNIOR",
       "partido": "PSDB",
       "sourceState": "em_revisao",
-      "reason": "vicentinho-junior: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:TO:270002539187",
@@ -1683,14 +1683,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002549557",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MG",
       "slug": "gabriel-azevedo",
       "sqCandidato": "130002549557",
       "nomeUrna": "GABRIEL",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "gabriel-azevedo: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002552308",
@@ -1738,14 +1738,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002546802",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MG",
       "slug": "rafael-duda",
       "sqCandidato": "130002546802",
       "nomeUrna": "RAFAEL DUDA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "rafael-duda: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002544122",
@@ -1914,14 +1914,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SP:250002536915",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SP",
       "slug": "vera-lucia",
       "sqCandidato": "250002536915",
       "nomeUrna": "VERA LÚCIA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SP:250002544912",
@@ -2134,14 +2134,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002537073",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SC",
       "slug": "jorginho-mello",
       "sqCandidato": "240002537073",
       "nomeUrna": "JORGINHO MELLO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "jorginho-mello: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002550544",
@@ -2156,14 +2156,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002544118",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SC",
       "slug": "marcelo-brigadeiro",
       "sqCandidato": "240002544118",
       "nomeUrna": "MARCELO BRIGADEIRO",
       "partido": "MISSÃO",
       "sourceState": "em_revisao",
-      "reason": "marcelo-brigadeiro: Eval tem 6 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:SC:240002541913",

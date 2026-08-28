@@ -1,0 +1,1938 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PB",
+    "sqCandidato": "150002544133",
+    "slug": "cicero-lucena",
+    "nomeUrna": "CÍCERO LUCENA",
+    "partido": "MDB",
+    "arquivoNome": "2026PB150002544133_01.pdf",
+    "arquivoNoPacote": "PB/2026PB150002544133_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PB:150002544133:01",
+      "fonte": {
+        "arquivoNome": "2026PB150002544133_01.pdf",
+        "arquivoNoPacote": "PB/2026PB150002544133_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "818514371331ca40e2bd420aa8b3fecb4771ddea5ddb46467c9fe93d76ade181",
+        "extractedTextSha256": "265bdb1ee4a7002d0f7214645a4e44a2e666aa00320f6419eb0a7a11df300a89",
+        "paginas": 87,
+        "secoes": [
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE GOVERNO 2027-2030\nPRA PARAÍBA DAR\nO PRÓXIMO PASSO"
+          },
+          {
+            "id": "uma-paraiba-mais-justa-e-solidaria-mais-inclusiva-e-acolhedora",
+            "titulo": "Uma Paraíba mais justa e solidária, mais inclusiva e acolhedora,",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Uma Paraíba mais justa e solidária, mais inclusiva e acolhedora,\nmais inovadora e empreendedora, mais desenvolvida e sustentável\npara todos,\ndo Litoral ao Sertão\nCícero Lucena\nCandidato a Governador da Paraíba\nDiogo Cunha Lima\nCandidato a Vice-Governador da Paraíba\nPARAÍBA\nplano de metas, com visão, compromissos, programas e método\nde execução."
+          },
+          {
+            "id": "pra-paraiba-dar-o-proximo-passo",
+            "titulo": "PRA PARAÍBA DAR O PRÓXIMO PASSO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PRA PARAÍBA DAR O PRÓXIMO PASSO\n\nSumário\nPra Paraíba dar o próximo passo\nConfiança no trabalho e na nossa gente\nSÍNTESE DO PLANO\nOs compromissos com a Paraíba\nEIXOS TEMÁTICOS\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\n11.\n12.\n13.\n14.\n15.\n16.\n\nSegurança Pública e Defesa Social\nSaúde\nEducação e Cultura\nRecursos Hídricos\nAgricultura, Pesca e Desenvolvimento Rural\nAssistência Social e Combate à Pobreza\nCiência, Tecnologia e Inovação\nDesenvolvimento Econômico, Recursos Minerais\ne Empreendedorismo\nDireitos Humanos, Mulheres e Inclusão Social\nEsporte e Lazer\nGestão Pública, Governança e Transformação Digital\nHabitação, Urbanismo e Desenvolvimento Regional\nInfraestrutura, Mobilidade e Logística\nMeio Ambiente e Sustentabilidade\nTurismo, Economia Criativa e Eventos\nProteção e Bem-Estar Animal\n\n03"
+          },
+          {
+            "id": "pra-paraiba-dar",
+            "titulo": "PRA PARAÍBA DAR",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PRA PARAÍBA DAR\nO PRÓXIMO PASSO\nCícero Lucena\nA Paraíba é maior do que qualquer dificuldade. Maior do que as\ncrises que já enfrentou. Maior do que os desafios e obstáculos que\nainda impedem tantas famílias de viver com a dignidade que\nmerecem.\nNa minha caminhada por este estado, continuo a encontrar um\npovo trabalhador, empreendedor, solidário e cheio de esperança.\nGente que acorda cedo todos os dias para construir um futuro\nmelhor para seus filhos e que, apesar das dificuldades, nunca\ndeixou de acreditar que amanhã será um novo dia.\nMas também encontrei uma Paraíba que ainda espera. E espera\nmuito. Espera pela água que ainda não chega nas torneiras em\nmuitos lares e lugares. Espera por uma consulta, um exame ou uma\ncirurgia no tempo certo. Espera por uma escola de qualidade que\nprepare os jovens para um mundo do trabalho cada dia mais\ncompetitivo. Espera por empregos, por oportunidades, pelo\nchamado do concurso que custou inúmeros dias e noites de\nestudo. Espera por estradas melhores, por obras a serem\nconcluídas e por um Estado que imprima um novo ritmo ao seu\ndesenvolvimento.\nNenhuma sociedade prospera vivendo à espera, estagnada. O\ndesenvolvimento acontece quando o governo não atrapalha quem\nproduz e quem empreende. Quando passa a ser parceiro das\nempresas, das instituições e entidades, das universidades. E,\nprincipalmente, quando passa a cuidar das pessoas, e se faz\npresente onde elas vivem, trabalham, produzem e sonham.\nFoi essa convicção que guiou toda a minha vida pública. Sempre\nacreditei que o verdadeiro papel do Estado é estar perto da\npopulação. É nos municípios que a vida acontece. É ali que as\ncrianças aprendem, que os agricultores produzem, que os\ncomerciantes investem, que os empreendedores geram empregos\ne que as famílias constroem seu futuro. Quando o governo\ncompreende essa realidade, ele deixa de administrar apenas\nnúmeros e passa a transformar vidas.\n\n04"
+          },
+          {
+            "id": "em-1994-tive-a-honra-de-governar-a-paraiba-e-contribuir-para-a",
+            "titulo": "Em 1994, tive a honra de governar a Paraíba e contribuir para a",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Em 1994, tive a honra de governar a Paraíba e contribuir para a\nemancipação política de cinquenta municípios. Não foi apenas um\nato administrativo. Foi uma decisão política que fortaleceu\ncomunidades, aproximou serviços públicos da população e\nreafirmou uma crença que permanece viva até hoje: o\ndesenvolvimento começa quando as pessoas têm acesso a\nserviços públicos ágeis e de qualidade.\nEssa certeza se tornou ainda mais forte durante as quatro vezes em\nque fui prefeito de João Pessoa. A administração municipal ensina\nque governar exige presença, diálogo e capacidade de escutar, de\nprestar atenção nas necessidades do outro. Quem escuta — e não\napenas ouve — entende melhor os desafios e aprende a tomar\ndecisões melhores. Quem entende, planeja melhor, resolve os\nproblemas e atende as demandas. E quem planeja com\nresponsabilidade e trabalha com dedicação entrega resultados\nque melhoram a vida das pessoas.\nÉ por isso que acredito que o Governo do Estado deve ser o maior\nparceiro dos municípios. Nenhuma cidade pode ser esquecida ou\ntratada de forma diferente por causa de disputas políticas. As\nnecessidades da população não têm partido. O direito à saúde, à\neducação, à segurança, à infraestrutura e às oportunidades deve\nchegar a todos, independentemente de onde cada cidadão mora\nou de quem administra sua cidade.\nNosso governo será genuinamente municipalista. Vamos planejar a\nParaíba\nolhando\npara\ncada\nregião,\nrespeitando\nsuas\ncaracterísticas, suas vocações, seu potencial, e suas lideranças.\nVamos cuidar da capital João Pessoa, de Campina Grande — as\nduas maiores cidades do Estado — com a mesma dedicação\ndispensada ao menor município, do Litoral, do Agreste, do\nCurimataú, da Borborema e do Sertão. Porque uma Paraíba\nverdadeiramente forte é aquela que cresce por inteiro.\nEste Plano de Governo para o período de 2027 a 2030 nasceu dessa\nescuta presente por cada região, cada município. Foi construído\nescutando pessoas, conhecendo realidades e compreendendo\ndesafios.\n\n05"
+          },
+          {
+            "id": "sera-o-compromisso-que-orientara-cada-acao-do-nosso-governo",
+            "titulo": "Será o compromisso que orientará cada ação do nosso governo,",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Será o compromisso que orientará cada ação do nosso governo,\ntransformando ideias em projetos, projetos em realizações e\nrealizações em uma vida melhor para o povo paraibano. Cada\ncompromisso terá planejamento, metas, indicadores, responsáveis\ne fontes de financiamento, porque governar também é prestar\ncontas.\nSonho com uma Paraíba onde nossas crianças encontrem, na\nescola pública de qualidade, as oportunidades que abrirão os\ncaminhos do futuro. Onde os jovens possam estudar, trabalhar e\nrealizar seus projetos de vida sem precisar deixar sua terra.\nSonho com uma Paraíba onde a saúde pública funcione com\neficiência, respeito e humanidade. Onde o agricultor tenha água,\nassistência e condições para produzir. Onde o empreendedor\nencontre um ambiente favorável para investir, inovar e gerar\nempregos. Onde o desenvolvimento econômico caminhe lado a\nlado com a inclusão social, reduzindo desigualdades e ampliando\noportunidades para todos.\nQueremos uma Paraíba que inspire confiança. Que desperte\norgulho em quem aqui nasceu e esperança em quem aqui vive.\nUma Paraíba que volte a acreditar em sua capacidade de crescer,\ninovar e liderar, fazendo do trabalho, da boa gestão e da união\nentre governo e sociedade os pilares de um novo ciclo de\ndesenvolvimento.\nAcredito nesse futuro porque já vimos que ele é possível. O trabalho\nrealizado em João Pessoa mostrou que planejamento,\nresponsabilidade, diálogo e capacidade de gestão transformam\nrealidades.\nAgora, é hora de dar o próximo passo. Chegou o momento de levar\nesse conhecimento para cada região do nosso Estado, para que\ntodos os paraibanos possam compartilhar as oportunidades de\num desenvolvimento que não deixa ninguém para trás.\nÉ hora de colocar nosso Estado em um novo ritmo.\nÉ hora de acelerar.\nCÍCERO LUCENA\nCANDIDATO A GOVERNADOR\n\n06"
+          },
+          {
+            "id": "confianca-no-trabalho",
+            "titulo": "Confiança no trabalho",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Confiança no trabalho\ne na nossa gente\nDiogo Cunha Lima\nSou filho de Campina Grande, a cidade que aprendeu, na prática e\nna raça, que desenvolvimento não cai do céu: se conquista com\ntrabalho,\ntecnologia\ne\ncoragem\npara\nempreender.\nCresci enxergando a força de quem produz, e cansei de ver essa\nforça ser desperdiçada por um Estado lento demais, burocrático\ndemais, ausente demais do dia a dia de quem arrisca tudo para\ngerar renda. Como o pequeno empresário que abre as portas todo\ndia, o jovem que sonha com a primeira startup no Parque\nTecnológico, ou o agricultor que transforma o semiárido em renda\ncom as próprias mãos.\nÉ dessa escola, a de quem empreende e faz acontecer mesmo\nquando o Estado atrapalha, que trago a minha contribuição a este\nprojeto que fará a Paraíba crescer em um novo ritmo.\nMas trago, também, como um jovem empreendedor, a minha\nindignação com o tanto de talento paraibano que se perde por\nfalta de oportunidade.\nÉ inaceitável um Estado que trata quem produz como adversário a\nser fiscalizado, em vez de parceiro a ser apoiado.\nUm governo moderno é aquele que destrava, simplifica e abre\ncaminhos. E, também, que reduz a burocracia, paga em dia,\ncompra de quem é da terra e cria o ambiente para que o\ninvestimento privado gere emprego e oportunidade em todas as\nregiões.\nFoi assim que Campina Grande se firmou como polo de tecnologia\ne inovação do interior do Nordeste. E é assim, com essa mesma\nobsessão por resultado, que quero ajudar a Paraíba inteira a\ncrescer, em um novo ritmo.\n\n07"
+          },
+          {
+            "id": "a-experiencia-municipalista-de-cicero-lucena-e-essa-visao",
+            "titulo": "A experiência municipalista de Cícero Lucena e essa visão",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "A experiência municipalista de Cícero Lucena e essa visão\nempreendedora se completam. E é dessa combinação que nasce a\nforça deste projeto, detalhado aqui nas propostas, programas e\nações deste Plano de Governo.\nJuntos, queremos um Estado que entrega de verdade, que cumpre\nmetas, que mede o que faz e que coloca a máquina pública a\nserviço de quem trabalha, do Litoral ao Sertão.\nTenho um compromisso especial, quase pessoal, com a juventude\ne com o interior. É inaceitável ver, por exemplo, um jovem de Patos,\nde Sousa, de Cajazeiras, de Monteiro ou de Campina Grande fazer\nas malas porque a sua própria terra não lhe deu chance. Quero ver\nesse jovem empreendendo, estudando perto de casa e\nencontrando futuro onde nasceu, sem precisar migrar para realizar\nseus sonhos.\nPor isso vou lutar pela interiorização da inovação, pela ciência\nlevada também ao interior e pelo apoio firme a quem quer abrir e\nfazer crescer o seu negócio na Paraíba.\nÉ com esse espírito, de quem empreende, de quem acredita de\nverdade no nosso povo, que assumo este compromisso ao lado de\nCícero Lucena.\nVamos construir, juntos, uma Paraíba mais produtiva, mais\ninovadora e mais próspera para todos.\nCom confiança no trabalho e na nossa gente.\nDIOGO CUNHA LIMA\nCandidato a Vice-Governador da Paraíba\n\n08"
+          },
+          {
+            "id": "sintese-do-plano",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nOS COMPROMISSOS COM A PARAÍBA\nEste plano tem 16 eixos, programas e metas datadas. Antes deles, é\npreciso apresentar um resumo do que ele pretende e de onde\nparte.\nAqui mostramos um pequeno retrato da Paraíba de hoje, e\nexplicamos a escolha estratégica que organiza o conjunto de\npropostas e compromissos destinados a imprimir um novo ritmo ao\ndesenvolvimento do nosso Estado.\n1. O PONTO DE PARTIDA\nTecnologia, clima e economia mudam em ritmo mais acelerado do\nque a administração pública tradicional. O custo desse atraso\naparece nos empregos que deixam de ser criados, na renda que\nnão se materializa e na saída de mão de obra qualificada.\nEste plano adota um critério claro: indicador só tem valor quando\nse transforma em resultado percebido pela população — emprego,\nrenda, serviços que funcionam, água na torneira, estradas seguras\ne escolas que acolhem e preparam para o futuro. Crescimento só\nfaz sentido quando reduz desigualdades, melhora os serviços\npúblicos e amplia oportunidades.\nSomos 4,16 milhões de paraibanos com o desafio de transformar\nnossa capacidade econômica e financeira em desenvolvimento\nsocial, produtividade, renda formal e serviços que funcionem com\nqualidade no Sertão e no Litoral.\nEnquanto João Pessoa está entre as dez capitais mais\nalfabetizadas do país, infelizmente a Paraíba possui a terceira\nmaior taxa de analfabetismo do país entre as pessoas com 15 anos\nou mais, além de termos quase metade da população vivendo\nabaixo da linha de pobreza.\n\n09"
+          },
+          {
+            "id": "sintese-do-plano-2",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nNa Paraíba, segundo dados do Sistema Nacional de Informações\nem Saneamento Básico (SINISA), 40,5% da população não tem\nacesso à água tratada, enquanto 62,3% não contam com coleta de\nesgoto.\nNa segurança pública, os números de mortes violentas assustam. A\ncriminalidade também avança no campo e no ambiente digital,\nonde a presença e a capacidade de resposta do Estado ainda são\ninsuficientes.\nEsse raciocínio forma a linha de base deste plano e o compromisso\né claro: onde o Estado acertou, haverá continuidade; onde a política\npública não chega às pessoas, haverá correção; onde falta ritmo,\nhaverá aceleração.\n2.0 OS PRINCIPAIS COMPROMISSOS\nTudo o que vem depois desta síntese, os 16 eixos, as metas e os\nprogramas, existe para cumprir os compromissos a seguir.\nAo final de cada um, estão os eixos em que ele é detalhado, com as\nmetas e a fonte de financiamento, e o resultado pelo qual a gestão\npassará a ser cobrada.\n2.1 SEGURANÇA COM VALORIZAÇÃO PROFISSIONAL, INTELIGÊNCIA,\nPREVENÇÃO E RESPOSTA\nA violência só cresce: 1.058 pessoas foram assassinadas em um\núnico ano (2024). O crime avança sobre o campo e a fraude digital\nainda encontra resposta limitada do Estado.\nSegurança se constrói com dados, presença e valorização\nprofissional.\n\n10"
+          },
+          {
+            "id": "sintese-do-plano-3",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nNossos principais compromissos nesta área são:\n• Pagar o melhor salário do Nordeste para as forças de segurança\ne adotar um novo PCCR.\n• Aumentar a capacidade operacional do aparato de segurança\ncom seis “Centros Regionais de Comando e Controle” e cinco\nmil câmeras de videomonitoramento inteligente, com\nreconhecimento facial e integração levando tecnologia de\nprevenção às cidades.\n• Reestruturar e Modernizar o sistema penitenciário, construir\nnovas unidades prisionais e desativar os presídios do Roger, em\nJoão Pessoa, e o do Monte Santo, em Campina Grande (a serem\nconvertidos em complexos educacionais e criativos), além de\ndesativar o Complexo Penitenciário de Mangabeira, na capital.\n• Dispor de estrutura própria de enfrentamento ao crime\ncibernético.\nPrevenir custa menos do que remediar.\nEixo 1. Meta: Forças de segurança mais valorizadas do Nordeste e\nposicionadas entre as dez mais valorizadas do Brasil, além de\nqueda continuada da violência letal.\n2.2 DESCENTRALIZAÇÃO DA SAÚDE: FILA MENOR, CUIDADO MAIS\nPERTO\nA espera por atendimento não pode representar um segundo\nagravo somado a doenças graves como o câncer, por exemplo.\nO compromisso é eliminar o passivo represado de cirurgias e\nexames, com tempo máximo regulado de espera, e garantir o início\ndo tratamento do câncer no prazo legal de 60 dias, por meio da\ndecisão política de Governo para:\n• Apoio à interiorização do tratamento oncológico, a exemplo dos\ninvestimentos da Fundação Napoleão Laureano e do Hospital da\nFAP.\n• A instalação de policlínicas em todas as regiões setoriais de\nsaúde.\n\n11"
+          },
+          {
+            "id": "sintese-do-plano-4",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n•\n\nA parceria efetiva com os municípios na atenção básica e no\nsocorro aéreo no interior, para que a distância da capital não\ndetermine o acesso ao cuidado.\n\nEixos 2, 6 e 16. Meta: SAMU Aéreo com quatro bases (João Pessoa,\nCampina Grande, Patos e Sousa), filas cirúrgicas e de exames\neliminadas, 20 Centros Regionais 60+.\n2.3 ESCOLA\nTRABALHAR\n\nDO\n\nFUTURO:\n\nPARA\n\nAPRENDER,\n\nPERMANECER\n\nE\n\nUm em cada nove paraibanos acima de 15 anos não sabe ler e\nescrever, indicador que este plano assume como injustiça histórica\na ser encerrada.\nPara isso, é necessário garantir:\n• Escola conectada, com ampliação progressiva do Kit Básico de\nTI a partir dos estudantes mais vulneráveis.\n• Pé de Meia Estadual como incentivo à permanência na escola,\nem complemento ao programa federal direcionado aos alunos\nnão contemplados.\n• Esporte de base dentro da escola.\n• Cultura tratada como item de primeira necessidade, e não\ncomo sobra de orçamento.\n• Valorização do professor como condição essencial à\ntransformação educacional, garantindo-lhe formação e\nremuneração compatíveis com a responsabilidade de ensinar.\n2.4\nEDUCAÇÃO\nDESENVOLVIMENTO\n\nSUPERIOR:\n\nUEPB\n\nPROTAGONISTA\n\nDO\n\nA Universidade Estadual da Paraíba é um dos maiores patrimônios\ndo povo paraibano. Presente em oito campi e responsável pela\nformação de milhares de profissionais, a UEPB impulsiona a\neducação, a ciência, a inovação e o desenvolvimento regional.\n\n12"
+          },
+          {
+            "id": "sintese-do-plano-5",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nNos últimos anos, entretanto, a universidade enfrentou uma grave\ncrise financeira. A redução dos recursos disponíveis comprometeu\ninvestimentos, deteriorou a infraestrutura, atrasou progressões\nfuncionais, limitou políticas de assistência estudantil e dificultou a\nreposição do quadro de professores efetivos, colocando em risco a\ncapacidade de expansão e de desenvolvimento da instituição.\nEsse cenário não condiz com a importância estratégica da UEPB\npara a Paraíba. Uma universidade pública forte é condição\nessencial para formar professores, profissionais da saúde,\npesquisadores, engenheiros, empreendedores e lideranças\ncapazes de construir um estado mais desenvolvido e competitivo.\nNosso compromisso é virar essa página por meio de uma relação\nbaseada no respeito institucional, no diálogo permanente e na\nvalorização da universidade.\nEixos 3 e 10. Meta: alfabetização na idade certa, esporte de base\nnas escolas estaduais e ampliação do programa Bolsa Esporte.\n2.5 MAIS EMPREGOS E NOVOS NEGÓCIOS, NUMA ECONOMIA POR\nCOMPETÊNCIAS\nA Paraíba forma profissionais qualificados e os perde para outros\nestados, enquanto parte expressiva de quem permanece está na\ninformalidade e em ocupações mal remuneradas.\nCom o fim da guerra fiscal, a competitividade passa a depender de\ncompetência, e não de isenção.\nO nosso plano prevê:\n• Desburocratizar a abertura de empresas e o licenciamento por\ngrau de risco.\n• Apoiar o pequeno negócio e o agro.\n• Levar distritos de inovação a Campina Grande, Patos, Sousa e\nCajazeiras, com fundo estadual em coinvestimento privado.\n\n13"
+          },
+          {
+            "id": "sintese-do-plano-6",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n•\n\nTransformar turismo, cultura e economia criativa em calendário\ne em renda o ano inteiro, com presença física do Estado no\ninterior.\n\nEmprego formal e melhores salários são o resultado pelo qual esse\nconjunto será medido.\nEixo 8. Meta: Uma política permanente de geração de emprego e\nincremento de renda. Posicionar a Paraíba entre os cinco melhores\nambientes de negócios do Brasil.\n2.6 GOVERNO MUNICIPALISTA E DIGITAL\nMunicípios de pequeno porte não podem ser tratados de forma\nsecundária por um Estado que deveria ser o seu primeiro parceiro.\nO compromisso é governar com metas públicas, acompanhar\ncada real em painel aberto a qualquer cidadão, reduzir o custo das\ncompras, apoiar tecnicamente as 223 prefeituras e modernizar a\nSEFAZ para a era do IBS e da CBS.\nGovernar bem é, antes de tudo, considerar quem vive longe dos\ngabinetes.\nEixo 11. Meta: Redução no custo das compras públicas e\nacompanhamento das obras estaduais em painel público.\n\n2.7 A PARAÍBA COM SEGURANÇA HÍDRICA\nGarantir segurança hídrica é transformar vidas através da água.\nNada justifica que, em pleno 2026, famílias paraibanas dependam\nde caminhão-pipa, crianças faltem às aulas para buscar água e\nlavouras se percam por estiagem enquanto grandes obras hídricas\npermanecem inacabadas há décadas.\n\n14"
+          },
+          {
+            "id": "sintese-do-plano-7",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nO que propomos fazer:\n•\n•\n•\n•\n\n•\n\nIntegrar a Transposição e o Canal Acauã-Araçagi às barragens\nde Camaratuba, Gurinhém e Manguape e concluir o complexo\nde Cupissura.\nLiderar, junto à União, a viabilização do Ramal do Piancó.\nExecutar as obras estaduais complementares de distribuição\nhídrica e de integração produtiva.\nAdotar medidas de enfrentamento ao desperdício dos 44% de\nágua tratada que se perdem na distribuição, de acordo com o\nSistema Nacional de Informações do Saneamento Básico, do\nMinistério das Cidades (2024).\nAmpliar programas e projetos de dessalinização solar, de\ncisternas e do esgoto tratado nas áreas de convivência com a\nseca.\n\nEixo 4. Meta: Canal das Vertentes Litorâneas concluído com as três\nbarragens, Ramal do Piancó viabilizado e perdas de água em\nqueda contínua.\n2.8 CRONOGRAMA DE OBRAS POR UMA PARAÍBA INTEGRADA\nObras paralisadas e malha rodoviária deteriorada têm custo em\nvidas e em oportunidades, e mantêm o interior distante do\ndinamismo socioeconômico concentrado na capital.\nO compromisso é:\n• Pactuar com a União e o DNIT o cronograma das duplicações da\nBR-230, no trecho Sousa-Cajazeiras, e da BR-104, entre Campina\nGrande/Esperança e Campina Grande/Queimadas.\n• Estruturar novos modais, do trem de passageiros aos portos\nsecos.\n• Tratar moradia, regularização fundiária e destino do lixo como\ninfraestrutura, e não como assistência.\n\n15"
+          },
+          {
+            "id": "sintese-do-plano-8",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nCada real investido deve corresponder a uma entrega verificável.\nEixos 13, 5 e 14. Meta: Diminuir as mortes no trânsito, promover\nregularização fundiária no campo e na cidade e preservar o bioma\nda Caatinga com programas de recuperação sob remuneração.\n3. PARAÍBA VERDE: SUSTENTABILIDADE E RESPEITO AO MEIO\nAMBIENTE\nA sustentabilidade não é um capítulo isolado, e sim lente aplicada\na cada eixo deste plano.\nCom sol e vento entre os melhores do mundo e o bioma da\nCaatinga como patrimônio e ativo econômico, o verde de uma\nnova consciência ambiental aparece na moradia; na água, com\ndessalinização solar e reuso; nos resíduos, com biometano de\naterro; e na logística reversa.\nE se faz presente, também, na escola com unidades de energia\nsolar e hortas; no campo, com agricultura regenerativa e\npagamento por serviços ambientais; na ciência, com a pesquisa\naplicada em energias renováveis; na cultura e no turismo, com o\nSelo Evento Verde; e na gestão, com o ICMS Ecológico.\nA captação junto ao Fundo Clima, ao BNDES, ao BNB e a organismos\nmultilaterais integra a estratégia de financiamento dos programas\npropostos.\n4. AS TRÊS FORMAS DE EXECUTAR O QUE ESTE PLANO PROPÕE\nPara sair do papel com credibilidade, cada compromisso é\nclassificado por quem executa, e com a clareza sobre como se\nfinancia, em três faixas explicadas a seguir.\n\n16"
+          },
+          {
+            "id": "sintese-do-plano-9",
+            "titulo": "SÍNTESE DO PLANO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "SÍNTESE DO PLANO\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n•\n•\n•\n\nA primeira é o custeio próprio, executado diretamente pelo\nEstado dentro do orçamento anual.\nA segunda é o crédito dentro da margem fiscal disponível,\ncom investimento contratado sem comprometer o equilíbrio\ndas contas.\nA terceira reúne articulação federal, para as grandes obras\nestruturantes, em que o Estado responde pela liderança na\nestruturação, na modelagem e na negociação.\n\nEssa disciplina evita apresentar como entrega imediata aquilo que\ndepende de terceiros, de licenciamento ou de grande capital, e\npreserva a credibilidade dos compromissos assumidos.\n\n17"
+          },
+          {
+            "id": "eixos-tematicos",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 1 Segurança Pública e Defesa Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma Paraíba segura e presente, que combina autoridade,\ninteligência, prevenção e repressão; que investiga para\nresponsabilizar, moderniza o sistema penitenciário, cuida de quem\nprotege e oferece à juventude alternativas reais de estudo e\ntrabalho para quebrar o ciclo do crime.\nO problema da segurança pública paraibana não se resolve só\ncom mais policiamento. Os entraves estão em identificar onde a\nviolência mais se concentra para dar resposta territorial e não\ngenérica; no baixo esclarecimento dos crimes graves, que alimenta\na sensação de impunidade; e, ainda, em um parque prisional\nenvelhecido, que devolve à rua quem entrou sem estudo, sem ofício\ne sob comando de facção.\nCompromissos necessários para mudar essa realidade:\n• Promover um choque de gestão em toda a rede de segurança\npública do estado da Paraíba e fazer o enfrentamento ao crime\norganizado, com o restabelecimento da sensação de\nsegurança à população.\n• Reduzir os ‘Crimes Violentos Letais Intencionais’ e os crimes\ncontra o patrimônio, tomando 2026 como linha de base, com\ntrajetória média de 6% a 8% ao ano.\n• Priorizar ações de inteligência policial para o esclarecimento de\nhomicídios.\n• Aumentar a capacidade operacional do aparato de segurança\ncom seis “Centros Regionais de Comando e Controle” e cinco\nmil câmeras de videomonitoramento inteligente.\n• Ampliar a rede de Delegacias Especializadas de Atendimento à\nMulher, com foco na universalização do atendimento nos 223\nmunicípios.\n\n18"
+          },
+          {
+            "id": "eixos-tematicos-2",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 1 Segurança Pública e Defesa Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Criar Delegacias Especializadas de Atendimento à Mulher, com\natendimento 24 horas, nas cidades de Patos, Cajazeiras,\nGuarabira e Monteiro.\n• Posicionar as forças de segurança entre as mais bem\nremuneradas do país.\n• Reestruturar o sistema prisional do Estado, e reorganizar o\nsistema penitenciário das regiões metropolitanas de João\nPessoa e Campina Grande, desativando gradualmente os\npresídios do Roger, na capital, e do Monte Santo, em Campina\n— cujas áreas serão convertidas em complexos educacionais\nprofissionalizantes e criativos —, além da desativação do\nComplexo Penitenciário de Mangabeira, também na capital.\n• Publicar, trimestralmente, os indicadores da área de segurança\nde cada região.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas de forma integrada pela Polícia Militar, Polícia Civil,\nCorpo de Bombeiros Militar, Polícia Penal e Instituto de Polícia\nCientífica, em cooperação com o Ministério Público, os órgãos\nfederais, os estados vizinhos e as guardas municipais.\n• Definir os bairros e municípios que concentram homicídios,\nroubos e vulnerabilidade juvenil e destinar a cada um plano\nintegrado de policiamento, iluminação, urbanização, escola em\ntempo integral, esporte, cultura, formação profissional e apoio\nàs famílias, executados simultaneamente e avaliados por\nresultado.\n• Fortalecer as delegacias distritais e municipais e reaparelhar as\nunidades da Polícia Militar, aproximando a polícia da população.\n\n19"
+          },
+          {
+            "id": "eixos-tematicos-3",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 1 Segurança Pública e Defesa Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Apoiar financeiramente os planos municipais de prevenção,\nguardas capacitadas, iluminação de áreas críticas e mediação\ncomunitária, com repasses condicionados a diagnóstico, metas\ne prestação de contas.\nTecnologia, inteligência e controle das divisas\n• Implantar seis “Centros Regionais de Comando e Controle” nas\nregiões de Cajazeiras, Sousa, Catolé do Rocha, Monteiro, Vale do\nPiancó e Guarabira, reunindo videomonitoramento, inteligência,\ndespacho de viaturas e comunicação entre as forças.\n• Implantar cinco mil câmeras com reconhecimento facial e\ninteligência artificial, integradas às forças de segurança do\nEstado, com leitura automática de placas de veículos, em áreas\nde maior incidência criminal, entradas de cidades, corredores\nviários, terminais, entornos das cidades, proximidade de escolas\ne locais de grande circulação.\nInvestigação, crime organizado e crimes digitais\n• Fortalecer a Polícia Civil, com departamentos regionais de\nhomicídios, crime organizado, crimes cibernéticos, atendimento\nà mulher, crimes patrimoniais e proteção à criança, evitando a\nconcentração na capital.\n• Ajudar a combater golpes digitais, fraudes bancárias e\nextorsões virtuais, por meio de formação policial especializada,\nregistro simplificado, atendimento remoto e cooperação\npermanente com instituições financeiras e plataformas.\nProteção à mulher e segurança no campo\n• Criar Delegacias Especializadas de Atendimento à Mulher, com\natendimento 24 horas, nas cidades de Patos, Cajazeiras,\nGuarabira e Monteiro.\n\n20"
+          },
+          {
+            "id": "eixos-tematicos-4",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 1 Segurança Pública e Defesa Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Ofertar atendimento nas cidades menores por unidades móveis,\ncom suporte remoto de uma unidade regional.\n• Ampliar a atuação da Patrulha Maria da Penha.\n• Reforçar o policiamento rural com efetivo, viaturas 4x4, drones e\nbases regionais, criando a Patrulha Rural Estadual e canal direto\ncom o produtor.\n• Instalar base aérea da Polícia Militar em Patos e Sousa, com\nhelicópteros para patrulhamento, apoio tático e resgate,\nintegrada ao socorro aeromédico estadual (Programa SAMU\nAéreo Estadual).\nValorização de quem protege\n• Estabelecer como meta que as forças de segurança paraibanas\nsejam as mais valorizadas do Nordeste e figurem entre as dez\nmais valorizadas do Brasil.\n• Executar política plurianual de remuneração e carreira para as\ncinco forças, com revisão coordenada dos planos, cronograma\npúblico e impacto fiscal calculado.\n• Cumprir a aplicação da Lei nº 14.819/2025, que garante a\nretroatividade das promoções dos PRAÇAS das turmas de 1999,\n2002, 2003, 2005, 2007, 2009 e 2011.\n• Realizar concursos periódicos e reequipar as corporações com\nviaturas, coletes, armamento, tecnologia e equipamentos de\nproteção individual.\n• Ofertar formação integrada e capacitação permanente, com\npolos de ensino e pesquisa aplicada em João Pessoa, Campina\nGrande, Patos e Sousa.\n• Assegurar saúde ocupacional e assistência psicossocial a\npoliciais, bombeiros e peritos.\n\n21"
+          },
+          {
+            "id": "eixos-tematicos-5",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 1 Segurança Pública e Defesa Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nSistema penitenciário e reinserção\n• Articular com o Governo Federal e demais parceiros\ninstitucionais a captação de recursos para viabilizar a\nimplantação de complexo penitenciário produtivo, integrando\nsegurança, qualificação profissional e trabalho remunerado, em\nparceria com a iniciativa privada e instituições de ensino.\n• Reorganizar o sistema penitenciário da Região Metropolitana de\nJoão Pessoa, promovendo, à medida que forem viabilizadas\nnovas estruturas com apoio de recursos federais, a desativação\ngradual dos presídios do Roger, em João Pessoa, do Monte\nSanto, em Campina Grande, além de desativar também o\ncomplexo penitenciário de Mangabeira, na capital.\n• Transformar o presídio do Roger e o presídio do Monte Santo em\ncomplexos educacionais profissionalizantes e criativos,\nconvertendo\nespaços\nhistoricamente\nassociados\nao\nencarceramento\nem\npolos\nde\neducação,\ncultura,\ndesenvolvimento humano e oportunidades.\n• Concluir e colocar em operação o complexo penitenciário de\nGurinhém, mediante dotação de efetivo, equipamentos e\ncondições operacionais, adotando o modelo de um complexo\npenitenciário produtivo.\n• Fortalecer a inteligência penitenciária e a central de regulação\nde vagas, impedindo o comando de crimes a partir das\nunidades.\n• Ampliar a escolarização, a qualificação profissional e o trabalho\ncom remição de pena, acompanhar egressos e firmar parcerias\npara inserção profissional.\n\n22"
+          },
+          {
+            "id": "eixos-tematicos-6",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma saúde forte e regionalizada, que aproxima o cuidado\nespecializado do cidadão, reduz filas com gestão e tecnologia, leva\no socorro aéreo a todas as regiões e valoriza os profissionais.\nOrganizado em 16 regiões de saúde, o Estado ainda concentra\nmédia e alta complexidade em poucos polos, e é essa geografia\nque este eixo muda.\nO maior empecilho da saúde paraibana não é o tamanho da rede:\né a distância entre o paciente do interior e o serviço especializado,\nque custa horas e às vezes vidas; é a fila sem transparência nem\nprazo, que transforma diagnóstico precoce em tratamento tardio;\ne é a dificuldade de fixar o especialista longe da capital.\nPor tudo isso, o Governo criará o programa Acelera Saúde Paraíba,\nque tem por objetivos principais otimizar a utilização da rede\nexistente, ampliar a oferta de serviços, fortalecer a regionalização e\naproximar o atendimento da população, garantindo mais\nagilidade, eficiência e resolutividade e reduzindo o tempo de\nespera para consultas, exames e cirurgias especializadas.\nO compromisso do Governo será garantir que a população tenha\nacesso mais rápido, mais próximo e com maior qualidade aos\nserviços de saúde, utilizando de forma inteligente a estrutura\nexistente, fortalecendo a parceria com os municípios e ampliando\na capacidade de atendimento em todas as regiões da Paraíba.\n\n23"
+          },
+          {
+            "id": "eixos-tematicos-7",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nCompromissos para tornar a estrutura de saúde eficiente,\ninteriorizada e mais próxima do cidadão:\n• Acelerar a conclusão, equipar e colocar para funcionar o\nHospital do Sertão em Patos.\n• Acelerar a conclusão, equipar e colocar para funcionar o\nHospital da Mulher em Sousa.\n• Acelerar a conclusão, equipar e colocar para funcionar o\nHospital da Mulher de Campina Grande.\n• Implantar o “SAMU Aéreo Paraíba”, com bases em João\nPessoa, Campina Grande, Patos e Sousa; com serviços\naeromédicos, Pelotão Aeromédico Estadual e plantão\npermanente.\n• Zerar as filas cirúrgicas e de exames, com tempo máximo de\nespera garantido por lei.\n• Extinguir a fila represada de mamografia, com o exame\ngarantido em até 90 dias.\n• Garantir início do tratamento oncológico no prazo legal de 60\ndias, com a rede interiorizada.\nSomam-se, ainda, os compromissos de levar o Programa Saúde da\nFamília a mais de 90% de cobertura, reduzir a mortalidade\nmaterna e infantil, ampliar os leitos de UTI no interior e implantar\nCAPS regionais com telessaúde mental.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas com os municípios, os consórcios regionais, as\nfundações contratualizadas e as universidades, no âmbito das 16\nregiões de saúde.\n\n24"
+          },
+          {
+            "id": "eixos-tematicos-8",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nACELERA SAÚDE PARAÍBA\nSocorro aéreo e urgência\n• Implantar o “SAMU Aéreo Paraíba”, rede estadual de transporte\naeromédico que cobre o Litoral, a Zona da Mata e o Brejo a partir\nde João Pessoa; o Agreste, a Borborema, o Curimataú e o Cariri\na partir de Campina Grande; o Sertão e o Vale do Piancó a partir\nde Patos; e o Alto Sertão a partir de Sousa.\n• Integrar em protocolo único de acionamento o SAMU, o Corpo\nde Bombeiros Militar, as polícias e a Defesa Civil, atendendo\nurgências, gestantes de alto risco, recém-nascidos, transporte\nde órgãos e de sangue, além de busca, salvamento e desastres.\nRegulação, filas e diagnóstico\n• Implantar a “Central Única Estadual de Regulação”, com\naplicativo para o cidadão, transparência no respeito à ordem da\nfila e mutirões permanentes.\n• Instalar centros regionais de diagnóstico por imagem e\nlaboratório, com central estadual de exames em funcionamento\ncontínuo e telerradiologia.\n• Ofertar clínicas especializadas itinerantes nas regiões,\nreforçadas por policlínicas regionais e telemedicina de\nretaguarda.\n\n25"
+          },
+          {
+            "id": "eixos-tematicos-9",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nAceleração das Cirurgias de Alta Complexidade\n\nAmpliar\nsignificativamente\na\nrealização\nde\ncirurgias\nespecializadas, priorizando procedimentos que atualmente\napresentam maior tempo de espera.\nEntre as prioridades estão:\n• Cirurgias cardíacas\n• Implante de marcapasso\n• Revascularização do miocárdio (ponte de safena)\n• Cirurgias de coluna\n• Cirurgias ortopédicas\n• Demais procedimentos de alta complexidade definidos pela\nregulação estadual.\nAs ações incluem:\n•\n•\n•\n•\n\nAmpliação da contratualização de serviços\nUtilização da capacidade ociosa da rede hospitalar\nRealização de mutirões cirúrgicos permanentes\nFortalecimento da regulação estadual\n\nRegionalização da Média Complexidade\nFortalecer\na\nassistência\nregionalizada,\nreduzindo\ndesigualdades no acesso aos serviços especializados\n\nas\n\nSerá ampliado o credenciamento de clínicas e hospitais nas\ndiversas regiões do estado, permitindo que exames e consultas\nespecializadas sejam realizados mais próximos da residência do\ncidadão, reduzindo custos, deslocamentos e tempo de espera.\nImplantação da Rede Estadual de Policlínicas\nImplantar uma rede estadual de policlínicas inspirada em\nexperiências exitosas de outros estados brasileiros, fortalecendo a\nassistência ambulatorial especializada.\n\n26"
+          },
+          {
+            "id": "eixos-tematicos-10",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nA proposta prevê:\n• Implantação de 16 policlínicas regionais, distribuídas conforme\ndemandas nas Regiões de Saúde da Paraíba, com integração\ndessas unidades à rede estadual já existente.\n• Oferta de consultas especializadas, exames diagnósticos,\nprocedimentos ambulatoriais e serviços de reabilitação.\n• As unidades previstas no PAC para João Pessoa e Campina\nGrande serão integradas à estratégia estadual de\nfortalecimento da média complexidade.\nPrograma Estadual de Cofinanciamento da Atenção Primária\nInstituir um modelo permanente de cofinanciamento da Atenção\nPrimária à Saúde, fortalecendo a parceria entre Estado e\nmunicípios.\nO programa prevê:\n• Repasse estadual por habitante aos municípios destinado\nexclusivamente ao fortalecimento da Atenção Primária.\n• Apoio financeiro para ações de promoção da saúde e\nprevenção de doenças.\n• Incentivo por desempenho às equipes da Estratégia Saúde da\nFamília, vinculado ao cumprimento de indicadores de qualidade\ne resultados.\n• Instituir o 14º salário para agentes de saúde.\nGestão por Resultados\nImplantar um modelo de gestão baseado em indicadores de\ndesempenho, com metas para redução do tempo de espera,\nampliação da oferta de procedimentos e melhoria dos indicadores\nassistenciais.\n\n27"
+          },
+          {
+            "id": "eixos-tematicos-11",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nSerão monitorados, entre outros:\n•\n•\n•\n•\n•\n\nTempo médio de espera para exames\nTempo médio de espera para cirurgias\nProdução ambulatorial especializada\nCobertura da Atenção Primária\nSatisfação dos usuários\n\nRede Estadual de Reabilitação Integral\nHá uma carência histórica na oferta de reabilitação especializada\nno interior do estado. Existe o CER IV em João Pessoa, implantado\npela Prefeitura, além de unidades operando em Campina Grande e\nSousa.\nNossa proposta é fortalecer de forma decisiva a estrutura onde o\nserviço já existe e preencher essa lacuna regional implantando\nnovas unidades no interior, garantindo diagnóstico precoce,\nterapias e acolhimento especializado perto da casa dos\nparaibanos.\nCompromissos com a área da reabilitação integral:\n• Ampliação e fortalecimento da rede: aportar mais recursos\nestaduais e dar apoio técnico continuado às unidades do CER IV\njá existentes em João Pessoa, Campina Grande e Sousa,\naumentando a capacidade de atendimento.\n• Interiorização do serviço: implantar a Rede Espaço Acolher com\nnovos Centros Regionais Especializados em Reabilitação nas\nregiões do interior que ainda não contam com o serviço,\ncobrindo simultaneamente as quatro modalidades de\nreabilitação: física, auditiva, visual e intelectual.\n\n28"
+          },
+          {
+            "id": "eixos-tematicos-12",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Atendimento\nmultiprofissional:\nestruturar\nequipes\nespecializadas para o cuidado de pessoas com Transtorno do\nEspectro Autista (TEA), Pessoas com Deficiência (PCD) e pessoas\ncom Doenças Raras em todas as regiões de saúde do estado.\n• Acolhimento às famílias: garantir suporte técnico, orientação e\nacolhimento psicológico permanente para as famílias e\ncuidadores de pessoas atípicas.\nRede hospitalar, oncologia e especialidades\n• Integrar a rede oncológica com as fundações contratualizadas,\ncom contratualização estável, rastreamento precoce e\nregulação do paciente.\n• Expandir para o interior o tratamento do câncer, com o apoio\ngovernamental à implantação do centro oncológico de Serra\nBranca e novas unidades em Sousa e Cajazeiras.\n• Instalar Centros de Trauma Regionais e fortalecer a rede de\nhemocentros no Sertão e no Brejo, em Guarabira.\n• Estruturar a linha estadual do AVC, com atendimento rápido,\nunidades de referência e rede de reabilitação regionalizada.\n• Construir três UPAs estadualizadas em Campina Grande, no\nComplexo Aluízio Campos, em Bodocongó e na Zona Leste\n(Bairro José Pinheiro).\n• Implantar o modelo de Hospital-Dia em todas as 16 regiões de\nsaúde, para procedimentos eletivos, desafogando as UPAs e\nencurtando a fila de pequenas cirurgias.\n• Fornecer em domicílio os medicamentos de uso contínuo a\npacientes crônicos e idosos.\n• Aproximar do cidadão a avaliação cardiológica com salas de\neletrocardiograma na atenção primária.\n\n29"
+          },
+          {
+            "id": "eixos-tematicos-13",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 2 Saúde\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nMulher, criança e saúde mental\n• Assegurar o acompanhamento da gestação de ponta a ponta,\ncom pré-natal de alto risco regionalizado, leitos neonatais e\ntransporte materno regulado.\n• Garantir a mamografia no mês do aniversário, com busca ativa,\nmutirões e novos mamógrafos regionais.\n• Reestruturar a Política Estadual de Saúde Mental com a\nexpansão da Rede de Atenção Psicossocial, com CAPS regionais,\nunidades móveis de saúde mental, telepsiquiatria permanente,\nsaúde mental nas escolas e linha estadual de prevenção ao\nsuicídio.\n• Modernizar e regionalizar a odontologia pública, com centros\nde especialidades odontológicas regionais e odontologia\nhospitalar.\nProfissionais, tecnologia e financiamento\n• Reestruturar a Escola de Saúde Pública como centro estadual\nde formação e educação permanente, com foco nas equipes da\natenção primária, na formação de preceptores e no apoio às\nresidências, com polos regionais e telessaúde educacional.\n• Manter o especialista perto do paciente, com bônus de\ninteriorização, residências regionais e retaguarda de\ntelemedicina.\n• Implantar prontuário eletrônico integrado, regulação apoiada\npor inteligência artificial e internet de qualidade nos hospitais do\ninterior.\n• Efetivar, junto ao Ministério da Saúde, a habilitação e o\nfaturamento da totalidade dos serviços da rede estadual,\nrecuperando recursos federais.\n• Modernizar a dispensação de medicamentos, com entrega\nindividualizada, armazenamento e rastreamento adequados e\ncálculo do custo por paciente.\nt\n\n30"
+          },
+          {
+            "id": "eixos-tematicos-14",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nA educação é a prioridade estratégica deste Plano de Governo:\numa rede pública que ofereça oportunidades equivalentes ao\nestudante do Litoral e ao do Sertão.\nEntre os entraves conhecidos destacam-se: a criança que termina\no ciclo sem estar alfabetizada, o adolescente que abandona a\nescola antes de concluir o ensino médio e a distância digital entre\no interior e a capital.\nA meta é fazer da Paraíba a melhor educação pública do Nordeste\ne uma das cinco melhores redes públicas estaduais do Brasil até\n2030, em colaboração permanente com as prefeituras.\nA cultura integra este eixo como direito e como economia, e não\ncomo evento de calendário. É a cultura presente na escola e na rua,\nforte tanto no interior quanto na capital, e capaz de gerar trabalho\ne identidade para o povo paraibano.\nAlguns dos compromissos por uma educação pública de\nqualidade:\n• Alfabetizar toda criança até o fim do segundo ano, com metas\npor região e apoio prioritário aos territórios mais vulneráveis.\n• Reduzir a evasão escolar em pelo menos 50% e assegurar que\nnenhuma turma fique sem professor, com sistema preventivo de\nlotação.\n• Reduzir consideravelmente o analfabetismo de jovens e adultos,\nhoje um dos mais altos do país.\n• Fazer da inclusão digital o maior programa da história da\neducação paraibana, com sala de Atendimento Educacional\nEspecializado em escolas de médio e grande porte.\n• Ampliar progressivamente o ingresso de alunos da rede pública\nestadual no ensino superior até 2030.\n\n31"
+          },
+          {
+            "id": "eixos-tematicos-15",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Desenvolver o maior programa de educação profissional do\nNordeste.\n• Instalar energia solar nas escolas e climatizá-las.\n• Instituir o novo Plano de Cargos, Carreiras e Remuneração da\nEducação.\n• Realizar novos concursos na área, convocar todos os aprovados\nem concursos válidos e garantir a residência docente.\nCompromissos com a cultura:\n• Reestruturar o Fundo de Incentivo à Cultura Augusto dos Anjos,\ncom financiamento regular e editais descentralizados por\nterritório, fazendo chegar a todas as regiões do estado as\npolíticas públicas de cultura.\n• Manter, fortalecer e interiorizar o ICMS Cultural e Patrimonial,\ncom editais para eventos e proteção do patrimônio histórico e\ncultural, abrangendo todas as linguagens artísticas (Artes\nVisuais; Artesanato; Capoeira; Cinema e Audiovisual; Circo;\nCulturas Populares; Cultura Hip Hop; Dança; Fotografia; Livro,\nLiteratura, Leitura e Bibliotecas; Música; Patrimônio Cultural e\nAcervos; Teatro, Artes Integradas). Além de Editais de Subvenção\na Quadrilhas Juninas e Agremiações Carnavalescas.\n• Ampliar as ações de articulação para o fortalecimento da Rede\nEstadual de Pontos de Cultura.\n• Criar polos regionais de artesanato com certificação de origem.\n• Trabalhar a restauração de centros históricos e engenhos pelas\nRotas Históricas da Paraíba.\n• Apoiar os municípios que desenvolvam ações culturais e\npráticas integrativas voltadas para as crianças e jovens com\nsíndrome de Down, Transtorno do Espectro Autista — TEA, e\nPessoas com Deficiência (PCD), de modo a contribuir com a\nformação e inclusão social pelas artes.\n• Garantir proteção às culturas de matriz africana.\n\n32"
+          },
+          {
+            "id": "eixos-tematicos-16",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas em regime de colaboração com as prefeituras, no\nâmbito do novo Plano Estadual de Educação e da Comissão\nIntergestores Bipartite da Educação, com participação das\nuniversidades, dos órgãos de controle e das comunidades\nescolares. Na cultura, a execução se dá com os municípios, o\nIPHAEP, o IPHAN, os coletivos e os mestres e mestras da cultura\nparaibana.\nPrimeira infância, alfabetização e aprendizagem\n• Apoiar as prefeituras na expansão da educação infantil,\npriorizando os territórios de maior vulnerabilidade social e\nqualificando ambientes, materiais e espaços lúdicos.\n• Premiar as redes municipais que melhorarem os resultados de\nalfabetização, e garantir, através de índice estadual de\naprendizagem próprio, a destinação de ICMS aos municípios\nque mais avancem no IDEB.\n• Recuperar aprendizagens com trilhas, tutoria e devolutiva no\nmesmo ano letivo, apoiadas pelo Banco de Aulas da Paraíba.\nEducação digital, conectividade e inovação\n• Fornecer progressivamente o Kit Básico de Tecnologia da\nInformação aos estudantes da rede estadual, com política\ndefinida de suporte, manutenção e formação de professores e\nalunos.\n• Garantir\ninternet pedagógica, com incentivo ao uso\ncomunitário em todas as escolas e implantar ambientes digitais\nde aprendizagem (a exemplo do programa da Prefeitura de\nJoão Pessoa com as salas Google e Maker), ambientes de\nrobótica, impressão 3D e ateliês de aprendizagem criativa.\n\n33"
+          },
+          {
+            "id": "eixos-tematicos-17",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Incorporar a inteligência artificial ao ensino com política ética\nde uso, personalizando trilhas de aprendizagem e apoiando o\ntrabalho docente.\n• Ofertar informática básica no currículo do sexto ao nono ano e\ninstalar telecentros com cursos gratuitos para jovens, adultos e\nidosos nas cidades de menor acesso.\nPermanência, acolhimento e equidade\n• Avaliar individualmente cada estudante e ofertar plano\npersonalizado de aprendizagem, reforço no contraturno e\nrecuperação contínua.\n• Implantar um sistema estadual de alerta contra a evasão, com\nbusca ativa integrada, acompanhamento psicossocial e apoio\nàs famílias.\n• Fortalecer a saúde mental na escola, com equipes\nmultiprofissionais, cultura de paz, mediação de conflitos e\nprevenção ao bullying.\n• Instituir o programa “Pé de Meia” estadual,\ncomo\ncomplemento ao estímulo de permanência no ensino médio,\ncondicionado à matrícula, à frequência e à conclusão, com\nparcela em poupança educacional, para os alunos que não\nestejam contemplados no programa federal.\n• Implantar em toda a rede de ensino estadual o programa “Pix\nTênis”, para que cada estudante (orientado por sua família ou\nresponsável) compre o próprio calçado escolar de empresas\nsediadas em território paraibano, com a devida comprovação\nfiscal de compra.\n• Premiar com bolsas os estudantes com desempenho\ndestacado em olimpíadas, no Enem, em projetos de ciência e no\nesporte escolar.\n\n34"
+          },
+          {
+            "id": "eixos-tematicos-18",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Fortalecer as escolas em territórios indígenas, quilombolas,\nciganos, do campo e de assentamento, com educação\nantirracista e protocolos claros de proteção.\n• Retomar a educação de jovens e adultos integrada à educação\nprofissional, com flexibilização de horários, apoio à mãe\nestudante e centros próprios.\n• Executar plano estadual de manutenção e obras escolares,\ngarantindo água, esgoto, energia, climatização, acessibilidade,\nsegurança, bibliotecas, laboratórios e quadras.\nEnsino médio, educação profissional e primeiro emprego\n• Integrar o currículo do ensino médio ao projeto de vida, à\nprogramação, à robótica e à inteligência artificial, expandindo o\nensino médio integral.\n• Expandir a educação profissional com novos cursos técnicos,\ncertificações e integração ao setor produtivo de cada região.\n• Instalar duas escolas agrotécnicas estaduais, em Uiraúna, no\nAlto Sertão, e em Umbuzeiro, no Cariri Oriental, formando\ntécnicos em agropecuária, agroecologia e cadeias do semiárido\ne estimulando o jovem do campo a permanecer na própria terra\nnatal.\n• Implantar educação empreendedora e projeto de vida, com\nlaboratório de ideias em cada escola e feira estadual de ciência\ne inovação.\n• Firmar com a iniciativa privada parceria para concessão de\nbolsa de estágio aos estudantes da educação profissional, com\nponte para o primeiro emprego.\n• Construir uma Escola de Ensino Médio Integral no Complexo\nHabitacional Aluízio Campos, em Campina Grande.\n\n35"
+          },
+          {
+            "id": "eixos-tematicos-19",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nProfissionais, gestão e avaliação\n• Instituir o novo “Plano de Cargos, Carreiras e Remuneração da\nEducação” e realizar concurso público regular.\n• Implantar a residência docente e a formação em metodologias\nativas e inteligência artificial.\n• Promover o bem-estar socioemocional e a saúde de\nprofessores, técnicos e gestores escolares.\n• Selecionar os gestores escolares por mérito e com participação\nda comunidade, fortalecendo os conselhos escolares e a\ntransparência orçamentária.\n• Avaliar frequência e aprendizagem em plataforma única, com\npainel pedagógico para gestores e mapa das escolas\nprioritárias.\nInclusão, internacionalização e ensino superior\n• Instalar salas de recursos multifuncionais com Atendimento\nEducacional Especializado e formar professores, tutores e\nmediadores para estudantes com autismo.\n• Prover tecnologia assistiva, acessibilidade arquitetônica e\neducação bilíngue em Libras.\n• Ofertar intercâmbio internacional a estudantes destaque, com\nacompanhamento no retorno.\n• Ampliar e interiorizar os Centros Estaduais de Línguas e a rede\nestadual de redação e bibliotecas vivas.\n• Apoiar os municípios, em parceria com as escolas estaduais, no\ndesenvolvimento de projetos e programas de iniciação musical\ndirecionados às crianças e aos jovens.\n• Apoiar a inscrição, o comparecimento e o desempenho no\nEnem, com orientação na escolha do curso e na inscrição no\nSisu.\n\n36"
+          },
+          {
+            "id": "eixos-tematicos-20",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nTransformação da UEPB mediante propostas e compromissos de:\n• Respeitar integralmente a autonomia financeira da UEPB,\nrecuperando a capacidade de investimento da instituição.\n• Garantir o cumprimento da Lei de Autonomia Financeira,\nassegurando previsibilidade e regularidade nos repasses, para\nque a universidade possa definir suas prioridades e executar seu\nplanejamento institucional com independência.\n• Promover a integração da UEPB com as Escolas Técnicas do\nEstado, tornando a UEPB uma das principais fomentadoras de\nensino e pesquisa dessas instituições.\n• Restabelecer um ambiente de segurança financeira que\npermita à universidade retomar investimentos em infraestrutura,\nensino, pesquisa, extensão e inovação, conforme suas decisões\ninternas.\n• Valorizar docentes e servidores.\n• Construir, em diálogo com a universidade, soluções para\nenfrentar o passivo das progressões funcionais e fortalecer as\ncarreiras dos servidores, respeitando a autonomia institucional e\na responsabilidade fiscal.\n• Fortalecer a permanência estudantil.\n• Apoiar políticas que ampliem a assistência estudantil, reduzam\na evasão e garantam melhores condições para que mais jovens\nconcluam sua formação universitária.\n• Ampliar parcerias entre o Governo do Estado, a UEPB, os\nmunicípios e o setor produtivo para estimular inovação,\npesquisa aplicada, empreendedorismo, desenvolvimento\nregional e soluções para os desafios da Paraíba.\n\n37"
+          },
+          {
+            "id": "eixos-tematicos-21",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nCultura: financiamento e fomento\n• Reestruturar o Fundo de Incentivo à Cultura Augusto dos Anjos,\nexistente desde 2003, garantindo aporte regular, previsibilidade\ne editais descentralizados por território.\n• Assegurar editais anuais custeados pelo ICMS Cultural e\nPatrimonial, com linhas próprias para cultura, patrimônio,\naudiovisual e economia criativa.\n• Valorizar a Orquestra Sinfônica e os museus estaduais, com\nprogramação regular e apresentações pelo interior.\nCultura: economia criativa e tradições populares\n• Valorizar o artesanato paraibano, com o fortalecimento do\nSalão do Artesanato com polos regionais, capacitação em\ndesign e gestão e comércio eletrônico.\n• Valorizar as tradições populares, do cordel às quadrilhas juninas\ne aos mestres da cultura, como patrimônio imaterial da Paraíba.\n• Criar o programa “Som da Paraíba”, para financiamento de\napresentações musicais características do período junino, com\nedital estadual permanente de credenciamento voltado\nexclusivamente para músicos, bandas e trios de “forró\npé-de-serra” residentes no estado há pelo menos dois anos. O\nGoverno do Estado disponibilizará as atrações cadastradas para\ncompor a programação do São João em todo o território\nestadual, ajudando a movimentar a economia criativa local e\ngerando emprego e renda para os trabalhadores da cultura.\n• Consolidar Cabaceiras como polo de cinema, com apoio à\nprodução audiovisual, à formação de técnicos e à atração de\nfilmagens.\n• Realizar oficinas permanentes de teatro, música, dança,\naudiovisual, bandas marciais e artes visuais nas escolas, com\nênfase na cultura paraibana.\n\n38"
+          },
+          {
+            "id": "eixos-tematicos-22",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 3 Educação e Cultura\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Assegurar a proteção das culturas de matriz africana e da\ndiversidade religiosa, com salvaguarda dos territórios\ntradicionais.\nCultura: patrimônio, memória e rotas\n• Restaurar e dar uso a centros históricos e bens tombados, com\nparceria e assistência técnica do IPHAEP e captação de recursos\njunto ao IPHAN e ao Governo Federal.\n• Ampliar o financiamento ao restauro de imóveis, permitindo à\nempresa patrocinadora direcionar parte do ICMS devido a\nprojetos aprovados pelo Estado.\n• Implantar as “Rotas Históricas da Paraíba”, que conectam\ndezenas de municípios por episódios e acontecimentos\nrelevantes como a República de Princesa e o Cangaço; o papel\nhistórico dos engenhos de açúcar no Brejo e noutras regiões; o\ncircuito colonial e sacro; o sítio paleontológico de Sousa e o sítio\narqueológico das Itacoatiaras do Ingá, entre outros.\n\n39"
+          },
+          {
+            "id": "eixos-tematicos-23",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 4 Recursos Hídricos\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma Paraíba com água garantida para beber e para produzir,\nintegrando as grandes obras hídricas à convivência com o\nsemiárido. Segurança hídrica não se resolve só com barragem:\nresolve-se também com rede, medição, reuso e manutenção.\nOs problemas do abastecimento de água, por sua vez, não se\nresumem à escassez natural: é a obra de integração inconclusa,\nque deixa a água distante da porteira das propriedades; é a perda\nde quase quatro em cada dez litros tratados; e é o esgoto que não\nchega ao tratamento, contaminando o mesmo manancial que\nabastece.\nCompromissos em Recursos Hídricos e Segurança Hídrica:\n• Destravar o Ramal do Piancó junto à União e entregar as obras\nestaduais complementares de distribuição, garantindo água a\nmais de um milhão de paraibanos em 37 municípios.\n• Assegurar segurança hídrica permanente à Grande João\nPessoa, com o Complexo de Cupissura.\n• Concluir o Canal Acauã-Araçagi e fazê-lo produzir, com polo de\nirrigação e piscicultura.\n• Ampliar o sistema adutor em Patos–Espinharas e Patos–Sabugi,\nencerrando um ciclo de escassez hídrica devido à ineficiência\ndo sistema adutor.\n• Implantar uma política de inovação técnica com a finalidade de\nreduzir as perdas na distribuição de água pela CAGEPA.\n• Promover auditoria independente do leilão da CAGEPA (PPP do\nesgotamento sanitário).\n• Fornecer água de qualidade para as comunidades rurais, com a\nimplementação de sistemas de dessalinização nas localidades\nque dependem de água salobra.\n\n40"
+          },
+          {
+            "id": "eixos-tematicos-24",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 4 Recursos Hídricos\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação, em\narticulação com o Ministério do Desenvolvimento Regional e os\ncomitês de bacia.\nObras de integração hídrica, abastecimento\n• Articular junto à União a conclusão do Ramal do Piancó, que\nleva a água do Eixo Norte da Transposição, a partir de Mauriti\n(CE), pelo Rio Piancó até o sistema Coremas–Mãe d’Água.\n• Executar as obras de adutoras e ramais, os perímetros de\nirrigação e o esgotamento associados ao Ramal do Piancó.\n• Concluir os trinta quilômetros finais do Canal Acauã-Araçagi e o\nanel de barragens de Gurinhém, Camaratuba e Manguape.\n• Implantar o “Complexo Hídrico Estratégico de Cupissura”, com\nampliação do armazenamento, modernização da adutora\nTranslitorânea, anel de barragens complementares e ampliação\nda ETA de Gramame.\n• Ampliar o sistema adutor do eixo Patos–Espinharas e\nPatos–Sabugi.\n• Concluir a Adutora Transparaíba e os Ramais Curimataú e\nCariri.\n• Concluir o sistema adutor da barragem Nova Camará.\n• Reduzir as perdas na rede com macromedição, telemetria,\nsetorização e substituição de trechos críticos, medida de alto\nretorno e baixo custo.\n• Ampliar a cobertura de coleta e tratamento de esgoto,\npriorizando as bacias que abastecem os mananciais.\n\n41"
+          },
+          {
+            "id": "eixos-tematicos-25",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 4 Recursos Hídricos\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nConvivência com o semiárido e reuso de água\n• Implantar cisternas de placas, barragens subterrâneas e poços\nnas comunidades rurais.\n• Instalar dessalinizadores movidos a energia solar onde a água\ndisponível é salobra, com manutenção contratada.\n\n42"
+          },
+          {
+            "id": "eixos-tematicos-26",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 5 Agricultura, Pesca e Desenvolvimento Rural\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nO que trava a agropecuária e a pesca é a falta de pesquisa e de\ntransferência de tecnologia, de infraestrutura logística e de defesa\nagropecuária à altura do mercado.\nUm campo produtivo e resiliente, que convive com o semiárido e\nagrega valor e fixa renda no interior, precisa de garantias de acesso\nà água, à assistência técnica, à sanidade e ao crédito.\nPara tanto, nossos compromissos com a Agricultura, a Pesca e o\nDesenvolvimento Rural passam por:\n• Tornar o Cariri e a Borborema referência nacional em\ncaprinovinocultura, com rebanho melhorado e leite de cabra\nprocessado e industrializado, agregando valor, por cooperativas\nparaibanas.\n• Dobrar a produtividade das áreas irrigadas da Transposição, do\nCanal Acauã-Araçagi e do Vale do Piancó.\n• Assegurar ao produtor o acesso a programas que garantam\napoio durante épocas de estiagem, com reserva forrageira,\nprograma de subsídio de ração animal e auxílio na safra\nperdida.\nSomam-se a isso a identificação de oportunidades que abram as\ngrandes redes logísticas e produtivas de abastecimento local e de\nexportação; um quadro técnico recomposto por concurso, crédito e\ntecnologia ao produtor familiar e a economia da pesca, da\ncarcinicultura e da maricultura.\n\n43"
+          },
+          {
+            "id": "eixos-tematicos-27",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 5 Agricultura, Pesca e Desenvolvimento Rural\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas pelas empresas públicas estaduais do agro em\nparceria com EMBRAPA, MAPA, universidades, SEBRAE, SENAR,\nSESCOOP e o setor privado.\nÁgua produtiva e convivência com o semiárido\n• Ampliar a área irrigada com técnicas de gotejamento,\nmicroaspersão e bombeamento solar, priorizando os eixos de\nentrada das águas do São Francisco, o Canal Acauã-Araçagi e\no Ramal do Piancó, assim que concluído.\n• Instalar campos de experimentação e difusão tecnológica junto\naos canais da transposição, para que a água chegue ao\nprodutor acompanhada de técnica de manejo.\n• Implantar arranjos solares dedicados a poços, dessalinizadores\ne sistemas de irrigação.\n• Fornecer sementes de palma resistente e implantar bancos de\nproteína e silagem comunitária como reserva estratégica de\nforragem.\n• Executar a venda subsidiada de milho, soja e ração em balcão,\ncom “Portal Público de Estoques” informando preço,\ndisponibilidade e ponto de retirada.\n• Recuperar o Canal da Redenção, em Sousa, devolvendo uso\nprodutivo a uma estrutura hidráulica hoje subutilizada.\n• Executar, junto à articulação federativa pelo Ramal do Piancó, a\nrede estadual de distribuição que leva a água do canal à\nporteira da propriedade.\n\n44"
+          },
+          {
+            "id": "eixos-tematicos-28",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 5 Agricultura, Pesca e Desenvolvimento Rural\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nCadeias produtivas, pesquisa e transferência de tecnologia\n• Produzir mudas frutíferas pela EMEPA em parceria com a\nEMBRAPA para o agricultor familiar, com uso racional e\ncontrolado de defensivos e controle orgânico de pragas.\n• Consolidar\no\n“Polo de Fruticultura do Vale do\nPiancó-Piranhas”, fruticultura irrigada sustentável às margens\ndo Rio Piranhas, em parceria com a UFCG, a EMATER e as\ncooperativas.\n• Difundir na bovinocultura a genética, a transferência de\nembriões, a inseminação artificial, a nutrição animal e a\npastagem irrigada, com pesquisa da EMEPA e extensão da\nEMATER.\n• Regularizar o abate privado, com adequação sanitária e fiscal\nque tire essa cadeia da informalidade.\n• Melhorar o rebanho caprino e ovino por pesquisa genética da\nEMEPA e implantar frigoríficos regionais com adesão aos\nsistemas estadual e federal de inspeção de produtos de origem\nanimal (SIE/SISBI) nas regiões aptas.\n• Fortalecer a indústria de etanol, açúcar e bioenergia,\nprincipalmente na área do Canal das Vertentes Litorâneas.\n• Valorizar e promover o terroir da cachaça de alambique da\nregião serrana como produto genuíno da Paraíba.\n• Difundir a genética de alevinos e dar uso produtivo aos açudes\npúblicos, com infraestrutura de apoio à piscicultura.\n• Difundir tecnologia de grãos e forragens no Vale do Piancó, no\nCanal das Vertentes e nos distritos de irrigação do Sertão.\n• Organizar a cadeia de raízes e tubérculos no litoral, junto à\nagricultura familiar e às comunidades originárias, com\nprograma de agroindustrialização da mandioca.\n\n45"
+          },
+          {
+            "id": "eixos-tematicos-29",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 5 Agricultura, Pesca e Desenvolvimento Rural\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nAgregação de valor, cooperativismo e agroindústria\nBoa parte da produção paraibana ainda é de subsistência. É o\ncooperativismo que dá escala, reduz custo, fortalece o poder de\nnegociação e agrega valor, e é por ele que a política de\nagroindustrialização será organizada.\n• Incentivar a instalação de Fábricas de Leite de Cabra do Sertão\ne do Cariri, vinculadas a cooperativas de produtores,\ntransformando o leite caprino da agricultura familiar em leite em\npó e derivados, com estruturação junto ao SEBRAE/PB, ao\nSENAR/PB e à OCB-PB/SESCOOP.\n• Criar o Selo Origem Paraíba, certificação territorial com\nrastreabilidade e marketing de origem para queijos, mel, carne\ncaprina e frutas do semiárido, entre outros produtos.\n• Estruturar o programa Paraíba Azul, com centros de\nbeneficiamento em Cabedelo, Lucena e Conde, em apoio à\npesca artesanal, à maricultura tropical e à carcinicultura, e selo\n“Produto do Mar da Paraíba”.\n• Implantar novos entrepostos regionais da EMPASA, em Sousa,\nCajazeiras e Monteiro.\n• Construir o Parque de Exposições Permanente da Serra do\nTeixeira, com alcance sobre onze municípios, entre eles Princesa\nIsabel, São José de Princesa, Manaíra, Juru, Tavares, Água\nBranca, Imaculada, Teixeira e Maturéia e promover reformas nos\ndemais Parques de Exposição.\n• Implantar\nquatro\nnovas\náreas\nexperimentais\nde\nmelhoramento genético, entre elas a de Itaporanga.\n\n46"
+          },
+          {
+            "id": "eixos-tematicos-30",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 5 Agricultura, Pesca e Desenvolvimento Rural\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Instituir o calendário estadual das Festas do Campo, tratando\nas festas agropecuárias do interior — a exemplo da Festa do\nBode Rei, em Cabaceiras, e do Festival do Mel, em São José dos\nCordeiros — como motor de renda e identidade, com apoio a\nestrutura, divulgação, capacitação e comercialização.\n• Priorizar a agricultura familiar nas compras públicas de escolas,\nhospitais e órgãos estaduais pelo programa “Compra Paraíba\nRural”, com plataforma digital de comercialização.\nEstruturas de Estado, defesa agropecuária, crédito e inovação\n• Propor a criação da Agência Estadual de Defesa Agropecuária\n(AEDAPB), responsável pela fiscalização, inspeção, certificação\ne defesa sanitária dos produtos de origem animal e vegetal,\nassegurando\nqualidade,\ninocuidade,\nrastreabilidade\ne\nmodernizar a legislação estadual de defesa agropecuária.\n• Reestruturar o sistema estadual de pesquisa, extensão,\nregularização fundiária e comercialização de alimentos do setor\nagropecuário paraibano, com o objetivo de garantir a presença\ndo Estado no apoio efetivo aos pequenos e médios agricultores.\n• Incentivar a captação de recursos para investimentos no setor\nagropecuário junto a governos, agências de fomento,\norganismos internacionais, universidades e fundações.\n• Fomentar a Agroinovação, com incubadoras rurais e editais\npara startups do semiárido em irrigação inteligente e\ncomercialização digital.\n• Apoiar o acesso do produtor paraibano às certificações e ao\nmercado de carbono.\n• Buscar e manter a certificação de “Área Livre da Mosca da\nFruta”, condição de acesso aos mercados que hoje se fecham à\nfruta paraibana.\n\n47"
+          },
+          {
+            "id": "eixos-tematicos-31",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 6 Assistência Social e Combate à Pobreza\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nInstituir uma rede de proteção que chega primeiro a quem mais\nprecisa, com prioridade para a primeira infância, a pessoa idosa e\no combate à fome. Assim, o Estado deixa de esperar que a família\nbata à sua porta e passa a procurá-la.\nO que trava a proteção social na Paraíba não é a falta de\nprogramas: é não saber, em tempo real, quem precisa e onde está;\né a dispersão dos benefícios em balcões que não conversam; e é a\nausência de porta de saída da rede assistencial.\nEm razão disso, nossos compromissos para com a Assistência\nSocial e o Combate à Pobreza passam por:\n• Implantar o Cadastro Social Inteligente da Paraíba, base única\nintegrada conforme a LGPD (Lei Geral de Proteção de Dados),\ncom índice de vulnerabilidade atualizado mensalmente por\nterritório.\n• Unificar os benefícios estaduais em um único cartão, concedido\nautomaticamente a quem já cumpre os critérios.\n• Garantir às famílias em extrema vulnerabilidade a distribuição\ndiária de pão e leite e a terceira refeição, e ampliar a quantidade\nde cozinhas comunitárias.\n• Instalar vinte Centros Regionais 60+ e ampliar a rede de\ncuidado domiciliar às pessoas idosas.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas em regime de cofinanciamento com os municípios,\ncom os CRAS e CREAS como porta de entrada da rede.\n\n48"
+          },
+          {
+            "id": "eixos-tematicos-32",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 6 Assistência Social e Combate à Pobreza\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nInformação social e benefícios que chegam sem fila\n• Implantar o Cadastro Social Inteligente da Paraíba, reunindo,\ncom consentimento e governança de dados, as informações\nautorizadas do CadÚnico, da saúde, das escolas e da\nassistência social.\n• Instituir o “Índice de Vulnerabilidade Social Paraibano”, que\nordena a prioridade dos programas por território e orienta a\nalocação dos recursos.\n• Unificar no Cartão Paraíba os benefícios estaduais em carteira\nsocial digital, integrada ao CadÚnico e ao aplicativo do cidadão.\nSegurança alimentar e nutricional\n• Ampliar o programa “Pão e Leite” por meio de panificadoras\nlocais e cooperativas leiteiras.\n• Garantir a terceira refeição nas cozinhas comunitárias e nos\nrestaurantes populares, ampliando a cobertura para o interior.\n• Ofertar almoço e café da manhã a preço simbólico nas\nunidades da Cozinha Cidadã, que formam cozinheiros e geram\nemprego.\n• Fornecer alimentos da agricultura familiar aos equipamentos\nsocioassistenciais, dando destino social à produção contratada\npelo Estado.\nPrimeira infância, pessoa idosa e famílias\n• Instalar os Centros Regionais 60+ e estruturar o cuidado\ndomiciliar, o cofinanciamento de abrigos (Instituições de Longa\nPermanência para Idosos), os Centros Dia com acompanhante,\no teleatendimento social e o transporte intermunicipal gratuito\npara pessoas em situação de vulnerabilidade social.\n\n49"
+          },
+          {
+            "id": "eixos-tematicos-33",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 6 Assistência Social e Combate à Pobreza\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Avaliar com os municípios onde há maior percentual de famílias\nem situação de extrema pobreza, a adoção do programa\ncomplementar “Renda da Primeira Infância”, como auxílio extra\nàs famílias com crianças de zero a seis anos.\n• Fortalecer os vínculos familiares e a prevenção, com\nacompanhamento continuado das famílias em maior\nvulnerabilidade.\nInclusão produtiva e porta de saída da rede socioassistencial\n• Instituir o “Reencontro Paraíba”, com moradia de transição,\nauxílio mensal e qualificação profissional para a população em\nsituação de rua.\n• Priorizar as famílias acompanhadas pela rede socioassistencial\nno encaminhamento às vagas de qualificação e às\noportunidades de inclusão produtiva.\n\n50"
+          },
+          {
+            "id": "eixos-tematicos-34",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 7 Ciência, Tecnologia e Inovação\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUm ecossistema de inovação que liga conhecimento a emprego e\nrenda, interioriza a tecnologia e usa o poder de compra do Estado\npara induzir soluções paraibanas inovadoras, com o Governo e\nuniversidades de primeira linha trabalhando juntos para expandir\nesse ecossistema para o interior e contribuindo para consolidar\nJoão Pessoa e Campina Grande como polos tecnológicos.\nOs entraves para os avanços nessas áreas não estão na produção\ncientífica em si. Estão na distância entre a pesquisa e a empresa,\nna fuga do jovem qualificado por falta de vaga onde nasceu e na\nconcentração da inovação em apenas duas cidades — João\nPessoa e Campina Grande.\nNossos compromissos com a Ciência, a Tecnologia e a Inovação\npassam por:\n• Capitalizar e operacionalizar o “Fundo Estadual de Inovação”,\ncom participação do setor privado e editais para startups.\n• Implantar “Distritos Regionais de Inovação”.\n• Comprar soluções inovadoras desenvolvidas na Paraíba para\nresolver problemas públicos, pelo marco legal das startups.\nSomam-se, ainda, os Parques de Tecnologia e Inovação Social nos\nterritórios vulneráveis, com um resultado objetivo: vaga real sem\nque o jovem precise deixar o Estado.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas em parceria com UFPB, UFCG, UEPB, IFPB, institutos de\npesquisa, empresas e investidores privados.\n\n51"
+          },
+          {
+            "id": "eixos-tematicos-35",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 7 Ciência, Tecnologia e Inovação\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nGovernança e financiamento da inovação\n• Estruturar o “Sistema Estadual de Inovação”, com governança\núnica, regras estáveis e avaliação de resultado.\n• Capitalizar e tornar plenamente operacional o Fundo Estadual\nde Inovação, com calendário anual de editais, instrumentos de\napoio pré-semente e semente, mecanismos juridicamente\nestruturados\nde\ncoinvestimento\nprivado,\ngovernança\nindependente e prestação pública de contas.\n• Implantar a plataforma DataPB, reunindo os dados públicos\nque alimentam a pesquisa aplicada e o desenvolvimento de\nsoluções.\n• Implementar programa de inovação aberta para desafios\npúblicos, contratando pelo marco legal das startups e pela lei de\ncompras públicas de soluções inovadoras.\nInteriorização e infraestrutura científica\n•\n•\n•\n\n•\n•\n\nImplantar os Distritos Regionais de Inovação, com laboratórios\ncompartilhados, incubação e formação técnica.\nConsolidar o Parque Tecnológico de Campina Grande e o Hub\nde Inovação de João Pessoa como âncoras da articulação entre\nuniversidade, empresa e Estado.\nPropor e apoiar a expansão da UEPB para criação de cursos de\nextensão em Pesquisa e Desenvolvimento, no município de\nAguiar, nas áreas de Matemática, Física e Astronomia, entre\noutras,\nobjetivando\nmáximo\naproveitamento\ncientífico\nproveniente da instalação do Radiotelescópio BINGO.\nImplantar a “Rede Estadual de Parques de Tecnologia e\nInovação Social”, com inclusão digital, capacitação profissional\ne geração de renda nos municípios mais vulneráveis.\nAproximar universidades, institutos federais, empresas e\nstartups, com incentivos vinculados à criação de empregos\nqualificados.\n\n52"
+          },
+          {
+            "id": "eixos-tematicos-36",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 7 Ciência, Tecnologia e Inovação\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Implantar o “ParaíbaTech Work”, plataforma que liga o jovem\nformado às vagas abertas nas empresas de base tecnológica.\n• Expandir a “Iniciativa CODE” às escolas e aos distritos de\ninovação de todas as regiões da Paraíba, com formação\ngratuita em programação, robótica e habilidades digitais.\n• Fomentar a pesquisa aplicada em energias renováveis,\nbioeconomia da Caatinga e tecnologias para o semiárido,\nligando os grupos de pesquisa às demandas do setor produtivo.\n\n53"
+          },
+          {
+            "id": "eixos-tematicos-37",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma Paraíba livre para empreender, competitiva por competências\ne capaz de transformar crescimento em emprego formal e\nmelhores salários em todas as regiões.\nO Estado precisa se adaptar às novas regras da Reforma Tributária,\ne se tornar atrativo com mão de obra qualificada, infraestrutura\npronta, crédito e segurança regulatória.\nO que trava a economia paraibana não é a ausência de investidor:\né a burocracia que atrasa a abertura de negócios; é a\ninformalidade que prende metade dos trabalhadores fora da\nproteção e da produtividade; e é a extinção gradual do ICMS até\n2033, que retira do Estado o instrumento com que sempre atraiu\nindústrias.\nO mesmo diagnóstico vale para o subsolo. A Paraíba lidera a\nprodução nacional de bentonita e está entre os maiores produtores\nde caulim, feldspato, quartzo e gipsita do Nordeste. E dá nome a\numa das gemas mais valorizadas do mundo (a Turmalina Paraíba),\nmas a mineração ainda responde por parcela modesta do valor\nadicionado estadual.\nO problema não é a ausência de jazida: é a informalidade que\nafasta o pequeno produtor do crédito e do mercado, a lentidão do\nlicenciamento, a falta de estrutura própria de escoamento e a\ncarência de conhecimento geológico de detalhe, que mantém\ninvisível o potencial paraibano em minerais estratégicos.\nUma Paraíba que conhece o próprio subsolo formaliza quem já\nproduz e deixa de exportar matéria-prima bruta para vender\nproduto beneficiado, com emprego e arrecadação dentro do\nEstado.\n\n54"
+          },
+          {
+            "id": "eixos-tematicos-38",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nEsses são os principais compromissos assumidos em favor do\nDesenvolvimento\nEconômico,\nda\nMineração\ne\ndo\nEmpreendedorismo:\n• Implementar uma política contínua de geração de empregos\nformais e incremento de renda.\n• Posicionar a Paraíba entre os cinco melhores ambientes de\nnegócios do Brasil, com licenciamento automático para\natividades de baixo risco.\n• Alcançar, até 2030, salário médio real de admissão igual ou\nsuperior à média do Nordeste.\n• Reduzir em pelo menos cinco pontos percentuais a\ninformalidade.\n• Garantir que toda nova concessão do FAIN terá metas públicas\nde investimento, empregos e salários, com devolução\nproporcional em caso de descumprimento.\n• Ter, até 2028, uma carteira de projetos maduros equivalente ao\ndobro dos recursos anuais estimados no Fundo Nacional de\nDesenvolvimento Regional.\n• Propor junto à União, após estudos de viabilidade técnica, uma\nZona de Processamento de Exportação em Cabedelo.\n• Regularizar, até 2030, as unidades de extração mineral de\npequeno porte, hoje irregulares, com apoio jurídico e topográfico\ngratuito ao produtor e prazo máximo definido para o\nlicenciamento ambiental do setor.\n• Articular junto ao Ministério de Minas e Energia o mapeamento\ngeológico de detalhe da Província Pegmatítica da Borborema,\ncom foco em minerais estratégicos e terras raras.\n• Condicionar ao beneficiamento, no território paraibano, todo\nincentivo estadual concedido ao setor mineral e retomar o\narrendamento de área para granéis minerais no Porto de\nCabedelo.\n\n55"
+          },
+          {
+            "id": "eixos-tematicos-39",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas pela CINEP e pela Sefaz, em parceria com Sebrae,\nSistema S, federações empresariais, BNB, BNDES, Finep, Agência\nNacional de Mineração e Serviço Geológico do Brasil.\nAmbiente de negócios, crédito e formalização\n• Integrar JUCEP (Junta Comercial do Estado), Secretaria de\nFazenda, SUDEMA, AGEVISA, Corpo de Bombeiros e prefeituras em\njornada digital única, com licenciamento por grau de risco e\nprazos públicos.\n• Ofertar a todos os municípios a integração à Redesim,\nassegurando licenciamento automático para atividades de\nbaixo risco.\n• Apoiar tecnicamente as prefeituras na simplificação de alvarás\ne licenças, com legislação-modelo, assessoria jurídica e\nintegração de sistemas.\n• Unificar microcrédito orientado, capacitação gerencial, inclusão\ndigital e apoio à formalização, acompanhando o empreendedor\ndepois do crédito e medindo sobrevivência, faturamento e\nrenda.\n• Ofertar crédito com garantia, mentoria e incubação ao jovem\nempreendedor, em substituição à isenção tributária genérica e\njuridicamente frágil.\n• Premiar com selo estadual as empresas que abrem a vaga de\nprimeiro emprego.\nCompetências e produtividade\n• Pactuar com escolas técnicas, universidades, Sistema S e\nempresas a formação orientada pelas vagas e pelos\ninvestimentos efetivamente previstos.\n\n56"
+          },
+          {
+            "id": "eixos-tematicos-40",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Articular junto ao Sistema S um programa estadual de\nqualificação da mão de obra, vinculado à demanda do setor\nprodutivo e acompanhado por indicadores de conclusão,\nemprego e aumento salarial.\nIndústria, economia verde e reforma tributária\n• Concentrar recursos nas cadeias em que a Paraíba já tem\nempresas, conhecimento e capacidade de expansão: têxtil,\nconfecção, couro e calçados; alimentos, bebidas e\nagroindústria; energias renováveis; turismo, tecnologia e\nserviços digitais.\n• Apoiar novas cadeias quando houver mercado, infraestrutura e\nviabilidade comprovada.\n• Estruturar a transição do FAIN para o cenário posterior a 2033,\nsubstituindo o incentivo de ICMS por crédito, garantias,\ninfraestrutura industrial e cofinanciamento com BNB, BNDES e\nFinep.\n• Ofertar áreas industriais preparadas com energia, água,\nsaneamento, fibra óptica e acesso rodoviário, definidas por\ndemanda empresarial e viabilidade, com foco na interiorização\ndos investimentos.\n• Criar, na CINEP, atendimento permanente às empresas já\ninstaladas, com plano próprio para cada empresa estratégica\nenfrentar entraves de energia, água, logística, qualificação e\nfornecedores.\n• Buscar recursos do Fundo Clima, do BNDES, do BNB e de\norganismos multilaterais para projetos de eficiência energética,\neconomia circular e indústria de baixo carbono.\n• Criar serviço estadual de orientação às empresas na migração\ndo ICMS para o novo IBS (Imposto sobre Bens e Serviços) com\napoio sobre precificação, créditos tributários, documentos\nfiscais e sistemas.\n• Priorizar nos instrumentos estaduais de crédito e infraestrutura,\nos pequenos negócios, os projetos no interior e as empresas que\ngeram emprego formal e melhores salários.\n\n57"
+          },
+          {
+            "id": "eixos-tematicos-41",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nMineração e recursos minerais\n• Instituir o Programa Paraíba Mineral Legal, com balcão único\ndo setor — Estado, ANM e prefeituras — e equipes itinerantes que\nofertem gratuitamente apoio jurídico, levantamento topográfico\ne documentação de lavra ao pequeno produtor.\n• Firmar acordo de cooperação com a Agência Nacional de\nMineração e a SUDEMA, integrando outorga federal e\nlicenciamento estadual à jornada digital única, com prazos\npúblicos,\ncadastro\ngeorreferenciado\nda\nprodução\ne\nrecuperação de áreas degradadas como contrapartida.\n• Apoiar, com a CINEP e o Sebrae, cooperativas e arranjos\nprodutivos minerais, ajudando a implantar unidades de\nbeneficiamento e centrais de comercialização nos polos de\nquartzo, feldspato, caulim e bentonita.\n• Priorizar nos instrumentos estaduais de crédito e infraestrutura,\nos projetos que concentrem investimentos em sua produção e\nlogística no Estado; e modernizar os polos de cerâmica vermelha\ncom assistência técnica do SENAI e do IFPB.\n• Retomar, junto à Docas-PB e à ANTAQ, o arrendamento de área\npara movimentação e exportação de granéis minerais no Porto\nde Cabedelo, instruído por EVTEA e estudo de demanda de\ncarga.\n• Firmar convênio com o Serviço Geológico do Brasil e as\nuniversidades paraibanas para o mapeamento geológico de\ndetalhe da Província Pegmatítica da Borborema, dimensionando\nlítio, tântalo, nióbio, berílio e terras raras em banco de dados\npúblico e aberto.\n• Atrair investimento em minerais estratégicos com contrapartida\nde concentração e conversão química no Estado, usando a\nenergia renovável paraibana como diferencial competitivo e\narticulando com a União o acesso aos instrumentos federais de\nminerais críticos.\n\n58"
+          },
+          {
+            "id": "eixos-tematicos-42",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 8 Desenvolvimento Econômico,\nRecursos Minerais e Empreendedorismo\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nInvestimento, exportação e desenvolvimento regional\n• Redesenhar por regiões a atuação da CINEP e criar, dentro de\nsua estrutura, porta única para o investidor, reunindo\nprospecção,\nlicenciamento,\nlocalização\nempresarial\ne\nacompanhamento pós-investimento.\n• Apoiar empresas na certificação, na adequação de produtos e\nna inteligência comercial, em parceria com ApexBrasil e Sebrae,\ntransformando pequenos produtores e indústrias locais em\nexportadores recorrentes.\n• Instalar “Escritório de Prospecção de Grandes Projetos”\ndedicado à área portuária de Cabedelo, para atrair empresas e\noperadores logísticos com o objetivo de incrementar o aumento\nna movimentação de cargas.\n• Propor ao Governo Federal, instruído por EVTEA (Estudo de\nViabilidade Técnica, Econômica e Ambiental) e demanda de\ncarga, o regime de Zona de Processamento de Exportação ou\nregime logístico-exportador equivalente.\n\n59"
+          },
+          {
+            "id": "eixos-tematicos-43",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 9 Direitos Humanos, Mulheres\ne Inclusão Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUm Estado que protege e inclui, leva cidadania do Litoral ao Sertão,\ncom as ações afirmativas deixando de ser exceção para virar\nmétodo de execução dos programas sociais.\nO que trava esse acesso não é o desconhecimento de direitos: é a\ndistância entre o serviço e o interior, é a demora do diagnóstico que\natrasa a vida inteira de uma criança e é a falta de renda própria\npara a mulher do campo e para a pessoa com deficiência.\nA política para as mulheres será executada de forma transversal,\nintegrando segurança pública, saúde, assistência social, habitação,\nqualificação profissional, crédito e inclusão produtiva.\nCompromissos nas áreas de Direitos Humanos, Cidadania e\nInclusão Social:\n• Adotar ações afirmativas como método, com critérios públicos\nde priorização para os grupos historicamente discriminados.\n• Levar a “Caravana Paraíba de Direitos” trimestralmente às\ndiversas regiões do estado.\n• Beneficiar as mulheres do campo com oportunidades de\ngeração de renda, crédito e assistência técnica.\n• Assegurar que os diagnósticos do Transtorno do Espectro\nAutista (TEA) e de atrasos de desenvolvimento sejam feitos em\naté 60 dias.\n• Levar ao interior os Centros Regionais Especializados em\nReabilitação, o Serviço de Referência em Doenças Raras no SUS,\ne o Fundo Estadual da Juventude.\n\n60"
+          },
+          {
+            "id": "eixos-tematicos-44",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 9 Direitos Humanos, Mulheres\ne Inclusão Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas em parceria com a Defensoria Pública, os conselhos de\ndireitos, os municípios e as organizações das comunidades\natendidas\nPolíticas para as mulheres: proteção, autonomia e cuidado\n• Instituir uma rota estadual de proteção e autonomia para\nmulheres em situação de violência, integrando o atendimento\njurídico, psicológico, social e de segurança à concessão de\nauxílio temporário, aluguel social e prioridade nos programas de\nhabitação, qualificação profissional, emprego, crédito e inclusão\nprodutiva.\n• Ampliar e interiorizar as políticas de autonomia econômica das\nmulheres, reunindo microcrédito orientado, capacitação,\neducação financeira, formalização, assistência técnica e acesso\naos mercados, com prioridade para mães solo, cuidadoras,\nmulheres das periferias e mulheres em situação de violência ou\nvulnerabilidade social.\n• Instituir programa para cuidar de quem cuida, com serviços\ntemporários de cuidado, apoio psicológico, orientação sobre\ndireitos e qualificação profissional para mulheres responsáveis\npor crianças, pessoas idosas, pessoas com deficiência e\npessoas atípicas.\n.\n\n61"
+          },
+          {
+            "id": "eixos-tematicos-45",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 9 Direitos Humanos, Mulheres\ne Inclusão Social\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nAções afirmativas e cidadania no território\n• Adotar as ações afirmativas como método de execução dos\nprogramas sociais, direcionando recursos para onde a\ndesigualdade é maior.\n• Realizar a “Caravana Paraíba de Direitos”, com unidades\nmóveis de emissão de documentos, Defensoria Pública,\natendimento psicossocial e cadastro social, em calendário\ntrimestral pelo interior.\n• Promover a igualdade racial com ações afirmativas próprias e\nenfrentamento ao racismo institucional.\n• Instituir o “Fundo e o Selo Estadual da Juventude”, com editais\npermanentes para projetos juvenis.\n• Estabelecer cota mínima de trabalhadores com deficiência nas\nempresas contratadas pelo Estado, com banco de talentos e\nfiscalização\nAutonomia e proteção\n• Implantar políticas de crédito subsidiado e assistência técnica e\nestabelecer como prioridade, nas compras públicas, a produção\nagrícola sob responsabilidade das mulheres do campo.\n• Criar o Selo “Produzido por Mulher Paraibana”.\n• Ofertar atendimento jurídico, psicológico e social unificado às\nvítimas de violência doméstica, racismo, LGBTfobia e violência\ninstitucional.\n• Ampliar a cobertura de casas de acolhimento para pessoas\nLGBTQIA+ em situação de vulnerabilidade.\n• Fortalecer as políticas de diversidade por meio das secretarias e\nórgãos responsáveis.\n• Articular a rede de acolhimento com o Judiciário, o Ministério\nPúblico e a Defensoria, para unificar e fortalecer o sistema de\napoio e proteção à mulher.\n\n62"
+          },
+          {
+            "id": "eixos-tematicos-46",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 10 Esporte e Lazer\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nEsporte como saúde, inclusão e oportunidade, da quadra da escola\nao alto rendimento, com o interior no mapa das ações\ngovernamentais e a educação como porta de entrada de cada\ntalento.\nO Estado deixa de investir em equipamentos genéricos e passa a\ninvestir em pessoas: quem descobre, quem treina e quem compete.\nO que trava o esporte paraibano não é a falta de talento: é a\ndetecção do atleta entregue ao acaso; é o equipamento construído\nsem vocação, que envelhece ocioso; e é o custo do deslocamento,\nque impede o atleta de competir.\nCompromissos com o Esporte e o Lazer dos paraibanos:\n• Implantar o esporte de base nas escolas estaduais, no\ncontraturno e integrado ao currículo.\n• Avaliar anualmente a aptidão físico-motora de todo estudante\nda rede pública, com equipe itinerante nos 223 municípios e\nbase estadual de detecção de talentos.\n• Ampliar o Bolsa Esporte Paraíba para atletas, olímpicos e\nparalímpicos, inclusive os que estão em formação.\nEstruturam esse caminho os Centros de Desenvolvimento Esportivo\npor vocação regional, a Escola Paraibana de Treinadores, a Vila\nOlímpica Ronaldo Marinho como Centro Estadual de Alto\nRendimento, os Jogos Abertos da Paraíba e o futebol feminino de\nbase.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas com as escolas da rede, as federações e ligas, os\nmunicípios e as universidades paraibanas.\n\n63"
+          },
+          {
+            "id": "eixos-tematicos-47",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 10 Esporte e Lazer\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nEsporte na escola e detecção de talentos\n• Instalar núcleos de iniciação esportiva no contraturno de toda a\nrede estadual, a exemplo das modalidades: atletismo, futsal,\nvôlei, handebol, judô e paradesporto, com professores de\neducação física e monitores-atletas.\n• Realizar a avaliação físico-motora anual de velocidade, salto,\ncoordenação,\nflexibilidade,\nresistência\ne\npotência,\nencaminhando cada talento à modalidade compatível.\n• Realizar os “Jogos Escolares e Paradesportivos Estaduais” com\naplicativo de resultados ao vivo, ranking, e pontuação por\nescola.\nFormação técnica e ciência do esporte\n• Instituir a “Escola Paraibana de Treinadores”, formando e\ncertificando técnicos, árbitros, preparadores físicos, analistas e\ngestores em parceria com UFPB, UFCG e UEPB.\n• Ampliar a participação feminina na prática, na arbitragem, no\ntreinamento e na gestão.\nEquipamentos, competições e apoio ao atleta\n• Instalar\n“Centros\nde\nDesenvolvimento\nEsportivo”\nespecializados na vocação de cada território, com equipe\nmultidisciplinar, laboratório de avaliação e alojamento,\naproveitando estruturas existentes.\n• Transformar a Vila Olímpica Ronaldo Marinho em Centro\nEstadual de Alto Rendimento, com campos de treinamento das\npré-seleções paraibanas.\n\n64"
+          },
+          {
+            "id": "eixos-tematicos-48",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 10 Esporte e Lazer\n\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Construir arenas escolares modulares dimensionadas ao porte\nde cada município e às modalidades prioritárias, evitando\nestruturas genéricas caras e ociosas.\n• Implantar centros náuticos e arenas permanentes de esportes\nde praia, aproveitando litoral, rios e açudes.\n• Realizar os “Jogos Abertos da Paraíba”, com etapas regionais e\nfinal na capital, e ampliar os jogos de praia como vitrine\nestadual.\n• Ampliar o Bolsa Esporte Paraíba no formato integral, com\nsuporte médico, nutricional, fisioterapêutico e psicológico,\nmentoria e continuidade dos estudos.\n• Prover passagens, transporte e hospedagem para que atletas e\nequipes do interior participem de competições estaduais,\nnacionais e internacionais.\n• Estruturar o futebol feminino, com escolinhas públicas,\ncategorias de base e calendário estadual.\n• Firmar convênio de apoio ao futebol profissional e de base, com\nfoco em estrutura, categorias de base e calendário, com\ncontrapartidas claras.\nEsporte comunitário, saúde e lazer\n• Ampliar e reorganizar o fomento estadual ao esporte, com\nprioridade ao esporte amador e comunitário e edital de apoio a\nfederações, ligas e clubes formadores.\n• Disseminar caminhadas orientadas e academias ao ar livre\npelos municípios.\n• Instalar praças da infância com delimitação segura e\nbrinquedos sensoriais, pensadas também para acolher crianças\nautistas e suas famílias.\n• Pactuar com a saúde protocolo científico de promoção da\natividade física e nutricional, do combate ao sedentarismo e da\nreabilitação articulada à atenção básica.\n\n65"
+          },
+          {
+            "id": "eixos-tematicos-49",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 66,
+            "paginaFinal": 66,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 11 Gestão Pública, Governança\ne Transformação Digital\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUm governo que entrega é eficiente, digital, transparente e\ndescentralizado. Cumpre metas, fiscaliza cada real, e trabalha junto\ncom os municípios.\nO desafio é modernizar a governança e valorizar quem faz o Estado\nfuncionar.\nO maior empecilho da administração estadual não é o tamanho da\nestrutura: é a ausência do Governo no interior. É a obra iniciada e\nparalisada, que consome recurso sem entregar serviço; e é a\nsobreposição de competências, que dilui responsabilidades e\nimpede cobrança.\nCompromissos com a gestão, a governança e a transformação\ndigital:\n• Assinar, nos primeiros cem dias, Pacto de Gestão com cada um\ndos 223 municípios, com metas verificáveis.\n• Publicar metas por secretaria em painel único, com bônus de\ndesempenho atrelado a indicadores auditáveis e verificação\nindependente.\n• Aperfeiçoar a governança da administração pública estadual\ncom o apoio dos sistemas de Inteligência Artificial.\n• Concluir obras paralisadas, com mapa público, comitê de\nretomada e metas anuais.\nTudo isso com observância à governança fiscal integrada, auditoria\nda folha, e à Lei de Eficiência na Gestão, com teto para cargos\ncomissionados e a valorização do servidor por concursos regulares,\ncarreira por mérito e mesa permanente de diálogo.\n\n66"
+          },
+          {
+            "id": "eixos-tematicos-50",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 67,
+            "paginaFinal": 67,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 11 Gestão Pública, Governança\ne Transformação Digital\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas de forma integrada entre SEPLAG, SEFAZ, Secretaria de\nAdministração e Controladoria-Geral, com os municípios como\nparceiros permanentes.\nMetas, transparência e integridade\n• Definir metas por secretaria, com monitoramento aberto e\nbônus por desempenho, ligando entrega a resultado.\n• Elaborar o painel das obras paralisadas, com comitê de\nretomada e metas anuais de conclusão.\n• Estruturar sistema estadual de Integridade e Compliance; com\na Controladoria-Geral fortalecida, e auditoria, corregedoria e\nouvidoria em plataforma única.\nCompras, fisco e governo digital\n• Digitalizar 100% das compras públicas, com central estadual,\nmarketplace governamental e auditoria algorítmica dos gastos.\n• Divulgar os dados públicos em tempo real, com padrões\ncomuns entre as secretarias.\n• Unificar todos os serviços do Estado em superaplicativo do\ncidadão, inspirado na experiência de João Pessoa.\nMunicipalismo e presença no interior\n• Firmar o “Pacto Paraíba 223”, levando cofinanciamento,\nconsórcios públicos e apoio técnico permanente e pactuando\ncom cada região metas em saúde, água, estradas vicinais,\neducação, habitação e geração de renda.\n\n67"
+          },
+          {
+            "id": "eixos-tematicos-51",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 68,
+            "paginaFinal": 68,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 11 Gestão Pública, Governança\ne Transformação Digital\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Realizar agenda do primeiro escalão do Governo em todas as\nregiões, com escuta que alimente o PPA, a LDO e a LOA.\n• Aproximar a administração estadual das regiões, com o\nGoverno itinerante no interior.\nServidor, estrutura e patrimônio do Estado\n• Instituir planos de carreira modernos e fiscalmente\nresponsáveis, com progressão por mérito e bônus por metas\ncumpridas.\n• Realizar calendário regular de concursos públicos para repor e\nrenovar quadros em saúde, educação, segurança e fiscalização,\ne em outras áreas com demanda.\n• Modernizar a ESPEP, transformando-a em escola de governo\ninovadora, com formação de lideranças e ensino a distância\nque alcance o servidor do interior.\n• Implantar energia solar e eficiência energética nos prédios\npúblicos,\nadotar\ncompras\nsustentáveis\ne\nsubstituir\nprogressivamente a frota oficial de veículos.\n\n68"
+          },
+          {
+            "id": "eixos-tematicos-52",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 69,
+            "paginaFinal": 69,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 12 Habitação, Urbanismo\ne Desenvolvimento Regional\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nMoradia digna, título de propriedade na mão e cidades melhores,\ncom desenvolvimento regional que respeita a vocação de cada\nterritório.\nO Estado passa a produzir moradia com os municípios, tratando a\ncasa como parte de um endereço completo, com infraestrutura e\nserviços públicos por perto.\nO entrave da moradia na Paraíba não é apenas o déficit de\nunidades: é a família que mora sem escritura; é a solução única\nconstrutiva, que ignora quem precisa apenas de reforma ou de\naluguel temporário; e é o imóvel público vazio no centro e ocioso\nonde já existe toda a infraestrutura.\nCompromissos com Habitação, Urbanismo e Desenvolvimento\nRegional:\n• Instituir a “Política Estadual de Habitação” como marco\npermanente, articulando Estado, municípios, Governo Federal,\ninstituições financeiras e iniciativa privada.\n• Reduzir o déficit habitacional urbano e rural, em parceria com o\nMinha Casa, Minha Vida, além de promover parcerias\nhabitacionais com os municípios, instituir a política de Aluguel\nSocial para a emergência, a Compra Assistida para a\nnecessidade definitiva e a destinação de imóveis ociosos à\nmoradia.\n• Regularizar a posse, entregando o título de propriedade à\nfamília, tanto no campo quanto na cidade.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas pela CEHAP em cooperação com os municípios, o\nGoverno Federal, os cartórios e as entidades de assistência técnica.\n\n69"
+          },
+          {
+            "id": "eixos-tematicos-53",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 70,
+            "paginaFinal": 70,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 12 Habitação, Urbanismo\ne Desenvolvimento Regional\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nMarco legal e parceria com os municípios\n• Instituir\na\n“Política Estadual de Habitação”,\ndando\nprevisibilidade, governança e responsabilidade fiscal ao\nconjunto dos programas habitacionais.\n• Firmar o “Programa de Parceria Habitacional”, em que o\nmunicípio entra com terreno, projeto, infraestrutura urbana ou\nisenção de tributos e o Estado com subsídio e execução.\n• Elaborar o mapa de vocações territoriais que orienta os\ninvestimentos e as políticas públicas segundo a economia de\ncada região.\nProdução de moradia e melhoria habitacional\n• Executar programa habitacional estadual de interesse social,\nurbano e rural, em parceria com o Minha Casa, Minha Vida.\n• Adotar o padrão sustentável na habitação popular, com energia\nsolar fotovoltaica, captação e reuso de água de chuva e\nmateriais de baixo carbono.\n• Reformar moradias precárias e insalubres de famílias de baixa\nrenda, em mutirão e convênio com os municípios, com\nassistência técnica e prioridade às famílias do Cadastro Único.\n• Construir moradia digna no campo, com cisterna, poço quando\nviável e energia solar, somada a assistência técnica.\n• Implantar Residenciais Inclusivos, com desenho universal e\nproximidade a serviços de saúde e reabilitação, para famílias\ncom pessoas com deficiência, autismo, doenças raras,\nmobilidade reduzida ou idosos dependentes.\n• Ofertar linha habitacional própria aos servidores públicos\nestaduais.\n• Garantir moradia e regularização fundiária às comunidades\nquilombolas, indígenas e ciganas, com respeito ao território e à\ncultura.\n\n70"
+          },
+          {
+            "id": "eixos-tematicos-54",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 71,
+            "paginaFinal": 71,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 12 Habitação, Urbanismo\ne Desenvolvimento Regional\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Viabilizar a “Compra Assistida”, permitindo à família escolher\nno mercado o imóvel onde quer morar, com apoio financeiro e\nassistência técnica, em áreas já dotadas de infraestrutura.\n• Ofertar aluguel social às famílias desabrigadas ou desalojadas\npor desastres, remoções ou situação de risco, com transição\nrápida para a solução definitiva.\nRegularização fundiária e urbanização\n• Regularizar a posse, entregando o título de propriedade à\nfamília, com registro cartorial e segurança jurídica.\n• Integrar a titulação à urbanização, com pavimentação,\ndrenagem, iluminação, saneamento e acessibilidade.\n• Manter trabalho social permanente em cada intervenção, com\neducação patrimonial e ambiental, gestão condominial,\nmediação de conflitos, qualificação profissional e educação\nfinanceira.\nCidades, centros históricos e requalificação urbana\n• Revitalizar os centros históricos das cidades-polo, associando\nrestauro, uso e apoio ao comércio local.\n• Instituir programa para a conversão progressiva das redes\naéreas de energia e telecomunicações em fiação subterrânea\nem áreas turísticas e históricas.\n• Retomar a ocupação residencial dos centros, transformando\nimóveis vazios, subutilizados ou degradados em habitação, com\nfinanciamento, incentivos fiscais e crédito à recuperação.\n\n71"
+          },
+          {
+            "id": "eixos-tematicos-55",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 72,
+            "paginaFinal": 72,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 12 Habitação, Urbanismo\ne Desenvolvimento Regional\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Avaliar o patrimônio imobiliário do Estado e destinar imóveis\nociosos à habitação, por requalificação das edificações\nexistentes.\n• Executar, em articulação com o Ministério Público e demais\nórgãos de proteção e controle, a requalificação urbana e\nambiental das orlas e dos rios urbanos, com captação de\nrecursos junto ao BID, ao BNDES e ao Governo Federal.\n\n72"
+          },
+          {
+            "id": "eixos-tematicos-56",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 73,
+            "paginaFinal": 73,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 13 Infraestrutura, Mobilidade\ne Logística\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma Paraíba conectada: estradas seguras, novos modais e energia\nlimpa como vetores de desenvolvimento.\nO Estado articula junto à União o que é federal, executa o que é\nestadual e mantém projeto pronto para destravar obra parada ou\nem ritmo lento.\nOs entraves da mobilidade não estão no simples traçado urbano:\nsão as mortes no trânsito, concentradas nos motociclistas; é a\ndependência quase exclusiva do modal rodoviário, sem ferrovia,\nsem porto competitivo e com malha aérea limitada; e é um\npotencial de energia renovável, entre os maiores do país, mas\nainda subaproveitado.\nCompromissos em Infraestrutura, Mobilidade e Logística:\n• Implementar uma política permanente para a redução das\nmortes no trânsito.\n• Recapear ao menos mil quilômetros da malha estadual e\nsinalizar os trechos críticos.\n• Pactuar, com a União e o DNIT, um cronograma de duplicação\nda BR-230, entregando pronto o projeto executivo do trecho\nSousa/Cajazeiras, e cofinanciar a duplicação da BR-104 Campina Grande/Esperança, e Campina Grande/Queimadas.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação pelo DER e\npelo DETRAN-PB, em articulação permanente com o DNIT, a ANTT, a\nInfra S.A. e os municípios.\n\n73"
+          },
+          {
+            "id": "eixos-tematicos-57",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 74,
+            "paginaFinal": 74,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 13 Infraestrutura, Mobilidade\ne Logística\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nRodovias e conservação da malha\n• Estudar a implantação de terceiras faixas inteligentes na\nBR-230 entre Soledade e Sousa, em articulação federal, com o\npropósito de melhorar o tráfego na rodovia.\n• Elaborar o projeto executivo e cofinanciar a duplicação do\ntrecho Sousa–Cajazeiras, eixo vital do Alto Sertão.\n• Elaborar projeto executivo e cofinanciar a duplicação da BR-104\nentre Campina Grande/Esperança e a ligação Campina\nGrande/Queimadas.\n• Executar plano de recapeamento e sinalização da malha\nestadual, com defensas metálicas e adequação geométrica nas\nserras de maior risco.\n• Implantar videomonitoramento, leitura automática de placas e\ngestão digital nas estradas estaduais.\n• Pavimentar estradas vicinais e ligações intermunicipais em\nprograma participativo, com validação técnica do DER e\npactuação com os municípios.\n• Transformar trechos estratégicos em rotas cênicas sinalizadas,\ncom mirantes e cicloturismo, na Rota do Sol, na Rota do Cariri e\nnos Caminhos do Frio.\n• Conceder à iniciativa privada eletropostos de recarga rápida\nnas principais rodovias paraibanas.\n• Pactuar a segurança viária entre DETRAN-PB, segurança pública,\nsaúde, municípios e sociedade, com metas anuais de redução\nde mortes e observatório de dados dos sinistros.\n• Estruturar, com estudos de viabilidade, projeto e licenciamento,\na conexão rodoviária entre a Ponte do Futuro, a BR-101 e a\nBR-230, definindo o traçado e as etapas de implantação a partir\nda integração com as obras existentes e da demanda\nmetropolitana.\n\n74"
+          },
+          {
+            "id": "eixos-tematicos-58",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 75,
+            "paginaFinal": 75,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 13 Infraestrutura, Mobilidade\ne Logística\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nAperfeiçoamento da Política de Trânsito\n• Fortalecer a modernização dos serviços do DETRAN, ampliando\no atendimento digitalizado no interior do estado.\n• Revisar todas as taxas administrativas com estudo de custo dos\nserviços, adotando a modicidade e ampliando isenções e\nreduções para as pessoas inscritas no CadÚnico.\n• Ampliar o programa CNH Social, com habilitação gratuita nas\ncategorias A e B e recategorização profissional para pessoas de\nbaixa renda.\n• Ofertar educação para o trânsito nas escolas da rede estadual\nde ensino e reforçar a Operação Lei Seca integrada às polícias.\n• Implementar um programa de regularização documental da\nmotocicleta do trabalhador rural em todas as regiões do estado.\n• Realizar o “DETRAN Itinerante” como mutirão de regularização,\nlevando serviços de habilitação, transferência e licenciamento\nàs comunidades rurais e aos assentamentos.\nMobilidade urbana e social\n• Garantir Passe Livre Estudantil para estudantes da Rede Pública.\n• Apoiar a implantação da bilhetagem eletrônica e a melhoria do\ntransporte coletivo na Região Metropolitana de Campina\nGrande.\n• Viabilizar parcerias junto aos municípios para implantação de\niluminação pública em LED inteligente e alimentada por energia\nsolar.\n\n75"
+          },
+          {
+            "id": "eixos-tematicos-59",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 76,
+            "paginaFinal": 76,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 13 Infraestrutura, Mobilidade\ne Logística\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nNovos modais: ferrovia, porto e aeroportos\n• Cooperar com o Governo Federal nos estudos de implantação\ndo trem rápido de passageiros Recife/João Pessoa, previsto no\nPlano Nacional de Logística de Transportes, do Ministério dos\nTransportes.\n• Modernizar a integração entre o Porto de Cabedelo, retroáreas,\nterminais, rodovias e serviços aduaneiros.\n• Implantar um escritório de prospecção de novas cargas\nportuárias no Porto de Cabedelo.\n• Estudar a implantação de portos secos no Alto Sertão e na\nregião metropolitana, condicionados a EVTEA, demanda de\ncarga e atração de operador.\nEnergia e transição verde\n• Estudar a viabilidade socioambiental da implantação de\ncomplexo eólico no trecho Lucena–Mataraca.\n• Articular junto à União a implantação de novas linhas de\ntransmissão de 500 kV entre o Sertão e o Litoral, condição para\nescoar a energia renovável gerada no interior.\n\n76"
+          },
+          {
+            "id": "eixos-tematicos-60",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 77,
+            "paginaFinal": 77,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 14 Meio Ambiente e Sustentabilidade\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nDesenvolvimento sustentável de verdade inclui o combate à\ndesertificação, lixo zero, rios vivos e a Caatinga como fonte de\nrenda e oportunidades no futuro.\nA política climática do Estado cabe em três verbos: plantar, mapear\ne preservar. E passa, também, por pagar pela preservação, em vez\nde apenas punir o desmatamento.\nO que trava a agenda ambiental paraibana não é a ausência de\nleis: é a falta de uma política pública consistente de saneamento,\nsão as bacias degradadas e a mata ciliar perdida, que aceleram a\ndesertificação; é a Caatinga sendo devastada e não tratada como\no ativo ambiental e econômico exclusivo que ela é.\nCompromissos para com o Meio Ambiente e a Sustentabilidade:\n• Ampliar, em parceria com os municípios, a coleta seletiva, o\ntratamento e a destinação final do lixo, em conformidade com a\nPolítica Nacional de Resíduos Sólidos.\n• Implementar política permanente de recuperação dos corpos\nhídricos críticos e recomposição de matas ciliares, a partir de\ndiagnóstico-base levantado em 2027.\n• Implantar a política estadual de recuperação da cobertura\nvegetal nativa da Caatinga, em parceria com os proprietários\nrurais, mediante remuneração, com mensuração por satélite e\nverificação independente.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas pela SUDEMA em parceria com os municípios, os\nconsórcios intermunicipais, as universidades, o MapBiomas e o INPE.\n\n77"
+          },
+          {
+            "id": "eixos-tematicos-61",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 78,
+            "paginaFinal": 78,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 14 Meio Ambiente e Sustentabilidade\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nTransformar a residência oficial da Granja Santana em parque\npúblico de lazer e convivência, com desenho universal para\nPessoas com Deficiência, pessoas autistas, crianças e idosos, com\nações de promoção de educação ambiental e cogestão de\nentidades representativas.\nResíduos e economia circular\n• Implantar, via parcerias e mediante consórcios intermunicipais,\ncentrais regionais de triagem e reciclagem e usinas de\ncompostagem, fechando o ciclo dos materiais no próprio\nEstado.\n• Ampliar a coleta seletiva e garantir renda aos catadores por\nmeio de consórcios municipais.\n• Incorporar à matriz energética o biometano dos aterros\nsanitários e estruturar a logística reversa de embalagens, pneus\ne eletrônicos.\n• Implantar usinas de resíduos da construção civil, com reuso de\nmaterial processado.\n• Estruturar a cadeia produtiva da pesca artesanal com manejo\nsustentável, defeso assistido e recuperação dos estoques.\nCaatinga, carbono e unidades de conservação\n• Realizar o inventário da Caatinga por satélite, com apoio do\nMapBiomas, do INPE e das universidades, criando a linha de base\ndo bioma.\n• Promover o manejo sustentável da Caatinga e expandir\nprogramas de educação ambiental para engajar a juventude\nna agenda ambiental.\n• Bonificar quem protege nascentes e a Caatinga, priorizando\npequenas propriedades rurais no combate à desertificação.\n• Instalar viveiros escolares nas escolas estaduais, incentivando\ncada estudante a produzir, plantar e adotar suas próprias\nmudas.\n• Elaborar planos de manejo e implantar centros de visitantes e\ntrilhas nas 17 unidades de conservação estaduais.\n\n78"
+          },
+          {
+            "id": "eixos-tematicos-62",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 79,
+            "paginaFinal": 79,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 14 Meio Ambiente e Sustentabilidade\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nGovernança e resiliência climática\n• Instituir o Plano Estadual de Ação Climática e Resiliência da\nParaíba, com metas regionais de mitigação e adaptação,\ninventário periódico das emissões e remoções de gases de\nefeito estufa, trajetória estadual de neutralidade de carbono e\nsistema integrado de monitoramento e alerta climático, em\nparceria com universidades e institutos de pesquisa.\n• Revitalizar as bacias hidrográficas paraibanas, em especial as\ndos rios Paraíba, Mamanguape e Piranhas.\n• Criar\no\nPrograma Paraíba Desenvolvimento Verde,\nestabelecendo critérios ambientais mensuráveis para a\nconcessão de incentivos fiscais, crédito, infraestrutura e apoio\nda CINEP, priorizando empresas que reduzam emissões,\naumentem a eficiência energética e cumpram metas de\nlogística reversa e economia circular.\n• Implantar o Programa Litoral Resiliente, com plano estadual de\nadaptação costeira e ações de recuperação e conservação de\nmanguezais, restingas e dunas como infraestrutura verde,\norientando as intervenções nas orlas e ampliando a proteção\ncontra erosão, ressacas e avanço do nível do mar.\n\n79"
+          },
+          {
+            "id": "eixos-tematicos-63",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 80,
+            "paginaFinal": 80,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 15 Turismo, Economia Criativa e Eventos\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nA Paraíba como destino o ano inteiro, do Litoral ao Sertão, com\nturismo e eventos gerando emprego e renda.\nO Estado deixa de tratar o turismo como calendário de verão e\npassa a tratá-lo como indústria, com financiamento estável,\nproduto formatado e promoção permanente.\nO maior entrave para o turismo paraibano crescer mais não está\nno atrativo: é a malha aérea limitada, que fecha a porta de entrada\ndo visitante; é o atrativo que nunca vira produto, com preço, roteiro\ne quem vende. E é a concentração da promoção e do fluxo turístico\nem poucas semanas e poucos municípios.\nCompromissos para as áreas do Turismo, Economia Criativa e\nEventos:\n• Capitalizar progressivamente o “Fundo Estruturante de\nDesenvolvimento Turístico”, conforme a disponibilidade\norçamentária e as fontes vinculadas;\n• Implantar o “Voe Paraíba”, fundo de incentivo à malha aérea,\nampliando rotas e assentos;\n• Implantar o calendário “Paraíba 365”, com eventos regionais e\nfundo anual específico, somado ao apoio permanente aos\ngrandes eventos da Paraíba.\nSustentam essa virada a Escola de Turismo, a Marca Paraíba na\npromoção nacional e internacional, Campina Grande como capital\ndos eventos e o Observatório do Turismo medindo fluxo, receita e\nsatisfação.\n\n80"
+          },
+          {
+            "id": "eixos-tematicos-64",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 81,
+            "paginaFinal": 81,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 15 Turismo, Economia Criativa e Eventos\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nPropostas, Programas e Ações\n• Estruturar o Fundo Estruturante de Desenvolvimento do Turismo\npara financiar infraestrutura, promoção, qualificação e\ninteriorização, atraindo recursos federais, parcerias e\ninvestimento privado.\n• Articular junto à União e aos operadores privados a ampliação\nda malha aérea, atraindo novas rotas e companhias, e\nintegrando transporte aéreo e rodoviário.\n• Promover a marca Paraíba em campanhas nacionais e\ninternacionais, com presença em feiras, plataforma digital,\nconteúdo audiovisual e parcerias com criadores.\nEventos e calendário\n\n• Propor legislação estadual que estabeleça financiamento\npermanente ao Maior São João do Mundo em Campina Grande,\ngarantindo previsibilidade de investimentos em infraestrutura,\nsegurança, mobilidade, cultura, promoção turística e apoio à\neconomia criativa. O objetivo é consolidar o evento como\npatrimônio cultural, impulsionador do turismo regional e da\ngeração de emprego e renda e com isso fortalecer o calendário\njunino paraibano.\n• Implantar o calendário “Paraíba 365”, com grandes eventos\ndistribuídos pelas regiões e apoio técnico, marketing e captação\nde patrocínio.\n• Apoiar de forma permanente os grandes eventos paraibanos,\nentre eles o Forró Verão, em João Pessoa, a Festa da Luz, em\nGuarabira, o São João de Patos, entre outros.\n• Premiar com o “Selo Evento Verde” as festas ambientalmente\nresponsáveis, com lixo zero, copos retornáveis, energia limpa e\ncompensação de emissões.\n• Desenvolver o turismo de negócios e conhecimento, com\nConvention Bureau e melhor aproveitamento dos centros de\nconvenções de Campina Grande e João Pessoa, mediante\nestudo de viabilidade, distribuindo demanda para a baixa\ntemporada.\n\n81"
+          },
+          {
+            "id": "eixos-tematicos-65",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 82,
+            "paginaFinal": 82,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 15 Turismo, Economia Criativa e Eventos\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nRoteiros, experiências e produtos turísticos\n• Consolidar, ampliar e comercializar a rede de roteiros de\nturismo de experiência, formatados com o Sebrae, operados por\nagências receptivas credenciadas.\n• Organizar roteiros em agrupamentos: cultural, de aventura,\nreligioso, gastronômico e histórico em todas as regiões do\nestado.\n• Estruturar a “Rota da Fé”, com santuários, romarias, calendário\nreligioso e centros de acolhimento ao peregrino.\n• Implementar o turismo náutico e de cruzeiros em Cabedelo,\ncom a construção do Terminal Marítimo Turístico de Passageiros\njunto à Fortaleza de Santa Catarina restaurada.\n• Estudar a viabilidade junto ao Governo Federal para reativação\nda ferrovia trecho Campina Grande/Galante, contemplando a\nreativação do “Trem do Forró”, e o trem histórico do Brejo, no\ntrecho entre Bananeiras e Pirpirituba, fortalecendo rotas\nturísticas regionais.\n• Desenvolver o turismo de natureza e aventura em todas as\nregiões do estado, com trilhas, geossítios e circuitos esportivos\nao ar livre.\n• Consolidar João Pessoa como porta de entrada da Paraíba do\ndestino\ninternacional,\ncom\ndistrito\ngastronômico,\nentretenimento e infraestrutura de eventos.\n\n82"
+          },
+          {
+            "id": "eixos-tematicos-66",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 83,
+            "paginaFinal": 83,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 15 Turismo, Economia Criativa e Eventos\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nQualificação, acolhimento e inteligência\n• Formar e certificar trabalhadores do setor pela Escola de\nTurismo, com programa dedicado aos jovens, como porta do\nprimeiro emprego.\n• Qualificar as agências receptivas, sinalizar os atrativos e\nintegrar a oferta ao aplicativo oficial do destino.\n• Assegurar a proteção do turista, com sinalização bilíngue,\natendimento multilíngue e delegacia especializada.\n• Firmar parceria com o Observatório do Turismo e apoiar o\ndesenvolvimento de aplicativo oficial, com Wi-Fi e QR codes nos\npontos turísticos e inteligência de dados orientando as decisões\npúblicas e privadas.\n\n83"
+          },
+          {
+            "id": "eixos-tematicos-67",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 84,
+            "paginaFinal": 84,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 16 Proteção e Bem-Estar Animal\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nVisão, Metas e Compromissos\nUma rede pública, gratuita e interiorizada de saúde e proteção\nanimal, do Litoral ao Sertão, com atendimento digno aos animais e\napoio a quem dedica a vida a protegê-los, não importa se por\nquestão de saúde pública, razões de afeto ou pelo simples respeito\nà vida.\nO que impede a expansão do apoio e cuidado animal na Paraíba\nnão é a ausência de causa organizada: é a inexistência de estrutura\npública veterinária fora da capital; é a superpopulação de cães e\ngatos, que só se resolve com castração contínua e em escala.\nHá pouco reconhecimento ao protetor independente que, ao lado\ndo município pequeno, ainda banca do próprio bolso o que deveria\nser política de Estado. Daí o princípio deste eixo: aqui o Estado é\nparceiro, e não concorrente de quem já faz.\nCompromissos pela proteção e pelo bem-estar dos animais:\n\n• Instalar cinco Hospitais do Pet em regiões estratégicas, com\nconsultas, exames, cirurgias e urgência permanente, a exemplo\ndo Hospital Pet em João Pessoa.\n• Disponibilizar castramóveis itinerantes a todas as regiões, com\nmutirões contínuos de castração, vacinação e microchipagem,\ngarantindo atendimento veterinário público e gratuito no\ninterior.\n• Implantar o programa “Estado Parceiro”, cofinanciando\nunidades veterinárias municipais e a aquisição de ração nos\nmunicípios que cumpram metas verificáveis de bem-estar\nanimal.\n• Apoiar quem já protege, fornecendo estrutura: Banco de Rações\ne Insumos para protetores e organizações cadastradas; Abrigo\nSolidário custeando acolhimento, tratamento e castração de\nanimais vítimas de abandono e maus-tratos; “Médico\nVeterinário Parceiro” credenciando clínicas privadas, com\ntabela pública, para tutores em vulnerabilidade.\n• Instalar Centros de Zoonoses e Bem-Estar Animal em\ncidades-polo.\n\n84"
+          },
+          {
+            "id": "eixos-tematicos-68",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 85,
+            "paginaFinal": 85,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 16 Proteção e Bem-Estar Animal\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nMaus-tratos e abandono deixarão de ser denúncia sem resposta: o\nBatalhão de Polícia Ambiental e a delegacia especializada\ngarantirão fiscalização e apuração rápidas e o “Resgate Animal”\nsocorrerá animais feridos ou retirados de situação de maus-tratos.\nPropostas, Programas e Ações\nAs ações a seguir são os instrumentos com que cada compromisso\nserá perseguido. Estão agrupadas por frente de atuação e\nexecutadas por etapas, a partir das cidades-polo, em parceria com\nos municípios e seus consórcios, o Conselho Regional de Medicina\nVeterinária (CRMV-PB), as universidades e os cursos de Medicina\nVeterinária, as organizações de proteção animal e os órgãos de\nsegurança pública.\nEstado parceiro e não concorrente\n• Instituir o programa “Estado Parceiro”, cofinanciando a\nimplantação, o equipamento e o custeio de unidades médicas\nveterinárias municipais que atendam também às cidades\nvizinhas, preferencialmente por consórcio intermunicipal, com\natendimento pactuado e resolutividade aferida.\nRede pública de saúde animal\n• Expandir para o interior a experiência da capital, com Hospitais\ndo Pet em Campina Grande, Guarabira, Patos, Sousa e\nCajazeiras, com consultas, exames, cirurgias e urgência\npermanente, articulados como referência regional das unidades\nmunicipais.\n\n85"
+          },
+          {
+            "id": "eixos-tematicos-69",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 86,
+            "paginaFinal": 86,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 16 Proteção e Bem-Estar Animal\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\n• Disponibilizar o serviço Castramóvel com unidades itinerantes,\ncampanhas e mutirões contínuos de castração, vacinação e\nmicrochipagem, com calendário pactuado com os municípios e\nprioridade aos territórios de maior vulnerabilidade, ao controle\npopulacional ético de cães e gatos e aos animais comunitários.\n• Implantar e apoiar Centros de Controle de Zoonoses e\nBem-Estar Animal nas cidades-polo do Cariri, do Sertão, do Brejo\ne do Alto Sertão.\n• Apoiar os municípios na implantação do “Resgate Animal”,\ncom veículo adaptado, equipe treinada, protocolo único de\nacionamento e porta de entrada garantida nas unidades\ncadastradas, para que o socorro não termine sem atendimento\nna outra ponta.\n• Integrar as unidades estaduais, municipais e credenciadas em\nsistema comum de regulação e prontuário, com identificação\nindividual do animal e registro público de castrações,\natendimentos e adoções.\nProteção, adoção e apoio a quem protege\n• Instituir o cadastro estadual único de protetores independentes,\nlares temporários e organizações de proteção animal, porta de\nentrada comum de todos os programas deste eixo.\n• Fornecer ração e medicamentos a instituições filantrópicas e\nprotetores independentes cadastrados, pelo Banco de Rações e\nInsumos da Paraíba.\n• Promover campanhas permanentes de adoção responsável,\ncom feiras de adoção integradas aos mutirões de castração e\nao calendário dos municípios habilitados.\n\n86"
+          },
+          {
+            "id": "eixos-tematicos-70",
+            "titulo": "EIXOS TEMÁTICOS",
+            "nivel": 1,
+            "paginaInicial": 87,
+            "paginaFinal": 87,
+            "origem": "pdftotext",
+            "conteudo": "EIXOS TEMÁTICOS\n\nEIXO 16 Proteção e Bem-Estar Animal\nPRA PARAÍBA DAR O PRÓXIMO PASSO\n\nFiscalização, resposta e responsabilização\n• Firmar cooperação com o Ministério Público, o CRMV-PB e as\nuniversidades para a perícia e o laudo veterinário, sem os quais\na denúncia de maus-tratos não se sustenta em juízo.\n• Capacitar de forma permanente policiais, peritos, fiscais\nmunicipais e agentes de zoonoses no reconhecimento, no\nregistro e na apuração dos maus-tratos.\nConsiderações finais\nEste plano foi elaborado escutando a população e os setores\norganizados da sociedade. Não é mera peça de campanha: é o\nresultado dos anseios vindos de todos os recantos da Paraíba.\n\nParaíba em Novo Ritmo, do Litoral ao Sertão\n\n87"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "5aff14da6683a720156fe22bd861fb58643bdf7117d550d1f6cb04a4bb8353d1"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d6dae01445d2dcaaa144c7b6e4a021a865d7a2daba0fc20c4bc4a8396c7b3286"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "aaf5ecc206de69c5bdb71ee8784931be44b73f3fdb78f1afa97d9c8da71e2030"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "bbe6394889a5dd050add9a67c1524d16a78f23d89071f166ea862bdf33a73271"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "b9974d4f88aff61ccae6f12f1f5a3990e36f6f7e2b630a26a64c8954c77878d5"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "95d5d50294d42619f9445c0ee063f1e3f72e970bcd3079e6055054c9a352ffe0"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "acb2bf9233fc987fd9bb53a8cfa2ddd976578b8a12ab8f0af143921726d2b562"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "018ee6069303e53a60d940c89291faebea7ea978b4a630a79c6b632e593b28cb"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "5107bfd54fa57aad5381348aff5daf7fd900a27bdb5a218c9e00c7a631132f24"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "87179f65b8ba31a34278a624212657ae79f0f88e1300d63ff56ad9a4886ccedd"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9b3f58379e1fc92d57074bbabfcf31a470bc6e6947014fafbb2fb863aeeab669"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "40521765aa583c5bb5d2ecd524074bd6489baca48bc33068c25d32db4199b948"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "acf186f6def7b2e86184eb75511743b548a78f2bb98ecfd37d5cf332a7b4fdec"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "412517d99fc8b6aa7041af46997d0c811a1d86aea68894fb09ee351248f4a4d5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "8c8aca6793ba69ce4d749a7e3abc50ad60df2f16a73c2ee96b5d3557056fd88a"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "d480ae495c5be669af6ca753f4522c4b70a3a4e8297d75b1d4b361d69f9d6b99"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "69aec57d894d33c8cc96a4a3cde76e264907ae9d927e3a1a30bf7db35a8d9ae6"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "c5d1986ddb7d7d03f77d1b8627c669b0eaa14626710310b138444718c91713c9"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "b735716010b4b8587437304edc50a75fdc4a3891016ee24a9bfa0f68a7c5f584"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "954b3c8b3bf0e9c5a301f794abed2a31086f4d78f6a4f96bdc00974535af3364"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "658de0b145a7768d8abc6352579f6c7e27fa3e67018fbd5f94b9972f56bc3b6b"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "5b28cfe86cc213283e414306a495db39b7510e4925713e25282c80696b6d10e8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "d4c821d2d6bdc1bccb87d18a53cb9fc11a398df000890ac2d682f555819eb378"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "7dda496adf4f9a20f2d30bc093384c13f3627a51241f701dc924470987c5c49a"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9ee38ffd445f2f648cfade02888d2ea168a1f1de7f62070c6848199f0188430f"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "4551f68d3d4be1386a6fe9ade4f1b96bb083dafa65cbad80f2b9953f44a0426d"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "2e24d3147aebc2042201fceacee87b56c18603ef0a97b05668179cb93b6b7674"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "e34c2967b899270a22b823b497f7a57c1284151656a97422b4da0f7689a1fc54"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "403cfe744534e7bb389e057abbdcb2ed88725ee63ef64c8fb28fcd251a909025"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "212f19007c67725439625b0a8cacb063c4b9bfc2bbe964e59557090ba87d2527"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "2b8be1ae5973ac34184d9d20c8080b899e314a50ad06a84374b0ffd3aa73ec9c"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "a9c4e11a49f5a86f2cdebac268934ca11d95b4b77dbfb4a24c9addf21f7c6ae3"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "a9f285db5ff11bfc6fefef09b0756380231c11747f0155bb757a32fdcccbe2ea"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "fb3aab4a3ec4e665e080d817ba2cb2f7f587f4960fedeb183b6743609b5d2c40"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "de6fc9c6e6853a6633bd536975ee2a66976070df1c9f60a356365d2d8c2feb07"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "955159174790b9e0af8108702513af0fab3e2bd4f1e0257e40b24d2dc09de9be"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "68b60cf3b7a64c237b3a3a3dda6ec3763b995445795aab8c13ab797adc8332d5"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "0b5bdfcdde6be6d94b2359d9359d4f6811ab515ea44f74a27d3740063e512ced"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "7517319cdd2f6d50220c2ef77a462658f0565fcee5636c660a31772a3d7db160"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "cd25e39ca745d122364cbf93fbc935d72cf0542c7e0c089937c8a6c30be519d1"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "40c3cc933bcdc32b902fa32b5d84e0dd3e4670f5e460fca95772e64b4d940f1e"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "26a36c846a43900275a22302c3979a42eda182b2482d5ebc4b8dfc8fe0c24804"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "8a47f7f78be496f452ba7c066ff36aa43c62cb1ffa43d1597c14f19b6ba9bab0"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "6f385a37f2fe01404fb5420af361b216af81958d4ab2904848893e6052c8aadf"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "8103b6f9337f52cf5c0c119966307498e2526d1fbf8b431c521d509009075558"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "f333fe8998a80e4a3f4d844b21e19eadd9f8ecdeaff0b0fa230a08f594e4d1be"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "4439b50abba6bddc3cdd0c71bfd1a151161059c7a699ea958331aafd7761b357"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "02b5588b7068682ad6d0e88901a5b13ab58a5a229914154f5120bb9f12304a4b"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "33cd76f8750f67235997fb2d5785dc9d80d6256d08fec3de7146877382030fb3"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "64599b3b571dd7495753febbdba2d2872330e22814cd9083c18032e9e6faa559"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "7e9cd7c72a0f080823716a7aed3275febb38f6245e6c8bdfad689672d8ec1ffb"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "088050bc286e1da373b9e0531c779858fc05f442b51575e926f020a5a98539ca"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "8c66d3092708d96cdbbacc9cea1caad72168ec271ba3161cf85416e5ea5dad47"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "2a5d5a2d3e2ec628f06d3d6a7fcf16f24aa5f75c9950bb582e6c513f5d0942be"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "dec8b2fcaa04358e52eb6cbb3cd914c7985406877986038a75eb53d3ff111f6b"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "a79787f8ddb1f8787129ceffd64904e7677f5fa4206b2805dbba930bdb924dee"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "dc3e46ee6d99ce099b26c1ee3505bf472102dba09212bd7a74a6731637fd342a"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "85f1957e09a4173ac6e6b6ba7d6ef5c8d4caf561bb224a622585263f7fb292bc"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "1398dd8f686e37c114c054e39ff13f30c4cc6062274386448e74cc7d0e1fed90"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "f1a2e6238625f136de1591e6fca4b965c5b2c074f99d1e5067507fda432d961a"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "4d6b454b2cc90b1abe0ae8ba1b27b0bc66975d1d37d73e07ce12d7a6e25491ec"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "d173de734e4dd58fe053eb6d916c97c0e6dd0e32168cd4031ed74d549e20b25c"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "962eef529325c709c1c72ca176d7c1e987b249600cbf814b6e9756309c5bf992"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "4fab9eef13a993434faadbc5e546b46b1e377dae1ce9d56f73cdb9d8d0f9b6bb"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "d173e07a7ade5ef639ecb2e3989ce9cb73a54c3261e3e08544b3c84ee87657fd"
+          },
+          {
+            "pagina": 66,
+            "origem": "pdftotext",
+            "textSha256": "0809342a9ee2200b67b9041c7e94e1625125b913d7fc0aba0872e251e5d96726"
+          },
+          {
+            "pagina": 67,
+            "origem": "pdftotext",
+            "textSha256": "ec736174782f2c38259480681c085a880eda2c12d036b35b1ec35cc3b49f9b21"
+          },
+          {
+            "pagina": 68,
+            "origem": "pdftotext",
+            "textSha256": "1fbc343dbc2fd6d48a6134a40e0bf820f9e9801be030a4044b0609111501088c"
+          },
+          {
+            "pagina": 69,
+            "origem": "pdftotext",
+            "textSha256": "949f97fa8e761b5569e76189977880cfb2c6e1195a965cb79de7a28bbefe93c3"
+          },
+          {
+            "pagina": 70,
+            "origem": "pdftotext",
+            "textSha256": "fd6079edb7c9b7d6e49fe13885602c3577fcedf393d59044f81cbd60f17ba988"
+          },
+          {
+            "pagina": 71,
+            "origem": "pdftotext",
+            "textSha256": "fd060791aa2a652164f6938fae8758b51277c38981d7712653998a74611f1a89"
+          },
+          {
+            "pagina": 72,
+            "origem": "pdftotext",
+            "textSha256": "f5b2c272b03f0dcb9fcc381fae8bc81ed529eed08b96a54b4f1c809e2d55373e"
+          },
+          {
+            "pagina": 73,
+            "origem": "pdftotext",
+            "textSha256": "6fca638bf7b4774338a532984ef00925b325fd3e877a333ee393a4033ba0446f"
+          },
+          {
+            "pagina": 74,
+            "origem": "pdftotext",
+            "textSha256": "b85eafa49724d2cb2210ad77a4c919c586a0c5e5fc5e8157c20d72d2034bc933"
+          },
+          {
+            "pagina": 75,
+            "origem": "pdftotext",
+            "textSha256": "06bd0fcff29f34e5cd40e2b6a270a7f733997ff08d3896ebcd3264551c042208"
+          },
+          {
+            "pagina": 76,
+            "origem": "pdftotext",
+            "textSha256": "307577826a0dbec8516d913249ce37cc0e1f4e32f0c706d40d60c71b7aa48156"
+          },
+          {
+            "pagina": 77,
+            "origem": "pdftotext",
+            "textSha256": "50919f1f63e083a9f99afce7915e9bcfb3cdb683d9ee531370943a154ac69f35"
+          },
+          {
+            "pagina": 78,
+            "origem": "pdftotext",
+            "textSha256": "8efb2ce20363d3d0465afc08c1c30db248d970cc4e83e8acd743a4c837a3f6a1"
+          },
+          {
+            "pagina": 79,
+            "origem": "pdftotext",
+            "textSha256": "d681069dc81f75c79137eecccefb42abec695bdb8daa1b7cdbd7f2232ae9c103"
+          },
+          {
+            "pagina": 80,
+            "origem": "pdftotext",
+            "textSha256": "e2f8deb1ebda0d77ca8dc985be58282c11abef83dbc03227b0e283ae74a21ed7"
+          },
+          {
+            "pagina": 81,
+            "origem": "pdftotext",
+            "textSha256": "6cab7c5d6ca55e2728fdb516a18612add7c3c94ad70c5f05206286c2434b22a0"
+          },
+          {
+            "pagina": 82,
+            "origem": "pdftotext",
+            "textSha256": "775878966da6dab8ec46664b7e66f258af0efb2e1f4c127dbe5d7a49ffe16c09"
+          },
+          {
+            "pagina": 83,
+            "origem": "pdftotext",
+            "textSha256": "d3c3d8841c890af54df3e048395d1aa576013f513c7b6cd450219477e7630ad8"
+          },
+          {
+            "pagina": 84,
+            "origem": "pdftotext",
+            "textSha256": "32413d00f8ff82ec242ae7d9c78e056793e2a615ddc5677c482dd39b9130e61f"
+          },
+          {
+            "pagina": 85,
+            "origem": "pdftotext",
+            "textSha256": "1a5bb81bd01e12b355f73609da4b7209d90deb57df3c3e2e3d3b6dce5a55f9e5"
+          },
+          {
+            "pagina": 86,
+            "origem": "pdftotext",
+            "textSha256": "0cd42f571f62c79847e20701c9d26da38f04fe058211daca9364d023bb958354"
+          },
+          {
+            "pagina": 87,
+            "origem": "pdftotext",
+            "textSha256": "bf35bbc6648f1d2f942c3a9ce951698e7a74846c9d80f638107e407307c147bd"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Este Plano de Governo para o período de 2027 a 2030 nasceu dessa escuta presente por cada região, cada município. Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades. Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada. Implantar o “SAMU Aéreo Paraíba”, com bases em João Pessoa, Campina Grande, Patos e Sousa; com serviços aeromédicos, Pelotão Aeromédico Estadual e plantão permanente. Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos. Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias. Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada. Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa.",
+    "frases": [
+      {
+        "texto": "Este Plano de Governo para o período de 2027 a 2030 nasceu dessa escuta presente por cada região, cada município.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 5,
+            "trecho": "Este Plano de Governo para o período de 2027 a 2030 nasceu dessa escuta presente por cada região, cada município."
+          }
+        ]
+      },
+      {
+        "texto": "Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 11,
+            "trecho": "Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades."
+          }
+        ]
+      },
+      {
+        "texto": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 26,
+            "trecho": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada."
+          }
+        ]
+      },
+      {
+        "texto": "Implantar o “SAMU Aéreo Paraíba”, com bases em João Pessoa, Campina Grande, Patos e Sousa; com serviços aeromédicos, Pelotão Aeromédico Estadual e plantão permanente.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 24,
+            "trecho": "Implantar o “SAMU Aéreo Paraíba”, com bases em João Pessoa, Campina Grande, Patos e Sousa; com serviços aeromédicos, Pelotão Aeromédico Estadual e plantão permanente."
+          }
+        ]
+      },
+      {
+        "texto": "Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 33,
+            "trecho": "Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos."
+          }
+        ]
+      },
+      {
+        "texto": "Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 67,
+            "trecho": "Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias."
+          }
+        ]
+      },
+      {
+        "texto": "Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 42,
+            "trecho": "Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada."
+          }
+        ]
+      },
+      {
+        "texto": "Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 84,
+            "trecho": "Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O tema aborda a capacidade operacional do aparato de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 11,
+            "trecho": "Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades."
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "O tema aborda a regionalização do atendimento especializado.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 26,
+            "trecho": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada."
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O tema aborda tecnologia da informação para estudantes da rede estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 33,
+            "trecho": "Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos."
+          }
+        ]
+      },
+      {
+        "id": "gestao-publica",
+        "titulo": "Gestão pública",
+        "descricao": "O tema aborda a divulgação de dados públicos.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 67,
+            "trecho": "Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias."
+          }
+        ]
+      },
+      {
+        "id": "recursos-hidricos",
+        "titulo": "Recursos hídricos",
+        "descricao": "O tema aborda dessalinização movida a energia solar.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 42,
+            "trecho": "Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada."
+          }
+        ]
+      },
+      {
+        "id": "protecao-animal",
+        "titulo": "Proteção animal",
+        "descricao": "O tema aborda hospitais veterinários regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002544133:01",
+            "pagina": 84,
+            "trecho": "Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:15:43.907Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:18:22.147Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Período 2027-2030 está sustentado literalmente no texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas reproduz o texto do documento, sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: origem do plano de governo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:1:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Números 'seis' e 'cinco mil' estão literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica adicionada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:2:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:3:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há dados numéricos quantitativos além das cidades citadas, todas sustentadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde/emergência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:4:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:5:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de transparência de dados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:6:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de recursos hídricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:7:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'cinco' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, reproduz o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de proteção animal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:frase:8:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação temática não contém números próprios; a evidência sustenta o conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:seguranca-publica:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:saude:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de educação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:educacao:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de gestão pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: gestão pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:gestao-publica:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de recursos hídricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: recursos hídricos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:recursos-hidricos:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição temática de proteção animal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única: proteção animal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002544133:tema:protecao-animal:documentos:PB:150002544133:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula temática descrita."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PB:150002544133",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PB:150002544133:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 52750,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3445,
+          "reasoning_output_tokens": 1914
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29267,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 26078,
+          "output_tokens_details": {
+            "thinking_tokens": 625
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29267,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 26078,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29267,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29267
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.40082840000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:19:12Z",
+    "sourceSha256": "818514371331ca40e2bd420aa8b3fecb4771ddea5ddb46467c9fe93d76ade181",
+    "extractedTextSha256": "265bdb1ee4a7002d0f7214645a4e44a2e666aa00320f6419eb0a7a11df300a89",
+    "documentCount": 1,
+    "documentSetSha256": "25b52fc75442807e844721e661fe6b2caf027a5adb06e4260a4c24a44c706391",
+    "contentSha256": "addca0e8a67bfef19006fc0f05ca6c662366118ea88756666b6c5660ed9a6843"
+  }
+}

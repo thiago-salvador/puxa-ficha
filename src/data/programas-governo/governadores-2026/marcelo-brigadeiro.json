@@ -1,0 +1,972 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SC",
+    "sqCandidato": "240002544118",
+    "slug": "marcelo-brigadeiro",
+    "nomeUrna": "MARCELO BRIGADEIRO",
+    "partido": "MISSÃO",
+    "arquivoNome": "2026SC240002544118_01.pdf",
+    "arquivoNoPacote": "SC/2026SC240002544118_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SC:240002544118:01",
+      "fonte": {
+        "arquivoNome": "2026SC240002544118_01.pdf",
+        "arquivoNoPacote": "SC/2026SC240002544118_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "38d41f653a5b10e26f9e6acc73ad428aa01a8e85f3c9f037373daa95c7666304",
+        "extractedTextSha256": "f33794e17e8b5b698b540eaf2003e7498a10c77dd23c125c9efc6ca6b58f1b86",
+        "paginas": 21,
+        "secoes": [
+          {
+            "id": "plano-de-governo-b-14",
+            "titulo": "PLANO DE GOVERNO B-14",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO B-14\nMARCELO BRIGADEIRO\n\nGOVERNO DE SANTA CATARINA\n2027–2030"
+          },
+          {
+            "id": "mensagem-inicial",
+            "titulo": "MENSAGEM INICIAL",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "MENSAGEM INICIAL\nSanta Catarina é o estado que escolhi para viver, construir minha\nfamília, empreender e realizar meus sonhos. Foi aqui que encontrei\noportunidades, prosperidade e uma qualidade de vida que sempre serviram\nde referência para todo o Brasil. No entanto, ao longo dos últimos anos,\ntenho acompanhado com preocupação o avanço de problemas que antes\npareciam distantes da realidade catarinense. O crescimento da\ncriminalidade organizada, a sensação de insegurança nas cidades, a\nburocracia excessiva que dificulta a vida de quem produz, os gargalos de\ninfraestrutura e o aumento do custo de vida são desafios que exigem\ncoragem, competência e determinação para serem enfrentados.\nNão sou político profissional. Minha trajetória foi construída no\nesporte, no empreendedorismo e na vida real, enfrentando desafios\ndiariamente, sem privilégios e sem depender da política para viver. Foi\njustamente por enxergar a deterioração de aspectos importantes da\nqualidade de vida catarinense que decidi aceitar a MISSÃO de contribuir\npara a construção de um novo ciclo de desenvolvimento para o nosso\nestado. Acredito que o governo deve existir para servir as pessoas, e não\npara servir a si próprio. Por isso, defendemos um Estado eficiente,\nmoderno, transparente e responsável com os recursos públicos.\nNa segurança pública, não aceitaremos que facções criminosas\nimponham o medo às famílias catarinenses. O Estado deve estar presente,\nforte e organizado, utilizando inteligência, tecnologia e integração das\nforças de segurança para proteger os cidadãos de bem e combater o crime\ncom firmeza. Na economia, acreditamos que a prosperidade nasce do\ntrabalho, da inovação e da livre iniciativa. O empreendedor, o trabalhador,\no agricultor, o pescador, o comerciante, o industrial e o profissional liberal\nprecisam de um ambiente favorável para produzir riqueza, gerar empregos\ne impulsionar o desenvolvimento regional. Na educação, defenderemos\numa formação voltada para o conhecimento, para a cidadania e para a\npreparação dos jovens para os desafios do século XXI. Precisamos\naproximar a educação das demandas do mercado de trabalho, da inovação\ntecnológica e do empreendedorismo. Na saúde, nosso compromisso é com\na eficiência da gestão, a redução das filas e a ampliação do acesso aos"
+          },
+          {
+            "id": "servicos-especializados-o-cidadao-precisa-encontrar-respostas-rapidas-e",
+            "titulo": "serviços especializados. O cidadão precisa encontrar respostas rápidas e",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "serviços especializados. O cidadão precisa encontrar respostas rápidas e\natendimento digno quando mais necessita do poder público.\nTambém acreditamos que Santa Catarina deve liderar o Brasil em\ninfraestrutura, logística, tecnologia, inovação, turismo e desenvolvimento\nregional. Para isso, utilizaremos instrumentos modernos de gestão,\nincluindo parcerias com a iniciativa privada, privatizações, concessões e\nparcerias público-privadas capazes de ampliar investimentos e acelerar a\nentrega de resultados para a população. Assim como acreditamos que Santa\nCatarina deve virar a página da vergonha nacional que são os índices de\nsaneamento (água e esgoto) no estado. Neste sentido, vamos elaborar e\naprovar a lei de regionalização estadual do saneamento, permitindo que\ntodos os 295 municípios catarinenses tenham acesso a investimentos para\na universalização do serviço até o ano de 2033.\nEste Plano de Governo representa mais do que um conjunto de\npropostas. Representa uma visão de futuro baseada na responsabilidade, na\nliberdade, na segurança, na meritocracia e no respeito ao dinheiro do\ncontribuinte. Santa Catarina tem todas as condições para continuar sendo\nreferência nacional. Mas isso exige coragem para enfrentar problemas,\ndisposição para inovar e compromisso permanente com resultados.\nConvido cada catarinense a participar desta construção coletiva.\nJuntos, podemos fortalecer aquilo que temos de melhor e preparar nosso\nestado para os desafios e oportunidades das próximas décadas."
+          },
+          {
+            "id": "capitulo-1-apresentacao-e-visao-de-futuro",
+            "titulo": "CAPÍTULO 1 – Apresentação e Visão de Futuro",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 1 – Apresentação e Visão de Futuro\nSanta Catarina apresenta indicadores socioeconômicos acima da média\nnacional, porém enfrenta desafios relevantes relacionados à infraestrutura\nlogística, segurança pública, saúde especializada, competitividade\neconômica, qualificação profissional e eficiência administrativa. A\npresente proposta busca combinar responsabilidade fiscal, liberdade\neconômica, segurança jurídica, fortalecimento institucional e foco em\nresultados.\nDiretrizes estratégicas:\n• Estado eficiente e orientado por resultados.\n• Segurança pública com uso intensivo de inteligência.\n• Educação voltada para desempenho e empregabilidade.\n• Saúde baseada em gestão e redução de filas.\n• Promoção de privatizações e ampliação de PPPs e concessões.\n• Desenvolvimento regional equilibrado.\n• Combate permanente à corrupção.\n• Inovação, empreendedorismo e competitividade.\nMetas 2027-2030:\n- Elevar investimentos públicos e privados.\n- Reduzir filas na saúde.\n- Ampliar escolas em tempo integral.\n- Melhorar indicadores de segurança.\n- Expandir infraestrutura logística.\n- Atrair novos investimentos produtivos."
+          },
+          {
+            "id": "capitulo-2-propostas",
+            "titulo": "CAPÍTULO 2 - Propostas",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "CAPÍTULO 2 - Propostas\n\n2.1 GESTÃO PÚBLICA E REFORMA ADMINISTRATIVA\nObjetivo: Criar um governo enxuto, orientado por resultados e pela\navaliação de indicadores de desempenho (KPIs).\n2.1.1 Redução do número de Secretarias Estaduais a fim de diminuir os\ncustos do governo estadual e o loteamento da máquina pública por agentes\npolíticos;\n2.1.2 Redução do número de cargos comissionados em 25% na\nadministração pública direta e indireta do Governo Estadual;\n2.1.3 Redução gradual, iniciando-se com a redução de 10% das despesas e\ncustos administrativos no Governo Estadual;\n2.1.4 Extinção dos recém-criados escritórios de atração de investimentos\nda Invest SC nos EUA e na China;\n2.1.5 Redistribuir os servidores de carreira para suas funções de origem ou\nremanejar de acordo com suas competências; e\n2.1.6 Venda (leilão) da área da Casa d’Agronômica e uso dos recursos da\nalienação do imóvel para conclusão do projeto de PPP do Complexo\nHospitalar de Santa Catarina, abandonado pelo Governo atual.\n\n2.2 AGRICULTURA E AGRONEGÓCIO\nObjetivo: Fortalecer o principal setor exportador catarinense.\n\n2.2.1 Investir em programas de qualificação profissional voltados à\nmanutenção e à ampliação da produtividade agropecuária regional;\n2.2.2 Incentivar orientações para profissionalizar as produções familiares;"
+          },
+          {
+            "id": "2-2-3-estimular-medidas-que-permitam-a-reciclagem-e-aproveitamento-dos",
+            "titulo": "2.2.3 Estimular medidas que permitam a reciclagem e aproveitamento dos",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "2.2.3 Estimular medidas que permitam a reciclagem e aproveitamento dos\nresíduos e dejetos da atividade agropecuária gerando produção de energia,\nfertilizantes e garantindo a sustentabilidade;\n2.2.4 Desenvolver programas de incentivo para a adoção de soluções\ntecnológicas para o campo;\n2.2.5 Desburocratizar a tramitação dos processos de regulamentação\nsanitária e proteção ambiental dando celeridade na efetivação das ações;\n2.2.6 Criação do Programa Agro Digital, para universalizar o acesso à\ninternet no meio rural, ampliando as redes de internet e telefonia ou\npermitindo o financiamento, por meio do BADESC, para aquisição de\ninternet via satélite;\n2.2.7 Ampliar a distribuição de energia elétrica e gás natural no meio rural,\ncom apoio e estímulo à adoção e produção de energias alternativas; e\n2.2.8 Pavimentação de estradas vicinais e ampliação da conectividade rural.\n\n2.3 ASSISTÊNCIA SOCIAL\nObjetivo: Romper o ciclo da rua pela emancipação econômica, substituindo\no assistencialismo, que apenas fixa o indivíduo no logradouro, por um fluxo\núnico de triagem, tratamento e trabalho, com porta de entrada e porta de\nsaída claramente definidas.\n2.3.1 Hub Socioassistencial, equipamento único e aglutinador criado nos\nprincipais polos de concentração de população em situação de rua das\nmaiores cidades catarinenses, que centraliza os atendimentos básicos,\nalimentação, banho, higiene, guarda de pertences, emissão de documentos,\nacolhimento e triagem, com permanência máxima de 72 horas, atuando\ncomo porta de entrada e central de encaminhamento de toda a rede;\n2.3.2 Centro Seguro, projeto de reordenamento da rede socioassistencial\nque torna o Hub a porta de entrada obrigatória do sistema, de modo que os\ndemais serviços passem a operar exclusivamente por encaminhamento, e\nnão como pontos de permanência e fixação na rua, encerrando a lógica de"
+          },
+          {
+            "id": "atendimento-disperso-que-estimula-a-manutencao-do-individuo-no",
+            "titulo": "atendimento disperso que estimula a manutenção do indivíduo no",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "atendimento disperso que estimula a manutenção do indivíduo no\nlogradouro público;\n2.3.3 Definição, a partir do Hub, de três destinos estabelecidos por triagem\ntécnica, conforme o vínculo territorial e a condição de dependência química\nde cada indivíduo:\n2.3.3.1 Programa De Volta ao Lar, pelo qual indivíduos sem vínculo com\nSanta Catarina são reconduzidos às suas cidades ou estados de origem, com\nfoco na reconstrução do vínculo familiar;\n2.3.3.2 Encaminhamento para tratamento, pelo qual indivíduos em\nsituação de dependência química são encaminhados para internação nas\nmodalidades voluntária, involuntária e compulsória, observados os\nrequisitos legais aplicáveis, destinada àqueles que já perderam a\ncapacidade de decidir sobre a própria vida e/ou representem risco a si\nmesmos ou à sociedade, com acompanhamento durante o tratamento e no\npós-alta; e\n2.3.3.3 Comunidade Terapêutica e Frente de Trabalho, pela qual, após a alta\ndo tratamento, no caso de dependentes químicos, ou diretamente, no caso\nde não dependentes com vínculo em Santa Catarina, o indivíduo é inserido\nem comunidade terapêutica ou casa de passagem, seguida de frente de\ntrabalho remunerada e capacitação profissional, com participação laboral\nobservados os direitos e garantias legais, inspirando-se em modelos de\nsucesso já consolidados.\n2.3.4 Utilização do Fundo de Assistência Social de maneira transparente e\nexclusivamente para políticas públicas de eficácia comprovada, vedado o\nemprego de recursos em ações que estimulem o assistencialismo, a\nmendicância e a permanência na rua; e\n2.3.5 Redução progressiva da população em situação de rua em Santa\nCatarina, em apoio e em articulação com os municípios catarinenses, pela\ncombinação estruturada de tratamento e trabalho.\n2.3.6 Criação do registro estadual de PSRs, utilizando sistema integrado de\nabordagem social com cadastro ativo de pessoas em situação de rua,"
+          },
+          {
+            "id": "substituindo-metodos-antiquados-facilitando-o-tratamento-e-o-acesso-a",
+            "titulo": "substituindo métodos antiquados, facilitando o tratamento e o acesso a",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "substituindo métodos antiquados, facilitando o tratamento e o acesso a\ninformações por parte dos profissionais.\n\n2.4 COMBATE À CORRUPÇÃO E TRANSPARÊNCIA\nObjetivo: Reduzir desperdícios e aumentar a eficiência do governo.\n\n2.4.1 Criar a Diretoria de Inteligência de Combate à Corrupção Pública\n(DICP), órgão permanente e com autonomia para rastreamento, auditoria\ne produção de inteligência sobre o uso inadequado de recursos públicos em\ncontratos, licitações e emendas parlamentares;\n2.4.2 Implantar portal de transparência em tempo real, com divulgação\nimediata de contratos, licitações e despesas realizadas com cartões\ncorporativos;\n2.4.3 Auditoria permanente para controle dos gastos estaduais e revisão de\nestruturas administrativas consideradas ineficientes;\n2.4.4 Governo 100% Digital com digitalização completa dos serviços\nestaduais e redução da burocracia para empresas e cidadãos, eliminando\nassim a prática de criar dificuldades para venda de facilidades por agentes\npúblicos; e\n2.4.5 Implantação do projeto “Grande Irmão Catarina”, por meio do qual as\nprincipais atividades da gestão serão transmitidas ao vivo, em formato IRL,\nem plataforma gratuita, para que toda a população possa acompanhar as\nações do governo.\n\n2.5 COMBATE AO DESEMPREGO\nObjetivo: Reduzir o desemprego, ampliar a geração de renda e promover\na autonomia econômica das famílias beneficiárias de programas sociais."
+          },
+          {
+            "id": "2-5-1-fomento-aos-micro-e-pequenos-empreendedores-por-meio-do",
+            "titulo": "2.5.1 Fomento aos micro e pequenos empreendedores, por meio do",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "2.5.1 Fomento aos micro e pequenos empreendedores, por meio do\nprograma Juro Zero para iniciar o seu negócio;\n2.5.2 Estimular a criação de novos negócios por meio da desburocratização\npara abertura e fechamento de empresas;\n2.5.3 Reduzir a carga tributária para aumentar a competitividade do setor\nprodutivo catarinense;\n2.5.4 Unir universidades, escolas técnicas e outras instituições de ensino\npara juntos fazermos um pacto pela educação empreendedora, assim como\na Coreia do Sul fez.\n2.5.5 Atrair e viabilizar investimentos para Santa Catarina, tornando o\nestado mais atraente para a instalação de empresas de todos os portes,\ncontribuindo para a geração de renda, empregos e aumento da arrecadação;\n2.5.6 Definir incentivos fiscais mais equilibrados, concedidos de forma\ntransparente e focados nas necessidades de crescimento do estado e de\naumento da competitividade perante os demais estados e países para os\nquais exportamos; e\n2.5.7 Melhorar a atratividade econômica dos portos catarinenses por meio\nde incentivos e investimentos em infraestrutura, com o objetivo de\nconsolidar Santa Catarina como um dos principais hubs brasileiros de\nconexão com o mundo, além de fomentar equipamentos turísticos, como\npíeres para transatlânticos e marinas, e eventos náuticos de grande retorno\npara a sociedade.\n\n2.6 CULTURA E ESPORTE\nObjetivo: Incentivar a formação cidadã e profissional por meio da cultura\nempreendedora e do desenvolvimento do esporte.\n\n2.6.1 Desenvolver iniciativas que ampliem a participação de grupos\nvulneráveis em atividades de turismo, cultura e esporte;"
+          },
+          {
+            "id": "2-6-2-incentivar-e-fortalecer-a-cultura-catarinense-o-esporte-e-o-turism",
+            "titulo": "2.6.2 Incentivar e fortalecer a cultura catarinense, o esporte e o turismo em",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "2.6.2 Incentivar e fortalecer a cultura catarinense, o esporte e o turismo em\ntodas as regiões do estado;\n2.6.3 Fomentar o esporte como meio de prevenção, socialização e\nintegração;\n2.6.4 Revitalizar espaços públicos de cultura, esporte e turismo, tais como\npraças e parques, inclusive por meio de concessões dessas áreas à iniciativa\nprivada; e\n2.6.5 Ampliação e moralização do Programa Bolsa Atleta Catarinense,\naumentando o número de atletas e modalidades contempladas com\nrecursos financiados pelo Governo do Estado.\n\n2.7 DESENVOLVIMENTO ECONÔMICO\nObjetivo: Transformar Santa Catarina no estado mais competitivo do\nBrasil, com crescimento sustentável do PIB e ambiente cada vez mais\nfavorável ao empreendedorismo.\n\n2.7.1 Simplificar procedimentos e legislações para registro e operação de\nempresas, bem como para o fechamento e liquidação das mesmas;\n2.7.2 Reduzir exigências regulatórias desnecessárias;\n2.7.3 Fomentar os diferentes segmentos da indústria por meio de políticas\nde atração de investimentos para implantação de empresas em território\ncatarinense;\n2.7.4 Reativação e ampliação do programa Geração TEC, abandonado pelos\ngovernos anteriores;\n2.7.5 Incentivos à criação de Parques Tecnológicos de Santa Catarina; e\n2.7.6 Reestruturar a Fundação de Amparo à Pesquisa de Santa Catarina\n(FAPESC) para que ela promova ciência e conhecimento em áreas\nessenciais da sociedade; e"
+          },
+          {
+            "id": "2-7-7-atracao-de-investimentos-para-implantacao-de-data-centers-no",
+            "titulo": "2.7.7 Atração de investimentos para implantação de data centers no",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "2.7.7 Atração de investimentos para implantação de data centers no\nterritório catarinense.\n\n2.8 DESESTATIZAÇÃO\nObjetivo: Reduzir a participação do poder público em setores do mercado\nonde a iniciativa privada opera com maior inovação e eficiência.\n\n2.8.1 Leiloar, ou ceder de forma onerosa, terrenos públicos à iniciativa\nprivada para a exploração comercial e fomento de novos empreendimentos\ne empregos;\n2.8.2 Privatizar empresas estatais eficientes, superavitárias ou ainda úteis,\ncom metas estabelecidas e sistemas de avaliação de desempenho, tais como\nCELESC e CASAN;\n2.8.3 Extinguir / liquidar empresas estatais que são deficitárias,\nineficientes ou obsoletas, tais como COHAB, SANTUR S.A., CODESC, entre\noutras; e\n2.8.4 Fortalecer e ampliar o programa de PPPs e concessões do estado de\nSanta Catarina, que foi concebido em 2019.\n\n2.9 EDUCAÇÃO\nObjetivo: Elevar a qualidade da educação pública com foco em desempenho\ne empregabilidade.\n\n2.9.1 Implementar a educação em tempo integral em todas as escolas\nestaduais catarinenses até 2030, ampliando as atividades no contraturno\norientado ao reforço escolar, com oficinas de leitura e interpretação de\ntexto, lógica, matemática e inglês;"
+          },
+          {
+            "id": "2-9-2-estruturar-parceria-publico-privada-ppp-nas-escolas-estaduais-para",
+            "titulo": "2.9.2 Estruturar parceria público-privada (PPP) nas escolas estaduais para",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "2.9.2 Estruturar parceria público-privada (PPP) nas escolas estaduais para\noperação e manutenção das edificações educacionais e incentivar a mesma\nprática nos municípios, oferecendo apoio técnico e financeiro;\n2.9.3 Garantir a segurança integral nas escolas, visando à redução da\nviolência entre alunos e professores, bem como do risco de atentados;\n2.9.4 Criação do Programa de Meritocracia Escolar, no qual serão\nimplantadas metas de desempenho para escolas e premiação para unidades\ncom melhores resultados;\n2.9.5 Fortalecimento da Educação Técnica, com expansão do ensino técnico\nintegrado e parcerias com setor produtivo industrial e tecnológico; e\n2.9.6 Implantação da Educação Empreendedora no currículo escolar, com\nintrodução de conteúdos de educação financeira e formação continuada em\nempreendedorismo e tecnologia.\n\n2.10 EDUCAÇÃO ESPECIAL/INCLUSIVA\n2.10.1 Capacitar os servidores que atuam nos serviços especializados de\neducação inclusiva; e\n2.10.2 Fortalecer a Fundação Catarinense de Educação Especial (FCEE) para\ntorná-la um ambiente ainda mais motivador para professores e alunos e\nmais propício às experiências de aprendizado.\n\n2.11 INFRAESTRUTURA, LOGÍSTICA E MOBILIDADE\nObjetivo: Eliminar definitivamente gargalos logísticos que limitam o\ncrescimento econômico catarinense.\n\n2.11.1 Oferecer apoio institucional e financeiro à iniciativa privada para a\nconstrução, operação e manutenção de ferrovias, a fim de facilitar o\nescoamento da produção agroindustrial e a ligação aos portos públicos e\nprivados de Santa Catarina;"
+          },
+          {
+            "id": "2-11-2-cobrar-com-firmeza-o-governo-federal-para-a-duplicacao-das-brs-15",
+            "titulo": "2.11.2 Cobrar com firmeza o Governo Federal para a duplicação das BRs 153,",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "2.11.2 Cobrar com firmeza o Governo Federal para a duplicação das BRs 153,\n280, 282 e 470;\n2.11.3 Iniciar programa de recuperação e de ampliação da capacidade das\nrodovias estaduais, mediante duplicação ou quadruplicação dos trechos\nprioritários, conforme critérios técnicos;\n2.11.4 Fomentar fontes alternativas de geração de energia, tais como\nfotovoltaica, eólica e gás natural, bem como ampliar a distribuição das\nmesmas; e\n2.11.5 Mapeamento de rodovias com ausência de acostamento para investir\nna construção dessa estrutura a fim de fornecer mais segurança aos\nusuários de rodovias;\n2.11.6 Auxiliar tecnicamente e financeiramente os municípios catarinenses\nnas soluções para congestionamentos e dificuldades de logística; e\n2.11.7 Criação de novos pontos de travessia entre os municípios de Itajaí e\nNavegantes, a fim de acabar com o monopólio e reduzir o preço das\npassagens.\n\n2.12 MEIO AMBIENTE E SUSTENTABILIDADE\nObjetivo: Promover políticas de sustentabilidade sem perder de vista a\nnecessidade de desenvolvimento econômico e social.\n\n2.12.1 Garantir segurança jurídica e definição clara das competências das\nesferas municipal, estadual e federal;\n2.12.2 Simplificar o processo de licenciamento permitindo que todo o\nvolume de recursos hoje represados possa virar geração de emprego e\nrenda para o catarinense;\n2.12.3 Delegar aos municípios os licenciamentos ambientais de pequeno\nporte;"
+          },
+          {
+            "id": "2-12-4-elaborar-enviar-e-aprovar-na-assembleia-legislativa-a-lei-de",
+            "titulo": "2.12.4 Elaborar, enviar e aprovar na Assembleia Legislativa a Lei de",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "2.12.4 Elaborar, enviar e aprovar na Assembleia Legislativa a Lei de\nRegionalização do Saneamento em Santa Catarina, formando as unidades\nregionais e viabilizando tecnicamente os investimentos privados em\nmunicípios de menor porte;\n2.12.5 Apoiar tecnicamente e financeiramente as parcerias públicoprivadas e as concessões nos municípios, a fim de ampliar a capacidade de\ninvestimento em sistemas de abastecimento de água, tratamento de esgoto\ne coleta de resíduos sólidos urbanos;\n2.12.6 Universalizar o saneamento básico em Santa Catarina até 2033;\n2.12.7 Criação do Programa Energia Verde SC, para incentivar a matriz\nenergética renovável, ampliando a geração e a distribuição de energia\neólica e fotovoltaica, bem como promovendo a eficiência energética; e\n2.12.8 Atrair investidores desburocratizando o processo de licenciamento e\noferecendo segurança jurídica.\n\n2.13 MULHER, FAMÍLIA E PROTEÇÃO SOCIAL\n2.13.1 Valorizar e fomentar a Rede Catarina de Proteção à Mulher, programa\nda Polícia Militar de Santa Catarina;\n2.13.2 Ampliar as delegacias especializadas no atendimento à mulher; e\n2.13.3 Criação do Programa Recomeço, articulado com a política de\nassistência social e voltado à população em situação de rua que queira\nretomar a vida social com emprego e renda.\n\n2.14 SAÚDE\nObjetivo: Zerar as filas e aumentar a eficiência do SUS estadual.\n\n2.14.1 Criação do Programa Tempo é Vida, por meio do qual qualquer\ncirurgia indicada pelo sistema público de saúde deverá ser realizada em, no"
+          },
+          {
+            "id": "maximo-60-sessenta-dias-inclusive-mediante-contratacao",
+            "titulo": "máximo, 60 (sessenta) dias, inclusive mediante contratação",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "máximo, 60 (sessenta) dias, inclusive mediante contratação\ncomplementar da capacidade ociosa de unidades privadas de saúde, em\nhorários de menor demanda;\n2.14.2 Retomar e licitar a parceria público-privada (PPP) para construção,\noperação e manutenção do Complexo Hospitalar de Santa Catarina, em\nparceria com o Banco Interamericano de Desenvolvimento (BID), que\nunifica as operações do Hospital Celso Ramos, Nereu Ramos, Maternidade\nCarmela Dutra e Hospital Infantil, projeto pronto que foi abandonado pelo\ngoverno atual;\n2.14.3 Criação do Programa Fila Zero, para realizar mutirões permanentes\npara zerar a fila de consultas com especialidades médicas;\n2.14.4 Implantar gestão por resultados, com metas de atendimento e\nsatisfação de usuários nas unidades de saúde estaduais, integrando o\nquadro geral de indicadores públicos de desempenho;\n2.14.5 Ampliar e fortalecer a telemedicina, com consultas remotas para\nmunicípios menores e integração digital dos prontuários;\n2.14.6 Valorizar a carreira de médico no sistema estadual de saúde;\n2.14.7 Honrar a regularidade dos repasses financeiros aos municípios, dos\nprogramas com contrapartida Estadual;\n2.14.8 Aperfeiçoar a atenção integral à saúde da mulher;\n2.14.9 Garantir a atenção à saúde do idoso; e\n2.14.10 Promover o desenvolvimento de ciência de dados de interesse para\na Secretaria Estadual de Saúde;\n\n2.15 SEGURANÇA PÚBLICA E CIDADANIA\nObjetivo: Restabelecer a sensação de segurança dos cidadãos e combater\nde forma permanente a atuação das facções criminosas em Santa\nCatarina."
+          },
+          {
+            "id": "2-15-1-construcao-do-inferno-catarina-um-presidio-de-seguranca-maxima",
+            "titulo": "2.15.1 Construção do “Inferno Catarina”, um presídio de segurança máxima",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "2.15.1 Construção do “Inferno Catarina”, um presídio de segurança máxima\nno Meio-Oeste catarinense voltado para lideranças de organizações\ncriminosas e presos de alta periculosidade, que ficarão isolados e\nmonitorados 24h por dia;\n2.15.2 Iniciar a “Operação Retomada” para eliminar o controle das facções\ncriminosas em território catarinense com integração da PMSC, PCSC,\nPolícia Penal, IGP e Inteligência;\n2.15.3 Criação do Programa “Quem Perdoa é Deus”, destinado ao\nmonitoramento permanente de criminosos de alta periculosidade e\nreincidentes, observados os critérios legais e as garantias constitucionais;\n2.15.4 Criação do Projeto “SC Protege sua Polícia”, para valorizar as polícias\nMilitar e Civil, bem como os policiais penais e demais agentes de segurança\npública, assegurando assistência jurídica pela PGE nos processos\nrelacionados a atos praticados no exercício regular da função, nos termos\nda legislação aplicável;\n2.15.5 Aliar novos recursos tecnológicos à atividade de inteligência, com\nimplantação de tecnologia de reconhecimento facial em todo o território\ncatarinense, observadas as normas de proteção de dados e as garantias\nindividuais;\n2.15.6 Valorizar os agentes públicos de segurança e recompor efetivos por\nmeio da retirada de policiais de áreas administrativas e realização de\nconcurso público;\n2.15.7 Realizar parcerias público-privadas (PPPs) para a construção, a\nadministração e a manutenção de presídios e penitenciárias no estado de\nSanta Catarina, nos quais poderão ser instaladas unidades produtivas,\npermitindo o trabalho remunerado dos apenados, nos termos da legislação\naplicável, inclusive para auxiliar no custeio de sua manutenção;\n2.15.8 Equipar os agentes de segurança, os veículos e as estruturas físicas,\nbem como modernizar os equipamentos utilizados pelo efetivo;"
+          },
+          {
+            "id": "2-15-9-reduzir-a-violencia-contra-a-mulher-por-meio-de-acoes-de-prevenca",
+            "titulo": "2.15.9 Reduzir a violência contra a mulher por meio de ações de prevenção,",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "2.15.9 Reduzir a violência contra a mulher por meio de ações de prevenção,\nproteção e repressão contra agressores, assediadores, estupradores e\ndemais criminosos;\n2.15.10 Reduzir crimes contra o patrimônio, tais como pichação,\nvandalismo, entre outros; e\n2.15.11 Fortalecimento da atividade policial nas fronteiras e nas divisas\ncatarinenses, bem como em pontos de entrada de mercadorias como\naeroportos e portos.\n\n2.16 PESCA E ECONOMIA DO MAR\n2.16.1 Valorizar e estimular a pesca artesanal em Santa Catarina;\n2.16.2 Fomentar a organização de pescadores artesanais para a constituição\ne administração de associações, cooperativas, OSCIPs e micro e pequenas\nempresas;\n2.16.3 Estimular o uso de tecnologia na maricultura, em especial para o\ncultivo de ostras, mariscos e outros moluscos, consolidando Santa Catarina\ncomo polo exportador de moluscos para o mundo; e\n2.16.4 Aprimorar as ferramentas climatológicas e meteorológicas para\nauxiliar a navegação de pequenas e grandes embarcações.\n\n2.17 PROTEÇÃO AOS DESASTRES NATURAIS E RESILIÊNCIA CLIMÁTICA\nObjetivo: Proteger vidas, reduzir perdas econômicas e fortalecer a\ncapacidade de resposta da Defesa Civil.\n\n2.17.1 Modernizar\nmeteorológico;\n\no\n\nsistema\n\nde\n\nmonitoramento\n\nhidrológico\n\ne"
+          },
+          {
+            "id": "2-17-2-reestruturar-a-secretaria-de-estado-da-protecao-e-defesa-civil-pa",
+            "titulo": "2.17.2 Reestruturar a Secretaria de Estado da Proteção e Defesa Civil para",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "2.17.2 Reestruturar a Secretaria de Estado da Proteção e Defesa Civil para\ntransformá-la em um dos mais modernos órgãos de proteção civil do\nBrasil;\n2.17.3 Criação do Fundo Estadual Permanente de Resiliência, destinado à\nprevenção, mitigação, resposta emergencial e reconstrução pós-desastres;\n2.17.4 Criação do Programa Barragens Seguras, para controle das cheias,\nespecialmente no Vale do Itajaí. Tal programa contemplará auditoria\ntécnica completa das barragens estaduais, modernização dos sistemas de\nmonitoramento remoto 24 horas por dia, instalação de sensores em tempo\nreal, atualização dos Planos de Ação de Emergência (PAE) e simulados\nperiódicos junto às comunidades potencialmente afetadas;\n2.17.5 Criação do Programa SC Alerta, que será a maior rede estadual de\nmonitoramento climático do país, com utilização de inteligência artificial\npara previsão de eventos extremos e parcerias com universidades e centros\nde pesquisa; e\n2.17.6 Prevenção de enchentes e deslizamentos, oferecendo apoio técnico e\nfinanceiro aos municípios para mapeamento de áreas de risco, contenção\nde encostas, drenagem urbana, desassoreamento de rios, limpeza de\ncanais, recuperação de margens e obras de macrodrenagem.\n\n2.18 TURISMO\n2.18.1 Criação do Programa Turismo 365, com o objetivo de dobrar o\nnúmero de turistas nacionais e internacionais ao longo de todo o ano,\nreduzindo a sazonalidade e explorando os potenciais climáticos e\ngeográficos das regiões catarinenses (litoral, serra e campo);\n2.18.2 Desenvolver concessões à iniciativa privada para a construção de\nnovos equipamentos turísticos em todas as regiões de Santa Catarina;\n2.18.3 Investir e criar novos polos turísticos no estado, a exemplo do\nmunicípio de São Carlos, no Oeste, rico em águas termais e carente de\ninfraestrutura para o recebimento de turistas;"
+          },
+          {
+            "id": "2-18-4-conclusao-da-rodovia-caminhos-do-mar-no-sul-do-estado-que-liga",
+            "titulo": "2.18.4 Conclusão da Rodovia Caminhos do Mar, no sul do estado, que liga",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "2.18.4 Conclusão da Rodovia Caminhos do Mar, no sul do estado, que liga\nPassos de Torres a Laguna, para valorizar o turismo nas praias da região\nsul, tão belas e tão esquecidas pelos próprios catarinenses;\n2.18.5 Investir na iluminação e em áreas de lazer na estrada Dona Francisca\npara fomentar o turismo rural, de aventura e familiar na região de Joinville;\n2.18.6 Fortalecimento do turismo náutico no litoral catarinense, com\nimplantação de marinas e píeres para estimular os pontos de parada de\ntransatlânticos.\n\nPALAVRAS FINAIS\n\nO Estado de Santa Catarina construiu, ao longo de sua história, uma\nreputação de trabalho, inovação, prosperidade e qualidade de vida. Nosso\nestado tornou-se referência nacional graças ao esforço de milhões de\ncatarinenses que acreditam no valor da família, da livre iniciativa, da\neducação, da segurança e da responsabilidade com os recursos públicos.\nEntretanto, a má gestão dos últimos governadores trouxe desafios para os\npróximos anos. Será necessário coragem para enfrentar problemas\nestruturais, capacidade de gestão para modernizar o Estado e compromisso\npermanente com resultados concretos para a população.\nEste Plano de Governo apresenta uma visão clara para Santa\nCatarina: um estado mais seguro, mais eficiente, mais competitivo e mais\npreparado para as transformações econômicas, sociais e tecnológicas do\nséculo XXI. Ao longo deste documento foram apresentadas propostas\nvoltadas à proteção das famílias catarinenses, ao fortalecimento das forças\nde segurança, ao combate firme ao crime organizado, à melhoria da\nqualidade da saúde pública, à ampliação das oportunidades educacionais,\nao incentivo ao empreendedorismo e à geração de empregos, bem como à\nmodernização da infraestrutura logística necessária para sustentar o\ncrescimento econômico de todas as regiões do estado."
+          },
+          {
+            "id": "tambem-reafirmamos-nosso-compromisso-com-a-transparencia-a",
+            "titulo": "Também reafirmamos nosso compromisso com a transparência, a",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Também reafirmamos nosso compromisso com a transparência, a\nintegridade pública e a boa gestão dos recursos arrecadados junto aos\ncontribuintes. O dinheiro público pertence à população e deve ser\nadministrado com responsabilidade, eficiência e absoluto respeito ao\ninteresse coletivo. Acreditamos que o desenvolvimento sustentável de\nSanta Catarina depende da capacidade de unir governo, iniciativa privada,\nuniversidades, trabalhadores, produtores rurais, empreendedores e\nsociedade civil em torno de objetivos comuns. Por isso, este plano valoriza\ninstrumentos modernos de gestão, como concessões, parcerias públicoprivadas, inovação tecnológica e avaliação permanente de resultados.\nNosso compromisso é governar para todos os catarinenses,\nindependentemente da região onde vivem. O desenvolvimento precisa\nchegar ao litoral, ao oeste, ao norte, ao sul, à serra, ao vale e à Grande\nFlorianópolis, respeitando as características e vocações de cada território.\nTemos a convicção de que Santa Catarina pode liderar o Brasil em\nsegurança\npública,\nliberdade\neconômica,\ninovação,\neducação,\ninfraestrutura e qualidade de vida. Possuímos os recursos, o capital\nhumano e a capacidade empreendedora necessários para alcançar esse\nobjetivo.\nMais do que um conjunto de propostas, este Plano de Governo\nrepresenta um compromisso com um futuro glorioso. Um compromisso de\ntrabalhar com seriedade, coragem e responsabilidade para que as próximas\ngerações encontrem um estado ainda mais forte, mais desenvolvido e mais\njusto. Convidamos cada catarinense a participar desta construção coletiva.\nO futuro de Santa Catarina não pertence a um governo, a um partido ou a\num grupo político. O futuro pertence ao seu povo!"
+          },
+          {
+            "id": "ai-missao",
+            "titulo": "aí missão",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "ocr",
+            "conteudo": "aí missão\nALPHA®"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "3e2fa63168aa6c53b0c5909b956a685a6b2ab340e3f56a3a36948399c4e5901e"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7e3a6d63a7bada8f5fe2be24f0d83f6a70edf283b004a1783dc9eb2d4d89d1e0"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "1cd7ee0e14729ac5ebcf3fc6c0b1f0d70154efbec37b44548e25f87df9b239db"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0b4cbb3ab322d24c48bbf61d897b6b45fd01d818bd9108a92f07a61e5a5ca7a1"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "7f0aafd728722511b569b75b7c6ffc84a0ff02ac5b0cd5caaffeb5455654b8f6"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "025dd814e2c44f0dbaa6642394ba4af7c2f5b4a5555c91d5dfc4fa5252bbb8f7"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "0cbfcea5733459219ba86b135130c788a1770b8d57c890c6baf4a110f556b678"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "3e8cc60018d15a3d5e0f2d8ef61a3e23cba047311bf655b7fdf30f6f063fba8a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "880f777cdf128b0f1a12d2ab1c458118968578a9056f00724f459ad47a39a1e8"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "3ca4a42ff55bfda85ab69bc7174ce4310cb9b30e6af6f52b0f4f410f3d7b85c7"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "87f18afa9afa810b024d7e4a0bc849e5a6d1c010caef0e4972f381ef67ea4b29"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "aef28b8df2110ed936543b7f149fc6470981956f1793309ae737e6f5ba6803de"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "eb84230e28bf1f8595b119bd93bb222cf39404f349eaf57f8b6185262bd91e99"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "cc53ed25b94806c58999daf5a6ab3258548c9606690f55426813081579bcb904"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "1e9d721c650b718f3bec61b8ec467d6ef59640772ac39acdc3bcd4a62fb31ac9"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "c93dd288a2d9ce2a4d569cdfe6fb67af8cf93bd8fa13934d2b21bfe116901e6b"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "4e3699886241a2063a29539af4865c5e80af31045bd7f1487b46721425d68164"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "553aca31ce75549c19e209f65d88c21a87580c7e86b15635ae83fee52c8bf08c"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "7a9a509bb8106ed66f00b9b9aa6fbf4d5e51e560dd910bd1638b04d93dca9148"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0333881d2406a84c2772d499706423f20a38b5b856f70f417420154c5049ce4f"
+          },
+          {
+            "pagina": 21,
+            "origem": "ocr",
+            "textSha256": "4914b7e58ca2e57c66f624cc539c5dcb548f53264d0c4bd3fffe5a893fd5546b"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a criação de um portal de transparência em tempo real para divulgar contratos, licitações e despesas com cartões corporativos. Propõe desburocratizar a abertura e o fechamento de empresas. Planeja oferecer o programa Juro Zero para iniciar negócios de micro e pequenos empreendedores. Prevê educação em tempo integral nas escolas estaduais com atividades de reforço escolar no contraturno. Propõe ampliar a telemedicina para municípios menores com consultas remotas e integração digital dos prontuários. O plano prevê o prazo máximo de 60 dias para cirurgias indicadas pelo sistema público. Prevê tecnologia de reconhecimento facial em todo o território catarinense observadas normas de proteção de dados e garantias individuais. O plano prevê elaborar a Lei de Regionalização do Saneamento em Santa Catarina.",
+    "frases": [
+      {
+        "texto": "O plano prevê a criação de um portal de transparência em tempo real para divulgar contratos, licitações e despesas com cartões corporativos.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 8,
+            "trecho": "Implantar portal de transparência em tempo real"
+          }
+        ]
+      },
+      {
+        "texto": "Propõe desburocratizar a abertura e o fechamento de empresas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 9,
+            "trecho": "Estimular a criação de novos negócios por meio da desburocratização para abertura e fechamento de empresas"
+          }
+        ]
+      },
+      {
+        "texto": "Planeja oferecer o programa Juro Zero para iniciar negócios de micro e pequenos empreendedores.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 9,
+            "trecho": "Fomento aos micro e pequenos empreendedores, por meio do programa Juro Zero"
+          }
+        ]
+      },
+      {
+        "texto": "Prevê educação em tempo integral nas escolas estaduais com atividades de reforço escolar no contraturno.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 11,
+            "trecho": "Implementar a educação em tempo integral em todas as escolas estaduais catarinenses até 2030"
+          }
+        ]
+      },
+      {
+        "texto": "Propõe ampliar a telemedicina para municípios menores com consultas remotas e integração digital dos prontuários.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 15,
+            "trecho": "Ampliar e fortalecer a telemedicina, com consultas remotas para municípios menores e integração digital dos prontuários"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê o prazo máximo de 60 dias para cirurgias indicadas pelo sistema público.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 15,
+            "trecho": "máximo, 60 (sessenta) dias"
+          }
+        ]
+      },
+      {
+        "texto": "Prevê tecnologia de reconhecimento facial em todo o território catarinense observadas normas de proteção de dados e garantias individuais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 16,
+            "trecho": "implantação de tecnologia de reconhecimento facial em todo o território catarinense"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê elaborar a Lei de Regionalização do Saneamento em Santa Catarina.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 14,
+            "trecho": "Elaborar, enviar e aprovar na Assembleia Legislativa a Lei de Regionalização do Saneamento em Santa Catarina"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "transparencia-publica",
+        "titulo": "Transparência pública",
+        "descricao": "Portal de transparência em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 8,
+            "trecho": "Implantar portal de transparência em tempo real"
+          }
+        ]
+      },
+      {
+        "id": "empreendedorismo",
+        "titulo": "Empreendedorismo",
+        "descricao": "Desburocratização para abertura e fechamento de empresas.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 9,
+            "trecho": "desburocratização para abertura e fechamento de empresas"
+          }
+        ]
+      },
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Educação em tempo integral nas escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 11,
+            "trecho": "Implementar a educação em tempo integral em todas as escolas estaduais catarinenses até 2030"
+          }
+        ]
+      },
+      {
+        "id": "telemedicina",
+        "titulo": "Telemedicina",
+        "descricao": "Consultas remotas para municípios menores.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 15,
+            "trecho": "consultas remotas para municípios menores"
+          }
+        ]
+      },
+      {
+        "id": "saneamento-regional",
+        "titulo": "Saneamento regional",
+        "descricao": "Lei de Regionalização do Saneamento em Santa Catarina.",
+        "evidencias": [
+          {
+            "documentoId": "SC:240002544118:01",
+            "pagina": 14,
+            "trecho": "Lei de Regionalização do Saneamento em Santa Catarina"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T20:14:50.989Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T20:16:59.847Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 8 confirma implantação de portal de transparência em tempo real com divulgação de contratos, licitações e despesas com cartões corporativos."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a serem verificados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de transparência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:1:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todos os elementos citados (contratos, licitações, cartões corporativos)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:2:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o programa Juro Zero para iniciar negócios de micro e pequenos empreendedores."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:3:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 11 completa cita também ampliação de atividades no contraturno orientado ao reforço escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não cita prazo/número, apenas o documento tem meta 2030 não contestada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:4:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página completa cobre ambas as cláusulas (integral e contraturno de reforço)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:5:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 15 confirma prazo de 60 dias para cirurgias indicadas pelo sistema público."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Número de 60 dias está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:6:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material completa do prazo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 16 confirma implantação e a ressalva sobre proteção de dados e garantias individuais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:7:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre todas as cláusulas materiais, incluindo a ressalva de proteção de dados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:frase:8:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a validar."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (transparência)."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:transparencia-publica:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única de empreendedorismo."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:empreendedorismo:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Afirmação não cita números específicos que precisem verificação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:educacao-integral:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:telemedicina:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SC:240002544118:tema:saneamento-regional:documentos:SC:240002544118:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula resumida."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SC:240002544118",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SC:240002544118:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 28639,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2600,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22723,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20742,
+          "output_tokens_details": {
+            "thinking_tokens": 834
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22723,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20742,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22723,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22723
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3160814
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:17:16Z",
+    "sourceSha256": "38d41f653a5b10e26f9e6acc73ad428aa01a8e85f3c9f037373daa95c7666304",
+    "extractedTextSha256": "f33794e17e8b5b698b540eaf2003e7498a10c77dd23c125c9efc6ca6b58f1b86",
+    "documentCount": 1,
+    "documentSetSha256": "0b0902c9492bed8b81a942ee0a01ec466d15f02d7306860f7c7338dc460067c6",
+    "contentSha256": "b17fb2e0872e1c90b087a0d058a3a65fe29f301d177f4c6026bc9751669d6371"
+  }
+}

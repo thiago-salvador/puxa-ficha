@@ -1,0 +1,1200 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002550458",
+    "slug": "du-pereira",
+    "nomeUrna": "DU PEREIRA",
+    "partido": "DC",
+    "arquivoNome": "2026TO270002550458_01.pdf",
+    "arquivoNoPacote": "TO/2026TO270002550458_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002550458:01",
+      "fonte": {
+        "arquivoNome": "2026TO270002550458_01.pdf",
+        "arquivoNoPacote": "TO/2026TO270002550458_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e3e7ee44f2bbf3777d8c46dfaff1042e041642c27460560f039c52a2a1af7cf7",
+        "extractedTextSha256": "7b1744dac7bd7e22aacf168cde9993b200c7b0226ad1619893c74abd8b5e02a0",
+        "paginas": 40,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nDU PEREIRA 27\nGOVERNO DO ESTADO DO TOCANTINS\n\n2027 - 2030\n\nRENOVAR PARA DESENVOLVER\nPlanejamento • Responsabilidade • Oportunidade • Desenvolvimento Regional\n\nPalmas - Tocantins | 2026"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nApresentação\nO Tocantins é um Estado jovem, de grande extensão territorial e enorme diversidade social, econômica e ambiental.\nPossui área territorial de aproximadamente 277,4 mil km² e população de 1.511.460 pessoas no Censo de 2022, o que\nimpõe um desafio permanente: fazer os serviços públicos chegarem com qualidade a uma população distribuída por\n139 municípios e por extensas áreas rurais.\nAo mesmo tempo, a economia tocantinense demonstra capacidade de expansão. Segundo o IBGE, o Produto Interno\nBruto estadual cresceu 7,9% em 2023. Em 2025, o Novo Caged registrou saldo positivo de 7.416 empregos formais no\nEstado. O desafio do próximo ciclo é transformar crescimento em renda, serviços públicos eficientes, oportunidades\npara os jovens, desenvolvimento regional e qualidade de vida.\nEste Plano de Governo foi reorganizado para apresentar compromissos executáveis, estruturados em 12 eixos e 150\npropostas. A orientação central é simples: governar com metas, responsabilidade fiscal, cooperação municipal,\nsegurança jurídica, transparência e avaliação de resultados.\nAs propostas que dependam de lei, licenciamento ambiental, estudo de viabilidade, criação de despesa, renúncia de\nreceita, contratação de pessoal, cooperação com a União ou municípios, concessão, PPP ou autorização de outro órgão\nserão implementadas somente após o cumprimento das exigências constitucionais, fiscais, orçamentárias e\nadministrativas aplicáveis.\n\nCompromisso com a legalidade\n\n\n\n\n\n\n\nA Constituição Federal e a Constituição do Estado do Tocantins delimitam competências e instrumentos do Governo\nEstadual.\nA Lei de Responsabilidade Fiscal exige planejamento para renúncias de receita, novas despesas e equilíbrio das contas\npúblicas.\nA Lei nº 14.133/2021 exige planejamento, impessoalidade, competição e transparência nas contratações públicas.\nO mandato 2027-2030 atravessará a transição da Reforma Tributária, exigindo preparação da administração para o IBS e\nredução progressiva do ICMS no período definido em lei.\nEm educação, o Estado deverá adequar seu planejamento ao novo Plano Nacional de Educação, aprovado pela Lei nº\n15.388/2026.\nO primeiro ano do mandato ainda estará inserido no PPA estadual 2024-2027, alterado em 2026, e exigirá\ncompatibilização das novas prioridades com os instrumentos orçamentários vigentes.\n\nMétodo de implementação\nOs programas prioritários deverão ser convertidos em fichas de gestão contendo problema, objetivo, linha de base,\nmeta anual, meta de mandato, indicador, prazo, responsável, custo estimado, fonte de financiamento, instrumento\njurídico e estágio de execução. Isso permitirá que o Plano deixe de ser apenas um documento eleitoral e se transforme\nem referência para o PPA, a LDO, a LOA e o acompanhamento público do governo.\n\nTocantins - trabalho, oportunidades e responsabilidade2"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-2",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nSumário Executivo\nO Plano está organizado em 12 eixos estruturantes. A opção é concentrar temas relacionados em eixos amplos,\nmantendo a objetividade de leitura e garantindo visão transversal das políticas públicas.\n1. Governança, Municipalismo, Transparência e Estado Digital - 14 propostas\n2. Educação, Juventude, Ciência e Tecnologia - 14 propostas\n3. Saúde e Qualidade de Vida - 15 propostas\n4. Segurança Pública, Justiça, Defesa Civil e Proteção - 12 propostas\n5. Desenvolvimento Social, Direitos Humanos e Inclusão - 16 propostas\n6. Infraestrutura, Logística, Mobilidade e Conectividade - 14 propostas\n7. Habitação, Regularização Fundiária, Saneamento e Cidades - 10 propostas\n8. Desenvolvimento Econômico, Emprego, Indústria, Tributação e Energia - 14 propostas\n9. Agronegócio, Agricultura Familiar e Desenvolvimento Rural - 14 propostas\n10. Meio Ambiente, Água, Clima e Proteção Animal - 10 propostas\n11. Desenvolvimento Regional e Redução das Desigualdades - 8 propostas\n12. Cultura, Turismo, Esporte, Comunicação e Economia Criativa - 9 propostas\n\nPrincípios de governo\n\n\n\n\n\n\n\n\n\nResponsabilidade fiscal e orçamentária\nMunicipalismo e cooperação federativa\nRegionalização e redução das desigualdades\nGestão por resultados e evidências\nTransparência e integridade\nInovação com proteção de dados\nSustentabilidade e segurança hídrica\nParticipação social e respeito às pessoas\n\nTocantins - trabalho, oportunidades e responsabilidade3"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-3",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nTocantins: Diagnóstico e Direção Estratégica\nTerritório e população\nA baixa densidade populacional e a distância entre comunidades e centros regionais aumentam o custo de hospitais,\nescolas, segurança, saneamento, transporte e conectividade. A resposta não é concentrar ainda mais os serviços, mas\norganizar redes regionais, fortalecer cidades-polo e apoiar os municípios menores com escala, tecnologia e cooperação.\n\nEconomia e trabalho\nO crescimento recente mostra que o Tocantins tem força produtiva. O desafio é aumentar a parcela da riqueza que\npermanece no território: processar grãos, carnes, leite, frutas e pescado; desenvolver logística e armazenagem; ampliar\ntecnologia; fortalecer pequenos negócios e criar empregos de maior produtividade e remuneração.\n\nServiços públicos e desigualdade regional\nA extensão territorial torna a regionalização indispensável. Saúde especializada, formação técnica, segurança,\nassistência social, atendimento ao cidadão e infraestrutura precisam seguir critérios de demanda, distância,\nvulnerabilidade e impacto regional. O local onde a pessoa vive não pode definir a qualidade do serviço público que\nrecebe.\n\nTransição fiscal e planejamento\nO mandato 2027-2030 exigirá capacidade de transição. O Governo deverá executar 2027 respeitando o PPA 2024-2027\ne, simultaneamente, preparar o próximo ciclo de planejamento. Também será necessário adaptar a administração\ntributária à transição nacional do ICMS para o IBS, evitando promessas fiscais que desconsiderem a nova arquitetura\ntributária.\n\nTocantins - trabalho, oportunidades e responsabilidade4"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-4",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n1. Governança, Municipalismo, Transparência e Estado Digital\nConstruir uma administração pública que planeje, execute, meça resultados e preste contas, com responsabilidade fiscal\ne cooperação permanente com os 139 municípios.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n001. Governo com Metas\nAção: Converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e\nacompanhamento trimestral.\nResultado esperado: Mais clareza sobre o que será entregue e correção rápida de atrasos.\nIndicador sugerido: Percentual de metas estratégicas com execução no prazo.\nImplementação: Decreto de governança, PPA/LDO/LOA e contratos de gestão internos. | Financiamento: Tesouro estadual e recursos\njá alocados ao planejamento.\n\n002. Escritório Estadual de Projetos e Investimentos\nAção: Organizar equipe técnica multidisciplinar para elaborar projetos executivos, modelagens, estudos de viabilidade e apoiar\ncaptação de recursos para Estado e pequenos municípios.\nResultado esperado: Mais projetos aptos a receber recursos federais, financiamentos e investimentos privados.\nIndicador sugerido: Valor anual de recursos captados e número de projetos estruturados.\nImplementação: Reorganização administrativa, cooperação técnica e normas de governança. | Financiamento: Tesouro, transferências,\nbancos públicos e organismos multilaterais.\n\n003. Pacto Tocantins com os Municípios\nAção: Instituir agenda permanente de cooperação técnica com prefeituras em saúde, saneamento, engenharia, regularização,\ndefesa civil, gestão e captação de recursos.\nResultado esperado: Aumento da capacidade administrativa dos municípios de menor porte.\nIndicador sugerido: Municípios atendidos e projetos concluídos com apoio estadual.\nImplementação: Convênios, acordos de cooperação e consórcios públicos. | Financiamento: Tesouro e transferências voluntárias.\n\n004. Portal Tocantins Transparente 2.0\nAção: Disponibilizar painel com obras, contratos, pagamentos, prazos, metas, indicadores e execução orçamentária em\nlinguagem acessível.\nResultado esperado: Maior controle social e prevenção de desperdícios.\nIndicador sugerido: Percentual de obras e programas estratégicos acompanhados em tempo quase real.\nImplementação: Lei de Acesso à Informação, dados abertos e normas de transparência. | Financiamento: Orçamento de tecnologia e\ncontrole interno.\n\n005. Aplicativo Único do Cidadão\nAção: Reunir progressivamente serviços estaduais em ambiente digital integrado ao GOV.BR quando tecnicamente viável.\nResultado esperado: Menos deslocamentos, filas e repetição de documentos.\nIndicador sugerido: Serviços digitalizados e usuários ativos.\nImplementação: Política de governo digital, assinatura eletrônica e interoperabilidade. | Financiamento: ATI, orçamento digital e\ncooperação federal.\n\n006. Estado sem Burocracia\nAção: Revisar processos administrativos de alto impacto para eliminar etapas redundantes sem reduzir controles essenciais.\nResultado esperado: Redução do tempo de resposta ao cidadão e ao setor produtivo.\nIndicador sugerido: Tempo médio dos serviços redesenhados.\nImplementação: Revisão normativa, gestão de processos e simplificação administrativa. | Financiamento: Recursos de custeio e\ntransformação digital.\n\nTocantins - trabalho, oportunidades e responsabilidade5"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-5",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n007. Política Estadual de Dados e Inteligência Artificial\nAção: Estabelecer regras para uso responsável de dados e IA em saúde, educação, segurança, arrecadação e gestão, sempre com\nsupervisão humana e proteção de dados.\nResultado esperado: Decisões mais rápidas e baseadas em evidências.\nIndicador sugerido: Soluções implantadas com avaliação de impacto e governança.\nImplementação: LGPD, política de segurança da informação e atos de governança de IA. | Financiamento: Orçamento de TI, pesquisa\ne inovação.\n\n008. Centro Estadual de Cibersegurança\nAção: Organizar capacidade permanente de prevenção, resposta a incidentes, continuidade de serviços e proteção de sistemas\ncríticos.\nResultado esperado: Redução de riscos de indisponibilidade e vazamento de dados.\nIndicador sugerido: Tempo de resposta a incidentes e sistemas críticos monitorados.\nImplementação: Política estadual de segurança da informação e LGPD. | Financiamento: ATI e investimentos em segurança digital.\n\n009. Programa Integridade Tocantins\nAção: Fortalecer gestão de riscos, auditoria, corregedorias, ouvidorias, integridade em contratações e proteção ao denunciante.\nResultado esperado: Prevenção de fraudes, conflitos de interesse e desperdícios.\nIndicador sugerido: Órgãos com programa de integridade e riscos tratados.\nImplementação: Controladoria, Lei Anticorrupção, Lei 14.133/2021 e normas estaduais. | Financiamento: Recursos próprios dos\nórgãos de controle.\n\n010. Qualidade do Gasto Público\nAção: Criar rotina de revisão de despesas, contratos recorrentes, subsídios e programas para priorizar o que entrega resultado.\nResultado esperado: Mais espaço fiscal para serviços essenciais e investimento.\nIndicador sugerido: Economia anual identificada e reinvestida em prioridades.\nImplementação: LRF, orçamento por desempenho e avaliações de políticas. | Financiamento: Sem necessidade de nova fonte; foco em\neficiência.\n\n011. Gestão Fiscal e Previdenciária Responsável\nAção: Acompanhar receitas, despesas, dívida, previdência e riscos fiscais com cenários plurianuais e transparência.\nResultado esperado: Sustentabilidade financeira para executar o Plano ao longo do mandato.\nIndicador sugerido: Resultado fiscal, limites da LRF e indicadores previdenciários.\nImplementação: LRF, Constituição, PPA, LDO e LOA. | Financiamento: Gestão do Tesouro e fundos legalmente vinculados.\n\n012. Valorização dos Servidores\nAção: Planejar concursos conforme déficit real, qualificar equipes, digitalizar processos funcionais, garantir direitos legalmente\ndevidos e melhorar saúde ocupacional.\nResultado esperado: Servidor valorizado e serviços públicos com maior capacidade de entrega.\nIndicador sugerido: Tempo de processos funcionais, capacitações e vacâncias críticas.\nImplementação: Leis de carreira, responsabilidade fiscal e planejamento de pessoal. | Financiamento: Orçamento de pessoal dentro\ndos limites legais.\n\n013. SERVIR Sustentável e Regionalizado\nAção: Ampliar rede credenciada e qualidade de atendimento do plano dos servidores, preservando equilíbrio financeiro e regras\natuariais.\nResultado esperado: Maior acesso à assistência, especialmente no interior.\nIndicador sugerido: Cobertura regional, rede credenciada e satisfação dos beneficiários.\nImplementação: Legislação do SERVIR e estudos atuariais. | Financiamento: Contribuições e fontes previstas no regime.\n\nTocantins - trabalho, oportunidades e responsabilidade6"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-6",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n014. Participação Social e Escuta Regional\nAção: Realizar consultas digitais, audiências regionais, conferências e devolutivas públicas sobre prioridades e execução das\npolíticas.\nResultado esperado: Decisões mais conectadas às necessidades dos territórios.\nIndicador sugerido: Participações registradas e propostas incorporadas ao planejamento.\nImplementação: Conselhos, conferências e instrumentos de participação previstos em lei. | Financiamento: Custeio administrativo e\nplataformas digitais.\n\nTocantins - trabalho, oportunidades e responsabilidade7"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-7",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n2. Educação, Juventude, Ciência e Tecnologia\nGarantir aprendizagem, permanência e preparação para o trabalho e para a cidadania, alinhando a política estadual ao\nPlano Nacional de Educação aprovado pela Lei nº 15.388/2026.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n015. Tocantins Alfabetiza em Regime de Colaboração\nAção: Fortalecer apoio aos municípios para alfabetização, avaliação e formação de professores, priorizando territórios com\npiores indicadores.\nResultado esperado: Mais crianças alfabetizadas na idade adequada e menor desigualdade territorial.\nIndicador sugerido: Percentual de estudantes alfabetizados e evolução por município.\nImplementação: Regime de colaboração, PNE 2026 e plano estadual de educação. | Financiamento: Fundeb, recursos vinculados à\neducação e transferências federais.\n\n016. Recomposição das Aprendizagens\nAção: Implantar programa contínuo de recuperação em Língua Portuguesa, Matemática e competências científicas, com\ndiagnóstico por escola.\nResultado esperado: Redução das defasagens acumuladas e melhoria do desempenho.\nIndicador sugerido: Proficiência e percentual de estudantes em nível adequado.\nImplementação: Planejamento pedagógico e avaliações estaduais/nacionais. | Financiamento: Fundeb e orçamento educacional.\n\n017. Tempo Integral com Propósito\nAção: Expandir educação em tempo integral conforme demanda e capacidade, integrando estudo, esporte, cultura, tecnologia e\nprojeto de vida.\nResultado esperado: Mais permanência, aprendizagem e proteção social.\nIndicador sugerido: Matrículas em tempo integral e indicadores de aprendizagem/permanência.\nImplementação: PNE, Fundeb e normas do sistema de ensino. | Financiamento: Fundeb, FNDE e recursos estaduais.\n\n018. Cinco Polos Estaduais de Formação Técnica\nAção: Estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas\nregionais.\nResultado esperado: Formação profissional conectada às oportunidades reais de emprego.\nIndicador sugerido: Matrículas, conclusão e inserção profissional de egressos.\nImplementação: Lei de diretrizes da educação e cooperação com IFTO, Unitins e Sistema S. | Financiamento: Educação, convênios\nfederais e parcerias.\n\n019. Ensino Médio Profissional e Vocacional\nAção: Ampliar itinerários e cursos técnicos em agronegócio, logística, turismo, tecnologia, saúde, energias renováveis e\nindústria.\nResultado esperado: Redução do descompasso entre formação e mercado de trabalho.\nIndicador sugerido: Vagas técnicas e taxa de ocupação de egressos.\nImplementação: Normas nacionais de educação profissional. | Financiamento: Fundeb, MEC e parcerias institucionais.\n\n020. Escola Conectada\nAção: Garantir conectividade adequada e manutenção tecnológica nas escolas estaduais, inclusive rurais, indígenas e\nquilombolas.\nResultado esperado: Acesso mais equilibrado a recursos educacionais digitais.\nIndicador sugerido: Percentual de escolas com banda larga compatível e disponibilidade do serviço.\nImplementação: Política de conectividade escolar e contratos públicos. | Financiamento: Recursos educacionais, programas federais e\ntelecomunicações.\n\nTocantins - trabalho, oportunidades e responsabilidade8"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-8",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n021. Escola do Futuro\nAção: Implantar laboratórios de ciências, robótica, programação, IA e espaços maker de forma gradual e regionalizada.\nResultado esperado: Estudantes mais preparados para novas profissões e inovação.\nIndicador sugerido: Escolas equipadas, estudantes participantes e projetos desenvolvidos.\nImplementação: Currículo estadual e política de educação digital. | Financiamento: Fundeb, FAPT, convênios e parcerias\neducacionais.\n\n022. Educação Financeira e Empreendedorismo\nAção: Fortalecer conteúdos de educação financeira, cidadania econômica e empreendedorismo no currículo e em projetos\nescolares.\nResultado esperado: Jovens mais preparados para escolhas financeiras, trabalho e negócios.\nIndicador sugerido: Estudantes atendidos e projetos empreendedores escolares.\nImplementação: PNE, BNCC/documento curricular e normas estaduais. | Financiamento: Orçamento educacional e parcerias sem\nônus indevido.\n\n023. Professor que Transforma\nAção: Criar reconhecimento anual de boas práticas com critérios transparentes, múltiplos indicadores e regulamentação prévia.\nResultado esperado: Valorização de equipes que produzem melhoria comprovada, sem ranking simplista.\nIndicador sugerido: Práticas certificadas e melhoria de indicadores nas escolas participantes.\nImplementação: Lei/regulamento específico, impessoalidade e dotação orçamentária. | Financiamento: Recursos educacionais\npermitidos e premiações legalmente estruturadas.\n\n024. Formação Continuada e Pós-Graduação\nAção: Ampliar parcerias com UFT, UFNT, Unitins e IFTO para formação continuada, mestrado e doutorado voltados a\nnecessidades da rede.\nResultado esperado: Aprimoramento pedagógico e fixação de profissionais qualificados.\nIndicador sugerido: Profissionais certificados e formação em áreas críticas.\nImplementação: LDB, PNE e legislação de carreira. | Financiamento: Educação, Capes e cooperação universitária.\n\n025. Saúde e Bem-Estar da Comunidade Escolar\nAção: Integrar educação, saúde e assistência para prevenção de violência, sofrimento psíquico, bullying, automutilação e\nadoecimento de profissionais.\nResultado esperado: Ambientes escolares mais seguros e acolhedores.\nIndicador sugerido: Atendimentos, protocolos implementados e redução de ocorrências.\nImplementação: Leis 14.819/2024 e 13.935/2019. | Financiamento: Educação, saúde, assistência e cooperação municipal.\n\n026. Busca Ativa e Alerta de Evasão\nAção: Criar sistema de identificação precoce de faltas e risco de abandono, com atuação conjunta da escola e rede de proteção.\nResultado esperado: Menor evasão e resposta mais rápida às causas de abandono.\nIndicador sugerido: Taxa de abandono e estudantes reintegrados.\nImplementação: Normas educacionais, proteção de dados e protocolos intersetoriais. | Financiamento: Orçamento educacional e\nassistência social.\n\n027. Juventude Primeiro Passo\nAção: Articular estágio, aprendizagem, qualificação, empreendedorismo e encaminhamento ao emprego com seleção impessoal.\nResultado esperado: Mais jovens iniciando a vida profissional com proteção e qualificação.\nIndicador sugerido: Jovens qualificados e inseridos em oportunidades formais.\nImplementação: Lei de estágio, aprendizagem profissional e regras de pessoal público. | Financiamento: Trabalho, educação e\nparcerias com setor produtivo.\n\nTocantins - trabalho, oportunidades e responsabilidade9"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-9",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n028. Tocantins para o Mundo\nAção: Oferecer intercâmbios educacionais, científicos e tecnológicos por editais públicos, critérios de mérito e inclusão\nsocioeconômica.\nResultado esperado: Ampliação de repertório e formação de talentos que contribuam com o Estado.\nIndicador sugerido: Bolsas concedidas, retorno e projetos de aplicação do conhecimento.\nImplementação: Editais, bolsas e cooperação acadêmica internacional. | Financiamento: FAPT, educação e acordos de cooperação.\n\nTocantins - trabalho, oportunidades e responsabilidade10"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-10",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n3. Saúde e Qualidade de Vida\nRegionalizar a atenção, reduzir filas e fortalecer a rede do SUS, com prioridade para atendimento próximo de onde as\npessoas vivem, eficiência da regulação e cuidado integral.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n029. Saúde Perto de Casa\nAção: Organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta.\nResultado esperado: Menos deslocamentos para Palmas e maior resolutividade regional.\nIndicador sugerido: Procedimentos especializados realizados fora da capital.\nImplementação: Pactuação do SUS, Plano Estadual de Saúde e regionalização. | Financiamento: SUS, Tesouro e cofinanciamento.\n\n030. Fila Transparente\nAção: Implantar acompanhamento digital das filas de consultas, exames e cirurgias, preservando dados pessoais e critérios\nclínicos.\nResultado esperado: Mais transparência, previsibilidade e capacidade de gestão da demanda.\nIndicador sugerido: Tempo médio de espera por especialidade.\nImplementação: LGPD, regulação do SUS e normas de transparência. | Financiamento: Orçamento de saúde e TI.\n\n031. Programa Permanente de Redução de Filas\nAção: Combinar capacidade pública, mutirões, hospitais municipais e rede complementar mediante contratação regular e\ncritérios assistenciais.\nResultado esperado: Redução sustentada do passivo de procedimentos.\nIndicador sugerido: Quantidade de procedimentos e redução do tempo de espera.\nImplementação: Lei 8.080/1990, contratação pública e planejamento assistencial. | Financiamento: SUS, Tesouro e contratualização.\n\n032. Cirurgias Eletivas Regionais\nAção: Definir metas anuais de cirurgias por especialidade e região, priorizando maior demanda reprimida.\nResultado esperado: Atendimento mais rápido e redução de sofrimento evitável.\nIndicador sugerido: Cirurgias realizadas e fila por especialidade.\nImplementação: Programação pactuada e contratos/convênios quando necessários. | Financiamento: SUS e recursos estaduais.\n\n033. TeleSaúde Tocantins\nAção: Expandir teleconsultoria, teleconsulta e telemonitoramento em especialidades de alta demanda para municípios distantes.\nResultado esperado: Acesso mais rápido a especialistas e melhor apoio à atenção primária.\nIndicador sugerido: Teleatendimentos e encaminhamentos evitados.\nImplementação: Regras do SUS, telessaúde, proteção de dados e conselhos profissionais. | Financiamento: SUS Digital e orçamento\nde saúde.\n\n034. Regulação Inteligente\nAção: Integrar sistemas para visualizar vagas, exames, leitos e transporte sanitário, reduzindo perdas e retrabalho.\nResultado esperado: Uso mais eficiente da capacidade instalada.\nIndicador sugerido: Taxa de absenteísmo, vagas ociosas e tempo de regulação.\nImplementação: Governança de dados de saúde e LGPD. | Financiamento: Saúde e tecnologia.\n\nTocantins - trabalho, oportunidades e responsabilidade11"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-11",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n035. Modernização Hospitalar\nAção: Criar plano de renovação de equipamentos, manutenção preventiva e atualização de infraestrutura hospitalar.\nResultado esperado: Menos interrupções de serviço e mais qualidade diagnóstica e cirúrgica.\nIndicador sugerido: Equipamentos críticos operacionais e tempo de indisponibilidade.\nImplementação: Plano de investimento e contratações públicas. | Financiamento: SUS, Tesouro e emendas.\n\n036. Rede Materno-Infantil Segura\nAção: Ampliar pré-natal qualificado, cuidado de alto risco, UTI neonatal/pediátrica e integração das maternidades conforme\ndemanda regional.\nResultado esperado: Redução da mortalidade materna, neonatal e infantil.\nIndicador sugerido: Razões de mortalidade e cobertura do pré-natal adequado.\nImplementação: Rede de Atenção Materna e Infantil e pactuação SUS. | Financiamento: SUS e cofinanciamento estadual.\n\n037. Saúde da Mulher\nAção: Fortalecer rastreamento de câncer, mamografia, saúde sexual e reprodutiva, ginecologia e atendimento às vítimas de\nviolência.\nResultado esperado: Diagnóstico precoce e cuidado integral.\nIndicador sugerido: Cobertura de exames e tempo de acesso à especialidade.\nImplementação: Políticas nacionais do SUS e rede de proteção. | Financiamento: SUS e orçamento estadual.\n\n038. Rede de Saúde Mental\nAção: Expandir leitos adequados, apoio a CAPS, telepsiquiatria e integração com assistência e atenção primária.\nResultado esperado: Mais cuidado territorial e menos crises sem atendimento.\nIndicador sugerido: Cobertura de serviços, internações evitáveis e tempo de atendimento.\nImplementação: RAPS, SUS e pactuação com municípios. | Financiamento: SUS e cofinanciamento.\n\n039. Cuidado em Álcool e Outras Drogas\nAção: Organizar prevenção, tratamento, redução de danos e reinserção social com base em evidências e integração da rede.\nResultado esperado: Resposta mais efetiva às situações de dependência e vulnerabilidade.\nIndicador sugerido: Pessoas acompanhadas e continuidade do cuidado.\nImplementação: Política sobre drogas, SUS e SUAS. | Financiamento: Saúde, assistência e recursos federais.\n\n040. Rede PcD e TEA Regionalizada\nAção: Ampliar reabilitação, diagnóstico e atendimento especializado em polos regionais, articulando saúde, educação e\nassistência.\nResultado esperado: Menos deslocamentos e apoio contínuo às famílias.\nIndicador sugerido: Cobertura regional e tempo de espera para avaliação/terapia.\nImplementação: Rede de Cuidados à Pessoa com Deficiência e SUS. | Financiamento: SUS, Tesouro e parcerias habilitadas.\n\n041. Saúde 60+\nAção: Criar linha estadual de cuidado para envelhecimento saudável, prevenção de quedas, demências, doenças crônicas e\ncuidado domiciliar.\nResultado esperado: Mais autonomia e redução de internações evitáveis.\nIndicador sugerido: Internações por condições sensíveis, quedas e idosos acompanhados.\nImplementação: Política Nacional de Saúde da Pessoa Idosa e SUS. | Financiamento: SUS e orçamento estadual.\n\nTocantins - trabalho, oportunidades e responsabilidade12"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-12",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n042. Tocantins Contra a Obesidade e Doenças Crônicas\nAção: Integrar alimentação saudável, atividade física, rastreamento e acompanhamento multiprofissional.\nResultado esperado: Menor incidência de complicações evitáveis de diabetes, hipertensão e obesidade.\nIndicador sugerido: Cobertura de acompanhamento e indicadores de risco.\nImplementação: Atenção primária e promoção da saúde. | Financiamento: SUS e parcerias intersetoriais.\n\n043. Assistência Farmacêutica Regional\nAção: Aprimorar previsão de demanda, estoques, distribuição e pontos regionais de acesso a medicamentos de responsabilidade\nestadual.\nResultado esperado: Menos falta de medicamentos e viagens desnecessárias.\nIndicador sugerido: Disponibilidade de itens essenciais e tempo de dispensação.\nImplementação: Regras da assistência farmacêutica do SUS. | Financiamento: SUS e Tesouro.\n\nTocantins - trabalho, oportunidades e responsabilidade13"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-13",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n4. Segurança Pública, Justiça, Defesa Civil e Proteção\nCombater a violência com presença, investigação, inteligência, integração, prevenção e valorização das forças de\nsegurança, respeitando direitos e evidências.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n044. Tocantins Seguro\nAção: Estabelecer metas regionais de redução da violência e integrar Polícia Militar, Polícia Civil, Polícia Penal, Bombeiros,\nperícia e inteligência.\nResultado esperado: Resposta coordenada e foco nos territórios de maior risco.\nIndicador sugerido: Taxas de crimes violentos e resolutividade de investigações.\nImplementação: Plano Estadual de Segurança Pública e governança integrada. | Financiamento: Fundo de segurança, Tesouro e\ntransferências federais.\n\n045. Inteligência Contra o Crime Organizado\nAção: Fortalecer análise de dados e operações integradas contra facções, tráfico, lavagem de dinheiro e roubo de cargas.\nResultado esperado: Aumento da capacidade de desarticulação de organizações criminosas.\nIndicador sugerido: Operações integradas, ativos bloqueados e crimes esclarecidos.\nImplementação: Legislação de segurança, inteligência e cooperação interinstitucional. | Financiamento: Fundos de segurança e\nTesouro.\n\n046. Recomposição Planejada dos Efetivos\nAção: Realizar estudos periódicos de déficit e promover concursos quando necessários, observando limites fiscais e formação\nadequada.\nResultado esperado: Efetivos compatíveis com necessidades regionais e renovação sustentável.\nIndicador sugerido: Relação efetivo/demanda e vacâncias críticas.\nImplementação: Concurso público, LRF e leis de carreira. | Financiamento: Orçamento de pessoal e planejamento fiscal.\n\n047. Saúde e Valorização das Forças\nAção: Implantar programas de saúde mental, prevenção do adoecimento, capacitação e melhoria de condições de trabalho.\nResultado esperado: Mais proteção aos profissionais e menor afastamento evitável.\nIndicador sugerido: Afastamentos, cobertura de saúde ocupacional e capacitações.\nImplementação: Leis de carreira e políticas de saúde do trabalhador. | Financiamento: Orçamento de segurança e saúde do servidor.\n\n048. Videomonitoramento com Governança\nAção: Expandir câmeras e leitura de placas em pontos estratégicos, com critérios de necessidade, proteção de dados e auditoria.\nResultado esperado: Maior capacidade de prevenção e recuperação de veículos.\nIndicador sugerido: Veículos recuperados, ocorrências apoiadas e cobertura crítica.\nImplementação: LGPD, regras de segurança e contratos tecnológicos. | Financiamento: Fundos de segurança e parcerias.\n\n049. Segurança Rural e de Divisas\nAção: Fortalecer patrulhamento, inteligência e operações contra furto de gado, máquinas, cargas e crimes ambientais.\nResultado esperado: Mais segurança ao produtor e às comunidades rurais.\nIndicador sugerido: Ocorrências, recuperação de bens e operações em corredores críticos.\nImplementação: Planejamento operacional e cooperação federal/interestadual. | Financiamento: Segurança pública e convênios.\n\nTocantins - trabalho, oportunidades e responsabilidade14"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-14",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n050. Proteção Integral da Mulher\nAção: Regionalizar atendimento especializado, protocolos de risco e articulação com a rede de acolhimento e Justiça.\nResultado esperado: Resposta mais rápida a violência doméstica, sexual e feminicídio.\nIndicador sugerido: Medidas protetivas, reincidência e tempo de atendimento.\nImplementação: Lei Maria da Penha e políticas de proteção às mulheres. | Financiamento: Segurança, assistência e recursos federais.\n\n051. Proteção da Criança e do Adolescente\nAção: Especializar investigação de violência sexual, exploração, desaparecimento e crimes digitais contra crianças e\nadolescentes.\nResultado esperado: Maior capacidade investigativa e de proteção.\nIndicador sugerido: Casos investigados, tempo de resposta e atendimento protegido.\nImplementação: ECA e protocolos do sistema de garantia de direitos. | Financiamento: Segurança e fundos de direitos.\n\n052. Proteção da Pessoa Idosa contra Golpes e Violência\nAção: Criar protocolos policiais e campanhas para fraudes financeiras, violência patrimonial, abandono e crimes digitais.\nResultado esperado: Redução da vulnerabilidade de pessoas idosas.\nIndicador sugerido: Denúncias atendidas, campanhas e crimes patrimoniais esclarecidos.\nImplementação: Estatuto da Pessoa Idosa e política de segurança. | Financiamento: Segurança, direitos humanos e parcerias bancárias\neducativas.\n\n053. Perícia e Polícia Científica Modernas\nAção: Atualizar equipamentos, laboratórios e gestão de criminalística, identificação e medicina legal.\nResultado esperado: Provas mais rápidas e confiáveis para investigação e Justiça.\nIndicador sugerido: Tempo médio de laudos e capacidade laboratorial.\nImplementação: Planejamento de segurança e contratações públicas. | Financiamento: Fundos de segurança e Tesouro.\n\n054. Sistema Penal com Trabalho e Educação\nAção: Expandir educação formal, qualificação, trabalho e acompanhamento de egressos, preservando segurança e direitos.\nResultado esperado: Redução de reincidência e maior reinserção social.\nIndicador sugerido: Pessoas privadas de liberdade estudando/trabalhando e reincidência.\nImplementação: LEP e políticas penitenciárias. | Financiamento: FUNPEN, Tesouro e cooperação.\n\n055. Defesa Civil e Resiliência Climática\nAção: Fortalecer mapeamento de risco, alertas, planos municipais, logística e capacidade de resposta a incêndios, secas e\nenchentes.\nResultado esperado: Menos perdas humanas e materiais em desastres.\nIndicador sugerido: Municípios com planos, tempo de resposta e população coberta por alertas.\nImplementação: Sistema Nacional de Proteção e Defesa Civil. | Financiamento: Defesa civil, transferências e fundos de emergência.\n\nTocantins - trabalho, oportunidades e responsabilidade15"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-15",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n5. Desenvolvimento Social, Direitos Humanos e Inclusão\nOrganizar uma rede de proteção social capaz de enfrentar vulnerabilidades e, ao mesmo tempo, criar caminhos de\nautonomia, renda, cuidado e participação.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n056. Pacto Estadual pelo SUAS\nAção: Fortalecer cofinanciamento, apoio técnico, vigilância socioassistencial e integração do Estado com os 139 municípios.\nResultado esperado: Rede socioassistencial mais estável e regionalmente equilibrada.\nIndicador sugerido: Municípios cofinanciados, regularidade dos repasses e cobertura de serviços.\nImplementação: LOAS, normas do SUAS e legislação estadual. | Financiamento: Fundo Estadual de Assistência Social e\ntransferências.\n\n057. Escola do SUAS Tocantins\nAção: Criar programa permanente de formação para trabalhadores, gestores e conselheiros da assistência social.\nResultado esperado: Melhoria da qualidade dos serviços e da gestão municipal.\nIndicador sugerido: Profissionais certificados e municípios participantes.\nImplementação: Política de educação permanente do SUAS. | Financiamento: Assistência social e cooperação acadêmica.\n\n058. Segurança Alimentar Tocantins\nAção: Integrar aquisição de alimentos, bancos de alimentos, cozinhas, restaurantes e ações de primeira infância.\nResultado esperado: Redução da insegurança alimentar e fortalecimento da produção local.\nIndicador sugerido: Famílias atendidas e alimentos adquiridos/distribuídos.\nImplementação: SISAN, SUAS e compras públicas legais. | Financiamento: Fundos sociais, agricultura e transferências.\n\n059. População em Situação de Rua - Porta de Saída\nAção: Articular abordagem, saúde, documentação, acolhimento, moradia transitória, qualificação e reinserção familiar/produtiva.\nResultado esperado: Atendimento humanizado com foco em autonomia e redução da permanência crônica nas ruas.\nIndicador sugerido: Pessoas acompanhadas com plano individual e saídas qualificadas.\nImplementação: SUAS, SUS e direitos humanos. | Financiamento: Assistência, saúde e parcerias municipais.\n\n060. Política Estadual de Cuidados\nAção: Apoiar famílias cuidadoras de pessoas idosas dependentes, PcD e pessoas com limitações funcionais com orientação,\ndescanso do cuidador e serviços regionais.\nResultado esperado: Menos sobrecarga familiar e maior proteção das pessoas dependentes.\nIndicador sugerido: Famílias acompanhadas e serviços de apoio ofertados.\nImplementação: SUAS, SUS e políticas de cuidados. | Financiamento: Assistência, saúde e cofinanciamento.\n\n061. Primeira Infância Tocantins\nAção: Integrar saúde, nutrição, assistência, educação e proteção nos primeiros anos de vida.\nResultado esperado: Melhores condições para desenvolvimento integral e prevenção de vulnerabilidades.\nIndicador sugerido: Cobertura de acompanhamento e indicadores de desenvolvimento infantil.\nImplementação: Marco Legal da Primeira Infância e políticas setoriais. | Financiamento: Saúde, educação, assistência e fundos da\ninfância.\n\nTocantins - trabalho, oportunidades e responsabilidade16"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-16",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n062. Rede de Proteção e Autonomia da Mulher\nAção: Ampliar centros de referência, acolhimento, qualificação, empreendedorismo e integração com segurança e saúde.\nResultado esperado: Proteção mais rápida e maior autonomia econômica.\nIndicador sugerido: Mulheres atendidas, inseridas em qualificação e proteção continuada.\nImplementação: Políticas para mulheres e Lei Maria da Penha. | Financiamento: Assistência, direitos humanos, trabalho e\ntransferências.\n\n063. Tocantins Acessível\nAção: Mapear barreiras em prédios, serviços e comunicação estadual e executar plano plurianual de acessibilidade.\nResultado esperado: Maior autonomia das pessoas com deficiência.\nIndicador sugerido: Equipamentos estaduais adequados e serviços acessíveis.\nImplementação: Lei Brasileira de Inclusão e normas técnicas. | Financiamento: Orçamento de obras, tecnologia e acessibilidade.\n\n064. Rede Estadual TEA\nAção: Articular atendimento à pessoa autista e família entre saúde, educação e assistência, com referência regional e protocolos\ncomuns.\nResultado esperado: Menos fragmentação e maior continuidade do cuidado.\nIndicador sugerido: Tempo de avaliação, serviços regionais e planos de atendimento integrados.\nImplementação: LBI, legislação do TEA e SUS/SUAS. | Financiamento: Saúde, educação e assistência.\n\n065. Centros-Dia Regionais\nAção: Cofinanciar, em parceria com municípios e entidades habilitadas, serviços diurnos para idosos e PcD com dependência.\nResultado esperado: Apoio às famílias e prevenção de institucionalização desnecessária.\nIndicador sugerido: Vagas de Centro-Dia e municípios de referência atendidos.\nImplementação: Tipificação do SUAS e instrumentos de parceria. | Financiamento: Assistência social e cofinanciamento.\n\n066. Tocantins 60+ - Centros de Convivência\nAção: Apoiar rede de convivência com atividade física, cultura, oficinas, orientação social e inclusão digital.\nResultado esperado: Envelhecimento ativo e redução do isolamento social.\nIndicador sugerido: Pessoas idosas participantes e atividades regulares por região.\nImplementação: Política da pessoa idosa, fundos e cooperação municipal. | Financiamento: Fundo do Idoso, assistência e parcerias.\n\n067. Idoso Conectado e Seguro\nAção: Promover educação digital e financeira para prevenção de golpes, fraudes e assédio comercial.\nResultado esperado: Mais autonomia digital e proteção patrimonial.\nIndicador sugerido: Pessoas idosas capacitadas e campanhas realizadas.\nImplementação: Estatuto da Pessoa Idosa e educação para direitos. | Financiamento: Direitos humanos e parcerias institucionais.\n\n068. Guardiões da Memória Tocantinense\nAção: Criar ações intergeracionais em escolas e centros culturais com pessoas idosas transmitindo saberes, histórias e tradições.\nResultado esperado: Valorização da memória e fortalecimento de vínculos entre gerações.\nIndicador sugerido: Atividades realizadas e mestres/idosos participantes.\nImplementação: Editais e programas culturais/educacionais. | Financiamento: Cultura, educação e fundos do idoso.\n\n069. Casa Segura 60+\nAção: Apoiar adaptações simples de moradia de idosos vulneráveis para prevenir quedas e acidentes domésticos.\nResultado esperado: Mais segurança e permanência autônoma no domicílio.\nIndicador sugerido: Moradias adaptadas e redução de quedas registradas entre beneficiários.\nImplementação: Programa social com critérios técnicos e socioeconômicos. | Financiamento: Habitação, saúde e fundo do idoso.\n\nTocantins - trabalho, oportunidades e responsabilidade17"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-17",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n070. Energia e Conforto 60+\nAção: Estruturar, após estudo técnico e fiscal, soluções de eficiência energética e conforto térmico para idosos vulneráveis,\npriorizando alternativas coletivas e sustentáveis.\nResultado esperado: Redução da pobreza energética e maior conforto em períodos de calor.\nIndicador sugerido: Beneficiários, economia de energia e custo por família.\nImplementação: Lei específica se necessária, critérios de elegibilidade e regulação do setor elétrico. | Financiamento: Fundos,\neficiência energética, parcerias e orçamento social.\n\n071. Povos Indígenas, Quilombolas e Comunidades Tradicionais\nAção: Coordenar ações estaduais de saúde, educação, infraestrutura, produção e proteção cultural respeitando competências\nfederais, consulta e especificidades territoriais.\nResultado esperado: Acesso mais adequado a políticas públicas e respeito à diversidade.\nIndicador sugerido: Comunidades atendidas e projetos cocriados com participação local.\nImplementação: Constituição, Convenção 169/OIT quando aplicável e políticas específicas. | Financiamento: Recursos setoriais e\ncooperação federativa.\n\nTocantins - trabalho, oportunidades e responsabilidade18"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-18",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n6. Infraestrutura, Logística, Mobilidade e Conectividade\nUsar infraestrutura como instrumento de integração territorial, segurança viária, competitividade e acesso aos serviços,\ncom planejamento, manutenção e transparência.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n072. Mapa Estadual da Malha Rodoviária\nAção: Realizar diagnóstico georreferenciado de pavimento, tráfego, segurança, drenagem e condição das rodovias estaduais.\nResultado esperado: Prioridades de investimento definidas por evidências.\nIndicador sugerido: Percentual da malha classificada e atualizada anualmente.\nImplementação: Plano rodoviário e sistema de gestão de ativos. | Financiamento: Ageto, Tesouro e financiamentos.\n\n073. Estrada Boa - Conservação Permanente\nAção: Contratar e executar manutenção preventiva e corretiva por regiões, com metas de nível de serviço.\nResultado esperado: Maior vida útil das rodovias e menor custo de reconstrução.\nIndicador sugerido: Quilômetros conservados e condição do pavimento.\nImplementação: Lei 14.133/2021 e contratos por desempenho quando adequados. | Financiamento: Tesouro, FDR e financiamentos.\n\n074. Programa Pontes Seguras\nAção: Inventariar e classificar pontes e obras de arte especiais, priorizando risco estrutural e impacto regional.\nResultado esperado: Redução de interdições e acidentes.\nIndicador sugerido: Pontes inspecionadas, recuperadas e com plano de manutenção.\nImplementação: Normas de engenharia e contratação pública. | Financiamento: Tesouro, operações de crédito e transferências.\n\n075. TO-010 e Rio Sono\nAção: Atualizar estudos, projetos, licenças, custos e situação contratual da ligação/ponte da TO-010 na região de Rio Sono para\ndefinir solução executável.\nResultado esperado: Superação de gargalo regional com decisão tecnicamente sustentada.\nIndicador sugerido: Etapas de projeto/licenciamento e execução física.\nImplementação: Engenharia, licenciamento ambiental e orçamento. | Financiamento: Tesouro, financiamentos e transferências.\n\n076. Corredores Produtivos\nAção: Priorizar trechos que conectem áreas produtoras, armazéns, distritos industriais e acessos à Ferrovia Norte-Sul.\nResultado esperado: Redução do custo logístico e maior competitividade.\nIndicador sugerido: Tempo/custo de transporte e quilômetros qualificados.\nImplementação: Plano de logística e carteira de investimentos. | Financiamento: FDR, Tesouro, crédito e parcerias.\n\n077. Tocantins Multimodal\nAção: Planejar integração entre rodovias, ferrovia, aeroportos e potencial hidroviário, articulando competências federais.\nResultado esperado: Melhor aproveitamento da posição geográfica do Estado.\nIndicador sugerido: Projetos multimodais estruturados e cargas movimentadas.\nImplementação: Cooperação interfederativa e estudos de viabilidade. | Financiamento: União, Estado, concessões e financiamento.\n\n078. Acessos à Ferrovia Norte-Sul\nAção: Melhorar ligações rodoviárias e apoiar estruturas logísticas nas áreas de influência dos pátios ferroviários.\nResultado esperado: Maior uso da ferrovia por cadeias produtivas tocantinenses.\nIndicador sugerido: Acessos melhorados e terminais/empreendimentos viabilizados.\nImplementação: Planejamento estadual e articulação com concessionárias/União. | Financiamento: Infraestrutura, setor privado e\nfinanciamentos.\n\nTocantins - trabalho, oportunidades e responsabilidade19"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-19",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n079. Estradas do Turismo\nAção: Priorizar acessos e segurança viária para Jalapão, Cantão, Serras Gerais e outros polos, condicionados a estudos\nambientais.\nResultado esperado: Turismo com acesso mais seguro e previsível durante o ano.\nIndicador sugerido: Tempo de viagem, trechos qualificados e fluxo turístico.\nImplementação: Licenciamento ambiental, projetos de engenharia e conservação. | Financiamento: Turismo, infraestrutura e parcerias.\n\n080. Via Segura\nAção: Requalificar pontos críticos, sinalização, curvas, travessias, iluminação e ações educativas nas rodovias.\nResultado esperado: Redução de mortes e lesões no trânsito.\nIndicador sugerido: Acidentes fatais e pontos críticos tratados.\nImplementação: Código de Trânsito, engenharia e fiscalização. | Financiamento: Infraestrutura, trânsito e fundos específicos.\n\n081. Rodovias Inteligentes\nAção: Avaliar tecnologias de pesagem em movimento, monitoramento, sensores e gestão de tráfego em corredores prioritários.\nResultado esperado: Menor deterioração por sobrepeso e melhor gestão operacional.\nIndicador sugerido: Trechos monitorados, infrações e custos de manutenção evitados.\nImplementação: Estudos técnicos, proteção de dados e regulação. | Financiamento: Concessões, infraestrutura e tecnologia.\n\n082. Conectividade no Interior\nAção: Articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura.\nResultado esperado: Mais acesso a educação, saúde digital, produção e serviços.\nIndicador sugerido: Cobertura territorial e equipamentos públicos conectados.\nImplementação: Cooperação com União, municípios e provedores. | Financiamento: Programas de conectividade e investimento\nprivado.\n\n083. Aeroportos e Aviação Regional\nAção: Apoiar regularização, segurança e modernização de aeroportos/aeródromos prioritários conforme demanda de turismo,\nsaúde e negócios.\nResultado esperado: Maior integração e capacidade de receber fluxos estratégicos.\nIndicador sugerido: Equipamentos regularizados e movimentos aéreos.\nImplementação: ANAC, estudos de demanda e competências municipais/federais. | Financiamento: Infraestrutura, União, municípios\ne concessões.\n\n084. Infraestrutura por PPP e Concessões\nAção: Estruturar parcerias somente quando estudos demonstrarem vantagem, modicidade, adequada alocação de riscos e\ncapacidade de regulação.\nResultado esperado: Atração de capital privado sem transferir riscos indevidos ao Estado.\nIndicador sugerido: Projetos com análise de value for money e desempenho contratual.\nImplementação: Lei de PPPs, concessões e programa estadual de parcerias. | Financiamento: Capital privado, contraprestações\nprevistas e receitas acessórias.\n\n085. Painel Público de Obras\nAção: Publicar cronograma, custo, empresa, aditivos, medições e percentual físico-financeiro das obras estratégicas.\nResultado esperado: Mais transparência e pressão por conclusão.\nIndicador sugerido: Obras com dados atualizados e índice de atraso.\nImplementação: LAI, Lei 14.133/2021 e transparência ativa. | Financiamento: Custeio de gestão e TI.\n\nTocantins - trabalho, oportunidades e responsabilidade20"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-20",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n7. Habitação, Regularização Fundiária, Saneamento e Cidades\nPromover moradia digna e cidades mais estruturadas, integrando habitação, documentação, água, esgoto, drenagem e\nacessibilidade.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n086. Morar Tocantins\nAção: Criar carteira estadual de habitação baseada em déficit atualizado, terrenos aptos e fontes de financiamento, evitando\nmetas numéricas sem suporte técnico.\nResultado esperado: Mais famílias atendidas com moradia adequada e infraestrutura.\nIndicador sugerido: Unidades contratadas/concluídas e famílias beneficiadas.\nImplementação: Programas habitacionais, seleção transparente e planejamento urbano. | Financiamento: Estado, União, municípios,\nFGTS/financiamentos e setor privado.\n\n087. Banco de Terrenos Urbanizados\nAção: Mapear áreas públicas aptas e bem localizadas para habitação, priorizando acesso a serviços e transporte.\nResultado esperado: Redução do custo e melhor localização dos empreendimentos.\nIndicador sugerido: Terrenos regularizados e projetos viabilizados.\nImplementação: Patrimônio público, planejamento urbano e legislação fundiária. | Financiamento: Patrimônio estadual e cooperação\nmunicipal.\n\n088. Moradia Acessível e Eficiente\nAção: Adotar padrões de acessibilidade, conforto térmico, eficiência energética e infraestrutura digital nas novas unidades\napoiadas pelo Estado.\nResultado esperado: Habitações mais adequadas ao clima e às necessidades das famílias.\nIndicador sugerido: Unidades com padrões de acessibilidade/eficiência.\nImplementação: Normas técnicas e legislação de acessibilidade. | Financiamento: Programas habitacionais e eficiência energética.\n\n089. Reforma e Melhoria Habitacional\nAção: Apoiar melhorias em casas inadequadas de famílias vulneráveis, com foco em banheiro, cobertura, instalações e\nsegurança.\nResultado esperado: Redução de inadequações graves sem necessidade de substituição total da moradia.\nIndicador sugerido: Moradias melhoradas e itens de inadequação corrigidos.\nImplementação: Programa social, critérios de seleção e assistência técnica. | Financiamento: Habitação, fundos e parcerias.\n\n090. Regulariza Tocantins\nAção: Ampliar apoio técnico e georreferenciamento para REURB, integrando municípios, cartórios e órgãos de Justiça.\nResultado esperado: Segurança jurídica e acesso a crédito e serviços urbanos.\nIndicador sugerido: Títulos registrados e núcleos regularizados.\nImplementação: Lei 13.465/2017 e legislação estadual. | Financiamento: Habitação/fundiário, municípios e convênios.\n\n091. Escritório de REURB para Pequenos Municípios\nAção: Disponibilizar equipe técnica volante de topografia, urbanismo e jurídico para prefeituras com baixa capacidade.\nResultado esperado: Aceleração da regularização em cidades pequenas.\nIndicador sugerido: Municípios atendidos e processos concluídos.\nImplementação: Cooperação técnica e legislação da REURB. | Financiamento: Estado, municípios e emendas.\n\nTocantins - trabalho, oportunidades e responsabilidade21"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-21",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n092. Plano Estadual de Saneamento\nAção: Atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização.\nResultado esperado: Prioridades claras para universalização progressiva.\nIndicador sugerido: Cobertura de água/esgoto e projetos estruturados.\nImplementação: Marco Legal do Saneamento e regulação. | Financiamento: Tarifas, União, financiamentos e PPPs quando viáveis.\n\n093. Carteira de Esgotamento Sanitário\nAção: Estruturar projetos de coleta e tratamento para municípios sem cobertura adequada, buscando escala regional.\nResultado esperado: Ampliação do saneamento e proteção dos rios.\nIndicador sugerido: População atendida e volume tratado.\nImplementação: Planos municipais/regionais e licenciamento. | Financiamento: União, financiamentos, prestadores e parcerias.\n\n094. Pavimentação, Drenagem e Acessibilidade em Cooperação\nAção: Apoiar municípios em obras urbanas com projetos técnicos, critérios públicos de prioridade e contrapartidas adequadas.\nResultado esperado: Melhoria da mobilidade e redução de alagamentos.\nIndicador sugerido: Vias qualificadas e pontos de alagamento tratados.\nImplementação: Convênios, transferências e Lei 14.133/2021. | Financiamento: Tesouro, emendas e municípios.\n\n095. Cidades Resilientes\nAção: Apoiar mapeamento de risco, drenagem, arborização, ilhas de calor e adaptação climática no planejamento urbano.\nResultado esperado: Menor vulnerabilidade a eventos extremos.\nIndicador sugerido: Municípios com planos e áreas de risco tratadas.\nImplementação: Defesa civil, meio ambiente e planejamento urbano. | Financiamento: Fundos climáticos, infraestrutura e cooperação.\n\nTocantins - trabalho, oportunidades e responsabilidade22"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-22",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n8. Desenvolvimento Econômico, Emprego, Indústria, Tributação e\nEnergia\nCriar um ambiente de negócios previsível e transformar a produção tocantinense em emprego, renda, inovação e maior\nvalor agregado dentro do Estado.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n096. Invista Tocantins\nAção: Criar atendimento profissional ao investidor com informações, áreas, incentivos legais, licenciamento e acompanhamento\nde projetos.\nResultado esperado: Mais investimentos produtivos com transparência e contrapartidas.\nIndicador sugerido: Investimentos anunciados/implantados e empregos gerados.\nImplementação: Política de desenvolvimento econômico e governança de incentivos. | Financiamento: Orçamento de\ndesenvolvimento e parcerias.\n\n097. Tocantins Transforma\nAção: Atrair e apoiar indústrias de processamento de grãos, carnes, leite, frutas, pescado, madeira legal e bioeconomia.\nResultado esperado: Mais valor agregado e empregos qualificados no Estado.\nIndicador sugerido: Valor da transformação industrial e empregos industriais.\nImplementação: Incentivos condicionados, licenciamento e desenvolvimento regional. | Financiamento: Crédito, incentivos legais e\ninvestimento privado.\n\n098. Distritos Industriais Modernos\nAção: Requalificar áreas industriais com energia, água, saneamento, acesso rodoviário e conectividade conforme vocação\nregional.\nResultado esperado: Maior competitividade e capacidade de receber novas empresas.\nIndicador sugerido: Áreas qualificadas e ocupação dos distritos.\nImplementação: Projetos de infraestrutura e gestão patrimonial. | Financiamento: Estado, municípios, concessionárias e privado.\n\n099. Fornecedor Tocantinense\nAção: Capacitar empresas locais para compras públicas e cadeias privadas, sem criar preferência ilegal por sede ou domicílio.\nResultado esperado: Mais empresas aptas a disputar mercados em igualdade de condições.\nIndicador sugerido: Empresas capacitadas e contratos conquistados.\nImplementação: LC 123/2006, Lei 14.133/2021 e desenvolvimento de fornecedores. | Financiamento: Desenvolvimento, Sebrae e\nparcerias.\n\n100. Pequeno Negócio Forte\nAção: Simplificar serviços, ampliar orientação, digitalização, crédito e acesso a mercado para MEIs e MPEs.\nResultado esperado: Mais sobrevivência empresarial, formalização e geração de renda.\nIndicador sugerido: Empresas formalizadas, crédito e taxa de sobrevivência.\nImplementação: Liberdade econômica, Redesim e LC 123/2006. | Financiamento: Fomento, Sebrae e instituições financeiras.\n\n101. Primeiro Emprego Tocantins\nAção: Estimular contratação de jovens pelo setor privado e ampliar aprendizagem/estágio legal, com qualificação orientada à\ndemanda.\nResultado esperado: Mais oportunidades formais para jovens.\nIndicador sugerido: Jovens contratados e permanência após 12 meses.\nImplementação: Aprendizagem, estágio e incentivos legalmente estruturados. | Financiamento: Trabalho, educação e setor privado.\n\nTocantins - trabalho, oportunidades e responsabilidade23"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-23",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n102. Escola do Trabalhador por Vocação Regional\nAção: Ofertar cursos curtos e técnicos em regiões com demanda comprovada por mão de obra.\nResultado esperado: Qualificação com maior chance de inserção profissional.\nIndicador sugerido: Conclusões de curso e colocação no emprego.\nImplementação: SINE, Sistema S e parcerias educacionais. | Financiamento: Trabalho, educação e recursos federais.\n\n103. Piso Salarial Regional - Estudo e Diálogo\nAção: Avaliar, com trabalhadores e empregadores, a instituição de piso regional apenas para categorias permitidas pela LC\n103/2000, mediante estudo e lei.\nResultado esperado: Proteção salarial juridicamente válida sem prometer salário mínimo estadual universal.\nIndicador sugerido: Estudo concluído, diálogo social e eventual projeto de lei.\nImplementação: LC 103/2000, iniciativa do Executivo e análise de impacto. | Financiamento: Sem custo direto obrigatório; efeitos\neconômicos monitorados.\n\n104. Política Tributária Responsável\nAção: Revisar procedimentos, obrigações e benefícios para simplificar e aumentar previsibilidade, condicionando renúncias a\nimpacto e compensações legais.\nResultado esperado: Ambiente tributário mais claro sem comprometer serviços públicos.\nIndicador sugerido: Tempo de processos, contencioso e renúncia avaliada por resultado.\nImplementação: LRF, legislação tributária e reforma tributária. | Financiamento: Gestão fiscal.\n\n105. Transição para o IBS\nAção: Preparar administração tributária, sistemas e contribuintes para a transição do ICMS ao IBS durante o mandato.\nResultado esperado: Menor custo de adaptação e risco fiscal para o Estado e empresas.\nIndicador sugerido: Sistemas adaptados, capacitações e cumprimento de marcos nacionais.\nImplementação: EC 132/2023, LC 214/2025 e LC 227/2026. | Financiamento: Sefaz e projetos de modernização fiscal.\n\n106. IPVA com Estudo de Impacto\nAção: Avaliar alíquotas, benefícios e regras somente com estudo de arrecadação, efeitos sobre municípios e educação, justiça\ndistributiva e LRF.\nResultado esperado: Decisões tributárias responsáveis e transparentes.\nIndicador sugerido: Estudos publicados e resultados de eventual alteração.\nImplementação: Constituição, legislação estadual e LRF. | Financiamento: Gestão tributária.\n\n107. Energia Competitiva para Produzir\nAção: Atuar nas competências estaduais para eficiência, geração distribuída, atração de projetos e redução de custos sistêmicos,\nsem prometer controle unilateral da tarifa.\nResultado esperado: Maior competitividade para empresas e produtores.\nIndicador sugerido: Capacidade renovável, projetos de eficiência e custo energético de ativos públicos.\nImplementação: Regulação federal do setor elétrico e competências estaduais. | Financiamento: Investimento privado, eficiência e\nlinhas de crédito.\n\n108. Economia Digital e Startups\nAção: Fortalecer incubadoras, Parque Tecnológico, inovação aberta, capital semente e compras públicas de inovação.\nResultado esperado: Mais empresas tecnológicas e soluções desenvolvidas no Tocantins.\nIndicador sugerido: Startups apoiadas, empregos e soluções contratadas.\nImplementação: Marco Legal de Startups, CT&I e Lei 14.133/2021. | Financiamento: FAPT, fundos de inovação e privado.\n\nTocantins - trabalho, oportunidades e responsabilidade24"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-24",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n109. Mineração com Valor Local\nAção: Estruturar política para informação geológica, licenciamento eficiente, fornecedores locais, beneficiamento e transparência\nda CFEM, respeitando competência da ANM.\nResultado esperado: Mais valor agregado e desenvolvimento dos municípios mineradores.\nIndicador sugerido: Empregos, beneficiamento local e aplicação transparente da CFEM.\nImplementação: Código de Mineração, ANM, legislação ambiental e competências estaduais. | Financiamento: Investimento privado,\nCFEM e infraestrutura.\n\nTocantins - trabalho, oportunidades e responsabilidade25"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-25",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n9. Agronegócio, Agricultura Familiar e Desenvolvimento Rural\nConsolidar a força agropecuária do Tocantins com mais tecnologia, agroindustrialização, sanidade, armazenagem,\nsegurança hídrica e inclusão produtiva.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n110. Agro Tocantins 4.0\nAção: Integrar agricultura de precisão, conectividade, drones, sensoriamento remoto e dados climáticos em extensão rural e\ncapacitação.\nResultado esperado: Mais produtividade com uso eficiente de insumos.\nIndicador sugerido: Produtores atendidos e adoção de tecnologias.\nImplementação: Assistência técnica, CT&I e normas de aviação/uso de dados. | Financiamento: Seagro, Ruraltins, FAPT e crédito\nrural.\n\n111. Tocantins Agroindustrial\nAção: Atrair e apoiar esmagadoras, fábricas de ração, óleos, biocombustíveis, frigoríficos, laticínios e beneficiamento de frutas.\nResultado esperado: Maior retenção de valor da produção no Estado.\nIndicador sugerido: Capacidade industrial instalada e empregos gerados.\nImplementação: Política de incentivos, licenciamento e desenvolvimento industrial. | Financiamento: Investimento privado,\nFNO/Basa/BNDES e incentivos legais.\n\n112. Armazena Tocantins\nAção: Apoiar expansão de silos e armazenagem individual, cooperativa ou condominial em regiões com déficit.\nResultado esperado: Menor perda, mais poder de negociação e melhor logística de safra.\nIndicador sugerido: Nova capacidade estática de armazenagem.\nImplementação: Crédito rural, licenciamento e cooperativismo. | Financiamento: FNO, bancos e investimento privado.\n\n113. Agricultura Familiar Forte\nAção: Ampliar assistência técnica, mecanização compartilhada, irrigação de pequeno porte, crédito e acesso a mercados.\nResultado esperado: Mais renda e permanência produtiva das famílias rurais.\nIndicador sugerido: Famílias atendidas, produtividade e renda dos empreendimentos.\nImplementação: Pronaf, ATER e políticas estaduais. | Financiamento: Ruraltins, FNO, União e Estado.\n\n114. Compra Tocantins da Agricultura Familiar\nAção: Ampliar compras públicas legalmente permitidas para escolas, hospitais e programas sociais, com planejamento de\ndemanda.\nResultado esperado: Mercado estável para produtores e alimentação de qualidade.\nIndicador sugerido: Valor adquirido da agricultura familiar e produtores fornecedores.\nImplementação: PNAE, PAA e legislação de compras aplicável. | Financiamento: Educação, saúde, assistência e programas federais.\n\n115. Coopera Tocantins\nAção: Fortalecer cooperativas e associações com formação em gestão, governança, certificação e estrutura comercial.\nResultado esperado: Ganho de escala e acesso a crédito/mercados.\nIndicador sugerido: Cooperativas apoiadas e faturamento dos grupos atendidos.\nImplementação: Cooperativismo, assistência técnica e editais. | Financiamento: Fomento, Seagro e parcerias.\n\nTocantins - trabalho, oportunidades e responsabilidade26"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-26",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n116. Ruraltins Presente\nAção: Reforçar presença territorial, equipes, ferramentas digitais e calendário de atendimento aos pequenos produtores.\nResultado esperado: Assistência técnica mais contínua e orientada a resultados.\nIndicador sugerido: Produtores atendidos e cobertura territorial.\nImplementação: Política estadual de ATER e planejamento de pessoal. | Financiamento: Tesouro, convênios e programas federais.\n\n117. Defesa Agropecuária de Excelência\nAção: Modernizar Adapec, vigilância, laboratórios, trânsito agropecuário e resposta a emergências sanitárias.\nResultado esperado: Manutenção de mercados e proteção do patrimônio produtivo.\nIndicador sugerido: Status sanitários, tempo de resposta e fiscalizações baseadas em risco.\nImplementação: Legislação sanitária federal/estadual. | Financiamento: Tesouro, taxas e programas federais.\n\n118. Rastreia Tocantins\nAção: Expandir rastreabilidade e certificação para cadeias estratégicas, adequando o produtor a mercados exigentes.\nResultado esperado: Maior segurança sanitária e acesso a mercados de maior valor.\nIndicador sugerido: Animais/produtos rastreados e mercados habilitados.\nImplementação: Regras sanitárias e de rastreabilidade. | Financiamento: Produtores, Estado e projetos de mercado.\n\n119. Bioinsumos com Segurança\nAção: Fomentar pesquisa, capacitação e uso regular de bioinsumos, observando legislação federal, biossegurança e assistência\ntécnica.\nResultado esperado: Redução de custos e impactos ambientais quando tecnicamente adequada.\nIndicador sugerido: Produtores capacitados e área com práticas validadas.\nImplementação: Marco federal de bioinsumos e normas agronômicas. | Financiamento: Pesquisa, crédito e setor privado.\n\n120. Irrigação Inteligente e Segurança Hídrica\nAção: Apoiar eficiência de irrigação, reservação legal, monitoramento e tecnologias de economia de água.\nResultado esperado: Maior estabilidade produtiva com proteção dos recursos hídricos.\nIndicador sugerido: Eficiência hídrica e projetos licenciados.\nImplementação: Outorga, licenciamento e planos de bacia. | Financiamento: Crédito rural e investimento privado.\n\n121. Seguro e Gestão de Risco Rural\nAção: Articular seguro rural, instrumentos paramétricos e informação climática para reduzir exposição a eventos extremos.\nResultado esperado: Mais proteção financeira ao produtor.\nIndicador sugerido: Área segurada e produtores cobertos.\nImplementação: Regulação de seguros e programas de subvenção. | Financiamento: União, seguradoras e eventual apoio estadual\nlegal.\n\n122. Piscicultura e Aquicultura\nAção: Simplificar processos de baixo impacto dentro da lei, ampliar ATER, crédito, cadeia do frio e beneficiamento.\nResultado esperado: Expansão sustentável de uma cadeia com potencial regional.\nIndicador sugerido: Produção, empreendimentos regularizados e unidades de beneficiamento.\nImplementação: Licenciamento, sanidade e legislação aquícola. | Financiamento: FNO, crédito, Estado e privado.\n\n123. Regularização Fundiária Rural e Segurança Jurídica\nAção: Aprimorar cadastros, georreferenciamento e atuação estadual em terras sob sua competência, articulando órgãos federais\nquando necessário.\nResultado esperado: Mais segurança para investimento e acesso a crédito.\nIndicador sugerido: Títulos/processos concluídos e tempo de regularização.\nImplementação: Legislação fundiária e competências federativas. | Financiamento: Itertins e cooperação institucional.\n\nTocantins - trabalho, oportunidades e responsabilidade27"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-27",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n10. Meio Ambiente, Água, Clima e Proteção Animal\nFazer do patrimônio natural um ativo de desenvolvimento sustentável, com gestão ambiental eficiente, segurança\nhídrica, prevenção de incêndios e proteção da fauna.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n124. Naturatins Moderno\nAção: Fortalecer sistemas digitais, estrutura técnica, fiscalização e planejamento de pessoal, com concurso quando estudo\ndemonstrar necessidade e viabilidade.\nResultado esperado: Mais eficiência e segurança jurídica na gestão ambiental.\nIndicador sugerido: Tempo de análise, fiscalizações por risco e capacidade técnica.\nImplementação: Legislação ambiental, concurso público e LRF. | Financiamento: Taxas ambientais, Tesouro e projetos.\n\n125. Licenciamento Ambiental Eficiente e Seguro\nAção: Padronizar fluxos, digitalizar processos e publicar indicadores, sem flexibilizar exigências materiais de proteção\nambiental.\nResultado esperado: Menor incerteza e decisões mais consistentes.\nIndicador sugerido: Tempo mediano de análise e estoque de processos.\nImplementação: Licenciamento ambiental e competências legais. | Financiamento: Naturatins e modernização digital.\n\n126. Planos de Manejo e Uso Sustentável\nAção: Concluir, revisar e implementar planos de manejo de unidades estaduais, conciliando conservação, pesquisa e turismo.\nResultado esperado: Regras claras para proteção e uso responsável.\nIndicador sugerido: Unidades com plano atualizado e ações executadas.\nImplementação: SNUC e legislação estadual. | Financiamento: Meio ambiente, fundos e turismo.\n\n127. Água para o Futuro\nAção: Implantar programa permanente de proteção de nascentes, recuperação de bacias e monitoramento hídrico.\nResultado esperado: Maior segurança hídrica para cidades e produção.\nIndicador sugerido: Nascentes/bacias recuperadas e séries de monitoramento.\nImplementação: Política de recursos hídricos e comitês de bacia. | Financiamento: Fundos ambientais, PSA e parcerias.\n\n128. Produtor de Água\nAção: Expandir pagamento por serviços ambientais para produtores que comprovem conservação ou recuperação em áreas\nprioritárias.\nResultado esperado: Alinhar renda rural e proteção ambiental.\nIndicador sugerido: Hectares protegidos/recuperados e contratos de PSA.\nImplementação: Lei de PSA e regulamentação estadual. | Financiamento: Fundos ambientais, compensações e parcerias.\n\n129. Prevenção e Combate a Incêndios\nAção: Integrar brigadas, Bombeiros, Defesa Civil, municípios e comunidades com monitoramento e manejo integrado do fogo.\nResultado esperado: Menor área queimada e resposta mais rápida.\nIndicador sugerido: Tempo de resposta, área afetada e brigadas capacitadas.\nImplementação: Política de manejo do fogo e defesa civil. | Financiamento: Meio ambiente, segurança e fundos climáticos.\n\nTocantins - trabalho, oportunidades e responsabilidade28"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-28",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n130. Cerrado Vivo e Recuperação de Áreas Degradadas\nAção: Priorizar restauração ecológica, corredores de biodiversidade e recuperação de áreas críticas.\nResultado esperado: Proteção de solo, água e biodiversidade.\nIndicador sugerido: Hectares em restauração e áreas prioritárias atendidas.\nImplementação: Código Florestal, planos de recuperação e licenciamento. | Financiamento: Fundos ambientais e compensações.\n\n131. Lixão Zero e Economia Circular\nAção: Apoiar soluções regionais, triagem, reciclagem, logística reversa e inclusão socioprodutiva de catadores.\nResultado esperado: Destinação mais adequada e geração de renda com reciclagem.\nIndicador sugerido: Municípios com solução adequada e taxa de recuperação de resíduos.\nImplementação: Política Nacional de Resíduos Sólidos e consórcios. | Financiamento: Municípios, Estado, logística reversa e\nfinanciamentos.\n\n132. Energia Solar Social\nAção: Estruturar projetos de geração compartilhada e eficiência energética para públicos vulneráveis, respeitando regulação e\nestudos de custo-benefício.\nResultado esperado: Redução de pobreza energética sem promessa incompatível com a tarifa regulada.\nIndicador sugerido: Famílias atendidas e economia média de energia.\nImplementação: Regulação elétrica, contratos e critérios sociais. | Financiamento: Eficiência energética, PPPs/privado e fundos\nsociais.\n\n133. Tocantins Amigo dos Animais\nAção: Apoiar municípios e organizações em castração, vacinação, microchipagem, adoção, atendimento e combate aos maustratos.\nResultado esperado: Menor abandono e melhoria da saúde única.\nIndicador sugerido: Animais castrados/vacinados e denúncias atendidas.\nImplementação: Legislação de proteção animal, saúde pública e convênios. | Financiamento: Meio ambiente, saúde, municípios e\nparcerias.\n\nTocantins - trabalho, oportunidades e responsabilidade29"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-29",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n11. Desenvolvimento Regional e Redução das Desigualdades\nTerritorializar investimentos e serviços para que municípios pequenos e regiões distantes tenham acesso real às\noportunidades de desenvolvimento.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n134. Regiões Estratégicas de Desenvolvimento\nAção: Organizar planejamento por regiões e cidades-polo, integrando saúde, educação, infraestrutura, produção e turismo.\nResultado esperado: Políticas adaptadas às diferenças do território.\nIndicador sugerido: Planos regionais publicados e investimentos territorializados.\nImplementação: Planejamento estadual e participação regional. | Financiamento: PPA, orçamento e parcerias.\n\n135. Índice de Prioridade Regional\nAção: Criar metodologia transparente que considere vulnerabilidade, distância, infraestrutura e impacto para orientar\ninvestimentos discricionários.\nResultado esperado: Mais equilíbrio na distribuição de recursos.\nIndicador sugerido: Percentual do investimento orientado por critérios públicos.\nImplementação: Planejamento e orçamento, respeitando vinculações legais. | Financiamento: Recursos de investimento.\n\n136. Fábrica de Projetos Municipal\nAção: Apoiar municípios pequenos na elaboração de projetos de engenharia, saneamento, habitação e equipamentos públicos.\nResultado esperado: Mais acesso a recursos que exigem projetos maduros.\nIndicador sugerido: Projetos entregues e recursos captados pelos municípios.\nImplementação: Cooperação técnica e Escritório de Projetos. | Financiamento: Estado, convênios e emendas.\n\n137. Consórcios que Funcionam\nAção: Apoiar governança e estruturação de consórcios para resíduos, saúde, máquinas, estradas e serviços compartilhados.\nResultado esperado: Economia de escala e maior capacidade de pequenos municípios.\nIndicador sugerido: Consórcios apoiados e serviços compartilhados.\nImplementação: Lei 11.107/2005 e legislação de consórcios. | Financiamento: Municípios, Estado e transferências.\n\n138. Pátios Regionais de Máquinas\nAção: Estruturar soluções consorciadas para manutenção de estradas vicinais e apoio emergencial, com regras claras de uso.\nResultado esperado: Melhoria da trafegabilidade rural com menor ociosidade de equipamentos.\nIndicador sugerido: Quilômetros atendidos e disponibilidade de máquinas.\nImplementação: Consórcios, convênios e controle patrimonial. | Financiamento: Estado, municípios e emendas.\n\n139. Polos Regionais de Serviços\nAção: Planejar serviços especializados estaduais em cidades-polo para reduzir deslocamentos da população.\nResultado esperado: Acesso regional a saúde, cidadania e serviços administrativos.\nIndicador sugerido: Serviços regionalizados e deslocamentos evitados.\nImplementação: Planejamento setorial e cooperação municipal. | Financiamento: Orçamento das secretarias.\n\n140. Observatório do Desenvolvimento Regional\nAção: Publicar indicadores econômicos, sociais e de execução do investimento por região e município.\nResultado esperado: Decisão pública mais baseada em evidências e accountability regional.\nIndicador sugerido: Painéis atualizados e indicadores territoriais disponíveis.\nImplementação: Dados abertos e cooperação com universidades. | Financiamento: Planejamento e tecnologia.\n\nTocantins - trabalho, oportunidades e responsabilidade30"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-30",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n141. Arranjos Produtivos Locais\nAção: Apoiar cadeias com vocação territorial, como artesanato, frutas, leite, turismo, pesca, bioeconomia e serviços.\nResultado esperado: Renda e emprego gerados mais perto de onde as pessoas vivem.\nIndicador sugerido: APLs apoiados, empresas/produtores e faturamento.\nImplementação: Desenvolvimento regional, cooperativismo e fomento. | Financiamento: Fomento, Sebrae, crédito e municípios.\n\nTocantins - trabalho, oportunidades e responsabilidade31"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-31",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n12. Cultura, Turismo, Esporte, Comunicação e Economia Criativa\nValorizar a identidade tocantinense e transformar cultura, turismo, esporte e comunicação em desenvolvimento, bemestar, inclusão e oportunidades.\nDiretriz de execução: cada proposta deverá ser compatibilizada com os instrumentos de planejamento e orçamento, a capacidade\nfiscal, as competências legais e os estudos técnicos exigíveis.\n\n142. Tocantins Cultural e Criativo\nAção: Manter editais, circuitos e programas de formação para música, teatro, dança, literatura, audiovisual, design e artesanato.\nResultado esperado: Maior circulação da produção cultural e geração de renda criativa.\nIndicador sugerido: Projetos apoiados, público e empregos da economia criativa.\nImplementação: Sistema de cultura, editais e legislação de fomento. | Financiamento: Fundo cultural, leis de incentivo e\ntransferências.\n\n143. Artista da Terra com Transparência\nAção: Valorizar artistas regionais por editais, programação e fomento, e realizar contratações artísticas com justificativa de preço\ne transparência de custos.\nResultado esperado: Mais oportunidades locais e contratações juridicamente seguras.\nIndicador sugerido: Participação regional em eventos e dados de contratação publicados.\nImplementação: Lei 14.133/2021, especialmente regras de inexigibilidade e transparência. | Financiamento: Cultura e turismo.\n\n144. Patrimônio Vivo do Tocantins\nAção: Inventariar e apoiar salvaguarda de patrimônio material e imaterial, mestres da cultura, festas e tradições.\nResultado esperado: Preservação da memória e identidade das comunidades.\nIndicador sugerido: Bens inventariados, ações de salvaguarda e mestres apoiados.\nImplementação: Legislação cultural e patrimônio. | Financiamento: Cultura, União e fundos.\n\n145. Capim Dourado e Artesanato para o Mundo\nAção: Apoiar design, certificação, proteção de origem, capacitação, comércio digital e acesso a mercados.\nResultado esperado: Maior renda para artesãos e fortalecimento da marca Tocantins.\nIndicador sugerido: Artesãos atendidos, vendas e mercados alcançados.\nImplementação: Políticas de artesanato, patrimônio e comércio. | Financiamento: Cultura, turismo, Sebrae e fomento.\n\n146. Tocantins Destino Brasil\nAção: Criar estratégia contínua de promoção de destinos, inteligência turística, qualificação e integração de roteiros.\nResultado esperado: Mais visitantes, permanência e gasto turístico distribuído nas regiões.\nIndicador sugerido: Fluxo, permanência média, ocupação e gasto estimado.\nImplementação: Plano de turismo, marketing público e governança do setor. | Financiamento: Turismo, parcerias e trade.\n\n147. Jalapão Sustentável e Estruturado\nAção: Melhorar acesso, sinalização, saneamento, conectividade, segurança, capacitação e gestão de visitação preservando\nunidades e comunidades.\nResultado esperado: Turismo de maior qualidade com conservação e renda local.\nIndicador sugerido: Indicadores de visitação, infraestrutura e benefícios às comunidades.\nImplementação: Planos de manejo, licenciamento e turismo sustentável. | Financiamento: Turismo, meio ambiente, infraestrutura e\nprivado.\n\nTocantins - trabalho, oportunidades e responsabilidade32"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-32",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n148. Rotas do Tocantins\nAção: Estruturar Cantão, Serras Gerais, Ilha do Bananal, Bico do Papagaio, rios, turismo religioso, gastronômico, pesca e\naventura.\nResultado esperado: Diversificação do turismo e redução da concentração em poucos destinos.\nIndicador sugerido: Rotas estruturadas e empreendimentos formalizados.\nImplementação: Planejamento turístico e ambiental. | Financiamento: Turismo, municípios e parcerias.\n\n149. Projeto Serra-Lago de Palmas - Estudo de Viabilidade\nAção: Realizar estudos de demanda, engenharia, impacto ambiental, modelagem e viabilidade para avaliar ligação turística por\nteleférico, sem assumir obra antes da análise.\nResultado esperado: Decisão responsável sobre um possível novo atrativo da capital.\nIndicador sugerido: Estudos concluídos e decisão pública fundamentada.\nImplementação: Licenciamento, concessões/PPP e competências urbanísticas. | Financiamento: Estudos públicos e eventual capital\nprivado.\n\n150. Tocantins Ativo, Paradesporto e Esporte Seguro\nAção: Ampliar escolinhas, Bolsa Atleta, jogos, paradesporto e espaços para modalidades tradicionais e radicais; wheeling\nsomente em ambiente controlado e fora de vias públicas.\nResultado esperado: Mais atividade física, inclusão e formação esportiva com segurança.\nIndicador sugerido: Participantes, atletas apoiados, equipamentos ativos e eventos realizados.\nImplementação: Política de esporte, trânsito e segurança. | Financiamento: Esporte, educação, municípios e patrocínios legais.\n\nTocantins - trabalho, oportunidades e responsabilidade33"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-33",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\n20 Entregas Prioritárias do Mandato\nPara facilitar o acompanhamento público, vinte entregas serão tratadas como marcos estruturantes. As metas\nquantitativas finais serão consolidadas com linha de base oficial e programação orçamentária no início do mandato.\n1. Painel público de metas, obras e execução do Plano de Governo.\n2. Escritório Estadual de Projetos apoiando secretarias e municípios.\n3. Diagnóstico georreferenciado de 100% da malha rodoviária estadual.\n4. Inventário técnico das pontes e obras de arte especiais prioritárias.\n5. Sistema transparente de acompanhamento das filas de saúde.\n6. Programa permanente de redução de cirurgias e procedimentos represados.\n7. Expansão da regionalização da saúde e da telessaúde.\n8. Rede de formação técnica alinhada às vocações regionais.\n9. Conectividade adequada e política de educação digital nas escolas estaduais.\n10. Sistema de busca ativa e prevenção da evasão escolar.\n11. Política estruturada de atração de agroindústrias e indústrias de transformação.\n12. Programa Fornecedor Tocantinense sem preferências ilegais em licitações.\n13. Programa estadual de regularização fundiária urbana em cooperação com municípios.\n14. Carteira estadual de habitação baseada em déficit, terrenos e fontes de recursos.\n15. Plano de saneamento e carteira de projetos de esgotamento sanitário.\n16. Rede Tocantins 60+ com convivência, proteção digital, cuidado e envelhecimento ativo.\n17. Integração da rede de proteção à mulher e grupos vulneráveis.\n18. Modernização do licenciamento e da gestão ambiental com transparência.\n19. Planejamento regional de investimentos com critérios públicos.\n20. Portal/aplicativo único de serviços públicos em expansão contínua.\n\nTocantins - trabalho, oportunidades e responsabilidade34"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-34",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nAgenda dos Primeiros 100 Dias\nDiagnóstico fiscal e administrativo\nLevantar caixa, dívida, restos a pagar, contratos, pessoal, previdência, convênios, obras e riscos fiscais.\n\nDiagnóstico das obras\nClassificar obras em execução, paralisadas ou com pendências, indicando custo e decisão necessária.\n\nMapa das filas de saúde\nConsolidar a demanda reprimida por especialidade, região e tempo de espera, preservando dados pessoais.\n\nPlano emergencial de redução de filas\nDefinir capacidade pública, contratualização complementar e metas iniciais.\n\nDiagnóstico rodoviário e de pontes\nIniciar inspeção e classificação por risco e impacto regional.\n\nPacto Municipalista\nReunir prefeitos e consórcios para pactuar projetos prioritários e formas de cooperação.\n\nEscritório Estadual de Projetos\nInstituir governança, equipe e carteira inicial de projetos estruturantes.\n\nPainel de Metas\nPublicar a primeira versão do sistema de acompanhamento do Plano.\n\nComitê de Transição Tributária\nPreparar Sefaz e contribuintes para marcos do IBS e transição do ICMS.\n\nRevisão de benefícios e incentivos\nMapear incentivos fiscais e econômicos, resultados, prazos e contrapartidas.\n\nPlano de Governo Digital\nPriorizar serviços de maior demanda para digitalização e integração.\n\nPlano de regionalização\nDefinir regiões de referência e indicadores que orientarão investimentos.\n\nPlano de pessoal\nMapear vacâncias e déficits críticos antes de decisões sobre concursos e contratações.\n\nAgenda de educação\nCompatibilizar prioridades estaduais com o PNE 2026 e planejar adequações do Plano Estadual de Educação.\n\nPrograma Integridade\nRevisar controles de contratos, riscos e transparência das grandes despesas.\n\nTocantins - trabalho, oportunidades e responsabilidade35"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-35",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nEstratégia de Financiamento\nA execução do Plano deverá combinar fontes compatíveis com cada política e evitar a concentração de grandes\ninvestimentos exclusivamente no Tesouro Estadual. A escolha de fontes será precedida de análise de custo, risco,\ncontrapartida e sustentabilidade fiscal.\nTesouro Estadual: Custeio e investimentos próprios, dentro das prioridades do PPA, LDO e LOA.\nTransferências e fundos federais: SUS, Fundeb, FNDE, SUAS, segurança, defesa civil, infraestrutura e programas\nsetoriais.\nEmendas parlamentares: Recursos estaduais e federais direcionados a projetos tecnicamente maduros.\nBancos públicos e fundos constitucionais: BNDES, Banco da Amazônia/FNO, Caixa, Banco do Brasil e outros\ninstrumentos adequados.\nOperações de crédito: Somente com capacidade de pagamento, autorização e respeito aos limites fiscais.\nOrganismos multilaterais: BID, Banco Mundial e outras instituições para projetos estruturantes com requisitos de\ngovernança.\nPPPs e concessões: Quando estudos demonstrarem vantagem para o interesse público, adequada repartição de riscos e\ncapacidade regulatória.\nInvestimento privado: Atração de indústrias, energia, logística, turismo e tecnologia mediante segurança jurídica e\nambiente de negócios.\nFundos temáticos e doações legais: Fundos de direitos, meio ambiente, cultura, inovação e outras fontes vinculadas,\nconforme legislação.\n\nTocantins - trabalho, oportunidades e responsabilidade36"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-36",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nSistema de Monitoramento e Prestação de Contas\nCada compromisso prioritário deverá possuir uma linha de base e um indicador verificável. Quando uma meta\nquantitativa não puder ser definida com segurança antes da posse, o Plano prevê a publicação da linha de base e da\nmeta técnica após diagnóstico, evitando números arbitrários ou fiscalmente irresponsáveis.\n Programa e órgão responsável\n Problema e linha de base\n Meta anual e meta de mandato\n Indicador e fonte de dados\n Cronograma e marcos\n Custo estimado\n Fonte de financiamento\n Instrumento jurídico necessário\n Riscos e medidas de mitigação\n Situação de execução e justificativa de eventual atraso\nA prestação de contas do Plano deverá ocorrer, no mínimo, por relatório anual público, com atualização mais frequente\ndos indicadores estratégicos sempre que tecnicamente possível.\n\nTocantins - trabalho, oportunidades e responsabilidade37"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-37",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nMatriz de Conformidade Jurídica do Programa\nA redação das propostas adota salvaguardas para evitar promessas incompatíveis com a competência estadual ou com\nas regras fiscais. Os principais pontos de atenção são:\nTema\n\nSalvaguarda adotada\n\nPiso salarial\n\nNão se promete salário mínimo estadual universal. Eventual piso\nregional dependerá da LC 103/2000, diálogo, estudo e lei de iniciativa\ndo Executivo.\n\nICMS, IPVA e incentivos\n\nQualquer redução ou benefício dependerá de legislação própria,\nimpacto fiscal, LRF e das regras da Reforma Tributária.\n\nTarifa de energia\n\nO Estado não fixa unilateralmente tarifa elétrica; atuará em eficiência,\ngeração, tributação legal e articulação regulatória.\n\nCompras locais\n\nNão haverá reserva por naturalidade, sede ou domicílio; serão\nutilizados instrumentos legais para ME/EPP, agricultura familiar e\ncapacitação de fornecedores.\n\nContratação de artistas\n\nSerá observada a Lei 14.133/2021, inclusive requisitos de\ninexigibilidade, justificativa de preço e transparência dos custos.\n\nJovem aprendiz no governo\n\nEstágio e aprendizagem somente dentro das modalidades legais, com\nseleção impessoal e regras próprias.\n\nPrêmios a servidores/professores\n\nExigem regulamentação, critérios objetivos, dotação e\ncompatibilidade com princípios administrativos.\n\nObras estruturantes\n\nProjetos, licenciamento, desapropriações, orçamento e estudos de\nviabilidade serão prévios à contratação.\n\nPPPs e concessões\n\nDependem de estudos de viabilidade, análise fiscal, consulta,\nregulação e repartição adequada de riscos.\n\nCriação de órgãos e cargos\n\nSomente por instrumento legal adequado e após análise de\nnecessidade e impacto.\n\nConcursos\n\nSerão baseados em déficit, planejamento de pessoal, autorização e\nlimites da LRF.\n\nDados e IA\n\nUso condicionado à LGPD, segurança, finalidade pública, supervisão\ne governança.\n\nPovos indígenas e territórios\n\nA atuação estadual respeitará competências da União e\nconsulta/participação quando juridicamente exigíveis.\n\nMineração\n\nA política estadual atuará em desenvolvimento, ambiente e\ninfraestrutura sem invadir competências da ANM/União.\n\nRodovias federais e ferrovia\n\nCompromissos dependentes da União serão tratados como articulação\ne cooperação interfederativa, não como decisão unilateral estadual.\n\nTocantins - trabalho, oportunidades e responsabilidade38"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-38",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nReferências Institucionais e Legais\nFontes oficiais utilizadas para enquadramento jurídico, planejamento e diagnóstico. Os links abaixo servem como base\nde consulta da equipe técnica e devem ser conferidos novamente antes do protocolo final, caso haja alteração normativa\nsuperveniente.\nConstituição Federal de 1988: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm\nConstituição do Estado do Tocantins - texto atualizado até a EC 60/2026:\n\nhttps://www.al.to.leg.br/arquivos/documento_68367.PDF\nLei nº 9.504/1997 - Lei das Eleições, art. 11, §1º, IX: https://www.planalto.gov.br/ccivil_03/leis/l9504.htm\nResolução TSE nº 23.760/2026 - Calendário Eleitoral 2026: https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-\n\nno-23-760-de-2-de-marco-de-2026\nLei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm\nLei nº 14.133/2021 - Licitações e Contratos: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm\nLei Complementar nº 103/2000 - Piso salarial regional: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp103.htm\nEmenda Constitucional nº 132/2023 - Reforma Tributária:\n\nhttps://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm\nLei Complementar nº 214/2025 - IBS/CBS: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm\nLei Complementar nº 227/2026 - Comitê Gestor e transição do IBS:\n\nhttps://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm\nLei nº 15.388/2026 - Plano Nacional de Educação: https://www.planalto.gov.br/ccivil_03/_ato2023-\n\n2026/2026/lei/l15388.htm\nLei nº 15.437/2026 - Piso nacional do magistério: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15437.htm\nLei nº 14.819/2024 - Atenção Psicossocial nas Comunidades Escolares: https://www.planalto.gov.br/ccivil_03/_ato2023-\n\n2026/2024/lei/l14819.htm\nLei nº 13.935/2019 - Psicologia e serviço social na educação básica: https://www.planalto.gov.br/ccivil_03/_ato2019-\n\n2022/2019/lei/l13935.htm\nPPA Tocantins 2024-2027 - Lei nº 4.373/2024, alterada pela Lei nº 4.949/2026: https://www.to.gov.br/seplan/\nLOA Tocantins 2026 - Lei nº 4.950/2026: https://www.to.gov.br/cge/loa-lei-orcamentaria-anual/7flc13dkp7e0\nIBGE - Tocantins | Cidades e Estados: https://www.ibge.gov.br/cidades-e-estados/to.html\nIBGE - Contas Regionais / PIB 2023: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-\n\nnoticias/noticias/45142-pib-cresce-em-todos-os-27-estados-do-pais-em-2023\nMinistério do Trabalho e Emprego / Novo Caged - Tocantins 2025: https://www.gov.br/secom/pt-br/assuntos/noticias-\n\nregionalizadas/numeros-do-novo-caged-em-2025/caged-em-2025/tocantins-gerou-mais-de-7-4-mil-empregos-comcarteira-assinada-em-2025\n\nTocantins - trabalho, oportunidades e responsabilidade39"
+          },
+          {
+            "id": "plano-de-governo-2027-2030-du-pereira-27-39",
+            "titulo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030 | DU PEREIRA 27\n\nCompromisso Final\nO Tocantins precisa transformar potencial em oportunidade concreta. O compromisso deste Plano é combinar\ndesenvolvimento econômico com serviços públicos que funcionem, proteção social, respeito aos municípios e\nresponsabilidade com o dinheiro público.\nRenovar para desenvolver significa planejar antes de prometer, executar com competência, medir resultados e prestar\ncontas. É com esse compromisso que apresentamos ao povo tocantinense um programa de governo construído para ser\ncompreendido, acompanhado e cobrado.\n\nDU PEREIRA 27\nGOVERNADOR - TOCANTINS\n\nTocantins - trabalho, oportunidades e responsabilidade40"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "f40b5f61bf0a97d919d7340cadc3c981c80e12142853f51917e237479bbaa33f"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "768b2128155d9db606444498d362cffa3ebc72f1f5443e5c74b0a0cd39c12ff1"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "769247b80ca96d0463e2980d7599261b6d178e890e5e5c599a0af07bdda2fd8b"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "9e55b04ed897a98e232f86778e5dfd4e4fb58a127c8d1e04e9d0e0a8376547b1"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "df6230a6bfd28bc9b9fd702b35f2e2374a5833fbc5e5b4c2b12cb624de8153d3"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "30e2517b49556e973d329261bcf5eece8f1a22bc1b6382e196dea3eeb8517bee"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "dcceec3d32dcf3a128863834ce27dfef264ee6147a77aa1252c43c3b08d467dd"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "cc4bf488877c44e54b6ddfd2ae351bab7884f4a4dd2b621539718c7535c8961c"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "a65c92672b6574fa08ab9e5d376e7d8975662f975731490f267e7977471b64a9"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "a93b77b8a0a47b3720297ed25ac2b907b57f7059030811c67759b9fabdfe0794"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "84372ddbf206b45b9cfe5616e3a1db873ef9a017273c9eedebfc857f0ce55dc4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "ff9db32a33898002932ed30e992420dd67318505d2f52addc375d7bfbfe6f14a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "ad9f7c26cf2448acd15e310d9e896844252378f08a6edc5e1d9cb5717edf2ee8"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "1187f59afd7b6ae39d027ca809a38599e9bd745e8531e3c1da2e37f8109cb492"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "41096b5659ed3e67d018b255c7ed685f9e6e243bcf135e7a119daa79fcea9f6f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "88da477354629dcc4f50602778ce2781c8faa0222237eb0a777647e358ab0559"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "b54e04eed0b8e44e2a8440affc14ea97875c4867aaa73a5b0cfd635e93f59221"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "f14a229c7760751ae6cf2cdbc57fb4d847736c4becada863ba5163edbf501766"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "ae9e6d1909e0d9130950a555763b9bbe39b227bb409fe5bd43a75cf5c86309cd"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "0ce7c21ab2affee4fb602b3582bbf11ad86995910618eb7a0de2ee22267973f8"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "5d81870b3f636a90670c6cb889800e691b1479ba07cf52af93a3a84f65bf8d91"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "ca3b9de905dcac587323ab5f5fc88591723b8b927cd4be9998d261fe6be1dbf8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "1dbce36823233a29f51c3b110baab5b2663166c8bcea4db60d46ec2917b0e57a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "f46601318903a4b0b731ff673ca8cc8778af0d3c08978d278317803d77bef79a"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "900465c050da71f29e34cceb1d08f3fe66fb930b7302d63f3fc88cdac8304d41"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "807c6e665116611475145554d9e7048c87cf4ee67620b508f4ad6acf9b90486b"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "4aef04970cd7278c79364e655b40b7b4564d1a347cc9ea4d0d0922d30d681033"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "ca1e79b78ebf8dcbd9b2710d6ab01c15579dc1b5aeb06342f32c0fe3c515c6aa"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "6ddf324bbd3c37ca4044d6aec1f94ae3792d5d087997a0d48f72d054b6c80865"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "2b9eb38b58ad868fe80d2a6f651f44abcc0ac5a9215a5f729272ceb375e25d04"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "912e9751777e4c6a0051b422bcac241050baaf7b00e3c577f9413260de96f40e"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "d85c7663558bae1c4d121938fb147a2e7d53cb2b03d80a41a53a9a0212812922"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "4b17a3ebc3206e966343debf9232c5f67d80a82daf44c099f9a146be95165a3f"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "fd8f873149734a0ce0dbbad53108886a1d09f4007a13296f17567ccaf659c8cd"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "9bdcb6f3f719af8b103044da6c16d3cea3b71f0115a5e3dcaeeca199bd30ba6c"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "e02a2dd6b31ff2414cd72904e9157964220185b06862915931bed38b6b6420e0"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "55c7e3764b58ac94a4ecba2eed4a91a4d2028e947cce76d3015d908d2772426d"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "c751a5f90ca57fb355a1ddd145c12200f40f18adcec06318f05410a4b2c01e88"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "0a3b95b134a26ab8c842d30165aa8fd5c1d4298f429d9c98301cbdb0f0fe1461"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "ec5835d576671d2a61184027b114a10e077534f274286ad6652729707ad4b81f"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "No eixo de governança, o programa prevê converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral. Na saúde regional, o programa propõe organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta. Na educação profissional, o plano prevê estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais. Na conectividade, o programa planeja articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura. No saneamento, o plano propõe atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização. No desenvolvimento regional, o programa prevê publicar indicadores econômicos, sociais e de execução do investimento por região e município.",
+    "frases": [
+      {
+        "texto": "No eixo de governança, o programa prevê converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 5,
+            "trecho": "Converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde regional, o programa propõe organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 11,
+            "trecho": "Organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação profissional, o plano prevê estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 8,
+            "trecho": "Estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais."
+          }
+        ]
+      },
+      {
+        "texto": "Na conectividade, o programa planeja articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 20,
+            "trecho": "Articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura."
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, o plano propõe atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 22,
+            "trecho": "Atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização."
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento regional, o programa prevê publicar indicadores econômicos, sociais e de execução do investimento por região e município.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 30,
+            "trecho": "Publicar indicadores econômicos, sociais e de execução do investimento por região e município."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "governanca-metas",
+        "titulo": "Governança por metas",
+        "descricao": "Conversão de compromissos prioritários em carteira oficial de metas.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 5,
+            "trecho": "Converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Organização de serviços especializados por região de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 11,
+            "trecho": "Organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta."
+          }
+        ]
+      },
+      {
+        "id": "educacao-profissional",
+        "titulo": "Educação profissional",
+        "descricao": "Estruturação de polos estaduais de educação técnica.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 8,
+            "trecho": "Estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais."
+          }
+        ]
+      },
+      {
+        "id": "conectividade-rural",
+        "titulo": "Conectividade rural",
+        "descricao": "Expansão de conectividade em áreas rurais.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 20,
+            "trecho": "Articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-estadual",
+        "titulo": "Saneamento estadual",
+        "descricao": "Atualização do diagnóstico de água, esgoto, drenagem e resíduos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 22,
+            "trecho": "Atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização."
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "Publicação de indicadores territoriais de desenvolvimento e investimento.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002550458:01",
+            "pagina": 30,
+            "trecho": "Publicar indicadores econômicos, sociais e de execução do investimento por região e município."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:57:08.203Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:59:11.029Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Único número/prazo citado (trimestral) está sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (governança por metas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:1:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Uma única proposta coerente de saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:2:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 'cinco' está sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:3:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "4G/5G citados literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente de conectividade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:4:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Única área coerente (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:5:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a ação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:frase:6:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas totalmente cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:governanca-metas:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saude-regional:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:educacao-profissional:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:conectividade-rural:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:saneamento-estadual:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números no resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002550458:tema:desenvolvimento-regional:documentos:TO:270002550458:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo coberto integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:TO:270002550458",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "TO:270002550458:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 42671,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2849,
+          "reasoning_output_tokens": 1678
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27000,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20209,
+          "output_tokens_details": {
+            "thinking_tokens": 174
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27000,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20209,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27000,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27000
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3311874
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T20:00:00Z",
+    "sourceSha256": "e3e7ee44f2bbf3777d8c46dfaff1042e041642c27460560f039c52a2a1af7cf7",
+    "extractedTextSha256": "7b1744dac7bd7e22aacf168cde9993b200c7b0226ad1619893c74abd8b5e02a0",
+    "documentCount": 1,
+    "documentSetSha256": "a18743691218d89f52a8abc3680a2839d5db21eb125d1a1a4b16e9b91a64c905",
+    "contentSha256": "9152a0a3221e000ab3522ec0e2a2dc7943fb045051ffa5a323f3821b6ad221ee"
+  }
+}
