@@ -32,18 +32,35 @@ WITH candidacies AS (
   ) AS record
   FROM public.chapas_2026 ch
   LEFT JOIN public.candidatos vice ON vice.id = ch.vice_candidato_id
+), collection_rows AS (
+  SELECT
+    fonte,
+    escopo,
+    alvo,
+    executado_em,
+    resultado,
+    COALESCE(
+      execucao,
+      format('legacy:%s:%s:%s', executado_em, escopo, alvo)
+    ) AS execution_id
+  FROM public.coleta_log_ultima
 ), evidence AS (
   SELECT jsonb_build_object(
-    'source_id', fonte,
-    'checked_at', max(executado_em),
+    'source_id', log.fonte,
+    'checked_at', max(log.executado_em),
     'source_error', CASE
-      WHEN count(*) FILTER (WHERE resultado <> 'erro') = 0 THEN 'todas as tentativas mais recentes falharam'
+      WHEN count(*) FILTER (WHERE log.resultado = 'erro') > 0
+        THEN format('%s erro(s) na execução mais recente', count(*) FILTER (WHERE log.resultado = 'erro'))
       ELSE NULL
     END,
-    'review_required', bool_or(resultado IN ('erro', 'indeterminado'))
+    'review_required', false,
+    'error_count', count(*) FILTER (WHERE log.resultado = 'erro'),
+    'debt_count', count(*) FILTER (WHERE log.resultado = 'indeterminado'),
+    'total_count', count(*),
+    'execution_id', log.execution_id
   ) AS item
-  FROM public.coleta_log_ultima
-  GROUP BY fonte
+  FROM collection_rows log
+  GROUP BY log.fonte, log.execution_id
 )
 SELECT jsonb_build_object(
   'generated_at', now(),

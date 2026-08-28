@@ -11,7 +11,10 @@ import { officialRecordsFromVersionedSnapshot } from "../scripts/lib/data-freshn
 test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
   const work = mkdtempSync(join(tmpdir(), "data-freshness-artifacts-"))
   try {
-    const now = "2026-08-27T12:00:00.000Z"
+    const snapshot = JSON.parse(readFileSync("data/chapas-2026-tse-20260815.json", "utf8")) as {
+      metadata: { extracted_at: string }
+    }
+    const now = snapshot.metadata.extracted_at
     const records = officialRecordsFromVersionedSnapshot("data/chapas-2026-tse-20260815.json")
       .map((record) => ({ ...record, perfil_slug: record.perfil_slug ?? `fixture-${record.sq_candidato}` }))
     const collectionEvidence = loadFreshnessRegistry().flatMap((source) =>
@@ -87,10 +90,13 @@ test("falha das duas superfícies oficiais ainda preserva os quatro artefatos", 
   }
 })
 
-test("fonte vencida com aviso também aciona revisão e recomendação", () => {
+test("fonte manual vencida vira dívida sem abrir incidente", () => {
   const work = mkdtempSync(join(tmpdir(), "data-freshness-stale-warning-"))
   try {
-    const now = "2026-08-27T12:00:00.000Z"
+    const snapshot = JSON.parse(readFileSync("data/chapas-2026-tse-20260815.json", "utf8")) as {
+      metadata: { extracted_at: string }
+    }
+    const now = snapshot.metadata.extracted_at
     const records = officialRecordsFromVersionedSnapshot("data/chapas-2026-tse-20260815.json")
       .map((record) => ({ ...record, perfil_slug: record.perfil_slug ?? `fixture-${record.sq_candidato}` }))
     const collectionEvidence = loadFreshnessRegistry().flatMap((source) =>
@@ -115,12 +121,12 @@ test("fonte vencida com aviso também aciona revisão e recomendação", () => {
       ],
       { encoding: "utf8" },
     )
-    assert.equal(result.status, 1, result.stderr)
+    assert.equal(result.status, 0, result.stderr)
     const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"))
     const summary = readFileSync(join(out, "summary.md"), "utf8")
-    assert.equal(diff.status, "review_required")
-    assert.match(summary, /Fontes públicas estão vencidas e exigem aviso/)
-    assert.match(summary, /manter visível o aviso de desatualização/)
+    assert.equal(diff.status, "ok")
+    assert.match(summary, /Dívidas de coleta conhecidas, sem incidente atual/)
+    assert.match(summary, /não bloqueiam a auditoria/)
   } finally {
     rmSync(work, { recursive: true, force: true })
   }

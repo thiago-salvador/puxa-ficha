@@ -102,6 +102,7 @@ async function main(): Promise<void> {
   const monitoredRegistry = registry.filter((entry) => entry.refresh_mode !== "disabled")
   let official: CandidacyRecord[] = []
   let source: Record<string, unknown>
+  let tseEvidence: SourceEvidence = { source_id: "tse-current", checked_at: null }
 
   try {
     if (options.officialSnapshot) {
@@ -110,18 +111,27 @@ async function main(): Promise<void> {
         source_catalog_url?: string
         source_sha256?: string
         extracted_at?: string
+        metadata?: {
+          source_url?: string
+          source_catalog_url?: string
+          source_sha256?: string
+          extracted_at?: string
+        }
       }
+      const snapshotMetadata = raw.metadata ?? raw
+      const snapshotCheckedAt = snapshotMetadata.extracted_at ?? null
       official = officialRecordsFromVersionedSnapshot(options.officialSnapshot)
       source = {
         status: "fresh",
-        checked_at: generatedAt,
+        checked_at: snapshotCheckedAt,
         mode: "versioned_snapshot",
-        source_url: raw.source_url ?? null,
-        source_catalog_url: raw.source_catalog_url ?? null,
-        source_sha256: raw.source_sha256 ?? null,
-        snapshot_extracted_at: raw.extracted_at ?? null,
+        source_url: snapshotMetadata.source_url ?? null,
+        source_catalog_url: snapshotMetadata.source_catalog_url ?? null,
+        source_sha256: snapshotMetadata.source_sha256 ?? null,
+        snapshot_extracted_at: snapshotCheckedAt,
         attempts: [],
       }
+      tseEvidence = { source_id: "tse-current", checked_at: snapshotCheckedAt }
     } else {
       const downloaded = await downloadOfficialCandidacies()
       official = await parseOfficialCandidaciesZip(downloaded.bytes)
@@ -134,22 +144,24 @@ async function main(): Promise<void> {
         source_sha256: downloaded.source_sha256,
         attempts: downloaded.attempts,
       }
+      tseEvidence = { source_id: "tse-current", checked_at: downloaded.checked_at }
     }
   } catch (error) {
     const attempts = error instanceof OfficialSourceError ? error.attempts : []
     const message = error instanceof Error ? error.message : String(error)
     source = { status: "source_error", checked_at: generatedAt, error: message, attempts }
+    tseEvidence = { source_id: "tse-current", checked_at: null, source_error: message }
     const freshness = monitoredRegistry.map((entry) =>
       evaluateSourceFreshness(
         entry,
         entry.source_id === "tse-current"
-          ? { source_id: entry.source_id, checked_at: null, source_error: message }
+          ? tseEvidence
           : aggregateSourceEvidence(entry, published.collection_evidence ?? []),
         options.now,
       ),
     )
     const freshnessCounts = Object.fromEntries(
-      ["fresh", "stale", "source_error", "review_required"].map((status) => [
+      ["fresh", "stale", "source_error", "review_required", "technical_debt"].map((status) => [
         status,
         freshness.filter((item) => item.status === status).length,
       ]),
@@ -187,13 +199,13 @@ async function main(): Promise<void> {
     evaluateSourceFreshness(
       entry,
       entry.source_id === "tse-current"
-        ? { source_id: entry.source_id, checked_at: generatedAt }
+        ? tseEvidence
         : aggregateSourceEvidence(entry, published.collection_evidence ?? []),
       options.now,
     ),
   )
   const freshnessCounts = Object.fromEntries(
-    ["fresh", "stale", "source_error", "review_required"].map((status) => [
+    ["fresh", "stale", "source_error", "review_required", "technical_debt"].map((status) => [
       status,
       freshness.filter((item) => item.status === status).length,
     ]),
