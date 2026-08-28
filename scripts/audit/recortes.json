@@ -371,8 +371,8 @@
     },
     {
       "nome": "chapas-tse-20260827",
-      "desde": "20260828020500",
-      "ate": "20260828020600",
+      "desde": "20260828025028",
+      "ate": "20260828025037",
       "allowlist": "scripts/audit/allowlist-chapas-20260827.json",
       "divida": null
     }

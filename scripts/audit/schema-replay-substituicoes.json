@@ -1,7 +1,7 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
   "schema_dump_sha256": "9b02ad47a26f7ff0724a39ae25916619aebdc3c284a8a3e260ccdf693099167e",
-  "_comentario_20260828020500": "Hash remedido no gate PostgreSQL 17 do PR #120, run 33136011590: 88 migrations de schema aplicadas, zero falhas; esperado f82a30bfc495..., medido 9b02ad47a26f.... A mudança é somente a expansão dos CHECKs de quarentena de chapas_2026.",
+  "_comentario_20260828025028": "Hash remedido no gate PostgreSQL 17 do PR #120, run 33136011590: 88 migrations de schema aplicadas, zero falhas; esperado f82a30bfc495..., medido 9b02ad47a26f.... A mudança é somente a expansão dos CHECKs de quarentena de chapas_2026.",
   "_comentario_20260815223000": "Medido em 15/08/2026: P-PATRIMONIO-2026 e curadoria DML pura, fica fora do replay de schema e preserva o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",
   "_comentario_20260816011000": "Medido em 16/08/2026: patrimônio do AC e snapshot pós-registro são DML puros, ficam fora do replay de schema e preservam o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",
   "_comentario_20260816055200": "Medido em 16/08/2026: P-PATRIMONIO-NACIONAL e DML puro, fica fora do replay de schema e preserva o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",

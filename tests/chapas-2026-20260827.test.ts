@@ -4,10 +4,10 @@ import test from "node:test"
 
 const snapshotPath = "data/chapas-2026-tse-20260827.json"
 const linksPath = "data/tse-profile-links-20260827.json"
-const schemaPath = "supabase/migrations/20260828020500_chapas_2026_quarentena_schema.sql"
-const migrationPath = "supabase/migrations/20260828020600_chapas_2026_tse_20260827.sql"
-const rollbackPath = "supabase/rollback/20260828020600_chapas_2026_tse_20260827.rollback.sql"
-const readbackPath = "supabase/readback/20260828020600_chapas_2026_tse_20260827.readback.sql"
+const schemaPath = "supabase/migrations/20260828025028_chapas_2026_quarentena_schema.sql"
+const migrationPath = "supabase/migrations/20260828025037_chapas_2026_tse_20260827.sql"
+const rollbackPath = "supabase/rollback/20260828025037_chapas_2026_tse_20260827.rollback.sql"
+const readbackPath = "supabase/readback/20260828025037_chapas_2026_tse_20260827.readback.sql"
 
 interface Pessoa {
   sq_candidato: string | null

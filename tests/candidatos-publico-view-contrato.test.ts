@@ -324,8 +324,8 @@ describe("contrato da view candidatos_publico", () => {
       // Quarentena expandida e snapshot TSE de 27/08. O schema só relaxa as
       // constraints internas de chapas_2026; a view pública continua
       // excluindo identidade_status='duplicidade_oficial'.
-      "20260828020500_chapas_2026_quarentena_schema.sql",
-      "20260828020600_chapas_2026_tse_20260827.sql",
+      "20260828025028_chapas_2026_quarentena_schema.sql",
+      "20260828025037_chapas_2026_tse_20260827.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

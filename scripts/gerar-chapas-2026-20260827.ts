@@ -47,19 +47,19 @@ const CANDIDATOS_PATH = resolve(process.cwd(), "data/candidatos.json")
 const PROFILE_LINKS_PATH = resolve(process.cwd(), "data/tse-profile-links-20260827.json")
 const SCHEMA_MIGRATION_PATH = resolve(
   process.cwd(),
-  "supabase/migrations/20260828020500_chapas_2026_quarentena_schema.sql",
+  "supabase/migrations/20260828025028_chapas_2026_quarentena_schema.sql",
 )
 const MIGRATION_PATH = resolve(
   process.cwd(),
-  "supabase/migrations/20260828020600_chapas_2026_tse_20260827.sql",
+  "supabase/migrations/20260828025037_chapas_2026_tse_20260827.sql",
 )
 const ROLLBACK_PATH = resolve(
   process.cwd(),
-  "supabase/rollback/20260828020600_chapas_2026_tse_20260827.rollback.sql",
+  "supabase/rollback/20260828025037_chapas_2026_tse_20260827.rollback.sql",
 )
 const READBACK_PATH = resolve(
   process.cwd(),
-  "supabase/readback/20260828020600_chapas_2026_tse_20260827.readback.sql",
+  "supabase/readback/20260828025037_chapas_2026_tse_20260827.readback.sql",
 )
 
 type Raw = Record<string, string>
