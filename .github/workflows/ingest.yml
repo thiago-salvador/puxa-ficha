@@ -121,7 +121,10 @@ jobs:
   ingest-tse:
     name: TSE CSV
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # A execução completa percorre 12 eleições (2002-2024) e a primeira prova
+    # em produção atingiu exatamente o limite anterior de 60 min. Mantemos
+    # margem equivalente ao job REST sem esconder cancelamento como ausência.
+    timeout-minutes: 90
     if: contains(github.event.inputs.sources, 'tse')
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
