@@ -982,7 +982,12 @@ async function disparar(contexto, unidade, inventoryPath) {
       const child = contexto.spawnFn(node24, args, {
         cwd: DIR_REPO,
         stdio: ["ignore", "pipe", "pipe"],
-        env: construirAmbienteBatch(process.env, {
+        env: construirAmbienteBatch({
+          PATH: process.env.PATH,
+          HOME: process.env.HOME,
+          TMPDIR: process.env.TMPDIR,
+          USER: process.env.USER,
+        }, {
           ...(contexto.qwenExtraArgs ? { PF_QWEN_EXTRA_ARGS: contexto.qwenExtraArgs } : {}),
           ...(contexto.codexExtraArgs ? { PF_CODEX_EXTRA_ARGS: contexto.codexExtraArgs } : {}),
           PF_EXECUTION_ID: contexto.executionId,

@@ -88,6 +88,16 @@ segura.
 | `PF_REPLAY_POSTGRES_IMAGE` | Override diagnóstico da imagem usada no replay efêmero | Opcional. Ausente ou vazia, preserva o digest Postgres 17 fixado pelos scripts; não usar tag móvel como `postgres:17-alpine`. | Operador local |
 | `PF_ENV_FILE` | Arquivo carregado por utilitário Python | Opcional, aponta para um arquivo local de ambiente; nunca deve ser versionado com valores. | Operador local |
 
+### Batch de programas de governo 2026
+
+| Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
+|---|---|---|---|
+| `PF_QWEN_CLI`, `PF_QWEN_EXTRA_ARGS`, `PF_QWEN_TIMEOUT_MS` | Runner legado Qwen | Opcionais. O CLI cai para `qwen`, safe mode é obrigatório e o timeout padrão é 900.000 ms. | Operador local |
+| `PF_CODEX_CLI`, `PF_CODEX_EXTRA_ARGS`, `PF_CODEX_MODEL`, `PF_CODEX_REASONING_EFFORT`, `PF_CODEX_TIMEOUT_MS`, `PF_JUDGE_MODEL` | Runner direto Codex para geração ou julgamento | Opcionais. O CLI cai para `codex`; modelo, esforço e timeout têm defaults explícitos nos wrappers. Argumentos extras não substituem sandbox, config limpa nem web desabilitada. | Operador local |
+| `PF_CLAUDE_CLI`, `PF_CLAUDE_JUDGE_MODEL`, `PF_CLAUDE_MAX_BUDGET_USD`, `PF_CLAUDE_TIMEOUT_MS` | Judge direto Claude | Opcionais. Defaults: CLI `claude`, modelo `sonnet`, orçamento máximo de US$ 5 e timeout de 900.000 ms. | Operador local |
+| `PF_OPENCODE_GO`, `PF_OPENCODE_TIMEOUT_MS`, `PF_OPENCODE_TIMEOUT_PADDING_MS`, `PF_OPENCODE_GRACE_MS` | Compatibilidade dos runners OpenCode históricos | Opcionais e restritas a retomadas históricas que selecionem esses wrappers. Não são usadas pela pipeline final Codex Luna mais Claude. | Operador local |
+| `PF_EXECUTION_ID`, `PF_CANDIDATO_CHAVE`, `PF_CANDIDATO_SQ`, `PF_CANDIDATO_UF`, `PF_CANDIDATO_REGIAO`, `PF_MODEL_TELEMETRY_PATH` | Contexto e telemetria de cada subprocesso do batch | Internas. O driver define valores por tentativa; configuração manual é proibida porque quebraria identidade e rastreabilidade. | Driver do batch |
+
 ### QA e testes focados
 
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |

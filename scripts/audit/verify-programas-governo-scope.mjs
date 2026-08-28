@@ -1,11 +1,13 @@
 import { execFileSync } from "node:child_process"
 
 const EXACT = new Set([
+  ".env.example",
   ".gitattributes",
   ".gitignore",
   "GATES.md",
   "package.json",
   "package-lock.json",
+  "Settings/AUTOMATIONS_AND_ENVIRONMENTS.md",
   "docs/operations/programas-governo-presidencia-eval.md",
   "docs/operations/programas-governo-governadores-2026-escala.md",
   "docs/operations/programas-governo-governadores-2026-eval.md",
