@@ -3,6 +3,7 @@ import test from "node:test"
 
 import {
   createProgramaGovernoModelAdapters,
+  PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
   type ProgramaGovernoModelsConfig,
 } from "../scripts/programas-governo-governadores-2026-models"
 
@@ -289,23 +290,12 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
         stderr: "",
       }
     }
-    if (envelope.promptVersion.endsWith("/sintese-fatos")) {
-      const fatoIds = (envelope.input.FATOS as Array<{ id: string }>).map(({ id }) => id)
-      const texto = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
-      const palavras = texto.split(" ")
+    if (envelope.promptVersion.endsWith("/sintese-fato-unitario")) {
+      const fato = envelope.input.FATO as { id: string }
       return {
         stdout: JSON.stringify({
-          texto,
-          frases: Array.from({ length: 6 }, (_, index) => ({
-            texto: palavras.slice(index * 8, index * 8 + 8).join(" "),
-            fatoIds: [fatoIds[index]],
-          })),
-          temas: Array.from({ length: 4 }, (_, index) => ({
-            id: `tema-${index + 1}`,
-            titulo: `Tema ${index + 1}`,
-            descricao: "Descrição factual.",
-            fatoIds: [fatoIds[0]],
-          })),
+          frase: Array.from({ length: 20 }, (_, index) => `${fato.id}-palavra${index + 1}`).join(" "),
+          titulo: `Tema ${fato.id}`,
         }),
         stderr: "",
       }
@@ -332,15 +322,20 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     repairGuidance: guidance,
   })
 
-  assert.equal(requests.length, 3)
+  assert.equal(requests.length, 8)
   assert.match(requests[0].instructions, /orientação de reparo aprovada/iu)
   assert.match(requests[0].instructions, /Preserve o verbo literal/)
   assert.doesNotMatch(requests[1].instructions, /orientação de reparo aprovada/iu)
   assert.doesNotMatch(requests[1].instructions, /Preserve o verbo literal/)
-  assert.match(requests[2].instructions, /orientação de reparo aprovada/iu)
-  assert.match(requests[2].instructions, /Preserve o verbo literal/)
-  assert.match(requests[2].instructions, /frase 1=fato-1/)
-  assert.match(requests[2].instructions, /frase 6=fato-6/)
+  const sinteses = requests.slice(2)
+  assert.deepEqual(sinteses.map(({ promptVersion }) => promptVersion), Array(6).fill(`${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fato-unitario`))
+  assert.deepEqual(sinteses.map(({ input }) => (input.FATO as { id: string }).id), [
+    "fato-1", "fato-2", "fato-3", "fato-4", "fato-5", "fato-6",
+  ])
+  for (const request of sinteses) {
+    assert.match(request.instructions, /orientação de reparo aprovada/iu)
+    assert.match(request.instructions, /Preserve o verbo literal/)
+  }
 })
 
 test("falha depois de maxAttempts quando a evidência continua divergente", async () => {

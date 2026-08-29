@@ -311,7 +311,11 @@ export function substituirEvidenciasFato(resumo: unknown, fatos: readonly Progra
   }
 }
 
-export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fatos: readonly ProgramaGovernoFato[]): void {
+export function validarResultadoProgramaGovernoMultipassagem(
+  resumo: unknown,
+  fatos: readonly ProgramaGovernoFato[],
+  opcoes: { impedirReusoEntreFrases?: boolean } = {},
+): void {
   if (!resumo || typeof resumo !== "object" || Array.isArray(resumo)) throw new Error("multipassagem: resumo invalido")
   const value = resumo as Record<string, unknown>
   const frases = value.frases
@@ -354,7 +358,9 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
     }
     for (const assinatura of evidenciasDoItem) evidenciasUsadasEmFrases.add(assinatura)
   }
-  for (const frase of frases as unknown[]) verificarEvidencia(frase, "frases[]", true)
+  for (const frase of frases as unknown[]) {
+    verificarEvidencia(frase, "frases[]", opcoes.impedirReusoEntreFrases === true)
+  }
   for (const tema of temas as unknown[]) verificarEvidencia(tema, "temas[]")
   if (cobertura.size === 0) throw new Error("multipassagem: nenhum fato referenciado")
 }

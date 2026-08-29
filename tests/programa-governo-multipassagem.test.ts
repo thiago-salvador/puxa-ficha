@@ -152,7 +152,7 @@ test("substitui evidencias dos fatos referenciados e falha fechado", () => {
     temas: base.temas,
   }
   assert.throws(
-    () => validarResultadoProgramaGovernoMultipassagem(fatoReutilizado, fatos),
+    () => validarResultadoProgramaGovernoMultipassagem(fatoReutilizado, fatos, { impedirReusoEntreFrases: true }),
     /reutiliza fato f-1-1 entre frases/,
   )
 
@@ -169,7 +169,7 @@ test("substitui evidencias dos fatos referenciados e falha fechado", () => {
     temas: base.temas,
   }
   assert.throws(
-    () => validarResultadoProgramaGovernoMultipassagem(evidenciaReutilizada, fatosComMesmaEvidencia),
+    () => validarResultadoProgramaGovernoMultipassagem(evidenciaReutilizada, fatosComMesmaEvidencia, { impedirReusoEntreFrases: true }),
     /reutiliza evidencia entre frases/,
   )
 
