@@ -10,6 +10,11 @@ const WORKFLOW = readFileSync(join(ROOT, ".github/workflows/apply-issue-138-prod
 const ROLLBACK_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/rollback-issue-138-production.yml"), "utf8")
 const MANIFEST = JSON.parse(readFileSync(join(ROOT, ".github/merge-queue/irreversible-change-manifest.json"), "utf8"))
 const SCHEMA_ROLLBACK = readFileSync(join(ROOT, "supabase/rollback/20260829100000_projetos_lei_chave_por_fonte.rollback.sql"), "utf8")
+const ROSTER_APPLY = readFileSync(join(ROOT, "scripts/audit/apply-candidate-roster-integrity-production.sh"), "utf8")
+const ROSTER_ROLLBACK = readFileSync(join(ROOT, "scripts/audit/rollback-candidate-roster-integrity-production.sh"), "utf8")
+const ROSTER_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/apply-candidate-roster-integrity-production.yml"), "utf8")
+const ROSTER_ROLLBACK_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/rollback-candidate-roster-integrity-production.yml"), "utf8")
+const ROSTER_SCHEMA_ROLLBACK = readFileSync(join(ROOT, "supabase/rollback/20260829030001_candidate_roster_publication_integrity_schema.rollback.sql"), "utf8")
 
 test("aplicador da issue 138 e fechado, ordenado e registra rollback por versao", () => {
   assert.match(APPLY, /ddl_version=20260829100000/)
@@ -25,6 +30,23 @@ test("aplicador da issue 138 e fechado, ordenado e registra rollback por versao"
   assert.match(APPLY, /ledger_insert\(backfill_version, backfill_digest, backfill_path, backfill_raw, backfill_rollback\)/)
   assert.match(APPLY, /idempotency_key/)
   assert.doesNotMatch(APPLY, /supabase db push|apply_migration/)
+})
+
+test("release predecessor do roster e independente e coordenado", () => {
+  assert.match(ROSTER_APPLY, /data_version=20260829030000/)
+  assert.match(ROSTER_APPLY, /schema_version=20260829030001/)
+  assert.match(ROSTER_APPLY, /previous_version=20260828025037/)
+  assert.match(ROSTER_APPLY, /candidate-roster-integrity-production/)
+  assert.match(ROSTER_APPLY, /data_rollback=/)
+  assert.match(ROSTER_APPLY, /schema_rollback=/)
+  assert.match(ROSTER_APPLY, /readback=/)
+  assert.match(ROSTER_APPLY, /INSERT INTO supabase_migrations\.schema_migrations/)
+  assert.doesNotMatch(ROSTER_APPLY, /29100000|29100100/)
+  assert.match(ROSTER_ROLLBACK, /DELETE FROM supabase_migrations\.schema_migrations WHERE version IN/)
+  assert.match(ROSTER_ROLLBACK, /previous_version=20260828025037/)
+  assert.match(ROSTER_SCHEMA_ROLLBACK, /fail-closed/)
+  assert.match(ROSTER_WORKFLOW, /workflow_dispatch:/)
+  assert.match(ROSTER_ROLLBACK_WORKFLOW, /workflow_dispatch:/)
 })
 
 test("workflow de escrita exige dispatch manual, main, SHA e ambiente de producao", () => {
