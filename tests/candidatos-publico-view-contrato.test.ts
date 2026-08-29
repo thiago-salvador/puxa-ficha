@@ -330,6 +330,7 @@ describe("contrato da view candidatos_publico", () => {
       // view afetada é chapas_2026_publico, não candidatos_publico.
       "20260829030000_candidate_roster_publication_integrity.sql",
       "20260829030001_candidate_roster_publication_integrity_schema.sql",
+      "20260829100000_projetos_lei_chave_por_fonte.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
